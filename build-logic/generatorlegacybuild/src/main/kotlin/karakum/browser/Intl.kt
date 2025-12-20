@@ -56,6 +56,14 @@ internal fun intlDeclarations(
         }
         .filter { it.name != "SegmentIterator" }
         .filter { !it.name.endsWith("Registry") }
+        .map {
+            it.copy(
+                body = it.body.replace(
+                    "external class ",
+                    "@JsQualifier(\"Intl\")\nexternal class ",
+                ),
+            )
+        }
 
     return unions.asSequence()
         .plus(types)

@@ -460,9 +460,6 @@ fun generateKotlinDeclarations(
                 fileSuppress(*suppresses)
             } else "",
             when {
-                pkg == "js.intl" && "external class " in body
-                    -> """@file:JsQualifier("Intl")"""
-
                 pkg == "web.assembly" && ("external class " in body || "external fun " in body)
                     -> """@file:JsQualifier("WebAssembly")"""
 

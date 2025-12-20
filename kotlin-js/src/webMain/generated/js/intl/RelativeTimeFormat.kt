@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("Intl")
-
 package js.intl
 
 import js.array.ReadonlyArray
@@ -9,6 +7,7 @@ import kotlin.js.JsAny
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
+@JsQualifier("Intl")
 open external class RelativeTimeFormat(
     locales: UnicodeBCP47LocaleIdentifier = definedExternally,
     options: RelativeTimeFormatOptions = definedExternally,

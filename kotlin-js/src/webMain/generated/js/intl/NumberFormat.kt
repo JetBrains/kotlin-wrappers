@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("Intl")
-
 package js.intl
 
 import js.array.ReadonlyArray
@@ -10,6 +8,7 @@ import kotlin.js.JsQualifier
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 
+@JsQualifier("Intl")
 open external class NumberFormat(
     locales: String = definedExternally,
     options: NumberFormatOptions = definedExternally,

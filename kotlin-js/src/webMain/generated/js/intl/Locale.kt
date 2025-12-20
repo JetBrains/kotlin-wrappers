@@ -4,13 +4,12 @@
     "VIRTUAL_MEMBER_HIDDEN",
 )
 
-@file:JsQualifier("Intl")
-
 package js.intl
 
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
+@JsQualifier("Intl")
 open external class Locale(
     tag: UnicodeBCP47LocaleIdentifier,
     options: LocaleOptions = definedExternally,
