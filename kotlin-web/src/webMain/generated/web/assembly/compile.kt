@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.buffer.BufferSource
@@ -14,13 +12,13 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compile_static)
  */
+@JsQualifier("WebAssembly")
 @JsName("compile")
 external fun compileAsync(
     bytes: BufferSource,
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<Module>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compile(
     bytes: BufferSource,
 ): Module {
@@ -29,7 +27,6 @@ suspend inline fun compile(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compile(
     bytes: BufferSource,
     options: WebAssemblyCompileOptions?,

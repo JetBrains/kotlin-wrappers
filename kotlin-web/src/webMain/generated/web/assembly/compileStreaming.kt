@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.promise.Promise
@@ -15,13 +13,13 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compileStreaming_static)
  */
+@JsQualifier("WebAssembly")
 @JsName("compileStreaming")
 external fun compileStreamingAsync(
     source: Response,
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<Module>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: Response,
 ): Module {
@@ -30,7 +28,6 @@ suspend inline fun compileStreaming(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: Response,
     options: WebAssemblyCompileOptions?,
@@ -41,13 +38,13 @@ suspend inline fun compileStreaming(
     ).await()
 }
 
+@JsQualifier("WebAssembly")
 @JsName("compileStreaming")
 external fun compileStreamingAsync(
     source: PromiseLike<Response>,
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<Module>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: PromiseLike<Response>,
 ): Module {
@@ -56,7 +53,6 @@ suspend inline fun compileStreaming(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: PromiseLike<Response>,
     options: WebAssemblyCompileOptions?,

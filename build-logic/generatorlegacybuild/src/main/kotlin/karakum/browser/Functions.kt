@@ -151,9 +151,6 @@ private fun getIdType(
         }
     }
 
-private fun String.suppressWrongExternalDeclaration(): String =
-    replace("suspend inline fun", "@Suppress(\"NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE\")\nsuspend inline fun")
-
 private fun convertFunctionResult(
     source: String,
     getPkg: (name: String) -> String?,
@@ -254,8 +251,6 @@ private fun convertFunctionResult(
             )
         """.trimIndent()
     }
-
-    body = body.suppressWrongExternalDeclaration()
 
     return ConversionResult(
         name = finalName,

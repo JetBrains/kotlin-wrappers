@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.array.ReadonlyArray
@@ -14,6 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception)
  */
+@JsQualifier("WebAssembly")
 open external class Exception(
     exceptionTag: Tag,
     payload: ReadonlyArray<*>,

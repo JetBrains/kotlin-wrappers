@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.promise.Promise
@@ -15,6 +13,7 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static)
  */
+@JsQualifier("WebAssembly")
 @JsName("instantiateStreaming")
 external fun instantiateStreamingAsync(
     source: Response,
@@ -22,7 +21,6 @@ external fun instantiateStreamingAsync(
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
     source: Response,
 ): WebAssemblyInstantiatedSource {
@@ -31,7 +29,6 @@ suspend inline fun instantiateStreaming(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
     source: Response,
     importObject: Imports,
@@ -42,7 +39,6 @@ suspend inline fun instantiateStreaming(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
     source: Response,
     importObject: Imports,
@@ -55,6 +51,7 @@ suspend inline fun instantiateStreaming(
     ).await()
 }
 
+@JsQualifier("WebAssembly")
 @JsName("instantiateStreaming")
 external fun instantiateStreamingAsync(
     source: PromiseLike<Response>,
@@ -62,7 +59,6 @@ external fun instantiateStreamingAsync(
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
     source: PromiseLike<Response>,
 ): WebAssemblyInstantiatedSource {
@@ -71,7 +67,6 @@ suspend inline fun instantiateStreaming(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
     source: PromiseLike<Response>,
     importObject: Imports,
@@ -82,7 +77,6 @@ suspend inline fun instantiateStreaming(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
     source: PromiseLike<Response>,
     importObject: Imports,

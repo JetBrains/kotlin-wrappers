@@ -455,19 +455,9 @@ fun generateKotlinDeclarations(
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
         }.toTypedArray()
 
-        val annotations = sequenceOf(
-            if (suppresses.isNotEmpty()) {
-                fileSuppress(*suppresses)
-            } else "",
-            when {
-                pkg == "web.assembly" && ("external class " in body || "external fun " in body)
-                    -> """@file:JsQualifier("WebAssembly")"""
-
-                else -> ""
-            },
-        ).filter { it.isNotEmpty() }
-            .joinToString("\n\n")
-
+        val annotations = if (suppresses.isNotEmpty()) {
+            fileSuppress(*suppresses)
+        } else ""
 
         val imports = when (name) {
             "setInterval",

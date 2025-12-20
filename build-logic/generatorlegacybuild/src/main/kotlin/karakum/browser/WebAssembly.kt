@@ -49,7 +49,8 @@ internal fun webAssemblyDeclarations(
                     predefinedPkg = "web.assembly",
                 )?.withComment(fullSource = content, source = src)
             }
-        }.map { result ->
+        }
+        .map { result ->
             if (result.name.endsWith("Error")) {
                 result.copy(
                     body = """
@@ -74,6 +75,37 @@ internal fun webAssemblyDeclarations(
     )
 
     return (types + interfaces + functions + constants)
+        .map {
+            val newBody = it.body
+                .replace(
+                    "external class ",
+                    "@JsQualifier(\"WebAssembly\")\nexternal class ",
+                )
+                .replace(
+                    "external fun ",
+                    "@JsQualifier(\"WebAssembly\")\nexternal fun ",
+                )
+                .replace(
+                    "external val ",
+                    "@JsQualifier(\"WebAssembly\")\nexternal val ",
+                )
+
+            val lines = newBody
+                .splitToSequence("\n")
+                .toMutableList()
+
+            for (i in 0..lines.size - 2) {
+                val line1 = lines[i]
+                val line2 = lines[i + 1]
+
+                if (line1.startsWith("@JsName") && line2.startsWith("@JsQualifier(")) {
+                    lines[i] = line2
+                    lines[i + 1] = line1
+                }
+            }
+
+            it.copy(body = lines.joinToString("\n"))
+        }
 }
 
 private fun convertValueType(

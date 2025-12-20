@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import kotlin.js.JsAny
@@ -13,6 +11,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table)
  */
+@JsQualifier("WebAssembly")
 open external class Table(
     descriptor: TableDescriptor,
     value: JsAny? = definedExternally,

@@ -16,7 +16,6 @@ external fun createImageBitmapAsync(
     options: ImageBitmapOptions? = definedExternally,
 ): Promise<ImageBitmap>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
 ): ImageBitmap {
@@ -25,7 +24,6 @@ suspend inline fun createImageBitmap(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
     options: ImageBitmapOptions?,
@@ -46,7 +44,6 @@ external fun createImageBitmapAsync(
     options: ImageBitmapOptions? = definedExternally,
 ): Promise<ImageBitmap>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
     sx: Int,
@@ -63,7 +60,6 @@ suspend inline fun createImageBitmap(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
     sx: Int,

@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.array.ReadonlyArray
@@ -15,6 +13,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module)
  */
+@JsQualifier("WebAssembly")
 open external class Module(
     bytes: BufferSource,
     options: WebAssemblyCompileOptions = definedExternally,

@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.buffer.ArrayBuffer
@@ -12,6 +10,7 @@ import kotlin.js.JsQualifier
  *
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory)
  */
+@JsQualifier("WebAssembly")
 open external class Memory(
     descriptor: MemoryDescriptor,
 ) {

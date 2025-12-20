@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsQualifier("WebAssembly")
-
 package web.assembly
 
 import js.buffer.BufferSource
@@ -14,6 +12,7 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiate_static)
  */
+@JsQualifier("WebAssembly")
 @JsName("instantiate")
 external fun instantiateAsync(
     bytes: BufferSource,
@@ -21,7 +20,6 @@ external fun instantiateAsync(
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     bytes: BufferSource,
 ): WebAssemblyInstantiatedSource {
@@ -30,7 +28,6 @@ suspend inline fun instantiate(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     bytes: BufferSource,
     importObject: Imports,
@@ -41,7 +38,6 @@ suspend inline fun instantiate(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     bytes: BufferSource,
     importObject: Imports,
@@ -54,13 +50,13 @@ suspend inline fun instantiate(
     ).await()
 }
 
+@JsQualifier("WebAssembly")
 @JsName("instantiate")
 external fun instantiateAsync(
     moduleObject: Module,
     importObject: Imports = definedExternally,
 ): Promise<Instance>
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     moduleObject: Module,
 ): Instance {
@@ -69,7 +65,6 @@ suspend inline fun instantiate(
     ).await()
 }
 
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     moduleObject: Module,
     importObject: Imports,
