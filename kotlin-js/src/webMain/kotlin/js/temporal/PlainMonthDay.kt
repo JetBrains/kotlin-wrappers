@@ -1,5 +1,3 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import js.objects.JsPlainObject
@@ -13,6 +11,7 @@ import kotlin.js.definedExternally
  *
  * See https://tc39.es/proposal-temporal/docs/monthday.html for more details.
  */
+@JsQualifier("Temporal")
 external class PlainMonthDay(
     isoMonth: Int,
     isoDay: Int,

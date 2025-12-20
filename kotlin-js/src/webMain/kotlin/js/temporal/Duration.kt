@@ -1,5 +1,3 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import kotlin.js.JsAny
@@ -13,6 +11,7 @@ import kotlin.js.definedExternally
  *
  * See https://tc39.es/proposal-temporal/docs/duration.html for more details.
  */
+@JsQualifier("Temporal")
 external class Duration(
     val years: Int = definedExternally,
     val months: Int = definedExternally,

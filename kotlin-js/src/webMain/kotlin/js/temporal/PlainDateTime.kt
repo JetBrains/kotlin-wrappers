@@ -1,5 +1,3 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import kotlin.js.JsQualifier
@@ -15,6 +13,7 @@ import kotlin.js.definedExternally
  *
  * See https://tc39.es/proposal-temporal/docs/datetime.html for more details.
  */
+@JsQualifier("Temporal")
 external class PlainDateTime(
     isoYear: Int,
     isoMonth: Int,

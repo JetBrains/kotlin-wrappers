@@ -1,11 +1,10 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import js.core.BigInt
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
+@JsQualifier("Temporal")
 external class ZonedDateTime(
     epochNanoseconds: BigInt,
     timeZone: TimeZone,

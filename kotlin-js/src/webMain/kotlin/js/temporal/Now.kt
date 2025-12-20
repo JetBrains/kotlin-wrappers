@@ -1,10 +1,9 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
+@JsQualifier("Temporal")
 external object Now {
     /**
      * Get the exact system date and time as a `Temporal.Instant`.

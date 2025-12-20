@@ -1,5 +1,3 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import js.core.BigInt
@@ -21,6 +19,7 @@ import kotlin.js.definedExternally
  *
  * See https://tc39.es/proposal-temporal/docs/instant.html for more details.
  */
+@JsQualifier("Temporal")
 external class Instant(
     val epochNanoseconds: BigInt,
 ) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,

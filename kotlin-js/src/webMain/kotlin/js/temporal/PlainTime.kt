@@ -1,5 +1,3 @@
-@file:JsQualifier("Temporal")
-
 package js.temporal
 
 import kotlin.js.JsAny
@@ -21,6 +19,7 @@ import kotlin.js.definedExternally
  *
  * See https://tc39.es/proposal-temporal/docs/time.html for more details.
  */
+@JsQualifier("Temporal")
 external class PlainTime(
     val hour: Int = definedExternally,
     val minute: Int = definedExternally,
