@@ -1,5 +1,3 @@
-@file:JsQualifier("Uint8Array")
-
 package js.typedarrays
 
 import js.array.MutableArrayLike
@@ -16,6 +14,7 @@ import kotlin.js.JsName
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
+@JsQualifier("Uint8Array")
 @JsName("__proto__")
 sealed external class TypedArray<
         S : TypedArray<S, R, B, T>,
