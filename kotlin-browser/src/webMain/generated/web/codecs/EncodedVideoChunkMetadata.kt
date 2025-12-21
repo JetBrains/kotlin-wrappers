@@ -7,4 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface EncodedVideoChunkMetadata {
     var decoderConfig: VideoDecoderConfig?
+    var svc: SvcOutputMetadata?
 }

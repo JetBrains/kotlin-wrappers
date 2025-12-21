@@ -6,5 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FocusOptions {
+    var focusVisible: Boolean?
     var preventScroll: Boolean?
 }

@@ -13,5 +13,8 @@ open external class PerformancePaintTiming
 private constructor() :
     PerformanceEntry,
     PaintTimingMixin {
+    /**
+     * The **`toJSON()`** method of the PerformancePaintTiming interface is a serializer; it returns a JSON representation of the PerformancePaintTiming object.
+     */
     override fun toJSON(): JsAny
 }

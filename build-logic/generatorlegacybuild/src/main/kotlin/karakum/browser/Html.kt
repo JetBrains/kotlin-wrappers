@@ -503,6 +503,7 @@ private val CODECS_TYPES = listOf(
     "ImageTrackList",
     "OpusEncoderConfig",
     "PlaneLayout",
+    "SvcOutputMetadata",
     "VideoColorSpace",
     "VideoColorSpaceInit",
     "VideoDecoder",
