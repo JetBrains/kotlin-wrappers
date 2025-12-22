@@ -477,6 +477,7 @@ private val QUERY_TYPES = listOf(
 )
 
 private val CODECS_TYPES = listOf(
+    "AacEncoderConfig",
     "AudioData",
     "AudioDataCopyToOptions",
     "AudioDataInit",

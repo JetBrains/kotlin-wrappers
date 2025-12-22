@@ -96,6 +96,7 @@ private val PKG_MAP = mapOf(
 
     "PresentationStyle" to "web.clipboard",
 
+    "AacBitstreamFormat" to "web.codecs",
     "AlphaOption" to "web.codecs",
     "AudioSampleFormat" to "web.codecs",
     "AvcBitstreamFormat" to "web.codecs",

@@ -7,6 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioEncoderConfig {
+    var aac: AacEncoderConfig?
     var bitrate: UInt53?
     var bitrateMode: BitrateMode?
     var codec: String
