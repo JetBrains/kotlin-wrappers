@@ -29,6 +29,7 @@ private val ANIMATION_TYPES = setOf(
     "KeyframeEffect",
     "KeyframeEffectOptions",
     "PropertyIndexedKeyframes",
+    "TimelineRangeOffset",
 
     "DocumentTimeline",
     "DocumentTimelineOptions",
@@ -1989,6 +1990,9 @@ private fun convertProperty(
             -> "DOMHighResTimeStamp /* | String */"
 
         "number | CSSNumericValue | string",
+            -> "JsAny /* $type */"
+
+        "TimelineRangeOffset | CSSNumericValue | CSSKeywordValue | string",
             -> "JsAny /* $type */"
 
         in TYPED_ARRAYS,
