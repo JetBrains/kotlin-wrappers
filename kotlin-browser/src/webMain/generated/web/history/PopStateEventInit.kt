@@ -12,5 +12,6 @@ import kotlin.js.JsAny
 @JsPlainObject
 external interface PopStateEventInit :
     EventInit {
+    var hasUAVisualTransition: Boolean?
     var state: JsAny?
 }

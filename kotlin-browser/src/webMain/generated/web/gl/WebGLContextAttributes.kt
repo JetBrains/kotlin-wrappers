@@ -12,4 +12,5 @@ sealed external interface WebGLContextAttributes {
     var premultipliedAlpha: Boolean?
     var preserveDrawingBuffer: Boolean?
     var stencil: Boolean?
+    var xrCompatible: Boolean?
 }

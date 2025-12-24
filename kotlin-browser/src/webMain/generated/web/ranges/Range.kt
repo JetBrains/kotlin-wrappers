@@ -65,7 +65,7 @@ open external class Range :
     ): Short
 
     /**
-     * The **`Range.createContextualFragment()`** method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range (the parent of the selected node) as the context node. The HTML fragment parsing algorithm is used if the range belongs to a Document whose HTMLness bit is set. In the HTML case, if the context node would be html, for historical reasons the fragment parsing algorithm is invoked with body as the context instead.
+     * The **`Range.createContextualFragment()`** method of the Range interface returns a DocumentFragment representing the parsed input HTML or XML.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
