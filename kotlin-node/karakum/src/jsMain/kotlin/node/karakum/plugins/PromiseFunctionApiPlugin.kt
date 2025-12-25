@@ -37,7 +37,7 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode( typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.asArray().first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -62,7 +62,7 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode( typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.asArray().first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -87,7 +87,7 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode( typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.asArray().first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -109,7 +109,7 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode( typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.asArray().first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -162,7 +162,7 @@ class PromiseFunctionApiPlugin : Plugin {
         val typeParameters = node.typeParameters?.asArray()
             ?.joinToString(", ") { next(it) }
 
-        val returnType = node.type ?.let { next(it) }
+        val returnType = node.type?.let { next(it) }
 
         val type = requireNotNull(node.type)
         require(isTypeReferenceNode(type))
