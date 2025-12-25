@@ -227,6 +227,9 @@ include("kotlin-tanstack-react-query")
 // Kotlin/JS: TanStack React Query Devtools wrappers
 include("kotlin-tanstack-react-query-devtools")
 
+// Kotlin/JS: TanStack React Router wrappers
+include("kotlin-tanstack-react-router")
+
 // Kotlin/JS: TanStack React Table wrappers
 include("kotlin-tanstack-react-table")
 
