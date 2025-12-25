@@ -213,6 +213,9 @@ includeKarakum("kotlin-semver")
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")
 
+// Kotlin/JS: TanStack History wrappers
+include("kotlin-tanstack-history")
+
 includeKarakum("kotlin-tanstack-query")
 
 // Kotlin/JS: Tanstack Query Core wrappers
