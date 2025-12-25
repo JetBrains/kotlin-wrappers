@@ -354,16 +354,22 @@ private val WEB_AUTHN_TYPES = listOf(
     "AuthenticationExtensionsClientInputs",
     "AuthenticationExtensionsClientInputsJSON",
     "AuthenticationExtensionsClientOutputs",
+    "AuthenticationExtensionsClientOutputsJSON",
     "AuthenticationExtensionsLargeBlobInputs",
     "AuthenticationExtensionsLargeBlobInputsJSON",
     "AuthenticationExtensionsLargeBlobOutputs",
+    "AuthenticationExtensionsLargeBlobOutputsJSON",
     "AuthenticationExtensionsPRFInputs",
     "AuthenticationExtensionsPRFInputsJSON",
     "AuthenticationExtensionsPRFOutputs",
+    "AuthenticationExtensionsPRFOutputsJSON",
     "AuthenticationExtensionsPRFValues",
     "AuthenticationExtensionsPRFValuesJSON",
+    "AuthenticationResponseJSON",
     "AuthenticatorAssertionResponse",
+    "AuthenticatorAssertionResponseJSON",
     "AuthenticatorAttestationResponse",
+    "AuthenticatorAttestationResponseJSON",
     "AuthenticatorResponse",
     "AuthenticatorSelectionCriteria",
     "CredentialPropertiesOutput",
@@ -380,6 +386,7 @@ private val WEB_AUTHN_TYPES = listOf(
     "PublicKeyCredentialRpEntity",
     "PublicKeyCredentialUserEntity",
     "PublicKeyCredentialUserEntityJSON",
+    "RegistrationResponseJSON",
     "UnknownCredentialOptions",
 )
 
@@ -2248,6 +2255,10 @@ private fun convertFunction(
         )
         .replace(": OffscreenRenderingContext", ": JsAny /* OffscreenRenderingContext */")
         .replace(": RadioNodeList | Element | null", ": JsAny? /* RadioNodeList | Element */")
+        .replace(
+            ": RegistrationResponseJSON | AuthenticationResponseJSON",
+            ": JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */"
+        )
         .replace(": Promise<any>", ": Promise<*>")
         // RemotePlayback.watchAvailability & RTCRtpScriptTransformer.generateKeyFrame (Long)
         .replace(": Promise<number>", ": Promise<Int>")

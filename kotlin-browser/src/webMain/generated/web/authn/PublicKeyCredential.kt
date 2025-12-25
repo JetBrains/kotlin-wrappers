@@ -7,6 +7,7 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.credentials.Credential
+import kotlin.js.JsAny
 import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.toBoolean
@@ -53,7 +54,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/toJSON)
      */
-    fun toJSON(): PublicKeyCredentialJSON
+    fun toJSON(): JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */
 
     companion object {
         /**

@@ -94,6 +94,8 @@ private val PKG_MAP = mapOf(
     "OverSampleType" to "web.audio",
     "PanningModelType" to "web.audio",
 
+    "ImageDataPixelFormat" to "web.images",
+
     "PresentationStyle" to "web.clipboard",
 
     "AacBitstreamFormat" to "web.codecs",

@@ -7,4 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ImageDataSettings {
     var colorSpace: PredefinedColorSpace?
+    var pixelFormat: ImageDataPixelFormat?
 }
