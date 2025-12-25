@@ -218,29 +218,29 @@ include("kotlin-tanstack-history")
 
 includeKarakum("kotlin-tanstack-query")
 
-// Kotlin/JS: Tanstack Query Core wrappers
+// Kotlin/JS: TanStack Query Core wrappers
 include("kotlin-tanstack-query-core")
 
-// Kotlin/JS: Tanstack React Query wrappers
+// Kotlin/JS: TanStack React Query wrappers
 include("kotlin-tanstack-react-query")
 
-// Kotlin/JS: Tanstack React Query Devtools wrappers
+// Kotlin/JS: TanStack React Query Devtools wrappers
 include("kotlin-tanstack-react-query-devtools")
 
-// Kotlin/JS: Tanstack React Table wrappers
+// Kotlin/JS: TanStack React Table wrappers
 include("kotlin-tanstack-react-table")
 
-// Kotlin/JS: Tanstack React Virtual wrappers
+// Kotlin/JS: TanStack React Virtual wrappers
 include("kotlin-tanstack-react-virtual")
 
 includeKarakum("kotlin-tanstack-table")
 
-// Kotlin/JS: Tanstack Table Core wrappers
+// Kotlin/JS: TanStack Table Core wrappers
 include("kotlin-tanstack-table-core")
 
 includeKarakum("kotlin-tanstack-virtual")
 
-// Kotlin/JS: Tanstack Virtual Core wrappers
+// Kotlin/JS: TanStack Virtual Core wrappers
 include("kotlin-tanstack-virtual-core")
 
 // Kotlin/JS: TypeScript wrappers

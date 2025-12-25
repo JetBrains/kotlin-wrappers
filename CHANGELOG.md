@@ -178,7 +178,7 @@ dependencies {
 
 **BREAKING CHANGE**
 
-* Tanstack Query `skipToken` support fixed
+* TanStack Query `skipToken` support fixed
     * To construct `QueryFunction` please use factory function `QueryFunction`
 
 ## pre.756

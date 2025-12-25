@@ -2,7 +2,7 @@
 
 # Module kotlin-tanstack-table-core
 
-Kotlin wrapper for the [Tanstack Table Core](https://github.com/TanStack/table/tree/main/packages/table-core) library.
+Kotlin wrapper for the [TanStack Table Core](https://github.com/TanStack/table/tree/main/packages/table-core) library.
 
 ### Internals
 

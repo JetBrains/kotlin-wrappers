@@ -2,7 +2,7 @@
 
 # Module kotlin-tanstack-virtual-core
 
-Kotlin wrapper for the [Tanstack Virtual Core](https://github.com/TanStack/virtual/tree/beta/packages/virtual-core) library.
+Kotlin wrapper for the [TanStack Virtual Core](https://github.com/TanStack/virtual/tree/beta/packages/virtual-core) library.
 
 ### Internals
 

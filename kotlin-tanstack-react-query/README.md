@@ -2,7 +2,7 @@
 
 # Module kotlin-tanstack-react-query
 
-Kotlin wrapper for the [Tanstack React Query](https://github.com/TanStack/query/) library.
+Kotlin wrapper for the [TanStack React Query](https://github.com/TanStack/query/) library.
 
 ### Internals
 

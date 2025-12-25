@@ -2,7 +2,7 @@
 
 # Module kotlin-tanstack-history
 
-Kotlin wrapper for the [Tanstack History](https://github.com/TanStack/router) library.
+Kotlin wrapper for the [TanStack History](https://github.com/TanStack/router) library.
 
 ### Internals
 
