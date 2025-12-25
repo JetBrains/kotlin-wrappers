@@ -29,6 +29,7 @@ private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     nullable {
+        // additional overloads with a union return type
         ensure(
             sourceFileName.endsWith("fs.d.ts")
                     || sourceFileName.endsWith("fs/promises.d.ts")
@@ -40,10 +41,12 @@ private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {
                     || node.name?.text == "readdirSync"
                     || node.name?.text == "readlinkSync"
                     || node.name?.text == "realpathSync"
+                    // also callback overload that conflicts with the suspend one
                     || node.name?.text == "watch"
                     || isNativeRealpathSync(node)
         )
     } ?: nullable {
+        // callback overloads that conflict with suspend ones
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
         ensure(node.name?.text == "pipeline")
@@ -52,6 +55,7 @@ private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {
         ensure(isTypeReferenceNode(type))
         ensure(isQualifiedName(type.typeName))
     } ?: nullable {
+        // overloads by boolean literal
         ensure(sourceFileName.endsWith("url.d.ts"))
 
         ensure(node.name?.text == "parse")
@@ -66,6 +70,7 @@ private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {
                     || typeName.text == "UrlWithParsedQuery"
         )
     } ?: nullable {
+        // additional overloads with a union return type
         ensure(sourceFileName.endsWith("crypto.d.ts"))
 
         ensure(node.name?.text == "hash")
@@ -147,41 +152,29 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
 
                 ensureNotNull(
                     nullable {
+                        ensure(isLiteralTypeNode(parameterType))
+                        val parameterTypeLiteral = parameterType.literal
+                        ensure(isStringLiteral(parameterTypeLiteral))
+                        ensure(parameterTypeLiteral.text == "buffer")
+                    } ?: nullable {
                         ensure(isTypeReferenceNode(parameterType))
                         val parameterTypeName = parameterType.typeName
                         ensure(isIdentifier(parameterTypeName))
-                        ensure(parameterTypeName.text == "WatchOptions")
-
-                        val type = ensureNotNull(node.type)
-                        ensure(isUnionTypeNode(type))
-                    } ?: nullable {
-                        ensureNotNull(
-                            nullable {
-                                ensure(isLiteralTypeNode(parameterType))
-                                val parameterTypeLiteral = parameterType.literal
-                                ensure(isStringLiteral(parameterTypeLiteral))
-                                ensure(parameterTypeLiteral.text == "buffer")
-                            } ?: nullable {
-                                ensure(isTypeReferenceNode(parameterType))
-                                val parameterTypeName = parameterType.typeName
-                                ensure(isIdentifier(parameterTypeName))
-                                ensure(parameterTypeName.text == "BufferEncoding")
-                            }
-                        )
-
-                        val type = ensureNotNull(node.type)
-                        ensure(isTypeReferenceNode(type))
-                        val typeName = type.typeName
-                        ensure(isQualifiedName(typeName))
-                        ensure(typeName.right.text == "AsyncIterator")
-                        val typeArguments = ensureNotNull(type.typeArguments)
-                        val firstTypeArgument = ensureNotNull(typeArguments.asArray().first())
-                        ensure(isTypeReferenceNode(firstTypeArgument))
-                        val firstTypeArgumentTypeArguments = ensureNotNull(firstTypeArgument.typeArguments)
-                        val firstTypeArgumentFirstTypeArgument = ensureNotNull(firstTypeArgumentTypeArguments.asArray().first())
-                        ensure(isUnionTypeNode(firstTypeArgumentFirstTypeArgument))
+                        ensure(parameterTypeName.text == "BufferEncoding")
                     }
                 )
+
+                val type = ensureNotNull(node.type)
+                ensure(isTypeReferenceNode(type))
+                val typeName = type.typeName
+                ensure(isQualifiedName(typeName))
+                ensure(typeName.right.text == "AsyncIterator")
+                val typeArguments = ensureNotNull(type.typeArguments)
+                val firstTypeArgument = ensureNotNull(typeArguments.asArray().first())
+                ensure(isTypeReferenceNode(firstTypeArgument))
+                val firstTypeArgumentTypeArguments = ensureNotNull(firstTypeArgument.typeArguments)
+                val firstTypeArgumentFirstTypeArgument = ensureNotNull(firstTypeArgumentTypeArguments.asArray().first())
+                ensure(isUnionTypeNode(firstTypeArgumentFirstTypeArgument))
             }
         )
     } ?: nullable {
