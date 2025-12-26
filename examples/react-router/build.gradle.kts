@@ -7,5 +7,5 @@ dependencies {
     jsMainImplementation(kotlinWrappers.react)
     jsMainImplementation(kotlinWrappers.reactUse)
     jsMainImplementation(kotlinWrappers.reactDom)
-    jsMainImplementation(kotlinWrappers.reactRouter)
+    jsMainImplementation(kotlinWrappers.reactRouterDomLegacy)
 }
