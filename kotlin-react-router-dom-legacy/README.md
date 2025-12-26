@@ -2,4 +2,4 @@
 
 # Module kotlin-react-router-dom-legacy
 
-Kotlin wrapper for the [React Router DOM x6](https://reactrouter.com/) library.
+Kotlin wrapper for the [React Router DOM legacy (x6)](https://reactrouter.com/) library.
