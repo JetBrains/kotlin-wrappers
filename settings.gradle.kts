@@ -196,8 +196,8 @@ include("kotlin-react-legacy")
 // Kotlin/JS: React Popper wrappers
 include("kotlin-react-popper")
 
-// Kotlin/JS: React Router wrappers
-include("kotlin-react-router")
+// Kotlin/JS: React Router DOM legacy wrappers
+include("kotlin-react-router-dom-legacy")
 
 // Kotlin/JS: React Select wrappers
 include("kotlin-react-select")
