@@ -1,7 +1,5 @@
 rootProject.name = "kotlin-wrappers"
 
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 pluginManagement {
     includeBuild("build-logic-settings")
 }
