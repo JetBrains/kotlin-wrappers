@@ -216,6 +216,8 @@ include("kotlin-styled-next")
 // Kotlin/JS: TanStack History wrappers
 include("kotlin-tanstack-history")
 
+includeKarakum("kotlin-tanstack-history")
+
 includeKarakum("kotlin-tanstack-query")
 
 // Kotlin/JS: TanStack Query Core wrappers
