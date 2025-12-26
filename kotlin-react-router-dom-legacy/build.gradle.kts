@@ -7,7 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinReactDom)
 
-    webMainApi(npm(jspkg.remixRun.router))
-    webMainApi(npm(jspkg.reactRouter))
     webMainApi(npm(jspkg.reactRouterDom))
 }
