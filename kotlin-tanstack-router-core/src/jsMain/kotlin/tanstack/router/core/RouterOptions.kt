@@ -47,7 +47,7 @@ external interface RouterOptions<TRoute : Any> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultpreload-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/preloading)
      */
-    // defaultPreload?: false | 'intent' | 'viewport' | 'render';
+    val defaultPreload: Preload?
 
     /**
      * The delay in milliseconds that a route must be hovered over or touched before it is preloaded.
