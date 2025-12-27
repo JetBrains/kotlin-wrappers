@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinReactCore)
 
     webMainApi(npm(jspkg.tanstack.reactRouter))
 }
