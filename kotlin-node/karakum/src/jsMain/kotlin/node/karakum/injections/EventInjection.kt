@@ -14,6 +14,7 @@ import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import arrow.core.raise.impure
 import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.MEMBER
 import typescript.DeclarationStatement
 import typescript.Node
 import typescript.ParameterDeclaration

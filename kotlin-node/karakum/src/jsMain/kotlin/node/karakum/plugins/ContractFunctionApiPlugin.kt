@@ -16,6 +16,7 @@ import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.plugins.function
 import typescript.FunctionDeclaration
 import typescript.Node
 import typescript.asArray

@@ -5,6 +5,7 @@ import io.github.sgrishchenko.karakum.extension.createInjection
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import arrow.core.raise.Raise
 import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.MEMBER
 import typescript.isInterfaceDeclaration
 
 val injectAgentOptionsPort = createInjection { node, context, _ ->

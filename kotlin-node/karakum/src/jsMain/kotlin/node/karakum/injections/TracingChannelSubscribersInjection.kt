@@ -10,6 +10,7 @@ import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import arrow.core.raise.Raise
 import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.MEMBER
 import typescript.Node
 import typescript.isIdentifier
 import typescript.isIntersectionTypeNode

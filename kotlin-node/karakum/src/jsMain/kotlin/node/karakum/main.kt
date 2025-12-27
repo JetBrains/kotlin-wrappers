@@ -1,11 +1,10 @@
 package node.karakum
 
-import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
-import io.github.sgrishchenko.karakum.configuration.Granularity
-import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
+import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
+import js.array.ReadonlyArray
 import js.import.import
 import js.objects.recordOf
 import node.karakum.annotations.*
@@ -16,18 +15,15 @@ import node.karakum.inheritanceModifiers.modifyPropertyInheritance
 import node.karakum.injections.*
 import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
+import node.module.findPackageJSON
 import node.path.path
-import node.process.process
-import node.url.fileURLToPath
 
-suspend fun main() {
-    val nodePackage = import.meta.resolve("@types/node/package.json")
-        .let { fileURLToPath(it) }
+suspend fun main(args: ReadonlyArray<String>) {
+    val nodePackage = findPackageJSON("@types/node", import.meta.url)
+        .let { requireNotNull(it) }
         .let { path.dirname(it) }
 
-    val outputPath = process.argv[2]
-
-    generate {
+    generate(args) {
         plugins = manyOf(
             AmbiguousSignaturePlugin(),
             BufferPlugin(),
@@ -167,6 +163,7 @@ suspend fun main() {
             ::modifyPropertyInheritance,
         )
 
+        inputResolutionStrategy = InputResolutionStrategy.plain
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
             "$nodePackage/ts*/**",
@@ -185,7 +182,6 @@ suspend fun main() {
             "$nodePackage/timers.d.ts",
             "$nodePackage/timers/promises.d.ts"
         )
-        output = outputPath
         ignoreOutput = manyOf(
             "**/_Blob.kt",
             "**/_CloseEvent.kt",
@@ -338,7 +334,6 @@ suspend fun main() {
         )
         libraryName = "node"
         libraryNameOutputPrefix = true
-        granularity = Granularity.topLevel
         moduleNameMapper = recordOf(
             "(.+)" to "node:$1",
             "node:node/" to "node:",

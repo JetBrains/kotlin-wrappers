@@ -12,25 +12,14 @@ import electron.karakum.nameResolvers.resolveInterfaceArrayFieldName
 import electron.karakum.nameResolvers.resolveInterfaceMethodNullableCallbackParameterName
 import electron.karakum.nameResolvers.resolveSessionListenerCallbackActionName
 import electron.karakum.plugins.*
-import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
-import io.github.sgrishchenko.karakum.configuration.Granularity
-import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
+import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
-import js.import.import
+import js.array.ReadonlyArray
 import js.objects.recordOf
-import node.path.path
-import node.process.process
-import node.url.fileURLToPath
 
-suspend fun main() {
-    val electronPackage = import.meta.resolve("electron/package.json")
-        .let { fileURLToPath(it) }
-        .let { path.dirname(it) }
-
-    val outputPath = process.argv[2]
-
-    generate {
+suspend fun main(args: ReadonlyArray<String>) {
+    generate(args) {
         plugins = manyOf(
             convertCollections,
             convertElectronQualifiedName,
@@ -68,11 +57,8 @@ suspend fun main() {
             ::modifyPropertyInheritance,
         )
 
-        input = manyOf("$electronPackage/electron.d.ts")
-        output = outputPath
-        libraryName = "electron"
+        input = manyOf("electron.d.ts")
         libraryNameOutputPrefix = true
-        granularity = Granularity.topLevel
         moduleNameMapper = recordOf(
             "electron/electron#Electron.Main" to "electron/main",
             "electron/electron#Electron.Common" to "electron/common",

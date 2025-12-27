@@ -2,6 +2,6 @@ plugins {
     id("generatorbuild.karakum-conventions")
 }
 
-dependencies {
-    jsMainImplementation(npm(jspkg.electron))
+karakum {
+    library(jspkg.electron)
 }

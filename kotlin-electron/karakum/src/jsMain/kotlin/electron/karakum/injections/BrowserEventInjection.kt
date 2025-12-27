@@ -7,6 +7,7 @@ import io.github.sgrishchenko.karakum.extension.GeneratedFile
 import io.github.sgrishchenko.karakum.extension.Injection
 import io.github.sgrishchenko.karakum.extension.InjectionContext
 import io.github.sgrishchenko.karakum.extension.InjectionType
+import io.github.sgrishchenko.karakum.extension.MEMBER
 import io.github.sgrishchenko.karakum.extension.Render
 import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey

@@ -1,6 +1,7 @@
 package typescript.karakum.plugins
 
 import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.HERITAGE_CLAUSE
 import io.github.sgrishchenko.karakum.extension.InjectionType
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
@@ -25,7 +26,8 @@ val convertKindEnums = createPlugin { node, context, render ->
 
         val injectionService = ensureNotNull(context.lookupService(injectionServiceKey))
 
-        val heritageInjections = injectionService.resolveInjections(node, InjectionType.HERITAGE_CLAUSE, context, render)
+        val heritageInjections =
+            injectionService.resolveInjections(node, InjectionType.HERITAGE_CLAUSE, context, render)
 
         val injectedHeritageClauses = heritageInjections
             .filter { it.isNotEmpty() }

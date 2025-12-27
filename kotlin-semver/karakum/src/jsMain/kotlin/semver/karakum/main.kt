@@ -1,30 +1,26 @@
 package semver.karakum
 
-import io.github.sgrishchenko.karakum.configuration.Granularity
+import io.github.sgrishchenko.karakum.configuration.InputResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
+import io.github.sgrishchenko.karakum.configuration.ignore
+import io.github.sgrishchenko.karakum.configuration.plain
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
+import js.array.ReadonlyArray
 import js.import.import
 import js.objects.recordOf
+import node.module.findPackageJSON
 import node.path.path
-import node.process.process
-import node.url.fileURLToPath
 import semver.karakum.annotations.annotateJsPlainObject
 import semver.karakum.inheritanceModifiers.modifyMethodInheritance
-import semver.karakum.plugins.convertCoerceParameterType
-import semver.karakum.plugins.convertComparisonResultType
-import semver.karakum.plugins.convertConflictingOverloads
-import semver.karakum.plugins.convertIdentifierBasePackage
-import semver.karakum.plugins.convertVersionPartTypes
+import semver.karakum.plugins.*
 
-suspend fun main() {
-    val semverPackage = import.meta.resolve("@types/semver/package.json")
-        .let { fileURLToPath(it) }
+suspend fun main(args: ReadonlyArray<String>) {
+    val semverPackage = findPackageJSON("@types/semver", import.meta.url)
+        .let { requireNotNull(it) }
         .let { path.dirname(it) }
 
-    val outputPath = process.argv[2]
-
-    generate {
+    generate(args) {
         plugins = manyOf(
             convertCoerceParameterType,
             convertComparisonResultType,
@@ -39,9 +35,9 @@ suspend fun main() {
             ::modifyMethodInheritance
         )
 
+        inputResolutionStrategy = InputResolutionStrategy.plain
         input = manyOf("$semverPackage/**/*.d.ts")
         ignoreInput = manyOf("$semverPackage/internals/*")
-        output = outputPath
         ignoreOutput = manyOf(
             "**/semver/ComparatorOperator.kt",
             "**/semver/OutsideHilo.kt",
@@ -50,10 +46,6 @@ suspend fun main() {
         )
         libraryName = "semver"
         libraryNameOutputPrefix = true
-        granularity = Granularity.topLevel
-        moduleNameMapper = recordOf(
-            "^.*$" to "semver"
-        )
         packageNameMapper = recordOf(
             "^.*/([^/]+\\.kt)$" to "semver/$1",
             "semver/(Range|SemVer|Comparator)\\.kt" to "semver/$1.class.kt",

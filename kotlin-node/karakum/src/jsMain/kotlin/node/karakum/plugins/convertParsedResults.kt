@@ -2,6 +2,7 @@ package node.karakum.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InjectionType
+import io.github.sgrishchenko.karakum.extension.MEMBER
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.InheritanceModifierService

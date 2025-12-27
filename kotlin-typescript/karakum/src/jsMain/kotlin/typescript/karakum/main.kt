@@ -1,15 +1,13 @@
 package typescript.karakum
 
-import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
+import io.github.sgrishchenko.karakum.configuration.`object`
+import io.github.sgrishchenko.karakum.configuration.`package`
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
-import js.import.import
+import js.array.ReadonlyArray
 import js.objects.recordOf
-import node.path.path
-import node.process.process
-import node.url.fileURLToPath
 import typescript.karakum.annotations.annotateUnusedTypealiasParameter
 import typescript.karakum.annotations.annotateVarOverrides
 import typescript.karakum.inheritanceModifiers.modifyInterfaceInheritance
@@ -21,14 +19,8 @@ import typescript.karakum.nameResolvers.*
 import typescript.karakum.plugins.*
 import typescript.karakum.varianceModifiers.modifyInterfaceVariance
 
-suspend fun main() {
-    val typescriptPackage = import.meta.resolve("typescript/package.json")
-        .let { fileURLToPath(it) }
-        .let { path.dirname(it) }
-
-    val outputPath = process.argv[2]
-
-    generate {
+suspend fun main(args: ReadonlyArray<String>) {
+    generate(args) {
         plugins = manyOf(
             ContractFunctionApiPlugin(),
 
@@ -79,8 +71,7 @@ suspend fun main() {
             ::modifyInterfaceVariance,
         )
 
-        input = manyOf("$typescriptPackage/lib/typescript.d.ts")
-        output = outputPath
+        input = manyOf("lib/typescript.d.ts")
         ignoreOutput = manyOf(
             "**/server/**",
             "**/CompletionsTriggerCharacter.kt",
@@ -92,14 +83,10 @@ suspend fun main() {
             "**/isTypeOnlyImportDeclaration.contract.kt",
             "**/isTypeOnlyImportDeclaration.kt",
         )
-        libraryName = "typescript"
         libraryNameOutputPrefix = true
-        granularity = Granularity.topLevel
-        moduleNameMapper = recordOf(
-            ".+" to "typescript"
-        )
         packageNameMapper = recordOf(
-            "ts/(.+)" to "typescript/$1",
+            "lib/" to "/",
+            "^ts/(.+)" to "typescript/$1",
             "createProgram.kt" to "createProgram.fun.kt",
         )
         importInjector = recordOf(
@@ -130,6 +117,5 @@ suspend fun main() {
             "JsTyping" to NamespaceStrategy.`object`,
             "ts" to NamespaceStrategy.`package`
         )
-        disclaimer = "// Automatically generated - do not modify!"
     }
 }
