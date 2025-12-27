@@ -138,7 +138,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#notfoundmode-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/not-found-errors#the-notfoundmode-option)
      */
-    // notFoundMode?: 'root' | 'fuzzy';
+    val notFoundMode: NotFoundMode?
 
     /**
      * The default `gcTime` a route should use if no gcTime is provided.
