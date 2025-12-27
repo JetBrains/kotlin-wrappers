@@ -7,7 +7,7 @@ import web.dom.Element
 import web.scroll.ScrollBehavior
 
 @JsPlainObject
-external interface RouterOptions {
+external interface RouterOptions<TRoute : Any> {
     /**
      * The history object that will be used to manage the browser history.
      *
@@ -163,7 +163,7 @@ external interface RouterOptions {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#routetree-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/routing/route-trees)
      */
-    // val routeTree: AnyRoute?
+    val routeTree: TRoute
 
     /**
      * The basepath for then entire router. This is useful for mounting a router instance at a subpath.
@@ -225,15 +225,6 @@ external interface RouterOptions {
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/route-masking#unmasking-on-page-reload)
      */
     val unmaskOnReload: Boolean?
-
-    /**
-     * Use `notFoundComponent` instead.
-     *
-     * @deprecated
-     * See https://tanstack.com/router/v1/docs/guide/not-found-errors#migrating-from-notfoundroute for more info.
-     * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#notfoundroute-property)
-     */
-    // val notFoundRoute: AnyRoute?
 
     /**
      * Configures how trailing slashes are treated.
