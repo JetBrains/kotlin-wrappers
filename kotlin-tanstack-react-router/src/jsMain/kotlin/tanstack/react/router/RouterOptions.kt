@@ -14,7 +14,7 @@ external interface RouterOptions {
      * `default` - Outlet
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultcomponent-property)
      */
-    var defaultComponent: RouteComponent?
+    val defaultComponent: RouteComponent?
 
     /**
      * The default `errorComponent` a route should use if no error component is provided.
@@ -23,7 +23,7 @@ external interface RouterOptions {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaulterrorcomponent-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#handling-errors-with-routeoptionserrorcomponent)
      */
-    var defaultErrorComponent: ErrorRouteComponent?
+    val defaultErrorComponent: ErrorRouteComponent?
 
     /**
      * The default `pendingComponent` a route should use if no pending component is provided.
@@ -31,7 +31,7 @@ external interface RouterOptions {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultpendingcomponent-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#showing-a-pending-component)
      */
-    var defaultPendingComponent: RouteComponent?
+    val defaultPendingComponent: RouteComponent?
 
     /**
      * The default `notFoundComponent` a route should use if no notFound component is provided.
@@ -41,7 +41,7 @@ external interface RouterOptions {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultnotfoundcomponent-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/not-found-errors#default-router-wide-not-found-handling)
      */
-    var defaultNotFoundComponent: NotFoundRouteComponent?
+    val defaultNotFoundComponent: NotFoundRouteComponent?
 
     /**
      * A component that will be used to wrap the entire router.
@@ -52,7 +52,7 @@ external interface RouterOptions {
      *
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#wrap-property)
      */
-    var Wrap: ComponentType<PropsWithChildren>?
+    val Wrap: ComponentType<PropsWithChildren>?
 
     /**
      * A component that will be used to wrap the inner contents of the router.
@@ -63,7 +63,7 @@ external interface RouterOptions {
      *
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#innerwrap-property)
      */
-    var InnerWrap: ComponentType<PropsWithChildren>?
+    val InnerWrap: ComponentType<PropsWithChildren>?
 
     /**
      * The default `onCatch` handler for errors caught by the Router ErrorBoundary
@@ -71,5 +71,5 @@ external interface RouterOptions {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultoncatch-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#handling-errors-with-routeoptionsoncatch)
      */
-    var defaultOnCatch: ((error: JsError, errorInfo: ErrorInfo) -> Unit)?
+    val defaultOnCatch: ((error: JsError, errorInfo: ErrorInfo) -> Unit)?
 }
