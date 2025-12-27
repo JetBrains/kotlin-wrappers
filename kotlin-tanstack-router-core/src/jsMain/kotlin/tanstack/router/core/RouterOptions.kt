@@ -5,6 +5,7 @@ import js.objects.JsPlainObject
 import tanstack.history.RouterHistory
 import web.dom.Element
 import web.scroll.ScrollBehavior
+import web.scroll.ScrollIntoViewOptions
 
 @JsPlainObject
 external interface RouterOptions<TRouteTree : BaseRootRoute> {
@@ -130,7 +131,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      *
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaulthashscrollintoview-property)
      */
-    // defaultHashScrollIntoView?: boolean | ScrollIntoViewOptions;
+    val defaultHashScrollIntoView: ScrollIntoViewOptions? /* | Boolean */
 
     /**
      * `default` - 'fuzzy'
