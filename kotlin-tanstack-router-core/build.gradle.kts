@@ -3,7 +3,8 @@ plugins {
 }
 
 dependencies {
-    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinTanstackHistory)
 
     webMainApi(npm(jspkg.tanstack.routerCore))
 }
