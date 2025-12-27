@@ -8,7 +8,7 @@ import react.PropsWithChildren
 
 @JsPlainObject
 external interface RouterOptions :
-    tanstack.router.core.RouterOptions<Route> {
+    tanstack.router.core.RouterOptions<RootRoute> {
     /**
      * The default `component` a route should use if no component is provided.
      *

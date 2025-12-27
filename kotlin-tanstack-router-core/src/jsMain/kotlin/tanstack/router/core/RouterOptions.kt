@@ -7,7 +7,7 @@ import web.dom.Element
 import web.scroll.ScrollBehavior
 
 @JsPlainObject
-external interface RouterOptions<TRoute : Any> {
+external interface RouterOptions<TRouteTree : BaseRootRoute> {
     /**
      * The history object that will be used to manage the browser history.
      *
@@ -163,7 +163,7 @@ external interface RouterOptions<TRoute : Any> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#routetree-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/routing/route-trees)
      */
-    val routeTree: TRoute
+    val routeTree: TRouteTree
 
     /**
      * The basepath for then entire router. This is useful for mounting a router instance at a subpath.

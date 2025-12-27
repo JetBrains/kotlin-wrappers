@@ -1,5 +1,8 @@
 package tanstack.react.router
 
-external interface Route {
+import tanstack.router.core.BaseRoute
+
+external interface Route :
+    BaseRoute {
     // TBD
 }
