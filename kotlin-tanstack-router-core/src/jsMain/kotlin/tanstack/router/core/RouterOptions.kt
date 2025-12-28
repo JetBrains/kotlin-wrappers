@@ -122,7 +122,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      *
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultviewtransition-property)
      */
-    // defaultViewTransition?: boolean | ViewTransitionOptions;
+    val defaultViewTransition: ViewTransitionOptions? /* | Boolean */
 
     /**
      * The default `hashScrollIntoView` a route should use if no hashScrollIntoView is provided while navigating

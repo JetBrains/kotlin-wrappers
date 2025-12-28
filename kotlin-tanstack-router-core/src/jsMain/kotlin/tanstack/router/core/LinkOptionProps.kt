@@ -3,7 +3,7 @@ package tanstack.router.core
 import web.window.WindowTarget
 
 @JsExternalInheritorsOnly
-external interface LinkOptionsProps {
+external interface LinkOptionProps {
     /**
      * The standard anchor tag target attribute
      */
