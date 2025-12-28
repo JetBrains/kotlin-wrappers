@@ -1,6 +1,9 @@
+@file:JsModule("@tanstack/router-core")
+
 package tanstack.router.core
 
-external interface BaseRootRoute :
+open external class BaseRootRoute
+private constructor() :
     BaseRoute {
     // TBD
 }

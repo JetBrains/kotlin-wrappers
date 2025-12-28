@@ -1,8 +1,11 @@
+@file:JsModule("@tanstack/react-router")
+
 package tanstack.react.router
 
 import tanstack.router.core.BaseRootRoute
 
-external interface RootRoute :
+external class RootRoute
+private constructor() :
     BaseRootRoute {
     // TBD
 }
