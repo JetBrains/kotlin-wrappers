@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 external interface RouteOptions<TParentRoute : BaseRoute> {
     val getParentRoute: () -> TParentRoute
     val path: RoutePath?
-    val id: String?
+    val id: RouteId?
 
     // TBD
 }
