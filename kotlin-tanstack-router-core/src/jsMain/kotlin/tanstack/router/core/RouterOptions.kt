@@ -184,7 +184,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#context-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/router-context)
      */
-    // context?: InferRouterContext<TRouteTree>;
+    val context: Any? /* InferRouterContext<TRouteTree>? */
 
     val additionalContext: Any?
 
@@ -282,7 +282,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      *
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#defaultstructuralsharing-property)
      */
-    // defaultStructuralSharing?: TDefaultStructuralSharingOption;
+    val defaultStructuralSharing: Boolean?
 
     /**
      * Configures which URI characters are allowed in path params that would ordinarily be escaped by encodeURIComponent.
@@ -290,7 +290,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#pathparamsallowedcharacters-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/path-params#allowed-characters)
      */
-    // pathParamsAllowedCharacters?: Array<';' | ':' | '@' | '&' | '=' | '+' | '$' | ','>;
+    val pathParamsAllowedCharacters: ReadonlyArray<String /* ';' | ':' | '@' | '&' | '=' | '+' | '$' | ',' */>
 
     // defaultRemountDeps?: DefaultRemountDepsFn<TRouteTree>;
 
@@ -338,7 +338,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      */
     val disableGlobalCatchBoundary: Boolean?
 
-    // val serializationAdapters: ReadonlyArray<AnySerializationAdapter>?
+    val serializationAdapters: ReadonlyArray<Any /* AnySerializationAdapter */>?
 
     /**
      * Configures how the router will rewrite the location between the actual href and the internal href of the router.
