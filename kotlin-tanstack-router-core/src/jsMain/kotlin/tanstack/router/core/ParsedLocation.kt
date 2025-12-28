@@ -11,7 +11,7 @@ external interface ParsedLocation {
     val href: String
 
     /**
-     * @description The pathname of the location, including the leading slash.
+     * The pathname of the location, including the leading slash.
      */
     val pathname: String
 
@@ -44,11 +44,4 @@ external interface ParsedLocation {
      * Whether to unmask the location on reload.
      */
     val unmaskOnReload: Boolean?
-
-    /**
-     * @private
-     * @description The public href of the location.
-     * If a rewrite is applied, the `href` property will be the rewritten URL.
-     */
-    val publicHref: String
 }

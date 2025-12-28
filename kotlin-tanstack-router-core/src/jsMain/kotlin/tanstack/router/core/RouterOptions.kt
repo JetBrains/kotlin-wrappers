@@ -299,19 +299,19 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      *
      * `default` - false
      */
-    /*
-    scrollRestoration?: boolean | ((opts:
-    {
-        location: ParsedLocation;
-    }) => boolean);
-    */
+    val scrollRestoration: ((options: ScrollRestorationOptions) -> Boolean)? /* | Boolean */
+
+    @JsPlainObject
+    interface ScrollRestorationOptions {
+        val location: ParsedLocation
+    }
 
     /**
      * A function that will be called to get the key for the scroll restoration cache.
      *
      * `default` - (location) => location.href
      */
-    // getScrollRestorationKey?: (location: ParsedLocation) => string;
+    val getScrollRestorationKey: ((location: ParsedLocation) -> String)?
 
     /**
      * The default behavior for scroll restoration.
@@ -344,10 +344,10 @@ external interface RouterOptions<TRouteTree : BaseRootRoute> {
      * Configures how the router will rewrite the location between the actual href and the internal href of the router.
      *
      * `default` - undefined
-     * @description You can provide a custom rewrite pair (in/out).
+     * You can provide a custom rewrite pair (in/out).
      * This is useful for shifting data from the origin to the path (for things like subdomain routing), or other advanced use cases.
      */
-    // val rewrite: LocationRewrite?
+    val rewrite: LocationRewrite?
 
     val origin: String?
 
