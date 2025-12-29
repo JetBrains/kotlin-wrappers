@@ -13,8 +13,6 @@ open external class ProcessingInstruction
 private constructor() :
     CharacterData,
     LinkStyle {
-    override val ownerDocument: Document
-
     /**
      * The read-only **`target`** property of the ProcessingInstruction interface represent the application to which the ProcessingInstruction is targeted.
      *

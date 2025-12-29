@@ -1154,7 +1154,6 @@ internal fun convertInterface(
             "Attr",
             "CharacterData",
             "Element",
-            "ProcessingInstruction",
                 -> result
                 .replace("val ownerDocument:", "override val ownerDocument:")
                 .replace("var textContent: String", "override var textContent: String? // String")
