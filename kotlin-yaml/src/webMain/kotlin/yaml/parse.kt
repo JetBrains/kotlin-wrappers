@@ -2,8 +2,10 @@
 
 package yaml
 
+import js.json.Reviver
 import kotlin.js.JsAny
 import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Parse an input string into JavaScript.
@@ -18,4 +20,7 @@ import kotlin.js.JsModule
  *   document, so Maps become objects, Sequences arrays, and scalars result in
  *   nulls, booleans, numbers and strings.
  */
-external fun <T : JsAny?> parse(src: String): T
+external fun <T : JsAny?> parse(
+    str: String,
+    reviver: Reviver = definedExternally,
+): T
