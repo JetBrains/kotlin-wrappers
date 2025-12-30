@@ -2,7 +2,11 @@
 
 package tanstack.router.core
 
-open external class BaseRoute
+import js.array.ReadonlyArray
+
+open external class BaseRoute<TChild : BaseRoute<TChild>>
 private constructor() {
-    // TBD
+    fun addChildren(
+        children: ReadonlyArray<TChild>,
+    ) /* : this */
 }

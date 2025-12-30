@@ -2,8 +2,8 @@
 
 package tanstack.router.core
 
-open external class BaseRootRoute
+open external class BaseRootRoute<TChild : BaseRoute<TChild>>
 private constructor() :
-    BaseRoute {
+    BaseRoute<TChild> {
     // TBD
 }

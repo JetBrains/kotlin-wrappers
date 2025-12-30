@@ -6,6 +6,6 @@ import tanstack.router.core.BaseRoute
 
 external class Route
 private constructor() :
-    BaseRoute {
+    BaseRoute<Route> {
     // TBD
 }

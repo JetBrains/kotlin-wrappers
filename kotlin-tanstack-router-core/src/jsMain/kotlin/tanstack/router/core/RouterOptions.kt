@@ -8,7 +8,7 @@ import web.scroll.ScrollBehavior
 import web.scroll.ScrollIntoViewOptions
 
 @JsPlainObject
-external interface RouterOptions<TRouteTree : BaseRootRoute> {
+external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
     /**
      * The history object that will be used to manage the browser history.
      *
