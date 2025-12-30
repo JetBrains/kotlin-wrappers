@@ -26,7 +26,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#stringifysearch-method)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/custom-search-param-serialization)
      */
-    // stringifySearch?: SearchSerializer;
+    val stringifySearch: SearchSerializer?
 
     /**
      * A function that will be used to parse search params when parsing the current location.
@@ -35,7 +35,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#parsesearch-method)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/custom-search-param-serialization)
      */
-    // parseSearch?: SearchParser;
+    val parseSearch: SearchParser?
 
     /**
      * If `false`, routes will not be preloaded by default in any way.
