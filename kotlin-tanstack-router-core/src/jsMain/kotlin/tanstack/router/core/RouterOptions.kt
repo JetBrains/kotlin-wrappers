@@ -237,7 +237,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      * `default` - 'never'
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#trailingslash-property)
      */
-    // val trailingSlash: TTrailingSlashOption?
+    val trailingSlash: TrailingSlash?
 
     /**
      * While usually automatic, sometimes it can be useful to force the router into a server-side state, e.g. when using the router in a non-browser environment that has access to a global.document object.
