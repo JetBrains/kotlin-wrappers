@@ -10,7 +10,7 @@ import tanstack.router.core.Search
 internal external interface UseSearchOptions<T> {
     val from: RouteId? /* RoutePath */
     val strict: Boolean?
-    val select: ((Search) -> T)?
+    val select: Select<Search, T>?
     val structuralSharing: Boolean?
     val shouldThrow: Boolean?
 }
