@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import js.import.import
 import js.objects.recordOf
 import node.karakum.annotations.*
 import node.karakum.inheritanceModifiers.modifyClassInheritance
@@ -15,14 +14,8 @@ import node.karakum.inheritanceModifiers.modifyPropertyInheritance
 import node.karakum.injections.*
 import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
-import node.module.findPackageJSON
-import node.path.path
 
 suspend fun main(args: ReadonlyArray<String>) {
-    val nodePackage = findPackageJSON("@types/node", import.meta.url)
-        .let { requireNotNull(it) }
-        .let { path.dirname(it) }
-
     generate(args) {
         plugins = manyOf(
             AmbiguousSignaturePlugin(),
@@ -163,24 +156,23 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::modifyPropertyInheritance,
         )
 
-        inputResolutionStrategy = InputResolutionStrategy.plain
-        input = manyOf("$nodePackage/**/*.d.ts")
+        input = manyOf("**/*.d.ts")
         ignoreInput = manyOf(
-            "$nodePackage/ts*/**",
-            "$nodePackage/web-globals/**",
-            "$nodePackage/assert/strict.d.ts",
-            "$nodePackage/constants.d.ts",
-            "$nodePackage/compatibility/disposable.d.ts",
-            "$nodePackage/compatibility/indexable.d.ts",
-            "$nodePackage/compatibility/iterators.d.ts",
-            "$nodePackage/console.d.ts",
-            "$nodePackage/dom-events.d.ts",
-            "$nodePackage/domain.d.ts",
-            "$nodePackage/punycode.d.ts",
-            "$nodePackage/stream/web.d.ts",
-            "$nodePackage/string_decoder.d.ts",
-            "$nodePackage/timers.d.ts",
-            "$nodePackage/timers/promises.d.ts"
+            "**/ts*/**",
+            "**/web-globals/**",
+            "**/assert/strict.d.ts",
+            "**/constants.d.ts",
+            "**/compatibility/disposable.d.ts",
+            "**/compatibility/indexable.d.ts",
+            "**/compatibility/iterators.d.ts",
+            "**/console.d.ts",
+            "**/dom-events.d.ts",
+            "**/domain.d.ts",
+            "**/punycode.d.ts",
+            "**/stream/web.d.ts",
+            "**/string_decoder.d.ts",
+            "**/timers.d.ts",
+            "**/timers/promises.d.ts"
         )
         ignoreOutput = manyOf(
             "**/_Blob.kt",
@@ -332,7 +324,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/workerThreads/MessageChannel.kt",
             "**/workerThreads/MessagePort.kt"
         )
-        libraryName = "node"
         libraryNameOutputPrefix = true
         moduleNameMapper = recordOf(
             "(.+)" to "node:$1",
