@@ -276,6 +276,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.scroll.ScrollIntoViewOptions",
     "web.scroll.ScrollToOptions",
     "web.selection.Selection",
+    "web.selection.SelectionDirection",
     "web.serialization.StructuredSerializeOptions",
     "web.serviceworker.ExtendableEvent",
     "web.serviceworker.ExtendableEventInit",

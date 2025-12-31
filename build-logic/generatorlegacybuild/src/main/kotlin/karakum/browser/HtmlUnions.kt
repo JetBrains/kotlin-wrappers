@@ -41,15 +41,6 @@ internal val UNION_DATA_LIST = listOf(
         pkg = "web.html",
     ),
     UnionData(
-        name = "SelectionDirection",
-        values = listOf(
-            "forward",
-            "backward",
-            "none",
-        ),
-        pkg = "web.html",
-    ),
-    UnionData(
         name = "DropEffect",
         values = listOf(
             "none",
