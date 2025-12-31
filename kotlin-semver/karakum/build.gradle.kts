@@ -2,6 +2,6 @@ plugins {
     id("generatorbuild.karakum-conventions")
 }
 
-dependencies {
-    jsMainImplementation(npm(jspkg.types.semver))
+karakum {
+    library(jspkg.types.semver)
 }
