@@ -142,6 +142,7 @@ private fun generate(
         .filter { "DefinedInitialDataOptions" !in it }
         .filter { "UndefinedInitialDataInfiniteOptions" !in it }
         .filter { "DefinedInitialDataInfiniteOptions" !in it }
+        .filter { "addConsumeAwareSignal" !in it }
         .filter { "ensureQueryFn" !in it }
         .filter { it.isNotEmpty() }
         .joinToString("\n\n")
