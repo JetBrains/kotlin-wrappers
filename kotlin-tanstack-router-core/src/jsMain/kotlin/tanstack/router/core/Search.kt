@@ -1,3 +1,5 @@
 package tanstack.router.core
 
-typealias Search = Any?
+import js.objects.ReadonlyRecord
+
+typealias Search = ReadonlyRecord<String, *>
