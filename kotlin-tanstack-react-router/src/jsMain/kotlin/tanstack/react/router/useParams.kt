@@ -10,7 +10,7 @@ import tanstack.router.core.RouteId
 internal external interface UseParamsOptions<T> {
     val from: RouteId? /* RoutePath */
     val strict: Boolean?
-    val select: ((params: Params) -> T)?
+    val select: ((Params) -> T)?
     val structuralSharing: Boolean?
     val shouldThrow: Boolean?
 }
