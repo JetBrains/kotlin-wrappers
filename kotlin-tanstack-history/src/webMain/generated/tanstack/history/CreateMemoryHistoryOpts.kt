@@ -2,7 +2,9 @@
 
 package tanstack.history
 
+import js.array.ReadonlyArray
+
 external interface CreateMemoryHistoryOpts {
-    var initialEntries: Array<String>
-    var initialIndex: Double?
+    var initialEntries: ReadonlyArray<String>
+    var initialIndex: Int?
 }

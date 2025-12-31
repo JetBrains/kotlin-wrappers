@@ -2,10 +2,12 @@
 
 package tanstack.history
 
+import js.collections.JsSet
+
 external interface RouterHistory {
     var location: HistoryLocation
-    var length: Double
-    var subscribers: Set<(opts: SubscriberArgs) -> Unit>
+    var length: Int
+    var subscribers: JsSet<(opts: SubscriberArgs) -> Unit>
     var subscribe: (cb: (opts: SubscriberArgs) -> Unit) -> () -> Unit
     var push: (
         path: String,
@@ -17,7 +19,7 @@ external interface RouterHistory {
         state: Any?, /* use undefined for default */
         navigateOpts: NavigateOptions?, // use undefined for default
     ) -> Unit
-    var go: (index: Double, navigateOpts: NavigateOptions? /* use undefined for default */) -> Unit
+    var go: (index: Int, navigateOpts: NavigateOptions? /* use undefined for default */) -> Unit
     var back: (navigateOpts: NavigateOptions? /* use undefined for default */) -> Unit
     var forward: (navigateOpts: NavigateOptions? /* use undefined for default */) -> Unit
     var canGoBack: () -> Boolean
