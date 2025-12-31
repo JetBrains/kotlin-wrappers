@@ -2,6 +2,9 @@
 
 package tanstack.history
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface BlockerFnArgs {
     var currentLocation: HistoryLocation
     var nextLocation: HistoryLocation
