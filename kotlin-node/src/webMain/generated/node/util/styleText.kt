@@ -211,7 +211,7 @@ external fun styleText(
  * @since v20.12.0
  */
 external fun styleText(
-    format: Array<Any /* ForegroundColors | BackgroundColors | Modifiers */>,
+    format: js.array.ReadonlyArray<Any /* ForegroundColors | BackgroundColors | Modifiers */>,
     text: String,
     options: StyleTextOptions = definedExternally,
 ): String

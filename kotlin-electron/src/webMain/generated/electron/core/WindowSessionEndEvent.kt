@@ -8,5 +8,5 @@ external interface WindowSessionEndEvent : Event<Any> {
      * List of reasons for shutdown. Can be 'shutdown', 'close-app', 'critical', or
      * 'logoff'.
      */
-    var reasons: Array<WindowSessionEndEventReasons>
+    var reasons: js.array.ReadonlyArray<WindowSessionEndEventReasons>
 }

@@ -25,7 +25,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             ContractFunctionApiPlugin(),
 
             convertArrayInheritance,
-            convertCollections,
             convertConflictingOverloads,
             convertIncompatibleParameterName,
             convertJSDocAugmentsTagClassReference,

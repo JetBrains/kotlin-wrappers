@@ -15,7 +15,7 @@ external interface WebRequestFilter {
      * `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`,
      * `cspReport`, `media` or `webSocket`.
      */
-    var types: Array<WebRequestFilterType>?
+    var types: js.array.ReadonlyArray<WebRequestFilterType>?
 
     /**
      * Array of URL patterns used to include requests that match these patterns. Use

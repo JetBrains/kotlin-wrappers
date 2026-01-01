@@ -7,7 +7,7 @@ external interface MediaAccessPermissionRequest : PermissionRequest {
     /**
      * The types of media access being requested - elements can be `video` or `audio`.
      */
-    var mediaTypes: Array<MediaAccessPermissionRequestMediaType>?
+    var mediaTypes: js.array.ReadonlyArray<MediaAccessPermissionRequestMediaType>?
 
     /**
      * The security origin of the request.

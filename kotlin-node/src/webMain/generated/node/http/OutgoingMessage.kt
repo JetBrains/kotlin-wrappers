@@ -158,7 +158,9 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeaders(headers: Map<String, Any /* number | string | readonly string[] */>) // this
+    fun setHeaders(
+        headers: js.collections.ReadonlyMap<String, Any /* number | string | readonly string[] */>,
+    ) // this
 
     /**
      * Append a single header value to the header object.

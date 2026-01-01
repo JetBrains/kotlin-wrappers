@@ -117,7 +117,7 @@ external interface ServerOptions<Request : IncomingMessage, Response : ServerRes
      * A list of response headers that should be sent only once.
      * If the header's value is an array, the items will be joined using `; `.
      */
-    var uniqueHeaders: Array<Any /* string | string[] */>?
+    var uniqueHeaders: js.array.ReadonlyArray<Any /* string | string[] */>?
 
     /**
      * A callback which receives an

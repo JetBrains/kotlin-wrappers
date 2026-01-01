@@ -13,7 +13,7 @@ external class MockPropertyContext<PropertyType /* default is Any? */> {
      * A getter that returns a copy of the internal array used to track accesses (get/set) to
      * the mocked property. Each entry in the array is an object with the following properties:
      */
-    val accesses: Array<MockPropertyContextAccessesItem<PropertyType>>
+    val accesses: js.array.ReadonlyArray<MockPropertyContextAccessesItem<PropertyType>>
 
     /**
      * This function returns the number of times that the property was accessed.

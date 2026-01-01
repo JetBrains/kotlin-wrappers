@@ -17,7 +17,7 @@ external interface LoadURLOptions {
      * Extra headers separated by "\n"
      */
     var extraHeaders: String?
-    var postData: Array<Any /* (UploadRawData) | (UploadFile) */>?
+    var postData: js.array.ReadonlyArray<Any /* (UploadRawData) | (UploadFile) */>?
 
     /**
      * Base url (with trailing path separator) for files to be loaded by the data url.

@@ -101,7 +101,7 @@ open external class Writable :
 
     open val _writev: (
         (
-        chunks: Array<WritableWritevChunksItem>,
+        chunks: js.array.ReadonlyArray<WritableWritevChunksItem>,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ) -> Unit
     )?

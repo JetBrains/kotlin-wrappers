@@ -29,21 +29,5 @@ val convertErrorTypeReferenceNode = createPlugin { node, context, _ ->
         ensure(namespaceName.text == "EventData")
 
         "node.test.eventData.Error"
-    } ?: nullable {
-        ensure(isTypeReferenceNode(node))
-
-        val name = node.typeName
-        ensure(isIdentifier(name))
-        ensure(name.text == "Error")
-
-        "js.errors.JsError"
-    } ?: nullable {
-        ensure(isExpressionWithTypeArguments(node))
-
-        val expression = node.expression
-        ensure(isIdentifier(expression))
-        ensure(expression.text == "Error")
-
-        "js.errors.JsError"
     }
 }

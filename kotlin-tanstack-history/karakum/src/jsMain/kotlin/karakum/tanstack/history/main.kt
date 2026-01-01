@@ -8,6 +8,7 @@ import js.objects.recordOf
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         input = manyOf("dist/esm/index.d.ts")
+        libraryNameOutputPrefix = true
         packageNameMapper = recordOf(
             "dist/esm/" to "/"
         )

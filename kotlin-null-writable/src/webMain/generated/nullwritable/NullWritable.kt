@@ -17,8 +17,8 @@ external class NullWritable : Writable {
 
     override val _writev: (
         (
-            chunks: Array<node.stream.WritableWritevChunksItem>,
-            callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
-        ) -> Unit
+        chunks: js.array.ReadonlyArray<node.stream.WritableWritevChunksItem>,
+        callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
+    ) -> Unit
     )?
 }

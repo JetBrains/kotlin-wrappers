@@ -7,7 +7,7 @@ external interface HIDDevice {
     /**
      * an array of report formats. See MDN documentation for more.
      */
-    var collections: Array<Collections>
+    var collections: js.array.ReadonlyArray<Collections>
 
     /**
      * Unique identifier for the device.

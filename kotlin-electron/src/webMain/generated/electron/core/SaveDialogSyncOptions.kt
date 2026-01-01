@@ -40,7 +40,7 @@ external interface SaveDialogSyncOptions {
      * @platform darwin
      */
     var showsTagField: Boolean?
-    var properties: Array<SaveDialogSyncOptionsProperty>?
+    var properties: js.array.ReadonlyArray<SaveDialogSyncOptionsProperty>?
 
     /**
      * Create a security scoped bookmark when packaged for the Mac App Store. If this

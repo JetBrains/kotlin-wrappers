@@ -6,5 +6,5 @@ sealed external interface GCProfilerResult {
     var version: Double
     var startTime: Double
     var endTime: Double
-    var statistics: Array<GCProfilerResultStatisticsItem>
+    var statistics: js.array.ReadonlyArray<GCProfilerResultStatisticsItem>
 }

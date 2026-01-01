@@ -9,7 +9,7 @@ external interface InputEvent {
      * `meta`, `command`, `cmd`, `iskeypad`, `isautorepeat`, `leftbuttondown`,
      * `middlebuttondown`, `rightbuttondown`, `capslock`, `numlock`, `left`, `right`.
      */
-    var modifiers: Array<InputEventModifier>?
+    var modifiers: js.array.ReadonlyArray<InputEventModifier>?
 
     /**
      * Can be `undefined`, `mouseDown`, `mouseUp`, `mouseMove`, `mouseEnter`,

@@ -4,7 +4,7 @@ package node.childProcess
 
 sealed external interface SpawnSyncReturns<T> {
     var pid: Double
-    var output: Array<T?>
+    var output: js.array.ReadonlyArray<T?>
     var stdout: T
     var stderr: T
     var status: Double?

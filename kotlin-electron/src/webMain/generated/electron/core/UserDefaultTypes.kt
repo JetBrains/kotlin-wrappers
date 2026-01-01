@@ -4,7 +4,7 @@ package electron.core
 
 external interface UserDefaultTypes {
     // Docs: https://electronjs.org/docs/api/structures/user-default-types
-    var array: Array<Any?>
+    var array: js.array.ReadonlyArray<Any?>
     var boolean: Boolean
     var dictionary: js.objects.ReadonlyRecord<String, Any?>
     var double: Double

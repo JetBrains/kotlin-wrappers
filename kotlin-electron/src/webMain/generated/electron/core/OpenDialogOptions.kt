@@ -17,7 +17,7 @@ external interface OpenDialogOptions {
      * Contains which features the dialog should use. The following values are
      * supported:
      */
-    var properties: Array<OpenDialogOptionsProperty>?
+    var properties: js.array.ReadonlyArray<OpenDialogOptionsProperty>?
 
     /**
      * Message to display above input boxes.

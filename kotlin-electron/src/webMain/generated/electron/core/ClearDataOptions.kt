@@ -8,7 +8,7 @@ external interface ClearDataOptions {
      * can potentially include data types not explicitly listed here. (See Chromium's
      * `BrowsingDataRemover` for the full list.)
      */
-    var dataTypes: Array<ClearDataOptionsDataType>?
+    var dataTypes: js.array.ReadonlyArray<ClearDataOptionsDataType>?
 
     /**
      * Clear data for only these origins. Cannot be used with `excludeOrigins`.

@@ -20,5 +20,5 @@ external interface PostBody {
     /**
      * The post data to be sent to the new window.
      */
-    var data: Array<Any /* (UploadRawData) | (UploadFile) */>
+    var data: js.array.ReadonlyArray<Any /* (UploadRawData) | (UploadFile) */>
 }

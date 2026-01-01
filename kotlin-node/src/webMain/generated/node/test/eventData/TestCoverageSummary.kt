@@ -6,7 +6,7 @@ sealed external interface TestCoverageSummary {
     /**
      * An array of coverage reports for individual files.
      */
-    var files: Array<TestCoverageSummaryFilesItem>
+    var files: js.array.ReadonlyArray<TestCoverageSummaryFilesItem>
 
     /**
      * An object containing whether or not the coverage for

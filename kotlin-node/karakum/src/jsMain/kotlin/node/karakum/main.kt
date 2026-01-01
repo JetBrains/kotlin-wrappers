@@ -36,7 +36,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertBufferBlob,
             convertBufferReference,
             convertCallTrackerConflictingOverloads,
-            convertCollections,
             convertCompareResultType,
             convertConflictingEntityNames,
             convertConflictingOverloads,

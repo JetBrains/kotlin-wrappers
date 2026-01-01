@@ -18,4 +18,4 @@ package node.util
  * ```
  * @since v16.0.0, v14.17.0
  */
-external fun getSystemErrorMap(): Map<Double, js.array.Tuple2<String, String>>
+external fun getSystemErrorMap(): js.collections.ReadonlyMap<Double, js.array.Tuple2<String, String>>

@@ -11,7 +11,7 @@ external interface ConnectionOptions :
 
     var socket: node.stream.Duplex? // Establish secure connection on a given socket rather than creating a new socket
 
-    var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> js.errors.JsError?)?
+    var checkServerIdentity: ((hostname: String, cert: PeerCertificate) -> Error?)?
     var servername: String? // SNI TLS Extension
 
     var session: node.buffer.Buffer<*>?

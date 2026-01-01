@@ -21,9 +21,7 @@ import js.objects.recordOf
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
-            convertCollections,
             convertElectronQualifiedName,
-            convertErrorTypeReferenceNode,
             convertEvent,
             convertFileHeritageClause,
             convertNodeJsNamespace,

@@ -56,15 +56,15 @@ sealed external interface TestCoverageSummaryFilesItem {
     /**
      * An array of functions representing function coverage.
      */
-    var functions: Array<TestCoverageSummaryFilesItemFunctionsItem>
+    var functions: js.array.ReadonlyArray<TestCoverageSummaryFilesItemFunctionsItem>
 
     /**
      * An array of branches representing branch coverage.
      */
-    var branches: Array<TestCoverageSummaryFilesItemBranchesItem>
+    var branches: js.array.ReadonlyArray<TestCoverageSummaryFilesItemBranchesItem>
 
     /**
      * An array of lines representing line numbers and the number of times they were covered.
      */
-    var lines: Array<TestCoverageSummaryFilesItemLinesItem>
+    var lines: js.array.ReadonlyArray<TestCoverageSummaryFilesItemLinesItem>
 }

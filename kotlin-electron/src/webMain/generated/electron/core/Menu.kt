@@ -72,7 +72,9 @@ open external class Menu : NodeEventEmitter {
          * You can also attach other fields to the element of the `template` and they will
          * become properties of the constructed menu items.
          */
-        fun buildFromTemplate(template: Array<Any /* (MenuItemConstructorOptions) | (MenuItem) */>): Menu
+        fun buildFromTemplate(
+            template: js.array.ReadonlyArray<Any /* (MenuItemConstructorOptions) | (MenuItem) */>,
+        ): Menu
 
         /**
          * The application menu, if set, or `null`, if not set.

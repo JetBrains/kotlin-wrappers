@@ -17,7 +17,7 @@ sealed external interface WritableOptions<T : Writable /* default is Writable */
     var writev: (
         (
         // this: T,
-        chunks: Array<WritableOptionsWritevChunksItem>,
+        chunks: js.array.ReadonlyArray<WritableOptionsWritevChunksItem>,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ) -> Unit
     )?

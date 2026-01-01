@@ -226,7 +226,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
      * @param origins One or more URL Strings passed as separate arguments.
      */
     fun origin(
-        vararg origins: Array<
+        vararg origins: js.array.ReadonlyArray<
                 Any /* string | url.URL | {
     origin: string;
 } */

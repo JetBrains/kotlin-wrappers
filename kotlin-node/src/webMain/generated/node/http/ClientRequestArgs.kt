@@ -42,6 +42,6 @@ sealed external interface ClientRequestArgs : LookupOptions {
     var signal: AbortSignal?
     var socketPath: String?
     var timeout: Double?
-    var uniqueHeaders: Array<Any /* string | string[] */>?
+    var uniqueHeaders: js.array.ReadonlyArray<Any /* string | string[] */>?
     var joinDuplicateHeaders: Boolean?
 }

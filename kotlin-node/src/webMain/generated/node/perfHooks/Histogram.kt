@@ -76,13 +76,13 @@ sealed external interface Histogram {
      * Returns a `Map` object detailing the accumulated percentile distribution.
      * @since v11.10.0
      */
-    val percentiles: Map<Double, Double>
+    val percentiles: js.collections.ReadonlyMap<Double, Double>
 
     /**
      * Returns a `Map` object detailing the accumulated percentile distribution.
      * @since v17.4.0, v16.14.0
      */
-    val percentilesBigInt: Map<js.core.BigInt, js.core.BigInt>
+    val percentilesBigInt: js.collections.ReadonlyMap<js.core.BigInt, js.core.BigInt>
 
     /**
      * Resets the collected histogram data.

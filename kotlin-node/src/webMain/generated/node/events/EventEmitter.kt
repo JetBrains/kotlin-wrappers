@@ -233,7 +233,7 @@ open external class EventEmitter {
      * ```
      * @since v0.1.26
      */
-    fun listeners(type: EventType): Array<EventListener>
+    fun listeners(type: EventType): js.array.ReadonlyArray<EventListener>
 
     /**
      * Returns a copy of the array of listeners for the event named `eventName`,
@@ -265,7 +265,7 @@ open external class EventEmitter {
      * ```
      * @since v9.4.0
      */
-    fun rawListeners(type: EventType): Array<EventListener>
+    fun rawListeners(type: EventType): js.array.ReadonlyArray<EventListener>
 
     /**
      * Synchronously calls each of the listeners registered for the event named `eventName`, in the order they were registered, passing the supplied arguments
@@ -377,7 +377,7 @@ open external class EventEmitter {
      * ```
      * @since v6.0.0
      */
-    fun eventNames(): Array<EventType>
+    fun eventNames(): js.array.ReadonlyArray<EventType>
 
     companion object {
         /**
