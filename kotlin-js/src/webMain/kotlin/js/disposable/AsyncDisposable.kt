@@ -1,16 +1,13 @@
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package js.disposable
 
 import js.core.Void
+import js.hacks.safeFactory
 import js.promise.PromiseLike
 import js.symbol.Symbol
-import kotlin.js.definedExternally
 
-external interface AsyncDisposable {
-    operator fun get(
-        key: Symbol.asyncDispose,
-    ): () -> PromiseLike<Void> = definedExternally
-}
+external interface AsyncDisposable
+
+operator fun AsyncDisposable.get(
+    key: Symbol.asyncDispose,
+): () -> PromiseLike<Void> =
+    safeFactory(Symbol.asyncDispose)

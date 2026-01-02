@@ -1,25 +1,22 @@
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package js.iterable
 
 import js.disposable.internal.SuspendCloseable
 import js.disposable.internal.awaitFirst
 import js.disposable.internal.use
+import js.hacks.safeFactory
 import js.objects.PropertyKey
 import js.promise.await
 import js.symbol.Symbol
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
-external interface AsyncIterable<out T : JsAny?> {
-    operator fun get(
-        key: Symbol.asyncIterator,
-    ): () -> AsyncIterator<T> = definedExternally
-}
+external interface AsyncIterable<out T : JsAny?>
+
+operator fun <T : JsAny?> AsyncIterable<T>.get(
+    key: Symbol.asyncIterator,
+): () -> AsyncIterator<T> =
+    safeFactory(Symbol.asyncIterator)
 
 fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
     flow {
