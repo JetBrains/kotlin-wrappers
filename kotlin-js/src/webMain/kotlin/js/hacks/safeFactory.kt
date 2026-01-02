@@ -9,7 +9,7 @@ private external interface SafeFactory<C : JsAny, R : JsAny?> {
     fun bind(thisArg: C): () -> R
 }
 
-// TODO: report Kotlin issue
+// TODO: remove after KT-83425 is fixed
 internal fun <C : JsAny, R : JsAny?> C.safeFactory(
     propertyKey: Symbol,
 ): () -> R =
