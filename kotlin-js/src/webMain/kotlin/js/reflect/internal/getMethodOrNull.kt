@@ -1,8 +1,7 @@
 package js.reflect.internal
 
-import js.internal.InternalApi
+import js.objects.PropertyKey
 import js.reflect.Reflect
-import js.symbol.Symbol
 import kotlin.js.JsAny
 import kotlin.js.unsafeCast
 
@@ -10,9 +9,8 @@ private external interface FunctionWithoutContext<C : JsAny, R : JsAny?> {
     fun bind(thisArg: C): () -> R
 }
 
-@InternalApi
-fun <C : JsAny, R : JsAny?> C.getMethodOrNull(
-    propertyKey: Symbol,
+internal fun <C : JsAny, R : JsAny?> C.getMethodOrNull(
+    propertyKey: PropertyKey,
 ): (() -> R)? {
     val function = Reflect.get(this, propertyKey)
         ?: return null
