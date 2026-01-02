@@ -3,7 +3,7 @@ package js.iterable
 import js.disposable.internal.SuspendCloseable
 import js.disposable.internal.awaitFirst
 import js.disposable.internal.use
-import js.hacks.safeFactory
+import js.hacks.safeMethod
 import js.objects.PropertyKey
 import js.promise.await
 import js.symbol.Symbol
@@ -16,7 +16,7 @@ external interface AsyncIterable<out T : JsAny?>
 operator fun <T : JsAny?> AsyncIterable<T>.get(
     key: Symbol.asyncIterator,
 ): () -> AsyncIterator<T> =
-    safeFactory(Symbol.asyncIterator)
+    safeMethod(Symbol.asyncIterator)
 
 fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
     flow {

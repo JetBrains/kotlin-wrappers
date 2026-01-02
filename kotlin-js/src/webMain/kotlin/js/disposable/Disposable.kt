@@ -1,7 +1,7 @@
 package js.disposable
 
 import js.core.Void
-import js.hacks.safeFactory
+import js.hacks.safeMethod
 import js.symbol.Symbol
 
 external interface Disposable
@@ -9,4 +9,4 @@ external interface Disposable
 operator fun Disposable.get(
     key: Symbol.dispose,
 ): () -> Void =
-    safeFactory(Symbol.dispose)
+    safeMethod(Symbol.dispose)
