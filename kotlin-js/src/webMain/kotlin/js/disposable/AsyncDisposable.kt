@@ -4,11 +4,13 @@
 
 package js.disposable
 
+import js.core.Void
+import js.promise.PromiseLike
 import js.symbol.Symbol
 import kotlin.js.definedExternally
 
 external interface AsyncDisposable {
     operator fun get(
         key: Symbol.asyncDispose,
-    ): AsyncDispose = definedExternally
+    ): () -> PromiseLike<Void> = definedExternally
 }

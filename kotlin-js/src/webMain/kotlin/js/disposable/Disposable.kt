@@ -10,5 +10,5 @@ import kotlin.js.definedExternally
 external interface Disposable {
     operator fun get(
         key: Symbol.dispose,
-    ): Dispose = definedExternally
+    ): () -> Unit = definedExternally
 }
