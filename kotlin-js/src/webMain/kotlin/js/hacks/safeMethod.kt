@@ -1,6 +1,6 @@
 package js.hacks
 
-import js.function.getMethodOrNull
+import js.reflect.internal.getMethodOrNull
 import js.symbol.Symbol
 import kotlin.js.JsAny
 

@@ -1,4 +1,4 @@
-package js.function
+package js.reflect.internal
 
 import js.internal.InternalApi
 import js.reflect.Reflect
