@@ -27,8 +27,10 @@ external interface RouteOptions<TParentRoute : AnyRoute> {
     val context: ((ctx: RouteContextOptions) -> Context?)?
 
     // val ssr: ((ctx: SsrContextOptions) -> Awaitable<SSROption?>)?
-    // val beforeLoad: ((ctx: BeforeLoadContextOptions) -> ValidateSerializableLifecycleResult)?
-    // val loaderDeps: ((opts: FullSearchSchemaOption) -> TLoaderDeps)?
+
+    val beforeLoad: ((ctx: BeforeLoadContextOptions) -> PromiseResult<Context?>?)?
+    val loaderDeps: ((opts: FullSearchSchemaOption) -> LoaderDeps?)?
+
     // val remountDeps: ((opt: RemountDepsOptions) -> Any?)?
     val loader: ((ctx: LoaderFnContext) -> PromiseResult<Any? /* LoaderData */>?)?
 }
