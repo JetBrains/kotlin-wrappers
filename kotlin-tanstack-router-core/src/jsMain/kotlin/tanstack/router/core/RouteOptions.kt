@@ -14,10 +14,10 @@ external interface RouteOptions<TParentRoute : AnyRoute> :
     val id: RouteId?
 
     // ParamsOptions
-    val params: Params?
+    val params: ParamsOptions?
 
     @JsPlainObject
-    interface Params {
+    interface ParamsOptions {
         val parse: ((rawParams: String) -> Params)?
         val stringify: ((params: Params) -> String)?
     }

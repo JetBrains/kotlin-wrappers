@@ -264,10 +264,10 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      */
     val defaultSsr: SSROption?
 
-    val search: Search?
+    val search: SearchOptions?
 
     @JsPlainObject
-    interface Search {
+    interface SearchOptions {
         /**
          * Configures how unknown search params (= not returned by any `validateSearch`) are treated.
          *

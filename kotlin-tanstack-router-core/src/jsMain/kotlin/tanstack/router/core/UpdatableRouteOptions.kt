@@ -15,10 +15,10 @@ external interface UpdatableRouteOptions {
     val preload: Boolean?
     val preloadStaleTime: Int?
     val preloadGcTime: Int?
-    val search: Search?
+    val search: SearchOptions?
 
     @JsPlainObject
-    interface Search {
+    interface SearchOptions {
         // middlewares?: Array<SearchMiddleware<ResolveFullSearchSchemaInput<TParentRoute, TSearchValidator>>>
     }
 
