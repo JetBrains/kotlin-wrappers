@@ -1,5 +1,6 @@
 package tanstack.router.core
 
+import js.array.ReadonlyArray
 import js.errors.JsError
 import js.errors.JsErrorLike
 import js.objects.JsPlainObject
@@ -19,7 +20,7 @@ external interface UpdatableRouteOptions {
 
     @JsPlainObject
     interface SearchOptions {
-        // middlewares?: Array<SearchMiddleware<ResolveFullSearchSchemaInput<TParentRoute, TSearchValidator>>>
+        val middlewares: ReadonlyArray<SearchMiddleware>?
     }
 
     // val postSearchFilters?: Array<SearchFilter<ResolveFullSearchSchema<TParentRoute, TSearchValidator>>>
