@@ -351,10 +351,10 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
 
     val origin: String?
 
-    val ssr: SSR?
+    val ssr: SSROptions?
 
     @JsPlainObject
-    interface SSR {
+    interface SSROptions {
         val nonce: String?
     }
 }
