@@ -4,7 +4,8 @@ import js.objects.JsPlainObject
 import js.promise.PromiseResult
 
 @JsPlainObject
-external interface RouteOptions<TParentRoute : AnyRoute> {
+external interface RouteOptions<TParentRoute : AnyRoute> :
+    UpdatableRouteOptions {
     // BaseRouteOptions
     val getParentRoute: () -> TParentRoute
 
