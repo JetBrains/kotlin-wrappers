@@ -262,7 +262,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      *
      * `default` - true
      */
-    val defaultSsr: Any? /* SSROption? */
+    val defaultSsr: SSROption?
 
     val search: Search?
 
