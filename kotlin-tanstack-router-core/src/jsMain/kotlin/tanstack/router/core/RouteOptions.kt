@@ -23,13 +23,13 @@ external interface RouteOptions<TParentRoute : AnyRoute> {
 
     // FilebaseRouteOptionsInterface
     val validateSearch: ((rawSearch: Search) -> Search)?
-    val shouldReload: ((match: LoaderFnContext) -> Boolean?)? /* | Boolean */
-    val context: ((ctx: RouteContextOptions) -> Context?)?
+    val shouldReload: ((context: LoaderFnContext) -> Boolean?)? /* | Boolean */
+    val context: ((options: RouteContextOptions) -> Context?)?
 
-    // val ssr: ((ctx: SsrContextOptions) -> Awaitable<SSROption?>)?
+    // val ssr: ((options: SsrContextOptions) -> Awaitable<SSROption?>)?
 
-    val beforeLoad: ((ctx: BeforeLoadContextOptions) -> PromiseResult<Context?>?)?
-    val loaderDeps: ((opts: FullSearchSchemaOption) -> LoaderDeps?)?
-    val remountDeps: ((opt: RemountDepsOptions) -> Unit)?
-    val loader: ((ctx: LoaderFnContext) -> PromiseResult<Any? /* LoaderData */>?)?
+    val beforeLoad: ((options: BeforeLoadContextOptions) -> PromiseResult<Context?>?)?
+    val loaderDeps: ((options: FullSearchSchemaOption) -> LoaderDeps?)?
+    val remountDeps: ((options: RemountDepsOptions) -> Unit)?
+    val loader: ((options: LoaderFnContext) -> PromiseResult<Any? /* LoaderData */>?)?
 }
