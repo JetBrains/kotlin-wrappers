@@ -30,7 +30,6 @@ external interface RouteOptions<TParentRoute : AnyRoute> {
 
     val beforeLoad: ((ctx: BeforeLoadContextOptions) -> PromiseResult<Context?>?)?
     val loaderDeps: ((opts: FullSearchSchemaOption) -> LoaderDeps?)?
-
-    // val remountDeps: ((opt: RemountDepsOptions) -> Any?)?
+    val remountDeps: ((opt: RemountDepsOptions) -> Unit)?
     val loader: ((ctx: LoaderFnContext) -> PromiseResult<Any? /* LoaderData */>?)?
 }
