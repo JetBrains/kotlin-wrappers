@@ -1,6 +1,7 @@
 package tanstack.router.core
 
 import js.objects.JsPlainObject
+import js.promise.PromiseResult
 
 @JsPlainObject
 external interface RouteOptions<TParentRoute : AnyRoute> {
@@ -20,5 +21,14 @@ external interface RouteOptions<TParentRoute : AnyRoute> {
         val stringify: ((params: Params) -> String)?
     }
 
-    // TBD
+    // FilebaseRouteOptionsInterface
+    val validateSearch: ((rawSearch: Search) -> Search)?
+    val shouldReload: ((match: LoaderFnContext) -> Boolean?)? /* | Boolean */
+
+    // val context?: ((ctx: RouteContextOptions) -> Any?)?
+    // val ssr: ((ctx: SsrContextOptions) -> Awaitable<SSROption?>)?
+    // val beforeLoad: ((ctx: BeforeLoadContextOptions) -> ValidateSerializableLifecycleResult)?
+    // val loaderDeps: ((opts: FullSearchSchemaOption) -> TLoaderDeps)?
+    // val remountDeps: ((opt: RemountDepsOptions) -> Any?)?
+    val loader: ((ctx: LoaderFnContext) -> PromiseResult<Any? /* LoaderData */>?)?
 }
