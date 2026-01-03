@@ -24,8 +24,8 @@ external interface RouteOptions<TParentRoute : AnyRoute> {
     // FilebaseRouteOptionsInterface
     val validateSearch: ((rawSearch: Search) -> Search)?
     val shouldReload: ((match: LoaderFnContext) -> Boolean?)? /* | Boolean */
+    val context: ((ctx: RouteContextOptions) -> Context?)?
 
-    // val context?: ((ctx: RouteContextOptions) -> Any?)?
     // val ssr: ((ctx: SsrContextOptions) -> Awaitable<SSROption?>)?
     // val beforeLoad: ((ctx: BeforeLoadContextOptions) -> ValidateSerializableLifecycleResult)?
     // val loaderDeps: ((opts: FullSearchSchemaOption) -> TLoaderDeps)?
