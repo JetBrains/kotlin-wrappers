@@ -25,9 +25,7 @@ external interface RouteOptions<TParentRoute : AnyRoute> {
     val validateSearch: ((rawSearch: Search) -> Search)?
     val shouldReload: ((context: LoaderFnContext) -> Boolean?)? /* | Boolean */
     val context: ((options: RouteContextOptions) -> Context?)?
-
-    // val ssr: ((options: SsrContextOptions) -> Awaitable<SSROption?>)?
-
+    val ssr: ((options: SsrContextOptions) -> PromiseResult<SSROption?>)?
     val beforeLoad: ((options: BeforeLoadContextOptions) -> PromiseResult<Context?>?)?
     val loaderDeps: ((options: FullSearchSchemaOption) -> LoaderDeps?)?
     val remountDeps: ((options: RemountDepsOptions) -> Unit)?
