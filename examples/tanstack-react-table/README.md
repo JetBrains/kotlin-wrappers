@@ -1,5 +1,6 @@
 ### Run
 
 ```shell
-./../gradlew jsBrowserDevelopmentRun
+cd ..
+./gradlew tanstack-react-table:jsBrowserDevelopmentRun
 ```
