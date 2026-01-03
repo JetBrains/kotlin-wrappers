@@ -184,9 +184,9 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#context-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/router-context)
      */
-    val context: Any? /* InferRouterContext<TRouteTree>? */
+    val context: Context?
 
-    val additionalContext: Any?
+    val additionalContext: Context?
 
     /**
      * A function that will be called when the router is dehydrated.
