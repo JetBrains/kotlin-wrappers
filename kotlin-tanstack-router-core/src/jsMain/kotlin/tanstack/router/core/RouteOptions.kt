@@ -3,11 +3,11 @@ package tanstack.router.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface RouteOptions<TParentRoute : AnyRoute> :
+external interface RouteOptions :
     FilebaseRouteOptions,
     UpdatableRouteOptions {
     // BaseRouteOptions
-    val getParentRoute: () -> TParentRoute
+    val getParentRoute: () -> AnyRoute
 
     // RoutePathOptions
     val path: RoutePath?
