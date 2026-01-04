@@ -11,7 +11,7 @@ dokka {
     }
 
     pluginsConfiguration.html {
-        homepageLink = "https://github.com/JetBrains/kotlin-wrappers/"
+        homepageLink = KotlinWrappers.PROJECT_URL
         templatesDir.convention(layout.projectDirectory.dir("templates"))
         customAssets.from(
             "assets/homepage.svg",

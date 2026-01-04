@@ -18,7 +18,7 @@ dokka {
 
             sourceLink {
                 localDirectory = dir
-                remoteUrl("https://github.com/JetBrains/kotlin-wrappers/tree/master/$relativeProjectPath/$path")
+                remoteUrl("${KotlinWrappers.PROJECT_URL}/tree/master/$relativeProjectPath/$path")
             }
         }
 
@@ -42,7 +42,7 @@ dokka {
     }
 
     pluginsConfiguration.html {
-        homepageLink = "https://github.com/JetBrains/kotlin-wrappers/"
+        homepageLink = KotlinWrappers.PROJECT_URL
         templatesDir.convention(rootProject.layout.projectDirectory.dir("docs/templates"))
     }
 }

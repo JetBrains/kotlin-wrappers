@@ -5,7 +5,7 @@ import org.gradle.kotlin.dsl.assign
 private val README_CONTENT = """
 |This Javadoc JAR is intentionally empty.
 |
-|For documentation, see https://github.com/JetBrains/kotlin-wrappers/ or the sources JAR.
+|For documentation, see ${KotlinWrappers.PROJECT_URL} or the sources JAR.
 |
 """.trimMargin()
 

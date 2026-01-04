@@ -7,7 +7,7 @@ internal fun MavenPublication.configurePom(
     pom {
         name.set(project.name)
         description.set(project.description)
-        url.set("https://github.com/JetBrains/kotlin-wrappers")
+        url.set(KotlinWrappers.PROJECT_URL)
 
         licenses {
             license {
@@ -29,7 +29,7 @@ internal fun MavenPublication.configurePom(
         scm {
             connection.set("scm:git:git://github.com/JetBrains/kotlin-wrappers.git")
             developerConnection.set("scm:git:git@github.com:JetBrains/kotlin-wrappers.git")
-            url.set("https://github.com/JetBrains/kotlin-wrappers")
+            url.set(KotlinWrappers.PROJECT_URL)
         }
     }
 }
