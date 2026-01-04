@@ -14,5 +14,5 @@ package tanstack.react.router
  * @return A root route instance.
  */
 external fun createRootRoute(
-    options: RootRouteOptions,
+    options: RootRouteOptions = definedExternally,
 ): RootRoute
