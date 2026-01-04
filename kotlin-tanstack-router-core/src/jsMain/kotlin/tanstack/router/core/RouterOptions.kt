@@ -290,7 +290,7 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#pathparamsallowedcharacters-property)
      * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/path-params#allowed-characters)
      */
-    val pathParamsAllowedCharacters: ReadonlyArray<String /* ';' | ':' | '@' | '&' | '=' | '+' | '$' | ',' */>
+    val pathParamsAllowedCharacters: ReadonlyArray<String /* ';' | ':' | '@' | '&' | '=' | '+' | '$' | ',' */>?
 
     // defaultRemountDeps?: DefaultRemountDepsFn<TRouteTree>;
 
