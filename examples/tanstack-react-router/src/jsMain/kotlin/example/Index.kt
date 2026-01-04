@@ -7,7 +7,7 @@ import react.dom.html.ReactHTML.ul
 import tanstack.react.router.Link
 import tanstack.router.core.RoutePath
 
-val Root = FC {
+val Index = FC {
     nav {
         ul {
             li {
