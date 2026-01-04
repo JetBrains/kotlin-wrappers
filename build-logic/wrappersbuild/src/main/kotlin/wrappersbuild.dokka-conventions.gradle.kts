@@ -13,11 +13,12 @@ dokka {
         /** Add a source link, if [path] exists. */
         fun addSourceLink(path: String) {
             val dir = layout.projectDirectory.dir(path)
-            if (dir.asFile.exists()) {
-                sourceLink {
-                    localDirectory = dir
-                    remoteUrl("https://github.com/JetBrains/kotlin-wrappers/tree/master/$relativeProjectPath/$path")
-                }
+                .takeIf { it.asFile.exists() }
+                ?: return
+
+            sourceLink {
+                localDirectory = dir
+                remoteUrl("https://github.com/JetBrains/kotlin-wrappers/tree/master/$relativeProjectPath/$path")
             }
         }
 
