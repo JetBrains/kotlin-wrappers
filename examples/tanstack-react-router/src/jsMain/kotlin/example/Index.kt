@@ -5,28 +5,27 @@ import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.nav
 import react.dom.html.ReactHTML.ul
 import tanstack.react.router.Link
-import tanstack.router.core.RoutePath
 
 val Index = FC {
     nav {
         ul {
             li {
                 Link {
-                    to = RoutePath(".")
+                    to = HOME_PATH
 
                     +"Home"
                 }
             }
             li {
                 Link {
-                    to = RoutePath("about")
+                    to = ABOUT_PATH
 
                     +"About"
                 }
             }
             li {
                 Link {
-                    to = RoutePath("topics")
+                    to = TOPICS_PATH
 
                     +"Topics"
                 }
