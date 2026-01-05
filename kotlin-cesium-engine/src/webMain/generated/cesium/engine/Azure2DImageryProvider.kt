@@ -171,28 +171,28 @@ external class Azure2DImageryProvider(
 
     /**
      * Initialization options for the Azure2DImageryProvider constructor
-     * @property [options] Object with the following properties:
-     * @property [options.url] The Azure server url.
+     * @property [subscriptionKey] The public subscription key for the imagery.
+     * @property [url] The Azure server url.
      *   Default value - `"https://atlas.microsoft.com/"`
-     * @property [options.tilesetId] The Azure tileset ID. Valid options are [microsoft.imagery], {@link microsoft.base.road}, and {@link microsoft.base.labels.road}
-     * @property [options.subscriptionKey] The public subscription key for the imagery.
-     * @property [options.ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     * @property [tilesetId] The Azure tileset ID. Valid options are [microsoft.imagery], {@link microsoft.base.road}, and {@link microsoft.base.labels.road}
+     *   Default value - `"microsoft.imagery"`
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
      *   Default value - [Ellipsoid.default]
-     * @property [options.minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
+     * @property [minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
      *   this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
      *   to result in rendering problems.
      *   Default value - `0`
-     * @property [options.maximumLevel] The maximum level-of-detail supported by the imagery provider.
+     * @property [maximumLevel] The maximum level-of-detail supported by the imagery provider.
      *   Default value - `22`
-     * @property [options.rectangle] The rectangle, in radians, covered by the image.
+     * @property [rectangle] The rectangle, in radians, covered by the image.
      *   Default value - [Rectangle.MAX_VALUE]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Azure2DImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val url: String?
-        val tilesetId: String
         val subscriptionKey: String
+        val url: String?
+        val tilesetId: String?
         val ellipsoid: Ellipsoid?
         val minimumLevel: Int?
         val maximumLevel: Int?

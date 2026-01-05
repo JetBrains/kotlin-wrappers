@@ -73,10 +73,6 @@ private fun optionsBody(
     val source = body.removePrefix("{\n")
         .substringBeforeLast("\n")
         .trimIndent()
-        // TODO: Remove when Azure2DImageryProvider.ConstructorOptions is fixed
-        //  GitHub issue: https://github.com/CesiumGS/cesium/pull/13069
-        .removePrefix("options: {\n")
-        .removeSuffix("};")
 
     if ("[key: string]: UniformSpecifier;" in source)
         println(source)
