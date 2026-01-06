@@ -6,7 +6,7 @@ import tanstack.react.router.useParams
 
 val Topic = FC {
     val topicId = useParams {
-        it["topicId"] as String
+        it[TOPIC_ID_PARAM] as String
     }
 
     h3 {

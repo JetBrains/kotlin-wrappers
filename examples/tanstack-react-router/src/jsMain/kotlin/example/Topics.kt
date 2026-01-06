@@ -19,7 +19,7 @@ val Topics = FC {
                 Link {
                     to = TOPIC_PATH
                     params = recordOf(
-                        "topicId" to "components",
+                        TOPIC_ID_PARAM to "components",
                     )
 
                     +"Components"
@@ -29,7 +29,7 @@ val Topics = FC {
                 Link {
                     to = TOPIC_PATH
                     params = recordOf(
-                        "topicId" to "props-v-state",
+                        TOPIC_ID_PARAM to "props-v-state",
                     )
 
                     +"Props v. State"

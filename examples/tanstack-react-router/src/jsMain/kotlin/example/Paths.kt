@@ -1,9 +1,12 @@
 package example
 
+import tanstack.router.core.ParamName
 import tanstack.router.core.RoutePath
 
-val INDEX_PATH = RoutePath("/")
-val HOME_PATH = RoutePath("/home")
-val ABOUT_PATH = RoutePath("/about")
-val TOPICS_PATH = RoutePath("/topics")
-val TOPIC_PATH = RoutePath($$"/topics/$topicId")
+val TOPIC_ID_PARAM: ParamName = ParamName("topicId")
+
+val INDEX_PATH: RoutePath = RoutePath("/")
+val HOME_PATH: RoutePath = RoutePath("/home")
+val ABOUT_PATH: RoutePath = RoutePath("/about")
+val TOPICS_PATH: RoutePath = RoutePath("/topics")
+val TOPIC_PATH: RoutePath = RoutePath("/topics/", TOPIC_ID_PARAM)
