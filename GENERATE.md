@@ -41,6 +41,13 @@ React DOM
 ./gradlew :kotlin-react-dom:build
 ```
 
+TanStack History
+
+```sh
+./gradlew :kotlin-tanstack-history-karakum:generateKarakumExternals
+./gradlew :kotlin-tanstack-history:build
+```
+
 TanStack Query
 
 ```sh
