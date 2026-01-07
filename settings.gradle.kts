@@ -249,6 +249,9 @@ includeKarakum("kotlin-tanstack-virtual")
 // Kotlin/JS: TanStack Virtual Core wrappers
 include("kotlin-tanstack-virtual-core")
 
+// Kotlin/JS: Tauri API wrappers
+include("kotlin-tauri-apps-api")
+
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
