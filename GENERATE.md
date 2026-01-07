@@ -69,6 +69,13 @@ TanStack Virtual
 ./gradlew :kotlin-tanstack-react-virtual:build
 ```
 
+Tauri API
+
+```sh
+./gradlew :kotlin-tauri-apps-api-karakum:generateKarakumExternals
+./gradlew :kotlin-tauri-apps-api:build
+```
+
 VS Code
 
 ```sh
