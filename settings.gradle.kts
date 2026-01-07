@@ -271,3 +271,8 @@ include("kotlin-yaml")
 include("kotlin-wrappers-bom")
 
 include("kotlin-wrappers-catalog")
+
+// Kotlin/Web: tauri wrappers
+include("kotlin-tauri-api")
+
+includeKarakum("kotlin-tauri-api")

@@ -75,3 +75,10 @@ VS Code
 ./gradlew :kotlin-vscode-karakum:generate
 ./gradlew :kotlin-vscode:build
 ```
+
+Tauri
+
+```sh
+./gradlew :kotlin-tauri-karakum:generateKarakumExternals
+./gradlew :kotlin-tauri:build
+```
