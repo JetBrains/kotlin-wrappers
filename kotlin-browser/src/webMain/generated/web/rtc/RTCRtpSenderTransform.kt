@@ -2,4 +2,4 @@
 
 package web.rtc
 
-typealias RTCRtpTransform = RTCRtpScriptTransform
+typealias RTCRtpSenderTransform = RTCRtpScriptTransform

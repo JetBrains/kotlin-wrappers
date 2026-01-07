@@ -36,7 +36,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transform)
      */
-    var transform: RTCRtpTransform?
+    var transform: RTCRtpSenderTransform?
 
     /**
      * The read-only **`transport`** property of an RTCRtpSender object provides the RTCDtlsTransport object used to interact with the underlying transport over which the sender is exchanging Real-time Transport Control Protocol (RTCP) packets.

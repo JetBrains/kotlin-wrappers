@@ -331,7 +331,8 @@ private fun convertType(
             "Base64URLString",
             "PublicKeyCredentialJSON",
 
-            "RTCRtpTransform",
+            "RTCRtpReceiverTransform",
+            "RTCRtpSenderTransform",
 
             "ExportValue",
             "ImportValue",

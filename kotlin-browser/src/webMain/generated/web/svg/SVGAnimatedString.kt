@@ -10,14 +10,14 @@ package web.svg
 open external class SVGAnimatedString
 private constructor() {
     /**
-     * The **`animVal`** read-only property of the SVGAnimatedString interface contains the same value as the SVGAnimatedString.baseVal property. If the given attribute or property is being animated, it contains the current animated value of the attribute or property. If the given attribute or property is not currently being animated, then it contains the same value as baseVal.
+     * The **`animVal`** read-only property of the SVGAnimatedString interface is a string representing the animated value of the reflected attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
      */
     val animVal: String
 
     /**
-     * BaseVal gets or sets the base value of the given attribute before any animations are applied. The base value of the given attribute before applying any animations. Setter throws DOMException.
+     * The **`baseVal`** property of the SVGAnimatedString interface gets or sets the base value of the given attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal)
      */
