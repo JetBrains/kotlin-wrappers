@@ -15,6 +15,8 @@ private constructor() :
     PaintTimingMixin {
     /**
      * The **`toJSON()`** method of the PerformancePaintTiming interface is a serializer; it returns a JSON representation of the PerformancePaintTiming object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformancePaintTiming/toJSON)
      */
     override fun toJSON(): JsAny
 }

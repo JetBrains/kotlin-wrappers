@@ -5,6 +5,7 @@ package web.navigation
 import js.array.ReadonlyArray
 import web.errors.ErrorEvent
 import web.events.Event
+import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.url.URL
@@ -45,6 +46,26 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currentEntry)
      */
     val currentEntry: NavigationHistoryEntry?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currententrychange_event)
+     */
+    var oncurrententrychange: EventHandler<NavigationCurrentEntryChangeEvent, Navigation, Navigation>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate_event)
+     */
+    var onnavigate: EventHandler<NavigateEvent, Navigation, Navigation>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigateerror_event)
+     */
+    var onnavigateerror: EventHandler<ErrorEvent, Navigation, Navigation>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigatesuccess_event)
+     */
+    var onnavigatesuccess: EventHandler<Event, Navigation, Navigation>?
 
     /**
      * The **`transition`** read-only property of the Navigation interface returns a NavigationTransition object representing the status of an in-progress navigation, which can be used to track it.
