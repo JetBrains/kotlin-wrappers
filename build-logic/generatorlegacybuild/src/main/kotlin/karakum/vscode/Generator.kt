@@ -1,7 +1,6 @@
 package karakum.vscode
 
 import karakum.common.GENERATOR_COMMENT
-import karakum.common.Suppress.INTERFACE_WITH_SUPERCLASS
 import karakum.common.Suppress.NESTED_CLASS_IN_EXTERNAL_INTERFACE
 import karakum.common.fileSuppress
 import karakum.common.writeCode
@@ -21,6 +20,7 @@ internal fun generateKotlinDeclarations(
 
             else -> "export " in body || "external " in body
         }
+
         val annotations = when {
             hasRuntime
                 -> listOfNotNull(
@@ -29,15 +29,19 @@ internal fun generateKotlinDeclarations(
                     .takeIf { "sealed /* enum */" in body }
             ).joinToString("\n\n")
 
-            ":\nDisposable {" in body
-                -> fileSuppress(INTERFACE_WITH_SUPERCLASS)
-
             else -> ""
         }
 
+        val finalBody = if (!hasRuntime) {
+            body.replaceFirst(
+                ":\nDisposable {",
+                ":\nDisposableLike {",
+            )
+        } else body
+
         targetDir.resolve("$name.kt")
             .also { check(!it.exists()) { "Duplicated file: ${it.name}" } }
-            .writeCode(fileContent(annotations, toCommonBody(body)))
+            .writeCode(fileContent(annotations, toCommonBody(finalBody)))
     }
 }
 

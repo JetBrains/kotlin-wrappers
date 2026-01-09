@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package vscode
 
 /**
@@ -12,7 +8,7 @@ package vscode
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapter)
  */
 external interface DebugAdapter :
-    Disposable {
+    DisposableLike {
     /**
      * An event which fires after the debug adapter has sent a Debug Adapter Protocol message to the editor.
      * Messages can be requests, responses, or events.

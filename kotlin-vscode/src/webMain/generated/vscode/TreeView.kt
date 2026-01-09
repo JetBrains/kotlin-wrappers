@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package vscode
 
 import js.array.ReadonlyArray
@@ -19,7 +15,7 @@ import kotlin.js.definedExternally
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView)
  */
 external interface TreeView<T : JsAny?> :
-    Disposable {
+    DisposableLike {
     /**
      * Event that is fired when an element is expanded
      *

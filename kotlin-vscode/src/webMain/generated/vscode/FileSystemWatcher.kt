@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package vscode
 
 /**
@@ -16,7 +12,7 @@ package vscode
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemWatcher)
  */
 external interface FileSystemWatcher :
-    Disposable {
+    DisposableLike {
     /**
      * true if this file system watcher has been created such that
      * it ignores creation file system events.
