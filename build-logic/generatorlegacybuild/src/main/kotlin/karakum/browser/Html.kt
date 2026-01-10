@@ -706,7 +706,7 @@ internal fun htmlDeclarations(
                 pkg = "web.streams",
             )
         )
-        .plus(Ed25519())
+        .plus(cryptoAlgorithms())
 }
 
 private val COLLECTIONS_WITH_BOUNDS = setOf(
@@ -2495,6 +2495,9 @@ private fun getParameterType(
 
         source == """ReadonlyArray<"sign" | "verify">"""
             -> """ReadonlyArray<KeyUsage /* "sign" | "verify" */>"""
+
+        source == """ReadonlyArray<"deriveBits" | "deriveKey">"""
+            -> """ReadonlyArray<KeyUsage /* "deriveBits" | "deriveKey" */>"""
 
         source == "number | DOMPointInit | (number | DOMPointInit)[]"
             -> "JsAny /* $source */"

@@ -156,7 +156,8 @@ internal fun String.applyPatches(): String {
         .splitUnion("TrustedScriptURL | string | URL")
         .splitUnion("(TrustedHTML | string)[]", "TrustedHTML[] | string[]")
         // TRUSTED TYPES END
-        .replace(""""Ed25519" | { name: "Ed25519" }""", "${ED25519}Algorithm")
+        .replace(""""$Ed25519" | { name: "$Ed25519" }""", "${Ed25519}Algorithm")
+        .replace(""""$X25519" | { name: "$X25519" }""", "${X25519}Algorithm")
         .replace("    reason?: any;", "    reason?: JsError | undefined;")
         .replace("readonly reason: any;", "readonly reason: JsErrorLike | undefined;")
         .replace("(reason?: any)", "(reason?: JsError | undefined)")

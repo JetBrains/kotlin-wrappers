@@ -8,6 +8,7 @@ import web.dom.NodeList
 import web.events.Event
 import web.events.EventInstance
 import web.form.FormControl
+import web.selection.SelectionDirection
 import web.validation.ValidityState
 import kotlin.js.definedExternally
 
@@ -123,7 +124,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
      */
-    var selectionDirection: String /* "forward" | "backward" | "none" */
+    var selectionDirection: SelectionDirection
 
     /**
      * The **`selectionEnd`** property of the HTMLTextAreaElement interface specifies the end position of the current text selection in a <textarea> element. It is a number representing the last index of the selected text. It can be used to both retrieve and set the index of the end of a <textarea>s selected text.
@@ -237,7 +238,7 @@ protected constructor() :
     fun setSelectionRange(
         start: Int?,
         end: Int?,
-        direction: String /* "forward" | "backward" | "none" */ = definedExternally,
+        direction: SelectionDirection = definedExternally,
     )
 }
 

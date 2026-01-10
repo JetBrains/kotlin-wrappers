@@ -456,6 +456,13 @@ private constructor() {
 
     @JsName("generateKey")
     fun generateKeyAsync(
+        algorithm: X25519Algorithm,
+        extractable: Boolean,
+        keyUsages: ReadonlyArray<KeyUsage /* "deriveBits" | "deriveKey" */>,
+    ): Promise<CryptoKeyPair>
+
+    @JsName("generateKey")
+    fun generateKeyAsync(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -1905,6 +1912,18 @@ suspend inline fun SubtleCrypto.generateKey(
     algorithm: Ed25519Algorithm,
     extractable: Boolean,
     keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
+): CryptoKeyPair {
+    return generateKeyAsync(
+        algorithm = algorithm,
+        extractable = extractable,
+        keyUsages = keyUsages,
+    ).await()
+}
+
+suspend inline fun SubtleCrypto.generateKey(
+    algorithm: X25519Algorithm,
+    extractable: Boolean,
+    keyUsages: ReadonlyArray<KeyUsage /* "deriveBits" | "deriveKey" */>,
 ): CryptoKeyPair {
     return generateKeyAsync(
         algorithm = algorithm,

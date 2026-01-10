@@ -58,6 +58,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/anchor-name)
      */
     var anchorName: String
+
+    /**
+     * The anchor-scope CSS property can be used to limit the scope in which a positioned element can be associated with anchor elements to a particular subtree.
+     */
     var anchorScope: String
 
     /**
