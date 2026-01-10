@@ -26,6 +26,9 @@ external interface SVGAttributes<T : Element> :
     var method: String?
     var min: Double?
     var name: String?
+    var nonce: String?
+    var part: String?
+    var slot: String?
     override var style: react.CSSProperties?
     var target: WindowTarget?
     var type: String?
