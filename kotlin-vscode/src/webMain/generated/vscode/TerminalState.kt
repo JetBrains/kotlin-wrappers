@@ -37,7 +37,7 @@ external interface TerminalState {
      *
      * Note that the possible values are currently defined as any of the following:
      * 'bash', 'cmd', 'csh', 'fish', 'gitbash', 'julia', 'ksh', 'node', 'nu', 'pwsh', 'python',
-     * 'sh', 'wsl', 'zsh'.
+     * 'sh', 'wsl', 'xonsh', 'zsh'.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalState.shell)
      */

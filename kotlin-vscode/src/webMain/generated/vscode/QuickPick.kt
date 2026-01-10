@@ -38,6 +38,15 @@ external interface QuickPick<
     var placeholder: String?
 
     /**
+     * Optional text that provides instructions or context to the user.
+     *
+     * The prompt is displayed below the input box and above the list of items.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.prompt)
+     */
+    var prompt: String?
+
+    /**
      * An event signaling when the value of the filter text has changed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.onDidChangeValue)

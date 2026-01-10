@@ -41,6 +41,15 @@ external interface QuickPickOptions {
     var placeHolder: String?
 
     /**
+     * Optional text that provides instructions or context to the user.
+     *
+     * The prompt is displayed below the input box and above the list of items.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions.prompt)
+     */
+    var prompt: String?
+
+    /**
      * Set to `true` to keep the picker open when focus moves to another part of the editor or to another window.
      * This setting is ignored on iPad and is always `false`.
      *

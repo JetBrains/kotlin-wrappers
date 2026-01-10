@@ -31,18 +31,7 @@ external interface WebviewPanel :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanel.iconPath)
      */
-    /*
-    iconPath?: Uri | {
-        /**
-         * The icon path for the light theme.
-         */
-        readonly light: Uri;
-        /**
-         * The icon path for the dark theme.
-         */
-        readonly dark: Uri;
-    }
-    */
+    var iconPath: IconPath?
 
     /**
      * {@linkcode Webview} belonging to the panel.
@@ -120,7 +109,7 @@ external interface WebviewPanel :
      *
      * This closes the panel if it showing and disposes of the resources owned by the webview.
      * Webview panels are also disposed when the user closes the webview panel. Both cases
-     * fire the `onDispose` event.
+     * fire the `onDidDispose` event.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanel.dispose)
      */

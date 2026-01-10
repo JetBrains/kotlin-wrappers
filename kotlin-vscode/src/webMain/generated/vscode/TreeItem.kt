@@ -48,10 +48,13 @@ open external class TreeItem {
     var description: JsAny /* string | boolean */?
 
     /**
-     * The [Uri] of the resource representing this item.
+     * A [Uri] representing the resource associated with this item.
      *
-     * Will be used to derive the [label][TreeItem.label], when it is not provided.
-     * Will be used to derive the icon from current file icon theme, when [iconPath][TreeItem.iconPath] has [ThemeIcon] value.
+     * When set, this property is used to automatically derive several item properties if they are not explicitly provided:
+     * - **Label**: Derived from the resource's file name when [label][TreeItem.label] is not provided.
+     * - **Description**: Derived from the resource's path when [description][TreeItem.description] is set to `true`.
+     * - **Icon**: Derived from the current file icon theme when [iconPath][TreeItem.iconPath] is set to
+     *   [ThemeIcon.File] or [ThemeIcon.Folder].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItem.resourceUri)
      */

@@ -66,6 +66,19 @@ external interface QuickPickItem {
     var detail: String?
 
     /**
+     * A [Uri] representing the resource associated with this item.
+     *
+     * When set, this property is used to automatically derive several item properties if they are not explicitly provided:
+     * - **Label**: Derived from the resource's file name when [label][QuickPickItem.label] is not provided or is empty.
+     * - **Description**: Derived from the resource's path when [description][QuickPickItem.description] is not provided or is empty.
+     * - **Icon**: Derived from the current file icon theme when [iconPath][QuickPickItem.iconPath] is set to
+     *   [ThemeIcon.File] or [ThemeIcon.Folder].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.resourceUri)
+     */
+    var resourceUri: Uri?
+
+    /**
      * Optional flag indicating if this item is initially selected.
      *
      * This is only honored when using the [showQuickPick][window.showQuickPick] API. To do the same
