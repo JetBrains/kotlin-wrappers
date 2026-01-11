@@ -14,4 +14,5 @@ external interface GPUTextureViewDescriptor :
     var dimension: GPUTextureViewDimension?
     var format: GPUTextureFormat?
     var mipLevelCount: GPUIntegerCoordinate?
+    var usage: GPUTextureUsageFlags?
 }

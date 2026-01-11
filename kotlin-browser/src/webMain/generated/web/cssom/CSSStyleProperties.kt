@@ -191,7 +191,7 @@ private constructor() :
     var backfaceVisibility: String
 
     /**
-     * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method. Component properties not set in the background shorthand property value declaration are set to their default values.
+     * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin, size, and repeat method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background)
      */

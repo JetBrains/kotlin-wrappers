@@ -195,8 +195,14 @@ inline val GPUTextureFormat.Companion.r16float: GPUTextureFormat
 inline val GPUTextureFormat.Companion.r16sint: GPUTextureFormat
     get() = unsafeCast("r16sint")
 
+inline val GPUTextureFormat.Companion.r16snorm: GPUTextureFormat
+    get() = unsafeCast("r16snorm")
+
 inline val GPUTextureFormat.Companion.r16uint: GPUTextureFormat
     get() = unsafeCast("r16uint")
+
+inline val GPUTextureFormat.Companion.r16unorm: GPUTextureFormat
+    get() = unsafeCast("r16unorm")
 
 inline val GPUTextureFormat.Companion.r32float: GPUTextureFormat
     get() = unsafeCast("r32float")
@@ -228,8 +234,14 @@ inline val GPUTextureFormat.Companion.rg16float: GPUTextureFormat
 inline val GPUTextureFormat.Companion.rg16sint: GPUTextureFormat
     get() = unsafeCast("rg16sint")
 
+inline val GPUTextureFormat.Companion.rg16snorm: GPUTextureFormat
+    get() = unsafeCast("rg16snorm")
+
 inline val GPUTextureFormat.Companion.rg16uint: GPUTextureFormat
     get() = unsafeCast("rg16uint")
+
+inline val GPUTextureFormat.Companion.rg16unorm: GPUTextureFormat
+    get() = unsafeCast("rg16unorm")
 
 inline val GPUTextureFormat.Companion.rg32float: GPUTextureFormat
     get() = unsafeCast("rg32float")
@@ -267,8 +279,14 @@ inline val GPUTextureFormat.Companion.rgba16float: GPUTextureFormat
 inline val GPUTextureFormat.Companion.rgba16sint: GPUTextureFormat
     get() = unsafeCast("rgba16sint")
 
+inline val GPUTextureFormat.Companion.rgba16snorm: GPUTextureFormat
+    get() = unsafeCast("rgba16snorm")
+
 inline val GPUTextureFormat.Companion.rgba16uint: GPUTextureFormat
     get() = unsafeCast("rgba16uint")
+
+inline val GPUTextureFormat.Companion.rgba16unorm: GPUTextureFormat
+    get() = unsafeCast("rgba16unorm")
 
 inline val GPUTextureFormat.Companion.rgba32float: GPUTextureFormat
     get() = unsafeCast("rgba32float")

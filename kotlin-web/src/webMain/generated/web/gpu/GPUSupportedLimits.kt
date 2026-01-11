@@ -5,6 +5,7 @@ package web.gpu
 import js.core.UInt53
 
 /**
+ * The **`GPUSupportedLimits`** interface of the WebGPU API describes the limits supported by a GPUAdapter.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits)

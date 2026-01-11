@@ -22,13 +22,9 @@ private fun getWebGPUContent(
 ): String =
     sequenceOf<String>()
         .plus(getItems(content, "\ninterface GPU", "\n}\n"))
-        .plus(getItems(content, "\ninterface WGSLLanguageFeatures", "\n}\n"))
         .plus(getItems(content, "\ndeclare var GPU", "\n};\n"))
-        .plus(getItems(content, "\ndeclare var WGSLLanguageFeatures", "\n};\n"))
         .plus(getItems(content, "\ntype GPU", "\n"))
-        .filter { "\ninterface GPUError" !in it }
-        .filter { "interface GPUPipelineError" !in it }
-        .filter { "type GPUPipelineError" !in it }
+        .filter { source -> IGNORED_MARKERS.none { it in source } }
         .joinToString("\n\n")
 
 private fun getItems(
@@ -50,3 +46,51 @@ private fun getItems(
             comment + declaration
         }
         .map { it.trim() }
+
+private val IGNORED_TYPES = setOf(
+    "GPUBindGroup",
+    "GPUBindGroupLayout",
+    "GPUCommandBuffer",
+    "GPUComputePipeline",
+    "GPUDeviceLostInfo",
+    "GPUDeviceLostReason",
+    "GPUError",
+    "GPUExternalTexture",
+    "GPUFlagsConstant",
+    "GPUIntegerCoordinate",
+    "GPUIntegerCoordinateOut",
+    "GPUInternalError",
+    "GPUObjectBase",
+    "GPUObjectDescriptorBase",
+    "GPUOutOfMemoryError",
+    "GPUPipelineBase",
+    "GPUPipelineError",
+    "GPUPipelineErrorInit",
+    "GPUPipelineErrorReason",
+    "GPUPipelineLayout",
+    "GPURenderBundle",
+    "GPURenderPipeline",
+    "GPUSampler",
+    "GPUSize32Out",
+    "GPUSupportedFeatures",
+    "GPUSupportedLimits",
+    "GPUTexture",
+    "GPUTextureAspect",
+    "GPUTextureDimension",
+    "GPUTextureFormat",
+    "GPUTextureUsageFlags",
+    "GPUTextureView",
+    "GPUTextureViewDescriptor",
+    "GPUTextureViewDimension",
+    "GPUUncapturedErrorEvent",
+    "GPUUncapturedErrorEventInit",
+    "GPUValidationError",
+)
+
+private val IGNORED_MARKERS =
+    IGNORED_TYPES.flatMap {
+        sequenceOf(
+            "interface $it ",
+            "type $it ",
+        )
+    }
