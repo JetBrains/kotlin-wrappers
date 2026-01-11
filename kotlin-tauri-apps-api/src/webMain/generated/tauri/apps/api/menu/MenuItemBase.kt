@@ -1,0 +1,24 @@
+// Automatically generated - do not modify!
+
+@file:JsModule("@tauri-apps/api")
+
+package tauri.apps.api.menu
+
+// unhandled import: Resource from "../core"
+// unhandled import: CheckMenuItemOptions from "./checkMenuItem"
+// unhandled import: IconMenuItemOptions from "./iconMenuItem"
+// unhandled import: MenuOptions from "./menu"
+// unhandled import: MenuItemOptions from "./menuItem"
+// unhandled import: PredefinedMenuItemOptions from "./predefinedMenuItem"
+// unhandled import: SubmenuOptions from "./submenu"
+
+open external class MenuItemBase : tauri.apps.api.Resource {
+    /** @ignore */
+    constructor (rid: Double, id: String, kind: ItemKind)
+
+    /** The id of this item. */
+    val id: String
+
+    /** @ignore */
+    val kind: String
+}
