@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinWeb)
 
     webMainApi(npm(jspkg.tauriApps.api))
 }
