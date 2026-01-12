@@ -174,9 +174,10 @@ private fun event(
                 else -> it.substringAfter("\ninterface $name extends ")
             }
         }
-        .substringBefore(";\n}\n")
+        .substringBefore("\n}\n")
+        .removeSuffix(";")
 
-    val eventParent = eventSource.substringBefore(" {\n")
+    val eventParent = eventSource.substringBefore(" {")
 
     val eventParents = listOfNotNull(
         eventParent.takeIf { name != EVENT },
@@ -188,13 +189,18 @@ private fun event(
     val typeProvider = TypeProvider(name)
 
     val eventExtensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, eventParent)
-    val eventMembers = eventSource.substringAfter(" {\n")
-        .trimIndent()
-        .splitToSequence(";\n")
-        .mapNotNull { convertMember(it, typeProvider, eventExtensionsCollector) }
-        .joinToString("\n")
-        // Event
-        .replace("val type: String", "    // val type: String")
+    val eventMembers = when {
+        eventSource.endsWith(" {") -> ""
+
+        else -> eventSource
+            .substringAfter(" {\n")
+            .trimIndent()
+            .splitToSequence(";\n")
+            .mapNotNull { convertMember(it, typeProvider, eventExtensionsCollector) }
+            .joinToString("\n")
+            // Event
+            .replace("val type: String", "    // val type: String")
+    }
 
     val eventClassBody = source
         .substringAfter("\ndeclare var $name: {\n")
