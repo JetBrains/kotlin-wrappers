@@ -29,12 +29,8 @@ kotlin {
     targets.withType<KotlinNativeTargetWithSimulatorTests> {
         testRuns["test"].deviceId = "iPhone 16"
     }
+}
 
-    sourceSets {
-        commonTest {
-            dependencies {
-                implementation(libs.kotlin.test)
-            }
-        }
-    }
+dependencies {
+    commonTestImplementation(libs.kotlin.test)
 }
