@@ -36,11 +36,5 @@ kotlin {
                 implementation(libs.kotlin.test)
             }
         }
-
-        jvmTest {
-            dependencies {
-                implementation(libs.kotlin.testJunit)
-            }
-        }
     }
 }
