@@ -32,4 +32,4 @@ package tauri.apps.api
  *
  * @since 1.0.0
  */
-external fun clearMocks(): Unit
+external fun clearMocks()

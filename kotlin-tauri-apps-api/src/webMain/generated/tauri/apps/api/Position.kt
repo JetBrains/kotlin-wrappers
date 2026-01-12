@@ -38,15 +38,15 @@ package tauri.apps.api
  * @since 2.1.0
  */
 external class Position {
-    constructor (position: tauri.apps.api.LogicalPosition)
+    constructor (position: LogicalPosition)
 
-    constructor (position: tauri.apps.api.PhysicalPosition)
+    constructor (position: PhysicalPosition)
 
     var position: Any // LogicalPosition | PhysicalPosition
 
-    fun toLogical(scaleFactor: Double): tauri.apps.api.LogicalPosition
+    fun toLogical(scaleFactor: Double): LogicalPosition
 
-    fun toPhysical(scaleFactor: Double): tauri.apps.api.PhysicalPosition
+    fun toPhysical(scaleFactor: Double): PhysicalPosition
 
     fun toJSON(): PositionToJSONResult
 }

@@ -24,4 +24,4 @@ package tauri.apps.api
  *
  * @since 1.6.0
  */
-external fun mockConvertFileSrc(osName: String): Unit
+external fun mockConvertFileSrc(osName: String)

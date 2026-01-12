@@ -201,7 +201,7 @@ open external class Window {
      *
      * @returns The window's inner position.
      */
-    fun innerPosition(): js.promise.Promise<tauri.apps.api.PhysicalPosition>
+    fun innerPosition(): js.promise.Promise<PhysicalPosition>
 
     /**
      * The position of the top-left hand corner of the window relative to the top-left hand corner of the desktop.
@@ -213,7 +213,7 @@ open external class Window {
      *
      * @returns The window's outer position.
      */
-    fun outerPosition(): js.promise.Promise<tauri.apps.api.PhysicalPosition>
+    fun outerPosition(): js.promise.Promise<PhysicalPosition>
 
     /**
      * The physical size of the window's client area.
@@ -887,7 +887,7 @@ open external class Window {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: tauri.apps.api.LogicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: LogicalPosition): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the window outer position.
@@ -900,7 +900,7 @@ open external class Window {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: tauri.apps.api.PhysicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: PhysicalPosition): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the window outer position.
@@ -913,7 +913,7 @@ open external class Window {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: tauri.apps.api.Position): js.promise.Promise<js.core.Void>
+    fun setPosition(position: Position): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the window fullscreen state.
@@ -1165,7 +1165,7 @@ open external class Window {
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorPosition(position: tauri.apps.api.LogicalPosition): js.promise.Promise<js.core.Void>
+    fun setCursorPosition(position: LogicalPosition): js.promise.Promise<js.core.Void>
 
     /**
      * Changes the position of the cursor in window coordinates.
@@ -1178,7 +1178,7 @@ open external class Window {
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorPosition(position: tauri.apps.api.PhysicalPosition): js.promise.Promise<js.core.Void>
+    fun setCursorPosition(position: PhysicalPosition): js.promise.Promise<js.core.Void>
 
     /**
      * Changes the position of the cursor in window coordinates.
@@ -1191,7 +1191,7 @@ open external class Window {
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorPosition(position: tauri.apps.api.Position): js.promise.Promise<js.core.Void>
+    fun setCursorPosition(position: Position): js.promise.Promise<js.core.Void>
 
     /**
      * Changes the cursor events behavior.
@@ -1496,7 +1496,7 @@ open external class Window {
      * @returns A promise resolving to a function to unlisten to the event.
      * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
      */
-    fun onMoved(handler: EventCallback<tauri.apps.api.PhysicalPosition>): js.promise.Promise<UnlistenFn>
+    fun onMoved(handler: EventCallback<PhysicalPosition>): js.promise.Promise<UnlistenFn>
 
     /**
      * Listen to window close requested. Emitted when the user requests to closes the window.
@@ -1624,17 +1624,17 @@ open external class Window {
          * @param label The window label.
          * @returns The Window instance to communicate with the window or null if the window doesn't exist.
          */
-        fun getByLabel(label: String): js.promise.Promise<tauri.apps.api.Window?>
+        fun getByLabel(label: String): js.promise.Promise<Window?>
 
         /**
          * Get an instance of `Window` for the current window.
          */
-        fun getCurrent(): tauri.apps.api.Window
+        fun getCurrent(): Window
 
         /**
          * Gets a list of instances of `Window` for all available windows.
          */
-        fun getAll(): js.promise.Promise<js.array.ReadonlyArray<tauri.apps.api.Window>>
+        fun getAll(): js.promise.Promise<js.array.ReadonlyArray<Window>>
 
         /**
          *  Gets the focused window.
@@ -1646,6 +1646,6 @@ open external class Window {
          *
          * @returns The Window instance or `undefined` if there is not any focused window.
          */
-        fun getFocusedWindow(): js.promise.Promise<tauri.apps.api.Window?>
+        fun getFocusedWindow(): js.promise.Promise<Window?>
     }
 }

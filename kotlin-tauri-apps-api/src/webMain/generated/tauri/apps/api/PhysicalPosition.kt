@@ -37,7 +37,7 @@ external class PhysicalPosition {
      *
      * @since 2.0.0
      */
-    fun toLogical(scaleFactor: Double): tauri.apps.api.LogicalPosition
+    fun toLogical(scaleFactor: Double): LogicalPosition
 
     fun toJSON(): PhysicalPositionToJSONResult
 }

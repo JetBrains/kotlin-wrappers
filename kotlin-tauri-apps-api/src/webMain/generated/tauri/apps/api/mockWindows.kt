@@ -48,4 +48,4 @@ package tauri.apps.api
 external fun mockWindows(
     current: String,
     vararg _additionalWindows: String,
-): Unit
+)

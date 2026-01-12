@@ -86,4 +86,4 @@ package tauri.apps.api
 external fun mockIPC(
     cb: (cmd: String, payload: InvokeArgs? /* use undefined for default */) -> Any?,
     options: MockIPCOptions = definedExternally,
-): Unit
+)

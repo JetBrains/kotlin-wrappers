@@ -29,7 +29,7 @@ package tauri.apps.api
  * tray.set_tooltip('new tooltip');
  * ```
  */
-external class TrayIcon : tauri.apps.api.Resource {
+external class TrayIcon : Resource {
     /** The id associated with this tray icon.   */
     var id: String
 

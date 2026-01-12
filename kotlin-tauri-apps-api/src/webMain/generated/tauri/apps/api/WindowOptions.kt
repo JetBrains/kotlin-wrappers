@@ -143,7 +143,7 @@ external interface WindowOptions {
      *
      * @since 2.4.0
      */
-    var trafficLightPosition: tauri.apps.api.LogicalPosition?
+    var trafficLightPosition: LogicalPosition?
 
     /**
      * If `true`, sets the window title to be hidden on macOS.

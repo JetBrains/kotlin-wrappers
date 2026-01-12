@@ -39,10 +39,10 @@ open external class WebviewWindow :
      */
     constructor (label: WebviewLabel, options: WebviewWindowOptions = definedExternally)
 
-    open override var label: String
+    override var label: String
 
     /** Local event listeners. */
-    open override var listeners: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<EventCallback<Any?>>>
+    override var listeners: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<EventCallback<Any?>>>
 
     /**
      * Listen to an emitted event on this webview window.
@@ -63,7 +63,7 @@ open external class WebviewWindow :
      * @returns A promise resolving to a function to unlisten to the event.
      * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
      */
-    open override fun <T> listen(
+    override fun <T> listen(
         event: EventName,
         handler: EventCallback<T>,
     ): js.promise.Promise<UnlistenFn>
@@ -87,7 +87,7 @@ open external class WebviewWindow :
      * @returns A promise resolving to a function to unlisten to the event.
      * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
      */
-    open override fun <T> once(
+    override fun <T> once(
         event: EventName,
         handler: EventCallback<T>,
     ): js.promise.Promise<UnlistenFn>

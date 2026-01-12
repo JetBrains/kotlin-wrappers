@@ -30,7 +30,7 @@ external interface Monitor {
     var size: PhysicalSize
 
     /** the Top-left corner position of the monitor relative to the larger full screen area. */
-    var position: tauri.apps.api.PhysicalPosition
+    var position: PhysicalPosition
 
     /** The monitor's work area. */
     var workArea: MonitorWorkArea

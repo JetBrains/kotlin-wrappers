@@ -10,6 +10,6 @@ package tauri.apps.api
 // unhandled import: PhysicalSize from "./dpi"
 
 external interface TrayIconEventBaseRect {
-    var position: tauri.apps.api.PhysicalPosition
+    var position: PhysicalPosition
     var size: PhysicalSize
 }

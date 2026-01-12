@@ -24,4 +24,4 @@ package tauri.apps.api
  *
  * @since 1.0.0
  */
-external fun getCurrentWindow(): tauri.apps.api.Window
+external fun getCurrentWindow(): Window

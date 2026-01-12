@@ -18,6 +18,6 @@ package tauri.apps.api
 // unhandled import: Image from "./image"
 
 external interface MonitorWorkArea {
-    var position: tauri.apps.api.PhysicalPosition
+    var position: PhysicalPosition
     var size: PhysicalSize
 }

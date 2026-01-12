@@ -29,4 +29,4 @@ package tauri.apps.api
  *
  * The coordinates can be negative if the top-left hand corner of the window is outside of the visible screen region.
  */
-external fun cursorPosition(): js.promise.Promise<tauri.apps.api.PhysicalPosition>
+external fun cursorPosition(): js.promise.Promise<PhysicalPosition>

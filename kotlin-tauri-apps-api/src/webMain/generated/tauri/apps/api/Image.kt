@@ -8,7 +8,7 @@ package tauri.apps.api
 // unhandled import: NativeIcon from "./menu/iconMenuItem"
 
 /** An RGBA Image in row-major order from top to bottom. */
-external class Image : tauri.apps.api.Resource {
+external class Image : Resource {
     /**
      * Creates an Image from a resource ID. For internal use only.
      *

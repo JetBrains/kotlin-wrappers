@@ -106,7 +106,7 @@ open external class Submenu : MenuItemBase {
     ): js.promise.Promise<js.core.Void>
 
     /** Remove a menu item from this submenu. */
-    fun remove(item: tauri.apps.api.menu.Submenu): js.promise.Promise<js.core.Void>
+    fun remove(item: Submenu): js.promise.Promise<js.core.Void>
 
     /** Remove a menu item from this submenu. */
     fun remove(item: MenuItem): js.promise.Promise<js.core.Void>
@@ -191,6 +191,6 @@ open external class Submenu : MenuItemBase {
 
     companion object {
         /** Create a new submenu. */
-        fun new(opts: SubmenuOptions): js.promise.Promise<tauri.apps.api.menu.Submenu>
+        fun new(opts: SubmenuOptions): js.promise.Promise<Submenu>
     }
 }

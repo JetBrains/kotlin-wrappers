@@ -109,13 +109,13 @@ open external class Webview {
      * @param label The unique webview label. Must be alphanumeric: `a-zA-Z-/:_`.
      * @returns The {@link Webview} instance to communicate with the webview.
      */
-    constructor (window: tauri.apps.api.Window, label: WebviewLabel, options: WebviewOptions)
+    constructor (window: Window, label: WebviewLabel, options: WebviewOptions)
 
     /** The webview label. It is a unique identifier for the webview, can be used to reference it later. */
     open var label: WebviewLabel
 
     /** The window hosting this webview. */
-    var window: tauri.apps.api.Window
+    var window: Window
 
     /** Local event listeners. */
     open var listeners: js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<EventCallback<Any?>>>
@@ -239,7 +239,7 @@ open external class Webview {
      *
      * @returns The webview's position.
      */
-    fun position(): js.promise.Promise<tauri.apps.api.PhysicalPosition>
+    fun position(): js.promise.Promise<PhysicalPosition>
 
     /**
      * The physical size of the webview's client area.
@@ -316,7 +316,7 @@ open external class Webview {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: tauri.apps.api.LogicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: LogicalPosition): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the webview position.
@@ -329,7 +329,7 @@ open external class Webview {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: tauri.apps.api.PhysicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: PhysicalPosition): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the webview position.
@@ -342,7 +342,7 @@ open external class Webview {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: tauri.apps.api.Position): js.promise.Promise<js.core.Void>
+    fun setPosition(position: Position): js.promise.Promise<js.core.Void>
 
     /**
      * Bring the webview to front and focus.
@@ -414,7 +414,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun reparent(window: tauri.apps.api.Window): js.promise.Promise<js.core.Void>
+    fun reparent(window: Window): js.promise.Promise<js.core.Void>
 
     /**
      * Moves this webview to the given label.

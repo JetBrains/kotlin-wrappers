@@ -17,7 +17,7 @@ external interface TrayIconEventBase<T : TrayIconEventType> {
     var id: String
 
     /** Physical position of the click the triggered this event. */
-    var position: tauri.apps.api.PhysicalPosition
+    var position: PhysicalPosition
 
     /** Position and size of the tray icon. */
     var rect: TrayIconEventBaseRect

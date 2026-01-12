@@ -24,4 +24,4 @@ package tauri.apps.api
  *
  * @since 1.0.0
  */
-external fun getAllWindows(): js.promise.Promise<js.array.ReadonlyArray<tauri.apps.api.Window>>
+external fun getAllWindows(): js.promise.Promise<js.array.ReadonlyArray<Window>>

@@ -100,7 +100,7 @@ open external class Menu : MenuItemBase {
     ): js.promise.Promise<js.core.Void>
 
     /** Remove a menu item from this menu. */
-    fun remove(item: tauri.apps.api.menu.Submenu): js.promise.Promise<js.core.Void>
+    fun remove(item: Submenu): js.promise.Promise<js.core.Void>
 
     /** Remove a menu item from this menu. */
     fun remove(item: MenuItem): js.promise.Promise<js.core.Void>
@@ -174,7 +174,7 @@ open external class Menu : MenuItemBase {
      * If a window was not created with an explicit menu or had one set explicitly,
      * this menu will be assigned to it.
      */
-    fun setAsAppMenu(): js.promise.Promise<tauri.apps.api.menu.Menu?>
+    fun setAsAppMenu(): js.promise.Promise<Menu?>
 
     /**
      * Sets the window menu and returns the previous one.
@@ -184,13 +184,13 @@ open external class Menu : MenuItemBase {
      * - **macOS:** Unsupported. The menu on macOS is app-wide and not specific to one
      * window, if you need to set it, use {@linkcode Menu.setAsAppMenu} instead.
      */
-    fun setAsWindowMenu(window: tauri.apps.api.Window = definedExternally): js.promise.Promise<tauri.apps.api.menu.Menu?>
+    fun setAsWindowMenu(window: tauri.apps.api.Window = definedExternally): js.promise.Promise<Menu?>
 
     companion object {
         /** Create a new menu. */
-        fun new(opts: MenuOptions = definedExternally): js.promise.Promise<tauri.apps.api.menu.Menu>
+        fun new(opts: MenuOptions = definedExternally): js.promise.Promise<Menu>
 
         /** Create a default menu. */
-        fun default(): js.promise.Promise<tauri.apps.api.menu.Menu>
+        fun default(): js.promise.Promise<Menu>
     }
 }

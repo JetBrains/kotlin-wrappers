@@ -28,7 +28,7 @@ external class CloseRequestedEvent {
     /** Event identifier used to unlisten */
     var id: Double
 
-    fun preventDefault(): Unit
+    fun preventDefault()
 
     fun isPreventDefault(): Boolean
 }
