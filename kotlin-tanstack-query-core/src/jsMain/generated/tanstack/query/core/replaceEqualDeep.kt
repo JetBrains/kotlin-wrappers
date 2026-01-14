@@ -7,4 +7,5 @@ package tanstack.query.core
 external fun <T> replaceEqualDeep(
     a: Any?,
     b: T,
+    depth: Int = definedExternally,
 ): T
