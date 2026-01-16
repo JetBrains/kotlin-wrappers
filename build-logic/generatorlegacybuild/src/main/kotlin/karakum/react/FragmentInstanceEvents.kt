@@ -102,6 +102,7 @@ private val TARGET_MAP = mapOf(
     setOf("HTMLElement", "MathMLElement", "SVGElement", "Text") to "Node",
     setOf("Element", "HTMLElement", "HTMLMediaElement", "HTMLSourceElement", "HTMLTrackElement") to "Element",
     setOf("HTMLButtonElement", "HTMLInputElement", "HTMLSelectElement", "HTMLTextAreaElement") to "HTMLElement",
+    setOf("HTMLPermissionElement", "HTMLGeolocationElement") to "HTMLElement",
     setOf("Element", "HTMLInputElement", "HTMLTextAreaElement") to "Element",
     setOf("Element", "HTMLElement", "HTMLTrackElement") to "Element",
 )
@@ -129,7 +130,9 @@ import web.html.HTMLDetailsElement
 import web.html.HTMLDialogElement
 import web.html.HTMLElement
 import web.html.HTMLFormElement
+import web.html.HTMLGeolocationElement
 import web.html.HTMLMediaElement
+import web.html.HTMLPermissionElement
 import web.html.HTMLTrackElement
 import web.html.HTMLVideoElement
 import web.html.MediaEncryptedEvent

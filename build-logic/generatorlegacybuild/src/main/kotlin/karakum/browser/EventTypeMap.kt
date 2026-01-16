@@ -261,4 +261,8 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "navigatesuccess" to "navigate_success",
     "navigateerror" to "navigate_error",
     "currententrychange" to "current_entry_change",
+
+    "promptaction" to "prompt_action",
+    "promptdismiss" to "prompt_dismiss",
+    "validationstatuschange" to "validation_status_change",
 )

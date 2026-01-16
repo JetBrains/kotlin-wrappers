@@ -444,6 +444,13 @@ inline val FragmentInstance.loadStartEvent: EventInstance<Event, HTMLMediaElemen
     get() = EventInstance(this, "loadstart")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/location_event)
+ */
+@ReactCanary
+inline val FragmentInstance.locationEvent: EventInstance<Event, HTMLGeolocationElement, HTMLGeolocationElement>
+    get() = EventInstance(this, "location")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lostpointercapture_event)
  */
 @ReactCanary
@@ -596,6 +603,20 @@ inline val FragmentInstance.pointerUpEvent: EventInstance<PointerEvent, Element,
 @ReactCanary
 inline val FragmentInstance.progressEvent: EventInstance<Event, HTMLMediaElement, HTMLMediaElement>
     get() = EventInstance(this, "progress")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/promptaction_event)
+ */
+@ReactCanary
+inline val FragmentInstance.promptActionEvent: EventInstance<Event, HTMLElement, Node>
+    get() = EventInstance(this, "promptaction")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/promptdismiss_event)
+ */
+@ReactCanary
+inline val FragmentInstance.promptDismissEvent: EventInstance<Event, HTMLElement, Node>
+    get() = EventInstance(this, "promptdismiss")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ratechange_event)
@@ -778,6 +799,13 @@ inline val FragmentInstance.transitionStartEvent: EventInstance<TransitionEvent,
 @ReactCanary
 inline val FragmentInstance.unloadEvent: EventInstance<Event, Element, Element>
     get() = EventInstance(this, "unload")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/validationstatuschange_event)
+ */
+@ReactCanary
+inline val FragmentInstance.validationStatusChangeEvent: EventInstance<Event, HTMLElement, Node>
+    get() = EventInstance(this, "validationstatuschange")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volumechange_event)
