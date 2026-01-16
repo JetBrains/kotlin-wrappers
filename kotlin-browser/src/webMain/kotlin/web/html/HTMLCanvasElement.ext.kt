@@ -1,8 +1,14 @@
 package web.html
 
 import web.blob.Blob
+import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
+
+private fun BlobCallback(
+    continuation: Continuation<Blob?>,
+): BlobCallback =
+    continuation::resume
 
 /**
  * The **`HTMLCanvasElement.toBlob()`** method creates a Blob object representing the image contained in the canvas. This file may be cached on the disk or stored in memory at the discretion of the user agent.
@@ -12,7 +18,7 @@ import kotlin.coroutines.suspendCoroutine
 suspend fun HTMLCanvasElement.toBlob(): Blob? =
     suspendCoroutine { continuation ->
         toBlobWithCallback(
-            callback = continuation::resume,
+            callback = BlobCallback(continuation),
         )
     }
 
@@ -26,7 +32,7 @@ suspend fun HTMLCanvasElement.toBlob(
 ): Blob? =
     suspendCoroutine { continuation ->
         toBlobWithCallback(
-            callback = continuation::resume,
+            callback = BlobCallback(continuation),
             type = type,
         )
     }
@@ -42,7 +48,7 @@ suspend fun HTMLCanvasElement.toBlob(
 ): Blob? =
     suspendCoroutine { continuation ->
         toBlobWithCallback(
-            callback = continuation::resume,
+            callback = BlobCallback(continuation),
             type = type,
             quality = quality,
         )
