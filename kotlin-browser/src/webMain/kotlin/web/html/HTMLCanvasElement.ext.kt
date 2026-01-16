@@ -1,12 +1,12 @@
 package web.html
 
 import js.coroutines.resumeWithError
+import kotlinx.coroutines.suspendCancellableCoroutine
 import web.blob.Blob
 import web.errors.DOMException
 import web.errors.OperationError
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 private fun BlobCallback(
     continuation: Continuation<Blob>,
@@ -29,7 +29,7 @@ private fun BlobCallback(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
  */
 suspend fun HTMLCanvasElement.toBlob(): Blob =
-    suspendCoroutine { continuation ->
+    suspendCancellableCoroutine { continuation ->
         toBlobWithCallback(
             callback = BlobCallback(continuation),
         )
@@ -43,7 +43,7 @@ suspend fun HTMLCanvasElement.toBlob(): Blob =
 suspend fun HTMLCanvasElement.toBlob(
     type: String,
 ): Blob =
-    suspendCoroutine { continuation ->
+    suspendCancellableCoroutine { continuation ->
         toBlobWithCallback(
             callback = BlobCallback(continuation),
             type = type,
@@ -59,7 +59,7 @@ suspend fun HTMLCanvasElement.toBlob(
     type: String,
     quality: Double,
 ): Blob =
-    suspendCoroutine { continuation ->
+    suspendCancellableCoroutine { continuation ->
         toBlobWithCallback(
             callback = BlobCallback(continuation),
             type = type,
