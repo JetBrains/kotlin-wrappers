@@ -18,6 +18,10 @@ import node.karakum.plugins.*
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
+            // __promisify__ functions are ignored,
+            // and this plugin should be added before any other function plugin
+            convertPromisifyFunctions,
+
             AmbiguousSignaturePlugin(),
             BufferPlugin(),
             ContractFunctionApiPlugin(),
@@ -242,7 +246,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/buffer/ImplicitArrayBuffer.kt",
             "**/childProcess/exec/**",
             "**/childProcess/execfile/**",
-            "**/console/console.kt",
             "**/crypto/generatekeypair/**",
             "**/crypto/global/**",
             "**/crypto/webcrypto/**",
@@ -269,8 +272,10 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/events/Listener.kt",
             "**/events/Listener1.kt",
             "**/events/Listener2.kt",
-            "**/global/global.kt",
-            "**/globals.typedarray.kt",
+            "**/globals/console.kt",
+            "**/globals/global.kt",
+            "**/globals/process.kt",
+            "**/globals.typedarray/**",
             "**/http/WebSocket.kt",
             "**/http/CloseEvent.kt",
             "**/http/MessageEvent.kt",
@@ -323,7 +328,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/workerThreads/MessageChannel.kt",
             "**/workerThreads/MessagePort.kt"
         )
-        libraryNameOutputPrefix = true
+        isolatedOutputPackage = true
         moduleNameMapper = recordOf(
             "(.+)" to "node:$1",
             "node:node/" to "node:",
@@ -381,7 +386,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^events" to "node/events",
 
             "^fs/StatfsOptions.kt" to "node/fs/StatfsOptions.fun.kt",
-            "^fs/realpathsync/native.kt" to "node/fs/realpathSync/native.kt",
             "^fs/symlink/Type.kt" to "node/fs/SymlinkType.kt",
             "^fs" to "node/fs",
 
@@ -396,7 +400,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^inspector/noderuntime" to "node/inspector/nodeRuntime",
             "^inspector/nodetracing" to "node/inspector/nodeTracing",
             "^inspector/nodeworker" to "node/inspector/nodeWorker",
-            "^node/inspector.generated.kt" to "node/inspector/generated.kt",
+            "^node/inspector.generated/module.kt" to "node/inspector/moduleGenerated.kt",
             "^inspector" to "node/inspector",
 
             "^module/global/nodejs/Require.kt" to "node/module/Require.interface.kt",
@@ -461,6 +465,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^v8/startupsnapshot" to "node/v8/startupSnapshot",
             "^v8" to "node/v8",
 
+            "^vm/Module.kt" to "node/vm/Module.class.kt",
             "^vm" to "node/vm",
 
             "^wasi/WASI.kt" to "node/wasi/WASI.class.kt",
@@ -483,11 +488,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^zlib/unzip.kt" to "node/zlib/unzip.fun.kt",
             "^zlib" to "node/zlib",
 
-            "^node/buffer.buffer.kt" to "node/buffer/buffer.buffer.kt",
+            "^node/buffer.buffer/module.kt" to "node/buffer/buffer.buffer.kt",
             "^node/([^/]+)\\.kt" to "node/$1/$1.kt",
             "^node/stream/consumers.kt" to "node/stream/consumers/consumers.kt",
-            "^node/globals/globals.kt" to "node/globals.kt",
-            "^node/gc/gc.kt" to "node/gc.kt",
+            "^node/globals/module.kt" to "node/globals.kt",
+            "^node/globals/gc.kt" to "node/gc.kt",
             "^nodejs" to "node",
             "^global/nodejs" to "node",
         )
@@ -905,16 +910,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "fs/readvSync.kt" to arrayOf(
                 "js.array.ReadonlyArray"
             ),
-            "fs/realpath/native.kt" to arrayOf(
-                "node.fs.BufferEncodingOption",
-                "node.fs.EncodingOption",
-                "node.fs.PathLike"
-            ),
-            "fs/realpathSync/native.kt" to arrayOf(
-                "node.fs.BufferEncodingOption",
-                "node.fs.EncodingOption",
-                "node.fs.PathLike"
-            ),
             "fs/watchAsync.kt" to arrayOf(
                 "js.iterable.AsyncIterable"
             ),
@@ -1328,18 +1323,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "util/transferableAbortSignal.kt" to arrayOf(
                 "web.abort.AbortSignal"
             ),
-            "util/inspect/namespace.kt" to arrayOf(
-                "node.util.InspectOptions"
-            ),
-            "util/inspect/Styles.kt" to arrayOf(
-                "node.util.Style"
-            ),
-            "util/inspect/defaultOptions.kt" to arrayOf(
-                "node.util.InspectOptions"
-            ),
-            "util/inspect/replDefaults.kt" to arrayOf(
-                "node.util.InspectOptions"
-            ),
             "util/isDate.contract.kt" to arrayOf(
                 "js.date.Date"
             ),
@@ -1452,7 +1435,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "js.buffer.ArrayBufferLike",
                 "node.buffer.Buffer"
             ),
-            "vm/Module.kt" to arrayOf(
+            "vm/Module.class.kt" to arrayOf(
                 "js.promise.Promise"
             ),
             "vm/SourceTextModuleOptions.kt" to arrayOf(
@@ -1489,21 +1472,59 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         namespaceStrategy = recordOf(
             "NodeJS" to NamespaceStrategy.`package`,
+
+            "assert.assert" to NamespaceStrategy.`package`,
+
+            "async_hooks.asyncWrapProviders" to NamespaceStrategy.`package`,
+
             "buffer.global" to NamespaceStrategy.`package`,
+
+            "crypto.constants" to NamespaceStrategy.`package`,
             "crypto.global" to NamespaceStrategy.`package`,
+            "crypto.webcrypto" to NamespaceStrategy.`package`,
+
+            "events.EventEmitter" to NamespaceStrategy.`package`,
             "events.global" to NamespaceStrategy.`package`,
+
+            "fs.constants" to NamespaceStrategy.`package`,
+            "fs.symlink" to NamespaceStrategy.`package`,
+
+            "http2.constants" to NamespaceStrategy.`package`,
+
+            "inspector\\..+" to NamespaceStrategy.`package`,
+
             "module.global" to NamespaceStrategy.`package`,
+            "module.Module" to NamespaceStrategy.`package`,
+
+            "os.constants" to NamespaceStrategy.`package`,
+
+            "path.path" to NamespaceStrategy.`package`,
+
+            "perf_hooks.constants" to NamespaceStrategy.`package`,
             "perf_hooks.global" to NamespaceStrategy.`package`,
+
             "process.global" to NamespaceStrategy.`package`,
+
+            "stream.Stream" to NamespaceStrategy.`package`,
+
             "url.global" to NamespaceStrategy.`package`,
+
             "util.global" to NamespaceStrategy.`package`,
+
+            "v8.startupSnapshot" to NamespaceStrategy.`package`,
+
+            "vm.constants" to NamespaceStrategy.`package`,
+
             "worker_threads.global" to NamespaceStrategy.`package`,
+
+            "zlib.constants" to NamespaceStrategy.`package`,
+
             "global" to NamespaceStrategy.`object`,
+
             "node:sqlite" to NamespaceStrategy.`package`,
             "node:test" to NamespaceStrategy.`package`,
             "node:sea" to NamespaceStrategy.`package`,
             "node:.+" to NamespaceStrategy.ignore,
-            ".+" to NamespaceStrategy.`package`
         )
         conflictResolutionStrategy = recordOf(
             "ExecFileObjectEncodingOptions.kt" to ConflictResolutionStrategy.replace,

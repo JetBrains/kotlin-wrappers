@@ -1,8 +1,6 @@
 // Automatically generated - do not modify!
 
-package node.util.inspect
-
-import node.util.Style
+package node.util
 
 external interface Styles {
     operator fun <K : Style> get(key: K): String?

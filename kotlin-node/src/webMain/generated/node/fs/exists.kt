@@ -137,3 +137,5 @@ external fun exists(
     path: PathLike,
     callback: (exists: Boolean) -> Unit,
 )
+
+/** @deprecated */

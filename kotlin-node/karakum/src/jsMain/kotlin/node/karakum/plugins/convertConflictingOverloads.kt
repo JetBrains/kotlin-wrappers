@@ -1,13 +1,12 @@
 package node.karakum.plugins
 
 import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
+import io.github.sgrishchenko.karakum.configuration.`object`
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
+import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.extension.plugins.Signature
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
@@ -244,6 +243,17 @@ val convertConflictingOverloads = createPlugin { node, context, render ->
         ensure(isFunctionDeclaration(node))
         ensure(hasConflictingOverloads(node))
 
+        val typeScriptService = context.lookupService(typeScriptServiceKey)
+        val namespaceInfoService = context.lookupService(namespaceInfoServiceKey)
+
+        val namespace = typeScriptService?.findClosestNamespace(node)
+
+        var externalModifier = "external "
+
+        if (namespace != null && namespaceInfoService?.resolveNamespaceStrategy(namespace) == NamespaceStrategy.`object`) {
+            externalModifier = ""
+        }
+
         val name = node.name?.let { render(it) } ?: "Anonymous"
 
         val typeParameters = node.typeParameters?.asArray()
@@ -251,13 +261,18 @@ val convertConflictingOverloads = createPlugin { node, context, render ->
 
         val returnType = node.type?.let { render(it) }
 
-        convertParameterDeclarations(node, context, render, ParameterDeclarationsConfiguration(
-            strategy = ParameterDeclarationStrategy.function,
-            template = template@{ parameters, signature ->
-                if (isConflictingOverload(node, signature)) return@template ""
+        convertParameterDeclarations(
+            node, context, render, ParameterDeclarationsConfiguration(
+                strategy = ParameterDeclarationStrategy.function,
+                template = template@{ parameters, signature ->
+                    if (isConflictingOverload(node, signature)) return@template ""
 
-                "external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it"}}"
-            }
-        ))
+                    "${externalModifier}fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
+                        ifPresent(
+                            returnType
+                        ) { ": $it" }
+                    }"
+                }
+            ))
     }
 }

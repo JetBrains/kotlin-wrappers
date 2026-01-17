@@ -56,7 +56,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         input = manyOf("electron.d.ts")
-        libraryNameOutputPrefix = true
+        isolatedOutputPackage = true
         moduleNameMapper = recordOf(
             "electron/electron#Electron.Main" to "electron/main",
             "electron/electron#Electron.Common" to "electron/common",
@@ -67,6 +67,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         packageNameMapper = recordOf(
             "electron/([^/]+)\\.kt" to "electron/core/$1.kt",
+            "electron/electron/(.+)\\.kt" to "electron/$1.kt",
             "electron/crossprocessexports/(.+)\\.kt" to "electron/$1.kt",
             "/([a-z][^/]+)\\.kt" to "/$1.val.kt"
         )

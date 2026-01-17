@@ -33,4 +33,19 @@ external fun realpathSync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
+
+external object realpathSync {
+    fun native(path: PathLike): String
+
+    fun native(
+        path: PathLike,
+        options: EncodingOption = definedExternally,
+    ): String
+
+    fun native(
+        path: PathLike,
+        options: BufferEncodingOption,
+    ): NonSharedBuffer
+}
+
 external fun realpathSync(path: PathLike): String

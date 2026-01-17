@@ -123,3 +123,10 @@ external fun <T1, T2, T3, T4, T5> promisify(
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<js.core.Void>
 
 external fun promisify(fn: Function<*>): Function<*>
+
+external object promisify {
+    /**
+     * That can be used to declare custom promisified variants of functions.
+     */
+    val custom: /* unique */ js.symbol.Symbol
+}

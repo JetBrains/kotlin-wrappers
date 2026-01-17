@@ -5,7 +5,3 @@
 package node.fs
 
 // export { promises };
-
-/** @deprecated */
-
-/** @deprecated */

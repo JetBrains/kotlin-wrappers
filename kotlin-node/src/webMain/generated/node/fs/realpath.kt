@@ -68,3 +68,63 @@ external fun realpath(
     path: PathLike,
     callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
 )
+
+external object realpath {
+    /**
+     * Asynchronous realpath(3) - return the canonicalized absolute pathname.
+     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+     * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+     */
+
+    /**
+     * Asynchronous realpath(3) - return the canonicalized absolute pathname.
+     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+     * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+     */
+
+    /**
+     * Asynchronous realpath(3) - return the canonicalized absolute pathname.
+     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+     * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+     */
+
+    /**
+     * Asynchronous [`realpath(3)`](http://man7.org/linux/man-pages/man3/realpath.3.html).
+     *
+     * The `callback` gets two arguments `(err, resolvedPath)`.
+     *
+     * Only paths that can be converted to UTF8 strings are supported.
+     *
+     * The optional `options` argument can be a string specifying an encoding, or an
+     * object with an `encoding` property specifying the character encoding to use for
+     * the path passed to the callback. If the `encoding` is set to `'buffer'`,
+     * the path returned will be passed as a `Buffer` object.
+     *
+     * On Linux, when Node.js is linked against musl libc, the procfs file system must
+     * be mounted on `/proc` in order for this function to work. Glibc does not have
+     * this restriction.
+     * @since v9.2.0
+     */
+    fun native(
+        path: PathLike,
+        options: EncodingOption,
+        callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
+    )
+
+    fun native(
+        path: PathLike,
+        options: BufferEncodingOption,
+        callback: (err: node.ErrnoException?, resolvedPath: NonSharedBuffer) -> Unit,
+    )
+
+    fun native(
+        path: PathLike,
+        options: EncodingOption,
+        callback: (err: node.ErrnoException?, resolvedPath: Any /* string | NonSharedBuffer */) -> Unit,
+    )
+
+    fun native(
+        path: PathLike,
+        callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
+    )
+}

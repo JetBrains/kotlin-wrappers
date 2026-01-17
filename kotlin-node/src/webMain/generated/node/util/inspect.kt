@@ -191,4 +191,20 @@ external fun inspect(
     options: InspectOptions = definedExternally,
 ): String
 
+external object inspect {
+    var colors: node.Dict<js.array.Tuple2<Double, Double>>
+    var styles: Styles
+    var defaultOptions: InspectOptions
+
+    /**
+     * Allows changing inspect settings from the repl.
+     */
+    var replDefaults: InspectOptions
+
+    /**
+     * That can be used to declare custom inspect functions.
+     */
+    val custom: /* unique */ js.symbol.Symbol
+}
+
 external fun inspect(value: Any?): String

@@ -4,20 +4,6 @@
 
 package electron.core
 
-// export = Electron.CrossProcessExports;
-
-// export = Electron.Main;
-
-// export = Electron.Common;
-
-// export = Electron.Renderer;
-
-// export = Electron.Utility;
-
-// export = fs;
-
-// export = fs;
-
 /* declare namespace NodeJS {
     interface Process extends NodeJS.EventEmitter {
         on(event: 'loaded', listener: () => void): this;
