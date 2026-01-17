@@ -1,3 +1,9 @@
+## 2026.1.0
+
+* React Router declarations marked as **legacy**
+    * Removing - in `2026.1.7`
+    * Replacement – [TanStack Router](./kotlin-tanstack-react-router)
+
 ## 2025.5.1
 
 **BREAKING CHANGE**
