@@ -1906,7 +1906,7 @@ internal fun convertMember(
         }
 
         return sequenceOf(
-            "var $handlerName: EventHandler<$eventType, $currentTarget, $target>?",
+            "var $handlerName: $EVENT_HANDLER<$eventType, $currentTarget, $target>?",
             VAR_PROPERTY_DE.takeIf { typeProvider.isDefined() },
         ).filterNotNull()
             .joinToString("\n")
