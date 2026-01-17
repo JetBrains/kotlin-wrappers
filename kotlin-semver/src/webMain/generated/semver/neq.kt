@@ -4,10 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * v1 != v2 The opposite of eq.
  */
@@ -111,5 +107,3 @@ external fun neq(
     v2: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): Boolean
-
-// export = neq;

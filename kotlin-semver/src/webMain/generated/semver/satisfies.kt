@@ -4,12 +4,6 @@
 
 package semver
 
-// import Range = require("../classes/range");
-
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Return true if the version satisfies the range.
  */
@@ -113,5 +107,3 @@ external fun satisfies(
     range: Range,
     optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
-
-// export = satisfies;

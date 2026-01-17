@@ -4,10 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Sorts an array of semver entries in ascending order using `compareBuild()`.
  */
@@ -28,5 +24,3 @@ external fun <T : Any /* string | SemVer */> sort(
     list: js.array.ReadonlyArray<T>,
     optionsOrLoose: Options = definedExternally,
 ): js.array.ReadonlyArray<T>
-
-// export = sort;

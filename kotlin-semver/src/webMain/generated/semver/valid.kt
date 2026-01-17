@@ -4,10 +4,6 @@
 
 package semver
 
-// import semver = require("../index");
-
-// import SemVer = require("../classes/semver");
-
 /**
  * Return the parsed version as a string, or null if it's not valid.
  */
@@ -49,11 +45,3 @@ external fun valid(
     version: SemVer?,
     optionsOrLoose: Options = definedExternally,
 ): String?
-
-// export = valid;
-
-// import Range = require("../classes/range");
-
-// import semver = require("../index");
-
-// export = validRange;

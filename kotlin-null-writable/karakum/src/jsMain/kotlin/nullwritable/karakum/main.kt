@@ -20,11 +20,11 @@ suspend fun main(args: ReadonlyArray<String>) {
 
         input = manyOf("**/*.d.ts")
         ignoreOutput = manyOf(
-            "**/nullWritable.kt",
+            "**/module.kt",
         )
-        libraryNameOutputPrefix = true
+        isolatedOutputPackage = true
         packageNameMapper = recordOf(
-            "^null/writable/lib/" to "nullwritable/"
+            "^null/writable/lib/nullWritable" to "nullwritable/"
         )
         importInjector = recordOf(
             "^nullwritable/NullWritable\\.kt$" to arrayOf(

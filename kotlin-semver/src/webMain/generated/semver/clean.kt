@@ -4,8 +4,6 @@
 
 package semver
 
-// import semver = require("../index");
-
 /**
  * Returns cleaned (removed leading/trailing whitespace, remove '=v' prefix) and parsed version, or null if version is invalid.
  */
@@ -26,5 +24,3 @@ external fun clean(
     version: String,
     optionsOrLoose: Options = definedExternally,
 ): String?
-
-// export = clean;

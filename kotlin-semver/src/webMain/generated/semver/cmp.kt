@@ -4,10 +4,6 @@
 
 package semver
 
-// import semver = require("../index");
-
-// import SemVer = require("../classes/semver");
-
 /**
  * Pass in a comparison string, and it'll call the corresponding semver comparison function.
  * "===" and "!==" do simple string comparison, but are included for completeness.
@@ -147,5 +143,3 @@ external fun cmp(
     v2: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): Boolean
-
-// export = cmp;

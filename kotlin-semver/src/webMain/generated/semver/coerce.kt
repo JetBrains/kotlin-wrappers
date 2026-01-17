@@ -4,10 +4,6 @@
 
 package semver
 
-// import semver = require("../index");
-
-// import SemVer = require("../classes/semver");
-
 /**
  * Coerces a string to SemVer if possible
  */
@@ -31,5 +27,3 @@ external fun coerce(
     version: SemVer?,
     options: CoerceOptions = definedExternally,
 ): SemVer?
-
-// export = coerce;

@@ -4,10 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Return the parsed version as a `SemVer` object.
  *
@@ -58,5 +54,3 @@ external fun parse(
     optionsOrLoose: Options,
     throwErrors: Boolean = definedExternally,
 ): SemVer?
-
-// export = parse;

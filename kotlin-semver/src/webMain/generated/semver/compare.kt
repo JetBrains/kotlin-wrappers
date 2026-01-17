@@ -4,10 +4,6 @@
 
 package semver
 
-// import semver = require("../index");
-
-// import SemVer = require("../classes/semver");
-
 /**
  * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).
  *
@@ -195,5 +191,3 @@ external fun compare(
     v2: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): Int
-
-// export = compare;

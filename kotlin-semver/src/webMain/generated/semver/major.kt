@@ -4,10 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Return the major version number.
  */
@@ -49,5 +45,3 @@ external fun major(
     version: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): Int
-
-// export = major;

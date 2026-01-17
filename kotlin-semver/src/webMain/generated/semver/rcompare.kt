@@ -4,10 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * The reverse of compare.
  *
@@ -135,5 +131,3 @@ external fun rcompare(
     v2: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): Int
-
-// export = rcompare;

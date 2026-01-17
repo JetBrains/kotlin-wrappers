@@ -4,10 +4,6 @@
 
 package semver
 
-// import Range = require("../classes/range");
-
-// import semver = require("../index");
-
 /**
  * Return true if the subRange range is entirely contained by the superRange range.
  */
@@ -43,5 +39,3 @@ external fun subset(
     dom: Range,
     options: RangeOptions = definedExternally,
 ): Boolean
-
-// export = subset;

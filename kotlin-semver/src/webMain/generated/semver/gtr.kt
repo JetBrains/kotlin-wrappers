@@ -4,12 +4,6 @@
 
 package semver
 
-// import Range = require("../classes/range");
-
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Return true if version is greater than all the versions possible in the range.
  */
@@ -113,5 +107,3 @@ external fun gtr(
     range: Range,
     optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
-
-// export = gtr;

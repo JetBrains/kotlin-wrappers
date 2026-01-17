@@ -4,12 +4,6 @@
 
 package semver
 
-// import Range = require("../classes/range");
-
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Return the lowest version in the list that satisfies the range, or null if none of them do.
  */
@@ -55,5 +49,3 @@ external fun <T : Any /* string | SemVer */> minSatisfying(
     range: Range,
     optionsOrLoose: RangeOptions = definedExternally,
 ): T?
-
-// export = minSatisfying;

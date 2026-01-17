@@ -4,10 +4,6 @@
 
 package semver
 
-// import Range = require("../classes/range");
-
-// import semver = require("../index");
-
 /**
  * Return a "simplified" range that matches the same items in `versions` list as the range specified.
  * Note that it does *not* guarantee that it would match the same versions in all cases,
@@ -35,5 +31,3 @@ external fun simplify(
     range: Range,
     options: Options = definedExternally,
 ): Any // string | Range
-
-// export = simplify;

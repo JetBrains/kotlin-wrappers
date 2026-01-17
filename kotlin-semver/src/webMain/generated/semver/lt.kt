@@ -4,10 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * v1 < v2
  */
@@ -111,5 +107,3 @@ external fun lt(
     v2: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): Boolean
-
-// export = lt;

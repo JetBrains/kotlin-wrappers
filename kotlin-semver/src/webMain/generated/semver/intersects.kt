@@ -4,10 +4,6 @@
 
 package semver
 
-// import Range = require("../classes/range");
-
-// import semver = require("../index");
-
 /**
  * Return true if any of the ranges comparators intersect
  */
@@ -111,5 +107,3 @@ external fun intersects(
     range2: Range,
     optionsOrLoose: RangeOptions = definedExternally,
 ): Boolean
-
-// export = intersects;

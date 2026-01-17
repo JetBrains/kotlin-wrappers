@@ -4,24 +4,6 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
-/** Base number to be used for the prerelease identifier */
-sealed external interface IdentifierBase {
-    companion object {
-        @seskar.js.JsRawValue("false")
-        val `false`: IdentifierBase
-
-        @seskar.js.JsValue("0")
-        val `0`: IdentifierBase
-
-        @seskar.js.JsValue("1")
-        val `1`: IdentifierBase
-    }
-}
-
 /**
  * Return the version incremented by the release type (major, premajor, minor, preminor, patch, prepatch, or prerelease), or null if it's not valid.
  */
@@ -95,5 +77,3 @@ external fun inc(
     identifier: String,
     identifierBase: IdentifierBase = definedExternally,
 ): String?
-
-// export = inc;

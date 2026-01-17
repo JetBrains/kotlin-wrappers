@@ -1,7 +1,7 @@
 package semver.karakum
 
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
-import io.github.sgrishchenko.karakum.configuration.ignore
+import io.github.sgrishchenko.karakum.configuration.`package`
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
@@ -34,7 +34,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/semver/Operator.kt",
             "**/semver/preload.kt",
         )
-        libraryNameOutputPrefix = true
+        isolatedOutputPackage = true
         packageNameMapper = recordOf(
             "^.*/([^/]+\\.kt)$" to "semver/$1",
             "semver/(Range|SemVer|Comparator)\\.kt" to "semver/$1.class.kt",
@@ -45,7 +45,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             )
         )
         namespaceStrategy = recordOf(
-            "^inc$" to NamespaceStrategy.ignore
+            "^inc$" to NamespaceStrategy.`package`
         )
     }
 }

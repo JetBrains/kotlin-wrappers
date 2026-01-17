@@ -6,10 +6,6 @@ package semver
 
 import js.array.ReadonlyArray
 
-// import SemVer = require("../classes/semver");
-
-// import semver = require("../index");
-
 /**
  * Returns an array of prerelease components, or null if none exist.
  */
@@ -51,5 +47,3 @@ external fun prerelease(
     version: SemVer,
     optionsOrLoose: Options = definedExternally,
 ): ReadonlyArray<Any /* string | number */>?
-
-// export = prerelease;
