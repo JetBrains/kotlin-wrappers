@@ -54,7 +54,6 @@ internal fun eventDeclarations(
     val dataMap = EventDataMap(content + "\n\n" + webWorkerContent + "\n\n" + serviceWorkersContent)
     val results = sequenceOf<ConversionResult>()
         .plus(EventType())
-        .plus(EventHandler())
         .plus(HasTargets())
         .plus(eventPlaceholders(content, EVENT_DATA, dataMap, strict = true))
         .toList()
