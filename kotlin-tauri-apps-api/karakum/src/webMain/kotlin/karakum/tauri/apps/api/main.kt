@@ -7,30 +7,6 @@ import js.array.ReadonlyArray
 import js.objects.recordOf
 import karakum.tauri.apps.api.plugins.convertBuiltinTauriTypeReference
 
-private fun Array<String>.renameCaseConflicts(suffix: String = "_lc"): Array<Pair<String, String>> {
-    return map { path ->
-        path.substringAfterLast("/").let { name ->
-            "(^|/)$name\\.kt$" to "$1${name}$suffix.kt"
-        }
-    }.toTypedArray()
-}
-
-private val conflictingFiles = arrayOf(
-    "event",
-    "image",
-
-    "menu/checkMenuItem",
-    "menu/iconMenuItem",
-    "menu/menu",
-    "menu/menuItem",
-    "menu/predefinedMenuItem",
-    "menu/submenu",
-
-    "webview",
-    "webviewWindow",
-    "window",
-)
-
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
@@ -40,10 +16,6 @@ suspend fun main(args: ReadonlyArray<String>) {
 
         input = manyOf("**/*.d.ts")
         isolatedOutputPackage = true
-
-        packageNameMapper = recordOf(
-            *conflictingFiles.renameCaseConflicts()
-        )
 
         // disable defaults
         moduleNameMapper = recordOf()
