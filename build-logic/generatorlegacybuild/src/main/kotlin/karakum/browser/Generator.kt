@@ -380,21 +380,6 @@ fun generateKotlinDeclarations(
             serviceWorkersEventDeclarations(content, serviceWorkerContent)
 
     for ((name, body, optPkg) in eventDeclarations) {
-        val suppresses = mutableSetOf<Suppress>().apply {
-            if ("Event.types" in name && " = definedExternally" in body)
-                add(NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE)
-
-            if (name == EVENT_HANDLER
-                || name == EVENT_INSTANCE
-                || name == EVENT_TARGET
-            )
-                add(BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER)
-        }.toTypedArray()
-
-        val annotations = if (suppresses.isNotEmpty()) {
-            fileSuppress(suppresses = suppresses)
-        } else ""
-
         val pkg = optPkg ?: EVENT_INFO_MAP.getValue(name.substringBefore("."))
             .fqn
             .substringBeforeLast(".")
@@ -405,7 +390,7 @@ fun generateKotlinDeclarations(
 
         targetDir.resolve("$name.kt")
             .also { check(!it.exists()) { "Duplicated file: ${it.name}" } }
-            .writeCode(fileContent(annotations, "", body, pkg))
+            .writeCode(fileContent(body = body, pkg = pkg))
     }
 
     val aliases = listOf<ConversionResult>()
