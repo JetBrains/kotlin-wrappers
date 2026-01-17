@@ -26,7 +26,7 @@ internal fun generateKotlinDeclarations(
                 -> listOfNotNull(
                 """@file:JsModule("vscode")""",
                 fileSuppress(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
-                    .takeIf { "sealed /* enum */" in body }
+                    .takeIf { "sealed /* enum */" in body },
             ).joinToString("\n\n")
 
             else -> ""
