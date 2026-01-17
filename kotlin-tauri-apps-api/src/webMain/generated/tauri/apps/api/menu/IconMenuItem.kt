@@ -4,9 +4,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
-// unhandled import: MenuItemOptions from "../menu"
-// unhandled import: MenuIcon from "../image"
 
 /**
  * An icon menu item inside a {@linkcode Menu} or {@linkcode Submenu}

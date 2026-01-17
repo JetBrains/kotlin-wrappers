@@ -4,7 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: InvokeArgs from "./core"
 
 /**
  * Mocks one or many window labels.

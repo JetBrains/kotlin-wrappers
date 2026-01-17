@@ -2,8 +2,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
-// unhandled import: Image from "../image"
 
 /** A metadata for the about predefined menu item. */
 external interface AboutMetadata {

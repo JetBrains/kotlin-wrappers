@@ -4,9 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: PluginListener from "./core"
-// unhandled import: Image from "./image"
-// unhandled import: Theme from "./window"
 
 /**
  * Fetches the data store identifiers on macOS and iOS.

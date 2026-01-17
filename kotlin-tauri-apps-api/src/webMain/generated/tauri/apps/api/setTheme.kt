@@ -4,9 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: PluginListener from "./core"
-// unhandled import: Image from "./image"
-// unhandled import: Theme from "./window"
 
 /**
  * Sets the application's theme. Pass in `null` or `undefined` to follow

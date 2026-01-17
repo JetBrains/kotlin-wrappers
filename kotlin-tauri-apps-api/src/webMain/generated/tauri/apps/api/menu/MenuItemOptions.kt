@@ -2,7 +2,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
 
 /** Options for creating a new menu item. */
 external interface MenuItemOptions {

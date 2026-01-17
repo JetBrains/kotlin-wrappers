@@ -4,8 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: Resource from "./core"
-// unhandled import: NativeIcon from "./menu/iconMenuItem"
 
 /**
  * Transforms image from various types into a type acceptable by Rust.

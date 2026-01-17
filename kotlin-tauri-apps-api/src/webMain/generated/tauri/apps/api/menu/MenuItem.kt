@@ -4,7 +4,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
 
 /** A menu item inside a {@linkcode Menu} or {@linkcode Submenu} and contains only text. */
 external class MenuItem : MenuItemBase {

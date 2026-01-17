@@ -4,18 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: * as app from "./app"
-// unhandled import: * as core from "./core"
-// unhandled import: * as dpi from "./dpi"
-// unhandled import: * as event from "./event"
-// unhandled import: * as image from "./image"
-// unhandled import: * as menu from "./menu"
-// unhandled import: * as mocks from "./mocks"
-// unhandled import: * as path from "./path"
-// unhandled import: * as tray from "./tray"
-// unhandled import: * as webview from "./webview"
-// unhandled import: * as webviewWindow from "./webviewWindow"
-// unhandled import: * as window from "./window"
 
 /**
  * The Tauri API allows you to interface with the backend layer.

@@ -4,9 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: PluginListener from "./core"
-// unhandled import: Image from "./image"
-// unhandled import: Theme from "./window"
 
 /**
  * Bundle type of the current application.

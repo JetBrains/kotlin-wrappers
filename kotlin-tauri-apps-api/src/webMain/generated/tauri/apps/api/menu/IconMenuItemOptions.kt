@@ -2,9 +2,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
-// unhandled import: MenuItemOptions from "../menu"
-// unhandled import: MenuIcon from "../image"
 
 /** Options for creating a new icon menu item. */
 external interface IconMenuItemOptions : MenuItemOptions {

@@ -4,8 +4,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
-// unhandled import: MenuItemOptions from "../menu"
 
 /**
  * A check menu item inside a {@linkcode Menu} or {@linkcode Submenu}

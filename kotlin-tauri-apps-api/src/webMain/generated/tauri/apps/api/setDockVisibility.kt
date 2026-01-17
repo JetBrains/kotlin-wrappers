@@ -4,9 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: PluginListener from "./core"
-// unhandled import: Image from "./image"
-// unhandled import: Theme from "./window"
 
 /**
  * Sets the dock visibility for the application on macOS.

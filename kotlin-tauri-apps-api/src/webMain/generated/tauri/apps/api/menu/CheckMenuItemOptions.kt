@@ -2,8 +2,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
-// unhandled import: MenuItemOptions from "../menu"
 
 /** Options for creating a new check menu item. */
 external interface CheckMenuItemOptions : MenuItemOptions {

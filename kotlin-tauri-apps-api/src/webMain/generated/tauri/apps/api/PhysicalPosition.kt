@@ -4,7 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: SERIALIZE_TO_IPC_FN from "./core"
 
 /**
  * A position represented in physical pixels.

@@ -4,8 +4,6 @@
 
 package tauri.apps.api
 
-// unhandled import: Resource from "./core"
-// unhandled import: NativeIcon from "./menu/iconMenuItem"
 
 /** An RGBA Image in row-major order from top to bottom. */
 external class Image : Resource {

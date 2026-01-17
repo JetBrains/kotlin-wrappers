@@ -4,8 +4,6 @@
 
 package tauri.apps.api.menu
 
-// unhandled import: MenuItemBase from "./base"
-// unhandled import: Image from "../image"
 
 /** A predefined (native) menu item which has a predefined behavior by the OS or by tauri.  */
 external class PredefinedMenuItem : MenuItemBase {

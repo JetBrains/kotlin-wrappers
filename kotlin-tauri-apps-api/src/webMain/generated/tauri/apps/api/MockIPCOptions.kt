@@ -2,7 +2,6 @@
 
 package tauri.apps.api
 
-// unhandled import: InvokeArgs from "./core"
 
 /**
  * Options for `mockIPC`.
