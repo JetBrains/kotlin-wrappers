@@ -1,5 +1,8 @@
 package karakum.events
 
+import karakum.browser.EVENT_DATA
+import karakum.browser.SERVICE_WORKER_EVENT_DATA
+import karakum.browser.WEB_WORKER_EVENT_DATA
 import kotlinx.serialization.json.Json
 import org.gradle.kotlin.dsl.provideDelegate
 import java.io.File
@@ -64,7 +67,7 @@ object EventDataRegistry {
     fun getMergedDomDataList(): List<EventData> {
         return dataList.asSequence()
             .filter { !it.type.startsWith("DOM") }
-            .filter { it.`interface` !in EXCLUDED_EVENTS }
+            .filter { it.`interface` in KNOWN_EVENT_CLASSES }
             .filter { data ->
                 data.targets.asSequence()
                     .map { it.target }
@@ -103,33 +106,15 @@ object EventDataRegistry {
             .distinct()
     }
 
-    private val EXCLUDED_EVENTS = setOf(
-        // legacy
-        "TimeEvent",
-        "TextEvent", // ?
-
-        // TODO - use `Event` as alias instead
-        // new
-        "XRSessionEvent",
-        "BackgroundFetchEvent",
-        "BackgroundFetchUpdateUIEvent",
-        "BeforeInstallPromptEvent",
-        "NavigationEvent",
-        "PortalActivateEvent",
-
-        "CanMakePaymentEvent",
-        "ContentIndexEvent",
-        "PaymentRequestEvent",
-        "PeriodicSyncEvent",
-        "SyncEvent",
-        "KeyFrameRequestEvent",
-        "CaptureActionEvent",
-        "DeviceChangeEvent",
-    )
+    private val KNOWN_EVENT_CLASSES: Set<String> =
+        sequenceOf(EVENT_DATA, WEB_WORKER_EVENT_DATA, SERVICE_WORKER_EVENT_DATA)
+            .flatten()
+            .map { it.name }
+            .toSet()
 
     private val dataMap: Map<String, List<EventData>> by lazy {
         dataList.asSequence()
-            .filter { it.`interface` !in EXCLUDED_EVENTS }
+            .filter { it.`interface` in KNOWN_EVENT_CLASSES }
             .flatMap { data ->
                 data.targets.asSequence()
                     .flatMap { sequenceOf(it.target) + it.bubblingPath }

@@ -95,8 +95,10 @@ internal val SERVICE_WORKER_EVENT_DATA = listOf(
     EventInfo("web.serviceworker.NotificationEvent"),
 )
 
-internal val EVENT_INFO_MAP = (EVENT_DATA + SERVICE_WORKER_EVENT_DATA)
-    .associateBy { it.name }
+internal val EVENT_INFO_MAP =
+    sequenceOf(EVENT_DATA, WEB_WORKER_EVENT_DATA, SERVICE_WORKER_EVENT_DATA)
+        .flatten()
+        .associateBy { it.name }
 
 internal val EVENT_CORRECTION_MAP = mapOf(
     "DOMContentLoaded" to "dom_content_loaded",
