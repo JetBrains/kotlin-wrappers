@@ -128,10 +128,22 @@ inline val <C : ServiceWorkerGlobalScope> C.activateEvent: EventInstance<Extenda
     get() = EventInstance(this, "activate")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/cookiechange_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.cookieChangeEvent: EventInstance<ExtendableCookieChangeEvent, C, C>
+    get() = EventInstance(this, "cookiechange")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
  */
 inline val <C : ServiceWorkerGlobalScope> C.fetchEvent: EventInstance<FetchEvent, C, C>
     get() = EventInstance(this, "fetch")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.installEvent: EventInstance<InstallEvent, C, C>
+    get() = EventInstance(this, "install")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)

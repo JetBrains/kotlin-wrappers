@@ -119,8 +119,6 @@ object EventDataRegistry {
 
         "CanMakePaymentEvent",
         "ContentIndexEvent",
-        "ExtendableCookieChangeEvent",
-        "InstallEvent",
         "PaymentRequestEvent",
         "PeriodicSyncEvent",
         "SyncEvent",
