@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package tauri.apps.api.menu.predefinedMenuItem
+package tauri.apps.api.menu
 
 /** Options for creating a new predefined menu item. */
 external interface PredefinedMenuItemOptions {

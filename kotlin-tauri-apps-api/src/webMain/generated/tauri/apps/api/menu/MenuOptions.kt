@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package tauri.apps.api.menu.menu
+package tauri.apps.api.menu
 
 /** Options for creating a new menu. */
 external interface MenuOptions {

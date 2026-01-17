@@ -6,8 +6,8 @@ package tauri.apps.api.tray
 
 import tauri.apps.api.core.Resource
 import tauri.apps.api.image.Image
-import tauri.apps.api.menu.menu.Menu
-import tauri.apps.api.menu.submenu.Submenu
+import tauri.apps.api.menu.Menu
+import tauri.apps.api.menu.Submenu
 
 /**
  * Tray icon class and associated methods. This type constructor is private,

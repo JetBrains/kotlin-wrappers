@@ -17,6 +17,17 @@ suspend fun main(args: ReadonlyArray<String>) {
         input = manyOf("**/*.d.ts")
         isolatedOutputPackage = true
 
+        packageNameMapper = recordOf(
+            "webviewWindow" to "webviewwindow",
+
+            "menu/checkMenuItem/" to "menu/",
+            "menu/iconMenuItem/" to "menu/",
+            "menu/menu/" to "menu/",
+            "menu/menuItem/" to "menu/",
+            "menu/predefinedMenuItem/" to "menu/",
+            "menu/submenu/" to "menu/",
+        )
+
         // disable defaults
         moduleNameMapper = recordOf()
 
@@ -29,12 +40,12 @@ suspend fun main(args: ReadonlyArray<String>) {
             "\\./mocks" to ruleOf("tauri.apps.api.mocks"),
             "\\./path" to ruleOf("tauri.apps.api.path"),
             "\\./tray" to ruleOf("tauri.apps.api.tray"),
-            "\\./webview" to ruleOf(
-                "WebviewWindow" to "tauri.apps.api.webviewWindow.WebviewWindow",
+            "\\./webview$" to ruleOf(
+                "WebviewWindow" to "tauri.apps.api.webviewwindow.WebviewWindow",
                 "Color" to "tauri.apps.api.window.Color",
                 ".+" to "tauri.apps.api.webview."
             ),
-            "\\./webviewWindow" to ruleOf("tauri.apps.api.webviewWindow"),
+            "\\./webviewWindow" to ruleOf("tauri.apps.api.webviewwindow"),
             "\\./window" to ruleOf(
                 "LogicalPosition" to "tauri.apps.api.dpi.LogicalPosition",
                 "PhysicalPosition" to "tauri.apps.api.dpi.PhysicalPosition",
@@ -42,21 +53,14 @@ suspend fun main(args: ReadonlyArray<String>) {
             ),
 
             "^\\./(menu/)?base" to ruleOf("tauri.apps.api.menu.base"),
-            "^\\./(menu/)?checkMenuItem" to ruleOf("tauri.apps.api.menu.checkMenuItem"),
-            "^\\./(menu/)?iconMenuItem" to ruleOf("tauri.apps.api.menu.iconMenuItem"),
-            "^\\./(menu/)?menuItem" to ruleOf("tauri.apps.api.menu.menuItem"),
-            "^\\./(menu/)?predefinedMenuItem" to ruleOf("tauri.apps.api.menu.predefinedMenuItem"),
-            "^\\./(menu/)?submenu" to ruleOf("tauri.apps.api.menu.submenu"),
+            "^\\./(menu/)?checkMenuItem" to ruleOf("tauri.apps.api.menu"),
+            "^\\./(menu/)?iconMenuItem" to ruleOf("tauri.apps.api.menu"),
+            "^\\./(menu/)?menu$" to ruleOf("tauri.apps.api.menu"),
+            "^\\./(menu/)?menuItem" to ruleOf("tauri.apps.api.menu"),
+            "^\\./(menu/)?predefinedMenuItem" to ruleOf("tauri.apps.api.menu"),
+            "^\\./(menu/)?submenu" to ruleOf("tauri.apps.api.menu"),
 
-            "^\\./(menu/)?menu$" to ruleOf(
-                "Submenu" to "tauri.apps.api.menu.submenu.Submenu",
-                ".+" to "tauri.apps.api.menu.menu.",
-            ),
-
-            "^\\.\\./menu$" to ruleOf(
-                "MenuItemOptions" to "tauri.apps.api.menu.menuItem.MenuItemOptions",
-                "SubmenuOptions" to "tauri.apps.api.menu.submenu.SubmenuOptions",
-            )
+            "^\\.\\./menu$" to ruleOf("tauri.apps.api.menu")
         )
     }
 }

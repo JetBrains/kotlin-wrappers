@@ -2,7 +2,7 @@
 
 @file:JsModule("@tauri-apps/api/webviewWindow")
 
-package tauri.apps.api.webviewWindow
+package tauri.apps.api.webviewwindow
 
 import tauri.apps.api.event.EventCallback
 import tauri.apps.api.event.EventName

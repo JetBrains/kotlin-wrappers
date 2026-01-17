@@ -9,7 +9,7 @@ import tauri.apps.api.event.EventCallback
 import tauri.apps.api.event.EventName
 import tauri.apps.api.event.EventTarget
 import tauri.apps.api.event.UnlistenFn
-import tauri.apps.api.webviewWindow.WebviewWindow
+import tauri.apps.api.webviewwindow.WebviewWindow
 import tauri.apps.api.window.Color
 import tauri.apps.api.window.Window
 

@@ -2,7 +2,7 @@
 
 @file:JsModule("@tauri-apps/api/webviewWindow")
 
-package tauri.apps.api.webviewWindow
+package tauri.apps.api.webviewwindow
 
 // export { WebviewWindow, getCurrentWebviewWindow, getAllWebviewWindows };
 

@@ -2,7 +2,7 @@
 
 @file:JsModule("@tauri-apps/api/menu/menuItem")
 
-package tauri.apps.api.menu.menuItem
+package tauri.apps.api.menu
 
 import tauri.apps.api.menu.base.MenuItemBase
 

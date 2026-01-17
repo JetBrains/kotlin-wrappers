@@ -4,12 +4,7 @@
 
 package tauri.apps.api.menu.base
 
-import tauri.apps.api.menu.checkMenuItem.CheckMenuItemOptions
-import tauri.apps.api.menu.iconMenuItem.IconMenuItemOptions
-import tauri.apps.api.menu.menu.MenuOptions
-import tauri.apps.api.menu.menuItem.MenuItemOptions
-import tauri.apps.api.menu.predefinedMenuItem.PredefinedMenuItemOptions
-import tauri.apps.api.menu.submenu.SubmenuOptions
+import tauri.apps.api.menu.*
 
 external fun newMenu(kind: ItemKind): js.promise.Promise<js.array.Tuple2<Double, String>>
 

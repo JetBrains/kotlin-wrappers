@@ -2,7 +2,7 @@
 
 @file:JsModule("@tauri-apps/api/menu/iconMenuItem")
 
-package tauri.apps.api.menu.iconMenuItem
+package tauri.apps.api.menu
 
 /**
  * A native Icon to be used for the menu item

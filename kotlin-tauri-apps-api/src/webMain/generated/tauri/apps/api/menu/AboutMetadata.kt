@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package tauri.apps.api.menu.predefinedMenuItem
+package tauri.apps.api.menu
 
 /** A metadata for the about predefined menu item. */
 external interface AboutMetadata {

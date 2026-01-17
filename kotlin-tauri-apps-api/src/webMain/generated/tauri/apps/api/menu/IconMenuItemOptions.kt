@@ -1,9 +1,8 @@
 // Automatically generated - do not modify!
 
-package tauri.apps.api.menu.iconMenuItem
+package tauri.apps.api.menu
 
 import tauri.apps.api.image.MenuIcon
-import tauri.apps.api.menu.menuItem.MenuItemOptions
 
 /** Options for creating a new icon menu item. */
 external interface IconMenuItemOptions : MenuItemOptions {

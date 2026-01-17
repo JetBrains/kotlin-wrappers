@@ -26,9 +26,9 @@ fun addTauriFixes() {
     listOf(
         "core/Resource.kt",
         "menu/base/MenuItemBase.kt",
-        "menu/menu/Menu.kt",
-        "menu/submenu/Submenu.kt",
-        "webviewWindow/WebviewWindow.kt",
+        "menu/Menu.kt",
+        "menu/Submenu.kt",
+        "webviewwindow/WebviewWindow.kt",
         "webview/Webview.kt",
         "window/Window.kt"
     ).forEach { path ->
@@ -43,7 +43,7 @@ fun addTauriFixes() {
         }
     }
 
-    addFix("webviewWindow/WebviewWindow.kt") {
+    addFix("webviewwindow/WebviewWindow.kt") {
         it
             .replace("fun emit", "override fun emit")
             .replace("fun emitTo", "override fun emitTo")
@@ -97,7 +97,7 @@ fun addTauriFixes() {
         it.replace(Regex("js.array.Tuple16<.*?>"), "js.array.ReadonlyArray<Double>")
     }
 
-    addFix("webviewWindow/WebviewWindowOptions.kt") {
+    addFix("webviewwindow/WebviewWindowOptions.kt") {
         it.replace(Regex("Omit<.*?>"), "JsAny")
     }
 }

@@ -2,7 +2,7 @@
 
 @file:JsModule("@tauri-apps/api/webviewWindow")
 
-package tauri.apps.api.webviewWindow
+package tauri.apps.api.webviewwindow
 
 /**
  * Get an instance of `Webview` for the current webview window.

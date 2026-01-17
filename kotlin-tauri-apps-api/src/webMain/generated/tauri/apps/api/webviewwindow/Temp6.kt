@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package tauri.apps.api.webviewWindow
+package tauri.apps.api.webviewwindow
 
 sealed external interface Temp6 {
     companion object {

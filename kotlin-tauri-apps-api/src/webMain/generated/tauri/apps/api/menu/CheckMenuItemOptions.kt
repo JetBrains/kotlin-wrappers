@@ -1,8 +1,6 @@
 // Automatically generated - do not modify!
 
-package tauri.apps.api.menu.checkMenuItem
-
-import tauri.apps.api.menu.menuItem.MenuItemOptions
+package tauri.apps.api.menu
 
 /** Options for creating a new check menu item. */
 external interface CheckMenuItemOptions : MenuItemOptions {
