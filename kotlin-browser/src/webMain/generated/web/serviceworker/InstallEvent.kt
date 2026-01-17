@@ -13,4 +13,9 @@ import kotlin.js.definedExternally
 open external class InstallEvent(
     override val type: EventType<InstallEvent>,
     init: ExtendableEventInit = definedExternally,
-) : ExtendableEvent
+) : ExtendableEvent {
+    companion object
+}
+
+inline val InstallEvent.Companion.INSTALL: EventType<InstallEvent>
+    get() = EventType("install")

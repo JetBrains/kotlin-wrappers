@@ -190,7 +190,7 @@ private fun event(
 
     val eventExtensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, eventParent)
     val eventMembers = when {
-        eventSource.endsWith(" {") -> ""
+        eventSource.endsWith(" {") -> null
 
         else -> eventSource
             .substringAfter(" {\n")

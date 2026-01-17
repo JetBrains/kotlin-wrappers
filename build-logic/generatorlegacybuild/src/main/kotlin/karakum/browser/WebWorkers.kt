@@ -127,6 +127,16 @@ internal fun serviceWorkerContent(
             ", NavigatorConcurrentHardware, NavigatorID",
             ", NavigatorConcurrentHardware, NavigatorGPU, NavigatorID",
         )
+
+        // TODO: report
+        .replace(
+            """"install": ExtendableEvent;""",
+            """"install": InstallEvent;"""
+        )
+        .replace(
+            "    oninstall: ((this: ServiceWorkerGlobalScope, ev: ExtendableEvent) => any) | null;",
+            "    oninstall: ((this: ServiceWorkerGlobalScope, ev: InstallEvent) => any) | null;",
+        )
         .splitUnion("string | string[]")
         .splitUnion("string | URL")
         .splitUnion("(string | URL)[]", "string[] | URL[]")
