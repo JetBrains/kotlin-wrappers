@@ -2,6 +2,10 @@ package karakum.browser
 
 private const val EVENT = "Event"
 
+internal const val EVENT_HANDLER = "EventHandler"
+internal const val EVENT_INSTANCE = "EventInstance"
+internal const val EVENT_TARGET = "EventTarget"
+
 private data class EventData(
     val name: String,
     val type: String,
