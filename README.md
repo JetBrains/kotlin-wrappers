@@ -124,9 +124,14 @@ dependencies {
 
 ## Examples
 
-1. [Internal examples](examples/README.md)
+1. [TanStack React Router](examples/tanstack-react-router)
+2. [TanStack React Table](examples/tanstack-react-table)
+3. [React lazy modules (webpack)](examples/react-lazy-modules-webpack)
+4. [Tic-Tac-Toe example](examples/tic-tac-toe)
 
-2. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
+### External
+
+1. [Material UI showcase](https://github.com/karakum-team/kotlin-mui-showcase).
 
 Follow these examples to learn how to start developing your Kotlin/JS apps. Good luck and have fun!
 
