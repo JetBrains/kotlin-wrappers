@@ -3,3 +3,7 @@
 @file:JsModule("typescript")
 
 package typescript
+
+external object ScriptSnapshot {
+    fun fromString(text: String): IScriptSnapshot
+}

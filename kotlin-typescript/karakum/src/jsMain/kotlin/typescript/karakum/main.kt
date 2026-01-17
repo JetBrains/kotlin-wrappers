@@ -82,9 +82,9 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/isTypeOnlyImportDeclaration.contract.kt",
             "**/isTypeOnlyImportDeclaration.kt",
         )
-        libraryNameOutputPrefix = true
+        isolatedOutputPackage = true
         packageNameMapper = recordOf(
-            "lib/" to "/",
+            "lib/typescript" to "/",
             "^ts/(.+)" to "typescript/$1",
             "createProgram.kt" to "createProgram.fun.kt",
         )
