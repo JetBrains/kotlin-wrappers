@@ -14,9 +14,9 @@ tasks.generateKarakumExternals {
 
 fun addTauriFixes() {
     listOf(
-        "Channel.kt",
-        "Resource.kt",
-        "menu/MenuItemBase.kt"
+        "core/Channel.kt",
+        "core/Resource.kt",
+        "menu/base/MenuItemBase.kt"
     ).forEach { path ->
         addFix(path) { content ->
             content.replace("var /* #private */: Any? /* type isn't declared */", "")
@@ -24,13 +24,13 @@ fun addTauriFixes() {
     }
 
     listOf(
-        "Resource.kt",
-        "menu/MenuItemBase.kt",
-        "menu/Menu.kt",
-        "menu/Submenu.kt",
-        "WebviewWindow.kt",
-        "Webview.kt",
-        "Window.kt"
+        "core/Resource.kt",
+        "menu/base/MenuItemBase.kt",
+        "menu/menu/Menu.kt",
+        "menu/submenu/Submenu.kt",
+        "webviewWindow/WebviewWindow.kt",
+        "webview/Webview.kt",
+        "window/Window.kt"
     ).forEach { path ->
         addFix(path) { content ->
             content
@@ -43,7 +43,7 @@ fun addTauriFixes() {
         }
     }
 
-    addFix("WebviewWindow.kt") {
+    addFix("webviewWindow/WebviewWindow.kt") {
         it
             .replace("fun emit", "override fun emit")
             .replace("fun emitTo", "override fun emitTo")
@@ -60,7 +60,7 @@ fun addTauriFixes() {
             .replace("fun setBackgroundColor", "override fun setBackgroundColor")
             .replace("var label", "override var label")
             .replace("var listeners", "override var listeners")
-            .replace("tauri.apps.api.Window {", "// TODO @seskar.js.JsMixin tauri.apps.api.Window {")
+            .replace("Window {", "// TODO @seskar.js.JsMixin tauri.apps.api.Window {")
             .replace("Webview,", "Webview {")
             .replace(
                 "open override fun setBackgroundColor(color: Color): js.promise.Promise<js.core.Void>",
@@ -74,7 +74,7 @@ fun addTauriFixes() {
         "PhysicalPositionObject",
         "PhysicalSizeObject"
     ).forEach { fileName ->
-        addFix("$fileName.kt") { content ->
+        addFix("dpi/$fileName.kt") { content ->
             content.replaceFirst("interface $fileName", "interface ${fileName}Temp")
         }
     }
@@ -85,7 +85,7 @@ fun addTauriFixes() {
         "PhysicalPosition",
         "PhysicalSize"
     ).forEach { fileName ->
-        addFix("$fileName.kt") { content ->
+        addFix("dpi/$fileName.kt") { content ->
             content.replaceFirst(
                 "constructor (`object`: ${fileName}Object)",
                 "constructor(`object`: ${fileName}ObjectTemp)"
@@ -93,11 +93,11 @@ fun addTauriFixes() {
         }
     }
 
-    addFix("DataStoreIdentifier.kt") {
+    addFix("app/DataStoreIdentifier.kt") {
         it.replace(Regex("js.array.Tuple16<.*?>"), "js.array.ReadonlyArray<Double>")
     }
 
-    addFix("WebviewWindowOptions.kt") {
+    addFix("webviewWindow/WebviewWindowOptions.kt") {
         it.replace(Regex("Omit<.*?>"), "JsAny")
     }
 }

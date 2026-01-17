@@ -11,14 +11,6 @@ private val builtinTauriTypes = mapOf(
     "Promise" to "js.promise.Promise",
     "Uint8Array" to "js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>",
     "ArrayBuffer" to "js.buffer.ArrayBuffer",
-    "Resource" to "tauri.apps.api.Resource",
-    "MenuIcon" to "tauri.apps.api.MenuIcon",
-    "PhysicalPosition" to "tauri.apps.api.PhysicalPosition",
-    "Window" to "tauri.apps.api.Window",
-    "LogicalPosition" to "tauri.apps.api.LogicalPosition",
-    "Menu" to "tauri.apps.api.menu.Menu",
-    "Submenu" to "tauri.apps.api.menu.Submenu",
-    "Position" to "tauri.apps.api.Position",
     "HeadersInit" to "web.http.Headers",
 )
 
