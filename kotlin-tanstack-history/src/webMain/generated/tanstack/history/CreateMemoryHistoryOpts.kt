@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface CreateMemoryHistoryOpts {
     var initialEntries: ReadonlyArray<String>
-    var initialIndex: Int?
+    var initialIndex: Int
 }

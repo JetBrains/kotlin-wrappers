@@ -6,5 +6,5 @@ typealias SubscriberHistoryAction = Any /* {
     type: Exclude<HistoryAction, 'GO'>;
 } | {
     type: 'GO';
-    index: number;
+    index: Int;
 } */
