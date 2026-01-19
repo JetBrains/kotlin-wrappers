@@ -20,6 +20,12 @@ Browser
 ./gradlew :kotlin-browser:build
 ```
 
+Browser API
+
+```sh
+./gradlew :kotlin-browser-api:generate
+```
+
 Cesium
 
 ```sh
