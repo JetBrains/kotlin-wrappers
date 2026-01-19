@@ -3,6 +3,7 @@
 package web.animations
 
 import js.objects.JsPlainObject
+import web.cssom.CSSNumberish
 
 @JsPlainObject
 external interface ComputedEffectTiming :

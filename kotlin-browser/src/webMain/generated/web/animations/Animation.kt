@@ -3,6 +3,7 @@
 package web.animations
 
 import js.promise.Promise
+import web.cssom.CSSNumberish
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget

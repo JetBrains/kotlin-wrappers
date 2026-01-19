@@ -687,13 +687,6 @@ internal fun htmlDeclarations(
         )
         .plus(
             ConversionResult(
-                name = "CSSNumberish",
-                body = "typealias CSSNumberish = Double",
-                pkg = "web.animations",
-            )
-        )
-        .plus(
-            ConversionResult(
                 name = "XPathNSResolver",
                 body = "typealias XPathNSResolver = (prefix: String?) -> String?",
                 pkg = "web.xpath",

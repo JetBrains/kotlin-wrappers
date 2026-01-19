@@ -2,6 +2,8 @@
 
 package web.animations
 
+import web.cssom.CSSNumberish
+
 /**
  * The **`AnimationTimeline`** interface of the Web Animations API represents the timeline of an animation. This interface exists to define timeline features, inherited by other timeline types:
  *

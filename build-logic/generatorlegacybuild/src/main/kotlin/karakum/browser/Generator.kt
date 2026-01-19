@@ -127,6 +127,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.cookie.ExtendableCookieChangeEvent",
     "web.crypto.Algorithm",
     "web.csp.SecurityPolicyViolationEventDisposition",
+    "web.cssom.CSSNumberish",
     "web.cssom.CSSNumericValue",
     "web.cssom.CSSStyleDeclaration",
     "web.cssom.CSSStyleProperties",

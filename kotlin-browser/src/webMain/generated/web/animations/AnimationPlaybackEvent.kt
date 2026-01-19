@@ -2,6 +2,7 @@
 
 package web.animations
 
+import web.cssom.CSSNumberish
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
