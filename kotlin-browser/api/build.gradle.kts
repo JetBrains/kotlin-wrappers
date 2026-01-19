@@ -30,6 +30,19 @@ data class ApiItem(
 )
 
 val EXCLUDED_NAMES = setOf(
+    "JsClass",
+    "JsErrorLike",
+    "JsErrorName",
+    "JsCloseable",
+    "Object",
+    "ObjectLike",
+    "Serializable",
+
+    "AsyncMapLike",
+
+    "PromiseReject",
+    "PromiseResolve",
+
     "VariadicTuple",
 
     "Abortable",
@@ -77,7 +90,10 @@ fun getApiItems(
                 pkg == "js.temporal" -> "Temporal.$name"
                 pkg == "web.assembly" -> "WebAssembly.$name"
 
+                name == "JsError" -> "Error"
                 name == "JsIterator" -> "Iterator"
+                name == "JsIterable" -> "Iterable"
+                name == "JsIteratorLike" -> "IteratorLike"
                 name == "JsMap" -> "Map"
                 name == "JsSet" -> "Set"
 
