@@ -2,6 +2,7 @@ package react
 
 import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
+import react.internal.buildCleanupCallback
 import react.internal.createCleanupCallback
 import react.raw.useCallbackRaw
 
@@ -21,3 +22,15 @@ fun <T : Any> useRefCallback(
     block: suspend CoroutineScope.(T) -> Unit,
 ): RefCallback<T> =
     useCallbackRaw(RefCallback(block), dependencies)
+
+fun <T : Any> useRefCallbackWithCleanup(
+    vararg dependencies: Any?,
+    block: CleanupBuilder.(T) -> Unit,
+): RefCallback<T> {
+    val callback = { value: T ->
+        val cleanupCallback = buildCleanupCallback { block(value) }
+        cleanupCallback()
+    }.unsafeCast<RefCallback<T>>()
+
+    return useCallbackRaw(callback, dependencies)
+}
