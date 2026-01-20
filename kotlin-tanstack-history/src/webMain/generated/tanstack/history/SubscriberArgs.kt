@@ -8,4 +8,5 @@ import js.objects.JsPlainObject
 external interface SubscriberArgs {
     var location: HistoryLocation
     var action: SubscriberHistoryAction
+    var navigateOpts: NavigateOptions?
 }
