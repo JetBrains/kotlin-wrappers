@@ -28,6 +28,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
      */
     var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
+     */
     var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**

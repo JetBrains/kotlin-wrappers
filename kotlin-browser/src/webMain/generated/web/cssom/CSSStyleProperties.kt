@@ -61,6 +61,8 @@ private constructor() :
 
     /**
      * The anchor-scope CSS property can be used to limit the scope in which a positioned element can be associated with anchor elements to a particular subtree.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/anchor-scope)
      */
     var anchorScope: String
 
@@ -1231,6 +1233,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-size-adjust)
      */
     var fontSizeAdjust: String
+
+    /**
+     * The font-stretch CSS property selects a normal, condensed, or expanded face from a font.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-stretch)
+     */
+    var fontStretch: String
 
     /**
      * The font-style CSS property sets whether a font should be styled with a normal, italic, or oblique face from its font-family.
@@ -2841,6 +2850,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-indent)
      */
     var textIndent: String
+
+    /**
+     * The text-justify CSS property sets what type of justification should be applied to text when text-align: justify; is set on an element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-justify)
+     */
+    var textJustify: String
 
     /**
      * The text-orientation CSS property sets the orientation of the text characters in a line. It only affects text in vertical mode (when writing-mode is not horizontal-tb). It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.

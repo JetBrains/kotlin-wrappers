@@ -1518,6 +1518,7 @@ internal fun convertInterface(
         name in DOM_DATA_TYPES -> "web.data"
         name in DOM_GEOMETRY_TYPES -> "web.geometry"
         name == "XMLDocument" -> "web.xml"
+        name.startsWith("Sanitizer") -> "web.sanitizer"
 
         name.startsWith("XPath") -> "web.xpath"
 

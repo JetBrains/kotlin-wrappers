@@ -26,6 +26,7 @@ private val PKG_MAP = mapOf(
     "EndingType" to "web.blob",
 
     "InsertPosition" to "web.dom",
+    "SanitizerPresets" to "web.sanitizer",
     "MutationRecordType" to "web.mutation",
     "ResizeObserverBoxOptions" to "web.resize",
 
@@ -338,6 +339,11 @@ private fun convertType(
             "ImportValue",
 
             "PushMessageDataInit",
+
+            "SanitizerAttribute",
+            "SanitizerElement",
+            "SanitizerElementWithAttributes",
+
                 -> getPkg(name)!!
 
             in INTL_KEY_TYPES,
@@ -467,6 +473,7 @@ private fun getTypePkg(
         name.endsWith("Setting") -> "web.vtt"
 
         name.startsWith("Document") -> "web.dom"
+        name.startsWith("Sanitizer") -> "web.sanitizer"
         name.startsWith("Fullscreen") -> "web.fullscreen"
         name.startsWith("Scroll") -> "web.scroll"
 

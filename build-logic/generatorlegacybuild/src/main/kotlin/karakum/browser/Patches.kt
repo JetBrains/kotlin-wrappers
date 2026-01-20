@@ -409,6 +409,7 @@ internal fun String.applyPatches(): String {
                 "compareDocumentPosition(other: Node): $NODE_POSITION;",
             )
         }
+        .splitUnion("SanitizerConfig | SanitizerPresets")
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

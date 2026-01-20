@@ -28,6 +28,8 @@ private constructor() :
 
     /**
      * The read-only **`performance.interactionCount`** property represents the number of real-user interactions that have occurred on the page since it was loaded.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/interactionCount)
      */
     val interactionCount: UInt53
 

@@ -27,4 +27,6 @@ open external class Memory(
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/grow)
      */
     fun grow(delta: AddressValue): AddressValue
+    fun toFixedLengthBuffer(): ArrayBuffer
+    fun toResizableBuffer(): ArrayBuffer
 }
