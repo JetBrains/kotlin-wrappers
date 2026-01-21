@@ -29,8 +29,6 @@ jobs:
 
   build-examples:
 
-    if: false
-
     runs-on: ubuntu-latest
 
     steps:
