@@ -7,6 +7,7 @@
 package web.gpu
 
 import js.array.ReadonlyArray
+import js.buffer.ArrayBufferLike
 import js.reflect.JsExternalInheritorsOnly
 import js.typedarrays.Uint32Array
 import kotlin.js.definedExternally
@@ -26,7 +27,7 @@ external interface GPUBindingCommandsMixin {
     fun setBindGroup(
         index: GPUIndex32,
         bindGroup: GPUBindGroup?,
-        dynamicOffsetsData: Uint32Array<*>,
+        dynamicOffsetsData: Uint32Array<ArrayBufferLike>,
         dynamicOffsetsDataStart: GPUSize64,
         dynamicOffsetsDataLength: GPUSize32,
     ): Unit = definedExternally
