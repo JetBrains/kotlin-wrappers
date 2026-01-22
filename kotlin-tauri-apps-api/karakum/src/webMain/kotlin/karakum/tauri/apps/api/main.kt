@@ -5,14 +5,21 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
+import karakum.tauri.apps.api.inheritanceModifiers.modifyClassInheritance
+import karakum.tauri.apps.api.inheritanceModifiers.modifyPropertyInheritance
 import karakum.tauri.apps.api.plugins.convertBuiltinTauriTypeReference
+import karakum.tauri.apps.api.plugins.convertPrivateIdentifier
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
-            convertBuiltinTauriTypeReference
+            convertBuiltinTauriTypeReference,
+            convertPrivateIdentifier,
         )
-        inheritanceModifiers = manyOf()
+        inheritanceModifiers = manyOf(
+            ::modifyClassInheritance,
+            ::modifyPropertyInheritance,
+        )
 
         input = manyOf("**/*.d.ts")
         isolatedOutputPackage = true

@@ -10,5 +10,6 @@ external class Channel<T /* default is Any? */> {
     /** The callback id returned from {@linkcode transformCallback} */
     var id: Double
     var onmessage: (response: T) -> Unit
+
     fun toJSON(): String
 }

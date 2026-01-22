@@ -14,29 +14,12 @@ tasks.generateKarakumExternals {
 
 fun addTauriFixes() {
     listOf(
-        "core/Channel.kt",
-        "core/Resource.kt",
-        "menu/base/MenuItemBase.kt"
-    ).forEach { path ->
-        addFix(path) { content ->
-            content.replace("var /* #private */: Any? /* type isn't declared */", "")
-        }
-    }
-
-    listOf(
-        "core/Resource.kt",
-        "menu/base/MenuItemBase.kt",
-        "menu/Menu.kt",
-        "menu/Submenu.kt",
         "webviewwindow/WebviewWindow.kt",
         "webview/Webview.kt",
         "window/Window.kt"
     ).forEach { path ->
         addFix(path) { content ->
             content
-                .replace("external class", "open external class")
-                .replace("var label", "open var label")
-                .replace("var listeners", "open var listeners")
                 .replace("fun setBackgroundColor", "open fun setBackgroundColor")
                 .replace("fun <T> listen", "open fun <T> listen")
                 .replace("fun <T> once", "open fun <T> once")
