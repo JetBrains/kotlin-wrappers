@@ -29,7 +29,6 @@ object Includes {
         "web/encoding",
         "web/errors",
         "web/events",
-        "web/events/internal",
         "web/file/File.kt",
         "web/file/FilePropertyBag.kt",
         "web/file/FileReader.kt",
