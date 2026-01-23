@@ -3,7 +3,6 @@
 package tanstack.history
 
 import js.collections.ReadonlySet
-import js.promise.Promise
 
 external interface RouterHistory {
     val location: HistoryLocation
@@ -16,13 +15,13 @@ external interface RouterHistory {
         path: String,
         state: Any? = definedExternally,
         navigateOpts: NavigateOptions = definedExternally,
-    ): Promise<NavigationResult>
+    )
 
     fun replace(
         path: String,
         state: Any? = definedExternally,
         navigateOpts: NavigateOptions = definedExternally,
-    ): Promise<NavigationResult>
+    )
 
     fun go(
         index: Int,
