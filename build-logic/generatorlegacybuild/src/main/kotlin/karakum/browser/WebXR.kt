@@ -1,37 +1,12 @@
 package karakum.browser
 
-private val INCLUDED = setOf(
-    "XRHitResult",
-    "XRViewport",
-    "XRRenderState",
-    "XRInputSource",
-    "XRPose",
-    "XRFrame",
-    "XRViewerPose",
-    "XRView",
-    "XRAnchor",
-    "XRTransientInputHitTestResult",
-    "XRHitTestSource",
-    "XRTransientInputHitTestSource",
-    "XRPlane",
-    "XRMesh",
-    "XRSpace",
-    "XRLayer",
-    "XRJointSpace",
-    "XRJointPose",
-    "XRProjectionLayer",
-    "XRCylinderLayer",
-    "XRQuadLayer",
-    "XREquirectLayer",
-    "XRCubeLayer",
-    "XRSubImage",
-    "XRWebGLSubImage",
-    "XRSessionGrant",
-    "XRDepthInformation",
-    "XRCPUDepthInformation",
-    "XRWebGLDepthInformation",
-    "XRWebGLBinding",
-    "XRHitTestResult",
+private val EXCLUDED = setOf(
+    "XRReferenceSpace",
+    "XRBoundedReferenceSpace",
+    "XRInputSourceArray",
+    "XRHand",
+    "XRCompositionLayer",
+    "XRDOMOverlayState",
 )
 
 internal fun webXrDeclarations(
@@ -68,8 +43,14 @@ internal fun webXrDeclarations(
         .mapNotNull { source ->
             val name = getInterfaceName(source)
 
-            if (name !in INCLUDED && (!name.startsWith("XR") || !name.endsWith("Init")))
-                return@mapNotNull null
+            if (
+                !name.startsWith("XR")
+                || name.endsWith("Event")
+                || name.endsWith("EventInit")
+                || name.endsWith("EventHandler")
+                || name.endsWith("EventMap")
+                || name in EXCLUDED
+            ) return@mapNotNull null
 
             convertInterface(
                 source = source,
