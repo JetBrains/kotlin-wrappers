@@ -14,5 +14,5 @@ open external class XRReferenceSpace
 private constructor() :
     XRSpace {
     fun getOffsetReferenceSpace(originOffset: XRRigidTransform): XRReferenceSpace
-    var onreset: EventHandler<*, *, *>
+    var onreset: EventHandler<XRReferenceSpaceEvent, *, *>
 }

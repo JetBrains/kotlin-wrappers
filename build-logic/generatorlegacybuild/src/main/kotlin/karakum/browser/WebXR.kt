@@ -42,12 +42,24 @@ internal fun webXrDeclarations(
 
             if (
                 !name.startsWith("XR")
-                || name.endsWith("Event")
-                || name.endsWith("EventInit")
                 || name.endsWith("EventHandler")
                 || name.endsWith("EventMap")
                 || name in EXCLUDED
             ) return@mapNotNull null
+
+            if (name.endsWith("Event")) {
+                return@mapNotNull ConversionResult(
+                    name = name,
+                    body = """
+                    // TBD
+                    open external class $name(
+                        type: EventType<$name>,
+                        // init: ${name}Init = definedExternally,
+                    ):Event
+                    """.trimIndent(),
+                    pkg = "web.xr",
+                )
+            }
 
             convertInterface(
                 source = source,
@@ -90,6 +102,7 @@ internal fun webXrContent(
     content
         .replace(Regex("""\n?\n {4}addEventListener[\s\S]*?\): void;"""), "")
         .replace(Regex("""\n?\n {4}removeEventListener[\s\S]*?\): void;"""), "")
+        .replace(Regex(""": (XR\w+)EventHandler;"""), ": EventHandler<$1Event, *, *>;")
         .replace(" =\n    | ", " = ")
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
