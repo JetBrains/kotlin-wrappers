@@ -39,9 +39,9 @@ internal fun webXrDeclarations(
 ): Sequence<ConversionResult> {
     val content = webXrContent(source)
 
-    val interfaces = Regex("""interface .+? \{[\s\S]*?\n}""")
+    val interfaces = Regex("""\ninterface .+? \{[\s\S]*?\n}""")
         .findAll(content)
-        .map { it.value }
+        .map { it.value.removePrefix("\n") }
         .groupBy(::getInterfaceName)
         .values
         .asSequence()
@@ -87,9 +87,6 @@ internal fun webXrDeclarations(
 
         "XRSession",
         "XRReferenceSpace",
-
-        // check
-        "XRJointSpace",
     ).map {
         ConversionResult(
             name = it,
