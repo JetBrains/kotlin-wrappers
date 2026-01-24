@@ -139,6 +139,8 @@ internal object IDLRegistry {
                         .removePrefix("mixin ")
                         .substringBefore("\n")
                         .substringBefore(" ")
+                        // XR types
+                        .removeSuffix(":")
 
                     val classNames = when (className) {
                         "BaseComputedKeyframe" -> listOf("ComputedKeyframe")

@@ -18,7 +18,7 @@ private val INCLUDED = setOf(
     "XRSpace",
     "XRLayer",
     "XRJointSpace",
-    // "XRJointPose",
+    "XRJointPose",
     "XRProjectionLayer",
     "XRCylinderLayer",
     "XRQuadLayer",
@@ -90,7 +90,6 @@ internal fun webXrDeclarations(
 
         // check
         "XRJointSpace",
-        "XRJointPose",
     ).map {
         ConversionResult(
             name = it,
