@@ -2126,6 +2126,9 @@ private fun convertProperty(
         "typeof FileReader.EMPTY | typeof FileReader.LOADING | typeof FileReader.DONE",
             -> "ReadyState"
 
+        "() => Promise<string>",
+            -> "() -> Promise<String>"
+
         else -> when {
             type.startsWith("1 | 2 | 5 | 10")
                 -> "Int /* $type */"

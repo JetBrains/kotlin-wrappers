@@ -9,15 +9,27 @@ private val INCLUDED = setOf(
     // "XRFrame",
     "XRViewerPose",
     "XRView",
-    // TEMP
-    // "XRAnchor",
+    "XRAnchor",
     "XRTransientInputHitTestResult",
     "XRHitTestSource",
     "XRTransientInputHitTestSource",
     "XRPlane",
     "XRMesh",
     // "XRSpace",
+    // "XRLayer",
     "XRJointSpace",
+    // "XRJointPose",
+    "XRProjectionLayer",
+    "XRCylinderLayer",
+    "XRQuadLayer",
+    "XREquirectLayer",
+    "XRCubeLayer",
+    "XRSubImage",
+    // "XRWebGLSubImage",
+    "XRSessionGrant",
+    "XRDepthInformation",
+    "XRWebGLDepthInformation",
+    "XRWebGLBinding",
 )
 
 internal fun webXrDeclarations(
@@ -52,10 +64,11 @@ internal fun webXrDeclarations(
         "XRSpace",
         "XRHitTestResult",
         "XRHand",
+        "XRCompositionLayer",
     ).map {
         ConversionResult(
             name = it,
-            body = "open external class $it\nprivate constructor()",
+            body = "// TBD\nopen external class $it\nprivate constructor()",
             pkg = "web.xr",
         )
     }
@@ -75,6 +88,8 @@ internal fun webXrContent(
         .replace(" =\n    | ", " = ")
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
+        .replace("\n\n    ", "\n    ")
+        .replace(" | null | undefined", " | undefined")
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
         .replace(Regex("""declare abstract class (\w+) implements (\w+) \{\n}""")) { result ->
             val name = result.groupValues[1]
@@ -89,3 +104,4 @@ internal fun webXrContent(
                 """.trimIndent()
             } else result.value
         }
+        .replace("\n// eslint-disable-next-line @typescript-eslint/no-empty-interface", "")

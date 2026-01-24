@@ -196,6 +196,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.gl.TexImageSource",
     "web.gl.WebGL2RenderingContext",
     "web.gl.WebGLRenderingContext",
+    "web.gl.WebGLTexture",
     "web.gpu.GPU",
     "web.gpu.GPUCopyExternalImageSource",
     "web.highlight.HighlightRegistry",

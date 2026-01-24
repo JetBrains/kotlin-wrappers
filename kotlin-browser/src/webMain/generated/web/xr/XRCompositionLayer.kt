@@ -3,5 +3,5 @@
 package web.xr
 
 // TBD
-open external class XRHitTestResult
+open external class XRCompositionLayer
 private constructor()
