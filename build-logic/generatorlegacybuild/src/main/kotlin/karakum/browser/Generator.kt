@@ -342,6 +342,7 @@ fun generateKotlinDeclarations(
     webworkerDefinitionsFile: File,
     serviceworkerDefinitionsFile: File,
     audioWorkletDefinitionsFile: File,
+    webXrDefinitionsFile: File,
     sourceDir: File,
 ) {
     IDLRegistry.rootDirectory = idlDir
@@ -417,6 +418,7 @@ fun generateKotlinDeclarations(
         .plus(serviceWorkersDeclarations(serviceworkerDefinitionsParts.first))
         .plus(workerFunctions(serviceWorkerContent))
         .plus(audioWorkletDeclarations(audioWorkletDefinitionsParts.first))
+        .plus(webXrDeclarations(webXrDefinitionsFile.readText()))
         .withEventInstances(knownEventTypes)
 
     for ((name, body, pkg) in aliases) {
