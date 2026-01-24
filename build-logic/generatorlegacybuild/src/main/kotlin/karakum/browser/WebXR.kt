@@ -1,12 +1,9 @@
 package karakum.browser
 
 private val EXCLUDED = setOf(
-    "XRReferenceSpace",
-    "XRBoundedReferenceSpace",
     "XRInputSourceArray",
     "XRHand",
     "XRCompositionLayer",
-    "XRDOMOverlayState",
 )
 
 internal fun webXrDeclarations(
@@ -67,7 +64,6 @@ internal fun webXrDeclarations(
         "XRWebGLLayer",
 
         "XRSession",
-        "XRReferenceSpace",
     ).map {
         ConversionResult(
             name = it,
@@ -92,6 +88,8 @@ internal fun webXrContent(
     content: String,
 ): String =
     content
+        .replace(Regex("""\n?\n {4}addEventListener[\s\S]*?\): void;"""), "")
+        .replace(Regex("""\n?\n {4}removeEventListener[\s\S]*?\): void;"""), "")
         .replace(" =\n    | ", " = ")
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
