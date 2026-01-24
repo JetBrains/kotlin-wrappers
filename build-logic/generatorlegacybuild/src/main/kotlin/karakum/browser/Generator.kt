@@ -191,6 +191,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.geometry.DOMRect",
     "web.geometry.DOMRectList",
     "web.geometry.DOMRectReadOnly",
+    "web.gl.GLenum",
     "web.gl.TexImageSource",
     "web.gl.WebGL2RenderingContext",
     "web.gl.WebGLRenderingContext",
