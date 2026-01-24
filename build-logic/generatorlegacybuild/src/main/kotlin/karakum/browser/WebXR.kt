@@ -25,7 +25,7 @@ private val INCLUDED = setOf(
     "XREquirectLayer",
     "XRCubeLayer",
     "XRSubImage",
-    // "XRWebGLSubImage",
+    "XRWebGLSubImage",
     "XRSessionGrant",
     "XRDepthInformation",
     "XRCPUDepthInformation",
@@ -132,3 +132,7 @@ internal fun webXrContent(
             } else result.value
         }
         .replace("\n// eslint-disable-next-line @typescript-eslint/no-empty-interface", "")
+        .patchInterface("XRWebGLSubImage") {
+            it.replace("readonly textureWidth: number;", "readonly colorTextureWidth: number;")
+                .replace("readonly textureHeight: number;", "readonly colorTextureHeight: number;")
+        }
