@@ -6,7 +6,7 @@ private val INCLUDED = setOf(
     "XRRenderState",
     "XRInputSource",
     "XRPose",
-    // "XRFrame",
+    "XRFrame",
     "XRViewerPose",
     "XRView",
     "XRAnchor",
@@ -28,6 +28,7 @@ private val INCLUDED = setOf(
     // "XRWebGLSubImage",
     "XRSessionGrant",
     "XRDepthInformation",
+    "XRCPUDepthInformation",
     "XRWebGLDepthInformation",
     "XRWebGLBinding",
     "XRHitTestResult",
@@ -83,6 +84,13 @@ internal fun webXrDeclarations(
         "XRHand",
         "XRCompositionLayer",
         "XRWebGLLayer",
+
+        "XRSession",
+        "XRReferenceSpace",
+
+        // check
+        "XRJointSpace",
+        "XRJointPose",
     ).map {
         ConversionResult(
             name = it,
@@ -112,6 +120,7 @@ internal fun webXrContent(
         .replace(" {}\n", " {\n}\n")
         .replace("\n\n    ", "\n    ")
         .replace(" | null | undefined", " | undefined")
+        .replace("Set = Set<", "Set = MutableSetLike<")
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
         .replace(Regex("""declare abstract class (\w+) implements (\w+) \{\n}""")) { result ->
             val name = result.groupValues[1]

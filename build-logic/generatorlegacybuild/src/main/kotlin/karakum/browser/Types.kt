@@ -353,6 +353,9 @@ private fun convertType(
                 name.startsWith("GPU")
                     -> "web.gpu"
 
+                name.startsWith("XR")
+                    -> "web.xr"
+
                 name.startsWith("CSS")
                     -> "web.cssom"
 
@@ -393,6 +396,9 @@ private fun convertType(
 
             " | " in bodySource || bodySource == "AlgorithmIdentifier"
                 -> "JsAny /* $bodySource */"
+
+            bodySource.startsWith("(")
+                -> bodySource.replace(") => void", ") -> Unit")
 
             else -> bodySource
         }
