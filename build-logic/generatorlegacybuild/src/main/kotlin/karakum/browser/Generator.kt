@@ -184,6 +184,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.fs.FileSystemEntry",
     "web.fullscreen.FullscreenOptions",
     "web.function.VoidFunction",
+    "web.gamepad.Gamepad",
     "web.geometry.DOMMatrix",
     "web.geometry.DOMMatrixReadOnly",
     "web.geometry.DOMPoint",

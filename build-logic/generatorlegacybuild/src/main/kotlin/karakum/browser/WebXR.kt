@@ -1,5 +1,21 @@
 package karakum.browser
 
+private val INCLUDED = setOf(
+    "XRHitResult",
+    "XRViewport",
+    // "XRRenderState",
+    "XRInputSource",
+    "XRPose",
+    // "XRFrame",
+    "XRViewerPose",
+    "XRView",
+    // TEMP
+    // "XRAnchor",
+    "XRTransientInputHitTestResult",
+    "XRHitTestSource",
+    "XRTransientInputHitTestSource",
+)
+
 internal fun webXrDeclarations(
     source: String,
 ): Sequence<ConversionResult> {
@@ -13,7 +29,7 @@ internal fun webXrDeclarations(
                 .substringAfter(" ")
                 .substringBefore(" ")
 
-            if (!name.startsWith("XR") || !name.endsWith("Init"))
+            if (name !in INCLUDED && (!name.startsWith("XR") || !name.endsWith("Init")))
                 return@mapNotNull null
 
             if (name == "XRRenderStateInit" || name == "XRSessionInit")
@@ -30,6 +46,8 @@ internal fun webXrDeclarations(
         "XRRay",
         "XRRigidTransform",
         "XRSpace",
+        "XRHitTestResult",
+        "XRHand",
     ).map {
         ConversionResult(
             name = it,
@@ -53,3 +71,4 @@ internal fun webXrContent(
         .replace(" =\n    | ", " = ")
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
+        .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
