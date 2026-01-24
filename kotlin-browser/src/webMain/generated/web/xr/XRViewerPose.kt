@@ -15,7 +15,8 @@ import js.array.ReadonlyArray
  *
  * ref: https://immersive-web.github.io/webxr/#xrviewerpose-interface
  */
-external interface XRViewerPose :
+open external class XRViewerPose
+private constructor() :
     XRPose {
     val views: ReadonlyArray<XRView>
 }

@@ -15,7 +15,8 @@ import kotlin.js.JsString
  * XR input sources.
  * ref: https://immersive-web.github.io/webxr/#xrinputsource-interface
  */
-external interface XRInputSource {
+open external class XRInputSource
+private constructor() {
     val handedness: XRHandedness
     val targetRayMode: XRTargetRayMode
     val targetRaySpace: XRSpace

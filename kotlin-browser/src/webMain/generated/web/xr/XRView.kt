@@ -9,7 +9,8 @@ import js.typedarrays.Float32Array
  *
  * ref: https://immersive-web.github.io/webxr/#xrview-interface
  */
-external interface XRView {
+open external class XRView
+private constructor() {
     val eye: XREye
     val projectionMatrix: Float32Array<*>
     val transform: XRRigidTransform

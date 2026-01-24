@@ -9,7 +9,8 @@ import web.geometry.DOMPointReadOnly
  *
  * ref: https://immersive-web.github.io/webxr/#xrpose-interface
  */
-external interface XRPose {
+open external class XRPose
+private constructor() {
     val transform: XRRigidTransform
     val linearVelocity: DOMPointReadOnly?
     val angularVelocity: DOMPointReadOnly?

@@ -2,6 +2,7 @@
 
 package web.xr
 
-external interface XRHitTestSource {
+open external class XRHitTestSource
+private constructor() {
     fun cancel()
 }

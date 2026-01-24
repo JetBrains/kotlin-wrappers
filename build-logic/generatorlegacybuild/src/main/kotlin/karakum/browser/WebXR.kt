@@ -14,6 +14,10 @@ private val INCLUDED = setOf(
     "XRTransientInputHitTestResult",
     "XRHitTestSource",
     "XRTransientInputHitTestSource",
+    "XRPlane",
+    "XRMesh",
+    // "XRSpace",
+    "XRJointSpace",
 )
 
 internal fun webXrDeclarations(
@@ -72,3 +76,16 @@ internal fun webXrContent(
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
+        .replace(Regex("""declare abstract class (\w+) implements (\w+) \{\n}""")) { result ->
+            val name = result.groupValues[1]
+            val parentName = result.groupValues[2]
+
+            if (name == parentName) {
+                """
+                declare var $name: {
+                    prototype: $name;
+                    new(): $name;
+                };
+                """.trimIndent()
+            } else result.value
+        }

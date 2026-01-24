@@ -7,7 +7,8 @@ package web.xr
  *
  * ref: https://immersive-web.github.io/webxr/#xrviewport-interface
  */
-external interface XRViewport {
+open external class XRViewport
+private constructor() {
     val x: Int
     val y: Int
     val width: Int

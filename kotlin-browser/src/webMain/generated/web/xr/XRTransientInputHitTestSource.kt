@@ -2,6 +2,7 @@
 
 package web.xr
 
-external interface XRTransientInputHitTestSource {
+open external class XRTransientInputHitTestSource
+private constructor() {
     fun cancel()
 }
