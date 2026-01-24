@@ -15,8 +15,8 @@ private val INCLUDED = setOf(
     "XRTransientInputHitTestSource",
     "XRPlane",
     "XRMesh",
-    // "XRSpace",
-    // "XRLayer",
+    "XRSpace",
+    "XRLayer",
     "XRJointSpace",
     // "XRJointPose",
     "XRProjectionLayer",
@@ -38,7 +38,7 @@ internal fun webXrDeclarations(
 ): Sequence<ConversionResult> {
     val content = webXrContent(source)
 
-    val interfaces = Regex("""interface .+? \{[\s\S]+?\n}""")
+    val interfaces = Regex("""interface .+? \{[\s\S]*?\n}""")
         .findAll(content)
         .map { it.value }
         .groupBy(::getInterfaceName)
@@ -80,10 +80,8 @@ internal fun webXrDeclarations(
     val tempClasses = sequenceOf(
         "XRRay",
         "XRRigidTransform",
-        "XRSpace",
         "XRHand",
         "XRCompositionLayer",
-        "XRLayer",
         "XRWebGLLayer",
     ).map {
         ConversionResult(
