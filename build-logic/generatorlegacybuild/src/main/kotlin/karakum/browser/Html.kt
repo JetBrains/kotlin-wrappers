@@ -2127,7 +2127,12 @@ private fun convertProperty(
             -> "ReadyState"
 
         "() => Promise<string>",
-            -> "() -> Promise<String>"
+        "() => Promise<XRAnchor>",
+        "(pose: XRRigidTransform, space: XRSpace) => Promise<XRAnchor>",
+        "(joint: XRJointSpace, baseSpace: XRSpace) => XRJointPose",
+            -> type
+            .replace(" => ", " -> ")
+            .replace("<string>", "<String>")
 
         else -> when {
             type.startsWith("1 | 2 | 5 | 10")

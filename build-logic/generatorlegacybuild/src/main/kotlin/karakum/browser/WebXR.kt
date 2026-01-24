@@ -3,7 +3,7 @@ package karakum.browser
 private val INCLUDED = setOf(
     "XRHitResult",
     "XRViewport",
-    // "XRRenderState",
+    "XRRenderState",
     "XRInputSource",
     "XRPose",
     // "XRFrame",
@@ -30,6 +30,7 @@ private val INCLUDED = setOf(
     "XRDepthInformation",
     "XRWebGLDepthInformation",
     "XRWebGLBinding",
+    "XRHitTestResult",
 )
 
 internal fun webXrDeclarations(
@@ -40,15 +41,33 @@ internal fun webXrDeclarations(
     val interfaces = Regex("""interface .+? \{[\s\S]+?\n}""")
         .findAll(content)
         .map { it.value }
+        .groupBy(::getInterfaceName)
+        .values
+        .asSequence()
+        .map { sources ->
+            sources.singleOrNull() ?: run {
+                val declarations = sources.asSequence()
+                    .map { it.substringBefore(" {\n") }
+                    .toSet()
+
+                val declaration = declarations.singleOrNull()
+                    ?: run {
+                        val longest = declarations.max()
+                        require(declarations.all { longest.startsWith(it) })
+                    }
+
+                val body = sources.asSequence()
+                    .map { it.substringAfter(" {\n") }
+                    .map { it.substringBefore("\n}") }
+                    .joinToString("\n")
+
+                "$declaration {\n$body\n}"
+            }
+        }
         .mapNotNull { source ->
-            val name = source
-                .substringAfter(" ")
-                .substringBefore(" ")
+            val name = getInterfaceName(source)
 
             if (name !in INCLUDED && (!name.startsWith("XR") || !name.endsWith("Init")))
-                return@mapNotNull null
-
-            if (name == "XRRenderStateInit" || name == "XRSessionInit")
                 return@mapNotNull null
 
             convertInterface(
@@ -62,9 +81,10 @@ internal fun webXrDeclarations(
         "XRRay",
         "XRRigidTransform",
         "XRSpace",
-        "XRHitTestResult",
         "XRHand",
         "XRCompositionLayer",
+        "XRLayer",
+        "XRWebGLLayer",
     ).map {
         ConversionResult(
             name = it,
@@ -80,6 +100,10 @@ internal fun webXrDeclarations(
 
     return interfaces + types + tempClasses
 }
+
+private fun getInterfaceName(source: String): String = source
+    .substringAfter(" ")
+    .substringBefore(" ")
 
 internal fun webXrContent(
     content: String,
