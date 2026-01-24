@@ -17,3 +17,5 @@ internal fun webXrContent(
     content: String,
 ): String =
     content
+        .replace(" =\n    | ", " = ")
+        .replace("\n    | ", " | ")
