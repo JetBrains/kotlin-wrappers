@@ -332,6 +332,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.worklets.WorkletGlobalScope",
     "web.xml.XMLDocument",
     "web.xr.XRSessionEvent",
+    "web.xr.XRSystem",
 )
 
 private fun File.parts(): Pair<String, String> {

@@ -30,6 +30,7 @@ import web.usb.USB
 import web.useractivation.UserActivation
 import web.vibration.VibratePattern
 import web.wakelock.WakeLock
+import web.xr.XRSystem
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -230,6 +231,11 @@ private constructor() :
      */
     @ExperimentalWebApi
     val usb: USB
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/xr)
+     */
+    val xr: XRSystem
 }
 
 /**

@@ -1256,6 +1256,11 @@ internal fun convertInterface(
              */
             @ExperimentalWebApi
             val usb: USB
+
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/xr)
+             */
+            val xr: XRSystem
             """.trimIndent()
 
             "WorkerNavigator",
