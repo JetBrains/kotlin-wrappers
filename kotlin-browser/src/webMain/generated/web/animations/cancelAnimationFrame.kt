@@ -6,5 +6,5 @@ package web.animations
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/cancelAnimationFrame)
  */
 external fun cancelAnimationFrame(
-    id: AnimationFrameRequestId,
+    id: FrameRequestId,
 )

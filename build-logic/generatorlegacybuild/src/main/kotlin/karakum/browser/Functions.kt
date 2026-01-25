@@ -141,7 +141,7 @@ private fun getIdType(
     name: String,
 ): String =
     when (name) {
-        in RAF -> "AnimationFrameRequestId"
+        in RAF -> "FrameRequestId"
         in IDLE -> "IdleRequestId"
         else -> {
             require(name in TIMERS)
