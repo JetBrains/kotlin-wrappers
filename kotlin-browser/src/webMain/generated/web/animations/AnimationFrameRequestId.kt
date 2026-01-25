@@ -2,4 +2,4 @@
 
 package web.animations
 
-sealed external interface FrameRequestId
+sealed external interface AnimationFrameRequestId
