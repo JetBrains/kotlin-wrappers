@@ -8,6 +8,7 @@ import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Float32Array
 import web.events.EventHandler
+import web.events.EventInstance
 import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.JsString
@@ -170,3 +171,27 @@ suspend inline fun XRSession.updateTargetFrameRate(rate: Float) {
         rate = rate,
     ).await()
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/end_event)
+ */
+inline val <C : XRSession> C.endEvent: EventInstance<XRSessionEvent, C, C>
+    get() = EventInstance(this, "end")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/select_event)
+ */
+inline val <C : XRSession> C.selectEvent: EventInstance<XRInputSourceEvent, C, C>
+    get() = EventInstance(this, "select")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/selectstart_event)
+ */
+inline val <C : XRSession> C.selectStartEvent: EventInstance<XRInputSourceEvent, C, C>
+    get() = EventInstance(this, "selectstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/visibilitychange_event)
+ */
+inline val <C : XRSession> C.visibilityChangeEvent: EventInstance<XRSessionEvent, C, C>
+    get() = EventInstance(this, "visibilitychange")

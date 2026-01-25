@@ -3,6 +3,7 @@
 package web.xr
 
 import web.events.EventHandler
+import web.events.EventInstance
 
 /**
  * One of several common XRSpaces that applications can use to establish a spatial relationship
@@ -16,3 +17,9 @@ private constructor() :
     fun getOffsetReferenceSpace(originOffset: XRRigidTransform): XRReferenceSpace
     var onreset: EventHandler<XRReferenceSpaceEvent, *, *>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRReferenceSpace/reset_event)
+ */
+inline val <C : XRReferenceSpace> C.resetEvent: EventInstance<XRReferenceSpaceEvent, C, C>
+    get() = EventInstance(this, "reset")

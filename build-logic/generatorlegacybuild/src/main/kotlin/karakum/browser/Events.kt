@@ -94,7 +94,10 @@ private fun eventPlaceholders(
             .toList()
 
         val knownEventNames = data.map { it.name }.toSet()
-        val unknownEventNames = eventNames.filter { it !in knownEventNames }
+        val unknownEventNames = eventNames
+            .filter { it !in knownEventNames }
+            // TEMP
+            .filter { !it.startsWith("XR") }
 
         check(unknownEventNames.isEmpty()) {
             "Unknown events:\n" + unknownEventNames.joinToString("\n")

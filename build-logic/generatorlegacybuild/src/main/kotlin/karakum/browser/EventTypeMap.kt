@@ -80,6 +80,16 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.navigation.NavigationCurrentEntryChangeEvent"),
 )
 
+internal val XR_EVENT_DATA = listOf(
+    EventInfo("web.xr.XRSystemDeviceChangeEvent"),
+    EventInfo("web.xr.XRReferenceSpaceEvent"),
+    EventInfo("web.xr.XRInputSourceEvent"),
+    EventInfo("web.xr.XRSessionEvent"),
+    EventInfo("web.xr.XRInputSourcesChangeEvent"),
+    EventInfo("web.xr.XRLayerEvent"),
+    EventInfo("web.xr.XRSystemSessionGrantedEvent"),
+)
+
 internal val WEB_WORKER_EVENT_DATA = listOf(
     EventInfo("web.rtc.RTCTransformEvent"),
 )
@@ -96,7 +106,7 @@ internal val SERVICE_WORKER_EVENT_DATA = listOf(
 )
 
 internal val EVENT_INFO_MAP =
-    sequenceOf(EVENT_DATA, WEB_WORKER_EVENT_DATA, SERVICE_WORKER_EVENT_DATA)
+    sequenceOf(EVENT_DATA, XR_EVENT_DATA, WEB_WORKER_EVENT_DATA, SERVICE_WORKER_EVENT_DATA)
         .flatten()
         .associateBy { it.name }
 

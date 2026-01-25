@@ -3,6 +3,7 @@ package karakum.events
 import karakum.browser.EVENT_DATA
 import karakum.browser.SERVICE_WORKER_EVENT_DATA
 import karakum.browser.WEB_WORKER_EVENT_DATA
+import karakum.browser.XR_EVENT_DATA
 import kotlinx.serialization.json.Json
 import org.gradle.kotlin.dsl.provideDelegate
 import java.io.File
@@ -107,7 +108,7 @@ object EventDataRegistry {
     }
 
     private val KNOWN_EVENT_CLASSES: Set<String> =
-        sequenceOf(EVENT_DATA, WEB_WORKER_EVENT_DATA, SERVICE_WORKER_EVENT_DATA)
+        sequenceOf(EVENT_DATA, XR_EVENT_DATA, WEB_WORKER_EVENT_DATA, SERVICE_WORKER_EVENT_DATA)
             .flatten()
             .map { it.name }
             .toSet()
