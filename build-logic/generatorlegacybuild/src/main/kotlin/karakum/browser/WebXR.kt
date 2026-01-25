@@ -132,19 +132,24 @@ internal fun webXrContent(
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
         .replace(Regex("""declare abstract class (\w+) implements (\w+) \{\n}""")) { result ->
             val name = result.groupValues[1]
-            val parentName = result.groupValues[2]
-
-            if (name == parentName) {
-                """
-                declare var $name: {
-                    prototype: $name;
-                    new(): $name;
-                };
-                """.trimIndent()
-            } else result.value
+            require(name == result.groupValues[2])
+            declareVar(name)
+        }
+        .replace(Regex("""declare class (\w+) \{\n {4}prototype: \w+;\n}""")) { result ->
+            declareVar(result.groupValues[1])
         }
         .replace("\n// eslint-disable-next-line @typescript-eslint/no-empty-interface", "")
         .patchInterface("XRWebGLSubImage") {
             it.replace("readonly textureWidth: number;", "readonly colorTextureWidth: number;")
                 .replace("readonly textureHeight: number;", "readonly colorTextureHeight: number;")
         }
+
+private fun declareVar(
+    name: String,
+): String =
+    """
+declare var $name: {
+    prototype: $name;
+    new(): $name;
+};
+""".trimIndent()

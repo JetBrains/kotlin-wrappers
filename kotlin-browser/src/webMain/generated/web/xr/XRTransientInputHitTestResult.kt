@@ -4,7 +4,8 @@ package web.xr
 
 import js.array.ReadonlyArray
 
-external interface XRTransientInputHitTestResult {
+open external class XRTransientInputHitTestResult
+private constructor() {
     val inputSource: XRInputSource
     val results: ReadonlyArray<XRHitTestResult>
 }
