@@ -1,7 +1,6 @@
 package karakum.browser
 
-private val EXCLUDED = setOf(
-    "XRCompositionLayer",
+private val EXCLUDED: Set<String> = setOf(
 )
 
 internal fun webXrDeclarations(
@@ -92,7 +91,6 @@ internal fun webXrDeclarations(
     val tempClasses = sequenceOf(
         "XRRay",
         "XRRigidTransform",
-        "XRCompositionLayer",
         "XRWebGLLayer",
 
         "XRSession",
@@ -123,6 +121,8 @@ internal fun webXrContent(
         .replace(Regex("""\n?\n {4}addEventListener[\s\S]*?\): void;"""), "")
         .replace(Regex("""\n?\n {4}removeEventListener[\s\S]*?\): void;"""), "")
         .replace(Regex(""": (XR\w+)EventHandler;"""), ": EventHandler<$1Event, *, *>;")
+        .replace("\n    // Events", "")
+        .replace(": (evt: XRCompositionLayerEventMap[\"redraw\"]) => any;", ": EventHandler<XRLayerEvent, *, *>;")
         .replace(" =\n    | ", " = ")
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
