@@ -4,4 +4,7 @@ package web.xr
 
 import js.collections.MutableSetLike
 
-typealias XRPlaneSet = MutableSetLike<XRPlane>
+abstract /* open */
+external class XRPlaneSet
+private constructor() :
+    MutableSetLike<XRPlane>

@@ -92,7 +92,25 @@ internal fun webXrDeclarations(
         getPkg = { "web.xr" },
     ).filter { !it.name.endsWith("EventType") }
 
-    return interfaces + types
+    val collections = Regex("""\ntype (XR[a-zA-Z]+) = Set<([a-zA-Z]+)>;""")
+        .findAll(content)
+        .map {
+            val name = it.groupValues[1]
+            val typeParameter = it.groupValues[2]
+
+            ConversionResult(
+                name = name,
+                body = """
+                abstract /* open */
+                external class $name
+                private constructor() :
+                    MutableSetLike<$typeParameter>
+                """.trimIndent(),
+                pkg = "web.xr",
+            )
+        }
+
+    return interfaces + types + collections
 }
 
 private fun getInterfaceName(source: String): String = source
@@ -118,7 +136,6 @@ internal fun webXrContent(
         .replace("\n        ", "")
         .replace("?(): ", "?: () => ")
         .replace(" | null | undefined", " | undefined")
-        .replace("Set = Set<", "Set = MutableSetLike<")
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
         .replace(Regex("""declare abstract class (\w+) implements (\w+) \{\n}""")) { result ->
             val name = result.groupValues[1]

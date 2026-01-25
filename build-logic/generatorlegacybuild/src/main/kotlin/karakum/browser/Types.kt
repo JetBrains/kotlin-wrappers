@@ -329,6 +329,8 @@ private fun convertType(
             "ReportList" -> "web.reporting"
             "LineAndPositionSetting" -> "web.vtt"
 
+            "XRFrameRequestCallback" -> "web.xr"
+
             "Base64URLString",
             "PublicKeyCredentialJSON",
 
@@ -352,9 +354,6 @@ private fun convertType(
             else -> when {
                 name.startsWith("GPU")
                     -> "web.gpu"
-
-                name.startsWith("XR")
-                    -> "web.xr"
 
                 name.startsWith("CSS")
                     -> "web.cssom"

@@ -4,4 +4,7 @@ package web.xr
 
 import js.collections.MutableSetLike
 
-typealias XRMeshSet = MutableSetLike<XRMesh>
+abstract /* open */
+external class XRMeshSet
+private constructor() :
+    MutableSetLike<XRMesh>
