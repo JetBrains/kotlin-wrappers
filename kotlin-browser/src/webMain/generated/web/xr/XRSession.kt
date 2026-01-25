@@ -7,7 +7,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Float32Array
-import web.animations.FrameRequestId
 import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.JsName
@@ -41,7 +40,7 @@ private constructor() :
      * XRSession's set of animation frame rendering callbacks, given the
      * identifying handle returned by a previous call to requestAnimationFrame().
      */
-    fun cancelAnimationFrame(id: FrameRequestId)
+    fun cancelAnimationFrame(id: XRFrameRequestId)
 
     /**
      * Ends the WebXR session. Returns a promise which resolves when the
@@ -57,7 +56,7 @@ private constructor() :
      * canceling the callback using cancelAnimationFrame(). This method is comparable
      * to the Window.requestAnimationFrame() method.
      */
-    fun requestAnimationFrame(callback: XRFrameRequestCallback): FrameRequestId
+    fun requestAnimationFrame(callback: XRFrameRequestCallback): XRFrameRequestId
 
     /**
      * Requests that a new XRReferenceSpace of the specified type be created.

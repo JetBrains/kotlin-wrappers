@@ -97,7 +97,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.abort.internal.patchAbortOptions",
     "web.animations.Animation",
     "web.animations.DocumentTimeline",
-    "web.animations.FrameRequestId",
     "web.animations.Keyframe",
     "web.animations.KeyframeAnimationOptions",
     "web.animations.PropertyIndexedKeyframes",

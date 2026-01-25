@@ -150,11 +150,11 @@ internal fun webXrContent(
         .replace("    // Legacy", "    /**\n     * Legacy\n     */")
         .replace(
             "cancelAnimationFrame(id: number): void;",
-            "cancelAnimationFrame(id: FrameRequestId): void;",
+            "cancelAnimationFrame(id: $XR_FRAME_REQUEST_ID): void;",
         )
         .replace(
             "requestAnimationFrame(callback: XRFrameRequestCallback): number;",
-            "requestAnimationFrame(callback: XRFrameRequestCallback): FrameRequestId;",
+            "requestAnimationFrame(callback: XRFrameRequestCallback): $XR_FRAME_REQUEST_ID;",
         )
         .patchInterface("XRWebGLSubImage") {
             it.replace("readonly textureWidth: number;", "readonly colorTextureWidth: number;")

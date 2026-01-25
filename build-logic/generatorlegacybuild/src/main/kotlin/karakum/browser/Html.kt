@@ -6,6 +6,7 @@ import karakum.common.withSuspendExtensions
 import karakum.events.EventDataRegistry
 
 internal const val VIDEO_FRAME_REQUEST_ID = "VideoFrameRequestId"
+internal const val XR_FRAME_REQUEST_ID = "XRFrameRequestId"
 internal const val RENDERING_CONTEXT_ID = "RenderingContextId"
 internal const val GEOLOCATION_WATCH_ID = "GeolocationWatchId"
 
@@ -674,6 +675,7 @@ internal fun htmlDeclarations(
                 "web.dom" to NODE_TYPE,
                 "web.events" to EVENT_PHASE,
                 "web.html" to VIDEO_FRAME_REQUEST_ID,
+                "web.xr" to XR_FRAME_REQUEST_ID,
                 "web.geolocation" to GEOLOCATION_WATCH_ID,
                 "web.keyboard" to KEY_LOCATION,
                 "web.mouse" to DELTA_MODE,
