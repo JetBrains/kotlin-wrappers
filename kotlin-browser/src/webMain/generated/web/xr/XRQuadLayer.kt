@@ -2,6 +2,8 @@
 
 package web.xr
 
+import web.events.EventInstance
+
 open external class XRQuadLayer
 private constructor() :
     XRCompositionLayer {
@@ -9,3 +11,9 @@ private constructor() :
     var width: Float
     var height: Float
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRQuadLayer/redraw_event)
+ */
+inline val <C : XRQuadLayer> C.redrawEvent: EventInstance<XRLayerEvent, C, C>
+    get() = EventInstance(this, "redraw")

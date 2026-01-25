@@ -15,6 +15,7 @@ import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.pointer.PointerEvent
+import web.xr.XRSessionEvent
 
 /**
  * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the **`SVGElement`** interface.
@@ -65,6 +66,12 @@ inline val <C : SVGElement> C.animationIterationEvent: EventInstance<AnimationEv
  */
 inline val <C : SVGElement> C.animationStartEvent: EventInstance<AnimationEvent, C, Node>
     get() = EventInstance(this, "animationstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/beforexrselect_event)
+ */
+inline val <C : SVGElement> C.beforeXrSelectEvent: EventInstance<XRSessionEvent, C, Node>
+    get() = EventInstance(this, "beforexrselect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/copy_event)

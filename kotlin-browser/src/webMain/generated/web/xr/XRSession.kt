@@ -179,16 +179,52 @@ inline val <C : XRSession> C.endEvent: EventInstance<XRSessionEvent, C, C>
     get() = EventInstance(this, "end")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/frameratechange_event)
+ */
+inline val <C : XRSession> C.framerateChangeEvent: EventInstance<XRSessionEvent, C, C>
+    get() = EventInstance(this, "frameratechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/inputsourceschange_event)
+ */
+inline val <C : XRSession> C.inputSourcesChangeEvent: EventInstance<XRInputSourcesChangeEvent, C, C>
+    get() = EventInstance(this, "inputsourceschange")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/select_event)
  */
 inline val <C : XRSession> C.selectEvent: EventInstance<XRInputSourceEvent, C, C>
     get() = EventInstance(this, "select")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/selectend_event)
+ */
+inline val <C : XRSession> C.selectEndEvent: EventInstance<XRInputSourceEvent, C, C>
+    get() = EventInstance(this, "selectend")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/selectstart_event)
  */
 inline val <C : XRSession> C.selectStartEvent: EventInstance<XRInputSourceEvent, C, C>
     get() = EventInstance(this, "selectstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/squeeze_event)
+ */
+inline val <C : XRSession> C.squeezeEvent: EventInstance<XRInputSourceEvent, C, C>
+    get() = EventInstance(this, "squeeze")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/squeezeend_event)
+ */
+inline val <C : XRSession> C.squeezeEndEvent: EventInstance<XRInputSourceEvent, C, C>
+    get() = EventInstance(this, "squeezeend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/squeezestart_event)
+ */
+inline val <C : XRSession> C.squeezeStartEvent: EventInstance<XRInputSourceEvent, C, C>
+    get() = EventInstance(this, "squeezestart")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRSession/visibilitychange_event)

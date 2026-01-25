@@ -40,6 +40,7 @@ import web.viewtransition.ViewTransitionUpdateCallback
 import web.window.Window
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
+import web.xr.XRSessionEvent
 import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -688,6 +689,12 @@ inline val <C : Document> C.beforeInputEvent: EventInstance<InputEvent, C, Node>
  */
 inline val <C : Document> C.beforeMatchEvent: EventInstance<Event, C, Node>
     get() = EventInstance(this, "beforematch")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/beforexrselect_event)
+ */
+inline val <C : Document> C.beforeXrSelectEvent: EventInstance<XRSessionEvent, C, Node>
+    get() = EventInstance(this, "beforexrselect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/cancel_event)

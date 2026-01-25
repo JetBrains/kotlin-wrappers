@@ -15,6 +15,7 @@ import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.pointer.PointerEvent
+import web.xr.XRSessionEvent
 
 /**
  * The **`MathMLElement`** interface represents any MathML element.
@@ -51,6 +52,12 @@ inline val <C : MathMLElement> C.animationIterationEvent: EventInstance<Animatio
  */
 inline val <C : MathMLElement> C.animationStartEvent: EventInstance<AnimationEvent, C, Node>
     get() = EventInstance(this, "animationstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement/beforexrselect_event)
+ */
+inline val <C : MathMLElement> C.beforeXrSelectEvent: EventInstance<XRSessionEvent, C, Node>
+    get() = EventInstance(this, "beforexrselect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement/copy_event)

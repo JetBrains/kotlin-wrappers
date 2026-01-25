@@ -331,6 +331,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.worklets.Worklet",
     "web.worklets.WorkletGlobalScope",
     "web.xml.XMLDocument",
+    "web.xr.XRSessionEvent",
 )
 
 private fun File.parts(): Pair<String, String> {
@@ -357,7 +358,7 @@ fun generateKotlinDeclarations(
     val webworkerDefinitionsParts = webworkerDefinitionsFile.parts()
     val serviceworkerDefinitionsParts = serviceworkerDefinitionsFile.parts()
     val audioWorkletDefinitionsParts = audioWorkletDefinitionsFile.parts()
-    val webXrContent = webXrDefinitionsFile.readText()
+    val webXrContent = webXrContent(webXrDefinitionsFile.readText())
 
     IterableRegistry.fill(
         definitionsDir,

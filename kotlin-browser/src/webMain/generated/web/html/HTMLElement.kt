@@ -24,6 +24,7 @@ import web.popover.Popover
 import web.popover.ShowPopoverOptions
 import web.popover.ToggleEvent
 import web.popover.TogglePopoverOptions
+import web.xr.XRSessionEvent
 import kotlin.js.definedExternally
 
 /**
@@ -263,6 +264,12 @@ inline val <C : HTMLElement> C.beforeMatchEvent: EventInstance<Event, C, Node>
  */
 inline val <C : HTMLElement> C.beforeToggleEvent: EventInstance<ToggleEvent, C, C>
     get() = EventInstance(this, "beforetoggle")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforexrselect_event)
+ */
+inline val <C : HTMLElement> C.beforeXrSelectEvent: EventInstance<XRSessionEvent, C, Node>
+    get() = EventInstance(this, "beforexrselect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur_event)

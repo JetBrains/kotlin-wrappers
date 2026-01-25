@@ -2,6 +2,8 @@
 
 package web.xr
 
+import web.events.EventInstance
+
 open external class XRCylinderLayer
 private constructor() :
     XRCompositionLayer {
@@ -10,3 +12,9 @@ private constructor() :
     var centralAngle: Float
     var aspectRatio: Float
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XRCylinderLayer/redraw_event)
+ */
+inline val <C : XRCylinderLayer> C.redrawEvent: EventInstance<XRLayerEvent, C, C>
+    get() = EventInstance(this, "redraw")

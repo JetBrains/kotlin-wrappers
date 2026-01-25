@@ -47,6 +47,7 @@ import web.touch.TouchEvent
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
+import web.xr.XRSessionEvent
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
@@ -494,6 +495,12 @@ inline val <C : Window> C.beforePrintEvent: EventInstance<Event, C, C>
  */
 inline val <C : Window> C.beforeUnloadEvent: EventInstance<BeforeUnloadEvent, C, C>
     get() = EventInstance(this, "beforeunload")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforexrselect_event)
+ */
+inline val <C : Window> C.beforeXrSelectEvent: EventInstance<XRSessionEvent, C, Node>
+    get() = EventInstance(this, "beforexrselect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur_event)

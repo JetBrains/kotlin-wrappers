@@ -277,4 +277,11 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "promptaction" to "prompt_action",
     "promptdismiss" to "prompt_dismiss",
     "validationstatuschange" to "validation_status_change",
+
+    "beforexrselect" to "before_xr_select",
+    "frameratechange" to "framerate_change",
+    "inputsourceschange" to "input_sources_change",
+    "selectend" to "select_end",
+    "squeezeend" to "squeeze_end",
+    "squeezestart" to "squeeze_start",
 )

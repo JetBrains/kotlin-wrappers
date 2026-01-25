@@ -1,10 +1,8 @@
 package karakum.browser
 
 internal fun webXrDeclarations(
-    source: String,
+    content: String,
 ): Sequence<ConversionResult> {
-    val content = webXrContent(source)
-
     val interfaces = Regex("""\ninterface .+? \{[\s\S]*?\n}""")
         .findAll(content)
         .map { it.value.removePrefix("\n") }
