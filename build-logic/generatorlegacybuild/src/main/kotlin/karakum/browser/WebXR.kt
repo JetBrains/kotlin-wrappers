@@ -1,8 +1,5 @@
 package karakum.browser
 
-private val EXCLUDED: Set<String> = setOf(
-)
-
 internal fun webXrDeclarations(
     source: String,
 ): Sequence<ConversionResult> {
@@ -41,7 +38,6 @@ internal fun webXrDeclarations(
                 !name.startsWith("XR")
                 || name.endsWith("EventHandler")
                 || name.endsWith("EventMap")
-                || name in EXCLUDED
             ) return@mapNotNull null
 
             val defaultBody = when {
@@ -86,13 +82,11 @@ internal fun webXrDeclarations(
                 getStaticSource = { getStaticSource(it, content) },
                 predefinedPkg = "web.xr",
             )?.withComment(fullSource = content, source = source)
+                // TEMP
+                ?.let { it.copy(body = it.body.replace("DOMPointInit", "DOMPointReadOnly")) }
         }
 
     val tempClasses = sequenceOf(
-        "XRRay",
-        "XRRigidTransform",
-        "XRWebGLLayer",
-
         "XRSession",
     ).map {
         ConversionResult(
@@ -127,6 +121,9 @@ internal fun webXrContent(
         .replace("\n    | ", " | ")
         .replace(" {}\n", " {\n}\n")
         .replace("\n\n    ", "\n    ")
+        .replace(",\n    )", ")")
+        .replace(",\n        ", ", ")
+        .replace("\n        ", "")
         .replace(" | null | undefined", " | undefined")
         .replace("Set = Set<", "Set = MutableSetLike<")
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
@@ -139,15 +136,65 @@ internal fun webXrContent(
             declareVar(result.groupValues[1])
         }
         .replace("\n// eslint-disable-next-line @typescript-eslint/no-empty-interface", "")
+        .replace("\n// tslint:disable-next-line no-unnecessary-class", "")
         .patchInterface("XRWebGLSubImage") {
             it.replace("readonly textureWidth: number;", "readonly colorTextureWidth: number;")
                 .replace("readonly textureHeight: number;", "readonly colorTextureHeight: number;")
         }
+        .splitUnion("XRRigidTransform | DOMPointInit")
+        .splitUnion("WebGLRenderingContext | WebGL2RenderingContext")
+        .replace(Regex("""declare class .+? \{[\s\S]+?\n}""")) { result ->
+            val content = result.value
+            val name = content
+                .substringAfter("declare class ")
+                .substringBefore(" ")
+
+            // TEMP
+            if (name == "XRReferenceSpaceEvent")
+                return@replace content
+
+            val interfaceDeclaration = content
+                .substringBefore(" {\n")
+                .removePrefix("declare class ")
+                .let { if (it == "$name implements $name") name else it }
+                .let { "interface $it" }
+
+            val interfaceMembers = mutableListOf<String>()
+            val classMembers = mutableListOf<String>()
+
+            content
+                .substringAfter(" {\n")
+                .substringBefore("\n}")
+                .splitToSequence("\n")
+                .filter { it.isNotEmpty() }
+                .forEach { line ->
+                    when {
+                        line.startsWith("    static ")
+                            -> classMembers.add(line.replaceFirst("static ", ""))
+
+                        line.startsWith("    constructor(")
+                            -> classMembers.add(
+                            line.replaceFirst("constructor(", "new(").removeSuffix(";") + ": $name;"
+                        )
+
+                        else -> interfaceMembers.add(line)
+                    }
+                }
+
+            sequenceOf("$interfaceDeclaration {")
+                .plus(interfaceMembers)
+                .plus("}")
+                .plus("")
+                .plus("declare var $name: {")
+                .plus("    prototype: $name;")
+                .plus(classMembers)
+                .plus("};")
+                .joinToString("\n")
+        }
 
 private fun declareVar(
     name: String,
-): String =
-    """
+): String = """
 declare var $name: {
     prototype: $name;
     new(): $name;

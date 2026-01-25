@@ -2,6 +2,20 @@
 
 package web.xr
 
-// TBD
-open external class XRRay
-private constructor()
+import js.typedarrays.Float32Array
+import web.geometry.DOMPointReadOnly
+import kotlin.js.definedExternally
+
+open external class XRRay(
+    transformOrOrigin: XRRigidTransform = definedExternally,
+    direction: DOMPointReadOnly = definedExternally,
+) {
+    constructor(
+        transformOrOrigin: DOMPointReadOnly,
+        direction: DOMPointReadOnly = definedExternally,
+    )
+
+    val origin: DOMPointReadOnly
+    val direction: DOMPointReadOnly
+    val matrix: Float32Array<*>
+}
