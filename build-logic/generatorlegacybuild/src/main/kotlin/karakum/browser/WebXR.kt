@@ -21,6 +21,7 @@ internal fun webXrDeclarations(
                     ?: run {
                         val longest = declarations.max()
                         require(declarations.all { longest.startsWith(it) })
+                        longest
                     }
 
                 val body = sources.asSequence()
@@ -86,22 +87,12 @@ internal fun webXrDeclarations(
                 ?.let { it.copy(body = it.body.replace("DOMPointInit", "DOMPointReadOnly")) }
         }
 
-    val tempClasses = sequenceOf(
-        "XRSession",
-    ).map {
-        ConversionResult(
-            name = it,
-            body = "// TBD\nopen external class $it\nprivate constructor()",
-            pkg = "web.xr",
-        )
-    }
-
     val types = convertTypes(
         content = content,
         getPkg = { "web.xr" },
     ).filter { !it.name.endsWith("EventType") }
 
-    return interfaces + types + tempClasses
+    return interfaces + types
 }
 
 private fun getInterfaceName(source: String): String = source
@@ -114,7 +105,8 @@ internal fun webXrContent(
     content
         .replace(Regex("""\n?\n {4}addEventListener[\s\S]*?\): void;"""), "")
         .replace(Regex("""\n?\n {4}removeEventListener[\s\S]*?\): void;"""), "")
-        .replace(Regex(""": (XR\w+)EventHandler;"""), ": EventHandler<$1Event, *, *>;")
+        .replace(Regex(""": (XR[a-zA-Z]+)EventHandler;"""), ": EventHandler<$1Event, *, *>;")
+        .replace(Regex(""": (XR[a-zA-Z]+)EventHandler \| """), ": EventHandler<$1Event, *, *> | ")
         .replace("\n    // Events", "")
         .replace(": (evt: XRCompositionLayerEventMap[\"redraw\"]) => any;", ": EventHandler<XRLayerEvent, *, *>;")
         .replace(" =\n    | ", " = ")
@@ -124,6 +116,7 @@ internal fun webXrContent(
         .replace(",\n    )", ")")
         .replace(",\n        ", ", ")
         .replace("\n        ", "")
+        .replace("?(): ", "?: () => ")
         .replace(" | null | undefined", " | undefined")
         .replace("Set = Set<", "Set = MutableSetLike<")
         .replace(Regex(""": readonly ([a-zA-Z]+\[])"""), ": $1")
@@ -137,6 +130,15 @@ internal fun webXrContent(
         }
         .replace("\n// eslint-disable-next-line @typescript-eslint/no-empty-interface", "")
         .replace("\n// tslint:disable-next-line no-unnecessary-class", "")
+        .replace("    // Legacy", "    /**\n     * Legacy\n     */")
+        .replace(
+            "cancelAnimationFrame(id: number): void;",
+            "cancelAnimationFrame(id: FrameRequestId): void;",
+        )
+        .replace(
+            "requestAnimationFrame(callback: XRFrameRequestCallback): number;",
+            "requestAnimationFrame(callback: XRFrameRequestCallback): FrameRequestId;",
+        )
         .patchInterface("XRWebGLSubImage") {
             it.replace("readonly textureWidth: number;", "readonly colorTextureWidth: number;")
                 .replace("readonly textureHeight: number;", "readonly colorTextureHeight: number;")

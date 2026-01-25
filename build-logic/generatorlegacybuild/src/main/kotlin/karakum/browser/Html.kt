@@ -2126,15 +2126,22 @@ private fun convertProperty(
         "typeof FileReader.EMPTY | typeof FileReader.LOADING | typeof FileReader.DONE",
             -> "ReadyState"
 
-        "() => Promise<string>",
-        "() => Promise<XRAnchor>",
-        "(pose: XRRigidTransform, space: XRSpace) => Promise<XRAnchor>",
-        "(joint: XRJointSpace, baseSpace: XRSpace) => XRJointPose",
-            -> type
-            .replace(" => ", " -> ")
-            .replace("<string>", "<String>")
-
         else -> when {
+            ") => " in type
+                -> type
+                .replace(" => ", " -> ")
+                .replace(") -> any", ") -> Unit")
+                .replace(
+                    ") -> void | PromiseLike<void>",
+                    ") -> PromiseLike<Void>?"
+                )
+                .replace(" -> void", " -> Unit")
+                .replace(": string", ": String")
+                .replace("<void>", "<Void>")
+                .replace("<undefined>", "<Void>")
+                .replace("<string>", "<String>")
+                .replace("<XRHitResult[]>", "<ReadonlyArray<XRHitResult>>")
+
             type.startsWith("1 | 2 | 5 | 10")
                 -> "Int /* $type */"
 
@@ -2167,14 +2174,6 @@ private fun convertProperty(
             type.startsWith("\"")
                 -> "String /* $type */"
 
-            type.startsWith("(controller: ")
-                -> type
-                .replace(") => any", ") -> Unit")
-                .replace(
-                    ") => void | PromiseLike<void>",
-                    ") -> PromiseLike<Void>?"
-                )
-
             else -> type
         }
     }
@@ -2182,7 +2181,7 @@ private fun convertProperty(
     if (name.endsWith("?") || optional) {
         name = safeName
 
-        if (type.startsWith("(")) {
+        if (type.startsWith("(") && !type.endsWith(")")) {
             type = "($type)?"
         } else if (!type.endsWith("?") && type != "Void") {
             type += "?"
@@ -2259,6 +2258,10 @@ private fun convertFunction(
         .replace(
             ": RegistrationResponseJSON | AuthenticationResponseJSON",
             ": JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */"
+        )
+        .replace(
+            ": Promise<XRReferenceSpace | XRBoundedReferenceSpace>",
+            ": Promise<XRSpace /* XRReferenceSpace | XRBoundedReferenceSpace */>",
         )
         .replace(": Promise<any>", ": Promise<*>")
         // RemotePlayback.watchAvailability & RTCRtpScriptTransformer.generateKeyFrame (Long)
