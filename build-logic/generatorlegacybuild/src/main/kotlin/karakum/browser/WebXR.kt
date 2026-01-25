@@ -1,8 +1,6 @@
 package karakum.browser
 
 private val EXCLUDED = setOf(
-    "XRInputSourceArray",
-    "XRHand",
     "XRCompositionLayer",
 )
 
@@ -47,16 +45,39 @@ internal fun webXrDeclarations(
                 || name in EXCLUDED
             ) return@mapNotNull null
 
-            if (name.endsWith("Event")) {
-                return@mapNotNull ConversionResult(
-                    name = name,
-                    body = """
+            val defaultBody = when {
+                name.endsWith("Event")
+                    -> """
                     // TBD
                     open external class $name(
                         type: EventType<$name>,
                         // init: ${name}Init = definedExternally,
                     ):Event
-                    """.trimIndent(),
+                    """.trimIndent()
+
+                name == "XRInputSourceArray"
+                    -> """
+                    abstract /* open */
+                    external class $name
+                    private constructor() :
+                        ListLike<${name.removeSuffix("Array")}>
+                    """.trimIndent()
+
+                name == "XRHand"
+                    -> """
+                    abstract /* open */
+                    external class $name
+                    private constructor() :
+                        ReadonlyMap<XRHandJoint, XRJointSpace>
+                    """.trimIndent()
+
+                else -> null
+            }
+
+            if (defaultBody != null) {
+                return@mapNotNull ConversionResult(
+                    name = name,
+                    body = defaultBody,
                     pkg = "web.xr",
                 )
             }
@@ -71,7 +92,6 @@ internal fun webXrDeclarations(
     val tempClasses = sequenceOf(
         "XRRay",
         "XRRigidTransform",
-        "XRHand",
         "XRCompositionLayer",
         "XRWebGLLayer",
 

@@ -2,9 +2,9 @@
 
 package web.xr
 
-import js.collections.ReadonlyMap
+import js.collections.ListLike
 
 abstract /* open */
-external class XRHand
+external class XRInputSourceArray
 private constructor() :
-    ReadonlyMap<XRHandJoint, XRJointSpace>
+    ListLike<XRInputSource>
