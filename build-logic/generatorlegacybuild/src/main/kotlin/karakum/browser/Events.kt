@@ -339,7 +339,7 @@ private fun event(
 private class EventDataMap(
     content: String,
 ) {
-    private val map = Regex("""interface .+?EventMap \{\n {4}"[\s\S]+?\n\}""")
+    private val map = Regex("""interface .+?EventMap \{\n {4}"[\s\S]+?\n}""")
         .findAll(content)
         .flatMap { parseEvents(it.value) }
         .filter { it.name != "orientationchange" }

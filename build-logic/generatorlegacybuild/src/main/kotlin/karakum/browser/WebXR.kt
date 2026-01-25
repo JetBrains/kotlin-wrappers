@@ -210,6 +210,18 @@ internal fun webXrContent(
                 .plus("};")
                 .joinToString("\n")
         }
+        .replace(Regex("""(interface \w+EventMap \{\n)([\s\S]+?)(\n})""")) { result ->
+            val (start, content, end) = result.destructured
+
+            val newContent = content
+                .splitToSequence("\n")
+                .filter { "//" !in it }
+                .map { it.replace(Regex("""(\w+):"""), """"$1":""") }
+                .joinToString("\n")
+
+            sequenceOf(start, newContent, end)
+                .joinToString("")
+        }
 
 private fun declareVar(
     name: String,
