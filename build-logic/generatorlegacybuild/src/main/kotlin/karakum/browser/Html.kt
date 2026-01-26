@@ -630,8 +630,6 @@ internal fun htmlDeclarations(
                 convertInterface(src, getStaticSource)
                     ?.withComment(fullSource = content, source = src)
             }
-            // TEMP (WebGL)
-            .filter { "_" !in it.name }
             // custom
             .filter { it.name != "EventCounts" }
             .filter { it.name != "NodeListOf" }
@@ -1455,7 +1453,15 @@ internal fun convertInterface(
 
         name == "RemotePlayback" -> "web.remoteplayback"
 
-        name.startsWith("WebGL") -> "web.gl"
+        name.startsWith("WebGL")
+                || name.startsWith("ANGLE_")
+                || name.startsWith("EXT_")
+                || name.startsWith("KHR_")
+                || name.startsWith("OES_")
+                || name.startsWith("OVR_")
+                || name.startsWith("WEBGL_")
+            -> "web.gl"
+
         name.startsWith("Touch") -> "web.touch"
         name in PARSING_TYPES -> "web.parsing"
         name.startsWith("SVG") -> "web.svg"
@@ -2558,6 +2564,10 @@ private fun getParameterType(
 
         source == "ReadableStream"
             -> "ReadableStream<*>"
+
+        source == "Int32Array<ArrayBufferLike> | GLint[]"
+                || source == "Int32Array<ArrayBufferLike> | GLsizei[]"
+            -> source.replaceFirst("| ", "/* | ") + " */"
 
         source.endsWith("[]") -> {
             var atype = source.removeSuffix("[]")

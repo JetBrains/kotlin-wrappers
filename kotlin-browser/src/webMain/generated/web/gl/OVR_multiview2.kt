@@ -2,7 +2,12 @@
 
 package web.gl
 
-sealed external interface OVR_multiview2 {
+/**
+ * The **`OVR_multiview2`** extension is part of the WebGL API and adds support for rendering into multiple views simultaneously. This especially useful for virtual reality (VR) and WebXR.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OVR_multiview2)
+ */
+external interface OVR_multiview2 {
     /**
      * The **`OVR_multiview2.framebufferTextureMultiviewOVR()`** method of the WebGL API attaches a multiview texture to a WebGLFramebuffer.
      *

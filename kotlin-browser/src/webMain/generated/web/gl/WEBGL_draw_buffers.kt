@@ -4,7 +4,12 @@ package web.gl
 
 import js.array.ReadonlyArray
 
-sealed external interface WEBGL_draw_buffers {
+/**
+ * The **`WEBGL_draw_buffers`** extension is part of the WebGL API and enables a fragment shader to write to several textures, which is useful for deferred shading, for example.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_draw_buffers)
+ */
+external interface WEBGL_draw_buffers {
     /**
      * The **`WEBGL_draw_buffers.drawBuffersWEBGL()`** method is part of the WebGL API and allows you to define the draw buffers to which all fragment colors are written.
      *

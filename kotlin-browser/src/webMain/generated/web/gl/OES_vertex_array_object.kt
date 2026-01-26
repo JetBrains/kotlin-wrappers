@@ -2,7 +2,12 @@
 
 package web.gl
 
-sealed external interface OES_vertex_array_object {
+/**
+ * The **`OES_vertex_array_object`** extension is part of the WebGL API and provides vertex array objects (VAOs) which encapsulate vertex array states. These objects keep pointers to vertex data and provide names for different sets of vertex data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_vertex_array_object)
+ */
+external interface OES_vertex_array_object {
     /**
      * The **`OES_vertex_array_object.bindVertexArrayOES()`** method of the WebGL API binds a passed WebGLVertexArrayObject object to the buffer.
      *

@@ -2,7 +2,12 @@
 
 package web.gl
 
-sealed external interface ANGLE_instanced_arrays {
+/**
+ * The **`ANGLE_instanced_arrays`** extension is part of the WebGL API and allows to draw the same object, or groups of similar objects multiple times, if they share the same vertex data, primitive count and type.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ANGLE_instanced_arrays)
+ */
+external interface ANGLE_instanced_arrays {
     /**
      * The **`ANGLE_instanced_arrays.drawArraysInstancedANGLE()`** method of the WebGL API renders primitives from array data like the gl.drawArrays() method. In addition, it can execute multiple instances of the range of elements.
      *

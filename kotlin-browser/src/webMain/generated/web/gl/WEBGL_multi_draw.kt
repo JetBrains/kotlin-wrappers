@@ -3,9 +3,15 @@
 package web.gl
 
 import js.buffer.ArrayBufferLike
+import js.core.UInt53
 import js.typedarrays.Int32Array
 
-sealed external interface WEBGL_multi_draw {
+/**
+ * The **`WEBGL_multi_draw`** extension is part of the WebGL API and allows to render more than one primitive with a single function call. This can improve a WebGL application's performance as it reduces binding costs in the renderer and speeds up GPU thread time with uniform data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw)
+ */
+external interface WEBGL_multi_draw {
     /**
      * The **`WEBGL_multi_draw.multiDrawArraysInstancedWEBGL()`** method of the WebGL API renders multiple primitives from array data. It is identical to multiple calls to the gl.drawArraysInstanced() method.
      *
@@ -14,11 +20,11 @@ sealed external interface WEBGL_multi_draw {
     fun multiDrawArraysInstancedWEBGL(
         mode: GLenum,
         firstsList: Int32Array<ArrayBufferLike>, /* | GLint[] */
-        firstsOffset: Int, /* GLuint */
+        firstsOffset: UInt53,
         countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        countsOffset: Int, /* GLuint */
+        countsOffset: UInt53,
         instanceCountsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        instanceCountsOffset: Int, /* GLuint */
+        instanceCountsOffset: UInt53,
         drawcount: GLsizei,
     )
 
@@ -30,9 +36,9 @@ sealed external interface WEBGL_multi_draw {
     fun multiDrawArraysWEBGL(
         mode: GLenum,
         firstsList: Int32Array<ArrayBufferLike>, /* | GLint[] */
-        firstsOffset: Int, /* GLuint */
+        firstsOffset: UInt53,
         countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        countsOffset: Int, /* GLuint */
+        countsOffset: UInt53,
         drawcount: GLsizei,
     )
 
@@ -44,12 +50,12 @@ sealed external interface WEBGL_multi_draw {
     fun multiDrawElementsInstancedWEBGL(
         mode: GLenum,
         countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        countsOffset: Int, /* GLuint */
+        countsOffset: UInt53,
         type: GLenum,
         offsetsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        offsetsOffset: Int, /* GLuint */
+        offsetsOffset: UInt53,
         instanceCountsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        instanceCountsOffset: Int, /* GLuint */
+        instanceCountsOffset: UInt53,
         drawcount: GLsizei,
     )
 
@@ -61,10 +67,10 @@ sealed external interface WEBGL_multi_draw {
     fun multiDrawElementsWEBGL(
         mode: GLenum,
         countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        countsOffset: Int, /* GLuint */
+        countsOffset: UInt53,
         type: GLenum,
         offsetsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
-        offsetsOffset: Int, /* GLuint */
+        offsetsOffset: UInt53,
         drawcount: GLsizei,
     )
 }

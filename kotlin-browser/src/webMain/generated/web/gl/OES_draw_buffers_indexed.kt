@@ -2,7 +2,12 @@
 
 package web.gl
 
-sealed external interface OES_draw_buffers_indexed {
+/**
+ * The **`OES_draw_buffers_indexed`** extension is part of the WebGL API and enables the use of different blend options when writing to multiple color buffers simultaneously.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed)
+ */
+external interface OES_draw_buffers_indexed {
     /**
      * The **`blendEquationSeparateiOES()`** method of the OES_draw_buffers_indexed WebGL extension sets the RGB and alpha blend equations separately for a particular draw buffer.
      *

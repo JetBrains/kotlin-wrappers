@@ -2,7 +2,12 @@
 
 package web.gl
 
-sealed external interface WEBGL_compressed_texture_etc {
+/**
+ * The **`WEBGL_compressed_texture_etc`** extension is part of the WebGL API and exposes 10 ETC/EAC compressed texture formats.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_compressed_texture_etc)
+ */
+external interface WEBGL_compressed_texture_etc {
     val COMPRESSED_R11_EAC: GLenum
     val COMPRESSED_SIGNED_R11_EAC: GLenum
     val COMPRESSED_RG11_EAC: GLenum
