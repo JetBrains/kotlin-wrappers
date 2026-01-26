@@ -7,15 +7,18 @@ import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
-sealed /* final */
-external class WebGL2RenderingContext
+/**
+ * The **`WebGL2RenderingContext`** interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML <canvas> element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext)
+ */
+open external class WebGL2RenderingContext
 private constructor() :
     WebGL2RenderingContextBase,
     WebGL2RenderingContextOverloads,
     WebGLRenderingContextBase,
     OffscreenRenderingContext,
     RenderingContext {
-
     companion object {
         val READ_BUFFER: GLenum
         val UNPACK_ROW_LENGTH: GLenum
@@ -277,7 +280,7 @@ private constructor() :
         val TEXTURE_IMMUTABLE_FORMAT: GLenum
         val MAX_ELEMENT_INDEX: GLenum
         val TEXTURE_IMMUTABLE_LEVELS: GLenum
-        val TIMEOUT_IGNORED: GLenum
+        val TIMEOUT_IGNORED: GLint64
         val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: GLenum
         val DEPTH_BUFFER_BIT: GLbitfield
         val STENCIL_BUFFER_BIT: GLbitfield

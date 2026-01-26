@@ -1,12 +1,20 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package web.gl
 
 import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
+import js.core.UInt53
+import kotlin.js.definedExternally
 
-sealed external interface WebGL2RenderingContextOverloads {
+/* mixin */
+sealed
+external interface WebGL2RenderingContextOverloads {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferData)
      */
@@ -14,21 +22,21 @@ sealed external interface WebGL2RenderingContextOverloads {
         target: GLenum,
         size: GLsizeiptr,
         usage: GLenum,
-    )
+    ): Unit = definedExternally
 
     fun bufferData(
         target: GLenum,
         srcData: AllowSharedBufferSource?,
         usage: GLenum,
-    )
+    ): Unit = definedExternally
 
     fun bufferData(
         target: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>,
         usage: GLenum,
-        srcOffset: Int, /* GLuint */
-        length: GLuint?,
-    )
+        srcOffset: UInt53,
+        length: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bufferSubData)
@@ -37,15 +45,15 @@ sealed external interface WebGL2RenderingContextOverloads {
         target: GLenum,
         dstByteOffset: GLintptr,
         srcData: AllowSharedBufferSource,
-    )
+    ): Unit = definedExternally
 
     fun bufferSubData(
         target: GLenum,
         dstByteOffset: GLintptr,
         srcData: ArrayBufferView<ArrayBufferLike>,
-        srcOffset: Int, /* GLuint */
-        length: GLuint?,
-    )
+        srcOffset: UInt53,
+        length: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D)
@@ -59,7 +67,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         border: GLint,
         imageSize: GLsizei,
         offset: GLintptr,
-    )
+    ): Unit = definedExternally
 
     fun compressedTexImage2D(
         target: GLenum,
@@ -69,9 +77,9 @@ sealed external interface WebGL2RenderingContextOverloads {
         height: GLsizei,
         border: GLint,
         srcData: ArrayBufferView<ArrayBufferLike>,
-        srcOffset: Int /* GLuint */?,
-        srcLengthOverride: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLengthOverride: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D)
@@ -86,7 +94,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         imageSize: GLsizei,
         offset: GLintptr,
-    )
+    ): Unit = definedExternally
 
     fun compressedTexSubImage2D(
         target: GLenum,
@@ -97,9 +105,9 @@ sealed external interface WebGL2RenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>,
-        srcOffset: Int /* GLuint */?,
-        srcLengthOverride: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLengthOverride: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels)
@@ -112,7 +120,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         dstData: ArrayBufferView<ArrayBufferLike>?,
-    )
+    ): Unit = definedExternally
 
     fun readPixels(
         x: GLint,
@@ -122,7 +130,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         offset: GLintptr,
-    )
+    ): Unit = definedExternally
 
     fun readPixels(
         x: GLint,
@@ -132,8 +140,8 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         dstData: ArrayBufferView<ArrayBufferLike>,
-        dstOffset: Int, /* GLuint */
-    )
+        dstOffset: UInt53,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D)
@@ -141,60 +149,60 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLenum,
+        internalformat: GLint,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
         format: GLenum,
         type: GLenum,
         pixels: ArrayBufferView<ArrayBufferLike>?,
-    )
+    ): Unit = definedExternally
 
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLenum,
+        internalformat: GLint,
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
-    )
+    ): Unit = definedExternally
 
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLenum,
+        internalformat: GLint,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
         format: GLenum,
         type: GLenum,
         pboOffset: GLintptr,
-    )
+    ): Unit = definedExternally
 
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLenum,
+        internalformat: GLint,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
-    )
+    ): Unit = definedExternally
 
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLenum,
+        internalformat: GLint,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
         format: GLenum,
         type: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>,
-        srcOffset: Int, /* GLuint */
-    )
+        srcOffset: UInt53,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D)
@@ -209,7 +217,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         pixels: ArrayBufferView<ArrayBufferLike>?,
-    )
+    ): Unit = definedExternally
 
     fun texSubImage2D(
         target: GLenum,
@@ -219,7 +227,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
-    )
+    ): Unit = definedExternally
 
     fun texSubImage2D(
         target: GLenum,
@@ -231,7 +239,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         pboOffset: GLintptr,
-    )
+    ): Unit = definedExternally
 
     fun texSubImage2D(
         target: GLenum,
@@ -243,7 +251,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
-    )
+    ): Unit = definedExternally
 
     fun texSubImage2D(
         target: GLenum,
@@ -255,8 +263,8 @@ sealed external interface WebGL2RenderingContextOverloads {
         format: GLenum,
         type: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>,
-        srcOffset: Int, /* GLuint */
-    )
+        srcOffset: UInt53,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -264,9 +272,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform1fv(
         location: WebGLUniformLocation?,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -274,9 +282,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform1iv(
         location: WebGLUniformLocation?,
         data: Int32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -284,9 +292,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform2fv(
         location: WebGLUniformLocation?,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -294,9 +302,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform2iv(
         location: WebGLUniformLocation?,
         data: Int32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -304,9 +312,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform3fv(
         location: WebGLUniformLocation?,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -314,9 +322,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform3iv(
         location: WebGLUniformLocation?,
         data: Int32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -324,9 +332,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform4fv(
         location: WebGLUniformLocation?,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -334,9 +342,9 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun uniform4iv(
         location: WebGLUniformLocation?,
         data: Int32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -345,9 +353,9 @@ sealed external interface WebGL2RenderingContextOverloads {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
@@ -356,9 +364,9 @@ sealed external interface WebGL2RenderingContextOverloads {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix)
@@ -367,7 +375,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         location: WebGLUniformLocation?,
         transpose: GLboolean,
         data: Float32List,
-        srcOffset: Int /* GLuint */?,
-        srcLength: GLuint?,
-    )
+        srcOffset: UInt53 = definedExternally,
+        srcLength: GLuint = definedExternally,
+    ): Unit = definedExternally
 }

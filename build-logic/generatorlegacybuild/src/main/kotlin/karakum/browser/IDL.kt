@@ -41,6 +41,9 @@ private val NUMBER_TYPE_MAP = mapOf(
 
     "long long" to "Int53",
     "unsigned long long" to "UInt53",
+
+    "GLenum" to "GLenum",
+    "GLint64" to "GLint64",
 )
 
 internal object IDLRegistry {
@@ -154,6 +157,14 @@ internal object IDLRegistry {
 
                         "WebTransportSendStreamOptions" -> listOf(className, "WebTransportSendOptions")
 
+                        "WebGLRenderingContextBase" -> listOf(
+                            className,
+                            "WebGLRenderingContext",
+                            "WebGL2RenderingContext"
+                        )
+
+                        "WebGL2RenderingContextBase" -> listOf(className, "WebGL2RenderingContext")
+
                         // TEMP?
                         "MediaSessionSeekActionDetails" -> listOf(className, "MediaSessionActionDetails")
                         "MediaSessionSeekToActionDetails" -> listOf(className, "MediaSessionActionDetails")
@@ -162,13 +173,16 @@ internal object IDLRegistry {
                     }
 
                     classBody
+                        .replace("\n{\n", " {\n")
                         .substringAfter(" {\n")
                         .substringBeforeLast(";")
                         .replace(Regex(""";\s+//.+?\n"""), ";\n")
+                        .replace(Regex(""";\s+/\*.+?\n"""), ";\n")
                         .splitToSequence("\n")
                         .filter { !it.trim().startsWith("// ") }
                         .joinToString("\n")
                         .splitToSequence(";\n")
+                        .map { it.substringAfterLast("*/\n") }
                         .map { it.trim() }
                         .flatMap { line ->
                             classNames.flatMap { cn ->
@@ -193,6 +207,7 @@ internal object IDLRegistry {
         if ("(" !in line || line.startsWith("(")) {
             val data = line
                 .replace("[EnforceRange] ", "")
+                .removePrefix("const ")
                 .removePrefix("inherit ")
                 .removePrefix("required ")
                 .removePrefix("optional ")

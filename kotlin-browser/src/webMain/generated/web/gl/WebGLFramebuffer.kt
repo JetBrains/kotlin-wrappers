@@ -2,5 +2,10 @@
 
 package web.gl
 
-external class WebGLFramebuffer
+/**
+ * The **`WebGLFramebuffer`** interface is part of the WebGL API and represents a collection of buffers that serve as a rendering destination.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLFramebuffer)
+ */
+open external class WebGLFramebuffer
 private constructor()

@@ -721,9 +721,6 @@ internal fun convertInterface(
         .substringBefore("<")
 
     when {
-        // TEMP
-        name.startsWith("WebGL") -> return null
-
         name in KNOWN_MISSED_TYPES -> return null
         name in DEPRECATED -> return null
         name.endsWith("NameMap") -> return null
@@ -1281,6 +1278,9 @@ internal fun convertInterface(
             val isExtended: Boolean
             """.trimIndent()
 
+            "WebGLRenderingContextBase",
+                -> result.replace("fun getExtension(", "fun getExtension(\n")
+
             else -> {
                 when {
                     abortable
@@ -1394,7 +1394,7 @@ internal fun convertInterface(
         when {
             name == DOM_EXCEPTION -> "companion object" // leave it empty, add extensions below
 
-            idDeclaration != null -> {
+            idDeclaration != null && !name.startsWith("WebGL") -> {
                 require(companionContent.isEmpty())
                 "companion object"
             }
@@ -1455,6 +1455,7 @@ internal fun convertInterface(
 
         name == "RemotePlayback" -> "web.remoteplayback"
 
+        name.startsWith("WebGL") -> "web.gl"
         name.startsWith("Touch") -> "web.touch"
         name in PARSING_TYPES -> "web.parsing"
         name.startsWith("SVG") -> "web.svg"
@@ -2152,8 +2153,8 @@ private fun convertProperty(
             type.startsWith("1 | 2 | 5 | 10")
                 -> "Int /* $type */"
 
-            type.startsWith("0x") -> "Short"
-            type.toIntOrNull() != null -> "Short"
+            type.startsWith("0x") -> typeProvider.numberType(name)
+            type.toIntOrNull() != null -> typeProvider.numberType(name)
 
             (type.endsWith("[]") && " " !in type)
                 -> {

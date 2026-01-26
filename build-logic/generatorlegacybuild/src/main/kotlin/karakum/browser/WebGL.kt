@@ -3,50 +3,18 @@ package karakum.browser
 import karakum.common.CommonUnionConverter.objectUnionBody
 import karakum.common.unionConstant
 
-private val CONVERTED_WEBGL_TYPES = listOf(
-    "WebGLContextEvent",
-    "WebGLContextEventInit",
-)
-
-private val EFFECTIVELY_FINAL_CLASSES = setOf(
-    "WebGL2RenderingContext",
-    "WebGLRenderingContext",
-)
-
-private val CLASSES = setOf(
-    "WebGLActiveInfo",
-    "WebGLBuffer",
-    "WebGLFramebuffer",
-    "WebGLProgram",
-    "WebGLQuery",
-    "WebGLRenderbuffer",
-    "WebGLSampler",
-    "WebGLShader",
-    "WebGLShaderPrecisionFormat",
-    "WebGLSync",
-    "WebGLTexture",
-    "WebGLTransformFeedback",
-    "WebGLUniformLocation",
-    "WebGLVertexArrayObject",
-) + EFFECTIVELY_FINAL_CLASSES
-
 internal fun webglDeclarations(
     content: String,
 ): Sequence<ConversionResult> {
-    val interfaces = Regex("""interface ((ANGLE_|EXT_|KHR_|OES_|OVR_|WEBGL_|WebGL).+?) \{[\s\S]+?}""")
+    val interfaces = Regex("""interface ((ANGLE_|EXT_|KHR_|OES_|OVR_|WEBGL_).+?) \{[\s\S]+?}""")
         .findAll(content)
         .map { it.value }
-        .mapNotNull { convertInterface(it) }
+        .map { convertInterface(it) }
         .toList()
 
-    val classes = Regex("""declare var WebGL.+?: \{[\s\S]+?}""")
-        .findAll(content)
-        .map { it.value }
-        .mapNotNull { convertCompanion(it) }
+    val extension = convertExtension(content)
 
-    val extension = convertExtension(interfaces.first { it.name == "WebGLRenderingContextBase" }.body)
-
-    return merge(interfaces + classes)
+    return interfaces.asSequence()
         .plus(extension)
         .plus(Lists())
         .plus(GLNumbers())
@@ -54,19 +22,16 @@ internal fun webglDeclarations(
 
 private fun convertInterface(
     source: String,
-): ConversionResult? {
+): ConversionResult {
     val name = source
         .substringAfter(" ")
         .substringBefore(" ")
-
-    if (name in CONVERTED_WEBGL_TYPES)
-        return null
 
     val additionalParentTypes = MarkerRegistry.additionalParents(name)
         ?.joinToString("") { ",\n$it" }
         ?: ""
 
-    var declaration = source.substringBefore(" {\n")
+    val declaration = source.substringBefore(" {\n")
         .replace(" extends ", " :\n")
         .replace(", ", ",\n") +
             additionalParentTypes
@@ -83,23 +48,9 @@ private fun convertInterface(
             .joinToString("\n") { convertMember(it) }
     } else ""
 
-    val isClass = name in CLASSES
-    val isEffectivelyFinal = name in EFFECTIVELY_FINAL_CLASSES
-    val modifier = when {
-        !isClass -> "sealed"
-        isEffectivelyFinal -> "sealed /* final */\n"
-        else -> ""
-    }
-
-    if (isClass) {
-        declaration = if (":" in declaration) {
-            declaration.replace(":", "\nprivate constructor():")
-        } else "$declaration\nprivate constructor()"
-    }
-
     val idDeclaration = RenderingContextRegistry.getIdDeclaration(name) ?: ""
 
-    val body = "$modifier external $declaration {\n$members\n}\n$idDeclaration"
+    val body = "sealed external $declaration {\n$members\n}\n$idDeclaration"
 
     return ConversionResult(
         name = name,
@@ -122,45 +73,6 @@ private fun convertExtension(
             name = "WebGLExtension",
             constants = values.map(::unionConstant),
         ),
-    )
-}
-
-private fun convertCompanion(
-    source: String,
-): ConversionResult? {
-    val name = source
-        .removePrefix("declare var ")
-        .substringBefore(": ")
-
-    if (name in CONVERTED_WEBGL_TYPES)
-        return null
-
-    val memberSource = source
-        .substringAfter(" {\n")
-        .removeSuffix("}")
-        .removeSuffix(";\n")
-        .trimIndent()
-        .splitToSequence(";\n")
-        .minus("prototype: $name")
-        .minus("new(): $name")
-        .joinToString("\n")
-
-    val body = if (memberSource.isNotEmpty()) {
-        val companionMembers = memberSource.replace("readonly ", "val ")
-            .replace(Regex("""_BIT: 0x\S+"""), "_BIT: GLbitfield")
-            .replace(Regex(""": 0x\S+"""), ": GLenum")
-            .replace(Regex(""": -?\d"""), ": GLenum")
-
-        """
-        companion object {
-            $companionMembers
-        }
-        """.trimIndent()
-    } else ""
-
-    return ConversionResult(
-        name = name,
-        body = body,
     )
 }
 
@@ -279,28 +191,3 @@ private fun convertFunction(
 
     return "fun $name($params)$result"
 }
-
-private fun merge(
-    source: List<ConversionResult>,
-): Sequence<ConversionResult> =
-    source.groupBy { it.name }
-        .values
-        .asSequence()
-        .map { items ->
-            when (items.size) {
-                1 -> items.single()
-                2 -> {
-                    val (ib, cb) = items.map { it.body }
-                    var body = ib.replaceFirst(" interface ", " class ")
-                    if (cb.isNotEmpty())
-                        body = body.replaceFirst("\n}", "\n$cb\n}")
-
-                    ConversionResult(
-                        name = items.first().name,
-                        body = body,
-                    )
-                }
-
-                else -> TODO()
-            }
-        }

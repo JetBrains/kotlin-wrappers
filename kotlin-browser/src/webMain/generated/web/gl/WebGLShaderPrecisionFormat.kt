@@ -2,7 +2,12 @@
 
 package web.gl
 
-external class WebGLShaderPrecisionFormat
+/**
+ * The **`WebGLShaderPrecisionFormat`** interface is part of the WebGL API and represents the information returned by calling the WebGLRenderingContext.getShaderPrecisionFormat() method.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLShaderPrecisionFormat)
+ */
+open external class WebGLShaderPrecisionFormat
 private constructor() {
     /**
      * The read-only **`WebGLShaderPrecisionFormat.precision`** property returns the number of bits of precision that can be represented.

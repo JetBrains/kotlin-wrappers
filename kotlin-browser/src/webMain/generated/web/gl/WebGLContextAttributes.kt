@@ -2,7 +2,10 @@
 
 package web.gl
 
-sealed external interface WebGLContextAttributes {
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface WebGLContextAttributes {
     var alpha: Boolean?
     var antialias: Boolean?
     var depth: Boolean?

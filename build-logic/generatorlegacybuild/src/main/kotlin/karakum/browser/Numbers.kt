@@ -79,6 +79,10 @@ internal class TypeProvider(
             "buttons" -> return MOUSE_BUTTONS
         }
 
+        if (parentType.startsWith("WebGL") && propertyName.endsWith("_BIT")) {
+            return "GLbitfield"
+        }
+
         return when {
             propertyName == "lastModified" -> "EpochTimeStamp"
             propertyName == "expiration" -> "EpochTimeStamp"

@@ -2,7 +2,12 @@
 
 package web.gl
 
-external class WebGLActiveInfo
+/**
+ * The **`WebGLActiveInfo`** interface is part of the WebGL API and represents the information returned by calling the WebGLRenderingContext.getActiveAttrib() and WebGLRenderingContext.getActiveUniform() methods.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLActiveInfo)
+ */
+open external class WebGLActiveInfo
 private constructor() {
     /**
      * The read-only **`WebGLActiveInfo.name`** property represents the name of the requested data returned by calling the getActiveAttrib() or getActiveUniform() methods.

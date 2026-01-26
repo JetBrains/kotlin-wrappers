@@ -2,4 +2,7 @@
 
 package web.gl
 
-sealed external interface WebGLVertexArrayObjectOES
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLVertexArrayObject)
+ */
+external interface WebGLVertexArrayObjectOES

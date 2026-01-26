@@ -410,6 +410,13 @@ internal fun String.applyPatches(): String {
             )
         }
         .splitUnion("SanitizerConfig | SanitizerPresets")
+        .patchInterface("WebGLRenderingContextBase") {
+            it.replace(
+                Regex("""( {4}getExtension\(extensionName: )"(\w+)"\)"""),
+                "$1WebGLExtension.$2)",
+            )
+        }
+        .splitUnion("GLint | GLboolean")
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
