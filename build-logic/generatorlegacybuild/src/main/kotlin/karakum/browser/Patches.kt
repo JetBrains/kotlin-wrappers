@@ -417,6 +417,10 @@ internal fun String.applyPatches(): String {
             )
         }
         .splitUnion("GLint | GLboolean")
+        // TEMP
+        .patchInterface("WebGLRenderingContextBase") {
+            "$it\n    makeXRCompatible(): Promise<void>;"
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

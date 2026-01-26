@@ -7,9 +7,13 @@
 package web.gl
 
 import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.Promise
+import js.promise.await
 import web.events.EventTarget
 import web.images.PredefinedColorSpace
 import kotlin.js.JsAny
+import kotlin.js.JsName
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 
@@ -1651,4 +1655,11 @@ external interface WebGLRenderingContextBase {
         get() = definedExternally
     val BROWSER_DEFAULT_WEBGL: GLenum
         get() = definedExternally
+
+    @JsName("makeXRCompatible")
+    fun makeXRCompatibleAsync(): Promise<Void> = definedExternally
+}
+
+suspend inline fun WebGLRenderingContextBase.makeXRCompatible() {
+    makeXRCompatibleAsync().await()
 }
