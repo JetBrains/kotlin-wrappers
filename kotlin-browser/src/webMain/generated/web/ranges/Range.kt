@@ -17,7 +17,7 @@ import kotlin.js.definedExternally
 open external class Range :
     AbstractRange {
     /**
-     * The **`Range.commonAncestorContainer`** read-only property returns the deepest — or furthest down the document tree — Node that contains both boundary points of the Range. This means that if Range.startContainer and Range.endContainer both refer to the same node, this node is the common ancestor container.
+     * The **`Range.commonAncestorContainer`** read-only property returns the deepest — or furthest down the document tree — Node that contains both boundary points of the Range. This means that if startContainer and endContainer both refer to the same node, this node is the common ancestor container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/commonAncestorContainer)
      */

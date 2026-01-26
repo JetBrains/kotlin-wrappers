@@ -33,7 +33,7 @@ private constructor() {
     val endOffset: Int
 
     /**
-     * The read-only **`startContainer`** property of the AbstractRange interface returns the start Node for the range.
+     * The read-only **`startContainer`** property of the AbstractRange interface returns the Node in which the start of the range is located.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange/startContainer)
      */

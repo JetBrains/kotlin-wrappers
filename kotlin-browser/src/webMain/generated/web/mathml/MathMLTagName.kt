@@ -10,6 +10,9 @@ inline val MATHML_NAMESPACE: TagNamespace<MathMLElement>
     get() = unsafeCast("http://www.w3.org/1998/Math/MathML")
 
 object MathMLTagName {
+    inline val a: TagName<MathMLElement>
+        get() = TagName("a")
+
     inline val annotation: TagName<MathMLElement>
         get() = TagName("annotation")
 

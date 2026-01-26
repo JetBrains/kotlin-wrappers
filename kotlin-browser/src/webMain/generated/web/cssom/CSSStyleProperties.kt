@@ -2467,7 +2467,7 @@ private constructor() :
     var scrollMarginTop: String
 
     /**
-     * The scroll-padding shorthand property sets scroll padding on all sides of an element at once, much like the padding property does for padding on an element.
+     * The scroll-padding shorthand property sets scroll padding on all sides of an element at once. It specifies offsets that define the optimal viewing region of a scrollport within a scroll container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding)
      */
