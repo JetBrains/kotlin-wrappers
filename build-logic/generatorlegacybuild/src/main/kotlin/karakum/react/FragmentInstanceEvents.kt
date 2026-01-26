@@ -146,4 +146,5 @@ import web.pip.PictureInPictureEvent
 import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
+import web.xr.XRSessionEvent
 """.trimIndent()

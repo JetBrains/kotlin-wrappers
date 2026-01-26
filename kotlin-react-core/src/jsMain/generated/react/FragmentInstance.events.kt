@@ -29,6 +29,7 @@ import web.pip.PictureInPictureEvent
 import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
+import web.xr.XRSessionEvent
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/abort_event)
@@ -92,6 +93,13 @@ inline val FragmentInstance.beforeMatchEvent: EventInstance<Event, HTMLElement, 
 @ReactCanary
 inline val FragmentInstance.beforeToggleEvent: EventInstance<ToggleEvent, HTMLElement, HTMLElement>
     get() = EventInstance(this, "beforetoggle")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforexrselect_event)
+ */
+@ReactCanary
+inline val FragmentInstance.beforeXrSelectEvent: EventInstance<XRSessionEvent, Element, Node>
+    get() = EventInstance(this, "beforexrselect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/blur_event)
