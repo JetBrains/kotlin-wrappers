@@ -1,6 +1,7 @@
 package react.raw
 
 import js.array.ReadonlyArray
+import react.Cleanup
 import react.ViewTransitionInstance
 import react.ViewTransitionType
 import react.canary.ReactCanary
@@ -9,4 +10,4 @@ import react.canary.ReactCanary
 typealias ViewTransitionHandlerRaw = (
     instance: ViewTransitionInstance,
     types: ReadonlyArray<ViewTransitionType>,
-) -> Unit
+) -> Cleanup?
