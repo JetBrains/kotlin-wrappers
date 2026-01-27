@@ -1,10 +1,7 @@
 package react
 
-import js.array.ReadonlyArray
 import react.canary.ReactCanary
+import react.raw.ViewTransitionHandlerRaw
 
 @ReactCanary
-typealias ViewTransitionHandler = (
-    instance: ViewTransitionInstance,
-    types: ReadonlyArray<ViewTransitionType>,
-) -> Unit
+typealias ViewTransitionHandler = ViewTransitionHandlerRaw
