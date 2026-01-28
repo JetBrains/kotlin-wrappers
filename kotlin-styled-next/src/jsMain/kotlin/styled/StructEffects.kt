@@ -1,24 +1,15 @@
 package styled
 
-import react.*
+import react.Cleanup
+import react.RefObject
 import react.raw.useMemoRaw
+import react.useRef
 
 internal fun <T> useStructMemo(
     vararg dependencies: Any?,
     callback: () -> T,
 ): T {
     return useMemoRaw(getMemoizedCallback(dependencies, callback), dependencies)
-}
-
-internal fun useCustomInsertionEffect(
-    vararg dependencies: Any?,
-    effect: CleanupBuilder.() -> Unit,
-) {
-    if (supportsInsertionEffect === undefined) {
-        useLayoutEffectWithCleanup(dependencies = dependencies, effect = effect)
-    } else {
-        useInsertionEffectWithCleanup(dependencies = dependencies, effect = effect)
-    }
 }
 
 private data class MemoizedResult<T>(
