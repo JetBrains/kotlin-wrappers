@@ -122,12 +122,12 @@ internal fun customStyled(type: Any): ElementType<StyledProps> {
 
         // className and isFresh are used as dependencies because they have primitive types and are easily comparable in JS.
         // This hook works because className changes every time when [css] is changed, so every [css] is captured exactly once.
-        useInsertionEffectWithCleanup(isFresh, className) {
+        useInsertionEffect(isFresh, className) {
             if (isFresh) {
                 GlobalStyles.injectScheduled()
             }
 
-            onCleanup {
+            awaitCleanup {
                 GlobalStyles.removeStyles(css)
             }
         }
