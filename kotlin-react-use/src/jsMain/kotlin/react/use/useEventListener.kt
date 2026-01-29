@@ -1,6 +1,6 @@
 package react.use
 
-import react.useEffectWithCleanup
+import react.useEffect
 import web.events.*
 
 /**
@@ -14,10 +14,10 @@ fun <E : Event> useEventListener(
 ) {
     val latestHandler by useLatest(handler)
 
-    useEffectWithCleanup(target, type) {
-        target ?: return@useEffectWithCleanup
+    useEffect(target, type) {
+        target ?: return@useEffect
 
-        onCleanup(
+        awaitCleanup(
             target.addEventHandler(
                 type = type,
                 options = options,
