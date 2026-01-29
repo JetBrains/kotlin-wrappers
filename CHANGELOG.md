@@ -1,3 +1,22 @@
+## 2026.1.16
+
+* Add `awaitCleanup` extension to:
+    * `useEffect`
+    * `useLayoutEffect`
+    * `useInsertionEffect`
+    * `ViewTransitionHandler`
+
+```kotlin
+useEffect {
+    val unsubscribe = api.addHandler { setData(it) }
+
+    awaitCleanup {
+        // will be called when React calls cleanup
+        unsubscribe()
+    }
+}
+```
+
 ## 2026.1.7
 
 **BREAKING CHANGE**
