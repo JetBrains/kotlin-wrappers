@@ -13,7 +13,7 @@ class IsolatedJobTest {
     fun launch() = runTest {
         var a = 13
 
-        isolatedJob {
+        runIsolatedJob {
             a = 42
         }
 
@@ -24,7 +24,7 @@ class IsolatedJobTest {
     fun launchWithSubscribe() = runTest {
         var a = 13
 
-        isolatedJob {
+        runIsolatedJob {
             window.clickEvent().subscribe { /* do nothing */ }
             window.mouseUpEvent().subscribe { /* do nothing */ }
 
@@ -39,7 +39,7 @@ class IsolatedJobTest {
         var a = 13
         val target = EventTarget()
 
-        isolatedJob {
+        runIsolatedJob {
             target.changeEvent().subscribe { a++ }
 
             a = 42
