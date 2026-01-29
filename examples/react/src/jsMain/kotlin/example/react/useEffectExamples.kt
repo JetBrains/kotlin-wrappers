@@ -5,7 +5,6 @@ import react.FC
 import react.dom.html.ReactHTML.span
 import react.use.useConstant
 import react.useEffect
-import react.useEffectWithCleanup
 import react.useState
 import web.animations.FrameRequestId
 import web.animations.awaitAnimationFrame
@@ -24,13 +23,13 @@ val SubscribeExample = FC {
     val myInput = document.createElement(input)
     var myText by useState("")
 
-    // before
-    useEffectWithCleanup(myInput) {
+    // before (callback mode)
+    useEffect(myInput) {
         val removeHandler = myInput.changeEvent.addHandler { event ->
             myText = event.currentTarget.value
         }
 
-        onCleanup(removeHandler)
+        awaitCleanup(removeHandler)
     }
 
     // after
@@ -47,13 +46,13 @@ val OnceExample = FC {
     val script = useConstant(::createScript)
     var status by useState("initialization")
 
-    // before
-    useEffectWithCleanup(script) {
+    // before (callback mode)
+    useEffect(script) {
         val removeHandler = script.loadEvent.addHandler {
             status = "loaded"
         }
 
-        onCleanup(removeHandler)
+        awaitCleanup(removeHandler)
     }
 
     // after
@@ -67,8 +66,8 @@ val AwaitAnimationFrameExample = FC {
     val (frameCount, setFrameCount) = useState(0)
 
 
-    // before
-    useEffectWithCleanup {
+    // before (callback mode)
+    useEffect {
         lateinit var frameRequestId: FrameRequestId
 
         fun wait() {
@@ -80,7 +79,7 @@ val AwaitAnimationFrameExample = FC {
 
         wait()
 
-        onCleanup {
+        awaitCleanup {
             cancelAnimationFrame(frameRequestId)
         }
     }
