@@ -6,6 +6,10 @@ import react.raw.useEffectRaw
 /**
  * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
+@Deprecated(
+    "`useEffectWithCleanup` is deprecated, use `useEffect` with `awaitCleanup` extension instead",
+    ReplaceWith("react.useEffect"),
+)
 fun useEffectWithCleanup(
     effect: CleanupBuilder.() -> Unit,
 ) {
@@ -16,6 +20,10 @@ fun useEffectWithCleanup(
 /**
  * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
+@Deprecated(
+    "`useEffectWithCleanup` is deprecated, use `useEffect` with `awaitCleanup` extension instead",
+    ReplaceWith("react.useEffect"),
+)
 fun useEffectWithCleanup(
     vararg dependencies: Any?,
     effect: CleanupBuilder.() -> Unit,
@@ -27,6 +35,10 @@ fun useEffectWithCleanup(
 /**
  * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
+@Deprecated(
+    "`useEffectOnceWithCleanup` is deprecated, use `useEffectOnce` with `awaitCleanup` extension instead",
+    ReplaceWith("react.useEffectOnce"),
+)
 fun useEffectOnceWithCleanup(
     effect: CleanupBuilder.() -> Unit,
 ) {
