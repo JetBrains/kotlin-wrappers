@@ -1,10 +1,10 @@
 package react.internal
 
-import kotlinx.coroutines.CoroutineScope
 import react.Cleanup
+import react.CleanupScope
 
 internal fun createCleanupCallback(
-    block: suspend CoroutineScope.() -> Unit,
+    block: suspend CleanupScope.() -> Unit,
 ): () -> Cleanup = callback@{
     val job = isolatedJob(block)
 
@@ -14,7 +14,7 @@ internal fun createCleanupCallback(
 }
 
 internal fun <P1> createCleanupCallback(
-    block: suspend CoroutineScope.(P1) -> Unit,
+    block: suspend CleanupScope.(P1) -> Unit,
 ): (P1) -> Cleanup = callback@{ p1 ->
     val job = isolatedJob { block(p1) }
 
@@ -24,7 +24,7 @@ internal fun <P1> createCleanupCallback(
 }
 
 internal fun <P1, P2> createCleanupCallback(
-    block: suspend CoroutineScope.(P1, P2) -> Unit,
+    block: suspend CleanupScope.(P1, P2) -> Unit,
 ): (P1, P2) -> Cleanup = callback@{ p1, p2 ->
     val job = isolatedJob { block(p1, p2) }
 
