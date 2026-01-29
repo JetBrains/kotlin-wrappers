@@ -675,7 +675,7 @@ inline val <C : Document> C.animationStartEvent: EventInstance<AnimationEvent, C
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/auxclick_event)
  */
-inline val <C : Document> C.auxClickEvent: EventInstance<MouseEvent, C, Node>
+inline val <C : Document> C.auxClickEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "auxclick")
 
 /**
@@ -711,7 +711,7 @@ inline val <C : Document> C.changeEvent: EventInstance<Event, C, Node>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/click_event)
  */
-inline val <C : Document> C.clickEvent: EventInstance<MouseEvent, C, Node>
+inline val <C : Document> C.clickEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "click")
 
 /**
@@ -735,7 +735,7 @@ inline val <C : Document> C.compositionUpdateEvent: EventInstance<CompositionEve
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/contextmenu_event)
  */
-inline val <C : Document> C.contextMenuEvent: EventInstance<MouseEvent, C, Node>
+inline val <C : Document> C.contextMenuEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "contextmenu")
 
 /**

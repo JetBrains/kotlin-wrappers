@@ -26,12 +26,6 @@ object EventDataRegistry {
         json.decodeFromString<List<EventData>>(sourceFile.readText())
             .map { data ->
                 when {
-                    data.`interface` == "PointerEvent"
-                            && (data.type == "auxclick" || data.type == "click" || data.type == "contextmenu")
-                        -> data.copy(
-                        `interface` = "MouseEvent",
-                    )
-
                     data.`interface` == "Event"
                             && data.targets.any { it.target == "ServiceWorkerContainer" }
                             && (data.type == "message" || data.type == "messageerror")

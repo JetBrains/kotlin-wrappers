@@ -26,6 +26,7 @@ import web.input.InputEvent
 import web.keyboard.KeyboardEvent
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
+import web.pointer.PointerEvent
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.touch.TouchEvent
@@ -603,7 +604,7 @@ inline val <C : Element> C.abortEvent: EventInstance<Event, C, C>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
  */
-inline val <C : Element> C.auxClickEvent: EventInstance<MouseEvent, C, Node>
+inline val <C : Element> C.auxClickEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "auxclick")
 
 /**
@@ -621,7 +622,7 @@ inline val <C : Element> C.blurEvent: EventInstance<FocusEvent, C, C>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
  */
-inline val <C : Element> C.clickEvent: EventInstance<MouseEvent, C, Node>
+inline val <C : Element> C.clickEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "click")
 
 /**
@@ -645,7 +646,7 @@ inline val <C : Element> C.compositionUpdateEvent: EventInstance<CompositionEven
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
  */
-inline val <C : Element> C.contextMenuEvent: EventInstance<MouseEvent, C, Node>
+inline val <C : Element> C.contextMenuEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "contextmenu")
 
 /**

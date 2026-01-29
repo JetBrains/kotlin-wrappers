@@ -9,11 +9,9 @@ import web.cookie.CookieStore
 import web.cookie.ExtendableCookieChangeEvent
 import web.events.EventHandler
 import web.events.EventInstance
-import web.messaging.MessageEvent
 import web.push.PushEvent
 import web.push.PushSubscriptionChangeEvent
 import web.workers.WorkerGlobalScope
-import kotlin.js.JsAny
 import kotlin.js.JsName
 
 /**
@@ -154,7 +152,7 @@ inline val <C : ServiceWorkerGlobalScope> C.messageEvent: EventInstance<Extendab
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+inline val <C : ServiceWorkerGlobalScope> C.messageErrorEvent: EventInstance<ExtendableMessageEvent, C, C>
     get() = EventInstance(this, "messageerror")
 
 /**

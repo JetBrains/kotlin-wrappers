@@ -70,7 +70,7 @@ inline val FragmentInstance.animationStartEvent: EventInstance<AnimationEvent, E
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/auxclick_event)
  */
 @ReactCanary
-inline val FragmentInstance.auxClickEvent: EventInstance<MouseEvent, Element, Node>
+inline val FragmentInstance.auxClickEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "auxclick")
 
 /**
@@ -140,7 +140,7 @@ inline val FragmentInstance.changeEvent: EventInstance<Event, HTMLElement, Node>
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
  */
 @ReactCanary
-inline val FragmentInstance.clickEvent: EventInstance<MouseEvent, Element, Node>
+inline val FragmentInstance.clickEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "click")
 
 /**
@@ -196,7 +196,7 @@ inline val FragmentInstance.contextLostEvent: EventInstance<Event, HTMLCanvasEle
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)
  */
 @ReactCanary
-inline val FragmentInstance.contextMenuEvent: EventInstance<MouseEvent, Element, Node>
+inline val FragmentInstance.contextMenuEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "contextmenu")
 
 /**
