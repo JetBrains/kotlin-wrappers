@@ -12,7 +12,7 @@ internal fun runIsolatedJob(
     val job = IsolatedCoroutineScope()
         .launch(
             start = CoroutineStart.UNDISPATCHED,
-            block = { block(CleanupScopeImpl(this)) },
+            block = { block(CleanupScope(this)) },
         )
 
     return job::cancel
