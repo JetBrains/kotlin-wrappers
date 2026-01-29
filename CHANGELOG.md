@@ -1,10 +1,13 @@
 ## 2026.1.16
 
-* Add `awaitCleanup` extension to:
-    * `useEffect`
-    * `useLayoutEffect`
-    * `useInsertionEffect`
-    * `ViewTransitionHandler`
+**BREAKING CHANGE**
+
+* `useEffectWithCleanup` deprecated
+    * Replacement – `useEffect` with `awaitCleanup` extension
+* `useLayoutEffectWithCleanup` removed
+    * Replacement – `useLayoutEffect` with `awaitCleanup` extension
+* `useInsertionEffectWithCleanup` removed
+    * Replacement – `useInsertionEffect` with `awaitCleanup` extension
 
 ```kotlin
 useEffect {
