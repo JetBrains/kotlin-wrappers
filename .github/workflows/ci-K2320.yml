@@ -24,7 +24,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
       - name: Build
         run: |
-          sed -i "s|kotlin.version=2.3.0|kotlin.version=2.3.20-Beta1|g" gradle.properties
+          sed -i "s|kotlin.version=2.3.0|kotlin.version=2.3.20-Beta2|g" gradle.properties
           ./gradlew build
 
   build-examples:
@@ -45,6 +45,6 @@ jobs:
       - name: Build Examples
         working-directory: ./examples
         run: |
-          sed -i "s|kotlin.version=2.3.0|kotlin.version=2.3.20-Beta1|g" ../gradle.properties
-          sed -i "s|kotlin.version=2.3.0|kotlin.version=2.3.20-Beta1|g" gradle.properties
+          sed -i "s|kotlin.version=2.3.0|kotlin.version=2.3.20-Beta2|g" ../gradle.properties
+          sed -i "s|kotlin.version=2.3.0|kotlin.version=2.3.20-Beta2|g" gradle.properties
           ./gradlew build
