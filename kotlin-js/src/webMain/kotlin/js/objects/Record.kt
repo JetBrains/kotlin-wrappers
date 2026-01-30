@@ -4,6 +4,9 @@
 
 package js.objects
 
+import js.array.Tuple2
+import js.array.component1
+import js.array.component2
 import kotlin.js.JsAny
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -34,3 +37,24 @@ fun <K : JsAny, V : JsAny?> Record(
     block: Record<K, V>.() -> Unit,
 ): Record<K, V> =
     unsafeJso(block)
+
+fun <V : JsAny> Iterable<Pair<JsString, V>>.toRecord(): Record<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny> Sequence<Tuple2<JsString, V>>.toRecord(): Record<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny> Sequence<Pair<JsString, V>>.toRecord(): Record<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny> Map<JsString, V>.toRecord(): Record<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+

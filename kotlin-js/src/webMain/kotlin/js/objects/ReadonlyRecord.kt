@@ -4,6 +4,9 @@
 
 package js.objects
 
+import js.array.Tuple2
+import js.array.component1
+import js.array.component2
 import kotlin.js.JsAny
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -20,3 +23,23 @@ inline operator fun <V : JsAny?> ReadonlyRecord<JsAny, V>.get(key: String): V? =
 
 inline operator fun <V : JsAny?> ReadonlyRecord<JsString, V>.get(key: String): V? =
     get(key.toJsString())
+
+fun <V : JsAny?> Iterable<Pair<JsString, V>>.toReadonlyRecord(): ReadonlyRecord<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny?> Sequence<Tuple2<JsString, V>>.toReadonlyRecord(): ReadonlyRecord<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny?> Sequence<Pair<JsString, V>>.toReadonlyRecord(): ReadonlyRecord<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny?> Map<JsString, V>.toReadonlyRecord(): ReadonlyRecord<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
