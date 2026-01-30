@@ -4,4 +4,4 @@
 
 package actions.core
 
-external val arch: String
+external val arch: node.process.Architecture

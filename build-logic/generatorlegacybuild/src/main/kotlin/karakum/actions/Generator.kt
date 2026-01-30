@@ -96,6 +96,9 @@ private fun generate(
         )
 
         val fileName = if ("external val " in body) {
+            if (name.startsWith("_"))
+                continue
+
             "$name.val.kt"
         } else {
             "$name.kt"
