@@ -1,5 +1,7 @@
 package js.objects
 
+import js.array.component1
+import js.array.component2
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
