@@ -48,6 +48,8 @@ import web.window.Window
 import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
+import web.form.SubmitEvent
+import web.html.HTMLFormElement
 import web.keyboard.ModifierKeyCode
 import web.keyboard.KeyCode
 import web.data.DataTransfer
@@ -82,6 +84,7 @@ internal fun convertEventInterface(
         "ChangeEvent",
         "FocusEvent",
         "InvalidEvent",
+        "SubmitEvent",
             -> members = members
             .replaceFirst("val target:", "override val target:")
 

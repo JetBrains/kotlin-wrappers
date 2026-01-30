@@ -71,6 +71,9 @@ private fun convertProperty(
     final: Boolean,
     typeConverter: TypeConverter,
 ): String {
+    if (source.startsWith("// "))
+        return source
+
     val name = source.substringBefore(": ")
         .removeSuffix("?")
         .removeQuoteSurrounding()
@@ -86,6 +89,7 @@ private fun convertProperty(
 
     var sourceType = source.substringAfter(": ")
         .replace("EventTarget & T", "T")
+        .replace("EventTarget & HTMLFormElement", "HTMLFormElement")
 
     if (name == "id" || name == "htmlFor" || name == "popoverTarget") {
         require(sourceType == "string | undefined")
