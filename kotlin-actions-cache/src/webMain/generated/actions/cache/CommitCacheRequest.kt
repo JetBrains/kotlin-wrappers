@@ -1,0 +1,10 @@
+// Automatically generated - do not modify!
+
+package actions.cache
+
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface CommitCacheRequest {
+    val size: Number
+}

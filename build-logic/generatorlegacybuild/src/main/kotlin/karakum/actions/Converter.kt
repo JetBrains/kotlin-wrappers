@@ -126,7 +126,9 @@ private fun convertInterface(
     val name = source.substringBefore(" ")
         .substringBefore("<")
 
-    val declaration = source.substringBefore(" {\n")
+    val declaration = source
+        .substringBefore(" {\n")
+        .replace(" extends ", " :\n")
 
     val memberSource = source.substringAfter(" {\n")
         .substringBefore(";\n}")
@@ -278,6 +280,9 @@ private fun convertFunction(
 private fun convertType(
     source: String,
 ): ConversionResult? {
+    if (source.startsWith("{"))
+        return null
+
     val (name, bodySource) = source
         .removeSuffix(";")
         .split(" = ")

@@ -27,7 +27,9 @@ import node.http.OutgoingHttpHeaders
 import web.url.URL
 
 import actions.http.client.HttpClient
+import actions.http.client.HttpClientError
 import actions.http.client.HttpClientResponse
+import actions.http.client.TypedResponse
 
 import seskar.js.JsAsync
 import seskar.js.JsRawValue
