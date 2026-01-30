@@ -5,57 +5,57 @@ import js.array.component2
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ExtensionsTest {
+class RecordTest {
 
     @Test
     fun pairSequenceToRecord() {
-        val expected = recordOf(
-            "one" to 1,
-            "two" to 2,
-        )
+        val expected = Record {
+            set("one", 1)
+            set("two", 2)
+        }
         val actual = sequenceOf(
             "one" to 1,
             "two" to 2,
-        ).toMutableRecord()
+        ).toRecord()
 
         assertEquals(JSON.stringify(expected), JSON.stringify(actual))
     }
 
     @Test
     fun jsTupleSequenceToRecord() {
-        val expected = recordOf(
-            "one" to 1,
-            "two" to 2,
-        )
+        val expected = Record {
+            set("one", 1)
+            set("two", 2)
+        }
         val actual = Object.entries(expected).asSequence()
-            .toMutableRecord()
+            .toRecord()
 
         assertEquals(JSON.stringify(expected), JSON.stringify(actual))
     }
 
     @Test
     fun tupleIterableToRecord() {
-        val expected = recordOf(
-            "one" to 1,
-            "two" to 2,
-        )
+        val expected = Record {
+            set("one", 1)
+            set("two", 2)
+        }
         val actual = Object.entries(expected)
             .map { (first, second) -> first to second }
-            .toMutableRecord()
+            .toRecord()
 
         assertEquals(JSON.stringify(expected), JSON.stringify(actual))
     }
 
     @Test
     fun mapToRecord() {
-        val expected = recordOf(
-            "one" to 1,
-            "two" to 2,
-        )
+        val expected = Record {
+            set("one", 1)
+            set("two", 2)
+        }
         val actual = mapOf(
             "one" to 1,
             "two" to 2,
-        ).toMutableRecord()
+        ).toRecord()
 
         assertEquals(JSON.stringify(expected), JSON.stringify(actual))
     }
