@@ -50,14 +50,14 @@ protected constructor() :
     fun requestClose(returnValue: String = definedExternally)
 
     /**
-     * The **`show()`** method of the HTMLDialogElement interface displays the dialog modelessly, i.e., still allowing interaction with content outside of the dialog.
+     * The **`show()`** method of the HTMLDialogElement interface displays the dialog as a non-modal dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
      */
     fun show()
 
     /**
-     * The **`showModal()`** method of the HTMLDialogElement interface displays the dialog as a modal, over the top of any other dialogs that might be present. It displays in the top layer, along with a ::backdrop pseudo-element. Elements inside the same document as the dialog, except the dialog and its descendants, become inert (as if the inert attribute is specified). Only the containing document becomes blocked; if the dialog is rendered inside an iframe, the rest of the page remains interactive.
+     * The **`showModal()`** method of the HTMLDialogElement interface displays the dialog as a modal dialog, over the top of any other dialogs or elements that might be visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
      */

@@ -81,14 +81,14 @@ open external class MouseEvent(
     val metaKey: Boolean
 
     /**
-     * The **`movementX`** read-only property of the MouseEvent interface provides the difference in the X coordinate of the mouse pointer between the given event and the previous mousemove event. In other words, the value of the property is computed like this: currentEvent.movementX = currentEvent.screenX - previousEvent.screenX.
+     * The **`movementX`** read-only property of the MouseEvent interface provides the difference in the X coordinate of the mouse (or pointer) between the given move event and the previous move event of the same type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementX)
      */
     val movementX: Double
 
     /**
-     * The **`movementY`** read-only property of the MouseEvent interface provides the difference in the Y coordinate of the mouse pointer between the given event and the previous mousemove event. In other words, the value of the property is computed like this: currentEvent.movementY = currentEvent.screenY - previousEvent.screenY.
+     * The **`movementY`** read-only property of the MouseEvent interface provides the difference in the Y coordinate of the mouse (or pointer) between the given move event and the previous move event of the same type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementY)
      */
