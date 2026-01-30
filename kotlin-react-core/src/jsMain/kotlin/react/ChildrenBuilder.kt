@@ -9,7 +9,6 @@
 
 package react
 
-import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
@@ -29,10 +28,6 @@ private fun buildChildren(builder: Any): ReactNode? {
     deleteProperty(builder, BUILDER_CHILDREN)
     return children
 }
-
-@InternalApi
-fun ChildrenBuilder.buildChildren(): ReactNode? =
-    buildChildren(this)
 
 internal fun Props.buildChildren(): ReactNode? =
     buildChildren(this)
