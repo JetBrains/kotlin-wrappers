@@ -38,22 +38,22 @@ fun <K : JsAny, V : JsAny?> Record(
 ): Record<K, V> =
     unsafeJso(block)
 
-fun <V : JsAny> Iterable<Pair<JsString, V>>.toRecord(): Record<JsString, V> =
-    Record {
-        forEach { (key, value) -> set(key, value) }
-    }
-
 fun <V : JsAny> Sequence<Tuple2<JsString, V>>.toRecord(): Record<JsString, V> =
     Record {
         forEach { (key, value) -> set(key, value) }
     }
 
-fun <V : JsAny> Sequence<Pair<JsString, V>>.toRecord(): Record<JsString, V> =
+fun <V : JsAny> Sequence<Pair<String, V>>.toRecord(): Record<JsString, V> =
     Record {
         forEach { (key, value) -> set(key, value) }
     }
 
-fun <V : JsAny> Map<JsString, V>.toRecord(): Record<JsString, V> =
+fun <V : JsAny> Iterable<Pair<String, V>>.toRecord(): Record<JsString, V> =
+    Record {
+        forEach { (key, value) -> set(key, value) }
+    }
+
+fun <V : JsAny> Map<String, V>.toRecord(): Record<JsString, V> =
     Record {
         forEach { (key, value) -> set(key, value) }
     }
