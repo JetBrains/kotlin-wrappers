@@ -10,4 +10,3 @@ fun <K : JsAny, V : JsAny?> recordOf(
             set(key, value)
         }
     }
-
