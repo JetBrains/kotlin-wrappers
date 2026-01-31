@@ -24,6 +24,9 @@ inline operator fun <V : JsAny?> ReadonlyRecord<JsAny, V>.get(key: String): V? =
 inline operator fun <V : JsAny?> ReadonlyRecord<JsString, V>.get(key: String): V? =
     get(key.toJsString())
 
+fun <K : JsAny, V : JsAny?> emptyReadonlyRecord(): ReadonlyRecord<K, V> =
+    Object.freeze(unsafeJso())
+
 fun <K : JsAny, V : JsAny?> buildReadonlyRecord(
     block: Record<K, V>.() -> Unit,
 ): ReadonlyRecord<K, V> =
