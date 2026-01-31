@@ -2,6 +2,7 @@ package styled
 
 import js.objects.Object
 import js.objects.Record
+import js.objects.buildRecord
 import kotlinx.css.CssDeclarations
 import kotlinx.css.StyledElement
 import kotlinx.css.StyledElementBuilder
@@ -52,16 +53,15 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
     return prefixed
 }
 
-private fun CssDeclarations.mapToObj(): Record<String, Any> {
-    val res: Record<String, Any> = Record()
-    forEach { (key, value) ->
-        res[key] = when (value) {
-            is String, is Number -> value
-            else -> value.toString()
+private fun CssDeclarations.mapToObj(): Record<String, Any> =
+    buildRecord {
+        for ((key, value) in this@mapToObj) {
+            this[key] = when (value) {
+                is String, is Number -> value
+                else -> value.toString()
+            }
         }
     }
-    return res
-}
 
 internal fun CssDeclarations.buildPrefixedString(indent: String = ""): String {
     val res = mapToObj()
