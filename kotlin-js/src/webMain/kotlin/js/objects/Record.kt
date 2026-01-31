@@ -30,7 +30,7 @@ inline operator fun <V : JsAny?> Record<JsString, V>.set(key: String, value: V) 
 }
 
 
-fun <K : JsAny, V : JsAny?> Record(): Record<K, V> =
+fun <K : JsAny, V : JsAny?> emptyRecord(): Record<K, V> =
     unsafeJso()
 
 fun <K : JsAny, V : JsAny?> buildRecord(
