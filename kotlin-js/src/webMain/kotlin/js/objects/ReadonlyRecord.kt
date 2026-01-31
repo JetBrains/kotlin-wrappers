@@ -24,6 +24,11 @@ inline operator fun <V : JsAny?> ReadonlyRecord<JsAny, V>.get(key: String): V? =
 inline operator fun <V : JsAny?> ReadonlyRecord<JsString, V>.get(key: String): V? =
     get(key.toJsString())
 
+fun <K : JsAny, V : JsAny?> buildReadonlyRecord(
+    block: Record<K, V>.() -> Unit,
+): ReadonlyRecord<K, V> =
+    Object.freeze(unsafeJso(block))
+
 fun <K : JsAny, V : JsAny?> Sequence<Tuple2<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
     Record {
         forEach { (key, value) -> set(key, value) }
