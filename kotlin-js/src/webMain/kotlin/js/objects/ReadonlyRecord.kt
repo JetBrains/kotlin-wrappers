@@ -30,22 +30,22 @@ fun <K : JsAny, V : JsAny?> buildReadonlyRecord(
     Object.freeze(unsafeJso(block))
 
 fun <K : JsAny, V : JsAny?> Sequence<Tuple2<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
-    Record {
+    buildReadonlyRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Sequence<Pair<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
-    Record {
+    buildReadonlyRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Iterable<Pair<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
-    Record {
+    buildReadonlyRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
 
 fun <K : JsAny, V : JsAny?> Map<K, V>.toReadonlyRecord(): ReadonlyRecord<K, V> =
-    Record {
+    buildReadonlyRecord {
         forEach { (key, value) -> set(key, value) }
     }
