@@ -1,4 +1,5 @@
-import example.react.View
+package example.react
+
 import react.create
 import react.dom.client.createRoot
 import web.dom.document
