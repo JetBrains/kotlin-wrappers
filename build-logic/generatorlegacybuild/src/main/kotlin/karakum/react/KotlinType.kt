@@ -34,6 +34,8 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "ImgDecoding" to "ImageDecoding",
     "ModifierKey" to "ModifierKeyCode",
+
+    "ChangeEventHandler<T>" to "ChangeEventHandler<T, *>",
 )
 
 private val ANY_ALIASES = setOf(

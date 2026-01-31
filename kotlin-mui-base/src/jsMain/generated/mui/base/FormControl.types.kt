@@ -38,7 +38,7 @@ external interface FormControlOwnProps :
     /**
      * Callback fired when the form element's value is modified.
      */
-    var onChange: react.dom.events.ChangeEventHandler<NativeFormControlElement>?
+    var onChange: react.dom.events.ChangeEventHandler<NativeFormControlElement, *>?
 
     /**
      * If `true`, the label will indicate that the `input` is required.

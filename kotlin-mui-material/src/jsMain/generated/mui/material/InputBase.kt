@@ -164,7 +164,7 @@ external interface InputBaseProps :
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
 
     var onFocus: react.dom.events.FocusEventHandler<HTMLElement>?
 

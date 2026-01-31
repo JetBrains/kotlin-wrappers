@@ -22,6 +22,8 @@ typealias NativeTouchEvent = web.touch.TouchEvent
 
 typealias NativePointerEvent = web.pointer.PointerEvent
 
+typealias NativeSubmitEvent = web.form.SubmitEvent
+
 typealias NativeToggleEvent = web.popover.ToggleEvent
 
 typealias NativeTransitionEvent = web.cssom.TransitionEvent

@@ -109,7 +109,7 @@ external interface TablePaginationOwnProps : mui.system.PropsWithSx {
      *
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      */
-    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The zero-based index of the current page.

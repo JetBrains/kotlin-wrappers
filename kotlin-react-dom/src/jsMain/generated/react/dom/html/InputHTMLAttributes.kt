@@ -8,6 +8,7 @@ import web.autofill.AutoFill
 import web.dom.Element
 import web.form.FormEncType
 import web.form.FormMethod
+import web.html.HTMLInputElement
 import web.html.InputType
 import web.window.WindowName
 
@@ -42,5 +43,8 @@ external interface InputHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var type: InputType?
     var value: Any? // string | readonly string[] | number
     var width: Double?
-    var onChange: ChangeEventHandler<T>?
+
+    // No other element dispatching change events can be nested in a <input>
+// so we know the target will be a HTMLInputElement.
+    var onChange: ChangeEventHandler<T, HTMLInputElement>?
 }

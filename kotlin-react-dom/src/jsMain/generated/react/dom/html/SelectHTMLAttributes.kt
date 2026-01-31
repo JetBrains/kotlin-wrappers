@@ -5,6 +5,7 @@ package react.dom.html
 import react.dom.events.ChangeEventHandler
 import web.autofill.AutoFill
 import web.dom.Element
+import web.html.HTMLSelectElement
 
 external interface SelectHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoComplete: AutoFill?
@@ -15,5 +16,8 @@ external interface SelectHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var required: Boolean?
     var size: Int?
     var value: Any? // string | readonly string[] | number
-    var onChange: ChangeEventHandler<T>?
+
+    // No other element dispatching change events can be nested in a <select>
+// so we know the target will be a HTMLSelectElement.
+    var onChange: ChangeEventHandler<T, HTMLSelectElement>?
 }

@@ -33,19 +33,19 @@ external interface DOMAttributes<T : Element> :
     var onBlur: FocusEventHandler<T>?
     var onBlurCapture: FocusEventHandler<T>?
 
-    // Form Events
-    // var onChange: FormEventHandler<T>?
-    var onChangeCapture: FormEventHandler<T>?
+    // form related Events
+    // var onChange: ChangeEventHandler<T, *>?
+    var onChangeCapture: ChangeEventHandler<T, *>?
     var onBeforeInput: InputEventHandler<T>?
-    var onBeforeInputCapture: FormEventHandler<T>?
-    var onInput: FormEventHandler<T>?
-    var onInputCapture: FormEventHandler<T>?
-    var onReset: FormEventHandler<T>?
-    var onResetCapture: FormEventHandler<T>?
-    var onSubmit: FormEventHandler<T>?
-    var onSubmitCapture: FormEventHandler<T>?
-    var onInvalid: FormEventHandler<T>?
-    var onInvalidCapture: FormEventHandler<T>?
+    var onBeforeInputCapture: InputEventHandler<T>?
+    var onInput: InputEventHandler<T>?
+    var onInputCapture: InputEventHandler<T>?
+    var onReset: ReactEventHandler<T>?
+    var onResetCapture: ReactEventHandler<T>?
+    var onSubmit: SubmitEventHandler<T>?
+    var onSubmitCapture: SubmitEventHandler<T>?
+    var onInvalid: ReactEventHandler<T>?
+    var onInvalidCapture: ReactEventHandler<T>?
 
     // Image Events
     var onLoad: ReactEventHandler<T>?
@@ -210,7 +210,7 @@ external interface DOMAttributes<T : Element> :
     var onTransitionStartCapture: TransitionEventHandler<T>?
 }
 
-inline var <T : Element> DOMAttributes<T>.onChange: FormEventHandler<T>?
+inline var <T : Element> DOMAttributes<T>.onChange: ChangeEventHandler<T, *>?
     get() = asDynamic().onChange
     set(value) {
         asDynamic().onChange = value

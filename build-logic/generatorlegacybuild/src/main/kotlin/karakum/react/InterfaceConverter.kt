@@ -156,9 +156,9 @@ private fun convertAttributesInterface(
 
         if (name == "DOMAttributes")
             result = result.replaceFirst("var onChange:", "    // var onChange:") +
-                    // language=Kotlin
+                    // language=kotlin
                     """
-                    inline var <T : Element> DOMAttributes<T>.onChange: FormEventHandler<T>?
+                    inline var <T : Element> DOMAttributes<T>.onChange: ChangeEventHandler<T, *>?
                         get() = asDynamic().onChange
                         set(value) {
                             asDynamic().onChange = value

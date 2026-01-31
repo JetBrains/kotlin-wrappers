@@ -26,12 +26,16 @@ private const val EVENT_HANDLER = "typealias EventHandler<E /* : SyntheticEvent 
 internal fun convertEventHandlers(
     source: String,
 ): ConversionResult {
-    val handlers = source.splitToSequence("\n")
+    val handlers = source
+        .replace(Regex("""\n\s+(ChangeEvent.+)\n"""), "$1")
+        .splitToSequence("\n")
         .filter { it.startsWith("type ") && " = EventHandler<" in it }
         .joinToString("\n\n") { line ->
             line.replaceFirst("type ", "typealias ")
                 .removeSuffix(";")
                 .replace("<T = Element>", "<T>")
+                .replace("<CurrentTarget = Element, Target = Element>", "<C, T>")
+                .replace("<CurrentTarget, Target>", "<C, T>")
                 .replace("SyntheticEvent<T>", "SyntheticEvent<T, *>")
                 .replace("MouseEvent<T>", "MouseEvent<T, *>")
                 .replace("UIEvent<T>", "UIEvent<T, *>")
@@ -66,11 +70,15 @@ internal fun convertEventInterface(
 ): ConversionResult {
     val declaration = source.substringBefore(" {")
         .replaceFirst(" extends ", " : ")
+        .replace("CurrentTarget", "C")
+        .replace(", Target", ", T")
+        .replace("<Target", "<T")
         .replace(" = ", " : ")
         .replace(": object", ": Any")
         .replace(": any", ": Any")
         .replace("EventTarget & T", "T")
         .replace("SyntheticEvent<T>", "SyntheticEvent<T, Event>")
+        .replace("SyntheticEvent<C>", "SyntheticEvent<C, Event>")
         .replace(
             "BaseSyntheticEvent<E : Any, C : Any, T : Any>",
             "BaseSyntheticEvent<E : Event, C : EventTarget, T : EventTarget>"
@@ -87,6 +95,7 @@ internal fun convertEventInterface(
         "SubmitEvent",
             -> members = members
             .replaceFirst("val target:", "override val target:")
+            .replaceFirst(": EventTarget & CurrentTarget", ": T /* in Kotlin we can use `T` */")
 
         "KeyboardEvent",
             -> members = members

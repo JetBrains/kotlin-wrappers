@@ -10,7 +10,7 @@ external interface TreeItem2LabelInputProps : react.Props {
      */
     // var `data-element`: mui.system.Union? /* 'labelInput' */
 
-    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLInputElement>?
+    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLInputElement, *>?
 
     var onKeyDown: react.dom.events.KeyboardEventHandler<web.html.HTMLInputElement>?
 

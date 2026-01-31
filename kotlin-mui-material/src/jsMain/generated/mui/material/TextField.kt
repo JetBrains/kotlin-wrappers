@@ -195,7 +195,7 @@ external interface StandardTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The variant to use.
@@ -220,7 +220,7 @@ external interface FilledTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The variant to use.
@@ -245,7 +245,7 @@ external interface OutlinedTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The variant to use.

@@ -5,6 +5,7 @@ package react.dom.html
 import react.dom.events.ChangeEventHandler
 import web.autofill.AutoFill
 import web.dom.Element
+import web.html.HTMLTextAreaElement
 
 external interface TextareaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var autoComplete: AutoFill?
@@ -21,5 +22,8 @@ external interface TextareaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var rows: Int?
     var value: Any? // string | readonly string[] | number
     var wrap: String?
-    var onChange: ChangeEventHandler<T>?
+
+    // No other element dispatching change events can be nested in a <textare>
+// so we know the target will be a HTMLTextAreaElement.
+    var onChange: ChangeEventHandler<T, HTMLTextAreaElement>?
 }

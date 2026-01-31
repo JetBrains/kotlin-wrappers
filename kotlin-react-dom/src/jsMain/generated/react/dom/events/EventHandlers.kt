@@ -16,13 +16,15 @@ typealias FocusEventHandler<T> = EventHandler<FocusEvent<T>>
 
 typealias FormEventHandler<T> = EventHandler<FormEvent<T>>
 
-typealias ChangeEventHandler<T> = EventHandler<ChangeEvent<T>>
+typealias ChangeEventHandler<C, T> = EventHandler<ChangeEvent<C, T>>
 
 typealias InputEventHandler<T> = EventHandler<InputEvent<T>>
 
 typealias KeyboardEventHandler<T> = EventHandler<KeyboardEvent<T>>
 
 typealias MouseEventHandler<T> = EventHandler<MouseEvent<T, *>>
+
+typealias SubmitEventHandler<T> = EventHandler<SubmitEvent<T>>
 
 typealias TouchEventHandler<T> = EventHandler<TouchEvent<T>>
 

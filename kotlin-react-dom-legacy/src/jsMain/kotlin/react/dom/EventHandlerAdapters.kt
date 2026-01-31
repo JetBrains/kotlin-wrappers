@@ -71,7 +71,7 @@ var CommonAttributeGroupFacade.onBlur: FocusEventHandler<*>
 
 // Form Events
 
-var CommonAttributeGroupFacade.onChange: ChangeEventHandler<*>
+var CommonAttributeGroupFacade.onChange: ChangeEventHandler<*, *>
     @Deprecated("Write-only property", level = DeprecationLevel.HIDDEN)
     get() = error("")
     set(value) {

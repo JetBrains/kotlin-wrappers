@@ -88,7 +88,7 @@ external interface SwitchBaseProps :
      * You can pull out the new value by accessing `event.target.value` (string).
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement>, checked: Boolean) -> Unit)?
+    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement, *>, checked: Boolean) -> Unit)?
 
     var readOnly: Boolean?
 

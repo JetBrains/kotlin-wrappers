@@ -229,7 +229,7 @@ external interface BrowserAutofillAction<OptionValue> {
 
     var item: OptionValue
 
-    var event: react.dom.events.ChangeEvent<*>
+    var event: react.dom.events.ChangeEvent<*, *>
 }
 
 external interface SelectInternalState {

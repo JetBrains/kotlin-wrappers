@@ -26,7 +26,7 @@ external interface UseInputParameters {
 
     var onClick: react.dom.events.MouseEventHandler<*>?
 
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>?
+    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
 
     var onFocus: react.dom.events.FocusEventHandler<HTMLElement>?
 
@@ -54,7 +54,7 @@ external interface UseInputInputSlotOwnProps : react.Props {
 
     var onBlur: react.dom.events.FocusEventHandler<HTMLElement>
 
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement>
+    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>
 
     var onFocus: react.dom.events.FocusEventHandler<HTMLElement>
 
