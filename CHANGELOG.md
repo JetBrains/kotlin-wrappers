@@ -1,9 +1,20 @@
+## 2026.2.0
+
+### React DOM
+
+* `FocusEventHandler` and `FocusEvent` deprecated
+    * [Original change](https://github.com/DefinitelyTyped/DefinitelyTyped/commit/1bfb3a01af9c94ad7c913a0f6359b3bfb8205602)
+    * Scheduled for removal in `2026.2.1`
+
 ## 2026.1.16
 
 **BREAKING CHANGE**
 
+### React
+
 * `useEffectWithCleanup` deprecated
     * Replacement – `useEffect` with `awaitCleanup` extension
+  * Scheduled for removal in `2026.2.1`
 * `useLayoutEffectWithCleanup` removed
     * Replacement – `useLayoutEffect` with `awaitCleanup` extension
 * `useInsertionEffectWithCleanup` removed
