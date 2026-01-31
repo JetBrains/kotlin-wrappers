@@ -1,12 +1,12 @@
 package example.table.selection
 
-import react.dom.events.ChangeEvent
+import react.dom.events.ChangeEventHandler
 import react.useCallback
 import web.html.HTMLInputElement
 
 internal fun useSelectionChangeHandler(
     keys: SelectedKeys,
-): (ChangeEvent<HTMLInputElement>) -> Unit {
+): ChangeEventHandler<HTMLInputElement, HTMLInputElement> {
     val selectionHandler = useSelectionHandler()
 
     return useCallback(keys) { event ->
