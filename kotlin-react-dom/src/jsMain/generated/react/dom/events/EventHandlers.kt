@@ -14,6 +14,8 @@ typealias DragEventHandler<T> = EventHandler<DragEvent<T>>
 
 typealias FocusEventHandler<T> = EventHandler<FocusEvent<T>>
 
+@Deprecated("Scheduled for removal")
+@Suppress("DEPRECATION")
 typealias FormEventHandler<T> = EventHandler<FormEvent<T>>
 
 typealias ChangeEventHandler<C, T> = EventHandler<ChangeEvent<C, T>>
