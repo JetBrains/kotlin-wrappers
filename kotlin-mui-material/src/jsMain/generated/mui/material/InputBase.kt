@@ -175,7 +175,7 @@ external interface InputBaseProps :
     /**
      * Callback fired when the `input` doesn't satisfy its constraints.
      */
-    var onInvalid: react.dom.events.FormEventHandler<HTMLElement>?
+    var onInvalid: react.dom.events.ReactEventHandler<HTMLElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.
