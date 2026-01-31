@@ -33,28 +33,28 @@ inline operator fun <V : JsAny?> Record<JsString, V>.set(key: String, value: V) 
 fun <K : JsAny, V : JsAny?> Record(): Record<K, V> =
     unsafeJso()
 
-fun <K : JsAny, V : JsAny?> Record(
+fun <K : JsAny, V : JsAny?> buildRecord(
     block: Record<K, V>.() -> Unit,
 ): Record<K, V> =
     unsafeJso(block)
 
 fun <K : JsAny, V : JsAny?> Sequence<Tuple2<K, V>>.toRecord(): Record<K, V> =
-    Record {
+    buildRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Sequence<Pair<K, V>>.toRecord(): Record<K, V> =
-    Record {
+    buildRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Iterable<Pair<K, V>>.toRecord(): Record<K, V> =
-    Record {
+    buildRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Map<K, V>.toRecord(): Record<K, V> =
-    Record {
+    buildRecord {
         forEach { (key, value) -> set(key, value) }
     }
 
