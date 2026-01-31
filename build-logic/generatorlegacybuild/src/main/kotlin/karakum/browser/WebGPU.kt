@@ -48,6 +48,7 @@ private fun getItems(
         .map { it.trim() }
 
 private val IGNORED_TYPES = setOf(
+    "GPUAdapterInfo",
     "GPUBindGroup",
     "GPUBindGroupLayout",
     "GPUBindingCommandsMixin",
