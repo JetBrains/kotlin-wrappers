@@ -32,6 +32,7 @@ includeBuild("../")
 
 include("browser")
 include("event-flow")
+include("export-suspend-with-cancellation")
 include("mdn-audioworklet-example")
 include("react")
 include("react-svg")

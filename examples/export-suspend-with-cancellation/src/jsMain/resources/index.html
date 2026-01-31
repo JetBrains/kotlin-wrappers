@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Export `suspend` with cancellation</title>
+</head>
+<body>
+<script src="index.js"></script>
+
+<script>
+    let controller
+
+    async function start () {
+        console.log('Start!!!')
+        controller = new AbortController()
+        await myCounter.run((value) => {
+            console.log('New value: ' + value)
+            counterField.textContent = value
+        }, controller)
+    }
+
+    function stop () {
+        console.log('Stop!!!')
+        controller?.abort()
+    }
+</script>
+
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<span id="counterField"></span>
+</body>
+</html>
