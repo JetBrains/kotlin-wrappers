@@ -2,6 +2,7 @@ package web.abort
 
 import js.objects.JsPlainObject
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.async
 import kotlin.coroutines.EmptyCoroutineContext
 
 @JsPlainObject
@@ -15,3 +16,10 @@ external interface Abortable {
 fun Abortable?.asCoroutineScope(): CoroutineScope =
     this?.signal?.asCoroutineScope()
         ?: CoroutineScope(EmptyCoroutineContext)
+
+suspend fun <R> Abortable?.coroutineScope(
+    block: suspend CoroutineScope.() -> R,
+): R =
+    asCoroutineScope()
+        .async(block = block)
+        .await()
