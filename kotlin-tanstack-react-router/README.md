@@ -3,8 +3,3 @@
 # Module kotlin-tanstack-react-router
 
 Kotlin wrapper for the [TanStack React Router](https://github.com/TanStack/router) library.
-
-### Internals
-
-Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
-Manual changes are prohibited.
