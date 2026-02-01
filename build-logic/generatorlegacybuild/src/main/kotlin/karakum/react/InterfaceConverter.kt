@@ -23,7 +23,7 @@ internal fun convertInterface(
         name == "AllHTMLAttributes" -> null
         name == "ParamHTMLAttributes" -> null
 
-        name.endsWith("Event") -> convertEventInterface(name, source, typeConverter)
+        name.endsWith("Event") && name != "FormEvent" -> convertEventInterface(name, source, typeConverter)
         name.endsWith("Attributes") -> convertAttributesInterface(name, source, typeConverter)
 
         name == "ReactHTML" -> convertIntrinsicTypes(name, source, ::convertHtmlType)

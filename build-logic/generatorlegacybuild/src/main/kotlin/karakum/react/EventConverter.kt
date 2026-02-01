@@ -29,6 +29,7 @@ internal fun convertEventHandlers(
     val handlers = source
         .replace(Regex("""\n\s+(ChangeEvent.+)\n"""), "$1")
         .splitToSequence("\n")
+        .filter { !it.startsWith("type FormEventHandler<") }
         .filter { it.startsWith("type ") && " = EventHandler<" in it }
         .joinToString("\n\n") { line ->
             line.replaceFirst("type ", "typealias ")
