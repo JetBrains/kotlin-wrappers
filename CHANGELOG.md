@@ -1,3 +1,13 @@
+## 2026.2.1
+
+**BREAKING CHANGE**
+
+### React
+
+* Legacy `useEffectWithCleanup` removed
+    * Replacement – `useEffect` with `awaitCleanup` extension
+* Legacy `FocusEventHandler` and `FocusEvent` removed
+
 ## 2026.2.0
 
 ### React DOM
