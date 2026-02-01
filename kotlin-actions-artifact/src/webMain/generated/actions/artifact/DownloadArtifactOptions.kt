@@ -17,4 +17,10 @@ external interface DownloadArtifactOptions {
      * matches the expected hash.
      */
     val expectedHash: String?
+
+    /**
+     * If true, the downloaded artifact will not be automatically extracted/decompressed.
+     * The artifact will be saved as-is to the destination path.
+     */
+    val skipDecompress: Boolean?
 }

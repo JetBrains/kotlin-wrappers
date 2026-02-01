@@ -56,7 +56,12 @@ internal fun convertLibrary(
                     "handleAuthentication(httpClient: HttpClient, requestInfo: RequestInfo, data: string | node.ReadableStream | null): Promise<HttpClientResponse>;",
                 )
 
-            val STREAM_EXTRACT_EXTERNAL_BODY = "{\n    timeout: number;\n}"
+            val STREAM_EXTRACT_EXTERNAL_BODY = """
+            {
+                timeout?: number;
+                skipDecompress?: boolean;
+            }
+            """.trimIndent()
             if (STREAM_EXTRACT_EXTERNAL_BODY in content) {
                 content = "declare interface StreamExtractExternalOptions " +
                         STREAM_EXTRACT_EXTERNAL_BODY + "\n" +

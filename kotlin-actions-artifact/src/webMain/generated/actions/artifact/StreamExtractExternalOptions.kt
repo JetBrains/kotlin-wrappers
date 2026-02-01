@@ -6,5 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface StreamExtractExternalOptions {
-    val timeout: Number
+    val timeout: Number?
+    val skipDecompress: Boolean?
 }
