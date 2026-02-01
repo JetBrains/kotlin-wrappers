@@ -1,9 +1,11 @@
 package react.internal
 
+import js.internal.InternalApi
 import react.Cleanup
 import react.CleanupScope
 
-internal fun createCleanupCallback(
+@InternalApi
+fun createCleanupCallback(
     block: suspend CleanupScope.() -> Unit,
 ): () -> Cleanup = {
     runIsolatedJob(block)
