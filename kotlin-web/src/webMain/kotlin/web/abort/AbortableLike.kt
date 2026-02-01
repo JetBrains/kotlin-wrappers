@@ -10,4 +10,3 @@ external interface AbortableLike {
 
 fun AbortableLike.asCoroutineScope(): CoroutineScope =
     signal.asCoroutineScope()
-
