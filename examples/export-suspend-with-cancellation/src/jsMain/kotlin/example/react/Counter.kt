@@ -3,49 +3,48 @@ package example.react
 import js.promise.Promise
 import js.promise.invoke
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import web.abort.Abortable
-import web.console.console
-import web.events.ABORT
-import web.events.Event
-import web.events.addEventHandler
+import web.abort.coroutineScope
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.EmptyCoroutineContext
-import kotlin.coroutines.cancellation.CancellationException
 import kotlin.coroutines.startCoroutine
 
 @JsExport
 class Counter {
 
-    // With export it should have cancellation in JS by default
     private suspend fun run(
         callback: (value: Int) -> Unit,
-    ): Nothing {
-        var i = 0
-        while (true) {
-            callback(i++)
-            delay(300)
+        options: Abortable? = null,
+    ): Unit =
+        options.coroutineScope {
+            var i = 0
+            while (isActive) {
+                callback(i++)
+                delay(300)
+            }
         }
-    }
 
+    // Will be generated in Kotlin `2.3.20`
     @JsName("run")
     fun runAsync(
         callback: (value: Int) -> Unit,
-        // should be added by Kotlin
         options: Abortable? = null,
-    ): Promise<Nothing> =
-        Promise { _, reject ->
-            val continuation = Continuation<Nothing>(
+    ): Promise<Unit> =
+        Promise { resolve, reject ->
+            val continuation = Continuation<Unit>(
                 context = EmptyCoroutineContext,
-                resumeWith = { result -> reject(result.exceptionOrNull()!!) },
+                resumeWith = { result ->
+                    val exception = result.exceptionOrNull()
+                    if (exception == null) {
+                        resolve(result.getOrThrow())
+                    } else {
+                        reject(exception)
+                    }
+                }
             )
 
-            options?.signal?.addEventHandler(Event.ABORT) {
-                val exception = CancellationException(IllegalStateException("Aborted!!!"))
-                continuation.resumeWith(Result.failure(exception))
-            }
-
-            console.log("Run!")
-            (suspend { run(callback) })
+            (suspend { run(callback, options) })
                 .startCoroutine(continuation)
         }
 }

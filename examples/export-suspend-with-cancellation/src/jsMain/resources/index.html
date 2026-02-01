@@ -12,10 +12,16 @@
     async function start () {
         console.log('Start!!!')
         controller = new AbortController()
-        await myCounter.run((value) => {
+        const onNewValue = (value) => {
             console.log('New value: ' + value)
             counterField.textContent = value
-        }, controller)
+        }
+
+        try {
+            await myCounter.run(onNewValue, controller)
+        } catch (e) {
+            alert('Counter error: ' + e)
+        }
     }
 
     function stop () {
