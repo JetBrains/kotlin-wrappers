@@ -2,14 +2,7 @@
 
 package tanstack.react.router
 
-import js.objects.JsPlainObject
-import tanstack.router.core.RoutePath
 import tanstack.router.core.UseNavigateResult
-
-@JsPlainObject
-external interface UseNavigateOptions {
-    val from: RoutePath
-}
 
 /**
  * Imperative navigation hook.
