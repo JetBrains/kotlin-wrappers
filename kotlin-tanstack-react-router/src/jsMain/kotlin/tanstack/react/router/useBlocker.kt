@@ -14,4 +14,4 @@ internal external interface UseBlockerOptions {
 
 internal external fun useBlocker(
     options: UseBlockerOptions,
-)
+): HasBlockerResolverStatus?
