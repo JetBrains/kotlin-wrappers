@@ -12,5 +12,5 @@ sealed external interface FilebaseRouteOptions {
     val beforeLoad: ((options: BeforeLoadContextOptions) -> PromiseResult<Context?>?)?
     val loaderDeps: ((options: FullSearchSchemaOption) -> LoaderDeps?)?
     val remountDeps: ((options: RemountDepsOptions) -> Unit)?
-    val loader: ((options: LoaderFnContext) -> PromiseResult<LoaderData?>?)?
+    val loader: ((options: LoaderFnContext) -> PromiseResult<LoaderData>?)?
 }

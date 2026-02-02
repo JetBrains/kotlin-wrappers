@@ -1,3 +1,3 @@
 package tanstack.router.core
 
-typealias LoaderData = Any
+typealias LoaderData = Any?
