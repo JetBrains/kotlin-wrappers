@@ -5,6 +5,6 @@ import tanstack.router.core.ParsedLocation
 
 @JsPlainObject
 external interface UseLocationOptions<T> {
-    val select: (location: ParsedLocation) -> T
+    val select: Select<ParsedLocation, T>?
     val structuralSharing: Boolean?
 }
