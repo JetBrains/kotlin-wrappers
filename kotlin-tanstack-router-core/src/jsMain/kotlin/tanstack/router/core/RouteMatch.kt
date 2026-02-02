@@ -20,7 +20,7 @@ external interface RouteMatch {
     val paramsError: JsErrorLike?
     val searchError: JsErrorLike?
     val updatedAt: EpochTimeStamp
-    val loaderData: LoaderData
+    val loaderData: LoaderData?
     val context: Context?
     val search: Search
     val fetchCount: Int

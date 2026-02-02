@@ -10,7 +10,7 @@ import tanstack.router.core.RouteId
 internal external interface UseLoaderDataOptions<T> {
     val from: RouteId? /* RoutePath */
     val strict: Boolean?
-    val select: Select<LoaderData, T>?
+    val select: Select<LoaderData?, T>?
     val structuralSharing: Boolean?
 }
 
