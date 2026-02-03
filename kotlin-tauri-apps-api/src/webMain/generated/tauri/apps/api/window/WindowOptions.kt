@@ -13,28 +13,28 @@ external interface WindowOptions {
     /** Show window in the center of the screen.. */
     var center: Boolean?
 
-    /** The initial vertical position. Only applies if `y` is also set. */
+    /** The initial vertical position in logical pixels. Only applies if `y` is also set. */
     var x: Double?
 
-    /** The initial horizontal position. Only applies if `x` is also set. */
+    /** The initial horizontal position in logical pixels. Only applies if `x` is also set. */
     var y: Double?
 
-    /** The initial width. */
+    /** The initial width in logical pixels. */
     var width: Double?
 
-    /** The initial height. */
+    /** The initial height in logical pixels. */
     var height: Double?
 
-    /** The minimum width. Only applies if `minHeight` is also set. */
+    /** The minimum width in logical pixels. Only applies if `minHeight` is also set. */
     var minWidth: Double?
 
-    /** The minimum height. Only applies if `minWidth` is also set. */
+    /** The minimum height in logical pixels. Only applies if `minWidth` is also set. */
     var minHeight: Double?
 
-    /** The maximum width. Only applies if `maxHeight` is also set. */
+    /** The maximum width in logical pixels. Only applies if `maxHeight` is also set. */
     var maxWidth: Double?
 
-    /** The maximum height. Only applies if `maxWidth` is also set. */
+    /** The maximum height in logical pixels. Only applies if `maxWidth` is also set. */
     var maxHeight: Double?
 
     /**

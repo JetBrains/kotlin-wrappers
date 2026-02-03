@@ -21,16 +21,16 @@ external interface WebviewOptions {
      */
     var url: String?
 
-    /** The initial vertical position. */
+    /** The initial vertical position in logical pixels. */
     var x: Double
 
-    /** The initial horizontal position. */
+    /** The initial horizontal position in logical pixels. */
     var y: Double
 
-    /** The initial width. */
+    /** The initial width in logical pixels. */
     var width: Double
 
-    /** The initial height. */
+    /** The initial height in logical pixels. */
     var height: Double
 
     /**
