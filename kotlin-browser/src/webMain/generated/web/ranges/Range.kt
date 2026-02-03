@@ -80,13 +80,6 @@ open external class Range :
     fun deleteContents()
 
     /**
-     * The **`Range.detach()`** method does nothing. It used to disable the Range object and enable the browser to release associated resources. The method has been kept for compatibility.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/detach)
-     */
-    fun detach()
-
-    /**
      * The **`extractContents()`** method of the Range interface is similar to a combination of Range.cloneContents() and Range.deleteContents(). It removes the child Nodes of the range from the document, clones them, and returns them as a new DocumentFragment object. For partially selected nodes, only the selected text is deleted, but all containing parent nodes up to the common ancestor are cloned as well, resulting in two copies of these nodes, one in the original document and one in the extracted fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/extractContents)
