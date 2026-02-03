@@ -26,7 +26,7 @@ external object IntersectionTests {
     /**
      * Computes the intersection of a ray and a triangle as a parametric distance along the input ray. The result is negative when the triangle is behind the ray.
      *
-     * Implements [Fast Minimum Storage Ray/Triangle Intersection](https://cadxfem.org/inf/Fast%20MinimumStorage%20RayTriangle%20Intersection.pdf) by Tomas Moller and Ben Trumbore.
+     * Implements [Fast Minimum Storage Ray/Triangle Intersection](https://cadxfem.org/inf/Fast MinimumStorage RayTriangle Intersection.pdf) by Tomas Moller and Ben Trumbore.
      * @param [ray] The ray.
      * @param [p0] The first vertex of the triangle.
      * @param [p1] The second vertex of the triangle.
@@ -48,7 +48,7 @@ external object IntersectionTests {
     /**
      * Computes the intersection of a ray and a triangle as a Cartesian3 coordinate.
      *
-     * Implements [Fast Minimum Storage Ray/Triangle Intersection](https://cadxfem.org/inf/Fast%20MinimumStorage%20RayTriangle%20Intersection.pdf) by Tomas Moller and Ben Trumbore.
+     * Implements [Fast Minimum Storage Ray/Triangle Intersection](https://cadxfem.org/inf/Fast MinimumStorage RayTriangle Intersection.pdf) by Tomas Moller and Ben Trumbore.
      * @param [ray] The ray.
      * @param [p0] The first vertex of the triangle.
      * @param [p1] The second vertex of the triangle.

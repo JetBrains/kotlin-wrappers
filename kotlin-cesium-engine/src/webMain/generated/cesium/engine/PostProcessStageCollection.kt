@@ -82,7 +82,7 @@ external class PostProcessStageCollection {
 
     /**
      * Specifies the tonemapping algorithm used when rendering with high dynamic range.
-     * [Sandcastle Demo](https://sandcastle.cesium.com/?src=High%20Dynamic%20Range.html)
+     * [Sandcastle Demo](https://sandcastle.cesium.com/?id=high-dynamic-range)
      * ```
      * viewer.scene.postProcessStages.tonemapper = Tonemapper.ACES;
      * ```

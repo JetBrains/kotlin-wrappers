@@ -124,7 +124,7 @@ external class DynamicEnvironmentMapManager(
      * Options for the DynamicEnvironmentMapManager constructor
      * @property [enabled] If true, the environment map and related properties will continue to update.
      *   Default value - `true`
-     * @property [mipmapLevels] The number of mipmap levels to generate for specular maps. More mipmap levels will produce a higher resolution specular reflection.
+     * @property [mipmapLevels] The maximum desired number of mipmap levels to generate for specular maps. More mipmap levels will produce a higher resolution specular reflection. The actual number of mipmaps used will be bounded by the cubemap texture size supported on the client machine. The number of mipmaps must be at least one for the environment map to be generated.
      *   Default value - `7`
      * @property [maximumSecondsDifference] The maximum amount of elapsed seconds before a new environment map is created.
      *   Default value - `3600`
