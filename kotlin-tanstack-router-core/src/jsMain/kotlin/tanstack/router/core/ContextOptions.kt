@@ -13,4 +13,5 @@ external interface ContextOptions {
     val buildLocation: BuildLocationFn
     val cause: Cause
     val matches: ReadonlyArray<* /* MakeRouteMatchUnion */>
+    val routeId: RouteId
 }
