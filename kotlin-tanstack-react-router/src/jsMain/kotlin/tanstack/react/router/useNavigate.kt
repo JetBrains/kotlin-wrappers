@@ -19,6 +19,8 @@ import tanstack.router.core.UseNavigateResult
  *
  * @return A function that accepts `NavigateOptions`.
  */
-external fun useNavigate(
+external fun useNavigate(): UseNavigateResult
+
+internal external fun useNavigate(
     options: UseNavigateOptions = definedExternally,
 ): UseNavigateResult
