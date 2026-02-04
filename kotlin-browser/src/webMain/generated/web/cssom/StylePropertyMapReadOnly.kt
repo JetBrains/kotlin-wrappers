@@ -5,6 +5,7 @@ package web.cssom
 import js.array.ReadonlyArray
 import js.collections.MapLike
 import js.collections.ReadonlySetLike
+import js.iterable.JsIterable
 import kotlin.js.JsString
 
 /**
@@ -15,7 +16,7 @@ import kotlin.js.JsString
 sealed /* final */
 external class StylePropertyMapReadOnly
 private constructor() :
-    MapLike<JsString, ReadonlyArray<CSSStyleValue>>,
+    MapLike<JsString, JsIterable<CSSStyleValue>>,
     ReadonlySetLike<JsString> {
     /**
      * The **`size`** read-only property of the StylePropertyMapReadOnly interface returns an unsigned long integer containing the size of the StylePropertyMapReadOnly object.
