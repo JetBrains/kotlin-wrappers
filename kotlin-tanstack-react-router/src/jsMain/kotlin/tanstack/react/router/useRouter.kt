@@ -13,6 +13,8 @@ package tanstack.react.router
  *
  * @return The registered router instance.
  */
-external fun useRouter(
-    options: UseRouterOptions = definedExternally,
+external fun useRouter(): Router
+
+internal external fun useRouter(
+    options: UseRouterOptions,
 ): Router
