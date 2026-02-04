@@ -8,7 +8,7 @@ fun <T> useLocation(
     useLocation(UseLocationOptions(select = select))
 
 fun <T> useLocation(
-    select: (location: ParsedLocation) -> T,
+    select: Select<ParsedLocation, T>,
     structuralSharing: Boolean,
 ): T =
     useLocation(UseLocationOptions(select = select, structuralSharing = structuralSharing))
