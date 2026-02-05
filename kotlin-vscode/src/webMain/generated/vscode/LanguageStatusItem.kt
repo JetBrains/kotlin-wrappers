@@ -70,7 +70,7 @@ external interface LanguageStatusItem :
     var busy: Boolean
 
     /**
-     * A {@linkcode Command command} for this item.
+     * A [command][Command] for this item.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageStatusItem.command)
      */

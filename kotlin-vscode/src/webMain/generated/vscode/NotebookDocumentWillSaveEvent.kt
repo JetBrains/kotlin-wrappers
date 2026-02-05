@@ -9,7 +9,7 @@ import kotlin.js.JsAny
  * An event that is fired when a [notebook document][NotebookDocument] will be saved.
  *
  * To make modifications to the document before it is being saved, call the
- * {@linkcode NotebookDocumentWillSaveEvent.waitUntil waitUntil}-function with a thenable
+ * [waitUntil][NotebookDocumentWillSaveEvent.waitUntil]-function with a thenable
  * that resolves to a [workspace edit][WorkspaceEdit].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent)

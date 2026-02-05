@@ -57,7 +57,7 @@ external interface FileSystemProvider {
      * will depend on the underlying file system: on Windows and macOS the matching will be case-insensitive and
      * on Linux it will be case-sensitive.
      *
-     * It is the file system provider's job to call {@linkcode FileSystemProvider.onDidChangeFile onDidChangeFile}
+     * It is the file system provider's job to call [onDidChangeFile][FileSystemProvider.onDidChangeFile]
      * for every change given these rules. No event should be emitted for files that match any of the provided
      * excludes.
      *
@@ -95,7 +95,7 @@ external interface FileSystemProvider {
      *
      * @param uri The uri of the file to retrieve metadata about.
      * @returns The file metadata about the file.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `uri` doesn't exist.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.stat)
      */
@@ -106,7 +106,7 @@ external interface FileSystemProvider {
      *
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `uri` doesn't exist.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.readDirectory)
      */
@@ -116,9 +116,9 @@ external interface FileSystemProvider {
      * Create a new directory (Note, that new files are created via `write`-calls).
      *
      * @param uri The uri of the new folder.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when the parent of `uri` doesn't exist, e.g. no mkdirp-logic required.
-     * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists.
-     * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when the parent of `uri` doesn't exist, e.g. no mkdirp-logic required.
+     * @throws [FileExists][FileSystemError.FileExists] when `uri` already exists.
+     * @throws [NoPermissions][FileSystemError.NoPermissions] when permissions aren't sufficient.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.createDirectory)
      */
@@ -129,7 +129,7 @@ external interface FileSystemProvider {
      *
      * @param uri The uri of the file.
      * @returns An array of bytes or a thenable that resolves to such.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `uri` doesn't exist.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.readFile)
      */
@@ -141,10 +141,10 @@ external interface FileSystemProvider {
      * @param uri The uri of the file.
      * @param content The new content of the file.
      * @param options Defines if missing files should or must be created.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist and `create` is not set.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when the parent of `uri` doesn't exist and `create` is set, e.g. no mkdirp-logic required.
-     * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists, `create` is set but `overwrite` is not set.
-     * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `uri` doesn't exist and `create` is not set.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when the parent of `uri` doesn't exist and `create` is set, e.g. no mkdirp-logic required.
+     * @throws [FileExists][FileSystemError.FileExists] when `uri` already exists, `create` is set but `overwrite` is not set.
+     * @throws [NoPermissions][FileSystemError.NoPermissions] when permissions aren't sufficient.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.writeFile)
      */
@@ -173,8 +173,8 @@ external interface FileSystemProvider {
      *
      * @param uri The resource that is to be deleted.
      * @param options Defines if deletion of folders is recursive.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
-     * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `uri` doesn't exist.
+     * @throws [NoPermissions][FileSystemError.NoPermissions] when permissions aren't sufficient.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.delete)
      */
@@ -198,10 +198,10 @@ external interface FileSystemProvider {
      * @param oldUri The existing file.
      * @param newUri The new location.
      * @param options Defines if existing files should be overwritten.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `oldUri` doesn't exist.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `newUri` doesn't exist, e.g. no mkdirp-logic required.
-     * @throws {@linkcode FileSystemError.FileExists FileExists} when `newUri` exists and when the `overwrite` option is not `true`.
-     * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `oldUri` doesn't exist.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when parent of `newUri` doesn't exist, e.g. no mkdirp-logic required.
+     * @throws [FileExists][FileSystemError.FileExists] when `newUri` exists and when the `overwrite` option is not `true`.
+     * @throws [NoPermissions][FileSystemError.NoPermissions] when permissions aren't sufficient.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.rename)
      */
@@ -227,10 +227,10 @@ external interface FileSystemProvider {
      * @param source The existing file.
      * @param destination The destination location.
      * @param options Defines if existing files should be overwritten.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `source` doesn't exist.
-     * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `destination` doesn't exist, e.g. no mkdirp-logic required.
-     * @throws {@linkcode FileSystemError.FileExists FileExists} when `destination` exists and when the `overwrite` option is not `true`.
-     * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when `source` doesn't exist.
+     * @throws [FileNotFound][FileSystemError.FileNotFound] when parent of `destination` doesn't exist, e.g. no mkdirp-logic required.
+     * @throws [FileExists][FileSystemError.FileExists] when `destination` exists and when the `overwrite` option is not `true`.
+     * @throws [NoPermissions][FileSystemError.NoPermissions] when permissions aren't sufficient.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.copy)
      */

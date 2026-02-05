@@ -21,7 +21,7 @@ external interface TaskProvider<T : Task> {
     fun provideTasks(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
     /**
-     * Resolves a task that has no {@linkcode Task.execution execution} set. Tasks are
+     * Resolves a task that has no [execution][Task.execution] set. Tasks are
      * often created from information found in the `tasks.json`-file. Such tasks miss
      * the information on how to execute them and a task provider must fill in
      * the missing information in the `resolveTask`-method. This method will not be

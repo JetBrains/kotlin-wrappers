@@ -56,8 +56,8 @@ external object languages {
      * Set (and change) the [language][TextDocument.languageId] that is associated
      * with the given document.
      *
-     * *Note* that calling this function will trigger the {@linkcode workspace.onDidCloseTextDocument onDidCloseTextDocument} event
-     * followed by the {@linkcode workspace.onDidOpenTextDocument onDidOpenTextDocument} event.
+     * *Note* that calling this function will trigger the [onDidCloseTextDocument][workspace.onDidCloseTextDocument] event
+     * followed by the [onDidOpenTextDocument][workspace.onDidOpenTextDocument] event.
      *
      * @param document The document which language is to be changed
      * @param languageId The new language identifier.
@@ -76,9 +76,9 @@ external object languages {
      * greater than zero mean the selector matches the document.
      *
      * A match is computed according to these rules:
-     * 1. When {@linkcode DocumentSelector} is an array, compute the match for each contained `DocumentFilter` or language identifier and take the maximum value.
-     * 2. A string will be desugared to become the `language`-part of a {@linkcode DocumentFilter}, so `"fooLang"` is like `{ language: "fooLang" }`.
-     * 3. A {@linkcode DocumentFilter} will be matched against the document by comparing its parts with the document. The following rules apply:
+     * 1. When [DocumentSelector] is an array, compute the match for each contained `DocumentFilter` or language identifier and take the maximum value.
+     * 2. A string will be desugared to become the `language`-part of a [DocumentFilter], so `"fooLang"` is like `{ language: "fooLang" }`.
+     * 3. A [DocumentFilter] will be matched against the document by comparing its parts with the document. The following rules apply:
      *    1. When the `DocumentFilter` is empty (`{}`) the result is `0`
      *    2. When `scheme`, `language`, `pattern`, or `notebook` are defined but one doesn't match, the result is `0`
      *    3. Matching against `*` gives a score of `5`, matching via equality or via a glob-pattern gives a score of `10`
@@ -759,17 +759,17 @@ external object languages {
      *
      * Multiple drop providers can be registered for a language. When dropping content into an editor, all
      * registered providers for the editor's language will be invoked based on the mimetypes they handle
-     * as specified by their {@linkcode DocumentDropEditProviderMetadata}.
+     * as specified by their [DocumentDropEditProviderMetadata].
      *
-     * Each provider can return one or more {@linkcode DocumentDropEdit DocumentDropEdits}. The edits are sorted
-     * using the {@linkcode DocumentDropEdit.yieldTo} property. By default the first edit will be applied. If there
+     * Each provider can return one or more [DocumentDropEdits][DocumentDropEdit]. The edits are sorted
+     * using the [DocumentDropEdit.yieldTo] property. By default the first edit will be applied. If there
      * are any additional edits, these will be shown to the user as selectable drop options in the drop widget.
      *
      * @param selector A selector that defines the documents this provider applies to.
      * @param provider A drop provider.
      * @param metadata Additional metadata about the provider.
      *
-     * @returns A {@linkcode Disposable} that unregisters this provider when disposed of.
+     * @returns A [Disposable] that unregisters this provider when disposed of.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentDropEditProvider)
      */
@@ -780,24 +780,24 @@ external object languages {
     ): Disposable
 
     /**
-     * Registers a new {@linkcode DocumentPasteEditProvider}.
+     * Registers a new [DocumentPasteEditProvider].
      *
      * Multiple providers can be registered for a language. All registered providers for a language will be invoked
-     * for copy and paste operations based on their handled mimetypes as specified by the {@linkcode DocumentPasteProviderMetadata}.
+     * for copy and paste operations based on their handled mimetypes as specified by the [DocumentPasteProviderMetadata].
      *
      * For [copy operations}, changes to the {@linkcode DataTransfer][DocumentPasteEditProvider.prepareDocumentPaste]
-     * made by each provider will be merged into a single {@linkcode DataTransfer} that is used to populate the clipboard.
+     * made by each provider will be merged into a single [DataTransfer] that is used to populate the clipboard.
      *
      * For [paste operations][DocumentPasteEditProvider.providerDocumentPasteEdits], each provider will be invoked
-     * and can return one or more {@linkcode DocumentPasteEdit DocumentPasteEdits}. The edits are sorted using
-     * the {@linkcode DocumentPasteEdit.yieldTo} property. By default the first edit will be applied
+     * and can return one or more [DocumentPasteEdits][DocumentPasteEdit]. The edits are sorted using
+     * the [DocumentPasteEdit.yieldTo] property. By default the first edit will be applied
      * and the rest of the edits will be shown to the user as selectable paste options in the paste widget.
      *
      * @param selector A selector that defines the documents this provider applies to.
      * @param provider A paste editor provider.
      * @param metadata Additional metadata about the provider.
      *
-     * @returns A {@linkcode Disposable} that unregisters this provider when disposed of.
+     * @returns A [Disposable] that unregisters this provider when disposed of.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentPasteEditProvider)
      */

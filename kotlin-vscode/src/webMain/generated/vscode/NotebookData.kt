@@ -12,8 +12,8 @@ import kotlin.js.JsString
 /**
  * Raw representation of a notebook.
  *
- * Extensions are responsible for creating {@linkcode NotebookData} so that the editor
- * can create a {@linkcode NotebookDocument}.
+ * Extensions are responsible for creating [NotebookData] so that the editor
+ * can create a [NotebookDocument].
  *
  * @see [NotebookSerializer]
  *

@@ -148,7 +148,7 @@ external object lm {
     ): Disposable
 
     /**
-     * Registers a {@linkcode LanguageModelChatProvider}
+     * Registers a [LanguageModelChatProvider]
      * Note: You must also define the language model chat provider via the `languageModelChatProviders` contribution point in package.json
      * @param vendor The vendor for this provider. Must be globally unique. An example is `copilot` or `openai`.
      * @param provider The provider to register

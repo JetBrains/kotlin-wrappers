@@ -32,7 +32,7 @@ open external class FileSystemError :
     /**
      * A code that identifies this error.
      *
-     * Possible values are names of errors, like {@linkcode FileSystemError.FileNotFound FileNotFound},
+     * Possible values are names of errors, like [FileNotFound][FileSystemError.FileNotFound],
      * or `Unknown` for unspecified errors.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.code)

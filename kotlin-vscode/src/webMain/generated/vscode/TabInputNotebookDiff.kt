@@ -27,7 +27,7 @@ open external class TabInputNotebookDiff {
     val modified: Uri
 
     /**
-     * The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
+     * The type of notebook. Maps to [NotebookDocuments's notebookType][NotebookDocument.notebookType]
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff.notebookType)
      */
@@ -37,7 +37,7 @@ open external class TabInputNotebookDiff {
      * Constructs a notebook diff tab input.
      * @param original The uri of the original unmodified notebook.
      * @param modified The uri of the modified notebook.
-     * @param notebookType The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
+     * @param notebookType The type of notebook. Maps to [NotebookDocuments's notebookType][NotebookDocument.notebookType]
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff.constructor)
      */

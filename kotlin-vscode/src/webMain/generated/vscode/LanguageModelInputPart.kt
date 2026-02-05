@@ -5,7 +5,7 @@ package vscode
 import kotlin.js.JsAny
 
 /**
- * The various message types which can be sent via {@linkcode LanguageModelChat.sendRequest } and processed by a {@linkcode LanguageModelChatProvider}
+ * The various message types which can be sent via {@linkcode LanguageModelChat.sendRequest } and processed by a [LanguageModelChatProvider]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelInputPart)
  */

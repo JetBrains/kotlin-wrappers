@@ -19,7 +19,7 @@ open external class DataTransferItem {
     /**
      * Get a string representation of this item.
      *
-     * If {@linkcode DataTransferItem.value} is an object, this returns the result of json stringifying {@linkcode DataTransferItem.value} value.
+     * If [DataTransferItem.value] is an object, this returns the result of json stringifying [DataTransferItem.value] value.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.asString)
      */
@@ -49,7 +49,7 @@ open external class DataTransferItem {
     val value: JsAny?
 
     /**
-     * @param value Custom data stored on this item. Can be retrieved using {@linkcode DataTransferItem.value}.
+     * @param value Custom data stored on this item. Can be retrieved using [DataTransferItem.value].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.constructor)
      */

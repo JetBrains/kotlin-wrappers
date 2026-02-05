@@ -54,7 +54,7 @@ external interface Extension<T : JsAny?> {
      * or if an extension runs where the remote extension host runs. The extension kind
      * is defined in the `package.json`-file of extensions but can also be refined
      * via the `remote.extensionKind`-setting. When no remote extension host exists,
-     * the value is {@linkcode ExtensionKind.UI}.
+     * the value is [ExtensionKind.UI].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Extension.extensionKind)
      */

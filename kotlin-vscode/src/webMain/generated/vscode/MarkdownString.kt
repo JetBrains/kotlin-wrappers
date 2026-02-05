@@ -11,9 +11,9 @@ import kotlin.js.definedExternally
  * Human-readable text that supports formatting via the [markdown syntax](https://commonmark.org).
  *
  * Rendering of [theme icons][ThemeIcon] via the `$(<name>)`-syntax is supported
- * when the {@linkcode supportThemeIcons} is set to `true`.
+ * when the [supportThemeIcons] is set to `true`.
  *
- * Rendering of embedded html is supported when {@linkcode supportHtml} is set to `true`.
+ * Rendering of embedded html is supported when [supportHtml] is set to `true`.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)
  */
@@ -108,7 +108,7 @@ open external class MarkdownString {
     fun appendText(value: String): MarkdownString
 
     /**
-     * Appends the given string 'as is' to this markdown string. When {@linkcode MarkdownString.supportThemeIcons supportThemeIcons} is `true`, [ThemeIcons][ThemeIcon] in the `value` will be iconified.
+     * Appends the given string 'as is' to this markdown string. When [supportThemeIcons][MarkdownString.supportThemeIcons] is `true`, [ThemeIcons][ThemeIcon] in the `value` will be iconified.
      * @param value Markdown string.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.appendMarkdown)

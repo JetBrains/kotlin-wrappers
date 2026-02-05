@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 import kotlin.js.JsString
 
 /**
- * Metadata about a registered {@linkcode SignatureHelpProvider}.
+ * Metadata about a registered [SignatureHelpProvider].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProviderMetadata)
  */

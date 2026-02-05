@@ -9,6 +9,9 @@ import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 import vscode.workspace.notebookDocuments
+import vscode.workspace.onDidChangeWorkspaceFolders
+import vscode.workspace.onDidCloseNotebookDocument
+import vscode.workspace.onDidOpenNotebookDocument
 import kotlin.js.*
 
 /**
@@ -157,7 +160,7 @@ external object workspace {
      * folder. Another case is when transitioning from an empty or single-folder workspace into a multi-folder
      * workspace (see also: https://code.visualstudio.com/docs/editor/workspaces).
      *
-     * Use the {@linkcode onDidChangeWorkspaceFolders onDidChangeWorkspaceFolders()} event to get notified when the
+     * Use the [onDidChangeWorkspaceFolders()][onDidChangeWorkspaceFolders] event to get notified when the
      * workspace folders have been updated.
      *
      * **Example:** adding a new workspace folder at the end of workspace folders
@@ -179,7 +182,7 @@ external object workspace {
      * to rename that folder.
      *
      * **Note:** it is not valid to call [updateWorkspaceFolders()][updateWorkspaceFolders] multiple times
-     * without waiting for the {@linkcode onDidChangeWorkspaceFolders onDidChangeWorkspaceFolders()} to fire.
+     * without waiting for the [onDidChangeWorkspaceFolders()][onDidChangeWorkspaceFolders] to fire.
      *
      * @param start the zero-based location in the list of currently opened [workspace folders][WorkspaceFolder]
      * from which to start deleting workspace folders.
@@ -443,7 +446,7 @@ external object workspace {
      * [file system providers][FileSystemProvider] are consulted.
      *
      * *Note* that the lifecycle of the returned document is owned by the editor and not by the extension. That means an
-     * {@linkcode workspace.onDidCloseTextDocument onDidClose}-event can occur at any time after opening it.
+     * [onDidClose][workspace.onDidCloseTextDocument]-event can occur at any time after opening it.
      *
      * @param uri Identifies the resource to open.
      * @returns A promise that resolves to a [document][TextDocument].
@@ -579,7 +582,7 @@ external object workspace {
      * of a text document [has been changed][languages.setTextDocumentLanguage].
      *
      * *Note 1:* There is no guarantee that this event fires when an editor tab is closed, use the
-     * {@linkcode window.onDidChangeVisibleTextEditors onDidChangeVisibleTextEditors}-event to know when editors change.
+     * [onDidChangeVisibleTextEditors][window.onDidChangeVisibleTextEditors]-event to know when editors change.
      *
      * *Note 2:* A document can be open but not shown in an editor which means this event can fire
      * for a document that has not been shown in an editor.
@@ -630,10 +633,10 @@ external object workspace {
 
     /**
      * Open a notebook. Will return early if this notebook is already [loaded][notebookDocuments]. Otherwise
-     * the notebook is loaded and the {@linkcode onDidOpenNotebookDocument}-event fires.
+     * the notebook is loaded and the [onDidOpenNotebookDocument]-event fires.
      *
      * *Note* that the lifecycle of the returned notebook is owned by the editor and not by the extension. That means an
-     * {@linkcode onDidCloseNotebookDocument}-event can occur at any time after.
+     * [onDidCloseNotebookDocument]-event can occur at any time after.
      *
      * *Note* that opening a notebook does not show a notebook editor. This function only returns a notebook document which
      * can be shown in a notebook editor but it can also be used for other things.
@@ -736,9 +739,9 @@ external object workspace {
      * An event that is emitted when files are being created.
      *
      * *Note 1:* This event is triggered by user gestures, like creating a file from the
-     * explorer, or from the {@linkcode workspace.applyEdit}-api. This event is *not* fired when
+     * explorer, or from the [workspace.applyEdit]-api. This event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
-     * {@linkcode FileSystem workspace.fs}-api.
+     * [workspace.fs][FileSystem]-api.
      *
      * *Note 2:* When this event is fired, edits to files that are are being created cannot be applied.
      *
@@ -750,9 +753,9 @@ external object workspace {
      * An event that is emitted when files have been created.
      *
      * *Note:* This event is triggered by user gestures, like creating a file from the
-     * explorer, or from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
+     * explorer, or from the [workspace.applyEdit]-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
-     * {@linkcode FileSystem workspace.fs}-api.
+     * [workspace.fs][FileSystem]-api.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCreateFiles)
      */
@@ -762,9 +765,9 @@ external object workspace {
      * An event that is emitted when files are being deleted.
      *
      * *Note 1:* This event is triggered by user gestures, like deleting a file from the
-     * explorer, or from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
+     * explorer, or from the [workspace.applyEdit]-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
-     * {@linkcode FileSystem workspace.fs}-api.
+     * [workspace.fs][FileSystem]-api.
      *
      * *Note 2:* When deleting a folder with children only one event is fired.
      *
@@ -776,9 +779,9 @@ external object workspace {
      * An event that is emitted when files have been deleted.
      *
      * *Note 1:* This event is triggered by user gestures, like deleting a file from the
-     * explorer, or from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
+     * explorer, or from the [workspace.applyEdit]-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
-     * {@linkcode FileSystem workspace.fs}-api.
+     * [workspace.fs][FileSystem]-api.
      *
      * *Note 2:* When deleting a folder with children only one event is fired.
      *
@@ -790,9 +793,9 @@ external object workspace {
      * An event that is emitted when files are being renamed.
      *
      * *Note 1:* This event is triggered by user gestures, like renaming a file from the
-     * explorer, and from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
+     * explorer, and from the [workspace.applyEdit]-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
-     * {@linkcode FileSystem workspace.fs}-api.
+     * [workspace.fs][FileSystem]-api.
      *
      * *Note 2:* When renaming a folder with children only one event is fired.
      *
@@ -804,9 +807,9 @@ external object workspace {
      * An event that is emitted when files have been renamed.
      *
      * *Note 1:* This event is triggered by user gestures, like renaming a file from the
-     * explorer, and from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
+     * explorer, and from the [workspace.applyEdit]-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
-     * {@linkcode FileSystem workspace.fs}-api.
+     * [workspace.fs][FileSystem]-api.
      *
      * *Note 2:* When renaming a folder with children only one event is fired.
      *

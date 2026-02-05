@@ -59,7 +59,7 @@ external interface CodeActionProvider<T : CodeAction> {
     ): ProviderResult<ReadonlyArray<JsAny /* Command | T */>>
 
     /**
-     * Given a code action fill in its {@linkcode CodeAction.edit edit}-property. Changes to
+     * Given a code action fill in its [edit][CodeAction.edit]-property. Changes to
      * all other properties, like title, are ignored. A code action that has an edit
      * will not be resolved.
      *

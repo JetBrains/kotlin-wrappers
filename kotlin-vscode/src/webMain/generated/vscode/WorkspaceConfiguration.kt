@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  * - *Workspace Folder settings* - From one of the [Workspace Folders][workspace.workspaceFolders] under which requested resource belongs to.
  * - *Language settings* - Settings defined under requested language.
  *
- * The *effective* value (returned by {@linkcode WorkspaceConfiguration.get get}) is computed by overriding or merging the values in the following order:
+ * The *effective* value (returned by [get][WorkspaceConfiguration.get]) is computed by overriding or merging the values in the following order:
  *
  * 1. `defaultValue` (if defined in `package.json` otherwise derived from the value's type)
  * 1. `globalValue` (if defined)

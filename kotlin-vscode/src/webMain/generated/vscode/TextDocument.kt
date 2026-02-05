@@ -37,7 +37,7 @@ external interface TextDocument {
 
     /**
      * Is this document representing an untitled file which has never been saved yet. *Note* that
-     * this does not mean the document will be saved to disk, use {@linkcode Uri.scheme}
+     * this does not mean the document will be saved to disk, use [Uri.scheme]
      * to figure out where a document will be [saved][FileSystemProvider], e.g. `file`, `ftp` etc.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.isUntitled)
@@ -190,7 +190,7 @@ external interface TextDocument {
      * if it does, it will be ignored.
      * * *Note 2:* A custom regular expression will fail to match multiline strings
      * and in the name of speed regular expressions should not match words with
-     * spaces. Use {@linkcode TextLine.text} for more complex, non-wordy, scenarios.
+     * spaces. Use [TextLine.text] for more complex, non-wordy, scenarios.
      *
      * The position will be [adjusted][TextDocument.validatePosition].
      *

@@ -28,11 +28,11 @@ open external class NotebookCellStatusBarItem {
     var alignment: NotebookCellStatusBarAlignment
 
     /**
-     * An optional {@linkcode Command} or identifier of a command to run on click.
+     * An optional [Command] or identifier of a command to run on click.
      *
      * The command must be [known][commands.getCommands].
      *
-     * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
+     * Note that if this is a [Command] object, only the [command} and {@linkcode Command.arguments arguments][Command.command]
      * are used by the editor.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarItem.command)

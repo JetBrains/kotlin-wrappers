@@ -76,7 +76,7 @@ open external class CompletionItem {
      * items. When having a leading word (prefix) ordering is based on how
      * well completions match that prefix and the initial ordering is only used
      * when completions match equally well. The prefix is defined by the
-     * {@linkcode CompletionItem.range range}-property and can therefore be different
+     * [range][CompletionItem.range]-property and can therefore be different
      * for each completion.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.sortText)
@@ -89,7 +89,7 @@ open external class CompletionItem {
      * is used.
      *
      * Note that the filter text is matched against the leading word (prefix) which is defined
-     * by the {@linkcode CompletionItem.range range}-property.
+     * by the [range][CompletionItem.range]-property.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.filterText)
      */

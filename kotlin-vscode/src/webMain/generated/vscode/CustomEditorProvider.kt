@@ -9,11 +9,11 @@ import kotlin.js.JsAny
 /**
  * Provider for editable custom editors that use a custom document model.
  *
- * Custom editors use {@linkcode CustomDocument} as their document model instead of a {@linkcode TextDocument}.
+ * Custom editors use [CustomDocument] as their document model instead of a [TextDocument].
  * This gives extensions full control over actions such as edit, save, and backup.
  *
  * You should use this type of custom editor when dealing with binary files or more complex scenarios. For simple
- * text based documents, use {@linkcode CustomTextEditorProvider} instead.
+ * text based documents, use [CustomTextEditorProvider] instead.
  *
  * @param T Type of the custom document returned by this provider.
  *

@@ -5,10 +5,10 @@ package vscode
 import js.objects.JsPlainObject
 
 /**
- * Event triggered by extensions to signal to the editor that the content of a {@linkcode CustomDocument}
+ * Event triggered by extensions to signal to the editor that the content of a [CustomDocument]
  * has changed.
  *
- * @see {@linkcode CustomEditorProvider.onDidChangeCustomDocument}.
+ * @see [CustomEditorProvider.onDidChangeCustomDocument].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentContentChangeEvent)
  */

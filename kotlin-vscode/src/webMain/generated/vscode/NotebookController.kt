@@ -11,12 +11,12 @@ import kotlin.js.JsString
  * A notebook controller represents an entity that can execute notebook cells. This is often referred to as a kernel.
  *
  * There can be multiple controllers and the editor will let users choose which controller to use for a certain notebook. The
- * {@linkcode NotebookController.notebookType notebookType}-property defines for what kind of notebooks a controller is for and
- * the {@linkcode NotebookController.updateNotebookAffinity updateNotebookAffinity}-function allows controllers to set a preference
+ * [notebookType][NotebookController.notebookType]-property defines for what kind of notebooks a controller is for and
+ * the [updateNotebookAffinity][NotebookController.updateNotebookAffinity]-function allows controllers to set a preference
  * for specific notebook documents. When a controller has been selected its
  * [onDidChangeSelectedNotebooks][NotebookController.onDidChangeSelectedNotebooks]-event fires.
  *
- * When a cell is being run the editor will invoke the {@linkcode NotebookController.executeHandler executeHandler} and a controller
+ * When a cell is being run the editor will invoke the [executeHandler][NotebookController.executeHandler] and a controller
  * is expected to create and finalize a [notebook cell execution][NotebookCellExecution]. However, controllers are also free
  * to create executions by themselves.
  *
@@ -43,7 +43,7 @@ external interface NotebookController :
 
     /**
      * An array of language identifiers that are supported by this
-     * controller. Any language identifier from {@linkcode languages.getLanguages getLanguages}
+     * controller. Any language identifier from [getLanguages][languages.getLanguages]
      * is possible. When falsy all languages are supported.
      *
      * Samples:

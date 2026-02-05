@@ -15,7 +15,7 @@ external interface StatusBarItem :
     /**
      * The identifier of this item.
      *
-     * *Note*: if no identifier was provided by the {@linkcode window.createStatusBarItem}
+     * *Note*: if no identifier was provided by the [window.createStatusBarItem]
      * method, the identifier will match the [extension identifier][Extension.id].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#StatusBarItem.id)
@@ -89,11 +89,11 @@ external interface StatusBarItem :
     var backgroundColor: ThemeColor?
 
     /**
-     * {@linkcode Command} or identifier of a command to run on click.
+     * [Command] or identifier of a command to run on click.
      *
      * The command must be [known][commands.getCommands].
      *
-     * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
+     * Note that if this is a [Command] object, only the [command} and {@linkcode Command.arguments arguments][Command.command]
      * are used by the editor.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#StatusBarItem.command)

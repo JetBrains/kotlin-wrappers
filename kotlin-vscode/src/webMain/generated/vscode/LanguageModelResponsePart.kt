@@ -5,7 +5,7 @@ package vscode
 import kotlin.js.JsAny
 
 /**
- * The various message types which a {@linkcode LanguageModelChatProvider} can emit in the chat response stream
+ * The various message types which a [LanguageModelChatProvider] can emit in the chat response stream
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelResponsePart)
  */

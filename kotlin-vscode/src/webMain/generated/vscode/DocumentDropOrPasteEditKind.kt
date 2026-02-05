@@ -4,16 +4,17 @@
 
 package vscode
 
+import vscode.DocumentDropOrPasteEditKind.Companion.Text
 import kotlin.js.JsModule
 
 /**
- * Identifies a {@linkcode DocumentDropEdit} or {@linkcode DocumentPasteEdit}
+ * Identifies a [DocumentDropEdit] or [DocumentPasteEdit]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind)
  */
 open external class DocumentDropOrPasteEditKind {
     /**
-     * Use {@linkcode DocumentDropOrPasteEditKind.Empty} instead.
+     * Use [DocumentDropOrPasteEditKind.Empty] instead.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropOrPasteEditKind.constructor)
      */
@@ -69,7 +70,7 @@ open external class DocumentDropOrPasteEditKind {
          * an edit that pastes the clipboard text while also updating imports in the file based on the pasted text.
          * For this we could use a kind such as `text.updateImports.someLanguageId`.
          *
-         * Even though most drop/paste edits ultimately insert text, you should not use {@linkcode Text} as the base kind
+         * Even though most drop/paste edits ultimately insert text, you should not use [Text] as the base kind
          * for every edit as this is redundant. Instead a more specific kind that describes the type of content being
          * inserted should be used instead. For example, if the edit adds a Markdown link, use `markdown.link` since even
          * though the content being inserted is text, it's more important to know that the edit inserts Markdown syntax.

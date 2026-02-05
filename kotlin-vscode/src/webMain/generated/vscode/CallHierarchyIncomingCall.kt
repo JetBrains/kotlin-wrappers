@@ -22,7 +22,7 @@ open external class CallHierarchyIncomingCall {
 
     /**
      * The range at which at which the calls appears. This is relative to the caller
-     * denoted by {@linkcode CallHierarchyIncomingCall.from this.from}.
+     * denoted by [this.from][CallHierarchyIncomingCall.from].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyIncomingCall.fromRanges)
      */

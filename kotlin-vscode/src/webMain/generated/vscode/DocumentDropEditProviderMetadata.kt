@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 import kotlin.js.JsString
 
 /**
- * Provides additional metadata about how a {@linkcode DocumentDropEditProvider} works.
+ * Provides additional metadata about how a [DocumentDropEditProvider] works.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProviderMetadata)
  */

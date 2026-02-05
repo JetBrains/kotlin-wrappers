@@ -23,7 +23,7 @@ open external class LanguageModelError :
     /**
      * A code that identifies this error.
      *
-     * Possible values are names of errors, like {@linkcode LanguageModelError.NotFound NotFound},
+     * Possible values are names of errors, like [NotFound][LanguageModelError.NotFound],
      * or `Unknown` for unspecified errors from the language model itself. In the latter case the
      * `cause`-property will contain the actual error.
      *

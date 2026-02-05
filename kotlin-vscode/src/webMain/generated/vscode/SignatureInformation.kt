@@ -43,7 +43,7 @@ open external class SignatureInformation {
     /**
      * The index of the active parameter.
      *
-     * If provided, this is used in place of {@linkcode SignatureHelp.activeParameter}.
+     * If provided, this is used in place of [SignatureHelp.activeParameter].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation.activeParameter)
      */

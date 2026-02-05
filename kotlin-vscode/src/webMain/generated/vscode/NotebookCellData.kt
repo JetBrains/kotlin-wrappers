@@ -10,7 +10,7 @@ import kotlin.js.JsModule
 import kotlin.js.JsString
 
 /**
- * NotebookCellData is the raw representation of notebook cells. Its is part of {@linkcode NotebookData}.
+ * NotebookCellData is the raw representation of notebook cells. Its is part of [NotebookData].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData)
  */
@@ -31,7 +31,7 @@ open external class NotebookCellData {
 
     /**
      * The language identifier of the source value of this cell data. Any value from
-     * {@linkcode languages.getLanguages getLanguages} is possible.
+     * [getLanguages][languages.getLanguages] is possible.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData.languageId)
      */

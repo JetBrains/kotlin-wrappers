@@ -9,7 +9,7 @@ import kotlin.js.JsAny
  * or a code-block that provides a language and a code snippet. Note that
  * markdown strings will be sanitized - that means html will be escaped.
  *
- * @deprecated This type is deprecated, please use {@linkcode MarkdownString} instead.
+ * @deprecated This type is deprecated, please use [MarkdownString] instead.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkedString)
  */

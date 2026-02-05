@@ -227,7 +227,7 @@ external object window {
      *
      * @param document A text document to be shown.
      * @param column A view column in which the [editor} should be shown. The default is the {@link ViewColumn.Active active][TextEditor].
-     * Columns that do not exist will be created as needed up to the maximum of {@linkcode ViewColumn.Nine}. Use {@linkcode ViewColumn.Beside}
+     * Columns that do not exist will be created as needed up to the maximum of [ViewColumn.Nine]. Use [ViewColumn.Beside]
      * to open the editor to the side of the currently active one.
      * @param preserveFocus When `true` the editor will not take focus.
      * @returns A promise that resolves to an [editor][TextEditor].
@@ -768,9 +768,9 @@ external object window {
     /**
      * Show progress in the editor. Progress is shown while running the given callback
      * and while the promise it returned isn't resolved nor rejected. The location at which
-     * progress should show (and other details) is defined via the passed {@linkcode ProgressOptions}.
+     * progress should show (and other details) is defined via the passed [ProgressOptions].
      *
-     * @param options A {@linkcode ProgressOptions}-object describing the options to use for showing progress, like its location
+     * @param options A [ProgressOptions]-object describing the options to use for showing progress, like its location
      * @param task A callback returning a promise. Progress state can be reported with
      * the provided [Progress]-object.
      *
@@ -779,7 +779,7 @@ external object window {
      * e.g. `10` accounts for `10%` of work done).
      * Note that currently only `ProgressLocation.Notification` is capable of showing discrete progress.
      *
-     * To monitor if the operation has been cancelled by the user, use the provided {@linkcode CancellationToken}.
+     * To monitor if the operation has been cancelled by the user, use the provided [CancellationToken].
      * Note that currently only `ProgressLocation.Notification` is supporting to show a cancel button to cancel the
      * long running operation.
      *
@@ -1004,8 +1004,8 @@ external object window {
      * Register a provider for custom editors for the `viewType` contributed by the `customEditors` extension point.
      *
      * When a custom editor is opened, an `onCustomEditor:viewType` activation event is fired. Your extension
-     * must register a {@linkcode CustomTextEditorProvider}, {@linkcode CustomReadonlyEditorProvider},
-     * {@linkcode CustomEditorProvider}for `viewType` as part of activation.
+     * must register a [CustomTextEditorProvider], [CustomReadonlyEditorProvider],
+     * [CustomEditorProvider]for `viewType` as part of activation.
      *
      * @param viewType Unique identifier for the custom editor provider. This should match the `viewType` from the
      *   `customEditors` contribution point.

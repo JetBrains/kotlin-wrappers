@@ -5,7 +5,7 @@ package vscode
 import js.objects.JsPlainObject
 
 /**
- * Represents a language model provided by a {@linkcode LanguageModelChatProvider}.
+ * Represents a language model provided by a [LanguageModelChatProvider].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatInformation)
  */
@@ -49,7 +49,7 @@ external interface LanguageModelChatInformation {
 
     /**
      * Opaque version string of the model.
-     * This is used as a lookup value in {@linkcode LanguageModelChatSelector.version}
+     * This is used as a lookup value in [LanguageModelChatSelector.version]
      * An example is how GPT 4o has multiple versions like 2024-11-20 and 2024-08-06
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatInformation.version)

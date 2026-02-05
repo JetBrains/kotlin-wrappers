@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  * A code action represents a change that can be performed in code, e.g. to fix a problem or
  * to refactor code.
  *
- * A CodeAction must set either {@linkcode CodeAction.edit edit} and/or a {@linkcode CodeAction.command command}. If both are supplied, the `edit` is applied first, then the command is executed.
+ * A CodeAction must set either [edit} and/or a {@linkcode CodeAction.command command][CodeAction.edit]. If both are supplied, the `edit` is applied first, then the command is executed.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction)
  */

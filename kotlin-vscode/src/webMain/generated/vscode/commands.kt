@@ -99,7 +99,7 @@ external object commands {
      *
      * * *Note 1:* When executing an editor command not all types are allowed to
      * be passed as arguments. Allowed are the primitive types `string`, `boolean`,
-     * `number`, `undefined`, and `null`, as well as {@linkcode Position}, {@linkcode Range}, {@linkcode Uri} and {@linkcode Location}.
+     * `number`, `undefined`, and `null`, as well as [Position], [Range], [Uri] and [Location].
      * * *Note 2:* There are no restrictions when executing commands that have been contributed
      * by extensions.
      *

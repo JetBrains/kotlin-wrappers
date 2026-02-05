@@ -91,8 +91,8 @@ external interface ExtensionContext {
     /**
      * Get the absolute path of a resource contained in the extension.
      *
-     * *Note* that an absolute uri can be constructed via {@linkcode Uri.joinPath} and
-     * {@linkcode ExtensionContext.extensionUri extensionUri}, e.g. `vscode.Uri.joinPath(context.extensionUri, relativePath);`
+     * *Note* that an absolute uri can be constructed via [Uri.joinPath] and
+     * [extensionUri][ExtensionContext.extensionUri], e.g. `vscode.Uri.joinPath(context.extensionUri, relativePath);`
      *
      * @param relativePath A relative path to a resource contained in the extension.
      * @returns The absolute path of the resource.
@@ -107,10 +107,10 @@ external interface ExtensionContext {
      * up to the extension. However, the parent directory is guaranteed to be existent.
      * The value is `undefined` when no workspace nor folder has been opened.
      *
-     * Use {@linkcode ExtensionContext.workspaceState workspaceState} or
-     * {@linkcode ExtensionContext.globalState globalState} to store key value data.
+     * Use [workspaceState][ExtensionContext.workspaceState] or
+     * [globalState][ExtensionContext.globalState] to store key value data.
      *
-     * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
+     * @see [workspace.fs][FileSystem] for how to read and write files and folders from
      *  a uri.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.storageUri)
@@ -122,9 +122,9 @@ external interface ExtensionContext {
      * The directory might not exist on disk and creation is
      * up to the extension. However, the parent directory is guaranteed to be existent.
      *
-     * Use {@linkcode ExtensionContext.globalState globalState} to store key value data.
+     * Use [globalState][ExtensionContext.globalState] to store key value data.
      *
-     * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
+     * @see [workspace.fs][FileSystem] for how to read and write files and folders from
      *  an uri.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.globalStorageUri)
@@ -136,7 +136,7 @@ external interface ExtensionContext {
      * The directory might not exist on disk and creation is up to the extension. However,
      * the parent directory is guaranteed to be existent.
      *
-     * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
+     * @see [workspace.fs][FileSystem] for how to read and write files and folders from
      *  an uri.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.logUri)

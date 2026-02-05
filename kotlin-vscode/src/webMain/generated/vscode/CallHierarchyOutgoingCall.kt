@@ -22,8 +22,8 @@ open external class CallHierarchyOutgoingCall {
 
     /**
      * The range at which this item is called. This is the range relative to the caller, e.g the item
-     * passed to {@linkcode CallHierarchyProvider.provideCallHierarchyOutgoingCalls provideCallHierarchyOutgoingCalls}
-     * and not {@linkcode CallHierarchyOutgoingCall.to this.to}.
+     * passed to [provideCallHierarchyOutgoingCalls][CallHierarchyProvider.provideCallHierarchyOutgoingCalls]
+     * and not [this.to][CallHierarchyOutgoingCall.to].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyOutgoingCall.fromRanges)
      */

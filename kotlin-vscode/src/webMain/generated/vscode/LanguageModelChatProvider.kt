@@ -36,7 +36,7 @@ external interface LanguageModelChatProvider<T : LanguageModelChatInformation> {
 
     /**
      * Returns the response for a chat request, passing the results to the progress callback.
-     * The {@linkcode LanguageModelChatProvider} must emit the response parts to the progress callback as they are received from the language model.
+     * The [LanguageModelChatProvider] must emit the response parts to the progress callback as they are received from the language model.
      * @param model The language model to use
      * @param messages The messages to include in the request
      * @param options Options for the request

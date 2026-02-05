@@ -40,7 +40,7 @@ open external class SnippetString {
 
     /**
      * Builder-function that appends the given string to
-     * the {@linkcode SnippetString.value value} of this snippet string.
+     * the [value][SnippetString.value] of this snippet string.
      *
      * @param string A value to append 'as given'. The string will be escaped.
      * @returns This snippet string.
@@ -51,7 +51,7 @@ open external class SnippetString {
 
     /**
      * Builder-function that appends a tabstop (`$1`, `$2` etc) to
-     * the {@linkcode SnippetString.value value} of this snippet string.
+     * the [value][SnippetString.value] of this snippet string.
      *
      * @param number The number of this tabstop, defaults to an auto-increment
      * value starting at 1.
@@ -63,7 +63,7 @@ open external class SnippetString {
 
     /**
      * Builder-function that appends a placeholder (`${1:value}`) to
-     * the {@linkcode SnippetString.value value} of this snippet string.
+     * the [value][SnippetString.value] of this snippet string.
      *
      * @param value The value of this placeholder - either a string or a function
      * with which a nested snippet can be created.
@@ -85,7 +85,7 @@ open external class SnippetString {
 
     /**
      * Builder-function that appends a choice (`${1|a,b,c|}`) to
-     * the {@linkcode SnippetString.value value} of this snippet string.
+     * the [value][SnippetString.value] of this snippet string.
      *
      * @param values The values for choices - the array of strings
      * @param number The number of this tabstop, defaults to an auto-increment
@@ -101,7 +101,7 @@ open external class SnippetString {
 
     /**
      * Builder-function that appends a variable (`${VAR}`) to
-     * the {@linkcode SnippetString.value value} of this snippet string.
+     * the [value][SnippetString.value] of this snippet string.
      *
      * @param name The name of the variable - excluding the `$`.
      * @param defaultValue The default value which is used when the variable name cannot

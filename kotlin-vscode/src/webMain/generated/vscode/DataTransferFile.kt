@@ -6,7 +6,7 @@ import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 
 /**
- * A file associated with a {@linkcode DataTransferItem}.
+ * A file associated with a [DataTransferItem].
  *
  * Instances of this type can only be created by the editor and not by extensions.
  *

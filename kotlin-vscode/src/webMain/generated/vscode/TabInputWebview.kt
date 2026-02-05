@@ -13,7 +13,7 @@ import kotlin.js.JsModule
  */
 open external class TabInputWebview {
     /**
-     * The type of webview. Maps to {@linkcode WebviewPanel.viewType WebviewPanel's viewType}
+     * The type of webview. Maps to [WebviewPanel's viewType][WebviewPanel.viewType]
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputWebview.viewType)
      */
@@ -21,7 +21,7 @@ open external class TabInputWebview {
 
     /**
      * Constructs a webview tab input with the given view type.
-     * @param viewType The type of webview. Maps to {@linkcode WebviewPanel.viewType WebviewPanel's viewType}
+     * @param viewType The type of webview. Maps to [WebviewPanel's viewType][WebviewPanel.viewType]
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputWebview.constructor)
      */

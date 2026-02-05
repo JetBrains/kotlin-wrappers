@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 import kotlin.js.JsAny
 
 /**
- * The provider version of {@linkcode LanguageModelChatMessage}.
+ * The provider version of [LanguageModelChatMessage].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestMessage)
  */

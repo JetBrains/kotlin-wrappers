@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 /**
  * Additional information about the context in which a
- * {@linkcode SignatureHelpProvider.provideSignatureHelp SignatureHelpProvider} was triggered.
+ * [SignatureHelpProvider][SignatureHelpProvider.provideSignatureHelp] was triggered.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext)
  */
@@ -40,9 +40,9 @@ external interface SignatureHelpContext {
     val isRetrigger: Boolean
 
     /**
-     * The currently active {@linkcode SignatureHelp}.
+     * The currently active [SignatureHelp].
      *
-     * The `activeSignatureHelp` has its {@linkcode SignatureHelp.activeSignature activeSignature} field updated based on
+     * The `activeSignatureHelp` has its [activeSignature][SignatureHelp.activeSignature] field updated based on
      * the user arrowing through available signatures.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext.activeSignatureHelp)

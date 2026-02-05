@@ -25,7 +25,7 @@ external interface Webview {
      * This should be a complete, valid html document. Changing this property causes the webview to be reloaded.
      *
      * Webviews are sandboxed from normal extension process, so all communication with the webview must use
-     * message passing. To send a message from the extension to the webview, use {@linkcode Webview.postMessage postMessage}.
+     * message passing. To send a message from the extension to the webview, use [postMessage][Webview.postMessage].
      * To send message from the webview back to an extension, use the `acquireVsCodeApi` function inside the webview
      * to get a handle to the editor's api and then call `.postMessage()`:
      *
@@ -36,8 +36,8 @@ external interface Webview {
      * </script>
      * ```
      *
-     * To load a resources from the workspace inside a webview, use the {@linkcode Webview.asWebviewUri asWebviewUri} method
-     * and ensure the resource's directory is listed in {@linkcode WebviewOptions.localResourceRoots}.
+     * To load a resources from the workspace inside a webview, use the [asWebviewUri][Webview.asWebviewUri] method
+     * and ensure the resource's directory is listed in [WebviewOptions.localResourceRoots].
      *
      * Keep in mind that even though webviews are sandboxed, they still allow running scripts and loading arbitrary content,
      * so extensions must follow all standard web security best practices when working with webviews. This includes

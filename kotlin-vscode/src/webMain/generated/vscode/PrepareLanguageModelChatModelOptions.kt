@@ -5,7 +5,7 @@ package vscode
 import js.objects.JsPlainObject
 
 /**
- * The list of options passed into {@linkcode LanguageModelChatProvider.provideLanguageModelChatInformation}
+ * The list of options passed into [LanguageModelChatProvider.provideLanguageModelChatInformation]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#PrepareLanguageModelChatModelOptions)
  */

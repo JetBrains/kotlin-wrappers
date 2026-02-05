@@ -35,12 +35,12 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
     ): ProviderResult<JsAny /* T | T[] */>
 
     /**
-     * Optional method which fills in the {@linkcode DocumentDropEdit.additionalEdit} before the edit is applied.
+     * Optional method which fills in the [DocumentDropEdit.additionalEdit] before the edit is applied.
      *
      * This is called once per edit and should be used if generating the complete edit may take a long time.
      * Resolve can only be used to change [DocumentDropEdit.additionalEdit].
      *
-     * @param edit The {@linkcode DocumentDropEdit} to resolve.
+     * @param edit The [DocumentDropEdit] to resolve.
      * @param token A cancellation token.
      *
      * @returns The resolved edit or a thenable that resolves to such. It is OK to return the given

@@ -14,8 +14,8 @@ external interface TextDocumentShowOptions {
     /**
      * An optional view column in which the [editor][TextEditor] should be shown.
      * The default is the [active][ViewColumn.Active]. Columns that do not exist
-     * will be created as needed up to the maximum of {@linkcode ViewColumn.Nine}.
-     * Use {@linkcode ViewColumn.Beside} to open the editor to the side of the currently
+     * will be created as needed up to the maximum of [ViewColumn.Nine].
+     * Use [ViewColumn.Beside] to open the editor to the side of the currently
      * active one.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions.viewColumn)

@@ -58,7 +58,7 @@ open external class CallHierarchyItem {
 
     /**
      * The range that should be selected and revealed when this symbol is being picked, e.g. the name of a function.
-     * Must be contained by the {@linkcode CallHierarchyItem.range range}.
+     * Must be contained by the [range][CallHierarchyItem.range].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyItem.selectionRange)
      */

@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * A backup for an {@linkcode CustomDocument}.
+ * A backup for an [CustomDocument].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentBackup)
  */

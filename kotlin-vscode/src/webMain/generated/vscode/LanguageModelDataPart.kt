@@ -44,7 +44,7 @@ open external class LanguageModelDataPart {
 
     companion object {
         /**
-         * Create a new {@linkcode LanguageModelDataPart} for an image.
+         * Create a new [LanguageModelDataPart] for an image.
          * @param data Binary image data
          * @param mime The MIME type of the image. Common values are `image/png` and `image/jpeg`.
          *
@@ -56,7 +56,7 @@ open external class LanguageModelDataPart {
         ): LanguageModelDataPart
 
         /**
-         * Create a new {@linkcode LanguageModelDataPart} for a json.
+         * Create a new [LanguageModelDataPart] for a json.
          *
          * *Note* that this function is not expecting "stringified JSON" but
          * an object that can be stringified. This function will throw an error
@@ -72,7 +72,7 @@ open external class LanguageModelDataPart {
         ): LanguageModelDataPart
 
         /**
-         * Create a new {@linkcode LanguageModelDataPart} for text.
+         * Create a new [LanguageModelDataPart] for text.
          *
          * *Note* that an UTF-8 encoder is used to create bytes for the string.
          * @param value Text data

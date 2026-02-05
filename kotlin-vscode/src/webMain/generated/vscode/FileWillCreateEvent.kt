@@ -10,7 +10,7 @@ import kotlin.js.JsAny
  * An event that is fired when files are going to be created.
  *
  * To make modifications to the workspace before the files are created,
- * call the {@linkcode FileWillCreateEvent.waitUntil waitUntil}-function with a
+ * call the [waitUntil][FileWillCreateEvent.waitUntil]-function with a
  * thenable that resolves to a [workspace edit][WorkspaceEdit].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileWillCreateEvent)

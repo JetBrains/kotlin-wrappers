@@ -34,7 +34,7 @@ external interface WebviewPanel :
     var iconPath: IconPath?
 
     /**
-     * {@linkcode Webview} belonging to the panel.
+     * [Webview] belonging to the panel.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanel.webview)
      */

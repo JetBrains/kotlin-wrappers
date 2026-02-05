@@ -160,7 +160,7 @@ external object env {
      * * a mail client (`mailto:`)
      * * VSCode itself (`vscode:` from `vscode.env.uriScheme`)
      *
-     * *Note* that {@linkcode window.showTextDocument showTextDocument} is the right
+     * *Note* that [showTextDocument][window.showTextDocument] is the right
      * way to open a text document inside the editor, not this function.
      *
      * @param target The uri that should be opened.

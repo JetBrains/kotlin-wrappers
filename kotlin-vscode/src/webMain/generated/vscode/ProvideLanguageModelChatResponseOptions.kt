@@ -8,7 +8,7 @@ import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
- * The provider version of {@linkcode LanguageModelChatRequestOptions}
+ * The provider version of [LanguageModelChatRequestOptions]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProvideLanguageModelChatResponseOptions)
  */

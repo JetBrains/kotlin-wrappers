@@ -10,7 +10,7 @@ import kotlin.js.JsAny
  * An event that is fired when a [document][TextDocument] will be saved.
  *
  * To make modifications to the document before it is being saved, call the
- * {@linkcode TextDocumentWillSaveEvent.waitUntil waitUntil}-function with a thenable
+ * [waitUntil][TextDocumentWillSaveEvent.waitUntil]-function with a thenable
  * that resolves to an array of [text edits][TextEdit].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentWillSaveEvent)

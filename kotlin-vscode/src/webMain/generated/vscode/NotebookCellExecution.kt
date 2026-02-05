@@ -12,9 +12,9 @@ import kotlin.js.definedExternally
  * A NotebookCellExecution is how [notebook controller][NotebookController] modify a notebook cell as
  * it is executing.
  *
- * When a cell execution object is created, the cell enters the {@linkcode NotebookCellExecutionState.Pending Pending} state.
- * When {@linkcode NotebookCellExecution.start start(...)} is called on the execution task, it enters the {@linkcode NotebookCellExecutionState.Executing Executing} state. When
- * {@linkcode NotebookCellExecution.end end(...)} is called, it enters the {@linkcode NotebookCellExecutionState.Idle Idle} state.
+ * When a cell execution object is created, the cell enters the [Pending][NotebookCellExecutionState.Pending] state.
+ * When [start(...)} is called on the execution task, it enters the {@linkcode NotebookCellExecutionState.Executing Executing][NotebookCellExecution.start] state. When
+ * [end(...)} is called, it enters the {@linkcode NotebookCellExecutionState.Idle Idle][NotebookCellExecution.end] state.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution)
  */

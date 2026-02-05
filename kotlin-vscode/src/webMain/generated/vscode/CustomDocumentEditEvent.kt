@@ -6,9 +6,9 @@ import js.core.Void
 import js.promise.PromiseLike
 
 /**
- * Event triggered by extensions to signal to the editor that an edit has occurred on an {@linkcode CustomDocument}.
+ * Event triggered by extensions to signal to the editor that an edit has occurred on an [CustomDocument].
  *
- * @see {@linkcode CustomEditorProvider.onDidChangeCustomDocument}.
+ * @see [CustomEditorProvider.onDidChangeCustomDocument].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentEditEvent)
  */

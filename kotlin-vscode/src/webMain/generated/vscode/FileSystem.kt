@@ -17,7 +17,7 @@ import kotlin.js.definedExternally
  * with files from the local disk as well as files from remote places, like the
  * remote extension host or ftp-servers.
  *
- * *Note* that an instance of this interface is available as {@linkcode workspace.fs}.
+ * *Note* that an instance of this interface is available as [workspace.fs].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem)
  */
