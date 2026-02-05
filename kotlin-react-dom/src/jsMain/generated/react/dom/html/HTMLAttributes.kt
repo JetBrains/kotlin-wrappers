@@ -81,7 +81,7 @@ external interface HTMLAttributes<T : Element> :
     var popoverTarget: ElementId?
 // Living Standard
     /**
-     * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert
+     * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert}
      */
     var inert: Boolean?
 
