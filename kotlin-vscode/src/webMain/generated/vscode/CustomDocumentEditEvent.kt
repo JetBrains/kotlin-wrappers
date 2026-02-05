@@ -25,7 +25,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      *
      * This is invoked by the editor when the user undoes this edit. To implement `undo`, your
      * extension should restore the document and editor to the state they were in just before this
-     * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
+     * edit was added to the editor's internal edit stack by [CustomEditorProvider.onDidChangeCustomDocument].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentEditEvent.undo)
      */
@@ -36,7 +36,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      *
      * This is invoked by the editor when the user redoes this edit. To implement `redo`, your
      * extension should restore the document and editor to the state they were in just after this
-     * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
+     * edit was added to the editor's internal edit stack by [CustomEditorProvider.onDidChangeCustomDocument].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentEditEvent.redo)
      */

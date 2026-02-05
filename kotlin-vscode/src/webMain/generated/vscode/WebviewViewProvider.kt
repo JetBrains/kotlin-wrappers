@@ -6,7 +6,7 @@ import js.core.Void
 import js.promise.PromiseLike
 
 /**
- * Provider for creating `WebviewView` elements.
+ * Provider for creating [WebviewView] elements.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewProvider)
  */

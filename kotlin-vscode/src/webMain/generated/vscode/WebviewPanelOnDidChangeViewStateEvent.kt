@@ -5,14 +5,14 @@ package vscode
 import js.objects.JsPlainObject
 
 /**
- * Event fired when a webview panel's view state changes.
+ * Event fired when a [webview panel's][WebviewPanel] view state changes.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelOnDidChangeViewStateEvent)
  */
 @JsPlainObject
 external interface WebviewPanelOnDidChangeViewStateEvent {
     /**
-     * Webview panel whose view state changed.
+     * [WebviewPanel] whose view state changed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelOnDidChangeViewStateEvent.webviewPanel)
      */

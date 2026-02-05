@@ -11,7 +11,7 @@ external interface CustomDocumentBackup {
     /**
      * Unique identifier for the backup.
      *
-     * This id is passed back to your extension in `openCustomDocument` when opening a custom editor from a backup.
+     * This id is passed back to your extension in [openCustomDocument][CustomReadonlyEditorProvider.openCustomDocument] when opening a custom editor from a backup.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentBackup.id)
      */

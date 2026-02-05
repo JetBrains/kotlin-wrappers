@@ -6,7 +6,7 @@ import js.core.Void
 import kotlin.js.definedExternally
 
 /**
- * A panel that contains a webview.
+ * A panel that contains a [Webview].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanel)
  */
@@ -79,7 +79,7 @@ external interface WebviewPanel :
     /**
      * Fired when the panel is disposed.
      *
-     * This may be because the user closed the panel or because `.dispose()` was
+     * This may be because the user closed the panel or because [dispose][WebviewPanel.dispose] was
      * called on it.
      *
      * Trying to use the panel after it has been disposed throws an exception.
@@ -94,7 +94,7 @@ external interface WebviewPanel :
      * A webview panel may only show in a single column at a time. If it is already showing, this
      * method moves it to a new column.
      *
-     * @param viewColumn View column to show the panel in. Shows in the current `viewColumn` if undefined.
+     * @param viewColumn View column to show the panel in. Shows in the current [WebviewPanel.viewColumn] if undefined.
      * @param preserveFocus When `true`, the webview will not take focus.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanel.reveal)
@@ -109,7 +109,7 @@ external interface WebviewPanel :
      *
      * This closes the panel if it showing and disposes of the resources owned by the webview.
      * Webview panels are also disposed when the user closes the webview panel. Both cases
-     * fire the `onDidDispose` event.
+     * fire the [onDidDispose] event.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanel.dispose)
      */

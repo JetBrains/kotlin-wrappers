@@ -23,10 +23,10 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      * Create a new document for a given resource.
      *
      * `openCustomDocument` is called when the first time an editor for a given resource is opened. The opened
-     * document is then passed to `resolveCustomEditor` so that the editor can be shown to the user.
+     * document is then passed to [resolveCustomEditor] so that the editor can be shown to the user.
      *
-     * Already opened `CustomDocument` are re-used if the user opened additional editors. When all editors for a
-     * given resource are closed, the `CustomDocument` is disposed of. Opening an editor at this point will
+     * Already opened [CustomDocuments][CustomDocument] are re-used if the user opened additional editors. When all editors for a
+     * given resource are closed, the [CustomDocuments][CustomDocument] is disposed of. Opening an editor at this point will
      * trigger another call to `openCustomDocument`.
      *
      * @param uri Uri of the document to open.
