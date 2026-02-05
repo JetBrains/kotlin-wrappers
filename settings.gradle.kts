@@ -263,6 +263,11 @@ include("kotlin-tauri-apps-api")
 
 includeKarakum("kotlin-tauri-apps-api")
 
+// Kotlin/JS: DOM Testing Library wrappers
+include("kotlin-testing-library-dom")
+
+includeKarakum("kotlin-testing-library-dom")
+
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
