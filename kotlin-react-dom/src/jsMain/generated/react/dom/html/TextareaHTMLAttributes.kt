@@ -23,7 +23,7 @@ external interface TextareaHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var value: Any? // string | readonly string[] | number
     var wrap: String?
 
-    // No other element dispatching change events can be nested in a <textare>
+    // No other element dispatching change events can be nested in a <textarea>
 // so we know the target will be a HTMLTextAreaElement.
     var onChange: ChangeEventHandler<T, HTMLTextAreaElement>?
 }
