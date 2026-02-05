@@ -705,6 +705,8 @@ private fun kdoc(
     val result = source
         .replace(Regex("""\{@link (\S+)}"""), "[$1]")
         .replace(Regex("""\{@link (\S+) (.+)}"""), "[$2][$1]")
+        .replace(Regex("""\{@linkcode (\S+)}"""), "[$1]")
+        .replace(Regex("""\{@linkcode (\S+) (.+)}"""), "[$2][$1]")
 
     val name = commenter.name
         ?: return result
