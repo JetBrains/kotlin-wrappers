@@ -1,4 +1,4 @@
-package testinglibrary.dom
+package testing.library.dom
 
 import js.function.unsafeAsync
 import js.promise.Promise
