@@ -126,7 +126,6 @@ suspend fun main(args: ReadonlyArray<String>) {
         input = manyOf("types/**/*.d.ts")
         isolatedOutputPackage = true
         packageNameMapper = recordOf(
-            "testing/library/" to "testinglibrary/",
             "types/([^/]+)/([^/]+)\\.kt" to "$2.kt",
 
             "createEvent.kt" to "createEvent.fun.kt",
