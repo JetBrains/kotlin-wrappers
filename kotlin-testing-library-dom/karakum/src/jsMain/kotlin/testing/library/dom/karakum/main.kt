@@ -1,23 +1,23 @@
-package testinglibrary.dom.karakum
+package testing.library.dom.karakum
 
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
-import testinglibrary.dom.karakum.annotations.annotateWaitFor
-import testinglibrary.dom.karakum.inheritanceModifiers.modifyMethodInheritance
-import testinglibrary.dom.karakum.plugins.BoundQueriesPlugin
-import testinglibrary.dom.karakum.plugins.PromiseFunctionApiPlugin
-import testinglibrary.dom.karakum.plugins.QueriesPlugin
-import testinglibrary.dom.karakum.plugins.convertFunctionInterfaces
-import testinglibrary.dom.karakum.plugins.convertOptionalType
-import testinglibrary.dom.karakum.plugins.convertPrettyFormatOptionsReceived
-import testinglibrary.dom.karakum.plugins.convertPromiseResult
-import testinglibrary.dom.karakum.plugins.convertSecondFindArgumentType
-import testinglibrary.dom.karakum.plugins.convertSkippedGenerics
-import testinglibrary.dom.karakum.plugins.convertTypealiasParameterBounds
-import testinglibrary.dom.karakum.plugins.convertUtilityTypes
-import testinglibrary.dom.karakum.plugins.convertWaitForName
+import testing.library.dom.karakum.annotations.annotateWaitFor
+import testing.library.dom.karakum.inheritanceModifiers.modifyMethodInheritance
+import testing.library.dom.karakum.plugins.BoundQueriesPlugin
+import testing.library.dom.karakum.plugins.PromiseFunctionApiPlugin
+import testing.library.dom.karakum.plugins.QueriesPlugin
+import testing.library.dom.karakum.plugins.convertFunctionInterfaces
+import testing.library.dom.karakum.plugins.convertOptionalType
+import testing.library.dom.karakum.plugins.convertPrettyFormatOptionsReceived
+import testing.library.dom.karakum.plugins.convertPromiseResult
+import testing.library.dom.karakum.plugins.convertSecondFindArgumentType
+import testing.library.dom.karakum.plugins.convertSkippedGenerics
+import testing.library.dom.karakum.plugins.convertTypealiasParameterBounds
+import testing.library.dom.karakum.plugins.convertUtilityTypes
+import testing.library.dom.karakum.plugins.convertWaitForName
 
 private val asyncQueries = setOf(
     "findByLabelText",

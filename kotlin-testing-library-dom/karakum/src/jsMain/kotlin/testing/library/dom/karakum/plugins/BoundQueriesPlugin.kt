@@ -1,4 +1,4 @@
-package testinglibrary.dom.karakum.plugins
+package testing.library.dom.karakum.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
@@ -266,4 +266,3 @@ val BoundQueriesPlugin = createPlugin { node, context, render ->
         convertQueryMethod(node, returnTypeArgumentName.right, context, render)
     }
 }
-

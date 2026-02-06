@@ -1,4 +1,4 @@
-package testinglibrary.dom.karakum.inheritanceModifiers
+package testing.library.dom.karakum.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
