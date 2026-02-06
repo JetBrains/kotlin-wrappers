@@ -9,4 +9,4 @@ package testing.library.dom
 // unhandled import: Queries from "./get-queries-for-element"
 // unhandled import: * as queries from "./queries"
 
-external val screen: Screen<*>
+external val screen: Screen

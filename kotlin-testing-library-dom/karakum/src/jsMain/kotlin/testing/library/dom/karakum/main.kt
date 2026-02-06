@@ -13,8 +13,8 @@ import testing.library.dom.karakum.plugins.convertFunctionInterfaces
 import testing.library.dom.karakum.plugins.convertOptionalType
 import testing.library.dom.karakum.plugins.convertPrettyFormatOptionsReceived
 import testing.library.dom.karakum.plugins.convertPromiseResult
+import testing.library.dom.karakum.plugins.convertQueriesGenerics
 import testing.library.dom.karakum.plugins.convertSecondFindArgumentType
-import testing.library.dom.karakum.plugins.convertSkippedGenerics
 import testing.library.dom.karakum.plugins.convertTypealiasParameterBounds
 import testing.library.dom.karakum.plugins.convertUtilityTypes
 import testing.library.dom.karakum.plugins.convertWaitForName
@@ -110,8 +110,8 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertOptionalType,
             convertPrettyFormatOptionsReceived,
             convertPromiseResult,
+            convertQueriesGenerics,
             convertSecondFindArgumentType,
-            convertSkippedGenerics,
             convertTypealiasParameterBounds,
             convertUtilityTypes,
             convertWaitForName,
