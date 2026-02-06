@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.objects.recordOf
 import testinglibrary.dom.karakum.annotations.annotateWaitFor
 import testinglibrary.dom.karakum.inheritanceModifiers.modifyMethodInheritance
+import testinglibrary.dom.karakum.plugins.BoundQueriesPlugin
 import testinglibrary.dom.karakum.plugins.PromiseFunctionApiPlugin
 import testinglibrary.dom.karakum.plugins.QueriesPlugin
 import testinglibrary.dom.karakum.plugins.convertFunctionInterfaces
@@ -102,6 +103,7 @@ suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
             QueriesPlugin(),
+            BoundQueriesPlugin,
             PromiseFunctionApiPlugin(),
 
             convertFunctionInterfaces,
@@ -165,6 +167,10 @@ suspend fun main(args: ReadonlyArray<String>) {
                 }
             }.toTypedArray() + arrayOf(
                 "(AllByAttribute|QueryByAttribute).kt" to arrayOf(
+                    "web.html.HTMLElement",
+                ),
+                "BoundFunctions.kt" to arrayOf(
+                    "js.promise.Promise",
                     "web.html.HTMLElement",
                 ),
                 "Config.kt" to arrayOf(

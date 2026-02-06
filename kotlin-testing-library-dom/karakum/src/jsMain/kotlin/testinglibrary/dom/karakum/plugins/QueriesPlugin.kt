@@ -120,18 +120,14 @@ class QueriesPlugin : Plugin {
             val namespace = typeScriptService.findClosestNamespace(node)
 
             val body = convertParameterDeclarations(
-                node, context, next,
+                declarationType, context, next,
                 ParameterDeclarationsConfiguration(
                     strategy = ParameterDeclarationStrategy.function,
                     template = template@{ parameters, _ ->
                         """
-                        @seskar.js.JsAsync
-                        external suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
-                            ifPresent(
-                                returnTypePayload
-                            ) { ": $it" }
-                        }
-                    """.trimIndent()
+                            @seskar.js.JsAsync
+                            external suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }}
+                        """.trimIndent()
                     }
                 )
             )

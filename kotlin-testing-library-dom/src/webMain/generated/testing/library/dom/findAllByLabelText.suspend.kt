@@ -11,5 +11,8 @@ import web.html.HTMLElement
 
 @seskar.js.JsAsync
 external suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByLabelText(
-    vararg args: Any?, // Parameters<FindAllByText<T>>
+    container: HTMLElement,
+    id: Matcher,
+    options: SelectorMatcherOptions = definedExternally,
+    waitForElementOptions: waitForOptions = definedExternally,
 ): js.array.ReadonlyArray<T>

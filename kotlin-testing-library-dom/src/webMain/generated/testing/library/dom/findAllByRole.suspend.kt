@@ -11,5 +11,8 @@ import web.html.HTMLElement
 
 @seskar.js.JsAsync
 external suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByRole(
-    vararg args: Any?, // Parameters<FindAllByRole<T>>
+    container: HTMLElement,
+    role: ByRoleMatcher,
+    options: ByRoleOptions = definedExternally,
+    waitForElementOptions: waitForOptions = definedExternally,
 ): js.array.ReadonlyArray<T>

@@ -13,4 +13,4 @@ external fun <
         > getQueriesForElement(
     element: HTMLElement,
     queriesToBind: T = definedExternally,
-): BoundFunctions<T>
+): BoundFunctions

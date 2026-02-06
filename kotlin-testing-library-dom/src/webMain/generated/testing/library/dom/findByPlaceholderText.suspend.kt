@@ -11,5 +11,8 @@ import web.html.HTMLElement
 
 @seskar.js.JsAsync
 external suspend fun <T : HTMLElement /* default is HTMLElement */> findByPlaceholderText(
-    vararg args: Any?, // Parameters<FindByBoundAttribute<T>>
+    container: HTMLElement,
+    id: Matcher,
+    options: MatcherOptions = definedExternally,
+    waitForElementOptions: waitForOptions = definedExternally,
 ): T

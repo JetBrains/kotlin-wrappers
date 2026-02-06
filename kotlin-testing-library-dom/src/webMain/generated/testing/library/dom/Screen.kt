@@ -7,7 +7,7 @@ package testing.library.dom
 // unhandled import: Queries from "./get-queries-for-element"
 // unhandled import: * as queries from "./queries"
 
-external interface Screen<Q : Queries /* default is Any /* typeof queries */ */> : BoundFunctions<Q> {
+external interface Screen<Q : Queries /* default is Any /* typeof queries */ */> : BoundFunctions {
     /**
      * Convenience function for `pretty-dom` which also allows an array
      * of elements
