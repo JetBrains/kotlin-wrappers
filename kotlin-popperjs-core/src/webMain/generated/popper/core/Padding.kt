@@ -2,11 +2,11 @@
 
 package popper.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 import popper.core.modifiers.PaddingType
 
 // number | Partial<SideObject>
 @JsPlainObject
 external interface Padding :
-    PaddingType 
+    PaddingType

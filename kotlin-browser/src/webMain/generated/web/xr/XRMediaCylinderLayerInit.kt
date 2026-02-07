@@ -2,7 +2,7 @@
 
 package web.xr
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface XRMediaCylinderLayerInit :

@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Content settings for a webview panel.

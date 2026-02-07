@@ -2,7 +2,7 @@
 
 package semver
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface RangeOptions : Options {
     var includePrerelease: Boolean?
 }

@@ -2,7 +2,7 @@
 
 package node.childProcess
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ExecFileSyncOptions : CommonExecOptions {
     var shell: Any? // boolean | string | undefined
 }

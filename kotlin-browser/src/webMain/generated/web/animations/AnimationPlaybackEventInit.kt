@@ -2,7 +2,7 @@
 
 package web.animations
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.cssom.CSSNumberish
 import web.events.EventInit
 

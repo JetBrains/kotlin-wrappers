@@ -4,7 +4,7 @@ package node.fs
 
 import web.abort.Abortable
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface CreateReadStreamOptions : Abortable {
     var encoding: node.buffer.BufferEncoding?
     var autoClose: Boolean?

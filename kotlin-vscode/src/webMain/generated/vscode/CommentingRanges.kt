@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * The ranges a CommentingRangeProvider enables commenting on.

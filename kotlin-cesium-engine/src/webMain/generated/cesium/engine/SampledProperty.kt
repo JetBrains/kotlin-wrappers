@@ -6,7 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsDouble
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A [Property] whose value is interpolated for a given time from the

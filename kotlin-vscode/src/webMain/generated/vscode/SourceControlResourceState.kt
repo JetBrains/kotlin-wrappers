@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * An source control resource state represents the state of an underlying workspace

@@ -5,7 +5,7 @@ package web.codecs
 import js.array.ReadonlyArray
 import js.core.Int53
 import js.core.UInt53
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.geometry.DOMRectReadOnly
 
 @JsPlainObject

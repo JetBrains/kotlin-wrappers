@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Options to configure the behavior of the message.

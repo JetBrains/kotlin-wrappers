@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Provides information about the context in which an inline completion was requested.

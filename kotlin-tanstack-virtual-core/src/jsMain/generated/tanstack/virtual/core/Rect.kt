@@ -2,7 +2,7 @@
 
 package tanstack.virtual.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Rect {

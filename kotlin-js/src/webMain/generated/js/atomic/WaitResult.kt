@@ -1,6 +1,6 @@
 package js.atomic
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.contracts.contract
 
 @JsPlainObject

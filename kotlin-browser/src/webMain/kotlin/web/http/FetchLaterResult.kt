@@ -1,6 +1,6 @@
 package web.http
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FetchLaterResult {

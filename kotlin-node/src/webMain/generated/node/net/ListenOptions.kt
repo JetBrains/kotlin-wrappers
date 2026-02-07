@@ -4,7 +4,7 @@ package node.net
 
 import web.abort.Abortable
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ListenOptions : Abortable {
     var backlog: Double?
     var exclusive: Boolean?

@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Represents how a terminal exited.

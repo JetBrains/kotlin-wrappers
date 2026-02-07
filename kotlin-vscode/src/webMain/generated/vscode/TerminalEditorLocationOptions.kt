@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Assumes a [TerminalLocation] of editor and allows specifying a [ViewColumn] and

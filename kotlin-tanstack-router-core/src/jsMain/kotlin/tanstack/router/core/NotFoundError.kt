@@ -1,7 +1,7 @@
 package tanstack.router.core
 
 import js.errors.JsErrorLike
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.http.Headers
 
 @JsPlainObject

@@ -1,6 +1,6 @@
 package web.css.painting
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
 
 @JsPlainObject

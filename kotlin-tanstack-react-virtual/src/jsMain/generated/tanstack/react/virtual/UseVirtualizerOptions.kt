@@ -3,7 +3,7 @@
 package tanstack.react.virtual
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import tanstack.virtual.core.*
 import web.dom.Element
 import web.events.EventTarget

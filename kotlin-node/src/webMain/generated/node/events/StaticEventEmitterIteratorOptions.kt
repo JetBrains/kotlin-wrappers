@@ -2,7 +2,7 @@
 
 package node.events
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface StaticEventEmitterIteratorOptions : StaticEventEmitterOptions {
     /**
      * Names of events that will end the iteration.

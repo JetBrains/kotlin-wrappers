@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * An appearance for arbitrary geometry (as opposed to [EllipsoidSurfaceAppearance], for example)

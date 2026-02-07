@@ -95,7 +95,6 @@ private fun fileContent(
         import js.iterable.AsyncIterable
         import js.iterable.JsIterable
         import js.errors.JsError
-        import js.objects.JsPlainObject
         import js.objects.ReadonlyRecord
         import js.objects.Record
         import js.promise.PromiseLike
@@ -108,6 +107,7 @@ private fun fileContent(
         import kotlin.js.JsModule
         import kotlin.js.JsName
         import kotlin.js.definedExternally
+        import kotlinx.js.JsPlainObject
         """.trimIndent(),
         body,
     ).filter { it.isNotEmpty() }

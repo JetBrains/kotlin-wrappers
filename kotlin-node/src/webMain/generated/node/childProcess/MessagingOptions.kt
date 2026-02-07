@@ -4,7 +4,7 @@ package node.childProcess
 
 import web.abort.Abortable
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface MessagingOptions : Abortable {
     /**
      * Specify the kind of serialization used for sending messages between processes.

@@ -4,7 +4,7 @@ package vscode
 
 import js.array.Tuple2
 import js.core.JsInt
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Options to configure the behavior of the input box UI.

@@ -4,8 +4,8 @@ package web.streams
 
 import js.core.UInt53
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface UnderlyingByteSource {

@@ -4,8 +4,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlinx.js.JsPlainObject
 
 /**
  * Provider invoked when the user copies or pastes in a [TextDocument].

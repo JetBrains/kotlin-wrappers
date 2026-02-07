@@ -2,7 +2,7 @@
 
 package popper.core.modifiers
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import seskar.js.JsValue
 
 sealed external interface OffsetType

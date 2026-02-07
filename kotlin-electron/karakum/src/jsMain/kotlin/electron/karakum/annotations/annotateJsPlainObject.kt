@@ -3,14 +3,7 @@ package electron.karakum.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import typescript.Node
-import typescript.isClassDeclaration
-import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
-import typescript.isIntersectionTypeNode
-import typescript.isMethodDeclaration
-import typescript.isMethodSignature
-import typescript.isParameter
+import typescript.*
 
 fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     ensure(context.isAnonymousDeclaration)
@@ -36,7 +29,7 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "Net")
 
-        "@js.objects.JsPlainObject"
+        "@kotlinx.js.JsPlainObject"
     } ?: nullable {
         val method = ensureNotNull(parameter.getParentOrNull())
         ensure(isMethodDeclaration(method))
@@ -49,6 +42,6 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
         ensure(isClassDeclaration(classNode))
         ensure(classNode.name?.text == "Session")
 
-        "@js.objects.JsPlainObject"
+        "@kotlinx.js.JsPlainObject"
     }
 }

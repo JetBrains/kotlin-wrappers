@@ -2,7 +2,7 @@
 
 package web.popover
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.html.HTMLElement
 
 @JsPlainObject

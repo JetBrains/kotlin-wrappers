@@ -3,7 +3,7 @@
 package actions.cache
 
 import js.core.UInt53
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 // Copy of `TransferProgressEvent` from '@azure/ms-rest-js'
 @JsPlainObject

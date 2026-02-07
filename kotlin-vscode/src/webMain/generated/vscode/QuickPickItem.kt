@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Represents an item that can be selected from a list of items.

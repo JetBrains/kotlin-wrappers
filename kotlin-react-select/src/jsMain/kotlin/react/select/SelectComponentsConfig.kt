@@ -1,6 +1,6 @@
 package react.select
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import react.ComponentType
 
 @JsPlainObject

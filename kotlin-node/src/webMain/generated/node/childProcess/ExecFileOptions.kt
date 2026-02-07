@@ -5,7 +5,7 @@ package node.childProcess
 import web.abort.AbortSignal
 import web.abort.Abortable
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ExecFileOptions :
     CommonOptions,
     Abortable {

@@ -1,18 +1,9 @@
 package node.karakum.annotations
 
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import arrow.core.raise.nullable
-import typescript.Node
-import typescript.isClassDeclaration
-import typescript.isFunctionDeclaration
-import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
-import typescript.isIntersectionTypeNode
-import typescript.isMethodSignature
-import typescript.isParameter
-import typescript.isParenthesizedTypeNode
-import typescript.isUnionTypeNode
+import typescript.*
 
 private val jsoInterfaces = setOf(
     // child_process
@@ -91,7 +82,7 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
         ensure(isInterfaceDeclaration(node))
         ensure(node.name.text in jsoInterfaces)
 
-        "@js.objects.JsPlainObject"
+        "@kotlinx.js.JsPlainObject"
     } ?: nullable {
         ensure(context.isAnonymousDeclaration)
 
@@ -117,7 +108,7 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
                     || functionName.text == "mkdirSync"
         )
 
-        "@js.objects.JsPlainObject"
+        "@kotlinx.js.JsPlainObject"
     } ?: nullable {
         ensure(context.isAnonymousDeclaration)
 
@@ -157,7 +148,7 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
                         || functionName.text == "watchFile"
             )
 
-            "@js.objects.JsPlainObject"
+            "@kotlinx.js.JsPlainObject"
         } ?: nullable {
             val method = ensureNotNull(parameter.getParentOrNull())
             ensure(isMethodSignature(method))
@@ -170,7 +161,7 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
                         || methodName.text == "writeFile"
             )
 
-            "@js.objects.JsPlainObject"
+            "@kotlinx.js.JsPlainObject"
         }
     }
 }

@@ -4,7 +4,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsModule
 
 /**

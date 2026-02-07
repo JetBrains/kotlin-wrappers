@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A request to a chat participant.

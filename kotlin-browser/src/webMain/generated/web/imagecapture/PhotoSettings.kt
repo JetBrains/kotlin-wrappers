@@ -2,7 +2,7 @@
 
 package web.imagecapture
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PhotoSettings {

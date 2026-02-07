@@ -1,6 +1,6 @@
 package react.select
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface ActionMeta<Option> {

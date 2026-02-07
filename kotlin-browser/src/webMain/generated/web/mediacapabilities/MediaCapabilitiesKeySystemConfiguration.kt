@@ -3,7 +3,7 @@
 package web.mediacapabilities
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.mediakey.MediaKeysRequirement
 import kotlin.js.JsString
 

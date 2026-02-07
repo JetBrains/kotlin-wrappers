@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import tanstack.table.core.VisibilityColumn as ColumnVisibilityColumn
 
 @JsPlainObject

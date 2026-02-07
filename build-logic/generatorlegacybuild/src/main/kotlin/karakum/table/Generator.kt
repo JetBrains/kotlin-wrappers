@@ -5,6 +5,8 @@ import karakum.common.writeCode
 import java.io.File
 
 private val DEFAULT_IMPORTS = listOf(
+    "kotlinx.js.JsPlainObject",
+
     "js.promise.Promise",
     "js.regexp.RegExp",
 
@@ -12,7 +14,6 @@ private val DEFAULT_IMPORTS = listOf(
     "js.array.ReadonlyArray",
     "js.collections.JsMap",
     "js.core.Void",
-    "js.objects.JsPlainObject",
     "js.objects.PropertyKey",
     "js.objects.ReadonlyRecord",
     "js.reflect.unsafeCast",

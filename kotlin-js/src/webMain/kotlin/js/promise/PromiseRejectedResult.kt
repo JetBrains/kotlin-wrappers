@@ -2,7 +2,7 @@ package js.promise
 
 import js.core.Void
 import js.errors.JsErrorLike
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PromiseRejectedResult :

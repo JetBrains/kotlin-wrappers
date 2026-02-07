@@ -2,7 +2,7 @@
 
 package web.blob
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface BlobPropertyBag {

@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Describes a structural change to a notebook document, e.g newly added and removed cells.

@@ -25,7 +25,7 @@ private val DEFAULT_IMPORTS = listOf(
     "js.iterable.JsIterator",
     "js.iterable.AsyncIterable",
 
-    "js.objects.JsPlainObject",
+    "kotlinx.js.JsPlainObject",
 
     "web.abort.AbortController",
     "web.abort.AbortSignal",

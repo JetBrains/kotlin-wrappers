@@ -1,6 +1,6 @@
 package js.temporal
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Options to control the result of `until()` and `since()` methods in

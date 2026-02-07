@@ -2,7 +2,7 @@
 
 package actions.glob
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GlobOptions {

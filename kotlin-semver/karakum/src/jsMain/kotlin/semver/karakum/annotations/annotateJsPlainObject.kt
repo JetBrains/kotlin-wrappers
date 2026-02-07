@@ -15,5 +15,5 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     ensure(isInterfaceDeclaration(node))
     ensure(node.name.text in jsoInterfaces)
 
-    "@js.objects.JsPlainObject"
+    "@kotlinx.js.JsPlainObject"
 }

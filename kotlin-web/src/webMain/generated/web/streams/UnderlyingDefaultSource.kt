@@ -3,8 +3,8 @@
 package web.streams
 
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 
 @JsPlainObject

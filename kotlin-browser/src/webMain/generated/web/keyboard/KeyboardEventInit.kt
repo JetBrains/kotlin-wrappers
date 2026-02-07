@@ -2,7 +2,7 @@
 
 package web.keyboard
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.uievents.EventModifierInit
 
 /**

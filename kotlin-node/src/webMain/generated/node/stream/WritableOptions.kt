@@ -2,7 +2,7 @@
 
 package node.stream
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface WritableOptions<T : Writable /* default is Writable */> : StreamOptions<T> {
     var decodeStrings: Boolean?
     var defaultEncoding: node.buffer.BufferEncoding?

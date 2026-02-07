@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A value-object that contains contextual information when requesting inline values from a InlineValuesProvider.

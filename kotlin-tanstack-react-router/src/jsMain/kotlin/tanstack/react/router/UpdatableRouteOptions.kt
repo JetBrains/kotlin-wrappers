@@ -1,6 +1,6 @@
 package tanstack.react.router
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface UpdatableRouteOptions :

@@ -2,7 +2,7 @@
 
 package web.dom
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.components.CustomElementRegistry
 
 @JsPlainObject

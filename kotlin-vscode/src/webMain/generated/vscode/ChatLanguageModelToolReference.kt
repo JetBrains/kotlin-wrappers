@@ -4,7 +4,7 @@ package vscode
 
 import js.array.Tuple2
 import js.core.JsInt
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A reference to a tool that the user manually attached to their request, either using the `#`-syntax inline, or as an

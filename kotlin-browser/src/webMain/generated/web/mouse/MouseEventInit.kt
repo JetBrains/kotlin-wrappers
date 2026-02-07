@@ -2,7 +2,7 @@
 
 package web.mouse
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventTarget
 import web.uievents.EventModifierInit
 

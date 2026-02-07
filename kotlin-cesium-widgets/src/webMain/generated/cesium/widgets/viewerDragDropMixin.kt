@@ -5,7 +5,7 @@
 package cesium.widgets
 
 import cesium.engine.Proxy
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 
 /**

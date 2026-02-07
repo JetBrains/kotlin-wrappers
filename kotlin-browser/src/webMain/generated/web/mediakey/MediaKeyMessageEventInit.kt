@@ -3,7 +3,7 @@
 package web.mediakey
 
 import js.buffer.ArrayBuffer
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 
 /**

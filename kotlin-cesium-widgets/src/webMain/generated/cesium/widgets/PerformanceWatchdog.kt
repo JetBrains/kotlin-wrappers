@@ -5,7 +5,7 @@
 package cesium.widgets
 
 import cesium.engine.Scene
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 
 /**

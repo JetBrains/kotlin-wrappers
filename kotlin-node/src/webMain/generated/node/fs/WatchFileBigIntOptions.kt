@@ -2,7 +2,7 @@
 
 package node.fs
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface WatchFileBigIntOptions : WatchFileOptions {
     @JsName("bigint")
     var requiredBigInt: Boolean // true

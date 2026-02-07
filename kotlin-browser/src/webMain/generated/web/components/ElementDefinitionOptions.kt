@@ -2,7 +2,7 @@
 
 package web.components
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.TagName
 import web.html.HTMLElement
 

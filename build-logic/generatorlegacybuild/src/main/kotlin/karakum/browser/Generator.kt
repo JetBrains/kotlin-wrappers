@@ -56,7 +56,6 @@ private val DEFAULT_IMPORTS = Imports(
     "js.iterable.AsyncIterator",
     "js.iterable.JsIterable",
     "js.iterable.JsIterator",
-    "js.objects.JsPlainObject",
     "js.objects.PropertyKey",
     "js.objects.ReadonlyRecord",
     "js.objects.Record",
@@ -87,6 +86,8 @@ private val DEFAULT_IMPORTS = Imports(
     "kotlin.js.definedExternally",
     "kotlin.js.toBoolean",
     "kotlin.js.undefined",
+
+    "kotlinx.js.JsPlainObject",
 
     "web.abort.AbortController",
     "web.abort.AbortSignal",

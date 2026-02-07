@@ -1,7 +1,7 @@
 package tanstack.react.router
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import react.dom.html.LinkHTMLAttributes
 import react.dom.html.MetaHTMLAttributes
 import react.dom.html.ScriptHTMLAttributes

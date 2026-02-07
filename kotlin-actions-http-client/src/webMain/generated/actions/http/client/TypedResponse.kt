@@ -2,7 +2,7 @@
 
 package actions.http.client
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface TypedResponse<T> {

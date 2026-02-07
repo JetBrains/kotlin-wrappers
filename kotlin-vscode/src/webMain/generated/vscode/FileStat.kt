@@ -3,7 +3,7 @@
 package vscode
 
 import js.core.JsInt53
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * The `FileStat`-type represents metadata about a file

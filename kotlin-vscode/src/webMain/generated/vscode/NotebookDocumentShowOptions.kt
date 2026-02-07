@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Represents options to configure the behavior of showing a [notebook document} in an {@link NotebookEditor notebook editor][NotebookDocument].

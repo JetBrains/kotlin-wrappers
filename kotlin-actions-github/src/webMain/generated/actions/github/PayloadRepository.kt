@@ -2,7 +2,7 @@
 
 package actions.github
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PayloadRepository {

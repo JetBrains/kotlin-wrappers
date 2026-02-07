@@ -7,7 +7,7 @@ import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBuffer
 import js.core.Int53
 import js.core.UInt53
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface EncodedAudioChunkInit {

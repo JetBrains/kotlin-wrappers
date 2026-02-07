@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.objects.JsPlainObject
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 
 /**
  * Additional information about the opening custom document.

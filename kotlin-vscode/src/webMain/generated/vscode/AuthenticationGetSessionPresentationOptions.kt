@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Optional options to be used when calling [authentication.getSession] with interactive options `forceNewSession` & `createIfNone`.

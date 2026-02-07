@@ -3,7 +3,7 @@
 package tanstack.query.core
 
 import js.iterable.AsyncIterable
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface StreamedQueryParams<TQueryFnData, TData, TQueryKey : QueryKey> {

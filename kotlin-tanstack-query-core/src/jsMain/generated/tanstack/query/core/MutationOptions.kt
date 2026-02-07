@@ -2,9 +2,9 @@
 
 package tanstack.query.core
 
-import js.objects.JsPlainObject
 import js.promise.Promise
 import js.promise.PromiseResult
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface MutationOptions<TData, TError, TVariables, TOnMutateResult> {

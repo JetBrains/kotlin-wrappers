@@ -4,7 +4,7 @@ package actions.cache
 
 import actions.http.client.HttpClientError
 import actions.http.client.TypedResponse
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ITypedResponseWithError<T> :

@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 
 @JsPlainObject

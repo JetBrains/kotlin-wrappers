@@ -3,8 +3,8 @@
 package web.midi
 
 import js.buffer.ArrayBuffer
-import js.objects.JsPlainObject
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 
 /**

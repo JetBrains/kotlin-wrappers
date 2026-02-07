@@ -1,6 +1,6 @@
 package web.observable
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.abort.Abortable
 
 @JsPlainObject

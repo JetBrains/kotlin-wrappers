@@ -2,7 +2,7 @@
 
 package web.mediacapabilities
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.mediakey.MediaKeySystemAccess
 
 @JsPlainObject

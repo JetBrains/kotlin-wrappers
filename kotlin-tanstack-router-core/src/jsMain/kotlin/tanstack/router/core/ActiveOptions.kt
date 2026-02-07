@@ -1,6 +1,6 @@
 package tanstack.router.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * [Guide](https://tanstack.com/router/latest/docs/framework/react/guide/navigation#active-options)

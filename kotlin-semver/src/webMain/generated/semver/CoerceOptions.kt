@@ -2,7 +2,7 @@
 
 package semver
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface CoerceOptions : Options {
     /**
      * If the `options.includePrerelease` flag is set, then the `coerce` result will contain

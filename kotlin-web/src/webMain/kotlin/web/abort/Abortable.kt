@@ -1,8 +1,8 @@
 package web.abort
 
-import js.objects.JsPlainObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async
+import kotlinx.js.JsPlainObject
 import kotlin.coroutines.EmptyCoroutineContext
 
 @JsPlainObject

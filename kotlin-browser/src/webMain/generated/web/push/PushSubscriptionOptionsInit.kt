@@ -3,7 +3,7 @@
 package web.push
 
 import js.buffer.BufferSource
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface PushSubscriptionOptionsInit {

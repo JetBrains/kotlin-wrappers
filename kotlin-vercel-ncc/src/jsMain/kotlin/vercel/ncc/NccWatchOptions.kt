@@ -1,6 +1,6 @@
 package vercel.ncc
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NccWatchOptions :

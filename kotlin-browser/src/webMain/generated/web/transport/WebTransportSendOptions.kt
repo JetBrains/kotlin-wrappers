@@ -3,7 +3,7 @@
 package web.transport
 
 import js.core.Int53
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportSendOptions {

@@ -4,7 +4,7 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.core.JsUInt
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface RTCEncodedFrameMetadata {

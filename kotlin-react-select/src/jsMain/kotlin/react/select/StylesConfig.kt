@@ -1,6 +1,6 @@
 package react.select
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface StylesConfig<Option : Any, Group : GroupBase<Option>> {

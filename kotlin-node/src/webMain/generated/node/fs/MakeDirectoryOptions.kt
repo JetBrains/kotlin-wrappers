@@ -2,7 +2,7 @@
 
 package node.fs
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface MakeDirectoryOptions {
     /**
      * Indicates whether parent folders should be created.

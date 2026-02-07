@@ -2,8 +2,8 @@
 
 package tanstack.query.core
 
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Retryer<TData> {

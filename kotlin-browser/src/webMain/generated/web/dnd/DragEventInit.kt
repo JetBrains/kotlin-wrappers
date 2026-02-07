@@ -2,7 +2,7 @@
 
 package web.dnd
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.data.DataTransfer
 import web.mouse.MouseEventInit
 

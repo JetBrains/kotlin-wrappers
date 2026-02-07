@@ -4,7 +4,7 @@ package tanstack.table.core
 
 import js.array.Tuple2
 import js.collections.JsMap
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface FacetedColumn<TData : RowData> {

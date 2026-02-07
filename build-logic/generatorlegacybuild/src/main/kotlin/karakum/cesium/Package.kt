@@ -13,7 +13,6 @@ import kotlin.js.JsString
 import js.core.Void
 import js.date.Date
 import js.errors.JsError
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import js.objects.unsafeJso
 import js.promise.Promise
@@ -26,6 +25,7 @@ import js.typedarrays.Uint8Array
 import kotlin.js.JsName
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.canvas.CanvasImageSource

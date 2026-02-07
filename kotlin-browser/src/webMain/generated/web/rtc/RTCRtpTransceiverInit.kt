@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.mediastreams.MediaStream
 
 @JsPlainObject

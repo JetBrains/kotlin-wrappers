@@ -1,6 +1,6 @@
 package web.events
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ObservableEventListenerOptions {

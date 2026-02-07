@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * A tiling scheme for geometry referenced to a [WebMercatorProjection], EPSG:3857.  This is

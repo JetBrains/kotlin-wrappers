@@ -2,7 +2,7 @@
 
 package node.stream
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface DuplexOptions<T : Duplex /* default is Duplex */> :
     ReadableOptions<T>,
     WritableOptions<T> {

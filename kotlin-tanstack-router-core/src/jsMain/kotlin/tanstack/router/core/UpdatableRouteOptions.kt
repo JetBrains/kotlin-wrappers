@@ -3,7 +3,7 @@ package tanstack.router.core
 import js.array.ReadonlyArray
 import js.errors.JsError
 import js.errors.JsErrorLike
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface UpdatableRouteOptions {

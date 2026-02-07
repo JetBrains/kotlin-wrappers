@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface GlobalFilterOptions<TData : RowData> {

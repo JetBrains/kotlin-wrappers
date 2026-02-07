@@ -3,7 +3,7 @@
 package web.authn
 
 import js.buffer.ArrayBuffer
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsLargeBlobOutputs {

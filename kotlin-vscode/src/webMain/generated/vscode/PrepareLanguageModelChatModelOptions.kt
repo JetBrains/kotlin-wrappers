@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * The list of options passed into [LanguageModelChatProvider.provideLanguageModelChatInformation]

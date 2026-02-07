@@ -2,7 +2,7 @@
 
 package web.input
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.uievents.UIEventInit
 
 /**

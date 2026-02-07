@@ -2,7 +2,7 @@
 
 package node.fs
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface MkdirSyncOptions : MakeDirectoryOptions {
     override var recursive: Boolean /* false */?
 }

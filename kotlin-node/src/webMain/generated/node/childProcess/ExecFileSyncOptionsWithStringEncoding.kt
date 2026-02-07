@@ -2,7 +2,7 @@
 
 package node.childProcess
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ExecFileSyncOptionsWithStringEncoding : ExecFileSyncOptions {
     @JsName("encoding")
     var stringEncoding: node.buffer.BufferEncoding

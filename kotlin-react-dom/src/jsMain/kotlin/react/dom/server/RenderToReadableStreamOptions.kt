@@ -1,7 +1,7 @@
 package react.dom.server
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import react.dom.client.ErrorHandler
 import react.dom.client.ErrorInfo
 import web.abort.AbortSignal

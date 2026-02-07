@@ -1,7 +1,7 @@
 package tanstack.router.core
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import tanstack.history.RouterHistory
 import web.dom.Element
 import web.scroll.ScrollBehavior

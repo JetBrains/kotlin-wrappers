@@ -4,7 +4,7 @@ package node.fs
 
 import web.abort.Abortable
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface _WatchOptions : Abortable {
     var encoding: Any? // BufferEncoding | "buffer" | undefined
     var persistent: Boolean?

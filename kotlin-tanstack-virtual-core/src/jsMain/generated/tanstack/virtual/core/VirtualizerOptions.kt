@@ -3,7 +3,7 @@
 package tanstack.virtual.core
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.Element
 import web.events.EventTarget
 import web.resize.ResizeObserverEntry

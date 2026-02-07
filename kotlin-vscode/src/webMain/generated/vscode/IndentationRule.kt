@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.objects.JsPlainObject
 import js.regexp.RegExp
+import kotlinx.js.JsPlainObject
 
 /**
  * Describes indentation rules for a language.

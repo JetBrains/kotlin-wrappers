@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.regexp.RegExp
+import kotlinx.js.JsPlainObject
 
 /**
  * The language configuration interfaces defines the contract between extensions

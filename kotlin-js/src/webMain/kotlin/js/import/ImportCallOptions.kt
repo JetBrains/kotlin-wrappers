@@ -1,6 +1,6 @@
 package js.import
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * The type for the optional second argument to `import()`.

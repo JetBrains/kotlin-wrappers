@@ -1,6 +1,6 @@
 package js.iterable
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.contracts.contract
 import kotlin.js.JsAny
 

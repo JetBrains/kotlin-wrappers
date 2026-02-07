@@ -5,9 +5,9 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 

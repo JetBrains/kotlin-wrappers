@@ -1,6 +1,6 @@
 package web.audio
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam)

@@ -2,7 +2,7 @@
 
 package web.scheduling
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 
 @JsPlainObject

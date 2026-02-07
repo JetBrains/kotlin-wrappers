@@ -2,7 +2,7 @@
 
 package web.mediastreams
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 
 /**

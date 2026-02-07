@@ -6,7 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsDouble
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Describes geometry representing a plane centered at the origin, with a unit width and length.

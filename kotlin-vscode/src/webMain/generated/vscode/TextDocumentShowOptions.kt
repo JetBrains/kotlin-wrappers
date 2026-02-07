@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Represents options to configure the behavior of showing a [document} in an {@link TextEditor editor][TextDocument].

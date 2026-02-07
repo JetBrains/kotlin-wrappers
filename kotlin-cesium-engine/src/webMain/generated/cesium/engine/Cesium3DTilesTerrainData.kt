@@ -5,10 +5,10 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.typedarrays.Uint8Array
+import kotlinx.js.JsPlainObject
 
 /**
  * Terrain data for a single tile where the terrain data is represented as a glb (binary glTF).

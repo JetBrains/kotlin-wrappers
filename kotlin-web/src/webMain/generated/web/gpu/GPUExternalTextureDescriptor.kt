@@ -2,7 +2,7 @@
 
 package web.gpu
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.canvas.CanvasImageSource
 import web.images.PredefinedColorSpace
 

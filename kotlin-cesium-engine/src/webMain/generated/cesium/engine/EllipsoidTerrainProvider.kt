@@ -5,8 +5,8 @@
 package cesium.engine
 
 import js.core.Void
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 
 /**
  * A very simple [TerrainProvider] that produces geometry by tessellating an ellipsoidal

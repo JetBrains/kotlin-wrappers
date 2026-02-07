@@ -1,7 +1,7 @@
 package emotion.cache
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.dom.Node
 import web.html.HTMLElement
 

@@ -2,7 +2,7 @@ package karakum.cesium
 
 // language=Kotlin
 private const val CODE: String = """
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface CameraOrientation

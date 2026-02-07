@@ -2,7 +2,7 @@
 
 package node.fs
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface ReadStreamOptions : StreamOptions {
     var fs: CreateReadStreamFSImplementation?
     var end: Double?

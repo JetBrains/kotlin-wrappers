@@ -5,8 +5,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.JsString

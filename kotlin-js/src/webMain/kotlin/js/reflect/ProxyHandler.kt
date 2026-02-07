@@ -2,9 +2,9 @@ package js.reflect
 
 import js.array.ReadonlyArray
 import js.function.JsFunction
-import js.objects.JsPlainObject
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 
 @JsPlainObject

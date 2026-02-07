@@ -1,6 +1,6 @@
 package web.dpip
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 import web.experimental.ExperimentalWebApi
 import web.window.Window

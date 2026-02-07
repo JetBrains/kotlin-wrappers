@@ -6,8 +6,8 @@ package cesium.engine
 
 import cesium.engine.Resource.Companion.options
 import js.buffer.ArrayBuffer
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.canvas.CanvasImageSource

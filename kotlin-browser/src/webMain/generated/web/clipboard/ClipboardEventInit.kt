@@ -2,7 +2,7 @@
 
 package web.clipboard
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.data.DataTransfer
 import web.events.EventInit
 

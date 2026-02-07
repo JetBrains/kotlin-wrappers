@@ -1,6 +1,6 @@
 package tanstack.router.core
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.url.URL
 
 @JsPlainObject

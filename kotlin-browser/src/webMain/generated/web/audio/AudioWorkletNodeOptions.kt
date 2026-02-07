@@ -5,8 +5,8 @@ package web.audio
 import js.array.ReadonlyArray
 import js.core.JsDouble
 import js.core.JsUInt
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 import kotlin.js.JsString
 

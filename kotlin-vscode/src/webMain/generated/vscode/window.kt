@@ -5,8 +5,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlinx.js.JsPlainObject
 import vscode.window.createStatusBarItem
 import kotlin.js.*
 

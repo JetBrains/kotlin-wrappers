@@ -1,7 +1,7 @@
 package tanstack.router.core
 
-import js.objects.JsPlainObject
 import js.promise.PromiseResult
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 sealed external interface FilebaseRouteOptions {

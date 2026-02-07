@@ -2,7 +2,7 @@
 
 package web.history
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 import kotlin.js.JsAny
 

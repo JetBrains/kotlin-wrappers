@@ -3,7 +3,7 @@
 package tanstack.query.core
 
 import js.core.Void
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface QueryObserverLoadingErrorResult<TData, TError> :

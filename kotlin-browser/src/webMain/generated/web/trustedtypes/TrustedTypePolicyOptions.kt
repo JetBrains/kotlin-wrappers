@@ -2,7 +2,7 @@
 
 package web.trustedtypes
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface TrustedTypePolicyOptions {

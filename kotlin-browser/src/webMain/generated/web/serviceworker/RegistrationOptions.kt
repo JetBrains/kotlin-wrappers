@@ -2,7 +2,7 @@
 
 package web.serviceworker
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.workers.WorkerType
 
 @JsPlainObject

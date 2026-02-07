@@ -1,8 +1,8 @@
 package tanstack.router.core
 
 import js.errors.JsErrorLike
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 import web.abort.AbortController
 import web.time.EpochTimeStamp
 

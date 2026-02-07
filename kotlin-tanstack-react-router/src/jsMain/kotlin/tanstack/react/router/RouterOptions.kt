@@ -1,7 +1,7 @@
 package tanstack.react.router
 
 import js.errors.JsError
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import react.ComponentType
 import react.ErrorInfo
 import react.PropsWithChildren

@@ -1,6 +1,6 @@
 package web.profiler
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
 import web.time.DOMHighResTimeStamp
 

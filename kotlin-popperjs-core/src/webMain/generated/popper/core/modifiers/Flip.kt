@@ -3,7 +3,7 @@
 package popper.core.modifiers
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import seskar.js.JsValue
 import kotlin.js.JsAny
 

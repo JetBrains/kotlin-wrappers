@@ -1,7 +1,7 @@
 package web.observable
 
 import js.errors.JsError
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.function.VoidFunction
 import kotlin.js.JsAny
 

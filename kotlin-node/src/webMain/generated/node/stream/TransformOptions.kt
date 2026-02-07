@@ -2,7 +2,7 @@
 
 package node.stream
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface TransformOptions<T : Transform /* default is Transform */> : DuplexOptions<T> {
     var transform: (
         (/* this: T, */ chunk: Any?, encoding: node.buffer.BufferEncoding, callback: TransformCallback) -> Unit

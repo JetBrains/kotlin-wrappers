@@ -4,7 +4,7 @@ package node.fs
 
 import web.abort.AbortSignal
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface StreamOptions {
     var flags: String?
     var encoding: node.buffer.BufferEncoding?

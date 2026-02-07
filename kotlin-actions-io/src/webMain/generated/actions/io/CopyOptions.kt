@@ -2,7 +2,7 @@
 
 package actions.io
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface CopyOptions {

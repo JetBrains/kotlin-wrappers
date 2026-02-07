@@ -3,7 +3,7 @@ package pako
 import js.array.ReadonlyArray
 import js.core.Int53
 import js.core.JsUShort
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Header {

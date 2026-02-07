@@ -2,7 +2,7 @@
 
 package web.navigation
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 import web.dom.Element
 import web.events.EventInit

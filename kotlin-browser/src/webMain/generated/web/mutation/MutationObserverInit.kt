@@ -3,7 +3,7 @@
 package web.mutation
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsString
 
 @JsPlainObject

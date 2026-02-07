@@ -1,6 +1,6 @@
 package react.dom
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.html.HtmlSource
 
 @JsPlainObject

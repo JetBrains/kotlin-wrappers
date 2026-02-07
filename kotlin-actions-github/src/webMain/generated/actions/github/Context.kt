@@ -4,7 +4,7 @@
 
 package actions.github
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 external class Context {
     /**

@@ -4,7 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.date.Date
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 
 /**

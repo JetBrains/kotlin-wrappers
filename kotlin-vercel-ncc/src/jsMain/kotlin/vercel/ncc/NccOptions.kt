@@ -1,7 +1,7 @@
 package vercel.ncc
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface NccOptions {

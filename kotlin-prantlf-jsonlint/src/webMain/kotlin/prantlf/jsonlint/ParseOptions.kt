@@ -1,7 +1,7 @@
 package prantlf.jsonlint
 
 import js.json.Reviver
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Options to customize JSON input parsing.

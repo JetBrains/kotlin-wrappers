@@ -3,7 +3,7 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface VisibilityInstance<TData : RowData> {

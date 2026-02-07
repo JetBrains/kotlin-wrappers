@@ -3,7 +3,7 @@
 package web.pointer
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.mouse.MouseEventInit
 
 /**

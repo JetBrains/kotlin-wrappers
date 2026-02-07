@@ -3,8 +3,8 @@
 package popper.core
 
 import js.array.ReadonlyArray
-import js.objects.JsPlainObject
 import js.objects.Record
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 import kotlin.js.JsString
 

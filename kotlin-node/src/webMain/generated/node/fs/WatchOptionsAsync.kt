@@ -2,7 +2,7 @@
 
 package node.fs
 
-@js.objects.JsPlainObject
+@kotlinx.js.JsPlainObject
 sealed external interface WatchOptions : _WatchOptions {
     var maxQueue: Double?
     var overflow: WatchOptionsOverflow?

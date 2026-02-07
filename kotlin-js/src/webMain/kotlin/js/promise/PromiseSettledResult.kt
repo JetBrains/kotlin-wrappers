@@ -1,7 +1,7 @@
 package js.promise
 
 import js.errors.toThrowable
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.contracts.contract
 import kotlin.js.JsAny
 

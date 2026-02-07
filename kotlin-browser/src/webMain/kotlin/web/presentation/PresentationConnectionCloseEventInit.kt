@@ -1,6 +1,6 @@
 package web.presentation
 
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import web.events.EventInit
 import web.experimental.ExperimentalWebApi
 

@@ -3,7 +3,7 @@
 package vscode
 
 import js.errors.JsError
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 
 /**

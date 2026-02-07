@@ -2,8 +2,8 @@
 
 package web.url
 
-import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 import kotlin.js.JsString
 
 @JsPlainObject

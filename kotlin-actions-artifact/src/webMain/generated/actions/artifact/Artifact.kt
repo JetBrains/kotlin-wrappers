@@ -3,7 +3,7 @@
 package actions.artifact
 
 import js.date.Date
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface Artifact {

@@ -1,7 +1,7 @@
 package tanstack.router.core
 
-import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlinx.js.JsPlainObject
 import web.abort.AbortController
 
 @JsPlainObject

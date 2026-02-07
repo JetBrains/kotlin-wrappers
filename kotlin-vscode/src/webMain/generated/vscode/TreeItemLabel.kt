@@ -5,7 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsInt
-import js.objects.JsPlainObject
+import kotlinx.js.JsPlainObject
 
 /**
  * Label describing the [Tree item][TreeItem]

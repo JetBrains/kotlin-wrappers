@@ -5,10 +5,11 @@ import karakum.common.writeCode
 import java.io.File
 
 private val DEFAULT_IMPORTS = listOf(
+    "kotlinx.js.JsPlainObject",
+
     "js.promise.Promise",
 
     "js.array.ReadonlyArray",
-    "js.objects.JsPlainObject",
     "js.collections.ReadonlyMap",
     "js.array.Tuple2",
     "js.array.Tuple4",
