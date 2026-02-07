@@ -1,4 +1,4 @@
-package testing.library.dom.karakum.plugins
+package testing.library.react.karakum.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
@@ -11,9 +11,12 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
 
         val typeName = node.typeName
         ensure(isIdentifier(typeName))
-        ensure(typeName.text == "Screen")
+        ensure(
+            typeName.text == "RenderOptions"
+                    || typeName.text == "RenderResult"
+        )
         ensure(node.typeArguments == null)
 
-        "${render(node.typeName)}<*>"
+        "${render(node.typeName)}<*, *>"
     }
 }
