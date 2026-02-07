@@ -1,3 +1,11 @@
+## 2026.2.5
+
+**BREAKING CHANGE**
+
+* `js.objects.JsPlainObject` removed
+    * Removed because typealiases for optional declarations aren't supported
+    * Replacement – `kotlinx.js.JsPlainObject`
+
 ## 2026.2.1
 
 **BREAKING CHANGE**
