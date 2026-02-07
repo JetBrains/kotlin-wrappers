@@ -2149,6 +2149,7 @@
     "XREye": "web.xr.XREye",
     "XRFrame": "web.xr.XRFrame",
     "XRFrameRequestCallback": "web.xr.XRFrameRequestCallback",
+    "XRFrameRequestId": "web.xr.XRFrameRequestId",
     "XRHand": "web.xr.XRHand",
     "XRHandJoint": "web.xr.XRHandJoint",
     "XRHandedness": "web.xr.XRHandedness",
