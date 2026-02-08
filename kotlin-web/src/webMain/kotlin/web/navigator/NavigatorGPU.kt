@@ -4,12 +4,12 @@
 
 package web.navigator
 
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import web.gpu.GPU
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface NavigatorGPU {
     /**
      * Available only in secure contexts.
