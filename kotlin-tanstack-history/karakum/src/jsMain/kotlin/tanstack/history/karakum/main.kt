@@ -1,4 +1,4 @@
-package karakum.tanstack.history
+package tanstack.history.karakum
 
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf

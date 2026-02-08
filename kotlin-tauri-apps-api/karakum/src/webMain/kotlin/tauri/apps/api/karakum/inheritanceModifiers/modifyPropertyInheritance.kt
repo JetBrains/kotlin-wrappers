@@ -1,4 +1,4 @@
-package karakum.tauri.apps.api.inheritanceModifiers
+package tauri.apps.api.karakum.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
