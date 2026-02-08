@@ -12,6 +12,3 @@ inline operator fun <T : Bitmask<T>> T.plus(other: T): T =
 
 inline operator fun <T : Bitmask<T>> T.contains(other: T): Boolean =
     unsafeBitwiseAnd(this, other) == other
-
-
-
