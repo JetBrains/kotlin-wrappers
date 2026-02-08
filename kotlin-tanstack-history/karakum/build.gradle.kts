@@ -72,7 +72,7 @@ fun addTempGenerationFixes() {
         addFix(jsoPath) {
             it.replaceFirst(
                 "\nexternal interface ",
-                "\nimport js.objects.JsPlainObject\n\n@JsPlainObject" +
+                "\nimport kotlinx.js.JsPlainObject\n\n@JsPlainObject" +
                         "\nexternal interface ",
             )
         }
