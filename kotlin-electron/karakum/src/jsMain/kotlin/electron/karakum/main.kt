@@ -7,6 +7,7 @@ import electron.karakum.inheritanceModifiers.modifyMethodInheritance
 import electron.karakum.inheritanceModifiers.modifyPropertyInheritance
 import electron.karakum.injections.BrowserEventInjection
 import electron.karakum.injections.EventInjection
+import electron.karakum.nameResolvers.resolveConfigVersionName
 import electron.karakum.nameResolvers.resolveDownloadItemListenerStateName
 import electron.karakum.nameResolvers.resolveInterfaceArrayFieldName
 import electron.karakum.nameResolvers.resolveInterfaceMethodNullableCallbackParameterName
@@ -44,6 +45,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::annotateJsPlainObject,
         )
         nameResolvers = manyOf(
+            ::resolveConfigVersionName,
             ::resolveDownloadItemListenerStateName,
             ::resolveInterfaceArrayFieldName,
             ::resolveInterfaceMethodNullableCallbackParameterName,
