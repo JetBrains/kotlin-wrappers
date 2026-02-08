@@ -150,6 +150,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::resolveMockTrackerMethodReturnTypeName,
             ::resolveParsedResultsPropertyName,
             ::resolvePerformanceObserverOptionsName,
+            ::resolveSecureVersionName,
             ::resolveV8OptionsName,
         )
         inheritanceModifiers = manyOf(
