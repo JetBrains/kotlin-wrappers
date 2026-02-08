@@ -2,11 +2,18 @@
 
 package web.workers
 
+import web.badge.NavigatorBadge
 import web.experimental.ExperimentalWebApi
+import web.gpu.NavigatorGPU
+import web.locks.NavigatorLocks
 import web.mediacapabilities.MediaCapabilities
-import web.navigator.*
+import web.navigator.NavigatorConcurrentHardware
+import web.navigator.NavigatorID
+import web.navigator.NavigatorLanguage
+import web.navigator.NavigatorOnLine
 import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
+import web.storage.NavigatorStorage
 import web.usb.USB
 
 /**

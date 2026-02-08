@@ -6,14 +6,17 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import web.badge.NavigatorBadge
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
 import web.experimental.ExperimentalWebApi
 import web.fedcm.NavigatorLogin
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
+import web.gpu.NavigatorGPU
 import web.http.BodyInit
 import web.keyboard.Keyboard
+import web.locks.NavigatorLocks
 import web.mediacapabilities.MediaCapabilities
 import web.mediadevices.MediaDevices
 import web.mediakey.MediaKeySystemAccess
@@ -25,6 +28,7 @@ import web.permissions.Permissions
 import web.presentation.Presentation
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
+import web.storage.NavigatorStorage
 import web.url.URL
 import web.usb.USB
 import web.useractivation.UserActivation

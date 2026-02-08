@@ -4,10 +4,9 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package web.navigator
+package web.locks
 
 import js.internal.InternalApi
-import web.storage.StorageManager
 import kotlin.js.definedExternally
 
 /**
@@ -15,10 +14,10 @@ import kotlin.js.definedExternally
  */
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
-external interface NavigatorStorage {
+external interface NavigatorLocks {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/storage)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/locks)
      */
-    val storage: StorageManager
+    val locks: LockManager
         get() = definedExternally
 }

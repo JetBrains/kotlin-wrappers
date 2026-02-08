@@ -2,10 +2,9 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package web.navigator
+package web.gpu
 
 import js.internal.InternalApi
-import web.gpu.GPU
 import kotlin.js.definedExternally
 
 /* mixin */

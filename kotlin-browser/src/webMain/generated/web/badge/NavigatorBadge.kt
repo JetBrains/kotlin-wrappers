@@ -4,7 +4,7 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package web.navigator
+package web.badge
 
 import js.core.UInt53
 import js.core.Void
