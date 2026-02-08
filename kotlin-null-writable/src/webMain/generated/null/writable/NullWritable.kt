@@ -2,7 +2,7 @@
 
 @file:JsModule("null-writable")
 
-package nullwritable
+package `null`.writable
 
 // unhandled import: Writable from "node:stream"
 import node.buffer.BufferEncoding

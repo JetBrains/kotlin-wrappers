@@ -1,4 +1,4 @@
-package nullwritable.karakum.inheritanceModifiers
+package `null`.writable.karakum.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext

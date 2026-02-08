@@ -1,12 +1,12 @@
-package nullwritable.karakum
+package `null`.writable.karakum
 
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
-import nullwritable.karakum.inheritanceModifiers.modifyMethodInheritance
-import nullwritable.karakum.plugins.convertChunksItem
-import nullwritable.karakum.plugins.convertParameterNames
+import `null`.writable.karakum.inheritanceModifiers.modifyMethodInheritance
+import `null`.writable.karakum.plugins.convertChunksItem
+import `null`.writable.karakum.plugins.convertParameterNames
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
@@ -24,10 +24,10 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         isolatedOutputPackage = true
         packageNameMapper = recordOf(
-            "^null/writable/lib/nullWritable" to "nullwritable/"
+            "lib/nullWritable/" to "/"
         )
         importInjector = recordOf(
-            "^nullwritable/NullWritable\\.kt$" to arrayOf(
+            "^null/writable/NullWritable\\.kt$" to arrayOf(
                 "node.buffer.BufferEncoding",
                 "node.stream.Writable",
             )

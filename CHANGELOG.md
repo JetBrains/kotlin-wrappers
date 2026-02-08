@@ -1,4 +1,8 @@
-## 2026.2.5
+## 2026.2.7
+
+**BREAKING CHANGE**
+
+* `nullwritable` package war renamed to `` `null`writable``
 
 **BREAKING CHANGE**
 
