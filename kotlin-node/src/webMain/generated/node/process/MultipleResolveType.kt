@@ -3,11 +3,11 @@
 package node.process
 
 sealed external interface MultipleResolveType {
-    companion object {
-        @seskar.js.JsValue("resolve")
-        val resolve: MultipleResolveType
-
-        @seskar.js.JsValue("reject")
-        val reject: MultipleResolveType
-    }
+    companion object
 }
+
+inline val MultipleResolveType.Companion.resolve: MultipleResolveType
+    get() = js.reflect.unsafeCast("resolve")
+
+inline val MultipleResolveType.Companion.reject: MultipleResolveType
+    get() = js.reflect.unsafeCast("reject")

@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface TitleOptionsFontType {
-    companion object {
-        @seskar.js.JsValue("monospaced")
-        val monospaced: TitleOptionsFontType
-
-        @seskar.js.JsValue("monospacedDigit")
-        val monospacedDigit: TitleOptionsFontType
-    }
+    companion object
 }
+
+inline val TitleOptionsFontType.Companion.monospaced: TitleOptionsFontType
+    get() = js.reflect.unsafeCast("monospaced")
+
+inline val TitleOptionsFontType.Companion.monospacedDigit: TitleOptionsFontType
+    get() = js.reflect.unsafeCast("monospacedDigit")

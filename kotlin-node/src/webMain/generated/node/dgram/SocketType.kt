@@ -3,11 +3,11 @@
 package node.dgram
 
 sealed external interface SocketType {
-    companion object {
-        @seskar.js.JsValue("udp4")
-        val udp4: SocketType
-
-        @seskar.js.JsValue("udp6")
-        val udp6: SocketType
-    }
+    companion object
 }
+
+inline val SocketType.Companion.udp4: SocketType
+    get() = js.reflect.unsafeCast("udp4")
+
+inline val SocketType.Companion.udp6: SocketType
+    get() = js.reflect.unsafeCast("udp6")

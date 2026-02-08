@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface ResolvedEndpointFamily {
-    companion object {
-        @seskar.js.JsValue("ipv4")
-        val ipv4: ResolvedEndpointFamily
-
-        @seskar.js.JsValue("ipv6")
-        val ipv6: ResolvedEndpointFamily
-
-        @seskar.js.JsValue("unspec")
-        val unspec: ResolvedEndpointFamily
-    }
+    companion object
 }
+
+inline val ResolvedEndpointFamily.Companion.ipv4: ResolvedEndpointFamily
+    get() = js.reflect.unsafeCast("ipv4")
+
+inline val ResolvedEndpointFamily.Companion.ipv6: ResolvedEndpointFamily
+    get() = js.reflect.unsafeCast("ipv6")
+
+inline val ResolvedEndpointFamily.Companion.unspec: ResolvedEndpointFamily
+    get() = js.reflect.unsafeCast("unspec")

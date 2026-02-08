@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface TextureInfoWidgetType {
-    companion object {
-        @seskar.js.JsValue("popup")
-        val popup: TextureInfoWidgetType
-
-        @seskar.js.JsValue("frame")
-        val frame: TextureInfoWidgetType
-    }
+    companion object
 }
+
+inline val TextureInfoWidgetType.Companion.popup: TextureInfoWidgetType
+    get() = js.reflect.unsafeCast("popup")
+
+inline val TextureInfoWidgetType.Companion.frame: TextureInfoWidgetType
+    get() = js.reflect.unsafeCast("frame")

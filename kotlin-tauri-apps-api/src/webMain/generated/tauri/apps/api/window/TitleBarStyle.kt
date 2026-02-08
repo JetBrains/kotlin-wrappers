@@ -3,14 +3,14 @@
 package tauri.apps.api.window
 
 sealed external interface TitleBarStyle {
-    companion object {
-        @seskar.js.JsValue("visible")
-        val visible: TitleBarStyle
-
-        @seskar.js.JsValue("transparent")
-        val transparent: TitleBarStyle
-
-        @seskar.js.JsValue("overlay")
-        val overlay: TitleBarStyle
-    }
+    companion object
 }
+
+inline val TitleBarStyle.Companion.visible: TitleBarStyle
+    get() = js.reflect.unsafeCast("visible")
+
+inline val TitleBarStyle.Companion.transparent: TitleBarStyle
+    get() = js.reflect.unsafeCast("transparent")
+
+inline val TitleBarStyle.Companion.overlay: TitleBarStyle
+    get() = js.reflect.unsafeCast("overlay")

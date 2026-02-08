@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface ClipboardClearType {
-    companion object {
-        @seskar.js.JsValue("selection")
-        val selection: ClipboardClearType
-
-        @seskar.js.JsValue("clipboard")
-        val clipboard: ClipboardClearType
-    }
+    companion object
 }
+
+inline val ClipboardClearType.Companion.selection: ClipboardClearType
+    get() = js.reflect.unsafeCast("selection")
+
+inline val ClipboardClearType.Companion.clipboard: ClipboardClearType
+    get() = js.reflect.unsafeCast("clipboard")

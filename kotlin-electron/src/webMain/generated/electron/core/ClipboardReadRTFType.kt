@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface ClipboardReadRTFType {
-    companion object {
-        @seskar.js.JsValue("selection")
-        val selection: ClipboardReadRTFType
-
-        @seskar.js.JsValue("clipboard")
-        val clipboard: ClipboardReadRTFType
-    }
+    companion object
 }
+
+inline val ClipboardReadRTFType.Companion.selection: ClipboardReadRTFType
+    get() = js.reflect.unsafeCast("selection")
+
+inline val ClipboardReadRTFType.Companion.clipboard: ClipboardReadRTFType
+    get() = js.reflect.unsafeCast("clipboard")

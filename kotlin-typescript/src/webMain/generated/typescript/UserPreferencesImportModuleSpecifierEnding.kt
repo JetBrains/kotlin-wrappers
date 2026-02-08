@@ -3,17 +3,17 @@
 package typescript
 
 sealed external interface UserPreferencesImportModuleSpecifierEnding {
-    companion object {
-        @seskar.js.JsValue("auto")
-        val auto: UserPreferencesImportModuleSpecifierEnding
-
-        @seskar.js.JsValue("minimal")
-        val minimal: UserPreferencesImportModuleSpecifierEnding
-
-        @seskar.js.JsValue("index")
-        val index: UserPreferencesImportModuleSpecifierEnding
-
-        @seskar.js.JsValue("js")
-        val js: UserPreferencesImportModuleSpecifierEnding
-    }
+    companion object
 }
+
+inline val UserPreferencesImportModuleSpecifierEnding.Companion.auto: UserPreferencesImportModuleSpecifierEnding
+    get() = js.reflect.unsafeCast("auto")
+
+inline val UserPreferencesImportModuleSpecifierEnding.Companion.minimal: UserPreferencesImportModuleSpecifierEnding
+    get() = js.reflect.unsafeCast("minimal")
+
+inline val UserPreferencesImportModuleSpecifierEnding.Companion.index: UserPreferencesImportModuleSpecifierEnding
+    get() = js.reflect.unsafeCast("index")
+
+inline val UserPreferencesImportModuleSpecifierEnding.Companion.JS: UserPreferencesImportModuleSpecifierEnding
+    get() = js.reflect.unsafeCast("js")

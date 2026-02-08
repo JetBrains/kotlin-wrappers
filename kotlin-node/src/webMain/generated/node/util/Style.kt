@@ -3,38 +3,38 @@
 package node.util
 
 sealed external interface Style {
-    companion object {
-        @seskar.js.JsValue("special")
-        val special: Style
-
-        @seskar.js.JsValue("number")
-        val number: Style
-
-        @seskar.js.JsValue("bigint")
-        val bigint: Style
-
-        @seskar.js.JsValue("boolean")
-        val boolean: Style
-
-        @seskar.js.JsValue("undefined")
-        val undefined: Style
-
-        @seskar.js.JsValue("null")
-        val `null`: Style
-
-        @seskar.js.JsValue("string")
-        val string: Style
-
-        @seskar.js.JsValue("symbol")
-        val symbol: Style
-
-        @seskar.js.JsValue("date")
-        val date: Style
-
-        @seskar.js.JsValue("regexp")
-        val regexp: Style
-
-        @seskar.js.JsValue("module")
-        val module: Style
-    }
+    companion object
 }
+
+inline val Style.Companion.special: Style
+    get() = js.reflect.unsafeCast("special")
+
+inline val Style.Companion.number: Style
+    get() = js.reflect.unsafeCast("number")
+
+inline val Style.Companion.bigint: Style
+    get() = js.reflect.unsafeCast("bigint")
+
+inline val Style.Companion.boolean: Style
+    get() = js.reflect.unsafeCast("boolean")
+
+inline val Style.Companion.undefined: Style
+    get() = js.reflect.unsafeCast("undefined")
+
+inline val Style.Companion.`null`: Style
+    get() = js.reflect.unsafeCast("null")
+
+inline val Style.Companion.string: Style
+    get() = js.reflect.unsafeCast("string")
+
+inline val Style.Companion.symbol: Style
+    get() = js.reflect.unsafeCast("symbol")
+
+inline val Style.Companion.date: Style
+    get() = js.reflect.unsafeCast("date")
+
+inline val Style.Companion.regexp: Style
+    get() = js.reflect.unsafeCast("regexp")
+
+inline val Style.Companion.module: Style
+    get() = js.reflect.unsafeCast("module")

@@ -3,11 +3,11 @@
 package node.crypto
 
 sealed external interface ECKeyPairOptionsPublicKeyEncodingType {
-    companion object {
-        @seskar.js.JsValue("pkcs1")
-        val pkcs1: ECKeyPairOptionsPublicKeyEncodingType
-
-        @seskar.js.JsValue("spki")
-        val spki: ECKeyPairOptionsPublicKeyEncodingType
-    }
+    companion object
 }
+
+inline val ECKeyPairOptionsPublicKeyEncodingType.Companion.pkcs1: ECKeyPairOptionsPublicKeyEncodingType
+    get() = js.reflect.unsafeCast("pkcs1")
+
+inline val ECKeyPairOptionsPublicKeyEncodingType.Companion.spki: ECKeyPairOptionsPublicKeyEncodingType
+    get() = js.reflect.unsafeCast("spki")

@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface MouseInputEventButton {
-    companion object {
-        @seskar.js.JsValue("left")
-        val left: MouseInputEventButton
-
-        @seskar.js.JsValue("middle")
-        val middle: MouseInputEventButton
-
-        @seskar.js.JsValue("right")
-        val right: MouseInputEventButton
-    }
+    companion object
 }
+
+inline val MouseInputEventButton.Companion.left: MouseInputEventButton
+    get() = js.reflect.unsafeCast("left")
+
+inline val MouseInputEventButton.Companion.middle: MouseInputEventButton
+    get() = js.reflect.unsafeCast("middle")
+
+inline val MouseInputEventButton.Companion.right: MouseInputEventButton
+    get() = js.reflect.unsafeCast("right")

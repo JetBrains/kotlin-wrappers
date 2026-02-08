@@ -3,14 +3,14 @@
 package node
 
 sealed external interface GCOptionsType {
-    companion object {
-        @seskar.js.JsValue("major-snapshot")
-        val majorSnapshot: GCOptionsType
-
-        @seskar.js.JsValue("major")
-        val major: GCOptionsType
-
-        @seskar.js.JsValue("minor")
-        val minor: GCOptionsType
-    }
+    companion object
 }
+
+inline val GCOptionsType.Companion.majorSnapshot: GCOptionsType
+    get() = js.reflect.unsafeCast("major-snapshot")
+
+inline val GCOptionsType.Companion.major: GCOptionsType
+    get() = js.reflect.unsafeCast("major")
+
+inline val GCOptionsType.Companion.minor: GCOptionsType
+    get() = js.reflect.unsafeCast("minor")

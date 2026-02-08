@@ -3,11 +3,11 @@
 package node.dgram
 
 sealed external interface RemoteInfoFamily {
-    companion object {
-        @seskar.js.JsValue("IPv4")
-        val IPv4: RemoteInfoFamily
-
-        @seskar.js.JsValue("IPv6")
-        val IPv6: RemoteInfoFamily
-    }
+    companion object
 }
+
+inline val RemoteInfoFamily.Companion.IPv4: RemoteInfoFamily
+    get() = js.reflect.unsafeCast("IPv4")
+
+inline val RemoteInfoFamily.Companion.IPv6: RemoteInfoFamily
+    get() = js.reflect.unsafeCast("IPv6")

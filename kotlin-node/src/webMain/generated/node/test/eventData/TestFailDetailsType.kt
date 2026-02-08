@@ -3,11 +3,11 @@
 package node.test.eventData
 
 sealed external interface TestFailDetailsType {
-    companion object {
-        @seskar.js.JsValue("suite")
-        val suite: TestFailDetailsType
-
-        @seskar.js.JsValue("test")
-        val test: TestFailDetailsType
-    }
+    companion object
 }
+
+inline val TestFailDetailsType.Companion.suite: TestFailDetailsType
+    get() = js.reflect.unsafeCast("suite")
+
+inline val TestFailDetailsType.Companion.test: TestFailDetailsType
+    get() = js.reflect.unsafeCast("test")

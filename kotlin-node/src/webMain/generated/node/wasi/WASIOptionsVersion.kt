@@ -3,11 +3,11 @@
 package node.wasi
 
 sealed external interface WASIOptionsVersion {
-    companion object {
-        @seskar.js.JsValue("unstable")
-        val unstable: WASIOptionsVersion
-
-        @seskar.js.JsValue("preview1")
-        val preview1: WASIOptionsVersion
-    }
+    companion object
 }
+
+inline val WASIOptionsVersion.Companion.unstable: WASIOptionsVersion
+    get() = js.reflect.unsafeCast("unstable")
+
+inline val WASIOptionsVersion.Companion.preview1: WASIOptionsVersion
+    get() = js.reflect.unsafeCast("preview1")

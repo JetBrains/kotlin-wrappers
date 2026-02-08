@@ -3,44 +3,44 @@
 package electron.core
 
 sealed external interface OnSendHeadersListenerDetailsResourceType {
-    companion object {
-        @seskar.js.JsValue("mainFrame")
-        val mainFrame: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("subFrame")
-        val subFrame: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("stylesheet")
-        val stylesheet: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("script")
-        val script: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("image")
-        val image: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("font")
-        val font: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("object")
-        val `object`: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("xhr")
-        val xhr: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("ping")
-        val ping: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("cspReport")
-        val cspReport: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("media")
-        val media: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("webSocket")
-        val webSocket: OnSendHeadersListenerDetailsResourceType
-
-        @seskar.js.JsValue("other")
-        val other: OnSendHeadersListenerDetailsResourceType
-    }
+    companion object
 }
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.mainFrame: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("mainFrame")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.subFrame: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("subFrame")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.stylesheet: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("stylesheet")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.script: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("script")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.image: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("image")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.font: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("font")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.`object`: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("object")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.xhr: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("xhr")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.ping: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("ping")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.cspReport: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("cspReport")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.media: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("media")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.webSocket: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("webSocket")
+
+inline val OnSendHeadersListenerDetailsResourceType.Companion.other: OnSendHeadersListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("other")

@@ -3,23 +3,23 @@
 package electron.core
 
 sealed external interface ClientRequestConstructorOptionsPriority {
-    companion object {
-        @seskar.js.JsValue("throttled")
-        val throttled: ClientRequestConstructorOptionsPriority
-
-        @seskar.js.JsValue("idle")
-        val idle: ClientRequestConstructorOptionsPriority
-
-        @seskar.js.JsValue("lowest")
-        val lowest: ClientRequestConstructorOptionsPriority
-
-        @seskar.js.JsValue("low")
-        val low: ClientRequestConstructorOptionsPriority
-
-        @seskar.js.JsValue("medium")
-        val medium: ClientRequestConstructorOptionsPriority
-
-        @seskar.js.JsValue("highest")
-        val highest: ClientRequestConstructorOptionsPriority
-    }
+    companion object
 }
+
+inline val ClientRequestConstructorOptionsPriority.Companion.throttled: ClientRequestConstructorOptionsPriority
+    get() = js.reflect.unsafeCast("throttled")
+
+inline val ClientRequestConstructorOptionsPriority.Companion.idle: ClientRequestConstructorOptionsPriority
+    get() = js.reflect.unsafeCast("idle")
+
+inline val ClientRequestConstructorOptionsPriority.Companion.lowest: ClientRequestConstructorOptionsPriority
+    get() = js.reflect.unsafeCast("lowest")
+
+inline val ClientRequestConstructorOptionsPriority.Companion.low: ClientRequestConstructorOptionsPriority
+    get() = js.reflect.unsafeCast("low")
+
+inline val ClientRequestConstructorOptionsPriority.Companion.medium: ClientRequestConstructorOptionsPriority
+    get() = js.reflect.unsafeCast("medium")
+
+inline val ClientRequestConstructorOptionsPriority.Companion.highest: ClientRequestConstructorOptionsPriority
+    get() = js.reflect.unsafeCast("highest")

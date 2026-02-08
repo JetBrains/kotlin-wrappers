@@ -3,11 +3,11 @@
 package node.crypto
 
 sealed external interface PublicKeyInputType {
-    companion object {
-        @seskar.js.JsValue("pkcs1")
-        val pkcs1: PublicKeyInputType
-
-        @seskar.js.JsValue("spki")
-        val spki: PublicKeyInputType
-    }
+    companion object
 }
+
+inline val PublicKeyInputType.Companion.pkcs1: PublicKeyInputType
+    get() = js.reflect.unsafeCast("pkcs1")
+
+inline val PublicKeyInputType.Companion.spki: PublicKeyInputType
+    get() = js.reflect.unsafeCast("spki")

@@ -3,11 +3,11 @@
 package node.workerThreads
 
 sealed external interface LockMode {
-    companion object {
-        @seskar.js.JsValue("exclusive")
-        val exclusive: LockMode
-
-        @seskar.js.JsValue("shared")
-        val shared: LockMode
-    }
+    companion object
 }
+
+inline val LockMode.Companion.exclusive: LockMode
+    get() = js.reflect.unsafeCast("exclusive")
+
+inline val LockMode.Companion.shared: LockMode
+    get() = js.reflect.unsafeCast("shared")

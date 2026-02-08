@@ -3,17 +3,17 @@
 package node.crypto
 
 sealed external interface KeyExportOptionsType {
-    companion object {
-        @seskar.js.JsValue("pkcs1")
-        val pkcs1: KeyExportOptionsType
-
-        @seskar.js.JsValue("spki")
-        val spki: KeyExportOptionsType
-
-        @seskar.js.JsValue("pkcs8")
-        val pkcs8: KeyExportOptionsType
-
-        @seskar.js.JsValue("sec1")
-        val sec1: KeyExportOptionsType
-    }
+    companion object
 }
+
+inline val KeyExportOptionsType.Companion.pkcs1: KeyExportOptionsType
+    get() = js.reflect.unsafeCast("pkcs1")
+
+inline val KeyExportOptionsType.Companion.spki: KeyExportOptionsType
+    get() = js.reflect.unsafeCast("spki")
+
+inline val KeyExportOptionsType.Companion.pkcs8: KeyExportOptionsType
+    get() = js.reflect.unsafeCast("pkcs8")
+
+inline val KeyExportOptionsType.Companion.sec1: KeyExportOptionsType
+    get() = js.reflect.unsafeCast("sec1")

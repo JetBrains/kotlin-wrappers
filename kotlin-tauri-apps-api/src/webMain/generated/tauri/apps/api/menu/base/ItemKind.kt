@@ -3,23 +3,23 @@
 package tauri.apps.api.menu.base
 
 sealed external interface ItemKind {
-    companion object {
-        @seskar.js.JsValue("MenuItem")
-        val MenuItem: ItemKind
-
-        @seskar.js.JsValue("Predefined")
-        val Predefined: ItemKind
-
-        @seskar.js.JsValue("Check")
-        val Check: ItemKind
-
-        @seskar.js.JsValue("Icon")
-        val Icon: ItemKind
-
-        @seskar.js.JsValue("Submenu")
-        val Submenu: ItemKind
-
-        @seskar.js.JsValue("Menu")
-        val Menu: ItemKind
-    }
+    companion object
 }
+
+inline val ItemKind.Companion.MenuItem: ItemKind
+    get() = js.reflect.unsafeCast("MenuItem")
+
+inline val ItemKind.Companion.Predefined: ItemKind
+    get() = js.reflect.unsafeCast("Predefined")
+
+inline val ItemKind.Companion.Check: ItemKind
+    get() = js.reflect.unsafeCast("Check")
+
+inline val ItemKind.Companion.Icon: ItemKind
+    get() = js.reflect.unsafeCast("Icon")
+
+inline val ItemKind.Companion.Submenu: ItemKind
+    get() = js.reflect.unsafeCast("Submenu")
+
+inline val ItemKind.Companion.Menu: ItemKind
+    get() = js.reflect.unsafeCast("Menu")

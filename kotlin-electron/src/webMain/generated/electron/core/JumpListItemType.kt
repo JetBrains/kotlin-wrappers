@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface JumpListItemType {
-    companion object {
-        @seskar.js.JsValue("task")
-        val task: JumpListItemType
-
-        @seskar.js.JsValue("separator")
-        val separator: JumpListItemType
-
-        @seskar.js.JsValue("file")
-        val file: JumpListItemType
-    }
+    companion object
 }
+
+inline val JumpListItemType.Companion.task: JumpListItemType
+    get() = js.reflect.unsafeCast("task")
+
+inline val JumpListItemType.Companion.separator: JumpListItemType
+    get() = js.reflect.unsafeCast("separator")
+
+inline val JumpListItemType.Companion.file: JumpListItemType
+    get() = js.reflect.unsafeCast("file")

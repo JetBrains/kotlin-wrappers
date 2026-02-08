@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface ServiceWorkersRunningStatusChangedEventParamsRunningStatus {
-    companion object {
-        @seskar.js.JsValue("starting")
-        val starting: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
-
-        @seskar.js.JsValue("running")
-        val running: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
-
-        @seskar.js.JsValue("stopping")
-        val stopping: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
-
-        @seskar.js.JsValue("stopped")
-        val stopped: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
-    }
+    companion object
 }
+
+inline val ServiceWorkersRunningStatusChangedEventParamsRunningStatus.Companion.starting: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
+    get() = js.reflect.unsafeCast("starting")
+
+inline val ServiceWorkersRunningStatusChangedEventParamsRunningStatus.Companion.running: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
+    get() = js.reflect.unsafeCast("running")
+
+inline val ServiceWorkersRunningStatusChangedEventParamsRunningStatus.Companion.stopping: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
+    get() = js.reflect.unsafeCast("stopping")
+
+inline val ServiceWorkersRunningStatusChangedEventParamsRunningStatus.Companion.stopped: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
+    get() = js.reflect.unsafeCast("stopped")

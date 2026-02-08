@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface SystemPreferencesAskForMediaAccessMediaType {
-    companion object {
-        @seskar.js.JsValue("microphone")
-        val microphone: SystemPreferencesAskForMediaAccessMediaType
-
-        @seskar.js.JsValue("camera")
-        val camera: SystemPreferencesAskForMediaAccessMediaType
-    }
+    companion object
 }
+
+inline val SystemPreferencesAskForMediaAccessMediaType.Companion.microphone: SystemPreferencesAskForMediaAccessMediaType
+    get() = js.reflect.unsafeCast("microphone")
+
+inline val SystemPreferencesAskForMediaAccessMediaType.Companion.camera: SystemPreferencesAskForMediaAccessMediaType
+    get() = js.reflect.unsafeCast("camera")

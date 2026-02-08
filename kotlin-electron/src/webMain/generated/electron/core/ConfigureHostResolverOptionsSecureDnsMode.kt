@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface ConfigureHostResolverOptionsSecureDnsMode {
-    companion object {
-        @seskar.js.JsValue("off")
-        val off: ConfigureHostResolverOptionsSecureDnsMode
-
-        @seskar.js.JsValue("automatic")
-        val automatic: ConfigureHostResolverOptionsSecureDnsMode
-
-        @seskar.js.JsValue("secure")
-        val secure: ConfigureHostResolverOptionsSecureDnsMode
-    }
+    companion object
 }
+
+inline val ConfigureHostResolverOptionsSecureDnsMode.Companion.off: ConfigureHostResolverOptionsSecureDnsMode
+    get() = js.reflect.unsafeCast("off")
+
+inline val ConfigureHostResolverOptionsSecureDnsMode.Companion.automatic: ConfigureHostResolverOptionsSecureDnsMode
+    get() = js.reflect.unsafeCast("automatic")
+
+inline val ConfigureHostResolverOptionsSecureDnsMode.Companion.secure: ConfigureHostResolverOptionsSecureDnsMode
+    get() = js.reflect.unsafeCast("secure")

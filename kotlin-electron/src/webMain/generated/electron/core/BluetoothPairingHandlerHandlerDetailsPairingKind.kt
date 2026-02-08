@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface BluetoothPairingHandlerHandlerDetailsPairingKind {
-    companion object {
-        @seskar.js.JsValue("confirm")
-        val confirm: BluetoothPairingHandlerHandlerDetailsPairingKind
-
-        @seskar.js.JsValue("confirmPin")
-        val confirmPin: BluetoothPairingHandlerHandlerDetailsPairingKind
-
-        @seskar.js.JsValue("providePin")
-        val providePin: BluetoothPairingHandlerHandlerDetailsPairingKind
-    }
+    companion object
 }
+
+inline val BluetoothPairingHandlerHandlerDetailsPairingKind.Companion.confirm: BluetoothPairingHandlerHandlerDetailsPairingKind
+    get() = js.reflect.unsafeCast("confirm")
+
+inline val BluetoothPairingHandlerHandlerDetailsPairingKind.Companion.confirmPin: BluetoothPairingHandlerHandlerDetailsPairingKind
+    get() = js.reflect.unsafeCast("confirmPin")
+
+inline val BluetoothPairingHandlerHandlerDetailsPairingKind.Companion.providePin: BluetoothPairingHandlerHandlerDetailsPairingKind
+    get() = js.reflect.unsafeCast("providePin")

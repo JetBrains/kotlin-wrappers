@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface DownloadItemUpdatedListenerState {
-    companion object {
-        @seskar.js.JsValue("progressing")
-        val progressing: DownloadItemUpdatedListenerState
-
-        @seskar.js.JsValue("interrupted")
-        val interrupted: DownloadItemUpdatedListenerState
-    }
+    companion object
 }
+
+inline val DownloadItemUpdatedListenerState.Companion.progressing: DownloadItemUpdatedListenerState
+    get() = js.reflect.unsafeCast("progressing")
+
+inline val DownloadItemUpdatedListenerState.Companion.interrupted: DownloadItemUpdatedListenerState
+    get() = js.reflect.unsafeCast("interrupted")

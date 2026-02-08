@@ -3,11 +3,11 @@
 package node.crypto
 
 sealed external interface RSAKeyPairOptionsPrivateKeyEncodingType {
-    companion object {
-        @seskar.js.JsValue("pkcs1")
-        val pkcs1: RSAKeyPairOptionsPrivateKeyEncodingType
-
-        @seskar.js.JsValue("pkcs8")
-        val pkcs8: RSAKeyPairOptionsPrivateKeyEncodingType
-    }
+    companion object
 }
+
+inline val RSAKeyPairOptionsPrivateKeyEncodingType.Companion.pkcs1: RSAKeyPairOptionsPrivateKeyEncodingType
+    get() = js.reflect.unsafeCast("pkcs1")
+
+inline val RSAKeyPairOptionsPrivateKeyEncodingType.Companion.pkcs8: RSAKeyPairOptionsPrivateKeyEncodingType
+    get() = js.reflect.unsafeCast("pkcs8")

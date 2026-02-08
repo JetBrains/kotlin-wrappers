@@ -3,11 +3,11 @@
 package node.cluster
 
 sealed external interface SerializationType {
-    companion object {
-        @seskar.js.JsValue("json")
-        val json: SerializationType
-
-        @seskar.js.JsValue("advanced")
-        val advanced: SerializationType
-    }
+    companion object
 }
+
+inline val SerializationType.Companion.json: SerializationType
+    get() = js.reflect.unsafeCast("json")
+
+inline val SerializationType.Companion.advanced: SerializationType
+    get() = js.reflect.unsafeCast("advanced")

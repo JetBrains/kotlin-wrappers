@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface BaseWindowConstructorOptionsBackgroundMaterial {
-    companion object {
-        @seskar.js.JsValue("auto")
-        val auto: BaseWindowConstructorOptionsBackgroundMaterial
-
-        @seskar.js.JsValue("none")
-        val none: BaseWindowConstructorOptionsBackgroundMaterial
-
-        @seskar.js.JsValue("mica")
-        val mica: BaseWindowConstructorOptionsBackgroundMaterial
-
-        @seskar.js.JsValue("acrylic")
-        val acrylic: BaseWindowConstructorOptionsBackgroundMaterial
-
-        @seskar.js.JsValue("tabbed")
-        val tabbed: BaseWindowConstructorOptionsBackgroundMaterial
-    }
+    companion object
 }
+
+inline val BaseWindowConstructorOptionsBackgroundMaterial.Companion.auto: BaseWindowConstructorOptionsBackgroundMaterial
+    get() = js.reflect.unsafeCast("auto")
+
+inline val BaseWindowConstructorOptionsBackgroundMaterial.Companion.none: BaseWindowConstructorOptionsBackgroundMaterial
+    get() = js.reflect.unsafeCast("none")
+
+inline val BaseWindowConstructorOptionsBackgroundMaterial.Companion.mica: BaseWindowConstructorOptionsBackgroundMaterial
+    get() = js.reflect.unsafeCast("mica")
+
+inline val BaseWindowConstructorOptionsBackgroundMaterial.Companion.acrylic: BaseWindowConstructorOptionsBackgroundMaterial
+    get() = js.reflect.unsafeCast("acrylic")
+
+inline val BaseWindowConstructorOptionsBackgroundMaterial.Companion.tabbed: BaseWindowConstructorOptionsBackgroundMaterial
+    get() = js.reflect.unsafeCast("tabbed")

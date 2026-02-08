@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface PermissionCheckHandlerHandlerDetailsFileAccessType {
-    companion object {
-        @seskar.js.JsValue("writable")
-        val writable: PermissionCheckHandlerHandlerDetailsFileAccessType
-
-        @seskar.js.JsValue("readable")
-        val readable: PermissionCheckHandlerHandlerDetailsFileAccessType
-    }
+    companion object
 }
+
+inline val PermissionCheckHandlerHandlerDetailsFileAccessType.Companion.writable: PermissionCheckHandlerHandlerDetailsFileAccessType
+    get() = js.reflect.unsafeCast("writable")
+
+inline val PermissionCheckHandlerHandlerDetailsFileAccessType.Companion.readable: PermissionCheckHandlerHandlerDetailsFileAccessType
+    get() = js.reflect.unsafeCast("readable")

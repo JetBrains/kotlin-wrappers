@@ -3,32 +3,32 @@
 package electron.core
 
 sealed external interface BrowserWindowSetAlwaysOnTopLevel {
-    companion object {
-        @seskar.js.JsValue("normal")
-        val normal: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("floating")
-        val floating: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("torn-off-menu")
-        val tornOffMenu: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("modal-panel")
-        val modalPanel: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("main-menu")
-        val mainMenu: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("status")
-        val status: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("pop-up-menu")
-        val popUpMenu: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("screen-saver")
-        val screenSaver: BrowserWindowSetAlwaysOnTopLevel
-
-        @seskar.js.JsValue("dock")
-        val dock: BrowserWindowSetAlwaysOnTopLevel
-    }
+    companion object
 }
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.normal: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("normal")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.floating: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("floating")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.tornOffMenu: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("torn-off-menu")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.modalPanel: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("modal-panel")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.mainMenu: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("main-menu")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.status: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("status")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.popUpMenu: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("pop-up-menu")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.screenSaver: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("screen-saver")
+
+inline val BrowserWindowSetAlwaysOnTopLevel.Companion.dock: BrowserWindowSetAlwaysOnTopLevel
+    get() = js.reflect.unsafeCast("dock")

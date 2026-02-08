@@ -3,35 +3,35 @@
 package node.perfHooks
 
 sealed external interface EntryType {
-    companion object {
-        @seskar.js.JsValue("dns")
-        val dns: EntryType
-
-        @seskar.js.JsValue("function")
-        val function: EntryType
-
-        @seskar.js.JsValue("gc")
-        val gc: EntryType
-
-        @seskar.js.JsValue("http2")
-        val http2: EntryType
-
-        @seskar.js.JsValue("http")
-        val http: EntryType
-
-        @seskar.js.JsValue("mark")
-        val mark: EntryType
-
-        @seskar.js.JsValue("measure")
-        val measure: EntryType
-
-        @seskar.js.JsValue("net")
-        val net: EntryType
-
-        @seskar.js.JsValue("node")
-        val node: EntryType
-
-        @seskar.js.JsValue("resource")
-        val resource: EntryType
-    }
+    companion object
 } // available on the Web
+
+inline val EntryType.Companion.dns: EntryType
+    get() = js.reflect.unsafeCast("dns")
+
+inline val EntryType.Companion.function: EntryType
+    get() = js.reflect.unsafeCast("function")
+
+inline val EntryType.Companion.gc: EntryType
+    get() = js.reflect.unsafeCast("gc")
+
+inline val EntryType.Companion.http2: EntryType
+    get() = js.reflect.unsafeCast("http2")
+
+inline val EntryType.Companion.http: EntryType
+    get() = js.reflect.unsafeCast("http")
+
+inline val EntryType.Companion.mark: EntryType
+    get() = js.reflect.unsafeCast("mark")
+
+inline val EntryType.Companion.measure: EntryType
+    get() = js.reflect.unsafeCast("measure")
+
+inline val EntryType.Companion.net: EntryType
+    get() = js.reflect.unsafeCast("net")
+
+inline val EntryType.Companion.node: EntryType
+    get() = js.reflect.unsafeCast("node")
+
+inline val EntryType.Companion.resource: EntryType
+    get() = js.reflect.unsafeCast("resource")

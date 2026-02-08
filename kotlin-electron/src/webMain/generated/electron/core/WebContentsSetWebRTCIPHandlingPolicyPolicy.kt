@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface WebContentsSetWebRTCIPHandlingPolicyPolicy {
-    companion object {
-        @seskar.js.JsValue("default")
-        val default: WebContentsSetWebRTCIPHandlingPolicyPolicy
-
-        @seskar.js.JsValue("default_public_interface_only")
-        val default_public_interface_only: WebContentsSetWebRTCIPHandlingPolicyPolicy
-
-        @seskar.js.JsValue("default_public_and_private_interfaces")
-        val default_public_and_private_interfaces: WebContentsSetWebRTCIPHandlingPolicyPolicy
-
-        @seskar.js.JsValue("disable_non_proxied_udp")
-        val disable_non_proxied_udp: WebContentsSetWebRTCIPHandlingPolicyPolicy
-    }
+    companion object
 }
+
+inline val WebContentsSetWebRTCIPHandlingPolicyPolicy.Companion.default: WebContentsSetWebRTCIPHandlingPolicyPolicy
+    get() = js.reflect.unsafeCast("default")
+
+inline val WebContentsSetWebRTCIPHandlingPolicyPolicy.Companion.default_public_interface_only: WebContentsSetWebRTCIPHandlingPolicyPolicy
+    get() = js.reflect.unsafeCast("default_public_interface_only")
+
+inline val WebContentsSetWebRTCIPHandlingPolicyPolicy.Companion.default_public_and_private_interfaces: WebContentsSetWebRTCIPHandlingPolicyPolicy
+    get() = js.reflect.unsafeCast("default_public_and_private_interfaces")
+
+inline val WebContentsSetWebRTCIPHandlingPolicyPolicy.Companion.disable_non_proxied_udp: WebContentsSetWebRTCIPHandlingPolicyPolicy
+    get() = js.reflect.unsafeCast("disable_non_proxied_udp")

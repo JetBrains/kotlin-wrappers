@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface ResizeOptionsQuality {
-    companion object {
-        @seskar.js.JsValue("good")
-        val good: ResizeOptionsQuality
-
-        @seskar.js.JsValue("better")
-        val better: ResizeOptionsQuality
-
-        @seskar.js.JsValue("best")
-        val best: ResizeOptionsQuality
-    }
+    companion object
 }
+
+inline val ResizeOptionsQuality.Companion.good: ResizeOptionsQuality
+    get() = js.reflect.unsafeCast("good")
+
+inline val ResizeOptionsQuality.Companion.better: ResizeOptionsQuality
+    get() = js.reflect.unsafeCast("better")
+
+inline val ResizeOptionsQuality.Companion.best: ResizeOptionsQuality
+    get() = js.reflect.unsafeCast("best")

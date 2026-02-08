@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface CookiesSetDetailsSameSite {
-    companion object {
-        @seskar.js.JsValue("unspecified")
-        val unspecified: CookiesSetDetailsSameSite
-
-        @seskar.js.JsValue("no_restriction")
-        val no_restriction: CookiesSetDetailsSameSite
-
-        @seskar.js.JsValue("lax")
-        val lax: CookiesSetDetailsSameSite
-
-        @seskar.js.JsValue("strict")
-        val strict: CookiesSetDetailsSameSite
-    }
+    companion object
 }
+
+inline val CookiesSetDetailsSameSite.Companion.unspecified: CookiesSetDetailsSameSite
+    get() = js.reflect.unsafeCast("unspecified")
+
+inline val CookiesSetDetailsSameSite.Companion.no_restriction: CookiesSetDetailsSameSite
+    get() = js.reflect.unsafeCast("no_restriction")
+
+inline val CookiesSetDetailsSameSite.Companion.lax: CookiesSetDetailsSameSite
+    get() = js.reflect.unsafeCast("lax")
+
+inline val CookiesSetDetailsSameSite.Companion.strict: CookiesSetDetailsSameSite
+    get() = js.reflect.unsafeCast("strict")

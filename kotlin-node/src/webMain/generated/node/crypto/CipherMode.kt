@@ -3,38 +3,38 @@
 package node.crypto
 
 sealed external interface CipherMode {
-    companion object {
-        @seskar.js.JsValue("cbc")
-        val cbc: CipherMode
-
-        @seskar.js.JsValue("ccm")
-        val ccm: CipherMode
-
-        @seskar.js.JsValue("cfb")
-        val cfb: CipherMode
-
-        @seskar.js.JsValue("ctr")
-        val ctr: CipherMode
-
-        @seskar.js.JsValue("ecb")
-        val ecb: CipherMode
-
-        @seskar.js.JsValue("gcm")
-        val gcm: CipherMode
-
-        @seskar.js.JsValue("ocb")
-        val ocb: CipherMode
-
-        @seskar.js.JsValue("ofb")
-        val ofb: CipherMode
-
-        @seskar.js.JsValue("stream")
-        val stream: CipherMode
-
-        @seskar.js.JsValue("wrap")
-        val wrap: CipherMode
-
-        @seskar.js.JsValue("xts")
-        val xts: CipherMode
-    }
+    companion object
 }
+
+inline val CipherMode.Companion.cbc: CipherMode
+    get() = js.reflect.unsafeCast("cbc")
+
+inline val CipherMode.Companion.ccm: CipherMode
+    get() = js.reflect.unsafeCast("ccm")
+
+inline val CipherMode.Companion.cfb: CipherMode
+    get() = js.reflect.unsafeCast("cfb")
+
+inline val CipherMode.Companion.ctr: CipherMode
+    get() = js.reflect.unsafeCast("ctr")
+
+inline val CipherMode.Companion.ecb: CipherMode
+    get() = js.reflect.unsafeCast("ecb")
+
+inline val CipherMode.Companion.gcm: CipherMode
+    get() = js.reflect.unsafeCast("gcm")
+
+inline val CipherMode.Companion.ocb: CipherMode
+    get() = js.reflect.unsafeCast("ocb")
+
+inline val CipherMode.Companion.ofb: CipherMode
+    get() = js.reflect.unsafeCast("ofb")
+
+inline val CipherMode.Companion.stream: CipherMode
+    get() = js.reflect.unsafeCast("stream")
+
+inline val CipherMode.Companion.wrap: CipherMode
+    get() = js.reflect.unsafeCast("wrap")
+
+inline val CipherMode.Companion.xts: CipherMode
+    get() = js.reflect.unsafeCast("xts")

@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface TouchBarScrubberSelectedStyle {
-    companion object {
-        @seskar.js.JsValue("background")
-        val background: TouchBarScrubberSelectedStyle
-
-        @seskar.js.JsValue("outline")
-        val outline: TouchBarScrubberSelectedStyle
-
-        @seskar.js.JsValue("none")
-        val none: TouchBarScrubberSelectedStyle
-    }
+    companion object
 }
+
+inline val TouchBarScrubberSelectedStyle.Companion.background: TouchBarScrubberSelectedStyle
+    get() = js.reflect.unsafeCast("background")
+
+inline val TouchBarScrubberSelectedStyle.Companion.outline: TouchBarScrubberSelectedStyle
+    get() = js.reflect.unsafeCast("outline")
+
+inline val TouchBarScrubberSelectedStyle.Companion.none: TouchBarScrubberSelectedStyle
+    get() = js.reflect.unsafeCast("none")

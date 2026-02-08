@@ -3,11 +3,11 @@
 package node.crypto
 
 sealed external interface DSAEncoding {
-    companion object {
-        @seskar.js.JsValue("der")
-        val der: DSAEncoding
-
-        @seskar.js.JsValue("ieee-p1363")
-        val ieeeP1363: DSAEncoding
-    }
+    companion object
 }
+
+inline val DSAEncoding.Companion.der: DSAEncoding
+    get() = js.reflect.unsafeCast("der")
+
+inline val DSAEncoding.Companion.ieeeP1363: DSAEncoding
+    get() = js.reflect.unsafeCast("ieee-p1363")

@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface WebContentsPrintOptionsDuplexMode {
-    companion object {
-        @seskar.js.JsValue("simplex")
-        val simplex: WebContentsPrintOptionsDuplexMode
-
-        @seskar.js.JsValue("shortEdge")
-        val shortEdge: WebContentsPrintOptionsDuplexMode
-
-        @seskar.js.JsValue("longEdge")
-        val longEdge: WebContentsPrintOptionsDuplexMode
-    }
+    companion object
 }
+
+inline val WebContentsPrintOptionsDuplexMode.Companion.simplex: WebContentsPrintOptionsDuplexMode
+    get() = js.reflect.unsafeCast("simplex")
+
+inline val WebContentsPrintOptionsDuplexMode.Companion.shortEdge: WebContentsPrintOptionsDuplexMode
+    get() = js.reflect.unsafeCast("shortEdge")
+
+inline val WebContentsPrintOptionsDuplexMode.Companion.longEdge: WebContentsPrintOptionsDuplexMode
+    get() = js.reflect.unsafeCast("longEdge")

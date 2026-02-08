@@ -3,17 +3,17 @@
 package node.childProcess
 
 sealed external interface IOType {
-    companion object {
-        @seskar.js.JsValue("overlapped")
-        val overlapped: IOType
-
-        @seskar.js.JsValue("pipe")
-        val pipe: IOType
-
-        @seskar.js.JsValue("ignore")
-        val ignore: IOType
-
-        @seskar.js.JsValue("inherit")
-        val inherit: IOType
-    }
+    companion object
 }
+
+inline val IOType.Companion.overlapped: IOType
+    get() = js.reflect.unsafeCast("overlapped")
+
+inline val IOType.Companion.pipe: IOType
+    get() = js.reflect.unsafeCast("pipe")
+
+inline val IOType.Companion.ignore: IOType
+    get() = js.reflect.unsafeCast("ignore")
+
+inline val IOType.Companion.inherit: IOType
+    get() = js.reflect.unsafeCast("inherit")

@@ -3,32 +3,32 @@
 package electron.core
 
 sealed external interface OpenDialogSyncOptionsProperty {
-    companion object {
-        @seskar.js.JsValue("openFile")
-        val openFile: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("openDirectory")
-        val openDirectory: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("multiSelections")
-        val multiSelections: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("showHiddenFiles")
-        val showHiddenFiles: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("createDirectory")
-        val createDirectory: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("promptToCreate")
-        val promptToCreate: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("noResolveAliases")
-        val noResolveAliases: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("treatPackageAsDirectory")
-        val treatPackageAsDirectory: OpenDialogSyncOptionsProperty
-
-        @seskar.js.JsValue("dontAddToRecent")
-        val dontAddToRecent: OpenDialogSyncOptionsProperty
-    }
+    companion object
 }
+
+inline val OpenDialogSyncOptionsProperty.Companion.openFile: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("openFile")
+
+inline val OpenDialogSyncOptionsProperty.Companion.openDirectory: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("openDirectory")
+
+inline val OpenDialogSyncOptionsProperty.Companion.multiSelections: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("multiSelections")
+
+inline val OpenDialogSyncOptionsProperty.Companion.showHiddenFiles: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("showHiddenFiles")
+
+inline val OpenDialogSyncOptionsProperty.Companion.createDirectory: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("createDirectory")
+
+inline val OpenDialogSyncOptionsProperty.Companion.promptToCreate: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("promptToCreate")
+
+inline val OpenDialogSyncOptionsProperty.Companion.noResolveAliases: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("noResolveAliases")
+
+inline val OpenDialogSyncOptionsProperty.Companion.treatPackageAsDirectory: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("treatPackageAsDirectory")
+
+inline val OpenDialogSyncOptionsProperty.Companion.dontAddToRecent: OpenDialogSyncOptionsProperty
+    get() = js.reflect.unsafeCast("dontAddToRecent")

@@ -4,59 +4,59 @@ package node.util
 
 // https://nodejs.org/docs/latest/api/util.html#foreground-colors
 sealed external interface ForegroundColors {
-    companion object {
-        @seskar.js.JsValue("black")
-        val black: ForegroundColors
-
-        @seskar.js.JsValue("blackBright")
-        val blackBright: ForegroundColors
-
-        @seskar.js.JsValue("blue")
-        val blue: ForegroundColors
-
-        @seskar.js.JsValue("blueBright")
-        val blueBright: ForegroundColors
-
-        @seskar.js.JsValue("cyan")
-        val cyan: ForegroundColors
-
-        @seskar.js.JsValue("cyanBright")
-        val cyanBright: ForegroundColors
-
-        @seskar.js.JsValue("gray")
-        val gray: ForegroundColors
-
-        @seskar.js.JsValue("green")
-        val green: ForegroundColors
-
-        @seskar.js.JsValue("greenBright")
-        val greenBright: ForegroundColors
-
-        @seskar.js.JsValue("grey")
-        val grey: ForegroundColors
-
-        @seskar.js.JsValue("magenta")
-        val magenta: ForegroundColors
-
-        @seskar.js.JsValue("magentaBright")
-        val magentaBright: ForegroundColors
-
-        @seskar.js.JsValue("red")
-        val red: ForegroundColors
-
-        @seskar.js.JsValue("redBright")
-        val redBright: ForegroundColors
-
-        @seskar.js.JsValue("white")
-        val white: ForegroundColors
-
-        @seskar.js.JsValue("whiteBright")
-        val whiteBright: ForegroundColors
-
-        @seskar.js.JsValue("yellow")
-        val yellow: ForegroundColors
-
-        @seskar.js.JsValue("yellowBright")
-        val yellowBright: ForegroundColors
-    }
+    companion object
 }
+
+inline val ForegroundColors.Companion.black: ForegroundColors
+    get() = js.reflect.unsafeCast("black")
+
+inline val ForegroundColors.Companion.blackBright: ForegroundColors
+    get() = js.reflect.unsafeCast("blackBright")
+
+inline val ForegroundColors.Companion.blue: ForegroundColors
+    get() = js.reflect.unsafeCast("blue")
+
+inline val ForegroundColors.Companion.blueBright: ForegroundColors
+    get() = js.reflect.unsafeCast("blueBright")
+
+inline val ForegroundColors.Companion.cyan: ForegroundColors
+    get() = js.reflect.unsafeCast("cyan")
+
+inline val ForegroundColors.Companion.cyanBright: ForegroundColors
+    get() = js.reflect.unsafeCast("cyanBright")
+
+inline val ForegroundColors.Companion.gray: ForegroundColors
+    get() = js.reflect.unsafeCast("gray")
+
+inline val ForegroundColors.Companion.green: ForegroundColors
+    get() = js.reflect.unsafeCast("green")
+
+inline val ForegroundColors.Companion.greenBright: ForegroundColors
+    get() = js.reflect.unsafeCast("greenBright")
+
+inline val ForegroundColors.Companion.grey: ForegroundColors
+    get() = js.reflect.unsafeCast("grey")
+
+inline val ForegroundColors.Companion.magenta: ForegroundColors
+    get() = js.reflect.unsafeCast("magenta")
+
+inline val ForegroundColors.Companion.magentaBright: ForegroundColors
+    get() = js.reflect.unsafeCast("magentaBright")
+
+inline val ForegroundColors.Companion.red: ForegroundColors
+    get() = js.reflect.unsafeCast("red")
+
+inline val ForegroundColors.Companion.redBright: ForegroundColors
+    get() = js.reflect.unsafeCast("redBright")
+
+inline val ForegroundColors.Companion.white: ForegroundColors
+    get() = js.reflect.unsafeCast("white")
+
+inline val ForegroundColors.Companion.whiteBright: ForegroundColors
+    get() = js.reflect.unsafeCast("whiteBright")
+
+inline val ForegroundColors.Companion.yellow: ForegroundColors
+    get() = js.reflect.unsafeCast("yellow")
+
+inline val ForegroundColors.Companion.yellowBright: ForegroundColors
+    get() = js.reflect.unsafeCast("yellowBright")

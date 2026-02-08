@@ -3,17 +3,17 @@
 package typescript
 
 sealed external interface UserPreferencesImportModuleSpecifierPreference {
-    companion object {
-        @seskar.js.JsValue("shortest")
-        val shortest: UserPreferencesImportModuleSpecifierPreference
-
-        @seskar.js.JsValue("project-relative")
-        val projectRelative: UserPreferencesImportModuleSpecifierPreference
-
-        @seskar.js.JsValue("relative")
-        val relative: UserPreferencesImportModuleSpecifierPreference
-
-        @seskar.js.JsValue("non-relative")
-        val nonRelative: UserPreferencesImportModuleSpecifierPreference
-    }
+    companion object
 }
+
+inline val UserPreferencesImportModuleSpecifierPreference.Companion.shortest: UserPreferencesImportModuleSpecifierPreference
+    get() = js.reflect.unsafeCast("shortest")
+
+inline val UserPreferencesImportModuleSpecifierPreference.Companion.projectRelative: UserPreferencesImportModuleSpecifierPreference
+    get() = js.reflect.unsafeCast("project-relative")
+
+inline val UserPreferencesImportModuleSpecifierPreference.Companion.relative: UserPreferencesImportModuleSpecifierPreference
+    get() = js.reflect.unsafeCast("relative")
+
+inline val UserPreferencesImportModuleSpecifierPreference.Companion.nonRelative: UserPreferencesImportModuleSpecifierPreference
+    get() = js.reflect.unsafeCast("non-relative")

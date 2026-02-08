@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface WebviewTagStopFindInPageAction {
-    companion object {
-        @seskar.js.JsValue("clearSelection")
-        val clearSelection: WebviewTagStopFindInPageAction
-
-        @seskar.js.JsValue("keepSelection")
-        val keepSelection: WebviewTagStopFindInPageAction
-
-        @seskar.js.JsValue("activateSelection")
-        val activateSelection: WebviewTagStopFindInPageAction
-    }
+    companion object
 }
+
+inline val WebviewTagStopFindInPageAction.Companion.clearSelection: WebviewTagStopFindInPageAction
+    get() = js.reflect.unsafeCast("clearSelection")
+
+inline val WebviewTagStopFindInPageAction.Companion.keepSelection: WebviewTagStopFindInPageAction
+    get() = js.reflect.unsafeCast("keepSelection")
+
+inline val WebviewTagStopFindInPageAction.Companion.activateSelection: WebviewTagStopFindInPageAction
+    get() = js.reflect.unsafeCast("activateSelection")

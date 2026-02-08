@@ -3,14 +3,14 @@
 package typescript
 
 sealed external interface OrganizeImportsTypeOrder {
-    companion object {
-        @seskar.js.JsValue("last")
-        val last: OrganizeImportsTypeOrder
-
-        @seskar.js.JsValue("inline")
-        val inline: OrganizeImportsTypeOrder
-
-        @seskar.js.JsValue("first")
-        val first: OrganizeImportsTypeOrder
-    }
+    companion object
 }
+
+inline val OrganizeImportsTypeOrder.Companion.last: OrganizeImportsTypeOrder
+    get() = js.reflect.unsafeCast("last")
+
+inline val OrganizeImportsTypeOrder.Companion.inline: OrganizeImportsTypeOrder
+    get() = js.reflect.unsafeCast("inline")
+
+inline val OrganizeImportsTypeOrder.Companion.first: OrganizeImportsTypeOrder
+    get() = js.reflect.unsafeCast("first")

@@ -3,29 +3,29 @@
 package electron.core
 
 sealed external interface ClearStorageDataOptionsStorage {
-    companion object {
-        @seskar.js.JsValue("cookies")
-        val cookies: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("filesystem")
-        val filesystem: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("indexdb")
-        val indexdb: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("localstorage")
-        val localstorage: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("shadercache")
-        val shadercache: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("websql")
-        val websql: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("serviceworkers")
-        val serviceworkers: ClearStorageDataOptionsStorage
-
-        @seskar.js.JsValue("cachestorage")
-        val cachestorage: ClearStorageDataOptionsStorage
-    }
+    companion object
 }
+
+inline val ClearStorageDataOptionsStorage.Companion.cookies: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("cookies")
+
+inline val ClearStorageDataOptionsStorage.Companion.filesystem: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("filesystem")
+
+inline val ClearStorageDataOptionsStorage.Companion.indexdb: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("indexdb")
+
+inline val ClearStorageDataOptionsStorage.Companion.localstorage: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("localstorage")
+
+inline val ClearStorageDataOptionsStorage.Companion.shadercache: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("shadercache")
+
+inline val ClearStorageDataOptionsStorage.Companion.websql: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("websql")
+
+inline val ClearStorageDataOptionsStorage.Companion.serviceworkers: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("serviceworkers")
+
+inline val ClearStorageDataOptionsStorage.Companion.cachestorage: ClearStorageDataOptionsStorage
+    get() = js.reflect.unsafeCast("cachestorage")

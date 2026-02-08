@@ -3,11 +3,11 @@
 package node.module
 
 sealed external interface ImportPhase {
-    companion object {
-        @seskar.js.JsValue("source")
-        val source: ImportPhase
-
-        @seskar.js.JsValue("evaluation")
-        val evaluation: ImportPhase
-    }
+    companion object
 }
+
+inline val ImportPhase.Companion.source: ImportPhase
+    get() = js.reflect.unsafeCast("source")
+
+inline val ImportPhase.Companion.evaluation: ImportPhase
+    get() = js.reflect.unsafeCast("evaluation")

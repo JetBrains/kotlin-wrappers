@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface PowerMonitorGetSystemIdleStateResult {
-    companion object {
-        @seskar.js.JsValue("active")
-        val active: PowerMonitorGetSystemIdleStateResult
-
-        @seskar.js.JsValue("idle")
-        val idle: PowerMonitorGetSystemIdleStateResult
-
-        @seskar.js.JsValue("locked")
-        val locked: PowerMonitorGetSystemIdleStateResult
-
-        @seskar.js.JsValue("unknown")
-        val unknown: PowerMonitorGetSystemIdleStateResult
-    }
+    companion object
 }
+
+inline val PowerMonitorGetSystemIdleStateResult.Companion.active: PowerMonitorGetSystemIdleStateResult
+    get() = js.reflect.unsafeCast("active")
+
+inline val PowerMonitorGetSystemIdleStateResult.Companion.idle: PowerMonitorGetSystemIdleStateResult
+    get() = js.reflect.unsafeCast("idle")
+
+inline val PowerMonitorGetSystemIdleStateResult.Companion.locked: PowerMonitorGetSystemIdleStateResult
+    get() = js.reflect.unsafeCast("locked")
+
+inline val PowerMonitorGetSystemIdleStateResult.Companion.unknown: PowerMonitorGetSystemIdleStateResult
+    get() = js.reflect.unsafeCast("unknown")

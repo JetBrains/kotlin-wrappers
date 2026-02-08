@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface WindowOpenHandlerResponseAction {
-    companion object {
-        @seskar.js.JsValue("allow")
-        val allow: WindowOpenHandlerResponseAction
-
-        @seskar.js.JsValue("deny")
-        val deny: WindowOpenHandlerResponseAction
-    }
+    companion object
 }
+
+inline val WindowOpenHandlerResponseAction.Companion.allow: WindowOpenHandlerResponseAction
+    get() = js.reflect.unsafeCast("allow")
+
+inline val WindowOpenHandlerResponseAction.Companion.deny: WindowOpenHandlerResponseAction
+    get() = js.reflect.unsafeCast("deny")

@@ -3,26 +3,26 @@
 package electron.core
 
 sealed external interface DetailsType {
-    companion object {
-        @seskar.js.JsValue("Utility")
-        val Utility: DetailsType
-
-        @seskar.js.JsValue("Zygote")
-        val Zygote: DetailsType
-
-        @seskar.js.JsValue("Sandbox helper")
-        val `Sandbox helper`: DetailsType
-
-        @seskar.js.JsValue("GPU")
-        val GPU: DetailsType
-
-        @seskar.js.JsValue("Pepper Plugin")
-        val `Pepper Plugin`: DetailsType
-
-        @seskar.js.JsValue("Pepper Plugin Broker")
-        val `Pepper Plugin Broker`: DetailsType
-
-        @seskar.js.JsValue("Unknown")
-        val Unknown: DetailsType
-    }
+    companion object
 }
+
+inline val DetailsType.Companion.Utility: DetailsType
+    get() = js.reflect.unsafeCast("Utility")
+
+inline val DetailsType.Companion.Zygote: DetailsType
+    get() = js.reflect.unsafeCast("Zygote")
+
+inline val DetailsType.Companion.`Sandbox helper`: DetailsType
+    get() = js.reflect.unsafeCast("Sandbox helper")
+
+inline val DetailsType.Companion.GPU: DetailsType
+    get() = js.reflect.unsafeCast("GPU")
+
+inline val DetailsType.Companion.`Pepper Plugin`: DetailsType
+    get() = js.reflect.unsafeCast("Pepper Plugin")
+
+inline val DetailsType.Companion.`Pepper Plugin Broker`: DetailsType
+    get() = js.reflect.unsafeCast("Pepper Plugin Broker")
+
+inline val DetailsType.Companion.Unknown: DetailsType
+    get() = js.reflect.unsafeCast("Unknown")

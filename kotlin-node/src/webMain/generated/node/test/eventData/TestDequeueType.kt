@@ -3,11 +3,11 @@
 package node.test.eventData
 
 sealed external interface TestDequeueType {
-    companion object {
-        @seskar.js.JsValue("suite")
-        val suite: TestDequeueType
-
-        @seskar.js.JsValue("test")
-        val test: TestDequeueType
-    }
+    companion object
 }
+
+inline val TestDequeueType.Companion.suite: TestDequeueType
+    get() = js.reflect.unsafeCast("suite")
+
+inline val TestDequeueType.Companion.test: TestDequeueType
+    get() = js.reflect.unsafeCast("test")

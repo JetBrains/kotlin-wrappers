@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface WebContentsConsoleMessageEventParamsLevel {
-    companion object {
-        @seskar.js.JsValue("info")
-        val info: WebContentsConsoleMessageEventParamsLevel
-
-        @seskar.js.JsValue("warning")
-        val warning: WebContentsConsoleMessageEventParamsLevel
-
-        @seskar.js.JsValue("error")
-        val error: WebContentsConsoleMessageEventParamsLevel
-
-        @seskar.js.JsValue("debug")
-        val debug: WebContentsConsoleMessageEventParamsLevel
-    }
+    companion object
 }
+
+inline val WebContentsConsoleMessageEventParamsLevel.Companion.info: WebContentsConsoleMessageEventParamsLevel
+    get() = js.reflect.unsafeCast("info")
+
+inline val WebContentsConsoleMessageEventParamsLevel.Companion.warning: WebContentsConsoleMessageEventParamsLevel
+    get() = js.reflect.unsafeCast("warning")
+
+inline val WebContentsConsoleMessageEventParamsLevel.Companion.error: WebContentsConsoleMessageEventParamsLevel
+    get() = js.reflect.unsafeCast("error")
+
+inline val WebContentsConsoleMessageEventParamsLevel.Companion.debug: WebContentsConsoleMessageEventParamsLevel
+    get() = js.reflect.unsafeCast("debug")

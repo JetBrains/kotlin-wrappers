@@ -3,14 +3,14 @@
 package node.readline
 
 sealed external interface Direction {
-    companion object {
-        @seskar.js.JsRawValue("-1")
-        val `-1`: Direction
-
-        @seskar.js.JsRawValue("0")
-        val `0`: Direction
-
-        @seskar.js.JsRawValue("1")
-        val `1`: Direction
-    }
+    companion object
 }
+
+inline val Direction.Companion.`-1`: Direction
+    get() = js.reflect.unsafeCast(-1)
+
+inline val Direction.Companion.`0`: Direction
+    get() = js.reflect.unsafeCast(0)
+
+inline val Direction.Companion.`1`: Direction
+    get() = js.reflect.unsafeCast(1)

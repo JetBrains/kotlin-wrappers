@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface WebContentsSetImageAnimationPolicyPolicy {
-    companion object {
-        @seskar.js.JsValue("animate")
-        val animate: WebContentsSetImageAnimationPolicyPolicy
-
-        @seskar.js.JsValue("animateOnce")
-        val animateOnce: WebContentsSetImageAnimationPolicyPolicy
-
-        @seskar.js.JsValue("noAnimation")
-        val noAnimation: WebContentsSetImageAnimationPolicyPolicy
-    }
+    companion object
 }
+
+inline val WebContentsSetImageAnimationPolicyPolicy.Companion.animate: WebContentsSetImageAnimationPolicyPolicy
+    get() = js.reflect.unsafeCast("animate")
+
+inline val WebContentsSetImageAnimationPolicyPolicy.Companion.animateOnce: WebContentsSetImageAnimationPolicyPolicy
+    get() = js.reflect.unsafeCast("animateOnce")
+
+inline val WebContentsSetImageAnimationPolicyPolicy.Companion.noAnimation: WebContentsSetImageAnimationPolicyPolicy
+    get() = js.reflect.unsafeCast("noAnimation")

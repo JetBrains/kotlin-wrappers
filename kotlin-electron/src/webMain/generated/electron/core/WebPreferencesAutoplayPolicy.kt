@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface WebPreferencesAutoplayPolicy {
-    companion object {
-        @seskar.js.JsValue("no-user-gesture-required")
-        val noUserGestureRequired: WebPreferencesAutoplayPolicy
-
-        @seskar.js.JsValue("user-gesture-required")
-        val userGestureRequired: WebPreferencesAutoplayPolicy
-
-        @seskar.js.JsValue("document-user-activation-required")
-        val documentUserActivationRequired: WebPreferencesAutoplayPolicy
-    }
+    companion object
 }
+
+inline val WebPreferencesAutoplayPolicy.Companion.noUserGestureRequired: WebPreferencesAutoplayPolicy
+    get() = js.reflect.unsafeCast("no-user-gesture-required")
+
+inline val WebPreferencesAutoplayPolicy.Companion.userGestureRequired: WebPreferencesAutoplayPolicy
+    get() = js.reflect.unsafeCast("user-gesture-required")
+
+inline val WebPreferencesAutoplayPolicy.Companion.documentUserActivationRequired: WebPreferencesAutoplayPolicy
+    get() = js.reflect.unsafeCast("document-user-activation-required")

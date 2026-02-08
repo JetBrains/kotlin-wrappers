@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface ClipboardWriteHTMLType {
-    companion object {
-        @seskar.js.JsValue("selection")
-        val selection: ClipboardWriteHTMLType
-
-        @seskar.js.JsValue("clipboard")
-        val clipboard: ClipboardWriteHTMLType
-    }
+    companion object
 }
+
+inline val ClipboardWriteHTMLType.Companion.selection: ClipboardWriteHTMLType
+    get() = js.reflect.unsafeCast("selection")
+
+inline val ClipboardWriteHTMLType.Companion.clipboard: ClipboardWriteHTMLType
+    get() = js.reflect.unsafeCast("clipboard")

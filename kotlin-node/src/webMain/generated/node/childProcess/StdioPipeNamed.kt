@@ -3,11 +3,11 @@
 package node.childProcess
 
 sealed external interface StdioPipeNamed {
-    companion object {
-        @seskar.js.JsValue("pipe")
-        val pipe: StdioPipeNamed
-
-        @seskar.js.JsValue("overlapped")
-        val overlapped: StdioPipeNamed
-    }
+    companion object
 }
+
+inline val StdioPipeNamed.Companion.pipe: StdioPipeNamed
+    get() = js.reflect.unsafeCast("pipe")
+
+inline val StdioPipeNamed.Companion.overlapped: StdioPipeNamed
+    get() = js.reflect.unsafeCast("overlapped")

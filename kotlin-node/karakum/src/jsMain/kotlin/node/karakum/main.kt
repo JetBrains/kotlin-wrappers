@@ -387,6 +387,7 @@ suspend fun main(args: ReadonlyArray<String>) {
 
             "^fs/StatfsOptions.kt" to "node/fs/StatfsOptions.fun.kt",
             "^fs/symlink/Type.kt" to "node/fs/SymlinkType.kt",
+            "^fs/symlink/SymlinkType.kt" to "node/fs/SymlinkType.kt",
             "^fs" to "node/fs",
 
             "^http" to "node/http",

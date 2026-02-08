@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface ResolveHostOptionsSecureDnsPolicy {
-    companion object {
-        @seskar.js.JsValue("allow")
-        val allow: ResolveHostOptionsSecureDnsPolicy
-
-        @seskar.js.JsValue("disable")
-        val disable: ResolveHostOptionsSecureDnsPolicy
-    }
+    companion object
 }
+
+inline val ResolveHostOptionsSecureDnsPolicy.Companion.allow: ResolveHostOptionsSecureDnsPolicy
+    get() = js.reflect.unsafeCast("allow")
+
+inline val ResolveHostOptionsSecureDnsPolicy.Companion.disable: ResolveHostOptionsSecureDnsPolicy
+    get() = js.reflect.unsafeCast("disable")

@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface SystemPreferencesGetMediaAccessStatusResult {
-    companion object {
-        @seskar.js.JsValue("not-determined")
-        val notDetermined: SystemPreferencesGetMediaAccessStatusResult
-
-        @seskar.js.JsValue("granted")
-        val granted: SystemPreferencesGetMediaAccessStatusResult
-
-        @seskar.js.JsValue("denied")
-        val denied: SystemPreferencesGetMediaAccessStatusResult
-
-        @seskar.js.JsValue("restricted")
-        val restricted: SystemPreferencesGetMediaAccessStatusResult
-
-        @seskar.js.JsValue("unknown")
-        val unknown: SystemPreferencesGetMediaAccessStatusResult
-    }
+    companion object
 }
+
+inline val SystemPreferencesGetMediaAccessStatusResult.Companion.notDetermined: SystemPreferencesGetMediaAccessStatusResult
+    get() = js.reflect.unsafeCast("not-determined")
+
+inline val SystemPreferencesGetMediaAccessStatusResult.Companion.granted: SystemPreferencesGetMediaAccessStatusResult
+    get() = js.reflect.unsafeCast("granted")
+
+inline val SystemPreferencesGetMediaAccessStatusResult.Companion.denied: SystemPreferencesGetMediaAccessStatusResult
+    get() = js.reflect.unsafeCast("denied")
+
+inline val SystemPreferencesGetMediaAccessStatusResult.Companion.restricted: SystemPreferencesGetMediaAccessStatusResult
+    get() = js.reflect.unsafeCast("restricted")
+
+inline val SystemPreferencesGetMediaAccessStatusResult.Companion.unknown: SystemPreferencesGetMediaAccessStatusResult
+    get() = js.reflect.unsafeCast("unknown")

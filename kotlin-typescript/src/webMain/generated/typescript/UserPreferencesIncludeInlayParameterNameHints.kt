@@ -3,14 +3,14 @@
 package typescript
 
 sealed external interface UserPreferencesIncludeInlayParameterNameHints {
-    companion object {
-        @seskar.js.JsValue("none")
-        val none: UserPreferencesIncludeInlayParameterNameHints
-
-        @seskar.js.JsValue("literals")
-        val literals: UserPreferencesIncludeInlayParameterNameHints
-
-        @seskar.js.JsValue("all")
-        val all: UserPreferencesIncludeInlayParameterNameHints
-    }
+    companion object
 }
+
+inline val UserPreferencesIncludeInlayParameterNameHints.Companion.none: UserPreferencesIncludeInlayParameterNameHints
+    get() = js.reflect.unsafeCast("none")
+
+inline val UserPreferencesIncludeInlayParameterNameHints.Companion.literals: UserPreferencesIncludeInlayParameterNameHints
+    get() = js.reflect.unsafeCast("literals")
+
+inline val UserPreferencesIncludeInlayParameterNameHints.Companion.all: UserPreferencesIncludeInlayParameterNameHints
+    get() = js.reflect.unsafeCast("all")

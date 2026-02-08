@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface SaveDialogOptionsProperty {
-    companion object {
-        @seskar.js.JsValue("showHiddenFiles")
-        val showHiddenFiles: SaveDialogOptionsProperty
-
-        @seskar.js.JsValue("createDirectory")
-        val createDirectory: SaveDialogOptionsProperty
-
-        @seskar.js.JsValue("treatPackageAsDirectory")
-        val treatPackageAsDirectory: SaveDialogOptionsProperty
-
-        @seskar.js.JsValue("showOverwriteConfirmation")
-        val showOverwriteConfirmation: SaveDialogOptionsProperty
-
-        @seskar.js.JsValue("dontAddToRecent")
-        val dontAddToRecent: SaveDialogOptionsProperty
-    }
+    companion object
 }
+
+inline val SaveDialogOptionsProperty.Companion.showHiddenFiles: SaveDialogOptionsProperty
+    get() = js.reflect.unsafeCast("showHiddenFiles")
+
+inline val SaveDialogOptionsProperty.Companion.createDirectory: SaveDialogOptionsProperty
+    get() = js.reflect.unsafeCast("createDirectory")
+
+inline val SaveDialogOptionsProperty.Companion.treatPackageAsDirectory: SaveDialogOptionsProperty
+    get() = js.reflect.unsafeCast("treatPackageAsDirectory")
+
+inline val SaveDialogOptionsProperty.Companion.showOverwriteConfirmation: SaveDialogOptionsProperty
+    get() = js.reflect.unsafeCast("showOverwriteConfirmation")
+
+inline val SaveDialogOptionsProperty.Companion.dontAddToRecent: SaveDialogOptionsProperty
+    get() = js.reflect.unsafeCast("dontAddToRecent")

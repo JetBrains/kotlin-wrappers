@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface ConfigMinVersion {
-    companion object {
-        @seskar.js.JsValue("tls1")
-        val tls1: ConfigMinVersion
-
-        @seskar.js.JsValue("tls1.1")
-        val `tls1.1`: ConfigMinVersion
-
-        @seskar.js.JsValue("tls1.2")
-        val `tls1.2`: ConfigMinVersion
-
-        @seskar.js.JsValue("tls1.3")
-        val `tls1.3`: ConfigMinVersion
-    }
+    companion object
 }
+
+inline val ConfigMinVersion.Companion.tls1: ConfigMinVersion
+    get() = js.reflect.unsafeCast("tls1")
+
+inline val ConfigMinVersion.Companion.`tls1.1`: ConfigMinVersion
+    get() = js.reflect.unsafeCast("tls1.1")
+
+inline val ConfigMinVersion.Companion.`tls1.2`: ConfigMinVersion
+    get() = js.reflect.unsafeCast("tls1.2")
+
+inline val ConfigMinVersion.Companion.`tls1.3`: ConfigMinVersion
+    get() = js.reflect.unsafeCast("tls1.3")

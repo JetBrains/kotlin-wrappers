@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface OpenDevToolsOptionsMode {
-    companion object {
-        @seskar.js.JsValue("left")
-        val left: OpenDevToolsOptionsMode
-
-        @seskar.js.JsValue("right")
-        val right: OpenDevToolsOptionsMode
-
-        @seskar.js.JsValue("bottom")
-        val bottom: OpenDevToolsOptionsMode
-
-        @seskar.js.JsValue("undocked")
-        val undocked: OpenDevToolsOptionsMode
-
-        @seskar.js.JsValue("detach")
-        val detach: OpenDevToolsOptionsMode
-    }
+    companion object
 }
+
+inline val OpenDevToolsOptionsMode.Companion.left: OpenDevToolsOptionsMode
+    get() = js.reflect.unsafeCast("left")
+
+inline val OpenDevToolsOptionsMode.Companion.right: OpenDevToolsOptionsMode
+    get() = js.reflect.unsafeCast("right")
+
+inline val OpenDevToolsOptionsMode.Companion.bottom: OpenDevToolsOptionsMode
+    get() = js.reflect.unsafeCast("bottom")
+
+inline val OpenDevToolsOptionsMode.Companion.undocked: OpenDevToolsOptionsMode
+    get() = js.reflect.unsafeCast("undocked")
+
+inline val OpenDevToolsOptionsMode.Companion.detach: OpenDevToolsOptionsMode
+    get() = js.reflect.unsafeCast("detach")

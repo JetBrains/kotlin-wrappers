@@ -3,29 +3,29 @@
 package electron.core
 
 sealed external interface ReferrerPolicy {
-    companion object {
-        @seskar.js.JsValue("default")
-        val default: ReferrerPolicy
-
-        @seskar.js.JsValue("unsafe-url")
-        val unsafeUrl: ReferrerPolicy
-
-        @seskar.js.JsValue("no-referrer-when-downgrade")
-        val noReferrerWhenDowngrade: ReferrerPolicy
-
-        @seskar.js.JsValue("no-referrer")
-        val noReferrer: ReferrerPolicy
-
-        @seskar.js.JsValue("origin")
-        val origin: ReferrerPolicy
-
-        @seskar.js.JsValue("strict-origin-when-cross-origin")
-        val strictOriginWhenCrossOrigin: ReferrerPolicy
-
-        @seskar.js.JsValue("same-origin")
-        val sameOrigin: ReferrerPolicy
-
-        @seskar.js.JsValue("strict-origin")
-        val strictOrigin: ReferrerPolicy
-    }
+    companion object
 }
+
+inline val ReferrerPolicy.Companion.default: ReferrerPolicy
+    get() = js.reflect.unsafeCast("default")
+
+inline val ReferrerPolicy.Companion.unsafeUrl: ReferrerPolicy
+    get() = js.reflect.unsafeCast("unsafe-url")
+
+inline val ReferrerPolicy.Companion.noReferrerWhenDowngrade: ReferrerPolicy
+    get() = js.reflect.unsafeCast("no-referrer-when-downgrade")
+
+inline val ReferrerPolicy.Companion.noReferrer: ReferrerPolicy
+    get() = js.reflect.unsafeCast("no-referrer")
+
+inline val ReferrerPolicy.Companion.origin: ReferrerPolicy
+    get() = js.reflect.unsafeCast("origin")
+
+inline val ReferrerPolicy.Companion.strictOriginWhenCrossOrigin: ReferrerPolicy
+    get() = js.reflect.unsafeCast("strict-origin-when-cross-origin")
+
+inline val ReferrerPolicy.Companion.sameOrigin: ReferrerPolicy
+    get() = js.reflect.unsafeCast("same-origin")
+
+inline val ReferrerPolicy.Companion.strictOrigin: ReferrerPolicy
+    get() = js.reflect.unsafeCast("strict-origin")

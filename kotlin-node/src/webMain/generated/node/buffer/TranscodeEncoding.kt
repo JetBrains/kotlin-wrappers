@@ -3,29 +3,29 @@
 package node.buffer
 
 sealed external interface TranscodeEncoding {
-    companion object {
-        @seskar.js.JsValue("ascii")
-        val ascii: TranscodeEncoding
-
-        @seskar.js.JsValue("utf8")
-        val utf8: TranscodeEncoding
-
-        @seskar.js.JsValue("utf16le")
-        val utf16le: TranscodeEncoding
-
-        @seskar.js.JsValue("ucs2")
-        val ucs2: TranscodeEncoding
-
-        @seskar.js.JsValue("latin1")
-        val latin1: TranscodeEncoding
-
-        @seskar.js.JsValue("binary")
-        val binary: TranscodeEncoding
-        /*
-        Duplicated names were generated:
-        utf8 for "utf-8"
-        utf16le for "utf-16le"
-        ucs2 for "ucs-2"
-        */
-    }
+    companion object
 }
+
+inline val TranscodeEncoding.Companion.ascii: TranscodeEncoding
+    get() = js.reflect.unsafeCast("ascii")
+
+inline val TranscodeEncoding.Companion.utf8: TranscodeEncoding
+    get() = js.reflect.unsafeCast("utf8")
+
+inline val TranscodeEncoding.Companion.utf16le: TranscodeEncoding
+    get() = js.reflect.unsafeCast("utf16le")
+
+inline val TranscodeEncoding.Companion.ucs2: TranscodeEncoding
+    get() = js.reflect.unsafeCast("ucs2")
+
+inline val TranscodeEncoding.Companion.latin1: TranscodeEncoding
+    get() = js.reflect.unsafeCast("latin1")
+
+inline val TranscodeEncoding.Companion.binary: TranscodeEncoding
+    get() = js.reflect.unsafeCast("binary")
+/*
+Duplicated names were generated:
+utf8 for "utf-8"
+utf16le for "utf-16le"
+ucs2 for "ucs-2"
+*/

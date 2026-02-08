@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface AppGetGPUInfoInfoType {
-    companion object {
-        @seskar.js.JsValue("basic")
-        val basic: AppGetGPUInfoInfoType
-
-        @seskar.js.JsValue("complete")
-        val complete: AppGetGPUInfoInfoType
-    }
+    companion object
 }
+
+inline val AppGetGPUInfoInfoType.Companion.basic: AppGetGPUInfoInfoType
+    get() = js.reflect.unsafeCast("basic")
+
+inline val AppGetGPUInfoInfoType.Companion.complete: AppGetGPUInfoInfoType
+    get() = js.reflect.unsafeCast("complete")

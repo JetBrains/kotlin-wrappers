@@ -3,11 +3,11 @@
 package node.perfHooks
 
 sealed external interface PerformanceMarkResourceTimingCacheMode {
-    companion object {
-        @seskar.js.JsValue("")
-        val `_`: PerformanceMarkResourceTimingCacheMode
-
-        @seskar.js.JsValue("local")
-        val local: PerformanceMarkResourceTimingCacheMode
-    }
+    companion object
 }
+
+inline val PerformanceMarkResourceTimingCacheMode.Companion.`_`: PerformanceMarkResourceTimingCacheMode
+    get() = js.reflect.unsafeCast("")
+
+inline val PerformanceMarkResourceTimingCacheMode.Companion.local: PerformanceMarkResourceTimingCacheMode
+    get() = js.reflect.unsafeCast("local")

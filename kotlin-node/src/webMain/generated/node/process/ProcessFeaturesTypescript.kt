@@ -3,14 +3,14 @@
 package node.process
 
 sealed external interface ProcessFeaturesTypescript {
-    companion object {
-        @seskar.js.JsRawValue("false")
-        val `false`: ProcessFeaturesTypescript
-
-        @seskar.js.JsValue("strip")
-        val strip: ProcessFeaturesTypescript
-
-        @seskar.js.JsValue("transform")
-        val transform: ProcessFeaturesTypescript
-    }
+    companion object
 }
+
+inline val ProcessFeaturesTypescript.Companion.`false`: ProcessFeaturesTypescript
+    get() = js.reflect.unsafeCast(false)
+
+inline val ProcessFeaturesTypescript.Companion.strip: ProcessFeaturesTypescript
+    get() = js.reflect.unsafeCast("strip")
+
+inline val ProcessFeaturesTypescript.Companion.transform: ProcessFeaturesTypescript
+    get() = js.reflect.unsafeCast("transform")

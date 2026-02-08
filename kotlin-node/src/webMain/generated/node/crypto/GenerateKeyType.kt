@@ -3,11 +3,11 @@
 package node.crypto
 
 sealed external interface GenerateKeyType {
-    companion object {
-        @seskar.js.JsValue("hmac")
-        val hmac: GenerateKeyType
-
-        @seskar.js.JsValue("aes")
-        val aes: GenerateKeyType
-    }
+    companion object
 }
+
+inline val GenerateKeyType.Companion.hmac: GenerateKeyType
+    get() = js.reflect.unsafeCast("hmac")
+
+inline val GenerateKeyType.Companion.aes: GenerateKeyType
+    get() = js.reflect.unsafeCast("aes")

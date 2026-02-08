@@ -3,14 +3,14 @@
 package typescript
 
 sealed external interface UserPreferencesJsxAttributeCompletionStyle {
-    companion object {
-        @seskar.js.JsValue("auto")
-        val auto: UserPreferencesJsxAttributeCompletionStyle
-
-        @seskar.js.JsValue("braces")
-        val braces: UserPreferencesJsxAttributeCompletionStyle
-
-        @seskar.js.JsValue("none")
-        val none: UserPreferencesJsxAttributeCompletionStyle
-    }
+    companion object
 }
+
+inline val UserPreferencesJsxAttributeCompletionStyle.Companion.auto: UserPreferencesJsxAttributeCompletionStyle
+    get() = js.reflect.unsafeCast("auto")
+
+inline val UserPreferencesJsxAttributeCompletionStyle.Companion.braces: UserPreferencesJsxAttributeCompletionStyle
+    get() = js.reflect.unsafeCast("braces")
+
+inline val UserPreferencesJsxAttributeCompletionStyle.Companion.none: UserPreferencesJsxAttributeCompletionStyle
+    get() = js.reflect.unsafeCast("none")

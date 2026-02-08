@@ -3,14 +3,14 @@
 package node.test.eventData
 
 sealed external interface TestDiagnosticLevel {
-    companion object {
-        @seskar.js.JsValue("info")
-        val info: TestDiagnosticLevel
-
-        @seskar.js.JsValue("warn")
-        val warn: TestDiagnosticLevel
-
-        @seskar.js.JsValue("error")
-        val error: TestDiagnosticLevel
-    }
+    companion object
 }
+
+inline val TestDiagnosticLevel.Companion.info: TestDiagnosticLevel
+    get() = js.reflect.unsafeCast("info")
+
+inline val TestDiagnosticLevel.Companion.warn: TestDiagnosticLevel
+    get() = js.reflect.unsafeCast("warn")
+
+inline val TestDiagnosticLevel.Companion.error: TestDiagnosticLevel
+    get() = js.reflect.unsafeCast("error")

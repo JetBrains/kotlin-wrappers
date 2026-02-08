@@ -3,14 +3,14 @@
 package typescript
 
 sealed external interface UserPreferencesIncludePackageJsonAutoImports {
-    companion object {
-        @seskar.js.JsValue("auto")
-        val auto: UserPreferencesIncludePackageJsonAutoImports
-
-        @seskar.js.JsValue("on")
-        val on: UserPreferencesIncludePackageJsonAutoImports
-
-        @seskar.js.JsValue("off")
-        val off: UserPreferencesIncludePackageJsonAutoImports
-    }
+    companion object
 }
+
+inline val UserPreferencesIncludePackageJsonAutoImports.Companion.auto: UserPreferencesIncludePackageJsonAutoImports
+    get() = js.reflect.unsafeCast("auto")
+
+inline val UserPreferencesIncludePackageJsonAutoImports.Companion.on: UserPreferencesIncludePackageJsonAutoImports
+    get() = js.reflect.unsafeCast("on")
+
+inline val UserPreferencesIncludePackageJsonAutoImports.Companion.off: UserPreferencesIncludePackageJsonAutoImports
+    get() = js.reflect.unsafeCast("off")

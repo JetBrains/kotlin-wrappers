@@ -3,14 +3,14 @@
 package node.crypto
 
 sealed external interface CipherOCBTypes {
-    companion object {
-        @seskar.js.JsValue("aes-128-ocb")
-        val aes128Ocb: CipherOCBTypes
-
-        @seskar.js.JsValue("aes-192-ocb")
-        val aes192Ocb: CipherOCBTypes
-
-        @seskar.js.JsValue("aes-256-ocb")
-        val aes256Ocb: CipherOCBTypes
-    }
+    companion object
 }
+
+inline val CipherOCBTypes.Companion.aes128Ocb: CipherOCBTypes
+    get() = js.reflect.unsafeCast("aes-128-ocb")
+
+inline val CipherOCBTypes.Companion.aes192Ocb: CipherOCBTypes
+    get() = js.reflect.unsafeCast("aes-192-ocb")
+
+inline val CipherOCBTypes.Companion.aes256Ocb: CipherOCBTypes
+    get() = js.reflect.unsafeCast("aes-256-ocb")

@@ -3,11 +3,11 @@
 package node.fs
 
 sealed external interface WatchOptionsOverflow {
-    companion object {
-        @seskar.js.JsValue("ignore")
-        val ignore: WatchOptionsOverflow
-
-        @seskar.js.JsValue("throw")
-        val `throw`: WatchOptionsOverflow
-    }
+    companion object
 }
+
+inline val WatchOptionsOverflow.Companion.ignore: WatchOptionsOverflow
+    get() = js.reflect.unsafeCast("ignore")
+
+inline val WatchOptionsOverflow.Companion.`throw`: WatchOptionsOverflow
+    get() = js.reflect.unsafeCast("throw")

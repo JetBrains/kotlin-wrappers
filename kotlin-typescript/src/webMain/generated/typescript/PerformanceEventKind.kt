@@ -3,11 +3,11 @@
 package typescript
 
 sealed external interface PerformanceEventKind {
-    companion object {
-        @seskar.js.JsValue("UpdateGraph")
-        val UpdateGraph: PerformanceEventKind
-
-        @seskar.js.JsValue("CreatePackageJsonAutoImportProvider")
-        val CreatePackageJsonAutoImportProvider: PerformanceEventKind
-    }
+    companion object
 }
+
+inline val PerformanceEventKind.Companion.UpdateGraph: PerformanceEventKind
+    get() = js.reflect.unsafeCast("UpdateGraph")
+
+inline val PerformanceEventKind.Companion.CreatePackageJsonAutoImportProvider: PerformanceEventKind
+    get() = js.reflect.unsafeCast("CreatePackageJsonAutoImportProvider")

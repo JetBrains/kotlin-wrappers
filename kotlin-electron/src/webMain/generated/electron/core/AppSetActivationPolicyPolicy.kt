@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface AppSetActivationPolicyPolicy {
-    companion object {
-        @seskar.js.JsValue("regular")
-        val regular: AppSetActivationPolicyPolicy
-
-        @seskar.js.JsValue("accessory")
-        val accessory: AppSetActivationPolicyPolicy
-
-        @seskar.js.JsValue("prohibited")
-        val prohibited: AppSetActivationPolicyPolicy
-    }
+    companion object
 }
+
+inline val AppSetActivationPolicyPolicy.Companion.regular: AppSetActivationPolicyPolicy
+    get() = js.reflect.unsafeCast("regular")
+
+inline val AppSetActivationPolicyPolicy.Companion.accessory: AppSetActivationPolicyPolicy
+    get() = js.reflect.unsafeCast("accessory")
+
+inline val AppSetActivationPolicyPolicy.Companion.prohibited: AppSetActivationPolicyPolicy
+    get() = js.reflect.unsafeCast("prohibited")

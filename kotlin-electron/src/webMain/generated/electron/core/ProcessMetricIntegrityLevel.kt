@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface ProcessMetricIntegrityLevel {
-    companion object {
-        @seskar.js.JsValue("untrusted")
-        val untrusted: ProcessMetricIntegrityLevel
-
-        @seskar.js.JsValue("low")
-        val low: ProcessMetricIntegrityLevel
-
-        @seskar.js.JsValue("medium")
-        val medium: ProcessMetricIntegrityLevel
-
-        @seskar.js.JsValue("high")
-        val high: ProcessMetricIntegrityLevel
-
-        @seskar.js.JsValue("unknown")
-        val unknown: ProcessMetricIntegrityLevel
-    }
+    companion object
 }
+
+inline val ProcessMetricIntegrityLevel.Companion.untrusted: ProcessMetricIntegrityLevel
+    get() = js.reflect.unsafeCast("untrusted")
+
+inline val ProcessMetricIntegrityLevel.Companion.low: ProcessMetricIntegrityLevel
+    get() = js.reflect.unsafeCast("low")
+
+inline val ProcessMetricIntegrityLevel.Companion.medium: ProcessMetricIntegrityLevel
+    get() = js.reflect.unsafeCast("medium")
+
+inline val ProcessMetricIntegrityLevel.Companion.high: ProcessMetricIntegrityLevel
+    get() = js.reflect.unsafeCast("high")
+
+inline val ProcessMetricIntegrityLevel.Companion.unknown: ProcessMetricIntegrityLevel
+    get() = js.reflect.unsafeCast("unknown")

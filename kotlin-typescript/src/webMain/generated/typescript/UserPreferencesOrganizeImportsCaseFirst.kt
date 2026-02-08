@@ -3,14 +3,14 @@
 package typescript
 
 sealed external interface UserPreferencesOrganizeImportsCaseFirst {
-    companion object {
-        @seskar.js.JsRawValue("false")
-        val `false`: UserPreferencesOrganizeImportsCaseFirst
-
-        @seskar.js.JsValue("upper")
-        val upper: UserPreferencesOrganizeImportsCaseFirst
-
-        @seskar.js.JsValue("lower")
-        val lower: UserPreferencesOrganizeImportsCaseFirst
-    }
+    companion object
 }
+
+inline val UserPreferencesOrganizeImportsCaseFirst.Companion.`false`: UserPreferencesOrganizeImportsCaseFirst
+    get() = js.reflect.unsafeCast(false)
+
+inline val UserPreferencesOrganizeImportsCaseFirst.Companion.upper: UserPreferencesOrganizeImportsCaseFirst
+    get() = js.reflect.unsafeCast("upper")
+
+inline val UserPreferencesOrganizeImportsCaseFirst.Companion.lower: UserPreferencesOrganizeImportsCaseFirst
+    get() = js.reflect.unsafeCast("lower")

@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface KeyboardInputEventType {
-    companion object {
-        @seskar.js.JsValue("rawKeyDown")
-        val rawKeyDown: KeyboardInputEventType
-
-        @seskar.js.JsValue("keyDown")
-        val keyDown: KeyboardInputEventType
-
-        @seskar.js.JsValue("keyUp")
-        val keyUp: KeyboardInputEventType
-
-        @seskar.js.JsValue("char")
-        val char: KeyboardInputEventType
-    }
+    companion object
 }
+
+inline val KeyboardInputEventType.Companion.rawKeyDown: KeyboardInputEventType
+    get() = js.reflect.unsafeCast("rawKeyDown")
+
+inline val KeyboardInputEventType.Companion.keyDown: KeyboardInputEventType
+    get() = js.reflect.unsafeCast("keyDown")
+
+inline val KeyboardInputEventType.Companion.keyUp: KeyboardInputEventType
+    get() = js.reflect.unsafeCast("keyUp")
+
+inline val KeyboardInputEventType.Companion.char: KeyboardInputEventType
+    get() = js.reflect.unsafeCast("char")

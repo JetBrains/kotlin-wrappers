@@ -3,59 +3,59 @@
 package node.assert
 
 sealed external interface AssertMethodNames {
-    companion object {
-        @seskar.js.JsValue("deepEqual")
-        val deepEqual: AssertMethodNames
-
-        @seskar.js.JsValue("deepStrictEqual")
-        val deepStrictEqual: AssertMethodNames
-
-        @seskar.js.JsValue("doesNotMatch")
-        val doesNotMatch: AssertMethodNames
-
-        @seskar.js.JsValue("doesNotReject")
-        val doesNotReject: AssertMethodNames
-
-        @seskar.js.JsValue("doesNotThrow")
-        val doesNotThrow: AssertMethodNames
-
-        @seskar.js.JsValue("equal")
-        val equal: AssertMethodNames
-
-        @seskar.js.JsValue("fail")
-        val fail: AssertMethodNames
-
-        @seskar.js.JsValue("ifError")
-        val ifError: AssertMethodNames
-
-        @seskar.js.JsValue("match")
-        val match: AssertMethodNames
-
-        @seskar.js.JsValue("notDeepEqual")
-        val notDeepEqual: AssertMethodNames
-
-        @seskar.js.JsValue("notDeepStrictEqual")
-        val notDeepStrictEqual: AssertMethodNames
-
-        @seskar.js.JsValue("notEqual")
-        val notEqual: AssertMethodNames
-
-        @seskar.js.JsValue("notStrictEqual")
-        val notStrictEqual: AssertMethodNames
-
-        @seskar.js.JsValue("ok")
-        val ok: AssertMethodNames
-
-        @seskar.js.JsValue("partialDeepStrictEqual")
-        val partialDeepStrictEqual: AssertMethodNames
-
-        @seskar.js.JsValue("rejects")
-        val rejects: AssertMethodNames
-
-        @seskar.js.JsValue("strictEqual")
-        val strictEqual: AssertMethodNames
-
-        @seskar.js.JsValue("throws")
-        val throws: AssertMethodNames
-    }
+    companion object
 }
+
+inline val AssertMethodNames.Companion.deepEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("deepEqual")
+
+inline val AssertMethodNames.Companion.deepStrictEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("deepStrictEqual")
+
+inline val AssertMethodNames.Companion.doesNotMatch: AssertMethodNames
+    get() = js.reflect.unsafeCast("doesNotMatch")
+
+inline val AssertMethodNames.Companion.doesNotReject: AssertMethodNames
+    get() = js.reflect.unsafeCast("doesNotReject")
+
+inline val AssertMethodNames.Companion.doesNotThrow: AssertMethodNames
+    get() = js.reflect.unsafeCast("doesNotThrow")
+
+inline val AssertMethodNames.Companion.equal: AssertMethodNames
+    get() = js.reflect.unsafeCast("equal")
+
+inline val AssertMethodNames.Companion.fail: AssertMethodNames
+    get() = js.reflect.unsafeCast("fail")
+
+inline val AssertMethodNames.Companion.ifError: AssertMethodNames
+    get() = js.reflect.unsafeCast("ifError")
+
+inline val AssertMethodNames.Companion.match: AssertMethodNames
+    get() = js.reflect.unsafeCast("match")
+
+inline val AssertMethodNames.Companion.notDeepEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("notDeepEqual")
+
+inline val AssertMethodNames.Companion.notDeepStrictEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("notDeepStrictEqual")
+
+inline val AssertMethodNames.Companion.notEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("notEqual")
+
+inline val AssertMethodNames.Companion.notStrictEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("notStrictEqual")
+
+inline val AssertMethodNames.Companion.ok: AssertMethodNames
+    get() = js.reflect.unsafeCast("ok")
+
+inline val AssertMethodNames.Companion.partialDeepStrictEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("partialDeepStrictEqual")
+
+inline val AssertMethodNames.Companion.rejects: AssertMethodNames
+    get() = js.reflect.unsafeCast("rejects")
+
+inline val AssertMethodNames.Companion.strictEqual: AssertMethodNames
+    get() = js.reflect.unsafeCast("strictEqual")
+
+inline val AssertMethodNames.Companion.throws: AssertMethodNames
+    get() = js.reflect.unsafeCast("throws")

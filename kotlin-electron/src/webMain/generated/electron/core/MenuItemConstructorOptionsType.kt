@@ -3,26 +3,26 @@
 package electron.core
 
 sealed external interface MenuItemConstructorOptionsType {
-    companion object {
-        @seskar.js.JsValue("normal")
-        val normal: MenuItemConstructorOptionsType
-
-        @seskar.js.JsValue("separator")
-        val separator: MenuItemConstructorOptionsType
-
-        @seskar.js.JsValue("submenu")
-        val submenu: MenuItemConstructorOptionsType
-
-        @seskar.js.JsValue("checkbox")
-        val checkbox: MenuItemConstructorOptionsType
-
-        @seskar.js.JsValue("radio")
-        val radio: MenuItemConstructorOptionsType
-
-        @seskar.js.JsValue("header")
-        val header: MenuItemConstructorOptionsType
-
-        @seskar.js.JsValue("palette")
-        val palette: MenuItemConstructorOptionsType
-    }
+    companion object
 }
+
+inline val MenuItemConstructorOptionsType.Companion.normal: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("normal")
+
+inline val MenuItemConstructorOptionsType.Companion.separator: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("separator")
+
+inline val MenuItemConstructorOptionsType.Companion.submenu: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("submenu")
+
+inline val MenuItemConstructorOptionsType.Companion.checkbox: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("checkbox")
+
+inline val MenuItemConstructorOptionsType.Companion.radio: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("radio")
+
+inline val MenuItemConstructorOptionsType.Companion.header: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("header")
+
+inline val MenuItemConstructorOptionsType.Companion.palette: MenuItemConstructorOptionsType
+    get() = js.reflect.unsafeCast("palette")

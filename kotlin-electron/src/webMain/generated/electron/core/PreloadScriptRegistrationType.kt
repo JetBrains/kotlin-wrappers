@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface PreloadScriptRegistrationType {
-    companion object {
-        @seskar.js.JsValue("frame")
-        val frame: PreloadScriptRegistrationType
-
-        @seskar.js.JsValue("service-worker")
-        val serviceWorker: PreloadScriptRegistrationType
-    }
+    companion object
 }
+
+inline val PreloadScriptRegistrationType.Companion.frame: PreloadScriptRegistrationType
+    get() = js.reflect.unsafeCast("frame")
+
+inline val PreloadScriptRegistrationType.Companion.serviceWorker: PreloadScriptRegistrationType
+    get() = js.reflect.unsafeCast("service-worker")

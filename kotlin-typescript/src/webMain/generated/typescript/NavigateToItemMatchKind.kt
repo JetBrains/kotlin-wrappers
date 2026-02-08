@@ -3,17 +3,17 @@
 package typescript
 
 sealed external interface NavigateToItemMatchKind {
-    companion object {
-        @seskar.js.JsValue("exact")
-        val exact: NavigateToItemMatchKind
-
-        @seskar.js.JsValue("prefix")
-        val prefix: NavigateToItemMatchKind
-
-        @seskar.js.JsValue("substring")
-        val substring: NavigateToItemMatchKind
-
-        @seskar.js.JsValue("camelCase")
-        val camelCase: NavigateToItemMatchKind
-    }
+    companion object
 }
+
+inline val NavigateToItemMatchKind.Companion.exact: NavigateToItemMatchKind
+    get() = js.reflect.unsafeCast("exact")
+
+inline val NavigateToItemMatchKind.Companion.prefix: NavigateToItemMatchKind
+    get() = js.reflect.unsafeCast("prefix")
+
+inline val NavigateToItemMatchKind.Companion.substring: NavigateToItemMatchKind
+    get() = js.reflect.unsafeCast("substring")
+
+inline val NavigateToItemMatchKind.Companion.camelCase: NavigateToItemMatchKind
+    get() = js.reflect.unsafeCast("camelCase")

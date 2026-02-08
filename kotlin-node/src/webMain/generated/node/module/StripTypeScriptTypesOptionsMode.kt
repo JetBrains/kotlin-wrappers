@@ -3,11 +3,11 @@
 package node.module
 
 sealed external interface StripTypeScriptTypesOptionsMode {
-    companion object {
-        @seskar.js.JsValue("strip")
-        val strip: StripTypeScriptTypesOptionsMode
-
-        @seskar.js.JsValue("transform")
-        val transform: StripTypeScriptTypesOptionsMode
-    }
+    companion object
 }
+
+inline val StripTypeScriptTypesOptionsMode.Companion.strip: StripTypeScriptTypesOptionsMode
+    get() = js.reflect.unsafeCast("strip")
+
+inline val StripTypeScriptTypesOptionsMode.Companion.transform: StripTypeScriptTypesOptionsMode
+    get() = js.reflect.unsafeCast("transform")

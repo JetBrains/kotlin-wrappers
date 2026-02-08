@@ -3,14 +3,14 @@
 package node.dns
 
 sealed external interface LookupOptionsOrder {
-    companion object {
-        @seskar.js.JsValue("ipv4first")
-        val ipv4first: LookupOptionsOrder
-
-        @seskar.js.JsValue("ipv6first")
-        val ipv6first: LookupOptionsOrder
-
-        @seskar.js.JsValue("verbatim")
-        val verbatim: LookupOptionsOrder
-    }
+    companion object
 }
+
+inline val LookupOptionsOrder.Companion.ipv4first: LookupOptionsOrder
+    get() = js.reflect.unsafeCast("ipv4first")
+
+inline val LookupOptionsOrder.Companion.ipv6first: LookupOptionsOrder
+    get() = js.reflect.unsafeCast("ipv6first")
+
+inline val LookupOptionsOrder.Companion.verbatim: LookupOptionsOrder
+    get() = js.reflect.unsafeCast("verbatim")

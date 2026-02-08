@@ -3,17 +3,17 @@
 package node.tls
 
 sealed external interface GetCACertificatesType {
-    companion object {
-        @seskar.js.JsValue("default")
-        val default: GetCACertificatesType
-
-        @seskar.js.JsValue("system")
-        val system: GetCACertificatesType
-
-        @seskar.js.JsValue("bundled")
-        val bundled: GetCACertificatesType
-
-        @seskar.js.JsValue("extra")
-        val extra: GetCACertificatesType
-    }
+    companion object
 }
+
+inline val GetCACertificatesType.Companion.default: GetCACertificatesType
+    get() = js.reflect.unsafeCast("default")
+
+inline val GetCACertificatesType.Companion.system: GetCACertificatesType
+    get() = js.reflect.unsafeCast("system")
+
+inline val GetCACertificatesType.Companion.bundled: GetCACertificatesType
+    get() = js.reflect.unsafeCast("bundled")
+
+inline val GetCACertificatesType.Companion.extra: GetCACertificatesType
+    get() = js.reflect.unsafeCast("extra")

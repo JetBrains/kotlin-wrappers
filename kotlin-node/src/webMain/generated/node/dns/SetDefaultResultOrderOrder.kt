@@ -3,14 +3,14 @@
 package node.dns
 
 sealed external interface SetDefaultResultOrderOrder {
-    companion object {
-        @seskar.js.JsValue("ipv4first")
-        val ipv4first: SetDefaultResultOrderOrder
-
-        @seskar.js.JsValue("ipv6first")
-        val ipv6first: SetDefaultResultOrderOrder
-
-        @seskar.js.JsValue("verbatim")
-        val verbatim: SetDefaultResultOrderOrder
-    }
+    companion object
 }
+
+inline val SetDefaultResultOrderOrder.Companion.ipv4first: SetDefaultResultOrderOrder
+    get() = js.reflect.unsafeCast("ipv4first")
+
+inline val SetDefaultResultOrderOrder.Companion.ipv6first: SetDefaultResultOrderOrder
+    get() = js.reflect.unsafeCast("ipv6first")
+
+inline val SetDefaultResultOrderOrder.Companion.verbatim: SetDefaultResultOrderOrder
+    get() = js.reflect.unsafeCast("verbatim")

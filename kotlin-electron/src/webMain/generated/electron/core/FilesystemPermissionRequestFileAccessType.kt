@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface FilesystemPermissionRequestFileAccessType {
-    companion object {
-        @seskar.js.JsValue("writable")
-        val writable: FilesystemPermissionRequestFileAccessType
-
-        @seskar.js.JsValue("readable")
-        val readable: FilesystemPermissionRequestFileAccessType
-    }
+    companion object
 }
+
+inline val FilesystemPermissionRequestFileAccessType.Companion.writable: FilesystemPermissionRequestFileAccessType
+    get() = js.reflect.unsafeCast("writable")
+
+inline val FilesystemPermissionRequestFileAccessType.Companion.readable: FilesystemPermissionRequestFileAccessType
+    get() = js.reflect.unsafeCast("readable")

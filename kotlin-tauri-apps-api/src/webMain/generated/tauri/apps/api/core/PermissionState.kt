@@ -3,17 +3,17 @@
 package tauri.apps.api.core
 
 sealed external interface PermissionState {
-    companion object {
-        @seskar.js.JsValue("granted")
-        val granted: PermissionState
-
-        @seskar.js.JsValue("denied")
-        val denied: PermissionState
-
-        @seskar.js.JsValue("prompt")
-        val prompt: PermissionState
-
-        @seskar.js.JsValue("prompt-with-rationale")
-        val promptWithRationale: PermissionState
-    }
+    companion object
 }
+
+inline val PermissionState.Companion.granted: PermissionState
+    get() = js.reflect.unsafeCast("granted")
+
+inline val PermissionState.Companion.denied: PermissionState
+    get() = js.reflect.unsafeCast("denied")
+
+inline val PermissionState.Companion.prompt: PermissionState
+    get() = js.reflect.unsafeCast("prompt")
+
+inline val PermissionState.Companion.promptWithRationale: PermissionState
+    get() = js.reflect.unsafeCast("prompt-with-rationale")

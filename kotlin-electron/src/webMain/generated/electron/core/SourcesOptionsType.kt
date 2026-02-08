@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface SourcesOptionsType {
-    companion object {
-        @seskar.js.JsValue("screen")
-        val screen: SourcesOptionsType
-
-        @seskar.js.JsValue("window")
-        val window: SourcesOptionsType
-    }
+    companion object
 }
+
+inline val SourcesOptionsType.Companion.screen: SourcesOptionsType
+    get() = js.reflect.unsafeCast("screen")
+
+inline val SourcesOptionsType.Companion.window: SourcesOptionsType
+    get() = js.reflect.unsafeCast("window")

@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface MoveToApplicationsFolderOptionsConflictHandlerConflictType {
-    companion object {
-        @seskar.js.JsValue("exists")
-        val exists: MoveToApplicationsFolderOptionsConflictHandlerConflictType
-
-        @seskar.js.JsValue("existsAndRunning")
-        val existsAndRunning: MoveToApplicationsFolderOptionsConflictHandlerConflictType
-    }
+    companion object
 }
+
+inline val MoveToApplicationsFolderOptionsConflictHandlerConflictType.Companion.exists: MoveToApplicationsFolderOptionsConflictHandlerConflictType
+    get() = js.reflect.unsafeCast("exists")
+
+inline val MoveToApplicationsFolderOptionsConflictHandlerConflictType.Companion.existsAndRunning: MoveToApplicationsFolderOptionsConflictHandlerConflictType
+    get() = js.reflect.unsafeCast("existsAndRunning")

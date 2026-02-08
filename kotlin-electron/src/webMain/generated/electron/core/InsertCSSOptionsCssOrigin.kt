@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface InsertCSSOptionsCssOrigin {
-    companion object {
-        @seskar.js.JsValue("user")
-        val user: InsertCSSOptionsCssOrigin
-
-        @seskar.js.JsValue("author")
-        val author: InsertCSSOptionsCssOrigin
-    }
+    companion object
 }
+
+inline val InsertCSSOptionsCssOrigin.Companion.user: InsertCSSOptionsCssOrigin
+    get() = js.reflect.unsafeCast("user")
+
+inline val InsertCSSOptionsCssOrigin.Companion.author: InsertCSSOptionsCssOrigin
+    get() = js.reflect.unsafeCast("author")

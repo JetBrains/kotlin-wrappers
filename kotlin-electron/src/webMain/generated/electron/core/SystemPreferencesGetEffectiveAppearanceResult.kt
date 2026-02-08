@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface SystemPreferencesGetEffectiveAppearanceResult {
-    companion object {
-        @seskar.js.JsValue("dark")
-        val dark: SystemPreferencesGetEffectiveAppearanceResult
-
-        @seskar.js.JsValue("light")
-        val light: SystemPreferencesGetEffectiveAppearanceResult
-
-        @seskar.js.JsValue("unknown")
-        val unknown: SystemPreferencesGetEffectiveAppearanceResult
-    }
+    companion object
 }
+
+inline val SystemPreferencesGetEffectiveAppearanceResult.Companion.dark: SystemPreferencesGetEffectiveAppearanceResult
+    get() = js.reflect.unsafeCast("dark")
+
+inline val SystemPreferencesGetEffectiveAppearanceResult.Companion.light: SystemPreferencesGetEffectiveAppearanceResult
+    get() = js.reflect.unsafeCast("light")
+
+inline val SystemPreferencesGetEffectiveAppearanceResult.Companion.unknown: SystemPreferencesGetEffectiveAppearanceResult
+    get() = js.reflect.unsafeCast("unknown")

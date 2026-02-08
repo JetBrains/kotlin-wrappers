@@ -3,11 +3,11 @@
 package node.http
 
 sealed external interface AgentOptionsScheduling {
-    companion object {
-        @seskar.js.JsValue("fifo")
-        val fifo: AgentOptionsScheduling
-
-        @seskar.js.JsValue("lifo")
-        val lifo: AgentOptionsScheduling
-    }
+    companion object
 }
+
+inline val AgentOptionsScheduling.Companion.fifo: AgentOptionsScheduling
+    get() = js.reflect.unsafeCast("fifo")
+
+inline val AgentOptionsScheduling.Companion.lifo: AgentOptionsScheduling
+    get() = js.reflect.unsafeCast("lifo")

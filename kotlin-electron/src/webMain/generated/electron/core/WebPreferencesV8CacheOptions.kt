@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface WebPreferencesV8CacheOptions {
-    companion object {
-        @seskar.js.JsValue("none")
-        val none: WebPreferencesV8CacheOptions
-
-        @seskar.js.JsValue("code")
-        val code: WebPreferencesV8CacheOptions
-
-        @seskar.js.JsValue("bypassHeatCheck")
-        val bypassHeatCheck: WebPreferencesV8CacheOptions
-
-        @seskar.js.JsValue("bypassHeatCheckAndEagerCompile")
-        val bypassHeatCheckAndEagerCompile: WebPreferencesV8CacheOptions
-    }
+    companion object
 }
+
+inline val WebPreferencesV8CacheOptions.Companion.none: WebPreferencesV8CacheOptions
+    get() = js.reflect.unsafeCast("none")
+
+inline val WebPreferencesV8CacheOptions.Companion.code: WebPreferencesV8CacheOptions
+    get() = js.reflect.unsafeCast("code")
+
+inline val WebPreferencesV8CacheOptions.Companion.bypassHeatCheck: WebPreferencesV8CacheOptions
+    get() = js.reflect.unsafeCast("bypassHeatCheck")
+
+inline val WebPreferencesV8CacheOptions.Companion.bypassHeatCheckAndEagerCompile: WebPreferencesV8CacheOptions
+    get() = js.reflect.unsafeCast("bypassHeatCheckAndEagerCompile")

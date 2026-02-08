@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface NotificationConstructorOptionsUrgency {
-    companion object {
-        @seskar.js.JsValue("normal")
-        val normal: NotificationConstructorOptionsUrgency
-
-        @seskar.js.JsValue("critical")
-        val critical: NotificationConstructorOptionsUrgency
-
-        @seskar.js.JsValue("low")
-        val low: NotificationConstructorOptionsUrgency
-    }
+    companion object
 }
+
+inline val NotificationConstructorOptionsUrgency.Companion.normal: NotificationConstructorOptionsUrgency
+    get() = js.reflect.unsafeCast("normal")
+
+inline val NotificationConstructorOptionsUrgency.Companion.critical: NotificationConstructorOptionsUrgency
+    get() = js.reflect.unsafeCast("critical")
+
+inline val NotificationConstructorOptionsUrgency.Companion.low: NotificationConstructorOptionsUrgency
+    get() = js.reflect.unsafeCast("low")

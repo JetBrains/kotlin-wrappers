@@ -3,44 +3,44 @@
 package electron.core
 
 sealed external interface OnHeadersReceivedListenerDetailsResourceType {
-    companion object {
-        @seskar.js.JsValue("mainFrame")
-        val mainFrame: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("subFrame")
-        val subFrame: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("stylesheet")
-        val stylesheet: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("script")
-        val script: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("image")
-        val image: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("font")
-        val font: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("object")
-        val `object`: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("xhr")
-        val xhr: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("ping")
-        val ping: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("cspReport")
-        val cspReport: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("media")
-        val media: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("webSocket")
-        val webSocket: OnHeadersReceivedListenerDetailsResourceType
-
-        @seskar.js.JsValue("other")
-        val other: OnHeadersReceivedListenerDetailsResourceType
-    }
+    companion object
 }
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.mainFrame: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("mainFrame")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.subFrame: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("subFrame")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.stylesheet: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("stylesheet")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.script: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("script")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.image: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("image")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.font: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("font")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.`object`: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("object")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.xhr: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("xhr")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.ping: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("ping")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.cspReport: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("cspReport")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.media: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("media")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.webSocket: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("webSocket")
+
+inline val OnHeadersReceivedListenerDetailsResourceType.Companion.other: OnHeadersReceivedListenerDetailsResourceType
+    get() = js.reflect.unsafeCast("other")

@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface TransactionTransactionState {
-    companion object {
-        @seskar.js.JsValue("purchasing")
-        val purchasing: TransactionTransactionState
-
-        @seskar.js.JsValue("purchased")
-        val purchased: TransactionTransactionState
-
-        @seskar.js.JsValue("failed")
-        val failed: TransactionTransactionState
-
-        @seskar.js.JsValue("restored")
-        val restored: TransactionTransactionState
-
-        @seskar.js.JsValue("deferred")
-        val deferred: TransactionTransactionState
-    }
+    companion object
 }
+
+inline val TransactionTransactionState.Companion.purchasing: TransactionTransactionState
+    get() = js.reflect.unsafeCast("purchasing")
+
+inline val TransactionTransactionState.Companion.purchased: TransactionTransactionState
+    get() = js.reflect.unsafeCast("purchased")
+
+inline val TransactionTransactionState.Companion.failed: TransactionTransactionState
+    get() = js.reflect.unsafeCast("failed")
+
+inline val TransactionTransactionState.Companion.restored: TransactionTransactionState
+    get() = js.reflect.unsafeCast("restored")
+
+inline val TransactionTransactionState.Companion.deferred: TransactionTransactionState
+    get() = js.reflect.unsafeCast("deferred")

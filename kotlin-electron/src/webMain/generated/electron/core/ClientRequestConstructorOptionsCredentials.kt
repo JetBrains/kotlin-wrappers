@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface ClientRequestConstructorOptionsCredentials {
-    companion object {
-        @seskar.js.JsValue("include")
-        val include: ClientRequestConstructorOptionsCredentials
-
-        @seskar.js.JsValue("omit")
-        val omit: ClientRequestConstructorOptionsCredentials
-
-        @seskar.js.JsValue("same-origin")
-        val sameOrigin: ClientRequestConstructorOptionsCredentials
-    }
+    companion object
 }
+
+inline val ClientRequestConstructorOptionsCredentials.Companion.include: ClientRequestConstructorOptionsCredentials
+    get() = js.reflect.unsafeCast("include")
+
+inline val ClientRequestConstructorOptionsCredentials.Companion.omit: ClientRequestConstructorOptionsCredentials
+    get() = js.reflect.unsafeCast("omit")
+
+inline val ClientRequestConstructorOptionsCredentials.Companion.sameOrigin: ClientRequestConstructorOptionsCredentials
+    get() = js.reflect.unsafeCast("same-origin")

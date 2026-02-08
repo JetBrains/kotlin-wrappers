@@ -3,14 +3,14 @@
 package node.crypto
 
 sealed external interface ECDHConvertKeyFormat {
-    companion object {
-        @seskar.js.JsValue("uncompressed")
-        val uncompressed: ECDHConvertKeyFormat
-
-        @seskar.js.JsValue("compressed")
-        val compressed: ECDHConvertKeyFormat
-
-        @seskar.js.JsValue("hybrid")
-        val hybrid: ECDHConvertKeyFormat
-    }
+    companion object
 }
+
+inline val ECDHConvertKeyFormat.Companion.uncompressed: ECDHConvertKeyFormat
+    get() = js.reflect.unsafeCast("uncompressed")
+
+inline val ECDHConvertKeyFormat.Companion.compressed: ECDHConvertKeyFormat
+    get() = js.reflect.unsafeCast("compressed")
+
+inline val ECDHConvertKeyFormat.Companion.hybrid: ECDHConvertKeyFormat
+    get() = js.reflect.unsafeCast("hybrid")

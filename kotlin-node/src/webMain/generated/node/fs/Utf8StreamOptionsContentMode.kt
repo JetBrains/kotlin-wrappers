@@ -3,11 +3,11 @@
 package node.fs
 
 sealed external interface Utf8StreamOptionsContentMode {
-    companion object {
-        @seskar.js.JsValue("utf8")
-        val utf8: Utf8StreamOptionsContentMode
-
-        @seskar.js.JsValue("buffer")
-        val buffer: Utf8StreamOptionsContentMode
-    }
+    companion object
 }
+
+inline val Utf8StreamOptionsContentMode.Companion.utf8: Utf8StreamOptionsContentMode
+    get() = js.reflect.unsafeCast("utf8")
+
+inline val Utf8StreamOptionsContentMode.Companion.buffer: Utf8StreamOptionsContentMode
+    get() = js.reflect.unsafeCast("buffer")

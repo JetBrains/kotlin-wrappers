@@ -3,20 +3,20 @@
 package node.net
 
 sealed external interface SocketReadyState {
-    companion object {
-        @seskar.js.JsValue("opening")
-        val opening: SocketReadyState
-
-        @seskar.js.JsValue("open")
-        val open: SocketReadyState
-
-        @seskar.js.JsValue("readOnly")
-        val readOnly: SocketReadyState
-
-        @seskar.js.JsValue("writeOnly")
-        val writeOnly: SocketReadyState
-
-        @seskar.js.JsValue("closed")
-        val closed: SocketReadyState
-    }
+    companion object
 }
+
+inline val SocketReadyState.Companion.opening: SocketReadyState
+    get() = js.reflect.unsafeCast("opening")
+
+inline val SocketReadyState.Companion.open: SocketReadyState
+    get() = js.reflect.unsafeCast("open")
+
+inline val SocketReadyState.Companion.readOnly: SocketReadyState
+    get() = js.reflect.unsafeCast("readOnly")
+
+inline val SocketReadyState.Companion.writeOnly: SocketReadyState
+    get() = js.reflect.unsafeCast("writeOnly")
+
+inline val SocketReadyState.Companion.closed: SocketReadyState
+    get() = js.reflect.unsafeCast("closed")

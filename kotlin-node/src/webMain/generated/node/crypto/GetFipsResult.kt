@@ -3,11 +3,11 @@
 package node.crypto
 
 sealed external interface GetFipsResult {
-    companion object {
-        @seskar.js.JsRawValue("1")
-        val `1`: GetFipsResult
-
-        @seskar.js.JsRawValue("0")
-        val `0`: GetFipsResult
-    }
+    companion object
 }
+
+inline val GetFipsResult.Companion.`1`: GetFipsResult
+    get() = js.reflect.unsafeCast(1)
+
+inline val GetFipsResult.Companion.`0`: GetFipsResult
+    get() = js.reflect.unsafeCast(0)

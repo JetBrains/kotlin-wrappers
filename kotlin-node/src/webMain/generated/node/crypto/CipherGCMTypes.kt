@@ -3,14 +3,14 @@
 package node.crypto
 
 sealed external interface CipherGCMTypes {
-    companion object {
-        @seskar.js.JsValue("aes-128-gcm")
-        val aes128Gcm: CipherGCMTypes
-
-        @seskar.js.JsValue("aes-192-gcm")
-        val aes192Gcm: CipherGCMTypes
-
-        @seskar.js.JsValue("aes-256-gcm")
-        val aes256Gcm: CipherGCMTypes
-    }
+    companion object
 }
+
+inline val CipherGCMTypes.Companion.aes128Gcm: CipherGCMTypes
+    get() = js.reflect.unsafeCast("aes-128-gcm")
+
+inline val CipherGCMTypes.Companion.aes192Gcm: CipherGCMTypes
+    get() = js.reflect.unsafeCast("aes-192-gcm")
+
+inline val CipherGCMTypes.Companion.aes256Gcm: CipherGCMTypes
+    get() = js.reflect.unsafeCast("aes-256-gcm")

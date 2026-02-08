@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface FileIconOptionsSize {
-    companion object {
-        @seskar.js.JsValue("small")
-        val small: FileIconOptionsSize
-
-        @seskar.js.JsValue("normal")
-        val normal: FileIconOptionsSize
-
-        @seskar.js.JsValue("large")
-        val large: FileIconOptionsSize
-    }
+    companion object
 }
+
+inline val FileIconOptionsSize.Companion.small: FileIconOptionsSize
+    get() = js.reflect.unsafeCast("small")
+
+inline val FileIconOptionsSize.Companion.normal: FileIconOptionsSize
+    get() = js.reflect.unsafeCast("normal")
+
+inline val FileIconOptionsSize.Companion.large: FileIconOptionsSize
+    get() = js.reflect.unsafeCast("large")

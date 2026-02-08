@@ -3,41 +3,41 @@
 package electron.core
 
 sealed external interface WebRequestFilterType {
-    companion object {
-        @seskar.js.JsValue("mainFrame")
-        val mainFrame: WebRequestFilterType
-
-        @seskar.js.JsValue("subFrame")
-        val subFrame: WebRequestFilterType
-
-        @seskar.js.JsValue("stylesheet")
-        val stylesheet: WebRequestFilterType
-
-        @seskar.js.JsValue("script")
-        val script: WebRequestFilterType
-
-        @seskar.js.JsValue("image")
-        val image: WebRequestFilterType
-
-        @seskar.js.JsValue("font")
-        val font: WebRequestFilterType
-
-        @seskar.js.JsValue("object")
-        val `object`: WebRequestFilterType
-
-        @seskar.js.JsValue("xhr")
-        val xhr: WebRequestFilterType
-
-        @seskar.js.JsValue("ping")
-        val ping: WebRequestFilterType
-
-        @seskar.js.JsValue("cspReport")
-        val cspReport: WebRequestFilterType
-
-        @seskar.js.JsValue("media")
-        val media: WebRequestFilterType
-
-        @seskar.js.JsValue("webSocket")
-        val webSocket: WebRequestFilterType
-    }
+    companion object
 }
+
+inline val WebRequestFilterType.Companion.mainFrame: WebRequestFilterType
+    get() = js.reflect.unsafeCast("mainFrame")
+
+inline val WebRequestFilterType.Companion.subFrame: WebRequestFilterType
+    get() = js.reflect.unsafeCast("subFrame")
+
+inline val WebRequestFilterType.Companion.stylesheet: WebRequestFilterType
+    get() = js.reflect.unsafeCast("stylesheet")
+
+inline val WebRequestFilterType.Companion.script: WebRequestFilterType
+    get() = js.reflect.unsafeCast("script")
+
+inline val WebRequestFilterType.Companion.image: WebRequestFilterType
+    get() = js.reflect.unsafeCast("image")
+
+inline val WebRequestFilterType.Companion.font: WebRequestFilterType
+    get() = js.reflect.unsafeCast("font")
+
+inline val WebRequestFilterType.Companion.`object`: WebRequestFilterType
+    get() = js.reflect.unsafeCast("object")
+
+inline val WebRequestFilterType.Companion.xhr: WebRequestFilterType
+    get() = js.reflect.unsafeCast("xhr")
+
+inline val WebRequestFilterType.Companion.ping: WebRequestFilterType
+    get() = js.reflect.unsafeCast("ping")
+
+inline val WebRequestFilterType.Companion.cspReport: WebRequestFilterType
+    get() = js.reflect.unsafeCast("cspReport")
+
+inline val WebRequestFilterType.Companion.media: WebRequestFilterType
+    get() = js.reflect.unsafeCast("media")
+
+inline val WebRequestFilterType.Companion.webSocket: WebRequestFilterType
+    get() = js.reflect.unsafeCast("webSocket")

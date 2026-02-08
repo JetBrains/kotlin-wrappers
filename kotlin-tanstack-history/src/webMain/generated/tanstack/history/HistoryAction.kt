@@ -3,20 +3,20 @@
 package tanstack.history
 
 sealed external interface HistoryAction {
-    companion object {
-        @seskar.js.JsValue("PUSH")
-        val PUSH: HistoryAction
-
-        @seskar.js.JsValue("REPLACE")
-        val REPLACE: HistoryAction
-
-        @seskar.js.JsValue("FORWARD")
-        val FORWARD: HistoryAction
-
-        @seskar.js.JsValue("BACK")
-        val BACK: HistoryAction
-
-        @seskar.js.JsValue("GO")
-        val GO: HistoryAction
-    }
+    companion object
 }
+
+inline val HistoryAction.Companion.PUSH: HistoryAction
+    get() = js.reflect.unsafeCast("PUSH")
+
+inline val HistoryAction.Companion.REPLACE: HistoryAction
+    get() = js.reflect.unsafeCast("REPLACE")
+
+inline val HistoryAction.Companion.FORWARD: HistoryAction
+    get() = js.reflect.unsafeCast("FORWARD")
+
+inline val HistoryAction.Companion.BACK: HistoryAction
+    get() = js.reflect.unsafeCast("BACK")
+
+inline val HistoryAction.Companion.GO: HistoryAction
+    get() = js.reflect.unsafeCast("GO")

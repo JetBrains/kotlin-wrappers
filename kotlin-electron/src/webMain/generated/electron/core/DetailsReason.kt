@@ -3,26 +3,26 @@
 package electron.core
 
 sealed external interface DetailsReason {
-    companion object {
-        @seskar.js.JsValue("clean-exit")
-        val cleanExit: DetailsReason
-
-        @seskar.js.JsValue("abnormal-exit")
-        val abnormalExit: DetailsReason
-
-        @seskar.js.JsValue("killed")
-        val killed: DetailsReason
-
-        @seskar.js.JsValue("crashed")
-        val crashed: DetailsReason
-
-        @seskar.js.JsValue("oom")
-        val oom: DetailsReason
-
-        @seskar.js.JsValue("launch-failed")
-        val launchFailed: DetailsReason
-
-        @seskar.js.JsValue("integrity-failure")
-        val integrityFailure: DetailsReason
-    }
+    companion object
 }
+
+inline val DetailsReason.Companion.cleanExit: DetailsReason
+    get() = js.reflect.unsafeCast("clean-exit")
+
+inline val DetailsReason.Companion.abnormalExit: DetailsReason
+    get() = js.reflect.unsafeCast("abnormal-exit")
+
+inline val DetailsReason.Companion.killed: DetailsReason
+    get() = js.reflect.unsafeCast("killed")
+
+inline val DetailsReason.Companion.crashed: DetailsReason
+    get() = js.reflect.unsafeCast("crashed")
+
+inline val DetailsReason.Companion.oom: DetailsReason
+    get() = js.reflect.unsafeCast("oom")
+
+inline val DetailsReason.Companion.launchFailed: DetailsReason
+    get() = js.reflect.unsafeCast("launch-failed")
+
+inline val DetailsReason.Companion.integrityFailure: DetailsReason
+    get() = js.reflect.unsafeCast("integrity-failure")

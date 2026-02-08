@@ -3,20 +3,20 @@
 package node.cluster
 
 sealed external interface AddressAddressType {
-    companion object {
-        @seskar.js.JsRawValue("4")
-        val `4`: AddressAddressType
-
-        @seskar.js.JsRawValue("6")
-        val `6`: AddressAddressType
-
-        @seskar.js.JsRawValue("-1")
-        val `-1`: AddressAddressType
-
-        @seskar.js.JsValue("udp4")
-        val udp4: AddressAddressType
-
-        @seskar.js.JsValue("udp6")
-        val udp6: AddressAddressType
-    }
+    companion object
 }
+
+inline val AddressAddressType.Companion.`4`: AddressAddressType
+    get() = js.reflect.unsafeCast(4)
+
+inline val AddressAddressType.Companion.`6`: AddressAddressType
+    get() = js.reflect.unsafeCast(6)
+
+inline val AddressAddressType.Companion.`-1`: AddressAddressType
+    get() = js.reflect.unsafeCast(-1)
+
+inline val AddressAddressType.Companion.udp4: AddressAddressType
+    get() = js.reflect.unsafeCast("udp4")
+
+inline val AddressAddressType.Companion.udp6: AddressAddressType
+    get() = js.reflect.unsafeCast("udp6")

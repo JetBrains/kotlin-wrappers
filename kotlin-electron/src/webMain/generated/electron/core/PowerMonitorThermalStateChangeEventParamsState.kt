@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface PowerMonitorThermalStateChangeEventParamsState {
-    companion object {
-        @seskar.js.JsValue("unknown")
-        val unknown: PowerMonitorThermalStateChangeEventParamsState
-
-        @seskar.js.JsValue("nominal")
-        val nominal: PowerMonitorThermalStateChangeEventParamsState
-
-        @seskar.js.JsValue("fair")
-        val fair: PowerMonitorThermalStateChangeEventParamsState
-
-        @seskar.js.JsValue("serious")
-        val serious: PowerMonitorThermalStateChangeEventParamsState
-
-        @seskar.js.JsValue("critical")
-        val critical: PowerMonitorThermalStateChangeEventParamsState
-    }
+    companion object
 }
+
+inline val PowerMonitorThermalStateChangeEventParamsState.Companion.unknown: PowerMonitorThermalStateChangeEventParamsState
+    get() = js.reflect.unsafeCast("unknown")
+
+inline val PowerMonitorThermalStateChangeEventParamsState.Companion.nominal: PowerMonitorThermalStateChangeEventParamsState
+    get() = js.reflect.unsafeCast("nominal")
+
+inline val PowerMonitorThermalStateChangeEventParamsState.Companion.fair: PowerMonitorThermalStateChangeEventParamsState
+    get() = js.reflect.unsafeCast("fair")
+
+inline val PowerMonitorThermalStateChangeEventParamsState.Companion.serious: PowerMonitorThermalStateChangeEventParamsState
+    get() = js.reflect.unsafeCast("serious")
+
+inline val PowerMonitorThermalStateChangeEventParamsState.Companion.critical: PowerMonitorThermalStateChangeEventParamsState
+    get() = js.reflect.unsafeCast("critical")

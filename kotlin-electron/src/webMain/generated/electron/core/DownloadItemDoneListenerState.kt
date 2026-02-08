@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface DownloadItemDoneListenerState {
-    companion object {
-        @seskar.js.JsValue("completed")
-        val completed: DownloadItemDoneListenerState
-
-        @seskar.js.JsValue("cancelled")
-        val cancelled: DownloadItemDoneListenerState
-
-        @seskar.js.JsValue("interrupted")
-        val interrupted: DownloadItemDoneListenerState
-    }
+    companion object
 }
+
+inline val DownloadItemDoneListenerState.Companion.completed: DownloadItemDoneListenerState
+    get() = js.reflect.unsafeCast("completed")
+
+inline val DownloadItemDoneListenerState.Companion.cancelled: DownloadItemDoneListenerState
+    get() = js.reflect.unsafeCast("cancelled")
+
+inline val DownloadItemDoneListenerState.Companion.interrupted: DownloadItemDoneListenerState
+    get() = js.reflect.unsafeCast("interrupted")

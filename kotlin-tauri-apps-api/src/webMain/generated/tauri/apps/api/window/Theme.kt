@@ -3,11 +3,11 @@
 package tauri.apps.api.window
 
 sealed external interface Theme {
-    companion object {
-        @seskar.js.JsValue("light")
-        val light: Theme
-
-        @seskar.js.JsValue("dark")
-        val dark: Theme
-    }
+    companion object
 }
+
+inline val Theme.Companion.light: Theme
+    get() = js.reflect.unsafeCast("light")
+
+inline val Theme.Companion.dark: Theme
+    get() = js.reflect.unsafeCast("dark")

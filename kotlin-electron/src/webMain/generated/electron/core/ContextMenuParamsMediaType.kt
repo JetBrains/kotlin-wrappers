@@ -3,26 +3,26 @@
 package electron.core
 
 sealed external interface ContextMenuParamsMediaType {
-    companion object {
-        @seskar.js.JsValue("none")
-        val none: ContextMenuParamsMediaType
-
-        @seskar.js.JsValue("image")
-        val image: ContextMenuParamsMediaType
-
-        @seskar.js.JsValue("audio")
-        val audio: ContextMenuParamsMediaType
-
-        @seskar.js.JsValue("video")
-        val video: ContextMenuParamsMediaType
-
-        @seskar.js.JsValue("canvas")
-        val canvas: ContextMenuParamsMediaType
-
-        @seskar.js.JsValue("file")
-        val file: ContextMenuParamsMediaType
-
-        @seskar.js.JsValue("plugin")
-        val plugin: ContextMenuParamsMediaType
-    }
+    companion object
 }
+
+inline val ContextMenuParamsMediaType.Companion.none: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("none")
+
+inline val ContextMenuParamsMediaType.Companion.image: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("image")
+
+inline val ContextMenuParamsMediaType.Companion.audio: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("audio")
+
+inline val ContextMenuParamsMediaType.Companion.video: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("video")
+
+inline val ContextMenuParamsMediaType.Companion.canvas: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("canvas")
+
+inline val ContextMenuParamsMediaType.Companion.file: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("file")
+
+inline val ContextMenuParamsMediaType.Companion.plugin: ContextMenuParamsMediaType
+    get() = js.reflect.unsafeCast("plugin")

@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface CookiesAddListenerListenerCause {
-    companion object {
-        @seskar.js.JsValue("explicit")
-        val explicit: CookiesAddListenerListenerCause
-
-        @seskar.js.JsValue("overwrite")
-        val overwrite: CookiesAddListenerListenerCause
-
-        @seskar.js.JsValue("expired")
-        val expired: CookiesAddListenerListenerCause
-
-        @seskar.js.JsValue("evicted")
-        val evicted: CookiesAddListenerListenerCause
-
-        @seskar.js.JsValue("expired-overwrite")
-        val expiredOverwrite: CookiesAddListenerListenerCause
-    }
+    companion object
 }
+
+inline val CookiesAddListenerListenerCause.Companion.explicit: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("explicit")
+
+inline val CookiesAddListenerListenerCause.Companion.overwrite: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("overwrite")
+
+inline val CookiesAddListenerListenerCause.Companion.expired: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("expired")
+
+inline val CookiesAddListenerListenerCause.Companion.evicted: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("evicted")
+
+inline val CookiesAddListenerListenerCause.Companion.expiredOverwrite: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("expired-overwrite")

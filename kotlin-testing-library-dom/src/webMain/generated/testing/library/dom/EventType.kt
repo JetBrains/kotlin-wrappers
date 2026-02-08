@@ -3,278 +3,278 @@
 package testing.library.dom
 
 sealed external interface EventType {
-    companion object {
-        @seskar.js.JsValue("copy")
-        val copy: EventType
-
-        @seskar.js.JsValue("cut")
-        val cut: EventType
-
-        @seskar.js.JsValue("paste")
-        val paste: EventType
-
-        @seskar.js.JsValue("compositionEnd")
-        val compositionEnd: EventType
-
-        @seskar.js.JsValue("compositionStart")
-        val compositionStart: EventType
-
-        @seskar.js.JsValue("compositionUpdate")
-        val compositionUpdate: EventType
-
-        @seskar.js.JsValue("keyDown")
-        val keyDown: EventType
-
-        @seskar.js.JsValue("keyPress")
-        val keyPress: EventType
-
-        @seskar.js.JsValue("keyUp")
-        val keyUp: EventType
-
-        @seskar.js.JsValue("focus")
-        val focus: EventType
-
-        @seskar.js.JsValue("blur")
-        val blur: EventType
-
-        @seskar.js.JsValue("focusIn")
-        val focusIn: EventType
-
-        @seskar.js.JsValue("focusOut")
-        val focusOut: EventType
-
-        @seskar.js.JsValue("change")
-        val change: EventType
-
-        @seskar.js.JsValue("input")
-        val input: EventType
-
-        @seskar.js.JsValue("invalid")
-        val invalid: EventType
-
-        @seskar.js.JsValue("submit")
-        val submit: EventType
-
-        @seskar.js.JsValue("reset")
-        val reset: EventType
-
-        @seskar.js.JsValue("click")
-        val click: EventType
-
-        @seskar.js.JsValue("contextMenu")
-        val contextMenu: EventType
-
-        @seskar.js.JsValue("dblClick")
-        val dblClick: EventType
-
-        @seskar.js.JsValue("drag")
-        val drag: EventType
-
-        @seskar.js.JsValue("dragEnd")
-        val dragEnd: EventType
-
-        @seskar.js.JsValue("dragEnter")
-        val dragEnter: EventType
-
-        @seskar.js.JsValue("dragExit")
-        val dragExit: EventType
-
-        @seskar.js.JsValue("dragLeave")
-        val dragLeave: EventType
-
-        @seskar.js.JsValue("dragOver")
-        val dragOver: EventType
-
-        @seskar.js.JsValue("dragStart")
-        val dragStart: EventType
-
-        @seskar.js.JsValue("drop")
-        val drop: EventType
-
-        @seskar.js.JsValue("mouseDown")
-        val mouseDown: EventType
-
-        @seskar.js.JsValue("mouseEnter")
-        val mouseEnter: EventType
-
-        @seskar.js.JsValue("mouseLeave")
-        val mouseLeave: EventType
-
-        @seskar.js.JsValue("mouseMove")
-        val mouseMove: EventType
-
-        @seskar.js.JsValue("mouseOut")
-        val mouseOut: EventType
-
-        @seskar.js.JsValue("mouseOver")
-        val mouseOver: EventType
-
-        @seskar.js.JsValue("mouseUp")
-        val mouseUp: EventType
-
-        @seskar.js.JsValue("popState")
-        val popState: EventType
-
-        @seskar.js.JsValue("select")
-        val select: EventType
-
-        @seskar.js.JsValue("touchCancel")
-        val touchCancel: EventType
-
-        @seskar.js.JsValue("touchEnd")
-        val touchEnd: EventType
-
-        @seskar.js.JsValue("touchMove")
-        val touchMove: EventType
-
-        @seskar.js.JsValue("touchStart")
-        val touchStart: EventType
-
-        @seskar.js.JsValue("resize")
-        val resize: EventType
-
-        @seskar.js.JsValue("scroll")
-        val scroll: EventType
-
-        @seskar.js.JsValue("wheel")
-        val wheel: EventType
-
-        @seskar.js.JsValue("abort")
-        val abort: EventType
-
-        @seskar.js.JsValue("canPlay")
-        val canPlay: EventType
-
-        @seskar.js.JsValue("canPlayThrough")
-        val canPlayThrough: EventType
-
-        @seskar.js.JsValue("durationChange")
-        val durationChange: EventType
-
-        @seskar.js.JsValue("emptied")
-        val emptied: EventType
-
-        @seskar.js.JsValue("encrypted")
-        val encrypted: EventType
-
-        @seskar.js.JsValue("ended")
-        val ended: EventType
-
-        @seskar.js.JsValue("loadedData")
-        val loadedData: EventType
-
-        @seskar.js.JsValue("loadedMetadata")
-        val loadedMetadata: EventType
-
-        @seskar.js.JsValue("loadStart")
-        val loadStart: EventType
-
-        @seskar.js.JsValue("pause")
-        val pause: EventType
-
-        @seskar.js.JsValue("play")
-        val play: EventType
-
-        @seskar.js.JsValue("playing")
-        val playing: EventType
-
-        @seskar.js.JsValue("progress")
-        val progress: EventType
-
-        @seskar.js.JsValue("rateChange")
-        val rateChange: EventType
-
-        @seskar.js.JsValue("seeked")
-        val seeked: EventType
-
-        @seskar.js.JsValue("seeking")
-        val seeking: EventType
-
-        @seskar.js.JsValue("stalled")
-        val stalled: EventType
-
-        @seskar.js.JsValue("suspend")
-        val suspend: EventType
-
-        @seskar.js.JsValue("timeUpdate")
-        val timeUpdate: EventType
-
-        @seskar.js.JsValue("volumeChange")
-        val volumeChange: EventType
-
-        @seskar.js.JsValue("waiting")
-        val waiting: EventType
-
-        @seskar.js.JsValue("load")
-        val load: EventType
-
-        @seskar.js.JsValue("error")
-        val error: EventType
-
-        @seskar.js.JsValue("animationStart")
-        val animationStart: EventType
-
-        @seskar.js.JsValue("animationEnd")
-        val animationEnd: EventType
-
-        @seskar.js.JsValue("animationIteration")
-        val animationIteration: EventType
-
-        @seskar.js.JsValue("transitionCancel")
-        val transitionCancel: EventType
-
-        @seskar.js.JsValue("transitionEnd")
-        val transitionEnd: EventType
-
-        @seskar.js.JsValue("transitionRun")
-        val transitionRun: EventType
-
-        @seskar.js.JsValue("transitionStart")
-        val transitionStart: EventType
-
-        @seskar.js.JsValue("doubleClick")
-        val doubleClick: EventType
-
-        @seskar.js.JsValue("pointerOver")
-        val pointerOver: EventType
-
-        @seskar.js.JsValue("pointerEnter")
-        val pointerEnter: EventType
-
-        @seskar.js.JsValue("pointerDown")
-        val pointerDown: EventType
-
-        @seskar.js.JsValue("pointerMove")
-        val pointerMove: EventType
-
-        @seskar.js.JsValue("pointerUp")
-        val pointerUp: EventType
-
-        @seskar.js.JsValue("pointerCancel")
-        val pointerCancel: EventType
-
-        @seskar.js.JsValue("pointerOut")
-        val pointerOut: EventType
-
-        @seskar.js.JsValue("pointerLeave")
-        val pointerLeave: EventType
-
-        @seskar.js.JsValue("gotPointerCapture")
-        val gotPointerCapture: EventType
-
-        @seskar.js.JsValue("lostPointerCapture")
-        val lostPointerCapture: EventType
-
-        @seskar.js.JsValue("offline")
-        val offline: EventType
-
-        @seskar.js.JsValue("online")
-        val online: EventType
-
-        @seskar.js.JsValue("pageHide")
-        val pageHide: EventType
-
-        @seskar.js.JsValue("pageShow")
-        val pageShow: EventType
-    }
+    companion object
 }
+
+inline val EventType.Companion.copy: EventType
+    get() = js.reflect.unsafeCast("copy")
+
+inline val EventType.Companion.cut: EventType
+    get() = js.reflect.unsafeCast("cut")
+
+inline val EventType.Companion.paste: EventType
+    get() = js.reflect.unsafeCast("paste")
+
+inline val EventType.Companion.compositionEnd: EventType
+    get() = js.reflect.unsafeCast("compositionEnd")
+
+inline val EventType.Companion.compositionStart: EventType
+    get() = js.reflect.unsafeCast("compositionStart")
+
+inline val EventType.Companion.compositionUpdate: EventType
+    get() = js.reflect.unsafeCast("compositionUpdate")
+
+inline val EventType.Companion.keyDown: EventType
+    get() = js.reflect.unsafeCast("keyDown")
+
+inline val EventType.Companion.keyPress: EventType
+    get() = js.reflect.unsafeCast("keyPress")
+
+inline val EventType.Companion.keyUp: EventType
+    get() = js.reflect.unsafeCast("keyUp")
+
+inline val EventType.Companion.focus: EventType
+    get() = js.reflect.unsafeCast("focus")
+
+inline val EventType.Companion.blur: EventType
+    get() = js.reflect.unsafeCast("blur")
+
+inline val EventType.Companion.focusIn: EventType
+    get() = js.reflect.unsafeCast("focusIn")
+
+inline val EventType.Companion.focusOut: EventType
+    get() = js.reflect.unsafeCast("focusOut")
+
+inline val EventType.Companion.change: EventType
+    get() = js.reflect.unsafeCast("change")
+
+inline val EventType.Companion.input: EventType
+    get() = js.reflect.unsafeCast("input")
+
+inline val EventType.Companion.invalid: EventType
+    get() = js.reflect.unsafeCast("invalid")
+
+inline val EventType.Companion.submit: EventType
+    get() = js.reflect.unsafeCast("submit")
+
+inline val EventType.Companion.reset: EventType
+    get() = js.reflect.unsafeCast("reset")
+
+inline val EventType.Companion.click: EventType
+    get() = js.reflect.unsafeCast("click")
+
+inline val EventType.Companion.contextMenu: EventType
+    get() = js.reflect.unsafeCast("contextMenu")
+
+inline val EventType.Companion.dblClick: EventType
+    get() = js.reflect.unsafeCast("dblClick")
+
+inline val EventType.Companion.drag: EventType
+    get() = js.reflect.unsafeCast("drag")
+
+inline val EventType.Companion.dragEnd: EventType
+    get() = js.reflect.unsafeCast("dragEnd")
+
+inline val EventType.Companion.dragEnter: EventType
+    get() = js.reflect.unsafeCast("dragEnter")
+
+inline val EventType.Companion.dragExit: EventType
+    get() = js.reflect.unsafeCast("dragExit")
+
+inline val EventType.Companion.dragLeave: EventType
+    get() = js.reflect.unsafeCast("dragLeave")
+
+inline val EventType.Companion.dragOver: EventType
+    get() = js.reflect.unsafeCast("dragOver")
+
+inline val EventType.Companion.dragStart: EventType
+    get() = js.reflect.unsafeCast("dragStart")
+
+inline val EventType.Companion.drop: EventType
+    get() = js.reflect.unsafeCast("drop")
+
+inline val EventType.Companion.mouseDown: EventType
+    get() = js.reflect.unsafeCast("mouseDown")
+
+inline val EventType.Companion.mouseEnter: EventType
+    get() = js.reflect.unsafeCast("mouseEnter")
+
+inline val EventType.Companion.mouseLeave: EventType
+    get() = js.reflect.unsafeCast("mouseLeave")
+
+inline val EventType.Companion.mouseMove: EventType
+    get() = js.reflect.unsafeCast("mouseMove")
+
+inline val EventType.Companion.mouseOut: EventType
+    get() = js.reflect.unsafeCast("mouseOut")
+
+inline val EventType.Companion.mouseOver: EventType
+    get() = js.reflect.unsafeCast("mouseOver")
+
+inline val EventType.Companion.mouseUp: EventType
+    get() = js.reflect.unsafeCast("mouseUp")
+
+inline val EventType.Companion.popState: EventType
+    get() = js.reflect.unsafeCast("popState")
+
+inline val EventType.Companion.select: EventType
+    get() = js.reflect.unsafeCast("select")
+
+inline val EventType.Companion.touchCancel: EventType
+    get() = js.reflect.unsafeCast("touchCancel")
+
+inline val EventType.Companion.touchEnd: EventType
+    get() = js.reflect.unsafeCast("touchEnd")
+
+inline val EventType.Companion.touchMove: EventType
+    get() = js.reflect.unsafeCast("touchMove")
+
+inline val EventType.Companion.touchStart: EventType
+    get() = js.reflect.unsafeCast("touchStart")
+
+inline val EventType.Companion.resize: EventType
+    get() = js.reflect.unsafeCast("resize")
+
+inline val EventType.Companion.scroll: EventType
+    get() = js.reflect.unsafeCast("scroll")
+
+inline val EventType.Companion.wheel: EventType
+    get() = js.reflect.unsafeCast("wheel")
+
+inline val EventType.Companion.abort: EventType
+    get() = js.reflect.unsafeCast("abort")
+
+inline val EventType.Companion.canPlay: EventType
+    get() = js.reflect.unsafeCast("canPlay")
+
+inline val EventType.Companion.canPlayThrough: EventType
+    get() = js.reflect.unsafeCast("canPlayThrough")
+
+inline val EventType.Companion.durationChange: EventType
+    get() = js.reflect.unsafeCast("durationChange")
+
+inline val EventType.Companion.emptied: EventType
+    get() = js.reflect.unsafeCast("emptied")
+
+inline val EventType.Companion.encrypted: EventType
+    get() = js.reflect.unsafeCast("encrypted")
+
+inline val EventType.Companion.ended: EventType
+    get() = js.reflect.unsafeCast("ended")
+
+inline val EventType.Companion.loadedData: EventType
+    get() = js.reflect.unsafeCast("loadedData")
+
+inline val EventType.Companion.loadedMetadata: EventType
+    get() = js.reflect.unsafeCast("loadedMetadata")
+
+inline val EventType.Companion.loadStart: EventType
+    get() = js.reflect.unsafeCast("loadStart")
+
+inline val EventType.Companion.pause: EventType
+    get() = js.reflect.unsafeCast("pause")
+
+inline val EventType.Companion.play: EventType
+    get() = js.reflect.unsafeCast("play")
+
+inline val EventType.Companion.playing: EventType
+    get() = js.reflect.unsafeCast("playing")
+
+inline val EventType.Companion.progress: EventType
+    get() = js.reflect.unsafeCast("progress")
+
+inline val EventType.Companion.rateChange: EventType
+    get() = js.reflect.unsafeCast("rateChange")
+
+inline val EventType.Companion.seeked: EventType
+    get() = js.reflect.unsafeCast("seeked")
+
+inline val EventType.Companion.seeking: EventType
+    get() = js.reflect.unsafeCast("seeking")
+
+inline val EventType.Companion.stalled: EventType
+    get() = js.reflect.unsafeCast("stalled")
+
+inline val EventType.Companion.suspend: EventType
+    get() = js.reflect.unsafeCast("suspend")
+
+inline val EventType.Companion.timeUpdate: EventType
+    get() = js.reflect.unsafeCast("timeUpdate")
+
+inline val EventType.Companion.volumeChange: EventType
+    get() = js.reflect.unsafeCast("volumeChange")
+
+inline val EventType.Companion.waiting: EventType
+    get() = js.reflect.unsafeCast("waiting")
+
+inline val EventType.Companion.load: EventType
+    get() = js.reflect.unsafeCast("load")
+
+inline val EventType.Companion.error: EventType
+    get() = js.reflect.unsafeCast("error")
+
+inline val EventType.Companion.animationStart: EventType
+    get() = js.reflect.unsafeCast("animationStart")
+
+inline val EventType.Companion.animationEnd: EventType
+    get() = js.reflect.unsafeCast("animationEnd")
+
+inline val EventType.Companion.animationIteration: EventType
+    get() = js.reflect.unsafeCast("animationIteration")
+
+inline val EventType.Companion.transitionCancel: EventType
+    get() = js.reflect.unsafeCast("transitionCancel")
+
+inline val EventType.Companion.transitionEnd: EventType
+    get() = js.reflect.unsafeCast("transitionEnd")
+
+inline val EventType.Companion.transitionRun: EventType
+    get() = js.reflect.unsafeCast("transitionRun")
+
+inline val EventType.Companion.transitionStart: EventType
+    get() = js.reflect.unsafeCast("transitionStart")
+
+inline val EventType.Companion.doubleClick: EventType
+    get() = js.reflect.unsafeCast("doubleClick")
+
+inline val EventType.Companion.pointerOver: EventType
+    get() = js.reflect.unsafeCast("pointerOver")
+
+inline val EventType.Companion.pointerEnter: EventType
+    get() = js.reflect.unsafeCast("pointerEnter")
+
+inline val EventType.Companion.pointerDown: EventType
+    get() = js.reflect.unsafeCast("pointerDown")
+
+inline val EventType.Companion.pointerMove: EventType
+    get() = js.reflect.unsafeCast("pointerMove")
+
+inline val EventType.Companion.pointerUp: EventType
+    get() = js.reflect.unsafeCast("pointerUp")
+
+inline val EventType.Companion.pointerCancel: EventType
+    get() = js.reflect.unsafeCast("pointerCancel")
+
+inline val EventType.Companion.pointerOut: EventType
+    get() = js.reflect.unsafeCast("pointerOut")
+
+inline val EventType.Companion.pointerLeave: EventType
+    get() = js.reflect.unsafeCast("pointerLeave")
+
+inline val EventType.Companion.gotPointerCapture: EventType
+    get() = js.reflect.unsafeCast("gotPointerCapture")
+
+inline val EventType.Companion.lostPointerCapture: EventType
+    get() = js.reflect.unsafeCast("lostPointerCapture")
+
+inline val EventType.Companion.offline: EventType
+    get() = js.reflect.unsafeCast("offline")
+
+inline val EventType.Companion.online: EventType
+    get() = js.reflect.unsafeCast("online")
+
+inline val EventType.Companion.pageHide: EventType
+    get() = js.reflect.unsafeCast("pageHide")
+
+inline val EventType.Companion.pageShow: EventType
+    get() = js.reflect.unsafeCast("pageShow")

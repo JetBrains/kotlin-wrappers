@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface ConfigMaxVersion {
-    companion object {
-        @seskar.js.JsValue("tls1.2")
-        val `tls1.2`: ConfigMaxVersion
-
-        @seskar.js.JsValue("tls1.3")
-        val `tls1.3`: ConfigMaxVersion
-    }
+    companion object
 }
+
+inline val ConfigMaxVersion.Companion.`tls1.2`: ConfigMaxVersion
+    get() = js.reflect.unsafeCast("tls1.2")
+
+inline val ConfigMaxVersion.Companion.`tls1.3`: ConfigMaxVersion
+    get() = js.reflect.unsafeCast("tls1.3")

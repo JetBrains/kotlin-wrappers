@@ -3,53 +3,53 @@
 package electron.core
 
 sealed external interface InputEventModifier {
-    companion object {
-        @seskar.js.JsValue("shift")
-        val shift: InputEventModifier
-
-        @seskar.js.JsValue("control")
-        val control: InputEventModifier
-
-        @seskar.js.JsValue("ctrl")
-        val ctrl: InputEventModifier
-
-        @seskar.js.JsValue("alt")
-        val alt: InputEventModifier
-
-        @seskar.js.JsValue("meta")
-        val meta: InputEventModifier
-
-        @seskar.js.JsValue("command")
-        val command: InputEventModifier
-
-        @seskar.js.JsValue("cmd")
-        val cmd: InputEventModifier
-
-        @seskar.js.JsValue("iskeypad")
-        val iskeypad: InputEventModifier
-
-        @seskar.js.JsValue("isautorepeat")
-        val isautorepeat: InputEventModifier
-
-        @seskar.js.JsValue("leftbuttondown")
-        val leftbuttondown: InputEventModifier
-
-        @seskar.js.JsValue("middlebuttondown")
-        val middlebuttondown: InputEventModifier
-
-        @seskar.js.JsValue("rightbuttondown")
-        val rightbuttondown: InputEventModifier
-
-        @seskar.js.JsValue("capslock")
-        val capslock: InputEventModifier
-
-        @seskar.js.JsValue("numlock")
-        val numlock: InputEventModifier
-
-        @seskar.js.JsValue("left")
-        val left: InputEventModifier
-
-        @seskar.js.JsValue("right")
-        val right: InputEventModifier
-    }
+    companion object
 }
+
+inline val InputEventModifier.Companion.shift: InputEventModifier
+    get() = js.reflect.unsafeCast("shift")
+
+inline val InputEventModifier.Companion.control: InputEventModifier
+    get() = js.reflect.unsafeCast("control")
+
+inline val InputEventModifier.Companion.ctrl: InputEventModifier
+    get() = js.reflect.unsafeCast("ctrl")
+
+inline val InputEventModifier.Companion.alt: InputEventModifier
+    get() = js.reflect.unsafeCast("alt")
+
+inline val InputEventModifier.Companion.meta: InputEventModifier
+    get() = js.reflect.unsafeCast("meta")
+
+inline val InputEventModifier.Companion.command: InputEventModifier
+    get() = js.reflect.unsafeCast("command")
+
+inline val InputEventModifier.Companion.cmd: InputEventModifier
+    get() = js.reflect.unsafeCast("cmd")
+
+inline val InputEventModifier.Companion.iskeypad: InputEventModifier
+    get() = js.reflect.unsafeCast("iskeypad")
+
+inline val InputEventModifier.Companion.isautorepeat: InputEventModifier
+    get() = js.reflect.unsafeCast("isautorepeat")
+
+inline val InputEventModifier.Companion.leftbuttondown: InputEventModifier
+    get() = js.reflect.unsafeCast("leftbuttondown")
+
+inline val InputEventModifier.Companion.middlebuttondown: InputEventModifier
+    get() = js.reflect.unsafeCast("middlebuttondown")
+
+inline val InputEventModifier.Companion.rightbuttondown: InputEventModifier
+    get() = js.reflect.unsafeCast("rightbuttondown")
+
+inline val InputEventModifier.Companion.capslock: InputEventModifier
+    get() = js.reflect.unsafeCast("capslock")
+
+inline val InputEventModifier.Companion.numlock: InputEventModifier
+    get() = js.reflect.unsafeCast("numlock")
+
+inline val InputEventModifier.Companion.left: InputEventModifier
+    get() = js.reflect.unsafeCast("left")
+
+inline val InputEventModifier.Companion.right: InputEventModifier
+    get() = js.reflect.unsafeCast("right")

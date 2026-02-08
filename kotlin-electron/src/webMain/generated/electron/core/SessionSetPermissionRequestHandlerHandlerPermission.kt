@@ -3,65 +3,65 @@
 package electron.core
 
 sealed external interface SessionSetPermissionRequestHandlerHandlerPermission {
-    companion object {
-        @seskar.js.JsValue("clipboard-read")
-        val clipboardRead: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("clipboard-sanitized-write")
-        val clipboardSanitizedWrite: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("display-capture")
-        val displayCapture: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("fullscreen")
-        val fullscreen: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("geolocation")
-        val geolocation: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("idle-detection")
-        val idleDetection: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("media")
-        val media: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("mediaKeySystem")
-        val mediaKeySystem: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("midi")
-        val midi: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("midiSysex")
-        val midiSysex: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("notifications")
-        val notifications: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("pointerLock")
-        val pointerLock: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("keyboardLock")
-        val keyboardLock: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("openExternal")
-        val openExternal: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("speaker-selection")
-        val speakerSelection: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("storage-access")
-        val storageAccess: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("top-level-storage-access")
-        val topLevelStorageAccess: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("window-management")
-        val windowManagement: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("unknown")
-        val unknown: SessionSetPermissionRequestHandlerHandlerPermission
-
-        @seskar.js.JsValue("fileSystem")
-        val fileSystem: SessionSetPermissionRequestHandlerHandlerPermission
-    }
+    companion object
 }
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.clipboardRead: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("clipboard-read")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.clipboardSanitizedWrite: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("clipboard-sanitized-write")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.displayCapture: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("display-capture")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.fullscreen: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("fullscreen")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.geolocation: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("geolocation")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.idleDetection: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("idle-detection")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.media: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("media")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.mediaKeySystem: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("mediaKeySystem")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.midi: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("midi")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.midiSysex: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("midiSysex")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.notifications: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("notifications")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.pointerLock: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("pointerLock")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.keyboardLock: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("keyboardLock")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.openExternal: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("openExternal")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.speakerSelection: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("speaker-selection")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.storageAccess: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("storage-access")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.topLevelStorageAccess: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("top-level-storage-access")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.windowManagement: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("window-management")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.unknown: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("unknown")
+
+inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.fileSystem: SessionSetPermissionRequestHandlerHandlerPermission
+    get() = js.reflect.unsafeCast("fileSystem")

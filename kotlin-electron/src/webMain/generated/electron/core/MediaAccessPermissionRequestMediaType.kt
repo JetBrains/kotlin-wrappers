@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface MediaAccessPermissionRequestMediaType {
-    companion object {
-        @seskar.js.JsValue("video")
-        val video: MediaAccessPermissionRequestMediaType
-
-        @seskar.js.JsValue("audio")
-        val audio: MediaAccessPermissionRequestMediaType
-    }
+    companion object
 }
+
+inline val MediaAccessPermissionRequestMediaType.Companion.video: MediaAccessPermissionRequestMediaType
+    get() = js.reflect.unsafeCast("video")
+
+inline val MediaAccessPermissionRequestMediaType.Companion.audio: MediaAccessPermissionRequestMediaType
+    get() = js.reflect.unsafeCast("audio")

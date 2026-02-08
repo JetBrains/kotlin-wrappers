@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface ClipboardWriteBookmarkType {
-    companion object {
-        @seskar.js.JsValue("selection")
-        val selection: ClipboardWriteBookmarkType
-
-        @seskar.js.JsValue("clipboard")
-        val clipboard: ClipboardWriteBookmarkType
-    }
+    companion object
 }
+
+inline val ClipboardWriteBookmarkType.Companion.selection: ClipboardWriteBookmarkType
+    get() = js.reflect.unsafeCast("selection")
+
+inline val ClipboardWriteBookmarkType.Companion.clipboard: ClipboardWriteBookmarkType
+    get() = js.reflect.unsafeCast("clipboard")

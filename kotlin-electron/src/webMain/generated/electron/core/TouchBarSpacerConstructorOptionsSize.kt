@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface TouchBarSpacerConstructorOptionsSize {
-    companion object {
-        @seskar.js.JsValue("small")
-        val small: TouchBarSpacerConstructorOptionsSize
-
-        @seskar.js.JsValue("large")
-        val large: TouchBarSpacerConstructorOptionsSize
-
-        @seskar.js.JsValue("flexible")
-        val flexible: TouchBarSpacerConstructorOptionsSize
-    }
+    companion object
 }
+
+inline val TouchBarSpacerConstructorOptionsSize.Companion.small: TouchBarSpacerConstructorOptionsSize
+    get() = js.reflect.unsafeCast("small")
+
+inline val TouchBarSpacerConstructorOptionsSize.Companion.large: TouchBarSpacerConstructorOptionsSize
+    get() = js.reflect.unsafeCast("large")
+
+inline val TouchBarSpacerConstructorOptionsSize.Companion.flexible: TouchBarSpacerConstructorOptionsSize
+    get() = js.reflect.unsafeCast("flexible")

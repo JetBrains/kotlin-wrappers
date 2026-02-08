@@ -3,38 +3,38 @@
 package node.process
 
 sealed external interface Platform {
-    companion object {
-        @seskar.js.JsValue("aix")
-        val aix: Platform
-
-        @seskar.js.JsValue("android")
-        val android: Platform
-
-        @seskar.js.JsValue("darwin")
-        val darwin: Platform
-
-        @seskar.js.JsValue("freebsd")
-        val freebsd: Platform
-
-        @seskar.js.JsValue("haiku")
-        val haiku: Platform
-
-        @seskar.js.JsValue("linux")
-        val linux: Platform
-
-        @seskar.js.JsValue("openbsd")
-        val openbsd: Platform
-
-        @seskar.js.JsValue("sunos")
-        val sunos: Platform
-
-        @seskar.js.JsValue("win32")
-        val win32: Platform
-
-        @seskar.js.JsValue("cygwin")
-        val cygwin: Platform
-
-        @seskar.js.JsValue("netbsd")
-        val netbsd: Platform
-    }
+    companion object
 }
+
+inline val Platform.Companion.aix: Platform
+    get() = js.reflect.unsafeCast("aix")
+
+inline val Platform.Companion.android: Platform
+    get() = js.reflect.unsafeCast("android")
+
+inline val Platform.Companion.darwin: Platform
+    get() = js.reflect.unsafeCast("darwin")
+
+inline val Platform.Companion.freebsd: Platform
+    get() = js.reflect.unsafeCast("freebsd")
+
+inline val Platform.Companion.haiku: Platform
+    get() = js.reflect.unsafeCast("haiku")
+
+inline val Platform.Companion.linux: Platform
+    get() = js.reflect.unsafeCast("linux")
+
+inline val Platform.Companion.openbsd: Platform
+    get() = js.reflect.unsafeCast("openbsd")
+
+inline val Platform.Companion.sunos: Platform
+    get() = js.reflect.unsafeCast("sunos")
+
+inline val Platform.Companion.win32: Platform
+    get() = js.reflect.unsafeCast("win32")
+
+inline val Platform.Companion.cygwin: Platform
+    get() = js.reflect.unsafeCast("cygwin")
+
+inline val Platform.Companion.netbsd: Platform
+    get() = js.reflect.unsafeCast("netbsd")

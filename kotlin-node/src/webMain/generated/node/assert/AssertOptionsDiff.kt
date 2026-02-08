@@ -3,11 +3,11 @@
 package node.assert
 
 sealed external interface AssertOptionsDiff {
-    companion object {
-        @seskar.js.JsValue("simple")
-        val simple: AssertOptionsDiff
-
-        @seskar.js.JsValue("full")
-        val full: AssertOptionsDiff
-    }
+    companion object
 }
+
+inline val AssertOptionsDiff.Companion.simple: AssertOptionsDiff
+    get() = js.reflect.unsafeCast("simple")
+
+inline val AssertOptionsDiff.Companion.full: AssertOptionsDiff
+    get() = js.reflect.unsafeCast("full")

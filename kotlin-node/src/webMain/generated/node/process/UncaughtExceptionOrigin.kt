@@ -3,11 +3,11 @@
 package node.process
 
 sealed external interface UncaughtExceptionOrigin {
-    companion object {
-        @seskar.js.JsValue("uncaughtException")
-        val uncaughtException: UncaughtExceptionOrigin
-
-        @seskar.js.JsValue("unhandledRejection")
-        val unhandledRejection: UncaughtExceptionOrigin
-    }
+    companion object
 }
+
+inline val UncaughtExceptionOrigin.Companion.uncaughtException: UncaughtExceptionOrigin
+    get() = js.reflect.unsafeCast("uncaughtException")
+
+inline val UncaughtExceptionOrigin.Companion.unhandledRejection: UncaughtExceptionOrigin
+    get() = js.reflect.unsafeCast("unhandledRejection")

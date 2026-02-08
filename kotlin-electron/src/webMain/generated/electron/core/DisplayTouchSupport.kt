@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface DisplayTouchSupport {
-    companion object {
-        @seskar.js.JsValue("available")
-        val available: DisplayTouchSupport
-
-        @seskar.js.JsValue("unavailable")
-        val unavailable: DisplayTouchSupport
-
-        @seskar.js.JsValue("unknown")
-        val unknown: DisplayTouchSupport
-    }
+    companion object
 }
+
+inline val DisplayTouchSupport.Companion.available: DisplayTouchSupport
+    get() = js.reflect.unsafeCast("available")
+
+inline val DisplayTouchSupport.Companion.unavailable: DisplayTouchSupport
+    get() = js.reflect.unsafeCast("unavailable")
+
+inline val DisplayTouchSupport.Companion.unknown: DisplayTouchSupport
+    get() = js.reflect.unsafeCast("unknown")

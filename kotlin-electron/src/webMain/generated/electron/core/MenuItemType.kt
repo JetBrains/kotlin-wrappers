@@ -3,26 +3,26 @@
 package electron.core
 
 sealed external interface MenuItemType {
-    companion object {
-        @seskar.js.JsValue("normal")
-        val normal: MenuItemType
-
-        @seskar.js.JsValue("separator")
-        val separator: MenuItemType
-
-        @seskar.js.JsValue("submenu")
-        val submenu: MenuItemType
-
-        @seskar.js.JsValue("checkbox")
-        val checkbox: MenuItemType
-
-        @seskar.js.JsValue("radio")
-        val radio: MenuItemType
-
-        @seskar.js.JsValue("header")
-        val header: MenuItemType
-
-        @seskar.js.JsValue("palette")
-        val palette: MenuItemType
-    }
+    companion object
 }
+
+inline val MenuItemType.Companion.normal: MenuItemType
+    get() = js.reflect.unsafeCast("normal")
+
+inline val MenuItemType.Companion.separator: MenuItemType
+    get() = js.reflect.unsafeCast("separator")
+
+inline val MenuItemType.Companion.submenu: MenuItemType
+    get() = js.reflect.unsafeCast("submenu")
+
+inline val MenuItemType.Companion.checkbox: MenuItemType
+    get() = js.reflect.unsafeCast("checkbox")
+
+inline val MenuItemType.Companion.radio: MenuItemType
+    get() = js.reflect.unsafeCast("radio")
+
+inline val MenuItemType.Companion.header: MenuItemType
+    get() = js.reflect.unsafeCast("header")
+
+inline val MenuItemType.Companion.palette: MenuItemType
+    get() = js.reflect.unsafeCast("palette")

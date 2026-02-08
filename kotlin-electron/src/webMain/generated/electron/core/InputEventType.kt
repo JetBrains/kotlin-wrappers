@@ -3,128 +3,128 @@
 package electron.core
 
 sealed external interface InputEventType {
-    companion object {
-        @seskar.js.JsValue("undefined")
-        val undefined: InputEventType
-
-        @seskar.js.JsValue("mouseDown")
-        val mouseDown: InputEventType
-
-        @seskar.js.JsValue("mouseUp")
-        val mouseUp: InputEventType
-
-        @seskar.js.JsValue("mouseMove")
-        val mouseMove: InputEventType
-
-        @seskar.js.JsValue("mouseEnter")
-        val mouseEnter: InputEventType
-
-        @seskar.js.JsValue("mouseLeave")
-        val mouseLeave: InputEventType
-
-        @seskar.js.JsValue("contextMenu")
-        val contextMenu: InputEventType
-
-        @seskar.js.JsValue("mouseWheel")
-        val mouseWheel: InputEventType
-
-        @seskar.js.JsValue("rawKeyDown")
-        val rawKeyDown: InputEventType
-
-        @seskar.js.JsValue("keyDown")
-        val keyDown: InputEventType
-
-        @seskar.js.JsValue("keyUp")
-        val keyUp: InputEventType
-
-        @seskar.js.JsValue("char")
-        val char: InputEventType
-
-        @seskar.js.JsValue("gestureScrollBegin")
-        val gestureScrollBegin: InputEventType
-
-        @seskar.js.JsValue("gestureScrollEnd")
-        val gestureScrollEnd: InputEventType
-
-        @seskar.js.JsValue("gestureScrollUpdate")
-        val gestureScrollUpdate: InputEventType
-
-        @seskar.js.JsValue("gestureFlingStart")
-        val gestureFlingStart: InputEventType
-
-        @seskar.js.JsValue("gestureFlingCancel")
-        val gestureFlingCancel: InputEventType
-
-        @seskar.js.JsValue("gesturePinchBegin")
-        val gesturePinchBegin: InputEventType
-
-        @seskar.js.JsValue("gesturePinchEnd")
-        val gesturePinchEnd: InputEventType
-
-        @seskar.js.JsValue("gesturePinchUpdate")
-        val gesturePinchUpdate: InputEventType
-
-        @seskar.js.JsValue("gestureTapDown")
-        val gestureTapDown: InputEventType
-
-        @seskar.js.JsValue("gestureShowPress")
-        val gestureShowPress: InputEventType
-
-        @seskar.js.JsValue("gestureTap")
-        val gestureTap: InputEventType
-
-        @seskar.js.JsValue("gestureTapCancel")
-        val gestureTapCancel: InputEventType
-
-        @seskar.js.JsValue("gestureShortPress")
-        val gestureShortPress: InputEventType
-
-        @seskar.js.JsValue("gestureLongPress")
-        val gestureLongPress: InputEventType
-
-        @seskar.js.JsValue("gestureLongTap")
-        val gestureLongTap: InputEventType
-
-        @seskar.js.JsValue("gestureTwoFingerTap")
-        val gestureTwoFingerTap: InputEventType
-
-        @seskar.js.JsValue("gestureTapUnconfirmed")
-        val gestureTapUnconfirmed: InputEventType
-
-        @seskar.js.JsValue("gestureDoubleTap")
-        val gestureDoubleTap: InputEventType
-
-        @seskar.js.JsValue("touchStart")
-        val touchStart: InputEventType
-
-        @seskar.js.JsValue("touchMove")
-        val touchMove: InputEventType
-
-        @seskar.js.JsValue("touchEnd")
-        val touchEnd: InputEventType
-
-        @seskar.js.JsValue("touchCancel")
-        val touchCancel: InputEventType
-
-        @seskar.js.JsValue("touchScrollStarted")
-        val touchScrollStarted: InputEventType
-
-        @seskar.js.JsValue("pointerDown")
-        val pointerDown: InputEventType
-
-        @seskar.js.JsValue("pointerUp")
-        val pointerUp: InputEventType
-
-        @seskar.js.JsValue("pointerMove")
-        val pointerMove: InputEventType
-
-        @seskar.js.JsValue("pointerRawUpdate")
-        val pointerRawUpdate: InputEventType
-
-        @seskar.js.JsValue("pointerCancel")
-        val pointerCancel: InputEventType
-
-        @seskar.js.JsValue("pointerCausedUaAction")
-        val pointerCausedUaAction: InputEventType
-    }
+    companion object
 }
+
+inline val InputEventType.Companion.undefined: InputEventType
+    get() = js.reflect.unsafeCast("undefined")
+
+inline val InputEventType.Companion.mouseDown: InputEventType
+    get() = js.reflect.unsafeCast("mouseDown")
+
+inline val InputEventType.Companion.mouseUp: InputEventType
+    get() = js.reflect.unsafeCast("mouseUp")
+
+inline val InputEventType.Companion.mouseMove: InputEventType
+    get() = js.reflect.unsafeCast("mouseMove")
+
+inline val InputEventType.Companion.mouseEnter: InputEventType
+    get() = js.reflect.unsafeCast("mouseEnter")
+
+inline val InputEventType.Companion.mouseLeave: InputEventType
+    get() = js.reflect.unsafeCast("mouseLeave")
+
+inline val InputEventType.Companion.contextMenu: InputEventType
+    get() = js.reflect.unsafeCast("contextMenu")
+
+inline val InputEventType.Companion.mouseWheel: InputEventType
+    get() = js.reflect.unsafeCast("mouseWheel")
+
+inline val InputEventType.Companion.rawKeyDown: InputEventType
+    get() = js.reflect.unsafeCast("rawKeyDown")
+
+inline val InputEventType.Companion.keyDown: InputEventType
+    get() = js.reflect.unsafeCast("keyDown")
+
+inline val InputEventType.Companion.keyUp: InputEventType
+    get() = js.reflect.unsafeCast("keyUp")
+
+inline val InputEventType.Companion.char: InputEventType
+    get() = js.reflect.unsafeCast("char")
+
+inline val InputEventType.Companion.gestureScrollBegin: InputEventType
+    get() = js.reflect.unsafeCast("gestureScrollBegin")
+
+inline val InputEventType.Companion.gestureScrollEnd: InputEventType
+    get() = js.reflect.unsafeCast("gestureScrollEnd")
+
+inline val InputEventType.Companion.gestureScrollUpdate: InputEventType
+    get() = js.reflect.unsafeCast("gestureScrollUpdate")
+
+inline val InputEventType.Companion.gestureFlingStart: InputEventType
+    get() = js.reflect.unsafeCast("gestureFlingStart")
+
+inline val InputEventType.Companion.gestureFlingCancel: InputEventType
+    get() = js.reflect.unsafeCast("gestureFlingCancel")
+
+inline val InputEventType.Companion.gesturePinchBegin: InputEventType
+    get() = js.reflect.unsafeCast("gesturePinchBegin")
+
+inline val InputEventType.Companion.gesturePinchEnd: InputEventType
+    get() = js.reflect.unsafeCast("gesturePinchEnd")
+
+inline val InputEventType.Companion.gesturePinchUpdate: InputEventType
+    get() = js.reflect.unsafeCast("gesturePinchUpdate")
+
+inline val InputEventType.Companion.gestureTapDown: InputEventType
+    get() = js.reflect.unsafeCast("gestureTapDown")
+
+inline val InputEventType.Companion.gestureShowPress: InputEventType
+    get() = js.reflect.unsafeCast("gestureShowPress")
+
+inline val InputEventType.Companion.gestureTap: InputEventType
+    get() = js.reflect.unsafeCast("gestureTap")
+
+inline val InputEventType.Companion.gestureTapCancel: InputEventType
+    get() = js.reflect.unsafeCast("gestureTapCancel")
+
+inline val InputEventType.Companion.gestureShortPress: InputEventType
+    get() = js.reflect.unsafeCast("gestureShortPress")
+
+inline val InputEventType.Companion.gestureLongPress: InputEventType
+    get() = js.reflect.unsafeCast("gestureLongPress")
+
+inline val InputEventType.Companion.gestureLongTap: InputEventType
+    get() = js.reflect.unsafeCast("gestureLongTap")
+
+inline val InputEventType.Companion.gestureTwoFingerTap: InputEventType
+    get() = js.reflect.unsafeCast("gestureTwoFingerTap")
+
+inline val InputEventType.Companion.gestureTapUnconfirmed: InputEventType
+    get() = js.reflect.unsafeCast("gestureTapUnconfirmed")
+
+inline val InputEventType.Companion.gestureDoubleTap: InputEventType
+    get() = js.reflect.unsafeCast("gestureDoubleTap")
+
+inline val InputEventType.Companion.touchStart: InputEventType
+    get() = js.reflect.unsafeCast("touchStart")
+
+inline val InputEventType.Companion.touchMove: InputEventType
+    get() = js.reflect.unsafeCast("touchMove")
+
+inline val InputEventType.Companion.touchEnd: InputEventType
+    get() = js.reflect.unsafeCast("touchEnd")
+
+inline val InputEventType.Companion.touchCancel: InputEventType
+    get() = js.reflect.unsafeCast("touchCancel")
+
+inline val InputEventType.Companion.touchScrollStarted: InputEventType
+    get() = js.reflect.unsafeCast("touchScrollStarted")
+
+inline val InputEventType.Companion.pointerDown: InputEventType
+    get() = js.reflect.unsafeCast("pointerDown")
+
+inline val InputEventType.Companion.pointerUp: InputEventType
+    get() = js.reflect.unsafeCast("pointerUp")
+
+inline val InputEventType.Companion.pointerMove: InputEventType
+    get() = js.reflect.unsafeCast("pointerMove")
+
+inline val InputEventType.Companion.pointerRawUpdate: InputEventType
+    get() = js.reflect.unsafeCast("pointerRawUpdate")
+
+inline val InputEventType.Companion.pointerCancel: InputEventType
+    get() = js.reflect.unsafeCast("pointerCancel")
+
+inline val InputEventType.Companion.pointerCausedUaAction: InputEventType
+    get() = js.reflect.unsafeCast("pointerCausedUaAction")

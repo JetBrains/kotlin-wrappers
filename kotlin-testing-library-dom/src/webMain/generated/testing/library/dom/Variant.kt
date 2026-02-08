@@ -3,23 +3,23 @@
 package testing.library.dom
 
 sealed external interface Variant {
-    companion object {
-        @seskar.js.JsValue("find")
-        val find: Variant
-
-        @seskar.js.JsValue("findAll")
-        val findAll: Variant
-
-        @seskar.js.JsValue("get")
-        val get: Variant
-
-        @seskar.js.JsValue("getAll")
-        val getAll: Variant
-
-        @seskar.js.JsValue("query")
-        val query: Variant
-
-        @seskar.js.JsValue("queryAll")
-        val queryAll: Variant
-    }
+    companion object
 }
+
+inline val Variant.Companion.find: Variant
+    get() = js.reflect.unsafeCast("find")
+
+inline val Variant.Companion.findAll: Variant
+    get() = js.reflect.unsafeCast("findAll")
+
+inline val Variant.Companion.get: Variant
+    get() = js.reflect.unsafeCast("get")
+
+inline val Variant.Companion.getAll: Variant
+    get() = js.reflect.unsafeCast("getAll")
+
+inline val Variant.Companion.query: Variant
+    get() = js.reflect.unsafeCast("query")
+
+inline val Variant.Companion.queryAll: Variant
+    get() = js.reflect.unsafeCast("queryAll")

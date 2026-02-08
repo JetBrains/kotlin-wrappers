@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface PowerSaveBlockerStartType {
-    companion object {
-        @seskar.js.JsValue("prevent-app-suspension")
-        val preventAppSuspension: PowerSaveBlockerStartType
-
-        @seskar.js.JsValue("prevent-display-sleep")
-        val preventDisplaySleep: PowerSaveBlockerStartType
-    }
+    companion object
 }
+
+inline val PowerSaveBlockerStartType.Companion.preventAppSuspension: PowerSaveBlockerStartType
+    get() = js.reflect.unsafeCast("prevent-app-suspension")
+
+inline val PowerSaveBlockerStartType.Companion.preventDisplaySleep: PowerSaveBlockerStartType
+    get() = js.reflect.unsafeCast("prevent-display-sleep")

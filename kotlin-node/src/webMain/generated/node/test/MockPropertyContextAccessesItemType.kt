@@ -3,11 +3,11 @@
 package node.test
 
 sealed external interface MockPropertyContextAccessesItemType {
-    companion object {
-        @seskar.js.JsValue("get")
-        val get: MockPropertyContextAccessesItemType
-
-        @seskar.js.JsValue("set")
-        val set: MockPropertyContextAccessesItemType
-    }
+    companion object
 }
+
+inline val MockPropertyContextAccessesItemType.Companion.get: MockPropertyContextAccessesItemType
+    get() = js.reflect.unsafeCast("get")
+
+inline val MockPropertyContextAccessesItemType.Companion.set: MockPropertyContextAccessesItemType
+    get() = js.reflect.unsafeCast("set")

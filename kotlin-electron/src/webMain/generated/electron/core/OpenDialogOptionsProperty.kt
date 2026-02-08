@@ -3,32 +3,32 @@
 package electron.core
 
 sealed external interface OpenDialogOptionsProperty {
-    companion object {
-        @seskar.js.JsValue("openFile")
-        val openFile: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("openDirectory")
-        val openDirectory: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("multiSelections")
-        val multiSelections: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("showHiddenFiles")
-        val showHiddenFiles: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("createDirectory")
-        val createDirectory: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("promptToCreate")
-        val promptToCreate: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("noResolveAliases")
-        val noResolveAliases: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("treatPackageAsDirectory")
-        val treatPackageAsDirectory: OpenDialogOptionsProperty
-
-        @seskar.js.JsValue("dontAddToRecent")
-        val dontAddToRecent: OpenDialogOptionsProperty
-    }
+    companion object
 }
+
+inline val OpenDialogOptionsProperty.Companion.openFile: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("openFile")
+
+inline val OpenDialogOptionsProperty.Companion.openDirectory: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("openDirectory")
+
+inline val OpenDialogOptionsProperty.Companion.multiSelections: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("multiSelections")
+
+inline val OpenDialogOptionsProperty.Companion.showHiddenFiles: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("showHiddenFiles")
+
+inline val OpenDialogOptionsProperty.Companion.createDirectory: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("createDirectory")
+
+inline val OpenDialogOptionsProperty.Companion.promptToCreate: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("promptToCreate")
+
+inline val OpenDialogOptionsProperty.Companion.noResolveAliases: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("noResolveAliases")
+
+inline val OpenDialogOptionsProperty.Companion.treatPackageAsDirectory: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("treatPackageAsDirectory")
+
+inline val OpenDialogOptionsProperty.Companion.dontAddToRecent: OpenDialogOptionsProperty
+    get() = js.reflect.unsafeCast("dontAddToRecent")

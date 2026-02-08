@@ -3,11 +3,11 @@
 package node.http2
 
 sealed external interface ClientSessionOptionsProtocol {
-    companion object {
-        @seskar.js.JsValue("http:")
-        val `http:`: ClientSessionOptionsProtocol
-
-        @seskar.js.JsValue("https:")
-        val `https:`: ClientSessionOptionsProtocol
-    }
+    companion object
 }
+
+inline val ClientSessionOptionsProtocol.Companion.`http:`: ClientSessionOptionsProtocol
+    get() = js.reflect.unsafeCast("http:")
+
+inline val ClientSessionOptionsProtocol.Companion.`https:`: ClientSessionOptionsProtocol
+    get() = js.reflect.unsafeCast("https:")

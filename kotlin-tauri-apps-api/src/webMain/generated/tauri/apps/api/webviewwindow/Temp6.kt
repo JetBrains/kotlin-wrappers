@@ -3,17 +3,17 @@
 package tauri.apps.api.webviewwindow
 
 sealed external interface Temp6 {
-    companion object {
-        @seskar.js.JsValue("x")
-        val x: Temp6
-
-        @seskar.js.JsValue("y")
-        val y: Temp6
-
-        @seskar.js.JsValue("width")
-        val width: Temp6
-
-        @seskar.js.JsValue("height")
-        val height: Temp6
-    }
+    companion object
 }
+
+inline val Temp6.Companion.x: Temp6
+    get() = js.reflect.unsafeCast("x")
+
+inline val Temp6.Companion.y: Temp6
+    get() = js.reflect.unsafeCast("y")
+
+inline val Temp6.Companion.width: Temp6
+    get() = js.reflect.unsafeCast("width")
+
+inline val Temp6.Companion.height: Temp6
+    get() = js.reflect.unsafeCast("height")

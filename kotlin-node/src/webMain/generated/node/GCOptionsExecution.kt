@@ -3,11 +3,11 @@
 package node
 
 sealed external interface GCOptionsExecution {
-    companion object {
-        @seskar.js.JsValue("sync")
-        val sync: GCOptionsExecution
-
-        @seskar.js.JsValue("async")
-        val async: GCOptionsExecution
-    }
+    companion object
 }
+
+inline val GCOptionsExecution.Companion.sync: GCOptionsExecution
+    get() = js.reflect.unsafeCast("sync")
+
+inline val GCOptionsExecution.Companion.async: GCOptionsExecution
+    get() = js.reflect.unsafeCast("async")

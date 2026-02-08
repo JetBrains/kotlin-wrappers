@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface TouchBarScrubberMode {
-    companion object {
-        @seskar.js.JsValue("fixed")
-        val fixed: TouchBarScrubberMode
-
-        @seskar.js.JsValue("free")
-        val free: TouchBarScrubberMode
-    }
+    companion object
 }
+
+inline val TouchBarScrubberMode.Companion.fixed: TouchBarScrubberMode
+    get() = js.reflect.unsafeCast("fixed")
+
+inline val TouchBarScrubberMode.Companion.free: TouchBarScrubberMode
+    get() = js.reflect.unsafeCast("free")

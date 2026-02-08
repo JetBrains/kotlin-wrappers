@@ -3,20 +3,20 @@
 package electron.core
 
 sealed external interface DidCreateWindowDetailsDisposition {
-    companion object {
-        @seskar.js.JsValue("default")
-        val default: DidCreateWindowDetailsDisposition
-
-        @seskar.js.JsValue("foreground-tab")
-        val foregroundTab: DidCreateWindowDetailsDisposition
-
-        @seskar.js.JsValue("background-tab")
-        val backgroundTab: DidCreateWindowDetailsDisposition
-
-        @seskar.js.JsValue("new-window")
-        val newWindow: DidCreateWindowDetailsDisposition
-
-        @seskar.js.JsValue("other")
-        val other: DidCreateWindowDetailsDisposition
-    }
+    companion object
 }
+
+inline val DidCreateWindowDetailsDisposition.Companion.default: DidCreateWindowDetailsDisposition
+    get() = js.reflect.unsafeCast("default")
+
+inline val DidCreateWindowDetailsDisposition.Companion.foregroundTab: DidCreateWindowDetailsDisposition
+    get() = js.reflect.unsafeCast("foreground-tab")
+
+inline val DidCreateWindowDetailsDisposition.Companion.backgroundTab: DidCreateWindowDetailsDisposition
+    get() = js.reflect.unsafeCast("background-tab")
+
+inline val DidCreateWindowDetailsDisposition.Companion.newWindow: DidCreateWindowDetailsDisposition
+    get() = js.reflect.unsafeCast("new-window")
+
+inline val DidCreateWindowDetailsDisposition.Companion.other: DidCreateWindowDetailsDisposition
+    get() = js.reflect.unsafeCast("other")

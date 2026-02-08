@@ -3,110 +3,110 @@
 package tauri.apps.api.window
 
 sealed external interface CursorIcon {
-    companion object {
-        @seskar.js.JsValue("default")
-        val default: CursorIcon
-
-        @seskar.js.JsValue("crosshair")
-        val crosshair: CursorIcon
-
-        @seskar.js.JsValue("hand")
-        val hand: CursorIcon
-
-        @seskar.js.JsValue("arrow")
-        val arrow: CursorIcon
-
-        @seskar.js.JsValue("move")
-        val move: CursorIcon
-
-        @seskar.js.JsValue("text")
-        val text: CursorIcon
-
-        @seskar.js.JsValue("wait")
-        val wait: CursorIcon
-
-        @seskar.js.JsValue("help")
-        val help: CursorIcon
-
-        @seskar.js.JsValue("progress")
-        val progress: CursorIcon
-
-        @seskar.js.JsValue("notAllowed")
-        val notAllowed: CursorIcon
-
-        @seskar.js.JsValue("contextMenu")
-        val contextMenu: CursorIcon
-
-        @seskar.js.JsValue("cell")
-        val cell: CursorIcon
-
-        @seskar.js.JsValue("verticalText")
-        val verticalText: CursorIcon
-
-        @seskar.js.JsValue("alias")
-        val alias: CursorIcon
-
-        @seskar.js.JsValue("copy")
-        val copy: CursorIcon
-
-        @seskar.js.JsValue("noDrop")
-        val noDrop: CursorIcon
-
-        @seskar.js.JsValue("grab")
-        val grab: CursorIcon
-
-        @seskar.js.JsValue("grabbing")
-        val grabbing: CursorIcon
-
-        @seskar.js.JsValue("allScroll")
-        val allScroll: CursorIcon
-
-        @seskar.js.JsValue("zoomIn")
-        val zoomIn: CursorIcon
-
-        @seskar.js.JsValue("zoomOut")
-        val zoomOut: CursorIcon
-
-        @seskar.js.JsValue("eResize")
-        val eResize: CursorIcon
-
-        @seskar.js.JsValue("nResize")
-        val nResize: CursorIcon
-
-        @seskar.js.JsValue("neResize")
-        val neResize: CursorIcon
-
-        @seskar.js.JsValue("nwResize")
-        val nwResize: CursorIcon
-
-        @seskar.js.JsValue("sResize")
-        val sResize: CursorIcon
-
-        @seskar.js.JsValue("seResize")
-        val seResize: CursorIcon
-
-        @seskar.js.JsValue("swResize")
-        val swResize: CursorIcon
-
-        @seskar.js.JsValue("wResize")
-        val wResize: CursorIcon
-
-        @seskar.js.JsValue("ewResize")
-        val ewResize: CursorIcon
-
-        @seskar.js.JsValue("nsResize")
-        val nsResize: CursorIcon
-
-        @seskar.js.JsValue("neswResize")
-        val neswResize: CursorIcon
-
-        @seskar.js.JsValue("nwseResize")
-        val nwseResize: CursorIcon
-
-        @seskar.js.JsValue("colResize")
-        val colResize: CursorIcon
-
-        @seskar.js.JsValue("rowResize")
-        val rowResize: CursorIcon
-    }
+    companion object
 }
+
+inline val CursorIcon.Companion.default: CursorIcon
+    get() = js.reflect.unsafeCast("default")
+
+inline val CursorIcon.Companion.crosshair: CursorIcon
+    get() = js.reflect.unsafeCast("crosshair")
+
+inline val CursorIcon.Companion.hand: CursorIcon
+    get() = js.reflect.unsafeCast("hand")
+
+inline val CursorIcon.Companion.arrow: CursorIcon
+    get() = js.reflect.unsafeCast("arrow")
+
+inline val CursorIcon.Companion.move: CursorIcon
+    get() = js.reflect.unsafeCast("move")
+
+inline val CursorIcon.Companion.text: CursorIcon
+    get() = js.reflect.unsafeCast("text")
+
+inline val CursorIcon.Companion.wait: CursorIcon
+    get() = js.reflect.unsafeCast("wait")
+
+inline val CursorIcon.Companion.help: CursorIcon
+    get() = js.reflect.unsafeCast("help")
+
+inline val CursorIcon.Companion.progress: CursorIcon
+    get() = js.reflect.unsafeCast("progress")
+
+inline val CursorIcon.Companion.notAllowed: CursorIcon
+    get() = js.reflect.unsafeCast("notAllowed")
+
+inline val CursorIcon.Companion.contextMenu: CursorIcon
+    get() = js.reflect.unsafeCast("contextMenu")
+
+inline val CursorIcon.Companion.cell: CursorIcon
+    get() = js.reflect.unsafeCast("cell")
+
+inline val CursorIcon.Companion.verticalText: CursorIcon
+    get() = js.reflect.unsafeCast("verticalText")
+
+inline val CursorIcon.Companion.alias: CursorIcon
+    get() = js.reflect.unsafeCast("alias")
+
+inline val CursorIcon.Companion.copy: CursorIcon
+    get() = js.reflect.unsafeCast("copy")
+
+inline val CursorIcon.Companion.noDrop: CursorIcon
+    get() = js.reflect.unsafeCast("noDrop")
+
+inline val CursorIcon.Companion.grab: CursorIcon
+    get() = js.reflect.unsafeCast("grab")
+
+inline val CursorIcon.Companion.grabbing: CursorIcon
+    get() = js.reflect.unsafeCast("grabbing")
+
+inline val CursorIcon.Companion.allScroll: CursorIcon
+    get() = js.reflect.unsafeCast("allScroll")
+
+inline val CursorIcon.Companion.zoomIn: CursorIcon
+    get() = js.reflect.unsafeCast("zoomIn")
+
+inline val CursorIcon.Companion.zoomOut: CursorIcon
+    get() = js.reflect.unsafeCast("zoomOut")
+
+inline val CursorIcon.Companion.eResize: CursorIcon
+    get() = js.reflect.unsafeCast("eResize")
+
+inline val CursorIcon.Companion.nResize: CursorIcon
+    get() = js.reflect.unsafeCast("nResize")
+
+inline val CursorIcon.Companion.neResize: CursorIcon
+    get() = js.reflect.unsafeCast("neResize")
+
+inline val CursorIcon.Companion.nwResize: CursorIcon
+    get() = js.reflect.unsafeCast("nwResize")
+
+inline val CursorIcon.Companion.sResize: CursorIcon
+    get() = js.reflect.unsafeCast("sResize")
+
+inline val CursorIcon.Companion.seResize: CursorIcon
+    get() = js.reflect.unsafeCast("seResize")
+
+inline val CursorIcon.Companion.swResize: CursorIcon
+    get() = js.reflect.unsafeCast("swResize")
+
+inline val CursorIcon.Companion.wResize: CursorIcon
+    get() = js.reflect.unsafeCast("wResize")
+
+inline val CursorIcon.Companion.ewResize: CursorIcon
+    get() = js.reflect.unsafeCast("ewResize")
+
+inline val CursorIcon.Companion.nsResize: CursorIcon
+    get() = js.reflect.unsafeCast("nsResize")
+
+inline val CursorIcon.Companion.neswResize: CursorIcon
+    get() = js.reflect.unsafeCast("neswResize")
+
+inline val CursorIcon.Companion.nwseResize: CursorIcon
+    get() = js.reflect.unsafeCast("nwseResize")
+
+inline val CursorIcon.Companion.colResize: CursorIcon
+    get() = js.reflect.unsafeCast("colResize")
+
+inline val CursorIcon.Companion.rowResize: CursorIcon
+    get() = js.reflect.unsafeCast("rowResize")

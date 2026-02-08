@@ -3,11 +3,11 @@
 package electron.core
 
 sealed external interface NotificationTimeoutType {
-    companion object {
-        @seskar.js.JsValue("default")
-        val default: NotificationTimeoutType
-
-        @seskar.js.JsValue("never")
-        val never: NotificationTimeoutType
-    }
+    companion object
 }
+
+inline val NotificationTimeoutType.Companion.default: NotificationTimeoutType
+    get() = js.reflect.unsafeCast("default")
+
+inline val NotificationTimeoutType.Companion.never: NotificationTimeoutType
+    get() = js.reflect.unsafeCast("never")

@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface WebContentsSavePageSaveType {
-    companion object {
-        @seskar.js.JsValue("HTMLOnly")
-        val HTMLOnly: WebContentsSavePageSaveType
-
-        @seskar.js.JsValue("HTMLComplete")
-        val HTMLComplete: WebContentsSavePageSaveType
-
-        @seskar.js.JsValue("MHTML")
-        val MHTML: WebContentsSavePageSaveType
-    }
+    companion object
 }
+
+inline val WebContentsSavePageSaveType.Companion.HTMLOnly: WebContentsSavePageSaveType
+    get() = js.reflect.unsafeCast("HTMLOnly")
+
+inline val WebContentsSavePageSaveType.Companion.HTMLComplete: WebContentsSavePageSaveType
+    get() = js.reflect.unsafeCast("HTMLComplete")
+
+inline val WebContentsSavePageSaveType.Companion.MHTML: WebContentsSavePageSaveType
+    get() = js.reflect.unsafeCast("MHTML")

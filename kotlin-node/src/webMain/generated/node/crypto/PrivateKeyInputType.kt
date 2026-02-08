@@ -3,14 +3,14 @@
 package node.crypto
 
 sealed external interface PrivateKeyInputType {
-    companion object {
-        @seskar.js.JsValue("pkcs1")
-        val pkcs1: PrivateKeyInputType
-
-        @seskar.js.JsValue("pkcs8")
-        val pkcs8: PrivateKeyInputType
-
-        @seskar.js.JsValue("sec1")
-        val sec1: PrivateKeyInputType
-    }
+    companion object
 }
+
+inline val PrivateKeyInputType.Companion.pkcs1: PrivateKeyInputType
+    get() = js.reflect.unsafeCast("pkcs1")
+
+inline val PrivateKeyInputType.Companion.pkcs8: PrivateKeyInputType
+    get() = js.reflect.unsafeCast("pkcs8")
+
+inline val PrivateKeyInputType.Companion.sec1: PrivateKeyInputType
+    get() = js.reflect.unsafeCast("sec1")

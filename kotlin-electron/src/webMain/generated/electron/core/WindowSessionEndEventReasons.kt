@@ -3,17 +3,17 @@
 package electron.core
 
 sealed external interface WindowSessionEndEventReasons {
-    companion object {
-        @seskar.js.JsValue("shutdown")
-        val shutdown: WindowSessionEndEventReasons
-
-        @seskar.js.JsValue("close-app")
-        val closeApp: WindowSessionEndEventReasons
-
-        @seskar.js.JsValue("critical")
-        val critical: WindowSessionEndEventReasons
-
-        @seskar.js.JsValue("logoff")
-        val logoff: WindowSessionEndEventReasons
-    }
+    companion object
 }
+
+inline val WindowSessionEndEventReasons.Companion.shutdown: WindowSessionEndEventReasons
+    get() = js.reflect.unsafeCast("shutdown")
+
+inline val WindowSessionEndEventReasons.Companion.closeApp: WindowSessionEndEventReasons
+    get() = js.reflect.unsafeCast("close-app")
+
+inline val WindowSessionEndEventReasons.Companion.critical: WindowSessionEndEventReasons
+    get() = js.reflect.unsafeCast("critical")
+
+inline val WindowSessionEndEventReasons.Companion.logoff: WindowSessionEndEventReasons
+    get() = js.reflect.unsafeCast("logoff")

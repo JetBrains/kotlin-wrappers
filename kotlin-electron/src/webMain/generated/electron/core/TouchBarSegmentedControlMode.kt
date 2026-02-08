@@ -3,14 +3,14 @@
 package electron.core
 
 sealed external interface TouchBarSegmentedControlMode {
-    companion object {
-        @seskar.js.JsValue("single")
-        val single: TouchBarSegmentedControlMode
-
-        @seskar.js.JsValue("multiple")
-        val multiple: TouchBarSegmentedControlMode
-
-        @seskar.js.JsValue("buttons")
-        val buttons: TouchBarSegmentedControlMode
-    }
+    companion object
 }
+
+inline val TouchBarSegmentedControlMode.Companion.single: TouchBarSegmentedControlMode
+    get() = js.reflect.unsafeCast("single")
+
+inline val TouchBarSegmentedControlMode.Companion.multiple: TouchBarSegmentedControlMode
+    get() = js.reflect.unsafeCast("multiple")
+
+inline val TouchBarSegmentedControlMode.Companion.buttons: TouchBarSegmentedControlMode
+    get() = js.reflect.unsafeCast("buttons")

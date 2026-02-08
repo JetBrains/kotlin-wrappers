@@ -4,17 +4,17 @@ package node.crypto
 
 // https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings
 sealed external interface BinaryToTextEncoding {
-    companion object {
-        @seskar.js.JsValue("base64")
-        val base64: BinaryToTextEncoding
-
-        @seskar.js.JsValue("base64url")
-        val base64url: BinaryToTextEncoding
-
-        @seskar.js.JsValue("hex")
-        val hex: BinaryToTextEncoding
-
-        @seskar.js.JsValue("binary")
-        val binary: BinaryToTextEncoding
-    }
+    companion object
 }
+
+inline val BinaryToTextEncoding.Companion.base64: BinaryToTextEncoding
+    get() = js.reflect.unsafeCast("base64")
+
+inline val BinaryToTextEncoding.Companion.base64url: BinaryToTextEncoding
+    get() = js.reflect.unsafeCast("base64url")
+
+inline val BinaryToTextEncoding.Companion.hex: BinaryToTextEncoding
+    get() = js.reflect.unsafeCast("hex")
+
+inline val BinaryToTextEncoding.Companion.binary: BinaryToTextEncoding
+    get() = js.reflect.unsafeCast("binary")

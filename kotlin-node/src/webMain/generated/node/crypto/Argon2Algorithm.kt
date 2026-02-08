@@ -3,14 +3,14 @@
 package node.crypto
 
 sealed external interface Argon2Algorithm {
-    companion object {
-        @seskar.js.JsValue("argon2d")
-        val argon2d: Argon2Algorithm
-
-        @seskar.js.JsValue("argon2i")
-        val argon2i: Argon2Algorithm
-
-        @seskar.js.JsValue("argon2id")
-        val argon2id: Argon2Algorithm
-    }
+    companion object
 }
+
+inline val Argon2Algorithm.Companion.argon2d: Argon2Algorithm
+    get() = js.reflect.unsafeCast("argon2d")
+
+inline val Argon2Algorithm.Companion.argon2i: Argon2Algorithm
+    get() = js.reflect.unsafeCast("argon2i")
+
+inline val Argon2Algorithm.Companion.argon2id: Argon2Algorithm
+    get() = js.reflect.unsafeCast("argon2id")
