@@ -1359,8 +1359,7 @@ internal fun convertInterface(
         !IDLRegistry.isMixin(name)
             -> ""
 
-        annotations.startsWith("@")
-                || name in CSSOM_INTERFACES
+        name in CSSOM_INTERFACES
                 || name == "AbstractWorker"
                 || name == "MessageEventTarget"
                 || name == "FontFaceSource"
