@@ -104,7 +104,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.aria.ARIAMixin",
     "web.autofill.AutoFill",
     "web.autofill.AutoFillBase",
-    "web.badge.NavigatorBadge",
+    "web.badging.NavigatorBadge",
     "web.blob.Blob",
     "web.blob.BlobPart",
     "web.blob.BlobPropertyBag",

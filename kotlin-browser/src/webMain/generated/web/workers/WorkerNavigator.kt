@@ -2,7 +2,7 @@
 
 package web.workers
 
-import web.badge.NavigatorBadge
+import web.badging.NavigatorBadge
 import web.experimental.ExperimentalWebApi
 import web.gpu.NavigatorGPU
 import web.locks.NavigatorLocks

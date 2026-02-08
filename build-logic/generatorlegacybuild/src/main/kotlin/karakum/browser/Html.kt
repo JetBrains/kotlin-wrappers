@@ -1477,7 +1477,7 @@ internal fun convertInterface(
         name.startsWith("Geolocation") -> "web.geolocation"
         name.startsWith("Position") -> "web.geolocation"
 
-        name.startsWith("NavigatorBadge") -> "web.badge"
+        name.startsWith("NavigatorBadge") -> "web.badging"
         name.startsWith("NavigatorGPU") -> "web.gpu"
         name.startsWith("NavigatorLocks") -> "web.locks"
         name.startsWith("NavigatorStorage") -> "web.storage"
