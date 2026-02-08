@@ -6,7 +6,7 @@
 
 package web.navigator
 
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import web.storage.StorageManager
 import kotlin.js.definedExternally
 
@@ -14,7 +14,7 @@ import kotlin.js.definedExternally
  * Available only in secure contexts.
  */
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface NavigatorStorage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/storage)

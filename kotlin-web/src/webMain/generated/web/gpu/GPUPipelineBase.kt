@@ -6,11 +6,11 @@
 
 package web.gpu
 
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface GPUPipelineBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePipeline/getBindGroupLayout)

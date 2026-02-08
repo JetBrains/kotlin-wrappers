@@ -7,6 +7,7 @@
 package web.dom
 
 import js.function.JsFunction
+import js.internal.InternalApi
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.csp.SecurityPolicyViolationEvent
@@ -30,6 +31,7 @@ import web.uievents.UIEvent
 import kotlin.js.definedExternally
 
 /* mixin */
+@SubclassOptInRequired(InternalApi::class)
 external interface GlobalEventHandlers :
     EventTarget {
     /**

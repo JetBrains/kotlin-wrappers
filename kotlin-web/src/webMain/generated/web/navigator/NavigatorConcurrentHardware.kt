@@ -7,11 +7,11 @@
 package web.navigator
 
 import js.core.UInt53
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface NavigatorConcurrentHardware {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)

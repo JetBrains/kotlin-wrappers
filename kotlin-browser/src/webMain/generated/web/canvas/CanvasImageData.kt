@@ -6,13 +6,13 @@
 
 package web.canvas
 
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import web.images.ImageData
 import web.images.ImageDataSettings
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface CanvasImageData {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)

@@ -10,12 +10,13 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.core.UInt53
+import js.internal.InternalApi
 import kotlin.js.JsAny
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface WebGL2RenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginQuery)

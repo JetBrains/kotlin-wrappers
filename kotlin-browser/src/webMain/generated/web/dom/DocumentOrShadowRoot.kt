@@ -7,12 +7,14 @@
 package web.dom
 
 import js.array.ReadonlyArray
+import js.internal.InternalApi
 import web.animations.Animation
 import web.cssom.CSSStyleSheet
 import web.cssom.StyleSheetList
 import kotlin.js.definedExternally
 
 /* mixin */
+@SubclassOptInRequired(InternalApi::class)
 external interface DocumentOrShadowRoot {
     /**
      * Returns the deepest element in the document through which or to which key events are being routed. This is, roughly speaking, the focused element in the document.

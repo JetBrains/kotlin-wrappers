@@ -1356,32 +1356,10 @@ internal fun convertInterface(
         isClass
             -> "open"
 
-        !IDLRegistry.isMixin(name)
-            -> ""
+        IDLRegistry.isMixin(name)
+            -> "/* mixin */\n@SubclassOptInRequired(InternalApi::class)\n"
 
-        name in CSSOM_INTERFACES
-                || name == "AbstractWorker"
-                || name == "MessageEventTarget"
-                || name == "FontFaceSource"
-                || name == "PopoverTargetAttributes"
-                || name == "XPathEvaluatorBase"
-                || name == "ARIAMixin"
-                || name == "Animatable"
-                || name == "HTMLOrSVGElement"
-                || name == "DocumentOrShadowRoot"
-                || name == "Slottable"
-                || name == "GenericTransformStream"
-                || name.endsWith("Handlers")
-            -> "/* mixin */\n"
-
-        // TODO: use IDL data instead
-        name.startsWith("Canvas")
-                || name.startsWith("GPU")
-                || name.startsWith("Navigator")
-                || name.startsWith("SVG")
-            -> "/* mixin */\n@JsExternalInheritorsOnly\n"
-
-        else -> "/* mixin */\nsealed\n"
+        else -> ""
     }
 
     val companionExtensionsCollector = BrowserSuspendExtensionsCollector.forParent("$name.Companion", null)

@@ -6,6 +6,7 @@
 
 package web.window
 
+import js.internal.InternalApi
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -21,6 +22,7 @@ import web.viewtransition.PageSwapEvent
 import kotlin.js.definedExternally
 
 /* mixin */
+@SubclassOptInRequired(InternalApi::class)
 external interface WindowEventHandlers :
     EventTarget {
     /**

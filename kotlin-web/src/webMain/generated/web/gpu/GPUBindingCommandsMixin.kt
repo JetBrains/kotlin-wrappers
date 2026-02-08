@@ -8,12 +8,12 @@ package web.gpu
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import js.typedarrays.Uint32Array
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface GPUBindingCommandsMixin {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/setBindGroup)

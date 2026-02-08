@@ -7,6 +7,7 @@
 package web.cssom
 
 import js.array.ArrayLike
+import js.internal.InternalApi
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 
@@ -16,7 +17,7 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
  */
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface CSSStyleDeclarationBase :
     ArrayLike<JsString> {
     /**

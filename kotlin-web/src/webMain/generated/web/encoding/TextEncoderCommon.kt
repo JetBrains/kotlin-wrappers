@@ -6,10 +6,11 @@
 
 package web.encoding
 
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface TextEncoderCommon {
     /**
      * Returns "utf-8".

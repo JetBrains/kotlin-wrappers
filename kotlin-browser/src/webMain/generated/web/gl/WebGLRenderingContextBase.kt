@@ -8,6 +8,7 @@ package web.gl
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
 import web.events.EventTarget
@@ -18,7 +19,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)

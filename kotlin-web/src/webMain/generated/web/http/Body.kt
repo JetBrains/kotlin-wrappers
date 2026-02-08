@@ -8,6 +8,7 @@ package web.http
 
 import js.buffer.ArrayBuffer
 import js.core.JsPrimitives.toKotlinString
+import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
@@ -20,7 +21,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)

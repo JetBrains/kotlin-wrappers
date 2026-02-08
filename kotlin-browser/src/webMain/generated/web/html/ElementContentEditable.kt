@@ -6,10 +6,11 @@
 
 package web.html
 
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface ElementContentEditable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)

@@ -6,11 +6,11 @@
 
 package web.canvas
 
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface CanvasText {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText)

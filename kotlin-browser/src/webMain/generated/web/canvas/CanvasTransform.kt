@@ -6,13 +6,13 @@
 
 package web.canvas
 
-import js.reflect.JsExternalInheritorsOnly
+import js.internal.InternalApi
 import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
 import kotlin.js.definedExternally
 
 /* mixin */
-@JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface CanvasTransform {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getTransform)

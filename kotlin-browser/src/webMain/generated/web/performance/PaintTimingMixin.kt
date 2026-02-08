@@ -6,11 +6,12 @@
 
 package web.performance
 
+import js.internal.InternalApi
 import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface PaintTimingMixin {
     val paintTime: DOMHighResTimeStamp
         get() = definedExternally

@@ -6,9 +6,11 @@
 
 package web.dom
 
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
+@SubclassOptInRequired(InternalApi::class)
 external interface HTMLOrSVGElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus)

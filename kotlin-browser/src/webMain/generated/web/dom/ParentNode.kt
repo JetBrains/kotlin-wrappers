@@ -7,11 +7,12 @@
 
 package web.dom
 
+import js.internal.InternalApi
 import web.html.HTMLCollection
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface ParentNode :
     Node {
     /**

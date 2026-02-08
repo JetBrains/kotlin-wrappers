@@ -8,13 +8,14 @@ package web.streams
 
 import js.core.Void
 import js.errors.JsError
+import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface ReadableStreamGenericReader {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/closed)

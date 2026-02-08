@@ -6,10 +6,11 @@
 
 package web.html
 
+import js.internal.InternalApi
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
+@SubclassOptInRequired(InternalApi::class)
 external interface HTMLHyperlinkElementUtils {
     /**
      * Returns the hyperlink's URL's fragment (includes leading "#" if non-empty).
