@@ -60,6 +60,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::resolveTypeAliasIntersectionBaseName,
             ::resolveTypeAliasNullableUnionName,
             ::resolveTypeAliasNullableUnionPropertyName,
+            ::resolveUserPreferencesImportModuleSpecifierEndingJsName,
         )
         inheritanceModifiers = manyOf(
             ::modifyInterfaceInheritance,
