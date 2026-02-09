@@ -1,5 +1,5 @@
 package tanstack.react.router
 
-typealias UseMatchRouteResult = (
+typealias MatchRoute = (
     options: UseMatchRouteOptions,
 ) -> Boolean
