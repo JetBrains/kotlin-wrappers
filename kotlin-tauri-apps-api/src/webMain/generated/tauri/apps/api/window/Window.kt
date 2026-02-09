@@ -1021,7 +1021,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIcon(icon: js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the window icon.
@@ -1350,9 +1350,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(
-        icon: js.typedarrays.Uint8Array<js.buffer.ArrayBuffer> = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(icon: js.typedarrays.Uint8Array<*> = definedExternally): js.promise.Promise<js.core.Void>
 
     /**
      * Sets the overlay icon. **Windows only**

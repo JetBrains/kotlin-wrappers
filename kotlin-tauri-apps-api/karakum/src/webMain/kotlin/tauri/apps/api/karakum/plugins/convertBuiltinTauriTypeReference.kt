@@ -9,7 +9,7 @@ import typescript.isTypeReferenceNode
 
 private val builtinTauriTypes = mapOf(
     "Promise" to "js.promise.Promise",
-    "Uint8Array" to "js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>",
+    "Uint8Array" to "js.typedarrays.Uint8Array<*>",
     "ArrayBuffer" to "js.buffer.ArrayBuffer",
     "HeadersInit" to "web.http.Headers",
 )

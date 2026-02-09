@@ -65,7 +65,7 @@ external class TrayIcon : Resource {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    fun setIcon(icon: js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.typedarrays.Uint8Array<*>?): js.promise.Promise<js.core.Void>
 
     /**
      *  Sets a new tray icon. If `null` is provided, it will remove the icon.

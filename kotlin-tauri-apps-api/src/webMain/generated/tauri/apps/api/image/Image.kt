@@ -16,7 +16,7 @@ external class Image : Resource {
     constructor (rid: Double)
 
     /** Returns the RGBA data for this image, in row-major order from top to bottom.  */
-    fun rgba(): js.promise.Promise<js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>>
+    fun rgba(): js.promise.Promise<js.typedarrays.Uint8Array<*>>
 
     /** Returns the size of this image.  */
     fun size(): js.promise.Promise<ImageSize>
@@ -31,7 +31,7 @@ external class Image : Resource {
 
         /** Creates a new Image using RGBA data, in row-major order from top to bottom, and with specified width and height. */
         fun new(
-            rgba: js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>,
+            rgba: js.typedarrays.Uint8Array<*>,
             width: Double,
             height: Double,
         ): js.promise.Promise<Image>
@@ -71,7 +71,7 @@ external class Image : Resource {
          * tauri = { version = "...", features = ["...", "image-png"] }
          * ```
          */
-        fun fromBytes(bytes: js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>): js.promise.Promise<Image>
+        fun fromBytes(bytes: js.typedarrays.Uint8Array<*>): js.promise.Promise<Image>
 
         /**
          * Creates a new image using the provided bytes by inferring the file format.

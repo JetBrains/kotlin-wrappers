@@ -26,7 +26,7 @@ external fun <T> transformImage(image: Image?): T
  * See [tauri::image::JsImage](https://docs.rs/tauri/2/tauri/image/enum.JsImage.html) for more information.
  * Note the API signature is not stable and might change.
  */
-external fun <T> transformImage(image: js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>?): T
+external fun <T> transformImage(image: js.typedarrays.Uint8Array<*>?): T
 
 /**
  * Transforms image from various types into a type acceptable by Rust.
