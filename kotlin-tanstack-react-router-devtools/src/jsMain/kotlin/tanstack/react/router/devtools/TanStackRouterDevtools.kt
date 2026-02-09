@@ -14,7 +14,7 @@ external interface TanStackRouterDevtoolsProps :
     var panelProps: Props?
     var closeButtonProps: Props?
     var toggleButtonProps: Props?
-    var position: TanStackRouterDevtoolsPosition?
+    var position: Position?
     var shadowDOMTarget: ShadowRoot?
     var containerElement: Any? /* or String */
 }
