@@ -158,11 +158,6 @@ include("kotlin-node")
 
 includeKarakum("kotlin-node")
 
-// Kotlin/JS: null-writable wrappers
-include("kotlin-null-writable")
-
-includeKarakum("kotlin-null-writable")
-
 // Kotlin/JS: pako wrappers
 include("kotlin-pako")
 
