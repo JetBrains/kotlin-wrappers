@@ -2,4 +2,4 @@
 
 package tanstack.react.router
 
-external fun useMatchRoute(): MatchRoute
+external fun useMatchRoute(): MatchRouteInstance
