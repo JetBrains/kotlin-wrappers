@@ -1,5 +1,6 @@
 package tanstack.router.core
 
+import kotlinx.js.JsPlainObject
 import web.scroll.ScrollIntoViewOptions
 
 /**
@@ -7,6 +8,7 @@ import web.scroll.ScrollIntoViewOptions
  * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/NavigateOptionsType)
  */
 @JsExternalInheritorsOnly
+@JsPlainObject
 external interface NavigateOptionProps {
     /**
      * If set to `true`, the router will scroll the element with an id matching the hash into view with default `ScrollIntoViewOptions`.
