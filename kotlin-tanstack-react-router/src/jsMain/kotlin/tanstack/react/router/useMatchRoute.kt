@@ -2,6 +2,4 @@
 
 package tanstack.react.router
 
-external fun useMatchRoute(): (
-    options: UseMatchRouteOptions,
-) -> Boolean
+external fun useMatchRoute(): UseMatchRouteResult
