@@ -3,13 +3,12 @@
 package web.gpu
 
 import js.promise.Promise
-import js.promise.await
+import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
+ * The **`GPUDevice`** interface of the WebGPU API represents a logical GPU device. This is the main interface through which the majority of WebGPU functionality is accessed.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice)
@@ -19,142 +18,44 @@ private constructor() :
     EventTarget,
     GPUObjectBase {
     /**
+     * The **`adapterInfo`** read-only property of the GPUDevice interface returns a GPUAdapterInfo object containing identifying information about the device's originating adapter.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/adapterInfo)
+     */
+    val adapterInfo: GPUAdapterInfo
+
+    /**
+     * The **`features`** read-only property of the GPUDevice interface returns a GPUSupportedFeatures object that describes additional functionality supported by the device. Only features requested during the creation of the device (i.e., when GPUAdapter.requestDevice() is called) are included.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/features)
      */
     val features: GPUSupportedFeatures
 
     /**
+     * The **`limits`** read-only property of the GPUDevice interface returns a GPUSupportedLimits object that describes the limits supported by the device. All limit values will be included, and the limits requested during the creation of the device (i.e., when GPUAdapter.requestDevice() is called) will be reflected in those values.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/limits)
      */
     val limits: GPUSupportedLimits
 
     /**
+     * The **`lost`** read-only property of the GPUDevice interface contains a Promise that remains pending throughout the device's lifetime and resolves with a GPUDeviceLostInfo object when the device is lost.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/lost)
      */
     val lost: Promise<GPUDeviceLostInfo>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event)
+     */
+    var onuncapturederror: EventHandler<GPUUncapturedErrorEvent, GPUDevice, GPUDevice>?
+
+    /**
+     * The **`queue`** read-only property of the GPUDevice interface returns the primary GPUQueue for the device.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/queue)
      */
     val queue: GPUQueue
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBindGroup)
-     */
-    fun createBindGroup(descriptor: GPUBindGroupDescriptor): GPUBindGroup
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBindGroupLayout)
-     */
-    fun createBindGroupLayout(descriptor: GPUBindGroupLayoutDescriptor): GPUBindGroupLayout
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBuffer)
-     */
-    fun createBuffer(descriptor: GPUBufferDescriptor): GPUBuffer
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createCommandEncoder)
-     */
-    fun createCommandEncoder(descriptor: GPUCommandEncoderDescriptor = definedExternally): GPUCommandEncoder
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipeline)
-     */
-    @JsName("createComputePipeline")
-    fun createComputePipelineSync(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
-     */
-    fun createComputePipelineAsync(descriptor: GPUComputePipelineDescriptor): Promise<GPUComputePipeline>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createPipelineLayout)
-     */
-    fun createPipelineLayout(descriptor: GPUPipelineLayoutDescriptor): GPUPipelineLayout
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createQuerySet)
-     */
-    fun createQuerySet(descriptor: GPUQuerySetDescriptor): GPUQuerySet
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderBundleEncoder)
-     */
-    fun createRenderBundleEncoder(descriptor: GPURenderBundleEncoderDescriptor): GPURenderBundleEncoder
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipeline)
-     */
-    @JsName("createRenderPipeline")
-    fun createRenderPipelineSync(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
-     */
-    fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): Promise<GPURenderPipeline>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createSampler)
-     */
-    fun createSampler(descriptor: GPUSamplerDescriptor = definedExternally): GPUSampler
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createShaderModule)
-     */
-    fun createShaderModule(descriptor: GPUShaderModuleDescriptor): GPUShaderModule
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture)
-     */
-    fun createTexture(descriptor: GPUTextureDescriptor): GPUTexture
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/destroy)
-     */
-    fun destroy()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/importExternalTexture)
-     */
-    fun importExternalTexture(descriptor: GPUExternalTextureDescriptor): GPUExternalTexture
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
-     */
-    @JsName("popErrorScope")
-    fun popErrorScopeAsync(): Promise<GPUError?>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/pushErrorScope)
-     */
-    fun pushErrorScope(filter: GPUErrorFilter)
-}
-
-/**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
- */
-suspend inline fun GPUDevice.createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline {
-    return createComputePipelineAsync(
-        descriptor = descriptor,
-    ).await()
-}
-
-/**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
- */
-suspend inline fun GPUDevice.createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline {
-    return createRenderPipelineAsync(
-        descriptor = descriptor,
-    ).await()
-}
-
-/**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
- */
-suspend inline fun GPUDevice.popErrorScope(): GPUError? {
-    return popErrorScopeAsync().await()
 }
 
 /**

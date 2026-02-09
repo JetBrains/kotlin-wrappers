@@ -14,5 +14,5 @@ external interface GPURenderPassDepthStencilAttachment {
     var stencilLoadOp: GPULoadOp?
     var stencilReadOnly: Boolean?
     var stencilStoreOp: GPUStoreOp?
-    var view: GPUTextureView
+    var view: GPUObjectBase /* GPUTexture | GPUTextureView */
 }

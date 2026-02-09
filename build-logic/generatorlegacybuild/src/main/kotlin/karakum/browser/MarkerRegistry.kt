@@ -40,9 +40,6 @@ internal object MarkerRegistry {
     ) {
         map = MARKER_DECLARATIONS.asSequence()
             .flatMap { name -> findParentTypes(content = content, interfaceDeclaration = name) }
-            // TEMP
-            .plus("GPUCanvasContext" to "OffscreenRenderingContext")
-            .plus("GPUCanvasContext" to "RenderingContext")
             .groupBy(keySelector = { it.first }, valueTransform = { it.second })
     }
 

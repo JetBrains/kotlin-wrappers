@@ -2001,6 +2001,9 @@ private fun convertProperty(
         "GPUPipelineLayout | GPUAutoLayoutMode",
             -> "JsAny /* $type */"
 
+        "GPUTexture | GPUTextureView",
+            -> "GPUObjectBase /* $type */"
+
         "number[]",
             -> typeProvider.numberArrayType(safeName)
 

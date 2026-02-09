@@ -15,6 +15,7 @@ import web.images.ImageBitmapRenderingContext
  * - [ImageBitmapRenderingContext]
  * - [WebGLRenderingContext]
  * - [WebGL2RenderingContext]
+ * - [GPUCanvasContext]
  */
 @JsExternalInheritorsOnly
 @SubclassOptInRequired(InternalApi::class)

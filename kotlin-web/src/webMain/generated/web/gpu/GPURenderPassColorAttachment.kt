@@ -9,7 +9,7 @@ external interface GPURenderPassColorAttachment {
     var clearValue: GPUColor?
     var depthSlice: GPUIntegerCoordinate?
     var loadOp: GPULoadOp
-    var resolveTarget: GPUTextureView?
+    var resolveTarget: GPUObjectBase /* GPUTexture | GPUTextureView */?
     var storeOp: GPUStoreOp
-    var view: GPUTextureView
+    var view: GPUObjectBase /* GPUTexture | GPUTextureView */
 }
