@@ -28,5 +28,6 @@ private fun convertExtension(
             name = "WebGLExtension",
             constants = values.map(::unionConstant),
         ),
+        pkg = "web.gl",
     )
 }

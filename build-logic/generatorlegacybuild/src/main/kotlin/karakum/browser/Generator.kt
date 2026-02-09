@@ -380,7 +380,7 @@ fun generateKotlinDeclarations(
 
     val content = webDefinitionsContent.applyPatches()
 
-    val webglTargetDir = sourceDir
+    sourceDir
         .resolve("web/gl")
         .also { it.mkdirs() }
 
@@ -433,6 +433,7 @@ fun generateKotlinDeclarations(
         .plus(workerFunctions(serviceWorkerContent))
         .plus(audioWorkletDeclarations(audioWorkletDefinitionsParts.first))
         .plus(webXrDeclarations(webXrContent))
+        .plus(webglDeclarations(content))
         .withEventInstances(knownEventTypes)
 
     for ((name, body, pkg) in aliases) {
@@ -589,21 +590,6 @@ fun generateKotlinDeclarations(
                     pkg = pkg,
                 )
             )
-    }
-
-    for ((name, body) in webglDeclarations(content)) {
-        val suppresses = buildSet<Suppress> {
-            if ("companion object" in body && "sealed external interface" in body)
-                add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
-        }.toTypedArray()
-
-        val annotations = if (suppresses.isNotEmpty()) {
-            fileSuppress(*suppresses)
-        } else ""
-
-        webglTargetDir.resolve("$name.kt")
-            .also { check(!it.exists()) { "Duplicated file: ${it.name}" } }
-            .writeCode(fileContent(annotations, "", toCommonBody(body), "web.gl"))
     }
 }
 

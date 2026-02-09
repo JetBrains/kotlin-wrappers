@@ -20,13 +20,16 @@ internal fun GLNumbers(): Sequence<ConversionResult> =
             body = TYPES.joinToString("\n") { (type, alias) ->
                 "typealias $type = $alias"
             },
+            pkg = "web.gl",
         ),
         ConversionResult(
             name = "GLenum",
             body = "sealed external interface GLenum",
+            pkg = "web.gl",
         ),
         ConversionResult(
             name = "GLbitfield",
             body = "sealed external interface GLbitfield:\nBitmask<GLbitfield>",
+            pkg = "web.gl",
         ),
     )
