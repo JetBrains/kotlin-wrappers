@@ -3,9 +3,11 @@
 package web.gpu
 
 import js.promise.Promise
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import kotlin.js.JsName
 
 /**
  * The **`GPUDevice`** interface of the WebGPU API represents a logical GPU device. This is the main interface through which the majority of WebGPU functionality is accessed.
@@ -56,6 +58,51 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/queue)
      */
     val queue: GPUQueue
+
+    /**
+     * The **`createBindGroup()`** method of the GPUDevice interface creates a GPUBindGroup based on a GPUBindGroupLayout that defines a set of resources to be bound together in a group and how those resources are used in shader stages.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBindGroup)
+     */
+    fun createBindGroup(descriptor: GPUBindGroupDescriptor): GPUBindGroup
+
+    /**
+     * The **`destroy()`** method of the GPUDevice interface destroys the device, preventing further operations on it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/destroy)
+     */
+    fun destroy()
+
+    /**
+     * The **`importExternalTexture()`** method of the GPUDevice interface takes an HTMLVideoElement or a VideoFrame object as an input and returns a GPUExternalTexture wrapper object containing a snapshot of the video that can be used as a frame in GPU rendering operations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/importExternalTexture)
+     */
+    fun importExternalTexture(descriptor: GPUExternalTextureDescriptor): GPUExternalTexture
+
+    /**
+     * The **`popErrorScope()`** method of the GPUDevice interface pops an existing GPU error scope from the error scope stack (originally pushed using GPUDevice.pushErrorScope()) and returns a Promise that resolves to an object describing the first error captured in the scope, or null if no error occurred.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
+     */
+    @JsName("popErrorScope")
+    fun popErrorScopeAsync(): Promise<GPUError?>
+
+    /**
+     * The **`pushErrorScope()`** method of the GPUDevice interface pushes a new GPU error scope onto the device's error scope stack, allowing you to capture errors of a particular type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/pushErrorScope)
+     */
+    fun pushErrorScope(filter: GPUErrorFilter)
+}
+
+/**
+ * The **`popErrorScope()`** method of the GPUDevice interface pops an existing GPU error scope from the error scope stack (originally pushed using GPUDevice.pushErrorScope()) and returns a Promise that resolves to an object describing the first error captured in the scope, or null if no error occurred.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
+ */
+suspend inline fun GPUDevice.popErrorScope(): GPUError? {
+    return popErrorScopeAsync().await()
 }
 
 /**

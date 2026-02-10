@@ -274,6 +274,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.popover.TogglePopoverOptions",
     "web.presentation.Presentation",
     "web.push.PushManager",
+    "web.push.PushManagerAttribute",
     "web.push.PushSubscriptionChangeEvent",
     "web.ranges.AbstractRange",
     "web.ranges.Range",

@@ -12,7 +12,8 @@ import kotlin.js.definedExternally
  */
 open external class GPUTexture
 private constructor() :
-    GPUObjectBase {
+    GPUObjectBase,
+    GPUBindingResource {
     /**
      * The **`depthOrArrayLayers`** read-only property of the GPUTexture interface represents the depth or layer count of the GPUTexture.
      *

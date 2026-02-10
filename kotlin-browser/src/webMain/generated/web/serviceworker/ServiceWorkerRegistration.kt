@@ -13,6 +13,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
+import web.push.PushManagerAttribute
 import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -26,7 +27,8 @@ import kotlin.js.toBoolean
  */
 open external class ServiceWorkerRegistration
 private constructor() :
-    EventTarget {
+    EventTarget,
+    PushManagerAttribute {
     /**
      * The **`active`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is activating or activated. This property is initially set to null.
      *

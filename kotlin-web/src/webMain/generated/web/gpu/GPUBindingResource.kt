@@ -8,7 +8,9 @@ import js.reflect.JsExternalInheritorsOnly
 /**
  * Union of:
  * - [GPUSampler]
+ * - [GPUTexture]
  * - [GPUTextureView]
+ * - [GPUBuffer]
  * - [GPUBufferBinding]
  * - [GPUExternalTexture]
  */

@@ -16,7 +16,8 @@ import kotlin.js.definedExternally
  */
 open external class GPUBuffer
 private constructor() :
-    GPUObjectBase {
+    GPUObjectBase,
+    GPUBindingResource {
     /**
      * The **`mapState`** read-only property of the GPUBuffer interface represents the mapped state of the GPUBuffer.
      *
