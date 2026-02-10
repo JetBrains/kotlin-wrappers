@@ -200,6 +200,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.gl.WebGLFramebuffer",
     "web.gl.WebGLRenderingContext",
     "web.gl.WebGLTexture",
+    "web.gpu.GPUCanvasContext",
     "web.gpu.GPUCopyExternalImageSource",
     "web.gpu.NavigatorGPU",
     "web.highlight.HighlightRegistry",
