@@ -1,5 +1,5 @@
 package tanstack.react.router
 
-typealias MatchRouteInstance = (
+internal typealias MatchRouteInstanceRaw = (
     options: UseMatchRouteOptions,
 ) -> Any /* Boolean | Params */
