@@ -2515,10 +2515,6 @@ private fun getParameterType(
         source == "ReadableStream<Uint8Array>"
             -> "ReadableStream<Uint8Array<*>>"
 
-        // TEMP
-        source == "AlgorithmIdentifier"
-            -> "JsAny /* $source */"
-
         source == "Iterable<string>"
             -> "JsIterable<String>"
 
