@@ -222,7 +222,7 @@ internal fun String.applyPatches(): String {
         .splitUnion("AlgorithmIdentifier | RsaHashedImportParams | EcKeyImportParams | HmacImportParams | AesKeyAlgorithm")
         .splitUnion("AlgorithmIdentifier | RsaOaepParams | AesCtrParams | AesCbcParams | AesGcmParams")
         .splitUnion("AlgorithmIdentifier | RsaPssParams | EcdsaParams")
-        .splitUnion("AlgorithmIdentifier", "Algorithm | string")
+        .splitTypealias("AlgorithmIdentifier", safeMode = true)
         .splitUnion("RsaHashedKeyGenParams | EcKeyGenParams")
         .splitUnion("AesKeyGenParams | HmacKeyGenParams | Pbkdf2Params")
         .splitUnion("IDBValidKey | IDBKeyRange")
@@ -636,13 +636,20 @@ private fun String.splitUnionSafety(
 
 internal fun String.splitTypealias(
     name: String,
+    safeMode: Boolean = false,
 ): String {
     val aliasDeclaration = "\ntype $name = "
     val aliasBody = substringAfter(aliasDeclaration)
         .substringBefore("\n")
 
+    val replacement = aliasBody.removeSuffix(";")
+
+    if (safeMode) {
+        return splitUnion(name, replacement)
+    }
+
     return replace(aliasDeclaration + aliasBody, "")
-        .replace(name, aliasBody.removeSuffix(";"))
+        .replace(name, replacement)
 }
 
 internal fun String.splitUnion(
