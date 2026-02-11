@@ -377,10 +377,11 @@ fun generateKotlinDeclarations(
         .plus(WEB_GPU_CONTENT)
         .withTrustedTypes()
 
-    MarkerRegistry.fill(webDefinitionsContent)
     RenderingContextRegistry.fill(webDefinitionsContent)
 
     val content = webDefinitionsContent.applyPatches()
+
+    MarkerRegistry.fill(content)
 
     sourceDir
         .resolve("web/gl")

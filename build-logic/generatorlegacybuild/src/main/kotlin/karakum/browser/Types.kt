@@ -404,7 +404,7 @@ private fun convertType(
         }
 
         val finalBody = when {
-            name == "BodyInit" || name == "IDBValidKey"
+            name == "IDBValidKey"
                 -> valueInterface(
                 name,
                 bodySource,

@@ -11,6 +11,7 @@ import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
 import js.typedarrays.Uint8Array
+import web.http.BodyInit
 import web.images.ImageBitmapSource
 import web.streams.ReadableStream
 import kotlin.js.JsName
@@ -25,7 +26,8 @@ import kotlin.js.definedExternally
 open external class Blob(
     blobParts: ReadonlyArray<BlobPart> = definedExternally,
     options: BlobPropertyBag = definedExternally,
-) : ImageBitmapSource,
+) : BodyInit,
+    ImageBitmapSource,
     Serializable {
     /**
      * The **`size`** read-only property of the Blob interface returns the size of the Blob or File in bytes.

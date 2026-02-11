@@ -5,6 +5,8 @@ private val JS_MARKER_DECLARATIONS = setOf(
 )
 
 private val WEB_MARKER_DECLARATIONS = setOf(
+    "BodyInit",
+
     "AlgorithmIdentifier",
 
     "ReadableStreamController<T>",
@@ -34,6 +36,7 @@ internal val MARKER_DECLARATIONS =
 
 private val WEB_BASE_TYPES = listOf(
     "String",
+    "BufferSource",
 )
 
 private val BROWSER_BASE_TYPES = listOf(

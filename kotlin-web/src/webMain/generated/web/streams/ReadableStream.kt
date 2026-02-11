@@ -15,6 +15,7 @@ import web.abort.AbortController
 import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import web.http.BodyInit
 import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -27,7 +28,8 @@ import kotlin.js.definedExternally
 open external class ReadableStream<R : JsAny?>(
     underlyingSource: UnderlyingByteSource,
     strategy: QueuingStrategy<R> = definedExternally,
-) : Transferable,
+) : BodyInit,
+    Transferable,
     AsyncIterable<R>,
     AsyncCloseableDisposable {
     constructor(

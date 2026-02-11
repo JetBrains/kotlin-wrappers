@@ -8,6 +8,7 @@ import js.collections.MapLike
 import js.iterable.JsIterator
 import web.blob.Blob
 import web.events.EventTarget
+import web.http.BodyInit
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 
@@ -19,7 +20,8 @@ import kotlin.js.definedExternally
 open external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
     submitter: EventTarget /* HTMLElement */? = definedExternally,
-) : MapLike<JsString, FormDataEntryValue> {
+) : MapLike<JsString, FormDataEntryValue>,
+    BodyInit {
     /**
      * The **`append()`** method of the FormData interface appends a new value onto an existing key inside a FormData object, or adds the key if it does not already exist.
      *

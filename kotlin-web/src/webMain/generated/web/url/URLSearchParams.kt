@@ -7,6 +7,7 @@ import js.array.Tuple2
 import js.collections.ReadonlyMap
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
+import web.http.BodyInit
 import kotlin.js.JsString
 import kotlin.js.definedExternally
 
@@ -17,7 +18,8 @@ import kotlin.js.definedExternally
  */
 open external class URLSearchParams(
     init: ReadonlyArray<Tuple2<JsString, JsString>> = definedExternally,
-) : ReadonlyMap<JsString, JsString> {
+) : ReadonlyMap<JsString, JsString>,
+    BodyInit {
     constructor(init: ReadonlyRecord<JsString, JsString>)
     constructor(init: String)
     constructor(init: URLSearchParams)
