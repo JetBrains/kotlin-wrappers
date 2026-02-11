@@ -2,7 +2,7 @@
 
 package node.sqlite
 
-import js.array.TemplateStringsArray
+import js.string.TemplateStringsArray
 
 /**
  * This class represents a single LRU (Least Recently Used) cache for storing

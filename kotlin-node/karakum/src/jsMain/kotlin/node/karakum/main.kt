@@ -1041,7 +1041,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "web.url.URL"
             ),
             "sqlite/SQLTagStore.kt" to arrayOf(
-                "js.array.TemplateStringsArray",
+                "js.string.TemplateStringsArray",
             ),
             "sqlite/Session.kt" to arrayOf(
                 "js.typedarrays.Uint8Array"
