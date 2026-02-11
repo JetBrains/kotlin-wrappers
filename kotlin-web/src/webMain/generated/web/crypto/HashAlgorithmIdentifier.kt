@@ -2,6 +2,4 @@
 
 package web.crypto
 
-import kotlin.js.JsAny
-
-typealias HashAlgorithmIdentifier = JsAny /* AlgorithmIdentifier */
+typealias HashAlgorithmIdentifier = AlgorithmIdentifier

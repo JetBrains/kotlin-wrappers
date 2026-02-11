@@ -6,7 +6,7 @@ import js.internal.InternalApi
 
 /**
  * Union of:
- * - [WindowProxy]
+ * - [Window]
  * - [MessagePort]
  * - [ServiceWorker]
  */

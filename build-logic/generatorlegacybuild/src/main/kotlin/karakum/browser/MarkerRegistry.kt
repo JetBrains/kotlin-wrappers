@@ -5,6 +5,8 @@ private val JS_MARKER_DECLARATIONS = setOf(
 )
 
 private val WEB_MARKER_DECLARATIONS = setOf(
+    "AlgorithmIdentifier",
+
     "ReadableStreamController<T>",
 
     "MessageEventSource",
@@ -38,10 +40,15 @@ private val BROWSER_BASE_TYPES = listOf(
     "Blob",
 )
 
-// TODO: read from definitions
 private val ALIASES = mapOf(
+    "string" to "String",
     "WindowProxy" to "Window",
 )
+
+internal fun getMarkerChildType(
+    type: String,
+): String =
+    ALIASES[type] ?: type
 
 internal object MarkerRegistry {
     private lateinit var map: Map<String, List<String>>
@@ -84,7 +91,7 @@ private fun findParentTypes(
         .substringBefore(";\n")
         .splitToSequence(" | ")
         .map { it.substringBefore("<") }
-        .map { ALIASES[it] ?: it }
+        .map { getMarkerChildType(it) }
         .map { type ->
             val parentType = when (type) {
                 "ReadableByteStreamController" -> interfaceDeclaration.replace("<T>", "<Void>")

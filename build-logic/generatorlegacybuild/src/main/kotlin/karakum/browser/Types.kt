@@ -322,6 +322,7 @@ private fun convertType(
 
             "TexImageSource" -> "web.gl"
 
+            "AlgorithmIdentifier" -> "web.crypto"
             "HashAlgorithmIdentifier" -> "web.crypto"
 
             "ReadableStreamController" -> "web.streams"
@@ -393,7 +394,7 @@ private fun convertType(
             bodySource == "string | Function"
                 -> "() -> Unit"
 
-            " | " in bodySource || bodySource == "AlgorithmIdentifier"
+            " | " in bodySource
                 -> "JsAny /* $bodySource */"
 
             bodySource.startsWith("(")
@@ -566,16 +567,21 @@ private fun markerInterface(
     val name = declaration.substringBefore("<")
 
     val additionalChildTypes = MarkerRegistry.nonProcessedChildTypes(name)
-    val extensions = additionalChildTypes.flatMap { childType ->
-        sequenceOf(
-            """
-            inline fun ${childType}.as${name}(): $name =
-                unsafeCast<$name>()
+    val extensions = additionalChildTypes.map { childType ->
+        val cast = when (childType) {
+            "String" -> "(upcast<JsAny>() as? JsString)?.toKotlinString()"
+            else -> "upcast<JsAny>() as? $childType"
+        }
 
-            inline fun $name.as${childType}OrNull(): ${childType}? =
-                asDynamic() as? $childType
-            """.trimIndent()
-        )
+        """
+        inline fun ${name}(
+            value: $childType,
+        ): $name =
+            unsafeCast(value)
+
+        inline fun $name.as${childType}OrNull(): ${childType}? =
+            $cast
+        """.trimIndent()
     }
 
     val parentTypes = MarkerRegistry.additionalParents(name)
@@ -587,6 +593,7 @@ private fun markerInterface(
     val comment = types
         .splitToSequence(" | ")
         .map { it.substringBefore("<") }
+        .map { getMarkerChildType(it) }
         .joinToString(
             separator = "\n",
             prefix = "/**\n * Union of:\n",

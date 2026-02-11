@@ -5,6 +5,7 @@ package web.crypto
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-external interface Algorithm {
+external interface Algorithm :
+    AlgorithmIdentifier {
     var name: String
 }
