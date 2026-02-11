@@ -5,11 +5,10 @@ import karakum.common.unionConstant
 
 internal fun webglDeclarations(
     content: String,
-): Sequence<ConversionResult> {
-    val extension = convertExtension(content)
-
-    return sequenceOf(extension)
-}
+): Sequence<ConversionResult> =
+    sequenceOf(
+        convertExtension(content),
+    )
 
 private fun convertExtension(
     source: String,
