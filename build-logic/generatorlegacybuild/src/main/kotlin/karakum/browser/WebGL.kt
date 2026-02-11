@@ -10,7 +10,6 @@ internal fun webglDeclarations(
 
     return sequenceOf(extension)
         .plus(Lists())
-        .plus(GLNumbers())
 }
 
 private fun convertExtension(

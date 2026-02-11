@@ -190,6 +190,17 @@ private val NUMBER_TYPE_MAP = mapOf(
     "COSEAlgorithmIdentifier" to "JsInt",
     "EpochTimeStamp" to "Int53",
 
+    "GLboolean" to "Boolean",
+    "GLclampf" to "Float",
+    "GLfloat" to "Float",
+    "GLint" to "Int",
+    "GLint64" to "Int53",
+    "GLintptr" to "Int",
+    "GLsizei" to "Int",
+    "GLsizeiptr" to "Int",
+    "GLuint" to "JsUInt",
+    "GLuint64" to "UInt53",
+
     "GPUBufferDynamicOffset" to "JsInt",
     "GPUBufferUsageFlags" to "JsInt /* Bitmask */",
     "GPUColorWriteFlags" to "JsInt /* Bitmask */",
@@ -241,10 +252,6 @@ private fun convertType(
 
     val aliasType = ALIAS_MAP[bodySource]
     if (aliasType != null) {
-        // TEMP
-        if (name.startsWith("GL"))
-            return null
-
         val pkg = getPkg(name)
             ?: return null
 
@@ -255,17 +262,25 @@ private fun convertType(
 
         val type = numberType ?: aliasType
 
-        val body = sequenceOf(
-            if (name.endsWith("TimeStamp")) {
-                """
+        val body = when (name) {
+            "GLenum",
+                -> "sealed external interface GLenum"
+
+            "GLbitfield",
+                -> "sealed external interface GLbitfield:\nBitmask<GLbitfield>"
+
+            else -> sequenceOf(
+                if (name.endsWith("TimeStamp")) {
+                    """
                 /**
                  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$name)
                  */
                 """.trimIndent()
-            } else null,
-            "typealias $name = $type"
-        ).filterNotNull()
-            .joinToString("\n")
+                } else null,
+                "typealias $name = $type"
+            ).filterNotNull()
+                .joinToString("\n")
+        }
 
         return ConversionResult(
             name = name,
@@ -522,6 +537,8 @@ private fun getTypePkg(
         name.startsWith("Worker") -> "web.workers"
 
         name.startsWith("WebGL") -> "web.gl"
+        name.startsWith("GL") -> "web.gl"
+
         name.startsWith("XMLHttp") -> "web.xhr"
 
         else -> TODO("Unable to find package for `$name` union")
