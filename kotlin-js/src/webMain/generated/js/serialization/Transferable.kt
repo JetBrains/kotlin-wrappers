@@ -4,7 +4,6 @@ package js.serialization
 
 import js.buffer.ArrayBuffer
 import js.internal.InternalApi
-import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
@@ -20,6 +19,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [RTCDataChannel]
  * - [ArrayBuffer]
  */
-@JsExternalInheritorsOnly
 @SubclassOptInRequired(InternalApi::class)
 external interface Transferable

@@ -21,8 +21,8 @@ import kotlin.js.JsName
 open external class HTMLImageElement
 protected constructor() :
     HTMLElement,
-    TexImageSource,
     HTMLOrSVGImageElement,
+    TexImageSource,
     GPUCopyExternalImageSource {
     /**
      * The **`alt`** property of the HTMLImageElement interface provides fallback (alternate) text to display when the image specified by the <img> element is not displayed, whether because of an error, because the user has disabled the loading of images, or because the image hasn't finished loading yet. It reflects the <img> element's alt content attribute.

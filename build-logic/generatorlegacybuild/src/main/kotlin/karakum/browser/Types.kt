@@ -564,8 +564,6 @@ private fun markerInterface(
     types: String,
 ): String {
     val name = declaration.substringBefore("<")
-    val annotations = (if (declaration in NATIVE_ONLY_MARKER_DECLARATIONS) "@JsExternalInheritorsOnly\n" else "") +
-            "@SubclassOptInRequired(InternalApi::class)"
 
     val additionalChildTypes = MarkerRegistry.nonProcessedChildTypes(name)
     val extensions = additionalChildTypes.flatMap { childType ->
@@ -599,7 +597,7 @@ private fun markerInterface(
     val finalDeclaration = declaration.replace("<T>", "<T : JsAny?>")
     val type = """
         $comment
-        $annotations
+        @SubclassOptInRequired(InternalApi::class)
         external interface $finalDeclaration$parentDeclaration
         """.trimIndent()
 

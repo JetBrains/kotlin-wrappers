@@ -1,27 +1,34 @@
 package karakum.browser
 
-internal val NATIVE_ONLY_MARKER_DECLARATIONS = setOf(
+private val JS_MARKER_DECLARATIONS = setOf(
+    "Transferable",
+)
+
+private val WEB_MARKER_DECLARATIONS = setOf(
     "ReadableStreamController<T>",
-    "GPUBindingResource",
 
     "MessageEventSource",
 
-    "Transferable",
+    "ImageBitmapSource",
+    "CanvasImageSource",
+    "TexImageSource",
+
+    "GPUCopyExternalImageSource",
+    "GPUBindingResource",
+)
+
+private val BROWSER_MARKER_DECLARATIONS = setOf(
+    "HTMLOrSVGImageElement",
+    "HTMLOrSVGScriptElement",
 
     "OffscreenRenderingContext",
     "RenderingContext",
 )
 
-internal val MARKER_DECLARATIONS = setOf(
-    "ImageBitmapSource",
-    "CanvasImageSource",
-    "TexImageSource",
-
-    "HTMLOrSVGImageElement",
-    "HTMLOrSVGScriptElement",
-
-    "GPUCopyExternalImageSource",
-).plus(NATIVE_ONLY_MARKER_DECLARATIONS)
+internal val MARKER_DECLARATIONS =
+    BROWSER_MARKER_DECLARATIONS +
+            WEB_MARKER_DECLARATIONS +
+            JS_MARKER_DECLARATIONS
 
 private val BASE_TYPES = listOf(
     "Blob",

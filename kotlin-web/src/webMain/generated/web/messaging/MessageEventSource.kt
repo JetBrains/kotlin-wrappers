@@ -3,7 +3,6 @@
 package web.messaging
 
 import js.internal.InternalApi
-import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
@@ -11,6 +10,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [MessagePort]
  * - [ServiceWorker]
  */
-@JsExternalInheritorsOnly
 @SubclassOptInRequired(InternalApi::class)
 external interface MessageEventSource
