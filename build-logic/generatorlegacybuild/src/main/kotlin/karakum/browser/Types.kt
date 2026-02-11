@@ -347,6 +347,11 @@ private fun convertType(
 
             "XRFrameRequestCallback" -> "web.xr"
 
+            "Float32List",
+            "Int32List",
+            "Uint32List",
+                -> "web.gl"
+
             "Base64URLString",
             "PublicKeyCredentialJSON",
 
@@ -408,6 +413,9 @@ private fun convertType(
 
             bodySource == "string | Function"
                 -> "() -> Unit"
+
+            " | GL" in bodySource && bodySource.endsWith("[]")
+                -> bodySource.replaceFirst(" | GL", " /* | GL") + " */"
 
             " | " in bodySource
                 -> "JsAny /* $bodySource */"

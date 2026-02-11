@@ -9,7 +9,6 @@ internal fun webglDeclarations(
     val extension = convertExtension(content)
 
     return sequenceOf(extension)
-        .plus(Lists())
 }
 
 private fun convertExtension(
