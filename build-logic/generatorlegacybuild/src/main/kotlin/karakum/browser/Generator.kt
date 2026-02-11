@@ -127,6 +127,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.cookie.CookieStore",
     "web.cookie.CookieStoreManager",
     "web.cookie.ExtendableCookieChangeEvent",
+    "web.credentials.Credential",
     "web.crypto.Algorithm",
     "web.csp.SecurityPolicyViolationEventDisposition",
     "web.cssom.CSSNumberish",
@@ -489,12 +490,6 @@ fun generateKotlinDeclarations(
                 -> """
             import web.authn.PublicKeyCredentialCreationOptions
             import web.authn.PublicKeyCredentialRequestOptions
-            """.trimIndent()
-
-            "DigitalCredential",
-            "PublicKeyCredential",
-                -> """
-            import web.credentials.Credential
             """.trimIndent()
 
             "GlobalEventHandlers",

@@ -396,6 +396,9 @@ private val CREDENTIALS_TYPES = listOf(
     "CredentialCreationOptions",
     "CredentialRequestOptions",
     "CredentialsContainer",
+
+    // separate package?
+    "DigitalCredential",
 )
 
 private val FEDCM_TYPES = listOf(

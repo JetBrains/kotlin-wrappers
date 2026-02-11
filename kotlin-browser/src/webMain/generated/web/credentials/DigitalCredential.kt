@@ -1,8 +1,7 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.credentials
 
-import web.credentials.Credential
 import kotlin.js.JsAny
 
 /**
