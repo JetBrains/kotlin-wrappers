@@ -30,7 +30,11 @@ internal val MARKER_DECLARATIONS =
             WEB_MARKER_DECLARATIONS +
             JS_MARKER_DECLARATIONS
 
-private val BASE_TYPES = listOf(
+private val WEB_BASE_TYPES = listOf(
+    "String",
+)
+
+private val BROWSER_BASE_TYPES = listOf(
     "Blob",
 )
 
@@ -58,11 +62,14 @@ internal object MarkerRegistry {
     fun nonProcessedChildTypes(
         type: String,
     ): List<String> {
-        // TEMP
-        if (type == "ImageBitmapSource")
-            return emptyList()
+        val baseTypes = when (type) {
+            in BROWSER_MARKER_DECLARATIONS,
+                -> BROWSER_BASE_TYPES
 
-        return BASE_TYPES.filter {
+            else -> WEB_BASE_TYPES
+        }
+
+        return baseTypes.filter {
             val parentTypes = map[it]
             parentTypes != null && type in parentTypes
         }
