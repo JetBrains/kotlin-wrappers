@@ -383,10 +383,6 @@ fun generateKotlinDeclarations(
 
     MarkerRegistry.fill(content)
 
-    sourceDir
-        .resolve("web/gl")
-        .also { it.mkdirs() }
-
     val webWorkerContent = webWorkerContent(webworkerDefinitionsParts.first)
     val serviceWorkerContent = serviceWorkerContent(serviceworkerDefinitionsParts.first)
     val (mainEventDeclarations, knownEventTypes) = eventDeclarations(
