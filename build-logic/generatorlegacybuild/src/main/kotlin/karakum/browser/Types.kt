@@ -173,6 +173,7 @@ private val INTL_KEY_TYPES = setOf(
 
 private val ALIAS_MAP = mapOf(
     "any" to "JsAny",
+    "boolean" to "Boolean",
     "string" to "JsString",
     "number" to "JsDouble",
 
@@ -190,7 +191,6 @@ private val NUMBER_TYPE_MAP = mapOf(
     "COSEAlgorithmIdentifier" to "JsInt",
     "EpochTimeStamp" to "Int53",
 
-    "GLboolean" to "Boolean",
     "GLclampf" to "Float",
     "GLfloat" to "Float",
     "GLint" to "Int",
