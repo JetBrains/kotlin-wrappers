@@ -568,19 +568,11 @@ private fun markerInterface(
 
     val additionalChildTypes = MarkerRegistry.nonProcessedChildTypes(name)
     val extensions = additionalChildTypes.map { childType ->
-        val cast = when (childType) {
-            "String" -> "(upcast<JsAny>() as? JsString)?.toKotlinString()"
-            else -> "upcast<JsAny>() as? $childType"
-        }
-
         """
         inline fun ${name}(
             value: $childType,
         ): $name =
             unsafeCast(value)
-
-        inline fun $name.as${childType}OrNull(): ${childType}? =
-            $cast
         """.trimIndent()
     }
 
