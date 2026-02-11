@@ -6,7 +6,7 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
- * The **`NavigationPrecommitController`** interface of the Navigation API defines redirect behavior for a navigation precommit handler.
+ * The **`NavigationPrecommitController`** interface of the Navigation API is passed as an argument to a navigation precommit handler callback.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController)
  */
