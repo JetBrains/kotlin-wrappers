@@ -2,7 +2,7 @@ package tanstack.router.core
 
 import js.errors.JsErrorLike
 import kotlinx.js.JsPlainObject
-import web.http.Headers
+import web.http.HeadersInit
 
 @JsPlainObject
 external interface NotFoundError :
@@ -10,5 +10,5 @@ external interface NotFoundError :
     val data: Any?
     val `throw`: Boolean?
     val routeId: RouteId?
-    val headers: Headers?
+    val headers: HeadersInit?
 }

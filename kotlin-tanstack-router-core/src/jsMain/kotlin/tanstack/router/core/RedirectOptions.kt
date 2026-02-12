@@ -1,6 +1,6 @@
 package tanstack.router.core
 
-import web.http.Headers
+import web.http.HeadersInit
 
 external interface RedirectOptions :
     NavigateOptions {
@@ -23,5 +23,5 @@ external interface RedirectOptions :
      * The HTTP headers to use when redirecting.
      * @link [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RedirectType#headers-property)
      */
-    var headers: Headers?
+    var headers: HeadersInit?
 }
