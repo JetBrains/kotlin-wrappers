@@ -6,5 +6,5 @@ package tauri.apps.api.core
  * @since 2.0.0
  */
 external interface InvokeOptions {
-    var headers: web.http.Headers
+    var headers: web.http.HeadersInit
 }
