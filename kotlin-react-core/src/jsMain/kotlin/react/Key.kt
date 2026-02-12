@@ -1,11 +1,11 @@
 package react
 
-import js.core.StringLike
+import js.core.BigInt
+import js.internal.InternalApi
 import js.reflect.unsafeCast
 
-sealed /* final */
-external interface Key :
-    StringLike
+@SubclassOptInRequired(InternalApi::class)
+external interface Key
 
 inline fun Key(
     value: String,
@@ -15,4 +15,9 @@ inline fun Key(
 inline fun Key(
     value: Int,
 ): Key =
-    unsafeCast(value.toString())
+    unsafeCast(value)
+
+inline fun Key(
+    value: BigInt,
+): Key =
+    unsafeCast(value)
