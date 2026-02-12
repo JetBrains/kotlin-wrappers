@@ -17,9 +17,10 @@ import kotlin.js.definedExternally
  */
 open external class Headers(
     init: ReadonlyArray<Tuple2<JsString, JsString>> = definedExternally,
-) : MapLike<JsString, JsString> {
+) : MapLike<JsString, JsString>,
+    HeadersInit {
     constructor(init: ReadonlyRecord<JsString, JsString>)
-    constructor(init: Headers)
+    constructor(init: HeadersInit)
 
     /**
      * The **`append()`** method of the Headers interface appends a new value onto an existing header inside a Headers object, or adds the header if it does not already exist.

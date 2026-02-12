@@ -2480,7 +2480,7 @@ private fun getFunctionParameters(
     }
 }
 
-private fun getParameterType(
+internal fun getParameterType(
     name: String,
     source: String,
     typeProvider: TypeProvider,
@@ -2524,6 +2524,9 @@ private fun getParameterType(
         // URL
         source == "string[][]"
             -> "ReadonlyArray<Tuple2<String, String>>"
+
+        source == "Record<string, string>"
+            -> "ReadonlyRecord<String, String>"
 
         source.startsWith("\"")
             -> "String /* $source */"

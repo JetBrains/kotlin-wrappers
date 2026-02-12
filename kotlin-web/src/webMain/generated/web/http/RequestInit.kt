@@ -27,7 +27,7 @@ external interface RequestInit :
     /**
      * A Headers object, an object literal, or an array of two-item arrays to set request's headers.
      */
-    var headers: Headers?
+    var headers: HeadersInit?
 
     /**
      * A cryptographic hash of the resource to be fetched by request. Sets request's integrity.

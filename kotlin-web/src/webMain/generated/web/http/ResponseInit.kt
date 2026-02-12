@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface ResponseInit {
-    var headers: Headers?
+    var headers: HeadersInit?
     var status: Short?
     var statusText: String?
 }

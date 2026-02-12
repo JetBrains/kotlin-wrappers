@@ -429,8 +429,14 @@ private fun convertType(
         val finalBody = when {
             name == "IDBValidKey"
                 -> valueInterface(
-                name,
-                bodySource,
+                name = name,
+                types = bodySource,
+            )
+
+            name == "HeadersInit"
+                -> valueInterface(
+                name = name,
+                types = bodySource.removeSuffix(" | Headers"),
             )
 
             bodySource == "`section-${'$'}{string}`"
@@ -560,11 +566,8 @@ private fun valueInterface(
         .splitToSequence(" | ")
         .map { valueType ->
             when (valueType) {
-                "ReadableStream" -> "ReadableStream<*>"
-                "string" -> "String"
                 "number" -> "Int"
-                "IDBValidKey[]" -> "ReadonlyArray<IDBValidKey>"
-                else -> valueType
+                else -> getParameterType("value", valueType, TypeProvider(name))
             }
         }
         .map { valueType ->
@@ -577,7 +580,8 @@ private fun valueInterface(
         }
 
     val type = """
-        sealed external interface $name
+        @SubclassOptInRequired(InternalApi::class)
+        external interface $name
         """.trimIndent()
 
     return listOf(type)

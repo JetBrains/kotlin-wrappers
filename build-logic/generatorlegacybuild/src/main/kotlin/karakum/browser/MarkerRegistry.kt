@@ -66,8 +66,16 @@ internal object MarkerRegistry {
 
     fun additionalParents(
         type: String,
-    ): List<String>? =
-        map[type]
+    ): List<String>? {
+        val result = map[type]
+
+        if (type == "Headers") {
+            require(result == null)
+            return listOf("HeadersInit")
+        }
+
+        return result
+    }
 
     fun nonProcessedChildTypes(
         type: String,

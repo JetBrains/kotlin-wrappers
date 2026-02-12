@@ -5,9 +5,11 @@ package web.idb
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
 import js.date.Date
+import js.internal.InternalApi
 import js.reflect.unsafeCast
 
-sealed external interface IDBValidKey
+@SubclassOptInRequired(InternalApi::class)
+external interface IDBValidKey
 
 inline fun IDBValidKey(
     value: Int,
