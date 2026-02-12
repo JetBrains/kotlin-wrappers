@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import web.html.MediaProvider
 
 /**
  * The **`MediaStream`** interface of the Media Capture and Streams API represents a stream of media content. A stream consists of several tracks, such as video or audio tracks. Each track is specified as an instance of MediaStreamTrack.
@@ -13,7 +14,8 @@ import web.events.EventTarget
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
  */
 open external class MediaStream() :
-    EventTarget {
+    EventTarget,
+    MediaProvider {
     constructor(stream: MediaStream)
     constructor(tracks: ReadonlyArray<MediaStreamTrack>)
 

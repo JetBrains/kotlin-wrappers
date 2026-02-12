@@ -27,6 +27,8 @@ private val BROWSER_MARKER_DECLARATIONS = setOf(
 
     "OffscreenRenderingContext",
     "RenderingContext",
+
+    "MediaProvider",
 )
 
 internal val MARKER_DECLARATIONS =
@@ -73,6 +75,9 @@ internal object MarkerRegistry {
             require(result == null)
             return listOf("HeadersInit")
         }
+
+        if (result != null && type in BROWSER_BASE_TYPES)
+            return result.filter { it !in BROWSER_MARKER_DECLARATIONS }
 
         return result
     }
