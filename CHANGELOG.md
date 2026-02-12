@@ -1,3 +1,12 @@
+## 2026.2.11
+
+**BREAKING CHANGE**
+
+### React
+
+* `Key` - opaque interface
+    * Preparing for [optimisticKey](https://github.com/facebook/react/pull/35162)
+
 ## 2026.2.7
 
 **BREAKING CHANGE**
