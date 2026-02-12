@@ -31,7 +31,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition/types)
      */
-    var types: ViewTransitionTypeSet
+    val types: ViewTransitionTypeSet
 
     /**
      * The **`updateCallbackDone`** read-only property of the ViewTransition interface is a Promise that fulfills when the promise returned by the document.startViewTransition() method's callback fulfills, or rejects when it rejects.
