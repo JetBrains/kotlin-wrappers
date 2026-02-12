@@ -844,6 +844,7 @@
     "HashChangeEventInit": "web.history.HashChangeEventInit",
     "HdrMetadataType": "web.mediacapabilities.HdrMetadataType",
     "Headers": "web.http.Headers",
+    "HeadersInit": "web.http.HeadersInit",
     "Hidden": "web.html.Hidden",
     "Highlight": "web.highlight.Highlight",
     "HighlightRegistry": "web.highlight.HighlightRegistry",
