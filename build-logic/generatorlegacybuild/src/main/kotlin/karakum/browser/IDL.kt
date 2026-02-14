@@ -278,6 +278,13 @@ internal object IDLRegistry {
         if (type != null)
             return type
 
+        val itemSource = source.removeSurrounding("sequence<", ">")
+        if (itemSource != source) {
+            val itemType = NUMBER_TYPE_MAP[itemSource]
+            if (itemType != null)
+                return "ReadonlyArray<$itemType>"
+        }
+
         if (source.startsWith("GPU"))
             return source
 
