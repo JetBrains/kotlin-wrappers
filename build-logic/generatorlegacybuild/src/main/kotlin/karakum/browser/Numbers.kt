@@ -94,24 +94,7 @@ internal class TypeProvider(
     fun numberArrayType(
         propertyName: String,
     ): String =
-        when (parentType to propertyName) {
-            ("AudioWorkletNodeOptions" to "outputChannelCount"),
-                -> "ReadonlyArray<JsUInt>"
-
-            ("IIRFilterOptions" to "feedback"),
-                -> "ReadonlyArray<Double>"
-
-            ("IIRFilterOptions" to "feedforward"),
-                -> "ReadonlyArray<Double>"
-
-            ("RTCEncodedFrameMetadata" to "contributingSources"),
-                -> "ReadonlyArray<JsUInt>"
-
-            ("RTCEncodedVideoFrameMetadata" to "dependencies"),
-                -> "ReadonlyArray<JsUInt53>"
-
-            else -> error("Unable to find array type for `$parentType.$propertyName`")
-        }
+        IDLRegistry.getPropertyType(parentType, propertyName)
 
     fun isDefined(): Boolean =
         IDLRegistry.isMixin(parentType)

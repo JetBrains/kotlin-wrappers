@@ -44,6 +44,10 @@ private val NUMBER_TYPE_MAP = mapOf(
 
     "GLenum" to "GLenum",
     "GLint64" to "GLint64",
+
+    // TEMP
+    "sequence<unsigned long>" to "ReadonlyArray<JsUInt>",
+    "sequence<unsigned long long>" to "ReadonlyArray<JsUInt53>",
 )
 
 internal object IDLRegistry {
