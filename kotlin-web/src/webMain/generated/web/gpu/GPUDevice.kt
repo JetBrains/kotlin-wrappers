@@ -125,6 +125,20 @@ private constructor() :
     fun createSampler(descriptor: GPUSamplerDescriptor = definedExternally): GPUSampler
 
     /**
+     * The **`createShaderModule()`** method of the GPUDevice interface creates a GPUShaderModule from a string of WGSL source code.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createShaderModule)
+     */
+    fun createShaderModule(descriptor: GPUShaderModuleDescriptor): GPUShaderModule
+
+    /**
+     * The **`createTexture()`** method of the GPUDevice interface creates a GPUTexture in which to store 1D, 2D, or 3D arrays of data, such as images, to use in GPU rendering operations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture)
+     */
+    fun createTexture(descriptor: GPUTextureDescriptor): GPUTexture
+
+    /**
      * The **`destroy()`** method of the GPUDevice interface destroys the device, preventing further operations on it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/destroy)
