@@ -338,6 +338,16 @@ external interface RouterOptions<TRouteTree : BaseRootRoute<*>> {
      */
     val disableGlobalCatchBoundary: Boolean?
 
+    /**
+     * An array of URL protocols to allow in links, redirects, and navigation.
+     * Absolute URLs with protocols not in this list will be rejected.
+     *
+     * Default - [DEFAULT_PROTOCOL_ALLOWLIST] (http:, https:, mailto:, tel:)
+     *
+     * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterOptionsType#protocolallowlist-property)
+     */
+    val protocolAllowlist: ReadonlyArray<String>?
+
     val serializationAdapters: ReadonlyArray<Any /* AnySerializationAdapter */>?
 
     /**
