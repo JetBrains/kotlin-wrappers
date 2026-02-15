@@ -58,9 +58,6 @@ internal fun intlDeclarations(
                 predefinedPkg = "js.intl",
             )
         }
-        // TEMP - START
-        .filter { it.name != "DurationFormat" }
-        // TEMP - END
         .filter { it.name != "SegmentIterator" }
         .filter { !it.name.endsWith("Registry") }
         .map {
@@ -137,6 +134,7 @@ private fun intlContent(
         .replace("Pick<ListFormatOptions, \"localeMatcher\">", "ListFormatOptions")
         .replace("Pick<SegmenterOptions, \"localeMatcher\">", "SegmenterOptions")
         .replace("""{ localeMatcher?: "lookup" | "best fit"; }""", SUPPORTED_LOCALES_OPTIONS)
+        .replace("""{ localeMatcher?: DurationFormatLocaleMatcher; }""", SUPPORTED_LOCALES_OPTIONS)
         .replace("""{ localeMatcher?: RelativeTimeFormatLocaleMatcher; }""", SUPPORTED_LOCALES_OPTIONS)
         // TODO: strict align
         .replace("type RelativeTimeFormatLocaleMatcher = ", "type LocaleMatcher = ")

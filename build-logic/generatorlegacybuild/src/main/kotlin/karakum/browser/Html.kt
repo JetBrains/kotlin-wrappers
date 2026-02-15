@@ -2553,6 +2553,9 @@ internal fun getParameterType(
         source == "ReadableStream"
             -> "ReadableStream<*>"
 
+        source == "Partial<Record<DurationFormatUnit, number>>"
+            -> "ReadonlyRecord<DurationFormatUnit, JsInt>"
+
         source == "Int32Array<ArrayBufferLike> | GLint[]"
                 || source == "Int32Array<ArrayBufferLike> | GLsizei[]"
             -> source.replaceFirst("| ", "/* | ") + " */"
