@@ -135,7 +135,6 @@ private fun dateRawContent(
                 ?: 3000
         }
         .map { it.readText() }
-        .plus(DENO_UNSTABLE_CONTENT)
         .map {
             it.withDefaultLineBreaks()
                 .substringAfter("\ninterface $interfaceName {\n", "")

@@ -167,6 +167,7 @@ private val INTL_KEY_TYPES = setOf(
     "NumberFormatOptionsStyle",
     "NumberFormatOptionsUseGrouping",
     "NumberFormatPartType",
+    "NumberFormatRangePartTypes",
     "ResolvedNumberFormatOptionsUseGrouping",
     "StringNumericLiteral",
 )

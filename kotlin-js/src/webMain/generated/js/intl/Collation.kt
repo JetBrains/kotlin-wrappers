@@ -18,6 +18,9 @@ inline val Collation.Companion.big5han: Collation
 inline val Collation.Companion.compat: Collation
     get() = unsafeCast("compat")
 
+inline val Collation.Companion.default: Collation
+    get() = unsafeCast("default")
+
 inline val Collation.Companion.dict: Collation
     get() = unsafeCast("dict")
 

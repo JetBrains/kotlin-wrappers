@@ -43,9 +43,9 @@ internal fun intlDeclarations(
                             .trimIndent()
                     }
                     .joinToString("\n")
-                    .splitToSequence("\n")
+                    .splitToSequence(";\n")
                     .distinct()
-                    .joinToString("\n")
+                    .joinToString(";\n")
                     .prependIndent("    ")
 
                 "$declaration {\n$body\n}"
@@ -58,6 +58,11 @@ internal fun intlDeclarations(
                 predefinedPkg = "js.intl",
             )
         }
+        // TEMP - START
+        .filter { it.name != "DurationFormat" }
+        .filter { it.name != "DurationFormatOptions" }
+        .filter { it.name != "ResolvedDurationFormatOptions" }
+        // TEMP - END
         .filter { it.name != "SegmentIterator" }
         .filter { !it.name.endsWith("Registry") }
         .map {
@@ -147,6 +152,16 @@ private fun intlContent(
         .replace(""""basic" | "best fit" | "best fit"""", """"best fit" | "basic"""")
         .replace(""": "best fit" | "lookup" | undefined;""", """: "lookup" | "best fit" | undefined;""")
         .replace(""" = "h12" | "h23" | "h11" | "h24";""", """ = "h11" | "h12" | "h23" | "h24";""")
+
+        .replace("FormattableTemporalObject | Date | number", "FormattableTemporalObject")
+        .let {
+            val unionBody = it
+                .substringAfter("type FormattableTemporalObject = ", "")
+                .substringBefore(";")
+
+            it.splitTypealias("FormattableTemporalObject")
+                .splitUnion(unionBody, unionBody.replace("Temporal.", ""))
+        }
 
 private val FORMAT_PROPERTIES = setOf(
     "weekday",
