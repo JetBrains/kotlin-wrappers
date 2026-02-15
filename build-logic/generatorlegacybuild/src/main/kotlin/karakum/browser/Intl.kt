@@ -27,8 +27,12 @@ internal fun intlDeclarations(
         .findAll(content)
         .map { it.value }
         .filter { "Constructor {\n" !in it }
-        .groupBy { it.substringBefore(" {\n") }
-        .map { (declaration, sourceParts) ->
+        .groupBy { it.substringBefore(" {\n").substringBefore(" extends ") }
+        .map { (_, sourceParts) ->
+            val declarations = sourceParts.map { it.substringBefore(" {\n") }
+            val declaration = declarations.distinct().singleOrNull()
+                ?: declarations.single { " extends " in it }
+
             sourceParts.singleOrNull() ?: run {
                 val body = sourceParts
                     .asSequence()

@@ -312,6 +312,9 @@ internal object IDLRegistry {
                     ("RTCEncodedAudioFrame" to "timestamp") to "Int53",
                     ("RTCEncodedVideoFrame" to "timestamp") to "Int53",
                     ("SegmentData" to "index") to "Int",
+
+                    ("WeekInfo" to "firstDay") to "Int",
+                    ("WeekInfo" to "weekend") to "ReadonlyArray<JsUInt>",
                 )
             )
     }
