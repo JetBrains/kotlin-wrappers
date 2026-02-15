@@ -8,5 +8,7 @@ sealed external interface PreProcessedFileInfo {
     var libReferenceDirectives: js.array.ReadonlyArray<FileReference>
     var importedFiles: js.array.ReadonlyArray<FileReference>
     var ambientExternalModules: js.array.ReadonlyArray<String>?
+
+    /** @deprecated Always false. Use a Program to determine if a file is a lib file. */
     var isLibFile: Boolean
 }

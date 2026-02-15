@@ -8,6 +8,8 @@ sealed external interface ScriptTarget {
     companion object {
         /** @deprecated */
         val ES3: ScriptTarget
+
+        /** @deprecated */
         val ES5: ScriptTarget
         val ES2015: ScriptTarget
         val ES2016: ScriptTarget
@@ -19,8 +21,10 @@ sealed external interface ScriptTarget {
         val ES2022: ScriptTarget
         val ES2023: ScriptTarget
         val ES2024: ScriptTarget
+        val ES2025: ScriptTarget
         val ESNext: ScriptTarget
         val JSON: ScriptTarget
         val Latest: ScriptTarget
+        val LatestStandard: ScriptTarget
     }
 }

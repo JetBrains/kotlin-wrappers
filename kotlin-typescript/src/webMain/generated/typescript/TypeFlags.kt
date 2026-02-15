@@ -8,33 +8,33 @@ sealed external interface TypeFlags {
     companion object {
         val Any: TypeFlags
         val Unknown: TypeFlags
-        val String: TypeFlags
-        val Number: TypeFlags
-        val Boolean: TypeFlags
-        val Enum: TypeFlags
-        val BigInt: TypeFlags
-        val StringLiteral: TypeFlags
-        val NumberLiteral: TypeFlags
-        val BooleanLiteral: TypeFlags
-        val EnumLiteral: TypeFlags
-        val BigIntLiteral: TypeFlags
-        val ESSymbol: TypeFlags
-        val UniqueESSymbol: TypeFlags
-        val Void: TypeFlags
         val Undefined: TypeFlags
         val Null: TypeFlags
+        val Void: TypeFlags
+        val String: TypeFlags
+        val Number: TypeFlags
+        val BigInt: TypeFlags
+        val Boolean: TypeFlags
+        val ESSymbol: TypeFlags
+        val StringLiteral: TypeFlags
+        val NumberLiteral: TypeFlags
+        val BigIntLiteral: TypeFlags
+        val BooleanLiteral: TypeFlags
+        val UniqueESSymbol: TypeFlags
+        val EnumLiteral: TypeFlags
+        val Enum: TypeFlags
+        val NonPrimitive: TypeFlags
         val Never: TypeFlags
         val TypeParameter: TypeFlags
         val Object: TypeFlags
-        val Union: TypeFlags
-        val Intersection: TypeFlags
         val Index: TypeFlags
-        val IndexedAccess: TypeFlags
-        val Conditional: TypeFlags
-        val Substitution: TypeFlags
-        val NonPrimitive: TypeFlags
         val TemplateLiteral: TypeFlags
         val StringMapping: TypeFlags
+        val Substitution: TypeFlags
+        val IndexedAccess: TypeFlags
+        val Conditional: TypeFlags
+        val Union: TypeFlags
+        val Intersection: TypeFlags
         val Literal: TypeFlags
         val Unit: TypeFlags
         val Freshable: TypeFlags

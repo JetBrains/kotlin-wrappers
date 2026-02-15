@@ -11,6 +11,8 @@ sealed external interface CompilerOptions {
     var allowUnreachableCode: Boolean?
     var allowUnusedLabels: Boolean?
     var alwaysStrict: Boolean?
+
+    /** @deprecated */
     var baseUrl: String?
 
     /** @deprecated */
@@ -25,6 +27,8 @@ sealed external interface CompilerOptions {
     var disableSourceOfProjectReferenceRedirect: Boolean?
     var disableSolutionSearching: Boolean?
     var disableReferencedProjectLoad: Boolean?
+
+    /** @deprecated */
     var downlevelIteration: Boolean?
     var emitBOM: Boolean?
     var emitDecoratorMetadata: Boolean?

@@ -6,6 +6,7 @@ package typescript
 
 sealed external interface ModuleResolutionKind {
     companion object {
+        /** @deprecated */
         val Classic: ModuleResolutionKind
 
         /**
@@ -14,6 +15,10 @@ sealed external interface ModuleResolutionKind {
          * Use the new name or consider switching to a modern module resolution target.
          */
         val NodeJs: ModuleResolutionKind
+
+        /**
+         * @deprecated
+         */
         val Node10: ModuleResolutionKind
         val Node16: ModuleResolutionKind
         val NodeNext: ModuleResolutionKind

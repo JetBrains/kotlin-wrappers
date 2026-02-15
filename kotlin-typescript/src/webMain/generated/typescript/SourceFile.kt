@@ -24,14 +24,7 @@ sealed external interface SourceFile :
     var languageVariant: LanguageVariant
     var isDeclarationFile: Boolean
 
-    /**
-     * lib.d.ts should have a reference comment like
-     *
-     *  /// <reference no-default-lib="true"/>
-     *
-     * If any other file has this comment, it signals not to include lib.d.ts
-     * because this containing file is intended to act as a default library.
-     */
+    /** @deprecated Always false. Use a Program to determine if a file is a lib file. */
     var hasNoDefaultLib: Boolean
     var languageVersion: ScriptTarget
 
