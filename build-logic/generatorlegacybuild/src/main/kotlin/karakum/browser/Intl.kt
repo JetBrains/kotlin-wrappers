@@ -60,8 +60,6 @@ internal fun intlDeclarations(
         }
         // TEMP - START
         .filter { it.name != "DurationFormat" }
-        .filter { it.name != "DurationFormatOptions" }
-        .filter { it.name != "ResolvedDurationFormatOptions" }
         // TEMP - END
         .filter { it.name != "SegmentIterator" }
         .filter { !it.name.endsWith("Registry") }
@@ -173,6 +171,17 @@ private val FORMAT_PROPERTIES = setOf(
     "minute",
     "second",
     "timeZoneName",
+
+    "years",
+    "months",
+    "weeks",
+    "days",
+    "hours",
+    "minutes",
+    "seconds",
+    "milliseconds",
+    "microseconds",
+    "nanoseconds",
 )
 
 private val PROPERTIES = setOf(
