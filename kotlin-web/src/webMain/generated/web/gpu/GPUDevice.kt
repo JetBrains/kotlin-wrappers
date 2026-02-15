@@ -118,6 +118,21 @@ private constructor() :
     fun createRenderBundleEncoder(descriptor: GPURenderBundleEncoderDescriptor): GPURenderBundleEncoder
 
     /**
+     * The **`createRenderPipeline()`** method of the GPUDevice interface creates a GPURenderPipeline that can control the vertex and fragment shader stages and be used in a GPURenderPassEncoder or GPURenderBundleEncoder.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipeline)
+     */
+    @JsName("createRenderPipeline")
+    fun createRenderPipelineSync(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
+
+    /**
+     * The **`createRenderPipelineAsync()`** method of the GPUDevice interface returns a Promise that fulfills with a GPURenderPipeline, which can control the vertex and fragment shader stages and be used in a GPURenderPassEncoder or GPURenderBundleEncoder, once the pipeline can be used without any stalling.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
+     */
+    fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): Promise<GPURenderPipeline>
+
+    /**
      * The **`createSampler()`** method of the GPUDevice interface creates a GPUSampler, which controls how shaders transform and filter texture resource data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createSampler)
@@ -175,6 +190,17 @@ private constructor() :
  */
 suspend inline fun GPUDevice.createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline {
     return createComputePipelineAsync(
+        descriptor = descriptor,
+    ).await()
+}
+
+/**
+ * The **`createRenderPipelineAsync()`** method of the GPUDevice interface returns a Promise that fulfills with a GPURenderPipeline, which can control the vertex and fragment shader stages and be used in a GPURenderPassEncoder or GPURenderBundleEncoder, once the pipeline can be used without any stalling.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
+ */
+suspend inline fun GPUDevice.createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline {
+    return createRenderPipelineAsync(
         descriptor = descriptor,
     ).await()
 }
