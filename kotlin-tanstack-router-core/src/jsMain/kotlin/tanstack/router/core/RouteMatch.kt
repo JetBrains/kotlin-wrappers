@@ -25,7 +25,7 @@ external interface RouteMatch {
     val search: Search
     val fetchCount: Int
     val abortController: AbortController
-    val cause: String /* 'preload' | 'enter' | 'stay' */
+    val cause: Cause
     val loaderDeps: LoaderDeps
     val preload: Boolean
     val invalid: Boolean
