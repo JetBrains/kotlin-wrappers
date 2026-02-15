@@ -207,6 +207,8 @@ private val PROPERTIES = setOf(
     "roundingPriority",
     "roundingMode",
     "trailingZeroDisplay",
+
+    "direction",
 )
 
 private fun extractUnions(

@@ -8,5 +8,5 @@ external interface TextInfo {
      *
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTextInfo#direction)
      */
-    var direction: String /* "ltr" | "rtl" */?
+    var direction: Direction?
 }
