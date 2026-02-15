@@ -7,14 +7,16 @@ import java.io.File
 private val DEFAULT_IMPORTS = listOf(
     "kotlinx.js.JsPlainObject",
 
-    "js.promise.Promise",
-
     "js.array.ReadonlyArray",
-    "js.collections.ReadonlyMap",
     "js.array.Tuple2",
     "js.array.Tuple4",
     "js.array.Tuple5",
+    "js.collections.ReadonlyMap",
+    "js.core.BigInt",
     "js.core.Void",
+    "js.internal.InternalApi",
+    "js.promise.Promise",
+    "js.reflect.unsafeCast",
 
     "web.dom.Element",
     "web.window.Window",

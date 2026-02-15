@@ -144,8 +144,30 @@ private fun convertTypealias(
     if (body.startsWith("'"))
         return convertUnion(name, body)
 
-    if (body == "number | string | bigint")
-        body = "String"
+    if (body == "number | string | bigint") {
+        val declaration = """
+        @SubclassOptInRequired(InternalApi::class)
+        external interface $name
+        """.trimIndent()
+
+        val factories = sequenceOf("String", "Int", "BigInt")
+            .map {
+                """
+                inline fun $name(
+                    value: $it,
+                ): $name =
+                    unsafeCast(value)
+                """.trimIndent()
+            }
+            .toList()
+
+        return ConversionResult(
+            name = name,
+            body = sequenceOf(declaration)
+                .plus(factories)
+                .joinToString("\n\n"),
+        )
+    }
 
     if (" | " in body) {
         declaration = declaration.replace(": object>", "/* : Any */>")
