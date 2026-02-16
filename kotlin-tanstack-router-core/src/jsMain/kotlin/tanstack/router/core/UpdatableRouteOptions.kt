@@ -3,6 +3,8 @@ package tanstack.router.core
 import js.array.ReadonlyArray
 import js.errors.JsError
 import js.errors.JsErrorLike
+import js.objects.ReadonlyRecord
+import js.promise.PromiseResult
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
@@ -30,8 +32,8 @@ external interface UpdatableRouteOptions {
     val onStay: ((match: RouteMatch) -> Unit)?
     val onLeave: ((match: RouteMatch) -> Unit)?
 
+    val headers: ((context: AssetFnContextOptions) -> PromiseResult<ReadonlyRecord<String, String>>)?
     /*
-    val headers?: (ctx: AssetFnContextOptions<TRouteId, TFullPath, TParentRoute, TParams, TSearchValidator, TLoaderFn, TRouterContext, TRouteContextFn, TBeforeLoadFn, TLoaderDeps>) => Awaitable<Record<string, string>>
     val head?: (ctx: AssetFnContextOptions<TRouteId, TFullPath, TParentRoute, TParams, TSearchValidator, TLoaderFn, TRouterContext, TRouteContextFn, TBeforeLoadFn, TLoaderDeps>) => Awaitable<{
         links?: AnyRouteMatch['links']
         scripts?: AnyRouteMatch['headScripts']
