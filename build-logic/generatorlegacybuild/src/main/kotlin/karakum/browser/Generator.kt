@@ -375,13 +375,11 @@ fun generateKotlinDeclarations(
     IterableRegistry.fill(
         definitionsDir,
         webDefinitionsParts.second,
-        WEB_GPU_ITERABLE_CONTENT,
         webworkerDefinitionsParts.second,
         serviceworkerDefinitionsParts.second,
     )
 
     val webDefinitionsContent = webDefinitionsParts.first
-        .plus(WEB_GPU_CONTENT)
         .withTrustedTypes()
 
     RenderingContextRegistry.fill(webDefinitionsContent)

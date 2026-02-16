@@ -40,6 +40,7 @@ open external class CustomElementRegistry {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
      */
     fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
+    fun initialize(root: Node)
 
     /**
      * The **`upgrade()`** method of the CustomElementRegistry interface upgrades all shadow-containing custom elements in a Node subtree, even before they are connected to the main document.

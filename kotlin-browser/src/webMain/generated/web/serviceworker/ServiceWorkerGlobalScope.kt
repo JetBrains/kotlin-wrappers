@@ -55,7 +55,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event)
      */
-    var oninstall: EventHandler<InstallEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>?
+    var oninstall: EventHandler<ExtendableEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
@@ -136,12 +136,6 @@ inline val <C : ServiceWorkerGlobalScope> C.cookieChangeEvent: EventInstance<Ext
  */
 inline val <C : ServiceWorkerGlobalScope> C.fetchEvent: EventInstance<FetchEvent, C, C>
     get() = EventInstance(this, "fetch")
-
-/**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event)
- */
-inline val <C : ServiceWorkerGlobalScope> C.installEvent: EventInstance<InstallEvent, C, C>
-    get() = EventInstance(this, "install")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)

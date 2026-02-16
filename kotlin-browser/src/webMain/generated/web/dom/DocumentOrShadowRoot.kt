@@ -9,6 +9,7 @@ package web.dom
 import js.array.ReadonlyArray
 import js.internal.InternalApi
 import web.animations.Animation
+import web.components.CustomElementRegistry
 import web.cssom.CSSStyleSheet
 import web.cssom.StyleSheetList
 import kotlin.js.definedExternally
@@ -34,6 +35,8 @@ external interface DocumentOrShadowRoot {
     var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
         get() = definedExternally
         set(value) = definedExternally
+    val customElementRegistry: CustomElementRegistry?
+        get() = definedExternally
 
     /**
      * Returns document's fullscreen element.

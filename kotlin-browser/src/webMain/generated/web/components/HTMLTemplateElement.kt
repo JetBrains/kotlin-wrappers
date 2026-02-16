@@ -26,6 +26,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootClonable)
      */
     var shadowRootClonable: Boolean
+    var shadowRootCustomElementRegistry: String
 
     /**
      * The **`shadowRootDelegatesFocus`** property of the HTMLTemplateElement interface reflects the value of the shadowrootdelegatesfocus attribute of the associated <template> element.

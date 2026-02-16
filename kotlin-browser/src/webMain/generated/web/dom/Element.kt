@@ -7,6 +7,7 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.aria.ARIAMixin
+import web.components.CustomElementRegistry
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
 import web.components.Slottable
@@ -104,6 +105,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom)
      */
     val currentCSSZoom: Double
+    val customElementRegistry: CustomElementRegistry?
 
     /**
      * The **`id`** property of the Element interface represents the element's identifier, reflecting the id global attribute.

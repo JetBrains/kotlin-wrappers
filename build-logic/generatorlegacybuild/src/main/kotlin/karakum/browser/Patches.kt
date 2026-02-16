@@ -369,11 +369,6 @@ internal fun String.applyPatches(): String {
                 .joinToString("\n")
         }
         .addStrictPostMessageSupport()
-        // TEMP
-        .replace(
-            ", NavigatorCookies, NavigatorID",
-            ", NavigatorCookies, NavigatorGPU, NavigatorID",
-        )
         // https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2084
         .replace(
             "interface SchedulerPostTaskCallback {\n    (): any;\n}",

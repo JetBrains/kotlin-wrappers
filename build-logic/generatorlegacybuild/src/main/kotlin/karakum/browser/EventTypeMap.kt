@@ -101,7 +101,6 @@ internal val SERVICE_WORKER_EVENT_DATA = listOf(
     EventInfo("web.serviceworker.ExtendableEvent"),
     EventInfo("web.serviceworker.ExtendableMessageEvent"),
     EventInfo("web.serviceworker.FetchEvent"),
-    EventInfo("web.serviceworker.InstallEvent"),
     EventInfo("web.serviceworker.NotificationEvent"),
 )
 

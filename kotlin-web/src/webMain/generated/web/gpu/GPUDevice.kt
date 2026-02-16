@@ -68,6 +68,13 @@ private constructor() :
     fun createBindGroup(descriptor: GPUBindGroupDescriptor): GPUBindGroup
 
     /**
+     * The **`createBindGroupLayout()`** method of the GPUDevice interface creates a GPUBindGroupLayout that defines the structure and purpose of related GPU resources such as buffers that will be used in a pipeline, and is used as a template when creating GPUBindGroups.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBindGroupLayout)
+     */
+    fun createBindGroupLayout(descriptor: GPUBindGroupLayoutDescriptor): GPUBindGroupLayout
+
+    /**
      * The **`createBuffer()`** method of the GPUDevice interface creates a GPUBuffer in which to store raw data to use in GPU operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBuffer)
