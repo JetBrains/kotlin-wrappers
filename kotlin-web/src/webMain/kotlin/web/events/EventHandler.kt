@@ -1,4 +1,5 @@
 @file:Suppress(
+    // KT-19215
     "BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER",
 )
 
