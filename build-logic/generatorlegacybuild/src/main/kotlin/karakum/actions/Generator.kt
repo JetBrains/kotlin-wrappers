@@ -1,7 +1,6 @@
 package karakum.actions
 
 import karakum.common.GENERATOR_COMMENT
-import karakum.common.Suppress
 import karakum.common.Suppress.ABSTRACT_MEMBER_NOT_IMPLEMENTED
 import karakum.common.fileSuppress
 import karakum.common.writeCode
@@ -62,10 +61,10 @@ private fun generate(
         .also { it.mkdirs() }
 
     for ((name, body) in result.results) {
-        val suppresses = mutableListOf<Suppress>().apply {
+        val suppresses = buildList {
             if (name in CREDENTIAL_HANDLERS)
                 add(ABSTRACT_MEMBER_NOT_IMPLEMENTED)
-        }.toTypedArray()
+        }
 
         var annotations = when {
             "external class " in body
@@ -87,7 +86,7 @@ private fun generate(
         if (suppresses.isNotEmpty()) {
             annotations = sequenceOf(
                 annotations,
-                fileSuppress(*suppresses)
+                fileSuppress(suppresses)
             ).filter { it.isNotEmpty() }
                 .joinToString("\n\n")
         }

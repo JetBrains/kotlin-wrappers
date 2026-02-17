@@ -1,7 +1,6 @@
 package karakum.browser
 
 import karakum.common.GENERATOR_COMMENT
-import karakum.common.Suppress
 import karakum.common.Suppress.*
 import karakum.common.fileSuppress
 import karakum.common.writeCode
@@ -443,7 +442,7 @@ fun generateKotlinDeclarations(
     for ((name, body, pkg) in aliases) {
         pkg!!
 
-        val suppresses = buildSet<Suppress> {
+        val suppresses = buildList {
             if (name == "Locale")
                 add(VIRTUAL_MEMBER_HIDDEN)
 
@@ -461,11 +460,9 @@ fun generateKotlinDeclarations(
 
             if ("companion object" in body && "sealed external interface" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
-        }.toTypedArray()
+        }
 
-        val annotations = if (suppresses.isNotEmpty()) {
-            fileSuppress(*suppresses)
-        } else ""
+        val annotations = fileSuppress(suppresses)
 
         val imports = when (name) {
             "setInterval",

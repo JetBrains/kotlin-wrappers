@@ -1,9 +1,11 @@
 package karakum.csstype
 
-import karakum.common.*
-import karakum.common.Suppress
+import karakum.common.ConversionResult
+import karakum.common.GENERATOR_COMMENT
 import karakum.common.Suppress.DECLARATION_CANT_BE_INLINED
 import karakum.common.Suppress.NESTED_CLASS_IN_EXTERNAL_INTERFACE
+import karakum.common.fileSuppress
+import karakum.common.writeCode
 import java.io.File
 
 private val CSSTYPE_TYPES = setOf(
@@ -67,7 +69,7 @@ private fun writeDeclarations(
     getImports: (name: String) -> String,
 ) {
     for ((name, body) in declarations) {
-        val suppresses = mutableSetOf<Suppress>().apply {
+        val suppresses = buildList {
             if ("inline operator fun " in body)
                 if (name != "$LENGTH.operators") {
                     add(DECLARATION_CANT_BE_INLINED)
@@ -79,11 +81,9 @@ private fun writeDeclarations(
 
             if ("companion object" in body && "sealed external interface" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
-        }.toTypedArray()
+        }
 
-        val annotations = if (suppresses.isNotEmpty()) {
-            fileSuppress(*suppresses)
-        } else ""
+        val annotations = fileSuppress(suppresses)
 
         val pkg = getPkg(name)
         val imports = getImports(name)

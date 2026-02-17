@@ -25,7 +25,7 @@ internal fun generateKotlinDeclarations(
             hasRuntime
                 -> listOfNotNull(
                 """@file:JsModule("vscode")""",
-                fileSuppress(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
+                fileSuppress(listOf(NESTED_CLASS_IN_EXTERNAL_INTERFACE))
                     .takeIf { "sealed /* enum */" in body },
                 // TEMP
                 if (name == "FunctionBreakpoint" || name == "Selection" || name == "SourceBreakpoint") {

@@ -22,13 +22,12 @@ internal enum class Suppress {
 }
 
 internal fun fileSuppress(
-    vararg suppresses: Suppress,
-): String =
-    suppresses.joinToString(",\n", "@file:Suppress(\n", ",\n)") {
+    suppresses: List<Suppress>,
+): String {
+    if (suppresses.isEmpty())
+        return ""
+
+    return suppresses.joinToString(",\n", "@file:Suppress(\n", ",\n)") {
         """"${it.name}""""
     }
-
-internal fun suppress(
-    suppress: Suppress,
-): String =
-    """@Suppress("${suppress.name}")"""
+}

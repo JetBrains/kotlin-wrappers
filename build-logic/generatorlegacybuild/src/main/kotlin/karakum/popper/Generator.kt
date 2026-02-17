@@ -51,14 +51,12 @@ private fun generateCoreDeclarations(
         .plus(enums())
 
     for ((name, body) in types) {
-        val suppresses = buildSet {
+        val suppresses = buildList {
             if ("companion object" in body && "sealed external interface" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
-        }.toTypedArray()
+        }
 
-        val annotations = if (suppresses.isNotEmpty()) {
-            fileSuppress(suppresses = suppresses)
-        } else ""
+        val annotations = fileSuppress(suppresses)
 
         targetDir.resolve("$name.kt")
             .writeCode(fileContent(Package.CORE, annotations, body))
