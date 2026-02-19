@@ -5,6 +5,8 @@ import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.promise.await
 import kotlinx.js.JsPlainObject
+import web.events.Event
+import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import web.mcp.ModelContext.CallToolOptions
@@ -71,3 +73,11 @@ suspend fun ModelContext.callTool(
     options: CallToolOptions,
 ): ToolResponse =
     callToolAsync(options).await()
+
+@ExperimentalWebApi
+inline val <C : ModelContext> C.toolCallEvent: EventInstance<ToolCallEvent, C, C>
+    get() = EventInstance(this, "toolcall")
+
+@ExperimentalWebApi
+inline val <C : ModelContext> C.toolsChangedEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "toolschanged")
