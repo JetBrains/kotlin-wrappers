@@ -27,15 +27,6 @@ internal fun generateKotlinDeclarations(
                 """@file:JsModule("vscode")""",
                 fileSuppress(listOf(NESTED_CLASS_IN_EXTERNAL_INTERFACE))
                     .takeIf { "sealed /* enum */" in body },
-                // TEMP
-                if (name == "FunctionBreakpoint" || name == "Selection" || name == "SourceBreakpoint") {
-                    """
-                    @file:Suppress(
-                        // Temp WA for KT-83572
-                        "CALL_TO_JS_MODULE_WITHOUT_MODULE_SYSTEM",
-                    )
-                    """.trimIndent()
-                } else null,
             ).joinToString("\n\n")
 
             else -> ""

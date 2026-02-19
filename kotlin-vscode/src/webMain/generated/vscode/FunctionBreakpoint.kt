@@ -2,11 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    // Temp WA for KT-83572
-    "CALL_TO_JS_MODULE_WITHOUT_MODULE_SYSTEM",
-)
-
 package vscode
 
 import kotlin.js.JsModule
