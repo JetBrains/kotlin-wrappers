@@ -245,6 +245,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.locks.NavigatorLocks",
     "web.mathml.MATHML_NAMESPACE",
     "web.mathml.MathMLElement",
+    "web.mcp.ModelContext",
     "web.mediacapabilities.MediaCapabilities",
     "web.mediakey.MediaKeySystemAccess",
     "web.mediakey.MediaKeys",

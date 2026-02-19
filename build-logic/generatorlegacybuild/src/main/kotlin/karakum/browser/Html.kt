@@ -1244,6 +1244,12 @@ internal fun convertInterface(
             val keyboard: Keyboard
 
             /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
+             */
+            @ExperimentalWebApi
+            val modelContext: ModelContext
+
+            /**
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
              */
             @ExperimentalWebApi
