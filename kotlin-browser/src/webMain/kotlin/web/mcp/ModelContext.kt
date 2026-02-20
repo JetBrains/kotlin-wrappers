@@ -28,9 +28,7 @@ private constructor() :
     /**
      * Registers a dynamic tool with explicitly typed args/result.
      */
-    // registerTool<TInputSchema extends InputSchema, TArgs extends Record<string, unknown> = Record<string, unknown>, TResult extends CallToolResult = CallToolResult, TName extends string = string>(tool: ToolDescriptor<TArgs, TResult, TName> & {
-    //    inputSchema: TInputSchema;
-    // } & (string extends TInputSchema['type'] ? unknown : never)): RegistrationHandle;
+    fun registerTool(tool: ToolDescriptor): RegistrationHandle
 
     /**
      * Unregisters a dynamic tool by name.
