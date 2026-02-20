@@ -1,7 +1,6 @@
 package web.mcp
 
 import js.array.ReadonlyArray
-import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.promise.await
 import kotlinx.js.JsPlainObject
@@ -10,8 +9,8 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import web.mcp.ModelContext.CallToolOptions
+import kotlin.js.JsAny
 import kotlin.js.JsName
-import kotlin.js.JsString
 
 /**
  * ModelContext interface on navigator.modelContext.
@@ -28,12 +27,12 @@ private constructor() :
     /**
      * Registers a dynamic tool with explicitly typed args/result.
      */
-    fun registerTool(tool: ToolDescriptor): RegistrationHandle
+    fun registerTool(tool: ToolDescriptor<*>): RegistrationHandle
 
     /**
      * Unregisters a dynamic tool by name.
      */
-    fun unregisterTool(name: ToolName)
+    fun unregisterTool(name: ToolName<*>)
 
     /**
      * Lists currently registered tools.
@@ -44,12 +43,12 @@ private constructor() :
      * Executes a registered tool.
      */
     @JsName("callTool")
-    fun callToolAsync(options: CallToolOptions): Promise<ToolResponse>
+    fun callToolAsync(options: CallToolOptions<*>): Promise<ToolResponse>
 
     @JsPlainObject
-    interface CallToolOptions {
-        var name: ToolName
-        var arguments: ReadonlyRecord<JsString, *>?
+    interface CallToolOptions<TArgs : JsAny?> {
+        var name: ToolName<TArgs>
+        var arguments: TArgs
     }
 
     /**
@@ -59,13 +58,13 @@ private constructor() :
 }
 
 @ExperimentalWebApi
-suspend fun ModelContext.callTool(
-    options: CallToolOptions,
+suspend fun <TArgs : JsAny?> ModelContext.callTool(
+    options: CallToolOptions<TArgs>,
 ): ToolResponse =
     callToolAsync(options).await()
 
 @ExperimentalWebApi
-inline val <C : ModelContext> C.toolCallEvent: EventInstance<ToolCallEvent, C, C>
+inline val <C : ModelContext> C.toolCallEvent: EventInstance<ToolCallEvent<*>, C, C>
     get() = EventInstance(this, "toolcall")
 
 @ExperimentalWebApi

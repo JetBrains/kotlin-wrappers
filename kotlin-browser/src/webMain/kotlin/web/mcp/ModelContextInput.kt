@@ -13,5 +13,5 @@ external interface ModelContextInput {
     /**
      * Base tool descriptors to expose.
      */
-    val tools: ReadonlyArray<ToolDescriptor>?
+    val tools: ReadonlyArray<ToolDescriptor<*>>?
 }

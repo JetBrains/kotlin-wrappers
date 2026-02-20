@@ -13,7 +13,7 @@ external interface ToolListItem {
     /**
      * Unique tool identifier.
      */
-    var name: ToolName
+    var name: ToolName<*>
 
     /**
      * Human-readable summary of what the tool does.

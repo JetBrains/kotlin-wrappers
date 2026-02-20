@@ -3,13 +3,14 @@ package web.mcp
 import js.internal.InternalApi
 import js.reflect.unsafeCast
 import web.experimental.ExperimentalWebApi
+import kotlin.js.JsAny
 
 @ExperimentalWebApi
 @SubclassOptInRequired(InternalApi::class)
-external interface ToolName
+external interface ToolName<TArgs : JsAny?>
 
 @ExperimentalWebApi
-inline fun ToolName(
+inline fun <TArgs : JsAny?> ToolName(
     value: String,
-): ToolName =
+): ToolName<TArgs> =
     unsafeCast(value)

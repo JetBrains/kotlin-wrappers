@@ -4,6 +4,7 @@ import js.objects.ReadonlyRecord
 import js.promise.PromiseLike
 import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
+import kotlin.js.JsAny
 import kotlin.js.JsString
 
 /**
@@ -16,11 +17,11 @@ import kotlin.js.JsString
  */
 @JsPlainObject
 @ExperimentalWebApi
-external interface ToolDescriptor {
+external interface ToolDescriptor<TArgs : JsAny?> {
     /**
      * Unique tool identifier.
      */
-    var name: ToolName
+    var name: ToolName<TArgs>
 
     /**
      * Human-readable summary of what the tool does.
