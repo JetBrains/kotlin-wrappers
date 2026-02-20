@@ -1,11 +1,13 @@
 package web.mcp
 
 import kotlinx.js.JsPlainObject
+import web.experimental.ExperimentalWebApi
 
 /**
  * Text resource contents.
  */
 @JsPlainObject
+@ExperimentalWebApi
 external interface TextResourceContents :
     ResourceContents {
     /**

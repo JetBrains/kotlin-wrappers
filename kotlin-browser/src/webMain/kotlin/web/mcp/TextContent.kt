@@ -1,11 +1,13 @@
 package web.mcp
 
 import kotlinx.js.JsPlainObject
+import web.experimental.ExperimentalWebApi
 
 /**
  * Plain text content.
  */
 @JsPlainObject
+@ExperimentalWebApi
 external interface TextContent :
     ContentBlock {
     /**

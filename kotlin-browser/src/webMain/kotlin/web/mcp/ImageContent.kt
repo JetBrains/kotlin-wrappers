@@ -1,11 +1,13 @@
 package web.mcp
 
 import kotlinx.js.JsPlainObject
+import web.experimental.ExperimentalWebApi
 
 /**
  * Base64-encoded image content.
  */
 @JsPlainObject
+@ExperimentalWebApi
 external interface ImageContent :
     ContentBlock {
     /**

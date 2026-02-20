@@ -1,6 +1,7 @@
 package web.mcp
 
 import js.objects.ReadonlyRecord
+import web.experimental.ExperimentalWebApi
 import kotlin.js.JsAny
 import kotlin.js.JsString
 
@@ -10,6 +11,7 @@ import kotlin.js.JsString
  * This keeps tool return typing practical while preserving strict content
  * unions via {@link ContentBlock} for consumers that want discriminated checks.
  */
+@ExperimentalWebApi
 external interface LooseContentBlock :
     ContentBlockBase,
     ReadonlyRecord<JsString, JsAny?>

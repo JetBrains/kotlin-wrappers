@@ -1,11 +1,13 @@
 package web.mcp
 
 import kotlinx.js.JsPlainObject
+import web.experimental.ExperimentalWebApi
 
 /**
  * Binary resource contents encoded as base64.
  */
 @JsPlainObject
+@ExperimentalWebApi
 external interface BlobResourceContents :
     ResourceContents {
     /**

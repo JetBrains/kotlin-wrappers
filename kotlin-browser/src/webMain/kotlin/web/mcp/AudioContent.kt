@@ -1,11 +1,13 @@
 package web.mcp
 
 import kotlinx.js.JsPlainObject
+import web.experimental.ExperimentalWebApi
 
 /**
  * Base64-encoded audio content.
  */
 @JsPlainObject
+@ExperimentalWebApi
 external interface AudioContent :
     ContentBlock {
     /**

@@ -1,11 +1,13 @@
 package web.mcp
 
 import kotlinx.js.JsPlainObject
+import web.experimental.ExperimentalWebApi
 
 /**
  * Link to an externally retrievable resource.
  */
 @JsPlainObject
+@ExperimentalWebApi
 external interface ResourceLink :
     ContentBlock {
     /**
