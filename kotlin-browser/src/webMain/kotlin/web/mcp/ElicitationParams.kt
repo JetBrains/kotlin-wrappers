@@ -10,4 +10,14 @@ import web.experimental.ExperimentalWebApi
 @JsPlainObject
 @ExperimentalWebApi
 @SubclassOptInRequired(InternalApi::class)
-external interface ElicitationParams
+external interface ElicitationParams {
+    /**
+     * Elicitation mode.
+     */
+    val mode: String?
+
+    /**
+     * User-facing message.
+     */
+    val message: String
+}
