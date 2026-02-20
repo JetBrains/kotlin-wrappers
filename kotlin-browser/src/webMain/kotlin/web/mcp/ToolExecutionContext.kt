@@ -1,6 +1,9 @@
 package web.mcp
 
+import js.promise.Promise
+import js.promise.await
 import web.experimental.ExperimentalWebApi
+import kotlin.js.JsName
 
 /**
  * Per-call execution context provided to tool handlers.
@@ -13,6 +16,12 @@ external interface ToolExecutionContext {
      * This function is bound to the active tool call and should only be used
      * during execution of that call.
      */
-    // TODO: support
-    // fun elicitInput(params: ElicitationParams): Promise<ElicitationResult>
+    @JsName("elicitInput")
+    fun elicitInputAsync(params: ElicitationParams): Promise<ElicitationResult>
 }
+
+@ExperimentalWebApi
+suspend fun ToolExecutionContext.elicitInput(
+    params: ElicitationParams,
+): ElicitationResult =
+    elicitInputAsync(params = params).await()
