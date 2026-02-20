@@ -26,14 +26,6 @@ private constructor() :
     fun provideContext(context: ModelContextInput)
 
     /**
-     * Registers a dynamic tool with JSON Schema-driven inference.
-     *
-     * `execute(args)` is inferred from `inputSchema`, and when a literal object
-     * `outputSchema` is provided, `execute(...).structuredContent` is inferred too.
-     */
-    // registerTool<TInputSchema extends JsonSchemaForInference, TOutputSchema extends JsonSchemaObject | undefined = undefined, TName extends string = string>(tool: ToolDescriptorFromSchema<TInputSchema, TOutputSchema, TName>): RegistrationHandle;
-
-    /**
      * Registers a dynamic tool with explicitly typed args/result.
      */
     // registerTool<TInputSchema extends InputSchema, TArgs extends Record<string, unknown> = Record<string, unknown>, TResult extends CallToolResult = CallToolResult, TName extends string = string>(tool: ToolDescriptor<TArgs, TResult, TName> & {
