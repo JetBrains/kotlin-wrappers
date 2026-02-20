@@ -275,6 +275,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-size)
      */
     var backgroundSize: String
+
+    /**
+     * The baseline-shift CSS property repositions the dominant-baseline of a text element relative to the dominant-baseline of its parent text content element. The shifted element might be a sub- or superscript. If the property is present, the value overrides the element's baseline-shift attribute.
+     */
     var baselineShift: String
 
     /**

@@ -11,7 +11,7 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
- * The **`SharedWorker`** interface represents a specific kind of worker that can be accessed from several browsing contexts, such as several windows, iframes or even workers. They implement an interface different than dedicated workers and have a different global scope, SharedWorkerGlobalScope.
+ * The **`SharedWorker`** interface represents a specific kind of worker that can be accessed from several browsing contexts, such as multiple windows or iframes. Shared workers implement a different interface than dedicated workers, have a different global scope (SharedWorkerGlobalScope), and their constructor is not exposed in DedicatedWorkerGlobalScope, so they cannot be instantiated from dedicated workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker)
  */
