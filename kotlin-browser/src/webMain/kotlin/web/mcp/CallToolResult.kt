@@ -16,7 +16,7 @@ external interface CallToolResult {
     /**
      * Ordered content blocks to return to the model.
      */
-    var content: ReadonlyArray<JsAny /* ContentBlock | LooseContentBlock */>
+    var content: ReadonlyArray<ContentBlockBase>
 
     /**
      * Optional machine-readable payload.

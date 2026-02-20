@@ -8,6 +8,7 @@ import kotlinx.js.JsPlainObject
  */
 @JsPlainObject
 @SubclassOptInRequired(InternalApi::class)
-external interface ContentBlock {
+external interface ContentBlock :
+    ContentBlockBase {
     var type: String
 }
