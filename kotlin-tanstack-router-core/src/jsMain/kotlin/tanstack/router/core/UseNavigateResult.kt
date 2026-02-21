@@ -1,5 +1,20 @@
 package tanstack.router.core
 
-typealias UseNavigateResult = (
-    options: NavigateOptions,
-) -> Unit
+import js.objects.unsafeJso
+import tanstack.router.core.raw.UseNavigateResultRaw
+
+value class UseNavigateResult(
+    private val navigate: UseNavigateResultRaw,
+) {
+    operator fun invoke(
+        options: NavigateOptions,
+    ) {
+        navigate(options)
+    }
+
+    operator fun invoke(
+        block: NavigateOptions.() -> Unit,
+    ) {
+        navigate(unsafeJso(block))
+    }
+}

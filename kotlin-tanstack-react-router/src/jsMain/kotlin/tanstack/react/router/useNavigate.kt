@@ -1,5 +1,9 @@
 @file:JsModule("@tanstack/react-router")
 
+@file:Suppress(
+    "INLINE_CLASS_IN_EXTERNAL_DECLARATION_WARNING",
+)
+
 package tanstack.react.router
 
 import tanstack.router.core.UseNavigateResult
