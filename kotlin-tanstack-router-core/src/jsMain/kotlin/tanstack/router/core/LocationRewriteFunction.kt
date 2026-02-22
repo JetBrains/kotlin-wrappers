@@ -1,12 +1,6 @@
 package tanstack.router.core
 
-import kotlinx.js.JsPlainObject
 import web.url.URL
-
-@JsPlainObject
-external interface LocationRewriteFunctionOptions {
-    val url: URL
-}
 
 /**
  * A function that will be called to rewrite the URL.
