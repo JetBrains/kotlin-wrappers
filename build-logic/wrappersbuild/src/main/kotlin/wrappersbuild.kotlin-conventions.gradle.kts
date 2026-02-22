@@ -41,9 +41,13 @@ kotlin {
 
     compilerOptions {
         allWarningsAsErrors = true
-        freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
-        optIn.addAll(COMMON_OPT_INS)
 
+        freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
+        if (valueClassInExternalAllowed) {
+            freeCompilerArgs.add("-Xwarning-level=INLINE_CLASS_IN_EXTERNAL_DECLARATION_WARNING:disabled")
+        }
+
+        optIn.addAll(COMMON_OPT_INS)
         if (project.name != "kotlin-css") {
             optIn.addAll(COMMON_INTERNAL_OPT_INS)
         }
