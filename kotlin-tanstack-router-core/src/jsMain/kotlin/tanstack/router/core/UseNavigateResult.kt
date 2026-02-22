@@ -7,12 +7,6 @@ value class UseNavigateResult(
     private val navigate: UseNavigateResultRaw,
 ) {
     operator fun invoke(
-        options: NavigateOptions,
-    ) {
-        navigate(options)
-    }
-
-    operator fun invoke(
         block: NavigateOptions.() -> Unit,
     ) {
         navigate(unsafeJso(block))
