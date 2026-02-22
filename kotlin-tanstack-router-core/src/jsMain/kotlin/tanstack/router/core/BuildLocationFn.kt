@@ -1,5 +1,3 @@
 package tanstack.router.core
 
-typealias BuildLocationFn = (
-    options: BuildLocationOptions,
-) -> ParsedLocation
+typealias BuildLocationFn = Invoker<BuildLocationOptions, ParsedLocation>
