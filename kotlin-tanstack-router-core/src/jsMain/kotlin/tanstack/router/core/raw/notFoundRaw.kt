@@ -1,7 +1,8 @@
-package tanstack.router.core
+@file:JsModule("@tanstack/router-core")
 
-import js.objects.unsafeJso
-import tanstack.router.core.raw.notFoundRaw
+package tanstack.router.core.raw
+
+import tanstack.router.core.NotFoundError
 
 /**
  * Create a not-found error object recognized by TanStack Router.
@@ -12,16 +13,10 @@ import tanstack.router.core.raw.notFoundRaw
  *
  * [API Docs](https://tanstack.com/router/latest/docs/router/framework/react/api/router/notFoundFunction)
  *
+ * @param options Optional settings including `routeId`, `headers`, and `throw`.
  * @return A not-found error object that can be thrown or returned.
  */
-fun notFound(): Nothing =
-    notFoundRaw(NotFoundError(`throw` = true))
-
-fun notFound(
-    block: NotFoundOptions.() -> Unit,
-): Nothing {
-    val options = unsafeJso(block)
-    options.`throw` = true
-
-    notFoundRaw<Nothing>(options)
-}
+@JsName("notFound")
+internal external fun <T : NotFoundError> notFoundRaw(
+    options: NotFoundError = definedExternally,
+): T
