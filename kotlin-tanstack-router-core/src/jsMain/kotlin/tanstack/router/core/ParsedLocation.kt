@@ -1,7 +1,10 @@
 package tanstack.router.core
 
+import kotlinx.js.JsPlainObject
+
 import tanstack.history.ParsedHistoryState
 
+@JsPlainObject
 external interface ParsedLocation {
     /**
      * The full path of the location, including pathname, search, and hash.
