@@ -11,5 +11,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface GamepadEventInit :
     EventInit {
-    var gamepad: Gamepad
+    var gamepad: Gamepad?
 }

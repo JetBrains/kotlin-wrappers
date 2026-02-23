@@ -4,6 +4,7 @@ package web.gamepad
 
 import web.events.Event
 import web.events.EventType
+import kotlin.js.definedExternally
 
 /**
  * The **`GamepadEvent`** interface of the Gamepad API contains references to gamepads connected to the system, which is what the gamepad events gamepadconnected and gamepaddisconnected are fired in response to.
@@ -12,7 +13,7 @@ import web.events.EventType
  */
 open external class GamepadEvent(
     override val type: EventType<GamepadEvent>,
-    init: GamepadEventInit,
+    init: GamepadEventInit = definedExternally,
 ) : Event {
     /**
      * The **`GamepadEvent.gamepad`** property of the GamepadEvent interface returns a Gamepad object, providing access to the associated gamepad data for fired gamepadconnected and gamepaddisconnected events.

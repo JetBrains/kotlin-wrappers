@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSFontFeatureValuesRule`** interface represents an @font-feature-values at-rule. The values of its instance properties can be accessed with the CSSFontFeatureValuesMapinterface.
+ * The **`CSSFontFeatureValuesRule`** interface represents an @font-feature-values at-rule. The values of its instance properties can be accessed with the CSSFontFeatureValuesMap interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontFeatureValuesRule)
  */

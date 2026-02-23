@@ -33,7 +33,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/enqueue)
      */
-    fun enqueue(chunk: R = definedExternally)
+    fun enqueue(chunk: R)
 
     /**
      * The **`error()`** method of the ReadableStreamDefaultController interface causes any future interactions with the associated stream to error.
