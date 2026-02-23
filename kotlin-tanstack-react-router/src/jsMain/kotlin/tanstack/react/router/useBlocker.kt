@@ -2,6 +2,7 @@
 
 package tanstack.react.router
 
-internal external fun useBlocker(
+internal /* raw */
+external fun useBlocker(
     options: UseBlockerOptions,
 ): HasBlockerResolverStatus?

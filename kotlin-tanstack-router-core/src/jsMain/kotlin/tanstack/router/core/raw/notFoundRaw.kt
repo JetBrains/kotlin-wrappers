@@ -17,6 +17,7 @@ import tanstack.router.core.NotFoundError
  * @return A not-found error object that can be thrown or returned.
  */
 @JsName("notFound")
-internal external fun <T : NotFoundError> notFoundRaw(
+internal /* raw */
+external fun <T : NotFoundError> notFoundRaw(
     options: NotFoundError = definedExternally,
 ): T

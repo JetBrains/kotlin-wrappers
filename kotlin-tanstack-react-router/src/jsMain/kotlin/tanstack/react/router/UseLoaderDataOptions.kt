@@ -5,7 +5,8 @@ import tanstack.router.core.LoaderData
 import tanstack.router.core.RouteId
 
 @JsPlainObject
-internal external interface UseLoaderDataOptions<T> {
+internal /* raw */
+external interface UseLoaderDataOptions<T> {
     val from: RouteId? /* RoutePath */
     val strict: Boolean?
     val select: Select<LoaderData?, T>?

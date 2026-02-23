@@ -15,6 +15,7 @@ package tanstack.react.router
  *
  * @return The search object (or selected value) for the matched route.
  */
-internal external fun <T> useSearch(
+internal /* raw */
+external fun <T> useSearch(
     options: UseSearchOptions<T>,
 ): T

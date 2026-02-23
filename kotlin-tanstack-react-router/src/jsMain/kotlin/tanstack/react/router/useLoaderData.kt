@@ -14,6 +14,7 @@ package tanstack.react.router
  *
  * @returns The loader data (or selected value) for the matched route.
  */
-internal external fun <T> useLoaderData(
+internal /* raw */
+external fun <T> useLoaderData(
     options: UseLoaderDataOptions<T>,
 ): T

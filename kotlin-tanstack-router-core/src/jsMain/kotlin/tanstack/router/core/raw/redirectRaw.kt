@@ -6,6 +6,7 @@ import tanstack.router.core.Redirect
 import tanstack.router.core.RedirectOptions
 
 @JsName("redirect")
-internal external fun <T : Redirect> redirectRaw(
+internal /* raw */
+external fun <T : Redirect> redirectRaw(
     options: RedirectOptions,
 ): T /* Redirect | Nothing */

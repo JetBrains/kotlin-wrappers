@@ -15,6 +15,7 @@ package tanstack.react.router
  *
  * @return The params object (or selected value) for the matched route.
  */
-internal external fun <T> useParams(
+internal /* raw */
+external fun <T> useParams(
     options: UseParamsOptions<T>,
 ): T

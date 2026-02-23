@@ -15,6 +15,7 @@ package tanstack.react.router
  */
 external fun useRouter(): Router
 
-internal external fun useRouter(
+internal /* raw */
+external fun useRouter(
     options: UseRouterOptions,
 ): Router

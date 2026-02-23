@@ -18,6 +18,7 @@ import tanstack.router.core.ParsedLocation
  */
 external fun useLocation(): ParsedLocation
 
-internal external fun <T> useLocation(
+internal /* raw */
+external fun <T> useLocation(
     options: UseLocationOptions<T>,
 ): T
