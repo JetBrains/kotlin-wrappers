@@ -311,7 +311,6 @@ To learn more about the Custom Hook, check out the
 There is no built-in capability for writing inline styles in a type-safe manner.
 However, it can be done by adding a dependency on
 [kotlin-emotion](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-emotion).
-Note that `kotlin-styled-next` is not compatible with the `kotlin-react` module (only the `kotlin-react-legacy`).
 
 ### Using `kotlin-emotion` with `kotlin-react`
 

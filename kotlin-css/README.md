@@ -43,7 +43,3 @@ val styles = CssBuilder().apply {
 
 styles.toString()
 ```
-
-When writing CSS for the browser you should probably use
-[kotlin-styled-next](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-styled-next) instead. It provides a
-user-friendly facade to `kotlin-css`.
