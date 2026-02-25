@@ -17,9 +17,6 @@ dependencyResolutionManagement {
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
             library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
-
-            val htmlVersion = extra["kotlinx-html.version"] as String
-            library("kotlinx-html", "org.jetbrains.kotlinx", "kotlinx-html").version(htmlVersion)
         }
     }
 }
@@ -189,14 +186,8 @@ include("kotlin-react-dom")
 
 includeKarakum("kotlin-react-dom")
 
-// Kotlin/JS: React DOM legacy wrappers
-include("kotlin-react-dom-legacy")
-
 // Kotlin/JS: React DOM Test Utilities wrappers
 include("kotlin-react-dom-test-utils")
-
-// Kotlin/JS: React legacy wrappers
-include("kotlin-react-legacy")
 
 // Kotlin/JS: React Popper wrappers
 include("kotlin-react-popper")

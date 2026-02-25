@@ -2,10 +2,7 @@ import org.gradle.api.Project
 
 private val TARGET_ALIASES = mapOf(
     "react-core" to "react",
-    "react-dom-legacy" to "react-dom",
     "react-dom-test-utils" to "react-dom",
-    "react-legacy" to "react",
-    "react-router-dom-legacy" to "react-router-dom",
 )
 
 fun Project.publishVersion(): String =
