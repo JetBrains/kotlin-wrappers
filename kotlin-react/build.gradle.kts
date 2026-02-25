@@ -3,9 +3,12 @@ plugins {
 }
 
 dependencies {
-    webMainApi(projects.kotlinJs)
-    jsMainApi(projects.kotlinReactCore)
+    jsMainApi(projects.kotlinBrowser)
+    jsMainApi(projects.kotlinCsstype)
+    jsMainApi(libs.coroutines.core)
 
     webTestImplementation(libs.kotlin.test)
     webTestImplementation(libs.coroutines.test)
+
+    webMainApi(npm(jspkg.react))
 }
