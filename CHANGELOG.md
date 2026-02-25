@@ -1,3 +1,12 @@
+## 2026.2.20
+
+**BREAKING CHANGE**
+
+* Legacy subprojects removed:
+    * `kotlin-react-legacy`
+    * `kotlin-react-dom-legacy`
+    * `kotlin-styled-next`
+
 ## 2026.2.11
 
 **BREAKING CHANGE**
