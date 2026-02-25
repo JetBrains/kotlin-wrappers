@@ -7,7 +7,7 @@ dependencies {
     webMainApi(projects.kotlinBrowser)
     webMainApi(projects.kotlinEmotionCss)
     webMainApi(projects.kotlinEmotionUtils)
-    webMainApi(projects.kotlinReactCore)
+    webMainApi(projects.kotlinReact)
 
     webMainApi(npm(jspkg.emotion.react))
 }

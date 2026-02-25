@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     jsMainApi(projects.kotlinPopperjsCore)
-    jsMainApi(projects.kotlinReactCore)
+    jsMainApi(projects.kotlinReact)
 
     webMainApi(npm(jspkg.reactPopper))
 }
