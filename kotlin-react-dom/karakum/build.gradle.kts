@@ -12,7 +12,7 @@ val syncReact by tasks.registering(SyncWrappers::class) {
         include("react/*.kt")
     }
 
-    into(jsMainDir("kotlin-react-core"))
+    into(jsMainDir("kotlin-react"))
 }
 
 val syncReactDom by tasks.registering(SyncWrappers::class) {

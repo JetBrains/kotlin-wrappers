@@ -2,6 +2,10 @@ package react
 
 import js.reflect.unsafeCast
 
+external interface FC<in P : Props> :
+    ComponentType<P>,
+    HasDisplayName
+
 fun FC(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> =
