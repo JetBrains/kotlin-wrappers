@@ -1,7 +1,6 @@
 import org.gradle.api.Project
 
 private val TARGET_ALIASES = mapOf(
-    "react-core" to "react",
     "react-dom-test-utils" to "react-dom",
 )
 
