@@ -2,5 +2,5 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsEnvSpec
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsPlugin
 
 plugins.withType<NodeJsPlugin> {
-    the<NodeJsEnvSpec>().version.set("24.13.1")
+    the<NodeJsEnvSpec>().version.set("24.14.0")
 }
