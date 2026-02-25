@@ -7,4 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
 
     webTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.coroutines.test)
 }
