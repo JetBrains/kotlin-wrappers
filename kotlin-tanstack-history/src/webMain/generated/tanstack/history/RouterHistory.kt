@@ -2,12 +2,10 @@
 
 package tanstack.history
 
-import js.collections.ReadonlySet
-
 external interface RouterHistory {
     val location: HistoryLocation
     val length: Int
-    val subscribers: ReadonlySet<(opts: SubscriberArgs) -> Unit>
+    val subscribers: js.collections.ReadonlySet<(opts: SubscriberArgs) -> Unit>
 
     fun subscribe(cb: (opts: SubscriberArgs) -> Unit): () -> Unit
 

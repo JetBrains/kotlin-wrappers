@@ -26,7 +26,6 @@ fun addTempNpmFixes() {
         return
 
     content = content
-        .replace("Promise<ShouldAllowNavigation> | ShouldAllowNavigation", "PromiseResult<ShouldAllowNavigation>")
         .replace(": number", ": Int")
         .replace("=> number", "=> Int")
 

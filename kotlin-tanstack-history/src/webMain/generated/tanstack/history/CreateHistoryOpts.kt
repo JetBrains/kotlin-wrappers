@@ -2,7 +2,6 @@
 
 package tanstack.history
 
-import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
@@ -18,7 +17,7 @@ external interface CreateHistoryOpts {
     var flush: (() -> Unit)?
     var destroy: (() -> Unit)?
     var onBlocked: (() -> Unit)?
-    var getBlockers: (() -> ReadonlyArray<NavigationBlocker>)?
-    var setBlockers: ((blockers: ReadonlyArray<NavigationBlocker>) -> Unit)?
+    var getBlockers: (() -> js.array.ReadonlyArray<NavigationBlocker>)?
+    var setBlockers: ((blockers: js.array.ReadonlyArray<NavigationBlocker>) -> Unit)?
     var notifyOnIndexChange: Boolean?
 }

@@ -2,6 +2,4 @@
 
 package tanstack.history
 
-import js.promise.PromiseResult
-
-typealias BlockerFn = (args: BlockerFnArgs) -> PromiseResult<ShouldAllowNavigation>
+typealias BlockerFn = (args: BlockerFnArgs) -> js.promise.PromiseResult<ShouldAllowNavigation>
