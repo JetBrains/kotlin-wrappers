@@ -9,13 +9,11 @@ package testing.library.dom
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
-import js.promise.Promise
-import web.html.HTMLElement
 
 @JsName("findAllByLabelText")
-external fun <T : HTMLElement /* default is HTMLElement */> findAllByLabelTextAsync(
-    container: HTMLElement,
+external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByLabelTextAsync(
+    container: web.html.HTMLElement,
     id: Matcher,
     options: SelectorMatcherOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): Promise<js.array.ReadonlyArray<T>>
+): js.promise.Promise<js.array.ReadonlyArray<T>>

@@ -9,13 +9,11 @@ package testing.library.dom
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
-import js.promise.Promise
-import web.html.HTMLElement
 
 @JsName("findByPlaceholderText")
-external fun <T : HTMLElement /* default is HTMLElement */> findByPlaceholderTextAsync(
-    container: HTMLElement,
+external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByPlaceholderTextAsync(
+    container: web.html.HTMLElement,
     id: Matcher,
     options: MatcherOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): Promise<T>
+): js.promise.Promise<T>

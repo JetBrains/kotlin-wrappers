@@ -9,10 +9,9 @@ package testing.library.dom
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
-import web.html.HTMLElement
 
-external fun <T : HTMLElement /* default is HTMLElement */> queryByAltText(
-    container: HTMLElement,
+external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByAltText(
+    container: web.html.HTMLElement,
     id: Matcher,
     options: MatcherOptions = definedExternally,
 ): T?

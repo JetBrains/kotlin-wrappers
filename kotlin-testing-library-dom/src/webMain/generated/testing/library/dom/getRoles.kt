@@ -4,6 +4,4 @@
 
 package testing.library.dom
 
-import web.html.HTMLElement
-
-external fun getRoles(container: HTMLElement): GetRolesResult
+external fun getRoles(container: web.html.HTMLElement): GetRolesResult

@@ -4,10 +4,8 @@
 
 package testing.library.dom
 
-import web.html.HTMLElement
-
 external fun getSuggestedQuery(
-    element: HTMLElement,
+    element: web.html.HTMLElement,
     variant: Variant = definedExternally,
     method: Method = definedExternally,
 ): Suggestion?

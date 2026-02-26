@@ -2,38 +2,32 @@
 
 package testing.library.dom
 
-import web.dom.Document
-import web.dom.Element
-import web.dom.Node
-import web.events.Event
-import web.window.Window
-
 external interface CreateFunction {
     operator fun invoke(
         eventName: String,
-        node: Document,
+        node: web.dom.Document,
         init: Any = definedExternally,
         options: CreateFunctionOptions = definedExternally,
-    ): Event
+    ): web.events.Event
 
     operator fun invoke(
         eventName: String,
-        node: Element,
+        node: web.dom.Element,
         init: Any = definedExternally,
         options: CreateFunctionOptions = definedExternally,
-    ): Event
+    ): web.events.Event
 
     operator fun invoke(
         eventName: String,
-        node: Window,
+        node: web.window.Window,
         init: Any = definedExternally,
         options: CreateFunctionOptions = definedExternally,
-    ): Event
+    ): web.events.Event
 
     operator fun invoke(
         eventName: String,
-        node: Node,
+        node: web.dom.Node,
         init: Any = definedExternally,
         options: CreateFunctionOptions = definedExternally,
-    ): Event
+    ): web.events.Event
 }

@@ -2,13 +2,11 @@
 
 package testing.library.dom
 
-import web.html.HTMLElement
-
 external interface GetRolesResult {
-    operator fun get(key: String): js.array.ReadonlyArray<HTMLElement>?
+    operator fun get(key: String): js.array.ReadonlyArray<web.html.HTMLElement>?
 
     operator fun set(
         key: String,
-        value: js.array.ReadonlyArray<HTMLElement>?,
+        value: js.array.ReadonlyArray<web.html.HTMLElement>?,
     )
 }

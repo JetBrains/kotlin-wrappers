@@ -1,115 +1,43 @@
 package testing.library.dom.karakum
 
+import io.github.sgrishchenko.karakum.extension.match
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
+import js.objects.unsafeJso
 import testing.library.dom.karakum.annotations.annotateWaitFor
 import testing.library.dom.karakum.inheritanceModifiers.modifyMethodInheritance
 import testing.library.dom.karakum.plugins.BoundQueriesPlugin
-import testing.library.dom.karakum.plugins.PromiseFunctionApiPlugin
 import testing.library.dom.karakum.plugins.QueriesPlugin
 import testing.library.dom.karakum.plugins.convertFunctionInterfaces
 import testing.library.dom.karakum.plugins.convertOptionalType
 import testing.library.dom.karakum.plugins.convertPrettyFormatOptionsReceived
-import testing.library.dom.karakum.plugins.convertPromiseResult
 import testing.library.dom.karakum.plugins.convertQueriesGenerics
 import testing.library.dom.karakum.plugins.convertSecondFindArgumentType
 import testing.library.dom.karakum.plugins.convertTypealiasParameterBounds
 import testing.library.dom.karakum.plugins.convertUtilityTypes
 import testing.library.dom.karakum.plugins.convertWaitForName
-
-private val asyncQueries = setOf(
-    "findByLabelText",
-    "findAllByLabelText",
-    "findByPlaceholderText",
-    "findAllByPlaceholderText",
-    "findByText",
-    "findAllByText",
-    "findByAltText",
-    "findAllByAltText",
-    "findByTitle",
-    "findAllByTitle",
-    "findByDisplayValue",
-    "findAllByDisplayValue",
-    "findByRole",
-    "findAllByRole",
-    "findByTestId",
-    "findAllByTestId",
-)
-
-private val asyncQueriesTypes = setOf(
-    "FindAllBy",
-    "FindAllByBoundAttribute",
-    "FindAllByRole.type",
-    "FindAllByText.type",
-    "FindBy",
-    "FindByBoundAttribute",
-    "FindByRole.type",
-    "FindByText.type",
-)
-
-private val queriesTypes = asyncQueriesTypes + setOf(
-    "AllByBoundAttribute",
-    "AllByRole",
-    "AllByText",
-    "GetAllBy",
-    "GetBy",
-    "GetByBoundAttribute",
-    "GetByRole.type",
-    "GetByText.type",
-    "QueryBy",
-    "QueryByBoundAttribute",
-    "QueryByRole.type",
-    "QueryByText.type",
-)
-
-private val queries = asyncQueries + setOf(
-    "getByLabelText",
-    "getAllByLabelText",
-    "queryByLabelText",
-    "queryAllByLabelText",
-    "getByPlaceholderText",
-    "getAllByPlaceholderText",
-    "queryByPlaceholderText",
-    "queryAllByPlaceholderText",
-    "getByText",
-    "getAllByText",
-    "queryByText",
-    "queryAllByText",
-    "getByAltText",
-    "getAllByAltText",
-    "queryByAltText",
-    "queryAllByAltText",
-    "getByTitle",
-    "getAllByTitle",
-    "queryByTitle",
-    "queryAllByTitle",
-    "getByDisplayValue",
-    "getAllByDisplayValue",
-    "queryByDisplayValue",
-    "queryAllByDisplayValue",
-    "getByRole",
-    "getAllByRole",
-    "queryByRole",
-    "queryAllByRole",
-    "getByTestId",
-    "getAllByTestId",
-    "queryByTestId",
-    "queryAllByTestId",
-)
+import typescript.isFunctionDeclaration
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
+            PromiseResultPlugin(),
+            PromiseFunctionPlugin(
+                ignore = match {
+                    match(::isFunctionDeclaration, "waitFor")
+                }
+            ),
+
             QueriesPlugin(),
             BoundQueriesPlugin,
-            PromiseFunctionApiPlugin(),
 
             convertFunctionInterfaces,
             convertOptionalType,
             convertPrettyFormatOptionsReceived,
-            convertPromiseResult,
             convertQueriesGenerics,
             convertSecondFindArgumentType,
             convertTypealiasParameterBounds,
@@ -149,89 +77,11 @@ suspend fun main(args: ReadonlyArray<String>) {
 
             "screen.kt" to "screen.val.kt",
         )
-        importInjector = recordOf(
-            pairs = queries.map {
-                "$it.suspend.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                )
-            }.toTypedArray() + (queries + queriesTypes).map {
-                "$it.kt" to if (it in asyncQueries || it in asyncQueriesTypes) {
-                    arrayOf(
-                        "js.promise.Promise",
-                        "web.html.HTMLElement",
-                    )
-                } else {
-                    arrayOf(
-                        "web.html.HTMLElement",
-                    )
-                }
-            }.toTypedArray() + arrayOf(
-                "(AllByAttribute|QueryByAttribute).kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "BoundFunctions.kt" to arrayOf(
-                    "js.promise.Promise",
-                    "web.html.HTMLElement",
-                ),
-                "Config.kt" to arrayOf(
-                    "js.promise.Promise",
-                    "web.dom.Element",
-                ),
-                "(CreateFunction|FireFunction).kt" to arrayOf(
-                    "web.dom.Document",
-                    "web.dom.Element",
-                    "web.dom.Node",
-                    "web.events.Event",
-                    "web.window.Window",
-                ),
-                "CreateObject.kt" to arrayOf(
-                    "web.events.Event",
-                ),
-                "computeHeadingLevel.kt" to arrayOf(
-                    "web.dom.Element",
-                ),
-                "getElementError.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "getNodeText.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "getQueriesForElement.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "(getRoles|logRoles).kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "GetRolesResult.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "getSuggestedQuery.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "isInaccessible.kt" to arrayOf(
-                    "web.dom.Element",
-                ),
-                "Match.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                ),
-                "MatcherFunction.kt" to arrayOf(
-                    "web.dom.Element",
-                ),
-                "(logDOM|prettyDOM).kt" to arrayOf(
-                    "web.dom.Element",
-                    "web.html.HTMLDocument",
-                ),
-                "PrettyDOMOptions.kt" to arrayOf(
-                    "web.dom.Node",
-                ),
-                "waitForOptions.kt" to arrayOf(
-                    "web.html.HTMLElement",
-                    "web.mutation.MutationObserverInit",
-                ),
-                "(waitFor|waitForElementToBeRemoved).kt" to arrayOf(
-                    "js.promise.Promise",
-                ),
+        compilerOptions = unsafeJso {
+            lib = arrayOf(
+                "lib.esnext.d.ts",
+                "lib.dom.d.ts",
             )
-        )
+        }
     }
 }

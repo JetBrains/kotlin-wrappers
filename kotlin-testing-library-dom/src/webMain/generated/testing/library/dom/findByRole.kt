@@ -9,13 +9,11 @@ package testing.library.dom
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
-import js.promise.Promise
-import web.html.HTMLElement
 
 @JsName("findByRole")
-external fun <T : HTMLElement /* default is HTMLElement */> findByRoleAsync(
-    container: HTMLElement,
+external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByRoleAsync(
+    container: web.html.HTMLElement,
     role: ByRoleMatcher,
     options: ByRoleOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): Promise<T>
+): js.promise.Promise<T>

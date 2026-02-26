@@ -4,6 +4,4 @@
 
 package testing.library.dom
 
-import web.html.HTMLElement
-
-external fun getNodeText(node: HTMLElement): String
+external fun getNodeText(node: web.html.HTMLElement): String

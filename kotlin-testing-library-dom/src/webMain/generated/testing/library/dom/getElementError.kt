@@ -7,9 +7,8 @@ package testing.library.dom
 // unhandled import: Matcher from "./matches"
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: waitForOptions from "./wait-for"
-import web.html.HTMLElement
 
 external fun getElementError(
     message: String?,
-    container: HTMLElement,
+    container: web.html.HTMLElement,
 ): js.errors.JsError

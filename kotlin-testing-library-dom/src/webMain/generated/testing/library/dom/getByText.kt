@@ -9,10 +9,9 @@ package testing.library.dom
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
-import web.html.HTMLElement
 
-external fun <T : HTMLElement /* default is HTMLElement */> getByText(
-    container: HTMLElement,
+external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByText(
+    container: web.html.HTMLElement,
     id: Matcher,
     options: SelectorMatcherOptions = definedExternally,
 ): T

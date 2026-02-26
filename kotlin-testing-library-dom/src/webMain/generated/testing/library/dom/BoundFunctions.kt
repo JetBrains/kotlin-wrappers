@@ -3,393 +3,391 @@
 package testing.library.dom
 
 // unhandled import: * as queries from "./queries"
-import js.promise.Promise
-import web.html.HTMLElement
 
 external interface BoundFunctions {
     operator fun <P /*  : /* keyof Q */ */> get(key: P): BoundFunction<Any?>?
 
     operator fun <P /*  : /* keyof Q */ */> set(key: P, value: BoundFunction<Any?>?)
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByLabelText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByLabelText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByLabelText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByLabelText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByLabelText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByLabelText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByLabelText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByLabelText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByLabelText")
-    fun <T : HTMLElement /* default is HTMLElement */> findByLabelTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByLabelTextAsync(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByLabelText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByLabelText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByLabelText")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByLabelTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByLabelTextAsync(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByLabelText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByLabelText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByPlaceholderText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByPlaceholderText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByPlaceholderText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByPlaceholderText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByPlaceholderText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByPlaceholderText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByPlaceholderText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByPlaceholderText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByPlaceholderText")
-    fun <T : HTMLElement /* default is HTMLElement */> findByPlaceholderTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByPlaceholderTextAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByPlaceholderText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByPlaceholderText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByPlaceholderText")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByPlaceholderTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByPlaceholderTextAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByPlaceholderText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByPlaceholderText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByText")
-    fun <T : HTMLElement /* default is HTMLElement */> findByTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByTextAsync(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByText")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByTextAsync(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByText(
         id: Matcher,
         options: SelectorMatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByAltText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByAltText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByAltText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByAltText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByAltText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByAltText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByAltText(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByAltText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByAltText")
-    fun <T : HTMLElement /* default is HTMLElement */> findByAltTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByAltTextAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByAltText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByAltText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByAltText")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByAltTextAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByAltTextAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByAltText(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByAltText(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByTitle(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByTitle(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByTitle(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByTitle(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByTitle(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByTitle(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByTitle(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByTitle(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByTitle")
-    fun <T : HTMLElement /* default is HTMLElement */> findByTitleAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByTitleAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByTitle(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByTitle(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByTitle")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByTitleAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByTitleAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByTitle(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByTitle(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByDisplayValue(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByDisplayValue(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByDisplayValue(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByDisplayValue(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByDisplayValue(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByDisplayValue(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByDisplayValue(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByDisplayValue(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByDisplayValue")
-    fun <T : HTMLElement /* default is HTMLElement */> findByDisplayValueAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByDisplayValueAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByDisplayValue(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByDisplayValue(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByDisplayValue")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByDisplayValueAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByDisplayValueAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByDisplayValue(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByDisplayValue(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByRole(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByRole(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByRole(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByRole(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByRole(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByRole(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByRole(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByRole(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByRole")
-    fun <T : HTMLElement /* default is HTMLElement */> findByRoleAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByRoleAsync(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByRole(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByRole(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByRole")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByRoleAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByRoleAsync(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByRole(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByRole(
         role: ByRoleMatcher,
         options: ByRoleOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> getByTestId(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByTestId(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T
 
-    fun <T : HTMLElement /* default is HTMLElement */> getAllByTestId(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByTestId(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryByTestId(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByTestId(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): T?
 
-    fun <T : HTMLElement /* default is HTMLElement */> queryAllByTestId(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByTestId(
         id: Matcher,
         options: MatcherOptions = definedExternally,
     ): js.array.ReadonlyArray<T>
 
     @JsName("findByTestId")
-    fun <T : HTMLElement /* default is HTMLElement */> findByTestIdAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByTestIdAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findByTestId(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByTestId(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
     ): T
 
     @JsName("findAllByTestId")
-    fun <T : HTMLElement /* default is HTMLElement */> findAllByTestIdAsync(
+    fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByTestIdAsync(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,
-    ): Promise<js.array.ReadonlyArray<T>>
+    ): js.promise.Promise<js.array.ReadonlyArray<T>>
 
     @seskar.js.JsAsync
-    suspend fun <T : HTMLElement /* default is HTMLElement */> findAllByTestId(
+    suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByTestId(
         id: Matcher,
         options: MatcherOptions = definedExternally,
         waitForElementOptions: waitForOptions = definedExternally,

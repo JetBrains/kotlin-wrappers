@@ -2,30 +2,24 @@
 
 package testing.library.dom
 
-import web.dom.Document
-import web.dom.Element
-import web.dom.Node
-import web.events.Event
-import web.window.Window
-
 external interface FireFunction {
     operator fun invoke(
-        element: Document,
-        event: Event,
+        element: web.dom.Document,
+        event: web.events.Event,
     ): Boolean
 
     operator fun invoke(
-        element: Element,
-        event: Event,
+        element: web.dom.Element,
+        event: web.events.Event,
     ): Boolean
 
     operator fun invoke(
-        element: Window,
-        event: Event,
+        element: web.window.Window,
+        event: web.events.Event,
     ): Boolean
 
     operator fun invoke(
-        element: Node,
-        event: Event,
+        element: web.dom.Node,
+        event: web.events.Event,
     ): Boolean
 }

@@ -4,6 +4,4 @@
 
 package testing.library.dom
 
-import web.dom.Element
-
-external fun computeHeadingLevel(element: Element): Double?
+external fun computeHeadingLevel(element: web.dom.Element): Double?

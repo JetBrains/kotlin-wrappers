@@ -4,9 +4,7 @@
 
 package testing.library.dom
 
-import web.html.HTMLElement
-
 external fun logRoles(
-    container: HTMLElement,
+    container: web.html.HTMLElement,
     options: LogRolesOptions = definedExternally,
 ): String

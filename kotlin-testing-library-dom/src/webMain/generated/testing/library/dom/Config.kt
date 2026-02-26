@@ -2,9 +2,6 @@
 
 package testing.library.dom
 
-import js.promise.Promise
-import web.dom.Element
-
 external interface Config {
     var testIdAttribute: String
 
@@ -15,7 +12,7 @@ external interface Config {
     fun unstable_advanceTimersWrapper(cb: Function<Any?> /* (...args: unknown[]) => unknown */): Any?
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fun asyncWrapper(cb: Function<Any?> /* (...args: any[]) => any */): Promise<Any?>
+    fun asyncWrapper(cb: Function<Any?> /* (...args: any[]) => any */): js.promise.Promise<Any?>
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fun eventWrapper(cb: Function<Any?> /* (...args: any[]) => any */)
@@ -28,5 +25,5 @@ external interface Config {
     var defaultIgnore: String
     var showOriginalStackTrace: Boolean
     var throwSuggestions: Boolean
-    var getElementError: (message: String?, container: Element) -> js.errors.JsError
+    var getElementError: (message: String?, container: web.dom.Element) -> js.errors.JsError
 }
