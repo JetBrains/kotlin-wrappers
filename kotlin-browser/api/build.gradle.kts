@@ -40,13 +40,7 @@ val EXCLUDED_NAMES = setOf(
 
     "AsyncMapLike",
 
-    "PromiseReject",
-    "PromiseResolve",
-
     "VariadicTuple",
-
-    "Abortable",
-    "AbortableLike",
 
     "Ed25519Algorithm",
     "X25519Algorithm",
@@ -61,8 +55,7 @@ fun getApiItems(
         .substringBefore("\n")
         .trim()
 
-    if (pkg == "js.array"
-        || pkg == "js.atomic"
+    if (pkg == "js.atomic"
         || pkg == "js.core"
         || pkg == "js.function"
         || pkg.endsWith(".internal")
