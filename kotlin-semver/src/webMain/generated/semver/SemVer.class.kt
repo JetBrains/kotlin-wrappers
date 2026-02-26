@@ -4,8 +4,6 @@
 
 package semver
 
-import js.array.ReadonlyArray
-
 external class SemVer {
     constructor (version: String)
 
@@ -31,8 +29,8 @@ external class SemVer {
     var minor: Int
     var patch: Int
     var version: String
-    var build: ReadonlyArray<String>
-    var prerelease: ReadonlyArray<Any /* string | number */>
+    var build: js.array.ReadonlyArray<String>
+    var prerelease: js.array.ReadonlyArray<Any /* string | number */>
 
     /**
      * Compares two versions excluding build identifiers (the bit after `+` in the semantic version string).

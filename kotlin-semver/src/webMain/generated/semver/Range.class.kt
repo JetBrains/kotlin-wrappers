@@ -4,8 +4,6 @@
 
 package semver
 
-import js.array.ReadonlyArray
-
 external class Range {
     constructor (range: String)
 
@@ -29,9 +27,9 @@ external class Range {
 
     fun inspect(): String
 
-    var set: ReadonlyArray<ReadonlyArray<Comparator>>
+    var set: js.array.ReadonlyArray<js.array.ReadonlyArray<Comparator>>
 
-    fun parseRange(range: String): ReadonlyArray<Comparator>
+    fun parseRange(range: String): js.array.ReadonlyArray<Comparator>
 
     fun test(version: String): Boolean
 

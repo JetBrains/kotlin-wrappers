@@ -4,12 +4,10 @@
 
 package semver
 
-import js.array.ReadonlyArray
-
 /**
  * Returns an array of prerelease components, or null if none exist.
  */
-external fun prerelease(version: String): ReadonlyArray<Any /* string | number */>?
+external fun prerelease(version: String): js.array.ReadonlyArray<Any /* string | number */>?
 
 /**
  * Returns an array of prerelease components, or null if none exist.
@@ -17,7 +15,7 @@ external fun prerelease(version: String): ReadonlyArray<Any /* string | number *
 external fun prerelease(
     version: String,
     optionsOrLoose: Boolean = definedExternally,
-): ReadonlyArray<Any /* string | number */>?
+): js.array.ReadonlyArray<Any /* string | number */>?
 
 /**
  * Returns an array of prerelease components, or null if none exist.
@@ -25,12 +23,12 @@ external fun prerelease(
 external fun prerelease(
     version: String,
     optionsOrLoose: Options = definedExternally,
-): ReadonlyArray<Any /* string | number */>?
+): js.array.ReadonlyArray<Any /* string | number */>?
 
 /**
  * Returns an array of prerelease components, or null if none exist.
  */
-external fun prerelease(version: SemVer): ReadonlyArray<Any /* string | number */>?
+external fun prerelease(version: SemVer): js.array.ReadonlyArray<Any /* string | number */>?
 
 /**
  * Returns an array of prerelease components, or null if none exist.
@@ -38,7 +36,7 @@ external fun prerelease(version: SemVer): ReadonlyArray<Any /* string | number *
 external fun prerelease(
     version: SemVer,
     optionsOrLoose: Boolean = definedExternally,
-): ReadonlyArray<Any /* string | number */>?
+): js.array.ReadonlyArray<Any /* string | number */>?
 
 /**
  * Returns an array of prerelease components, or null if none exist.
@@ -46,4 +44,4 @@ external fun prerelease(
 external fun prerelease(
     version: SemVer,
     optionsOrLoose: Options = definedExternally,
-): ReadonlyArray<Any /* string | number */>?
+): js.array.ReadonlyArray<Any /* string | number */>?

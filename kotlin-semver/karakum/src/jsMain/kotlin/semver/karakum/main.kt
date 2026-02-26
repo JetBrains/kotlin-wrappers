@@ -39,11 +39,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^.*/([^/]+\\.kt)$" to "semver/$1",
             "semver/(Range|SemVer|Comparator)\\.kt" to "semver/$1.class.kt",
         )
-        importInjector = recordOf(
-            "^semver/(Range\\.class|SemVer\\.class|prerelease)\\.kt$" to arrayOf(
-                "js.array.ReadonlyArray"
-            )
-        )
         namespaceStrategy = recordOf(
             "^inc$" to NamespaceStrategy.`package`
         )
