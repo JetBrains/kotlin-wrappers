@@ -1,3 +1,7 @@
 package tanstack.router.core
 
-typealias UseNavigateResult = Invoker<NavigateOptions, Unit>
+import js.core.Void
+import js.promise.Promise
+
+// TODO: use `SuspendInvoker`?
+typealias UseNavigateResult = Invoker<NavigateOptions, Promise<Void>>
