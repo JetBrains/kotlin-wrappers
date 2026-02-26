@@ -93,24 +93,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             ".contract.kt" to arrayOf(
                 "kotlin.contracts.contract"
             ),
-            "FileWatcherCallback.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "LanguageService.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "LanguageServiceHost.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "ReadonlyUnderscoreEscapedMap.kt" to arrayOf(
-                "js.collections.ReadonlyMap"
-            ),
-            "SolutionBuilderHostBase.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "System.kt" to arrayOf(
-                "js.date.Date"
-            )
         )
         namespaceStrategy = recordOf(
             "ScriptSnapshot" to NamespaceStrategy.`object`,

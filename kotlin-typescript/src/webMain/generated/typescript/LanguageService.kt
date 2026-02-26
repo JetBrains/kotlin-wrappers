@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.promise.Promise
-
 sealed external interface LanguageService {
     /** This is used as a part of restarting the language service. */
     fun cleanupSemanticCache()
@@ -421,24 +419,24 @@ sealed external interface LanguageService {
     fun applyCodeActionCommand(
         action: CodeActionCommand,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): Promise<ApplyCodeActionCommandResult>
+    ): js.promise.Promise<ApplyCodeActionCommandResult>
 
     fun applyCodeActionCommand(
         action: js.array.ReadonlyArray<CodeActionCommand>,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
+    ): js.promise.Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
 
     /** @deprecated `fileName` will be ignored */
     fun applyCodeActionCommand(
         fileName: String,
         action: CodeActionCommand,
-    ): Promise<ApplyCodeActionCommandResult>
+    ): js.promise.Promise<ApplyCodeActionCommandResult>
 
     /** @deprecated `fileName` will be ignored */
     fun applyCodeActionCommand(
         fileName: String,
         action: js.array.ReadonlyArray<CodeActionCommand>,
-    ): Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
+    ): js.promise.Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
     /** @deprecated `fileName` will be ignored */
 
     /**

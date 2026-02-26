@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.date.Date
-
 sealed external interface System {
     var args: js.array.ReadonlyArray<String>
     var newLine: String
@@ -70,8 +68,8 @@ sealed external interface System {
         depth: Double = definedExternally,
     ): js.array.ReadonlyArray<String>
 
-    val getModifiedTime: ((path: String) -> Date?)?
-    val setModifiedTime: ((path: String, time: Date) -> Unit)?
+    val getModifiedTime: ((path: String) -> js.date.Date?)?
+    val setModifiedTime: ((path: String, time: js.date.Date) -> Unit)?
     val deleteFile: ((path: String) -> Unit)?
 
     /**

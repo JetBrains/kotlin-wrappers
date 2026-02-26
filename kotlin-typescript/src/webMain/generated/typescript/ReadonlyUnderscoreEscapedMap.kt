@@ -2,7 +2,5 @@
 
 package typescript
 
-import js.collections.ReadonlyMap
-
 /** @deprecated Use ReadonlyMap<__String, T> instead. */
-typealias ReadonlyUnderscoreEscapedMap<T> = ReadonlyMap<__String, T>
+typealias ReadonlyUnderscoreEscapedMap<T> = js.collections.ReadonlyMap<__String, T>

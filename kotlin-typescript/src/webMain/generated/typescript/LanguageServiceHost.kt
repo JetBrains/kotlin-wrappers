@@ -2,8 +2,6 @@
 
 package typescript
 
-import js.promise.Promise
-
 sealed external interface LanguageServiceHost :
     GetEffectiveTypeRootsHost,
     MinimalResolutionCacheHost {
@@ -102,7 +100,7 @@ sealed external interface LanguageServiceHost :
      */
     val getCustomTransformers: (() -> CustomTransformers?)?
     val isKnownTypesPackageName: ((name: String) -> Boolean)?
-    val installPackage: ((options: InstallPackageOptions) -> Promise<ApplyCodeActionCommandResult>)?
+    val installPackage: ((options: InstallPackageOptions) -> js.promise.Promise<ApplyCodeActionCommandResult>)?
     val writeFile: ((fileName: String, content: String) -> Unit)?
     val getParsedCommandLine: ((fileName: String) -> ParsedCommandLine?)?
     var jsDocParsingMode: JSDocParsingMode?
