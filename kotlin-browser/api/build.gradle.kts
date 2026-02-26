@@ -79,6 +79,7 @@ fun getApiItems(
         )
         .drop(1)
         .map { it.substringBefore("\n") }
+        .map { it.replace("/* class */ ", "") }
         .map { it.substringBefore(" ") }
         .map { it.substringBefore("<") }
         .map { it.substringBefore("(") }
