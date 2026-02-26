@@ -8,6 +8,9 @@ value class SuspendInvoker<O : Any, R>
 private constructor(
     private val function: (O) -> Promise<R>,
 ) {
+    suspend operator fun invoke(): R =
+        function(unsafeJso()).await()
+
     suspend operator fun invoke(
         block: O.() -> Unit,
     ): R =
