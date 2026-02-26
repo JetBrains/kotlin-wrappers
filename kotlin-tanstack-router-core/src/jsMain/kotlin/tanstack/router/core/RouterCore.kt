@@ -90,7 +90,7 @@ private constructor() {
      *
      * @link https://tanstack.com/router/latest/docs/framework/react/api/router/NavigateOptionsType
      */
-    // navigate: NavigateFn
+    val navigate: NavigateFn
     val latestLoadPromise: Promise<Void>?
     fun beforeLoad()
     // load: LoadFn
