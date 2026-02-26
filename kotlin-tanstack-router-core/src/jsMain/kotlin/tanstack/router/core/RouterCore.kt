@@ -93,7 +93,7 @@ private constructor() {
     val navigate: NavigateFn
     val latestLoadPromise: Promise<Void>?
     fun beforeLoad()
-    // load: LoadFn
+    val load: LoadFn
     // startViewTransition: (fn: () => Promise<void>) => void
     // updateMatch: UpdateMatchFn
     // getMatch: GetMatchFn
