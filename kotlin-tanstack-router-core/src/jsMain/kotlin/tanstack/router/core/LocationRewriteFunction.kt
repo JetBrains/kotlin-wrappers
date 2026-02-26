@@ -2,7 +2,8 @@ package tanstack.router.core
 
 import web.url.URL
 
-value class LocationRewriteFunction(
+value class LocationRewriteFunction
+private constructor(
     private val function: (LocationRewriteFunctionOptions) -> URL?,
 ) {
     /**
