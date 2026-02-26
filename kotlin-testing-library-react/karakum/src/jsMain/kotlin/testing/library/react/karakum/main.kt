@@ -5,6 +5,7 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
+import js.objects.unsafeJso
 import testing.library.react.karakum.inheritanceModifiers.modifyMethodInheritance
 import testing.library.react.karakum.injections.injectBoundFunction
 import testing.library.react.karakum.plugins.convertBaseRenderOptions
@@ -69,10 +70,11 @@ suspend fun main(args: ReadonlyArray<String>) {
                 ".+" to "testing.library.dom."
             ),
         )
-        importInjector = recordOf(
-            "RenderResult.kt" to arrayOf(
-                "web.dom.DocumentFragment"
+        compilerOptions = unsafeJso {
+            lib = arrayOf(
+                "lib.esnext.d.ts",
+                "lib.dom.d.ts",
             )
-        )
+        }
     }
 }

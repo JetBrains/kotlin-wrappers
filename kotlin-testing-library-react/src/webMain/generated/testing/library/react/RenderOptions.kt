@@ -8,7 +8,7 @@ import testing.library.dom.Queries
 // unhandled import: act as reactDeprecatedAct from "react-dom/test-utils"
 // unhandled import: act as reactAct from "react"
 
-external interface RenderOptions<Container : Any? /* RendererableContainer | HydrateableContainer */ /* default is HTMLElement */, BaseElement : Any? /* RendererableContainer | HydrateableContainer */ /* default is Container */> {
+external interface RenderOptions<Container : Any? /* RendererableContainer | HydrateableContainer */ /* default is web.html.HTMLElement */, BaseElement : Any? /* RendererableContainer | HydrateableContainer */ /* default is Container */> {
     /**
      * By default, React Testing Library will create a div and append that div to the document.body. Your React component will be rendered in the created div. If you provide your own HTMLElement container via this option,
      *  it will not be appended to the document.body automatically.

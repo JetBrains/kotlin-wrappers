@@ -12,7 +12,7 @@ package testing.library.react
  * Allows you to render a hook within a test React component without having to
  * create that component yourself.
  */
-external fun <Result, Props, Container : Any? /* RendererableContainer | HydrateableContainer */ /* default is HTMLElement */, BaseElement : Any? /* RendererableContainer | HydrateableContainer */ /* default is Container */> renderHook(
+external fun <Result, Props, Container : Any? /* RendererableContainer | HydrateableContainer */ /* default is web.html.HTMLElement */, BaseElement : Any? /* RendererableContainer | HydrateableContainer */ /* default is Container */> renderHook(
     render: (initialProps: Props) -> Result,
     options: RenderHookOptions<Props, Container, BaseElement>? = definedExternally,
 ): RenderHookResult<Result, Props>

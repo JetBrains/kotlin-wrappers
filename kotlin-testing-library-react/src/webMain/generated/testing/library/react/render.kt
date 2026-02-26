@@ -11,7 +11,7 @@ package testing.library.react
 /**
  * Render into a container which is appended to document.body. It should be used with cleanup.
  */
-external fun <Container : Any? /* RendererableContainer | HydrateableContainer */ /* default is HTMLElement */, BaseElement : Any? /* RendererableContainer | HydrateableContainer */ /* default is Container */> render(
+external fun <Container : Any? /* RendererableContainer | HydrateableContainer */ /* default is web.html.HTMLElement */, BaseElement : Any? /* RendererableContainer | HydrateableContainer */ /* default is Container */> render(
     ui: react.ReactNode,
     options: RenderOptions<Container, BaseElement>,
 ): RenderResult<Container, BaseElement>
