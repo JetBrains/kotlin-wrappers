@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Removes the directory identified by `path`.
  *
@@ -20,4 +18,4 @@ import js.promise.Promise
 external fun rmdirAsync(
     path: PathLike,
     options: RmDirOptions = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

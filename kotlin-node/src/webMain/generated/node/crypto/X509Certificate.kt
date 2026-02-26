@@ -4,7 +4,6 @@
 
 package node.crypto
 
-import js.date.Date
 import node.buffer.NonSharedBuffer
 import node.tls.PeerCertificate
 
@@ -165,7 +164,7 @@ external class X509Certificate {
      * The date/time from which this certificate is valid, encapsulated in a `Date` object.
      * @since v22.10.0
      */
-    val validFromDate: Date
+    val validFromDate: js.date.Date
 
     /**
      * The date/time until which this certificate is considered valid.
@@ -177,7 +176,7 @@ external class X509Certificate {
      * The date/time until which this certificate is valid, encapsulated in a `Date` object.
      * @since v22.10.0
      */
-    val validToDate: Date
+    val validToDate: js.date.Date
 
     /**
      * Checks whether the certificate matches the given email address.

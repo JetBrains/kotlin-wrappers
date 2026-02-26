@@ -4,8 +4,6 @@
 
 package node.test
 
-import js.promise.Promise
-
 /**
  * The `test()` function is the value imported from the `test` module. Each
  * invocation of this function results in reporting the test to the `TestsStream`.
@@ -49,23 +47,23 @@ import js.promise.Promise
 external fun testAsync(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("test")
 external fun testAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("test")
 external fun testAsync(
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("test")
-external fun testAsync(fn: TestFn = definedExternally): Promise<js.core.Void>
+external fun testAsync(fn: TestFn = definedExternally): js.promise.Promise<js.core.Void>
 
 @JsName("test")
-external fun testAsync(): Promise<js.core.Void>
+external fun testAsync(): js.promise.Promise<js.core.Void>

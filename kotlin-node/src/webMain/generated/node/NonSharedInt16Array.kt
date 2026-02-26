@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.Int16Array
-
-typealias NonSharedInt16Array = Int16Array<ArrayBuffer>
+typealias NonSharedInt16Array = js.typedarrays.Int16Array<js.buffer.ArrayBuffer>

@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Creates a new link from the `existingPath` to the `newPath`. See the POSIX [`link(2)`](http://man7.org/linux/man-pages/man2/link.2.html) documentation for more detail.
  * @since v10.0.0
@@ -15,4 +13,4 @@ import js.promise.Promise
 external fun linkAsync(
     existingPath: PathLike,
     newPath: PathLike,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

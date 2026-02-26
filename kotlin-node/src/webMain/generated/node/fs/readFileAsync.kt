@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
 import node.buffer.NonSharedBuffer
 
 /**
@@ -67,7 +66,7 @@ import node.buffer.NonSharedBuffer
 external fun readFileAsync(
     path: PathLike,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): Promise<NonSharedBuffer>
+): js.promise.Promise<NonSharedBuffer>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -129,7 +128,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: FileHandle,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): Promise<NonSharedBuffer>
+): js.promise.Promise<NonSharedBuffer>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -142,7 +141,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: PathLike,
     options: ReadFileStringAsyncOptions,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -155,7 +154,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: PathLike,
     options: node.buffer.BufferEncoding,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -168,7 +167,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: FileHandle,
     options: ReadFileStringAsyncOptions,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -181,7 +180,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: FileHandle,
     options: node.buffer.BufferEncoding,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -191,7 +190,7 @@ external fun readFileAsync(
  * If a flag is not provided, it defaults to `'r'`.
  */
 @JsName("readFile")
-external fun readFileAsync(path: PathLike): Promise<Any /* string | NonSharedBuffer */>
+external fun readFileAsync(path: PathLike): js.promise.Promise<Any /* string | NonSharedBuffer */>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -204,7 +203,7 @@ external fun readFileAsync(path: PathLike): Promise<Any /* string | NonSharedBuf
 external fun readFileAsync(
     path: PathLike,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Promise<Any /* string | NonSharedBuffer */>
+): js.promise.Promise<Any /* string | NonSharedBuffer */>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -217,7 +216,7 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Any /* string | NonSharedBuffer */>
+): js.promise.Promise<Any /* string | NonSharedBuffer */>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -227,7 +226,7 @@ external fun readFileAsync(
  * If a flag is not provided, it defaults to `'r'`.
  */
 @JsName("readFile")
-external fun readFileAsync(path: FileHandle): Promise<Any /* string | NonSharedBuffer */>
+external fun readFileAsync(path: FileHandle): js.promise.Promise<Any /* string | NonSharedBuffer */>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -240,7 +239,7 @@ external fun readFileAsync(path: FileHandle): Promise<Any /* string | NonSharedB
 external fun readFileAsync(
     path: FileHandle,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Promise<Any /* string | NonSharedBuffer */>
+): js.promise.Promise<Any /* string | NonSharedBuffer */>
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -253,4 +252,4 @@ external fun readFileAsync(
 external fun readFileAsync(
     path: FileHandle,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<Any /* string | NonSharedBuffer */>
+): js.promise.Promise<Any /* string | NonSharedBuffer */>

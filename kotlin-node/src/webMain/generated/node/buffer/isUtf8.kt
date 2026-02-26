@@ -4,8 +4,6 @@
 
 package node.buffer
 
-import js.buffer.ArrayBuffer
-
 /**
  * This function returns `true` if `input` contains only valid UTF-8-encoded data,
  * including the case in which `input` is empty.
@@ -14,7 +12,7 @@ import js.buffer.ArrayBuffer
  * @since v19.4.0, v18.14.0
  * @param input The input to validate.
  */
-external fun isUtf8(input: ArrayBuffer): Boolean
+external fun isUtf8(input: js.buffer.ArrayBuffer): Boolean
 
 /**
  * This function returns `true` if `input` contains only valid UTF-8-encoded data,

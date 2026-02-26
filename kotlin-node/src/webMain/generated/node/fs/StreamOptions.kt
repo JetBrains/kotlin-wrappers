@@ -2,8 +2,6 @@
 
 package node.fs
 
-import web.abort.AbortSignal
-
 @kotlinx.js.JsPlainObject
 sealed external interface StreamOptions {
     var flags: String?
@@ -13,6 +11,6 @@ sealed external interface StreamOptions {
     var autoClose: Boolean?
     var emitClose: Boolean?
     var start: Double?
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
     var highWaterMark: Double?
 }

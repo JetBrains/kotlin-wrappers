@@ -4,8 +4,6 @@
 
 package node.stream.consumers
 
-import js.iterable.AsyncIterable
-import js.promise.Promise
 import web.blob.Blob as NodeBlob
 import web.streams.ReadableStream as WebReadableStream
 
@@ -14,18 +12,18 @@ import web.streams.ReadableStream as WebReadableStream
  * @returns Fulfills with a `Blob` containing the full contents of the stream.
  */
 @JsName("blob")
-external fun blobAsync(stream: WebReadableStream<*>): Promise<NodeBlob>
+external fun blobAsync(stream: WebReadableStream<*>): js.promise.Promise<NodeBlob>
 
 /**
  * @since v16.7.0
  * @returns Fulfills with a `Blob` containing the full contents of the stream.
  */
 @JsName("blob")
-external fun blobAsync(stream: node.ReadableStream): Promise<NodeBlob>
+external fun blobAsync(stream: node.ReadableStream): js.promise.Promise<NodeBlob>
 
 /**
  * @since v16.7.0
  * @returns Fulfills with a `Blob` containing the full contents of the stream.
  */
 @JsName("blob")
-external fun blobAsync(stream: AsyncIterable<Any?>): Promise<NodeBlob>
+external fun blobAsync(stream: js.iterable.AsyncIterable<Any?>): js.promise.Promise<NodeBlob>

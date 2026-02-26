@@ -4,8 +4,6 @@
 
 package node.util
 
-import web.abort.AbortSignal
-
 /**
  * Marks the given `AbortSignal` as transferable so that it can be used with`structuredClone()` and `postMessage()`.
  *
@@ -18,4 +16,4 @@ import web.abort.AbortSignal
  * @param signal The AbortSignal
  * @returns The same AbortSignal
  */
-external fun transferableAbortSignal(signal: AbortSignal): AbortSignal
+external fun transferableAbortSignal(signal: web.abort.AbortSignal): web.abort.AbortSignal

@@ -4,8 +4,6 @@
 
 package node.crypto
 
-import js.buffer.ArrayBuffer
-
 /**
  * Generates a pseudorandom prime of `size` bits.
  *
@@ -33,7 +31,7 @@ import js.buffer.ArrayBuffer
  * @since v15.8.0
  * @param size The size (in bits) of the prime to generate.
  */
-external fun generatePrimeSync(size: Number): ArrayBuffer
+external fun generatePrimeSync(size: Number): js.buffer.ArrayBuffer
 
 external fun generatePrimeSync(
     size: Number,
@@ -43,6 +41,6 @@ external fun generatePrimeSync(
 external fun generatePrimeSync(
     size: Number,
     options: GeneratePrimeOptionsArrayBuffer,
-): ArrayBuffer
+): js.buffer.ArrayBuffer
 
 external fun generatePrimeSync(size: Number, options: GeneratePrimeOptions): Any // ArrayBuffer | bigint

@@ -4,7 +4,6 @@
 
 package node.readline
 
-import js.promise.Promise
 import web.abort.Abortable
 
 /**
@@ -50,7 +49,7 @@ external class Interface : _Interface {
      * @return A promise that is fulfilled with the user's input in response to the `query`.
      */
     @JsName("question")
-    fun questionAsync(query: String): Promise<String>
+    fun questionAsync(query: String): js.promise.Promise<String>
 
     @seskar.js.JsAsync
     suspend fun question(query: String): String
@@ -59,7 +58,7 @@ external class Interface : _Interface {
     fun questionAsync(
         query: String,
         options: Abortable,
-    ): Promise<String>
+    ): js.promise.Promise<String>
 
     @seskar.js.JsAsync
     suspend fun question(

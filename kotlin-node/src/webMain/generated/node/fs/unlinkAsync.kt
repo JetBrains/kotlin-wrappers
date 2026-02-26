@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * If `path` refers to a symbolic link, then the link is removed without affecting
  * the file or directory to which that link refers. If the `path` refers to a file
@@ -14,4 +12,4 @@ import js.promise.Promise
  * @return Fulfills with `undefined` upon success.
  */
 @JsName("unlink")
-external fun unlinkAsync(path: PathLike): Promise<js.core.Void>
+external fun unlinkAsync(path: PathLike): js.promise.Promise<js.core.Void>

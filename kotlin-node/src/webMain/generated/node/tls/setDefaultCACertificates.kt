@@ -4,8 +4,6 @@
 
 package node.tls
 
-import js.array.ReadonlyArray
-
 /**
  * Sets the default CA certificates used by Node.js TLS clients. If the provided
  * certificates are parsed successfully, they will become the default CA
@@ -37,4 +35,4 @@ import js.array.ReadonlyArray
  * @since v24.5.0
  * @param certs An array of CA certificates in PEM format.
  */
-external fun setDefaultCACertificates(certs: ReadonlyArray<Any /* string | NodeJS.ArrayBufferView */>)
+external fun setDefaultCACertificates(certs: js.array.ReadonlyArray<Any /* string | NodeJS.ArrayBufferView */>)

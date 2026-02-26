@@ -2,6 +2,4 @@
 
 package node.process
 
-import js.promise.Promise
-
-typealias MultipleResolveListener = (type: MultipleResolveType, promise: Promise<Any?>, value: Any?) -> Unit
+typealias MultipleResolveListener = (type: MultipleResolveType, promise: js.promise.Promise<Any?>, value: Any?) -> Unit

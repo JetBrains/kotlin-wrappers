@@ -2,8 +2,6 @@
 
 package node.v8
 
-import js.promise.Promise
-
 /**
  * @since v24.9.0
  */
@@ -14,7 +12,7 @@ sealed external interface HeapProfileHandle {
      * @since v24.9.0
      */
     @JsName("stop")
-    fun stopAsync(): Promise<String>
+    fun stopAsync(): js.promise.Promise<String>
 
     @seskar.js.JsAsync
     suspend fun stop(): String

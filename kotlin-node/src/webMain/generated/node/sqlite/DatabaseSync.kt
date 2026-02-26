@@ -4,8 +4,6 @@
 
 package node.sqlite
 
-import js.disposable.Disposable
-import js.typedarrays.Uint8Array
 import node.fs.PathLike
 
 /**
@@ -13,7 +11,7 @@ import node.fs.PathLike
  * exposed by this class execute synchronously.
  * @since v22.5.0
  */
-external class DatabaseSync : Disposable {
+external class DatabaseSync : js.disposable.Disposable {
     /**
      * Constructs a new `DatabaseSync` instance.
      * @param path The path of the database.
@@ -255,7 +253,7 @@ external class DatabaseSync : Disposable {
      * @since v22.12.0
      */
     fun applyChangeset(
-        changeset: Uint8Array<*>,
+        changeset: js.typedarrays.Uint8Array<*>,
         options: ApplyChangesetOptions = definedExternally,
     ): Boolean
 }

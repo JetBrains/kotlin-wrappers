@@ -2,7 +2,6 @@
 
 package node.stream.consumers
 
-import js.iterable.AsyncIterable
 import node.buffer.NonSharedBuffer
 import web.streams.ReadableStream as WebReadableStream
 
@@ -21,4 +20,4 @@ external suspend fun buffer(stream: node.ReadableStream): NonSharedBuffer
  * @returns Fulfills with a `Buffer` containing the full contents of the stream.
  */
 @seskar.js.JsAsync
-external suspend fun buffer(stream: AsyncIterable<Any?>): NonSharedBuffer
+external suspend fun buffer(stream: js.iterable.AsyncIterable<Any?>): NonSharedBuffer

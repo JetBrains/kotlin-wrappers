@@ -2,9 +2,7 @@
 
 package node.childProcess
 
-import js.promise.Promise
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface PromiseWithChild<T> : Promise<T> {
+sealed external interface PromiseWithChild<T> : js.promise.Promise<T> {
     var child: ChildProcess
 }

@@ -2,8 +2,6 @@
 
 package node.test
 
-import web.abort.AbortSignal
-
 sealed external interface RunOptions {
     /**
      * If a number is provided, then that many test processes would run in parallel, where each process corresponds to one test file.
@@ -93,7 +91,7 @@ sealed external interface RunOptions {
     /**
      * Allows aborting an in-progress test execution.
      */
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
 
     /**
      * If provided, only run tests whose name matches the provided pattern.

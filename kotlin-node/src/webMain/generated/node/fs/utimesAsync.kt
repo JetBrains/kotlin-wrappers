@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Change the file system timestamps of the object referenced by `path`.
  *
@@ -22,4 +20,4 @@ external fun utimesAsync(
     path: PathLike,
     atime: TimeLike,
     mtime: TimeLike,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

@@ -2,6 +2,4 @@
 
 package node.test.reporters
 
-import js.generator.AsyncGenerator
-
-typealias TestEventGenerator = AsyncGenerator<TestEvent, js.core.Void, *>
+typealias TestEventGenerator = js.generator.AsyncGenerator<TestEvent, js.core.Void, *>

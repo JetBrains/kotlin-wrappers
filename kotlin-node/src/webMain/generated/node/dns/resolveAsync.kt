@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve a host name (e.g. `'nodejs.org'`) into an array
  * of the resource records. When successful, the `Promise` is resolved with an
@@ -21,64 +19,64 @@ import js.promise.Promise
  * @param [rrtype='A'] Resource record type.
  */
 @JsName("resolve")
-external fun resolveAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
+external fun resolveAsync(hostname: String): js.promise.Promise<js.array.ReadonlyArray<String>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.StringRecord,
-): Promise<js.array.ReadonlyArray<String>>
+): js.promise.Promise<js.array.ReadonlyArray<String>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.ANY,
-): Promise<js.array.ReadonlyArray<AnyRecord>>
+): js.promise.Promise<js.array.ReadonlyArray<AnyRecord>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.CAA,
-): Promise<js.array.ReadonlyArray<CaaRecord>>
+): js.promise.Promise<js.array.ReadonlyArray<CaaRecord>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.MX,
-): Promise<js.array.ReadonlyArray<MxRecord>>
+): js.promise.Promise<js.array.ReadonlyArray<MxRecord>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.NAPTR,
-): Promise<js.array.ReadonlyArray<NaptrRecord>>
+): js.promise.Promise<js.array.ReadonlyArray<NaptrRecord>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.SOA,
-): Promise<SoaRecord>
+): js.promise.Promise<SoaRecord>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.SRV,
-): Promise<js.array.ReadonlyArray<SrvRecord>>
+): js.promise.Promise<js.array.ReadonlyArray<SrvRecord>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.TLSA,
-): Promise<js.array.ReadonlyArray<TlsaRecord>>
+): js.promise.Promise<js.array.ReadonlyArray<TlsaRecord>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.TXT,
-): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
+): js.promise.Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
     rrtype: String,
-): Promise<Any /* string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */>
+): js.promise.Promise<Any /* string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */>

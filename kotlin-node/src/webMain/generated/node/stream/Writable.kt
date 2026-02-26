@@ -5,8 +5,6 @@
 
 package node.stream
 
-import js.typedarrays.Uint8Array
-
 /**
  * @since v0.9.4
  */
@@ -355,7 +353,7 @@ open external class Writable :
     override var writable: Boolean
 
     override fun write(
-        buffer: Uint8Array<*>,
+        buffer: js.typedarrays.Uint8Array<*>,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
@@ -369,7 +367,7 @@ open external class Writable :
 
     override fun end(data: String, cb: () -> Unit) // this
 
-    override fun end(data: Uint8Array<*>, cb: () -> Unit) // this
+    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) // this
 
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) // this
 

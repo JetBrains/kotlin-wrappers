@@ -4,8 +4,6 @@
 
 package node.diagnosticsChannel
 
-import js.promise.Promise
-
 /**
  * The class `TracingChannel` is a collection of `TracingChannel Channels` which
  * together express a single traceable action. It is used to formalize and
@@ -157,15 +155,15 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      */
     @JsName("tracePromise")
     fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> tracePromiseAsync(
-        fn: Function<Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
+        fn: Function<js.promise.Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
         vararg args: Any?, // Args
-    ): Promise<Result>
+    ): js.promise.Promise<Result>
 
     @seskar.js.JsAsync
     suspend fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> tracePromise(
-        fn: Function<Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
+        fn: Function<js.promise.Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
         vararg args: Any?, // Args

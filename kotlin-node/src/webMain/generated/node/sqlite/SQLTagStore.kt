@@ -2,8 +2,6 @@
 
 package node.sqlite
 
-import js.string.TemplateStringsArray
-
 /**
  * This class represents a single LRU (Least Recently Used) cache for storing
  * prepared statements.
@@ -25,7 +23,7 @@ sealed external interface SQLTagStore {
      * @since v24.9.0
      */
     fun all(
-        stringElements: TemplateStringsArray,
+        stringElements: js.string.TemplateStringsArray,
         vararg boundParameters: SQLInputValue,
     ): js.array.ReadonlyArray<js.objects.ReadonlyRecord<String, SQLOutputValue>>
 
@@ -34,7 +32,7 @@ sealed external interface SQLTagStore {
      * @since v24.9.0
      */
     fun get(
-        stringElements: TemplateStringsArray,
+        stringElements: js.string.TemplateStringsArray,
         vararg boundParameters: SQLInputValue,
     ): js.objects.ReadonlyRecord<String, SQLOutputValue>?
 
@@ -43,7 +41,7 @@ sealed external interface SQLTagStore {
      * @since v24.9.0
      */
     fun iterate(
-        stringElements: TemplateStringsArray,
+        stringElements: js.string.TemplateStringsArray,
         vararg boundParameters: SQLInputValue,
     ): js.iterable.JsIterator<js.objects.ReadonlyRecord<String, SQLOutputValue>>
 
@@ -52,7 +50,7 @@ sealed external interface SQLTagStore {
      * @since v24.9.0
      */
     fun run(
-        stringElements: TemplateStringsArray,
+        stringElements: js.string.TemplateStringsArray,
         vararg boundParameters: SQLInputValue,
     ): StatementResultingChanges
 

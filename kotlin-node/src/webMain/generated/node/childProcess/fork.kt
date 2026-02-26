@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
 import web.url.URL
 
 /**
@@ -117,13 +116,13 @@ external fun fork(
 
 external fun fork(
     modulePath: String,
-    args: ReadonlyArray<String> = definedExternally,
+    args: js.array.ReadonlyArray<String> = definedExternally,
     options: ForkOptions = definedExternally,
 ): ChildProcess
 
 external fun fork(
     modulePath: URL,
-    args: ReadonlyArray<String> = definedExternally,
+    args: js.array.ReadonlyArray<String> = definedExternally,
     options: ForkOptions = definedExternally,
 ): ChildProcess
 

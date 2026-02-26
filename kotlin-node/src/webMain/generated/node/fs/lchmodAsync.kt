@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Changes the permissions on a symbolic link.
  *
@@ -17,4 +15,4 @@ import js.promise.Promise
 external fun lchmodAsync(
     path: PathLike,
     mode: Mode,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

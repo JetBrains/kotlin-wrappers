@@ -4,8 +4,6 @@
 
 package node.crypto
 
-import js.buffer.ArrayBuffer
-
 /**
  * Creates a `DiffieHellman` key exchange object using the supplied `prime` and an
  * optional specific `generator`.
@@ -27,20 +25,20 @@ external fun createDiffieHellman(
     generator: Number = definedExternally,
 ): DiffieHellman
 
-external fun createDiffieHellman(prime: ArrayBuffer): DiffieHellman
+external fun createDiffieHellman(prime: js.buffer.ArrayBuffer): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: ArrayBuffer,
+    prime: js.buffer.ArrayBuffer,
     generator: Double = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: ArrayBuffer,
-    generator: ArrayBuffer = definedExternally,
+    prime: js.buffer.ArrayBuffer,
+    generator: js.buffer.ArrayBuffer = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: ArrayBuffer,
+    prime: js.buffer.ArrayBuffer,
     generator: js.buffer.ArrayBufferView<*> = definedExternally,
 ): DiffieHellman
 
@@ -53,7 +51,7 @@ external fun createDiffieHellman(
 
 external fun createDiffieHellman(
     prime: js.buffer.ArrayBufferView<*>,
-    generator: ArrayBuffer = definedExternally,
+    generator: js.buffer.ArrayBuffer = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(
@@ -62,7 +60,7 @@ external fun createDiffieHellman(
 ): DiffieHellman
 
 external fun createDiffieHellman(
-    prime: ArrayBuffer,
+    prime: js.buffer.ArrayBuffer,
     generator: String,
     generatorEncoding: BinaryToTextEncoding,
 ): DiffieHellman
@@ -87,7 +85,7 @@ external fun createDiffieHellman(
 external fun createDiffieHellman(
     prime: String,
     primeEncoding: BinaryToTextEncoding,
-    generator: ArrayBuffer = definedExternally,
+    generator: js.buffer.ArrayBuffer = definedExternally,
 ): DiffieHellman
 
 external fun createDiffieHellman(

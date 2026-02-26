@@ -4,9 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-import js.typedarrays.Uint8Array
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -25,7 +22,7 @@ import js.typedarrays.Uint8Array
 external fun appendFileAsync(
     path: PathLike,
     data: String,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -46,7 +43,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -67,7 +64,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -86,8 +83,8 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
-    data: Uint8Array<*>,
-): Promise<js.core.Void>
+    data: js.typedarrays.Uint8Array<*>,
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -106,9 +103,9 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -127,9 +124,9 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -149,7 +146,7 @@ external fun appendFileAsync(
 external fun appendFileAsync(
     path: FileHandle,
     data: String,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -170,7 +167,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -191,7 +188,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -210,8 +207,8 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
-    data: Uint8Array<*>,
-): Promise<js.core.Void>
+    data: js.typedarrays.Uint8Array<*>,
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -230,9 +227,9 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -251,6 +248,6 @@ external fun appendFileAsync(
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

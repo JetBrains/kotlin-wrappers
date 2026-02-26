@@ -2,8 +2,6 @@
 
 package node.test
 
-import web.abort.AbortSignal
-
 /**
  * An instance of `SuiteContext` is passed to each suite function in order to
  * interact with the test runner. However, the `SuiteContext` constructor is not
@@ -28,5 +26,5 @@ sealed external interface SuiteContext {
      * Can be used to abort test subtasks when the test has been aborted.
      * @since v18.7.0, v16.17.0
      */
-    val signal: AbortSignal
+    val signal: web.abort.AbortSignal
 }

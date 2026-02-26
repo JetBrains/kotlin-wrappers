@@ -4,7 +4,6 @@
 
 package node.v8
 
-import js.buffer.ArrayBuffer
 import node.buffer.NonSharedBuffer
 
 /**
@@ -39,7 +38,7 @@ open external class Serializer {
      */
     fun transferArrayBuffer(
         id: Number,
-        arrayBuffer: ArrayBuffer,
+        arrayBuffer: js.buffer.ArrayBuffer,
     )
 
     /**

@@ -5,8 +5,6 @@
 
 package node.test.snapshot
 
-import js.array.ReadonlyArray
-
 /**
  * This function is used to customize the default serialization mechanism used by the test runner.
  *
@@ -19,4 +17,4 @@ import js.array.ReadonlyArray
  * @since v22.3.0
  * @param serializers An array of synchronous functions used as the default serializers for snapshot tests.
  */
-external fun setDefaultSnapshotSerializers(serializers: ReadonlyArray<(value: Any?) -> Any?>)
+external fun setDefaultSnapshotSerializers(serializers: js.array.ReadonlyArray<(value: Any?) -> Any?>)

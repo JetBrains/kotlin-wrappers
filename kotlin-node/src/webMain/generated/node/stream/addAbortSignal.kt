@@ -5,8 +5,6 @@
 
 package node.stream
 
-import web.abort.AbortSignal
-
 /**
  * A stream to attach a signal to.
  *
@@ -87,6 +85,6 @@ import web.abort.AbortSignal
  * @param stream A stream to attach a signal to.
  */
 external fun <T : Stream> addAbortSignal(
-    signal: AbortSignal,
+    signal: web.abort.AbortSignal,
     stream: T,
 ): T

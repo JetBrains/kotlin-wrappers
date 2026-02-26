@@ -2,7 +2,6 @@
 
 package node
 
-import js.typedarrays.Uint8Array
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -32,7 +31,7 @@ external interface ReadableStream : EventEmitter {
     )
 
     fun unshift(
-        chunk: Uint8Array<*>,
+        chunk: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding = definedExternally,
     )
 

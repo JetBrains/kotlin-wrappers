@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.typedarrays.Uint8Array
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -121,7 +119,7 @@ external fun appendFile(
  */
 external fun appendFile(
     path: PathOrFileDescriptor,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: WriteFileOptions,
     callback: NoParamCallback,
 )
@@ -146,6 +144,6 @@ external fun appendFile(
  */
 external fun appendFile(
     file: PathOrFileDescriptor,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     callback: NoParamCallback,
 )

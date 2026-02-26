@@ -2,8 +2,6 @@
 
 package node.stream
 
-import web.abort.AbortSignal
-
 sealed external interface ArrayOptions {
     /**
      * The maximum concurrent invocations of `fn` to call on the stream at once.
@@ -12,5 +10,5 @@ sealed external interface ArrayOptions {
     var concurrency: Double?
 
     /** Allows destroying the stream if the signal is aborted. */
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
 }

@@ -2,8 +2,6 @@
 
 package node.fs
 
-import js.date.Date
-
 sealed external interface StatsBase<T> {
     fun isFile(): Boolean
 
@@ -33,8 +31,8 @@ sealed external interface StatsBase<T> {
     var mtimeMs: T
     var ctimeMs: T
     var birthtimeMs: T
-    var atime: Date
-    var mtime: Date
-    var ctime: Date
-    var birthtime: Date
+    var atime: js.date.Date
+    var mtime: js.date.Date
+    var ctime: js.date.Date
+    var birthtime: js.date.Date
 }

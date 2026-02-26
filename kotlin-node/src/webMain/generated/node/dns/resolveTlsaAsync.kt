@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve certificate associations (`TLSA` records) for
  * the `hostname`. On success, the `Promise` is resolved with an array of objectsAdd commentMore actions
@@ -27,4 +25,4 @@ import js.promise.Promise
  * @since v23.9.0, v22.15.0
  */
 @JsName("resolveTlsa")
-external fun resolveTlsaAsync(hostname: String): Promise<js.array.ReadonlyArray<TlsaRecord>>
+external fun resolveTlsaAsync(hostname: String): js.promise.Promise<js.array.ReadonlyArray<TlsaRecord>>

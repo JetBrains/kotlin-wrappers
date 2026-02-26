@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.array.ReadonlyArray
-
 /**
  * For detailed information, see the documentation of the asynchronous version of
  * this API: {@link readv}.
@@ -15,6 +13,6 @@ import js.array.ReadonlyArray
  */
 external fun readvSync(
     fd: Number,
-    buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
+    buffers: js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>>,
     position: Number = definedExternally,
 ): Double

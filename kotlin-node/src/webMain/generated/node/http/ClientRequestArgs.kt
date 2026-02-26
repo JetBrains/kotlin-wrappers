@@ -4,7 +4,6 @@ package node.http
 
 import node.dns.LookupOptions
 import node.net.LookupFunction
-import web.abort.AbortSignal
 
 sealed external interface ClientRequestArgs : LookupOptions {
     var _defaultAgent: Agent?
@@ -39,7 +38,7 @@ sealed external interface ClientRequestArgs : LookupOptions {
     var protocol: String?
     var setDefaultHeaders: Boolean?
     var setHost: Boolean?
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
     var socketPath: String?
     var timeout: Double?
     var uniqueHeaders: js.array.ReadonlyArray<Any /* string | string[] */>?

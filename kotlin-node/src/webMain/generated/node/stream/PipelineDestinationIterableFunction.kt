@@ -2,6 +2,4 @@
 
 package node.stream
 
-import js.iterable.AsyncIterable
-
-typealias PipelineDestinationIterableFunction<T> = (source: AsyncIterable<T>) -> AsyncIterable<Any?>
+typealias PipelineDestinationIterableFunction<T> = (source: js.iterable.AsyncIterable<T>) -> js.iterable.AsyncIterable<Any?>

@@ -4,8 +4,6 @@
 
 package node.util
 
-import js.promise.Promise
-
 /**
  * Takes an `async` function (or a function that returns a `Promise`) and returns a
  * function following the error-first callback style, i.e. taking
@@ -58,50 +56,52 @@ import js.promise.Promise
  * @param fn An `async` function
  * @return a callback style function
  */
-external fun callbackify(fn: () -> Promise<js.core.Void>): (callback: (err: node.ErrnoException) -> Unit) -> Unit
+external fun callbackify(
+    fn: () -> js.promise.Promise<js.core.Void>,
+): (callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <TResult> callbackify(
-    fn: () -> Promise<TResult>,
+    fn: () -> js.promise.Promise<TResult>,
 ): (callback: (err: node.ErrnoException, result: TResult) -> Unit) -> Unit
 
 external fun <T1> callbackify(
-    fn: (arg1: T1) -> Promise<js.core.Void>,
+    fn: (arg1: T1) -> js.promise.Promise<js.core.Void>,
 ): (arg1: T1, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, TResult> callbackify(
-    fn: (arg1: T1) -> Promise<TResult>,
+    fn: (arg1: T1) -> js.promise.Promise<TResult>,
 ): (arg1: T1, callback: (err: node.ErrnoException, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2> callbackify(
-    fn: (arg1: T1, arg2: T2) -> Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2) -> js.promise.Promise<js.core.Void>,
 ): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, TResult> callbackify(
-    fn: (arg1: T1, arg2: T2) -> Promise<TResult>,
+    fn: (arg1: T1, arg2: T2) -> js.promise.Promise<TResult>,
 ): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2, T3> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3) -> Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<js.core.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, TResult> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3) -> Promise<TResult>,
+    fn: (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<TResult>,
 ): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<js.core.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, TResult> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> Promise<TResult>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<TResult>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> js.promise.Promise<js.core.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5, TResult> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> Promise<TResult>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> js.promise.Promise<TResult>,
 ): (
     arg1: T1,
     arg2: T2,
@@ -112,11 +112,11 @@ external fun <T1, T2, T3, T4, T5, TResult> callbackify(
 ) -> Unit
 
 external fun <T1, T2, T3, T4, T5, T6> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> js.promise.Promise<js.core.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5, T6, TResult> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> Promise<TResult>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> js.promise.Promise<TResult>,
 ): (
     arg1: T1,
     arg2: T2,

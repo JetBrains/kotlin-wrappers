@@ -2,8 +2,6 @@
 
 package node.fs
 
-import web.url.URL
-
 @seskar.js.JsAsync
 external suspend fun cp(
     source: String,
@@ -26,7 +24,7 @@ external suspend fun cp(
 @seskar.js.JsAsync
 external suspend fun cp(
     source: String,
-    destination: URL,
+    destination: web.url.URL,
     opts: CopyOptions = definedExternally,
 ): js.core.Void
 
@@ -44,7 +42,7 @@ external suspend fun cp(
  */
 @seskar.js.JsAsync
 external suspend fun cp(
-    source: URL,
+    source: web.url.URL,
     destination: String,
     opts: CopyOptions = definedExternally,
 ): js.core.Void
@@ -63,7 +61,7 @@ external suspend fun cp(
  */
 @seskar.js.JsAsync
 external suspend fun cp(
-    source: URL,
-    destination: URL,
+    source: web.url.URL,
+    destination: web.url.URL,
     opts: CopyOptions = definedExternally,
 ): js.core.Void

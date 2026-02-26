@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.BigUint64Array
-
-typealias NonSharedBigUint64Array = BigUint64Array<ArrayBuffer>
+typealias NonSharedBigUint64Array = js.typedarrays.BigUint64Array<js.buffer.ArrayBuffer>

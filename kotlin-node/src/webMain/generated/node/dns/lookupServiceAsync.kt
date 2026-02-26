@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Resolves the given `address` and `port` into a host name and service using
  * the operating system's underlying `getnameinfo` implementation.
@@ -28,4 +26,4 @@ import js.promise.Promise
 external fun lookupServiceAsync(
     address: String,
     port: Number,
-): Promise<LookupServiceResultPayload>
+): js.promise.Promise<LookupServiceResultPayload>

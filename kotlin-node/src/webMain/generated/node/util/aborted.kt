@@ -4,9 +4,6 @@
 
 package node.util
 
-import js.promise.Promise
-import web.abort.AbortSignal
-
 /**
  * Listens to abort event on the provided `signal` and returns a promise that resolves when the `signal` is aborted.
  * If `resource` is provided, it weakly references the operation's associated object,
@@ -40,6 +37,6 @@ import web.abort.AbortSignal
  */
 @JsName("aborted")
 external fun abortedAsync(
-    signal: AbortSignal,
+    signal: web.abort.AbortSignal,
     resource: Any?,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

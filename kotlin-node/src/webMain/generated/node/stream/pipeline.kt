@@ -5,8 +5,6 @@
 
 package node.stream
 
-import js.array.ReadonlyArray
-
 /**
  * A module method to pipe between streams and generators forwarding errors and
  * properly cleaning up and provide a callback when the pipeline is complete.
@@ -113,6 +111,6 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
 ): Any // B extends NodeJS.WritableStream ? B : NodeJS.WritableStream
 
 external fun pipeline(
-    streams: ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
+    streams: js.array.ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
     callback: (err: node.ErrnoException?) -> Unit,
 ): node.WritableStream

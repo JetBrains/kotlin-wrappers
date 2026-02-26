@@ -5,8 +5,6 @@
 
 package node.test
 
-import js.promise.Promise
-
 /**
  * The `suite()` function is imported from the `node:test` module.
  * @param name The name of the suite, which is displayed when reporting test results.
@@ -21,22 +19,22 @@ external fun suiteAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("suite")
 external fun suiteAsync(
     name: String = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("suite")
 external fun suiteAsync(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("suite")
-external fun suiteAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>
+external fun suiteAsync(fn: SuiteFn = definedExternally): js.promise.Promise<js.core.Void>
 
 @JsName("suite")
-external fun suiteAsync(): Promise<js.core.Void>
+external fun suiteAsync(): js.promise.Promise<js.core.Void>

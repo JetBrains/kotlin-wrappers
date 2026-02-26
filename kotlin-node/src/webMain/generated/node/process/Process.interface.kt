@@ -2,9 +2,6 @@
 
 package node.process
 
-import js.array.ReadonlyArray
-import js.collections.ReadonlySet
-import js.promise.Promise
 import node.childProcess.Control
 import node.childProcess.MessageOptions
 import node.childProcess.SendHandle
@@ -90,7 +87,7 @@ sealed external interface Process : EventEmitter {
      * ```
      * @since v0.1.27
      */
-    var argv: ReadonlyArray<String>
+    var argv: js.array.ReadonlyArray<String>
 
     /**
      * The `process.argv0` property stores a read-only copy of the original value of`argv[0]` passed when Node.js starts.
@@ -134,7 +131,7 @@ sealed external interface Process : EventEmitter {
      * threads with this property.
      * @since v0.7.7
      */
-    var execArgv: ReadonlyArray<String>
+    var execArgv: js.array.ReadonlyArray<String>
 
     /**
      * The `process.execPath` property returns the absolute pathname of the executable
@@ -733,7 +730,7 @@ sealed external interface Process : EventEmitter {
      * ```
      * @since v17.3.0, v16.14.0
      */
-    fun getActiveResourcesInfo(): ReadonlyArray<String>
+    fun getActiveResourcesInfo(): js.array.ReadonlyArray<String>
 
     /**
      * Provides a way to load built-in modules in a globally available function.
@@ -942,7 +939,7 @@ sealed external interface Process : EventEmitter {
      * Android).
      * @since v0.9.4
      */
-    var getgroups: (() -> ReadonlyArray<Double>)?
+    var getgroups: (() -> js.array.ReadonlyArray<Double>)?
 
     /**
      * The `process.setgroups()` method sets the supplementary group IDs for the
@@ -969,7 +966,7 @@ sealed external interface Process : EventEmitter {
      * This feature is not available in `Worker` threads.
      * @since v0.9.4
      */
-    var setgroups: ((groups: ReadonlyArray<Any /* string | number */>) -> Unit)?
+    var setgroups: ((groups: js.array.ReadonlyArray<Any /* string | number */>) -> Unit)?
 
     /**
      * The `process.setUncaughtExceptionCaptureCallback()` function sets a function
@@ -1651,7 +1648,7 @@ sealed external interface Process : EventEmitter {
      * contain what _would have_ been allowable.
      * @since v10.10.0
      */
-    var allowedNodeEnvironmentFlags: ReadonlySet<String>
+    var allowedNodeEnvironmentFlags: js.collections.ReadonlySet<String>
 
     /**
      * `process.report` is an object whose methods are used to generate diagnostic reports for the current process.
@@ -1778,7 +1775,7 @@ sealed external interface Process : EventEmitter {
     val execve: (
         (
         file: String,
-        args: (ReadonlyArray<String>)?, /* use undefined for default */
+        args: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         env: ProcessEnv?, // use undefined for default
     ) -> Nothing
     )?
@@ -1807,7 +1804,7 @@ sealed external interface Process : EventEmitter {
 
     fun prependOnceListener(event: Signals, listener: SignalsListener) // this
 
-    fun listeners(event: Signals): ReadonlyArray<SignalsListener>
+    fun listeners(event: Signals): js.array.ReadonlyArray<SignalsListener>
 
     @web.events.JsEvent("beforeExit")
     val beforeExitEvent: node.events.EventInstance<js.array.Tuple1<Number>>
@@ -1819,7 +1816,7 @@ sealed external interface Process : EventEmitter {
     val exitEvent: node.events.EventInstance<js.array.Tuple1<Number>>
 
     @web.events.JsEvent("rejectionHandled")
-    val rejectionHandledEvent: node.events.EventInstance<js.array.Tuple1<Promise<Any?>>>
+    val rejectionHandledEvent: node.events.EventInstance<js.array.Tuple1<js.promise.Promise<Any?>>>
 
     @web.events.JsEvent("uncaughtException")
     val uncaughtExceptionEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
@@ -1829,7 +1826,7 @@ sealed external interface Process : EventEmitter {
             node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
     @web.events.JsEvent("unhandledRejection")
-    val unhandledRejectionEvent: node.events.EventInstance<js.array.Tuple2<Any?, Promise<Any?>>>
+    val unhandledRejectionEvent: node.events.EventInstance<js.array.Tuple2<Any?, js.promise.Promise<Any?>>>
 
     @web.events.JsEvent("warning")
     val warningEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
@@ -1841,7 +1838,8 @@ sealed external interface Process : EventEmitter {
     val workerMessageEvent: node.events.EventInstance<js.array.Tuple2<Any?, Double>>
 
     @web.events.JsEvent("multipleResolves")
-    val multipleResolvesEvent: node.events.EventInstance<js.array.Tuple3<MultipleResolveType, Promise<Any?>, Any?>>
+    val multipleResolvesEvent:
+            node.events.EventInstance<js.array.Tuple3<MultipleResolveType, js.promise.Promise<Any?>, Any?>>
 
     @web.events.JsEvent("worker")
     val workerEvent: node.events.EventInstance<js.array.Tuple1<Worker>>

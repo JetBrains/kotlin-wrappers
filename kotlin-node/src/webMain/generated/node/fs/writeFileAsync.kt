@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.iterable.AsyncIterable
-import js.promise.Promise
 import node.stream.Stream
 
 /**
@@ -62,7 +60,7 @@ import node.stream.Stream
 external fun writeFileAsync(
     file: PathLike,
     data: String,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -119,7 +117,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: String,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -176,7 +174,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -232,7 +230,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: PathLike,
     data: js.buffer.ArrayBufferView<*>,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -289,7 +287,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -346,7 +344,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -402,7 +400,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -459,7 +457,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -516,7 +514,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -571,8 +569,8 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): Promise<js.core.Void>
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -627,9 +625,9 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -684,9 +682,9 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -742,7 +740,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: PathLike,
     data: Stream,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -799,7 +797,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: Stream,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -856,7 +854,7 @@ external fun writeFileAsync(
     file: PathLike,
     data: Stream,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -912,7 +910,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: FileHandle,
     data: String,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -969,7 +967,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: String,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1026,7 +1024,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1082,7 +1080,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: FileHandle,
     data: js.buffer.ArrayBufferView<*>,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1139,7 +1137,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1196,7 +1194,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1252,7 +1250,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1309,7 +1307,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1366,7 +1364,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1421,8 +1419,8 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): Promise<js.core.Void>
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1477,9 +1475,9 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1534,9 +1532,9 @@ external fun writeFileAsync(
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1592,7 +1590,7 @@ external fun writeFileAsync(
 external fun writeFileAsync(
     file: FileHandle,
     data: Stream,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1649,7 +1647,7 @@ external fun writeFileAsync(
     file: FileHandle,
     data: Stream,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1706,4 +1704,4 @@ external fun writeFileAsync(
     file: FileHandle,
     data: Stream,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

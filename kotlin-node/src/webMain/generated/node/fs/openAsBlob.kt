@@ -4,9 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-import web.blob.Blob
-
 /**
  * Returns a `Blob` whose data is backed by the given file.
  *
@@ -28,4 +25,4 @@ import web.blob.Blob
 external fun openAsBlobAsync(
     path: PathLike,
     options: OpenAsBlobOptions = definedExternally,
-): Promise<Blob>
+): js.promise.Promise<web.blob.Blob>

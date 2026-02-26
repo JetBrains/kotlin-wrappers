@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve a start of authority record (`SOA` record) for
  * the `hostname`. On success, the `Promise` is resolved with an object with the
@@ -33,4 +31,4 @@ import js.promise.Promise
  * @since v10.6.0
  */
 @JsName("resolveSoa")
-external fun resolveSoaAsync(hostname: String): Promise<SoaRecord>
+external fun resolveSoaAsync(hostname: String): js.promise.Promise<SoaRecord>

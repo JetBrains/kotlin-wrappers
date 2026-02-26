@@ -2,8 +2,6 @@
 
 package node.net
 
-import js.typedarrays.Uint8Array
-
 sealed external interface OnReadOpts {
     var buffer: Any // Uint8Array | (() => Uint8Array)
 
@@ -14,6 +12,6 @@ sealed external interface OnReadOpts {
      */
     fun callback(
         bytesWritten: Number,
-        buffer: Uint8Array<*>,
+        buffer: js.typedarrays.Uint8Array<*>,
     ): Boolean
 }

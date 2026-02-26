@@ -2,8 +2,6 @@
 
 package node.test
 
-import js.array.ReadonlyArray
-
 sealed external interface AssertSnapshotOptions {
     /**
      * An array of synchronous functions used to serialize `value` into a string.
@@ -13,5 +11,5 @@ sealed external interface AssertSnapshotOptions {
      *
      * If no serializers are provided, the test runner's default serializers are used.
      */
-    var serializers: ReadonlyArray<(value: Any?) -> Any?>?
+    var serializers: js.array.ReadonlyArray<(value: Any?) -> Any?>?
 }

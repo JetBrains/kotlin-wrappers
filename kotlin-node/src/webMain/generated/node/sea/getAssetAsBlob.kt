@@ -4,8 +4,6 @@
 
 package node.sea
 
-import web.blob.Blob
-
 /**
  * Similar to `sea.getAsset()`, but returns the result in a [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob).
  * An error is thrown when no matching asset can be found.
@@ -14,4 +12,4 @@ import web.blob.Blob
 external fun getAssetAsBlob(
     key: AssetKey,
     options: GetAssetAsBlobOptions = definedExternally,
-): Blob
+): web.blob.Blob

@@ -4,7 +4,6 @@
 
 package node.stream
 
-import js.iterable.AsyncIterable
 import node.events.EventEmitter
 
 open external class Stream : EventEmitter {
@@ -29,7 +28,7 @@ open external class Stream : EventEmitter {
     ): T
 
     fun <T : node.ReadableStream> compose(
-        stream: AsyncIterable<T>,
+        stream: js.iterable.AsyncIterable<T>,
         options: StreamComposeOptions = definedExternally,
     ): T
 // Stream

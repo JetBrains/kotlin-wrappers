@@ -1,41 +1,12 @@
 package node.karakum.plugins
 
-import io.github.sgrishchenko.karakum.extension.Context
-import io.github.sgrishchenko.karakum.extension.GeneratedFile
-import io.github.sgrishchenko.karakum.extension.Plugin
-import io.github.sgrishchenko.karakum.extension.Render
-import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
-import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import arrow.core.raise.impure
 import arrow.core.raise.nullable
-import io.github.sgrishchenko.karakum.extension.plugins.function
-import typescript.InterfaceDeclaration
-import typescript.Node
-import typescript.SyntaxKind
-import typescript.asArray
-import typescript.isClassDeclaration
-import typescript.isComputedPropertyName
-import typescript.isConstructorDeclaration
-import typescript.isGetAccessorDeclaration
-import typescript.isIdentifier
-import typescript.isIndexSignatureDeclaration
-import typescript.isInterfaceDeclaration
-import typescript.isIntersectionTypeNode
-import typescript.isMethodDeclaration
-import typescript.isMethodSignature
-import typescript.isModuleBlock
-import typescript.isModuleDeclaration
-import typescript.isParameter
-import typescript.isPropertyDeclaration
-import typescript.isQualifiedName
-import typescript.isSetAccessorDeclaration
-import typescript.isTypeReferenceNode
+import io.github.sgrishchenko.karakum.extension.*
+import io.github.sgrishchenko.karakum.extension.plugins.*
+import io.github.sgrishchenko.karakum.util.getParentOrNull
+import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
+import typescript.*
 
 private fun extractModifiers(member: Node) = when {
     isPropertyDeclaration(member) -> member.modifiers
@@ -62,7 +33,7 @@ private fun isEventEmitterInterfaceNode(node: Node) = nullable {
     ensure(moduleName.text == "NodeJS")
 } != null
 
-private fun  isEventEmitterClassNode(node: Node) = nullable {
+private fun isEventEmitterClassNode(node: Node) = nullable {
     ensure(isClassDeclaration(node))
     ensure(node.name?.text == "EventEmitter")
 } != null
@@ -166,9 +137,9 @@ class EventEmitterPlugin : Plugin {
                                 ensure(isQualifiedName(firstParameterTypeName))
                                 ensure(firstParameterTypeName.right.text == "EventEmitter")
 
-                                val enhancedReturnType = if (name == "once") "Promise<P>" else "AsyncIterator<P>"
+                                val enhancedReturnType = if (name == "once") "js.promise.Promise<P>" else "js.iterable.AsyncIterator<P>"
 
-                                "fun <P : Tuple> ${name}(emitter: EventEmitter, type: EventType, options: StaticEventEmitterOptions = definedExternally): $enhancedReturnType"
+                                "fun <P : js.array.Tuple> ${name}(emitter: EventEmitter, type: EventType, options: StaticEventEmitterOptions = definedExternally): $enhancedReturnType"
                             } ?: nullable {
                                 ensure(signature.size == 3)
 
@@ -181,9 +152,10 @@ class EventEmitterPlugin : Plugin {
                                 ensure(isIdentifier(firstParameterTypeName))
                                 ensure(firstParameterTypeName.text == "EventTarget")
 
-                                val enhancedReturnType = if (name == "once") "Promise<Tuple1<E>>" else "AsyncIterator<Tuple1<E>>"
+                                val enhancedReturnType =
+                                    if (name == "once") "js.promise.Promise<js.array.Tuple1<E>>" else "js.iterable.AsyncIterator<js.array.Tuple1<E>>"
 
-                                "fun <E : Event> ${name}(emitter: EventTarget, type: web.events.EventType<E>, options: StaticEventEmitterOptions = definedExternally): $enhancedReturnType"
+                                "fun <E : web.events.Event> ${name}(emitter: web.events.EventTarget, type: web.events.EventType<E>, options: StaticEventEmitterOptions = definedExternally): $enhancedReturnType"
                             } ?: nullable {
                                 ensure(signature.size == 2)
 
@@ -196,7 +168,7 @@ class EventEmitterPlugin : Plugin {
                                 ensure(isQualifiedName(firstParameterTypeName))
                                 ensure(firstParameterTypeName.right.text == "EventEmitter")
 
-                                "fun ${name}(emitter: EventEmitter, type: EventType)${ifPresent(returnType, { ": $it" })}"
+                                "fun ${name}(emitter: EventEmitter, type: EventType)${ifPresent(returnType) { ": $it" }}"
                             } ?: nullable {
                                 ensure(signature.size == 2)
 
@@ -209,7 +181,7 @@ class EventEmitterPlugin : Plugin {
                                 ensure(isIdentifier(firstParameterTypeName))
                                 ensure(firstParameterTypeName.text == "EventTarget")
 
-                                "fun ${name}(emitter: EventTarget, type: web.events.EventType<*>)${ifPresent(returnType, { ": $it" })}"
+                                "fun ${name}(emitter: web.events.EventTarget, type: web.events.EventType<*>)${ifPresent(returnType) { ": $it" }}"
                             } ?: run {
                                 // remove generics
                                 "fun ${name}(${parameters})${ifPresent(returnType, { ": $it" })}"

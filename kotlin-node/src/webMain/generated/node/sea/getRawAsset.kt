@@ -4,8 +4,6 @@
 
 package node.sea
 
-import js.buffer.ArrayBuffer
-
 /**
  * This method can be used to retrieve the assets configured to be bundled into the
  * single-executable application at build time.
@@ -19,4 +17,4 @@ import js.buffer.ArrayBuffer
  * writes to the returned array buffer is likely to result in a crash.
  * @since v20.12.0
  */
-external fun getRawAsset(key: AssetKey): ArrayBuffer
+external fun getRawAsset(key: AssetKey): js.buffer.ArrayBuffer

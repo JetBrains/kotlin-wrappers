@@ -2,7 +2,4 @@
 
 package node.stream
 
-import js.iterable.AsyncIterable
-import js.promise.Promise
-
-typealias PipelineDestinationPromiseFunction<T, P> = (source: AsyncIterable<T>) -> Promise<P>
+typealias PipelineDestinationPromiseFunction<T, P> = (source: js.iterable.AsyncIterable<T>) -> js.promise.Promise<P>

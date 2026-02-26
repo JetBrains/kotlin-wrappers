@@ -4,7 +4,6 @@
 
 package node.sqlite
 
-import js.promise.Promise
 import node.fs.PathLike
 
 /**
@@ -44,4 +43,4 @@ external fun backupAsync(
     sourceDb: DatabaseSync,
     path: PathLike,
     options: BackupOptions = definedExternally,
-): Promise<Double>
+): js.promise.Promise<Double>

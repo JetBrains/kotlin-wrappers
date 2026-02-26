@@ -4,8 +4,6 @@
 
 package node.assert
 
-import js.promise.Promise
-
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
  * calls the function and awaits the returned promise to complete. It will then
@@ -70,7 +68,7 @@ import js.promise.Promise
  * @since v10.0.0
  */
 @JsName("rejects")
-external fun rejectsAsync(block: () -> Promise<Any?>): Promise<js.core.Void>
+external fun rejectsAsync(block: () -> js.promise.Promise<Any?>): js.promise.Promise<js.core.Void>
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -137,9 +135,9 @@ external fun rejectsAsync(block: () -> Promise<Any?>): Promise<js.core.Void>
  */
 @JsName("rejects")
 external fun rejectsAsync(
-    block: () -> Promise<Any?>,
+    block: () -> js.promise.Promise<Any?>,
     message: String = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -206,9 +204,9 @@ external fun rejectsAsync(
  */
 @JsName("rejects")
 external fun rejectsAsync(
-    block: () -> Promise<Any?>,
+    block: () -> js.promise.Promise<Any?>,
     message: js.errors.JsError = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -274,7 +272,7 @@ external fun rejectsAsync(
  * @since v10.0.0
  */
 @JsName("rejects")
-external fun rejectsAsync(block: Promise<Any?>): Promise<js.core.Void>
+external fun rejectsAsync(block: js.promise.Promise<Any?>): js.promise.Promise<js.core.Void>
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -341,9 +339,9 @@ external fun rejectsAsync(block: Promise<Any?>): Promise<js.core.Void>
  */
 @JsName("rejects")
 external fun rejectsAsync(
-    block: Promise<Any?>,
+    block: js.promise.Promise<Any?>,
     message: String = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -410,46 +408,46 @@ external fun rejectsAsync(
  */
 @JsName("rejects")
 external fun rejectsAsync(
-    block: Promise<Any?>,
+    block: js.promise.Promise<Any?>,
     message: js.errors.JsError = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("rejects")
 external fun rejectsAsync(
-    block: () -> Promise<Any?>,
+    block: () -> js.promise.Promise<Any?>,
     error: AssertPredicate,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("rejects")
 external fun rejectsAsync(
-    block: () -> Promise<Any?>,
+    block: () -> js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("rejects")
 external fun rejectsAsync(
-    block: () -> Promise<Any?>,
+    block: () -> js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: js.errors.JsError = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("rejects")
 external fun rejectsAsync(
-    block: Promise<Any?>,
+    block: js.promise.Promise<Any?>,
     error: AssertPredicate,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("rejects")
 external fun rejectsAsync(
-    block: Promise<Any?>,
+    block: js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("rejects")
 external fun rejectsAsync(
-    block: Promise<Any?>,
+    block: js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: js.errors.JsError = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

@@ -4,8 +4,6 @@
 
 package node.crypto
 
-import js.buffer.ArrayBuffer
-
 /**
  * Generates a pseudorandom prime of `size` bits.
  *
@@ -35,7 +33,7 @@ import js.buffer.ArrayBuffer
  */
 external fun generatePrime(
     size: Number,
-    callback: (err: js.errors.JsError?, prime: ArrayBuffer) -> Unit,
+    callback: (err: js.errors.JsError?, prime: js.buffer.ArrayBuffer) -> Unit,
 )
 
 external fun generatePrime(
@@ -47,7 +45,7 @@ external fun generatePrime(
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptionsArrayBuffer,
-    callback: (err: js.errors.JsError?, prime: ArrayBuffer) -> Unit,
+    callback: (err: js.errors.JsError?, prime: js.buffer.ArrayBuffer) -> Unit,
 )
 
 external fun generatePrime(

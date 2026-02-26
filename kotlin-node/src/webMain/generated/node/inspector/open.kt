@@ -4,8 +4,6 @@
 
 package node.inspector
 
-import js.disposable.Disposable
-
 /**
  * Activate inspector on host and port. Equivalent to `node --inspect=[[host:]port]`, but can be done programmatically after node has
  * started.
@@ -24,4 +22,4 @@ external fun open(
     port: Number = definedExternally,
     host: String = definedExternally,
     wait: Boolean = definedExternally,
-): Disposable
+): js.disposable.Disposable

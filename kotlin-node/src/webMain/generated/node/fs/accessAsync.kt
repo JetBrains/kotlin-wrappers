@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Tests a user's permissions for the file or directory specified by `path`.
  * The `mode` argument is an optional integer that specifies the accessibility
@@ -42,4 +40,4 @@ import js.promise.Promise
 external fun accessAsync(
     path: PathLike,
     mode: Number = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

@@ -2,9 +2,7 @@
 
 package node.test
 
-import js.array.ReadonlyArray
-
 sealed external interface MockTimersOptions {
-    var apis: ReadonlyArray<MockTimersOptionsApisItem>
+    var apis: js.array.ReadonlyArray<MockTimersOptionsApisItem>
     var now: Any? // number | Date | undefined
 }

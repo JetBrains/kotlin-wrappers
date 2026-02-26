@@ -5,17 +5,9 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.Render
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.plugins.function
+import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import typescript.MethodSignature
-import typescript.Node
-import typescript.asArray
-import typescript.isIdentifier
-import typescript.isMethodSignature
-import typescript.isTypeReferenceNode
+import typescript.*
 
 private fun isPromiseType(node: Node) = nullable {
     ensure(isTypeReferenceNode(node))
@@ -25,13 +17,16 @@ private fun isPromiseType(node: Node) = nullable {
     ensure(typeName.text.endsWith("Promise"))
 } != null
 
-private fun convertAsyncMethod(node: MethodSignature, context: Context, render: Render<Node>): String {
-    val name = escapeIdentifier(render(node.name))
-
+private fun convertAsyncSignature(
+    name: String,
+    node: SignatureDeclarationBase,
+    context: Context,
+    render: Render<Node>,
+): String {
     val typeParameters = node.typeParameters?.asArray()
         ?.joinToString(", ") { render(it) }
 
-    val returnType = node.type ?.let { render(it) }
+    val returnType = node.type?.let { render(it) }
 
     val promiseDeclaration = convertParameterDeclarations(
         node, context, render,
@@ -69,13 +64,38 @@ private fun convertAsyncMethod(node: MethodSignature, context: Context, render: 
     return "${promiseDeclaration}\n\n${suspendDeclaration}"
 }
 
-val PromiseInterfaceApiPlugin = createPlugin { node, context, render ->
+val convertPromiseProperty = createPlugin { node, context, render ->
     nullable {
-        ensure(isMethodSignature(node))
+        ensure(isPropertyDeclaration(node))
 
         val type = ensureNotNull(node.type)
-        ensure(isPromiseType(type))
 
-        convertAsyncMethod(node, context, render)
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
+
+        val name = escapeIdentifier(render(node.name))
+
+        val propertyType = ensureNotNull(typeScriptService.resolveType(type) ?: node.type)
+
+        nullable {
+            ensure(isFunctionTypeNode(propertyType))
+            ensure(isPromiseType(propertyType.type))
+
+            convertAsyncSignature(name, propertyType, context, render)
+        } ?: nullable {
+            ensure(isTypeLiteralNode(propertyType))
+            ensure(propertyType.members.asArray().all { member ->
+                nullable {
+                    ensure(isCallSignatureDeclaration(member))
+
+                    val memberType = ensureNotNull(member.type)
+                    ensure(isPromiseType(memberType))
+                } != null
+            })
+
+            propertyType.members.asArray().joinToString("\n") { member ->
+                require(isCallSignatureDeclaration(member))
+                convertAsyncSignature(name, member, context, render)
+            }
+        }
     }
 }

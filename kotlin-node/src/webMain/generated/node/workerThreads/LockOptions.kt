@@ -2,11 +2,9 @@
 
 package node.workerThreads
 
-import web.abort.AbortSignal
-
 sealed external interface LockOptions {
     var ifAvailable: Boolean?
     var mode: LockMode?
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
     var steal: Boolean?
 }

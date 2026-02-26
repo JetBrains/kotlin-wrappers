@@ -2,8 +2,6 @@
 
 package node.readline
 
-import web.abort.AbortSignal
-
 sealed external interface _ReadLineOptions {
     /**
      * The [`Readable`](https://nodejs.org/docs/latest-v24.x/api/stream.html#readable-streams) stream to listen to
@@ -87,5 +85,5 @@ sealed external interface _ReadLineOptions {
      * Allows closing the interface using an AbortSignal.
      * Aborting the signal will internally call `close` on the interface.
      */
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
 }

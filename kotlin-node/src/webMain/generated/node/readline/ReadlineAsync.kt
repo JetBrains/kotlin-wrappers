@@ -4,8 +4,6 @@
 
 package node.readline
 
-import js.promise.Promise
-
 /**
  * @since v17.0.0
  */
@@ -40,7 +38,7 @@ external class Readline {
      * @since v17.0.0
      */
     @JsName("commit")
-    fun commitAsync(): Promise<js.core.Void>
+    fun commitAsync(): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun commit(): js.core.Void

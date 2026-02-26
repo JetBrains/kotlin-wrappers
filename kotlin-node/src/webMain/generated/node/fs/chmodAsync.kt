@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Changes the permissions of a file.
  * @since v10.0.0
@@ -15,4 +13,4 @@ import js.promise.Promise
 external fun chmodAsync(
     path: PathLike,
     mode: Mode,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

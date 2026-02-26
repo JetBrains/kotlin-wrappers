@@ -3,9 +3,6 @@
 package node.fs
 
 @seskar.js.JsAsync
-external suspend fun statfs(path: PathLike): StatsFs
-
-@seskar.js.JsAsync
 external suspend fun statfs(
     path: PathLike,
     opts: StatfsOpts = definedExternally,
@@ -19,3 +16,6 @@ external suspend fun statfs(
 
 @seskar.js.JsAsync
 external suspend fun statfs(path: PathLike, opts: StatFsOptions = definedExternally): Any // StatsFs | BigIntStatsFs
+
+@seskar.js.JsAsync
+external suspend fun statfs(path: PathLike): StatsFs

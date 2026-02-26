@@ -5,10 +5,6 @@
 
 package node.stream
 
-import js.buffer.ArrayBuffer
-import js.generator.AsyncGeneratorFunction
-import js.iterable.AsyncIterable
-import js.promise.Promise
 import web.blob.Blob as NodeBlob
 
 /**
@@ -216,7 +212,7 @@ open external class Duplex :
          *
          * @since v16.8.0
          */
-        fun from(src: ArrayBuffer): Duplex
+        fun from(src: js.buffer.ArrayBuffer): Duplex
 
         /**
          * A utility method for creating duplex streams.
@@ -285,7 +281,7 @@ open external class Duplex :
          *
          * @since v16.8.0
          */
-        fun from(src: AsyncIterable<Any?>): Duplex
+        fun from(src: js.iterable.AsyncIterable<Any?>): Duplex
 
         /**
          * A utility method for creating duplex streams.
@@ -308,7 +304,7 @@ open external class Duplex :
          *
          * @since v16.8.0
          */
-        fun from(src: AsyncGeneratorFunction<*, *>): Duplex
+        fun from(src: js.generator.AsyncGeneratorFunction<*, *>): Duplex
 
         /**
          * A utility method for creating duplex streams.
@@ -331,7 +327,7 @@ open external class Duplex :
          *
          * @since v16.8.0
          */
-        fun from(src: Promise<Any?>): Duplex
+        fun from(src: js.promise.Promise<Any?>): Duplex
 
         /**
          * A utility method for creating duplex streams.

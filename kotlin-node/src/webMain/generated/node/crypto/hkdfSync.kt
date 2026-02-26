@@ -4,8 +4,6 @@
 
 package node.crypto
 
-import js.buffer.ArrayBuffer
-
 /**
  * Provides a synchronous HKDF key derivation function as defined in RFC 5869\. The
  * given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
@@ -38,7 +36,7 @@ external fun hkdfSync(
     salt: BinaryLike,
     info: BinaryLike,
     keylen: Number,
-): ArrayBuffer
+): js.buffer.ArrayBuffer
 
 /**
  * Provides a synchronous HKDF key derivation function as defined in RFC 5869\. The
@@ -72,4 +70,4 @@ external fun hkdfSync(
     salt: BinaryLike,
     info: BinaryLike,
     keylen: Number,
-): ArrayBuffer
+): js.buffer.ArrayBuffer

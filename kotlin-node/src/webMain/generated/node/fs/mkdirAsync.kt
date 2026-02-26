@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Asynchronously creates a directory.
  *
@@ -33,7 +31,7 @@ import js.promise.Promise
 external fun mkdirAsync(
     path: PathLike,
     options: MkdirRecursiveAsyncOptions,
-): Promise<String?>
+): js.promise.Promise<String?>
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -42,7 +40,7 @@ external fun mkdirAsync(
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 @JsName("mkdir")
-external fun mkdirAsync(path: PathLike): Promise<js.core.Void>
+external fun mkdirAsync(path: PathLike): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -54,7 +52,7 @@ external fun mkdirAsync(path: PathLike): Promise<js.core.Void>
 external fun mkdirAsync(
     path: PathLike,
     options: Mode? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -66,7 +64,7 @@ external fun mkdirAsync(
 external fun mkdirAsync(
     path: PathLike,
     options: (MkdirAsyncOptions)? = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -92,4 +90,4 @@ external fun mkdirAsync(
 external fun mkdirAsync(
     path: PathLike,
     options: MakeDirectoryOptions? = definedExternally,
-): Promise<String?>
+): js.promise.Promise<String?>

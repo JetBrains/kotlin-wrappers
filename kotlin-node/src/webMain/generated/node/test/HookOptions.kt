@@ -2,8 +2,6 @@
 
 package node.test
 
-import web.abort.AbortSignal
-
 /**
  * Configuration options for hooks.
  * @since v18.8.0
@@ -12,7 +10,7 @@ sealed external interface HookOptions {
     /**
      * Allows aborting an in-progress hook.
      */
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
 
     /**
      * A number of milliseconds the hook will fail after. If unspecified, subtests inherit this

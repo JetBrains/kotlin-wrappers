@@ -4,8 +4,6 @@
 
 package node.vm
 
-import js.promise.Promise
-
 /**
  * This feature is only available with the `--experimental-vm-modules` command
  * flag enabled.
@@ -173,7 +171,7 @@ open external class Module {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("evaluate")
-    fun evaluateAsync(options: ModuleEvaluateOptions = definedExternally): Promise<js.core.Void>
+    fun evaluateAsync(options: ModuleEvaluateOptions = definedExternally): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun evaluate(options: ModuleEvaluateOptions = definedExternally): js.core.Void
@@ -215,7 +213,7 @@ open external class Module {
      * the ECMAScript specification.
      */
     @JsName("link")
-    fun linkAsync(linker: ModuleLinker): Promise<js.core.Void>
+    fun linkAsync(linker: ModuleLinker): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun link(linker: ModuleLinker): js.core.Void

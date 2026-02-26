@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve all records (also known as `ANY` or `*` query).
  * On success, the `Promise` is resolved with an array containing various types of
@@ -35,4 +33,4 @@ import js.promise.Promise
  * @since v10.6.0
  */
 @JsName("resolveAny")
-external fun resolveAnyAsync(hostname: String): Promise<js.array.ReadonlyArray<AnyRecord>>
+external fun resolveAnyAsync(hostname: String): js.promise.Promise<js.array.ReadonlyArray<AnyRecord>>

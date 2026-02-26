@@ -4,15 +4,6 @@
 
 package node.events
 
-import js.array.Tuple
-import js.array.Tuple1
-import js.disposable.Disposable
-import js.iterable.AsyncIterator
-import js.promise.Promise
-import web.abort.AbortSignal
-import web.events.Event
-import web.events.EventTarget
-
 /**
  * The `EventEmitter` class is defined and exposed by the `node:events` module:
  *
@@ -459,11 +450,11 @@ open external class EventEmitter {
          * ```
          * @since v11.13.0, v10.16.0
          */
-        fun <P : Tuple> once(
+        fun <P : js.array.Tuple> once(
             emitter: EventEmitter,
             type: EventType,
             options: StaticEventEmitterOptions = definedExternally,
-        ): Promise<P>
+        ): js.promise.Promise<P>
 
         /**
          * Creates a `Promise` that is fulfilled when the `EventEmitter` emits the given
@@ -545,11 +536,11 @@ open external class EventEmitter {
          * @since v11.13.0, v10.16.0
          */
 
-        fun <E : Event> once(
-            emitter: EventTarget,
+        fun <E : web.events.Event> once(
+            emitter: web.events.EventTarget,
             type: web.events.EventType<E>,
             options: StaticEventEmitterOptions = definedExternally,
-        ): Promise<Tuple1<E>>
+        ): js.promise.Promise<js.array.Tuple1<E>>
 
         /**
          * ```js
@@ -631,11 +622,11 @@ open external class EventEmitter {
          * @since v13.6.0, v12.16.0
          * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
          */
-        fun <P : Tuple> on(
+        fun <P : js.array.Tuple> on(
             emitter: EventEmitter,
             type: EventType,
             options: StaticEventEmitterOptions = definedExternally,
-        ): AsyncIterator<P>
+        ): js.iterable.AsyncIterator<P>
 
         /**
          * ```js
@@ -718,11 +709,11 @@ open external class EventEmitter {
          * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
          */
 
-        fun <E : Event> on(
-            emitter: EventTarget,
+        fun <E : web.events.Event> on(
+            emitter: web.events.EventTarget,
             type: web.events.EventType<E>,
             options: StaticEventEmitterOptions = definedExternally,
-        ): AsyncIterator<Tuple1<E>>
+        ): js.iterable.AsyncIterator<js.array.Tuple1<E>>
 
         /**
          * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
@@ -792,7 +783,7 @@ open external class EventEmitter {
          * @since v15.2.0, v14.17.0
          */
         fun getEventListeners(
-            emitter: EventTarget,
+            emitter: web.events.EventTarget,
             type: web.events.EventType<*>,
         ): js.array.ReadonlyArray<Function<*>>
 
@@ -912,7 +903,7 @@ open external class EventEmitter {
          * ```
          * @since v19.9.0
          */
-        fun getMaxListeners(emitter: EventTarget): Double
+        fun getMaxListeners(emitter: web.events.EventTarget): Double
 
         /**
          * Returns the currently set max amount of listeners.
@@ -997,9 +988,9 @@ open external class EventEmitter {
          * @return Disposable that removes the `abort` listener.
          */
         fun addAbortListener(
-            signal: AbortSignal,
-            resource: (event: Event) -> Unit,
-        ): Disposable
+            signal: web.abort.AbortSignal,
+            resource: (event: web.events.Event) -> Unit,
+        ): js.disposable.Disposable
 
         /**
          * This symbol shall be used to install a listener for only monitoring `'error'` events. Listeners installed using this symbol are called before the regular `'error'` listeners are called.

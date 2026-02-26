@@ -5,9 +5,6 @@
 
 package node.stream
 
-import js.iterable.AsyncIterable
-import js.promise.Promise
-import js.typedarrays.Uint8Array
 import node.ReadableStreamPipeOptions
 import node.WritableStream
 
@@ -453,7 +450,7 @@ open external class Readable :
             options: ArrayOptions?, // use undefined for default
         ) -> js.promise.PromiseResult<js.core.Void>,
         options: ArrayOptions = definedExternally,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun forEach(
@@ -473,7 +470,7 @@ open external class Readable :
      * @returns a promise containing an array with the contents of the stream.
      */
     @JsName("toArray")
-    fun toArrayAsync(options: ArrayOptions = definedExternally): Promise<js.array.ReadonlyArray<Any?>>
+    fun toArrayAsync(options: ArrayOptions = definedExternally): js.promise.Promise<js.array.ReadonlyArray<Any?>>
 
     @seskar.js.JsAsync
     suspend fun toArray(options: ArrayOptions = definedExternally): js.array.ReadonlyArray<Any?>
@@ -491,7 +488,7 @@ open external class Readable :
     fun someAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
         options: ArrayOptions = definedExternally,
-    ): Promise<Boolean>
+    ): js.promise.Promise<Boolean>
 
     @seskar.js.JsAsync
     suspend fun some(
@@ -513,7 +510,7 @@ open external class Readable :
     fun <T> findAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> Boolean, /* data is T */
         options: ArrayOptions = definedExternally,
-    ): Promise<T?>
+    ): js.promise.Promise<T?>
 
     @seskar.js.JsAsync
     suspend fun <T> find(
@@ -525,7 +522,7 @@ open external class Readable :
     fun findAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
         options: ArrayOptions = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     @seskar.js.JsAsync
     suspend fun find(
@@ -546,7 +543,7 @@ open external class Readable :
     fun everyAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
         options: ArrayOptions = definedExternally,
-    ): Promise<Boolean>
+    ): js.promise.Promise<Boolean>
 
     @seskar.js.JsAsync
     suspend fun every(
@@ -618,7 +615,7 @@ open external class Readable :
         fn: (previous: Any?, data: Any?, options: ArrayOptions? /* use undefined for default */) -> T,
         initial: Nothing? = definedExternally,
         options: ArrayOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
     suspend fun <T /* default is Any? */> reduce(
@@ -632,7 +629,7 @@ open external class Readable :
         fn: (previous: T, data: Any?, options: ArrayOptions? /* use undefined for default */) -> T,
         initial: T,
         options: ArrayOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
     suspend fun <T /* default is Any? */> reduce(
@@ -744,7 +741,7 @@ open external class Readable :
     )
 
     override fun unshift(
-        chunk: Uint8Array<*>,
+        chunk: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding,
     )
 
@@ -767,7 +764,7 @@ open external class Readable :
          * @param options Options provided to `new stream.Readable([options])`. By default, `Readable.from()` will set `options.objectMode` to `true`, unless this is explicitly opted out by setting `options.objectMode` to `false`.
          */
         fun from(
-            iterable: AsyncIterable<Any?>,
+            iterable: js.iterable.AsyncIterable<Any?>,
             options: ReadableOptions<*> = definedExternally,
         ): Readable
 

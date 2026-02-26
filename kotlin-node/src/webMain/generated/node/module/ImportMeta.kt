@@ -5,41 +5,6 @@ package node.module
 import web.url.URL
 
 sealed external interface ImportMeta {
-    /**
-     * The directory name of the current module.
-     *
-     * This is the same as the `path.dirname()` of the `import.meta.filename`.
-     *
-     * > **Caveat**: only present on `file:` modules.
-     * @since v21.2.0, v20.11.0
-     */
-    var dirname: String
-
-    /**
-     * The full absolute path and filename of the current module, with
-     * symlinks resolved.
-     *
-     * This is the same as the `url.fileURLToPath()` of the `import.meta.url`.
-     *
-     * > **Caveat** only local modules support this property. Modules not using the
-     * > `file:` protocol will not provide it.
-     * @since v21.2.0, v20.11.0
-     */
-    var filename: String
-
-    /**
-     * The absolute `file:` URL of the module.
-     *
-     * This is defined exactly the same as it is in browsers providing the URL of the
-     * current module file.
-     *
-     * This enables useful patterns such as relative file loading:
-     *
-     * ```js
-     * import { readFileSync } from 'node:fs';
-     * const buffer = readFileSync(new URL('./data.proto', import.meta.url));
-     * ```
-     */
     var url: String
 
     /**
@@ -134,6 +99,28 @@ sealed external interface ImportMeta {
         specifier: String,
         parent: URL = definedExternally,
     ): String
+
+    /**
+     * The directory name of the current module.
+     *
+     * This is the same as the `path.dirname()` of the `import.meta.filename`.
+     *
+     * > **Caveat**: only present on `file:` modules.
+     * @since v21.2.0, v20.11.0
+     */
+    var dirname: String
+
+    /**
+     * The full absolute path and filename of the current module, with
+     * symlinks resolved.
+     *
+     * This is the same as the `url.fileURLToPath()` of the `import.meta.url`.
+     *
+     * > **Caveat** only local modules support this property. Modules not using the
+     * > `file:` protocol will not provide it.
+     * @since v21.2.0, v20.11.0
+     */
+    var filename: String
 
     /**
      * `true` when the current module is the entry point of the current process; `false` otherwise.

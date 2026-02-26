@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve `CNAME` records for the `hostname`. On success,
  * the `Promise` is resolved with an array of canonical name records available for
@@ -13,4 +11,4 @@ import js.promise.Promise
  * @since v10.6.0
  */
 @JsName("resolveCname")
-external fun resolveCnameAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
+external fun resolveCnameAsync(hostname: String): js.promise.Promise<js.array.ReadonlyArray<String>>

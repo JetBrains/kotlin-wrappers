@@ -4,9 +4,6 @@
 
 package node.stream.consumers
 
-import js.buffer.ArrayBuffer
-import js.iterable.AsyncIterable
-import js.promise.Promise
 import web.streams.ReadableStream as WebReadableStream
 
 /**
@@ -14,18 +11,18 @@ import web.streams.ReadableStream as WebReadableStream
  * @returns Fulfills with an `ArrayBuffer` containing the full contents of the stream.
  */
 @JsName("arrayBuffer")
-external fun arrayBufferAsync(stream: WebReadableStream<*>): Promise<ArrayBuffer>
+external fun arrayBufferAsync(stream: WebReadableStream<*>): js.promise.Promise<js.buffer.ArrayBuffer>
 
 /**
  * @since v16.7.0
  * @returns Fulfills with an `ArrayBuffer` containing the full contents of the stream.
  */
 @JsName("arrayBuffer")
-external fun arrayBufferAsync(stream: node.ReadableStream): Promise<ArrayBuffer>
+external fun arrayBufferAsync(stream: node.ReadableStream): js.promise.Promise<js.buffer.ArrayBuffer>
 
 /**
  * @since v16.7.0
  * @returns Fulfills with an `ArrayBuffer` containing the full contents of the stream.
  */
 @JsName("arrayBuffer")
-external fun arrayBufferAsync(stream: AsyncIterable<Any?>): Promise<ArrayBuffer>
+external fun arrayBufferAsync(stream: js.iterable.AsyncIterable<Any?>): js.promise.Promise<js.buffer.ArrayBuffer>

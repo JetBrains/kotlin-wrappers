@@ -4,15 +4,13 @@
 
 package node.sea
 
-import js.buffer.ArrayBuffer
-
 /**
  * This method can be used to retrieve the assets configured to be bundled into the
  * single-executable application at build time.
  * An error is thrown when no matching asset can be found.
  * @since v20.12.0
  */
-external fun getAsset(key: AssetKey): ArrayBuffer
+external fun getAsset(key: AssetKey): js.buffer.ArrayBuffer
 
 external fun getAsset(
     key: AssetKey,

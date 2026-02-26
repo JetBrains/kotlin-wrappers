@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
 import node.buffer.NonSharedBuffer
 
 /**
@@ -19,7 +18,7 @@ import node.buffer.NonSharedBuffer
  * @return Fulfills with the `linkString` upon success.
  */
 @JsName("readlink")
-external fun readlinkAsync(path: PathLike): Promise<String>
+external fun readlinkAsync(path: PathLike): js.promise.Promise<String>
 
 /**
  * Reads the contents of the symbolic link referred to by `path`. See the POSIX [`readlink(2)`](http://man7.org/linux/man-pages/man2/readlink.2.html) documentation for more detail. The promise is
@@ -36,7 +35,7 @@ external fun readlinkAsync(path: PathLike): Promise<String>
 external fun readlinkAsync(
     path: PathLike,
     options: ObjectEncodingOptions? = definedExternally,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Reads the contents of the symbolic link referred to by `path`. See the POSIX [`readlink(2)`](http://man7.org/linux/man-pages/man2/readlink.2.html) documentation for more detail. The promise is
@@ -53,7 +52,7 @@ external fun readlinkAsync(
 external fun readlinkAsync(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
@@ -64,7 +63,7 @@ external fun readlinkAsync(
 external fun readlinkAsync(
     path: PathLike,
     options: BufferEncodingOption,
-): Promise<NonSharedBuffer>
+): js.promise.Promise<NonSharedBuffer>
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
@@ -87,4 +86,4 @@ external fun readlinkAsync(
 external fun readlinkAsync(
     path: PathLike,
     options: String? = definedExternally,
-): Promise<Any /* string | NonSharedBuffer */>
+): js.promise.Promise<Any /* string | NonSharedBuffer */>

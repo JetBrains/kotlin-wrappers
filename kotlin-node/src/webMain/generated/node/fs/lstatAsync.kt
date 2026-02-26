@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Equivalent to `fsPromises.stat()` unless `path` refers to a symbolic link,
  * in which case the link itself is stat-ed, not the file that it refers to.
@@ -17,16 +15,19 @@ import js.promise.Promise
 external fun lstatAsync(
     path: PathLike,
     opts: LstatOpts = definedExternally,
-): Promise<Stats>
+): js.promise.Promise<Stats>
 
 @JsName("lstat")
 external fun lstatAsync(
     path: PathLike,
     opts: LstatBigIntOpts,
-): Promise<BigIntStats>
+): js.promise.Promise<BigIntStats>
 
 @JsName("lstat")
-external fun lstatAsync(path: PathLike, opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>
+external fun lstatAsync(
+    path: PathLike,
+    opts: StatOptions = definedExternally,
+): js.promise.Promise<Any /* Stats | BigIntStats */>
 
 @JsName("lstat")
-external fun lstatAsync(path: PathLike): Promise<Stats>
+external fun lstatAsync(path: PathLike): js.promise.Promise<Stats>

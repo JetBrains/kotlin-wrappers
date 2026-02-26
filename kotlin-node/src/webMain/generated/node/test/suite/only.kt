@@ -5,7 +5,6 @@
 
 package node.test.suite
 
-import js.promise.Promise
 import node.test.SuiteFn
 import node.test.TestOptions
 
@@ -18,22 +17,22 @@ external fun onlyAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("only")
 external fun onlyAsync(
     name: String = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("only")
 external fun onlyAsync(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("only")
-external fun onlyAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>
+external fun onlyAsync(fn: SuiteFn = definedExternally): js.promise.Promise<js.core.Void>
 
 @JsName("only")
-external fun onlyAsync(): Promise<js.core.Void>
+external fun onlyAsync(): js.promise.Promise<js.core.Void>

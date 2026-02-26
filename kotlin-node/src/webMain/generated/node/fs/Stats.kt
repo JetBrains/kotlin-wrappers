@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.date.Date
-
 /**
  * A `fs.Stats` object provides information about a file.
  *
@@ -95,8 +93,8 @@ external class Stats : StatsBase<Double> {
     override var mtimeMs: Double
     override var ctimeMs: Double
     override var birthtimeMs: Double
-    override var atime: Date
-    override var mtime: Date
-    override var ctime: Date
-    override var birthtime: Date
+    override var atime: js.date.Date
+    override var mtime: js.date.Date
+    override var ctime: js.date.Date
+    override var birthtime: js.date.Date
 }

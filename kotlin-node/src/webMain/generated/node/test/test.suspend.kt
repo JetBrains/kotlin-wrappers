@@ -3,9 +3,6 @@
 package node.test
 
 @seskar.js.JsAsync
-external suspend fun test(): js.core.Void
-
-@seskar.js.JsAsync
 external suspend fun test(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
@@ -26,3 +23,6 @@ external suspend fun test(
 
 @seskar.js.JsAsync
 external suspend fun test(fn: TestFn = definedExternally): js.core.Void
+
+@seskar.js.JsAsync
+external suspend fun test(): js.core.Void

@@ -4,8 +4,6 @@
 
 package node.buffer
 
-import js.buffer.ArrayBuffer
-
 /**
  * This function returns `true` if `input` contains only valid ASCII-encoded data,
  * including the case in which `input` is empty.
@@ -14,7 +12,7 @@ import js.buffer.ArrayBuffer
  * @since v19.6.0, v18.15.0
  * @param input The input to validate.
  */
-external fun isAscii(input: ArrayBuffer): Boolean
+external fun isAscii(input: js.buffer.ArrayBuffer): Boolean
 
 /**
  * This function returns `true` if `input` contains only valid ASCII-encoded data,

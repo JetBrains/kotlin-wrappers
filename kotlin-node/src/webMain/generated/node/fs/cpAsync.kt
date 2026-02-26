@@ -4,9 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-import web.url.URL
-
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
  * including subdirectories and files.
@@ -24,7 +21,7 @@ external fun cpAsync(
     source: String,
     destination: String,
     opts: CopyOptions = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -41,9 +38,9 @@ external fun cpAsync(
 @JsName("cp")
 external fun cpAsync(
     source: String,
-    destination: URL,
+    destination: web.url.URL,
     opts: CopyOptions = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -59,10 +56,10 @@ external fun cpAsync(
  */
 @JsName("cp")
 external fun cpAsync(
-    source: URL,
+    source: web.url.URL,
     destination: String,
     opts: CopyOptions = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -78,7 +75,7 @@ external fun cpAsync(
  */
 @JsName("cp")
 external fun cpAsync(
-    source: URL,
-    destination: URL,
+    source: web.url.URL,
+    destination: web.url.URL,
     opts: CopyOptions = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

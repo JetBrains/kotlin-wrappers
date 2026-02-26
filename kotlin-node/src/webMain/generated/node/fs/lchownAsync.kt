@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Changes the ownership on a symbolic link.
  * @since v10.0.0
@@ -16,4 +14,4 @@ external fun lchownAsync(
     path: PathLike,
     uid: Number,
     gid: Number,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

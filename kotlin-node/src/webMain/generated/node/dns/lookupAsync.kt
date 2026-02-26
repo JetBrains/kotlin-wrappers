@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Resolves a host name (e.g. `'nodejs.org'`) into the first found A (IPv4) or
  * AAAA (IPv6) record. All `option` properties are optional. If `options` is an
@@ -54,22 +52,25 @@ import js.promise.Promise
 external fun lookupAsync(
     hostname: String,
     family: Number,
-): Promise<LookupAddress>
+): js.promise.Promise<LookupAddress>
 
 @JsName("lookup")
 external fun lookupAsync(
     hostname: String,
     options: LookupOneOptions,
-): Promise<LookupAddress>
+): js.promise.Promise<LookupAddress>
 
 @JsName("lookup")
 external fun lookupAsync(
     hostname: String,
     options: LookupAllOptions,
-): Promise<js.array.ReadonlyArray<LookupAddress>>
+): js.promise.Promise<js.array.ReadonlyArray<LookupAddress>>
 
 @JsName("lookup")
-external fun lookupAsync(hostname: String, options: LookupOptions): Promise<Any /* LookupAddress | LookupAddress[] */>
+external fun lookupAsync(
+    hostname: String,
+    options: LookupOptions,
+): js.promise.Promise<Any /* LookupAddress | LookupAddress[] */>
 
 @JsName("lookup")
-external fun lookupAsync(hostname: String): Promise<LookupAddress>
+external fun lookupAsync(hostname: String): js.promise.Promise<LookupAddress>

@@ -4,7 +4,6 @@
 
 package node.http2
 
-import js.typedarrays.Uint8Array
 import node.http.OutgoingHttpHeaders
 
 /**
@@ -186,11 +185,15 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
 
     override fun end(data: String, cb: () -> Unit) // this
 
-    override fun end(data: Uint8Array<*>, cb: () -> Unit) // this
+    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) // this
 
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) // this
 
-    fun end(str: Uint8Array<*>, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally) // this
+    fun end(
+        str: js.typedarrays.Uint8Array<*>,
+        encoding: node.buffer.BufferEncoding,
+        cb: () -> Unit = definedExternally,
+    ) // this
 
     /**
      * Reads out a header that has already been queued but not sent to the client.
@@ -452,7 +455,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * @since v8.4.0
      */
     fun write(
-        chunk: Uint8Array<*>,
+        chunk: js.typedarrays.Uint8Array<*>,
         callback: (err: js.errors.JsError) -> Unit = definedExternally,
     ): Boolean
 
@@ -463,7 +466,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
     ): Boolean
 
     fun write(
-        chunk: Uint8Array<*>,
+        chunk: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding,
         callback: (err: js.errors.JsError) -> Unit = definedExternally,
     ): Boolean

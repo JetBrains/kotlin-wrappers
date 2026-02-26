@@ -4,9 +4,7 @@
 
 package node.http
 
-import js.array.ReadonlyArray
 import node.net.Socket
-import web.http.Headers
 
 /**
  * This class serves as the parent class of {@link ClientRequest} and {@link ServerResponse}. It is an abstract outgoing message from
@@ -84,7 +82,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: ReadonlyArray<String>) // this
+    fun setHeader(name: String, value: js.array.ReadonlyArray<String>) // this
 
     /**
      * Sets multiple header values for implicit headers. headers must be an instance of
@@ -121,7 +119,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeaders(headers: Headers) // this
+    fun setHeaders(headers: web.http.Headers) // this
 
     /**
      * Sets multiple header values for implicit headers. headers must be an instance of
@@ -194,7 +192,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun appendHeader(name: String, value: ReadonlyArray<String>) // this
+    fun appendHeader(name: String, value: js.array.ReadonlyArray<String>) // this
 
     /**
      * Gets the value of the HTTP header with the given name. If that header is not
@@ -232,7 +230,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * All names are lowercase.
      * @since v7.7.0
      */
-    fun getHeaderNames(): ReadonlyArray<String>
+    fun getHeaderNames(): js.array.ReadonlyArray<String>
 
     /**
      * Returns `true` if the header identified by `name` is currently set in the
@@ -300,7 +298,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * will result in a `TypeError` being thrown.
      * @since v0.3.0
      */
-    fun addTrailers(headers: ReadonlyArray<js.array.Tuple2<String, String>>)
+    fun addTrailers(headers: js.array.ReadonlyArray<js.array.Tuple2<String, String>>)
 
     /**
      * Flushes the message headers.

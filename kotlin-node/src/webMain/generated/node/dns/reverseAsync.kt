@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Performs a reverse DNS query that resolves an IPv4 or IPv6 address to an
  * array of host names.
@@ -15,4 +13,4 @@ import js.promise.Promise
  * @since v10.6.0
  */
 @JsName("reverse")
-external fun reverseAsync(ip: String): Promise<js.array.ReadonlyArray<String>>
+external fun reverseAsync(ip: String): js.promise.Promise<js.array.ReadonlyArray<String>>

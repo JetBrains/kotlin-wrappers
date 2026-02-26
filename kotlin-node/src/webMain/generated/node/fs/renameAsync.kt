@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Renames `oldPath` to `newPath`.
  * @since v10.0.0
@@ -15,4 +13,4 @@ import js.promise.Promise
 external fun renameAsync(
     oldPath: PathLike,
     newPath: PathLike,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

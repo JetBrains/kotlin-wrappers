@@ -4,8 +4,6 @@
 
 package node.v8
 
-import js.buffer.ArrayBuffer
-
 /**
  * @since v8.0.0
  */
@@ -33,7 +31,7 @@ open external class Deserializer {
      */
     fun transferArrayBuffer(
         id: Number,
-        arrayBuffer: ArrayBuffer,
+        arrayBuffer: js.buffer.ArrayBuffer,
     )
 
     /**

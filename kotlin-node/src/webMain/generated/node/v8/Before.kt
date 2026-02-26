@@ -2,8 +2,6 @@
 
 package node.v8
 
-import js.promise.Promise
-
 /**
  * Called before a promise continuation executes. This can be in the form of `then()`, `catch()`, or `finally()` handlers or an await resuming.
  *
@@ -12,5 +10,5 @@ import js.promise.Promise
  * @since v17.1.0, v16.14.0
  */
 sealed external interface Before {
-    operator fun invoke(promise: Promise<Any?>)
+    operator fun invoke(promise: js.promise.Promise<Any?>)
 }

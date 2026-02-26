@@ -4,8 +4,6 @@
 
 package node.stream.consumers
 
-import js.iterable.AsyncIterable
-import js.promise.Promise
 import web.streams.ReadableStream as WebReadableStream
 
 /**
@@ -14,7 +12,7 @@ import web.streams.ReadableStream as WebReadableStream
  * UTF-8 encoded string that is then passed through `JSON.parse()`.
  */
 @JsName("json")
-external fun jsonAsync(stream: WebReadableStream<*>): Promise<Any?>
+external fun jsonAsync(stream: WebReadableStream<*>): js.promise.Promise<Any?>
 
 /**
  * @since v16.7.0
@@ -22,7 +20,7 @@ external fun jsonAsync(stream: WebReadableStream<*>): Promise<Any?>
  * UTF-8 encoded string that is then passed through `JSON.parse()`.
  */
 @JsName("json")
-external fun jsonAsync(stream: node.ReadableStream): Promise<Any?>
+external fun jsonAsync(stream: node.ReadableStream): js.promise.Promise<Any?>
 
 /**
  * @since v16.7.0
@@ -30,4 +28,4 @@ external fun jsonAsync(stream: node.ReadableStream): Promise<Any?>
  * UTF-8 encoded string that is then passed through `JSON.parse()`.
  */
 @JsName("json")
-external fun jsonAsync(stream: AsyncIterable<Any?>): Promise<Any?>
+external fun jsonAsync(stream: js.iterable.AsyncIterable<Any?>): js.promise.Promise<Any?>

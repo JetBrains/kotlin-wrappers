@@ -2,8 +2,6 @@
 
 package node.fs
 
-import js.typedarrays.Uint8Array
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
@@ -69,7 +67,7 @@ external suspend fun appendFile(
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
 ): js.core.Void
 
 /**
@@ -89,7 +87,7 @@ external suspend fun appendFile(
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
@@ -110,7 +108,7 @@ external suspend fun appendFile(
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
@@ -193,7 +191,7 @@ external suspend fun appendFile(
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
 ): js.core.Void
 
 /**
@@ -213,7 +211,7 @@ external suspend fun appendFile(
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
@@ -234,6 +232,6 @@ external suspend fun appendFile(
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
-    data: Uint8Array<*>,
+    data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void

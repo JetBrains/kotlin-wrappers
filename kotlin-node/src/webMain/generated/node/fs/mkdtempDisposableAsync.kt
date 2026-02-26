@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * The resulting Promise holds an async-disposable object whose `path` property
  * holds the created directory path. When the object is disposed, the directory
@@ -29,4 +27,4 @@ import js.promise.Promise
 external fun mkdtempDisposableAsync(
     prefix: PathLike,
     options: EncodingOption = definedExternally,
-): Promise<DisposableTempDir>
+): js.promise.Promise<DisposableTempDir>

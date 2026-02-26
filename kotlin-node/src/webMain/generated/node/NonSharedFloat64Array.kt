@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.Float64Array
-
-typealias NonSharedFloat64Array = Float64Array<ArrayBuffer>
+typealias NonSharedFloat64Array = js.typedarrays.Float64Array<js.buffer.ArrayBuffer>

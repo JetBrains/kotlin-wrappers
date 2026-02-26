@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
 import node.buffer.NonSharedBuffer
 
 /**
@@ -79,7 +78,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: (ReadonlyArray<String>)?,
+    args: (js.array.ReadonlyArray<String>)?,
     callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
 
@@ -92,7 +91,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: (ReadonlyArray<String>)?,
+    args: (js.array.ReadonlyArray<String>)?,
     options: ExecFileOptionsWithBufferEncoding,
     callback: (error: ExecFileException?, stdout: NonSharedBuffer, stderr: NonSharedBuffer) -> Unit = definedExternally,
 ): ChildProcess
@@ -106,7 +105,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: (ReadonlyArray<String>)?,
+    args: (js.array.ReadonlyArray<String>)?,
     options: ExecFileOptionsWithStringEncoding,
     callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
@@ -126,7 +125,7 @@ external fun execFile(
 
 external fun execFile(
     file: String,
-    args: (ReadonlyArray<String>)?,
+    args: (js.array.ReadonlyArray<String>)?,
     options: ExecFileOptions?,
     callback: (
         (

@@ -2,10 +2,7 @@
 
 package node.fs
 
-import js.disposable.AsyncDisposable
-import js.promise.Promise
-
-sealed external interface DisposableTempDir : AsyncDisposable {
+sealed external interface DisposableTempDir : js.disposable.AsyncDisposable {
     /**
      * The path of the created directory.
      */
@@ -15,7 +12,7 @@ sealed external interface DisposableTempDir : AsyncDisposable {
      * A function which removes the created directory.
      */
     @JsName("remove")
-    fun removeAsync(): Promise<js.core.Void>
+    fun removeAsync(): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun remove(): js.core.Void

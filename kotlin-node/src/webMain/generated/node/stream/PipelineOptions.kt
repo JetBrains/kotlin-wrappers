@@ -2,9 +2,7 @@
 
 package node.stream
 
-import web.abort.AbortSignal
-
 sealed external interface PipelineOptions {
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
     var end: Boolean?
 }

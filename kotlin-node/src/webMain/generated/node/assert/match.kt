@@ -4,8 +4,6 @@
 
 package node.assert
 
-import js.regexp.RegExp
-
 /**
  * Expects the `string` input to match the regular expression.
  *
@@ -30,7 +28,7 @@ import js.regexp.RegExp
  */
 external fun match(
     value: String,
-    regExp: RegExp,
+    regExp: js.regexp.RegExp,
 )
 
 /**
@@ -57,7 +55,7 @@ external fun match(
  */
 external fun match(
     value: String,
-    regExp: RegExp,
+    regExp: js.regexp.RegExp,
     message: String = definedExternally,
 )
 
@@ -85,6 +83,6 @@ external fun match(
  */
 external fun match(
     value: String,
-    regExp: RegExp,
+    regExp: js.regexp.RegExp,
     message: js.errors.JsError = definedExternally,
 )

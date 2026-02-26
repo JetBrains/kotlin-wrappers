@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Asynchronously copies `src` to `dest`. By default, `dest` is overwritten if it
  * already exists.
@@ -44,4 +42,4 @@ external fun copyFileAsync(
     src: PathLike,
     dest: PathLike,
     mode: Number = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

@@ -2,16 +2,11 @@
 
 package node.buffer
 
-import js.array.ArrayLike
-import js.buffer.ArrayBuffer
-import js.buffer.ArrayBufferLike
-import js.typedarrays.Uint8Array
-
-sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayBufferLike */> :
-    Uint8Array<TArrayBuffer> {
+sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.buffer.ArrayBufferLike */> :
+    js.typedarrays.Uint8Array<TArrayBuffer> {
     constructor (str: String, encoding: BufferEncoding = definedExternally)
     constructor (size: Number)
-    constructor (array: ArrayLike<Double>)
+    constructor (array: js.array.ArrayLike<Double>)
     constructor (arrayBuffer: TArrayBuffer)
     // see buffer.d.ts for implementation shared with all TypeScript versions
 
@@ -51,7 +46,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
     fun slice(
         start: Number = definedExternally,
         end: Number = definedExternally,
-    ): Buffer<ArrayBuffer>
+    ): Buffer<js.buffer.ArrayBuffer>
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
@@ -257,7 +252,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v0.11.13
      * @param otherBuffer A `Buffer` or {@link Uint8Array} with which to compare `buf`.
      */
-    fun equals(otherBuffer: Uint8Array<*>): Boolean
+    fun equals(otherBuffer: js.typedarrays.Uint8Array<*>): Boolean
 
     /**
      * Compares `buf` with `target` and returns a number indicating whether `buf`comes before, after, or is the same as `target` in sort order.
@@ -314,7 +309,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [sourceEnd=buf.length] The offset within `buf` at which to end comparison (not inclusive).
      */
     fun compare(
-        target: Uint8Array<*>,
+        target: js.typedarrays.Uint8Array<*>,
         targetStart: Number = definedExternally,
         targetEnd: Number = definedExternally,
         sourceStart: Number = definedExternally,
@@ -375,7 +370,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @return The number of bytes copied.
      */
     fun copy(
-        target: Uint8Array<*>,
+        target: js.typedarrays.Uint8Array<*>,
         targetStart: Number = definedExternally,
         sourceStart: Number = definedExternally,
         sourceEnd: Number = definedExternally,
@@ -1731,7 +1726,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @return A reference to `buf`.
      */
     fun fill(
-        value: Uint8Array<*>,
+        value: js.typedarrays.Uint8Array<*>,
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
@@ -1805,13 +1800,13 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
 
     fun fill(value: String, offset: Number, encoding: BufferEncoding) // this
 
-    fun fill(value: Uint8Array<*>, offset: Number, encoding: BufferEncoding) // this
+    fun fill(value: js.typedarrays.Uint8Array<*>, offset: Number, encoding: BufferEncoding) // this
 
     fun fill(value: Double, offset: Number, encoding: BufferEncoding) // this
 
     fun fill(value: String, encoding: BufferEncoding) // this
 
-    fun fill(value: Uint8Array<*>, encoding: BufferEncoding) // this
+    fun fill(value: js.typedarrays.Uint8Array<*>, encoding: BufferEncoding) // this
 
     fun fill(value: Double, encoding: BufferEncoding) // this
 
@@ -2032,7 +2027,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @return The index of the first occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun indexOf(
-        value: Uint8Array<*>,
+        value: js.typedarrays.Uint8Array<*>,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Double
@@ -2048,7 +2043,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
     ): Double
 
     fun indexOf(
-        value: Uint8Array<*>,
+        value: js.typedarrays.Uint8Array<*>,
         encoding: BufferEncoding,
     ): Double
 
@@ -2266,7 +2261,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @return The index of the last occurrence of `value` in `buf`, or `-1` if `buf` does not contain `value`.
      */
     fun lastIndexOf(
-        value: Uint8Array<*>,
+        value: js.typedarrays.Uint8Array<*>,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
     ): Double
@@ -2282,7 +2277,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
     ): Double
 
     fun lastIndexOf(
-        value: Uint8Array<*>,
+        value: js.typedarrays.Uint8Array<*>,
         encoding: BufferEncoding,
     ): Double
 
@@ -2431,7 +2426,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * `Buffer` pool like `Buffer.allocUnsafe()` does.
          * @since v5.10.0
          */
-        fun from(array: ArrayLike<Double>): Buffer<ArrayBuffer>
+        fun from(array: js.array.ArrayLike<Double>): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * This creates a view of the `ArrayBuffer` without copying the underlying
@@ -2500,7 +2495,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param length Number of bytes to expose. **Default:**
          * `arrayBuffer.byteLength - byteOffset`.
          */
-        fun <TArrayBuffer : ArrayBufferLike> from(
+        fun <TArrayBuffer : js.buffer.ArrayBufferLike> from(
             arrayBuffer: TArrayBuffer,
             byteOffset: Number = definedExternally,
             length: Number = definedExternally,
@@ -2536,15 +2531,15 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         fun from(
             string: String,
             encoding: BufferEncoding = definedExternally,
-        ): Buffer<ArrayBuffer>
+        ): Buffer<js.buffer.ArrayBuffer>
 
-        fun from(arrayOrString: Any /* ArrayLike<number> | string */): Buffer<ArrayBuffer>
+        fun from(arrayOrString: Any /* ArrayLike<number> | string */): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Creates a new Buffer using the passed {data}
          * @param values to create a new Buffer
          */
-        fun of(vararg items: Double): Buffer<ArrayBuffer>
+        fun of(vararg items: Double): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Returns a new `Buffer` which is the result of concatenating all the `Buffer` instances in the `list` together.
@@ -2586,9 +2581,9 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param totalLength Total length of the `Buffer` instances in `list` when concatenated.
          */
         fun concat(
-            list: js.array.ReadonlyArray<Uint8Array<*>>,
+            list: js.array.ReadonlyArray<js.typedarrays.Uint8Array<*>>,
             totalLength: Number = definedExternally,
-        ): Buffer<ArrayBuffer>
+        ): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Copies the underlying memory of `view` into a new `Buffer`.
@@ -2610,7 +2605,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
             view: js.typedarrays.TypedArray<*, *, *, *>,
             offset: Number = definedExternally,
             length: Number = definedExternally,
-        ): Buffer<ArrayBuffer>
+        ): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
@@ -2659,7 +2654,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param [fill=0] A value to pre-fill the new `Buffer` with.
          * @param [encoding='utf8'] If `fill` is a string, this is its encoding.
          */
-        fun alloc(size: Number): Buffer<ArrayBuffer>
+        fun alloc(size: Number): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
@@ -2712,7 +2707,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
             size: Number,
             fill: String = definedExternally,
             encoding: BufferEncoding = definedExternally,
-        ): Buffer<ArrayBuffer>
+        ): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
@@ -2763,9 +2758,9 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          */
         fun alloc(
             size: Number,
-            fill: Uint8Array<*> = definedExternally,
+            fill: js.typedarrays.Uint8Array<*> = definedExternally,
             encoding: BufferEncoding = definedExternally,
-        ): Buffer<ArrayBuffer>
+        ): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `fill` is `undefined`, the`Buffer` will be zero-filled.
@@ -2818,7 +2813,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
             size: Number,
             fill: Double = definedExternally,
             encoding: BufferEncoding = definedExternally,
-        ): Buffer<ArrayBuffer>
+        ): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown.
@@ -2855,7 +2850,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @since v5.10.0
          * @param size The desired length of the new `Buffer`.
          */
-        fun allocUnsafe(size: Number): Buffer<ArrayBuffer>
+        fun allocUnsafe(size: Number): Buffer<js.buffer.ArrayBuffer>
 
         /**
          * Allocates a new `Buffer` of `size` bytes. If `size` is larger than {@link constants.MAX_LENGTH} or smaller than 0, `ERR_OUT_OF_RANGE` is thrown. A zero-length `Buffer` is created if
@@ -2901,7 +2896,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @since v5.12.0
          * @param size The desired length of the new `Buffer`.
          */
-        fun allocUnsafeSlow(size: Number): Buffer<ArrayBuffer>
+        fun allocUnsafeSlow(size: Number): Buffer<js.buffer.ArrayBuffer>
 // see buffer.buffer.d.ts for implementation specific to TypeScript 5.7 and later
 // see ts5.6/buffer.buffer.d.ts for implementation specific to TypeScript 5.6 and earlier
 
@@ -3043,7 +3038,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @return The number of bytes contained within `string`.
          */
         fun byteLength(
-            string: ArrayBufferLike,
+            string: js.buffer.ArrayBufferLike,
             encoding: BufferEncoding = definedExternally,
         ): Double
 
@@ -3064,7 +3059,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @since v0.11.13
          * @return Either `-1`, `0`, or `1`, depending on the result of the comparison. See `compare` for details.
          */
-        fun compare(buf1: Uint8Array<*>, buf2: Uint8Array<*>): Int // -1 | 0 | 1
+        fun compare(buf1: js.typedarrays.Uint8Array<*>, buf2: js.typedarrays.Uint8Array<*>): Int // -1 | 0 | 1
 
         /**
          * This is the size (in bytes) of pre-allocated internal `Buffer` instances used

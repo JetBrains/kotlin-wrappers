@@ -1,9 +1,9 @@
 package node.karakum.plugins
 
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import arrow.core.raise.nullable
 import typescript.*
 
 private fun isWaitForMethod(node: Node) = nullable {
@@ -57,6 +57,6 @@ val convertWaitFor = createPlugin { node, _, render ->
         val method = ensureNotNull(parameter.getParentOrNull())
         ensure(isWaitForMethod(method))
 
-        "Promise<${render(node)}>"
+        "js.promise.Promise<${render(node)}>"
     }
 }

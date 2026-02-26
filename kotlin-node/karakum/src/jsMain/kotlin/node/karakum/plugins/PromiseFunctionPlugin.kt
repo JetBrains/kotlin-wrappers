@@ -1,14 +1,8 @@
 package node.karakum.plugins
 
 import arrow.core.raise.nullable
-import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.extension.plugins.Signature
-import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
-import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
-import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import js.array.ReadonlyArray
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
 import typescript.*
 
 private fun isPromiseType(node: Node) = nullable {
@@ -138,86 +132,17 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
     }
 } != null
 
-class PromiseFunctionApiPlugin : Plugin {
-    private val promiseApiDeclarations = mutableListOf<DerivedDeclaration>()
-
-    override fun setup(context: Context) = Unit
-
-    override fun traverse(node: Node, context: Context) = Unit
-
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
-
-        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
-
-        val namespace = typeScriptService.findClosestNamespace(node)
-
-        ensure(isFunctionDeclaration(node))
-        ensure(isPromiseFunction(node))
-
-        val nameNode = ensureNotNull(node.name)
-
-        val name = escapeIdentifier(next(nameNode))
-
-        val typeParameters = node.typeParameters?.asArray()
-            ?.joinToString(", ") { next(it) }
-
-        val returnType = node.type?.let { next(it) }
-
-        val type = requireNotNull(node.type)
-        require(isTypeReferenceNode(type))
-
-        val typeArguments = requireNotNull(type.typeArguments)
-
-        var returnTypePayload = next(typeArguments.asArray().first())
-
-        val typeName = type.typeName
+fun createPromiseFunctionPlugin() = PromiseFunctionPlugin(
+    isPromiseType = { node, _ -> isPromiseType(node) },
+    exclude = ::isConflictingOverload,
+    renderPayload = { node, _, render ->
+        val typeName = node.typeName
 
         if (isIdentifier(typeName) && typeName.text == "PipelinePromise") {
-            returnTypePayload = "Any?"
+            "Any?"
+        } else {
+            val typeArguments = requireNotNull(node.typeArguments)
+            render(typeArguments.asArray().first())
         }
-
-        val body = convertParameterDeclarations(
-            node, context, next,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = template@{ parameters, signature ->
-                    if (isConflictingOverload(node, signature)) return@template ""
-
-                    """
-                        @seskar.js.JsAsync
-                        external suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it"}}
-                    """.trimIndent()
-                }
-            )
-        )
-
-        val nodeInfo = DerivedDeclaration(
-            sourceFileName,
-            namespace,
-            fileName = "${name}.suspend.kt",
-            body,
-        )
-
-        promiseApiDeclarations += nodeInfo
-
-        convertParameterDeclarations(
-            node, context, next,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = template@{ parameters, signature ->
-                    if (isConflictingOverload(node, signature)) return@template ""
-
-                    """
-                        @JsName("$name")
-                        external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(returnType) { ": $it" }}
-                    """.trimIndent()
-                }
-            )
-        )
     }
-
-    override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
-        return generateDerivedDeclarations(promiseApiDeclarations.toTypedArray(), context)
-    }
-}
+)

@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.array.ReadonlyArray
-
 /**
  * Write an array of `ArrayBufferView`s to the file specified by `fd` using `writev()`.
  *
@@ -26,13 +24,13 @@ import js.array.ReadonlyArray
  * @since v12.9.0
  * @param [position='null']
  */
-external fun <TBuffers : ReadonlyArray<js.buffer.ArrayBufferView<*>>> writev(
+external fun <TBuffers : js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>>> writev(
     fd: Number,
     buffers: TBuffers,
     cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: TBuffers) -> Unit,
 )
 
-external fun <TBuffers : ReadonlyArray<js.buffer.ArrayBufferView<*>>> writev(
+external fun <TBuffers : js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>>> writev(
     fd: Number,
     buffers: TBuffers,
     position: Double?,

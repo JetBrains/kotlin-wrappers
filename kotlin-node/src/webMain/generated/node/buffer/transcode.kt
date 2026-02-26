@@ -4,8 +4,6 @@
 
 package node.buffer
 
-import js.typedarrays.Uint8Array
-
 /**
  * Re-encodes the given `Buffer` or `Uint8Array` instance from one character
  * encoding to another. Returns a new `Buffer` instance.
@@ -34,7 +32,7 @@ import js.typedarrays.Uint8Array
  * @param toEnc To target encoding.
  */
 external fun transcode(
-    source: Uint8Array<*>,
+    source: js.typedarrays.Uint8Array<*>,
     fromEnc: TranscodeEncoding,
     toEnc: TranscodeEncoding,
 ): NonSharedBuffer

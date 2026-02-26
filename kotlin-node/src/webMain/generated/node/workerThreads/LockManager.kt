@@ -2,11 +2,9 @@
 
 package node.workerThreads
 
-import js.promise.Promise
-
 sealed external interface LockManager {
     @JsName("query")
-    fun queryAsync(): Promise<LockManagerSnapshot>
+    fun queryAsync(): js.promise.Promise<LockManagerSnapshot>
 
     @seskar.js.JsAsync
     suspend fun query(): LockManagerSnapshot
@@ -15,7 +13,7 @@ sealed external interface LockManager {
     fun <T> requestAsync(
         name: String,
         callback: LockGrantedCallback<T>,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
     suspend fun <T> request(
@@ -28,7 +26,7 @@ sealed external interface LockManager {
         name: String,
         options: LockOptions,
         callback: LockGrantedCallback<T>,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
     suspend fun <T> request(

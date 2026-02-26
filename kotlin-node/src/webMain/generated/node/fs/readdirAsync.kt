@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
 import node.buffer.NonSharedBuffer
 
 /**
@@ -32,7 +31,7 @@ import node.buffer.NonSharedBuffer
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
 @JsName("readdir")
-external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String>>
+external fun readdirAsync(path: PathLike): js.promise.Promise<js.array.ReadonlyArray<String>>
 
 /**
  * Reads the contents of a directory.
@@ -62,7 +61,7 @@ external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String
 external fun readdirAsync(
     path: PathLike,
     options: (ReaddirAsyncOptions)? = definedExternally,
-): Promise<js.array.ReadonlyArray<String>>
+): js.promise.Promise<js.array.ReadonlyArray<String>>
 
 /**
  * Reads the contents of a directory.
@@ -92,7 +91,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<js.array.ReadonlyArray<String>>
+): js.promise.Promise<js.array.ReadonlyArray<String>>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -103,7 +102,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: ReaddirBufferAsyncOptions,
-): Promise<js.array.ReadonlyArray<NonSharedBuffer>>
+): js.promise.Promise<js.array.ReadonlyArray<NonSharedBuffer>>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -114,7 +113,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: String, // "buffer"
-): Promise<js.array.ReadonlyArray<NonSharedBuffer>>
+): js.promise.Promise<js.array.ReadonlyArray<NonSharedBuffer>>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -143,7 +142,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: ReaddirWithFileTypesAsyncOptions,
-): Promise<js.array.ReadonlyArray<Dirent<*>>>
+): js.promise.Promise<js.array.ReadonlyArray<Dirent<*>>>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -154,4 +153,4 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: ReaddirBufferWithFileTypesAsyncOptions,
-): Promise<js.array.ReadonlyArray<Dirent<NonSharedBuffer>>>
+): js.promise.Promise<js.array.ReadonlyArray<Dirent<NonSharedBuffer>>>

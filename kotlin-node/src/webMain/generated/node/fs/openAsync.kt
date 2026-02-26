@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Opens a `FileHandle`.
  *
@@ -20,7 +18,7 @@ import js.promise.Promise
  * @return Fulfills with a {FileHandle} object.
  */
 @JsName("open")
-external fun openAsync(path: PathLike): Promise<FileHandle>
+external fun openAsync(path: PathLike): js.promise.Promise<FileHandle>
 
 /**
  * Opens a `FileHandle`.
@@ -40,7 +38,7 @@ external fun openAsync(
     path: PathLike,
     flags: String = definedExternally,
     mode: Mode = definedExternally,
-): Promise<FileHandle>
+): js.promise.Promise<FileHandle>
 
 /**
  * Opens a `FileHandle`.
@@ -60,4 +58,4 @@ external fun openAsync(
     path: PathLike,
     flags: Double = definedExternally,
     mode: Mode = definedExternally,
-): Promise<FileHandle>
+): js.promise.Promise<FileHandle>

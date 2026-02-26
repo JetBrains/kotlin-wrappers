@@ -4,8 +4,6 @@
 
 package node.workerThreads
 
-import js.promise.Promise
-
 /**
  * Sends a value to another worker, identified by its thread ID.
  * @param threadId The target thread ID. If the thread ID is invalid, a `ERR_WORKER_MESSAGING_FAILED` error will be thrown.
@@ -22,7 +20,7 @@ external fun postMessageToThreadAsync(
     threadId: Number,
     value: Any?,
     timeout: Number = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>
 
 @JsName("postMessageToThread")
 external fun postMessageToThreadAsync(
@@ -30,4 +28,4 @@ external fun postMessageToThreadAsync(
     value: Any?,
     transferList: js.array.ReadonlyArray<Transferable>,
     timeout: Number = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

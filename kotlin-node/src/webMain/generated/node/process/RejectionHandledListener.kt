@@ -2,6 +2,4 @@
 
 package node.process
 
-import js.promise.Promise
-
-typealias RejectionHandledListener = (promise: Promise<Any?>) -> Unit
+typealias RejectionHandledListener = (promise: js.promise.Promise<Any?>) -> Unit

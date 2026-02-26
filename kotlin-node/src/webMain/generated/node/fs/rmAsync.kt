@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Removes files and directories (modeled on the standard POSIX `rm` utility).
  * @since v14.14.0
@@ -15,4 +13,4 @@ import js.promise.Promise
 external fun rmAsync(
     path: PathLike,
     options: RmOptions = definedExternally,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

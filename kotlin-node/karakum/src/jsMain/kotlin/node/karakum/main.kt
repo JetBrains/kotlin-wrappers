@@ -1,11 +1,13 @@
 package node.karakum
 
 import io.github.sgrishchenko.karakum.configuration.*
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
+import js.objects.unsafeJso
 import node.karakum.annotations.*
 import node.karakum.inheritanceModifiers.modifyClassInheritance
 import node.karakum.inheritanceModifiers.modifyInterfaceInheritance
@@ -22,16 +24,24 @@ suspend fun main(args: ReadonlyArray<String>) {
             // and this plugin should be added before any other function plugin
             convertPromisifyFunctions,
 
+            PromiseResultPlugin(),
+
+            convertNumberParameter,
+            createNumberPlugin(),
+
+            // should be added before promise plugins
+            // TODO: add suspend signatures
+            EventEmitterPlugin(),
+
+            createPromiseFunctionPlugin(),
+            createPromiseMethodPlugin(),
+
             AmbiguousSignaturePlugin(),
             BufferPlugin(),
             ContractFunctionApiPlugin(),
             DiffieHellmanGroupPlugin(),
-            EventEmitterPlugin(),
             GenerateKeyPairTypePlugin(),
             InspectorSessionMethodPlugin(),
-            PromiseFunctionApiPlugin(),
-            PromiseClassApiPlugin,
-            PromiseInterfaceApiPlugin,
             ResourceRecordTypePlugin(),
 
             convertArgumentsTypeReferenceNode,
@@ -53,6 +63,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertGetPeerCertificate,
             convertHttpTypeParameter,
             convertImplicitArrayBuffer,
+            convertImportMetaConflictingOverloads,
             convertIncompatibleParameterName,
             convertInspectorQualifiedName,
             convertIterableIterator,
@@ -62,8 +73,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertMockTrackerGenerics,
             convertModuleQualifiedName,
             convertNodeJsQualifiedName,
-            convertNumberParameter,
-            convertNumbers,
             convertObjectParam,
             convertObjectTypeReferenceNode,
             convertOmittedTypeAlias,
@@ -74,7 +83,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertOverriddenPropertySignature,
             convertParsedResults,
             convertPipelinePromise,
-            convertPromiseResult,
+            convertPromiseProperty,
             convertQuerystringAliases,
             convertReadableSymbol,
             convertReporterConstructorWrapperTypeParameter,
@@ -620,152 +629,23 @@ suspend fun main(args: ReadonlyArray<String>) {
             )
         )
         importInjector = recordOf(
-            "Async.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             ".contract.kt" to arrayOf(
                 "kotlin.contracts.contract"
             ),
             "ReadableStream.kt" to arrayOf(
-                "js.typedarrays.Uint8Array",
                 "node.events.EventEmitter"
             ),
             "WritableStream.kt" to arrayOf(
-                "js.typedarrays.Uint8Array",
                 "node.events.EventEmitter"
             ),
-            "GCFunction.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "NonSharedArrayBufferView" to arrayOf(
-                "js.buffer.ArrayBuffer",
+            "NonSharedArrayBufferView.kt" to arrayOf(
                 "js.buffer.ArrayBufferView",
             ),
-            "NonSharedBigInt64Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.BigInt64Array",
-            ),
-            "NonSharedBigUint64Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.BigUint64Array",
-            ),
-            "NonSharedDataView" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.buffer.DataView",
-            ),
-            "NonSharedFloat16Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Float16Array",
-            ),
-            "NonSharedFloat32Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Float32Array",
-            ),
-            "NonSharedFloat64Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Float64Array",
-            ),
-            "NonSharedInt8Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Int8Array",
-            ),
-            "NonSharedInt16Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Int16Array",
-            ),
-            "NonSharedInt32Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Int32Array",
-            ),
-            "NonSharedTypedArray" to arrayOf(
-                "js.buffer.ArrayBuffer",
+            "NonSharedTypedArray.kt" to arrayOf(
                 "js.typedarrays.TypedArray",
-            ),
-            "NonSharedUint8Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Uint8Array",
-            ),
-            "NonSharedUint8ClampedArray" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Uint8ClampedArray",
-            ),
-            "NonSharedUint16Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Uint16Array",
-            ),
-            "NonSharedUint32Array" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.typedarrays.Uint32Array",
-            ),
-            "assert/doesNotMatch.kt" to arrayOf(
-                "js.regexp.RegExp"
-            ),
-            "assert/doesNotReject.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "assert/doesNotReject.suspend.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "assert/match.kt" to arrayOf(
-                "js.regexp.RegExp"
-            ),
-            "assert/rejects.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "assert/rejects.suspend.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "buffer/Buffer.class.kt" to arrayOf(
-                "js.array.ArrayLike",
-                "js.buffer.ArrayBuffer",
-                "js.buffer.ArrayBufferLike",
-                "js.buffer.SharedArrayBuffer",
-                "js.typedarrays.Uint8Array"
-            ),
-            "buffer/AllowSharedBuffer.kt" to arrayOf(
-                "js.buffer.ArrayBufferLike"
-            ),
-            "buffer/NonSharedBuffer.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "buffer/File.kt" to arrayOf(
-                "web.blob.Blob"
-            ),
-            "buffer/isAscii.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "buffer/isUtf8.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
             ),
             "buffer/resolveObjectURL.kt" to arrayOf(
                 "web.blob.Blob"
-            ),
-            "buffer/transcode.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "childProcess/ExecFileOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "childProcess/ExecOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "childProcess/PromiseWithChild.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "childProcess/execFile.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "childProcess/execFileSync.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "childProcess/fork.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "childProcess/spawn.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "childProcess/spawnSync.kt" to arrayOf(
-                "js.array.ReadonlyArray"
             ),
             "cluster/Cluster.interface.kt" to arrayOf(
                 "node.events.EventEmitter"
@@ -791,114 +671,14 @@ suspend fun main(args: ReadonlyArray<String>) {
             "crypto/Verify.kt" to arrayOf(
                 "node.stream.WritableOptions"
             ),
-            "crypto/createDiffieHellman.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "crypto/decapsulate.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "crypto/generatePrime.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "crypto/generatePrimeSync.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "crypto/hkdf.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "crypto/hkdfSync.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "crypto/X509Certificate.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "dgram/Socket.kt" to arrayOf(
-                "js.array.ReadonlyArray",
-                "js.typedarrays.Uint8Array"
-            ),
-            "diagnosticsChannel/TracingChannel.kt" to arrayOf(
+            "dns/ResolverAsync.kt" to arrayOf(
                 "js.promise.Promise"
-            ),
-            "dns/setServers.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "dns/TlsaRecord.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "events/EventEmitter.kt" to arrayOf(
-                "js.array.Tuple",
-                "js.array.Tuple1",
-                "js.disposable.Disposable",
-                "js.iterable.AsyncIterator",
-                "js.promise.Promise",
-                "web.abort.AbortSignal",
-                "web.events.Event",
-                "web.events.EventTarget"
-            ),
-            "events/EventEmitter.ext.kt" to arrayOf(
-                "js.array.Tuple"
-            ),
-            "events/NodeEventTarget.kt" to arrayOf(
-                "web.events.EventListenerOptions",
-                "web.events.EventTarget",
-            ),
-            "events/StaticEventEmitterOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "fs/Dir.kt" to arrayOf(
-                "js.iterable.AsyncIterable",
-                "js.promise.Promise"
-            ),
-            "fs/DisposableTempDir.kt" to arrayOf(
-                "js.disposable.AsyncDisposable",
-                "js.promise.Promise"
-            ),
-            "fs/FileHandleAsync.kt" to arrayOf(
-                "js.array.ReadonlyArray",
-                "js.typedarrays.Uint8Array"
-            ),
-            "fs/FileHandleWriteResultPayloadAsync.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
             ),
             "fs/ReadStream.kt" to arrayOf(
                 "node.stream.ReadableOptions"
             ),
-            "fs/StatsBase.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "fs/Stats.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "fs/StreamOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
             "fs/WriteStream.kt" to arrayOf(
                 "node.stream.WritableOptions"
-            ),
-            "fs/appendFile.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "fs/appendFileAsync.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "fs/appendFileSync.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "fs/appendFile.suspend.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "fs/cpAsync.kt" to arrayOf(
-                "web.url.URL"
-            ),
-            "fs/cp.suspend.kt" to arrayOf(
-                "web.url.URL"
-            ),
-            "fs/openAsBlob.kt" to arrayOf(
-                "js.promise.Promise",
-                "web.blob.Blob"
-            ),
-            "fs/openAsBlob.suspend.kt" to arrayOf(
-                "web.blob.Blob"
             ),
             "fs/readFile.kt" to arrayOf(
                 "node.buffer.NonSharedBuffer"
@@ -906,45 +686,8 @@ suspend fun main(args: ReadonlyArray<String>) {
             "fs/readFileSync.kt" to arrayOf(
                 "node.buffer.NonSharedBuffer"
             ),
-            "fs/readv.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "fs/readvSync.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "fs/watchAsync.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "fs/writeFileAsync.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "fs/writeFile.suspend.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "fs/writev.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "fs/writevSync.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "http/ClientRequestArgs.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "http/OutgoingMessage.kt" to arrayOf(
-                "js.array.ReadonlyArray",
-                "web.http.Headers"
-            ),
-            "http2/ClientSessionRequestOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "http2/Http2ServerResponse.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
             "http2/Http2Session.kt" to arrayOf(
                 "node.events.EventEmitter"
-            ),
-            "http2/getUnpackedSettings.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
             ),
             "https/RequestOptions.kt" to arrayOf(
                 "node.tls.PeerCertificate"
@@ -967,18 +710,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             "inspector/SessionAsync.kt" to arrayOf(
                 "node.events.EventEmitter"
             ),
-            "inspector/open.kt" to arrayOf(
-                "js.disposable.Disposable"
-            ),
-            "net/OnReadOpts.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "net/Socket.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "net/SocketConstructorOpts.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
             "module/Require.interface.kt" to arrayOf(
                 "node.Dict"
             ),
@@ -988,17 +719,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "os/constants/signals.kt" to arrayOf(
                 "node.os.SignalConstants"
             ),
-            "perfHooks/PerformanceObserverObserveTypesOptions.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "process/MultipleResolveListener.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "process/Process.interface.kt" to arrayOf(
-                "js.array.ReadonlyArray",
-                "js.collections.ReadonlySet",
-                "js.promise.Promise",
-                "web.url.URL",
                 "node.module.Module",
                 "node.events.EventEmitter"
             ),
@@ -1008,288 +729,84 @@ suspend fun main(args: ReadonlyArray<String>) {
             "process/ProcessVersions.kt" to arrayOf(
                 "node.Dict"
             ),
-            "process/RejectionHandledListener.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "process/Socket.kt" to arrayOf(
                 "node.ReadWriteStream"
             ),
-            "process/UnhandledRejectionListener.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "readline/Interface.kt" to arrayOf(
-                "js.disposable.Disposable"
-            ),
-            "readline/ReadLineOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "repl/Recoverable.kt" to arrayOf(
-                "js.errors.SyntaxError"
-            ),
-            "sea/getAsset.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "sea/getAssetAsBlob.kt" to arrayOf(
-                "web.blob.Blob"
-            ),
-            "sea/getRawAsset.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "sqlite/DatabaseSync.kt" to arrayOf(
-                "js.disposable.Disposable",
-                "js.typedarrays.Uint8Array",
-                "web.url.URL"
-            ),
-            "sqlite/SQLTagStore.kt" to arrayOf(
-                "js.string.TemplateStringsArray",
-            ),
-            "sqlite/Session.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "sqlite/backup.kt" to arrayOf(
-                "js.promise.Promise",
-                "web.url.URL"
-            ),
-            "sqlite/backup.suspend.kt" to arrayOf(
-                "web.url.URL"
-            ),
-            "stream/ArrayOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "stream/addAbortSignal.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "stream/Duplex.kt" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.iterable.AsyncIterable",
-                "js.generator.AsyncGeneratorFunction",
-                "js.promise.Promise"
-            ),
-            "stream/pipeline.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "stream/pipelineAsync.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "stream/PipelineDestinationIterableFunction.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/PipelineDestinationPromiseFunction.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/PipelineOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "stream/pipeline.suspend.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
             "stream/Readable.kt" to arrayOf(
-                "js.typedarrays.Uint8Array",
-                "js.iterable.AsyncIterable",
-                "js.promise.Promise",
                 "node.ReadableStreamPipeOptions",
                 "node.WritableStream"
             ),
-            "stream/StreamComposeOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "stream/Stream.class.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/Writable.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "stream/consumers/arrayBuffer.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.buffer.ArrayBuffer",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/arrayBuffer.suspend.kt" to arrayOf(
-                "js.buffer.ArrayBuffer",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/blob.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/blob.suspend.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/buffer.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/buffer.suspend.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/json.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/json.suspend.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/text.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.iterable.AsyncIterable"
-            ),
-            "stream/consumers/text.suspend.kt" to arrayOf(
-                "js.iterable.AsyncIterable"
-            ),
-            "test/AssertSnapshotOptions.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "test/HookOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "test/MockTimersOptions.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "test/RunOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "test/SuiteContext.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "test/TestContext.kt" to arrayOf(
-                "js.promise.Promise",
-                "web.abort.AbortSignal"
-            ),
-            "test/TestContextTest.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "test/TestOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "test/describe.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "test/describe/only.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/describe/only.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/describe/skip.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/describe/skip.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/describe/todo.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/describe/todo.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/it.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "test/it/only.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
             "test/it/only.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
             "test/it/skip.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
             "test/it/skip.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
             "test/it/todo.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
             "test/it/todo.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/suite.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "test/suite/only.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/suite/only.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/suite/skip.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/suite/skip.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/suite/todo.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
             "test/suite/todo.suspend.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
-            ),
-            "test/only.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "test/skip.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "test/test.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "test/todo.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "test/reporters/TestEventGenerator.kt" to arrayOf(
-                "js.generator.AsyncGenerator"
-            ),
-            "test/reporters/dot.kt" to arrayOf(
-                "js.generator.AsyncGenerator"
-            ),
-            "test/reporters/junit.kt" to arrayOf(
-                "js.generator.AsyncGenerator"
-            ),
-            "test/reporters/tap.kt" to arrayOf(
-                "js.generator.AsyncGenerator"
-            ),
-            "test/snapshot/setDefaultSnapshotSerializers.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "tls/setDefaultCACertificates.kt" to arrayOf(
-                "js.array.ReadonlyArray"
             ),
             "url/fileURLToPath.kt" to arrayOf(
                 "web.url.URL"
@@ -1306,123 +823,8 @@ suspend fun main(args: ReadonlyArray<String>) {
             "url/urlToHttpOptions.kt" to arrayOf(
                 "web.url.URL"
             ),
-            "util/aborted.kt" to arrayOf(
-                "js.promise.Promise",
-                "web.abort.AbortSignal"
-            ),
-            "util/aborted.suspend.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "util/callbackify.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "util/promisify.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "util/transferableAbortController.kt" to arrayOf(
-                "web.abort.AbortController"
-            ),
-            "util/transferableAbortSignal.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "util/isDate.contract.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "util/isRegExp.contract.kt" to arrayOf(
-                "js.regexp.RegExp"
-            ),
-            "util/types/isAnyArrayBuffer.contract.kt" to arrayOf(
-                "js.buffer.ArrayBufferLike"
-            ),
-            "util/types/isArrayBuffer.contract.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "util/types/isBigInt64Array.contract.kt" to arrayOf(
-                "js.typedarrays.BigInt64Array"
-            ),
             "util/types/isBigIntObject.contract.kt" to arrayOf(
                 "js.core.BigInt"
-            ),
-            "util/types/isBigUint64Array.contract.kt" to arrayOf(
-                "js.typedarrays.BigUint64Array"
-            ),
-            "util/types/isDataView.contract.kt" to arrayOf(
-                "js.buffer.DataView"
-            ),
-            "util/types/isDate.contract.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "util/types/isFloat16Array.contract.kt" to arrayOf(
-                "js.typedarrays.Float16Array"
-            ),
-            "util/types/isFloat32Array.contract.kt" to arrayOf(
-                "js.typedarrays.Float32Array"
-            ),
-            "util/types/isFloat64Array.contract.kt" to arrayOf(
-                "js.typedarrays.Float64Array"
-            ),
-            "util/types/isGeneratorFunction.contract.kt" to arrayOf(
-                "js.generator.GeneratorFunction"
-            ),
-            "util/types/isGeneratorObject.contract.kt" to arrayOf(
-                "js.generator.Generator"
-            ),
-            "util/types/isInt8Array.contract.kt" to arrayOf(
-                "js.typedarrays.Int8Array"
-            ),
-            "util/types/isInt16Array.contract.kt" to arrayOf(
-                "js.typedarrays.Int16Array"
-            ),
-            "util/types/isInt32Array.contract.kt" to arrayOf(
-                "js.typedarrays.Int32Array"
-            ),
-            "util/types/isPromise.contract.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "util/types/isRegExp.contract.kt" to arrayOf(
-                "js.regexp.RegExp"
-            ),
-            "util/types/isSharedArrayBuffer.contract.kt" to arrayOf(
-                "js.buffer.SharedArrayBuffer"
-            ),
-            "util/types/isSymbolObject.contract.kt" to arrayOf(
-                "js.symbol.Symbol"
-            ),
-            "util/types/isUint8Array.contract.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
-            ),
-            "util/types/isUint8ClampedArray.contract.kt" to arrayOf(
-                "js.typedarrays.Uint8ClampedArray"
-            ),
-            "util/types/isUint16Array.contract.kt" to arrayOf(
-                "js.typedarrays.Uint16Array"
-            ),
-            "util/types/isUint32Array.contract.kt" to arrayOf(
-                "js.typedarrays.Uint32Array"
-            ),
-            "v8/After.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "v8/Before.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "v8/CPUProfileHandle.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "v8/Deserializer.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "v8/HeapProfileHandle.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "v8/Init.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "v8/Serializer.kt" to arrayOf(
-                "js.buffer.ArrayBuffer"
-            ),
-            "v8/Settled.kt" to arrayOf(
-                "js.promise.Promise"
             ),
             "v8/startupSnapshot/addDeserializeCallback.kt" to arrayOf(
                 "node.v8.StartupSnapshotCallbackFn"
@@ -1434,39 +836,13 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "node.v8.StartupSnapshotCallbackFn"
             ),
             "vm/CompileFunctionResult.kt" to arrayOf(
-                "js.buffer.ArrayBufferLike",
                 "node.buffer.Buffer"
-            ),
-            "vm/Module.class.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "vm/SourceTextModuleOptions.kt" to arrayOf(
-                "js.import.ImportMeta"
-            ),
-            "vm/compileFunction.kt" to arrayOf(
-                "js.array.ReadonlyArray"
-            ),
-            "vm/measureMemory.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "workerThreads/LockManager.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "workerThreads/LockOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
-            ),
-            "workerThreads/Worker.kt" to arrayOf(
-                "js.array.ReadonlyArray",
-                "js.promise.Promise"
             ),
             "workerThreads/moveMessagePortToContext.kt" to arrayOf(
                 "web.messaging.MessagePort"
             ),
             "workerThreads/parentPort.kt" to arrayOf(
                 "web.messaging.MessagePort"
-            ),
-            "workerThreads/postMessageToThread.kt" to arrayOf(
-                "js.promise.Promise"
             ),
             "workerThreads/receiveMessageOnPort.kt" to arrayOf(
                 "web.messaging.MessagePort"
@@ -1543,5 +919,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace,
             "DiffieHellmanOptions.kt" to ConflictResolutionStrategy.replace,
         )
+        compilerOptions = unsafeJso {
+            lib = arrayOf(
+                "lib.esnext.d.ts",
+                "lib.dom.d.ts",
+            )
+        }
     }
 }

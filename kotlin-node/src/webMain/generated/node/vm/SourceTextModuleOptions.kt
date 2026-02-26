@@ -2,8 +2,6 @@
 
 package node.vm
 
-import js.import.ImportMeta
-
 sealed external interface SourceTextModuleOptions : ScriptOptions {
     /**
      * String used in stack traces.
@@ -15,7 +13,7 @@ sealed external interface SourceTextModuleOptions : ScriptOptions {
     /**
      * Called during evaluation of this module to initialize the `import.meta`.
      */
-    var initializeImportMeta: ((meta: ImportMeta, module: SourceTextModule) -> Unit)?
+    var initializeImportMeta: ((meta: js.import.ImportMeta, module: SourceTextModule) -> Unit)?
 
     /**
      * Used to specify how the modules should be loaded during the evaluation of this script when `import()` is called. This option is

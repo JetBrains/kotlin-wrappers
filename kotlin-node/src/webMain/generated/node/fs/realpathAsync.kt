@@ -4,7 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
 import node.buffer.NonSharedBuffer
 
 /**
@@ -24,7 +23,7 @@ import node.buffer.NonSharedBuffer
  * @return Fulfills with the resolved path upon success.
  */
 @JsName("realpath")
-external fun realpathAsync(path: PathLike): Promise<String>
+external fun realpathAsync(path: PathLike): js.promise.Promise<String>
 
 /**
  * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
@@ -46,7 +45,7 @@ external fun realpathAsync(path: PathLike): Promise<String>
 external fun realpathAsync(
     path: PathLike,
     options: ObjectEncodingOptions? = definedExternally,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
@@ -68,7 +67,7 @@ external fun realpathAsync(
 external fun realpathAsync(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Promise<String>
+): js.promise.Promise<String>
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.
@@ -79,7 +78,7 @@ external fun realpathAsync(
 external fun realpathAsync(
     path: PathLike,
     options: BufferEncodingOption,
-): Promise<NonSharedBuffer>
+): js.promise.Promise<NonSharedBuffer>
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.

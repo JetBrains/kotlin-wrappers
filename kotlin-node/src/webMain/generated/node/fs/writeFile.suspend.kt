@@ -2,7 +2,6 @@
 
 package node.fs
 
-import js.iterable.AsyncIterable
 import node.stream.Stream
 
 @seskar.js.JsAsync
@@ -518,7 +517,7 @@ external suspend fun writeFile(
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void
 
 /**
@@ -574,7 +573,7 @@ external suspend fun writeFile(
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
@@ -631,7 +630,7 @@ external suspend fun writeFile(
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
@@ -1368,7 +1367,7 @@ external suspend fun writeFile(
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void
 
 /**
@@ -1424,7 +1423,7 @@ external suspend fun writeFile(
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
@@ -1481,7 +1480,7 @@ external suspend fun writeFile(
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
-    data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 

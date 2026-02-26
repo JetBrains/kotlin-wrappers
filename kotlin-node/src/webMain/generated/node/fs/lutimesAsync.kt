@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * Changes the access and modification times of a file in the same way as `fsPromises.utimes()`, with the difference that if the path refers to a
  * symbolic link, then the link is not dereferenced: instead, the timestamps of
@@ -18,4 +16,4 @@ external fun lutimesAsync(
     path: PathLike,
     atime: TimeLike,
     mtime: TimeLike,
-): Promise<js.core.Void>
+): js.promise.Promise<js.core.Void>

@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.buffer.DataView
-
-typealias NonSharedDataView = DataView<ArrayBuffer>
+typealias NonSharedDataView = js.buffer.DataView<js.buffer.ArrayBuffer>

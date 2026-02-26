@@ -4,8 +4,6 @@
 
 package node.vm
 
-import js.promise.Promise
-
 /**
  * Measure the memory known to V8 and used by all contexts known to the
  * current V8 isolate, or the main context.
@@ -62,4 +60,6 @@ import js.promise.Promise
  * @experimental
  */
 @JsName("measureMemory")
-external fun measureMemoryAsync(options: MeasureMemoryOptions = definedExternally): Promise<MemoryMeasurement>
+external fun measureMemoryAsync(
+    options: MeasureMemoryOptions = definedExternally,
+): js.promise.Promise<MemoryMeasurement>

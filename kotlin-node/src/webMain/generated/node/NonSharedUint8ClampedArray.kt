@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.Uint8ClampedArray
-
-typealias NonSharedUint8ClampedArray = Uint8ClampedArray<ArrayBuffer>
+typealias NonSharedUint8ClampedArray = js.typedarrays.Uint8ClampedArray<js.buffer.ArrayBuffer>

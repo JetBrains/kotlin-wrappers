@@ -4,9 +4,6 @@
 
 package node.fs
 
-import js.iterable.AsyncIterable
-import js.promise.Promise
-
 /**
  * A class representing a directory stream.
  *
@@ -28,7 +25,7 @@ import js.promise.Promise
  * closed after the iterator exits.
  * @since v12.12.0
  */
-external class Dir : AsyncIterable<Dirent<*>> {
+external class Dir : js.iterable.AsyncIterable<Dirent<*>> {
     /**
      * The read-only path of this directory as was provided to {@link opendir},{@link opendirSync}, or `fsPromises.opendir()`.
      * @since v12.12.0
@@ -44,7 +41,7 @@ external class Dir : AsyncIterable<Dirent<*>> {
      * @since v12.12.0
      */
     @JsName("close")
-    fun closeAsync(): Promise<js.core.Void>
+    fun closeAsync(): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun close(): js.core.Void
@@ -71,7 +68,7 @@ external class Dir : AsyncIterable<Dirent<*>> {
      * @return containing {fs.Dirent|null}
      */
     @JsName("read")
-    fun readAsync(): Promise<Dirent<*>?>
+    fun readAsync(): js.promise.Promise<Dirent<*>?>
 
     @seskar.js.JsAsync
     suspend fun read(): Dirent<*>?

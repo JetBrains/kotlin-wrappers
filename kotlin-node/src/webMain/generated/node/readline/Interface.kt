@@ -4,7 +4,6 @@
 
 package node.readline
 
-import js.disposable.Disposable
 import node.events.EventEmitter
 import web.abort.Abortable
 
@@ -18,7 +17,7 @@ import web.abort.Abortable
 @JsName("Interface")
 open external class _Interface :
     EventEmitter,
-    Disposable {
+    js.disposable.Disposable {
     /**
      * NOTE: According to the documentation:
      *

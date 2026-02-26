@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve service records (`SRV` records) for the `hostname`. On success, the `Promise` is resolved with an array of objects with
  * the following properties:
@@ -26,4 +24,4 @@ import js.promise.Promise
  * @since v10.6.0
  */
 @JsName("resolveSrv")
-external fun resolveSrvAsync(hostname: String): Promise<js.array.ReadonlyArray<SrvRecord>>
+external fun resolveSrvAsync(hostname: String): js.promise.Promise<js.array.ReadonlyArray<SrvRecord>>

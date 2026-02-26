@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
 import node.buffer.NonSharedBuffer
 
 /**
@@ -41,23 +40,23 @@ external fun spawnSync(
 
 external fun spawnSync(
     command: String,
-    args: ReadonlyArray<String>,
+    args: js.array.ReadonlyArray<String>,
 ): SpawnSyncReturns<NonSharedBuffer>
 
 external fun spawnSync(
     command: String,
-    args: ReadonlyArray<String>,
+    args: js.array.ReadonlyArray<String>,
     options: SpawnSyncOptionsWithStringEncoding,
 ): SpawnSyncReturns<String>
 
 external fun spawnSync(
     command: String,
-    args: ReadonlyArray<String>,
+    args: js.array.ReadonlyArray<String>,
     options: SpawnSyncOptionsWithBufferEncoding,
 ): SpawnSyncReturns<NonSharedBuffer>
 
 external fun spawnSync(
     command: String,
-    args: ReadonlyArray<String> = definedExternally,
+    args: js.array.ReadonlyArray<String> = definedExternally,
     options: SpawnSyncOptions = definedExternally,
 ): SpawnSyncReturns<Any /* string | NonSharedBuffer */>

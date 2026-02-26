@@ -2,8 +2,6 @@
 
 package node.stream
 
-import web.abort.AbortSignal
-
 sealed external interface StreamComposeOptions {
-    var signal: AbortSignal
+    var signal: web.abort.AbortSignal
 }

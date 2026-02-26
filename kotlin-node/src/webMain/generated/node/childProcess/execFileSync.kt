@@ -4,7 +4,6 @@
 
 package node.childProcess
 
-import js.array.ReadonlyArray
 import node.buffer.NonSharedBuffer
 
 /**
@@ -46,23 +45,23 @@ external fun execFileSync(
 
 external fun execFileSync(
     file: String,
-    args: ReadonlyArray<String>,
+    args: js.array.ReadonlyArray<String>,
 ): NonSharedBuffer
 
 external fun execFileSync(
     file: String,
-    args: ReadonlyArray<String>,
+    args: js.array.ReadonlyArray<String>,
     options: ExecFileSyncOptionsWithStringEncoding,
 ): String
 
 external fun execFileSync(
     file: String,
-    args: ReadonlyArray<String>,
+    args: js.array.ReadonlyArray<String>,
     options: ExecFileSyncOptionsWithBufferEncoding,
 ): NonSharedBuffer
 
 external fun execFileSync(
     file: String,
-    args: ReadonlyArray<String> = definedExternally,
+    args: js.array.ReadonlyArray<String> = definedExternally,
     options: ExecFileSyncOptions = definedExternally,
 ): Any // string | NonSharedBuffer

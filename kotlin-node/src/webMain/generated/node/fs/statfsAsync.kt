@@ -4,8 +4,6 @@
 
 package node.fs
 
-import js.promise.Promise
-
 /**
  * @since v19.6.0, v18.15.0
  * @return Fulfills with the {fs.StatFs} object for the given `path`.
@@ -14,19 +12,19 @@ import js.promise.Promise
 external fun statfsAsync(
     path: PathLike,
     opts: StatfsOpts = definedExternally,
-): Promise<StatsFs>
+): js.promise.Promise<StatsFs>
 
 @JsName("statfs")
 external fun statfsAsync(
     path: PathLike,
     opts: StatfsBigIntOpts,
-): Promise<BigIntStatsFs>
+): js.promise.Promise<BigIntStatsFs>
 
 @JsName("statfs")
 external fun statfsAsync(
     path: PathLike,
     opts: StatFsOptions = definedExternally,
-): Promise<Any /* StatsFs | BigIntStatsFs */>
+): js.promise.Promise<Any /* StatsFs | BigIntStatsFs */>
 
 @JsName("statfs")
-external fun statfsAsync(path: PathLike): Promise<StatsFs>
+external fun statfsAsync(path: PathLike): js.promise.Promise<StatsFs>

@@ -4,8 +4,6 @@
 
 package node.workerThreads
 
-import js.array.ReadonlyArray
-import js.promise.Promise
 import node.events.EventEmitter
 import node.stream.Readable
 import node.stream.Writable
@@ -154,7 +152,7 @@ external class Worker : EventEmitter {
      */
     fun postMessage(
         value: Any?,
-        transferList: ReadonlyArray<Transferable> = definedExternally,
+        transferList: js.array.ReadonlyArray<Transferable> = definedExternally,
     )
 
     /**
@@ -178,7 +176,7 @@ external class Worker : EventEmitter {
      * @since v10.5.0
      */
     @JsName("terminate")
-    fun terminateAsync(): Promise<Double>
+    fun terminateAsync(): js.promise.Promise<Double>
 
     @seskar.js.JsAsync
     suspend fun terminate(): Double
@@ -190,7 +188,7 @@ external class Worker : EventEmitter {
      * @since v24.6.0
      */
     @JsName("cpuUsage")
-    fun cpuUsageAsync(prev: node.process.CpuUsage = definedExternally): Promise<node.process.CpuUsage>
+    fun cpuUsageAsync(prev: node.process.CpuUsage = definedExternally): js.promise.Promise<node.process.CpuUsage>
 
     @seskar.js.JsAsync
     suspend fun cpuUsage(prev: node.process.CpuUsage = definedExternally): node.process.CpuUsage
@@ -205,7 +203,7 @@ external class Worker : EventEmitter {
      * @return A promise for a Readable Stream containing a V8 heap snapshot
      */
     @JsName("getHeapSnapshot")
-    fun getHeapSnapshotAsync(): Promise<Readable>
+    fun getHeapSnapshotAsync(): js.promise.Promise<Readable>
 
     @seskar.js.JsAsync
     suspend fun getHeapSnapshot(): Readable
@@ -217,7 +215,7 @@ external class Worker : EventEmitter {
      * @since v24.0.0
      */
     @JsName("getHeapStatistics")
-    fun getHeapStatisticsAsync(): Promise<HeapInfo>
+    fun getHeapStatisticsAsync(): js.promise.Promise<HeapInfo>
 
     @seskar.js.JsAsync
     suspend fun getHeapStatistics(): HeapInfo
@@ -260,7 +258,7 @@ external class Worker : EventEmitter {
      * @since v24.8.0
      */
     @JsName("startCpuProfile")
-    fun startCpuProfileAsync(): Promise<CPUProfileHandle>
+    fun startCpuProfileAsync(): js.promise.Promise<CPUProfileHandle>
 
     @seskar.js.JsAsync
     suspend fun startCpuProfile(): CPUProfileHandle
@@ -302,7 +300,7 @@ external class Worker : EventEmitter {
      * ```
      */
     @JsName("startHeapProfile")
-    fun startHeapProfileAsync(): Promise<HeapProfileHandle>
+    fun startHeapProfileAsync(): js.promise.Promise<HeapProfileHandle>
 
     @seskar.js.JsAsync
     suspend fun startHeapProfile(): HeapProfileHandle

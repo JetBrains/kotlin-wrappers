@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.Int32Array
-
-typealias NonSharedInt32Array = Int32Array<ArrayBuffer>
+typealias NonSharedInt32Array = js.typedarrays.Int32Array<js.buffer.ArrayBuffer>

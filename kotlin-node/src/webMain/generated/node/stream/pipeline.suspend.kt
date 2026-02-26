@@ -2,8 +2,6 @@
 
 package node.stream
 
-import js.array.ReadonlyArray
-
 @seskar.js.JsAsync
 external suspend fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipeline(
     source: A,
@@ -51,7 +49,7 @@ external suspend fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>,
 
 @seskar.js.JsAsync
 external suspend fun pipeline(
-    streams: ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
+    streams: js.array.ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
     options: PipelineOptions = definedExternally,
 ): js.core.Void
 

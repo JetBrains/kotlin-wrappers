@@ -2,10 +2,7 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.Uint8Array
-
 // The following aliases are required to allow use of non-shared ArrayBufferViews in @types/node
 // while maintaining compatibility with TS <=5.6.
 // TODO: remove once @types/node no longer supports TS 5.6, and replace with native types.
-typealias NonSharedUint8Array = Uint8Array<ArrayBuffer>
+typealias NonSharedUint8Array = js.typedarrays.Uint8Array<js.buffer.ArrayBuffer>

@@ -2,9 +2,6 @@
 
 package node.test
 
-import js.promise.Promise
-import web.abort.AbortSignal
-
 /**
  * An instance of `TestContext` is passed to each test function in order to
  * interact with the test runner. However, the `TestContext` constructor is not
@@ -212,7 +209,7 @@ sealed external interface TestContext {
      * ```
      * @since v18.7.0, v16.17.0
      */
-    val signal: AbortSignal
+    val signal: web.abort.AbortSignal
 
     /**
      * This function causes the test's output to indicate the test as skipped. If `message` is provided, it is included in the output. Calling `skip()` does
@@ -272,13 +269,13 @@ sealed external interface TestContext {
      */
     @JsName("waitFor")
     fun <T> waitForAsync(
-        condition: () -> Promise<T>,
+        condition: () -> js.promise.Promise<T>,
         options: TestContextWaitForOptions = definedExternally,
-    ): Promise<T>
+    ): js.promise.Promise<T>
 
     @seskar.js.JsAsync
     suspend fun <T> waitFor(
-        condition: () -> Promise<T>,
+        condition: () -> js.promise.Promise<T>,
         options: TestContextWaitForOptions = definedExternally,
     ): T
 

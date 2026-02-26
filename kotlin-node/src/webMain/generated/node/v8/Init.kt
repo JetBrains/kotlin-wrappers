@@ -2,8 +2,6 @@
 
 package node.v8
 
-import js.promise.Promise
-
 /**
  * Called when a promise is constructed. This does not mean that corresponding before/after events will occur, only that the possibility exists. This will
  * happen if a promise is created without ever getting a continuation.
@@ -13,7 +11,7 @@ import js.promise.Promise
  */
 sealed external interface Init {
     operator fun invoke(
-        promise: Promise<Any?>,
-        parent: Promise<Any?>,
+        promise: js.promise.Promise<Any?>,
+        parent: js.promise.Promise<Any?>,
     )
 }

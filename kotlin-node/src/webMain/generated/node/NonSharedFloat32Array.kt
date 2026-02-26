@@ -2,7 +2,4 @@
 
 package node
 
-import js.buffer.ArrayBuffer
-import js.typedarrays.Float32Array
-
-typealias NonSharedFloat32Array = Float32Array<ArrayBuffer>
+typealias NonSharedFloat32Array = js.typedarrays.Float32Array<js.buffer.ArrayBuffer>

@@ -4,8 +4,6 @@
 
 package node.dns
 
-import js.promise.Promise
-
 /**
  * Uses the DNS protocol to resolve `CAA` records for the `hostname`. On success,
  * the `Promise` is resolved with an array of objects containing available
@@ -13,4 +11,4 @@ import js.promise.Promise
  * @since v15.0.0, v14.17.0
  */
 @JsName("resolveCaa")
-external fun resolveCaaAsync(hostname: String): Promise<js.array.ReadonlyArray<CaaRecord>>
+external fun resolveCaaAsync(hostname: String): js.promise.Promise<js.array.ReadonlyArray<CaaRecord>>

@@ -2,16 +2,13 @@
 
 package node.events
 
-import web.events.EventListenerOptions
-import web.events.EventTarget
-
 /**
  * The `NodeEventTarget` is a Node.js-specific extension to `EventTarget`
  * that emulates a subset of the `EventEmitter` API.
  * @since v14.5.0
  */
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface NodeEventTarget : EventTarget {
+sealed external interface NodeEventTarget : web.events.EventTarget {
     /**
      * Node.js-specific extension to the `EventTarget` class that emulates the
      * equivalent `EventEmitter` API. The only difference between `addListener()` and
@@ -65,7 +62,11 @@ sealed external interface NodeEventTarget : EventTarget {
      * Node.js-specific alias for `eventTarget.removeEventListener()`.
      * @since v14.5.0
      */
-    fun off(type: String, listener: (arg: Any?) -> Unit, options: EventListenerOptions = definedExternally) // this
+    fun off(
+        type: String,
+        listener: (arg: Any?) -> Unit,
+        options: web.events.EventListenerOptions = definedExternally,
+    ) // this
 
     /**
      * Node.js-specific alias for `eventTarget.addEventListener()`.
@@ -99,6 +100,6 @@ sealed external interface NodeEventTarget : EventTarget {
     fun removeListener(
         type: String,
         listener: (arg: Any?) -> Unit,
-        options: EventListenerOptions = definedExternally,
+        options: web.events.EventListenerOptions = definedExternally,
     ) // this
 }

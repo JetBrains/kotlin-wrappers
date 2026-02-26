@@ -4,7 +4,6 @@
 
 package node.crypto
 
-import js.buffer.ArrayBuffer
 import node.buffer.NonSharedBuffer
 
 /**
@@ -28,7 +27,7 @@ import node.buffer.NonSharedBuffer
  */
 external fun decapsulate(
     key: KeyLike,
-    ciphertext: ArrayBuffer,
+    ciphertext: js.buffer.ArrayBuffer,
 ): NonSharedBuffer
 
 /**
@@ -76,7 +75,7 @@ external fun decapsulate(
  */
 external fun decapsulate(
     key: PrivateKeyInput,
-    ciphertext: ArrayBuffer,
+    ciphertext: js.buffer.ArrayBuffer,
 ): NonSharedBuffer
 
 /**
@@ -124,7 +123,7 @@ external fun decapsulate(
  */
 external fun decapsulate(
     key: JsonWebKeyInput,
-    ciphertext: ArrayBuffer,
+    ciphertext: js.buffer.ArrayBuffer,
 ): NonSharedBuffer
 
 /**
@@ -153,7 +152,7 @@ external fun decapsulate(
 
 external fun decapsulate(
     key: KeyLike,
-    ciphertext: ArrayBuffer,
+    ciphertext: js.buffer.ArrayBuffer,
     callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
@@ -165,7 +164,7 @@ external fun decapsulate(
 
 external fun decapsulate(
     key: PrivateKeyInput,
-    ciphertext: ArrayBuffer,
+    ciphertext: js.buffer.ArrayBuffer,
     callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
@@ -177,7 +176,7 @@ external fun decapsulate(
 
 external fun decapsulate(
     key: JsonWebKeyInput,
-    ciphertext: ArrayBuffer,
+    ciphertext: js.buffer.ArrayBuffer,
     callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 

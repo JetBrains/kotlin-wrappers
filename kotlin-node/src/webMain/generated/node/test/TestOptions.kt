@@ -2,8 +2,6 @@
 
 package node.test
 
-import web.abort.AbortSignal
-
 sealed external interface TestOptions {
     /**
      * If a number is provided, then that many tests would run in parallel.
@@ -26,7 +24,7 @@ sealed external interface TestOptions {
      * Allows aborting an in-progress test.
      * @since v18.8.0
      */
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
 
     /**
      * If truthy, the test is skipped. If a string is provided, that string is displayed in the
