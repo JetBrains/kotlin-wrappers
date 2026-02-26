@@ -49,7 +49,7 @@ private constructor() {
      * Subscribe to router lifecycle events like `onBeforeNavigate`, `onLoad`,
      * `onResolved`, etc. Returns an unsubscribe function.
      *
-     * @link https://tanstack.com/router/latest/docs/framework/react/api/router/RouterEventsType
+     * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterEventsType)
      */
     // subscribe: SubscribeFn
     // emit: EmitFn
@@ -72,7 +72,7 @@ private constructor() {
      * Resolves `to`/`from`, params/search/hash/state, applies search validation
      * and middlewares, and returns a stable, stringified location object.
      *
-     * @link https://tanstack.com/router/latest/docs/framework/react/api/router/RouterType#buildlocation-method
+     * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/RouterType#buildlocation-method)
      */
     val buildLocation: BuildLocationFn
     // commitLocationPromise: undefined | ControlledPromise<void>
@@ -88,7 +88,7 @@ private constructor() {
      * or an absolute `href` is provided, performs a full document navigation.
      * Otherwise, builds and commits a client-side location.
      *
-     * @link https://tanstack.com/router/latest/docs/framework/react/api/router/NavigateOptionsType
+     * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/NavigateOptionsType)
      */
     val navigate: NavigateFn
     val latestLoadPromise: Promise<Void>?
