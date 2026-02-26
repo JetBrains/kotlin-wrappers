@@ -2,9 +2,7 @@
 
 package electron.core
 
-import web.http.RequestInit
-
 @kotlinx.js.JsPlainObject
-external interface SessionFetchInit : RequestInit {
+external interface SessionFetchInit : web.http.RequestInit {
     var bypassCustomProtocolHandlers: Boolean?
 }

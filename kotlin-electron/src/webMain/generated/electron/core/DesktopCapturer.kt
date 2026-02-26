@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 external interface DesktopCapturer {
 // Docs: https://electronjs.org/docs/api/desktop-capturer
     /**
@@ -15,5 +13,5 @@ external interface DesktopCapturer {
      * Catalina or higher, which can detected by
      * `systemPreferences.getMediaAccessStatus`.
      */
-    fun getSources(options: SourcesOptions): Promise<js.array.ReadonlyArray<DesktopCapturerSource>>
+    fun getSources(options: SourcesOptions): js.promise.Promise<js.array.ReadonlyArray<DesktopCapturerSource>>
 }

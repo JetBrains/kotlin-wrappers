@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 external interface Net {
 // Docs: https://electronjs.org/docs/api/net
     /**
@@ -38,7 +36,7 @@ external interface Net {
     fun fetch(
         input: String,
         init: NetFetchInit = definedExternally,
-    ): Promise<GlobalResponse>
+    ): js.promise.Promise<GlobalResponse>
 
 // Docs: https://electronjs.org/docs/api/net
 
@@ -74,7 +72,7 @@ external interface Net {
     fun fetch(
         input: GlobalRequest,
         init: NetFetchInit = definedExternally,
-    ): Promise<GlobalResponse>
+    ): js.promise.Promise<GlobalResponse>
 
     /**
      * Whether there is currently internet connection.
@@ -111,7 +109,7 @@ external interface Net {
     fun resolveHost(
         host: String,
         options: ResolveHostOptions = definedExternally,
-    ): Promise<ResolvedHost>
+    ): js.promise.Promise<ResolvedHost>
 
     /**
      * A `boolean` property. Whether there is currently internet connection.

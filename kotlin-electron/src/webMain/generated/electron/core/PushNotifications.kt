@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface PushNotifications : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/push-notifications
@@ -39,7 +37,7 @@ external interface PushNotifications : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun registerForAPNSNotifications(): Promise<String>
+    fun registerForAPNSNotifications(): js.promise.Promise<String>
 
     /**
      * Unregisters the app from notifications received from APNS.

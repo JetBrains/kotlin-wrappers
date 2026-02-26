@@ -2,9 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-import web.messaging.MessagePort
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface IpcRenderer : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/ipc-renderer
@@ -49,7 +46,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun invoke(
         channel: String,
         vararg args: Any?,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * Removes the specified `listener` from the listener array for the specified
@@ -101,7 +98,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun postMessage(
         channel: String,
         message: Any?,
-        transfer: js.array.ReadonlyArray<MessagePort> = definedExternally,
+        transfer: js.array.ReadonlyArray<web.messaging.MessagePort> = definedExternally,
     )
 
     /**

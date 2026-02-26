@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
 external class ServiceWorkers : NodeEventEmitter {
@@ -83,7 +82,7 @@ external class ServiceWorkers : NodeEventEmitter {
      *
      * @experimental
      */
-    fun startWorkerForScope(scope: String): Promise<ServiceWorkerMain>
+    fun startWorkerForScope(scope: String): js.promise.Promise<ServiceWorkerMain>
 
     @web.events.JsEvent("console-message")
     val consoleMessageEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, MessageDetails>>

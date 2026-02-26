@@ -2,12 +2,8 @@
 
 package electron.core
 
-import js.promise.Promise
-import js.typedarrays.Uint8Array
-import web.html.HTMLElement
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface WebviewTag : HTMLElement {
+external interface WebviewTag : web.html.HTMLElement {
 // Docs: https://electronjs.org/docs/api/webview-tag
     /**
      * Fired when a load has committed. This includes navigation within the current
@@ -227,7 +223,7 @@ external interface WebviewTag : HTMLElement {
      * Captures a snapshot of the page within `rect`. Omitting `rect` will capture the
      * whole visible page.
      */
-    fun capturePage(rect: Rectangle = definedExternally): Promise<NativeImage>
+    fun capturePage(rect: Rectangle = definedExternally): js.promise.Promise<NativeImage>
 
     /**
      * Centers the current text selection in page.
@@ -278,7 +274,7 @@ external interface WebviewTag : HTMLElement {
     fun executeJavaScript(
         code: String,
         userGesture: Boolean = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * The request id used for the request.
@@ -348,12 +344,12 @@ external interface WebviewTag : HTMLElement {
      * Injects CSS into the current web page and returns a unique key for the inserted
      * stylesheet.
      */
-    fun insertCSS(css: String): Promise<String>
+    fun insertCSS(css: String): js.promise.Promise<String>
 
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): Promise<js.core.Void>
+    fun insertText(text: String): js.promise.Promise<js.core.Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`) of guest page.
@@ -425,7 +421,7 @@ external interface WebviewTag : HTMLElement {
     fun loadURL(
         url: String,
         options: LoadURLOptions = definedExternally,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Opens a DevTools window for guest page.
@@ -445,14 +441,14 @@ external interface WebviewTag : HTMLElement {
     /**
      * Prints `webview`'s web page. Same as `webContents.print([options])`.
      */
-    fun print(options: WebviewTagPrintOptions = definedExternally): Promise<js.core.Void>
+    fun print(options: WebviewTagPrintOptions = definedExternally): js.promise.Promise<js.core.Void>
 
     /**
      * Resolves with the generated PDF data.
      *
      * Prints `webview`'s web page as PDF, Same as `webContents.printToPDF(options)`.
      */
-    fun printToPDF(options: PrintToPDFOptions): Promise<Uint8Array<*>>
+    fun printToPDF(options: PrintToPDFOptions): js.promise.Promise<js.typedarrays.Uint8Array<*>>
 
     /**
      * Executes editing command `redo` in page.
@@ -475,7 +471,7 @@ external interface WebviewTag : HTMLElement {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `<webview>.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): Promise<js.core.Void>
+    fun removeInsertedCSS(key: String): js.promise.Promise<js.core.Void>
 
     /**
      * Executes editing command `replace` in page.
@@ -512,28 +508,28 @@ external interface WebviewTag : HTMLElement {
     fun send(
         channel: String,
         vararg args: Any?,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: MouseInputEvent): Promise<js.core.Void>
+    fun sendInputEvent(event: MouseInputEvent): js.promise.Promise<js.core.Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: MouseWheelInputEvent): Promise<js.core.Void>
+    fun sendInputEvent(event: MouseWheelInputEvent): js.promise.Promise<js.core.Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: KeyboardInputEvent): Promise<js.core.Void>
+    fun sendInputEvent(event: KeyboardInputEvent): js.promise.Promise<js.core.Void>
 
     /**
      * Send an asynchronous message to renderer process via `channel`, you can also
@@ -546,7 +542,7 @@ external interface WebviewTag : HTMLElement {
         frameId: js.array.Tuple2<Double, Double>,
         channel: String,
         vararg args: Any?,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Set guest page muted.
@@ -564,7 +560,7 @@ external interface WebviewTag : HTMLElement {
     fun setVisualZoomLevelLimits(
         minimumLevel: Double,
         maximumLevel: Double,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent

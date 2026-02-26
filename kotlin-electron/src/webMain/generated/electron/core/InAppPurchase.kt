@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface InAppPurchase : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/in-app-purchase
@@ -31,7 +29,9 @@ external interface InAppPurchase : node.events.EventEmitter {
      *
      * Retrieves the product descriptions.
      */
-    fun getProducts(productIDs: js.array.ReadonlyArray<String>): Promise<js.array.ReadonlyArray<Product>>
+    fun getProducts(
+        productIDs: js.array.ReadonlyArray<String>,
+    ): js.promise.Promise<js.array.ReadonlyArray<Product>>
 
     /**
      * the path to the receipt.
@@ -44,7 +44,7 @@ external interface InAppPurchase : node.events.EventEmitter {
      * You should listen for the `transactions-updated` event as soon as possible and
      * certainly before you call `purchaseProduct`.
      */
-    fun purchaseProduct(productID: String): Promise<Boolean>
+    fun purchaseProduct(productID: String): js.promise.Promise<Boolean>
 
     /**
      * Returns `true` if the product is valid and added to the payment queue.
@@ -55,7 +55,7 @@ external interface InAppPurchase : node.events.EventEmitter {
     fun purchaseProduct(
         productID: String,
         opts: Double = definedExternally,
-    ): Promise<Boolean>
+    ): js.promise.Promise<Boolean>
 
     /**
      * Returns `true` if the product is valid and added to the payment queue.
@@ -66,7 +66,7 @@ external interface InAppPurchase : node.events.EventEmitter {
     fun purchaseProduct(
         productID: String,
         opts: PurchaseProductOpts = definedExternally,
-    ): Promise<Boolean>
+    ): js.promise.Promise<Boolean>
 
     /**
      * Restores finished transactions. This method can be called either to install

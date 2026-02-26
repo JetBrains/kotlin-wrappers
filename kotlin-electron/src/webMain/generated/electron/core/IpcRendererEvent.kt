@@ -2,14 +2,12 @@
 
 package electron.core
 
-import web.messaging.MessagePort
-
 external interface IpcRendererEvent : Event<Any> {
 // Docs: https://electronjs.org/docs/api/structures/ipc-renderer-event
     /**
      * A list of MessagePorts that were transferred with this message
      */
-    var ports: js.array.ReadonlyArray<MessagePort>
+    var ports: js.array.ReadonlyArray<web.messaging.MessagePort>
 
     /**
      * The `IpcRenderer` instance that emitted the event originally

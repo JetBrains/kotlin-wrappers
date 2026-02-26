@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Extensions : NodeEventEmitter {
@@ -71,7 +70,7 @@ external class Extensions : NodeEventEmitter {
     fun loadExtension(
         path: String,
         options: LoadExtensionOptions = definedExternally,
-    ): Promise<Extension>
+    ): js.promise.Promise<Extension>
 
     /**
      * Unloads an extension.

@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 external interface Dialog {
 // Docs: https://electronjs.org/docs/api/dialog
     /**
@@ -26,7 +24,7 @@ external interface Dialog {
     fun showCertificateTrustDialog(
         window: BaseWindow,
         options: CertificateTrustDialogOptions,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when the certificate trust dialog is shown.
@@ -45,7 +43,7 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): Promise<js.core.Void>
+    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): js.promise.Promise<js.core.Void>
 
     /**
      * Displays a modal dialog that shows an error message.
@@ -75,7 +73,7 @@ external interface Dialog {
     fun showMessageBox(
         window: BaseWindow,
         options: MessageBoxOptions,
-    ): Promise<MessageBoxReturnValue>
+    ): js.promise.Promise<MessageBoxReturnValue>
 
     /**
      * resolves with a promise containing the following properties:
@@ -89,7 +87,7 @@ external interface Dialog {
      * The `window` argument allows the dialog to attach itself to a parent window,
      * making it modal.
      */
-    fun showMessageBox(options: MessageBoxOptions): Promise<MessageBoxReturnValue>
+    fun showMessageBox(options: MessageBoxOptions): js.promise.Promise<MessageBoxReturnValue>
 
     /**
      * the index of the clicked button.
@@ -150,7 +148,7 @@ external interface Dialog {
     fun showOpenDialog(
         window: BaseWindow,
         options: OpenDialogOptions,
-    ): Promise<OpenDialogReturnValue>
+    ): js.promise.Promise<OpenDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -181,7 +179,7 @@ external interface Dialog {
      * dialogs unless the portal backend is version 4 or higher. You can use
      * `--xdg-portal-required-version` command-line switch to force gtk or kde dialogs.
      */
-    fun showOpenDialog(options: OpenDialogOptions): Promise<OpenDialogReturnValue>
+    fun showOpenDialog(options: OpenDialogOptions): js.promise.Promise<OpenDialogReturnValue>
 
     /**
      * the file paths chosen by the user; if the dialog is cancelled it returns
@@ -256,7 +254,7 @@ external interface Dialog {
     fun showSaveDialog(
         window: BaseWindow,
         options: SaveDialogOptions,
-    ): Promise<SaveDialogReturnValue>
+    ): js.promise.Promise<SaveDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -277,7 +275,7 @@ external interface Dialog {
      * > [!NOTE] On macOS, using the asynchronous version is recommended to avoid
      * issues when expanding and collapsing the dialog.
      */
-    fun showSaveDialog(options: SaveDialogOptions): Promise<SaveDialogReturnValue>
+    fun showSaveDialog(options: SaveDialogOptions): js.promise.Promise<SaveDialogReturnValue>
 
     /**
      * the path of the file chosen by the user; if the dialog is cancelled it returns

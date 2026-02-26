@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 external interface ContentTracing {
 // Docs: https://electronjs.org/docs/api/content-tracing
     /**
@@ -16,7 +14,7 @@ external interface ContentTracing {
      * > **NOTE:** Electron adds a non-default tracing category called `"electron"`.
      * This category can be used to capture Electron-specific tracing events.
      */
-    fun getCategories(): Promise<js.array.ReadonlyArray<String>>
+    fun getCategories(): js.promise.Promise<js.array.ReadonlyArray<String>>
 
     /**
      * Resolves with an object containing the `value` and `percentage` of trace buffer
@@ -28,7 +26,7 @@ external interface ContentTracing {
      * Get the maximum usage across processes of trace buffer as a percentage of the
      * full state.
      */
-    fun getTraceBufferUsage(): Promise<TraceBufferUsageReturnValue>
+    fun getTraceBufferUsage(): js.promise.Promise<TraceBufferUsageReturnValue>
 
     /**
      * resolved once all child processes have acknowledged the `startRecording`
@@ -42,7 +40,7 @@ external interface ContentTracing {
      * If a recording is already running, the promise will be immediately resolved, as
      * only one trace operation can be in progress at a time.
      */
-    fun startRecording(options: TraceConfig): Promise<js.core.Void>
+    fun startRecording(options: TraceConfig): js.promise.Promise<js.core.Void>
 
     /**
      * resolved once all child processes have acknowledged the `startRecording`
@@ -56,7 +54,7 @@ external interface ContentTracing {
      * If a recording is already running, the promise will be immediately resolved, as
      * only one trace operation can be in progress at a time.
      */
-    fun startRecording(options: TraceCategoriesAndOptions): Promise<js.core.Void>
+    fun startRecording(options: TraceCategoriesAndOptions): js.promise.Promise<js.core.Void>
 
     /**
      * resolves with a path to a file that contains the traced data once all child
@@ -74,5 +72,5 @@ external interface ContentTracing {
      * or not provided, trace data will be written to a temporary file, and the path
      * will be returned in the promise.
      */
-    fun stopRecording(resultFilePath: String = definedExternally): Promise<String>
+    fun stopRecording(resultFilePath: String = definedExternally): js.promise.Promise<String>
 }

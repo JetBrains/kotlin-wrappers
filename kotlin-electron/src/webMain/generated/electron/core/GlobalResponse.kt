@@ -2,6 +2,4 @@
 
 package electron.core
 
-import web.http.Response
-
-typealias GlobalResponse = Response
+typealias GlobalResponse = web.http.Response

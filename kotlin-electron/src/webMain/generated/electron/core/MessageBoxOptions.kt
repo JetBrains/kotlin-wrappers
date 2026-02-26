@@ -2,8 +2,6 @@
 
 package electron.core
 
-import web.abort.AbortSignal
-
 external interface MessageBoxOptions {
     /**
      * Content of the message box.
@@ -35,7 +33,7 @@ external interface MessageBoxOptions {
      * work with message boxes that do not have a parent window, since those message
      * boxes run synchronously due to platform limitations.
      */
-    var signal: AbortSignal?
+    var signal: web.abort.AbortSignal?
 
     /**
      * Title of the message box, some platforms will not show it.

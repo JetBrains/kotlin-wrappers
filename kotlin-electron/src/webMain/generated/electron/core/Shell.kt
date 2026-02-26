@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 external interface Shell {
 // Docs: https://electronjs.org/docs/api/shell
     /**
@@ -18,7 +16,7 @@ external interface Shell {
     fun openExternal(
         url: String,
         options: OpenExternalOptions = definedExternally,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Resolves with a string containing the error message corresponding to the failure
@@ -26,7 +24,7 @@ external interface Shell {
      *
      * Open the given file in the desktop's default manner.
      */
-    fun openPath(path: String): Promise<String>
+    fun openPath(path: String): js.promise.Promise<String>
 
     /**
      * Resolves the shortcut link at `shortcutPath`.
@@ -49,7 +47,7 @@ external interface Shell {
      * This moves a path to the OS-specific trash location (Trash on macOS, Recycle Bin
      * on Windows, and a desktop-environment-specific location on Linux).
      */
-    fun trashItem(path: String): Promise<js.core.Void>
+    fun trashItem(path: String): js.promise.Promise<js.core.Void>
 
     /**
      * Whether the shortcut was created successfully.

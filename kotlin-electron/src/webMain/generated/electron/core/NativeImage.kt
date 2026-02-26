@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.buffer.Buffer
 
 external class NativeImage {
@@ -195,6 +194,6 @@ external class NativeImage {
         fun createThumbnailFromPath(
             path: String,
             size: Size,
-        ): Promise<NativeImage>
+        ): js.promise.Promise<NativeImage>
     }
 }

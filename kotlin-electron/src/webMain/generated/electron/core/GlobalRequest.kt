@@ -2,6 +2,4 @@
 
 package electron.core
 
-import web.http.Request
-
-typealias GlobalRequest = Request
+typealias GlobalRequest = web.http.Request

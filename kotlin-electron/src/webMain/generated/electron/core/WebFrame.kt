@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface WebFrame {
 // Docs: https://electronjs.org/docs/api/web-frame
@@ -33,7 +31,7 @@ external interface WebFrame {
         code: String,
         userGesture: Boolean = definedExternally,
         callback: (result: Any?, error: js.errors.JsError) -> Unit = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -50,7 +48,7 @@ external interface WebFrame {
         scripts: js.array.ReadonlyArray<WebSource>,
         userGesture: Boolean = definedExternally,
         callback: (result: Any?, error: js.errors.JsError) -> Unit = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * A child of `webFrame` with the supplied `name`, `null` would be returned if

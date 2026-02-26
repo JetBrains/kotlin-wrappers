@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface SystemPreferences : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/system-preferences
@@ -68,7 +66,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun askForMediaAccess(mediaType: SystemPreferencesAskForMediaAccessMediaType): Promise<Boolean>
+    fun askForMediaAccess(mediaType: SystemPreferencesAskForMediaAccessMediaType): js.promise.Promise<Boolean>
 
     /**
      * whether or not this device has the ability to use Touch ID.
@@ -232,7 +230,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun promptTouchID(reason: String): Promise<js.core.Void>
+    fun promptTouchID(reason: String): js.promise.Promise<js.core.Void>
 
     /**
      * Add the specified defaults to your application's `NSUserDefaults`.

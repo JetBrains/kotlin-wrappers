@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Cookies : NodeEventEmitter {
@@ -24,7 +23,7 @@ external class Cookies : NodeEventEmitter {
      *
      * Calling this method can cause the cookie to be written to disk immediately.
      */
-    fun flushStore(): Promise<js.core.Void>
+    fun flushStore(): js.promise.Promise<js.core.Void>
 
     /**
      * A promise which resolves an array of cookie objects.
@@ -32,7 +31,7 @@ external class Cookies : NodeEventEmitter {
      * Sends a request to get all cookies matching `filter`, and resolves a promise
      * with the response.
      */
-    fun get(filter: CookiesGetFilter): Promise<js.array.ReadonlyArray<Cookie>>
+    fun get(filter: CookiesGetFilter): js.promise.Promise<js.array.ReadonlyArray<Cookie>>
 
     /**
      * A promise which resolves when the cookie has been removed
@@ -42,14 +41,14 @@ external class Cookies : NodeEventEmitter {
     fun remove(
         url: String,
         name: String,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * A promise which resolves when the cookie has been set
      *
      * Sets a cookie with `details`.
      */
-    fun set(details: CookiesSetDetails): Promise<js.core.Void>
+    fun set(details: CookiesSetDetails): js.promise.Promise<js.core.Void>
 
     @web.events.JsEvent("changed")
     val changedEvent:

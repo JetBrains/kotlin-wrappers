@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.date.Date
-
 external interface SharedDictionaryInfo {
 // Docs: https://electronjs.org/docs/api/structures/shared-dictionary-info
     /**
@@ -31,12 +29,12 @@ external interface SharedDictionaryInfo {
     /**
      * The time of when the dictionary was received from the network layer.
      */
-    var lastFetchTime: Date
+    var lastFetchTime: js.date.Date
 
     /**
      * The time when the dictionary was last used.
      */
-    var lastUsedTime: Date
+    var lastUsedTime: js.date.Date
 
     /**
      * The matching path pattern for the dictionary which was declared in
@@ -54,7 +52,7 @@ external interface SharedDictionaryInfo {
      * The time of when the dictionary was received from the server. For cached
      * responses, this time could be "far" in the past.
      */
-    var responseTime: Date
+    var responseTime: js.date.Date
 
     /**
      * The amount of bytes stored for this shared dictionary information object in

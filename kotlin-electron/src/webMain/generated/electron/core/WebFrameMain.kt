@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
 external class WebFrameMain : NodeEventEmitter {
@@ -38,7 +37,7 @@ external class WebFrameMain : NodeEventEmitter {
     fun executeJavaScript(
         code: String,
         userGesture: Boolean = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * Whether the frame is destroyed.

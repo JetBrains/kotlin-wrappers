@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.promise.Promise
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface App : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/app
@@ -556,7 +554,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin,win32
      */
-    fun getApplicationInfoForProtocol(url: String): Promise<ApplicationInfoForProtocolReturnValue>
+    fun getApplicationInfoForProtocol(url: String): js.promise.Promise<ApplicationInfoForProtocolReturnValue>
 
     /**
      * Name of the application handling the protocol, or an empty string if there is no
@@ -611,7 +609,7 @@ external interface App : node.events.EventEmitter {
     fun getFileIcon(
         path: String,
         options: FileIconOptions = definedExternally,
-    ): Promise<NativeImage>
+    ): js.promise.Promise<NativeImage>
 
     /**
      * The Graphics Feature Status from `chrome://gpu/`.
@@ -633,7 +631,7 @@ external interface App : node.events.EventEmitter {
      * Using `basic` should be preferred if only basic information like `vendorId` or
      * `deviceId` is needed.
      */
-    fun getGPUInfo(infoType: AppGetGPUInfoInfoType): Promise<Any?>
+    fun getGPUInfo(infoType: AppGetGPUInfoInfoType): js.promise.Promise<Any?>
 
     /**
      * * `minItems` Integer - The minimum number of items that will be shown in the
@@ -1033,7 +1031,7 @@ external interface App : node.events.EventEmitter {
      * Resolves with the proxy information for `url` that will be used when attempting
      * to make requests using Net in the utility process.
      */
-    fun resolveProxy(url: String): Promise<String>
+    fun resolveProxy(url: String): js.promise.Promise<String>
 
     /**
      * Set the about panel options. This will override the values defined in the app's
@@ -1149,7 +1147,7 @@ external interface App : node.events.EventEmitter {
      * for `hostname`.
      */
     fun setClientCertRequestPasswordHandler(
-        handler: (clientCertRequestParams: ClientCertRequestParams) -> Promise<String>,
+        handler: (clientCertRequestParams: ClientCertRequestParams) -> js.promise.Promise<String>,
     )
 
     /**
@@ -1240,7 +1238,7 @@ external interface App : node.events.EventEmitter {
      *
      * This method can only be called after app is ready.
      */
-    fun setProxy(config: ProxyConfig): Promise<js.core.Void>
+    fun setProxy(config: ProxyConfig): js.promise.Promise<js.core.Void>
 
     /**
      * Set the `Secure Keyboard Entry` is enabled in your application.
@@ -1335,7 +1333,7 @@ external interface App : node.events.EventEmitter {
      * to checking `app.isReady()` and subscribing to the `ready` event if the app is
      * not ready yet.
      */
-    fun whenReady(): Promise<js.core.Void>
+    fun whenReady(): js.promise.Promise<js.core.Void>
 
     /**
      * A `boolean` property that's `true` if Chrome's accessibility support is enabled,

@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
@@ -493,7 +492,7 @@ external class WebContents : NodeEventEmitter {
     fun capturePage(
         rect: Rectangle = definedExternally,
         opts: Opts = definedExternally,
-    ): Promise<NativeImage>
+    ): js.promise.Promise<NativeImage>
 
     /**
      * Centers the current text selection in web page.
@@ -585,7 +584,7 @@ external class WebContents : NodeEventEmitter {
     fun executeJavaScript(
         code: String,
         userGesture: Boolean = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -597,7 +596,7 @@ external class WebContents : NodeEventEmitter {
         worldId: Double,
         scripts: js.array.ReadonlyArray<WebSource>,
         userGesture: Boolean = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     /**
      * The request id used for the request.
@@ -668,7 +667,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Resolves with a `PrinterInfo[]`
      */
-    fun getPrintersAsync(): Promise<js.array.ReadonlyArray<PrinterInfo>>
+    fun getPrintersAsync(): js.promise.Promise<js.array.ReadonlyArray<PrinterInfo>>
 
     /**
      * The Chromium internal `pid` of the associated renderer. Can be compared to the
@@ -768,12 +767,12 @@ external class WebContents : NodeEventEmitter {
     fun insertCSS(
         css: String,
         options: InsertCSSOptions = definedExternally,
-    ): Promise<String>
+    ): js.promise.Promise<String>
 
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): Promise<js.core.Void>
+    fun insertText(text: String): js.promise.Promise<js.core.Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`).
@@ -887,7 +886,7 @@ external class WebContents : NodeEventEmitter {
     fun loadFile(
         filePath: String,
         options: LoadFileOptions = definedExternally,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -902,7 +901,7 @@ external class WebContents : NodeEventEmitter {
     fun loadURL(
         url: String,
         options: LoadURLOptions = definedExternally,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Opens the devtools.
@@ -977,7 +976,7 @@ external class WebContents : NodeEventEmitter {
      *
      * See Page.printToPdf for more information.
      */
-    fun printToPDF(options: PrintToPDFOptions): Promise<Buffer<*>>
+    fun printToPDF(options: PrintToPDFOptions): js.promise.Promise<Buffer<*>>
 
     /**
      * Executes the editing command `redo` in web page.
@@ -1000,7 +999,7 @@ external class WebContents : NodeEventEmitter {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `contents.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): Promise<js.core.Void>
+    fun removeInsertedCSS(key: String): js.promise.Promise<js.core.Void>
 
     /**
      * Removes the specified path from DevTools workspace.
@@ -1023,7 +1022,7 @@ external class WebContents : NodeEventEmitter {
     fun savePage(
         fullPath: String,
         saveType: WebContentsSavePageSaveType,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Scrolls to the bottom of the current `webContents`.
@@ -1205,7 +1204,7 @@ external class WebContents : NodeEventEmitter {
     fun setVisualZoomLevelLimits(
         minimumLevel: Double,
         maximumLevel: Double,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * Setting the WebRTC IP handling policy allows you to control which IPs are
@@ -1292,7 +1291,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Takes a V8 heap snapshot and saves it to `filePath`.
      */
-    fun takeHeapSnapshot(filePath: String): Promise<js.core.Void>
+    fun takeHeapSnapshot(filePath: String): js.promise.Promise<js.core.Void>
 
     /**
      * Toggles the developer tools.

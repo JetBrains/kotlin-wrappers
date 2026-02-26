@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Debugger : NodeEventEmitter {
@@ -44,7 +43,7 @@ external class Debugger : NodeEventEmitter {
         method: String,
         commandParams: Any? = definedExternally,
         sessionId: String = definedExternally,
-    ): Promise<Any?>
+    ): js.promise.Promise<Any?>
 
     @web.events.JsEvent("detach")
     val detachEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>

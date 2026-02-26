@@ -4,7 +4,6 @@
 
 package electron.core
 
-import js.promise.Promise
 import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
@@ -169,19 +168,19 @@ external class Session : NodeEventEmitter {
     /**
      * resolves when the session’s HTTP authentication cache has been cleared.
      */
-    fun clearAuthCache(): Promise<js.core.Void>
+    fun clearAuthCache(): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when the cache clear operation is complete.
      *
      * Clears the session’s HTTP cache.
      */
-    fun clearCache(): Promise<js.core.Void>
+    fun clearCache(): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when the code cache clear operation is complete.
      */
-    fun clearCodeCaches(options: ClearCodeCachesOptions): Promise<js.core.Void>
+    fun clearCodeCaches(options: ClearCodeCachesOptions): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when all data has been cleared.
@@ -206,19 +205,19 @@ external class Session : NodeEventEmitter {
      *
      * For more information, refer to Chromium's `BrowsingDataRemover` interface.
      */
-    fun clearData(options: ClearDataOptions = definedExternally): Promise<js.core.Void>
+    fun clearData(options: ClearDataOptions = definedExternally): js.promise.Promise<js.core.Void>
 
     /**
      * Resolves when the operation is complete.
      *
      * Clears the host resolver cache.
      */
-    fun clearHostResolverCache(): Promise<js.core.Void>
+    fun clearHostResolverCache(): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when the dictionary cache has been cleared, both in memory and on disk.
      */
-    fun clearSharedDictionaryCache(): Promise<js.core.Void>
+    fun clearSharedDictionaryCache(): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when the dictionary cache has been cleared for the specified isolation
@@ -226,19 +225,19 @@ external class Session : NodeEventEmitter {
      */
     fun clearSharedDictionaryCacheForIsolationKey(
         options: ClearSharedDictionaryCacheForIsolationKeyOptions,
-    ): Promise<js.core.Void>
+    ): js.promise.Promise<js.core.Void>
 
     /**
      * resolves when the storage data has been cleared.
      */
-    fun clearStorageData(options: ClearStorageDataOptions = definedExternally): Promise<js.core.Void>
+    fun clearStorageData(options: ClearStorageDataOptions = definedExternally): js.promise.Promise<js.core.Void>
 
     /**
      * Resolves when all connections are closed.
      *
      * > [!NOTE] It will terminate / fail all requests currently in flight.
      */
-    fun closeAllConnections(): Promise<js.core.Void>
+    fun closeAllConnections(): js.promise.Promise<js.core.Void>
 
     /**
      * Allows resuming `cancelled` or `interrupted` downloads from previous `Session`.
@@ -302,7 +301,7 @@ external class Session : NodeEventEmitter {
     fun fetch(
         input: String,
         init: SessionFetchInit = definedExternally,
-    ): Promise<GlobalResponse>
+    ): js.promise.Promise<GlobalResponse>
 
     /**
      * see Response.
@@ -334,7 +333,7 @@ external class Session : NodeEventEmitter {
     fun fetch(
         input: GlobalRequest,
         init: SessionFetchInit = definedExternally,
-    ): Promise<GlobalResponse>
+    ): js.promise.Promise<GlobalResponse>
 
     /**
      * Writes any unwritten DOMStorage data to disk.
@@ -346,7 +345,7 @@ external class Session : NodeEventEmitter {
      * proxy configuration is reapplied if it's already available. The pac script will
      * be fetched from `pacScript` again if the proxy mode is `pac_script`.
      */
-    fun forceReloadProxyConfig(): Promise<js.core.Void>
+    fun forceReloadProxyConfig(): js.promise.Promise<js.core.Void>
 
     /**
      * A list of all loaded extensions.
@@ -363,12 +362,12 @@ external class Session : NodeEventEmitter {
     /**
      * resolves with blob data.
      */
-    fun getBlobData(identifier: String): Promise<Buffer<*>>
+    fun getBlobData(identifier: String): js.promise.Promise<Buffer<*>>
 
     /**
      * the session's current cache size, in bytes.
      */
-    fun getCacheSize(): Promise<Double>
+    fun getCacheSize(): js.promise.Promise<Double>
 
     /**
      * The loaded extension with the given ID.
@@ -406,7 +405,7 @@ external class Session : NodeEventEmitter {
      */
     fun getSharedDictionaryInfo(
         options: SharedDictionaryInfoOptions,
-    ): Promise<js.array.ReadonlyArray<SharedDictionaryInfo>>
+    ): js.promise.Promise<js.array.ReadonlyArray<SharedDictionaryInfo>>
 
     /**
      * an array of shared dictionary information entries in Chromium's networking
@@ -421,7 +420,7 @@ external class Session : NodeEventEmitter {
      * To get detailed information about a specific shared dictionary entry, call
      * `getSharedDictionaryInfo(options)`.
      */
-    fun getSharedDictionaryUsageInfo(): Promise<js.array.ReadonlyArray<SharedDictionaryUsageInfo>>
+    fun getSharedDictionaryUsageInfo(): js.promise.Promise<js.array.ReadonlyArray<SharedDictionaryUsageInfo>>
 
     /**
      * An array of language codes the spellchecker is enabled for.  If this list is
@@ -463,7 +462,7 @@ external class Session : NodeEventEmitter {
      * An array of all words in app's custom dictionary. Resolves when the full
      * dictionary is loaded from disk.
      */
-    fun listWordsInSpellCheckerDictionary(): Promise<js.array.ReadonlyArray<String>>
+    fun listWordsInSpellCheckerDictionary(): js.promise.Promise<js.array.ReadonlyArray<String>>
 
     /**
      * resolves when the extension is loaded.
@@ -495,7 +494,7 @@ external class Session : NodeEventEmitter {
     fun loadExtension(
         path: String,
         options: LoadExtensionOptions = definedExternally,
-    ): Promise<Extension>
+    ): js.promise.Promise<Extension>
 
     /**
      * Preconnects the given number of sockets to an origin.
@@ -538,12 +537,12 @@ external class Session : NodeEventEmitter {
     fun resolveHost(
         host: String,
         options: ResolveHostOptions = definedExternally,
-    ): Promise<ResolvedHost>
+    ): js.promise.Promise<ResolvedHost>
 
     /**
      * Resolves with the proxy information for `url`.
      */
-    fun resolveProxy(url: String): Promise<String>
+    fun resolveProxy(url: String): js.promise.Promise<String>
 
     /**
      * Sets a handler to respond to Bluetooth pairing requests. This handler allows
@@ -690,7 +689,7 @@ external class Session : NodeEventEmitter {
      * to prevent pooled sockets using previous proxy from being reused by future
      * requests.
      */
-    fun setProxy(config: ProxyConfig): Promise<js.core.Void>
+    fun setProxy(config: ProxyConfig): js.promise.Promise<js.core.Void>
 
     /**
      * By default Electron will download hunspell dictionaries from the Chromium CDN.

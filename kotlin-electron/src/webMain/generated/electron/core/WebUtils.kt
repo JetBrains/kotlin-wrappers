@@ -2,8 +2,6 @@
 
 package electron.core
 
-import web.file.File
-
 external interface WebUtils {
 // Docs: https://electronjs.org/docs/api/web-utils
     /**
@@ -15,5 +13,5 @@ external interface WebUtils {
      * This method superseded the previous augmentation to the `File` object with the
      * `path` property.  An example is included below.
      */
-    fun getPathForFile(file: File): String
+    fun getPathForFile(file: web.file.File): String
 }

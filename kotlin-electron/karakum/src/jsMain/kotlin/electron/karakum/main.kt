@@ -18,6 +18,7 @@ import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
+import js.objects.unsafeJso
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
@@ -58,6 +59,9 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         input = manyOf("electron.d.ts")
+        ignoreOutput = manyOf(
+            "**/Document.kt",
+        )
         isolatedOutputPackage = true
         moduleNameMapper = recordOf(
             "electron/electron#Electron.Main" to "electron/main",
@@ -77,21 +81,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             "AddRepresentationOptions.kt" to arrayOf(
                 "node.buffer.Buffer"
             ),
-            "App.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "AutoUpdater.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "AutoUpdaterEvent.kt" to arrayOf(
-                "js.date.Date"
-            ),
             "BaseWindow.kt" to arrayOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
             "BrowserWindow.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.buffer.Buffer"
             ),
             "ClientRequest.kt" to arrayOf(
@@ -101,39 +95,17 @@ suspend fun main(args: ReadonlyArray<String>) {
             "Clipboard.kt" to arrayOf(
                 "node.buffer.Buffer"
             ),
-            "ContentTracing.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "Cookies.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.events.EventEmitter as NodeEventEmitter"
-            ),
-            "CrashReport.kt" to arrayOf(
-                "js.date.Date"
             ),
             "Debugger.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.events.EventEmitter as NodeEventEmitter"
-            ),
-            "DesktopCapturer.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "Dialog.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "Dock.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "DOMEvent.kt" to arrayOf(
-                "web.events.Event",
-                "web.events.EventTarget"
             ),
             "DownloadItem.kt" to arrayOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
             "Extensions.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
             "IncomingMessage.kt" to arrayOf(
@@ -143,30 +115,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             "IncomingMessageEvent.kt" to arrayOf(
                 "node.buffer.Buffer"
             ),
-            "InAppPurchase.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "IpcMainServiceWorker.kt" to arrayOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "IpcRenderer.kt" to arrayOf(
-                "js.promise.Promise",
-                "web.messaging.MessagePort"
-            ),
-            "IpcRendererEvent.kt" to arrayOf(
-                "web.messaging.MessagePort"
-            ),
-            "GlobalRequest.kt" to arrayOf(
-                "web.http.Request"
-            ),
-            "GlobalResponse.kt" to arrayOf(
-                "web.http.Response"
-            ),
             "Menu.kt" to arrayOf(
                 "node.events.EventEmitter as NodeEventEmitter"
-            ),
-            "MessageBoxOptions.kt" to arrayOf(
-                "web.abort.AbortSignal"
             ),
             "MessageChannelMain.kt" to arrayOf(
                 "node.events.EventEmitter as NodeEventEmitter"
@@ -177,21 +130,8 @@ suspend fun main(args: ReadonlyArray<String>) {
             "MimeTypedBuffer.kt" to arrayOf(
                 "node.buffer.Buffer"
             ),
-            "NavigationHistory.kt" to arrayOf(
-                "js.promise.Promise",
-            ),
             "NativeImage.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.buffer.Buffer"
-            ),
-            "Net.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "NetFetchInit.kt" to arrayOf(
-                "web.http.RequestInit"
-            ),
-            "NetLog.kt" to arrayOf(
-                "js.promise.Promise"
             ),
             "NodeEventEmitter.kt" to arrayOf(
                 "node.events.EventEmitter"
@@ -202,32 +142,15 @@ suspend fun main(args: ReadonlyArray<String>) {
             "ProcessEvent.kt" to arrayOf(
                 "node.process.Process"
             ),
-            "PushNotifications.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "SafeStorage.kt" to arrayOf(
                 "node.buffer.Buffer"
             ),
             "ServiceWorkers.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
             "Session.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
-            ),
-            "SessionFetchInit.kt" to arrayOf(
-                "web.http.RequestInit"
-            ),
-            "SharedDictionaryInfo.kt" to arrayOf(
-                "js.date.Date"
-            ),
-            "Shell.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
-            "SystemPreferences.kt" to arrayOf(
-                "js.promise.Promise"
             ),
             "TextureInfo.kt" to arrayOf(
                 "node.buffer.Buffer"
@@ -276,25 +199,12 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
             "WebContents.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "WebFrame.kt" to arrayOf(
-                "js.promise.Promise"
-            ),
             "WebFrameMain.kt" to arrayOf(
-                "js.promise.Promise",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "WebviewTag.kt" to arrayOf(
-                "js.promise.Promise",
-                "js.typedarrays.Uint8Array",
-                "web.html.HTMLElement"
-            ),
-            "WebUtils.kt" to arrayOf(
-                "web.file.File"
-            )
         )
         namespaceStrategy = recordOf(
             "Electron" to NamespaceStrategy.`package`,
@@ -308,5 +218,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             "DownloadItemDoneListenerState" to ConflictResolutionStrategy.replace,
             "DownloadItemUpdatedListenerState" to ConflictResolutionStrategy.replace
         )
+        compilerOptions = unsafeJso {
+            lib = arrayOf(
+                "lib.esnext.d.ts",
+                "lib.dom.d.ts",
+            )
+        }
     }
 }

@@ -2,8 +2,6 @@
 
 package electron.core
 
-import js.date.Date
-
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface AutoUpdater : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/auto-updater
@@ -88,7 +86,8 @@ external interface AutoUpdater : node.events.EventEmitter {
     val updateAvailableEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("update-downloaded")
-    val updateDownloadedEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, String, String, Date, String>>
+    val updateDownloadedEvent:
+            node.events.EventInstance<js.array.Tuple5<Event<*>, String, String, js.date.Date, String>>
 
     @web.events.JsEvent("update-not-available")
     val updateNotAvailableEvent: node.events.EventInstance<js.array.Tuple>
