@@ -1,17 +1,17 @@
+@file:JsModule("react")
+
 package react
 
-import js.reflect.unsafeCast
+/**
+ * [Online Documentation](https://react.dev/reference/react/useRef)
+ */
+@JsName("useRef")
+external fun <T : Any> useRefValue(): RefValueInstance<T?>
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useRef)
  */
-inline fun <T : Any> useRefValue(): RefValueInstance<T?> =
-    unsafeCast(useRef<T>())
-
-/**
- * [Online Documentation](https://react.dev/reference/react/useRef)
- */
-inline fun <T : Any> useRefValue(
+@JsName("useRef")
+external fun <T : Any> useRefValue(
     initialValue: T,
-): RefValueInstance<T> =
-    unsafeCast(useRef(initialValue))
+): RefValueInstance<T>
