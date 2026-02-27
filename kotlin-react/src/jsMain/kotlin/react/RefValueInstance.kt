@@ -1,30 +1,27 @@
+@file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
+)
+
 package react
 
 import kotlin.reflect.KProperty
 
-/**
- * [RefObject] effectively
- */
-private external interface RefValue<T> {
-    var current: T
-}
-
-value class RefValueInstance<T>
-private constructor(
-    private val ref: RefValue<T>,
-) {
-    operator fun getValue(
+sealed external interface RefValueInstance<T> {
+    inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,
     ): T {
-        return ref.current
+        return asDynamic().current
     }
 
-    operator fun setValue(
+    inline operator fun setValue(
         thisRef: Nothing?,
         property: KProperty<*>,
         value: T,
     ) {
-        ref.current = value
+        asDynamic().current = value
     }
 }
