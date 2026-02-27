@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.npm.LockFileMismatchReport
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
-import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.wasm.npm.WasmNpmExtension
 
@@ -21,7 +20,7 @@ plugins.withType<NodeJsRootPlugin> {
 }
 
 plugins.withType<WasmNodeJsRootPlugin> {
-    the<WasmNodeJsRootExtension>().versions.configureVersions()
+    // the<WasmNodeJsRootExtension>().versions.configureVersions()
 
     the<WasmNpmExtension>().apply {
         lockFileDirectory = project.layout.buildDirectory.file("wasm-package-lock").get().asFile
@@ -31,11 +30,11 @@ plugins.withType<WasmNodeJsRootPlugin> {
 
 fun NpmVersions.configureVersions() {
     // https://www.npmjs.com/package/webpack
-    webpack.version = "5.102.1"
+    webpack.version = "5.105.3"
 
     // https://www.npmjs.com/package/webpack-cli
     webpackCli.version = "6.0.1"
 
     // https://www.npmjs.com/package/webpack-dev-server
-    webpackDevServer.version = "5.2.2"
+    webpackDevServer.version = "5.2.3"
 }
