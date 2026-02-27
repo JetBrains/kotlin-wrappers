@@ -1,34 +1,34 @@
+@file:Suppress(
+    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
+    "INLINE_EXTERNAL_DECLARATION",
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+    "DECLARATION_CANT_BE_INLINED",
+)
+
 package react
 
-import js.array.Tuple2
-import js.array.component1
-import js.array.component2
 import js.reflect.unsafeCast
 import kotlin.reflect.KProperty
 
-value class StateInstance<T>
-internal constructor(
-    @PublishedApi
-    internal val state: Tuple2<T, StateSetter<T>>,
-) {
+sealed external interface StateInstance<T> {
     inline operator fun component1(): T =
-        state.component1()
+        asDynamic()[0]
 
     inline operator fun component2(): StateSetter<T> =
-        state.component2()
+        asDynamic()[1]
 
     inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,
     ): T =
-        state.component1()
+        asDynamic()[0]
 
     inline operator fun setValue(
         thisRef: Nothing?,
         property: KProperty<*>,
         value: T,
     ) {
-        state.component2()(value)
+        asDynamic()[1](value)
     }
 }
 
