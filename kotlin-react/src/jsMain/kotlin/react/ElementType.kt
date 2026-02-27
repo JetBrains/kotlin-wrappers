@@ -1,4 +1,7 @@
 package react
 
+import js.internal.InternalApi
+
 @JsExternalInheritorsOnly
-sealed external interface ElementType<in P : Props>
+@SubclassOptInRequired(InternalApi::class)
+external interface ElementType<in P : Props>
