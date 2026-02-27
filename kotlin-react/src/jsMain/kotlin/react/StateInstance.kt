@@ -10,10 +10,6 @@ package react
 import js.reflect.unsafeCast
 import kotlin.reflect.KProperty
 
-/**
- * Only works inside [fc]
- * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
- */
 sealed external interface StateInstance<T> {
     inline operator fun component1(): T =
         asDynamic()[0]
