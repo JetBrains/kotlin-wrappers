@@ -11,7 +11,7 @@ import kotlin.js.undefined
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
  */
 fun ExtendableEvent.waitUntil(
-    block: CoroutineScope.() -> Unit,
+    block: suspend CoroutineScope.() -> Unit,
 ) {
     val promise = IsolatedCoroutineScope()
         .safePromise { block(); undefined }
