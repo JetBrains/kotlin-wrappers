@@ -93,9 +93,7 @@ private constructor() {
     val navigate: NavigateFn
     val latestLoadPromise: Promise<Void>?
     fun beforeLoad()
-
-    @JsName("load")
-    fun loadAsync(options: LoadOptions = definedExternally): Promise<Void>
+    val load: LoadFn
     // startViewTransition: (fn: () => Promise<void>) => void
     // updateMatch: UpdateMatchFn
     // getMatch: GetMatchFn
