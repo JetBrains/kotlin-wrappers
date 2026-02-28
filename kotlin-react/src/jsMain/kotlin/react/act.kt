@@ -1,16 +1,10 @@
-@file:JsModule("react")
-
 package react
 
-import js.promise.Promise
-import seskar.js.JsAsync
+import js.function.unsafeAsync
+import js.promise.await
+import kotlinx.coroutines.CoroutineScope
 
-@JsAsync
-external suspend fun <T> act(
-    block: () -> T,
-): T
-
-@JsName("act")
-external fun <T> actAsync(
-    block: () -> T, /* | Promise<T> */
-): Promise<T>
+suspend fun <T> act(
+    block: suspend CoroutineScope.() -> T,
+): T =
+    actAsync(unsafeAsync(block)).await()
