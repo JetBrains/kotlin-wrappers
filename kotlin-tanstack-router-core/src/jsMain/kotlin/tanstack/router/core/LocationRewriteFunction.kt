@@ -20,4 +20,4 @@ private constructor() {
 operator fun LocationRewriteFunction.invoke(
     url: URL,
 ): URL? =
-    invoke(LocationRewriteFunctionOptions(url = url))
+    invoke(options = LocationRewriteFunctionOptions(url = url))
