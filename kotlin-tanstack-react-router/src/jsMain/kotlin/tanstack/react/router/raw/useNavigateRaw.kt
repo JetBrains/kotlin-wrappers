@@ -1,9 +1,6 @@
-package tanstack.react.router
+@file:JsModule("@tanstack/react-router")
 
-import tanstack.react.router.raw.UseNavigateOptionsRaw
-import tanstack.react.router.raw.useNavigateRaw
-import tanstack.router.core.RoutePath
-import tanstack.router.core.UseNavigateResult
+package tanstack.react.router.raw
 
 /**
  * Imperative navigation hook.
@@ -20,10 +17,7 @@ import tanstack.router.core.UseNavigateResult
  *
  * @return A function that accepts `NavigateOptions`.
  */
-fun useNavigate(): UseNavigateResult =
-    UseNavigateResult(useNavigateRaw())
-
-fun useNavigate(
-    from: RoutePath,
-): UseNavigateResult =
-    UseNavigateResult(useNavigateRaw(UseNavigateOptionsRaw(from = from)))
+internal /* raw */
+external fun useNavigateRaw(
+    options: UseNavigateOptionsRaw = definedExternally,
+): UseNavigateResultRaw
