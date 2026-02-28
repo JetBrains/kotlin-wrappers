@@ -256,6 +256,9 @@ include("kotlin-testing-library-react")
 
 includeKarakum("kotlin-testing-library-react")
 
+// Kotlin/JS: Testing Library User Event wrappers
+include("kotlin-testing-library-user-event")
+
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
