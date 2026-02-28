@@ -120,7 +120,7 @@ open external class Agent : EventEmitter {
      * sockets. Do not modify.
      * @since v0.5.9
      */
-    val requests: node.ReadOnlyDict<js.array.ReadonlyArray<IncomingMessage>>
+    val requests: node.ReadOnlyDict<js.array.ReadonlyArray<ClientRequest>>
 
     /**
      * Destroy any sockets that are currently in use by the agent.

@@ -182,8 +182,8 @@ external class Worker : EventEmitter {
     suspend fun terminate(): Double
 
     /**
-     * This method returns a `Promise` that will resolve to an object identical to `process.threadCpuUsage()`,
-     * or reject with an `ERR_WORKER_NOT_RUNNING` error if the worker is no longer running.
+     * This method returns a `Promise` that will resolve to an object identical to {@link process.threadCpuUsage()},
+     * or reject with an [`ERR_WORKER_NOT_RUNNING`](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_worker_not_running) error if the worker is no longer running.
      * This methods allows the statistics to be observed from outside the actual thread.
      * @since v24.6.0
      */
@@ -344,7 +344,7 @@ external class Worker : EventEmitter {
     fun off(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<Any?>>
 
     @web.events.JsEvent("exit")
     val exitEvent: node.events.EventInstance<js.array.Tuple1<Double>>

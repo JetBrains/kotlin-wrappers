@@ -25,4 +25,4 @@ package node.fs
 external fun mkdtempDisposableSync(
     prefix: String,
     options: EncodingOption = definedExternally,
-): DisposableTempDir
+): _DisposableTempDir

@@ -31,6 +31,7 @@ private val conflictingEntities = recordOf(
         "FinishedOptions",
     ),
     "fs.d.ts" to arrayOf(
+        "DisposableTempDir",
         "WatchOptions",
         "WatchOptionsWithBufferEncoding",
         "WatchOptionsWithStringEncoding",

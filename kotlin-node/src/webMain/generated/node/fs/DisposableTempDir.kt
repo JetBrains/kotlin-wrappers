@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface DisposableTempDir : js.disposable.AsyncDisposable {
+sealed external interface _DisposableTempDir : js.disposable.Disposable {
     /**
      * The path of the created directory.
      */
@@ -11,9 +11,5 @@ sealed external interface DisposableTempDir : js.disposable.AsyncDisposable {
     /**
      * A function which removes the created directory.
      */
-    @JsName("remove")
-    fun removeAsync(): js.promise.Promise<js.core.Void>
-
-    @seskar.js.JsAsync
-    suspend fun remove(): js.core.Void
+    fun remove()
 }

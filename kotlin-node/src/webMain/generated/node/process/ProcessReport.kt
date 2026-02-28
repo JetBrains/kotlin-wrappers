@@ -50,6 +50,12 @@ sealed external interface ProcessReport {
     var reportOnUncaughtException: Boolean
 
     /**
+     * If true, a diagnostic report is generated without the environment variables.
+     * @default false
+     */
+    var excludeEnv: Boolean
+
+    /**
      * The signal used to trigger the creation of a diagnostic report.
      * @default 'SIGUSR2'
      */

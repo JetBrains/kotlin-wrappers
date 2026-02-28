@@ -1044,6 +1044,12 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NETWORK_ENABLE,
+        params: node.inspector.network.EnableParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NETWORK_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 

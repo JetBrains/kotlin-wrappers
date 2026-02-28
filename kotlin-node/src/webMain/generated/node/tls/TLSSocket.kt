@@ -56,6 +56,11 @@ external class TLSSocket : node.net.Socket {
     var alpnProtocol: Any? // string | false | null
 
     /**
+     * String containing the server name requested via SNI (Server Name Indication) TLS extension.
+     */
+    var servername: Any? // string | false | null
+
+    /**
      * Returns an object representing the local certificate. The returned object has
      * some properties corresponding to the fields of the certificate.
      *

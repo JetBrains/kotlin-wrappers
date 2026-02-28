@@ -12,12 +12,7 @@ package node.sqlite
  * import sqlite from 'node:sqlite';
  * ```
  *
- * This module is only available under the `node:` scheme. The following will not
- * work:
- *
- * ```js
- * import sqlite from 'sqlite';
- * ```
+ * This module is only available under the `node:` scheme.
  *
  * The following example shows the basic usage of the `node:sqlite` module to open
  * an in-memory database, write data to the database, and then read the data back.

@@ -9,7 +9,7 @@ package node.workerThreads
  * JavaScript in parallel. To access it:
  *
  * ```js
- * import worker from 'node:worker_threads';
+ * import worker_threads from 'node:worker_threads';
  * ```
  *
  * Workers (threads) are useful for performing CPU-intensive JavaScript operations.

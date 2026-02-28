@@ -174,7 +174,7 @@ external class DatabaseSync : js.disposable.Disposable {
     fun prepare(sql: String): StatementSync
 
     /**
-     * Creates a new `SQLTagStore`, which is an LRU (Least Recently Used) cache for
+     * Creates a new {@link SQLTagStore `SQLTagStore`}, which is an LRU (Least Recently Used) cache for
      * storing prepared statements. This allows for the efficient reuse of prepared
      * statements by tagging them with a unique identifier.
      *
@@ -188,7 +188,7 @@ external class DatabaseSync : js.disposable.Disposable {
      * import { DatabaseSync } from 'node:sqlite';
      *
      * const db = new DatabaseSync(':memory:');
-     * const sql = db.createSQLTagStore();
+     * const sql = db.createTagStore();
      *
      * db.exec('CREATE TABLE users (id INT, name TEXT)');
      *
@@ -211,6 +211,7 @@ external class DatabaseSync : js.disposable.Disposable {
      * // ]
      * ```
      * @since v24.9.0
+     * @param maxSize The maximum number of prepared statements to cache. **Default**: `1000`.
      * @returns A new SQL tag store for caching prepared statements.
      */
     fun createTagStore(maxSize: Number = definedExternally): SQLTagStore
@@ -231,6 +232,8 @@ external class DatabaseSync : js.disposable.Disposable {
      * [`sqlite3changeset_apply()`](https://www.sqlite.org/session/sqlite3changeset_apply.html).
      *
      * ```js
+     * import { DatabaseSync } from 'node:sqlite';
+     *
      * const sourceDb = new DatabaseSync(':memory:');
      * const targetDb = new DatabaseSync(':memory:');
      *

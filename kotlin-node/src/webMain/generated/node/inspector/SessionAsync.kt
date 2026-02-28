@@ -1010,10 +1010,16 @@ external class Session : EventEmitter {
      * Enables network tracking, network events will now be delivered to the client.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.NETWORK_ENABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(
+        method: SessionMethod.NETWORK_ENABLE,
+        params: node.inspector.network.EnableParameterType = definedExternally,
+    ): js.promise.Promise<js.core.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.NETWORK_ENABLE): js.core.Void
+    suspend fun post(
+        method: SessionMethod.NETWORK_ENABLE,
+        params: node.inspector.network.EnableParameterType = definedExternally,
+    ): js.core.Void
 
     /**
      * Returns post data sent with the request. Returns an error when no data was sent with the request.

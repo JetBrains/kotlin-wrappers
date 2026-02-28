@@ -6,14 +6,14 @@ package node.sqlite
  * This class represents a single LRU (Least Recently Used) cache for storing
  * prepared statements.
  *
- * Instances of this class are created via the database.createSQLTagStore() method,
+ * Instances of this class are created via the database.createTagStore() method,
  * not by using a constructor. The store caches prepared statements based on the
  * provided SQL query string. When the same query is seen again, the store
  * retrieves the cached statement and safely applies the new values through
  * parameter binding, thereby preventing attacks like SQL injection.
  *
  * The cache has a maxSize that defaults to 1000 statements, but a custom size can
- * be provided (e.g., database.createSQLTagStore(100)). All APIs exposed by this
+ * be provided (e.g., database.createTagStore(100)). All APIs exposed by this
  * class execute synchronously.
  * @since v24.9.0
  */

@@ -6,7 +6,7 @@ package node.workerThreads
 
 /**
  * Mark an object as not transferable. If `object` occurs in the transfer list of
- * a `port.postMessage()` call, it is ignored.
+ * a {@link MessagePort.postMessage port.postMessage()} call, it is ignored.
  *
  * In particular, this makes sense for objects that can be cloned, rather than
  * transferred, and which are used by other objects on the sending side.

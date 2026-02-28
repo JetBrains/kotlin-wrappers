@@ -2,34 +2,34 @@
 
 package node.tls
 
-sealed external interface Certificate {
+sealed external interface Certificate : node.Dict<Any /* string | string[] */> {
     /**
      * Country code.
      */
-    var C: String
+    var C: (Any /* string | string[] */)?
 
     /**
      * Street.
      */
-    var ST: String
+    var ST: (Any /* string | string[] */)?
 
     /**
      * Locality.
      */
-    var L: String
+    var L: (Any /* string | string[] */)?
 
     /**
      * Organization.
      */
-    var O: String
+    var O: (Any /* string | string[] */)?
 
     /**
      * Organizational unit.
      */
-    var OU: String
+    var OU: (Any /* string | string[] */)?
 
     /**
      * Common name.
      */
-    var CN: String
+    var CN: (Any /* string | string[] */)?
 }

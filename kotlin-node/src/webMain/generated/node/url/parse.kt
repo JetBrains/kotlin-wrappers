@@ -22,7 +22,7 @@ package node.url
  * function getURL(req) {
  *   const proto = req.headers['x-forwarded-proto'] || 'https';
  *   const host = req.headers['x-forwarded-host'] || req.headers.host || 'example.com';
- *   return new URL(req.url || '/', `${proto}://${host}`);
+ *   return new URL(`${proto}://${host}${req.url || '/'}`);
  * }
  * ```
  *
@@ -32,7 +32,7 @@ package node.url
  *
  * ```js
  * function getURL(req) {
- *   return new URL(req.url || '/', 'https://example.com');
+ *   return new URL(`https://example.com${req.url || '/'}`);
  * }
  * ```
  * @since v0.1.25
