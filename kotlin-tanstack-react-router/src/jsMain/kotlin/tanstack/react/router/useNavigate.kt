@@ -21,9 +21,9 @@ import tanstack.router.core.UseNavigateResult
  * @return A function that accepts `NavigateOptions`.
  */
 fun useNavigate(): UseNavigateResult =
-    UseNavigateResult(useNavigateRaw())
+    useNavigateRaw()
 
 fun useNavigate(
     from: RoutePath,
 ): UseNavigateResult =
-    UseNavigateResult(useNavigateRaw(UseNavigateOptionsRaw(from = from)))
+    useNavigateRaw(UseNavigateOptionsRaw(from = from))

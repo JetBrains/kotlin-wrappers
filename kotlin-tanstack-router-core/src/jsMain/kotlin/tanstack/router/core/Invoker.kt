@@ -2,11 +2,16 @@ package tanstack.router.core
 
 import js.objects.unsafeJso
 
-value class Invoker<O : Any, R>(
-    private val function: (O) -> R,
-) {
+@JsName("Function")
+external class Invoker<O : Any, R>
+private constructor() {
+    internal /* raw */
     operator fun invoke(
-        block: O.() -> Unit,
-    ): R =
-        function(unsafeJso(block))
+        options: O,
+    ): R
 }
+
+operator fun <O : Any, R> Invoker<O, R>.invoke(
+    block: O.() -> Unit,
+): R =
+    invoke(options = unsafeJso(block))

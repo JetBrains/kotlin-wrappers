@@ -2,6 +2,8 @@
 
 package tanstack.react.router.raw
 
+import tanstack.router.core.UseNavigateResult
+
 /**
  * Imperative navigation hook.
  *
@@ -20,4 +22,4 @@ package tanstack.react.router.raw
 internal /* raw */
 external fun useNavigateRaw(
     options: UseNavigateOptionsRaw = definedExternally,
-): UseNavigateResultRaw
+): UseNavigateResult
