@@ -4,15 +4,19 @@ import js.objects.unsafeJso
 import js.promise.Promise
 import js.promise.await
 
-value class SuspendInvoker<O : Any, R>
-private constructor(
-    private val function: (O) -> Promise<R>,
-) {
-    suspend operator fun invoke(): R =
-        function(unsafeJso()).await()
-
-    suspend operator fun invoke(
-        block: O.() -> Unit,
-    ): R =
-        function(unsafeJso(block)).await()
+@JsName("Function")
+external class SuspendInvoker<O : Any, R>
+private constructor() {
+    internal /* raw */
+    operator fun invoke(
+        options: O,
+    ): Promise<R>
 }
+
+suspend operator fun <R> SuspendInvoker<*, R>.invoke(): R =
+    invoke(options = unsafeJso()).await()
+
+suspend operator fun <O : Any, R> SuspendInvoker<O, R>.invoke(
+    block: O.() -> Unit,
+): R =
+    invoke(options = unsafeJso(block)).await()
