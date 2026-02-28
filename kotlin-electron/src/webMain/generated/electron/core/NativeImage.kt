@@ -144,8 +144,8 @@ external class NativeImage {
 
         /**
          * Creates a new `NativeImage` instance from the `NSImage` that maps to the given
-         * image name. See Apple's `NSImageName` documentation for a list of possible
-         * values.
+         * image name. See Apple's `NSImageName` documentation and SF Symbols for a list of
+         * possible values.
          *
          * The `hslShift` is applied to the image with the following rules:
          *
@@ -168,6 +168,10 @@ external class NativeImage {
          * following:
          *
          * where `SYSTEM_IMAGE_NAME` should be replaced with any value from this list.
+         *
+         * For SF Symbols, usage looks as follows:
+         *
+         * where `'square.and.pencil'` is the symbol name from the SF Symbols app.
          *
          * @platform darwin
          */

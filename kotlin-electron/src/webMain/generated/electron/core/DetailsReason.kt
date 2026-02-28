@@ -26,3 +26,6 @@ inline val DetailsReason.Companion.launchFailed: DetailsReason
 
 inline val DetailsReason.Companion.integrityFailure: DetailsReason
     get() = js.reflect.unsafeCast("integrity-failure")
+
+inline val DetailsReason.Companion.memoryEviction: DetailsReason
+    get() = js.reflect.unsafeCast("memory-eviction")

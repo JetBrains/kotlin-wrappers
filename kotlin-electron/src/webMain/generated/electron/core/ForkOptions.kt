@@ -49,6 +49,19 @@ external interface ForkOptions {
     var allowLoadingUnsignedLibraries: Boolean?
 
     /**
+     * With this flag, the utility process will disclaim responsibility for the child
+     * process. This causes the operating system to consider the child process as a
+     * separate entity for purposes of security policies like Transparency, Consent,
+     * and Control (TCC). When responsibility is disclaimed, the parent process will
+     * not be attributed for any TCC requests initiated by the child process. This is
+     * useful when launching processes that run third-party or otherwise untrusted
+     * code. Default is `false`.
+     *
+     * @platform darwin
+     */
+    var disclaim: Boolean?
+
+    /**
      * With this flag, all HTTP 401 and 407 network requests created via the net module
      * will allow responding to them via the `app#login` event in the main process
      * instead of the default `login` event on the `ClientRequest` object. Default is

@@ -32,6 +32,14 @@ external interface ClientRequestConstructorOptions {
     var partition: String?
 
     /**
+     * When set to `true`, custom protocol handlers registered for the request's URL
+     * scheme will not be called. This allows forwarding an intercepted request to the
+     * built-in handler. webRequest handlers will still be triggered when bypassing
+     * custom protocols. Defaults to `false`.
+     */
+    var bypassCustomProtocolHandlers: Boolean?
+
+    /**
      * Can be `include`, `omit` or `same-origin`. Whether to send credentials with this
      * request. If set to `include`, credentials from the session associated with the
      * request will be used. If set to `omit`, credentials will not be sent with the

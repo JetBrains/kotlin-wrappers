@@ -22,8 +22,8 @@ external interface NativeTheme : node.events.EventEmitter {
     val inForcedColorsMode: Boolean
 
     /**
-     * A `boolean` that indicates the whether the user has chosen via system
-     * accessibility settings to reduce transparency at the OS level.
+     * A `boolean` that indicates whether the user has chosen via system accessibility
+     * settings to reduce transparency at the OS level.
      *
      */
     val prefersReducedTransparency: Boolean
@@ -75,7 +75,7 @@ external interface NativeTheme : node.events.EventEmitter {
      *
      * * `nativeTheme.shouldUseDarkColors` will be `true` when accessed
      * * Any UI Electron renders on Linux and Windows including context menus,
-     * devtools, etc. will use the dark UI.
+     * DevTools, etc. will use the dark UI.
      * * Any UI the OS renders on macOS including menus, window frames, etc. will use
      * the dark UI.
      * * The `prefers-color-scheme` CSS query will match `dark` mode.
@@ -85,7 +85,7 @@ external interface NativeTheme : node.events.EventEmitter {
      *
      * * `nativeTheme.shouldUseDarkColors` will be `false` when accessed
      * * Any UI Electron renders on Linux and Windows including context menus,
-     * devtools, etc. will use the light UI.
+     * DevTools, etc. will use the light UI.
      * * Any UI the OS renders on macOS including menus, window frames, etc. will use
      * the light UI.
      * * The `prefers-color-scheme` CSS query will match `light` mode.

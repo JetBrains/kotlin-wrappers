@@ -205,10 +205,9 @@ external interface BaseWindowConstructorOptions {
     var resizable: Boolean?
 
     /**
-     * Whether frameless window should have rounded corners. Default is `true`. Setting
-     * this property to `false` will prevent the window from being fullscreenable on
-     * macOS. On Windows versions older than Windows 11 Build 22000 this property has
-     * no effect, and frameless windows will not have rounded corners.
+     * Whether frameless window should have rounded corners. Default is `true`. On
+     * Windows versions older than Windows 11 Build 22000 this property has no effect,
+     * and frameless windows will not have rounded corners.
      *
      * @platform darwin,win32
      */
@@ -244,9 +243,12 @@ external interface BaseWindowConstructorOptions {
     var tabbingIdentifier: String?
 
     /**
-     * Use `WS_THICKFRAME` style for frameless windows on Windows, which adds standard
-     * window frame. Setting it to `false` will remove window shadow and window
-     * animations. Default is `true`.
+     * Use `WS_THICKFRAME` style for frameless windows on Windows, which adds the
+     * standard window frame. Setting it to `false` will remove window shadow and
+     * window animations, and disable window resizing via dragging the window edges.
+     * Default is `true`.
+     *
+     * @platform win32
      */
     var thickFrame: Boolean?
 
@@ -280,7 +282,9 @@ external interface BaseWindowConstructorOptions {
 
     /**
      * Makes the window transparent. Default is `false`. On Windows, does not work
-     * unless the window is frameless.
+     * unless the window is frameless. When you add a `View` to a `BaseWindow`, you'll
+     * need to call `view.setBackgroundColor` with a transparent background color on
+     * that view to make its background transparent as well.
      */
     var transparent: Boolean?
 

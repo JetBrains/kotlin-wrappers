@@ -5,7 +5,18 @@ package electron.core
 external interface USBDevice {
 // Docs: https://electronjs.org/docs/api/structures/usb-device
     /**
-     * The device class for the communication interface supported by the device
+     * A USBConfiguration object containing information about the currently selected
+     * configuration of a USB device.
+     */
+    var configuration: Configuration?
+
+    /**
+     * An array of USBConfiguration interfaces for controlling a paired USB device.
+     */
+    var configurations: js.array.ReadonlyArray<Configurations>
+
+    /**
+     * The device class for the communication interface supported by the device.
      */
     var deviceClass: Double
 
@@ -15,12 +26,12 @@ external interface USBDevice {
     var deviceId: String
 
     /**
-     * The device protocol for the communication interface supported by the device
+     * The device protocol for the communication interface supported by the device.
      */
     var deviceProtocol: Double
 
     /**
-     * The device subclass for the communication interface supported by the device
+     * The device subclass for the communication interface supported by the device.
      */
     var deviceSubclass: Double
 
@@ -60,17 +71,17 @@ external interface USBDevice {
     var serialNumber: String?
 
     /**
-     * The USB protocol major version supported by the device
+     * The USB protocol major version supported by the device.
      */
     var usbVersionMajor: Double
 
     /**
-     * The USB protocol minor version supported by the device
+     * The USB protocol minor version supported by the device.
      */
     var usbVersionMinor: Double
 
     /**
-     * The USB protocol subminor version supported by the device
+     * The USB protocol subminor version supported by the device.
      */
     var usbVersionSubminor: Double
 

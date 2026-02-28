@@ -2,7 +2,7 @@
 
 package electron.core
 
-// Type definitions for Electron 38.2.2
+// Type definitions for Electron 40.6.1
 // Project: http://electronjs.org/
 // Definitions by: The Electron Team <https://github.com/electron/electron>
 // Definitions: https://github.com/electron/typescript-definitions

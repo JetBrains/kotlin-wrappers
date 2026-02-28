@@ -14,7 +14,7 @@ external interface Info {
     var csp: String?
 
     /**
-     * Name for isolated world. Useful in devtools.
+     * Name for isolated world. Useful in DevTools.
      */
     var name: String?
 }

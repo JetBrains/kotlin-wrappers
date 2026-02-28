@@ -35,7 +35,7 @@ package electron.core
         readonly isMainFrame: boolean;
         readonly mas: boolean;
         noAsar: boolean;
-        noDeprecation: boolean;
+        noDeprecation?: boolean;
         parentPort: Electron.ParentPort;
         readonly resourcesPath: string;
         readonly sandboxed: boolean;

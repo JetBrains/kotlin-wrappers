@@ -2,8 +2,6 @@
 
 package electron.core
 
-import node.buffer.Buffer
-
 external interface TextureInfo {
     /**
      * The widget type of the texture. Can be `popup` or `frame`.
@@ -11,7 +9,7 @@ external interface TextureInfo {
     var widgetType: (TextureInfoWidgetType)
 
     /**
-     * The pixel format of the texture. Can be `rgba` or `bgra`.
+     * The pixel format of the texture.
      */
     var pixelFormat: (TextureInfoPixelFormat)
 
@@ -21,8 +19,13 @@ external interface TextureInfo {
     var codedSize: Size
 
     /**
-     * A subsection of [0, 0, codedSize.width(), codedSize.height()]. In OSR case, it
-     * is expected to have the full section area.
+     * The color space of the video frame.
+     */
+    var colorSpace: ColorSpace
+
+    /**
+     * A subsection of [0, 0, codedSize.width, codedSize.height]. In OSR case, it is
+     * expected to have the full section area.
      */
     var visibleRect: Rectangle
 
@@ -44,23 +47,7 @@ external interface TextureInfo {
     var metadata: Metadata
 
     /**
-     * The handle to the shared texture.
-     *
-     * @platform win32,darwin
+     * The shared texture handle data.
      */
-    var sharedTextureHandle: Buffer<*>
-
-    /**
-     * Each plane's info of the shared texture.
-     *
-     * @platform linux
-     */
-    var planes: js.array.ReadonlyArray<Planes>
-
-    /**
-     * The modifier is retrieved from GBM library and passed to EGL driver.
-     *
-     * @platform linux
-     */
-    var modifier: String
+    var handle: SharedTextureHandle
 }

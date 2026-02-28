@@ -11,3 +11,6 @@ inline val TextureInfoPixelFormat.Companion.rgba: TextureInfoPixelFormat
 
 inline val TextureInfoPixelFormat.Companion.bgra: TextureInfoPixelFormat
     get() = js.reflect.unsafeCast("bgra")
+
+inline val TextureInfoPixelFormat.Companion.rgbaf16: TextureInfoPixelFormat
+    get() = js.reflect.unsafeCast("rgbaf16")

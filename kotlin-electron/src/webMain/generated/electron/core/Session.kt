@@ -764,8 +764,8 @@ external class Session : NodeEventEmitter {
     /**
      * Overrides the `userAgent` and `acceptLanguages` for this session.
      *
-     * The `acceptLanguages` must a comma separated ordered list of language codes, for
-     * example `"en-US,fr,de,ko,zh-CN,ja"`.
+     * The `acceptLanguages` must be a comma separated ordered list of language codes,
+     * for example `"en-US,fr,de,ko,zh-CN,ja"`.
      *
      * This doesn't affect existing `WebContents`, and each `WebContents` can use
      * `webContents.setUserAgent` to override the session-wide user agent.
@@ -975,7 +975,8 @@ external class Session : NodeEventEmitter {
         ): Session
 
         /**
-         * A `Session` object, the default session object of the app.
+         * A `Session` object, the default session object of the app, available after
+         * `app.whenReady` is called.
          */
         var defaultSession: Session
     }

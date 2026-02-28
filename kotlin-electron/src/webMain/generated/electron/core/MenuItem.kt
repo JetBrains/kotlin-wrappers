@@ -12,7 +12,7 @@ open external class MenuItem {
     constructor (options: MenuItemConstructorOptions)
 
     /**
-     * An `Accelerator` (optional) indicating the item's accelerator, if set.
+     * An `Accelerator | null` indicating the item's accelerator, if set.
      */
     var accelerator: Accelerator?
 

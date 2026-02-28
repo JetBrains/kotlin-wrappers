@@ -41,9 +41,9 @@ external interface Display {
     var displayFrequency: Double
 
     /**
-     * Unique identifier associated with the display. A value of of -1 means the
-     * display is invalid or the correct `id` is not yet known, and a value of -10
-     * means the display is a virtual display assigned to a unified desktop.
+     * Unique identifier associated with the display. A value of -1 means the display
+     * is invalid or the correct `id` is not yet known, and a value of -10 means the
+     * display is a virtual display assigned to a unified desktop.
      */
     var id: Double
 

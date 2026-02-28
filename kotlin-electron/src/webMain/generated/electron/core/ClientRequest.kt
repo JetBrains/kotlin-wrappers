@@ -63,7 +63,7 @@ external class ClientRequest : NodeEventEmitter {
      * Cancels an ongoing HTTP transaction. If the request has already emitted the
      * `close` event, the abort operation will have no effect. Otherwise an ongoing
      * event will emit `abort` and `close` events. Additionally, if there is an ongoing
-     * response object,it will emit the `aborted` event.
+     * response object, it will emit the `aborted` event.
      */
     fun abort()
 

@@ -106,7 +106,7 @@ open external class Menu : NodeEventEmitter {
          * opens the associated menu. The indicated character in the button label then gets
          * an underline, and the `&` character is not displayed on the button label.
          *
-         * In order to escape the `&` character in an item name, add a proceeding `&`. For
+         * In order to escape the `&` character in an item name, add a preceding `&`. For
          * example, `&&File` would result in `&File` displayed on the button label.
          *
          * Passing `null` will suppress the default menu. On Windows and Linux, this has

@@ -13,7 +13,7 @@ open external class Notification : NodeEventEmitter {
     constructor (options: NotificationConstructorOptions = definedExternally)
 // Docs: https://electronjs.org/docs/api/notification
     /**
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
@@ -45,7 +45,7 @@ open external class Notification : NodeEventEmitter {
      * Emitted when the user clicks the "Reply" button on a notification with
      * `hasReply: true`.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
@@ -55,7 +55,7 @@ open external class Notification : NodeEventEmitter {
      */
 
     /**
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
@@ -63,23 +63,11 @@ open external class Notification : NodeEventEmitter {
      */
 
     /**
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
@@ -87,11 +75,11 @@ open external class Notification : NodeEventEmitter {
      */
 
     /**
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
-     * @platform darwin
+     * @platform darwin,win32
      */
 
     /**
@@ -99,7 +87,19 @@ open external class Notification : NodeEventEmitter {
      */
 
     /**
-     * @platform darwin
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin,win32
      */
 
     /**
@@ -197,7 +197,7 @@ open external class Notification : NodeEventEmitter {
     var urgency: (NotificationUrgency)
 
     @web.events.JsEvent("action")
-    val actionEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
+    val actionEvent: node.events.EventInstance<js.array.Tuple3<Event<NotificationActionEventParams>, Double, Double>>
 
     @web.events.JsEvent("click")
     val clickEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
@@ -209,7 +209,7 @@ open external class Notification : NodeEventEmitter {
     val failedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("reply")
-    val replyEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
+    val replyEvent: node.events.EventInstance<js.array.Tuple2<Event<NotificationReplyEventParams>, String>>
 
     @web.events.JsEvent("show")
     val showEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>

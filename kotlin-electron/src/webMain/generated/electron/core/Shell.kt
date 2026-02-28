@@ -46,6 +46,10 @@ external interface Shell {
      *
      * This moves a path to the OS-specific trash location (Trash on macOS, Recycle Bin
      * on Windows, and a desktop-environment-specific location on Linux).
+     *
+     * The path must use the default path separator for the platform (backslash on
+     * Windows). Use `path.resolve()` from the `node:path` module to ensure correct
+     * handling on all filesystems.
      */
     fun trashItem(path: String): js.promise.Promise<js.core.Void>
 

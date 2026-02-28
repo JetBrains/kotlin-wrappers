@@ -133,6 +133,11 @@ external interface WebPreferences {
     var experimentalFeatures: Boolean?
 
     /**
+     * Whether to focus the WebContents when navigating. Default is `true`.
+     */
+    var focusOnNavigation: Boolean?
+
+    /**
      * Specifies how to run image animations (E.g. GIFs).  Can be `animate`,
      * `animateOnce` or `noAnimation`.  Default is `animate`.
      */
@@ -224,7 +229,9 @@ external interface WebPreferences {
      * If set, this will sandbox the renderer associated with the window, making it
      * compatible with the Chromium OS-level sandbox and disabling the Node.js engine.
      * This is not the same as the `nodeIntegration` option and the APIs available to
-     * the preload script are more limited. Read more about the option here.
+     * the preload script are more limited. Default is `true` since Electron 20. The
+     * sandbox will automatically be disabled when `nodeIntegration` is set to `true`.
+     * Read more about the option here.
      */
     var sandbox: Boolean?
 
@@ -274,7 +281,7 @@ external interface WebPreferences {
     /**
      * When `false`, it will disable the same-origin policy (usually using testing
      * websites by people), and set `allowRunningInsecureContent` to `true` if this
-     * options has not been set by user. Default is `true`.
+     * option has not been set by user. Default is `true`.
      */
     var webSecurity: Boolean?
 

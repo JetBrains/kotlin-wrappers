@@ -44,6 +44,10 @@ external interface MenuItemConstructorOptions {
      * An Accelerator string.
      */
     var accelerator: String?
+
+    /**
+     * Can be a NativeImage or the file path of an icon.
+     */
     var icon: (Any /* (NativeImage) | (string) */)?
 
     /**

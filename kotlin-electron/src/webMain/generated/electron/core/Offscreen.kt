@@ -10,4 +10,15 @@ external interface Offscreen {
      * @experimental
      */
     var useSharedTexture: Boolean?
+
+    /**
+     * The requested output format of the shared texture. Defaults to `argb`. The name
+     * is originated from Chromium `media::VideoPixelFormat` enum suffix and only
+     * subset of them are supported. The actual output pixel format and color space of
+     * the texture should refer to `OffscreenSharedTexture` object in the `paint`
+     * event.
+     *
+     * @experimental
+     */
+    var sharedTexturePixelFormat: (OffscreenSharedTexturePixelFormat)?
 }

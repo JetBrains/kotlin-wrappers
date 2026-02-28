@@ -91,7 +91,7 @@ external class WebContents : NodeEventEmitter {
      */
 
     /**
-     * Emitted when the devtools window instructs the webContents to reload
+     * Emitted when the DevTools window instructs the webContents to reload
      */
 
     /**
@@ -164,7 +164,7 @@ external class WebContents : NodeEventEmitter {
      * 302 redirect.
      *
      * This event cannot be prevented, if you want to prevent redirects you should
-     * checkout out the `will-redirect` event above.
+     * check out the `will-redirect` event above.
      */
 
     /**
@@ -518,7 +518,7 @@ external class WebContents : NodeEventEmitter {
     fun close(opts: CloseOpts = definedExternally)
 
     /**
-     * Closes the devtools.
+     * Closes the DevTools view.
      */
     fun closeDevTools()
 
@@ -832,12 +832,12 @@ external class WebContents : NodeEventEmitter {
     fun isDestroyed(): Boolean
 
     /**
-     * Whether the devtools view is focused .
+     * Whether the DevTools view is focused .
      */
     fun isDevToolsFocused(): Boolean
 
     /**
-     * Whether the devtools is opened.
+     * Whether the DevTools view is opened.
      */
     fun isDevToolsOpened(): Boolean
 
@@ -892,7 +892,8 @@ external class WebContents : NodeEventEmitter {
      * the promise will resolve when the page has finished loading (see
      * `did-finish-load`), and rejects if the page fails to load (see `did-fail-load`).
      * A noop rejection handler is already attached, which avoids unhandled rejection
-     * errors.
+     * errors. If the existing page has a beforeUnload handler, `did-fail-load` will be
+     * called unless `will-prevent-unload` is handled.
      *
      * Loads the `url` in the window. The `url` must contain the protocol prefix, e.g.
      * the `http://` or `file://`. If the load should bypass http cache then use the
@@ -904,12 +905,12 @@ external class WebContents : NodeEventEmitter {
     ): js.promise.Promise<js.core.Void>
 
     /**
-     * Opens the devtools.
+     * Opens the DevTools.
      *
      * When `contents` is a `<webview>` tag, the `mode` would be `detach` by default,
      * explicitly passing an empty `mode` can force using last used dock state.
      *
-     * On Windows, if Windows Control Overlay is enabled, Devtools will be opened with
+     * On Windows, if Windows Control Overlay is enabled, DevTools will be opened with
      * `mode: 'detach'`.
      */
     fun openDevTools(options: OpenDevToolsOptions = definedExternally)
@@ -1149,29 +1150,27 @@ external class WebContents : NodeEventEmitter {
     fun setDevToolsTitle(title: String)
 
     /**
-     * Uses the `devToolsWebContents` as the target `WebContents` to show devtools.
+     * Uses the `devToolsWebContents` as the target `WebContents` to show DevTools.
      *
      * The `devToolsWebContents` must not have done any navigation, and it should not
      * be used for other purposes after the call.
      *
-     * By default Electron manages the devtools by creating an internal `WebContents`
+     * By default, Electron manages the DevTools by creating an internal `WebContents`
      * with native view, which developers have very limited control of. With the
      * `setDevToolsWebContents` method, developers can use any `WebContents` to show
-     * the devtools in it, including `BrowserWindow`, `BrowserView` and `<webview>`
-     * tag.
+     * the DevTools in it, such as `BrowserWindow` or `WebContentsView`.
      *
-     * Note that closing the devtools does not destroy the `devToolsWebContents`, it is
-     * caller's responsibility to destroy `devToolsWebContents`.
+     * Note that closing the DevTools does not destroy the `devToolsWebContents`, it is
+     * the caller's responsibility to destroy `devToolsWebContents` manually.
      *
-     * An example of showing devtools in a `<webview>` tag:
-     *
-     * An example of showing devtools in a `BrowserWindow`:
+     * An example of showing DevTools in a `BrowserWindow`:
      */
     fun setDevToolsWebContents(devToolsWebContents: WebContents)
 
     /**
      * If _offscreen rendering_ is enabled sets the frame rate to the specified number.
-     * Only values between 1 and 240 are accepted.
+     * When `webPreferences.offscreen.useSharedTexture` is `false` only values between
+     * 1 and 240 are accepted.
      */
     fun setFrameRate(fps: Double)
 
@@ -1222,10 +1221,10 @@ external class WebContents : NodeEventEmitter {
     fun setWebRTCUDPPortRange(udpPortRange: UdpPortRange)
 
     /**
-     * Called before creating a window a new window is requested by the renderer, e.g.
-     * by `window.open()`, a link with `target="_blank"`, shift+clicking on a link, or
-     * submitting a form with `<form target="_blank">`. See `window.open()` for more
-     * details and how to use this in conjunction with `did-create-window`.
+     * Called before creating a window when a new window is requested by the renderer,
+     * e.g. by `window.open()`, a link with `target="_blank"`, shift+clicking on a
+     * link, or submitting a form with `<form target="_blank">`. See `window.open()`
+     * for more details and how to use this in conjunction with `did-create-window`.
      *
      * An example showing how to customize the process of new `BrowserWindow` creation
      * to be `BrowserView` attached to main window instead:
@@ -1327,7 +1326,7 @@ external class WebContents : NodeEventEmitter {
     val debugger: Debugger
 
     /**
-     * A `WebContents | null` property that represents the of DevTools `WebContents`
+     * A `WebContents | null` property that represents the DevTools `WebContents`
      * associated with a given `WebContents`.
      *
      * > [!NOTE] Users should never store this object because it may become `null` when
@@ -1353,10 +1352,11 @@ external class WebContents : NodeEventEmitter {
     var frameRate: Double
 
     /**
-     * A `WebContents` instance that might own this `WebContents`.
+     * A `WebContents | null` property that represents a `WebContents` instance that
+     * might own this `WebContents`.
      *
      */
-    val hostWebContents: WebContents
+    val hostWebContents: WebContents?
 
     /**
      * A `Integer` representing the unique ID of this WebContents. Each ID is unique
@@ -1700,7 +1700,7 @@ external class WebContents : NodeEventEmitter {
 
         /**
          * An array of all `WebContents` instances. This will contain web contents for all
-         * windows, webviews, opened devtools, and devtools extension background pages.
+         * windows, webviews, opened DevTools, and DevTools extension background pages.
          */
         fun getAllWebContents(): js.array.ReadonlyArray<WebContents>
 

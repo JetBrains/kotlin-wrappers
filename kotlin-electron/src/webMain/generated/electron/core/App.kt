@@ -121,7 +121,10 @@ external interface App : node.events.EventEmitter {
 
     /**
      * Emitted when the user clicks the native macOS new tab button. The new tab button
-     * is only visible if the current `BrowserWindow` has a `tabbingIdentifier`
+     * is only visible if the current `BrowserWindow` has a `tabbingIdentifier`.
+     *
+     * You must create a window in this handler in order for macOS tabbing to work as
+     * expected.
      *
      * @platform darwin
      */
@@ -503,7 +506,7 @@ external interface App : node.events.EventEmitter {
 
     /**
      * By default, Chromium disables 3D APIs (e.g. WebGL) until restart on a per domain
-     * basis if the GPU processes crashes too frequently. This function disables that
+     * basis if the GPU process crashes too frequently. This function disables that
      * behavior.
      *
      * This method can only be called before app is ready.
@@ -541,6 +544,31 @@ external interface App : node.events.EventEmitter {
      * You should seek to use the `steal` option as sparingly as possible.
      */
     fun focus(options: FocusOptions = definedExternally)
+
+    /**
+     * Array of strings naming currently enabled accessibility support components.
+     * Possible values:
+     *
+     * * `nativeAPIs` - Native OS accessibility APIs integration enabled.
+     * * `webContents` - Web contents accessibility tree exposure enabled.
+     * * `inlineTextBoxes` - Inline text boxes (character bounding boxes) enabled.
+     * * `extendedProperties` - Extended accessibility properties enabled.
+     * * `screenReader` - Screen reader specific mode enabled.
+     * * `html` - HTML accessibility tree construction enabled.
+     * * `labelImages` - Accessibility support for automatic image annotations.
+     * * `pdfPrinting` - Accessibility support for PDF printing enabled.
+     *
+     * Notes:
+     *
+     * * The array may be empty if no accessibility modes are active.
+     * * Use `app.isAccessibilitySupportEnabled()` for the legacy boolean check; prefer
+     * this method for granular diagnostics or telemetry.
+     *
+     * Example:
+     *
+     * @platform darwin,win32
+     */
+    fun getAccessibilitySupportFeatures(): js.array.ReadonlyArray<String>
 
     /**
      * Resolve with an object containing the following:
@@ -598,7 +626,7 @@ external interface App : node.events.EventEmitter {
      *
      * Fetches a path's associated icon.
      *
-     * On _Windows_, there a 2 kinds of icons:
+     * On _Windows_, there are 2 kinds of icons:
      *
      * * Icons associated with certain file extensions, like `.mp3`, `.png`, etc.
      * * Icons inside the file itself, like `.exe`, `.dll`, `.ico`.
@@ -630,6 +658,9 @@ external interface App : node.events.EventEmitter {
      *
      * Using `basic` should be preferred if only basic information like `vendorId` or
      * `deviceId` is needed.
+     *
+     * Promise is rejected if the GPU is completely disabled, i.e. no hardware and
+     * software implementations are available.
      */
     fun getGPUInfo(infoType: AppGetGPUInfoInfoType): js.promise.Promise<Any?>
 
@@ -726,7 +757,7 @@ external interface App : node.events.EventEmitter {
      * A path to a special directory or file associated with `name`. On failure, an
      * `Error` is thrown.
      *
-     * If `app.getPath('logs')` is called without called `app.setAppLogsPath()` being
+     * If `app.getPath('logs')` is called without calling `app.setAppLogsPath()` being
      * called first, a default log directory will be created equivalent to calling
      * `app.setAppLogsPath()` without a `path` parameter.
      */
@@ -763,7 +794,7 @@ external interface App : node.events.EventEmitter {
      * preferred system language has no country code, and that one of the preferred
      * system languages corresponds with the language used for the regional format. On
      * macOS, the region serves more as a default country code: the user doesn't need
-     * to have Finnish as a preferred language to use Finland as the region,and the
+     * to have Finnish as a preferred language to use Finland as the region, and the
      * country code `FI` is used as the country code for preferred system languages
      * that do not have associated countries in the language name.
      */
@@ -874,6 +905,14 @@ external interface App : node.events.EventEmitter {
      * whether or not the current OS version allows for native emoji pickers.
      */
     fun isEmojiPanelSupported(): Boolean
+
+    /**
+     * whether hardware acceleration is currently enabled.
+     *
+     * > [!NOTE] This information is only usable after the `gpu-info-update` event is
+     * emitted.
+     */
+    fun isHardwareAccelerationEnabled(): Boolean
 
     /**
      * `true` if the application—including all of its windows—is hidden (e.g. with
@@ -1054,11 +1093,33 @@ external interface App : node.events.EventEmitter {
      * This API must be called after the `ready` event is emitted.
      *
      * > [!NOTE] Rendering accessibility tree can significantly affect the performance
-     * of your app. It should not be enabled by default.
+     * of your app. It should not be enabled by default. Calling this method will
+     * enable the following accessibility support features: `nativeAPIs`,
+     * `webContents`, `inlineTextBoxes`, and `extendedProperties`.
      *
      * @platform darwin,win32
      */
     fun setAccessibilitySupportEnabled(enabled: Boolean)
+
+    /**
+     * Possible values are:
+     *
+     * * `nativeAPIs` - Native OS accessibility APIs integration enabled.
+     * * `webContents` - Web contents accessibility tree exposure enabled.
+     * * `inlineTextBoxes` - Inline text boxes (character bounding boxes) enabled.
+     * * `extendedProperties` - Extended accessibility properties enabled.
+     * * `screenReader` - Screen reader specific mode enabled.
+     * * `html` - HTML accessibility tree construction enabled.
+     * * `labelImages` - Accessibility support for automatic image annotations.
+     * * `pdfPrinting` - Accessibility support for PDF printing enabled.
+     *
+     * To disable all supported features, pass an empty array `[]`.
+     *
+     * Example:
+     *
+     * @platform darwin,win32
+     */
+    fun setAccessibilitySupportFeatures(features: js.array.ReadonlyArray<String>)
 
     /**
      * Sets the activation policy for a given app.
@@ -1256,6 +1317,27 @@ external interface App : node.events.EventEmitter {
     fun setSecureKeyboardEntryEnabled(enabled: Boolean)
 
     /**
+     * Changes the Toast Activator CLSID to `id`. If one is not set via this method, it
+     * will be randomly generated for the app.
+     *
+     * * The value must be a valid GUID/CLSID in one of the following forms:
+     *   * Canonical brace-wrapped: `{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}`
+     * (preferred)
+     *   * Canonical without braces: `XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX` (braces
+     * will be added automatically)
+     * * Hex digits are case-insensitive.
+     *
+     * This method should be called early (before showing notifications) so the value
+     * is baked into the registration/shortcut. Supplying an empty string or an
+     * unparsable value throws and leaves the existing (or generated) CLSID unchanged.
+     * If this method is never called, a random CLSID is generated once per run and
+     * exposed via `app.toastActivatorCLSID`.
+     *
+     * @platform win32
+     */
+    fun setToastActivatorCLSID(id: String)
+
+    /**
      * Creates an `NSUserActivity` and sets it as the current activity. The activity is
      * eligible for Handoff to another device afterward.
      *
@@ -1423,6 +1505,13 @@ external interface App : node.events.EventEmitter {
      * @platform darwin,win32
      */
     val runningUnderARM64Translation: Boolean
+
+    /**
+     * A `string` property that returns the app's Toast Activator CLSID.
+     *
+     * @platform win32
+     */
+    val toastActivatorCLSID: String
 
     /**
      * A `string` which is the user agent string Electron will use as a global

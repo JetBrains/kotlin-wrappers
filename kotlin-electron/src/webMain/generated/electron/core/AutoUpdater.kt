@@ -30,7 +30,7 @@ external interface AutoUpdater : node.events.EventEmitter {
     /**
      * Emitted when an update has been downloaded.
      *
-     * On Windows only `releaseName` is available.
+     * With Squirrel.Windows only `releaseName` is available.
      *
      * > [!NOTE] It is not strictly necessary to handle this event. A successfully
      * downloaded update will still be applied the next time the application starts.

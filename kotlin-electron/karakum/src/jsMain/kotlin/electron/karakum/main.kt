@@ -152,6 +152,9 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
+            "SharedTextureHandle.kt" to arrayOf(
+                "node.buffer.Buffer",
+            ),
             "TextureInfo.kt" to arrayOf(
                 "node.buffer.Buffer"
             ),

@@ -6,7 +6,7 @@ package electron.core
 external interface SystemPreferences : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/system-preferences
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -14,7 +14,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -22,7 +22,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -30,7 +30,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -38,7 +38,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -79,8 +79,6 @@ external interface SystemPreferences : node.events.EventEmitter {
      * The users current system wide accent color preference in RGBA hexadecimal form.
      *
      * This API is only available on macOS 10.14 Mojave or newer.
-     *
-     * @platform win32,darwin
      */
     fun getAccentColor(): String
 

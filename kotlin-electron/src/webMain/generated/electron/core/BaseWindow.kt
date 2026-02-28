@@ -97,7 +97,11 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
-     * Emitted when the native new tab button is clicked.
+     * Emitted when the user clicks the native macOS new tab button. The new tab button
+     * is only visible if the current `BrowserWindow` has a `tabbingIdentifier`.
+     *
+     * You must create a window in this handler in order for macOS tabbing to work as
+     * expected.
      *
      * @platform darwin
      */
@@ -511,6 +515,10 @@ open external class BaseWindow : NodeEventEmitter {
      * height. For example, calling `win.setBounds({ x: 25, y: 20, width: 800, height:
      * 600 })` with a tray height of 38 means that `win.getBounds()` will return `{ x:
      * 25, y: 38, width: 800, height: 600 }`.
+     *
+     * > [!NOTE] On Wayland, this method will return `{ x: 0, y: 0, ... }` as
+     * introspecting or programmatically changing the global window coordinates is
+     * prohibited.
      */
     open fun getBounds(): Rectangle
 
@@ -586,6 +594,9 @@ open external class BaseWindow : NodeEventEmitter {
 
     /**
      * Contains the window's current position.
+     *
+     * > [!NOTE] On Wayland, this method will return `[0, 0]` as introspecting or
+     * programmatically changing the global window coordinates is prohibited.
      */
     open fun getPosition(): js.array.ReadonlyArray<Double>
 
@@ -815,7 +826,7 @@ open external class BaseWindow : NodeEventEmitter {
      * hiding titlebar buttons.
      *
      * This API returns whether the window is in tablet mode, and the `resize` event
-     * can be be used to listen to changes to tablet mode.
+     * can be used to listen to changes to tablet mode.
      *
      * @platform win32
      */
@@ -925,36 +936,44 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * The `accentColor` parameter accepts the following values:
      *
-     * * **Color string** - Sets a custom accent color using standard CSS color formats
-     * (Hex, RGB, RGBA, HSL, HSLA, or named colors). Alpha values in RGBA/HSLA formats
-     * are ignored and the color is treated as fully opaque.
-     * * **`true`** - Uses the system's default accent color from user preferences in
+     * * **Color string** - Like `true`, but sets a custom accent color using standard
+     * CSS color formats (Hex, RGB, RGBA, HSL, HSLA, or named colors). Alpha values in
+     * RGBA/HSLA formats are ignored and the color is treated as fully opaque.
+     * * **`true`** - Enable accent color highlighting for the window with the system
+     * accent color regardless of whether accent colors are enabled for windows in
+     * System `Settings.`
+     * * **`false`** - Disable accent color highlighting for the window regardless of
+     * whether accent colors are currently enabled for windows in System Settings.
+     * * **`null`** - Reset window accent color behavior to follow behavior set in
      * System Settings.
-     * * **`false`** - Explicitly disables accent color highlighting for the window.
      *
      * Examples:
      *
      * @platform win32
      */
-    open fun setAccentColor(accentColor: Boolean)
+    open fun setAccentColor(accentColor: Boolean?)
 
     /**
      * Sets the system accent color and highlighting of active window border.
      *
      * The `accentColor` parameter accepts the following values:
      *
-     * * **Color string** - Sets a custom accent color using standard CSS color formats
-     * (Hex, RGB, RGBA, HSL, HSLA, or named colors). Alpha values in RGBA/HSLA formats
-     * are ignored and the color is treated as fully opaque.
-     * * **`true`** - Uses the system's default accent color from user preferences in
+     * * **Color string** - Like `true`, but sets a custom accent color using standard
+     * CSS color formats (Hex, RGB, RGBA, HSL, HSLA, or named colors). Alpha values in
+     * RGBA/HSLA formats are ignored and the color is treated as fully opaque.
+     * * **`true`** - Enable accent color highlighting for the window with the system
+     * accent color regardless of whether accent colors are enabled for windows in
+     * System `Settings.`
+     * * **`false`** - Disable accent color highlighting for the window regardless of
+     * whether accent colors are currently enabled for windows in System Settings.
+     * * **`null`** - Reset window accent color behavior to follow behavior set in
      * System Settings.
-     * * **`false`** - Explicitly disables accent color highlighting for the window.
      *
      * Examples:
      *
      * @platform win32
      */
-    open fun setAccentColor(accentColor: String)
+    open fun setAccentColor(accentColor: String?)
 
     /**
      * Sets whether the window should show always on top of other windows. After

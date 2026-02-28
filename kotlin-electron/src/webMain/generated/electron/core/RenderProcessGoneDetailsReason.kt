@@ -26,3 +26,6 @@ inline val RenderProcessGoneDetailsReason.Companion.launchFailed: RenderProcessG
 
 inline val RenderProcessGoneDetailsReason.Companion.integrityFailure: RenderProcessGoneDetailsReason
     get() = js.reflect.unsafeCast("integrity-failure")
+
+inline val RenderProcessGoneDetailsReason.Companion.memoryEviction: RenderProcessGoneDetailsReason
+    get() = js.reflect.unsafeCast("memory-eviction")
