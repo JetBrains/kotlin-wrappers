@@ -1,6 +1,6 @@
-@file:JsModule("@tanstack/react-router")
-
 package tanstack.react.router
+
+import tanstack.react.router.raw.useMatchRouteRaw
 
 /**
  * Create a matcher function for testing locations against route definitions.
@@ -14,4 +14,5 @@ package tanstack.react.router
  * @returns A `matchRoute(options)` function that returns `false` or params.
  * @link https://tanstack.com/router/latest/docs/framework/react/api/router/useMatchRouteHook
  */
-external fun useMatchRoute(): UseMatchRouteResult
+fun useMatchRoute(): UseMatchRouteResult =
+    UseMatchRouteResult(useMatchRouteRaw())
