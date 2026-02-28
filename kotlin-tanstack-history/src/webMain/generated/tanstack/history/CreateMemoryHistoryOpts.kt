@@ -2,9 +2,7 @@
 
 package tanstack.history
 
-import kotlinx.js.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface CreateMemoryHistoryOpts {
     var initialEntries: js.array.ReadonlyArray<String>
     var initialIndex: Int

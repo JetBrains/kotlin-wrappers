@@ -12,12 +12,6 @@ tasks.kotlinNpmInstall {
     }
 }
 
-tasks.generateKarakumExternals {
-    doLast {
-        addTempGenerationFixes()
-    }
-}
-
 fun addTempNpmFixes() {
     val file = file("build/js/node_modules/@tanstack/history/dist/esm/index.d.ts")
     var content = file.readText()
@@ -52,32 +46,6 @@ fun addTempNpmFixes() {
         .replace(oldRouterHistory, newRouterHistory)
 
     file.writeText(content)
-}
-
-fun addTempGenerationFixes() {
-    sequenceOf(
-        "BlockerFnArgs.kt",
-        "CreateBrowserHistoryOpts.kt",
-        "CreateHashHistoryOpts.kt",
-        "CreateHistoryOpts.kt",
-        "CreateMemoryHistoryOpts.kt",
-        "HistoryLocation.kt",
-        "NavigateOptions.kt",
-        "NavigationBlocker.kt",
-        "ParsedHistoryState.kt",
-        "ParsedPath.kt",
-        "SubscriberArgs.kt",
-    ).forEach { jsoPath ->
-        addFix(jsoPath) {
-            it.replaceFirst(
-                "\nexternal interface ",
-                "\nimport kotlinx.js.JsPlainObject\n\n@JsPlainObject" +
-                        "\nexternal interface ",
-            )
-        }
-    }
-
-
 }
 
 fun addFix(

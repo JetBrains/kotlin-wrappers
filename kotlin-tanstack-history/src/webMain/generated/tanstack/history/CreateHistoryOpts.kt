@@ -2,9 +2,7 @@
 
 package tanstack.history
 
-import kotlinx.js.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface CreateHistoryOpts {
     var getLocation: () -> HistoryLocation
     var getLength: () -> Int

@@ -2,9 +2,7 @@
 
 package tanstack.history
 
-import kotlinx.js.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface CreateBrowserHistoryOpts {
     var parseLocation: (() -> HistoryLocation)?
     var createHref: ((path: String) -> String)?

@@ -2,9 +2,7 @@
 
 package tanstack.history
 
-import kotlinx.js.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface ParsedHistoryState : HistoryState {
     var key: String?
     var __TSR_key: String?
