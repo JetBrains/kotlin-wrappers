@@ -90,7 +90,8 @@ private constructor() {
      *
      * [API Docs](https://tanstack.com/router/latest/docs/framework/react/api/router/NavigateOptionsType)
      */
-    val navigate: NavigateFn
+    @JsName("navigate")
+    fun navigateAsync(options: NavigateOptions): Promise<Void>
     val latestLoadPromise: Promise<Void>?
     fun beforeLoad()
 
