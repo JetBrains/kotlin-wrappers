@@ -12,10 +12,10 @@ import seskar.js.JsAsync
 external suspend fun createZipUploadStream(
     uploadSpecification: ReadonlyArray<UploadZipSpecification>,
     compressionLevel: Number = definedExternally,
-): ZipUploadStream
+): WaterMarkedUploadStream
 
 @JsName("createZipUploadStream")
 external fun createZipUploadStreamAsync(
     uploadSpecification: ReadonlyArray<UploadZipSpecification>,
     compressionLevel: Number = definedExternally,
-): Promise<ZipUploadStream>
+): Promise<WaterMarkedUploadStream>

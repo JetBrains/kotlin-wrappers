@@ -8,13 +8,15 @@ import js.promise.Promise
 import seskar.js.JsAsync
 
 @JsAsync
-external suspend fun uploadZipToBlobStorage(
+external suspend fun uploadToBlobStorage(
     authenticatedUploadURL: String,
-    zipUploadStream: ZipUploadStream,
+    uploadStream: WaterMarkedUploadStream,
+    contentType: String,
 ): BlobUploadResponse
 
-@JsName("uploadZipToBlobStorage")
-external fun uploadZipToBlobStorageAsync(
+@JsName("uploadToBlobStorage")
+external fun uploadToBlobStorageAsync(
     authenticatedUploadURL: String,
-    zipUploadStream: ZipUploadStream,
+    uploadStream: WaterMarkedUploadStream,
+    contentType: String,
 ): Promise<BlobUploadResponse>

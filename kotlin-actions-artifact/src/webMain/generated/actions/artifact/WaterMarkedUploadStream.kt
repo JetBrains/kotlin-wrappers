@@ -4,7 +4,7 @@
 
 package actions.artifact
 
-external class ZipUploadStream : node.stream.Transform {
+external class WaterMarkedUploadStream : node.stream.Transform {
     constructor(bufferSize: Number)
 
     fun _transform(
