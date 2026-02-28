@@ -3,4 +3,5 @@
 package tanstack.react.router.raw
 
 @JsName("useMatchRoute")
-internal external fun useMatchRouteRaw(): UseMatchRouteResultRaw
+internal /* raw */
+external fun useMatchRouteRaw(): UseMatchRouteResultRaw
