@@ -126,6 +126,9 @@ include("kotlin-js")
 // Kotlin/JS: Helper for `kotlin-js`
 include("kotlin-js-core")
 
+// Kotlin/Web: Test helpers
+include("kotlin-js-test")
+
 // Kotlin/JS: JSZip wrappers
 include("kotlin-jszip")
 
