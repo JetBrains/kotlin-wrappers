@@ -1,6 +1,8 @@
-package floating.ui.utils
+package floating.ui.dom
 
+import floating.ui.utils.ClientRectObject
 import js.array.ReadonlyArray
+import web.dom.Element
 
 /**
  * Custom positioning reference element.
@@ -10,5 +12,5 @@ import js.array.ReadonlyArray
 external interface VirtualElement {
     fun getBoundingClientRect(): ClientRectObject
     val getClientRects: (() -> ReadonlyArray<ClientRectObject>)?
-    val contextElement: Any?
+    val contextElement: Element?
 }
