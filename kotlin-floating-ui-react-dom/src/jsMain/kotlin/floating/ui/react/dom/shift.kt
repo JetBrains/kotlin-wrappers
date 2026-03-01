@@ -3,7 +3,7 @@
 package floating.ui.react.dom
 
 import floating.ui.core.Middleware
-import floating.ui.core.ShiftOptions
+import floating.ui.dom.ShiftOptions
 import react.DependencyList
 
 /**
