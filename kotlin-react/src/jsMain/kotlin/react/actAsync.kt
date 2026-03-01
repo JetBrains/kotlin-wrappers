@@ -1,3 +1,5 @@
+@file:JsModule("react")
+
 package react
 
 import js.promise.Promise
