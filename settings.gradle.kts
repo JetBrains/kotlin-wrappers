@@ -178,9 +178,6 @@ include("kotlin-preact-signals-react")
 // Kotlin/JS: React wrappers
 include("kotlin-react")
 
-// Kotlin/JS: react-beautiful-dnd wrappers
-include("kotlin-react-beautiful-dnd")
-
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
 
