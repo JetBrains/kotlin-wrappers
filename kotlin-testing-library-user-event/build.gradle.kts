@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
 
     webMainApi(npm(jspkg.testingLibrary.userEvent))
 }
