@@ -2,7 +2,7 @@
 
 package react.raw
 
-import js.array.ReadonlyArray
+import react.DependencyList
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useMemo)
@@ -10,5 +10,5 @@ import js.array.ReadonlyArray
 @JsName("useMemo")
 external fun <T> useMemoRaw(
     callback: () -> T,
-    dependencies: ReadonlyArray<Any?>,
+    dependencies: DependencyList,
 ): T

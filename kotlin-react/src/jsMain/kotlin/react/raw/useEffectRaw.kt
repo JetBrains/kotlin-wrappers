@@ -2,8 +2,8 @@
 
 package react.raw
 
-import js.array.ReadonlyArray
 import react.Cleanup
+import react.DependencyList
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useEffect)
@@ -11,5 +11,5 @@ import react.Cleanup
 @JsName("useEffect")
 external fun useEffectRaw(
     effect: () -> Cleanup?,
-    dependencies: ReadonlyArray<Any?> = definedExternally,
+    dependencies: DependencyList = definedExternally,
 )

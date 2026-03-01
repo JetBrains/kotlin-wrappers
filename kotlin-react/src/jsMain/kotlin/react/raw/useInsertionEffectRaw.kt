@@ -2,8 +2,8 @@
 
 package react.raw
 
-import js.array.ReadonlyArray
 import react.Cleanup
+import react.DependencyList
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useInsertionEffect)
@@ -11,5 +11,5 @@ import react.Cleanup
 @JsName("useInsertionEffect")
 external fun useInsertionEffectRaw(
     effect: () -> Cleanup?,
-    dependencies: ReadonlyArray<Any?> = definedExternally,
+    dependencies: DependencyList = definedExternally,
 )

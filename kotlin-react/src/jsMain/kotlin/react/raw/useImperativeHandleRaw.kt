@@ -2,7 +2,7 @@
 
 package react.raw
 
-import js.array.ReadonlyArray
+import react.DependencyList
 import react.Ref
 
 /**
@@ -12,5 +12,5 @@ import react.Ref
 external fun <T : Any> useImperativeHandleRaw(
     ref: Ref<T>?,
     init: () -> T?,
-    dependencies: ReadonlyArray<Any?>,
+    dependencies: DependencyList,
 )
