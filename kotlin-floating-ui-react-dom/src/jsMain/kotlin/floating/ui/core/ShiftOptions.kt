@@ -1,5 +1,6 @@
 package floating.ui.core
 
+import floating.ui.utils.Coords
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
