@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@testing-library/user-event")
+@file:JsModule("@testing-library/user-event/dist/esm/setup/api")
 
 package testing.library.user.event.setup.api
 

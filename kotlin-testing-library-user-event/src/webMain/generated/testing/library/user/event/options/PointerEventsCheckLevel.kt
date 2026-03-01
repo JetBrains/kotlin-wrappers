@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@testing-library/user-event")
+@file:JsModule("@testing-library/user-event/dist/esm/options")
 
 package testing.library.user.event.options
 

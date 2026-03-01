@@ -78,6 +78,9 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/module.kt",
         )
         isolatedOutputPackage = true
+        moduleNameMapper = recordOf(
+            "dist/types/" to "dist/esm/",
+        )
         packageNameMapper = recordOf(
             "dist/types/" to "/",
 
