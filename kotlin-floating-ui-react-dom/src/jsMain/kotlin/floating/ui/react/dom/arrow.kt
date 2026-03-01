@@ -1,3 +1,5 @@
+@file:JsModule("@floating-ui/react-dom")
+
 package floating.ui.react.dom
 
 import floating.ui.core.Middleware
