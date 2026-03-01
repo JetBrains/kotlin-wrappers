@@ -1,3 +1,9 @@
+## 2026.3.0
+
+**BREAKING CHANGE**
+
+* Legacy `kotlin-react-beautiful-dnd` subproject removed
+
 ## 2026.2.20
 
 **BREAKING CHANGE**
