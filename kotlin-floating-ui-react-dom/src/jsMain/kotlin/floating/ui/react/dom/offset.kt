@@ -2,8 +2,8 @@
 
 package floating.ui.react.dom
 
-import floating.ui.core.Middleware
 import floating.ui.core.OffsetOptions
+import floating.ui.dom.Middleware
 import react.DependencyList
 
 /**
