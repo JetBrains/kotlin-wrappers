@@ -1,14 +1,14 @@
 package js.lazy
 
 import js.promise.Promise
-import kotlinx.coroutines.test.runTest
+import js.test.runJsTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
 
 class LazyFunctionTest {
     @Test
-    fun creationCheck() = runTest {
+    fun creationCheck() = runJsTest {
         assertIs<Promise<*>>(calculateLazy)
 
         assertEquals("42", calculateLazy())

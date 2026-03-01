@@ -1,14 +1,14 @@
 package web.events
 
+import js.test.runJsTest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class EventInstanceTest {
     @Test
-    fun `1 subscribe`() = runTest {
+    fun `1 subscribe`() = runJsTest {
         var a = 13
         val target = EventTarget()
 
@@ -28,7 +28,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `1 launch.collect`() = runTest {
+    fun `1 launch.collect`() = runJsTest {
         var a = 13
         val target = EventTarget()
 
@@ -50,7 +50,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `2 subscribe`() = runTest {
+    fun `2 subscribe`() = runJsTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
 
@@ -74,7 +74,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `2 launch.collect`() = runTest {
+    fun `2 launch.collect`() = runJsTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
 
@@ -102,7 +102,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `subscribe -> handler -> subscribe`() = runTest {
+    fun `subscribe -> handler -> subscribe`() = runJsTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
 
@@ -128,7 +128,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `launch.collect -> handler -> launch.collect`() = runTest {
+    fun `launch.collect -> handler -> launch.collect`() = runJsTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
 
@@ -158,7 +158,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `subscribe -> handler -> subscribe -> handler`() = runTest {
+    fun `subscribe -> handler -> subscribe -> handler`() = runJsTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
 
@@ -186,7 +186,7 @@ class EventInstanceTest {
     }
 
     @Test
-    fun `launch.collect -> handler -> launch.collect -> handler`() = runTest {
+    fun `launch.collect -> handler -> launch.collect -> handler`() = runJsTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
 

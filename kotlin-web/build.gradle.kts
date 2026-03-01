@@ -9,4 +9,5 @@ dependencies {
 
     webTestImplementation(libs.coroutines.test)
     webTestImplementation(libs.kotlin.test)
+    webTestImplementation(projects.kotlinJsTest)
 }
