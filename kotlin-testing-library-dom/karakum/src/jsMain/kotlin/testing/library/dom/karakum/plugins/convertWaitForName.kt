@@ -15,6 +15,6 @@ val convertWaitForName = createPlugin { node, _, _ ->
         ensure(isFunctionDeclaration(function))
         ensure(function.name === node)
 
-        "waitForRaw"
+        "waitForAsync"
     }
 }
