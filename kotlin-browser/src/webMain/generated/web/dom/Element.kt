@@ -105,6 +105,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom)
      */
     val currentCSSZoom: Double
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/customElementRegistry)
+     */
     val customElementRegistry: CustomElementRegistry?
 
     /**

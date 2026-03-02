@@ -35,6 +35,10 @@ external interface DocumentOrShadowRoot {
     var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/customElementRegistry)
+     */
     val customElementRegistry: CustomElementRegistry?
         get() = definedExternally
 

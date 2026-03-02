@@ -40,6 +40,10 @@ open external class CustomElementRegistry {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
      */
     fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/initialize)
+     */
     fun initialize(root: Node)
 
     /**

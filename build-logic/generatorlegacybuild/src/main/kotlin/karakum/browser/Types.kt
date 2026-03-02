@@ -149,6 +149,7 @@ private val PKG_MAP = mapOf(
 
     "WebTransportCongestionControl" to "web.transport",
     "WebTransportErrorSource" to "web.transport",
+    "WebTransportReliabilityMode" to "web.transport",
 
     "TaskPriority" to "web.scheduling",
 )

@@ -416,6 +416,15 @@ internal fun String.applyPatches(): String {
         .patchInterface("WebGLRenderingContextBase") {
             "$it\n    makeXRCompatible(): Promise<void>;"
         }
+        // TODO report
+        .replace(
+            "interface WebTransportReceiveStream extends ReadableStream {",
+            "interface WebTransportReceiveStream extends ReadableStream<Uint8Array<*>> {",
+        )
+        .replace(
+            "interface WebTransportSendStream extends WritableStream {",
+            "interface WebTransportSendStream extends WritableStream<Uint8Array<*>> {",
+        )
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

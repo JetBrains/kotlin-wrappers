@@ -1600,6 +1600,7 @@ internal fun convertInterface(
         name == "BarProp" -> "web.window"
         name == "PictureInPictureWindow" -> "web.pip"
         name == "VisualViewport" -> "web.viewport"
+        name.startsWith("CloseWatcher") -> "web.close"
 
         name in EVENTS_TYPES -> "web.events"
         name in SCROLL_TYPES -> "web.scroll"

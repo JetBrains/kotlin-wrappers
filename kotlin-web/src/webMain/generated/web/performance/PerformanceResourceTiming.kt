@@ -37,6 +37,13 @@ private constructor() :
     val decodedBodySize: UInt53
 
     /**
+     * The **`deliveryType`** read-only property is a string indicating how the resource was delivered — for example from the cache or from a navigational prefetch.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/deliveryType)
+     */
+    val deliveryType: String
+
+    /**
      * The **`domainLookupEnd`** read-only property returns the timestamp immediately after the browser finishes the domain-name lookup for the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/domainLookupEnd)
@@ -63,6 +70,20 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/fetchStart)
      */
     val fetchStart: DOMHighResTimeStamp
+
+    /**
+     * The **`finalResponseHeadersStart`** read-only property returns a timestamp immediately after the browser receives the first byte of the final document response (for example, 200 OK) from the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart)
+     */
+    val finalResponseHeadersStart: DOMHighResTimeStamp
+
+    /**
+     * The **`firstInterimResponseStart`** read-only property returns a timestamp immediately after the browser receives the first byte of the interim 1xx response (for example, 100 Continue or 103 Early Hints) from the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/firstInterimResponseStart)
+     */
+    val firstInterimResponseStart: DOMHighResTimeStamp
 
     /**
      * The **`initiatorType`** read-only property is a string representing web platform feature that initiated the resource load.

@@ -34,6 +34,13 @@ open external class WebTransport(
     val closed: Promise<WebTransportCloseInfo>
 
     /**
+     * The **`congestionControl`** read-only property of the WebTransport interface indicates the application's preference for either high throughput or low-latency when sending data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/congestionControl)
+     */
+    val congestionControl: WebTransportCongestionControl
+
+    /**
      * The **`datagrams`** read-only property of the WebTransport interface returns a WebTransportDatagramDuplexStream instance that can be used to send and receive datagrams — unreliable data transmission.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/datagrams)
@@ -53,6 +60,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/incomingUnidirectionalStreams)
      */
     val incomingUnidirectionalStreams: ReadableStream<*>
+    val protocol: String
 
     /**
      * The **`ready`** read-only property of the WebTransport interface returns a promise that resolves when the transport is ready to use.
@@ -60,6 +68,13 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/ready)
      */
     val ready: Promise<Void>
+
+    /**
+     * The **`reliability`** read-only property of the WebTransport interface indicates whether the connection supports reliable transports only, or whether it also supports unreliable transports (such as UDP).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/reliability)
+     */
+    val reliability: WebTransportReliabilityMode
 
     /**
      * The **`close()`** method of the WebTransport interface closes an ongoing WebTransport session.
@@ -83,6 +98,14 @@ open external class WebTransport(
      */
     @JsName("createUnidirectionalStream")
     fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
+
+    /**
+     * The **`getStats()`** method of the WebTransport interface asynchronously returns an object containing HTTP/3 connection statistics.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/getStats)
+     */
+    @JsName("getStats")
+    fun getStatsAsync(): Promise<WebTransportConnectionStats>
 }
 
 /**
@@ -123,4 +146,13 @@ suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransport
     return createUnidirectionalStreamAsync(
         options = options,
     ).await()
+}
+
+/**
+ * The **`getStats()`** method of the WebTransport interface asynchronously returns an object containing HTTP/3 connection statistics.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/getStats)
+ */
+suspend inline fun WebTransport.getStats(): WebTransportConnectionStats {
+    return getStatsAsync().await()
 }

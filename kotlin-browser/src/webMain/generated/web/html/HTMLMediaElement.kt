@@ -11,6 +11,7 @@ import web.events.EventInstance
 import web.http.CrossOrigin
 import web.mediakey.MediaKeys
 import web.mediasource.TimeRanges
+import web.mediastreams.MediaStream
 import web.remoteplayback.RemotePlayback
 import web.vtt.TextTrack
 import web.vtt.TextTrackKind
@@ -265,6 +266,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType)
      */
     fun canPlayType(type: String): CanPlayTypeResult
+
+    /**
+     * The **`captureStream()`** method of the HTMLMediaElement interface returns a MediaStream object which is streaming a real-time capture of the content being rendered in the media element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/captureStream)
+     */
+    fun captureStream(): MediaStream
 
     /**
      * The **`HTMLMediaElement.fastSeek()`** method quickly seeks the media to the new time with precision tradeoff.

@@ -66,6 +66,13 @@ protected constructor() :
     var checked: Boolean
 
     /**
+     * The **`colorSpace`** property of the HTMLInputElement interface reflects the <input> element's colorspace attribute, which indicates whether the color space of the serialized CSS color is sRGB (the default) or display-p3. It is only relevant to color controls.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/colorSpace)
+     */
+    var colorSpace: String
+
+    /**
      * The **`defaultChecked`** property of the HTMLInputElement interface specifies the default checkedness state of the element. This property reflects the <input> element's checked attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultChecked)
