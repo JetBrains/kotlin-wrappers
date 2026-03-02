@@ -1,5 +1,5 @@
 plugins {
-    id("wrappersbuild.react-npm-overrides")
+    id("wrappersbuild.security-npm-overrides")
 }
 
 tasks.wrapper {
