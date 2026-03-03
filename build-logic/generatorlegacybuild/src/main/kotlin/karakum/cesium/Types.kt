@@ -73,6 +73,7 @@ private fun optionsBody(
     // TEMP fix for:
     //  - `CubeMapPanorama`
     //  - `EquirectangularPanorama`
+    //  https://github.com/CesiumGS/cesium/issues/13243
     if (body == "{}")
         return "/* EMPTY WITHOUT REASON */"
 
