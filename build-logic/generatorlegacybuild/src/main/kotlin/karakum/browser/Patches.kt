@@ -416,7 +416,8 @@ internal fun String.applyPatches(): String {
         .patchInterface("WebGLRenderingContextBase") {
             "$it\n    makeXRCompatible(): Promise<void>;"
         }
-        // TODO report
+        // TODO: remove after fix
+        //  https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2439
         .replace(
             "interface WebTransportReceiveStream extends ReadableStream {",
             "interface WebTransportReceiveStream extends ReadableStream<Uint8Array<*>> {",
