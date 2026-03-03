@@ -71,7 +71,9 @@ internal fun parseDeclarations(
 
     // TODO: remove temp hack
     declarations.removeAll {
-        it.name == "DictionaryLike" || it.name == "HilbertOrder" || it.name == "ImagerySplitDirection"
+        it.name == "HilbertOrder"
+                || it.name == "TypedArray"
+                || it.name == "TypedArrayConstructor"
     }
 
     declarations.removeAll {

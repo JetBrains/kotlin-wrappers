@@ -236,11 +236,12 @@ private constructor() {
     var distanceDisplayCondition: DistanceDisplayCondition
 
     /**
-     * Gets or sets the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
-     * When set to zero, the depth test is always applied. When set to Number.POSITIVE_INFINITY, the depth test is never applied.
+     * Gets or sets the distance from the camera, beyond which, depth testing is disabled—to, for example, prevent clipping against terrain.
+     * When set to `undefined` or
+     * `0`, the depth test is always applied. When set to Number.`POSITIVE_INFINITY`, the depth test is never applied.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html#disableDepthTestDistance">Online Documentation</a>
      */
-    var disableDepthTestDistance: Double
+    var disableDepthTestDistance: Double?
 
     /**
      * Gets or sets the user-defined value returned when the label is picked.
@@ -314,7 +315,7 @@ private constructor() {
      * @property [pixelOffsetScaleByDistance] A [NearFarScalar] specifying near and far pixel offset scaling properties of the label based on the label's distance from the camera.
      * @property [scaleByDistance] A [NearFarScalar] specifying near and far scaling properties of the label based on the label's distance from the camera.
      * @property [distanceDisplayCondition] A [DistanceDisplayCondition] specifying at what distance from the camera that this label will be displayed.
-     * @property [disableDepthTestDistance] A number specifying the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
+     * @property [disableDepthTestDistance] The distance from the camera, beyond which, depth testing is disabled—to, for example, prevent clipping against terrain.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject

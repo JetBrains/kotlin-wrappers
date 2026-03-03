@@ -99,12 +99,6 @@ external class Cartesian4(
         ): Cartesian4
 
         /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -115,9 +109,9 @@ external class Cartesian4(
          */
         override fun pack(
             value: Cartesian4,
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
-        ): ReadonlyArray<JsDouble>
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Retrieves an instance from a packed array.
@@ -129,7 +123,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
             result: Cartesian4?,
         ): Cartesian4
@@ -143,8 +137,8 @@ external class Cartesian4(
          */
         fun packArray(
             array: ReadonlyArray<Cartesian4>,
-            result: ReadonlyArray<JsDouble>? = definedExternally,
-        ): ReadonlyArray<JsDouble>
+            result: ReadonlyArray<JsDouble> /* | TypedArray */? = definedExternally,
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian4s.
@@ -154,33 +148,9 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             result: ReadonlyArray<Cartesian4>? = definedExternally,
         ): ReadonlyArray<Cartesian4>
-
-        /**
-         * Creates a Cartesian4 from four consecutive elements in an array.
-         * ```
-         * // Create a Cartesian4 with (1.0, 2.0, 3.0, 4.0)
-         * const v = [1.0, 2.0, 3.0, 4.0];
-         * const p = Cartesian4.fromArray(v);
-         *
-         * // Create a Cartesian4 with (1.0, 2.0, 3.0, 4.0) using an offset into an array
-         * const v2 = [0.0, 0.0, 1.0, 2.0, 3.0, 4.0];
-         * const p2 = Cartesian4.fromArray(v2, 2);
-         * ```
-         * @param [array] The array whose four consecutive elements correspond to the x, y, z, and w components, respectively.
-         * @param [startingIndex] The offset into the array of the first element, which corresponds to the x component.
-         *   Default value - `0`
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Cartesian4 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.fromArray">Online Documentation</a>
-         */
-        fun fromArray(
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int? = definedExternally,
-            result: Cartesian4? = definedExternally,
-        ): Cartesian4
 
         /**
          * Computes the value of the maximum component for the supplied Cartesian.
@@ -489,6 +459,48 @@ external class Cartesian4(
         ): Boolean
 
         /**
+         * Packs an arbitrary floating point value to 4 values representable using uint8.
+         * @param [value] A floating point number.
+         * @param [result] The Cartesian4 that will contain the packed float.
+         * @return A Cartesian4 representing the float packed to values in x, y, z, and w.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.packFloat">Online Documentation</a>
+         */
+        fun packFloat(
+            value: Double,
+            result: Cartesian4? = definedExternally,
+        ): Cartesian4
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
+
+        /**
+         * Creates a Cartesian4 from four consecutive elements in an array.
+         * ```
+         * // Create a Cartesian4 with (1.0, 2.0, 3.0, 4.0)
+         * const v = [1.0, 2.0, 3.0, 4.0];
+         * const p = Cartesian4.fromArray(v);
+         *
+         * // Create a Cartesian4 with (1.0, 2.0, 3.0, 4.0) using an offset into an array
+         * const v2 = [0.0, 0.0, 1.0, 2.0, 3.0, 4.0];
+         * const p2 = Cartesian4.fromArray(v2, 2);
+         * ```
+         * @param [array] The array whose four consecutive elements correspond to the x, y, z, and w components, respectively.
+         * @param [startingIndex] The offset into the array of the first element, which corresponds to the x component.
+         *   Default value - `0`
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Cartesian4 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.fromArray">Online Documentation</a>
+         */
+        fun fromArray(
+            array: ReadonlyArray<JsDouble>,
+            startingIndex: Int? = definedExternally,
+            result: Cartesian4? = definedExternally,
+        ): Cartesian4
+
+        /**
          * An immutable Cartesian4 instance initialized to (0.0, 0.0, 0.0, 0.0).
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.ZERO">Online Documentation</a>
          */
@@ -523,17 +535,5 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.UNIT_W">Online Documentation</a>
          */
         val UNIT_W: Cartesian4
-
-        /**
-         * Packs an arbitrary floating point value to 4 values representable using uint8.
-         * @param [value] A floating point number.
-         * @param [result] The Cartesian4 that will contain the packed float.
-         * @return A Cartesian4 representing the float packed to values in x, y, z, and w.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.packFloat">Online Documentation</a>
-         */
-        fun packFloat(
-            value: Double,
-            result: Cartesian4? = definedExternally,
-        ): Cartesian4
     }
 }

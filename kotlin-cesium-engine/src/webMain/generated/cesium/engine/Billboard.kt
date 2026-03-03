@@ -245,11 +245,13 @@ private constructor() {
     var distanceDisplayCondition: DistanceDisplayCondition
 
     /**
-     * Gets or sets the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
-     * When set to zero, the depth test is always applied. When set to Number.POSITIVE_INFINITY, the depth test is never applied.
+     * Gets or sets the distance from the camera, beyond which, depth testing is disbaled—to,
+     * for example, prevent clipping against terrain. When set to `undefined` or
+     * `0`, the depth test is always applied. When set to
+     * `Number.POSITIVE_INFINITY`, the depth test is never applied.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#disableDepthTestDistance">Online Documentation</a>
      */
-    var disableDepthTestDistance: Double
+    var disableDepthTestDistance: Double?
 
     /**
      * Gets or sets the user-defined object returned when the billboard is picked.
@@ -406,7 +408,7 @@ private constructor() {
      * @property [pixelOffsetScaleByDistance] A [NearFarScalar] Specifying near and far pixel offset scaling properties of a Billboard based on the billboard's distance from the camera.
      * @property [imageSubRegion] A [BoundingRectangle] Specifying the sub-region of the image to use for the billboard, rather than the entire image.
      * @property [distanceDisplayCondition] A [DistanceDisplayCondition] Specifying the distance from the camera at which this billboard will be displayed.
-     * @property [disableDepthTestDistance] A number specifying the distance from the camera at which to disable the depth test to, for example, prevent clipping against terrain.
+     * @property [disableDepthTestDistance] The distance from the camera, beyond which, depth testing is disabled—to, for example, prevent clipping against terrain.
      * @property [splitDirection] A [SplitDirection] Specifying the split property of the billboard.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#.ConstructorOptions">Online Documentation</a>
      */

@@ -71,6 +71,7 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "string | string[]" to "ReadonlyArray<String>",
     "number[] | Cartesian3[]" to "ReadonlyArray<Cartesian3 /* or number */>",
+    "number[] | TypedArray" to "ReadonlyArray<Double> /* | TypedArray */",
 
     "Event" to DefaultEvent.name,
     PACKABLE to "$PACKABLE<*>",

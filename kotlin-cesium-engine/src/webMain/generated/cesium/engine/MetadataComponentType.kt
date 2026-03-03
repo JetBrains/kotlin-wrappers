@@ -43,12 +43,12 @@ external interface MetadataComponentType {
         val UINT32: MetadataComponentType
 
         /**
-         * A 64-bit signed integer. This type requires BigInt support.
+         * A 64-bit signed integer.
          */
         val INT64: MetadataComponentType
 
         /**
-         * A 64-bit signed integer. This type requires BigInt support
+         * A 64-bit signed integer.
          */
         val UINT64: MetadataComponentType
 

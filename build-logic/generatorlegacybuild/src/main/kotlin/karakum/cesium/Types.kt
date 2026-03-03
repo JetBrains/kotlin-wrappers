@@ -70,6 +70,12 @@ private fun typeBody(body: String): String {
 private fun optionsBody(
     body: String,
 ): String {
+    // TEMP fix for:
+    //  - `CubeMapPanorama`
+    //  - `EquirectangularPanorama`
+    if (body == "{}")
+        return "/* EMPTY WITHOUT REASON */"
+
     val source = body.removePrefix("{\n")
         .substringBeforeLast("\n")
         .trimIndent()

@@ -40,19 +40,16 @@ external class SkyBox(
     }
 
     /**
-     * The sources used to create the cube map faces: an object
-     * with `positiveX`, `negativeX`, `positiveY`,
-     * `negativeY`, `positiveZ`, and `negativeZ` properties.
-     * These can be either URLs or `Image` objects.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#sources">Online Documentation</a>
-     */
-    var sources: JsAny
-
-    /**
      * Determines if the sky box will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#show">Online Documentation</a>
      */
     var show: Boolean
+
+    /**
+     * Gets or sets the the primitive object.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#sources">Online Documentation</a>
+     */
+    var sources: JsAny
 
     /**
      * Called when [Viewer] or [CesiumWidget] render the scene to

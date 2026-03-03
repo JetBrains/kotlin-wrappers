@@ -41,6 +41,8 @@ external class LabelCollection(
      *   Default value - [BlendOption.OPAQUE_AND_TRANSLUCENT]
      * @property [show] Determines if the labels in the collection will be shown.
      *   Default value - `true`
+     * @property [coarseDepthTestDistance] The distance from the camera, beyond which, labels are depth-tested against an approximation of the globe ellipsoid rather than against the full globe depth buffer. If unspecified, the default value is determined relative to the value of [Ellipsoid.default].
+     * @property [threePointDepthTestDistance] The distance from the camera, within which, lables with a [Label.heightReference] value of [HeightReference.CLAMP_TO_GROUND] or [HeightReference.CLAMP_TO_TERRAIN] are depth tested against three key points. This ensures that if any key point of the label is visible, the whole label will be visible. If unspecified, the default value is determined relative to the value of [Ellipsoid.default].
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -49,6 +51,8 @@ external class LabelCollection(
         val scene: Scene?
         val blendOption: BlendOption?
         val show: Boolean?
+        val coarseDepthTestDistance: Double?
+        val threePointDepthTestDistance: Double?
     }
 
     /**
@@ -110,6 +114,33 @@ external class LabelCollection(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html#length">Online Documentation</a>
      */
     val length: Int
+
+    /**
+     * The distance from the camera, beyond which, labels are depth-tested against an approximation of
+     * the globe ellipsoid rather than against the full globe depth buffer. When set to `0`, the
+     * approximate depth test is always applied. When set to `Number.POSITIVE_INFINITY`, the
+     * approximate depth test is never applied.
+     * <br/><br/>
+     * This setting only applies when a label's [Label.disableDepthTestDistance] value would
+     * otherwise allow depth testing—i.e., distance from the camera to the label is less than the
+     * label's [Label.disableDepthTestDistance] value.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html#coarseDepthTestDistance">Online Documentation</a>
+     */
+    var coarseDepthTestDistance: Double
+
+    /**
+     * The distance from the camera, within which, labels with a [Label.heightReference] value
+     * of [HeightReference.CLAMP_TO_GROUND] or [HeightReference.CLAMP_TO_TERRAIN] are depth tested
+     * against three key points. This ensures that if any key point of the label is visible, the whole
+     * label will be visible. When set to `0`, this feature is disabled and portions of a
+     * label behind terrain be clipped.
+     * <br/><br/>
+     * This setting only applies when a labels's [Label.disableDepthTestDistance] value would
+     * otherwise allow depth testing—i.e., distance from the camera to the label is less than the
+     * labels's [Label.disableDepthTestDistance] value.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html#threePointDepthTestDistance">Online Documentation</a>
+     */
+    var threePointDepthTestDistance: Double
 
     /**
      * Creates and adds a label with the specified initial properties to the collection.

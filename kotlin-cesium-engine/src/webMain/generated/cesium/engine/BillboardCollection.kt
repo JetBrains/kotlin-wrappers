@@ -42,6 +42,8 @@ external class BillboardCollection(
      *   Default value - [BlendOption.OPAQUE_AND_TRANSLUCENT]
      * @property [show] Determines if the billboards in the collection will be shown.
      *   Default value - `true`
+     * @property [coarseDepthTestDistance] The distance from the camera, beyond which, billboards are depth-tested against an approximation of the globe ellipsoid rather than against the full globe depth buffer. If unspecified, the default value is determined relative to the value of [Ellipsoid.default].
+     * @property [threePointDepthTestDistance] The distance from the camera, within which, billboards with a [Billboard.heightReference] value of [HeightReference.CLAMP_TO_GROUND] or [HeightReference.CLAMP_TO_TERRAIN] are depth tested against three key points. This ensures that if any key point of the billboard is visible, the whole billboard will be visible. If unspecified, the default value is determined relative to the value of [Ellipsoid.default].
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -50,6 +52,8 @@ external class BillboardCollection(
         val scene: Scene?
         val blendOption: BlendOption?
         val show: Boolean?
+        val coarseDepthTestDistance: Double?
+        val threePointDepthTestDistance: Double?
     }
 
     /**
@@ -119,6 +123,33 @@ external class BillboardCollection(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html#length">Online Documentation</a>
      */
     val length: Int
+
+    /**
+     * The distance from the camera, beyond which, billboards are depth-tested against an approximation of
+     * the globe ellipsoid rather than against the full globe depth buffer. When set to `0`, the
+     * approximate depth test is always applied. When set to `Number.POSITIVE_INFINITY`, the
+     * approximate depth test is never applied.
+     * <br/><br/>
+     * This setting only applies when a billboard's [Billboard.disableDepthTestDistance] value would
+     * otherwise allow depth testing—i.e., distance from the camera to the billboard is less than a
+     * billboard's [Billboard.disableDepthTestDistance] value.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html#coarseDepthTestDistance">Online Documentation</a>
+     */
+    var coarseDepthTestDistance: Double
+
+    /**
+     * The distance from the camera, within which, billboards with a [Billboard.heightReference] value
+     * of [HeightReference.CLAMP_TO_GROUND] or [HeightReference.CLAMP_TO_TERRAIN] are depth tested
+     * against three key points. This ensures that if any key point of the billboard is visible, the whole
+     * billboard will be visible. When set to `0`, this feature is disabled and portions of a
+     * billboards behind terrain be clipped.
+     * <br/><br/>
+     * This setting only applies when a billboard's [Billboard.disableDepthTestDistance] value would
+     * otherwise allow depth testing—i.e., distance from the camera to the billboard is less than a
+     * billboard's [Billboard.disableDepthTestDistance] value.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html#threePointDepthTestDistance">Online Documentation</a>
+     */
+    var threePointDepthTestDistance: Double
 
     /**
      * Creates and adds a billboard with the specified initial properties to the collection.

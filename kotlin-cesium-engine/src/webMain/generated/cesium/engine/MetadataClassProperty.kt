@@ -55,8 +55,8 @@ external class MetadataClassProperty(
         val max: JsAny /* number | number[] | number[][] */?
         val offset: JsAny /* number | number[] | number[][] */?
         val scale: JsAny /* number | number[] | number[][] */?
-        val noData: JsAny /* boolean | number | string | any[] */?
-        val default: JsAny /* boolean | number | string | any[] */?
+        val noData: JsAny /* number | string | any[] */?
+        val default: JsAny /* number | string | any[] */?
         val required: Boolean?
         val name: String?
         val description: String?
@@ -144,13 +144,13 @@ external class MetadataClassProperty(
      * The no-data sentinel value that represents null values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#noData">Online Documentation</a>
      */
-    val noData: JsAny /* boolean | number | string | any[] */
+    val noData: JsAny /* number | string | any[] */
 
     /**
      * A default value to use when an entity's property value is not defined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#default">Online Documentation</a>
      */
-    val default: JsAny /* boolean | number | string | any[] */
+    val default: JsAny /* number | string | any[] */
 
     /**
      * Whether the property is required.

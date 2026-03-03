@@ -76,38 +76,6 @@ external class Cartesian2(
         ): Cartesian2
 
         /**
-         * Creates a Cartesian2 instance from an existing Cartesian3.  This simply takes the
-         * x and y properties of the Cartesian3 and drops z.
-         * @param [cartesian] The Cartesian3 instance to create a Cartesian2 instance from.
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Cartesian2 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromCartesian3">Online Documentation</a>
-         */
-        fun fromCartesian3(
-            cartesian: Cartesian3,
-            result: Cartesian2? = definedExternally,
-        ): Cartesian2
-
-        /**
-         * Creates a Cartesian2 instance from an existing Cartesian4.  This simply takes the
-         * x and y properties of the Cartesian4 and drops z and w.
-         * @param [cartesian] The Cartesian4 instance to create a Cartesian2 instance from.
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Cartesian2 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromCartesian4">Online Documentation</a>
-         */
-        fun fromCartesian4(
-            cartesian: Cartesian4,
-            result: Cartesian2? = definedExternally,
-        ): Cartesian2
-
-        /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -118,9 +86,9 @@ external class Cartesian2(
          */
         override fun pack(
             value: Cartesian2,
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
-        ): ReadonlyArray<JsDouble>
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Retrieves an instance from a packed array.
@@ -132,7 +100,7 @@ external class Cartesian2(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
             result: Cartesian2?,
         ): Cartesian2
@@ -146,8 +114,8 @@ external class Cartesian2(
          */
         fun packArray(
             array: ReadonlyArray<Cartesian2>,
-            result: ReadonlyArray<JsDouble>? = definedExternally,
-        ): ReadonlyArray<JsDouble>
+            result: ReadonlyArray<JsDouble> /* | TypedArray */? = definedExternally,
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian2s.
@@ -160,30 +128,6 @@ external class Cartesian2(
             array: ReadonlyArray<JsDouble>,
             result: ReadonlyArray<Cartesian2>? = definedExternally,
         ): ReadonlyArray<Cartesian2>
-
-        /**
-         * Creates a Cartesian2 from two consecutive elements in an array.
-         * ```
-         * // Create a Cartesian2 with (1.0, 2.0)
-         * const v = [1.0, 2.0];
-         * const p = Cartesian2.fromArray(v);
-         *
-         * // Create a Cartesian2 with (1.0, 2.0) using an offset into an array
-         * const v2 = [0.0, 0.0, 1.0, 2.0];
-         * const p2 = Cartesian2.fromArray(v2, 2);
-         * ```
-         * @param [array] The array whose two consecutive elements correspond to the x and y components, respectively.
-         * @param [startingIndex] The offset into the array of the first element, which corresponds to the x component.
-         *   Default value - `0`
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Cartesian2 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromArray">Online Documentation</a>
-         */
-        fun fromArray(
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int? = definedExternally,
-            result: Cartesian2? = definedExternally,
-        ): Cartesian2
 
         /**
          * Computes the value of the maximum component for the supplied Cartesian.
@@ -510,6 +454,62 @@ external class Cartesian2(
             relativeEpsilon: Double? = definedExternally,
             absoluteEpsilon: Double? = definedExternally,
         ): Boolean
+
+        /**
+         * Creates a Cartesian2 instance from an existing Cartesian3.  This simply takes the
+         * x and y properties of the Cartesian3 and drops z.
+         * @param [cartesian] The Cartesian3 instance to create a Cartesian2 instance from.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Cartesian2 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromCartesian3">Online Documentation</a>
+         */
+        fun fromCartesian3(
+            cartesian: Cartesian3,
+            result: Cartesian2? = definedExternally,
+        ): Cartesian2
+
+        /**
+         * Creates a Cartesian2 instance from an existing Cartesian4.  This simply takes the
+         * x and y properties of the Cartesian4 and drops z and w.
+         * @param [cartesian] The Cartesian4 instance to create a Cartesian2 instance from.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Cartesian2 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromCartesian4">Online Documentation</a>
+         */
+        fun fromCartesian4(
+            cartesian: Cartesian4,
+            result: Cartesian2? = definedExternally,
+        ): Cartesian2
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
+
+        /**
+         * Creates a Cartesian2 from two consecutive elements in an array.
+         * ```
+         * // Create a Cartesian2 with (1.0, 2.0)
+         * const v = [1.0, 2.0];
+         * const p = Cartesian2.fromArray(v);
+         *
+         * // Create a Cartesian2 with (1.0, 2.0) using an offset into an array
+         * const v2 = [0.0, 0.0, 1.0, 2.0];
+         * const p2 = Cartesian2.fromArray(v2, 2);
+         * ```
+         * @param [array] The array whose two consecutive elements correspond to the x and y components, respectively.
+         * @param [startingIndex] The offset into the array of the first element, which corresponds to the x component.
+         *   Default value - `0`
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Cartesian2 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian2.html#.fromArray">Online Documentation</a>
+         */
+        fun fromArray(
+            array: ReadonlyArray<JsDouble>,
+            startingIndex: Int? = definedExternally,
+            result: Cartesian2? = definedExternally,
+        ): Cartesian2
 
         /**
          * An immutable Cartesian2 instance initialized to (0.0, 0.0).

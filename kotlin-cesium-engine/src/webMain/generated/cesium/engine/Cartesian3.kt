@@ -93,25 +93,6 @@ external class Cartesian3(
         ): Cartesian3
 
         /**
-         * Creates a Cartesian3 instance from an existing Cartesian4.  This simply takes the
-         * x, y, and z properties of the Cartesian4 and drops w.
-         * @param [cartesian] The Cartesian4 instance to create a Cartesian3 instance from.
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Cartesian3 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromCartesian4">Online Documentation</a>
-         */
-        fun fromCartesian4(
-            cartesian: Cartesian4,
-            result: Cartesian3? = definedExternally,
-        ): Cartesian3
-
-        /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -122,9 +103,9 @@ external class Cartesian3(
          */
         override fun pack(
             value: Cartesian3,
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
-        ): ReadonlyArray<JsDouble>
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Retrieves an instance from a packed array.
@@ -136,7 +117,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
             result: Cartesian3?,
         ): Cartesian3
@@ -150,8 +131,8 @@ external class Cartesian3(
          */
         fun packArray(
             array: ReadonlyArray<Cartesian3>,
-            result: ReadonlyArray<JsDouble>? = definedExternally,
-        ): ReadonlyArray<JsDouble>
+            result: ReadonlyArray<JsDouble> /* | TypedArray */? = definedExternally,
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian3s.
@@ -161,33 +142,9 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>
-
-        /**
-         * Creates a Cartesian3 from three consecutive elements in an array.
-         * ```
-         * // Create a Cartesian3 with (1.0, 2.0, 3.0)
-         * const v = [1.0, 2.0, 3.0];
-         * const p = Cartesian3.fromArray(v);
-         *
-         * // Create a Cartesian3 with (1.0, 2.0, 3.0) using an offset into an array
-         * const v2 = [0.0, 0.0, 1.0, 2.0, 3.0];
-         * const p2 = Cartesian3.fromArray(v2, 2);
-         * ```
-         * @param [array] The array whose three consecutive elements correspond to the x, y, and z components, respectively.
-         * @param [startingIndex] The offset into the array of the first element, which corresponds to the x component.
-         *   Default value - `0`
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Cartesian3 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromArray">Online Documentation</a>
-         */
-        fun fromArray(
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int? = definedExternally,
-            result: Cartesian3? = definedExternally,
-        ): Cartesian3
 
         /**
          * Computes the value of the maximum component for the supplied Cartesian.
@@ -235,7 +192,7 @@ external class Cartesian3(
 
         /**
          * Constrain a value to lie between two values.
-         * @param [cartesian] The value to clamp.
+         * @param [value] The value to clamp.
          * @param [min] The minimum bound.
          * @param [max] The maximum bound.
          * @param [result] The object into which to store the result.
@@ -243,7 +200,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.clamp">Online Documentation</a>
          */
         fun clamp(
-            cartesian: Cartesian3,
+            value: Cartesian3,
             min: Cartesian3,
             max: Cartesian3,
             result: Cartesian3,
@@ -662,6 +619,49 @@ external class Cartesian3(
             ellipsoid: Ellipsoid? = definedExternally,
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>
+
+        /**
+         * Creates a Cartesian3 instance from an existing Cartesian4.  This simply takes the
+         * x, y, and z properties of the Cartesian4 and drops w.
+         * @param [cartesian] The Cartesian4 instance to create a Cartesian3 instance from.
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Cartesian3 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromCartesian4">Online Documentation</a>
+         */
+        fun fromCartesian4(
+            cartesian: Cartesian4,
+            result: Cartesian3? = definedExternally,
+        ): Cartesian3
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
+
+        /**
+         * Creates a Cartesian3 from three consecutive elements in an array.
+         * ```
+         * // Create a Cartesian3 with (1.0, 2.0, 3.0)
+         * const v = [1.0, 2.0, 3.0];
+         * const p = Cartesian3.fromArray(v);
+         *
+         * // Create a Cartesian3 with (1.0, 2.0, 3.0) using an offset into an array
+         * const v2 = [0.0, 0.0, 1.0, 2.0, 3.0];
+         * const p2 = Cartesian3.fromArray(v2, 2);
+         * ```
+         * @param [array] The array whose three consecutive elements correspond to the x, y, and z components, respectively.
+         * @param [startingIndex] The offset into the array of the first element, which corresponds to the x component.
+         *   Default value - `0`
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Cartesian3 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromArray">Online Documentation</a>
+         */
+        fun fromArray(
+            array: ReadonlyArray<JsDouble>,
+            startingIndex: Int? = definedExternally,
+            result: Cartesian3? = definedExternally,
+        ): Cartesian3
 
         /**
          * An immutable Cartesian3 instance initialized to (0.0, 0.0, 0.0).
