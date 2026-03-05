@@ -1,0 +1,16 @@
+package example.testsupport
+
+object DataTestId {
+    const val INDEX_CONTAINER = "INDEX_CONTAINER"
+    const val HOME_CONTAINER = "HOME_CONTAINER"
+    const val ABOUT_CONTAINER = "ABOUT_CONTAINER"
+    const val TOPICS_CONTAINER = "TOPICS_CONTAINER"
+    const val TOPIC_CONTAINER = "TOPIC_CONTAINER"
+
+    const val INDEX_LINK_HOME = "INDEX_LINK_HOME"
+    const val INDEX_LINK_ABOUT = "INDEX_LINK_ABOUT"
+    const val INDEX_LINK_TOPICS = "INDEX_LINK_TOPICS"
+
+    const val TOPIC_LINK_COMPONENTS = "TOPIC_LINK_COMPONENTS"
+    const val TOPIC_LINK_PROPS_V_STATE = "TOPIC_LINK_PROPS_V_STATE"
+}
