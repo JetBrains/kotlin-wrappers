@@ -426,6 +426,15 @@ internal fun String.applyPatches(): String {
             "interface WebTransportSendStream extends WritableStream {",
             "interface WebTransportSendStream extends WritableStream<Uint8Array<*>> {",
         )
+        // TODO: remove after fix
+        //  https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2447
+        .replace(
+            "interface Memory {",
+            "interface Memory<B extends ArrayBufferLike> {",
+        )
+        .patchInterface("Memory", inNamespace = true) {
+            it.replace(": ArrayBuffer;", ": B;")
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
@@ -494,22 +503,24 @@ internal fun String.patchInterfaces(
     transform: (String) -> String,
 ): String =
     names.fold(this) { acc, name ->
-        acc.patchInterface(name, transform)
+        acc.patchInterface(name, transform = transform)
     }
 
 internal fun String.patchInterface(
     name: String,
+    inNamespace: Boolean = false,
     transform: (String) -> String,
 ): String {
+    val space = if (inNamespace) "    " else ""
     val declarationStart = sequenceOf(
-        "\ninterface $name ",
-        "\ninterface $name<",
+        "\n${space}interface $name ",
+        "\n${space}interface $name<",
     ).firstOrNull { it in this }
         ?: return this
 
     val oldBody = "\n" + substringAfter(declarationStart, "")
         .substringAfter("{\n", "")
-        .substringBefore("\n}", "")
+        .substringBefore("\n${space}}", "")
 
     return replaceFirst(oldBody, transform(oldBody))
 }

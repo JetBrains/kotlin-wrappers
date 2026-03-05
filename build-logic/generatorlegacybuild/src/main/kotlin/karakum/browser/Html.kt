@@ -823,6 +823,7 @@ internal fun convertInterface(
         "ElementDefinitionOptions",
             -> declaration.replaceFirst("ElementDefinitionOptions", "ElementDefinitionOptions<T : HTMLElement>")
 
+        "Memory",
         "Worklet",
             -> declaration.replace(" extends ", " : ")
 

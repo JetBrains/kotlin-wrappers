@@ -2,7 +2,7 @@
 
 package web.assembly
 
-import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import kotlin.js.JsQualifier
 
 /**
@@ -11,7 +11,7 @@ import kotlin.js.JsQualifier
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory)
  */
 @JsQualifier("WebAssembly")
-open external class Memory(
+open external class Memory<B : ArrayBufferLike>(
     descriptor: MemoryDescriptor,
 ) {
     /**
@@ -19,7 +19,7 @@ open external class Memory(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/buffer)
      */
-    val buffer: ArrayBuffer
+    val buffer: B
 
     /**
      * The **`grow()`** prototype method of the WebAssembly.Memory object increases the size of the memory instance by a specified number of WebAssembly pages.
@@ -27,6 +27,6 @@ open external class Memory(
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/grow)
      */
     fun grow(delta: AddressValue): AddressValue
-    fun toFixedLengthBuffer(): ArrayBuffer
-    fun toResizableBuffer(): ArrayBuffer
+    fun toFixedLengthBuffer(): B
+    fun toResizableBuffer(): B
 }
