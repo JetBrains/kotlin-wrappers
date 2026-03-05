@@ -1,5 +1,6 @@
 package js.typedarrays
 
+import js.array.ArrayLike
 import js.array.MutableArrayLike
 import js.array.ReadonlyArray
 import js.array.Tuple2
@@ -40,7 +41,7 @@ sealed external class TypedArray<
     fun at(index: Int): T?
 
     fun set(
-        array: S,
+        array: ArrayLike<T>,
         offset: Int = definedExternally,
     )
 
