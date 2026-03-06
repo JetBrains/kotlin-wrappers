@@ -6,7 +6,7 @@ package testing.library.dom
 
 // unhandled import: * as queries from "./queries"
 
-external suspend fun getQueriesForElement(
+external fun getQueriesForElement(
     element: web.html.HTMLElement,
     queriesToBind: Queries = definedExternally,
 ): BoundFunctions

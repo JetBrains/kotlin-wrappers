@@ -25,7 +25,7 @@ val convertGetQueriesForElement = createPlugin { node, context, render ->
                 strategy = ParameterDeclarationStrategy.function,
                 template = { parameters, _ ->
                     // skip generics
-                    "external suspend fun getQueriesForElement(${parameters})${ifPresent(type) { ": $it" }}"
+                    "external fun getQueriesForElement(${parameters})${ifPresent(type) { ": $it" }}"
                 }
             )
         )
@@ -88,7 +88,7 @@ val convertGetQueriesForElement = createPlugin { node, context, render ->
                 strategy = ParameterDeclarationStrategy.function,
                 template = { parameters, _ ->
                     // skip generics
-                    "external suspend fun ${name}(${parameters})${ifPresent(declarationType) { ": $it" }}"
+                    "external fun ${name}(${parameters})${ifPresent(declarationType) { ": $it" }}"
                 }
             )
         )

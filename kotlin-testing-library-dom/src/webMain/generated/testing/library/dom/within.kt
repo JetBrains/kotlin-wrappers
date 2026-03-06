@@ -8,7 +8,7 @@ package testing.library.dom
 // unhandled import: * as queries from "./queries"
 // unhandled import: * as queryHelpers from "./query-helpers"
 
-external suspend fun within(
+external fun within(
     element: web.html.HTMLElement,
     queriesToBind: Queries = definedExternally,
 ): BoundFunctions
