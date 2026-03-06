@@ -2,7 +2,9 @@ package testing.library.dom.karakum.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import typescript.*
+import typescript.isIdentifier
+import typescript.isTypeParameterDeclaration
+import typescript.isTypeReferenceNode
 
 val convertQueriesGenerics = createPlugin { node, _, _ ->
     nullable {
