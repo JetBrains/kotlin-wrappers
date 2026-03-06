@@ -8,4 +8,4 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-typealias AllByRole<T /*  : web.html.HTMLElement default is web.html.HTMLElement */> = (container: web.html.HTMLElement, role: ByRoleMatcher, options: ByRoleOptions? /* use undefined for default */) -> js.array.ReadonlyArray<T>
+typealias AllByRole = (container: web.html.HTMLElement, role: ByRoleMatcher, options: ByRoleOptions? /* use undefined for default */) -> js.array.ReadonlyArray<web.html.HTMLElement>

@@ -10,8 +10,8 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getAllByRole(
+external fun getAllByRole(
     container: web.html.HTMLElement,
     role: ByRoleMatcher,
     options: ByRoleOptions = definedExternally,
-): js.array.ReadonlyArray<T>
+): js.array.ReadonlyArray<web.html.HTMLElement>

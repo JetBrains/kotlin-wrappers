@@ -11,9 +11,9 @@ package testing.library.dom
 // unhandled import: waitForOptions from "./wait-for"
 
 @JsName("findByLabelText")
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByLabelTextAsync(
+external fun findByLabelTextAsync(
     container: web.html.HTMLElement,
     id: Matcher,
     options: SelectorMatcherOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): js.promise.Promise<T>
+): js.promise.Promise<web.html.HTMLElement>

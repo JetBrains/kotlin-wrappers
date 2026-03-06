@@ -8,4 +8,4 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-typealias AllByText<T /*  : web.html.HTMLElement default is web.html.HTMLElement */> = (container: web.html.HTMLElement, id: Matcher, options: SelectorMatcherOptions? /* use undefined for default */) -> js.array.ReadonlyArray<T>
+typealias AllByText = (container: web.html.HTMLElement, id: Matcher, options: SelectorMatcherOptions? /* use undefined for default */) -> js.array.ReadonlyArray<web.html.HTMLElement>

@@ -10,8 +10,8 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> getByPlaceholderText(
+external fun getByPlaceholderText(
     container: web.html.HTMLElement,
     id: Matcher,
     options: MatcherOptions = definedExternally,
-): T
+): web.html.HTMLElement

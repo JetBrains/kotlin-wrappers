@@ -8,4 +8,4 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-typealias FindByRole<T /*  : web.html.HTMLElement default is web.html.HTMLElement */> = (container: web.html.HTMLElement, role: ByRoleMatcher, options: ByRoleOptions? /* use undefined for default */, waitForElementOptions: waitForOptions? /* use undefined for default */) -> js.promise.Promise<T>
+typealias FindByRole = (container: web.html.HTMLElement, role: ByRoleMatcher, options: ByRoleOptions? /* use undefined for default */, waitForElementOptions: waitForOptions? /* use undefined for default */) -> js.promise.Promise<web.html.HTMLElement>

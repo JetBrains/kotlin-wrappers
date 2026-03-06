@@ -11,9 +11,9 @@ package testing.library.dom
 // unhandled import: waitForOptions from "./wait-for"
 
 @JsName("findAllByTestId")
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByTestIdAsync(
+external fun findAllByTestIdAsync(
     container: web.html.HTMLElement,
     id: Matcher,
     options: MatcherOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): js.promise.Promise<js.array.ReadonlyArray<T>>
+): js.promise.Promise<js.array.ReadonlyArray<web.html.HTMLElement>>

@@ -8,4 +8,4 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-typealias FindByBoundAttribute<T /*  : web.html.HTMLElement default is web.html.HTMLElement */> = (container: web.html.HTMLElement, id: Matcher, options: MatcherOptions? /* use undefined for default */, waitForElementOptions: waitForOptions? /* use undefined for default */) -> js.promise.Promise<T>
+typealias FindByBoundAttribute = (container: web.html.HTMLElement, id: Matcher, options: MatcherOptions? /* use undefined for default */, waitForElementOptions: waitForOptions? /* use undefined for default */) -> js.promise.Promise<web.html.HTMLElement>

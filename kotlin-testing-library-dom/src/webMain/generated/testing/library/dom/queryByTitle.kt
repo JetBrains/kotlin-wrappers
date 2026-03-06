@@ -10,8 +10,8 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryByTitle(
+external fun queryByTitle(
     container: web.html.HTMLElement,
     id: Matcher,
     options: MatcherOptions = definedExternally,
-): T?
+): web.html.HTMLElement?

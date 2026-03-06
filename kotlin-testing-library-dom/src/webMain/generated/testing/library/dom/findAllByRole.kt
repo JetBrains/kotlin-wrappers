@@ -11,9 +11,9 @@ package testing.library.dom
 // unhandled import: waitForOptions from "./wait-for"
 
 @JsName("findAllByRole")
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findAllByRoleAsync(
+external fun findAllByRoleAsync(
     container: web.html.HTMLElement,
     role: ByRoleMatcher,
     options: ByRoleOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): js.promise.Promise<js.array.ReadonlyArray<T>>
+): js.promise.Promise<js.array.ReadonlyArray<web.html.HTMLElement>>

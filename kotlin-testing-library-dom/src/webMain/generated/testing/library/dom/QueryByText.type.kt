@@ -8,4 +8,4 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-typealias QueryByText<T /*  : web.html.HTMLElement default is web.html.HTMLElement */> = (container: web.html.HTMLElement, id: Matcher, options: SelectorMatcherOptions? /* use undefined for default */) -> T?
+typealias QueryByText = (container: web.html.HTMLElement, id: Matcher, options: SelectorMatcherOptions? /* use undefined for default */) -> web.html.HTMLElement?

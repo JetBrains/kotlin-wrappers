@@ -13,6 +13,7 @@ import testing.library.dom.karakum.inheritanceModifiers.modifyMethodInheritance
 import testing.library.dom.karakum.plugins.BoundQueriesPlugin
 import testing.library.dom.karakum.plugins.QueriesPlugin
 import testing.library.dom.karakum.plugins.convertFunctionInterfaces
+import testing.library.dom.karakum.plugins.convertHtmlElementGenerics
 import testing.library.dom.karakum.plugins.convertOptionalType
 import testing.library.dom.karakum.plugins.convertPrettyFormatOptionsReceived
 import testing.library.dom.karakum.plugins.convertQueriesGenerics
@@ -36,6 +37,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             BoundQueriesPlugin,
 
             convertFunctionInterfaces,
+            convertHtmlElementGenerics,
             convertOptionalType,
             convertPrettyFormatOptionsReceived,
             convertQueriesGenerics,

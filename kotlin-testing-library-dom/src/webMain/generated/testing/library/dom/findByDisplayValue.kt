@@ -11,9 +11,9 @@ package testing.library.dom
 // unhandled import: waitForOptions from "./wait-for"
 
 @JsName("findByDisplayValue")
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByDisplayValueAsync(
+external fun findByDisplayValueAsync(
     container: web.html.HTMLElement,
     id: Matcher,
     options: MatcherOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): js.promise.Promise<T>
+): js.promise.Promise<web.html.HTMLElement>

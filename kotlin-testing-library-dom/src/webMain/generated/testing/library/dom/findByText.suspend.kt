@@ -9,9 +9,9 @@ package testing.library.dom
 // unhandled import: waitForOptions from "./wait-for"
 
 @seskar.js.JsAsync
-external suspend fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> findByText(
+external suspend fun findByText(
     container: web.html.HTMLElement,
     id: Matcher,
     options: SelectorMatcherOptions = definedExternally,
     waitForElementOptions: waitForOptions = definedExternally,
-): T
+): web.html.HTMLElement

@@ -10,8 +10,8 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
-external fun <T : web.html.HTMLElement /* default is web.html.HTMLElement */> queryAllByLabelText(
+external fun queryAllByLabelText(
     container: web.html.HTMLElement,
     id: Matcher,
     options: SelectorMatcherOptions = definedExternally,
-): js.array.ReadonlyArray<T>
+): js.array.ReadonlyArray<web.html.HTMLElement>
