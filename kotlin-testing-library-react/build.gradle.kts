@@ -8,6 +8,5 @@ dependencies {
     webMainApi(projects.kotlinReactDom)
     webMainApi(projects.kotlinTestingLibraryDom)
 
-    webMainApi(npm(jspkg.testingLibrary.dom))
     webMainApi(npm(jspkg.testingLibrary.react))
 }
