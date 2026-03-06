@@ -1811,6 +1811,7 @@
     "StorageEventInit": "web.storage.StorageEventInit",
     "StorageManager": "web.storage.StorageManager",
     "StreamPipeOptions": "web.streams.StreamPipeOptions",
+    "StringLike": "js.string.StringLike",
     "StructuredSerializeOptions": "web.serialization.StructuredSerializeOptions",
     "StylePropertyMap": "web.cssom.StylePropertyMap",
     "StylePropertyMapReadOnly": "web.cssom.StylePropertyMapReadOnly",
