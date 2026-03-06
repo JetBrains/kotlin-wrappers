@@ -39,8 +39,9 @@ internal fun convertDefinitions(
             "Tuple2<Double, ScrollAlignment>"
         )
         .replace("{ align, behavior }?: ScrollToOffsetOptions", "options: ScrollToOffsetOptions?")
-        .replace("{ align: initialAlign, behavior }?: ScrollToIndexOptions", "options: ScrollToIndexOptions?")
+        .replace("{ align: initialAlign, behavior, }?: ScrollToIndexOptions", "options: ScrollToIndexOptions?")
         .replace("{ behavior }?: ScrollToOffsetOptions", "options: ScrollToOffsetOptions?")
+        .replace(SHOULD_MEASURE_DURING_SCROLL_JSDOC, "\n")
         .splitToSequence("\ndeclare ")
         .drop(1)
         .map { it.removeSuffix(";") }
