@@ -1,7 +1,7 @@
 package web.dom
 
-import js.core.StringLike
 import js.reflect.unsafeCast
+import js.string.StringLike
 
 external interface ElementId :
     StringLike

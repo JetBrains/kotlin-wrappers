@@ -4,8 +4,8 @@
 
 package web.command
 
-import js.core.StringLike
 import js.reflect.unsafeCast
+import js.string.StringLike
 
 external interface Command :
     StringLike {

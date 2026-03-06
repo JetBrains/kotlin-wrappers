@@ -1,4 +1,4 @@
-package js.core
+package js.string
 
 import js.reflect.unsafeCast
 
