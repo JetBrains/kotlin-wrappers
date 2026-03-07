@@ -1,8 +1,8 @@
 package web.gl
 
-import js.core.contains
-import js.core.plus
 import js.numbers.JsNumbers.toJsInt
+import js.numbers.contains
+import js.numbers.plus
 import web.gl.WebGL2RenderingContext.Companion.COLOR_BUFFER_BIT
 import web.gl.WebGL2RenderingContext.Companion.DEPTH_BUFFER_BIT
 import kotlin.test.Test

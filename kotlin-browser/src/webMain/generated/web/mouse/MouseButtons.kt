@@ -6,7 +6,7 @@
 
 package web.mouse
 
-import js.core.Bitmask
+import js.numbers.Bitmask
 import js.reflect.unsafeCast
 
 sealed external interface MouseButtons :

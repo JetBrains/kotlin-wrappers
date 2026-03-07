@@ -2,7 +2,7 @@
 
 package web.gl
 
-import js.core.Bitmask
+import js.numbers.Bitmask
 
 sealed external interface GLbitfield :
     Bitmask<GLbitfield>

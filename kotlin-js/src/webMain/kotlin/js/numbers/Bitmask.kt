@@ -1,4 +1,4 @@
-package js.core
+package js.numbers
 
 import js.math.unsafeBitwiseAnd
 import js.math.unsafeBitwiseOr
