@@ -825,7 +825,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "web.url.URL"
             ),
             "util/types/isBigIntObject.contract.kt" to arrayOf(
-                "js.core.BigInt"
+                "js.numbers.BigInt"
             ),
             "v8/startupSnapshot/addDeserializeCallback.kt" to arrayOf(
                 "node.v8.StartupSnapshotCallbackFn"

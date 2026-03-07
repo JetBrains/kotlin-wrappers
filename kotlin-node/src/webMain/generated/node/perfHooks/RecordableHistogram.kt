@@ -13,7 +13,7 @@ sealed external interface RecordableHistogram : Histogram {
      * @since v15.9.0, v14.18.0
      * @param val The amount to record in the histogram.
      */
-    fun record(value: js.core.BigInt)
+    fun record(value: js.numbers.BigInt)
 
     /**
      * Calculates the amount of time (in nanoseconds) that has passed since the

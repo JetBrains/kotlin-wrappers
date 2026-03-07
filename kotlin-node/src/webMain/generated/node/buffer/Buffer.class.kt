@@ -397,7 +397,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @return `offset` plus the number of bytes written.
      */
     fun writeBigInt64BE(
-        value: js.core.BigInt,
+        value: js.numbers.BigInt,
         offset: Number = definedExternally,
     ): Double
 
@@ -422,7 +422,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @return `offset` plus the number of bytes written.
      */
     fun writeBigInt64LE(
-        value: js.core.BigInt,
+        value: js.numbers.BigInt,
         offset: Number = definedExternally,
     ): Double
 
@@ -447,7 +447,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @return `offset` plus the number of bytes written.
      */
     fun writeBigUInt64BE(
-        value: js.core.BigInt,
+        value: js.numbers.BigInt,
         offset: Number = definedExternally,
     ): Double
 
@@ -456,7 +456,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @since v14.10.0, v12.19.0
      */
     fun writeBigUint64BE(
-        value: js.core.BigInt,
+        value: js.numbers.BigInt,
         offset: Number = definedExternally,
     ): Double
 
@@ -481,7 +481,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @return `offset` plus the number of bytes written.
      */
     fun writeBigUInt64LE(
-        value: js.core.BigInt,
+        value: js.numbers.BigInt,
         offset: Number = definedExternally,
     ): Double
 
@@ -490,7 +490,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @since v14.10.0, v12.19.0
      */
     fun writeBigUint64LE(
-        value: js.core.BigInt,
+        value: js.numbers.BigInt,
         offset: Number = definedExternally,
     ): Double
 
@@ -638,13 +638,13 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigUInt64BE(offset: Number = definedExternally): js.core.BigInt
+    fun readBigUInt64BE(offset: Number = definedExternally): js.numbers.BigInt
 
     /**
      * @alias Buffer.readBigUInt64BE
      * @since v14.10.0, v12.19.0
      */
-    fun readBigUint64BE(offset: Number = definedExternally): js.core.BigInt
+    fun readBigUint64BE(offset: Number = definedExternally): js.numbers.BigInt
 
     /**
      * Reads an unsigned, little-endian 64-bit integer from `buf` at the specified`offset`.
@@ -662,13 +662,13 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigUInt64LE(offset: Number = definedExternally): js.core.BigInt
+    fun readBigUInt64LE(offset: Number = definedExternally): js.numbers.BigInt
 
     /**
      * @alias Buffer.readBigUInt64LE
      * @since v14.10.0, v12.19.0
      */
-    fun readBigUint64LE(offset: Number = definedExternally): js.core.BigInt
+    fun readBigUint64LE(offset: Number = definedExternally): js.numbers.BigInt
 
     /**
      * Reads a signed, big-endian 64-bit integer from `buf` at the specified `offset`.
@@ -678,7 +678,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigInt64BE(offset: Number = definedExternally): js.core.BigInt
+    fun readBigInt64BE(offset: Number = definedExternally): js.numbers.BigInt
 
     /**
      * Reads a signed, little-endian 64-bit integer from `buf` at the specified`offset`.
@@ -688,7 +688,7 @@ sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default
      * @since v12.0.0, v10.20.0
      * @param [offset=0] Number of bytes to skip before starting to read. Must satisfy: `0 <= offset <= buf.length - 8`.
      */
-    fun readBigInt64LE(offset: Number = definedExternally): js.core.BigInt
+    fun readBigInt64LE(offset: Number = definedExternally): js.numbers.BigInt
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as an unsigned, little-endian integer supporting

@@ -1,6 +1,6 @@
 package js.temporal
 
-import js.core.BigInt
+import js.numbers.BigInt
 import js.numbers.Int53
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally

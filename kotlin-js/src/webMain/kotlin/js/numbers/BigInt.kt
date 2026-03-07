@@ -2,8 +2,9 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package js.core
+package js.numbers
 
+import js.core.JsPrimitive
 import js.function.JsFunction
 import js.function.invoke
 import js.math.*

@@ -6,9 +6,9 @@
 
 package web.assembly
 
-import js.core.BigInt
 import js.core.Void
 import js.function.JsFunction
+import js.numbers.BigInt
 import js.numbers.JsDouble
 import js.numbers.JsFloat
 import js.numbers.JsInt

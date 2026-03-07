@@ -1,10 +1,10 @@
 package js.iterable
 
-import js.core.BigInt
-import js.core.n
 import js.function.invoke
 import js.generator.AsyncGenerator
 import js.generator.AsyncGeneratorFunction
+import js.numbers.BigInt
+import js.numbers.n
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test

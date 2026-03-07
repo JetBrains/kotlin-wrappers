@@ -13,7 +13,7 @@ sealed external interface Histogram {
      * The number of samples recorded by the histogram.
      * v17.4.0, v16.14.0
      */
-    val countBigInt: js.core.BigInt
+    val countBigInt: js.numbers.BigInt
 
     /**
      * The number of times the event loop delay exceeded the maximum 1 hour event
@@ -26,7 +26,7 @@ sealed external interface Histogram {
      * The number of times the event loop delay exceeded the maximum 1 hour event loop delay threshold.
      * @since v17.4.0, v16.14.0
      */
-    val exceedsBigInt: js.core.BigInt
+    val exceedsBigInt: js.numbers.BigInt
 
     /**
      * The maximum recorded event loop delay.
@@ -56,7 +56,7 @@ sealed external interface Histogram {
      * The minimum recorded event loop delay.
      * v17.4.0, v16.14.0
      */
-    val minBigInt: js.core.BigInt
+    val minBigInt: js.numbers.BigInt
 
     /**
      * Returns the value at the given percentile.
@@ -70,7 +70,7 @@ sealed external interface Histogram {
      * @since v17.4.0, v16.14.0
      * @param percentile A percentile value in the range (0, 100].
      */
-    fun percentileBigInt(percentile: Number): js.core.BigInt
+    fun percentileBigInt(percentile: Number): js.numbers.BigInt
 
     /**
      * Returns a `Map` object detailing the accumulated percentile distribution.
@@ -82,7 +82,7 @@ sealed external interface Histogram {
      * Returns a `Map` object detailing the accumulated percentile distribution.
      * @since v17.4.0, v16.14.0
      */
-    val percentilesBigInt: js.collections.ReadonlyMap<js.core.BigInt, js.core.BigInt>
+    val percentilesBigInt: js.collections.ReadonlyMap<js.numbers.BigInt, js.numbers.BigInt>
 
     /**
      * Resets the collected histogram data.

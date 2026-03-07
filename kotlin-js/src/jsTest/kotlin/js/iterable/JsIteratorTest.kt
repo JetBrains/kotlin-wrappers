@@ -1,8 +1,8 @@
 package js.iterable
 
 import js.collections.JsSet
-import js.core.BigInt
-import js.core.n
+import js.numbers.BigInt
+import js.numbers.n
 import js.symbol.Symbol
 import kotlin.test.Test
 import kotlin.test.assertEquals

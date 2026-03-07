@@ -39,7 +39,7 @@ external fun generatePrime(
 external fun generatePrime(
     size: Number,
     options: GeneratePrimeOptionsBigInt,
-    callback: (err: js.errors.JsError?, prime: js.core.BigInt) -> Unit,
+    callback: (err: js.errors.JsError?, prime: js.numbers.BigInt) -> Unit,
 )
 
 external fun generatePrime(

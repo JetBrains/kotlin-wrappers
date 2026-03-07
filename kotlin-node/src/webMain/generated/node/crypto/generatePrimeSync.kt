@@ -36,7 +36,7 @@ external fun generatePrimeSync(size: Number): js.buffer.ArrayBuffer
 external fun generatePrimeSync(
     size: Number,
     options: GeneratePrimeOptionsBigInt,
-): js.core.BigInt
+): js.numbers.BigInt
 
 external fun generatePrimeSync(
     size: Number,

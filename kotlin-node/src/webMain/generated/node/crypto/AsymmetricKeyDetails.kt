@@ -11,7 +11,7 @@ sealed external interface AsymmetricKeyDetails {
     /**
      * Public exponent (RSA).
      */
-    var publicExponent: js.core.BigInt?
+    var publicExponent: js.numbers.BigInt?
 
     /**
      * Name of the message digest (RSA-PSS).

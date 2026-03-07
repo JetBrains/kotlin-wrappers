@@ -2,9 +2,9 @@
 
 package node.fs
 
-sealed external interface BigIntStats : StatsBase<js.core.BigInt> {
-    var atimeNs: js.core.BigInt
-    var mtimeNs: js.core.BigInt
-    var ctimeNs: js.core.BigInt
-    var birthtimeNs: js.core.BigInt
+sealed external interface BigIntStats : StatsBase<js.numbers.BigInt> {
+    var atimeNs: js.numbers.BigInt
+    var mtimeNs: js.numbers.BigInt
+    var ctimeNs: js.numbers.BigInt
+    var birthtimeNs: js.numbers.BigInt
 }

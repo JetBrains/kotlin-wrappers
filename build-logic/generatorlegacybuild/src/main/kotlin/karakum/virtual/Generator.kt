@@ -12,7 +12,7 @@ private val DEFAULT_IMPORTS = listOf(
     "js.array.Tuple4",
     "js.array.Tuple5",
     "js.collections.ReadonlyMap",
-    "js.core.BigInt",
+    "js.numbers.BigInt",
     "js.core.Void",
     "js.internal.InternalApi",
     "js.promise.Promise",

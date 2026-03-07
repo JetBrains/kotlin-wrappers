@@ -1,8 +1,8 @@
 package js.reflect
 
-import js.core.BigInt
-import js.core.n
 import js.globals.globalThis
+import js.numbers.BigInt
+import js.numbers.n
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

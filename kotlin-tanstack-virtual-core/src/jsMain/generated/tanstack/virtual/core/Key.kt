@@ -2,8 +2,8 @@
 
 package tanstack.virtual.core
 
-import js.core.BigInt
 import js.internal.InternalApi
+import js.numbers.BigInt
 import js.reflect.unsafeCast
 
 @SubclassOptInRequired(InternalApi::class)

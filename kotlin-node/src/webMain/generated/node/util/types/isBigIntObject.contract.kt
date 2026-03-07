@@ -2,7 +2,7 @@
 
 package node.util.types
 
-import js.core.BigInt
+import js.numbers.BigInt
 import kotlin.contracts.contract
 
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")

@@ -57,5 +57,5 @@ sealed external interface HRTime {
      * ```
      * @since v10.7.0
      */
-    fun bigint(): js.core.BigInt
+    fun bigint(): js.numbers.BigInt
 }
