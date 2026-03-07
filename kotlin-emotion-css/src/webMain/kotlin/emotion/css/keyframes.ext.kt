@@ -3,7 +3,7 @@ package emotion.css
 import csstype.CssDsl
 import csstype.Properties
 import js.objects.Record
-import js.objects.emptyRecord
+import js.objects.recordOf
 import js.objects.unsafeJso
 import web.cssom.AnimationName
 import web.cssom.Percentage
@@ -16,7 +16,7 @@ private val TO_PERCENTAGE = 100.pct
 
 @CssDsl
 class KeyframesBuilder {
-    private val keyframes: Keyframes = emptyRecord()
+    private val keyframes: Keyframes = recordOf()
 
     operator fun Percentage.invoke(
         block: Properties.() -> Unit,
