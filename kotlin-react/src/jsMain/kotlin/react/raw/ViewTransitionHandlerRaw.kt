@@ -7,6 +7,7 @@ import react.ViewTransitionType
 import react.canary.ReactCanary
 
 @ReactCanary
+internal /* raw */
 typealias ViewTransitionHandlerRaw = (
     instance: ViewTransitionInstance,
     types: ReadonlyArray<ViewTransitionType>,

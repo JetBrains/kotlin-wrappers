@@ -10,6 +10,7 @@ import react.ActionStateInstance2
  * [Online Documentation](https://react.dev/reference/react/useActionState)
  */
 @JsName("useActionState")
+internal /* raw */
 external fun <S> useActionStateRaw(
     action: (state: S) -> PromiseResult<S>,
     initialState: S,
@@ -20,6 +21,7 @@ external fun <S> useActionStateRaw(
  * [Online Documentation](https://react.dev/reference/react/useActionState)
  */
 @JsName("useActionState")
+internal /* raw */
 external fun <S, P> useActionStateRaw(
     action: (state: S, payload: P) -> PromiseResult<S>,
     initialState: S,

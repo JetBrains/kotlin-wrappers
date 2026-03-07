@@ -9,6 +9,7 @@ import react.DependencyList
  * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 @JsName("useEffect")
+internal /* raw */
 external fun useEffectRaw(
     effect: () -> Cleanup?,
     dependencies: DependencyList = definedExternally,
