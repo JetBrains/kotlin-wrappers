@@ -10,10 +10,10 @@ import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
 @JsName("Number")
-external class JsNumber : Localizable<NumberFormatOptions> {
-    internal constructor(value: Int)
-    internal constructor(value: Double)
-    internal constructor(value: String)
+private external class JsNumber :
+    Localizable<NumberFormatOptions> {
+    constructor(value: Int)
+    constructor(value: Double)
 
     fun toExponential(fractionDigits: Int = definedExternally): String
     fun toFixed(digits: Int = definedExternally): String
