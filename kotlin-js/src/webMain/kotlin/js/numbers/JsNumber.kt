@@ -12,6 +12,7 @@ import kotlin.js.definedExternally
 @JsName("Number")
 private external class JsNumber :
     Localizable<NumberFormatOptions> {
+
     constructor(value: Int)
     constructor(value: Double)
 
