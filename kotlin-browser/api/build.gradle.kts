@@ -65,6 +65,8 @@ fun getApiItems(
     }
 
     return content
+        .replace("private external ", "")
+        .replace("internal external ", "")
         .splitToSequence(
             "external interface ",
             "external class ",
