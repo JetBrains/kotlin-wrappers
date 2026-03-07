@@ -1,9 +1,9 @@
 package js.promise
 
-import js.core.plus
 import js.errors.JsError
 import js.numbers.BigInt
 import js.numbers.n
+import js.numbers.plus
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
