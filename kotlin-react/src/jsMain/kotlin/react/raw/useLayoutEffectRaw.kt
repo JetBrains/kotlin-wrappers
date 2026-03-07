@@ -2,15 +2,9 @@
 
 package react.raw
 
-import react.Cleanup
-import react.DependencyList
-
 /**
  * [Online Documentation](https://react.dev/reference/react/useLayoutEffect)
  */
 @JsName("useLayoutEffect")
 internal /* raw */
-external fun useLayoutEffectRaw(
-    effect: () -> Cleanup?,
-    dependencies: DependencyList = definedExternally,
-)
+external val useLayoutEffectRaw: EffectHook
