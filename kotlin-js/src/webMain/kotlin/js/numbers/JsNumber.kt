@@ -6,6 +6,7 @@ import js.intl.NumberFormatOptions
 import js.intl.UnicodeBCP47LocaleIdentifier
 import kotlin.js.JsAny
 import kotlin.js.JsName
+import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
 @JsName("Number")
@@ -17,17 +18,25 @@ external class JsNumber : Localizable<NumberFormatOptions> {
     fun toExponential(fractionDigits: Int = definedExternally): String
     fun toFixed(digits: Int = definedExternally): String
     fun toPrecision(precision: Int = definedExternally): String
-
-    companion object {
-        val MAX_SAFE_INTEGER: Double
-        val MIN_SAFE_INTEGER: Double
-
-        fun isFinite(number: JsAny?): Boolean
-        fun isInteger(number: JsAny?): Boolean
-        fun isNaN(number: JsAny?): Boolean
-        fun isSafeInteger(number: JsAny?): Boolean
-    }
 }
+
+@JsQualifier("Number")
+external val MAX_SAFE_INTEGER: Double
+
+@JsQualifier("Number")
+external val MIN_SAFE_INTEGER: Double
+
+@JsQualifier("Number")
+external fun isFinite(number: JsAny?): Boolean
+
+@JsQualifier("Number")
+external fun isInteger(number: JsAny?): Boolean
+
+@JsQualifier("Number")
+external fun isNaN(number: JsAny?): Boolean
+
+@JsQualifier("Number")
+external fun isSafeInteger(number: JsAny?): Boolean
 
 fun Int.toExponential(): String =
     JsNumber(this).toExponential()
