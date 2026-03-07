@@ -4,7 +4,7 @@ package web.audio
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsDouble
+import js.numbers.JsDouble
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Float32Array

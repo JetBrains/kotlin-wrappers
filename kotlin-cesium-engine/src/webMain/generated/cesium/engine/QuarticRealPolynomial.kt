@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * Defines functions for 4th order polynomial functions of one variable with only real coefficients.

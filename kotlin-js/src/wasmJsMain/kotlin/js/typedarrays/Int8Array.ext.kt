@@ -1,6 +1,6 @@
 package js.typedarrays
 
-import js.core.JsNumbers.toKotlinByte
+import js.numbers.JsNumbers.toKotlinByte
 
 actual fun Int8Array<*>.toByteArray(): ByteArray =
     ByteArray(size = length) { index ->

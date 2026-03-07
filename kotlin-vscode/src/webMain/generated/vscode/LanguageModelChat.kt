@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsInt
+import js.numbers.JsInt
 import js.promise.PromiseLike
 import kotlin.js.definedExternally
 

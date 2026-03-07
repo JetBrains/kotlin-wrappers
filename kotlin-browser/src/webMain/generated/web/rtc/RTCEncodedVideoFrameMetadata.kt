@@ -3,8 +3,8 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.core.JsUInt53
 import js.numbers.Int53
+import js.numbers.JsUInt53
 import js.numbers.UInt53
 import kotlinx.js.JsPlainObject
 

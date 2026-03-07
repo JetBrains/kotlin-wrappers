@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * A 3x3 matrix, indexable as a column-major order array.

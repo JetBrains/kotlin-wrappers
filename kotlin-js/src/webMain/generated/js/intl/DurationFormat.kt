@@ -3,7 +3,7 @@
 package js.intl
 
 import js.array.ReadonlyArray
-import js.core.JsInt
+import js.numbers.JsInt
 import js.objects.ReadonlyRecord
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally

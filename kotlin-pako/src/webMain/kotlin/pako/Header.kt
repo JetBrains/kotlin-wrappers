@@ -1,8 +1,8 @@
 package pako
 
 import js.array.ReadonlyArray
-import js.core.JsUShort
 import js.numbers.Int53
+import js.numbers.JsUShort
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

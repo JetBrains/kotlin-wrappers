@@ -2,7 +2,7 @@
     "EXPECTED_EXTERNAL_DECLARATION",
 )
 
-package js.core
+package js.numbers
 
 import kotlin.js.JsAny
 

@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.core.JsUInt
+import js.numbers.JsUInt
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

@@ -2,7 +2,7 @@
 
 package web.time
 
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMHighResTimeStamp)

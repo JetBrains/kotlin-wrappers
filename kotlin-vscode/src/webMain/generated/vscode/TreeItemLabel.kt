@@ -4,7 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
-import js.core.JsInt
+import js.numbers.JsInt
 import kotlinx.js.JsPlainObject
 
 /**

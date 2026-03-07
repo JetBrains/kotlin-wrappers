@@ -2,6 +2,6 @@
 
 package web.gl
 
-import js.core.JsUInt
+import js.numbers.JsUInt
 
 typealias GLuint = JsUInt

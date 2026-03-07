@@ -2,6 +2,6 @@
 
 package web.gpu
 
-import js.core.JsUInt53
+import js.numbers.JsUInt53
 
 typealias GPUSize64Out = JsUInt53

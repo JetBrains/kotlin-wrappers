@@ -1,4 +1,4 @@
-package js.core
+package js.numbers
 
 actual typealias JsFloat16 = JsNumber
 actual typealias JsFloat = JsNumber

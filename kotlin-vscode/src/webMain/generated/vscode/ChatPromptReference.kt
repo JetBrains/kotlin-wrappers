@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.Tuple2
-import js.core.JsInt
+import js.numbers.JsInt
 import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 

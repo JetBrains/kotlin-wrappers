@@ -5,7 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * Creates a Matrix3 that describes a covariance matrix (which is

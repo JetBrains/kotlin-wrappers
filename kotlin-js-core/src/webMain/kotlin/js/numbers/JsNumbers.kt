@@ -1,4 +1,4 @@
-package js.core
+package js.numbers
 
 expect object JsNumbers {
     inline fun JsFloat.toKotlinFloat(): Float

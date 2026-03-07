@@ -4,7 +4,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.buffer.DataView
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * Reads and returns a value with the given type

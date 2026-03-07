@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsInt
 import js.core.Void
+import js.numbers.JsInt
 import js.promise.PromiseLike
 
 /**

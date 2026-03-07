@@ -2,8 +2,8 @@ package web.usb
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
-import js.core.JsUInt
 import js.core.Void
+import js.numbers.JsUInt
 import js.promise.Promise
 import js.promise.await
 import web.experimental.ExperimentalWebApi

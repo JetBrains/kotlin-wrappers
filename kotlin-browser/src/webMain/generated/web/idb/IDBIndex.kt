@@ -3,7 +3,7 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.JsInt
+import js.numbers.JsInt
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
 

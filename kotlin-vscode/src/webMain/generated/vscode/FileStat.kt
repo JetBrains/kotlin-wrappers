@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsInt53
+import js.numbers.JsInt53
 import kotlinx.js.JsPlainObject
 
 /**

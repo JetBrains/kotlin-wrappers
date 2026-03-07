@@ -3,7 +3,7 @@
 package web.animations
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 import kotlin.js.JsAny
 
 external interface PropertyIndexedKeyframes {

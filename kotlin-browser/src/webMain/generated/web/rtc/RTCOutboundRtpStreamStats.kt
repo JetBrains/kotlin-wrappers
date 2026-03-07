@@ -2,7 +2,7 @@
 
 package web.rtc
 
-import js.core.JsDouble
+import js.numbers.JsDouble
 import js.numbers.UInt53
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject

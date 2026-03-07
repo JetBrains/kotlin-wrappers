@@ -3,8 +3,8 @@ package js.typedarrays
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
-import js.core.JsDouble
 import js.iterable.JsIterable
+import js.numbers.JsDouble
 import js.serialization.Serializable
 import kotlin.js.definedExternally
 

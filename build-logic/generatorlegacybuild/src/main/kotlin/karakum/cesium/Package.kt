@@ -7,8 +7,8 @@ import js.buffer.DataView
 import js.collections.ReadonlyMap
 import kotlin.js.JsAny
 import kotlin.js.JsBoolean
-import js.core.JsDouble
-import js.core.JsInt
+import js.numbers.JsDouble
+import js.numbers.JsInt
 import kotlin.js.JsString
 import js.core.Void
 import js.date.Date

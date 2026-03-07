@@ -6,7 +6,7 @@ package cesium.widgets
 
 import cesium.engine.Color
 import js.collections.ReadonlyMap
-import js.core.JsInt
+import js.numbers.JsInt
 
 /**
  * TODO: Missing description

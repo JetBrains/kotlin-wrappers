@@ -77,9 +77,9 @@ private fun fileContent(
         import js.array.Tuple2
         import kotlin.js.JsAny
         import kotlin.js.JsBoolean
-        import js.core.JsDouble
-        import js.core.JsInt
-        import js.core.JsInt53
+        import js.numbers.JsDouble
+        import js.numbers.JsInt
+        import js.numbers.JsInt53
         import kotlin.js.JsString
         import js.core.Void
         import js.date.Date

@@ -5,8 +5,8 @@ package web.cssom
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.collections.ListLike
-import js.core.JsInt
 import js.iterable.JsIterator
+import js.numbers.JsInt
 import web.geometry.DOMMatrix
 
 /**

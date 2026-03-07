@@ -7,8 +7,8 @@
 package web.canvas
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
 import js.internal.InternalApi
+import js.numbers.JsDouble
 import kotlin.js.definedExternally
 
 /* mixin */

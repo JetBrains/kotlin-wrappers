@@ -3,7 +3,7 @@
 package web.intersection
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 import web.dom.Element
 import web.dom.ParentNode
 import kotlin.js.definedExternally

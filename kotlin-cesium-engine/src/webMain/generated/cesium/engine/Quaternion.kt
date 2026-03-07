@@ -6,7 +6,7 @@ package cesium.engine
 
 import cesium.engine.Quaternion.Companion.convertPackedArrayForInterpolation
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * A set of 4-dimensional coordinates used to represent rotation in 3-dimensional space.

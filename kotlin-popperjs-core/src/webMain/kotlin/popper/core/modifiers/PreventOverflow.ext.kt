@@ -1,6 +1,6 @@
 package popper.core.modifiers
 
-import js.core.JsDouble
+import js.numbers.JsDouble
 import js.reflect.unsafeCast
 
 inline fun TetherOffset(

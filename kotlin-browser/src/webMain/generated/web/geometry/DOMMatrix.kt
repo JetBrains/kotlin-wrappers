@@ -4,7 +4,7 @@ package web.geometry
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsDouble
+import js.numbers.JsDouble
 import js.serialization.Serializable
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array

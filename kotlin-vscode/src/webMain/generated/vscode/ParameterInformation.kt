@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.Tuple2
-import js.core.JsInt
+import js.numbers.JsInt
 import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally

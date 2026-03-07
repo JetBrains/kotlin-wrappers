@@ -6,8 +6,12 @@
 
 package web.assembly
 
-import js.core.*
+import js.core.BigInt
+import js.core.Void
 import js.function.JsFunction
+import js.numbers.JsDouble
+import js.numbers.JsFloat
+import js.numbers.JsInt
 import js.reflect.unsafeCast
 import kotlin.js.JsAny
 

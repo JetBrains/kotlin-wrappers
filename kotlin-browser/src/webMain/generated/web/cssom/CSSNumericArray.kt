@@ -4,8 +4,8 @@ package web.cssom
 
 import js.array.Tuple2
 import js.collections.ListLike
-import js.core.JsInt
 import js.iterable.JsIterator
+import js.numbers.JsInt
 
 /**
  * The **`CSSNumericArray`** interface of the CSS Typed Object Model API contains a list of CSSNumericValue objects.

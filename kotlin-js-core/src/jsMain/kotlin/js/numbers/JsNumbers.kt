@@ -1,4 +1,4 @@
-package js.core
+package js.numbers
 
 actual object JsNumbers {
     actual inline fun JsFloat.toKotlinFloat(): Float = this

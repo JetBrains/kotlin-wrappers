@@ -3,7 +3,7 @@
 package web.midi
 
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 

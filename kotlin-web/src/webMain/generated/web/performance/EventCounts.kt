@@ -3,7 +3,7 @@
 package web.performance
 
 import js.collections.ReadonlyMap
-import js.core.JsInt
+import js.numbers.JsInt
 import web.events.EventType
 
 sealed /* final */

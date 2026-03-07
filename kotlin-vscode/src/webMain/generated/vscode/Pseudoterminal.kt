@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsInt
+import js.numbers.JsInt
 import kotlin.js.JsString
 
 /**

@@ -1,7 +1,7 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
-import js.core.JsNumbers.toJsByte
+import js.numbers.JsNumbers.toJsByte
 
 actual fun ByteArray.toInt8Array(): Int8Array<ArrayBuffer> =
     Int8Array<ArrayBuffer>(length = size)

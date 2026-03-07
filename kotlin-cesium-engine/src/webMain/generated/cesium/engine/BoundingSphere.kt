@@ -6,7 +6,7 @@ package cesium.engine
 
 import cesium.engine.BoundingSphere.Companion.transform
 import js.array.ReadonlyArray
-import js.core.JsDouble
+import js.numbers.JsDouble
 
 /**
  * A bounding sphere with a center and a radius.
