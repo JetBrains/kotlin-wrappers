@@ -1,4 +1,4 @@
-package js.core
+package js.numbers
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
