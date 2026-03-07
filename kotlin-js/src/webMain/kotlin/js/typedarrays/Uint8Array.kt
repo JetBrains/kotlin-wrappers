@@ -3,7 +3,7 @@ package js.typedarrays
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
-import js.core.JsPrimitives.toKotlinUByte
+import js.core.JsNumbers.toKotlinUByte
 import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable

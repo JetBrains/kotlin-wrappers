@@ -1,7 +1,7 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
-import js.core.JsPrimitives.toJsUByte
+import js.core.JsNumbers.toJsUByte
 
 actual fun UByteArray.toInt8Array(): Int8Array<ArrayBuffer> =
     toByteArray().toInt8Array()

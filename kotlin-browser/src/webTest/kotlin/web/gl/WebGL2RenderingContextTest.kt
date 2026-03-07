@@ -1,6 +1,6 @@
 package web.gl
 
-import js.core.JsPrimitives.toJsInt
+import js.core.JsNumbers.toJsInt
 import js.core.contains
 import js.core.plus
 import web.gl.WebGL2RenderingContext.Companion.COLOR_BUFFER_BIT

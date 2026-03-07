@@ -3,7 +3,7 @@ package popper.core.modifiers
 import js.array.Tuple2
 import js.array.tupleOf
 import js.core.JsInt
-import js.core.JsPrimitives.toJsInt
+import js.core.JsNumbers.toJsInt
 import js.reflect.unsafeCast
 
 inline fun Offset(

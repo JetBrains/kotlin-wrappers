@@ -3,7 +3,7 @@
 package web.remoteplayback
 
 import js.core.JsInt
-import js.core.JsPrimitives.toKotlinInt
+import js.core.JsNumbers.toKotlinInt
 import js.core.Void
 import js.promise.Promise
 import js.promise.await

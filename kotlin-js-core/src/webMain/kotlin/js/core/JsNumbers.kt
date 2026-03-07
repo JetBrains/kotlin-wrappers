@@ -1,6 +1,6 @@
 package js.core
 
-expect object JsPrimitives {
+expect object JsNumbers {
     inline fun JsFloat.toKotlinFloat(): Float
     inline fun Float.toJsFloat(): JsFloat
 
