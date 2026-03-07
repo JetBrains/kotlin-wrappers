@@ -2,9 +2,9 @@
 
 package web.time
 
-import js.numbers.Int53
+import js.numbers.UInt53
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EpochTimeStamp)
  */
-typealias EpochTimeStamp = Int53
+typealias EpochTimeStamp = UInt53
