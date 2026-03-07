@@ -1,6 +1,6 @@
 package js.typedarrays
 
-import js.core.Int53
+import js.numbers.Int53
 import kotlinx.js.JsPlainObject
 
 // TODO: merge with `TextEncoderEncodeIntoResult`?

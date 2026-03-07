@@ -2,6 +2,6 @@
 
 package web.gl
 
-import js.core.UInt53
+import js.numbers.UInt53
 
 typealias GLuint64 = UInt53

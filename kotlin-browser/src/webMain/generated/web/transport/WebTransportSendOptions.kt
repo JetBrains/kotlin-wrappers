@@ -2,7 +2,7 @@
 
 package web.transport
 
-import js.core.Int53
+import js.numbers.Int53
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

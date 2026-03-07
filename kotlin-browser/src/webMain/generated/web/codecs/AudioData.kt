@@ -4,8 +4,8 @@ package web.codecs
 
 import js.buffer.AllowSharedBufferSource
 import js.closeable.JsCloseable
-import js.core.Int53
-import js.core.UInt53
+import js.numbers.Int53
+import js.numbers.UInt53
 import js.serialization.Serializable
 import js.serialization.Transferable
 

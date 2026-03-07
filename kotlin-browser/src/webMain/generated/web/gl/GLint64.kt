@@ -2,6 +2,6 @@
 
 package web.gl
 
-import js.core.Int53
+import js.numbers.Int53
 
 typealias GLint64 = Int53

@@ -3,9 +3,9 @@
 package web.abort
 
 import js.array.ReadonlyArray
-import js.core.UInt53
 import js.errors.JsError
 import js.errors.JsErrorLike
+import js.numbers.UInt53
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

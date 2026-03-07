@@ -2,7 +2,7 @@
 
 package web.time
 
-import js.core.Int53
+import js.numbers.Int53
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EpochTimeStamp)

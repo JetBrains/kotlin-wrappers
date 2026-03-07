@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
 import js.promise.Promise
 import js.collections.ReadonlyMap
 import js.core.BigInt
-import js.core.UInt53
+import js.numbers.UInt53
 import js.date.Date
 import js.objects.ReadonlyRecord
 import js.objects.Record

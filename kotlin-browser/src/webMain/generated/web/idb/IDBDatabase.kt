@@ -4,7 +4,7 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.closeable.JsCloseable
-import js.core.UInt53
+import js.numbers.UInt53
 import web.dom.DOMStringList
 import web.events.Event
 import web.events.EventHandler

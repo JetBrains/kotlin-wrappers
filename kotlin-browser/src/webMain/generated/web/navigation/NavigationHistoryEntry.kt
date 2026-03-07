@@ -2,7 +2,7 @@
 
 package web.navigation
 
-import js.core.Int53
+import js.numbers.Int53
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

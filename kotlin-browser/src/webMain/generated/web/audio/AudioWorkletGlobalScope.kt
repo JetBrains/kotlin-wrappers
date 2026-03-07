@@ -2,7 +2,7 @@
 
 package web.audio
 
-import js.core.UInt53
+import js.numbers.UInt53
 import web.worklets.WorkletGlobalScope
 
 /**

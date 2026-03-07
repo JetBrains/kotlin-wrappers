@@ -3,7 +3,7 @@
 package web.gl
 
 import js.buffer.ArrayBufferLike
-import js.core.UInt53
+import js.numbers.UInt53
 import js.typedarrays.Int32Array
 
 /**

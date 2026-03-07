@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.UInt53
+import js.numbers.UInt53
 import web.dom.Node
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsAny

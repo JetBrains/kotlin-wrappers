@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.buffer.ArrayBuffer
-import js.core.Int53
+import js.numbers.Int53
 import js.serialization.Serializable
 
 /**

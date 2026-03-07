@@ -2,7 +2,7 @@
 
 package web.transport
 
-import js.core.Int53
+import js.numbers.Int53
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array

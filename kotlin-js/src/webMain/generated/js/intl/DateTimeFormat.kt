@@ -4,8 +4,8 @@ package js.intl
 
 import js.array.ReadonlyArray
 import js.core.BigInt
-import js.core.Int53
 import js.date.Date
+import js.numbers.Int53
 import js.temporal.*
 import kotlin.js.JsQualifier
 import kotlin.js.JsString

@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import js.core.UInt53
+import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Transferable

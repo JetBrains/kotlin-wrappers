@@ -1,6 +1,6 @@
 package js.buffer
 
-import js.core.Float16
+import js.numbers.Float16
 import js.serialization.Serializable
 import kotlin.js.definedExternally
 

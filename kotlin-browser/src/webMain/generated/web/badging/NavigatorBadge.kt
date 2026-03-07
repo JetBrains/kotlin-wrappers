@@ -6,9 +6,9 @@
 
 package web.badging
 
-import js.core.UInt53
 import js.core.Void
 import js.internal.InternalApi
+import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import kotlin.js.JsName

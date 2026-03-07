@@ -4,7 +4,7 @@ package web.fs
 
 import js.buffer.AllowSharedBufferSource
 import js.closeable.JsCloseable
-import js.core.UInt53
+import js.numbers.UInt53
 import kotlin.js.definedExternally
 
 /**

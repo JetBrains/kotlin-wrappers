@@ -2,8 +2,8 @@
 
 package web.codecs
 
-import js.core.Int53
-import js.core.UInt53
+import js.numbers.Int53
+import js.numbers.UInt53
 import kotlinx.js.JsPlainObject
 import web.geometry.DOMRectReadOnly
 

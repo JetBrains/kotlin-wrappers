@@ -3,11 +3,11 @@
 package js.date
 
 import js.array.ReadonlyArray
-import js.core.Int53
 import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.Localizable
 import js.intl.UnicodeBCP47LocaleIdentifier
+import js.numbers.Int53
 import js.serialization.Serializable
 import js.temporal.Instant
 import kotlin.js.JsAny

@@ -2,7 +2,7 @@
 
 package web.scheduling
 
-import js.core.UInt53
+import js.numbers.UInt53
 import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable

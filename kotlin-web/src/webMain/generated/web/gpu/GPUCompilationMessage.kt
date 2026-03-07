@@ -2,7 +2,7 @@
 
 package web.gpu
 
-import js.core.UInt53
+import js.numbers.UInt53
 import js.serialization.Serializable
 
 /**

@@ -4,7 +4,7 @@ package web.sockets
 
 import js.array.ReadonlyArray
 import js.buffer.BufferSource
-import js.core.UInt53
+import js.numbers.UInt53
 import web.blob.Blob
 import web.buffer.BinaryType
 import web.events.Event

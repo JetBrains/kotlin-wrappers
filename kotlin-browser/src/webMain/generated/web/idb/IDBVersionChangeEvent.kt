@@ -2,7 +2,7 @@
 
 package web.idb
 
-import js.core.UInt53
+import js.numbers.UInt53
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally

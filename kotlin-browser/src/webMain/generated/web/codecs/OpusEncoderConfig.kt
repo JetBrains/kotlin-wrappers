@@ -2,7 +2,7 @@
 
 package web.codecs
 
-import js.core.UInt53
+import js.numbers.UInt53
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

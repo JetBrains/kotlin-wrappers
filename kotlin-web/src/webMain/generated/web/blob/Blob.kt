@@ -4,8 +4,8 @@ package web.blob
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.Int53
-import js.core.UInt53
+import js.numbers.Int53
+import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable

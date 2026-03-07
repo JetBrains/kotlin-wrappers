@@ -3,7 +3,7 @@
 package web.performance
 
 import js.array.ReadonlyArray
-import js.core.UInt53
+import js.numbers.UInt53
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsAny
 

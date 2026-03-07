@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.UInt53
+import js.numbers.UInt53
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

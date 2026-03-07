@@ -2,7 +2,7 @@
 
 package web.streams
 
-import js.core.UInt53
+import js.numbers.UInt53
 import kotlinx.js.JsPlainObject
 import kotlin.js.JsAny
 

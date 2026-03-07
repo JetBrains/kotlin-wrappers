@@ -6,8 +6,8 @@
 
 package web.navigator
 
-import js.core.UInt53
 import js.internal.InternalApi
+import js.numbers.UInt53
 import kotlin.js.definedExternally
 
 /* mixin */
