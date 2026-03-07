@@ -1,4 +1,4 @@
-package js.core
+package js.numbers
 
 import js.array.ReadonlyArray
 import js.intl.Localizable
