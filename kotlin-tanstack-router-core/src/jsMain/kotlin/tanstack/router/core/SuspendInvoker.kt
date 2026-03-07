@@ -3,20 +3,36 @@ package tanstack.router.core
 import js.objects.unsafeJso
 import js.promise.Promise
 import js.promise.await
+import js.reflect.unsafeCast
 
-@JsName("Function")
-external class SuspendInvoker<O : Any, R>
+class SuspendInvoker<O : Any, R>
 private constructor() {
-    internal /* raw */
+    suspend inline operator fun invoke(): R =
+        invokeInternal(invoker = this)
+
+    suspend inline operator fun invoke(
+        noinline block: O.() -> Unit,
+    ): R =
+        invokeInternal(invoker = this, block = block)
+}
+
+private external interface SuspendInvokerInternal<O : Any, R> {
     operator fun invoke(
         options: O,
     ): Promise<R>
 }
 
-suspend operator fun <R> SuspendInvoker<*, R>.invoke(): R =
-    invoke(options = unsafeJso()).await()
+@PublishedApi
+internal suspend fun <R> invokeInternal(
+    invoker: SuspendInvoker<*, R>,
+): R =
+    unsafeCast<SuspendInvokerInternal<*, R>>(invoker)
+        .invoke(options = unsafeJso()).await()
 
-suspend operator fun <O : Any, R> SuspendInvoker<O, R>.invoke(
+@PublishedApi
+internal suspend fun <O : Any, R> invokeInternal(
+    invoker: SuspendInvoker<O, R>,
     block: O.() -> Unit,
 ): R =
-    invoke(options = unsafeJso(block)).await()
+    unsafeCast<SuspendInvokerInternal<O, R>>(invoker)
+        .invoke(options = unsafeJso(block)).await()
