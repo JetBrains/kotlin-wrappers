@@ -5,11 +5,11 @@ package web.blob
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.Int53
-import js.core.JsPrimitives.toKotlinString
 import js.core.UInt53
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
+import js.string.JsStrings.toKotlinString
 import js.typedarrays.Uint8Array
 import web.http.BodyInit
 import web.images.ImageBitmapSource

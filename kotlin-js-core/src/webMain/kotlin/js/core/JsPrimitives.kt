@@ -1,10 +1,6 @@
 package js.core
 
-import kotlin.js.JsString
-
 expect object JsPrimitives {
-    inline fun JsString.toKotlinString(): String
-
     inline fun JsFloat.toKotlinFloat(): Float
     inline fun Float.toJsFloat(): JsFloat
 

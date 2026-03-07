@@ -2,10 +2,10 @@ package jszip
 
 import js.buffer.ArrayBuffer
 import js.buffer.internal.convertToByteArray
-import js.core.JsPrimitives.toKotlinString
 import js.date.Date
 import js.promise.Promise
 import js.promise.await
+import js.string.JsStrings.toKotlinString
 import js.typedarrays.Uint8Array
 import web.blob.Blob
 import kotlin.js.JsAny

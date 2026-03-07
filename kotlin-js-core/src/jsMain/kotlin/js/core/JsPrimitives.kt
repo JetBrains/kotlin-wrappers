@@ -1,8 +1,6 @@
 package js.core
 
 actual object JsPrimitives {
-    actual inline fun JsString.toKotlinString(): String = this
-
     actual inline fun JsFloat.toKotlinFloat(): Float = this
     actual inline fun Float.toJsFloat(): JsFloat = this
 

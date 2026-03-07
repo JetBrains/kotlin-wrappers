@@ -1,9 +1,9 @@
 package web.html
 
-import js.core.JsPrimitives.toKotlinString
 import js.reflect.JsExternalInheritorsOnly
 import js.reflect.unsafeCast
 import js.reflect.upcast
+import js.string.JsStrings.toKotlinString
 import kotlin.js.JsAny
 import kotlin.js.JsString
 

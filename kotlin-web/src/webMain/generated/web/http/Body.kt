@@ -7,10 +7,10 @@
 package web.http
 
 import js.buffer.ArrayBuffer
-import js.core.JsPrimitives.toKotlinString
 import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
+import js.string.JsStrings.toKotlinString
 import js.typedarrays.Uint8Array
 import web.blob.Blob
 import web.form.FormData

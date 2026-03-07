@@ -2,10 +2,10 @@
 
 package web.clipboard
 
-import js.core.JsPrimitives.toKotlinString
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.string.JsStrings.toKotlinString
 import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.JsString
