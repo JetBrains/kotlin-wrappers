@@ -29,9 +29,6 @@ inline operator fun <V : JsAny?> Record<JsString, V>.set(key: String, value: V) 
     set(key.toJsString(), value)
 }
 
-fun <K : JsAny, V : JsAny?> emptyRecord(): Record<K, V> =
-    unsafeJso()
-
 fun <K : JsAny, V : JsAny?> buildRecord(
     block: Record<K, V>.() -> Unit,
 ): Record<K, V> =
