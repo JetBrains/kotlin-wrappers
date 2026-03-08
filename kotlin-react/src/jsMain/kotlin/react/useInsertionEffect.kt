@@ -1,6 +1,6 @@
 package react
 
-import react.internal.createCleanupCallback
+import react.raw.invoke
 import react.raw.useInsertionEffectRaw
 
 /**
@@ -9,8 +9,7 @@ import react.raw.useInsertionEffectRaw
 fun useInsertionEffect(
     effect: suspend CleanupScope.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
-    useInsertionEffectRaw(callback)
+    useInsertionEffectRaw(effect)
 }
 
 /**
@@ -20,6 +19,5 @@ fun useInsertionEffect(
     vararg dependencies: Any?,
     effect: suspend CleanupScope.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
-    useInsertionEffectRaw(callback, dependencies)
+    useInsertionEffectRaw(effect, dependencies)
 }

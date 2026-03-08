@@ -1,6 +1,6 @@
 package react
 
-import react.internal.createCleanupCallback
+import react.raw.invoke
 import react.raw.useEffectRaw
 
 /**
@@ -9,8 +9,7 @@ import react.raw.useEffectRaw
 fun useEffect(
     effect: suspend CleanupScope.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
-    useEffectRaw(callback)
+    useEffectRaw(effect)
 }
 
 /**
@@ -20,8 +19,7 @@ fun useEffect(
     vararg dependencies: Any?,
     effect: suspend CleanupScope.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
-    useEffectRaw(callback, dependencies)
+    useEffectRaw(effect, dependencies)
 }
 
 /**
@@ -30,6 +28,5 @@ fun useEffect(
 fun useEffectOnce(
     effect: suspend CleanupScope.() -> Unit,
 ) {
-    val callback = createCleanupCallback(effect)
-    useEffectRaw(callback, emptyArray())
+    useEffectRaw(effect, emptyArray())
 }
