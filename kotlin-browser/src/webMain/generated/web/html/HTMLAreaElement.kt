@@ -15,7 +15,8 @@ import kotlin.js.JsString
 open external class HTMLAreaElement
 protected constructor() :
     HTMLElement,
-    HTMLHyperlinkElementUtils {
+    HTMLHyperlinkElementUtils,
+    HyperlinkElementUtils {
     /**
      * The **`alt`** property of the HTMLAreaElement interface specifies the text of the hyperlink, defining the textual label for an image map's link. It reflects the <area> element's alt attribute.
      *

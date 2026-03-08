@@ -871,6 +871,7 @@
     "HmacKeyAlgorithm": "web.crypto.HmacKeyAlgorithm",
     "HmacKeyGenParams": "web.crypto.HmacKeyGenParams",
     "HtmlSource": "web.html.HtmlSource",
+    "HyperlinkElementUtils": "web.html.HyperlinkElementUtils",
     "IDBCursor": "web.idb.IDBCursor",
     "IDBCursorDirection": "web.idb.IDBCursorDirection",
     "IDBCursorWithValue": "web.idb.IDBCursorWithValue",
