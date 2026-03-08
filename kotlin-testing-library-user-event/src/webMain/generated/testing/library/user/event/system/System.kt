@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@testing-library/user-event/dist/esm/system/index")
+@file:JsModule("@testing-library/user-event/dist/esm/system/index.js")
 
 package testing.library.user.event.system
 

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@testing-library/user-event/dist/esm/system/pointer/index")
+@file:JsModule("@testing-library/user-event/dist/esm/system/pointer/index.js")
 
 package testing.library.user.event.system.pointer
 

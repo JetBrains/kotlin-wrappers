@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@testing-library/user-event/dist/esm/system/pointer/buttons")
+@file:JsModule("@testing-library/user-event/dist/esm/system/pointer/buttons.js")
 
 package testing.library.user.event.system.pointer.buttons
 

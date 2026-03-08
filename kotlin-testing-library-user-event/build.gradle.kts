@@ -7,4 +7,7 @@ dependencies {
     webMainApi(projects.kotlinBrowser)
 
     webMainApi(npm(jspkg.testingLibrary.userEvent))
+
+    webTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.coroutines.test)
 }

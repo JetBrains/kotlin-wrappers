@@ -88,6 +88,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         isolatedOutputPackage = true
         moduleNameMapper = recordOf(
             "dist/types/" to "dist/esm/",
+            "(.+)" to "$1.js",
         )
         packageNameMapper = recordOf(
             "dist/types/" to "/",
