@@ -2,6 +2,6 @@
 
 package testing.library.user.event.generated
 
-external interface Temp0 {
+external interface TabOptions {
     var shift: Boolean?
 }

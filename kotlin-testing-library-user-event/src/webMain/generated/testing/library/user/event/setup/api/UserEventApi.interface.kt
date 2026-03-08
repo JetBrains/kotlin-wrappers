@@ -19,7 +19,7 @@ package testing.library.user.event.setup.api
 // unhandled import: type from "../utility"
 // unhandled import: upload from "../utility"
 import js.promise.Promise
-import testing.library.user.event.generated.Temp0
+import testing.library.user.event.generated.TabOptions
 import testing.library.user.event.pointer.PointerInput
 import testing.library.user.event.utility.type.typeOptions
 import web.data.DataTransfer
@@ -32,7 +32,7 @@ external interface UserEventApi {
     var tripleClick: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
     var hover: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
     var unhover: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
-    var tab: (/* this: Instance, */ options: (Temp0)? /* use undefined for default */) -> Promise<js.core.Void>
+    var tab: (/* this: Instance, */ options: (TabOptions)? /* use undefined for default */) -> Promise<js.core.Void>
     var keyboard: (/* this: Instance, */ text: String) -> Promise<js.core.Void>
     var copy: (/* this: Instance, */) -> Promise<DataTransfer?>
     var cut: (/* this: Instance, */) -> Promise<DataTransfer?>

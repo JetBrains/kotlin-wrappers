@@ -5,8 +5,8 @@ package testing.library.user.event.setup
 // unhandled import: setupMain from "./setup"
 // unhandled import: * as directApi from "./directApi"
 import js.promise.Promise
-import testing.library.user.event.generated.Temp1
-import testing.library.user.event.generated.Temp2
+import testing.library.user.event.generated.DirectTabOptions
+import testing.library.user.event.generated.DirectTypeOptions
 import testing.library.user.event.options.Options
 import testing.library.user.event.pointer.PointerInput
 import testing.library.user.event.setup.directApi.DirectOptions
@@ -46,7 +46,7 @@ external interface UserEvent {
     val type: (
         element: Element,
         text: String,
-        options: (Temp1)?, // use undefined for default
+        options: (DirectTypeOptions)?, // use undefined for default
     ) -> Promise<js.core.Void>
     val unhover: (element: Element, options: DirectOptions? /* use undefined for default */) -> Promise<js.core.Void>
     val upload: (
@@ -54,5 +54,5 @@ external interface UserEvent {
         fileOrFiles: Any, /* File | File[] */
         options: DirectOptions?, // use undefined for default
     ) -> Promise<js.core.Void>
-    val tab: (options: (Temp2)? /* use undefined for default */) -> Promise<js.core.Void>
+    val tab: (options: (DirectTabOptions)? /* use undefined for default */) -> Promise<js.core.Void>
 }

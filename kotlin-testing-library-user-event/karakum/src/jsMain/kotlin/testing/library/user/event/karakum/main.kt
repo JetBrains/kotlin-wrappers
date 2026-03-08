@@ -5,14 +5,22 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
 import js.objects.unsafeJso
+import testing.library.user.event.karakum.nameResolvers.resolveMouseButtonTypeName
+import testing.library.user.event.karakum.nameResolvers.resolveOptionsParameterName
 import testing.library.user.event.karakum.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
+            convertMouseButtonConstants,
             convertSetupDirect,
             convertUserEventApiTypeAlias,
             convertUtilityTypes,
+        )
+
+        nameResolvers = manyOf(
+            ::resolveMouseButtonTypeName,
+            ::resolveOptionsParameterName,
         )
 
         input = manyOf(
@@ -90,15 +98,14 @@ suspend fun main(args: ReadonlyArray<String>) {
             "index/" to "/",
         )
         importInjector = recordOf(
-            // TODO: fix names
-            "Temp1.kt" to arrayOf(
+            "DirectTabOptions.kt" to arrayOf(
+                "testing.library.user.event.options.Options",
+                "testing.library.user.event.system.System",
+            ),
+            "DirectTypeOptions.kt" to arrayOf(
                 "testing.library.user.event.options.Options",
                 "testing.library.user.event.system.System",
                 "testing.library.user.event.utility.type.typeOptions",
-            ),
-            "Temp2.kt" to arrayOf(
-                "testing.library.user.event.options.Options",
-                "testing.library.user.event.system.System",
             ),
 
             "pointerKey.kt" to arrayOf(
@@ -161,6 +168,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "web.html.HTMLElement",
                 "testing.library.user.event.pointer.PointerInput",
                 "testing.library.user.event.utility.type.typeOptions",
+                "testing.library.user.event.generated.TabOptions",
             ),
 
             "UserEvent.interface.kt" to arrayOf(
@@ -172,6 +180,8 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "testing.library.user.event.pointer.PointerInput",
                 "testing.library.user.event.setup.directApi.DirectOptions",
                 "testing.library.user.event.system.System",
+                "testing.library.user.event.generated.DirectTabOptions",
+                "testing.library.user.event.generated.DirectTypeOptions",
             )
         )
         compilerOptions = unsafeJso {
