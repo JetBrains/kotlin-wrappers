@@ -191,7 +191,7 @@ private val NUMBER_TYPE_MAP = mapOf(
     "AddressValue" to "Int /* i32 | i64 */",
 
     "COSEAlgorithmIdentifier" to "JsInt",
-    "EpochTimeStamp" to "Int53",
+    "EpochTimeStamp" to "UInt53",
 
     "GLclampf" to "Float",
     "GLfloat" to "Float",
