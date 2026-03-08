@@ -72,10 +72,7 @@ val convertGetQueriesForElement = createPlugin { node, context, render ->
             symbol = typeChecker.getAliasedSymbol(symbol)
         }
 
-        val declarations = symbol.declarations
-        ensure(declarations?.size == 1)
-
-        val declaration = ensureNotNull(declarations.firstOrNull())
+        val declaration = ensureNotNull(symbol.declarations?.singleOrNull())
         ensure(isFunctionDeclaration(declaration))
 
         val name = render(node.name)

@@ -5,17 +5,6 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import typescript.*
 
-private fun isDirect(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
-
-    val variable = ensureNotNull(typeScriptService.getParent(node))
-    ensure(isVariableDeclaration(variable))
-
-    val variableNameNode = variable.name
-    ensure(isIdentifier(variableNameNode))
-    ensure(variableNameNode.text == "userEvent")
-} != null
-
 fun resolveOptionsParameterName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
@@ -54,11 +43,5 @@ fun resolveOptionsParameterName(node: Node, context: Context) = nullable {
     val typeLiteral = ensureNotNull(typeScriptService.getParent(property))
     ensure(isTypeLiteralNode(typeLiteral))
 
-    val prefix = if (isDirect(typeLiteral, context)) {
-        "Direct"
-    } else {
-        ""
-    }
-
-    "$prefix${propertyName.replaceFirstChar { it.titlecase() }}${parameterName.replaceFirstChar { it.titlecase() }}"
+    "${propertyName.replaceFirstChar { it.titlecase() }}${parameterName.replaceFirstChar { it.titlecase() }}"
 }
