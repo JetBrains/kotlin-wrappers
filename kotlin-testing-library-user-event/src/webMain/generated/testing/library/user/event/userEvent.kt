@@ -1,0 +1,10 @@
+// Automatically generated - do not modify!
+
+@file:JsModule("@testing-library/user-event/dist/esm/setup/index.js")
+
+package testing.library.user.event
+
+// unhandled import: setupMain from "./setup"
+// unhandled import: * as directApi from "./directApi"
+
+external val userEvent: UserEvent

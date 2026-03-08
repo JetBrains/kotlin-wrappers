@@ -2,14 +2,6 @@ package testing.library.user.event
 
 import js.globals.globalThis
 import kotlinx.coroutines.test.runTest
-import testing.library.user.event.options.PointerEventsCheckLevel
-import testing.library.user.event.setup.api.userEventApi
-import testing.library.user.event.setup.userEvent
-import testing.library.user.event.system.System
-import testing.library.user.event.system.keyboard.DOM_KEY_LOCATION
-import testing.library.user.event.system.keyboard.KeyboardHost
-import testing.library.user.event.system.pointer.PointerHost
-import testing.library.user.event.system.pointer.buttons.MouseButtonConstants
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertIs

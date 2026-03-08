@@ -53,7 +53,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/event/types/FixedDocumentEventMap.kt",
             "**/event/types/SpecificEventInit.kt",
 
-            "**/pointer/pointer.kt",
+            "**/pointer/index/pointer.kt",
 
             "**/setup/directApi/clear.kt",
             "**/setup/directApi/click.kt",
@@ -102,73 +102,51 @@ suspend fun main(args: ReadonlyArray<String>) {
         packageNameMapper = recordOf(
             "dist/types/" to "/",
 
-            "setup/api/UserEventApi.kt" to "setup/api/UserEventApi.interface.kt",
-            "setup/index/UserEvent.kt" to "setup/index/UserEvent.interface.kt",
+            "event/types/PointerCoords.kt" to "PointerCoords.kt",
 
-            "index/" to "/",
+            "generated/DirectTabOptions.kt" to "DirectTabOptions.kt",
+            "generated/DirectTypeOptions.kt" to "DirectTypeOptions.kt",
+            "generated/TabOptions.kt" to "TabOptions.kt",
+
+            "options/Options.kt" to "Options.kt",
+            "options/PointerEventsCheckLevel.kt" to "PointerEventsCheckLevel.kt",
+
+            "pointer/index/PointerAction.kt" to "PointerAction.kt",
+            "pointer/index/PointerActionInput.kt" to "PointerActionInput.kt",
+            "pointer/index/PointerActionPosition.kt" to "PointerActionPosition.kt",
+            "pointer/index/PointerInput.kt" to "PointerInput.kt",
+            "pointer/index/PointerMoveAction.kt" to "PointerMoveAction.kt",
+            "pointer/index/PointerPressAction.kt" to "PointerPressAction.kt",
+
+            "setup/api/UserEventApi.kt" to "UserEventApi.interface.kt",
+            "setup/api/userEventApi.kt" to "userEventApi.kt",
+            "setup/directApi/DirectOptions.kt" to "DirectOptions.kt",
+            "setup/setup/Config.kt" to "Config.kt",
+            "setup/setup/Instance.kt" to "Instance.kt",
+            "setup/index/UserEvent.kt" to "UserEvent.interface.kt",
+            "setup/index/userEvent.kt" to "userEvent.kt",
+
+            "system/keyboard/DOM_KEY_LOCATION.kt" to "DOM_KEY_LOCATION.kt",
+            "system/keyboard/KeyboardHost.kt" to "KeyboardHost.kt",
+            "system/keyboard/KeyboardHostModifiers.kt" to "KeyboardHostModifiers.kt",
+            "system/keyboard/keyboardKey.kt" to "keyboardKey.kt",
+
+            "system/pointer/buttons/MouseButton.kt" to "MouseButton.kt",
+            "system/pointer/buttons/MouseButtonType.kt" to "MouseButtonType.kt",
+            "system/pointer/shared/CaretPosition.kt" to "CaretPosition.kt",
+            "system/pointer/shared/pointerKey.kt" to "pointerKey.kt",
+            "system/pointer/shared/PointerKeyPointerType.kt" to "PointerKeyPointerType.kt",
+            "system/pointer/shared/PointerPosition.kt" to "PointerPosition.kt",
+            "system/pointer/index/PointerHost.kt" to "PointerHost.kt",
+
+            "system/index/System.kt" to "System.kt",
+
+            "utility/type/typeOptions.kt" to "typeOptions.kt",
         )
         importInjector = recordOf(
-            "DirectTabOptions.kt" to arrayOf(
-                "testing.library.user.event.options.Options",
-                "testing.library.user.event.system.System",
-            ),
-            "DirectTypeOptions.kt" to arrayOf(
-                "testing.library.user.event.options.Options",
-                "testing.library.user.event.system.System",
-                "testing.library.user.event.utility.type.typeOptions",
-            ),
-
-            "pointerKey.kt" to arrayOf(
-                "testing.library.user.event.system.pointer.buttons.MouseButton",
-            ),
-
-            "KeyboardHost.kt" to arrayOf(
-                "testing.library.user.event.setup.setup.Instance",
-                "testing.library.user.event.system.System",
-            ),
-            "PointerHost.kt" to arrayOf(
-                "testing.library.user.event.setup.setup.Instance",
-                "testing.library.user.event.system.System",
-                "testing.library.user.event.system.pointer.shared.pointerKey",
-                "testing.library.user.event.system.pointer.shared.PointerPosition",
-            ),
-
-            "Config.kt" to arrayOf(
-                "testing.library.user.event.options.Options",
-            ),
-
-            "DirectOptions.kt" to arrayOf(
-                "testing.library.user.event.options.Options",
-                "testing.library.user.event.system.System",
-            ),
-
             "Instance.kt" to arrayOf(
                 "web.dom.Element",
                 "web.events.Event",
-                "testing.library.user.event.setup.api.UserEventApi",
-                "testing.library.user.event.system.System",
-            ),
-
-            "Options.kt" to arrayOf(
-                "testing.library.user.event.system.keyboard.keyboardKey",
-                "testing.library.user.event.system.pointer.shared.pointerKey",
-            ),
-
-            "PointerActionPosition.kt" to arrayOf(
-                "testing.library.user.event.event.types.PointerCoords",
-            ),
-
-            "PointerPosition.kt" to arrayOf(
-                "testing.library.user.event.event.types.PointerCoords",
-            ),
-
-            "PointerPressAction.kt" to arrayOf(
-                "testing.library.user.event.system.pointer.shared.pointerKey",
-            ),
-
-            "System.kt" to arrayOf(
-                "testing.library.user.event.system.keyboard.KeyboardHost",
-                "testing.library.user.event.system.pointer.PointerHost",
             ),
 
             "UserEventApi.interface.kt" to arrayOf(
@@ -176,23 +154,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "web.data.DataTransfer",
                 "web.dom.Element",
                 "web.html.HTMLElement",
-                "testing.library.user.event.pointer.PointerInput",
-                "testing.library.user.event.utility.type.typeOptions",
-                "testing.library.user.event.generated.TabOptions",
             ),
-
-            "UserEvent.interface.kt" to arrayOf(
-                "js.promise.Promise",
-                "web.data.DataTransfer",
-                "web.dom.Element",
-                "web.html.HTMLElement",
-                "testing.library.user.event.options.Options",
-                "testing.library.user.event.pointer.PointerInput",
-                "testing.library.user.event.setup.directApi.DirectOptions",
-                "testing.library.user.event.system.System",
-                "testing.library.user.event.generated.DirectTabOptions",
-                "testing.library.user.event.generated.DirectTypeOptions",
-            )
         )
         conflictResolutionStrategy = recordOf(
             "DirectTabOptions.kt" to ConflictResolutionStrategy.replace,
