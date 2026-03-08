@@ -21,14 +21,28 @@ external class KeyboardHost {
     fun getPressedKeys(): js.array.ReadonlyArray<keyboardKey>
 
     /** Press a key */
-    fun keydown(
+    @JsName("keydown")
+    fun keydownAsync(
         instance: Instance,
         keyDef: keyboardKey,
     ): js.promise.Promise<js.core.Void>
 
+    @seskar.js.JsAsync
+    suspend fun keydown(
+        instance: Instance,
+        keyDef: keyboardKey,
+    ): js.core.Void
+
     /** Release a key */
-    fun keyup(
+    @JsName("keyup")
+    fun keyupAsync(
         instance: Instance,
         keyDef: keyboardKey,
     ): js.promise.Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun keyup(
+        instance: Instance,
+        keyDef: keyboardKey,
+    ): js.core.Void
 }

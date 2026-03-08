@@ -1,5 +1,6 @@
 package testing.library.user.event.karakum
 
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseMethodPlugin
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
@@ -7,11 +8,16 @@ import js.objects.recordOf
 import js.objects.unsafeJso
 import testing.library.user.event.karakum.nameResolvers.resolveMouseButtonTypeName
 import testing.library.user.event.karakum.nameResolvers.resolveOptionsParameterName
-import testing.library.user.event.karakum.plugins.*
+import testing.library.user.event.karakum.plugins.convertMouseButtonConstants
+import testing.library.user.event.karakum.plugins.convertSetupDirect
+import testing.library.user.event.karakum.plugins.convertUserEventApiTypeAlias
+import testing.library.user.event.karakum.plugins.convertUtilityTypes
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = manyOf(
+            PromiseMethodPlugin(),
+
             convertMouseButtonConstants,
             convertSetupDirect,
             convertUserEventApiTypeAlias,

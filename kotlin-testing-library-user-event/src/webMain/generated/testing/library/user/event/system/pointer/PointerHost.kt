@@ -20,23 +20,47 @@ external class PointerHost {
 
     fun isKeyPressed(keyDef: pointerKey): Boolean
 
-    fun press(
+    @JsName("press")
+    fun pressAsync(
         instance: Instance,
         keyDef: pointerKey,
         position: PointerPosition,
     ): js.promise.Promise<js.core.Void>
 
-    fun move(
+    @seskar.js.JsAsync
+    suspend fun press(
+        instance: Instance,
+        keyDef: pointerKey,
+        position: PointerPosition,
+    ): js.core.Void
+
+    @JsName("move")
+    fun moveAsync(
         instance: Instance,
         pointerName: String,
         position: PointerPosition,
     ): js.promise.Promise<js.core.Void>
 
-    fun release(
+    @seskar.js.JsAsync
+    suspend fun move(
+        instance: Instance,
+        pointerName: String,
+        position: PointerPosition,
+    ): js.core.Void
+
+    @JsName("release")
+    fun releaseAsync(
         instance: Instance,
         keyDef: pointerKey,
         position: PointerPosition,
     ): js.promise.Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun release(
+        instance: Instance,
+        keyDef: pointerKey,
+        position: PointerPosition,
+    ): js.core.Void
 
     fun getPointerName(keyDef: pointerKey): String
 
