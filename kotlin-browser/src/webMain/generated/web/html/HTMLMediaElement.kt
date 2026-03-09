@@ -268,7 +268,7 @@ private constructor() :
     fun canPlayType(type: String): CanPlayTypeResult
 
     /**
-     * The **`captureStream()`** method of the HTMLMediaElement interface returns a MediaStream object which is streaming a real-time capture of the content being rendered in the media element.
+     * The **`captureStream()`** method of the HTMLMediaElement interface returns a MediaStream object that streams a real-time capture of the content being rendered in the media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/captureStream)
      */

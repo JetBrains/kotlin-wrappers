@@ -11,7 +11,7 @@ open external class CSSFontFaceRule
 private constructor() :
     CSSRule {
     /**
-     * The read-only **`style`** property of the CSSFontFaceRule interface contains a CSSStyleDeclaration object representing the descriptors available in the @font-face rule's body.
+     * The read-only **`style`** property of the CSSFontFaceRule interface returns a CSSFontFaceDescriptors object representing the descriptors available in the @font-face rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontFaceRule/style)
      */

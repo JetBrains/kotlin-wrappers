@@ -107,6 +107,8 @@ private constructor() :
     val currentCSSZoom: Double
 
     /**
+     * The **`customElementRegistry`** read-only property of the Element interface returns the CustomElementRegistry object associated with this element, or null if one has not been set.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/customElementRegistry)
      */
     val customElementRegistry: CustomElementRegistry?

@@ -11,7 +11,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`CustomElementRegistry`** interface provides methods for registering custom elements and querying registered elements. To get an instance of it, use the window.customElements property.
+ * The **`CustomElementRegistry`** interface provides methods for registering custom elements and querying registered elements. To get an instance of it, use the window.customElements property. To create a scoped registry, use the CustomElementRegistry() constructor.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
  */
@@ -42,6 +42,8 @@ open external class CustomElementRegistry {
     fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
 
     /**
+     * The **`initialize()`** method of the CustomElementRegistry interface associates this registry with a DOM subtree, setting the customElementRegistry of each inclusive descendant that doesn't already have one, and attempting to upgrade any custom elements found.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/initialize)
      */
     fun initialize(root: Node)

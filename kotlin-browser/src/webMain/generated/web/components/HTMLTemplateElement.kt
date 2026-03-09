@@ -28,6 +28,8 @@ protected constructor() :
     var shadowRootClonable: Boolean
 
     /**
+     * The **`shadowRootCustomElementRegistry`** property of the HTMLTemplateElement interface reflects the value of the shadowrootcustomelementregistry attribute of the associated <template> element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootCustomElementRegistry)
      */
     var shadowRootCustomElementRegistry: String
