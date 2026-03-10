@@ -85,6 +85,18 @@ external object env {
     val isNewAppInstall: Boolean
 
     /**
+     * Indicates whether the application is running in portable mode.
+     *
+     * Portable mode is enabled when the application is run from a folder that contains
+     * a `data` directory, allowing for self-contained installations.
+     *
+     * Learn more about [Portable Mode](https://code.visualstudio.com/docs/editor/portable).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.isAppPortable)
+     */
+    val isAppPortable: Boolean
+
+    /**
      * Indicates whether the users has telemetry enabled.
      * Can be observed to determine if the extension should send telemetry.
      *

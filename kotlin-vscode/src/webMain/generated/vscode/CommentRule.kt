@@ -3,6 +3,7 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Describes how comments for a language work.
@@ -16,7 +17,7 @@ external interface CommentRule {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentRule.lineComment)
      */
-    var lineComment: String?
+    var lineComment: JsAny /* string | LineCommentRule */?
 
     /**
      * The block comment character pair, like `/​* block comment *&#47;`
