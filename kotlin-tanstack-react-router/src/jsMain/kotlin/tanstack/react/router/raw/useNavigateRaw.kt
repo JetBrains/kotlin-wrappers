@@ -19,6 +19,7 @@ import tanstack.router.core.UseNavigateResult
  *
  * @return A function that accepts `NavigateOptions`.
  */
+@JsName("useNavigate")
 internal /* raw */
 external fun useNavigateRaw(
     options: UseNavigateOptionsRaw = definedExternally,
