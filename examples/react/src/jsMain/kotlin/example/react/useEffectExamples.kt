@@ -1,5 +1,6 @@
 package example.react
 
+import js.coroutines.awaitCancellation
 import kotlinx.coroutines.flow.first
 import react.FC
 import react.dom.html.ReactHTML.span
@@ -29,7 +30,7 @@ val SubscribeExample = FC {
             myText = event.currentTarget.value
         }
 
-        awaitCleanup(removeHandler)
+        awaitCancellation(removeHandler)
     }
 
     // after
@@ -52,7 +53,7 @@ val OnceExample = FC {
             status = "loaded"
         }
 
-        awaitCleanup(removeHandler)
+        awaitCancellation(removeHandler)
     }
 
     // after
@@ -79,7 +80,7 @@ val AwaitAnimationFrameExample = FC {
 
         wait()
 
-        awaitCleanup {
+        awaitCancellation {
             cancelAnimationFrame(frameRequestId)
         }
     }

@@ -1,5 +1,6 @@
 package example.react
 
+import js.coroutines.awaitCancellation
 import js.objects.unsafeJso
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -23,13 +24,13 @@ internal val View = FC {
             throw RuntimeException("Error in 'A' effect!")
         }
 
-        awaitCleanup {
+        awaitCancellation {
             setC { it + 100 }
         }
     }
 
     useEffect(b) {
-        awaitCleanup {
+        awaitCancellation {
             setC { it + 13 }
         }
     }
