@@ -1,16 +1,18 @@
 package react.internal
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
-import web.events.*
-import web.window.clickEvent
-import web.window.mouseUpEvent
-import web.window.window
+import web.events.CHANGE
+import web.events.Event
+import web.events.EventTarget
+import web.events.invoke
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class IsolatedJobTest {
     @Test
-    fun launch() = runTest {
+    fun `should invoke block synchronously`() = runTest {
         var a = 13
 
         runIsolatedJob {
@@ -21,26 +23,14 @@ class IsolatedJobTest {
     }
 
     @Test
-    fun launchWithSubscribe() = runTest {
-        var a = 13
-
-        runIsolatedJob {
-            window.clickEvent().subscribe { /* do nothing */ }
-            window.mouseUpEvent().subscribe { /* do nothing */ }
-
-            a = 42
-        }
-
-        assertEquals(42, a)
-    }
-
-    @Test
-    fun launchWithSubscribeCheck() = runTest {
+    fun `should allow subscribing to events synchronously`() = runTest {
         var a = 13
         val target = EventTarget()
 
         runIsolatedJob {
-            target.changeEvent().subscribe { a++ }
+            launch(Dispatchers.Unconfined) {
+                target.changeEvent().collect { a++ }
+            }
 
             a = 42
         }
