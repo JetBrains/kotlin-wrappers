@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-// subscribe
+@Deprecated("Use `collect` or `launchIn` instead")
 suspend fun <E : Event> Flow<E>.subscribe(
     handler: (E) -> Unit,
 ): Job {
