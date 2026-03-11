@@ -1,3 +1,23 @@
+## 2026.3.10
+
+**BREAKING CHANGE**
+
+### React
+
+* Add `awaitCancellation`cleanup helper
+    * Can be used as a cleanup helper for React hooks
+
+```kotlin
+useEffect {
+    val unsubscribe = api.addHandler { setData(it) }
+
+    awaitCancellation {
+        // will be called when React calls cleanup
+        unsubscribe()
+    }
+}
+```
+
 ## 2026.3.0
 
 **BREAKING CHANGE**
