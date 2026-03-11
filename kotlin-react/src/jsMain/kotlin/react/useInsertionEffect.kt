@@ -1,5 +1,6 @@
 package react
 
+import kotlinx.coroutines.CoroutineScope
 import react.raw.invoke
 import react.raw.useInsertionEffectRaw
 
@@ -7,7 +8,7 @@ import react.raw.useInsertionEffectRaw
  * [Online Documentation](https://react.dev/reference/react/useInsertionEffect)
  */
 fun useInsertionEffect(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useInsertionEffectRaw(effect)
 }
@@ -17,7 +18,7 @@ fun useInsertionEffect(
  */
 fun useInsertionEffect(
     vararg dependencies: Any?,
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useInsertionEffectRaw(effect, dependencies)
 }

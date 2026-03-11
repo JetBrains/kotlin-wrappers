@@ -1,5 +1,6 @@
 package react
 
+import kotlinx.coroutines.CoroutineScope
 import react.raw.invoke
 import react.raw.useLayoutEffectRaw
 
@@ -7,7 +8,7 @@ import react.raw.useLayoutEffectRaw
  * [Online Documentation](https://react.dev/reference/react/useLayoutEffect)
  */
 fun useLayoutEffect(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useLayoutEffectRaw(effect)
 }
@@ -17,7 +18,7 @@ fun useLayoutEffect(
  */
 fun useLayoutEffect(
     vararg dependencies: Any?,
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useLayoutEffectRaw(effect, dependencies)
 }
@@ -26,7 +27,7 @@ fun useLayoutEffect(
  * [Online Documentation](https://react.dev/reference/react/useLayoutEffect)
  */
 fun useLayoutEffectOnce(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useLayoutEffectRaw(effect, emptyArray())
 }

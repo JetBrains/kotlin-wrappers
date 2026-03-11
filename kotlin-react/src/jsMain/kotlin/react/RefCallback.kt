@@ -1,6 +1,7 @@
 package react
 
 import js.reflect.unsafeCast
+import kotlinx.coroutines.CoroutineScope
 import react.internal.createCleanupCallback
 import react.raw.useCallbackRaw
 
@@ -11,12 +12,12 @@ external class RefCallback<T : Any> :
 }
 
 fun <T : Any> RefCallback(
-    block: suspend CleanupScope.(T) -> Unit,
+    block: suspend CoroutineScope.(T) -> Unit,
 ): RefCallback<T> =
     unsafeCast(createCleanupCallback(block))
 
 fun <T : Any> useRefCallback(
     vararg dependencies: Any?,
-    block: suspend CleanupScope.(T) -> Unit,
+    block: suspend CoroutineScope.(T) -> Unit,
 ): RefCallback<T> =
     useCallbackRaw(RefCallback(block), dependencies)

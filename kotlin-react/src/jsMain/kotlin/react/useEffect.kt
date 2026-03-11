@@ -1,5 +1,6 @@
 package react
 
+import kotlinx.coroutines.CoroutineScope
 import react.raw.invoke
 import react.raw.useEffectRaw
 
@@ -7,7 +8,7 @@ import react.raw.useEffectRaw
  * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffect(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useEffectRaw(effect)
 }
@@ -17,7 +18,7 @@ fun useEffect(
  */
 fun useEffect(
     vararg dependencies: Any?,
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useEffectRaw(effect, dependencies)
 }
@@ -26,7 +27,7 @@ fun useEffect(
  * [Online Documentation](https://react.dev/reference/react/useEffect)
  */
 fun useEffectOnce(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     useEffectRaw(effect, emptyArray())
 }

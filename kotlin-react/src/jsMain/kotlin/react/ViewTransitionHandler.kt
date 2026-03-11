@@ -2,6 +2,7 @@ package react
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
+import kotlinx.coroutines.CoroutineScope
 import react.canary.ReactCanary
 import react.internal.createCleanupCallback
 import react.raw.ViewTransitionHandlerRaw
@@ -18,7 +19,7 @@ private fun ViewTransitionHandler(
 
 @ReactCanary
 fun ViewTransitionHandler(
-    block: suspend CleanupScope.(
+    block: suspend CoroutineScope.(
         instance: ViewTransitionInstance,
         types: ReadonlyArray<ViewTransitionType>,
     ) -> Unit,

@@ -1,7 +1,7 @@
 package react.raw
 
+import kotlinx.coroutines.CoroutineScope
 import react.Cleanup
-import react.CleanupScope
 import react.DependencyList
 import react.internal.createCleanupCallback
 
@@ -15,7 +15,7 @@ external interface EffectHook {
 
 internal
 operator fun EffectHook.invoke(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
 ) {
     val callback = createCleanupCallback(effect)
     invoke(callback)
@@ -23,7 +23,7 @@ operator fun EffectHook.invoke(
 
 internal
 operator fun EffectHook.invoke(
-    effect: suspend CleanupScope.() -> Unit,
+    effect: suspend CoroutineScope.() -> Unit,
     dependencies: DependencyList,
 ) {
     val callback = createCleanupCallback(effect)
