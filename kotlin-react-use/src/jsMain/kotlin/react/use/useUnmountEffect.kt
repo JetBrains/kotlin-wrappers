@@ -1,5 +1,6 @@
 package react.use
 
+import js.coroutines.awaitCancellation
 import react.useEffectOnce
 
 /**
@@ -11,6 +12,6 @@ fun useUnmountEffect(
     val latestCallback by useLatest(callback)
 
     useEffectOnce {
-        awaitCleanup(latestCallback)
+        awaitCancellation(latestCallback)
     }
 }

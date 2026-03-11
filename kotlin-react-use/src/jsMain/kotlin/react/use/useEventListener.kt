@@ -1,5 +1,6 @@
 package react.use
 
+import js.coroutines.awaitCancellation
 import react.useEffect
 import web.events.*
 
@@ -17,7 +18,7 @@ fun <E : Event> useEventListener(
     useEffect(target, type) {
         target ?: return@useEffect
 
-        awaitCleanup(
+        awaitCancellation(
             target.addEventHandler(
                 type = type,
                 options = options,
