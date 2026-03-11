@@ -616,14 +616,14 @@ inline val FragmentInstance.progressEvent: EventInstance<Event, HTMLMediaElement
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/promptaction_event)
  */
 @ReactCanary
-inline val FragmentInstance.promptActionEvent: EventInstance<Event, HTMLElement, Node>
+inline val FragmentInstance.promptActionEvent: EventInstance<Event, HTMLGeolocationElement, Node>
     get() = EventInstance(this, "promptaction")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/promptdismiss_event)
  */
 @ReactCanary
-inline val FragmentInstance.promptDismissEvent: EventInstance<Event, HTMLElement, Node>
+inline val FragmentInstance.promptDismissEvent: EventInstance<Event, HTMLGeolocationElement, Node>
     get() = EventInstance(this, "promptdismiss")
 
 /**
@@ -812,7 +812,7 @@ inline val FragmentInstance.unloadEvent: EventInstance<Event, Element, Element>
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/validationstatuschange_event)
  */
 @ReactCanary
-inline val FragmentInstance.validationStatusChangeEvent: EventInstance<Event, HTMLElement, Node>
+inline val FragmentInstance.validationStatusChangeEvent: EventInstance<Event, HTMLGeolocationElement, Node>
     get() = EventInstance(this, "validationstatuschange")
 
 /**
