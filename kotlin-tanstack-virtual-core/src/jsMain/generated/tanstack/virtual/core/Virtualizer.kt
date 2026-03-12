@@ -32,8 +32,8 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     var calculateRange: Updatable<ItemRange?, Tuple4<ReadonlyArray<VirtualItem>, Int, Int, Int>>
     var getVirtualIndexes: Updatable<ReadonlyArray<Int>, Tuple5<(range: Range) -> ReadonlyArray<Int>, Int, Int, Int?, Int?>>
     var indexFromElement: (node: TItemElement) -> Int
-    var resizeItem: (index: Int, size: Int) -> Unit
     var measureElement: (node: TItemElement?) -> Unit
+    var resizeItem: (index: Int, size: Int) -> Unit
     var getVirtualItems: Updatable<ReadonlyArray<VirtualItem>, Tuple2<ReadonlyArray<Int>, ReadonlyArray<VirtualItem>>>
     var getVirtualItemForOffset: (offset: Int) -> VirtualItem
     var getOffsetForAlignment: (toOffset: Int, align: ScrollAlignment, itemSize: Int?) -> Int
