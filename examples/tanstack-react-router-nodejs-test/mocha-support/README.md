@@ -1,8 +1,8 @@
 ## Fixing mismatches between react and kotlin event dispatching
-* With node, mocha, kotlin/js coroutines, global-jsdom, react, and react-testing-libraries in the mix,
-  some code tries to use a browser dispatch model, and some tries to use a node model. This eventually results in
-  events loop hangs, either due to lost events or events never settling (unclear which)
-* Using the wrong dispatcher results in tests seeming to hang, often at the end of calls to `reactTestingLibrary.act`.
+* With node, mocha, kotlin/js coroutines, global-jsdom, react, @testing-library/react, and@testing-library/user-event in
+  the mix, some code tries to use a browser dispatch model, and some tries to use a node model. This eventually results
+  in events loop hangs, either due to lost events or events never settling (unclear which)
+* Using the wrong dispatcher results in tests seeming to hang, often at the end of calls to `react.act`.
 * Kotlin coroutines detects and sets browser default dispatching first since jsdom partially provides this functionality.
   Coroutines only uses node dispatching if browser dispatching is not detected OR if the user agent contains "jsdom".
   By default, node returns a user-agent of "Node <version>"

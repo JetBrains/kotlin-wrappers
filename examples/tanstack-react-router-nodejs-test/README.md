@@ -1,6 +1,6 @@
 # tanstack-react-router-nodejs-test
 
-* Examples to demonstrate how to use react-testing-library to test react applications using tanstack-react-router with the jsNodeTest task
+* Examples to demonstrate how to use @testing-library/react to test react applications using @tanstack/react-router with the jsNodeTest task
 
 * Environment used
   - node
@@ -9,17 +9,18 @@
 
 * Libraries used
   - react
-  - tanstack-react-router
+  - @tanstack/react-router
   - kotlin-test
   - coroutines-test  # when writing unit tests
-  - react-testing-library
+  - @testing-library/react
+  - @testing-library/user-event
 
 ## Issues
-* `react-testing-library` (RTL) expects to run in a `node`/`jsdom` environment to provide a browser-like environment.
+* `@testing-library/react` (RTL) expects to run in a `node`/`jsdom` environment to provide a browser-like environment.
    `Mocha` does not provide `jsdom` by default.
     - Work-around: Change `build.gradle.kts` to modify the test compilation’s generated `package.json` so that `Mocha` requires `global-jsdom`
 
-* `Tanstack React Router` requires `NODE_ENV=test` to run in a node/jsdom environment.  By default, no `NODE_ENV` mode is set.
+* `@tanstack/react-router` requires `NODE_ENV=test` to run in a node/jsdom environment.  By default, no `NODE_ENV` mode is set.
     - Work-around: Change `build.gradle.kts` to set `NODE_ENV=test` when running jsNodeTest
 
 * `kotlinx.coroutines` will pick the wrong default dispatcher in a `node`/`jsdom` environment unless the user-agent
@@ -30,7 +31,8 @@
 
 ## Other considerations
 
-* Writing tests will typically involve having a form of dependency injection.  Integration tests will need to inject your testing scope into your effect hooks when launching coroutines.
+* Writing tests will typically involve having a form of dependency injection.  Integration tests will need to inject
+  your testing scope into your effect hooks when launching coroutines.
 
 ## Run
 
