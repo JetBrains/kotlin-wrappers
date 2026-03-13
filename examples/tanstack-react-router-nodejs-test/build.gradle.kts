@@ -8,7 +8,7 @@ kotlin {
         compilations.named("test") {
             packageJson { customField("mocha", mapOf("require" to arrayOf(
                 // configures coroutines default dispatcher to NodeDispatcher -- needed if using DefaultDispatcher instead of kotlinx-coroutines-test
-                "../../../../../../tanstack-react-router-nodejs-test/mocha-support/append-jsdom-to-user-agent-name.js",
+                projectDir.resolve("mocha-support/append-jsdom-to-user-agent-name.js").absolutePath,
                 // installs browser-like environment used by react-testing-library to run tests
                 "global-jsdom/register"
             )))}

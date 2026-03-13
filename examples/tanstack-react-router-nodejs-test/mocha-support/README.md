@@ -19,8 +19,7 @@
                     mapOf("require"
                             to
                         arrayOf(
-                            // For a typical project, project root is four levels up from node's CWD
-                            "../../../../tools/mocha-support/append-jsdom-to-user-agent-name.js",
+                            projectDir.resolve("mocha-support/append-jsdom-to-user-agent-name.js").absolutePath,
                             "global-jsdom/register"
                         )
                     )
