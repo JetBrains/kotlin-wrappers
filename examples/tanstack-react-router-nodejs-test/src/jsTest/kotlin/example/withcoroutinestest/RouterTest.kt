@@ -27,7 +27,8 @@ class RouterTest {
             CreateMemoryHistoryOpts(
                 initialEntries = arrayOf("/"),
                 initialIndex = 0
-            ))
+            )
+        )
 
         return createRouter(
             RouterOptions(
@@ -38,7 +39,7 @@ class RouterTest {
     }
 
     private fun createTestableApp() = FC {
-        val appRouter: Router = useConstant(::createTestAppRouter )
+        val appRouter: Router = useConstant(::createTestAppRouter)
 
         RouterProvider {
             router = appRouter
@@ -56,85 +57,135 @@ class RouterTest {
     }
 
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage() = runTest {
-        // given
-        val user = userEvent.setup()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage() =
+        runTest {
+            // given
+            val user = userEvent.setup()
 
-        // when
-        render(testApp.create())
+            // when
+            render(testApp.create())
 
-        // then
-        val indexContainer = screen.findByTestId(DataTestId.INDEX_CONTAINER)
-        assertNotNull(indexContainer, "index page")
+            // then
+            val indexContainer = screen.findByTestId(DataTestId.INDEX_CONTAINER)
+            assertNotNull(indexContainer, "index page")
 
-        val topicsLink = screen.findByTestId(DataTestId.INDEX_LINK_TOPICS)
-        assertNotNull(topicsLink, "link to topics on index page")
+            val topicsLink = screen.findByTestId(DataTestId.INDEX_LINK_TOPICS)
+            assertNotNull(topicsLink, "link to topics on index page")
 
-        // when
-        user.click(topicsLink)
+            // when
+            user.click(topicsLink)
 
-        // then
-        val topicsContainer = screen.findByTestId(DataTestId.TOPICS_CONTAINER)
-        assertNotNull(topicsContainer, "topics page")
+            // then
+            val topicsContainer = screen.findByTestId(DataTestId.TOPICS_CONTAINER)
+            assertNotNull(topicsContainer, "topics page")
 
-        val componentTopicLink =
-            within(topicsContainer).findByTestId(DataTestId.TOPIC_LINK_COMPONENTS)
+            val componentTopicLink =
+                within(topicsContainer).findByTestId(DataTestId.TOPIC_LINK_COMPONENTS)
 
-        user.click(componentTopicLink)
+            user.click(componentTopicLink)
 
-        val topicContainer = screen.findByTestId(DataTestId.TOPIC_CONTAINER)
-        assertEquals("Requested topic ID: components", topicContainer.textContent)
-    }
+            val topicContainer = screen.findByTestId(DataTestId.TOPIC_CONTAINER)
+            assertEquals("Requested topic ID: components", topicContainer.textContent)
+        }
 
     // Simulate multiple tests
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage21() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage21() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage22() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage22() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage23() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage23() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage24() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage24() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage25() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage25() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage26() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage26() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage27() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage27() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage28() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage28() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage29() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage29() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage1() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage1() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage2() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage2() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage3() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage3() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage4() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage4() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage5() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage5() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage6() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage6() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage7() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage7() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage8() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage8() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage9() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage9() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage10() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage10() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage11() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage11() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage12() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage12() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage13() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage13() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage14() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage14() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage15() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage15() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
+
     @Test
-    fun shouldClickTopicsLinkAndNavigateToTopicsPage16() = shouldClickTopicsLinkAndNavigateToTopicsPage()
+    fun shouldClickTopicsLinkAndNavigateToTopicsPage16() =
+        shouldClickTopicsLinkAndNavigateToTopicsPage()
 }
