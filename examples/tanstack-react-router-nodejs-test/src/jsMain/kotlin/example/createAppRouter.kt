@@ -3,6 +3,14 @@ package example
 import tanstack.react.router.*
 
 fun createAppRouter(): Router {
+    return createRouter(
+        options = RouterOptions(
+            routeTree = buildRouteTree(),
+        )
+    )
+}
+
+fun buildRouteTree(): RootRoute {
     val rootRoute = createRootRoute()
 
     val indexRoute = createRoute(
@@ -55,9 +63,5 @@ fun createAppRouter(): Router {
         ),
     )
 
-    return createRouter(
-        options = RouterOptions(
-            routeTree = rootRoute,
-        )
-    )
+    return rootRoute
 }
