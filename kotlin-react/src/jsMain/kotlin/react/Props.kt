@@ -11,6 +11,7 @@ package react
 import js.objects.Destructible
 import js.objects.Object
 
+@ReactDsl
 @JsExternalInheritorsOnly
 external interface Props :
     Destructible<Props> {

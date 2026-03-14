@@ -7,7 +7,7 @@ inline fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     jsx(this)
 
 fun <P : Props> ElementType<P>.create(
-    block: @ReactDsl P.() -> Unit,
+    block: P.() -> Unit,
 ): ReactElement<P> =
     jsx(
         type = this,

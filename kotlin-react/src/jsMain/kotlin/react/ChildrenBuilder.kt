@@ -49,6 +49,7 @@ internal fun setDefaultKey(
     builder.asDynamic()[DEFAULT_KEY] = key
 }
 
+@ReactDsl
 sealed external interface ChildrenBuilder {
     inline operator fun ReactNode?.unaryPlus() {
         addChildNode(this)
@@ -76,7 +77,7 @@ sealed external interface ChildrenBuilder {
 
     @ElementBuilder
     inline operator fun <P : Props> ElementType<P>.invoke(
-        noinline block: @ReactDsl P.() -> Unit,
+        noinline block: P.() -> Unit,
     ) {
         addChild(
             type = this,
@@ -87,7 +88,7 @@ sealed external interface ChildrenBuilder {
     @ElementBuilder
     inline operator fun <T> Provider<T>.invoke(
         value: T,
-        noinline block: @ReactDsl ChildrenBuilder.() -> Unit,
+        noinline block: ChildrenBuilder.() -> Unit,
     ) {
         addChild(
             provider = this,
@@ -164,7 +165,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 internal fun <T> ChildrenBuilder.addChild(
     provider: Provider<T>,
     value: T,
-    block: @ReactDsl ChildrenBuilder.() -> Unit,
+    block: ChildrenBuilder.() -> Unit,
 ) {
     addChild(
         type = provider,
