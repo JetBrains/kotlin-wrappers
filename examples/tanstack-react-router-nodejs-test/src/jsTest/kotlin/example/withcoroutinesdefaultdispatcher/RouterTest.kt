@@ -36,7 +36,7 @@ class RouterTestWithoutCoroutinesTestDependency {
         cleanup()
     }
 
-    private suspend fun doTest() {
+    private fun doTest() = JsTestScope.promise {
         // given
         val user = userEvent.setup()
 
@@ -67,84 +67,81 @@ class RouterTestWithoutCoroutinesTestDependency {
     }
 
     @Test
-    fun `should click topics link and navigate to topics page`(): Promise<Unit> =
-        JsTestScope.promise {
-            doTest()
-        }
+    fun `should click topics link and navigate to topics page`() = doTest()
 
     // Simulate multiple tests
     @Test
-    fun `should click topics link and navigate to topics page 21`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 21`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 22`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 22`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 23`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 23`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 24`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 24`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 25`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 25`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 26`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 26`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 27`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 27`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 28`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 28`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 29`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 29`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 1`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 1`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 2`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 2`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 3`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 3`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 4`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 4`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 5`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 5`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 6`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 6`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 7`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 7`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 8`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 8`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 9`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 9`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 10`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 10`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 11`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 11`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 12`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 12`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 13`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 13`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 14`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 14`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 15`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 15`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 16`() = JsTestScope.promise { doTest() }
+    fun `should click topics link and navigate to topics page 16`() = doTest()
 }

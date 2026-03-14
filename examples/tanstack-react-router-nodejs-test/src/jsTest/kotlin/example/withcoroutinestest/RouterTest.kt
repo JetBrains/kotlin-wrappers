@@ -26,7 +26,7 @@ class RouterTest {
         cleanup()
     }
 
-    private suspend fun doTest() {
+    private fun doTest() = runTest {
         // given
         val user = userEvent.setup()
 
@@ -57,84 +57,81 @@ class RouterTest {
     }
 
     @Test
-    fun `should click topics link and navigate to topics page`() =
-        runTest {
-            doTest()
-        }
+    fun `should click topics link and navigate to topics page`() = doTest()
 
     // Simulate multiple tests
     @Test
-    fun `should click topics link and navigate to topics page 21`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 21`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 22`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 22`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 23`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 23`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 24`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 24`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 25`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 25`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 26`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 26`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 27`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 27`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 28`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 28`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 29`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 29`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 1`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 1`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 2`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 2`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 3`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 3`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 4`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 4`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 5`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 5`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 6`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 6`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 7`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 7`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 8`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 8`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 9`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 9`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 10`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 10`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 11`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 11`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 12`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 12`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 13`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 13`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 14`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 14`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 15`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 15`() = doTest()
 
     @Test
-    fun `should click topics link and navigate to topics page 16`() = runTest{ doTest() }
+    fun `should click topics link and navigate to topics page 16`() = doTest()
 }
