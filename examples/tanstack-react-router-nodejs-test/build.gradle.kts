@@ -1,17 +1,25 @@
+import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
+
 plugins {
     id("examplesbuild.kotlin-conventions")
 }
 
 kotlin {
-    js(IR) {
-        nodejs { }
+    js {
+        nodejs()
         compilations.named("test") {
-            packageJson { customField("mocha", mapOf("require" to arrayOf(
-                // configures coroutines default dispatcher to NodeDispatcher -- needed if using DefaultDispatcher instead of kotlinx-coroutines-test
-                projectDir.resolve("mocha-support/force-correct-default-coroutines-dispatcher.js").absolutePath,
-                // installs browser-like environment used by react-testing-library to run tests
-                "global-jsdom/register"
-            )))}
+            packageJson {
+                customField(
+                    "mocha", mapOf(
+                        "require" to arrayOf(
+                            // configures coroutines default dispatcher to NodeDispatcher -- needed if using DefaultDispatcher instead of kotlinx-coroutines-test
+                            projectDir.resolve("mocha-support/force-correct-default-coroutines-dispatcher.js").absolutePath,
+                            // installs browser-like environment used by react-testing-library to run tests
+                            "global-jsdom/register"
+                        )
+                    )
+                )
+            }
         }
     }
 }
@@ -30,7 +38,7 @@ dependencies {
     jsTestImplementation(npm("global-jsdom", "28.0.0"))
 }
 
-tasks.named<org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest>("jsNodeTest") {
+tasks.named<KotlinJsTest>("jsNodeTest") {
     // required to make tanstack react router fire load events in mocha/node/jsdom tests
     environment("NODE_ENV", "test")
 }

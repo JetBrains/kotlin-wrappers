@@ -1,18 +1,10 @@
 package example.mui
 
-import react.FC
-import react.useEffect
-import react.useState
-import web.cssom.Display
-import web.cssom.px
 import mui.material.Box
 import mui.material.Divider
 import mui.material.DividerVariant
-import mui.material.Typography
-import mui.material.styles.TypographyVariant
 import mui.system.sx
-import react.Key
-import react.Props
+import react.FC
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 
@@ -35,14 +27,14 @@ internal val View = FC {
 
 
         DetailItem {
-             label = "Name"
-             value = "John Doe"
-             keyValue = "name"
+            label = "Name"
+            value = "John Doe"
+            keyValue = "name"
         }
         DetailItem {
-             label = "Title"
-             value = "Winner"
-             keyValue = "title"
+            label = "Title"
+            value = "Winner"
+            keyValue = "title"
         }
     }
 

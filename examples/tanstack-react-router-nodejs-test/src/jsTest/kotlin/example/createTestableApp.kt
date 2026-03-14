@@ -1,7 +1,6 @@
 package example
 
 import react.FC
-import react.Props
 import react.use.useConstant
 import tanstack.history.CreateMemoryHistoryOpts
 import tanstack.history.createMemoryHistory

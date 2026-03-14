@@ -1,7 +1,10 @@
 package example
 
 import example.testsupport.DataTestId
-import kotlinx.coroutines.*
+import js.coroutines.promise
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import react.FC
 import react.Props
 import react.create
@@ -10,10 +13,7 @@ import testing.library.dom.within
 import testing.library.react.cleanup
 import testing.library.react.render
 import testing.library.user.event.userEvent
-import js.coroutines.promise
-import js.promise.Promise
 import kotlin.test.*
-import example.createTestableApp
 
 // Run tests with the Default coroutine dispatcher
 // Test needs no knowledge of how coroutines are used

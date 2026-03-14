@@ -2,6 +2,7 @@
 
 * Without `examples/mui-materials/webpack.config.d/workaround-for-mui-libraries-while-using-es2015-compiler-option.js`,
   `jsBrowserDevelopmentRun` gives an error:
+
 ```
 Compiled with problems:
 ERROR
@@ -43,6 +44,7 @@ BREAKING CHANGE: The request '@mui/material/Typography' failed to resolve only b
 The extension in the request is mandatory for it to be fully specified.
 Add the extension to the request.
 ```
+
 * With the patch, jsBrowserDevelopmentRun works.
 
 ### Run

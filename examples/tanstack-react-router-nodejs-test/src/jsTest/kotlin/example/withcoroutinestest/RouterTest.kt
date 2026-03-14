@@ -11,7 +11,6 @@ import testing.library.react.cleanup
 import testing.library.react.render
 import testing.library.user.event.userEvent
 import kotlin.test.*
-import example.createTestableApp
 
 class RouterTest {
     private lateinit var testApp: FC<Props>

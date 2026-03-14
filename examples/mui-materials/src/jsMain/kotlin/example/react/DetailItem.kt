@@ -1,24 +1,18 @@
 package example.mui
 
-import react.FC
-import react.useEffect
-import react.useState
-import web.cssom.Display
-import web.cssom.px
 import mui.material.Box
-import mui.material.Divider
-import mui.material.DividerVariant
 import mui.material.Typography
 import mui.material.styles.TypographyVariant
 import mui.system.sx
+import react.FC
 import react.Key
 import react.Props
 import web.cssom.*
-import web.cssom.Auto.Companion.auto
 
 
-external interface DetailItemProps: Props {
-    var label: String;
+external interface DetailItemProps :
+    Props {
+    var label: String
     var value: String?
     var keyValue: String
 }
