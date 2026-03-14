@@ -1147,11 +1147,24 @@ internal fun convertInterface(
             "DocumentType",
             "Attr",
             "CharacterData",
+                -> result
+                .replace("val ownerDocument:", "override val ownerDocument:")
+                .replace("var textContent: String", "override var textContent: String? // String")
+                .replace("fun getElementById(", "override fun getElementById(")
+
             "Element",
                 -> result
                 .replace("val ownerDocument:", "override val ownerDocument:")
                 .replace("var textContent: String", "override var textContent: String? // String")
                 .replace("fun getElementById(", "override fun getElementById(")
+                .plus("\n")
+                .plus(
+                    // language=kotlin
+                    """
+                    @JsName("data-testid")
+                    var dataTestId: DataTestId?
+                    """.trimIndent(),
+                )
 
             "HTMLOptionsCollection",
                 -> result

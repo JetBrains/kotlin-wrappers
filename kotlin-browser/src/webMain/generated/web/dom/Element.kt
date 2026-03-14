@@ -561,6 +561,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
      */
     override var textContent: String? // String
+
+    @JsName("data-testid")
+    var dataTestId: DataTestId?
 }
 
 /**
