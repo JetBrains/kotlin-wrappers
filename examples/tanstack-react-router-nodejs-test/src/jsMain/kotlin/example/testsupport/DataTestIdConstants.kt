@@ -1,16 +1,28 @@
 package example.testsupport
 
+import web.dom.DataTestId
+
 object DataTestId {
-    const val INDEX_CONTAINER = "INDEX_CONTAINER"
-    const val HOME_CONTAINER = "HOME_CONTAINER"
-    const val ABOUT_CONTAINER = "ABOUT_CONTAINER"
-    const val TOPICS_CONTAINER = "TOPICS_CONTAINER"
-    const val TOPIC_CONTAINER = "TOPIC_CONTAINER"
+    inline val INDEX_CONTAINER: DataTestId
+        get() = DataTestId("INDEX_CONTAINER")
+    inline val HOME_CONTAINER: DataTestId
+        get() = DataTestId("HOME_CONTAINER")
+    inline val ABOUT_CONTAINER: DataTestId
+        get() = DataTestId("ABOUT_CONTAINER")
+    inline val TOPICS_CONTAINER: DataTestId
+        get() = DataTestId("TOPICS_CONTAINER")
+    inline val TOPIC_CONTAINER: DataTestId
+        get() = DataTestId("TOPIC_CONTAINER")
 
-    const val INDEX_LINK_HOME = "INDEX_LINK_HOME"
-    const val INDEX_LINK_ABOUT = "INDEX_LINK_ABOUT"
-    const val INDEX_LINK_TOPICS = "INDEX_LINK_TOPICS"
+    inline val INDEX_LINK_HOME: DataTestId
+        get() = DataTestId("INDEX_LINK_HOME")
+    inline val INDEX_LINK_ABOUT: DataTestId
+        get() = DataTestId("INDEX_LINK_ABOUT")
+    inline val INDEX_LINK_TOPICS: DataTestId
+        get() = DataTestId("INDEX_LINK_TOPICS")
 
-    const val TOPIC_LINK_COMPONENTS = "TOPIC_LINK_COMPONENTS"
-    const val TOPIC_LINK_PROPS_V_STATE = "TOPIC_LINK_PROPS_V_STATE"
+    inline val TOPIC_LINK_COMPONENTS: DataTestId
+        get() = DataTestId("TOPIC_LINK_COMPONENTS")
+    inline val TOPIC_LINK_PROPS_V_STATE: DataTestId
+        get() = DataTestId("TOPIC_LINK_PROPS_V_STATE")
 }
