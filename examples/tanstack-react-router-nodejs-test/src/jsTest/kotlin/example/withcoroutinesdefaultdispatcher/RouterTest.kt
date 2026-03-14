@@ -5,13 +5,6 @@ import kotlinx.coroutines.*
 import react.FC
 import react.Props
 import react.create
-import react.use.useConstant
-import tanstack.history.CreateMemoryHistoryOpts
-import tanstack.history.createMemoryHistory
-import tanstack.react.router.Router
-import tanstack.react.router.RouterOptions
-import tanstack.react.router.RouterProvider
-import tanstack.react.router.createRouter
 import testing.library.dom.screen
 import testing.library.dom.within
 import testing.library.react.cleanup
@@ -20,35 +13,12 @@ import testing.library.user.event.userEvent
 import js.coroutines.promise
 import js.promise.Promise
 import kotlin.test.*
+import example.createTestableApp
 
 // Run tests with the Default coroutine dispatcher
 // Test needs no knowledge of how coroutines are used
 class RouterTestWithoutCoroutinesTestDependency {
     private lateinit var testApp: FC<Props>
-
-    private fun createTestAppRouter(): Router {
-        val history = createMemoryHistory(
-            CreateMemoryHistoryOpts(
-                initialEntries = arrayOf("/"),
-                initialIndex = 0
-            )
-        )
-
-        return createRouter(
-            RouterOptions(
-                routeTree = buildRouteTree(),
-                history = history
-            )
-        )
-    }
-
-    private fun createTestableApp() = FC {
-        val appRouter: Router = useConstant(::createTestAppRouter)
-
-        RouterProvider {
-            router = appRouter
-        }
-    }
 
     // Use dependency injection to inject this test CoroutineScope into your production code instead of MainScope
     object JsTestScope : CoroutineScope {
