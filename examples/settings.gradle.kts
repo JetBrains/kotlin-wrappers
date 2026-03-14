@@ -18,6 +18,7 @@ dependencyResolutionManagement {
 
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
+            library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
         }
 
         create("kotlinWrappers") {
@@ -41,6 +42,7 @@ include("react-lazy-modules-webpack")
 include("serialization-to-jso")
 include("simple-wasm-application")
 include("tanstack-react-router")
+include("tanstack-react-router-nodejs-test")
 include("tanstack-react-table")
 include("tanstack-virtual-table")
 include("tanstack-table-common")
