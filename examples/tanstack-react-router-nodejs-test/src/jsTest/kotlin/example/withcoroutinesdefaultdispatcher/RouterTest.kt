@@ -1,5 +1,6 @@
-package example
+package example.withcoroutinesdefaultdispatcher
 
+import example.createTestableApp
 import example.testsupport.DataTestId
 import js.coroutines.promise
 import kotlinx.coroutines.CoroutineScope

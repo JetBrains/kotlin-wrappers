@@ -1,5 +1,6 @@
-package example
+package example.withcoroutinestest
 
+import example.createTestableApp
 import example.testsupport.DataTestId
 import kotlinx.coroutines.test.runTest
 import react.FC
