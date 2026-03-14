@@ -1,35 +1,29 @@
 package example.withcoroutinesdefaultdispatcher
 
-import example.createTestableApp
+import example.TestApp
 import example.testsupport.DataTestId
 import js.coroutines.promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import react.FC
-import react.Props
 import react.create
 import testing.library.dom.screen
 import testing.library.dom.within
 import testing.library.react.cleanup
 import testing.library.react.render
 import testing.library.user.event.userEvent
-import kotlin.test.*
+import kotlin.test.AfterTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 
 // Run tests with the Default coroutine dispatcher
 // Test needs no knowledge of how coroutines are used
 class RouterTestWithoutCoroutinesTestDependency {
-    private lateinit var testApp: FC<Props>
-
     // Use dependency injection to inject this test CoroutineScope into your production code instead of MainScope
     object JsTestScope : CoroutineScope {
         override val coroutineContext =
             SupervisorJob() + Dispatchers.Default
-    }
-
-    @BeforeTest
-    fun beforeTest() {
-        testApp = createTestableApp()
     }
 
     @AfterTest
@@ -42,7 +36,7 @@ class RouterTestWithoutCoroutinesTestDependency {
         val user = userEvent.setup()
 
         // when
-        render(testApp.create())
+        render(TestApp.create())
 
         // then
         val indexContainer = screen.findByTestId(DataTestId.INDEX_CONTAINER)

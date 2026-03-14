@@ -1,26 +1,20 @@
 package example.withcoroutinestest
 
-import example.createTestableApp
+import example.TestApp
 import example.testsupport.DataTestId
 import kotlinx.coroutines.test.runTest
-import react.FC
-import react.Props
 import react.create
 import testing.library.dom.screen
 import testing.library.dom.within
 import testing.library.react.cleanup
 import testing.library.react.render
 import testing.library.user.event.userEvent
-import kotlin.test.*
+import kotlin.test.AfterTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 
 class RouterTest {
-    private lateinit var testApp: FC<Props>
-
-    @BeforeTest
-    fun beforeTest() {
-        testApp = createTestableApp()
-    }
-
     @AfterTest
     fun afterTest() {
         cleanup()
@@ -31,7 +25,7 @@ class RouterTest {
         val user = userEvent.setup()
 
         // when
-        render(testApp.create())
+        render(TestApp.create())
 
         // then
         val indexContainer = screen.findByTestId(DataTestId.INDEX_CONTAINER)

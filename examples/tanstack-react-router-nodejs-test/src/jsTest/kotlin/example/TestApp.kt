@@ -25,7 +25,7 @@ private fun createTestAppRouter(): Router {
     )
 }
 
-fun createTestableApp() = FC {
+val TestApp = FC {
     val appRouter: Router = useConstant(::createTestAppRouter)
 
     RouterProvider {
