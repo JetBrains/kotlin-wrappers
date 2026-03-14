@@ -27,7 +27,7 @@ dependencies {
     jsTestImplementation(kotlinWrappers.testingLibraryUserEvent)
     jsTestImplementation(kotlinWrappers.testingLibraryReact)
     jsTestImplementation(kotlinWrappers.testingLibraryDom)
-    jsTestImplementation(npm("global-jsdom", "latest"))
+    jsTestImplementation(npm("global-jsdom", "28.0.0"))
 }
 
 tasks.named<org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest>("jsNodeTest") {
