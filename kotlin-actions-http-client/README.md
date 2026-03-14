@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-http-client)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-http-client)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-http-client)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-http-client)
 
 # Module kotlin-actions-http-client
 

@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-material)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-material)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-material)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-material)
 
 # Module kotlin-mui-material
 

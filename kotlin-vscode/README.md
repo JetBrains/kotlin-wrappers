@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-vscode)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-vscode)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-vscode)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-vscode)
 
 # Module kotlin-vscode
 

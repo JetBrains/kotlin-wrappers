@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tauri-apps-api)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-tauri-apps-api)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tauri-apps-api)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tauri-apps-api)
 
 # Module kotlin-tauri-apps-api
 

@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-exec)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-exec)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-exec)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-exec)
 
 # Module kotlin-actions-exec
 

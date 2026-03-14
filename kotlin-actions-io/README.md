@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-io)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-io)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-actions-io)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-actions-io)
 
 # Module kotlin-actions-io
 

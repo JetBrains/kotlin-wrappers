@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-testing-library-dom)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-testing-library-dom)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-testing-library-dom)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-testing-library-dom)
 
 # Module kotlin-testing-library-dom
 

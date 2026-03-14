@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-testing-library-user-event)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-testing-library-user-event)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-testing-library-user-event)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-testing-library-user-event)
 
 # Module kotlin-testing-library-user-event
 

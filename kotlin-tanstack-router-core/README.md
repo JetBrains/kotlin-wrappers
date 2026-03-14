@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-router-core)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-router-core)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-router-core)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-router-core)
 
 # Module kotlin-tanstack-router-core
 

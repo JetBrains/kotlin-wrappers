@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-pako)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-pako)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-pako)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-pako)
 
 # Module kotlin-pako
 

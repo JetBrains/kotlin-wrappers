@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-emotion-styled)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-emotion-styled)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-emotion-styled)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-emotion-styled)
 
 # Module kotlin-emotion-styled
 

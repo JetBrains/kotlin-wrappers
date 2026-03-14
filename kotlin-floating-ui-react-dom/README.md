@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-floating-ui-react-dom)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-floating-ui-react-dom)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-floating-ui-react-dom)](https://central.sonatype.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-floating-ui-react-dom)
 
 # Module kotlin-floating-ui-react-dom
 
