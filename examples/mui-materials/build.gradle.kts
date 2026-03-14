@@ -8,4 +8,5 @@ dependencies {
     jsMainImplementation(kotlinWrappers.reactDom)
     jsMainImplementation(kotlinWrappers.reactUse)
     jsMainImplementation(kotlinWrappers.mui.material)
+    jsMainImplementation(kotlinWrappers.emotion.styled)
 }
