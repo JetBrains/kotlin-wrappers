@@ -184,9 +184,6 @@ include("kotlin-react-dom")
 
 includeKarakum("kotlin-react-dom")
 
-// Kotlin/JS: React DOM Test Utilities wrappers
-include("kotlin-react-dom-test-utils")
-
 // Kotlin/JS: React Select wrappers
 include("kotlin-react-select")
 
