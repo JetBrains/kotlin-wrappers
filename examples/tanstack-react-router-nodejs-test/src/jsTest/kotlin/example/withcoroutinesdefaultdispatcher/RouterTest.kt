@@ -17,7 +17,8 @@ import testing.library.dom.within
 import testing.library.react.cleanup
 import testing.library.react.render
 import testing.library.user.event.userEvent
-import kotlin.js.Promise
+import js.coroutines.promise
+import js.promise.Promise
 import kotlin.test.*
 
 // Run tests with the Default coroutine dispatcher
