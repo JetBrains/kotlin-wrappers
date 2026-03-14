@@ -1,0 +1,18 @@
+[versions]
+coroutines = "1.10.2"
+kotlin = "2.3.10"
+serialization = "1.10.0"
+seskar = "4.34.0"
+
+[libraries]
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+# for convention plugins
+gradlePlugins-jsPlainObjects = { module = "org.jetbrains.kotlin:js-plain-objects", version.ref = "kotlin" }
+gradlePlugins-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradlePlugins-seskar = { module = "io.github.turansky.seskar:seskar-gradle-plugin", version.ref = "seskar" }
+
+[plugins]
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

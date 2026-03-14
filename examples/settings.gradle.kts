@@ -7,18 +7,10 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            val kotlinVersion = extra["kotlin.version"] as String
-            plugin("serialization", "org.jetbrains.kotlin.plugin.serialization").version(kotlinVersion)
-            library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
-
-            val serializationVersion = extra["kotlinx-serialization.version"] as String
-            library("serialization-json", "org.jetbrains.kotlinx", "kotlinx-serialization-json").version(
-                serializationVersion
-            )
-
-            val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
-            library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
-            library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
+            val kotlinVersion = extra.properties["kotlin.version"] as String?
+            if (kotlinVersion != null) {
+                version("kotlin", kotlinVersion)
+            }
         }
 
         create("kotlinWrappers") {
