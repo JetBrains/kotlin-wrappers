@@ -1,6 +1,6 @@
 package example
 
-import example.testsupport.DataTestId
+import example.testsupport.TOPIC_CONTAINER_ID
 import example.testsupport.dataTestId
 import react.FC
 import react.dom.html.ReactHTML.h3
@@ -12,7 +12,7 @@ val Topic = FC {
     }
 
     h3 {
-        dataTestId = DataTestId.TOPIC_CONTAINER
+        dataTestId = TOPIC_CONTAINER_ID
         +"Requested topic ID: $topicId"
     }
 }

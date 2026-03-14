@@ -1,7 +1,6 @@
 package example
 
-import example.testsupport.DataTestId
-import example.testsupport.dataTestId
+import example.testsupport.*
 import react.FC
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.nav
@@ -10,11 +9,11 @@ import tanstack.react.router.Link
 
 val Index = FC {
     nav {
-        dataTestId = DataTestId.INDEX_CONTAINER
+        dataTestId = INDEX_CONTAINER_ID
         ul {
             li {
                 Link {
-                    dataTestId = DataTestId.INDEX_LINK_HOME
+                    dataTestId = INDEX_LINK_HOME_ID
                     to = HOME_PATH
 
                     +"Home"
@@ -22,7 +21,7 @@ val Index = FC {
             }
             li {
                 Link {
-                    dataTestId = DataTestId.INDEX_LINK_ABOUT
+                    dataTestId = INDEX_LINK_ABOUT_ID
                     to = ABOUT_PATH
 
                     +"About"
@@ -30,7 +29,7 @@ val Index = FC {
             }
             li {
                 Link {
-                    dataTestId = DataTestId.INDEX_LINK_TOPICS
+                    dataTestId = INDEX_LINK_TOPICS_ID
                     to = TOPICS_PATH
 
                     +"Topics"

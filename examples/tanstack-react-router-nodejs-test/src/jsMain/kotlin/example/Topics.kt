@@ -1,6 +1,8 @@
 package example
 
-import example.testsupport.DataTestId
+import example.testsupport.TOPICS_CONTAINER_ID
+import example.testsupport.TOPIC_LINK_COMPONENTS_ID
+import example.testsupport.TOPIC_LINK_PROPS_V_STATE_ID
 import example.testsupport.dataTestId
 import js.objects.recordOf
 import react.FC
@@ -12,7 +14,7 @@ import tanstack.react.router.Link
 
 val Topics = FC {
     div {
-        dataTestId = DataTestId.TOPICS_CONTAINER
+        dataTestId = TOPICS_CONTAINER_ID
         h2 {
             +"Topics"
         }
@@ -20,7 +22,7 @@ val Topics = FC {
         ul {
             li {
                 Link {
-                    dataTestId = DataTestId.TOPIC_LINK_COMPONENTS
+                    dataTestId = TOPIC_LINK_COMPONENTS_ID
                     to = TOPIC_PATH
                     params = recordOf(
                         TOPIC_ID_PARAM to "components",
@@ -31,7 +33,7 @@ val Topics = FC {
             }
             li {
                 Link {
-                    dataTestId = DataTestId.TOPIC_LINK_PROPS_V_STATE
+                    dataTestId = TOPIC_LINK_PROPS_V_STATE_ID
                     to = TOPIC_PATH
                     params = recordOf(
                         TOPIC_ID_PARAM to "props-v-state",

@@ -1,7 +1,7 @@
 package example.withcoroutinestest
 
 import example.TestApp
-import example.testsupport.DataTestId
+import example.testsupport.*
 import kotlinx.coroutines.test.runTest
 import react.create
 import testing.library.dom.screen
@@ -28,25 +28,25 @@ class RouterTest {
         render(TestApp.create())
 
         // then
-        val indexContainer = screen.findByTestId(DataTestId.INDEX_CONTAINER)
+        val indexContainer = screen.findByTestId(INDEX_CONTAINER_ID)
         assertNotNull(indexContainer, "index page")
 
-        val topicsLink = screen.findByTestId(DataTestId.INDEX_LINK_TOPICS)
+        val topicsLink = screen.findByTestId(INDEX_LINK_TOPICS_ID)
         assertNotNull(topicsLink, "link to topics on index page")
 
         // when
         user.click(topicsLink)
 
         // then
-        val topicsContainer = screen.findByTestId(DataTestId.TOPICS_CONTAINER)
+        val topicsContainer = screen.findByTestId(TOPICS_CONTAINER_ID)
         assertNotNull(topicsContainer, "topics page")
 
         val componentTopicLink =
-            within(topicsContainer).findByTestId(DataTestId.TOPIC_LINK_COMPONENTS)
+            within(topicsContainer).findByTestId(TOPIC_LINK_COMPONENTS_ID)
 
         user.click(componentTopicLink)
 
-        val topicContainer = screen.findByTestId(DataTestId.TOPIC_CONTAINER)
+        val topicContainer = screen.findByTestId(TOPIC_CONTAINER_ID)
         assertEquals("Requested topic ID: components", topicContainer.textContent)
     }
 
