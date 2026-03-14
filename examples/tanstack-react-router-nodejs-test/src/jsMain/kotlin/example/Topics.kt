@@ -3,7 +3,6 @@ package example
 import example.testsupport.TOPICS_CONTAINER_ID
 import example.testsupport.TOPIC_LINK_COMPONENTS_ID
 import example.testsupport.TOPIC_LINK_PROPS_V_STATE_ID
-import example.testsupport.dataTestId
 import js.objects.recordOf
 import react.FC
 import react.dom.html.ReactHTML.div

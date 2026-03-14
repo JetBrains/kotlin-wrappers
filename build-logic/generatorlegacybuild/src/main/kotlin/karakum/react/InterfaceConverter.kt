@@ -128,7 +128,16 @@ private fun convertAttributesInterface(
     when (name) {
         "HTMLAttributes",
         "SVGAttributes",
-            -> members = members.replaceFirst("var style: ", "override var style: ")
+            -> members = members
+            .replaceFirst("var style: ", "override var style: ")
+            .plus("\n")
+            .plus(
+                // language=kotlin
+                """
+                @JsName("data-testid")
+                var dataTestId: DataTestId?
+                """.trimIndent(),
+            )
     }
 
     when (name) {

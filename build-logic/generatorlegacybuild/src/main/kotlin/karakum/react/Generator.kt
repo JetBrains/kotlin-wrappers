@@ -19,6 +19,7 @@ private val DOM_IMPORTS = """
 import react.ActionOrString
 import react.dom.DOMAttributes
 import react.dom.FormAction
+import web.dom.DataTestId
 import web.dom.ElementId
 import web.form.FormData
 import web.form.FormEncType

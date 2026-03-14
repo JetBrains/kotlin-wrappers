@@ -1,7 +1,6 @@
 package example
 
 import example.testsupport.HOME_CONTAINER_ID
-import example.testsupport.dataTestId
 import react.FC
 import react.dom.html.ReactHTML.h2
 

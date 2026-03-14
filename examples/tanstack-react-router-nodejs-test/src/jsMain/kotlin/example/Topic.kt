@@ -1,7 +1,6 @@
 package example
 
 import example.testsupport.TOPIC_CONTAINER_ID
-import example.testsupport.dataTestId
 import react.FC
 import react.dom.html.ReactHTML.h3
 import tanstack.react.router.useParams

@@ -5,6 +5,7 @@ package react.dom.svg
 import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
+import web.dom.DataTestId
 import web.dom.Element
 import web.dom.ElementId
 import web.http.CrossOrigin
@@ -282,4 +283,7 @@ external interface SVGAttributes<T : Element> :
     var yChannelSelector: String?
     var z: Double?
     var zoomAndPan: String?
+
+    @JsName("data-testid")
+    var dataTestId: DataTestId?
 }
