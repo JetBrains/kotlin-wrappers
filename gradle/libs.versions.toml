@@ -1,0 +1,25 @@
+[versions]
+coroutines = "1.10.2"
+dokka = "2.2.0-Beta"
+karakum = "1.0.0-alpha.103"
+kfc = "18.0.0"
+kotlin = "2.3.10"
+serialization = "1.10.0"
+seskar = "4.34.0"
+
+[libraries]
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+# for convention plugins
+gradlePlugins-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+gradlePlugins-jsPlainObjects = { module = "org.jetbrains.kotlin:js-plain-objects", version.ref = "kotlin" }
+gradlePlugins-karakum = { module = "io.github.sgrishchenko.karakum:io.github.sgrishchenko.karakum.gradle.plugin", version.ref = "karakum" }
+gradlePlugins-kfc-library = { module = "io.github.turansky.kfc.library:io.github.turansky.kfc.library.gradle.plugin", version.ref = "kfc" }
+gradlePlugins-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradlePlugins-seskar = { module = "io.github.turansky.seskar:seskar-gradle-plugin", version.ref = "seskar" }
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+[plugins]
+# for convention plugins
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

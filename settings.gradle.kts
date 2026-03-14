@@ -11,12 +11,7 @@ plugins {
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            val kotlinVersion = extra["kotlin.version"] as String
-            library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
-
-            val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
-            library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
-            library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
+            // for version overrides
         }
     }
 }

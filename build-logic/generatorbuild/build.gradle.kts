@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation(gradlePlugins.karakum)
+    implementation(libs.gradlePlugins.karakum)
 }

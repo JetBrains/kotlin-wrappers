@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    implementation(gradlePlugins.kotlin)
-    implementation(gradlePlugins.jsPlainObjects)
-    implementation(gradlePlugins.seskar)
-    implementation(gradlePlugins.dokka)
+    implementation(libs.gradlePlugins.kotlin)
+    implementation(libs.gradlePlugins.jsPlainObjects)
+    implementation(libs.gradlePlugins.seskar)
+    implementation(libs.gradlePlugins.dokka)
 }

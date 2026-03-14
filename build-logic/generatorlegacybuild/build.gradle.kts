@@ -4,9 +4,9 @@ plugins {
 }
 
 dependencies {
-    implementation(gradlePlugins.kotlin)
-    implementation(gradlePlugins.jsPlainObjects)
-    implementation(gradlePlugins.kfc.library)
+    implementation(libs.gradlePlugins.kotlin)
+    implementation(libs.gradlePlugins.jsPlainObjects)
+    implementation(libs.gradlePlugins.kfc.library)
 
     implementation(libs.serialization.json)
 }
