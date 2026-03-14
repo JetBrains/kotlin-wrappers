@@ -1,9 +1,12 @@
 package web.dom
 
-// TODO: opaque interface
-typealias DataTestId = String
+import js.reflect.unsafeCast
+import js.string.StringLike
+
+external interface DataTestId :
+    StringLike
 
 inline fun DataTestId(
     value: String,
 ): DataTestId =
-    value
+    unsafeCast(value)
