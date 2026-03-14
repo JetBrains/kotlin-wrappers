@@ -11,7 +11,10 @@ plugins {
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            // for version overrides
+            val kotlinVersion = extra.properties["kotlin.version"] as String?
+            if (kotlinVersion != null) {
+                version("kotlin", kotlinVersion)
+            }
         }
     }
 }
