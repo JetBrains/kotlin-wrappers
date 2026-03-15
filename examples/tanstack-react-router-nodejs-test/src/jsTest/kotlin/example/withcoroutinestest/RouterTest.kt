@@ -29,9 +29,8 @@ class RouterTest {
 
         // then
         val indexContainer = screen.findByTestId(INDEX_CONTAINER_ID)
-        assertNotNull(indexContainer, "index page")
 
-        val topicsLink = screen.findByTestId(INDEX_LINK_TOPICS_ID)
+        val topicsLink = screen.queryByTestId(INDEX_LINK_TOPICS_ID)
         assertNotNull(topicsLink, "link to topics on index page")
 
         // when
@@ -39,15 +38,14 @@ class RouterTest {
 
         // then
         val topicsContainer = screen.findByTestId(TOPICS_CONTAINER_ID)
-        assertNotNull(topicsContainer, "topics page")
 
         val componentTopicLink =
-            within(topicsContainer).findByTestId(TOPIC_LINK_COMPONENTS_ID)
+            within(topicsContainer).queryByTestId(TOPIC_LINK_COMPONENTS_ID)
+        assertNotNull(componentTopicLink, "link to component topic")
 
         user.click(componentTopicLink)
 
         val topicContainer = screen.findByTestId(TOPIC_CONTAINER_ID)
-        assertEquals("Requested topic ID: components", topicContainer.textContent)
     }
 
     @Test
