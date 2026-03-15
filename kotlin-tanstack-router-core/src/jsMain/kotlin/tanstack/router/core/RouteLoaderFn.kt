@@ -5,7 +5,8 @@ import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import web.abort.internal.createCancellablePromise
 
-external interface RouteLoaderFn
+external interface RouteLoaderFn :
+    RouteLoaderEntry
 
 fun RouteLoaderFn(
     block: suspend CoroutineScope.(options: LoaderFnContext) -> LoaderData?,
