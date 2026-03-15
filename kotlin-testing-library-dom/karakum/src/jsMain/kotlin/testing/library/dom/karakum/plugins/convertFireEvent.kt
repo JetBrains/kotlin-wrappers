@@ -1,7 +1,5 @@
 package testing.library.dom.karakum.plugins
 
-// TODO: context
-// TODO: why annotation is separate EP
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
