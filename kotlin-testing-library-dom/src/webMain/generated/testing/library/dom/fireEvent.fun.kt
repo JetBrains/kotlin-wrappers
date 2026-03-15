@@ -4,4 +4,5 @@
 
 package testing.library.dom
 
-external val fireEvent: FireEvent
+@JsName("fireEvent")
+external val fireEventRaw: FireEvent

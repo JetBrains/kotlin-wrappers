@@ -8,20 +8,10 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
 import js.objects.recordOf
 import js.objects.unsafeJso
+import testing.library.dom.karakum.annotations.annotateFireEvent
 import testing.library.dom.karakum.annotations.annotateWaitFor
 import testing.library.dom.karakum.inheritanceModifiers.modifyMethodInheritance
-import testing.library.dom.karakum.plugins.BoundQueriesPlugin
-import testing.library.dom.karakum.plugins.QueriesPlugin
-import testing.library.dom.karakum.plugins.convertFunctionInterfaces
-import testing.library.dom.karakum.plugins.convertGetQueriesForElement
-import testing.library.dom.karakum.plugins.convertHtmlElementGenerics
-import testing.library.dom.karakum.plugins.convertOptionalType
-import testing.library.dom.karakum.plugins.convertPrettyFormatOptionsReceived
-import testing.library.dom.karakum.plugins.convertQueriesGenerics
-import testing.library.dom.karakum.plugins.convertSecondFindArgumentType
-import testing.library.dom.karakum.plugins.convertTypealiasParameterBounds
-import testing.library.dom.karakum.plugins.convertUtilityTypes
-import testing.library.dom.karakum.plugins.convertWaitForName
+import testing.library.dom.karakum.plugins.*
 import typescript.isFunctionDeclaration
 
 suspend fun main(args: ReadonlyArray<String>) {
@@ -37,6 +27,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             QueriesPlugin(),
             BoundQueriesPlugin,
 
+            convertFireEvent,
             convertFunctionInterfaces,
             convertGetQueriesForElement,
             convertHtmlElementGenerics,
@@ -50,6 +41,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         annotations = manyOf(
+            ::annotateFireEvent,
             ::annotateWaitFor,
         )
 
@@ -58,6 +50,14 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         input = manyOf("types/**/*.d.ts")
+        ignoreOutput = manyOf(
+            "**/CreateEvent.kt",
+            "**/CreateObject.kt",
+            "**/CreateFunction.kt",
+            "**/createEvent.fun.kt",
+            "**/EventType.kt",
+            "**/FireObject.kt",
+        )
         isolatedOutputPackage = true
         packageNameMapper = recordOf(
             "types/([^/]+)/([^/]+)\\.kt" to "$2.kt",

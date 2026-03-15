@@ -6,10 +6,8 @@ import typescript.Node
 import typescript.isFunctionDeclaration
 
 fun annotateWaitFor(node: Node, context: AnnotationContext) = nullable {
-    nullable {
-        ensure(isFunctionDeclaration(node))
-        ensure(node.name?.text == "waitFor")
+    ensure(isFunctionDeclaration(node))
+    ensure(node.name?.text == "waitFor")
 
-        "@JsName(\"waitFor\")"
-    }
+    "@JsName(\"waitFor\")"
 }
