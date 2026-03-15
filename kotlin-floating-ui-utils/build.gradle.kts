@@ -3,5 +3,7 @@ plugins {
 }
 
 dependencies {
+    webMainApi(projects.kotlinBrowser)
+
     webMainApi(npm(jspkg.floatingUi.utils))
 }
