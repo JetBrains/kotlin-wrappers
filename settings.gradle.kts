@@ -118,8 +118,17 @@ include("kotlin-emotion-styled")
 // Kotlin/JS: Emotion Utils wrappers
 include("kotlin-emotion-utils")
 
+// Kotlin/JS: Floating UI Core wrappers
+include("kotlin-floating-ui-core")
+
+// Kotlin/JS: Floating UI DOM wrappers
+include("kotlin-floating-ui-dom")
+
 // Kotlin/JS: Floating UI React DOM wrappers
 include("kotlin-floating-ui-react-dom")
+
+// Kotlin/JS: Floating UI Utils wrappers
+include("kotlin-floating-ui-utils")
 
 // Kotlin/JS: APIs missing from the standard library
 include("kotlin-js")
