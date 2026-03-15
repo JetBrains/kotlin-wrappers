@@ -5,6 +5,7 @@
 
 package web.events
 
+import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.upcast
 import kotlinx.coroutines.channels.awaitClose
@@ -13,8 +14,10 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
-    internal val target: EventTargetLike,
-    internal val type: EventType<E>,
+    @InternalApi
+    val target: EventTargetLike,
+    @InternalApi
+    val type: EventType<E>,
 )
 
 inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
