@@ -1,4 +1,4 @@
-package semver.karakum.annotations
+package wrappersgenerator.semver.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext

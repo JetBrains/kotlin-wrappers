@@ -1,12 +1,12 @@
-package semver.karakum
+package wrappersgenerator.semver
 
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
 import io.github.sgrishchenko.karakum.configuration.`package`
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import semver.karakum.annotations.annotateJsPlainObject
-import semver.karakum.inheritanceModifiers.modifyMethodInheritance
-import semver.karakum.plugins.*
+import wrappersgenerator.semver.annotations.annotateJsPlainObject
+import wrappersgenerator.semver.inheritanceModifiers.modifyMethodInheritance
+import wrappersgenerator.semver.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {

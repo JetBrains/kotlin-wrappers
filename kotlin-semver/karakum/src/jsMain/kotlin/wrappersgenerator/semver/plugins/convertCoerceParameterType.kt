@@ -1,13 +1,9 @@
-package semver.karakum.plugins
+package wrappersgenerator.semver.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import typescript.SyntaxKind
-import typescript.isFunctionDeclaration
-import typescript.isIdentifier
-import typescript.isParameter
-import typescript.isUnionTypeNode
+import typescript.*
 
 val convertCoerceParameterType = createPlugin { node, _, _ ->
     nullable {

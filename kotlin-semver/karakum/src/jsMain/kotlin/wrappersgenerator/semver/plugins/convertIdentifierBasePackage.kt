@@ -1,4 +1,4 @@
-package semver.karakum.plugins
+package wrappersgenerator.semver.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin

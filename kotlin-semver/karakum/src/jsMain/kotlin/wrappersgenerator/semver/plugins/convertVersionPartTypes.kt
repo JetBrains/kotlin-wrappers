@@ -1,13 +1,9 @@
-package semver.karakum.plugins
+package wrappersgenerator.semver.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import typescript.SyntaxKind
-import typescript.isClassDeclaration
-import typescript.isFunctionDeclaration
-import typescript.isIdentifier
-import typescript.isPropertyDeclaration
+import typescript.*
 
 private val versionParts = setOf("major", "minor", "patch")
 

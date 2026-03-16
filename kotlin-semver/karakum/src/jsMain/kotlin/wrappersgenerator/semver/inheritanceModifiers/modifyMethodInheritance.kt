@@ -1,4 +1,4 @@
-package semver.karakum.inheritanceModifiers
+package wrappersgenerator.semver.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
