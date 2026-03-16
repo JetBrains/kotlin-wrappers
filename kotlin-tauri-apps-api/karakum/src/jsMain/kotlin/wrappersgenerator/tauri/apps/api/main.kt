@@ -1,12 +1,12 @@
-package tauri.apps.api.karakum
+package wrappersgenerator.tauri.apps.api
 
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import tauri.apps.api.karakum.inheritanceModifiers.modifyClassInheritance
-import tauri.apps.api.karakum.inheritanceModifiers.modifyPropertyInheritance
-import tauri.apps.api.karakum.plugins.convertBuiltinTauriTypeReference
-import tauri.apps.api.karakum.plugins.convertPrivateIdentifier
+import wrappersgenerator.tauri.apps.api.inheritanceModifiers.modifyClassInheritance
+import wrappersgenerator.tauri.apps.api.inheritanceModifiers.modifyPropertyInheritance
+import wrappersgenerator.tauri.apps.api.plugins.convertBuiltinTauriTypeReference
+import wrappersgenerator.tauri.apps.api.plugins.convertPrivateIdentifier
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {

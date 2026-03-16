@@ -1,4 +1,4 @@
-package tauri.apps.api.karakum.plugins
+package wrappersgenerator.tauri.apps.api.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
