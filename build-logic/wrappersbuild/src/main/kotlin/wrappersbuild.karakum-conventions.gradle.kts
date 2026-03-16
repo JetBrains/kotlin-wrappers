@@ -25,4 +25,8 @@ if (hasKarakumGenerator()) {
     val buildKarakum by tasks.registering {
         dependsOn(karakumProject.task(":build"))
     }
+
+    val generateKarakumExternals by tasks.registering {
+        dependsOn(karakumProject.task(":generateKarakumExternals"))
+    }
 }
