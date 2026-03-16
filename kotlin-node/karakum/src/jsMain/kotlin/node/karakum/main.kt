@@ -3,10 +3,8 @@ package node.karakum
 import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import js.objects.unsafeJso
 import node.karakum.annotations.*
 import node.karakum.inheritanceModifiers.modifyClassInheritance
@@ -19,7 +17,7 @@ import node.karakum.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             // __promisify__ functions are ignored,
             // and this plugin should be added before any other function plugin
             convertPromisifyFunctions,
@@ -108,7 +106,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertWebStreamsQualifiedName,
             convertWithImplicitCoercion,
         )
-        injections = manyOf(
+        injections = listOf(
             DuplexMembersInjection(),
             EventInjection(),
             EventMapInjection(),
@@ -121,7 +119,7 @@ suspend fun main(args: ReadonlyArray<String>) {
 
             injectAgentOptionsPort,
         )
-        annotations = manyOf(
+        annotations = listOf(
             ::annotateCompileFunctionResult,
             ::annotateConflictingEntityNames,
             ::annotateDefaultExports,
@@ -132,7 +130,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::annotateJsPlainObject,
             ::annotateUnusedTypealiasParameter,
         )
-        nameResolvers = manyOf(
+        nameResolvers = listOf(
             ::resolveBufferConstantsName,
             ::resolveChildProcessOptionsName,
             ::resolveClassMethodParameterItemName,
@@ -163,15 +161,15 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::resolveSecureVersionName,
             ::resolveV8OptionsName,
         )
-        inheritanceModifiers = manyOf(
+        inheritanceModifiers = listOf(
             ::modifyClassInheritance,
             ::modifyInterfaceInheritance,
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
         )
 
-        input = manyOf("**/*.d.ts")
-        ignoreInput = manyOf(
+        input = listOf("**/*.d.ts")
+        ignoreInput = listOf(
             "**/ts*/**",
             "**/web-globals/**",
             "**/assert/strict.d.ts",
@@ -188,7 +186,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/timers.d.ts",
             "**/timers/promises.d.ts"
         )
-        ignoreOutput = manyOf(
+        ignoreOutput = listOf(
             "**/_Blob.kt",
             "**/_CloseEvent.kt",
             "**/_DOMException.kt",
@@ -340,7 +338,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/workerThreads/MessagePort.kt"
         )
         isolatedOutputPackage = true
-        moduleNameMapper = recordOf(
+        moduleNameMapper = mapOf(
             "(.+)" to "node:$1",
             "node:node/" to "node:",
             "node:node:" to "node:",
@@ -350,7 +348,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "events#EventEmitter" to "events",
             "module#Module" to "module",
         )
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "promises/(.+)\\.kt" to "$1Async.kt",
             ".suspendAsync.kt" to ".suspend.kt",
             "AsyncOptionsAsync.kt" to "OptionsAsync.kt",
@@ -508,7 +506,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^nodejs" to "node",
             "^global/nodejs" to "node",
         )
-        importMapper = recordOf(
+        importMapper = mapOf(
             "node:assert" to ruleOf("node.assert"),
             "node:async_hooks" to ruleOf("node.asyncHooks"),
             "(node:)?buffer" to ruleOf(
@@ -629,227 +627,227 @@ suspend fun main(args: ReadonlyArray<String>) {
                 ".+" to ""
             )
         )
-        importInjector = recordOf(
-            ".contract.kt" to arrayOf(
+        importInjector = mapOf(
+            ".contract.kt" to listOf(
                 "kotlin.contracts.contract"
             ),
-            "ReadableStream.kt" to arrayOf(
+            "ReadableStream.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "WritableStream.kt" to arrayOf(
+            "WritableStream.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "NonSharedArrayBufferView.kt" to arrayOf(
+            "NonSharedArrayBufferView.kt" to listOf(
                 "js.buffer.ArrayBufferView",
             ),
-            "NonSharedTypedArray.kt" to arrayOf(
+            "NonSharedTypedArray.kt" to listOf(
                 "js.typedarrays.TypedArray",
             ),
-            "buffer/resolveObjectURL.kt" to arrayOf(
+            "buffer/resolveObjectURL.kt" to listOf(
                 "web.blob.Blob"
             ),
-            "cluster/Cluster.interface.kt" to arrayOf(
+            "cluster/Cluster.interface.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "cluster/Worker.kt" to arrayOf(
+            "cluster/Worker.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "crypto/Cipheriv.kt" to arrayOf(
+            "crypto/Cipheriv.kt" to listOf(
                 "node.stream.TransformOptions"
             ),
-            "crypto/Decipheriv.kt" to arrayOf(
+            "crypto/Decipheriv.kt" to listOf(
                 "node.stream.TransformOptions"
             ),
-            "crypto/Hash.kt" to arrayOf(
+            "crypto/Hash.kt" to listOf(
                 "node.stream.TransformOptions"
             ),
-            "crypto/Hmac.kt" to arrayOf(
+            "crypto/Hmac.kt" to listOf(
                 "node.stream.TransformOptions"
             ),
-            "crypto/Sign.kt" to arrayOf(
+            "crypto/Sign.kt" to listOf(
                 "node.stream.WritableOptions"
             ),
-            "crypto/Verify.kt" to arrayOf(
+            "crypto/Verify.kt" to listOf(
                 "node.stream.WritableOptions"
             ),
-            "dns/ResolverAsync.kt" to arrayOf(
+            "dns/ResolverAsync.kt" to listOf(
                 "js.promise.Promise"
             ),
-            "fs/ReadStream.kt" to arrayOf(
+            "fs/ReadStream.kt" to listOf(
                 "node.stream.ReadableOptions"
             ),
-            "fs/WriteStream.kt" to arrayOf(
+            "fs/WriteStream.kt" to listOf(
                 "node.stream.WritableOptions"
             ),
-            "fs/readFile.kt" to arrayOf(
+            "fs/readFile.kt" to listOf(
                 "node.buffer.NonSharedBuffer"
             ),
-            "fs/readFileSync.kt" to arrayOf(
+            "fs/readFileSync.kt" to listOf(
                 "node.buffer.NonSharedBuffer"
             ),
-            "http2/Http2Session.kt" to arrayOf(
+            "http2/Http2Session.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "https/RequestOptions.kt" to arrayOf(
+            "https/RequestOptions.kt" to listOf(
                 "node.tls.PeerCertificate"
             ),
-            "https/Server.kt" to arrayOf(
+            "https/Server.kt" to listOf(
                 "node.http.IncomingMessage",
                 "node.http.ServerResponse"
             ),
-            "https/ServerOptions.kt" to arrayOf(
+            "https/ServerOptions.kt" to listOf(
                 "node.http.IncomingMessage",
                 "node.http.ServerResponse"
             ),
-            "https/createServer.kt" to arrayOf(
+            "https/createServer.kt" to listOf(
                 "node.http.IncomingMessage",
                 "node.http.ServerResponse"
             ),
-            "inspector/Session.kt" to arrayOf(
+            "inspector/Session.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "inspector/SessionAsync.kt" to arrayOf(
+            "inspector/SessionAsync.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "module/Require.interface.kt" to arrayOf(
+            "module/Require.interface.kt" to listOf(
                 "node.Dict"
             ),
-            "module/RequireExtensions.kt" to arrayOf(
+            "module/RequireExtensions.kt" to listOf(
                 "node.Dict"
             ),
-            "os/constants/signals.kt" to arrayOf(
+            "os/constants/signals.kt" to listOf(
                 "node.os.SignalConstants"
             ),
-            "process/Process.interface.kt" to arrayOf(
+            "process/Process.interface.kt" to listOf(
                 "node.module.Module",
                 "node.events.EventEmitter"
             ),
-            "process/ProcessEnv.kt" to arrayOf(
+            "process/ProcessEnv.kt" to listOf(
                 "node.Dict"
             ),
-            "process/ProcessVersions.kt" to arrayOf(
+            "process/ProcessVersions.kt" to listOf(
                 "node.Dict"
             ),
-            "process/Socket.kt" to arrayOf(
+            "process/Socket.kt" to listOf(
                 "node.ReadWriteStream"
             ),
-            "stream/Readable.kt" to arrayOf(
+            "stream/Readable.kt" to listOf(
                 "node.ReadableStreamPipeOptions",
                 "node.WritableStream"
             ),
-            "test/describe/only.kt" to arrayOf(
+            "test/describe/only.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/describe/only.suspend.kt" to arrayOf(
+            "test/describe/only.suspend.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/describe/skip.kt" to arrayOf(
+            "test/describe/skip.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/describe/skip.suspend.kt" to arrayOf(
+            "test/describe/skip.suspend.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/describe/todo.kt" to arrayOf(
+            "test/describe/todo.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/describe/todo.suspend.kt" to arrayOf(
+            "test/describe/todo.suspend.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/it/only.kt" to arrayOf(
+            "test/it/only.kt" to listOf(
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/it/only.suspend.kt" to arrayOf(
+            "test/it/only.suspend.kt" to listOf(
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/it/skip.kt" to arrayOf(
+            "test/it/skip.kt" to listOf(
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/it/skip.suspend.kt" to arrayOf(
+            "test/it/skip.suspend.kt" to listOf(
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/it/todo.kt" to arrayOf(
+            "test/it/todo.kt" to listOf(
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/it/todo.suspend.kt" to arrayOf(
+            "test/it/todo.suspend.kt" to listOf(
                 "node.test.TestFn",
                 "node.test.TestOptions"
             ),
-            "test/suite/only.kt" to arrayOf(
+            "test/suite/only.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/suite/only.suspend.kt" to arrayOf(
+            "test/suite/only.suspend.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/suite/skip.kt" to arrayOf(
+            "test/suite/skip.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/suite/skip.suspend.kt" to arrayOf(
+            "test/suite/skip.suspend.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/suite/todo.kt" to arrayOf(
+            "test/suite/todo.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "test/suite/todo.suspend.kt" to arrayOf(
+            "test/suite/todo.suspend.kt" to listOf(
                 "node.test.SuiteFn",
                 "node.test.TestOptions"
             ),
-            "url/fileURLToPath.kt" to arrayOf(
+            "url/fileURLToPath.kt" to listOf(
                 "web.url.URL"
             ),
-            "url/fileURLToPathBuffer.kt" to arrayOf(
+            "url/fileURLToPathBuffer.kt" to listOf(
                 "web.url.URL"
             ),
-            "url/format.kt" to arrayOf(
+            "url/format.kt" to listOf(
                 "web.url.URL"
             ),
-            "url/pathToFileURL.kt" to arrayOf(
+            "url/pathToFileURL.kt" to listOf(
                 "web.url.URL"
             ),
-            "url/urlToHttpOptions.kt" to arrayOf(
+            "url/urlToHttpOptions.kt" to listOf(
                 "web.url.URL"
             ),
-            "util/types/isBigIntObject.contract.kt" to arrayOf(
+            "util/types/isBigIntObject.contract.kt" to listOf(
                 "js.numbers.BigInt"
             ),
-            "v8/startupSnapshot/addDeserializeCallback.kt" to arrayOf(
+            "v8/startupSnapshot/addDeserializeCallback.kt" to listOf(
                 "node.v8.StartupSnapshotCallbackFn"
             ),
-            "v8/startupSnapshot/addSerializeCallback.kt" to arrayOf(
+            "v8/startupSnapshot/addSerializeCallback.kt" to listOf(
                 "node.v8.StartupSnapshotCallbackFn"
             ),
-            "v8/startupSnapshot/setDeserializeMainFunction.kt" to arrayOf(
+            "v8/startupSnapshot/setDeserializeMainFunction.kt" to listOf(
                 "node.v8.StartupSnapshotCallbackFn"
             ),
-            "vm/CompileFunctionResult.kt" to arrayOf(
+            "vm/CompileFunctionResult.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "workerThreads/moveMessagePortToContext.kt" to arrayOf(
+            "workerThreads/moveMessagePortToContext.kt" to listOf(
                 "web.messaging.MessagePort"
             ),
-            "workerThreads/parentPort.kt" to arrayOf(
+            "workerThreads/parentPort.kt" to listOf(
                 "web.messaging.MessagePort"
             ),
-            "workerThreads/receiveMessageOnPort.kt" to arrayOf(
+            "workerThreads/receiveMessageOnPort.kt" to listOf(
                 "web.messaging.MessagePort"
             )
         )
-        namespaceStrategy = recordOf(
+        namespaceStrategy = mapOf(
             "NodeJS" to NamespaceStrategy.`package`,
 
             "assert.assert" to NamespaceStrategy.`package`,
@@ -905,7 +903,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "node:sea" to NamespaceStrategy.`package`,
             "node:.+" to NamespaceStrategy.ignore,
         )
-        conflictResolutionStrategy = recordOf(
+        conflictResolutionStrategy = mapOf(
             "ExecFileObjectEncodingOptions.kt" to ConflictResolutionStrategy.replace,
             "ExecStringOptions.kt" to ConflictResolutionStrategy.replace,
             "ReaddirOptionsAsync.kt" to ConflictResolutionStrategy.replace,

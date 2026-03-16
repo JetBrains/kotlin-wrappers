@@ -1,26 +1,18 @@
 package testing.library.react.karakum
 
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import js.objects.unsafeJso
 import testing.library.react.karakum.inheritanceModifiers.modifyMethodInheritance
 import testing.library.react.karakum.injections.injectBoundFunction
-import testing.library.react.karakum.plugins.convertBaseRenderOptions
-import testing.library.react.karakum.plugins.convertQueriesGenerics
-import testing.library.react.karakum.plugins.convertExoticReactTypeReferences
-import testing.library.react.karakum.plugins.convertPrettyFormatOptionsReceived
-import testing.library.react.karakum.plugins.convertReactQualifiedName
-import testing.library.react.karakum.plugins.convertSkippedGenerics
-import testing.library.react.karakum.plugins.convertUtilityTypes
+import testing.library.react.karakum.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         injections
 
-        plugins = manyOf(
+        plugins = listOf(
             convertBaseRenderOptions,
 
             // should be applied before removing of queries generics
@@ -36,17 +28,17 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUtilityTypes,
         )
 
-        injections = manyOf(
+        injections = listOf(
             injectBoundFunction
         )
 
-        inheritanceModifiers = manyOf(
+        inheritanceModifiers = listOf(
             ::modifyMethodInheritance
         )
 
-        input = manyOf("types/**/*.d.ts")
-        ignoreInput = manyOf("types/pure.d.ts")
-        ignoreOutput = manyOf(
+        input = listOf("types/**/*.d.ts")
+        ignoreInput = listOf("types/pure.d.ts")
+        ignoreOutput = listOf(
             // provided by React
             "**/act.kt",
             // deprecated
@@ -60,10 +52,10 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/Omit.kt",
         )
         isolatedOutputPackage = true
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "types/index/" to "/"
         )
-        importMapper = recordOf(
+        importMapper = mapOf(
             "@testing-library/dom" to ruleOf(
                 "prettyFormat" to "",
                 "queries" to "",

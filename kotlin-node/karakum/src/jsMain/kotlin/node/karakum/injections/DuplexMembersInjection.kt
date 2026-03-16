@@ -1,31 +1,13 @@
 package node.karakum.injections
 
-import io.github.sgrishchenko.karakum.extension.Context
-import io.github.sgrishchenko.karakum.extension.GeneratedFile
-import io.github.sgrishchenko.karakum.extension.Injection
-import io.github.sgrishchenko.karakum.extension.InjectionContext
-import io.github.sgrishchenko.karakum.extension.InjectionType
-import io.github.sgrishchenko.karakum.extension.Render
-import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
-import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.*
+import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import arrow.core.raise.impure
-import arrow.core.raise.nullable
-import io.github.sgrishchenko.karakum.extension.MEMBER
-import io.github.sgrishchenko.karakum.extension.plugins.function
-import io.github.sgrishchenko.karakum.extension.plugins.lambda
-import typescript.Node
-import typescript.asArray
-import typescript.isClassDeclaration
-import typescript.isIdentifier
-import typescript.isMethodDeclaration
-import typescript.isPropertyDeclaration
+import typescript.*
 
 class DuplexMembersInjection : Injection {
     private val readableMemberNodes = mutableListOf<Node>()
@@ -107,9 +89,11 @@ class DuplexMembersInjection : Injection {
                                         member.typeParameters != null -> {
                                             "Function<Any?> /* ${typeScriptService.printNode(member)} */"
                                         }
+
                                         member.parameters.asArray().any { it.dotDotDotToken != null } -> {
-                                            "Function<${returnType}> /* ${typeScriptService?.printNode(member)} */"
+                                            "Function<${returnType}> /* ${typeScriptService.printNode(member)} */"
                                         }
+
                                         else -> {
                                             "(${parameters}) -> ${returnType ?: "Any?"}"
                                         }
@@ -126,7 +110,11 @@ class DuplexMembersInjection : Injection {
                                 strategy = ParameterDeclarationStrategy.function,
                                 defaultValue = "",
                                 template = { parameters, _ ->
-                                    "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
+                                    "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
+                                        ifPresent(
+                                            returnType
+                                        ) { ": $it" }
+                                    }"
                                 }
                             )
                         )

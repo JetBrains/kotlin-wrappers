@@ -4,9 +4,7 @@ import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.replace
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseMethodPlugin
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import js.objects.unsafeJso
 import testing.library.user.event.karakum.nameResolvers.resolveDirectOptionsParameterName
 import testing.library.user.event.karakum.nameResolvers.resolveMouseButtonTypeName
@@ -15,7 +13,7 @@ import testing.library.user.event.karakum.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             PromiseMethodPlugin(),
 
             convertMouseButtonConstants,
@@ -26,13 +24,13 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUtilityTypes,
         )
 
-        nameResolvers = manyOf(
+        nameResolvers = listOf(
             ::resolveDirectOptionsParameterName,
             ::resolveMouseButtonTypeName,
             ::resolveOptionsParameterName,
         )
 
-        input = manyOf(
+        input = listOf(
             "dist/types/event/types.d.ts",
             "dist/types/options.d.ts",
             "dist/types/pointer/index.d.ts",
@@ -47,7 +45,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "dist/types/system/pointer/shared.d.ts",
             "dist/types/utility/type.d.ts",
         )
-        ignoreOutput = manyOf(
+        ignoreOutput = listOf(
             "**/event/types/EventType.kt",
             "**/event/types/EventTypeInit.kt",
             "**/event/types/FixedDocumentEventMap.kt",
@@ -95,11 +93,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/module.kt",
         )
         isolatedOutputPackage = true
-        moduleNameMapper = recordOf(
+        moduleNameMapper = mapOf(
             "dist/types/" to "dist/esm/",
             "(.+)" to "$1.js",
         )
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "dist/types/" to "/",
 
             "event/types/PointerCoords.kt" to "PointerCoords.kt",
@@ -143,20 +141,20 @@ suspend fun main(args: ReadonlyArray<String>) {
 
             "utility/type/typeOptions.kt" to "typeOptions.kt",
         )
-        importInjector = recordOf(
-            "Instance.kt" to arrayOf(
+        importInjector = mapOf(
+            "Instance.kt" to listOf(
                 "web.dom.Element",
                 "web.events.Event",
             ),
 
-            "UserEventApi.interface.kt" to arrayOf(
+            "UserEventApi.interface.kt" to listOf(
                 "js.promise.Promise",
                 "web.data.DataTransfer",
                 "web.dom.Element",
                 "web.html.HTMLElement",
             ),
         )
-        conflictResolutionStrategy = recordOf(
+        conflictResolutionStrategy = mapOf(
             "DirectTabOptions.kt" to ConflictResolutionStrategy.replace,
             "DirectTypeOptions.kt" to ConflictResolutionStrategy.replace,
         )

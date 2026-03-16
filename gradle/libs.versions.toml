@@ -1,7 +1,7 @@
 [versions]
 coroutines = "1.10.2"
 dokka = "2.2.0-Beta"
-karakum = "1.0.0-alpha.103"
+karakum = "1.0.0-alpha.104"
 kfc = "18.0.0"
 kotlin = "2.3.10"
 serialization = "1.10.0"

@@ -7,22 +7,16 @@ import electron.karakum.inheritanceModifiers.modifyMethodInheritance
 import electron.karakum.inheritanceModifiers.modifyPropertyInheritance
 import electron.karakum.injections.BrowserEventInjection
 import electron.karakum.injections.EventInjection
-import electron.karakum.nameResolvers.resolveConfigVersionName
-import electron.karakum.nameResolvers.resolveDownloadItemListenerStateName
-import electron.karakum.nameResolvers.resolveInterfaceArrayFieldName
-import electron.karakum.nameResolvers.resolveInterfaceMethodNullableCallbackParameterName
-import electron.karakum.nameResolvers.resolveSessionListenerCallbackActionName
+import electron.karakum.nameResolvers.*
 import electron.karakum.plugins.*
 import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import js.objects.unsafeJso
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             convertElectronQualifiedName,
             convertEvent,
             convertFileHeritageClause,
@@ -37,33 +31,33 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUtilityTypes,
             convertWebviewGenericEventMethods,
         )
-        injections = manyOf(
+        injections = listOf(
             BrowserEventInjection(),
             EventInjection(),
         )
-        annotations = manyOf(
+        annotations = listOf(
             ::annotateInterfaceWithSuperclass,
             ::annotateJsPlainObject,
         )
-        nameResolvers = manyOf(
+        nameResolvers = listOf(
             ::resolveConfigVersionName,
             ::resolveDownloadItemListenerStateName,
             ::resolveInterfaceArrayFieldName,
             ::resolveInterfaceMethodNullableCallbackParameterName,
             ::resolveSessionListenerCallbackActionName,
         )
-        inheritanceModifiers = manyOf(
+        inheritanceModifiers = listOf(
             ::modifyClassInheritance,
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
         )
 
-        input = manyOf("electron.d.ts")
-        ignoreOutput = manyOf(
+        input = listOf("electron.d.ts")
+        ignoreOutput = listOf(
             "**/Document.kt",
         )
         isolatedOutputPackage = true
-        moduleNameMapper = recordOf(
+        moduleNameMapper = mapOf(
             "electron/electron#Electron.Main" to "electron/main",
             "electron/electron#Electron.Common" to "electron/common",
             "electron/electron#Electron.Renderer" to "electron/renderer",
@@ -71,145 +65,145 @@ suspend fun main(args: ReadonlyArray<String>) {
             "electron/electron#Electron.CrossProcessExports" to "electron",
             "electron/electron#Electron" to "INTERNAL_ENTITY"
         )
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "electron/([^/]+)\\.kt" to "electron/core/$1.kt",
             "electron/electron/(.+)\\.kt" to "electron/$1.kt",
             "electron/crossprocessexports/(.+)\\.kt" to "electron/$1.kt",
             "/([a-z][^/]+)\\.kt" to "/$1.val.kt"
         )
-        importInjector = recordOf(
-            "AddRepresentationOptions.kt" to arrayOf(
+        importInjector = mapOf(
+            "AddRepresentationOptions.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "BaseWindow.kt" to arrayOf(
+            "BaseWindow.kt" to listOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "BrowserWindow.kt" to arrayOf(
+            "BrowserWindow.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "ClientRequest.kt" to arrayOf(
+            "ClientRequest.kt" to listOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "Clipboard.kt" to arrayOf(
+            "Clipboard.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "Cookies.kt" to arrayOf(
+            "Cookies.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "Debugger.kt" to arrayOf(
+            "Debugger.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "DownloadItem.kt" to arrayOf(
+            "DownloadItem.kt" to listOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "Extensions.kt" to arrayOf(
+            "Extensions.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "IncomingMessage.kt" to arrayOf(
+            "IncomingMessage.kt" to listOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "IncomingMessageEvent.kt" to arrayOf(
+            "IncomingMessageEvent.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "IpcMainServiceWorker.kt" to arrayOf(
+            "IpcMainServiceWorker.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "Menu.kt" to arrayOf(
+            "Menu.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "MessageChannelMain.kt" to arrayOf(
+            "MessageChannelMain.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "MessagePortMain.kt" to arrayOf(
+            "MessagePortMain.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "MimeTypedBuffer.kt" to arrayOf(
+            "MimeTypedBuffer.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "NativeImage.kt" to arrayOf(
+            "NativeImage.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "NodeEventEmitter.kt" to arrayOf(
+            "NodeEventEmitter.kt" to listOf(
                 "node.events.EventEmitter"
             ),
-            "Notification.kt" to arrayOf(
+            "Notification.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "ProcessEvent.kt" to arrayOf(
+            "ProcessEvent.kt" to listOf(
                 "node.process.Process"
             ),
-            "SafeStorage.kt" to arrayOf(
+            "SafeStorage.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "ServiceWorkers.kt" to arrayOf(
+            "ServiceWorkers.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "Session.kt" to arrayOf(
+            "Session.kt" to listOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "SharedTextureHandle.kt" to arrayOf(
+            "SharedTextureHandle.kt" to listOf(
                 "node.buffer.Buffer",
             ),
-            "TextureInfo.kt" to arrayOf(
+            "TextureInfo.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "TouchBarColorPicker.kt" to arrayOf(
+            "TouchBarColorPicker.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarGroup.kt" to arrayOf(
+            "TouchBarGroup.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarLabel.kt" to arrayOf(
+            "TouchBarLabel.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarOtherItemsProxy.kt" to arrayOf(
+            "TouchBarOtherItemsProxy.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarPopover.kt" to arrayOf(
+            "TouchBarPopover.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarScrubber.kt" to arrayOf(
+            "TouchBarScrubber.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarSegmentedControl.kt" to arrayOf(
+            "TouchBarSegmentedControl.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarSlider.kt" to arrayOf(
+            "TouchBarSlider.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "TouchBarSpacer.kt" to arrayOf(
+            "TouchBarSpacer.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "Tray.kt" to arrayOf(
+            "Tray.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter",
                 "electron.NativeImage"
             ),
-            "UploadData.kt" to arrayOf(
+            "UploadData.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "UploadRawData.kt" to arrayOf(
+            "UploadRawData.kt" to listOf(
                 "node.buffer.Buffer"
             ),
-            "UtilityProcess.kt" to arrayOf(
+            "UtilityProcess.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "View.kt" to arrayOf(
+            "View.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "WebContents.kt" to arrayOf(
+            "WebContents.kt" to listOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
-            "WebFrameMain.kt" to arrayOf(
+            "WebFrameMain.kt" to listOf(
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
         )
-        namespaceStrategy = recordOf(
+        namespaceStrategy = mapOf(
             "Electron" to NamespaceStrategy.`package`,
             "electron" to NamespaceStrategy.ignore,
             "electron/main" to NamespaceStrategy.ignore,
@@ -217,7 +211,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "electron/renderer" to NamespaceStrategy.ignore,
             "original-fs" to NamespaceStrategy.ignore
         )
-        conflictResolutionStrategy = recordOf(
+        conflictResolutionStrategy = mapOf(
             "DownloadItemDoneListenerState" to ConflictResolutionStrategy.replace,
             "DownloadItemUpdatedListenerState" to ConflictResolutionStrategy.replace
         )

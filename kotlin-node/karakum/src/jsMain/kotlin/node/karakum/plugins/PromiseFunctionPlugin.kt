@@ -1,8 +1,8 @@
 package node.karakum.plugins
 
 import arrow.core.raise.nullable
-import io.github.sgrishchenko.karakum.extension.plugins.Signature
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.SignatureContext
 import typescript.*
 
 private fun isPromiseType(node: Node) = nullable {
@@ -20,8 +20,11 @@ private fun isPromiseFunction(node: Node) = nullable {
     ensure(isPromiseType(type))
 } != null
 
-private fun isConflictingOverload(node: FunctionDeclaration, signature: Signature) = nullable {
+private fun isConflictingOverload(node: Node, signatureContext: SignatureContext) = nullable {
+    ensure(isFunctionDeclaration(node))
+
     val name = ensureNotNull(node.name)
+    val signature = signatureContext.signature
 
     nullable {
         ensure(name.text == "mkdir")

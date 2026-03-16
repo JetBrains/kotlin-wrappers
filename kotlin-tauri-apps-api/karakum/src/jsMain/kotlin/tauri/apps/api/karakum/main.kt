@@ -1,10 +1,8 @@
 package tauri.apps.api.karakum
 
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import tauri.apps.api.karakum.inheritanceModifiers.modifyClassInheritance
 import tauri.apps.api.karakum.inheritanceModifiers.modifyPropertyInheritance
 import tauri.apps.api.karakum.plugins.convertBuiltinTauriTypeReference
@@ -12,19 +10,19 @@ import tauri.apps.api.karakum.plugins.convertPrivateIdentifier
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             convertBuiltinTauriTypeReference,
             convertPrivateIdentifier,
         )
-        inheritanceModifiers = manyOf(
+        inheritanceModifiers = listOf(
             ::modifyClassInheritance,
             ::modifyPropertyInheritance,
         )
 
-        input = manyOf("**/*.d.ts")
+        input = listOf("**/*.d.ts")
         isolatedOutputPackage = true
 
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "webviewWindow" to "webviewwindow",
 
             "menu/checkMenuItem/" to "menu/",
@@ -36,9 +34,9 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         // disable defaults
-        moduleNameMapper = recordOf()
+        moduleNameMapper = mapOf()
 
-        importMapper = recordOf(
+        importMapper = mapOf(
             "\\./app" to ruleOf("tauri.apps.api.app"),
             "\\./core" to ruleOf("tauri.apps.api.core"),
             "\\./dpi" to ruleOf("tauri.apps.api.dpi"),

@@ -5,9 +5,7 @@ import io.github.sgrishchenko.karakum.configuration.`object`
 import io.github.sgrishchenko.karakum.configuration.`package`
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import typescript.karakum.annotations.annotateUnusedTypealiasParameter
 import typescript.karakum.annotations.annotateVarOverrides
 import typescript.karakum.inheritanceModifiers.modifyInterfaceInheritance
@@ -21,7 +19,7 @@ import typescript.karakum.varianceModifiers.modifyInterfaceVariance
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             ContractFunctionApiPlugin(),
 
             convertArrayInheritance,
@@ -34,15 +32,15 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUtilityTypes,
             convertWithMetadata,
         )
-        injections = manyOf(
+        injections = listOf(
             injectCommonUnionParents,
             decorateUnionInjection(UnionInjection()),
         )
-        annotations = manyOf(
+        annotations = listOf(
             ::annotateUnusedTypealiasParameter,
             ::annotateVarOverrides,
         )
-        nameResolvers = manyOf(
+        nameResolvers = listOf(
             ::resolveChangePropertyTypesPropertyName,
             ::resolveCustomTransformersAfterDeclarationsItemTypeArgumentName,
             ::resolveFunctionReturnTypeItemName,
@@ -62,17 +60,17 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::resolveTypeAliasNullableUnionPropertyName,
             ::resolveUserPreferencesImportModuleSpecifierEndingJsName,
         )
-        inheritanceModifiers = manyOf(
+        inheritanceModifiers = listOf(
             ::modifyInterfaceInheritance,
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
         )
-        varianceModifiers = manyOf(
+        varianceModifiers = listOf(
             ::modifyInterfaceVariance,
         )
 
-        input = manyOf("lib/typescript.d.ts")
-        ignoreOutput = manyOf(
+        input = listOf("lib/typescript.d.ts")
+        ignoreOutput = listOf(
             "**/server/**",
             "**/CompletionsTriggerCharacter.kt",
             "**/SignatureHelpRetriggerCharacter.kt",
@@ -84,17 +82,17 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/isTypeOnlyImportDeclaration.kt",
         )
         isolatedOutputPackage = true
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "lib/typescript" to "/",
             "^ts/(.+)" to "typescript/$1",
             "createProgram.kt" to "createProgram.fun.kt",
         )
-        importInjector = recordOf(
-            ".contract.kt" to arrayOf(
+        importInjector = mapOf(
+            ".contract.kt" to listOf(
                 "kotlin.contracts.contract"
             ),
         )
-        namespaceStrategy = recordOf(
+        namespaceStrategy = mapOf(
             "ScriptSnapshot" to NamespaceStrategy.`object`,
             "JsTyping" to NamespaceStrategy.`object`,
             "ts" to NamespaceStrategy.`package`

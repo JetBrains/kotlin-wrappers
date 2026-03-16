@@ -3,34 +3,23 @@ package node.karakum.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import js.objects.Object
-import js.objects.recordOf
-import js.array.component1
-import js.array.component2
-import typescript.Declaration
-import typescript.Identifier
-import typescript.Node
-import typescript.SymbolFlags
-import typescript.isIdentifier
-import typescript.isStringLiteral
-import kotlin.collections.contains
+import typescript.*
 
-private val conflictingEntities = recordOf(
-    "inspector" to arrayOf(
+private val conflictingEntities = mapOf(
+    "inspector" to listOf(
         "Session",
     ),
-    "readline" to arrayOf(
+    "readline" to listOf(
         "Interface",
         "ReadLineOptions",
         "Completer",
     ),
-    "stream.d.ts" to arrayOf(
+    "stream.d.ts" to listOf(
         "FinishedOptions",
     ),
-    "fs.d.ts" to arrayOf(
+    "fs.d.ts" to listOf(
         "DisposableTempDir",
         "WatchOptions",
         "WatchOptionsWithBufferEncoding",
@@ -74,9 +63,10 @@ private fun convertNameByFileName(node: Identifier, context: Context) = nullable
 
     val sourceFileName = ensureNotNull(declaration.getSourceFileOrNull()).fileName
 
-    val (_, fileNameConflictingEntities) = ensureNotNull(
-        Object.entries(conflictingEntities)
-            .find { (fileName) -> sourceFileName.endsWith(fileName) }
+    val fileNameConflictingEntities = ensureNotNull(
+        conflictingEntities.entries
+            .firstOrNull { (fileName) -> sourceFileName.endsWith(fileName) }
+            ?.value
     )
     ensure(node.text in fileNameConflictingEntities)
 

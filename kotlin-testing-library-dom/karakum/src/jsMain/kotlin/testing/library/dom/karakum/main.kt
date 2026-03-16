@@ -3,10 +3,9 @@ package testing.library.dom.karakum
 import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
+import io.github.sgrishchenko.karakum.extension.withName
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import js.objects.unsafeJso
 import testing.library.dom.karakum.annotations.annotateFireEvent
 import testing.library.dom.karakum.annotations.annotateWaitFor
@@ -16,11 +15,11 @@ import typescript.isFunctionDeclaration
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             PromiseResultPlugin(),
             PromiseFunctionPlugin(
                 ignore = match {
-                    match(::isFunctionDeclaration, "waitFor")
+                    match(::isFunctionDeclaration, withName("waitFor"))
                 }
             ),
 
@@ -40,17 +39,17 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertWaitForName,
         )
 
-        annotations = manyOf(
+        annotations = listOf(
             ::annotateFireEvent,
             ::annotateWaitFor,
         )
 
-        inheritanceModifiers = manyOf(
+        inheritanceModifiers = listOf(
             ::modifyMethodInheritance,
         )
 
-        input = manyOf("types/**/*.d.ts")
-        ignoreOutput = manyOf(
+        input = listOf("types/**/*.d.ts")
+        ignoreOutput = listOf(
             "**/CreateEvent.kt",
             "**/CreateObject.kt",
             "**/CreateFunction.kt",
@@ -59,7 +58,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/FireObject.kt",
         )
         isolatedOutputPackage = true
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "types/([^/]+)/([^/]+)\\.kt" to "$2.kt",
 
             "createEvent.kt" to "createEvent.fun.kt",

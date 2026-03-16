@@ -1,33 +1,32 @@
 package tanstack.history.karakum
 
+import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.NumberPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
 import io.github.sgrishchenko.karakum.generate
-import io.github.sgrishchenko.karakum.util.manyOf
 import js.array.ReadonlyArray
-import js.objects.recordOf
 import tanstack.history.karakum.annotations.annotateJsPlainObject
 import tanstack.history.karakum.plugins.convertRouterHistoryProperty
 import typescript.Node
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        plugins = manyOf(
+        plugins = listOf(
             NumberPlugin(
                 defaultNumberType = "Int",
-                matchers = emptyArray<Pair<String, (Node) -> Boolean>>()
+                matchers = emptyArray<Pair<String, (Node, Context) -> Boolean>>()
             ),
             PromiseResultPlugin(),
 
             convertRouterHistoryProperty
         )
-        annotations = manyOf(
+        annotations = listOf(
             ::annotateJsPlainObject
         )
 
-        input = manyOf("dist/esm/index.d.ts")
+        input = listOf("dist/esm/index.d.ts")
         isolatedOutputPackage = true
-        packageNameMapper = recordOf(
+        packageNameMapper = mapOf(
             "dist/esm/index" to "/"
         )
     }
