@@ -1,9 +1,11 @@
-package testing.library.react.karakum.plugins
+package wrappersgenerator.testing.library.react.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import typescript.*
+import typescript.isIdentifier
+import typescript.isQualifiedName
+import typescript.isTypeReferenceNode
 
 val convertPrettyFormatOptionsReceived = createPlugin { node, context, _ ->
     val typeScriptService = context.lookupService(typeScriptServiceKey)

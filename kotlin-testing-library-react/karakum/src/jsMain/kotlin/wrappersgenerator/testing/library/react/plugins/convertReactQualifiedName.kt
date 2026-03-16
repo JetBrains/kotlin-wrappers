@@ -1,9 +1,8 @@
-package testing.library.react.karakum.plugins
+package wrappersgenerator.testing.library.react.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import typescript.isIdentifier
-import typescript.isPropertyAccessExpression
 import typescript.isQualifiedName
 
 val convertReactQualifiedName = createPlugin { node, _, render ->

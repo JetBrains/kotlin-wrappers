@@ -1,4 +1,4 @@
-package testing.library.react.karakum.injections
+package wrappersgenerator.testing.library.react.injections
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.HERITAGE_CLAUSE

@@ -1,4 +1,4 @@
-package testing.library.react.karakum.inheritanceModifiers
+package wrappersgenerator.testing.library.react.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
