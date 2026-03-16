@@ -1,0 +1,92 @@
+package wrappersgenerator.node.inheritanceModifiers
+
+import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
+import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
+import typescript.*
+
+fun modifyInterfaceInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+    nullable {
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+
+        ensure(isInterfaceDeclaration(node))
+
+        nullable {
+            ensure(sourceFileName.endsWith("fs.d.ts"))
+            ensure(
+                node.name.text == "ObjectEncodingOptions"
+                        || node.name.text == "WatchOptions"
+            )
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("net.d.ts"))
+            ensure(
+                node.name.text == "ServerOpts"
+                        || node.name.text == "TcpSocketConnectOpts"
+            )
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("dns.d.ts"))
+            ensure(node.name.text == "LookupOptions")
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("globals.d.ts"))
+            ensure(
+                node.name.text == "ErrnoException"
+                        || node.name.text == "ReadableStream"
+                        || node.name.text == "ReadWriteStream"
+                        || node.name.text == "WritableStream"
+                        || node.name.text == "RefCounted"
+                        || node.name.text == "Module"
+            )
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("process.d.ts"))
+            ensure(node.name.text == "ProcessEnv")
+
+            ""
+        }  ?: nullable {
+            ensure(sourceFileName.endsWith("stream.d.ts"))
+            ensure(node.name.text == "TransformOptions")
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("async_hooks.d.ts"))
+            ensure(node.name.text == "AsyncResourceOptions")
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("tls.d.ts"))
+            ensure(
+                node.name.text == "ConnectionOptions"
+                        || node.name.text == "SecureContextOptions"
+                        || node.name.text == "TlsOptions"
+            )
+
+            ""
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("http.d.ts"))
+            ensure(
+                node.name.text == "IncomingHttpHeaders"
+                        || node.name.text == "AgentOptions"
+                        || node.name.text == "RequestOptions"
+                        || node.name.text == "ServerOptions"
+            )
+
+            ""
+        }
+    } ?: nullable {
+        ensure(
+            isInterfaceDeclaration(node)
+                    || isTypeAliasDeclaration(node)
+                    || isTypeLiteralNode(node)
+                    || isIntersectionTypeNode(node)
+        )
+
+        "sealed"
+    }
+}
