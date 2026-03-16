@@ -1,4 +1,4 @@
-package testing.library.dom.karakum
+package wrappersgenerator.testing.library.dom
 
 import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
@@ -7,11 +7,11 @@ import io.github.sgrishchenko.karakum.extension.withName
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
-import testing.library.dom.karakum.annotations.annotateFireEvent
-import testing.library.dom.karakum.annotations.annotateWaitFor
-import testing.library.dom.karakum.inheritanceModifiers.modifyMethodInheritance
-import testing.library.dom.karakum.plugins.*
 import typescript.isFunctionDeclaration
+import wrappersgenerator.testing.library.dom.annotations.annotateFireEvent
+import wrappersgenerator.testing.library.dom.annotations.annotateWaitFor
+import wrappersgenerator.testing.library.dom.inheritanceModifiers.modifyMethodInheritance
+import wrappersgenerator.testing.library.dom.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {

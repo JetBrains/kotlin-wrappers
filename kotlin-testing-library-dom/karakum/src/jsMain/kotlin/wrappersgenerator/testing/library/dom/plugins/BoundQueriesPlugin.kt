@@ -1,19 +1,11 @@
-package testing.library.dom.karakum.plugins
+package wrappersgenerator.testing.library.dom.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.Render
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationConfiguration
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
-import io.github.sgrishchenko.karakum.extension.plugins.convertMappedTypeBody
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarationWithFixedType
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.plugins.convertTypeLiteralBody
-import io.github.sgrishchenko.karakum.extension.plugins.function
-import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
+import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*

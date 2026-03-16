@@ -1,4 +1,4 @@
-package testing.library.dom.karakum.annotations
+package wrappersgenerator.testing.library.dom.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext

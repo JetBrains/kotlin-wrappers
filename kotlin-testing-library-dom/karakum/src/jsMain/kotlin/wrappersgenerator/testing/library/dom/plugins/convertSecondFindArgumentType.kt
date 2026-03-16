@@ -1,4 +1,4 @@
-package testing.library.dom.karakum.plugins
+package wrappersgenerator.testing.library.dom.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin

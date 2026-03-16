@@ -1,16 +1,8 @@
-package testing.library.dom.karakum.plugins
+package wrappersgenerator.testing.library.dom.plugins
 
 import arrow.core.raise.nullable
-import io.github.sgrishchenko.karakum.extension.Context
-import io.github.sgrishchenko.karakum.extension.GeneratedFile
-import io.github.sgrishchenko.karakum.extension.Plugin
-import io.github.sgrishchenko.karakum.extension.Render
-import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
-import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.plugins.function
-import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
+import io.github.sgrishchenko.karakum.extension.*
+import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull

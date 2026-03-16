@@ -1,4 +1,4 @@
-package testing.library.dom.karakum.plugins
+package wrappersgenerator.testing.library.dom.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
@@ -7,7 +7,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
-import typescript.*
+import typescript.isFunctionTypeNode
+import typescript.isTypeAliasDeclaration
 
 val convertFunctionInterfaces = createPlugin { node, context, render ->
     nullable {

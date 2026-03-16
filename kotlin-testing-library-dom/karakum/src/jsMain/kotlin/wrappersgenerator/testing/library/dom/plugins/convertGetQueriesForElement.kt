@@ -1,16 +1,10 @@
-package testing.library.dom.karakum.plugins
+package wrappersgenerator.testing.library.dom.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import typescript.SymbolFlags
-import typescript.isFunctionDeclaration
-import typescript.isIdentifier
-import typescript.isTypeParameterDeclaration
-import typescript.isTypeQueryNode
-import typescript.isTypeReferenceNode
-import typescript.isVariableDeclaration
+import typescript.*
 
 val convertGetQueriesForElement = createPlugin { node, context, render ->
     nullable {
