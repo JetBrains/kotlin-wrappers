@@ -320,7 +320,10 @@ open external class Writable :
 
     open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    open fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     open fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
@@ -331,7 +334,10 @@ open external class Writable :
 
     open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    open fun removeListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun removeListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>

@@ -30,7 +30,10 @@ sealed external interface TestsStream : Readable {
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("test:coverage")
     val testCoverageEvent: node.events.EventInstance<js.array.Tuple1<node.test.eventData.TestCoverage>>

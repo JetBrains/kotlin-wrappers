@@ -49,7 +49,10 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("keylog")
     override val keylogEvent: node.events.EventInstance<js.array.Tuple2<NonSharedBuffer, node.tls.TLSSocket>>

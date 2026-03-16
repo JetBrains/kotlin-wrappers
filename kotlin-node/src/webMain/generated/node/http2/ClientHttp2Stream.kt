@@ -5,7 +5,10 @@ package node.http2
 sealed external interface ClientHttp2Stream : Http2Stream {
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     override fun emit(
         event: String,
@@ -32,7 +35,10 @@ sealed external interface ClientHttp2Stream : Http2Stream {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,

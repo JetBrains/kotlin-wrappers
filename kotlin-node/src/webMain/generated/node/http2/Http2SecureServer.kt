@@ -35,9 +35,15 @@ sealed external interface Http2SecureServer<Http1Request : IncomingMessage, Http
 
     fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
-    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("checkContinue")
     val checkContinueEvent: node.events.EventInstance<js.array.Tuple2<Http2Request, Http2Response>>

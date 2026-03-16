@@ -159,7 +159,10 @@ sealed external interface Http2Stream : node.stream.Duplex {
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     override fun emit(
         event: String,
@@ -186,7 +189,10 @@ sealed external interface Http2Stream : node.stream.Duplex {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,

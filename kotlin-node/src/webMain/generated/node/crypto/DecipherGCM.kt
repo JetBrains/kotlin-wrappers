@@ -6,5 +6,8 @@ package node.crypto
 sealed external interface DecipherGCM : Decipheriv {
     fun setAuthTag(buffer: js.buffer.ArrayBufferView<*>) // this
 
-    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: DecipherGCMSetAADOptions = definedExternally) // this
+    fun setAAD(
+        buffer: js.buffer.ArrayBufferView<*>,
+        options: DecipherGCMSetAADOptions = definedExternally,
+    ) // this
 }

@@ -59,7 +59,10 @@ external interface IpcMain : node.events.EventEmitter {
      * Adds a one time `listener` function for the event. This `listener` is invoked
      * only the next time a message is sent to `channel`, after which it is removed.
      */
-    fun once(channel: String, listener: Function<Unit> /* (event: IpcMainEvent, ...args: any[]) => void */) // this
+    fun once(
+        channel: String,
+        listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
+    ) // this
 
     /**
      * Removes all listeners from the specified `channel`. Removes all listeners from

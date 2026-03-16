@@ -233,7 +233,10 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
 
     fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) // this
 
-    fun writeHead(statusCode: Number, headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally) // this
+    fun writeHead(
+        statusCode: Number,
+        headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
+    ) // this
 
     /**
      * Sends a HTTP/1.1 102 Processing message to the client, indicating that

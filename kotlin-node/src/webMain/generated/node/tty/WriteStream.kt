@@ -30,7 +30,10 @@ open external class WriteStream : node.net.Socket {
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     /**
      * `writeStream.clearLine()` clears the current line of this `WriteStream` in a

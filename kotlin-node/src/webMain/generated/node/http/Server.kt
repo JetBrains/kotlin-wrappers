@@ -160,7 +160,10 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

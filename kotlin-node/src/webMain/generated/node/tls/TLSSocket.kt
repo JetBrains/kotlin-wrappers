@@ -341,7 +341,10 @@ external class TLSSocket : node.net.Socket {
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("OCSPResponse")
     val OCSPResponseEvent: node.events.EventInstance<js.array.Tuple1<NonSharedBuffer>>

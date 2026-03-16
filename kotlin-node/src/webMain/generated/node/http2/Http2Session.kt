@@ -268,7 +268,10 @@ sealed external interface Http2Session : EventEmitter {
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple>

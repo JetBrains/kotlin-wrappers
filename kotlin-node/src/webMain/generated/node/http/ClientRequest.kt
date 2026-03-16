@@ -189,7 +189,10 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     /**
      * @deprecated
@@ -222,7 +225,10 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * @deprecated
      */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
