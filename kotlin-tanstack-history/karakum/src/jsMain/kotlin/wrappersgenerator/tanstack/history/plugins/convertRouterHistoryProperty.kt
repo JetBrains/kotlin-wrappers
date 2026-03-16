@@ -1,4 +1,4 @@
-package tanstack.history.karakum.plugins
+package wrappersgenerator.tanstack.history.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin

@@ -1,13 +1,13 @@
-package tanstack.history.karakum
+package wrappersgenerator.tanstack.history
 
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.NumberPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import tanstack.history.karakum.annotations.annotateJsPlainObject
-import tanstack.history.karakum.plugins.convertRouterHistoryProperty
 import typescript.Node
+import wrappersgenerator.tanstack.history.annotations.annotateJsPlainObject
+import wrappersgenerator.tanstack.history.plugins.convertRouterHistoryProperty
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {

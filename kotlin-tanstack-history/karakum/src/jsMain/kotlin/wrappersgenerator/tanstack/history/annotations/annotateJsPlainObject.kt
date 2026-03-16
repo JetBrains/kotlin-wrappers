@@ -1,9 +1,11 @@
-package tanstack.history.karakum.annotations
+package wrappersgenerator.tanstack.history.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.extension.plugins.nameResolverServiceKey
-import typescript.*
+import typescript.Node
+import typescript.isInterfaceDeclaration
+import typescript.isTypeAliasDeclaration
 
 private val plainObjects = setOf(
     "BlockerFnArgs",
