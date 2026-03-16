@@ -1,4 +1,4 @@
-package testing.library.user.event.karakum.nameResolvers
+package wrappersgenerator.testing.library.user.event.nameResolvers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context

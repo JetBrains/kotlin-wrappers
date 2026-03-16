@@ -1,4 +1,4 @@
-package testing.library.user.event.karakum
+package wrappersgenerator.testing.library.user.event
 
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.replace
@@ -6,10 +6,10 @@ import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseMeth
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
-import testing.library.user.event.karakum.nameResolvers.resolveDirectOptionsParameterName
-import testing.library.user.event.karakum.nameResolvers.resolveMouseButtonTypeName
-import testing.library.user.event.karakum.nameResolvers.resolveOptionsParameterName
-import testing.library.user.event.karakum.plugins.*
+import wrappersgenerator.testing.library.user.event.nameResolvers.resolveDirectOptionsParameterName
+import wrappersgenerator.testing.library.user.event.nameResolvers.resolveMouseButtonTypeName
+import wrappersgenerator.testing.library.user.event.nameResolvers.resolveOptionsParameterName
+import wrappersgenerator.testing.library.user.event.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {

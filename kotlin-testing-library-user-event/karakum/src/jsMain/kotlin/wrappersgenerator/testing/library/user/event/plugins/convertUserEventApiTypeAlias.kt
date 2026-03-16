@@ -1,8 +1,8 @@
-package testing.library.user.event.karakum.plugins
+package wrappersgenerator.testing.library.user.event.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import typescript.*
+import typescript.isTypeAliasDeclaration
 
 val convertUserEventApiTypeAlias = createPlugin { node, _, _ ->
     nullable {
