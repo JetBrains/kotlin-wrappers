@@ -1,10 +1,7 @@
-name: CI-K2.3.20
+name: CI-K2.4.0
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,7 +21,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
       - name: Build
         run: |
-          ./gradlew -Pkotlin.version=2.3.20-RC3
+          ./gradlew -Pkotlin.version=2.4.0-Beta1
 
   build-examples:
 
@@ -44,4 +41,4 @@ jobs:
       - name: Build Examples
         working-directory: ./examples
         run: |
-          ./gradlew -Pkotlin.version=2.3.20-RC3
+          ./gradlew -Pkotlin.version=2.4.0-Beta1
