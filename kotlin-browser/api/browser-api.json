@@ -386,6 +386,7 @@
     "DOMStringList": "web.dom.DOMStringList",
     "DOMStringMap": "web.dom.DOMStringMap",
     "DOMTokenList": "web.dom.DOMTokenList",
+    "DataTestId": "web.dom.DataTestId",
     "DataTransfer": "web.data.DataTransfer",
     "DataTransferItem": "web.data.DataTransferItem",
     "DataTransferItemList": "web.data.DataTransferItemList",
