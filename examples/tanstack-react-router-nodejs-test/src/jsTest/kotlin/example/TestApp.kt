@@ -1,6 +1,9 @@
 package example
 
+import example.di.Di
+import example.di.DiContextProvider
 import react.FC
+import react.Props
 import react.use.useConstant
 import tanstack.history.CreateMemoryHistoryOpts
 import tanstack.history.createMemoryHistory
@@ -25,11 +28,18 @@ private fun createTestAppRouter(): Router {
     )
 }
 
-val TestApp = FC {
+external interface TestAppProps: Props {
+    var di: Di
+}
+
+val TestApp = FC<TestAppProps> { props ->
     val appRouter: Router = useConstant(::createTestAppRouter)
 
-    RouterProvider {
-        router = appRouter
+    DiContextProvider {
+        di = props.di
+        RouterProvider {
+            router = appRouter
+        }
     }
 }
 

@@ -1,11 +1,16 @@
 package example.withcoroutinesdefaultdispatcher
 
 import example.TestApp
+import example.TopicServiceImpl
+import example.di.Di
+import example.di.DiConstants.SCOPE
+import example.di.DiConstants.TOPIC_SERVICE
 import example.testsupport.*
 import js.coroutines.promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import react.ReactNode
 import react.create
 import testing.library.dom.screen
 import testing.library.dom.within
@@ -14,7 +19,6 @@ import testing.library.react.render
 import testing.library.user.event.userEvent
 import kotlin.test.AfterTest
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 // Run tests with the Default coroutine dispatcher
@@ -26,20 +30,37 @@ class RouterTestWithoutCoroutinesTestDependency {
             SupervisorJob() + Dispatchers.Default
     }
 
+    private fun createTestApp(testScope: CoroutineScope): ReactNode {
+        val testDI = object : Di {
+            override fun get(key: String) = when (key) {
+                SCOPE -> testScope
+                TOPIC_SERVICE -> TopicServiceImpl()
+                else -> throw Exception("Unknown Di key '$key'")
+            }
+        }
+
+        val testApp = TestApp.create {
+            di = testDI
+        }
+        return testApp
+    }
+
     @AfterTest
     fun afterTest() {
         cleanup()
     }
 
     private fun doTest() = JsTestScope.promise {
+        val testApp = createTestApp(JsTestScope)
+
         // given
         val user = userEvent.setup()
 
         // when
-        render(TestApp.create())
+        render(testApp)
 
         // then
-        val indexContainer = screen.findByTestId(INDEX_CONTAINER_ID)
+        screen.findByTestId(INDEX_CONTAINER_ID)
 
         val topicsLink = screen.queryByTestId(INDEX_LINK_TOPICS_ID)
         assertNotNull(topicsLink, "link to topics on index page")
@@ -56,7 +77,7 @@ class RouterTestWithoutCoroutinesTestDependency {
 
         user.click(componentTopicLink)
 
-        val topicContainer = screen.findByTestId(TOPIC_CONTAINER_ID)
+        screen.findByTestId(TOPIC_CONTAINER_ID)
     }
 
     @Test
