@@ -3,8 +3,6 @@ package example.withcoroutinesdefaultdispatcher
 import example.TestApp
 import example.TopicServiceImpl
 import example.di.Di
-import example.di.DiConstants.SCOPE
-import example.di.DiConstants.TOPIC_SERVICE
 import example.testsupport.*
 import js.coroutines.promise
 import kotlinx.coroutines.CoroutineScope
@@ -31,16 +29,8 @@ class RouterTestWithoutCoroutinesTestDependency {
     }
 
     private fun createTestApp(testScope: CoroutineScope): ReactNode {
-        val testDI = object : Di {
-            override fun get(key: String) = when (key) {
-                SCOPE -> testScope
-                TOPIC_SERVICE -> TopicServiceImpl()
-                else -> throw Exception("Unknown Di key '$key'")
-            }
-        }
-
         val testApp = TestApp.create {
-            di = testDI
+            di = Di(testScope, TopicServiceImpl())
         }
         return testApp
     }

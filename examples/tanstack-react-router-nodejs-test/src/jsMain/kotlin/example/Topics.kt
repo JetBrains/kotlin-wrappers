@@ -1,8 +1,6 @@
 package example
 
 import example.di.Di
-import example.di.DiConstants.SCOPE
-import example.di.DiConstants.TOPIC_SERVICE
 import example.di.DiContext
 import example.testsupport.TOPICS_CONTAINER_ID
 import js.objects.recordOf
@@ -20,8 +18,8 @@ import tanstack.react.router.Link
 
 val Topics = FC {
     val di: Di = use(DiContext)!!
-    val scope: CoroutineScope = di[SCOPE] as CoroutineScope
-    val topicService: TopicService = di[TOPIC_SERVICE] as TopicService
+    val scope: CoroutineScope = di.scope
+    val topicService: TopicService = di.topicService
     var topics by useState<List<TopicItem>?>(null)
 
     useEffect {
