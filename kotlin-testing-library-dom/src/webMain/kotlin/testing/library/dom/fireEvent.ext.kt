@@ -23,7 +23,7 @@ internal fun <E : Event> fireEventInternal(
     instance: EventInstance<E, Node, *>,
     eventClass: KClass<E>,
 ): Boolean =
-    fireEventRaw(
+    fireEvent(
         instance.target as Node,
         createEvent(eventClass, instance.type),
     )
@@ -33,7 +33,7 @@ internal fun <E : Event> fireEventInternal(
     instance: EventInstance<E, Window, *>,
     eventClass: KClass<E>,
 ): Boolean =
-    fireEventRaw(
+    fireEvent(
         instance.target as Window,
         createEvent(eventClass, instance.type),
     )

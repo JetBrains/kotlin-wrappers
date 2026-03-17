@@ -2,4 +2,6 @@
 
 package testing.library.dom
 
-external interface FireEvent : FireFunction
+external interface FireEvent :
+    FireFunction,
+    FireObject

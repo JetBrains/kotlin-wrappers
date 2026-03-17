@@ -8,7 +8,6 @@ import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import typescript.isFunctionDeclaration
-import wrappersgenerator.testing.library.dom.annotations.annotateFireEvent
 import wrappersgenerator.testing.library.dom.annotations.annotateWaitFor
 import wrappersgenerator.testing.library.dom.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.testing.library.dom.plugins.*
@@ -26,7 +25,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             QueriesPlugin(),
             BoundQueriesPlugin,
 
-            convertFireEvent,
             convertFunctionInterfaces,
             convertGetQueriesForElement,
             convertHtmlElementGenerics,
@@ -40,7 +38,6 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         annotations = listOf(
-            ::annotateFireEvent,
             ::annotateWaitFor,
         )
 
@@ -49,14 +46,6 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         input = listOf("types/**/*.d.ts")
-        ignoreOutput = listOf(
-            "**/CreateEvent.kt",
-            "**/CreateObject.kt",
-            "**/CreateFunction.kt",
-            "**/createEvent.fun.kt",
-            "**/EventType.kt",
-            "**/FireObject.kt",
-        )
         isolatedOutputPackage = true
         packageNameMapper = mapOf(
             "types/([^/]+)/([^/]+)\\.kt" to "$2.kt",

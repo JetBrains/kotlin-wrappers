@@ -4,4 +4,4 @@
 
 package testing.library.dom
 
-external val fireEvent: FireEvent
+external val createEvent: CreateEvent
