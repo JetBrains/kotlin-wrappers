@@ -5,7 +5,6 @@ import js.errors.toJsError
 import js.errors.toJsErrorLike
 import js.globals.globalThis
 import js.promise.Promise
-import js.promise.invoke
 import js.reflect.unsafeCast
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async

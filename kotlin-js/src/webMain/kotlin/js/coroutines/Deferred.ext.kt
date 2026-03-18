@@ -3,7 +3,6 @@ package js.coroutines
 import js.errors.toJsErrorLike
 import js.promise.Promise
 import js.promise.deferred
-import js.promise.invoke
 import kotlinx.coroutines.Deferred
 import kotlin.js.JsAny
 

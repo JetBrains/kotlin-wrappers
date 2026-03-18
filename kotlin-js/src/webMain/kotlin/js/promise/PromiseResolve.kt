@@ -1,19 +1,14 @@
 package js.promise
 
-import js.core.Void
-import js.function.unsafeInvoke
 import kotlin.js.JsAny
 
-sealed external interface PromiseResolve<T : JsAny?>
+sealed /* final */
+external interface PromiseResolve<T : JsAny?> {
+    operator fun invoke(
+        value: T,
+    )
 
-inline operator fun <T : JsAny?> PromiseResolve<T>.invoke(
-    value: T,
-) {
-    unsafeInvoke<Void>(this, value)
-}
-
-inline operator fun <T : JsAny?> PromiseResolve<T>.invoke(
-    value: PromiseResult<T>,
-) {
-    unsafeInvoke<Void>(this, value)
+    operator fun invoke(
+        value: PromiseResult<T>,
+    )
 }

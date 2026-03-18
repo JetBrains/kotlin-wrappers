@@ -1,25 +1,17 @@
 package js.promise
 
-import js.core.Void
 import js.errors.JsError
 import js.errors.JsErrorLike
-import js.function.unsafeInvoke
 
-sealed external interface PromiseReject
+sealed /* final */
+external interface PromiseReject {
+    operator fun invoke()
 
-inline operator fun PromiseReject.invoke() {
-    unsafeInvoke<Void>(this)
-}
+    operator fun invoke(
+        reason: JsErrorLike?,
+    )
 
-inline operator fun PromiseReject.invoke(
-    reason: JsErrorLike?,
-) {
-    unsafeInvoke<Void>(this, reason)
-}
-
-
-inline operator fun PromiseReject.invoke(
-    reason: JsError,
-) {
-    unsafeInvoke<Void>(this, reason)
+    operator fun invoke(
+        reason: JsError,
+    )
 }
