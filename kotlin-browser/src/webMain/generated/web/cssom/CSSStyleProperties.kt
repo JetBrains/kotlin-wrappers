@@ -1605,7 +1605,7 @@ private constructor() :
     var left: String
 
     /**
-     * The letter-spacing CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of letter-spacing causes characters to spread farther apart, while negative values of letter-spacing bring characters closer together.
+     * The letter-spacing CSS property sets the spacing between text characters. This value is added to the natural spacing between characters while rendering the text. Positive values of letter-spacing spread characters further apart, while negative values of letter-spacing bring characters closer together.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/letter-spacing)
      */
@@ -3185,7 +3185,7 @@ private constructor() :
     var wordBreak: String
 
     /**
-     * The word-spacing CSS property sets the length of space between words and between tags.
+     * The word-spacing CSS property sets the spacing between words and between tags.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/word-spacing)
      */

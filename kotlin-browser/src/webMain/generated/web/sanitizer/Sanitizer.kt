@@ -48,7 +48,7 @@ open external class Sanitizer(
     fun removeElement(element: SanitizerElement): Boolean
 
     /**
-     * The **`removeUnsafe()`** method of the Sanitizer interface configures the sanitizer configuration so that it will remove all elements, attributes, and event handler content attributes that are considered XSS-unsafe by the browser.
+     * The **`removeUnsafe()`** method of the Sanitizer interface configures the sanitizer so that it will remove all elements and attributes that are considered XSS-unsafe by the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Sanitizer/removeUnsafe)
      */
