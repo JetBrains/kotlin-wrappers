@@ -1,10 +1,9 @@
 package js.function
 
-import js.internal.InternalApi
 import kotlin.js.JsAny
 
-@InternalApi
-external interface UnsafeInvoker {
+@PublishedApi
+internal external interface UnsafeInvoker {
     operator fun <R : JsAny?> invoke(): R
 
     operator fun <R : JsAny?> invoke(
