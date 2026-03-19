@@ -118,6 +118,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.canvas.OffscreenCanvas",
     "web.canvas.OffscreenCanvasRenderingContext2D",
     "web.codecs.EncodedVideoChunkType",
+    "web.codecs.VideoFrame",
     "web.command.Command",
     "web.command.CommandEvent",
     "web.components.CustomElementCallbacks",

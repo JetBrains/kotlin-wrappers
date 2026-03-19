@@ -2,6 +2,7 @@
 
 package web.mediastreams
 
+import web.codecs.VideoFrame
 import web.streams.ReadableStream
 
 /**
@@ -17,5 +18,5 @@ open external class MediaStreamTrackProcessor(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackProcessor/readable)
      */
-    val readable: ReadableStream<*>
+    val readable: ReadableStream<VideoFrame>
 }

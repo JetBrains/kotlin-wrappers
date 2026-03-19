@@ -118,6 +118,13 @@ internal fun webWorkerContent(
 ): String =
     content
         .replace(", MessageEventTarget<DedicatedWorkerGlobalScope>", ", MessageEventTarget")
+        // TODO: report
+        .patchInterface("MediaStreamTrackProcessor") {
+            it.replace(
+                "readonly readable: ReadableStream;",
+                "readonly readable: ReadableStream<VideoFrame>;",
+            )
+        }
         .addStrictPostMessageSupport()
 
 internal fun serviceWorkerContent(
