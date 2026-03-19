@@ -1182,6 +1182,8 @@
     "MediaStreamTrack": "web.mediastreams.MediaStreamTrack",
     "MediaStreamTrackEvent": "web.mediastreams.MediaStreamTrackEvent",
     "MediaStreamTrackEventInit": "web.mediastreams.MediaStreamTrackEventInit",
+    "MediaStreamTrackProcessor": "web.mediastreams.MediaStreamTrackProcessor",
+    "MediaStreamTrackProcessorInit": "web.mediastreams.MediaStreamTrackProcessorInit",
     "MediaStreamTrackState": "web.mediastreams.MediaStreamTrackState",
     "MediaTrackCapabilities": "web.mediastreams.MediaTrackCapabilities",
     "MediaTrackConstraintSet": "web.mediastreams.MediaTrackConstraintSet",
