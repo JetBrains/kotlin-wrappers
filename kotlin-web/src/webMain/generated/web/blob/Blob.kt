@@ -14,6 +14,7 @@ import js.typedarrays.Uint8Array
 import web.http.BodyInit
 import web.images.ImageBitmapSource
 import web.streams.ReadableStream
+import web.url.URLSource
 import kotlin.js.JsName
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -28,6 +29,7 @@ open external class Blob(
     options: BlobPropertyBag = definedExternally,
 ) : BodyInit,
     ImageBitmapSource,
+    URLSource,
     Serializable {
     /**
      * The **`size`** read-only property of the Blob interface returns the size of the Blob or File in bytes.

@@ -2,7 +2,6 @@
 
 package web.url
 
-import web.blob.Blob
 import kotlin.js.definedExternally
 
 /**
@@ -151,7 +150,7 @@ open external class URL(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/createObjectURL_static)
          */
-        fun createObjectURL(obj: Blob /* | MediaSource */): String
+        fun createObjectURL(obj: URLSource): String
 
         /**
          * The **`URL.parse()`** static method of the URL interface returns a newly created URL object representing the URL defined by the parameters.

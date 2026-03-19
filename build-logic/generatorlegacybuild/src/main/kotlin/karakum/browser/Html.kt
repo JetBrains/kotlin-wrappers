@@ -2411,12 +2411,6 @@ private fun getFunctionParameters(
             "init: ReadonlyRecord<String, String>",
         )
 
-        // URL
-        "obj: Blob | MediaSource",
-            -> listOf(
-            "obj: Blob /* | MediaSource */"
-        )
-
         "items: Record<string, string | Blob | PromiseLike<string | Blob>>, options?: ClipboardItemOptions",
             -> listOf(
             "items: ReadonlyRecord<String, JsAny /* String | Blob | PromiseLike<String | Blob> */>",

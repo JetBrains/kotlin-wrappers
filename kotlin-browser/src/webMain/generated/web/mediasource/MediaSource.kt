@@ -7,6 +7,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.html.MediaProvider
+import web.url.URLSource
 import kotlin.js.definedExternally
 
 /**
@@ -16,7 +17,8 @@ import kotlin.js.definedExternally
  */
 open external class MediaSource :
     EventTarget,
-    MediaProvider {
+    MediaProvider,
+    URLSource {
     /**
      * The **`activeSourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing a subset of the SourceBuffer objects contained within sourceBuffers — the list of objects providing the selected video track, enabled audio tracks, and shown/hidden text tracks.
      *

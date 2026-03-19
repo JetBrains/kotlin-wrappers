@@ -319,6 +319,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.url.FragmentDirective",
     "web.url.URL",
     "web.url.URLSearchParams",
+    "web.url.URLSource",
     "web.usb.USB",
     "web.validation.ValidationTarget",
     "web.validation.ValidityState",

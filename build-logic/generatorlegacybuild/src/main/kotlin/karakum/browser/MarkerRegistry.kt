@@ -19,6 +19,8 @@ private val WEB_MARKER_DECLARATIONS = setOf(
 
     "GPUCopyExternalImageSource",
     "GPUBindingResource",
+
+    "URLSource",
 )
 
 private val BROWSER_MARKER_DECLARATIONS = setOf(

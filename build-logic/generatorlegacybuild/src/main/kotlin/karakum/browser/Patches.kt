@@ -435,6 +435,7 @@ internal fun String.applyPatches(): String {
         .patchInterface("Memory", inNamespace = true) {
             it.replace(": ArrayBuffer;", ": B;")
         }
+        .extractUrlSource()
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
@@ -444,6 +445,18 @@ internal val DOM_GEOMETRY_ALIASES = listOf(
     "DOMMatrixInit" to "DOMMatrixReadOnly",
     "DOMMatrix2DInit" to "DOMMatrixReadOnly",
 )
+
+private fun String.extractUrlSource(): String {
+    val value = substringAfter("createObjectURL(obj: ")
+        .substringBefore(")")
+
+    return replace(
+        "createObjectURL(obj: $value)",
+        "createObjectURL(obj: URLSource)",
+    ) + "\n" +
+            "type URLSource = $value;" +
+            "\n"
+}
 
 private fun String.patchDomGeometry(): String =
     DOM_GEOMETRY_ALIASES.fold(this) { acc, (initType, aliasType) ->
