@@ -1,6 +1,6 @@
-@file:JsModule("react")
+@file:JsModule("@testing-library/react")
 
-package react
+package testing.library.react
 
 import js.promise.Promise
 import js.promise.PromiseResult

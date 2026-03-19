@@ -1,4 +1,4 @@
-package react
+package testing.library.react
 
 import js.function.unsafeAsync
 import js.promise.await
