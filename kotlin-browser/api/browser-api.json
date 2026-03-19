@@ -1996,6 +1996,7 @@
     "URLPatternOptions": "web.url.URLPatternOptions",
     "URLPatternResult": "web.url.URLPatternResult",
     "URLSearchParams": "web.url.URLSearchParams",
+    "URLSource": "web.url.URLSource",
     "USB": "web.usb.USB",
     "USBAlternateInterface": "web.usb.USBAlternateInterface",
     "USBConfiguration": "web.usb.USBConfiguration",
