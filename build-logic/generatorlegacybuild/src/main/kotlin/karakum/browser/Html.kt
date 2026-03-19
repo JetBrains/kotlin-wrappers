@@ -10,11 +10,6 @@ internal const val XR_FRAME_REQUEST_ID = "XRFrameRequestId"
 internal const val RENDERING_CONTEXT_ID = "RenderingContextId"
 internal const val GEOLOCATION_WATCH_ID = "GeolocationWatchId"
 
-private val DEPRECATED = setOf(
-    "HTMLAllCollection",
-    "ReadableStreamReadDoneResult",
-)
-
 private val ANIMATION_TYPES = setOf(
     "Animation",
     "AnimationEffect",
@@ -635,7 +630,6 @@ internal fun htmlDeclarations(
             }
             // custom
             .filter { it.name != "EventCounts" }
-            .filter { it.name != "NodeListOf" }
             // duplicates
             .filter { it.name != "ClientQueryOptions" }
             .filter { it.name != "FileSystemFileHandle" }
@@ -723,14 +717,10 @@ internal fun convertInterface(
 
     when {
         name in KNOWN_MISSED_TYPES -> return null
-        name in DEPRECATED -> return null
         name.endsWith("NameMap") -> return null
         name.endsWith("Event") -> return null
         name.endsWith("EventInit") -> return null
         name.endsWith("EventMap") -> return null
-
-        // TEMP
-        name == "HTMLCollectionOf" -> return null
     }
 
     if (("target: string" in source || "target?: string" in source) && (name.startsWith("HTML") || name == "Window")) {

@@ -33,9 +33,8 @@ tasks.named("generateDeclarations") {
 
 val findMissedTypes by tasks.registering {
     doLast {
-        val sourceDir = projectDir.resolve("src/jsMain/generated")
-
-        val generatedInterfaces = fileTree(sourceDir)
+        val generatedInterfaces = fileTree(file("../../kotlin-browser/src/webMain/generated"))
+            .plus(fileTree(file("../../kotlin-web/src/webMain/generated")))
             .mapNotNull { it.name.removeSuffix(".kt") }
             .flatMap { if (it.endsWith("Event")) sequenceOf(it, "${it}Init") else sequenceOf(it) }
             .toSet()
@@ -64,6 +63,7 @@ val findMissedTypes by tasks.registering {
             .map { it.substringBefore(" ").substringBefore("<") }
             .filter { !it.endsWith("EventMap") }
             .filter { !it.endsWith("NameMap") }
+            .filter { !it.endsWith("Iterator") }
             .toSet()
 
         val missedTypes = (declaredInterfaces - generatedInterfaces).sorted() - karakum.browser.KNOWN_MISSED_TYPES
