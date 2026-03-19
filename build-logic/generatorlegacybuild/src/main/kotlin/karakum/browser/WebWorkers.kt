@@ -40,9 +40,15 @@ private val FS_TYPES = setOf(
     "FileSystemSyncAccessHandle",
 )
 
+private val MEDIA_STREAM_TYPES = setOf(
+    "MediaStreamTrackProcessor",
+    "MediaStreamTrackProcessorInit",
+)
+
 private val WEB_WORKER_TYPES = RTC_TYPES
     .plus(FILE_TYPES)
     .plus(FS_TYPES)
+    .plus(MEDIA_STREAM_TYPES)
     .plus("DedicatedWorkerGlobalScope")
     .plus("SharedWorkerGlobalScope")
 
@@ -94,6 +100,7 @@ private fun workersDeclarations(
 
                 in PUSH_TYPES -> "web.push"
                 in RTC_TYPES -> "web.rtc"
+                in MEDIA_STREAM_TYPES -> "web.mediastreams"
                 in SERVICE_WORKER_TYPES -> "web.serviceworker"
 
                 else -> return@mapNotNull null
