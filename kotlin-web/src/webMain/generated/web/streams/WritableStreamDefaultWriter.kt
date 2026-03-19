@@ -68,7 +68,7 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
     @JsName("write")
-    fun writeAsync(chunk: W = definedExternally): Promise<Void>
+    fun writeAsync(chunk: W): Promise<Void>
 }
 
 /**
@@ -98,15 +98,6 @@ suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.abort(reason: JsE
  */
 suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.close() {
     closeAsync().await()
-}
-
-/**
- * The **`write()`** method of the WritableStreamDefaultWriter interface writes a passed chunk of data to a WritableStream and its underlying sink, then returns a Promise that resolves to indicate the success or failure of the write operation.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
- */
-suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.write() {
-    writeAsync().await()
 }
 
 /**
