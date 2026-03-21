@@ -33,7 +33,7 @@ fun NpmVersions.configureVersions() {
     webpack.version = "5.105.4"
 
     // https://www.npmjs.com/package/webpack-cli
-    webpackCli.version = "6.0.1"
+    webpackCli.version = "7.0.2"
 
     // https://www.npmjs.com/package/webpack-dev-server
     webpackDevServer.version = "5.2.3"
