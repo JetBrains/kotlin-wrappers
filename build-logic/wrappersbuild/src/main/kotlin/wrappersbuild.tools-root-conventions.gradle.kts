@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.npm.LockFileMismatchReport
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
+import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.wasm.npm.WasmNpmExtension
 
@@ -20,7 +21,7 @@ plugins.withType<NodeJsRootPlugin> {
 }
 
 plugins.withType<WasmNodeJsRootPlugin> {
-    // the<WasmNodeJsRootExtension>().versions.configureVersions()
+    the<WasmNodeJsRootExtension>().versions.configureVersions()
 
     the<WasmNpmExtension>().apply {
         lockFileDirectory = project.layout.buildDirectory.file("wasm-package-lock").get().asFile

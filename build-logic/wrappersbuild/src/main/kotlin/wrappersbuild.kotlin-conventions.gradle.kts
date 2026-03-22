@@ -9,6 +9,9 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
     id("wrappersbuild.tools-conventions")
+
+    // Webpack 105+ support
+    id("wrappersbuild.latest-webpack-patch")
 }
 
 val COMMON_FREE_COMPILER_ARGS = listOf(
