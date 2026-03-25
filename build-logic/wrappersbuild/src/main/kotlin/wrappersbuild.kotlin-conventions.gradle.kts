@@ -39,6 +39,11 @@ val JS_FREE_COMPILER_ARGS = listOf(
     "-Xir-generate-inline-anonymous-functions",
 )
 
+val NO_INTERNAL_OPTION = setOf(
+    "kotlin-css",
+    "kotlin-js-plain-object",
+)
+
 kotlin {
     applyDefaultHierarchyTemplate()
 
@@ -47,7 +52,7 @@ kotlin {
         freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
         optIn.addAll(COMMON_OPT_INS)
 
-        if (project.name != "kotlin-css") {
+        if (project.name !in NO_INTERNAL_OPTION) {
             optIn.addAll(COMMON_INTERNAL_OPT_INS)
         }
     }
