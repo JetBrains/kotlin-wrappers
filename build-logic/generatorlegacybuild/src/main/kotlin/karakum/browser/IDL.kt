@@ -97,8 +97,6 @@ internal object IDLRegistry {
                     .map { it.substringBefore(" ") }
             }
             // TEMP ?
-            .map { if (it == "PopoverInvokerElement") "PopoverTargetAttributes" else it }
-            // TEMP ?
             .plus("CSSStyleDeclarationBase")
             .toSet()
     }
