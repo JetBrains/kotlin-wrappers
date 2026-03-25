@@ -7,6 +7,8 @@ plugins {
 dependencies {
     webMainApi(projects.kotlinJsCore)
 
+    webMainImplementation(projects.kotlinJsPlainObject)
+
     webMainImplementation(libs.coroutines.core)
 
     webTestImplementation(libs.coroutines.test)

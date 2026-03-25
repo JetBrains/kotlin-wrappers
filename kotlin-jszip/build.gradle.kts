@@ -4,5 +4,8 @@ plugins {
 
 dependencies {
     webMainApi(projects.kotlinWeb)
+
+    webMainImplementation(projects.kotlinJsPlainObject)
+
     webMainApi(npm(jspkg.jszip))
 }
