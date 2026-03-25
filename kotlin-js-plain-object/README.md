@@ -2,4 +2,4 @@
 
 # Module kotlin-js-plain-object
 
-Declaration of `JsPlainObject` that can be used in web target of KMP projects.
+Declaration of `JsPlainObject` that can be used in Kotlin/Web target.
