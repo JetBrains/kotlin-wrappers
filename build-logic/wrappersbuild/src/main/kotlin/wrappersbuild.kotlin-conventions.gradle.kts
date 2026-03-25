@@ -39,7 +39,7 @@ val JS_FREE_COMPILER_ARGS = listOf(
     "-Xir-generate-inline-anonymous-functions",
 )
 
-val NO_INTERNAL_OPTION = setOf(
+val NO_INTERNAL_OPT_INS = setOf(
     "kotlin-css",
     "kotlin-js-plain-object",
 )
@@ -52,7 +52,7 @@ kotlin {
         freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
         optIn.addAll(COMMON_OPT_INS)
 
-        if (project.name !in NO_INTERNAL_OPTION) {
+        if (project.name !in NO_INTERNAL_OPT_INS) {
             optIn.addAll(COMMON_INTERNAL_OPT_INS)
         }
     }
