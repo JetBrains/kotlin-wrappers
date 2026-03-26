@@ -13,5 +13,6 @@ fun <T> useMatch(
 
 fun useMatch(
     from: RouteId,
-): RouteMatch =
-    useMatch(UseMatchOptions(from = from, shouldThrow = false))
+    shouldThrow: Boolean,
+): RouteMatch? =
+    useMatch(UseMatchOptions(from = from, shouldThrow = shouldThrow))
