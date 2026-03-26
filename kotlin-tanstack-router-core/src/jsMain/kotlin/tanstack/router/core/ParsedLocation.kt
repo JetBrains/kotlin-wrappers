@@ -34,7 +34,7 @@ external interface ParsedLocation {
     val state: ParsedHistoryState
 
     /**
-     * The hash of the location, including the leading hash character.
+     * The hash of the location, without the leading hash character.
      */
     val hash: String
 
