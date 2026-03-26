@@ -15,6 +15,7 @@ package tanstack.react.router
  *
  * @return The route match object (or selected value) for the matched route.
  */
+internal /* raw */
 external fun <T> useMatch(
     options: UseMatchOptions<T>,
 ): T

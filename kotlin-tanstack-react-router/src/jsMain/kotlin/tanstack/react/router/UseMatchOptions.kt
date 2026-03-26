@@ -5,6 +5,7 @@ import tanstack.router.core.RouteId
 import tanstack.router.core.RouteMatch
 
 @JsPlainObject
+internal /* raw */
 external interface UseMatchOptions<T> {
     val from: RouteId? /* RoutePath */
     val strict: Boolean?
