@@ -5,7 +5,7 @@ package tanstack.react.router
 import tanstack.router.core.ParsedLocation
 
 /**
- * Read the current location from the router state with optional selection.
+ * Read the current location from the URL with optional selection.
  * Useful for subscribing to just the pieces of location you care about.
  *
  * Options:
