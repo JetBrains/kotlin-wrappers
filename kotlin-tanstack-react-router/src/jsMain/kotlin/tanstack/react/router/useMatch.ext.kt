@@ -11,7 +11,7 @@ fun <T> useMatch(
 ): T =
     useMatch(UseMatchOptions(strict = false, select = select))
 
-fun <T> useMatch(
+fun useMatch(
     from: RouteId,
-): T =
+): RouteMatch =
     useMatch(UseMatchOptions(from = from, shouldThrow = false))
