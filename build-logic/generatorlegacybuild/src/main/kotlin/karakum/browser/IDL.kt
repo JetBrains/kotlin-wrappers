@@ -313,6 +313,10 @@ internal object IDLRegistry {
 
                     ("WeekInfo" to "firstDay") to "Int",
                     ("WeekInfo" to "weekend") to "ReadonlyArray<JsUInt>",
+
+                    // TEMP
+                    ("WebTransportDatagramDuplexStream" to "incomingHighWaterMark") to "Double",
+                    ("WebTransportDatagramDuplexStream" to "outgoingHighWaterMark") to "Double",
                 )
             )
     }
