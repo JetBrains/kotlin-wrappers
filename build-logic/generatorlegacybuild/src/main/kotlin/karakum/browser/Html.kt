@@ -156,7 +156,9 @@ private val VIEW_TRANSITION_TYPES = listOf(
 
 private val HIGHLIGHT_TYPES = listOf(
     "Highlight",
+    "HighlightHitResult",
     "HighlightRegistry",
+    "HighlightsFromPointOptions",
 )
 
 private val DOM_DATA_TYPES = listOf(

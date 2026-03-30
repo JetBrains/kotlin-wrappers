@@ -38,6 +38,13 @@ private constructor() :
     var onstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
+     * The **`role`** read-only property of the RTCIceTransport interface indicates which ICE role the transport is fulfilling: that of the controlling agent, or the agent that is being controlled.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/role)
+     */
+    val role: RTCIceRole
+
+    /**
      * The **`state`** read-only property of the RTCIceTransport interface returns the current state of the ICE transport, so you can determine the state of ICE gathering in which the ICE agent currently is operating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/state)

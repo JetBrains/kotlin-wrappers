@@ -47,6 +47,11 @@ private constructor() :
     var onscroll: EventHandler<Event, VisualViewport, VisualViewport>?
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
+     */
+    var onscrollend: EventHandler<Event, VisualViewport, VisualViewport>?
+
+    /**
      * The **`pageLeft`** read-only property of the VisualViewport interface returns the x coordinate of the left edge of the visual viewport relative to the initial containing block origin, in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageLeft)
