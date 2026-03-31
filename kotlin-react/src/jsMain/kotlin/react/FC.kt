@@ -7,7 +7,7 @@ external interface FC<in P : Props> :
     HasDisplayName
 
 fun FC(
-    block: ChildrenBuilder.() -> Unit,
+    block: context(ChildrenBuilder) () -> Unit,
 ): FC<Props> =
     unsafeCast(
         provider = { ->
@@ -16,7 +16,7 @@ fun FC(
     )
 
 fun <P : Props> FC(
-    block: ChildrenBuilder.(props: P) -> Unit,
+    block: context(ChildrenBuilder) (props: P) -> Unit,
 ): FC<P> =
     unsafeCast(
         provider = { props: P ->
@@ -26,7 +26,7 @@ fun <P : Props> FC(
 
 fun FC(
     displayName: String,
-    block: ChildrenBuilder.() -> Unit,
+    block: context(ChildrenBuilder) () -> Unit,
 ): FC<Props> {
     val component = FC(block)
     component.displayName = displayName
@@ -35,7 +35,7 @@ fun FC(
 
 fun <P : Props> FC(
     displayName: String,
-    block: ChildrenBuilder.(props: P) -> Unit,
+    block: context(ChildrenBuilder) (props: P) -> Unit,
 ): FC<P> {
     val component = FC(block)
     component.displayName = displayName

@@ -17,6 +17,7 @@ plugins {
 val COMMON_FREE_COMPILER_ARGS = listOf(
     "-Xexpect-actual-classes",
     "-Xdont-warn-on-error-suppression",
+    "-Xcontext-parameters",
 
     "-Xwarning-level=NOTHING_TO_INLINE:disabled",
 )

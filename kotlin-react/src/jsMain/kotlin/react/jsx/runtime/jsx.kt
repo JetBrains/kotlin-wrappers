@@ -23,11 +23,13 @@ fun <P : Props> jsx(
 fun <P : Props> jsx(
     type: ElementType<P>,
     props: P,
+    builderChildren: ReactNode? = null,
 ): ReactElement<P> =
     jsx(
         type = type,
         props = props,
         defaultKey = null,
+        builderChildren = builderChildren,
     )
 
 @InternalApi
@@ -35,6 +37,7 @@ fun <P : Props> jsx(
     type: ElementType<P>,
     props: P?,
     defaultKey: Key?,
+    builderChildren: ReactNode? = null,
 ): ReactElement<P> {
     if (props == null)
         return jsxRaw(
@@ -48,7 +51,6 @@ fun <P : Props> jsx(
         ?: defaultKey
         ?: undefined
 
-    val builderChildren = props.buildChildren()
     var jsxMode = true
 
     if (props.key !== undefined || builderChildren != null) {

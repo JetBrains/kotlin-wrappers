@@ -7,9 +7,19 @@ inline fun <P : Props> ElementType<P>.create(): ReactElement<P> =
     jsx(this)
 
 fun <P : Props> ElementType<P>.create(
-    block: P.() -> Unit,
-): ReactElement<P> =
-    jsx(
+    block: context(ChildrenBuilder) (@ReactDsl P).() -> Unit,
+): ReactElement<P> {
+    val builder = ChildrenBuilder()
+
+    val props = unsafeJso<P> {
+        context(builder) {
+            block()
+        }
+    }
+
+    return jsx(
         type = this,
-        props = unsafeJso(block),
+        props = props,
+        builderChildren = builder.asReactNode(),
     )
+}

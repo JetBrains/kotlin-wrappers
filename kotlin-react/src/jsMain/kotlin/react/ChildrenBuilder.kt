@@ -1,36 +1,17 @@
-@file:Suppress(
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "WRONG_EXTERNAL_DECLARATION",
-    "EXTENSION_FUNCTION_IN_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package react
 
+import js.internal.InternalApi
+import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
 import react.jsx.runtime.jsx
 
-// builder children
-private val BUILDER_CHILDREN: Symbol = Symbol("@@builder-children")
-
-private inline var ChildrenBuilder.builderChildren: ReactNodeArray?
-    get() = asDynamic()[BUILDER_CHILDREN]
-    set(value) {
-        asDynamic()[BUILDER_CHILDREN] = value
-    }
-
-private fun buildChildren(builder: Any): ReactNode? {
-    val children: ReactNode? = builder.asDynamic()[BUILDER_CHILDREN]
-    deleteProperty(builder, BUILDER_CHILDREN)
-    return children
-}
-
-internal fun Props.buildChildren(): ReactNode? =
-    buildChildren(this)
+@InternalApi
+inline fun ChildrenBuilder.asReactNode() =
+    unsafeCast<Array<ReactNode?>>()
+        .takeIf { it.isNotEmpty() }
+        ?.unsafeCast<ReactNode?>()
 
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
@@ -49,129 +30,100 @@ internal fun setDefaultKey(
     builder.asDynamic()[DEFAULT_KEY] = key
 }
 
-@ReactDsl
-sealed external interface ChildrenBuilder {
-    inline operator fun ReactNode?.unaryPlus() {
-        addChildNode(this)
-    }
+sealed external interface ChildrenBuilder
 
-    inline operator fun String?.unaryPlus() {
-        addChildNode(ReactNode(this))
-    }
+@InternalApi
+inline fun ChildrenBuilder() =
+    arrayOf<ReactNode?>().unsafeCast<ChildrenBuilder>()
 
-    inline operator fun Char.unaryPlus() {
-        addChildNode(ReactNode(this))
-    }
-
-    inline fun <P : Props> child(
-        type: ElementType<P>,
-        props: P,
-    ) {
-        addChild(type, props)
-    }
-
-    @ElementBuilder
-    inline operator fun <P : Props> ElementType<P>.invoke() {
-        addChild(this)
-    }
-
-    @ElementBuilder
-    inline operator fun <P : Props> ElementType<P>.invoke(
-        noinline block: P.() -> Unit,
-    ) {
-        addChild(
-            type = this,
-            block = block,
-        )
-    }
-
-    @ElementBuilder
-    inline operator fun <T> Provider<T>.invoke(
-        value: T,
-        noinline block: ChildrenBuilder.() -> Unit,
-    ) {
-        addChild(
-            provider = this,
-            value = value,
-            block = block,
-        )
-    }
+context(builder: ChildrenBuilder)
+operator fun ReactNode?.unaryPlus() {
+    builder.addChildNode(this)
 }
 
-@PublishedApi
-internal fun ChildrenBuilder.addChildNode(
-    node: ReactNode?,
-) {
-    val children = builderChildren
-    if (children != null) {
-        children.push(node)
-    } else {
-        builderChildren = ReactNodeArray(node)
-    }
+context(builder: ChildrenBuilder)
+operator fun String?.unaryPlus() {
+    builder.addChildNode(ReactNode(this))
 }
 
-private fun <P : Props> ChildrenBuilder.addChildElement(
-    type: ElementType<P>,
-    props: P?,
-    defaultKey: Key?,
-) {
-    val element = jsx(
-        type = type,
-        props = props,
-        defaultKey = defaultKey,
-    )
-
-    addChildNode(element)
+context(builder: ChildrenBuilder)
+operator fun Char.unaryPlus() {
+    builder.addChildNode(ReactNode(this))
 }
 
-@PublishedApi
-internal fun <P : Props> ChildrenBuilder.addChild(
-    type: ElementType<P>,
-) {
-    addChildElement(
-        type = type,
-        props = null,
-        defaultKey = getDefaultKey(),
-    )
-}
-
-@PublishedApi
-internal fun <P : Props> ChildrenBuilder.addChild(
+context(builder: ChildrenBuilder)
+fun <P : Props> child(
     type: ElementType<P>,
     props: P,
 ) {
     addChildElement(
         type = type,
-        props = props,
-        defaultKey = getDefaultKey(),
+        props = Object.assign(unsafeJso(), props),
+        defaultKey = builder.getDefaultKey(),
     )
 }
 
-@PublishedApi
-internal fun <P : Props> ChildrenBuilder.addChild(
-    type: ElementType<P>,
-    block: P.() -> Unit,
-) {
-    val defaultKey = getDefaultKey()
-
+@ElementBuilder
+context(builder: ChildrenBuilder)
+operator fun <P : Props> ElementType<P>.invoke() {
     addChildElement(
-        type = type,
-        props = unsafeJso(block),
-        defaultKey = defaultKey,
+        type = this,
+        defaultKey = builder.getDefaultKey(),
     )
 }
 
-@PublishedApi
-internal fun <T> ChildrenBuilder.addChild(
-    provider: Provider<T>,
-    value: T,
-    block: ChildrenBuilder.() -> Unit,
+@ElementBuilder
+context(builder: ChildrenBuilder)
+operator fun <P : Props> ElementType<P>.invoke(
+    block: context(ChildrenBuilder) (@ReactDsl P).() -> Unit,
 ) {
-    addChild(
-        type = provider,
-        block = {
-            this.value = value
+    val defaultKey = builder.getDefaultKey()
+
+    val builder = ChildrenBuilder()
+
+    val props = unsafeJso<P> {
+        context(builder) {
             block()
         }
+    }
+
+    addChildElement(
+        type = this,
+        props = props,
+        defaultKey = defaultKey,
+        builderChildren = builder.asReactNode(),
     )
 }
+
+@ElementBuilder
+context(builder: ChildrenBuilder)
+operator fun <T> Provider<T>.invoke(
+    value: T,
+    block: context(ChildrenBuilder) () -> Unit,
+) {
+    invoke {
+        this.value = value
+
+        block()
+    }
+}
+
+context(builder: ChildrenBuilder)
+private fun <P : Props> addChildElement(
+    type: ElementType<P>,
+    props: P? = null,
+    defaultKey: Key?,
+    builderChildren: ReactNode? = null,
+) {
+    val element = jsx(
+        type = type,
+        props = props,
+        defaultKey = defaultKey,
+        builderChildren = builderChildren,
+    )
+
+    builder.addChildNode(element)
+}
+
+private fun ChildrenBuilder.addChildNode(node: ReactNode?) =
+    asDynamic().push(node)

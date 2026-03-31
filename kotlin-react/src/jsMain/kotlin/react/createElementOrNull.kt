@@ -1,7 +1,7 @@
 package react
 
 internal fun createElementOrNull(
-    block: ChildrenBuilder.() -> Unit,
+    block: context(ChildrenBuilder) () -> Unit,
 ): ReactElement<*>? =
-    Fragment.create(block)
+    Fragment.create { block() }
         .takeIf { it.props.children != null }
