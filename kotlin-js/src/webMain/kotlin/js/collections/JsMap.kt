@@ -20,6 +20,17 @@ open external class JsMap<K : JsAny?, V : JsAny?>(
     override fun entries(): JsIterator<Tuple2<K, V>>
     override fun forEach(action: (value: V, key: K) -> Unit)
     override fun get(key: K): V?
+
+    fun getOrInsert(
+        key: K,
+        defaultValue: V,
+    ): V
+
+    fun getOrInsertComputed(
+        key: K,
+        callback: (key: K) -> V,
+    ): V
+
     override fun has(key: K): Boolean
     override fun keys(): JsIterator<K>
     override fun set(key: K, value: V)
