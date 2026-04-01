@@ -1,5 +1,6 @@
 package js.iterable
 
+import js.array.jsArrayOf
 import js.collections.JsSet
 import js.numbers.BigInt
 import js.numbers.n
@@ -10,14 +11,13 @@ import kotlin.test.assertEquals
 class JsIteratorTest {
     @Test
     fun operatorIterator() {
-        val expectedSet = setOf(1.n, 2.n, 3.n)
-        val jsSet = JsSet(expectedSet.toTypedArray())
+        val jsSet = JsSet(jsArrayOf(1.n, 2.n, 3.n))
 
         val actualSet = mutableSetOf<BigInt>()
         for (element in jsSet[Symbol.iterator]()) {
             actualSet.add(element)
         }
 
-        assertEquals(expectedSet, actualSet)
+        assertEquals(setOf(1.n, 2.n, 3.n), actualSet)
     }
 }
