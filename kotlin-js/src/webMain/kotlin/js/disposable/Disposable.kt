@@ -1,12 +1,13 @@
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package js.disposable
 
-import js.core.Void
-import js.hacks.safeMethod
-import js.symbol.Symbol
+import kotlin.js.JsSymbol
+import kotlin.js.definedExternally
 
-external interface Disposable
-
-operator fun Disposable.get(
-    key: Symbol.dispose,
-): () -> Void =
-    safeMethod(Symbol.dispose)
+external interface Disposable {
+    @JsSymbol("dispose")
+    fun dispose(): Unit = definedExternally
+}
