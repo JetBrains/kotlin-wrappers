@@ -1,13 +1,15 @@
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package js.disposable
 
 import js.core.Void
-import js.hacks.safeMethod
 import js.promise.PromiseLike
-import js.symbol.Symbol
+import kotlin.js.JsSymbol
+import kotlin.js.definedExternally
 
-external interface AsyncDisposable
-
-operator fun AsyncDisposable.get(
-    key: Symbol.asyncDispose,
-): () -> PromiseLike<Void> =
-    safeMethod(Symbol.asyncDispose)
+external interface AsyncDisposable {
+    @JsSymbol("asyncDispose")
+    fun asyncDispose(): PromiseLike<Void> = definedExternally
+}
