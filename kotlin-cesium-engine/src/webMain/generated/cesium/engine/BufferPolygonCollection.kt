@@ -46,7 +46,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class BufferPolygonCollection(
     options: ConstructorOptions,
-) {
+)  /* : BufferPrimitiveCollection<BufferPolygon> */ {
     /**
      * @property [allowPicking] When `true`, primitives are pickable with [Scene.pick]. When `false`, memory and initialization cost are lower.
      *   Default value - `true`

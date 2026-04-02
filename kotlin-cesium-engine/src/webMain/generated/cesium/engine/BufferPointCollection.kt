@@ -35,7 +35,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class BufferPointCollection(
     options: ConstructorOptions,
-) {
+) : BufferPrimitiveCollection<BufferPoint> {
     @JsPlainObject
     interface ConstructorOptions {
         val primitiveCountMax: Double?

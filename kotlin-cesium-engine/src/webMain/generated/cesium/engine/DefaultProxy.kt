@@ -15,7 +15,7 @@ package cesium.engine
  */
 open external class DefaultProxy(
     proxy: String,
-) {
+)  /* : Proxy */ {
     /**
      * Get the final URL to use to request a given resource.
      * @param [resource] The resource to request.

@@ -35,7 +35,7 @@ open external class BufferPrimitive {
      * @return JSON-serializable object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitive.html#toJSON">Online Documentation</a>
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 
     companion object {
         /**

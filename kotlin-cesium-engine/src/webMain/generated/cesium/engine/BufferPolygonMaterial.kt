@@ -14,7 +14,7 @@ package cesium.engine
  */
 open external class BufferPolygonMaterial(
     options: BufferPolygonMaterialOptions? = definedExternally,
-) {
+)  /* : BufferPrimitiveMaterial */ {
     /**
      * Color of fill.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonMaterial.html#color">Online Documentation</a>

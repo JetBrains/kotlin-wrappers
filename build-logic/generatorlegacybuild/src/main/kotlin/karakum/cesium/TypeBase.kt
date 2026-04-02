@@ -2,11 +2,6 @@ package karakum.cesium
 
 import karakum.common.ConversionResult
 
-private val ERROR_TYPES = setOf(
-    "RuntimeError",
-    "DeveloperError",
-)
-
 internal abstract class TypeBase(
     final override val source: Definition,
 ) : Declaration(), IType, HasMembers {
@@ -21,13 +16,16 @@ internal abstract class TypeBase(
         } else ""
     }
 
-    var parents: List<String> =
-        when (name) {
-            in ERROR_TYPES,
-                -> listOf("JsError")
+    var parents: List<String> = run {
+        val start = source.body
+            .substringAfter(name)
+            .substringBefore(" {\n")
 
-            else -> emptyList()
-        }
+        if (start.startsWith(" extends ")) {
+            listOf(start.removePrefix(" extends "))
+                .map { if (it == "Error") "JsError" else it }
+        } else emptyList()
+    }
 
     abstract val typeName: String
     abstract val companion: HasMembers?
@@ -89,7 +87,7 @@ internal abstract class TypeBase(
             constructorBody = constructorBody.replaceFirst(param, p.declaration)
         }
 
-        if (name in ERROR_TYPES) {
+        if ("JsError" in parents) {
             constructorBody = constructorBody.replaceFirst(
                 "val message:",
                 "override val message:",
@@ -154,8 +152,32 @@ internal abstract class TypeBase(
         }
 
         val parentNames = if (parents.isNotEmpty()) {
-            " : " + (if (constructorBody.endsWith("()")) "\n" else "") + parents.joinToString(", ")
+            val result = ":" + (if (constructorBody.endsWith("\n)")) " " else "\n") +
+                    parents.joinToString(", ")
+
+            when (name) {
+                "BufferPointMaterial",
+                "BufferPolygonCollection",
+                "BufferPolygonMaterial",
+                "BufferPolylineMaterial",
+                "Cesium3DTilesVoxelProvider",
+                "DefaultProxy",
+                "IonResource",
+                    -> " /* $result */"
+
+                else -> result
+            }
         } else ""
+
+        when (name) {
+            "BufferPrimitive",
+                -> body = body.replace("fun toJSON(", "open fun toJSON(")
+
+            "BufferPoint",
+            "BufferPolygon",
+            "BufferPolyline",
+                -> body = body.replace("fun toJSON(", "override fun toJSON(")
+        }
 
         // TODO: move cleanup to separate method
         body = "$constructorBody $parentNames {\n$body\n}\n"

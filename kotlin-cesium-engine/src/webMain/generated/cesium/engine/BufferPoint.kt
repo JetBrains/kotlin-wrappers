@@ -15,7 +15,8 @@ package cesium.engine
  * Represented as one (1) position.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPoint.html">Online Documentation</a>
  */
-open external class BufferPoint {
+open external class BufferPoint :
+    BufferPrimitive {
     /**
      * Count of positions (vertices) in this primitive. Always 1.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPoint.html#vertexCount">Online Documentation</a>
@@ -41,7 +42,7 @@ open external class BufferPoint {
      * @return JSON-serializable object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPoint.html#toJSON">Online Documentation</a>
      */
-    fun toJSON(): JsAny
+    override fun toJSON(): JsAny
 
     companion object {
         /**

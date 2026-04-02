@@ -14,7 +14,7 @@ package cesium.engine
  */
 open external class BufferPointMaterial(
     options: BufferPointMaterialOptions? = definedExternally,
-) {
+)  /* : BufferPrimitiveMaterial */ {
     /**
      * Size of point, 0-255px.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPointMaterial.html#size">Online Documentation</a>

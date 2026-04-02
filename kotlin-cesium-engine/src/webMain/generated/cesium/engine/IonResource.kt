@@ -23,7 +23,7 @@ import web.canvas.CanvasImageSource
 open external class IonResource(
     endpoint: JsAny,
     endpointResource: Resource,
-) {
+)  /* : Resource */ {
     /**
      * Gets the credits required for attribution of the asset.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#credits">Online Documentation</a>

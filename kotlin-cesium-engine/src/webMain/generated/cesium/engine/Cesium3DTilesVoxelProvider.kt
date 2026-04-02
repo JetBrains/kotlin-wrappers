@@ -22,7 +22,7 @@ import seskar.js.JsAsync
  */
 open external class Cesium3DTilesVoxelProvider(
     options: ConstructorOptions,
-) {
+)  /* : VoxelProvider */ {
     /**
      * A transform from local space to global space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#globalTransform">Online Documentation</a>

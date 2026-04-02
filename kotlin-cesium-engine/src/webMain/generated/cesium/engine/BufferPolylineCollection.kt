@@ -34,7 +34,8 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineCollection.html">Online Documentation</a>
  */
-open external class BufferPolylineCollection {
+open external class BufferPolylineCollection :
+    BufferPrimitiveCollection<BufferPolyline> {
     /**
      * Adds a new polyline to the collection, with the specified options. A
      * [BufferPolyline] instance is linked to the new polyline, using

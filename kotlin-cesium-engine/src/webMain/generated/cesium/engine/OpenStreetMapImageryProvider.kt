@@ -20,7 +20,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class OpenStreetMapImageryProvider(
     options: ConstructorOptions,
-) {
+) : UrlTemplateImageryProvider {
     /**
      * Initialization options for the OpenStreetMapImageryProvider constructor
      * @property [url] The OpenStreetMap server url.

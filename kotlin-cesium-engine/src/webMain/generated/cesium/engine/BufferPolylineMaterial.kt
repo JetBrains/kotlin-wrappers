@@ -14,7 +14,7 @@ package cesium.engine
  */
 open external class BufferPolylineMaterial(
     options: BufferPolylineMaterialOptions? = definedExternally,
-) {
+)  /* : BufferPrimitiveMaterial */ {
     /**
      * Width of polyline, 0–255px.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineMaterial.html#width">Online Documentation</a>

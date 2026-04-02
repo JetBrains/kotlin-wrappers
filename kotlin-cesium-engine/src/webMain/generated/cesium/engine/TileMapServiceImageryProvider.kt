@@ -30,7 +30,8 @@ import seskar.js.JsAsync
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html">Online Documentation</a>
  */
 open external class TileMapServiceImageryProvider
-private constructor() {
+private constructor() :
+    UrlTemplateImageryProvider {
     /**
      * Initialization options for the TileMapServiceImageryProvider constructor
      * @property [fileExtension] The file extension for images on the server.

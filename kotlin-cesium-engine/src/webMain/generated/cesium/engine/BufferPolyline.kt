@@ -15,7 +15,8 @@ package cesium.engine
  * Represented as two (2) or more positions.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolyline.html">Online Documentation</a>
  */
-open external class BufferPolyline {
+open external class BufferPolyline :
+    BufferPrimitive {
     /**
      * Count of positions (vertices) in this polyline, number of VEC3 elements.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolyline.html#vertexCount">Online Documentation</a>
@@ -42,7 +43,7 @@ open external class BufferPolyline {
      * @return JSON-serializable object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolyline.html#toJSON">Online Documentation</a>
      */
-    fun toJSON(): JsAny
+    override fun toJSON(): JsAny
 
     companion object {
         /**
