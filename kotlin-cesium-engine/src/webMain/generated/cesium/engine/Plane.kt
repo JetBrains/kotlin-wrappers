@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import cesium.engine.Plane.Companion.transform
-
 /**
  * A plane in Hessian Normal Form defined by
  * ```
