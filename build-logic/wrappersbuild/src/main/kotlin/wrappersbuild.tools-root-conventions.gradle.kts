@@ -38,4 +38,7 @@ fun NpmVersions.configureVersions() {
 
     // https://www.npmjs.com/package/webpack-dev-server
     webpackDevServer.version = "5.2.3"
+
+    // https://www.npmjs.com/package/mocha
+    mocha.version = "12.0.0-beta-10"
 }
