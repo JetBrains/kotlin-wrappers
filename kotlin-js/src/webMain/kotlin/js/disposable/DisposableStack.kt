@@ -12,7 +12,7 @@ open external class DisposableStack :
     /**
      * Disposes each resource in the stack in the reverse order that they were added.
      */
-    // fun dispose()
+    fun dispose()
 
     /**
      * Adds a disposable resource to the stack, returning the resource.
