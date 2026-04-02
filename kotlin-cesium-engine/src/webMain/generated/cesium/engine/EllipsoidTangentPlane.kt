@@ -18,7 +18,7 @@ import js.array.ReadonlyArray
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTangentPlane.html">Online Documentation</a>
  */
-external class EllipsoidTangentPlane(
+open external class EllipsoidTangentPlane(
     var origin: Cartesian3,
     var ellipsoid: Ellipsoid = definedExternally,
 ) {

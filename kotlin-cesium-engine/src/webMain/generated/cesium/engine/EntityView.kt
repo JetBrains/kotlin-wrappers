@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityView.html">Online Documentation</a>
  */
-external class EntityView(
+open external class EntityView(
     var entity: Entity,
     var scene: Scene,
     var ellipsoid: Ellipsoid = definedExternally,

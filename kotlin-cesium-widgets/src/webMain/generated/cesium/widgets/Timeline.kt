@@ -17,7 +17,7 @@ import web.dom.Element
  * @param [clock] The clock to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Timeline.html">Online Documentation</a>
  */
-external class Timeline(
+open external class Timeline(
     var container: Element,
     clock: Clock,
 ) {

@@ -23,7 +23,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Quaternion.html">Online Documentation</a>
  */
-external class Quaternion(
+open external class Quaternion(
     var x: Double = definedExternally,
     var y: Double = definedExternally,
     var z: Double = definedExternally,

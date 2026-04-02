@@ -24,7 +24,7 @@ import seskar.js.JsAsync
  *   Default value - [Number.POSITIVE_INFINITY]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html">Online Documentation</a>
  */
-external class TaskProcessor(
+open external class TaskProcessor(
     workerPath: String,
     maximumActiveTasks: Double? = definedExternally,
 ) {

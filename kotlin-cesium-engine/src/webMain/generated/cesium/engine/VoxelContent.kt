@@ -14,7 +14,7 @@ import js.typedarrays.TypedArray
  * An object representing voxel content for a [Cesium3DTilesVoxelProvider].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelContent.html">Online Documentation</a>
  */
-external class VoxelContent
+open external class VoxelContent
 private constructor() {
 
 

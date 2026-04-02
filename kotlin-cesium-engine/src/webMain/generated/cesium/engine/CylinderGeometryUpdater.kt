@@ -14,7 +14,7 @@ package cesium.engine
  * @param [scene] The scene where visualization is taking place.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderGeometryUpdater.html">Online Documentation</a>
  */
-external class CylinderGeometryUpdater(
+open external class CylinderGeometryUpdater(
     entity: Entity,
     scene: Scene,
 ) {

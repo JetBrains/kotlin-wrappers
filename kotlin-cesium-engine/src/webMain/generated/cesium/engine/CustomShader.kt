@@ -58,7 +58,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object with the following options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html">Online Documentation</a>
  */
-external class CustomShader(
+open external class CustomShader(
     options: ConstructorOptions,
 ) {
     /**

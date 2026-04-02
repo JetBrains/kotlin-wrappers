@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
  * the tiling scheme used by Google Maps, Microsoft Bing Maps, and most of ESRI ArcGIS Online.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMercatorTilingScheme.html">Online Documentation</a>
  */
-external class WebMercatorTilingScheme(
+open external class WebMercatorTilingScheme(
     options: ConstructorOptions? = definedExternally,
 ) : TilingScheme {
     /**

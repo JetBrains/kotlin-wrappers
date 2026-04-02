@@ -14,7 +14,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] The object containing all parameters.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProviderViewModel.html">Online Documentation</a>
  */
-external class ProviderViewModel(
+open external class ProviderViewModel(
     options: ConstructorOptions,
 ) {
     /**

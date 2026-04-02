@@ -20,7 +20,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxStyleImageryProvider.html">Online Documentation</a>
  */
-external class MapboxStyleImageryProvider(
+open external class MapboxStyleImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

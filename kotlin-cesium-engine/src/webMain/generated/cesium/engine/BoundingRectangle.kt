@@ -22,7 +22,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingRectangle.html">Online Documentation</a>
  */
-external class BoundingRectangle(
+open external class BoundingRectangle(
     var x: Double = definedExternally,
     var y: Double = definedExternally,
     var width: Double = definedExternally,

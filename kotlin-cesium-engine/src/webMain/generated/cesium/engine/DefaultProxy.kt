@@ -13,7 +13,7 @@ package cesium.engine
  * @param [proxy] The proxy URL that will be used to requests all resources.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DefaultProxy.html">Online Documentation</a>
  */
-external class DefaultProxy(
+open external class DefaultProxy(
     proxy: String,
 ) {
     /**

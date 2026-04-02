@@ -12,7 +12,7 @@ package cesium.engine
  * @param [duration] entry duration
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourWait.html">Online Documentation</a>
  */
-external class KmlTourWait(
+open external class KmlTourWait(
     duration: Double,
 ) {
     /**

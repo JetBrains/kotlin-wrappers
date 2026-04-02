@@ -46,7 +46,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuantizedMeshTerrainData.html">Online Documentation</a>
  */
-external class QuantizedMeshTerrainData(
+open external class QuantizedMeshTerrainData(
     options: ConstructorOptions,
 ) : TerrainData {
     /**

@@ -29,7 +29,7 @@ import seskar.js.JsAsync
  *   the name of the GeoJSON file.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html">Online Documentation</a>
  */
-external class GeoJsonDataSource(
+open external class GeoJsonDataSource(
     var name: String = definedExternally,
 ) {
     /**

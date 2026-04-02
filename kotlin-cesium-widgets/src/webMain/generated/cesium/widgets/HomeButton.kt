@@ -17,7 +17,7 @@ import web.dom.Element
  * @param [duration] The time, in seconds, it takes to complete the camera flight home.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HomeButton.html">Online Documentation</a>
  */
-external class HomeButton(
+open external class HomeButton(
     var container: Element,
     scene: Scene,
     duration: Double? = definedExternally,

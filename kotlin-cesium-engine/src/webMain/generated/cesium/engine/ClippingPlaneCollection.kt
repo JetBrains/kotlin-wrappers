@@ -38,7 +38,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPlaneCollection.html">Online Documentation</a>
  */
-external class ClippingPlaneCollection(
+open external class ClippingPlaneCollection(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

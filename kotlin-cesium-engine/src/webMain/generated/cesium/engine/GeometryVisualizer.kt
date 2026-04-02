@@ -17,7 +17,7 @@ package cesium.engine
  *   Default value - [scene.groundPrimitives]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryVisualizer.html">Online Documentation</a>
  */
-external class GeometryVisualizer(
+open external class GeometryVisualizer(
     scene: Scene,
     entityCollection: EntityCollection,
     primitives: PrimitiveCollection? = definedExternally,

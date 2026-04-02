@@ -25,7 +25,7 @@ import seskar.js.JsAsync
  * @param [params.abbrv] When set to 1 we attempt to abbreviate and shorten the formatted string we return.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenCageGeocoderService.html">Online Documentation</a>
  */
-external class OpenCageGeocoderService(
+open external class OpenCageGeocoderService(
     val url: Resource,
     apiKey: String,
     params: JsAny /* {

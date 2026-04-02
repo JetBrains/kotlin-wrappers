@@ -13,7 +13,7 @@ package cesium.engine
  * @param [maximumLevel] The maximum tile level that is potentially available.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileAvailability.html">Online Documentation</a>
  */
-external class TileAvailability(
+open external class TileAvailability(
     tilingScheme: TilingScheme,
     maximumLevel: Int,
 ) {

@@ -40,7 +40,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstance.html">Online Documentation</a>
  */
-external class GeometryInstance(
+open external class GeometryInstance(
     options: ConstructorOptions,
 ) {
     /**

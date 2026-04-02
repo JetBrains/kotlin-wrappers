@@ -28,7 +28,7 @@ import web.html.HTMLElement
  *   Default value - `document.body`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CreditDisplay.html">Online Documentation</a>
  */
-external class CreditDisplay(
+open external class CreditDisplay(
     var container: HTMLElement,
     delimiter: String? = definedExternally,
     viewport: HTMLElement? = definedExternally,

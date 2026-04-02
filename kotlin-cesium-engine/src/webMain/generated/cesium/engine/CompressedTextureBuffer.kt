@@ -18,7 +18,7 @@ import js.typedarrays.Uint8Array
  * @param [buffer] The compressed texture buffer.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompressedTextureBuffer.html">Online Documentation</a>
  */
-external class CompressedTextureBuffer(
+open external class CompressedTextureBuffer(
     val internalFormat: PixelFormat,
     val pixelDatatype: PixelDatatype,
     val width: Double,

@@ -17,7 +17,7 @@ package cesium.engine
  * @property [material] The [Material] defining the surface appearance of the viewport quad.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ViewportQuad.html">Online Documentation</a>
  */
-external class ViewportQuad(
+open external class ViewportQuad(
     var rectangle: BoundingRectangle = definedExternally,
     var material: Material = definedExternally,
 ) {

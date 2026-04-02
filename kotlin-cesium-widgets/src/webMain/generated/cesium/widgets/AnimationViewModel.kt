@@ -15,7 +15,7 @@ import js.numbers.JsDouble
  * @property [clockViewModel] The ClockViewModel instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html">Online Documentation</a>
  */
-external class AnimationViewModel(
+open external class AnimationViewModel(
     var clockViewModel: ClockViewModel,
 ) {
     /**

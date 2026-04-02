@@ -17,7 +17,7 @@ import web.dom.Element
  * @property [performanceContainer] The instance to use for performance container.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumInspectorViewModel.html">Online Documentation</a>
  */
-external class CesiumInspectorViewModel(
+open external class CesiumInspectorViewModel(
     var scene: Scene,
     var performanceContainer: Element,
 ) {

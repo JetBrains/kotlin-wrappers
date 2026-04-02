@@ -17,7 +17,7 @@ package cesium.engine
  *   Default value - [Cartesian3(1.0, 1.0, 1.0)][Cartesian3]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TranslationRotationScale.html">Online Documentation</a>
  */
-external class TranslationRotationScale(
+open external class TranslationRotationScale(
     var translation: Cartesian3 = definedExternally,
     var rotation: Quaternion = definedExternally,
     var scale: Cartesian3 = definedExternally,

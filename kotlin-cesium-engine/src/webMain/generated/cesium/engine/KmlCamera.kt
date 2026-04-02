@@ -13,7 +13,7 @@ package cesium.engine
  * @param [headingPitchRoll] camera orientation
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlCamera.html">Online Documentation</a>
  */
-external class KmlCamera(
+open external class KmlCamera(
     position: Cartesian3,
     headingPitchRoll: HeadingPitchRoll,
 )

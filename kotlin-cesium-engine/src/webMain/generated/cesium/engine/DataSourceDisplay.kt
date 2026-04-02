@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
  * Visualizes a collection of [DataSource] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceDisplay.html">Online Documentation</a>
  */
-external class DataSourceDisplay(
+open external class DataSourceDisplay(
     options: ConstructorOptions,
 ) {
     /**

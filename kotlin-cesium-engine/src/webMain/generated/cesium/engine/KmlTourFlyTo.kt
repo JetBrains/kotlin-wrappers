@@ -15,7 +15,7 @@ package cesium.engine
  * @param [view] KmlCamera or KmlLookAt
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourFlyTo.html">Online Documentation</a>
  */
-external class KmlTourFlyTo(
+open external class KmlTourFlyTo(
     duration: Double,
     flyToMode: String,
     view: KmlCamera,

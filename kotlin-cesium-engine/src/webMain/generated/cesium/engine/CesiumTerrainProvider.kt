@@ -36,7 +36,7 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html">Online Documentation</a>
  */
-external class CesiumTerrainProvider
+open external class CesiumTerrainProvider
 private constructor() :
     TerrainProvider {
     /**

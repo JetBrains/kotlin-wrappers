@@ -16,7 +16,7 @@ import web.dom.Element
  *   Default value - `document.body`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButton.html">Online Documentation</a>
  */
-external class FullscreenButton(
+open external class FullscreenButton(
     var container: Element,
     fullscreenElement: Element? = definedExternally,
 ) {

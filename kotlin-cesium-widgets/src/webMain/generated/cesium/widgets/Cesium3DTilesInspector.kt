@@ -16,7 +16,7 @@ import web.dom.Element
  * @param [scene] the Scene instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspector.html">Online Documentation</a>
  */
-external class Cesium3DTilesInspector(
+open external class Cesium3DTilesInspector(
     var container: Element,
     scene: Scene,
 ) {

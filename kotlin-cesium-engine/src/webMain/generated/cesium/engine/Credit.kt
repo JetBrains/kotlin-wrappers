@@ -20,7 +20,7 @@ import web.html.HTMLElement
  *   Default value - `false`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Credit.html">Online Documentation</a>
  */
-external class Credit(
+open external class Credit(
     val html: String,
     var showOnScreen: Boolean = definedExternally,
 ) {

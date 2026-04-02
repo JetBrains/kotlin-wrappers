@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * The view model for [BaseLayerPicker].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPickerViewModel.html">Online Documentation</a>
  */
-external class BaseLayerPickerViewModel(
+open external class BaseLayerPickerViewModel(
     options: ConstructorOptions,
 ) {
     /**

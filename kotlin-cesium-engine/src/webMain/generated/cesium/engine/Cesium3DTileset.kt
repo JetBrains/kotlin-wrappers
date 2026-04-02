@@ -64,7 +64,7 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html">Online Documentation</a>
  */
-external class Cesium3DTileset(
+open external class Cesium3DTileset(
     options: ConstructorOptions,
 ) {
     /**

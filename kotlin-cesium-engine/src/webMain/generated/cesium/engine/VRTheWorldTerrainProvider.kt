@@ -28,7 +28,7 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRTheWorldTerrainProvider.html">Online Documentation</a>
  */
-external class VRTheWorldTerrainProvider
+open external class VRTheWorldTerrainProvider
 private constructor() :
     TerrainProvider {
     /**

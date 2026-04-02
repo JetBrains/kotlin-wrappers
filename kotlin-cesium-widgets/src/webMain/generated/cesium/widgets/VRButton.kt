@@ -18,7 +18,7 @@ import web.dom.Element
  *   Default value - `document.body`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VRButton.html">Online Documentation</a>
  */
-external class VRButton(
+open external class VRButton(
     var container: Element,
     scene: Scene,
     vrElement: Element? = definedExternally,

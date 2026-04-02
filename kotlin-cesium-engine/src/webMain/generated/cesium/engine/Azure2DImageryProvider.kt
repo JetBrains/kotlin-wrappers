@@ -21,7 +21,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Azure2DImageryProvider.html">Online Documentation</a>
  */
-external class Azure2DImageryProvider(
+open external class Azure2DImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

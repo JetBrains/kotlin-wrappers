@@ -45,7 +45,7 @@ import web.dom.Element
  * @property [viewModel] The view model used by this widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Animation.html">Online Documentation</a>
  */
-external class Animation(
+open external class Animation(
     val container: Element,
     val viewModel: AnimationViewModel,
 ) {

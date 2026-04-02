@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * A primitive that renders voxel data from a [VoxelProvider].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html">Online Documentation</a>
  */
-external class VoxelPrimitive(
+open external class VoxelPrimitive(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

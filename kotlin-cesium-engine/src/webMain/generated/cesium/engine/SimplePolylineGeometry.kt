@@ -24,7 +24,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SimplePolylineGeometry.html">Online Documentation</a>
  */
-external class SimplePolylineGeometry(
+open external class SimplePolylineGeometry(
     options: ConstructorOptions,
 ) {
     /**

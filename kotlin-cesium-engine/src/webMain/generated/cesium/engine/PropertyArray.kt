@@ -15,7 +15,7 @@ import js.array.ReadonlyArray
  * @param [value] An array of Property instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyArray.html">Online Documentation</a>
  */
-external class PropertyArray(
+open external class PropertyArray(
     value: ReadonlyArray<Property>? = definedExternally,
 ) {
     /**

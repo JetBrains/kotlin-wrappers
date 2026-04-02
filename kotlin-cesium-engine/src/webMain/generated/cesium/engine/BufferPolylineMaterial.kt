@@ -12,7 +12,7 @@ package cesium.engine
  * material will not affect the polyline until setMaterial() is called again.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineMaterial.html">Online Documentation</a>
  */
-external class BufferPolylineMaterial(
+open external class BufferPolylineMaterial(
     options: BufferPolylineMaterialOptions? = definedExternally,
 ) {
     /**

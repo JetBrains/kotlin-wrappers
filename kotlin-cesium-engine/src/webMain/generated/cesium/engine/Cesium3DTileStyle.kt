@@ -36,7 +36,7 @@ package cesium.engine
  * @property [style] An object defining a style.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html">Online Documentation</a>
  */
-external class Cesium3DTileStyle(
+open external class Cesium3DTileStyle(
     val style: JsAny = definedExternally,
 ) {
     /**

@@ -27,7 +27,7 @@ package cesium.engine
  *   opposite to the normal; if zero, the plane passes through the origin.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Plane.html">Online Documentation</a>
  */
-external class Plane(
+open external class Plane(
     var normal: Cartesian3,
     var distance: Double,
 ) {

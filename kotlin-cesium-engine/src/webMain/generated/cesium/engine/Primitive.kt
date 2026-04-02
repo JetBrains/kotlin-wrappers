@@ -93,7 +93,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Primitive.html">Online Documentation</a>
  */
-external class Primitive(
+open external class Primitive(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

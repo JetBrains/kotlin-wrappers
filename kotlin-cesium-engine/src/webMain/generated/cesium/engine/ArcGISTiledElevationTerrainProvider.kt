@@ -28,7 +28,7 @@ import seskar.js.JsAsync
  * @param [options] A url or an object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html">Online Documentation</a>
  */
-external class ArcGISTiledElevationTerrainProvider
+open external class ArcGISTiledElevationTerrainProvider
 private constructor() :
     TerrainProvider {
     /**

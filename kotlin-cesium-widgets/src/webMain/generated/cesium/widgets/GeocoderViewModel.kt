@@ -14,7 +14,7 @@ import kotlinx.js.JsPlainObject
  * The view model for the [Geocoder] widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html">Online Documentation</a>
  */
-external class GeocoderViewModel(
+open external class GeocoderViewModel(
     options: ConstructorOptions,
 ) {
     /**

@@ -22,7 +22,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseGeometry.html">Online Documentation</a>
  */
-external class EllipseGeometry(
+open external class EllipseGeometry(
     options: ConstructorOptions,
 ) {
     /**

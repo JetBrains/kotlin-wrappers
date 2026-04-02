@@ -14,7 +14,7 @@ package cesium.engine
  * @param [scene] The scene where visualization is taking place.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGeometryUpdater.html">Online Documentation</a>
  */
-external class PolygonGeometryUpdater(
+open external class PolygonGeometryUpdater(
     entity: Entity,
     scene: Scene,
 ) {

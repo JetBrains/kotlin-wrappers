@@ -50,7 +50,7 @@ import web.xml.XMLDocument
  * @param [options] A url or an object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html">Online Documentation</a>
  */
-external class Resource(
+open external class Resource(
     options: JsAny, /* string | Resource.ConstructorOptions */
 ) {
     /**

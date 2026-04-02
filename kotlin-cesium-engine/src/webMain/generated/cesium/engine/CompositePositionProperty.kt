@@ -13,7 +13,7 @@ package cesium.engine
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositePositionProperty.html">Online Documentation</a>
  */
-external class CompositePositionProperty(
+open external class CompositePositionProperty(
     var referenceFrame: ReferenceFrame = definedExternally,
 ) {
     /**

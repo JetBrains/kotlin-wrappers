@@ -17,7 +17,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnchorPointIndirect.html">Online Documentation</a>
  */
-external class AnchorPointIndirect(
+open external class AnchorPointIndirect(
     options: ConstructorOptions,
 ) {
     /**

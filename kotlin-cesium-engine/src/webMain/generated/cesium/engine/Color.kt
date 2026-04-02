@@ -24,7 +24,7 @@ import kotlinx.js.JsPlainObject
  *   Default value - `1.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html">Online Documentation</a>
  */
-external class Color(
+open external class Color(
     var red: Double = definedExternally,
     var green: Double = definedExternally,
     var blue: Double = definedExternally,

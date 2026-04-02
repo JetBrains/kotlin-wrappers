@@ -28,7 +28,7 @@ import web.dom.Element
  *   Default value - `2.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SceneModePicker.html">Online Documentation</a>
  */
-external class SceneModePicker(
+open external class SceneModePicker(
     var container: Element,
     scene: Scene,
     duration: Double? = definedExternally,

@@ -58,7 +58,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStage.html">Online Documentation</a>
  */
-external class PostProcessStage(
+open external class PostProcessStage(
     options: ConstructorOptions,
 ) {
     /**

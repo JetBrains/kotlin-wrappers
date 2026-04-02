@@ -13,7 +13,7 @@ import web.html.HTMLImageElement
  * "missing" image.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DiscardMissingTileImagePolicy.html">Online Documentation</a>
  */
-external class DiscardMissingTileImagePolicy(
+open external class DiscardMissingTileImagePolicy(
     options: ConstructorOptions,
 ) : TileDiscardPolicy {
     /**

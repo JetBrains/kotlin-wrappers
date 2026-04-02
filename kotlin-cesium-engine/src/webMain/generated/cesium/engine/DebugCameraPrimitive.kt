@@ -18,7 +18,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugCameraPrimitive.html">Online Documentation</a>
  */
-external class DebugCameraPrimitive(
+open external class DebugCameraPrimitive(
     options: ConstructorOptions,
 ) {
     /**

@@ -26,7 +26,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelCollection.html">Online Documentation</a>
  */
-external class LabelCollection(
+open external class LabelCollection(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

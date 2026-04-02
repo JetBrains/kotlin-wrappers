@@ -24,7 +24,7 @@ import js.numbers.JsDouble
  * @param [options] An object with boolean properties corresponding to VertexFormat properties as shown in the code example.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VertexFormat.html">Online Documentation</a>
  */
-external class VertexFormat(
+open external class VertexFormat(
     options: JsAny? = definedExternally,
 ) {
     /**

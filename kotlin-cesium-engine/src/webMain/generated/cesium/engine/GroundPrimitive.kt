@@ -70,7 +70,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html">Online Documentation</a>
  */
-external class GroundPrimitive(
+open external class GroundPrimitive(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

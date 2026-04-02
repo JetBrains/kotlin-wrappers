@@ -15,7 +15,7 @@ import cesium.engine.SceneMode
  * @property [scene] The Scene to switch projections.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProjectionPickerViewModel.html">Online Documentation</a>
  */
-external class ProjectionPickerViewModel(
+open external class ProjectionPickerViewModel(
     var scene: Scene,
 ) {
     /**

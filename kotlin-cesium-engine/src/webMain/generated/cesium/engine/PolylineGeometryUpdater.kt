@@ -14,7 +14,7 @@ package cesium.engine
  * @param [scene] The scene where visualization is taking place.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGeometryUpdater.html">Online Documentation</a>
  */
-external class PolylineGeometryUpdater(
+open external class PolylineGeometryUpdater(
     val entity: Entity,
     scene: Scene,
 ) {

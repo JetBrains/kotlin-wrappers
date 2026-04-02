@@ -63,7 +63,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html">Online Documentation</a>
  */
-external class PostProcessStageComposite(
+open external class PostProcessStageComposite(
     options: ConstructorOptions,
 ) {
     /**

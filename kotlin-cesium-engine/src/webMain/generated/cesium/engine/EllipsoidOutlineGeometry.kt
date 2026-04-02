@@ -20,7 +20,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidOutlineGeometry.html">Online Documentation</a>
  */
-external class EllipsoidOutlineGeometry(
+open external class EllipsoidOutlineGeometry(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

@@ -34,7 +34,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Google2DImageryProvider.html">Online Documentation</a>
  */
-external class Google2DImageryProvider(
+open external class Google2DImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

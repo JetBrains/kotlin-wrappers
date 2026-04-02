@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
  * An abstract class for updating geometry entities.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryUpdater.html">Online Documentation</a>
  */
-external class GeometryUpdater(
+open external class GeometryUpdater(
     options: ConstructorOptions,
 ) {
     /**

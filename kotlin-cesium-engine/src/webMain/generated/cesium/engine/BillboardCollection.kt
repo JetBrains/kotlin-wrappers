@@ -27,7 +27,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html">Online Documentation</a>
  */
-external class BillboardCollection(
+open external class BillboardCollection(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

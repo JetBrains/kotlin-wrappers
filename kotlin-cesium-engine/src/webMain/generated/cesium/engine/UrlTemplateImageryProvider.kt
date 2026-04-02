@@ -45,7 +45,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html">Online Documentation</a>
  */
-external class UrlTemplateImageryProvider(
+open external class UrlTemplateImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

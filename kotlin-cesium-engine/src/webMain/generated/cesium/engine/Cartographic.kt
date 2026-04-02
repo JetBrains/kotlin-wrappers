@@ -17,7 +17,7 @@ package cesium.engine
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartographic.html">Online Documentation</a>
  */
-external class Cartographic(
+open external class Cartographic(
     var longitude: Double = definedExternally,
     var latitude: Double = definedExternally,
     var height: Double = definedExternally,

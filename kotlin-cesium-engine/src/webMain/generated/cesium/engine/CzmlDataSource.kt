@@ -17,7 +17,7 @@ import seskar.js.JsAsync
  * @property [name] An optional name for the data source.  This value will be overwritten if a loaded document contains a name.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html">Online Documentation</a>
  */
-external class CzmlDataSource(
+open external class CzmlDataSource(
     var name: String = definedExternally,
 ) {
     /**

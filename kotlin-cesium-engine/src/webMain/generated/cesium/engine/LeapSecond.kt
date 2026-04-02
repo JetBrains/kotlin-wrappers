@@ -14,7 +14,7 @@ package cesium.engine
  * @property [offset] The cumulative number of seconds that TAI is ahead of UTC at the provided date.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LeapSecond.html">Online Documentation</a>
  */
-external class LeapSecond(
+open external class LeapSecond(
     date: JulianDate? = definedExternally,
     var offset: Double = definedExternally,
 ) {

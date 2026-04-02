@@ -20,7 +20,7 @@ package cesium.engine
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeadingPitchRange.html">Online Documentation</a>
  */
-external class HeadingPitchRange(
+open external class HeadingPitchRange(
     var heading: Double = definedExternally,
     var pitch: Double = definedExternally,
     var range: Double = definedExternally,

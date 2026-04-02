@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * known as geographic, equirectangular, equidistant cylindrical, or plate carrée.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicTilingScheme.html">Online Documentation</a>
  */
-external class GeographicTilingScheme(
+open external class GeographicTilingScheme(
     options: ConstructorOptions? = definedExternally,
 ) : TilingScheme {
     /**

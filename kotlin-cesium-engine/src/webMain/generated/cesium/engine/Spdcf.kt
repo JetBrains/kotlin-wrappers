@@ -25,7 +25,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spdcf.html">Online Documentation</a>
  */
-external class Spdcf(
+open external class Spdcf(
     options: ConstructorOptions,
 ) {
     /**

@@ -38,7 +38,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html">Online Documentation</a>
  */
-external class Geometry(
+open external class Geometry(
     options: ConstructorOptions,
 ) {
     /**

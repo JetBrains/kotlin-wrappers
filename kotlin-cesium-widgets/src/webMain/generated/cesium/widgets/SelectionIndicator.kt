@@ -16,7 +16,7 @@ import web.dom.Element
  * @param [scene] The Scene instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicator.html">Online Documentation</a>
  */
-external class SelectionIndicator(
+open external class SelectionIndicator(
     var container: Element,
     scene: Scene,
 ) {

@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidRhumbLine.html">Online Documentation</a>
  */
-external class EllipsoidRhumbLine(
+open external class EllipsoidRhumbLine(
     val start: Cartographic = definedExternally,
     val end: Cartographic = definedExternally,
     val ellipsoid: Ellipsoid = definedExternally,

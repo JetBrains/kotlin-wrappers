@@ -27,7 +27,7 @@ import seskar.js.JsAsync
  * @property [url] The endpoint to the Pelias server.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PeliasGeocoderService.html">Online Documentation</a>
  */
-external class PeliasGeocoderService(
+open external class PeliasGeocoderService(
     val url: Resource,
 ) {
     constructor(

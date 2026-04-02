@@ -15,7 +15,7 @@ import kotlinx.js.JsPlainObject
  * A collection of active model animations.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html">Online Documentation</a>
  */
-external class ModelAnimationCollection
+open external class ModelAnimationCollection
 private constructor() {
     /**
      * The event fired when an animation is added to the collection.  This can be used, for

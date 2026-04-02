@@ -13,7 +13,7 @@ package cesium.engine
  * @param [entityCollection] The entityCollection to visualize.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PathVisualizer.html">Online Documentation</a>
  */
-external class PathVisualizer(
+open external class PathVisualizer(
     scene: Scene,
     entityCollection: EntityCollection,
 ) : Visualizer {

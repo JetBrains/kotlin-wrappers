@@ -18,7 +18,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenStreetMapImageryProvider.html">Online Documentation</a>
  */
-external class OpenStreetMapImageryProvider(
+open external class OpenStreetMapImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

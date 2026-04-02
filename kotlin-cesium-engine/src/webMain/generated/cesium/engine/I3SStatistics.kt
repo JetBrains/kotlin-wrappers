@@ -12,7 +12,7 @@ import js.array.ReadonlyArray
  * Do not construct this directly, instead access statistics through [I3SDataProvider].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SStatistics.html">Online Documentation</a>
  */
-external class I3SStatistics
+open external class I3SStatistics
 private constructor() {
     /**
      * Gets the resource for the statistics

@@ -25,7 +25,7 @@ import js.numbers.JsDouble
  *   Default value - `0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html">Online Documentation</a>
  */
-external class Ellipsoid(
+open external class Ellipsoid(
     x: Double? = definedExternally,
     y: Double? = definedExternally,
     z: Double? = definedExternally,

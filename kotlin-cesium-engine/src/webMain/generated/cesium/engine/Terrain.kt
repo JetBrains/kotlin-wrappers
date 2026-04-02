@@ -39,7 +39,7 @@ import kotlinx.js.JsPlainObject
  * @param [terrainProviderPromise] A promise which resolves to a terrain provider
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html">Online Documentation</a>
  */
-external class Terrain(
+open external class Terrain(
     terrainProviderPromise: Promise<TerrainProvider>,
 ) {
     /**

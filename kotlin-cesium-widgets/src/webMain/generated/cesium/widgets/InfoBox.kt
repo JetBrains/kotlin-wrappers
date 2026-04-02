@@ -15,7 +15,7 @@ import web.html.HTMLIFrameElement
  * @property [container] The DOM element that will contain the widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBox.html">Online Documentation</a>
  */
-external class InfoBox(
+open external class InfoBox(
     var container: Element,
 ) {
     /**

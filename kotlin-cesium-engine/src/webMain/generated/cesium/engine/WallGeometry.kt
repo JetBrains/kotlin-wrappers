@@ -26,7 +26,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WallGeometry.html">Online Documentation</a>
  */
-external class WallGeometry(
+open external class WallGeometry(
     options: ConstructorOptions,
 ) {
     /**

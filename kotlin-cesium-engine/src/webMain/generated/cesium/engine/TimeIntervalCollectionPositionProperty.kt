@@ -13,7 +13,7 @@ package cesium.engine
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollectionPositionProperty.html">Online Documentation</a>
  */
-external class TimeIntervalCollectionPositionProperty(
+open external class TimeIntervalCollectionPositionProperty(
     val referenceFrame: ReferenceFrame = definedExternally,
 ) {
     /**

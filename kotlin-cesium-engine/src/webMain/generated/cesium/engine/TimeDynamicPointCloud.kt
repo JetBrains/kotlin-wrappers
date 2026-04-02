@@ -14,7 +14,7 @@ import kotlinx.js.JsPlainObject
  * small or the clock is sufficiently slow then no frames will be skipped.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicPointCloud.html">Online Documentation</a>
  */
-external class TimeDynamicPointCloud(
+open external class TimeDynamicPointCloud(
     options: ConstructorOptions,
 ) {
     /**

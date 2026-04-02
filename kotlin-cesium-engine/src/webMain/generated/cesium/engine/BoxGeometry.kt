@@ -20,7 +20,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGeometry.html">Online Documentation</a>
  */
-external class BoxGeometry(
+open external class BoxGeometry(
     options: ConstructorOptions,
 ) {
     /**

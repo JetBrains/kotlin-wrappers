@@ -20,7 +20,7 @@ package cesium.engine
  * @property [isLeapSecond] Whether this time is during a leap second.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GregorianDate.html">Online Documentation</a>
  */
-external class GregorianDate(
+open external class GregorianDate(
     var year: Int = definedExternally,
     var month: Int = definedExternally,
     var day: Int = definedExternally,

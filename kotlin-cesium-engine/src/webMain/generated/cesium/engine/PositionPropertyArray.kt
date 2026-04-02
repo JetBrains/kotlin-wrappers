@@ -17,7 +17,7 @@ import js.array.ReadonlyArray
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PositionPropertyArray.html">Online Documentation</a>
  */
-external class PositionPropertyArray(
+open external class PositionPropertyArray(
     value: ReadonlyArray<Property>? = definedExternally,
     var referenceFrame: ReferenceFrame = definedExternally,
 ) {

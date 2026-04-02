@@ -16,7 +16,7 @@ import web.dom.Element
  * @param [container] The DOM element that will contain the widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FullscreenButtonViewModel.html">Online Documentation</a>
  */
-external class FullscreenButtonViewModel(
+open external class FullscreenButtonViewModel(
     var fullscreenElement: Element = definedExternally,
     container: Element? = definedExternally,
 ) {

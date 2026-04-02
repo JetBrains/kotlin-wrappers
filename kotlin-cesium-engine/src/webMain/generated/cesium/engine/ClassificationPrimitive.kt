@@ -26,7 +26,7 @@ import kotlinx.js.JsPlainObject
  * are also valid if they are extruded volumes; otherwise, they will not be rendered.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClassificationPrimitive.html">Online Documentation</a>
  */
-external class ClassificationPrimitive(
+open external class ClassificationPrimitive(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

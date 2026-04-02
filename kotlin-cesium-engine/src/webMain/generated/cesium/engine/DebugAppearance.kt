@@ -22,7 +22,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html">Online Documentation</a>
  */
-external class DebugAppearance(
+open external class DebugAppearance(
     options: ConstructorOptions,
 ) {
     /**

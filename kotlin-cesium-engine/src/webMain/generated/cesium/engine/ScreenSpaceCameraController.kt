@@ -12,7 +12,7 @@ package cesium.engine
  * @param [scene] The scene.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html">Online Documentation</a>
  */
-external class ScreenSpaceCameraController(
+open external class ScreenSpaceCameraController(
     scene: Scene,
 ) {
     /**

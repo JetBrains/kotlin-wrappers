@@ -24,7 +24,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VelocityOrientationProperty.html">Online Documentation</a>
  */
-external class VelocityOrientationProperty(
+open external class VelocityOrientationProperty(
     position: PositionProperty? = definedExternally,
     ellipsoid: Ellipsoid? = definedExternally,
 ) {

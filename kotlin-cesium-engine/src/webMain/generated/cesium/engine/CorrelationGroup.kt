@@ -19,7 +19,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorrelationGroup.html">Online Documentation</a>
  */
-external class CorrelationGroup(
+open external class CorrelationGroup(
     options: ConstructorOptions,
 ) {
     /**

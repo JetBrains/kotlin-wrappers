@@ -12,7 +12,7 @@ package cesium.engine
  * @param [headingPitchRange] camera orientation
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlLookAt.html">Online Documentation</a>
  */
-external class KmlLookAt(
+open external class KmlLookAt(
     position: Cartesian3,
     headingPitchRange: HeadingPitchRange,
 )

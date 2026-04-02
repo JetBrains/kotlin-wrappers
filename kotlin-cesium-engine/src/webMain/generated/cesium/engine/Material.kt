@@ -36,7 +36,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html">Online Documentation</a>
  */
-external class Material(
+open external class Material(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

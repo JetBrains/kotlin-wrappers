@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Moon.html">Online Documentation</a>
  */
-external class Moon(
+open external class Moon(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

@@ -12,7 +12,7 @@ package cesium.engine
  * A cumulus cloud billboard positioned in the 3D scene, that is created and rendered using a [CloudCollection].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CumulusCloud.html">Online Documentation</a>
  */
-external class CumulusCloud
+open external class CumulusCloud
 private constructor() {
     /**
      * Determines if this cumulus cloud will be shown.  Use this to hide or show a cloud, instead

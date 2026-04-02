@@ -17,7 +17,7 @@ import web.html.HTMLCanvasElement
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html">Online Documentation</a>
  */
-external class ScreenSpaceEventHandler(
+open external class ScreenSpaceEventHandler(
     element: HTMLCanvasElement? = definedExternally,
 ) {
     /**

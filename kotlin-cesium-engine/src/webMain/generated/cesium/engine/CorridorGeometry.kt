@@ -19,7 +19,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorGeometry.html">Online Documentation</a>
  */
-external class CorridorGeometry(
+open external class CorridorGeometry(
     options: ConstructorOptions,
 ) {
     /**

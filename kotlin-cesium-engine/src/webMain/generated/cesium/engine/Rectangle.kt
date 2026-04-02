@@ -22,7 +22,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html">Online Documentation</a>
  */
-external class Rectangle(
+open external class Rectangle(
     var west: Double = definedExternally,
     var south: Double = definedExternally,
     var east: Double = definedExternally,

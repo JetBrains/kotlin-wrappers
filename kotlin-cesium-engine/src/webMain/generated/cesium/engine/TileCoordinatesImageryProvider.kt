@@ -17,7 +17,7 @@ import web.html.HTMLCanvasElement
  * debugging terrain and imagery rendering problems.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html">Online Documentation</a>
  */
-external class TileCoordinatesImageryProvider(
+open external class TileCoordinatesImageryProvider(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

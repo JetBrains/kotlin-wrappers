@@ -22,7 +22,7 @@ import js.numbers.JsDouble
  *   Default value - [Number.MAX_VALUE]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayCondition.html">Online Documentation</a>
  */
-external class DistanceDisplayCondition(
+open external class DistanceDisplayCondition(
     var near: Double = definedExternally,
     var far: Double = definedExternally,
 ) {

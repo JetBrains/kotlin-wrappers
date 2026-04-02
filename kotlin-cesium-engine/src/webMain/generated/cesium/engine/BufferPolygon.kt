@@ -23,7 +23,7 @@ import js.typedarrays.TypedArray
  * triangulation, represented as three vertex indices per triangle.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygon.html">Online Documentation</a>
  */
-external class BufferPolygon {
+open external class BufferPolygon {
     /**
      * Count of positions (vertices) in this polygon, including both outer ring and
      * internal rings (holes), number of VEC3 elements.

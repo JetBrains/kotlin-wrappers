@@ -24,7 +24,7 @@ import js.date.Date
  *   Default value - [TimeStandard.UTC]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/JulianDate.html">Online Documentation</a>
  */
-external class JulianDate(
+open external class JulianDate(
     julianDayNumber: Double? = definedExternally,
     var secondsOfDay: Double = definedExternally,
     timeStandard: TimeStandard? = definedExternally,

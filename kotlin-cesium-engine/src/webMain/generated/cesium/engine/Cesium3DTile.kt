@@ -20,7 +20,7 @@ import js.array.ReadonlyArray
  * @param [parent] The parent tile of the new tile
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html">Online Documentation</a>
  */
-external class Cesium3DTile
+open external class Cesium3DTile
 private constructor() {
     /**
      * The local transform of this tile.

@@ -33,9 +33,11 @@ internal abstract class TypeBase(
     abstract val companion: HasMembers?
     open val staticBody: Boolean = false
 
-    private val abstract: Boolean by lazy {
+    protected val abstract: Boolean by lazy {
         source.abstract || name == "TilingScheme"
     }
+
+    protected open val open: Boolean = false
 
     private val hasPrivateConstructor: Boolean by lazy {
         source.hasPrivateConstructor
@@ -165,12 +167,7 @@ internal abstract class TypeBase(
 
         val modifiers = (if (top) "external " else "") +
                 (if (abstract) "abstract " else "") +
-                when (name) {
-                    "BufferPrimitive",
-                        -> "open "
-
-                    else -> ""
-                }
+                (if (open) "open " else "")
 
         val hideParams = constructor != null && !constructor.hasParameters
 

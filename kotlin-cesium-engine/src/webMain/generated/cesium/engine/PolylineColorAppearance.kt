@@ -34,7 +34,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html">Online Documentation</a>
  */
-external class PolylineColorAppearance(
+open external class PolylineColorAppearance(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

@@ -14,7 +14,7 @@ package cesium.engine
  * @param [scene] The scene where visualization is taking place.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WallGeometryUpdater.html">Online Documentation</a>
  */
-external class WallGeometryUpdater(
+open external class WallGeometryUpdater(
     entity: Entity,
     scene: Scene,
 ) {

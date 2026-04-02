@@ -123,7 +123,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html">Online Documentation</a>
  */
-external class WebMapTileServiceImageryProvider(
+open external class WebMapTileServiceImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

@@ -26,7 +26,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html">Online Documentation</a>
  */
-external class MaterialAppearance(
+open external class MaterialAppearance(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

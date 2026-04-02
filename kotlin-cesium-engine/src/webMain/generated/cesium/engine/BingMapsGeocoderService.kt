@@ -13,7 +13,7 @@ import seskar.js.JsAsync
  * Provides geocoding through Bing Maps.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsGeocoderService.html">Online Documentation</a>
  */
-external class BingMapsGeocoderService(
+open external class BingMapsGeocoderService(
     options: ConstructorOptions,
 ) {
     /**

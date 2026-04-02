@@ -16,7 +16,7 @@ import kotlinx.js.JsPlainObject
  * @param [labelCollection] Instance of LabelCollection
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html">Online Documentation</a>
  */
-external class Label
+open external class Label
 private constructor() {
     /**
      * Determines if this label will be shown.  Use this to hide or show a label, instead

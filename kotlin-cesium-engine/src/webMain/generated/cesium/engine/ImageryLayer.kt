@@ -48,7 +48,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html">Online Documentation</a>
  */
-external class ImageryLayer(
+open external class ImageryLayer(
     val imageryProvider: ImageryProvider = definedExternally,
     options: ConstructorOptions? = definedExternally,
 ) {

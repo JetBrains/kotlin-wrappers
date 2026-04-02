@@ -44,7 +44,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html">Online Documentation</a>
  */
-external class HermiteSpline(
+open external class HermiteSpline(
     options: ConstructorOptions,
 ) {
     /**

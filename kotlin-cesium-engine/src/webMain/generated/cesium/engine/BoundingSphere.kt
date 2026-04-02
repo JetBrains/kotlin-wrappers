@@ -18,7 +18,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html">Online Documentation</a>
  */
-external class BoundingSphere(
+open external class BoundingSphere(
     var center: Cartesian3 = definedExternally,
     var radius: Double = definedExternally,
 ) {

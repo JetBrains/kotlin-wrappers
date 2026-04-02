@@ -27,7 +27,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidSurfaceAppearance.html">Online Documentation</a>
  */
-external class EllipsoidSurfaceAppearance(
+open external class EllipsoidSurfaceAppearance(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

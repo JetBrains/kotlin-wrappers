@@ -28,7 +28,7 @@ package cesium.engine
  * @param [defines] Defines in the style.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConditionsExpression.html">Online Documentation</a>
  */
-external class ConditionsExpression(
+open external class ConditionsExpression(
     val conditionsExpression: JsAny = definedExternally,
     defines: JsAny? = definedExternally,
 ) : StyleExpression {

@@ -34,7 +34,7 @@ import js.array.ReadonlyArray
  * @param [sampleIndex] The index of the sample within the tile, containing metadata for this cell
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelCell.html">Online Documentation</a>
  */
-external class VoxelCell
+open external class VoxelCell
 private constructor() {
     /**
      * All objects returned by [Scene.pick] have a `primitive` property. This returns

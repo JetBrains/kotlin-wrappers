@@ -20,7 +20,7 @@ import web.dom.Element
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButton.html">Online Documentation</a>
  */
-external class NavigationHelpButton(
+open external class NavigationHelpButton(
     options: ConstructorOptions,
 ) {
     /**

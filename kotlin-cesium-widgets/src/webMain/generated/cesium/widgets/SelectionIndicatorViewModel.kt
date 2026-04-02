@@ -18,7 +18,7 @@ import web.dom.Element
  * @property [container] The DOM element that contains the widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicatorViewModel.html">Online Documentation</a>
  */
-external class SelectionIndicatorViewModel(
+open external class SelectionIndicatorViewModel(
     var scene: Scene,
     var selectionIndicatorElement: Element,
     var container: Element,

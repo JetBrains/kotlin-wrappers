@@ -13,7 +13,7 @@ package cesium.engine
  * @param [entityCollection] The entityCollection to visualize.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesetVisualizer.html">Online Documentation</a>
  */
-external class Cesium3DTilesetVisualizer(
+open external class Cesium3DTilesetVisualizer(
     scene: Scene,
     entityCollection: EntityCollection,
 ) : Visualizer {

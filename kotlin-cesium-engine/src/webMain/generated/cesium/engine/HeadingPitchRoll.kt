@@ -19,7 +19,7 @@ package cesium.engine
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeadingPitchRoll.html">Online Documentation</a>
  */
-external class HeadingPitchRoll(
+open external class HeadingPitchRoll(
     var heading: Double = definedExternally,
     var pitch: Double = definedExternally,
     var roll: Double = definedExternally,

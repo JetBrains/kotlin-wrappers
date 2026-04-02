@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
  * The generated curve is in the class C<sup>1</sup>.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuaternionSpline.html">Online Documentation</a>
  */
-external class QuaternionSpline(
+open external class QuaternionSpline(
     options: ConstructorOptions,
 ) {
     /**

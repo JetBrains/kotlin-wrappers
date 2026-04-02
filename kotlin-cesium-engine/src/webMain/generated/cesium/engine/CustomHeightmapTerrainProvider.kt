@@ -29,7 +29,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html">Online Documentation</a>
  */
-external class CustomHeightmapTerrainProvider(
+open external class CustomHeightmapTerrainProvider(
     options: ConstructorOptions,
 ) : TerrainProvider {
     /**

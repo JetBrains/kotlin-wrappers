@@ -16,7 +16,7 @@ import web.dom.Element
  * @param [scene] the Scene instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelInspector.html">Online Documentation</a>
  */
-external class VoxelInspector(
+open external class VoxelInspector(
     var container: Element,
     scene: Scene,
 ) {

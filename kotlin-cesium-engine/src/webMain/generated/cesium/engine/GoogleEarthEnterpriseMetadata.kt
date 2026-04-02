@@ -17,7 +17,7 @@ import seskar.js.JsAsync
  *  and GoogleEarthEnterpriseTerrainProvider to share metadata requests.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseMetadata
+open external class GoogleEarthEnterpriseMetadata
 private constructor() {
     /**
      * True if imagery is available.

@@ -11,7 +11,7 @@ import js.numbers.JsDouble
  * Describes geometry representing the outline of a plane centered at the origin, with a unit width and length.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneOutlineGeometry.html">Online Documentation</a>
  */
-external class PlaneOutlineGeometry {
+open external class PlaneOutlineGeometry {
 
 
     companion object {

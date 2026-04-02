@@ -25,7 +25,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html">Online Documentation</a>
  */
-external class BingMapsImageryProvider
+open external class BingMapsImageryProvider
 private constructor() {
     /**
      * Gets the name of the BingMaps server url hosting the imagery.

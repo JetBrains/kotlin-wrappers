@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
  * Stores information for making a request. In general this does not need to be constructed directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html">Online Documentation</a>
  */
-external class Request(
+open external class Request(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

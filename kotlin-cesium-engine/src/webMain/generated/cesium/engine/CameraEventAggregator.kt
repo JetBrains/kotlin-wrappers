@@ -18,7 +18,7 @@ import web.html.HTMLCanvasElement
  *   Default value - `document`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CameraEventAggregator.html">Online Documentation</a>
  */
-external class CameraEventAggregator(
+open external class CameraEventAggregator(
     canvas: HTMLCanvasElement? = definedExternally,
 ) {
     /**

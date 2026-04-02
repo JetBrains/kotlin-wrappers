@@ -21,7 +21,7 @@ import web.html.HTMLImageElement
  * @param [billboardCollection] Instance of BillboardCollection
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html">Online Documentation</a>
  */
-external class Billboard
+open external class Billboard
 private constructor() {
     /**
      * Determines if this billboard will be shown.  Use this to hide or show a billboard, instead

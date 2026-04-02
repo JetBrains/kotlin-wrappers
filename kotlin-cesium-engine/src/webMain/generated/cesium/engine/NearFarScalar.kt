@@ -22,7 +22,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NearFarScalar.html">Online Documentation</a>
  */
-external class NearFarScalar(
+open external class NearFarScalar(
     var near: Double = definedExternally,
     var nearValue: Double = definedExternally,
     var far: Double = definedExternally,

@@ -20,7 +20,7 @@ import web.canvas.CanvasImageSource
  * @param [endpointResource] The original resource used to retrieve the endpoint.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html">Online Documentation</a>
  */
-external class IonResource(
+open external class IonResource(
     endpoint: JsAny,
     endpointResource: Resource,
 ) {

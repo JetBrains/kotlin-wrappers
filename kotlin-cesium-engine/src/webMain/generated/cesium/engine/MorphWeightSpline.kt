@@ -22,7 +22,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MorphWeightSpline.html">Online Documentation</a>
  */
-external class MorphWeightSpline(
+open external class MorphWeightSpline(
     options: ConstructorOptions,
 ) {
     /**

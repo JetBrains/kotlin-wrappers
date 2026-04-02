@@ -23,7 +23,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html">Online Documentation</a>
  */
-external class Matrix2(
+open external class Matrix2(
     column0Row0: Double? = definedExternally,
     column1Row0: Double? = definedExternally,
     column0Row1: Double? = definedExternally,

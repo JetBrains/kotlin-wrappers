@@ -23,7 +23,7 @@ import web.dom.Element
  * @param [scene] The Scene instance to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ProjectionPicker.html">Online Documentation</a>
  */
-external class ProjectionPicker(
+open external class ProjectionPicker(
     var container: Element,
     scene: Scene,
 ) {

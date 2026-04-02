@@ -25,7 +25,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseImageryProvider.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseImageryProvider
+open external class GoogleEarthEnterpriseImageryProvider
 private constructor() {
     /**
      * Gets the name of the Google Earth Enterprise server url hosting the imagery.

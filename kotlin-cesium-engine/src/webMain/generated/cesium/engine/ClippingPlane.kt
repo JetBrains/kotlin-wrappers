@@ -18,7 +18,7 @@ package cesium.engine
  *   opposite to the normal; if zero, the plane passes through the origin.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPlane.html">Online Documentation</a>
  */
-external class ClippingPlane(
+open external class ClippingPlane(
     var normal: Cartesian3,
     var distance: Double,
 ) {

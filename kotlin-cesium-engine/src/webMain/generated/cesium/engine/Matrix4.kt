@@ -47,7 +47,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html">Online Documentation</a>
  */
-external class Matrix4(
+open external class Matrix4(
     column0Row0: Double? = definedExternally,
     column1Row0: Double? = definedExternally,
     column2Row0: Double? = definedExternally,

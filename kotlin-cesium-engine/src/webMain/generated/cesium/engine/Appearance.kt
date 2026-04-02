@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * this base `Appearance` interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html">Online Documentation</a>
  */
-external class Appearance(
+open external class Appearance(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

@@ -12,7 +12,7 @@ package cesium.engine
  * material will not affect the polygon until setMaterial() is called again.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonMaterial.html">Online Documentation</a>
  */
-external class BufferPolygonMaterial(
+open external class BufferPolygonMaterial(
     options: BufferPolygonMaterialOptions? = definedExternally,
 ) {
     /**

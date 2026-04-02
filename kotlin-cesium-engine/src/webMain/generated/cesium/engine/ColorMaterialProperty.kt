@@ -8,7 +8,7 @@ package cesium.engine
  * A [MaterialProperty] that maps to solid color [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ColorMaterialProperty.html">Online Documentation</a>
  */
-external class ColorMaterialProperty() :
+open external class ColorMaterialProperty() :
     MaterialProperty {
     constructor(
         color: Property,

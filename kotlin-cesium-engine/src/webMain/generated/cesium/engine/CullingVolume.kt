@@ -14,7 +14,7 @@ import js.array.ReadonlyArray
  * @property [planes] An array of clipping planes.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CullingVolume.html">Online Documentation</a>
  */
-external class CullingVolume(
+open external class CullingVolume(
     var planes: ReadonlyArray<Cartesian4> = definedExternally,
 ) {
     /**

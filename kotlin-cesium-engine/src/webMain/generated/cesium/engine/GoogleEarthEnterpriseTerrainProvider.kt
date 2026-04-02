@@ -24,7 +24,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseTerrainProvider
+open external class GoogleEarthEnterpriseTerrainProvider
 private constructor() :
     TerrainProvider {
     /**

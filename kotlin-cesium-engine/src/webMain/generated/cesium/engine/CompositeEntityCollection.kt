@@ -20,7 +20,7 @@ import js.array.ReadonlyArray
  * @param [owner] The data source (or composite entity collection) which created this collection.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeEntityCollection.html">Online Documentation</a>
  */
-external class CompositeEntityCollection(
+open external class CompositeEntityCollection(
     collections: ReadonlyArray<EntityCollection>? = definedExternally,
 ) {
     constructor(

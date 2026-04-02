@@ -20,7 +20,7 @@ import js.numbers.JsDouble
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html">Online Documentation</a>
  */
-external class Cartesian3(
+open external class Cartesian3(
     var x: Double = definedExternally,
     var y: Double = definedExternally,
     var z: Double = definedExternally,

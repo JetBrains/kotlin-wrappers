@@ -16,7 +16,7 @@ import js.array.ReadonlyArray
  * @property [holes] An array of polygon hierarchies defining holes in the polygon.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonHierarchy.html">Online Documentation</a>
  */
-external class PolygonHierarchy(
+open external class PolygonHierarchy(
     var positions: ReadonlyArray<Cartesian3> = definedExternally,
     var holes: ReadonlyArray<PolygonHierarchy> = definedExternally,
 )

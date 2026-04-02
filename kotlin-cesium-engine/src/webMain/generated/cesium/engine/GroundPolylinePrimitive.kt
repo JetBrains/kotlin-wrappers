@@ -60,7 +60,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html">Online Documentation</a>
  */
-external class GroundPolylinePrimitive(
+open external class GroundPolylinePrimitive(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

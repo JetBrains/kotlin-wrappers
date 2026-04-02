@@ -15,7 +15,7 @@ import cesium.engine.Scene
  * @param [duration] The duration of the camera flight in seconds.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HomeButtonViewModel.html">Online Documentation</a>
  */
-external class HomeButtonViewModel(
+open external class HomeButtonViewModel(
     var scene: Scene,
     duration: Double? = definedExternally,
 ) {

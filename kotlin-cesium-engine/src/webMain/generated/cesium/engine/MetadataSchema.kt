@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
  * See the [3D Metadata Specification](https://github.com/CesiumGS/3d-tiles/tree/main/specification/Metadata) for 3D Tiles
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataSchema.html">Online Documentation</a>
  */
-external class MetadataSchema(
+open external class MetadataSchema(
     options: ConstructorOptions,
 ) {
     /**

@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
  * A particle emitted by a [ParticleSystem].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Particle.html">Online Documentation</a>
  */
-external class Particle(
+open external class Particle(
     options: ConstructorOptions,
 ) {
     /**

@@ -21,7 +21,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderOutlineGeometry.html">Online Documentation</a>
  */
-external class CylinderOutlineGeometry(
+open external class CylinderOutlineGeometry(
     options: ConstructorOptions,
 ) {
     /**

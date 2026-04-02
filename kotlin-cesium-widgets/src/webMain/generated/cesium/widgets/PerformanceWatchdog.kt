@@ -12,7 +12,7 @@ import web.dom.Element
  * Monitors performance of the application and displays a message if poor performance is detected.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdog.html">Online Documentation</a>
  */
-external class PerformanceWatchdog(
+open external class PerformanceWatchdog(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

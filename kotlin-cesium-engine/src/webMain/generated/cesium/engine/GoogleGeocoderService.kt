@@ -13,7 +13,7 @@ import seskar.js.JsAsync
  * Provides geocoding through Google.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleGeocoderService.html">Online Documentation</a>
  */
-external class GoogleGeocoderService(
+open external class GoogleGeocoderService(
     options: ConstructorOptions,
 ) {
     /**

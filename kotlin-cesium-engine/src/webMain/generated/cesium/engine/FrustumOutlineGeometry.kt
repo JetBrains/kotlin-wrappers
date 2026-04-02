@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * A description of the outline of a frustum with the given the origin and orientation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrustumOutlineGeometry.html">Online Documentation</a>
  */
-external class FrustumOutlineGeometry(
+open external class FrustumOutlineGeometry(
     options: ConstructorOptions,
 ) {
     /**

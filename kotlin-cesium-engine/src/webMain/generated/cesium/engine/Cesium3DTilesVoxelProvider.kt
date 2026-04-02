@@ -20,7 +20,7 @@ import seskar.js.JsAsync
  * @param [options] An object describing initialization options
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html">Online Documentation</a>
  */
-external class Cesium3DTilesVoxelProvider(
+open external class Cesium3DTilesVoxelProvider(
     options: ConstructorOptions,
 ) {
     /**

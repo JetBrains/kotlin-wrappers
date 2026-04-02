@@ -30,7 +30,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstanceAttribute.html">Online Documentation</a>
  */
-external class GeometryInstanceAttribute(
+open external class GeometryInstanceAttribute(
     options: ConstructorOptions,
 ) {
     /**

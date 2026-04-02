@@ -13,7 +13,7 @@ package cesium.engine
  * @param [entityCollection] The entityCollection to visualize.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointVisualizer.html">Online Documentation</a>
  */
-external class PointVisualizer(
+open external class PointVisualizer(
     entityCluster: EntityCluster,
     entityCollection: EntityCollection,
 ) : Visualizer {

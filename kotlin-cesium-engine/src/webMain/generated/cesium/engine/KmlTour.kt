@@ -17,7 +17,7 @@ import js.array.ReadonlyArray
  * @property [playlist] array with KmlTourFlyTos and KmlTourWaits
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTour.html">Online Documentation</a>
  */
-external class KmlTour(
+open external class KmlTour(
     var name: String,
     var id: String,
     var playlist: ReadonlyArray<JsAny>,

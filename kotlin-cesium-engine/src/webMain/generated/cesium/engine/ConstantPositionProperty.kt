@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantPositionProperty.html">Online Documentation</a>
  */
-external class ConstantPositionProperty(
+open external class ConstantPositionProperty(
     value: Cartesian3? = definedExternally,
     var referenceFrame: ReferenceFrame = definedExternally,
 ) {

@@ -30,7 +30,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CatmullRomSpline.html">Online Documentation</a>
  */
-external class CatmullRomSpline(
+open external class CatmullRomSpline(
     options: ConstructorOptions,
 ) {
     /**

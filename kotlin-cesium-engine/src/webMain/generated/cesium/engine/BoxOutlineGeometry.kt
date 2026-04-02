@@ -19,7 +19,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxOutlineGeometry.html">Online Documentation</a>
  */
-external class BoxOutlineGeometry(
+open external class BoxOutlineGeometry(
     options: ConstructorOptions,
 ) {
     /**

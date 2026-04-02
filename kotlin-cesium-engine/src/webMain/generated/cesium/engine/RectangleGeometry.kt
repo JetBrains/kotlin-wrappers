@@ -30,7 +30,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleGeometry.html">Online Documentation</a>
  */
-external class RectangleGeometry(
+open external class RectangleGeometry(
     options: ConstructorOptions,
 ) {
     /**

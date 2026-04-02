@@ -34,7 +34,7 @@ import js.typedarrays.Uint8Array
  *   Default value - `1.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ColorGeometryInstanceAttribute.html">Online Documentation</a>
  */
-external class ColorGeometryInstanceAttribute(
+open external class ColorGeometryInstanceAttribute(
     red: Double? = definedExternally,
     green: Double? = definedExternally,
     blue: Double? = definedExternally,

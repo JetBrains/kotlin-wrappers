@@ -27,7 +27,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] Options with the following properties:
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylineGeometry.html">Online Documentation</a>
  */
-external class GroundPolylineGeometry(
+open external class GroundPolylineGeometry(
     options: ConstructorOptions,
 ) {
     /**

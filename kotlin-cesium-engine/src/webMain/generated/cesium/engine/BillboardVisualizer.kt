@@ -13,7 +13,7 @@ package cesium.engine
  * @param [entityCollection] The entityCollection to visualize.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardVisualizer.html">Online Documentation</a>
  */
-external class BillboardVisualizer(
+open external class BillboardVisualizer(
     entityCluster: EntityCluster,
     entityCollection: EntityCollection,
 ) : Visualizer {

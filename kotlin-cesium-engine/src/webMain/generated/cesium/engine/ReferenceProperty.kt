@@ -48,7 +48,7 @@ import js.array.ReadonlyArray
  * @property [targetPropertyNames] The names of the property on the target entity which we will use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ReferenceProperty.html">Online Documentation</a>
  */
-external class ReferenceProperty(
+open external class ReferenceProperty(
     val targetCollection: EntityCollection,
     val targetId: String,
     val targetPropertyNames: ReadonlyArray<JsString>,

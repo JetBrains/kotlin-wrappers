@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Globe.html">Online Documentation</a>
  */
-external class Globe(
+open external class Globe(
     var ellipsoid: Ellipsoid = definedExternally,
 ) {
     /**

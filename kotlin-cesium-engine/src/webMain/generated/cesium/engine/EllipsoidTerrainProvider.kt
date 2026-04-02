@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
  * surface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html">Online Documentation</a>
  */
-external class EllipsoidTerrainProvider(
+open external class EllipsoidTerrainProvider(
     options: ConstructorOptions? = definedExternally,
 ) : TerrainProvider {
     /**

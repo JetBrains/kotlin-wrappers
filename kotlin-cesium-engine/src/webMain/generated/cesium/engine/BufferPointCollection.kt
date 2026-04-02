@@ -33,7 +33,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPointCollection.html">Online Documentation</a>
  */
-external class BufferPointCollection(
+open external class BufferPointCollection(
     options: ConstructorOptions,
 ) {
     @JsPlainObject

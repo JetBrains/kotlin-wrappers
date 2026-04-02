@@ -41,7 +41,7 @@ import seskar.js.JsAsync
  * and KHR_texture_basisu requires multiple of 4 dimensions ([KHR_texture_basisu additional requirements](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Khronos/KHR_texture_basisu/README.md#additional-requirements)).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html">Online Documentation</a>
  */
-external class Model
+open external class Model
 private constructor() {
     /**
      * The 4x4 transformation matrix that transforms the model from model to world coordinates.

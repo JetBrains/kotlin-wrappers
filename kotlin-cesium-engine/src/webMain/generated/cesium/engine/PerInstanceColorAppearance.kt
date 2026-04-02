@@ -56,7 +56,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html">Online Documentation</a>
  */
-external class PerInstanceColorAppearance(
+open external class PerInstanceColorAppearance(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

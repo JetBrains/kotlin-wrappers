@@ -27,7 +27,7 @@ package cesium.engine
  *   Default value - `true`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VelocityVectorProperty.html">Online Documentation</a>
  */
-external class VelocityVectorProperty(
+open external class VelocityVectorProperty(
     position: PositionProperty? = definedExternally,
     var normalize: Boolean = definedExternally,
 ) {

@@ -19,7 +19,7 @@ package cesium.engine
  * @property [value] The constant value that the spline evaluates to.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantSpline.html">Online Documentation</a>
  */
-external class ConstantSpline(
+open external class ConstantSpline(
     val value: JsAny, /* number | Cartesian3 | Quaternion */
 ) {
     /**

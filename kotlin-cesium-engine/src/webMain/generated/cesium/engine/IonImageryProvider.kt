@@ -21,7 +21,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html">Online Documentation</a>
  */
-external class IonImageryProvider
+open external class IonImageryProvider
 private constructor() {
     /**
      * Gets the rectangle, in radians, of the imagery provided by the instance.

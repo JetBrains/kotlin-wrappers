@@ -19,7 +19,7 @@ import kotlinx.js.JsPlainObject
  *   Default value - `0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html">Online Documentation</a>
  */
-external class SampledPositionProperty(
+open external class SampledPositionProperty(
     var referenceFrame: ReferenceFrame = definedExternally,
     var numberOfDerivatives: Int = definedExternally,
 ) {

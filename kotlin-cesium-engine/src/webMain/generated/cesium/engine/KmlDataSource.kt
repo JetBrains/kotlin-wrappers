@@ -36,7 +36,7 @@ import web.html.HTMLCanvasElement
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html">Online Documentation</a>
  */
-external class KmlDataSource(
+open external class KmlDataSource(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

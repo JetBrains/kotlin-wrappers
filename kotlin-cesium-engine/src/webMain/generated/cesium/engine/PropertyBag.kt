@@ -15,7 +15,7 @@ import js.array.ReadonlyArray
  * @param [createPropertyCallback] A function that will be called when the value of any of the properties in value are not a Property.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html">Online Documentation</a>
  */
-external class PropertyBag(
+open external class PropertyBag(
     value: JsAny? = definedExternally,
     createPropertyCallback: Function<*>? = definedExternally,
 ) {

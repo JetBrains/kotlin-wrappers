@@ -33,7 +33,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseMapsProvider
+open external class GoogleEarthEnterpriseMapsProvider
 private constructor() {
     /**
      * Gets the URL of the Google Earth MapServer.

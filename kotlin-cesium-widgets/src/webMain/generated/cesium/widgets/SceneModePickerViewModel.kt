@@ -17,7 +17,7 @@ import cesium.engine.SceneMode
  *   Default value - `2.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SceneModePickerViewModel.html">Online Documentation</a>
  */
-external class SceneModePickerViewModel(
+open external class SceneModePickerViewModel(
     var scene: Scene,
     var duration: Double = definedExternally,
 ) {

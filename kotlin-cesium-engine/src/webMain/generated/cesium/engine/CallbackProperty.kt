@@ -13,7 +13,7 @@ package cesium.engine
  * @property [isConstant] `true` when the callback function returns the same value every time, `false` if the value will change.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackProperty.html">Online Documentation</a>
  */
-external class CallbackProperty(
+open external class CallbackProperty(
     callback: CallbackPropertyCallback,
     val isConstant: Boolean,
 ) {

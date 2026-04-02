@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - `0.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Interval.html">Online Documentation</a>
  */
-external class Interval(
+open external class Interval(
     var start: Double = definedExternally,
     var stop: Double = definedExternally,
 )

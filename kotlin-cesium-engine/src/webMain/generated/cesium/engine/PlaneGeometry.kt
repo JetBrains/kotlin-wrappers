@@ -17,7 +17,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGeometry.html">Online Documentation</a>
  */
-external class PlaneGeometry(
+open external class PlaneGeometry(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

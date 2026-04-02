@@ -17,7 +17,7 @@ import kotlinx.js.JsPlainObject
  * using the [flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html">Online Documentation</a>
  */
-external class BufferPrimitiveCollection<T : BufferPrimitive>(
+open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     options: ConstructorOptions,
 ) {
     /**

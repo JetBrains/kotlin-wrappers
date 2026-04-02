@@ -13,6 +13,6 @@ package cesium.engine
  * @property [dimensions] The width, height and depth dimensions of the box.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxEmitter.html">Online Documentation</a>
  */
-external class BoxEmitter(
+open external class BoxEmitter(
     var dimensions: Cartesian3,
 )

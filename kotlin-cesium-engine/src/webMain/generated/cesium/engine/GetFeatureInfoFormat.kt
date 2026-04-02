@@ -19,7 +19,7 @@ package cesium.engine
  *   a default function for the type of response is used.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GetFeatureInfoFormat.html">Online Documentation</a>
  */
-external class GetFeatureInfoFormat(
+open external class GetFeatureInfoFormat(
     type: String,
     format: String? = definedExternally,
     callback: Function<*>? = definedExternally,

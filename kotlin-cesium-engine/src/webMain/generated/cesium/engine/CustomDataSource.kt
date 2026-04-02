@@ -24,7 +24,7 @@ package cesium.engine
  * @property [name] A human-readable name for this instance.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomDataSource.html">Online Documentation</a>
  */
-external class CustomDataSource(
+open external class CustomDataSource(
     var name: String = definedExternally,
 ) {
     /**

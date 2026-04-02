@@ -23,7 +23,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html">Online Documentation</a>
  */
-external class WebMapServiceImageryProvider(
+open external class WebMapServiceImageryProvider(
     options: ConstructorOptions,
 ) {
     /**

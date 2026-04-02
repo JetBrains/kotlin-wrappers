@@ -17,7 +17,7 @@ package cesium.engine
  *   Default value - [scene.groundPrimitives]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVisualizer.html">Online Documentation</a>
  */
-external class PolylineVisualizer(
+open external class PolylineVisualizer(
     scene: Scene,
     entityCollection: EntityCollection,
     primitives: PrimitiveCollection? = definedExternally,

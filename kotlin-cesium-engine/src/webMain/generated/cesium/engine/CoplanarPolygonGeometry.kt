@@ -23,7 +23,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CoplanarPolygonGeometry.html">Online Documentation</a>
  */
-external class CoplanarPolygonGeometry(
+open external class CoplanarPolygonGeometry(
     options: ConstructorOptions,
 ) {
     /**

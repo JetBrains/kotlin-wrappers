@@ -28,7 +28,7 @@ import js.numbers.JsDouble
  *   Default value - [Matrix3.ZERO]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrientedBoundingBox.html">Online Documentation</a>
  */
-external class OrientedBoundingBox(
+open external class OrientedBoundingBox(
     var center: Cartesian3 = definedExternally,
     var halfAxes: Matrix3 = definedExternally,
 ) {

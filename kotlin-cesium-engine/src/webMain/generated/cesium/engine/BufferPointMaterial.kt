@@ -12,7 +12,7 @@ package cesium.engine
  * material will not affect the point until setMaterial() is called again.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPointMaterial.html">Online Documentation</a>
  */
-external class BufferPointMaterial(
+open external class BufferPointMaterial(
     options: BufferPointMaterialOptions? = definedExternally,
 ) {
     /**

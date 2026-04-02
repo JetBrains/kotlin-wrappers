@@ -14,7 +14,7 @@ import js.buffer.DataView
  * material will not affect the primitive until setMaterial() is called again.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveMaterial.html">Online Documentation</a>
  */
-external class BufferPrimitiveMaterial(
+open external class BufferPrimitiveMaterial(
     options: BufferPrimitiveMaterialOptions? = definedExternally,
 ) {
     /**

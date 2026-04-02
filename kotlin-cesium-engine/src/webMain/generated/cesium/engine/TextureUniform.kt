@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
  * uniform. This is used with [CustomShader] and [TextureManager]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TextureUniform.html">Online Documentation</a>
  */
-external class TextureUniform(
+open external class TextureUniform(
     options: ConstructorOptions,
 ) {
     /**

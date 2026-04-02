@@ -18,7 +18,7 @@ import js.array.ReadonlyArray
  * @property [center] The center of the box; automatically computed if not supplied.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AxisAlignedBoundingBox.html">Online Documentation</a>
  */
-external class AxisAlignedBoundingBox(
+open external class AxisAlignedBoundingBox(
     var minimum: Cartesian3 = definedExternally,
     var maximum: Cartesian3 = definedExternally,
     var center: Cartesian3 = definedExternally,

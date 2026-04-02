@@ -61,7 +61,7 @@ import web.html.HTMLCanvasElement
  * @property [container] The DOM element that will contain the widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html">Online Documentation</a>
  */
-external class Viewer(
+open external class Viewer(
     val container: Element,
     options: ConstructorOptions? = definedExternally,
 ) {

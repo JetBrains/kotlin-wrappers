@@ -15,7 +15,7 @@ import kotlinx.js.JsPlainObject
  * @param [intervals] An array of intervals to add to the collection.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html">Online Documentation</a>
  */
-external class TimeIntervalCollection(
+open external class TimeIntervalCollection(
     intervals: ReadonlyArray<TimeInterval>? = definedExternally,
 ) {
     /**

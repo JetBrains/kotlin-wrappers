@@ -14,7 +14,7 @@ package cesium.engine
  * @param [scene] The scene where visualization is taking place.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGeometryUpdater.html">Online Documentation</a>
  */
-external class PlaneGeometryUpdater(
+open external class PlaneGeometryUpdater(
     entity: Entity,
     scene: Scene,
 ) {

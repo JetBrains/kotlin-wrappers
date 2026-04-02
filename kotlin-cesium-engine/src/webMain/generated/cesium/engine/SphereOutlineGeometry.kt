@@ -20,7 +20,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SphereOutlineGeometry.html">Online Documentation</a>
  */
-external class SphereOutlineGeometry(
+open external class SphereOutlineGeometry(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

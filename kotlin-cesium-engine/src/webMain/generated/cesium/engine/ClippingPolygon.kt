@@ -29,7 +29,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygon.html">Online Documentation</a>
  */
-external class ClippingPolygon(
+open external class ClippingPolygon(
     options: ConstructorOptions,
 ) {
     /**

@@ -15,7 +15,7 @@ import cesium.engine.I3SDataProvider
  * @param [i3sProvider] I3S Data provider instance.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SBuildingSceneLayerExplorer.html">Online Documentation</a>
  */
-external class I3SBuildingSceneLayerExplorer(
+open external class I3SBuildingSceneLayerExplorer(
     containerId: String,
     i3sProvider: I3SDataProvider,
 )

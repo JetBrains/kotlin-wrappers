@@ -13,7 +13,7 @@ import web.html.HTMLImageElement
  * Provides functionality for ImageryProviders that have time dynamic imagery
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicImagery.html">Online Documentation</a>
  */
-external class TimeDynamicImagery(
+open external class TimeDynamicImagery(
     options: ConstructorOptions,
 ) {
     /**

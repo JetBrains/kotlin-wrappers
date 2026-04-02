@@ -23,7 +23,7 @@ import js.array.ReadonlyArray
  * @property [cameraPosition] The coordinate of the viewer/camera.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Occluder.html">Online Documentation</a>
  */
-external class Occluder(
+open external class Occluder(
     occluderBoundingSphere: BoundingSphere,
     var cameraPosition: Cartesian3,
 ) {

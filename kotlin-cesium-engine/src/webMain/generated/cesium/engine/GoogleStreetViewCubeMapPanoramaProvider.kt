@@ -16,7 +16,7 @@ import seskar.js.JsAsync
  * Creates a [PanoramaProvider] which provides imagery from [Google Street View Static API](https://developers.google.com/maps/documentation/streetview) to be displayed in a panorama.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleStreetViewCubeMapPanoramaProvider.html">Online Documentation</a>
  */
-external class GoogleStreetViewCubeMapPanoramaProvider {
+open external class GoogleStreetViewCubeMapPanoramaProvider {
     /**
      * Gets the panorama primitive for a requested position and orientation.
      * ```

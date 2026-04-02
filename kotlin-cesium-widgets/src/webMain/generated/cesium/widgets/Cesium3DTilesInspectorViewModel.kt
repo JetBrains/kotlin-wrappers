@@ -17,7 +17,7 @@ import web.html.HTMLElement
  * @property [performanceContainer] The container for the performance display
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html">Online Documentation</a>
  */
-external class Cesium3DTilesInspectorViewModel(
+open external class Cesium3DTilesInspectorViewModel(
     val scene: Scene,
     val performanceContainer: HTMLElement,
 ) {

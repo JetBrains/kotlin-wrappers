@@ -14,7 +14,7 @@ import kotlinx.js.JsPlainObject
  * Terrain data for a single tile where the terrain data is represented as a glb (binary glTF).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesTerrainData.html">Online Documentation</a>
  */
-external class Cesium3DTilesTerrainData(
+open external class Cesium3DTilesTerrainData(
     options: ConstructorOptions,
 ) : TerrainData {
     /**

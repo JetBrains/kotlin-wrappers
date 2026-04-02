@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGeodesic.html">Online Documentation</a>
  */
-external class EllipsoidGeodesic(
+open external class EllipsoidGeodesic(
     val start: Cartographic = definedExternally,
     val end: Cartographic = definedExternally,
     val ellipsoid: Ellipsoid = definedExternally,

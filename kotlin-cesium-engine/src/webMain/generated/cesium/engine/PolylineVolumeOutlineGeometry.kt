@@ -30,7 +30,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVolumeOutlineGeometry.html">Online Documentation</a>
  */
-external class PolylineVolumeOutlineGeometry(
+open external class PolylineVolumeOutlineGeometry(
     options: ConstructorOptions,
 ) {
     /**

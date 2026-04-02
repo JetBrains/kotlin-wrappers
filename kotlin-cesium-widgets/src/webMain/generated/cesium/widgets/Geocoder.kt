@@ -15,7 +15,7 @@ import web.dom.Element
  * performed using [Cesium ion](https://cesium.com/cesium-ion/).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html">Online Documentation</a>
  */
-external class Geocoder(
+open external class Geocoder(
     options: ConstructorOptions,
 ) {
     /**

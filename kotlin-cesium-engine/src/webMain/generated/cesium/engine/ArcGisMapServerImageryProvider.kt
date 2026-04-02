@@ -44,7 +44,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html">Online Documentation</a>
  */
-external class ArcGisMapServerImageryProvider(
+open external class ArcGisMapServerImageryProvider(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

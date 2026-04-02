@@ -28,7 +28,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html">Online Documentation</a>
  */
-external class HeightmapTerrainData(
+open external class HeightmapTerrainData(
     options: ConstructorOptions,
 ) : TerrainData {
     /**

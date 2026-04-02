@@ -21,7 +21,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html">Online Documentation</a>
  */
-external class GoogleEarthEnterpriseTerrainData(
+open external class GoogleEarthEnterpriseTerrainData(
     options: ConstructorOptions,
 ) : TerrainData {
     /**

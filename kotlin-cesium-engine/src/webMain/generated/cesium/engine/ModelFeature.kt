@@ -26,7 +26,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html">Online Documentation</a>
  */
-external class ModelFeature
+open external class ModelFeature
 private constructor() {
     /**
      * @property [model] The model the feature belongs to.

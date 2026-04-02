@@ -13,7 +13,7 @@ package cesium.engine
  * @param [entityCollection] The entityCollection to visualize.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelVisualizer.html">Online Documentation</a>
  */
-external class ModelVisualizer(
+open external class ModelVisualizer(
     scene: Scene,
     entityCollection: EntityCollection,
 ) : Visualizer {

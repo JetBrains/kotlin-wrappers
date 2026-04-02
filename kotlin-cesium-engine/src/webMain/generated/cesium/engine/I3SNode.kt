@@ -16,7 +16,7 @@ import seskar.js.JsAsync
  * Do not construct this directly, instead access tiles through [I3SLayer].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html">Online Documentation</a>
  */
-external class I3SNode
+open external class I3SNode
 private constructor() {
     /**
      * Gets the resource for the node.

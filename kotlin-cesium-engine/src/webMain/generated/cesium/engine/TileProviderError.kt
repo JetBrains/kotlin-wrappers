@@ -24,7 +24,7 @@ import js.errors.JsError
  * @property [error] The error or exception that occurred, if any.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileProviderError.html">Online Documentation</a>
  */
-external class TileProviderError(
+open external class TileProviderError(
     provider: ImageryProvider,
     var message: String,
     var x: Double = definedExternally,

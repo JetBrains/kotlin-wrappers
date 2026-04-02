@@ -27,7 +27,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LinearSpline.html">Online Documentation</a>
  */
-external class LinearSpline(
+open external class LinearSpline(
     options: ConstructorOptions,
 ) {
     /**

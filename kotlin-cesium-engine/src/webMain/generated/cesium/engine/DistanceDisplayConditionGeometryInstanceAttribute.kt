@@ -32,7 +32,7 @@ import js.typedarrays.Float32Array
  *   Default value - [Number.MAX_VALUE]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayConditionGeometryInstanceAttribute.html">Online Documentation</a>
  */
-external class DistanceDisplayConditionGeometryInstanceAttribute(
+open external class DistanceDisplayConditionGeometryInstanceAttribute(
     near: Double? = definedExternally,
     far: Double? = definedExternally,
 ) {

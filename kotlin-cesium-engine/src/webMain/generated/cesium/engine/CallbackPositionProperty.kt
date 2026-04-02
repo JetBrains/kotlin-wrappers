@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [ReferenceFrame.FIXED]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackPositionProperty.html">Online Documentation</a>
  */
-external class CallbackPositionProperty(
+open external class CallbackPositionProperty(
     callback: CallbackPositionProperty,
     val isConstant: Boolean,
     var referenceFrame: ReferenceFrame = definedExternally,

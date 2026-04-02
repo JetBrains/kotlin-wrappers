@@ -37,7 +37,7 @@ import js.typedarrays.Float64Array
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileFeature.html">Online Documentation</a>
  */
-external class Cesium3DTileFeature
+open external class Cesium3DTileFeature
 private constructor() {
     /**
      * Gets or sets if the feature will be shown. This is set for all features

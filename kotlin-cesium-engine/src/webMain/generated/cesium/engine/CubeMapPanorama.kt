@@ -34,7 +34,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CubeMapPanorama.html">Online Documentation</a>
  */
-external class CubeMapPanorama(
+open external class CubeMapPanorama(
     options: ConstructorOptions,
 ) {
     /**

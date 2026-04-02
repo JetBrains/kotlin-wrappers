@@ -12,7 +12,7 @@ package cesium.engine
  * @param [value] The property value.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantProperty.html">Online Documentation</a>
  */
-external class ConstantProperty(
+open external class ConstantProperty(
     value: JsAny? = definedExternally,
 ) {
     /**

@@ -76,7 +76,7 @@ import web.dom.Element
  * @property [container] The parent HTML container node or ID for this widget.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BaseLayerPicker.html">Online Documentation</a>
  */
-external class BaseLayerPicker(
+open external class BaseLayerPicker(
     var container: Element,
     options: ConstructorOptions,
 ) {

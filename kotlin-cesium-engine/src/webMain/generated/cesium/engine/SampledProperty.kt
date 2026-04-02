@@ -50,7 +50,7 @@ import kotlinx.js.JsPlainObject
  * @property [derivativeTypes] When supplied, indicates that samples will contain derivative information of the specified types.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html">Online Documentation</a>
  */
-external class SampledProperty(
+open external class SampledProperty(
     type: Double,
     var derivativeTypes: ReadonlyArray<Packable<*>> = definedExternally,
 ) {

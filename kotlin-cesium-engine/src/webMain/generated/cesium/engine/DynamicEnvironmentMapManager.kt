@@ -31,7 +31,7 @@ import kotlinx.js.JsPlainObject
  * @param [options] An object describing initialization options.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DynamicEnvironmentMapManager.html">Online Documentation</a>
  */
-external class DynamicEnvironmentMapManager(
+open external class DynamicEnvironmentMapManager(
     options: ConstructorOptions? = definedExternally,
 ) {
     /**

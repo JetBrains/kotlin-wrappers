@@ -29,7 +29,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html">Online Documentation</a>
  */
-external class TileMapServiceImageryProvider
+open external class TileMapServiceImageryProvider
 private constructor() {
     /**
      * Initialization options for the TileMapServiceImageryProvider constructor

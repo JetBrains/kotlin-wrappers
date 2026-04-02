@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [Cartesian3.ZERO]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ray.html">Online Documentation</a>
  */
-external class Ray(
+open external class Ray(
     var origin: Cartesian3 = definedExternally,
     var direction: Cartesian3 = definedExternally,
 ) {

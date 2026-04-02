@@ -15,7 +15,7 @@ package cesium.engine
  *   string in the format returned by XMLHttpRequest's getAllResponseHeaders() function.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RequestErrorEvent.html">Online Documentation</a>
  */
-external class RequestErrorEvent(
+open external class RequestErrorEvent(
     var statusCode: Int = definedExternally,
     var response: JsAny = definedExternally,
     responseHeaders: JsAny /* string | any */? = definedExternally,

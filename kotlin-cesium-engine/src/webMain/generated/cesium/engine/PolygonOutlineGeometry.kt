@@ -79,7 +79,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonOutlineGeometry.html">Online Documentation</a>
  */
-external class PolygonOutlineGeometry(
+open external class PolygonOutlineGeometry(
     options: ConstructorOptions,
 ) {
     /**

@@ -27,7 +27,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html">Online Documentation</a>
  */
-external class SteppedSpline(
+open external class SteppedSpline(
     options: ConstructorOptions,
 ) {
     /**

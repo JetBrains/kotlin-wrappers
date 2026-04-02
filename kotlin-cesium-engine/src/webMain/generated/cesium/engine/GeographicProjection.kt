@@ -16,7 +16,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.default]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeographicProjection.html">Online Documentation</a>
  */
-external class GeographicProjection(
+open external class GeographicProjection(
     val ellipsoid: Ellipsoid = definedExternally,
 ) {
     /**

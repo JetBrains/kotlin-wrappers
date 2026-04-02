@@ -15,7 +15,7 @@ package cesium.engine
  *   Default value - [Ellipsoid.WGS84]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMercatorProjection.html">Online Documentation</a>
  */
-external class WebMercatorProjection(
+open external class WebMercatorProjection(
     val ellipsoid: Ellipsoid = definedExternally,
 ) {
     /**

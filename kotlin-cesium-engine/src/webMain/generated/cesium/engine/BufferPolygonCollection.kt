@@ -44,7 +44,7 @@ import kotlinx.js.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonCollection.html">Online Documentation</a>
  */
-external class BufferPolygonCollection(
+open external class BufferPolygonCollection(
     options: ConstructorOptions,
 ) {
     /**

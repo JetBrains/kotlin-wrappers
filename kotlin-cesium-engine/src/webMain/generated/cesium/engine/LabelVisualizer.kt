@@ -14,7 +14,7 @@ package cesium.engine
  * @param [entityCollection] The entityCollection to visualize.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelVisualizer.html">Online Documentation</a>
  */
-external class LabelVisualizer(
+open external class LabelVisualizer(
     entityCluster: EntityCluster,
     entityCollection: EntityCollection,
 ) : Visualizer {

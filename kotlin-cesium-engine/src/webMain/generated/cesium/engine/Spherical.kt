@@ -17,7 +17,7 @@ package cesium.engine
  *   Default value - `1.0`
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spherical.html">Online Documentation</a>
  */
-external class Spherical(
+open external class Spherical(
     var clock: Double = definedExternally,
     var cone: Double = definedExternally,
     var magnitude: Double = definedExternally,
