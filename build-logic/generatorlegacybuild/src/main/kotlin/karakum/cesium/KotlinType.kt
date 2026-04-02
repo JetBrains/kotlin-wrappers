@@ -35,6 +35,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Error" to "JsError",
 
     JS_FUNCTION to "Function<*>",
+    "TypedArray" to "TypedArray<*, *, *, *>",
+
     "DataView" to "DataView<*>",
     "any[] | Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array" to
             "ReadonlyArray<JsAny>",
@@ -83,6 +85,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     """"default" | "low-power" | "high-performance"""" to "WebGLPowerPreference",
 
     "Map<number_object>" to "ReadonlyMap<Int, JsAny>",
+
+    "BufferPrimitiveCollection<T>" to "BufferPrimitiveCollection<T>",
 )
 
 internal fun kotlinType(

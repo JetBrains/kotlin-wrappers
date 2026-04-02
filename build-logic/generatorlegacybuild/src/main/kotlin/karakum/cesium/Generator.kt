@@ -63,6 +63,9 @@ private fun generate(
 }
 
 private fun hasRuntimeDeclarations(code: String): Boolean {
+    if (code.startsWith("external fun "))
+        return true
+
     if ("\nexternal " !in code && "\nsealed external " !in code)
         return false
 

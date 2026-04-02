@@ -222,8 +222,6 @@ external class WebMapServiceImageryProvider(
      * @property [layers] The layers to include, separated by commas.
      * @property [parameters] Additional parameters to pass to the WMS server in the GetMap URL.
      *   Default value - [WebMapServiceImageryProvider.DefaultParameters]
-     * @property [getFeatureInfoParameters] Additional parameters to pass to the WMS server in the GetFeatureInfo URL.
-     *   Default value - [WebMapServiceImageryProvider.GetFeatureInfoDefaultParameters]
      * @property [enablePickFeatures] If true, [WebMapServiceImageryProvider.pickFeatures] will invoke
      *   the GetFeatureInfo operation on the WMS server and return the features included in the response.  If false,
      *   [WebMapServiceImageryProvider.pickFeatures] will immediately return undefined (indicating no pickable features)
@@ -231,6 +229,9 @@ external class WebMapServiceImageryProvider(
      *   GetFeatureInfo or if you don't want this provider's features to be pickable. Note that this can be dynamically
      *   overridden by modifying the WebMapServiceImageryProvider#enablePickFeatures property.
      *   Default value - `true`
+     * @property [getFeatureInfoParameters] Additional parameters to pass to the WMS server in the GetFeatureInfo URL.
+     *   Default value - [WebMapServiceImageryProvider.GetFeatureInfoDefaultParameters]
+     * @property [getFeatureInfoUrl] The getFeatureInfo URL of the WMS service. If the property is not defined then we use the property value of url.
      * @property [getFeatureInfoFormats] The formats
      *   in which to try WMS GetFeatureInfo requests.
      *   Default value - [WebMapServiceImageryProvider.DefaultGetFeatureInfoFormats]
@@ -260,7 +261,6 @@ external class WebMapServiceImageryProvider(
      *   Default value - `'abc'`
      * @property [clock] A Clock instance that is used when determining the value for the time dimension. Required when `times` is specified.
      * @property [times] TimeIntervalCollection with its data property being an object containing time dynamic dimension and their values.
-     * @property [getFeatureInfoUrl] The getFeatureInfo URL of the WMS service. If the property is not defined then we use the property value of url.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */
     @JsPlainObject
@@ -268,8 +268,9 @@ external class WebMapServiceImageryProvider(
         val url: Resource
         val layers: String
         val parameters: JsAny?
-        val getFeatureInfoParameters: JsAny?
         val enablePickFeatures: Boolean?
+        val getFeatureInfoParameters: JsAny?
+        val getFeatureInfoUrl: Resource?
         val getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
         val rectangle: Rectangle?
         val tilingScheme: TilingScheme?
@@ -284,7 +285,6 @@ external class WebMapServiceImageryProvider(
         val subdomains: ReadonlyArray<JsString>?
         val clock: Clock?
         val times: TimeIntervalCollection?
-        val getFeatureInfoUrl: Resource?
     }
 
     companion object {

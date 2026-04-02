@@ -46,12 +46,15 @@ external class ClippingPolygonCollection(
      *   Default value - `true`
      * @property [inverse] If true, a region will be clipped if it is outside of every polygon in the collection. Otherwise, a region will only be clipped if it is on the inside of any polygon.
      *   Default value - `false`
+     * @property [quality] A scalar that controls the resolution of the signed distance texture used for clipping. Values greater than 1.0 increase quality, values less than 1.0 decrease it. Must be greater than 0.0.
+     *   Default value - `1.0`
      */
     @JsPlainObject
     interface ConstructorOptions {
         val polygons: ReadonlyArray<ClippingPolygon>?
         val enabled: Boolean?
         val inverse: Boolean?
+        val quality: Double?
     }
 
     /**
@@ -67,6 +70,13 @@ external class ClippingPolygonCollection(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#inverse">Online Documentation</a>
      */
     var inverse: Boolean
+
+    /**
+     * A scalar that controls the resolution of the signed distance texture used for clipping.
+     * Values greater than 1.0 increase quality, values less than 1.0 decrease it. Must be greater than 0.0.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#quality">Online Documentation</a>
+     */
+    var quality: Double
 
     /**
      * An event triggered when a new clipping polygon is added to the collection.  Event handlers

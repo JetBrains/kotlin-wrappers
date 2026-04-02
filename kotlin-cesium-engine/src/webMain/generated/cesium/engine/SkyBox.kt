@@ -40,12 +40,6 @@ external class SkyBox(
     }
 
     /**
-     * Determines if the sky box will be shown.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#show">Online Documentation</a>
-     */
-    var show: Boolean
-
-    /**
      * Gets or sets the the primitive object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#sources">Online Documentation</a>
      */

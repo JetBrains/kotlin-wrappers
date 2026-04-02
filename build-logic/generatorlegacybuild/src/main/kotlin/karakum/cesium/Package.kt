@@ -21,6 +21,7 @@ import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
+import js.typedarrays.Uint32Array
 import js.typedarrays.Uint8Array
 import kotlin.js.JsName
 import kotlin.js.JsModule

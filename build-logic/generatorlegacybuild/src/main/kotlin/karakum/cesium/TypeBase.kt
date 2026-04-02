@@ -13,6 +13,14 @@ internal abstract class TypeBase(
     final override val name: String =
         source.defaultName
 
+    private val typeParameters: String = run {
+        val start = source.body.substringAfter(name)
+        if (start.startsWith("<")) {
+            (start.substringBefore(">") + ">")
+                .replace(" extends ", " : ")
+        } else ""
+    }
+
     var parents: List<String> =
         when (name) {
             in ERROR_TYPES,
@@ -156,7 +164,13 @@ internal abstract class TypeBase(
         } else ""
 
         val modifiers = (if (top) "external " else "") +
-                (if (abstract) "abstract " else "")
+                (if (abstract) "abstract " else "") +
+                when (name) {
+                    "BufferPrimitive",
+                        -> "open "
+
+                    else -> ""
+                }
 
         val hideParams = constructor != null && !constructor.hasParameters
 
@@ -167,7 +181,7 @@ internal abstract class TypeBase(
 
         val declaration = when (name) {
             "Event" -> "$name<Listener : Function<Unit>>"
-            else -> name
+            else -> name + typeParameters
         }
 
         return header +

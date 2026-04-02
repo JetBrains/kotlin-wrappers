@@ -326,9 +326,9 @@ external class Color(
          */
         override fun pack(
             value: Color,
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
-        ): ReadonlyArray<JsDouble>
+        ): ReadonlyArray<JsDouble> /* | TypedArray */
 
         /**
          * Retrieves an instance from a packed array.
@@ -340,7 +340,7 @@ external class Color(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<JsDouble>,
+            array: ReadonlyArray<JsDouble>, /* | TypedArray */
             startingIndex: Int?,
             result: Color?,
         ): Color

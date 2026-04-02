@@ -19,9 +19,11 @@ internal const val POSITION_PROPERTY: String = "PositionProperty"
 
 private val FACTORY_MAP = mapOf(
     Function.PREFIX to ::Function,
+    "function " to ::Function,
     Enum.PREFIX to ::Enum,
     Enum.CONST_PREFIX to ::Enum,
     TopType.PREFIX to ::TopType,
+    "type " to ::TopType,
     "interface " to ::Interface,
     Interface.PREFIX to ::Interface,
     Class.PREFIX to ::Class,
@@ -81,7 +83,8 @@ internal fun parseDeclarations(
                 || it.name == "requestAnimationFrame"
                 || it.name == "requestAnimationFrameCallback"
                 || it.name == "defaultValue"
-                || it.name == "defined<Type>"
+                || it.name == "defined"
+                || it.name == "addAttribute"
     }
 
     declarations.removeAll {
@@ -198,7 +201,8 @@ private fun readDeclarations(
         .map { source ->
             val body = source.body
             val prefix = FACTORY_MAP.keys
-                .first { body.startsWith(it) }
+                .firstOrNull { body.startsWith(it) }
+                ?: error("NOKEY\n------\n$body\n------\n")
 
             val newSource = source.copy(body = body.removePrefix(prefix))
             FACTORY_MAP.getValue(prefix)(newSource)

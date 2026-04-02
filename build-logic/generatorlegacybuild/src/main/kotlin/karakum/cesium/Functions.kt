@@ -1,8 +1,17 @@
 package karakum.cesium
 
 internal fun Definition.parseFunctionName(): String =
-    body.substringBefore("(")
+    body.substringBefore("<")
+        .substringBefore("(")
         .substringAfterLast(" ")
+
+internal fun Definition.parseFunctionTypeParameters(): String {
+    val start = body.substringBefore("(")
+    if (!start.endsWith(">"))
+        return ""
+
+    return start.removePrefix(start.substringBefore("<"))
+}
 
 internal fun Definition.parseFunctionParameters(): List<Parameter> =
     body.substringAfter("(")

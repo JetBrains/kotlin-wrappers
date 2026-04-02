@@ -192,7 +192,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromVertices">Online Documentation</a>
          */
         fun fromVertices(
-            positions: ReadonlyArray<JsDouble>? = definedExternally,
+            positions: ReadonlyArray<JsDouble> /* | TypedArray */? = definedExternally,
             center: Cartesian3? = definedExternally,
             stride: Int? = definedExternally,
             result: BoundingSphere? = definedExternally,

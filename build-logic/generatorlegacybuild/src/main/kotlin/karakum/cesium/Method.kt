@@ -7,6 +7,10 @@ internal class Method(
     override val source: Definition,
 ) : Member() {
     override val name = source.parseFunctionName()
+
+    private val typeParameters = source.parseFunctionTypeParameters()
+        .replace(" extends ", " : ")
+
     override val docName: String
         get() = if (static) ".$name" else name
 
@@ -54,7 +58,7 @@ internal class Method(
             params = params.replace(" = definedExternally", "")
         }
 
-        val sourceDeclaration = "fun $name$params$returnExpression"
+        val sourceDeclaration = "fun $typeParameters$name$params$returnExpression"
         val replacedSyncDeclarations by lazy {
             listOf(
                 sourceDeclaration.replace(

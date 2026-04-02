@@ -109,9 +109,9 @@ external class Cartesian4(
          */
         override fun pack(
             value: Cartesian4,
-            array: ReadonlyArray<JsDouble>, /* | TypedArray */
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<JsDouble> /* | TypedArray */
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -123,7 +123,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<JsDouble>, /* | TypedArray */
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Cartesian4?,
         ): Cartesian4
@@ -137,8 +137,8 @@ external class Cartesian4(
          */
         fun packArray(
             array: ReadonlyArray<Cartesian4>,
-            result: ReadonlyArray<JsDouble> /* | TypedArray */? = definedExternally,
-        ): ReadonlyArray<JsDouble> /* | TypedArray */
+            result: ReadonlyArray<JsDouble>? = definedExternally,
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian4s.
@@ -148,7 +148,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: ReadonlyArray<JsDouble>, /* | TypedArray */
+            array: ReadonlyArray<JsDouble>,
             result: ReadonlyArray<Cartesian4>? = definedExternally,
         ): ReadonlyArray<Cartesian4>
 

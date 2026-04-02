@@ -195,4 +195,13 @@ external class MetadataClassProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#extensions">Online Documentation</a>
      */
     val extensions: JsAny
+
+    /**
+     * Determines the byte size of a single property element, stored on the GPU.
+     * This differs from the CPU byte size if the element type is a 64-bit type that can be
+     * downcast to a 32-bit type for texture packing (only relevant for textures created from property tables).
+     * @return The byte size of a single property element on the GPU.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#gpuBytesPerElement">Online Documentation</a>
+     */
+    fun gpuBytesPerElement(): Double
 }

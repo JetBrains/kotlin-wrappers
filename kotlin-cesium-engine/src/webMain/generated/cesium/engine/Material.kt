@@ -92,6 +92,18 @@ external class Material(
     var translucent: Boolean /* | Function */
 
     /**
+     * The [TextureMinificationFilter] to apply to this material's textures.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#minificationFilter">Online Documentation</a>
+     */
+    var minificationFilter: TextureMinificationFilter
+
+    /**
+     * The [TextureMagnificationFilter] to apply to this material's textures.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#magnificationFilter">Online Documentation</a>
+     */
+    var magnificationFilter: TextureMagnificationFilter
+
+    /**
      * Gets whether or not this material is translucent.
      * @return `true` if this material is translucent, `false` otherwise.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#isTranslucent">Online Documentation</a>

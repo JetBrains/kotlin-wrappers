@@ -58,6 +58,12 @@ external class PathGraphics {
     var distanceDisplayCondition: Property?
 
     /**
+     * Gets or sets the frame in which to visualize the path. Use another entity's id to visualize the path relative to that entity, or use the string values "FIXED" or "INERTIAL" to visualize the path in those reference frames.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PathGraphics.html#relativeTo">Online Documentation</a>
+     */
+    var relativeTo: Property?
+
+    /**
      * Duplicates this instance.
      * @param [result] The object onto which to store the result.
      * @return The modified result parameter or a new instance if one was not provided.

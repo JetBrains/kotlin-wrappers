@@ -53,10 +53,10 @@ external class CubeMapPanorama(
     var show: Boolean
 
     /**
-     * Gets the transform of the panorama.
+     * Gets the transform of the panorama. If undefined, the default orientation uses the True Equator Mean Equinox (TEME) axes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CubeMapPanorama.html#transform">Online Documentation</a>
      */
-    val transform: Matrix4
+    val transform: Matrix3
 
     /**
      * Gets the credits of the panorama.
@@ -101,7 +101,7 @@ external class CubeMapPanorama(
     /**
      * Initialization options for the CubeMapPanorama constructor
      * @property [options.sources] The source URL or `Image` object for each of the six cube map faces.  See the example below.
-     * @property [options.transform] A 4x4 transformation matrix that defines the panorama’s position and orientation
+     * @property [options.transform] A 3x3 transformation matrix that defines the panorama’s orientation. If not specified, the default orientation is defined using the True Equator Mean Equinox (TEME) axes.
      * @property [options.show] Determines if this primitive will be shown.
      *   Default value - `true`
      * @property [options.credit] A credit for the panorama, which is displayed on the canvas.
