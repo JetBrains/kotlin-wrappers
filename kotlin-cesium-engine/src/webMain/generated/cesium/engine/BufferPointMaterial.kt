@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.buffer.DataView
+
 /**
  * Material description for a [BufferPoint].
  *
@@ -19,9 +21,7 @@ open external class BufferPointMaterial(
      * Size of point, 0-255px.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPointMaterial.html#size">Online Documentation</a>
      */
-    var size: JsAny /* number;
-    static pack(material: BufferPointMaterial, view: DataView, byteOffset: number): void;
-    static unpack(view: DataView, byteOffset: number, result: BufferPointMaterial): BufferPointMaterial */
+    var size: Double
 
     /**
      * Returns a JSON-serializable object representing the material. This encoding
@@ -49,4 +49,18 @@ open external class BufferPointMaterial(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPointMaterial.html#outlineWidth">Online Documentation</a>
      */
     var outlineWidth: Double
+
+    companion object {
+        fun pack(
+            material: BufferPointMaterial,
+            view: DataView<*>,
+            byteOffset: Int,
+        )
+
+        fun unpack(
+            view: DataView<*>,
+            byteOffset: Int,
+            result: BufferPointMaterial,
+        ): BufferPointMaterial
+    }
 }

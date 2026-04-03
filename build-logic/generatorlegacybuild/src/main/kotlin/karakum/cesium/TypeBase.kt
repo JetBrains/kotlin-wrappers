@@ -130,6 +130,7 @@ internal abstract class TypeBase(
 
             val packable = name != PACKABLE
                     && name != "PlaneOutlineGeometry" // WA
+                    && name != "BufferPrimitiveMaterial" // WA
                     && staticMembers.any { it.name == PACKED_LENGTH }
 
             if (packable) {

@@ -33,8 +33,7 @@ open external class BufferPrimitiveMaterial(
      * Width of outline, 0-255px.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveMaterial.html#outlineWidth">Online Documentation</a>
      */
-    var outlineWidth: JsAny /* number;
-    static packedLength: number */
+    var outlineWidth: Double
 
     /**
      * Returns a JSON-serializable object representing the material. This encoding
@@ -46,6 +45,9 @@ open external class BufferPrimitiveMaterial(
     fun toJSON(): JsAny
 
     companion object {
+
+        val packedLength: Int
+
         /**
          * Stores the provided material into the provided array.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveMaterial.html#.pack">Online Documentation</a>

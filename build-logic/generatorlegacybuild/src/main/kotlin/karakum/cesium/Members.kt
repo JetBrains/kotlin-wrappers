@@ -50,6 +50,7 @@ private fun String.splitToMemberSources(): Sequence<String> =
                 currentPart.isEmpty() -> false
                 part.startsWith("/**") -> true
                 part.startsWith("function ") -> true
+                part.startsWith("static ") -> true
                 else -> false
             }
 

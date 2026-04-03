@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.buffer.DataView
+
 /**
  * Material description for a [BufferPolyline].
  *
@@ -19,9 +21,7 @@ open external class BufferPolylineMaterial(
      * Width of polyline, 0–255px.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineMaterial.html#width">Online Documentation</a>
      */
-    var width: JsAny /* number;
-    static pack(material: BufferPolylineMaterial, view: DataView, byteOffset: number): void;
-    static unpack(view: DataView, byteOffset: number, result: BufferPolylineMaterial): BufferPolylineMaterial */
+    var width: Double
 
     /**
      * Returns a JSON-serializable object representing the material. This encoding
@@ -49,4 +49,18 @@ open external class BufferPolylineMaterial(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineMaterial.html#outlineWidth">Online Documentation</a>
      */
     var outlineWidth: Double
+
+    companion object {
+        fun pack(
+            material: BufferPolylineMaterial,
+            view: DataView<*>,
+            byteOffset: Int,
+        )
+
+        fun unpack(
+            view: DataView<*>,
+            byteOffset: Int,
+            result: BufferPolylineMaterial,
+        ): BufferPolylineMaterial
+    }
 }
