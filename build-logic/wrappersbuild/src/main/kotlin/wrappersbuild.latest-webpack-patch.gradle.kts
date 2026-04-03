@@ -2,6 +2,9 @@ import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
 tasks.withType<Kotlin2JsCompile>().configureEach {
     doLast {
+        if (!name.startsWith("compileTest"))
+            return@doLast
+
         if (!name.endsWith("WasmJs"))
             return@doLast
 
