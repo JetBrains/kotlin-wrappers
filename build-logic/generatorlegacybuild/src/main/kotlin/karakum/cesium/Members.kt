@@ -33,12 +33,40 @@ internal fun members(
     return body
         .substringAfter("\n    ")
         .removeSuffix(";\n}")
-        .splitToSequence(";\n    /", ";\n    function ")
-        .map { if (it.startsWith("**")) "/$it" else it }
+        .splitToMemberSources()
+        .map { it.removePrefix("function ") }
         .flatMap { parseTopDefinition(it) }
         .flatMap { it.toMembers(optionsDoc) }
         .toList()
 }
+
+private fun String.splitToMemberSources(): Sequence<String> =
+    sequence {
+        val delimiter = ";\n    "
+
+        var currentPart = ""
+        for (part in splitToSequence(delimiter)) {
+            val pushPrevious = when {
+                currentPart.isEmpty() -> false
+                part.startsWith("/**") -> true
+                part.startsWith("function ") -> true
+                else -> false
+            }
+
+            if (pushPrevious) {
+                yield(currentPart)
+                currentPart = ""
+            }
+
+            currentPart = if (currentPart.isNotEmpty()) {
+                currentPart + delimiter + part
+            } else part
+        }
+
+        if (currentPart.isNotEmpty()) {
+            yield(currentPart)
+        }
+    }
 
 private fun Definition.toMembers(optionsDoc: String): Sequence<Member> =
     when {
