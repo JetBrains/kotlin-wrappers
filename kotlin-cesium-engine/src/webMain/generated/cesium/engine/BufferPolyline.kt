@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.typedarrays.TypedArray
+
 /**
  * View bound to the underlying buffer data of a [BufferPolylineCollection].
  *
@@ -31,10 +33,9 @@ open external class BufferPolyline :
      * @param [result] return {TypedArray}
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolyline.html#getPositions">Online Documentation</a>
      */
-    fun getPositions(
-        result: JsAny /* TypedArray): void;
-    setPositions(positions: TypedArray */? = definedExternally,
-    )
+    fun getPositions(result: TypedArray<*, *, *, *>? = definedExternally)
+
+    fun setPositions(positions: TypedArray<*, *, *, *>)
 
     /**
      * Returns a JSON-serializable object representing the polyline. This encoding

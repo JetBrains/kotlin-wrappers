@@ -40,10 +40,9 @@ open external class BufferPolygon :
      * @param [result] return {TypedArray}
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygon.html#getPositions">Online Documentation</a>
      */
-    fun getPositions(
-        result: JsAny /* TypedArray): void;
-    setPositions(positions: TypedArray */? = definedExternally,
-    )
+    fun getPositions(result: TypedArray<*, *, *, *>? = definedExternally)
+
+    fun setPositions(positions: TypedArray<*, *, *, *>)
 
     /**
      * Offset in collection position array to first vertex in polygon's outer

@@ -51,6 +51,9 @@ private fun String.splitToMemberSources(): Sequence<String> =
                 part.startsWith("/**") -> true
                 part.startsWith("function ") -> true
                 part.startsWith("static ") -> true
+                part.startsWith("setPositions(") -> true
+                part.startsWith("getMaterial(") -> true
+                part.startsWith("setMaterial(") -> true
                 else -> false
             }
 

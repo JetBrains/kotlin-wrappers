@@ -24,9 +24,11 @@ open external class BufferPrimitive {
      * Whether primitive is shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitive.html#show">Online Documentation</a>
      */
-    var show: JsAny /* boolean;
-    getMaterial(result: BufferPrimitiveMaterial): BufferPrimitiveMaterial;
-    setMaterial(material: BufferPrimitiveMaterial): void */
+    var show: Boolean
+
+    fun getMaterial(result: BufferPrimitiveMaterial): BufferPrimitiveMaterial
+
+    fun setMaterial(material: BufferPrimitiveMaterial)
 
     /**
      * Returns a JSON-serializable object representing the primitive. This encoding
