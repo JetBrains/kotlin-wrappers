@@ -909,6 +909,8 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Removes focus from the window.
+     *
+     * Not supported on Wayland (Linux).
      */
     override fun blur()
 
@@ -930,6 +932,8 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Moves window to the center of the screen.
+     *
+     * Not supported on Wayland (Linux).
      */
     override fun center()
 
@@ -961,6 +965,9 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Focuses on the window.
+     *
+     * On Wayland (Linux), the desktop environment may show a notification or flash the
+     * app icon if the window or app is not already focused.
      */
     override fun focus()
 
@@ -1431,7 +1438,9 @@ open external class BrowserWindow : BaseWindow {
     override fun moveTabToNewWindow()
 
     /**
-     * Moves window to top(z-order) regardless of focus
+     * Moves window to top(z-order) regardless of focus.
+     *
+     * Not supported on Wayland (Linux).
      */
     override fun moveTop()
 
@@ -1641,6 +1650,8 @@ open external class BrowserWindow : BaseWindow {
      * Resizes and moves the window to the supplied bounds. Any properties that are not
      * supplied will default to their current values.
      *
+     * On Wayland (Linux), has the same limitations as `setSize` and `setPosition`.
+     *
      * > [!NOTE] On macOS, the y-coordinate value cannot be smaller than the Tray
      * height. The tray height has changed over time and depends on the operating
      * system, but is between 20-40px. Passing a value lower than the tray height will
@@ -1670,6 +1681,9 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Resizes and moves the window's client area (e.g. the web page) to the supplied
      * bounds.
+     *
+     * On Wayland (Linux), has the same limitations as `setContentSize` and
+     * `setPosition`.
      */
     override fun setContentBounds(
         bounds: Rectangle,
@@ -1695,6 +1709,9 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Resizes the window's client area (e.g. the web page) to `width` and `height`.
+     *
+     * On Wayland (Linux), may not work as some window managers restrict programmatic
+     * window resizing.
      */
     override fun setContentSize(
         width: Double,
@@ -1863,6 +1880,8 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Moves window to `x` and `y`.
+     *
+     * Not supported on Wayland (Linux).
      */
     override fun setPosition(
         x: Double,
@@ -1939,6 +1958,9 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Resizes the window to `width` and `height`. If `width` or `height` are below any
      * set minimum size constraints the window will snap to its minimum size.
+     *
+     * On Wayland (Linux), may not work as some window managers restrict programmatic
+     * window resizing.
      */
     override fun setSize(
         width: Double,
@@ -2110,6 +2132,8 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Shows the window but doesn't focus on it.
+     *
+     * Not supported on Wayland (Linux).
      */
     override fun showInactive()
 

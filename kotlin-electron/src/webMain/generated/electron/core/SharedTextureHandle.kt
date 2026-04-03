@@ -23,7 +23,9 @@ external interface SharedTextureHandle {
 
     /**
      * NT HANDLE holds the shared texture. Note that this NT HANDLE is local to current
-     * process.
+     * process.  Output textures of `rgba`, `bgra`, `rgbaf16` formats don't have a
+     * keyed mutex on the texture handle, but `nv12` format texture handles do have a
+     * keyed mutex.
      *
      * @platform win32
      */

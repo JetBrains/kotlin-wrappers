@@ -17,8 +17,9 @@ open external class MenuItem {
     var accelerator: Accelerator?
 
     /**
-     * A `boolean` indicating whether the item is checked. This property can be
-     * dynamically changed.
+     * A `boolean` indicating whether the item is checked.
+     *
+     * This property can be dynamically changed.
      *
      * A `checkbox` menu item will toggle the `checked` property on and off when
      * selected.
@@ -46,24 +47,30 @@ open external class MenuItem {
     var commandId: Double
 
     /**
-     * A `boolean` indicating whether the item is enabled. This property can be
-     * dynamically changed.
+     * A `boolean` indicating whether the item is enabled.
+     *
+     * This property can be dynamically changed.
      */
     var enabled: Boolean
 
     /**
      * A `NativeImage | string` (optional) indicating the item's icon, if set.
+     *
+     * This property can be dynamically changed.
      */
     var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
-     * A `string` indicating the item's unique id. This property can be dynamically
-     * changed.
+     * A `string` indicating the item's unique id.
+     *
+     * This property can be dynamically changed.
      */
     var id: String
 
     /**
      * A `string` indicating the item's visible label.
+     *
+     * This property can be dynamically changed.
      */
     var label: String
 
@@ -104,6 +111,8 @@ open external class MenuItem {
 
     /**
      * A `string` indicating the item's sublabel.
+     *
+     * This property can be dynamically changed.
      */
     var sublabel: String
 
@@ -141,8 +150,9 @@ open external class MenuItem {
     val userAccelerator: Accelerator?
 
     /**
-     * A `boolean` indicating whether the item is visible. This property can be
-     * dynamically changed.
+     * A `boolean` indicating whether the item is visible.
+     *
+     * This property can be dynamically changed.
      */
     var visible: Boolean
 }

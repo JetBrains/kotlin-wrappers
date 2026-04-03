@@ -65,7 +65,7 @@ external interface NotificationConstructorOptions {
     /**
      * The urgency level of the notification. Can be 'normal', 'critical', or 'low'.
      *
-     * @platform linux
+     * @platform linux,win32
      */
     var urgency: (NotificationConstructorOptionsUrgency)?
 

@@ -29,6 +29,15 @@ external interface NativeTheme : node.events.EventEmitter {
     val prefersReducedTransparency: Boolean
 
     /**
+     * A `boolean` that indicates whether the user prefers UI that differentiates items
+     * using something other than color alone (e.g. shapes or labels). This maps to
+     * NSWorkspace.accessibilityDisplayShouldDifferentiateWithoutColor.
+     *
+     * @platform darwin
+     */
+    val shouldDifferentiateWithoutColor: Boolean
+
+    /**
      * A `boolean` for if the OS / Chromium currently has a dark mode enabled or is
      * being instructed to show a dark-style UI.  If you want to modify this value you
      * should use `themeSource` below.

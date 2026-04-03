@@ -49,6 +49,8 @@ external interface Screen : node.events.EventEmitter {
     /**
      * The current absolute position of the mouse pointer.
      *
+     * Not supported on Wayland (Linux).
+     *
      * > [!NOTE] The return value is a DIP point, not a screen physical point.
      */
     fun getCursorScreenPoint(): Point

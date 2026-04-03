@@ -4,13 +4,13 @@ package electron.core
 
 external interface LoginItemSettingsOptions {
     /**
-     * Can be one of `mainAppService`, `agentService`, `daemonService`, or
-     * `loginItemService`. Defaults to `mainAppService`. Only available on macOS 13 and
-     * up. See app.setLoginItemSettings for more information about each type.
+     * Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`.
+     * Defaults to `mainAppService`. Only available on macOS 13 and up. See
+     * app.setLoginItemSettings for more information about each type.
      *
      * @platform darwin
      */
-    var type: String?
+    var type: (LoginItemSettingsOptionsType)?
 
     /**
      * The name of the service. Required if `type` is non-default. Only available on

@@ -538,8 +538,10 @@ external interface App : node.events.EventEmitter {
     fun exit(exitCode: Double = definedExternally)
 
     /**
-     * On Linux, focuses on the first visible window. On macOS, makes the application
-     * the active app. On Windows, focuses on the application's first window.
+     * On macOS, makes the application the active app. On Windows, focuses on the
+     * application's first window. On Linux, either focuses on the first visible window
+     * (X11) or requests focus but may instead show a notification or flash the app
+     * icon (Wayland).
      *
      * You should seek to use the `steal` option as sparingly as possible.
      */
@@ -721,7 +723,7 @@ external interface App : node.events.EventEmitter {
      * indicates that the app should restore the windows that were open the last time
      * the app was closed. This setting is not available on MAS builds or on macOS 13
      * and up.
-     * * `status` string _macOS_ - can be one of `not-registered`, `enabled`,
+     * * `status` string _macOS_ - can be `not-registered`, `enabled`,
      * `requires-approval`, or `not-found`.
      * * `executableWillLaunchAtLogin` boolean _Windows_ - `true` if app is set to open
      * at login and its run key is not deactivated. This differs from `openAtLogin` as
@@ -733,7 +735,7 @@ external interface App : node.events.EventEmitter {
      * registry entry.
      *   * `args` string[] _Windows_ - the command-line arguments to pass to the
      * executable.
-     *   * `scope` string _Windows_ - one of `user` or `machine`. Indicates whether the
+     *   * `scope` string _Windows_ - can be `user` or `machine`. Indicates whether the
      * registry entry is under `HKEY_CURRENT USER` or `HKEY_LOCAL_MACHINE`.
      *   * `enabled` boolean _Windows_ - `true` if the app registry key is startup
      * approved and therefore shows as `enabled` in Task Manager and Windows settings.

@@ -658,6 +658,15 @@ external class WebContents : NodeEventEmitter {
     fun getMediaSourceId(requestWebContents: WebContents): String
 
     /**
+     * The Chrome DevTools Protocol TargetID associated with this WebContents. This is
+     * the reverse of `webContents.fromDevToolsTargetId()`.
+     *
+     * > [!NOTE] This method creates a new DevTools agent for this WebContents if one
+     * does not already exist.
+     */
+    fun getOrCreateDevToolsTargetId(): String
+
+    /**
      * The operating system `pid` of the associated renderer process.
      */
     fun getOSProcessId(): Double
@@ -945,7 +954,8 @@ external class WebContents : NodeEventEmitter {
      * When a custom `pageSize` is passed, Chromium attempts to validate platform
      * specific minimum values for `width_microns` and `height_microns`. Width and
      * height must both be minimum 353 microns but may be higher on some operating
-     * systems.
+     * systems. If a valid `pageSize` is not passed and `usePrinterDefaultPageSize` is
+     * `false`, an error will be thrown.
      *
      * Prints window's web page. When `silent` is set to `true`, Electron will pick the
      * system's default printer if `deviceName` is empty and the default settings for

@@ -25,12 +25,12 @@ external interface LaunchItems {
     var args: js.array.ReadonlyArray<String>
 
     /**
-     * one of `user` or `machine`. Indicates whether the registry entry is under
+     * can be `user` or `machine`. Indicates whether the registry entry is under
      * `HKEY_CURRENT USER` or `HKEY_LOCAL_MACHINE`.
      *
      * @platform win32
      */
-    var scope: String
+    var scope: (LaunchItemsScope)
 
     /**
      * `true` if the app registry key is startup approved and therefore shows as

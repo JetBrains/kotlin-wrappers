@@ -46,11 +46,11 @@ external interface LoginItemSettings {
     var restoreState: Boolean
 
     /**
-     * can be one of `not-registered`, `enabled`, `requires-approval`, or `not-found`.
+     * can be `not-registered`, `enabled`, `requires-approval`, or `not-found`.
      *
      * @platform darwin
      */
-    var status: String
+    var status: (LoginItemSettingsStatus)
 
     /**
      * `true` if app is set to open at login and its run key is not deactivated. This

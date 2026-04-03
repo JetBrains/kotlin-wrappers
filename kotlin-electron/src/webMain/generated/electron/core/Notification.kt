@@ -203,7 +203,7 @@ open external class Notification : NodeEventEmitter {
     val clickEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
+    val closeEvent: node.events.EventInstance<js.array.Tuple1<Event<NotificationCloseEventParams>>>
 
     @web.events.JsEvent("failed")
     val failedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>

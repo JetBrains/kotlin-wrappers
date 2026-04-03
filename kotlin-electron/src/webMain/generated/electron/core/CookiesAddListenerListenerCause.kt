@@ -6,6 +6,15 @@ sealed external interface CookiesAddListenerListenerCause {
     companion object
 }
 
+inline val CookiesAddListenerListenerCause.Companion.inserted: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("inserted")
+
+inline val CookiesAddListenerListenerCause.Companion.insertedNoChangeOverwrite: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("inserted-no-change-overwrite")
+
+inline val CookiesAddListenerListenerCause.Companion.insertedNoValueChangeOverwrite: CookiesAddListenerListenerCause
+    get() = js.reflect.unsafeCast("inserted-no-value-change-overwrite")
+
 inline val CookiesAddListenerListenerCause.Companion.explicit: CookiesAddListenerListenerCause
     get() = js.reflect.unsafeCast("explicit")
 
