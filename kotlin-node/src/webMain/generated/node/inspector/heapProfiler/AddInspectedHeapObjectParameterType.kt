@@ -2,7 +2,8 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface AddInspectedHeapObjectParameterType {
+@kotlinx.js.JsPlainObject
+external interface AddInspectedHeapObjectParameterType {
     /**
      * Heap snapshot object id to be accessible by means of $x command line API.
      */

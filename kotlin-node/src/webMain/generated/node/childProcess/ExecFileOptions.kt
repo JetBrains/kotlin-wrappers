@@ -5,7 +5,7 @@ package node.childProcess
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface ExecFileOptions :
+external interface ExecFileOptions :
     CommonOptions,
     Abortable {
     var maxBuffer: Double?

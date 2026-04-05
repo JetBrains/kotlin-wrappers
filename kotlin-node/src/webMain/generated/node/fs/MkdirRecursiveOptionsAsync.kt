@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface MkdirRecursiveAsyncOptions : MakeDirectoryOptions {
+external interface MkdirRecursiveAsyncOptions : MakeDirectoryOptions {
     @JsName("recursive")
     var requiredRecursive: Boolean // true
 }

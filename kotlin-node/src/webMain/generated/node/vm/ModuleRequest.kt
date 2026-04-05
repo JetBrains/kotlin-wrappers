@@ -9,7 +9,8 @@ import node.module.ImportPhase
  * A `ModuleRequest` represents the request to import a module with given import attributes and phase.
  * @since 24.4.0
  */
-sealed external interface ModuleRequest {
+@kotlinx.js.JsPlainObject
+external interface ModuleRequest {
     /**
      * The specifier of the requested module.
      */

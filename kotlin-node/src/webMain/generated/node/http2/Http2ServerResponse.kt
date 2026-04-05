@@ -653,11 +653,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
 
     fun writeHead(statusCode: Number, statusMessage: String) // this
 
-    fun writeHead(
-        statusCode: Number,
-        statusMessage: String,
-        headers: OutgoingHttpHeaders = definedExternally,
-    ) // this
+    fun writeHead(statusCode: Number, statusMessage: String, headers: OutgoingHttpHeaders = definedExternally) // this
 
     fun writeHead(
         statusCode: Number,
@@ -682,10 +678,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun emit(
         event: String,
@@ -712,10 +705,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,

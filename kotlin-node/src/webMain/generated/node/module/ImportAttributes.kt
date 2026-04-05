@@ -2,6 +2,6 @@
 
 package node.module
 
-sealed external interface ImportAttributes : node.Dict<String> {
+external interface ImportAttributes : node.Dict<String> {
     var type: String?
 }

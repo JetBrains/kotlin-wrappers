@@ -5,7 +5,8 @@ package node.inspector.profiler
 /**
  * Coverage data for a source range.
  */
-sealed external interface CoverageRange {
+@kotlinx.js.JsPlainObject
+external interface CoverageRange {
     /**
      * JavaScript script source offset for the range start.
      */

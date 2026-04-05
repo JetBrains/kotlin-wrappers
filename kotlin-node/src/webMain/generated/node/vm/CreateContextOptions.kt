@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface CreateContextOptions {
+@kotlinx.js.JsPlainObject
+external interface CreateContextOptions {
     /**
      * Human-readable name of the newly created context.
      * @default 'VM Context i' Where i is an ascending numerical index of the created context.

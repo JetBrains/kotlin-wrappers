@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface FileHandleWriteAsyncOptions {
+@kotlinx.js.JsPlainObject
+external interface FileHandleWriteAsyncOptions {
     var offset: Double?
     var length: Double?
     var position: Double?

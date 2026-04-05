@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface LocationInfo {
+@kotlinx.js.JsPlainObject
+external interface LocationInfo {
     /**
      * The column number where the test is defined, or
      * `undefined` if the test was run through the REPL.

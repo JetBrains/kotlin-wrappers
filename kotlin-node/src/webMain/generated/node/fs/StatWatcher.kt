@@ -11,7 +11,7 @@ import node.events.EventEmitter
  * A successful call to {@link watchFile} method will return a new fs.StatWatcher object.
  */
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface StatWatcher : EventEmitter {
+external interface StatWatcher : EventEmitter {
     /**
      * When called, requests that the Node.js event loop _not_ exit so long as the `fs.StatWatcher` is active. Calling `watcher.ref()` multiple times will have
      * no effect.

@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface SignPrivateKeyInput :
+@kotlinx.js.JsPlainObject
+external interface SignPrivateKeyInput :
     PrivateKeyInput,
     SigningOptions

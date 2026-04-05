@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface AnyPtrRecord {
+@kotlinx.js.JsPlainObject
+external interface AnyPtrRecord {
     var type: String // "PTR"
     var value: String
 }

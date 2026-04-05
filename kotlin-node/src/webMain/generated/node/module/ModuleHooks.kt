@@ -2,7 +2,7 @@
 
 package node.module
 
-sealed external interface ModuleHooks {
+external interface ModuleHooks {
     /**
      * Deregister the hook instance.
      */

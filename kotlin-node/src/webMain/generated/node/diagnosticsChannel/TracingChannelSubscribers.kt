@@ -2,7 +2,8 @@
 
 package node.diagnosticsChannel
 
-sealed external interface TracingChannelSubscribers<ContextType : Any> {
+@kotlinx.js.JsPlainObject
+external interface TracingChannelSubscribers<ContextType : Any> {
     var start: (message: ContextType) -> Unit
     var end: (message: TracingChannelSubscribersEndMessage<ContextType>) -> Unit
     var asyncStart: (message: TracingChannelSubscribersAsyncStartMessage<ContextType>) -> Unit

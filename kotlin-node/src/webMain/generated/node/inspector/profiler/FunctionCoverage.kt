@@ -5,7 +5,8 @@ package node.inspector.profiler
 /**
  * Coverage data for a JavaScript function.
  */
-sealed external interface FunctionCoverage {
+@kotlinx.js.JsPlainObject
+external interface FunctionCoverage {
     /**
      * JavaScript function name.
      */

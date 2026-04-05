@@ -5,7 +5,8 @@ package node.inspector.profiler
 /**
  * Specifies a number of samples attributed to a certain source position.
  */
-sealed external interface PositionTickInfo {
+@kotlinx.js.JsPlainObject
+external interface PositionTickInfo {
     /**
      * Source line number (1-based).
      */

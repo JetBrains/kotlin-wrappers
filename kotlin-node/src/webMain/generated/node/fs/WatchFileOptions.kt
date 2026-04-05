@@ -49,7 +49,7 @@ package node.fs
  * @since v0.1.31
  */
 @kotlinx.js.JsPlainObject
-sealed external interface WatchFileOptions {
+external interface WatchFileOptions {
     var bigint: Boolean?
     var persistent: Boolean?
     var interval: Double?

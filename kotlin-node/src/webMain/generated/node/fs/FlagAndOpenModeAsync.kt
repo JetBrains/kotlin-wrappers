@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface FlagAndOpenMode {
+external interface FlagAndOpenMode {
     var mode: Mode?
     var flag: OpenMode?
 }

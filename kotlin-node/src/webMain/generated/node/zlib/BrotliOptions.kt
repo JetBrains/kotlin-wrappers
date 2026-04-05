@@ -2,7 +2,8 @@
 
 package node.zlib
 
-sealed external interface BrotliOptions {
+@kotlinx.js.JsPlainObject
+external interface BrotliOptions {
     /**
      * @default constants.BROTLI_OPERATION_PROCESS
      */

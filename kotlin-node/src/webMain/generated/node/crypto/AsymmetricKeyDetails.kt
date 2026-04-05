@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface AsymmetricKeyDetails {
+@kotlinx.js.JsPlainObject
+external interface AsymmetricKeyDetails {
     /**
      * Key size in bits (RSA, DSA).
      */

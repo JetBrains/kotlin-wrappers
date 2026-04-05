@@ -7,6 +7,6 @@ package node.zlib
  * @experimental
  */
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ZstdCompress :
+external interface ZstdCompress :
     node.stream.Transform,
     Zlib

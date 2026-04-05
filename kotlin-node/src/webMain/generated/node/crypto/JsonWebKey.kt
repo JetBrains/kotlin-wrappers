@@ -2,7 +2,7 @@
 
 package node.crypto
 
-sealed external interface JsonWebKey {
+external interface JsonWebKey {
     var crv: String?
     var d: String?
     var dp: String?

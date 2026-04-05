@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface BackupOptions {
+@kotlinx.js.JsPlainObject
+external interface BackupOptions {
     /**
      * Name of the source database. This can be `'main'` (the default primary database) or any other
      * database that have been added with [`ATTACH DATABASE`](https://www.sqlite.org/lang_attach.html)

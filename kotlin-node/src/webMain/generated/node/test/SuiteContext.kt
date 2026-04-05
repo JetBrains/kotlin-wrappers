@@ -8,7 +8,8 @@ package node.test
  * exposed as part of the API.
  * @since v18.7.0, v16.17.0
  */
-sealed external interface SuiteContext {
+@kotlinx.js.JsPlainObject
+external interface SuiteContext {
     /**
      * The absolute path of the test file that created the current suite. If a test file imports
      * additional modules that generate suites, the imported suites will return the path of the root test file.

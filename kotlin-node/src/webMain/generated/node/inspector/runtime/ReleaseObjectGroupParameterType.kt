@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface ReleaseObjectGroupParameterType {
+@kotlinx.js.JsPlainObject
+external interface ReleaseObjectGroupParameterType {
     /**
      * Symbolic object group name.
      */

@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface SourceTextModuleOptions : ScriptOptions {
+@kotlinx.js.JsPlainObject
+external interface SourceTextModuleOptions : ScriptOptions {
     /**
      * String used in stack traces.
      * @default 'vm:module(i)' where i is a context-specific ascending index.

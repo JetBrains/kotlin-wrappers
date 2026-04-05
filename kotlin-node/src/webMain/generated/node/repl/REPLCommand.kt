@@ -2,7 +2,8 @@
 
 package node.repl
 
-sealed external interface REPLCommand {
+@kotlinx.js.JsPlainObject
+external interface REPLCommand {
     /**
      * Help text to be displayed when `.help` is entered.
      */

@@ -2,4 +2,4 @@
 
 package node.fs
 
-sealed external interface BigIntStatsFs : StatsFsBase<js.numbers.BigInt>
+external interface BigIntStatsFs : StatsFsBase<js.numbers.BigInt>

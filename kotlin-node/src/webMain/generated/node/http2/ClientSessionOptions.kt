@@ -2,7 +2,8 @@
 
 package node.http2
 
-sealed external interface ClientSessionOptions : SessionOptions {
+@kotlinx.js.JsPlainObject
+external interface ClientSessionOptions : SessionOptions {
     /**
      * Sets the maximum number of reserved push streams the client will accept at any given time.
      * Once the current number of currently reserved push streams exceeds reaches this limit,

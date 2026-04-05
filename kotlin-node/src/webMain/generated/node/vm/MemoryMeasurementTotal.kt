@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface MemoryMeasurementTotal {
+@kotlinx.js.JsPlainObject
+external interface MemoryMeasurementTotal {
     var jsMemoryEstimate: Double
     var jsMemoryRange: js.array.Tuple2<Double, Double>
 }

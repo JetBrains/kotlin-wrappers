@@ -5,7 +5,8 @@ package node.inspector.network
 /**
  * HTTP request data.
  */
-sealed external interface Request {
+@kotlinx.js.JsPlainObject
+external interface Request {
     var url: String
     var method: String
     var headers: Headers

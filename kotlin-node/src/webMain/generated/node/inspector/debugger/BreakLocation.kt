@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface BreakLocation {
+@kotlinx.js.JsPlainObject
+external interface BreakLocation {
     /**
      * Script identifier as reported in the <code>Debugger.scriptParsed</code>.
      */

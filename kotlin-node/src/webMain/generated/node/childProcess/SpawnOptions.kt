@@ -3,6 +3,6 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface SpawnOptions : CommonSpawnOptions {
+external interface SpawnOptions : CommonSpawnOptions {
     var detached: Boolean?
 }

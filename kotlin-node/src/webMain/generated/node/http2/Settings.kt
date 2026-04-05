@@ -3,7 +3,8 @@
 package node.http2
 
 // Http2Session
-sealed external interface Settings {
+@kotlinx.js.JsPlainObject
+external interface Settings {
     var headerTableSize: Double?
     var enablePush: Boolean?
     var initialWindowSize: Double?

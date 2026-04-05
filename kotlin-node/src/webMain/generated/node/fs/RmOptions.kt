@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface RmOptions {
+@kotlinx.js.JsPlainObject
+external interface RmOptions {
     /**
      * When `true`, exceptions will be ignored if `path` does not exist.
      * @default false

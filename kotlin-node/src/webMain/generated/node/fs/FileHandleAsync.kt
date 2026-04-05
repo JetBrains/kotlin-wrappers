@@ -7,7 +7,7 @@ import web.streams.ReadableStream
 import node.readline._Interface as ReadlineInterface
 
 // TODO: Add `EventEmitter` close
-sealed external interface FileHandle {
+external interface FileHandle {
     /**
      * The numeric file descriptor managed by the {FileHandle} object.
      * @since v10.0.0

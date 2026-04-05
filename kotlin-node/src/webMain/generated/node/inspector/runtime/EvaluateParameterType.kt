@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface EvaluateParameterType {
+@kotlinx.js.JsPlainObject
+external interface EvaluateParameterType {
     /**
      * Expression to evaluate.
      */

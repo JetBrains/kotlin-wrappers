@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface DisposableTempDir : js.disposable.AsyncDisposable {
+external interface DisposableTempDir : js.disposable.AsyncDisposable {
     /**
      * The path of the created directory.
      */

@@ -2,6 +2,7 @@
 
 package node.sea
 
-sealed external interface GetAssetAsBlobOptions {
+@kotlinx.js.JsPlainObject
+external interface GetAssetAsBlobOptions {
     var type: String
 }

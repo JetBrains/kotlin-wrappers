@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface TlsaRecord {
+@kotlinx.js.JsPlainObject
+external interface TlsaRecord {
     var certUsage: Double
     var selector: Double
     var match: Double

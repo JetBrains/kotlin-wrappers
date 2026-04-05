@@ -2,7 +2,7 @@
 
 package node.net
 
-sealed external interface OnReadOpts {
+external interface OnReadOpts {
     var buffer: Any // Uint8Array | (() => Uint8Array)
 
     /**

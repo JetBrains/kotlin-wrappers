@@ -2,4 +2,4 @@
 
 package node.vm
 
-sealed external interface Context : node.Dict<Any?>
+external interface Context : node.Dict<Any?>

@@ -4,7 +4,8 @@ package node.events
 
 import node.asyncHooks.AsyncResourceOptions
 
-sealed external interface EventEmitterAsyncResourceOptions :
+@kotlinx.js.JsPlainObject
+external interface EventEmitterAsyncResourceOptions :
     AsyncResourceOptions,
     EventEmitterOptions {
     /**

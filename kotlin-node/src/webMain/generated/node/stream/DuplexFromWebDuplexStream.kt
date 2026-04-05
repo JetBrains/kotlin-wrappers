@@ -2,7 +2,8 @@
 
 package node.stream
 
-sealed external interface DuplexFromWebDuplexStream {
+@kotlinx.js.JsPlainObject
+external interface DuplexFromWebDuplexStream {
     var readable: web.streams.ReadableStream<*>
     var writable: web.streams.WritableStream<*>
 }

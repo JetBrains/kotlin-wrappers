@@ -5,6 +5,6 @@ package node.fs
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface FileHandleAppendFileAsyncOptions :
+external interface FileHandleAppendFileAsyncOptions :
     ObjectEncodingOptions,
     Abortable

@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestSummaryCounts {
+@kotlinx.js.JsPlainObject
+external interface TestSummaryCounts {
     /**
      * The total number of cancelled tests.
      */

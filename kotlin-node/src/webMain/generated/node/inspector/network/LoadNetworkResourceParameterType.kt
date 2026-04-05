@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface LoadNetworkResourceParameterType {
+@kotlinx.js.JsPlainObject
+external interface LoadNetworkResourceParameterType {
     /**
      * URL of the resource to get content for.
      */

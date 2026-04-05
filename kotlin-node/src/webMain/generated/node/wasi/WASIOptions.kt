@@ -2,7 +2,8 @@
 
 package node.wasi
 
-sealed external interface WASIOptions {
+@kotlinx.js.JsPlainObject
+external interface WASIOptions {
     /**
      * An array of strings that the WebAssembly application will
      * see as command line arguments. The first argument is the virtual path to the

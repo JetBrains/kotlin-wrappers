@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface StatSyncFnSimpleOptions : StatSyncOptions {
+@kotlinx.js.JsPlainObject
+external interface StatSyncFnSimpleOptions : StatSyncOptions {
     override var bigint: Boolean /* false */?
 
     @JsName("throwIfNoEntry")

@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface EphemeralKeyInfo {
+@kotlinx.js.JsPlainObject
+external interface EphemeralKeyInfo {
     /**
      * The supported types are 'DH' and 'ECDH'.
      */

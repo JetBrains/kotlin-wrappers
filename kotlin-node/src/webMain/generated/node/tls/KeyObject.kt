@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface KeyObject {
+@kotlinx.js.JsPlainObject
+external interface KeyObject {
     /**
      * Private keys in PEM format.
      */

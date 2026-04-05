@@ -2,7 +2,7 @@
 
 package node.process
 
-sealed external interface HRTime {
+external interface HRTime {
     /**
      * This is the legacy version of {@link process.hrtime.bigint()}
      * before bigint was introduced in JavaScript.

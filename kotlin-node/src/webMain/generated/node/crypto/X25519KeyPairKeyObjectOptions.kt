@@ -2,4 +2,5 @@
 
 package node.crypto
 
-sealed external interface X25519KeyPairKeyObjectOptions
+@kotlinx.js.JsPlainObject
+external interface X25519KeyPairKeyObjectOptions

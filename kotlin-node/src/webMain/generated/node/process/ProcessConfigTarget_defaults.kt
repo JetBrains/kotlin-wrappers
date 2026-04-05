@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface ProcessConfigTarget_defaults {
+@kotlinx.js.JsPlainObject
+external interface ProcessConfigTarget_defaults {
     val cflags: js.array.ReadonlyArray<Any?>
     val default_configuration: String
     val defines: js.array.ReadonlyArray<String>

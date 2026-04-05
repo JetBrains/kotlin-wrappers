@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface ScriptOptions : BaseOptions {
+@kotlinx.js.JsPlainObject
+external interface ScriptOptions : BaseOptions {
     /**
      * Provides an optional data with V8's code cache data for the supplied source.
      */

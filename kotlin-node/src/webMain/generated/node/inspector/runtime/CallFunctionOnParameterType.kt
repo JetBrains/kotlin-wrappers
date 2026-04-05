@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface CallFunctionOnParameterType {
+@kotlinx.js.JsPlainObject
+external interface CallFunctionOnParameterType {
     /**
      * Declaration of the function to call.
      */

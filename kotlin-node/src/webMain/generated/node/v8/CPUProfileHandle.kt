@@ -5,7 +5,7 @@ package node.v8
 /**
  * @since v24.8.0
  */
-sealed external interface CPUProfileHandle {
+external interface CPUProfileHandle {
     /**
      * Stopping collecting the profile, then return a Promise that fulfills with an error or the
      * profile data.

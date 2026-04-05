@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface EnableCompileCacheResult {
+@kotlinx.js.JsPlainObject
+external interface EnableCompileCacheResult {
     /**
      * One of the {@link constants.compileCacheStatus}
      */

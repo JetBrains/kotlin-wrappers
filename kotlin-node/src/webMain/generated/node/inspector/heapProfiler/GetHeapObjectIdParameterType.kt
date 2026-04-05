@@ -2,7 +2,8 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface GetHeapObjectIdParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetHeapObjectIdParameterType {
     /**
      * Identifier of the object to get heap object id for.
      */

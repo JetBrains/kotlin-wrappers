@@ -2,6 +2,7 @@
 
 package node.inspector.nodeWorker
 
-sealed external interface DetachParameterType {
+@kotlinx.js.JsPlainObject
+external interface DetachParameterType {
     var sessionId: SessionID
 }

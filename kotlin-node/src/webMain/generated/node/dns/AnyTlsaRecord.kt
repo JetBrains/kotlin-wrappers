@@ -2,6 +2,7 @@
 
 package node.dns
 
-sealed external interface AnyTlsaRecord : TlsaRecord {
+@kotlinx.js.JsPlainObject
+external interface AnyTlsaRecord : TlsaRecord {
     var type: String // "TLSA"
 }

@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface StreamResourceContentReturnType {
+@kotlinx.js.JsPlainObject
+external interface StreamResourceContentReturnType {
     /**
      * Data that has been buffered until streaming is enabled.
      */

@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface ExecutionContextCreatedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ExecutionContextCreatedEventDataType {
     /**
      * A newly created execution context.
      */

@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface StatsBase<T> {
+external interface StatsBase<T> {
     fun isFile(): Boolean
 
     fun isDirectory(): Boolean

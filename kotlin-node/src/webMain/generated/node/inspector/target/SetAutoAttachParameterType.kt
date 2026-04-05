@@ -2,7 +2,8 @@
 
 package node.inspector.target
 
-sealed external interface SetAutoAttachParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetAutoAttachParameterType {
     var autoAttach: Boolean
     var waitForDebuggerOnStart: Boolean
 }

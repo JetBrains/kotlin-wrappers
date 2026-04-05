@@ -4,7 +4,8 @@ package node.url
 
 import node.querystring.ParsedUrlQuery
 
-sealed external interface UrlWithParsedQuery : Url {
+@kotlinx.js.JsPlainObject
+external interface UrlWithParsedQuery : Url {
     @JsName("query")
     var parsedQuery: ParsedUrlQuery
 }

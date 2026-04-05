@@ -5,7 +5,8 @@ package node.inspector.network
 /**
  * WebSocket response data.
  */
-sealed external interface WebSocketResponse {
+@kotlinx.js.JsPlainObject
+external interface WebSocketResponse {
     /**
      * HTTP response status code.
      */

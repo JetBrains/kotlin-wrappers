@@ -2,7 +2,8 @@
 
 package node.inspector
 
-sealed external interface InspectorNotification<T> {
+@kotlinx.js.JsPlainObject
+external interface InspectorNotification<T> {
     var method: String
     var params: T
 }

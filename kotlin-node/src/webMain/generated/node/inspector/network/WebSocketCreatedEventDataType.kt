@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface WebSocketCreatedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface WebSocketCreatedEventDataType {
     /**
      * Request identifier.
      */

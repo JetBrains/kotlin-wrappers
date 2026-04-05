@@ -2,7 +2,8 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface GetObjectByHeapObjectIdReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetObjectByHeapObjectIdReturnType {
     /**
      * Evaluation result.
      */

@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetPauseOnExceptionsParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetPauseOnExceptionsParameterType {
     /**
      * Pause on exceptions mode.
      */

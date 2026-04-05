@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface FunctionOptions {
+@kotlinx.js.JsPlainObject
+external interface FunctionOptions {
     /**
      * If `true`, the [`SQLITE_DETERMINISTIC`](https://www.sqlite.org/c3ref/c_deterministic.html) flag is
      * set on the created function.

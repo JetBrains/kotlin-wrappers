@@ -2,6 +2,7 @@
 
 package node.tls
 
-sealed external interface SecureContext {
+@kotlinx.js.JsPlainObject
+external interface SecureContext {
     var context: Any?
 }

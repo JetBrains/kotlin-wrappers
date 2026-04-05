@@ -3,7 +3,7 @@
 package node.stream
 
 @kotlinx.js.JsPlainObject
-sealed external interface FinishedOptions : _FinishedOptions {
+external interface FinishedOptions : _FinishedOptions {
     /**
      * If true, removes the listeners registered by this function before the promise is fulfilled.
      * @default false

@@ -2,6 +2,7 @@
 
 package node.tls
 
+@kotlinx.js.JsPlainObject
 external interface ConnectionOptions :
     SecureContextOptions,
     CommonConnectionOptions {

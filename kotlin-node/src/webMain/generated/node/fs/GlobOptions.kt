@@ -2,4 +2,5 @@
 
 package node.fs
 
-sealed external interface GlobOptions : _GlobOptions<Any /* Dirent | string */>
+@kotlinx.js.JsPlainObject
+external interface GlobOptions : _GlobOptions<Any /* Dirent | string */>

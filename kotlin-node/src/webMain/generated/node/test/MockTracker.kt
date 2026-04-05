@@ -10,7 +10,7 @@ import web.url.URL
  * Each test also provides its own `MockTracker` instance via the test context's `mock` property.
  * @since v19.1.0, v18.13.0
  */
-sealed external interface MockTracker {
+external interface MockTracker {
     /**
      * This function is used to create a mock function.
      *

@@ -2,6 +2,7 @@
 
 package node.vm
 
-sealed external interface MemoryMeasurement {
+@kotlinx.js.JsPlainObject
+external interface MemoryMeasurement {
     var total: MemoryMeasurementTotal
 }

@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface DecipherGCMSetAADOptions {
+@kotlinx.js.JsPlainObject
+external interface DecipherGCMSetAADOptions {
     var plaintextLength: Double
 }

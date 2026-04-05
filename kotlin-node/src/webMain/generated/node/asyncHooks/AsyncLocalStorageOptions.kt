@@ -2,7 +2,8 @@
 
 package node.asyncHooks
 
-sealed external interface AsyncLocalStorageOptions {
+@kotlinx.js.JsPlainObject
+external interface AsyncLocalStorageOptions {
     /**
      * The default value to be used when no store is provided.
      */

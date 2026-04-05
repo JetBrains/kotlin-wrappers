@@ -5,7 +5,7 @@ package node.sqlite
 /**
  * @since v22.12.0
  */
-sealed external interface Session {
+external interface Session {
     /**
      * Retrieves a changeset containing all changes since the changeset was created. Can be called multiple times.
      * An exception is thrown if the database or the session is not open. This method is a wrapper around

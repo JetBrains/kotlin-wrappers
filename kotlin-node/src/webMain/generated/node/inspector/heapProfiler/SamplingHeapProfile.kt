@@ -5,6 +5,7 @@ package node.inspector.heapProfiler
 /**
  * Profile.
  */
-sealed external interface SamplingHeapProfile {
+@kotlinx.js.JsPlainObject
+external interface SamplingHeapProfile {
     var head: SamplingHeapProfileNode
 }

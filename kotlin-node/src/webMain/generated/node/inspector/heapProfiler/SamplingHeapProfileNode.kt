@@ -5,7 +5,8 @@ package node.inspector.heapProfiler
 /**
  * Sampling Heap Profile node. Holds callsite information, allocation statistics and child nodes.
  */
-sealed external interface SamplingHeapProfileNode {
+@kotlinx.js.JsPlainObject
+external interface SamplingHeapProfileNode {
     /**
      * Function location.
      */

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface RandomUUIDOptions {
+@kotlinx.js.JsPlainObject
+external interface RandomUUIDOptions {
     /**
      * By default, to improve performance,
      * Node.js will pre-emptively generate and persistently cache enough

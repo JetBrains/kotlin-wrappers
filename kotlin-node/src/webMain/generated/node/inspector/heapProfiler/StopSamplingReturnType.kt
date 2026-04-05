@@ -2,7 +2,8 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface StopSamplingReturnType {
+@kotlinx.js.JsPlainObject
+external interface StopSamplingReturnType {
     /**
      * Recorded sampling heap profile.
      */

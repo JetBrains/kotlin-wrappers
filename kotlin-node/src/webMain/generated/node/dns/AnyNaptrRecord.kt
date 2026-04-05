@@ -2,6 +2,7 @@
 
 package node.dns
 
-sealed external interface AnyNaptrRecord : NaptrRecord {
+@kotlinx.js.JsPlainObject
+external interface AnyNaptrRecord : NaptrRecord {
     var type: String // "NAPTR"
 }

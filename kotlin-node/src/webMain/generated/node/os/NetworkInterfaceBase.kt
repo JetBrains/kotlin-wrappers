@@ -2,7 +2,8 @@
 
 package node.os
 
-sealed external interface NetworkInterfaceBase {
+@kotlinx.js.JsPlainObject
+external interface NetworkInterfaceBase {
     var address: String
     var netmask: String
     var mac: String

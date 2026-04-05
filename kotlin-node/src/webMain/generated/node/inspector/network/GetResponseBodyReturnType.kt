@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface GetResponseBodyReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetResponseBodyReturnType {
     /**
      * Response body.
      */

@@ -3,7 +3,7 @@
 package node.zlib
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface InflateRaw :
+external interface InflateRaw :
     node.stream.Transform,
     Zlib,
     ZlibReset

@@ -2,7 +2,8 @@
 
 package node.readline
 
-sealed external interface Key {
+@kotlinx.js.JsPlainObject
+external interface Key {
     var sequence: String?
     var name: String?
     var ctrl: Boolean?

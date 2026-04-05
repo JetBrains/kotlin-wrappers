@@ -2,7 +2,8 @@
 
 package node.url
 
-sealed external interface URLPatternResult {
+@kotlinx.js.JsPlainObject
+external interface URLPatternResult {
     var inputs: js.array.ReadonlyArray<(Any /* string | URLPatternInit */)>
     var protocol: URLPatternComponentResult
     var username: URLPatternComponentResult

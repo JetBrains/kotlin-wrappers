@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface StreamResourceContentParameterType {
+@kotlinx.js.JsPlainObject
+external interface StreamResourceContentParameterType {
     /**
      * Identifier of the request to stream.
      */

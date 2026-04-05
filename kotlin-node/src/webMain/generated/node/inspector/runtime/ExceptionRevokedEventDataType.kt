@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface ExceptionRevokedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ExceptionRevokedEventDataType {
     /**
      * Reason describing why exception was revoked.
      */

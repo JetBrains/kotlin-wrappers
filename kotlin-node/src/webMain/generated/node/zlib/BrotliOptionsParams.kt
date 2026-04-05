@@ -2,7 +2,7 @@
 
 package node.zlib
 
-sealed external interface BrotliOptionsParams {
+external interface BrotliOptionsParams {
     /**
      * Each key is a `constants.BROTLI_*` constant.
      */

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface X509CheckOptions {
+@kotlinx.js.JsPlainObject
+external interface X509CheckOptions {
     /**
      * @default 'always'
      */

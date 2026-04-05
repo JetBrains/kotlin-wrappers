@@ -2,6 +2,7 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface AddHeapSnapshotChunkEventDataType {
+@kotlinx.js.JsPlainObject
+external interface AddHeapSnapshotChunkEventDataType {
     var chunk: String
 }

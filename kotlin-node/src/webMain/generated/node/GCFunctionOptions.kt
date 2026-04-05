@@ -2,7 +2,8 @@
 
 package node
 
-sealed external interface GCFunctionOptions : GCOptions {
+@kotlinx.js.JsPlainObject
+external interface GCFunctionOptions : GCOptions {
     @JsName("execution")
     var asyncExecution: String // "async"
 }

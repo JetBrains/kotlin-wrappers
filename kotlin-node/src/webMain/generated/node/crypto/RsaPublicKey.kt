@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface RsaPublicKey {
+@kotlinx.js.JsPlainObject
+external interface RsaPublicKey {
     var key: KeyLike
     var padding: Double?
 }

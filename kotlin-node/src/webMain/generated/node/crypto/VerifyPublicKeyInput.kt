@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface VerifyPublicKeyInput :
+@kotlinx.js.JsPlainObject
+external interface VerifyPublicKeyInput :
     PublicKeyInput,
     SigningOptions

@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface GetScriptSourceParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetScriptSourceParameterType {
     /**
      * Id of the script to get source for.
      */

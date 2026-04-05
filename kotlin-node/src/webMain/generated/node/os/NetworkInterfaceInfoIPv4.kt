@@ -2,6 +2,7 @@
 
 package node.os
 
-sealed external interface NetworkInterfaceInfoIPv4 : NetworkInterfaceBase {
+@kotlinx.js.JsPlainObject
+external interface NetworkInterfaceInfoIPv4 : NetworkInterfaceBase {
     var family: String // "IPv4"
 }

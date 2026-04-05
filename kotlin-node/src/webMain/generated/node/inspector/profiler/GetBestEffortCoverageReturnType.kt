@@ -2,7 +2,8 @@
 
 package node.inspector.profiler
 
-sealed external interface GetBestEffortCoverageReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetBestEffortCoverageReturnType {
     /**
      * Coverage data for the current isolate.
      */

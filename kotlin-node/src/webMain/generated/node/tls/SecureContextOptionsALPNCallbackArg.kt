@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface SecureContextOptionsALPNCallbackArg {
+@kotlinx.js.JsPlainObject
+external interface SecureContextOptionsALPNCallbackArg {
     var servername: String
     var protocols: js.array.ReadonlyArray<String>
 }

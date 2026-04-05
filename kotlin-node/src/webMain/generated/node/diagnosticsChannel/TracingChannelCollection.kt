@@ -2,7 +2,7 @@
 
 package node.diagnosticsChannel
 
-sealed external interface TracingChannelCollection<StoreType /* default is Any? */, ContextType /* default is StoreType */> {
+external interface TracingChannelCollection<StoreType /* default is Any? */, ContextType /* default is StoreType */> {
     var start: Channel<StoreType, ContextType>
     var end: Channel<StoreType, ContextType>
     var asyncStart: Channel<StoreType, ContextType>

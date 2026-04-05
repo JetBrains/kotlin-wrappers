@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface WatchOptionsWithStringEncoding : WatchOptions {
+external interface WatchOptionsWithStringEncoding : WatchOptions {
     @JsName("encoding")
     var stringEncoding: node.buffer.BufferEncoding?
 }

@@ -2,7 +2,8 @@
 
 package node.inspector.nodeWorker
 
-sealed external interface AttachedToWorkerEventDataType {
+@kotlinx.js.JsPlainObject
+external interface AttachedToWorkerEventDataType {
     /**
      * Identifier assigned to the session used to send/receive messages.
      */

@@ -2,7 +2,7 @@
 
 package node.zlib
 
-sealed external interface ZlibParams {
+external interface ZlibParams {
     fun params(
         level: Number,
         strategy: Number,

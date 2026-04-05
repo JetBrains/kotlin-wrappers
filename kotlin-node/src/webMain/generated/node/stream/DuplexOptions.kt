@@ -3,7 +3,7 @@
 package node.stream
 
 @kotlinx.js.JsPlainObject
-sealed external interface DuplexOptions<T : Duplex /* default is Duplex */> :
+external interface DuplexOptions<T : Duplex /* default is Duplex */> :
     ReadableOptions<T>,
     WritableOptions<T> {
     var allowHalfOpen: Boolean?

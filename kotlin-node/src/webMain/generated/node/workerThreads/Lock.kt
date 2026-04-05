@@ -2,7 +2,8 @@
 
 package node.workerThreads
 
-sealed external interface Lock {
+@kotlinx.js.JsPlainObject
+external interface Lock {
     val mode: LockMode
     val name: String
 }

@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface StatSyncFnBigIntOptions : StatSyncOptions {
+@kotlinx.js.JsPlainObject
+external interface StatSyncFnBigIntOptions : StatSyncOptions {
     @JsName("bigint")
     var requiredBigInt: Boolean
 

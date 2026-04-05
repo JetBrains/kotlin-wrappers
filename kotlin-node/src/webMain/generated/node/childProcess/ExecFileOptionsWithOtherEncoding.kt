@@ -4,4 +4,4 @@ package node.childProcess
 
 /** @deprecated Use `ExecFileOptions` instead. */
 @kotlinx.js.JsPlainObject
-sealed external interface ExecFileOptionsWithOtherEncoding : ExecFileOptions
+external interface ExecFileOptionsWithOtherEncoding : ExecFileOptions

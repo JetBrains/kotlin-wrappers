@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface RecordWithTtl {
+@kotlinx.js.JsPlainObject
+external interface RecordWithTtl {
     var address: String
     var ttl: Double
 }

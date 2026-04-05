@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface StyleTextOptions {
+@kotlinx.js.JsPlainObject
+external interface StyleTextOptions {
     /**
      * When true, `stream` is checked to see if it can handle colors.
      * @default true

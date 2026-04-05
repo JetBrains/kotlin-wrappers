@@ -2,7 +2,8 @@
 
 package node.assert
 
-sealed external interface AssertionErrorOptions {
+@kotlinx.js.JsPlainObject
+external interface AssertionErrorOptions {
     /**
      * If provided, the error message is set to this value.
      */

@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface CpuUsage {
+@kotlinx.js.JsPlainObject
+external interface CpuUsage {
     var user: Double
     var system: Double
 }

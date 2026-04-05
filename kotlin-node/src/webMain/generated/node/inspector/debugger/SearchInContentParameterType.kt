@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SearchInContentParameterType {
+@kotlinx.js.JsPlainObject
+external interface SearchInContentParameterType {
     /**
      * Id of the script to search in.
      */

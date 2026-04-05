@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface EnableParameterType {
+@kotlinx.js.JsPlainObject
+external interface EnableParameterType {
     /**
      * Buffer size in bytes to use when preserving network payloads (XHRs, etc).
      * @experimental

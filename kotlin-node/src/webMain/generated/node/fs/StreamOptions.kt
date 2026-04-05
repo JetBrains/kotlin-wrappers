@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface StreamOptions {
+external interface StreamOptions {
     var flags: String?
     var encoding: node.buffer.BufferEncoding?
     var fd: Any? // number | promises.FileHandle | undefined

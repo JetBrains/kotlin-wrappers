@@ -2,7 +2,8 @@
 
 package node.dgram
 
-sealed external interface RemoteInfo {
+@kotlinx.js.JsPlainObject
+external interface RemoteInfo {
     var address: String
     var family: RemoteInfoFamily
     var port: Double

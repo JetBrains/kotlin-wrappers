@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface TestContextWaitForOptions {
+@kotlinx.js.JsPlainObject
+external interface TestContextWaitForOptions {
     /**
      * The number of milliseconds to wait after an unsuccessful
      * invocation of `condition` before trying again.

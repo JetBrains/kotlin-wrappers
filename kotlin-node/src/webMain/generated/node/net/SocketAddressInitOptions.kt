@@ -2,7 +2,8 @@
 
 package node.net
 
-sealed external interface SocketAddressInitOptions {
+@kotlinx.js.JsPlainObject
+external interface SocketAddressInitOptions {
     /**
      * The network address as either an IPv4 or IPv6 string.
      * @default 127.0.0.1

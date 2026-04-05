@@ -2,6 +2,7 @@
 
 package node.v8
 
-sealed external interface QueryObjectsCountOptions {
+@kotlinx.js.JsPlainObject
+external interface QueryObjectsCountOptions {
     var format: String // "count"
 }

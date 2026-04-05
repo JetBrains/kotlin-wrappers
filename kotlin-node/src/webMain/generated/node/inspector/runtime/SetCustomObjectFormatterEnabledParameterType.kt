@@ -2,6 +2,7 @@
 
 package node.inspector.runtime
 
-sealed external interface SetCustomObjectFormatterEnabledParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetCustomObjectFormatterEnabledParameterType {
     var enabled: Boolean
 }

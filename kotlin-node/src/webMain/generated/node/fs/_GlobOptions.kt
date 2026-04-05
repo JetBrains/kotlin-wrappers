@@ -3,7 +3,8 @@
 package node.fs
 
 // TODO: collapse
-sealed external interface _GlobOptions<T : Any /* Dirent | string */> {
+@kotlinx.js.JsPlainObject
+external interface _GlobOptions<T : Any /* Dirent | string */> {
     /**
      * Current working directory.
      * @default process.cwd()

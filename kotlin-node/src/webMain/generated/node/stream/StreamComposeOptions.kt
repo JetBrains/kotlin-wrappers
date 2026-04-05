@@ -2,6 +2,7 @@
 
 package node.stream
 
-sealed external interface StreamComposeOptions {
+@kotlinx.js.JsPlainObject
+external interface StreamComposeOptions {
     var signal: web.abort.AbortSignal
 }

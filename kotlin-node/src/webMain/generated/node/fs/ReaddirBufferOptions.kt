@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface ReaddirBufferOptions {
+@kotlinx.js.JsPlainObject
+external interface ReaddirBufferOptions {
     var encoding: String // "buffer"
     var withFileTypes: Boolean /* false */?
     var recursive: Boolean?

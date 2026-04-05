@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface LoadingFinishedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface LoadingFinishedEventDataType {
     /**
      * Request identifier.
      */

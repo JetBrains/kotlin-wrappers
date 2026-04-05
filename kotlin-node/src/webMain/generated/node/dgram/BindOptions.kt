@@ -2,7 +2,8 @@
 
 package node.dgram
 
-sealed external interface BindOptions {
+@kotlinx.js.JsPlainObject
+external interface BindOptions {
     var port: Double?
     var address: String?
     var exclusive: Boolean?

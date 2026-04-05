@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface TestContextPlanOptions {
+@kotlinx.js.JsPlainObject
+external interface TestContextPlanOptions {
     /**
      * The wait time for the plan:
      * * If `true`, the plan waits indefinitely for all assertions and subtests to run.

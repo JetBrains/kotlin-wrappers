@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface MLKEMKeyPairPemPemOptions : MLKEMKeyPairOptions<KeyFormat.pem, KeyFormat.pem>

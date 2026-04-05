@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface CompileScriptParameterType {
+@kotlinx.js.JsPlainObject
+external interface CompileScriptParameterType {
     /**
      * Expression to compile.
      */

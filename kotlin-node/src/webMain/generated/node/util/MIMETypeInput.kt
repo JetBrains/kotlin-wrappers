@@ -2,6 +2,7 @@
 
 package node.util
 
-sealed external interface MIMETypeInput {
+@kotlinx.js.JsPlainObject
+external interface MIMETypeInput {
     var toString: () -> String
 }

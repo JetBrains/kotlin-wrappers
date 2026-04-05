@@ -135,7 +135,4 @@ external fun <Data /* default is Any? */> register(
     options: RegisterOptions<Data> = definedExternally,
 )
 
-external fun <Data /* default is Any? */> register(
-    specifier: URL,
-    options: RegisterOptions<Data> = definedExternally,
-)
+external fun <Data /* default is Any? */> register(specifier: URL, options: RegisterOptions<Data> = definedExternally)

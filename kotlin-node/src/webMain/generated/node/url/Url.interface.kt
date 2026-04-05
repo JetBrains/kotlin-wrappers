@@ -3,7 +3,8 @@
 package node.url
 
 // Output of `url.parse`
-sealed external interface Url {
+@kotlinx.js.JsPlainObject
+external interface Url {
     var auth: String?
     var hash: String?
     var host: String?

@@ -2,7 +2,8 @@
 
 package node.inspector.profiler
 
-sealed external interface TakePreciseCoverageReturnType {
+@kotlinx.js.JsPlainObject
+external interface TakePreciseCoverageReturnType {
     /**
      * Coverage data for the current isolate.
      */

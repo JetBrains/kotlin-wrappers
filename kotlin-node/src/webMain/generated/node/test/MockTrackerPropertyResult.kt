@@ -2,6 +2,7 @@
 
 package node.test
 
-sealed external interface MockTrackerPropertyResult {
+@kotlinx.js.JsPlainObject
+external interface MockTrackerPropertyResult {
     var mock: MockPropertyContext<Any?>
 }

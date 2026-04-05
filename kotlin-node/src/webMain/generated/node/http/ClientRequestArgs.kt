@@ -5,7 +5,8 @@ package node.http
 import node.dns.LookupOptions
 import node.net.LookupFunction
 
-sealed external interface ClientRequestArgs : LookupOptions {
+@kotlinx.js.JsPlainObject
+external interface ClientRequestArgs : LookupOptions {
     var _defaultAgent: Agent?
     var agent: Any? // Agent | boolean | undefined
     var auth: String?

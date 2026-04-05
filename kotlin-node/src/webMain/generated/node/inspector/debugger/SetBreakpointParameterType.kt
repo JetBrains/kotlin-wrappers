@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetBreakpointParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetBreakpointParameterType {
     /**
      * Location to set breakpoint in.
      */

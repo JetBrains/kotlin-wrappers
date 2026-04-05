@@ -2,7 +2,8 @@
 
 package node.childProcess
 
-sealed external interface SpawnSyncReturns<T> {
+@kotlinx.js.JsPlainObject
+external interface SpawnSyncReturns<T> {
     var pid: Double
     var output: js.array.ReadonlyArray<T?>
     var stdout: T

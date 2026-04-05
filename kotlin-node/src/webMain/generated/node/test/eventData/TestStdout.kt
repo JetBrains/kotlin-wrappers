@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestStdout {
+@kotlinx.js.JsPlainObject
+external interface TestStdout {
     /**
      * The path of the test file.
      */

@@ -2,6 +2,7 @@
 
 package node.stream
 
-sealed external interface ReadableToWebOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadableToWebOptions {
     var strategy: web.streams.QueuingStrategy<*>?
 }

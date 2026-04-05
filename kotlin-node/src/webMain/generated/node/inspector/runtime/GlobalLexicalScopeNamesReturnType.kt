@@ -2,6 +2,7 @@
 
 package node.inspector.runtime
 
-sealed external interface GlobalLexicalScopeNamesReturnType {
+@kotlinx.js.JsPlainObject
+external interface GlobalLexicalScopeNamesReturnType {
     var names: js.array.ReadonlyArray<String>
 }

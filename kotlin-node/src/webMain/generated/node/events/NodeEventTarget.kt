@@ -8,7 +8,7 @@ package node.events
  * @since v14.5.0
  */
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface NodeEventTarget : web.events.EventTarget {
+external interface NodeEventTarget : web.events.EventTarget {
     /**
      * Node.js-specific extension to the `EventTarget` class that emulates the
      * equivalent `EventEmitter` API. The only difference between `addListener()` and

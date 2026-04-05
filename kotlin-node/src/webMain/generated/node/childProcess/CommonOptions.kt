@@ -3,7 +3,7 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface CommonOptions : ProcessEnvOptions {
+external interface CommonOptions : ProcessEnvOptions {
     /**
      * @default false
      */

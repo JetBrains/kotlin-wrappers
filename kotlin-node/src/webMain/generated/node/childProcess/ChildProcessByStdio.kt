@@ -7,7 +7,7 @@ import node.stream.Writable
 
 // return this object when stdio option is a tuple of 3
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ChildProcessByStdio<I : Writable?, O : Readable?, E : Readable?> : ChildProcess {
+external interface ChildProcessByStdio<I : Writable?, O : Readable?, E : Readable?> : ChildProcess {
     @JsName("stdin")
     var boundStdin: I
 

@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface BreakpointResolvedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface BreakpointResolvedEventDataType {
     /**
      * Breakpoint unique identifier.
      */

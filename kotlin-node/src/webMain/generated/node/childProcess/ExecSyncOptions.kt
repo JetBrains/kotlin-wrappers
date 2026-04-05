@@ -3,6 +3,6 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface ExecSyncOptions : CommonExecOptions {
+external interface ExecSyncOptions : CommonExecOptions {
     var shell: String?
 }

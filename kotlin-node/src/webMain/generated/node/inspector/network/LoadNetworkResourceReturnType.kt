@@ -2,6 +2,7 @@
 
 package node.inspector.network
 
-sealed external interface LoadNetworkResourceReturnType {
+@kotlinx.js.JsPlainObject
+external interface LoadNetworkResourceReturnType {
     var resource: LoadNetworkResourcePageResult
 }

@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface ProcessFeatures {
+@kotlinx.js.JsPlainObject
+external interface ProcessFeatures {
     /**
      * A boolean value that is `true` if the current Node.js build is caching builtin modules.
      * @since v12.0.0

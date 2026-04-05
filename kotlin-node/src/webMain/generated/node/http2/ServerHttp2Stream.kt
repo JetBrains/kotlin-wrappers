@@ -4,7 +4,7 @@ package node.http2
 
 import node.http.OutgoingHttpHeaders
 
-sealed external interface ServerHttp2Stream : Http2Stream {
+external interface ServerHttp2Stream : Http2Stream {
     /**
      * True if headers were sent, false otherwise (read-only).
      * @since v8.4.0

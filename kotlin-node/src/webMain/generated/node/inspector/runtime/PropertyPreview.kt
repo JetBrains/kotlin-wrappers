@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * @experimental
  */
-sealed external interface PropertyPreview {
+@kotlinx.js.JsPlainObject
+external interface PropertyPreview {
     /**
      * Property name.
      */

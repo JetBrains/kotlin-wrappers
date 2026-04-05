@@ -2,7 +2,7 @@
 
 package node.process
 
-sealed external interface ProcessFinalization {
+external interface ProcessFinalization {
     /**
      * This function registers a callback to be called when the process emits the `exit` event if the `ref` object was not garbage collected.
      * If the object `ref` was garbage collected before the `exit` event is emitted, the callback will be removed from the finalization registry, and it will not be called on process exit.

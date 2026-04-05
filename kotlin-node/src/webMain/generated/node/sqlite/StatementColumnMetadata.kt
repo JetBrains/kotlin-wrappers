@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface StatementColumnMetadata {
+@kotlinx.js.JsPlainObject
+external interface StatementColumnMetadata {
     /**
      * The unaliased name of the column in the origin
      * table, or `null` if the column is the result of an expression or subquery.

@@ -2,7 +2,8 @@
 
 package node.v8
 
-sealed external interface PromiseHooks {
+@kotlinx.js.JsPlainObject
+external interface PromiseHooks {
     /**
      * The `init` hook must be a plain function. Providing an async function will throw as it would produce an infinite microtask loop.
      * @since v17.1.0, v16.14.0

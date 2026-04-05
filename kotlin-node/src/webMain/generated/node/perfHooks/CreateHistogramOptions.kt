@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface CreateHistogramOptions {
+@kotlinx.js.JsPlainObject
+external interface CreateHistogramOptions {
     /**
      * The minimum recordable value. Must be an integer value greater than 0.
      * @default 1

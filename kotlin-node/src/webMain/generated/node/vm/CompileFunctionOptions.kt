@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface CompileFunctionOptions :
+@kotlinx.js.JsPlainObject
+external interface CompileFunctionOptions :
     BaseOptions,
     ScriptOptions {
     /**

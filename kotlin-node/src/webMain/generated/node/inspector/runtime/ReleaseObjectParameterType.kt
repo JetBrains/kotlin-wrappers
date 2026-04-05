@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface ReleaseObjectParameterType {
+@kotlinx.js.JsPlainObject
+external interface ReleaseObjectParameterType {
     /**
      * Identifier of the object to release.
      */

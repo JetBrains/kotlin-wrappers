@@ -14,7 +14,7 @@ package node.test
  * which is a `MockTimers` instance.
  * @since v20.4.0
  */
-sealed external interface MockTimers {
+external interface MockTimers {
     /**
      * Enables timer mocking for the specified timers.
      *

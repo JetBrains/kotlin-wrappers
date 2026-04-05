@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Detailed information about exception (or error) that was thrown during script compilation or execution.
  */
-sealed external interface ExceptionDetails {
+@kotlinx.js.JsPlainObject
+external interface ExceptionDetails {
     /**
      * Exception id.
      */

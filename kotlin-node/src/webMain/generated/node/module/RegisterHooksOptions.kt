@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface RegisterHooksOptions {
+@kotlinx.js.JsPlainObject
+external interface RegisterHooksOptions {
     /**
      * See [load hook](https://nodejs.org/docs/latest-v24.x/api/module.html#loadurl-context-nextload).
      * @default undefined

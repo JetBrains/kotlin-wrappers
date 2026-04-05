@@ -6,7 +6,8 @@ package node.inspector.runtime
  * Object containing abbreviated remote object value.
  * @experimental
  */
-sealed external interface ObjectPreview {
+@kotlinx.js.JsPlainObject
+external interface ObjectPreview {
     /**
      * Object type.
      */

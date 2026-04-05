@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface GetPossibleBreakpointsParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetPossibleBreakpointsParameterType {
     /**
      * Start of range to search possible breakpoint locations in.
      */

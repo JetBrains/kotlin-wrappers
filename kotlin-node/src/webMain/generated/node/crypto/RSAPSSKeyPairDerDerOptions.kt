@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface RSAPSSKeyPairDerDerOptions : RSAPSSKeyPairOptions<KeyFormat.der, KeyFormat.der>

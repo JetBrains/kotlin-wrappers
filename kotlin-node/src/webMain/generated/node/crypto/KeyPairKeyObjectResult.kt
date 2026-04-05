@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface KeyPairKeyObjectResult {
+@kotlinx.js.JsPlainObject
+external interface KeyPairKeyObjectResult {
     var publicKey: KeyObject
     var privateKey: KeyObject
 }

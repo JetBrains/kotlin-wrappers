@@ -2,7 +2,8 @@
 
 package node.inspector.profiler
 
-sealed external interface StopReturnType {
+@kotlinx.js.JsPlainObject
+external interface StopReturnType {
     /**
      * Recorded profile.
      */

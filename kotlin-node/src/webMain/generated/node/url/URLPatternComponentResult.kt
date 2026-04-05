@@ -2,7 +2,8 @@
 
 package node.url
 
-sealed external interface URLPatternComponentResult {
+@kotlinx.js.JsPlainObject
+external interface URLPatternComponentResult {
     var input: String
     var groups: js.objects.ReadonlyRecord<String, String?>
 }

@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface SourceMapping {
+@kotlinx.js.JsPlainObject
+external interface SourceMapping {
     var generatedLine: Double
     var generatedColumn: Double
     var originalSource: String

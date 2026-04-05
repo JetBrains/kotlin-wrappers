@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface GetRequestPostDataReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetRequestPostDataReturnType {
     /**
      * Request body string, omitting files from multipart requests
      */

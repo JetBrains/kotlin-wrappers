@@ -2,6 +2,7 @@
 
 package node.stream
 
-sealed external interface ReadableIteratorOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadableIteratorOptions {
     var destroyOnReturn: Boolean?
 }

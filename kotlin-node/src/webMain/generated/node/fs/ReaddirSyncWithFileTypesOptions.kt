@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface ReaddirSyncWithFileTypesOptions : ObjectEncodingOptions {
+external interface ReaddirSyncWithFileTypesOptions : ObjectEncodingOptions {
     var withFileTypes: Boolean // true
     var recursive: Boolean?
 }

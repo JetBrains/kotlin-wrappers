@@ -5,7 +5,7 @@ package node.fs
 /**
  * The Keys are events of the ReadStream and the values are the functions that are called when the event is emitted.
  */
-sealed external interface ReadStreamEvents : CustomEvents {
+external interface ReadStreamEvents : CustomEvents {
     var close: () -> Unit
     var data: (chunk: Any /* Buffer | string */) -> Unit
     var end: () -> Unit

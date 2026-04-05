@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface AnyCnameRecord {
+@kotlinx.js.JsPlainObject
+external interface AnyCnameRecord {
     var type: String // "CNAME"
     var value: String
 }

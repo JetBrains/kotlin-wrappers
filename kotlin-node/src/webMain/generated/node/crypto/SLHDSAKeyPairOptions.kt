@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface SLHDSAKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat> {
+@kotlinx.js.JsPlainObject
+external interface SLHDSAKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat> {
     var publicKeyEncoding: SLHDSAKeyPairOptionsPublicKeyEncoding<PubF>
     var privateKeyEncoding: SLHDSAKeyPairOptionsPrivateKeyEncoding<PrivF>
 }

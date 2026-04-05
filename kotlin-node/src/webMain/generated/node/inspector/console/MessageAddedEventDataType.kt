@@ -2,7 +2,8 @@
 
 package node.inspector.console
 
-sealed external interface MessageAddedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface MessageAddedEventDataType {
     /**
      * Console message that has been added.
      */

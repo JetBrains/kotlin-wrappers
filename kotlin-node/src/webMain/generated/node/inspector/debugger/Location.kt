@@ -5,7 +5,8 @@ package node.inspector.debugger
 /**
  * Location in the source code.
  */
-sealed external interface Location {
+@kotlinx.js.JsPlainObject
+external interface Location {
     /**
      * Script identifier as reported in the <code>Debugger.scriptParsed</code>.
      */

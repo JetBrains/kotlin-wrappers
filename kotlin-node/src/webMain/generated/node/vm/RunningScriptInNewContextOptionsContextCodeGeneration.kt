@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface RunningScriptInNewContextOptionsContextCodeGeneration {
+@kotlinx.js.JsPlainObject
+external interface RunningScriptInNewContextOptionsContextCodeGeneration {
     var strings: Boolean?
     var wasm: Boolean?
 }

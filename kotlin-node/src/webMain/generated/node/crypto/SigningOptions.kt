@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface SigningOptions {
+@kotlinx.js.JsPlainObject
+external interface SigningOptions {
     /**
      * @see crypto.constants.RSA_PKCS1_PADDING
      */

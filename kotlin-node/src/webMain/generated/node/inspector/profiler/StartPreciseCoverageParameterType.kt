@@ -2,7 +2,8 @@
 
 package node.inspector.profiler
 
-sealed external interface StartPreciseCoverageParameterType {
+@kotlinx.js.JsPlainObject
+external interface StartPreciseCoverageParameterType {
     /**
      * Collect accurate call counts beyond simple 'covered' or 'not covered'.
      */

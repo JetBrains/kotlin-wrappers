@@ -7,7 +7,7 @@ package node.test
  * mocks created via the `MockTracker` APIs.
  * @since v19.1.0, v18.13.0
  */
-sealed external interface MockFunctionContext<F : Function<*>> {
+external interface MockFunctionContext<F : Function<*>> {
     /**
      * A getter that returns a copy of the internal array used to track calls to the
      * mock. Each entry in the array is an object with the following properties.

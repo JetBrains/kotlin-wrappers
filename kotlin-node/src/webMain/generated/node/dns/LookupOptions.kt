@@ -2,6 +2,7 @@
 
 package node.dns
 
+@kotlinx.js.JsPlainObject
 external interface LookupOptions {
     /**
      * The record family. Must be `4`, `6`, or `0`. For backward compatibility reasons, `'IPv4'` and `'IPv6'` are interpreted

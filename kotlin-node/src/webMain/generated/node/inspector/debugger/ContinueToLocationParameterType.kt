@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface ContinueToLocationParameterType {
+@kotlinx.js.JsPlainObject
+external interface ContinueToLocationParameterType {
     /**
      * Location to continue to.
      */

@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface RestartFrameReturnType {
+@kotlinx.js.JsPlainObject
+external interface RestartFrameReturnType {
     /**
      * New stack trace.
      */

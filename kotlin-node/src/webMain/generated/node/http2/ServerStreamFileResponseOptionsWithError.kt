@@ -2,6 +2,7 @@
 
 package node.http2
 
-sealed external interface ServerStreamFileResponseOptionsWithError : ServerStreamFileResponseOptions {
+@kotlinx.js.JsPlainObject
+external interface ServerStreamFileResponseOptionsWithError : ServerStreamFileResponseOptions {
     var onError: ((err: node.ErrnoException) -> Unit)?
 }

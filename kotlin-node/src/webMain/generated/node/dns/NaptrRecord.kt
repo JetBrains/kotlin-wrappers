@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface NaptrRecord {
+@kotlinx.js.JsPlainObject
+external interface NaptrRecord {
     var flags: String
     var service: String
     var regexp: String

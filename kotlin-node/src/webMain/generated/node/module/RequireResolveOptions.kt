@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface RequireResolveOptions {
+@kotlinx.js.JsPlainObject
+external interface RequireResolveOptions {
     /**
      * Paths to resolve module location from. If present, these
      * paths are used instead of the default resolution paths, with the exception

@@ -6,4 +6,4 @@ package node.process
 // as the type for process.stdin, process.stdout, and process.stderr.
 // they can't live in tty.d.ts because we need to disambiguate the imported name.
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ReadStream : node.tty.ReadStream
+external interface ReadStream : node.tty.ReadStream

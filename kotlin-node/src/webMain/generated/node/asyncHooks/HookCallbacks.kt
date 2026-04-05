@@ -2,7 +2,7 @@
 
 package node.asyncHooks
 
-sealed external interface HookCallbacks {
+external interface HookCallbacks {
     /**
      * Called when a class is constructed that has the possibility to emit an asynchronous event.
      * @param asyncId A unique ID for the async resource

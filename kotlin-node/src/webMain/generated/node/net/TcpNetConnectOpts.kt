@@ -2,7 +2,8 @@
 
 package node.net
 
-sealed external interface TcpNetConnectOpts :
+@kotlinx.js.JsPlainObject
+external interface TcpNetConnectOpts :
     TcpSocketConnectOpts,
     SocketConstructorOpts {
     var timeout: Double?

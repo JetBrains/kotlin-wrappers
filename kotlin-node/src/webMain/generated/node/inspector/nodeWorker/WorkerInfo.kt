@@ -2,7 +2,8 @@
 
 package node.inspector.nodeWorker
 
-sealed external interface WorkerInfo {
+@kotlinx.js.JsPlainObject
+external interface WorkerInfo {
     var workerId: WorkerID
     var type: String
     var title: String

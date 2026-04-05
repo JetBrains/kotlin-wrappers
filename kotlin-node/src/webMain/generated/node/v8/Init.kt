@@ -9,7 +9,7 @@ package node.v8
  * @param promise The promise being created.
  * @param parent The promise continued from, if applicable.
  */
-sealed external interface Init {
+external interface Init {
     operator fun invoke(
         promise: js.promise.Promise<Any?>,
         parent: js.promise.Promise<Any?>,

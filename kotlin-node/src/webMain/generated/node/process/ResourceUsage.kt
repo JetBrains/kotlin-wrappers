@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface ResourceUsage {
+@kotlinx.js.JsPlainObject
+external interface ResourceUsage {
     var fsRead: Double
     var fsWrite: Double
     var involuntaryContextSwitches: Double

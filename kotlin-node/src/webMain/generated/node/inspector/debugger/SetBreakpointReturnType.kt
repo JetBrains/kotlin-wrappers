@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetBreakpointReturnType {
+@kotlinx.js.JsPlainObject
+external interface SetBreakpointReturnType {
     /**
      * Id of the created breakpoint for further reference.
      */

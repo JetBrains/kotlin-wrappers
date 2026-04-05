@@ -12,7 +12,7 @@ package node.traceEvents
  * event categories. Calling `tracing.disable()` will remove the categories
  * from the set of enabled trace event categories.
  */
-sealed external interface Tracing {
+external interface Tracing {
     /**
      * A comma-separated list of the trace event categories covered by this
      * `Tracing` object.

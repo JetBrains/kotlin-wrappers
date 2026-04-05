@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface Argon2Parameters {
+@kotlinx.js.JsPlainObject
+external interface Argon2Parameters {
     /**
      * REQUIRED, this is the password for password hashing applications of Argon2.
      */

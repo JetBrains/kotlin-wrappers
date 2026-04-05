@@ -2,6 +2,7 @@
 
 package node.fs
 
-sealed external interface ReadableWebStreamOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadableWebStreamOptions {
     var autoClose: Boolean?
 }

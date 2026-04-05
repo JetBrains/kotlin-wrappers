@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface RunScriptReturnType {
+@kotlinx.js.JsPlainObject
+external interface RunScriptReturnType {
     /**
      * Run result.
      */

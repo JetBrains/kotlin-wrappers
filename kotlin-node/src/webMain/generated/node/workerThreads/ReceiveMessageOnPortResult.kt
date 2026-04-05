@@ -2,6 +2,7 @@
 
 package node.workerThreads
 
-sealed external interface ReceiveMessageOnPortResult {
+@kotlinx.js.JsPlainObject
+external interface ReceiveMessageOnPortResult {
     var message: Any?
 }

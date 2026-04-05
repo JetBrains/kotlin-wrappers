@@ -2,7 +2,8 @@
 
 package node.assert
 
-sealed external interface AssertOptions {
+@kotlinx.js.JsPlainObject
+external interface AssertOptions {
     /**
      * If set to `'full'`, shows the full diff in assertion errors.
      * @default 'simple'

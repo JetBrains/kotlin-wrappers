@@ -2,7 +2,8 @@
 
 package node.os
 
-sealed external interface UserInfoOptionsWithStringEncoding : UserInfoOptions {
+@kotlinx.js.JsPlainObject
+external interface UserInfoOptionsWithStringEncoding : UserInfoOptions {
     @JsName("encoding")
     var stringEncoding: node.buffer.BufferEncoding?
 }

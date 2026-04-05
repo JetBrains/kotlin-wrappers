@@ -114,7 +114,10 @@ class GenerateKeyPairTypePlugin : Plugin {
             sourceFileName,
             namespace,
             fileName = "${name}.kt",
-            body = "external interface $name : ${originalName}<KeyFormat.${publicFormat}, KeyFormat.${privateFormat}>",
+            body = """
+                @kotlinx.js.JsPlainObject
+                external interface $name : ${originalName}<KeyFormat.${publicFormat}, KeyFormat.${privateFormat}>
+            """.trimIndent(),
         )
     }
 

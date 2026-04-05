@@ -2,7 +2,8 @@
 
 package node.inspector.nodeWorker
 
-sealed external interface DetachedFromWorkerEventDataType {
+@kotlinx.js.JsPlainObject
+external interface DetachedFromWorkerEventDataType {
     /**
      * Detached session identifier.
      */

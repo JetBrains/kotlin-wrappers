@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverageSummaryFilesItemBranchesItem {
+@kotlinx.js.JsPlainObject
+external interface TestCoverageSummaryFilesItemBranchesItem {
     /**
      * The line number where the branch is defined.
      */

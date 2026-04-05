@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface MeasureMemoryOptions {
+@kotlinx.js.JsPlainObject
+external interface MeasureMemoryOptions {
     /**
      * @default 'summary'
      */

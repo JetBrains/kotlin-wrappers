@@ -2,7 +2,8 @@
 
 package node.inspector.profiler
 
-sealed external interface ConsoleProfileFinishedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ConsoleProfileFinishedEventDataType {
     var id: String
 
     /**

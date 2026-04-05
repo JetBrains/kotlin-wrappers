@@ -2,6 +2,7 @@
 
 package node.inspector.nodeTracing
 
-sealed external interface StartParameterType {
+@kotlinx.js.JsPlainObject
+external interface StartParameterType {
     var traceConfig: TraceConfig
 }

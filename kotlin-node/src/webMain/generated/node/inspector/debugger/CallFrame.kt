@@ -5,7 +5,8 @@ package node.inspector.debugger
 /**
  * JavaScript call frame. Array of call frames form the call stack.
  */
-sealed external interface CallFrame {
+@kotlinx.js.JsPlainObject
+external interface CallFrame {
     /**
      * Call frame identifier. This identifier is only valid while the virtual machine is paused.
      */

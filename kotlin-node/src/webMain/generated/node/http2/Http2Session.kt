@@ -6,7 +6,7 @@ import node.buffer.NonSharedBuffer
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface Http2Session : EventEmitter {
+external interface Http2Session : EventEmitter {
     /**
      * Value will be `undefined` if the `Http2Session` is not yet connected to a
      * socket, `h2c` if the `Http2Session` is not connected to a `TLSSocket`, or
@@ -268,10 +268,7 @@ sealed external interface Http2Session : EventEmitter {
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple>

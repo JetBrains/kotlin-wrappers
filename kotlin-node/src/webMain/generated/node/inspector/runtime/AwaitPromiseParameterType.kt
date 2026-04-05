@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface AwaitPromiseParameterType {
+@kotlinx.js.JsPlainObject
+external interface AwaitPromiseParameterType {
     /**
      * Identifier of the promise.
      */

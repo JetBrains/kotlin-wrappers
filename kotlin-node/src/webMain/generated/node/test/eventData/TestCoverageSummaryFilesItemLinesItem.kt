@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverageSummaryFilesItemLinesItem {
+@kotlinx.js.JsPlainObject
+external interface TestCoverageSummaryFilesItemLinesItem {
     /**
      * The line number.
      */

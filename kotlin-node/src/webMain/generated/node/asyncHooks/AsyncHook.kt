@@ -2,7 +2,7 @@
 
 package node.asyncHooks
 
-sealed external interface AsyncHook {
+external interface AsyncHook {
     /**
      * Enable the callbacks for a given AsyncHook instance. If no callbacks are provided enabling is a noop.
      */

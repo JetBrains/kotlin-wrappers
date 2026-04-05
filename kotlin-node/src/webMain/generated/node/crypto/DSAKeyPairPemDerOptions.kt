@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface DSAKeyPairPemDerOptions : DSAKeyPairOptions<KeyFormat.pem, KeyFormat.der>

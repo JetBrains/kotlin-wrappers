@@ -2,6 +2,6 @@
 
 package node.zlib
 
-sealed external interface ZlibReset {
+external interface ZlibReset {
     fun reset()
 }

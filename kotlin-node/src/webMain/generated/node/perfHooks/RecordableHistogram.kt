@@ -2,7 +2,7 @@
 
 package node.perfHooks
 
-sealed external interface RecordableHistogram : Histogram {
+external interface RecordableHistogram : Histogram {
     /**
      * @since v15.9.0, v14.18.0
      * @param val The amount to record in the histogram.

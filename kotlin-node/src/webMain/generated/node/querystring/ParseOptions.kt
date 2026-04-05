@@ -2,7 +2,8 @@
 
 package node.querystring
 
-sealed external interface ParseOptions {
+@kotlinx.js.JsPlainObject
+external interface ParseOptions {
     /**
      * Specifies the maximum number of keys to parse. Specify `0` to remove key counting limitations.
      * @default 1000

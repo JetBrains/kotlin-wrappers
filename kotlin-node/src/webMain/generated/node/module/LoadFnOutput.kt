@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface LoadFnOutput {
+@kotlinx.js.JsPlainObject
+external interface LoadFnOutput {
     var format: String?
 
     /**

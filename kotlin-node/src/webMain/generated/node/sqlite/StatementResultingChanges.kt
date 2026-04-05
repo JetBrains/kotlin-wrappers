@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface StatementResultingChanges {
+@kotlinx.js.JsPlainObject
+external interface StatementResultingChanges {
     /**
      * The number of rows modified, inserted, or deleted by the most recently completed `INSERT`, `UPDATE`, or `DELETE` statement.
      * This field is either a number or a `BigInt` depending on the prepared statement's configuration.

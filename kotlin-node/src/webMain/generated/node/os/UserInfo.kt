@@ -2,7 +2,8 @@
 
 package node.os
 
-sealed external interface UserInfo<T> {
+@kotlinx.js.JsPlainObject
+external interface UserInfo<T> {
     var username: T
     var uid: Double
     var gid: Double

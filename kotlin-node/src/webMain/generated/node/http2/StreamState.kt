@@ -3,7 +3,8 @@
 package node.http2
 
 // Http2Stream
-sealed external interface StreamState {
+@kotlinx.js.JsPlainObject
+external interface StreamState {
     var localWindowSize: Double?
     var state: Double?
     var localClose: Double?

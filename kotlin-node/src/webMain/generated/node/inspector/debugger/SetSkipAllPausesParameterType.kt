@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetSkipAllPausesParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetSkipAllPausesParameterType {
     /**
      * New value for skip pauses state.
      */

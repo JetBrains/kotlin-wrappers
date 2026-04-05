@@ -2,7 +2,7 @@
 
 package node.test
 
-sealed external interface Mock<F : Function<*>> {
+external interface Mock<F : Function<*>> {
     var mock: MockFunctionContext<F>
 
     @Suppress(

@@ -3,7 +3,7 @@
 package node.events
 
 @kotlinx.js.JsPlainObject
-sealed external interface StaticEventEmitterOptions {
+external interface StaticEventEmitterOptions {
     /**
      * Can be used to cancel awaiting events.
      */

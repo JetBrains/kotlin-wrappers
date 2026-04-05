@@ -2,6 +2,7 @@
 
 package node.inspector.debugger
 
-sealed external interface GetStackTraceParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetStackTraceParameterType {
     var stackTraceId: node.inspector.runtime.StackTraceId
 }

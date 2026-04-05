@@ -2,7 +2,8 @@
 
 package node.os
 
-sealed external interface CpuInfoTimes {
+@kotlinx.js.JsPlainObject
+external interface CpuInfoTimes {
     /** The number of milliseconds the CPU has spent in user mode. */
     var user: Double
 

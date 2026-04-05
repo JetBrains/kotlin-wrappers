@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface Utf8StreamOptions {
+@kotlinx.js.JsPlainObject
+external interface Utf8StreamOptions {
     /**
      * Appends writes to dest file instead of truncating it.
      * @default true

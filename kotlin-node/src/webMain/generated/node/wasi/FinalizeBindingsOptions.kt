@@ -2,7 +2,8 @@
 
 package node.wasi
 
-sealed external interface FinalizeBindingsOptions {
+@kotlinx.js.JsPlainObject
+external interface FinalizeBindingsOptions {
     /**
      * @default instance.exports.memory
      */

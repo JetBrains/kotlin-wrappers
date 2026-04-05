@@ -2,7 +2,7 @@
 
 package node.tls
 
-sealed external interface Certificate : node.Dict<Any /* string | string[] */> {
+external interface Certificate : node.Dict<Any /* string | string[] */> {
     /**
      * Country code.
      */

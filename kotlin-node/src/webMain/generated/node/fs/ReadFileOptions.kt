@@ -5,7 +5,7 @@ package node.fs
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface ReadFileOptions :
+external interface ReadFileOptions :
     ObjectEncodingOptions,
     Abortable {
     var flag: String?

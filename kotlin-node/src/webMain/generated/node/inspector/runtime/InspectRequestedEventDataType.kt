@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface InspectRequestedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface InspectRequestedEventDataType {
     var `object`: RemoteObject
     var hints: Any
 }

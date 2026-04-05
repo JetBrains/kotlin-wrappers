@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface DSAKeyPairKeyObjectOptions {
+@kotlinx.js.JsPlainObject
+external interface DSAKeyPairKeyObjectOptions {
     /**
      * Key size in bits
      */

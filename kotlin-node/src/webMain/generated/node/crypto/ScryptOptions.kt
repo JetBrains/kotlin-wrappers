@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface ScryptOptions {
+@kotlinx.js.JsPlainObject
+external interface ScryptOptions {
     var cost: Double?
     var blockSize: Double?
     var parallelization: Double?

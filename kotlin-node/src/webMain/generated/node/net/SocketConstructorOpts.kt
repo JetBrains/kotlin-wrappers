@@ -2,7 +2,8 @@
 
 package node.net
 
-sealed external interface SocketConstructorOpts {
+@kotlinx.js.JsPlainObject
+external interface SocketConstructorOpts {
     var fd: Double?
     var allowHalfOpen: Boolean?
     var onread: OnReadOpts?

@@ -2,6 +2,7 @@
 
 package node.dns
 
-sealed external interface ResolveWithTtlOptions : ResolveOptions {
+@kotlinx.js.JsPlainObject
+external interface ResolveWithTtlOptions : ResolveOptions {
     override var ttl: Boolean // true
 }

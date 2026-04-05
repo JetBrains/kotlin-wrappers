@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface ConsoleAPICalledEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ConsoleAPICalledEventDataType {
     /**
      * Type of the call.
      */

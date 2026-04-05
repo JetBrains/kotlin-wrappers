@@ -2,6 +2,7 @@
 
 package node.net
 
+@kotlinx.js.JsPlainObject
 external interface TcpSocketConnectOpts {
     var port: Double
     var host: String?

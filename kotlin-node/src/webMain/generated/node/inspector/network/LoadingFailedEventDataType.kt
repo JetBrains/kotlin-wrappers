@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface LoadingFailedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface LoadingFailedEventDataType {
     /**
      * Request identifier.
      */

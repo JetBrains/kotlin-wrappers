@@ -2,7 +2,8 @@
 
 package node.workerThreads
 
-sealed external interface LockInfo {
+@kotlinx.js.JsPlainObject
+external interface LockInfo {
     var clientId: String
     var mode: LockMode
     var name: String

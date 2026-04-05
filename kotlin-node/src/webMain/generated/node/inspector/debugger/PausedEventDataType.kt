@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface PausedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface PausedEventDataType {
     /**
      * Call stack the virtual machine stopped on.
      */

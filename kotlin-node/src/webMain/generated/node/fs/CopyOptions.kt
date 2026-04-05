@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface CopyOptions : CopyOptionsBase {
+@kotlinx.js.JsPlainObject
+external interface CopyOptions : CopyOptionsBase {
     /**
      * Function to filter copied files/directories. Return
      * `true` to copy the item, `false` to ignore it.

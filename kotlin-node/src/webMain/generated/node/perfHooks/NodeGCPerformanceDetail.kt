@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface NodeGCPerformanceDetail {
+@kotlinx.js.JsPlainObject
+external interface NodeGCPerformanceDetail {
     /**
      * When `performanceEntry.entryType` is equal to 'gc', the `performance.kind` property identifies
      * the type of garbage collection operation that occurred.

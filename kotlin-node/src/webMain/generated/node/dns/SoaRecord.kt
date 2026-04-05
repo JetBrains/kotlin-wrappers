@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface SoaRecord {
+@kotlinx.js.JsPlainObject
+external interface SoaRecord {
     var nsname: String
     var hostmaster: String
     var serial: Double

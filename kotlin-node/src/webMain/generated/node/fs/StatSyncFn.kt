@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface StatSyncFn {
+external interface StatSyncFn {
     operator fun invoke(
         path: PathLike,
         options: Nothing? = definedExternally,

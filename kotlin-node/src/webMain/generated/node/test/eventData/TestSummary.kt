@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestSummary {
+@kotlinx.js.JsPlainObject
+external interface TestSummary {
     /**
      * An object containing the counts of various test results.
      */

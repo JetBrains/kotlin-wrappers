@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface ResponseReceivedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ResponseReceivedEventDataType {
     /**
      * Request identifier.
      */

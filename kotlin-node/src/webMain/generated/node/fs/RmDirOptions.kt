@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface RmDirOptions {
+@kotlinx.js.JsPlainObject
+external interface RmDirOptions {
     /**
      * If an `EBUSY`, `EMFILE`, `ENFILE`, `ENOTEMPTY`, or
      * `EPERM` error is encountered, Node.js will retry the operation with a linear

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface RsaPrivateKey {
+@kotlinx.js.JsPlainObject
+external interface RsaPrivateKey {
     var key: KeyLike
     var passphrase: String?
 

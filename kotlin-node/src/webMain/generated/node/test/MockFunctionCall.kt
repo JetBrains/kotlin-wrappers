@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface MockFunctionCall<F : Function<*>, ReturnType /* default is Any /* F extends (...args: any) => infer T ? T : F extends abstract new (...args: any) => infer T ? T : unknown */ */, Args /* default is Any /* F extends (...args: infer Y) => any ? Y : F extends abstract new (...args: infer Y) => any ? Y : unknown[] */ */> {
+@kotlinx.js.JsPlainObject
+external interface MockFunctionCall<F : Function<*>, ReturnType /* default is Any /* F extends (...args: any) => infer T ? T : F extends abstract new (...args: any) => infer T ? T : unknown */ */, Args /* default is Any /* F extends (...args: infer Y) => any ? Y : F extends abstract new (...args: infer Y) => any ? Y : unknown[] */ */> {
     /**
      * An array of the arguments passed to the mock function.
      */

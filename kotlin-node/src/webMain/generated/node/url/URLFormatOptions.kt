@@ -2,7 +2,8 @@
 
 package node.url
 
-sealed external interface URLFormatOptions {
+@kotlinx.js.JsPlainObject
+external interface URLFormatOptions {
     /**
      * `true` if the serialized URL string should include the username and password, `false` otherwise.
      * @default true

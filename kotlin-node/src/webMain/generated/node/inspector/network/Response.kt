@@ -5,7 +5,8 @@ package node.inspector.network
 /**
  * HTTP response data.
  */
-sealed external interface Response {
+@kotlinx.js.JsPlainObject
+external interface Response {
     var url: String
     var status: Double
     var statusText: String

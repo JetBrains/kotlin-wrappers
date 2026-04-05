@@ -2,7 +2,7 @@
 
 package node.perfHooks
 
-sealed external interface IntervalHistogram : Histogram {
+external interface IntervalHistogram : Histogram {
     /**
      * Enables the update interval timer. Returns `true` if the timer was
      * started, `false` if it was already started.

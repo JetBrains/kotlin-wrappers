@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface KeyExportOptions<T : KeyFormat> {
+@kotlinx.js.JsPlainObject
+external interface KeyExportOptions<T : KeyFormat> {
     var type: KeyExportOptionsType
     var format: T
     var cipher: String?

@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface ExecutionContextDestroyedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ExecutionContextDestroyedEventDataType {
     /**
      * Id of the destroyed context
      */

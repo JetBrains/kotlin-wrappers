@@ -2,7 +2,8 @@
 
 package node.inspector.io
 
-sealed external interface CloseParameterType {
+@kotlinx.js.JsPlainObject
+external interface CloseParameterType {
     /**
      * Handle of the stream to close.
      */

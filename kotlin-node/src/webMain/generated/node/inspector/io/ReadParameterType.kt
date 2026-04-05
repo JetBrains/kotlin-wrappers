@@ -2,7 +2,8 @@
 
 package node.inspector.io
 
-sealed external interface ReadParameterType {
+@kotlinx.js.JsPlainObject
+external interface ReadParameterType {
     /**
      * Handle of the stream to read.
      */

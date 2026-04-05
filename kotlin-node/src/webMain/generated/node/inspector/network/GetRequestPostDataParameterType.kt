@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface GetRequestPostDataParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetRequestPostDataParameterType {
     /**
      * Identifier of the network request to get content for.
      */

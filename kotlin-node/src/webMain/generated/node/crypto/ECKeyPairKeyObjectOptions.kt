@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface ECKeyPairKeyObjectOptions {
+@kotlinx.js.JsPlainObject
+external interface ECKeyPairKeyObjectOptions {
     /**
      * Name of the curve to use
      */

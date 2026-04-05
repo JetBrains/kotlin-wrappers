@@ -2,7 +2,8 @@
 
 package node.url
 
-sealed external interface UrlWithStringQuery : Url {
+@kotlinx.js.JsPlainObject
+external interface UrlWithStringQuery : Url {
     @JsName("query")
     var stringQuery: String?
 }

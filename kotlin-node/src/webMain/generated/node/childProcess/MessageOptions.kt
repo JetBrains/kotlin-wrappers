@@ -2,6 +2,7 @@
 
 package node.childProcess
 
-sealed external interface MessageOptions {
+@kotlinx.js.JsPlainObject
+external interface MessageOptions {
     var keepOpen: Boolean?
 }

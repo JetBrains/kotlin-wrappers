@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface MxRecord {
+@kotlinx.js.JsPlainObject
+external interface MxRecord {
     var priority: Double
     var exchange: String
 }

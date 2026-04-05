@@ -2,7 +2,8 @@
 
 package node.querystring
 
-sealed external interface StringifyOptions {
+@kotlinx.js.JsPlainObject
+external interface StringifyOptions {
     /**
      * The function to use when converting URL-unsafe characters to percent-encoding in the query string.
      * @default `querystring.escape()`

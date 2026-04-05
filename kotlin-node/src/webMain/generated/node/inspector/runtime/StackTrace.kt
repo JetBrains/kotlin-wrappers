@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Call frames for assertions or error messages.
  */
-sealed external interface StackTrace {
+@kotlinx.js.JsPlainObject
+external interface StackTrace {
     /**
      * String label of this stack trace. For async traces this may be a name of the function that initiated the async call.
      */

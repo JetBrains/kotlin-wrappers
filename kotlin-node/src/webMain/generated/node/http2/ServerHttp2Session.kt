@@ -5,7 +5,7 @@ package node.http2
 import node.http.IncomingMessage
 import node.http.ServerResponse
 
-sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
+external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
     Http2Session {
     val server: Any // Http2Server<Http1Request, Http1Response, Http2Request, Http2Response> | Http2SecureServer<Http1Request, Http1Response, Http2Request, Http2Response>
 
@@ -235,10 +235,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun emit(
         event: String,
@@ -265,10 +262,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,

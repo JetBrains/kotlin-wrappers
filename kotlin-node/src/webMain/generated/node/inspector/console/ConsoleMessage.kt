@@ -5,7 +5,8 @@ package node.inspector.console
 /**
  * Console message.
  */
-sealed external interface ConsoleMessage {
+@kotlinx.js.JsPlainObject
+external interface ConsoleMessage {
     /**
      * Message source.
      */

@@ -2,7 +2,7 @@
 
 package node.perfHooks
 
-sealed external interface Performance {
+external interface Performance {
     /**
      * If `name` is not provided, removes all `PerformanceMark` objects from the Performance Timeline.
      * If `name` is provided, removes only the named mark.

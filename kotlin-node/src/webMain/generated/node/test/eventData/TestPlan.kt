@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestPlan : LocationInfo {
+@kotlinx.js.JsPlainObject
+external interface TestPlan : LocationInfo {
     /**
      * The nesting level of the test.
      */

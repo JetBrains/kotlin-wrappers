@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface ResolveFnOutput {
+@kotlinx.js.JsPlainObject
+external interface ResolveFnOutput {
     /**
      * A hint to the load hook (it might be ignored); can be an intermediary value.
      */

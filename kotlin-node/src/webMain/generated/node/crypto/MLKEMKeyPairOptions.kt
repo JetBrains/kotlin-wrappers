@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface MLKEMKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat> {
+@kotlinx.js.JsPlainObject
+external interface MLKEMKeyPairOptions<PubF : KeyFormat, PrivF : KeyFormat> {
     var publicKeyEncoding: MLKEMKeyPairOptionsPublicKeyEncoding<PubF>
     var privateKeyEncoding: MLKEMKeyPairOptionsPrivateKeyEncoding<PrivF>
 }

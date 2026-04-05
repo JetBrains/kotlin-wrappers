@@ -2,7 +2,8 @@
 
 package node.events
 
-sealed external interface EventEmitterOptions {
+@kotlinx.js.JsPlainObject
+external interface EventEmitterOptions {
     /**
      * Enables automatic capturing of promise rejection.
      */

@@ -2,7 +2,8 @@
 
 package node.inspector.target
 
-sealed external interface TargetInfo {
+@kotlinx.js.JsPlainObject
+external interface TargetInfo {
     var targetId: TargetID
     var type: String
     var title: String

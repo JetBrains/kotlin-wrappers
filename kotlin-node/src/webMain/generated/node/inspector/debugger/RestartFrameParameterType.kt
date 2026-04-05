@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface RestartFrameParameterType {
+@kotlinx.js.JsPlainObject
+external interface RestartFrameParameterType {
     /**
      * Call frame identifier to evaluate on.
      */

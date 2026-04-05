@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetScriptSourceParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetScriptSourceParameterType {
     /**
      * Id of the script to edit.
      */

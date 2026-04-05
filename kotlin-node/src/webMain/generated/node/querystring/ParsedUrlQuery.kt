@@ -2,4 +2,4 @@
 
 package node.querystring
 
-sealed external interface ParsedUrlQuery : node.Dict<Any /* string | string[] */>
+external interface ParsedUrlQuery : node.Dict<Any /* string | string[] */>

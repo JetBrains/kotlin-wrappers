@@ -5,7 +5,8 @@ package node.inspector.debugger
 /**
  * Scope description.
  */
-sealed external interface Scope {
+@kotlinx.js.JsPlainObject
+external interface Scope {
     /**
      * Scope type.
      */

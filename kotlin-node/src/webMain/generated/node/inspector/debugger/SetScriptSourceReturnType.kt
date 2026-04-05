@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetScriptSourceReturnType {
+@kotlinx.js.JsPlainObject
+external interface SetScriptSourceReturnType {
     /**
      * New stack trace in case editing has happened while VM was stopped.
      */

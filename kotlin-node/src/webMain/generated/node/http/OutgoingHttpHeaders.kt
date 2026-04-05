@@ -2,7 +2,7 @@
 
 package node.http
 
-sealed external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
+external interface OutgoingHttpHeaders : node.Dict<OutgoingHttpHeader> {
     var accept: Any?
 
     // string | string[] | undefined

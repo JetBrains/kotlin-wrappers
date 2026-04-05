@@ -4,7 +4,7 @@ package node.childProcess
 
 // TODO: execFile exceptions can take many forms... this accurately describes none of them
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ExecFileException : js.errors.JsError {
+external interface ExecFileException : js.errors.JsError {
     var cmd: String?
     var killed: Boolean?
     var signal: node.process.Signals?

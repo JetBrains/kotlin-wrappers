@@ -2,7 +2,8 @@
 
 package node.cluster
 
-sealed external interface ClusterSettings {
+@kotlinx.js.JsPlainObject
+external interface ClusterSettings {
     /**
      * List of string arguments passed to the Node.js executable.
      * @default process.execArgv

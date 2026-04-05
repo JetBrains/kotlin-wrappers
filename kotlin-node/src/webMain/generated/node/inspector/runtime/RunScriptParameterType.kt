@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface RunScriptParameterType {
+@kotlinx.js.JsPlainObject
+external interface RunScriptParameterType {
     /**
      * Id of the script to run.
      */

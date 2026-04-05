@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface SourceMapConstructorOptions {
+@kotlinx.js.JsPlainObject
+external interface SourceMapConstructorOptions {
     /**
      * @since v21.0.0, v20.5.0
      */

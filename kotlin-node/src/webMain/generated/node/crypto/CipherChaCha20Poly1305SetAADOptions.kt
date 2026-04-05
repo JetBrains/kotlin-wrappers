@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface CipherChaCha20Poly1305SetAADOptions {
+@kotlinx.js.JsPlainObject
+external interface CipherChaCha20Poly1305SetAADOptions {
     var plaintextLength: Double
 }

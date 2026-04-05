@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface RunOptions {
+@kotlinx.js.JsPlainObject
+external interface RunOptions {
     /**
      * If a number is provided, then that many test processes would run in parallel, where each process corresponds to one test file.
      * If `true`, it would run `os.availableParallelism() - 1` test files in parallel. If `false`, it would only run one test file at a time.

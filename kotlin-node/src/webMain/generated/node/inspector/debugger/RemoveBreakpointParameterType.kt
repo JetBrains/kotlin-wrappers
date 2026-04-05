@@ -2,6 +2,7 @@
 
 package node.inspector.debugger
 
-sealed external interface RemoveBreakpointParameterType {
+@kotlinx.js.JsPlainObject
+external interface RemoveBreakpointParameterType {
     var breakpointId: BreakpointId
 }

@@ -2,7 +2,8 @@
 
 package node.inspector.profiler
 
-sealed external interface SetSamplingIntervalParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetSamplingIntervalParameterType {
     /**
      * New sampling interval in microseconds.
      */

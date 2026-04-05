@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface FileHandleWriteViewResultPayload<TBuffer : js.buffer.ArrayBufferView<*>> {
+@kotlinx.js.JsPlainObject
+external interface FileHandleWriteViewResultPayload<TBuffer : js.buffer.ArrayBufferView<*>> {
     var bytesWritten: Double
     var buffer: TBuffer
 }

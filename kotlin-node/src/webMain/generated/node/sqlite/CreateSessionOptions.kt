@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface CreateSessionOptions {
+@kotlinx.js.JsPlainObject
+external interface CreateSessionOptions {
     /**
      * A specific table to track changes for. By default, changes to all tables are tracked.
      * @since v22.12.0

@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface GetScriptSourceReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetScriptSourceReturnType {
     /**
      * Script source.
      */

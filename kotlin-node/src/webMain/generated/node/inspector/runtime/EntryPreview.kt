@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * @experimental
  */
-sealed external interface EntryPreview {
+@kotlinx.js.JsPlainObject
+external interface EntryPreview {
     /**
      * Preview of the key. Specified for map-like collection entries.
      */

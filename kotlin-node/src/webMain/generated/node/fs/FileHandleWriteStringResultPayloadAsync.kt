@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface FileHandleWriteStringResultPayload {
+@kotlinx.js.JsPlainObject
+external interface FileHandleWriteStringResultPayload {
     var bytesWritten: Double
     var buffer: String
 }

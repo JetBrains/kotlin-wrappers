@@ -5,7 +5,7 @@ package node.v8
 /**
  * @since v24.9.0
  */
-sealed external interface HeapProfileHandle {
+external interface HeapProfileHandle {
     /**
      * Stopping collecting the profile, then return a Promise that fulfills with an error or the
      * profile data.

@@ -3,7 +3,8 @@
 package node.http2
 
 // Http2Server
-sealed external interface SessionOptions {
+@kotlinx.js.JsPlainObject
+external interface SessionOptions {
     /**
      * Sets the maximum dynamic table size for deflating header fields.
      * @default 4Kib

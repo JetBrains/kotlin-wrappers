@@ -5,7 +5,7 @@ package node.fs
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface FSWatcher : EventEmitter {
+external interface FSWatcher : EventEmitter {
     /**
      * Stop watching for changes on the given `fs.FSWatcher`. Once stopped, the `fs.FSWatcher` object is no longer usable.
      * @since v0.5.8

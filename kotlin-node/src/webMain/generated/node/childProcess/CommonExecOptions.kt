@@ -3,7 +3,7 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface CommonExecOptions : CommonOptions {
+external interface CommonExecOptions : CommonOptions {
     var input: Any? // string | NodeJS.ArrayBufferView | undefined
 
     /**

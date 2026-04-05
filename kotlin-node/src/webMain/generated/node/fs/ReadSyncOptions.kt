@@ -4,4 +4,5 @@ package node.fs
 
 /** @deprecated Use `ReadOptions` instead. */
 // TODO: remove in future major
-sealed external interface ReadSyncOptions : ReadOptions
+@kotlinx.js.JsPlainObject
+external interface ReadSyncOptions : ReadOptions

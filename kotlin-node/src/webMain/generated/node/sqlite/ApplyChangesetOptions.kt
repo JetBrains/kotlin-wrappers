@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface ApplyChangesetOptions {
+@kotlinx.js.JsPlainObject
+external interface ApplyChangesetOptions {
     /**
      * Skip changes that, when targeted table name is supplied to this function, return a truthy value.
      * By default, all changes are attempted.

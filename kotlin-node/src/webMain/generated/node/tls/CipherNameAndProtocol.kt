@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface CipherNameAndProtocol {
+@kotlinx.js.JsPlainObject
+external interface CipherNameAndProtocol {
     /**
      * The cipher name.
      */

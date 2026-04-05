@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface ECKeyPairOptionsPublicKeyEncoding<PubF : KeyFormat> {
+@kotlinx.js.JsPlainObject
+external interface ECKeyPairOptionsPublicKeyEncoding<PubF : KeyFormat> {
     var type: ECKeyPairOptionsPublicKeyEncodingType
     var format: PubF
 }

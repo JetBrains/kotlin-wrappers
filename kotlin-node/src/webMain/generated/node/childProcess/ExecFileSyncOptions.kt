@@ -3,6 +3,6 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface ExecFileSyncOptions : CommonExecOptions {
+external interface ExecFileSyncOptions : CommonExecOptions {
     var shell: Any? // boolean | string | undefined
 }

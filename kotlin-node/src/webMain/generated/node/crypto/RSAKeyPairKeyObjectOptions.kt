@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface RSAKeyPairKeyObjectOptions {
+@kotlinx.js.JsPlainObject
+external interface RSAKeyPairKeyObjectOptions {
     /**
      * Key size in bits
      */

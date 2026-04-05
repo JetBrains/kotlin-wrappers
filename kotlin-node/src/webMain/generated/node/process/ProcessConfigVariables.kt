@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface ProcessConfigVariables {
+@kotlinx.js.JsPlainObject
+external interface ProcessConfigVariables {
     val clang: Double
     val host_arch: String
     val node_install_npm: Boolean

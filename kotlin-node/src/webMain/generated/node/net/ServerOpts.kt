@@ -2,6 +2,7 @@
 
 package node.net
 
+@kotlinx.js.JsPlainObject
 external interface ServerOpts {
     /**
      * Indicates whether half-opened TCP connections are allowed.

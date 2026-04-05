@@ -2,6 +2,7 @@
 
 package node.stream
 
-sealed external interface StreamPipeOptions {
+@kotlinx.js.JsPlainObject
+external interface StreamPipeOptions {
     var end: Boolean?
 }

@@ -2,6 +2,7 @@
 
 package node.dns
 
-sealed external interface AnySoaRecord : SoaRecord {
+@kotlinx.js.JsPlainObject
+external interface AnySoaRecord : SoaRecord {
     var type: String // "SOA"
 }

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface MLKEMKeyPairOptionsPublicKeyEncoding<PubF : KeyFormat> {
+@kotlinx.js.JsPlainObject
+external interface MLKEMKeyPairOptionsPublicKeyEncoding<PubF : KeyFormat> {
     var type: String // "spki"
     var format: PubF
 }

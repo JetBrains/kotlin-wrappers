@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestComplete : LocationInfo {
+@kotlinx.js.JsPlainObject
+external interface TestComplete : LocationInfo {
     /**
      * Additional execution metadata.
      */

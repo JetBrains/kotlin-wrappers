@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface WebSocketHandshakeResponseReceivedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface WebSocketHandshakeResponseReceivedEventDataType {
     /**
      * Request identifier.
      */

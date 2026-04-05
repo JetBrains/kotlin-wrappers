@@ -2,7 +2,8 @@
 
 package node.os
 
-sealed external interface NetworkInterfaceInfoIPv6 : NetworkInterfaceBase {
+@kotlinx.js.JsPlainObject
+external interface NetworkInterfaceInfoIPv6 : NetworkInterfaceBase {
     var family: String
 
     // "IPv6"

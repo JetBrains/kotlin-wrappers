@@ -2,4 +2,5 @@
 
 package node.crypto
 
-sealed external interface SLHDSAKeyPairKeyObjectOptions
+@kotlinx.js.JsPlainObject
+external interface SLHDSAKeyPairKeyObjectOptions

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface CheckPrimeOptions {
+@kotlinx.js.JsPlainObject
+external interface CheckPrimeOptions {
     /**
      * The number of Miller-Rabin probabilistic primality iterations to perform.
      * When the value is 0 (zero), a number of checks is used that yields a false positive rate of at most `2**-64` for random input.

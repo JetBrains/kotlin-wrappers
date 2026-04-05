@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface RunningScriptOptions : BaseOptions {
+@kotlinx.js.JsPlainObject
+external interface RunningScriptOptions : BaseOptions {
     /**
      * When `true`, if an `Error` occurs while compiling the `code`, the line of code causing the error is attached to the stack trace.
      * @default true

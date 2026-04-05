@@ -2,6 +2,7 @@
 
 package node.fs
 
-sealed external interface GlobOptionsWithoutFileTypes : _GlobOptions<String> {
+@kotlinx.js.JsPlainObject
+external interface GlobOptionsWithoutFileTypes : _GlobOptions<String> {
     override var withFileTypes: Boolean /* false */?
 }

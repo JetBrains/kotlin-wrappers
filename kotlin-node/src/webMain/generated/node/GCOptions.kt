@@ -2,7 +2,8 @@
 
 package node
 
-sealed external interface GCOptions {
+@kotlinx.js.JsPlainObject
+external interface GCOptions {
     var execution: GCOptionsExecution?
     var flavor: GCOptionsFlavor?
     var type: GCOptionsType?

@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface WriteStreamOptions : StreamOptions {
+external interface WriteStreamOptions : StreamOptions {
     var fs: CreateWriteStreamFSImplementation?
     var flush: Boolean?
 }

@@ -2,7 +2,7 @@
 
 package node.module
 
-sealed external interface RequireResolve {
+external interface RequireResolve {
     /**
      * Use the internal `require()` machinery to look up the location of a module,
      * but rather than loading the module, just return the resolved filename.

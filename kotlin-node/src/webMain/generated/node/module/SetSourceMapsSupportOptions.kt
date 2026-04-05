@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface SetSourceMapsSupportOptions {
+@kotlinx.js.JsPlainObject
+external interface SetSourceMapsSupportOptions {
     /**
      * If enabling the support for files in `node_modules`.
      * @default false

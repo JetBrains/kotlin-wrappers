@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface EvaluateReturnType {
+@kotlinx.js.JsPlainObject
+external interface EvaluateReturnType {
     /**
      * Evaluation result.
      */

@@ -2,7 +2,7 @@
 
 package node.zlib
 
-sealed external interface Zlib {
+external interface Zlib {
     val bytesWritten: Double
     var shell: Any? // boolean | string | undefined
 

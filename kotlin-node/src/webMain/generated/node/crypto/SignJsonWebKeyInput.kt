@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface SignJsonWebKeyInput :
+@kotlinx.js.JsPlainObject
+external interface SignJsonWebKeyInput :
     JsonWebKeyInput,
     SigningOptions

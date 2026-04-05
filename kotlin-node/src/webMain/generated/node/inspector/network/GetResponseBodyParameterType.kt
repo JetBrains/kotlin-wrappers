@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface GetResponseBodyParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetResponseBodyParameterType {
     /**
      * Identifier of the network request to get content for.
      */

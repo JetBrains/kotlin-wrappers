@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface MockModuleOptions {
+@kotlinx.js.JsPlainObject
+external interface MockModuleOptions {
     /**
      * If false, each call to `require()` or `import()` generates a new mock module.
      * If true, subsequent calls will return the same module mock, and the mock module is inserted into the CommonJS cache.

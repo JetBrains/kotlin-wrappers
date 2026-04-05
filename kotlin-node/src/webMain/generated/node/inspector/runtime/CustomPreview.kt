@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * @experimental
  */
-sealed external interface CustomPreview {
+@kotlinx.js.JsPlainObject
+external interface CustomPreview {
     var header: String
     var hasBody: Boolean
     var formatterObjectId: RemoteObjectId

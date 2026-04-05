@@ -8,7 +8,6 @@ import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import wrappersgenerator.node.annotations.*
 import wrappersgenerator.node.inheritanceModifiers.modifyClassInheritance
-import wrappersgenerator.node.inheritanceModifiers.modifyInterfaceInheritance
 import wrappersgenerator.node.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.node.inheritanceModifiers.modifyPropertyInheritance
 import wrappersgenerator.node.injections.*
@@ -120,6 +119,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             injectAgentOptionsPort,
         )
         annotations = listOf(
+            createJsPlainObjectAnnotation(),
+            ::annotateJsPlainObject,
+            // TODO: OnReadOpts
+            // TODO: InspectOptionsStylized
+
             ::annotateCompileFunctionResult,
             ::annotateConflictingEntityNames,
             ::annotateDefaultExports,
@@ -127,7 +131,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::annotateForceVarOverrides,
             ::annotateHttpsServer,
             ::annotateInterfaceWithSuperclass,
-            ::annotateJsPlainObject,
             ::annotateUnusedTypealiasParameter,
         )
         nameResolvers = listOf(
@@ -163,7 +166,6 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         inheritanceModifiers = listOf(
             ::modifyClassInheritance,
-            ::modifyInterfaceInheritance,
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
         )

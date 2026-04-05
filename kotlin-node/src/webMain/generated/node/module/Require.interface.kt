@@ -4,7 +4,7 @@ package node.module
 
 import node.Dict
 
-sealed external interface Require {
+external interface Require {
     /**
      * Used to import modules, `JSON`, and local files.
      * @since v0.1.13

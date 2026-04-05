@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface EmitWarningOptions {
+@kotlinx.js.JsPlainObject
+external interface EmitWarningOptions {
     /**
      * When `warning` is a `string`, `type` is the name to use for the _type_ of warning being emitted.
      *

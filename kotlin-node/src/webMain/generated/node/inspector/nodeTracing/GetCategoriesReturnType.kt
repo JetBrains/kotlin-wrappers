@@ -2,7 +2,8 @@
 
 package node.inspector.nodeTracing
 
-sealed external interface GetCategoriesReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetCategoriesReturnType {
     /**
      * A list of supported tracing categories.
      */

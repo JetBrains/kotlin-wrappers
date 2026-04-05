@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface TestShard {
+@kotlinx.js.JsPlainObject
+external interface TestShard {
     /**
      * A positive integer between 1 and `total` that specifies the index of the shard to run.
      */

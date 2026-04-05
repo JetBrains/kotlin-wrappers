@@ -2,7 +2,8 @@
 
 package node.readline
 
-sealed external interface _ReadLineOptions {
+@kotlinx.js.JsPlainObject
+external interface _ReadLineOptions {
     /**
      * The [`Readable`](https://nodejs.org/docs/latest-v24.x/api/stream.html#readable-streams) stream to listen to
      */

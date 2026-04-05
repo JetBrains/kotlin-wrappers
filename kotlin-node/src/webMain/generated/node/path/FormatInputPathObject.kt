@@ -2,7 +2,8 @@
 
 package node.path
 
-sealed external interface FormatInputPathObject {
+@kotlinx.js.JsPlainObject
+external interface FormatInputPathObject {
     /**
      * The root of the path such as '/' or 'c:\'
      */

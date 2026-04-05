@@ -2,6 +2,7 @@
 
 package node.http
 
+@kotlinx.js.JsPlainObject
 external interface ServerOptions<Request : IncomingMessage, Response : ServerResponse<*>> {
     /**
      * Specifies the `IncomingMessage` class to be used. Useful for extending the original `IncomingMessage`.

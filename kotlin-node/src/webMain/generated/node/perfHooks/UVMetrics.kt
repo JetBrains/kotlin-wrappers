@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface UVMetrics {
+@kotlinx.js.JsPlainObject
+external interface UVMetrics {
     /**
      * Number of event loop iterations.
      */

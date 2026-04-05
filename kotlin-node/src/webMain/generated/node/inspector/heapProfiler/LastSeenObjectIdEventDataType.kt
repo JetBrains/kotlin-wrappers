@@ -2,7 +2,8 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface LastSeenObjectIdEventDataType {
+@kotlinx.js.JsPlainObject
+external interface LastSeenObjectIdEventDataType {
     var lastSeenObjectId: Double
     var timestamp: Double
 }

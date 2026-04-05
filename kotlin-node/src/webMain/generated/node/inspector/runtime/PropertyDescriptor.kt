@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Object property descriptor.
  */
-sealed external interface PropertyDescriptor {
+@kotlinx.js.JsPlainObject
+external interface PropertyDescriptor {
     /**
      * Property name or symbol description.
      */

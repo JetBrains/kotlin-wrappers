@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface ProcessRelease {
+@kotlinx.js.JsPlainObject
+external interface ProcessRelease {
     var name: String
     var sourceUrl: String?
     var headersUrl: String?

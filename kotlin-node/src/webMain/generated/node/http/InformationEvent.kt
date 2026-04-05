@@ -2,7 +2,8 @@
 
 package node.http
 
-sealed external interface InformationEvent {
+@kotlinx.js.JsPlainObject
+external interface InformationEvent {
     var statusCode: Double
     var statusMessage: String
     var httpVersion: String

@@ -8,7 +8,7 @@ package node.test
  * exposed as part of the API.
  * @since v18.0.0, v16.17.0
  */
-sealed external interface TestContext {
+external interface TestContext {
     /**
      * An object containing assertion methods bound to the test context.
      * The top-level functions from the `node:assert` module are exposed here for the purpose of creating test plans.

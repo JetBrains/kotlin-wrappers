@@ -2,7 +2,8 @@
 
 package node.net
 
-sealed external interface DropArgument {
+@kotlinx.js.JsPlainObject
+external interface DropArgument {
     var localAddress: String?
     var localPort: Double?
     var localFamily: String?

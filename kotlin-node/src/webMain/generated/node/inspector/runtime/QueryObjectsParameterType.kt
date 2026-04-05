@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface QueryObjectsParameterType {
+@kotlinx.js.JsPlainObject
+external interface QueryObjectsParameterType {
     /**
      * Identifier of the prototype to return objects for.
      */

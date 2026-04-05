@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface TestOptions {
+@kotlinx.js.JsPlainObject
+external interface TestOptions {
     /**
      * If a number is provided, then that many tests would run in parallel.
      * If truthy, it would run (number of cpu cores - 1) tests in parallel.

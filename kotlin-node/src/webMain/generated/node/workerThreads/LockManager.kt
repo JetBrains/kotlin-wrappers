@@ -2,7 +2,7 @@
 
 package node.workerThreads
 
-sealed external interface LockManager {
+external interface LockManager {
     @JsName("query")
     fun queryAsync(): js.promise.Promise<LockManagerSnapshot>
 

@@ -2,7 +2,8 @@
 
 package node.v8
 
-sealed external interface HeapInfo {
+@kotlinx.js.JsPlainObject
+external interface HeapInfo {
     var total_heap_size: Double
     var total_heap_size_executable: Double
     var total_physical_size: Double

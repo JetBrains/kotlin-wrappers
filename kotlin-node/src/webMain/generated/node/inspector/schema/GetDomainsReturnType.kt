@@ -2,7 +2,8 @@
 
 package node.inspector.schema
 
-sealed external interface GetDomainsReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetDomainsReturnType {
     /**
      * List of supported domains.
      */

@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface GetCallSitesOptions {
+@kotlinx.js.JsPlainObject
+external interface GetCallSitesOptions {
     /**
      * Reconstruct the original location in the stacktrace from the source-map.
      * Enabled by default with the flag `--enable-source-maps`.

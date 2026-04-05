@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface IsDeepStrictEqualOptions {
+@kotlinx.js.JsPlainObject
+external interface IsDeepStrictEqualOptions {
     /**
      * If `true`, prototype and constructor
      * comparison is skipped during deep strict equality check.

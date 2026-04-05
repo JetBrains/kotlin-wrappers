@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface GenerateKeyOptions {
+@kotlinx.js.JsPlainObject
+external interface GenerateKeyOptions {
     var length: Double
 }

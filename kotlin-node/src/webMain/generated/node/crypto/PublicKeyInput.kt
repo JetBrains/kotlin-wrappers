@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface PublicKeyInput {
+@kotlinx.js.JsPlainObject
+external interface PublicKeyInput {
     var key: Any // string | Buffer
     var format: KeyFormat?
     var type: PublicKeyInputType?

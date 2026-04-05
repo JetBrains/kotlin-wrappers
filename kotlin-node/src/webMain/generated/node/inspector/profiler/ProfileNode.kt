@@ -5,7 +5,8 @@ package node.inspector.profiler
 /**
  * Profile node. Holds callsite information, execution statistics and child nodes.
  */
-sealed external interface ProfileNode {
+@kotlinx.js.JsPlainObject
+external interface ProfileNode {
     /**
      * Unique id of the node.
      */

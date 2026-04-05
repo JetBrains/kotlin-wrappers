@@ -4,7 +4,7 @@ package node.childProcess
 
 // TODO: Just Plain Wrong™ (see also nodejs/node#57392)
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ExecException : js.errors.JsError {
+external interface ExecException : js.errors.JsError {
     var cmd: String?
     var killed: Boolean?
     var code: Double?

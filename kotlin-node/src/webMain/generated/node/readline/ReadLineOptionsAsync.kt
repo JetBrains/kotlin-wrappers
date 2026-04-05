@@ -2,7 +2,8 @@
 
 package node.readline
 
-sealed external interface ReadLineOptions : _ReadLineOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadLineOptions : _ReadLineOptions {
     /**
      * An optional function used for Tab autocompletion.
      */

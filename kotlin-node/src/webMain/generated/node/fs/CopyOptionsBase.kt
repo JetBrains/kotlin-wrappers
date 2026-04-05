@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface CopyOptionsBase {
+@kotlinx.js.JsPlainObject
+external interface CopyOptionsBase {
     /**
      * Dereference symlinks
      * @default false

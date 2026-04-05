@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestFailDetails {
+@kotlinx.js.JsPlainObject
+external interface TestFailDetails {
     /**
      * The duration of the test in milliseconds.
      */

@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface AnyNsRecord {
+@kotlinx.js.JsPlainObject
+external interface AnyNsRecord {
     var type: String // "NS"
     var value: String
 }

@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface OpenDirOptions {
+@kotlinx.js.JsPlainObject
+external interface OpenDirOptions {
     /**
      * @default 'utf8'
      */

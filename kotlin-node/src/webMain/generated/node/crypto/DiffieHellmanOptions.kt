@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface DiffieHellmanOptions {
+@kotlinx.js.JsPlainObject
+external interface DiffieHellmanOptions {
     var privateKey: KeyObject
     var publicKey: KeyObject
 }

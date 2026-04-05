@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface AssertSnapshotOptions {
+@kotlinx.js.JsPlainObject
+external interface AssertSnapshotOptions {
     /**
      * An array of synchronous functions used to serialize `value` into a string.
      * `value` is passed as the only argument to the first serializer function.

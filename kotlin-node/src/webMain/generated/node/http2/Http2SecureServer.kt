@@ -6,7 +6,7 @@ import node.http.IncomingMessage
 import node.http.ServerResponse
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface Http2SecureServer<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
+external interface Http2SecureServer<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
     node.tls.Server,
     HTTP2ServerCommon {
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
@@ -35,15 +35,9 @@ sealed external interface Http2SecureServer<Http1Request : IncomingMessage, Http
 
     fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("checkContinue")
     val checkContinueEvent: node.events.EventInstance<js.array.Tuple2<Http2Request, Http2Response>>

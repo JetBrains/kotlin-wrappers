@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface ResolverOptions {
+@kotlinx.js.JsPlainObject
+external interface ResolverOptions {
     /**
      * Query timeout in milliseconds, or `-1` to use the default timeout.
      */

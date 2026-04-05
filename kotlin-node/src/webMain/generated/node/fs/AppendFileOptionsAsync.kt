@@ -3,7 +3,7 @@
 package node.fs
 
 @kotlinx.js.JsPlainObject
-sealed external interface AppendFileAsyncOptions :
+external interface AppendFileAsyncOptions :
     ObjectEncodingOptions,
     FlagAndOpenMode {
     var flush: Boolean?

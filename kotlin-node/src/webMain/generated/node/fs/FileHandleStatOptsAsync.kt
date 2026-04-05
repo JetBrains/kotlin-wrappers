@@ -2,6 +2,7 @@
 
 package node.fs
 
-sealed external interface FileHandleStatOpts : StatOptions {
+@kotlinx.js.JsPlainObject
+external interface FileHandleStatOpts : StatOptions {
     override var bigint: Boolean /* false */?
 }

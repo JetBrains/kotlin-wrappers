@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface CipherInfoOptions {
+@kotlinx.js.JsPlainObject
+external interface CipherInfoOptions {
     /**
      * A test key length.
      */

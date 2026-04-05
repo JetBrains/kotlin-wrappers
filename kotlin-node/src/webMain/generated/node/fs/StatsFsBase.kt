@@ -2,7 +2,7 @@
 
 package node.fs
 
-sealed external interface StatsFsBase<T> {
+external interface StatsFsBase<T> {
     /** Type of file system. */
     var type: T
 

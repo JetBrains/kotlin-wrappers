@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface CallFunctionOnReturnType {
+@kotlinx.js.JsPlainObject
+external interface CallFunctionOnReturnType {
     /**
      * Call result.
      */

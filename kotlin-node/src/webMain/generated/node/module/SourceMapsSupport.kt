@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface SourceMapsSupport {
+@kotlinx.js.JsPlainObject
+external interface SourceMapsSupport {
     /**
      * If the source maps support is enabled
      */

@@ -2,7 +2,8 @@
 
 package node.workerThreads
 
-sealed external interface WorkerOptions {
+@kotlinx.js.JsPlainObject
+external interface WorkerOptions {
     /**
      * List of arguments which would be stringified and appended to
      * `process.argv` in the worker. This is mostly similar to the `workerData`

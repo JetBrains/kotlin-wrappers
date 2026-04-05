@@ -3,7 +3,7 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface SpawnSyncOptions : CommonSpawnOptions {
+external interface SpawnSyncOptions : CommonSpawnOptions {
     var input: Any? // string | NodeJS.ArrayBufferView | undefined
     var maxBuffer: Double?
     var encoding: Any? // BufferEncoding | "buffer" | null | undefined

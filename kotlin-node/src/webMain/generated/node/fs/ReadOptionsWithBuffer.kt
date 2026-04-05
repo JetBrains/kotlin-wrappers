@@ -2,6 +2,7 @@
 
 package node.fs
 
-sealed external interface ReadOptionsWithBuffer<T : js.buffer.ArrayBufferView<*>> : ReadOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadOptionsWithBuffer<T : js.buffer.ArrayBufferView<*>> : ReadOptions {
     var buffer: T?
 }

@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Object internal property descriptor. This property isn't normally visible in JavaScript code.
  */
-sealed external interface InternalPropertyDescriptor {
+@kotlinx.js.JsPlainObject
+external interface InternalPropertyDescriptor {
     /**
      * Conventional property name.
      */

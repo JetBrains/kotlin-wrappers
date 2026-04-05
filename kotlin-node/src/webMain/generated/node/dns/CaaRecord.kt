@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface CaaRecord {
+@kotlinx.js.JsPlainObject
+external interface CaaRecord {
     var critical: Double
     var issue: String?
     var issuewild: String?

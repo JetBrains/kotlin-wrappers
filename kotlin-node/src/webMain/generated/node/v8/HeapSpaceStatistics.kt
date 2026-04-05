@@ -2,7 +2,8 @@
 
 package node.v8
 
-sealed external interface HeapSpaceStatistics {
+@kotlinx.js.JsPlainObject
+external interface HeapSpaceStatistics {
     var spaceName: String
     var spaceSize: Double
     var spaceUsedSize: Double

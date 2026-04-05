@@ -2,7 +2,7 @@
 
 package node.os
 
-sealed external interface SignalConstants {
+external interface SignalConstants {
     operator fun <Key : node.process.Signals> get(key: Key): Double?
 
     operator fun <Key : node.process.Signals> set(

@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface MockPropertyContextAccessesItem<PropertyType /* default is Any? */> {
+@kotlinx.js.JsPlainObject
+external interface MockPropertyContextAccessesItem<PropertyType /* default is Any? */> {
     var type: MockPropertyContextAccessesItemType
     var value: PropertyType
     var stack: js.errors.JsError

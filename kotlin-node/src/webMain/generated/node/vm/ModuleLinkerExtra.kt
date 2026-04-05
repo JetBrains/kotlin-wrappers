@@ -4,6 +4,7 @@ package node.vm
 
 import node.module.ImportAttributes
 
-sealed external interface ModuleLinkerExtra {
+@kotlinx.js.JsPlainObject
+external interface ModuleLinkerExtra {
     var attributes: ImportAttributes
 }

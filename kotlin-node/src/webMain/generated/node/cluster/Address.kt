@@ -2,7 +2,8 @@
 
 package node.cluster
 
-sealed external interface Address {
+@kotlinx.js.JsPlainObject
+external interface Address {
     var address: String
     var port: Double
 

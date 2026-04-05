@@ -4,7 +4,8 @@ package node.tls
 
 import node.buffer.NonSharedBuffer
 
-sealed external interface PeerCertificate {
+@kotlinx.js.JsPlainObject
+external interface PeerCertificate {
     /**
      * `true` if a Certificate Authority (CA), `false` otherwise.
      * @since v18.13.0

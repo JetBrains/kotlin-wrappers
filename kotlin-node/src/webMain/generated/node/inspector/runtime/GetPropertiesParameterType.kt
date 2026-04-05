@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface GetPropertiesParameterType {
+@kotlinx.js.JsPlainObject
+external interface GetPropertiesParameterType {
     /**
      * Identifier of the object to return properties for.
      */

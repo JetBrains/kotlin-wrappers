@@ -7,6 +7,6 @@ package node.v8
  * {@link Promise.reject()}.
  * @since v17.1.0, v16.14.0
  */
-sealed external interface Settled {
+external interface Settled {
     operator fun invoke(promise: js.promise.Promise<Any?>)
 }

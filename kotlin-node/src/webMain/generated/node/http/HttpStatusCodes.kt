@@ -2,7 +2,7 @@
 
 package node.http
 
-sealed external interface HttpStatusCodes {
+external interface HttpStatusCodes {
     operator fun get(key: Number): String?
 
     operator fun set(

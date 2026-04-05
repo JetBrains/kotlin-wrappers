@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface ReadOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadOptions {
     /**
      * @default 0
      */

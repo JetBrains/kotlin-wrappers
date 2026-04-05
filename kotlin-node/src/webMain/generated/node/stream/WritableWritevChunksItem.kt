@@ -2,7 +2,8 @@
 
 package node.stream
 
-sealed external interface WritableWritevChunksItem {
+@kotlinx.js.JsPlainObject
+external interface WritableWritevChunksItem {
     var chunk: Any?
     var encoding: node.buffer.BufferEncoding
 }

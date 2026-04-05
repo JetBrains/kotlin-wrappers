@@ -3,7 +3,8 @@
 package node.url
 
 // Input to `url.format`
-sealed external interface UrlObject {
+@kotlinx.js.JsPlainObject
+external interface UrlObject {
     var auth: String?
     var hash: String?
     var host: String?

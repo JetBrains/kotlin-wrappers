@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface OneShotDigestOptionsWithStringEncoding : OneShotDigestOptions {
+@kotlinx.js.JsPlainObject
+external interface OneShotDigestOptionsWithStringEncoding : OneShotDigestOptions {
     @JsName("outputEncoding")
     var stringOutputEncoding: BinaryToTextEncoding?
 }

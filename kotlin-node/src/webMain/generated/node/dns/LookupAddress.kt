@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface LookupAddress {
+@kotlinx.js.JsPlainObject
+external interface LookupAddress {
     /**
      * A string representation of an IPv4 or IPv6 address.
      */

@@ -5,7 +5,7 @@ package node.http2
 import node.http.OutgoingHttpHeaders
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface Http2Stream : node.stream.Duplex {
+external interface Http2Stream : node.stream.Duplex {
     /**
      * Set to `true` if the `Http2Stream` instance was aborted abnormally. When set,
      * the `'aborted'` event will have been emitted.
@@ -159,10 +159,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun emit(
         event: String,
@@ -189,10 +186,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,

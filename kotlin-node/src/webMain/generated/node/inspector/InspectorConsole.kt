@@ -5,7 +5,7 @@ package node.inspector
 // These methods are exposed by the V8 inspector console API (inspector/v8-console.h).
 // The method signatures differ from those of the Node.js console, and are deliberately
 // typed permissively.
-sealed external interface InspectorConsole {
+external interface InspectorConsole {
     fun debug(vararg data: Any?)
 
     fun error(vararg data: Any?)

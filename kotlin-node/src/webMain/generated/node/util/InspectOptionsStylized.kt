@@ -2,7 +2,7 @@
 
 package node.util
 
-sealed external interface InspectOptionsStylized : InspectOptions {
+external interface InspectOptionsStylized : InspectOptions {
     fun stylize(
         text: String,
         styleType: Style,

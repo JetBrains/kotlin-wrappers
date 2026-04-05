@@ -4,7 +4,7 @@ package node.process
 
 import node.Dict
 
-sealed external interface ProcessVersions : Dict<String> {
+external interface ProcessVersions : Dict<String> {
     var http_parser: String
     var node: String
     var v8: String

@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface WriteOptions {
+@kotlinx.js.JsPlainObject
+external interface WriteOptions {
     /**
      * @default 0
      */

@@ -5,7 +5,8 @@ package node.inspector.schema
 /**
  * Description of the protocol domain.
  */
-sealed external interface Domain {
+@kotlinx.js.JsPlainObject
+external interface Domain {
     /**
      * Domain name.
      */

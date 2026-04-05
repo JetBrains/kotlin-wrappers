@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface ResolveHookContext {
+@kotlinx.js.JsPlainObject
+external interface ResolveHookContext {
     /**
      * Export conditions of the relevant `package.json`
      */

@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface MemoryUsage {
+@kotlinx.js.JsPlainObject
+external interface MemoryUsage {
     /**
      * Resident Set Size, is the amount of space occupied in the main memory device (that is a subset of the total allocated memory) for the
      * process, including all C++ and JavaScript objects and code.

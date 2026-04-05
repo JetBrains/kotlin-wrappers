@@ -2,6 +2,7 @@
 
 package node.inspector.nodeRuntime
 
-sealed external interface NotifyWhenWaitingForDisconnectParameterType {
+@kotlinx.js.JsPlainObject
+external interface NotifyWhenWaitingForDisconnectParameterType {
     var enabled: Boolean
 }

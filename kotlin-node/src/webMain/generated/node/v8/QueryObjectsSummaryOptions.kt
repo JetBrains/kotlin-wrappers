@@ -2,6 +2,7 @@
 
 package node.v8
 
-sealed external interface QueryObjectsSummaryOptions {
+@kotlinx.js.JsPlainObject
+external interface QueryObjectsSummaryOptions {
     var format: String // "summary"
 }

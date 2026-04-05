@@ -5,7 +5,7 @@ package node.stream
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface StreamOptions<T : Stream> : Abortable {
+external interface StreamOptions<T : Stream> : Abortable {
     var emitClose: Boolean?
     var highWaterMark: Double?
     var objectMode: Boolean?

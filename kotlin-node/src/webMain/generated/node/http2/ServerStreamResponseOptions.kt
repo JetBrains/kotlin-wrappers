@@ -2,7 +2,8 @@
 
 package node.http2
 
-sealed external interface ServerStreamResponseOptions {
+@kotlinx.js.JsPlainObject
+external interface ServerStreamResponseOptions {
     var endStream: Boolean?
     var waitForTrailers: Boolean?
 }

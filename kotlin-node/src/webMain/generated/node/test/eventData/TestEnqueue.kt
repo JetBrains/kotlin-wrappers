@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestEnqueue : LocationInfo {
+@kotlinx.js.JsPlainObject
+external interface TestEnqueue : LocationInfo {
     /**
      * The test name.
      */

@@ -7,7 +7,7 @@ import node.stream.Writable
 
 // return this object when stdio option is undefined or not specified
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface ChildProcessWithoutNullStreams : ChildProcess {
+external interface ChildProcessWithoutNullStreams : ChildProcess {
     @JsName("stdin")
     var requiredStdin: Writable
 

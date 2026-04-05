@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCompleteDetails {
+@kotlinx.js.JsPlainObject
+external interface TestCompleteDetails {
     /**
      * Whether the test passed or not.
      */

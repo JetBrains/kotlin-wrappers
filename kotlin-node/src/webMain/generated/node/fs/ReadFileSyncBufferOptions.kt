@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface ReadFileSyncBufferOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadFileSyncBufferOptions {
     var encoding: Nothing?
     var flag: String?
 }

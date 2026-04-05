@@ -2,7 +2,8 @@
 
 package node.workerThreads
 
-sealed external interface ResourceLimits {
+@kotlinx.js.JsPlainObject
+external interface ResourceLimits {
     /**
      * The maximum size of a heap space for recently created objects.
      */

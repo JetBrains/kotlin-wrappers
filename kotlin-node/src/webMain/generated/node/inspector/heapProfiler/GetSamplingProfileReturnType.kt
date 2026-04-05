@@ -2,7 +2,8 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface GetSamplingProfileReturnType {
+@kotlinx.js.JsPlainObject
+external interface GetSamplingProfileReturnType {
     /**
      * Return the sampling profile being collected.
      */

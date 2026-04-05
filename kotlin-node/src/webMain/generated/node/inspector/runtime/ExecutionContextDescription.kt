@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Description of an isolated world.
  */
-sealed external interface ExecutionContextDescription {
+@kotlinx.js.JsPlainObject
+external interface ExecutionContextDescription {
     /**
      * Unique id of the execution context. It can be used to specify in which execution context script evaluation should be performed.
      */

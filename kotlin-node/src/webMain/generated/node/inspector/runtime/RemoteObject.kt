@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Mirror object referencing original JavaScript object.
  */
-sealed external interface RemoteObject {
+@kotlinx.js.JsPlainObject
+external interface RemoteObject {
     /**
      * Object type.
      */

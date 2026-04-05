@@ -2,6 +2,7 @@
 
 package node.inspector.nodeTracing
 
-sealed external interface DataCollectedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface DataCollectedEventDataType {
     var value: js.array.ReadonlyArray<Any>
 }

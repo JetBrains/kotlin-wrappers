@@ -5,7 +5,8 @@ package node.inspector.profiler
 /**
  * Coverage data for a JavaScript script.
  */
-sealed external interface ScriptCoverage {
+@kotlinx.js.JsPlainObject
+external interface ScriptCoverage {
     /**
      * JavaScript script id.
      */

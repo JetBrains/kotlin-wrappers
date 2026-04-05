@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface LoadNetworkResourcePageResult {
+@kotlinx.js.JsPlainObject
+external interface LoadNetworkResourcePageResult {
     var success: Boolean
     var stream: node.inspector.io.StreamHandle?
 }

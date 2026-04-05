@@ -2,7 +2,7 @@
 
 package node.buffer
 
-sealed external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.buffer.ArrayBufferLike */> :
+external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.buffer.ArrayBufferLike */> :
     js.typedarrays.Uint8Array<TArrayBuffer> {
     constructor (str: String, encoding: BufferEncoding = definedExternally)
     constructor (size: Number)

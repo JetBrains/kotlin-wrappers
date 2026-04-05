@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverageSummaryFilesItemFunctionsItem {
+@kotlinx.js.JsPlainObject
+external interface TestCoverageSummaryFilesItemFunctionsItem {
     /**
      * The name of the function.
      */

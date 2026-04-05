@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetReturnValueParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetReturnValueParameterType {
     /**
      * New return value.
      */

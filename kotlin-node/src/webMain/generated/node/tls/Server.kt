@@ -102,10 +102,7 @@ open external class Server : node.net.Server {
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("tlsClientError")
     open val tlsClientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, TLSSocket>>

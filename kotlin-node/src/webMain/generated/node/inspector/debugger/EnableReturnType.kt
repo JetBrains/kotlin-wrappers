@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface EnableReturnType {
+@kotlinx.js.JsPlainObject
+external interface EnableReturnType {
     /**
      * Unique identifier of the debugger.
      * @experimental

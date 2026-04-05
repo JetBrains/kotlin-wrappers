@@ -2,6 +2,7 @@
 
 package node.crypto
 
-sealed external interface JwkKeyExportOptions {
+@kotlinx.js.JsPlainObject
+external interface JwkKeyExportOptions {
     var format: String // "jwk"
 }

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface GeneratePrimeOptions {
+@kotlinx.js.JsPlainObject
+external interface GeneratePrimeOptions {
     var add: LargeNumberLike?
     var rem: LargeNumberLike?
 

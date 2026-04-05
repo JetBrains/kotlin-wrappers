@@ -2,7 +2,8 @@
 
 package node.zlib
 
-sealed external interface ZstdOptions {
+@kotlinx.js.JsPlainObject
+external interface ZstdOptions {
     /**
      * @default constants.ZSTD_e_continue
      */

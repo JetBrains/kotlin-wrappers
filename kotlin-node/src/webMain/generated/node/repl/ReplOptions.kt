@@ -2,7 +2,8 @@
 
 package node.repl
 
-sealed external interface ReplOptions {
+@kotlinx.js.JsPlainObject
+external interface ReplOptions {
     /**
      * The input prompt to display.
      * @default "> "

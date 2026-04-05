@@ -11,7 +11,7 @@ import node.stream.Readable
  * @since v18.9.0, v16.19.0
  */
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface TestsStream : Readable {
+external interface TestsStream : Readable {
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun emit(
@@ -30,10 +30,7 @@ sealed external interface TestsStream : Readable {
 
     override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("test:coverage")
     val testCoverageEvent: node.events.EventInstance<js.array.Tuple1<node.test.eventData.TestCoverage>>

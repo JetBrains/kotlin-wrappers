@@ -2,6 +2,7 @@
 
 package node
 
-sealed external interface ReadableStreamPipeOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadableStreamPipeOptions {
     var end: Boolean?
 }

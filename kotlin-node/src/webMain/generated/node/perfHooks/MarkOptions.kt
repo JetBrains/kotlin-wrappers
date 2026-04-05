@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface MarkOptions {
+@kotlinx.js.JsPlainObject
+external interface MarkOptions {
     /**
      * Additional optional detail to include with the mark.
      */

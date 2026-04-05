@@ -2,7 +2,8 @@
 
 package node.net
 
-sealed external interface AddressInfo {
+@kotlinx.js.JsPlainObject
+external interface AddressInfo {
     var address: String
     var family: String
     var port: Double

@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverage {
+@kotlinx.js.JsPlainObject
+external interface TestCoverage {
     /**
      * An object containing the coverage report.
      */

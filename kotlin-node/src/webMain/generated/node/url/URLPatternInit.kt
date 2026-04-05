@@ -2,7 +2,8 @@
 
 package node.url
 
-sealed external interface URLPatternInit {
+@kotlinx.js.JsPlainObject
+external interface URLPatternInit {
     var protocol: String?
     var username: String?
     var password: String?

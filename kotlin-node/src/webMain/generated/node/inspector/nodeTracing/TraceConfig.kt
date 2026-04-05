@@ -2,7 +2,8 @@
 
 package node.inspector.nodeTracing
 
-sealed external interface TraceConfig {
+@kotlinx.js.JsPlainObject
+external interface TraceConfig {
     /**
      * Controls how the trace buffer stores data.
      */

@@ -333,10 +333,7 @@ external class Worker : EventEmitter {
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 

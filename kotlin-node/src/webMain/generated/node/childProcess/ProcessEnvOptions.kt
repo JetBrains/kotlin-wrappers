@@ -3,7 +3,7 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface ProcessEnvOptions {
+external interface ProcessEnvOptions {
     var uid: Double?
     var gid: Double?
     var cwd: Any? // string | URL | undefined

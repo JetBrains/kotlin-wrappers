@@ -2,6 +2,7 @@
 
 package node.url
 
-sealed external interface URLPatternOptions {
+@kotlinx.js.JsPlainObject
+external interface URLPatternOptions {
     var ignoreCase: Boolean?
 }

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface OneShotDigestOptionsWithBufferEncoding : OneShotDigestOptions {
+@kotlinx.js.JsPlainObject
+external interface OneShotDigestOptionsWithBufferEncoding : OneShotDigestOptions {
     @JsName("outputEncoding")
     var bufferOutputEncoding: String // "buffer"
 }

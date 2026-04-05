@@ -2,7 +2,7 @@
 
 package node.process
 
-sealed external interface ProcessPermission {
+external interface ProcessPermission {
     /**
      * Verifies that the process is able to access the given scope and reference.
      * If no reference is provided, a global scope is assumed, for instance, `process.permission.has('fs.read')`

@@ -2,7 +2,8 @@
 
 package node.inspector.nodeWorker
 
-sealed external interface SendMessageToWorkerParameterType {
+@kotlinx.js.JsPlainObject
+external interface SendMessageToWorkerParameterType {
     var message: String
 
     /**

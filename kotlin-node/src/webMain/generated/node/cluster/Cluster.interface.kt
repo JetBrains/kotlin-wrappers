@@ -5,7 +5,7 @@ package node.cluster
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface Cluster : EventEmitter {
+external interface Cluster : EventEmitter {
     fun disconnect(callback: () -> Unit = definedExternally)
 
     /**

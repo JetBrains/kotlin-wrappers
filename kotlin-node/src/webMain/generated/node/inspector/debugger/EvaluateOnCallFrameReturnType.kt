@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface EvaluateOnCallFrameReturnType {
+@kotlinx.js.JsPlainObject
+external interface EvaluateOnCallFrameReturnType {
     /**
      * Object wrapper for the evaluation result.
      */

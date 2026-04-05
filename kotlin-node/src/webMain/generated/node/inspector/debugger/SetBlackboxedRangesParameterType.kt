@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SetBlackboxedRangesParameterType {
+@kotlinx.js.JsPlainObject
+external interface SetBlackboxedRangesParameterType {
     /**
      * Id of the script.
      */

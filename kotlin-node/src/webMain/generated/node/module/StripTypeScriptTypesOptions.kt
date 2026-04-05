@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface StripTypeScriptTypesOptions {
+@kotlinx.js.JsPlainObject
+external interface StripTypeScriptTypesOptions {
     /**
      * Possible values are:
      * * `'strip'` Only strip type annotations without performing the transformation of TypeScript features.

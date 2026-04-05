@@ -2,7 +2,8 @@
 
 package node.inspector.network
 
-sealed external interface WebSocketClosedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface WebSocketClosedEventDataType {
     /**
      * Request identifier.
      */

@@ -5,7 +5,7 @@ package node.childProcess
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface ForkOptions :
+external interface ForkOptions :
     ProcessEnvOptions,
     MessagingOptions,
     Abortable {

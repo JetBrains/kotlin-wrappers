@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface TLSSocketRenegotiateOptions {
+@kotlinx.js.JsPlainObject
+external interface TLSSocketRenegotiateOptions {
     var rejectUnauthorized: Boolean?
     var requestCert: Boolean?
 }

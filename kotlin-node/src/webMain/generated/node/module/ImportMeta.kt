@@ -4,7 +4,7 @@ package node.module
 
 import web.url.URL
 
-sealed external interface ImportMeta {
+external interface ImportMeta {
     var url: String
 
     /**

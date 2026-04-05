@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface SourceMapPayload {
+@kotlinx.js.JsPlainObject
+external interface SourceMapPayload {
     var file: String
     var version: Double
     var sources: js.array.ReadonlyArray<String>

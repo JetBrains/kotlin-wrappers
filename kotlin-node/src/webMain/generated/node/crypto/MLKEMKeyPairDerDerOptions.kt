@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface MLKEMKeyPairDerDerOptions : MLKEMKeyPairOptions<KeyFormat.der, KeyFormat.der>

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface OneShotDigestOptions {
+@kotlinx.js.JsPlainObject
+external interface OneShotDigestOptions {
     /**
      * Encoding used to encode the returned digest.
      * @default 'hex'

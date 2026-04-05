@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface FSImplementation {
+@kotlinx.js.JsPlainObject
+external interface FSImplementation {
     var open: (Function<Any?> /* (...args: any[]) => any */)?
     var close: (Function<Any?> /* (...args: any[]) => any */)?
 }

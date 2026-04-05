@@ -2,7 +2,7 @@
 
 package node.test
 
-sealed external interface TestContextAssert {
+external interface TestContextAssert {
     /**
      * This function serializes `value` and writes it to the file specified by `path`.
      *

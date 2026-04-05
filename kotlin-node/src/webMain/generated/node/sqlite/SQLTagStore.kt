@@ -17,7 +17,7 @@ package node.sqlite
  * class execute synchronously.
  * @since v24.9.0
  */
-sealed external interface SQLTagStore {
+external interface SQLTagStore {
     /**
      * Executes the given SQL query and returns all resulting rows as an array of objects.
      * @since v24.9.0

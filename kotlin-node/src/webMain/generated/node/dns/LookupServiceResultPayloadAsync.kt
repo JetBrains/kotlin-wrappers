@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface LookupServiceResultPayload {
+@kotlinx.js.JsPlainObject
+external interface LookupServiceResultPayload {
     var hostname: String
     var service: String
 }

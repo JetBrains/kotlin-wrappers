@@ -9,6 +9,6 @@ package node.v8
  * The before callback may be called many times in the case where many continuations have been made from the same promise.
  * @since v17.1.0, v16.14.0
  */
-sealed external interface Before {
+external interface Before {
     operator fun invoke(promise: js.promise.Promise<Any?>)
 }

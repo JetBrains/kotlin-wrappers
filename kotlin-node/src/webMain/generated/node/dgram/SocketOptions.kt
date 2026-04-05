@@ -6,7 +6,7 @@ import node.net.BlockList
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface SocketOptions : Abortable {
+external interface SocketOptions : Abortable {
     var type: SocketType
     var reuseAddr: Boolean?
     var reusePort: Boolean?

@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface CommonConnectionOptions {
+@kotlinx.js.JsPlainObject
+external interface CommonConnectionOptions {
     /**
      * An optional TLS context object from tls.createSecureContext()
      */

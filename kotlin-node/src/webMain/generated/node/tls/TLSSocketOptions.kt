@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface TLSSocketOptions :
+@kotlinx.js.JsPlainObject
+external interface TLSSocketOptions :
     SecureContextOptions,
     CommonConnectionOptions {
     /**

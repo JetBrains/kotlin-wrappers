@@ -5,7 +5,8 @@ package node.inspector.debugger
 /**
  * Search match for resource.
  */
-sealed external interface SearchMatch {
+@kotlinx.js.JsPlainObject
+external interface SearchMatch {
     /**
      * Line number in resource content.
      */

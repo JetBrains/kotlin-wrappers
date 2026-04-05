@@ -2,6 +2,7 @@
 
 package node.tls
 
+@kotlinx.js.JsPlainObject
 external interface SecureContextOptions {
     /**
      * If set, this will be called when a client opens a connection using the ALPN extension.

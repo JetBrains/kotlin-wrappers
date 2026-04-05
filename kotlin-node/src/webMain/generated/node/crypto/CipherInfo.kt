@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface CipherInfo {
+@kotlinx.js.JsPlainObject
+external interface CipherInfo {
     /**
      * The name of the cipher.
      */

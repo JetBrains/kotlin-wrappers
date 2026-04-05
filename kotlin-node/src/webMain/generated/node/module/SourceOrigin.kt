@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface SourceOrigin {
+@kotlinx.js.JsPlainObject
+external interface SourceOrigin {
     /**
      * The name of the range in the source map, if one was provided
      */

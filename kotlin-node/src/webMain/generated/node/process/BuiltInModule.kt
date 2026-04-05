@@ -2,7 +2,8 @@
 
 package node.process
 
-sealed external interface BuiltInModule {
+@kotlinx.js.JsPlainObject
+external interface BuiltInModule {
     var assert: /* import("assert") */ Any
     var `node:assert`: /* import("node:assert") */ Any
     var `assert/strict`: /* import("assert/strict") */ Any

@@ -3,8 +3,7 @@
 package node.util
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface DebugLogger :
-    js.function.JsFunction<js.array.Tuple1<String>, Unit> /* DebugLoggerFunction */ {
+external interface DebugLogger : js.function.JsFunction<js.array.Tuple1<String>, Unit> /* DebugLoggerFunction */ {
     /**
      * The `util.debuglog().enabled` getter is used to create a test that can be used
      * in conditionals based on the existence of the `NODE_DEBUG` environment variable.

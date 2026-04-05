@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface RunningCodeInNewContextOptions :
+@kotlinx.js.JsPlainObject
+external interface RunningCodeInNewContextOptions :
     RunningScriptInNewContextOptions,
     ScriptOptions {
     /**

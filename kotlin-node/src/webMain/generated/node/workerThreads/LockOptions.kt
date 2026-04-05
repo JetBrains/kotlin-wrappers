@@ -2,7 +2,8 @@
 
 package node.workerThreads
 
-sealed external interface LockOptions {
+@kotlinx.js.JsPlainObject
+external interface LockOptions {
     var ifAvailable: Boolean?
     var mode: LockMode?
     var signal: web.abort.AbortSignal?

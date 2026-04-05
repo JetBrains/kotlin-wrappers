@@ -2,6 +2,7 @@
 
 package node.inspector.target
 
-sealed external interface TargetCreatedEventDataType {
+@kotlinx.js.JsPlainObject
+external interface TargetCreatedEventDataType {
     var targetInfo: TargetInfo
 }

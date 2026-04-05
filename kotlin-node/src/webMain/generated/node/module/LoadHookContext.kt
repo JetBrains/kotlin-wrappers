@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface LoadHookContext {
+@kotlinx.js.JsPlainObject
+external interface LoadHookContext {
     /**
      * Export conditions of the relevant `package.json`
      */

@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverageSummaryFilesItem {
+@kotlinx.js.JsPlainObject
+external interface TestCoverageSummaryFilesItem {
     /**
      * The absolute path of the file.
      */

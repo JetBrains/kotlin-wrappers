@@ -6,7 +6,8 @@ package node.test
  * Configuration options for hooks.
  * @since v18.8.0
  */
-sealed external interface HookOptions {
+@kotlinx.js.JsPlainObject
+external interface HookOptions {
     /**
      * Allows aborting an in-progress hook.
      */

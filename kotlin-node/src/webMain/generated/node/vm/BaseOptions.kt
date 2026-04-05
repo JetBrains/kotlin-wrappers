@@ -2,7 +2,8 @@
 
 package node.vm
 
-sealed external interface BaseOptions {
+@kotlinx.js.JsPlainObject
+external interface BaseOptions {
     /**
      * Specifies the filename used in stack traces produced by this script.
      * @default ''

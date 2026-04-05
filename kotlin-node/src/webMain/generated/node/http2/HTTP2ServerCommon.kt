@@ -2,7 +2,7 @@
 
 package node.http2
 
-sealed external interface HTTP2ServerCommon {
+external interface HTTP2ServerCommon {
     fun setTimeout(msec: Number = definedExternally, callback: () -> Unit = definedExternally) // this
 
     /**

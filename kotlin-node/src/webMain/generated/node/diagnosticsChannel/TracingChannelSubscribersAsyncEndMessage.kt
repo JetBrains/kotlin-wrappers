@@ -2,7 +2,7 @@
 
 package node.diagnosticsChannel
 
-sealed external interface TracingChannelSubscribersAsyncEndMessage<ContextType : Any> {
+external interface TracingChannelSubscribersAsyncEndMessage<ContextType : Any> {
     var error: Any?
     var result: Any?
 

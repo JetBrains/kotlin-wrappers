@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface ParseArgsConfig {
+@kotlinx.js.JsPlainObject
+external interface ParseArgsConfig {
     /**
      * Array of argument strings.
      */

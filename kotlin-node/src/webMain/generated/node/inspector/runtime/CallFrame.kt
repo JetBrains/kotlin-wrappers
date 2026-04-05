@@ -5,7 +5,8 @@ package node.inspector.runtime
 /**
  * Stack entry for runtime errors and assertions.
  */
-sealed external interface CallFrame {
+@kotlinx.js.JsPlainObject
+external interface CallFrame {
     /**
      * JavaScript function name.
      */

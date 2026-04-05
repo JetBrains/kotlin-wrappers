@@ -2,6 +2,7 @@
 
 package node.dns
 
-sealed external interface ResolveOptions {
+@kotlinx.js.JsPlainObject
+external interface ResolveOptions {
     var ttl: Boolean
 }

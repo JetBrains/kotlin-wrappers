@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface AggregateOptions<T : SQLInputValue /* default is SQLInputValue */> : FunctionOptions {
+@kotlinx.js.JsPlainObject
+external interface AggregateOptions<T : SQLInputValue /* default is SQLInputValue */> : FunctionOptions {
     /**
      * The identity value for the aggregation function. This value is used when the aggregation
      * function is initialized. When a `Function` is passed the identity will be its return value.

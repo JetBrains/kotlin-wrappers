@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface RSAPSSKeyPairPemPemOptions : RSAPSSKeyPairOptions<KeyFormat.pem, KeyFormat.pem>

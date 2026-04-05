@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface InspectOptions {
+@kotlinx.js.JsPlainObject
+external interface InspectOptions {
     /**
      * If `true`, object's non-enumerable symbols and properties are included in the formatted result.
      * `WeakMap` and `WeakSet` entries are also included as well as user defined prototype properties (excluding method properties).

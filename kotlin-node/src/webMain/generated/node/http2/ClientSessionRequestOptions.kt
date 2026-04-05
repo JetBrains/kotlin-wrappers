@@ -2,7 +2,8 @@
 
 package node.http2
 
-sealed external interface ClientSessionRequestOptions {
+@kotlinx.js.JsPlainObject
+external interface ClientSessionRequestOptions {
     var endStream: Boolean?
     var exclusive: Boolean?
     var parent: Double?

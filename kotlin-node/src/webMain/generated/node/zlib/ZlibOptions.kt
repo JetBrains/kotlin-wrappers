@@ -2,7 +2,8 @@
 
 package node.zlib
 
-sealed external interface ZlibOptions {
+@kotlinx.js.JsPlainObject
+external interface ZlibOptions {
     /**
      * @default constants.Z_NO_FLUSH
      */

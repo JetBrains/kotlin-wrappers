@@ -2,7 +2,7 @@
 
 package node.perfHooks
 
-sealed external interface Histogram {
+external interface Histogram {
     /**
      * The number of samples recorded by the histogram.
      * @since v17.4.0, v16.14.0

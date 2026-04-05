@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface ParseArgsOptionDescriptor {
+@kotlinx.js.JsPlainObject
+external interface ParseArgsOptionDescriptor {
     /**
      * Type of argument.
      */

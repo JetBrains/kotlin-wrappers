@@ -2,7 +2,8 @@
 
 package node.repl
 
-sealed external interface REPLServerSetupHistoryOptions {
+@kotlinx.js.JsPlainObject
+external interface REPLServerSetupHistoryOptions {
     var filePath: String?
     var size: Double?
     var removeHistoryDuplicates: Boolean?

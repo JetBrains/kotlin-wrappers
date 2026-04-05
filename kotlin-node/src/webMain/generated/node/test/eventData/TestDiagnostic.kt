@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestDiagnostic : LocationInfo {
+@kotlinx.js.JsPlainObject
+external interface TestDiagnostic : LocationInfo {
     /**
      * The diagnostic message.
      */

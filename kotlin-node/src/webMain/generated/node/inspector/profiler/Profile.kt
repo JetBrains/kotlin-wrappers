@@ -5,7 +5,8 @@ package node.inspector.profiler
 /**
  * Profile.
  */
-sealed external interface Profile {
+@kotlinx.js.JsPlainObject
+external interface Profile {
     /**
      * The list of profile nodes. First item is the root node.
      */

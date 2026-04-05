@@ -10,7 +10,8 @@ package node.v8
  * `settled()` callbacks must not be async functions as they create more promises which would produce an infinite loop.
  * @since v17.1.0, v16.14.0
  */
-sealed external interface HookCallbacks {
+@kotlinx.js.JsPlainObject
+external interface HookCallbacks {
     var init: Init?
     var before: Before?
     var after: After?

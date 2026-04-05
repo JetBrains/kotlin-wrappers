@@ -2,7 +2,8 @@
 
 package node.dns
 
-sealed external interface AnyTxtRecord {
+@kotlinx.js.JsPlainObject
+external interface AnyTxtRecord {
     var type: String // "TXT"
     var entries: js.array.ReadonlyArray<String>
 }

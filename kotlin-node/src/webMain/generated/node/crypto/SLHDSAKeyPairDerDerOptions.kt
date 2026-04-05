@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface SLHDSAKeyPairDerDerOptions : SLHDSAKeyPairOptions<KeyFormat.der, KeyFormat.der>

@@ -2,6 +2,6 @@
 
 package node.http2
 
-sealed external interface IncomingHttpStatusHeader {
+external interface IncomingHttpStatusHeader {
     var `:status`: Double?
 }

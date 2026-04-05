@@ -2,7 +2,8 @@
 
 package node.https
 
-sealed external interface RequestOptions :
+@kotlinx.js.JsPlainObject
+external interface RequestOptions :
     node.http.RequestOptions,
     node.tls.SecureContextOptions {
     var checkServerIdentity: ((hostname: String, cert: node.tls.DetailedPeerCertificate) -> js.errors.JsError?)?

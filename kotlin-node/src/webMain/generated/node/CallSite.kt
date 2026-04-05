@@ -2,7 +2,7 @@
 
 package node
 
-sealed external interface CallSite {
+external interface CallSite {
     fun getColumnNumber(): Double?
 
     fun getEnclosingColumnNumber(): Double?

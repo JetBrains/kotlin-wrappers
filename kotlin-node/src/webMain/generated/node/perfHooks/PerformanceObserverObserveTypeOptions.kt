@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface PerformanceObserverObserveTypeOptions {
+@kotlinx.js.JsPlainObject
+external interface PerformanceObserverObserveTypeOptions {
     var type: EntryType
     var buffered: Boolean?
 }

@@ -2,6 +2,7 @@
 
 package node.net
 
-sealed external interface IpcSocketConnectOpts {
+@kotlinx.js.JsPlainObject
+external interface IpcSocketConnectOpts {
     var path: String
 }

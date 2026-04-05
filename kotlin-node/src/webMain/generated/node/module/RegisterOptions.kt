@@ -2,7 +2,8 @@
 
 package node.module
 
-sealed external interface RegisterOptions<Data> {
+@kotlinx.js.JsPlainObject
+external interface RegisterOptions<Data> {
     /**
      * If you want to resolve `specifier` relative to a
      * base URL, such as `import.meta.url`, you can pass that URL here. This

@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface MeasureOptions {
+@kotlinx.js.JsPlainObject
+external interface MeasureOptions {
     /**
      * Additional optional detail to include with the mark.
      */

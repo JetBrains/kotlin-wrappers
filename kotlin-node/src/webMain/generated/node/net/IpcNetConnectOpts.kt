@@ -2,7 +2,8 @@
 
 package node.net
 
-sealed external interface IpcNetConnectOpts :
+@kotlinx.js.JsPlainObject
+external interface IpcNetConnectOpts :
     IpcSocketConnectOpts,
     SocketConstructorOpts {
     var timeout: Double?

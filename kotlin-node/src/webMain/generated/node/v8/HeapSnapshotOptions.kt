@@ -2,7 +2,8 @@
 
 package node.v8
 
-sealed external interface HeapSnapshotOptions {
+@kotlinx.js.JsPlainObject
+external interface HeapSnapshotOptions {
     /**
      * If true, expose internals in the heap snapshot.
      * @default false

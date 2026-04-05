@@ -2,7 +2,8 @@
 
 package node.test
 
-sealed external interface MockMethodOptions : MockFunctionOptions {
+@kotlinx.js.JsPlainObject
+external interface MockMethodOptions : MockFunctionOptions {
     /**
      * If `true`, `object[methodName]` is treated as a getter.
      * This option cannot be used with the `setter` option.

@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverageSummaryTotals {
+@kotlinx.js.JsPlainObject
+external interface TestCoverageSummaryTotals {
     /**
      * The total number of lines.
      */

@@ -2,7 +2,7 @@
 
 package node.util
 
-sealed external interface ParseArgsOptionsConfig {
+external interface ParseArgsOptionsConfig {
     operator fun get(key: String): ParseArgsOptionDescriptor?
 
     operator fun set(

@@ -2,7 +2,8 @@
 
 package node.sqlite
 
-sealed external interface BackupProgressInfo {
+@kotlinx.js.JsPlainObject
+external interface BackupProgressInfo {
     var totalPages: Double
     var remainingPages: Double
 }

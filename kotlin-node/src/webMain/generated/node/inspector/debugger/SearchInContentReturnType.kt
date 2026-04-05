@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface SearchInContentReturnType {
+@kotlinx.js.JsPlainObject
+external interface SearchInContentReturnType {
     /**
      * List of search matches.
      */

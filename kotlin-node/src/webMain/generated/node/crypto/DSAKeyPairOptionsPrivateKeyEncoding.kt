@@ -2,7 +2,7 @@
 
 package node.crypto
 
-sealed external interface DSAKeyPairOptionsPrivateKeyEncoding<PrivF : KeyFormat> :
-    BasePrivateKeyEncodingOptions<PrivF> {
+@kotlinx.js.JsPlainObject
+external interface DSAKeyPairOptionsPrivateKeyEncoding<PrivF : KeyFormat> : BasePrivateKeyEncodingOptions<PrivF> {
     var type: String // "pkcs8"
 }

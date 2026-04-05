@@ -2,6 +2,7 @@
 
 package node.http2
 
-sealed external interface AlternativeServiceOptions {
+@kotlinx.js.JsPlainObject
+external interface AlternativeServiceOptions {
     var origin: Any // number | string | url.URL
 }

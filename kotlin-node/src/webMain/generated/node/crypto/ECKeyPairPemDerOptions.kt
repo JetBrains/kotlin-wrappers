@@ -2,4 +2,5 @@
 
 package node.crypto
 
+@kotlinx.js.JsPlainObject
 external interface ECKeyPairPemDerOptions : ECKeyPairOptions<KeyFormat.pem, KeyFormat.der>

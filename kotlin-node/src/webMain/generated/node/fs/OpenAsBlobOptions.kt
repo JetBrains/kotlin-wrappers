@@ -2,7 +2,8 @@
 
 package node.fs
 
-sealed external interface OpenAsBlobOptions {
+@kotlinx.js.JsPlainObject
+external interface OpenAsBlobOptions {
     /**
      * An optional mime type for the blob.
      *

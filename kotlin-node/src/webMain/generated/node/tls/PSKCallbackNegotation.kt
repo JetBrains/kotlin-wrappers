@@ -2,7 +2,8 @@
 
 package node.tls
 
-sealed external interface PSKCallbackNegotation {
+@kotlinx.js.JsPlainObject
+external interface PSKCallbackNegotation {
     var psk: js.buffer.ArrayBufferView<*>
     var identity: String
 }

@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface EvaluateOnCallFrameParameterType {
+@kotlinx.js.JsPlainObject
+external interface EvaluateOnCallFrameParameterType {
     /**
      * Call frame identifier to evaluate on.
      */

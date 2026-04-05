@@ -2,7 +2,8 @@
 
 package node.assert
 
-sealed external interface CallTrackerReportInformation {
+@kotlinx.js.JsPlainObject
+external interface CallTrackerReportInformation {
     var message: String
 
     /** The actual number of times the function was called. */

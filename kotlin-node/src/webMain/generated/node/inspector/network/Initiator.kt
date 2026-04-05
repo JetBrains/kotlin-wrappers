@@ -5,7 +5,8 @@ package node.inspector.network
 /**
  * Information about the request initiator.
  */
-sealed external interface Initiator {
+@kotlinx.js.JsPlainObject
+external interface Initiator {
     /**
      * Type of this initiator.
      */

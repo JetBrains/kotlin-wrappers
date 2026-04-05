@@ -2,6 +2,7 @@
 
 package node.readline
 
-sealed external interface ReadlineOptions {
+@kotlinx.js.JsPlainObject
+external interface ReadlineOptions {
     var autoCommit: Boolean?
 }

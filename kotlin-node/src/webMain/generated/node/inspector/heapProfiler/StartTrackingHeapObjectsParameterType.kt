@@ -2,6 +2,7 @@
 
 package node.inspector.heapProfiler
 
-sealed external interface StartTrackingHeapObjectsParameterType {
+@kotlinx.js.JsPlainObject
+external interface StartTrackingHeapObjectsParameterType {
     var trackAllocations: Boolean?
 }

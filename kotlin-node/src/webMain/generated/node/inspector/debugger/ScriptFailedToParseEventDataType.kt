@@ -2,7 +2,8 @@
 
 package node.inspector.debugger
 
-sealed external interface ScriptFailedToParseEventDataType {
+@kotlinx.js.JsPlainObject
+external interface ScriptFailedToParseEventDataType {
     /**
      * Identifier of the script parsed.
      */

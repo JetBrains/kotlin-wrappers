@@ -2,7 +2,8 @@
 
 package node.inspector.io
 
-sealed external interface ReadReturnType {
+@kotlinx.js.JsPlainObject
+external interface ReadReturnType {
     /**
      * Data that were read.
      */

@@ -2,7 +2,8 @@
 
 package node.crypto
 
-sealed external interface SecureHeapUsage {
+@kotlinx.js.JsPlainObject
+external interface SecureHeapUsage {
     /**
      * The total allocated secure heap size as specified using the `--secure-heap=n` command-line flag.
      */

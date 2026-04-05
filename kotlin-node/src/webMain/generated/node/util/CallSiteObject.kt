@@ -2,7 +2,8 @@
 
 package node.util
 
-sealed external interface CallSiteObject {
+@kotlinx.js.JsPlainObject
+external interface CallSiteObject {
     /**
      * Returns the name of the function associated with this call site.
      */

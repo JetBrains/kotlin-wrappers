@@ -2,6 +2,7 @@
 
 package node.asyncHooks
 
+@kotlinx.js.JsPlainObject
 external interface AsyncResourceOptions {
     /**
      * The ID of the execution context that created this async event.

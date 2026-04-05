@@ -5,7 +5,7 @@ package node.fs
 import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
-sealed external interface WriteFileAsyncOptions :
+external interface WriteFileAsyncOptions :
     ObjectEncodingOptions,
     Abortable {
     var mode: Mode?

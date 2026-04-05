@@ -2,6 +2,7 @@
 
 package node.fs
 
-sealed external interface StatSyncOptions : StatOptions {
+@kotlinx.js.JsPlainObject
+external interface StatSyncOptions : StatOptions {
     var throwIfNoEntry: Boolean?
 }

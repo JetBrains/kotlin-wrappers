@@ -2,7 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface EventLoopMonitorOptions {
+@kotlinx.js.JsPlainObject
+external interface EventLoopMonitorOptions {
     /**
      * The sampling rate in milliseconds.
      * Must be greater than zero.

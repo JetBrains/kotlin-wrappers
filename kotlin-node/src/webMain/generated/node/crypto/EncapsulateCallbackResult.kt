@@ -4,7 +4,8 @@ package node.crypto
 
 import node.buffer.NonSharedBuffer
 
-sealed external interface EncapsulateCallbackResult {
+@kotlinx.js.JsPlainObject
+external interface EncapsulateCallbackResult {
     var sharedKey: NonSharedBuffer
     var ciphertext: NonSharedBuffer
 }

@@ -2,7 +2,8 @@
 
 package node.http2
 
-sealed external interface SessionState {
+@kotlinx.js.JsPlainObject
+external interface SessionState {
     var effectiveLocalWindowSize: Double?
     var effectiveRecvDataLength: Double?
     var nextStreamID: Double?

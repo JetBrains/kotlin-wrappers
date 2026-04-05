@@ -2,4 +2,5 @@
 
 package node.vm
 
-sealed external interface ModuleEvaluateOptions : RunningScriptOptions
+@kotlinx.js.JsPlainObject
+external interface ModuleEvaluateOptions : RunningScriptOptions

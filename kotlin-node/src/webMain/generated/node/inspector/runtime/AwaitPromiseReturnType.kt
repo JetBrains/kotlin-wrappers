@@ -2,7 +2,8 @@
 
 package node.inspector.runtime
 
-sealed external interface AwaitPromiseReturnType {
+@kotlinx.js.JsPlainObject
+external interface AwaitPromiseReturnType {
     /**
      * Promise result. Will contain rejected value if promise was rejected.
      */

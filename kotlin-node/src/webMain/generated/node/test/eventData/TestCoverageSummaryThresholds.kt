@@ -2,7 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestCoverageSummaryThresholds {
+@kotlinx.js.JsPlainObject
+external interface TestCoverageSummaryThresholds {
     /**
      * The function coverage threshold.
      */

@@ -2,7 +2,8 @@
 
 package node.https
 
-sealed external interface AgentOptions :
+@kotlinx.js.JsPlainObject
+external interface AgentOptions :
     node.http.AgentOptions,
     node.tls.ConnectionOptions {
     var maxCachedSessions: Double?

@@ -2,7 +2,8 @@
 
 package node.stream
 
-sealed external interface ArrayOptions {
+@kotlinx.js.JsPlainObject
+external interface ArrayOptions {
     /**
      * The maximum concurrent invocations of `fn` to call on the stream at once.
      * @default 1

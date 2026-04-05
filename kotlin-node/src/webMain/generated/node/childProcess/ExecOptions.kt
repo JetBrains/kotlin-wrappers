@@ -3,7 +3,7 @@
 package node.childProcess
 
 @kotlinx.js.JsPlainObject
-sealed external interface ExecOptions : CommonOptions {
+external interface ExecOptions : CommonOptions {
     var shell: String?
     var signal: web.abort.AbortSignal?
     var maxBuffer: Double?
