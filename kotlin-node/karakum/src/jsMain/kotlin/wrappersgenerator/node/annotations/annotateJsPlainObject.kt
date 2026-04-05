@@ -11,6 +11,12 @@ private val jsoInterfaces = setOf(
     "ClientRequestArgs",
     "RequestOptions",
 
+    // net
+    "OnReadOpts",
+
+    // util
+    "InspectOptionsStylized",
+
     // vm
     "CompileFunctionOptions",
     "ModuleEvaluateOptions",

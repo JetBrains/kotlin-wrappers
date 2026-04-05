@@ -2,9 +2,7 @@
 
 package node.util
 
+@kotlinx.js.JsPlainObject
 external interface InspectOptionsStylized : InspectOptions {
-    fun stylize(
-        text: String,
-        styleType: Style,
-    ): String
+    var stylize: (text: String, styleType: Style) -> String
 }

@@ -64,6 +64,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertIncompatibleParameterName,
             convertInspectorQualifiedName,
             convertIterableIterator,
+            convertJsPlainObjectMethods,
             convertKeyUnionReferences,
             convertKeyUnions,
             convertMock,
@@ -121,8 +122,6 @@ suspend fun main(args: ReadonlyArray<String>) {
         annotations = listOf(
             createJsPlainObjectAnnotation(),
             ::annotateJsPlainObject,
-            // TODO: OnReadOpts
-            // TODO: InspectOptionsStylized
 
             ::annotateCompileFunctionResult,
             ::annotateConflictingEntityNames,
