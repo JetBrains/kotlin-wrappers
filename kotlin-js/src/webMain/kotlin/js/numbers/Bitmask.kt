@@ -1,7 +1,7 @@
 package js.numbers
 
-import js.math.unsafeBitwiseAnd
-import js.math.unsafeBitwiseOr
+import js.numbers.internal.unsafeBitwiseAnd
+import js.numbers.internal.unsafeBitwiseOr
 import js.reflect.JsExternalInheritorsOnly
 
 @JsExternalInheritorsOnly

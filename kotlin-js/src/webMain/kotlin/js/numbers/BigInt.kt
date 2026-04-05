@@ -7,7 +7,7 @@ package js.numbers
 import js.core.JsPrimitive
 import js.function.JsFunction
 import js.function.invoke
-import js.math.*
+import js.numbers.internal.*
 
 @PublishedApi
 internal val POW = JsFunction<BigInt, BigInt, BigInt>(
