@@ -42,6 +42,19 @@ object EventDataRegistry {
                     else -> data
                 }
             }
+            .map { data ->
+                val target = data.targets.firstOrNull { it.target == "HTMLElement" }
+                    ?: return@map data
+
+                val allTargets = sequenceOf("HTMLElement", "SVGElement", "MathMLElement")
+                    .map { target.copy(target = it) }
+                    .toSet()
+
+                if (!data.targets.containsAll(allTargets))
+                    return@map data
+
+                data.copy(targets = data.targets - allTargets + target.copy(target = "Element"))
+            }
     }
 
     fun isDomNodeTarget(
