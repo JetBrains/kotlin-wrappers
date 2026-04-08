@@ -16,12 +16,6 @@ private data class EventData(
 private val ADDITIONAL_EVENTS = listOf(
     // TEMP
     EventData(
-        name = "uncapturederror",
-        type = "GPUUncapturedErrorEvent",
-    ),
-
-    // TEMP
-    EventData(
         name = "success",
         type = "IDBVersionChangeEvent",
     ),
