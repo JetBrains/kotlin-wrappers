@@ -95,11 +95,10 @@ private fun getDocTarget(
 private val TARGET_MAP = mapOf(
     setOf("Element", "HTMLElement") to "Element",
     setOf("Element", "HTMLMediaElement") to "Element",
-    setOf("HTMLElement", "MathMLElement", "SVGElement") to "Element",
+    setOf("Element", "Text") to "Node",
     setOf("HTMLDialogElement", "HTMLInputElement") to "HTMLElement",
     setOf("HTMLDialogElement", "Node") to "Node",
     setOf("HTMLInputElement", "HTMLSelectElement") to "HTMLElement",
-    setOf("HTMLElement", "MathMLElement", "SVGElement", "Text") to "Node",
     setOf("Element", "HTMLElement", "HTMLMediaElement", "HTMLSourceElement", "HTMLTrackElement") to "Element",
     setOf("HTMLButtonElement", "HTMLInputElement", "HTMLSelectElement", "HTMLTextAreaElement") to "HTMLElement",
     setOf("HTMLPermissionElement", "HTMLGeolocationElement") to "HTMLElement",

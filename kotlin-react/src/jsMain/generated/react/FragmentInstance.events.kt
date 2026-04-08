@@ -39,28 +39,28 @@ inline val FragmentInstance.abortEvent: EventInstance<Event, Element, Element>
     get() = EventInstance(this, "abort")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationcancel_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animationcancel_event)
  */
 @ReactCanary
 inline val FragmentInstance.animationCancelEvent: EventInstance<AnimationEvent, Element, Node>
     get() = EventInstance(this, "animationcancel")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationend_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animationend_event)
  */
 @ReactCanary
 inline val FragmentInstance.animationEndEvent: EventInstance<AnimationEvent, Element, Node>
     get() = EventInstance(this, "animationend")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationiteration_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animationiteration_event)
  */
 @ReactCanary
 inline val FragmentInstance.animationIterationEvent: EventInstance<AnimationEvent, Element, Node>
     get() = EventInstance(this, "animationiteration")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationstart_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animationstart_event)
  */
 @ReactCanary
 inline val FragmentInstance.animationStartEvent: EventInstance<AnimationEvent, Element, Node>
@@ -95,7 +95,7 @@ inline val FragmentInstance.beforeToggleEvent: EventInstance<ToggleEvent, HTMLEl
     get() = EventInstance(this, "beforetoggle")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforexrselect_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforexrselect_event)
  */
 @ReactCanary
 inline val FragmentInstance.beforeXrSelectEvent: EventInstance<XRSessionEvent, Element, Node>
@@ -207,7 +207,7 @@ inline val FragmentInstance.contextRestoredEvent: EventInstance<Event, HTMLCanva
     get() = EventInstance(this, "contextrestored")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/copy_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/copy_event)
  */
 @ReactCanary
 inline val FragmentInstance.copyEvent: EventInstance<ClipboardEvent, Element, Node>
@@ -221,7 +221,7 @@ inline val FragmentInstance.cueChangeEvent: EventInstance<Event, HTMLTrackElemen
     get() = EventInstance(this, "cuechange")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/cut_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/cut_event)
  */
 @ReactCanary
 inline val FragmentInstance.cutEvent: EventInstance<ClipboardEvent, Element, Node>
@@ -235,49 +235,49 @@ inline val FragmentInstance.dblClickEvent: EventInstance<MouseEvent, Element, No
     get() = EventInstance(this, "dblclick")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/drag_event)
  */
 @ReactCanary
 inline val FragmentInstance.dragEvent: EventInstance<DragEvent, Node, Node>
     get() = EventInstance(this, "drag")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dragend_event)
  */
 @ReactCanary
 inline val FragmentInstance.dragEndEvent: EventInstance<DragEvent, Node, Node>
     get() = EventInstance(this, "dragend")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dragenter_event)
  */
 @ReactCanary
 inline val FragmentInstance.dragEnterEvent: EventInstance<DragEvent, Element, Node>
     get() = EventInstance(this, "dragenter")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dragleave_event)
  */
 @ReactCanary
 inline val FragmentInstance.dragLeaveEvent: EventInstance<DragEvent, Element, Node>
     get() = EventInstance(this, "dragleave")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dragover_event)
  */
 @ReactCanary
 inline val FragmentInstance.dragOverEvent: EventInstance<DragEvent, Element, Node>
     get() = EventInstance(this, "dragover")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/dragstart_event)
  */
 @ReactCanary
 inline val FragmentInstance.dragStartEvent: EventInstance<DragEvent, Node, Node>
     get() = EventInstance(this, "dragstart")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/drop_event)
  */
 @ReactCanary
 inline val FragmentInstance.dropEvent: EventInstance<DragEvent, Element, Node>
@@ -326,7 +326,7 @@ inline val FragmentInstance.errorEvent: EventInstance<Event, Element, Element>
     get() = EventInstance(this, "error")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/fencedtreeclick_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/fencedtreeclick_event)
  */
 @ReactCanary
 inline val FragmentInstance.fencedtreeclickEvent: EventInstance<Event, Element, Node>
@@ -375,7 +375,7 @@ inline val FragmentInstance.fullscreenErrorEvent: EventInstance<Event, Element, 
     get() = EventInstance(this, "fullscreenerror")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/gotpointercapture_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/gotpointercapture_event)
  */
 @ReactCanary
 inline val FragmentInstance.gotPointerCaptureEvent: EventInstance<PointerEvent, Element, Node>
@@ -459,7 +459,7 @@ inline val FragmentInstance.locationEvent: EventInstance<Event, HTMLGeolocationE
     get() = EventInstance(this, "location")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lostpointercapture_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/lostpointercapture_event)
  */
 @ReactCanary
 inline val FragmentInstance.lostPointerCaptureEvent: EventInstance<PointerEvent, Element, Node>
@@ -515,7 +515,7 @@ inline val FragmentInstance.mouseUpEvent: EventInstance<MouseEvent, Element, Nod
     get() = EventInstance(this, "mouseup")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/paste_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/paste_event)
  */
 @ReactCanary
 inline val FragmentInstance.pasteEvent: EventInstance<ClipboardEvent, Element, Node>
@@ -543,63 +543,63 @@ inline val FragmentInstance.playingEvent: EventInstance<Event, HTMLMediaElement,
     get() = EventInstance(this, "playing")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointercancel_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointercancel_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerCancelEvent: EventInstance<PointerEvent, Node, Node>
     get() = EventInstance(this, "pointercancel")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerdown_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerdown_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerDownEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "pointerdown")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerenter_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerenter_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerEnterEvent: EventInstance<PointerEvent, Element, Element>
     get() = EventInstance(this, "pointerenter")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerleave_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerleave_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerLeaveEvent: EventInstance<PointerEvent, Element, Element>
     get() = EventInstance(this, "pointerleave")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointermove_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointermove_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerMoveEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "pointermove")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerout_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerout_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerOutEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "pointerout")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerover_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerover_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerOverEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "pointerover")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerrawupdate_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerRawUpdateEvent: EventInstance<PointerEvent, Element, Node>
     get() = EventInstance(this, "pointerrawupdate")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerup_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
  */
 @ReactCanary
 inline val FragmentInstance.pointerUpEvent: EventInstance<PointerEvent, Element, Node>
@@ -662,7 +662,7 @@ inline val FragmentInstance.scrollEndEvent: EventInstance<Event, Element, Elemen
     get() = EventInstance(this, "scrollend")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/securitypolicyviolation_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/securitypolicyviolation_event)
  */
 @ReactCanary
 inline val FragmentInstance.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, Element, Node>
@@ -690,14 +690,14 @@ inline val FragmentInstance.selectEvent: EventInstance<Event, Element, Node>
     get() = EventInstance(this, "select")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/selectionchange_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/selectionchange_event)
  */
 @ReactCanary
 inline val FragmentInstance.selectionChangeEvent: EventInstance<Event, Element, Element>
     get() = EventInstance(this, "selectionchange")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/selectstart_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/selectstart_event)
  */
 @ReactCanary
 inline val FragmentInstance.selectStartEvent: EventInstance<Event, Element, Node>
@@ -774,28 +774,28 @@ inline val FragmentInstance.touchStartEvent: EventInstance<TouchEvent, Element, 
     get() = EventInstance(this, "touchstart")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/transitioncancel_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/transitioncancel_event)
  */
 @ReactCanary
 inline val FragmentInstance.transitionCancelEvent: EventInstance<TransitionEvent, Element, Node>
     get() = EventInstance(this, "transitioncancel")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/transitionend_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/transitionend_event)
  */
 @ReactCanary
 inline val FragmentInstance.transitionEndEvent: EventInstance<TransitionEvent, Element, Node>
     get() = EventInstance(this, "transitionend")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/transitionrun_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/transitionrun_event)
  */
 @ReactCanary
 inline val FragmentInstance.transitionRunEvent: EventInstance<TransitionEvent, Element, Node>
     get() = EventInstance(this, "transitionrun")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/transitionstart_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/transitionstart_event)
  */
 @ReactCanary
 inline val FragmentInstance.transitionStartEvent: EventInstance<TransitionEvent, Element, Node>
