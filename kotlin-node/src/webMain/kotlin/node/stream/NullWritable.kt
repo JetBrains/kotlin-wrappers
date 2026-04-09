@@ -8,7 +8,7 @@ import node.buffer.BufferEncoding
  * [Original](https://github.com/dex4er/js-null-writable)
  */
 class NullWritable :
-    Writable {
+    Writable() {
     override fun _write(
         chunk: Any?,
         encoding: BufferEncoding,
