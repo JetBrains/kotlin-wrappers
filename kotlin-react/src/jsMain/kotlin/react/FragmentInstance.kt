@@ -21,8 +21,8 @@ external interface FragmentInstance :
     // Focus management methods
 
     fun blur()
-    fun focus(focusOptions: FocusOptions = definedExternally)
-    fun focusLast(focusOptions: FocusOptions = definedExternally)
+    fun focus(options: FocusOptions = definedExternally)
+    fun focusLast(options: FocusOptions = definedExternally)
 
     // Observer methods
 
@@ -36,7 +36,7 @@ external interface FragmentInstance :
 
     fun compareDocumentPosition(otherNode: Node /* ? */): NodePosition
     fun getClientRects(): ReadonlyArray<DOMRect>
-    fun getRootNode(getRootNodeOptions: GetRootNodeOptions = definedExternally): EventTargetLike /* Document | ShadowRoot | FragmentInstance */
+    fun getRootNode(options: GetRootNodeOptions = definedExternally): EventTargetLike /* Document | ShadowRoot | FragmentInstance */
 
     // Scroll methods
 
