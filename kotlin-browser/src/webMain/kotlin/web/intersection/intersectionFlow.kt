@@ -5,12 +5,11 @@ import kotlinx.coroutines.flow.Flow
 import web.coroutines.internal.observerFlow
 import web.dom.Element
 
-fun intersectionFlow(
-    element: Element,
+fun Element.intersectionFlow(
     options: IntersectionObserverInit = unsafeJso(),
 ): Flow<IntersectionObserverEntry> =
     observerFlow { callback ->
         val observer = IntersectionObserver(callback, options)
-        observer.observe(element)
+        observer.observe(this)
         observer::disconnect
     }

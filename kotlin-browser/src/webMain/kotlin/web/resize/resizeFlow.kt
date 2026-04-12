@@ -5,12 +5,11 @@ import kotlinx.coroutines.flow.Flow
 import web.coroutines.internal.observerFlow
 import web.dom.Element
 
-fun resizeFlow(
-    element: Element,
+fun Element.resizeFlow(
     options: ResizeObserverOptions = unsafeJso(),
 ): Flow<ResizeObserverEntry> =
     observerFlow { callback ->
         val observer = ResizeObserver(callback)
-        observer.observe(element, options)
+        observer.observe(this, options)
         observer::disconnect
     }

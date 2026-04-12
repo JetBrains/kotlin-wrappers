@@ -5,12 +5,11 @@ import kotlinx.coroutines.flow.Flow
 import web.coroutines.internal.observerFlow
 import web.dom.Element
 
-fun mutationFlow(
-    element: Element,
+fun Element.mutationFlow(
     options: MutationObserverInit = unsafeJso(),
 ): Flow<MutationRecord> =
     observerFlow { callback ->
         val observer = MutationObserver(callback)
-        observer.observe(element, options)
+        observer.observe(this, options)
         observer::disconnect
     }
