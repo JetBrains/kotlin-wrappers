@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Endpoints {
     /**
      * this endpoint's "endpoint number" which is a value from 1 to 15.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ExecutionScript {
     /**
      * A JavaScript function to execute. This function will be serialized which means

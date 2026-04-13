@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface OpenDialogReturnValue {
     /**
      * whether or not the dialog was canceled.

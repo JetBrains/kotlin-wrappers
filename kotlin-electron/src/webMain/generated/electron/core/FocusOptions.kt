@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface FocusOptions {
     /**
      * Make the receiver the active app even if another app is currently active.

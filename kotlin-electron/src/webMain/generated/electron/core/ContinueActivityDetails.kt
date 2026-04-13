@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ContinueActivityDetails {
     /**
      * A string identifying the URL of the webpage accessed by the activity on another

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface TextureInfo {
     /**
      * The widget type of the texture. Can be `popup` or `frame`.

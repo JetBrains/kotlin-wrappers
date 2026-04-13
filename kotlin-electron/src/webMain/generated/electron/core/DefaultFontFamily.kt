@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface DefaultFontFamily {
     /**
      * Defaults to `Times New Roman`.

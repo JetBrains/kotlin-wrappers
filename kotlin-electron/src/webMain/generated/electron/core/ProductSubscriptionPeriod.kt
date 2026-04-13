@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ProductSubscriptionPeriod {
 // Docs: https://electronjs.org/docs/api/structures/product-subscription-period
     /**

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface FilesystemPermissionRequest : PermissionRequest {
 // Docs: https://electronjs.org/docs/api/structures/filesystem-permission-request
     /**

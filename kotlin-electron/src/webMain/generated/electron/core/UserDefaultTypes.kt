@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface UserDefaultTypes {
     // Docs: https://electronjs.org/docs/api/structures/user-default-types
     var array: js.array.ReadonlyArray<Any?>

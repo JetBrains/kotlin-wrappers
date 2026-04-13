@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface FindInPageOptions {
     /**
      * Whether to search forward or backward, defaults to `true`.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CreateFromBitmapOptions {
     var width: Double
     var height: Double

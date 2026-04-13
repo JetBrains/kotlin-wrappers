@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface OpenDevToolsOptions {
     /**
      * Opens the DevTools with specified dock state, can be `left`, `right`, `bottom`,

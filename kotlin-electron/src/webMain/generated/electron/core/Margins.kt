@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Margins {
     /**
      * Can be `default`, `none`, `printableArea`, or `custom`. If `custom` is chosen,

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ForkOptions {
     /**
      * Environment key-value pairs. Default is `process.env`.

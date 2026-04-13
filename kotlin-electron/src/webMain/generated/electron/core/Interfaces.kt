@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Interfaces {
     /**
      * the interface number of this interface.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface GPUFeatureStatus {
 // Docs: https://electronjs.org/docs/api/structures/gpu-feature-status
     /**

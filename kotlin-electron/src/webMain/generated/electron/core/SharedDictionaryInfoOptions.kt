@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SharedDictionaryInfoOptions {
     /**
      * The origin of the frame where the request originates. It’s specific to the

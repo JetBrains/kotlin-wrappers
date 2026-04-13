@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Metadata {
     /**
      * Updated area of frame, can be considered as the `dirty` area.

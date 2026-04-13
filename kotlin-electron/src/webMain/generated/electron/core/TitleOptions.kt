@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface TitleOptions {
     /**
      * The font family variant to display, can be `monospaced` or `monospacedDigit`.

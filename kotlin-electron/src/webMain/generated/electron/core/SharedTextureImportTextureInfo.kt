@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SharedTextureImportTextureInfo {
 // Docs: https://electronjs.org/docs/api/structures/shared-texture-import-texture-info
     /**

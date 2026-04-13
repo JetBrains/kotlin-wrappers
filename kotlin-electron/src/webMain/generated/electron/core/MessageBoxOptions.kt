@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MessageBoxOptions {
     /**
      * Content of the message box.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface AutoResizeOptions {
     /**
      * If `true`, the view's width will grow and shrink together with the window.

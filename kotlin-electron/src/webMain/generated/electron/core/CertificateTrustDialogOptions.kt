@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CertificateTrustDialogOptions {
     /**
      * The certificate to trust/import.

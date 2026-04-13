@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface WebContentsPrintOptions {
     /**
      * Don't ask user for print settings. Default is `false`.

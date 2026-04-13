@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ClientRequestConstructorOptions {
     /**
      * The HTTP request method. Defaults to the GET method.

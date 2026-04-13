@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface AdjustSelectionOptions {
     /**
      * Amount to shift the start index of the current selection.

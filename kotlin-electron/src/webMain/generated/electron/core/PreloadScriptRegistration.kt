@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PreloadScriptRegistration {
 // Docs: https://electronjs.org/docs/api/structures/preload-script-registration
     /**

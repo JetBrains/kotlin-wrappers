@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface KeyboardInputEvent : InputEvent {
 // Docs: https://electronjs.org/docs/api/structures/keyboard-input-event
     /**

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ResolveHostOptions {
     /**
      * Requested DNS query type. If unspecified, resolver will pick A or AAAA (or both)

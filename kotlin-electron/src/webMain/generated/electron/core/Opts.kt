@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Opts {
     /**
      *  Keep the page hidden instead of visible. Default is `false`.

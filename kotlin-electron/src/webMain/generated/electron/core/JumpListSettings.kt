@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface JumpListSettings {
     /**
      * The minimum number of items that will be shown in the Jump List (for a more

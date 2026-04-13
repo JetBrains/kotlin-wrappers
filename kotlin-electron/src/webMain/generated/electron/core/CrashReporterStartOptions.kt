@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CrashReporterStartOptions {
     /**
      * URL that crash reports will be sent to as POST. Required unless `uploadToServer`

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface NotificationActionEventParams {
     /**
      * The index of the action that was activated.

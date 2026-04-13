@@ -2,4 +2,5 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Env

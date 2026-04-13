@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface EnableNetworkEmulationOptions {
     /**
      * Whether to emulate network outage. Defaults to false.

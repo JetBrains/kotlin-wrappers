@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface IgnoreMouseEventsOptions {
     /**
      * If true, forwards mouse move messages to Chromium, enabling mouse related events

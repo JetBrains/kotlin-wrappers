@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface WebContentsDidRedirectNavigationEventParams {
     /**
      * The URL the frame is navigating to.

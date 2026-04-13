@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface OnCompletedListenerDetails {
     var id: Double
     var url: String

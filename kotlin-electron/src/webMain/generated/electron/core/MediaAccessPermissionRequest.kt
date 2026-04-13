@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MediaAccessPermissionRequest : PermissionRequest {
 // Docs: https://electronjs.org/docs/api/structures/media-access-permission-request
     /**

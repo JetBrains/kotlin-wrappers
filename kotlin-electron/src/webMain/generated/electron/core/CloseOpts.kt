@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CloseOpts {
     /**
      * if true, fire the `beforeunload` event before closing the page. If the page

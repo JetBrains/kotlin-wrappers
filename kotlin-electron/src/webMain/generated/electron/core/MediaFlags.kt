@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MediaFlags {
     /**
      * Whether the media element has crashed.

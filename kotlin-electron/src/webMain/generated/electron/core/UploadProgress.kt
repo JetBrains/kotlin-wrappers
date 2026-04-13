@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface UploadProgress {
     /**
      * Whether the request is currently active. If this is false no other properties

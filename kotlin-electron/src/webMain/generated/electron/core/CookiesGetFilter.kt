@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CookiesGetFilter {
     /**
      * Retrieves cookies which are associated with `url`. Empty implies retrieving

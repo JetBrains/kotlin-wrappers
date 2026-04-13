@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SharedDictionaryUsageInfo {
 // Docs: https://electronjs.org/docs/api/structures/shared-dictionary-usage-info
     /**

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface DevicePermissionHandlerHandlerDetails {
     /**
      * The type of device that permission is being requested on, can be `hid`,

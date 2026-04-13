@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface LoginItemSettings {
     /**
      * `true` if the app is set to open at login.

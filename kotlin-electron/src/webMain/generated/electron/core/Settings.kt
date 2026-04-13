@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Settings {
     /**
      * `true` to open the app at login, `false` to remove the app as a login item.

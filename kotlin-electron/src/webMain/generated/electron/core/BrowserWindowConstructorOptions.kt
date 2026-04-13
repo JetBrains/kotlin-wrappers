@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface BrowserWindowConstructorOptions : BaseWindowConstructorOptions {
 // Docs: https://electronjs.org/docs/api/structures/browser-window-options
     /**

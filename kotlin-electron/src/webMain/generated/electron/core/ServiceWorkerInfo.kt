@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ServiceWorkerInfo {
 // Docs: https://electronjs.org/docs/api/structures/service-worker-info
     /**

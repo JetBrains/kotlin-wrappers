@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Response {
     /**
      * `false` should be passed in if the dialog is canceled. If the `pairingKind` is

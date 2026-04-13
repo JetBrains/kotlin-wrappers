@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SaveDialogSyncOptions {
     /**
      * The dialog title. Cannot be displayed on some _Linux_ desktop environments.

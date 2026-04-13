@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ClearDataOptions {
     /**
      * The types of data to clear. By default, this will clear all types of data. This

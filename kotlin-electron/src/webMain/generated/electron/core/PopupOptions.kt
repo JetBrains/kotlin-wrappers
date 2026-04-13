@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PopupOptions {
     /**
      * Default is the focused window.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface AppDetailsOptions {
     /**
      * Window's App User Model ID. It has to be set, otherwise the other options will

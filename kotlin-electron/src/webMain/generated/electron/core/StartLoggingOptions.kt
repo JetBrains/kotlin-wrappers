@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface StartLoggingOptions {
     /**
      * What kinds of data should be captured. By default, only metadata about requests

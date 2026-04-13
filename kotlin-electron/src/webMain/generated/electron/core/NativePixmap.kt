@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface NativePixmap {
     /**
      * Each plane's info of the shared texture.

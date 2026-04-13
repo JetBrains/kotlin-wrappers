@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CookiesSetDetails {
     /**
      * The URL to associate the cookie with. The promise will be rejected if the URL is

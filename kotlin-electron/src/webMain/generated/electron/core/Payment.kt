@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Payment {
     /**
      * The identifier of the purchased product.

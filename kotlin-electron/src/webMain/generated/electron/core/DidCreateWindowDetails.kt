@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface DidCreateWindowDetails {
     /**
      * URL for the created window.

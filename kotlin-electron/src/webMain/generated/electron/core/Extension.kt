@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Extension {
     // Docs: https://electronjs.org/docs/api/structures/extension
     var id: String

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MouseInputEvent : InputEvent {
 // Docs: https://electronjs.org/docs/api/structures/mouse-input-event
     /**

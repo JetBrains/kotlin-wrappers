@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface FrameCreatedDetails {
     /**
      * The created frame. May be `null` if accessed after the frame has either

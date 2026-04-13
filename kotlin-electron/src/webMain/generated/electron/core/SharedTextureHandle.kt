@@ -4,6 +4,7 @@ package electron.core
 
 import node.buffer.Buffer
 
+@kotlinx.js.JsPlainObject
 external interface SharedTextureHandle {
 // Docs: https://electronjs.org/docs/api/structures/shared-texture-handle
     /**

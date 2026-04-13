@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SelectUsbDeviceDetails {
     var deviceList: js.array.ReadonlyArray<USBDevice>
 

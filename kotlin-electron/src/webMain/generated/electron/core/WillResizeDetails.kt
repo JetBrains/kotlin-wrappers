@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface WillResizeDetails {
     /**
      * The edge of the window being dragged for resizing. Can be `bottom`, `left`,

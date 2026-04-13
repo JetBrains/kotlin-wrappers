@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface BlinkMemoryInfo {
     /**
      * Size of all allocated objects in Kilobytes.

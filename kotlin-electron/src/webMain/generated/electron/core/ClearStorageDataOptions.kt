@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ClearStorageDataOptions {
     /**
      * Should follow `window.location.origin`’s representation `scheme://host:port`.

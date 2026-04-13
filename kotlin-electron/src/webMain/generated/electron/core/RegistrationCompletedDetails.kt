@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface RegistrationCompletedDetails {
     /**
      * The base URL that a service worker is registered for

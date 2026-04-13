@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Planes {
     /**
      * The strides and offsets in bytes to be used when accessing the buffers via a

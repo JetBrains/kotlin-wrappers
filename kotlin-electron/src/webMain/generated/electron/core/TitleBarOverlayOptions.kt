@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface TitleBarOverlayOptions {
     /**
      * The CSS color of the Window Controls Overlay when enabled.

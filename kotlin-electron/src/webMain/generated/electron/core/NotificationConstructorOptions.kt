@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface NotificationConstructorOptions {
     /**
      * A title for the notification, which will be displayed at the top of the

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface DisplayBalloonOptions {
     /**
      * Icon to use when `iconType` is `custom`.

@@ -1,6 +1,7 @@
 package wrappersgenerator.electron
 
 import io.github.sgrishchenko.karakum.configuration.*
+import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import wrappersgenerator.electron.annotations.annotateInterfaceWithSuperclass
@@ -35,6 +36,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             EventInjection(),
         )
         annotations = listOf(
+            JsPlainObjectAnnotation(),
             ::annotateInterfaceWithSuperclass,
             ::annotateJsPlainObject,
         )

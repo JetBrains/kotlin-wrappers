@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface TouchBarSpacerConstructorOptions {
     /**
      * Size of spacer, possible values are:

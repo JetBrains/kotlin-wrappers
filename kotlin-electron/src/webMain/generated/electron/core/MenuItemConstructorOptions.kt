@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MenuItemConstructorOptions {
     /**
      * Will be called with `click(menuItem, window, event)` when the menu item is

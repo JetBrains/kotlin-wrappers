@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface BitmapOptions {
     /**
      * Defaults to 1.0.

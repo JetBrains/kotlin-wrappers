@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface VisibleOnAllWorkspacesOptions {
     /**
      * Sets whether the window should be visible above fullscreen windows.

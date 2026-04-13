@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PrintToPDFOptions {
     /**
      * Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.

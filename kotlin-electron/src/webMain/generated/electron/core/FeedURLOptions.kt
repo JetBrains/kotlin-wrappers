@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface FeedURLOptions {
     /**
      * The update server URL. For _Windows_ MSIX, this can be either a direct link to

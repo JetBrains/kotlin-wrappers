@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface USBProtectedClassesHandlerHandlerDetails {
     /**
      * The current list of protected USB classes. Possible class values include:

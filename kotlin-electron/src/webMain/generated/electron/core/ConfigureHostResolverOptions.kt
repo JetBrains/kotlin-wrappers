@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ConfigureHostResolverOptions {
     /**
      * Whether the built-in host resolver is used in preference to getaddrinfo. When

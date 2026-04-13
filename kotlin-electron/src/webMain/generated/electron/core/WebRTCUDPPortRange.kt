@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface WebRTCUDPPortRange {
     /**
      * The minimum UDP port number that WebRTC should use.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PageRanges {
     /**
      * Index of the first page to print (0-based).

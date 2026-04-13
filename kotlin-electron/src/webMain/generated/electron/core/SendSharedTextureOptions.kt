@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SendSharedTextureOptions {
     /**
      * The target frame to transfer the shared texture to. For `WebContents`, you can

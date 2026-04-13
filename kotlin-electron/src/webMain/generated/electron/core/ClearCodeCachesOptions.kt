@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ClearCodeCachesOptions {
     /**
      * An array of url corresponding to the resource whose generated code cache needs

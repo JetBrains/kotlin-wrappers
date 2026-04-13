@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PreconnectOptions {
     /**
      * URL for preconnect. Only the origin is relevant for opening the socket.

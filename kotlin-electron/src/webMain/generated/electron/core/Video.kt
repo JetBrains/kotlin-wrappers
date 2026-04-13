@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Video {
     /**
      * The id of the stream being granted. This will usually come from a

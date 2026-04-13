@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MessageBoxReturnValue {
     /**
      * The index of the clicked button.

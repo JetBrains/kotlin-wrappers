@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface StartTask {
     /**
      * Method to call when the task has ended. If never called, the service won't

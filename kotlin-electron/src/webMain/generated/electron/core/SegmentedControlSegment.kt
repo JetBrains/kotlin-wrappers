@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SegmentedControlSegment {
 // Docs: https://electronjs.org/docs/api/structures/segmented-control-segment
     /**

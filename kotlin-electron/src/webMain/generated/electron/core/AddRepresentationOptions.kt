@@ -4,6 +4,7 @@ package electron.core
 
 import node.buffer.Buffer
 
+@kotlinx.js.JsPlainObject
 external interface AddRepresentationOptions {
     /**
      * The scale factor to add the image representation for.

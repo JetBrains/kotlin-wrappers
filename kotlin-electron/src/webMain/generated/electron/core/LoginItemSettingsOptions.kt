@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface LoginItemSettingsOptions {
     /**
      * Can be `mainAppService`, `agentService`, `daemonService`, or `loginItemService`.

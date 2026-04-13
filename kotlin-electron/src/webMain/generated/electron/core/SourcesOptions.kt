@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SourcesOptions {
     /**
      * An array of strings that lists the types of desktop sources to be captured,

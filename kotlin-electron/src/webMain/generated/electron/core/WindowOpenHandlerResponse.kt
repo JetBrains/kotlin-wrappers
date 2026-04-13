@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface WindowOpenHandlerResponse {
 // Docs: https://electronjs.org/docs/api/structures/window-open-handler-response
     /**

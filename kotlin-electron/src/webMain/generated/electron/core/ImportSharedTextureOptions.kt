@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ImportSharedTextureOptions {
     /**
      * The information of the shared texture to import.

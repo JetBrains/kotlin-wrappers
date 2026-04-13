@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PermissionCheckHandlerHandlerDetails {
     /**
      * The origin of the frame embedding the frame that made the permission check.

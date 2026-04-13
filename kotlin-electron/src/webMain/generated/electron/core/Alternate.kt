@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Alternate {
     /**
      * the alternate setting number of this interface.

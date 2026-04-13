@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ImportCertificateOptions {
     /**
      * Path for the pkcs12 file.

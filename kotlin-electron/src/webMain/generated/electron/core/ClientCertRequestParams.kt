@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ClientCertRequestParams {
     /**
      * the hostname of the site requiring a client certificate

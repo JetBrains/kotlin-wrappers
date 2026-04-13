@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ProtocolRequest {
     // Docs: https://electronjs.org/docs/api/structures/protocol-request
     var headers: js.objects.ReadonlyRecord<String, String>

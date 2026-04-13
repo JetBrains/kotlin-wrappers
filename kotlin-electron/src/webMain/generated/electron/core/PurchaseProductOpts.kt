@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface PurchaseProductOpts {
     /**
      * The number of items the user wants to purchase.

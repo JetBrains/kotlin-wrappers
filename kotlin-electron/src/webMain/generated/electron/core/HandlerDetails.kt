@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface HandlerDetails {
     /**
      * The _resolved_ version of the URL passed to `window.open()`. e.g. opening a

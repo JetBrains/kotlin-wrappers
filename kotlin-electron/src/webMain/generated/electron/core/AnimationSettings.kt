@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface AnimationSettings {
     /**
      * Returns true if rich animations should be rendered. Looks at session type (e.g.

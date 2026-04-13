@@ -4,6 +4,7 @@ package electron.core
 
 import node.buffer.Buffer
 
+@kotlinx.js.JsPlainObject
 external interface UploadRawData {
 // Docs: https://electronjs.org/docs/api/structures/upload-raw-data
     /**

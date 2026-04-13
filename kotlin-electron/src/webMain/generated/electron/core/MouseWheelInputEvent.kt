@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface MouseWheelInputEvent : MouseInputEvent {
     // Docs: https://electronjs.org/docs/api/structures/mouse-wheel-input-event
     var accelerationRatioX: Double?

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface TouchBarColorPickerConstructorOptions {
     /**
      * Array of hex color strings to appear as possible colors to select.

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface FromPartitionOptions {
     /**
      * Whether to enable cache. Default is `true` unless the `--disable-http-cache`

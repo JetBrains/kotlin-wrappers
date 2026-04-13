@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface ApplicationInfoForProtocolReturnValue {
     /**
      * the display icon of the app handling the protocol.

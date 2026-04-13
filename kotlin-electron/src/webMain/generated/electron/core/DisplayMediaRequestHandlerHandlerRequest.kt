@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface DisplayMediaRequestHandlerHandlerRequest {
     /**
      * Frame that is requesting access to media. May be `null` if accessed after the

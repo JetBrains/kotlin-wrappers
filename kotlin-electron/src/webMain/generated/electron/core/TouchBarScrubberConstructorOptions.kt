@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface TouchBarScrubberConstructorOptions {
     /**
      * An array of items to place in this scrubber.

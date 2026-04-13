@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface SystemMemoryInfo {
     /**
      * The total amount of physical memory in Kilobytes available to the system.

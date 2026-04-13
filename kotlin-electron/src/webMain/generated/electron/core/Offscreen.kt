@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Offscreen {
     /**
      * Whether to use GPU shared texture for accelerated paint event. Defaults to

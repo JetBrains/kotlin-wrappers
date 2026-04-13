@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface LoadExtensionOptions {
     /**
      * Whether to allow the extension to read local files over `file://` protocol and

@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface OpenExternalOptions {
     /**
      * `true` to bring the opened application to the foreground. The default is `true`.

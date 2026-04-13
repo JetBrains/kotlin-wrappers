@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface CPUUsage {
 // Docs: https://electronjs.org/docs/api/structures/cpu-usage
     /**

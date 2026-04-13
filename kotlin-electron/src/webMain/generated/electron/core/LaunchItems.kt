@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface LaunchItems {
     /**
      * name value of a registry entry.

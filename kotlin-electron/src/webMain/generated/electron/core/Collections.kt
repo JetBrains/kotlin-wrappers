@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Collections {
     /**
      * An integer representing the usage ID component of the HID usage associated with

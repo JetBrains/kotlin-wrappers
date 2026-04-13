@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface WebviewTagPrintOptions {
     /**
      * Don't ask user for print settings. Default is `false`.

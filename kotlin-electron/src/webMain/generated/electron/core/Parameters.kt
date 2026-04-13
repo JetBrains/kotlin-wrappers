@@ -2,6 +2,7 @@
 
 package electron.core
 
+@kotlinx.js.JsPlainObject
 external interface Parameters {
     /**
      * Specify the screen type to emulate (default: `desktop`):
