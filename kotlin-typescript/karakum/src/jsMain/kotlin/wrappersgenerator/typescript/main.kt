@@ -6,6 +6,7 @@ import io.github.sgrishchenko.karakum.configuration.`package`
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
+import wrappersgenerator.typescript.annotations.annotateJsPlainObject
 import wrappersgenerator.typescript.annotations.annotateUnusedTypealiasParameter
 import wrappersgenerator.typescript.annotations.annotateVarOverrides
 import wrappersgenerator.typescript.annotations.createJsPlainObjectAnnotation
@@ -25,6 +26,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertArrayInheritance,
             convertConflictingOverloads,
             convertIncompatibleParameterName,
+            convertIndexSignatureInOptions,
             convertJSDocAugmentsTagClassReference,
             convertKindEnums,
             convertSkippedGenerics,
@@ -38,6 +40,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         annotations = listOf(
             createJsPlainObjectAnnotation(),
+            ::annotateJsPlainObject,
 
             ::annotateUnusedTypealiasParameter,
             ::annotateVarOverrides,

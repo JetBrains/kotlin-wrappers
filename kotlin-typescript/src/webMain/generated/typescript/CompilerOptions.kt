@@ -2,6 +2,7 @@
 
 package typescript
 
+@kotlinx.js.JsPlainObject
 external interface CompilerOptions {
     var allowImportingTsExtensions: Boolean?
     var allowJs: Boolean?
@@ -136,8 +137,5 @@ external interface CompilerOptions {
     var erasableSyntaxOnly: Boolean?
     var esModuleInterop: Boolean?
     var useDefineForClassFields: Boolean?
-
-    operator fun get(key: String): Any? // CompilerOptionsValue | TsConfigSourceFile | undefined
-
-    operator fun set(key: String, value: Any? /* CompilerOptionsValue | TsConfigSourceFile | undefined */)
+// [option: string]: CompilerOptionsValue | TsConfigSourceFile | undefined;
 }

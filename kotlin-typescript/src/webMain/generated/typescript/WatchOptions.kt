@@ -2,6 +2,7 @@
 
 package typescript
 
+@kotlinx.js.JsPlainObject
 external interface WatchOptions {
     var watchFile: WatchFileKind?
     var watchDirectory: WatchDirectoryKind?
@@ -9,11 +10,5 @@ external interface WatchOptions {
     var synchronousWatchDirectory: Boolean?
     var excludeDirectories: js.array.ReadonlyArray<String>?
     var excludeFiles: js.array.ReadonlyArray<String>?
-
-    operator fun get(key: String): CompilerOptionsValue
-
-    operator fun set(
-        key: String,
-        value: CompilerOptionsValue,
-    )
+// [option: string]: CompilerOptionsValue | undefined;
 }

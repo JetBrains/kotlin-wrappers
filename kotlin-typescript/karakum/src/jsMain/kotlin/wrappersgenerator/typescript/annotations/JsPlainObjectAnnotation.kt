@@ -63,8 +63,4 @@ fun createJsPlainObjectAnnotation() =
             ::isInterfaceDeclaration,
             withName("BuilderProgramHost")
         )
-
-        //TODO: BuildOptions
-        //TODO: CompilerOptions
-        //TODO: WatchOptions
     })

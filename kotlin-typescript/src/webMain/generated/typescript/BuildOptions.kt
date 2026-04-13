@@ -2,6 +2,7 @@
 
 package typescript
 
+@kotlinx.js.JsPlainObject
 external interface BuildOptions {
     var dry: Boolean?
     var force: Boolean?
@@ -15,11 +16,5 @@ external interface BuildOptions {
     var sourceMap: Boolean?
     var inlineSourceMap: Boolean?
     var traceResolution: Boolean?
-
-    operator fun get(key: String): CompilerOptionsValue
-
-    operator fun set(
-        key: String,
-        value: CompilerOptionsValue,
-    )
+// [option: string]: CompilerOptionsValue | undefined;
 }
