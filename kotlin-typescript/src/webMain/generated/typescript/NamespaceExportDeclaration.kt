@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NamespaceExportDeclaration :
+external interface NamespaceExportDeclaration :
     DeclarationStatement,
     JSDocContainer,
     HasJSDoc {

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface WatchOptions {
+external interface WatchOptions {
     var watchFile: WatchFileKind?
     var watchDirectory: WatchDirectoryKind?
     var fallbackPolling: PollingWatchKind?

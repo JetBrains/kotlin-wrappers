@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Type : FlowType {
+external interface Type : FlowType {
     var flags: TypeFlags
     var symbol: Symbol
     var pattern: DestructuringPattern?

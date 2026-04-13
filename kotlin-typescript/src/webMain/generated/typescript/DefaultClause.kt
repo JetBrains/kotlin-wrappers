@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface DefaultClause :
+external interface DefaultClause :
     Node,
     CaseOrDefaultClause {
     override val kind: SyntaxKind.DefaultClause

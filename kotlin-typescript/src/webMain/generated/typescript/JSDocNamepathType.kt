@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocNamepathType : JSDocType {
+external interface JSDocNamepathType : JSDocType {
     override val kind: SyntaxKind.JSDocNamepathType
     val type: TypeNode
 }

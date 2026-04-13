@@ -3,7 +3,8 @@
 package typescript
 
 /** Parsed command line for build */
-sealed external interface ParsedBuildCommand {
+@kotlinx.js.JsPlainObject
+external interface ParsedBuildCommand {
     var buildOptions: BuildOptions
     var watchOptions: WatchOptions?
     var projects: js.array.ReadonlyArray<String>

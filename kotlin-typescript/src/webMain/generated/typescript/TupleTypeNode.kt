@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TupleTypeNode :
+external interface TupleTypeNode :
     TypeNode,
     TypeReferenceNodeField {
     override val kind: SyntaxKind.TupleType

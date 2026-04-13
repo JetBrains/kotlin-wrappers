@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxAttribute :
+external interface JsxAttribute :
     Declaration,
     HasInitializer,
     VariableLikeDeclaration,

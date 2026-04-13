@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface CheckJsDirective : TextRange {
+@kotlinx.js.JsPlainObject
+external interface CheckJsDirective : TextRange {
     var enabled: Boolean
 }

@@ -9,7 +9,8 @@ package typescript
  *
  * Prefer to return a `ResolvedModuleFull` so that the file type does not have to be inferred.
  */
-sealed external interface ResolvedModule {
+@kotlinx.js.JsPlainObject
+external interface ResolvedModule {
     /** Path of the file the module was resolved to. */
     var resolvedFileName: String
 

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ModuleDeclaration :
+external interface ModuleDeclaration :
     DeclarationStatement,
     JSDocContainer,
     LocalsContainer,

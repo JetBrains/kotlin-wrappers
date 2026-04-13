@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BinaryExpression :
+external interface BinaryExpression :
     Expression,
     Declaration,
     JSDocContainer,

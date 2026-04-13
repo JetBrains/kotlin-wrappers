@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface FileReference : TextRange {
+@kotlinx.js.JsPlainObject
+external interface FileReference : TextRange {
     var fileName: String
     var resolutionMode: ResolutionMode
     var preserve: Boolean?

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface MetaProperty :
+external interface MetaProperty :
     PrimaryExpression,
     FlowContainer {
     override val kind: SyntaxKind.MetaProperty

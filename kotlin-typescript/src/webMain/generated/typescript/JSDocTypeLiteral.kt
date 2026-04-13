@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocTypeLiteral :
+external interface JSDocTypeLiteral :
     JSDocType,
     Declaration,
     JSDocTagParent,

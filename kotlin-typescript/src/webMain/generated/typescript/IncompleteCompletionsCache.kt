@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface IncompleteCompletionsCache {
+external interface IncompleteCompletionsCache {
     fun get(): CompletionInfo?
 
     fun set(response: CompletionInfo)

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CompletionEntryDataAutoImport {
+@kotlinx.js.JsPlainObject
+external interface CompletionEntryDataAutoImport {
     /**
      * The name of the property or export in the module's symbol table. Differs from the completion name
      * in the case of InternalSymbolName.ExportEquals and InternalSymbolName.Default.

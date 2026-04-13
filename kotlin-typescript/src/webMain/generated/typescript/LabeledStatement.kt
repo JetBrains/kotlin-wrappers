@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface LabeledStatement :
+external interface LabeledStatement :
     Statement,
     FlowContainer,
     HasJSDoc,

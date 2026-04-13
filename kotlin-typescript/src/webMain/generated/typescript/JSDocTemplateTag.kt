@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocTemplateTag :
+external interface JSDocTemplateTag :
     JSDocTag,
     DeclarationWithTypeParameterChildren {
     override val kind: SyntaxKind.JSDocTemplateTag

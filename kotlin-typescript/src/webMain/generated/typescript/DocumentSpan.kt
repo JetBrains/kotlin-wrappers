@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DocumentSpan {
+@kotlinx.js.JsPlainObject
+external interface DocumentSpan {
     var textSpan: TextSpan
     var fileName: String
 

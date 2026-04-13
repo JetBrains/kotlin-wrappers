@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface SuperCall : CallExpression {
+external interface SuperCall : CallExpression {
     override val expression: SuperExpression
 }

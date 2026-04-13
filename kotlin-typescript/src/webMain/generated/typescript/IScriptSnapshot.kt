@@ -7,7 +7,7 @@ package typescript
  * snapshot is observably immutable. i.e. the same calls with the same parameters will return
  * the same values.
  */
-sealed external interface IScriptSnapshot {
+external interface IScriptSnapshot {
     /** Gets a portion of the script snapshot specified by [start, end). */
     fun getText(
         start: Double,

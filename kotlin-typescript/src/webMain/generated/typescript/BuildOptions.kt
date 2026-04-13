@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BuildOptions {
+external interface BuildOptions {
     var dry: Boolean?
     var force: Boolean?
     var verbose: Boolean?

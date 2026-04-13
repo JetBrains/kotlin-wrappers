@@ -8,7 +8,8 @@ package typescript
  * While it seems that DiagnosticMessageChain is structurally similar to DiagnosticMessage,
  * the difference is that messages are all preformatted in DMC.
  */
-sealed external interface DiagnosticMessageChain {
+@kotlinx.js.JsPlainObject
+external interface DiagnosticMessageChain {
     var messageText: String
     var category: DiagnosticCategory
     var code: Double

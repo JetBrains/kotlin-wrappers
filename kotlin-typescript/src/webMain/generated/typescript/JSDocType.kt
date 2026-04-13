@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface JSDocType : TypeNode {
+external interface JSDocType : TypeNode {
     var _jsDocTypeBrand: Any?
 }

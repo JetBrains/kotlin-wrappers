@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface LeftHandSideExpression : UpdateExpression {
+external interface LeftHandSideExpression : UpdateExpression {
     var _leftHandSideExpressionBrand: Any?
 }

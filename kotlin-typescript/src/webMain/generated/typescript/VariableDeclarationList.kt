@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface VariableDeclarationList :
+external interface VariableDeclarationList :
     Node,
     VariableDeclarationParent,
     ForInitializer {

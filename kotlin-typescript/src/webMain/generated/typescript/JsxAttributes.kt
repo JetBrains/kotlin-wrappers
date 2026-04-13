@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxAttributes :
+external interface JsxAttributes :
     PrimaryExpression,
     Declaration {
     val properties: NodeArray<JsxAttributeLike>

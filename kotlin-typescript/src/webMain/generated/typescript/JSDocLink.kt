@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocLink :
+external interface JSDocLink :
     Node,
     JSDocComment,
     IsJSDocLinkLikeResultPredicate {

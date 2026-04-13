@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ReferencedSymbol {
+@kotlinx.js.JsPlainObject
+external interface ReferencedSymbol {
     var definition: ReferencedSymbolDefinitionInfo
     var references: js.array.ReadonlyArray<ReferencedSymbolEntry>
 }

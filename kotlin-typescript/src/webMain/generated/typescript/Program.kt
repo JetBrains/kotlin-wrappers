@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Program :
+external interface Program :
     ScriptReferenceHost,
     RequiredAffectedFileResultAffected {
     override fun getCurrentDirectory(): String

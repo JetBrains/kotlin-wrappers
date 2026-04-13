@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CodeFixAction : CodeAction {
+@kotlinx.js.JsPlainObject
+external interface CodeFixAction : CodeAction {
     /** Short name to identify the fix, for use by telemetry. */
     var fixName: String
 

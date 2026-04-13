@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocFunctionType :
+external interface JSDocFunctionType :
     JSDocType,
     SignatureDeclarationBase,
     LocalsContainer,

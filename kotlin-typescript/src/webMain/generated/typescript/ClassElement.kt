@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ClassElement :
+external interface ClassElement :
     NamedDeclaration,
     IsClassOrTypeElementResultPredicate {
     var _classElementBrand: Any?

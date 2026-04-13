@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface LiteralTypeNode : TypeNode {
+external interface LiteralTypeNode : TypeNode {
     override val kind: SyntaxKind.LiteralType
     val literal: LiteralTypeNodeLiteral
 }

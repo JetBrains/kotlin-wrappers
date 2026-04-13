@@ -5,7 +5,7 @@ package typescript
 /**
  * Host to create watch with config file
  */
-sealed external interface WatchCompilerHostOfConfigFile<T : BuilderProgram> :
+external interface WatchCompilerHostOfConfigFile<T : BuilderProgram> :
     WatchCompilerHost<T>,
     ConfigFileDiagnosticsReporter {
     /** Name of the config file to compile */

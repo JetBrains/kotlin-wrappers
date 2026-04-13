@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PrivateIdentifier :
+external interface PrivateIdentifier :
     PrimaryExpression,
     PropertyName,
     MemberName {

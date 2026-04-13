@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface IfStatement :
+external interface IfStatement :
     Statement,
     FlowContainer,
     HasJSDoc {

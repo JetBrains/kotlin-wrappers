@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxTagNamePropertyAccess :
+external interface JsxTagNamePropertyAccess :
     PropertyAccessExpression,
     JsxTagNameExpression,
     JsxTagNamePropertyAccessExpression {

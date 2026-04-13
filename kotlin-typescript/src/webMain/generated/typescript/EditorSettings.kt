@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface EditorSettings {
+@kotlinx.js.JsPlainObject
+external interface EditorSettings {
     var baseIndentSize: Double?
     var indentSize: Double?
     var tabSize: Double?

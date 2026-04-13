@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ProjectReference {
+@kotlinx.js.JsPlainObject
+external interface ProjectReference {
     /** A normalized path on disk */
     var path: String
 

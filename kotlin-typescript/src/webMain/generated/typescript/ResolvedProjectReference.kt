@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ResolvedProjectReference {
+@kotlinx.js.JsPlainObject
+external interface ResolvedProjectReference {
     var commandLine: ParsedCommandLine
     var sourceFile: SourceFile
     var references: (js.array.ReadonlyArray<(ResolvedProjectReference?)>)?

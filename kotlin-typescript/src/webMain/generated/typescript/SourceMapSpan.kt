@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface SourceMapSpan {
+@kotlinx.js.JsPlainObject
+external interface SourceMapSpan {
     /** Line number in the .js file. */
     var emittedLine: Double
 

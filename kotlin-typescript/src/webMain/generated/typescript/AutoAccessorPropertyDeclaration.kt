@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface AutoAccessorPropertyDeclaration : PropertyDeclaration {
+external interface AutoAccessorPropertyDeclaration : PropertyDeclaration {
     var _autoAccessorBrand: Any?
 }

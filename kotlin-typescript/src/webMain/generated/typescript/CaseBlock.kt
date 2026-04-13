@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CaseBlock :
+external interface CaseBlock :
     Node,
     LocalsContainer {
     override val kind: SyntaxKind.CaseBlock

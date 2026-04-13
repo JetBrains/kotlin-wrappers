@@ -8,7 +8,7 @@ package typescript
  * JSXAttribute or JSXSpreadAttribute. ObjectLiteralExpression, on the other hand, can only have properties of type
  * ObjectLiteralElement (e.g. PropertyAssignment, ShorthandPropertyAssignment etc.)
  */
-sealed external interface ObjectLiteralExpressionBase<T : ObjectLiteralElement> :
+external interface ObjectLiteralExpressionBase<T : ObjectLiteralElement> :
     PrimaryExpression,
     Declaration {
     val properties: NodeArray<T>

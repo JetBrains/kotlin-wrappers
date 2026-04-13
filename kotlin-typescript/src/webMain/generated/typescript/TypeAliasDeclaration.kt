@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeAliasDeclaration :
+external interface TypeAliasDeclaration :
     DeclarationStatement,
     JSDocContainer,
     LocalsContainer,

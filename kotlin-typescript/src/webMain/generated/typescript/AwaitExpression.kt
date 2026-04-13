@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface AwaitExpression : UnaryExpression {
+external interface AwaitExpression : UnaryExpression {
     override val kind: SyntaxKind.AwaitExpression
     val expression: UnaryExpression
 }

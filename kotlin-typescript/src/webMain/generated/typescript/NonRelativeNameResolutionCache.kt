@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NonRelativeNameResolutionCache<T> {
+external interface NonRelativeNameResolutionCache<T> {
     fun getFromNonRelativeNameCache(
         nonRelativeName: String,
         mode: ResolutionMode,

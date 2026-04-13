@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface DebuggerStatement :
+external interface DebuggerStatement :
     Statement,
     FlowContainer,
     HasJSDoc {

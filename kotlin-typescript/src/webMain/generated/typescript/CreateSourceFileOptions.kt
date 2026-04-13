@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CreateSourceFileOptions {
+@kotlinx.js.JsPlainObject
+external interface CreateSourceFileOptions {
     var languageVersion: ScriptTarget
 
     /**

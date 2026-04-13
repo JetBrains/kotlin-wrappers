@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CallHierarchyItem {
+@kotlinx.js.JsPlainObject
+external interface CallHierarchyItem {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String?

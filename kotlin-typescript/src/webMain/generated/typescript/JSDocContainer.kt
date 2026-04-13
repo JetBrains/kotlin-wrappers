@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface JSDocContainer : Node {
+external interface JSDocContainer : Node {
     var _jsdocContainerBrand: Any?
 }

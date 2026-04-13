@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BigIntLiteral :
+external interface BigIntLiteral :
     LiteralExpression,
     PropertyName,
     PropertyNameLiteral,

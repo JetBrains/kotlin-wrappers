@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NamedTupleMember :
+external interface NamedTupleMember :
     TypeNode,
     Declaration,
     JSDocContainer,

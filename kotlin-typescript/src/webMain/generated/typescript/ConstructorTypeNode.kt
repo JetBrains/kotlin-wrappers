@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ConstructorTypeNode :
+external interface ConstructorTypeNode :
     FunctionOrConstructorTypeNodeBase,
     LocalsContainer,
     HasJSDoc,

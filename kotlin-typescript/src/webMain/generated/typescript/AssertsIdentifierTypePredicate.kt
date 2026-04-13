@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface AssertsIdentifierTypePredicate :
+@kotlinx.js.JsPlainObject
+external interface AssertsIdentifierTypePredicate :
     TypePredicateBase,
     TypePredicate {
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")

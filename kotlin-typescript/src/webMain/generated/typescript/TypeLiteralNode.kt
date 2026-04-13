@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeLiteralNode :
+external interface TypeLiteralNode :
     TypeNode,
     Declaration,
     PropertySignatureParent,

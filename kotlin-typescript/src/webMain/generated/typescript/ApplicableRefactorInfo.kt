@@ -5,7 +5,8 @@ package typescript
 /**
  * A set of one or more available refactoring actions, grouped under a parent refactoring.
  */
-sealed external interface ApplicableRefactorInfo {
+@kotlinx.js.JsPlainObject
+external interface ApplicableRefactorInfo {
     /**
      * The programmatic name of the refactoring
      */

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface OutputFile {
+@kotlinx.js.JsPlainObject
+external interface OutputFile {
     var name: String
     var writeByteOrderMark: Boolean
     var text: String

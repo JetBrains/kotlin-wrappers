@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PropertyAccessChain :
+external interface PropertyAccessChain :
     PropertyAccessExpression,
     OptionalChain,
     IsOptionalChainResultPredicate {

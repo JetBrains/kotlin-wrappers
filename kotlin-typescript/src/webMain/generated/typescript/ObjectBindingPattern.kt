@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ObjectBindingPattern :
+external interface ObjectBindingPattern :
     Node,
     BindingPattern,
     ObjectBindingOrAssignmentPattern {

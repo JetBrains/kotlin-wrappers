@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface WhileStatement :
+external interface WhileStatement :
     IterationStatement,
     FlowContainer,
     HasJSDoc {

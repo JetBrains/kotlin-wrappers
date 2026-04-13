@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CustomTransformers {
+@kotlinx.js.JsPlainObject
+external interface CustomTransformers {
     /** Custom transformers to evaluate before built-in .js transformations. */
     var before: js.array.ReadonlyArray<(Any /* TransformerFactory<SourceFile> | CustomTransformerFactory */)>?
 

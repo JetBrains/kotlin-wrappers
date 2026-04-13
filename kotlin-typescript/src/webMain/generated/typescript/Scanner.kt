@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Scanner {
+external interface Scanner {
     /** @deprecated use {@link getTokenFullStart} */
     fun getStartPos(): Double
 

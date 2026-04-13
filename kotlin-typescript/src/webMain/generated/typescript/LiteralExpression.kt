@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface LiteralExpression :
+external interface LiteralExpression :
     LiteralLikeNode,
     PrimaryExpression,
     LiteralTypeNodeLiteral,

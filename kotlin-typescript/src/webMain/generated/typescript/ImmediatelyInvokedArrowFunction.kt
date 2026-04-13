@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface ImmediatelyInvokedArrowFunction : CallExpression {
+external interface ImmediatelyInvokedArrowFunction : CallExpression {
     override val expression: ImmediatelyInvokedArrowFunctionExpression
 }

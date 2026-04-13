@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SpreadElement :
+external interface SpreadElement :
     Expression,
     BindingOrAssignmentElementRestIndicator {
     override val kind: SyntaxKind.SpreadElement

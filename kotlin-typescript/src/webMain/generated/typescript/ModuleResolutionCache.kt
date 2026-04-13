@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ModuleResolutionCache :
+external interface ModuleResolutionCache :
     PerDirectoryResolutionCache<ResolvedModuleWithFailedLookupLocations>,
     NonRelativeModuleNameResolutionCache,
     PackageJsonInfoCache {

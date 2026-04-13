@@ -5,7 +5,7 @@ package typescript
 /**
  * Reports config file diagnostics
  */
-sealed external interface ConfigFileDiagnosticsReporter {
+external interface ConfigFileDiagnosticsReporter {
     /**
      * Reports unrecoverable error when parsing config file
      */

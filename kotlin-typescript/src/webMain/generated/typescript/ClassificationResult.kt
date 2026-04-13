@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ClassificationResult {
+@kotlinx.js.JsPlainObject
+external interface ClassificationResult {
     var finalLexState: EndOfLineState
     var entries: js.array.ReadonlyArray<ClassificationInfo>
 }

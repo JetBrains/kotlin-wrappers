@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ImportDeclaration :
+external interface ImportDeclaration :
     Statement,
     HasJSDoc,
     HasModifiers,

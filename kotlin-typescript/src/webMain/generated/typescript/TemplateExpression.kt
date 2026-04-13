@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TemplateExpression :
+external interface TemplateExpression :
     PrimaryExpression,
     TemplateHeadParent,
     TemplateLiteral {

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface DeclarationStatement :
+external interface DeclarationStatement :
     NamedDeclaration,
     Statement {
     override val name: (DeclarationStatementName)?

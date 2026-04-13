@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SourceMapSource {
+external interface SourceMapSource {
     var fileName: String
     var text: String
     var skipTrivia: ((pos: Double) -> Double)?

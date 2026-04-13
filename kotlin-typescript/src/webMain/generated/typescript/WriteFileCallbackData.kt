@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface WriteFileCallbackData
+@kotlinx.js.JsPlainObject
+external interface WriteFileCallbackData

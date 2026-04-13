@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ScriptReferenceHost {
+external interface ScriptReferenceHost {
     fun getCompilerOptions(): CompilerOptions
 
     fun getSourceFile(fileName: String): SourceFile?

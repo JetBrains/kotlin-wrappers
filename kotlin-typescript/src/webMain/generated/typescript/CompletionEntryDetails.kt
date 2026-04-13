@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CompletionEntryDetails {
+@kotlinx.js.JsPlainObject
+external interface CompletionEntryDetails {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String

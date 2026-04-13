@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TextChangeRange {
+@kotlinx.js.JsPlainObject
+external interface TextChangeRange {
     var span: TextSpan
     var newLength: Double
 }

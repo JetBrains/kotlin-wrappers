@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TupleType : GenericType {
+external interface TupleType : GenericType {
     var elementFlags: js.array.ReadonlyArray<ElementFlags>
 
     /** Number of required or variadic elements */

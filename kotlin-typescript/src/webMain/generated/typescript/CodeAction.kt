@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CodeAction {
+@kotlinx.js.JsPlainObject
+external interface CodeAction {
     /** Description of the code action to display in the UI of the editor */
     var description: String
 

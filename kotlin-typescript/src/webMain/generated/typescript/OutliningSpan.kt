@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface OutliningSpan {
+@kotlinx.js.JsPlainObject
+external interface OutliningSpan {
     /** The span of the document to actually collapse. */
     var textSpan: TextSpan
 

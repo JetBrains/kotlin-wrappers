@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NamespaceDeclaration :
+external interface NamespaceDeclaration :
     ModuleDeclaration,
     NamespaceBody {
     override val name: Identifier

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CreateProgramOptions {
+@kotlinx.js.JsPlainObject
+external interface CreateProgramOptions {
     var rootNames: js.array.ReadonlyArray<String>
     var options: CompilerOptions
     var projectReferences: (js.array.ReadonlyArray<ProjectReference>)?

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ImportSpecifier :
+external interface ImportSpecifier :
     NamedDeclaration,
     ImportOrExportSpecifier,
     IsImportOrExportSpecifierResultPredicate {

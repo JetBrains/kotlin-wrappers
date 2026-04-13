@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface QualifiedName :
+external interface QualifiedName :
     Node,
     FlowContainer,
     EntityName,

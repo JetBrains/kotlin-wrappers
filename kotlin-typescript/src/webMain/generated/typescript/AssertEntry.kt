@@ -3,4 +3,4 @@
 package typescript
 
 /** @deprecated */
-sealed external interface AssertEntry : ImportAttribute
+external interface AssertEntry : ImportAttribute

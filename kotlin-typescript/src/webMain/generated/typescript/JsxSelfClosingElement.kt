@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxSelfClosingElement :
+external interface JsxSelfClosingElement :
     PrimaryExpression,
     HasTypeArguments,
     JsxOpeningLikeElement,

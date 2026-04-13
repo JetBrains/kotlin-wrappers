@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NumericLiteral :
+external interface NumericLiteral :
     LiteralExpression,
     Declaration,
     PropertyName,

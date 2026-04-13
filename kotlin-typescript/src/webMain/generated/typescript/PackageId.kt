@@ -6,7 +6,8 @@ package typescript
  * Unique identifier with a package name and version.
  * If changing this, remember to change `packageIdIsEqual`.
  */
-sealed external interface PackageId {
+@kotlinx.js.JsPlainObject
+external interface PackageId {
     /**
      * Name of the package.
      * Should not include `@types`.

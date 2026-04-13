@@ -6,7 +6,8 @@ package typescript
  * Represents a single refactoring action - for example, the "Extract Method..." refactor might
  * offer several actions, each corresponding to a surround class or closure to extract into.
  */
-sealed external interface RefactorActionInfo {
+@kotlinx.js.JsPlainObject
+external interface RefactorActionInfo {
     /**
      * The programmatic name of the refactoring action
      */

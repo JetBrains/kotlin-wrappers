@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface SymbolDisplayPart {
+@kotlinx.js.JsPlainObject
+external interface SymbolDisplayPart {
     /**
      * Text of an item describing the symbol.
      */

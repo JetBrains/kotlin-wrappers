@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ExtendedConfigCacheEntry {
+@kotlinx.js.JsPlainObject
+external interface ExtendedConfigCacheEntry {
     var extendedResult: TsConfigSourceFile
     var extendedConfig: ParsedTsconfig?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TemplateLiteralTypeNode :
+external interface TemplateLiteralTypeNode :
     TypeNode,
     TemplateHeadParent {
     override var kind: SyntaxKind.TemplateLiteralType

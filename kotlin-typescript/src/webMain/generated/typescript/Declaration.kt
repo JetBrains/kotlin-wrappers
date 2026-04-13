@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface Declaration : Node {
+external interface Declaration : Node {
     var _declarationBrand: Any?
 }

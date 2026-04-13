@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ModuleBlock :
+external interface ModuleBlock :
     Node,
     Statement,
     BlockLike,

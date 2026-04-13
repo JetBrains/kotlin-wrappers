@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FunctionOrConstructorTypeNodeBase :
+external interface FunctionOrConstructorTypeNodeBase :
     TypeNode,
     SignatureDeclarationBase {
     override val kind: FunctionOrConstructorTypeNodeBaseKind

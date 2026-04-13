@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CallHierarchyIncomingCall {
+@kotlinx.js.JsPlainObject
+external interface CallHierarchyIncomingCall {
     var from: CallHierarchyItem
     var fromSpans: js.array.ReadonlyArray<TextSpan>
 }

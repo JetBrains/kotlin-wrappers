@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NamedExports :
+external interface NamedExports :
     Node,
     NamedExportBindings,
     NamedImportsOrExports {

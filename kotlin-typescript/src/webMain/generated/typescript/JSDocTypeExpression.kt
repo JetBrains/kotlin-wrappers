@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocTypeExpression :
+external interface JSDocTypeExpression :
     TypeNode,
     HasType,
     TypePredicateNodeParent,

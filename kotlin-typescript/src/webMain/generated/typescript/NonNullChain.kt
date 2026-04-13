@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NonNullChain :
+external interface NonNullChain :
     NonNullExpression,
     OptionalChain,
     IsOptionalChainResultPredicate {

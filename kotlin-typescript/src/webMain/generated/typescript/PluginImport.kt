@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface PluginImport {
+@kotlinx.js.JsPlainObject
+external interface PluginImport {
     var name: String
 }

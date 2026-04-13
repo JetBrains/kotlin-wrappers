@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface AmdDependency {
+@kotlinx.js.JsPlainObject
+external interface AmdDependency {
     var path: String
     var name: String?
 }

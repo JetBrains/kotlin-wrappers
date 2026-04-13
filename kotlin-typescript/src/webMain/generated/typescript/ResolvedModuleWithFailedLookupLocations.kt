@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ResolvedModuleWithFailedLookupLocations {
+@kotlinx.js.JsPlainObject
+external interface ResolvedModuleWithFailedLookupLocations {
     val resolvedModule: ResolvedModuleFull?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BuildInvalidedProject<T : BuilderProgram> : InvalidatedProjectBase {
+external interface BuildInvalidedProject<T : BuilderProgram> : InvalidatedProjectBase {
     override val kind: InvalidatedProjectKind.Build
 
     fun getBuilderProgram(): T?

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDoc :
+external interface JSDoc :
     Node,
     JSDocTagParent,
     GetJSDocCommentsAndTagsResultItem {

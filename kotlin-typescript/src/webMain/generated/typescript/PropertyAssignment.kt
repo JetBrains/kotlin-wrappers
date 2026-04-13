@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PropertyAssignment :
+external interface PropertyAssignment :
     ObjectLiteralElement,
     JSDocContainer,
     HasJSDoc,

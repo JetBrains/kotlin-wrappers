@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface QuickInfo {
+@kotlinx.js.JsPlainObject
+external interface QuickInfo {
     var kind: ScriptElementKind
     var kindModifiers: String
     var textSpan: TextSpan

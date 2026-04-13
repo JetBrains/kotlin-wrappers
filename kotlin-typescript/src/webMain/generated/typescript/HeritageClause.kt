@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface HeritageClause : Node {
+external interface HeritageClause : Node {
     override val kind: SyntaxKind.HeritageClause
     override val parent: HeritageClauseParent
     val token: HeritageClauseToken

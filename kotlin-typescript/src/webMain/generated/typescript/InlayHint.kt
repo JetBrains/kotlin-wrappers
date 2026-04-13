@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface InlayHint {
+@kotlinx.js.JsPlainObject
+external interface InlayHint {
     /** This property will be the empty string when displayParts is set. */
     var text: String
     var position: Double

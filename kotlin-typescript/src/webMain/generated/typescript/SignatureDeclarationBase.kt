@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SignatureDeclarationBase :
+external interface SignatureDeclarationBase :
     NamedDeclaration,
     JSDocContainer {
     override val kind: SignatureDeclarationBaseKind

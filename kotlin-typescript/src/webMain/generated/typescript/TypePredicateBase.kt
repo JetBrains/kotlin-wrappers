@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TypePredicateBase {
+@kotlinx.js.JsPlainObject
+external interface TypePredicateBase {
     var kind: TypePredicateKind
     var type: Type?
 }

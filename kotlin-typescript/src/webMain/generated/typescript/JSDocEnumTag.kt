@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocEnumTag :
+external interface JSDocEnumTag :
     JSDocTag,
     Declaration,
     LocalsContainer {

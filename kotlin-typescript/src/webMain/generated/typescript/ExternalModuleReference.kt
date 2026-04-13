@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ExternalModuleReference :
+external interface ExternalModuleReference :
     Node,
     ModuleReference {
     override val kind: SyntaxKind.ExternalModuleReference

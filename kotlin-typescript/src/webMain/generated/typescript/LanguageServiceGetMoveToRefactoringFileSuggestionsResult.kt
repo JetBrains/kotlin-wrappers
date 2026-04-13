@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface LanguageServiceGetMoveToRefactoringFileSuggestionsResult {
+@kotlinx.js.JsPlainObject
+external interface LanguageServiceGetMoveToRefactoringFileSuggestionsResult {
     var newFileName: String
     var files: js.array.ReadonlyArray<String>
 }

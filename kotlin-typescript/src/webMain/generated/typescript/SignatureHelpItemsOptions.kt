@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface SignatureHelpItemsOptions {
+@kotlinx.js.JsPlainObject
+external interface SignatureHelpItemsOptions {
     var triggerReason: SignatureHelpTriggerReason?
 }

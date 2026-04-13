@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface InteractiveRefactorArguments {
+@kotlinx.js.JsPlainObject
+external interface InteractiveRefactorArguments {
     var targetFile: String
 }

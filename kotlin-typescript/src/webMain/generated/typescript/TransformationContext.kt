@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TransformationContext : CoreTransformationContext {
+external interface TransformationContext : CoreTransformationContext {
     /** Records a request for a non-scoped emit helper in the current context. */
     fun requestEmitHelper(helper: EmitHelper)
 

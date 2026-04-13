@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocCallbackTag :
+external interface JSDocCallbackTag :
     JSDocTag,
     NamedDeclaration,
     LocalsContainer,

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface DoStatement :
+external interface DoStatement :
     IterationStatement,
     FlowContainer,
     HasJSDoc {

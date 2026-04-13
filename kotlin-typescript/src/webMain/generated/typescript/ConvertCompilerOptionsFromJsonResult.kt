@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ConvertCompilerOptionsFromJsonResult {
+@kotlinx.js.JsPlainObject
+external interface ConvertCompilerOptionsFromJsonResult {
     var options: CompilerOptions
     var errors: js.array.ReadonlyArray<Diagnostic>
 }

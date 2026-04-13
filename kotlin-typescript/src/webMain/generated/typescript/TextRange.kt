@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TextRange {
+@kotlinx.js.JsPlainObject
+external interface TextRange {
     var pos: Double
     var end: Double
 }

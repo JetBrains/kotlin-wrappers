@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ModeAwareCache<T> {
+external interface ModeAwareCache<T> {
     fun get(
         key: String,
         mode: ResolutionMode,

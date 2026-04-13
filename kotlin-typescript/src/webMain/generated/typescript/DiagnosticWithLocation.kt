@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DiagnosticWithLocation : Diagnostic {
+@kotlinx.js.JsPlainObject
+external interface DiagnosticWithLocation : Diagnostic {
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var file: SourceFile
 

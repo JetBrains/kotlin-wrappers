@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CallSignatureDeclaration :
+external interface CallSignatureDeclaration :
     SignatureDeclarationBase,
     TypeElement,
     LocalsContainer,

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ImplementationLocation : DocumentSpan {
+@kotlinx.js.JsPlainObject
+external interface ImplementationLocation : DocumentSpan {
     var kind: ScriptElementKind
     var displayParts: js.array.ReadonlyArray<SymbolDisplayPart>
 }

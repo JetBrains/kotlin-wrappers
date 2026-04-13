@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface InstallPackageOptions {
+@kotlinx.js.JsPlainObject
+external interface InstallPackageOptions {
     var fileName: Path
     var packageName: String
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface WithMetadata<T> {
+external interface WithMetadata<T> {
     var metadata: Any?
 
     @Suppress(

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ObjectLiteralExpression :
+external interface ObjectLiteralExpression :
     ObjectLiteralExpressionBase<ObjectLiteralElementLike>,
     JSDocContainer,
     HasJSDoc,

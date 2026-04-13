@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface JSDocPrivateTag : JSDocTag {
+external interface JSDocPrivateTag : JSDocTag {
     override val kind: SyntaxKind.JSDocPrivateTag
 }

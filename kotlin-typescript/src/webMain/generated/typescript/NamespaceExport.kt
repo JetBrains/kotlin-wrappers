@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NamespaceExport :
+external interface NamespaceExport :
     NamedDeclaration,
     NamedExportBindings,
     TypeOnlyCompatibleAliasDeclaration {

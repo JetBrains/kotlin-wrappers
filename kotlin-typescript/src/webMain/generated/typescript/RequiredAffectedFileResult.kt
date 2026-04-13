@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface RequiredAffectedFileResult<T> {
+@kotlinx.js.JsPlainObject
+external interface RequiredAffectedFileResult<T> {
     var result: T
     var affected: RequiredAffectedFileResultAffected
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ThisTypeNode :
+external interface ThisTypeNode :
     TypeNode,
     TypePredicateNodeParameterName,
     IsIdentifierOrThisTypeNodeResultPredicate {

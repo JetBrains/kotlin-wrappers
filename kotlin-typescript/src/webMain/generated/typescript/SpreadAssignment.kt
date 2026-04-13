@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SpreadAssignment :
+external interface SpreadAssignment :
     ObjectLiteralElement,
     JSDocContainer,
     HasJSDoc,

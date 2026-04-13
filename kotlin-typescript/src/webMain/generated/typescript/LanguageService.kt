@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface LanguageService {
+external interface LanguageService {
     /** This is used as a part of restarting the language service. */
     fun cleanupSemanticCache()
 

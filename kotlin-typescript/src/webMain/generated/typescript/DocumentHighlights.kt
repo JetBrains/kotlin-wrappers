@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DocumentHighlights {
+@kotlinx.js.JsPlainObject
+external interface DocumentHighlights {
     var fileName: String
     var highlightSpans: js.array.ReadonlyArray<HighlightSpan>
 }

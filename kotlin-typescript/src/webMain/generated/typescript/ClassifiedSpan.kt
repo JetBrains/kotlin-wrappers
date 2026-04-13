@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ClassifiedSpan {
+@kotlinx.js.JsPlainObject
+external interface ClassifiedSpan {
     var textSpan: TextSpan
     var classificationType: ClassificationTypeNames
 }

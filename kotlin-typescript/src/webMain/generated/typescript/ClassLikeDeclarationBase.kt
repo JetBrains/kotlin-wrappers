@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ClassLikeDeclarationBase :
+external interface ClassLikeDeclarationBase :
     NamedDeclaration,
     JSDocContainer {
     override val kind: ClassLikeDeclarationBaseKind

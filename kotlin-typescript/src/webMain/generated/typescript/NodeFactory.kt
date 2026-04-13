@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NodeFactory {
+external interface NodeFactory {
     fun <T : Node> createNodeArray(
         elements: js.array.ReadonlyArray<T> = definedExternally,
         hasTrailingComma: Boolean = definedExternally,

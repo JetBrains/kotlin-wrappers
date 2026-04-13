@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface System {
+external interface System {
     var args: js.array.ReadonlyArray<String>
     var newLine: String
     var useCaseSensitiveFileNames: Boolean

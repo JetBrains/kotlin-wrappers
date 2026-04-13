@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeReferenceNode :
+external interface TypeReferenceNode :
     NodeWithTypeArguments,
     TypeReferenceType,
     TypeReferenceNodeField {

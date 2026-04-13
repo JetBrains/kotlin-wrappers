@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface SourceMapRange : TextRange {
+@kotlinx.js.JsPlainObject
+external interface SourceMapRange : TextRange {
     var source: SourceMapSource?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface IndexSignatureDeclaration :
+external interface IndexSignatureDeclaration :
     SignatureDeclarationBase,
     ClassElement,
     TypeElement,

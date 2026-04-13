@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ParenthesizedExpression :
+external interface ParenthesizedExpression :
     PrimaryExpression,
     JSDocContainer,
     HasJSDoc {

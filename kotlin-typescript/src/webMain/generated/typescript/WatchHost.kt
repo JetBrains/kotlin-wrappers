@@ -3,7 +3,7 @@
 package typescript
 
 /** Host that has watch functionality used in --watch mode */
-sealed external interface WatchHost {
+external interface WatchHost {
     /** If provided, called with Diagnostic message that informs about change in watch status */
     val onWatchStatusChange: (
         (

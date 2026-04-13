@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ThrowStatement :
+external interface ThrowStatement :
     Statement,
     FlowContainer,
     HasJSDoc {

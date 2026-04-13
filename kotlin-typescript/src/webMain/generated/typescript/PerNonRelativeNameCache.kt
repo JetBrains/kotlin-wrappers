@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PerNonRelativeNameCache<T> {
+external interface PerNonRelativeNameCache<T> {
     fun get(directory: String): T?
 
     fun set(

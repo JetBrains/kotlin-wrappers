@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ValidateLocaleAndSetLanguageSys {
+external interface ValidateLocaleAndSetLanguageSys {
     fun getExecutingFilePath(): String
 
     fun resolvePath(path: String): String

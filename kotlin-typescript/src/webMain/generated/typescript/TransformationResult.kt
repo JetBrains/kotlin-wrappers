@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TransformationResult<T : Node> {
+external interface TransformationResult<T : Node> {
     /** Gets the transformed source files. */
     var transformed: js.array.ReadonlyArray<T>
 

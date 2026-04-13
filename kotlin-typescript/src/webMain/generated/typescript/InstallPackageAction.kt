@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface InstallPackageAction
+@kotlinx.js.JsPlainObject
+external interface InstallPackageAction

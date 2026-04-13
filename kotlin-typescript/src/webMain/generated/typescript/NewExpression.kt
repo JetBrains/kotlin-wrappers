@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NewExpression :
+external interface NewExpression :
     PrimaryExpression,
     Declaration,
     HasTypeArguments,

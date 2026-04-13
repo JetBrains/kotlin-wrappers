@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface LinkedEditingInfo {
+@kotlinx.js.JsPlainObject
+external interface LinkedEditingInfo {
     val ranges: js.array.ReadonlyArray<TextSpan>
     var wordPattern: String?
 }

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface InlayHintsContext {
+@kotlinx.js.JsPlainObject
+external interface InlayHintsContext {
     var file: SourceFile
     var program: Program
     var cancellationToken: CancellationToken

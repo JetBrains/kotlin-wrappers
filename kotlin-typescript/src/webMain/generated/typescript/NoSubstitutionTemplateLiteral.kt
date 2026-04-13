@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NoSubstitutionTemplateLiteral :
+external interface NoSubstitutionTemplateLiteral :
     LiteralExpression,
     TemplateLiteralLikeNode,
     Declaration,

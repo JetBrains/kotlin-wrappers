@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeAcquisition {
+external interface TypeAcquisition {
     var enable: Boolean?
     var include: js.array.ReadonlyArray<String>?
     var exclude: js.array.ReadonlyArray<String>?

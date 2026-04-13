@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface MethodSignature :
+external interface MethodSignature :
     SignatureDeclarationBase,
     TypeElement,
     LocalsContainer,

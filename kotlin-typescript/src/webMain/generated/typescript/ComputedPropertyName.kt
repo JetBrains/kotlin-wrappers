@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ComputedPropertyName :
+external interface ComputedPropertyName :
     Node,
     PropertyName {
     override val kind: SyntaxKind.ComputedPropertyName

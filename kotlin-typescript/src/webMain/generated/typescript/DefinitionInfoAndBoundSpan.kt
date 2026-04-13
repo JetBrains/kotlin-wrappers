@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DefinitionInfoAndBoundSpan {
+@kotlinx.js.JsPlainObject
+external interface DefinitionInfoAndBoundSpan {
     var definitions: (js.array.ReadonlyArray<DefinitionInfo>)?
     var textSpan: TextSpan
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface NullLiteral :
+external interface NullLiteral :
     PrimaryExpression,
     LiteralTypeNodeLiteral,
     JsonObjectExpression,

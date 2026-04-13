@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ParameterDeclaration :
+external interface ParameterDeclaration :
     NamedDeclaration,
     JSDocContainer,
     HasJSDoc,

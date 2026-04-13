@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocSignature :
+external interface JSDocSignature :
     JSDocType,
     Declaration,
     JSDocContainer,

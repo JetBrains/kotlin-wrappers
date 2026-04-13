@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocLinkDisplayPart : SymbolDisplayPart {
+@kotlinx.js.JsPlainObject
+external interface JSDocLinkDisplayPart : SymbolDisplayPart {
     var target: DocumentSpan
 }

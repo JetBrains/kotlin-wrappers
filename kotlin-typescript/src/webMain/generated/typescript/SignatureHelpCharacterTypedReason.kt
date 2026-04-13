@@ -6,7 +6,8 @@ package typescript
  * Signals that the signature help request came from a user typing a character.
  * Depending on the character and the syntactic context, the request may or may not be served a result.
  */
-sealed external interface SignatureHelpCharacterTypedReason : SignatureHelpTriggerReason {
+@kotlinx.js.JsPlainObject
+external interface SignatureHelpCharacterTypedReason : SignatureHelpTriggerReason {
     var kind: String // "characterTyped"
 
     /**

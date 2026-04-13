@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CaseClause :
+external interface CaseClause :
     Node,
     JSDocContainer,
     HasJSDoc,

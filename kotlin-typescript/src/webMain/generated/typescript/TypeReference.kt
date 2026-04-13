@@ -12,7 +12,7 @@ package typescript
  * if the class or interface has no type parameters and the reference isn't specifying an
  * explicit "this" argument.
  */
-sealed external interface TypeReference : ObjectType {
+external interface TypeReference : ObjectType {
     var target: GenericType
     var node: (TypeReferenceNodeField)?
     var typeArguments: (js.array.ReadonlyArray<Type>)?

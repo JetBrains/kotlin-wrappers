@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocVariadicType :
+external interface JSDocVariadicType :
     JSDocType,
     HasType,
     JSDocTypeReferencingNode {

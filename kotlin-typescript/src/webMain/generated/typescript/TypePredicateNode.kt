@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypePredicateNode :
+external interface TypePredicateNode :
     TypeNode,
     HasType {
     override val kind: SyntaxKind.TypePredicate

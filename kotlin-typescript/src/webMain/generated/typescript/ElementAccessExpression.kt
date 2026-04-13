@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ElementAccessExpression :
+external interface ElementAccessExpression :
     MemberExpression,
     Declaration,
     JSDocContainer,

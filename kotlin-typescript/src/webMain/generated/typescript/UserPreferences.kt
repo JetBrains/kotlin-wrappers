@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferences {
+@kotlinx.js.JsPlainObject
+external interface UserPreferences {
     val disableSuggestions: Boolean?
     val quotePreference: (UserPreferencesQuotePreference)?
 

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CallExpression :
+external interface CallExpression :
     LeftHandSideExpression,
     Declaration,
     HasTypeArguments,

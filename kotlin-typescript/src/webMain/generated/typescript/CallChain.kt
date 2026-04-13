@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CallChain :
+external interface CallChain :
     CallExpression,
     OptionalChain,
     IsOptionalChainResultPredicate {

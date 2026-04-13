@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ObjectType :
+external interface ObjectType :
     Type,
     BaseType,
     StructuredType {

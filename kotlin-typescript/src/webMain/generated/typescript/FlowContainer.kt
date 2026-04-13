@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface FlowContainer : Node {
+external interface FlowContainer : Node {
     var _flowContainerBrand: Any?
 }

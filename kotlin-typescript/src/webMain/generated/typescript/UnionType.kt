@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface UnionType :
+external interface UnionType :
     UnionOrIntersectionType,
     StructuredType

@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface NodeWithTypeArguments : TypeNode {
+external interface NodeWithTypeArguments : TypeNode {
     val typeArguments: NodeArray<TypeNode>?
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface InstanceofExpression :
+external interface InstanceofExpression :
     BinaryExpression,
     CallLikeExpression {
     override val operatorToken: Token<SyntaxKind.InstanceOfKeyword>

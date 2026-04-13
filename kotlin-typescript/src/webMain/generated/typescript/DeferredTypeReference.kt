@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface DeferredTypeReference : TypeReference
+external interface DeferredTypeReference : TypeReference

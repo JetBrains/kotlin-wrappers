@@ -5,7 +5,7 @@
 package typescript
 
 external object JsTyping {
-    sealed interface TypingResolutionHost {
+    interface TypingResolutionHost {
         fun directoryExists(path: String): Boolean
 
         fun fileExists(fileName: String): Boolean

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CompilerOptions {
+external interface CompilerOptions {
     var allowImportingTsExtensions: Boolean?
     var allowJs: Boolean?
     var allowArbitraryExtensions: Boolean?

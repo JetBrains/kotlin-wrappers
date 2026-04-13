@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SolutionBuilder<T : BuilderProgram> {
+external interface SolutionBuilder<T : BuilderProgram> {
     fun build(
         project: String = definedExternally,
         cancellationToken: CancellationToken = definedExternally,

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface FileTextChanges {
+@kotlinx.js.JsPlainObject
+external interface FileTextChanges {
     var fileName: String
     var textChanges: js.array.ReadonlyArray<TextChange>
     var isNewFile: Boolean?

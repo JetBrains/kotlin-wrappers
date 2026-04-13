@@ -3,4 +3,4 @@
 package typescript
 
 /** @deprecated */
-sealed external interface AssertClause : ImportAttributes
+external interface AssertClause : ImportAttributes

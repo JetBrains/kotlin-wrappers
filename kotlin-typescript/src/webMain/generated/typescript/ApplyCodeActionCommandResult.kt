@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ApplyCodeActionCommandResult {
+@kotlinx.js.JsPlainObject
+external interface ApplyCodeActionCommandResult {
     var successMessage: String
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxFragment :
+external interface JsxFragment :
     PrimaryExpression,
     JsxAttributeValue,
     JsxExpressionParent,

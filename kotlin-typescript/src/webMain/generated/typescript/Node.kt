@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Node : ReadonlyTextRange {
+external interface Node : ReadonlyTextRange {
     val kind: SyntaxKind
     val flags: NodeFlags
     val parent: Node

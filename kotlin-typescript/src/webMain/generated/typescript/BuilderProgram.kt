@@ -5,7 +5,7 @@ package typescript
 /**
  * Builder to manage the program state changes
  */
-sealed external interface BuilderProgram {
+external interface BuilderProgram {
     /**
      * Returns current program
      */

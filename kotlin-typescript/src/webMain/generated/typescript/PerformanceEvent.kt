@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface PerformanceEvent {
+@kotlinx.js.JsPlainObject
+external interface PerformanceEvent {
     var kind: PerformanceEventKind
     var durationMs: Double
 }

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CompletionEntryLabelDetails {
+@kotlinx.js.JsPlainObject
+external interface CompletionEntryLabelDetails {
     /**
      * An optional string which is rendered less prominently directly after
      * {@link CompletionEntry.name name}, without any spacing. Should be

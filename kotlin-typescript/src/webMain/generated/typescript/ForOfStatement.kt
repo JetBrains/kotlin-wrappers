@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ForOfStatement :
+external interface ForOfStatement :
     IterationStatement,
     LocalsContainer,
     FlowContainer,

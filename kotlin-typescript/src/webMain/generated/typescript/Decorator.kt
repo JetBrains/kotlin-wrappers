@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Decorator :
+external interface Decorator :
     Node,
     ModifierLike,
     CallLikeExpression {

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BindingElement :
+external interface BindingElement :
     NamedDeclaration,
     FlowContainer,
     HasExpressionInitializer,

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ArrayLiteralExpression :
+external interface ArrayLiteralExpression :
     PrimaryExpression,
     ArrayBindingOrAssignmentPattern,
     AssignmentPattern,

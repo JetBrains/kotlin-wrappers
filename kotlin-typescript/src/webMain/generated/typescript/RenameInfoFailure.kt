@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface RenameInfoFailure : RenameInfo {
+@kotlinx.js.JsPlainObject
+external interface RenameInfoFailure : RenameInfo {
     var canRename: Boolean // false
     var localizedErrorMessage: String
 }

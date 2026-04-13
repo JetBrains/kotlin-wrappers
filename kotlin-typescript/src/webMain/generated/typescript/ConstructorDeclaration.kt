@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ConstructorDeclaration :
+external interface ConstructorDeclaration :
     FunctionLikeDeclarationBase,
     ClassElement,
     JSDocContainer,

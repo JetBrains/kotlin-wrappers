@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface WatchCompilerHost<T : BuilderProgram> :
+external interface WatchCompilerHost<T : BuilderProgram> :
     ProgramHost<T>,
     WatchHost {
     /** Instead of using output d.ts file from project reference, use its source file */

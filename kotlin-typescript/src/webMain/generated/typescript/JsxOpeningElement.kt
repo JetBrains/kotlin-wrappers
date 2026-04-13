@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxOpeningElement :
+external interface JsxOpeningElement :
     Expression,
     HasTypeArguments,
     JsxOpeningLikeElement {

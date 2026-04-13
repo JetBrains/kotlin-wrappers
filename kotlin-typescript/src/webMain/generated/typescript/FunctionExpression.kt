@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FunctionExpression :
+external interface FunctionExpression :
     PrimaryExpression,
     FunctionLikeDeclarationBase,
     JSDocContainer,

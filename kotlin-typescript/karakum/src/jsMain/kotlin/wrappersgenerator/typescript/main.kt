@@ -8,7 +8,7 @@ import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import wrappersgenerator.typescript.annotations.annotateUnusedTypealiasParameter
 import wrappersgenerator.typescript.annotations.annotateVarOverrides
-import wrappersgenerator.typescript.inheritanceModifiers.modifyInterfaceInheritance
+import wrappersgenerator.typescript.annotations.createJsPlainObjectAnnotation
 import wrappersgenerator.typescript.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.typescript.inheritanceModifiers.modifyPropertyInheritance
 import wrappersgenerator.typescript.injections.decorateUnionInjection
@@ -37,6 +37,8 @@ suspend fun main(args: ReadonlyArray<String>) {
             decorateUnionInjection(UnionInjection()),
         )
         annotations = listOf(
+            createJsPlainObjectAnnotation(),
+
             ::annotateUnusedTypealiasParameter,
             ::annotateVarOverrides,
         )
@@ -61,7 +63,6 @@ suspend fun main(args: ReadonlyArray<String>) {
             ::resolveUserPreferencesImportModuleSpecifierEndingJsName,
         )
         inheritanceModifiers = listOf(
-            ::modifyInterfaceInheritance,
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
         )

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxNamespacedName :
+external interface JsxNamespacedName :
     Node,
     PropertyNameLiteral,
     JsxAttributeName,

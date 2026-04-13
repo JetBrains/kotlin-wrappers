@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeOperatorNode :
+external interface TypeOperatorNode :
     TypeNode,
     HasType {
     override val kind: SyntaxKind.TypeOperator

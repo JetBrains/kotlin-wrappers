@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface PreProcessedFileInfo {
+@kotlinx.js.JsPlainObject
+external interface PreProcessedFileInfo {
     var referencedFiles: js.array.ReadonlyArray<FileReference>
     var typeReferenceDirectives: js.array.ReadonlyArray<FileReference>
     var libReferenceDirectives: js.array.ReadonlyArray<FileReference>

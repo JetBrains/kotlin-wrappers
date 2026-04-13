@@ -6,7 +6,7 @@ package typescript
  * Cached resolutions per containing directory.
  * This assumes that any module id will have the same resolution for sibling files located in the same folder.
  */
-sealed external interface PerDirectoryResolutionCache<T> {
+external interface PerDirectoryResolutionCache<T> {
     fun getFromDirectoryCache(
         name: String,
         mode: ResolutionMode,

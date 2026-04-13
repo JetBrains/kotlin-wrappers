@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SyntheticExpression : Expression {
+external interface SyntheticExpression : Expression {
     override val kind: SyntaxKind.SyntheticExpression
     val isSpread: Boolean
     val type: Type

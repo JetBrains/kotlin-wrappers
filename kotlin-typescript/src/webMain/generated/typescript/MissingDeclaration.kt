@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface MissingDeclaration :
+external interface MissingDeclaration :
     DeclarationStatement,
     PrimaryExpression {
     override val kind: SyntaxKind.MissingDeclaration

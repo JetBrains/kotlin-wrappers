@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CatchClause :
+external interface CatchClause :
     Node,
     LocalsContainer,
     VariableDeclarationParent {

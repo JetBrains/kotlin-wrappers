@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface PasteEdits {
+@kotlinx.js.JsPlainObject
+external interface PasteEdits {
     var edits: js.array.ReadonlyArray<FileTextChanges>
     var fixId: (Any)?
 }

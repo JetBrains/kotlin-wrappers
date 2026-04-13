@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ReferencedSymbolEntry : ReferenceEntry {
+@kotlinx.js.JsPlainObject
+external interface ReferencedSymbolEntry : ReferenceEntry {
     var isDefinition: Boolean?
 }

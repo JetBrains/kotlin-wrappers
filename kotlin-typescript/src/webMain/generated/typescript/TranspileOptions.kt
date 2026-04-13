@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TranspileOptions {
+@kotlinx.js.JsPlainObject
+external interface TranspileOptions {
     var compilerOptions: CompilerOptions?
     var fileName: String?
     var reportDiagnostics: Boolean?

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxText :
+external interface JsxText :
     LiteralLikeNode,
     LiteralToken,
     JsxChild {

@@ -5,6 +5,7 @@ package typescript
 /**
  * @deprecated Use `UserPreferences` instead.
  */
-sealed external interface RenameInfoOptions {
+@kotlinx.js.JsPlainObject
+external interface RenameInfoOptions {
     val allowRenameOfImportPath: Boolean?
 }

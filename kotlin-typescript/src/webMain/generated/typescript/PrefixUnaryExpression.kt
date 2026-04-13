@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PrefixUnaryExpression :
+external interface PrefixUnaryExpression :
     UpdateExpression,
     LiteralTypeNodeLiteral,
     IsLiteralTypeLiteralResultPredicate {

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ClassExpression :
+external interface ClassExpression :
     ClassLikeDeclarationBase,
     PrimaryExpression,
     HasDecorators,

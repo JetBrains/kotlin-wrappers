@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface KeywordToken<TKind : KeywordSyntaxKind> : Token<TKind>
+external interface KeywordToken<TKind : KeywordSyntaxKind> : Token<TKind>

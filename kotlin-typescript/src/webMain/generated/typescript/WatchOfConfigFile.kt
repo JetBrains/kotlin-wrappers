@@ -5,4 +5,4 @@ package typescript
 /**
  * Creates the watch what generates program using the config file
  */
-sealed external interface WatchOfConfigFile<T> : Watch<T>
+external interface WatchOfConfigFile<T> : Watch<T>

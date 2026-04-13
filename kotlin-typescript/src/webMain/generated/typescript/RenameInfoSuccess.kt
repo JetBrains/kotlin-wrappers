@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface RenameInfoSuccess : RenameInfo {
+@kotlinx.js.JsPlainObject
+external interface RenameInfoSuccess : RenameInfo {
     var canRename: Boolean // true
 
     /**

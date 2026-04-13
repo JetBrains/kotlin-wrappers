@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface CoreTransformationContext {
+external interface CoreTransformationContext {
     val factory: NodeFactory
 
     /** Gets the compiler options supplied to the transformer. */

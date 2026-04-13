@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface GetAccessorDeclaration :
+external interface GetAccessorDeclaration :
     FunctionLikeDeclarationBase,
     ClassElement,
     TypeElement,

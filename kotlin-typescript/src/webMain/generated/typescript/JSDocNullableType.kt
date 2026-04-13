@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocNullableType :
+external interface JSDocNullableType :
     JSDocType,
     HasType,
     JSDocTypeReferencingNode {

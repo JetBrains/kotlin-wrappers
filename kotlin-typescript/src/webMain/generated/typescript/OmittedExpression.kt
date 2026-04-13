@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface OmittedExpression :
+external interface OmittedExpression :
     Expression,
     ArrayBindingElement,
     BindingOrAssignmentElementTarget {

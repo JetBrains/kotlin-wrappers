@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface SyntaxList : Node {
+external interface SyntaxList : Node {
     override var kind: SyntaxKind.SyntaxList
 }

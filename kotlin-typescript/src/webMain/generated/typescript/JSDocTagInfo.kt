@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface JSDocTagInfo {
+@kotlinx.js.JsPlainObject
+external interface JSDocTagInfo {
     var name: String
     var text: js.array.ReadonlyArray<SymbolDisplayPart>?
 }

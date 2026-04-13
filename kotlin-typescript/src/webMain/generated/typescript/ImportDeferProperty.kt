@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ImportDeferProperty :
+external interface ImportDeferProperty :
     MetaProperty,
     ImportCallExpression {
     override val keywordToken: SyntaxKind.ImportKeyword

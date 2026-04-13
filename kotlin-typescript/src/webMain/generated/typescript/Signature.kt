@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Signature {
+external interface Signature {
     var declaration: (SignatureDeclarationField)?
     var typeParameters: (js.array.ReadonlyArray<TypeParameter>)?
     var parameters: js.array.ReadonlyArray<Symbol>

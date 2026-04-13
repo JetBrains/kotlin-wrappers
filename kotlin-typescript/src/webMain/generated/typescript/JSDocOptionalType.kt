@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocOptionalType :
+external interface JSDocOptionalType :
     JSDocType,
     HasType,
     JSDocTypeReferencingNode {

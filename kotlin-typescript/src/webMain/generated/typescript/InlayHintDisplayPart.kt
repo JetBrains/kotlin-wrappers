@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface InlayHintDisplayPart {
+@kotlinx.js.JsPlainObject
+external interface InlayHintDisplayPart {
     var text: String
     var span: TextSpan?
     var file: String?

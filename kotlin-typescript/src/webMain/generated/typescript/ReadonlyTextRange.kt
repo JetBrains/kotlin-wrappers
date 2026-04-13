@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ReadonlyTextRange {
+external interface ReadonlyTextRange {
     val pos: Double
     val end: Double
 }

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ParsedTsconfig {
+@kotlinx.js.JsPlainObject
+external interface ParsedTsconfig {
     var raw: Any?
     var options: CompilerOptions?
     var watchOptions: WatchOptions?

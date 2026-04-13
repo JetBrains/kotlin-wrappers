@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ClassDeclaration :
+external interface ClassDeclaration :
     ClassLikeDeclarationBase,
     DeclarationStatement,
     HasDecorators,

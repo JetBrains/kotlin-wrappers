@@ -13,7 +13,7 @@ package typescript
  *
  * For the canonical implementation of this type, @see {visitNodes}.
  */
-sealed external interface NodesVisitor {
+external interface NodesVisitor {
     operator fun <TIn : Node, TInArray : NodeArray<TIn>?> invoke(
         nodes: TInArray,
         visitor: Visitor<TIn, Node?>,

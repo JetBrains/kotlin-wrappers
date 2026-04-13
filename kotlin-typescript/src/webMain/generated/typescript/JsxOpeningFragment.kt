@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsxOpeningFragment :
+external interface JsxOpeningFragment :
     Expression,
     JsxCallLike {
     override val kind: SyntaxKind.JsxOpeningFragment

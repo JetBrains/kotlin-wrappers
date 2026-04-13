@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface IndexType : InstantiableType {
+external interface IndexType : InstantiableType {
     var type: IndexTypeType
 }

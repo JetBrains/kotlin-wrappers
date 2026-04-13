@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface JsxClosingTagInfo {
+@kotlinx.js.JsPlainObject
+external interface JsxClosingTagInfo {
     val newText: String
 }

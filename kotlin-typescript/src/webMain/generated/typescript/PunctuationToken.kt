@@ -2,4 +2,4 @@
 
 package typescript
 
-sealed external interface PunctuationToken<TKind : PunctuationSyntaxKind> : Token<TKind>
+external interface PunctuationToken<TKind : PunctuationSyntaxKind> : Token<TKind>

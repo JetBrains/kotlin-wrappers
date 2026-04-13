@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface RefactorActionInfoRangeEnd {
+@kotlinx.js.JsPlainObject
+external interface RefactorActionInfoRangeEnd {
     var line: Double
     var offset: Double
 }

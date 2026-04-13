@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface UnscopedEmitHelper :
+@kotlinx.js.JsPlainObject
+external interface UnscopedEmitHelper :
     EmitHelperBase,
     EmitHelper {
     override val scoped: Boolean // false

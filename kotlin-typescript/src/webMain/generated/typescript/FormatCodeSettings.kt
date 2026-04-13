@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface FormatCodeSettings : EditorSettings {
+@kotlinx.js.JsPlainObject
+external interface FormatCodeSettings : EditorSettings {
     val insertSpaceAfterCommaDelimiter: Boolean?
     val insertSpaceAfterSemicolonInForStatements: Boolean?
     val insertSpaceBeforeAndAfterBinaryOperators: Boolean?

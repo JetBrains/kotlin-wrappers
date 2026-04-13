@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CombinedCodeFixScope {
+@kotlinx.js.JsPlainObject
+external interface CombinedCodeFixScope {
     var type: String // "file"
     var fileName: String
 }

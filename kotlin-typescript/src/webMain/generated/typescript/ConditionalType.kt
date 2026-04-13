@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ConditionalType : InstantiableType {
+external interface ConditionalType : InstantiableType {
     var root: ConditionalRoot
     var checkType: Type
     var extendsType: Type

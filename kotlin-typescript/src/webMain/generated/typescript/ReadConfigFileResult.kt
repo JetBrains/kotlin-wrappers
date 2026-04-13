@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ReadConfigFileResult {
+@kotlinx.js.JsPlainObject
+external interface ReadConfigFileResult {
     var config: Any?
     var error: Diagnostic?
 }

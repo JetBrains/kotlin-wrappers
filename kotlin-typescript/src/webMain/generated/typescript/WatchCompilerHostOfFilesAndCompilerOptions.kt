@@ -5,7 +5,7 @@ package typescript
 /**
  * Host to create watch with root files and options
  */
-sealed external interface WatchCompilerHostOfFilesAndCompilerOptions<T : BuilderProgram> : WatchCompilerHost<T> {
+external interface WatchCompilerHostOfFilesAndCompilerOptions<T : BuilderProgram> : WatchCompilerHost<T> {
     /** root files to use to generate program */
     var rootFiles: js.array.ReadonlyArray<String>
 

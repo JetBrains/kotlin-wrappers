@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface LiteralType : FreshableType {
+external interface LiteralType : FreshableType {
     var value: Any // string | number | PseudoBigInt
 }

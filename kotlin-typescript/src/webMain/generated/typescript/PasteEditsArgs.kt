@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface PasteEditsArgs {
+@kotlinx.js.JsPlainObject
+external interface PasteEditsArgs {
     var targetFile: String
     var pastedText: js.array.ReadonlyArray<String>
     var pasteLocations: js.array.ReadonlyArray<TextRange>

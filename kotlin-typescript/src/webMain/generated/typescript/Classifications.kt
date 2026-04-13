@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface Classifications {
+@kotlinx.js.JsPlainObject
+external interface Classifications {
     var spans: js.array.ReadonlyArray<Double>
     var endOfLineState: EndOfLineState
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface EnumMember :
+external interface EnumMember :
     NamedDeclaration,
     JSDocContainer,
     HasJSDoc,

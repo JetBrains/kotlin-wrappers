@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TypeNode :
+external interface TypeNode :
     Node,
     TupleTypeNodeElementsItem,
     NodeFactoryCreateTupleTypeNodeElementsItem,

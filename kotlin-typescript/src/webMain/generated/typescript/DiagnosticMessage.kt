@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DiagnosticMessage {
+@kotlinx.js.JsPlainObject
+external interface DiagnosticMessage {
     var key: String
     var category: DiagnosticCategory
     var code: Double

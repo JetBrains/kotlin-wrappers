@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ConditionalTypeNode :
+external interface ConditionalTypeNode :
     TypeNode,
     LocalsContainer {
     override val kind: SyntaxKind.ConditionalType

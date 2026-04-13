@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TodoCommentDescriptor {
+@kotlinx.js.JsPlainObject
+external interface TodoCommentDescriptor {
     var text: String
     var priority: Double
 }

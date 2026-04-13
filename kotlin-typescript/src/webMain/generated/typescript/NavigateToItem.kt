@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface NavigateToItem {
+@kotlinx.js.JsPlainObject
+external interface NavigateToItem {
     var name: String
     var kind: ScriptElementKind
     var kindModifiers: String

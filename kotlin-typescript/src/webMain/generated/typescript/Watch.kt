@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface Watch<T> {
+external interface Watch<T> {
     /** Synchronize with host and get updated program */
     fun getProgram(): T
 

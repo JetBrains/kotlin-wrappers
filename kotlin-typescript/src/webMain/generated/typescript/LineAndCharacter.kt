@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface LineAndCharacter {
+@kotlinx.js.JsPlainObject
+external interface LineAndCharacter {
     /** 0-based. */
     var line: Double
     var character: Double

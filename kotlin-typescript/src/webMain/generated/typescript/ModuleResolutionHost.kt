@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ModuleResolutionHost {
+external interface ModuleResolutionHost {
     fun fileExists(fileName: String): Boolean
 
     fun readFile(fileName: String): String?

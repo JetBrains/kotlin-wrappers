@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface RefactorActionInfoRange {
+@kotlinx.js.JsPlainObject
+external interface RefactorActionInfoRange {
     var start: RefactorActionInfoRangeStart
     var end: RefactorActionInfoRangeEnd
 }

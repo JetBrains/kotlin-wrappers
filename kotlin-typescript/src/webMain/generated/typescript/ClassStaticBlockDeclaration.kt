@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ClassStaticBlockDeclaration :
+external interface ClassStaticBlockDeclaration :
     ClassElement,
     JSDocContainer,
     LocalsContainer,

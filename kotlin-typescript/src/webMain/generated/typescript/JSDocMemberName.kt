@@ -3,7 +3,7 @@
 package typescript
 
 /** Class#method reference in JSDoc */
-sealed external interface JSDocMemberName :
+external interface JSDocMemberName :
     Node,
     JSDocNameReferenceName,
     JSDocMemberNameLeft,

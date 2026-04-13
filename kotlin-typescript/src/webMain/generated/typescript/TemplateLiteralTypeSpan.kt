@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TemplateLiteralTypeSpan :
+external interface TemplateLiteralTypeSpan :
     TypeNode,
     TemplateMiddleParent,
     TemplateTailParent {

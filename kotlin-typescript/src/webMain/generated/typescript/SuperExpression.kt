@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SuperExpression :
+external interface SuperExpression :
     PrimaryExpression,
     FlowContainer {
     override val kind: SyntaxKind.SuperKeyword

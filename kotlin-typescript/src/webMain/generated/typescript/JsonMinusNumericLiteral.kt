@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JsonMinusNumericLiteral :
+external interface JsonMinusNumericLiteral :
     PrefixUnaryExpression,
     JsonObjectExpression {
     override val kind: SyntaxKind.PrefixUnaryExpression

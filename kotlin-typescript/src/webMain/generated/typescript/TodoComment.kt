@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface TodoComment {
+@kotlinx.js.JsPlainObject
+external interface TodoComment {
     var descriptor: TodoCommentDescriptor
     var message: String
     var position: Double

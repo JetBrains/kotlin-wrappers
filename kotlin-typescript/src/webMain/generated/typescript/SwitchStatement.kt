@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface SwitchStatement :
+external interface SwitchStatement :
     Statement,
     FlowContainer,
     HasJSDoc {

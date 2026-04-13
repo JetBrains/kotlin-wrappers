@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ConditionalRoot {
+@kotlinx.js.JsPlainObject
+external interface ConditionalRoot {
     var node: ConditionalTypeNode
     var checkType: Type
     var extendsType: Type

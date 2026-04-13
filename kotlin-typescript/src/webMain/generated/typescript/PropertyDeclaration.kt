@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface PropertyDeclaration :
+external interface PropertyDeclaration :
     ClassElement,
     JSDocContainer,
     HasJSDoc,

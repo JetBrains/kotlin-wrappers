@@ -14,7 +14,7 @@ package typescript
  *
  * For the canonical implementation of this type, @see {visitNode}.
  */
-sealed external interface NodeVisitor {
+external interface NodeVisitor {
     operator fun <TIn : Node?, TVisited : Node?, TOut : Node> invoke(
         node: TIn,
         visitor: Visitor<TIn & Any, TVisited>,

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface HighlightSpan {
+@kotlinx.js.JsPlainObject
+external interface HighlightSpan {
     var fileName: String?
     var isInString: Boolean /* true */?
     var textSpan: TextSpan

@@ -3,7 +3,8 @@
 package typescript
 
 /** @deprecated - consider using EditorSettings instead */
-sealed external interface EditorOptions {
+@kotlinx.js.JsPlainObject
+external interface EditorOptions {
     var BaseIndentSize: Double?
     var IndentSize: Double
     var TabSize: Double

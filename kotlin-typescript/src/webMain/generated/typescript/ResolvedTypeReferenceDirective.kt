@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ResolvedTypeReferenceDirective {
+@kotlinx.js.JsPlainObject
+external interface ResolvedTypeReferenceDirective {
     var primary: Boolean
     var resolvedFileName: String?
     var packageId: PackageId?

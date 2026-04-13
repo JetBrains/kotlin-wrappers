@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface WithStatement :
+external interface WithStatement :
     Statement,
     FlowContainer,
     HasJSDoc {

@@ -7,7 +7,7 @@ package typescript
  * - import x = require("mod");
  * - import x = M.x;
  */
-sealed external interface ImportEqualsDeclaration :
+external interface ImportEqualsDeclaration :
     DeclarationStatement,
     JSDocContainer,
     HasJSDoc,

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface PrinterOptions {
+@kotlinx.js.JsPlainObject
+external interface PrinterOptions {
     var removeComments: Boolean?
     var newLine: NewLineKind?
     var omitTrailingSemicolon: Boolean?

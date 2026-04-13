@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface TypeCheckerSignatureToSignatureDeclarationResult : SignatureDeclaration {
+external interface TypeCheckerSignatureToSignatureDeclarationResult : SignatureDeclaration {
     var typeArguments: NodeArray<TypeNode>?
 }

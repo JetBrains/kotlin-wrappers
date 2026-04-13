@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ExpressionWithTypeArguments :
+external interface ExpressionWithTypeArguments :
     MemberExpression,
     NodeWithTypeArguments,
     TypeReferenceType {

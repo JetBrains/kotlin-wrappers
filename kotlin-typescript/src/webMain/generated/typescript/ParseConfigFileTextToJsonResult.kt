@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ParseConfigFileTextToJsonResult {
+@kotlinx.js.JsPlainObject
+external interface ParseConfigFileTextToJsonResult {
     var config: Any?
     var error: Diagnostic?
 }

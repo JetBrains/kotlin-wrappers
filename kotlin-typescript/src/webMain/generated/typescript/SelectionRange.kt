@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface SelectionRange {
+@kotlinx.js.JsPlainObject
+external interface SelectionRange {
     var textSpan: TextSpan
     var parent: SelectionRange?
 }

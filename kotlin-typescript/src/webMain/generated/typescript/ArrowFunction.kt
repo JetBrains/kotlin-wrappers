@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ArrowFunction :
+external interface ArrowFunction :
     Expression,
     FunctionLikeDeclarationBase,
     JSDocContainer,

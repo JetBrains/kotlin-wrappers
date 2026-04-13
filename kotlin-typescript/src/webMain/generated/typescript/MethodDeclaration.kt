@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface MethodDeclaration :
+external interface MethodDeclaration :
     FunctionLikeDeclarationBase,
     ClassElement,
     ObjectLiteralElement,

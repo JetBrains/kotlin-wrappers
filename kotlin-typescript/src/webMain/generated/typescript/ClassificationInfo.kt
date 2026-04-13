@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ClassificationInfo {
+@kotlinx.js.JsPlainObject
+external interface ClassificationInfo {
     var length: Double
     var classification: TokenClass
 }

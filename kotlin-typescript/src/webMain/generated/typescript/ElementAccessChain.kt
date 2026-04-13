@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ElementAccessChain :
+external interface ElementAccessChain :
     ElementAccessExpression,
     OptionalChain,
     IsOptionalChainResultPredicate {

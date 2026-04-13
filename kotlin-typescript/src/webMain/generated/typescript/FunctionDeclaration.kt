@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface FunctionDeclaration :
+external interface FunctionDeclaration :
     FunctionLikeDeclarationBase,
     DeclarationStatement,
     LocalsContainer,

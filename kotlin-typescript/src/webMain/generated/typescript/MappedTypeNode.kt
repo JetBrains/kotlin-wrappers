@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface MappedTypeNode :
+external interface MappedTypeNode :
     TypeNode,
     Declaration,
     LocalsContainer,

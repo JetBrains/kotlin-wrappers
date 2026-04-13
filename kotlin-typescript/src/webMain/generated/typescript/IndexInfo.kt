@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface IndexInfo {
+@kotlinx.js.JsPlainObject
+external interface IndexInfo {
     var keyType: Type
     var type: Type
     var isReadonly: Boolean

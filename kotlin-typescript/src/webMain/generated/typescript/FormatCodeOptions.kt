@@ -3,7 +3,8 @@
 package typescript
 
 /** @deprecated - consider using FormatCodeSettings instead */
-sealed external interface FormatCodeOptions : EditorOptions {
+@kotlinx.js.JsPlainObject
+external interface FormatCodeOptions : EditorOptions {
     var InsertSpaceAfterCommaDelimiter: Boolean
     var InsertSpaceAfterSemicolonInForStatements: Boolean
     var InsertSpaceBeforeAndAfterBinaryOperators: Boolean

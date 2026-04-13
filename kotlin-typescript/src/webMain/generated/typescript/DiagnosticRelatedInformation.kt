@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DiagnosticRelatedInformation {
+@kotlinx.js.JsPlainObject
+external interface DiagnosticRelatedInformation {
     var category: DiagnosticCategory
     var code: Double
     var file: SourceFile?

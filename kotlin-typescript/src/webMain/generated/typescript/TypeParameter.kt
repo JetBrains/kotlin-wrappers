@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface TypeParameter :
+external interface TypeParameter :
     InstantiableType,
     TypeVariable

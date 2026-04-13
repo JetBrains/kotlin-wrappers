@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocParameterTag :
+external interface JSDocParameterTag :
     JSDocPropertyLikeTag,
     VariableLikeDeclaration {
     override val kind: SyntaxKind.JSDocParameterTag

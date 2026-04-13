@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface CompletionInfo {
+@kotlinx.js.JsPlainObject
+external interface CompletionInfo {
     /** For performance telemetry. */
     var flags: CompletionInfoFlags?
 

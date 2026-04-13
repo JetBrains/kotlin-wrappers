@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TemplateMiddle :
+external interface TemplateMiddle :
     TemplateLiteralLikeNode,
     TemplateLiteralTypeSpanLiteral,
     PseudoLiteralToken,

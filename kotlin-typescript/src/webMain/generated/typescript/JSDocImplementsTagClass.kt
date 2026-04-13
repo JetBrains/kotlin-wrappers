@@ -2,6 +2,6 @@
 
 package typescript
 
-sealed external interface JSDocImplementsTagClass : ExpressionWithTypeArguments {
+external interface JSDocImplementsTagClass : ExpressionWithTypeArguments {
     override val expression: JSDocImplementsTagClassExpression
 }

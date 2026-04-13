@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface EmptyStatement :
+external interface EmptyStatement :
     Statement,
     HasJSDoc {
     override val kind: SyntaxKind.EmptyStatement

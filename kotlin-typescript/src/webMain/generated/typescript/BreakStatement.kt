@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface BreakStatement :
+external interface BreakStatement :
     Statement,
     FlowContainer,
     HasJSDoc,

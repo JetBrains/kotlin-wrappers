@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface TaggedTemplateExpression :
+external interface TaggedTemplateExpression :
     MemberExpression,
     HasTypeArguments,
     CallLikeExpression {

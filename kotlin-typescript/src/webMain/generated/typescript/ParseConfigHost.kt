@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface ParseConfigHost : ModuleResolutionHost {
+external interface ParseConfigHost : ModuleResolutionHost {
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var useCaseSensitiveFileNames: Boolean
 

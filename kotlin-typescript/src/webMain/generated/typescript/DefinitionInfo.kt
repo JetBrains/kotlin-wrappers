@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DefinitionInfo : DocumentSpan {
+@kotlinx.js.JsPlainObject
+external interface DefinitionInfo : DocumentSpan {
     var kind: ScriptElementKind
     var name: String
     var containerKind: ScriptElementKind

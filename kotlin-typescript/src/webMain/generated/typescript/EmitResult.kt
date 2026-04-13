@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface EmitResult {
+@kotlinx.js.JsPlainObject
+external interface EmitResult {
     var emitSkipped: Boolean
 
     /** Contains declaration emit diagnostics */

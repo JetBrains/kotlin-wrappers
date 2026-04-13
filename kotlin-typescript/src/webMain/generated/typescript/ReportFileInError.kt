@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ReportFileInError {
+@kotlinx.js.JsPlainObject
+external interface ReportFileInError {
     var fileName: String
     var line: Double
 }

@@ -2,7 +2,7 @@
 
 package typescript
 
-sealed external interface LanguageServiceHost :
+external interface LanguageServiceHost :
     GetEffectiveTypeRootsHost,
     MinimalResolutionCacheHost {
     override fun getCompilationSettings(): CompilerOptions
