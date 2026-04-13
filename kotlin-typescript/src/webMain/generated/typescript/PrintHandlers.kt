@@ -2,6 +2,7 @@
 
 package typescript
 
+@kotlinx.js.JsPlainObject
 external interface PrintHandlers {
     /**
      * A hook used by the Printer when generating unique names to avoid collisions with

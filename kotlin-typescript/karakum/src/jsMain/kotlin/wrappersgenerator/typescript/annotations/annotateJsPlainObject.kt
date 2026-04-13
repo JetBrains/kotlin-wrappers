@@ -11,6 +11,7 @@ fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
         node.name.text == "BuildOptions"
                 || node.name.text == "CompilerOptions"
                 || node.name.text == "WatchOptions"
+                || node.name.text == "PrintHandlers"
     )
 
     "@kotlinx.js.JsPlainObject"
