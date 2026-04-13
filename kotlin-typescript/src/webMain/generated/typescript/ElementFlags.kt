@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface ElementFlags {
+sealed external interface ElementFlags : js.numbers.Bitmask<ElementFlags> {
     companion object {
         val Required: ElementFlags
         val Optional: ElementFlags

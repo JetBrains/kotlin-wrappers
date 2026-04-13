@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface TypeFormatFlags {
+sealed external interface TypeFormatFlags : js.numbers.Bitmask<TypeFormatFlags> {
     companion object {
         val None: TypeFormatFlags
         val NoTruncation: TypeFormatFlags

@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface GeneratedIdentifierFlags {
+sealed external interface GeneratedIdentifierFlags : js.numbers.Bitmask<GeneratedIdentifierFlags> {
     companion object {
         val None: GeneratedIdentifierFlags
         val ReservedInNestedScopes: GeneratedIdentifierFlags

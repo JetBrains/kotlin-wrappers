@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface NodeFlags {
+sealed external interface NodeFlags : js.numbers.Bitmask<NodeFlags> {
     companion object {
         val None: NodeFlags
         val Let: NodeFlags

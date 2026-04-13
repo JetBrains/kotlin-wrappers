@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface InferencePriority {
+sealed external interface InferencePriority : js.numbers.Bitmask<InferencePriority> {
     companion object {
         val None: InferencePriority
         val NakedTypeVariable: InferencePriority

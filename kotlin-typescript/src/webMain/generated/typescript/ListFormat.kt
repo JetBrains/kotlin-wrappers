@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface ListFormat {
+sealed external interface ListFormat : js.numbers.Bitmask<ListFormat> {
     companion object {
         val None: ListFormat
         val SingleLine: ListFormat

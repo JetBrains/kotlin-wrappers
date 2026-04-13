@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface EmitFlags {
+sealed external interface EmitFlags : js.numbers.Bitmask<EmitFlags> {
     companion object {
         val None: EmitFlags
         val SingleLine: EmitFlags

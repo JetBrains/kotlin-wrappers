@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface CompletionInfoFlags {
+sealed external interface CompletionInfoFlags : js.numbers.Bitmask<CompletionInfoFlags> {
     companion object {
         val None: CompletionInfoFlags
         val MayIncludeAutoImports: CompletionInfoFlags

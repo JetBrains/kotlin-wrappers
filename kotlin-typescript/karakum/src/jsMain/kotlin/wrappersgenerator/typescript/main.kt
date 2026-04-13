@@ -13,6 +13,7 @@ import wrappersgenerator.typescript.annotations.createJsPlainObjectAnnotation
 import wrappersgenerator.typescript.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.typescript.inheritanceModifiers.modifyPropertyInheritance
 import wrappersgenerator.typescript.injections.decorateUnionInjection
+import wrappersgenerator.typescript.injections.injectBitmaskParents
 import wrappersgenerator.typescript.injections.injectCommonUnionParents
 import wrappersgenerator.typescript.nameResolvers.*
 import wrappersgenerator.typescript.plugins.*
@@ -35,6 +36,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertWithMetadata,
         )
         injections = listOf(
+            injectBitmaskParents,
             injectCommonUnionParents,
             decorateUnionInjection(UnionInjection()),
         )

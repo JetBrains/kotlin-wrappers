@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface TokenFlags {
+sealed external interface TokenFlags : js.numbers.Bitmask<TokenFlags> {
     companion object {
         val None: TokenFlags
         val Scientific: TokenFlags

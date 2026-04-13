@@ -4,7 +4,7 @@
 
 package typescript
 
-sealed external interface ModifierFlags {
+sealed external interface ModifierFlags : js.numbers.Bitmask<ModifierFlags> {
     companion object {
         val None: ModifierFlags
         val Public: ModifierFlags
