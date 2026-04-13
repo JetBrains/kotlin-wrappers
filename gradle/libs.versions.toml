@@ -2,7 +2,7 @@
 coroutines = "1.10.2"
 dokka = "2.2.0"
 karakum = "1.0.0-alpha.106"
-kfc = "18.1.0"
+kfc = "18.4.0"
 kotlin = "2.3.20"
 serialization = "1.11.0"
 seskar = "4.40.0"
