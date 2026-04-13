@@ -6,7 +6,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResu
 import io.github.sgrishchenko.karakum.extension.withName
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import typescript.isFunctionDeclaration
 import wrappersgenerator.testing.library.dom.annotations.annotateWaitFor
 import wrappersgenerator.testing.library.dom.inheritanceModifiers.modifyMethodInheritance
@@ -69,11 +68,5 @@ suspend fun main(args: ReadonlyArray<String>) {
 
             "screen.kt" to "screen.val.kt",
         )
-        compilerOptions = unsafeJso {
-            lib = arrayOf(
-                "lib.esnext.d.ts",
-                "lib.dom.d.ts",
-            )
-        }
     }
 }

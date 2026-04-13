@@ -3,7 +3,6 @@ package wrappersgenerator.electron
 import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import wrappersgenerator.electron.annotations.annotateInterfaceWithSuperclass
 import wrappersgenerator.electron.annotations.annotateJsPlainObject
 import wrappersgenerator.electron.inheritanceModifiers.modifyClassInheritance
@@ -215,11 +214,5 @@ suspend fun main(args: ReadonlyArray<String>) {
             "DownloadItemDoneListenerState" to ConflictResolutionStrategy.replace,
             "DownloadItemUpdatedListenerState" to ConflictResolutionStrategy.replace
         )
-        compilerOptions = unsafeJso {
-            lib = arrayOf(
-                "lib.esnext.d.ts",
-                "lib.dom.d.ts",
-            )
-        }
     }
 }

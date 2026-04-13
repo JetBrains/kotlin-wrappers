@@ -3,7 +3,6 @@ package wrappersgenerator.testing.library.react
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import wrappersgenerator.testing.library.react.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.testing.library.react.injections.injectBoundFunction
 import wrappersgenerator.testing.library.react.plugins.*
@@ -62,11 +61,5 @@ suspend fun main(args: ReadonlyArray<String>) {
                 ".+" to "testing.library.dom."
             ),
         )
-        compilerOptions = unsafeJso {
-            lib = arrayOf(
-                "lib.esnext.d.ts",
-                "lib.dom.d.ts",
-            )
-        }
     }
 }

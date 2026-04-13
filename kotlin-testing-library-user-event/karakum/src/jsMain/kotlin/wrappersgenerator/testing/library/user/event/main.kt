@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.configuration.replace
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseMethodPlugin
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import wrappersgenerator.testing.library.user.event.nameResolvers.resolveDirectOptionsParameterName
 import wrappersgenerator.testing.library.user.event.nameResolvers.resolveMouseButtonTypeName
 import wrappersgenerator.testing.library.user.event.nameResolvers.resolveOptionsParameterName
@@ -158,11 +157,5 @@ suspend fun main(args: ReadonlyArray<String>) {
             "DirectTabOptions.kt" to ConflictResolutionStrategy.replace,
             "DirectTypeOptions.kt" to ConflictResolutionStrategy.replace,
         )
-        compilerOptions = unsafeJso {
-            lib = arrayOf(
-                "lib.esnext.d.ts",
-                "lib.dom.d.ts",
-            )
-        }
     }
 }

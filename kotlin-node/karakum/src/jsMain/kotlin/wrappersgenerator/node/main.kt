@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResu
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import wrappersgenerator.node.annotations.*
 import wrappersgenerator.node.inheritanceModifiers.modifyClassInheritance
 import wrappersgenerator.node.inheritanceModifiers.modifyMethodInheritance
@@ -919,11 +918,5 @@ suspend fun main(args: ReadonlyArray<String>) {
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace,
             "DiffieHellmanOptions.kt" to ConflictResolutionStrategy.replace,
         )
-        compilerOptions = unsafeJso {
-            lib = arrayOf(
-                "lib.esnext.d.ts",
-                "lib.dom.d.ts",
-            )
-        }
     }
 }
