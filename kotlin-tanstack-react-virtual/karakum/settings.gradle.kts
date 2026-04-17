@@ -1,4 +1,4 @@
-rootProject.name = "kotlin-tanstack-virtual-karakum"
+rootProject.name = "kotlin-tanstack-react-virtual-karakum"
 
 pluginManagement {
     includeBuild("../../build-logic-settings")

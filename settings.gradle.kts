@@ -232,8 +232,15 @@ include("kotlin-tanstack-react-router-devtools")
 // Kotlin/JS: TanStack React Table wrappers
 include("kotlin-tanstack-react-table")
 
+// Kotlin/JS: TanStack Virtual Core wrappers
+include("kotlin-tanstack-virtual-core")
+
+includeKarakum("kotlin-tanstack-virtual-core")
+
 // Kotlin/JS: TanStack React Virtual wrappers
 include("kotlin-tanstack-react-virtual")
+
+includeKarakum("kotlin-tanstack-react-virtual")
 
 // Kotlin/JS: TanStack Router Core wrappers
 include("kotlin-tanstack-router-core")
@@ -242,11 +249,6 @@ includeKarakum("kotlin-tanstack-table")
 
 // Kotlin/JS: TanStack Table Core wrappers
 include("kotlin-tanstack-table-core")
-
-includeKarakum("kotlin-tanstack-virtual")
-
-// Kotlin/JS: TanStack Virtual Core wrappers
-include("kotlin-tanstack-virtual-core")
 
 // Kotlin/JS: Tauri API wrappers
 include("kotlin-tauri-apps-api")
