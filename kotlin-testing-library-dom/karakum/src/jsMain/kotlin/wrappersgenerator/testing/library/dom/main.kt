@@ -1,5 +1,6 @@
 package wrappersgenerator.testing.library.dom
 
+import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
 import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResultPlugin
@@ -7,6 +8,7 @@ import io.github.sgrishchenko.karakum.extension.withName
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import typescript.isFunctionDeclaration
+import wrappersgenerator.testing.library.dom.annotations.annotateJsPlainObject
 import wrappersgenerator.testing.library.dom.annotations.annotateWaitFor
 import wrappersgenerator.testing.library.dom.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.testing.library.dom.plugins.*
@@ -37,6 +39,9 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         annotations = listOf(
+            JsPlainObjectAnnotation(),
+
+            ::annotateJsPlainObject,
             ::annotateWaitFor,
         )
 

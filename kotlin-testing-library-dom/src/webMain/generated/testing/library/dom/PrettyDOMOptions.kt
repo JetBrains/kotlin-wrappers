@@ -4,6 +4,7 @@ package testing.library.dom
 
 // unhandled import: * as prettyFormat from "pretty-format"
 
+@kotlinx.js.JsPlainObject
 external interface PrettyDOMOptions {
     /**
      * Given a `Node` return `false` if you wish to ignore that node in the output.

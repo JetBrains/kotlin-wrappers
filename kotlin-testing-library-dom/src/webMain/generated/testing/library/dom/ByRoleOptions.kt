@@ -8,6 +8,7 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
+@kotlinx.js.JsPlainObject
 external interface ByRoleOptions {
     /** suppress suggestions for a specific query */
     var suggest: Boolean?

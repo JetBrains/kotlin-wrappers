@@ -8,6 +8,7 @@ package testing.library.dom
 // unhandled import: SelectorMatcherOptions from "./query-helpers"
 // unhandled import: waitForOptions from "./wait-for"
 
+@kotlinx.js.JsPlainObject
 external interface ByRoleOptionsValue {
     var now: Double?
     var min: Double?

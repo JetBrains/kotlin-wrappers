@@ -2,6 +2,7 @@
 
 package testing.library.dom
 
+@kotlinx.js.JsPlainObject
 external interface waitForOptions {
     var container: web.html.HTMLElement?
     var timeout: Double?

@@ -6,6 +6,7 @@ package testing.library.dom
 // unhandled import: MatcherOptions from "./matches"
 // unhandled import: waitForOptions from "./wait-for"
 
+@kotlinx.js.JsPlainObject
 external interface WithSuggest {
     var suggest: Boolean?
 }
