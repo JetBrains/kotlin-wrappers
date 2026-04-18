@@ -29,6 +29,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertFunctionInterfaces,
             convertGetQueriesForElement,
             convertHtmlElementGenerics,
+            convertJsPlainObjectMethods,
             convertOptionalType,
             convertPrettyFormatOptionsReceived,
             convertQueriesGenerics,

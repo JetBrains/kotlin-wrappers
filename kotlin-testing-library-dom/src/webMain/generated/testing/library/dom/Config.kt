@@ -2,6 +2,7 @@
 
 package testing.library.dom
 
+@kotlinx.js.JsPlainObject
 external interface Config {
     var testIdAttribute: String
 
@@ -9,14 +10,13 @@ external interface Config {
      * WARNING: `unstable` prefix means this API may change in patch and minor releases.
      * @param cb
      */
-    fun unstable_advanceTimersWrapper(cb: Function<Any?> /* (...args: unknown[]) => unknown */): Any?
+    var unstable_advanceTimersWrapper: (cb: Function<Any?> /* (...args: unknown[]) => unknown */) -> Any?
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fun asyncWrapper(cb: Function<Any?> /* (...args: any[]) => any */): js.promise.Promise<Any?>
+    var asyncWrapper: (cb: Function<Any?> /* (...args: any[]) => any */) -> js.promise.Promise<Any?>
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fun eventWrapper(cb: Function<Any?> /* (...args: any[]) => any */)
-
+    var eventWrapper: (cb: Function<Any?> /* (...args: any[]) => any */) -> Unit
     var asyncUtilTimeout: Double
     var computedStyleSupportsPseudoElements: Boolean
     var defaultHidden: Boolean
