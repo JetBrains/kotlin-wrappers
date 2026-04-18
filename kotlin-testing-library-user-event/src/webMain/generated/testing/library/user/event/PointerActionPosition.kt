@@ -6,6 +6,7 @@ package testing.library.user.event
 // unhandled import: Instance from "../setup"
 // unhandled import: pointerKey from "../system/pointer"
 
+@kotlinx.js.JsPlainObject
 external interface PointerActionPosition {
     var target: web.dom.Element?
     var coords: PointerCoords?

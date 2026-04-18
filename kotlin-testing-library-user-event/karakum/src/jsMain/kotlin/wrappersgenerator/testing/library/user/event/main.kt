@@ -5,6 +5,8 @@ import io.github.sgrishchenko.karakum.configuration.replace
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseMethodPlugin
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
+import wrappersgenerator.testing.library.user.event.annotaions.annotateJsPlainObject
+import wrappersgenerator.testing.library.user.event.annotaions.createJsPlainObjectAnnotation
 import wrappersgenerator.testing.library.user.event.nameResolvers.resolveDirectOptionsParameterName
 import wrappersgenerator.testing.library.user.event.nameResolvers.resolveMouseButtonTypeName
 import wrappersgenerator.testing.library.user.event.nameResolvers.resolveOptionsParameterName
@@ -21,6 +23,11 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUserEventMethod,
             convertUserEventMethodOptions,
             convertUtilityTypes,
+        )
+
+        annotations = listOf(
+            createJsPlainObjectAnnotation(),
+            ::annotateJsPlainObject,
         )
 
         nameResolvers = listOf(

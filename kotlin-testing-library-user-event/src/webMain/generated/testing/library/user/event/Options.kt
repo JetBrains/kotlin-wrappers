@@ -5,6 +5,7 @@ package testing.library.user.event
 // unhandled import: keyboardKey from "./system/keyboard"
 // unhandled import: pointerKey from "./system/pointer"
 
+@kotlinx.js.JsPlainObject
 external interface Options {
     /**
      * When using `userEvent.upload`, automatically discard files

@@ -5,6 +5,7 @@ package testing.library.user.event
 // unhandled import: PointerCoords from "../../event"
 // unhandled import: MouseButton from "./buttons"
 
+@kotlinx.js.JsPlainObject
 external interface pointerKey {
     /** Name of the pointer key */
     var name: String

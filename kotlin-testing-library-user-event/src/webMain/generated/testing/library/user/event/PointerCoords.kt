@@ -4,6 +4,7 @@ package testing.library.user.event
 
 // unhandled import: eventMap from "./eventMap"
 
+@kotlinx.js.JsPlainObject
 external interface PointerCoords {
     var x: Double?
     var y: Double?

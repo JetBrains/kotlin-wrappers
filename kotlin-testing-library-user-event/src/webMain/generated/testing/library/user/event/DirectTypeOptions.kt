@@ -2,6 +2,7 @@
 
 package testing.library.user.event
 
+@kotlinx.js.JsPlainObject
 external interface DirectTypeOptions :
     Options,
     typeOptions {

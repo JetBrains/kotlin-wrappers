@@ -5,6 +5,7 @@ package testing.library.user.event
 // unhandled import: Instance from "../setup"
 // unhandled import: Options from "../options"
 
+@kotlinx.js.JsPlainObject
 external interface typeOptions {
     var skipClick: Boolean?
     var skipAutoClose: Boolean?

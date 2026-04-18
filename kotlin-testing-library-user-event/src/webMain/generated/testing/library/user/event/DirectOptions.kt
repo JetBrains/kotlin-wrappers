@@ -7,6 +7,7 @@ package testing.library.user.event
 // unhandled import: System from "../system"
 // unhandled import: UserEventApi from "./setup"
 
+@kotlinx.js.JsPlainObject
 external interface DirectOptions : Options {
     var keyboardState: System?
     var pointerState: System?

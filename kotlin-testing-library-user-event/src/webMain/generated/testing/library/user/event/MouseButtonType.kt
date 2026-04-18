@@ -4,6 +4,7 @@ package testing.library.user.event
 
 // unhandled import: pointerKey from "./shared"
 
+@kotlinx.js.JsPlainObject
 external interface MouseButtonType {
     val primary: Double // 0
     val secondary: Double // 1
