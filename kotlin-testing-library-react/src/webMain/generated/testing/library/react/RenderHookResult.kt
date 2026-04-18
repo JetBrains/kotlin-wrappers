@@ -6,6 +6,7 @@ package testing.library.react
 // unhandled import: act as reactDeprecatedAct from "react-dom/test-utils"
 // unhandled import: act as reactAct from "react"
 
+@kotlinx.js.JsPlainObject
 external interface RenderHookResult<Result, Props> {
     /**
      * Triggers a re-render. The props will be passed to your renderHook callback.

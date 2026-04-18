@@ -1,16 +1,16 @@
 package wrappersgenerator.testing.library.react
 
+import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
+import wrappersgenerator.testing.library.react.annotations.annotateJsPlainObject
 import wrappersgenerator.testing.library.react.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.testing.library.react.injections.injectBoundFunction
 import wrappersgenerator.testing.library.react.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        injections
-
         plugins = listOf(
             convertBaseRenderOptions,
 
@@ -29,6 +29,12 @@ suspend fun main(args: ReadonlyArray<String>) {
 
         injections = listOf(
             injectBoundFunction
+        )
+
+        annotations = listOf(
+            JsPlainObjectAnnotation(),
+
+            ::annotateJsPlainObject,
         )
 
         inheritanceModifiers = listOf(
