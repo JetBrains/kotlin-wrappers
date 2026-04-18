@@ -2,4 +2,5 @@
 
 package tanstack.history
 
+@kotlinx.js.JsPlainObject
 external interface HistoryState
