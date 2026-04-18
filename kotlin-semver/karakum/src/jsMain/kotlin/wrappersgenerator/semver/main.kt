@@ -2,9 +2,9 @@ package wrappersgenerator.semver
 
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
 import io.github.sgrishchenko.karakum.configuration.`package`
+import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import wrappersgenerator.semver.annotations.annotateJsPlainObject
 import wrappersgenerator.semver.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.semver.plugins.*
 
@@ -18,7 +18,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertVersionPartTypes,
         )
         annotations = listOf(
-            ::annotateJsPlainObject
+            JsPlainObjectAnnotation()
         )
         inheritanceModifiers = listOf(
             ::modifyMethodInheritance
