@@ -44,4 +44,10 @@ external interface Privileges {
      * true. Default false.
      */
     var codeCache: Boolean?
+
+    /**
+     * Allow Chrome extensions to be used on pages served over this protocol. Default
+     * false.
+     */
+    var allowExtensions: Boolean?
 }
