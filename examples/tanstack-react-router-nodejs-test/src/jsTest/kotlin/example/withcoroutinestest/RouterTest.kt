@@ -1,8 +1,13 @@
 package example.withcoroutinestest
 
 import example.TestApp
+import example.TopicServiceImpl
+import example.di.Di
 import example.testsupport.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
+import react.ReactNode
 import react.create
 import testing.library.dom.screen
 import testing.library.dom.within
@@ -11,24 +16,33 @@ import testing.library.react.render
 import testing.library.user.event.userEvent
 import kotlin.test.AfterTest
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 class RouterTest {
+    private fun createTestApp(testScope: CoroutineScope): ReactNode {
+        val testApp = TestApp.create {
+            di = Di(testScope, TopicServiceImpl())
+        }
+        return testApp
+    }
+
     @AfterTest
     fun afterTest() {
         cleanup()
     }
 
     private fun doTest() = runTest {
+        val testScope: TestScope = this
+        val testApp = createTestApp(testScope)
+
         // given
         val user = userEvent.setup()
 
         // when
-        render(TestApp.create())
+        render(testApp)
 
         // then
-        val indexContainer = screen.findByTestId(INDEX_CONTAINER_ID)
+        screen.findByTestId(INDEX_CONTAINER_ID)
 
         val topicsLink = screen.queryByTestId(INDEX_LINK_TOPICS_ID)
         assertNotNull(topicsLink, "link to topics on index page")
@@ -45,7 +59,7 @@ class RouterTest {
 
         user.click(componentTopicLink)
 
-        val topicContainer = screen.findByTestId(TOPIC_CONTAINER_ID)
+        screen.findByTestId(TOPIC_CONTAINER_ID)
     }
 
     @Test
