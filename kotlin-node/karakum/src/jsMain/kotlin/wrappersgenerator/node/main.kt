@@ -104,6 +104,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertWebCryptoQualifiedName,
             convertWebStreamsQualifiedName,
             convertWithImplicitCoercion,
+            convertZlibTransform,
         )
         injections = listOf(
             DuplexMembersInjection(),
@@ -115,6 +116,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             ReadableMembersInjection(),
             TracingChannelSubscribersInjection(),
             WritableMembersInjection(),
+            ZlibTransformsMembersInjection(),
 
             injectAgentOptionsPort,
         )

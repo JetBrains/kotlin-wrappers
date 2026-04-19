@@ -1,9 +1,29 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("node:zlib")
+
 package node.zlib
 
-@Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface Inflate :
+/**
+ * @since v0.5.8
+ */
+external class Inflate :
     node.stream.Transform,
     Zlib,
-    ZlibReset
+    ZlibReset {
+    constructor (options: ZlibOptions = definedExternally)
+
+    override val bytesWritten: Double
+    override var shell: Any? // boolean | string | undefined
+
+    override fun close(callback: () -> Unit)
+
+    override fun flush(
+        kind: Number,
+        callback: () -> Unit,
+    )
+
+    override fun flush(callback: () -> Unit)
+
+    override fun reset()
+}

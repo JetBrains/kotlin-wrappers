@@ -19,13 +19,18 @@ external interface ZlibOptions {
      */
     var chunkSize: Double?
     var windowBits: Double?
-    var level: Double? // compression only
 
-    var memLevel: Double? // compression only
+    /** compression only */
+    var level: Double?
 
-    var strategy: Double? // compression only
+    /** compression only */
+    var memLevel: Double?
 
-    var dictionary: Any? /* NodeJS.ArrayBufferView | ArrayBuffer | undefined */ // deflate/inflate only, empty dictionary by default
+    /** compression only */
+    var strategy: Double?
+
+    /** deflate/inflate only, empty dictionary by default */
+    var dictionary: Any? // NodeJS.ArrayBufferView | ArrayBuffer | undefined
 
     /**
      * If `true`, returns an object with `buffer` and `engine`.

@@ -61,19 +61,6 @@ private val interfacesWithSuperclass = setOf(
     // util
     "CustomPromisifySymbol",
     "DebugLogger",
-
-    // zlib
-    "BrotliCompress",
-    "BrotliDecompress",
-    "Deflate",
-    "DeflateRaw",
-    "Gunzip",
-    "Gzip",
-    "Inflate",
-    "InflateRaw",
-    "Unzip",
-    "ZstdCompress",
-    "ZstdDecompress",
 )
 
 fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {

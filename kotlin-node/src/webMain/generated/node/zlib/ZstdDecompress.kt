@@ -1,12 +1,27 @@
 // Automatically generated - do not modify!
 
+@file:JsModule("node:zlib")
+
 package node.zlib
 
 /**
  * @since v22.15.0
  * @experimental
  */
-@Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface ZstdDecompress :
+external class ZstdDecompress :
     node.stream.Transform,
-    Zlib
+    Zlib {
+    constructor (options: ZstdOptions = definedExternally)
+
+    override val bytesWritten: Double
+    override var shell: Any? // boolean | string | undefined
+
+    override fun close(callback: () -> Unit)
+
+    override fun flush(
+        kind: Number,
+        callback: () -> Unit,
+    )
+
+    override fun flush(callback: () -> Unit)
+}
