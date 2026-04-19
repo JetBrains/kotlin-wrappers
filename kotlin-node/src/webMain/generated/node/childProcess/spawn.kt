@@ -40,6 +40,7 @@ import node.stream.Writable
  *
  * ```js
  * import { spawn } from 'node:child_process';
+ * import { once } from 'node:events';
  * const ls = spawn('ls', ['-lh', '/usr']);
  *
  * ls.stdout.on('data', (data) => {
@@ -50,9 +51,8 @@ import node.stream.Writable
  *   console.error(`stderr: ${data}`);
  * });
  *
- * ls.on('close', (code) => {
- *   console.log(`child process exited with code ${code}`);
- * });
+ * const [code] = await once(ls, 'close');
+ * console.log(`child process exited with code ${code}`);
  * ```
  *
  * Example: A very elaborate way to run `ps ax | grep ssh`

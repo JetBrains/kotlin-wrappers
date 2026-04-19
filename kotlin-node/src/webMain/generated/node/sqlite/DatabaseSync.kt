@@ -53,6 +53,17 @@ external class DatabaseSync : js.disposable.Disposable {
     fun enableLoadExtension(allow: Boolean)
 
     /**
+     * Enables or disables the defensive flag. When the defensive flag is active,
+     * language features that allow ordinary SQL to deliberately corrupt the
+     * database file are disabled.
+     * See [`SQLITE_DBCONFIG_DEFENSIVE`](https://www.sqlite.org/c3ref/c_dbconfig_defensive.html#sqlitedbconfigdefensive)
+     * in the SQLite documentation for details.
+     * @since v24.12.0
+     * @param active Whether to set the defensive flag.
+     */
+    fun enableDefensive(active: Boolean)
+
+    /**
      * This method is a wrapper around [`sqlite3_db_filename()`](https://sqlite.org/c3ref/db_filename.html)
      * @since v24.0.0
      * @param dbName Name of the database. This can be `'main'` (the default primary database) or any other

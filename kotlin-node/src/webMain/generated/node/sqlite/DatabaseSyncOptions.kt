@@ -89,4 +89,13 @@ external interface DatabaseSyncOptions {
      * @default false
      */
     var allowUnknownNamedParameters: Boolean?
+
+    /**
+     * If `true`, enables the defensive flag. When the defensive flag is enabled,
+     * language features that allow ordinary SQL to deliberately corrupt the database
+     * file are disabled. The defensive flag can also be set using `enableDefensive()`.
+     * @since v24.12.0
+     * @default true
+     */
+    var defensive: Boolean?
 }

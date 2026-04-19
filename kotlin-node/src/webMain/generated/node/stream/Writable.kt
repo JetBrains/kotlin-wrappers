@@ -164,7 +164,6 @@ open external class Writable :
      * @since v0.9.4
      * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
      * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
-     * @param [encoding='utf8'] The encoding, if `chunk` is a string.
      * @param callback Callback for when this chunk of data is flushed.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
      */
@@ -173,6 +172,16 @@ open external class Writable :
         callback: (error: js.errors.JsError?) -> Unit = definedExternally,
     ): Boolean
 
+    /**
+     * Writes data to the stream, with an explicit encoding for string data.
+     * @see {@link Writable.write} for full details.
+     * @since v0.9.4
+     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
+     * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
+     * @param encoding The encoding, if `chunk` is a string.
+     * @param callback Callback for when this chunk of data is flushed.
+     * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
+     */
     open fun write(
         chunk: Any?,
         encoding: node.buffer.BufferEncoding,
@@ -203,15 +212,29 @@ open external class Writable :
      * // Writing more now is not allowed!
      * ```
      * @since v0.9.4
-     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
-     * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
-     * @param encoding The encoding if `chunk` is a string
-     * @param callback Callback for when the stream is finished.
+     * @param cb Callback for when the stream is finished.
      */
     override fun end(cb: () -> Unit) // this
 
+    /**
+     * Signals that no more data will be written, with one final chunk of data.
+     * @see {@link Writable.end} for full details.
+     * @since v0.9.4
+     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
+     * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
+     * @param cb Callback for when the stream is finished.
+     */
     open fun end(chunk: Any?, cb: () -> Unit = definedExternally) // this
 
+    /**
+     * Signals that no more data will be written, with one final chunk of data.
+     * @see {@link Writable.end} for full details.
+     * @since v0.9.4
+     * @param chunk Optional data to write. For streams not operating in object mode, `chunk` must be a {string}, {Buffer},
+     * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
+     * @param encoding The encoding if `chunk` is a string
+     * @param cb Callback for when the stream is finished.
+     */
     open fun end(chunk: Any?, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally) // this
 
     /**

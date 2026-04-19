@@ -432,6 +432,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^path/path" to "node/path",
             "^path" to "node/path",
 
+            "^perf_hooks/EventLoopUtilization.kt" to "node/perfHooks/EventLoopUtilization.interface.kt",
             "^perf_hooks/performance.kt" to "node/perfHooks/performance.val.kt",
             "^perf_hooks" to "node/perfHooks",
 

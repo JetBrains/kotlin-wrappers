@@ -5,19 +5,20 @@ package node.perfHooks
 @kotlinx.js.JsPlainObject
 external interface CreateHistogramOptions {
     /**
-     * The minimum recordable value. Must be an integer value greater than 0.
+     * The lowest discernible value. Must be an integer value greater than 0.
      * @default 1
      */
     var lowest: Any? // number | bigint | undefined
 
     /**
-     * The maximum recordable value. Must be an integer value greater than min.
+     * The highest recordable value. Must be an integer value that is equal to
+     * or greater than two times `lowest`.
      * @default Number.MAX_SAFE_INTEGER
      */
     var highest: Any? // number | bigint | undefined
 
     /**
-     * The number of accuracy digits. Must be a number between 1 and 5.
+     * The number of accuracy digits. Must be a number between `1` and `5`.
      * @default 3
      */
     var figures: Double?

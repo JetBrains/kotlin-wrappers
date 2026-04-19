@@ -43,7 +43,6 @@ open external class Socket : node.stream.Duplex {
      * See `Writable` stream `write()` method for more
      * information.
      * @since v0.1.90
-     * @param [encoding='utf8'] Only used when data is `string`.
      */
     override fun write(
         buffer: js.typedarrays.Uint8Array<*>,
@@ -63,16 +62,27 @@ open external class Socket : node.stream.Duplex {
      * See `Writable` stream `write()` method for more
      * information.
      * @since v0.1.90
-     * @param [encoding='utf8'] Only used when data is `string`.
      */
     override fun write(buffer: String, cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit): Boolean
 
+    /**
+     * Sends data on the socket, with an explicit encoding for string data.
+     * @see {@link Socket.write} for full details.
+     * @since v0.1.90
+     * @param [encoding='utf8'] Only used when data is `string`.
+     */
     fun write(
         str: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding = definedExternally,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
+    /**
+     * Sends data on the socket, with an explicit encoding for string data.
+     * @see {@link Socket.write} for full details.
+     * @since v0.1.90
+     * @param [encoding='utf8'] Only used when data is `string`.
+     */
     override fun write(
         str: String,
         encoding: node.buffer.BufferEncoding,
@@ -347,22 +357,51 @@ open external class Socket : node.stream.Duplex {
      *
      * See `writable.end()` for further details.
      * @since v0.1.90
-     * @param [encoding='utf8'] Only used when data is `string`.
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
     override fun end(cb: () -> Unit) // this
 
+    /**
+     * Half-closes the socket, with one final chunk of data.
+     * @see {@link Socket.end} for full details.
+     * @since v0.1.90
+     * @param callback Optional callback for when the socket is finished.
+     * @return The socket itself.
+     */
     override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) // this
 
+    /**
+     * Half-closes the socket, with one final chunk of data.
+     * @see {@link Socket.end} for full details.
+     * @since v0.1.90
+     * @param callback Optional callback for when the socket is finished.
+     * @return The socket itself.
+     */
     override fun end(data: String, cb: () -> Unit) // this
 
+    /**
+     * Half-closes the socket, with one final chunk of data.
+     * @see {@link Socket.end} for full details.
+     * @since v0.1.90
+     * @param [encoding='utf8'] Only used when data is `string`.
+     * @param callback Optional callback for when the socket is finished.
+     * @return The socket itself.
+     */
     fun end(
         str: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding = definedExternally,
         cb: () -> Unit = definedExternally,
     ) // this
 
+    /**
+     * Half-closes the socket, with one final chunk of data.
+     * @see {@link Socket.end} for full details.
+     * @since v0.1.90
+     * @param [encoding='utf8'] Only used when data is `string`.
+     * @param callback Optional callback for when the socket is finished.
+     * @return The socket itself.
+     */
     override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) // this
 
     /**

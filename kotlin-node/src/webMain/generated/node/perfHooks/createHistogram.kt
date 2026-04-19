@@ -5,7 +5,7 @@
 package node.perfHooks
 
 /**
- * Returns a `RecordableHistogram`.
+ * Returns a {@link RecordableHistogram `RecordableHistogram`}.
  * @since v15.9.0, v14.18.0
  */
 external fun createHistogram(options: CreateHistogramOptions = definedExternally): RecordableHistogram

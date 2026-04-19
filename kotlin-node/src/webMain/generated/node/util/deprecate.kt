@@ -68,4 +68,5 @@ external fun <T : Function<*>> deprecate(
     fn: T,
     msg: String,
     code: String = definedExternally,
+    options: DeprecateOptions = definedExternally,
 ): T

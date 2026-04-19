@@ -138,4 +138,13 @@ external interface ServerOptions<Request : IncomingMessage, Response : ServerRes
      * @since v18.17.0, v20.2.0
      */
     var rejectNonStandardBodyWrites: Boolean?
+
+    /**
+     * If set to `true`, requests without `Content-Length` or `Transfer-Encoding` headers (indicating no body)
+     * will be initialized with an already-ended body stream, so they will never emit any stream events
+     * (like `'data'` or `'end'`). You can use `req.readableEnded` to detect this case.
+     * @default false
+     * @since v24.12.0
+     */
+    var optimizeEmptyRequests: Boolean?
 }

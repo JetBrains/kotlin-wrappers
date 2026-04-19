@@ -25,11 +25,19 @@ external interface Performance {
     fun clearResourceTimings(name: String = definedExternally)
 
     /**
-     * eventLoopUtilization is similar to CPU utilization except that it is calculated using high precision wall-clock time.
-     * It represents the percentage of time the event loop has spent outside the event loop's event provider (e.g. epoll_wait).
-     * No other CPU idle time is taken into consideration.
+     * This is an alias of `perf_hooks.eventLoopUtilization()`.
+     *
+     * _This property is an extension by Node.js. It is not available in Web browsers._
+     * @since v14.10.0, v12.19.0
+     * @param utilization1 The result of a previous call to
+     * `eventLoopUtilization()`.
+     * @param utilization2 The result of a previous call to
+     * `eventLoopUtilization()` prior to `utilization1`.
      */
-    var eventLoopUtilization: EventLoopUtilityFunction
+    fun eventLoopUtilization(
+        utilization1: EventLoopUtilization = definedExternally,
+        utilization2: EventLoopUtilization = definedExternally,
+    ): EventLoopUtilization
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order with respect to `performanceEntry.startTime`.
@@ -157,41 +165,12 @@ external interface Performance {
     val timeOrigin: Double
 
     /**
+     * This is an alias of `perf_hooks.timerify()`.
+     *
      * _This property is an extension by Node.js. It is not available in Web browsers._
-     *
-     * Wraps a function within a new function that measures the running time of the wrapped function.
-     * A `PerformanceObserver` must be subscribed to the `'function'` event type in order for the timing details to be accessed.
-     *
-     * ```js
-     * import {
-     *   performance,
-     *   PerformanceObserver,
-     * } from 'node:perf_hooks';
-     *
-     * function someFunction() {
-     *   console.log('hello world');
-     * }
-     *
-     * const wrapped = performance.timerify(someFunction);
-     *
-     * const obs = new PerformanceObserver((list) => {
-     *   console.log(list.getEntries()[0].duration);
-     *
-     *   performance.clearMarks();
-     *   performance.clearMeasures();
-     *   obs.disconnect();
-     * });
-     * obs.observe({ entryTypes: ['function'] });
-     *
-     * // A performance timeline entry will be created
-     * wrapped();
-     * ```
-     *
-     * If the wrapped function returns a promise, a finally handler will be attached to the promise and the duration will be reported
-     * once the finally handler is invoked.
-     * @param fn
+     * @since v8.5.0
      */
-    fun <T : Function<Any?> /* (...params: any[]) => any */> timerify(
+    fun <T : Function<Any?> /* (...args: any[]) => any */> timerify(
         fn: T,
         options: TimerifyOptions = definedExternally,
     ): T

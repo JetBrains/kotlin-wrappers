@@ -2,9 +2,6 @@
 
 package node.workerThreads
 
-import node.perfHooks.EventLoopUtilityFunction
+import node.perfHooks.Performance
 
-@kotlinx.js.JsPlainObject
-external interface WorkerPerformance {
-    var eventLoopUtilization: EventLoopUtilityFunction
-}
+external interface WorkerPerformance : Performance
