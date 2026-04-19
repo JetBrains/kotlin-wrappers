@@ -7,11 +7,4 @@ package typescript
  * The `in` and `for-in` operators can *not* be safely used,
  * since `Object.prototype` may be modified by outside code.
  */
-external interface MapLike<T> {
-    operator fun get(key: String): T?
-
-    operator fun set(
-        key: String,
-        value: T?,
-    )
-}
+typealias MapLike<T> = js.objects.ReadonlyRecord<String, T>

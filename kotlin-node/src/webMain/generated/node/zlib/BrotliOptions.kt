@@ -18,7 +18,7 @@ external interface BrotliOptions {
      * @default 16*1024
      */
     var chunkSize: Double?
-    var params: (BrotliOptionsParams)?
+    var params: (js.objects.ReadonlyRecord<Number, Any /* boolean | number */>)?
 
     /**
      * Limits output size when using [convenience methods](https://nodejs.org/docs/latest-v24.x/api/zlib.html#convenience-methods).

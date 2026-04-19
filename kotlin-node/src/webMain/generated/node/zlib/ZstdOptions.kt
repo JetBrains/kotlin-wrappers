@@ -23,7 +23,7 @@ external interface ZstdOptions {
      * Key-value object containing indexed
      * [Zstd parameters](https://nodejs.org/docs/latest-v24.x/api/zlib.html#zstd-constants).
      */
-    var params: (ZstdOptionsParams)?
+    var params: (js.objects.ReadonlyRecord<Number, Any /* number | boolean */>)?
 
     /**
      * Limits output size when using

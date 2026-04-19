@@ -2,11 +2,4 @@
 
 package node.util
 
-external interface ParseArgsOptionsConfig {
-    operator fun get(key: String): ParseArgsOptionDescriptor?
-
-    operator fun set(
-        key: String,
-        value: ParseArgsOptionDescriptor?,
-    )
-}
+typealias ParseArgsOptionsConfig = js.objects.ReadonlyRecord<String, ParseArgsOptionDescriptor>

@@ -7,10 +7,7 @@ import typescript.isInterfaceDeclaration
 
 fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     ensure(isInterfaceDeclaration(node))
-    ensure(
-        node.name.text == "Config"
-                || node.name.text == "RenderHookOptions"
-    )
+    ensure(node.name.text == "Config")
 
     "@kotlinx.js.JsPlainObject"
 }
