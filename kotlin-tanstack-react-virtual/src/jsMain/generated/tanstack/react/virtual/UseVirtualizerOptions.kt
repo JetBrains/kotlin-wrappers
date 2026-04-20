@@ -37,4 +37,5 @@ external interface UseVirtualizerOptions<TScrollElement : EventTarget, TItemElem
     val enabled: Boolean?
     val isRtl: Boolean?
     val useAnimationFrameWithResizeObserver: Boolean?
+    val laneAssignmentMode: LaneAssignmentMode?
 }

@@ -36,4 +36,5 @@ external interface UseWindowVirtualizerOptions<TItemElement : Element> {
     val enabled: Boolean?
     val isRtl: Boolean?
     val useAnimationFrameWithResizeObserver: Boolean?
+    val laneAssignmentMode: LaneAssignmentMode?
 }
