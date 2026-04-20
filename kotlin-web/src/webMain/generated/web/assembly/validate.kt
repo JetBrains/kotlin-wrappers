@@ -2,7 +2,7 @@
 
 package web.assembly
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
@@ -11,6 +11,6 @@ import kotlin.js.definedExternally
  */
 @JsQualifier("WebAssembly")
 external fun validate(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Boolean

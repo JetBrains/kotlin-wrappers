@@ -624,6 +624,10 @@ private fun String.patchQuerySelectors(): String =
                 "    readonly readyState: ReadyState;",
             )
         }
+        .replace(
+            "(workerOrWorkerAndParameters: Worker,",
+            "(worker: Worker,",
+        )
 
 private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {

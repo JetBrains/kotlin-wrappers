@@ -2,7 +2,7 @@
 
 package web.assembly
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import js.promise.Promise
 import js.promise.await
 import kotlin.js.JsName
@@ -15,12 +15,12 @@ import kotlin.js.definedExternally
 @JsQualifier("WebAssembly")
 @JsName("compile")
 external fun compileAsync(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<Module>
 
 suspend inline fun compile(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
 ): Module {
     return compileAsync(
         bytes = bytes,
@@ -28,7 +28,7 @@ suspend inline fun compile(
 }
 
 suspend inline fun compile(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     options: WebAssemblyCompileOptions?,
 ): Module {
     return compileAsync(

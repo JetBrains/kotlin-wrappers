@@ -3,8 +3,8 @@
 package web.assembly
 
 import js.array.ReadonlyArray
+import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBuffer
-import js.buffer.BufferSource
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
@@ -15,7 +15,7 @@ import kotlin.js.definedExternally
  */
 @JsQualifier("WebAssembly")
 open external class Module(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     options: WebAssemblyCompileOptions = definedExternally,
 ) {
     companion object {

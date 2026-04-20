@@ -2,7 +2,7 @@
 
 package web.assembly
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import js.promise.Promise
 import js.promise.await
 import kotlin.js.JsName
@@ -15,13 +15,13 @@ import kotlin.js.definedExternally
 @JsQualifier("WebAssembly")
 @JsName("instantiate")
 external fun instantiateAsync(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     importObject: Imports = definedExternally,
     options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
 suspend inline fun instantiate(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
 ): WebAssemblyInstantiatedSource {
     return instantiateAsync(
         bytes = bytes,
@@ -29,7 +29,7 @@ suspend inline fun instantiate(
 }
 
 suspend inline fun instantiate(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     importObject: Imports,
 ): WebAssemblyInstantiatedSource {
     return instantiateAsync(
@@ -39,7 +39,7 @@ suspend inline fun instantiate(
 }
 
 suspend inline fun instantiate(
-    bytes: BufferSource,
+    bytes: AllowSharedBufferSource,
     importObject: Imports,
     options: WebAssemblyCompileOptions?,
 ): WebAssemblyInstantiatedSource {

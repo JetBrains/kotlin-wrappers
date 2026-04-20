@@ -12,6 +12,9 @@ sealed external interface CompressionFormat {
     companion object
 }
 
+inline val CompressionFormat.Companion.brotli: CompressionFormat
+    get() = unsafeCast("brotli")
+
 inline val CompressionFormat.Companion.deflate: CompressionFormat
     get() = unsafeCast("deflate")
 

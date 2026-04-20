@@ -39,6 +39,9 @@ inline val RequestDestination.Companion.iframe: RequestDestination
 inline val RequestDestination.Companion.image: RequestDestination
     get() = unsafeCast("image")
 
+inline val RequestDestination.Companion.json: RequestDestination
+    get() = unsafeCast("json")
+
 inline val RequestDestination.Companion.manifest: RequestDestination
     get() = unsafeCast("manifest")
 
