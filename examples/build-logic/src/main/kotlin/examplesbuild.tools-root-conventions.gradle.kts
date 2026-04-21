@@ -7,6 +7,10 @@ import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.wasm.npm.WasmNpmExtension
 
+plugins {
+    id("examplesbuild.node-conventions")
+}
+
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().versions.configureVersions()
 
