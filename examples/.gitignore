@@ -1,8 +1,7 @@
 .DS_Store
 .gradle/
 .kotlin/
+.kotlin-locks/
 build/
 
 .idea/
-
-package-lock.json

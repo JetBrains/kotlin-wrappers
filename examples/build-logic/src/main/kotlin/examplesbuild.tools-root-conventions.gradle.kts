@@ -1,5 +1,3 @@
-import org.gradle.kotlin.dsl.the
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.targets.js.NpmVersions
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
@@ -13,7 +11,7 @@ plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().versions.configureVersions()
 
     the<NpmExtension>().apply {
-        lockFileDirectory = projectDir
+        lockFileDirectory = projectDir.resolve(".kotlin-locks/js")
         packageLockMismatchReport = LockFileMismatchReport.NONE
     }
 }
@@ -22,7 +20,7 @@ plugins.withType<WasmNodeJsRootPlugin> {
     the<WasmNodeJsRootExtension>().versions.configureVersions()
 
     the<WasmNpmExtension>().apply {
-        lockFileDirectory = project.layout.buildDirectory.file("wasm-package-lock").get().asFile
+        lockFileDirectory = projectDir.resolve(".kotlin-locks/wasmjs")
         packageLockMismatchReport = LockFileMismatchReport.NONE
     }
 }
