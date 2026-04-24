@@ -1,7 +1,3 @@
-@file:Suppress(
-    "JS_FAKE_NAME_CLASH",
-)
-
 package csstype
 
 import js.objects.Object
