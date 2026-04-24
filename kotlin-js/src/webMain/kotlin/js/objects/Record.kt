@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package js.objects
 
 import js.array.Tuple2
@@ -9,7 +5,6 @@ import js.array.component1
 import js.array.component2
 import kotlin.js.JsAny
 import kotlin.js.JsString
-import kotlin.js.definedExternally
 import kotlin.js.toJsString
 
 external interface Record<K : JsAny, V : JsAny?> :
@@ -18,7 +13,7 @@ external interface Record<K : JsAny, V : JsAny?> :
     operator fun set(
         key: K,
         value: V,
-    ): Unit = definedExternally
+    )
 }
 
 inline operator fun <V : JsAny?> Record<JsAny, V>.set(key: String, value: V) {

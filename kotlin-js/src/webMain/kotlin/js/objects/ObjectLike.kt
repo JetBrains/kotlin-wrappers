@@ -10,6 +10,15 @@ import kotlin.js.definedExternally
 external interface ObjectLike :
     Record<PropertyKey, JsAny?> {
 
+    override operator fun get(
+        key: PropertyKey,
+    ): JsAny? = definedExternally
+
+    override operator fun set(
+        key: PropertyKey,
+        value: JsAny?,
+    ): Unit = definedExternally
+
     operator fun get(
         key: String,
     ): JsAny? = definedExternally
