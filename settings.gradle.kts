@@ -133,6 +133,9 @@ include("kotlin-floating-ui-utils")
 // Kotlin/JS: APIs missing from the standard library
 include("kotlin-js")
 
+// Kotlin/JS: ESM duplicate-helper regression proof (depends on kotlin-csstype)
+include("kotlin-js-proof")
+
 // Kotlin/JS: Helper for `kotlin-js`
 include("kotlin-js-core")
 
