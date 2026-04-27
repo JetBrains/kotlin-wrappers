@@ -2,7 +2,7 @@
 coroutines = "1.10.2"
 kotlin = "2.3.21"
 serialization = "1.11.0"
-seskar = "4.40.0"
+seskar = "4.42.0"
 
 [libraries]
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
