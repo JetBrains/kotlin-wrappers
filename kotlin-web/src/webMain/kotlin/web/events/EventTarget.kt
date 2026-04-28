@@ -5,9 +5,9 @@
 
 package web.events
 
+import js.undefined.undefinedOrNull
 import web.observable.Observable
 import kotlin.js.definedExternally
-import kotlin.js.undefined
 
 /**
  * The **`EventTarget`** interface is implemented by objects that can receive events and may have listeners for them.
@@ -36,7 +36,7 @@ open external class EventTarget :
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
     type: EventType<E>,
     handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions? = undefined,
+    options: AddEventListenerOptions? = undefinedOrNull,
 ) {
     addEventListener(
         type = type,
@@ -53,7 +53,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
 fun <E : Event, C : EventTarget, T : EventTarget> C.removeEventListener(
     type: EventType<E>,
     handler: EventHandler<E, C, T>,
-    options: EventListenerOptions? = undefined,
+    options: EventListenerOptions? = undefinedOrNull,
 ) {
     removeEventListener(
         type = type,
@@ -68,7 +68,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
 ): () -> Unit =
     addEventHandler(
         type = type,
-        options = undefined,
+        options = undefinedOrNull,
         handler = handler,
     )
 
@@ -101,7 +101,7 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
               D : HasTargets<C, EventTarget> {
     return addEventHandler(
         type = type,
-        options = undefined,
+        options = undefinedOrNull,
         handler = handler,
     )
 }

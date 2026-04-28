@@ -8,12 +8,12 @@ import js.promise.Promise
 import js.promise.await
 import js.regexp.RegExp
 import js.typedarrays.Uint8Array
+import js.undefined.undefinedOrNull
 import web.blob.Blob
 import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.JsString
 import kotlin.js.definedExternally
-import kotlin.js.undefined
 
 /**
  * [Online Documentation](https://stuk.github.io/jszip/documentation/api_jszip.html)
@@ -176,24 +176,24 @@ suspend inline fun <T : JsAny> JSZip.generate(
  */
 suspend inline fun JSZip.load(
     data: String,
-    options: JSZipLoadOptions? = undefined,
+    options: JSZipLoadOptions? = undefinedOrNull,
 ): JSZip =
     loadAsync(data, options).await()
 
 suspend inline fun JSZip.load(
     data: Uint8Array<*>,
-    options: JSZipLoadOptions? = undefined,
+    options: JSZipLoadOptions? = undefinedOrNull,
 ): JSZip =
     loadAsync(data, options).await()
 
 suspend inline fun JSZip.load(
     data: ArrayBuffer,
-    options: JSZipLoadOptions? = undefined,
+    options: JSZipLoadOptions? = undefinedOrNull,
 ): JSZip =
     loadAsync(data, options).await()
 
 suspend inline fun JSZip.load(
     data: Blob,
-    options: JSZipLoadOptions? = undefined,
+    options: JSZipLoadOptions? = undefinedOrNull,
 ): JSZip =
     loadAsync(data, options).await()

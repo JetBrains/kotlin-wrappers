@@ -2,8 +2,8 @@ package web.serviceworker
 
 import js.coroutines.internal.IsolatedCoroutineScope
 import js.coroutines.internal.safePromise
+import js.undefined.undefinedOrNull
 import kotlinx.coroutines.CoroutineScope
-import kotlin.js.undefined
 
 /**
  * The **`ExtendableEvent.waitUntil()`** method tells the event dispatcher that work is ongoing.
@@ -14,7 +14,7 @@ fun ExtendableEvent.waitUntil(
     block: suspend CoroutineScope.() -> Unit,
 ) {
     val promise = IsolatedCoroutineScope()
-        .safePromise { block(); undefined }
+        .safePromise { block(); undefinedOrNull }
 
     waitUntil(promise)
 }

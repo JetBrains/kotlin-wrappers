@@ -2,9 +2,9 @@ package web.fs
 
 import js.coroutines.resumeWithError
 import js.objects.unsafeJso
+import js.undefined.undefinedOrNull
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
-import kotlin.js.undefined
 
 /**
  * The FileSystemDirectoryEntry interface's method **`getDirectory()`** returns a somewhere within the directory subtree rooted at the directory on which it's called.
@@ -12,7 +12,7 @@ import kotlin.js.undefined
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getDirectory)
  */
 suspend fun FileSystemDirectoryEntry.getDirectory(
-    path: String? = undefined,
+    path: String? = undefinedOrNull,
     options: FileSystemFlags = unsafeJso(),
 ): FileSystemEntry =
     suspendCoroutine { continuation ->
@@ -30,7 +30,7 @@ suspend fun FileSystemDirectoryEntry.getDirectory(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getFile)
  */
 suspend fun FileSystemDirectoryEntry.getFile(
-    path: String? = undefined,
+    path: String? = undefinedOrNull,
     options: FileSystemFlags = unsafeJso(),
 ): FileSystemEntry =
     suspendCoroutine { continuation ->

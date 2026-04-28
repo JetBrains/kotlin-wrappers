@@ -8,10 +8,10 @@ package web.events
 import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.upcast
+import js.undefined.undefinedOrNull
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
     @InternalApi
@@ -81,7 +81,7 @@ private fun listenerOptions(
 // addHandler
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
     handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions? = undefined,
+    options: AddEventListenerOptions? = undefinedOrNull,
 ): () -> Unit {
     target.addEventListener(
         type = type,

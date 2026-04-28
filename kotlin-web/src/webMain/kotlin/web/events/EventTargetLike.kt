@@ -6,8 +6,8 @@
 package web.events
 
 import js.internal.InternalApi
+import js.undefined.undefinedOrNull
 import kotlin.js.definedExternally
-import kotlin.js.undefined
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget)
@@ -62,7 +62,7 @@ external interface EventTargetLike {
 fun <E : Event> EventTargetLike.addEventListener(
     type: EventType<E>,
     handler: (E) -> Unit,
-    options: AddEventListenerOptions? = undefined,
+    options: AddEventListenerOptions? = undefinedOrNull,
 ) {
     addEventListener(
         type = type,
@@ -79,7 +79,7 @@ fun <E : Event> EventTargetLike.addEventListener(
 fun <E : Event> EventTargetLike.removeEventListener(
     type: EventType<E>,
     handler: (E) -> Unit,
-    options: EventListenerOptions? = undefined,
+    options: EventListenerOptions? = undefinedOrNull,
 ) {
     removeEventListener(
         type = type,
