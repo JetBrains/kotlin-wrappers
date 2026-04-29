@@ -4,11 +4,11 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.Void
 import js.objects.ReadonlyRecord
+import js.objects.unsafeJso
 import js.promise.Promise
 import js.promise.await
 import js.regexp.RegExp
 import js.typedarrays.Uint8Array
-import js.undefined.undefinedOrNull
 import web.blob.Blob
 import kotlin.js.JsAny
 import kotlin.js.JsModule
@@ -176,24 +176,24 @@ suspend inline fun <T : JsAny> JSZip.generate(
  */
 suspend inline fun JSZip.load(
     data: String,
-    options: JSZipLoadOptions? = undefinedOrNull,
+    options: JSZipLoadOptions = unsafeJso(),
 ): JSZip =
     loadAsync(data, options).await()
 
 suspend inline fun JSZip.load(
     data: Uint8Array<*>,
-    options: JSZipLoadOptions? = undefinedOrNull,
+    options: JSZipLoadOptions = unsafeJso(),
 ): JSZip =
     loadAsync(data, options).await()
 
 suspend inline fun JSZip.load(
     data: ArrayBuffer,
-    options: JSZipLoadOptions? = undefinedOrNull,
+    options: JSZipLoadOptions = unsafeJso(),
 ): JSZip =
     loadAsync(data, options).await()
 
 suspend inline fun JSZip.load(
     data: Blob,
-    options: JSZipLoadOptions? = undefinedOrNull,
+    options: JSZipLoadOptions = unsafeJso(),
 ): JSZip =
     loadAsync(data, options).await()
