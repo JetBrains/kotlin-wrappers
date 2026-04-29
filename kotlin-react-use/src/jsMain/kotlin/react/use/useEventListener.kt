@@ -1,6 +1,7 @@
 package react.use
 
 import js.coroutines.awaitCancellation
+import js.objects.unsafeJso
 import react.useEffect
 import web.events.*
 
@@ -10,7 +11,7 @@ import web.events.*
 fun <E : Event> useEventListener(
     target: EventTarget?,
     type: EventType<E>,
-    options: AddEventListenerOptions? = undefined,
+    options: AddEventListenerOptions = unsafeJso(),
     handler: (E) -> Unit,
 ) {
     val latestHandler by useLatest(handler)

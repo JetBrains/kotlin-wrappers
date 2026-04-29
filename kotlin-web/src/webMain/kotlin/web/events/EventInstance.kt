@@ -8,7 +8,6 @@ package web.events
 import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.upcast
-import js.undefined.undefinedOrNull
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -81,7 +80,7 @@ private fun listenerOptions(
 // addHandler
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
     handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions? = undefinedOrNull,
+    options: AddEventListenerOptions = unsafeJso(),
 ): () -> Unit {
     target.addEventListener(
         type = type,
@@ -108,7 +107,7 @@ fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addH
     )
 
 fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addHandler(
-    options: AddEventListenerOptions?,
+    options: AddEventListenerOptions,
     handler: (D) -> Unit,
 ): () -> Unit
         where D : E,

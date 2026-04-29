@@ -5,7 +5,7 @@
 
 package web.events
 
-import js.undefined.undefinedOrNull
+import js.objects.unsafeJso
 import web.observable.Observable
 import kotlin.js.definedExternally
 
@@ -36,7 +36,7 @@ open external class EventTarget :
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
     type: EventType<E>,
     handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions? = undefinedOrNull,
+    options: AddEventListenerOptions = unsafeJso(),
 ) {
     addEventListener(
         type = type,
@@ -53,7 +53,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
 fun <E : Event, C : EventTarget, T : EventTarget> C.removeEventListener(
     type: EventType<E>,
     handler: EventHandler<E, C, T>,
-    options: EventListenerOptions? = undefinedOrNull,
+    options: EventListenerOptions = unsafeJso(),
 ) {
     removeEventListener(
         type = type,
@@ -68,13 +68,13 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
 ): () -> Unit =
     addEventHandler(
         type = type,
-        options = undefinedOrNull,
+        options = unsafeJso(),
         handler = handler,
     )
 
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
     type: EventType<E>,
-    options: AddEventListenerOptions?,
+    options: AddEventListenerOptions,
     handler: EventHandler<E, C, T>,
 ): () -> Unit {
     addEventListener(
@@ -101,14 +101,14 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
               D : HasTargets<C, EventTarget> {
     return addEventHandler(
         type = type,
-        options = undefinedOrNull,
+        options = unsafeJso(),
         handler = handler,
     )
 }
 
 fun <E : Event, C : EventTarget, D> C.addEventHandler(
     type: EventType<E>,
-    options: AddEventListenerOptions?,
+    options: AddEventListenerOptions,
     handler: (D) -> Unit,
 ): () -> Unit
         where D : E,
