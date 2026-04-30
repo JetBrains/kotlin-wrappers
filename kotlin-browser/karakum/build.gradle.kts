@@ -45,6 +45,7 @@ object Includes {
         "web/navigator/NavigatorID.kt",
         "web/navigator/NavigatorLanguage.kt",
         "web/navigator/NavigatorLocks.kt",
+        "web/origin",
         "web/performance",
         "web/promise",
         "web/scheduling/queueMicrotask.kt",
