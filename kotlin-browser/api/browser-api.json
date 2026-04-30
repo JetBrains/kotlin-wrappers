@@ -1301,6 +1301,7 @@
     "OrientationLockType": "web.screen.OrientationLockType",
     "OrientationType": "web.screen.OrientationType",
     "Origin": "web.origin.Origin",
+    "OriginSource": "web.origin.OriginSource",
     "OscillatorNode": "web.audio.OscillatorNode",
     "OscillatorOptions": "web.audio.OscillatorOptions",
     "OscillatorType": "web.audio.OscillatorType",

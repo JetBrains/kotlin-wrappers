@@ -10,6 +10,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.fonts.FontFaceSource
+import web.origin.OriginSource
 import web.promise.PromiseRejectionEvent
 
 /**
@@ -21,7 +22,8 @@ open external class WorkerGlobalScope
 private constructor() :
     EventTarget,
     GlobalScope,
-    FontFaceSource {
+    FontFaceSource,
+    OriginSource {
     /**
      * The read-only **`location`** property of the WorkerGlobalScope interface returns the WorkerLocation associated with the worker. It is a specific location object, mostly a subset of the Location for browsing scopes, but adapted to workers.
      *

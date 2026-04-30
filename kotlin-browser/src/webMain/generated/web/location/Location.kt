@@ -3,6 +3,7 @@
 package web.location
 
 import web.dom.DOMStringList
+import web.origin.OriginSource
 import web.url.URL
 
 /**
@@ -11,7 +12,8 @@ import web.url.URL
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
  */
 open external class Location
-private constructor() {
+private constructor() :
+    OriginSource {
     /**
      * The **`ancestorOrigins`** read-only property of the Location interface is a static DOMStringList containing, in reverse order, the origins of all ancestor browsing contexts of the document associated with the given Location object.
      *

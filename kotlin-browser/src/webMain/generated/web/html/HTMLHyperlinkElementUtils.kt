@@ -7,11 +7,13 @@
 package web.html
 
 import js.internal.InternalApi
+import web.origin.OriginSource
 import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
-external interface HTMLHyperlinkElementUtils {
+external interface HTMLHyperlinkElementUtils :
+    OriginSource {
     /**
      * Returns the hyperlink's URL.
      *

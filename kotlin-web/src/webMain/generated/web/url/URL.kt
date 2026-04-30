@@ -2,6 +2,7 @@
 
 package web.url
 
+import web.origin.OriginSource
 import kotlin.js.definedExternally
 
 /**
@@ -12,7 +13,7 @@ import kotlin.js.definedExternally
 open external class URL(
     url: String,
     base: String = definedExternally,
-) {
+) : OriginSource {
     constructor(
         url: URL,
         base: String = definedExternally,

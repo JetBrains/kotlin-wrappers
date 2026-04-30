@@ -2,14 +2,14 @@
 
 package web.origin
 
-import kotlin.js.JsAny
-
-open external class Origin {
+open external class Origin :
+    OriginSource {
     val opaque: Boolean
     fun isSameOrigin(other: Origin): Boolean
     fun isSameSite(other: Origin): Boolean
 
     companion object {
-        fun from(value: JsAny?): Origin
+        fun from(value: OriginSource): Origin
+        fun from(value: String): Origin
     }
 }

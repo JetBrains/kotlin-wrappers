@@ -273,6 +273,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.notifications.Notification",
     "web.notifications.NotificationOptions",
     "web.observable.Observable",
+    "web.origin.OriginSource",
     "web.permissions.PermissionState",
     "web.permissions.Permissions",
     "web.pip.PictureInPictureEvent",

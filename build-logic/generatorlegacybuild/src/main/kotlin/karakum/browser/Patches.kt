@@ -435,6 +435,13 @@ internal fun String.applyPatches(): String {
         .patchInterface("Memory", inNamespace = true) {
             it.replace(": ArrayBuffer;", ": B;")
         }
+        .replace(
+            "\n    from(value: any): Origin;",
+            "\n    from(value: OriginSource): Origin;\n    from(value: string): Origin;",
+        )
+        .plus(
+            "\n\ntype OriginSource = URL | Origin | ExtendableMessageEvent | HTMLHyperlinkElementUtils | Location | Window | WorkerGlobalScope | WorkerLocation | MessageEvent;\n"
+        )
         .extractUrlSource()
 }
 

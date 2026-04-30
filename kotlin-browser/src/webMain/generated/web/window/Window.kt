@@ -38,6 +38,7 @@ import web.messaging.MessageEvent
 import web.messaging.MessageEventSource
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
+import web.origin.OriginSource
 import web.pip.PictureInPictureEvent
 import web.pointer.PointerEvent
 import web.promise.PromiseRejectionEvent
@@ -64,6 +65,7 @@ private constructor() :
     GlobalEventHandlers,
     WindowEventHandlers,
     MessageEventSource,
+    OriginSource,
     JsCloseable {
     /**
      * The **`Window.closed`** read-only property indicates whether the referenced window is closed or not.

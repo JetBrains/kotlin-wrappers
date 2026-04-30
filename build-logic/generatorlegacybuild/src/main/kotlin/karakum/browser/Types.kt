@@ -298,6 +298,7 @@ private fun convertType(
         val pkg = when (name) {
             "Transferable" -> "js.serialization"
 
+            "OriginSource" -> "web.origin"
             "URLSource" -> "web.url"
 
             "TimerHandler" -> "web.timers"
