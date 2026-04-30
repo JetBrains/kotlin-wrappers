@@ -9,9 +9,11 @@ import js.promise.Promise
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
+import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
 import kotlin.js.*
 
+@ExperimentalWebApi
 external class Observable<out T : JsAny?>(
     callback: SubscribeCallback<T>,
 ) {
@@ -146,31 +148,37 @@ external class Observable<out T : JsAny?>(
     }
 }
 
+@ExperimentalWebApi
 inline fun <T : JsAny?> Observable<T>.catch(
     noinline transform: (JsErrorLike?) -> Promise<T>,
 ): Observable<T> =
     catchInternal(transform)
 
+@ExperimentalWebApi
 inline fun <T : JsAny?> Observable<T>.catch(
     noinline transform: (JsErrorLike?) -> JsIterable<T>,
 ): Observable<T> =
     catchInternal(transform)
 
+@ExperimentalWebApi
 inline fun <T : JsAny?> Observable<T>.catch(
     noinline transform: (JsErrorLike?) -> ReadonlyArray<T>,
 ): Observable<T> =
     catchInternal(transform)
 
+@ExperimentalWebApi
 inline fun <T : JsAny?> Observable<T>.catch(
     noinline transform: (JsErrorLike?) -> AsyncIterable<T>,
 ): Observable<T> =
     catchInternal(transform)
 
+@ExperimentalWebApi
 inline fun <T : JsAny?> Observable<T>.catch(
     noinline transform: (JsErrorLike?) -> Observable<T>,
 ): Observable<T> =
     catchInternal(transform)
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.every(
     predicate: (T) -> Boolean,
 ): Boolean {
@@ -181,6 +189,7 @@ suspend fun <T : JsAny?> Observable<T>.every(
     ).awaitCancellable(controller).toBoolean()
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.find(
     predicate: (T) -> Boolean,
 ): T {
@@ -191,6 +200,7 @@ suspend fun <T : JsAny?> Observable<T>.find(
     ).awaitCancellable(controller)
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.first(): T {
     val controller = AbortController()
     return firstAsync(
@@ -198,6 +208,7 @@ suspend fun <T : JsAny?> Observable<T>.first(): T {
     ).awaitCancellable(controller)
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.forEach(
     action: (item: T) -> Unit,
 ) {
@@ -208,6 +219,7 @@ suspend fun <T : JsAny?> Observable<T>.forEach(
     ).awaitCancellable(controller)
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.last(): T {
     val controller = AbortController()
     return lastAsync(
@@ -215,6 +227,7 @@ suspend fun <T : JsAny?> Observable<T>.last(): T {
     ).awaitCancellable(controller)
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?, U : JsAny?> Observable<T>.reduce(
     operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
     initialValue: U,
@@ -227,6 +240,7 @@ suspend fun <T : JsAny?, U : JsAny?> Observable<T>.reduce(
     ).awaitCancellable(controller)
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.some(
     predicate: (T) -> Boolean,
 ): Boolean {
@@ -237,6 +251,7 @@ suspend fun <T : JsAny?> Observable<T>.some(
     ).awaitCancellable(controller).toBoolean()
 }
 
+@ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.toArray(): ReadonlyArray<T> {
     val controller = AbortController()
     return toArrayAsync(

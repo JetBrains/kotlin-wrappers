@@ -3,9 +3,11 @@ package js.observable
 import js.errors.JsError
 import web.abort.AbortSignal
 import web.abort.AbortableLike
+import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
 import kotlin.js.JsAny
 
+@ExperimentalWebApi
 external class Subscriber<T : JsAny?> :
     AbortableLike {
     val active: Boolean

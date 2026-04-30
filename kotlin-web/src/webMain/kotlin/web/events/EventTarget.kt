@@ -6,6 +6,7 @@
 package web.events
 
 import js.objects.unsafeJso
+import web.experimental.ExperimentalWebApi
 import web.observable.Observable
 import kotlin.js.definedExternally
 
@@ -20,6 +21,7 @@ open external class EventTarget :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/when)
      */
+    @ExperimentalWebApi
     fun <T : Event> `when`(
         type: EventType<T>,
         options: ObservableEventListenerOptions? = definedExternally,
