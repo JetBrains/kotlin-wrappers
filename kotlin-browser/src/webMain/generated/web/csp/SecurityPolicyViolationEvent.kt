@@ -23,7 +23,7 @@ open external class SecurityPolicyViolationEvent(
     val blockedURI: String
 
     /**
-     * The **`columnNumber`** read-only property of the SecurityPolicyViolationEvent interface is the column number in the document or worker script at which the Content Security Policy (CSP) violation occurred.
+     * The **`columnNumber`** read-only property of the SecurityPolicyViolationEvent interface is the character position in the source file line of the document or worker script at which the Content Security Policy (CSP) violation occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/columnNumber)
      */

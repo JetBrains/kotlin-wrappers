@@ -11,6 +11,7 @@ import web.events.EventInit
 @JsPlainObject
 external interface TransitionEventInit :
     EventInit {
+    var animation: CSSTransition?
     var elapsedTime: Double?
     var propertyName: String?
     var pseudoElement: String?

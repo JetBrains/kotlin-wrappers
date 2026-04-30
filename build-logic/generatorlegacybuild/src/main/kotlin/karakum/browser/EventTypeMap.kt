@@ -78,6 +78,7 @@ internal val EVENT_DATA = listOf(
 
     EventInfo("web.navigation.NavigateEvent"),
     EventInfo("web.navigation.NavigationCurrentEntryChangeEvent"),
+    EventInfo("web.dpip.DocumentPictureInPictureEvent"),
 )
 
 internal val XR_EVENT_DATA = listOf(

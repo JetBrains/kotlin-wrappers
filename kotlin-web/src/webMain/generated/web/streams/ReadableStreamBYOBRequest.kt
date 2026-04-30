@@ -5,6 +5,7 @@ package web.streams
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.numbers.UInt53
+import js.typedarrays.Uint8Array
 
 /**
  * The **`ReadableStreamBYOBRequest`** interface of the Streams API represents a "pull request" for data from an underlying source that will made as a zero-copy transfer to a consumer (bypassing the stream's internal queues).
@@ -18,7 +19,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
      */
-    val view: ArrayBufferView<ArrayBuffer>?
+    val view: Uint8Array<ArrayBuffer>?
 
     /**
      * The **`respond()`** method of the ReadableStreamBYOBRequest interface is used to signal to the associated readable byte stream that the specified number of bytes were written into the ReadableStreamBYOBRequest.view.

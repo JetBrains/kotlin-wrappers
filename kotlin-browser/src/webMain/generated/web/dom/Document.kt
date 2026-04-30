@@ -356,14 +356,14 @@ open external class Document :
     fun close()
 
     /**
-     * The **`Document.createAttribute()`** method creates a new attribute node, and returns it. The object created is a node implementing the Attr interface. The DOM does not enforce what sort of attributes can be added to a particular element in this manner.
+     * The **`createAttribute()`** method of the Document interface creates a new attribute node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttribute)
      */
     fun createAttribute(localName: String): Attr
 
     /**
-     * The **`Document.createAttributeNS()`** method creates a new attribute node with the specified namespace URI and qualified name, and returns it. The object created is a node implementing the Attr interface. The DOM does not enforce what sort of attributes can be added to a particular element in this manner.
+     * The **`createAttributeNS()`** method of the Document interface creates a new attribute node with the specified namespace URI and qualified name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS)
      */
@@ -394,7 +394,7 @@ open external class Document :
     fun createDocumentFragment(): DocumentFragment
 
     /**
-     * In an HTML document, the **`document.createElement()`** method creates the HTML element specified by localName, or an HTMLUnknownElement if localName isn't recognized.
+     * The **`createElement()`** method of the Document interface creates a new HTMLElement that has the specified localName.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement)
      */

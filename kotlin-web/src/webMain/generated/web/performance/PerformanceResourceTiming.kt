@@ -30,6 +30,13 @@ private constructor() :
     val connectStart: DOMHighResTimeStamp
 
     /**
+     * The **`contentType`** read-only property of the PerformanceResourceTiming interface is a string indicating the content type of the fetched resource, formatted as a MIME type and subtype separated by a forward slash.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/contentType)
+     */
+    val contentType: String
+
+    /**
      * The **`decodedBodySize`** read-only property returns the size (in octets) received from the fetch (HTTP or cache) of the message body after removing any applied content encoding (like gzip or Brotli). If the resource is retrieved from an application cache or local resources, it returns the size of the payload after removing any applied content encoding.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/decodedBodySize)

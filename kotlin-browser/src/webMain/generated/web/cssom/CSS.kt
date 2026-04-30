@@ -21,6 +21,10 @@ external object CSS {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
     fun Q(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun cap(value: Double): CSSUnitValue
 
     /**
@@ -139,12 +143,20 @@ external object CSS {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
     fun grad(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun ic(value: Double): CSSUnitValue
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
     fun kHz(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun lh(value: Double): CSSUnitValue
 
     /**
@@ -216,7 +228,15 @@ external object CSS {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
     fun rad(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun rcap(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun rch(value: Double): CSSUnitValue
 
     /**
@@ -230,8 +250,20 @@ external object CSS {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
      */
     fun rem(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun rex(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun ric(value: Double): CSSUnitValue
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/factory_functions_static)
+     */
     fun rlh(value: Double): CSSUnitValue
 
     /**

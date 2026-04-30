@@ -611,6 +611,17 @@ private val POPOVER_TYPES = setOf(
     "TogglePopoverOptions",
 )
 
+private val SERIAL_TYPES = setOf(
+    "Serial",
+    "SerialInputSignals",
+    "SerialOptions",
+    "SerialOutputSignals",
+    "SerialPort",
+    "SerialPortFilter",
+    "SerialPortInfo",
+    "SerialPortRequestOptions",
+)
+
 private const val XSLT_PROCESSOR = "XSLTProcessor"
 
 internal fun htmlDeclarations(
@@ -1517,6 +1528,7 @@ internal fun convertInterface(
 
         name == "EventModifierInit" -> "web.uievents"
 
+        name.startsWith("DocumentPictureInPicture") -> "web.dpip"
         name.startsWith("Document") -> "web.dom"
         name in RANGES_TYPES -> "web.ranges"
         name.startsWith("Trusted") -> "web.trustedtypes"
@@ -1626,7 +1638,10 @@ internal fun convertInterface(
         name in PAYMENT_TYPES -> "web.payment"
         name.startsWith("Payment") -> "web.payment"
 
+        name in SERIAL_TYPES -> "web.serial"
+
         name in URL_TYPES -> "web.url"
+        name == "Origin" -> "web.origin"
         name in REPORTING_TYPES -> "web.reporting"
         name in POPOVER_TYPES -> "web.popover"
         name == XSLT_PROCESSOR -> "web.xslt"
@@ -2204,7 +2219,7 @@ private fun convertProperty(
         }
     }
 
-    name = if (name == "is" || name == "as") {
+    name = if (name == "is" || name == "as" || name == "break") {
         "`$name`"
     } else if (name.startsWith("\"") && name.endsWith("\"")) {
         "`" + name.removeSurrounding("\"") + "`"
@@ -2288,6 +2303,7 @@ private fun convertFunction(
         .replace(": Promise<Notification[]>", ": Promise<ReadonlyArray<Notification>>")
         .replace(": Promise<IDBDatabaseInfo[]>", ": Promise<ReadonlyArray<IDBDatabaseInfo>>")
         .replace(": Promise<CookieStoreGetOptions[]>", ": Promise<ReadonlyArray<CookieStoreGetOptions>>")
+        .replace(": Promise<SerialPort[]>", ": Promise<ReadonlyArray<SerialPort>>")
         .replace(": Promise<CryptoKeyPair | CryptoKey>", ": Promise<JsAny /* CryptoKeyPair | CryptoKey */>")
         .replace(": Promise<CryptoKeyPair | CryptoKey>", ": Promise<JsAny /* CryptoKeyPair | CryptoKey */>")
         .replace(": Promise<WritableStream>", ": Promise<WritableStream<*>>")

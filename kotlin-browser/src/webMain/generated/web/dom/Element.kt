@@ -554,7 +554,7 @@ private constructor() :
     fun setPointerCapture(pointerId: Int)
 
     /**
-     * The **`toggleAttribute()`** method of the Element interface toggles a Boolean attribute (removing it if it is present and adding it if it is not present) on the given element.
+     * The **`toggleAttribute()`** method of the Element interface toggles a Boolean attribute on the given element, removing it if present and adding it if not present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/toggleAttribute)
      */

@@ -11,7 +11,9 @@ external interface SanitizerConfig {
     var comments: Boolean?
     var dataAttributes: Boolean?
     var elements: ReadonlyArray<SanitizerElementWithAttributes>?
+    var processingInstructions: ReadonlyArray<SanitizerPI>?
     var removeAttributes: ReadonlyArray<SanitizerAttribute>?
     var removeElements: ReadonlyArray<SanitizerElement>?
+    var removeProcessingInstructions: ReadonlyArray<SanitizerPI>?
     var replaceWithChildrenElements: ReadonlyArray<SanitizerElement>?
 }

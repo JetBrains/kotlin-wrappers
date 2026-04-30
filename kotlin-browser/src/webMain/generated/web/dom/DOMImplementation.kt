@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
 open external class DOMImplementation
 private constructor() {
     /**
-     * The **`DOMImplementation.createDocument()`** method creates and returns an XMLDocument.
+     * The **`createDocument()`** method of the DOMImplementation interface creates and returns an XMLDocument.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocument)
      */

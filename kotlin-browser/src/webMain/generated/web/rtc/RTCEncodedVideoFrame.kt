@@ -30,7 +30,7 @@ private constructor() :
     val timestamp: Int53
 
     /**
-     * The **`type`** read-only property of the RTCEncodedVideoFrame interface indicates whether this frame is a key frame, delta frame, or empty frame.
+     * The **`type`** read-only property of the RTCEncodedVideoFrame interface indicates whether this frame is a key frame or a delta frame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type)
      */

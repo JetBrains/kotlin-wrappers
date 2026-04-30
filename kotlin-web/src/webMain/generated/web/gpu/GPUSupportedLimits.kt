@@ -101,11 +101,15 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
     val maxStorageBufferBindingSize: UInt53
+    val maxStorageBuffersInFragmentStage: Int
+    val maxStorageBuffersInVertexStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)
      */
     val maxStorageBuffersPerShaderStage: Int
+    val maxStorageTexturesInFragmentStage: Int
+    val maxStorageTexturesInVertexStage: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)

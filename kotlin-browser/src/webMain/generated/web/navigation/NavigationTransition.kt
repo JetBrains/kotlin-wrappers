@@ -6,7 +6,7 @@ import js.core.Void
 import js.promise.Promise
 
 /**
- * The **`NavigationTransition`** interface of the Navigation API represents an ongoing navigation, that is, a navigation that hasn't yet reached the navigatesuccess or navigateerror stage.
+ * The **`NavigationTransition`** interface of the Navigation API represents an ongoing navigation — a navigation that hasn't yet reached the navigatesuccess or navigateerror stage.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition)
  */

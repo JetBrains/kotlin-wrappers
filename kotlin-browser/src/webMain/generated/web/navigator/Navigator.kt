@@ -27,6 +27,7 @@ import web.midi.MIDIAccess
 import web.midi.MIDIOptions
 import web.permissions.Permissions
 import web.presentation.Presentation
+import web.serial.Serial
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
 import web.storage.NavigatorStorage
@@ -129,6 +130,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/permissions)
      */
     val permissions: Permissions
+
+    /**
+     * The **`serial`** read-only property of the Navigator interface returns a Serial object which represents the entry point into the Web Serial API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serial)
+     */
+    val serial: Serial
 
     /**
      * The **`serviceWorker`** read-only property of the Navigator interface returns the ServiceWorkerContainer object for the associated document, which provides access to registration, removal, upgrade, and communication with the ServiceWorker.

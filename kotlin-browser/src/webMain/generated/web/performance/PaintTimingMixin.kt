@@ -13,8 +13,15 @@ import kotlin.js.definedExternally
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
 external interface PaintTimingMixin {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/paintTime)
+     */
     val paintTime: DOMHighResTimeStamp
         get() = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/presentationTime)
+     */
     val presentationTime: DOMHighResTimeStamp?
         get() = definedExternally
 }

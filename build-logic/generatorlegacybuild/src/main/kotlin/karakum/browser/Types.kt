@@ -152,6 +152,9 @@ private val PKG_MAP = mapOf(
     "WebTransportReliabilityMode" to "web.transport",
 
     "TaskPriority" to "web.scheduling",
+
+    "ParityType" to "web.serial",
+    "FlowControlType" to "web.serial",
 )
 
 private val EXCLUDED_TYPES = setOf(
@@ -370,7 +373,9 @@ private fun convertType(
             "SanitizerAttribute",
             "SanitizerElement",
             "SanitizerElementWithAttributes",
+            "SanitizerPI",
 
+            "BluetoothServiceUUID",
                 -> getPkg(name)!!
 
             in INTL_KEY_TYPES,
@@ -517,6 +522,7 @@ private fun getTypePkg(
         name.startsWith("Scroll") -> "web.scroll"
 
         name.startsWith("GPU") -> "web.gpu"
+        name.startsWith("Bluetooth") -> "web.bluetooth"
 
         name == "FontDisplay" -> "web.fonts"
         name.startsWith("FontFace") -> "web.fonts"

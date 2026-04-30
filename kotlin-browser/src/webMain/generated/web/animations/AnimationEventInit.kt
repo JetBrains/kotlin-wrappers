@@ -3,6 +3,7 @@
 package web.animations
 
 import kotlinx.js.JsPlainObject
+import web.cssom.CSSAnimation
 import web.events.EventInit
 
 /**
@@ -11,6 +12,7 @@ import web.events.EventInit
 @JsPlainObject
 external interface AnimationEventInit :
     EventInit {
+    var animation: CSSAnimation?
     var animationName: String?
     var elapsedTime: Double?
     var pseudoElement: String?

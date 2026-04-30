@@ -16,6 +16,9 @@ open external class Global<T : JsAny?>(
     descriptor: GlobalDescriptor<T>,
     v: T = definedExternally,
 ) {
+    /**
+     * The **`value`** property of the WebAssembly.Global object prototype returns the value contained inside the global variable.
+     */
     var value: T
     fun valueOf(): T
 }

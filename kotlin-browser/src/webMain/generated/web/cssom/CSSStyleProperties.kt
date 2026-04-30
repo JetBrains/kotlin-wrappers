@@ -3054,7 +3054,7 @@ private constructor() :
     var vectorEffect: String
 
     /**
-     * The vertical-align CSS property sets vertical alignment of an inline, inline-block or table-cell box.
+     * The vertical-align CSS shorthand property sets the vertical alignment of an inline, inline-block, or table-cell box.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/vertical-align)
      */

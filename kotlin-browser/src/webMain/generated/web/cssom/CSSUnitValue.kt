@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSUnitValue`** interface of the CSS Typed Object Model API represents values that contain a single unit type. For example, "42px" would be represented by a CSSNumericValue.
+ * The **`CSSUnitValue`** interface of the CSS Typed Object Model API represents values that contain a single unit type.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue)
  */
@@ -15,7 +15,7 @@ open external class CSSUnitValue(
      */
     var value: Double,
     /**
-     * The **`CSSUnitValue.unit`** read-only property of the CSSUnitValue interface returns a string indicating the type of unit.
+     * The **`CSSUnitValue.unit`** read-only property of the CSSUnitValue interface returns a string indicating the unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/unit)
      */

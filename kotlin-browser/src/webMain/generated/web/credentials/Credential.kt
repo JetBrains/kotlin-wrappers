@@ -2,6 +2,12 @@
 
 package web.credentials
 
+import js.promise.Promise
+import js.promise.await
+import kotlin.js.JsBoolean
+import kotlin.js.JsName
+import kotlin.js.toBoolean
+
 /**
  * The **`Credential`** interface of the Credential Management API provides information about an entity (usually a user) normally as a prerequisite to a trust decision.
  * Available only in secure contexts.
@@ -23,4 +29,23 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Credential/type)
      */
     val type: String
+
+    companion object {
+        /**
+         * The **`isConditionalMediationAvailable()`** static method of the Credential interface returns a Promise which resolves to false.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Credential/isConditionalMediationAvailable_static)
+         */
+        @JsName("isConditionalMediationAvailable")
+        fun isConditionalMediationAvailableAsync(): Promise<JsBoolean>
+    }
+}
+
+/**
+ * The **`isConditionalMediationAvailable()`** static method of the Credential interface returns a Promise which resolves to false.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Credential/isConditionalMediationAvailable_static)
+ */
+suspend inline fun Credential.Companion.isConditionalMediationAvailable(): Boolean {
+    return isConditionalMediationAvailableAsync().await().toBoolean()
 }

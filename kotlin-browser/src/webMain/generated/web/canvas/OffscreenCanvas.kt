@@ -73,7 +73,7 @@ open external class OffscreenCanvas(
     ): T?
 
     /**
-     * The **`OffscreenCanvas.transferToImageBitmap()`** method creates an ImageBitmap object from the most recently rendered image of the OffscreenCanvas. The OffscreenCanvas allocates a new image for its subsequent rendering.
+     * The **`transferToImageBitmap()`** method of the OffscreenCanvas interface creates an ImageBitmap object from the most recently rendered image of the OffscreenCanvas. The image in the OffscreenCanvas is replaced with a new blank image for subsequent rendering.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */

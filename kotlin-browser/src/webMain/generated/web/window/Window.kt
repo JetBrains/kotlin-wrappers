@@ -18,6 +18,7 @@ import web.dnd.DragEvent
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.Node
+import web.dpip.DocumentPictureInPicture
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -77,6 +78,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cookieStore)
      */
     val cookieStore: CookieStore
+
+    /**
+     * The **`documentPictureInPicture`** read-only property of the Window interface returns a reference to the DocumentPictureInPicture object for the current document context.
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/documentPictureInPicture)
+     */
+    val documentPictureInPicture: DocumentPictureInPicture
 
     /**
      * The **`Window.frameElement`** property returns the element (such as <iframe> or <object>) in which the window is embedded.

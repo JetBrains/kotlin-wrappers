@@ -48,6 +48,13 @@ external interface CanvasTextDrawingStyles {
         set(value) = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lang)
+     */
+    var lang: String
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing)
      */
     var letterSpacing: String

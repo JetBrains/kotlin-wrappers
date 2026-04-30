@@ -52,7 +52,7 @@ protected constructor() :
     var height: String
 
     /**
-     * The **`loading`** property of the HTMLIFrameElement interface is a string that provides a hint to the user agent indicating whether the iframe should be loaded immediately on page load, or only when it is needed.
+     * The **`loading`** property of the HTMLIFrameElement interface is a string that provides a hint to the browser indicating whether the iframe should be loaded immediately on page load, or only when it is needed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading)
      */

@@ -12,6 +12,7 @@ private val PKG_MAP = mapOf(
     "visualViewport" to "web.viewport",
 
     "document" to "web.dom",
+    "documentPictureInPicture" to "web.dpip",
 
     "customElements" to "web.components",
 
