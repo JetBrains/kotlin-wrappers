@@ -21,6 +21,9 @@ suspend fun main(args: ReadonlyArray<String>) {
 
         input = listOf("**/*.d.ts")
         isolatedOutputPackage = true
+        ignoreOutput = listOf(
+            "**/global.kt",
+        )
 
         packageNameMapper = mapOf(
             "webviewWindow" to "webviewwindow",
