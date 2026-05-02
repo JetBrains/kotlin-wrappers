@@ -46,5 +46,5 @@ external class Size {
 
     fun toPhysical(scaleFactor: Double): PhysicalSize
 
-    fun toJSON(): SizeToJSONResult
+    fun toJSON(): js.objects.ReadonlyRecord<String, Temp2>
 }

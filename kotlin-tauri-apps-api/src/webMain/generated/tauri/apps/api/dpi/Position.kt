@@ -46,5 +46,5 @@ external class Position {
 
     fun toPhysical(scaleFactor: Double): PhysicalPosition
 
-    fun toJSON(): PositionToJSONResult
+    fun toJSON(): js.objects.ReadonlyRecord<String, Temp5>
 }
