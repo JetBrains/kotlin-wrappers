@@ -18,7 +18,13 @@ open external class Global<T : JsAny?>(
 ) {
     /**
      * The **`value`** property of the WebAssembly.Global object prototype returns the value contained inside the global variable.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Global/value)
      */
     var value: T
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Global/valueOf)
+     */
     fun valueOf(): T
 }
