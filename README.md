@@ -4,7 +4,7 @@
 [![Kotlin](https://img.shields.io/badge/kotlin-2.3.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![JavaScript target](https://img.shields.io/badge/target-supported-f7df1e?logo=javascript)](https://kotlinlang.org/docs/js-project-setup.html)
 [![WASM target](https://img.shields.io/badge/target-supported-654ff0?logo=webassembly)](https://kotlinlang.org/docs/wasm-get-started.html)
-[![Slack channel](https://img.shields.io/badge/chat-slack-green.svg?logo=slack)](https://kotlinlang.slack.com/messages/react/)
+[![Slack channel](https://img.shields.io/badge/chat-slack-green.svg?logo=slack)](https://kotlinlang.slack.com/messages/javascript/)
 
 # Kotlin Wrappers
 
