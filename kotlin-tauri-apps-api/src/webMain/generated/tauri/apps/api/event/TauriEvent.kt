@@ -18,6 +18,8 @@ sealed external interface TauriEvent {
         val WINDOW_SCALE_FACTOR_CHANGED: TauriEvent
         val WINDOW_THEME_CHANGED: TauriEvent
         val WINDOW_CREATED: TauriEvent
+        val WINDOW_SUSPENDED: TauriEvent
+        val WINDOW_RESUMED: TauriEvent
         val WEBVIEW_CREATED: TauriEvent
         val DRAG_ENTER: TauriEvent
         val DRAG_OVER: TauriEvent

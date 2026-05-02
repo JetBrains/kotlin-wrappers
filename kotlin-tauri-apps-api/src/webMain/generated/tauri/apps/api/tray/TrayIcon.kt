@@ -147,6 +147,81 @@ external class TrayIcon : Resource {
     fun setIconAsTemplate(asTemplate: Boolean): js.promise.Promise<js.core.Void>
 
     /**
+     * Sets a new tray icon and template status atomically. **macOS only**.
+     *
+     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
+     * To enable it, change your Cargo.toml file:
+     * ```toml
+     * [dependencies]
+     * tauri = { version = "...", features = ["...", "image-png"] }
+     * ```
+     */
+    fun setIconWithAsTemplate(
+        icon: String?,
+        asTemplate: Boolean,
+    ): js.promise.Promise<js.core.Void>
+
+    /**
+     * Sets a new tray icon and template status atomically. **macOS only**.
+     *
+     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
+     * To enable it, change your Cargo.toml file:
+     * ```toml
+     * [dependencies]
+     * tauri = { version = "...", features = ["...", "image-png"] }
+     * ```
+     */
+    fun setIconWithAsTemplate(
+        icon: Image?,
+        asTemplate: Boolean,
+    ): js.promise.Promise<js.core.Void>
+
+    /**
+     * Sets a new tray icon and template status atomically. **macOS only**.
+     *
+     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
+     * To enable it, change your Cargo.toml file:
+     * ```toml
+     * [dependencies]
+     * tauri = { version = "...", features = ["...", "image-png"] }
+     * ```
+     */
+    fun setIconWithAsTemplate(
+        icon: js.typedarrays.Uint8Array<*>?,
+        asTemplate: Boolean,
+    ): js.promise.Promise<js.core.Void>
+
+    /**
+     * Sets a new tray icon and template status atomically. **macOS only**.
+     *
+     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
+     * To enable it, change your Cargo.toml file:
+     * ```toml
+     * [dependencies]
+     * tauri = { version = "...", features = ["...", "image-png"] }
+     * ```
+     */
+    fun setIconWithAsTemplate(
+        icon: js.buffer.ArrayBuffer?,
+        asTemplate: Boolean,
+    ): js.promise.Promise<js.core.Void>
+
+    /**
+     * Sets a new tray icon and template status atomically. **macOS only**.
+     *
+     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
+     * To enable it, change your Cargo.toml file:
+     * ```toml
+     * [dependencies]
+     * tauri = { version = "...", features = ["...", "image-png"] }
+     * ```
+     */
+    fun setIconWithAsTemplate(
+        icon: js.array.ReadonlyArray<Double>?,
+        asTemplate: Boolean,
+    ): js.promise.Promise<js.core.Void>
+
+    /**
      *  Disable or enable showing the tray menu on left click.
      *
      * #### Platform-specific:

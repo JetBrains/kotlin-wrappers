@@ -257,4 +257,24 @@ external interface WindowOptions {
      * - **Linux / Android / iOS / macOS**: Unsupported. Only supports `Default` and performs no operation.
      */
     var scrollBarStyle: ScrollBarStyle?
+
+    /**
+     * The name of the Android activity to create for this window.
+     */
+    var activityName: String?
+
+    /**
+     * The name of the Android activity that is creating this webview window.
+     *
+     * This is important to determine which stack the activity will belong to.
+     */
+    var createdByActivityName: String?
+
+    /**
+     * Sets the identifier of the UIScene that is requesting the creation of this new scene,
+     * establishing a relationship between the two scenes.
+     *
+     * By default the system uses the foreground scene.
+     */
+    var requestedBySceneIdentifier: String?
 }

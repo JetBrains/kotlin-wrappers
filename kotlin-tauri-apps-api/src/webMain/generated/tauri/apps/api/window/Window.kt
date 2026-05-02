@@ -406,6 +406,10 @@ open external class Window {
      */
     fun isAlwaysOnTop(): js.promise.Promise<Boolean>
 
+    fun activityName(): js.promise.Promise<String>
+
+    fun sceneIdentifier(): js.promise.Promise<String>
+
     /**
      * Centers the window.
      * @example

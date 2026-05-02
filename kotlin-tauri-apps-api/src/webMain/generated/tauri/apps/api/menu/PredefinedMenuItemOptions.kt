@@ -8,7 +8,7 @@ external interface PredefinedMenuItemOptions {
     var text: String?
 
     /** The predefined item type */
-    var item: Any /* 'Separator' | 'Copy' | 'Cut' | 'Paste' | 'SelectAll' | 'Undo' | 'Redo' | 'Minimize' | 'Maximize' | 'Fullscreen' | 'Hide' | 'HideOthers' | 'ShowAll' | 'CloseWindow' | 'Quit' | 'Services' | {
+    var item: Any /* 'Separator' | 'Copy' | 'Cut' | 'Paste' | 'SelectAll' | 'Undo' | 'Redo' | 'Minimize' | 'Maximize' | 'Fullscreen' | 'Hide' | 'HideOthers' | 'ShowAll' | 'CloseWindow' | 'Quit' | 'Services' | 'BringAllToFront' | {
     About: AboutMetadata | null;
 } */
 }
