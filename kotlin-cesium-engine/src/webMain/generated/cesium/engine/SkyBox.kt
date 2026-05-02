@@ -46,6 +46,12 @@ open external class SkyBox(
     var sources: JsAny
 
     /**
+     * Determines if the sky box will be shown.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#show">Online Documentation</a>
+     */
+    var show: Boolean
+
+    /**
      * Called when [Viewer] or [CesiumWidget] render the scene to
      * get the draw commands needed to render this primitive.
      *

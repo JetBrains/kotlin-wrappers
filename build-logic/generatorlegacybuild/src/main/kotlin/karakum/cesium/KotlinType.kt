@@ -87,6 +87,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Map<number_object>" to "ReadonlyMap<Int, JsAny>",
 
     "BufferPrimitiveCollection<T>" to "BufferPrimitiveCollection<T>",
+    "BufferPrimitiveCollection<BufferPrimitive>" to "BufferPrimitiveCollection<*>",
 )
 
 internal fun kotlinType(

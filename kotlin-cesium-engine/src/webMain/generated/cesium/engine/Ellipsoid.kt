@@ -82,18 +82,6 @@ open external class Ellipsoid(
     fun clone(result: Ellipsoid? = definedExternally): Ellipsoid
 
     /**
-     * Computes the unit vector directed from the center of this ellipsoid toward the provided Cartesian position.
-     * @param [cartesian] The Cartesian for which to to determine the geocentric normal.
-     * @param [result] The object onto which to store the result.
-     * @return The modified result parameter or a new Cartesian3 instance if none was provided.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#geocentricSurfaceNormal">Online Documentation</a>
-     */
-    fun geocentricSurfaceNormal(
-        cartesian: Cartesian3,
-        result: Cartesian3? = definedExternally,
-    ): Cartesian3
-
-    /**
      * Computes the normal of the plane tangent to the surface of the ellipsoid at the provided position.
      * @param [cartographic] The cartographic position for which to to determine the geodetic normal.
      * @param [result] The object onto which to store the result.
@@ -287,6 +275,18 @@ open external class Ellipsoid(
      */
     fun surfaceArea(rectangle: Rectangle): Double
 
+    /**
+     * Computes the unit vector directed from the center of this ellipsoid toward the provided Cartesian position.
+     * @param [cartesian] The Cartesian for which to to determine the geocentric normal.
+     * @param [result] The object onto which to store the result.
+     * @return The modified result parameter or a new Cartesian3 instance if none was provided.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#geocentricSurfaceNormal">Online Documentation</a>
+     */
+    fun geocentricSurfaceNormal(
+        cartesian: Cartesian3,
+        result: Cartesian3? = definedExternally,
+    ): Cartesian3
+
     companion object : Packable<Ellipsoid> {
         /**
          * Duplicates an Ellipsoid instance.
@@ -316,31 +316,6 @@ open external class Ellipsoid(
         ): Ellipsoid
 
         /**
-         * An Ellipsoid instance initialized to the WGS84 standard.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.WGS84">Online Documentation</a>
-         */
-        val WGS84: Ellipsoid
-
-        /**
-         * An Ellipsoid instance initialized to radii of (1.0, 1.0, 1.0).
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.UNIT_SPHERE">Online Documentation</a>
-         */
-        val UNIT_SPHERE: Ellipsoid
-
-        /**
-         * An Ellipsoid instance initialized to a sphere with the lunar radius.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.MOON">Online Documentation</a>
-         */
-        val MOON: Ellipsoid
-
-        /**
-         * An Ellipsoid instance initialized to a sphere with the mean radii of Mars.
-         * Source: https://epsg.io/104905
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.MARS">Online Documentation</a>
-         */
-        val MARS: Ellipsoid
-
-        /**
          * The default ellipsoid used when not otherwise specified.
          * ```
          * Ellipsoid.default = Ellipsoid.MOON;
@@ -354,12 +329,6 @@ open external class Ellipsoid(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.default">Online Documentation</a>
          */
         var default: Ellipsoid
-
-        /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
 
         /**
          * Stores the provided instance into the provided array.
@@ -390,5 +359,36 @@ open external class Ellipsoid(
             startingIndex: Int?,
             result: Ellipsoid?,
         ): Ellipsoid
+
+        /**
+         * An Ellipsoid instance initialized to the WGS84 standard.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.WGS84">Online Documentation</a>
+         */
+        val WGS84: Ellipsoid
+
+        /**
+         * An Ellipsoid instance initialized to radii of (1.0, 1.0, 1.0).
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.UNIT_SPHERE">Online Documentation</a>
+         */
+        val UNIT_SPHERE: Ellipsoid
+
+        /**
+         * An Ellipsoid instance initialized to a sphere with the lunar radius.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.MOON">Online Documentation</a>
+         */
+        val MOON: Ellipsoid
+
+        /**
+         * An Ellipsoid instance initialized to a sphere with the mean radii of Mars.
+         * Source: https://epsg.io/104905
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.MARS">Online Documentation</a>
+         */
+        val MARS: Ellipsoid
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
     }
 }

@@ -9,12 +9,12 @@ package cesium.engine
  * flat map like Cesium's 2D and Columbus View modes.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapProjection.html">Online Documentation</a>
  */
-open external class MapProjection {
+external interface MapProjection {
     /**
      * Gets the [Ellipsoid].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapProjection.html#ellipsoid">Online Documentation</a>
      */
-    val ellipsoid: Ellipsoid
+    var ellipsoid: Ellipsoid
 
     /**
      * Projects [Cartographic] coordinates, in radians, to projection-specific map coordinates, in meters.

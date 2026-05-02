@@ -552,6 +552,19 @@ open external class CesiumWidget(
         offset: HeadingPitchRange? = definedExternally,
     ): Promise<JsBoolean>
 
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun zoomTo(
+        target: Promise<BufferPrimitiveCollection<*>>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Boolean
+
+    @JsName("zoomTo")
+    fun zoomToAsync(
+        target: Promise<BufferPrimitiveCollection<*>>,
+        offset: HeadingPitchRange? = definedExternally,
+    ): Promise<JsBoolean>
+
     /**
      * Flies the camera to the provided entity, entities, or data source.
      * If the data source is still in the process of loading or the visualization is otherwise still loading,
@@ -775,6 +788,19 @@ open external class CesiumWidget(
     @JsName("flyTo")
     fun flyToAsync(
         target: Promise<VoxelPrimitive>,
+        options: FlyToOptions? = definedExternally,
+    ): Promise<JsBoolean>
+
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun flyTo(
+        target: Promise<BufferPrimitiveCollection<*>>,
+        options: FlyToOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("flyTo")
+    fun flyToAsync(
+        target: Promise<BufferPrimitiveCollection<*>>,
         options: FlyToOptions? = definedExternally,
     ): Promise<JsBoolean>
 }

@@ -60,12 +60,6 @@ open external class Matrix2(
 
     companion object : Packable<Matrix2> {
         /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -129,33 +123,6 @@ open external class Matrix2(
          */
         fun clone(
             matrix: Matrix2,
-            result: Matrix2? = definedExternally,
-        ): Matrix2
-
-        /**
-         * Creates a Matrix2 from 4 consecutive elements in an array.
-         * ```
-         * // Create the Matrix2:
-         * // [1.0, 2.0]
-         * // [1.0, 2.0]
-         *
-         * const v = [1.0, 1.0, 2.0, 2.0];
-         * const m = Matrix2.fromArray(v);
-         *
-         * // Create same Matrix2 with using an offset into an array
-         * const v2 = [0.0, 0.0, 1.0, 1.0, 2.0, 2.0];
-         * const m2 = Matrix2.fromArray(v2, 2);
-         * ```
-         * @param [array] The array whose 4 consecutive elements correspond to the positions of the matrix.  Assumes column-major order.
-         * @param [startingIndex] The offset into the array of the first element, which corresponds to first column first row position in the matrix.
-         *   Default value - `0`
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Matrix2 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.fromArray">Online Documentation</a>
-         */
-        fun fromArray(
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int? = definedExternally,
             result: Matrix2? = definedExternally,
         ): Matrix2
 
@@ -296,7 +263,7 @@ open external class Matrix2(
             matrix: Matrix2,
             index: Int,
             cartesian: Cartesian2,
-            result: Cartesian2,
+            result: Matrix2,
         ): Matrix2
 
         /**
@@ -577,6 +544,39 @@ open external class Matrix2(
             right: Matrix2? = definedExternally,
             epsilon: Double? = definedExternally,
         ): Boolean
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
+
+        /**
+         * Creates a Matrix2 from 4 consecutive elements in an array.
+         * ```
+         * // Create the Matrix2:
+         * // [1.0, 2.0]
+         * // [1.0, 2.0]
+         *
+         * const v = [1.0, 1.0, 2.0, 2.0];
+         * const m = Matrix2.fromArray(v);
+         *
+         * // Create same Matrix2 with using an offset into an array
+         * const v2 = [0.0, 0.0, 1.0, 1.0, 2.0, 2.0];
+         * const m2 = Matrix2.fromArray(v2, 2);
+         * ```
+         * @param [array] The array whose 4 consecutive elements correspond to the positions of the matrix.  Assumes column-major order.
+         * @param [startingIndex] The offset into the array of the first element, which corresponds to first column first row position in the matrix.
+         *   Default value - `0`
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Matrix2 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.fromArray">Online Documentation</a>
+         */
+        fun fromArray(
+            array: ReadonlyArray<JsDouble>,
+            startingIndex: Int? = definedExternally,
+            result: Matrix2? = definedExternally,
+        ): Matrix2
 
         /**
          * An immutable Matrix2 instance initialized to the identity matrix.

@@ -11,7 +11,7 @@ import js.array.ReadonlyArray
  * lookup but also provides an array for fast iteration.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html">Online Documentation</a>
  */
-open external class AssociativeArray {
+open external class AssociativeArray<T : JsAny?> {
     /**
      * Gets the number of items in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#length">Online Documentation</a>
@@ -24,7 +24,7 @@ open external class AssociativeArray {
      * it should not be modified directly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#values">Online Documentation</a>
      */
-    var values: ReadonlyArray<JsAny>
+    var values: ReadonlyArray<T>
 
     /**
      * Determines if the provided key is in the array.
@@ -45,12 +45,12 @@ open external class AssociativeArray {
      */
     fun set(
         key: String,
-        value: JsAny,
+        value: T,
     )
 
     fun set(
         key: Int,
-        value: JsAny,
+        value: T,
     )
 
     /**
@@ -59,9 +59,9 @@ open external class AssociativeArray {
      * @return The associated value, or undefined if the key does not exist in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#get">Online Documentation</a>
      */
-    fun get(key: String): JsAny
+    fun get(key: String): T
 
-    fun get(key: Int): JsAny
+    fun get(key: Int): T
 
     /**
      * Removes a key-value pair from the collection.

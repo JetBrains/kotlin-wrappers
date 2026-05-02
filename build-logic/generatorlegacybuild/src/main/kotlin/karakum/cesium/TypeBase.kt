@@ -12,6 +12,7 @@ internal abstract class TypeBase(
         val start = source.body.substringAfter(name)
         if (start.startsWith("<")) {
             (start.substringBefore(">") + ">")
+                .replace("T = unknown", "T : JsAny?")
                 .replace(" extends ", " : ")
         } else ""
     }
@@ -32,7 +33,7 @@ internal abstract class TypeBase(
     open val staticBody: Boolean = false
 
     protected val abstract: Boolean by lazy {
-        source.abstract || name == "TilingScheme"
+        source.abstract
     }
 
     protected open val open: Boolean = false

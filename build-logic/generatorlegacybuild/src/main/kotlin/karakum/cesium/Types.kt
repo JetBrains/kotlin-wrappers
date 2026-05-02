@@ -18,7 +18,7 @@ internal fun typeDeclaration(
         body.startsWith("(")
             -> "typealias ${applyCallbackFix(name)} = ${typeBody(body)}"
 
-        body == "HTMLImageElement | HTMLCanvasElement | ImageBitmap"
+        body == "HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas"
             -> "typealias $name = CanvasImageSource /* $body */"
 
         body == "number | bigint | string | boolean | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | number[] | bigint[] | string[] | boolean[] | Cartesian2[] | Cartesian3[] | Cartesian4[] | Matrix2[] | Matrix3[] | Matrix4[]"

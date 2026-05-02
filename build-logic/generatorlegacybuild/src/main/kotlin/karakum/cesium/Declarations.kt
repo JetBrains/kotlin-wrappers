@@ -41,11 +41,15 @@ internal fun parseDeclarations(
         .filterIsInstance<Class>()
         .associateBy { it.name }
 
+    val interfaceMap = declarations.asSequence()
+        .filterIsInstance<Interface>()
+        .associateBy { it.name }
+
     if (definitionsFile.parentFile.name == "engine") {
         addParentType(classMap, LIGHT)
         addParentType(classMap, TERRAIN_DATA)
         addParentType(classMap, TERRAIN_PROVIDER)
-        addParentType(classMap, TILING_SCHEME)
+        addParentType(classMap, TILING_SCHEME, { interfaceMap.getValue(it) })
         addParentType(classMap, VISUALIZER)
 
         addParentType(classMap, MATERIAL_PROPERTY)
@@ -91,10 +95,6 @@ internal fun parseDeclarations(
         it is Interface && classMap.containsKey(it.name)
     }
 
-    val interfaceMap = declarations.asSequence()
-        .filterIsInstance<Interface>()
-        .associateBy { it.name }
-
     declarations.removeAll {
         when {
             it !is Namespace -> false
@@ -119,9 +119,10 @@ internal fun parseDeclarations(
 private fun addParentType(
     classMap: Map<String, Class>,
     parentType: String,
+    getParent: (String) -> TypeBase = { classMap.getValue(it) },
     filter: (String) -> Boolean = { it.endsWith(parentType) },
 ) {
-    val abstractMembers = classMap.getValue(parentType)
+    val abstractMembers = getParent(parentType)
         .overridableMembers()
         .map { it.name }
         .toSet()
@@ -136,7 +137,7 @@ private fun addParentType(
         .forEach { it.overridden = true }
 }
 
-private fun Class.overridableMembers(): Sequence<Member> =
+private fun TypeBase.overridableMembers(): Sequence<Member> =
     members.asSequence()
         .filter { !it.static }
         .filter { it is Property || it is Method }

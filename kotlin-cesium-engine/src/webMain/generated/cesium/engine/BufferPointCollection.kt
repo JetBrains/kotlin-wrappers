@@ -41,6 +41,7 @@ open external class BufferPointCollection(
         val primitiveCountMax: Double?
         val show: Boolean?
         val debugShowBoundingVolume: Boolean?
+        val allowPicking: Boolean?
     }
 
     /**

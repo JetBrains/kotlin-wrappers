@@ -96,12 +96,6 @@ open external class Matrix4(
 
     companion object : Packable<Matrix4> {
         /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -165,35 +159,6 @@ open external class Matrix4(
          */
         fun clone(
             matrix: Matrix4,
-            result: Matrix4? = definedExternally,
-        ): Matrix4
-
-        /**
-         * Creates a Matrix4 from 16 consecutive elements in an array.
-         * ```
-         * // Create the Matrix4:
-         * // [1.0, 2.0, 3.0, 4.0]
-         * // [1.0, 2.0, 3.0, 4.0]
-         * // [1.0, 2.0, 3.0, 4.0]
-         * // [1.0, 2.0, 3.0, 4.0]
-         *
-         * const v = [1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0, 3.0, 4.0, 4.0, 4.0, 4.0];
-         * const m = Matrix4.fromArray(v);
-         *
-         * // Create same Matrix4 with using an offset into an array
-         * const v2 = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0, 3.0, 4.0, 4.0, 4.0, 4.0];
-         * const m2 = Matrix4.fromArray(v2, 2);
-         * ```
-         * @param [array] The array whose 16 consecutive elements correspond to the positions of the matrix.  Assumes column-major order.
-         * @param [startingIndex] The offset into the array of the first element, which corresponds to first column first row position in the matrix.
-         *   Default value - `0`
-         * @param [result] The object onto which to store the result.
-         * @return The modified result parameter or a new Matrix4 instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromArray">Online Documentation</a>
-         */
-        fun fromArray(
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int? = definedExternally,
             result: Matrix4? = definedExternally,
         ): Matrix4
 
@@ -454,7 +419,7 @@ open external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.computeViewportTransformation">Online Documentation</a>
          */
         fun computeViewportTransformation(
-            viewport: JsAny? = definedExternally,
+            viewport: Viewport? = definedExternally,
             nearDepthRange: Double? = definedExternally,
             farDepthRange: Double? = definedExternally,
             result: Matrix4? = definedExternally,
@@ -1188,6 +1153,41 @@ open external class Matrix4(
         fun inverseTranspose(
             matrix: Matrix4,
             result: Matrix4,
+        ): Matrix4
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
+
+        /**
+         * Creates a Matrix4 from 16 consecutive elements in an array.
+         * ```
+         * // Create the Matrix4:
+         * // [1.0, 2.0, 3.0, 4.0]
+         * // [1.0, 2.0, 3.0, 4.0]
+         * // [1.0, 2.0, 3.0, 4.0]
+         * // [1.0, 2.0, 3.0, 4.0]
+         *
+         * const v = [1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0, 3.0, 4.0, 4.0, 4.0, 4.0];
+         * const m = Matrix4.fromArray(v);
+         *
+         * // Create same Matrix4 with using an offset into an array
+         * const v2 = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0, 3.0, 4.0, 4.0, 4.0, 4.0];
+         * const m2 = Matrix4.fromArray(v2, 2);
+         * ```
+         * @param [array] The array whose 16 consecutive elements correspond to the positions of the matrix.  Assumes column-major order.
+         * @param [startingIndex] The offset into the array of the first element, which corresponds to first column first row position in the matrix.
+         *   Default value - `0`
+         * @param [result] The object onto which to store the result.
+         * @return The modified result parameter or a new Matrix4 instance if one was not provided.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromArray">Online Documentation</a>
+         */
+        fun fromArray(
+            array: ReadonlyArray<JsDouble>,
+            startingIndex: Int? = definedExternally,
+            result: Matrix4? = definedExternally,
         ): Matrix4
 
         /**

@@ -12,24 +12,24 @@ package cesium.engine
  * This continues for as many levels as are present in the geometry or imagery source.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html">Online Documentation</a>
  */
-abstract external class TilingScheme {
+external interface TilingScheme {
     /**
      * Gets the ellipsoid that is tiled by the tiling scheme.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#ellipsoid">Online Documentation</a>
      */
-    abstract var ellipsoid: Ellipsoid
+    var ellipsoid: Ellipsoid
 
     /**
      * Gets the rectangle, in radians, covered by this tiling scheme.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#rectangle">Online Documentation</a>
      */
-    abstract var rectangle: Rectangle
+    var rectangle: Rectangle
 
     /**
      * Gets the map projection used by the tiling scheme.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#projection">Online Documentation</a>
      */
-    abstract var projection: MapProjection
+    var projection: MapProjection
 
     /**
      * Gets the total number of tiles in the X direction at a specified level-of-detail.
@@ -37,7 +37,7 @@ abstract external class TilingScheme {
      * @return The number of tiles in the X direction at the given level.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#getNumberOfXTilesAtLevel">Online Documentation</a>
      */
-    abstract fun getNumberOfXTilesAtLevel(level: Int): Int
+    fun getNumberOfXTilesAtLevel(level: Int): Int
 
     /**
      * Gets the total number of tiles in the Y direction at a specified level-of-detail.
@@ -45,7 +45,7 @@ abstract external class TilingScheme {
      * @return The number of tiles in the Y direction at the given level.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#getNumberOfYTilesAtLevel">Online Documentation</a>
      */
-    abstract fun getNumberOfYTilesAtLevel(level: Int): Int
+    fun getNumberOfYTilesAtLevel(level: Int): Int
 
     /**
      * Transforms a rectangle specified in geodetic radians to the native coordinate system
@@ -57,7 +57,7 @@ abstract external class TilingScheme {
      *   is undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#rectangleToNativeRectangle">Online Documentation</a>
      */
-    abstract fun rectangleToNativeRectangle(
+    fun rectangleToNativeRectangle(
         rectangle: Rectangle,
         result: Rectangle? = definedExternally,
     ): Rectangle
@@ -74,11 +74,11 @@ abstract external class TilingScheme {
      *   if 'result' is undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#tileXYToNativeRectangle">Online Documentation</a>
      */
-    abstract fun tileXYToNativeRectangle(
+    fun tileXYToNativeRectangle(
         x: Double,
         y: Double,
         level: Int,
-        result: JsAny? = definedExternally,
+        result: Rectangle? = definedExternally,
     ): Rectangle
 
     /**
@@ -92,11 +92,11 @@ abstract external class TilingScheme {
      *   if 'result' is undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#tileXYToRectangle">Online Documentation</a>
      */
-    abstract fun tileXYToRectangle(
+    fun tileXYToRectangle(
         x: Double,
         y: Double,
         level: Int,
-        result: JsAny? = definedExternally,
+        result: Rectangle? = definedExternally,
     ): Rectangle
 
     /**
@@ -110,7 +110,7 @@ abstract external class TilingScheme {
      *   if 'result' is undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#positionToTileXY">Online Documentation</a>
      */
-    abstract fun positionToTileXY(
+    fun positionToTileXY(
         position: Cartographic,
         level: Int,
         result: Cartesian2? = definedExternally,

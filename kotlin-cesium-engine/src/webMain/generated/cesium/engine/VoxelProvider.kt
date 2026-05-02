@@ -105,6 +105,12 @@ abstract external class VoxelProvider {
     abstract val maximumTileCount: Double?
 
     /**
+     * The number of levels of detail containing available tiles in the tileset.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#availableLevels">Online Documentation</a>
+     */
+    abstract val availableLevels: Double?
+
+    /**
      * Requests the data for a given tile.
      * @return A promise resolving to a VoxelContent containing the data for the tile, or undefined if the request could not be scheduled this frame.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#requestData">Online Documentation</a>

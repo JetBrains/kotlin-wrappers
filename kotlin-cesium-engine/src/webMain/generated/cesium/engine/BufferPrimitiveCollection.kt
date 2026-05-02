@@ -38,40 +38,13 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     }
 
     /**
-     * Default capacity of buffers on new collections. A quantity of elements:
-     * number of vertices in the vertex buffer, primitives in the primitive
-     * buffer, etc. This value is arbitrary, and collections cannot be resized,
-     * so specific per-buffer capacities should be provided in the collection
-     * constructor when available.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#DEFAULT_CAPACITY">Online Documentation</a>
-     */
-    val DEFAULT_CAPACITY: Double
-
-    /**
      * Determines if primitives in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#show">Online Documentation</a>
      */
-    var show: Boolean
-
-    /**
-     * Transforms geometry from model to world coordinates.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#modelMatrix">Online Documentation</a>
-     */
-    var modelMatrix: Matrix4
-
-    /**
-     * Local bounding volume for all primitives in the collection, including both
-     * shown and hidden primitives.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#boundingVolume">Online Documentation</a>
-     */
-    var boundingVolume: BoundingSphere
-
-    /**
-     * World bounding volume for all primitives in the collection, including both
-     * shown and hidden primitives.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#boundingVolumeWC">Online Documentation</a>
-     */
-    var boundingVolumeWC: BoundingSphere
+    var show: JsAny /* boolean;
+    protected readonly _modelMatrix: Matrix4;
+    protected readonly _boundingVolume: BoundingSphere;
+    protected readonly _boundingVolumeWC: BoundingSphere */
 
     /**
      * This property is for debugging only; it is not for production use nor is it optimized.
@@ -182,6 +155,26 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     val vertexCountMax: Double
 
     /**
+     * Transforms geometry from model to world coordinates.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#modelMatrix">Online Documentation</a>
+     */
+    val modelMatrix: Matrix4
+
+    /**
+     * Local bounding volume for all primitives in the collection, including both
+     * shown and hidden primitives.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#boundingVolume">Online Documentation</a>
+     */
+    val boundingVolume: BoundingSphere
+
+    /**
+     * World bounding volume for all primitives in the collection, including both
+     * shown and hidden primitives.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#boundingVolumeWC">Online Documentation</a>
+     */
+    val boundingVolumeWC: BoundingSphere
+
+    /**
      * Returns a JSON-serializable array representing the collection. This encoding
      * is not memory-efficient, and should generally be used for debugging and
      * testing.
@@ -213,5 +206,15 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
             collection: BufferPrimitiveCollection<T>,
             result: BufferPrimitiveCollection<T>,
         )
+
+        /**
+         * Default capacity of buffers on new collections. A quantity of elements:
+         * number of vertices in the vertex buffer, primitives in the primitive
+         * buffer, etc. This value is arbitrary, and collections cannot be resized,
+         * so specific per-buffer capacities should be provided in the collection
+         * constructor when available.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#.DEFAULT_CAPACITY">Online Documentation</a>
+         */
+        val DEFAULT_CAPACITY: Double
     }
 }

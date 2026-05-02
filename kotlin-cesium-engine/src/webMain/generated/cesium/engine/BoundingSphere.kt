@@ -114,7 +114,7 @@ open external class BoundingSphere(
          */
         fun fromRectangle2D(
             rectangle: Rectangle? = definedExternally,
-            projection: JsAny? = definedExternally,
+            projection: MapProjection? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -134,7 +134,7 @@ open external class BoundingSphere(
          */
         fun fromRectangleWithHeights2D(
             rectangle: Rectangle? = definedExternally,
-            projection: JsAny? = definedExternally,
+            projection: MapProjection? = definedExternally,
             minimumHeight: Double? = definedExternally,
             maximumHeight: Double? = definedExternally,
             result: BoundingSphere? = definedExternally,
@@ -300,12 +300,6 @@ open external class BoundingSphere(
         ): BoundingSphere
 
         /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -462,7 +456,7 @@ open external class BoundingSphere(
          */
         fun projectTo2D(
             sphere: BoundingSphere,
-            projection: JsAny? = definedExternally,
+            projection: MapProjection? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -490,5 +484,11 @@ open external class BoundingSphere(
             left: BoundingSphere? = definedExternally,
             right: BoundingSphere? = definedExternally,
         ): Boolean
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
     }
 }

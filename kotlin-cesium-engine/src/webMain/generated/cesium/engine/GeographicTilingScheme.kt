@@ -101,7 +101,7 @@ open external class GeographicTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: JsAny?,
+        result: Rectangle?,
     ): Rectangle
 
     /**
@@ -119,7 +119,7 @@ open external class GeographicTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: JsAny?,
+        result: Rectangle?,
     ): Rectangle
 
     /**

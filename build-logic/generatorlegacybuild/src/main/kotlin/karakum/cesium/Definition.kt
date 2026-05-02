@@ -10,7 +10,7 @@ private val MULTI_TYPES = listOf(
     "Resource | string",
 
     "Entity | Entity[] | EntityCollection | DataSource | ImageryLayer | Cesium3DTileset | TimeDynamicPointCloud" +
-            " | Promise<Entity | Entity[] | EntityCollection | DataSource | ImageryLayer | Cesium3DTileset | TimeDynamicPointCloud | VoxelPrimitive>",
+            " | Promise<Entity | Entity[] | EntityCollection | DataSource | ImageryLayer | Cesium3DTileset | TimeDynamicPointCloud | VoxelPrimitive | BufferPrimitiveCollection<BufferPrimitive>>",
 
     "HTMLImageElement | HTMLCanvasElement | string | Resource | Billboard.CreateImageCallback",
     "PostProcessStage | PostProcessStageComposite",
@@ -134,7 +134,7 @@ private fun newBodies(
 }
 
 private fun String.containedTypes(): Sequence<String> {
-    val promiseTypes = substringAfter(" | Promise<").substringBefore(">")
+    val promiseTypes = substringAfter(" | Promise<").substringBeforeLast(">")
     if (promiseTypes == this || " | " !in promiseTypes)
         return splitToSequence(" | ")
 

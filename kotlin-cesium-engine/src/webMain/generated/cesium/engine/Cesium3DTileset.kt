@@ -797,6 +797,12 @@ open external class Cesium3DTileset(
     val heightReference: HeightReference?
 
     /**
+     * The [CesiumWidget.scene] that the tileset will be rendered in, required for tilesets that specify a [heightReference] value for clamping 3D Tiles vector data content- like points, lines, and labels- to terrain or 3D tiles.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#scene">Online Documentation</a>
+     */
+    val scene: Scene?
+
+    /**
      * Gets an ellipsoid describing the shape of the globe.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#ellipsoid">Online Documentation</a>
      */

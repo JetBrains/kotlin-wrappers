@@ -16,7 +16,13 @@ import js.typedarrays.TypedArray
  */
 open external class VoxelContent
 private constructor() {
-
+    /**
+     * The metadata for this voxel content.
+     * The metadata is an array of typed arrays, one for each field.
+     * The data for one field is a flattened 3D array ordered by X, then Y, then Z.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelContent.html#metadata">Online Documentation</a>
+     */
+    val metadata: ReadonlyArray<TypedArray<*, *, *, *>> /* Int8Array[] | Uint8Array[] | Int16Array[] | Uint16Array[] | Int32Array[] | Uint32Array[] | Float32Array[] | Float64Array[] */
 
     companion object {
         /**

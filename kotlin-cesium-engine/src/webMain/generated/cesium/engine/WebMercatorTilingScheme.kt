@@ -107,7 +107,7 @@ open external class WebMercatorTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: JsAny?,
+        result: Rectangle?,
     ): Rectangle
 
     /**
@@ -125,7 +125,7 @@ open external class WebMercatorTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: JsAny?,
+        result: Rectangle?,
     ): Rectangle
 
     /**

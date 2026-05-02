@@ -12,4 +12,4 @@ import web.canvas.CanvasImageSource
  *
  * See the documentation for each ImageryProvider class for more information about how they return images.
  */
-typealias ImageryTypes = CanvasImageSource /* HTMLImageElement | HTMLCanvasElement | ImageBitmap */
+typealias ImageryTypes = CanvasImageSource /* HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas */

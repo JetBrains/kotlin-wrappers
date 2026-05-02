@@ -65,12 +65,6 @@ open external class Rectangle(
 
     companion object : Packable<Rectangle> {
         /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
-
-        /**
          * Stores the provided instance into the provided array.
          * @param [value] The value to pack.
          * @param [array] The array to pack into.
@@ -424,6 +418,12 @@ open external class Rectangle(
             northLerp: Double,
             result: Rectangle? = definedExternally,
         ): Rectangle
+
+        /**
+         * The number of elements used to pack the object into an array.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rectangle.html#.packedLength">Online Documentation</a>
+         */
+        override val packedLength: Int
 
         /**
          * The largest possible rectangle.
