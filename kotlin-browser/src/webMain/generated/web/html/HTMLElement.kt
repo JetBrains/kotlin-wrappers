@@ -7,7 +7,7 @@ import web.components.ElementInternals
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
 import web.dom.GlobalEventHandlers
-import web.dom.HTMLOrSVGElement
+import web.dom.HTMLOrSVGOrMathMLElement
 import web.dom.Node
 import web.editcontext.EditContext
 import web.events.Event
@@ -31,7 +31,7 @@ protected constructor() :
     ElementCSSInlineStyle,
     ElementContentEditable,
     GlobalEventHandlers,
-    HTMLOrSVGElement {
+    HTMLOrSVGOrMathMLElement {
     /**
      * The **`HTMLElement.accessKey`** property sets the keystroke which a user can press to jump to a given element.
      *

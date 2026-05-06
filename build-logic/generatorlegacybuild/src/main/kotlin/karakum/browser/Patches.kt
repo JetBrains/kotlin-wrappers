@@ -442,6 +442,8 @@ internal fun String.applyPatches(): String {
         .plus(
             "\n\ntype OriginSource = URL | Origin | ExtendableMessageEvent | HTMLHyperlinkElementUtils | Location | Window | WorkerGlobalScope | WorkerLocation | MessageEvent;\n"
         )
+        // TODO: remove after `@types/web` update
+        .replace("HTMLOrSVGElement", "HTMLOrSVGOrMathMLElement")
         .extractUrlSource()
 }
 

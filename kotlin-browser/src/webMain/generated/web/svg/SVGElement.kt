@@ -5,7 +5,7 @@ package web.svg
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
 import web.dom.GlobalEventHandlers
-import web.dom.HTMLOrSVGElement
+import web.dom.HTMLOrSVGOrMathMLElement
 
 /**
  * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the **`SVGElement`** interface.
@@ -17,7 +17,7 @@ private constructor() :
     Element,
     ElementCSSInlineStyle,
     GlobalEventHandlers,
-    HTMLOrSVGElement {
+    HTMLOrSVGOrMathMLElement {
     /**
      * The **`ownerSVGElement`** property of the SVGElement interface reflects the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.
      *

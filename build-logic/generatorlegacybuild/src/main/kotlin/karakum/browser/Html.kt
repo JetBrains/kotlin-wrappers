@@ -76,7 +76,7 @@ private val DOM_TYPES = setOf(
     "NodeIterator",
 
     // special
-    "HTMLOrSVGElement",
+    "HTMLOrSVGOrMathMLElement",
     "FocusOptions",
 
     "Node",

@@ -5,7 +5,7 @@ package web.mathml
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
 import web.dom.GlobalEventHandlers
-import web.dom.HTMLOrSVGElement
+import web.dom.HTMLOrSVGOrMathMLElement
 
 /**
  * The **`MathMLElement`** interface represents any MathML element.
@@ -17,4 +17,4 @@ private constructor() :
     Element,
     ElementCSSInlineStyle,
     GlobalEventHandlers,
-    HTMLOrSVGElement
+    HTMLOrSVGOrMathMLElement
