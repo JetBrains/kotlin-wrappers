@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsPlugin
 import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsEnvSpec
 import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsPlugin
 
-private val NODE_VERSION = "26.0.0"
+private val NODE_VERSION = "26.1.0"
 
 plugins.withType<NodeJsPlugin> {
     the<NodeJsEnvSpec>().version.set(NODE_VERSION)
