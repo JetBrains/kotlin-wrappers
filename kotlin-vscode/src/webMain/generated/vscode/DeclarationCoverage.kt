@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-
 /**
  * Contains coverage information for a declaration. Depending on the reporter
  * and language, this may be types such as functions, methods, or namespaces.

@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 /**
  * Provides additional metadata about how a [DocumentDropEditProvider] works.

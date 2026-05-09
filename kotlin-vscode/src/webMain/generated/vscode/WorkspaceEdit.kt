@@ -7,9 +7,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A workspace edit is a collection of textual and files changes for

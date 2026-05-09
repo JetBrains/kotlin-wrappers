@@ -5,7 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsString
 
 /**
  * A notebook controller represents an entity that can execute notebook cells. This is often referred to as a kernel.

@@ -6,8 +6,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
-import kotlin.js.JsModule
-import kotlin.js.JsString
 
 /**
  * Raw representation of a notebook.

@@ -6,7 +6,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
-import kotlin.js.*
 
 /**
  * Namespace for authentication.

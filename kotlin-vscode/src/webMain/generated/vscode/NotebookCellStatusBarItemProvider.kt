@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.Void
-import kotlin.js.JsAny
 
 /**
  * A provider that can contribute items to the status bar that appears below a cell's editor.

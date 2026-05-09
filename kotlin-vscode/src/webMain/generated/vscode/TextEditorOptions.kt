@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Represents a [text editor}'s {@link TextEditor.options options][TextEditor].

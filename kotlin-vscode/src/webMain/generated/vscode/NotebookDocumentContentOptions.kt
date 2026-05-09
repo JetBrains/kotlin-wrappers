@@ -4,8 +4,6 @@ package vscode
 
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsBoolean
-import kotlin.js.JsString
 
 /**
  * Notebook content options define what parts of a notebook are persisted. Note

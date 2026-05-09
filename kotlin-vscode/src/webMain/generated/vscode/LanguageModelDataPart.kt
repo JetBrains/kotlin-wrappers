@@ -5,9 +5,6 @@
 package vscode
 
 import js.typedarrays.Uint8Array
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A language model response part containing arbitrary data. Can be used in [responses][LanguageModelChatResponse],

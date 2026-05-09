@@ -4,9 +4,6 @@ package vscode
 
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsBoolean
-import kotlin.js.JsString
 
 /**
  * Value-object describing what options a terminal should use.

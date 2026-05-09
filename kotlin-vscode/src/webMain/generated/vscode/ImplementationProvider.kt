@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * The implementation provider interface defines the contract between extensions and
  * the go to implementation feature.

@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Symbol tags are extra annotations that tweak the rendering of a symbol.
  */

@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Terminal exit reason kind.
  */

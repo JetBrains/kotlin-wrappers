@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Provider which handles dropping of resources into a text editor.
  *

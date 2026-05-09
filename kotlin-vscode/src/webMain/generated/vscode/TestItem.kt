@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * An item shown in the "test explorer" view.

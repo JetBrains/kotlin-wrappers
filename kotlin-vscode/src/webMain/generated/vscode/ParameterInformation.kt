@@ -6,9 +6,6 @@ package vscode
 
 import js.array.Tuple2
 import js.numbers.JsInt
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Represents a parameter of a callable-signature. A parameter can

@@ -5,9 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * Represents a debug adapter executable and optional arguments and runtime options passed to it.

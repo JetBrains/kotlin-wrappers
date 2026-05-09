@@ -5,9 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A semantic tokens legend contains the needed information to decipher

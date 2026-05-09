@@ -5,7 +5,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.*
 
 /**
  * Namespace describing the environment the editor runs in.

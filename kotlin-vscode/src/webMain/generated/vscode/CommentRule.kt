@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Describes how comments for a language work.

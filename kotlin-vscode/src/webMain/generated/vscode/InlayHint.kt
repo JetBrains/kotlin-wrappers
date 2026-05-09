@@ -5,9 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Inlay hint information.

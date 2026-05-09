@@ -7,8 +7,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
 import kotlinx.js.JsPlainObject
-import vscode.window.createStatusBarItem
-import kotlin.js.*
 
 /**
  * Namespace for dealing with the current window of the editor. That is visible

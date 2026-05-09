@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents a type which can release resources, such
  * as event listening or a timer.

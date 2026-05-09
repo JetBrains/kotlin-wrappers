@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * The confidence of a {@link TerminalShellExecutionCommandLine} value.
  */

@@ -5,7 +5,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsModule
 
 /**
  * Class used to execute an extension callback as a task.

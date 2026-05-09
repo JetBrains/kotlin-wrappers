@@ -5,9 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Contains coverage information for a single statement or line.

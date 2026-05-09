@@ -7,9 +7,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsString
 
 /**
  * Namespace for localization-related functionality in the extension API. To use this properly,

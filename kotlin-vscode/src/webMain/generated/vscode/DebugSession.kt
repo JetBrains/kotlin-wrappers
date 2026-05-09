@@ -3,8 +3,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * A debug session.

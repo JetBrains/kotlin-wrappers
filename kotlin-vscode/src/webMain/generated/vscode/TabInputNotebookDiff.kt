@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * The tabs represents two notebooks in a diff configuration.
  *

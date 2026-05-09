@@ -6,9 +6,6 @@ package vscode
 
 import js.errors.JsError
 import js.typedarrays.Uint8Array
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * One representation of a [notebook output][NotebookCellOutput], defined by MIME type and data.

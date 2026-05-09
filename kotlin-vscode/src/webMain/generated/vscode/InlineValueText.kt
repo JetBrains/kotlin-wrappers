@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Provide inline value as text.
  *

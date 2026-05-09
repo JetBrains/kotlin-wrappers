@@ -3,9 +3,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsAny
-import kotlin.js.JsBoolean
-import kotlin.js.definedExternally
 
 /**
  * Renderer messaging is used to communicate with a single renderer. It's returned from [notebooks.createRendererMessaging].

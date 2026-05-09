@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * A grouping for tasks. The editor by default supports the
  * 'Clean', 'Build', 'RebuildAll' and 'Test' group.

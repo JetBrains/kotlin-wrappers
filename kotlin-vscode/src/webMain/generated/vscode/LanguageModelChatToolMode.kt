@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * A tool-calling mode for the language model to use.
  */

@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Value-object describing what options a virtual process terminal should use.

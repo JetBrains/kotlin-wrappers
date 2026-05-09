@@ -5,10 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A completion item represents a text snippet that is proposed to complete text that is being typed.

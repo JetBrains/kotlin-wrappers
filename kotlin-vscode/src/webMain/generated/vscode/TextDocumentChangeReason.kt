@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Reasons for why a text document has changed.
  */

@@ -6,9 +6,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * Notebook cell output represents a result of executing a cell. It is a container type for multiple

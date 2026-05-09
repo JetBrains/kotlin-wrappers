@@ -5,9 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A semantic tokens builder can help with creating a `SemanticTokens` instance

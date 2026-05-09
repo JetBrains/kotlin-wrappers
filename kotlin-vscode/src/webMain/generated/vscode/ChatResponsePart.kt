@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Represents the different chat response types.
  *

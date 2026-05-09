@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * The configuration scope which can be:
  * - a [Uri] representing a resource

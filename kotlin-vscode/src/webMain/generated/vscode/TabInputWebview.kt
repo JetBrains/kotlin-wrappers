@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * The tab represents a webview.
  *

@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * A cancellation token is passed to an asynchronous or long running

@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Defines a generalized way of reporting progress updates.
  *

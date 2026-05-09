@@ -3,7 +3,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 
 /**
  * An event that is fired when a [notebook document][NotebookDocument] will be saved.

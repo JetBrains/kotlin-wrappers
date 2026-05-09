@@ -5,9 +5,6 @@
 package vscode
 
 import js.objects.ReadonlyRecord
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * McpHttpServerDefinition represents an MCP server available using the

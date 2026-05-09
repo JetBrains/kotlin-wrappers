@@ -5,7 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsBoolean
 
 /**
  * A TestRunProfile describes one way to execute tests in a [TestController].

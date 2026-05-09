@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-
 /**
  * A language model response part indicating a tool call, returned from a [LanguageModelChatResponse], and also can be
  * included as a content part on a [LanguageModelChatMessage], to represent a previous tool call in a chat request.

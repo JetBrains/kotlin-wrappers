@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * A custom Debug Adapter Protocol event received from a [debug session][DebugSession].

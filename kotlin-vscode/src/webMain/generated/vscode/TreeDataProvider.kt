@@ -4,8 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.promise.PromiseResult
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * A data provider that provides tree data

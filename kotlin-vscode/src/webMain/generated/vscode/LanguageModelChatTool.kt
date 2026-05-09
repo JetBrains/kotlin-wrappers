@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * A tool that is available to the language model via [LanguageModelChatRequestOptions]. A language model uses all the

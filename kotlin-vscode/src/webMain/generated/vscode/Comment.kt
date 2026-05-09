@@ -5,7 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.date.Date
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * A comment is displayed within the editor or the Comments Panel, depending on how it is provided.

@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A reference to a named icon. Currently, [File}, {@link ThemeIcon.Folder Folder][ThemeIcon.File],
  * and [ThemeIcon ids](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) are supported.

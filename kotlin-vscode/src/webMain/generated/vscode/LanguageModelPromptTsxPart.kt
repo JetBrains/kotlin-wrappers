@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-
 /**
  * A language model response part containing a PromptElementJSON from `@vscode/prompt-tsx`.
  * @see [LanguageModelToolResult]

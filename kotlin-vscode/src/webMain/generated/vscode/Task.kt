@@ -5,10 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A task to execute

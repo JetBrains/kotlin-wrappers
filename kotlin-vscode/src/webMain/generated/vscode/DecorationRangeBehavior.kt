@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Describes the behavior of decorations when typing/editing at their edges.
  */

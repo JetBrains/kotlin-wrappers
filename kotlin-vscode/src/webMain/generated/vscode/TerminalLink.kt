@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A link on a terminal line.
  *

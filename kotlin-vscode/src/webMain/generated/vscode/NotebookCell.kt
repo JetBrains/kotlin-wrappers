@@ -5,7 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 /**
  * Represents a cell of a [notebook}, either a {@link NotebookCellKind.Code code][NotebookDocument]-cell

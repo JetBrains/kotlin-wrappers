@@ -5,9 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import js.promise.PromiseLike
-import kotlin.js.JsBoolean
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * Represents a notebook which itself is a sequence of [code or markup cells][NotebookCell]. Notebook documents are

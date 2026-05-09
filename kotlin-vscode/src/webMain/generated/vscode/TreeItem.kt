@@ -4,10 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A tree item is an UI element of the tree. Tree items are created by the [data provider][TreeDataProvider].
  *

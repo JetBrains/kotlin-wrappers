@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
 
 /**
  * Provides contextual actions for code. Code actions typically either fix problems or beautify/refactor code.

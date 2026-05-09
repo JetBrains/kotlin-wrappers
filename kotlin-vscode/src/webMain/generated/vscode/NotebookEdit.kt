@@ -6,8 +6,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
-import kotlin.js.JsModule
-import kotlin.js.JsString
 
 /**
  * A notebook edit represents edits that should be applied to the contents of a notebook.

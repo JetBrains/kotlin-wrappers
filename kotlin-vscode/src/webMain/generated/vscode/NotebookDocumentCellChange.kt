@@ -5,7 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 /**
  * Describes a change to a notebook cell.

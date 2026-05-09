@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * The type definition provider defines the contract between extensions and
  * the go to type definition feature.

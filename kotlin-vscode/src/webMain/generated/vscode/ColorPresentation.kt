@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
 
 /**
  * A color presentation object describes how a [Color] should be represented as text and what

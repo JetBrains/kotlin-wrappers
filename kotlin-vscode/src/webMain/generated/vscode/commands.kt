@@ -6,7 +6,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
-import kotlin.js.*
 
 /**
  * Namespace for dealing with commands. In short, a command is a function with a

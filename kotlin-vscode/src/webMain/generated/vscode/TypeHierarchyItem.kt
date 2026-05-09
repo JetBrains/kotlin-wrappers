@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
 
 /**
  * Represents an item of a type hierarchy, like a class or an interface.

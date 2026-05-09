@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.definedExternally
-
 /**
  * An output channel is a container for readonly textual information.
  *

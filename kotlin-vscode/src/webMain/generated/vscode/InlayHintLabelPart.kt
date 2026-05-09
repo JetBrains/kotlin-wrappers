@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-
 /**
  * An inlay hint label part allows for interactive and composite labels of inlay hints.
  *

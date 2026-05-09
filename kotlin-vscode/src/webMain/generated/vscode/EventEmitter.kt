@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-
 /**
  * An event emitter can be used to create and manage an [Event] for others
  * to subscribe to. One emitter always owns one event.

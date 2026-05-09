@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Options to be used when getting an [AuthenticationSession] from an [AuthenticationProvider].

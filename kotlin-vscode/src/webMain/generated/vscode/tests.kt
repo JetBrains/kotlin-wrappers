@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Namespace for testing functionality. Tests are published by registering
  * [TestController] instances, then adding [TestItems][TestItem].

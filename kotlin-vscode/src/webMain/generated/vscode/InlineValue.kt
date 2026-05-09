@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Inline value information can be provided by different means:
  * - directly as a text value (class InlineValueText).

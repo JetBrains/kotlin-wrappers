@@ -6,10 +6,6 @@ package vscode
 
 import js.array.Tuple2
 import js.iterable.JsIterable
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A map containing a mapping of the mime type of the corresponding transferred data.

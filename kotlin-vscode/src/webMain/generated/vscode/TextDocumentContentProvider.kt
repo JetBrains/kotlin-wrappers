@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsString
-
 /**
  * A text document content provider allows to add readonly documents
  * to the editor, such as source from a dll or generated html from md.

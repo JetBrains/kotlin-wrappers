@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.definedExternally
-
 /**
  * An event describing the change in Configuration
  *

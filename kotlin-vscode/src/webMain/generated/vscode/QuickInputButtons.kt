@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Predefined buttons for [QuickPick] and [InputBox].
  *

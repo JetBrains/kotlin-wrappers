@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Represents a reference to a command. Provides a title which

@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Various features that the [LanguageModelChatInformation] supports such as tool calling or image input.

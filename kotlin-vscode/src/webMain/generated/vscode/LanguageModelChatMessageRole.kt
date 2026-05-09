@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents the role of a chat message. This is either the user or the assistant.
  */

@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents the severity of a language status item.
  * Represents the severity level of a language status.

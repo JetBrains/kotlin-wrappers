@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.numbers.JsInt53
 import js.promise.PromiseLike
-import kotlin.js.definedExternally
 
 /**
  * A NotebookCellExecution is how [notebook controller][NotebookController] modify a notebook cell as

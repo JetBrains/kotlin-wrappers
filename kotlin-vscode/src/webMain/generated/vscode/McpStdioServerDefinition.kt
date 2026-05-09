@@ -6,9 +6,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * McpStdioServerDefinition represents an MCP server available by running

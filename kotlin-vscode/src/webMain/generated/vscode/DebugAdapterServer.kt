@@ -4,9 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Represents a debug adapter running as a socket based server.
  *

@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Commenting range provider for a [comment controller][CommentController].
  *

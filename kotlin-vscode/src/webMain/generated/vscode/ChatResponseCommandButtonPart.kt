@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents a part of a chat response that is a button that executes a command.
  *

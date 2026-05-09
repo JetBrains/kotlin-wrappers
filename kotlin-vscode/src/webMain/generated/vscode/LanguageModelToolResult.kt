@@ -5,8 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
 
 /**
  * A result returned from a tool invocation. If using `@vscode/prompt-tsx`, this result may be rendered using a `ToolResult`.

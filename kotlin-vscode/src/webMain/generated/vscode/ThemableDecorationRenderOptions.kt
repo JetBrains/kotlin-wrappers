@@ -3,7 +3,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Represents theme specific rendering styles for a [text editor decoration][TextEditorDecorationType].

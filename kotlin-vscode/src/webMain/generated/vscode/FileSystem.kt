@@ -8,8 +8,6 @@ import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The file system interface exposes the editor's built-in and contributed

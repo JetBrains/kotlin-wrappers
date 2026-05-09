@@ -4,8 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * Information about a registered tool available in [lm.tools].

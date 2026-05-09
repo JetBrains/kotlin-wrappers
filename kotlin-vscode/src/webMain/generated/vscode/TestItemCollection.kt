@@ -5,9 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.iterable.JsIterable
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * Collection of test items, found in [TestItem.children] and

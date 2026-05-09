@@ -4,8 +4,6 @@ package vscode
 
 import js.numbers.JsInt
 import js.promise.PromiseLike
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * An individual terminal instance within the integrated terminal.

@@ -5,7 +5,6 @@
 package vscode
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * A notebook range represents an ordered pair of two cell indices.

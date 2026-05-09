@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * The inline completion item provider interface defines the contract between extensions and
  * the inline completion feature.

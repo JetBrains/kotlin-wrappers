@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.Void
-import kotlin.js.definedExternally
 
 /**
  * A panel that contains a [Webview].

@@ -4,9 +4,6 @@
 
 package vscode
 
-import vscode.DocumentDropOrPasteEditKind.Companion.Text
-import kotlin.js.JsModule
-
 /**
  * Identifies a [DocumentDropEdit] or [DocumentPasteEdit]
  *

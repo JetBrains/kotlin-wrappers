@@ -4,8 +4,6 @@ package vscode
 
 import js.promise.PromiseLike
 import js.regexp.RegExp
-import kotlin.js.JsBoolean
-import kotlin.js.definedExternally
 
 /**
  * Represents a text document, such as a source file. Text documents have

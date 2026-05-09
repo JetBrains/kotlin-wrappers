@@ -5,8 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A TestRunRequest is a precursor to a [TestRun], which in turn is

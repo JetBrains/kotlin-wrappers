@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
 
 /**
  * Represents a collection of [inline completion items][InlineCompletionItem] to be presented

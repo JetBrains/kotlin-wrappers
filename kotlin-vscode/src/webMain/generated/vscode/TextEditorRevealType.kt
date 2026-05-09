@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents different {@link TextEditor.revealRange reveal} strategies in a text editor.
  */

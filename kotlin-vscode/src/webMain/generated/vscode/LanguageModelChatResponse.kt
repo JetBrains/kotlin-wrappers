@@ -4,8 +4,6 @@ package vscode
 
 import js.iterable.AsyncIterable
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * Represents a language model response.

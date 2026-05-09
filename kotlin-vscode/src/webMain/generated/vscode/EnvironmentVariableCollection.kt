@@ -4,9 +4,6 @@ package vscode
 
 import js.array.Tuple2
 import js.iterable.JsIterable
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A collection of mutations that an extension can apply to a process environment.

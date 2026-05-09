@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.Tuple2
-import kotlin.js.JsString
 
 /**
  * A tuple of two characters, like a pair of

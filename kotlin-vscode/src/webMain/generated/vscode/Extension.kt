@@ -3,7 +3,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 
 /**
  * Represents an extension.

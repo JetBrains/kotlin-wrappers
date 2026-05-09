@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * A debug adapter descriptor for an inline implementation.
  *

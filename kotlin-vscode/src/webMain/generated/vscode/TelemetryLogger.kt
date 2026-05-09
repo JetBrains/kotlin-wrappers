@@ -4,8 +4,6 @@ package vscode
 
 import js.errors.JsError
 import js.objects.ReadonlyRecord
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * A telemetry logger which can be used by extensions to log usage and error telemetry.

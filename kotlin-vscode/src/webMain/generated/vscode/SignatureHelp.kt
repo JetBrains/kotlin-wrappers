@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
 
 /**
  * Signature help represents the signature of something

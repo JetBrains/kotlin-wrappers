@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 
 /**
  * An event that is fired when files are going to be created.

@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * The various message types which a [LanguageModelChatProvider] can emit in the chat response stream
  *

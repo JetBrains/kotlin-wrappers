@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 /**
  * Represents parameters for creating a session based on a WWW-Authenticate header value.

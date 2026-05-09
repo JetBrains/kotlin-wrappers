@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
 
 /**
  * Represents programming constructs like variables, classes, interfaces etc. that appear in a document. Document

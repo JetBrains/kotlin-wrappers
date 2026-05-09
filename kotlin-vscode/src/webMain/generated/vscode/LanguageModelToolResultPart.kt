@@ -5,8 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
 
 /**
  * The result of a tool call. This is the counterpart of a [tool call][LanguageModelToolCallPart] and

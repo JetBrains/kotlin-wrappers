@@ -3,7 +3,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 
 /**
  * An event that is fired when files are going to be renamed.

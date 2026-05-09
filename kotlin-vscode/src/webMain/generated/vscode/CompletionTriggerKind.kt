@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * How a {@link CompletionItemProvider completion provider} was triggered
  */

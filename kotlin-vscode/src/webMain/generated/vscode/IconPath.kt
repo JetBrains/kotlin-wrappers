@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Represents an icon in the UI. This is either an uri, separate uris for the light- and dark-themes,
  * or a [theme icon][ThemeIcon].

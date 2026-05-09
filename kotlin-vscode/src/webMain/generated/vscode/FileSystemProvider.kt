@@ -9,7 +9,6 @@ import js.promise.PromiseLike
 import js.promise.PromiseResult
 import js.typedarrays.Uint8Array
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 /**
  * The filesystem provider defines what the editor needs to read, write, discover,

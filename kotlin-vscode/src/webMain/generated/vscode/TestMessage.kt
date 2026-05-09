@@ -5,8 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
 
 /**
  * Message associated with the test state. Can be linked to a specific

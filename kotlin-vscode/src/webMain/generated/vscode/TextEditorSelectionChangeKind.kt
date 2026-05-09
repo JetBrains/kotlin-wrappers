@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents sources that can cause {@link window.onDidChangeTextEditorSelection selection change events}.
  */

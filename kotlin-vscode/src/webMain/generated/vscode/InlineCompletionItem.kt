@@ -4,10 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * An inline completion item represents a text snippet that is proposed inline to complete text that is being typed.
  *

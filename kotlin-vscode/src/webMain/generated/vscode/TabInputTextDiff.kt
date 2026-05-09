@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * The tab represents two text based resources
  * being rendered as a diff.

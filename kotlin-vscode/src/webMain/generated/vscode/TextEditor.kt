@@ -5,9 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsBoolean
-import kotlin.js.definedExternally
 
 /**
  * Represents an editor that is attached to a [document][TextDocument].

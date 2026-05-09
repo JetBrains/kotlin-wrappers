@@ -5,10 +5,6 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.JsString
 
 /**
  * Encapsulates data transferred during drag and drop operations.

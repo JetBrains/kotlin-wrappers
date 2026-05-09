@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * How a {@linkcode SignatureHelpProvider} was triggered.
  */

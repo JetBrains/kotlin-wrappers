@@ -3,7 +3,6 @@
 package vscode
 
 import js.errors.JsError
-import kotlin.js.JsAny
 
 /**
  * A channel for containing log output.

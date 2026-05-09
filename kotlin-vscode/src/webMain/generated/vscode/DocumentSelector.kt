@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * A language selector is the combination of one or many language identifiers
  * and [language filters][DocumentFilter].

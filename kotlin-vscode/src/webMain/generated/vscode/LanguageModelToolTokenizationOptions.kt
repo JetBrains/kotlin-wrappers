@@ -4,7 +4,6 @@ package vscode
 
 import js.numbers.JsInt
 import js.promise.PromiseLike
-import kotlin.js.definedExternally
 
 /**
  * Options related to tokenization for a tool invocation.

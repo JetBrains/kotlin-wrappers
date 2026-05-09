@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Specifies the location where a {@link QuickInputButton} should be rendered.
  */

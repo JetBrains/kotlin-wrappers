@@ -4,8 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * A relative pattern is a helper to construct glob patterns that are matched
  * relatively to a base file path. The base path can either be an absolute file

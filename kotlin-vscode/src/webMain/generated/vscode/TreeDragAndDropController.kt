@@ -6,8 +6,6 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * Provides support for drag and drop in `TreeView`.

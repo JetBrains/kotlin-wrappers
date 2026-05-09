@@ -5,8 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.iterable.JsIterable
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * A diagnostics collection is a container that manages a set of

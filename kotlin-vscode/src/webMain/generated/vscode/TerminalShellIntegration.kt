@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsString
 
 /**
  * [Shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)-powered capabilities owned by a terminal.

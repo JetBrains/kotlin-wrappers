@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * A tool that can be invoked by a call to a [LanguageModelChat].
  *

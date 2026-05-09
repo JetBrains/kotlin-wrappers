@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * The decoration provider interfaces defines the contract between extensions and
  * file decorations.

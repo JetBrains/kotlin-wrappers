@@ -5,8 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * A memento represents a storage utility. It can store and retrieve

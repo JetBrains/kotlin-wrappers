@@ -8,11 +8,6 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
-import vscode.workspace.notebookDocuments
-import vscode.workspace.onDidChangeWorkspaceFolders
-import vscode.workspace.onDidCloseNotebookDocument
-import vscode.workspace.onDidOpenNotebookDocument
-import kotlin.js.*
 
 /**
  * Namespace for dealing with the current workspace. A workspace is the collection of one

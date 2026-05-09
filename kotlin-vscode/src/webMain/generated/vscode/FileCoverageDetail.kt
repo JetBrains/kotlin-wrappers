@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * Coverage details returned from [TestRunProfile.loadDetailedCoverage].
  *

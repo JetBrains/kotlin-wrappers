@@ -8,8 +8,6 @@
 
 package vscode
 
-import kotlin.js.JsModule
-
 /**
  * Represents an end of line character sequence in a {@link TextDocument document}.
  */

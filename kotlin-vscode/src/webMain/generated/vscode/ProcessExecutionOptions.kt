@@ -4,7 +4,6 @@ package vscode
 
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 /**
  * Options for a process execution

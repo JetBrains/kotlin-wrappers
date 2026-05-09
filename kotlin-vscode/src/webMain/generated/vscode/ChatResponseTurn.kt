@@ -5,8 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsModule
 
 /**
  * Represents a chat participant's response in chat history.

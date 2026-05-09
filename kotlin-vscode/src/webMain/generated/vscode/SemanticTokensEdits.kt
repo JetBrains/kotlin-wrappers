@@ -5,8 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Represents edits to semantic tokens.

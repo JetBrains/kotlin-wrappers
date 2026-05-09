@@ -75,12 +75,9 @@ private fun fileContent(
         """
         import js.array.ReadonlyArray
         import js.array.Tuple2
-        import kotlin.js.JsAny
-        import kotlin.js.JsBoolean
         import js.numbers.JsDouble
         import js.numbers.JsInt
         import js.numbers.JsInt53
-        import kotlin.js.JsString
         import js.core.Void
         import js.date.Date
         import js.iterable.AsyncIterable
@@ -95,9 +92,6 @@ private fun fileContent(
         import js.typedarrays.Uint32Array
         import js.typedarrays.Uint8Array
 
-        import kotlin.js.JsModule
-        import kotlin.js.JsName
-        import kotlin.js.definedExternally
         import kotlinx.js.JsPlainObject
         """.trimIndent(),
         body,
