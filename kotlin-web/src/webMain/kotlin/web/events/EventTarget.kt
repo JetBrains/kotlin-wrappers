@@ -8,7 +8,6 @@ package web.events
 import js.objects.unsafeJso
 import web.experimental.ExperimentalWebApi
 import web.observable.Observable
-import kotlin.js.definedExternally
 
 /**
  * The **`EventTarget`** interface is implemented by objects that can receive events and may have listeners for them.

@@ -11,7 +11,6 @@ import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
-import kotlin.js.*
 
 @ExperimentalWebApi
 external class Observable<out T : JsAny?>(

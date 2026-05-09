@@ -6,7 +6,6 @@ import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import web.abort.AbortableLike
 import web.abort.asCoroutineScope
-import kotlin.js.JsAny
 
 @InternalApi
 fun <T : JsAny?> createCancellablePromise(

@@ -3,8 +3,6 @@ package web.fs
 import js.promise.Promise
 import js.promise.await
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/showDirectoryPicker)

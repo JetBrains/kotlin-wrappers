@@ -3,8 +3,6 @@ package web.mcp
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * Result returned by an elicitation request.

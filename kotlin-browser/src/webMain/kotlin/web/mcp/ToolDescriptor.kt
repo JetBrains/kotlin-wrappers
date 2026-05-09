@@ -4,8 +4,6 @@ import js.objects.ReadonlyRecord
 import js.promise.PromiseLike
 import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * Tool descriptor for the Web Model Context API.

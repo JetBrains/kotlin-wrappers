@@ -8,7 +8,6 @@ import web.experimental.ExperimentalWebApi
 import web.geometry.DOMRect
 import web.html.HTMLElement
 import web.input.CompositionEvent
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext)

@@ -9,8 +9,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import web.mcp.ModelContext.CallToolOptions
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 /**
  * ModelContext interface on navigator.modelContext.

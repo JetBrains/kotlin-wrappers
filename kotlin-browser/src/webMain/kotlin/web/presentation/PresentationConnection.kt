@@ -10,7 +10,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import web.messaging.MessageEvent
-import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection)

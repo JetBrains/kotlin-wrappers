@@ -5,7 +5,6 @@ import js.promise.await
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsName
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Profiler)

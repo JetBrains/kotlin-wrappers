@@ -3,7 +3,6 @@ package web.mcp
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsAny
 
 /**
  * The result returned from tool execution.

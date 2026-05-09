@@ -5,8 +5,6 @@ import js.internal.InternalApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlin.js.JsAny
-import kotlin.js.get
 
 @InternalApi
 fun <E : JsAny> observerFlow(

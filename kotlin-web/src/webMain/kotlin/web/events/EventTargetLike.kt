@@ -7,7 +7,6 @@ package web.events
 
 import js.internal.InternalApi
 import js.objects.unsafeJso
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget)

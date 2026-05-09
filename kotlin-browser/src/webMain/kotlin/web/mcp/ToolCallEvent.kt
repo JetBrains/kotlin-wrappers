@@ -2,7 +2,6 @@ package web.mcp
 
 import web.events.Event
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsAny
 
 /**
  * Event dispatched when a tool is called.

@@ -1,7 +1,6 @@
 package web.usb
 
 import web.experimental.ExperimentalWebApi
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBOutTransferResult)

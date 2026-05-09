@@ -1,7 +1,6 @@
 package web.components
 
 import js.array.ReadonlyArray
-import kotlin.js.JsString
 
 internal external interface CustomElementStatic {
     var formAssociated: Boolean?

@@ -4,7 +4,6 @@ import js.array.ReadonlyArray
 import js.reflect.JsClass
 import js.reflect.unsafeCast
 import web.html.HTMLElement
-import kotlin.js.JsString
 
 open class CustomElementReference<T : HTMLElement>
 protected constructor(

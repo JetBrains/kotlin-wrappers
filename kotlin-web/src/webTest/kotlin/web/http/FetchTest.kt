@@ -14,7 +14,6 @@ import kotlinx.coroutines.test.runTest
 import web.abort.abortEvent
 import web.errors.DOMException
 import web.events.addHandler
-import kotlin.js.JsAny
 import kotlin.test.*
 
 private const val FETCH = "fetch"

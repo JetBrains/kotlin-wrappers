@@ -7,7 +7,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsName
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USB)

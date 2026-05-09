@@ -3,7 +3,6 @@ package web.mcp
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsString
 
 /**
  * Form-based elicitation request parameters.

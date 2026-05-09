@@ -1,8 +1,5 @@
 package web.components
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 external interface CustomElement {
 
     /**

@@ -8,7 +8,6 @@ import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable
-import kotlin.js.JsAny
 
 @InternalApi
 fun <T : Abortable> patchAbortOptions(
@@ -16,7 +15,7 @@ fun <T : Abortable> patchAbortOptions(
     controller: AbortController,
 ): T {
     val abortOptions = createAbortable<T>(
-        signal = safeAny(options?.signal, controller.signal)
+        signal = safeAny(options?.signal, controller.signal),
     )
 
     return Object.assign(unsafeJso(), options, abortOptions)

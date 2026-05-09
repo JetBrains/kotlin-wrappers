@@ -3,7 +3,6 @@ package web.mcp
 import js.internal.InternalApi
 import js.reflect.unsafeCast
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsAny
 
 @ExperimentalWebApi
 @SubclassOptInRequired(InternalApi::class)

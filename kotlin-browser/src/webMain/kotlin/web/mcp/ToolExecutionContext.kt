@@ -3,7 +3,6 @@ package web.mcp
 import js.promise.Promise
 import js.promise.await
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsName
 
 /**
  * Per-call execution context provided to tool handlers.

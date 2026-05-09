@@ -2,8 +2,6 @@ package web.mcp
 
 import js.objects.ReadonlyRecord
 import web.experimental.ExperimentalWebApi
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * Looser content block shape accepted by many MCP tool implementations.
