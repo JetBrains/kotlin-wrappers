@@ -3,7 +3,6 @@
 package web.cssom
 
 import js.reflect.unsafeCast
-import kotlin.js.JsAny
 
 sealed external interface CustomPropertyName<T : JsAny>
 
