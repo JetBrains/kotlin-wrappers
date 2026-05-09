@@ -5,11 +5,8 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.DataView
 import js.collections.ReadonlyMap
-import kotlin.js.JsAny
-import kotlin.js.JsBoolean
 import js.numbers.JsDouble
 import js.numbers.JsInt
-import kotlin.js.JsString
 import js.core.Void
 import js.date.Date
 import js.errors.JsError
@@ -23,9 +20,6 @@ import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint32Array
 import js.typedarrays.Uint8Array
-import kotlin.js.JsName
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.blob.Blob
