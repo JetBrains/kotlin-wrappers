@@ -3,7 +3,6 @@ package js.promise
 import js.errors.toThrowable
 import kotlinx.js.JsPlainObject
 import kotlin.contracts.contract
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface PromiseSettledResult<T : JsAny?> {

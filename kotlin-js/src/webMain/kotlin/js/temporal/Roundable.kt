@@ -6,8 +6,6 @@
 
 package js.temporal
 
-import kotlin.js.definedExternally
-
 sealed external interface Roundable<T : Roundable<T, U>, U : DateTimeUnit<U>> {
     fun round(
         roundTo: SmallestUnit<U>,

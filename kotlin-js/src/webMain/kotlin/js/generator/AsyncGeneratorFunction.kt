@@ -2,7 +2,6 @@ package js.generator
 
 import js.array.Tuple
 import js.function.JsFunction
-import kotlin.js.JsName
 
 internal const val ASYNC_GENERATOR_FUNCTION: String = "(async function* () {}.constructor)"
 

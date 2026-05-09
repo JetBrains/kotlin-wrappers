@@ -10,10 +10,6 @@ import js.buffer.ArrayBufferView
 import js.collections.ListLike
 import js.iterable.JsIterator
 import js.numbers.JsInt
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 @JsQualifier("Uint8Array")
 @JsName("__proto__")

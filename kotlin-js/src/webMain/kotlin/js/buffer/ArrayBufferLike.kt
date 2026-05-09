@@ -2,7 +2,6 @@ package js.buffer
 
 import js.typedarrays.Int8Array
 import js.typedarrays.toByteArray
-import kotlin.js.definedExternally
 
 sealed external interface ArrayBufferLike {
     val byteLength: Int

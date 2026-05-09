@@ -1,8 +1,5 @@
 package js.temporal
 
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 @JsQualifier("Temporal")
 external object Now {
     /**

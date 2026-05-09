@@ -2,8 +2,6 @@ package js.buffer
 
 import js.serialization.Serializable
 import js.serialization.Transferable
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 external class ArrayBuffer(
     /**

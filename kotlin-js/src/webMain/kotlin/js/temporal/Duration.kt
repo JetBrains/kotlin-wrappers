@@ -1,10 +1,5 @@
 package js.temporal
 
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 /**
  * A `Temporal.Duration` represents an immutable duration of time which can be
  * used in date/time arithmetic.

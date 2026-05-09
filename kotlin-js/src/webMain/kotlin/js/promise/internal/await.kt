@@ -6,7 +6,6 @@ import js.promise.PromiseResult
 import js.promise.thenTo
 import js.promise.toPromise
 import kotlin.coroutines.suspendCoroutine
-import kotlin.js.JsAny
 
 @InternalApi
 @PublishedApi

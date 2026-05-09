@@ -1,7 +1,5 @@
 package js.memory
 
-import kotlin.js.JsAny
-
 external class WeakRef<T : JsAny>(
     target: T,
 ) {

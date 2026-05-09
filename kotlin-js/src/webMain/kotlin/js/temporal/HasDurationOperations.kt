@@ -6,9 +6,6 @@
 
 package js.temporal
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 sealed external interface HasDurationOperations<T : HasDurationOperations<T, O>, in O : JsAny> {
     fun add(
         duration: Duration,

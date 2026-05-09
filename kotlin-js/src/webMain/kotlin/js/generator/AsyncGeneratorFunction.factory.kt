@@ -1,8 +1,6 @@
 package js.generator
 
 import js.array.*
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 @JsName(ASYNC_GENERATOR_FUNCTION)
 external fun <R : AsyncGenerator<*, *, *>> AsyncGeneratorFunction(

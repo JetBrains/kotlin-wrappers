@@ -2,7 +2,6 @@ package js.function
 
 import js.array.*
 import js.reflect.Reflect
-import kotlin.js.JsAny
 
 inline operator fun <R : JsAny> ConstructorFunction<Tuple, R>.invoke(): R =
     Reflect.construct(

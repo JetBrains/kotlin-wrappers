@@ -2,7 +2,6 @@ package js.iterable
 
 import js.hacks.safeMethod
 import js.symbol.Symbol
-import kotlin.js.JsAny
 
 external interface JsIterable<out T : JsAny?>
 

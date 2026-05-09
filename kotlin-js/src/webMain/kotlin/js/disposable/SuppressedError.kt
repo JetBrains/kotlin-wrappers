@@ -1,7 +1,6 @@
 package js.disposable
 
 import js.errors.JsError
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SuppressedError)

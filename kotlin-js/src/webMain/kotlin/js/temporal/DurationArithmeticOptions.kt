@@ -1,7 +1,6 @@
 package js.temporal
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * Options to control behavior of `Duration.compare()`, `Duration.add()`, and

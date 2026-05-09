@@ -1,9 +1,5 @@
 package js.json
 
-import kotlin.js.JsAny
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 /**
  * Converts a JavaScript Object Notation (JSON) string into an object.
  * @param text A valid JSON string.

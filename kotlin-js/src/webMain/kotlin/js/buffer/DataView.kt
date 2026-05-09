@@ -2,7 +2,6 @@ package js.buffer
 
 import js.numbers.Float16
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 external class DataView<B : ArrayBufferLike>(
     override val buffer: B,

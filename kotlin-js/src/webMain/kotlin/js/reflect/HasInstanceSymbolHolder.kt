@@ -5,7 +5,6 @@
 package js.reflect
 
 import js.symbol.Symbol
-import kotlin.js.definedExternally
 
 external interface HasInstanceSymbolHolder {
     operator fun get(

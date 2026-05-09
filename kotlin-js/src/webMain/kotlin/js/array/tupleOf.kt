@@ -1,7 +1,6 @@
 package js.array
 
 import js.reflect.unsafeCast
-import kotlin.js.JsAny
 
 inline fun emptyTuple(): Tuple =
     unsafeCast(jsArrayOf<JsAny?>())

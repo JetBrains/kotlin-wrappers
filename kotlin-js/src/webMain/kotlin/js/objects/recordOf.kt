@@ -1,7 +1,5 @@
 package js.objects
 
-import kotlin.js.JsAny
-
 fun <K : JsAny, V : JsAny?> recordOf(): Record<K, V> =
     unsafeJso()
 

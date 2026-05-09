@@ -7,10 +7,6 @@ package js.objects
 import js.array.Tuple2
 import js.array.component1
 import js.array.component2
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
-import kotlin.js.toJsString
 
 external interface Record<K : JsAny, V : JsAny?> :
     ReadonlyRecord<K, V> {

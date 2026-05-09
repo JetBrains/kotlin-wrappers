@@ -1,9 +1,5 @@
 package js.temporal
 
-import kotlin.js.JsAny
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 /**
  * A `Temporal.PlainDate` represents a calendar date. "Calendar date" refers to the
  * concept of a date as expressed in everyday usage, independent of any time

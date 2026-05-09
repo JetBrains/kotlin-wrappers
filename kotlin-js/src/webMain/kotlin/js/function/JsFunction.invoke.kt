@@ -2,7 +2,6 @@ package js.function
 
 import js.array.*
 import js.reflect.unsafeCast
-import kotlin.js.JsAny
 
 inline operator fun <R : JsAny?> JsFunction<Tuple, R>.invoke(): R =
     unsafeCast<UnsafeInvoker>(this)

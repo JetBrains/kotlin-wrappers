@@ -2,8 +2,6 @@ package js.function
 
 import js.array.Tuple
 import js.reflect.JsExternalInheritorsOnly
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 internal const val FUNCTION: String = "Function"
 

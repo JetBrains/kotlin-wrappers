@@ -9,7 +9,6 @@ import js.promise.await
 import js.symbol.Symbol
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlin.js.JsAny
 
 external interface AsyncIterable<out T : JsAny?>
 

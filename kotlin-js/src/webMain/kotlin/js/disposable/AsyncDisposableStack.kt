@@ -4,7 +4,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.await
-import kotlin.js.JsAny
 
 open external class AsyncDisposableStack :
     AsyncDisposable {

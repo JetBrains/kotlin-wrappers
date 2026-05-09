@@ -1,7 +1,5 @@
 package js.disposable
 
-import kotlin.js.JsAny
-
 open external class DisposableStack :
     Disposable {
     /**

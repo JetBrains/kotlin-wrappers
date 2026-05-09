@@ -1,8 +1,5 @@
 package js.temporal
 
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 /**
  * A `Temporal.PlainDateTime` represents a calendar date and wall-clock time, with
  * a precision in nanoseconds, and without any time zone. Of the Temporal

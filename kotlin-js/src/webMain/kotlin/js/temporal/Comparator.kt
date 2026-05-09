@@ -6,9 +6,6 @@
 
 package js.temporal
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 sealed external interface Comparator<in T : JsAny, in L : JsAny> {
     fun compare(a: T, b: T): ComparisonResult = definedExternally
     fun compare(a: T, b: L): ComparisonResult = definedExternally

@@ -1,7 +1,6 @@
 package js.temporal
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ZonedDateTimeISOFields {

@@ -1,7 +1,6 @@
 package js.errors
 
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypeError)

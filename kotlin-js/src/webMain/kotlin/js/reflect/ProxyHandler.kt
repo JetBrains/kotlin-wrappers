@@ -5,7 +5,6 @@ import js.function.JsFunction
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ProxyHandler<T : JsAny> {

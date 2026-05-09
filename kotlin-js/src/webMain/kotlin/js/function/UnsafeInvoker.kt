@@ -1,7 +1,5 @@
 package js.function
 
-import kotlin.js.JsAny
-
 @PublishedApi
 internal external interface UnsafeInvoker {
     operator fun <R : JsAny?> invoke(): R

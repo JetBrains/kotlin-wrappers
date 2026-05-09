@@ -1,8 +1,5 @@
 package js.memory
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 /**
  * @constructor
  * Creates a finalization registry with an associated cleanup callback

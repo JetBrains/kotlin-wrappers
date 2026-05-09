@@ -3,7 +3,6 @@ package js.typedarrays
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.typedarrays.internal.castOrConvertToByteArray
-import kotlin.js.JsAny
 
 private fun TypedArray<*, *, *, *>.toBuffer(): ArrayBufferLike =
     buffer.slice(

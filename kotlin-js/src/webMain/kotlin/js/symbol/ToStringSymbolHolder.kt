@@ -4,8 +4,6 @@
 
 package js.symbol
 
-import kotlin.js.definedExternally
-
 external interface ToStringSymbolHolder {
     operator fun get(
         key: Symbol.toStringTag,

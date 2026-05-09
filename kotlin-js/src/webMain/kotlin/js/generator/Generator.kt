@@ -3,8 +3,6 @@ package js.generator
 import js.errors.JsError
 import js.iterable.IteratorResult
 import js.iterable.JsIterator
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 private const val GENERATOR: String = "(function* () {}.constructor.prototype.prototype)"
 

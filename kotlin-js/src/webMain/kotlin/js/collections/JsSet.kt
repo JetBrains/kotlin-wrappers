@@ -5,9 +5,6 @@ import js.array.Tuple2
 import js.iterable.JsIterable
 import js.iterable.JsIterator
 import js.serialization.Serializable
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 @JsName("Set")
 open external class JsSet<T : JsAny?>(

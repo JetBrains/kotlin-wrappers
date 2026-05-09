@@ -4,10 +4,6 @@ import js.array.ReadonlyArray
 import js.intl.Localizable
 import js.intl.NumberFormatOptions
 import js.intl.UnicodeBCP47LocaleIdentifier
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 @JsName("Number")
 private external class JsNumber :

@@ -2,8 +2,6 @@ package js.iterable
 
 import js.array.ReadonlyArray
 import js.disposable.Disposable
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 @JsName("Iterator")
 abstract external class JsIterator<out T : JsAny?> :

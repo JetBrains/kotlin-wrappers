@@ -5,8 +5,6 @@ import js.core.Void
 import js.errors.JsError
 import js.errors.JsErrorLike
 import js.iterable.JsIterable
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 open external class Promise<out T : JsAny?>(
     executor: (resolve: PromiseResolve<T>) -> Unit,

@@ -7,7 +7,6 @@ import js.iterable.JsIterable
 import js.numbers.JsNumbers.toKotlinUByte
 import js.numbers.JsUByte
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,

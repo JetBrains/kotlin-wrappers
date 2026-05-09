@@ -2,8 +2,6 @@ package js.temporal
 
 import js.numbers.BigInt
 import js.numbers.Int53
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 /**
  * A `Temporal.Instant` is an exact point in time, with a precision in

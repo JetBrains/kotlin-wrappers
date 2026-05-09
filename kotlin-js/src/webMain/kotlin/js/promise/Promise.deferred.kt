@@ -4,7 +4,6 @@ import js.reflect.internal.kotlinGet
 import js.reflect.internal.kotlinSet
 import js.symbol.Symbol
 import kotlinx.coroutines.Deferred
-import kotlin.js.JsAny
 
 private val DEFERRED: Symbol = Symbol("@@deferred")
 

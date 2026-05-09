@@ -1,7 +1,5 @@
 package js.json
 
-import kotlin.js.JsAny
-
 /**
  * Can transform the value, which was parsed for a particular object key from the JSON input.
  *

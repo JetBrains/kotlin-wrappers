@@ -1,7 +1,5 @@
 package js.collections
 
-import kotlin.js.JsAny
-
 external interface ReadonlyMap<K : JsAny?, out V : JsAny?> :
     MapLike<K, V>,
     ReadonlySetLike<K> {

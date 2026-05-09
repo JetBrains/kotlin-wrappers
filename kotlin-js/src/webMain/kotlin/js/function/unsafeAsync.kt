@@ -3,7 +3,6 @@ package js.function
 import js.coroutines.internal.createIsolatedPromise
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
-import kotlin.js.JsAny
 
 fun <R : JsAny?> unsafeAsync(
     block: suspend CoroutineScope.() -> R,

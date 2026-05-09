@@ -4,9 +4,6 @@ import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.iterable.JsIterable
 import js.symbol.Symbol
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 external class Object
 private constructor() {

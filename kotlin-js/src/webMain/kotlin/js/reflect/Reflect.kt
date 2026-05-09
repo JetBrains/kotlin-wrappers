@@ -5,7 +5,6 @@ import js.array.Tuple
 import js.function.ConstructorFunction
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
-import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect)

@@ -1,9 +1,6 @@
 package js.json
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 /**
  * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.

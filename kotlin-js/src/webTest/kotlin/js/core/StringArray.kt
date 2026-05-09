@@ -1,8 +1,5 @@
 package js.core
 
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-
 @JsName("Array")
 external class StringArray(
     a: String = definedExternally,

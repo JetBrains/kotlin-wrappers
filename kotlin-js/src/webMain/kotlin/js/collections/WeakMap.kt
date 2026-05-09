@@ -2,8 +2,6 @@ package js.collections
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 open external class WeakMap<in K : JsAny, V : JsAny?>(
     entries: ReadonlyArray<Tuple2<K, V>>? = definedExternally,

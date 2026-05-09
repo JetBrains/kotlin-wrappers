@@ -1,6 +1,5 @@
 package js.reflect
 
-import kotlin.js.JsAny
 import kotlin.reflect.KProperty1
 
 fun <T : JsAny, V : JsAny> safeGet(

@@ -10,8 +10,6 @@ import js.iterable.JsIterator
 import js.promise.Promise
 import js.promise.PromiseResult
 import kotlin.internal.LowPriorityInOverloadResolution
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 @JsName("Array")
 external object JsArrays {

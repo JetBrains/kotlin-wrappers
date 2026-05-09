@@ -4,9 +4,6 @@
 
 package js.objects
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 external interface ObjectLike :
     Record<PropertyKey, JsAny?> {
 

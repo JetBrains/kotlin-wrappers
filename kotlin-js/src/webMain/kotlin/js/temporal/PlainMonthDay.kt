@@ -1,8 +1,6 @@
 package js.temporal
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 /**
  * A `Temporal.PlainMonthDay` represents a particular day on the calendar, but

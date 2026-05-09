@@ -7,7 +7,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart.DEFAULT
 import kotlinx.coroutines.CoroutineStart.UNDISPATCHED
 import kotlinx.coroutines.isActive
-import kotlin.js.JsAny
 
 @InternalApi
 fun <R : JsAny?> CoroutineScope.safePromise(

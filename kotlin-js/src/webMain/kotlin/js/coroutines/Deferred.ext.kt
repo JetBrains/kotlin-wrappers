@@ -4,7 +4,6 @@ import js.errors.toJsErrorLike
 import js.promise.Promise
 import js.promise.deferred
 import kotlinx.coroutines.Deferred
-import kotlin.js.JsAny
 
 /**
  * Converts this deferred value to the instance of [Promise].

@@ -1,8 +1,6 @@
 package js.function
 
 import js.array.*
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 @JsName(FUNCTION)
 external fun <R : JsAny?> JsFunction(

@@ -1,9 +1,5 @@
 package js.temporal
 
-import kotlin.js.JsAny
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 /**
  * A `Temporal.PlainTime` represents a wall-clock time, with a precision in
  * nanoseconds, and without any time zone. "Wall-clock time" refers to the

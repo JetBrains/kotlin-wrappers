@@ -5,9 +5,6 @@ import js.iterable.AsyncIterator
 import js.iterable.IteratorResult
 import js.promise.Promise
 import js.promise.PromiseLike
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 private const val ASYNC_GENERATOR: String = "(async function* () {}.constructor.prototype.prototype)"
 

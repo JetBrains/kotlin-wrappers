@@ -1,7 +1,5 @@
 package js.buffer
 
-import kotlin.js.definedExternally
-
 external class SharedArrayBuffer(
     /**
      * Read-only. The length of the SharedArrayBuffer (in bytes).

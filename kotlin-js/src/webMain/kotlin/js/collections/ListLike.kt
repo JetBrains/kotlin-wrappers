@@ -2,7 +2,6 @@ package js.collections
 
 import js.array.ArrayLike
 import js.numbers.JsInt
-import kotlin.js.JsAny
 
 external interface ListLike<out T : JsAny?> :
     ArrayLike<T>,

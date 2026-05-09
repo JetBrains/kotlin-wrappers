@@ -6,7 +6,6 @@ import js.buffer.ArrayBufferLike
 import js.iterable.JsIterable
 import js.numbers.JsFloat
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 open external class Float32Array<B : ArrayBufferLike>(
     override val buffer: B,

@@ -1,8 +1,6 @@
 package js.array
 
 import js.reflect.unsafeCast
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 sealed external interface Tuple {
     @JsName("length")
