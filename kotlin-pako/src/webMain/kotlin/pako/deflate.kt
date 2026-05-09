@@ -4,8 +4,6 @@ package pako
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Uint8Array
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Compress data with deflate algorithm and options.

@@ -4,8 +4,6 @@ package pako
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Uint8Array
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * The same as deflate, but create gzip wrapper instead of deflate one.

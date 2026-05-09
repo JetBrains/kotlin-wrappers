@@ -5,8 +5,6 @@ package popper.core
 import js.array.ReadonlyArray
 import js.objects.Record
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 @JsPlainObject
 external interface Modifier<Options : JsAny?> {

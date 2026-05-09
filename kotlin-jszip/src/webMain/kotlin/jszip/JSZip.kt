@@ -10,10 +10,6 @@ import js.promise.await
 import js.regexp.RegExp
 import js.typedarrays.Uint8Array
 import web.blob.Blob
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * [Online Documentation](https://stuk.github.io/jszip/documentation/api_jszip.html)

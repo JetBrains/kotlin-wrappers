@@ -11,8 +11,6 @@ private val DEFAULT_IMPORTS = listOf(
     "js.promise.Promise",
 
     "js.array.ReadonlyArray",
-    "kotlin.js.JsAny",
-    "kotlin.js.JsString",
     "kotlinx.js.JsPlainObject",
     "js.core.Void",
     "js.objects.Record",

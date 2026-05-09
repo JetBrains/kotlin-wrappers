@@ -6,9 +6,6 @@
 
 package pako
 
-import kotlin.js.JsModule
-import kotlin.js.JsName
-
 @JsName("constants")
 sealed /* enum */
 external interface ReturnCode {

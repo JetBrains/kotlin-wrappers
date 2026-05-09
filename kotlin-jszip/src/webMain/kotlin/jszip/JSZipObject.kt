@@ -8,8 +8,6 @@ import js.promise.await
 import js.string.JsStrings.toKotlinString
 import js.typedarrays.Uint8Array
 import web.blob.Blob
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * [Online Documentation](https://stuk.github.io/jszip/documentation/api_zipobject.html)

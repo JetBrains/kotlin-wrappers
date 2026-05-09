@@ -10,8 +10,6 @@ import js.numbers.JsUByte
 import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
 import web.blob.Blob
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 sealed external interface InputType<T : JsAny> {
     companion object

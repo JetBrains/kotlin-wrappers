@@ -3,9 +3,6 @@
 package yaml
 
 import js.json.Reviver
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Parse an input string into JavaScript.
