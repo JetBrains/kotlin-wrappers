@@ -5,7 +5,6 @@ import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import vscode.CancellationToken
 import vscode.asCoroutineScope
-import kotlin.js.JsAny
 
 internal fun <R : JsAny?> createCancellablePromise(
     token: CancellationToken,

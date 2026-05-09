@@ -3,7 +3,6 @@ package vscode
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import vscode.internal.createCancellablePromise
-import kotlin.js.JsAny
 
 fun <R : JsAny?> async(
     block: suspend CoroutineScope.() -> R,
