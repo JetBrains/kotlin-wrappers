@@ -57,7 +57,7 @@ internal fun TransformFunction(): ConversionResult {
         """
         sealed external interface $TRANSFORM_FUNCTION:
                 $TRANSFORM
-        """.trimIndent()
+        """.trimIndent(),
     ) + TransformFactory.FACTORIES
         .map { factory ->
             function(
@@ -65,7 +65,7 @@ internal fun TransformFunction(): ConversionResult {
                 returnType = TRANSFORM_FUNCTION,
                 parameters = factory.parameters
                     .map { it.name to it.type }
-                    .toTypedArray()
+                    .toTypedArray(),
             )
         }
 

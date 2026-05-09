@@ -98,11 +98,11 @@ private fun convertAttributesInterface(
             .replaceFirst("\n    color?: string | undefined;", "")
             .replaceFirst(
                 "\n    popover?: \"\" | \"auto\" | \"manual\" | undefined;",
-                "\n    popover?: String /* \"\" | \"auto\" | \"manual\" */;"
+                "\n    popover?: String /* \"\" | \"auto\" | \"manual\" */;",
             )
             .replaceFirst(
                 "\n    popoverTargetAction?: \"toggle\" | \"show\" | \"hide\" | undefined;",
-                "\n    popoverTargetAction?: String /* \"toggle\" | \"show\" | \"hide\" */;"
+                "\n    popoverTargetAction?: String /* \"toggle\" | \"show\" | \"hide\" */;",
             )
 
         "DOMAttributes" -> source
@@ -117,7 +117,7 @@ private fun convertAttributesInterface(
             .replaceFirst("max?: number | string | undefined;\n", "max?: number | Date | undefined;\n")
             .replaceFirst(
                 """capture?: boolean | "user" | "environment" | undefined;""",
-                """capture?: "false" | "true" | "user" | "environment" | undefined;"""
+                """capture?: "false" | "true" | "user" | "environment" | undefined;""",
             )
 
         else -> source
@@ -195,7 +195,7 @@ private fun convertIntrinsicTypes(
         .joinToString(
             separator = "\n\n",
             prefix = "object $name {\n",
-            postfix = "\n}\n"
+            postfix = "\n}\n",
         )
 
     val body = sequenceOf(TYPE_CONTAINER_IMPORTS)

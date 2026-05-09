@@ -7,7 +7,7 @@ internal fun lengthOperators(): ConversionResult {
         listOf("plus", "+", LENGTH, LENGTH),
         listOf("minus", "-", LENGTH, LENGTH),
         listOf("times", "*", "Number", LENGTH),
-        listOf("div", "/", LENGTH, "Number")
+        listOf("div", "/", LENGTH, "Number"),
     ).map { (name, operator, receiverType, parameterType) ->
         """
             inline operator fun $receiverType.$name(other: $parameterType): $LENGTH =
@@ -19,7 +19,7 @@ internal fun lengthOperators(): ConversionResult {
         """
             inline operator fun $LENGTH.unaryMinus(): $LENGTH =
                 unsafeCast("-${'$'}this")
-        """.trimIndent()
+        """.trimIndent(),
     ) + operators
 
     return ConversionResult(

@@ -16,7 +16,7 @@ internal fun AngularColorStop(): ConversionResult {
             parameters = arrayOf(
                 COLOR_PARAMETER,
                 "value" to ANGLE,
-            )
+            ),
         ),
         factory(
             name = "stop",
@@ -25,8 +25,8 @@ internal fun AngularColorStop(): ConversionResult {
                 COLOR_PARAMETER,
                 "from" to ANGLE,
                 "to" to ANGLE,
-            )
-        )
+            ),
+        ),
     )
 
     return ConversionResult(
@@ -44,7 +44,7 @@ internal fun LinearColorStop(): ConversionResult {
             parameters = arrayOf(
                 COLOR_PARAMETER,
                 "value" to LENGTH,
-            )
+            ),
         ),
         factory(
             name = "stop",
@@ -53,8 +53,8 @@ internal fun LinearColorStop(): ConversionResult {
                 COLOR_PARAMETER,
                 "from" to LENGTH,
                 "to" to LENGTH,
-            )
-        )
+            ),
+        ),
     )
 
     return ConversionResult(

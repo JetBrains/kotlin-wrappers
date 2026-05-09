@@ -87,7 +87,7 @@ private fun parseConstantGroup(
                         name = name,
                         value = value,
                         description = description,
-                    )
+                    ),
                 )
             }
         }

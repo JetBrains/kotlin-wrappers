@@ -28,7 +28,7 @@ fun parseParameters(source: String): List<String> {
 
         "options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam> | DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>",
             -> return listOf(
-            "options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam> /* | DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey> */"
+            "options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam> /* | DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey> */",
         )
 
         "options: WithRequired<FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey>, 'queryKey'>",
@@ -54,9 +54,9 @@ fun parseParameters(source: String): List<String> {
             parts.drop(1).dropLast(1).flatMap {
                 sequenceOf(
                     it.substringBeforeLast(", "),
-                    it.substringAfterLast(", ")
+                    it.substringAfterLast(", "),
                 )
-            }
+            },
         )
         .plus(parts.last())
         .windowed(2, 2)

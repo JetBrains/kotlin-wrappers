@@ -134,7 +134,7 @@ internal fun serviceWorkerContent(
         .replace(", WindowOrWorkerGlobalScope", "")
         .replace(
             """ReadonlyArray<T["type"] extends "window" ? WindowClient : Client>""",
-            "ReadonlyArray<Client /* | WindowClient */>"
+            "ReadonlyArray<Client /* | WindowClient */>",
         )
         .splitUnion("string | string[]")
         .splitUnion("string | URL")

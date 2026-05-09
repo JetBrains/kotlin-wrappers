@@ -33,7 +33,7 @@ private val CONSTANTS = setOf(
     "[]",
 
     "PI",
-    "2*PI"
+    "2*PI",
 )
 
 private val TYPE_REGEX = Regex("""[A-Z]\w+""")
@@ -107,7 +107,7 @@ internal fun kdoc(
         .joinToString(
             prefix = "/**\n",
             separator = "\n",
-            postfix = "\n */"
+            postfix = "\n */",
         )
 }
 

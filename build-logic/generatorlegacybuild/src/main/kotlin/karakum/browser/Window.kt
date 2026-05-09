@@ -31,5 +31,5 @@ internal fun windowTypes(): Sequence<ConversionResult> =
             name = "WindowName",
             body = WINDOW_NAME_BODY,
             pkg = "web.window",
-        )
+        ),
     )

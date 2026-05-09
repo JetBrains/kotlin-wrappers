@@ -41,7 +41,7 @@ internal fun browserFunctions(
                         body = "sealed external interface $name",
                         pkg = pkg,
                     )
-                }
+                },
         )
 
 internal fun workerFunctions(
@@ -255,6 +255,6 @@ private fun convertFunctionResult(
     return ConversionResult(
         name = finalName,
         body = body,
-        pkg = pkg
+        pkg = pkg,
     )
 }

@@ -63,7 +63,7 @@ private fun Sequence<String>.plusColumnOrderPosition(): Sequence<String> =
         if (it.startsWith("type ColumnPinningPosition = ")) {
             sequenceOf(
                 it,
-                it.replaceFirst("type ColumnPinningPosition = ", "type ColumnOrderPosition = ") + " | 'center'"
+                it.replaceFirst("type ColumnPinningPosition = ", "type ColumnOrderPosition = ") + " | 'center'",
             )
         } else {
             sequenceOf(it)
@@ -76,7 +76,7 @@ private fun convertDefinition(
     val source = value
         .replace(
             "interface TableMeta<TData extends RowData> {\n}",
-            "type TableMeta = Record<PropertyKey, Any>"
+            "type TableMeta = Record<PropertyKey, Any>",
         )
 
     val type = source.substringBefore(" ")
@@ -131,7 +131,7 @@ private fun convertFunction(
         .replace("?: {\n    initialSync: boolean;\n}", ": Any = definedExternally /* { initialSync: boolean } */")
         .replace(
             "headerFamily?: 'center' | 'left' | 'right'",
-            "headerFamily: String = definedExternally /* 'center' | 'left' | 'right' */"
+            "headerFamily: String = definedExternally /* 'center' | 'left' | 'right' */",
         )
         .replace(": boolean | 'some' | 'all'", ": Any /* Boolean | 'some' | 'all' */")
         .replace("Record<string, boolean>", "ReadonlyRecord<String, Boolean>")
@@ -222,14 +222,14 @@ private fun convertTypealias(
     if (body.startsWith("Pick<ColumnSizingOptions,")) {
         return ConversionResult(
             name,
-            "@JsPlainObject\nexternal interface $declaration : ColumnSizingOptions /* $body */"
+            "@JsPlainObject\nexternal interface $declaration : ColumnSizingOptions /* $body */",
         )
     }
 
     if (body.startsWith("Pick<VisibilityOptions,")) {
         return ConversionResult(
             name,
-            "@JsPlainObject\nexternal interface $declaration : VisibilityOptions  /* $body */"
+            "@JsPlainObject\nexternal interface $declaration : VisibilityOptions  /* $body */",
         )
     }
 
@@ -310,7 +310,7 @@ private fun convertTypealias(
 
             return ConversionResult(
                 name,
-                "@JsPlainObject\nexternal interface $declaration : ${parentTypes.joinToString(",")} {\n${members}\n}"
+                "@JsPlainObject\nexternal interface $declaration : ${parentTypes.joinToString(",")} {\n${members}\n}",
             )
         }
 
@@ -426,7 +426,7 @@ private fun convertInterface(
         "InitialTableState",
             -> declaration = declaration.replace(
             "Partial<CompleteInitialTableState>",
-            "CompleteInitialTableState"
+            "CompleteInitialTableState",
         )
     }
 

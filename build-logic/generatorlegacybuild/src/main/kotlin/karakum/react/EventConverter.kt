@@ -82,7 +82,7 @@ internal fun convertEventInterface(
         .replace("SyntheticEvent<C>", "SyntheticEvent<C, Event>")
         .replace(
             "BaseSyntheticEvent<E : Any, C : Any, T : Any>",
-            "BaseSyntheticEvent<E : Event, C : EventTarget, T : EventTarget>"
+            "BaseSyntheticEvent<E : Event, C : EventTarget, T : EventTarget>",
         )
         .replace("E :", "out E :")
         .replace("C :", "out C :")

@@ -123,6 +123,6 @@ private fun convertFunctionType(
     return ConversionResult(
         name = name,
         body = body,
-        pkg = pkg
+        pkg = pkg,
     )
 }

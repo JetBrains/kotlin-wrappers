@@ -391,7 +391,7 @@ fun generateKotlinDeclarations(
     val (mainEventDeclarations, knownEventTypes) = eventDeclarations(
         content + "\n\n" + webXrContent,
         webWorkerContent,
-        serviceWorkerContent
+        serviceWorkerContent,
     )
     val eventDeclarations = mainEventDeclarations +
             webWorkersEventDeclarations(webWorkerContent) +
@@ -582,7 +582,7 @@ fun generateKotlinDeclarations(
                     imports = imports,
                     body = toCommonBody(body),
                     pkg = pkg,
-                )
+                ),
             )
     }
 }
@@ -622,7 +622,7 @@ private fun toCommonBody(
         )
         .replace(
             "override fun forEach(action: (value: FormDataEntryValue, key: String) -> Unit)",
-            "override fun forEach(action: (value: FormDataEntryValue, key: JsString) -> Unit)"
+            "override fun forEach(action: (value: FormDataEntryValue, key: JsString) -> Unit)",
         )
 
 private fun fileContent(

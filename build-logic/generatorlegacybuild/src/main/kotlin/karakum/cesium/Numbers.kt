@@ -82,7 +82,7 @@ private val INTEGER_NAMES = setOf(
     "byteOffset",
 
     "SIXTY_FOUR_KILOBYTES",
-    "FOUR_GIGABYTES"
+    "FOUR_GIGABYTES",
 )
 
 internal fun isInteger(name: String?): Boolean {

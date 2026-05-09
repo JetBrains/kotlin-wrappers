@@ -16,5 +16,5 @@ internal fun Url(): ConversionResult =
     ConversionResult(
         name = URL,
         body = "sealed external interface $URL:\n" +
-                PARENT_TYPES.joinToString(",\n")
+                PARENT_TYPES.joinToString(",\n"),
     )

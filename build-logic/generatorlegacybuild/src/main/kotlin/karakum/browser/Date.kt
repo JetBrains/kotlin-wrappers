@@ -33,7 +33,7 @@ internal fun dateDeclarations(
             name = DATE,
             body = body,
             pkg = "js.date",
-        )
+        ),
     )
 }
 

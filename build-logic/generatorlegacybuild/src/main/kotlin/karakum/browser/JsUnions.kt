@@ -26,7 +26,7 @@ private val UNION_TYPES = listOf(
         name = "Overflow",
         values = listOf(
             "constrain",
-            "reject"
+            "reject",
         ),
         pkg = "js.temporal",
     ),
@@ -41,7 +41,7 @@ private val UNION_TYPES = listOf(
             "halfFloor",
             "halfExpand",
             "halfTrunc",
-            "halfEven"
+            "halfEven",
         ),
         pkg = "js.temporal",
     ),
@@ -51,7 +51,7 @@ private val UNION_TYPES = listOf(
             "compatible",
             "earlier",
             "later",
-            "reject"
+            "reject",
         ),
         pkg = "js.temporal",
     ),
@@ -60,7 +60,7 @@ private val UNION_TYPES = listOf(
         values = listOf(
             "number",
             "string",
-            "default"
+            "default",
         ),
         pkg = "js.symbol",
     ),

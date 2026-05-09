@@ -27,7 +27,7 @@ class AliasHelper(
 
         name = name.replace(
             regex = Regex("""-(\w)"""),
-            transform = { it.groupValues[1].uppercase() }
+            transform = { it.groupValues[1].uppercase() },
         )
 
         return listOfNotNull(group, name)

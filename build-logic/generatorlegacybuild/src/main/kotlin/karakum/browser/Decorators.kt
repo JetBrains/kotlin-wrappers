@@ -46,14 +46,14 @@ internal fun decoratorsDeclarations(
                 name = "DecoratorMetadata",
                 body = "typealias DecoratorMetadata = ReadonlyRecord<PropertyKey, *>",
                 pkg = "js.decorators",
-            )
+            ),
         )
         .plus(
             ConversionResult(
                 name = DECORATOR_CONTEXT_KIND,
                 body = objectUnionBody(DECORATOR_CONTEXT_KIND, kinds.map(::unionConstant)),
                 pkg = "js.decorators",
-            )
+            ),
         )
 }
 

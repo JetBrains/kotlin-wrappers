@@ -121,7 +121,7 @@ private fun applyCorrection(
             .replace("readonly $propertyName: number;", "readonly $propertyName: $aliasName;")
             .replace(
                 "readonly $propertyName: SVGAnimatedEnumeration;",
-                "readonly $propertyName: SVGAnimatedEnumeration<$aliasName>;"
+                "readonly $propertyName: SVGAnimatedEnumeration<$aliasName>;",
             )
             .replace("    $propertyName: number;", "    $propertyName: $aliasName;")
             .replace("    $propertyName?: number;", "    $propertyName?: $aliasName;")

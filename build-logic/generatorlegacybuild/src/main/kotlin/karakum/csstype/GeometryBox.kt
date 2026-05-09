@@ -11,7 +11,7 @@ private val GEOMETRY_BOX_BODY = sealedUnionBody(
         "padding-box",
         "content-box",
         "margin-box",
-    )
+    ),
 ).replaceFirst(GEOMETRY_BOX, "$GEOMETRY_BOX : $BASIC_SHAPE")
 
 internal fun GeometryBox(): ConversionResult =

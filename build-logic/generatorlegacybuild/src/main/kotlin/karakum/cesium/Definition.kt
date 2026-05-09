@@ -27,7 +27,7 @@ private val MULTI_TYPES = listOf(
     "Promise<object> | any",
 
     "number | Packable",
-    "string | number"
+    "string | number",
 )
 
 internal data class Definition(
@@ -105,7 +105,7 @@ private fun Definition.flatten(): Sequence<Definition> {
             } else {
                 Definition(
                     doc = "",
-                    body = childBody
+                    body = childBody,
                 )
             }
         }
@@ -129,7 +129,7 @@ private fun newBodies(
     return sequenceOf(primaryBody) +
             newBodies(
                 body = body.replace(optionalMultiType, ": $multiType"),
-                multiType = multiType
+                multiType = multiType,
             )
 }
 

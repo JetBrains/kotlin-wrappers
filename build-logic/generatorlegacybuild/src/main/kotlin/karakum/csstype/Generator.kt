@@ -97,8 +97,8 @@ private fun writeDeclarations(
                     annotations = annotations,
                     imports = imports,
                     body = body,
-                    pkg = pkg
-                )
+                    pkg = pkg,
+                ),
             )
     }
 }

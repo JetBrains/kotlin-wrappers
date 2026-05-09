@@ -139,7 +139,7 @@ private fun convertInterface(
     if (memberSource == "[key: string]: any")
         return ConversionResult(
             name = name,
-            body = "typealias $name = Record<String, Any>"
+            body = "typealias $name = Record<String, Any>",
         )
 
     var members = memberSource
@@ -432,7 +432,7 @@ private fun convertConstructor(
     }
 
     val parameters = convertParameters(
-        source.removeSurrounding("constructor(", ")")
+        source.removeSurrounding("constructor(", ")"),
     ).joinToString(",\n")
 
     return "constructor($parameters)"
@@ -492,7 +492,7 @@ private fun convertMethod(
 
     val parameters = convertParameters(
         source.substringAfter("(")
-            .substringBeforeLast("): ")
+            .substringBeforeLast("): "),
     ).joinToString(",\n")
 
     val returns = when (val returnType = kotlinType(source.substringAfter("): "))) {
@@ -516,7 +516,7 @@ private fun convertParameters(
                 type = "ReadonlyRecord<String, Any?>?",
                 vararg = false,
                 optional = false,
-            )
+            ),
         )
     }
 

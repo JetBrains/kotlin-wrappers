@@ -217,6 +217,6 @@ internal fun keyboardTypes(): Sequence<ConversionResult> {
             name = MODIFIER_KEY_CODE,
             body = unionBody(name = MODIFIER_KEY_CODE, values = MODIFIER_KEY_CODES),
             pkg = "web.keyboard",
-        )
+        ),
     )
 }

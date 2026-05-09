@@ -14,7 +14,7 @@ internal fun List<ConversionResult>.mergeDuplicated(): List<ConversionResult> {
             name = it.first().name,
             body = it.joinToString("\n\n") {
                 it.body
-            }
+            },
         )
     }
 

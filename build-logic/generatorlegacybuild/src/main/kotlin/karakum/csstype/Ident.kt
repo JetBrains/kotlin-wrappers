@@ -13,7 +13,7 @@ private val PARENT_TYPES = listOf(
 
     "GridArea",
     TRANSITION_PROPERTY,
-    "WillChange"
+    "WillChange",
 )
 
 internal fun IdentType(): ConversionResult {
@@ -24,10 +24,10 @@ internal fun IdentType(): ConversionResult {
     val body = """
         sealed external interface $IDENT:
         $IDENT_TYPE
-        
+
         sealed external interface $IDENT_TYPE:
         $parentTypes
-        
+
         ${factory("ident", IDENT, arrayOf("value" to STRING))}
     """.trimIndent()
 

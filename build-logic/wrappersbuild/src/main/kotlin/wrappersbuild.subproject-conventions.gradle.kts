@@ -9,7 +9,7 @@ val subprojectType: Property<SubprojectType> =
 
 subprojectService.data.add(
     provider { project.path }
-        .zip(subprojectType, ::SubprojectData)
+        .zip(subprojectType, ::SubprojectData),
 )
 
 fun getSubprojectType() = when {

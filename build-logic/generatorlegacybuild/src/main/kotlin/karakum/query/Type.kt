@@ -120,7 +120,7 @@ class Type(
                     .replace("event?: QueryCacheNotifyEvent", "event: QueryCacheNotifyEvent?")
                     .replace(
                         "options?: MutateOptions<TData, TError, TVariables, TOnMutateResult>",
-                        "options: MutateOptions<TData, TError, TVariables, TOnMutateResult>?"
+                        "options: MutateOptions<TData, TError, TVariables, TOnMutateResult>?",
                     )
             }
 

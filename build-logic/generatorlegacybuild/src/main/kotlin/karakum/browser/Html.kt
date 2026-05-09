@@ -424,7 +424,7 @@ private val SCHEDULING_TYPES = listOf(
 )
 
 private val WEB_SERIALIZATION = listOf(
-    "StructuredSerializeOptions"
+    "StructuredSerializeOptions",
 )
 
 private val MESSAGING_TYPES = listOf(
@@ -655,7 +655,7 @@ internal fun htmlDeclarations(
                 RENDERING_CONTEXT_ID,
                 "sealed external interface $RENDERING_CONTEXT_ID<T: JsAny, O: JsAny>",
                 "web.rendering",
-            )
+            ),
         )
         .plus(
             ConversionResult(
@@ -668,14 +668,14 @@ internal fun htmlDeclarations(
                     ReadonlyMap<EventType<*>, Int>
                 """.trimIndent(),
                 pkg = "web.performance",
-            )
+            ),
         )
         .plus(
             ConversionResult(
                 name = "NodeFilter",
                 body = "typealias NodeFilter = (node: Node) -> Short",
                 pkg = "web.dom",
-            )
+            ),
         )
         .plus(
             sequenceOf(
@@ -693,21 +693,21 @@ internal fun htmlDeclarations(
                     body = "sealed external interface $name",
                     pkg = pkg,
                 )
-            }
+            },
         )
         .plus(
             ConversionResult(
                 name = "XPathNSResolver",
                 body = "typealias XPathNSResolver = (prefix: String?) -> String?",
                 pkg = "web.xpath",
-            )
+            ),
         )
         .plus(
             ConversionResult(
                 name = "ReadableStreamReader",
                 body = "typealias ReadableStreamReader = ReadableStreamGenericReader /* {\n    fun releaseLock()\n} */",
                 pkg = "web.streams",
-            )
+            ),
         )
         .plus(cryptoAlgorithms())
 }
@@ -978,7 +978,7 @@ internal fun convertInterface(
     val typeProvider = TypeProvider(
         parentType = name,
         arrayType = arrayType,
-        hideForEach = hideForEach
+        hideForEach = hideForEach,
     )
 
     var mainConstructor: String
@@ -1426,7 +1426,7 @@ internal fun convertInterface(
         "}",
         extensions,
         extensionsCollector.getResult(),
-        companionExtensionsCollector.getResult()
+        companionExtensionsCollector.getResult(),
     ).filter { it.isNotEmpty() }
         .joinToString("\n")
 
@@ -1940,9 +1940,7 @@ internal fun convertMember(
         return "    // $source"
 
     if ("(" in source) {
-        val isFun = if (": " in source) {
-            source.indexOf(": ") > source.indexOf("(")
-        } else true
+        val isFun = ": " !in source || source.indexOf(": ") > source.indexOf("(")
 
         if (isFun) {
             val result = convertFunction(source, typeProvider)
@@ -2164,7 +2162,7 @@ private fun convertProperty(
                 .replace(") -> any", ") -> Unit")
                 .replace(
                     ") -> void | PromiseLike<void>",
-                    ") -> PromiseLike<Void>?"
+                    ") -> PromiseLike<Void>?",
                 )
                 .replace(" -> void", " -> Unit")
                 .replace(": string", ": String")
@@ -2249,7 +2247,7 @@ private fun convertFunction(
         .replace(": ArrayBufferView", ": ArrayBufferView<*>")
         .replace(
             ": Exclude<BufferSource, ArrayBuffer>",
-            ": ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */"
+            ": ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */",
         )
         .replace(" | null", "?")
 
@@ -2278,7 +2276,7 @@ private fun convertFunction(
         )
         .replace(
             "SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement",
-            "SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */"
+            "SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */",
         )
         .replace(
             ": ReadableStreamReader<R>",
@@ -2288,7 +2286,7 @@ private fun convertFunction(
         .replace(": RadioNodeList | Element | null", ": JsAny? /* RadioNodeList | Element */")
         .replace(
             ": RegistrationResponseJSON | AuthenticationResponseJSON",
-            ": JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */"
+            ": JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */",
         )
         .replace(
             ": Promise<XRReferenceSpace | XRBoundedReferenceSpace>",
@@ -2321,7 +2319,7 @@ private fun convertFunction(
         )
         .replace(
             ": `\${string}-\${string}-\${string}-\${string}-\${string}`",
-            ": String"
+            ": String",
         )
         .replace(": IDBRequest<undefined>", ": IDBRequest<Void>")
         .replace(": IDBRequest<any>", ": IDBRequest<*>")
@@ -2412,7 +2410,7 @@ private fun getFunctionParameters(
                 .removeSuffix("[]")
                 .replace(": any", ": JsAny?")
                 .replace(": string", ": String")
-                .replace(": (string | undefined)", ": String?")
+                .replace(": (string | undefined)", ": String?"),
         )
     }
 

@@ -36,7 +36,7 @@ internal fun convertDefinitions(
         .replace("align?: ScrollAlignment)", "align: ScrollAlignment?)")
         .replace(
             """readonly [number, "auto"] | readonly [number, "start" | "center" | "end"]""".trimIndent(),
-            "Tuple2<Double, ScrollAlignment>"
+            "Tuple2<Double, ScrollAlignment>",
         )
         .replace("{ align, behavior }?: ScrollToOffsetOptions", "options: ScrollToOffsetOptions?")
         .replace("{ align: initialAlign, behavior, }?: ScrollToIndexOptions", "options: ScrollToIndexOptions?")

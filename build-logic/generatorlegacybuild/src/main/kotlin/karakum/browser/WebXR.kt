@@ -191,7 +191,7 @@ internal fun webXrContent(
 
                         line.startsWith("    constructor(")
                             -> classMembers.add(
-                            line.replaceFirst("constructor(", "new(").removeSuffix(";") + ": $name;"
+                            line.replaceFirst("constructor(", "new(").removeSuffix(";") + ": $name;",
                         )
 
                         else -> interfaceMembers.add(line)

@@ -58,7 +58,7 @@ internal fun formTypes(): Sequence<ConversionResult> =
                 $VALIDATION_TARGET_MEMBERS
             }
             """.trimIndent(),
-            pkg = "web.validation"
+            pkg = "web.validation",
         ),
         ConversionResult(
             name = FORM_CONTROL,
@@ -68,14 +68,14 @@ internal fun formTypes(): Sequence<ConversionResult> =
                 $FORM_CONTROL_MEMBERS
             }
             """.trimIndent(),
-            pkg = "web.form"
+            pkg = "web.form",
         ),
         ConversionResult(
             name = FORM_STATE_RESTORE_MODE,
             body = unionBody(
                 FORM_STATE_RESTORE_MODE,
-                listOf("restore", "autocomplete")
+                listOf("restore", "autocomplete"),
             ),
-            pkg = "web.form"
+            pkg = "web.form",
         ),
     )

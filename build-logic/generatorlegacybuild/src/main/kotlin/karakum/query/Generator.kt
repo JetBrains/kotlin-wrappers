@@ -109,7 +109,7 @@ private fun generate(
         fileMap.asSequence()
             .flatMap { (_, declarations) -> declarations }
             .filterIsInstance<TypeBase>()
-            .toList()
+            .toList(),
     )
 
     for ((name, declarations) in fileMap) {

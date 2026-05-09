@@ -32,11 +32,11 @@ fun toDeclarations(
         .replace("{ refetchPage, ...options }", "options")
         .replace(
             "const useQueryClient: (queryClient?: QueryClient) => QueryClient",
-            "function useQueryClient(queryClient?: QueryClient): QueryClient"
+            "function useQueryClient(queryClient?: QueryClient): QueryClient",
         )
         .replace(
             "Omit<MutationObserverOptions<TData, TError, TVariables, TContext>, '_defaulted' | 'variables'>",
-            "MutationObserverOptions<TData, TError, TVariables, TContext>"
+            "MutationObserverOptions<TData, TError, TVariables, TContext>",
         )
         .replace(
             "getQueryData<TQueryFnData = unknown, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>>(queryKey: TTaggedQueryKey): TInferredQueryFnData | undefined;",
@@ -138,7 +138,7 @@ fun toDeclarations(
             """.trimIndent(),
             """
             subscribe: (listener?: InfiniteQueryObserverListener<TData, TError>) -> () -> Unit
-            """.trimIndent()
+            """.trimIndent(),
         )
         .replace(
             """
@@ -146,7 +146,7 @@ fun toDeclarations(
             """.trimIndent(),
             """
             getCurrentResult: () -> InfiniteQueryObserverResult<TData, TError>
-            """.trimIndent()
+            """.trimIndent(),
         )
         .replace(
             """
@@ -154,14 +154,14 @@ fun toDeclarations(
             """.trimIndent(),
             """
             protected fetch: (fetchOptions: ObserverFetchOptions) -> Promise<InfiniteQueryObserverResult<TData, TError>>
-            """.trimIndent()
+            """.trimIndent(),
         )
         .replace("type dataTagSymbol = typeof dataTagSymbol;", "")
         .replace("type dataTagErrorSymbol = typeof dataTagErrorSymbol;", "")
         .replace("Query<unknown, Error, unknown, readonly unknown[]>[]", "Query<unknown, Error, unknown, QueryKey>[]")
         .replace(
             "QueryObserver<unknown, Error, unknown, unknown, readonly unknown[]>[]",
-            "QueryObserver<unknown, Error, unknown, unknown, QueryKey>[]"
+            "QueryObserver<unknown, Error, unknown, unknown, QueryKey>[]",
         )
         .replace(
             "function defaultshouldRedactErrors(_: unknown): boolean;",
@@ -241,7 +241,8 @@ fun toDeclarations(
                 number | {
                     [Symbol.toPrimitive]: () => number;
                 }
-            """.trimIndent(), "number"
+            """.trimIndent(),
+                "number",
             )
             .replace(
                 "type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {",

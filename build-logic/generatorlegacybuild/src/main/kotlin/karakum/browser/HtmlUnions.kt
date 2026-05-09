@@ -27,7 +27,7 @@ internal val UNION_DATA_LIST = listOf(
         name = "SelectType",
         values = listOf(
             "select-one",
-            "select-multiple"
+            "select-multiple",
         ),
         pkg = "web.html",
     ),
@@ -114,7 +114,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "anonymous",
                     "use-credentials",
                     "",
-                )
+                ),
             ),
             pkg = "web.http",
         ),
@@ -183,7 +183,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "previous",
                     "search",
                     "send",
-                )
+                ),
             ),
             pkg = "web.html",
         ),
@@ -195,7 +195,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "async",
                     "sync",
                     "auto",
-                )
+                ),
             ),
             pkg = "web.html",
         ),
@@ -212,7 +212,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "numeric",
                     "decimal",
                     "search",
-                )
+                ),
             ),
             pkg = "web.html",
         ),
@@ -243,7 +243,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "time",
                     "url",
                     "week",
-                )
+                ),
             ),
             pkg = "web.html",
         ),
@@ -254,7 +254,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                 values = listOf(
                     "eager",
                     "lazy",
-                )
+                ),
             ),
             pkg = "web.html",
         ),
@@ -266,7 +266,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "any",
                     "closerequest",
                     "none",
-                )
+                ),
             ),
             pkg = "web.html",
         ),
@@ -280,5 +280,5 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                 ),
                 pkg = data.pkg,
             )
-        }
+        },
     )

@@ -28,7 +28,7 @@ private val FACTORY_MAP = mapOf(
     Interface.PREFIX to ::Interface,
     Class.PREFIX to ::Class,
     "namespace " to ::Namespace,
-    Namespace.PREFIX to ::Namespace
+    Namespace.PREFIX to ::Namespace,
 )
 
 internal fun parseDeclarations(
@@ -175,7 +175,7 @@ private fun readDeclarations(
         )
         .replace(
             "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number | undefined;",
-            "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number;"
+            "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number;",
         )
         .replace("credits: Credit[] | undefined;", "credits: Credit[];")
         .replace(

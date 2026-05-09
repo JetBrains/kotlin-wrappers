@@ -22,5 +22,5 @@ internal fun Image(): ConversionResult =
     ConversionResult(
         name = IMAGE,
         body = "sealed external interface $IMAGE:\n" +
-                PARENT_TYPES.joinToString(",\n")
+                PARENT_TYPES.joinToString(",\n"),
     )

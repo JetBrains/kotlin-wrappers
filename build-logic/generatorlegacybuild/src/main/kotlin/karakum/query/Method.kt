@@ -9,7 +9,7 @@ class Method(
             source.substringBefore("(")
                 .replace("Record<string, any>", "Any /* object */")
                 .replace("QueryOptions<any, any, any, any>", "QueryOptions<*, *, *, *, *>")
-                .replace("<any, any, any, any>", "<*, *, *, *>")
+                .replace("<any, any, any, any>", "<*, *, *, *>"),
         )
     }
 

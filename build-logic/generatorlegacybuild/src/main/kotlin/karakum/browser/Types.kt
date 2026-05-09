@@ -282,7 +282,7 @@ private fun convertType(
                  */
                 """.trimIndent()
                 } else null,
-                "typealias $name = $type"
+                "typealias $name = $type",
             ).filterNotNull()
                 .joinToString("\n")
         }
@@ -290,7 +290,7 @@ private fun convertType(
         return ConversionResult(
             name = name,
             body = body,
-            pkg = pkg
+            pkg = pkg,
         )
     }
 
@@ -477,7 +477,7 @@ private fun convertType(
         return ConversionResult(
             name = name,
             body = finalBody,
-            pkg = pkg
+            pkg = pkg,
         ).withAutoFillCorrection()
     }
 
@@ -503,7 +503,7 @@ private fun convertType(
     return ConversionResult(
         name = name,
         body = body,
-        pkg = pkg
+        pkg = pkg,
     ).withAutoFillCorrection()
 }
 
@@ -690,7 +690,7 @@ private fun autoFillInterface(
                     ${parameterMap.entries.joinToString("\n") { (pname, ptype) -> "$pname: $ptype," }}
                 ): $name =
                     unsafeCast("${parameterMap.keys.joinToString(" ") { pname -> "$$pname" }}")
-                """.trimIndent()
+                """.trimIndent(),
             )
         }
     }

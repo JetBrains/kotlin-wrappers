@@ -86,7 +86,7 @@ private fun generate(
         if (suppresses.isNotEmpty()) {
             annotations = sequenceOf(
                 annotations,
-                fileSuppress(suppresses)
+                fileSuppress(suppresses),
             ).filter { it.isNotEmpty() }
                 .joinToString("\n\n")
         }

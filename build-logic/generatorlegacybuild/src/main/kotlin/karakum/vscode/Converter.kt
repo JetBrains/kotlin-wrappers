@@ -31,7 +31,7 @@ internal fun parseDeclarations(
             ConversionResult(
                 DISPOSABLE_LIKE,
                 convertInterface(DISPOSABLE_LIKE, DISPOSABLE_LIKE_DECLARATION, Commenter.EMPTY),
-            )
+            ),
         )
         .toList()
 }
@@ -656,7 +656,7 @@ private fun convertFunctionBody(
                     .replace("[Uri_,_readonly", "[Uri, readonly")
                     .replace(
                         "SnippetTextEdit_,_WorkspaceEditEntryMetadata",
-                        "SnippetTextEdit, WorkspaceEditEntryMetadata"
+                        "SnippetTextEdit, WorkspaceEditEntryMetadata",
                     )
                     .replace("NotebookEdit_,_WorkspaceEditEntryMetadata", "NotebookEdit, WorkspaceEditEntryMetadata")
             }

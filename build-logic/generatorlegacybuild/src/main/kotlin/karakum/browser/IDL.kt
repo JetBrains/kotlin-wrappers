@@ -162,7 +162,7 @@ internal object IDLRegistry {
                         "WebGLRenderingContextBase" -> listOf(
                             className,
                             "WebGLRenderingContext",
-                            "WebGL2RenderingContext"
+                            "WebGL2RenderingContext",
                         )
 
                         "WebGL2RenderingContextBase" -> listOf(className, "WebGL2RenderingContext")
@@ -228,7 +228,7 @@ internal object IDLRegistry {
                     className = className,
                     propertyName = name,
                     propertyType = type,
-                )
+                ),
             )
         }
 
@@ -269,7 +269,7 @@ internal object IDLRegistry {
                 className = className,
                 methodName = methodName,
                 returnType = returnType,
-            )
+            ),
         )
     }
 
@@ -317,7 +317,7 @@ internal object IDLRegistry {
                     // TEMP
                     ("WebTransportDatagramDuplexStream" to "incomingHighWaterMark") to "Double",
                     ("WebTransportDatagramDuplexStream" to "outgoingHighWaterMark") to "Double",
-                )
+                ),
             )
     }
 
@@ -339,7 +339,7 @@ internal object IDLRegistry {
                     ("PluralRules" to "n") to "Int",
                     ("RelativeTimeFormat" to "value") to "Double",
                     ("Segments" to "codeUnitIndex") to "Int",
-                )
+                ),
             )
     }
 

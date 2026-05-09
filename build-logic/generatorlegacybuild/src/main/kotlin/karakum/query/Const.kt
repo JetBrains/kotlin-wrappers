@@ -10,7 +10,7 @@ class Const(
     private val type: String by lazy {
         kotlinType(
             source.substringAfter(": ")
-                .removeSuffix(";")
+                .removeSuffix(";"),
         )
     }
 
@@ -19,7 +19,7 @@ class Const(
             return when (name) {
                 "skipToken",
                     -> """
-                external object $name: 
+                external object $name:
                     Symbol,
                     QueryFunctionOrSkipToken<Nothing, Nothing, Nothing>
                 """.trimIndent()

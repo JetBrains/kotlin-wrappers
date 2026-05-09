@@ -30,7 +30,7 @@ internal fun withSuspendExtensions(
         functionSignature = functionSignature,
         parameters = parameters,
         returnType = suspendReturnType,
-        docs = comment
+        docs = comment,
     )
 
     return sequenceOf(

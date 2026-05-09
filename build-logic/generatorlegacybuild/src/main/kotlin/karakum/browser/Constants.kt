@@ -48,7 +48,7 @@ internal fun browserConstants(
             convertConstant(source, getPkg)
                 ?.withComment(
                     fullSource = newContent,
-                    source = "declare var $source;\n"
+                    source = "declare var $source;\n",
                 )
         }
 }

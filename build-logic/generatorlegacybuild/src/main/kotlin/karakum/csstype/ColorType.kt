@@ -15,5 +15,5 @@ internal fun ColorType(): ConversionResult =
     ConversionResult(
         name = COLOR_TYPE,
         body = "sealed external interface $COLOR_TYPE:\n" +
-                PARENT_TYPES.joinToString(",\n")
+                PARENT_TYPES.joinToString(",\n"),
     )

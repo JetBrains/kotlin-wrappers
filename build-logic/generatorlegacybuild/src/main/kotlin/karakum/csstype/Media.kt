@@ -147,6 +147,6 @@ private fun factory(
             value: $type,
         ): $queryType =
             $queryType("($name:${'$'}value)")
-        """.trimIndent()
+        """.trimIndent(),
     )
 }

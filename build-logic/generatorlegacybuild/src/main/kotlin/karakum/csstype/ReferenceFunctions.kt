@@ -9,14 +9,14 @@ internal fun referenceFunctions(): ConversionResult {
             returnType = "Content",
             parameters = arrayOf(
                 "name" to "String",
-            )
+            ),
         ),
         function(
             name = "env",
             returnType = "T",
             parameters = arrayOf(
                 "id" to IDENT,
-            )
+            ),
         ),
         function(
             name = "env",
@@ -24,21 +24,21 @@ internal fun referenceFunctions(): ConversionResult {
             parameters = arrayOf(
                 "id" to IDENT,
                 "fallback" to "T",
-            )
+            ),
         ),
         function(
             name = "url",
             returnType = URL,
             parameters = arrayOf(
                 "value" to "String",
-            )
+            ),
         ),
         function(
             name = "var",
             returnType = "T",
             parameters = arrayOf(
                 "name" to "$CUSTOM_PROPERTY_NAME<T>",
-            )
+            ),
         ),
         function(
             name = "var",
@@ -46,7 +46,7 @@ internal fun referenceFunctions(): ConversionResult {
             parameters = arrayOf(
                 "name" to "$CUSTOM_PROPERTY_NAME<T>",
                 "fallback" to "T",
-            )
+            ),
         ),
     )
 

@@ -23,6 +23,6 @@ internal fun cssObject(
     return ConversionResult(
         name = "CSS",
         body = body,
-        pkg = "web.cssom"
+        pkg = "web.cssom",
     )
 }

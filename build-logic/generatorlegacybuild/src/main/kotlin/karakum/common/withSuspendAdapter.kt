@@ -32,6 +32,6 @@ internal fun withSuspendAdapter(
                 jsName,
                 "$funSignature$asyncName$parameters: Promise<$payload>$optionality$de",
             ).joinToString("\n")
-        }
+        },
     ).splitToSequence(DELIMITER)
         .map { it.trim() }

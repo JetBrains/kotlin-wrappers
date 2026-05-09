@@ -84,7 +84,7 @@ internal fun intlDeclarations(
                 }
                 """.trimIndent(),
                 "js.intl",
-            )
+            ),
         )
 }
 

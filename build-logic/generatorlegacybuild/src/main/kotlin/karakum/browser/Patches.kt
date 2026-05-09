@@ -175,7 +175,7 @@ internal fun String.applyPatches(): String {
             it.replace(
                 "\n    replaceChildren(...nodes: string[]): void;",
                 "\n    replaceChildren(...nodes: string[]): void;" +
-                        "\n    replaceChildren(): void;"
+                        "\n    replaceChildren(): void;",
             )
         }
         .splitUnion("(CSSStyleValue | string)[]", "CSSStyleValue[] | string[]")
@@ -244,7 +244,7 @@ internal fun String.applyPatches(): String {
                 """    setFormValue(value: File | null, state?: File | null): void;""",
                 """    setFormValue(value: string | null, state?: string | null): void;""",
                 """    setFormValue(value: FormData | null, state?: FormData | null): void;""",
-            ).joinToString("\n")
+            ).joinToString("\n"),
         )
         .let {
             val lines = listOf(
@@ -261,12 +261,12 @@ internal fun String.applyPatches(): String {
         .replace("  error(e?: any)", "  error(error?: JsError)")
         .replace(
             Regex("""forEach\(callbackfn: \(value: ([\w\[\]]+), .+?, thisArg\?: any\): void;"""),
-            "forEach(action: (item: $1) => void): void;"
+            "forEach(action: (item: $1) => void): void;",
         )
         .replace("): undefined | CSSStyleValue", "): CSSStyleValue | undefined")
         .replace(
             "FileSystemWritableFileStream extends WritableStream {",
-            "FileSystemWritableFileStream extends WritableStream<FileSystemWriteChunkType> {"
+            "FileSystemWritableFileStream extends WritableStream<FileSystemWriteChunkType> {",
         )
         .patchCollections()
         .replace(
@@ -341,14 +341,14 @@ internal fun String.applyPatches(): String {
             sequenceOf(
                 """    texParameterf(target: GLenum, pname: GLenum, param: GLenum): void;""",
                 """    texParameterf(target: GLenum, pname: GLenum, param: GLfloat): void;""",
-            ).joinToString("\n")
+            ).joinToString("\n"),
         )
         .replace(
             """    texParameteri(target: GLenum, pname: GLenum, param: GLint): void;""",
             sequenceOf(
                 """    texParameteri(target: GLenum, pname: GLenum, param: GLenum): void;""",
                 """    texParameteri(target: GLenum, pname: GLenum, param: GLint): void;""",
-            ).joinToString("\n")
+            ).joinToString("\n"),
         )
         .replace(" MessageEventTarget<MessagePort>", " MessageEventTarget")
         .replace(" MessageEventTarget<Worker>", " MessageEventTarget")
@@ -440,7 +440,7 @@ internal fun String.applyPatches(): String {
             "\n    from(value: OriginSource): Origin;\n    from(value: string): Origin;",
         )
         .plus(
-            "\n\ntype OriginSource = URL | Origin | ExtendableMessageEvent | HTMLHyperlinkElementUtils | Location | Window | WorkerGlobalScope | WorkerLocation | MessageEvent;\n"
+            "\n\ntype OriginSource = URL | Origin | ExtendableMessageEvent | HTMLHyperlinkElementUtils | Location | Window | WorkerGlobalScope | WorkerLocation | MessageEvent;\n",
         )
         // TODO: remove after `@types/web` update
         .replace("HTMLOrSVGElement", "HTMLOrSVGOrMathMLElement")
@@ -477,11 +477,11 @@ private fun String.patchDomGeometry(): String =
 private fun String.patchVideoFrameCallback(): String =
     replace(
         "cancelVideoFrameCallback(handle: number): void;",
-        "cancelVideoFrameCallback(requestId: $VIDEO_FRAME_REQUEST_ID): void;"
+        "cancelVideoFrameCallback(requestId: $VIDEO_FRAME_REQUEST_ID): void;",
     )
         .replace(
             "requestVideoFrameCallback(callback: VideoFrameRequestCallback): number;",
-            "requestVideoFrameCallback(callback: VideoFrameRequestCallback): $VIDEO_FRAME_REQUEST_ID;"
+            "requestVideoFrameCallback(callback: VideoFrameRequestCallback): $VIDEO_FRAME_REQUEST_ID;",
         )
 
 internal fun String.addStrictPostMessageSupport(): String =
@@ -551,43 +551,43 @@ private fun String.patchQuerySelectors(): String =
     this
         .replace(
             "querySelector<K extends keyof HTMLElementTagNameMap>(selectors: K): HTMLElementTagNameMap[K] | null;",
-            "querySelector<T extends Element>(selectors: TagName<T>): T | null;"
+            "querySelector<T extends Element>(selectors: TagName<T>): T | null;",
         )
         .replace(
             "querySelector<K extends keyof SVGElementTagNameMap>(selectors: K): SVGElementTagNameMap[K] | null;",
-            ""
+            "",
         )
         .replace(
             "querySelector<K extends keyof MathMLElementTagNameMap>(selectors: K): MathMLElementTagNameMap[K] | null;",
-            ""
+            "",
         )
         .replace(
             "querySelector<E extends Element = Element>(selectors: string): E | null;",
-            "querySelector(selectors: string): Element | null;"
+            "querySelector(selectors: string): Element | null;",
         )
         .replace(
             "querySelectorAll<K extends keyof HTMLElementTagNameMap>(selectors: K): NodeList<HTMLElementTagNameMap[K]>;",
-            "querySelectorAll<T extends Element>(selectors: TagName<T>): NodeList<T>;"
+            "querySelectorAll<T extends Element>(selectors: TagName<T>): NodeList<T>;",
         )
         .replace(
             "querySelectorAll<K extends keyof SVGElementTagNameMap>(selectors: K): NodeList<SVGElementTagNameMap[K]>;",
-            ""
+            "",
         )
         .replace(
             "querySelectorAll<K extends keyof MathMLElementTagNameMap>(selectors: K): NodeList<MathMLElementTagNameMap[K]>;",
-            ""
+            "",
         )
         .replace(
             "querySelectorAll<E extends Element = Element>(selectors: string): NodeList<E>;",
-            "querySelectorAll(selectors: string): NodeList<Element>;"
+            "querySelectorAll(selectors: string): NodeList<Element>;",
         )
         .replace(
             "\"$SVG_NAMESPACE\"",
-            "SVG_NAMESPACE"
+            "SVG_NAMESPACE",
         )
         .replace(
             "\"$MATHML_NAMESPACE\"",
-            "MATHML_NAMESPACE"
+            "MATHML_NAMESPACE",
         )
         .replace(
             "type ReadableStreamReadResult<T> = ReadableStreamReadValueResult<T> | ReadableStreamReadDoneResult<T>;\n",
@@ -642,7 +642,7 @@ private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {
         it.replace(
             "decodeAudioData(audioData: ArrayBuffer, successCallback?: DecodeSuccessCallback | null, errorCallback?: DecodeErrorCallback | null): Promise<AudioBuffer>;",
-            "decodeAudioData(audioData: ArrayBuffer): Promise<AudioBuffer>;"
+            "decodeAudioData(audioData: ArrayBuffer): Promise<AudioBuffer>;",
         )
     }
 

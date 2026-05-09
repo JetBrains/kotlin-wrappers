@@ -108,7 +108,7 @@ object EventDataRegistry {
                         -> sequenceOf("GlobalEventHandlers")
 
                     else -> emptySequence()
-                }
+                },
             )
             .plus(bubblingPath)
             .distinct()

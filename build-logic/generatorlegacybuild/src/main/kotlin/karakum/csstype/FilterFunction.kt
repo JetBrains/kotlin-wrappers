@@ -47,7 +47,7 @@ internal fun FilterFunction(): ConversionResult {
         """
         sealed external interface $FILTER_FUNCTION:
                 ${PARENT_TYPES.joinToString(",\n")}
-        """.trimIndent()
+        """.trimIndent(),
     ) + FilterFactory.FACTORIES
         .flatMap { f ->
             when (f.name) {

@@ -9,7 +9,7 @@ private val SHAPE_RADIUS_BODY = sealedUnionBody(
     listOf(
         "closest-side",
         "farthest-side",
-    )
+    ),
 )
 
 internal fun ShapeRadius(): ConversionResult =

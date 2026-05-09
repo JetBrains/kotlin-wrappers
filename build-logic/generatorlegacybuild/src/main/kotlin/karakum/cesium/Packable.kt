@@ -6,7 +6,7 @@ const val PACKED_LENGTH = "packedLength"
 val PACKABLE_MEMBERS: Set<String> = setOf(
     PACKED_LENGTH,
     "pack",
-    "unpack"
+    "unpack",
 )
 
 // Details - https://github.com/CesiumGS/cesium/issues/8914

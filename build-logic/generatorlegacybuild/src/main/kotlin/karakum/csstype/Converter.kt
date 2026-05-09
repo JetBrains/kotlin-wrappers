@@ -127,7 +127,7 @@ internal fun convertDefinitions(
         Round(),
         shapeFunctions(),
 
-        PropertyName(contentMap)
+        PropertyName(contentMap),
     )
 
     val builderTypes = listOf(
@@ -285,7 +285,7 @@ private fun convertDefinition(
         "GridAutoRows",
         "GridTemplateRows",
             -> return sequenceOf(
-            ConversionResult(name, "typealias $name = ${name.replace("Rows", "Tracks")}")
+            ConversionResult(name, "typealias $name = ${name.replace("Rows", "Tracks")}"),
         )
     }
 
@@ -317,13 +317,13 @@ private fun convertUnion(
     if (source.startsWith("type Color ="))
         return convertUnion(
             name = COLOR_PROPERTY,
-            source = source.replaceFirst("Color", COLOR_PROPERTY)
+            source = source.replaceFirst("Color", COLOR_PROPERTY),
         )
 
     if (name == BACKGROUND && "| Color " in source)
         return convertUnion(
             name = name,
-            source = source.replaceFirst("| Color ", "")
+            source = source.replaceFirst("| Color ", ""),
         )
 
     if (name in ENUMS && (!enumMode || ENUM_TAIL in source))

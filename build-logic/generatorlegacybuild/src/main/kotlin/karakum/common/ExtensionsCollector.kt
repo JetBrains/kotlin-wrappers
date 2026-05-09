@@ -179,7 +179,7 @@ internal open class SuspendExtensionsCollector(
                 parameterNames,
                 parametersToSkip,
                 returnType,
-                isAbortable
+                isAbortable,
             )
 
             val isInline = CONTROLLER_INIT !in body

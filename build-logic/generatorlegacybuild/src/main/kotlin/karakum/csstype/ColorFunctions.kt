@@ -23,8 +23,8 @@ internal fun colorFunctions(): ConversionResult {
             COLOR, // TODO: remove
             parameters = arrayOf(
                 "value" to STRING,
-            )
-        )
+            ),
+        ),
     ).plus(
         sequenceOf(3, 4)
             .map { RGB_PARAMETERS.take(it).toTypedArray() }
@@ -35,7 +35,7 @@ internal fun colorFunctions(): ConversionResult {
                     parameters = parameters,
                     delimiter = " ",
                 )
-            }
+            },
     ).plus(
         sequenceOf(3, 4)
             .map { OKLCH_PARAMETERS.take(it).toTypedArray() }
@@ -46,7 +46,7 @@ internal fun colorFunctions(): ConversionResult {
                     parameters = parameters,
                     delimiter = " ",
                 )
-            }
+            },
     )
 
     return ConversionResult(

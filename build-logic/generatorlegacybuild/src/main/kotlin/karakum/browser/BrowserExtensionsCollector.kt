@@ -12,7 +12,7 @@ internal class BrowserSuspendExtensionsCollector private constructor(
         return when (parentName) {
             "CustomElementRegistry" -> extensions.replace(
                 "CustomElementRegistry.whenDefined(name: String): CustomElementConstructor",
-                "<T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T>"
+                "<T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T>",
             )
 
             "Clients" -> extensions.replace("matchAllAsync()", "matchAllAsync<T>()")

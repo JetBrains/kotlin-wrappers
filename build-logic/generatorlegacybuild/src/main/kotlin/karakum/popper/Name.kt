@@ -9,21 +9,21 @@ internal fun nameTypes(): Sequence<ConversionResult> =
             body = """
             @JsExternalInheritorsOnly
             external interface Name
-            """.trimIndent()
+            """.trimIndent(),
         ),
         ConversionResult(
             name = "ModifierName",
             body = """
             @JsExternalInheritorsOnly
             external interface ModifierName<Options : JsAny?>:
-                Name    
-            """.trimIndent()
+                Name
+            """.trimIndent(),
         ),
         ConversionResult(
             name = "Popper",
             body = """
                 @JsValue("popper")
                 external val Popper: Name
-            """.trimIndent()
+            """.trimIndent(),
         ),
     )

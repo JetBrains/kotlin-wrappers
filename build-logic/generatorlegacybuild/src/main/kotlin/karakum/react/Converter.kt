@@ -33,11 +33,11 @@ internal fun convertDefinitions(
         .replace("""blocking?: "render" | (string & {}) | undefined;""", """blocking?: Blocking | undefined;""")
         .replace(
             Regex("""fetchPriority\?: "high" \| "low" \| "auto"( \| undefined)?;"""),
-            """fetchPriority?: FetchPriority;"""
+            """fetchPriority?: FetchPriority;""",
         )
         .replace(
             """closedby?: "any" | "closerequest" | "none" | undefined;""",
-            """closedby?: ClosedBy | undefined;"""
+            """closedby?: ClosedBy | undefined;""",
         )
         .replace(" |  undefined", " | undefined")
         .replace(" | (string & {})", "")
@@ -94,7 +94,7 @@ private fun convertUnions(
         .mapNotNull {
             convertUnion(
                 name = it.substringBefore(" ="),
-                source = it.substringAfter(" =")
+                source = it.substringAfter(" ="),
             )
         }
         .filter { it.name !in EXCLUDED_UNIONS }

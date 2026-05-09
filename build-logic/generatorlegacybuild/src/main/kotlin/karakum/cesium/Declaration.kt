@@ -12,6 +12,6 @@ internal abstract class Declaration : HasName {
             ConversionResult(
                 name = name,
                 body = toCode(),
-            )
+            ),
         )
 }

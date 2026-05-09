@@ -21,7 +21,7 @@ internal fun Gradient(): ConversionResult {
             returnType = GRADIENT,
             parameters = arrayOf(
                 "stops" to LINEAR_COLOR_STOP,
-            )
+            ),
         ),
         function(
             name = LINEAR_GRADIENT,
@@ -29,14 +29,14 @@ internal fun Gradient(): ConversionResult {
             parameters = arrayOf(
                 "angle" to ANGLE,
                 "stops" to LINEAR_COLOR_STOP,
-            )
+            ),
         ),
         function(
             name = REPEATING_LINEAR_GRADIENT,
             returnType = GRADIENT,
             parameters = arrayOf(
                 "stops" to LINEAR_COLOR_STOP,
-            )
+            ),
         ),
         function(
             name = REPEATING_LINEAR_GRADIENT,
@@ -44,12 +44,12 @@ internal fun Gradient(): ConversionResult {
             parameters = arrayOf(
                 "angle" to ANGLE,
                 "stops" to LINEAR_COLOR_STOP,
-            )
+            ),
         ),
     )
 
     return ConversionResult(
         name = GRADIENT,
-        body = declarations.joinToString("\n\n")
+        body = declarations.joinToString("\n\n"),
     )
 }

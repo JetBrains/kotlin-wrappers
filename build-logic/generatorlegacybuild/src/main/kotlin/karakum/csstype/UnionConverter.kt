@@ -63,7 +63,7 @@ private val EXCLUDED_ENUMS = setOf(
 private val VALID_PARENT = setOf(
     "Globals",
     NAMED_COLOR,
-    "TLength"
+    "TLength",
 )
 
 internal fun tryToUnion(
@@ -176,7 +176,7 @@ internal fun tryToUnion(
                 "\n\n" +
                 content.replace(
                     "sealed external interface $COLOR",
-                    "external class $COLOR\nprivate constructor()"
+                    "external class $COLOR\nprivate constructor()",
                 )
     }
 

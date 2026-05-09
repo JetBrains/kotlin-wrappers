@@ -10,12 +10,12 @@ private val MOUSE_BUTTON_CONSTANTS = listOf(
     ButtonConstant(
         name = "MAIN",
         value = 0,
-        description = "Main button pressed, usually the left button or the un-initialized state"
+        description = "Main button pressed, usually the left button or the un-initialized state",
     ),
     ButtonConstant(
         name = "AUXILIARY",
         value = 1,
-        description = "Auxiliary button pressed, usually the wheel button or the middle button (if present)"
+        description = "Auxiliary button pressed, usually the wheel button or the middle button (if present)",
     ),
     ButtonConstant(name = "SECONDARY", value = 2, description = "Secondary button pressed, usually the right button"),
     ButtonConstant(name = "FOURTH", value = 3, description = "Fourth button, typically the Browser Back button"),
@@ -29,7 +29,7 @@ private val MOUSE_BUTTONS_CONSTANTS = listOf(
     ButtonConstant(
         name = "AUXILIARY",
         value = 4,
-        description = "Auxiliary button (usually the mouse wheel button or middle button)"
+        description = "Auxiliary button (usually the mouse wheel button or middle button)",
     ),
     ButtonConstant(name = "FOURTH", value = 8, description = """4th button (typically the "Browser Back" button)"""),
     ButtonConstant(name = "FIFTH", value = 16, description = """5th button (typically the "Browser Forward" button)"""),
@@ -51,7 +51,7 @@ internal fun mouseButtonTypes(): Sequence<ConversionResult> {
             type = MOUSE_BUTTONS,
             parentType = "Bitmask<$MOUSE_BUTTONS>",
             constants = MOUSE_BUTTONS_CONSTANTS,
-        )
+        ),
     )
 }
 
@@ -71,9 +71,9 @@ private fun mouseButtonType(
                     /**
                      * ${constant.description}
                      */
-                    """.trimIndent()
+                    """.trimIndent(),
             )
-        }
+        },
     )
 
     if (parentType != null) {

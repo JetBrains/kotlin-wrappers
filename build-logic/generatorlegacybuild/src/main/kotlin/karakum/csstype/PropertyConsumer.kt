@@ -15,7 +15,7 @@ internal class PropertyConsumer : ParentConsumer {
             LINE_WIDTH_PROPERTY,
             BLEND_MODE_PROPERTY,
 
-            "GlobalsType"
+            "GlobalsType",
         ).associateBy {
             it.removeSuffix("Property")
                 .removeSuffix("Type")

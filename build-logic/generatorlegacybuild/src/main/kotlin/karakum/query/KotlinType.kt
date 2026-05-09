@@ -214,7 +214,7 @@ internal fun kotlinType(
         return kotlinType(
             type.removePrefix("Exclude<")
                 .substringBefore(", '")
-                .substringBefore("['queryFn']")
+                .substringBefore("['queryFn']"),
         )
 
     if (type.startsWith("Pick<"))
@@ -364,7 +364,7 @@ fun kotlinFunctionType(type: String): String =
         .replace("Mutation<unknown, unknown, unknown, unknown>", "Mutation<*, *, *, *>")
         .replace(
             "RefetchOptions & RefetchQueryFilters<TPageData>?",
-            "RefetchOptions? /* & RefetchQueryFilters<TPageData> */"
+            "RefetchOptions? /* & RefetchQueryFilters<TPageData> */",
         )
         .replace("ObserverFetchOptions", "ObserverFetchOptions<TData>")
         .replace("unknown", "Any")
