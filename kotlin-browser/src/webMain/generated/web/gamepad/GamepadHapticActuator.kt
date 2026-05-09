@@ -4,8 +4,6 @@ package web.gamepad
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`GamepadHapticActuator`** interface of the Gamepad API represents hardware in the controller designed to provide haptic feedback to the user (if available), most commonly vibration hardware.

@@ -2,6 +2,4 @@
 
 package web.sanitizer
 
-import kotlin.js.JsAny
-
 typealias SanitizerElementWithAttributes = JsAny /* string | SanitizerElementNamespaceWithAttributes */

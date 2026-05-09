@@ -5,7 +5,6 @@ package web.cookie
 import js.array.ReadonlyArray
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
-import kotlin.js.definedExternally
 
 /**
  * The **`ExtendableCookieChangeEvent`** interface of the Cookie Store API is the event type passed to cookiechange event fired at the ServiceWorkerGlobalScope when any cookie changes occur which match the service worker's cookie change subscription list. A cookie change event consists of a cookie and a type (either "changed" or "deleted").

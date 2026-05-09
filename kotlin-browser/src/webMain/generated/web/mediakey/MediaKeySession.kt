@@ -11,9 +11,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.time.EpochTimeStamp
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.toBoolean
 
 /**
  * The **`MediaKeySession`** interface of the Encrypted Media Extensions API represents a context for message exchange with a content decryption module (CDM).

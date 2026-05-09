@@ -6,8 +6,6 @@ import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
 import web.file.File
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`FileSystemFileHandle`** interface of the File System API represents a handle to a file system entry. The interface is accessed through the window.showOpenFilePicker() method.

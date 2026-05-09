@@ -2,8 +2,6 @@
 
 package web.events
 
-import kotlin.js.definedExternally
-
 /**
  * The **`ProgressEvent`** interface represents events that measure the progress of an underlying process, like an HTTP request (e.g., an XMLHttpRequest, or the loading of the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
  *

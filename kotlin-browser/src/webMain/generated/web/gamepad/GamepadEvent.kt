@@ -4,7 +4,6 @@ package web.gamepad
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`GamepadEvent`** interface of the Gamepad API contains references to gamepads connected to the system, which is what the gamepad events gamepadconnected and gamepaddisconnected are fired in response to.

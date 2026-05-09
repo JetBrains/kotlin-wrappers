@@ -5,7 +5,6 @@ package web.svg
 import web.geometry.DOMPoint
 import web.geometry.DOMPointReadOnly
 import web.geometry.DOMRect
-import kotlin.js.definedExternally
 
 /**
  * The **`SVGTextContentElement`** interface is implemented by elements that support rendering child text content. It is inherited by various text-related interfaces, such as SVGTextElement, SVGTSpanElement, and SVGTextPathElement.

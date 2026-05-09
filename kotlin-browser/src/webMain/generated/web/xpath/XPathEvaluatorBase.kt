@@ -8,7 +8,6 @@ package web.xpath
 
 import js.internal.InternalApi
 import web.dom.Node
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

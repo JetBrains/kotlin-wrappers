@@ -2,8 +2,6 @@
 
 package web.performance
 
-import kotlin.js.JsAny
-
 /**
  * The **`PerformancePaintTiming`** interface provides timing information about "paint" (also called "render") operations during web page construction. "Paint" refers to conversion of the render tree to on-screen pixels.
  *

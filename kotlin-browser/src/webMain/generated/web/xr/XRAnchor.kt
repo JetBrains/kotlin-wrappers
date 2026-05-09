@@ -3,7 +3,6 @@
 package web.xr
 
 import js.promise.Promise
-import kotlin.js.JsString
 
 open external class XRAnchor
 private constructor() {

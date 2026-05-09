@@ -3,7 +3,6 @@
 package web.geometry
 
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 /**
  * A **`DOMPoint`** object represents a 2D or 3D point in a coordinate system; it includes values for the coordinates in up to three dimensions, as well as an optional perspective value. DOMPoint is based on DOMPointReadOnly but allows its properties' values to be changed.

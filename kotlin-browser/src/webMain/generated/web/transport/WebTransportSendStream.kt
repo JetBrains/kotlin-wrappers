@@ -7,7 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
 import web.streams.WritableStream
-import kotlin.js.JsName
 
 /**
  * The **`WebTransportSendStream`** interface of the WebTransport API is a specialized WritableStream that is used to send outbound data in both unidirectional or bidirectional WebTransport streams.

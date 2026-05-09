@@ -5,7 +5,6 @@ package web.performance
 import js.numbers.UInt53
 import web.dom.Node
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsAny
 
 /**
  * The **`PerformanceEventTiming`** interface of the Event Timing API provides insights into the latency of certain event types triggered by user interaction.

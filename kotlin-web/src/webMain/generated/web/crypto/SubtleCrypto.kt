@@ -7,7 +7,6 @@ import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.*
 
 /**
  * The **`SubtleCrypto`** interface of the Web Crypto API provides a number of low-level cryptographic functions.

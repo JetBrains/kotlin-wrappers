@@ -6,7 +6,6 @@ import js.numbers.JsDouble
 import js.numbers.UInt53
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 @JsPlainObject
 external interface RTCOutboundRtpStreamStats :

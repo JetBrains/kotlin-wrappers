@@ -8,7 +8,6 @@ package web.navigator
 
 import js.internal.InternalApi
 import js.numbers.UInt53
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

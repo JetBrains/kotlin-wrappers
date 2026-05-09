@@ -2,8 +2,6 @@
 
 package web.url
 
-import kotlin.js.definedExternally
-
 /**
  * The **`URLPattern`** interface of the URL Pattern API matches URLs or parts of URLs against a pattern. The pattern can contain capturing groups that extract parts of the matched URL.
  *

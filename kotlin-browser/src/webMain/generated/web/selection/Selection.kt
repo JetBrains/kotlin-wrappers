@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import web.dom.Node
 import web.ranges.Range
 import web.ranges.StaticRange
-import kotlin.js.definedExternally
 
 /**
  * A **`Selection`** object represents the range of text selected by the user or the current position of the caret. Each document is associated with a unique selection object, which can be retrieved by document.getSelection() or window.getSelection() and then be examined and modified.

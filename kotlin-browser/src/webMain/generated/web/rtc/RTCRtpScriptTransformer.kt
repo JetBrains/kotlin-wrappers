@@ -8,9 +8,6 @@ import js.promise.await
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCRtpScriptTransformer`** interface of the WebRTC API provides a worker-side Stream API interface that a WebRTC Encoded Transform can use to modify encoded media frames in the incoming and outgoing WebRTC pipelines.

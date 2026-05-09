@@ -4,9 +4,6 @@ package web.credentials
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.toBoolean
 
 /**
  * The **`Credential`** interface of the Credential Management API provides information about an entity (usually a user) normally as a prerequisite to a trust decision.

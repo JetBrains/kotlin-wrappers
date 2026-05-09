@@ -6,9 +6,6 @@ import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.promise.await
 import web.time.EpochTimeStamp
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.toBoolean
 
 /**
  * The **`PushSubscription`** interface of the Push API provides a subscription's URL endpoint along with the public key and secrets that should be used for encrypting push messages to this subscription. This information must be passed to the application server, using any desired application-specific method.

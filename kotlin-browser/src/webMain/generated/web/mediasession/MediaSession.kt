@@ -5,8 +5,6 @@ package web.mediasession
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`MediaSession`** interface of the Media Session API allows a web page to provide custom behaviors for standard media playback interactions, and to report metadata that can be sent by the user agent to the device or operating system for presentation in standardized user interface elements.

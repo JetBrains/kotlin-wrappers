@@ -3,7 +3,6 @@
 package web.scheduling
 
 import web.abort.AbortController
-import kotlin.js.definedExternally
 
 /**
  * The **`TaskController`** interface of the Prioritized Task Scheduling API represents a controller object that can be used to both abort and change the priority of one or more prioritized tasks. If there is no need to change task priorities, then AbortController can be used instead.

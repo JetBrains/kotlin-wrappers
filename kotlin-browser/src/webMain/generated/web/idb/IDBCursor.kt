@@ -3,8 +3,6 @@
 package web.idb
 
 import js.core.Void
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`IDBCursor`** interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records in a database.

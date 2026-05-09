@@ -7,10 +7,6 @@ import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.promise.await
 import web.blob.Blob
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`ClipboardItem`** interface of the Clipboard API represents a single item format, used when reading or writing clipboard data using Clipboard.read() and Clipboard.write() respectively.

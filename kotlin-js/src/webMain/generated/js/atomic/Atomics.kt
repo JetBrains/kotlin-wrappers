@@ -6,8 +6,6 @@ import js.numbers.BigInt
 import js.typedarrays.BigInt64Array
 import js.typedarrays.Int32Array
 import js.typedarrays.TypedArray
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 external object Atomics {
     /**

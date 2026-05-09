@@ -3,8 +3,6 @@
 package web.rtc
 
 import js.collections.ReadonlyMap
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * The **`RTCStatsReport`** interface of the WebRTC API provides a statistics report for a RTCPeerConnection, RTCRtpSender, or RTCRtpReceiver.

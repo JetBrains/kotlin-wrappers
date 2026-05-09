@@ -4,7 +4,6 @@ package web.history
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`PageTransitionEvent`** event object is available inside handler functions for the pageshow and pagehide events, fired when a document is being loaded or unloaded.

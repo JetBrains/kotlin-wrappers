@@ -5,7 +5,6 @@ package web.speech
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /**
  * The **`SpeechSynthesisUtterance`** interface of the Web Speech API represents a speech request. It contains the content the speech service should read and information about how to read it (e.g., language, pitch and volume.)

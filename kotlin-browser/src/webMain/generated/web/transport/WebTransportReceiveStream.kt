@@ -6,7 +6,6 @@ import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
 import web.streams.ReadableStream
-import kotlin.js.JsName
 
 /**
  * The **`WebTransportReceiveStream`** interface of the WebTransport API is a ReadableStream that can be used to read from an incoming unidirectional or bidirectional WebTransport stream.

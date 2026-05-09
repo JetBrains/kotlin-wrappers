@@ -15,8 +15,6 @@ import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`VideoFrame`** interface of the Web Codecs API represents a frame of a video.

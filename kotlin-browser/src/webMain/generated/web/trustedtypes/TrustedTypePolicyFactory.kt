@@ -2,9 +2,6 @@
 
 package web.trustedtypes
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 /**
  * The **`TrustedTypePolicyFactory`** interface of the Trusted Types API creates policies and allows the verification of Trusted Type objects against created policies.
  *

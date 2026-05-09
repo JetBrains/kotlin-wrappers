@@ -12,8 +12,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`BaseAudioContext`** interface of the Web Audio API acts as a base definition for online and offline audio-processing graphs, as represented by AudioContext and OfflineAudioContext respectively. You wouldn't use BaseAudioContext directly — you'd use its features via one of these two inheriting interfaces.

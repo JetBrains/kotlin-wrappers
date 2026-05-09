@@ -4,7 +4,6 @@ package web.input
 
 import web.events.EventType
 import web.uievents.UIEvent
-import kotlin.js.definedExternally
 
 /**
  * The DOM **`CompositionEvent`** represents events that occur due to the user indirectly entering text.

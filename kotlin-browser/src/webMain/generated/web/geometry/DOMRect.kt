@@ -3,7 +3,6 @@
 package web.geometry
 
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 /**
  * A **`DOMRect`** describes the size and position of a rectangle.

@@ -8,8 +8,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`Performance`** interface provides access to performance-related information for the current page.

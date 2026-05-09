@@ -8,8 +8,6 @@ package web.navigator
 
 import js.array.ReadonlyArray
 import js.internal.InternalApi
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

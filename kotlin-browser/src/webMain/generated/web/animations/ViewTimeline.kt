@@ -4,7 +4,6 @@ package web.animations
 
 import web.cssom.CSSNumericValue
 import web.dom.Element
-import kotlin.js.definedExternally
 
 /**
  * The **`ViewTimeline`** interface of the Web Animations API represents a view progress timeline (see CSS scroll-driven animations for more details).

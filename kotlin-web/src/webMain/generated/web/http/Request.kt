@@ -5,7 +5,6 @@ package web.http
 import web.abort.AbortSignal
 import web.abort.AbortableLike
 import web.url.URL
-import kotlin.js.definedExternally
 
 /**
  * The **`Request`** interface of the Fetch API represents a resource request.

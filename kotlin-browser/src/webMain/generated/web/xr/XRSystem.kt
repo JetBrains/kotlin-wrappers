@@ -8,10 +8,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-import kotlin.js.toBoolean
 
 open external class XRSystem
 private constructor() :

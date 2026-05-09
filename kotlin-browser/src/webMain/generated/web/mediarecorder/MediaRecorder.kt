@@ -8,7 +8,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.mediastreams.MediaStream
-import kotlin.js.definedExternally
 
 /**
  * The **`MediaRecorder`** interface of the MediaStream Recording API provides functionality to easily record media. It is created using the MediaRecorder() constructor.

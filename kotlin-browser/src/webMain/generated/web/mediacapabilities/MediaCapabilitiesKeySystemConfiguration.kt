@@ -5,7 +5,6 @@ package web.mediacapabilities
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.mediakey.MediaKeysRequirement
-import kotlin.js.JsString
 
 @JsPlainObject
 external interface MediaCapabilitiesKeySystemConfiguration {

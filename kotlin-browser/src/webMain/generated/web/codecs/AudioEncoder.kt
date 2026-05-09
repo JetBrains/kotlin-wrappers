@@ -10,7 +10,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
 
 /**
  * The **`AudioEncoder`** interface of the WebCodecs API encodes AudioData objects.

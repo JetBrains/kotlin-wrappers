@@ -7,7 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
-import kotlin.js.JsName
 
 /**
  * The **`OfflineAudioContext`** interface is an AudioContext interface representing an audio-processing graph built from linked together AudioNodes. In contrast with a standard AudioContext, an OfflineAudioContext doesn't render the audio to the device hardware; instead, it generates it, as fast as it can, and outputs the result to an AudioBuffer.

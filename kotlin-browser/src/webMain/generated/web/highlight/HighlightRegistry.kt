@@ -4,8 +4,6 @@ package web.highlight
 
 import js.array.ReadonlyArray
 import js.collections.MutableMapLike
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`HighlightRegistry`** interface of the CSS Custom Highlight API is used to register Highlight objects to be styled using the API. It is accessed via CSS.highlights.

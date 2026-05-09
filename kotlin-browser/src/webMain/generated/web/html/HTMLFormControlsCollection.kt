@@ -3,7 +3,6 @@
 package web.html
 
 import web.dom.Element
-import kotlin.js.JsAny
 
 /**
  * The **`HTMLFormControlsCollection`** interface represents a collection of HTML form control elements, returned by the HTMLFormElement interface's elements property.

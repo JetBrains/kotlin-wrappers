@@ -3,7 +3,6 @@
 package web.mediasession
 
 import js.array.ReadonlyArray
-import kotlin.js.definedExternally
 
 /**
  * The **`MediaMetadata`** interface of the Media Session API allows a web page to provide rich media metadata for display in a platform UI.

@@ -7,8 +7,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.url.URL
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`Clients`** interface provides access to Client objects. Access it via self.clients within a service worker.

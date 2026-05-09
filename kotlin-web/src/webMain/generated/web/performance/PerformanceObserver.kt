@@ -3,8 +3,6 @@
 package web.performance
 
 import js.array.ReadonlyArray
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`PerformanceObserver`** interface is used to observe performance measurement events and be notified of new performance entries as they are recorded in the browser's performance timeline.

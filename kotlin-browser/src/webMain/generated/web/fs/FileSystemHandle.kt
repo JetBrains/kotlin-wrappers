@@ -5,9 +5,6 @@ package web.fs
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.toBoolean
 
 /**
  * The **`FileSystemHandle`** interface of the File System API is an object which represents a file or directory entry. Multiple handles can represent the same entry. For the most part you do not work with FileSystemHandle directly but rather its child interfaces FileSystemFileHandle and FileSystemDirectoryHandle.

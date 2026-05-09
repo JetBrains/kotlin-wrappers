@@ -4,7 +4,6 @@ package web.keyboard
 
 import web.events.EventType
 import web.uievents.UIEvent
-import kotlin.js.definedExternally
 
 /**
  * **`KeyboardEvent`** objects describe a user interaction with the keyboard; each event describes a single interaction between the user and a key (or combination of a key with modifier keys) on the keyboard. The event type (keydown, keypress, or keyup) identifies what kind of keyboard activity occurred.

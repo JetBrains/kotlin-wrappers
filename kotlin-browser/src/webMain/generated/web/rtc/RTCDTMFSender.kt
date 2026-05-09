@@ -5,7 +5,6 @@ package web.rtc
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCDTMFSender`** interface provides a mechanism for transmitting DTMF codes on a WebRTC RTCPeerConnection. You gain access to the connection's RTCDTMFSender through the RTCRtpSender.dtmf property on the audio track you wish to send DTMF with.

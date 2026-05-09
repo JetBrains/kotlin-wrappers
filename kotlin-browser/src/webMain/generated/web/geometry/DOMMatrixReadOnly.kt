@@ -8,8 +8,6 @@ import js.numbers.JsDouble
 import js.serialization.Serializable
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`DOMMatrixReadOnly`** interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The DOMMatrix interface — which is based upon DOMMatrixReadOnly—adds mutability, allowing you to alter the matrix after creating it.

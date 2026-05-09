@@ -7,8 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCRtpSender`** interface provides the ability to control and obtain details about how a particular MediaStreamTrack is encoded and sent to a remote peer.

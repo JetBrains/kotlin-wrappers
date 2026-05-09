@@ -8,7 +8,6 @@ package web.navigator
 
 import js.internal.InternalApi
 import web.url.URL
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

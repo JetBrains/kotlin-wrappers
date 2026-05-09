@@ -3,7 +3,6 @@
 package js.decorators
 
 import js.objects.PropertyKey
-import kotlin.js.JsAny
 
 /**
  * Context provided to a class getter decorator.

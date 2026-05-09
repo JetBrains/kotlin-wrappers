@@ -13,9 +13,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`WebSocket`** object provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.

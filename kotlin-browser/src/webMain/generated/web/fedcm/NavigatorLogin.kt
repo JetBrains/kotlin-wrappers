@@ -5,7 +5,6 @@ package web.fedcm
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
 
 /**
  * The **`NavigatorLogin`** interface of the Federated Credential Management (FedCM) API defines login functionality for federated identity providers (IdPs). Specifically, it enables a federated identity provider (IdP) to set its login status when a user signs into or out of the IdP.

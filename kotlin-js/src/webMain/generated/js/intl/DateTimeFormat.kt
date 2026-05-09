@@ -7,9 +7,6 @@ import js.date.Date
 import js.numbers.BigInt
 import js.numbers.Int53
 import js.temporal.*
-import kotlin.js.JsQualifier
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 @JsQualifier("Intl")
 open external class DateTimeFormat(

@@ -8,7 +8,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.html.MediaProvider
 import web.url.URLSource
-import kotlin.js.definedExternally
 
 /**
  * The **`MediaSource`** interface of the Media Source Extensions API represents a source of media data for an HTMLMediaElement object. A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.

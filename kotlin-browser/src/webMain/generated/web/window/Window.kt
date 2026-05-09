@@ -50,8 +50,6 @@ import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
 import web.xr.XRSessionEvent
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`Window`** interface represents a window containing a DOM document; the document property points to the DOM document loaded in that window.

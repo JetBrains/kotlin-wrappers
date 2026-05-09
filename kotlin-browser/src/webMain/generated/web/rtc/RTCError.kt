@@ -3,7 +3,6 @@
 package web.rtc
 
 import web.errors.DOMException
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCError`** interface describes an error which has occurred while handling WebRTC operations. It's based upon the standard DOMException interface that describes general DOM errors.

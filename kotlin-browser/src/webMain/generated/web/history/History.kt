@@ -3,8 +3,6 @@
 package web.history
 
 import web.url.URL
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`History`** interface of the History API allows manipulation of the browser session history, that is the pages visited in the tab or frame that the current page is loaded in.

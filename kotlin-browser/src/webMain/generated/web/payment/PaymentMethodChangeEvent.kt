@@ -3,8 +3,6 @@
 package web.payment
 
 import web.events.EventType
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`PaymentMethodChangeEvent`** interface of the Payment Request API describes the paymentmethodchange event which is fired by some payment handlers when the user switches payment instruments (e.g., a user selects a "store" card to make a purchase while using Apple Pay).

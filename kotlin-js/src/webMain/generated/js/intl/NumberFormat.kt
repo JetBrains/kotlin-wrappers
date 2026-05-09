@@ -4,9 +4,6 @@ package js.intl
 
 import js.array.ReadonlyArray
 import js.numbers.BigInt
-import kotlin.js.JsQualifier
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 @JsQualifier("Intl")
 open external class NumberFormat(

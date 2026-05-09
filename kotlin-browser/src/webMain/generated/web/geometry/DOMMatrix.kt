@@ -8,7 +8,6 @@ import js.numbers.JsDouble
 import js.serialization.Serializable
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
-import kotlin.js.definedExternally
 
 /**
  * The **`DOMMatrix`** interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and translation. It is a mutable version of the DOMMatrixReadOnly interface. The interface is available inside web workers.

@@ -5,8 +5,6 @@ package web.fonts
 import js.buffer.BufferSource
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`FontFace`** interface of the CSS Font Loading API represents a single usable font face.

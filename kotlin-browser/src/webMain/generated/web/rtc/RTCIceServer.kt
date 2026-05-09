@@ -3,7 +3,6 @@
 package web.rtc
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface RTCIceServer {

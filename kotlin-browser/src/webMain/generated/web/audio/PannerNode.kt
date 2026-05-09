@@ -2,8 +2,6 @@
 
 package web.audio
 
-import kotlin.js.definedExternally
-
 /**
  * The **`PannerNode`** interface defines an audio-processing object that represents the location, direction, and behavior of an audio source signal in a simulated physical space. This AudioNode uses right-hand Cartesian coordinates to describe the source's position as a vector and its orientation as a 3D directional cone.
  *

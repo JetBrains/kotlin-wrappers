@@ -5,7 +5,6 @@ package web.viewtransition
 import web.events.Event
 import web.events.EventType
 import web.navigation.NavigationActivation
-import kotlin.js.definedExternally
 
 /**
  * The **`PageSwapEvent`** event object is made available inside handler functions for the pageswap event.

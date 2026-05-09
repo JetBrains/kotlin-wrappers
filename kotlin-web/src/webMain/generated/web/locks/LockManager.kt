@@ -4,8 +4,6 @@ package web.locks
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 /**
  * The **`LockManager`** interface of the Web Locks API provides methods for requesting a new Lock object and querying for an existing Lock object. To get an instance of LockManager, call navigator.locks.

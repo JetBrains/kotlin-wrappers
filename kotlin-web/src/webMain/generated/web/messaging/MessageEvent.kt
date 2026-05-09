@@ -5,8 +5,6 @@ package web.messaging
 import js.array.ReadonlyArray
 import web.events.Event
 import web.events.EventType
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`MessageEvent`** interface represents a message received by a target object.

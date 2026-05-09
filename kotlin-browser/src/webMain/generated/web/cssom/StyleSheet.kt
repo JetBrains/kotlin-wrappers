@@ -2,8 +2,6 @@
 
 package web.cssom
 
-import kotlin.js.JsAny
-
 /**
  * An object implementing the **`StyleSheet`** interface represents a single style sheet. CSS style sheets will further implement the more specialized CSSStyleSheet interface.
  *

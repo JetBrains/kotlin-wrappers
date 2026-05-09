@@ -11,8 +11,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`SerialPort`** interface of the Web Serial API provides access to a serial port on the host device.

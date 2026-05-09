@@ -2,6 +2,4 @@
 
 package web.mediastreams
 
-import kotlin.js.JsAny
-
 typealias ConstrainULong = JsAny /* number | ConstrainULongRange */

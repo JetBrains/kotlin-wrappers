@@ -7,7 +7,6 @@ import js.array.Tuple2
 import js.internal.InternalApi
 import js.objects.ReadonlyRecord
 import js.reflect.unsafeCast
-import kotlin.js.JsString
 
 @SubclassOptInRequired(InternalApi::class)
 external interface HeadersInit

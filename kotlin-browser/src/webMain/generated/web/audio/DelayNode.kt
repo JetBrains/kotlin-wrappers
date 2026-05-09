@@ -2,8 +2,6 @@
 
 package web.audio
 
-import kotlin.js.definedExternally
-
 /**
  * The **`DelayNode`** interface represents a delay-line; an AudioNode audio-processing module that causes a delay between the arrival of an input data and its propagation to the output.
  *

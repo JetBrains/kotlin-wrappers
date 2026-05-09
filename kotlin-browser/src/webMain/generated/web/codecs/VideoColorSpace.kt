@@ -2,8 +2,6 @@
 
 package web.codecs
 
-import kotlin.js.definedExternally
-
 /**
  * The **`VideoColorSpace`** interface of the WebCodecs API represents the color space of a video.
  *

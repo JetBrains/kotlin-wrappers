@@ -11,7 +11,6 @@ import web.gpu.GPUCopyExternalImageSource
 import web.http.CrossOrigin
 import web.http.FetchPriority
 import web.http.ReferrerPolicy
-import kotlin.js.JsName
 
 /**
  * The **`HTMLImageElement`** interface represents an HTML <img> element, providing the properties and methods used to manipulate image elements.

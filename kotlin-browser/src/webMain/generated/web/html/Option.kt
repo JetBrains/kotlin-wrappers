@@ -2,8 +2,6 @@
 
 package web.html
 
-import kotlin.js.definedExternally
-
 external class Option(
     text: String = definedExternally,
     value: String = definedExternally,

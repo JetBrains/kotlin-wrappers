@@ -3,7 +3,6 @@
 package web.navigation
 
 import web.url.URL
-import kotlin.js.definedExternally
 
 /**
  * The **`NavigationPrecommitController`** interface of the Navigation API is passed as an argument to a navigation precommit handler callback.

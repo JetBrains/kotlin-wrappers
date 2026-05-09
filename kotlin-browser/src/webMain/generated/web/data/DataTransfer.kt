@@ -5,8 +5,6 @@ package web.data
 import js.array.ReadonlyArray
 import web.dom.Element
 import web.file.FileList
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`DataTransfer`** object is used to hold any data transferred between contexts, such as a drag and drop operation, or clipboard read/write. It may hold one or more data items, each of one or more data types.

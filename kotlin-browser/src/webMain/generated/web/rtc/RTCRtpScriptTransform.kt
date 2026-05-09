@@ -4,8 +4,6 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import web.workers.Worker
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCRtpScriptTransform`** interface of the WebRTC API is used to insert a WebRTC Encoded Transform (a TransformStream running in a worker thread) into the WebRTC sender and receiver pipelines.

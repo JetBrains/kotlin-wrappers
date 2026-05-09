@@ -2,8 +2,6 @@
 
 package web.gpu
 
-import kotlin.js.definedExternally
-
 /**
  * The **`GPUCommandEncoder`** interface of the WebGPU API represents an encoder that collects a sequence of GPU commands to be issued to the GPU.
  * Available only in secure contexts.

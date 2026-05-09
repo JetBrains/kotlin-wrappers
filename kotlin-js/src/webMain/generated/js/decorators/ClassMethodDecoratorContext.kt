@@ -4,7 +4,6 @@ package js.decorators
 
 import js.function.JsFunction
 import js.objects.PropertyKey
-import kotlin.js.JsAny
 
 /**
  * Context provided to a class method decorator.

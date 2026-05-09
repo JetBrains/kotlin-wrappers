@@ -3,8 +3,6 @@
 package web.streams
 
 import js.serialization.Transferable
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`TransformStream`** interface of the Streams API represents a concrete implementation of the pipe chain transform stream concept.

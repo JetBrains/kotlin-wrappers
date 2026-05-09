@@ -3,7 +3,6 @@
 package web.animations
 
 import web.dom.Element
-import kotlin.js.definedExternally
 
 /**
  * The **`ScrollTimeline`** interface of the Web Animations API represents a scroll progress timeline (see CSS scroll-driven animations for more details).

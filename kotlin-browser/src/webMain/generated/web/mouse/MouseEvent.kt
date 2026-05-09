@@ -6,7 +6,6 @@ import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
 import web.uievents.UIEvent
-import kotlin.js.definedExternally
 
 /**
  * The **`MouseEvent`** interface represents events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.

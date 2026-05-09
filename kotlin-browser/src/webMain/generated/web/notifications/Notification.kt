@@ -8,9 +8,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`Notification`** interface of the Notifications API is used to configure and display desktop notifications to the user.

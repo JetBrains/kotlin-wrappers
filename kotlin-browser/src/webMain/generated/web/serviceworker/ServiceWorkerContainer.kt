@@ -12,9 +12,6 @@ import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.trustedtypes.TrustedScriptURL
 import web.url.URL
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`ServiceWorkerContainer`** interface of the Service Worker API provides an object representing the service worker as an overall unit in the network ecosystem, including facilities to register, unregister and update service workers, and access the state of service workers and their registrations.

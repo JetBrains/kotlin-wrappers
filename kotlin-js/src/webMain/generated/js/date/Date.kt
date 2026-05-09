@@ -10,8 +10,6 @@ import js.intl.UnicodeBCP47LocaleIdentifier
 import js.numbers.Int53
 import js.serialization.Serializable
 import js.temporal.Instant
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)

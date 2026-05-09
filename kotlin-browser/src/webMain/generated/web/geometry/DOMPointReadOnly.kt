@@ -3,8 +3,6 @@
 package web.geometry
 
 import js.serialization.Serializable
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`DOMPointReadOnly`** interface specifies the coordinate and perspective fields used by DOMPoint to define a 2D or 3D point in a coordinate system.

@@ -10,9 +10,6 @@ import js.typedarrays.Float32Array
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 open external class XRSession
 private constructor() :

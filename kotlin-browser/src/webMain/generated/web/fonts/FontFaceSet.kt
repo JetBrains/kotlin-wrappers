@@ -9,8 +9,6 @@ import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`FontFaceSet`** interface of the CSS Font Loading API manages the loading of font-faces and querying of their download status.

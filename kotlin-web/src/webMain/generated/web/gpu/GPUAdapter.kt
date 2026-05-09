@@ -4,8 +4,6 @@ package web.gpu
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`GPUAdapter`** interface of the WebGPU API represents a GPU adapter. From this you can request a GPUDevice, adapter info, features, and limits.

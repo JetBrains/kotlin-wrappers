@@ -10,10 +10,6 @@ import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-import kotlin.js.toBoolean
 
 /**
  * The Payment Request API's **`PaymentRequest`** interface is the primary access point into the API, and lets web content and apps accept payments from the end user on behalf of the operator of the site or the publisher of the app.

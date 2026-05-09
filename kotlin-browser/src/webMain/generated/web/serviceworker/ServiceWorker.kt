@@ -11,8 +11,6 @@ import web.events.EventTarget
 import web.messaging.MessageEventSource
 import web.serialization.StructuredSerializeOptions
 import web.workers.AbstractWorker
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`ServiceWorker`** interface of the Service Worker API provides a reference to a service worker. Multiple browsing contexts (e.g., pages, workers, etc.) can be associated with the same service worker, each through a unique ServiceWorker object.

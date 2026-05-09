@@ -4,8 +4,6 @@ package web.errors
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`ErrorEvent`** interface represents events providing information related to errors in scripts or in files.

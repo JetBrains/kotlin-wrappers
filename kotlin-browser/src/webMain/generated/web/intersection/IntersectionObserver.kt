@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import web.dom.Element
 import web.dom.ParentNode
-import kotlin.js.definedExternally
 
 /**
  * The **`IntersectionObserver`** interface of the Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport. The ancestor element or viewport is referred to as the root.

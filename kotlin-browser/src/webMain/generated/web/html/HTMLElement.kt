@@ -18,7 +18,6 @@ import web.popover.Popover
 import web.popover.ShowPopoverOptions
 import web.popover.ToggleEvent
 import web.popover.TogglePopoverOptions
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLElement`** interface represents any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it.

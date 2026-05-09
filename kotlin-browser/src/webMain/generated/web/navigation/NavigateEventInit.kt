@@ -7,7 +7,6 @@ import web.abort.AbortSignal
 import web.dom.Element
 import web.events.EventInit
 import web.form.FormData
-import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/NavigateEvent#options)

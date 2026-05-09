@@ -2,8 +2,6 @@
 
 package web.audio
 
-import kotlin.js.definedExternally
-
 /**
  * The **`OscillatorNode`** interface represents a periodic waveform, such as a sine wave. It is an AudioScheduledSourceNode audio-processing module that causes a specified frequency of a given wave to be created—in effect, a constant tone.
  *

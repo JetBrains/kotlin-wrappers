@@ -5,7 +5,6 @@ package web.popover
 import web.dom.Element
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`ToggleEvent`** interface represents an event that fires when a popover element is toggled between being shown and hidden.

@@ -5,7 +5,6 @@ package web.performance
 import js.array.ReadonlyArray
 import js.numbers.UInt53
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsAny
 
 /**
  * The **`PerformanceResourceTiming`** interface enables retrieval and analysis of detailed network timing data regarding the loading of an application's resources. An application can use the timing metrics to determine, for example, the length of time it takes to fetch a specific resource, such as an XMLHttpRequest, <SVG>, image, or script.

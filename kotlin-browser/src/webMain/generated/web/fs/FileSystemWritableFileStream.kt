@@ -7,7 +7,6 @@ import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import web.streams.WritableStream
-import kotlin.js.JsName
 
 /**
  * The **`FileSystemWritableFileStream`** interface of the File System API is a WritableStream object with additional convenience methods, which operates on a single file on disk. The interface is accessed through the FileSystemFileHandle.createWritable() method.

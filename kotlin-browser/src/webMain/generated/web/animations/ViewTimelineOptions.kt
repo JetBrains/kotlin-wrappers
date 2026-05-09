@@ -4,7 +4,6 @@ package web.animations
 
 import kotlinx.js.JsPlainObject
 import web.dom.Element
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ViewTimelineOptions {

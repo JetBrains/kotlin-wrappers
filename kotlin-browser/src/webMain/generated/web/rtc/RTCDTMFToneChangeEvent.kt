@@ -4,7 +4,6 @@ package web.rtc
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCDTMFToneChangeEvent`** interface represents events sent to indicate that DTMF tones have started or finished playing. This interface is used by the tonechange event.

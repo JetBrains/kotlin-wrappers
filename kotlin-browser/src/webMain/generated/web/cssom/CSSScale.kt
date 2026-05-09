@@ -2,8 +2,6 @@
 
 package web.cssom
 
-import kotlin.js.definedExternally
-
 /**
  * The **`CSSScale`** interface of the CSS Typed Object Model API represents the scale() and scale3d() values of the individual transform property in CSS. It inherits properties and methods from its parent CSSTransformValue.
  *

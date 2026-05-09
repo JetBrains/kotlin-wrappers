@@ -2,8 +2,6 @@
 
 package web.gpu
 
-import kotlin.js.definedExternally
-
 /**
  * The **`GPUComputePassEncoder`** interface of the WebGPU API encodes commands related to controlling the compute shader stage, as issued by a GPUComputePipeline. It forms part of the overall encoding activity of a GPUCommandEncoder.
  * Available only in secure contexts.

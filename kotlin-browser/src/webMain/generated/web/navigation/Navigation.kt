@@ -9,7 +9,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.url.URL
-import kotlin.js.definedExternally
 
 /**
  * The **`Navigation`** interface of the Navigation API allows control over all navigation actions for the current window in one central place, including initiating navigations programmatically, examining navigation history entries, and managing navigations as they happen.

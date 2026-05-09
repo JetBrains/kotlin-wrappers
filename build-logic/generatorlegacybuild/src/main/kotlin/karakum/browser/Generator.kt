@@ -82,15 +82,6 @@ private val DEFAULT_IMPORTS = Imports(
     "js.typedarrays.Uint8Array",
     "js.typedarrays.Uint8ClampedArray",
 
-    "kotlin.js.JsAny",
-    "kotlin.js.JsBoolean",
-    "kotlin.js.JsName",
-    "kotlin.js.JsQualifier",
-    "kotlin.js.JsString",
-    "kotlin.js.definedExternally",
-    "kotlin.js.toBoolean",
-    "kotlin.js.undefined",
-
     "kotlinx.js.JsPlainObject",
 
     "web.abort.AbortController",

@@ -4,7 +4,6 @@ package web.mediakey
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
 
 /**
  * The **`MediaKeySystemAccess`** interface of the Encrypted Media Extensions API provides access to a Key System for decryption and/or a content protection provider. You can request an instance of this object using the Navigator.requestMediaKeySystemAccess() method.

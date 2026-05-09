@@ -2,8 +2,6 @@
 
 package web.audio
 
-import kotlin.js.definedExternally
-
 /**
  * The **`ConvolverNode`** interface is an AudioNode that performs a Linear Convolution on a given AudioBuffer, often used to achieve a reverb effect. A ConvolverNode always has exactly one input and one output.
  *

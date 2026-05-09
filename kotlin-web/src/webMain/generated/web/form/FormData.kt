@@ -9,8 +9,6 @@ import js.iterable.JsIterator
 import web.blob.Blob
 import web.events.EventTarget
 import web.http.BodyInit
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`FormData`** interface provides a way to construct a set of key/value pairs representing form fields and their values, which can be sent using the fetch(), XMLHttpRequest.send() or navigator.sendBeacon() methods. It uses the same format a form would use if the encoding type were set to "multipart/form-data".

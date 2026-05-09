@@ -7,8 +7,6 @@ import js.numbers.JsDouble
 import js.numbers.JsUInt
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 @JsPlainObject
 external interface AudioWorkletNodeOptions :

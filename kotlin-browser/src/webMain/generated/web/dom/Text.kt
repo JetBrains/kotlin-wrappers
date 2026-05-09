@@ -6,7 +6,6 @@ import web.components.Slottable
 import web.dnd.DragEvent
 import web.events.EventInstance
 import web.pointer.PointerEvent
-import kotlin.js.definedExternally
 
 /**
  * The **`Text`** interface represents a text node in a DOM tree.

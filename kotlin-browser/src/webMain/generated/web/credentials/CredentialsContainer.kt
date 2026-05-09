@@ -9,8 +9,6 @@ import web.abort.AbortController
 import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`CredentialsContainer`** interface of the Credential Management API exposes methods to request credentials and notify the user agent when events such as successful sign in or sign out happen. This interface is accessible from Navigator.credentials.

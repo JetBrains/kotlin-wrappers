@@ -5,7 +5,6 @@ package web.command
 import web.dom.Element
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`CommandEvent`** interface represents an event notifying the user when a button element with valid commandForElement and command attributes is about to invoke an interactive element.

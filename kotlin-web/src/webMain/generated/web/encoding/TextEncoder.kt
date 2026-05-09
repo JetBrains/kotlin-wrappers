@@ -5,7 +5,6 @@ package web.encoding
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.typedarrays.Uint8Array
-import kotlin.js.definedExternally
 
 /**
  * The **`TextEncoder`** interface enables you to encode a JavaScript string using UTF-8.

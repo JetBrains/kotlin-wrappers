@@ -4,8 +4,6 @@ package web.streams
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsAny
-import kotlin.js.JsName
 
 /**
  * The **`ReadableStreamDefaultReader`** interface of the Streams API represents a default reader that can be used to read stream data supplied from a network (such as a fetch request).

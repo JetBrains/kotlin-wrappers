@@ -2,8 +2,6 @@
 
 package web.geolocation
 
-import kotlin.js.JsAny
-
 /**
  * The **`GeolocationCoordinates`** interface represents the position and altitude of the device on Earth, as well as the accuracy with which these properties are calculated. The geographic position information is provided in terms of World Geodetic System coordinates (WGS84).
  * Available only in secure contexts.

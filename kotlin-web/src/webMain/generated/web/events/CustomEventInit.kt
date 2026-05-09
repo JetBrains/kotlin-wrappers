@@ -3,7 +3,6 @@
 package web.events
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent/CustomEvent#options)

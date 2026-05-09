@@ -4,7 +4,6 @@ package web.xr
 
 import js.array.ReadonlyArray
 import web.gamepad.Gamepad
-import kotlin.js.JsString
 
 /**
  * Represents an XR input source, which is any input mechanism which allows the user to perform

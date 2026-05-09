@@ -12,7 +12,6 @@ import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import web.pip.PictureInPictureEvent
 import web.pip.PictureInPictureWindow
-import kotlin.js.JsName
 
 /**
  * Implemented by the <video> element, the **`HTMLVideoElement`** interface provides special properties and methods for manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.

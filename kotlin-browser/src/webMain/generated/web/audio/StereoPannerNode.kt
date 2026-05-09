@@ -2,8 +2,6 @@
 
 package web.audio
 
-import kotlin.js.definedExternally
-
 /**
  * The **`StereoPannerNode`** interface of the Web Audio API represents a simple stereo panner node that can be used to pan an audio stream left or right. It is an AudioNode audio-processing module that positions an incoming audio stream in a stereo image using a low-cost equal-power panning algorithm.
  *

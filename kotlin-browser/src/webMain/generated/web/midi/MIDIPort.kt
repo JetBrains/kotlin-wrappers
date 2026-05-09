@@ -7,7 +7,6 @@ import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
 
 /**
  * The **`MIDIPort`** interface of the Web MIDI API represents a MIDI input or output port.

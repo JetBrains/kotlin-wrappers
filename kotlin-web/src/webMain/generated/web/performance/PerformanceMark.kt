@@ -2,9 +2,6 @@
 
 package web.performance
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 /**
  * **`PerformanceMark`** is an interface for PerformanceEntry objects with an entryType of "mark".
  *

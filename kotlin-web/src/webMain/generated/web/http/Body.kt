@@ -15,10 +15,6 @@ import js.typedarrays.Uint8Array
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

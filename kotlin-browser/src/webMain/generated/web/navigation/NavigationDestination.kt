@@ -3,7 +3,6 @@
 package web.navigation
 
 import js.numbers.Int53
-import kotlin.js.JsAny
 
 /**
  * The **`NavigationDestination`** interface of the Navigation API represents the destination being navigated to in the current navigation.

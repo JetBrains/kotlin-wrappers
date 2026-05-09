@@ -7,7 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import web.mediastreams.MediaStreamTrack
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsName
 
 /**
  * The **`RTCRtpReceiver`** interface of the WebRTC API manages the reception and decoding of data for a MediaStreamTrack on an RTCPeerConnection.

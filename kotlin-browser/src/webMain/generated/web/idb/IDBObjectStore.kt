@@ -6,9 +6,6 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.numbers.JsInt
 import web.dom.DOMStringList
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`IDBObjectStore`** interface of the IndexedDB API represents an object store in a database. Records within an object store are sorted according to their keys. This sorting enables fast insertion, look-up, and ordered retrieval.

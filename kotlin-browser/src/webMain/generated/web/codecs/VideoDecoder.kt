@@ -10,7 +10,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
 
 /**
  * The **`VideoDecoder`** interface of the WebCodecs API decodes chunks of video.

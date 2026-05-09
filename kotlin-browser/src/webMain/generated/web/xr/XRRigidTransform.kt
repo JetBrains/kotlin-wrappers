@@ -4,7 +4,6 @@ package web.xr
 
 import js.typedarrays.Float32Array
 import web.geometry.DOMPointReadOnly
-import kotlin.js.definedExternally
 
 /**
  * A transform described by a position and orientation. When interpreting an

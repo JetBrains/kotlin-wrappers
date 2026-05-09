@@ -9,8 +9,6 @@ import web.events.Event
 import web.events.EventInstance
 import web.html.HTMLMediaElement
 import web.mediastreams.MediaStream
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`AudioContext`** interface represents an audio-processing graph built from audio modules linked together, each represented by an AudioNode.

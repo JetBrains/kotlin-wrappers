@@ -4,7 +4,6 @@ package web.viewtransition
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`PageRevealEvent`** event object is made available inside handler functions for the pagereveal event.

@@ -37,8 +37,6 @@ import web.useractivation.UserActivation
 import web.vibration.VibratePattern
 import web.wakelock.WakeLock
 import web.xr.XRSystem
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`Navigator`** interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.

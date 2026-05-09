@@ -2,6 +2,4 @@
 
 package js.intl
 
-import kotlin.js.JsString
-
 typealias NumberFormatOptionsCurrencyDisplay = JsString /* keyof NumberFormatOptionsCurrencyDisplayRegistry */

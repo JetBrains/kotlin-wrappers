@@ -15,9 +15,6 @@ import web.http.BodyInit
 import web.images.ImageBitmapSource
 import web.streams.ReadableStream
 import web.url.URLSource
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`Blob`** interface represents a blob, which is a file-like object of immutable, raw data; they can be read as text or binary data, or converted into a ReadableStream so its methods can be used for processing the data.

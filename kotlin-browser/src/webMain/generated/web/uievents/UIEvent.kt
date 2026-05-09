@@ -5,7 +5,6 @@ package web.uievents
 import web.events.Event
 import web.events.EventType
 import web.window.Window
-import kotlin.js.definedExternally
 
 /**
  * The **`UIEvent`** interface represents simple user interface events. It is part of the UI Events API, which includes various event types and interfaces related to user interactions.

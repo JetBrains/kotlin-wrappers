@@ -7,8 +7,6 @@ import js.buffer.ArrayBufferView
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`ReadableStreamBYOBReader`** interface of the Streams API defines a reader for a ReadableStream that supports zero-copy reading from an underlying byte source. It is used for efficient copying from underlying sources where the data is delivered as an "anonymous" sequence of bytes, such as files.

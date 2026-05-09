@@ -7,10 +7,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.credentials.Credential
-import kotlin.js.JsAny
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.toBoolean
 
 /**
  * The **`PublicKeyCredential`** interface provides information about a public key / private key pair, which is a credential for logging in to a service using an un-phishable and data-breach resistant asymmetric key pair instead of a password. It inherits from Credential, and is part of the Web Authentication API extension to the Credential Management API.

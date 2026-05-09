@@ -7,7 +7,6 @@
 package web.push
 
 import js.internal.InternalApi
-import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

@@ -2,8 +2,6 @@
 
 package web.assembly
 
-import kotlin.js.JsQualifier
-
 /**
  * The **`WebAssembly.Tag`** object defines a type of a WebAssembly exception that can be thrown to/from WebAssembly code.
  *

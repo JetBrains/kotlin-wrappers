@@ -6,7 +6,6 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.core.Void
 import js.errors.JsError
-import kotlin.js.definedExternally
 
 /**
  * The **`ReadableByteStreamController`** interface of the Streams API represents a controller for a readable byte stream. It allows control of the state and internal queue of a ReadableStream with an underlying byte source, and enables efficient zero-copy transfer of data from the underlying source to a consumer when the stream's internal queue is empty.

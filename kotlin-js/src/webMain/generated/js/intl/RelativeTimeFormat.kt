@@ -3,9 +3,6 @@
 package js.intl
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 @JsQualifier("Intl")
 open external class RelativeTimeFormat(

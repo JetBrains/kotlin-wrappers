@@ -13,10 +13,6 @@ import js.promise.Promise
 import js.promise.await
 import web.events.EventTarget
 import web.images.PredefinedColorSpace
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

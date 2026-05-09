@@ -4,8 +4,6 @@ package web.history
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * **`PopStateEvent`** is an interface for the popstate event.

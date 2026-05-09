@@ -6,7 +6,6 @@ import js.errors.JsError
 import js.errors.JsErrorName
 import js.reflect.unsafeCast
 import js.serialization.Serializable
-import kotlin.js.definedExternally
 
 /**
  * The **`DOMException`** interface represents an abnormal event (called an exception) that occurs as a result of calling a method or accessing a property of a web API. This is how error conditions are described in web APIs.

@@ -3,7 +3,6 @@
 package web.xr
 
 import web.gl.WebGLRenderingContext
-import kotlin.js.definedExternally
 
 open external class XRWebGLBinding(
     session: XRSession,

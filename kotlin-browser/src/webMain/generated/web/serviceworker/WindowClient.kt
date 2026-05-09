@@ -6,7 +6,6 @@ import js.promise.Promise
 import js.promise.await
 import web.dom.DocumentVisibilityState
 import web.url.URL
-import kotlin.js.JsName
 
 /**
  * The **`WindowClient`** interface of the ServiceWorker API represents the scope of a service worker client that is a document in a browsing context, controlled by an active worker. The service worker client independently selects and uses a service worker for its own loading and sub-resources.

@@ -5,8 +5,6 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.serialization.Transferable
 import web.serialization.StructuredSerializeOptions
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`Client`** interface represents an executable context such as a Worker, or a SharedWorker. Window clients are represented by the more-specific WindowClient. You can get Client/WindowClient objects from methods such as Clients.matchAll() and Clients.get().

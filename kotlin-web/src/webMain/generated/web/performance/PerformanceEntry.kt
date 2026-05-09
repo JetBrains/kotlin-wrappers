@@ -3,7 +3,6 @@
 package web.performance
 
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsAny
 
 /**
  * The **`PerformanceEntry`** object encapsulates a single performance metric that is part of the browser's performance timeline.

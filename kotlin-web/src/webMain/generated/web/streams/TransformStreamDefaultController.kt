@@ -3,8 +3,6 @@
 package web.streams
 
 import js.errors.JsError
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`TransformStreamDefaultController`** interface of the Streams API provides methods to manipulate the associated ReadableStream and WritableStream.

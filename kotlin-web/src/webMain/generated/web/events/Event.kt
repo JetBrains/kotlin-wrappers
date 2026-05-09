@@ -4,7 +4,6 @@ package web.events
 
 import js.array.ReadonlyArray
 import web.time.DOMHighResTimeStamp
-import kotlin.js.definedExternally
 
 /**
  * The **`Event`** interface represents an event which takes place on an EventTarget.

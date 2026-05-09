@@ -4,7 +4,6 @@ package web.history
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`HashChangeEvent`** interface represents events that fire when the fragment identifier of the URL has changed.

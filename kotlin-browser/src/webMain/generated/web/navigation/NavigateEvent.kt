@@ -7,8 +7,6 @@ import web.dom.Element
 import web.events.Event
 import web.events.EventType
 import web.form.FormData
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`NavigateEvent`** interface of the Navigation API is the event object for the navigate event, which fires when any type of navigation is initiated (this includes usage of History API features like History.go()). NavigateEvent provides access to information about that navigation, and allows developers to intercept and control the navigation handling.

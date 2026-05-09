@@ -4,7 +4,6 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
-import kotlin.js.definedExternally
 
 /**
  * The **`WaveShaperNode`** interface represents a non-linear distorter.

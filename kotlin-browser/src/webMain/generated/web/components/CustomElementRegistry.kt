@@ -7,8 +7,6 @@ import js.promise.await
 import web.dom.Node
 import web.dom.TagName
 import web.html.HTMLElement
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`CustomElementRegistry`** interface provides methods for registering custom elements and querying registered elements. To get an instance of it, use the window.customElements property. To create a scoped registry, use the CustomElementRegistry() constructor.

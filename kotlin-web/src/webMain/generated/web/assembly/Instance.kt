@@ -2,9 +2,6 @@
 
 package web.assembly
 
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
-
 /**
  * A **`WebAssembly.Instance`** object is a stateful, executable instance of a WebAssembly.Module. Instance objects contain all the Exported WebAssembly functions that allow calling into WebAssembly code from JavaScript.
  *

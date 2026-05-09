@@ -11,8 +11,6 @@ import js.internal.InternalApi
 import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

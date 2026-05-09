@@ -8,9 +8,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`FileSystemDirectoryHandle`** interface of the File System API provides a handle to a file system directory.

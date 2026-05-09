@@ -3,8 +3,6 @@
 package web.http
 
 import web.url.URL
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`Response`** interface of the Fetch API represents the response to a request.

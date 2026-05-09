@@ -4,7 +4,6 @@ package web.url
 
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface URLPatternResult {

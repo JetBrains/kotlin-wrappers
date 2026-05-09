@@ -4,7 +4,6 @@ package web.history
 
 import kotlinx.js.JsPlainObject
 import web.events.EventInit
-import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/PopStateEvent#options)

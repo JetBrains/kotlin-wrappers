@@ -6,9 +6,6 @@ import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
 import web.permissions.PermissionState
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`PushManager`** interface of the Push API provides a way to receive notifications from third-party servers as well as request URLs for push notifications.

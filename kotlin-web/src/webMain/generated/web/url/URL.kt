@@ -3,7 +3,6 @@
 package web.url
 
 import web.origin.OriginSource
-import kotlin.js.definedExternally
 
 /**
  * The **`URL`** interface is used to parse, construct, normalize, and encode URLs. It works by providing properties which allow you to easily read and modify the components of a URL.

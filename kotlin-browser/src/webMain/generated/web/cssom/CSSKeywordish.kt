@@ -2,6 +2,4 @@
 
 package web.cssom
 
-import kotlin.js.JsAny
-
 typealias CSSKeywordish = JsAny /* string | CSSKeywordValue */

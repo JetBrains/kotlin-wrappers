@@ -9,8 +9,6 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
 import web.serialization.StructuredSerializeOptions
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`MessagePort`** interface of the Channel Messaging API represents one of the two ports of a MessageChannel, allowing messages to be sent from one port and listening out for them arriving at the other.

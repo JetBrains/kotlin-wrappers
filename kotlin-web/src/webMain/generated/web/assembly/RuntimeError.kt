@@ -3,8 +3,6 @@
 package web.assembly
 
 import js.errors.JsError
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 @JsQualifier("WebAssembly")
 external class RuntimeError(

@@ -28,7 +28,6 @@ import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
 import web.uievents.UIEvent
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

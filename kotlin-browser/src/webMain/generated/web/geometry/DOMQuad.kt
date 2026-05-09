@@ -3,8 +3,6 @@
 package web.geometry
 
 import js.serialization.Serializable
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * A **`DOMQuad`** is a collection of four DOMPoints defining the corners of an arbitrary quadrilateral. Returning DOMQuads lets getBoxQuads() return accurate information even when arbitrary 2D or 3D transforms are present. It has a handy bounds attribute returning a DOMRectReadOnly for those cases where you just want an axis-aligned bounding rectangle.

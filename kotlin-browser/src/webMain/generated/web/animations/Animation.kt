@@ -7,7 +7,6 @@ import web.cssom.CSSNumberish
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /**
  * The **`Animation`** interface of the Web Animations API represents a single animation player and provides playback controls and a timeline for an animation node or source.

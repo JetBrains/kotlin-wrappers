@@ -2,8 +2,6 @@
 
 package web.trustedtypes
 
-import kotlin.js.JsAny
-
 /**
  * The **`TrustedTypePolicy`** interface of the Trusted Types API defines a group of functions which create `TrustedType` objects.
  *

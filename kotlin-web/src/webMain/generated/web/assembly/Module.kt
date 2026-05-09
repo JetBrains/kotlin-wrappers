@@ -5,8 +5,6 @@ package web.assembly
 import js.array.ReadonlyArray
 import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBuffer
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 /**
  * A **`WebAssembly.Module`** object contains stateless WebAssembly code that has already been compiled by the browser — this can be efficiently shared with Workers, and instantiated multiple times.

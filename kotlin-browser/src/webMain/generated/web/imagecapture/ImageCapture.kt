@@ -7,8 +7,6 @@ import js.promise.await
 import web.blob.Blob
 import web.images.ImageBitmap
 import web.mediastreams.MediaStreamTrack
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`ImageCapture`** interface of the MediaStream Image Capture API provides methods to enable the capture of images or photos from a camera or other photographic device. It provides an interface for capturing images from a photographic device referenced through a valid MediaStreamTrack.

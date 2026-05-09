@@ -7,8 +7,6 @@ import js.buffer.AllowSharedBufferSource
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`GPUQueue`** interface of the WebGPU API controls execution of encoded commands on the GPU.

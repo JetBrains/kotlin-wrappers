@@ -3,7 +3,6 @@
 package web.assembly
 
 import js.buffer.ArrayBufferLike
-import kotlin.js.JsQualifier
 
 /**
  * The **`WebAssembly.Memory`** object is a resizable ArrayBuffer or SharedArrayBuffer that holds raw bytes of memory accessed by a WebAssembly.Instance.

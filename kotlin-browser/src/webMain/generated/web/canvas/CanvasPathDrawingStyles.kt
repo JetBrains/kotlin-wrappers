@@ -9,7 +9,6 @@ package web.canvas
 import js.array.ReadonlyArray
 import js.internal.InternalApi
 import js.numbers.JsDouble
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

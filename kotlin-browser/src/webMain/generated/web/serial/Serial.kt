@@ -8,8 +8,6 @@ import js.promise.await
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`Serial`** interface of the Web Serial API provides attributes and methods for finding and connecting to serial ports from a web page.

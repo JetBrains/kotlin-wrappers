@@ -8,8 +8,6 @@ import js.collections.ReadonlyMap
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
 import web.http.BodyInit
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`URLSearchParams`** interface defines utility methods to work with the query string of a URL.

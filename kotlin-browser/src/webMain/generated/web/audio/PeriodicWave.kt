@@ -2,8 +2,6 @@
 
 package web.audio
 
-import kotlin.js.definedExternally
-
 /**
  * The **`PeriodicWave`** interface defines a periodic waveform that can be used to shape the output of an OscillatorNode.
  *

@@ -10,7 +10,6 @@ import js.internal.InternalApi
 import web.errors.ErrorEvent
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

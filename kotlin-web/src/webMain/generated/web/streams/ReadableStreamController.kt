@@ -3,7 +3,6 @@
 package web.streams
 
 import js.internal.InternalApi
-import kotlin.js.JsAny
 
 /**
  * Union of:

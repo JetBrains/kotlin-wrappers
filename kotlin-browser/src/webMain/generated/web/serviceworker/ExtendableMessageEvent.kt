@@ -5,8 +5,6 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import web.events.EventType
 import web.messaging.MessagePort
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`ExtendableMessageEvent`** interface of the Service Worker API represents the event object of a message event fired on a service worker (when a message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.

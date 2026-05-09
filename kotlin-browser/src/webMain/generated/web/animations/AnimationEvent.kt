@@ -4,7 +4,6 @@ package web.animations
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`AnimationEvent`** interface represents events providing information related to animations.

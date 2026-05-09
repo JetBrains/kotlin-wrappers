@@ -9,7 +9,6 @@ package web.messaging
 import js.internal.InternalApi
 import web.events.EventHandler
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

@@ -4,7 +4,6 @@ package web.cssom
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`MediaQueryListEvent`** object stores information on the changes that have happened to a MediaQueryList object — instances are available as the event object on a function referenced by a change event.

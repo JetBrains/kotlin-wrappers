@@ -17,9 +17,6 @@ import web.gpu.GPUCopyExternalImageSource
 import web.images.ImageBitmap
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * When using the <canvas> element or the Canvas API, rendering, animation, and user interaction usually happen on the main execution thread of a web application. The computation relating to canvas animations and rendering can have a significant impact on application performance.

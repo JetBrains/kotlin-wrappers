@@ -2,6 +2,4 @@
 
 package web.assembly
 
-import kotlin.js.JsAny
-
 typealias ImportValue = JsAny /* ExportValue | number */

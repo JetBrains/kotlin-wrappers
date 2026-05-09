@@ -2,9 +2,6 @@
 
 package web.geolocation
 
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-
 /**
  * The **`Geolocation`** interface represents an object able to obtain the position of the device programmatically. It gives Web content access to the location of the device. This allows a website or app to offer customized results based on the user's location.
  *

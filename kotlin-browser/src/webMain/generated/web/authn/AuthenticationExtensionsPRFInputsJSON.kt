@@ -4,7 +4,6 @@ package web.authn
 
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFInputsJSON {

@@ -5,7 +5,6 @@ package web.aria
 import js.array.ReadonlyArray
 import js.internal.InternalApi
 import web.dom.Element
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

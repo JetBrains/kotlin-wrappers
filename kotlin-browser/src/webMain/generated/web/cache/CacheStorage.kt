@@ -8,7 +8,6 @@ import js.promise.await
 import web.http.Request
 import web.http.Response
 import web.url.URL
-import kotlin.js.*
 
 /**
  * The **`CacheStorage`** interface represents the storage for Cache objects.

@@ -3,7 +3,6 @@
 package web.xr
 
 import web.html.HTMLVideoElement
-import kotlin.js.definedExternally
 
 open external class XRMediaBinding(
     sesion: XRSession,

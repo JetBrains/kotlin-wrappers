@@ -12,7 +12,6 @@ import web.animations.Animation
 import web.components.CustomElementRegistry
 import web.cssom.CSSStyleSheet
 import web.cssom.StyleSheetList
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

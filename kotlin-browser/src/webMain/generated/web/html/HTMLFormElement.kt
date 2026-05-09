@@ -15,8 +15,6 @@ import web.form.FormEncType
 import web.form.FormMethod
 import web.form.SubmitEvent
 import web.window.WindowTarget
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLFormElement`** interface represents a <form> element in the DOM. It allows access to—and, in some cases, modification of—aspects of the form, as well as access to its component elements.

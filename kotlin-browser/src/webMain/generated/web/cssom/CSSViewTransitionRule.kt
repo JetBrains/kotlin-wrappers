@@ -3,7 +3,6 @@
 package web.cssom
 
 import js.array.ReadonlyArray
-import kotlin.js.JsString
 
 /**
  * The **`CSSViewTransitionRule`** interface represents a CSS @view-transition at-rule.

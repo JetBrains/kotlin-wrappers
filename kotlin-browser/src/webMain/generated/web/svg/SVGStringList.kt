@@ -4,7 +4,6 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
-import kotlin.js.JsString
 
 /**
  * The **`SVGStringList`** interface defines a list of strings.

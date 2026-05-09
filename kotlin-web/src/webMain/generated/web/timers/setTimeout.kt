@@ -2,7 +2,6 @@
 
 package web.timers
 
-import kotlin.js.definedExternally
 import kotlin.time.Duration
 import kotlin.time.DurationUnit.MILLISECONDS
 
@@ -20,5 +19,5 @@ fun setTimeout(
 ): Timeout =
     setTimeout(
         handler = handler,
-        timeout = timeout.toInt(MILLISECONDS)
+        timeout = timeout.toInt(MILLISECONDS),
     )

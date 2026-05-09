@@ -6,8 +6,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.url.URL
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`Worklet`** interface is a lightweight version of Web Workers and gives developers access to low-level parts of the rendering pipeline.

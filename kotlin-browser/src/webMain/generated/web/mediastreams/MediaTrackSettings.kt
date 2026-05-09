@@ -3,7 +3,6 @@
 package web.mediastreams
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface MediaTrackSettings {

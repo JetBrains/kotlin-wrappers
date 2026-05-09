@@ -8,9 +8,6 @@ import js.errors.JsError
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Transferable
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`WritableStream`** interface of the Streams API provides a standard abstraction for writing streaming data to a destination, known as a sink. This object comes with built-in backpressure and queuing.

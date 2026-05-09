@@ -4,7 +4,6 @@ package web.html
 
 import web.events.Event
 import web.events.EventInstance
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLDialogElement`** interface provides methods to manipulate <dialog> elements. It inherits properties and methods from the HTMLElement interface.

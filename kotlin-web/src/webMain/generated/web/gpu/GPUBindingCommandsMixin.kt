@@ -10,7 +10,6 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.internal.InternalApi
 import js.typedarrays.Uint32Array
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

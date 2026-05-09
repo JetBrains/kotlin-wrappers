@@ -4,7 +4,6 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
-import kotlin.js.definedExternally
 
 /**
  * The **`AudioBuffer`** interface represents a short audio asset residing in memory, created from an audio file using the AudioContext.decodeAudioData() method, or from raw data using AudioContext.createBuffer(). Once put into an AudioBuffer, the audio can then be played by being passed into an AudioBufferSourceNode.

@@ -19,7 +19,6 @@ import web.promise.PromiseRejectionEvent
 import web.storage.StorageEvent
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

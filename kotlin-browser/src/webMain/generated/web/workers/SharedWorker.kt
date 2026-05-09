@@ -8,7 +8,6 @@ import web.events.EventTarget
 import web.messaging.MessagePort
 import web.trustedtypes.TrustedScriptURL
 import web.url.URL
-import kotlin.js.definedExternally
 
 /**
  * The **`SharedWorker`** interface represents a specific kind of worker that can be accessed from several browsing contexts, such as multiple windows or iframes. Shared workers implement a different interface than dedicated workers, have a different global scope (SharedWorkerGlobalScope), and their constructor is not exposed in DedicatedWorkerGlobalScope, so they cannot be instantiated from dedicated workers.

@@ -16,8 +16,6 @@ import web.remoteplayback.RemotePlayback
 import web.vtt.TextTrack
 import web.vtt.TextTrackKind
 import web.vtt.TextTrackList
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLMediaElement`** interface adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.

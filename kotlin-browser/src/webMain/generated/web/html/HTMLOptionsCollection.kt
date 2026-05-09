@@ -2,8 +2,6 @@
 
 package web.html
 
-import kotlin.js.definedExternally
-
 /**
  * The **`HTMLOptionsCollection`** interface represents a collection of <option> HTML elements (in document order) and offers methods and properties for selecting from the list as well as optionally altering its items. This object is returned only by the options property of select.
  *

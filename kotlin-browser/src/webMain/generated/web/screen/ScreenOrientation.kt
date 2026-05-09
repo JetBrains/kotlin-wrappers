@@ -9,7 +9,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsName
 
 /**
  * The **`ScreenOrientation`** interface of the Screen Orientation API provides information about the current orientation of the document.

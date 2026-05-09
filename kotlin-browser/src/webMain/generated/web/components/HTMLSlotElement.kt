@@ -9,7 +9,6 @@ import web.dom.Text
 import web.events.Event
 import web.events.EventInstance
 import web.html.HTMLElement
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLSlotElement`** interface of the Shadow DOM API enables access to the name and assigned nodes of an HTML <slot> element.

@@ -2,6 +2,4 @@
 
 package web.crypto
 
-import kotlin.js.JsString
-
 typealias NamedCurve = JsString

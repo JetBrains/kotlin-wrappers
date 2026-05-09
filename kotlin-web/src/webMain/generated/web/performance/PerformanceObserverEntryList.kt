@@ -2,8 +2,6 @@
 
 package web.performance
 
-import kotlin.js.definedExternally
-
 /**
  * The **`PerformanceObserverEntryList`** interface is a list of performance events that were explicitly observed via the observe() method.
  *

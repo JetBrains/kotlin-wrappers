@@ -7,7 +7,6 @@ import web.dom.Node
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.trustedtypes.TrustedHTML
-import kotlin.js.definedExternally
 
 /**
  * The **`Range`** interface represents a fragment of a document that can contain nodes and parts of text nodes.

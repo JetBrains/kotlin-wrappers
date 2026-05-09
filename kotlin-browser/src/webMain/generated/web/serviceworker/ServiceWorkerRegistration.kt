@@ -14,10 +14,6 @@ import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
 import web.push.PushManagerAttribute
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-import kotlin.js.toBoolean
 
 /**
  * The **`ServiceWorkerRegistration`** interface of the Service Worker API represents the service worker registration. You register a service worker to control one or more pages that share the same origin.

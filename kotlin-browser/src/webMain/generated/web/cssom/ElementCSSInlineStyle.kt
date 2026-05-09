@@ -7,7 +7,6 @@
 package web.cssom
 
 import js.internal.InternalApi
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

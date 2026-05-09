@@ -11,8 +11,6 @@ import web.events.EventTarget
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamConstraints
 import web.mediastreams.MediaTrackSupportedConstraints
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`MediaDevices`** interface of the Media Capture and Streams API provides access to connected media input devices like cameras and microphones, as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.

@@ -6,7 +6,6 @@ import web.errors.ErrorEvent
 import web.events.EventHandler
 import web.events.EventInstance
 import web.messaging.MessagePort
-import kotlin.js.definedExternally
 
 /**
  * The **`AudioWorkletNode`** interface of the Web Audio API represents a base class for a user-defined AudioNode, which can be connected to an audio routing graph along with other nodes. It has an associated AudioWorkletProcessor, which does the actual audio processing in a Web Audio rendering thread.

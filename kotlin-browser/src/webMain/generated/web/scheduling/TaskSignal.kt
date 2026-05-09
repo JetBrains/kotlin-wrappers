@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import web.abort.AbortSignal
 import web.events.EventHandler
 import web.events.EventInstance
-import kotlin.js.definedExternally
 
 /**
  * The **`TaskSignal`** interface of the Prioritized Task Scheduling API represents a signal object that allows you to communicate with a prioritized task, and abort it or change the priority (if required) via a TaskController object.

@@ -7,7 +7,6 @@ import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange
 import web.uievents.UIEvent
-import kotlin.js.definedExternally
 
 /**
  * The **`InputEvent`** interface represents an event notifying the user of editable content changes.

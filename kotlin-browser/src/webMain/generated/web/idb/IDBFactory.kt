@@ -6,9 +6,6 @@ import js.array.ReadonlyArray
 import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`IDBFactory`** interface of the IndexedDB API lets applications asynchronously access the indexed databases. The object that implements the interface is window.indexedDB. You open — that is, create and access — and delete a database with this object, and not directly with IDBFactory.

@@ -4,7 +4,6 @@ package web.dom
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
-import kotlin.js.JsString
 
 /**
  * The **`DOMStringList`** interface is a legacy type returned by some APIs and represents a non-modifiable list of strings (DOMString).

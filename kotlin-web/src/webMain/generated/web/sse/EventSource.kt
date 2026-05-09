@@ -9,8 +9,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`EventSource`** interface is web content's interface to server-sent events.

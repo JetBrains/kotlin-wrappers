@@ -8,8 +8,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.window.Window
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`DocumentPictureInPicture`** interface of the Document Picture-in-Picture API is the entry point for creating and handling document picture-in-picture windows.

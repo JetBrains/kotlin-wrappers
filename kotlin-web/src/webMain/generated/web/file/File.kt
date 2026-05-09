@@ -7,7 +7,6 @@ import js.serialization.Serializable
 import web.blob.Blob
 import web.blob.BlobPart
 import web.time.EpochTimeStamp
-import kotlin.js.definedExternally
 
 /**
  * The **`File`** interface provides information about files and allows JavaScript in a web page to access their content.

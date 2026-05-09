@@ -4,7 +4,6 @@ package web.push
 
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
-import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.

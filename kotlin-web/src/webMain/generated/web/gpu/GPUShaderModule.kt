@@ -4,7 +4,6 @@ package web.gpu
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
 
 /**
  * The **`GPUShaderModule`** interface of the WebGPU API represents an internal shader module object, a container for WGSL shader code that can be submitted to the GPU for execution by a pipeline.

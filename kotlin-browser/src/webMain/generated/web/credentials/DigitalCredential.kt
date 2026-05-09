@@ -2,8 +2,6 @@
 
 package web.credentials
 
-import kotlin.js.JsAny
-
 /**
  * Available only in secure contexts.
  */

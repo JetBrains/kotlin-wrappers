@@ -18,7 +18,6 @@ import web.popover.PopoverTargetAttributes
 import web.selection.SelectionDirection
 import web.validation.ValidityState
 import web.window.WindowName
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLInputElement`** interface provides special properties and methods for manipulating the options, layout, and presentation of <input> elements.

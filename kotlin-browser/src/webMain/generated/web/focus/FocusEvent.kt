@@ -5,7 +5,6 @@ package web.focus
 import web.events.EventTarget
 import web.events.EventType
 import web.uievents.UIEvent
-import kotlin.js.definedExternally
 
 /**
  * The **`FocusEvent`** interface represents focus-related events, including focus, blur, focusin, and focusout.

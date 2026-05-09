@@ -3,7 +3,6 @@
 package web.abort
 
 import js.errors.JsError
-import kotlin.js.definedExternally
 
 /**
  * The **`AbortController`** interface represents a controller object that allows you to abort one or more Web requests as and when desired.

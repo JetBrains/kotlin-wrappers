@@ -2,9 +2,6 @@
 
 package web.fs
 
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-
 /**
  * The **`FileSystemFileEntry`** interface of the File and Directory Entries API represents a file in a file system. It offers properties describing the file's attributes, as well as the file() method, which creates a File object that can be used to read the file.
  *

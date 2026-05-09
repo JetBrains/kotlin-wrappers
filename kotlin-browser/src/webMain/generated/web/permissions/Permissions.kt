@@ -4,7 +4,6 @@ package web.permissions
 
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
 
 /**
  * The **`Permissions`** interface of the Permissions API provides the core Permission API functionality, such as methods for querying and revoking permissions

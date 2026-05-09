@@ -2,8 +2,6 @@
 
 package web.gpu
 
-import kotlin.js.definedExternally
-
 /**
  * The **`GPURenderBundleEncoder`** interface of the WebGPU API is used to pre-record bundles of commands.
  * Available only in secure contexts.

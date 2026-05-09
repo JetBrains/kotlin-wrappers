@@ -3,8 +3,6 @@
 package web.geometry
 
 import js.serialization.Serializable
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`DOMRectReadOnly`** interface specifies the standard properties (also used by DOMRect) to define a rectangle whose properties are immutable.

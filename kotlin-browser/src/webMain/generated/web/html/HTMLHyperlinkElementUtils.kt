@@ -8,7 +8,6 @@ package web.html
 
 import js.internal.InternalApi
 import web.origin.OriginSource
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

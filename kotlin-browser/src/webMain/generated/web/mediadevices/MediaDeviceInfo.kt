@@ -2,8 +2,6 @@
 
 package web.mediadevices
 
-import kotlin.js.JsAny
-
 /**
  * The **`MediaDeviceInfo`** interface of the Media Capture and Streams API contains information that describes a single media input or output device.
  * Available only in secure contexts.

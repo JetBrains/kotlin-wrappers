@@ -5,7 +5,6 @@ package web.streams
 import js.errors.JsError
 import web.abort.AbortSignal
 import web.abort.AbortableLike
-import kotlin.js.definedExternally
 
 /**
  * The **`WritableStreamDefaultController`** interface of the Streams API represents a controller allowing control of a WritableStream's state. When constructing a WritableStream, the underlying sink is given a corresponding WritableStreamDefaultController instance to manipulate.

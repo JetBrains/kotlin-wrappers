@@ -3,7 +3,6 @@
 package web.animations
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface EffectTiming {

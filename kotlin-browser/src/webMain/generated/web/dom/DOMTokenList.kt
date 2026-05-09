@@ -6,8 +6,6 @@ import js.array.Tuple2
 import js.collections.ListLike
 import js.iterable.JsIterator
 import js.numbers.JsInt
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`DOMTokenList`** interface represents a set of space-separated tokens. Such a set is returned by Element.classList or HTMLLinkElement.relList, and many others.

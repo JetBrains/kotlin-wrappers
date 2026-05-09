@@ -11,9 +11,6 @@ import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.internal.InternalApi
 import js.numbers.UInt53
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

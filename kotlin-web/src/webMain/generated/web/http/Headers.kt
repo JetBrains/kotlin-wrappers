@@ -7,8 +7,6 @@ import js.array.Tuple2
 import js.collections.MapLike
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`Headers`** interface of the Fetch API allows you to perform various actions on HTTP request and response headers. These actions include retrieving, setting, adding to, and removing headers from the list of the request's headers.

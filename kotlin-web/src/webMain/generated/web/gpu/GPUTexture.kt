@@ -2,8 +2,6 @@
 
 package web.gpu
 
-import kotlin.js.definedExternally
-
 /**
  * The **`GPUTexture`** interface of the WebGPU API represents a container used to store 1D, 2D, or 3D arrays of data, such as images, to use in GPU rendering operations.
  * Available only in secure contexts.

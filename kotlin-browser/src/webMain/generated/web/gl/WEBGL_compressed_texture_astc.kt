@@ -3,7 +3,6 @@
 package web.gl
 
 import js.array.ReadonlyArray
-import kotlin.js.JsString
 
 /**
  * The **`WEBGL_compressed_texture_astc`** extension is part of the WebGL API and exposes Adaptive Scalable Texture Compression (ASTC) compressed texture formats to WebGL.

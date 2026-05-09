@@ -7,8 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import js.string.JsStrings.toKotlinString
 import web.events.EventTarget
-import kotlin.js.JsName
-import kotlin.js.JsString
 
 /**
  * The **`Clipboard`** interface of the Clipboard API provides read and write access to the contents of the system clipboard. This allows a web application to implement cut, copy, and paste features.

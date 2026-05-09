@@ -5,7 +5,6 @@ package web.clipboard
 import web.data.DataTransfer
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`ClipboardEvent`** interface of the Clipboard API represents events providing information related to modification of the clipboard, that is cut, copy, and paste events.

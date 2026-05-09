@@ -8,7 +8,6 @@ package web.performance
 
 import js.internal.InternalApi
 import web.time.DOMHighResTimeStamp
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

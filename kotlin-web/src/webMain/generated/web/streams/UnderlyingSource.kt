@@ -4,7 +4,6 @@ package web.streams
 
 import js.numbers.UInt53
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface UnderlyingSource<R : JsAny?> {

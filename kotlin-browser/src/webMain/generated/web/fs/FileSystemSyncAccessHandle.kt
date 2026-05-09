@@ -5,7 +5,6 @@ package web.fs
 import js.buffer.AllowSharedBufferSource
 import js.closeable.JsCloseable
 import js.numbers.UInt53
-import kotlin.js.definedExternally
 
 /**
  * The **`FileSystemSyncAccessHandle`** interface of the File System API represents a synchronous handle to a file system entry.

@@ -8,8 +8,6 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.events.ProgressEvent
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`FileReader`** interface lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read.

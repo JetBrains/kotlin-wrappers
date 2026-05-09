@@ -9,7 +9,6 @@ package web.dom
 
 import js.internal.InternalApi
 import web.html.HTMLCollection
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

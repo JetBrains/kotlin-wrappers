@@ -3,7 +3,6 @@
 package web.performance
 
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsAny
 
 /**
  * The **`PerformanceServerTiming`** interface surfaces server metrics that are sent with the response in the Server-Timing HTTP header.

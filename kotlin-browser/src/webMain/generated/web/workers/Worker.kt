@@ -12,8 +12,6 @@ import web.messaging.MessageEventTarget
 import web.serialization.StructuredSerializeOptions
 import web.trustedtypes.TrustedScriptURL
 import web.url.URL
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 /**
  * The **`Worker`** interface of the Web Workers API represents a background task that can be created via script, which can send messages back to its creator.

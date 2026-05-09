@@ -10,7 +10,6 @@ import web.events.EventInstance
 import web.form.FormControl
 import web.selection.SelectionDirection
 import web.validation.ValidityState
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLTextAreaElement`** interface provides properties and methods for manipulating the layout and presentation of <textarea> elements.

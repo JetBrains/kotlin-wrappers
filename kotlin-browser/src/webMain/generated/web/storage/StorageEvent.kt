@@ -4,7 +4,6 @@ package web.storage
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`StorageEvent`** interface is implemented by the storage event, which is sent to a window when a storage area the window has access to is changed within the context of another document.

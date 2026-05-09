@@ -41,10 +41,6 @@ import web.window.Window
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
 import web.xr.XRSessionEvent
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.definedExternally
-import kotlin.js.toBoolean
 
 /**
  * The **`Document`** interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.

@@ -2,9 +2,6 @@
 
 package web.idb
 
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
-
 /**
  * The **`IDBKeyRange`** interface of the IndexedDB API represents a continuous interval over some data type that is used for keys. Records can be retrieved from IDBObjectStore and IDBIndex objects using keys or a range of keys. You can limit the range using lower and upper bounds. For example, you can iterate over all values of a key in the value range A–Z.
  *

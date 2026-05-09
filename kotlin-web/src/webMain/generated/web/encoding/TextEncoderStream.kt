@@ -7,7 +7,6 @@ import js.typedarrays.Uint8Array
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
-import kotlin.js.JsString
 
 /**
  * The **`TextEncoderStream`** interface of the Encoding API converts a stream of strings into bytes in the UTF-8 encoding. It is the streaming equivalent of TextEncoder. It implements the same shape as a TransformStream, allowing it to be used in ReadableStream.pipeThrough() and similar methods.

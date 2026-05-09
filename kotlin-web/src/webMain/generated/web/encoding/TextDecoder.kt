@@ -3,7 +3,6 @@
 package web.encoding
 
 import js.buffer.AllowSharedBufferSource
-import kotlin.js.definedExternally
 
 /**
  * The **`TextDecoder`** interface represents a decoder for a specific text encoding, such as UTF-8, ISO-8859-2, or GBK. A decoder takes an array of bytes as input and returns a JavaScript string.

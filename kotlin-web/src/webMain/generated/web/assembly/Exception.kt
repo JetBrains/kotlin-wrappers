@@ -3,9 +3,6 @@
 package web.assembly
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsQualifier
-import kotlin.js.definedExternally
 
 /**
  * The **`WebAssembly.Exception`** object represents a runtime exception thrown from WebAssembly to JavaScript, or thrown from JavaScript to a WebAssembly exception handler.

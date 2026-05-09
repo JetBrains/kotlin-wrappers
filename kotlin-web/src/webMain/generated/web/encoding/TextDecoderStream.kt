@@ -6,8 +6,6 @@ import js.buffer.BufferSource
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`TextDecoderStream`** interface of the Encoding API converts a stream of text in a binary encoding, such as UTF-8 etc., to a stream of strings. It is the streaming equivalent of TextDecoder. It implements the same shape as a TransformStream, allowing it to be used in ReadableStream.pipeThrough() and similar methods.

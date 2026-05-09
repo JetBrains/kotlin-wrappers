@@ -5,7 +5,6 @@ package web.audio
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
-import kotlin.js.definedExternally
 
 /**
  * The **`AudioScheduledSourceNode`** interface—part of the Web Audio API—is a parent interface for several types of audio source node interfaces which share the ability to be started and stopped, optionally at specified times. Specifically, this interface defines the start() and stop() methods, as well as the ended event.

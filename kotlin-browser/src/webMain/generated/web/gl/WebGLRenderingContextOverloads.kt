@@ -10,7 +10,6 @@ import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.internal.InternalApi
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

@@ -5,7 +5,6 @@ package web.xr
 import web.gl.WebGL2RenderingContext
 import web.gl.WebGLFramebuffer
 import web.gl.WebGLRenderingContext
-import kotlin.js.definedExternally
 
 /**
  * A layer which provides a WebGL framebuffer to render into, enabling hardware accelerated

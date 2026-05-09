@@ -7,8 +7,6 @@
 package js.intl
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.definedExternally
 
 external interface Localizable<in O : JsAny> {
     /**

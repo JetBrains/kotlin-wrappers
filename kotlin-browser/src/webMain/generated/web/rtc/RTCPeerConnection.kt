@@ -14,8 +14,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`RTCPeerConnection`** interface represents a WebRTC connection between the local computer and a remote peer. It provides methods to connect to a remote peer, maintain and monitor the connection, and close the connection once it's no longer needed.

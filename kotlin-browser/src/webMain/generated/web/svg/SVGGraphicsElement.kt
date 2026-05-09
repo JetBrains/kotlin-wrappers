@@ -4,7 +4,6 @@ package web.svg
 
 import web.geometry.DOMMatrix
 import web.geometry.DOMRect
-import kotlin.js.definedExternally
 
 /**
  * The **`SVGGraphicsElement`** interface represents SVG elements whose primary purpose is to directly render graphics into a group.

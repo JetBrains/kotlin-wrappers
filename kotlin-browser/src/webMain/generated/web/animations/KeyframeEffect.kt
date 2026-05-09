@@ -4,7 +4,6 @@ package web.animations
 
 import js.array.ReadonlyArray
 import web.dom.Element
-import kotlin.js.definedExternally
 
 /**
  * The **`KeyframeEffect`** interface of the Web Animations API lets us create sets of animatable properties and values, called keyframes. These can then be played using the Animation() constructor.

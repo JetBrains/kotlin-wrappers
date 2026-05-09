@@ -3,7 +3,6 @@
 package web.streams
 
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ReadableStreamReadResult<T : JsAny?> {

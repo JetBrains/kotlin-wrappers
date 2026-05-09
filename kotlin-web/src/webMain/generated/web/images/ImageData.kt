@@ -5,7 +5,6 @@ package web.images
 import js.serialization.Serializable
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
-import kotlin.js.definedExternally
 
 /**
  * The **`ImageData`** interface represents the underlying pixel data of an area of a <canvas> element.

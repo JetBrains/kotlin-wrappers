@@ -6,7 +6,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /**
  * The **`CloseWatcher`** interface allows a custom UI component with open and close semantics to respond to device-specific close actions in the same way as a built-in component.

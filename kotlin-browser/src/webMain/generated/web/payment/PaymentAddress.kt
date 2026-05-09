@@ -3,8 +3,6 @@
 package web.payment
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsString
 
 /**
  * The **`ContactAddress`** interface of the Contact Picker API represents a physical address. Instances of this interface are retrieved from the address property of the objects returned by ContactsManager.getProperties().

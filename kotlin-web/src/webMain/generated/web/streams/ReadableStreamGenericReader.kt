@@ -11,8 +11,6 @@ import js.errors.JsError
 import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

@@ -8,8 +8,6 @@ package web.cssom
 
 import js.array.ArrayLike
 import js.internal.InternalApi
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`CSSStyleDeclaration`** interface is the base class for objects that represent CSS declaration blocks with different supported sets of CSS style information:

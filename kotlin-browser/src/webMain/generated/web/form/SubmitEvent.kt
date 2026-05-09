@@ -5,7 +5,6 @@ package web.form
 import web.events.Event
 import web.events.EventType
 import web.html.HTMLElement
-import kotlin.js.definedExternally
 
 /**
  * The **`SubmitEvent`** interface defines the object used to represent an HTML form's submit event. This event is fired at the <form> when the form's submit action is invoked.

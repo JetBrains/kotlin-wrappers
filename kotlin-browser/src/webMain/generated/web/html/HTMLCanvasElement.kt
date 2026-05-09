@@ -12,9 +12,6 @@ import web.gpu.GPUCopyExternalImageSource
 import web.mediastreams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`HTMLCanvasElement`** interface provides properties and methods for manipulating the layout and presentation of <canvas> elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement interface.

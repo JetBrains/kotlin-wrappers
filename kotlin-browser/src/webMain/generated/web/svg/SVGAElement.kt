@@ -4,7 +4,6 @@ package web.svg
 
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
-import kotlin.js.JsString
 
 /**
  * The **`SVGAElement`** interface provides access to the properties of an <a> element, as well as methods to manipulate them.

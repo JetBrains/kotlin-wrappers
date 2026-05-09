@@ -3,7 +3,6 @@
 package web.audio
 
 import web.events.EventTarget
-import kotlin.js.definedExternally
 
 /**
  * The **`AudioNode`** interface is a generic interface for representing an audio processing module.

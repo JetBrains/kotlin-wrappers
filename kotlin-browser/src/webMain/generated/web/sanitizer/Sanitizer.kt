@@ -2,8 +2,6 @@
 
 package web.sanitizer
 
-import kotlin.js.definedExternally
-
 /**
  * The **`Sanitizer`** interface of the HTML Sanitizer API defines a configuration object that specifies what elements, attributes and comments are allowed or should be removed when inserting strings of HTML into an Element or ShadowRoot, or when parsing an HTML string into a Document.
  *

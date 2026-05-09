@@ -3,9 +3,6 @@
 package web.console
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
-import kotlin.js.JsString
-import kotlin.js.definedExternally
 
 /**
  * The **`console`** object provides access to the debugging console (e.g., the Web console in Firefox).

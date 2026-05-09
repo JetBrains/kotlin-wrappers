@@ -4,7 +4,6 @@ package web.cssom
 
 import web.events.Event
 import web.events.EventType
-import kotlin.js.definedExternally
 
 /**
  * The **`TransitionEvent`** interface represents events providing information related to transitions.

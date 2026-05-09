@@ -3,7 +3,6 @@
 package web.cssom
 
 import js.array.ReadonlyArray
-import kotlin.js.JsString
 
 /**
  * The **`CSSLayerStatementRule`** represents a @layer statement rule. Unlike CSSLayerBlockRule, it doesn't contain other rules and merely defines one or several layers by providing their names.

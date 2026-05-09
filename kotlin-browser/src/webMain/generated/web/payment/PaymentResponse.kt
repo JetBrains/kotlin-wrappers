@@ -8,9 +8,6 @@ import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import kotlin.js.JsAny
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The **`PaymentResponse`** interface of the Payment Request API is returned after a user selects a payment method and approves a payment request.

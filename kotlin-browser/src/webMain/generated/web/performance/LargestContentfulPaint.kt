@@ -4,7 +4,6 @@ package web.performance
 
 import web.dom.Element
 import web.time.DOMHighResTimeStamp
-import kotlin.js.JsAny
 
 /**
  * The **`LargestContentfulPaint`** interface provides timing information about the largest image or text paint before user input on a web page.

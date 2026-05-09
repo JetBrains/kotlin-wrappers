@@ -5,7 +5,6 @@ package web.gpu
 import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
-import kotlin.js.JsString
 
 @JsPlainObject
 external interface GPUDeviceDescriptor :

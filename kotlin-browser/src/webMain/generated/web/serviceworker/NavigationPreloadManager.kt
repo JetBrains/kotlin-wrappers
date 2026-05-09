@@ -5,7 +5,6 @@ package web.serviceworker
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
-import kotlin.js.JsName
 
 /**
  * The **`NavigationPreloadManager`** interface of the Service Worker API provides methods for managing the preloading of resources in parallel with service worker bootup.

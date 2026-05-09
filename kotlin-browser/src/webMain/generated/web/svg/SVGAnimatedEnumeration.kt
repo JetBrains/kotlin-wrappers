@@ -2,8 +2,6 @@
 
 package web.svg
 
-import kotlin.js.JsAny
-
 /**
  * The **`SVGAnimatedEnumeration`** interface describes attribute values which are constants from a particular enumeration and which can be animated.
  *

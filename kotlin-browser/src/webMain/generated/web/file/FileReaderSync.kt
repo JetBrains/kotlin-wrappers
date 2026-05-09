@@ -4,7 +4,6 @@ package web.file
 
 import js.buffer.ArrayBuffer
 import web.blob.Blob
-import kotlin.js.definedExternally
 
 /**
  * The **`FileReaderSync`** interface allows to read File or Blob objects synchronously. This interface is only available in workers as it enables synchronous I/O that could potentially block.
