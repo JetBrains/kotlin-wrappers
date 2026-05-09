@@ -14,7 +14,6 @@ import testing.library.react.render
 import testing.library.user.event.userEvent
 import kotlin.test.AfterTest
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
 // Run tests with the Default coroutine dispatcher

@@ -22,5 +22,5 @@ private suspend fun createUser(
         init = RequestInit(
             method = RequestMethod.POST,
             body = BodyInit(stringify(options)),
-        )
+        ),
     )

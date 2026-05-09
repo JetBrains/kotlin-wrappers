@@ -20,5 +20,5 @@ private suspend fun updateUser(user: User): User =
         init = RequestInit(
             method = RequestMethod.PUT,
             body = BodyInit(stringify(user)),
-        )
+        ),
     )

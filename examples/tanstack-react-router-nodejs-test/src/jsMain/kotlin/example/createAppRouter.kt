@@ -6,7 +6,7 @@ fun createAppRouter(): Router {
     return createRouter(
         options = RouterOptions(
             routeTree = buildRouteTree(),
-        )
+        ),
     )
 }
 
@@ -59,7 +59,7 @@ fun buildRouteTree(): RootRoute {
             homeRoute,
             aboutRoute,
             topicsRoute,
-            topicRoute
+            topicRoute,
         ),
     )
 

@@ -15,5 +15,5 @@ fun useDeleteUser(): DeleteUser =
 private suspend fun deleteUser(user: User): Unit =
     fetchUserData(
         id = user.id,
-        init = RequestInit(method = RequestMethod.DELETE)
+        init = RequestInit(method = RequestMethod.DELETE),
     )

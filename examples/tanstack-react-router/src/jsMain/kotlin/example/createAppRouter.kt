@@ -51,13 +51,13 @@ fun createAppRouter(): Router {
             homeRoute,
             aboutRoute,
             topicsRoute,
-            topicRoute
+            topicRoute,
         ),
     )
 
     return createRouter(
         options = RouterOptions(
             routeTree = rootRoute,
-        )
+        ),
     )
 }

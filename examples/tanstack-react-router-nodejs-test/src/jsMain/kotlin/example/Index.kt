@@ -1,6 +1,9 @@
 package example
 
-import example.testsupport.*
+import example.testsupport.INDEX_CONTAINER_ID
+import example.testsupport.INDEX_LINK_ABOUT_ID
+import example.testsupport.INDEX_LINK_HOME_ID
+import example.testsupport.INDEX_LINK_TOPICS_ID
 import react.FC
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.nav

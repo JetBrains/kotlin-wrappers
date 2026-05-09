@@ -18,7 +18,7 @@ fun useTableSelection(): TableMeta {
     val selection = useSignal(EMPTY_SELECTION)
 
     return recordOf(
-        SELECTION to selection
+        SELECTION to selection,
     )
 }
 

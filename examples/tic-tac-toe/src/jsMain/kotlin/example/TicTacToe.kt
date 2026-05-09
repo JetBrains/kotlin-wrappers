@@ -99,7 +99,7 @@ private fun calculateWinner(squares: ReadonlyArray<String?>): String? {
         intArrayOf(1, 4, 7),
         intArrayOf(2, 5, 8),
         intArrayOf(0, 4, 8),
-        intArrayOf(2, 4, 6)
+        intArrayOf(2, 4, 6),
     )
 
     for (row in lines) {

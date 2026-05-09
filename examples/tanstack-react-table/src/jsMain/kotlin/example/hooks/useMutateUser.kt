@@ -21,11 +21,11 @@ fun <O, R> useMutateUser(
             onSuccess = { _, _, _, context ->
                 context.client.invalidateQueries(
                     filters = InvalidateQueryFilters(
-                        queryKey = USERS_QUERY_KEY
-                    )
+                        queryKey = USERS_QUERY_KEY,
+                    ),
                 )
             },
-        )
+        ),
     ).mutate
 
     return unsafeCast(mutate)

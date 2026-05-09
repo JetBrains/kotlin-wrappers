@@ -10,14 +10,15 @@ kotlin {
         compilations.named("test") {
             packageJson {
                 customField(
-                    "mocha", mapOf(
+                    "mocha",
+                    mapOf(
                         "require" to arrayOf(
                             // configures coroutines default dispatcher to NodeDispatcher -- needed if using DefaultDispatcher instead of kotlinx-coroutines-test
                             projectDir.resolve("mocha-support/force-correct-default-coroutines-dispatcher.js").absolutePath,
                             // installs browser-like environment used by react-testing-library to run tests
-                            "global-jsdom/register"
-                        )
-                    )
+                            "global-jsdom/register",
+                        ),
+                    ),
                 )
             }
         }

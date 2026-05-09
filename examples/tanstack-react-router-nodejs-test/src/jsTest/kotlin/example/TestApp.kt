@@ -13,15 +13,15 @@ private fun createTestAppRouter(): Router {
     val history = createMemoryHistory(
         CreateMemoryHistoryOpts(
             initialEntries = arrayOf("/"),
-            initialIndex = 0
-        )
+            initialIndex = 0,
+        ),
     )
 
     return createRouter(
         RouterOptions(
             routeTree = buildRouteTree(),
-            history = history
-        )
+            history = history,
+        ),
     )
 }
 

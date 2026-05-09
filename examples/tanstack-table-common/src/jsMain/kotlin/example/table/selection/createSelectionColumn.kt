@@ -15,7 +15,7 @@ fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
                 SelectionHeaderCell.create {
                     value = context.table.getRowModel().rows
                 }
-            }
+            },
         )
         cell = ColumnDefTemplate { context ->
             SelectionRowCell.create {
