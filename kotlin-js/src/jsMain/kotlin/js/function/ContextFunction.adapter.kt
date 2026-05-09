@@ -10,7 +10,7 @@ private val TO_CONTEXT_FUNCTION: JsFunction<Tuple1<Function<*>>, ContextFunction
         return function(...args) {
             return source(this, ...args)
         }
-        """.trimIndent()
+        """.trimIndent(),
     )
 
 fun <C, R> ContextFunction(

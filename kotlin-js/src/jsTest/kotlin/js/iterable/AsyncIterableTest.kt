@@ -23,7 +23,7 @@ class AsyncIterableTest {
             yield await Promise.resolve(1);
             yield await Promise.resolve(2);
             yield await Promise.resolve(3);
-            """
+            """,
         )
         val asyncGenerator = createAsyncGenerator()
 
@@ -59,7 +59,7 @@ class AsyncIterableTest {
                     })
                 }
             })
-            """
+            """,
         )
         val asyncIterable = createAsyncIterable(onDispose)
 
@@ -106,7 +106,7 @@ class AsyncIterableTest {
                     })
                 }
             })
-            """
+            """,
         )
         val asyncIterable = createAsyncIterable(onCreate)
 

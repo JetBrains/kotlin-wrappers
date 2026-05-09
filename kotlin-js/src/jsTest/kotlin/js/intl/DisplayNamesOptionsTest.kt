@@ -7,7 +7,7 @@ class DisplayNamesOptionsTest {
     @Test
     fun type() {
         val options = DisplayNamesOptions(
-            type = DisplayNamesType.region
+            type = DisplayNamesType.region,
         )
 
         assertEquals<Any>("region", options.type)

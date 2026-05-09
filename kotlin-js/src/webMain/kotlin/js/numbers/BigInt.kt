@@ -13,7 +13,7 @@ import js.numbers.internal.*
 internal val POW = JsFunction<BigInt, BigInt, BigInt>(
     "base",
     "exponent",
-    "return base ** exponent"
+    "return base ** exponent",
 )
 
 @JsPrimitive("bigint")

@@ -20,7 +20,7 @@ class AsyncDisposableTest {
         return JsFunction<() -> Promise<Unit>, AsyncDisposable>(
             "onDispose",
             // language=javascript
-            "return {[Symbol.asyncDispose]: onDispose}"
+            "return {[Symbol.asyncDispose]: onDispose}",
         )(onDisposeAsync)
     }
 

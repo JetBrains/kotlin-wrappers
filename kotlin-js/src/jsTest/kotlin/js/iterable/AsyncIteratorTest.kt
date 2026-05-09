@@ -21,7 +21,7 @@ class AsyncIteratorTest {
             yield await Promise.resolve(1n);
             yield await Promise.resolve(2n);
             yield await Promise.resolve(3n);
-            """
+            """,
         )
         val asyncGenerator = createAsyncGenerator()
 

@@ -12,7 +12,7 @@ class DisposableTest {
         return JsFunction<() -> Unit, Disposable>(
             "onDispose",
             // language=javascript
-            "return {[Symbol.dispose]: onDispose}"
+            "return {[Symbol.dispose]: onDispose}",
         )(onDispose)
     }
 

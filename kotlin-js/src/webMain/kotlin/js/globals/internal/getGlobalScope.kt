@@ -13,7 +13,7 @@ fun <S : GlobalScope> getGlobalScope(
 ): S {
     val jsClass = unsafeCast<JsClass<S>>(
         globalThis[scopeClassName]
-            ?: error("Class `$scopeClassName` not found!")
+            ?: error("Class `$scopeClassName` not found!"),
     )
 
     return jsClass.cast(globalThis)
