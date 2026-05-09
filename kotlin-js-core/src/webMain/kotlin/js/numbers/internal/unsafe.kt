@@ -1,8 +1,6 @@
 package js.numbers.internal
 
 import js.internal.InternalApi
-import kotlin.js.JsAny
-import kotlin.js.js
 
 @InternalApi
 fun <T : JsAny> unsafeNegate(a: T): T =
