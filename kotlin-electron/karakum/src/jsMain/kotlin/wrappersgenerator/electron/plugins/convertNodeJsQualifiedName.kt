@@ -21,11 +21,11 @@ val convertNodeJsQualifiedName = createPlugin { node, _, render ->
     } ?: nullable {
         ensure(isPropertyAccessExpression(node))
 
-        val expression =  node.expression
+        val expression = node.expression
         ensure(isIdentifier(expression))
         ensure(expression.text == "NodeJS")
 
-        val name =  node.name
+        val name = node.name
         ensure(isIdentifier(name))
 
         when (name.text) {

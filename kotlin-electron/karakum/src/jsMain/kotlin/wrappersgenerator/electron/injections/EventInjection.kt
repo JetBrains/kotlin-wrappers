@@ -89,12 +89,12 @@ private val overriddenEvents = mapOf(
             "will-resize",
         ),
         "WebContentsView" to setOf(
-            "bounds-changed"
+            "bounds-changed",
         ),
         "ImageView" to setOf(
             "bounds-changed",
         ),
-    )
+    ),
 )
 
 private val ignoredEvents = emptyMap<String, Map<String, Set<String>>>()
@@ -175,7 +175,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
             ensure(isInterfaceDeclaration(interfaceNode))
 
             method
-        }
+        },
     )
 
     val listener = ensureNotNull(method.parameters.asArray().getOrNull(1))
@@ -252,7 +252,7 @@ class EventInjection : Injection {
             } ?: nullable {
                 ensure(isMethodSignature(node))
                 node
-            }
+            },
         )
 
         val name = ensureNotNull(method.name)
@@ -284,7 +284,7 @@ class EventInjection : Injection {
             } ?: nullable {
                 ensure(isInterfaceDeclaration(node))
                 node.name
-            }
+            },
         )
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
@@ -307,7 +307,7 @@ class EventInjection : Injection {
                 }
             } else {
                 events[symbol]
-            }
+            },
         )
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
@@ -344,7 +344,7 @@ class EventInjection : Injection {
                     }
 
                     val key = camelize(
-                        eventName.replace("\\W".toRegex(), "-")
+                        eventName.replace("\\W".toRegex(), "-"),
                     )
 
                     val tuple = if (parameters.isNotEmpty()) {

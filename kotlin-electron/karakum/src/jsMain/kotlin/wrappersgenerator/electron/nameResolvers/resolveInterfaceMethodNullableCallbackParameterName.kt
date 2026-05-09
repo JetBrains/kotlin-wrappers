@@ -24,7 +24,7 @@ fun resolveInterfaceMethodNullableCallbackParameterName(node: Node, context: Con
                 if (isParenthesizedTypeNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isUnionTypeNode(union))
     ensure(union.types.asArray().size >= 2)

@@ -64,6 +64,7 @@ val convertOverriddenPropertySignature = createPlugin { node, context, render ->
                     aliasSignature,
                 ).joinToString("\n")
             }
+
             is Alias -> {
                 val alias = propertyOverride.alias
                 val jsName = "@JsName(\"$name\")"
@@ -74,6 +75,7 @@ val convertOverriddenPropertySignature = createPlugin { node, context, render ->
                     aliasSignature,
                 ).joinToString("\n")
             }
+
             Preserve -> "override ${modifier}${name}: $type"
         }
     }

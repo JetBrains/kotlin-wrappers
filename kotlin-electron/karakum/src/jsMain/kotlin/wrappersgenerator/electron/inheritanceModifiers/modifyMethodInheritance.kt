@@ -140,7 +140,7 @@ fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = n
                         || name.text == "toggleTabBar"
                         || name.text == "unhookAllWindowMessages"
                         || name.text == "unhookWindowMessage"
-                        || name.text == "unmaximize"
+                        || name.text == "unmaximize",
             )
 
             val classNode = ensureNotNull(node.getParentOrNull())
@@ -148,7 +148,7 @@ fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = n
             ensure(classNode.name?.text == "BaseWindow")
 
             "open"
-        }  ?: nullable {
+        } ?: nullable {
             ensure(
                 name.text == "blur"
                         || name.text == "center"
@@ -273,7 +273,7 @@ fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = n
                         || name.text == "toggleTabBar"
                         || name.text == "unhookAllWindowMessages"
                         || name.text == "unhookWindowMessage"
-                        || name.text == "unmaximize"
+                        || name.text == "unmaximize",
             )
 
             val classNode = ensureNotNull(node.getParentOrNull())

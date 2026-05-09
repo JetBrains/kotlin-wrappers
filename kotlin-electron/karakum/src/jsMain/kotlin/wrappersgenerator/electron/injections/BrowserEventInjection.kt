@@ -23,8 +23,8 @@ private val ignoredEvents = mapOf(
     "electron.d.ts" to mapOf(
         "WebviewTag" to setOf(
             "context-menu",
-        )
-    )
+        ),
+    ),
 )
 
 private val eventContainerMap = emptyMap<String, String>()
@@ -103,7 +103,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
             ensure(isInterfaceDeclaration(interfaceNode))
 
             method
-        }
+        },
     )
 
     val listener = ensureNotNull(method.parameters.asArray().getOrNull(1))
@@ -180,7 +180,7 @@ class BrowserEventInjection : Injection {
             } ?: nullable {
                 ensure(isMethodSignature(node))
                 node
-            }
+            },
         )
 
         val name = ensureNotNull(method.name)
@@ -200,7 +200,7 @@ class BrowserEventInjection : Injection {
             } ?: nullable {
                 ensure(isInterfaceDeclaration(node))
                 node.name
-            }
+            },
         )
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
@@ -223,7 +223,7 @@ class BrowserEventInjection : Injection {
                 }
             } else {
                 events[symbol]
-            }
+            },
         )
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
@@ -260,7 +260,7 @@ class BrowserEventInjection : Injection {
                     }
 
                     val key = camelize(
-                        eventName.replace("\\W".toRegex(), "-")
+                        eventName.replace("\\W".toRegex(), "-"),
                     )
 
                     """

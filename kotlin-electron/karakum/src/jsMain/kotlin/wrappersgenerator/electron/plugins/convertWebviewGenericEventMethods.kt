@@ -16,7 +16,7 @@ val convertWebviewGenericEventMethods = createPlugin { node, _, _ ->
         ensure(isIdentifier(name))
         ensure(
             name.text == "addEventListener"
-                    || name.text == "removeEventListener"
+                    || name.text == "removeEventListener",
         )
 
         val firstParameter = ensureNotNull(node.parameters.asArray().firstOrNull())

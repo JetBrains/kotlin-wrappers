@@ -10,7 +10,7 @@ val convertNodeRequire = createPlugin { node, _, _ ->
 
         ensure(
             node.name.text == "NodeRequire"
-                    || node.name.text == "NodeRequireFunction"
+                    || node.name.text == "NodeRequireFunction",
         )
 
         ""

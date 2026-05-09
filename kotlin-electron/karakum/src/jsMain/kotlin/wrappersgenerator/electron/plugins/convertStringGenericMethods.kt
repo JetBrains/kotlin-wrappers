@@ -17,7 +17,7 @@ val convertStringGenericMethods = createPlugin { node, context, render ->
         ensure(isIdentifier(nameNode))
         ensure(
             nameNode.text == "getUserDefault"
-                    || nameNode.text == "setUserDefault"
+                    || nameNode.text == "setUserDefault",
         )
 
         val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -35,8 +35,8 @@ val convertStringGenericMethods = createPlugin { node, context, render ->
                 template = { parameters, _ ->
                     // remove generics
                     "fun ${name}(${parameters}): $returnType"
-                }
-            )
+                },
+            ),
         )
     } ?: nullable {
         ensure(isTypeReferenceNode(node))
@@ -55,7 +55,7 @@ val convertStringGenericMethods = createPlugin { node, context, render ->
         ensure(isIdentifier(methodName))
         ensure(
             methodName.text == "getUserDefault"
-                    || methodName.text == "setUserDefault"
+                    || methodName.text == "setUserDefault",
         )
 
         "String"

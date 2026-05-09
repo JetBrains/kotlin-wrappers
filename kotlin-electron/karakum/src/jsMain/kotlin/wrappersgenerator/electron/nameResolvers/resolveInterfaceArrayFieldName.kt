@@ -26,7 +26,7 @@ fun resolveInterfaceArrayFieldName(node: Node, context: Context) = nullable {
     ensure(isIdentifier(typeName))
     ensure(
         typeName.text == "Array"
-                || typeName.text == "ReadonlyArray"
+                || typeName.text == "ReadonlyArray",
     )
 
     val property = ensureNotNull(typeScriptService.getParent(typeReference))

@@ -12,7 +12,7 @@ val convertUnknownRecordKeyType = createPlugin { node, _, _ ->
     nullable {
         ensure(
             node.kind == SyntaxKind.UnknownKeyword
-                    || node.kind == SyntaxKind.AnyKeyword
+                    || node.kind == SyntaxKind.AnyKeyword,
         )
 
         val typeReference = ensureNotNull(node.getParentOrNull())

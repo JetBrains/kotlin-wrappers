@@ -38,7 +38,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
                         || name.text == "snapped"
                         || name.text == "tabbingIdentifier"
                         || name.text == "title"
-                        || name.text == "visibleOnAllWorkspaces"
+                        || name.text == "visibleOnAllWorkspaces",
             )
 
             val classNode = ensureNotNull(node.getParentOrNull())
@@ -69,7 +69,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
                         || name.text == "snapped"
                         || name.text == "tabbingIdentifier"
                         || name.text == "title"
-                        || name.text == "visibleOnAllWorkspaces"
+                        || name.text == "visibleOnAllWorkspaces",
             )
 
             val classNode = ensureNotNull(node.getParentOrNull())
