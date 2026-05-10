@@ -18,17 +18,17 @@ suspend fun main(args: ReadonlyArray<String>) {
         plugins = listOf(
             NumberPlugin(
                 defaultNumberType = "Int",
-                matchers = emptyArray<Pair<String, (Node, Context) -> Boolean>>()
+                matchers = emptyArray<Pair<String, (Node, Context) -> Boolean>>(),
             ),
             PromiseResultPlugin(),
 
-            convertRouterHistoryProperty
+            convertRouterHistoryProperty,
         )
         annotations = listOf(
             JsPlainObjectAnnotation(
                 ignore = match {
                     match(::isInterfaceDeclaration, withName("RouterHistory"))
-                }
+                },
             ),
         )
         mutabilityModifiers = listOf(
@@ -38,7 +38,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         input = listOf("dist/esm/index.d.ts")
         isolatedOutputPackage = true
         packageNameMapper = mapOf(
-            "dist/esm/index" to "/"
+            "dist/esm/index" to "/",
         )
     }
 }

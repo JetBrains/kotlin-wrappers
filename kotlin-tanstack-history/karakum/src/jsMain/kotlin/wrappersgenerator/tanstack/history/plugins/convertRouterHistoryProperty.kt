@@ -37,8 +37,8 @@ val convertRouterHistoryProperty = createPlugin { node, context, render ->
                 strategy = ParameterDeclarationStrategy.function,
                 template = { parameters, _ ->
                     "fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
-                }
-            )
+                },
+            ),
         )
     }
 }

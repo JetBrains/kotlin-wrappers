@@ -14,5 +14,5 @@ val modifyRouterHistoryMutability = resolve(
                 isPropertySignature(node)
                         && node.type?.let { !isFunctionTypeNode(it) } ?: true
             }
-    }
+    },
 )
