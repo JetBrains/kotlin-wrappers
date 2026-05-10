@@ -13,7 +13,7 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
         ensure(isIdentifier(typeName))
         ensure(
             typeName.text == "RenderOptions"
-                    || typeName.text == "RenderResult"
+                    || typeName.text == "RenderResult",
         )
         ensure(node.typeArguments == null)
 

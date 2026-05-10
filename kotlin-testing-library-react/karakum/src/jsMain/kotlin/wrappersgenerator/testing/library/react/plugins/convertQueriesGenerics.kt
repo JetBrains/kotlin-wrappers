@@ -77,7 +77,7 @@ val convertQueriesGenerics = createPlugin { node, context, render ->
         ensure(
             typeName.text == "RenderOptions"
                     || typeName.text == "RenderResult"
-                    || typeName.text == "RenderHookOptions"
+                    || typeName.text == "RenderHookOptions",
         )
 
         val typeArguments = node.typeArguments?.asArray()

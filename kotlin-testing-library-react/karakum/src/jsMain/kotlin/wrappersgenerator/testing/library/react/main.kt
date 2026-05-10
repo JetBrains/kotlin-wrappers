@@ -28,7 +28,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         injections = listOf(
-            injectBoundFunction
+            injectBoundFunction,
         )
 
         annotations = listOf(
@@ -38,7 +38,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         inheritanceModifiers = listOf(
-            ::modifyMethodInheritance
+            ::modifyMethodInheritance,
         )
 
         input = listOf("types/**/*.d.ts")
@@ -58,13 +58,13 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         isolatedOutputPackage = true
         packageNameMapper = mapOf(
-            "types/index/" to "/"
+            "types/index/" to "/",
         )
         importMapper = mapOf(
             "@testing-library/dom" to ruleOf(
                 "prettyFormat" to "",
                 "queries" to "",
-                ".+" to "testing.library.dom."
+                ".+" to "testing.library.dom.",
             ),
         )
     }

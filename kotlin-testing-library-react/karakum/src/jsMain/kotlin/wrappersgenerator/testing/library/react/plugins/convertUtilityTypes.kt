@@ -14,7 +14,7 @@ val convertUtilityTypes = createPlugin { node, _, render ->
         ensure(isIdentifier(typeName))
         ensure(
             typeName.text == "Partial"
-                || typeName.text == "Omit"
+                    || typeName.text == "Omit",
         )
 
         val typeArguments = ensureNotNull(node.typeArguments?.asArray())
