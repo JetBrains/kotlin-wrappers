@@ -7,7 +7,7 @@ class RequestInitTest {
     @Test
     fun type() {
         val options = RequestInit(
-            method = RequestMethod.PUT
+            method = RequestMethod.PUT,
         )
 
         assertEquals<Any?>("PUT", options.method)

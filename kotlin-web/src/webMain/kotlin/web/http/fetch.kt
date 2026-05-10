@@ -14,7 +14,7 @@ suspend fun fetch(
             request = request,
             init = unsafeJso {
                 signal = continuation.toAbortSignal()
-            }
+            },
         )
 
         fetchAsync(finalRequest)
