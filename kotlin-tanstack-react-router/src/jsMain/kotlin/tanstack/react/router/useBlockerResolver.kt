@@ -29,5 +29,5 @@ fun useBlockerResolver(
             shouldBlockFn = shouldBlockFn,
             enableBeforeUnload = enableBeforeUnload,
             disabled = disabled,
-        )
+        ),
     )

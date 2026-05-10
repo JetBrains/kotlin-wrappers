@@ -172,6 +172,6 @@ internal fun <T> ChildrenBuilder.addChild(
         block = {
             this.value = value
             block()
-        }
+        },
     )
 }

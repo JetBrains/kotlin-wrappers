@@ -24,7 +24,7 @@ fun <E : Event> useEventListener(
                 type = type,
                 options = options,
                 handler = { latestHandler(it) },
-            )
+            ),
         )
     }
 }

@@ -11,11 +11,13 @@ external interface RouteLoaderFn :
 fun RouteLoaderFn(
     block: suspend CoroutineScope.(options: LoaderFnContext) -> LoaderData?,
 ): RouteLoaderFn =
-    RouteLoaderFn(value = { options ->
-        createCancellablePromise(options.abortController) {
-            block(options)
-        }
-    })
+    RouteLoaderFn(
+        value = { options ->
+            createCancellablePromise(options.abortController) {
+                block(options)
+            }
+        },
+    )
 
 private fun RouteLoaderFn(
     value: (options: LoaderFnContext) -> PromiseResult<LoaderData?>,
