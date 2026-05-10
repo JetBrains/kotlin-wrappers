@@ -66,7 +66,7 @@ private data class NpmLibrary(
         .removePrefix("@")
         .replace(
             regex = Regex("""-(\w)"""),
-            transform = { it.groupValues[1].uppercase() }
+            transform = { it.groupValues[1].uppercase() },
         )
         .replace("/", "-")
 
