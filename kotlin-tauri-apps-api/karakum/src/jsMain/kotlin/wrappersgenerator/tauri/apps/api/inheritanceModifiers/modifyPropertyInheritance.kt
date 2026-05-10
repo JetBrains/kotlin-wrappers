@@ -18,14 +18,14 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         nullable { // open
             ensure(
                 name.text == "label"
-                        || name.text == "listeners"
+                        || name.text == "listeners",
             )
 
             val classNode = ensureNotNull(node.getParentOrNull())
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "Webview"
-                        || classNode.name?.text == "Window"
+                        || classNode.name?.text == "Window",
             )
 
             "open"

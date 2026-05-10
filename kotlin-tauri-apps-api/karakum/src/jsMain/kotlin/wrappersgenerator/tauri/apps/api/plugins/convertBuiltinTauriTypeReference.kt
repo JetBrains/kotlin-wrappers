@@ -22,7 +22,7 @@ val convertBuiltinTauriTypeReference = createPlugin { node, _, _ ->
 
         ensure(
             isTypeReferenceNode(parent)
-                    || isExpressionWithTypeArguments(parent)
+                    || isExpressionWithTypeArguments(parent),
         )
 
         builtinTauriTypes[node.text]

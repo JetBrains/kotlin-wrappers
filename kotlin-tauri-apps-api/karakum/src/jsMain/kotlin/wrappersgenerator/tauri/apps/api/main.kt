@@ -51,13 +51,13 @@ suspend fun main(args: ReadonlyArray<String>) {
             "\\./webview$" to ruleOf(
                 "WebviewWindow" to "tauri.apps.api.webviewwindow.WebviewWindow",
                 "Color" to "tauri.apps.api.window.Color",
-                ".+" to "tauri.apps.api.webview."
+                ".+" to "tauri.apps.api.webview.",
             ),
             "\\./webviewWindow" to ruleOf("tauri.apps.api.webviewwindow"),
             "\\./window" to ruleOf(
                 "LogicalPosition" to "tauri.apps.api.dpi.LogicalPosition",
                 "PhysicalPosition" to "tauri.apps.api.dpi.PhysicalPosition",
-                ".+" to "tauri.apps.api.window."
+                ".+" to "tauri.apps.api.window.",
             ),
 
             "^\\./(menu/)?base" to ruleOf("tauri.apps.api.menu.base"),
@@ -68,7 +68,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "^\\./(menu/)?predefinedMenuItem" to ruleOf("tauri.apps.api.menu"),
             "^\\./(menu/)?submenu" to ruleOf("tauri.apps.api.menu"),
 
-            "^\\.\\./menu$" to ruleOf("tauri.apps.api.menu")
+            "^\\.\\./menu$" to ruleOf("tauri.apps.api.menu"),
         )
     }
 }

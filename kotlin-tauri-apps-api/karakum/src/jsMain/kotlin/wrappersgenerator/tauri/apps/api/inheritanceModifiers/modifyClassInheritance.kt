@@ -15,7 +15,7 @@ fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nu
                 || node.name?.text == "Submenu"
                 || node.name?.text == "WebviewWindow"
                 || node.name?.text == "Webview"
-                || node.name?.text == "Window"
+                || node.name?.text == "Window",
     )
 
     "open"
