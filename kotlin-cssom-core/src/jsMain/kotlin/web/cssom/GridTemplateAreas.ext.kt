@@ -14,5 +14,5 @@ fun GridTemplateAreas(
     unsafeCast(
         values.joinToString("\n") {
             "'${it.joinToString(" ")}'"
-        }
+        },
     )

@@ -45,5 +45,5 @@ inline fun keyframes(
     keyframes(
         KeyframesBuilder()
             .apply(block)
-            .build()
+            .build(),
     )
