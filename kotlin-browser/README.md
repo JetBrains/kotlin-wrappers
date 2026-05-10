@@ -7,4 +7,5 @@ Wrappers of stable browser APIs.
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

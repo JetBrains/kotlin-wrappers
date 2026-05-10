@@ -7,4 +7,5 @@ Kotlin wrapper for the [TanStack React Table](https://github.com/TanStack/table)
 ### Internals
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+
 Manual changes are prohibited.

@@ -7,4 +7,5 @@ Kotlin wrapper for the [Tauri](https://tauri.app/).
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

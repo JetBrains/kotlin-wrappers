@@ -8,4 +8,5 @@ Kotlin wrapper for [MUI Lab](https://mui.com/material-ui/about-the-lab/).
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated
 by [mui-kotlin](https://github.com/karakum-team/mui-kotlin).
+
 Manual changes are prohibited.

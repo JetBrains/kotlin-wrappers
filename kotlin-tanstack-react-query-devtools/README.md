@@ -7,4 +7,5 @@ Kotlin wrapper for the [TanStack React Query Devtools](https://tanstack.com/quer
 ### Internals
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+
 Manual changes are prohibited.

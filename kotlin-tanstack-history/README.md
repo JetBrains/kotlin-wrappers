@@ -7,4 +7,5 @@ Kotlin wrapper for the [TanStack History](https://github.com/TanStack/router) li
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

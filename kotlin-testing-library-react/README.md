@@ -7,4 +7,5 @@ Kotlin wrapper for the [React Testing Library](https://testing-library.com/docs/
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

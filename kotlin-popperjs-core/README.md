@@ -7,4 +7,5 @@ Wrappers for [Popper](https://popper.js.org/), a tooltip & popover positioning e
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

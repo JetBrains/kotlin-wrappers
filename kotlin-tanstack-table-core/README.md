@@ -7,4 +7,5 @@ Kotlin wrapper for the [TanStack Table Core](https://github.com/TanStack/table/t
 ### Internals
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+
 Manual changes are prohibited.

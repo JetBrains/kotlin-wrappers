@@ -7,4 +7,5 @@ Kotlin wrapper for the [DOM Testing Library](https://testing-library.com/docs/do
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

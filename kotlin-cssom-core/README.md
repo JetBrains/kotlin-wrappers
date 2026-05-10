@@ -9,4 +9,5 @@ by [data from MDN](https://github.com/mdn/data).
 ### Internals
 
 Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
+
 Manual changes are prohibited.

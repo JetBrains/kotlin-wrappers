@@ -16,4 +16,5 @@ See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 ### Internals
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+
 Manual changes are prohibited.

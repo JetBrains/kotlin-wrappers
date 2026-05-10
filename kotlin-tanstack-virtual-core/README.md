@@ -8,4 +8,5 @@ library.
 ### Internals
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+
 Manual changes are prohibited.
