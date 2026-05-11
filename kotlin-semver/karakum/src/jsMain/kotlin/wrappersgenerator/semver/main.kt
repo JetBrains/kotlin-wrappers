@@ -18,10 +18,10 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertVersionPartTypes,
         )
         annotations = listOf(
-            JsPlainObjectAnnotation()
+            JsPlainObjectAnnotation(),
         )
         inheritanceModifiers = listOf(
-            ::modifyMethodInheritance
+            ::modifyMethodInheritance,
         )
 
         input = listOf("**/*.d.ts")
@@ -38,7 +38,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "semver/(Range|SemVer|Comparator)\\.kt" to "semver/$1.class.kt",
         )
         namespaceStrategy = mapOf(
-            "^inc$" to NamespaceStrategy.`package`
+            "^inc$" to NamespaceStrategy.`package`,
         )
     }
 }

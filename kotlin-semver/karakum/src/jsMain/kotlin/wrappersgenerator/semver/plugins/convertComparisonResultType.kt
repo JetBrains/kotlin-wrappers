@@ -13,22 +13,24 @@ val convertComparisonResultType = createPlugin { node, context, _ ->
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         ensure(isUnionTypeNode(node))
-        ensure(node.types.asArray().all { type ->
-            nullable {
-                ensure(isLiteralTypeNode(type))
-
-                val literal = type.literal
-
+        ensure(
+            node.types.asArray().all { type ->
                 nullable {
-                    ensure(isNumericLiteral(literal))
-                } ?: nullable {
-                    ensure(isPrefixUnaryExpression(literal))
+                    ensure(isLiteralTypeNode(type))
 
-                    val operand = literal.operand
-                    ensure(isNumericLiteral(operand))
-                }
-            } != null
-        })
+                    val literal = type.literal
+
+                    nullable {
+                        ensure(isNumericLiteral(literal))
+                    } ?: nullable {
+                        ensure(isPrefixUnaryExpression(literal))
+
+                        val operand = literal.operand
+                        ensure(isNumericLiteral(operand))
+                    }
+                } != null
+            },
+        )
 
         val printedTypes = node.types.asArray().map { typeScriptService.printNode(it) }
         ensure(printedTypes == comparisonResultType)
@@ -47,11 +49,11 @@ val convertComparisonResultType = createPlugin { node, context, _ ->
                 ensure(isIdentifier(methodName))
 
                 methodName
-            }
+            },
         )
         ensure(
             name.text.startsWith("compare")
-                    || name.text.startsWith("rcompare")
+                    || name.text.startsWith("rcompare"),
         )
 
         "Int"
