@@ -16,7 +16,7 @@ val convertIndexSignatureInOptions = createPlugin { node, context, _ ->
         ensure(
             interfaceNode.name.text == "BuildOptions"
                     || interfaceNode.name.text == "CompilerOptions"
-                    || interfaceNode.name.text == "WatchOptions"
+                    || interfaceNode.name.text == "WatchOptions",
         )
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))

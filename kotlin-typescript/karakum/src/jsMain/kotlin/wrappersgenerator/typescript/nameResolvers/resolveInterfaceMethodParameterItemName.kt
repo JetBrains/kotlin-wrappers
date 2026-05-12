@@ -14,7 +14,7 @@ fun resolveInterfaceMethodParameterItemName(node: Node, context: Context) = null
                 if (isParenthesizedTypeNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isArrayTypeNode(arrayType))
 
@@ -24,7 +24,7 @@ fun resolveInterfaceMethodParameterItemName(node: Node, context: Context) = null
                 if (isTypeOperatorNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isParameter(parameter))
 

@@ -15,7 +15,7 @@ fun annotateUnusedTypealiasParameter(node: Node, context: AnnotationContext) = n
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(
             typeAlias.name.text == "InvalidatedProject"
-                    || typeAlias.name.text == "VisitResult"
+                    || typeAlias.name.text == "VisitResult",
         )
 
         "@Suppress(\"UNUSED_TYPEALIAS_PARAMETER\")"

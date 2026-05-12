@@ -15,7 +15,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         nullable {
             ensure(
                 name.text == "kind"
-                        || name.text == "parent"
+                        || name.text == "parent",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -44,7 +44,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
                         && interfaceNode.name.text != "SignatureHelpCharacterTypedReason"
                         && interfaceNode.name.text != "SignatureHelpInvokedReason"
                         && interfaceNode.name.text != "SignatureHelpRetriggeredReason"
-                        && interfaceNode.name.text != "SymbolDisplayPart"
+                        && interfaceNode.name.text != "SymbolDisplayPart",
             )
 
             "override"
@@ -59,7 +59,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "body"
-                        || name.text == "name"
+                        || name.text == "name",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -86,7 +86,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "left"
-                        || name.text == "operatorToken"
+                        || name.text == "operatorToken",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -170,7 +170,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
             ensure(
                 name.text == "file"
                         || name.text == "start"
-                        || name.text == "length"
+                        || name.text == "length",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -205,7 +205,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -216,7 +216,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -235,7 +235,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -383,7 +383,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -402,7 +402,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "operator"
-                        || name.text == "operand"
+                        || name.text == "operand",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -437,7 +437,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -472,7 +472,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -539,7 +539,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "parent"
+                        || name.text == "parent",
             )
 
             val typeAlias = node
@@ -562,7 +562,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "expression"
+                        || name.text == "expression",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -605,7 +605,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "questionToken"
+                        || name.text == "questionToken",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -624,7 +624,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "body"
+                        || name.text == "body",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -691,7 +691,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "pos"
-                        || name.text == "end"
+                        || name.text == "end",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -766,7 +766,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "scoped"
-                        || name.text == "text"
+                        || name.text == "text",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -785,7 +785,7 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         } ?: nullable {
             ensure(
                 name.text == "name"
-                        || name.text == "keywordToken"
+                        || name.text == "keywordToken",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())

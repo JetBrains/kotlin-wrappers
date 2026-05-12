@@ -13,7 +13,7 @@ private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
             isTypeReferenceNode(node) -> node.typeName
             isExpressionWithTypeArguments(node) -> node.expression
             else -> null
-        }
+        },
     )
 
     nullable {
@@ -26,33 +26,35 @@ private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
         val declarations = ensureNotNull(symbol.declarations)
 
-        ensure(declarations.any { declaration ->
-            nullable {
-               nullable {
-                   ensure(isInterfaceDeclaration(declaration))
+        ensure(
+            declarations.any { declaration ->
+                nullable {
+                    nullable {
+                        ensure(isInterfaceDeclaration(declaration))
 
-                   ensure(
-                       (declaration.heritageClauses?.asArray() ?: emptyArray())
-                           .flatMap { it.types.asArray().asIterable() }
-                           .any { isNodeSuccessor(it, context) }
-                   )
-               } ?: nullable {
-                   ensure(isTypeAliasDeclaration(declaration))
+                        ensure(
+                            (declaration.heritageClauses?.asArray() ?: emptyArray())
+                                .flatMap { it.types.asArray().asIterable() }
+                                .any { isNodeSuccessor(it, context) },
+                        )
+                    } ?: nullable {
+                        ensure(isTypeAliasDeclaration(declaration))
 
-                   val declarationType = declaration.type
+                        val declarationType = declaration.type
 
-                   nullable {
-                       ensure(isIntersectionTypeNode(declarationType))
-                       ensure(declarationType.types.asArray().any { isNodeSuccessor(it, context) })
-                   } ?: nullable {
-                       ensure(isUnionTypeNode(declarationType))
-                       ensure(declarationType.types.asArray().all { isNodeSuccessor(it, context) })
-                   } ?: nullable {
-                       ensure(isNodeSuccessor(declarationType, context))
-                   }
-               }
-            } != null
-        })
+                        nullable {
+                            ensure(isIntersectionTypeNode(declarationType))
+                            ensure(declarationType.types.asArray().any { isNodeSuccessor(it, context) })
+                        } ?: nullable {
+                            ensure(isUnionTypeNode(declarationType))
+                            ensure(declarationType.types.asArray().all { isNodeSuccessor(it, context) })
+                        } ?: nullable {
+                            ensure(isNodeSuccessor(declarationType, context))
+                        }
+                    }
+                } != null
+            },
+        )
     }
 } != null
 
@@ -73,24 +75,26 @@ private fun isEnumMemberType(node: Node, context: Context, enumName: String): Bo
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
         val declarations = ensureNotNull(symbol.declarations)
 
-        ensure(declarations.any { declaration ->
-            nullable {
-                ensure(isTypeAliasDeclaration(declaration))
-
-                val declarationType = declaration.type
-
+        ensure(
+            declarations.any { declaration ->
                 nullable {
-                    ensure(isUnionTypeNode(declarationType))
-                    ensure(declarationType.types.asArray().all { isEnumMemberType(it, context, enumName) })
-                } ?: nullable {
-                    ensure(isEnumMemberType(declaration.type, context, enumName))
-                }
-            } != null
-        })
+                    ensure(isTypeAliasDeclaration(declaration))
+
+                    val declarationType = declaration.type
+
+                    nullable {
+                        ensure(isUnionTypeNode(declarationType))
+                        ensure(declarationType.types.asArray().all { isEnumMemberType(it, context, enumName) })
+                    } ?: nullable {
+                        ensure(isEnumMemberType(declaration.type, context, enumName))
+                    }
+                } != null
+            },
+        )
     }
 } != null
 
-val injectCommonUnionParents = createInjection { node, context, _, ->
+val injectCommonUnionParents = createInjection { node, context, _ ->
     val result = mutableListOf<String>()
 
     for (enumName in setOf("SyntaxKind", "ScriptKind", "CommandTypes")) {
@@ -120,7 +124,7 @@ val injectCommonUnionParents = createInjection { node, context, _, ->
         ensure(
             typeAlias.name.text == "ModuleExportName"
                     || typeAlias.name.text == "BindingName"
-                    || typeAlias.name.text == "MemberName"
+                    || typeAlias.name.text == "MemberName",
         )
 
         result.add("DeclarationName")
@@ -145,7 +149,7 @@ val injectCommonUnionParents = createInjection { node, context, _, ->
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(
             typeAlias.name.text == "KeywordTypeSyntaxKind"
-                    || typeAlias.name.text == "ModifierSyntaxKind"
+                    || typeAlias.name.text == "ModifierSyntaxKind",
         )
 
         result.add("KeywordSyntaxKind")
@@ -266,7 +270,7 @@ val injectCommonUnionParents = createInjection { node, context, _, ->
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(
             interfaceNode.name.text == "JSDocAugmentsTag"
-                    || interfaceNode.name.text == "JSDocImplementsTag"
+                    || interfaceNode.name.text == "JSDocImplementsTag",
         )
 
         result.add("LeftHandSideExpression")

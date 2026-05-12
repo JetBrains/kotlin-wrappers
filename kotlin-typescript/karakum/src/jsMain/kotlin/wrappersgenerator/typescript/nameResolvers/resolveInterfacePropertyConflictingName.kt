@@ -24,7 +24,7 @@ fun resolveInterfacePropertyConflictingName(node: Node, context: Context) = null
 
     ensure(
         (parentName == "TypeReference" && propertyName == "node")
-                || (parentName == "Signature" && propertyName == "declaration")
+                || (parentName == "Signature" && propertyName == "declaration"),
     )
 
     "${parentName.replaceFirstChar { it.titlecase() }}${propertyName.replaceFirstChar { it.titlecase() }}Field"

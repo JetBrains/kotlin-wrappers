@@ -34,7 +34,7 @@ val convertWithMetadata = createPlugin { node, context, render ->
         val members = secondType.members.asArray().joinToString("\n") { render(it) }
 
         """
-            ${ifPresent(inheritanceModifier) { "$it "}}external interface WithMetadata${ifPresent(typeParameters) { "<$it>"}} {
+            ${ifPresent(inheritanceModifier) { "$it " }}external interface WithMetadata${ifPresent(typeParameters) { "<$it>" }} {
             $members
 
             @Suppress(

@@ -18,7 +18,7 @@ val convertKindEnums = createPlugin { node, context, render ->
                     || node.name.text == "ScriptKind"
                     || node.name.text == "TypePredicateKind"
                     || node.name.text == "InvalidatedProjectKind"
-                    || node.name.text == "CommandTypes"
+                    || node.name.text == "CommandTypes",
         )
 
         val name = render(node.name)

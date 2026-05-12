@@ -95,13 +95,13 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
         importInjector = mapOf(
             ".contract.kt" to listOf(
-                "kotlin.contracts.contract"
+                "kotlin.contracts.contract",
             ),
         )
         namespaceStrategy = mapOf(
             "ScriptSnapshot" to NamespaceStrategy.`object`,
             "JsTyping" to NamespaceStrategy.`object`,
-            "ts" to NamespaceStrategy.`package`
+            "ts" to NamespaceStrategy.`package`,
         )
     }
 }

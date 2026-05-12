@@ -23,7 +23,7 @@ val injectBitmaskParents = createInjection { node, _, _ ->
                     || node.name.text == "EmitFlags"
                     || node.name.text == "OuterExpressionKinds"
                     || node.name.text == "ListFormat"
-                    || node.name.text == "CompletionInfoFlags"
+                    || node.name.text == "CompletionInfoFlags",
         )
 
         arrayOf("js.numbers.Bitmask<${node.name.text}>")

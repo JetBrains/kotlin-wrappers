@@ -22,7 +22,7 @@ fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = n
                         || name.text == "realpath"
                         || name.text == "fileExists"
                         || name.text == "getDirectories"
-                        || name.text == "useCaseSensitiveFileNames"
+                        || name.text == "useCaseSensitiveFileNames",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -34,7 +34,7 @@ fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = n
             ensure(
                 name.text == "fileExists"
                         || name.text == "readFile"
-                        || name.text == "trace"
+                        || name.text == "trace",
             )
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())

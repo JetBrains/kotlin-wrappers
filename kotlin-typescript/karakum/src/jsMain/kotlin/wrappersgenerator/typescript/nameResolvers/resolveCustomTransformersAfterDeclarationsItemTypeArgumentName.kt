@@ -24,7 +24,7 @@ fun resolveCustomTransformersAfterDeclarationsItemTypeArgumentName(node: Node, c
                 if (isParenthesizedTypeNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isArrayTypeNode(arrayType))
 
@@ -34,7 +34,7 @@ fun resolveCustomTransformersAfterDeclarationsItemTypeArgumentName(node: Node, c
                 if (isTypeOperatorNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isPropertySignature(property))
 

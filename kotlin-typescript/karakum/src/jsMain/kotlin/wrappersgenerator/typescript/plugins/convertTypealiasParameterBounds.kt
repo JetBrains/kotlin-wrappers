@@ -19,7 +19,7 @@ val convertTypealiasParameterBounds = createPlugin { node, _, render ->
                     || typeAlias.name.text == "CreateProgram"
                     || typeAlias.name.text == "Transformer"
                     || typeAlias.name.text == "TransformerFactory"
-                    || typeAlias.name.text == "InvalidatedProject"
+                    || typeAlias.name.text == "InvalidatedProject",
         )
 
         val name = render(node.name)

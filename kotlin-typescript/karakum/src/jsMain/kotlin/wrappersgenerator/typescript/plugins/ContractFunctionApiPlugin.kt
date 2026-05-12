@@ -90,8 +90,8 @@ class ContractFunctionApiPlugin : Plugin {
                             return ${name}Raw(${parameterNames})
                         }
                     """.trimIndent()
-                }
-            )
+                },
+            ),
         )
 
         val nodeInfo = DerivedDeclaration(
@@ -114,8 +114,8 @@ class ContractFunctionApiPlugin : Plugin {
                         @JsName("$name")
                         external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Raw(${parameters})${ifPresent(returnType) { ": $it" }}
                     """.trimIndent()
-                }
-            )
+                },
+            ),
         )
     }
 

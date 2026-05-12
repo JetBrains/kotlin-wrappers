@@ -15,7 +15,7 @@ fun resolveTypeAliasIntersectionBaseName(node: Node, context: Context) = nullabl
             if (isParenthesizedTypeNode(it)) {
                 typeScriptService.getParent(it)
             } else it
-        }
+        },
     )
     ensure(isIntersectionTypeNode(intersection))
     ensure(intersection.types.asArray().size == 2)

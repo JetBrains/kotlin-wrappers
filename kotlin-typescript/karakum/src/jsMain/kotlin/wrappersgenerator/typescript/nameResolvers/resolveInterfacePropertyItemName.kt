@@ -15,7 +15,7 @@ fun resolveInterfacePropertyTypeReferenceItemName(node: Node, context: Context) 
     ensure(isIdentifier(typeName))
     ensure(
         typeName.text == "Array"
-                || typeName.text == "NodeArray"
+                || typeName.text == "NodeArray",
     )
 
     val property = ensureNotNull(typeScriptService.getParent(typeReference))
@@ -41,7 +41,7 @@ fun resolveInterfacePropertyArrayTypeItemName(node: Node, context: Context) = nu
                 if (isParenthesizedTypeNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isArrayTypeNode(arrayType))
 
@@ -51,7 +51,7 @@ fun resolveInterfacePropertyArrayTypeItemName(node: Node, context: Context) = nu
                 if (isTypeOperatorNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isPropertySignature(property))
 

@@ -13,7 +13,7 @@ fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
         ensure(isIdentifier(name))
         ensure(
             name.text == "kind"
-                    || name.text == "type"
+                    || name.text == "type",
         )
 
         val interfaceNode = ensureNotNull(node.getParentOrNull())
@@ -22,7 +22,7 @@ fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
             interfaceNode.name.text == "AssertsIdentifierTypePredicate"
                     || interfaceNode.name.text == "AssertsThisTypePredicate"
                     || interfaceNode.name.text == "IdentifierTypePredicate"
-                    || interfaceNode.name.text == "ThisTypePredicate"
+                    || interfaceNode.name.text == "ThisTypePredicate",
         )
 
         "@Suppress(\"VAR_TYPE_MISMATCH_ON_OVERRIDE\")"
@@ -38,7 +38,7 @@ fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
         ensure(
             interfaceNode.name.text == "BigIntLiteralType"
                     || interfaceNode.name.text == "StringLiteralType"
-                    || interfaceNode.name.text == "NumberLiteralType"
+                    || interfaceNode.name.text == "NumberLiteralType",
         )
 
         "@Suppress(\"VAR_TYPE_MISMATCH_ON_OVERRIDE\")"
@@ -74,7 +74,7 @@ fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
         ensure(
             name.text == "file"
                     || name.text == "start"
-                    || name.text == "length"
+                    || name.text == "length",
         )
 
         val interfaceNode = ensureNotNull(node.getParentOrNull())

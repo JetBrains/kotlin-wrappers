@@ -21,7 +21,7 @@ private fun isConflictingOverload(node: MethodSignature) = nullable {
 
             val secondParameterType = ensureNotNull(secondParameter.type)
             ensure(isUnionTypeNode(secondParameterType))
-        }
+        },
     )
 } != null
 

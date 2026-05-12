@@ -14,7 +14,7 @@ fun resolveFunctionReturnTypeItemName(node: Node, context: Context) = nullable {
                 if (isParenthesizedTypeNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isArrayTypeNode(arrayType))
 
@@ -24,12 +24,12 @@ fun resolveFunctionReturnTypeItemName(node: Node, context: Context) = nullable {
                 if (isTypeOperatorNode(it)) {
                     typeScriptService.getParent(it)
                 } else it
-            }
+            },
     )
     ensure(isFunctionDeclaration(function))
     ensure(
         function.type == arrayType
-                || function.type == arrayType.parent
+                || function.type == arrayType.parent,
     )
     val parentName = ensureNotNull(function.name).text
 
