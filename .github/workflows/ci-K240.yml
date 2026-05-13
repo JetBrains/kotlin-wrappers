@@ -24,7 +24,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
       - name: Build
         run: |
-          ./gradlew -Pkotlin.version=2.4.0-Beta2
+          ./gradlew -Pkotlin.version=2.4.0-RC
 
   build-examples:
 
@@ -44,4 +44,4 @@ jobs:
       - name: Build Examples
         working-directory: ./examples
         run: |
-          ./gradlew -Pkotlin.version=2.4.0-Beta2
+          ./gradlew -Pkotlin.version=2.4.0-RC
