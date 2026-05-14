@@ -149,7 +149,7 @@ external interface WebGL2RenderingContextOverloads {
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
@@ -161,7 +161,7 @@ external interface WebGL2RenderingContextOverloads {
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
@@ -170,7 +170,7 @@ external interface WebGL2RenderingContextOverloads {
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
@@ -182,7 +182,7 @@ external interface WebGL2RenderingContextOverloads {
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         border: GLint,
@@ -194,7 +194,7 @@ external interface WebGL2RenderingContextOverloads {
     fun texImage2D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         border: GLint,

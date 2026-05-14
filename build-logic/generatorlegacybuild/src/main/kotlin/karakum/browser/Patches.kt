@@ -336,6 +336,11 @@ internal fun String.applyPatches(): String {
         .patchInterface("SVGAnimatedEnumeration") {
             it.replace("Val: number;", "Val: T;")
         }
+        // TODO: report bug
+        .replace(
+            "internalformat: GLint,",
+            "internalformat: GLenum,",
+        )
         .replace(
             """    texParameterf(target: GLenum, pname: GLenum, param: GLfloat): void;""",
             sequenceOf(

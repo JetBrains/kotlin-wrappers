@@ -545,7 +545,7 @@ external interface WebGL2RenderingContextBase {
     fun texImage3D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         depth: GLsizei,
@@ -558,7 +558,7 @@ external interface WebGL2RenderingContextBase {
     fun texImage3D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         depth: GLsizei,
@@ -571,7 +571,7 @@ external interface WebGL2RenderingContextBase {
     fun texImage3D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         depth: GLsizei,
@@ -584,7 +584,7 @@ external interface WebGL2RenderingContextBase {
     fun texImage3D(
         target: GLenum,
         level: GLint,
-        internalformat: GLint,
+        internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
         depth: GLsizei,
