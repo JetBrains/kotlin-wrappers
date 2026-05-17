@@ -150,6 +150,9 @@ private fun intlContent(
         .replace(""" = "h12" | "h23" | "h11" | "h24";""", """ = "h11" | "h12" | "h23" | "h24";""")
 
         .replace("FormattableTemporalObject | Date | number", "FormattableTemporalObject")
+        .replace(" * [MDN](", " * [MDN Reference](")
+        // https://github.com/microsoft/TypeScript/pull/63489
+        .replace(" *  [MDN](", " *  [MDN Reference](")
         .let {
             val unionBody = it
                 .substringAfter("type FormattableTemporalObject = ", "")
