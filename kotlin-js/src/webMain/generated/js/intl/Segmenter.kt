@@ -27,7 +27,7 @@ open external class Segmenter(
     /**
      * Returns `Segments` object containing the segments of the input string, using the segmenter's locale and granularity.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment)
      *
      * @param input - The text to be segmented as a `string`.
      *
@@ -38,7 +38,7 @@ open external class Segmenter(
     /**
      * The `resolvedOptions()` method of `Intl.Segmenter` instances returns a new object with properties reflecting the options computed during initialization of this `Segmenter` object.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/resolvedOptions)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/resolvedOptions)
      */
     fun resolvedOptions(): ResolvedSegmenterOptions
 
@@ -53,7 +53,7 @@ open external class Segmenter(
          * @param options An [object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/supportedLocalesOf#parameters).
          *  with some or all possible options.
          *
-         * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/supportedLocalesOf)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/supportedLocalesOf)
          */
         fun supportedLocalesOf(
             locales: UnicodeBCP47LocaleIdentifier,

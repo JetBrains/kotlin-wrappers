@@ -34,7 +34,7 @@ open external class ListFormat(
      *
      * @returns {string} A language-specific formatted string representing the elements of the list.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/format).
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/format).
      */
     fun format(list: JsIterable<JsString>): String
 
@@ -47,7 +47,7 @@ open external class ListFormat(
      *
      * @returns {{ type: "element" | "literal", value: string; }[]} An Array of components which contains the formatted parts from the list.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/formatToParts).
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/formatToParts).
      */
     fun formatToParts(list: JsIterable<JsString>): ReadonlyArray<JsAny /* { type; value; } */>
 
@@ -56,7 +56,7 @@ open external class ListFormat(
      * formatting options computed during the construction of the current
      * `Intl.ListFormat` object.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/resolvedOptions).
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/resolvedOptions).
      */
     fun resolvedOptions(): ResolvedListFormatOptions
 
@@ -75,7 +75,7 @@ open external class ListFormat(
          * @returns An array of strings representing a subset of the given locale tags that are supported in list
          *  formatting without having to fall back to the runtime's default locale.
          *
-         * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/supportedLocalesOf).
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/supportedLocalesOf).
          */
         fun supportedLocalesOf(
             locales: UnicodeBCP47LocaleIdentifier,

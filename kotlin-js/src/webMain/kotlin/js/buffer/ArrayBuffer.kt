@@ -31,21 +31,21 @@ open external class ArrayBuffer(
     /**
      * If this ArrayBuffer is resizable, returns the maximum byte length given during construction; returns the byte length if not.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/maxByteLength)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/maxByteLength)
      */
     override val maxByteLength: Int
 
     /**
      * Returns true if this ArrayBuffer can be resized.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resizable)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resizable)
      */
     val resizable: Boolean
 
     /**
      * Resizes the ArrayBuffer to the specified size (in bytes).
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resize)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resize)
      */
     fun resize(
         newByteLength: Int,
@@ -54,14 +54,14 @@ open external class ArrayBuffer(
     /**
      * Returns a boolean indicating whether or not this buffer has been detached (transferred).
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/detached)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/detached)
      */
     val detached: Boolean
 
     /**
      * Creates a new ArrayBuffer with the same byte content as this buffer, then detaches this buffer.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transfer)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transfer)
      */
     fun transfer(
         newByteLength: Int,
@@ -70,7 +70,7 @@ open external class ArrayBuffer(
     /**
      * Creates a new non-resizable ArrayBuffer with the same byte content as this buffer, then detaches this buffer.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transferToFixedLength)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transferToFixedLength)
      */
     fun transferToFixedLength(
         newByteLength: Int,
@@ -78,7 +78,7 @@ open external class ArrayBuffer(
 
     companion object {
         /**
-         * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/isView)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/isView)
          */
         fun isView(value: JsAny?): Boolean
     }

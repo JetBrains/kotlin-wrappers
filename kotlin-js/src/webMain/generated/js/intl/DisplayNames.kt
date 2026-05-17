@@ -37,7 +37,7 @@ open external class DisplayNames(
      *    `languageCode` is either a two letters ISO 639-1 language code or a three letters ISO 639-2 language code.
      *  - If the type is `"currency"`, code should be a [3-letter ISO 4217 currency code](https://www.iso.org/iso-4217-currency-codes.html).
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/of).
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/of).
      */
     fun of(code: String): String?
 
@@ -45,7 +45,7 @@ open external class DisplayNames(
      * Returns a new object with properties reflecting the locale and style formatting options computed during the construction of the current
      * [`Intl/DisplayNames`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames) object.
      *
-     * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/resolvedOptions).
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/resolvedOptions).
      */
     fun resolvedOptions(): ResolvedDisplayNamesOptions
 
@@ -61,7 +61,7 @@ open external class DisplayNames(
          *
          * @returns An array of strings representing a subset of the given locale tags that are supported in display names without having to fall back to the runtime's default locale.
          *
-         * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/supportedLocalesOf).
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/supportedLocalesOf).
          */
         fun supportedLocalesOf(
             locales: UnicodeBCP47LocaleIdentifier = definedExternally,
