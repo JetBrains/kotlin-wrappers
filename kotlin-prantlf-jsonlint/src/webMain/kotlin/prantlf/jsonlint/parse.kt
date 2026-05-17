@@ -18,7 +18,7 @@ import js.objects.ReadonlyRecord
  * @param input - a string input to parse
  * @param reviverOrOptions - either a value reviver or an object
  *                           with multiple options
- * @returns the parsed result - a primitive value, array or object
+ * @return the parsed result - a primitive value, array or object
  */
 external fun parse(input: String): ReadonlyRecord<String, Any?>
 
@@ -35,7 +35,7 @@ external fun parse(input: String): ReadonlyRecord<String, Any?>
  * @param input - a string input to parse
  * @param reviverOrOptions - either a value reviver or an object
  *                           with multiple options
- * @returns the parsed result - a primitive value, array or object
+ * @return the parsed result - a primitive value, array or object
  */
 external fun parse(
     input: String,
@@ -55,7 +55,7 @@ external fun parse(
  * @param input - a string input to parse
  * @param reviverOrOptions - either a value reviver or an object
  *                           with multiple options
- * @returns the parsed result - a primitive value, array or object
+ * @return the parsed result - a primitive value, array or object
  */
 external fun parse(
     input: String,
