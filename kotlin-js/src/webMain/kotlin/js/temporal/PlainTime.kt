@@ -16,7 +16,7 @@ package js.temporal
  * See https://tc39.es/proposal-temporal/docs/time.html for more details.
  */
 @JsQualifier("Temporal")
-external class PlainTime(
+open external class PlainTime(
     val hour: Int = definedExternally,
     val minute: Int = definedExternally,
     val second: Int = definedExternally,

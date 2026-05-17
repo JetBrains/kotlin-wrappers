@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
  * See https://tc39.es/proposal-temporal/docs/monthday.html for more details.
  */
 @JsQualifier("Temporal")
-external class PlainMonthDay(
+open external class PlainMonthDay(
     isoMonth: Int,
     isoDay: Int,
     calendar: Calendar = definedExternally,

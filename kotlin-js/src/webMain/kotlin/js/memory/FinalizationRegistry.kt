@@ -5,7 +5,7 @@ package js.memory
  * Creates a finalization registry with an associated cleanup callback
  * @param cleanupCallback The callback to call after an object in the registry has been reclaimed.
  */
-external class FinalizationRegistry<T : JsAny?>(
+open external class FinalizationRegistry<T : JsAny?>(
     cleanupCallback: (heldValue: T) -> Unit,
 ) {
     /**

@@ -7,7 +7,7 @@ package js.temporal
  * See https://tc39.es/proposal-temporal/docs/duration.html for more details.
  */
 @JsQualifier("Temporal")
-external class Duration(
+open external class Duration(
     val years: Int = definedExternally,
     val months: Int = definedExternally,
     val weeks: Int = definedExternally,

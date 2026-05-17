@@ -7,7 +7,7 @@ import js.iterable.JsIterator
 private const val GENERATOR: String = "(function* () {}.constructor.prototype.prototype)"
 
 @JsName(GENERATOR)
-external class Generator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
+open external class Generator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
 private constructor() :
     JsIterator<T> {
     override fun next(): IteratorResult<T, TReturn>

@@ -18,7 +18,7 @@ import js.numbers.Int53
  * See https://tc39.es/proposal-temporal/docs/instant.html for more details.
  */
 @JsQualifier("Temporal")
-external class Instant(
+open external class Instant(
     val epochNanoseconds: BigInt,
 ) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,
     Roundable<Instant, TimeUnit<*>>,

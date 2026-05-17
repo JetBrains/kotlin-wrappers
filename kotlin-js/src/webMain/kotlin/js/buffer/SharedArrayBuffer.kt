@@ -1,6 +1,6 @@
 package js.buffer
 
-external class SharedArrayBuffer(
+open external class SharedArrayBuffer(
     /**
      * Read-only. The length of the SharedArrayBuffer (in bytes).
      */

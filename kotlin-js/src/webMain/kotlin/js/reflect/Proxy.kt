@@ -1,6 +1,6 @@
 package js.reflect
 
-external class Proxy<T : JsAny>(
+open external class Proxy<T : JsAny>(
     target: T,
     handler: ProxyHandler<T>,
 ) {

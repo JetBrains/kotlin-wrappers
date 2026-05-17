@@ -1,6 +1,6 @@
 package js.memory
 
-external class WeakRef<T : JsAny>(
+open external class WeakRef<T : JsAny>(
     target: T,
 ) {
     /**

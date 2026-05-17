@@ -9,7 +9,7 @@ import js.promise.PromiseLike
 private const val ASYNC_GENERATOR: String = "(async function* () {}.constructor.prototype.prototype)"
 
 @JsName(ASYNC_GENERATOR)
-external class AsyncGenerator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
+open external class AsyncGenerator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
 private constructor() :
     AsyncIterator<T> {
     override fun next(): Promise<IteratorResult<T, TReturn>>

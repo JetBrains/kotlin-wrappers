@@ -3,7 +3,7 @@ package js.buffer
 import js.serialization.Serializable
 import js.serialization.Transferable
 
-external class ArrayBuffer(
+open external class ArrayBuffer(
     /**
      * Read-only. The length of the ArrayBuffer (in bytes).
      */

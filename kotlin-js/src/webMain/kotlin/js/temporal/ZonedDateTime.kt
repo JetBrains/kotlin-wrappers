@@ -3,7 +3,7 @@ package js.temporal
 import js.numbers.BigInt
 
 @JsQualifier("Temporal")
-external class ZonedDateTime(
+open external class ZonedDateTime(
     epochNanoseconds: BigInt,
     timeZone: TimeZone,
     calendar: Calendar = definedExternally,

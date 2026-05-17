@@ -3,7 +3,7 @@ package js.buffer
 import js.numbers.Float16
 import js.serialization.Serializable
 
-external class DataView<B : ArrayBufferLike>(
+open external class DataView<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val byteLength: Int = definedExternally,
