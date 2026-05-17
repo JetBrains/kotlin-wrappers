@@ -35,8 +35,9 @@ sealed external interface ClassSetterDecoratorContext<This : JsAny, Value : JsAn
         /**
          * Invokes the setter on the provided object.
          *
-         * @example
+         * ```ts
          * context.access.set(instance, value);
+         * ```
          */
         fun set(o: This, value: Value)
     }

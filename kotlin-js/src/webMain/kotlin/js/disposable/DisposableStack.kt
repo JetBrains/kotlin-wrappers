@@ -40,7 +40,7 @@ open external class DisposableStack :
 
     /**
      * Move all resources out of this stack and into a new `DisposableStack`, and marks this stack as disposed.
-     * @example
+     *
      * ```ts
      * class C {
      *   #res1: Disposable;

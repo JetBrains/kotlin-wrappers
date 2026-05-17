@@ -36,8 +36,9 @@ sealed external interface ClassMethodDecoratorContext<This : JsAny, Value : JsFu
         /**
          * Gets the current value of the method from the provided object.
          *
-         * @example
+         * ```ts
          * let fn = context.access.get(instance);
+         * ```
          */
         fun get(o: This): Value
     }
@@ -47,7 +48,6 @@ sealed external interface ClassMethodDecoratorContext<This : JsAny, Value : JsFu
      * static initializers are run (when decorating a `static` element), or before instance
      * initializers are run (when decorating a non-`static` element).
      *
-     * @example
      * ```ts
      * const bound: ClassMethodDecoratorFunction = (value, context) {
      *   if (context.private) throw new TypeError("Not supported on private methods.");
