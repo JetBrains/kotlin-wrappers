@@ -5,13 +5,35 @@ import js.array.Tuple2
 import js.iterable.JsIterable
 import js.symbol.Symbol
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+ */
 external class Object
 private constructor() {
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+     */
     fun hasOwnProperty(v: String): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
+     */
     fun isPrototypeOf(v: JsAny): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
+     */
     fun propertyIsEnumerable(v: String): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
+     */
     fun toLocaleString(): String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
+     */
     fun valueOf(): JsAny
 
     companion object {
