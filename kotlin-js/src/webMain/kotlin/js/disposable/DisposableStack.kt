@@ -1,19 +1,29 @@
 package js.disposable
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack)
+ */
 open external class DisposableStack :
     Disposable {
     /**
      * Returns a value indicating whether this stack has been disposed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/disposed)
      */
     val disposed: Boolean
 
     /**
      * Disposes each resource in the stack in the reverse order that they were added.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/dispose)
      */
     fun dispose()
 
     /**
      * Adds a disposable resource to the stack, returning the resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/use)
+     *
      * @param value The resource to add. `null` and `undefined` will not be added, but will be returned.
      * @return The provided [value].
      */
@@ -21,6 +31,9 @@ open external class DisposableStack :
 
     /**
      * Adds a value and associated disposal callback as a resource to the stack.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/adopt)
+     *
      * @param value The value to add.
      * @param onDispose The callback to use in place of a `[Symbol.dispose]()` method. Will be invoked with `value`
      * as the first parameter.
@@ -33,6 +46,8 @@ open external class DisposableStack :
 
     /**
      * Adds a callback to be invoked when the stack is disposed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/defer)
      */
     fun defer(
         onDispose: () -> Unit,
@@ -66,6 +81,8 @@ open external class DisposableStack :
      *   }
      * }
      * ```
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/move)
      */
     fun move(): DisposableStack
 }
