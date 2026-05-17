@@ -2,6 +2,9 @@ package js.json
 
 /**
  * Converts a JavaScript Object Notation (JSON) string into an object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+ *
  * @param text A valid JSON string.
  * @param reviver A function that transforms the results. This function is called for each member of the object.
  * If a member contains nested objects, the nested objects are transformed before the parent object is.
