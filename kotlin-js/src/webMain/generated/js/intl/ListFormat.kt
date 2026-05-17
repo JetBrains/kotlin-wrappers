@@ -32,7 +32,7 @@ open external class ListFormat(
      *
      * @throws `TypeError` if `list` includes something other than the possible values.
      *
-     * @returns {string} A language-specific formatted string representing the elements of the list.
+     * @return {string} A language-specific formatted string representing the elements of the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/format).
      */
@@ -45,7 +45,7 @@ open external class ListFormat(
      *
      * @throws `TypeError` if `list` includes something other than the possible values.
      *
-     * @returns {{ type: "element" | "literal", value: string; }[]} An Array of components which contains the formatted parts from the list.
+     * @return {{ type: "element" | "literal", value: string; }[]} An Array of components which contains the formatted parts from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/formatToParts).
      */
@@ -72,7 +72,7 @@ open external class ListFormat(
          * @param options - An [object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/supportedLocalesOf#parameters).
          *  with some or all possible options.
          *
-         * @returns An array of strings representing a subset of the given locale tags that are supported in list
+         * @return An array of strings representing a subset of the given locale tags that are supported in list
          *  formatting without having to fall back to the runtime's default locale.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/supportedLocalesOf).

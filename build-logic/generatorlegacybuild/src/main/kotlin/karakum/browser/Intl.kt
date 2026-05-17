@@ -153,6 +153,7 @@ private fun intlContent(
         .replace(" * [MDN](", " * [MDN Reference](")
         // https://github.com/microsoft/TypeScript/pull/63489
         .replace(" *  [MDN](", " *  [MDN Reference](")
+        .replace(" * @returns ", " * @return ")
         .let {
             val unionBody = it
                 .substringAfter("type FormattableTemporalObject = ", "")

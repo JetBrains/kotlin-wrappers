@@ -44,7 +44,7 @@ open external class RelativeTimeFormat(
      *
      * @throws `RangeError` if `unit` was given something other than `unit` possible values
      *
-     * @returns {string} Internationalized relative time message as string
+     * @return {string} Internationalized relative time message as string
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/format).
      */
@@ -89,7 +89,7 @@ open external class RelativeTimeFormat(
          * @param options - An [object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#Parameters)
          *  with some or all of options of the formatting.
          *
-         * @returns An array containing those of the provided locales
+         * @return An array containing those of the provided locales
          *  that are supported in date and time formatting
          *  without having to fall back to the runtime's default locale.
          *

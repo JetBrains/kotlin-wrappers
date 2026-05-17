@@ -55,7 +55,7 @@ open external class DurationFormat(
          *
          * @param options An object with a locale matcher.
          *
-         * @returns An array of strings representing a subset of the given locale tags that are supported in display names without having to fall back to the runtime's default locale.
+         * @return An array of strings representing a subset of the given locale tags that are supported in display names without having to fall back to the runtime's default locale.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/supportedLocalesOf).
          */
