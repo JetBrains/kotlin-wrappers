@@ -7,20 +7,32 @@ import kotlin.coroutines.Continuation
 
 external interface PromiseLike<out T : JsAny?> :
     PromiseResult<T> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+     */
     fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
     ): PromiseLike<R>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+     */
     fun <R : JsAny?> then(
         onFulfilled: (T) -> R,
         onRejected: (JsErrorLike?) -> R,
     ): PromiseLike<R>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+     */
     @JsName("then")
     fun <R : JsAny?> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
     ): PromiseLike<R>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+     */
     @JsName("then")
     fun <R : JsAny?> flatThen(
         onFulfilled: (T) -> PromiseResult<R>,
