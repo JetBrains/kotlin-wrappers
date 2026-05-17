@@ -12,12 +12,18 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
     "return base ** exponent",
 )
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+ */
 @JsPrimitive("bigint")
 external class BigInt
 private constructor() {
 
     /**
      * Returns a string representation of an object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString)
+     *
      * @param radix Specifies a radix for converting numeric values to strings.
      */
     fun toString(radix: Int): String
@@ -27,6 +33,9 @@ private constructor() {
         /**
          * Interprets the low bits of a BigInt as a 2's-complement signed integer.
          * All higher bits are discarded.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asIntN)
+         *
          * @param bits The number of low bits to use
          * @param int The BigInt whose bits to extract
          */
@@ -35,6 +44,9 @@ private constructor() {
         /**
          * Interprets the low bits of a BigInt as an unsigned integer.
          * All higher bits are discarded.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asUintN)
+         *
          * @param bits The number of low bits to use
          * @param int The BigInt whose bits to extract
          */
@@ -42,14 +54,23 @@ private constructor() {
     }
 }
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+ */
 external fun BigInt(
     value: Int,
 ): BigInt
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+ */
 external fun BigInt(
     value: Long,
 ): BigInt
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+ */
 external fun BigInt(
     value: String,
 ): BigInt
