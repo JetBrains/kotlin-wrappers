@@ -5,28 +5,45 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.await
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack)
+ */
 open external class AsyncDisposableStack :
     AsyncDisposable {
     /**
      * Returns a value indicating whether this stack has been disposed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/disposed)
      */
     val disposed: Boolean
 
     /**
      * Disposes each resource in the stack in the reverse order that they were added.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/disposeAsync)
      */
     fun disposeAsync(): Promise<Void>
 
     /**
      * Adds a disposable resource to the stack, returning the resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/use)
+     *
      * @param value The resource to add. `null` and `undefined` will not be added, but will be returned.
      * @return The provided [value].
      */
     fun <T : Disposable?> use(value: T): T
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/use)
+     */
     fun <T : AsyncDisposable?> use(value: T): T
 
     /**
      * Adds a value and associated disposal callback as a resource to the stack.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/adopt)
+     *
      * @param value The value to add.
      * @param onDisposeAsync The callback to use in place of a `[Symbol.asyncDispose]()` method. Will be invoked with `value`
      * as the first parameter.
@@ -36,6 +53,8 @@ open external class AsyncDisposableStack :
 
     /**
      * Adds a callback to be invoked when the stack is disposed.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/defer)
      */
     fun defer(onDisposeAsync: () -> PromiseLike<Void>?)
 
@@ -67,6 +86,8 @@ open external class AsyncDisposableStack :
      *   }
      * }
      * ```
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/move)
      */
     fun move(): AsyncDisposableStack
 }
