@@ -5,6 +5,9 @@ import js.function.JsFunction
 
 internal const val ASYNC_GENERATOR_FUNCTION: String = "(async function* () {}.constructor)"
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncGeneratorFunction)
+ */
 @JsName(ASYNC_GENERATOR_FUNCTION)
 open external class AsyncGeneratorFunction<in A : Tuple, out R : AsyncGenerator<*, *, *>>(
     vararg parameterNames: String,
