@@ -3,9 +3,14 @@ package js.buffer
 import js.serialization.Serializable
 import js.serialization.Transferable
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
+ */
 open external class ArrayBuffer(
     /**
      * Read-only. The length of the ArrayBuffer (in bytes).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/byteLength)
      */
     override val byteLength: Int,
     options: ArrayBufferOptions? = definedExternally,
@@ -15,6 +20,8 @@ open external class ArrayBuffer(
     Transferable {
     /**
      * Returns a section of an ArrayBuffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/slice)
      */
     override fun slice(
         begin: Int,
@@ -70,6 +77,9 @@ open external class ArrayBuffer(
     ): ArrayBuffer
 
     companion object {
+        /**
+         * [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/isView)
+         */
         fun isView(value: JsAny?): Boolean
     }
 }
