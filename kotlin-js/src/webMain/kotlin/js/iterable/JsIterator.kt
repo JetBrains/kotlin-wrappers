@@ -105,6 +105,13 @@ abstract external class JsIterator<out T : JsAny?> :
 
     companion object {
         /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/concat)
+         */
+        fun <T : JsAny?> concat(
+            vararg values: JsIterable<T>,
+        ): JsIterator<T>
+
+        /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from)
          */
         fun <T : JsAny?> from(
