@@ -21,7 +21,15 @@ abstract external class JsIterator<out T : JsAny?> :
     fun forEach(action: (item: T) -> Unit)
     fun <R : JsAny?> map(transform: (T) -> R): JsIterator<R>
 
-    // fun reduce()
+    fun reduce(
+        operation: (previousValue: T, currentValue: T, currentIndex: Int) -> @UnsafeVariance T,
+    ): T
+
+    fun <U : JsAny?> reduce(
+        operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
+        initialValue: U,
+    ): U
+
     fun some(predicate: (T) -> Boolean): Boolean
     fun take(n: Int): JsIterator<T>
     // fun toArray(): ReadonlyArray<T>
