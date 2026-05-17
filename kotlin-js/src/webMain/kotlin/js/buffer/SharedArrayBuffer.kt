@@ -1,8 +1,13 @@
 package js.buffer
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+ */
 open external class SharedArrayBuffer(
     /**
      * Read-only. The length of the SharedArrayBuffer (in bytes).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/byteLength)
      */
     override val byteLength: Int,
     options: SharedArrayBufferOptions? = definedExternally,
@@ -10,6 +15,8 @@ open external class SharedArrayBuffer(
     AllowSharedBufferSource {
     /**
      * Returns a section of an SharedArrayBuffer.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/slice)
      */
     override fun slice(
         begin: Int,
