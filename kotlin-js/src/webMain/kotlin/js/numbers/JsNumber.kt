@@ -17,21 +17,39 @@ private external class JsNumber :
     fun toPrecision(precision: Int = definedExternally): String
 }
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
+ */
 @JsQualifier("Number")
 external val MAX_SAFE_INTEGER: Double
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER)
+ */
 @JsQualifier("Number")
 external val MIN_SAFE_INTEGER: Double
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite)
+ */
 @JsQualifier("Number")
 external fun isFinite(number: JsAny?): Boolean
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger)
+ */
 @JsQualifier("Number")
 external fun isInteger(number: JsAny?): Boolean
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
+ */
 @JsQualifier("Number")
 external fun isNaN(number: JsAny?): Boolean
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger)
+ */
 @JsQualifier("Number")
 external fun isSafeInteger(number: JsAny?): Boolean
 
