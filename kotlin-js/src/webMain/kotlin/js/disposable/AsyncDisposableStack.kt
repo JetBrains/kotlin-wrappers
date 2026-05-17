@@ -20,7 +20,7 @@ open external class AsyncDisposableStack :
     /**
      * Adds a disposable resource to the stack, returning the resource.
      * @param value The resource to add. `null` and `undefined` will not be added, but will be returned.
-     * @returns The provided {@link value}.
+     * @return The provided [value].
      */
     fun <T : Disposable?> use(value: T): T
     fun <T : AsyncDisposable?> use(value: T): T
@@ -30,7 +30,7 @@ open external class AsyncDisposableStack :
      * @param value The value to add.
      * @param onDisposeAsync The callback to use in place of a `[Symbol.asyncDispose]()` method. Will be invoked with `value`
      * as the first parameter.
-     * @returns The provided {@link value}.
+     * @return The provided [value].
      */
     fun <T : JsAny?> adopt(value: T, onDisposeAsync: (value: T) -> PromiseLike<Void>?): T
 

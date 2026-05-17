@@ -349,7 +349,7 @@ sealed external class TypedArray<
      * @param index The index of the value to overwrite. If the index is
      * negative, then it replaces from the end of the array.
      * @param value The value to insert into the copied array.
-     * @returns A copy of the original array with the inserted value.
+     * @return A copy of the original array with the inserted value.
      */
     fun with(
         index: Int,
