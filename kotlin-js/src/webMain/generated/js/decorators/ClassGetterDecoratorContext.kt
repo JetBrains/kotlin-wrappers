@@ -35,9 +35,8 @@ sealed external interface ClassGetterDecoratorContext<This : JsAny, Value : JsAn
         /**
          * Invokes the getter on the provided object.
          *
-         * ```ts
+         * @example
          * let value = context.access.get(instance);
-         * ```
          */
         fun get(o: This): Value
     }

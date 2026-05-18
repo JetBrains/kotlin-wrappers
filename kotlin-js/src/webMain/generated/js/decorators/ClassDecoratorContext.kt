@@ -18,6 +18,7 @@ sealed external interface ClassDecoratorContext<Class : JsClass<*>> {
     /**
      * Adds a callback to be invoked after the class definition has been finalized.
      *
+     * @example
      * ```ts
      * function customElement(name: string): ClassDecoratorFunction {
      *   return (target, context) => {

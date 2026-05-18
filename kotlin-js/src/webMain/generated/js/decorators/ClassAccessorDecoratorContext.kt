@@ -35,18 +35,16 @@ sealed external interface ClassAccessorDecoratorContext<This : JsAny, Value : Js
         /**
          * Invokes the getter on the provided object.
          *
-         * ```ts
+         * @example
          * let value = context.access.get(instance);
-         * ```
          */
         fun get(o: This): Value
 
         /**
          * Invokes the setter on the provided object.
          *
-         * ```ts
+         * @example
          * context.access.set(instance, value);
-         * ```
          */
         fun set(o: This, value: Value)
     }
