@@ -4,7 +4,6 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.iterable.JsIterable
-import js.numbers.JsNumbers.toKotlinUByte
 import js.numbers.JsUByte
 import js.serialization.Serializable
 
@@ -45,11 +44,3 @@ open external class Uint8Array<B : ArrayBufferLike>(
         ): Uint8Array<ArrayBuffer>
     }
 }
-
-inline fun Uint8Array<*>.toUint8Array(): Uint8Array<ArrayBuffer> =
-    Uint8Array(this)
-
-fun Uint8Array<*>.toUByteArray(): UByteArray =
-    UByteArray(size = length) { index ->
-        get(index).toKotlinUByte()
-    }
