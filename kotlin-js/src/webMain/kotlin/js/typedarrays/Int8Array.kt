@@ -20,8 +20,3 @@ open external class Int8Array<B : ArrayBufferLike>(
 
     companion object : TypedArrayCompanion<Int8Array<ArrayBuffer>, JsByte>
 }
-
-inline fun Int8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
-    Int8Array(this)
-
-expect fun Int8Array<*>.toByteArray(): ByteArray
