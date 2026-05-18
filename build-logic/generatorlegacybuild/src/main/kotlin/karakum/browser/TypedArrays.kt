@@ -1,16 +1,31 @@
 package karakum.browser
 
+private fun mdn(
+    path: String = "",
+): String =
+    // language=kotlin
+    """
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/__NAME__$path)
+ */
+""".trimIndent()
+
 // language=kotlin
 private val TEMPLATE = """
+${mdn()}
 open external class __NAME__<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
 ) : TypedArray<__NAME__<B>, __NAME__<ArrayBuffer>, B, __T__>,
     Serializable {
+    ${mdn("/__NAME__")}
     constructor()
+    ${mdn("/__NAME__")}
     constructor(length: Int)
+    ${mdn("/__NAME__")}
     constructor(elements: JsIterable<__T__>)
+    ${mdn("/__NAME__")}
     constructor(elements: ReadonlyArray<__T__>)
 
 __MEMBERS__
@@ -21,30 +36,36 @@ __MEMBERS__
 
 // language=kotlin
 private val UINT8_MEMBERS = """
+${mdn("/setFromBase64")}
 fun setFromBase64(
     string: String,
     options: FromBase64Options = definedExternally,
 ): SetFromResult
 
+${mdn("/setFromHex")}
 fun setFromHex(
     string: String,
 ): SetFromResult
 
+${mdn("/toBase64")}
 fun toBase64(
     options: ToBase64Options = definedExternally,
 ): String
 
+${mdn("/toHex")}
 fun toHex(): String
 """.trimIndent()
 
 // language=kotlin
 private val UINT8_COMPANION = """
 {
+    ${mdn("/fromBase64")}
     fun fromBase64(
         string: String,
         options: FromBase64Options = definedExternally,
     ): __NAME__<ArrayBuffer>
 
+    ${mdn("/fromHex")}
     fun fromHex(
         string: String,
     ): __NAME__<ArrayBuffer>
