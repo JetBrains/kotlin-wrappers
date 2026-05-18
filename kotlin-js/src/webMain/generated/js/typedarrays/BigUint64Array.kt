@@ -1,22 +1,24 @@
+// Automatically generated - do not modify!
+
 package js.typedarrays
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.iterable.JsIterable
-import js.numbers.JsFloat16
+import js.numbers.BigInt
 import js.serialization.Serializable
 
-open external class Float16Array<B : ArrayBufferLike>(
+open external class BigUint64Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Float16Array<B>, Float16Array<ArrayBuffer>, B, JsFloat16>,
+) : TypedArray<BigUint64Array<B>, BigUint64Array<ArrayBuffer>, B, BigInt>,
     Serializable {
     constructor()
     constructor(length: Int)
-    constructor(elements: JsIterable<JsFloat16>)
-    constructor(elements: ReadonlyArray<JsFloat16>)
+    constructor(elements: JsIterable<BigInt>)
+    constructor(elements: ReadonlyArray<BigInt>)
 
-    companion object : TypedArrayCompanion<Float16Array<ArrayBuffer>, JsFloat16>
+    companion object : TypedArrayCompanion<BigUint64Array<ArrayBuffer>, BigInt>
 }
