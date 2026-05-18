@@ -13,7 +13,41 @@ open external class __NAME__<B : ArrayBufferLike>(
     constructor(elements: JsIterable<__T__>)
     constructor(elements: ReadonlyArray<__T__>)
 
-    companion object : TypedArrayCompanion<__NAME__<ArrayBuffer>, __T__>
+__MEMBERS__
+
+    companion object : TypedArrayCompanion<__NAME__<ArrayBuffer>, __T__> __COMPANION_BODY__
+}
+""".trimIndent()
+
+// language=kotlin
+private val UINT8_MEMBERS = """
+fun setFromBase64(
+    string: String,
+    options: FromBase64Options = definedExternally,
+): SetFromResult
+
+fun setFromHex(
+    string: String,
+): SetFromResult
+
+fun toBase64(
+    options: ToBase64Options = definedExternally,
+): String
+
+fun toHex(): String
+""".trimIndent()
+
+// language=kotlin
+private val UINT8_COMPANION = """
+{
+    fun fromBase64(
+        string: String,
+        options: FromBase64Options = definedExternally,
+    ): __NAME__<ArrayBuffer>
+
+    fun fromHex(
+        string: String,
+    ): __NAME__<ArrayBuffer>
 }
 """.trimIndent()
 
@@ -27,11 +61,20 @@ internal fun typedArraysDeclarations(): Sequence<ConversionResult> =
         "Int8Array" to "JsByte",
         "Int16Array" to "JsShort",
         "Int32Array" to "JsInt",
+        "Uint8Array" to "JsUByte",
         "Uint8ClampedArray" to "JsUByte",
         "Uint16Array" to "JsUShort",
         "Uint32Array" to "JsUInt",
     ).map { (name, type) ->
         val body = TEMPLATE
+            .replace(
+                "\n__MEMBERS__\n",
+                UINT8_MEMBERS.takeIf { name == "Uint8Array" } ?: "",
+            )
+            .replace(
+                "__COMPANION_BODY__",
+                UINT8_COMPANION.takeIf { name == "Uint8Array" } ?: "",
+            )
             .replace("__NAME__", name)
             .replace("__T__", type)
 
