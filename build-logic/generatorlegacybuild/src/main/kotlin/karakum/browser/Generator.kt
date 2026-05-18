@@ -45,14 +45,19 @@ private val DEFAULT_IMPORTS = Imports(
     "js.iterable.JsIterator",
     "js.numbers.BigInt",
     "js.numbers.Bitmask",
+    "js.numbers.Int53",
+    "js.numbers.JsByte",
     "js.numbers.JsDouble",
     "js.numbers.JsFloat",
+    "js.numbers.JsFloat16",
     "js.numbers.JsInt",
     "js.numbers.JsInt53",
     "js.numbers.JsNumbers.toKotlinInt",
+    "js.numbers.JsShort",
+    "js.numbers.JsUByte",
     "js.numbers.JsUInt",
     "js.numbers.JsUInt53",
-    "js.numbers.Int53",
+    "js.numbers.JsUShort",
     "js.numbers.UInt53",
     "js.objects.PropertyKey",
     "js.objects.ReadonlyRecord",
@@ -428,6 +433,7 @@ fun generateKotlinDeclarations(
         .plus(decoratorsDeclarations(definitionsDir))
         .plus(dateDeclarations(definitionsDir))
         .plus(intlDeclarations(definitionsDir))
+        .plus(typedArraysDeclarations())
         .plus(atomicsDeclarations(definitionsDir))
         .plus(webAssemblyDeclarations(content))
         .plus(webWorkersDeclarations(webworkerDefinitionsParts.first))
