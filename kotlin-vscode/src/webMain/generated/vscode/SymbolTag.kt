@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Symbol tags are extra annotations that tweak the rendering of a symbol.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SymbolTag)
  */
 sealed /* enum */
 external interface SymbolTag {

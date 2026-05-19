@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Collapsible state of a {@link CommentThread comment thread}
+ * Collapsible state of a [comment thread][CommentThread]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentThreadCollapsibleState)
  */
 sealed /* enum */
 external interface CommentThreadCollapsibleState {

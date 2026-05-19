@@ -10,6 +10,8 @@ package vscode
 
 /**
  * The reason why paste edits were requested.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteTriggerKind)
  */
 sealed /* enum */
 external interface DocumentPasteTriggerKind {

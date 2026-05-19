@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Represents a notebook editor that is attached to a {@link NotebookDocument notebook}.
+ * Represents a notebook editor that is attached to a [notebook][NotebookDocument].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookEditorRevealType)
  */
 sealed /* enum */
 external interface NotebookEditorRevealType {

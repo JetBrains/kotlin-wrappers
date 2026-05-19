@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Describes how an {@link InlineCompletionItemProvider inline completion provider} was triggered.
+ * Describes how an [inline completion provider][InlineCompletionItemProvider] was triggered.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionTriggerKind)
  */
 sealed /* enum */
 external interface InlineCompletionTriggerKind {

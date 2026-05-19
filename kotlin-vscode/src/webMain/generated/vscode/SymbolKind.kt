@@ -10,6 +10,8 @@ package vscode
 
 /**
  * A symbol kind.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SymbolKind)
  */
 sealed /* enum */
 external interface SymbolKind {

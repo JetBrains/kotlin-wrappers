@@ -10,6 +10,8 @@ package vscode
 
 /**
  * A notebook cell kind.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellKind)
  */
 sealed /* enum */
 external interface NotebookCellKind {

@@ -11,6 +11,8 @@ package vscode
 /**
  * In a remote window the extension kind describes if an extension
  * runs where the UI (window) runs or if an extension runs remotely.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionKind)
  */
 sealed /* enum */
 external interface ExtensionKind {

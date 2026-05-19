@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Represents the severity of diagnostics.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticSeverity)
  */
 sealed /* enum */
 external interface DiagnosticSeverity {

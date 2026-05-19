@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Describes the behavior of decorations when typing/editing at their edges.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DecorationRangeBehavior)
  */
 sealed /* enum */
 external interface DecorationRangeBehavior {

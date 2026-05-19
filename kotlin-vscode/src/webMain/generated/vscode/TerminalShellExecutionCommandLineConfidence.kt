@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * The confidence of a {@link TerminalShellExecutionCommandLine} value.
+ * The confidence of a [TerminalShellExecutionCommandLine] value.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionCommandLineConfidence)
  */
 sealed /* enum */
 external interface TerminalShellExecutionCommandLineConfidence {

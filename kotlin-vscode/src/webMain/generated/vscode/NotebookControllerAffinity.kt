@@ -11,7 +11,9 @@ package vscode
 /**
  * Notebook controller affinity for notebook documents.
  *
- * @see {@link NotebookController.updateNotebookAffinity}
+ * @see [NotebookController.updateNotebookAffinity]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookControllerAffinity)
  */
 sealed /* enum */
 external interface NotebookControllerAffinity {

@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Describes what to do with the indentation when pressing Enter.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#IndentAction)
  */
 sealed /* enum */
 external interface IndentAction {

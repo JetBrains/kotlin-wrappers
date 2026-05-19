@@ -10,6 +10,8 @@ package vscode
 
 /**
  * The reason why code actions were requested.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionTriggerKind)
  */
 sealed /* enum */
 external interface CodeActionTriggerKind {

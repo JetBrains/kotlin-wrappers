@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Log levels
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogLevel)
  */
 sealed /* enum */
 external interface LogLevel {

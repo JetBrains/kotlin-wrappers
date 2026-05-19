@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Possible kinds of UI that can use extensions.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#UIKind)
  */
 sealed /* enum */
 external interface UIKind {

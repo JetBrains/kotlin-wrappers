@@ -10,6 +10,8 @@ package vscode
 
 /**
  * The state of a comment thread.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentThreadState)
  */
 sealed /* enum */
 external interface CommentThreadState {

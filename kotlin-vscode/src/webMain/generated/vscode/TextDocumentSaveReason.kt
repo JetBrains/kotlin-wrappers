@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Represents reasons why a text document is saved.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentSaveReason)
  */
 sealed /* enum */
 external interface TextDocumentSaveReason {

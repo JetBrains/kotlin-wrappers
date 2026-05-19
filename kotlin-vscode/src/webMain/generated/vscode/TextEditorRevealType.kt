@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Represents different {@link TextEditor.revealRange reveal} strategies in a text editor.
+ * Represents different [reveal][TextEditor.revealRange] strategies in a text editor.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorRevealType)
  */
 sealed /* enum */
 external interface TextEditorRevealType {

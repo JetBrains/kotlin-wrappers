@@ -9,8 +9,10 @@
 package vscode
 
 /**
- * Represents different positions for rendering a decoration in an {@link DecorationRenderOptions.overviewRulerLane overview ruler}.
+ * Represents different positions for rendering a decoration in an [overview ruler][DecorationRenderOptions.overviewRulerLane].
  * The overview ruler supports three lanes.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OverviewRulerLane)
  */
 sealed /* enum */
 external interface OverviewRulerLane {

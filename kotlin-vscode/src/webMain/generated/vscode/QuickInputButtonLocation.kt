@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Specifies the location where a {@link QuickInputButton} should be rendered.
+ * Specifies the location where a [QuickInputButton] should be rendered.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInputButtonLocation)
  */
 sealed /* enum */
 external interface QuickInputButtonLocation {

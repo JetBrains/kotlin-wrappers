@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Controls the behaviour of the terminal's visibility.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskRevealKind)
  */
 sealed /* enum */
 external interface TaskRevealKind {

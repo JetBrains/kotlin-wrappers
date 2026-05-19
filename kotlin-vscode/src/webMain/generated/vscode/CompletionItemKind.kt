@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Completion item kinds.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemKind)
  */
 sealed /* enum */
 external interface CompletionItemKind {

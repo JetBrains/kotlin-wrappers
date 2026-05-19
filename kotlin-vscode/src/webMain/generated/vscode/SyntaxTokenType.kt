@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Enumeration of commonly encountered syntax token types.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SyntaxTokenType)
  */
 sealed /* enum */
 external interface SyntaxTokenType {

@@ -11,6 +11,8 @@ package vscode
 /**
  * A location in the editor at which progress information can be shown. It depends on the
  * location how progress is visually represented.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProgressLocation)
  */
 sealed /* enum */
 external interface ProgressLocation {

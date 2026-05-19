@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Permissions of a file.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FilePermission)
  */
 sealed /* enum */
 external interface FilePermission {

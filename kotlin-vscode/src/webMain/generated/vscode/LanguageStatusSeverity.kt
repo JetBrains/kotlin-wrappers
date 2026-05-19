@@ -11,6 +11,8 @@ package vscode
 /**
  * Represents the severity of a language status item.
  * Represents the severity level of a language status.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageStatusSeverity)
  */
 sealed /* enum */
 external interface LanguageStatusSeverity {

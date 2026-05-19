@@ -84,18 +84,26 @@ private fun convertConst(
 private fun convertEnum(
     name: String,
     source: String,
-): String =
-    source
-        .replaceFirst("\nexport enum ", "\nsealed /* enum */\nexternal interface ")
+): String {
+    val (commentSource, bodySource) = source.split("\nexport enum ")
+
+    val comment = kdoc(
+        commentSource,
+        Commenter.create(name),
+    )
+
+    val body = "sealed /* enum */\nexternal interface " + bodySource
         .replaceFirst("{\n", "{\ncompanion object {")
         .replaceFirst("\n}", "\n}\n}")
         .splitToSequence("\n")
-        .map {
+        .joinToString("\n") {
             if (" = " in it) {
                 "val " + it.removeSuffix(",").replace(" = ", ": $name // ")
             } else it
         }
-        .joinToString("\n")
+
+    return "$comment\n$body"
+}
 
 private fun convertType(
     name: String,

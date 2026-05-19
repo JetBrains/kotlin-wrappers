@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Represents the alignment of status bar items.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#StatusBarAlignment)
  */
 sealed /* enum */
 external interface StatusBarAlignment {

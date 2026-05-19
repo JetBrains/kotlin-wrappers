@@ -12,6 +12,8 @@ package vscode
  * Enumeration of file types. The types `File` and `Directory` can also be
  * a symbolic links, in that case use `FileType.File | FileType.SymbolicLink` and
  * `FileType.Directory | FileType.SymbolicLink`.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileType)
  */
 sealed /* enum */
 external interface FileType {

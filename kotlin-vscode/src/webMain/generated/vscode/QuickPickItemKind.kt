@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Defines the kind of {@link QuickPickItem quick pick item}.
+ * Defines the kind of [quick pick item][QuickPickItem].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItemKind)
  */
 sealed /* enum */
 external interface QuickPickItemKind {

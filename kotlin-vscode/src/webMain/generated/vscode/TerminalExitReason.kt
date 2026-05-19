@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Terminal exit reason kind.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalExitReason)
  */
 sealed /* enum */
 external interface TerminalExitReason {

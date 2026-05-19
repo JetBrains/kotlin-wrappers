@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * How a {@link CompletionItemProvider completion provider} was triggered
+ * How a [completion provider][CompletionItemProvider] was triggered
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionTriggerKind)
  */
 sealed /* enum */
 external interface CompletionTriggerKind {

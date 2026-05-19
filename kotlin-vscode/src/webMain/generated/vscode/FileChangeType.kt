@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Enumeration of file change types.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileChangeType)
  */
 sealed /* enum */
 external interface FileChangeType {

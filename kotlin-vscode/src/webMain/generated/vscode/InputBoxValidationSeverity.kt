@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Severity levels for input box validation messages.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBoxValidationSeverity)
  */
 sealed /* enum */
 external interface InputBoxValidationSeverity {

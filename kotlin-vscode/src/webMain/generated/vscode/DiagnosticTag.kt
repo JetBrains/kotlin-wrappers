@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Additional metadata about the type of a diagnostic.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticTag)
  */
 sealed /* enum */
 external interface DiagnosticTag {

@@ -11,6 +11,8 @@ package vscode
 /**
  * Defines how an argument should be quoted if it contains
  * spaces or unsupported characters.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellQuoting)
  */
 sealed /* enum */
 external interface ShellQuoting {

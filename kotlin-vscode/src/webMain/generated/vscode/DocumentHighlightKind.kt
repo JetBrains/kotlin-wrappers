@@ -10,6 +10,8 @@ package vscode
 
 /**
  * A document highlight kind.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightKind)
  */
 sealed /* enum */
 external interface DocumentHighlightKind {

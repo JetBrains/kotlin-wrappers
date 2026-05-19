@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Rendering style of the line numbers.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorLineNumbersStyle)
  */
 sealed /* enum */
 external interface TextEditorLineNumbersStyle {

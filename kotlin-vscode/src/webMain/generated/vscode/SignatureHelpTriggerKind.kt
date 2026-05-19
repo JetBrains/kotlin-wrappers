@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * How a {@linkcode SignatureHelpProvider} was triggered.
+ * How a [SignatureHelpProvider] was triggered.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpTriggerKind)
  */
 sealed /* enum */
 external interface SignatureHelpTriggerKind {

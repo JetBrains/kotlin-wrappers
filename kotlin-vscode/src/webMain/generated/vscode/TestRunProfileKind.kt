@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * The kind of executions that {@link TestRunProfile TestRunProfiles} control.
+ * The kind of executions that [TestRunProfiles][TestRunProfile] control.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestRunProfileKind)
  */
 sealed /* enum */
 external interface TestRunProfileKind {

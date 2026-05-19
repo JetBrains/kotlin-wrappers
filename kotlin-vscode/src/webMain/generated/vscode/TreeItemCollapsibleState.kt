@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Collapsible state of the tree item
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItemCollapsibleState)
  */
 sealed /* enum */
 external interface TreeItemCollapsibleState {

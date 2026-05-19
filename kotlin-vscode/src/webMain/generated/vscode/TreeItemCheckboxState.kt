@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Checkbox state of the tree item
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItemCheckboxState)
  */
 sealed /* enum */
 external interface TreeItemCheckboxState {

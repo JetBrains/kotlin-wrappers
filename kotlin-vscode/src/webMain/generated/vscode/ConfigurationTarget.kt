@@ -10,6 +10,8 @@ package vscode
 
 /**
  * The configuration target
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ConfigurationTarget)
  */
 sealed /* enum */
 external interface ConfigurationTarget {

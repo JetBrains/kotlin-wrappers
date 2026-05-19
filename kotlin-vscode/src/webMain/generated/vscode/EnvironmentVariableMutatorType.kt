@@ -10,6 +10,8 @@ package vscode
 
 /**
  * A type of mutation that can be applied to an environment variable.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableMutatorType)
  */
 sealed /* enum */
 external interface EnvironmentVariableMutatorType {

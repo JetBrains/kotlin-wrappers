@@ -13,6 +13,8 @@ package vscode
  *
  * The kind of an inline hint defines its appearance, e.g the corresponding foreground and background colors are being
  * used.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintKind)
  */
 sealed /* enum */
 external interface InlayHintKind {

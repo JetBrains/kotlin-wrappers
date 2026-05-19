@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Represents the role of a chat message. This is either the user or the assistant.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessageRole)
  */
 sealed /* enum */
 external interface LanguageModelChatMessageRole {

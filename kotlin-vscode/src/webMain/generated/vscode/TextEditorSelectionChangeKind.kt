@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Represents sources that can cause {@link window.onDidChangeTextEditorSelection selection change events}.
+ * Represents sources that can cause [selection change events][window.onDidChangeTextEditorSelection].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorSelectionChangeKind)
  */
 sealed /* enum */
 external interface TextEditorSelectionChangeKind {

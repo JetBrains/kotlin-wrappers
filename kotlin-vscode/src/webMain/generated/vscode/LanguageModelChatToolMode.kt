@@ -10,6 +10,8 @@ package vscode
 
 /**
  * A tool-calling mode for the language model to use.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatToolMode)
  */
 sealed /* enum */
 external interface LanguageModelChatToolMode {

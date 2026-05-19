@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Comment mode of a {@link Comment}
+ * Comment mode of a [Comment]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentMode)
  */
 sealed /* enum */
 external interface CommentMode {

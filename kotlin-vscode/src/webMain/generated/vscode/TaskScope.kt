@@ -10,6 +10,8 @@ package vscode
 
 /**
  * The scope of a task.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskScope)
  */
 sealed /* enum */
 external interface TaskScope {

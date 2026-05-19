@@ -11,6 +11,8 @@ package vscode
 /**
  * The ExtensionMode is provided on the `ExtensionContext` and indicates the
  * mode the specific extension is running in.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionMode)
  */
 sealed /* enum */
 external interface ExtensionMode {

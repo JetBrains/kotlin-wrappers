@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Represents an end of line character sequence in a {@link TextDocument document}.
+ * Represents an end of line character sequence in a [document][TextDocument].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EndOfLine)
  */
 sealed /* enum */
 external interface EndOfLine {

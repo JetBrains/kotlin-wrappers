@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Represents a color theme kind.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ColorThemeKind)
  */
 sealed /* enum */
 external interface ColorThemeKind {

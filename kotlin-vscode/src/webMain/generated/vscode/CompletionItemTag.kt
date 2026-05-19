@@ -11,6 +11,8 @@ package vscode
 /**
  * Completion item tags are extra annotations that tweak the rendering of a completion
  * item.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemTag)
  */
 sealed /* enum */
 external interface CompletionItemTag {

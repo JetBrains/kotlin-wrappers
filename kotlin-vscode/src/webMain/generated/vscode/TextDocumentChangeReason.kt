@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Reasons for why a text document has changed.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentChangeReason)
  */
 sealed /* enum */
 external interface TextDocumentChangeReason {

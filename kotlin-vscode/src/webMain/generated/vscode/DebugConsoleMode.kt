@@ -9,7 +9,9 @@
 package vscode
 
 /**
- * Debug console mode used by debug session, see {@link DebugSessionOptions options}.
+ * Debug console mode used by debug session, see [options][DebugSessionOptions].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConsoleMode)
  */
 sealed /* enum */
 external interface DebugConsoleMode {

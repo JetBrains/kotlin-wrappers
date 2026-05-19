@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Controls how the task channel is used between tasks
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskPanelKind)
  */
 sealed /* enum */
 external interface TaskPanelKind {

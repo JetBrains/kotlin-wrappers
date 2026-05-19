@@ -10,6 +10,8 @@ package vscode
 
 /**
  * Rendering style of the cursor.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorCursorStyle)
  */
 sealed /* enum */
 external interface TextEditorCursorStyle {
