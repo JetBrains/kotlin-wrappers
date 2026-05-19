@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 /**
  * A document filter denotes a document by different properties like
- * the [language}, the {@link Uri.scheme scheme][TextDocument.languageId] of
+ * the [language][TextDocument.languageId], the [scheme][Uri.scheme] of
  * its resource, or a glob-pattern that is applied to the [path][TextDocument.fileName].
  *
  * @example <caption>A language filter that applies to typescript files on disk</caption>
@@ -48,7 +48,7 @@ external interface DocumentFilter {
     val scheme: String?
 
     /**
-     * A [glob pattern} that is matched on the absolute path of the document. Use a {@link RelativePattern relative pattern][GlobPattern]
+     * A [glob pattern][GlobPattern] that is matched on the absolute path of the document. Use a [relative pattern][RelativePattern]
      * to filter documents to a [workspace folder][WorkspaceFolder].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter.pattern)

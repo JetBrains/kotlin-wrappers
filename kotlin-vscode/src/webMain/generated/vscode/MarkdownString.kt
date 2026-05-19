@@ -87,7 +87,7 @@ open external class MarkdownString {
      * Creates a new markdown string with the given value.
      *
      * @param value Optional, initial value.
-     * @param supportThemeIcons Optional, Specifies whether [ThemeIcons} are supported within the {@linkcode MarkdownString][ThemeIcon].
+     * @param supportThemeIcons Optional, Specifies whether [ThemeIcons][ThemeIcon] are supported within the [MarkdownString].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.constructor)
      */

@@ -702,11 +702,20 @@ private fun kdoc(
     source: String,
     commenter: Commenter,
 ): String {
+    val toLink = { result: MatchResult ->
+        val value = result.groupValues[1]
+        val code = value.substringBefore(" ")
+        if (code != value) {
+            val title = value.substringAfter(" ")
+            "[$title][$code]"
+        } else {
+            "[$value]"
+        }
+    }
+
     val result = source
-        .replace(Regex("""\{@link (\S+)}"""), "[$1]")
-        .replace(Regex("""\{@link (\S+) (.+)}"""), "[$2][$1]")
-        .replace(Regex("""\{@linkcode (\S+)}"""), "[$1]")
-        .replace(Regex("""\{@linkcode (\S+) (.+)}"""), "[$2][$1]")
+        .replace(Regex("""\{@link (.+?)}"""), toLink)
+        .replace(Regex("""\{@linkcode (.+?)}"""), toLink)
 
     val name = commenter.name
         ?: return result

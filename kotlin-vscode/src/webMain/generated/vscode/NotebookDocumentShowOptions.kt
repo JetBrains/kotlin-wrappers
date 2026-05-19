@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 /**
- * Represents options to configure the behavior of showing a [notebook document} in an {@link NotebookEditor notebook editor][NotebookDocument].
+ * Represents options to configure the behavior of showing a [notebook document][NotebookDocument] in an [notebook editor][NotebookEditor].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentShowOptions)
  */

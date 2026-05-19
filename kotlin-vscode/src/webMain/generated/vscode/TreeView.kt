@@ -105,7 +105,7 @@ external interface TreeView<T : JsAny?> :
      * In order to expand the revealed element, set the option `expand` to `true`. To expand recursively set `expand` to the number of levels to expand.
      *
      * * *NOTE:* You can expand only to 3 levels maximum.
-     * * *NOTE:* The [TreeDataProvider] that the `TreeView` [is registered with} with must implement {@link TreeDataProvider.getParent getParent][window.createTreeView] method to access this API.
+     * * *NOTE:* The [TreeDataProvider] that the `TreeView` [is registered with][window.createTreeView] with must implement [getParent][TreeDataProvider.getParent] method to access this API.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.reveal)
      */

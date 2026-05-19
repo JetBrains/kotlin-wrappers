@@ -136,7 +136,7 @@ external interface TextEditor {
      * @see [createTextEditorDecorationType][window.createTextEditorDecorationType].
      *
      * @param decorationType A decoration type.
-     * @param rangesOrOptions Either [ranges} or more detailed {@link DecorationOptions options][Range].
+     * @param rangesOrOptions Either [ranges][Range] or more detailed [options][DecorationOptions].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.setDecorations)
      */

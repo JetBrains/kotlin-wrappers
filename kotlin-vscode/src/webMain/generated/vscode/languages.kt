@@ -30,7 +30,7 @@ import js.promise.PromiseLike
  * ```
  *
  * Registration is done using a [document selector][DocumentSelector] which is either a language id, like `javascript` or
- * a more complex [filter} like `{ language: 'typescript', scheme: 'file' ][DocumentFilter]`. Matching a document against such
+ * a more complex [filter][DocumentFilter] like `{ language: 'typescript', scheme: 'file' }`. Matching a document against such
  * a selector will result in a [score][languages.match] that is used to determine if and how a provider shall be used. When
  * scores are equal the provider that came last wins. For features that allow full arity, like [hover][languages.registerHoverProvider],
  * the score is only checked to be `>0`, for other features, like [IntelliSense][languages.registerCompletionItemProvider] the
@@ -781,7 +781,7 @@ external object languages {
      * Multiple providers can be registered for a language. All registered providers for a language will be invoked
      * for copy and paste operations based on their handled mimetypes as specified by the [DocumentPasteProviderMetadata].
      *
-     * For [copy operations}, changes to the {@linkcode DataTransfer][DocumentPasteEditProvider.prepareDocumentPaste]
+     * For [copy operations][DocumentPasteEditProvider.prepareDocumentPaste], changes to the [DataTransfer]
      * made by each provider will be merged into a single [DataTransfer] that is used to populate the clipboard.
      *
      * For [paste operations][DocumentPasteEditProvider.providerDocumentPasteEdits], each provider will be invoked

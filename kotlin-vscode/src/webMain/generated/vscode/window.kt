@@ -224,7 +224,7 @@ external object window {
      * to control where the editor is being shown. Might change the [active editor][window.activeTextEditor].
      *
      * @param document A text document to be shown.
-     * @param column A view column in which the [editor} should be shown. The default is the {@link ViewColumn.Active active][TextEditor].
+     * @param column A view column in which the [editor][TextEditor] should be shown. The default is the [active][ViewColumn.Active].
      * Columns that do not exist will be created as needed up to the maximum of [ViewColumn.Nine]. Use [ViewColumn.Beside]
      * to open the editor to the side of the currently active one.
      * @param preserveFocus When `true` the editor will not take focus.
@@ -244,7 +244,7 @@ external object window {
      * to control options of the editor is being shown. Might change the [active editor][window.activeTextEditor].
      *
      * @param document A text document to be shown.
-     * @param options [Editor options} to configure the behavior of showing the {@link TextEditor editor][TextDocumentShowOptions].
+     * @param options [Editor options][TextDocumentShowOptions] to configure the behavior of showing the [editor][TextEditor].
      * @returns A promise that resolves to an [editor][TextEditor].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
@@ -261,7 +261,7 @@ external object window {
      * @see [workspace.openTextDocument]
      *
      * @param uri A resource identifier.
-     * @param options [Editor options} to configure the behavior of showing the {@link TextEditor editor][TextDocumentShowOptions].
+     * @param options [Editor options][TextDocumentShowOptions] to configure the behavior of showing the [editor][TextEditor].
      * @returns A promise that resolves to an [editor][TextEditor].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
@@ -276,7 +276,7 @@ external object window {
      * Show the given [NotebookDocument] in a [notebook editor][NotebookEditor].
      *
      * @param document A text document to be shown.
-     * @param options [Editor options} to configure the behavior of showing the {@link NotebookEditor notebook editor][NotebookDocumentShowOptions].
+     * @param options [Editor options][NotebookDocumentShowOptions] to configure the behavior of showing the [notebook editor][NotebookEditor].
      *
      * @returns A promise that resolves to an [notebook editor][NotebookEditor].
      *
@@ -669,7 +669,7 @@ external object window {
      * Creates a new [output channel][OutputChannel] with the given name and language id
      * If language id is not provided, then **Log** is used as default language id.
      *
-     * You can access the visible or active output channel as a [text document} from {@link window.visibleTextEditors visible editors} or {@link window.activeTextEditor active editor][TextDocument]
+     * You can access the visible or active output channel as a [text document][TextDocument] from [visible editors][window.visibleTextEditors] or [active editor][window.activeTextEditor]
      * and use the language id to contribute language features like syntax coloring, code lens etc.,
      *
      * @param name Human-readable string which will be used to represent the channel in the UI.
@@ -908,7 +908,7 @@ external object window {
     ): TreeView<T>
 
     /**
-     * Registers a [uri handler} capable of handling system-wide {@link Uri uris][UriHandler].
+     * Registers a [uri handler][UriHandler] capable of handling system-wide [uris][Uri].
      * In case there are multiple windows open, the topmost window will handle the uri.
      * A uri handler is scoped to the extension it is contributed from; it will only
      * be able to handle uris which are directed to the extension itself. A uri must respect

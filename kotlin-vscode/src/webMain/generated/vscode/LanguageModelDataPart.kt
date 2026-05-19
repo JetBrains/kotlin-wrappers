@@ -8,7 +8,7 @@ import js.typedarrays.Uint8Array
 
 /**
  * A language model response part containing arbitrary data. Can be used in [responses][LanguageModelChatResponse],
- * [chat messages}, {@link LanguageModelToolResult tool results][LanguageModelChatMessage], and other language model interactions.
+ * [chat messages][LanguageModelChatMessage], [tool results][LanguageModelToolResult], and other language model interactions.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelDataPart)
  */

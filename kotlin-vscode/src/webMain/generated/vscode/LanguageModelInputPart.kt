@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * The various message types which can be sent via {@linkcode LanguageModelChat.sendRequest } and processed by a [LanguageModelChatProvider]
+ * The various message types which can be sent via [][LanguageModelChat.sendRequest] and processed by a [LanguageModelChatProvider]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelInputPart)
  */

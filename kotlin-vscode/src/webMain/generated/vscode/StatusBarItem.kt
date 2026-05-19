@@ -91,7 +91,7 @@ external interface StatusBarItem :
      *
      * The command must be [known][commands.getCommands].
      *
-     * Note that if this is a [Command] object, only the [command} and {@linkcode Command.arguments arguments][Command.command]
+     * Note that if this is a [Command] object, only the [command][Command.command] and [arguments][Command.arguments]
      * are used by the editor.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#StatusBarItem.command)

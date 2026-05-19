@@ -58,7 +58,7 @@ open external class Selection :
     )
 
     /**
-     * A selection is reversed if its [anchor} is the {@link Selection.end end][Selection.anchor] position.
+     * A selection is reversed if its [anchor][Selection.anchor] is the [end][Selection.end] position.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Selection.isReversed)
      */

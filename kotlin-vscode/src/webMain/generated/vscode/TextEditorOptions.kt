@@ -5,7 +5,7 @@ package vscode
 import kotlinx.js.JsPlainObject
 
 /**
- * Represents a [text editor}'s {@link TextEditor.options options][TextEditor].
+ * Represents a [text editor][TextEditor]'s [options][TextEditor.options].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions)
  */

@@ -5,7 +5,7 @@ package vscode
 import kotlinx.js.JsPlainObject
 
 /**
- * Represents options to configure the behavior of showing a [document} in an {@link TextEditor editor][TextDocument].
+ * Represents options to configure the behavior of showing a [document][TextDocument] in an [editor][TextEditor].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions)
  */

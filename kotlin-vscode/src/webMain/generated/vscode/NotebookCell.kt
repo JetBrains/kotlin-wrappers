@@ -7,7 +7,7 @@ import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 
 /**
- * Represents a cell of a [notebook}, either a {@link NotebookCellKind.Code code][NotebookDocument]-cell
+ * Represents a cell of a [notebook][NotebookDocument], either a [code][NotebookCellKind.Code]-cell
  * or [markup][NotebookCellKind.Markup]-cell.
  *
  * NotebookCell instances are immutable and are kept in sync for as long as they are part of their notebook.

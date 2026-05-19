@@ -77,7 +77,7 @@ external object commands {
      * callback executes.
      *
      * @param command A unique identifier for the command.
-     * @param callback A command handler function with access to an [editor} and an {@link TextEditorEdit edit][TextEditor].
+     * @param callback A command handler function with access to an [editor][TextEditor] and an [edit][TextEditorEdit].
      * @param thisArg The `this` context used when invoking the handler function.
      * @returns Disposable which unregisters this command on disposal.
      *

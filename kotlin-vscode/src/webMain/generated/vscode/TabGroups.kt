@@ -26,14 +26,14 @@ external interface TabGroups {
     val activeTabGroup: TabGroup
 
     /**
-     * An [event} which fires when {@link TabGroup tab groups][Event] have changed.
+     * An [event][Event] which fires when [tab groups][TabGroup] have changed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabGroups.onDidChangeTabGroups)
      */
     val onDidChangeTabGroups: Event<TabGroupChangeEvent>
 
     /**
-     * An [event} which fires when {@link Tab tabs][Event] have changed.
+     * An [event][Event] which fires when [tabs][Tab] have changed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabGroups.onDidChangeTabs)
      */

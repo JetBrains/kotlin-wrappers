@@ -28,7 +28,7 @@ open external class FoldingRange {
     var end: Int
 
     /**
-     * Describes the [Kind} of the folding range such as {@link FoldingRangeKind.Comment Comment][FoldingRangeKind] or
+     * Describes the [Kind][FoldingRangeKind] of the folding range such as [Comment][FoldingRangeKind.Comment] or
      * [Region][FoldingRangeKind.Region]. The kind is used to categorize folding ranges and used by commands
      * like 'Fold all comments'. See
      * [FoldingRangeKind] for an enumeration of all kinds.

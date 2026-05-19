@@ -4,7 +4,7 @@ package vscode
 
 /**
  * Represents a handle to a set of decorations
- * sharing the same [styling options} in a {@link TextEditor text editor][DecorationRenderOptions].
+ * sharing the same [styling options][DecorationRenderOptions] in a [text editor][TextEditor].
  *
  * To get an instance of a `TextEditorDecorationType` use
  * [createTextEditorDecorationType][window.createTextEditorDecorationType].

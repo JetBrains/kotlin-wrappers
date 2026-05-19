@@ -84,7 +84,7 @@ external object lm {
      * [chat request][ChatRequest.toolInvocationToken]. This makes sure the chat UI shows the tool invocation for the
      * correct conversation.
      *
-     * A tool [result} is an array of {@link LanguageModelTextPart text-][LanguageModelToolResult] and
+     * A tool [result][LanguageModelToolResult] is an array of [text-][LanguageModelTextPart] and
      * [prompt-tsx][LanguageModelPromptTsxPart]-parts. If the tool caller is using `@vscode/prompt-tsx`, it can
      * incorporate the response parts into its prompt using a `ToolResult`. If not, the parts can be passed along to the
      * [LanguageModelChat] via a user message with a [LanguageModelToolResultPart].

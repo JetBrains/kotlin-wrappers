@@ -28,7 +28,7 @@ open external class TreeItem {
 
     /**
      * The icon path or [ThemeIcon] for the tree item.
-     * When `falsy`, [Folder Theme Icon} is assigned, if item is collapsible otherwise {@link ThemeIcon.File File Theme Icon][ThemeIcon.Folder].
+     * When `falsy`, [Folder Theme Icon][ThemeIcon.Folder] is assigned, if item is collapsible otherwise [File Theme Icon][ThemeIcon.File].
      * When a file or folder [ThemeIcon] is specified, icon is derived from the current file icon theme for the specified theme icon using [resourceUri][TreeItem.resourceUri] (if provided).
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItem.iconPath)
@@ -114,7 +114,7 @@ open external class TreeItem {
 
     /**
      * [TreeItemCheckboxState][TreeItemCheckboxState] of the tree item.
-     * [onDidChangeTreeData} should be fired when {@link TreeItem.checkboxState checkboxState][TreeDataProvider.onDidChangeTreeData] changes.
+     * [onDidChangeTreeData][TreeDataProvider.onDidChangeTreeData] should be fired when [checkboxState][TreeItem.checkboxState] changes.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItem.checkboxState)
      */

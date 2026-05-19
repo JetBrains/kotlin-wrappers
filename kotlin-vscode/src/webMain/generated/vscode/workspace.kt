@@ -565,7 +565,7 @@ external object workspace {
      *
      * - The event is emitted before the [document][TextDocument] is updated in the
      * [active text editor][window.activeTextEditor]
-     * - When a [text document} is already open (e.g.: open in another {@link window.visibleTextEditors visible text editor][TextDocument]) this event is not emitted
+     * - When a [text document][TextDocument] is already open (e.g.: open in another [visible text editor][window.visibleTextEditors]) this event is not emitted
      *
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidOpenTextDocument)

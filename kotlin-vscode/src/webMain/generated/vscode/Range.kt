@@ -8,10 +8,10 @@ import kotlinx.js.JsPlainObject
 
 /**
  * A range represents an ordered pair of two positions.
- * It is guaranteed that [start}.isBeforeOrEqual({@link Range.end end][Range.start])
+ * It is guaranteed that [start][Range.start].isBeforeOrEqual([end][Range.end])
  *
  * Range objects are __immutable__. Use the [with][Range.with],
- * [intersection}, or {@link Range.union union][Range.intersection] methods
+ * [intersection][Range.intersection], or [union][Range.union] methods
  * to derive new ranges from an existing range.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Range)

@@ -184,7 +184,7 @@ external interface WorkspaceConfiguration {
      *
      * - [Global settings][ConfigurationTarget.Global]: Changes the value for all instances of the editor.
      * - [Workspace settings][ConfigurationTarget.Workspace]: Changes the value for current workspace, if available.
-     * - [Workspace folder settings}: Changes the value for settings from one of the {@link workspace.workspaceFolders Workspace Folders][ConfigurationTarget.WorkspaceFolder] under which the requested resource belongs to.
+     * - [Workspace folder settings][ConfigurationTarget.WorkspaceFolder]: Changes the value for settings from one of the [Workspace Folders][workspace.workspaceFolders] under which the requested resource belongs to.
      * - Language settings: Changes the value for the requested languageId.
      *
      * *Note:* To remove a configuration value use `undefined`, like so: `config.update('somekey', undefined)`

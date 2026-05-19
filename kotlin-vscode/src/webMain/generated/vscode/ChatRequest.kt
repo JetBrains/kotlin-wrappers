@@ -17,7 +17,7 @@ external interface ChatRequest {
      *
      * Information about references used in this request is stored in [ChatRequest.references].
      *
-     * *Note* that the [name} of the participant and the {@link ChatCommand.name command][ChatParticipant.name]
+     * *Note* that the [name][ChatParticipant.name] of the participant and the [command][ChatCommand.name]
      * are not part of the prompt.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequest.prompt)

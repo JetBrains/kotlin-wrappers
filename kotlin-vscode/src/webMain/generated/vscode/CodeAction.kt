@@ -10,7 +10,7 @@ import js.array.ReadonlyArray
  * A code action represents a change that can be performed in code, e.g. to fix a problem or
  * to refactor code.
  *
- * A CodeAction must set either [edit} and/or a {@linkcode CodeAction.command command][CodeAction.edit]. If both are supplied, the `edit` is applied first, then the command is executed.
+ * A CodeAction must set either [edit][CodeAction.edit] and/or a [command][CodeAction.command]. If both are supplied, the `edit` is applied first, then the command is executed.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction)
  */
@@ -95,7 +95,7 @@ open external class CodeAction {
     /**
      * Creates a new code action.
      *
-     * A code action must have at least a [title} and {@link CodeAction.edit edits][CodeAction.title]
+     * A code action must have at least a [title][CodeAction.title] and [edits][CodeAction.edit]
      * and/or a [command][CodeAction.command].
      *
      * @param title The title of the code action.

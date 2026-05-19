@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface DocumentDropEditProviderMetadata {
     /**
-     * List of [kinds} that the provider may return in {@linkcode DocumentDropEditProvider.provideDocumentDropEdits provideDocumentDropEdits][DocumentDropOrPasteEditKind].
+     * List of [kinds][DocumentDropOrPasteEditKind] that the provider may return in [provideDocumentDropEdits][DocumentDropEditProvider.provideDocumentDropEdits].
      *
      * This is used to filter out providers when a specific [kind][DocumentDropOrPasteEditKind] of edit is requested.
      *

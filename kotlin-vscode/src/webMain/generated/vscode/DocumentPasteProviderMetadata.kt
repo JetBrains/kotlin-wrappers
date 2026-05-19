@@ -13,7 +13,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface DocumentPasteProviderMetadata {
     /**
-     * List of [kinds} that the provider may return in {@linkcode DocumentPasteEditProvider.provideDocumentPasteEdits provideDocumentPasteEdits][DocumentDropOrPasteEditKind].
+     * List of [kinds][DocumentDropOrPasteEditKind] that the provider may return in [provideDocumentPasteEdits][DocumentPasteEditProvider.provideDocumentPasteEdits].
      *
      * This is used to filter out providers when a specific [kind][DocumentDropOrPasteEditKind] of edit is requested.
      *
@@ -35,7 +35,7 @@ external interface DocumentPasteProviderMetadata {
      *
      * Use `text/uri-list` for resources dropped from the explorer or other tree views in the workbench.
      *
-     * Use `files` to indicate that the provider should be invoked if any [files} are present in the {@linkcode DataTransfer][DataTransferFile].
+     * Use `files` to indicate that the provider should be invoked if any [files][DataTransferFile] are present in the [DataTransfer].
      * Note that [DataTransferFile] entries are only created when pasting content from outside the editor, such as
      * from the operating system.
      *

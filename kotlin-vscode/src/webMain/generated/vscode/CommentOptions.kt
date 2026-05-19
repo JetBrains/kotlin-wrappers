@@ -5,7 +5,7 @@ package vscode
 import kotlinx.js.JsPlainObject
 
 /**
- * Represents a [comment controller}'s {@link CommentController.options options][CommentController].
+ * Represents a [comment controller][CommentController]'s [options][CommentController.options].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentOptions)
  */

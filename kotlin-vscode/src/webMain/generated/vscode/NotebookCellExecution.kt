@@ -12,8 +12,8 @@ import js.promise.PromiseLike
  * it is executing.
  *
  * When a cell execution object is created, the cell enters the [Pending][NotebookCellExecutionState.Pending] state.
- * When [start(...)} is called on the execution task, it enters the {@linkcode NotebookCellExecutionState.Executing Executing][NotebookCellExecution.start] state. When
- * [end(...)} is called, it enters the {@linkcode NotebookCellExecutionState.Idle Idle][NotebookCellExecution.end] state.
+ * When [start(...)][NotebookCellExecution.start] is called on the execution task, it enters the [Executing][NotebookCellExecutionState.Executing] state. When
+ * [end(...)][NotebookCellExecution.end] is called, it enters the [Idle][NotebookCellExecutionState.Idle] state.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution)
  */

@@ -47,7 +47,7 @@ open external class InlayHintLabelPart {
      * An optional command for this label part.
      *
      * The editor renders parts with commands as clickable links. The command is added to the context menu
-     * when a label part defines [location} and {@link InlayHintLabelPart.command command][InlayHintLabelPart.location] .
+     * when a label part defines [location][InlayHintLabelPart.location] and [command][InlayHintLabelPart.command] .
      *
      * *Note* that this property can be set late during
      * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.

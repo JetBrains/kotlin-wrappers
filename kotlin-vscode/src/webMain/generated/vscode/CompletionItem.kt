@@ -117,7 +117,7 @@ open external class CompletionItem {
      * current position is used.
      *
      * *Note 1:* A range must be a [single line][Range.isSingleLine] and it must
-     * [contain} the position at which completion has been {@link CompletionItemProvider.provideCompletionItems requested][Range.contains].
+     * [contain][Range.contains] the position at which completion has been [requested][CompletionItemProvider.provideCompletionItems].
      * *Note 2:* A insert range must be a prefix of a replace range, that means it must be contained and starting at the same position.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.range)

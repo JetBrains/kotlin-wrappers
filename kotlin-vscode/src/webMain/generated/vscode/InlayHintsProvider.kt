@@ -38,7 +38,7 @@ external interface InlayHintsProvider<T : InlayHint> {
     ): ProviderResult<ReadonlyArray<T>>
 
     /**
-     * Given an inlay hint fill in [tooltip}, {@link InlayHint.textEdits text edits][InlayHint.tooltip],
+     * Given an inlay hint fill in [tooltip][InlayHint.tooltip], [text edits][InlayHint.textEdits],
      * or complete label [parts][InlayHintLabelPart].
      *
      * *Note* that the editor will resolve an inlay hint at most once.
