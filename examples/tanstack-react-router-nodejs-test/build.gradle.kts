@@ -37,6 +37,10 @@ dependencies {
     jsTestImplementation(kotlinWrappers.testingLibraryReact)
     jsTestImplementation(kotlinWrappers.testingLibraryDom)
     jsTestImplementation(npm("global-jsdom", "28.0.0"))
+
+    // WA for https://github.com/TanStack/router/issues/7472
+    jsMainImplementation(npm("@tanstack/router-core", "1.171.3"))
+    jsMainImplementation(npm("@tanstack/react-router", "1.170.5"))
 }
 
 tasks.named<KotlinJsTest>("jsNodeTest") {
