@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npm(jspkg.types.vscode))
+    webMainImplementation(npm(jspkg.types.vscode))
 }
 
 val syncVscode by tasks.registering(SyncWrappers::class) {

@@ -3,14 +3,14 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npm(jspkg.types.web))
-    commonMainImplementation(npm(jspkg.types.webworker))
-    commonMainImplementation(npm(jspkg.types.serviceworker))
-    commonMainImplementation(npm(jspkg.types.audioworklet))
-    commonMainImplementation(npm(jspkg.types.webxr))
-    commonMainImplementation(npm(jspkg.typescript))
-    commonMainImplementation(npm(jspkg.webref.events))
-    commonMainImplementation(npm(jspkg.webref.idl))
+    webMainImplementation(npm(jspkg.types.web))
+    webMainImplementation(npm(jspkg.types.webworker))
+    webMainImplementation(npm(jspkg.types.serviceworker))
+    webMainImplementation(npm(jspkg.types.audioworklet))
+    webMainImplementation(npm(jspkg.types.webxr))
+    webMainImplementation(npm(jspkg.typescript))
+    webMainImplementation(npm(jspkg.webref.events))
+    webMainImplementation(npm(jspkg.webref.idl))
 }
 
 object Includes {

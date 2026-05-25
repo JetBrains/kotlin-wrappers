@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npm(jspkg.tanstack.reactQuery))
+    webMainImplementation(npm(jspkg.tanstack.reactQuery))
 }
 
 val syncCoreWrappers by tasks.registering(SyncWrappers::class) {

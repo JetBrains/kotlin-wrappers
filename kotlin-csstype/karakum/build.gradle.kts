@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npm(jspkg.csstype))
+    webMainImplementation(npm(jspkg.csstype))
 }
 
 val syncCssomCore by tasks.registering(SyncWrappers::class) {

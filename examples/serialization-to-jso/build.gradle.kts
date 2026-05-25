@@ -4,6 +4,6 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(libs.serialization.json)
-    commonMainImplementation(kotlinWrappers.browser)
+    webMainImplementation(libs.serialization.json)
+    webMainImplementation(kotlinWrappers.browser)
 }

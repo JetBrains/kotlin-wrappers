@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npm(jspkg.types.react))
-    commonMainImplementation(npm(jspkg.webref.events))
+    webMainImplementation(npm(jspkg.types.react))
+    webMainImplementation(npm(jspkg.webref.events))
 }
 
 val syncReact by tasks.registering(SyncWrappers::class) {

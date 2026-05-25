@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npm(jspkg.tanstack.reactTable))
+    webMainImplementation(npm(jspkg.tanstack.reactTable))
 }
 
 val syncTableCore by tasks.registering(SyncWrappers::class) {

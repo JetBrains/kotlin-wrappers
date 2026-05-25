@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(kotlinWrappers.browser)
+    webMainImplementation(kotlinWrappers.browser)
 }
