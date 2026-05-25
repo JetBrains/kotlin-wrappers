@@ -4,8 +4,8 @@ plugins {
 
 dependencies {
     webMainApi(projects.kotlinBrowser)
-    jsMainApi(projects.kotlinReact)
-    jsMainApi(projects.kotlinTanstackReactRouter)
+    webMainApi(projects.kotlinReact)
+    webMainApi(projects.kotlinTanstackReactRouter)
 
     webMainApi(npm(jspkg.tanstack.reactRouterDevtools))
 }

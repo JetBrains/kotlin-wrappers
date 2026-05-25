@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinMuiSystem)
-    jsMainApi(projects.kotlinPopperjsCore)
+    webMainApi(projects.kotlinMuiSystem)
+    webMainApi(projects.kotlinPopperjsCore)
 
     webMainApi(npm(jspkg.mui.base))
 }

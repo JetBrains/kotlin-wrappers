@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinReactDom)
+    webMainApi(projects.kotlinReactDom)
 
     webMainApi(npm(jspkg.mui.system))
 }

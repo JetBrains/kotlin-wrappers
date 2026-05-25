@@ -5,7 +5,7 @@ plugins {
 dependencies {
     webMainApi(projects.kotlinJs)
     webMainApi(projects.kotlinBrowser)
-    jsMainApi(projects.kotlinReact)
+    webMainApi(projects.kotlinReact)
 
     webMainApi(npm(jspkg.reactDom))
 }

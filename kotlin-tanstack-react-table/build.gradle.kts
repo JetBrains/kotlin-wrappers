@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinReact)
-    jsMainApi(projects.kotlinTanstackTableCore)
+    webMainApi(projects.kotlinReact)
+    webMainApi(projects.kotlinTanstackTableCore)
 
     webMainApi(npm(jspkg.tanstack.reactTable))
 }

@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinMuiMaterial)
-    jsMainApi(projects.kotlinMuixTreeView)
+    webMainApi(projects.kotlinMuiMaterial)
+    webMainApi(projects.kotlinMuixTreeView)
 
     webMainApi(npm(jspkg.mui.lab))
 }

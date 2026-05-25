@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinMuiBase)
+    webMainApi(projects.kotlinMuiBase)
 
     webMainApi(npm(jspkg.mui.material))
 }

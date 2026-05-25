@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinReact)
+    webMainApi(projects.kotlinReact)
 
     webMainApi(npm(jspkg.tanstack.reactQueryDevtools))
 }

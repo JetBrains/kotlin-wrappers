@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinReact)
+    webMainApi(projects.kotlinReact)
 }

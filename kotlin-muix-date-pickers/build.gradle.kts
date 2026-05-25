@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinMuiMaterial)
+    webMainApi(projects.kotlinMuiMaterial)
 
     webMainApi(npm(jspkg.mui.xDatePickers))
 }

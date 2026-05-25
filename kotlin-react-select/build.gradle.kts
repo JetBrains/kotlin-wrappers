@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinReact)
-    jsMainApi(projects.kotlinReactDom)
+    webMainApi(projects.kotlinReact)
+    webMainApi(projects.kotlinReactDom)
 
     webMainApi(npm(jspkg.reactSelect))
 }
