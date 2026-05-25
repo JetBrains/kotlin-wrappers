@@ -31,12 +31,12 @@ dependencies {
     webMainImplementation(kotlinWrappers.reactUse)
     webMainImplementation(kotlinWrappers.reactDom)
     webMainImplementation(kotlinWrappers.tanstack.reactRouter)
-    jsTestImplementation(libs.kotlin.test)
-    jsTestImplementation(libs.coroutines.test)
-    jsTestImplementation(kotlinWrappers.testingLibraryUserEvent)
-    jsTestImplementation(kotlinWrappers.testingLibraryReact)
-    jsTestImplementation(kotlinWrappers.testingLibraryDom)
-    jsTestImplementation(npm("global-jsdom", "28.0.0"))
+    webTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.coroutines.test)
+    webTestImplementation(kotlinWrappers.testingLibraryUserEvent)
+    webTestImplementation(kotlinWrappers.testingLibraryReact)
+    webTestImplementation(kotlinWrappers.testingLibraryDom)
+    webTestImplementation(npm("global-jsdom", "28.0.0"))
 
     // WA for https://github.com/TanStack/router/issues/7472
     webMainImplementation(npm("@tanstack/router-core", "1.171.3"))
