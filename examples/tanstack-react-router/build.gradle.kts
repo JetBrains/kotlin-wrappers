@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(kotlinWrappers.js)
-    jsMainImplementation(kotlinWrappers.react)
-    jsMainImplementation(kotlinWrappers.reactUse)
-    jsMainImplementation(kotlinWrappers.reactDom)
-    jsMainImplementation(kotlinWrappers.tanstack.reactRouter)
+    webMainImplementation(kotlinWrappers.js)
+    webMainImplementation(kotlinWrappers.react)
+    webMainImplementation(kotlinWrappers.reactUse)
+    webMainImplementation(kotlinWrappers.reactDom)
+    webMainImplementation(kotlinWrappers.tanstack.reactRouter)
 }

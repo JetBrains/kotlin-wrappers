@@ -3,16 +3,16 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(kotlinWrappers.react)
-    jsMainImplementation(kotlinWrappers.reactDom)
-    jsMainImplementation(kotlinWrappers.reactUse)
-    jsMainImplementation(kotlinWrappers.emotion.react)
-    jsMainImplementation(kotlinWrappers.tanstack.queryCore)
-    jsMainImplementation(kotlinWrappers.tanstack.reactQuery)
-    jsMainImplementation(kotlinWrappers.tanstack.tableCore)
-    jsMainImplementation(kotlinWrappers.tanstack.reactTable)
-    jsMainImplementation(kotlinWrappers.preact.signalsCore)
-    jsMainImplementation(kotlinWrappers.preact.signalsReact)
+    webMainImplementation(kotlinWrappers.react)
+    webMainImplementation(kotlinWrappers.reactDom)
+    webMainImplementation(kotlinWrappers.reactUse)
+    webMainImplementation(kotlinWrappers.emotion.react)
+    webMainImplementation(kotlinWrappers.tanstack.queryCore)
+    webMainImplementation(kotlinWrappers.tanstack.reactQuery)
+    webMainImplementation(kotlinWrappers.tanstack.tableCore)
+    webMainImplementation(kotlinWrappers.tanstack.reactTable)
+    webMainImplementation(kotlinWrappers.preact.signalsCore)
+    webMainImplementation(kotlinWrappers.preact.signalsReact)
 
-    jsMainImplementation(projects.tanstackTableCommon)
+    webMainImplementation(projects.tanstackTableCommon)
 }

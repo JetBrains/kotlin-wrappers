@@ -26,11 +26,11 @@ kotlin {
 }
 
 dependencies {
-    jsMainImplementation(kotlinWrappers.js)
-    jsMainImplementation(kotlinWrappers.react)
-    jsMainImplementation(kotlinWrappers.reactUse)
-    jsMainImplementation(kotlinWrappers.reactDom)
-    jsMainImplementation(kotlinWrappers.tanstack.reactRouter)
+    webMainImplementation(kotlinWrappers.js)
+    webMainImplementation(kotlinWrappers.react)
+    webMainImplementation(kotlinWrappers.reactUse)
+    webMainImplementation(kotlinWrappers.reactDom)
+    webMainImplementation(kotlinWrappers.tanstack.reactRouter)
     jsTestImplementation(libs.kotlin.test)
     jsTestImplementation(libs.coroutines.test)
     jsTestImplementation(kotlinWrappers.testingLibraryUserEvent)
@@ -39,8 +39,8 @@ dependencies {
     jsTestImplementation(npm("global-jsdom", "28.0.0"))
 
     // WA for https://github.com/TanStack/router/issues/7472
-    jsMainImplementation(npm("@tanstack/router-core", "1.171.3"))
-    jsMainImplementation(npm("@tanstack/react-router", "1.170.5"))
+    webMainImplementation(npm("@tanstack/router-core", "1.171.3"))
+    webMainImplementation(npm("@tanstack/react-router", "1.170.5"))
 }
 
 tasks.named<KotlinJsTest>("jsNodeTest") {

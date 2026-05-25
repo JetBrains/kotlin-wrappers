@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(kotlinWrappers.js)
-    jsMainImplementation(kotlinWrappers.react)
-    jsMainImplementation(kotlinWrappers.reactDom)
-    jsMainImplementation(kotlinWrappers.reactUse)
+    webMainImplementation(kotlinWrappers.js)
+    webMainImplementation(kotlinWrappers.react)
+    webMainImplementation(kotlinWrappers.reactDom)
+    webMainImplementation(kotlinWrappers.reactUse)
 }
