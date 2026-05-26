@@ -1,35 +1,36 @@
 import org.gradle.api.Project
 import org.gradle.api.publish.maven.MavenPublication
+import org.gradle.kotlin.dsl.assign
 
 internal fun MavenPublication.configurePom(
     project: Project,
 ) {
     pom {
-        name.set(project.name)
-        description.set(project.description)
-        url.set(KotlinWrappers.PROJECT_URL)
+        name = project.name
+        description = project.description
+        url = KotlinWrappers.PROJECT_URL
 
         licenses {
             license {
-                name.set("The Apache License, Version 2.0")
-                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
         }
 
         developers {
             developer {
-                id.set("JetBrains")
-                name.set("JetBrains Team")
-                email.set("community-support@jetbrains.com")
-                organization.set("JetBrains")
-                organizationUrl.set("https://www.jetbrains.com/")
+                id = "JetBrains"
+                name = "JetBrains Team"
+                email = "community-support@jetbrains.com"
+                organization = "JetBrains"
+                organizationUrl = "https://www.jetbrains.com/"
             }
         }
 
         scm {
-            connection.set("scm:git:git://github.com/JetBrains/kotlin-wrappers.git")
-            developerConnection.set("scm:git:git@github.com:JetBrains/kotlin-wrappers.git")
-            url.set(KotlinWrappers.PROJECT_URL)
+            connection = "scm:git:git://github.com/JetBrains/kotlin-wrappers.git"
+            developerConnection = "scm:git:git@github.com:JetBrains/kotlin-wrappers.git"
+            url = KotlinWrappers.PROJECT_URL
         }
     }
 }
