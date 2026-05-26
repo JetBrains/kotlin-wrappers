@@ -6,9 +6,9 @@ import org.jetbrains.kotlin.gradle.targets.wasm.nodejs.WasmNodeJsPlugin
 private val NODE_VERSION = "26.2.0"
 
 plugins.withType<NodeJsPlugin> {
-    the<NodeJsEnvSpec>().version.set(NODE_VERSION)
+    the<NodeJsEnvSpec>().version = NODE_VERSION
 }
 
 plugins.withType<WasmNodeJsPlugin> {
-    the<WasmNodeJsEnvSpec>().version.set(NODE_VERSION)
+    the<WasmNodeJsEnvSpec>().version = NODE_VERSION
 }
