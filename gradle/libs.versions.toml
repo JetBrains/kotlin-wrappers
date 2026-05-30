@@ -5,7 +5,7 @@ karakum = "1.0.0-alpha.107"
 kfc = "19.5.0"
 kotlin = "2.3.21"
 serialization = "1.11.0"
-seskar = "4.44.0"
+seskar = "4.50.0"
 
 [libraries]
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
