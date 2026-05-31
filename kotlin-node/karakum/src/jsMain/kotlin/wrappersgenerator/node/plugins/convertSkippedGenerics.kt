@@ -97,7 +97,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
 
             ensure(node.typeArguments?.asArray()?.size == 1)
 
-            val typeArguments = node.typeArguments?.asArray()?.joinToString(", ") { render(it) }
+            val typeArguments = node.typeArguments?.asArray()
+                ?.map { render(it) }
+                ?.joinToString(", ")
 
             "${render(typeName)}<*, *, ${typeArguments}, *>"
         } ?: nullable {
@@ -202,7 +204,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
 
             ensure(node.typeArguments?.asArray()?.size == 2)
 
-            val typeArguments = node.typeArguments?.asArray()?.joinToString(", ") { render(it) }
+            val typeArguments = node.typeArguments?.asArray()
+                ?.map { render(it) }
+                ?.joinToString(", ")
 
             "${render(typeName)}<${typeArguments}, *>"
         } ?: nullable {
@@ -214,7 +218,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
 
             ensure(node.typeArguments?.asArray()?.size == 1)
 
-            val typeArguments = node.typeArguments?.asArray()?.joinToString(", ") { render(it) }
+            val typeArguments = node.typeArguments?.asArray()
+                ?.map { render(it) }
+                ?.joinToString(", ")
 
             "${render(typeName)}<${typeArguments}, *, *>"
         } ?: nullable {

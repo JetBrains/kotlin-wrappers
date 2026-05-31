@@ -15,14 +15,11 @@ val convertGetQueriesForElement = createPlugin { node, context, render ->
 
         convertParameterDeclarations(
             node, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { parameters, _ ->
-                    // skip generics
-                    "external fun getQueriesForElement(${parameters})${ifPresent(type) { ": $it" }}"
-                }
-            )
-        )
+            ParameterDeclarationStrategy.function,
+        ) { parameters, _ ->
+            // skip generics
+            "external fun getQueriesForElement(${parameters})${ifPresent(type) { ": $it" }}"
+        }
     } ?: nullable {
         ensure(isTypeReferenceNode(node))
 
@@ -75,13 +72,10 @@ val convertGetQueriesForElement = createPlugin { node, context, render ->
 
         convertParameterDeclarations(
             declaration, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { parameters, _ ->
-                    // skip generics
-                    "external fun ${name}(${parameters})${ifPresent(declarationType) { ": $it" }}"
-                }
-            )
-        )
+            ParameterDeclarationStrategy.function,
+        ) { parameters, _ ->
+            // skip generics
+            "external fun ${name}(${parameters})${ifPresent(declarationType) { ": $it" }}"
+        }
     }
 }

@@ -107,7 +107,7 @@ class AmbiguousSignaturePlugin : Plugin {
             .also { cachedAmbiguousDeclarations = it }
     }
 
-    private fun renderAmbiguousDeclaration(
+    private suspend fun renderAmbiguousDeclaration(
         declaration: FunctionDeclaration,
         externalModifier: String,
         context: Context,
@@ -123,7 +123,8 @@ class AmbiguousSignaturePlugin : Plugin {
         }
 
         val typeParameters = declaration.typeParameters?.asArray()
-            ?.joinToString(", ") { render(it) }
+            ?.map { render(it) }
+            ?.joinToString(", ")
 
         val returnType = declaration.type?.let { render(it) }
 
@@ -131,38 +132,36 @@ class AmbiguousSignaturePlugin : Plugin {
 
         val body = convertParameterDeclarations(
             declaration, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = template@{ _, signature ->
-                    val types = signature
-                        .filter { it.parameter.questionToken == null }
-                        .map { it.type }
-                        .toTypedArray()
+            ParameterDeclarationStrategy.function,
+        ) template@{ _, signature ->
+            val types = signature
+                .filter { it.parameter.questionToken == null }
+                .map { it.type }
+                .toTypedArray()
 
-                    if (types in coveredSignatures) return@template ""
-                    coveredSignatures[types] = true
+            if (types in coveredSignatures) return@template ""
+            coveredSignatures[types] = true
 
-                    val parameters = signature
-                        .filter { it.parameter.questionToken == null }
-                        .joinToString(", ") {
-                            convertParameterDeclarationWithFixedType(
-                                it.parameter, context, render,
-                                ParameterDeclarationConfiguration(
-                                    strategy = ParameterDeclarationStrategy.function,
-                                    type = it.type,
-                                    nullable = it.nullable,
-                                )
-                            )
-                        }
-
-                    "${jsName}${externalModifier}fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
-                        ifPresent(
-                            returnType
-                        ) { ": $it" }
-                    }"
+            val parameters = signature
+                .filter { it.parameter.questionToken == null }
+                .map {
+                    convertParameterDeclarationWithFixedType(
+                        it.parameter, context, render,
+                        ParameterDeclarationConfiguration(
+                            strategy = ParameterDeclarationStrategy.function,
+                            type = it.type,
+                            nullable = it.nullable,
+                        )
+                    )
                 }
-            )
-        )
+                .joinToString(", ")
+
+            "${jsName}${externalModifier}fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
+                ifPresent(
+                    returnType
+                ) { ": $it" }
+            }"
+        }
 
         if (isPromiseFunction(declaration)) {
             val type = requireNotNull(declaration.type)
@@ -175,52 +174,51 @@ class AmbiguousSignaturePlugin : Plugin {
             val coveredSuspendSignatures = DeepMap<TypeNode?, Boolean>()
 
             val suspendBody = convertParameterDeclarations(
-                declaration, context, render, ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    defaultValue = "undefined",
-                    template = template@{ _, signature ->
-                        // TODO: it cam be removed after conversion
-                        //  `describe`, `suite` and `it` namespaces as object
-                        if (
-                            originalName == "describe"
-                            || originalName == "suite"
-                            || originalName == "it"
-                        ) {
-                            return@template ""
-                        }
+                declaration, context, render,
+                ParameterDeclarationStrategy.function,
+                defaultValue = "undefined",
+            ) template@{ _, signature ->
+                // TODO: it cam be removed after conversion
+                //  `describe`, `suite` and `it` namespaces as object
+                if (
+                    originalName == "describe"
+                    || originalName == "suite"
+                    || originalName == "it"
+                ) {
+                    return@template ""
+                }
 
-                        val types = signature
-                            .filter { it.parameter.questionToken == null }
-                            .map { it.type }
-                            .toTypedArray()
+                val types = signature
+                    .filter { it.parameter.questionToken == null }
+                    .map { it.type }
+                    .toTypedArray()
 
-                        if (types in coveredSuspendSignatures) return@template ""
-                        coveredSuspendSignatures[types] = true
+                if (types in coveredSuspendSignatures) return@template ""
+                coveredSuspendSignatures[types] = true
 
-                        val parameters = signature
-                            .filter { it.parameter.questionToken == null }
-                            .joinToString(", ") {
-                                convertParameterDeclarationWithFixedType(
-                                    it.parameter, context, render,
-                                    ParameterDeclarationConfiguration(
-                                        strategy = ParameterDeclarationStrategy.function,
-                                        type = it.type,
-                                        nullable = it.nullable,
-                                    )
-                                )
-                            }
-
-                        """
-                            @seskar.js.JsAsync
-                            ${externalModifier}suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${originalName}(${parameters})${
-                            ifPresent(
-                                returnTypePayload
-                            ) { ": $it" }
-                        }
-                        """.trimIndent()
+                val parameters = signature
+                    .filter { it.parameter.questionToken == null }
+                    .map {
+                        convertParameterDeclarationWithFixedType(
+                            it.parameter, context, render,
+                            ParameterDeclarationConfiguration(
+                                strategy = ParameterDeclarationStrategy.function,
+                                type = it.type,
+                                nullable = it.nullable,
+                            )
+                        )
                     }
-                )
-            )
+                    .joinToString(", ")
+
+                """
+                    @seskar.js.JsAsync
+                    ${externalModifier}suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${originalName}(${parameters})${
+                    ifPresent(
+                        returnTypePayload
+                    ) { ": $it" }
+                }
+                """.trimIndent()
+            }
 
             return body to suspendBody
         } else {
@@ -228,9 +226,9 @@ class AmbiguousSignaturePlugin : Plugin {
         }
     }
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isFunctionDeclaration(node))
 
         val name = ensureNotNull(node.name)
@@ -242,7 +240,7 @@ class AmbiguousSignaturePlugin : Plugin {
         functionSymbols += symbol
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         ensure(isFunctionDeclaration(node))
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
@@ -262,7 +260,7 @@ class AmbiguousSignaturePlugin : Plugin {
         """.trimIndent()
     }
 
-    override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
+    override suspend fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
         val typeScriptService = context.lookupService(typeScriptServiceKey) ?: return emptyArray()
         val namespaceInfoService = context.lookupService(namespaceInfoServiceKey) ?: return emptyArray()
 

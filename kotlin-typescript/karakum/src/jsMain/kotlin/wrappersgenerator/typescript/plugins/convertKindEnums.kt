@@ -33,16 +33,17 @@ val convertKindEnums = createPlugin { node, context, render ->
             .joinToString(", ")
 
         val members = node.members.asArray()
-            .joinToString("\n") { member ->
+            .map { member ->
                 val memberName = member.name
 
                 val type = if (isIdentifier(memberName)) memberName.text else name
 
                 "${render(member)}: $type"
             }
+            .joinToString("\n")
 
         val body = node.members.asArray()
-            .joinToString("\n") { member ->
+            .map { member ->
                 val memberHeritageInjections =
                     injectionService.resolveInjections(member, InjectionType.HERITAGE_CLAUSE, context, render)
 
@@ -56,6 +57,7 @@ val convertKindEnums = createPlugin { node, context, render ->
 
                 "sealed interface ${render(member.name)}${ifPresent(heritageClauses) { " : $it" }}"
             }
+            .joinToString("\n")
 
         """
              sealed external interface ${name}${ifPresent(injectedHeritageClauses) { " : $it" }} {

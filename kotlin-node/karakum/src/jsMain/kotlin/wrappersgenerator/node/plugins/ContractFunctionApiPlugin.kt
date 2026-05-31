@@ -17,11 +17,11 @@ private fun isConflictingOverload(node: FunctionDeclaration): Boolean =
 class ContractFunctionApiPlugin : Plugin {
     private val contractApiDeclarations = mutableListOf<DerivedDeclaration>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = Unit
+    override suspend fun traverse(node: Node, context: Context) = Unit
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
@@ -41,7 +41,8 @@ class ContractFunctionApiPlugin : Plugin {
         val name = escapeIdentifier(next(nameNode))
 
         val typeParameters = node.typeParameters?.asArray()
-            ?.joinToString(", ") { next(it) }
+            ?.map { next(it) }
+            ?.joinToString(", ")
 
         val returnType = next(type)
 
@@ -63,39 +64,36 @@ class ContractFunctionApiPlugin : Plugin {
 
         val body = convertParameterDeclarations(
             node, context, next,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = template@{ parameters, signature ->
-                    if (isConflictingOverload(node)) return@template ""
+            ParameterDeclarationStrategy.function,
+        ) template@{ parameters, signature ->
+            if (isConflictingOverload(node)) return@template ""
 
-                    val parameterNames = signature
-                        .withIndex()
-                        .mapNotNull { (index, it) ->
-                            nullable {
-                                val parameterName = it.parameter.name
+            val parameterNames = signature
+                .withIndex()
+                .mapNotNull { (index, it) ->
+                    nullable {
+                        val parameterName = it.parameter.name
 
-                                if (isIdentifier(parameterName)) {
-                                    escapeIdentifier(next(parameterName))
-                                } else {
-                                    "param${index}"
-                                }
-                            }
+                        if (isIdentifier(parameterName)) {
+                            escapeIdentifier(next(parameterName))
+                        } else {
+                            "param${index}"
                         }
-                        .joinToString(", ")
-
-                    """
-                        @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
-                        inline fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it"}} {
-                            contract {
-                                $contractReturns implies (${parameterName} is ${contractType})
-                            }
-
-                            return ${name}Raw(${parameterNames})
-                        }
-                    """.trimIndent()
+                    }
                 }
-            )
-        )
+                .joinToString(", ")
+
+            """
+                @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+                inline fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it"}} {
+                    contract {
+                        $contractReturns implies (${parameterName} is ${contractType})
+                    }
+
+                    return ${name}Raw(${parameterNames})
+                }
+            """.trimIndent()
+        }
 
         val nodeInfo = DerivedDeclaration(
             sourceFileName,
@@ -108,21 +106,18 @@ class ContractFunctionApiPlugin : Plugin {
 
         convertParameterDeclarations(
             node, context, next,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = template@{ parameters, _ ->
-                    if (isConflictingOverload(node)) return@template ""
+            ParameterDeclarationStrategy.function,
+        ) template@{ parameters, _ ->
+            if (isConflictingOverload(node)) return@template ""
 
-                    """
-                        @JsName("$name")
-                        external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Raw(${parameters})${ifPresent(returnType) { ": $it" }}
-                    """.trimIndent()
-                }
-            )
-        )
+            """
+                @JsName("$name")
+                external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Raw(${parameters})${ifPresent(returnType) { ": $it" }}
+            """.trimIndent()
+        }
     }
 
-    override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
+    override suspend fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
         return generateDerivedDeclarations(contractApiDeclarations.toTypedArray(), context)
     }
 

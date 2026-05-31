@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.getParentOrNull
@@ -27,18 +26,16 @@ val convertRouterHistoryProperty = createPlugin { node, context, render ->
         val name = render(node.name)
 
         val typeParameters = type.typeParameters?.asArray()
-            ?.joinToString(", ") { render(it) }
+            ?.map { render(it) }
+            ?.joinToString(", ")
 
         val returnType = render(type.type)
 
         convertParameterDeclarations(
             type, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { parameters, _ ->
-                    "fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
-                },
-            ),
-        )
+            ParameterDeclarationStrategy.function,
+        ) { parameters, _ ->
+            "fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
+        }
     }
 }

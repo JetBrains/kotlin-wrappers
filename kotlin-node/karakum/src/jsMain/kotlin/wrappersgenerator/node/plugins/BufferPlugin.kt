@@ -6,33 +6,30 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import typescript.*
 
-private fun convertConstructSignatureDeclaration(
+private suspend fun convertConstructSignatureDeclaration(
     node: SignatureDeclarationBase,
     context: Context,
     render: Render<Node>,
 ) = convertParameterDeclarations(
     node, context, render,
-    ParameterDeclarationsConfiguration(
-        strategy = ParameterDeclarationStrategy.function,
-        template = { parameters, _ ->
-            "constructor (${parameters})"
-        }
-    )
-)
+    ParameterDeclarationStrategy.function,
+) { parameters, _ ->
+    "constructor (${parameters})"
+}
 
 class BufferPlugin : Plugin {
     val bufferConstructorNodes = mutableListOf<InterfaceDeclaration>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isInterfaceDeclaration(node))
         ensure(node.name.text == "BufferConstructor")
 
         bufferConstructorNodes += node
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         nullable {
             ensure(isVariableDeclaration(node))
 
@@ -137,6 +134,6 @@ class BufferPlugin : Plugin {
         }
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 
 }

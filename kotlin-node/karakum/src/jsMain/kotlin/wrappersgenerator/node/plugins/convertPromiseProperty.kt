@@ -17,29 +17,27 @@ private fun isPromiseType(node: Node) = nullable {
     ensure(typeName.text.endsWith("Promise"))
 } != null
 
-private fun convertAsyncSignature(
+private suspend fun convertAsyncSignature(
     name: String,
     node: SignatureDeclarationBase,
     context: Context,
     render: Render<Node>,
 ): String {
     val typeParameters = node.typeParameters?.asArray()
-        ?.joinToString(", ") { render(it) }
+        ?.map { render(it) }
+        ?.joinToString(", ")
 
     val returnType = node.type?.let { render(it) }
 
     val promiseDeclaration = convertParameterDeclarations(
         node, context, render,
-        ParameterDeclarationsConfiguration(
-            strategy = ParameterDeclarationStrategy.function,
-            template = { parameters, _ ->
-                """
-                    @JsName("$name")
-                    fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(returnType) { ": $it" }}
-                """.trimIndent()
-            }
-        )
-    )
+        ParameterDeclarationStrategy.function,
+    ) { parameters, _ ->
+        """
+            @JsName("$name")
+            fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(returnType) { ": $it" }}
+        """.trimIndent()
+    }
 
     val type = requireNotNull(node.type)
     require(isTypeReferenceNode(type))
@@ -50,16 +48,13 @@ private fun convertAsyncSignature(
 
     val suspendDeclaration = convertParameterDeclarations(
         node, context, render,
-        ParameterDeclarationsConfiguration(
-            strategy = ParameterDeclarationStrategy.function,
-            template = { parameters, _ ->
-                """
-                    @seskar.js.JsAsync
-                    suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it"}}
-                """.trimIndent()
-            }
-        )
-    )
+        ParameterDeclarationStrategy.function,
+    ) { parameters, _ ->
+        """
+            @seskar.js.JsAsync
+            suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it"}}
+        """.trimIndent()
+    }
 
     return "${promiseDeclaration}\n\n${suspendDeclaration}"
 }
@@ -92,10 +87,12 @@ val convertPromiseProperty = createPlugin { node, context, render ->
                 } != null
             })
 
-            propertyType.members.asArray().joinToString("\n") { member ->
-                require(isCallSignatureDeclaration(member))
-                convertAsyncSignature(name, member, context, render)
-            }
+            propertyType.members.asArray()
+                .map { member ->
+                    require(isCallSignatureDeclaration(member))
+                    convertAsyncSignature(name, member, context, render)
+                }
+                .joinToString("\n")
         }
     }
 }

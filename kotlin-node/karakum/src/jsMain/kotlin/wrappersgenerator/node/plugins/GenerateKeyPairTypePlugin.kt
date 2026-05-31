@@ -75,9 +75,9 @@ private fun isGenerateKeyPairOptions(node: Node) = nullable {
 class GenerateKeyPairTypePlugin : Plugin {
     private val declarations = mutableMapOf<String, DerivedDeclaration>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isTypeReferenceNode(node))
         ensure(isGenerateKeyPairOptions(node))
 
@@ -121,7 +121,7 @@ class GenerateKeyPairTypePlugin : Plugin {
         )
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         nullable {
             ensure(isGenerateKeyPairType(node))
 
@@ -180,7 +180,7 @@ class GenerateKeyPairTypePlugin : Plugin {
         }
     }
 
-    override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
+    override suspend fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
         return generateDerivedDeclarations(declarations.values.toTypedArray(), context)
     }
 

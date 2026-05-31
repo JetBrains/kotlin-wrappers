@@ -43,9 +43,9 @@ class InspectorSessionMethodPlugin : Plugin {
     private var namespace: ModuleDeclaration? = null
     private val methods = mutableSetOf<String>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isStringLiteral(node))
         ensure(isSessionPostMethod(node))
 
@@ -57,14 +57,14 @@ class InspectorSessionMethodPlugin : Plugin {
         namespace = typeScriptService.findClosestNamespace(node)
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         ensure(isStringLiteral(node))
         ensure(isSessionPostMethod(node))
 
         "SessionMethod.${constIdentifier(node.text)}"
     }
 
-    override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
+    override suspend fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
         val name = "SessionMethod"
 
         val entries = methods.map { eventName ->

@@ -9,16 +9,16 @@ import typescript.*
 class DiffieHellmanGroupPlugin : Plugin {
     private lateinit var sourceDiffieHellmanGroupNode: ClassDeclaration
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isClassDeclaration(node))
         ensure(node.name?.text == "DiffieHellman")
 
         sourceDiffieHellmanGroupNode = node
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         nullable {
             ensure(isVariableDeclaration(node))
 
@@ -91,5 +91,5 @@ class DiffieHellmanGroupPlugin : Plugin {
         }
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

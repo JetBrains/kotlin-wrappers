@@ -177,9 +177,9 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
 class EventMapInjection : Injection {
     private val events = mutableMapOf<Symbol, Map<String, ReadonlyArray<ParameterDeclaration>>>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensureNotNull(isIdentifier(node))
 
         val eventContainer = ensureNotNull(extractEventContainer(node))
@@ -195,7 +195,7 @@ class EventMapInjection : Injection {
         events[symbol] = eventPayloads
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val method = ensureNotNull(
             nullable {
                 ensure(isMethodDeclaration(node))
@@ -226,7 +226,7 @@ class EventMapInjection : Injection {
         ""
     }
 
-    override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
+    override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
         val name = ensureNotNull(
@@ -275,9 +275,11 @@ class EventMapInjection : Injection {
                         else -> ""
                     }
 
-                    val payload = parameters.joinToString(", ") { parameter ->
-                        parameter.type?.let { render(it) } ?: "Any?"
-                    }
+                    val payload = parameters
+                        .map { parameter ->
+                            parameter.type?.let { render(it) } ?: "Any?"
+                        }
+                        .joinToString(", ")
 
                     val key = camelize(
                         eventName.replace("\\W".toRegex(), "-")
@@ -298,5 +300,5 @@ class EventMapInjection : Injection {
             .toTypedArray()
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

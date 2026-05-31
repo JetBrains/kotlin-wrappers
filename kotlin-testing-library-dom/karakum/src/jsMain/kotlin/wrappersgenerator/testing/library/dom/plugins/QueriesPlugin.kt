@@ -38,11 +38,11 @@ private fun isPromiseType(node: Node) = nullable {
 class QueriesPlugin : Plugin {
     private val promiseApiDeclarations = mutableListOf<DerivedDeclaration>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = Unit
+    override suspend fun traverse(node: Node, context: Context) = Unit
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         ensure(isFunctionDeclaration(node))
 
         val firstParameter = ensureNotNull(node.parameters.asArray().firstOrNull())
@@ -113,16 +113,13 @@ class QueriesPlugin : Plugin {
 
             val body = convertParameterDeclarations(
                 declarationType, context, next,
-                ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    template = template@{ parameters, _ ->
-                        """
-                            @seskar.js.JsAsync
-                            external suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }}
-                        """.trimIndent()
-                    }
-                )
-            )
+                ParameterDeclarationStrategy.function,
+            ) { parameters, _ ->
+                """
+                    @seskar.js.JsAsync
+                    external suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }}
+                """.trimIndent()
+            }
 
             val nodeInfo = DerivedDeclaration(
                 sourceFileName,
@@ -135,32 +132,26 @@ class QueriesPlugin : Plugin {
 
             convertParameterDeclarations(
                 declarationType, context, next,
-                ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    template = { parameters, _ ->
-                        """
-                            @JsName("$name")
-                            external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
-                        """.trimIndent()
-                    }
-                )
-            )
+                ParameterDeclarationStrategy.function,
+            ) { parameters, _ ->
+                """
+                    @JsName("$name")
+                    external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
+                """.trimIndent()
+            }
         } else {
             convertParameterDeclarations(
                 declarationType, context, next,
-                ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    template = { parameters, _ ->
-                        """
-                            external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
-                        """.trimIndent()
-                    }
-                )
-            )
+                ParameterDeclarationStrategy.function,
+            ) { parameters, _ ->
+                """
+                    external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
+                """.trimIndent()
+            }
         }
     }
 
-    override fun generate(
+    override suspend fun generate(
         context: Context,
         render: Render<Node>,
     ): ReadonlyArray<GeneratedFile> {

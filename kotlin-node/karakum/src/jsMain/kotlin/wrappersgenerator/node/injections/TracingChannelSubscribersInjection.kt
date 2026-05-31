@@ -7,11 +7,11 @@ import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 class TracingChannelSubscribersInjection : Injection {
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = Unit
+    override suspend fun traverse(node: Node, context: Context) = Unit
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("diagnostics_channel.d.ts"))
 
@@ -34,7 +34,7 @@ class TracingChannelSubscribersInjection : Injection {
         ""
     }
 
-    override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
+    override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
@@ -61,5 +61,5 @@ class TracingChannelSubscribersInjection : Injection {
         """.trimIndent())
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

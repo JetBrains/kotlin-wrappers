@@ -31,12 +31,12 @@ val convertJsPlainObjectMethods = createPlugin { node, context, render ->
         } else {
             val returnType = node.type?.let { render(it) } ?: "Unit"
 
-            convertParameterDeclarations(node, context, render, ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.lambda,
-                template = { parameters, _ ->
-                    "var ${name}: (${parameters}) -> $returnType"
-                }
-            ))
+            convertParameterDeclarations(
+                node, context, render,
+                ParameterDeclarationStrategy.lambda,
+            ) { parameters, _ ->
+                "var ${name}: (${parameters}) -> $returnType"
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ private fun filterMembers(
     }
 }
 
-private fun extractMembersAndHeritageTypes(
+private suspend fun extractMembersAndHeritageTypes(
     node: Node,
     context: Context,
     render: Render<Node>,

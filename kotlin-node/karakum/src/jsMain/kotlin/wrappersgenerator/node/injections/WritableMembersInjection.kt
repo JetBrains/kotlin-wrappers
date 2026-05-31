@@ -4,7 +4,6 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.getParentOrNull
@@ -14,9 +13,9 @@ import typescript.*
 class WritableMembersInjection : Injection {
     private val writableStreamMemberNodes = mutableListOf<Node>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("globals.d.ts"))
 
@@ -51,9 +50,9 @@ class WritableMembersInjection : Injection {
 
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = null
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = null
 
-    override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
+    override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
@@ -74,24 +73,22 @@ class WritableMembersInjection : Injection {
                     val name = render(member.name)
 
                     val typeParameters = member.typeParameters?.asArray()
-                        ?.joinToString(", ") { render(it) }
+                        ?.map { render(it) }
+                        ?.joinToString(", ")
 
                     val returnType = member.type?.let { render(it) }
 
                     convertParameterDeclarations(
                         member, context, render,
-                        ParameterDeclarationsConfiguration(
-                            strategy = ParameterDeclarationStrategy.function,
-                            defaultValue = "",
-                            template = { parameters, _ ->
-                                "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
-                            }
-                        )
-                    )
+                        ParameterDeclarationStrategy.function,
+                        defaultValue = "",
+                    ) { parameters, _ ->
+                        "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
+                    }
                 }
             }
             .toTypedArray()
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

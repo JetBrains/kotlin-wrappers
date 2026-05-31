@@ -35,7 +35,9 @@ val convertMock = createPlugin { node, context, render ->
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")
 
-        val members = firstType.members.asArray().joinToString("\n") { render(it) }
+        val members = firstType.members.asArray()
+            .map { render(it) }
+            .joinToString("\n")
 
         """
             ${ifPresent(inheritanceModifier) { "$it "}}external interface Mock${ifPresent(typeParameters) { "<$it>"}} {

@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
@@ -35,19 +34,21 @@ val convertStreamDestroy = createPlugin { node, context, render ->
 
         val name = escapeIdentifier(render(node.name))
 
-        val typeParameters = node.typeParameters?.asArray()?.joinToString(", ") { render(it) }
+        val typeParameters = node.typeParameters?.asArray()
+            ?.map { render(it) }
+            ?.joinToString(", ")
 
         val returnType = node.type?.let { render(it) }
 
         val additionalSignature = "open fun destroy(): Unit /* this */"
 
-        val mainSignature = convertParameterDeclarations(node, context, render, ParameterDeclarationsConfiguration(
-            strategy = ParameterDeclarationStrategy.function,
+        val mainSignature = convertParameterDeclarations(
+            node, context, render,
+            ParameterDeclarationStrategy.function,
             defaultValue = "", // remove default value to provide multiple inheritance in Duplex
-            template = { parameters, _ ->
-                "open fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
-            }
-        ))
+        ) { parameters, _ ->
+            "open fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
+        }
 
         arrayOf(
             additionalSignature,

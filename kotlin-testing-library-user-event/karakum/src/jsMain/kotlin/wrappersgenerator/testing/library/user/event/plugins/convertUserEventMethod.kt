@@ -69,17 +69,14 @@ val convertUserEventMethod = createPlugin { node, context, render ->
 
             val promiseDeclaration = convertParameterDeclarations(
                 declaration, context, render,
-                ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    template = { parameters, _ ->
-                        """
-                            @JsName("$name")
-                            fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(renderedDeclarationType) { ": $it" }
-                        }
-                        """.trimIndent()
-                    }
-                )
-            )
+                ParameterDeclarationStrategy.function,
+            ) { parameters, _ ->
+                """
+                    @JsName("$name")
+                    fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(renderedDeclarationType) { ": $it" }
+                }
+                """.trimIndent()
+            }
 
             val typeArguments = requireNotNull(declarationType.typeArguments)
 
@@ -87,29 +84,23 @@ val convertUserEventMethod = createPlugin { node, context, render ->
 
             val suspendDeclaration = convertParameterDeclarations(
                 declaration, context, render,
-                ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    template = { parameters, _ ->
-                        """
-                            @seskar.js.JsAsync
-                            suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }
-                        }
-                        """.trimIndent()
-                    }
-                )
-            )
+                ParameterDeclarationStrategy.function,
+            ) { parameters, _ ->
+                """
+                    @seskar.js.JsAsync
+                    suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }
+                }
+                """.trimIndent()
+            }
 
             "${promiseDeclaration}\n\n${suspendDeclaration}"
         } else {
             convertParameterDeclarations(
                 declaration, context, render,
-                ParameterDeclarationsConfiguration(
-                    strategy = ParameterDeclarationStrategy.function,
-                    template = { parameters, _ ->
-                        "fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(renderedDeclarationType) { ": $it" }}"
-                    }
-                )
-            )
+                ParameterDeclarationStrategy.function,
+            ) { parameters, _ ->
+                "fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(renderedDeclarationType) { ": $it" }}"
+            }
         }
     }
 }

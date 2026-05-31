@@ -31,7 +31,7 @@ val convertWithMetadata = createPlugin { node, context, render ->
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")
 
-        val members = secondType.members.asArray().joinToString("\n") { render(it) }
+        val members = secondType.members.asArray().map { render(it) }.joinToString("\n")
 
         """
             ${ifPresent(inheritanceModifier) { "$it " }}external interface WithMetadata${ifPresent(typeParameters) { "<$it>" }} {

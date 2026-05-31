@@ -31,7 +31,8 @@ val convertEvent = createPlugin { node, context, render ->
             ?.joinToString(", ")
 
         val members = firstType.members.asArray()
-            .joinToString("\n") { render(it) }
+            .map { render(it) }
+            .joinToString("\n")
 
         """
             ${ifPresent(inheritanceModifier) { "$it " }}external interface Event${ifPresent(typeParameters) { "<${it}>" }} {

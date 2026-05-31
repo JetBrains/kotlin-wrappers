@@ -36,7 +36,7 @@ private fun isPromiseType(node: Node) = nullable {
     ensure(typeName.text.endsWith("Promise"))
 } != null
 
-private fun convertQueryMethod(node: MethodSignature, typeName: Identifier, context: Context, render: Render<Node>) = nullable {
+private suspend fun convertQueryMethod(node: MethodSignature, typeName: Identifier, context: Context, render: Render<Node>) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
     val typeChecker = typeScriptService.program.getTypeChecker()
 
@@ -64,29 +64,27 @@ private fun convertQueryMethod(node: MethodSignature, typeName: Identifier, cont
 
         val promiseDeclaration = convertParameterDeclarations(
             declarationType, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { _, signature ->
-                    val parameters = signature
-                        .drop(1)
-                        .joinToString(", ") {
-                            convertParameterDeclarationWithFixedType(
-                                it.parameter, context, render,
-                                ParameterDeclarationConfiguration(
-                                    strategy = ParameterDeclarationStrategy.function,
-                                    type = it.type,
-                                    nullable = it.nullable,
-                                )
-                            )
-                        }
-
-                    """
-                        @JsName("$name")
-                        fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
-                    """.trimIndent()
+            ParameterDeclarationStrategy.function,
+        ) { _, signature ->
+            val parameters = signature
+                .drop(1)
+                .map {
+                    convertParameterDeclarationWithFixedType(
+                        it.parameter, context, render,
+                        ParameterDeclarationConfiguration(
+                            strategy = ParameterDeclarationStrategy.function,
+                            type = it.type,
+                            nullable = it.nullable,
+                        )
+                    )
                 }
-            )
-        )
+                .joinToString(", ")
+
+            """
+                @JsName("$name")
+                fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Async(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
+            """.trimIndent()
+        }
 
         val typeArguments = requireNotNull(type.typeArguments)
 
@@ -94,56 +92,52 @@ private fun convertQueryMethod(node: MethodSignature, typeName: Identifier, cont
 
         val suspendDeclaration = convertParameterDeclarations(
             declarationType, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { _, signature ->
-                    val parameters = signature
-                        .drop(1)
-                        .joinToString(", ") {
-                            convertParameterDeclarationWithFixedType(
-                                it.parameter, context, render,
-                                ParameterDeclarationConfiguration(
-                                    strategy = ParameterDeclarationStrategy.function,
-                                    type = it.type,
-                                    nullable = it.nullable,
-                                )
-                            )
-                        }
-
-                    """
-                        @seskar.js.JsAsync
-                        suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }}
-                    """.trimIndent()
+            ParameterDeclarationStrategy.function,
+        ) { _, signature ->
+            val parameters = signature
+                .drop(1)
+                .map {
+                    convertParameterDeclarationWithFixedType(
+                        it.parameter, context, render,
+                        ParameterDeclarationConfiguration(
+                            strategy = ParameterDeclarationStrategy.function,
+                            type = it.type,
+                            nullable = it.nullable,
+                        )
+                    )
                 }
-            )
-        )
+                .joinToString(", ")
+
+            """
+                @seskar.js.JsAsync
+                suspend fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnTypePayload) { ": $it" }}
+            """.trimIndent()
+        }
 
         "${promiseDeclaration}\n\n${suspendDeclaration}"
     } else {
         convertParameterDeclarations(
             declarationType, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { _, signature ->
-                    val parameters = signature
-                        .drop(1)
-                        .joinToString(", ") {
-                            convertParameterDeclarationWithFixedType(
-                                it.parameter, context, render,
-                                ParameterDeclarationConfiguration(
-                                    strategy = ParameterDeclarationStrategy.function,
-                                    type = it.type,
-                                    nullable = it.nullable,
-                                )
-                            )
-                        }
-
-                    """
-                        fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
-                    """.trimIndent()
+            ParameterDeclarationStrategy.function,
+        ) { _, signature ->
+            val parameters = signature
+                .drop(1)
+                .map {
+                    convertParameterDeclarationWithFixedType(
+                        it.parameter, context, render,
+                        ParameterDeclarationConfiguration(
+                            strategy = ParameterDeclarationStrategy.function,
+                            type = it.type,
+                            nullable = it.nullable,
+                        )
+                    )
                 }
-            )
-        )
+                .joinToString(", ")
+
+            """
+                fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(renderedReturnType) { ": $it" }}
+            """.trimIndent()
+        }
     }
 }
 

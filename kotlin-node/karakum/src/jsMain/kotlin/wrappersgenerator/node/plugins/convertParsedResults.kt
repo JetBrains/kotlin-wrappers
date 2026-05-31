@@ -43,7 +43,9 @@ val convertParsedResults = createPlugin { node, context, render ->
 
         val injections = injectionService.resolveInjections(trueType, InjectionType.MEMBER, context, render)
 
-        val members = trueType.members.asArray().joinToString("\n") { render(it) }
+        val members = trueType.members.asArray()
+            .map { render(it) }
+            .joinToString("\n")
 
         val injectedMembers = injections.joinToString("\n")
 

@@ -12,9 +12,9 @@ import typescript.*
 class DuplexMembersInjection : Injection {
     private val readableMemberNodes = mutableListOf<Node>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
@@ -49,9 +49,9 @@ class DuplexMembersInjection : Injection {
         readableMemberNodes += node
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = null
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = null
 
-    override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
+    override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
@@ -71,7 +71,8 @@ class DuplexMembersInjection : Injection {
                     val name = escapeIdentifier(render(member.name))
 
                     val typeParameters = member.typeParameters?.asArray()
-                        ?.joinToString(", ") { render(it) }
+                        ?.map { render(it) }
+                        ?.joinToString(", ")
 
                     val returnType = member.type?.let { render(it) }
 
@@ -82,42 +83,33 @@ class DuplexMembersInjection : Injection {
 
                         convertParameterDeclarations(
                             member, context, render,
-                            ParameterDeclarationsConfiguration(
-                                strategy = ParameterDeclarationStrategy.lambda,
-                                template = { parameters, _ ->
-                                    val functionType = when {
-                                        member.typeParameters != null -> {
-                                            "Function<Any?> /* ${typeScriptService.printNode(member)} */"
-                                        }
-
-                                        member.parameters.asArray().any { it.dotDotDotToken != null } -> {
-                                            "Function<${returnType}> /* ${typeScriptService.printNode(member)} */"
-                                        }
-
-                                        else -> {
-                                            "(${parameters}) -> ${returnType ?: "Any?"}"
-                                        }
-                                    }
-
-                                    "override val ${name}: (${functionType})?"
+                            ParameterDeclarationStrategy.lambda,
+                        ) { parameters, _ ->
+                            val functionType = when {
+                                member.typeParameters != null -> {
+                                    "Function<Any?> /* ${typeScriptService.printNode(member)} */"
                                 }
-                            )
-                        )
+
+                                member.parameters.asArray().any { it.dotDotDotToken != null } -> {
+                                    "Function<${returnType}> /* ${typeScriptService.printNode(member)} */"
+                                }
+
+                                else -> {
+                                    "(${parameters}) -> ${returnType ?: "Any?"}"
+                                }
+                            }
+
+                            "override val ${name}: (${functionType})?"
+                        }
                     } ?: run {
                         convertParameterDeclarations(
                             member, context, render,
-                            ParameterDeclarationsConfiguration(
-                                strategy = ParameterDeclarationStrategy.function,
-                                defaultValue = "",
-                                template = { parameters, _ ->
-                                    "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
-                                        ifPresent(
-                                            returnType
-                                        ) { ": $it" }
-                                    }"
-                                }
-                            )
-                        )
+                            ParameterDeclarationStrategy.function,
+                            defaultValue = "",
+                        ) { parameters, _ ->
+                            "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})" +
+                                    ifPresent(returnType) { ": $it" }
+                        }
                     }
                 }
             }
@@ -125,5 +117,5 @@ class DuplexMembersInjection : Injection {
             .toTypedArray()
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

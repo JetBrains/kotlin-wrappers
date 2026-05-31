@@ -63,9 +63,9 @@ class ResourceRecordTypePlugin : Plugin {
     private val stringRrtypes = mutableSetOf<String>()
     private val promiseApiDeclarations = mutableListOf<DerivedDeclaration>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         val types = ensureNotNull(extractRrtypes(node))
 
         rrtypes += types
@@ -81,7 +81,7 @@ class ResourceRecordTypePlugin : Plugin {
         namespace = typeScriptService.findClosestNamespace(node)
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val types = ensureNotNull(extractRrtypes(node))
 
         nullable {
@@ -93,7 +93,7 @@ class ResourceRecordTypePlugin : Plugin {
         }
     }
 
-    override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
+    override suspend fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
         val name = "ResourceRecordType"
 
         val body = rrtypes.joinToString("\n") {

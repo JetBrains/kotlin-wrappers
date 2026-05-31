@@ -40,17 +40,18 @@ val convertOverriddenMethodDeclaration = createPlugin { node, context, render ->
         val name = escapeIdentifier(render(node.name))
 
         val typeParameters = node.typeParameters?.asArray()
-            ?.joinToString(", ") { render(it) }
+            ?.map { render(it) }
+            ?.joinToString(", ")
 
         val returnType = node.type?.let {render(it) }
 
         val inheritanceModifierService =
             context.lookupService(inheritanceModifierServiceKey)
 
-        convertParameterDeclarations(node, context, render, ParameterDeclarationsConfiguration(
-            strategy = ParameterDeclarationStrategy.function,
-            template = { parameters, signature ->
-
+        convertParameterDeclarations(
+            node, context, render,
+            ParameterDeclarationStrategy.function,
+        ) { parameters, signature ->
             val inheritanceModifier = inheritanceModifierService?.resolveSignatureInheritanceModifier(node, signature, context)
 
             val jsName = if (inheritanceModifier != "override") "@JsName(\"$name\")" else ""
@@ -59,6 +60,6 @@ val convertOverriddenMethodDeclaration = createPlugin { node, context, render ->
                 $jsName
                 ${ifPresent(inheritanceModifier) { "$it " }}fun ${ifPresent(typeParameters) { "<$it> " }}${methodOverride}(${parameters})${ifPresent(returnType) { ": $it" }}
             """.trimIndent()
-        }))
+        }
     }
 }

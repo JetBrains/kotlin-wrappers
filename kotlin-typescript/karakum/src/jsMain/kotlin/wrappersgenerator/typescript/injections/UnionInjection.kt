@@ -281,7 +281,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
 
 fun decorateUnionInjection(unionInjection: Injection): Injection {
     return object : Injection by unionInjection {
-        override fun inject(node: Node, context: InjectionContext, render: Render<Node>) =
+        override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) =
             unionInjection.inject(node, context, render)
                 ?.filter {
                     it != "EditorSettingsIndentStyle"

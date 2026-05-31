@@ -42,7 +42,9 @@ val convertSignalConstantsGenerics = createPlugin { node, context, render ->
             val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
             val accessorsInheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node.type, context)
 
-            val typeParameters = node.typeParameters?.asArray()?.joinToString(", ") { render(it) }
+            val typeParameters = node.typeParameters?.asArray()
+                ?.map { render(it) }
+                ?.joinToString(", ")
 
             val readonly = typeAliasType.readonlyToken != null && typeAliasType.readonlyToken?.kind != SyntaxKind.MinusToken
 

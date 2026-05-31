@@ -3,7 +3,6 @@ package wrappersgenerator.electron.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.getParentOrNull
@@ -30,14 +29,11 @@ val convertStringGenericMethods = createPlugin { node, context, render ->
 
         convertParameterDeclarations(
             node, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = { parameters, _ ->
-                    // remove generics
-                    "fun ${name}(${parameters}): $returnType"
-                },
-            ),
-        )
+            ParameterDeclarationStrategy.function,
+        ) { parameters, _ ->
+            // remove generics
+            "fun ${name}(${parameters}): $returnType"
+        }
     } ?: nullable {
         ensure(isTypeReferenceNode(node))
 

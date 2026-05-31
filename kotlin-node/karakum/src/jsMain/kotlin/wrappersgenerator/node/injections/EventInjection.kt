@@ -323,9 +323,9 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
 class EventInjection : Injection {
     private val events = mutableMapOf<Symbol, MutableMap<String, ReadonlyArray<ParameterDeclaration>>>()
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isStringLiteral(node))
 
         val eventContainer = ensureNotNull(extractEventContainer(node))
@@ -345,7 +345,7 @@ class EventInjection : Injection {
         events[symbol] = symbolEvents
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val method = ensureNotNull(
             nullable {
                 ensure(isMethodDeclaration(node))
@@ -375,7 +375,7 @@ class EventInjection : Injection {
         ""
     }
 
-    override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
+    override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
         val name = ensureNotNull(
@@ -440,9 +440,11 @@ class EventInjection : Injection {
                         else -> ""
                     }
 
-                    val payload = parameters.joinToString(", ") { parameter ->
-                        parameter.type?.let { render(it) } ?: "Any?"
-                    }
+                    val payload = parameters
+                        .map { parameter ->
+                            parameter.type?.let { render(it) } ?: "Any?"
+                        }
+                        .joinToString(", ")
 
                     val key = camelize(
                         eventName.replace("\\W".toRegex(), "-")
@@ -463,5 +465,5 @@ class EventInjection : Injection {
             .toTypedArray()
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

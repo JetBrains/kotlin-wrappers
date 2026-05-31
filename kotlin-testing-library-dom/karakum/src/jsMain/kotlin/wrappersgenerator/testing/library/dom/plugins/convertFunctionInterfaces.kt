@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
-import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import typescript.isFunctionTypeNode
@@ -25,14 +24,14 @@ val convertFunctionInterfaces = createPlugin { node, context, render ->
 
         val returnType = render(type.type)
 
-        val body = convertParameterDeclarations(type, context, render, ParameterDeclarationsConfiguration(
-            strategy = ParameterDeclarationStrategy.function,
-            template = { parameters, _ ->
-                """
-                    operator fun invoke(${parameters})${ifPresent(returnType) { ": $it" }}
-                """.trimIndent()
-            }
-        ))
+        val body = convertParameterDeclarations(
+            type, context, render,
+            ParameterDeclarationStrategy.function,
+        ) { parameters, _ ->
+            """
+                operator fun invoke(${parameters})${ifPresent(returnType) { ": $it" }}
+            """.trimIndent()
+        }
 
         """
             external interface $name {

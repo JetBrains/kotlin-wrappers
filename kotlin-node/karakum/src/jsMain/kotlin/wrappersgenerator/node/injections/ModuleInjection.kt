@@ -25,16 +25,16 @@ private fun isModuleInterfaceNode(node: Node) = nullable {
 class ModuleInjection : Injection {
     private lateinit var moduleInterfaceNode: InterfaceDeclaration
 
-    override fun setup(context: Context) = Unit
+    override suspend fun setup(context: Context) = Unit
 
-    override fun traverse(node: Node, context: Context) = impure {
+    override suspend fun traverse(node: Node, context: Context) = impure {
         ensure(isInterfaceDeclaration(node))
         ensure(isModuleInterfaceNode(node))
 
         moduleInterfaceNode = node
     }
 
-    override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
+    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("module.d.ts"))
 
@@ -47,7 +47,7 @@ class ModuleInjection : Injection {
         ""
     }
 
-    override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
+    override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
@@ -61,5 +61,5 @@ class ModuleInjection : Injection {
             .toTypedArray()
     }
 
-    override fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
+    override suspend fun generate(context: Context, render: Render<Node>) = emptyArray<GeneratedFile>()
 }

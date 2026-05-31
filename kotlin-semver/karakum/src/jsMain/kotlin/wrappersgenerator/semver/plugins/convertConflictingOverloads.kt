@@ -41,21 +41,19 @@ val convertConflictingOverloads = createPlugin { node, context, render ->
         val name = node.name?.let { render(it) } ?: "Anonymous"
 
         val typeParameters = node.typeParameters?.asArray()
-            ?.joinToString(", ") { render(it) }
+            ?.map { render(it) }
+            ?.joinToString(", ")
 
         val returnType = node.type?.let { render(it) }
 
         convertParameterDeclarations(
             node, context, render,
-            ParameterDeclarationsConfiguration(
-                strategy = ParameterDeclarationStrategy.function,
-                template = template@{ parameters, signature ->
-                    if (isConflictingOverload(node, signature)) return@template ""
+            ParameterDeclarationStrategy.function,
+        ) template@{ parameters, signature ->
+            if (isConflictingOverload(node, signature)) return@template ""
 
-                    "external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})" +
-                            ifPresent(returnType) { ": $it" }
-                },
-            ),
-        )
+            "external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})" +
+                    ifPresent(returnType) { ": $it" }
+        }
     }
 }
