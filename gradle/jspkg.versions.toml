@@ -73,142 +73,142 @@ types-semver = "7.7.1"
 
 [libraries]
 # https://npmjs.com/package/@actions/artifact
-actions-artifact = { module = "npm:@actions/artifact", version.ref = "actions-artifact" }
+actions-artifact = { group = "npm", name = "@actions/artifact", version.ref = "actions-artifact" }
 # https://npmjs.com/package/@actions/cache
-actions-cache = { module = "npm:@actions/cache", version.ref = "actions-cache" }
+actions-cache = { group = "npm", name = "@actions/cache", version.ref = "actions-cache" }
 # https://npmjs.com/package/@actions/core
-actions-core = { module = "npm:@actions/core", version.ref = "actions-core" }
+actions-core = { group = "npm", name = "@actions/core", version.ref = "actions-core" }
 # https://npmjs.com/package/@actions/exec
-actions-exec = { module = "npm:@actions/exec", version.ref = "actions-exec" }
+actions-exec = { group = "npm", name = "@actions/exec", version.ref = "actions-exec" }
 # https://npmjs.com/package/@actions/github
-actions-github = { module = "npm:@actions/github", version.ref = "actions-github" }
+actions-github = { group = "npm", name = "@actions/github", version.ref = "actions-github" }
 # https://npmjs.com/package/@actions/glob
-actions-glob = { module = "npm:@actions/glob", version.ref = "actions-glob" }
+actions-glob = { group = "npm", name = "@actions/glob", version.ref = "actions-glob" }
 # https://npmjs.com/package/@actions/http-client
-actions-httpClient = { module = "npm:@actions/http-client", version.ref = "actions-http-client" }
+actions-httpClient = { group = "npm", name = "@actions/http-client", version.ref = "actions-http-client" }
 # https://npmjs.com/package/@actions/io
-actions-io = { module = "npm:@actions/io", version.ref = "actions-io" }
+actions-io = { group = "npm", name = "@actions/io", version.ref = "actions-io" }
 # https://npmjs.com/package/@actions/tool-cache
-actions-toolCache = { module = "npm:@actions/tool-cache", version.ref = "actions-tool-cache" }
+actions-toolCache = { group = "npm", name = "@actions/tool-cache", version.ref = "actions-tool-cache" }
 # https://npmjs.com/package/ajv
-ajv = { module = "npm:ajv", version.ref = "ajv" }
+ajv = { group = "npm", name = "ajv", version.ref = "ajv" }
 # https://npmjs.com/package/@cesium/engine
-cesium-engine = { module = "npm:@cesium/engine", version.ref = "cesium-engine" }
+cesium-engine = { group = "npm", name = "@cesium/engine", version.ref = "cesium-engine" }
 # https://npmjs.com/package/@cesium/widgets
-cesium-widgets = { module = "npm:@cesium/widgets", version.ref = "cesium-widgets" }
+cesium-widgets = { group = "npm", name = "@cesium/widgets", version.ref = "cesium-widgets" }
 # https://npmjs.com/package/csstype
-csstype = { module = "npm:csstype", version.ref = "csstype" }
+csstype = { group = "npm", name = "csstype", version.ref = "csstype" }
 # https://npmjs.com/package/electron
-electron = { module = "npm:electron", version.ref = "electron" }
+electron = { group = "npm", name = "electron", version.ref = "electron" }
 # https://npmjs.com/package/@emotion/cache
-emotion-cache = { module = "npm:@emotion/cache", version.ref = "emotion-cache" }
+emotion-cache = { group = "npm", name = "@emotion/cache", version.ref = "emotion-cache" }
 # https://npmjs.com/package/@emotion/css
-emotion-css = { module = "npm:@emotion/css", version.ref = "emotion-css" }
+emotion-css = { group = "npm", name = "@emotion/css", version.ref = "emotion-css" }
 # https://npmjs.com/package/@emotion/react
-emotion-react = { module = "npm:@emotion/react", version.ref = "emotion-react" }
+emotion-react = { group = "npm", name = "@emotion/react", version.ref = "emotion-react" }
 # https://npmjs.com/package/@emotion/styled
-emotion-styled = { module = "npm:@emotion/styled", version.ref = "emotion-styled" }
+emotion-styled = { group = "npm", name = "@emotion/styled", version.ref = "emotion-styled" }
 # https://npmjs.com/package/@emotion/utils
-emotion-utils = { module = "npm:@emotion/utils", version.ref = "emotion-utils" }
+emotion-utils = { group = "npm", name = "@emotion/utils", version.ref = "emotion-utils" }
 # https://npmjs.com/package/@floating-ui/core
-floatingUi-core = { module = "npm:@floating-ui/core", version.ref = "floating-ui-core" }
+floatingUi-core = { group = "npm", name = "@floating-ui/core", version.ref = "floating-ui-core" }
 # https://npmjs.com/package/@floating-ui/dom
-floatingUi-dom = { module = "npm:@floating-ui/dom", version.ref = "floating-ui-dom" }
+floatingUi-dom = { group = "npm", name = "@floating-ui/dom", version.ref = "floating-ui-dom" }
 # https://npmjs.com/package/@floating-ui/react-dom
-floatingUi-reactDom = { module = "npm:@floating-ui/react-dom", version.ref = "floating-ui-react-dom" }
+floatingUi-reactDom = { group = "npm", name = "@floating-ui/react-dom", version.ref = "floating-ui-react-dom" }
 # https://npmjs.com/package/@floating-ui/utils
-floatingUi-utils = { module = "npm:@floating-ui/utils", version.ref = "floating-ui-utils" }
+floatingUi-utils = { group = "npm", name = "@floating-ui/utils", version.ref = "floating-ui-utils" }
 # https://npmjs.com/package/jszip
-jszip = { module = "npm:jszip", version.ref = "jszip" }
+jszip = { group = "npm", name = "jszip", version.ref = "jszip" }
 # https://npmjs.com/package/@mui/material
-mui-material = { module = "npm:@mui/material", version.ref = "mui-material" }
+mui-material = { group = "npm", name = "@mui/material", version.ref = "mui-material" }
 # https://npmjs.com/package/@mui/base
-mui-base = { module = "npm:@mui/base", version.ref = "mui-base" }
+mui-base = { group = "npm", name = "@mui/base", version.ref = "mui-base" }
 # https://npmjs.com/package/@mui/icons-material
-mui-iconsMaterial = { module = "npm:@mui/icons-material", version.ref = "mui-icons-material" }
+mui-iconsMaterial = { group = "npm", name = "@mui/icons-material", version.ref = "mui-icons-material" }
 # https://npmjs.com/package/@mui/system
-mui-system = { module = "npm:@mui/system", version.ref = "mui-system" }
+mui-system = { group = "npm", name = "@mui/system", version.ref = "mui-system" }
 # https://npmjs.com/package/@mui/lab
-mui-lab = { module = "npm:@mui/lab", version.ref = "mui-lab" }
+mui-lab = { group = "npm", name = "@mui/lab", version.ref = "mui-lab" }
 # https://npmjs.com/package/@mui/x-date-pickers
-mui-xDatePickers = { module = "npm:@mui/x-date-pickers", version.ref = "muix-date-pickers" }
+mui-xDatePickers = { group = "npm", name = "@mui/x-date-pickers", version.ref = "muix-date-pickers" }
 # https://npmjs.com/package/@mui/x-tree-view
-mui-xTreeView = { module = "npm:@mui/x-tree-view", version.ref = "muix-tree-view" }
+mui-xTreeView = { group = "npm", name = "@mui/x-tree-view", version.ref = "muix-tree-view" }
 # https://npmjs.com/package/@types/node
-types-node = { module = "npm:@types/node", version.ref = "node" }
+types-node = { group = "npm", name = "@types/node", version.ref = "node" }
 # https://npmjs.com/package/pako
-pako = { module = "npm:pako", version.ref = "pako" }
+pako = { group = "npm", name = "pako", version.ref = "pako" }
 # https://npmjs.com/package/@popperjs/core
-popperjs-core = { module = "npm:@popperjs/core", version.ref = "popperjs-core" }
+popperjs-core = { group = "npm", name = "@popperjs/core", version.ref = "popperjs-core" }
 # https://npmjs.com/package/@prantlf/jsonlint
-prantlf-jsonlint = { module = "npm:@prantlf/jsonlint", version.ref = "prantlf-jsonlint" }
+prantlf-jsonlint = { group = "npm", name = "@prantlf/jsonlint", version.ref = "prantlf-jsonlint" }
 # https://npmjs.com/package/@preact/signals-core
-preact-signalsCore = { module = "npm:@preact/signals-core", version.ref = "preact-signals-core" }
+preact-signalsCore = { group = "npm", name = "@preact/signals-core", version.ref = "preact-signals-core" }
 # https://npmjs.com/package/@preact/signals-react
-preact-signalsReact = { module = "npm:@preact/signals-react", version.ref = "preact-signals-react" }
+preact-signalsReact = { group = "npm", name = "@preact/signals-react", version.ref = "preact-signals-react" }
 # https://npmjs.com/package/react
-react = { module = "npm:react", version.ref = "react" }
+react = { group = "npm", name = "react", version.ref = "react" }
 # https://npmjs.com/package/react-dom
-reactDom = { module = "npm:react-dom", version.ref = "react-dom" }
+reactDom = { group = "npm", name = "react-dom", version.ref = "react-dom" }
 # https://npmjs.com/package/react-select
-reactSelect = { module = "npm:react-select", version.ref = "react-select" }
+reactSelect = { group = "npm", name = "react-select", version.ref = "react-select" }
 # https://npmjs.com/package/semver
-semver = { module = "npm:semver", version.ref = "semver" }
+semver = { group = "npm", name = "semver", version.ref = "semver" }
 # https://npmjs.com/package/@tanstack/history
-tanstack-history = { module = "npm:@tanstack/history", version.ref = "tanstack-history" }
+tanstack-history = { group = "npm", name = "@tanstack/history", version.ref = "tanstack-history" }
 # https://npmjs.com/package/@tanstack/query-core
-tanstack-queryCore = { module = "npm:@tanstack/query-core", version.ref = "tanstack-query-core" }
+tanstack-queryCore = { group = "npm", name = "@tanstack/query-core", version.ref = "tanstack-query-core" }
 # https://npmjs.com/package/@tanstack/react-query
-tanstack-reactQuery = { module = "npm:@tanstack/react-query", version.ref = "tanstack-react-query" }
+tanstack-reactQuery = { group = "npm", name = "@tanstack/react-query", version.ref = "tanstack-react-query" }
 # https://npmjs.com/package/@tanstack/react-query-devtools
-tanstack-reactQueryDevtools = { module = "npm:@tanstack/react-query-devtools", version.ref = "tanstack-react-query-devtools" }
+tanstack-reactQueryDevtools = { group = "npm", name = "@tanstack/react-query-devtools", version.ref = "tanstack-react-query-devtools" }
 # https://npmjs.com/package/@tanstack/react-router
-tanstack-reactRouter = { module = "npm:@tanstack/react-router", version.ref = "tanstack-react-router" }
+tanstack-reactRouter = { group = "npm", name = "@tanstack/react-router", version.ref = "tanstack-react-router" }
 # https://npmjs.com/package/@tanstack/react-router-devtools
-tanstack-reactRouterDevtools = { module = "npm:@tanstack/react-router-devtools", version.ref = "tanstack-react-router-devtools" }
+tanstack-reactRouterDevtools = { group = "npm", name = "@tanstack/react-router-devtools", version.ref = "tanstack-react-router-devtools" }
 # https://npmjs.com/package/@tanstack/react-table
-tanstack-reactTable = { module = "npm:@tanstack/react-table", version.ref = "tanstack-react-table" }
+tanstack-reactTable = { group = "npm", name = "@tanstack/react-table", version.ref = "tanstack-react-table" }
 # https://npmjs.com/package/@tanstack/react-virtual
-tanstack-reactVirtual = { module = "npm:@tanstack/react-virtual", version.ref = "tanstack-react-virtual" }
+tanstack-reactVirtual = { group = "npm", name = "@tanstack/react-virtual", version.ref = "tanstack-react-virtual" }
 # https://npmjs.com/package/@tanstack/router-core
-tanstack-routerCore = { module = "npm:@tanstack/router-core", version.ref = "tanstack-router-core" }
+tanstack-routerCore = { group = "npm", name = "@tanstack/router-core", version.ref = "tanstack-router-core" }
 # https://npmjs.com/package/@tanstack/table-core
-tanstack-tableCore = { module = "npm:@tanstack/table-core", version.ref = "tanstack-table-core" }
+tanstack-tableCore = { group = "npm", name = "@tanstack/table-core", version.ref = "tanstack-table-core" }
 # https://npmjs.com/package/@tanstack/virtual-core
-tanstack-virtualCore = { module = "npm:@tanstack/virtual-core", version.ref = "tanstack-virtual-core" }
+tanstack-virtualCore = { group = "npm", name = "@tanstack/virtual-core", version.ref = "tanstack-virtual-core" }
 # https://npmjs.com/package/@tauri-apps/api
-tauriApps-api = { module = "npm:@tauri-apps/api", version.ref = "tauri-apps-api" }
+tauriApps-api = { group = "npm", name = "@tauri-apps/api", version.ref = "tauri-apps-api" }
 # https://npmjs.com/package/@testing-library/dom
-testingLibrary-dom = { module = "npm:@testing-library/dom", version.ref = "testing-library-dom" }
+testingLibrary-dom = { group = "npm", name = "@testing-library/dom", version.ref = "testing-library-dom" }
 # https://npmjs.com/package/@testing-library/react
-testingLibrary-react = { module = "npm:@testing-library/react", version.ref = "testing-library-react" }
+testingLibrary-react = { group = "npm", name = "@testing-library/react", version.ref = "testing-library-react" }
 # https://npmjs.com/package/@testing-library/user-event
-testingLibrary-userEvent = { module = "npm:@testing-library/user-event", version.ref = "testing-library-user-event" }
+testingLibrary-userEvent = { group = "npm", name = "@testing-library/user-event", version.ref = "testing-library-user-event" }
 # https://npmjs.com/package/typescript
-typescript = { module = "npm:typescript", version.ref = "typescript" }
+typescript = { group = "npm", name = "typescript", version.ref = "typescript" }
 # https://npmjs.com/package/@vercel/ncc
-vercel-ncc = { module = "npm:@vercel/ncc", version.ref = "vercel-ncc" }
+vercel-ncc = { group = "npm", name = "@vercel/ncc", version.ref = "vercel-ncc" }
 # https://npmjs.com/package/@types/vscode
-types-vscode = { module = "npm:@types/vscode", version.ref = "vscode" }
+types-vscode = { group = "npm", name = "@types/vscode", version.ref = "vscode" }
 # https://npmjs.com/package/yaml
-yaml = { module = "npm:yaml", version.ref = "yaml" }
+yaml = { group = "npm", name = "yaml", version.ref = "yaml" }
 
 # https://npmjs.com/package/@types/web
-types-web = { module = "npm:@types/web", version.ref = "types-web" }
+types-web = { group = "npm", name = "@types/web", version.ref = "types-web" }
 # https://npmjs.com/package/@types/webworker
-types-webworker = { module = "npm:@types/webworker", version.ref = "types-webworker" }
+types-webworker = { group = "npm", name = "@types/webworker", version.ref = "types-webworker" }
 # https://npmjs.com/package/@types/serviceworker
-types-serviceworker = { module = "npm:@types/serviceworker", version.ref = "types-serviceworker" }
+types-serviceworker = { group = "npm", name = "@types/serviceworker", version.ref = "types-serviceworker" }
 # https://npmjs.com/package/@types/audioworklet
-types-audioworklet = { module = "npm:@types/audioworklet", version.ref = "types-audioworklet" }
+types-audioworklet = { group = "npm", name = "@types/audioworklet", version.ref = "types-audioworklet" }
 # https://npmjs.com/package/@types/webxr
-types-webxr = { module = "npm:@types/webxr", version.ref = "types-webxr" }
+types-webxr = { group = "npm", name = "@types/webxr", version.ref = "types-webxr" }
 # https://npmjs.com/package/@webref/events
-webref-events = { module = "npm:@webref/events", version.ref = "webref-events" }
+webref-events = { group = "npm", name = "@webref/events", version.ref = "webref-events" }
 # https://npmjs.com/package/@webref/idl
-webref-idl = { module = "npm:@webref/idl", version.ref = "webref-idl" }
+webref-idl = { group = "npm", name = "@webref/idl", version.ref = "webref-idl" }
 
 # https://npmjs.com/package/@types/react
-types-react = { module = "npm:@types/react", version.ref = "types-react" }
+types-react = { group = "npm", name = "@types/react", version.ref = "types-react" }
 # https://npmjs.com/package/@types/semver
-types-semver = { module = "npm:@types/semver", version.ref = "types-semver" }
+types-semver = { group = "npm", name = "@types/semver", version.ref = "types-semver" }
