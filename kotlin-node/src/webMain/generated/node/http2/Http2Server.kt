@@ -50,7 +50,8 @@ external interface Http2Server<Http1Request : IncomingMessage, Http1Response : S
             node.events.EventInstance<js.array.Tuple1<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
 
     @web.events.JsEvent("sessionError")
-    val sessionErrorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
+    val sessionErrorEvent:
+            node.events.EventInstance<js.array.Tuple2<js.errors.JsError, ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
 
     @web.events.JsEvent("stream")
     val streamEvent:

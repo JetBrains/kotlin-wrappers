@@ -215,7 +215,7 @@ external interface Http2Stream : node.stream.Duplex {
     override val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("frameError")
-    val frameErrorEvent: node.events.EventInstance<js.array.Tuple2<Double, Double>>
+    val frameErrorEvent: node.events.EventInstance<js.array.Tuple3<Double, Double, Double>>
 
     @web.events.JsEvent("pipe")
     override val pipeEvent: node.events.EventInstance<js.array.Tuple1<node.stream.Readable>>
