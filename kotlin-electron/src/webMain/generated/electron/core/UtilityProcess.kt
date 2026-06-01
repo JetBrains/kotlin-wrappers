@@ -22,6 +22,17 @@ external class UtilityProcess : NodeEventEmitter {
      */
 
     /**
+     * Emitted when the utility process encounters an HTTP 401 or 407 authentication
+     * challenge, if the process was created with both
+     * `respondToAuthRequestsFromMainProcess: true` and a `session` option. The
+     * `callback` should be called with credentials to respond to the challenge.
+     * Calling `callback` without arguments will cancel the request.
+     *
+     * This behaves the same as the `login` event on `app` but is scoped to the
+     * individual utility process instance.
+     */
+
+    /**
      * Emitted when the child process sends a message using
      * `process.parentPort.postMessage()`.
      */
@@ -96,6 +107,18 @@ external class UtilityProcess : NodeEventEmitter {
 
     @web.events.JsEvent("exit")
     val exitEvent: node.events.EventInstance<js.array.Tuple1<Double>>
+
+    @web.events.JsEvent("login")
+    val loginEvent: node.events.EventInstance<
+            js.array.Tuple3<
+                    AuthenticationResponseDetails,
+                    AuthInfo,
+                        (
+                username: String?, /* use undefined for default */
+                password: String?, // use undefined for default
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("message")
     val messageEvent: node.events.EventInstance<js.array.Tuple1<Any?>>

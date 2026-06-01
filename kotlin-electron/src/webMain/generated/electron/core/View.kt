@@ -78,7 +78,10 @@ open external class View : NodeEventEmitter {
      */
     fun setBorderRadius(radius: Double)
 
-    fun setBounds(bounds: Rectangle)
+    fun setBounds(
+        bounds: Rectangle,
+        options: BoundsOptions = definedExternally,
+    )
 
     fun setVisible(visible: Boolean)
 

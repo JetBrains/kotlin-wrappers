@@ -5,6 +5,39 @@ package electron.core
 @kotlinx.js.JsPlainObject
 external interface NotificationConstructorOptions {
     /**
+     * A unique identifier for the notification. On macOS, maps to
+     * `UNNotificationRequest`'s `identifier` property. On Windows, maps to the toast
+     * notification's `Tag` property. Defaults to a random UUID if not provided or if
+     * an empty string is passed. Use this identifier with `Notification.remove()` to
+     * remove specific delivered notifications, or with `Notification.getHistory()` to
+     * identify them.
+     *
+     * @platform darwin,win32
+     */
+    var id: String?
+
+    /**
+     * A string identifier used to visually group notifications together in
+     * Notification Center / Action Center. On macOS, maps to `UNNotificationContent`'s
+     * `threadIdentifier` property. On Windows, maps to the toast notification's
+     * `Group` property. Use this identifier with `Notification.removeGroup()` to
+     * remove all notifications in a group.
+     *
+     * @platform darwin,win32
+     */
+    var groupId: String?
+
+    /**
+     * A title for the notification group header. When both `groupId` and `groupTitle`
+     * are specified, Windows will display a header above the notification that groups
+     * related notifications together. Maps to the toast notification's `header`
+     * element.
+     *
+     * @platform win32
+     */
+    var groupTitle: String?
+
+    /**
      * A title for the notification, which will be displayed at the top of the
      * notification window when it is shown.
      */
@@ -38,7 +71,7 @@ external interface NotificationConstructorOptions {
     /**
      * Whether or not to add an inline reply option to the notification.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
     var hasReply: Boolean?
 
@@ -52,7 +85,7 @@ external interface NotificationConstructorOptions {
     /**
      * The placeholder to write in the inline reply input field.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
     var replyPlaceholder: String?
 
@@ -74,7 +107,7 @@ external interface NotificationConstructorOptions {
      * Actions to add to the notification. Please read the available actions and
      * limitations in the `NotificationAction` documentation.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
     var actions: js.array.ReadonlyArray<NotificationAction>?
 

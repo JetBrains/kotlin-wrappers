@@ -22,4 +22,12 @@ external interface Offscreen {
      * @experimental
      */
     var sharedTexturePixelFormat: (OffscreenSharedTexturePixelFormat)?
+
+    /**
+     * The device scale factor of the offscreen rendering output. If not set, will use
+     * `1` as default.
+     *
+     * @experimental
+     */
+    var deviceScaleFactor: Double?
 }

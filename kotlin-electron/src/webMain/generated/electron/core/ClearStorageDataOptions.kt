@@ -15,10 +15,4 @@ external interface ClearStorageDataOptions {
      * not specified, clear all storage types.
      */
     var storages: js.array.ReadonlyArray<ClearStorageDataOptionsStorage>?
-
-    /**
-     * The types of quotas to clear, can be `temporary`. If not specified, clear all
-     * quotas.
-     */
-    var quotas: js.array.ReadonlyArray<String /* 'temporary' */>?
 }

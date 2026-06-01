@@ -505,6 +505,27 @@ external interface App : node.events.EventEmitter {
     fun configureHostResolver(options: ConfigureHostResolverOptions)
 
     /**
+     * Configures platform authenticators for the Web Authentication API
+     * (`navigator.credentials.create()` / `navigator.credentials.get()`). Until this
+     * is called, `PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()`
+     * resolves to `false` and platform-authenticator requests are not serviced.
+     *
+     * When `touchID` is provided, WebAuthn credentials are stored in the macOS
+     * keychain and bound to this device's Secure Enclave. Electron automatically
+     * generates and persists a per-`session` metadata secret so that credentials
+     * created in one partition are not visible to another.
+     *
+     * With the matching entitlement in your app's `entitlements.plist`:
+     *
+     * > [!NOTE] Touch ID WebAuthn credentials are device-bound and are not synced via
+     * iCloud Keychain. They are only available on Macs with a Secure Enclave (Apple
+     * silicon, or Intel Macs with a T2 chip).
+     *
+     * @platform darwin
+     */
+    fun configureWebAuthn(options: ConfigureWebAuthnOptions)
+
+    /**
      * By default, Chromium disables 3D APIs (e.g. WebGL) until restart on a per domain
      * basis if the GPU process crashes too frequently. This function disables that
      * behavior.
@@ -581,8 +602,6 @@ external interface App : node.events.EventEmitter {
      *
      * This method returns a promise that contains the application name, icon and path
      * of the default handler for the protocol (aka URI scheme) of a URL.
-     *
-     * @platform darwin,win32
      */
     fun getApplicationInfoForProtocol(url: String): js.promise.Promise<ApplicationInfoForProtocolReturnValue>
 
@@ -884,6 +903,13 @@ external interface App : node.events.EventEmitter {
      * @platform darwin,win32
      */
     fun isAccessibilitySupportEnabled(): Boolean
+
+    /**
+     * `true` if the application is active (i.e. focused).
+     *
+     * @platform darwin
+     */
+    fun isActive(): Boolean
 
     /**
      * Whether the current executable is the default handler for a protocol (aka URI

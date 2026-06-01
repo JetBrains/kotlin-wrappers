@@ -5,6 +5,35 @@ package electron.core
 external interface ContentTracing {
 // Docs: https://electronjs.org/docs/api/content-tracing
     /**
+     * Resolves once heap profiling has been enabled.
+     *
+     * Enable heap profiling for MemoryInfra traces. Equivalent to the `--memlog`
+     * switch in Chrome.
+     *
+     * Only takes effect if the `disabled-by-default-memory-infra` category is
+     * included.
+     *
+     * Needs to be called before `contentTracing.startRecording()`.
+     *
+     * Usage:
+     *
+     * To view the recorded heap dumps:
+     *
+     * * Download the breakpad symbols for your Electron version from the Electron
+     * GitHub releases
+     * * Clone the Electron source code
+     * * In your Chromium checkout for Electron, run this command to symbolicate the
+     * heap dump:
+     * * Open the symbolicated trace in `chrome://tracing` (the Perfetto UI does not
+     * support memory dumps yet)
+     * * Click on one of the `M` symbols
+     * * Click on a `☰` triple bar icon (e.g., in the `malloc` column)
+     *
+     * @experimental
+     */
+    fun enableHeapProfiling(options: EnableHeapProfilingOptions = definedExternally): js.promise.Promise<js.core.Void>
+
+    /**
      * resolves with an array of category groups once all child processes have
      * acknowledged the `getCategories` request
      *

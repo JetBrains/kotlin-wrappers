@@ -82,6 +82,23 @@ external class Session : NodeEventEmitter {
      */
 
     /**
+     * Emitted when a call to `navigator.credentials.get()` resolves multiple
+     * discoverable WebAuthn credentials and the user must choose one. `callback`
+     * should be called with the `credentialId` of the selected account; passing no
+     * arguments — or a `credentialId` that does not match one of the provided accounts
+     * — will cancel the request and the page will receive a `NotAllowedError`. If no
+     * listener is registered for this event, the request is cancelled with the same
+     * error. The credential request remains pending until the listener invokes the
+     * callback, so always invoke it exactly once — typically from a `try { … } finally
+     * { callback(…) }` block.
+     *
+     * On macOS, the Touch ID platform authenticator surfaces accounts via this event
+     * once it has been configured with `app.configureWebAuthn`. The event may also
+     * fire on other platforms when a roaming FIDO2 authenticator returns multiple
+     * discoverable credentials.
+     */
+
+    /**
      * Emitted after `navigator.serial.requestPort` has been called and
      * `select-serial-port` has fired if a new serial port becomes available before the
      * callback from `select-serial-port` is called.  This event is intended for use
@@ -900,6 +917,17 @@ external class Session : NodeEventEmitter {
                     SelectUsbDeviceDetails,
                         (
                 deviceId: String?, // use undefined for default
+            ) -> Unit
+                    >
+            >
+
+    @web.events.JsEvent("select-webauthn-account")
+    val selectWebauthnAccountEvent: node.events.EventInstance<
+            js.array.Tuple3<
+                    Event<*>,
+                    SelectWebauthnAccountDetails,
+                        (
+                credentialId: String?, // use undefined for default
             ) -> Unit
                     >
             >

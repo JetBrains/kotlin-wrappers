@@ -20,6 +20,24 @@ external interface ForkOptions {
     var cwd: String?
 
     /**
+     * Sets the session used by the process for network requests. By default, network
+     * requests from the utility process will use the system network context which does
+     * not have HTTP cache support. Setting a session enables HTTP caching and other
+     * session-specific network features. See session for more information.
+     */
+    var session: Session?
+
+    /**
+     * Sets the session used by the process according to the session's partition
+     * string. If `partition` starts with `persist:`, the process will use a persistent
+     * session available to all pages in the app with the same `partition`. If there is
+     * no `persist:` prefix, the process will use an in-memory session. By assigning
+     * the same `partition`, multiple processes can share the same session. If the
+     * `session` option is set, this option is ignored.
+     */
+    var partition: String?
+
+    /**
      * Allows configuring the mode for `stdout` and `stderr` of the child process.
      * Default is `inherit`. String value can be one of `pipe`, `ignore`, `inherit`,
      * for more details on these values you can refer to stdio documentation from
@@ -64,9 +82,11 @@ external interface ForkOptions {
 
     /**
      * With this flag, all HTTP 401 and 407 network requests created via the net module
-     * will allow responding to them via the `app#login` event in the main process
-     * instead of the default `login` event on the `ClientRequest` object. Default is
-     * `false`.
+     * will allow responding to them via the `login` event on the `UtilityProcess`
+     * instance when a `session` is provided, or via the `app#login` event in the main
+     * process when using the default system network context. Without this flag, auth
+     * challenges are handled by the default `login` event on the `ClientRequest`
+     * object. Default is `false`.
      */
     var respondToAuthRequestsFromMainProcess: Boolean?
 }

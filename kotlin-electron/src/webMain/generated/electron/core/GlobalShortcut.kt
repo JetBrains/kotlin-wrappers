@@ -14,6 +14,11 @@ external interface GlobalShortcut {
     fun isRegistered(accelerator: String): Boolean
 
     /**
+     * Whether global shortcut handling is currently suspended.
+     */
+    fun isSuspended(): Boolean
+
+    /**
      * Whether or not the shortcut was registered successfully.
      *
      * Registers a global shortcut of `accelerator`. The `callback` is called when the
@@ -57,6 +62,18 @@ external interface GlobalShortcut {
         accelerators: js.array.ReadonlyArray<String>,
         callback: () -> Unit,
     )
+
+    /**
+     * Suspends or resumes global shortcut handling. When suspended, all registered
+     * global shortcuts will stop listening for key presses. When resumed, all
+     * previously registered shortcuts will begin listening again. New shortcut
+     * registrations will fail while handling is suspended.
+     *
+     * This can be useful when you want to temporarily allow the user to press key
+     * combinations without your application intercepting them, for example while
+     * displaying a UI to rebind shortcuts.
+     */
+    fun setSuspended(suspended: Boolean)
 
     /**
      * Unregisters the global shortcut of `accelerator`.

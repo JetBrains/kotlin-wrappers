@@ -23,6 +23,8 @@ external interface HandlerDetails {
 
     /**
      * Can be `default`, `foreground-tab`, `background-tab`, `new-window` or `other`.
+     * Corresponds to the manner an associated link was clicked. See Chromium's
+     * WindowOpenDisposition.
      */
     var disposition: (HandlerDetailsDisposition)
 

@@ -9,10 +9,19 @@ external interface SafeStorage {
     /**
      * the decrypted string. Decrypts the encrypted buffer obtained  with
      * `safeStorage.encryptString` back into a string.
-     *
-     * This function will throw an error if decryption fails.
      */
     fun decryptString(encrypted: Buffer<*>): String
+
+    /**
+     * Resolve with an object containing the following:
+     *
+     * * `shouldReEncrypt` boolean - whether data that has just been returned from the
+     * decrypt operation should be re-encrypted, as the key has been rotated or a new
+     * key is available that provides a different security level. If `true`, you should
+     * call `decryptStringAsync` again to receive the new decrypted string.
+     * * `result` string - the decrypted string.
+     */
+    fun decryptStringAsync(encrypted: Buffer<*>): js.promise.Promise<DecryptStringAsyncReturnValue>
 
     /**
      * An array of bytes representing the encrypted string.
@@ -20,6 +29,11 @@ external interface SafeStorage {
      * This function will throw an error if encryption fails.
      */
     fun encryptString(plainText: String): Buffer<*>
+
+    /**
+     * An array of bytes representing the encrypted string.
+     */
+    fun encryptStringAsync(plainText: String): js.promise.Promise<Buffer<*>>
 
     /**
      * User friendly name of the password manager selected on Linux.
@@ -43,6 +57,11 @@ external interface SafeStorage {
      * @platform linux
      */
     fun getSelectedStorageBackend(): (SafeStorageGetSelectedStorageBackendResult)
+
+    /**
+     * Whether encryption is available for asynchronous safeStorage operations.
+     */
+    fun isAsyncEncryptionAvailable(): js.promise.Promise<Boolean>
 
     /**
      * Whether encryption is available.
