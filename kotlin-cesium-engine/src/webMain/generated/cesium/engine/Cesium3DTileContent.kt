@@ -15,12 +15,12 @@ import js.array.ReadonlyArray
  * This type describes an interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html">Online Documentation</a>
  */
-abstract external class Cesium3DTileContent {
+external interface Cesium3DTileContent {
     /**
      * Gets the number of features in the tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#featuresLength">Online Documentation</a>
      */
-    abstract val featuresLength: Int
+    val featuresLength: Int
 
     /**
      * Gets the number of points in the tile.
@@ -29,25 +29,25 @@ abstract external class Cesium3DTileContent {
      * equals the number of groups of points as distinguished by the `BATCH_ID` feature table semantic.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#pointsLength">Online Documentation</a>
      */
-    abstract val pointsLength: Int
+    val pointsLength: Int
 
     /**
      * Gets the number of triangles in the tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#trianglesLength">Online Documentation</a>
      */
-    abstract val trianglesLength: Int
+    val trianglesLength: Int
 
     /**
      * Gets the tile's geometry memory in bytes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#geometryByteLength">Online Documentation</a>
      */
-    abstract val geometryByteLength: Int
+    val geometryByteLength: Int
 
     /**
      * Gets the tile's texture memory in bytes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#texturesByteLength">Online Documentation</a>
      */
-    abstract val texturesByteLength: Int
+    val texturesByteLength: Int
 
     /**
      * Gets the amount of memory used by the batch table textures and any binary
@@ -55,37 +55,37 @@ abstract external class Cesium3DTileContent {
      * texturesByteLength
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#batchTableByteLength">Online Documentation</a>
      */
-    abstract val batchTableByteLength: Int
+    val batchTableByteLength: Int
 
     /**
      * Gets the array of [Cesium3DTileContent] objects for contents that contain other contents, such as composite tiles. The inner contents may in turn have inner contents, such as a composite tile that contains a composite tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#innerContents">Online Documentation</a>
      */
-    abstract val innerContents: ReadonlyArray<JsAny>
+    val innerContents: ReadonlyArray<JsAny>
 
     /**
      * Returns true when the tile's content is ready to render; otherwise false
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#ready">Online Documentation</a>
      */
-    abstract val ready: Boolean
+    val ready: Boolean
 
     /**
      * Gets the tileset for this tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#tileset">Online Documentation</a>
      */
-    abstract val tileset: Cesium3DTileset
+    val tileset: Cesium3DTileset
 
     /**
      * Gets the tile containing this content.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#tile">Online Documentation</a>
      */
-    abstract val tile: Cesium3DTile
+    val tile: Cesium3DTile
 
     /**
      * Gets the url of the tile's content.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#url">Online Documentation</a>
      */
-    abstract val url: String
+    val url: String
 
     /**
      * Returns whether the feature has this property.
@@ -94,7 +94,7 @@ abstract external class Cesium3DTileContent {
      * @return `true` if the feature has this property; otherwise, `false`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#hasProperty">Online Documentation</a>
      */
-    abstract fun hasProperty(
+    fun hasProperty(
         batchId: Int,
         name: String,
     ): Boolean
@@ -109,5 +109,5 @@ abstract external class Cesium3DTileContent {
      * @return The corresponding [Cesium3DTileFeature] object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#getFeature">Online Documentation</a>
      */
-    abstract fun getFeature(batchId: Int): Cesium3DTileFeature
+    fun getFeature(batchId: Int): Cesium3DTileFeature
 }

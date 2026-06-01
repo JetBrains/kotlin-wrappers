@@ -14,7 +14,7 @@ external interface MapProjection {
      * Gets the [Ellipsoid].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapProjection.html#ellipsoid">Online Documentation</a>
      */
-    var ellipsoid: Ellipsoid
+    val ellipsoid: Ellipsoid
 
     /**
      * Projects [Cartographic] coordinates, in radians, to projection-specific map coordinates, in meters.

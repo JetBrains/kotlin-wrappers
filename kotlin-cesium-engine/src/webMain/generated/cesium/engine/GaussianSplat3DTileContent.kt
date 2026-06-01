@@ -94,7 +94,7 @@ open external class GaussianSplat3DTileContent {
      * <p>
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GaussianSplat3DTileContent.html#url">Online Documentation</a>
      */
-    val url: Resource
+    val url: String
 
     /**
      * Returns whether the feature has this property.

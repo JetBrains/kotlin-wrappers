@@ -288,7 +288,8 @@ open external class VoxelPrimitive(
     var clippingPlanes: ClippingPlaneCollection
 
     /**
-     * Gets or sets the custom shader. If undefined, [VoxelPrimitive.DefaultCustomShader] is set.
+     * Gets or sets the custom shader. If undefined, attempt to build a default custom shader
+     * appropriate to the metadata type. If that fails, use [VoxelPrimitive.DefaultCustomShader].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#customShader">Online Documentation</a>
      */
     var customShader: CustomShader

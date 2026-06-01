@@ -23,8 +23,16 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     /**
      * @property [modelMatrix] Transforms geometry from model to world coordinates.
      *   Default value - [Matrix4.IDENTITY]
+     * @property [positionNormalized] When `true`, integer position values are treated as normalized,
+     *   where the full integer range maps to [-1, 1] (signed) or [0, 1] (unsigned). Only relevant for integer position datatypes
+     *   (BYTE, UNSIGNED_BYTE, SHORT, UNSIGNED_SHORT).
+     *   Default value - `false`
      * @property [allowPicking] When `true`, primitives are pickable with [Scene.pick]. When `false`, memory and initialization cost are lower.
      *   Default value - `false`
+     * @property [boundingVolume] Bounding volume, in world space, for the collection. When
+     *   unspecified, a bounding volume is computed automatically and updated when primitive positions change. When
+     *   specified, users are responsible for updating bounding volume as needed. Pre-computing the bounding volume
+     *   manually, and updating it only as needed, will improve performance for larger dynamic collections.
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -33,18 +41,26 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
         val vertexCountMax: Double?
         val show: Boolean?
         val positionDatatype: ComponentDatatype?
+        val positionNormalized: Boolean?
         val allowPicking: Boolean?
+        val boundingVolume: BoundingSphere?
         val debugShowBoundingVolume: Boolean?
+        val blendOption: BlendOption?
     }
 
     /**
      * Determines if primitives in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#show">Online Documentation</a>
      */
-    var show: JsAny /* boolean;
-    protected readonly _modelMatrix: Matrix4;
+    var show: Boolean
+
+    /**
+     * Transforms geometry from model to world coordinates.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#_modelMatrix">Online Documentation</a>
+     */
+    val _modelMatrix: JsAny /* Matrix4;
     protected readonly _boundingVolume: BoundingSphere;
-    protected readonly _boundingVolumeWC: BoundingSphere */
+    protected readonly _boundingVolumeAutoUpdate: boolean */
 
     /**
      * This property is for debugging only; it is not for production use nor is it optimized.
@@ -161,18 +177,25 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     val modelMatrix: Matrix4
 
     /**
-     * Local bounding volume for all primitives in the collection, including both
+     * World-space bounding volume for all primitives in the collection, including both
      * shown and hidden primitives.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#boundingVolume">Online Documentation</a>
      */
     val boundingVolume: BoundingSphere
 
     /**
-     * World bounding volume for all primitives in the collection, including both
-     * shown and hidden primitives.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#boundingVolumeWC">Online Documentation</a>
+     * The component datatype used to store position values.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#positionDatatype">Online Documentation</a>
      */
-    val boundingVolumeWC: BoundingSphere
+    val positionDatatype: ComponentDatatype
+
+    /**
+     * When `true`, integer position values are treated as normalized
+     * values, where the full integer range maps to [-1, 1] (signed) or [0, 1]
+     * (unsigned).
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#positionNormalized">Online Documentation</a>
+     */
+    val positionNormalized: Boolean
 
     /**
      * Returns a JSON-serializable array representing the collection. This encoding

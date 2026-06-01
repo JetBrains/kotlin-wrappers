@@ -24,39 +24,39 @@ open external class ScreenSpaceEventHandler(
      * Set a function to be executed on an input event.
      * @param [action] Function to be executed when the input event occurs.
      * @param [type] The ScreenSpaceEventType of input event.
-     * @param [modifier] A KeyboardEventModifier key that is held when a `type`
+     * @param [modifiers] The KeyboardEventModifier keys that are held when a `type`
      *   event occurs.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#setInputAction">Online Documentation</a>
      */
     fun setInputAction(
         action: JsAny, /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
         type: ScreenSpaceEventType,
-        modifier: KeyboardEventModifier? = definedExternally,
+        modifiers: JsAny /* KeyboardEventModifier[] | KeyboardEventModifier */? = definedExternally,
     )
 
     /**
      * Returns the function to be executed on an input event.
      * @param [type] The ScreenSpaceEventType of input event.
-     * @param [modifier] A KeyboardEventModifier key that is held when a `type`
+     * @param [modifiers] The KeyboardEventModifier keys that are held when a `type`
      *   event occurs.
      * @return The function to be executed on an input event.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#getInputAction">Online Documentation</a>
      */
     fun getInputAction(
         type: ScreenSpaceEventType,
-        modifier: KeyboardEventModifier? = definedExternally,
+        modifiers: JsAny /* KeyboardEventModifier[] | KeyboardEventModifier */? = definedExternally,
     ): JsAny /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
 
     /**
      * Removes the function to be executed on an input event.
      * @param [type] The ScreenSpaceEventType of input event.
-     * @param [modifier] A KeyboardEventModifier key that is held when a `type`
+     * @param [modifiers] The KeyboardEventModifier keys that are held when a `type`
      *   event occurs.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#removeInputAction">Online Documentation</a>
      */
     fun removeInputAction(
         type: ScreenSpaceEventType,
-        modifier: KeyboardEventModifier? = definedExternally,
+        modifiers: JsAny /* KeyboardEventModifier[] | KeyboardEventModifier */? = definedExternally,
     )
 
     /**

@@ -122,7 +122,7 @@ internal fun Definition.toMethodMembers(): Sequence<Member> {
         .substringAfter("(")
         .substringBeforeLast(")")
 
-    val optionTypes = OPTIONS_REGEX.findAll(parameters)
+    var optionTypes = OPTIONS_REGEX.findAll(parameters)
         .map { it.groupValues[2] }
         .flatMap { source ->
             val types = source.toOptionTypes(prefix, static, optionsKdocBody())
@@ -130,6 +130,13 @@ internal fun Definition.toMethodMembers(): Sequence<Member> {
             types.asSequence()
         }
         .toList()
+
+    // TEMP WA
+    if (optionTypes.size == 1
+        && "fromUrl(url: string," in body
+        && "featureIdProperty?: string" in body) {
+        optionTypes = emptyList()
+    }
 
     return sequenceOf(Method(copy(body = methodBody))) + optionTypes
 }

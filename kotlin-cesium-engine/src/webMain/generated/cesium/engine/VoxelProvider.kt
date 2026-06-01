@@ -17,6 +17,36 @@ import seskar.js.JsAsync
  */
 abstract external class VoxelProvider {
     /**
+     * Requests the data for a given tile.
+     * @return A promise resolving to a VoxelContent containing the data for the tile, or undefined if the request could not be scheduled this frame.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#requestData">Online Documentation</a>
+     */
+    @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun requestData(options: RequestDataOptions? = definedExternally): VoxelContent?
+
+    @JsName("requestData")
+    abstract fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<VoxelContent>?
+
+    /**
+     * @property [tileLevel] The tile's level.
+     *   Default value - `0`
+     * @property [tileX] The tile's X coordinate.
+     *   Default value - `0`
+     * @property [tileY] The tile's Y coordinate.
+     *   Default value - `0`
+     * @property [tileZ] The tile's Z coordinate.
+     *   Default value - `0`
+     */
+    @JsPlainObject
+    interface RequestDataOptions {
+        val tileLevel: Int?
+        val tileX: Double?
+        val tileY: Double?
+        val tileZ: Double?
+    }
+
+    /**
      * A transform from local space to global space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#globalTransform">Online Documentation</a>
      */
@@ -109,34 +139,4 @@ abstract external class VoxelProvider {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#availableLevels">Online Documentation</a>
      */
     abstract val availableLevels: Double?
-
-    /**
-     * Requests the data for a given tile.
-     * @return A promise resolving to a VoxelContent containing the data for the tile, or undefined if the request could not be scheduled this frame.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#requestData">Online Documentation</a>
-     */
-    @JsAsync(optional = true)
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestData(options: RequestDataOptions? = definedExternally): VoxelContent?
-
-    @JsName("requestData")
-    abstract fun requestDataAsync(options: RequestDataOptions? = definedExternally): Promise<VoxelContent>?
-
-    /**
-     * @property [tileLevel] The tile's level.
-     *   Default value - `0`
-     * @property [tileX] The tile's X coordinate.
-     *   Default value - `0`
-     * @property [tileY] The tile's Y coordinate.
-     *   Default value - `0`
-     * @property [tileZ] The tile's Z coordinate.
-     *   Default value - `0`
-     */
-    @JsPlainObject
-    interface RequestDataOptions {
-        val tileLevel: Int?
-        val tileX: Double?
-        val tileY: Double?
-        val tileZ: Double?
-    }
 }

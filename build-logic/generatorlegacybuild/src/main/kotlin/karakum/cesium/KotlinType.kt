@@ -74,6 +74,9 @@ private val STANDARD_TYPE_MAP = mapOf(
     "string | string[]" to "ReadonlyArray<String>",
     "number[] | Cartesian3[]" to "ReadonlyArray<Cartesian3 /* or number */>",
     "number[] | TypedArray" to "ReadonlyArray<Double> /* | TypedArray */",
+    "(string | number | undefined)[]" to "ReadonlyArray<JsAny? /* string | number | undefined */>",
+    "(string | number | undefined)[]" to "ReadonlyArray<JsAny? /* string | number | undefined */>",
+    "Record<string, unknown>[]" to "ReadonlyArray<ReadonlyRecord<JsString, *>>",
 
     "Event" to DefaultEvent.name,
     PACKABLE to "$PACKABLE<*>",
@@ -109,7 +112,7 @@ internal fun kotlinType(
             .replace("EntityCollection.", "")
             .replace("TerrainProvider.ErrorEvent", "* /* ErrorEvent */")
 
-    if (type.startsWith("Record<"))
+    if (type.startsWith("Record<") && !type.endsWith("[]"))
         return "Readonly$type"
 
     if (type == "number") {

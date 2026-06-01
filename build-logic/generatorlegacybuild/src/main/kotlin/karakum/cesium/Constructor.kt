@@ -38,6 +38,7 @@ internal class Constructor(
                 ?.takeIf { it.name == "options" }
                 ?.takeIf { it.optional }
                 ?.takeIf { it.type.endsWith(CONSTRUCTOR_OPTIONS) }
+                ?.takeIf { it.type != "GeoJsonPrimitiveConstructorOptions" }
                 ?: return false
 
             val klass = parent as Class

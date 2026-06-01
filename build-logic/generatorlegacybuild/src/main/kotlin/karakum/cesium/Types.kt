@@ -21,6 +21,15 @@ internal fun typeDeclaration(
         body == "HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas"
             -> "typealias $name = CanvasImageSource /* $body */"
 
+        body == "GeoJsonGeometry | GeoJsonFeature | GeoJsonFeatureCollection"
+            -> "typealias $name = Any /* $body */"
+
+        body == "number[]"
+            -> "typealias $name = ReadonlyArray<JsDouble>"
+
+        body == "any"
+            -> "typealias $name = JsAny /* really `any` */"
+
         body == "number | bigint | string | boolean | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | number[] | bigint[] | string[] | boolean[] | Cartesian2[] | Cartesian3[] | Cartesian4[] | Matrix2[] | Matrix3[] | Matrix4[]"
             -> "typealias $name = JsAny /* $body */"
 

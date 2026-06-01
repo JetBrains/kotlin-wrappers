@@ -473,6 +473,15 @@ open external class Cesium3DTileset(
     var debugWireframe: Boolean
 
     /**
+     * Controls how edges from the
+     * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+     * glTF extension are rendered relative to surface geometry. Tile content
+     * primitives that do not declare the extension are unaffected.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#edgeDisplayMode">Online Documentation</a>
+     */
+    var edgeDisplayMode: EdgeDisplayMode
+
+    /**
      * This property is for debugging only; it is not optimized for production use.
      *
      * When true, renders the bounding volume for each visible tile.  The bounding volume is
@@ -1073,6 +1082,8 @@ open external class Cesium3DTileset(
      *   Default value - `false`
      * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
      *   Default value - `false`
+     * @property [edgeDisplayMode] Controls how edges from the [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479) glTF extension are rendered relative to surface geometry.
+     *   Default value - [EdgeDisplayMode.SURFACES_ONLY]
      * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
      *   Default value - `false`
      * @property [debugShowContentBoundingVolume] For debugging only. When true, renders the bounding volume for each tile's content.
@@ -1150,6 +1161,7 @@ open external class Cesium3DTileset(
         val debugColorizeTiles: Boolean?
         val enableDebugWireframe: Boolean?
         val debugWireframe: Boolean?
+        val edgeDisplayMode: EdgeDisplayMode?
         val debugShowBoundingVolume: Boolean?
         val debugShowContentBoundingVolume: Boolean?
         val debugShowViewerRequestVolume: Boolean?

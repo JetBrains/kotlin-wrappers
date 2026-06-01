@@ -50,6 +50,10 @@ open external class BufferPolygonCollection(
     /**
      * @property [allowPicking] When `true`, primitives are pickable with [Scene.pick]. When `false`, memory and initialization cost are lower.
      *   Default value - `true`
+     * @property [boundingVolume] Bounding volume, in world space, for the collection. When
+     *   unspecified, a bounding volume is computed automatically and updated when primitive positions change. When
+     *   specified, users are responsible for updating bounding volume as needed. Pre-computing the bounding volume
+     *   manually, and updating it only as needed, will improve performance for larger dynamic collections.
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -58,9 +62,12 @@ open external class BufferPolygonCollection(
         val holeCountMax: Double?
         val triangleCountMax: Double?
         val positionDatatype: ComponentDatatype?
+        val positionNormalized: Boolean?
         val show: Boolean?
         val allowPicking: Boolean?
+        val boundingVolume: BoundingSphere?
         val debugShowBoundingVolume: Boolean?
+        val blendOption: BlendOption?
     }
 
     /**

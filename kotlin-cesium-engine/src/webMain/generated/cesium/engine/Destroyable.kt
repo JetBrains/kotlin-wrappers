@@ -2,10 +2,5 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
 
-
-@JsPlainObject
-external interface Destroyable {
-    val any: JsAny
-}
+typealias Destroyable = JsAny /* really `any` */
