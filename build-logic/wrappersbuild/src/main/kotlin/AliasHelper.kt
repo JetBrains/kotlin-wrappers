@@ -1,14 +1,16 @@
-import java.io.File
+import org.gradle.api.Project
+import org.gradle.api.plugins.ExtensionAware
 
-class AliasHelper(
-    rootDir: File,
+fun Project.AliasHelper(): AliasHelper =
+    AliasHelper(this)
+
+class AliasHelper
+internal constructor(
+    project: ExtensionAware,
 ) {
-    // TODO: use `jspkg` extension instead
-    private val npmScopes = rootDir
-        .resolve("gradle/jspkg.versions.toml")
-        .readText()
-        .splitToSequence(" = { module = \"npm:")
-        .drop(1)
+    private val npmScopes = project
+        .allNpmDependencies
+        .asSequence()
         .filter { it.startsWith("@") }
         .map { it.substringBefore("/") }
         .map { it.removePrefix("@") }

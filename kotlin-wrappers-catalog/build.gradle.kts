@@ -3,7 +3,7 @@ plugins {
     id("wrappersbuild.publish-conventions")
 }
 
-val aliasHelper = AliasHelper(rootDir)
+val aliasHelper = AliasHelper()
 
 (rootProject.allprojects - project).forEach {
     evaluationDependsOn(it.path)
