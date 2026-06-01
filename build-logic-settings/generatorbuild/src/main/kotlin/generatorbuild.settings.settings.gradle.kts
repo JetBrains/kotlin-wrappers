@@ -6,10 +6,14 @@ dependencyResolutionManagement {
     }
 
     versionCatalogs {
+        val originalJspkg = create("hiddenOriginalJspkg") {
+            from(files("../../gradle/jspkg.versions.toml"))
+        }
+
         create("jspkg") {
             from(files("../../gradle/jspkg.versions.toml"))
 
-            val catalog = (this as DefaultVersionCatalogBuilder).build()
+            val catalog = (originalJspkg as DefaultVersionCatalogBuilder).build()
             for (alias in catalog.versionAliases) {
                 val strictVersion = catalog.getVersion(alias)
                     .version
