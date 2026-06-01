@@ -10,18 +10,66 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import mui.system.Union
+import react.*
+import react.dom.events.ChangeEventHandler
+import react.dom.events.FocusEventHandler
 import web.dom.ElementId
 import web.html.HTMLElement
 import web.html.InputType
 
 typealias TextFieldProps = BaseTextFieldProps
 
+external interface TextFieldPropsColorOverrides
+
+external interface TextFieldPropsSizeOverrides
+
+external interface TextFieldSlots {
+    /**
+     * The component that renders the root.
+     * @default FormControl
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the input.
+     * @default OutlinedInput
+     */
+    var input: ElementType<*>
+
+    /**
+     * The component that renders the input's label.
+     * @default InputLabel
+     */
+    var inputLabel: ElementType<*>
+
+    /**
+     * The html input element.
+     * @default 'input'
+     */
+    var htmlInput: ElementType<*>
+
+    /**
+     * The component that renders the helper text.
+     * @default FormHelperText
+     */
+    var formHelperText: ElementType<*>
+
+    /**
+     * The component that renders the select.
+     * @default Select
+     */
+    var select: ElementType<*>
+}
+
 external interface BaseTextFieldProps :
-    mui.system.StandardProps,
+    StandardProps,
     FormControlProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
      * The name can be confusing, as it's more like an autofill.
@@ -38,7 +86,7 @@ external interface BaseTextFieldProps :
     /**
      * @ignore
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -71,7 +119,8 @@ external interface BaseTextFieldProps :
     var error: Boolean?
 
     /**
-     * Props applied to the [`FormHelperText`](/material-ui/api/form-helper-text/) element.
+     * Props applied to the [`FormHelperText`](https://mui.com/material-ui/api/form-helper-text/) element.
+     * @deprecated Use `slotProps.formHelperText` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var FormHelperTextProps: FormHelperTextProps?
 
@@ -84,7 +133,7 @@ external interface BaseTextFieldProps :
     /**
      * The helper text content.
      */
-    var helperText: react.ReactNode?
+    var helperText: ReactNode?
 
     /**
      * The id of the `input` element.
@@ -93,25 +142,27 @@ external interface BaseTextFieldProps :
     var id: ElementId?
 
     /**
-     * Props applied to the [`InputLabel`](/material-ui/api/input-label/) element.
+     * Props applied to the [`InputLabel`](https://mui.com/material-ui/api/input-label/) element.
      * Pointer events like `onClick` are enabled if and only if `shrink` is `true`.
+     * @deprecated Use `slotProps.inputLabel` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var InputLabelProps: InputLabelProps?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+     * @deprecated Use `slotProps.htmlInput` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var inputProps: InputBaseComponentProps?
 
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<*>?
+    var inputRef: Ref<*>?
 
     /**
      * The label content.
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     /**
      * If `true`, a `textarea` element is rendered instead of an input.
@@ -124,9 +175,9 @@ external interface BaseTextFieldProps :
      */
     var name: String?
 
-    var onBlur: react.dom.events.FocusEventHandler<HTMLElement>?
+    var onBlur: FocusEventHandler<HTMLElement>?
 
-    var onFocus: react.dom.events.FocusEventHandler<HTMLElement>?
+    var onFocus: FocusEventHandler<HTMLElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.
@@ -155,19 +206,21 @@ external interface BaseTextFieldProps :
     var minRows: Any? /* String or Number */
 
     /**
-     * Render a [`Select`](/material-ui/api/select/) element while passing the Input element to `Select` as `input` parameter.
+     * Render a [`Select`](https://mui.com/material-ui/api/select/) element while passing the Input element to `Select` as `input` parameter.
      * If this option is set you must pass the options of the select as children.
      * @default false
      */
     var select: Boolean?
 
     /**
-     * Props applied to the [`Select`](/material-ui/api/select/) element.
+     * Props applied to the [`Select`](https://mui.com/material-ui/api/select/) element.
+     * @deprecated Use `slotProps.select` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var SelectProps: SelectProps<*>?
 
     /**
      * The size of the component.
+     * @default 'medium'
      */
     var size: BaseSize?
 
@@ -195,19 +248,20 @@ external interface StandardTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
+    var onChange: ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union? /* 'standard' */
+    var variant: Union? /* 'standard' */
 
     /**
      * Props applied to the Input element.
-     * It will be a [`FilledInput`](/material-ui/api/filled-input/),
-     * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+     * It will be a [`FilledInput`](https://mui.com/material-ui/api/filled-input/),
+     * [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/) or [`Input`](https://mui.com/material-ui/api/input/)
      * component depending on the `variant` prop value.
+     * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var InputProps: InputProps?
 }
@@ -220,19 +274,20 @@ external interface FilledTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
+    var onChange: ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'filled' */
+    var variant: Union /* 'filled' */
 
     /**
      * Props applied to the Input element.
-     * It will be a [`FilledInput`](/material-ui/api/filled-input/),
-     * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+     * It will be a [`FilledInput`](https://mui.com/material-ui/api/filled-input/),
+     * [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/) or [`Input`](https://mui.com/material-ui/api/input/)
      * component depending on the `variant` prop value.
+     * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var InputProps: FilledInputProps?
 }
@@ -245,19 +300,20 @@ external interface OutlinedTextFieldProps :
      * @param {object} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: react.dom.events.ChangeEventHandler<HTMLElement, *>?
+    var onChange: ChangeEventHandler<HTMLElement, *>?
 
     /**
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'outlined' */
+    var variant: Union /* 'outlined' */
 
     /**
      * Props applied to the Input element.
-     * It will be a [`FilledInput`](/material-ui/api/filled-input/),
-     * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+     * It will be a [`FilledInput`](https://mui.com/material-ui/api/filled-input/),
+     * [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/) or [`Input`](https://mui.com/material-ui/api/input/)
      * component depending on the `variant` prop value.
+     * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var InputProps: OutlinedInputProps?
 }
@@ -271,12 +327,12 @@ external interface OutlinedTextFieldProps :
  * It's important to understand that the text field is a simple abstraction
  * on top of the following components:
  *
- * *   [FormControl](https://mui.com/material-ui/api/form-control/)
- * *   [InputLabel](https://mui.com/material-ui/api/input-label/)
- * *   [FilledInput](https://mui.com/material-ui/api/filled-input/)
- * *   [OutlinedInput](https://mui.com/material-ui/api/outlined-input/)
- * *   [Input](https://mui.com/material-ui/api/input/)
- * *   [FormHelperText](https://mui.com/material-ui/api/form-helper-text/)
+ * * [FormControl](https://v6.mui.com/material-ui/api/form-control/)
+ * * [InputLabel](https://v6.mui.com/material-ui/api/input-label/)
+ * * [FilledInput](https://v6.mui.com/material-ui/api/filled-input/)
+ * * [OutlinedInput](https://v6.mui.com/material-ui/api/outlined-input/)
+ * * [Input](https://v6.mui.com/material-ui/api/input/)
+ * * [FormHelperText](https://v6.mui.com/material-ui/api/form-helper-text/)
  *
  * If you wish to alter the props applied to the `input` element, you can do so as follows:
  *
@@ -291,18 +347,18 @@ external interface OutlinedTextFieldProps :
  * For advanced cases, please look at the source of TextField by clicking on the
  * "Edit this page" button above. Consider either:
  *
- * *   using the upper case props for passing values directly to the components
- * *   using the underlying components directly as shown in the demos
+ * * using the upper case props for passing values directly to the components
+ * * using the underlying components directly as shown in the demos
  *
  * Demos:
  *
- * - [Autocomplete](https://mui.com/material-ui/react-autocomplete/)
- * - [Text Field](https://mui.com/material-ui/react-text-field/)
+ * - [Autocomplete](https://v6.mui.com/material-ui/react-autocomplete/)
+ * - [Text Field](https://v6.mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [TextField API](https://mui.com/material-ui/api/text-field/)
- * - inherits [FormControl API](https://mui.com/material-ui/api/form-control/)
+ * - [TextField API](https://v6.mui.com/material-ui/api/text-field/)
+ * - inherits [FormControl API](https://v6.mui.com/material-ui/api/form-control/)
  */
 @JsName("default")
-external val TextField: react.FC<TextFieldProps>
+external val TextField: FC<TextFieldProps>

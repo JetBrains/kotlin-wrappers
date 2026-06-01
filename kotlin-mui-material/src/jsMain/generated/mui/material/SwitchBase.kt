@@ -8,12 +8,18 @@
 
 package mui.material
 
+import mui.system.StandardProps
+import react.*
+import react.dom.events.ChangeEvent
+import react.dom.html.InputHTMLAttributes
 import web.dom.ElementId
+import web.html.HTMLInputElement
 import web.html.InputType
 
 external interface SwitchBaseProps :
-    mui.system.StandardProps,
-    ButtonBaseProps {
+    StandardProps,
+    ButtonBaseProps,
+    SwitchBaseSlotsAndSlotProps {
     var autoFocus: Boolean?
 
     /**
@@ -21,7 +27,7 @@ external interface SwitchBaseProps :
      */
     var checked: Boolean?
 
-    var checkedIcon: react.ReactNode
+    var checkedIcon: ReactNode
 
     /**
      * Override or extend the styles applied to the component.
@@ -59,7 +65,7 @@ external interface SwitchBaseProps :
      */
     var edge: SwitchBaseEdge?
 
-    var icon: react.ReactNode
+    var icon: ReactNode
 
     /**
      * The id of the `input` element.
@@ -68,13 +74,15 @@ external interface SwitchBaseProps :
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+     * @deprecated Use `slotProps.input` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var inputProps: react.dom.html.InputHTMLAttributes<web.html.HTMLInputElement>?
+    var inputProps: InputHTMLAttributes<HTMLInputElement>?
 
     /**
      * Pass a ref to the `input` element.
+     * @deprecated Use `slotProps.input.ref` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var inputRef: react.Ref<*>?
+    var inputRef: Ref<*>?
 
     /**
      * Name attribute of the `input` element.
@@ -88,7 +96,7 @@ external interface SwitchBaseProps :
      * You can pull out the new value by accessing `event.target.value` (string).
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement, *>, checked: Boolean) -> Unit)?
+    var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
 
     var readOnly: Boolean?
 
@@ -108,6 +116,36 @@ external interface SwitchBaseProps :
     var value: Any?
 }
 
+external interface SwitchBaseSlots {
+    /**
+     * The component that renders the root slot.
+     * @default ButtonBase
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the input slot.
+     * @default 'input'
+     */
+    var input: ElementType<*>
+}
+
+external interface SwitchBaseSlotProps : Props {
+    /** TS: SlotProps<React.ElementType<ButtonBaseProps>, {}, SwitchBaseOwnerState> */
+    var root: ButtonBaseProps?
+
+    /** TS: SlotProps<'input', {}, SwitchBaseOwnerState> */
+    var input: InputHTMLAttributes<HTMLInputElement>?
+}
+
+external interface SwitchBaseSlotsAndSlotProps : Props {
+    var slots: SwitchBaseSlots?
+
+    var slotProps: SwitchBaseSlotProps?
+}
+
+external interface SwitchBaseOwnerState
+
 
 @JsName("default")
-external val SwitchBase: react.FC<SwitchBaseProps>
+external val SwitchBase: FC<SwitchBaseProps>

@@ -2,6 +2,12 @@
 
 package mui.base
 
+import react.Props
+import react.dom.aria.AriaRole
+import react.dom.events.FocusEventHandler
+import react.dom.events.MouseEventHandler
+import react.dom.events.SyntheticEvent
+
 external interface UseSnackbarParameters {
     /**
      * The number of milliseconds to wait before automatically calling the
@@ -28,7 +34,7 @@ external interface UseSnackbarParameters {
      * @param {React.SyntheticEvent<any> | Event} event The event source of the callback.
      * @param {string} reason Can be: `"timeout"` (`autoHideDuration` expired), `"clickaway"`, or `"escapeKeyDown"`.
      */
-    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>?, reason: SnackbarCloseReason) -> Unit)?
+    var onClose: ((event: SyntheticEvent<*, *>?, reason: SnackbarCloseReason) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -44,16 +50,16 @@ external interface UseSnackbarParameters {
     var resumeHideDuration: Number?
 }
 
-external interface UseSnackbarRootSlotOwnProps : react.Props {
-    var onBlur: react.dom.events.FocusEventHandler<*>
+external interface UseSnackbarRootSlotOwnProps : Props {
+    var onBlur: FocusEventHandler<*>
 
-    var onFocus: react.dom.events.FocusEventHandler<*>
+    var onFocus: FocusEventHandler<*>
 
-    var onMouseEnter: react.dom.events.MouseEventHandler<*>
+    var onMouseEnter: MouseEventHandler<*>
 
-    var onMouseLeave: react.dom.events.MouseEventHandler<*>
+    var onMouseLeave: MouseEventHandler<*>
 
-    var role: react.dom.aria.AriaRole
+    var role: AriaRole
 }
 
 external interface UseSnackbarReturnValue {
@@ -62,10 +68,10 @@ external interface UseSnackbarReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSnackbarRootSlotProps<ExternalProps> */
+    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSnackbarRootSlotProps<ExternalProps> */
 
     /**
      * Callback fired when a "click away" event is detected.
      */
-    var onClickAway: (event: react.dom.events.SyntheticEvent<*, *>) -> Unit
+    var onClickAway: (event: SyntheticEvent<*, *>) -> Unit
 }

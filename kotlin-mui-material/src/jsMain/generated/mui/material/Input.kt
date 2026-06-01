@@ -9,12 +9,15 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
 
 external interface InputProps :
-    mui.system.StandardProps,
+    StandardProps,
     InputBaseProps,
-    mui.system.PropsWithSx {
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -22,6 +25,7 @@ external interface InputProps :
 
     /**
      * If `true`, the `input` will not have an underline.
+     * @default false
      */
     var disableUnderline: Boolean?
 
@@ -35,12 +39,12 @@ external interface InputProps :
  *
  * Demos:
  *
- * - [Text Field](https://mui.com/material-ui/react-text-field/)
+ * - [Text Field](https://v6.mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [Input API](https://mui.com/material-ui/api/input/)
- * - inherits [InputBase API](https://mui.com/material-ui/api/input-base/)
+ * - [Input API](https://v6.mui.com/material-ui/api/input/)
+ * - inherits [InputBase API](https://v6.mui.com/material-ui/api/input-base/)
  */
 @JsName("default")
-external val Input: react.FC<InputProps>
+external val Input: FC<InputProps>

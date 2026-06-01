@@ -9,21 +9,32 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.svg.SVGAttributes
+import web.svg.SVGSVGElement
 
 external interface SvgIconProps :
     SvgIconOwnProps,
-    react.dom.svg.SVGAttributes<web.svg.SVGSVGElement>,
-    mui.types.PropsWithComponent
+    SVGAttributes<SVGSVGElement>,
+    PropsWithComponent
+
+external interface SvgIconPropsSizeOverrides
+
+external interface SvgIconPropsColorOverrides
 
 external interface SvgIconOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    react.dom.svg.SVGAttributes<web.svg.SVGSVGElement> {
+    PropsWithChildren,
+    PropsWithSx,
+    SVGAttributes<SVGSVGElement> {
     /**
      * Node passed into the SVG element.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -92,12 +103,12 @@ external interface SvgIconOwnProps :
  *
  * Demos:
  *
- * - [Icons](https://mui.com/material-ui/icons/)
- * - [Material Icons](https://mui.com/material-ui/material-icons/)
+ * - [Icons](https://v6.mui.com/material-ui/icons/)
+ * - [Material Icons](https://v6.mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [SvgIcon API](https://mui.com/material-ui/api/svg-icon/)
+ * - [SvgIcon API](https://v6.mui.com/material-ui/api/svg-icon/)
  */
 @JsName("default")
-external val SvgIcon: react.FC<SvgIconProps>
+external val SvgIcon: FC<SvgIconProps>

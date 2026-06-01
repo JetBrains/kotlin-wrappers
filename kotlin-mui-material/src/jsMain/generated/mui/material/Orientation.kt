@@ -2,4 +2,6 @@
 
 package mui.material
 
-typealias Orientation = mui.base.Orientation
+import mui.base.Orientation
+
+typealias Orientation = Orientation

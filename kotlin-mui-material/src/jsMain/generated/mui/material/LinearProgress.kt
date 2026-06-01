@@ -5,12 +5,17 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
 
 external interface LinearProgressProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -49,6 +54,10 @@ external interface LinearProgressProps :
     var variant: LinearProgressVariant?
 }
 
+external interface LinearProgressPropsColorOverrides
+
+external interface LinearProgressPropsVariantOverrides
+
 /**
  * ## ARIA
  *
@@ -58,11 +67,11 @@ external interface LinearProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://mui.com/material-ui/react-progress/)
+ * - [Progress](https://v6.mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [LinearProgress API](https://mui.com/material-ui/api/linear-progress/)
+ * - [LinearProgress API](https://v6.mui.com/material-ui/api/linear-progress/)
  */
 @JsName("default")
-external val LinearProgress: react.FC<LinearProgressProps>
+external val LinearProgress: FC<LinearProgressProps>

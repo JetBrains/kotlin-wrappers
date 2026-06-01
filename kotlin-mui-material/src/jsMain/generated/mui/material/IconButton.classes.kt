@@ -48,6 +48,15 @@ sealed external interface IconButtonClasses {
 
     /** Styles applied to the root element if `size="large"`. */
     val sizeLarge: ClassName
+
+    /** Styles applied to the root element if `loading={true}`. */
+    val loading: ClassName
+
+    /** Styles applied to the loadingIndicator element. */
+    val loadingIndicator: ClassName
+
+    /** Styles applied to the loadingWrapper element. */
+    val loadingWrapper: ClassName
 }
 
 external val iconButtonClasses: IconButtonClasses

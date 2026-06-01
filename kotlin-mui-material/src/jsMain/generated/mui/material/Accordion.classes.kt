@@ -10,6 +10,9 @@ sealed external interface AccordionClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
+    /** Styles applied to the heading element. */
+    val heading: ClassName
+
     /** Styles applied to the root element unless `square={true}`. */
     val rounded: ClassName
 

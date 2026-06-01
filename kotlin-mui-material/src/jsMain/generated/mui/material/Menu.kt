@@ -9,14 +9,18 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.*
 import web.dom.Element
 
 external interface MenuProps :
-    mui.system.StandardProps,
+    StandardProps,
     PopoverProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
@@ -35,7 +39,7 @@ external interface MenuProps :
     /**
      * Menu contents, normally `MenuItem`s.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -52,7 +56,8 @@ external interface MenuProps :
     var disableAutoFocusItem: Boolean?
 
     /**
-     * Props applied to the [`MenuList`](/material-ui/api/menu-list/) element.
+     * Props applied to the [`MenuList`](https://mui.com/material-ui/api/menu-list/) element.
+     * @deprecated use the `slotProps.list` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var MenuListProps: MenuListProps?
@@ -71,7 +76,7 @@ external interface MenuProps :
     var open: Boolean
 
     /**
-     * `classes` prop applied to the [`Popover`](/material-ui/api/popover/) element.
+     * `classes` prop applied to the [`Popover`](https://mui.com/material-ui/api/popover/) element.
      */
     var PopoverClasses: PopoverClasses?
 
@@ -89,9 +94,10 @@ external interface MenuProps :
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
-    var TransitionProps: mui.material.transitions.TransitionProps?
+    var TransitionProps: TransitionProps?
 
     /**
      * The variant to use. Use `menu` to prevent selected items from impacting the initial focus.
@@ -100,17 +106,84 @@ external interface MenuProps :
     var variant: MenuVariant?
 }
 
+external interface MenuRootSlotPropsOverrides
+
+external interface MenuPaperSlotPropsOverrides
+
+external interface MenuTransitionSlotPropsOverrides
+
+external interface MenuListSlotPropsOverrides
+
+external interface MenuBackdropSlotPropsOverrides
+
+external interface MenuSlots {
+    /**
+     * The component used for the popper.
+     * @default Modal
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component used for the paper.
+     * @default PopoverPaper
+     */
+    var paper: ElementType<*>
+
+    /**
+     * The component used for the list.
+     * @default MenuList
+     */
+    var list: ElementType<*>
+
+    /**
+     * The component used for the transition slot.
+     * @default Grow
+     */
+    var transition: ElementType<*>
+
+    /**
+     * The component used for the backdrop slot.
+     * @default Backdrop
+     */
+    var backdrop: ElementType<*>
+}
+
+external interface MenuSlotProps : Props {
+    /** TS: SlotProps<React.ElementType<ModalProps>, MenuRootSlotPropsOverrides, MenuOwnerState> */
+    var root: ModalProps?
+
+    /** TS: SlotProps<React.ElementType<PaperProps>, MenuPaperSlotPropsOverrides, MenuOwnerState> */
+    var paper: PaperProps?
+
+    /** TS: SlotProps<React.ElementType<MenuListProps>, MenuListSlotPropsOverrides, MenuOwnerState> */
+    var list: MenuListProps?
+
+    /** TS: SlotComponentProps< // use SlotComponentProps because transition slot does not support `component` and `sx` prop React.ElementType, TransitionProps & MenuTransitionSlotPropsOverrides, MenuOwnerState > */
+    var transition: Any?
+
+    /** TS: SlotProps< React.ElementType<BackdropProps>, MenuBackdropSlotPropsOverrides, MenuOwnerState > */
+    var backdrop: BackdropProps?
+}
+
+external interface MenuSlotsAndSlotProps : Props {
+    var slots: MenuSlots?
+
+    var slotProps: MenuSlotProps?
+}
+
+external interface MenuOwnerState
+
 /**
  *
  * Demos:
  *
- * - [App Bar](https://mui.com/material-ui/react-app-bar/)
- * - [Menu](https://mui.com/material-ui/react-menu/)
+ * - [App Bar](https://v6.mui.com/material-ui/react-app-bar/)
+ * - [Menu](https://v6.mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [Menu API](https://mui.com/material-ui/api/menu/)
- * - inherits [Popover API](https://mui.com/material-ui/api/popover/)
+ * - [Menu API](https://v6.mui.com/material-ui/api/menu/)
+ * - inherits [Popover API](https://v6.mui.com/material-ui/api/popover/)
  */
 @JsName("default")
-external val Menu: react.FC<MenuProps>
+external val Menu: FC<MenuProps>

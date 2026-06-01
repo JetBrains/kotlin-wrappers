@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * Modal is a lower-level construct that is leveraged by the following components:
  *
@@ -29,4 +31,4 @@ package mui.base
  *
  * - [Modal API](https://mui.com/base-ui/react-modal/components-api/#modal)
  */
-external val Modal: react.FC<ModalProps>
+external val Modal: FC<ModalProps>

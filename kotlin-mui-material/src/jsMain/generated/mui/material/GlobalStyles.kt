@@ -2,7 +2,9 @@
 
 package mui.material
 
-external interface GlobalStylesProps : react.Props {
+import react.Props
+
+external interface GlobalStylesProps : Props {
     /**
      * The styles you want to apply globally.
      */

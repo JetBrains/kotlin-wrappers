@@ -5,38 +5,48 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.ResponsiveStyleValue
 import mui.system.SxProps
+import mui.system.SystemProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface StackProps :
     StackOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
 
 external interface StackOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    SystemProps<Theme>,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Defines the `flex-direction` style property.
      * It is applied for all screen sizes.
      * @default 'column'
      */
-    var direction: mui.system.ResponsiveStyleValue<StackDirection>?
+    var direction: ResponsiveStyleValue<StackDirection>?
 
     /**
      * Defines the space between immediate children.
      * @default 0
      */
-    var spacing: mui.system.ResponsiveStyleValue<dynamic>?
+    var spacing: ResponsiveStyleValue<Any /* number | string */>?
 
     /**
      * Add an element between each child.
      */
-    var divider: react.ReactNode?
+    var divider: ReactNode?
 
     /**
      * If `true`, the CSS flexbox `gap` is used instead of applying `margin` to children.
@@ -59,11 +69,11 @@ external interface StackOwnProps :
  *
  * Demos:
  *
- * - [Stack](https://mui.com/material-ui/react-stack/)
+ * - [Stack](https://v6.mui.com/material-ui/react-stack/)
  *
  * API:
  *
- * - [Stack API](https://mui.com/material-ui/api/stack/)
+ * - [Stack API](https://v6.mui.com/material-ui/api/stack/)
  */
 @JsName("default")
-external val Stack: react.FC<StackProps>
+external val Stack: FC<StackProps>

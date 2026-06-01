@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package mui.base
  *
  * - [TabsList API](https://mui.com/base-ui/react-tabs/components-api/#tabs-list)
  */
-external val TabsList: react.FC<TabsListProps>
+external val TabsList: FC<TabsListProps>

@@ -2,19 +2,24 @@
 
 package mui.base
 
+import react.*
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLDivElement
 
 external interface TabPanelProps :
     TabPanelOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
+
+external interface TabPanelRootSlotPropsOverrides
 
 external interface TabPanelOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -23,7 +28,7 @@ external interface TabPanelOwnProps :
      * If not provided, it will fall back to the index of the panel.
      * It is recommended to explicitly provide it, as it's required for the tab panel to be rendered on the server.
      */
-    var value: dynamic
+    var value: Any? /* number | string */
 
     /**
      * The components used for each slot inside the TabPanel.
@@ -39,7 +44,7 @@ external interface TabPanelOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabPanelRootSlotPropsOverrides, TabPanelOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', TabPanelRootSlotPropsOverrides, TabPanelOwnerState> */
     }
 }
 
@@ -48,5 +53,5 @@ external interface TabPanelSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }

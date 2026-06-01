@@ -5,17 +5,28 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLSpanElement
 
 external interface IconProps :
     IconOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithComponent
+
+external interface IconPropsSizeOverrides
+
+external interface IconPropsColorOverrides
 
 external interface IconOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The base class applied to the icon. Defaults to 'material-icons', but can be changed to any
      * other base class that suits the icon font you're using (for example material-icons-rounded, fas, etc).
@@ -26,7 +37,7 @@ external interface IconOwnProps :
     /**
      * The name of the icon font ligature.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -57,12 +68,12 @@ external interface IconOwnProps :
  *
  * Demos:
  *
- * - [Icons](https://mui.com/material-ui/icons/)
- * - [Material Icons](https://mui.com/material-ui/material-icons/)
+ * - [Icons](https://v6.mui.com/material-ui/icons/)
+ * - [Material Icons](https://v6.mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [Icon API](https://mui.com/material-ui/api/icon/)
+ * - [Icon API](https://v6.mui.com/material-ui/api/icon/)
  */
 @JsName("default")
-external val Icon: react.FC<IconProps>
+external val Icon: FC<IconProps>

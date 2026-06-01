@@ -2,11 +2,13 @@
 
 package mui.base
 
+import react.ReactNode
+
 external interface UseBadgeParameters {
     /**
      * The content rendered within the badge.
      */
-    var badgeContent: react.ReactNode?
+    var badgeContent: ReactNode?
 
     /**
      * If `true`, the badge is invisible.
@@ -31,7 +33,7 @@ external interface UseBadgeReturnValue {
     /**
      * Defines the content that's displayed inside the badge.
      */
-    var badgeContent: react.ReactNode
+    var badgeContent: ReactNode
 
     /**
      * If `true`, the component will not be visible.
@@ -46,5 +48,5 @@ external interface UseBadgeReturnValue {
     /**
      * Value to be displayed in the badge. If `badgeContent` is greater than `max`, it will return `max+`.
      */
-    var displayValue: react.ReactNode
+    var displayValue: ReactNode
 }

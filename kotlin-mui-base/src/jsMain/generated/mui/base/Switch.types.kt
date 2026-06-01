@@ -2,13 +2,27 @@
 
 package mui.base
 
+import react.ElementType
+import react.Props
+import react.PropsWithClassName
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLSpanElement
 
 external interface SwitchProps :
     SwitchOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
+    HTMLAttributes<HTMLSpanElement>
 
-external interface SwitchOwnProps : react.PropsWithClassName {
+external interface SwitchRootSlotPropsOverrides
+
+external interface SwitchThumbSlotPropsOverrides
+
+external interface SwitchInputSlotPropsOverrides
+
+external interface SwitchTrackSlotPropsOverrides
+
+external interface SwitchOwnProps :
+    PropsWithClassName {
     /**
      * Class name applied to the root element.
      */
@@ -28,10 +42,10 @@ external interface SwitchOwnProps : react.PropsWithClassName {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', SwitchRootSlotPropsOverrides, SwitchOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SwitchThumbSlotPropsOverrides, SwitchOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', SwitchInputSlotPropsOverrides, SwitchOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SwitchTrackSlotPropsOverrides, SwitchOwnerState> */
+        var root: Props? /* SlotComponentProps<'span', SwitchRootSlotPropsOverrides, SwitchOwnerState> */
+        var thumb: Props? /* SlotComponentProps<'span', SwitchThumbSlotPropsOverrides, SwitchOwnerState> */
+        var input: Props? /* SlotComponentProps<'input', SwitchInputSlotPropsOverrides, SwitchOwnerState> */
+        var track: Props? /* SlotComponentProps<'span', SwitchTrackSlotPropsOverrides, SwitchOwnerState> */
     }
 }
 
@@ -40,23 +54,23 @@ external interface SwitchSlots {
      * The component that renders the root.
      * @default 'span'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the input.
      * @default 'input'
      */
-    var input: react.ElementType<*>?
+    var input: ElementType<*>?
 
     /**
      * The component that renders the thumb.
      * @default 'span'
      */
-    var thumb: react.ElementType<*>?
+    var thumb: ElementType<*>?
 
     /**
      * The component that renders the track.
      * @default 'span'
      */
-    var track: react.ElementType<*>?
+    var track: ElementType<*>?
 }

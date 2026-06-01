@@ -9,22 +9,33 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.ButtonHTMLAttributes
+import web.html.HTMLButtonElement
 
 external interface IconButtonProps :
     IconButtonOwnProps,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
-    mui.types.PropsWithComponent,
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    PropsWithComponent,
     ButtonBaseProps
 
+external interface IconButtonPropsColorOverrides
+
+external interface IconButtonPropsSizeOverrides
+
 external interface IconButtonOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
+    PropsWithChildren,
+    PropsWithSx,
     ButtonBaseProps {
     /**
      * The icon to display.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -61,6 +72,21 @@ external interface IconButtonOwnProps :
     var edge: IconButtonEdge?
 
     /**
+     * If `true`, the loading indicator is visible and the button is disabled.
+     * If `true | false`, the loading wrapper is always rendered before the children to prevent [Google Translation Crash](https://github.com/mui/material-ui/issues/27853).
+     * @default null
+     */
+    var loading: Boolean?
+
+    /**
+     * Element placed before the children if the button is in loading state.
+     * The node should contain an element with `role="progressbar"` with an accessible name.
+     * By default, it renders a `CircularProgress` that is labeled by the button itself.
+     * @default <CircularProgress color="inherit" size={16} />
+     */
+    var loadingIndicator: ReactNode?
+
+    /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
@@ -74,17 +100,17 @@ external interface IconButtonOwnProps :
 }
 
 /**
- * Refer to the [Icons](https://mui.com/material-ui/icons/) section of the documentation
+ * Refer to the [Icons](https://v6.mui.com/material-ui/icons/) section of the documentation
  * regarding the available icon options.
  *
  * Demos:
  *
- * - [Button](https://mui.com/material-ui/react-button/)
+ * - [Button](https://v6.mui.com/material-ui/react-button/)
  *
  * API:
  *
- * - [IconButton API](https://mui.com/material-ui/api/icon-button/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [IconButton API](https://v6.mui.com/material-ui/api/icon-button/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val IconButton: react.FC<IconButtonProps>
+external val IconButton: FC<IconButtonProps>

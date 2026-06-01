@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -18,4 +20,4 @@ package mui.base
  *
  * - [Menu API](https://mui.com/base-ui/react-menu/components-api/#menu)
  */
-external val Menu: react.FC<MenuProps>
+external val Menu: FC<MenuProps>

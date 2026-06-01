@@ -5,17 +5,24 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ContainerProps :
     ContainerOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
 
 external interface ContainerOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
-    override var children: react.ReactNode?
+    PropsWithChildren,
+    PropsWithSx {
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -43,7 +50,7 @@ external interface ContainerOwnProps :
      * Set to `false` to disable `maxWidth`.
      * @default 'lg'
      */
-    var maxWidth: dynamic
+    var maxWidth: Any? /* Breakpoint | false */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -55,11 +62,11 @@ external interface ContainerOwnProps :
  *
  * Demos:
  *
- * - [Container](https://mui.com/material-ui/react-container/)
+ * - [Container](https://v6.mui.com/material-ui/react-container/)
  *
  * API:
  *
- * - [Container API](https://mui.com/material-ui/api/container/)
+ * - [Container API](https://v6.mui.com/material-ui/api/container/)
  */
 @JsName("default")
-external val Container: react.FC<ContainerProps>
+external val Container: FC<ContainerProps>

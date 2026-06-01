@@ -2,6 +2,8 @@
 
 package mui.base
 
+import react.dom.events.SyntheticEvent
+
 external interface UseTabsParameters {
     /**
      * The value of the currently selected `Tab`.
@@ -29,7 +31,7 @@ external interface UseTabsParameters {
     /**
      * Callback invoked when new value is being set.
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>?, value: Any /* Number | String */?) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>?, value: Any /* Number | String */?) -> Unit)?
 
     /**
      * If `true` the selected tab changes on focus. Otherwise it only
@@ -42,5 +44,5 @@ external interface UseTabsReturnValue {
     /**
      * Returns the values to be passed to the tabs provider.
      */
-    var contextValue: dynamic
+    var contextValue: Any? /* TabsProviderValue */
 }

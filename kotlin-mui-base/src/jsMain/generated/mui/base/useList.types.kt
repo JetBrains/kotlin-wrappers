@@ -3,6 +3,11 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import mui.system.Union
+import react.Props
+import react.Ref
+import react.RefCallback
+import react.dom.events.SyntheticEvent
 import web.dom.Element
 import web.html.HTMLElement
 
@@ -25,7 +30,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      *
      * @default {}
      */
-    var controlledProps: react.Props? /* Partial<State> */
+    var controlledProps: Props? /* Partial<State> */
 
     /**
      * If `true`, it will be possible to highlight disabled items.
@@ -80,19 +85,19 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
     /**
      * Ref to the list root DOM element.
      */
-    var rootRef: react.Ref<Element>?
+    var rootRef: Ref<Element>?
 
     /**
      * Callback fired when the selected value changes.
      * This is a strongly typed convenience event that can be used instead of `onStateChange`.
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>?, value: ReadonlyArray<ItemValue>, reason: String) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>?, value: ReadonlyArray<ItemValue>, reason: String) -> Unit)?
 
     /**
      * Callback fired when the highlighted option changes.
      * This is a strongly typed convenience event that can be used instead of `onStateChange`.
      */
-    var onHighlightChange: ((event: react.dom.events.SyntheticEvent<*, *>?, option: ItemValue?, reason: String) -> Unit)?
+    var onHighlightChange: ((event: SyntheticEvent<*, *>?, option: ItemValue?, reason: String) -> Unit)?
 
     /**
      * Callback fired when the items change.
@@ -142,13 +147,13 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      * Orientation of the items in the list.
      * Determines the actions that are performed when arrow keys are pressed.
      */
-    var orientation: mui.system.Union? /* 'horizontal-ltr' | 'horizontal-rtl' | 'vertical' */
+    var orientation: Union? /* 'horizontal-ltr' | 'horizontal-rtl' | 'vertical' */
 
     /**
      * Controls how many items can be selected at once: none (the selection functionality is disabled in this case), one, or indefinitely many.
      * @default 'single'
      */
-    var selectionMode: mui.system.Union? /* 'none' | 'single' | 'multiple' */
+    var selectionMode: Union? /* 'none' | 'single' | 'multiple' */
 
     /**
      * Custom state reducer function. It calculates the new state (highlighted and selected items + optional custom state)
@@ -182,7 +187,7 @@ external interface ListItemState {
 }
 
 external interface UseListReturnValue {
-    var contextValue: dynamic
+    var contextValue: Any? /* ListContextValue<ItemValue> */
 
     var dispatch: (action: Any /* CustomAction | ListAction<ItemValue> */) -> Unit
 
@@ -191,9 +196,9 @@ external interface UseListReturnValue {
      * @param externalProps additional props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseListRootSlotProps<ExternalProps> */
+    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseListRootSlotProps<ExternalProps> */
 
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: RefCallback<Element>?
 
-    var state: dynamic
+    var state: Any? /* State */
 }

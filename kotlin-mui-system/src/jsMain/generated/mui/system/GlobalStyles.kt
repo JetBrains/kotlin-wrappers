@@ -2,8 +2,10 @@
 
 package mui.system
 
-external interface GlobalStylesProps : react.Props {
-    var styles: dynamic
+import react.Props
+
+external interface GlobalStylesProps : Props {
+    var styles: Any? /* Interpolation<Theme> */
 
     var defaultTheme: Any?
 

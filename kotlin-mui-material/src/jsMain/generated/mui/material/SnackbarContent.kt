@@ -9,16 +9,21 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.ReactNode
+import react.dom.aria.AriaRole
 
 external interface SnackbarContentProps :
-    mui.system.StandardProps,
+    StandardProps,
     PaperProps,
-    mui.system.PropsWithSx {
+    PropsWithSx {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */
-    var action: react.ReactNode?
+    var action: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -28,13 +33,13 @@ external interface SnackbarContentProps :
     /**
      * The message to display.
      */
-    var message: react.ReactNode?
+    var message: ReactNode?
 
     /**
      * The ARIA role attribute of the element.
      * @default 'alert'
      */
-    var role: react.dom.aria.AriaRole?
+    var role: AriaRole?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -46,12 +51,12 @@ external interface SnackbarContentProps :
  *
  * Demos:
  *
- * - [Snackbar](https://mui.com/material-ui/react-snackbar/)
+ * - [Snackbar](https://v6.mui.com/material-ui/react-snackbar/)
  *
  * API:
  *
- * - [SnackbarContent API](https://mui.com/material-ui/api/snackbar-content/)
- * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
+ * - [SnackbarContent API](https://v6.mui.com/material-ui/api/snackbar-content/)
+ * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
  */
 @JsName("default")
-external val SnackbarContent: react.FC<SnackbarContentProps>
+external val SnackbarContent: FC<SnackbarContentProps>

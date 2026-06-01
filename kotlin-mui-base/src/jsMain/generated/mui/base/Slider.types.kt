@@ -2,9 +2,31 @@
 
 package mui.base
 
+import mui.system.Union
+import react.ElementType
+import react.Props
+import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
+
 external interface SliderProps :
     SliderOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
+    HTMLAttributes<HTMLSpanElement>
+
+external interface SliderRootSlotPropsOverrides
+
+external interface SliderTrackSlotPropsOverrides
+
+external interface SliderRailSlotPropsOverrides
+
+external interface SliderThumbSlotPropsOverrides
+
+external interface SliderMarkSlotPropsOverrides
+
+external interface SliderMarkLabelSlotPropsOverrides
+
+external interface SliderValueLabelSlotPropsOverrides
+
+external interface SliderInputSlotPropsOverrides
 
 external interface SliderThumbSlotState {
     var focused: Boolean
@@ -50,14 +72,14 @@ external interface SliderOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', SliderRootSlotPropsOverrides, SliderOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SliderTrackSlotPropsOverrides, SliderOwnerState> */
-        var rail: react.Props? /* SlotComponentProps<'span', SliderRailSlotPropsOverrides, SliderOwnerState> */
-        var thumb: react.Props? /* SlotComponentPropsWithSlotState<'span', SliderThumbSlotPropsOverrides, SliderOwnerState, SliderThumbSlotState> */
-        var mark: react.Props? /* SlotComponentProps<'span', SliderMarkSlotPropsOverrides, SliderOwnerState> */
-        var markLabel: react.Props? /* SlotComponentProps<'span', SliderMarkLabelSlotPropsOverrides, SliderOwnerState> */
-        var valueLabel: react.Props? /* SlotComponentProps<React.ElementType, SliderValueLabelSlotPropsOverrides, SliderOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', SliderInputSlotPropsOverrides, SliderOwnerState> */
+        var root: Props? /* SlotComponentProps<'span', SliderRootSlotPropsOverrides, SliderOwnerState> */
+        var track: Props? /* SlotComponentProps<'span', SliderTrackSlotPropsOverrides, SliderOwnerState> */
+        var rail: Props? /* SlotComponentProps<'span', SliderRailSlotPropsOverrides, SliderOwnerState> */
+        var thumb: Props? /* SlotComponentPropsWithSlotState<'span', SliderThumbSlotPropsOverrides, SliderOwnerState, SliderThumbSlotState> */
+        var mark: Props? /* SlotComponentProps<'span', SliderMarkSlotPropsOverrides, SliderOwnerState> */
+        var markLabel: Props? /* SlotComponentProps<'span', SliderMarkLabelSlotPropsOverrides, SliderOwnerState> */
+        var valueLabel: Props? /* SlotComponentProps<React.ElementType, SliderValueLabelSlotPropsOverrides, SliderOwnerState> */
+        var input: Props? /* SlotComponentProps<'input', SliderInputSlotPropsOverrides, SliderOwnerState> */
     }
 
     /**
@@ -75,7 +97,7 @@ external interface SliderOwnProps :
      * - `false` the track will render without a bar.
      * @default 'normal'
      */
-    var track: mui.system.Union? /* 'normal' | false | 'inverted' */
+    var track: Union? /* 'normal' | false | 'inverted' */
 
     /**
      * The format function the value label's value.
@@ -90,7 +112,7 @@ external interface SliderOwnProps :
      *   return x;
      * }
      */
-    var valueLabelFormat: String? /* or (value: Number, index: Number) -> react.ReactNode*/
+    var valueLabelFormat: String? /* or (value: Number, index: Number) -> ReactNode*/
 }
 
 external interface SliderSlots {
@@ -98,46 +120,46 @@ external interface SliderSlots {
      * The component that renders the root.
      * @default 'span'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the track.
      * @default 'span'
      */
-    var track: react.ElementType<*>?
+    var track: ElementType<*>?
 
     /**
      * The component that renders the rail.
      * @default 'span'
      */
-    var rail: react.ElementType<*>?
+    var rail: ElementType<*>?
 
     /**
      * The component that renders the thumb.
      * @default 'span'
      */
-    var thumb: react.ElementType<*>?
+    var thumb: ElementType<*>?
 
     /**
      * The component that renders the mark.
      * @default 'span'
      */
-    var mark: react.ElementType<*>?
+    var mark: ElementType<*>?
 
     /**
      * The component that renders the mark label.
      * @default 'span'
      */
-    var markLabel: react.ElementType<*>?
+    var markLabel: ElementType<*>?
 
     /**
      * The component that renders the value label.
      */
-    var valueLabel: react.ElementType<*>?
+    var valueLabel: ElementType<*>?
 
     /**
      * The component that renders the input.
      * @default 'input'
      */
-    var input: react.ElementType<*>?
+    var input: ElementType<*>?
 }

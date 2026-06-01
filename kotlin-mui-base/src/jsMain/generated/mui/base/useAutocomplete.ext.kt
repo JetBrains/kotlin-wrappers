@@ -71,6 +71,15 @@ sealed external interface AutocompleteInputChangeReason {
 
         @JsValue("clear")
         val clear: AutocompleteInputChangeReason
+
+        @JsValue("blur")
+        val blur: AutocompleteInputChangeReason
+
+        @JsValue("selectOption")
+        val selectOption: AutocompleteInputChangeReason
+
+        @JsValue("removeOption")
+        val removeOption: AutocompleteInputChangeReason
     }
 }
 

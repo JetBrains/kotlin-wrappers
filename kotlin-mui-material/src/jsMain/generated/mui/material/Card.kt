@@ -9,16 +9,23 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface CardProps :
     CardOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
+
+external interface CardPropsColorOverrides
 
 external interface CardOwnProps :
-    mui.system.PropsWithSx,
-    PaperOwnProps {
+    PaperOwnProps,
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -40,13 +47,13 @@ external interface CardOwnProps :
  *
  * Demos:
  *
- * - [Card](https://mui.com/material-ui/react-card/)
+ * - [Card](https://v6.mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [Card API](https://mui.com/material-ui/api/card/)
- * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
+ * - [Card API](https://v6.mui.com/material-ui/api/card/)
+ * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
  */
 
 @JsName("default")
-external val Card: react.FC<CardProps>
+external val Card: FC<CardProps>

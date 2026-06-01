@@ -9,17 +9,22 @@
 package mui.lab
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
 
 external interface TimelineOppositeContentProps :
-    mui.system.StandardProps,
+    StandardProps,
     mui.material.TypographyProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -36,12 +41,12 @@ external interface TimelineOppositeContentProps :
  *
  * Demos:
  *
- * - [Timeline](https://mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://v6.mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineOppositeContent API](https://mui.com/material-ui/api/timeline-opposite-content/)
- * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
+ * - [TimelineOppositeContent API](https://v6.mui.com/material-ui/api/timeline-opposite-content/)
+ * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
-external val TimelineOppositeContent: react.FC<TimelineOppositeContentProps>
+external val TimelineOppositeContent: FC<TimelineOppositeContentProps>

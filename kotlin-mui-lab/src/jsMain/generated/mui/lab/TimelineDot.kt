@@ -5,17 +5,24 @@
 package mui.lab
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
 
 external interface TimelineDotProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -40,15 +47,19 @@ external interface TimelineDotProps :
     var variant: TimelineDotVariant?
 }
 
+external interface TimelineDotPropsVariantOverrides
+
+external interface TimelineDotPropsColorOverrides
+
 /**
  *
  * Demos:
  *
- * - [Timeline](https://mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://v6.mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineDot API](https://mui.com/material-ui/api/timeline-dot/)
+ * - [TimelineDot API](https://v6.mui.com/material-ui/api/timeline-dot/)
  */
 @JsName("default")
-external val TimelineDot: react.FC<TimelineDotProps>
+external val TimelineDot: FC<TimelineDotProps>

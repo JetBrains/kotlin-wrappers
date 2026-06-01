@@ -5,25 +5,31 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.html.HTMLAttributes
 import web.html.HTMLElement
 
 external interface BreadcrumbsProps :
     BreadcrumbsOwnProps,
-    react.dom.html.HTMLAttributes<HTMLElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLElement>,
+    PropsWithComponent
 
-external interface BreadcrumbsOwnerState {
+external interface BreadcrumbsCollapsedIconSlotPropsOverrides
+
+external interface BreadcrumbsOwnerState : BreadcrumbsProps {
     var expanded: Boolean
 }
 
 external interface BreadcrumbsOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -38,7 +44,7 @@ external interface BreadcrumbsOwnProps :
     var slots: Slots?
 
     interface Slots {
-        var CollapsedIcon: react.ElementType<*>?
+        var CollapsedIcon: ElementType<*>?
     }
 
     /**
@@ -48,7 +54,7 @@ external interface BreadcrumbsOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var collapsedIcon: react.Props? /* SlotComponentProps<
+        var collapsedIcon: Props? /* SlotComponentProps<
   typeof SvgIcon,
   BreadcrumbsCollapsedIconSlotPropsOverrides,
   BreadcrumbsOwnerState
@@ -58,7 +64,7 @@ external interface BreadcrumbsOwnProps :
     /**
      * Override the default label for the expand button.
      *
-     * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+     * For localization purposes, you can use the provided [translations](https://mui.com/material-ui/guides/localization/).
      * @default 'Show path'
      */
     var expandText: String?
@@ -87,7 +93,7 @@ external interface BreadcrumbsOwnProps :
      * Custom separator node.
      * @default '/'
      */
-    var separator: react.ReactNode?
+    var separator: ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -99,12 +105,12 @@ external interface BreadcrumbsOwnProps :
  *
  * Demos:
  *
- * - [Breadcrumbs](https://mui.com/material-ui/react-breadcrumbs/)
+ * - [Breadcrumbs](https://v6.mui.com/material-ui/react-breadcrumbs/)
  *
  * API:
  *
- * - [Breadcrumbs API](https://mui.com/material-ui/api/breadcrumbs/)
- * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
+ * - [Breadcrumbs API](https://v6.mui.com/material-ui/api/breadcrumbs/)
+ * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
-external val Breadcrumbs: react.FC<BreadcrumbsProps>
+external val Breadcrumbs: FC<BreadcrumbsProps>

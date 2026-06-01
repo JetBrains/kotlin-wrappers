@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package mui.base
  *
  * - [MenuButton API](https://mui.com/base-ui/react-menu/components-api/#menu-button)
  */
-external val MenuButton: react.FC<MenuButtonProps>
+external val MenuButton: FC<MenuButtonProps>

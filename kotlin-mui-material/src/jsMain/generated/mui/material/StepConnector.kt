@@ -5,12 +5,17 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface StepConnectorProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -26,11 +31,11 @@ external interface StepConnectorProps :
  *
  * Demos:
  *
- * - [Stepper](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepConnector API](https://mui.com/material-ui/api/step-connector/)
+ * - [StepConnector API](https://v6.mui.com/material-ui/api/step-connector/)
  */
 @JsName("default")
-external val StepConnector: react.FC<StepConnectorProps>
+external val StepConnector: FC<StepConnectorProps>

@@ -9,16 +9,26 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import react.dom.html.InputHTMLAttributes
+import web.html.HTMLInputElement
+import web.html.HTMLSpanElement
 
 external interface SwitchProps :
-    mui.system.StandardProps,
+    StandardProps,
     SwitchBaseProps,
-    mui.system.PropsWithSx {
+    PropsWithSx {
     /**
      * The icon to display when the component is checked.
      */
-    var checkedIcon: react.ReactNode?
+    var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -41,7 +51,7 @@ external interface SwitchProps :
     /**
      * The icon to display when the component is unchecked.
      */
-    var icon: react.ReactNode?
+    var icon: ReactNode?
 
     /**
      * The size of the component.
@@ -62,17 +72,88 @@ external interface SwitchProps :
     var value: Any?
 }
 
+external interface SwitchPropsSizeOverrides
+
+external interface SwitchPropsColorOverrides
+
+external interface SwitchRootSlotPropsOverrides
+
+external interface SwitchTrackSlotPropsOverrides
+
+external interface SwitchThumbSlotPropsOverrides
+
+external interface SwitchSwitchBaseSlotPropsOverrides
+
+external interface SwitchInputSlotPropsOverrides
+
+external interface SwitchSlots {
+    /**
+     * The component that renders the root slot.
+     * @default 'span'
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the track slot.
+     * @default 'span'
+     */
+    var track: ElementType<*>
+
+    /**
+     * The component that renders the thumb slot.
+     * @default 'span'
+     */
+    var thumb: ElementType<*>
+
+    /**
+     * The component that renders the switchBase slot.
+     * @default SwitchBase
+     */
+    var switchBase: ElementType<*>
+
+    /**
+     * The component that renders the switchBase's input slot.
+     * @default SwitchBaseInput
+     */
+    var input: ElementType<*>
+}
+
+external interface SwitchSlotProps : Props {
+    /** TS: SlotProps<'span', SwitchRootSlotPropsOverrides, SwitchOwnerState> */
+    var root: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SwitchTrackSlotPropsOverrides, SwitchOwnerState> */
+    var track: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SwitchThumbSlotPropsOverrides, SwitchOwnerState> */
+    var thumb: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps< React.ElementType<SwitchBaseProps>, SwitchSwitchBaseSlotPropsOverrides, SwitchOwnerState > */
+    var switchBase: SwitchBaseProps?
+
+    /** TS: SlotProps<'input', SwitchInputSlotPropsOverrides, SwitchOwnerState> */
+    var input: InputHTMLAttributes<HTMLInputElement>?
+}
+
+external interface SwitchSlotsAndSlotProps : Props {
+    var slots: SwitchSlots?
+
+    var slotProps: SwitchSlotProps?
+}
+
+external interface SwitchOwnerState
+
 /**
  *
  * Demos:
  *
- * - [Switch](https://mui.com/material-ui/react-switch/)
- * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
+ * - [Switch](https://v6.mui.com/material-ui/react-switch/)
+ * - [Transfer List](https://v6.mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [Switch API](https://mui.com/material-ui/api/switch/)
- * - inherits [IconButton API](https://mui.com/material-ui/api/icon-button/)
+ * - [Switch API](https://v6.mui.com/material-ui/api/switch/)
+ * - inherits [IconButton API](https://v6.mui.com/material-ui/api/icon-button/)
  */
 @JsName("default")
-external val Switch: react.FC<SwitchProps>
+external val Switch: FC<SwitchProps>

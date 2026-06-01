@@ -9,20 +9,25 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
 
 external interface DialogTitleProps :
     DialogTitleOwnProps,
-    mui.types.PropsWithComponent
+    PropsWithComponent
 
 external interface DialogTitleOwnProps :
     TypographyProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -39,12 +44,12 @@ external interface DialogTitleOwnProps :
  *
  * Demos:
  *
- * - [Dialog](https://mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://v6.mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [DialogTitle API](https://mui.com/material-ui/api/dialog-title/)
- * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
+ * - [DialogTitle API](https://v6.mui.com/material-ui/api/dialog-title/)
+ * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
-external val DialogTitle: react.FC<DialogTitleProps>
+external val DialogTitle: FC<DialogTitleProps>

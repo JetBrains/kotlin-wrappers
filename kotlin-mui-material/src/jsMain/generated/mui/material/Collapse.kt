@@ -5,19 +5,23 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.*
 import web.cssom.ClassName
 
 external interface CollapseProps :
-    mui.system.StandardProps,
-    mui.material.transitions.TransitionProps,
-    react.PropsWithChildren,
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    StandardProps,
+    TransitionProps,
+    PropsWithChildren,
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * The content node to be collapsed.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -36,7 +40,7 @@ external interface CollapseProps :
      * The component used for the root node.
      * Either a string to use a HTML element or a component.
      */
-    var component: react.ElementType<mui.material.transitions.TransitionProps>?
+    var component: ElementType<TransitionProps>?
 
     /**
      * The transition timing function.
@@ -72,20 +76,20 @@ external interface CollapseProps :
 
 /**
  * The Collapse transition is used by the
- * [Vertical Stepper](https://mui.com/material-ui/react-stepper/#vertical-stepper) StepContent component.
+ * [Vertical Stepper](https://v6.mui.com/material-ui/react-stepper/#vertical-stepper) StepContent component.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  *
  * Demos:
  *
- * - [Card](https://mui.com/material-ui/react-card/)
- * - [Lists](https://mui.com/material-ui/react-list/)
- * - [Transitions](https://mui.com/material-ui/transitions/)
+ * - [Card](https://v6.mui.com/material-ui/react-card/)
+ * - [Lists](https://v6.mui.com/material-ui/react-list/)
+ * - [Transitions](https://v6.mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Collapse API](https://mui.com/material-ui/api/collapse/)
+ * - [Collapse API](https://v6.mui.com/material-ui/api/collapse/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 
 @JsName("default")
-external val Collapse: react.FC<CollapseProps>
+external val Collapse: FC<CollapseProps>

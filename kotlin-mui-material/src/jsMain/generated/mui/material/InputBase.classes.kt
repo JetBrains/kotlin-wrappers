@@ -49,22 +49,30 @@ sealed external interface InputBaseClasses {
     /** Styles applied to the input element. */
     val input: ClassName
 
-    /** Styles applied to the input element if `size="small"`. */
+    /** Styles applied to the input element if `size="small"`.
+     * @deprecated Combine the [.MuiInputBase-input](/material-ui/api/input-base/#inputbase-classes-input) and [.MuiInputBase-sizeSmall](/material-ui/api/input-base/#inputbase-classes-sizeSmall) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     */
     val inputSizeSmall: ClassName
 
-    /** Styles applied to the input element if `multiline={true}`. */
+    /** Styles applied to the input element if `multiline={true}`.
+     * @deprecated Combine the [.MuiInputBase-input](/material-ui/api/input-base/#inputbase-classes-input) and [.MuiInputBase-multiline](/material-ui/api/input-base/#inputbase-classes-multiline) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     */
     val inputMultiline: ClassName
-
-    /** Styles applied to the input element if `type="search"`. */
     val inputTypeSearch: ClassName
 
-    /** Styles applied to the input element if `startAdornment` is provided. */
+    /** Styles applied to the input element if `startAdornment` is provided.
+     * @deprecated Combine the [.MuiInputBase-input](/material-ui/api/input-base/#inputbase-classes-input) and [.MuiInputBase-adornedStart](/material-ui/api/input-base/#inputbase-classes-adornedStart) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     */
     val inputAdornedStart: ClassName
 
-    /** Styles applied to the input element if `endAdornment` is provided. */
+    /** Styles applied to the input element if `endAdornment` is provided.
+     * @deprecated Combine the [.MuiInputBase-input](/material-ui/api/input-base/#inputbase-classes-input) and [.MuiInputBase-adornedEnd](/material-ui/api/input-base/#inputbase-classes-adornedEnd) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     */
     val inputAdornedEnd: ClassName
 
-    /** Styles applied to the input element if `hiddenLabel={true}`. */
+    /** Styles applied to the input element if `hiddenLabel={true}`.
+     * @deprecated Combine the [.MuiInputBase-input](/material-ui/api/input-base/#inputbase-classes-input) and [.MuiInputBase-hiddenLabel](/material-ui/api/input-base/#inputbase-classes-hiddenLabel) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     */
     val inputHiddenLabel: ClassName
 }
 

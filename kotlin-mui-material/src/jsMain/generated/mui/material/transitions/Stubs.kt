@@ -2,4 +2,6 @@
 
 package mui.material.transitions
 
-external interface TransitionProps : react.Props
+import react.Props
+
+external interface TransitionProps : Props

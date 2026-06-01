@@ -2,15 +2,26 @@
 
 package mui.base
 
+import react.ElementType
+import react.Props
+import react.PropsWithClassName
+import react.ReactNode
+import react.dom.events.KeyboardEventHandler
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.dom.ElementId
+import web.html.HTMLInputElement
 import web.html.InputType
 
 external interface InputProps :
     InputOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLInputElement>
+    HTMLAttributes<HTMLInputElement>
 
-external interface InputBaseProps : react.Props {
+external interface InputRootSlotPropsOverrides
+
+external interface InputInputSlotPropsOverrides
+
+external interface InputBaseProps : Props {
     /**
      * Maximum number of rows to display when multiline option is set to true.
      */
@@ -40,8 +51,8 @@ external interface InputBaseProps : react.Props {
 }
 
 external interface InputOwnProps :
-    react.PropsWithClassName,
-    InputBaseProps {
+    InputBaseProps,
+    PropsWithClassName {
     // var `aria-describedby`: String?
 
     // var `aria-label`: String?
@@ -68,7 +79,7 @@ external interface InputOwnProps :
     /**
      * Trailing adornment for this input.
      */
-    var endAdornment: react.ReactNode?
+    var endAdornment: ReactNode?
 
     /**
      * If `true`, the `input` will indicate an error by setting the `aria-invalid` attribute on the input and the `baseui--error` class on the root element.
@@ -86,9 +97,9 @@ external interface InputOwnProps :
      */
     var name: String?
 
-    var onKeyDown: react.dom.events.KeyboardEventHandler<web.html.HTMLInputElement>?
+    var onKeyDown: KeyboardEventHandler<HTMLInputElement>?
 
-    var onKeyUp: react.dom.events.KeyboardEventHandler<web.html.HTMLInputElement>?
+    var onKeyUp: KeyboardEventHandler<HTMLInputElement>?
 
     /**
      * The short hint displayed in the `input` before the user enters a value.
@@ -108,8 +119,8 @@ external interface InputOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', InputRootSlotPropsOverrides, InputOwnerState> */
-        var input: react.Props? /* SlotComponentProps<'input', InputInputSlotPropsOverrides, InputOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', InputRootSlotPropsOverrides, InputOwnerState> */
+        var input: Props? /* SlotComponentProps<'input', InputInputSlotPropsOverrides, InputOwnerState> */
     }
 
     /**
@@ -122,7 +133,7 @@ external interface InputOwnProps :
     /**
      * Leading adornment for this input.
      */
-    var startAdornment: react.ReactNode?
+    var startAdornment: ReactNode?
 
     /**
      * The value of the `input` element, required for a controlled component.
@@ -135,17 +146,17 @@ external interface InputSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the input.
      * @default 'input'
      */
-    var input: react.ElementType<*>?
+    var input: ElementType<*>?
 
     /**
      * The component that renders the textarea.
      * @default 'textarea'
      */
-    var textarea: react.ElementType<*>?
+    var textarea: ElementType<*>?
 }

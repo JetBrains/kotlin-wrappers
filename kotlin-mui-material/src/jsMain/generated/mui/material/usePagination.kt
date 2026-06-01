@@ -5,8 +5,11 @@
 package mui.material
 
 import js.array.ReadonlyArray
+import react.Props
+import react.dom.events.ChangeEvent
+import react.dom.events.ReactEventHandler
 
-external interface UsePaginationProps : react.Props {
+external interface UsePaginationProps : Props {
     /**
      * Number of always visible pages at the beginning and end.
      * @default 1
@@ -54,7 +57,7 @@ external interface UsePaginationProps : react.Props {
      * @param {React.ChangeEvent<unknown>} event The event source of the callback.
      * @param {number} page The page selected.
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<*, *>, page: Number) -> Unit)?
+    var onChange: ((event: ChangeEvent<*, *>, page: Number) -> Unit)?
 
     /**
      * The current page. Unlike `TablePagination`, which starts numbering from `0`, this pagination starts from `1`.
@@ -80,8 +83,8 @@ external interface UsePaginationProps : react.Props {
     var siblingCount: Number?
 }
 
-external interface UsePaginationItem : react.Props {
-    var onClick: react.dom.events.ReactEventHandler<*>
+external interface UsePaginationItem : Props {
+    var onClick: ReactEventHandler<*>
 
     var type: UsePaginationItemType
 

@@ -8,18 +8,26 @@
 
 package mui.material
 
+import mui.base.ClickAwayListenerProps
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface SnackbarProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The action to display. It renders after the message, at the end of the snackbar.
      */
-    var action: react.ReactNode?
+    var action: ReactNode?
 
     /**
      * The anchor of the `Snackbar`.
@@ -41,7 +49,7 @@ external interface SnackbarProps :
     /**
      * Replace the `SnackbarContent` component.
      */
-    override var children: react.ReactNode? /* react.ReactElement<*>? */
+    override var children: ReactNode? /* React.ReactElement<unknown, any> */
 
     /**
      * Override or extend the styles applied to the component.
@@ -50,11 +58,13 @@ external interface SnackbarProps :
 
     /**
      * Props applied to the `ClickAwayListener` element.
+     * @deprecated Use `slotProps.clickAwayListener` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var ClickAwayListenerProps: mui.base.ClickAwayListenerProps?
+    var ClickAwayListenerProps: ClickAwayListenerProps?
 
     /**
-     * Props applied to the [`SnackbarContent`](/material-ui/api/snackbar-content/) element.
+     * Props applied to the [`SnackbarContent`](https://mui.com/material-ui/api/snackbar-content/) element.
+     * @deprecated Use `slotProps.content` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ContentProps: SnackbarContentProps?
 
@@ -75,7 +85,7 @@ external interface SnackbarProps :
     /**
      * The message to display.
      */
-    var message: react.ReactNode?
+    var message: ReactNode?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -87,7 +97,7 @@ external interface SnackbarProps :
      * @param {React.SyntheticEvent<any> | Event} event The event source of the callback.
      * @param {string} reason Can be: `"timeout"` (`autoHideDuration` expired), `"clickaway"`, or `"escapeKeyDown"`.
      */
-    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: SnackbarCloseReason) -> Unit)?
+    var onClose: ((event: SyntheticEvent<*, *>, reason: SnackbarCloseReason) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -109,10 +119,11 @@ external interface SnackbarProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @deprecated Use `slots.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default Grow
      */
-    var TransitionComponent: react.ComponentType<*>?
+    var TransitionComponent: ComponentType<*>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -127,9 +138,65 @@ external interface SnackbarProps :
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
-    var TransitionProps: mui.material.transitions.TransitionProps?
+    var TransitionProps: TransitionProps?
+}
+
+external interface SnackbarSlots {
+    /**
+     * The component that renders the root slot.
+     * @default 'div'
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the content slot.
+     * @default SnackbarContent
+     */
+    var content: ElementType<*>
+
+    /**
+     * The component that renders the clickAwayListener slot.
+     * @default ClickAwayListener
+     */
+    var clickAwayListener: ElementType<*>
+
+    /**
+     * The component that renders the transition.
+     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @default Grow
+     */
+    var transition: ElementType<*>
+}
+
+external interface SnackbarRootSlotPropsOverrides
+
+external interface SnackbarContentSlotPropsOverrides
+
+external interface SnackbarClickAwayListenerSlotPropsOverrides
+
+external interface SnackbarTransitionSlotPropsOverrides
+
+external interface SnackbarSlotProps : Props {
+    /** TS: SlotProps<'div', SnackbarRootSlotPropsOverrides, SnackbarOwnerState> */
+    var root: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps< React.ElementType<SnackbarContentProps>, SnackbarContentSlotPropsOverrides, SnackbarOwnerState > */
+    var content: SnackbarContentProps?
+
+    /** TS: SlotComponentProps< typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState > */
+    var clickAwayListener: ClickAwayListenerProps?
+
+    /** TS: SlotComponentProps< React.ElementType, TransitionProps & SnackbarTransitionSlotPropsOverrides, SnackbarOwnerState > */
+    var transition: TransitionProps?
+}
+
+external interface SnackbarSlotsAndSlotProps : Props {
+    var slots: SnackbarSlots?
+
+    var slotProps: SnackbarSlotProps?
 }
 
 external interface SnackbarOrigin {
@@ -138,15 +205,17 @@ external interface SnackbarOrigin {
     var horizontal: SnackbarOriginHorizontal
 }
 
+external interface SnackbarOwnerState
+
 /**
  *
  * Demos:
  *
- * - [Snackbar](https://mui.com/material-ui/react-snackbar/)
+ * - [Snackbar](https://v6.mui.com/material-ui/react-snackbar/)
  *
  * API:
  *
- * - [Snackbar API](https://mui.com/material-ui/api/snackbar/)
+ * - [Snackbar API](https://v6.mui.com/material-ui/api/snackbar/)
  */
 @JsName("default")
-external val Snackbar: react.FC<SnackbarProps>
+external val Snackbar: FC<SnackbarProps>

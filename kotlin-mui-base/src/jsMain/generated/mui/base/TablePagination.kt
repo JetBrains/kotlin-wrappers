@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * A pagination for tables.
  *
@@ -15,4 +17,4 @@ package mui.base
  *
  * - [TablePagination API](https://mui.com/base-ui/react-table-pagination/components-api/#table-pagination)
  */
-external val TablePagination: react.FC<TablePaginationProps>
+external val TablePagination: FC<TablePaginationProps>

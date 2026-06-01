@@ -5,16 +5,21 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.dom.html.LiHTMLAttributes
+import web.html.HTMLLIElement
 
 external interface MenuItemProps :
     MenuItemOwnProps,
-    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>,
-    mui.types.PropsWithComponent
+    LiHTMLAttributes<HTMLLIElement>,
+    PropsWithComponent
 
 external interface MenuItemOwnProps :
-    mui.system.PropsWithSx,
-    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement> {
+    PropsWithSx,
+    LiHTMLAttributes<HTMLLIElement> {
     /**
      * If `true`, the list item is focused during the first mount.
      * Focus will also be triggered if the value changes from false to true.
@@ -68,12 +73,12 @@ external interface MenuItemOwnProps :
  *
  * Demos:
  *
- * - [Menu](https://mui.com/material-ui/react-menu/)
+ * - [Menu](https://v6.mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [MenuItem API](https://mui.com/material-ui/api/menu-item/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [MenuItem API](https://v6.mui.com/material-ui/api/menu-item/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val MenuItem: react.FC<MenuItemProps>
+external val MenuItem: FC<MenuItemProps>

@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * An unstyled option to be used within a Select.
  *
@@ -15,4 +17,4 @@ package mui.base
  *
  * - [Option API](https://mui.com/base-ui/react-select/components-api/#option)
  */
-external val Option: react.FC<OptionProps<*>>
+external val Option: FC<OptionProps<*>>

@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * The foundation for building custom-styled buttons.
  *
@@ -15,4 +17,4 @@ package mui.base
  *
  * - [Button API](https://mui.com/base-ui/react-button/components-api/#button)
  */
-external val Button: react.FC<ButtonProps>
+external val Button: FC<ButtonProps>

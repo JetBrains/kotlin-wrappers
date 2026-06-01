@@ -2,19 +2,25 @@
 
 package mui.base
 
+import react.*
+import react.dom.events.ChangeEventHandler
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLDivElement
 
 external interface FormControlProps :
     FormControlOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
+
+external interface FormControlRootSlotPropsOverrides
 
 external interface FormControlOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Class name applied to the root element.
@@ -38,7 +44,7 @@ external interface FormControlOwnProps :
     /**
      * Callback fired when the form element's value is modified.
      */
-    var onChange: react.dom.events.ChangeEventHandler<NativeFormControlElement, *>?
+    var onChange: ChangeEventHandler<NativeFormControlElement, *>?
 
     /**
      * If `true`, the label will indicate that the `input` is required.
@@ -53,7 +59,7 @@ external interface FormControlOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', FormControlRootSlotPropsOverrides, FormControlOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', FormControlRootSlotPropsOverrides, FormControlOwnerState> */
     }
 
     /**
@@ -74,5 +80,5 @@ external interface FormControlSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }

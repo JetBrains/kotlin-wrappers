@@ -9,20 +9,33 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.ReactNode
+import react.dom.events.EventHandler
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ChipProps :
     ChipOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
+
+external interface ChipPropsVariantOverrides
+
+external interface ChipPropsSizeOverrides
+
+external interface ChipPropsColorOverrides
 
 external interface ChipOwnProps :
-    mui.system.PropsWithSx,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement> {
+    PropsWithSx,
+    HTMLAttributes<HTMLDivElement> {
     /**
      * The Avatar element to display.
      */
-    var avatar: react.ReactElement<*>?
+    var avatar: Any? /* React.ReactElement<unknown> */
 
     /**
      * This prop isn't supported.
@@ -56,7 +69,7 @@ external interface ChipOwnProps :
     /**
      * Override the default delete icon element. Shown only if `onDelete` is set.
      */
-    var deleteIcon: react.ReactElement<*>?
+    var deleteIcon: Any? /* React.ReactElement<unknown> */
 
     /**
      * If `true`, the component is disabled.
@@ -67,18 +80,18 @@ external interface ChipOwnProps :
     /**
      * Icon element.
      */
-    var icon: react.ReactElement<*>?
+    var icon: Any? /* React.ReactElement<unknown> */
 
     /**
      * The content of the component.
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     /**
      * Callback fired when the delete icon is clicked.
      * If set, the delete icon will be shown.
      */
-    var onDelete: react.dom.events.EventHandler<*>?
+    var onDelete: EventHandler<*>?
 
     /**
      * The size of the component.
@@ -115,11 +128,11 @@ external interface ChipOwnProps :
  *
  * Demos:
  *
- * - [Chip](https://mui.com/material-ui/react-chip/)
+ * - [Chip](https://v6.mui.com/material-ui/react-chip/)
  *
  * API:
  *
- * - [Chip API](https://mui.com/material-ui/api/chip/)
+ * - [Chip API](https://v6.mui.com/material-ui/api/chip/)
  */
 @JsName("default")
-external val Chip: react.FC<ChipProps>
+external val Chip: FC<ChipProps>

@@ -5,20 +5,29 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface PaperProps :
     PaperOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
+
+external interface PaperPropsVariantOverrides
 
 external interface PaperOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -54,12 +63,12 @@ external interface PaperOwnProps :
  *
  * Demos:
  *
- * - [Card](https://mui.com/material-ui/react-card/)
- * - [Paper](https://mui.com/material-ui/react-paper/)
+ * - [Card](https://v6.mui.com/material-ui/react-card/)
+ * - [Paper](https://v6.mui.com/material-ui/react-paper/)
  *
  * API:
  *
- * - [Paper API](https://mui.com/material-ui/api/paper/)
+ * - [Paper API](https://v6.mui.com/material-ui/api/paper/)
  */
 @JsName("default")
-external val Paper: react.FC<PaperProps>
+external val Paper: FC<PaperProps>

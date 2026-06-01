@@ -3,8 +3,13 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import react.Props
+import react.RefObject
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import react.dom.html.InputHTMLAttributes
 import web.dom.ElementId
-import web.html.HTMLElement
+import web.html.*
 
 external interface CreateFilterOptionsConfig<Value> {
     var ignoreAccents: Boolean?
@@ -33,10 +38,10 @@ external interface AutocompleteGroupedOption {
 
     var group: String
 
-    var options: dynamic
+    var options: Any? /* Value[] */
 }
 
-external interface UseAutocompleteProps<Value> : react.Props {
+external interface UseAutocompleteProps<Value> : Props {
     /**
      * @internal The prefix of the state class name, temporary for Joy UI
      * @default 'Mui'
@@ -48,7 +53,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      * Temporary for Joy UI because the parent listbox is the document object
      * TODO v6: Normalize the logic and remove this param.
      */
-    var unstable_isActiveElementInListbox: ((listbox: react.RefObject<HTMLElement>) -> Boolean)?
+    var unstable_isActiveElementInListbox: ((listbox: RefObject<HTMLElement>) -> Boolean)?
 
     /**
      * If `true`, the portion of the selected suggestion that the user hasn't typed,
@@ -110,7 +115,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      * The default value. Use when the component is not controlled.
      * @default props.multiple ? [] : null
      */
-    var defaultValue: dynamic
+    var defaultValue: Any? /* AutocompleteValue<Value, Multiple, DisableClearable, FreeSolo> */
 
     /**
      * If `true`, the input can't be cleared.
@@ -252,7 +257,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      * @param {string} [details]
      */
     var onChange: ((
-        event: react.dom.events.SyntheticEvent<*, *>,
+        event: SyntheticEvent<*, *>,
         value: Any,
         reason: AutocompleteChangeReason,
         details: AutocompleteChangeDetails<Value>?,
@@ -265,7 +270,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      * @param {React.SyntheticEvent} event The event source of the callback.
      * @param {string} reason Can be: `"toggleInput"`, `"escape"`, `"selectOption"`, `"removeOption"`, `"blur"`.
      */
-    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: AutocompleteCloseReason) -> Unit)?
+    var onClose: ((event: SyntheticEvent<*, *>, reason: AutocompleteCloseReason) -> Unit)?
 
     /**
      * Callback fired when the highlight option changes.
@@ -275,7 +280,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`, `"touch"`.
      */
     var onHighlightChange: ((
-        event: react.dom.events.SyntheticEvent<*, *>,
+        event: SyntheticEvent<*, *>,
         option: Value?,
         reason: AutocompleteHighlightChangeReason,
     ) -> Unit)?
@@ -285,10 +290,10 @@ external interface UseAutocompleteProps<Value> : react.Props {
      *
      * @param {React.SyntheticEvent} event The event source of the callback.
      * @param {string} value The new value of the text input.
-     * @param {string} reason Can be: `"input"` (user input), `"reset"` (programmatic change), `"clear"`.
+     * @param {string} reason Can be: `"input"` (user input), `"reset"` (programmatic change), `"clear"`, `"blur"`, `"selectOption"`, `"removeOption"`
      */
     var onInputChange: ((
-        event: react.dom.events.SyntheticEvent<*, *>,
+        event: SyntheticEvent<*, *>,
         value: String,
         reason: AutocompleteInputChangeReason,
     ) -> Unit)?
@@ -299,7 +304,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      *
      * @param {React.SyntheticEvent} event The event source of the callback.
      */
-    var onOpen: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
+    var onOpen: ((event: SyntheticEvent<*, *>) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -355,31 +360,31 @@ external interface UseAutocompleteReturnValue<Value> {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: (externalProps: Any?) -> react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    var getRootProps: (externalProps: Any?) -> HTMLAttributes<HTMLDivElement>
 
     /**
      * Resolver for the input element's props.
      * @returns props that should be spread on the input element
      */
-    var getInputProps: () -> react.dom.html.InputHTMLAttributes<web.html.HTMLInputElement>
+    var getInputProps: () -> InputHTMLAttributes<HTMLInputElement>
 
     /**
      * Resolver for the input label element's props.
      * @returns props that should be spread on the input label element
      */
-    var getInputLabelProps: () -> react.dom.html.InputHTMLAttributes<web.html.HTMLLabelElement>
+    var getInputLabelProps: () -> InputHTMLAttributes<HTMLLabelElement>
 
     /**
      * Resolver for the `clear` button element's props.
      * @returns props that should be spread on the *clear* button element
      */
-    var getClearProps: () -> react.dom.html.HTMLAttributes<web.html.HTMLButtonElement>
+    var getClearProps: () -> HTMLAttributes<HTMLButtonElement>
 
     /**
      * Resolver for the popup icon's props.
      * @returns props that should be spread on the popup icon
      */
-    var getPopupIndicatorProps: () -> react.dom.html.HTMLAttributes<web.html.HTMLButtonElement>
+    var getPopupIndicatorProps: () -> HTMLAttributes<HTMLButtonElement>
 
     /**
      * A tag props getter.
@@ -390,7 +395,7 @@ external interface UseAutocompleteReturnValue<Value> {
      * Resolver for the listbox component's props.
      * @returns props that should be spread on the listbox component
      */
-    var getListboxProps: () -> react.dom.html.HTMLAttributes<web.html.HTMLUListElement>
+    var getListboxProps: () -> HTMLAttributes<HTMLUListElement>
 
     /**
      * Resolver for the rendered option element's props.
@@ -399,7 +404,7 @@ external interface UseAutocompleteReturnValue<Value> {
      */
     var getOptionProps: (
         renderedOption: UseAutocompleteRenderedOption<Value>,
-    ) -> react.dom.html.HTMLAttributes<web.html.HTMLLIElement>
+    ) -> HTMLAttributes<HTMLLIElement>
 
     /**
      * Id for the Autocomplete.

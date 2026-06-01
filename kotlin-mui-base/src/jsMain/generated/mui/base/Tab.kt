@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -18,4 +20,4 @@ package mui.base
  *
  * - [Tab API](https://mui.com/base-ui/react-tabs/components-api/#tab)
  */
-external val Tab: react.FC<TabProps>
+external val Tab: FC<TabProps>

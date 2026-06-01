@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package mui.base
  *
  * - [TabPanel API](https://mui.com/base-ui/react-tabs/components-api/#tab-panel)
  */
-external val TabPanel: react.FC<TabPanelProps>
+external val TabPanel: FC<TabPanelProps>

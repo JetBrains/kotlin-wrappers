@@ -8,25 +8,68 @@
 
 package mui.material
 
+import mui.base.BadgeOwnProps
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLSpanElement
 
 external interface BadgeProps :
     BadgeOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithComponent
+
+external interface BadgePropsVariantOverrides
+
+external interface BadgePropsColorOverrides
+
+external interface BadgeRootSlotPropsOverrides
+
+external interface BadgeBadgeSlotPropsOverrides
+
+external interface BadgeSlots {
+    /**
+     * The component that renders the root.
+     * @default span
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the badge.
+     * @default span
+     */
+    var badge: ElementType<*>
+}
+
+external interface BadgeSlotProps : Props {
+    /** TS: SlotProps<'span', BadgeRootSlotPropsOverrides, BadgeOwnerState> */
+    var root: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', BadgeBadgeSlotPropsOverrides, BadgeOwnerState> */
+    var badge: HTMLAttributes<HTMLSpanElement>?
+}
+
+external interface BadgeSlotsAndSlotProps : Props {
+    var slots: BadgeSlots?
+
+    var slotProps: BadgeSlotProps?
+}
 
 external interface BadgeOrigin {
-    var vertical: BadgeOriginVertical
+    var vertical: BadgeOriginVertical?
 
-    var horizontal: BadgeOriginHorizontal
+    var horizontal: BadgeOriginHorizontal?
 }
 
 external interface BadgeOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    BadgeSlotsAndSlotProps,
+    PropsWithChildren,
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * The anchor of the badge.
      * @default {
@@ -39,12 +82,12 @@ external interface BadgeOwnProps :
     /**
      * The content rendered within the badge.
      */
-    var badgeContent: react.ReactNode?
+    var badgeContent: ReactNode?
 
     /**
      * The badge will be added relative to this node.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -68,26 +111,24 @@ external interface BadgeOwnProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * This prop is an alias for the `slotProps` prop.
-     * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
-    var componentsProps: mui.base.BadgeOwnProps.SlotProps?
+    var componentsProps: BadgeOwnProps.SlotProps?
 
     /**
      * The components used for each slot inside.
      *
-     * This prop is an alias for the `slots` prop.
-     * It's recommended to use the `slots` prop instead.
+     * @deprecated use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
     var components: Components?
 
     interface Components {
-        var Root: react.ElementType<*>?
-        var Badge: react.ElementType<*>?
+        var Root: ElementType<*>?
+        var Badge: ElementType<*>?
     }
 
     /**
@@ -107,29 +148,6 @@ external interface BadgeOwnProps :
      * @default 'rectangular'
      */
     var overlap: BadgeOverlap?
-
-    /**
-     * The props used for each slot inside the Badge.
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', BadgeRootSlotPropsOverrides, BadgeOwnerState> */
-        var badge: react.Props? /* SlotComponentProps<'span', BadgeBadgeSlotPropsOverrides, BadgeOwnerState> */
-    }
-
-    /**
-     * The components used for each slot inside the Badge.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var root: react.ElementType<*>?
-        var badge: react.ElementType<*>?
-    }
 
     /**
      * Controls whether the badge is hidden when `badgeContent` is zero.
@@ -153,12 +171,12 @@ external interface BadgeOwnProps :
  *
  * Demos:
  *
- * - [Avatar](https://mui.com/material-ui/react-avatar/)
- * - [Badge](https://mui.com/material-ui/react-badge/)
+ * - [Avatar](https://v6.mui.com/material-ui/react-avatar/)
+ * - [Badge](https://v6.mui.com/material-ui/react-badge/)
  *
  * API:
  *
- * - [Badge API](https://mui.com/material-ui/api/badge/)
+ * - [Badge API](https://v6.mui.com/material-ui/api/badge/)
  */
 @JsName("default")
-external val Badge: react.FC<BadgeProps>
+external val Badge: FC<BadgeProps>

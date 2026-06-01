@@ -5,12 +5,17 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
 
 external interface CircularProgressProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -37,7 +42,7 @@ external interface CircularProgressProps :
      * If using a string, you need to provide the CSS unit, for example '3rem'.
      * @default 40
      */
-    var size: dynamic
+    var size: Any? /* number | string */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -65,6 +70,10 @@ external interface CircularProgressProps :
     var variant: CircularProgressVariant?
 }
 
+external interface CircularProgressPropsColorOverrides
+
+external interface CircularProgressPropsVariantOverrides
+
 /**
  * ## ARIA
  *
@@ -74,11 +83,11 @@ external interface CircularProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://mui.com/material-ui/react-progress/)
+ * - [Progress](https://v6.mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [CircularProgress API](https://mui.com/material-ui/api/circular-progress/)
+ * - [CircularProgress API](https://v6.mui.com/material-ui/api/circular-progress/)
  */
 @JsName("default")
-external val CircularProgress: react.FC<CircularProgressProps>
+external val CircularProgress: FC<CircularProgressProps>

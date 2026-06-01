@@ -5,12 +5,92 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface TabsProps :
     TabsOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
+
+external interface TabsPropsIndicatorColorOverrides
+
+external interface TabsRootSlotPropsOverrides
+
+external interface TabsScrollerSlotPropsOverrides
+
+external interface TabsListSlotPropsOverrides
+
+external interface TabsScrollbarSlotPropsOverrides
+
+external interface TabsIndicatorSlotPropsOverrides
+
+external interface TabsScrollButtonsSlotPropsOverrides
+
+external interface TabsStartScrollButtonIconSlotPropsOverrides
+
+external interface TabsEndScrollButtonIconSlotPropsOverrides
+
+external interface TabsSlots {
+    /**
+     * The component used for the popper.
+     * @default div
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component used for the scroller.
+     * @default div
+     */
+    var scroller: ElementType<*>
+
+    /**
+     * The component used for the flex container.
+     * @default div
+     */
+    var list: ElementType<*>
+
+    /**
+     * The component used for the scroller.
+     * @default ScrollbarSize
+     */
+    var scrollbar: ElementType<*>
+
+    /**
+     * The component used for the tab indicator.
+     * @default span
+     */
+    var indicator: ElementType<*>
+
+    /**
+     * The component used for the scroll button.
+     * @default TabScrollButton
+     */
+    var scrollButtons: ElementType<*>
+
+    /**
+     * The component used for the start scroll button icon.
+     * @default KeyboardArrowLeft
+     */
+    var startScrollButtonIcon: ElementType<*>
+
+    /**
+     * The component used for the end scroll button icon.
+     * @default KeyboardArrowRight
+     */
+    var endScrollButtonIcon: ElementType<*>
+}
+
+external interface TabsSlotsAndSlotProps : Props {
+    var slots: TabsSlots?
+
+    var slotProps: Any?
+}
 
 external interface TabsOwnerState : TabsProps {
     var vertical: Boolean
@@ -29,8 +109,9 @@ external interface TabsOwnerState : TabsProps {
 }
 
 external interface TabsOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    TabsSlotsAndSlotProps,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * Callback fired when the component mounts.
      * This is useful when you want to trigger an action programmatically.
@@ -39,7 +120,7 @@ external interface TabsOwnProps :
      * @param {object} actions This object contains all possible actions
      * that can be triggered programmatically.
      */
-    var action: react.Ref<TabsActions>?
+    var action: Ref<TabsActions>?
 
     /**
      * If `true`, the scroll buttons aren't forced hidden on mobile.
@@ -68,43 +149,12 @@ external interface TabsOwnProps :
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
     var classes: TabsClasses?
-
-    /**
-     * The components used for each slot inside.
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var StartScrollButtonIcon: react.ElementType<*>?
-        var EndScrollButtonIcon: react.ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var startScrollButtonIcon: react.Props? /* SlotComponentProps<
-  typeof SvgIcon,
-  TabsStartScrollButtonIconSlotPropsOverrides,
-  TabsOwnerState
-> */
-        var endScrollButtonIcon: react.Props? /* SlotComponentProps<
-  typeof SvgIcon,
-  TabsEndScrollButtonIconSlotPropsOverrides,
-  TabsOwnerState
-> */
-    }
 
     /**
      * Determines the color of the indicator.
@@ -118,7 +168,7 @@ external interface TabsOwnProps :
      * @param {React.SyntheticEvent} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {any} value We default to the index of the child (number)
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: Any) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>, value: Any) -> Unit)?
 
     /**
      * The component orientation (layout flow direction).
@@ -128,9 +178,10 @@ external interface TabsOwnProps :
 
     /**
      * The component used to render the scroll buttons.
+     * @deprecated use the `slots.scrollButtons` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default TabScrollButton
      */
-    var ScrollButtonComponent: react.ElementType<*>?
+    var ScrollButtonComponent: ElementType<*>?
 
     /**
      * Determine behavior of scroll buttons when tabs are set to scroll:
@@ -153,12 +204,14 @@ external interface TabsOwnProps :
 
     /**
      * Props applied to the tab indicator element.
+     * @deprecated use the `slotProps.indicator` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default  {}
      */
-    var TabIndicatorProps: react.Props? /* React.HTMLAttributes<HTMLDivElement> & { sx?: SxProps<Theme>; } */
+    var TabIndicatorProps: Props? /* React.HTMLAttributes<HTMLDivElement> & { sx?: SxProps<Theme>; } */
 
     /**
-     * Props applied to the [`TabScrollButton`](/material-ui/api/tab-scroll-button/) element.
+     * Props applied to the [`TabScrollButton`](https://mui.com/material-ui/api/tab-scroll-button/) element.
+     * @deprecated use the `slotProps.scrollButtons` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var TabScrollButtonProps: TabScrollButtonProps?
@@ -209,11 +262,11 @@ external interface TabsActions {
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://v6.mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tabs API](https://mui.com/material-ui/api/tabs/)
+ * - [Tabs API](https://v6.mui.com/material-ui/api/tabs/)
  */
 @JsName("default")
-external val Tabs: react.FC<TabsProps>
+external val Tabs: FC<TabsProps>

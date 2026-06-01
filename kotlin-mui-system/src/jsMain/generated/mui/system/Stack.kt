@@ -4,6 +4,8 @@
 
 package mui.system
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -17,4 +19,4 @@ package mui.system
  * - [Stack API](https://mui.com/system/api/stack/)
  */
 @JsName("default")
-external val Stack: react.FC<StackProps>
+external val Stack: FC<StackProps>

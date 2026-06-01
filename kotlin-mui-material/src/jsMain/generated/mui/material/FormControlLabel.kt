@@ -5,12 +5,19 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.LabelHTMLAttributes
+import web.html.HTMLLabelElement
 
 external interface FormControlLabelProps :
-    mui.system.StandardProps,
-    react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
-    mui.system.PropsWithSx {
+    StandardProps,
+    LabelHTMLAttributes<HTMLLabelElement>,
+    FormControlLabelSlotsAndSlotProps,
+    PropsWithSx {
     /**
      * If `true`, the component appears selected.
      */
@@ -24,17 +31,18 @@ external interface FormControlLabelProps :
     /**
      * The props used for each slot inside.
      * @default {}
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var typography: react.Props? /* TypographyProps */
+        var typography: Props? /* TypographyProps */
     }
 
     /**
      * A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.
      */
-    var control: react.ReactElement<*>
+    var control: Any? /* React.ReactElement<unknown, any> */
 
     /**
      * If `true`, the control is disabled.
@@ -49,12 +57,12 @@ external interface FormControlLabelProps :
     /**
      * Pass a ref to the `input` element.
      */
-    var inputRef: react.Ref<*>?
+    var inputRef: Ref<*>?
 
     /**
      * A text or an element to be used in an enclosing label element.
      */
-    var label: react.ReactNode
+    var label: ReactNode
 
     /**
      * The position of the label.
@@ -70,22 +78,12 @@ external interface FormControlLabelProps :
      * @param {React.SyntheticEvent} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, checked: Boolean) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the label will indicate that the `input` is required.
      */
     var required: Boolean?
-
-    /**
-     * The props used for each slot inside.
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var typography: react.Props? /* TypographyProps */
-    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -98,19 +96,39 @@ external interface FormControlLabelProps :
     var value: Any?
 }
 
+external interface FormControlLabelSlots {
+    /**
+     * The component that renders the label.
+     * This is unused if `disableTypography` is true.
+     * @default Typography
+     */
+    var typography: ElementType<*>
+}
+
+external interface FormControlLabelSlotProps : Props {
+    /** TS: SlotProps<typeof Typography, {}, FormControlLabelProps> */
+    var typography: TypographyProps?
+}
+
+external interface FormControlLabelSlotsAndSlotProps : Props {
+    var slots: FormControlLabelSlots?
+
+    var slotProps: FormControlLabelSlotProps?
+}
+
 /**
  * Drop-in replacement of the `Radio`, `Switch` and `Checkbox` component.
  * Use this component if you want to display an extra label.
  *
  * Demos:
  *
- * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
- * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
- * - [Switch](https://mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
+ * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://v6.mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormControlLabel API](https://mui.com/material-ui/api/form-control-label/)
+ * - [FormControlLabel API](https://v6.mui.com/material-ui/api/form-control-label/)
  */
 @JsName("default")
-external val FormControlLabel: react.FC<FormControlLabelProps>
+external val FormControlLabel: FC<FormControlLabelProps>

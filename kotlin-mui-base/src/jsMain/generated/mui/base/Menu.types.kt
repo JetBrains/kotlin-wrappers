@@ -3,11 +3,18 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import react.*
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLDivElement
 
 external interface MenuProps :
     MenuOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
+
+external interface MenuRootSlotPropsOverrides
+
+external interface MenuListboxSlotPropsOverrides
 
 external interface MenuActions {
     /**
@@ -22,19 +29,19 @@ external interface MenuActions {
 }
 
 external interface MenuOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * A ref with imperative actions that can be performed on the menu.
      */
-    var actions: react.Ref<MenuActions>?
+    var actions: Ref<MenuActions>?
 
     /**
      * The element based on which the menu is positioned.
      */
     var anchor: Any? /* PopupProps['anchor'] */
 
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -50,8 +57,8 @@ external interface MenuOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', MenuRootSlotPropsOverrides & PopupProps, MenuOwnerState> */
-        var listbox: react.Props? /* SlotComponentProps<'ul', MenuListboxSlotPropsOverrides, MenuOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', MenuRootSlotPropsOverrides & PopupProps, MenuOwnerState> */
+        var listbox: Props? /* SlotComponentProps<'ul', MenuListboxSlotPropsOverrides, MenuOwnerState> */
     }
 
     /**
@@ -67,11 +74,11 @@ external interface MenuSlots {
      * The component that renders the popup element.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the listbox.
      * @default 'ul'
      */
-    var listbox: react.ElementType<*>?
+    var listbox: ElementType<*>?
 }

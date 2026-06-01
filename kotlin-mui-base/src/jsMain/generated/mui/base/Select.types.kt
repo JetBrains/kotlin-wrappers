@@ -2,16 +2,23 @@
 
 package mui.base
 
+import react.*
 import web.cssom.ClassName
 
 external interface SelectProps<OptionValue> :
     SelectOwnProps<OptionValue> {
-    var component: react.ElementType<*>?
+    var component: Any? /* D */
 }
 
+external interface SelectRootSlotPropsOverrides
+
+external interface SelectListboxSlotPropsOverrides
+
+external interface SelectPopupSlotPropsOverrides
+
 external interface SelectOwnProps<OptionValue> :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * A function used to determine if two options' values are equal.
      * By default, reference equality is used.
@@ -34,7 +41,7 @@ external interface SelectOwnProps<OptionValue> :
      */
     var autoFocus: Boolean?
 
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -114,7 +121,7 @@ external interface SelectOwnProps<OptionValue> :
     /**
      * Text to show when there is no selected value.
      */
-    var placeholder: react.ReactNode?
+    var placeholder: ReactNode?
 
     /**
      * The props used for each slot inside the Input.
@@ -123,9 +130,9 @@ external interface SelectOwnProps<OptionValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', SelectRootSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
-        var listbox: react.Props? /* SlotComponentProps<'ul', SelectListboxSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
-        var popup: react.Props? /* SlotComponentProps<'div', SelectPopupSlotPropsOverrides & PopupProps, SelectOwnerState<OptionValue, Multiple>> */
+        var root: Props? /* SlotComponentProps<'button', SelectRootSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
+        var listbox: Props? /* SlotComponentProps<'ul', SelectListboxSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
+        var popup: Props? /* SlotComponentProps<'div', SelectPopupSlotPropsOverrides & PopupProps, SelectOwnerState<OptionValue, Multiple>> */
     }
 
     /**
@@ -153,17 +160,17 @@ external interface SelectSlots {
      * The component that renders the root.
      * @default 'button'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the listbox.
      * @default 'ul'
      */
-    var listbox: react.ElementType<*>?
+    var listbox: ElementType<*>?
 
     /**
      * The component that wraps the popup.
      * @default 'div'
      */
-    var popup: react.ElementType<*>?
+    var popup: ElementType<*>?
 }

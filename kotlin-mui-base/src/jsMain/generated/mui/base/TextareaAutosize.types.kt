@@ -2,8 +2,11 @@
 
 package mui.base
 
+import react.dom.html.TextareaHTMLAttributes
+import web.html.HTMLTextAreaElement
+
 external interface TextareaAutosizeProps :
-    react.dom.html.TextareaHTMLAttributes<web.html.HTMLTextAreaElement> {
+    TextareaHTMLAttributes<HTMLTextAreaElement> {
     /**
      * Maximum number of rows to display.
      */

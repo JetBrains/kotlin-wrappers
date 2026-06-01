@@ -5,14 +5,63 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
+import web.html.HTMLElement
 
 external interface PaginationItemProps :
     PaginationItemOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
 
-external interface PaginationItemOwnProps : mui.system.PropsWithSx {
+external interface PaginationItemPropsVariantOverrides
+
+external interface PaginationItemPropsSizeOverrides
+
+external interface PaginationItemPropsColorOverrides
+
+external interface PaginationItemSlots {
+    var first: ElementType<*>
+
+    var last: ElementType<*>
+
+    var next: ElementType<*>
+
+    var previous: ElementType<*>
+}
+
+external interface PaginationItemSlotProps : Props {
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState> */
+    var first: HTMLAttributes<HTMLElement>?
+
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState> */
+    var last: HTMLAttributes<HTMLElement>?
+
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState> */
+    var next: HTMLAttributes<HTMLElement>?
+
+    /** TS: SlotProps< React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState > */
+    var previous: HTMLAttributes<HTMLElement>?
+}
+
+external interface PaginationItemSlotsAndSlotProps : Props {
+    var slots: PaginationItemSlots?
+
+    var slotProps: PaginationItemSlotProps?
+}
+
+external interface PaginationItemOwnerState
+
+external interface PaginationItemOwnProps :
+    PaginationItemSlotsAndSlotProps,
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -33,14 +82,15 @@ external interface PaginationItemOwnProps : mui.system.PropsWithSx {
      * It's recommended to use the `slots` prop instead.
      *
      * @default {}
+     * @deprecated use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var components: Components?
 
     interface Components {
-        var first: react.ElementType<*>?
-        var last: react.ElementType<*>?
-        var next: react.ElementType<*>?
-        var previous: react.ElementType<*>?
+        var first: ElementType<*>?
+        var last: ElementType<*>?
+        var next: ElementType<*>?
+        var previous: ElementType<*>?
     }
 
     /**
@@ -52,7 +102,7 @@ external interface PaginationItemOwnProps : mui.system.PropsWithSx {
     /**
      * The current page number.
      */
-    var page: react.ReactNode?
+    var page: ReactNode?
 
     /**
      * If `true` the pagination item is selected.
@@ -71,22 +121,6 @@ external interface PaginationItemOwnProps : mui.system.PropsWithSx {
      * @default 'medium'
      */
     var size: Size?
-
-    /**
-     * The components used for each slot inside.
-     *
-     * This prop is an alias for the `components` prop, which will be deprecated in the future.
-     *
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var first: react.ElementType<*>?
-        var last: react.ElementType<*>?
-        var next: react.ElementType<*>?
-        var previous: react.ElementType<*>?
-    }
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -110,11 +144,11 @@ external interface PaginationItemOwnProps : mui.system.PropsWithSx {
  *
  * Demos:
  *
- * - [Pagination](https://mui.com/material-ui/react-pagination/)
+ * - [Pagination](https://v6.mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [PaginationItem API](https://mui.com/material-ui/api/pagination-item/)
+ * - [PaginationItem API](https://v6.mui.com/material-ui/api/pagination-item/)
  */
 @JsName("default")
-external val PaginationItem: react.FC<PaginationItemProps>
+external val PaginationItem: FC<PaginationItemProps>

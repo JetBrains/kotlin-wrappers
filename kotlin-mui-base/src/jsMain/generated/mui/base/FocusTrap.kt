@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * Utility component that locks focus inside the component.
  *
@@ -15,4 +17,4 @@ package mui.base
  *
  * - [FocusTrap API](https://mui.com/base-ui/react-focus-trap/components-api/#focus-trap)
  */
-external val FocusTrap: react.FC<FocusTrapProps>
+external val FocusTrap: FC<FocusTrapProps>

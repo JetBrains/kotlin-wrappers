@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * NoSsr purposely removes components from the subject of Server Side Rendering (SSR).
  *
@@ -22,4 +24,4 @@ package mui.base
  *
  * - [NoSsr API](https://mui.com/base-ui/react-no-ssr/components-api/#no-ssr)
  */
-external val NoSsr: react.FC<NoSsrProps>
+external val NoSsr: FC<NoSsrProps>

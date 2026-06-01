@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ScopedCssBaselineProps :
     ScopedCssBaselineOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
 
 external interface ScopedCssBaselineOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -42,11 +49,11 @@ external interface ScopedCssBaselineOwnProps :
  *
  * Demos:
  *
- * - [CSS Baseline](https://mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://v6.mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
- * - [ScopedCssBaseline API](https://mui.com/material-ui/api/scoped-css-baseline/)
+ * - [ScopedCssBaseline API](https://v6.mui.com/material-ui/api/scoped-css-baseline/)
  */
 @JsName("default")
-external val ScopedCssBaseline: react.FC<ScopedCssBaselineProps>
+external val ScopedCssBaseline: FC<ScopedCssBaselineProps>

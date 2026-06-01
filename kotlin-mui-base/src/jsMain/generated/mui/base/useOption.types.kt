@@ -2,13 +2,17 @@
 
 package mui.base
 
+import react.Props
+import react.ReactNode
+import react.Ref
+import react.RefCallback
 import web.dom.Element
 import web.dom.ElementId
 
 external interface SelectOption<Value> {
     var value: Value
 
-    var label: react.ReactNode
+    var label: ReactNode
 
     var disabled: Boolean?
 
@@ -20,9 +24,9 @@ external interface UseOptionParameters<Value> {
 
     var id: ElementId?
 
-    var label: react.ReactNode
+    var label: ReactNode
 
-    var rootRef: react.Ref<Element>?
+    var rootRef: Ref<Element>?
 
     var value: Value
 }
@@ -45,10 +49,10 @@ external interface UseOptionReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown>>(externalProps?: ExternalProps) => UseOptionRootSlotProps<ExternalProps> */
+    var getRootProps: Props /* <ExternalProps extends Record<string, unknown>>(externalProps?: ExternalProps) => UseOptionRootSlotProps<ExternalProps> */
 
     /**
      * Ref to the root slot DOM node.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: RefCallback<Element>?
 }

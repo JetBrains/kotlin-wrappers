@@ -4,12 +4,16 @@
 
 package mui.base
 
+import react.FC
+import react.PropsWithChildren
+import react.PropsWithClassName
+import react.ReactNode
 import web.cssom.ClassName
 
 external interface CssAnimationProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
-    override var children: react.ReactNode?
+    PropsWithChildren,
+    PropsWithClassName {
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -48,4 +52,4 @@ external interface CssAnimationProps :
  *
  * - [CssAnimation API](https://mui.com/base-ui/react-transitions/components-api/#css-animation)
  */
-external val CssAnimation: react.FC<CssAnimationProps>
+external val CssAnimation: FC<CssAnimationProps>

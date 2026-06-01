@@ -3,15 +3,23 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import popper.core.Instance
 import popper.core.Modifier
+import popper.core.Options
+import popper.core.Placement
+import react.*
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.dom.Element
+import web.html.HTMLDivElement
 
 external interface PopperProps :
     PopperOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
 
-external interface PopperTransitionProps : react.Props {
+external interface PopperRootSlotPropsOverrides
+
+external interface PopperTransitionProps : Props {
     var `in`: Boolean
 
     var onEnter: () -> Unit
@@ -19,25 +27,25 @@ external interface PopperTransitionProps : react.Props {
     var onExited: () -> Unit
 }
 
-external interface PopperChildrenProps : react.Props {
-    var placement: popper.core.Placement
+external interface PopperChildrenProps : Props {
+    var placement: Placement
 
     var TransitionProps: PopperTransitionProps?
 }
 
-external interface PopperOwnProps : react.Props {
+external interface PopperOwnProps : PropsWithChildren {
     /**
      * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
      * or a function that returns either.
      * It's used to set the position of the popper.
      * The return value will passed as the reference object of the Popper instance.
      */
-    var anchorEl: dynamic
+    var anchorEl: Any? /* null | VirtualElement | HTMLElement | (() => HTMLElement) | (() => VirtualElement) */
 
     /**
      * Popper render function or node.
      */
-    var children: dynamic
+    override var children: ReactNode? /* React.ReactNode | ((props: PopperChildrenProps) => React.ReactNode) */
 
     /**
      * An HTML element or function that returns one.
@@ -91,18 +99,18 @@ external interface PopperOwnProps : react.Props {
      * Popper placement.
      * @default 'bottom'
      */
-    var placement: popper.core.Placement?
+    var placement: Placement?
 
     /**
      * Options provided to the [`Popper.js`](https://popper.js.org/docs/v2/constructors/#options) instance.
      * @default {}
      */
-    var popperOptions: popper.core.Options?
+    var popperOptions: Options?
 
     /**
      * A ref that points to the used popper instance.
      */
-    var popperRef: react.Ref<popper.core.Instance>?
+    var popperRef: Ref<Instance>?
 
     /**
      * The props used for each slot inside the Popper.
@@ -111,7 +119,7 @@ external interface PopperOwnProps : react.Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', PopperRootSlotPropsOverrides, PopperOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', PopperRootSlotPropsOverrides, PopperOwnerState> */
     }
 
     /**
@@ -133,11 +141,11 @@ external interface PopperSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }
 
-external interface PopperRootSlotProps : react.PropsWithClassName {
+external interface PopperRootSlotProps : PropsWithClassName {
     override var className: ClassName?
 
-    var ownerState: dynamic
+    var ownerState: Any? /* PopperOwnerState */
 }

@@ -2,20 +2,31 @@
 
 package mui.base
 
+import react.ElementType
+import react.Props
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
+
 external interface BadgeProps :
     BadgeOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>
+    HTMLAttributes<HTMLSpanElement>
 
-external interface BadgeOwnProps : react.PropsWithChildren {
+external interface BadgeRootSlotPropsOverrides
+
+external interface BadgeBadgeSlotPropsOverrides
+
+external interface BadgeOwnProps : PropsWithChildren {
     /**
      * The content rendered within the badge.
      */
-    var badgeContent: react.ReactNode?
+    var badgeContent: ReactNode?
 
     /**
      * The badge will be added relative to this node.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * If `true`, the badge is invisible.
@@ -36,8 +47,8 @@ external interface BadgeOwnProps : react.PropsWithChildren {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', BadgeRootSlotPropsOverrides, BadgeOwnerState> */
-        var badge: react.Props? /* SlotComponentProps<'span', BadgeBadgeSlotPropsOverrides, BadgeOwnerState> */
+        var root: Props? /* SlotComponentProps<'span', BadgeRootSlotPropsOverrides, BadgeOwnerState> */
+        var badge: Props? /* SlotComponentProps<'span', BadgeBadgeSlotPropsOverrides, BadgeOwnerState> */
     }
 
     /**
@@ -59,11 +70,11 @@ external interface BadgeSlots {
      * The component that renders the root.
      * @default 'span'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the badge.
      * @default 'span'
      */
-    var badge: react.ElementType<*>?
+    var badge: ElementType<*>?
 }

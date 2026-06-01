@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/system/useMediaQuery")
-
 package mui.system
+
+import web.cssom.MediaQueryList
 
 external interface UseMediaQueryOptions {
     /**
@@ -16,7 +16,7 @@ external interface UseMediaQueryOptions {
      * You can provide your own implementation of matchMedia.
      * This can be used for handling an iframe content window.
      */
-    var matchMedia: ((query: String) -> web.cssom.MediaQueryList)?
+    var matchMedia: ((query: String) -> MediaQueryList)?
 
     /**
      * To perform the server-side hydration, the hook needs to render twice.
@@ -32,15 +32,3 @@ external interface UseMediaQueryOptions {
      */
     var ssrMatchMedia: ((query: String) -> dynamic)?
 }
-
-@JsName("default")
-external fun useMediaQuery(
-    queryInput: String,
-    options: UseMediaQueryOptions? = definedExternally,
-): Boolean
-
-@JsName("default")
-external fun <Theme : Any> useMediaQuery(
-    queryInput: (theme: Theme) -> String,
-    options: UseMediaQueryOptions? = definedExternally,
-): Boolean

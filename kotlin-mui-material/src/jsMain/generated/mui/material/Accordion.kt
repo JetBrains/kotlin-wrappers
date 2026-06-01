@@ -9,18 +9,25 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface AccordionProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    mui.types.PropsWithComponent,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren,
+    PropsWithSx,
+    PropsWithComponent,
     PaperProps {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -57,7 +64,7 @@ external interface AccordionProps :
      * @param {React.SyntheticEvent} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {boolean} expanded The `expanded` state of the accordion.
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, expanded: Boolean) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>, expanded: Boolean) -> Unit)?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -66,38 +73,73 @@ external interface AccordionProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @deprecated Use `slots.transition` instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
+     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @deprecated Use `slots.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var TransitionComponent: react.ComponentType<*>?
+    var TransitionComponent: ComponentType<*>?
 
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
+     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var TransitionProps: mui.material.transitions.TransitionProps?
+    var TransitionProps: TransitionProps?
 }
 
 external interface AccordionSlots {
     /**
+     * The component that renders the root.
+     * @default Paper
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the heading.
+     * @default 'h3'
+     */
+    var heading: ElementType<*>
+
+    /**
      * The component that renders the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Collapse
      */
-    var transition: react.ComponentType<*>?
+    var transition: ElementType<*>
+}
+
+external interface AccordionRootSlotPropsOverrides
+
+external interface AccordionHeadingSlotPropsOverrides
+
+external interface AccordionTransitionSlotPropsOverrides
+
+external interface AccordionSlotProps : Props {
+    /** TS: SlotProps< React.ElementType<PaperProps>, AccordionRootSlotPropsOverrides, AccordionOwnerState > */
+    var root: PaperProps?
+
+    /** TS: SlotProps<'h3', AccordionHeadingSlotPropsOverrides, AccordionOwnerState> */
+    var heading: Any?
+
+    /** TS: SlotComponentProps< React.ElementType, TransitionProps & AccordionTransitionSlotPropsOverrides, AccordionOwnerState > */
+    var transition: TransitionProps?
+}
+
+external interface AccordionSlotsAndSlotProps : Props {
+    var slots: AccordionSlots?
+
+    var slotProps: AccordionSlotProps?
 }
 
 /**
  *
  * Demos:
  *
- * - [Accordion](https://mui.com/material-ui/react-accordion/)
+ * - [Accordion](https://v6.mui.com/material-ui/react-accordion/)
  *
  * API:
  *
- * - [Accordion API](https://mui.com/material-ui/api/accordion/)
- * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
+ * - [Accordion API](https://v6.mui.com/material-ui/api/accordion/)
+ * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
  */
 @JsName("default")
-external val Accordion: react.FC<AccordionProps>
+external val Accordion: FC<AccordionProps>

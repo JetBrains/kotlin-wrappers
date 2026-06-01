@@ -5,7 +5,8 @@
 package mui.material
 
 import mui.system.InitColorSchemeScriptProps
+import react.FC
 
 
 @JsName("default")
-external val InitColorSchemeScript: react.FC<InitColorSchemeScriptProps>
+external val InitColorSchemeScript: FC<InitColorSchemeScriptProps>

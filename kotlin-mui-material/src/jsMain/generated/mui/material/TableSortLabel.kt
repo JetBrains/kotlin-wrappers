@@ -5,16 +5,55 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.html.HTMLAttributes
+import web.html.HTMLSpanElement
 
 external interface TableSortLabelProps :
     TableSortLabelOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithComponent
+
+external interface TableSortLabelRootSlotPropsOverrides
+
+external interface TableSortLabelIconSlotPropsOverrides
+
+external interface TableSortLabelSlots {
+    /**
+     * The component that renders the root slot.
+     * @default span
+     */
+    var root: ElementType<*>?
+
+    /**
+     * The component that renders the icon slot.
+     * @default ArrowDownwardIcon
+     */
+    var icon: ElementType<*>?
+}
+
+external interface TableSortLabelSlotProps : Props {
+    /** TS: SlotProps< React.ElementType<React.HTMLAttributes<HTMLSpanElement>>, TableSortLabelRootSlotPropsOverrides, TableSortLabelOwnerState > */
+    var root: Any?
+
+    /** TS: SlotProps< React.ElementType<React.SVGAttributes<SVGSVGElement>>, TableSortLabelIconSlotPropsOverrides, TableSortLabelOwnerState > */
+    var icon: Any?
+}
+
+external interface TableSortLabelSlotsAndSlotProps : Props {
+    var slots: TableSortLabelSlots?
+
+    var slotProps: TableSortLabelSlotProps?
+}
+
+external interface TableSortLabelOwnerState
 
 external interface TableSortLabelOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * If `true`, the label will have the active styling (should be true for the sorted column).
      * @default false
@@ -24,7 +63,7 @@ external interface TableSortLabelOwnProps :
     /**
      * Label contents, the arrow will be appended automatically.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -47,7 +86,7 @@ external interface TableSortLabelOwnProps :
      * Sort icon to use.
      * @default ArrowDownwardIcon
      */
-    var IconComponent: react.ComponentType<*>?
+    var IconComponent: ComponentType<*>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -60,12 +99,12 @@ external interface TableSortLabelOwnProps :
  *
  * Demos:
  *
- * - [Table](https://mui.com/material-ui/react-table/)
+ * - [Table](https://v6.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableSortLabel API](https://mui.com/material-ui/api/table-sort-label/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [TableSortLabel API](https://v6.mui.com/material-ui/api/table-sort-label/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val TableSortLabel: react.FC<TableSortLabelProps>
+external val TableSortLabel: FC<TableSortLabelProps>

@@ -2,6 +2,12 @@
 
 package mui.base
 
+import react.RefCallback
+import react.dom.events.ChangeEventHandler
+import react.dom.events.FocusEventHandler
+import react.dom.html.HTMLAttributes
+import web.html.HTMLInputElement
+
 external interface UseSwitchParameters {
     /**
      * If `true`, the component is checked.
@@ -18,7 +24,7 @@ external interface UseSwitchParameters {
      */
     var disabled: Boolean?
 
-    var onBlur: react.dom.events.FocusEventHandler<*>?
+    var onBlur: FocusEventHandler<*>?
 
     /**
      * Callback fired when the state is changed.
@@ -27,11 +33,11 @@ external interface UseSwitchParameters {
      * You can pull out the new value by accessing `event.target.value` (string).
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLInputElement, *>?
+    var onChange: ChangeEventHandler<HTMLInputElement, *>?
 
-    var onFocus: react.dom.events.FocusEventHandler<*>?
+    var onFocus: FocusEventHandler<*>?
 
-    var onFocusVisible: react.dom.events.FocusEventHandler<*>?
+    var onFocusVisible: FocusEventHandler<*>?
 
     /**
      * If `true`, the component is read only.
@@ -65,12 +71,12 @@ external interface UseSwitchReturnValue {
      * @param externalProps props for the input slot
      * @returns props that should be spread on the input slot
      */
-    var getInputProps: (externalProps: react.dom.html.HTMLAttributes<web.html.HTMLInputElement>?) -> Any /* UseSwitchInputSlotProps */
+    var getInputProps: (externalProps: HTMLAttributes<HTMLInputElement>?) -> Any /* UseSwitchInputSlotProps */
 
     /**
      * Ref to the input slot's DOM node.
      */
-    var inputRef: react.RefCallback<web.html.HTMLInputElement>?
+    var inputRef: RefCallback<HTMLInputElement>?
 
     /**
      * If `true`, the component will be read only.

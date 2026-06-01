@@ -2,6 +2,12 @@
 
 package mui.base
 
+import react.Props
+import react.Ref
+import react.RefCallback
+import react.StateSetter
+import react.dom.events.MouseEventHandler
+import react.dom.events.SyntheticEvent
 import web.dom.Element
 import web.dom.ElementId
 
@@ -11,17 +17,17 @@ external interface UseTabParameters {
      * It's used to associate the tab with a tab panel(s) with the same value.
      * If the value is not provided, it falls back to the position index.
      */
-    var value: dynamic
+    var value: Any? /* number | string */
 
     /**
-     * If `true`, the tab will be disabled.
+     * Callback invoked when new value is being set.
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>, value: Any /* Number | String */) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>, value: Any /* Number | String */) -> Unit)?
 
     /**
      * Callback fired when the tab is clicked.
      */
-    var onClick: react.dom.events.MouseEventHandler<*>?
+    var onClick: MouseEventHandler<*>?
 
     /**
      * If `true`, the tab will be disabled.
@@ -37,7 +43,7 @@ external interface UseTabParameters {
     /**
      * Ref to the root slot's DOM element.
      */
-    var rootRef: react.Ref<Element>?
+    var rootRef: Ref<Element>?
 }
 
 external interface UseTabReturnValue {
@@ -46,7 +52,7 @@ external interface UseTabReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabRootSlotProps<ExternalProps> */
+    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabRootSlotProps<ExternalProps> */
 
     /**
      * If `true`, the tab is active (as in `:active` pseudo-class; in other words, pressed).
@@ -72,7 +78,7 @@ external interface UseTabReturnValue {
     /**
      * Ref to the root slot's DOM element.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: RefCallback<Element>?
 
     /**
      * If `true`, the tab is selected.
@@ -83,7 +89,7 @@ external interface UseTabReturnValue {
      * Sets the focus-visible state of the tab.
      * This is a workaround for browsers that do not support this feature natively.
      */
-    var setFocusVisible: react.StateSetter<Boolean>
+    var setFocusVisible: StateSetter<Boolean>
 
     /**
      * Total number of tabs in the nearest parent TabsList.

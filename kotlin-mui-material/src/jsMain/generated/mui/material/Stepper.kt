@@ -9,19 +9,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface StepperProps :
     StepperOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent,
-    mui.system.StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent,
+    StandardProps,
     PaperProps
 
 external interface StepperOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
-    PaperProps {
+    PaperProps,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * Set the active step (zero based index).
      * Set to -1 to disable all the steps.
@@ -39,7 +47,7 @@ external interface StepperOwnProps :
     /**
      * Two or more `<Step />` components.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -50,7 +58,7 @@ external interface StepperOwnProps :
      * An element to be placed between each step.
      * @default <StepConnector />
      */
-    var connector: react.ReactElement<*>?
+    var connector: Any? /* React.ReactElement<unknown, any> */
 
     /**
      * If set the `Stepper` will not assist in controlling steps for linear flow.
@@ -74,11 +82,11 @@ external interface StepperOwnProps :
  *
  * Demos:
  *
- * - [Stepper](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [Stepper API](https://mui.com/material-ui/api/stepper/)
+ * - [Stepper API](https://v6.mui.com/material-ui/api/stepper/)
  */
 @JsName("default")
-external val Stepper: react.FC<StepperProps>
+external val Stepper: FC<StepperProps>

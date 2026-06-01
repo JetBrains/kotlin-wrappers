@@ -4,11 +4,15 @@
 
 package mui.material
 
-external interface CssBaselineProps : react.PropsWithChildren {
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+
+external interface CssBaselineProps : PropsWithChildren {
     /**
      * You can wrap a node.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Enable `color-scheme` CSS property to use `theme.palette.mode`.
@@ -24,11 +28,11 @@ external interface CssBaselineProps : react.PropsWithChildren {
  *
  * Demos:
  *
- * - [CSS Baseline](https://mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://v6.mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
- * - [CssBaseline API](https://mui.com/material-ui/api/css-baseline/)
+ * - [CssBaseline API](https://v6.mui.com/material-ui/api/css-baseline/)
  */
 @JsName("default")
-external val CssBaseline: react.FC<CssBaselineProps>
+external val CssBaseline: FC<CssBaselineProps>

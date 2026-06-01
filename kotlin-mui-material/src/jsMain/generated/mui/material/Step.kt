@@ -5,17 +5,25 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface StepProps :
     StepOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent,
-    mui.system.StandardProps
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent,
+    StandardProps
 
 external interface StepOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * Sets the step as active. Is passed to child components.
      */
@@ -24,7 +32,7 @@ external interface StepOwnProps :
     /**
      * Should be `Step` sub-components such as `StepLabel`, `StepContent`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -70,11 +78,11 @@ external interface StepOwnProps :
  *
  * Demos:
  *
- * - [Stepper](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [Step API](https://mui.com/material-ui/api/step/)
+ * - [Step API](https://v6.mui.com/material-ui/api/step/)
  */
 @JsName("default")
-external val Step: react.FC<StepProps>
+external val Step: FC<StepProps>

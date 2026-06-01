@@ -2,4 +2,6 @@
 
 package mui.material
 
-typealias StackClasses = mui.system.StackClasses
+import mui.system.StackClasses
+
+typealias StackClasses = StackClasses

@@ -5,20 +5,29 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.TableHTMLAttributes
+import web.html.HTMLTableElement
 
 external interface TableProps :
     TableOwnProps,
-    react.dom.html.TableHTMLAttributes<web.html.HTMLTableElement>,
-    mui.types.PropsWithComponent
+    TableHTMLAttributes<HTMLTableElement>,
+    PropsWithComponent
+
+external interface TablePropsSizeOverrides
 
 external interface TableOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the table, normally `TableHead` and `TableBody`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -39,8 +48,6 @@ external interface TableOwnProps :
 
     /**
      * Set the header sticky.
-     *
-     * ⚠️ It doesn't work with IE11.
      * @default false
      */
     var stickyHeader: Boolean?
@@ -55,11 +62,11 @@ external interface TableOwnProps :
  *
  * Demos:
  *
- * - [Table](https://mui.com/material-ui/react-table/)
+ * - [Table](https://v6.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [Table API](https://mui.com/material-ui/api/table/)
+ * - [Table API](https://v6.mui.com/material-ui/api/table/)
  */
 @JsName("default")
-external val Table: react.FC<TableProps>
+external val Table: FC<TableProps>

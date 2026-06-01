@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -18,4 +20,4 @@ package mui.base
  *
  * - [Input API](https://mui.com/base-ui/react-input/components-api/#input)
  */
-external val Input: react.FC<InputProps>
+external val Input: FC<InputProps>

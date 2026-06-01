@@ -4,9 +4,14 @@
 
 package mui.material
 
+import mui.material.transitions.TransitionProps
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+
 external interface FadeProps :
-    mui.material.transitions.TransitionProps,
-    react.PropsWithChildren {
+    TransitionProps,
+    PropsWithChildren {
     /**
      * Perform the enter transition when it first mounts if `in` is also `true`.
      * Set this to `false` to disable this behavior.
@@ -17,7 +22,7 @@ external interface FadeProps :
     /**
      * A single child content element.
      */
-    override var children: react.ReactNode? /* react.ReactElement<*>? */
+    override var children: ReactNode? /* React.ReactElement<unknown, any> */
 
     /**
      * The transition timing function.
@@ -42,17 +47,17 @@ external interface FadeProps :
 }
 
 /**
- * The Fade transition is used by the [Modal](https://mui.com/material-ui/react-modal/) component.
+ * The Fade transition is used by the [Modal](https://v6.mui.com/material-ui/react-modal/) component.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  *
  * Demos:
  *
- * - [Transitions](https://mui.com/material-ui/transitions/)
+ * - [Transitions](https://v6.mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Fade API](https://mui.com/material-ui/api/fade/)
+ * - [Fade API](https://v6.mui.com/material-ui/api/fade/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")
-external val Fade: react.FC<FadeProps>
+external val Fade: FC<FadeProps>

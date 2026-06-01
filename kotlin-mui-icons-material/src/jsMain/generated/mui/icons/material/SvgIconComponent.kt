@@ -2,4 +2,6 @@
 
 package mui.icons.material
 
-typealias SvgIconComponent = react.FC<mui.material.SvgIconProps>
+import react.FC
+
+typealias SvgIconComponent = FC<mui.material.SvgIconProps>
