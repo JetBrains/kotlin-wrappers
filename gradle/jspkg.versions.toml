@@ -23,11 +23,11 @@ floating-ui-dom = "^1.7.6"
 floating-ui-react-dom = "^2.1.8"
 floating-ui-utils = "^0.2.11"
 jszip = "3.10.1"
-mui-material = "5.18.0"
 mui-base = "5.0.0-beta.40-1"
 mui-icons-material = "5.18.0"
-mui-system = "5.18.0"
 mui-lab = "5.0.0-alpha.177"
+mui-material = "5.18.0"
+mui-system = "5.18.0"
 muix-date-pickers = "7.28.0"
 muix-tree-view = "7.28.0"
 node = "^24.12.4"
@@ -120,16 +120,16 @@ floatingUi-reactDom = { group = "npm", name = "@floating-ui/react-dom", version.
 floatingUi-utils = { group = "npm", name = "@floating-ui/utils", version.ref = "floating-ui-utils" }
 # https://npmjs.com/package/jszip
 jszip = { group = "npm", name = "jszip", version.ref = "jszip" }
-# https://npmjs.com/package/@mui/material
-mui-material = { group = "npm", name = "@mui/material", version.ref = "mui-material" }
 # https://npmjs.com/package/@mui/base
 mui-base = { group = "npm", name = "@mui/base", version.ref = "mui-base" }
 # https://npmjs.com/package/@mui/icons-material
 mui-iconsMaterial = { group = "npm", name = "@mui/icons-material", version.ref = "mui-icons-material" }
-# https://npmjs.com/package/@mui/system
-mui-system = { group = "npm", name = "@mui/system", version.ref = "mui-system" }
 # https://npmjs.com/package/@mui/lab
 mui-lab = { group = "npm", name = "@mui/lab", version.ref = "mui-lab" }
+# https://npmjs.com/package/@mui/material
+mui-material = { group = "npm", name = "@mui/material", version.ref = "mui-material" }
+# https://npmjs.com/package/@mui/system
+mui-system = { group = "npm", name = "@mui/system", version.ref = "mui-system" }
 # https://npmjs.com/package/@mui/x-date-pickers
 mui-xDatePickers = { group = "npm", name = "@mui/x-date-pickers", version.ref = "muix-date-pickers" }
 # https://npmjs.com/package/@mui/x-tree-view
