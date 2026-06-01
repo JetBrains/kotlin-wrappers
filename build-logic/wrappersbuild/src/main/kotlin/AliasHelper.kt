@@ -3,10 +3,11 @@ import java.io.File
 class AliasHelper(
     rootDir: File,
 ) {
+    // TODO: use `jspkg` extension instead
     private val npmScopes = rootDir
-        .resolve("gradle.properties")
+        .resolve("gradle/jspkg.versions.toml")
         .readText()
-        .splitToSequence("# https://www.npmjs.com/package/")
+        .splitToSequence(" = { module = \"npm:")
         .drop(1)
         .filter { it.startsWith("@") }
         .map { it.substringBefore("/") }

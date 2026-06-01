@@ -1,3 +1,5 @@
-import wrappers.SettingsPlugin
-
-plugins.apply(SettingsPlugin::class.java)
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}

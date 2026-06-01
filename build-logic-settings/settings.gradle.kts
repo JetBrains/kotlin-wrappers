@@ -8,6 +8,5 @@ dependencyResolutionManagement {
     }
 }
 
-include("common")
 include("generatorbuild")
 include("wrappersbuild")
