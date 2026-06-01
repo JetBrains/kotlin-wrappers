@@ -8,7 +8,7 @@ import typescript.isClassDeclaration
 import typescript.isIdentifier
 import typescript.isMethodDeclaration
 
-fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
     ensure(isMethodDeclaration(node))

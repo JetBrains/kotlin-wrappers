@@ -8,7 +8,7 @@ import typescript.isClassDeclaration
 import typescript.isIdentifier
 import typescript.isPropertyDeclaration
 
-fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {
         ensure(isPropertyDeclaration(node))
 

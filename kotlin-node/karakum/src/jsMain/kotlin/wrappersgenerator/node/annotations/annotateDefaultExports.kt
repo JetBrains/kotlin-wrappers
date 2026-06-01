@@ -8,7 +8,7 @@ import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 import typescript.isVariableDeclaration
 
-fun annotateDefaultExports(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateDefaultExports(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     nullable {

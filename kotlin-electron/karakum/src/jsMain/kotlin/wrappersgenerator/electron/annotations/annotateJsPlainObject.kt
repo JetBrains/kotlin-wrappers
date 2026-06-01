@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
-fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     ensure(context.isAnonymousDeclaration)
 
     ensure(isIntersectionTypeNode(node))

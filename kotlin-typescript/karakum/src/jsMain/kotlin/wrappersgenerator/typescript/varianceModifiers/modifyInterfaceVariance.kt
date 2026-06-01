@@ -7,7 +7,7 @@ import typescript.Node
 import typescript.isInterfaceDeclaration
 import typescript.isTypeParameterDeclaration
 
-fun modifyInterfaceVariance(node: Node, context: Context) = nullable {
+suspend fun modifyInterfaceVariance(node: Node, context: Context) = nullable {
     ensure(isTypeParameterDeclaration(node))
 
     nullable {

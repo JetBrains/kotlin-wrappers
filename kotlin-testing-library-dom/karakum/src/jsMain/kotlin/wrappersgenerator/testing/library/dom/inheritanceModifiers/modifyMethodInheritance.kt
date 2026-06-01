@@ -8,7 +8,7 @@ import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 import typescript.isMethodSignature
 
-fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {
         ensure(isMethodSignature(node))
 

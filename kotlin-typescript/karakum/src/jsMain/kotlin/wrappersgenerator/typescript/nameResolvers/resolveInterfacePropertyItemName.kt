@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import typescript.*
 
-fun resolveInterfacePropertyTypeReferenceItemName(node: Node, context: Context) = nullable {
+suspend fun resolveInterfacePropertyTypeReferenceItemName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))
@@ -32,7 +32,7 @@ fun resolveInterfacePropertyTypeReferenceItemName(node: Node, context: Context) 
     "${parentName.replaceFirstChar { it.titlecase() }}${propertyName.replaceFirstChar { it.titlecase() }}Item"
 }
 
-fun resolveInterfacePropertyArrayTypeItemName(node: Node, context: Context) = nullable {
+suspend fun resolveInterfacePropertyArrayTypeItemName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val arrayType = ensureNotNull(

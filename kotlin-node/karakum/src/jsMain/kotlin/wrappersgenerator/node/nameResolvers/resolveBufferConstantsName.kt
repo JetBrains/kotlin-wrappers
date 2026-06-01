@@ -8,7 +8,7 @@ import typescript.Node
 import typescript.isIdentifier
 import typescript.isVariableDeclaration
 
-fun resolveBufferConstantsName(node: Node, context: Context) = nullable {
+suspend fun resolveBufferConstantsName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName

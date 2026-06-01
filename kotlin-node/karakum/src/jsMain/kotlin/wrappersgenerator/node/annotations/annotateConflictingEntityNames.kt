@@ -41,7 +41,7 @@ private fun checkNameByFileName(node: Node) = nullable {
     ensure(node.name?.text in fileNameConflictingEntities)
 } != null
 
-fun annotateConflictingEntityNames(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateConflictingEntityNames(node: Node, context: AnnotationContext) = nullable {
     ensure(isClassDeclaration(node))
     ensure(
         checkNameByNamespace(node, context)

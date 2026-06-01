@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import typescript.*
 
-fun resolveInterfacePropertyItemName(node: Node, context: Context) = nullable {
+suspend fun resolveInterfacePropertyItemName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))

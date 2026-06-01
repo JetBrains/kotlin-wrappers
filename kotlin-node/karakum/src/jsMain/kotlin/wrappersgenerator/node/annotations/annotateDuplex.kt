@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
-fun annotateDuplex(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateDuplex(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     ensure(sourceFileName.endsWith("stream.d.ts"))

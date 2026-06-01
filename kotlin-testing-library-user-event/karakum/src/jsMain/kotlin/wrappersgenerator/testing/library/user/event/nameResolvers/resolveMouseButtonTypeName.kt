@@ -8,7 +8,7 @@ import typescript.isIdentifier
 import typescript.isTypeLiteralNode
 import typescript.isVariableDeclaration
 
-fun resolveMouseButtonTypeName(node: Node, context: Context) = nullable {
+suspend fun resolveMouseButtonTypeName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     ensure(isTypeLiteralNode(node))

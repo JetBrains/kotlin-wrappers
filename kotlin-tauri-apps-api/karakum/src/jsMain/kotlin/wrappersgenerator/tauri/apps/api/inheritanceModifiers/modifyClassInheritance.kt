@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import typescript.Node
 import typescript.isClassDeclaration
 
-fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     ensure(isClassDeclaration(node))
 
     ensure(

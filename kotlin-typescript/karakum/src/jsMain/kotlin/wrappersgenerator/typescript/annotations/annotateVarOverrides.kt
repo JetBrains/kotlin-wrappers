@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
-fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
     nullable {
         ensure(isPropertySignature(node))
 

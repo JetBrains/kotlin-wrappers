@@ -63,7 +63,7 @@ private val interfacesWithSuperclass = setOf(
     "DebugLogger",
 )
 
-fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {
     nullable {
         ensure(isInterfaceDeclaration(node))
         ensure(node.name.text in interfacesWithSuperclass)

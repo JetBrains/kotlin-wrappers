@@ -8,7 +8,7 @@ import typescript.isIntersectionTypeNode
 import typescript.isMappedTypeNode
 import typescript.isTypeAliasDeclaration
 
-fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {
         ensure(isMappedTypeNode(node))
 

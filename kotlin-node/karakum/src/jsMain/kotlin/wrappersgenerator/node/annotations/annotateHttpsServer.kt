@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
-fun annotateHttpsServer(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateHttpsServer(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     ensure(sourceFileName.endsWith("https.d.ts"))

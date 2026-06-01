@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
-fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     nullable {

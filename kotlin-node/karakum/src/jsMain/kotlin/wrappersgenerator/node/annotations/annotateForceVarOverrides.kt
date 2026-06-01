@@ -9,7 +9,7 @@ import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 import typescript.isPropertySignature
 
-fun annotateForceVarOverrides(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateForceVarOverrides(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     nullable {

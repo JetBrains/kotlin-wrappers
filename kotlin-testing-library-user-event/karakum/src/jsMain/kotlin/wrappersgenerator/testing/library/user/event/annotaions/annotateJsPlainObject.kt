@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.nameResolverServiceKey
 import typescript.Node
 import typescript.isIntersectionTypeNode
 
-fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     val nameResolverService = context.requireService(nameResolverServiceKey)
 
     nullable {

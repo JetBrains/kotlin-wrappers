@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import typescript.*
 
-fun resolveInterfacePropertyIntersectionPropertyName(node: Node, context: Context) = nullable {
+suspend fun resolveInterfacePropertyIntersectionPropertyName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val subProperty = ensureNotNull(typeScriptService.getParent(node))

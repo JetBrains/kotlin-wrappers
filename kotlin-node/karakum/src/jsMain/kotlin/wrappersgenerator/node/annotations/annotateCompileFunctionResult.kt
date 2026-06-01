@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
-fun annotateCompileFunctionResult(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateCompileFunctionResult(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     ensure(sourceFileName.endsWith("vm.d.ts"))

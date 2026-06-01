@@ -8,7 +8,7 @@ import typescript.isLiteralTypeNode
 import typescript.isStringLiteral
 import typescript.isUnionTypeNode
 
-fun resolveConfigVersionName(node: Node, context: Context) = nullable {
+suspend fun resolveConfigVersionName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     ensure(isLiteralTypeNode(node))

@@ -9,7 +9,7 @@ import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 import typescript.isParameter
 
-fun resolveDirectOptionsParameterName(node: Node, context: Context) = nullable {
+suspend fun resolveDirectOptionsParameterName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val parameter = ensureNotNull(typeScriptService.getParent(node))

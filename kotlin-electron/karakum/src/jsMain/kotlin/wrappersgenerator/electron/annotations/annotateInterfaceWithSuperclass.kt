@@ -45,7 +45,7 @@ private val interfacesWithSuperclass = setOf(
     "WillNavigateEvent",
 )
 
-fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {
     ensure(isInterfaceDeclaration(node))
     ensure(node.name.text in interfacesWithSuperclass)
 

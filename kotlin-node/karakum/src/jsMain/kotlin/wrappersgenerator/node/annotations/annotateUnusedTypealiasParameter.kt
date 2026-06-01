@@ -7,7 +7,7 @@ import typescript.Node
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeParameterDeclaration
 
-fun annotateUnusedTypealiasParameter(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateUnusedTypealiasParameter(node: Node, context: AnnotationContext) = nullable {
     ensure(isTypeParameterDeclaration(node))
 
     val typeAlias = ensureNotNull(node.getParentOrNull())

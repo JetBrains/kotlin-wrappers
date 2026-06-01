@@ -16,7 +16,7 @@ private val propertyNames = mapOf(
     "dataTypes" to "dataType",
 )
 
-fun resolveInterfaceArrayFieldName(node: Node, context: Context) = nullable {
+suspend fun resolveInterfaceArrayFieldName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))

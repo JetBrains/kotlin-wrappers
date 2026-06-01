@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.camelize
 import typescript.*
 
-fun resolveSessionListenerCallbackActionName(node: Node, context: Context) = nullable {
+suspend fun resolveSessionListenerCallbackActionName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val callbackParameterCallbackParameter = ensureNotNull(typeScriptService.getParent(node))

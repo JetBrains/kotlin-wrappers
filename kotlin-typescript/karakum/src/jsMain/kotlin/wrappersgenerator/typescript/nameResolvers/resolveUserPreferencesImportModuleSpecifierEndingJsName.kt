@@ -8,7 +8,7 @@ import typescript.isLiteralTypeNode
 import typescript.isStringLiteral
 import typescript.isUnionTypeNode
 
-fun resolveUserPreferencesImportModuleSpecifierEndingJsName(node: Node, context: Context) = nullable {
+suspend fun resolveUserPreferencesImportModuleSpecifierEndingJsName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     ensure(isLiteralTypeNode(node))

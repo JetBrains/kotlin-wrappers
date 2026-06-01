@@ -34,7 +34,7 @@ private fun isGenericEventEmitterSignature(
     }
 } != null
 
-fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     nullable {

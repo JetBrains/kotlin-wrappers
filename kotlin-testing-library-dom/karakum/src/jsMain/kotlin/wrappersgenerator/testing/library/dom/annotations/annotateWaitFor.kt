@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import typescript.Node
 import typescript.isFunctionDeclaration
 
-fun annotateWaitFor(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateWaitFor(node: Node, context: AnnotationContext) = nullable {
     ensure(isFunctionDeclaration(node))
     ensure(node.name?.text == "waitFor")
 

@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
-fun resolveV8OptionsName(node: Node, context: Context) = nullable {
+suspend fun resolveV8OptionsName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName

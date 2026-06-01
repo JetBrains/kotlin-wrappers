@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
-fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
+suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {
         ensure(isPropertySignature(node))
 

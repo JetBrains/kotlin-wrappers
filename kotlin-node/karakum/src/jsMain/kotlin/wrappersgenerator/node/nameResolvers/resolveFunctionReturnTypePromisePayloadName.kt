@@ -8,7 +8,7 @@ import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
 
-fun resolveFunctionReturnTypePromisePayloadName(node: Node, context: Context) = nullable {
+suspend fun resolveFunctionReturnTypePromisePayloadName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))

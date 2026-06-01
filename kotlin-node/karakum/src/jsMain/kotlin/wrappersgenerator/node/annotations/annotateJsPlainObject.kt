@@ -26,7 +26,7 @@ private val jsoInterfaces = setOf(
     "SourceTextModuleOptions",
 )
 
-fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
+suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     nullable {
