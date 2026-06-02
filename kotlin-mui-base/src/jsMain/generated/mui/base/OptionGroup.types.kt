@@ -2,23 +2,26 @@
 
 package mui.base
 
+import react.*
+import react.dom.html.LiHTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLLIElement
 
 external interface OptionGroupProps :
     OptionGroupOwnProps,
-    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>
+    LiHTMLAttributes<HTMLLIElement>
 
 external interface OptionGroupOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * The human-readable description of the group.
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     override var className: ClassName?
 
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * If `true` all the options in the group will be disabled.
@@ -40,9 +43,9 @@ external interface OptionGroupOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'li', OptionGroupRootSlotPropsOverrides, OptionGroupOwnerState> */
-        var label: react.Props? /* SlotComponentProps<'span', OptionGroupLabelSlotPropsOverrides, OptionGroupOwnerState> */
-        var list: react.Props? /* SlotComponentProps<'ul', OptionGroupListSlotPropsOverrides, OptionGroupOwnerState> */
+        var root: Props? /* SlotComponentProps<'li', OptionGroupRootSlotPropsOverrides, OptionGroupOwnerState> */
+        var label: Props? /* SlotComponentProps<'span', OptionGroupLabelSlotPropsOverrides, OptionGroupOwnerState> */
+        var list: Props? /* SlotComponentProps<'ul', OptionGroupListSlotPropsOverrides, OptionGroupOwnerState> */
     }
 }
 
@@ -51,17 +54,17 @@ external interface OptionGroupSlots {
      * The component that renders the root.
      * @default 'li'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the label.
      * @default 'span'
      */
-    var label: react.ElementType<*>?
+    var label: ElementType<*>?
 
     /**
      * The component that renders the list.
      * @default 'ul'
      */
-    var list: react.ElementType<*>?
+    var list: ElementType<*>?
 }

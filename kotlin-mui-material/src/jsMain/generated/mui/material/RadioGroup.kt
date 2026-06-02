@@ -8,6 +8,10 @@
 
 package mui.material
 
+import react.FC
+import react.dom.events.ChangeEvent
+import web.html.HTMLInputElement
+
 external interface RadioGroupProps :
     FormGroupProps {
     /**
@@ -28,7 +32,7 @@ external interface RadioGroupProps :
      * @param {string} value The value of the selected radio button.
      * You can pull out the new value by accessing `event.target.value` (string).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement, *>, value: String) -> Unit)?
+    var onChange: ((event: ChangeEvent<HTMLInputElement, *>, value: String) -> Unit)?
 
     /**
      * Value of the selected radio button. The DOM API casts this to a string.
@@ -40,12 +44,12 @@ external interface RadioGroupProps :
  *
  * Demos:
  *
- * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
+ * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
  *
  * API:
  *
- * - [RadioGroup API](https://mui.com/material-ui/api/radio-group/)
- * - inherits [FormGroup API](https://mui.com/material-ui/api/form-group/)
+ * - [RadioGroup API](https://v6.mui.com/material-ui/api/radio-group/)
+ * - inherits [FormGroup API](https://v6.mui.com/material-ui/api/form-group/)
  */
 @JsName("default")
-external val RadioGroup: react.FC<RadioGroupProps>
+external val RadioGroup: FC<RadioGroupProps>

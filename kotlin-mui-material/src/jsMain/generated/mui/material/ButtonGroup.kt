@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ButtonGroupProps :
     ButtonGroupOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
 
 external interface ButtonGroupOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -92,11 +99,11 @@ external interface ButtonGroupOwnProps :
  *
  * Demos:
  *
- * - [Button Group](https://mui.com/material-ui/react-button-group/)
+ * - [Button Group](https://v6.mui.com/material-ui/react-button-group/)
  *
  * API:
  *
- * - [ButtonGroup API](https://mui.com/material-ui/api/button-group/)
+ * - [ButtonGroup API](https://v6.mui.com/material-ui/api/button-group/)
  */
 @JsName("default")
-external val ButtonGroup: react.FC<ButtonGroupProps>
+external val ButtonGroup: FC<ButtonGroupProps>

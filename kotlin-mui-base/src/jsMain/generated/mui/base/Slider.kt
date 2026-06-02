@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package mui.base
  *
  * - [Slider API](https://mui.com/base-ui/react-slider/components-api/#slider)
  */
-external val Slider: react.FC<SliderProps>
+external val Slider: FC<SliderProps>

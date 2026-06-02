@@ -2,6 +2,8 @@
 
 package mui.base
 
+import react.Ref
+import react.RefCallback
 import web.dom.Element
 import web.html.HTMLElement
 
@@ -21,7 +23,7 @@ external interface UseMenuButtonParameters {
     /**
      * The ref to the root element.
      */
-    var rootRef: react.Ref<HTMLElement>?
+    var rootRef: Ref<HTMLElement>?
 }
 
 external interface UseMenuButtonReturnValue {
@@ -42,5 +44,5 @@ external interface UseMenuButtonReturnValue {
     /**
      * The ref to the root element.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: RefCallback<Element>?
 }

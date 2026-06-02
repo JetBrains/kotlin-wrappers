@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLUListElement
 
 external interface ImageListProps :
     ImageListOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLUListElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLUListElement>,
+    PropsWithComponent
 
 external interface ImageListOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component, normally `ImageListItem`s.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -41,7 +48,7 @@ external interface ImageListOwnProps :
      * The height of one row in px.
      * @default 'auto'
      */
-    var rowHeight: dynamic
+    var rowHeight: Any? /* number | 'auto' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -59,11 +66,11 @@ external interface ImageListOwnProps :
  *
  * Demos:
  *
- * - [Image List](https://mui.com/material-ui/react-image-list/)
+ * - [Image List](https://v6.mui.com/material-ui/react-image-list/)
  *
  * API:
  *
- * - [ImageList API](https://mui.com/material-ui/api/image-list/)
+ * - [ImageList API](https://v6.mui.com/material-ui/api/image-list/)
  */
 @JsName("default")
-external val ImageList: react.FC<ImageListProps>
+external val ImageList: FC<ImageListProps>

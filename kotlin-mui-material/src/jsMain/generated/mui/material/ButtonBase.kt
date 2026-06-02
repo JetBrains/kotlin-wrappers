@@ -5,22 +5,28 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.events.FocusEventHandler
+import react.dom.html.ButtonHTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLButtonElement
 
 external interface ButtonBaseProps :
     ButtonBaseOwnProps,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
-    mui.types.PropsWithComponent
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    PropsWithComponent
 
 external interface ButtonBaseOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * A ref for imperative actions.
      * It currently only supports `focusVisible()` action.
      */
-    var action: react.Ref<ButtonBaseActions>?
+    var action: Ref<ButtonBaseActions>?
 
     /**
      * If `true`, the ripples are centered.
@@ -32,7 +38,7 @@ external interface ButtonBaseOwnProps :
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -80,13 +86,13 @@ external interface ButtonBaseOwnProps :
      * The component used to render a link when the `href` prop is provided.
      * @default 'a'
      */
-    var LinkComponent: react.ElementType<*>?
+    var LinkComponent: ElementType<*>?
 
     /**
      * Callback fired when the component is focused with a keyboard.
      * We trigger a `onFocus` callback too.
      */
-    var onFocusVisible: react.dom.events.FocusEventHandler<*>?
+    var onFocusVisible: FocusEventHandler<*>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -101,12 +107,12 @@ external interface ButtonBaseOwnProps :
     /**
      * Props applied to the `TouchRipple` element.
      */
-    var TouchRippleProps: dynamic
+    var TouchRippleProps: Any? /* Partial<TouchRippleProps> */
 
     /**
      * A ref that points to the `TouchRipple` element.
      */
-    var touchRippleRef: react.Ref<TouchRippleActions>?
+    var touchRippleRef: Ref<TouchRippleActions>?
 }
 
 external interface ButtonBaseActions {
@@ -120,11 +126,11 @@ external interface ButtonBaseActions {
  *
  * Demos:
  *
- * - [Button](https://mui.com/material-ui/react-button/)
+ * - [Button](https://v6.mui.com/material-ui/react-button/)
  *
  * API:
  *
- * - [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val ButtonBase: react.FC<ButtonBaseProps>
+external val ButtonBase: FC<ButtonBaseProps>

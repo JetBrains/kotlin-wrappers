@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLTableSectionElement
 
 external interface TableFooterProps :
     TableFooterOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLTableSectionElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLTableSectionElement>,
+    PropsWithComponent
 
 external interface TableFooterOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component, normally `TableRow`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -35,11 +42,11 @@ external interface TableFooterOwnProps :
  *
  * Demos:
  *
- * - [Table](https://mui.com/material-ui/react-table/)
+ * - [Table](https://v6.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableFooter API](https://mui.com/material-ui/api/table-footer/)
+ * - [TableFooter API](https://v6.mui.com/material-ui/api/table-footer/)
  */
 @JsName("default")
-external val TableFooter: react.FC<TableFooterProps>
+external val TableFooter: FC<TableFooterProps>

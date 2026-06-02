@@ -9,12 +9,21 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface MobileStepperProps :
-    mui.system.StandardProps,
+    StandardProps,
     PaperProps,
-    mui.system.PropsWithSx {
+    MobileStepperSlotsAndSlotProps,
+    PropsWithSx {
     /**
      * Set the active step (zero based index).
      * Defines which dot is highlighted when the variant is 'dots'.
@@ -25,7 +34,7 @@ external interface MobileStepperProps :
     /**
      * A back button element. For instance, it can be a `Button` or an `IconButton`.
      */
-    var backButton: react.ReactNode
+    var backButton: ReactNode
 
     /**
      * Override or extend the styles applied to the component.
@@ -34,13 +43,14 @@ external interface MobileStepperProps :
 
     /**
      * Props applied to the `LinearProgress` element.
+     * @deprecated Use `slotProps.progress` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var LinearProgressProps: LinearProgressProps?
 
     /**
      * A next button element. For instance, it can be a `Button` or an `IconButton`.
      */
-    var nextButton: react.ReactNode
+    var nextButton: ReactNode
 
     /**
      * Set the positioning type.
@@ -65,16 +75,64 @@ external interface MobileStepperProps :
     var variant: MobileStepperVariant?
 }
 
+external interface MobileStepperSlots {
+    /**
+     * The component that renders the root slot.
+     * @default Paper
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the progress slot.
+     * @default LinearProgress
+     */
+    var progress: ElementType<*>
+
+    /**
+     * The component that renders the dots slot.
+     * @default 'div'
+     */
+    var dots: ElementType<*>
+
+    /**
+     * The component that renders the dot slot.
+     * @default 'div'
+     */
+    var dot: ElementType<*>
+}
+
+external interface MobileStepperSlotProps : Props {
+    /** TS: SlotProps< React.ElementType<PaperProps>, MobileStepperRootSlotPropsOverrides, MobileStepperOwnerState > */
+    var root: PaperProps?
+
+    /** TS: SlotProps< React.ElementType<LinearProgressProps>, MobileStepperProgressSlotPropsOverrides, MobileStepperOwnerState > */
+    var progress: LinearProgressProps?
+
+    /** TS: SlotProps<'div', MobileStepperDotsSlotPropsOverrides, MobileStepperOwnerState> */
+    var dots: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps<'div', MobileStepperDotSlotPropsOverrides, MobileStepperOwnerState> */
+    var dot: HTMLAttributes<HTMLDivElement>?
+}
+
+external interface MobileStepperSlotsAndSlotProps : Props {
+    var slots: MobileStepperSlots?
+
+    var slotProps: MobileStepperSlotProps?
+}
+
+external interface MobileStepperOwnerState
+
 /**
  *
  * Demos:
  *
- * - [Stepper](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [MobileStepper API](https://mui.com/material-ui/api/mobile-stepper/)
- * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
+ * - [MobileStepper API](https://v6.mui.com/material-ui/api/mobile-stepper/)
+ * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
  */
 @JsName("default")
-external val MobileStepper: react.FC<MobileStepperProps>
+external val MobileStepper: FC<MobileStepperProps>

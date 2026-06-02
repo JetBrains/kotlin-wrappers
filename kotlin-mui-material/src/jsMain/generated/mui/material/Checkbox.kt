@@ -9,13 +9,22 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.events.ChangeEvent
+import react.dom.html.InputHTMLAttributes
 import web.dom.ElementId
+import web.html.HTMLInputElement
 
 external interface CheckboxProps :
-    mui.system.StandardProps,
+    StandardProps,
     SwitchBaseProps,
-    mui.system.PropsWithSx {
+    PropsWithSx {
     /**
      * If `true`, the component is checked.
      */
@@ -25,7 +34,7 @@ external interface CheckboxProps :
      * The icon to display when the component is checked.
      * @default <CheckBoxIcon />
      */
-    var checkedIcon: react.ReactNode?
+    var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -56,7 +65,7 @@ external interface CheckboxProps :
      * The icon to display when the component is unchecked.
      * @default <CheckBoxOutlineBlankIcon />
      */
-    var icon: react.ReactNode?
+    var icon: ReactNode?
 
     /**
      * The id of the `input` element.
@@ -76,17 +85,7 @@ external interface CheckboxProps :
      * The icon to display when the component is indeterminate.
      * @default <IndeterminateCheckBoxIcon />
      */
-    var indeterminateIcon: react.ReactNode?
-
-    /**
-     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
-     */
-    var inputProps: react.dom.html.InputHTMLAttributes<web.html.HTMLInputElement>?
-
-    /**
-     * Pass a ref to the `input` element.
-     */
-    var inputRef: react.Ref<web.html.HTMLInputElement>?
+    var indeterminateIcon: ReactNode?
 
     /**
      * Callback fired when the state is changed.
@@ -94,7 +93,7 @@ external interface CheckboxProps :
      * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement, *>, checked: Boolean) -> Unit)?
+    var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the `input` element is required.
@@ -121,17 +120,47 @@ external interface CheckboxProps :
     var value: Any? /* SwitchBaseProps['value'] */
 }
 
+external interface CheckboxSlots {
+    /**
+     * The component that renders the root slot.
+     * @default SwitchBase
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the input slot.
+     * @default SwitchBase's input
+     */
+    var input: ElementType<*>
+}
+
+external interface CheckboxSlotProps : Props {
+    /** TS: SlotProps< React.ElementType<SwitchBaseProps>, CheckboxRootSlotPropsOverrides, CheckboxOwnerState > */
+    var root: SwitchBaseProps?
+
+    /** TS: SlotProps<'input', CheckboxInputSlotPropsOverrides, CheckboxOwnerState> */
+    var input: InputHTMLAttributes<HTMLInputElement>?
+}
+
+external interface CheckboxSlotsAndSlotProps : Props {
+    var slots: CheckboxSlots?
+
+    var slotProps: CheckboxSlotProps?
+}
+
+external interface CheckboxOwnerState
+
 /**
  *
  * Demos:
  *
- * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
- * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
+ * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
+ * - [Transfer List](https://v6.mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [Checkbox API](https://mui.com/material-ui/api/checkbox/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [Checkbox API](https://v6.mui.com/material-ui/api/checkbox/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val Checkbox: react.FC<CheckboxProps>
+external val Checkbox: FC<CheckboxProps>

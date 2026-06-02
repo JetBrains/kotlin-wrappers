@@ -2,5 +2,7 @@
 
 package mui.system
 
+import react.CSSProperties
+
 @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-typealias SxProps<T> = react.CSSProperties
+typealias SxProps<T> = CSSProperties

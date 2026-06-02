@@ -2,6 +2,12 @@
 
 package mui.base
 
+import js.array.ReadonlyArray
+import react.Props
+import react.Ref
+import react.RefCallback
+import react.dom.events.ChangeEvent
+import react.dom.events.MouseEvent
 import web.dom.Element
 
 external interface SelectOptionDefinition<Value> {
@@ -42,7 +48,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the trigger button element.
      */
-    var buttonRef: react.Ref<Element>?
+    var buttonRef: Ref<Element>?
 
     /**
      * The `id` attribute of the listbox element.
@@ -52,7 +58,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
     /**
      * The ref of the listbox element.
      */
-    var listboxRef: react.Ref<Element>?
+    var listboxRef: Ref<Element>?
 
     /**
      * If `true`, the end user can select multiple values.
@@ -99,7 +105,7 @@ external interface UseSelectParameters<OptionValue, Multiple> {
      * An alternative way to specify the options.
      * If this parameter is set, options defined as JSX children are ignored.
      */
-    var options: dynamic
+    var options: Any? /* ReadonlyArray<SelectOptionDefinition<OptionValue>> */
 
     /**
      * A function to convert the currently selected value to a string.
@@ -145,7 +151,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * Ref to the button slot DOM node.
      */
-    var buttonRef: react.RefCallback<Element>?
+    var buttonRef: RefCallback<Element>?
 
     /**
      * If `true`, the select is disabled.
@@ -163,21 +169,21 @@ external interface UseSelectReturnValue<Value, Multiple> {
      * @param externalProps event handlers for the button slot
      * @returns props that should be spread on the button slot
      */
-    var getButtonProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSelectButtonSlotProps<ExternalProps> */
+    var getButtonProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the hidden input slot's props.
      * @param externalProps event handlers for the hidden input slot
      * @returns HTML input attributes that should be spread on the hidden input slot
      */
-    var getHiddenInputProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSelectHiddenInputSlotProps<ExternalProps> */
+    var getHiddenInputProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the listbox slot's props.
      * @param externalProps event handlers for the listbox slot
      * @returns props that should be spread on the listbox slot
      */
-    var getListboxProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSelectListboxSlotProps<ExternalProps> */
+    var getListboxProps: (externalProps: Props?) -> Props
 
     /**
      * A function that returns the metadata of an option with a given value.
@@ -190,7 +196,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * A value to be passed to the `SelectProvider` component.
      */
-    var contextValue: dynamic
+    var contextValue: Any? /* SelectProviderValue<Value> */
 
     /**
      * The value of the highlighted option.
@@ -200,7 +206,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * Ref to the listbox slot DOM node.
      */
-    var listboxRef: react.RefCallback<Element>?
+    var listboxRef: RefCallback<Element>?
 
     /**
      * If `true`, the listbox is open.
@@ -210,28 +216,28 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * Values of all the registered options.
      */
-    var options: dynamic
+    var options: ReadonlyArray<Value>
 
     /**
      * The value of the selected option(s).
      */
-    var value: dynamic
+    var value: Any? /* SelectValue<Value, Multiple> */
 }
 
 external interface ButtonClickAction {
-    var type: dynamic
+    var type: Any? /* typeof SelectActionTypes.buttonClick */
 
-    var event: react.dom.events.MouseEvent<*, *>
+    var event: MouseEvent<*, *>
 }
 
 external interface BrowserAutofillAction<OptionValue> {
-    var type: dynamic
+    var type: Any? /* typeof SelectActionTypes.browserAutoFill */
 
     var item: OptionValue
 
-    var event: react.dom.events.ChangeEvent<*, *>
+    var event: ChangeEvent<*, *>
 }
 
-external interface SelectInternalState {
+external interface SelectInternalState<OptionValue> : ListState<OptionValue> {
     var open: Boolean
 }

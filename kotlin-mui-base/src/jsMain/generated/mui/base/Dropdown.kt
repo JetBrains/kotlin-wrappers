@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package mui.base
  *
  * - [Dropdown API](https://mui.com/base-ui/react-menu/components-api/#dropdown)
  */
-external val Dropdown: react.FC<DropdownProps>
+external val Dropdown: FC<DropdownProps>

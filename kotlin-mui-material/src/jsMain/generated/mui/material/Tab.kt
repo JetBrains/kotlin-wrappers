@@ -9,16 +9,22 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.ReactNode
+import react.dom.html.ButtonHTMLAttributes
+import web.html.HTMLButtonElement
 
 external interface TabProps :
     TabOwnProps,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
-    mui.types.PropsWithComponent
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    PropsWithComponent
 
 external interface TabOwnProps :
-    mui.system.PropsWithSx,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement> {
+    PropsWithSx,
+    ButtonHTMLAttributes<HTMLButtonElement> {
     /**
      * This prop isn't supported.
      * Use the `component` prop if you need to change the children structure.
@@ -45,7 +51,7 @@ external interface TabOwnProps :
     /**
      * The icon to display.
      */
-    var icon: react.ReactElement<*>?
+    var icon: Any? /* string | React.ReactElement<unknown> */
 
     /**
      * The position of the icon relative to the label.
@@ -56,7 +62,7 @@ external interface TabOwnProps :
     /**
      * The label element.
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -80,12 +86,12 @@ external interface TabOwnProps :
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://v6.mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tab API](https://mui.com/material-ui/api/tab/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [Tab API](https://v6.mui.com/material-ui/api/tab/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val Tab: react.FC<TabProps>
+external val Tab: FC<TabProps>

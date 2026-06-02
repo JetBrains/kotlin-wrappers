@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * Portals provide a first-class way to render children into a DOM node
  * that exists outside the DOM hierarchy of the parent component.
@@ -16,4 +18,4 @@ package mui.base
  *
  * - [Portal API](https://mui.com/base-ui/react-portal/components-api/#portal)
  */
-external val Portal: react.FC<PortalProps>
+external val Portal: FC<PortalProps>

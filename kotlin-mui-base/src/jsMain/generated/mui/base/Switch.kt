@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * The foundation for building custom-styled switches.
  *
@@ -19,4 +21,4 @@ package mui.base
  *
  * - [Switch API](https://mui.com/base-ui/react-switch/components-api/#switch)
  */
-external val Switch: react.FC<SwitchProps>
+external val Switch: FC<SwitchProps>

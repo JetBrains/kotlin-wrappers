@@ -5,18 +5,25 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 import web.html.Hidden
 
 external interface SpeedDialProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * SpeedDialActions to display when the SpeedDial is `open`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -42,7 +49,7 @@ external interface SpeedDialProps :
     override var hidden: Hidden?
 
     /**
-     * Props applied to the [`Fab`](/material-ui/api/fab/) element.
+     * Props applied to the [`Fab`](https://mui.com/material-ui/api/fab/) element.
      * @default {}
      */
     var FabProps: FabProps?
@@ -51,7 +58,7 @@ external interface SpeedDialProps :
      * The icon to display in the SpeedDial Fab. The `SpeedDialIcon` component
      * provides a default Icon with animation.
      */
-    var icon: react.ReactNode?
+    var icon: ReactNode?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -59,7 +66,7 @@ external interface SpeedDialProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"toggle"`, `"blur"`, `"mouseLeave"`, `"escapeKeyDown"`.
      */
-    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>, reason: CloseReason) -> Unit)?
+    var onClose: ((event: SyntheticEvent<*, *>, reason: CloseReason) -> Unit)?
 
     /**
      * Callback fired when the component requests to be open.
@@ -67,7 +74,7 @@ external interface SpeedDialProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"toggle"`, `"focus"`, `"mouseEnter"`.
      */
-    var onOpen: ((event: react.dom.events.SyntheticEvent<*, *>, reason: OpenReason) -> Unit)?
+    var onOpen: ((event: SyntheticEvent<*, *>, reason: OpenReason) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -77,7 +84,7 @@ external interface SpeedDialProps :
     /**
      * The icon to display in the SpeedDial Fab when the SpeedDial is open.
      */
-    var openIcon: react.ReactNode?
+    var openIcon: ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -86,10 +93,11 @@ external interface SpeedDialProps :
 
     /**
      * The component used for the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Zoom
+     * * @deprecated Use `slots.transition` instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
      */
-    var TransitionComponent: react.ComponentType<mui.material.transitions.TransitionProps>?
+    var TransitionComponent: ComponentType<TransitionProps>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -104,19 +112,37 @@ external interface SpeedDialProps :
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
      */
-    var TransitionProps: mui.material.transitions.TransitionProps?
+    var TransitionProps: TransitionProps?
 }
+
+external interface SpeedDialSlots {
+    /**
+     * The component that renders the root slot.
+     * @default 'div'
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the transition.
+     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @default Zoom
+     */
+    var transition: ElementType<*>
+}
+
+external interface SpeedDialOwnerState
 
 /**
  *
  * Demos:
  *
- * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
+ * - [Speed Dial](https://v6.mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
- * - [SpeedDial API](https://mui.com/material-ui/api/speed-dial/)
+ * - [SpeedDial API](https://v6.mui.com/material-ui/api/speed-dial/)
  */
 @JsName("default")
-external val SpeedDial: react.FC<SpeedDialProps>
+external val SpeedDial: FC<SpeedDialProps>

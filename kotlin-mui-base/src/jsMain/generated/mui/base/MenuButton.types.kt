@@ -2,12 +2,13 @@
 
 package mui.base
 
+import react.*
 import web.cssom.ClassName
 
 external interface MenuButtonProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
-    override var children: react.ReactNode?
+    PropsWithChildren,
+    PropsWithClassName {
+    override var children: ReactNode?
 
     /**
      * Class name applied to the root element.
@@ -45,7 +46,7 @@ external interface MenuButtonProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', MenuButtonRootSlotPropsOverrides, MenuButtonOwnerState> */
+        var root: Props? /* SlotComponentProps<'button', MenuButtonRootSlotPropsOverrides, MenuButtonOwnerState> */
     }
 }
 
@@ -54,5 +55,5 @@ external interface MenuButtonSlots {
      * The component that renders the root.
      * @default 'button'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }

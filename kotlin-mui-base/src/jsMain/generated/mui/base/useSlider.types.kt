@@ -3,6 +3,11 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import react.Props
+import react.ReactNode
+import react.Ref
+import react.RefCallback
+import react.dom.events.SyntheticEvent
 import web.dom.Element
 import web.events.Event
 
@@ -15,7 +20,7 @@ external interface UseSliderParameters {
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    var defaultValue: Any? /* number | ReadonlyArray<number> */
 
     /**
      * If `true`, the component is disabled.
@@ -41,7 +46,7 @@ external interface UseSliderParameters {
      * If an array, it should contain objects with `value` and an optional `label` keys.
      * @default false
      */
-    var marks: dynamic
+    var marks: Any? /* boolean | ReadonlyArray<Mark> */
 
     /**
      * The maximum allowed value of the slider.
@@ -79,7 +84,7 @@ external interface UseSliderParameters {
      * @param {React.SyntheticEvent | Event} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {number | number[]} value The new value.
      */
-    var onChangeCommitted: ((event: react.dom.events.SyntheticEvent<*, *>, value: ReadonlyArray<Number>) -> Unit)?
+    var onChangeCommitted: ((event: SyntheticEvent<*, *>, value: ReadonlyArray<Number>) -> Unit)?
 
     /**
      * The component orientation.
@@ -90,7 +95,7 @@ external interface UseSliderParameters {
     /**
      * The ref attached to the root of the Slider.
      */
-    var rootRef: react.Ref<Element>?
+    var rootRef: Ref<Element>?
 
     /**
      * A transformation function, to change the scale of the slider.
@@ -127,13 +132,13 @@ external interface UseSliderParameters {
      * The value of the slider.
      * For ranged sliders, provide an array with two values.
      */
-    var value: dynamic
+    var value: Any? /* number | ReadonlyArray<number> */
 }
 
 external interface Mark {
     var value: Number
 
-    var label: react.ReactNode?
+    var label: ReactNode?
 }
 
 external interface UseSliderReturnValue {
@@ -145,12 +150,12 @@ external interface UseSliderReturnValue {
     /**
      * The orientation of the slider.
      */
-    var axis: dynamic
+    var axis: Any? /* Axis */
 
     /**
      * Returns the `offset` and `leap` methods to calculate the positioning styles based on the slider axis.
      */
-    var axisProps: react.Props /* { [key in Axis]: AxisProps<key>; } */
+    var axisProps: Props /* { [key in Axis]: AxisProps<key>; } */
 
     /**
      * If `true`, the slider is being dragged.
@@ -167,21 +172,21 @@ external interface UseSliderReturnValue {
      * @param externalProps props for the hidden input slot
      * @returns props that should be spread on the hidden input slot
      */
-    var getHiddenInputProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderHiddenInputProps<ExternalProps> */
+    var getHiddenInputProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the root slot's props.
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the thumb slot's props.
      * @param externalProps props for the thumb slot
      * @returns props that should be spread on the thumb slot
      */
-    var getThumbProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderThumbSlotProps<ExternalProps> */
+    var getThumbProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the thumb slot's style prop.
@@ -193,7 +198,7 @@ external interface UseSliderReturnValue {
     /**
      * The marks of the slider. Marks indicate predetermined values to which the user can move the slider.
      */
-    var marks: dynamic
+    var marks: ReadonlyArray<Mark>
 
     /**
      * The thumb index for the current value when in hover state.
@@ -208,7 +213,7 @@ external interface UseSliderReturnValue {
     /**
      * Ref to the root slot's DOM node.
      */
-    var rootRef: react.RefCallback<Element>?
+    var rootRef: RefCallback<Element>?
 
     /**
      * The track leap for the current value of the slider.
@@ -223,5 +228,5 @@ external interface UseSliderReturnValue {
     /**
      * The possible values of the slider.
      */
-    var values: dynamic
+    var values: ReadonlyArray<Number>
 }

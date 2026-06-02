@@ -34,8 +34,13 @@ sealed external interface TabClasses {
     /** Styles applied to the root element if `wrapped={true}`. */
     val wrapped: ClassName
 
-    /** Styles applied to the `icon` HTML element if both `icon` and `label` are provided. */
+    /** Styles applied to the `icon` HTML element if both `icon` and `label` are provided.
+     * @deprecated Use `icon` class instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details
+     */
     val iconWrapper: ClassName
+
+    /** Styles applied to the `icon` HTML element if both `icon` and `label` are provided. */
+    val icon: ClassName
 }
 
 external val tabClasses: TabClasses

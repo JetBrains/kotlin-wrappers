@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.ButtonHTMLAttributes
+import web.html.HTMLButtonElement
 
 external interface ButtonProps :
     ButtonOwnProps,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
-    mui.types.PropsWithComponent
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    PropsWithComponent
 
 external interface ButtonOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -54,7 +61,7 @@ external interface ButtonOwnProps :
     /**
      * Element placed after the children.
      */
-    var endIcon: react.ReactNode?
+    var endIcon: ReactNode?
 
     /**
      * If `true`, the button will take up the full width of its container.
@@ -69,6 +76,27 @@ external interface ButtonOwnProps :
     var href: String?
 
     /**
+     * If `true`, the loading indicator is visible and the button is disabled.
+     * If `true | false`, the loading wrapper is always rendered before the children to prevent [Google Translation Crash](https://github.com/mui/material-ui/issues/27853).
+     * @default null
+     */
+    var loading: Boolean?
+
+    /**
+     * Element placed before the children if the button is in loading state.
+     * The node should contain an element with `role="progressbar"` with an accessible name.
+     * By default, it renders a `CircularProgress` that is labeled by the button itself.
+     * @default <CircularProgress color="inherit" size={16} />
+     */
+    var loadingIndicator: ReactNode?
+
+    /**
+     * The loading indicator can be positioned on the start, end, or the center of the button.
+     * @default 'center'
+     */
+    var loadingPosition: LoadingPosition?
+
+    /**
      * The size of the component.
      * `small` is equivalent to the dense button styling.
      * @default 'medium'
@@ -78,7 +106,7 @@ external interface ButtonOwnProps :
     /**
      * Element placed before the children.
      */
-    var startIcon: react.ReactNode?
+    var startIcon: ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -96,13 +124,13 @@ external interface ButtonOwnProps :
  *
  * Demos:
  *
- * - [Button Group](https://mui.com/material-ui/react-button-group/)
- * - [Button](https://mui.com/material-ui/react-button/)
+ * - [Button Group](https://v6.mui.com/material-ui/react-button-group/)
+ * - [Button](https://v6.mui.com/material-ui/react-button/)
  *
  * API:
  *
- * - [Button API](https://mui.com/material-ui/api/button/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [Button API](https://v6.mui.com/material-ui/api/button/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val Button: react.FC<ButtonProps>
+external val Button: FC<ButtonProps>

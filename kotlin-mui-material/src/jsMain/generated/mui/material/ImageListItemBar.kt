@@ -9,17 +9,23 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ImageListItemBarProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithSx {
     /**
      * An IconButton element to be used as secondary action target
      * (primary action target is the item itself).
      */
-    var actionIcon: react.ReactNode?
+    var actionIcon: ReactNode?
 
     /**
      * Position of secondary action IconButton.
@@ -41,7 +47,7 @@ external interface ImageListItemBarProps :
     /**
      * String or element serving as subtitle (support text).
      */
-    var subtitle: react.ReactNode?
+    var subtitle: ReactNode?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -51,18 +57,18 @@ external interface ImageListItemBarProps :
     /**
      * Title to be displayed.
      */
-    var title: react.ReactNode?
+    var title: ReactNode?
 }
 
 /**
  *
  * Demos:
  *
- * - [Image List](https://mui.com/material-ui/react-image-list/)
+ * - [Image List](https://v6.mui.com/material-ui/react-image-list/)
  *
  * API:
  *
- * - [ImageListItemBar API](https://mui.com/material-ui/api/image-list-item-bar/)
+ * - [ImageListItemBar API](https://v6.mui.com/material-ui/api/image-list-item-bar/)
  */
 @JsName("default")
-external val ImageListItemBar: react.FC<ImageListItemBarProps>
+external val ImageListItemBar: FC<ImageListItemBarProps>

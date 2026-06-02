@@ -2,9 +2,11 @@
 
 package mui.material
 
+import react.dom.html.LabelHTMLAttributes
 import seskar.js.JsValue
+import web.html.HTMLLabelElement
 
-typealias FormLabelBaseProps = react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>
+typealias FormLabelBaseProps = LabelHTMLAttributes<HTMLLabelElement>
 
 sealed external interface FormLabelColor {
     companion object {

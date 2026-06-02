@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.LabelHTMLAttributes
+import web.html.HTMLLabelElement
 
 external interface FormLabelProps :
-    react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
-    mui.types.PropsWithComponent,
+    LabelHTMLAttributes<HTMLLabelElement>,
+    PropsWithComponent,
     FormLabelOwnProps
 
 external interface FormLabelOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -67,13 +74,13 @@ external interface FormLabelOwnProps :
  *
  * Demos:
  *
- * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
- * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
- * - [Switch](https://mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
+ * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://v6.mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormLabel API](https://mui.com/material-ui/api/form-label/)
+ * - [FormLabel API](https://v6.mui.com/material-ui/api/form-label/)
  */
 @JsName("default")
-external val FormLabel: react.FC<FormLabelProps>
+external val FormLabel: FC<FormLabelProps>

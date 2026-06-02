@@ -9,17 +9,25 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.html.InputHTMLAttributes
+import web.html.HTMLInputElement
 
 external interface RadioProps :
-    mui.system.StandardProps,
+    StandardProps,
     SwitchBaseProps,
-    mui.system.PropsWithSx {
+    PropsWithSx {
     /**
      * The icon to display when the component is checked.
      * @default <RadioButtonIcon checked />
      */
-    var checkedIcon: react.ReactNode?
+    var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -43,7 +51,7 @@ external interface RadioProps :
      * The icon to display when the component is unchecked.
      * @default <RadioButtonIcon />
      */
-    var icon: react.ReactNode?
+    var icon: ReactNode?
 
     /**
      * The size of the component.
@@ -58,16 +66,46 @@ external interface RadioProps :
     override var sx: SxProps<Theme>?
 }
 
+external interface RadioSlots {
+    /**
+     * The component that renders the root slot.
+     * @default SwitchBase
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the input slot.
+     * @default SwitchBase's input
+     */
+    var input: ElementType<*>
+}
+
+external interface RadioSlotProps : Props {
+    /** TS: SlotProps< React.ElementType<SwitchBaseProps>, RadioRootSlotPropsOverrides, RadioOwnerState > */
+    var root: SwitchBaseProps?
+
+    /** TS: SlotProps<'input', RadioInputSlotPropsOverrides, RadioOwnerState> */
+    var input: InputHTMLAttributes<HTMLInputElement>?
+}
+
+external interface RadioSlotsAndSlotProps : Props {
+    var slots: RadioSlots?
+
+    var slotProps: RadioSlotProps?
+}
+
+external interface RadioOwnerState
+
 /**
  *
  * Demos:
  *
- * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
+ * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
  *
  * API:
  *
- * - [Radio API](https://mui.com/material-ui/api/radio/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [Radio API](https://v6.mui.com/material-ui/api/radio/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val Radio: react.FC<RadioProps>
+external val Radio: FC<RadioProps>

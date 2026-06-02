@@ -4,11 +4,15 @@
 
 package mui.material
 
-external interface HiddenProps : react.PropsWithChildren {
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+
+external interface HiddenProps : PropsWithChildren {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Specify which implementation to use.  'js' is the default, 'css' works better for
@@ -28,7 +32,7 @@ external interface HiddenProps : react.PropsWithChildren {
      * For instance, you could be using the user-agent or the client-hints.
      * https://caniuse.com/#search=client%20hint
      */
-    var initialWidth: dynamic
+    var initialWidth: Any? /* Breakpoint */
 
     /**
      * If `true`, component is hidden on screens below (but not including) this size.
@@ -57,7 +61,7 @@ external interface HiddenProps : react.PropsWithChildren {
     /**
      * Hide the given breakpoint(s).
      */
-    var only: dynamic
+    var only: Any? /* Breakpoint | Breakpoint[] */
 
     /**
      * If `true`, component is hidden on screens below (but not including) this size.
@@ -101,13 +105,13 @@ external interface HiddenProps : react.PropsWithChildren {
  *
  * Demos:
  *
- * - [Hidden](https://mui.com/material-ui/react-hidden/)
+ * - [Hidden](https://v6.mui.com/material-ui/react-hidden/)
  *
  * API:
  *
- * - [Hidden API](https://mui.com/material-ui/api/hidden/)
+ * - [Hidden API](https://v6.mui.com/material-ui/api/hidden/)
  *
- * @deprecated The Hidden component was deprecated in Material UI v5. To learn more, see [the Hidden section](/material-ui/migration/v5-component-changes/#hidden) of the migration docs.
+ * @deprecated The Hidden component was deprecated in Material UI v5. To learn more, see [the Hidden section](https://mui.com/material-ui/migration/v5-component-changes/#hidden) of the migration docs.
  */
 @JsName("default")
-external val Hidden: react.FC<HiddenProps>
+external val Hidden: FC<HiddenProps>

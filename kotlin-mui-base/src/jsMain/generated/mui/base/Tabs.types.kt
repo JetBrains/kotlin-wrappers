@@ -2,19 +2,23 @@
 
 package mui.base
 
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLDivElement
 
 external interface TabsProps :
     TabsOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
 
 external interface TabsOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * The value of the currently selected `Tab`.
@@ -31,7 +35,7 @@ external interface TabsOwnProps :
      * The component orientation (layout flow direction).
      * @default 'horizontal'
      */
-    var orientation: dynamic
+    var orientation: Any? /* TabsOrientation */
 
     /**
      * The direction of the text.
@@ -44,7 +48,7 @@ external interface TabsOwnProps :
     /**
      * Callback invoked when new value is being set.
      */
-    var onChange: ((event: react.dom.events.SyntheticEvent<*, *>?, value: Any /* Number | String */?) -> Unit)?
+    var onChange: ((event: SyntheticEvent<*, *>?, value: Any /* Number | String */?) -> Unit)?
 
     /**
      * If `true` the selected tab changes on focus. Otherwise it only
@@ -59,7 +63,7 @@ external interface TabsOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', TabsRootSlotPropsOverrides, TabsOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', TabsRootSlotPropsOverrides, TabsOwnerState> */
     }
 
     /**
@@ -75,5 +79,5 @@ external interface TabsSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }

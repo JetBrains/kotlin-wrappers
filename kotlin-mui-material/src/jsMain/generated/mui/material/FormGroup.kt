@@ -5,17 +5,24 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface FormGroupProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -41,12 +48,12 @@ external interface FormGroupProps :
  *
  * Demos:
  *
- * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
- * - [Switch](https://mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
+ * - [Switch](https://v6.mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormGroup API](https://mui.com/material-ui/api/form-group/)
+ * - [FormGroup API](https://v6.mui.com/material-ui/api/form-group/)
  */
 @JsName("default")
-external val FormGroup: react.FC<FormGroupProps>
+external val FormGroup: FC<FormGroupProps>

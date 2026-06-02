@@ -6,6 +6,16 @@ package mui.system
 
 import js.objects.Record
 
+external interface Typography
+
+external interface Mixins
+
+external interface Shadows
+
+external interface Transitions
+
+external interface ZIndex
+
 external interface ThemeOptions {
     var shape: ShapeOptions?
 
@@ -13,23 +23,23 @@ external interface ThemeOptions {
 
     var direction: Direction?
 
-    var mixins: dynamic
+    var mixins: Mixins?
 
-    var palette: dynamic /* Record<String, *> */
+    var palette: Any? /* Record<String, *> */
 
-    var shadows: dynamic
+    var shadows: Any? /* Shadows */
 
-    var spacing: dynamic
+    var spacing: Any? /* SpacingOptions */
 
-    var transitions: dynamic
+    var transitions: Transitions?
 
     var components: Record<String, *>?
 
-    var typography: dynamic
+    var typography: Any? /* Typography */
 
-    var zIndex: dynamic
+    var zIndex: ZIndex?
 
-    var unstable_sxConfig: dynamic
+    var unstable_sxConfig: Any? /* SxConfig */
 }
 
 external interface Theme {
@@ -39,25 +49,25 @@ external interface Theme {
 
     var direction: Direction
 
-    var palette: dynamic /* Record<String, *> */
+    var palette: Any? /* Record<String, *> */
 
-    var shadows: dynamic
+    var shadows: Any? /* Shadows */
 
     var spacing: Spacing
 
-    var transitions: dynamic
+    var transitions: Transitions?
 
     var components: Record<String, *>?
 
-    var mixins: dynamic
+    var mixins: Mixins?
 
-    var typography: dynamic
+    var typography: Any? /* Typography */
 
-    var zIndex: dynamic
+    var zIndex: ZIndex?
 
-    var applyStyles: dynamic
+    var applyStyles: Any? /* ApplyStyles<'light' | 'dark'> */
 
-    var unstable_sxConfig: dynamic
+    var unstable_sxConfig: Any? /* SxConfig */
 
     var unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 }

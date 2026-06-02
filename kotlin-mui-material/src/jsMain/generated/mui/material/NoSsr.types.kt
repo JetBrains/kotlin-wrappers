@@ -2,11 +2,14 @@
 
 package mui.material
 
-external interface NoSsrProps : react.PropsWithChildren {
+import react.PropsWithChildren
+import react.ReactNode
+
+external interface NoSsrProps : PropsWithChildren {
     /**
      * You can wrap a node.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * If `true`, the component will not only prevent server-side rendering.
@@ -19,5 +22,5 @@ external interface NoSsrProps : react.PropsWithChildren {
      * The fallback content to display.
      * @default null
      */
-    var fallback: react.ReactNode?
+    var fallback: ReactNode?
 }

@@ -9,14 +9,26 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import mui.system.Union
+import react.ElementType
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.events.ChangeEvent
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
 import web.dom.ElementId
+import web.html.HTMLDivElement
+import web.html.HTMLInputElement
 
 external interface SelectProps<Value> :
-    mui.system.StandardProps,
+    StandardProps,
     InputProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * If `true`, the width of the popover will automatically be set according to the items inside the
      * menu, otherwise it will be at least the width of the select input.
@@ -30,7 +42,7 @@ external interface SelectProps<Value> :
      *
      * ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -66,7 +78,7 @@ external interface SelectProps<Value> :
      * The icon that displays the arrow.
      * @default ArrowDropDownIcon
      */
-    var IconComponent: react.ElementType<*>?
+    var IconComponent: ElementType<*>?
 
     /**
      * The `id` of the wrapper element or the `select` element when `native`.
@@ -76,7 +88,7 @@ external interface SelectProps<Value> :
     /**
      * An `Input` element; does not have to be a material-ui specific `Input`.
      */
-    var input: react.ReactElement<*>?
+    var input: Any? /* React.ReactElement<unknown, any> */
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
@@ -85,9 +97,9 @@ external interface SelectProps<Value> :
     var inputProps: InputBaseComponentProps?
 
     /**
-     * See [OutlinedInput#label](/material-ui/api/outlined-input/#props)
+     * See [OutlinedInput#label](https://mui.com/material-ui/api/outlined-input/#props)
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     /**
      * The ID of an element that acts as an additional label. The Select will
@@ -96,7 +108,7 @@ external interface SelectProps<Value> :
     var labelId: String?
 
     /**
-     * Props applied to the [`Menu`](/material-ui/api/menu/) element.
+     * Props applied to the [`Menu`](https://mui.com/material-ui/api/menu/) element.
      */
     var MenuProps: MenuProps?
 
@@ -120,7 +132,7 @@ external interface SelectProps<Value> :
      * **Warning**: This is a generic event, not a change event, unless the change event is caused by browser autofill.
      * @param {object} [child] The react element that was selected when `native` is `false` (default).
      */
-    var onChange: ((event: react.dom.events.ChangeEvent<web.html.HTMLInputElement, *>, child: react.ReactNode) -> Unit)?
+    var onChange: ((event: ChangeEvent<HTMLInputElement, *>, child: ReactNode) -> Unit)?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -128,7 +140,7 @@ external interface SelectProps<Value> :
      *
      * @param {object} event The event source of the callback.
      */
-    var onClose: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
+    var onClose: ((event: SyntheticEvent<*, *>) -> Unit)?
 
     /**
      * Callback fired when the component requests to be opened.
@@ -136,7 +148,7 @@ external interface SelectProps<Value> :
      *
      * @param {object} event The event source of the callback.
      */
-    var onOpen: ((event: react.dom.events.SyntheticEvent<*, *>) -> Unit)?
+    var onOpen: ((event: SyntheticEvent<*, *>) -> Unit)?
 
     /**
      * If `true`, the component is shown.
@@ -151,12 +163,12 @@ external interface SelectProps<Value> :
      * @param {any} value The `value` provided to the component.
      * @returns {ReactNode}
      */
-    var renderValue: ((value: Value) -> react.ReactNode)?
+    var renderValue: ((value: Value) -> ReactNode)?
 
     /**
      * Props applied to the clickable div element.
      */
-    var SelectDisplayProps: react.dom.html.HTMLAttributes<web.html.HTMLDivElement>?
+    var SelectDisplayProps: HTMLAttributes<HTMLDivElement>?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -170,7 +182,7 @@ external interface SelectProps<Value> :
      * If the value is an object it must have reference equality with the option in order to be selected.
      * If the value is not an object, the string representation must match with the string representation of the option in order to be selected.
      */
-    var value: dynamic
+    var value: Any? /* Value | '' */
 
     /**
      * The variant to use.
@@ -185,7 +197,7 @@ external interface FilledSelectProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'filled' */
+    var variant: Union /* 'filled' */
 }
 
 external interface StandardSelectProps :
@@ -194,7 +206,7 @@ external interface StandardSelectProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union /* 'standard' */
+    var variant: Union /* 'standard' */
 }
 
 external interface OutlinedSelectProps :
@@ -203,19 +215,19 @@ external interface OutlinedSelectProps :
      * The variant to use.
      * @default 'outlined'
      */
-    var variant: mui.system.Union? /* 'outlined' */
+    var variant: Union? /* 'outlined' */
 }
 
 /**
  *
  * Demos:
  *
- * - [Select](https://mui.com/material-ui/react-select/)
+ * - [Select](https://v6.mui.com/material-ui/react-select/)
  *
  * API:
  *
- * - [Select API](https://mui.com/material-ui/api/select/)
- * - inherits [OutlinedInput API](https://mui.com/material-ui/api/outlined-input/)
+ * - [Select API](https://v6.mui.com/material-ui/api/select/)
+ * - inherits [OutlinedInput API](https://v6.mui.com/material-ui/api/outlined-input/)
  */
 @JsName("default")
-external val Select: react.FC<SelectProps<*>>
+external val Select: FC<SelectProps<*>>

@@ -4,38 +4,68 @@
 
 package mui.material.styles
 
-external interface CommonColors {
-    var black: web.cssom.Color
+external interface Color {
+    var `50`: String
 
-    var white: web.cssom.Color
+    var `100`: String
+
+    var `200`: String
+
+    var `300`: String
+
+    var `400`: String
+
+    var `500`: String
+
+    var `600`: String
+
+    var `700`: String
+
+    var `800`: String
+
+    var `900`: String
+
+    var A100: String
+
+    var A200: String
+
+    var A400: String
+
+    var A700: String
+}
+
+external interface CommonColors {
+    var black: String
+
+    var white: String
 }
 
 external interface TypeText {
-    var primary: web.cssom.Color
+    var primary: String
 
-    var secondary: web.cssom.Color
+    var secondary: String
 
-    var disabled: web.cssom.Color
+    var disabled: String
 }
 
 external interface TypeAction {
-    var active: web.cssom.Color
+    var active: String
 
-    var hover: web.cssom.Color
+    var hover: String
 
     var hoverOpacity: Number
 
-    var selected: web.cssom.Color
+    var selected: String
 
     var selectedOpacity: Number
 
-    var disabled: web.cssom.Color
+    var disabled: String
 
     var disabledOpacity: Number
 
-    var disabledBackground: web.cssom.Color
+    var disabledBackground: String
 
-    var focus: web.cssom.Color
+    var focus: String
 
     var focusOpacity: Number
 
@@ -49,23 +79,23 @@ external interface TypeBackground {
 }
 
 external interface SimplePaletteColorOptions {
-    var light: web.cssom.Color?
+    var light: String?
 
-    var main: web.cssom.Color
+    var main: String
 
-    var dark: web.cssom.Color?
+    var dark: String?
 
-    var contrastText: web.cssom.Color?
+    var contrastText: String?
 }
 
 external interface PaletteColor {
-    var light: web.cssom.Color
+    var light: String
 
-    var main: web.cssom.Color
+    var main: String
 
-    var dark: web.cssom.Color
+    var dark: String
 
-    var contrastText: web.cssom.Color
+    var contrastText: String
 }
 
 external interface TypeObject {
@@ -73,21 +103,21 @@ external interface TypeObject {
 
     var action: TypeAction
 
-    var divider: dynamic
+    var divider: Any? /* TypeDivider */
 
     var background: TypeBackground
 }
 
 external interface PaletteAugmentColorOptions {
-    var color: dynamic
+    var color: Any? /* PaletteColorOptions */
 
-    var mainShade: dynamic
+    var mainShade: Any? /* number | string */
 
-    var lightShade: dynamic
+    var lightShade: Any? /* number | string */
 
-    var darkShade: dynamic
+    var darkShade: Any? /* number | string */
 
-    var name: dynamic
+    var name: Any? /* number | string */
 }
 
 external interface Palette {
@@ -97,7 +127,7 @@ external interface Palette {
 
     var contrastThreshold: Number
 
-    var tonalOffset: dynamic
+    var tonalOffset: Any? /* PaletteTonalOffset */
 
     var primary: PaletteColor
 
@@ -111,11 +141,11 @@ external interface Palette {
 
     var success: PaletteColor
 
-    var grey: dynamic
+    var grey: Any? /* Color */
 
     var text: TypeText
 
-    var divider: dynamic
+    var divider: Any? /* TypeDivider */
 
     var action: TypeAction
 
@@ -137,27 +167,27 @@ external interface Channels {
 }
 
 external interface PaletteOptions {
-    var primary: dynamic
+    var primary: Any? /* PaletteColorOptions */
 
-    var secondary: dynamic
+    var secondary: Any? /* PaletteColorOptions */
 
-    var error: dynamic
+    var error: Any? /* PaletteColorOptions */
 
-    var warning: dynamic
+    var warning: Any? /* PaletteColorOptions */
 
-    var info: dynamic
+    var info: Any? /* PaletteColorOptions */
 
-    var success: dynamic
+    var success: Any? /* PaletteColorOptions */
 
     var mode: mui.material.PaletteMode?
 
-    var tonalOffset: dynamic
+    var tonalOffset: Any? /* PaletteTonalOffset */
 
     var contrastThreshold: Number?
 
     var common: CommonColors?
 
-    var grey: dynamic
+    var grey: Any? /* ColorPartial */
 
     var text: TypeText?
 

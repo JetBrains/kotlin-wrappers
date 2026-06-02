@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLTableSectionElement
 
 external interface TableHeadProps :
     TableHeadOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLTableSectionElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLTableSectionElement>,
+    PropsWithComponent
 
 external interface TableHeadOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component, normally `TableRow`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -35,11 +42,11 @@ external interface TableHeadOwnProps :
  *
  * Demos:
  *
- * - [Table](https://mui.com/material-ui/react-table/)
+ * - [Table](https://v6.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableHead API](https://mui.com/material-ui/api/table-head/)
+ * - [TableHead API](https://v6.mui.com/material-ui/api/table-head/)
  */
 @JsName("default")
-external val TableHead: react.FC<TableHeadProps>
+external val TableHead: FC<TableHeadProps>

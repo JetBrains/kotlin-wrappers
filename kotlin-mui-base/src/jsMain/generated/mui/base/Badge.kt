@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -18,4 +20,4 @@ package mui.base
  *
  * - [Badge API](https://mui.com/base-ui/react-badge/components-api/#badge)
  */
-external val Badge: react.FC<BadgeProps>
+external val Badge: FC<BadgeProps>

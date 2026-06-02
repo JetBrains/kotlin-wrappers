@@ -2,8 +2,12 @@
 
 package mui.base
 
-external interface DropdownProps : react.PropsWithChildren {
-    override var children: react.ReactNode?
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.events.SyntheticEvent
+
+external interface DropdownProps : PropsWithChildren {
+    override var children: ReactNode?
 
     /**
      * If `true`, the dropdown is initially open.
@@ -13,7 +17,7 @@ external interface DropdownProps : react.PropsWithChildren {
     /**
      * Callback fired when the component requests to be opened or closed.
      */
-    var onOpenChange: ((event: react.dom.events.SyntheticEvent<*, *>?, open: Boolean) -> Unit)?
+    var onOpenChange: ((event: SyntheticEvent<*, *>?, open: Boolean) -> Unit)?
 
     /**
      * Allows to control whether the dropdown is open.

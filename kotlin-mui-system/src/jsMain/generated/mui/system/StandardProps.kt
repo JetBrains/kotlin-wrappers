@@ -2,6 +2,9 @@
 
 package mui.system
 
+import react.PropsWithClassName
+import react.PropsWithStyle
+
 external interface StandardProps :
-    react.PropsWithStyle,
-    react.PropsWithClassName
+    PropsWithStyle,
+    PropsWithClassName

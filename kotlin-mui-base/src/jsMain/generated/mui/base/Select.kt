@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * The foundation for building custom-styled select components.
  *
@@ -19,4 +21,4 @@ package mui.base
  *
  * - [Select API](https://mui.com/base-ui/react-select/components-api/#select)
  */
-external val Select: react.FC<SelectProps<*>>
+external val Select: FC<SelectProps<*>>

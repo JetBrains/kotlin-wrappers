@@ -5,18 +5,26 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.events.MouseEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 import web.html.HTMLElement
 
 external interface ToggleButtonGroupProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -57,7 +65,7 @@ external interface ToggleButtonGroupProps :
      * this is a single value; when false an array of selected values. If no value
      * is selected and `exclusive` is true the value is null; when false an empty array.
      */
-    var onChange: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: Any) -> Unit)?
+    var onChange: ((event: MouseEvent<HTMLElement, *>, value: Any) -> Unit)?
 
     /**
      * The component orientation (layout flow direction).
@@ -89,11 +97,11 @@ external interface ToggleButtonGroupProps :
  *
  * Demos:
  *
- * - [Toggle Button](https://mui.com/material-ui/react-toggle-button/)
+ * - [Toggle Button](https://v6.mui.com/material-ui/react-toggle-button/)
  *
  * API:
  *
- * - [ToggleButtonGroup API](https://mui.com/material-ui/api/toggle-button-group/)
+ * - [ToggleButtonGroup API](https://v6.mui.com/material-ui/api/toggle-button-group/)
  */
 @JsName("default")
-external val ToggleButtonGroup: react.FC<ToggleButtonGroupProps>
+external val ToggleButtonGroup: FC<ToggleButtonGroupProps>

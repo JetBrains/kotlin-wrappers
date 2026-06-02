@@ -5,16 +5,23 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLHRElement
 
 external interface DividerProps :
     DividerOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLHRElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLHRElement>,
+    PropsWithComponent
 
 external interface DividerOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * Absolutely position the element.
      * @default false
@@ -24,7 +31,7 @@ external interface DividerOwnProps :
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -41,7 +48,7 @@ external interface DividerOwnProps :
     /**
      * If `true`, the divider will have a lighter color.
      * @default false
-     * @deprecated Use <Divider sx={{ opacity: 0.6 }} /> (or any opacity or color) instead. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
+     * @deprecated Use <Divider sx={{ opacity: 0.6 }} /> (or any opacity or color) instead. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var light: Boolean?
 
@@ -73,12 +80,12 @@ external interface DividerOwnProps :
  *
  * Demos:
  *
- * - [Divider](https://mui.com/material-ui/react-divider/)
- * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Divider](https://v6.mui.com/material-ui/react-divider/)
+ * - [Lists](https://v6.mui.com/material-ui/react-list/)
  *
  * API:
  *
- * - [Divider API](https://mui.com/material-ui/api/divider/)
+ * - [Divider API](https://v6.mui.com/material-ui/api/divider/)
  */
 @JsName("default")
-external val Divider: react.FC<DividerProps>
+external val Divider: FC<DividerProps>

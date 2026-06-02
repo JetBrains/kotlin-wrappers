@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * Provides context such as filled/focused/error/required for form inputs.
  * Relying on the context provides high flexibility and ensures that the state always stays
@@ -41,4 +43,4 @@ package mui.base
  *
  * - [FormControl API](https://mui.com/base-ui/react-form-control/components-api/#form-control)
  */
-external val FormControl: react.FC<FormControlProps>
+external val FormControl: FC<FormControlProps>

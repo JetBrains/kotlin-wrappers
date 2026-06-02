@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.LiHTMLAttributes
+import web.html.HTMLLIElement
 
 external interface ListSubheaderProps :
     ListSubheaderOwnProps,
-    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>,
-    mui.types.PropsWithComponent
+    LiHTMLAttributes<HTMLLIElement>,
+    PropsWithComponent
 
 external interface ListSubheaderOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -59,11 +66,11 @@ external interface ListSubheaderOwnProps :
  *
  * Demos:
  *
- * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Lists](https://v6.mui.com/material-ui/react-list/)
  *
  * API:
  *
- * - [ListSubheader API](https://mui.com/material-ui/api/list-subheader/)
+ * - [ListSubheader API](https://v6.mui.com/material-ui/api/list-subheader/)
  */
 @JsName("default")
-external val ListSubheader: react.FC<ListSubheaderProps>
+external val ListSubheader: FC<ListSubheaderProps>

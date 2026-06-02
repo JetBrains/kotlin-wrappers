@@ -5,20 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLTableRowElement
 
 external interface TableRowProps :
     TableRowOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLTableRowElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLTableRowElement>,
+    PropsWithComponent
 
 external interface TableRowOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * Should be valid `<tr>` children such as `TableCell`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -49,11 +56,11 @@ external interface TableRowOwnProps :
  *
  * Demos:
  *
- * - [Table](https://mui.com/material-ui/react-table/)
+ * - [Table](https://v6.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableRow API](https://mui.com/material-ui/api/table-row/)
+ * - [TableRow API](https://v6.mui.com/material-ui/api/table-row/)
  */
 @JsName("default")
-external val TableRow: react.FC<TableRowProps>
+external val TableRow: FC<TableRowProps>

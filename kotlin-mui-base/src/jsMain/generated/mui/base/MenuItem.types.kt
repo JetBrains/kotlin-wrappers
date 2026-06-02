@@ -2,21 +2,25 @@
 
 package mui.base
 
+import react.*
+import react.dom.events.MouseEventHandler
+import react.dom.html.LiHTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLLIElement
 
 external interface MenuItemProps :
     MenuItemOwnProps,
-    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement>
+    LiHTMLAttributes<HTMLLIElement>
 
 external interface MenuItemOwnProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName,
-    react.dom.html.LiHTMLAttributes<web.html.HTMLLIElement> {
-    override var children: react.ReactNode?
+    PropsWithChildren,
+    PropsWithClassName,
+    LiHTMLAttributes<HTMLLIElement> {
+    override var children: ReactNode?
 
     override var className: ClassName?
 
-    override var onClick: react.dom.events.MouseEventHandler<web.html.HTMLLIElement>?
+    override var onClick: MouseEventHandler<HTMLLIElement>?
 
     /**
      * If `true`, the menu item will be disabled.
@@ -38,7 +42,7 @@ external interface MenuItemOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'li', MenuItemRootSlotPropsOverrides, MenuItemOwnerState> */
+        var root: Props? /* SlotComponentProps<'li', MenuItemRootSlotPropsOverrides, MenuItemOwnerState> */
     }
 
     /**
@@ -60,7 +64,7 @@ external interface MenuItemSlots {
      * The component that renders the root.
      * @default 'li'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }
 
 external interface MenuItemState {

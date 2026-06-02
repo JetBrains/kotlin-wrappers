@@ -2,13 +2,15 @@
 
 package mui.material
 
+import react.PropsWithChildren
+import react.ReactNode
 import web.dom.Element
 
-external interface PortalProps : react.PropsWithChildren {
+external interface PortalProps : PropsWithChildren {
     /**
      * The children to render into the `container`.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * An HTML element or function that returns one.

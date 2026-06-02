@@ -5,12 +5,18 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.FC
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface StepIconProps :
-    mui.system.StandardProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.system.PropsWithSx {
+    StandardProps,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithSx {
     /**
      * Whether this step is active.
      * @default false
@@ -37,7 +43,7 @@ external interface StepIconProps :
     /**
      * The label displayed in the step icon.
      */
-    var icon: react.ReactNode
+    var icon: ReactNode
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -49,11 +55,12 @@ external interface StepIconProps :
  *
  * Demos:
  *
- * - [Stepper](https://mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepIcon API](https://mui.com/material-ui/api/step-icon/)
+ * - [StepIcon API](https://v6.mui.com/material-ui/api/step-icon/)
+ * - inherits [SvgIcon API](https://v6.mui.com/material-ui/api/svg-icon/)
  */
 @JsName("default")
-external val StepIcon: react.FC<StepIconProps>
+external val StepIcon: FC<StepIconProps>

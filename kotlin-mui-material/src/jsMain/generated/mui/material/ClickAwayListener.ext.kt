@@ -21,7 +21,7 @@ sealed external interface ClickAwayListenerMouseEvent {
         @JsValue("onPointerUp")
         val onPointerUp: ClickAwayListenerMouseEvent
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: ClickAwayListenerMouseEvent
     }
 }
@@ -34,7 +34,7 @@ sealed external interface ClickAwayListenerTouchEvent {
         @JsValue("onTouchEnd")
         val onTouchEnd: ClickAwayListenerTouchEvent
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: ClickAwayListenerTouchEvent
     }
 }

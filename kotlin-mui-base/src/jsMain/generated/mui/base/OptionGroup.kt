@@ -4,6 +4,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  * An unstyled option group to be used within a Select.
  *
@@ -15,4 +17,4 @@ package mui.base
  *
  * - [OptionGroup API](https://mui.com/base-ui/react-select/components-api/#option-group)
  */
-external val OptionGroup: react.FC<OptionGroupProps>
+external val OptionGroup: FC<OptionGroupProps>

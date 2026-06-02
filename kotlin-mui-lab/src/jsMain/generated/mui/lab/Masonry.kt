@@ -5,20 +5,28 @@
 package mui.lab
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.ResponsiveStyleValue
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface MasonryProps :
     MasonryOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
 
 external interface MasonryOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -29,7 +37,7 @@ external interface MasonryOwnProps :
      * Number of columns.
      * @default 4
      */
-    var columns: mui.system.ResponsiveStyleValue<dynamic>?
+    var columns: ResponsiveStyleValue<Any /* number | string */>?
 
     /**
      * The default number of columns of the component. This is provided for server-side rendering.
@@ -50,7 +58,7 @@ external interface MasonryOwnProps :
      * Defines the space between children. It is a factor of the theme's spacing.
      * @default 1
      */
-    var spacing: mui.system.ResponsiveStyleValue<dynamic>?
+    var spacing: ResponsiveStyleValue<Any /* number | string */>?
 
     /**
      * Allows using sequential order rather than adding to shortest column
@@ -68,11 +76,11 @@ external interface MasonryOwnProps :
  *
  * Demos:
  *
- * - [Masonry](https://mui.com/material-ui/react-masonry/)
+ * - [Masonry](https://v6.mui.com/material-ui/react-masonry/)
  *
  * API:
  *
- * - [Masonry API](https://mui.com/material-ui/api/masonry/)
+ * - [Masonry API](https://v6.mui.com/material-ui/api/masonry/)
  */
 @JsName("default")
-external val Masonry: react.FC<MasonryProps>
+external val Masonry: FC<MasonryProps>

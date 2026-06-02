@@ -2,18 +2,25 @@
 
 package mui.base
 
+import react.*
+import react.dom.aria.AriaRole
+import react.dom.events.KeyboardEventHandler
+import react.dom.events.MouseEventHandler
+import react.dom.events.ReactEventHandler
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.dom.Element
+import web.html.HTMLDivElement
 
 external interface ModalProps :
     ModalOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
 
-external interface ModalOwnProps : react.PropsWithChildren {
+external interface ModalOwnProps : PropsWithChildren {
     /**
      * A single child content element.
      */
-    override var children: react.ReactNode? /* react.ReactElement<*>? */
+    override var children: ReactNode? /* ReactElement<*>? */
 
     /**
      * When set to true the Modal waits until a nested Transition is completed before closing.
@@ -96,7 +103,7 @@ external interface ModalOwnProps : react.PropsWithChildren {
      * Callback fired when the backdrop is clicked.
      * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
      */
-    var onBackdropClick: react.dom.events.ReactEventHandler<*>?
+    var onBackdropClick: ReactEventHandler<*>?
 
     /**
      * Callback fired when the component requests to be closed.
@@ -131,8 +138,8 @@ external interface ModalOwnProps : react.PropsWithChildren {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'div', ModalRootSlotPropsOverrides, ModalOwnerState> */
-        var backdrop: react.Props? /* SlotComponentProps<'div', ModalBackdropSlotPropsOverrides, ModalOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', ModalRootSlotPropsOverrides, ModalOwnerState> */
+        var backdrop: Props? /* SlotComponentProps<'div', ModalBackdropSlotPropsOverrides, ModalOwnerState> */
     }
 
     /**
@@ -148,36 +155,36 @@ external interface ModalSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 
     /**
      * The component that renders the backdrop.
      */
-    var backdrop: react.ElementType<*>?
+    var backdrop: ElementType<*>?
 }
 
 external interface ModalRootSlotProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName {
-    override var children: react.ReactNode?
+    PropsWithChildren,
+    PropsWithClassName {
+    override var children: ReactNode?
 
     override var className: ClassName?
 
-    var onKeyDown: dynamic
+    var onKeyDown: KeyboardEventHandler<*>
 
-    var ownerState: dynamic
+    var ownerState: Any? /* ModalOwnerState */
 
-    var role: react.dom.aria.AriaRole
+    var role: AriaRole
 }
 
-external interface ModalBackdropSlotProps : react.PropsWithChildren {
+external interface ModalBackdropSlotProps : PropsWithChildren {
     // var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
 
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
-    var onClick: react.dom.events.MouseEventHandler<*>
+    var onClick: MouseEventHandler<*>
 
     var open: Boolean
 
-    var ownerState: dynamic
+    var ownerState: Any? /* ModalOwnerState */
 }

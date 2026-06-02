@@ -70,7 +70,10 @@ sealed external interface TypographyClasses {
     /** Styles applied to the root element if `gutterBottom={true}`. */
     val gutterBottom: ClassName
 
-    /** Styles applied to the root element if `paragraph={true}`. */
+    /**
+     * Styles applied to the root element if `paragraph={true}`.
+     * @deprecated
+     */
     val paragraph: ClassName
 }
 

@@ -2,14 +2,21 @@
 
 package mui.base
 
+import react.ElementType
+import react.Props
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
+
 external interface SnackbarProps :
     SnackbarOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>
+    HTMLAttributes<HTMLDivElement>
 
 external interface SnackbarOwnProps :
     UseSnackbarParameters,
-    react.PropsWithChildren {
-    override var children: react.ReactNode?
+    PropsWithChildren {
+    override var children: ReactNode?
 
     /**
      * The components used for each slot inside the Snackbar.
@@ -25,8 +32,8 @@ external interface SnackbarOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var clickAwayListener: react.Props? /* SlotComponentProps<typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState> */
-        var root: react.Props? /* SlotComponentProps<'div', SnackbarRootSlotPropsOverrides, SnackbarOwnerState> */
+        var clickAwayListener: Props? /* SlotComponentProps<typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState> */
+        var root: Props? /* SlotComponentProps<'div', SnackbarRootSlotPropsOverrides, SnackbarOwnerState> */
     }
 
     /**
@@ -41,9 +48,10 @@ external interface SnackbarSlots {
      * The component that renders the root.
      * @default 'div'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }
 
-external interface SnackbarClickAwayListenerSlotProps : react.Props {
+external interface SnackbarClickAwayListenerSlotProps :
+    ClickAwayListenerProps {
     var ownerState: Any
 }

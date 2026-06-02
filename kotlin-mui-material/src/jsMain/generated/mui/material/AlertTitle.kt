@@ -9,16 +9,20 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
 
 external interface AlertTitleProps :
     TypographyProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -35,12 +39,12 @@ external interface AlertTitleProps :
  *
  * Demos:
  *
- * - [Alert](https://mui.com/material-ui/react-alert/)
+ * - [Alert](https://v6.mui.com/material-ui/react-alert/)
  *
  * API:
  *
- * - [AlertTitle API](https://mui.com/material-ui/api/alert-title/)
- * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
+ * - [AlertTitle API](https://v6.mui.com/material-ui/api/alert-title/)
+ * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
-external val AlertTitle: react.FC<AlertTitleProps>
+external val AlertTitle: FC<AlertTitleProps>

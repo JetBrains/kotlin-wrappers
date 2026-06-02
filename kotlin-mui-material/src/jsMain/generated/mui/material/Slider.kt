@@ -6,16 +6,23 @@ package mui.material
 
 import js.array.ReadonlyArray
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.system.Union
+import mui.types.PropsWithComponent
+import react.*
+import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.events.Event
+import web.html.HTMLSpanElement
 
 external interface SliderProps :
     SliderOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithComponent
 
-external interface SliderOwnerState {
+external interface SliderOwnerState : SliderProps {
     var dragging: Boolean
 
     var marked: Boolean
@@ -24,8 +31,8 @@ external interface SliderOwnerState {
 }
 
 external interface SliderOwnProps :
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * The label of the slider.
      */
@@ -52,46 +59,46 @@ external interface SliderOwnProps :
     /**
      * The components used for each slot inside.
      *
-     * @deprecated use the `slots` prop instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
+     * @deprecated use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
     var components: Components?
 
     interface Components {
-        var Root: react.ElementType<*>?
-        var Track: react.ElementType<*>?
-        var Rail: react.ElementType<*>?
-        var Thumb: react.ElementType<*>?
-        var Mark: react.ElementType<*>?
-        var MarkLabel: react.ElementType<*>?
-        var ValueLabel: react.ElementType<*>?
-        var Input: react.ElementType<*>?
+        var Root: ElementType<*>?
+        var Track: ElementType<*>?
+        var Rail: ElementType<*>?
+        var Thumb: ElementType<*>?
+        var Mark: ElementType<*>?
+        var MarkLabel: ElementType<*>?
+        var ValueLabel: ElementType<*>?
+        var Input: ElementType<*>?
     }
 
     /**
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var rail: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var mark: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var markLabel: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var valueLabel: react.Props? /* SlotComponentProps<
+        var root: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var track: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var rail: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var thumb: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var mark: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var markLabel: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var valueLabel: Props? /* SlotComponentProps<
   typeof SliderValueLabelComponent,
   SliderComponentsPropsOverrides,
   SliderOwnerState
 > */
-        var input: react.Props? /* SlotComponentProps<'input', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var input: Props? /* SlotComponentProps<'input', SliderComponentsPropsOverrides, SliderOwnerState> */
     }
 
     /**
@@ -107,7 +114,7 @@ external interface SliderOwnProps :
     /**
      * The default value. Use when the component is not controlled.
      */
-    var defaultValue: dynamic
+    var defaultValue: Any? /* number | number[] */
 
     /**
      * If `true`, the component is disabled.
@@ -144,7 +151,7 @@ external interface SliderOwnProps :
      * If an array, it should contain objects with `value` and an optional `label` keys.
      * @default false
      */
-    var marks: dynamic
+    var marks: Any? /* boolean | Mark[] */
 
     /**
      * The maximum allowed value of the slider.
@@ -182,7 +189,7 @@ external interface SliderOwnProps :
      * @param {React.SyntheticEvent | Event} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {number | number[]} value The new value.
      */
-    var onChangeCommitted: ((event: react.dom.events.SyntheticEvent<*, *>, value: ReadonlyArray<Number>) -> Unit)?
+    var onChangeCommitted: ((event: SyntheticEvent<*, *>, value: ReadonlyArray<Number>) -> Unit)?
 
     /**
      * The component orientation.
@@ -219,18 +226,18 @@ external interface SliderOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var track: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var rail: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var thumb: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var mark: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var markLabel: react.Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var valueLabel: react.Props? /* SlotComponentProps<
+        var root: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var track: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var rail: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var thumb: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var mark: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var markLabel: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var valueLabel: Props? /* SlotComponentProps<
   typeof SliderValueLabelComponent,
   SliderComponentsPropsOverrides,
   SliderOwnerState
 > */
-        var input: react.Props? /* SlotComponentProps<'input', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var input: Props? /* SlotComponentProps<'input', SliderComponentsPropsOverrides, SliderOwnerState> */
     }
 
     /**
@@ -241,14 +248,14 @@ external interface SliderOwnProps :
     var slots: Slots?
 
     interface Slots {
-        var root: react.ElementType<*>?
-        var track: react.ElementType<*>?
-        var rail: react.ElementType<*>?
-        var thumb: react.ElementType<*>?
-        var mark: react.ElementType<*>?
-        var markLabel: react.ElementType<*>?
-        var valueLabel: react.ElementType<*>?
-        var input: react.ElementType<*>?
+        var root: ElementType<*>?
+        var track: ElementType<*>?
+        var rail: ElementType<*>?
+        var thumb: ElementType<*>?
+        var mark: ElementType<*>?
+        var markLabel: ElementType<*>?
+        var valueLabel: ElementType<*>?
+        var input: ElementType<*>?
     }
 
     /**
@@ -279,13 +286,13 @@ external interface SliderOwnProps :
      * - `false` the track will render without a bar.
      * @default 'normal'
      */
-    var track: mui.system.Union? /* 'normal' | false | 'inverted' */
+    var track: Union? /* 'normal' | false | 'inverted' */
 
     /**
      * The value of the slider.
      * For ranged sliders, provide an array with two values.
      */
-    var value: dynamic
+    var value: Any? /* number | number[] */
 
     /**
      * Controls when the value label is displayed:
@@ -295,7 +302,7 @@ external interface SliderOwnProps :
      * - `off` will never display.
      * @default 'off'
      */
-    var valueLabelDisplay: mui.system.Union? /* 'on' | 'auto' | 'off' */
+    var valueLabelDisplay: Union? /* 'on' | 'auto' | 'off' */
 
     /**
      * The format function the value label's value.
@@ -310,31 +317,31 @@ external interface SliderOwnProps :
      *   return x;
      * }
      */
-    var valueLabelFormat: String? /* or (value: Number, index: Number) -> react.ReactNode*/
+    var valueLabelFormat: String? /* or (value: Number, index: Number) -> ReactNode*/
 }
 
 @Suppress("VIRTUAL_MEMBER_HIDDEN")
 external interface SliderValueLabelProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLSpanElement>,
-    react.PropsWithChildren {
-    override var children: react.ReactNode? /* react.ReactElement<*>? */
+    HTMLAttributes<HTMLSpanElement>,
+    PropsWithChildren {
+    override var children: ReactNode? /* ReactElement<*>? */
 
     var index: Number
 
     var open: Boolean
 
-    var value: Number
+    var value: ReactNode
 }
 
 /**
  *
  * Demos:
  *
- * - [Slider](https://mui.com/material-ui/react-slider/)
+ * - [Slider](https://v6.mui.com/material-ui/react-slider/)
  *
  * API:
  *
- * - [Slider API](https://mui.com/material-ui/api/slider/)
+ * - [Slider API](https://v6.mui.com/material-ui/api/slider/)
  */
 @JsName("default")
-external val Slider: react.FC<SliderProps>
+external val Slider: FC<SliderProps>

@@ -9,16 +9,21 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface AppBarProps :
     AppBarOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    mui.types.PropsWithComponent,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent,
     PaperProps
 
 external interface AppBarOwnProps :
-    mui.system.PropsWithSx,
+    PropsWithSx,
     PaperProps {
     /**
      * Override or extend the styles applied to the component.
@@ -41,7 +46,7 @@ external interface AppBarOwnProps :
 
     /**
      * The positioning type. The behavior of the different options is described
-     * [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).
+     * [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
      * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
      * @default 'fixed'
      */
@@ -57,13 +62,13 @@ external interface AppBarOwnProps :
  *
  * Demos:
  *
- * - [App Bar](https://mui.com/material-ui/react-app-bar/)
+ * - [App Bar](https://v6.mui.com/material-ui/react-app-bar/)
  *
  * API:
  *
- * - [AppBar API](https://mui.com/material-ui/api/app-bar/)
- * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
+ * - [AppBar API](https://v6.mui.com/material-ui/api/app-bar/)
+ * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
  */
 
 @JsName("default")
-external val AppBar: react.FC<AppBarProps>
+external val AppBar: FC<AppBarProps>

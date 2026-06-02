@@ -2,11 +2,16 @@
 
 package mui.system
 
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
+
 external interface ContainerProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLDivElement>,
-    react.PropsWithChildren,
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren,
     PropsWithSx {
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -34,7 +39,7 @@ external interface ContainerProps :
      * Set to `false` to disable `maxWidth`.
      * @default 'lg'
      */
-    var maxWidth: dynamic
+    var maxWidth: Any? /* Breakpoint | false */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

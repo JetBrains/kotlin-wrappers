@@ -3,6 +3,7 @@
 package mui.material.styles
 
 import js.array.ReadonlyArray
+import web.cssom.Transition
 
 external interface Easing {
     var easeInOut: String
@@ -35,7 +36,7 @@ external interface TransitionsOptions {
 
     var duration: Duration?
 
-    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> web.cssom.Transition)?
+    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition)?
 
     var getAutoHeightDuration: ((height: Number) -> Number)?
 }
@@ -45,7 +46,7 @@ external interface Transitions {
 
     var duration: Duration
 
-    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> web.cssom.Transition
+    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition
 
     var getAutoHeightDuration: (height: Number) -> Number
 }

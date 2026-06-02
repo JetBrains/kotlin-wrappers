@@ -9,22 +9,29 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.ButtonHTMLAttributes
+import web.html.HTMLButtonElement
 
 external interface FabProps :
     FabOwnProps,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>,
-    mui.types.PropsWithComponent,
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    PropsWithComponent,
     ButtonBaseProps
 
 external interface FabOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx,
+    PropsWithChildren,
+    PropsWithSx,
     ButtonBaseProps {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -85,12 +92,12 @@ external interface FabOwnProps :
  *
  * Demos:
  *
- * - [Floating Action Button](https://mui.com/material-ui/react-floating-action-button/)
+ * - [Floating Action Button](https://v6.mui.com/material-ui/react-floating-action-button/)
  *
  * API:
  *
- * - [Fab API](https://mui.com/material-ui/api/fab/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [Fab API](https://v6.mui.com/material-ui/api/fab/)
+ * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
-external val Fab: react.FC<FabProps>
+external val Fab: FC<FabProps>

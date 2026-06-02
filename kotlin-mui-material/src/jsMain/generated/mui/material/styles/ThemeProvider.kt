@@ -4,18 +4,14 @@
 
 package mui.material.styles
 
-external interface ThemeProviderProps : react.PropsWithChildren {
-    override var children: react.ReactNode?
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
 
-    var theme: dynamic
+external interface ThemeProviderProps : PropsWithChildren {
+    override var children: ReactNode?
+    var theme: Any? /* Partial<Theme> | ((outerTheme: Theme) => Theme) */
 }
 
-/**
- * This component makes the `theme` available down the React tree.
- * It should preferably be used at **the root of your component tree**.
- * API:
- *
- * - [ThemeProvider API](https://mui.com/material-ui/customization/theming/#themeprovider)
- */
 @JsName("default")
-external val ThemeProvider: react.FC<ThemeProviderProps>
+external val ThemeProvider: FC<ThemeProviderProps>

@@ -9,13 +9,19 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
+import mui.system.PropsWithSx
+import mui.system.StandardProps
 import mui.system.SxProps
+import react.*
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface DrawerProps :
-    mui.system.StandardProps,
+    StandardProps,
     ModalProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * Side from which the drawer will appear.
      * @default 'left'
@@ -25,7 +31,7 @@ external interface DrawerProps :
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -39,7 +45,7 @@ external interface DrawerProps :
     var elevation: Number?
 
     /**
-     * Props applied to the [`Modal`](/material-ui/api/modal/) element.
+     * Props applied to the [`Modal`](https://mui.com/material-ui/api/modal/) element.
      * @default {}
      */
     var ModalProps: ModalProps?
@@ -60,13 +66,15 @@ external interface DrawerProps :
     var open: Boolean?
 
     /**
-     * Props applied to the [`Paper`](/material-ui/api/paper/) element.
+     * Props applied to the [`Paper`](https://mui.com/material-ui/api/paper/) element.
+     * @deprecated use the `slotProps.paper` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var PaperProps: PaperProps?
 
     /**
-     * Props applied to the [`Slide`](/material-ui/api/slide/) element.
+     * Props applied to the [`Slide`](https://mui.com/material-ui/api/slide/) element.
+     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var SlideProps: SlideProps?
 
@@ -92,17 +100,75 @@ external interface DrawerProps :
     var variant: DrawerVariant?
 }
 
+external interface DrawerSlots {
+    /**
+     * The component used for the root when the variant is `temporary`.
+     * @default Modal
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component used for the Modal backdrop.
+     * @default Backdrop
+     */
+    var backdrop: ElementType<*>
+
+    /**
+     * The component used for the root element when the variant is `permanent` or `persistent`.
+     * @default div
+     */
+    var docked: ElementType<*>
+
+    /**
+     * The component used for the paper.
+     * @default Paper
+     */
+    var paper: ElementType<*>
+
+    /**
+     * The component used for the transition.
+     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * @default Slide
+     */
+    var transition: ElementType<*>
+}
+
+external interface DrawerSlotProps : Props {
+    /** TS: SlotProps<React.ElementType<ModalProps>, DrawerRootSlotPropsOverrides, DrawerOwnerState> */
+    var root: ModalProps?
+
+    /** TS: SlotProps< React.ElementType<BackdropProps>, DrawerBackdropSlotPropsOverrides, DrawerOwnerState > */
+    var backdrop: BackdropProps?
+
+    /** TS: SlotProps<'div', DrawerDockedSlotPropsOverrides, DrawerOwnerState> */
+    var docked: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps< React.ElementType<PaperProps>, DrawerPaperSlotPropsOverrides, DrawerOwnerState > */
+    var paper: PaperProps?
+
+    /** TS: SlotProps< React.ElementType, TransitionProps & DrawerTransitionSlotPropsOverrides, DrawerOwnerState > */
+    var transition: TransitionProps?
+}
+
+external interface DrawerSlotsAndSlotProps : Props {
+    var slots: DrawerSlots?
+
+    var slotProps: DrawerSlotProps?
+}
+
+external interface DrawerOwnerState
+
 /**
- * The props of the [Modal](https://mui.com/material-ui/api/modal/) component are available
+ * The props of the [Modal](https://v6.mui.com/material-ui/api/modal/) component are available
  * when `variant="temporary"` is set.
  *
  * Demos:
  *
- * - [Drawer](https://mui.com/material-ui/react-drawer/)
+ * - [Drawer](https://v6.mui.com/material-ui/react-drawer/)
  *
  * API:
  *
- * - [Drawer API](https://mui.com/material-ui/api/drawer/)
+ * - [Drawer API](https://v6.mui.com/material-ui/api/drawer/)
  */
 @JsName("default")
-external val Drawer: react.FC<DrawerProps>
+external val Drawer: FC<DrawerProps>

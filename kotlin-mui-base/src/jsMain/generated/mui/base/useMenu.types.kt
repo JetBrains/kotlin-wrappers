@@ -3,6 +3,8 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import react.Ref
+import react.RefCallback
 import web.dom.Element
 import web.dom.ElementId
 import web.html.HTMLElement
@@ -41,7 +43,7 @@ external interface UseMenuParameters {
     /**
      * The ref to the menu's listbox node.
      */
-    var listboxRef: react.Ref<Element>?
+    var listboxRef: Ref<Element>?
 
     /**
      * The name of the component using useMenu.
@@ -55,7 +57,7 @@ external interface UseMenuReturnValue {
     /**
      * The value to be passed into the MenuProvider.
      */
-    var contextValue: dynamic
+    var contextValue: Any? /* MenuProviderValue */
 
     /**
      * Action dispatcher for the menu component.
@@ -78,12 +80,12 @@ external interface UseMenuReturnValue {
     /**
      * The ref to the menu's listbox node.
      */
-    var listboxRef: react.RefCallback<Element>?
+    var listboxRef: RefCallback<Element>?
 
     /**
      * Items in the menu listbox.
      */
-    var menuItems: dynamic
+    var menuItems: Any? /* Map<string, MenuItemMetadata> */
 
     /**
      * If `true`, the menu is open.

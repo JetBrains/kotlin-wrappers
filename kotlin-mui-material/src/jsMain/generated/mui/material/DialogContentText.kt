@@ -9,15 +9,18 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
 
 external interface DialogContentTextProps :
     DialogContentTextOwnProps,
-    mui.types.PropsWithComponent
+    PropsWithComponent
 
 external interface DialogContentTextOwnProps :
     TypographyProps,
-    mui.system.PropsWithSx {
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
@@ -33,12 +36,12 @@ external interface DialogContentTextOwnProps :
  *
  * Demos:
  *
- * - [Dialog](https://mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://v6.mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [DialogContentText API](https://mui.com/material-ui/api/dialog-content-text/)
- * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
+ * - [DialogContentText API](https://v6.mui.com/material-ui/api/dialog-content-text/)
+ * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
-external val DialogContentText: react.FC<DialogContentTextProps>
+external val DialogContentText: FC<DialogContentTextProps>

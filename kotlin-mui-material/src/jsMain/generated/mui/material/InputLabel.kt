@@ -9,17 +9,24 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.dom.html.LabelHTMLAttributes
+import web.html.HTMLLabelElement
 
 external interface InputLabelProps :
     InputLabelOwnProps,
-    react.dom.html.LabelHTMLAttributes<web.html.HTMLLabelElement>,
-    mui.types.PropsWithComponent,
+    LabelHTMLAttributes<HTMLLabelElement>,
+    PropsWithComponent,
     FormLabelOwnProps
 
 external interface InputLabelOwnProps :
-    mui.system.PropsWithSx,
-    react.PropsWithChildren,
+    FormLabelProps,
+    PropsWithSx,
+    PropsWithChildren,
     FormLabelOwnProps {
     /**
      * Override or extend the styles applied to the component.
@@ -86,12 +93,12 @@ external interface InputLabelOwnProps :
  *
  * Demos:
  *
- * - [Text Field](https://mui.com/material-ui/react-text-field/)
+ * - [Text Field](https://v6.mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [InputLabel API](https://mui.com/material-ui/api/input-label/)
- * - inherits [FormLabel API](https://mui.com/material-ui/api/form-label/)
+ * - [InputLabel API](https://v6.mui.com/material-ui/api/input-label/)
+ * - inherits [FormLabel API](https://v6.mui.com/material-ui/api/form-label/)
  */
 @JsName("default")
-external val InputLabel: react.FC<InputLabelProps>
+external val InputLabel: FC<InputLabelProps>

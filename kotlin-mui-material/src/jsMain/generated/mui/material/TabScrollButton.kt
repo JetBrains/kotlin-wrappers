@@ -9,16 +9,18 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import react.*
 
 external interface TabScrollButtonProps :
     ButtonBaseProps,
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -32,8 +34,8 @@ external interface TabScrollButtonProps :
     var slots: Slots?
 
     interface Slots {
-        var StartScrollButtonIcon: react.ElementType<*>?
-        var EndScrollButtonIcon: react.ElementType<*>?
+        var StartScrollButtonIcon: ElementType<*>?
+        var EndScrollButtonIcon: ElementType<*>?
     }
 
     /**
@@ -44,12 +46,12 @@ external interface TabScrollButtonProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var startScrollButtonIcon: react.Props? /* SlotComponentProps<
+        var startScrollButtonIcon: Props? /* SlotComponentProps<
   typeof SvgIcon,
   TabScrollButtonStartIconSlotPropsOverrides,
   TabScrollButtonOwnerState
 > */
-        var endScrollButtonIcon: react.Props? /* SlotComponentProps<
+        var endScrollButtonIcon: Props? /* SlotComponentProps<
   typeof SvgIcon,
   TabScrollButtonEndIconSlotPropsOverrides,
   TabScrollButtonOwnerState
@@ -78,7 +80,7 @@ external interface TabScrollButtonProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface TabScrollButtonOwnerState {
+external interface TabScrollButtonOwnerState : TabScrollButtonProps {
     var isRtl: Boolean
 }
 
@@ -86,11 +88,11 @@ external interface TabScrollButtonOwnerState {
  *
  * Demos:
  *
- * - [Tabs](https://mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://v6.mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [TabScrollButton API](https://mui.com/material-ui/api/tab-scroll-button/)
+ * - [TabScrollButton API](https://v6.mui.com/material-ui/api/tab-scroll-button/)
  */
 @JsName("default")
-external val TabScrollButton: react.FC<TabScrollButtonProps>
+external val TabScrollButton: FC<TabScrollButtonProps>

@@ -31,7 +31,7 @@ sealed external interface FilledInputClasses {
     /** State class applied to the root element if `error={true}`. */
     val error: ClassName
 
-    /** Styles applied to the input element if `size="small"`. */
+    /** Styles applied to the root element if `size="small"`. */
     val sizeSmall: ClassName
 
     /** Styles applied to the root element if `multiline={true}`. */
@@ -42,24 +42,6 @@ sealed external interface FilledInputClasses {
 
     /** Styles applied to the input element. */
     val input: ClassName
-
-    /** Styles applied to the input element if `size="small"`. */
-    val inputSizeSmall: ClassName
-
-    /** Styles applied to the `input` if in `<FormControl hiddenLabel />`. */
-    val inputHiddenLabel: ClassName
-
-    /** Styles applied to the input element if `multiline={true}`. */
-    val inputMultiline: ClassName
-
-    /** Styles applied to the input element if `startAdornment` is provided. */
-    val inputAdornedStart: ClassName
-
-    /** Styles applied to the input element if `endAdornment` is provided. */
-    val inputAdornedEnd: ClassName
-
-    /** Styles applied to the input element if `type="search"`. */
-    val inputTypeSearch: ClassName
 }
 
 external val filledInputClasses: FilledInputClasses

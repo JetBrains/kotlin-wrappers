@@ -5,22 +5,29 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.types.PropsWithComponent
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLParagraphElement
 
 external interface FormHelperTextProps :
     FormHelperTextOwnProps,
-    react.dom.html.HTMLAttributes<web.html.HTMLParagraphElement>,
-    mui.types.PropsWithComponent
+    HTMLAttributes<HTMLParagraphElement>,
+    PropsWithComponent
 
 external interface FormHelperTextOwnProps :
-    react.PropsWithChildren,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithSx {
     /**
      * The content of the component.
      *
      * If `' '` is provided, the component reserves one line height for displaying a future message.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
@@ -73,11 +80,11 @@ external interface FormHelperTextOwnProps :
  *
  * Demos:
  *
- * - [Text Field](https://mui.com/material-ui/react-text-field/)
+ * - [Text Field](https://v6.mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [FormHelperText API](https://mui.com/material-ui/api/form-helper-text/)
+ * - [FormHelperText API](https://v6.mui.com/material-ui/api/form-helper-text/)
  */
 @JsName("default")
-external val FormHelperText: react.FC<FormHelperTextProps>
+external val FormHelperText: FC<FormHelperTextProps>

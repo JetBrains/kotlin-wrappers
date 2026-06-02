@@ -4,10 +4,12 @@
 
 package mui.material
 
+import web.events.EventTarget
+
 external interface UseScrollTriggerOptions {
     var disableHysteresis: Boolean?
 
-    var target: web.events.EventTarget? /* web.dom.Node? or web.window.Window? */
+    var target: EventTarget /* Node? or Window? */?
 
     var threshold: Number?
 }

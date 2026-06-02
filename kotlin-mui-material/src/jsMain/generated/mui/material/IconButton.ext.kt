@@ -40,7 +40,7 @@ sealed external interface IconButtonEdge {
         @JsValue("end")
         val end: IconButtonEdge
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: IconButtonEdge
     }
 }

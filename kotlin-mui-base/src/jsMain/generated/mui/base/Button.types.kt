@@ -2,12 +2,16 @@
 
 package mui.base
 
+import react.*
+import react.dom.html.ButtonHTMLAttributes
 import web.cssom.ClassName
+import web.dom.TagName
+import web.html.HTMLButtonElement
 import web.html.HTMLElement
 
 external interface ButtonProps :
     ButtonOwnProps,
-    react.dom.html.ButtonHTMLAttributes<web.html.HTMLButtonElement>
+    ButtonHTMLAttributes<HTMLButtonElement>
 
 external interface ButtonActions {
     fun focusVisible()
@@ -15,14 +19,14 @@ external interface ButtonActions {
 
 external interface ButtonOwnProps :
     UseButtonParameters,
-    react.PropsWithChildren,
-    react.PropsWithClassName {
+    PropsWithChildren,
+    PropsWithClassName {
     /**
      * A ref for imperative actions. It currently only supports `focusVisible()` action.
      */
-    var action: react.Ref<ButtonActions>?
+    var action: Ref<ButtonActions>?
 
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -33,7 +37,7 @@ external interface ButtonOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: react.Props? /* SlotComponentProps<'button', ButtonRootSlotPropsOverrides, ButtonOwnerState> */
+        var root: Props? /* SlotComponentProps<'button', ButtonRootSlotPropsOverrides, ButtonOwnerState> */
     }
 
     /**
@@ -47,7 +51,7 @@ external interface ButtonOwnProps :
      * The HTML element that is ultimately rendered, for example 'button' or 'a'
      * @default 'button'
      */
-    override var rootElementName: web.dom.TagName<out HTMLElement>?
+    override var rootElementName: TagName<out HTMLElement>?
 }
 
 external interface ButtonSlots {
@@ -55,5 +59,5 @@ external interface ButtonSlots {
      * The component that renders the root.
      * @default props.href || props.to ? 'a' : 'button'
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }

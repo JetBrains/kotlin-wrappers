@@ -8,6 +8,8 @@
 
 package mui.base
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -20,4 +22,4 @@ package mui.base
  *
  * - [Snackbar API](https://mui.com/base-ui/react-snackbar/components-api/#snackbar)
  */
-external val Snackbar: react.FC<SnackbarProps>
+external val Snackbar: FC<SnackbarProps>
