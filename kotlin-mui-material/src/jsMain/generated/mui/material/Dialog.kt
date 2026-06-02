@@ -177,16 +177,6 @@ external interface DialogSlots {
     var root: ElementType<*>?
 }
 
-external interface DialogTransitionSlotPropsOverrides
-
-external interface DialogPaperSlotPropsOverrides
-
-external interface DialogContainerSlotPropsOverrides
-
-external interface DialogBackdropSlotPropsOverrides
-
-external interface DialogRootSlotPropsOverrides
-
 external interface DialogSlotProps : Props {
     /** TS: SlotProps<React.ElementType<ModalProps>, DialogRootSlotPropsOverrides, DialogOwnerState> */
     var root: ModalProps?

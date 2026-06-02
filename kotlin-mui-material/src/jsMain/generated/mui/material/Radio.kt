@@ -66,14 +66,6 @@ external interface RadioProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface RadioPropsSizeOverrides
-
-external interface RadioPropsColorOverrides
-
-external interface RadioRootSlotPropsOverrides
-
-external interface RadioInputSlotPropsOverrides
-
 external interface RadioSlots {
     /**
      * The component that renders the root slot.

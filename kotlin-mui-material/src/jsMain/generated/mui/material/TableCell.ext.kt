@@ -17,7 +17,7 @@ sealed external interface SortDirection {
         @JsValue("desc")
         val desc: SortDirection
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: SortDirection
     }
 }

@@ -101,14 +101,6 @@ external interface MobileStepperSlots {
     var dot: ElementType<*>
 }
 
-external interface MobileStepperRootSlotPropsOverrides
-
-external interface MobileStepperProgressSlotPropsOverrides
-
-external interface MobileStepperDotsSlotPropsOverrides
-
-external interface MobileStepperDotSlotPropsOverrides
-
 external interface MobileStepperSlotProps : Props {
     /** TS: SlotProps< React.ElementType<PaperProps>, MobileStepperRootSlotPropsOverrides, MobileStepperOwnerState > */
     var root: PaperProps?

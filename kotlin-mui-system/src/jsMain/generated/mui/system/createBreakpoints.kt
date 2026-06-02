@@ -7,8 +7,6 @@ package mui.system
 import js.array.ReadonlyArray
 import js.objects.Record
 
-external interface BreakpointOverrides
-
 external interface Breakpoints {
     var keys: ReadonlyArray<Breakpoint>
 

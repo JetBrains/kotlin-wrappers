@@ -12,8 +12,6 @@ external interface MenuItemProps :
     MenuItemOwnProps,
     LiHTMLAttributes<HTMLLIElement>
 
-external interface MenuItemRootSlotPropsOverrides
-
 external interface MenuItemOwnProps :
     PropsWithChildren,
     PropsWithClassName,

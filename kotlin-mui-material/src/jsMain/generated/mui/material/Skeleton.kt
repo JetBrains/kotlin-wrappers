@@ -19,8 +19,6 @@ external interface SkeletonProps :
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
 
-external interface SkeletonPropsVariantOverrides
-
 external interface SkeletonOwnProps :
     PropsWithChildren,
     PropsWithSx {

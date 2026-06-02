@@ -2,6 +2,7 @@
 
 package mui.base
 
+import js.array.ReadonlyArray
 import react.Props
 import react.Ref
 import react.RefCallback
@@ -168,21 +169,21 @@ external interface UseSelectReturnValue<Value, Multiple> {
      * @param externalProps event handlers for the button slot
      * @returns props that should be spread on the button slot
      */
-    var getButtonProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSelectButtonSlotProps<ExternalProps> */
+    var getButtonProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the hidden input slot's props.
      * @param externalProps event handlers for the hidden input slot
      * @returns HTML input attributes that should be spread on the hidden input slot
      */
-    var getHiddenInputProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSelectHiddenInputSlotProps<ExternalProps> */
+    var getHiddenInputProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the listbox slot's props.
      * @param externalProps event handlers for the listbox slot
      * @returns props that should be spread on the listbox slot
      */
-    var getListboxProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSelectListboxSlotProps<ExternalProps> */
+    var getListboxProps: (externalProps: Props?) -> Props
 
     /**
      * A function that returns the metadata of an option with a given value.
@@ -215,7 +216,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
     /**
      * Values of all the registered options.
      */
-    var options: Any? /* Value[] */
+    var options: ReadonlyArray<Value>
 
     /**
      * The value of the selected option(s).

@@ -47,10 +47,6 @@ external interface TimelineDotProps :
     var variant: TimelineDotVariant?
 }
 
-external interface TimelineDotPropsVariantOverrides
-
-external interface TimelineDotPropsColorOverrides
-
 /**
  *
  * Demos:

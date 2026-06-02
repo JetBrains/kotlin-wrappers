@@ -20,10 +20,6 @@ external interface IconProps :
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
 
-external interface IconPropsSizeOverrides
-
-external interface IconPropsColorOverrides
-
 external interface IconOwnProps :
     PropsWithChildren,
     PropsWithSx {

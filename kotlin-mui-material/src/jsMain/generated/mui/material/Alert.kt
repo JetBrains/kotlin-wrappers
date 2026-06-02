@@ -15,7 +15,6 @@ import mui.system.SxProps
 import mui.system.Union
 import react.ElementType
 import react.FC
-import react.Props
 import react.ReactNode
 import react.dom.events.SyntheticEvent
 
@@ -74,8 +73,8 @@ external interface AlertProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var closeButton: Props? /* IconButtonProps */
-        var closeIcon: Props? /* SvgIconProps */
+        var closeButton: IconButtonProps?
+        var closeIcon: SvgIconProps?
     }
 
     /**
@@ -125,22 +124,6 @@ external interface AlertProps :
      */
     override var sx: SxProps<Theme>?
 }
-
-external interface AlertPropsVariantOverrides
-
-external interface AlertPropsColorOverrides
-
-external interface AlertRootSlotPropsOverrides
-
-external interface AlertIconSlotPropsOverrides
-
-external interface AlertMessageSlotPropsOverrides
-
-external interface AlertActionSlotPropsOverrides
-
-external interface AlertCloseButtonSlotPropsOverrides
-
-external interface AlertCloseIconSlotPropsOverrides
 
 external interface AlertSlots {
     /**

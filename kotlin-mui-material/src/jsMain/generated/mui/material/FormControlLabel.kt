@@ -36,7 +36,7 @@ external interface FormControlLabelProps :
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var typography: Props? /* TypographyProps */
+        var typography: TypographyProps?
     }
 
     /**

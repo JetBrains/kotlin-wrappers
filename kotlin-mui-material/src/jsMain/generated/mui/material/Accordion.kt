@@ -107,12 +107,6 @@ external interface AccordionSlots {
     var transition: ElementType<*>
 }
 
-external interface AccordionRootSlotPropsOverrides
-
-external interface AccordionHeadingSlotPropsOverrides
-
-external interface AccordionTransitionSlotPropsOverrides
-
 external interface AccordionSlotProps : Props {
     /** TS: SlotProps< React.ElementType<PaperProps>, AccordionRootSlotPropsOverrides, AccordionOwnerState > */
     var root: PaperProps?

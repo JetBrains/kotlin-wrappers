@@ -10,8 +10,6 @@ external interface OptionProps<OptionValue> :
     var component: Any? /* D */
 }
 
-external interface OptionRootSlotPropsOverrides
-
 external interface OptionOwnProps<OptionValue> :
     PropsWithChildren,
     PropsWithClassName {

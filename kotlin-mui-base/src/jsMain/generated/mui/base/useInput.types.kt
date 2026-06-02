@@ -49,7 +49,7 @@ external interface UseInputParameters {
 }
 
 external interface UseInputRootSlotOwnProps : Props {
-    var onClick: Any? /* React.MouseEventHandler | undefined */
+    var onClick: MouseEventHandler<*>
 }
 
 external interface UseInputInputSlotOwnProps : Props {
@@ -96,14 +96,14 @@ external interface UseInputReturnValue {
      * @param externalProps props for the input slot
      * @returns props that should be spread on the input slot
      */
-    var getInputProps: Props /* <ExternalProps extends Record<string, any> = {}>(externalProps?: ExternalProps) => UseInputInputSlotProps<ExternalProps> */
+    var getInputProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the root slot's props.
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, any> = {}>(externalProps?: ExternalProps) => UseInputRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     var inputRef: RefCallback<HTMLInputElement /* or HTMLTextAreaElement*/>?
 

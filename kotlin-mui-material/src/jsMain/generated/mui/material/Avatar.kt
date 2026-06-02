@@ -28,8 +28,6 @@ external interface AvatarSlots {
     var img: ComponentType<*>
 }
 
-external interface AvatarPropsVariantOverrides
-
 external interface AvatarSlotProps : Props {
     /** TS: SlotProps< React.ElementType<React.ImgHTMLAttributes<HTMLImageElement>>, {}, AvatarOwnProps > */
     var img: Any?

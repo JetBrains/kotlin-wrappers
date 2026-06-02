@@ -23,10 +23,6 @@ external interface SvgIconProps :
     SVGAttributes<SVGSVGElement>,
     PropsWithComponent
 
-external interface SvgIconPropsSizeOverrides
-
-external interface SvgIconPropsColorOverrides
-
 external interface SvgIconOwnProps :
     PropsWithChildren,
     PropsWithSx,

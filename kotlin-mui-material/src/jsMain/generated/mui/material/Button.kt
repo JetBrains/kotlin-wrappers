@@ -19,12 +19,6 @@ external interface ButtonProps :
     ButtonHTMLAttributes<HTMLButtonElement>,
     PropsWithComponent
 
-external interface ButtonPropsVariantOverrides
-
-external interface ButtonPropsColorOverrides
-
-external interface ButtonPropsSizeOverrides
-
 external interface ButtonOwnProps :
     PropsWithChildren,
     PropsWithSx {

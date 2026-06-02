@@ -18,24 +18,6 @@ external interface TabsProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface TabsPropsIndicatorColorOverrides
-
-external interface TabsRootSlotPropsOverrides
-
-external interface TabsScrollerSlotPropsOverrides
-
-external interface TabsListSlotPropsOverrides
-
-external interface TabsScrollbarSlotPropsOverrides
-
-external interface TabsIndicatorSlotPropsOverrides
-
-external interface TabsScrollButtonsSlotPropsOverrides
-
-external interface TabsStartScrollButtonIconSlotPropsOverrides
-
-external interface TabsEndScrollButtonIconSlotPropsOverrides
-
 external interface TabsSlots {
     /**
      * The component used for the popper.

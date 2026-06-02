@@ -52,7 +52,7 @@ external interface UseTabReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     /**
      * If `true`, the tab is active (as in `:active` pseudo-class; in other words, pressed).

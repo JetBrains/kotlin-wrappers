@@ -23,10 +23,6 @@ import web.html.InputType
 
 typealias TextFieldProps = BaseTextFieldProps
 
-external interface TextFieldPropsColorOverrides
-
-external interface TextFieldPropsSizeOverrides
-
 external interface TextFieldSlots {
     /**
      * The component that renders the root.

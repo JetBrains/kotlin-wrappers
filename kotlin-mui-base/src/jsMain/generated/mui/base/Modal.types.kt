@@ -4,6 +4,7 @@ package mui.base
 
 import react.*
 import react.dom.aria.AriaRole
+import react.dom.events.KeyboardEventHandler
 import react.dom.events.MouseEventHandler
 import react.dom.events.ReactEventHandler
 import react.dom.html.HTMLAttributes
@@ -14,10 +15,6 @@ import web.html.HTMLDivElement
 external interface ModalProps :
     ModalOwnProps,
     HTMLAttributes<HTMLDivElement>
-
-external interface ModalRootSlotPropsOverrides
-
-external interface ModalBackdropSlotPropsOverrides
 
 external interface ModalOwnProps : PropsWithChildren {
     /**
@@ -173,7 +170,7 @@ external interface ModalRootSlotProps :
 
     override var className: ClassName?
 
-    var onKeyDown: Any? /* React.KeyboardEventHandler */
+    var onKeyDown: KeyboardEventHandler<*>
 
     var ownerState: Any? /* ModalOwnerState */
 

@@ -8,7 +8,6 @@
 
 package mui.material
 
-import mui.base.BadgeOwnProps
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
@@ -22,14 +21,6 @@ external interface BadgeProps :
     BadgeOwnProps,
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
-
-external interface BadgePropsVariantOverrides
-
-external interface BadgePropsColorOverrides
-
-external interface BadgeRootSlotPropsOverrides
-
-external interface BadgeBadgeSlotPropsOverrides
 
 external interface BadgeSlots {
     /**
@@ -115,7 +106,7 @@ external interface BadgeOwnProps :
      *
      * @default {}
      */
-    var componentsProps: BadgeOwnProps.SlotProps?
+    var componentsProps: mui.base.BadgeOwnProps.SlotProps?
 
     /**
      * The components used for each slot inside.

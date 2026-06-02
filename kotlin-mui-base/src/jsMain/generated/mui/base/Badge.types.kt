@@ -13,10 +13,6 @@ external interface BadgeProps :
     BadgeOwnProps,
     HTMLAttributes<HTMLSpanElement>
 
-external interface BadgeRootSlotPropsOverrides
-
-external interface BadgeBadgeSlotPropsOverrides
-
 external interface BadgeOwnProps : PropsWithChildren {
     /**
      * The content rendered within the badge.

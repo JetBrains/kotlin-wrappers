@@ -16,8 +16,6 @@ external interface ListItemProps :
     ListItemOwnProps,
     PropsWithComponent
 
-external interface ListItemComponentsPropsOverrides
-
 external interface ListItemBaseProps :
     PropsWithChildren,
     PropsWithSx {

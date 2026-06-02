@@ -24,8 +24,6 @@ external interface ModalProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface ModalComponentsPropsOverrides
-
 external interface ModalOwnerState : ModalProps {
     var exited: Boolean
 }
@@ -72,7 +70,7 @@ external interface ModalOwnProps :
     /**
      * A single child content element.
      */
-    override var children: ReactNode? /* React.ReactElement<unknown> */
+    override var children: ReactNode? /* ReactElement<*>? */
 
     /**
      * Override or extend the styles applied to the component.

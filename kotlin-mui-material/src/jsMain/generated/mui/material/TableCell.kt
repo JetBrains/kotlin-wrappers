@@ -77,10 +77,6 @@ external interface TableCellProps :
     var variant: TableCellVariant?
 }
 
-external interface TableCellPropsSizeOverrides
-
-external interface TableCellPropsVariantOverrides
-
 /**
  * The component renders a `<th>` element when the parent context is a header
  * or otherwise a `<td>` element.

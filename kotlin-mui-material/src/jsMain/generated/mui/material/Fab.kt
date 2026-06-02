@@ -24,12 +24,6 @@ external interface FabProps :
     PropsWithComponent,
     ButtonBaseProps
 
-external interface FabPropsVariantOverrides
-
-external interface FabPropsSizeOverrides
-
-external interface FabPropsColorOverrides
-
 external interface FabOwnProps :
     PropsWithChildren,
     PropsWithSx,

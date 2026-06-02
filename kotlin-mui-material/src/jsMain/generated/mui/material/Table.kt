@@ -19,8 +19,6 @@ external interface TableProps :
     TableHTMLAttributes<HTMLTableElement>,
     PropsWithComponent
 
-external interface TablePropsSizeOverrides
-
 external interface TableOwnProps :
     PropsWithChildren,
     PropsWithSx {

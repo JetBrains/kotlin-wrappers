@@ -120,14 +120,6 @@ external interface CheckboxProps :
     var value: Any? /* SwitchBaseProps['value'] */
 }
 
-external interface CheckboxPropsSizeOverrides
-
-external interface CheckboxPropsColorOverrides
-
-external interface CheckboxRootSlotPropsOverrides
-
-external interface CheckboxInputSlotPropsOverrides
-
 external interface CheckboxSlots {
     /**
      * The component that renders the root slot.

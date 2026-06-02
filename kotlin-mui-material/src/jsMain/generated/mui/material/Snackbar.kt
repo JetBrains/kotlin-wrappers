@@ -171,14 +171,6 @@ external interface SnackbarSlots {
     var transition: ElementType<*>
 }
 
-external interface SnackbarRootSlotPropsOverrides
-
-external interface SnackbarContentSlotPropsOverrides
-
-external interface SnackbarClickAwayListenerSlotPropsOverrides
-
-external interface SnackbarTransitionSlotPropsOverrides
-
 external interface SnackbarSlotProps : Props {
     /** TS: SlotProps<'div', SnackbarRootSlotPropsOverrides, SnackbarOwnerState> */
     var root: HTMLAttributes<HTMLDivElement>?

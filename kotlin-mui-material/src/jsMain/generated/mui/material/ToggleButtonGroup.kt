@@ -93,10 +93,6 @@ external interface ToggleButtonGroupProps :
     var value: Any?
 }
 
-external interface ToggleButtonGroupPropsSizeOverrides
-
-external interface ToggleButtonGroupPropsColorOverrides
-
 /**
  *
  * Demos:

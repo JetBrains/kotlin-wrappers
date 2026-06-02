@@ -17,10 +17,6 @@ external interface TableSortLabelProps :
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
 
-external interface TableSortLabelRootSlotPropsOverrides
-
-external interface TableSortLabelIconSlotPropsOverrides
-
 external interface TableSortLabelSlots {
     /**
      * The component that renders the root slot.

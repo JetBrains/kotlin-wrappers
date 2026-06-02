@@ -100,16 +100,6 @@ external interface DrawerProps :
     var variant: DrawerVariant?
 }
 
-external interface DrawerRootSlotPropsOverrides
-
-external interface DrawerDockedSlotPropsOverrides
-
-external interface DrawerPaperSlotPropsOverrides
-
-external interface DrawerTransitionSlotPropsOverrides
-
-external interface DrawerBackdropSlotPropsOverrides
-
 external interface DrawerSlots {
     /**
      * The component used for the root when the variant is `temporary`.

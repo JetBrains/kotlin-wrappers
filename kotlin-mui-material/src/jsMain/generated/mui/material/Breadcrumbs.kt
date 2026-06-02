@@ -17,8 +17,6 @@ external interface BreadcrumbsProps :
     HTMLAttributes<HTMLElement>,
     PropsWithComponent
 
-external interface BreadcrumbsCollapsedIconSlotPropsOverrides
-
 external interface BreadcrumbsOwnerState : BreadcrumbsProps {
     var expanded: Boolean
 }

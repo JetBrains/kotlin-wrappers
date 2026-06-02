@@ -106,16 +106,6 @@ external interface MenuProps :
     var variant: MenuVariant?
 }
 
-external interface MenuRootSlotPropsOverrides
-
-external interface MenuPaperSlotPropsOverrides
-
-external interface MenuTransitionSlotPropsOverrides
-
-external interface MenuListSlotPropsOverrides
-
-external interface MenuBackdropSlotPropsOverrides
-
 external interface MenuSlots {
     /**
      * The component used for the popper.

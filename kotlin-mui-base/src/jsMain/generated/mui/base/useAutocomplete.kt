@@ -31,14 +31,14 @@ external interface FilterOptionsState<Value> {
     var getOptionLabel: (option: Value) -> String
 }
 
-external interface AutocompleteGroupedOption {
+external interface AutocompleteGroupedOption<Value> {
     var key: Number
 
     var index: Number
 
     var group: String
 
-    var options: Any? /* Value[] */
+    var options: ReadonlyArray<Value>
 }
 
 external interface UseAutocompleteProps<Value> : Props {

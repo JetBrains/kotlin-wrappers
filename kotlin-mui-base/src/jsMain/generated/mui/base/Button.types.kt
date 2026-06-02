@@ -17,8 +17,6 @@ external interface ButtonActions {
     fun focusVisible()
 }
 
-external interface ButtonRootSlotPropsOverrides
-
 external interface ButtonOwnProps :
     UseButtonParameters,
     PropsWithChildren,

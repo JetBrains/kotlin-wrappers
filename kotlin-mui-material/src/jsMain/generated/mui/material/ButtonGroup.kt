@@ -19,12 +19,6 @@ external interface ButtonGroupProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface ButtonGroupPropsColorOverrides
-
-external interface ButtonGroupPropsVariantOverrides
-
-external interface ButtonGroupPropsSizeOverrides
-
 external interface ButtonGroupOwnProps :
     PropsWithChildren,
     PropsWithSx {

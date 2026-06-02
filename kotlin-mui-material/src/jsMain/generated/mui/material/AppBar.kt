@@ -22,8 +22,6 @@ external interface AppBarProps :
     PropsWithComponent,
     PaperProps
 
-external interface AppBarPropsColorOverrides
-
 external interface AppBarOwnProps :
     PropsWithSx,
     PaperProps {

@@ -12,7 +12,7 @@ sealed external interface SwitchBaseEdge {
         @JsValue("end")
         val end: SwitchBaseEdge
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: SwitchBaseEdge
     }
 }

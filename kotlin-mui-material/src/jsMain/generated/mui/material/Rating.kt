@@ -33,16 +33,6 @@ external interface IconContainerProps :
     var value: Number
 }
 
-external interface RatingPropsSizeOverrides
-
-external interface RatingRootSlotPropsOverrides
-
-external interface RatingLabelSlotPropsOverrides
-
-external interface RatingIconSlotPropsOverrides
-
-external interface RatingDecimalSlotPropsOverrides
-
 external interface RatingSlots {
     /**
      * The component used for the root slot.

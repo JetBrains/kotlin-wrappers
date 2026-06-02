@@ -26,10 +26,6 @@ external interface ToggleButtonProps :
     PropsWithComponent,
     ButtonBaseProps
 
-external interface ToggleButtonPropsSizeOverrides
-
-external interface ToggleButtonPropsColorOverrides
-
 external interface ToggleButtonOwnProps :
     PropsWithChildren,
     PropsWithSx,

@@ -12,10 +12,6 @@ external interface MenuProps :
     MenuOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface MenuRootSlotPropsOverrides
-
-external interface MenuListboxSlotPropsOverrides
-
 external interface MenuActions {
     /**
      * Dispatches an action that can cause a change to the menu's internal state.

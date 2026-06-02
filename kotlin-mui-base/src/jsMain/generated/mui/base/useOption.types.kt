@@ -49,7 +49,7 @@ external interface UseOptionReturnValue {
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, unknown>>(externalProps?: ExternalProps) => UseOptionRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     /**
      * Ref to the root slot DOM node.

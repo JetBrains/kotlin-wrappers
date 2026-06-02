@@ -80,7 +80,7 @@ external interface UseButtonReturnValue {
      * @param externalProps additional props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, any> = {}>(externalProps?: ExternalProps) => UseButtonRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     /**
      * If `true`, the component is being focused using keyboard.

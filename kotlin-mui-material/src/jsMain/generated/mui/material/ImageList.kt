@@ -19,8 +19,6 @@ external interface ImageListProps :
     HTMLAttributes<HTMLUListElement>,
     PropsWithComponent
 
-external interface ImageListPropsVariantOverrides
-
 external interface ImageListOwnProps :
     PropsWithChildren,
     PropsWithSx {

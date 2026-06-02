@@ -11,8 +11,6 @@ external interface TabPanelProps :
     TabPanelOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface TabPanelRootSlotPropsOverrides
-
 external interface TabPanelOwnProps :
     PropsWithChildren,
     PropsWithClassName {

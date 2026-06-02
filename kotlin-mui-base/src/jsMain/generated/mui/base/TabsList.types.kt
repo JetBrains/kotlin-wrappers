@@ -11,8 +11,6 @@ external interface TabsListProps :
     TabsListOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface TabsListRootSlotPropsOverrides
-
 external interface TabsListOwnProps :
     PropsWithChildren,
     PropsWithClassName {

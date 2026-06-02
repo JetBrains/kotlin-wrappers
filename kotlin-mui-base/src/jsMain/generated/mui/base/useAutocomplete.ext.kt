@@ -101,10 +101,10 @@ sealed external interface BlurOnSelect {
         @JsValue("mouse")
         val mouse: BlurOnSelect
 
-        @JsValue("`true`")
+        @JsValue("true")
         val `true`: BlurOnSelect
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: BlurOnSelect
     }
 }

@@ -18,10 +18,6 @@ external interface AvatarGroupProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface AvatarGroupPropsVariantOverrides
-
-external interface AvatarGroupComponentsPropsOverrides
-
 external interface AvatarGroupSlots {
     var surplus: ElementType<*>
 }

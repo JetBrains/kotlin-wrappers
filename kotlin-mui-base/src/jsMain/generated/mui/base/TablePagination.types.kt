@@ -26,22 +26,6 @@ external interface LabelDisplayedRowsArgs {
     var page: Number
 }
 
-external interface TablePaginationRootSlotPropsOverrides
-
-external interface TablePaginationActionsSlotPropsOverrides
-
-external interface TablePaginationSelectSlotPropsOverrides
-
-external interface TablePaginationSelectLabelSlotPropsOverrides
-
-external interface TablePaginationMenuItemSlotPropsOverrides
-
-external interface TablePaginationDisplayedRowsSlotPropsOverrides
-
-external interface TablePaginationToolbarSlotPropsOverrides
-
-external interface TablePaginationSpacerSlotPropsOverrides
-
 external interface TablePaginationOwnProps : Props {
     /**
      * @ignore

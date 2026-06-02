@@ -12,8 +12,6 @@ external interface TabProps :
     TabOwnProps,
     ButtonHTMLAttributes<HTMLButtonElement>
 
-external interface TabRootSlotPropsOverrides
-
 external interface TabOwnProps :
     ButtonOwnProps,
     ButtonHTMLAttributes<HTMLButtonElement> {

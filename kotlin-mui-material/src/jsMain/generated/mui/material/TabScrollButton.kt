@@ -80,10 +80,6 @@ external interface TabScrollButtonProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface TabScrollButtonStartIconSlotPropsOverrides
-
-external interface TabScrollButtonEndIconSlotPropsOverrides
-
 external interface TabScrollButtonOwnerState : TabScrollButtonProps {
     var isRtl: Boolean
 }

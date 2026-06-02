@@ -19,8 +19,6 @@ external interface ToolbarProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface ToolbarPropsVariantOverrides
-
 external interface ToolbarOwnProps :
     PropsWithChildren,
     PropsWithSx {

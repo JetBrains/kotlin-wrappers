@@ -42,7 +42,7 @@ external interface UseMenuItemReturnValue {
      * @param externalProps event handlers for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseMenuItemRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     /**
      * If `true`, the component is disabled.

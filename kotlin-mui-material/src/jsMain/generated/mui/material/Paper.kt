@@ -19,8 +19,6 @@ external interface PaperProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface PaperPropsVariantOverrides
-
 external interface PaperOwnProps :
     PropsWithChildren,
     PropsWithSx {

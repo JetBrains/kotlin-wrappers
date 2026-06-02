@@ -19,8 +19,6 @@ external interface FormHelperTextProps :
     HTMLAttributes<HTMLParagraphElement>,
     PropsWithComponent
 
-external interface FormHelperTextPropsVariantOverrides
-
 external interface FormHelperTextOwnProps :
     PropsWithChildren,
     PropsWithSx {

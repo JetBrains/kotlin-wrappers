@@ -35,7 +35,7 @@ external interface UseTabPanelReturnValue {
      * @param externalProps additional props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabPanelRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     var rootRef: Ref<HTMLElement>
 }

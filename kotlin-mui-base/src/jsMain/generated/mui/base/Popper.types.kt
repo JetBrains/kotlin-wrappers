@@ -17,8 +17,6 @@ external interface PopperProps :
     PopperOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface PopperRootSlotPropsOverrides
-
 external interface PopperTransitionProps : Props {
     var `in`: Boolean
 

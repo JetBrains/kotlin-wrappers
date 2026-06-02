@@ -22,18 +22,6 @@ external interface CardHeaderProps :
     CardHeaderOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface CardHeaderRootSlotPropsOverrides
-
-external interface CardHeaderAvatarSlotPropsOverrides
-
-external interface CardHeaderActionSlotPropsOverrides
-
-external interface CardHeaderContentSlotPropsOverrides
-
-external interface CardHeaderTitleSlotPropsOverrides
-
-external interface CardHeaderSubheaderSlotPropsOverrides
-
 external interface CardHeaderSlots {
     /**
      * The component that renders the root slot.

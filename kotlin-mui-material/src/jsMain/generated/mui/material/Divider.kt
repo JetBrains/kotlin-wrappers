@@ -19,8 +19,6 @@ external interface DividerProps :
     HTMLAttributes<HTMLHRElement>,
     PropsWithComponent
 
-external interface DividerPropsVariantOverrides
-
 external interface DividerOwnProps :
     PropsWithChildren,
     PropsWithSx {

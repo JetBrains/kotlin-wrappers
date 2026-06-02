@@ -70,10 +70,6 @@ external interface CircularProgressProps :
     var variant: CircularProgressVariant?
 }
 
-external interface CircularProgressPropsColorOverrides
-
-external interface CircularProgressPropsVariantOverrides
-
 /**
  * ## ARIA
  *

@@ -21,8 +21,6 @@ external interface CardProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface CardPropsColorOverrides
-
 external interface CardOwnProps :
     PaperOwnProps,
     PropsWithSx {

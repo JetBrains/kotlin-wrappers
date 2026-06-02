@@ -12,8 +12,6 @@ external interface FormControlProps :
     FormControlOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface FormControlRootSlotPropsOverrides
-
 external interface FormControlOwnProps :
     PropsWithChildren,
     PropsWithClassName {

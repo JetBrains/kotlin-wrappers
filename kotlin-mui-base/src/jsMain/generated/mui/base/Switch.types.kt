@@ -13,14 +13,6 @@ external interface SwitchProps :
     SwitchOwnProps,
     HTMLAttributes<HTMLSpanElement>
 
-external interface SwitchRootSlotPropsOverrides
-
-external interface SwitchThumbSlotPropsOverrides
-
-external interface SwitchInputSlotPropsOverrides
-
-external interface SwitchTrackSlotPropsOverrides
-
 external interface SwitchOwnProps :
     PropsWithClassName {
     /**

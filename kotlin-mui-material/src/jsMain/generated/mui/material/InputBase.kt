@@ -284,12 +284,6 @@ external interface InputBaseProps :
     var value: Any?
 }
 
-external interface InputBasePropsSizeOverrides
-
-external interface InputBasePropsColorOverrides
-
-external interface InputBaseComponentsPropsOverrides
-
 external interface InputBaseComponentProps :
     HTMLAttributes<HTMLElement>
 

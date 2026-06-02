@@ -2,6 +2,4 @@
 
 package mui.material
 
-import mui.system.ContainerClasses
-
-typealias ContainerClasses = ContainerClasses
+typealias ContainerClasses = mui.system.ContainerClasses

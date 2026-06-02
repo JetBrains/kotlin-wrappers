@@ -19,8 +19,6 @@ external interface FormLabelProps :
     PropsWithComponent,
     FormLabelOwnProps
 
-external interface FormLabelPropsColorOverrides
-
 external interface FormLabelOwnProps :
     PropsWithChildren,
     PropsWithSx {

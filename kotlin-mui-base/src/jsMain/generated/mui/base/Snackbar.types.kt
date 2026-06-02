@@ -13,10 +13,6 @@ external interface SnackbarProps :
     SnackbarOwnProps,
     HTMLAttributes<HTMLDivElement>
 
-external interface SnackbarRootSlotPropsOverrides
-
-external interface SnackbarClickAwayListenerSlotPropsOverrides
-
 external interface SnackbarOwnProps :
     UseSnackbarParameters,
     PropsWithChildren {

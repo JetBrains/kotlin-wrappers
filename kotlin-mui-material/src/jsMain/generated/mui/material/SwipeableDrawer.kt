@@ -100,8 +100,6 @@ external interface SwipeableDrawerProps :
     var swipeAreaWidth: Number?
 }
 
-external interface SwipeableDrawerSwipeAreaSlotPropsOverrides
-
 external interface SwipeableDrawerSlots {
     /**
      * The component used for the swipeArea slot.

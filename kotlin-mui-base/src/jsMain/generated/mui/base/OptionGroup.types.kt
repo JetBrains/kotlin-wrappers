@@ -11,12 +11,6 @@ external interface OptionGroupProps :
     OptionGroupOwnProps,
     LiHTMLAttributes<HTMLLIElement>
 
-external interface OptionGroupRootSlotPropsOverrides
-
-external interface OptionGroupLabelSlotPropsOverrides
-
-external interface OptionGroupListSlotPropsOverrides
-
 external interface OptionGroupOwnProps :
     PropsWithChildren,
     PropsWithClassName {

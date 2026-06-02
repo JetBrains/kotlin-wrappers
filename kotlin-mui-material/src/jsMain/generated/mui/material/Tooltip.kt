@@ -219,16 +219,6 @@ external interface TooltipProps :
     var TransitionProps: TransitionProps?
 }
 
-external interface TooltipComponentsPropsOverrides
-
-external interface TooltipPopperSlotPropsOverrides
-
-external interface TooltipTransitionSlotPropsOverrides
-
-external interface TooltipTooltipSlotPropsOverrides
-
-external interface TooltipArrowSlotPropsOverrides
-
 external interface TooltipSlots {
     /**
      * The component used for the popper.

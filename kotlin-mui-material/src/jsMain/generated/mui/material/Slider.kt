@@ -22,12 +22,6 @@ external interface SliderProps :
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
 
-external interface SliderPropsColorOverrides
-
-external interface SliderPropsSizeOverrides
-
-external interface SliderComponentsPropsOverrides
-
 external interface SliderOwnerState : SliderProps {
     var dragging: Boolean
 
@@ -330,7 +324,7 @@ external interface SliderOwnProps :
 external interface SliderValueLabelProps :
     HTMLAttributes<HTMLSpanElement>,
     PropsWithChildren {
-    override var children: ReactNode? /* React.ReactElement<unknown> */
+    override var children: ReactNode? /* ReactElement<*>? */
 
     var index: Number
 

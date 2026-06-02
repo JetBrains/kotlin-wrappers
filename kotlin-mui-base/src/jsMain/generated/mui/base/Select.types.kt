@@ -10,12 +10,6 @@ external interface SelectProps<OptionValue> :
     var component: Any? /* D */
 }
 
-external interface SelectRootSlotPropsOverrides
-
-external interface SelectListboxSlotPropsOverrides
-
-external interface SelectPopupSlotPropsOverrides
-
 external interface SelectOwnProps<OptionValue> :
     PropsWithChildren,
     PropsWithClassName {

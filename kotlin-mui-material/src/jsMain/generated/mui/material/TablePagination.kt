@@ -34,22 +34,6 @@ external interface LabelDisplayedRowsArgs {
     var page: Number
 }
 
-external interface TablePaginationRootSlotPropsOverrides
-
-external interface TablePaginationToolbarSlotPropsOverrides
-
-external interface TablePaginationSpacerSlotPropsOverrides
-
-external interface TablePaginationSelectLabelSlotPropsOverrides
-
-external interface TablePaginationSelectSlotPropsOverrides
-
-external interface TablePaginationMenuItemSlotPropsOverrides
-
-external interface TablePaginationDisplayedRowsSlotPropsOverrides
-
-external interface TablePaginationActionsSlotPropsOverrides
-
 external interface TablePaginationSlots {
     /**
      * The component that renders the root slot.

@@ -19,10 +19,6 @@ external interface FormControlProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface FormControlPropsSizeOverrides
-
-external interface FormControlPropsColorOverrides
-
 external interface FormControlOwnProps :
     PropsWithChildren,
     PropsWithSx {

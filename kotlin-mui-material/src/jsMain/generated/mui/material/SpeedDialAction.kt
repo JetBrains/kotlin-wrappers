@@ -104,14 +104,6 @@ external interface SpeedDialActionSlots {
     var staticTooltipLabel: ElementType<*>?
 }
 
-external interface SpeedDialActionFabSlotPropsOverrides
-
-external interface SpeedDialActionTooltipSlotPropsOverrides
-
-external interface SpeedDialActionStaticTooltipSlotPropsOverrides
-
-external interface SpeedDialActionStaticTooltipLabelSlotPropsOverrides
-
 external interface SpeedDialActionSlotProps : Props {
     /** TS: SlotProps< React.ElementType<FabProps>, SpeedDialActionFabSlotPropsOverrides, SpeedDialActionOwnerState > */
     var fab: FabProps?

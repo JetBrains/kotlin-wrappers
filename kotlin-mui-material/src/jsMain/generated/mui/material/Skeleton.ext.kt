@@ -12,7 +12,7 @@ sealed external interface SkeletonAnimation {
         @JsValue("wave")
         val wave: SkeletonAnimation
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: SkeletonAnimation
     }
 }

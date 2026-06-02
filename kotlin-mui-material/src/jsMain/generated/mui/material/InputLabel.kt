@@ -23,8 +23,6 @@ external interface InputLabelProps :
     PropsWithComponent,
     FormLabelOwnProps
 
-external interface InputLabelPropsSizeOverrides
-
 external interface InputLabelOwnProps :
     FormLabelProps,
     PropsWithSx,

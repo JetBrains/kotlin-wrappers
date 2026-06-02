@@ -172,21 +172,21 @@ external interface UseSliderReturnValue {
      * @param externalProps props for the hidden input slot
      * @returns props that should be spread on the hidden input slot
      */
-    var getHiddenInputProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderHiddenInputProps<ExternalProps> */
+    var getHiddenInputProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the root slot's props.
      * @param externalProps props for the root slot
      * @returns props that should be spread on the root slot
      */
-    var getRootProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderRootSlotProps<ExternalProps> */
+    var getRootProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the thumb slot's props.
      * @param externalProps props for the thumb slot
      * @returns props that should be spread on the thumb slot
      */
-    var getThumbProps: Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseSliderThumbSlotProps<ExternalProps> */
+    var getThumbProps: (externalProps: Props?) -> Props
 
     /**
      * Resolver for the thumb slot's style prop.
@@ -198,7 +198,7 @@ external interface UseSliderReturnValue {
     /**
      * The marks of the slider. Marks indicate predetermined values to which the user can move the slider.
      */
-    var marks: Any? /* Mark[] */
+    var marks: ReadonlyArray<Mark>
 
     /**
      * The thumb index for the current value when in hover state.
@@ -228,5 +228,5 @@ external interface UseSliderReturnValue {
     /**
      * The possible values of the slider.
      */
-    var values: Any? /* number[] */
+    var values: ReadonlyArray<Number>
 }

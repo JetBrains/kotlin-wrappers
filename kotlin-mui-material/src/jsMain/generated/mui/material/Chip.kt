@@ -13,6 +13,7 @@ import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
 import react.FC
+import react.ReactElement
 import react.ReactNode
 import react.dom.events.EventHandler
 import react.dom.html.HTMLAttributes
@@ -23,19 +24,13 @@ external interface ChipProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface ChipPropsVariantOverrides
-
-external interface ChipPropsSizeOverrides
-
-external interface ChipPropsColorOverrides
-
 external interface ChipOwnProps :
     PropsWithSx,
     HTMLAttributes<HTMLDivElement> {
     /**
      * The Avatar element to display.
      */
-    var avatar: Any? /* React.ReactElement<unknown> */
+    var avatar: ReactElement<*>?
 
     /**
      * This prop isn't supported.
@@ -69,7 +64,7 @@ external interface ChipOwnProps :
     /**
      * Override the default delete icon element. Shown only if `onDelete` is set.
      */
-    var deleteIcon: Any? /* React.ReactElement<unknown> */
+    var deleteIcon: ReactElement<*>?
 
     /**
      * If `true`, the component is disabled.
@@ -80,7 +75,7 @@ external interface ChipOwnProps :
     /**
      * Icon element.
      */
-    var icon: Any? /* React.ReactElement<unknown> */
+    var icon: ReactElement<*>?
 
     /**
      * The content of the component.

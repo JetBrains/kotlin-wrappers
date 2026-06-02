@@ -45,10 +45,10 @@ sealed external interface TabsScrollButtons {
         @JsValue("auto")
         val auto: TabsScrollButtons
 
-        @JsValue("`true`")
+        @JsValue("true")
         val `true`: TabsScrollButtons
 
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: TabsScrollButtons
     }
 }

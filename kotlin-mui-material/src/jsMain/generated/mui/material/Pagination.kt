@@ -91,12 +91,6 @@ external interface PaginationRenderItemParams :
     var variant: PaginationVariant
 }
 
-external interface PaginationPropsVariantOverrides
-
-external interface PaginationPropsSizeOverrides
-
-external interface PaginationPropsColorOverrides
-
 /**
  *
  * Demos:

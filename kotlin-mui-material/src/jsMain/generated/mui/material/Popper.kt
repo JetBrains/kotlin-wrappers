@@ -5,7 +5,6 @@
 package mui.material
 
 import mui.base.PopperOwnProps
-import mui.base.PopperProps
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
@@ -14,7 +13,7 @@ import react.FC
 
 external interface PopperProps :
     PropsWithSx,
-    PopperProps {
+    mui.base.PopperProps {
     /**
      * The component used for the root node.
      * Either a string to use a HTML element or a component.

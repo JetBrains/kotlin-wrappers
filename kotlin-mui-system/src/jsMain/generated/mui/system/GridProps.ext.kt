@@ -33,6 +33,9 @@ sealed external interface GridWrap {
     }
 }
 
+/**
+ * Lost from union: number
+ */
 sealed external interface GridSize {
     companion object {
         @JsValue("auto")
@@ -41,10 +44,7 @@ sealed external interface GridSize {
         @JsValue("grow")
         val grow: GridSize
 
-        @JsValue("number")
-        val number: GridSize
-
-        @JsValue("`false`")
+        @JsValue("false")
         val `false`: GridSize
     }
 }

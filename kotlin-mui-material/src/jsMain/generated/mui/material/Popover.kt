@@ -205,14 +205,6 @@ external interface PopoverSlots {
     var backdrop: ElementType<*>
 }
 
-external interface PopoverRootSlotPropsOverrides
-
-external interface PopoverPaperSlotPropsOverrides
-
-external interface PopoverTransitionSlotPropsOverrides
-
-external interface PopoverBackdropSlotPropsOverrides
-
 external interface PopoverSlotProps : Props {
     /** TS: SlotProps<typeof Modal, PopoverRootSlotPropsOverrides, PopoverOwnerState> */
     var root: ModalProps?

@@ -21,12 +21,6 @@ external interface PaginationItemProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface PaginationItemPropsVariantOverrides
-
-external interface PaginationItemPropsSizeOverrides
-
-external interface PaginationItemPropsColorOverrides
-
 external interface PaginationItemSlots {
     var first: ElementType<*>
 

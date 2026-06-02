@@ -72,20 +72,6 @@ external interface SwitchProps :
     var value: Any?
 }
 
-external interface SwitchPropsSizeOverrides
-
-external interface SwitchPropsColorOverrides
-
-external interface SwitchRootSlotPropsOverrides
-
-external interface SwitchTrackSlotPropsOverrides
-
-external interface SwitchThumbSlotPropsOverrides
-
-external interface SwitchSwitchBaseSlotPropsOverrides
-
-external interface SwitchInputSlotPropsOverrides
-
 external interface SwitchSlots {
     /**
      * The component that renders the root slot.

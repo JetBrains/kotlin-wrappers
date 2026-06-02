@@ -54,10 +54,6 @@ external interface LinearProgressProps :
     var variant: LinearProgressVariant?
 }
 
-external interface LinearProgressPropsColorOverrides
-
-external interface LinearProgressPropsVariantOverrides
-
 /**
  * ## ARIA
  *

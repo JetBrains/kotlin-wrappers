@@ -33,10 +33,6 @@ external interface BackdropSlots {
     var transition: ElementType<*>
 }
 
-external interface BackdropComponentsPropsOverrides
-
-external interface BackdropTransitionSlotPropsOverrides
-
 external interface BackdropSlotProps : Props {
     /** TS: SlotProps<'div', BackdropComponentsPropsOverrides, BackdropOwnerState> */
     var root: HTMLAttributes<HTMLDivElement>?

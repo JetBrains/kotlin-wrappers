@@ -24,10 +24,6 @@ external interface IconButtonProps :
     PropsWithComponent,
     ButtonBaseProps
 
-external interface IconButtonPropsColorOverrides
-
-external interface IconButtonPropsSizeOverrides
-
 external interface IconButtonOwnProps :
     PropsWithChildren,
     PropsWithSx,

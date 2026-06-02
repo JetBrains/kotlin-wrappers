@@ -20,10 +20,6 @@ external interface TypographyProps :
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
 
-external interface TypographyPropsVariantOverrides
-
-external interface TypographyPropsColorOverrides
-
 external interface TypographyOwnProps :
     SystemProps<Theme>,
     PropsWithChildren,

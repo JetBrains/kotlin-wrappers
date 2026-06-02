@@ -63,7 +63,7 @@ external interface AutocompleteProps<Value> :
 
     interface ComponentsProps {
         var clearIndicator: Props? /* Partial<IconButtonProps> */
-        var paper: Props? /* PaperProps */
+        var paper: PaperProps?
         var popper: Props? /* Partial<PopperProps> */
         var popupIndicator: Props? /* Partial<IconButtonProps> */
     }
@@ -236,10 +236,6 @@ external interface AutocompleteProps<Value> :
     override var sx: SxProps<Theme>?
 }
 
-external interface AutocompletePaperSlotPropsOverrides
-
-external interface AutocompletePopperSlotPropsOverrides
-
 external interface AutocompleteRenderOptionState {
     var inputValue: String
 
@@ -271,8 +267,6 @@ external interface AutocompleteRenderInputParams : Props {
 
     var inputProps: Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputProps']> */
 }
-
-external interface AutocompletePropsSizeOverrides
 
 external interface AutocompleteSlots {
     /**

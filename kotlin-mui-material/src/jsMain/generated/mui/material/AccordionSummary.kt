@@ -37,12 +37,6 @@ external interface AccordionSummarySlots {
     var expandIconWrapper: ElementType<*>
 }
 
-external interface AccordionSummaryRootSlotPropsOverrides
-
-external interface AccordionSummaryContentSlotPropsOverrides
-
-external interface AccordionSummaryExpandIconWrapperSlotPropsOverrides
-
 external interface AccordionSummarySlotProps : Props {
     /** TS: SlotProps< React.ElementType<ButtonBaseProps>, AccordionSummaryRootSlotPropsOverrides, AccordionSummaryOwnerState > */
     var root: ButtonBaseProps?
