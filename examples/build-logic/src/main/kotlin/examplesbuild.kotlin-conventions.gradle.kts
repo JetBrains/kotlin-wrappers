@@ -16,6 +16,7 @@ val JS_FREE_COMPILER_ARGS = listOf(
     "-Xes-long-as-bigint",
     "-Xir-generate-inline-anonymous-functions",
     "-Xname-based-destructuring=complete",
+    "-Xcollection-literals",
 )
 
 kotlin {

@@ -18,6 +18,7 @@ val COMMON_FREE_COMPILER_ARGS = listOf(
     "-Xexpect-actual-classes",
     "-Xdont-warn-on-error-suppression",
     "-Xname-based-destructuring=complete",
+    "-Xcollection-literals",
 
     "-Xwarning-level=NOTHING_TO_INLINE:disabled",
 )
