@@ -2,10 +2,10 @@
 coroutines = "1.11.0"
 dokka = "2.2.0"
 karakum = "1.0.0-alpha.111"
-kfc = "19.5.0"
-kotlin = "2.3.21"
+kfc = "19.7.0"
+kotlin = "2.4.0"
 serialization = "1.11.0"
-seskar = "4.53.0"
+seskar = "4.60.0"
 
 [libraries]
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }

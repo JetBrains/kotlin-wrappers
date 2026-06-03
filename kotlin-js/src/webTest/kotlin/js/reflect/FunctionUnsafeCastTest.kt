@@ -15,7 +15,7 @@ external interface F
 class FunctionUnsafeCastTest {
     @Test
     fun `function with zero parameters with 'Unit' return type`() {
-        globalThis["externalFunctionWithUnitReturn"] = unsafeCast<F>(value = { 37 })
+        globalThis["externalFunctionWithUnitReturn"] = unsafeCast<F>(value = { 37.n })
 
         assertEquals(Unit, externalFunctionWithUnitReturn())
     }

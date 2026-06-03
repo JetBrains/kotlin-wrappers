@@ -1,3 +1,7 @@
+@file:Suppress(
+    "JS_ACTUAL_EXTERNAL_INTERFACE_WHILE_EXPECT_WITHOUT_JS_NO_RUNTIME",
+)
+
 package js.reflect
 
 actual typealias JsClass<T> = kotlin.js.JsClass<T>
