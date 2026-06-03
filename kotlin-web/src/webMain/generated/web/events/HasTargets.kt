@@ -2,7 +2,7 @@
 
 package web.events
 
-external interface HasTargets<out C : EventTarget, out T : EventTarget> {
+external interface HasTargets<out C : EventTargetLike, out T : EventTargetLike> {
     val currentTarget: C
     val target: T
 }
