@@ -536,6 +536,16 @@ private constructor() :
     fun setAttributeNodeNS(attr: Attr): Attr?
 
     /**
+     * The **`setHTML()`** method of the Element interface provides an XSS-safe method to parse and sanitize a string of HTML and insert it into the DOM as a subtree of the element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setHTML)
+     */
+    fun setHTML(
+        html: String,
+        options: SetHTMLOptions = definedExternally,
+    )
+
+    /**
      * The **`setHTMLUnsafe()`** method of the Element interface is used to parse HTML input into a DocumentFragment, optionally filtering out unwanted elements and attributes, and those that don't belong in the context, and then using it to replace the element's subtree in the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe)

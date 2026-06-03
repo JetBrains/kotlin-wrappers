@@ -98,6 +98,7 @@ private val DOM_TYPES = setOf(
 
     // separate package?
     "PointerLockOptions",
+    "SetHTMLOptions",
 )
 
 private val WEB_COMPONENTS_TYPES = setOf(
@@ -2165,6 +2166,9 @@ private fun convertProperty(
             -> "JsAny /* $type */"
 
         "TaskPriority | TaskSignal",
+            -> "JsAny /* $type */"
+
+        "Sanitizer | SanitizerConfig | SanitizerPresets",
             -> "JsAny /* $type */"
 
         // MediaStreamConstraints

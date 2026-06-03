@@ -12,6 +12,9 @@ import js.promise.Promise
  */
 open external class NavigationTransition
 private constructor() {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/committed)
+     */
     val committed: Promise<Void>
 
     /**

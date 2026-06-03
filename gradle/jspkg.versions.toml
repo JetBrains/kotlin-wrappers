@@ -60,7 +60,7 @@ vercel-ncc = "^0.38.4"
 vscode = "^1.120.0"
 yaml = "^2.8.3"
 
-types-web = "0.0.349"
+types-web = "0.0.350"
 types-webworker = "0.0.76"
 types-serviceworker = "0.0.197"
 types-audioworklet = "0.0.100"

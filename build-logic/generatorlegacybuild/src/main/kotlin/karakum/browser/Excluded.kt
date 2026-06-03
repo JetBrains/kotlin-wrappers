@@ -11,6 +11,7 @@ internal val KNOWN_MISSED_TYPES = setOf(
     "EventTarget",
     "HTMLAllCollection",
     "HTMLCollectionOf",
+    "HTMLOrSVGElement",
     "ImportMeta",
     "MimeTypeArray",
     "NodeListOf",
