@@ -1,19 +1,15 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package web.messaging
 
 import js.internal.InternalApi
 import web.events.EventHandler
-import web.events.EventTarget
+import web.events.EventTargetLike
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
 external interface MessageEventTarget :
-    EventTarget {
+    EventTargetLike {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
      */

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package web.dom
 
 import js.function.JsFunction
@@ -15,7 +11,7 @@ import web.cssom.TransitionEvent
 import web.dnd.DragEvent
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
+import web.events.EventTargetLike
 import web.events.ProgressEvent
 import web.focus.FocusEvent
 import web.form.FormDataEvent
@@ -32,7 +28,7 @@ import web.uievents.UIEvent
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
 external interface GlobalEventHandlers :
-    EventTarget {
+    EventTargetLike {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/abort_event)
      */

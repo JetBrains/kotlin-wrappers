@@ -803,7 +803,7 @@ internal fun convertInterface(
         "MessageEventTarget",
         "GlobalEventHandlers",
         "WindowEventHandlers",
-            -> "$declaration :\n$EVENT_TARGET"
+            -> "$declaration :\n$EVENT_TARGET_LIKE"
 
         // Details - https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/1845
         "Screen",

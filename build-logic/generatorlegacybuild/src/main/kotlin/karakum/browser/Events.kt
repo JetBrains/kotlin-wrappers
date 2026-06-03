@@ -5,6 +5,7 @@ private const val EVENT = "Event"
 internal const val EVENT_HANDLER = "EventHandler"
 internal const val EVENT_INSTANCE = "EventInstance"
 internal const val EVENT_TARGET = "EventTarget"
+internal const val EVENT_TARGET_LIKE = "EventTargetLike"
 
 private data class EventData(
     val name: String,

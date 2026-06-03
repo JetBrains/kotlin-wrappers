@@ -1,15 +1,11 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package web.window
 
 import js.internal.InternalApi
 import web.events.Event
 import web.events.EventHandler
-import web.events.EventTarget
+import web.events.EventTargetLike
 import web.gamepad.GamepadEvent
 import web.history.HashChangeEvent
 import web.history.PageTransitionEvent
@@ -23,7 +19,7 @@ import web.viewtransition.PageSwapEvent
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
 external interface WindowEventHandlers :
-    EventTarget {
+    EventTargetLike {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/afterprint_event)
      */

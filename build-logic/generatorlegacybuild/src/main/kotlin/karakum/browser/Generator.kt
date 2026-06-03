@@ -174,6 +174,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.events.EventInit",
     "web.events.EventInstance",
     "web.events.EventTarget",
+    "web.events.EventTargetLike",
     "web.events.EventType",
     "web.events.ProgressEvent",
     "web.experimental.ExperimentalWebApi",
@@ -454,13 +455,7 @@ fun generateKotlinDeclarations(
             if (Mixins.isUnsafeMixin(name, body) || name == LOCALIZABLE)
                 add(NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE)
 
-            if (name == "ChildNode"
-                || name == "ParentNode"
-                || name == "AbstractWorker"
-                || name == "MessageEventTarget"
-                || name == "GlobalEventHandlers"
-                || name == "WindowEventHandlers"
-            )
+            if (name == "ChildNode" || name == "ParentNode")
                 add(INTERFACE_WITH_SUPERCLASS)
 
             if ("companion object" in body && "sealed external interface" in body)
