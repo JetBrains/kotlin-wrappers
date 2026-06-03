@@ -24,7 +24,7 @@ fun useMediaQuery(
         setMatches(queryList.matches)
 
         queryList.changeEvent()
-            .collect { setMatches(regex.toRegex().matches(it)) }
+            .collect { setMatches(it.matches) }
     }
 
     return matches
