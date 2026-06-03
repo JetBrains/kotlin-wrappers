@@ -14,9 +14,9 @@ import web.cssom.Display
 import web.cssom.px
 
 internal val View = FC {
-    val (a, setA) = useState(0)
-    val (b, setB) = useState(0)
-    val (c, setC) = useState(0)
+    val [a, setA] = useState(0)
+    val [b, setB] = useState(0)
+    val [c, setC] = useState(0)
 
     useEffect(a) {
         launch {

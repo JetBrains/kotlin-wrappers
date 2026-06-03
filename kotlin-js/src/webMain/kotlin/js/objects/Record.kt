@@ -32,21 +32,21 @@ fun <K : JsAny, V : JsAny?> buildRecord(
 
 fun <K : JsAny, V : JsAny?> Sequence<Tuple2<K, V>>.toRecord(): Record<K, V> =
     buildRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Sequence<Pair<K, V>>.toRecord(): Record<K, V> =
     buildRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Iterable<Pair<K, V>>.toRecord(): Record<K, V> =
     buildRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Map<K, V>.toRecord(): Record<K, V> =
     buildRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 

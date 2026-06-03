@@ -16,7 +16,7 @@ internal fun useSelectionHandler(): SelectionHandler {
 private fun createSelectionHandler(
     selection: Selection,
 ): SelectionHandler = { keys ->
-    val (add, remove) = keys.entries
+    val [add, remove] = keys.entries
         .partition { it.value }
         .let { Pair(it.first.toSelectedKeys(), it.second.toSelectedKeys()) }
 

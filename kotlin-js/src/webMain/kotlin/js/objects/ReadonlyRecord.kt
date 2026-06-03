@@ -30,21 +30,21 @@ fun <K : JsAny, V : JsAny?> buildReadonlyRecord(
 
 fun <K : JsAny, V : JsAny?> Sequence<Tuple2<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
     buildReadonlyRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Sequence<Pair<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
     buildReadonlyRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 
 fun <K : JsAny, V : JsAny?> Iterable<Pair<K, V>>.toReadonlyRecord(): ReadonlyRecord<K, V> =
     buildReadonlyRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }
 
 
 fun <K : JsAny, V : JsAny?> Map<K, V>.toReadonlyRecord(): ReadonlyRecord<K, V> =
     buildReadonlyRecord {
-        forEach { (key, value) -> set(key, value) }
+        forEach { [key, value] -> set(key, value) }
     }

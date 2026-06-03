@@ -15,7 +15,7 @@ plugins {
 val JS_FREE_COMPILER_ARGS = listOf(
     "-Xes-long-as-bigint",
     "-Xir-generate-inline-anonymous-functions",
-    "-Xenable-suspend-function-exporting",
+    "-Xname-based-destructuring=complete",
 )
 
 kotlin {

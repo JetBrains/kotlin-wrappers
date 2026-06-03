@@ -22,7 +22,7 @@ fun <T> useEqualState(
 private fun <T> useEqualStateInternal(
     state: StateInstance<T>,
 ): StateInstance<T> {
-    val (value, setter) = state
+    val [value, setter] = state
     val equalSetter = useEqualSetter(setter)
 
     return StateInstance(

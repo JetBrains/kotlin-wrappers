@@ -64,7 +64,7 @@ val OnceExample = FC {
 }
 
 val AwaitAnimationFrameExample = FC {
-    val (frameCount, setFrameCount) = useState(0)
+    val [frameCount, setFrameCount] = useState(0)
 
 
     // before (callback mode)

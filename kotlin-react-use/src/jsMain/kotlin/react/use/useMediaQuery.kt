@@ -18,13 +18,13 @@ fun useMediaQuery(
         matchMedia(query)
     }
 
-    val (matches, setMatches) = useState(queryList.matches)
+    val [matches, setMatches] = useState(queryList.matches)
 
     useEffect(queryList) {
         setMatches(queryList.matches)
 
         queryList.changeEvent()
-            .collect { setMatches(it.matches) }
+            .collect { setMatches(regex.toRegex().matches(it)) }
     }
 
     return matches

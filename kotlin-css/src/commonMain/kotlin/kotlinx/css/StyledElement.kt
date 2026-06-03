@@ -9,7 +9,7 @@ import kotlin.reflect.KProperty
 class CssDeclarations : MutableMap<String, Any> by LinkedHashMap() {
     private var stringDecl: String? = null
         get() = field ?: buildString {
-            this@CssDeclarations.forEach { (k, v) ->
+            this@CssDeclarations.forEach { [k, v] ->
                 append("${k.hyphenize()}: ${v};\n")
             }
         }.also { field = it }

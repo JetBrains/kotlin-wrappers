@@ -10,7 +10,7 @@ import react.raw.useTransitionRaw
  * [Online Documentation](https://react.dev/reference/react/useTransition)
  */
 fun useTransition(): TransitionInstance {
-    val (isPendingRaw, startTransitionRaw) = useTransitionRaw()
+    val [isPendingRaw, startTransitionRaw] = useTransitionRaw()
 
     val startTransition = useMemo {
         createTransitionStartFunction(startTransitionRaw)

@@ -14,7 +14,7 @@ private val updateReducer: (Int, Void) -> Int = { num, _ ->
  * [Original](https://github.com/streamich/react-use/blob/master/src/useUpdate.ts)
  */
 fun useUpdate(): () -> Unit {
-    val (_, update) = useReducer(updateReducer, 0)
+    val [_, update] = useReducer(updateReducer, 0)
 
     return unsafeCast(update)
 }
