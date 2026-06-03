@@ -12,11 +12,14 @@ plugins {
     id("io.github.turansky.seskar")
 }
 
+val COMMON_FREE_COMPILER_ARGS = listOf(
+    "-Xname-based-destructuring=complete",
+    "-Xcollection-literals",
+)
+
 val JS_FREE_COMPILER_ARGS = listOf(
     "-Xes-long-as-bigint",
     "-Xir-generate-inline-anonymous-functions",
-    "-Xname-based-destructuring=complete",
-    "-Xcollection-literals",
 )
 
 kotlin {
@@ -29,13 +32,15 @@ kotlin {
             "kotlin.js.ExperimentalJsExport",
             "kotlin.js.ExperimentalWasmJsInterop",
         )
+
+        freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
     }
 
     val jsTarget = project.jsTarget
 
     if (jsTarget.js) {
         js {
-            configureJsTarget()
+            configureJsTarget(JS_FREE_COMPILER_ARGS)
         }
 
         sourceSets {
@@ -55,7 +60,9 @@ kotlin {
     }
 }
 
-fun KotlinJsTargetDsl.configureJsTarget() {
+fun KotlinJsTargetDsl.configureJsTarget(
+    compilerArgs: List<String> = emptyList(),
+) {
     outputModuleName = project.name
 
     val jsPlatform = project.jsPlatform
@@ -81,6 +88,6 @@ fun KotlinJsTargetDsl.configureJsTarget() {
     compilerOptions {
         target = "es2015"
 
-        freeCompilerArgs.addAll(JS_FREE_COMPILER_ARGS)
+        freeCompilerArgs.addAll(compilerArgs)
     }
 }
