@@ -838,6 +838,57 @@ internal fun convertInterface(
         }
     }
 
+    if (declaration.substringAfter(" ").startsWith("$name<")
+        && !name.endsWith("Callback")
+    ) {
+        val typeParameters = declaration
+            .substringAfter("<")
+            .substringBefore(">")
+            .let { "<$it>" }
+
+        var newTypeParameters = when (name + typeParameters) {
+            "DOMTokenList<T : JsAny>" -> typeParameters
+            "ElementDefinitionOptions<T : HTMLElement>" -> typeParameters
+            "Global<T>" -> typeParameters
+            "GlobalDescriptor<T>" -> typeParameters // out?
+            "HTMLCollection<T : Element>" -> "<out T : Element>"
+            "HTMLCollectionBase<T : Element>" -> "<out T : Element>"
+            "IDBRequest<T>" -> typeParameters // out?
+            "Memory<B : ArrayBufferLike>" -> "<out B : ArrayBufferLike>"
+            "NodeList<T : Node>" -> "<out T : Node>"
+            "QueuingStrategy<T>" -> "<in T>"
+            "QueuingStrategySize<T>" -> typeParameters // callback
+            "ReadableStream<R>" -> "<out R>"
+            "ReadableStreamDefaultController<R>" -> "<out R>"
+            "ReadableStreamDefaultReader<R>" -> "<out R>"
+            "ReadableStreamReadResult<T>" -> typeParameters // out?
+            "ReadableWritablePair<R, W>" -> typeParameters // out? in?
+            "SVGAnimatedEnumeration<T>" -> "<out T>"
+            "SegmentIterator<T>" -> "<out T>"
+            "TransformStream<I, O>" -> "<in I, out O>"
+            "TransformStreamDefaultController<O>" -> "<in O>"
+            "Transformer<I, O>" -> typeParameters // in? out?
+            "UnderlyingDefaultSource<R>" -> typeParameters // in?
+            "UnderlyingSink<W>" -> typeParameters // in?
+            "UnderlyingSource<R>" -> typeParameters // out?
+            "Worklet<M : WorkletModule>" -> "<in M : WorkletModule>"
+            "WritableStream<W>" -> "<in W>"
+            "WritableStreamDefaultWriter<W>" -> "<in W>"
+
+            else -> TODO("Unable to calculate bounds correction for: '$name$typeParameters'")
+        }
+
+        newTypeParameters = newTypeParameters
+            // TEMP
+            .let { typeParameters }
+            .removeSurrounding("<", ">")
+            .splitToSequence(", ")
+            .map { if (":" !in it) "$it : JsAny?" else it }
+            .joinToString(", ", "<", ">")
+
+        declaration = declaration.replace(typeParameters, newTypeParameters)
+    }
+
     var memberSource = source
         .substringAfter(" {\n")
         .removeSuffix("}")
@@ -946,7 +997,7 @@ internal fun convertInterface(
         .plus("HtmlSource".takeIf { name == "TrustedHTML" })
         .filterNotNull()
         .forEach { additionalParent ->
-            declaration += if (":" in declaration) "," else ":"
+            declaration += if (":" in declaration.replace(" : JsAny?", "")) "," else ":"
             declaration += "\n$additionalParent"
         }
 
@@ -1040,26 +1091,18 @@ internal fun convertInterface(
         } else declaration + mainConstructor
     }
 
-    val typeParameters = declaration
-        .substringAfter(" ")
-        .substringBefore(":\n")
-        .substringBefore("\n")
-        .substringBefore("(")
-        .trim()
-        .substringAfter("<", "")
-        .substringBeforeLast(">", "")
-
-    var newTypeParameters: String? = null
-    if (typeParameters.isNotEmpty() && "<" !in typeParameters) {
-        newTypeParameters = typeParameters
-            .splitToSequence(",")
-            .map { if (":" !in it) "$it : JsAny?" else it }
-            .joinToString(",")
-
-        declaration = declaration.replaceFirst("<$typeParameters>", "<$newTypeParameters>")
-    }
-
-    val extensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, newTypeParameters)
+    val extensionsCollector = BrowserSuspendExtensionsCollector.forParent(
+        parentName = name,
+        parentTypeParameters = declaration
+            .substringBefore("\n")
+            .substringAfter("<", "")
+            .substringBefore(">", "")
+            .removePrefix("in ")
+            .removePrefix("out ")
+            .replace(", in ", ", ")
+            .replace(", out ", ", ")
+            .ifEmpty { null },
+    )
 
     var members = if (memberSource.isNotEmpty()) {
         var result = memberSource

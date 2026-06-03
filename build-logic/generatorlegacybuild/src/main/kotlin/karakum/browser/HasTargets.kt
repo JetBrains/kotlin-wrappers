@@ -4,7 +4,7 @@ internal const val HAS_TARGETS = "HasTargets"
 
 // language=kotlin
 private val HAS_TARGETS_BODY: String = """
-external interface HasTargets<out C : EventTarget, out T: EventTarget> {
+external interface HasTargets<out C : EventTargetLike, out T: EventTargetLike> {
     val currentTarget: C
     val target: T
 }
