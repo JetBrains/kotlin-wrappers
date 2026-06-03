@@ -9,7 +9,7 @@ import js.errors.JsError
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController)
  */
-open external class TransformStreamDefaultController<O : JsAny?>
+open external class TransformStreamDefaultController<in O : JsAny?>
 private constructor() {
     /**
      * The **`desiredSize`** read-only property of the TransformStreamDefaultController interface returns the desired size to fill the queue of the associated ReadableStream.

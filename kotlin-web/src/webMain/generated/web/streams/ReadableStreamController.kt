@@ -10,4 +10,4 @@ import js.internal.InternalApi
  * - [ReadableByteStreamController]
  */
 @SubclassOptInRequired(InternalApi::class)
-external interface ReadableStreamController<T : JsAny?>
+external interface ReadableStreamController<in T : JsAny?>

@@ -14,7 +14,7 @@ import js.serialization.Transferable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream)
  */
-open external class WritableStream<W : JsAny?>(
+open external class WritableStream<in W : JsAny?>(
     underlyingSink: UnderlyingSink<W> = definedExternally,
     strategy: QueuingStrategy<W> = definedExternally,
 ) : Transferable,

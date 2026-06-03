@@ -12,7 +12,7 @@ import js.promise.await
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
  */
-open external class WritableStreamDefaultWriter<W : JsAny?>(
+open external class WritableStreamDefaultWriter<in W : JsAny?>(
     stream: WritableStream<W>,
 ) {
     /**

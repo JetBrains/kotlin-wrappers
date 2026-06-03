@@ -3,7 +3,7 @@
 package web.streams
 
 // @JsPlainObject
-external interface QueuingStrategy<T : JsAny?> {
+external interface QueuingStrategy<in T : JsAny?> {
     val highWaterMark: Double?
     val size: QueuingStrategySize<T>?
 }

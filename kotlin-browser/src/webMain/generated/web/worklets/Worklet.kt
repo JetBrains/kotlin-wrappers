@@ -13,7 +13,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet)
  */
-open external class Worklet<M : WorkletModule>
+open external class Worklet<in M : WorkletModule>
 private constructor() {
     /**
      * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current Worklet.

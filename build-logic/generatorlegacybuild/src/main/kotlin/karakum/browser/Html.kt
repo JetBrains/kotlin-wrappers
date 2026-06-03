@@ -858,14 +858,14 @@ internal fun convertInterface(
             "NodeList<T : Node>" -> "<out T : Node>"
             "QueuingStrategy<T>" -> "<in T>"
             "QueuingStrategySize<T>" -> typeParameters // callback
-            "ReadableStream<R>" -> "<out R>"
-            "ReadableStreamDefaultController<R>" -> "<out R>"
-            "ReadableStreamDefaultReader<R>" -> "<out R>"
+            "ReadableStream<R>" -> typeParameters  // !!! "<out R>"
+            "ReadableStreamDefaultController<R>" -> "<in R>"
+            "ReadableStreamDefaultReader<R>" -> typeParameters  // !!! "<out R>"
             "ReadableStreamReadResult<T>" -> typeParameters // out?
             "ReadableWritablePair<R, W>" -> typeParameters // out? in?
-            "SVGAnimatedEnumeration<T>" -> "<out T>"
+            "SVGAnimatedEnumeration<T>" -> typeParameters
             "SegmentIterator<T>" -> "<out T>"
-            "TransformStream<I, O>" -> "<in I, out O>"
+            "TransformStream<I, O>" -> typeParameters // !!! "<in I, out O>"
             "TransformStreamDefaultController<O>" -> "<in O>"
             "Transformer<I, O>" -> typeParameters // in? out?
             "UnderlyingDefaultSource<R>" -> typeParameters // in?
@@ -879,8 +879,6 @@ internal fun convertInterface(
         }
 
         newTypeParameters = newTypeParameters
-            // TEMP
-            .let { typeParameters }
             .removeSurrounding("<", ">")
             .splitToSequence(", ")
             .map { if (":" !in it) "$it : JsAny?" else it }

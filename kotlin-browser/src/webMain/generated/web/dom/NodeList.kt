@@ -10,7 +10,7 @@ import js.collections.ListLike
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList)
  */
 abstract /* open */
-external class NodeList<T : Node>
+external class NodeList<out T : Node>
 private constructor() :
     ListLike<T> {
     /**

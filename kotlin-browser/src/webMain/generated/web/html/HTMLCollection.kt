@@ -4,7 +4,7 @@ package web.html
 
 import web.dom.Element
 
-open external class HTMLCollection<T : Element>
+open external class HTMLCollection<out T : Element>
 private constructor() :
     HTMLCollectionBase<T> {
     override val length: Int

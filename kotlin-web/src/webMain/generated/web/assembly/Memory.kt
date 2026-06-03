@@ -10,7 +10,7 @@ import js.buffer.ArrayBufferLike
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory)
  */
 @JsQualifier("WebAssembly")
-open external class Memory<B : ArrayBufferLike>(
+open external class Memory<out B : ArrayBufferLike>(
     descriptor: MemoryDescriptor,
 ) {
     /**

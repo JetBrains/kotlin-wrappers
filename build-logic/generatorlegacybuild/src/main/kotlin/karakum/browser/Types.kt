@@ -633,7 +633,7 @@ private fun markerInterface(
             transform = { " * - [$it]" },
         )
 
-    val finalDeclaration = declaration.replace("<T>", "<T : JsAny?>")
+    val finalDeclaration = declaration.replace("<T>", "<in T : JsAny?>")
     val type = """
         $comment
         @SubclassOptInRequired(InternalApi::class)
