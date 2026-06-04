@@ -33,7 +33,8 @@ __MEMBERS__
 
     companion object : TypedArrayCompanion<__NAME__<ArrayBuffer>, __T__> {
         ${mdn(name="TypedArray", path = "/of")}
-        override operator fun of(
+        /* override */
+        operator fun of(
             vararg items: __T__,
         ): __NAME__<ArrayBuffer>    __COMPANION_MEMBERS__
     }

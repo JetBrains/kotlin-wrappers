@@ -14,12 +14,14 @@ sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, 
      */
     val BYTES_PER_ELEMENT: Int
 
+    /*
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
      */
     abstract fun of(
         vararg items: T,
     ): S
+    */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/from)

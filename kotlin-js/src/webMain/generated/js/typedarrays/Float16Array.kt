@@ -42,7 +42,8 @@ open external class Float16Array<B : ArrayBufferLike>(
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
          */
-        override operator fun of(
+        /* override */
+        operator fun of(
             vararg items: JsFloat16,
         ): Float16Array<ArrayBuffer>
     }
