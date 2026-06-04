@@ -33,4 +33,18 @@ class ReadonlyArrayTest {
 
         assertEquals(7, a.size)
     }
+
+    @Test
+    fun `toList - from non-nulable - collection literal`() {
+        val a: ReadonlyArray<BigInt> = [1.n, 4.n, 7.n]
+
+        assertEquals(listOf(1.n, 4.n, 7.n), a.toList())
+    }
+
+    @Test
+    fun `toList - from nullable - collection literal`() {
+        val a: ReadonlyArray<BigInt?> = [1.n, null, 4.n, null, 7.n]
+
+        assertEquals(listOf(1.n, null, 4.n, null, 7.n), a.toList())
+    }
 }
