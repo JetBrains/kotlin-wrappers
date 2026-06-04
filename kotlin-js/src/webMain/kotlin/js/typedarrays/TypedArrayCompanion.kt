@@ -8,7 +8,7 @@ import js.buffer.ArrayBuffer
 sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny> {
     val BYTES_PER_ELEMENT: Int
 
-    fun of(
+    abstract fun of(
         vararg items: T,
     ): S
 

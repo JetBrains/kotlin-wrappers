@@ -38,5 +38,12 @@ open external class Uint32Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsUInt>)
 
-    companion object : TypedArrayCompanion<Uint32Array<ArrayBuffer>, JsUInt>
+    companion object : TypedArrayCompanion<Uint32Array<ArrayBuffer>, JsUInt> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsUInt,
+        ): Uint32Array<ArrayBuffer>
+    }
 }

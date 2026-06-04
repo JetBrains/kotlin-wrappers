@@ -67,6 +67,13 @@ open external class Uint8Array<B : ArrayBufferLike>(
 
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
         /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsUByte,
+        ): Uint8Array<ArrayBuffer>
+
+        /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/fromBase64)
          */
         fun fromBase64(

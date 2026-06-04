@@ -38,5 +38,12 @@ open external class Float16Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsFloat16>)
 
-    companion object : TypedArrayCompanion<Float16Array<ArrayBuffer>, JsFloat16>
+    companion object : TypedArrayCompanion<Float16Array<ArrayBuffer>, JsFloat16> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsFloat16,
+        ): Float16Array<ArrayBuffer>
+    }
 }

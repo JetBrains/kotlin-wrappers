@@ -38,5 +38,12 @@ open external class Int8Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsByte>)
 
-    companion object : TypedArrayCompanion<Int8Array<ArrayBuffer>, JsByte>
+    companion object : TypedArrayCompanion<Int8Array<ArrayBuffer>, JsByte> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsByte,
+        ): Int8Array<ArrayBuffer>
+    }
 }

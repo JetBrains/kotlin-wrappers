@@ -38,5 +38,12 @@ open external class Int16Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsShort>)
 
-    companion object : TypedArrayCompanion<Int16Array<ArrayBuffer>, JsShort>
+    companion object : TypedArrayCompanion<Int16Array<ArrayBuffer>, JsShort> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsShort,
+        ): Int16Array<ArrayBuffer>
+    }
 }

@@ -38,5 +38,12 @@ open external class Uint8ClampedArray<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsUByte>)
 
-    companion object : TypedArrayCompanion<Uint8ClampedArray<ArrayBuffer>, JsUByte>
+    companion object : TypedArrayCompanion<Uint8ClampedArray<ArrayBuffer>, JsUByte> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsUByte,
+        ): Uint8ClampedArray<ArrayBuffer>
+    }
 }

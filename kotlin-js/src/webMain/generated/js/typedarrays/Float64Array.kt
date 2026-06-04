@@ -38,5 +38,12 @@ open external class Float64Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsDouble>)
 
-    companion object : TypedArrayCompanion<Float64Array<ArrayBuffer>, JsDouble>
+    companion object : TypedArrayCompanion<Float64Array<ArrayBuffer>, JsDouble> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsDouble,
+        ): Float64Array<ArrayBuffer>
+    }
 }

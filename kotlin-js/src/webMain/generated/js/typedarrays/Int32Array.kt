@@ -38,5 +38,12 @@ open external class Int32Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<JsInt>)
 
-    companion object : TypedArrayCompanion<Int32Array<ArrayBuffer>, JsInt>
+    companion object : TypedArrayCompanion<Int32Array<ArrayBuffer>, JsInt> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: JsInt,
+        ): Int32Array<ArrayBuffer>
+    }
 }

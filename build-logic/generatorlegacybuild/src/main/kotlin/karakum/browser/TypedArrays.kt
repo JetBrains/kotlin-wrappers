@@ -1,12 +1,13 @@
 package karakum.browser
 
 private fun mdn(
+    name: String = "__NAME__",
     path: String = "",
 ): String =
     // language=kotlin
     """
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/__NAME__$path)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/$name$path)
  */
 """.trimIndent()
 
@@ -19,57 +20,60 @@ open external class __NAME__<B : ArrayBufferLike>(
     override val length: Int = definedExternally,
 ) : TypedArray<__NAME__<B>, __NAME__<ArrayBuffer>, B, __T__>,
     Serializable {
-    ${mdn("/__NAME__")}
+    ${mdn(path = "/__NAME__")}
     constructor()
-    ${mdn("/__NAME__")}
+    ${mdn(path = "/__NAME__")}
     constructor(length: Int)
-    ${mdn("/__NAME__")}
+    ${mdn(path = "/__NAME__")}
     constructor(elements: JsIterable<__T__>)
-    ${mdn("/__NAME__")}
+    ${mdn(path = "/__NAME__")}
     constructor(elements: ReadonlyArray<__T__>)
 
 __MEMBERS__
 
-    companion object : TypedArrayCompanion<__NAME__<ArrayBuffer>, __T__> __COMPANION_BODY__
+    companion object : TypedArrayCompanion<__NAME__<ArrayBuffer>, __T__> {
+        ${mdn(name="TypedArray", path = "/of")}
+        override operator fun of(
+            vararg items: __T__,
+        ): __NAME__<ArrayBuffer>    __COMPANION_MEMBERS__
+    }
 }
 """.trimIndent()
 
 // language=kotlin
 private val UINT8_MEMBERS = """
-${mdn("/setFromBase64")}
+${mdn(path = "/setFromBase64")}
 fun setFromBase64(
     string: String,
     options: FromBase64Options = definedExternally,
 ): SetFromResult
 
-${mdn("/setFromHex")}
+${mdn(path = "/setFromHex")}
 fun setFromHex(
     string: String,
 ): SetFromResult
 
-${mdn("/toBase64")}
+${mdn(path = "/toBase64")}
 fun toBase64(
     options: ToBase64Options = definedExternally,
 ): String
 
-${mdn("/toHex")}
+${mdn(path = "/toHex")}
 fun toHex(): String
 """.trimIndent()
 
 // language=kotlin
-private val UINT8_COMPANION = """
-{
-    ${mdn("/fromBase64")}
+private val UINT8_COMPANION_MEMBERS = """
+    ${mdn(path = "/fromBase64")}
     fun fromBase64(
         string: String,
         options: FromBase64Options = definedExternally,
     ): __NAME__<ArrayBuffer>
 
-    ${mdn("/fromHex")}
+    ${mdn(path = "/fromHex")}
     fun fromHex(
         string: String,
     ): __NAME__<ArrayBuffer>
-}
 """.trimIndent()
 
 internal fun typedArraysDeclarations(): Sequence<ConversionResult> =
@@ -93,8 +97,8 @@ internal fun typedArraysDeclarations(): Sequence<ConversionResult> =
                 UINT8_MEMBERS.takeIf { name == "Uint8Array" } ?: "",
             )
             .replace(
-                "__COMPANION_BODY__",
-                UINT8_COMPANION.takeIf { name == "Uint8Array" } ?: "",
+                "__COMPANION_MEMBERS__",
+                UINT8_COMPANION_MEMBERS.takeIf { name == "Uint8Array" } ?: "",
             )
             .replace("__NAME__", name)
             .replace("__T__", type)

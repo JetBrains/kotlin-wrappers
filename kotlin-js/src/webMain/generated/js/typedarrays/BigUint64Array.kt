@@ -38,5 +38,12 @@ open external class BigUint64Array<B : ArrayBufferLike>(
      */
     constructor(elements: ReadonlyArray<BigInt>)
 
-    companion object : TypedArrayCompanion<BigUint64Array<ArrayBuffer>, BigInt>
+    companion object : TypedArrayCompanion<BigUint64Array<ArrayBuffer>, BigInt> {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of)
+         */
+        override operator fun of(
+            vararg items: BigInt,
+        ): BigUint64Array<ArrayBuffer>
+    }
 }
