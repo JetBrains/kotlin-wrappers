@@ -7,4 +7,10 @@ actual external class JsArray<T : JsAny?> : JsAny {
 
     @JsName("length")
     actual val size: Int
+
+    companion object {
+        operator fun <T : JsAny?> of(
+            vararg values: T,
+        ): JsArray<T>
+    }
 }
