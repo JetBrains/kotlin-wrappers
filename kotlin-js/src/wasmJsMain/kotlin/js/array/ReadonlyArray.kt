@@ -6,7 +6,7 @@ actual operator fun <T : JsAny> ReadonlyArray<T>.iterator(): Iterator<T> =
 actual fun <T : JsAny> ReadonlyArray<T>.asSequence(): Sequence<T> {
     var index = 0
     return generateSequence {
-        if (index < length) {
+        if (index < size) {
             get(index++)
         } else null
     }
