@@ -11,6 +11,9 @@ import js.collections.ListLike
 import js.iterable.JsIterator
 import js.numbers.JsInt
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
+ */
 @JsQualifier("Uint8Array")
 @JsName("__proto__")
 sealed external class TypedArray<
@@ -25,22 +28,35 @@ sealed external class TypedArray<
 
     /**
      * The size in bytes of each element in the array.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/BYTES_PER_ELEMENT)
      */
     val BYTES_PER_ELEMENT: Int
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/byteLength)
+     */
     override val byteLength: Int
 
     /**
      * Returns the item located at the specified index.
      * @param index The zero-based index of the desired code unit. A negative index will count back from the last item.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/at)
      */
     fun at(index: Int): T?
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/set)
+     */
     fun set(
         array: ArrayLike<T>,
         offset: Int = definedExternally,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/set)
+     */
     fun set(
         array: ReadonlyArray<T>,
         offset: Int = definedExternally,
@@ -54,6 +70,8 @@ sealed external class TypedArray<
      * @param start If start is negative, it is treated as length+start. If end is negative, it
      * is treated as length+end.
      * @param end If not specified, length of the this object is used as its default value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/copyWithin)
      */
     fun copyWithin(
         target: Int,
@@ -68,6 +86,8 @@ sealed external class TypedArray<
      * which is coercible to the Boolean value false, or until the end of the array.
      * @param thisArg An object to which the this keyword can refer in the predicate function.
      * If thisArg is omitted, undefined is used as the this value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every)
      */
     fun every(
         predicate: (value: T) -> Unit,
@@ -80,6 +100,8 @@ sealed external class TypedArray<
      * length+start where length is the length of the array.
      * @param end index to stop filling the array at. If end is negative, it is treated as
      * length+end.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/fill)
      */
     fun fill(
         value: T,
@@ -93,6 +115,8 @@ sealed external class TypedArray<
      * the predicate function one time for each element in the array.
      * @param thisArg An object to which the this keyword can refer in the predicate function.
      * If thisArg is omitted, undefined is used as the this value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/filter)
      */
     fun filter(
         predicate: (value: T) -> Boolean,
@@ -106,6 +130,8 @@ sealed external class TypedArray<
      * immediately returns that element value. Otherwise, find returns undefined.
      * @param thisArg If provided, it will be used as the this value for each invocation of
      * predicate. If it is not provided, undefined is used instead.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/find)
      */
     fun find(
         predicate: (value: T) -> Boolean,
@@ -119,6 +145,8 @@ sealed external class TypedArray<
      * findIndex immediately returns that element index. Otherwise, findIndex returns -1.
      * @param thisArg If provided, it will be used as the this value for each invocation of
      * predicate. If it is not provided, undefined is used instead.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex)
      */
     fun findIndex(
         predicate: (value: T) -> Boolean,
@@ -132,6 +160,8 @@ sealed external class TypedArray<
      * immediately returns that element value. Otherwise, findLast returns undefined.
      * @param thisArg If provided, it will be used as the this value for each invocation of
      * predicate. If it is not provided, undefined is used instead.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLast)
      */
     fun findLast(
         predicate: (value: T) -> Boolean,
@@ -145,6 +175,8 @@ sealed external class TypedArray<
      * findLastIndex immediately returns that element index. Otherwise, findLastIndex returns -1.
      * @param thisArg If provided, it will be used as the this value for each invocation of
      * predicate. If it is not provided, undefined is used instead.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLastIndex)
      */
     fun findLastIndex(
         predicate: (value: T) -> Boolean,
@@ -156,6 +188,8 @@ sealed external class TypedArray<
      * callbackfn function one time for each element in the array.
      * @param thisArg  An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
      */
     override fun forEach(
         action: (item: T) -> Unit,
@@ -165,6 +199,8 @@ sealed external class TypedArray<
      * Determines whether an array includes a certain element, returning true or false as appropriate.
      * @param searchElement The element to search for.
      * @param fromIndex The position in this array at which to begin searching for searchElement.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes)
      */
     fun includes(
         searchElement: T,
@@ -176,6 +212,8 @@ sealed external class TypedArray<
      * @param searchElement The value to locate in the array.
      * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the
      *  search starts at index 0.
+     *
+     *  [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/indexOf)
      */
     fun indexOf(
         searchElement: T,
@@ -186,6 +224,8 @@ sealed external class TypedArray<
      * Adds all the elements of an array separated by the specified separator string.
      * @param separator A string used to separate one element of an array from the next in the
      * resulting String. If omitted, the array elements are separated with a comma.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/join)
      */
     fun join(
         separator: String = definedExternally,
@@ -196,6 +236,8 @@ sealed external class TypedArray<
      * @param searchElement The value to locate in the array.
      * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the
      * search starts at index 0.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/lastIndexOf)
      */
     fun lastIndexOf(
         searchElement: T,
@@ -209,6 +251,8 @@ sealed external class TypedArray<
      * callbackfn function one time for each element in the array.
      * @param thisArg An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map)
      */
     fun map(
         transform: (value: T) -> T,
@@ -223,6 +267,8 @@ sealed external class TypedArray<
      * @param initialValue If initialValue is specified, it is used as the initial value to start
      * the accumulation. The first call to the callbackfn function provides this value as an argument
      * instead of an array value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduce)
      */
     fun reduce(
         operation: (previousValue: T, currentValue: T, currentIndex: Int) -> T,
@@ -237,6 +283,8 @@ sealed external class TypedArray<
      * @param initialValue If initialValue is specified, it is used as the initial value to start
      * the accumulation. The first call to the callbackfn function provides this value as an argument
      * instead of an array value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/<)
      */
     fun <U : JsAny?> reduce(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
@@ -252,6 +300,8 @@ sealed external class TypedArray<
      * @param initialValue If initialValue is specified, it is used as the initial value to start
      * the accumulation. The first call to the callbackfn function provides this value as an
      * argument instead of an array value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduceRight)
      */
     fun reduceRight(
         operation: (previousValue: T, currentValue: T, currentIndex: Int) -> T,
@@ -266,6 +316,8 @@ sealed external class TypedArray<
      * @param initialValue If initialValue is specified, it is used as the initial value to start
      * the accumulation. The first call to the callbackfn function provides this value as an argument
      * instead of an array value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/<)
      */
     fun <U : JsAny?> reduceRight(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
@@ -274,6 +326,8 @@ sealed external class TypedArray<
 
     /**
      * Reverses the elements in an Array.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reverse)
      */
     fun reverse(): S
 
@@ -281,6 +335,8 @@ sealed external class TypedArray<
      * Returns a section of an array.
      * @param start The beginning of the specified portion of the array.
      * @param end The end of the specified portion of the array. This is exclusive of the element at the index 'end'.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice)
      */
     fun slice(
         start: Int = definedExternally,
@@ -294,6 +350,8 @@ sealed external class TypedArray<
      * which is coercible to the Boolean value true, or until the end of the array.
      * @param thisArg An object to which the this keyword can refer in the predicate function.
      * If thisArg is omitted, undefined is used as the this value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some)
      */
     fun some(
         predicate: (value: T) -> Boolean,
@@ -307,11 +365,16 @@ sealed external class TypedArray<
      * ```ts
      * [11,2,22,1].sort((a, b) => a - b)
      * ```
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort)
      */
     fun sort(
         comparison: (a: T, b: T) -> Int = definedExternally,
     ): S
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/subarray)
+     */
     fun subarray(
         start: Int,
         end: Int,
@@ -319,11 +382,15 @@ sealed external class TypedArray<
 
     /**
      * Converts a number to a string by using the current locale.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toLocaleString)
      */
     fun toLocaleString(): String
 
     /**
      * Copies the array and returns the copy with the elements in reverse order.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toReversed)
      */
     fun toReversed(): R
 
@@ -336,6 +403,8 @@ sealed external class TypedArray<
      * const myNums = Int32Array<Buffer>.from([11, 2, -22, 1]);
      * myNums.toSorted((a, b) => a - b) // Int32Array<Buffer>(4) [-22, 1, 2, 11]
      * ```
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toSorted)
      */
     fun toSorted(
         comparison: (a: T, b: T) -> Int = definedExternally,
@@ -350,15 +419,26 @@ sealed external class TypedArray<
      * negative, then it replaces from the end of the array.
      * @param value The value to insert into the copied array.
      * @return A copy of the original array with the inserted value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/with)
      */
     fun with(
         index: Int,
         value: T,
     ): R
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries)
+     */
     override fun entries(): JsIterator<Tuple2<JsInt, T>>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys)
+     */
     override fun keys(): JsIterator<JsInt>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values)
+     */
     override fun values(): JsIterator<T>
 }
