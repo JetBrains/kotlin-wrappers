@@ -63,7 +63,7 @@ kotlin {
 
     if (jsTarget.js) {
         js {
-            configureJsTarget()
+            configureJsTarget(JS_FREE_COMPILER_ARGS)
         }
     }
 
@@ -82,7 +82,9 @@ kotlin {
     }
 }
 
-fun KotlinJsTargetDsl.configureJsTarget() {
+fun KotlinJsTargetDsl.configureJsTarget(
+    compilerArgs: List<String> = emptyList(),
+) {
     outputModuleName = project.name
 
     val jsPlatform = project.jsPlatform
@@ -105,6 +107,6 @@ fun KotlinJsTargetDsl.configureJsTarget() {
     compilerOptions {
         target = "es2015"
 
-        freeCompilerArgs.addAll(JS_FREE_COMPILER_ARGS)
+        freeCompilerArgs.addAll(compilerArgs)
     }
 }
