@@ -68,7 +68,7 @@ types-webxr = "0.5.24"
 webref-events = "1.24.0"
 webref-idl = "3.80.0"
 
-types-react = "19.2.15"
+types-react = "19.2.17"
 types-semver = "7.7.1"
 
 [libraries]
