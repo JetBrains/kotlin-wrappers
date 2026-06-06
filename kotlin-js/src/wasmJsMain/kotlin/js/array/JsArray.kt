@@ -32,6 +32,13 @@ actual external class JsArray<T : JsAny?> :
     override fun forEach(action: (item: T) -> Unit)
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+     */
+    fun push(
+        vararg values: T,
+    )
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
      */
     override fun entries(): JsIterator<Tuple2<JsInt, T>>
