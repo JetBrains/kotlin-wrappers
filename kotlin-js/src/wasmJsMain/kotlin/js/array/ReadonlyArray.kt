@@ -27,4 +27,3 @@ actual fun <T : JsAny?> Set<T>.toJsArray(): ReadonlyArray<T> {
     }
     return array
 }
-
