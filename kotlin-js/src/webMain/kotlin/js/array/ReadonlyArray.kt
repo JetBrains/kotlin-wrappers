@@ -8,4 +8,8 @@ expect fun <T : JsAny?> ReadonlyArray<T>.asSequence(): Sequence<T>
 
 expect fun <T : JsAny?> ReadonlyArray<T>.toList(): List<T>
 
+expect fun <T : JsAny?> List<T>.toJsArray(): ReadonlyArray<T>
+
 expect fun <T : JsAny?> ReadonlyArray<T>.toSet(): Set<T>
+
+expect fun <T : JsAny?> Set<T>.toJsArray(): ReadonlyArray<T>

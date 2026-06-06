@@ -13,5 +13,11 @@ actual inline fun <T> ReadonlyArray<T>.asSequence(): Sequence<T> =
 actual inline fun <T> ReadonlyArray<T>.toList(): List<T> =
     asKotlinList()
 
+actual inline fun <T> List<T>.toJsArray(): ReadonlyArray<T> =
+    toTypedArray()
+
 actual inline fun <T> ReadonlyArray<T>.toSet(): Set<T> =
     asKotlinSet()
+
+actual fun <T> Set<T>.toJsArray(): ReadonlyArray<T> =
+    toTypedArray()
