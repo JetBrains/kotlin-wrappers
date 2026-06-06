@@ -35,6 +35,13 @@ actual external class JsArray<T : JsAny?> :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
      */
     fun push(
+        value: T,
+    )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+     */
+    fun push(
         vararg values: T,
     )
 
