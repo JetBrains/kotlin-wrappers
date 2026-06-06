@@ -11,8 +11,8 @@ actual fun <T : JsAny?> ReadonlyArray<T>.toList(): List<T> =
 
 actual fun <T : JsAny?> List<T>.toJsArray(): ReadonlyArray<T> {
     val array: JsArray<T> = []
-    for (value in this) {
-        array.push(value)
+    for (i in indices) {
+        array[i] = this[i]
     }
     return array
 }
