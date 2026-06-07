@@ -90,7 +90,7 @@ sealed external class TypedArray<
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every)
      */
     fun every(
-        predicate: (value: T) -> Unit,
+        predicate: (value: T) -> Boolean,
     ): Boolean
 
     /**
