@@ -58,7 +58,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class PerInstanceColorAppearance(
     options: ConstructorOptions? = definedExternally,
-) : Appearance {
+) {
     /**
      * @property [flat] When `true`, flat shading is used in the fragment shader, which means lighting is not taking into account.
      *   Default value - `false`
@@ -88,26 +88,26 @@ open external class PerInstanceColorAppearance(
      * used by [PerInstanceColorAppearance] since a fully custom fragment shader is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#material">Online Documentation</a>
      */
-    override var material: Material
+    var material: Material
 
     /**
      * When `true`, the geometry is expected to appear translucent so
      * [PerInstanceColorAppearance.renderState] has alpha blending enabled.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#translucent">Online Documentation</a>
      */
-    override var translucent: Boolean
+    var translucent: Boolean
 
     /**
      * The GLSL source code for the vertex shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#vertexShaderSource">Online Documentation</a>
      */
-    override val vertexShaderSource: String
+    val vertexShaderSource: String
 
     /**
      * The GLSL source code for the fragment shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#fragmentShaderSource">Online Documentation</a>
      */
-    override val fragmentShaderSource: String
+    val fragmentShaderSource: String
 
     /**
      * The WebGL fixed-function state to use when rendering the geometry.
@@ -117,7 +117,7 @@ open external class PerInstanceColorAppearance(
      * and [PerInstanceColorAppearance.closed].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#renderState">Online Documentation</a>
      */
-    override val renderState: JsAny
+    val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed so
@@ -125,7 +125,7 @@ open external class PerInstanceColorAppearance(
      * If the viewer enters the geometry, it will not be visible.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#closed">Online Documentation</a>
      */
-    override val closed: Boolean
+    val closed: Boolean
 
     /**
      * The [VertexFormat] that this appearance instance is compatible with.
@@ -158,14 +158,14 @@ open external class PerInstanceColorAppearance(
      * @return The full GLSL fragment shader source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#getFragmentShaderSource">Online Documentation</a>
      */
-    override fun getFragmentShaderSource(): String
+    fun getFragmentShaderSource(): String
 
     /**
      * Determines if the geometry is translucent based on [PerInstanceColorAppearance.translucent].
      * @return `true` if the appearance is translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#isTranslucent">Online Documentation</a>
      */
-    override fun isTranslucent(): Boolean
+    fun isTranslucent(): Boolean
 
     /**
      * Creates a render state.  This is not the final render state instance; instead,
@@ -174,7 +174,7 @@ open external class PerInstanceColorAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerInstanceColorAppearance.html#getRenderState">Online Documentation</a>
      */
-    override fun getRenderState(): JsAny
+    fun getRenderState(): JsAny
 
     companion object {
         /**
