@@ -12,9 +12,8 @@ import kotlinx.js.JsPlainObject
  * this base `Appearance` interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html">Online Documentation</a>
  */
-open external class Appearance(
-    options: ConstructorOptions? = definedExternally,
-) {
+abstract external class Appearance
+private constructor() {
     /**
      * @property [translucent] When `true`, the geometry is expected to appear translucent so [Appearance.renderState] has alpha blending enabled.
      *   Default value - `true`
@@ -41,19 +40,19 @@ open external class Appearance(
      * properties, this is not read-only, so an appearance's material can change on the fly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#material">Online Documentation</a>
      */
-    var material: Material
+    abstract var material: Material
 
     /**
      * When `true`, the geometry is expected to appear translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#translucent">Online Documentation</a>
      */
-    var translucent: Boolean
+    abstract var translucent: Boolean
 
     /**
      * The GLSL source code for the vertex shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#vertexShaderSource">Online Documentation</a>
      */
-    val vertexShaderSource: String
+    abstract val vertexShaderSource: String
 
     /**
      * The GLSL source code for the fragment shader.  The full fragment shader
@@ -61,19 +60,19 @@ open external class Appearance(
      * Use [Appearance.getFragmentShaderSource] to get the full source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#fragmentShaderSource">Online Documentation</a>
      */
-    val fragmentShaderSource: String
+    abstract val fragmentShaderSource: String
 
     /**
      * The WebGL fixed-function state to use when rendering the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#renderState">Online Documentation</a>
      */
-    val renderState: JsAny
+    abstract val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#closed">Online Documentation</a>
      */
-    val closed: Boolean
+    abstract val closed: Boolean
 
     /**
      * Procedurally creates the full GLSL fragment shader source for this appearance
@@ -81,14 +80,14 @@ open external class Appearance(
      * @return The full GLSL fragment shader source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#getFragmentShaderSource">Online Documentation</a>
      */
-    fun getFragmentShaderSource(): String
+    abstract fun getFragmentShaderSource(): String
 
     /**
      * Determines if the geometry is translucent based on [Appearance.translucent] and [Material.isTranslucent].
      * @return `true` if the appearance is translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#isTranslucent">Online Documentation</a>
      */
-    fun isTranslucent(): Boolean
+    abstract fun isTranslucent(): Boolean
 
     /**
      * Creates a render state.  This is not the final render state instance; instead,
@@ -97,5 +96,5 @@ open external class Appearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): JsAny
+    abstract fun getRenderState(): JsAny
 }

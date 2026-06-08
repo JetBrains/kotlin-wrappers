@@ -36,18 +36,20 @@ internal data class Definition(
 ) {
     var docBody: String? = null
 
-    val abstract: Boolean
-        get() = "* The interface for " in doc ||
-                "be instantiated directly." in doc
-
-    val hasPrivateConstructor: Boolean
-        get() = "Do not call the constructor directly" in doc
-                || "Do not construct this directly" in doc
-
     val defaultName: String
         get() = body
             .substringBefore(" ")
             .substringBefore("<")
+
+    val abstract: Boolean
+        get() = "* The interface for " in doc ||
+                "be instantiated directly." in doc ||
+                "base <code>$defaultName</code> interface" in doc
+
+    val hasPrivateConstructor: Boolean
+        get() = "Do not call the constructor directly" in doc ||
+                "Do not construct this directly" in doc ||
+                "base <code>$defaultName</code> interface" in doc
 
     fun doc(
         link: DocLink? = null,
