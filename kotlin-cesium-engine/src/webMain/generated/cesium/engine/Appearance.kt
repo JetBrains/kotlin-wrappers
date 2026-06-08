@@ -12,8 +12,9 @@ import kotlinx.js.JsPlainObject
  * this base `Appearance` interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Appearance.html">Online Documentation</a>
  */
-abstract external class Appearance
-private constructor() {
+abstract external class Appearance(
+    options: ConstructorOptions? = definedExternally,
+) {
     /**
      * @property [translucent] When `true`, the geometry is expected to appear translucent so [Appearance.renderState] has alpha blending enabled.
      *   Default value - `true`

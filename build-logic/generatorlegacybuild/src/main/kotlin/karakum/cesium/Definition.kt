@@ -48,8 +48,7 @@ internal data class Definition(
 
     val hasPrivateConstructor: Boolean
         get() = "Do not call the constructor directly" in doc ||
-                "Do not construct this directly" in doc ||
-                "base <code>$defaultName</code> interface" in doc
+                "Do not construct this directly" in doc
 
     fun doc(
         link: DocLink? = null,
