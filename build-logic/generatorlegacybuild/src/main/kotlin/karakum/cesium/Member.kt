@@ -9,4 +9,5 @@ internal abstract class Member : Declaration(), IMember {
 
     var abstract: Boolean = false
     var overridden: Boolean = false
+    var open: Boolean = false
 }
