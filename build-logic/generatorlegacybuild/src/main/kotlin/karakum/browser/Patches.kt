@@ -454,6 +454,13 @@ internal fun String.applyPatches(): String {
             require(it == "\n    (): any;")
             it.replace("(): any;", "(): void | PromiseLike<void>;")
         }
+        .patchInterface("LockGrantedCallback<T>") {
+            require(it == "\n    (lock: Lock | null): T;")
+            it.replace("(lock: Lock | null): T;", "(lock: Lock | null): PromiseResult<T>;")
+        }
+        .patchInterface("LockManager") {
+            it.replace(": Promise<Awaited<T>>;", ": Promise<T>;")
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

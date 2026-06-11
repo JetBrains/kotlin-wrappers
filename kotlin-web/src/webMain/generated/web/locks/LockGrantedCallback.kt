@@ -2,6 +2,8 @@
 
 package web.locks
 
+import js.promise.PromiseResult
+
 typealias LockGrantedCallback<T> = (
     lock: Lock?,
-) -> T
+) -> PromiseResult<T>

@@ -2355,7 +2355,6 @@ private fun convertFunction(
         .replace(": Promise<CryptoKeyPair | CryptoKey>", ": Promise<JsAny /* CryptoKeyPair | CryptoKey */>")
         .replace(": Promise<CryptoKeyPair | CryptoKey>", ": Promise<JsAny /* CryptoKeyPair | CryptoKey */>")
         .replace(": Promise<WritableStream>", ": Promise<WritableStream<*>>")
-        .replace(": Promise<Awaited<T>>", ": Promise<T /* Awaited<T> */>")
         .replace("<string[]", "<ReadonlyArray<String>")
         .replace(": StaticRange[]", ": ReadonlyArray<StaticRange>")
         .replace(": CookieStoreGetOptions[]", ": ReadonlyArray<CookieStoreGetOptions>")

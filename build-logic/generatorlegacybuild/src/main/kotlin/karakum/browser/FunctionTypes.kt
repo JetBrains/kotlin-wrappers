@@ -104,6 +104,7 @@ private fun convertFunctionType(
         .replace("?: EncodedAudioChunkMetadata", ": EncodedAudioChunkMetadata?")
         .replace("?: EncodedVideoChunkMetadata", ": EncodedVideoChunkMetadata?")
         .replace("): void | PromiseLike<void>", ") -> PromiseLike<Void>?")
+        .replace("): PromiseResult<T>", ") -> PromiseResult<T>")
         // QueuingStrategySize
         .replace("): number", ") -> Int")
         .replace("): void", ") -> Unit")
