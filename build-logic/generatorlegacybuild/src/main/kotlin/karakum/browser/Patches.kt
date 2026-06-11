@@ -449,6 +449,11 @@ internal fun String.applyPatches(): String {
         )
         .replace(", HTMLOrSVGElement, HTMLOrSVGOrMathMLElement", ", HTMLOrSVGOrMathMLElement")
         .extractUrlSource()
+        // Details - https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition#updatecallback
+        .patchInterface("ViewTransitionUpdateCallback") {
+            require(it == "\n    (): any;")
+            it.replace("(): any;", "(): void | PromiseLike<void>;")
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
