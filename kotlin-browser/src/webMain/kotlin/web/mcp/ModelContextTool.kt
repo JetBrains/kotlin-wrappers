@@ -1,7 +1,5 @@
 package web.mcp
 
-import js.objects.ReadonlyRecord
-import js.promise.PromiseLike
 import kotlinx.js.JsPlainObject
 import web.experimental.ExperimentalWebApi
 
@@ -15,11 +13,11 @@ import web.experimental.ExperimentalWebApi
  */
 @JsPlainObject
 @ExperimentalWebApi
-external interface ToolDescriptor<TArgs : JsAny?> {
+external interface ModelContextTool {
     /**
      * Unique tool identifier.
      */
-    var name: ToolName<TArgs>
+    var name: String
 
     /**
      * Human-readable summary of what the tool does.
@@ -44,8 +42,5 @@ external interface ToolDescriptor<TArgs : JsAny?> {
     /**
      * Tool execution function.
      */
-    var execute: (
-        args: ReadonlyRecord<JsString, *>,
-        context: ToolExecutionContext,
-    ) -> PromiseLike<CallToolResult>
+    var execute: ToolExecuteCallback
 }

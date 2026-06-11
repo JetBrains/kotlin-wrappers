@@ -1196,6 +1196,17 @@ internal fun convertInterface(
                 .replace("val ownerDocument:", "override val ownerDocument:")
                 .replace("var textContent: String", "override var textContent: String? // String")
                 .replace("fun getElementById(", "override fun getElementById(")
+                .let {
+                    if (name == "Document") {
+                        it + """
+                        /**
+                         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
+                         */
+                        @ExperimentalWebApi
+                        val modelContext: ModelContext
+                        """.trimIndent()
+                    } else it
+                }
 
             "Element",
                 -> result
@@ -1301,12 +1312,6 @@ internal fun convertInterface(
              */
             @ExperimentalWebApi
             val keyboard: Keyboard
-
-            /**
-             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
-             */
-            @ExperimentalWebApi
-            val modelContext: ModelContext
 
             /**
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)

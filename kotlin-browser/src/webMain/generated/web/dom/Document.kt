@@ -15,6 +15,7 @@ import web.dnd.DragEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
+import web.experimental.ExperimentalWebApi
 import web.focus.FocusEvent
 import web.fonts.FontFaceSource
 import web.form.FormDataEvent
@@ -24,6 +25,7 @@ import web.input.CompositionEvent
 import web.input.InputEvent
 import web.keyboard.KeyboardEvent
 import web.location.Location
+import web.mcp.ModelContext
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
 import web.pip.PictureInPictureEvent
@@ -596,6 +598,12 @@ open external class Document :
      */
     fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
     fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
+     */
+    @ExperimentalWebApi
+    val modelContext: ModelContext
 
     companion object {
         /**

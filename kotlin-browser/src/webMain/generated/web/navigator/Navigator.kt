@@ -17,7 +17,6 @@ import web.gpu.NavigatorGPU
 import web.http.BodyInit
 import web.keyboard.Keyboard
 import web.locks.NavigatorLocks
-import web.mcp.ModelContext
 import web.mediacapabilities.MediaCapabilities
 import web.mediadevices.MediaDevices
 import web.mediakey.MediaKeySystemAccess
@@ -230,12 +229,6 @@ private constructor() :
      */
     @ExperimentalWebApi
     val keyboard: Keyboard
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
-     */
-    @ExperimentalWebApi
-    val modelContext: ModelContext
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
