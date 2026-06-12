@@ -1,30 +1,43 @@
 package web.locks
 
-import js.promise.await
+import kotlinx.coroutines.CoroutineScope
+import web.abort.AbortController
+import web.abort.internal.awaitCancellable
+import web.abort.internal.createAbortable
+import web.abort.internal.patchAbortOptions
+import web.locks.internal.LockGrantedCallback
 
 /**
  * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics. The requested Lock is passed to a callback, while the function itself returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
  */
-suspend inline fun <T : JsAny?> LockManager.request(
+suspend fun <T : JsAny?> LockManager.request(
     name: String,
-    noinline callback: LockGrantedCallback<T>,
+    block: suspend CoroutineScope.(lock: Lock?) -> T,
 ): T {
+    val controller = AbortController()
     return requestAsync(
         name = name,
-        callback = callback,
-    ).await()
+        options = createAbortable(controller),
+        callback = LockGrantedCallback(controller, block),
+    ).awaitCancellable(controller)
 }
 
-suspend inline fun <T : JsAny?> LockManager.request(
+/**
+ * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics. The requested Lock is passed to a callback, while the function itself returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
+ */
+suspend fun <T : JsAny?> LockManager.request(
     name: String,
     options: LockOptions,
-    noinline callback: LockGrantedCallback<T>,
+    block: suspend CoroutineScope.(lock: Lock?) -> T,
 ): T {
+    val controller = AbortController()
     return requestAsync(
         name = name,
-        options = options,
-        callback = callback,
-    ).await()
+        options = patchAbortOptions(options, controller),
+        callback = LockGrantedCallback(controller, block),
+    ).awaitCancellable(controller)
 }
