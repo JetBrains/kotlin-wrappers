@@ -1,5 +1,6 @@
 package karakum.browser
 
+import karakum.common.EmptyExtensionsCollector
 import karakum.common.ExtensionsCollector
 import karakum.common.TYPED_ARRAYS
 import karakum.common.withSuspendExtensions
@@ -1993,7 +1994,11 @@ internal fun convertMember(
             val result = convertFunction(source, typeProvider)
                 ?: return null
 
-            return withSuspendExtensions(result, outerComment, extensionsCollector)
+            val finalCollector = EmptyExtensionsCollector
+                .takeIf { "request<T>(" in source && ": LockGrantedCallback<T>)" in source }
+                ?: extensionsCollector
+
+            return withSuspendExtensions(result, outerComment, finalCollector)
                 .joinToString("\n\n")
         }
     }

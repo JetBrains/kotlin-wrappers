@@ -26,6 +26,24 @@ interface ExtensionsCollector {
     fun getResult(): String
 }
 
+object EmptyExtensionsCollector :
+    ExtensionsCollector {
+
+    override fun add(
+        functionName: String,
+        functionSignature: String,
+        parameters: String,
+        returnType: String,
+        docs: String?,
+    ) {
+        // do nothing
+    }
+
+    override fun getResult(): String {
+        TODO("Shouldn't be called!")
+    }
+}
+
 // Example: "(name: String, age: Int)" -> listOf("name", "age")
 private fun parseParameterNames(parameters: String): List<String> {
     require("(" in parameters) { parameters }
