@@ -36,7 +36,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class PolylineColorAppearance(
     options: ConstructorOptions? = definedExternally,
-) {
+) : Appearance {
     /**
      * @property [translucent] When `true`, the geometry is expected to appear translucent so [PolylineColorAppearance.renderState] has alpha blending enabled.
      *   Default value - `true`
@@ -57,26 +57,26 @@ open external class PolylineColorAppearance(
      * used by [PolylineColorAppearance] since a fully custom fragment shader is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#material">Online Documentation</a>
      */
-    var material: Material
+    override var material: Material
 
     /**
      * When `true`, the geometry is expected to appear translucent so
      * [PolylineColorAppearance.renderState] has alpha blending enabled.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#translucent">Online Documentation</a>
      */
-    var translucent: Boolean
+    override var translucent: Boolean
 
     /**
      * The GLSL source code for the vertex shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#vertexShaderSource">Online Documentation</a>
      */
-    val vertexShaderSource: String
+    override val vertexShaderSource: String
 
     /**
      * The GLSL source code for the fragment shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#fragmentShaderSource">Online Documentation</a>
      */
-    val fragmentShaderSource: String
+    override val fragmentShaderSource: String
 
     /**
      * The WebGL fixed-function state to use when rendering the geometry.
@@ -85,7 +85,7 @@ open external class PolylineColorAppearance(
      * instance, or it is set implicitly via [PolylineColorAppearance.translucent].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#renderState">Online Documentation</a>
      */
-    val renderState: JsAny
+    override val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed so
@@ -93,7 +93,7 @@ open external class PolylineColorAppearance(
      * This is always `false` for `PolylineColorAppearance`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#closed">Online Documentation</a>
      */
-    val closed: Boolean
+    override val closed: Boolean
 
     /**
      * The [VertexFormat] that this appearance instance is compatible with.
@@ -108,14 +108,14 @@ open external class PolylineColorAppearance(
      * @return The full GLSL fragment shader source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#getFragmentShaderSource">Online Documentation</a>
      */
-    fun getFragmentShaderSource(): String
+    override fun getFragmentShaderSource(): String
 
     /**
      * Determines if the geometry is translucent based on [PolylineColorAppearance.translucent].
      * @return `true` if the appearance is translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#isTranslucent">Online Documentation</a>
      */
-    fun isTranslucent(): Boolean
+    override fun isTranslucent(): Boolean
 
     /**
      * Creates a render state.  This is not the final render state instance; instead,
@@ -124,7 +124,7 @@ open external class PolylineColorAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineColorAppearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): JsAny
+    override fun getRenderState(): JsAny
 
     companion object {
         /**

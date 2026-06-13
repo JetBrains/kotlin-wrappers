@@ -28,7 +28,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class MaterialAppearance(
     options: ConstructorOptions? = definedExternally,
-) {
+) : Appearance {
     /**
      * @property [flat] When `true`, flat shading is used in the fragment shader, which means lighting is not taking into account.
      *   Default value - `false`
@@ -64,19 +64,19 @@ open external class MaterialAppearance(
      * properties, this is not read-only, so an appearance's material can change on the fly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#material">Online Documentation</a>
      */
-    var material: Material
+    override var material: Material
 
     /**
      * When `true`, the geometry is expected to appear translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#translucent">Online Documentation</a>
      */
-    var translucent: Boolean
+    override var translucent: Boolean
 
     /**
      * The GLSL source code for the vertex shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#vertexShaderSource">Online Documentation</a>
      */
-    val vertexShaderSource: String
+    override val vertexShaderSource: String
 
     /**
      * The GLSL source code for the fragment shader.  The full fragment shader
@@ -85,7 +85,7 @@ open external class MaterialAppearance(
      * Use [MaterialAppearance.getFragmentShaderSource] to get the full source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#fragmentShaderSource">Online Documentation</a>
      */
-    val fragmentShaderSource: String
+    override val fragmentShaderSource: String
 
     /**
      * The WebGL fixed-function state to use when rendering the geometry.
@@ -95,7 +95,7 @@ open external class MaterialAppearance(
      * and [MaterialAppearance.closed].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#renderState">Online Documentation</a>
      */
-    val renderState: JsAny
+    override val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed so
@@ -103,7 +103,7 @@ open external class MaterialAppearance(
      * If the viewer enters the geometry, it will not be visible.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#closed">Online Documentation</a>
      */
-    val closed: Boolean
+    override val closed: Boolean
 
     /**
      * The type of materials supported by this instance.  This impacts the required
@@ -143,14 +143,14 @@ open external class MaterialAppearance(
      * @return The full GLSL fragment shader source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#getFragmentShaderSource">Online Documentation</a>
      */
-    fun getFragmentShaderSource(): String
+    override fun getFragmentShaderSource(): String
 
     /**
      * Determines if the geometry is translucent based on [MaterialAppearance.translucent] and [Material.isTranslucent].
      * @return `true` if the appearance is translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#isTranslucent">Online Documentation</a>
      */
-    fun isTranslucent(): Boolean
+    override fun isTranslucent(): Boolean
 
     /**
      * Creates a render state.  This is not the final render state instance; instead,
@@ -159,7 +159,7 @@ open external class MaterialAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): JsAny
+    override fun getRenderState(): JsAny
 
     @JsPlainObject
     interface MaterialSupportType {

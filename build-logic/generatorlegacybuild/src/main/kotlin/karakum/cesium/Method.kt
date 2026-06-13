@@ -42,6 +42,7 @@ internal class Method(
             "external".takeIf { !hasParent },
             "abstract".takeIf { abstract },
             "override".takeIf { overridden },
+            "open".takeIf { open },
         )
 
         val link = if (hasParent) {

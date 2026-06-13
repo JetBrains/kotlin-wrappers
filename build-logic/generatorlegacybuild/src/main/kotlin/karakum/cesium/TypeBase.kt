@@ -49,10 +49,12 @@ internal abstract class TypeBase(
             { true }
         }
 
-        members(source.body, source.optionsKdocBody())
+        members(source.body, source.optionsKdocBody()).asSequence()
             .filter(filter)
             .onEach { it.parent = this }
             .onEach { if (!it.static) it.abstract = abstract }
+            .onEach { if (it.parent.name == "Appearance") it.open = open }
+            .toList()
     }
 
     private fun Constructor?.propertyParameters(): List<Property> {
