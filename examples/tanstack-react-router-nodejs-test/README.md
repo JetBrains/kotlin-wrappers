@@ -33,6 +33,7 @@
       requires
       `mocha-support/append-jsdom-to-user-agent-name.js`
     - This workaround may not be needed if you use coroutine-test and micromanage your test coroutines.
+    - issue: https://github.com/Kotlin/kotlinx.coroutines/issues/4640
 
 ## Other considerations
 
