@@ -34,10 +34,14 @@ external interface VirtualizerOptions<TScrollElement : EventTarget /* Element | 
     val indexAttribute: String?
     val initialMeasurementsCache: ReadonlyArray<VirtualItem>?
     val lanes: Int?
+    val anchorTo: ScrollAnchor?
+    val followOnAppend: FollowOnAppend?
+    val scrollEndThreshold: Int?
     val isScrollingResetDelay: Int?
     val useScrollendEvent: Boolean?
     val enabled: Boolean?
     val isRtl: Boolean?
     val useAnimationFrameWithResizeObserver: Boolean?
     val laneAssignmentMode: LaneAssignmentMode?
+    val useCachedMeasurements: Boolean?
 }

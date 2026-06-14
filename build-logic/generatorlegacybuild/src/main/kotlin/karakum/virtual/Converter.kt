@@ -1,6 +1,8 @@
 package karakum.virtual
 
 import karakum.common.ConversionResult
+import karakum.common.JsUnionConverter.unionBodyByConstants
+import karakum.common.unionConstant
 import java.io.File
 
 private val EXCLUDED = setOf(
@@ -21,7 +23,7 @@ internal fun convertDefinitions(
         .replace("export interface ", "declare interface ")
         .replace("\ninterface ", "\ndeclare interface ")
         .replace("\ntype ", "\ndeclare type ")
-        .replace("{ adjustments, behavior, }: $SCROLL_OPTIONS_BODY", "options: $SCROLL_OPTIONS")
+        .replace("options: $SCROLL_OPTIONS_BODY", "options: $SCROLL_OPTIONS")
         .replace(
             SCROLL_OPTIONS_BODY
                 .replace("\n", "\n    ")
@@ -41,6 +43,7 @@ internal fun convertDefinitions(
         .replace("{ align, behavior }?: ScrollToOffsetOptions", "options: ScrollToOffsetOptions?")
         .replace("{ align: initialAlign, behavior, }?: ScrollToIndexOptions", "options: ScrollToIndexOptions?")
         .replace("{ behavior }?: ScrollToOffsetOptions", "options: ScrollToOffsetOptions?")
+        .replace("{ behavior }?: ScrollToEndOptions", "options: ScrollToEndOptions?")
         .replace(Regex(""" {4}/\*\*\n[\s\S]*?\n {5}\*/\n {4}private .+;\n"""), "")
         .splitToSequence("\ndeclare ")
         .drop(1)
@@ -170,10 +173,34 @@ private fun convertTypealias(
         )
     }
 
-    if (" | " in body) {
-        declaration = declaration.replace(": object>", "/* : Any */>")
+    if (body == "Pick<ScrollToOptions, 'behavior'>") {
+        return ConversionResult(
+            name,
+            """
+            @JsPlainObject
+            external interface $declaration {
+                val behavior: ScrollBehavior?
+            }
+            """.trimIndent(),
+        )
+    }
 
-        return ConversionResult(name, "external interface $declaration /* $body */")
+    if (" | " in body) {
+        require(body == "boolean | ScrollBehavior")
+
+        return ConversionResult(
+            name = name,
+            body = unionBodyByConstants(
+                name,
+                constants = listOf(
+                    unionConstant(false),
+                    unionConstant(true),
+                    unionConstant("auto"),
+                    unionConstant("smooth"),
+                    unionConstant("instant"),
+                ),
+            ),
+        )
     }
 
     body = body
@@ -214,7 +241,7 @@ private fun convertClass(
             """
             getVirtualIndexes: {
                 (): number[];
-                updateDeps(newDeps: [(range: Range) => number[], number, number, number | null, number | null]): void;
+                updateDeps(newDeps: [(range: Range) => Array<number>, number, number, number | null, number | null]): void;
             };
             """.trimIndent(),
             """
@@ -266,7 +293,14 @@ private fun convertMembers(
         .filter { !it.startsWith("private ") }
         .filter { !it.startsWith("_") }
         .map { it.removeSuffix(";") }
-        .map { convertMember(it) }
+        .map {
+            when {
+                it.startsWith("/**") -> it
+                it.startsWith(" *") -> it
+                it.startsWith(" */") -> it
+                else -> convertMember(it)
+            }
+        }
         .joinToString("\n")
 
 private fun convertMember(

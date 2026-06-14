@@ -19,7 +19,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "null" to "Nothing?",
 
     "string[]" to "ReadonlyArray<String>",
-    "VirtualItem[]" to "ReadonlyArray<VirtualItem>",
+    "Array<VirtualItem>" to "ReadonlyArray<VirtualItem>",
     "[string, number][]" to "ReadonlyArray<Tuple2<String, Int>>",
 
     "Record<string, boolean>" to "Record<String, Boolean>",
@@ -49,6 +49,7 @@ internal fun kotlinType(
 
     if (type.startsWith("Map<"))
         return "Readonly${type}"
+            .replace(", number>", ", Int>")
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }
@@ -59,7 +60,6 @@ internal fun kotlinType(
         .replace(" -> void | (() -> void)", " -> (() -> Unit)?")
         .replace(") -> void", ") -> Unit")
         .replace("number[]", "ReadonlyArray<Int>")
-        .replace("VirtualItem<TItemElement>[]", "ReadonlyArray<VirtualItem<TItemElement>>")
         .replace(": ResizeObserverEntry | undefined", ": ResizeObserverEntry?")
         .replace("?: number", ": Int?")
         .replace("?: boolean", ": Boolean?")
@@ -76,6 +76,7 @@ internal fun kotlinType(
         .replace(" -> unknown", " -> Any")
         .replace(" -> any", " -> Any")
         .replace(" -> Array<number>", " -> ReadonlyArray<Int>")
+        .replace(" -> Array<VirtualItem>", "-> ReadonlyArray<VirtualItem>")
         .replace("<number>", "<Int>")
         .replace("<any>", "<*>")
         .replace("undefined | [number, number]", "Tuple2<Int, Int>?")
