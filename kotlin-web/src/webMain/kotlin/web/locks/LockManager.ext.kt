@@ -5,7 +5,7 @@ import web.abort.AbortController
 import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
-import web.locks.internal.LockGrantedCallback
+import web.function.async
 
 /**
  * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics. The requested Lock is passed to a callback, while the function itself returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
@@ -20,7 +20,7 @@ suspend fun <T : JsAny?> LockManager.request(
     return requestAsync(
         name = name,
         options = createAbortable(controller),
-        callback = LockGrantedCallback(controller, block),
+        callback = async(controller, block),
     ).awaitCancellable(controller)
 }
 
@@ -38,6 +38,6 @@ suspend fun <T : JsAny?> LockManager.request(
     return requestAsync(
         name = name,
         options = patchAbortOptions(options, controller),
-        callback = LockGrantedCallback(controller, block),
+        callback = async(controller, block),
     ).awaitCancellable(controller)
 }
