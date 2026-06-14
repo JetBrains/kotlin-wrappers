@@ -1,6 +1,6 @@
 [versions]
 actions-artifact = "^6.2.1"
-actions-cache = "^6.0.0"
+actions-cache = "^6.0.1"
 actions-core = "^3.0.1"
 actions-exec = "^3.0.0"
 actions-github = "^9.1.1"
