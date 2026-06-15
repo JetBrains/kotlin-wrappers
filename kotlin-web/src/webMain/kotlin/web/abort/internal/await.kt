@@ -14,11 +14,10 @@ fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T {
-    val abortOptions = createAbortable<T>(
-        signal = safeAny(options?.signal, controller.signal),
-    )
+    val signal = options?.signal
+        .or(controller.signal)
 
-    return Object.assign(unsafeJso(), options, abortOptions)
+    return Object.assign(unsafeJso(), options, createAbortable(signal))
 }
 
 // Used in the compiler plugin
