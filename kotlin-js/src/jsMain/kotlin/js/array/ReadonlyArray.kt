@@ -10,6 +10,9 @@ actual inline operator fun <T> ReadonlyArray<T>.iterator(): Iterator<T> =
 actual inline fun <T> ReadonlyArray<T>.asSequence(): Sequence<T> =
     asKotlinSequence()
 
+actual inline fun <T> Sequence<T>.toJsArray(): ReadonlyArray<T> =
+    toTypedArray()
+
 actual inline fun <T> ReadonlyArray<T>.toList(): List<T> =
     toKotlinList()
 
