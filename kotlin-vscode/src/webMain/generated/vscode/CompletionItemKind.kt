@@ -97,14 +97,14 @@ external interface CompletionItemKind {
         val Color: CompletionItemKind // 15
 
         /**
-         * The `Reference` completion item kind.
-         */
-        val Reference: CompletionItemKind // 17
-
-        /**
          * The `File` completion item kind.
          */
         val File: CompletionItemKind // 16
+
+        /**
+         * The `Reference` completion item kind.
+         */
+        val Reference: CompletionItemKind // 17
 
         /**
          * The `Folder` completion item kind.
