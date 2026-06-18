@@ -103,5 +103,6 @@ private constructor() {
         val SVG_TRANSFORM_SKEWY: Type
     }
 
-    sealed interface Type
+    sealed /* enum */
+    interface Type
 }

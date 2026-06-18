@@ -108,7 +108,8 @@ open external class FileReader :
         val DONE: ReadyState
     }
 
-    sealed interface ReadyState
+    sealed /* enum */
+    interface ReadyState
 }
 
 /**

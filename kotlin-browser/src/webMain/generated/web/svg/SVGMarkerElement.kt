@@ -91,6 +91,9 @@ private constructor() :
         val SVG_MARKER_ORIENT_AUTO_START_REVERSE: OrientType
     }
 
-    sealed interface MarkerUnits
-    sealed interface OrientType
+    sealed /* enum */
+    interface MarkerUnits
+
+    sealed /* enum */
+    interface OrientType
 }

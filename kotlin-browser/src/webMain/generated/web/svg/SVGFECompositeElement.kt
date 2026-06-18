@@ -77,5 +77,6 @@ private constructor() :
         val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Operator
     }
 
-    sealed interface Operator
+    sealed /* enum */
+    interface Operator
 }

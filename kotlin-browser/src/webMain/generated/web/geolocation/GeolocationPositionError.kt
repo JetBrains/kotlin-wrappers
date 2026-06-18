@@ -35,5 +35,6 @@ private constructor() :
         val TIMEOUT: Code
     }
 
-    sealed interface Code
+    sealed /* enum */
+    interface Code
 }

@@ -1456,7 +1456,12 @@ internal fun convertInterface(
     }
 
     val additionalAliases = getAdditionalAliasNames(name)
-        ?.joinToString("\n") { "sealed interface $it" }
+        ?.joinToString("\n") {
+            """
+            sealed /* enum */
+            interface $it
+            """.trimIndent()
+        }
         ?: ""
 
     val extensions = when {

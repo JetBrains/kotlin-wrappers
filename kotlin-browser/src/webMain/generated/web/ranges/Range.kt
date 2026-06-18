@@ -203,5 +203,6 @@ open external class Range :
         val END_TO_START: CompareMethod
     }
 
-    sealed interface CompareMethod
+    sealed /* enum */
+    interface CompareMethod
 }

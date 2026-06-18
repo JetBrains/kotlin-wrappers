@@ -106,5 +106,6 @@ private constructor() :
         val SVG_EDGEMODE_NONE: EdgeMode
     }
 
-    sealed interface EdgeMode
+    sealed /* enum */
+    interface EdgeMode
 }

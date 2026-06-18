@@ -47,6 +47,9 @@ private constructor() :
         val TEXTPATH_SPACINGTYPE_EXACT: Spacing
     }
 
-    sealed interface Method
-    sealed interface Spacing
+    sealed /* enum */
+    interface Method
+
+    sealed /* enum */
+    interface Spacing
 }

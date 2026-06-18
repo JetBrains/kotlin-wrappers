@@ -97,5 +97,6 @@ private constructor() :
         val LENGTHADJUST_SPACINGANDGLYPHS: LengthAdjust
     }
 
-    sealed interface LengthAdjust
+    sealed /* enum */
+    interface LengthAdjust
 }

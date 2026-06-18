@@ -59,5 +59,6 @@ private constructor() :
         val SVG_CHANNEL_A: ChannelSelector
     }
 
-    sealed interface ChannelSelector
+    sealed /* enum */
+    interface ChannelSelector
 }

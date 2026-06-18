@@ -340,8 +340,11 @@ private constructor() :
         val HAVE_ENOUGH_DATA: ReadyState
     }
 
-    sealed interface NetworkState
-    sealed interface ReadyState
+    sealed /* enum */
+    interface NetworkState
+
+    sealed /* enum */
+    interface ReadyState
 }
 
 /**

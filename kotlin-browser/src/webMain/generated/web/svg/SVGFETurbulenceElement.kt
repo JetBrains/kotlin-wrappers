@@ -68,6 +68,9 @@ private constructor() :
         val SVG_STITCHTYPE_NOSTITCH: StitchTiles
     }
 
-    sealed interface StitchTiles
-    sealed interface Type
+    sealed /* enum */
+    interface StitchTiles
+
+    sealed /* enum */
+    interface Type
 }

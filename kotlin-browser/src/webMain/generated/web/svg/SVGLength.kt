@@ -80,5 +80,6 @@ private constructor() {
         val SVG_LENGTHTYPE_PC: UnitType
     }
 
-    sealed interface UnitType
+    sealed /* enum */
+    interface UnitType
 }

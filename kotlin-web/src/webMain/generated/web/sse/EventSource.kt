@@ -75,7 +75,8 @@ open external class EventSource(
         val CLOSED: ReadyState
     }
 
-    sealed interface ReadyState
+    sealed /* enum */
+    interface ReadyState
 }
 
 /**

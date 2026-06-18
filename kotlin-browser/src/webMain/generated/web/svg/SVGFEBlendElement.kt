@@ -69,5 +69,6 @@ private constructor() :
         val SVG_FEBLEND_MODE_LUMINOSITY: Mode
     }
 
-    sealed interface Mode
+    sealed /* enum */
+    interface Mode
 }

@@ -19,5 +19,6 @@ private constructor() {
         val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Type
     }
 
-    sealed interface Type
+    sealed /* enum */
+    interface Type
 }

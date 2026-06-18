@@ -74,7 +74,8 @@ protected constructor() :
         val ERROR: ReadyState
     }
 
-    sealed interface ReadyState
+    sealed /* enum */
+    interface ReadyState
 }
 
 /**

@@ -126,7 +126,8 @@ open external class WebSocket(
         val CLOSED: ReadyState
     }
 
-    sealed interface ReadyState
+    sealed /* enum */
+    interface ReadyState
 }
 
 /**

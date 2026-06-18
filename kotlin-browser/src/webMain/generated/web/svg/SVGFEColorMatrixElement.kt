@@ -45,5 +45,6 @@ private constructor() :
         val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Type
     }
 
-    sealed interface Type
+    sealed /* enum */
+    interface Type
 }

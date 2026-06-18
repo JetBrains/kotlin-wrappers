@@ -74,5 +74,6 @@ private constructor() :
         val SVG_FECOMPONENTTRANSFER_TYPE_GAMMA: Type
     }
 
-    sealed interface Type
+    sealed /* enum */
+    interface Type
 }

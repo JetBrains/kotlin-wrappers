@@ -68,5 +68,6 @@ private constructor() {
         val SVG_ANGLETYPE_GRAD: UnitType
     }
 
-    sealed interface UnitType
+    sealed /* enum */
+    interface UnitType
 }

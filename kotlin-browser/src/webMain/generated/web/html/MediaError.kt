@@ -37,5 +37,6 @@ private constructor() :
         val MEDIA_ERR_SRC_NOT_SUPPORTED: Code
     }
 
-    sealed interface Code
+    sealed /* enum */
+    interface Code
 }

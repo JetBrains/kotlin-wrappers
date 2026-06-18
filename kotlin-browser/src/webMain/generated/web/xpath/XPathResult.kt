@@ -97,5 +97,6 @@ private constructor() {
         val FIRST_ORDERED_NODE_TYPE: ResultType
     }
 
-    sealed interface ResultType
+    sealed /* enum */
+    interface ResultType
 }

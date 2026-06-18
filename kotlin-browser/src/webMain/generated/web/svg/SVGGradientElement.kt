@@ -43,5 +43,6 @@ private constructor() :
         val SVG_SPREADMETHOD_REPEAT: SpreadMethod
     }
 
-    sealed interface SpreadMethod
+    sealed /* enum */
+    interface SpreadMethod
 }

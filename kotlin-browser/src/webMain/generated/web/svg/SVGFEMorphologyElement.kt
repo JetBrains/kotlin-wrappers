@@ -48,5 +48,6 @@ private constructor() :
         val SVG_MORPHOLOGY_OPERATOR_DILATE: Operator
     }
 
-    sealed interface Operator
+    sealed /* enum */
+    interface Operator
 }

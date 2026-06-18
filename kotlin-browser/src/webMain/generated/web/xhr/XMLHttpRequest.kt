@@ -198,7 +198,8 @@ open external class XMLHttpRequest :
         val DONE: ReadyState
     }
 
-    sealed interface ReadyState
+    sealed /* enum */
+    interface ReadyState
 }
 
 /**

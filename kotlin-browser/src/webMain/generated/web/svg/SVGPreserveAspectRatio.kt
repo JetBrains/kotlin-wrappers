@@ -54,6 +54,9 @@ private constructor() {
         val SVG_MEETORSLICE_SLICE: MeetOrSlice
     }
 
-    sealed interface Align
-    sealed interface MeetOrSlice
+    sealed /* enum */
+    interface Align
+
+    sealed /* enum */
+    interface MeetOrSlice
 }
