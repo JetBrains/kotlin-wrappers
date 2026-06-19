@@ -10,7 +10,7 @@ val karakumProject: IncludedBuild
     get() = gradle.includedBuild("${project.name}-karakum")
 
 if (hasKarakumGenerator()) {
-    val deleteKarakumPackageLock by tasks.register<Delete>("deleteKarakumPackageLock") {
+    val deleteKarakumPackageLock = tasks.register<Delete>("deleteKarakumPackageLock") {
         val lockFile = project.layout.projectDirectory
             .file("karakum/kotlin-js-store/package-lock.json")
 

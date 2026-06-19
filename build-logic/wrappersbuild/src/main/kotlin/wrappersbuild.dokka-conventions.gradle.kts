@@ -47,7 +47,7 @@ dokka {
     }
 }
 
-val prepareReadmeForDokka by tasks.register("prepareReadmeForDokka") {
+val prepareReadmeForDokka = tasks.register("prepareReadmeForDokka") {
     description = "Prepare README for Dokka"
 
     /*

@@ -3,14 +3,14 @@ plugins {
     id("io.github.turansky.kfc.library")
 }
 
-val generateDeclarations by tasks.register("generateDeclarations") {
+val generateDeclarations = tasks.register("generateDeclarations") {
     dependsOn(":kotlinNpmInstall")
 }
 
-val generate by tasks.register("generate")
+val generate = tasks.register("generate")
 
 tasks.withType<SyncWrappers> {
     dependsOn(generateDeclarations)
 
-    generate.dependsOn(this)
+    generate.get().dependsOn(this)
 }
