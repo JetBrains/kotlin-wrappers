@@ -6,14 +6,14 @@ dependencies {
     webMainImplementation(npm(jspkg.tanstack.reactQuery))
 }
 
-val syncCoreWrappers by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncCoreWrappers") {
     from(jsGeneratedDir) {
         include("tanstack/query/")
     }
     into(jsMainDir("kotlin-tanstack-query-core"))
 }
 
-val syncReactWrappers by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncReactWrappers") {
     from(jsGeneratedDir) {
         include("tanstack/react/")
     }

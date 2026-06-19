@@ -7,7 +7,7 @@ dependencies {
     webMainImplementation(npm(jspkg.webref.events))
 }
 
-val syncReact by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncReact") {
     from(jsGeneratedDir) {
         include("react/*.kt")
     }
@@ -15,7 +15,7 @@ val syncReact by tasks.registering(SyncWrappers::class) {
     into(jsMainDir("kotlin-react"))
 }
 
-val syncReactDom by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncReactDom") {
     from(jsGeneratedDir) {
         include("react/dom/**/*.kt")
     }

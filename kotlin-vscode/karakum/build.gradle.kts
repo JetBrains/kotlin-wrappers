@@ -6,7 +6,7 @@ dependencies {
     webMainImplementation(npm(jspkg.types.vscode))
 }
 
-val syncVscode by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncVscode") {
     from(webGeneratedDir)
     into(webMainDir("kotlin-vscode"))
 }

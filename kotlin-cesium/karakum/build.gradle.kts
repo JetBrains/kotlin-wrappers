@@ -7,14 +7,14 @@ dependencies {
     webMainImplementation(npm(jspkg.cesium.widgets))
 }
 
-val syncCesiumEngine by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncCesiumEngine") {
     from(webGeneratedDir) {
         include("cesium/engine/")
     }
     into(webMainDir("kotlin-cesium-engine"))
 }
 
-val syncCesiumWidgets by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncCesiumWidgets") {
     from(webGeneratedDir) {
         include("cesium/widgets/")
     }

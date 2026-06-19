@@ -14,63 +14,63 @@ dependencies {
     webMainImplementation(npm(jspkg.actions.toolCache))
 }
 
-val syncActionsArtifact by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsArtifact") {
     from(jsGeneratedDir) {
         include("actions/artifact/")
     }
     into(webMainDir("kotlin-actions-artifact"))
 }
 
-val syncActionsCache by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsCache") {
     from(jsGeneratedDir) {
         include("actions/cache/")
     }
     into(webMainDir("kotlin-actions-cache"))
 }
 
-val syncActionsCore by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsCore") {
     from(jsGeneratedDir) {
         include("actions/core/")
     }
     into(webMainDir("kotlin-actions-core"))
 }
 
-val syncActionsExec by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsExec") {
     from(jsGeneratedDir) {
         include("actions/exec/")
     }
     into(webMainDir("kotlin-actions-exec"))
 }
 
-val syncActionsGlob by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsGlob") {
     from(jsGeneratedDir) {
         include("actions/glob/")
     }
     into(webMainDir("kotlin-actions-glob"))
 }
 
-val syncActionsGitHub by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsGitHub") {
     from(jsGeneratedDir) {
         include("actions/github/")
     }
     into(webMainDir("kotlin-actions-github"))
 }
 
-val syncActionsHttpClient by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsHttpClient") {
     from(jsGeneratedDir) {
         include("actions/http/client/")
     }
     into(webMainDir("kotlin-actions-http-client"))
 }
 
-val syncActionsIO by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsIO") {
     from(jsGeneratedDir) {
         include("actions/io/")
     }
     into(webMainDir("kotlin-actions-io"))
 }
 
-val syncActionsToolCache by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncActionsToolCache") {
     from(jsGeneratedDir) {
         include("actions/tool/cache/")
     }

@@ -6,7 +6,7 @@ dependencies {
     webMainImplementation(npm(jspkg.popperjs.core))
 }
 
-val syncPopperjsCore by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncPopperjsCore") {
     from(webGeneratedDir)
     into(webMainDir("kotlin-popperjs-core"))
 }

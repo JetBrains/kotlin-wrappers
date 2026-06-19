@@ -6,7 +6,7 @@ dependencies {
     webMainImplementation(npm(jspkg.csstype))
 }
 
-val syncCssomCore by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncCssomCore") {
     from(webGeneratedDir) {
         include("web/cssom/**")
     }

@@ -6,7 +6,7 @@ dependencies {
     webMainImplementation(npm(jspkg.tanstack.reactTable))
 }
 
-val syncTableCore by tasks.registering(SyncWrappers::class) {
+tasks.register<SyncWrappers>("syncTableCore") {
     from(webGeneratedDir) {
         include("tanstack/table/")
     }
