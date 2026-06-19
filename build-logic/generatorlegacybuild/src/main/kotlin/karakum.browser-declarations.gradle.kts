@@ -31,7 +31,7 @@ tasks.named("generateDeclarations") {
     }
 }
 
-val findMissedTypes by tasks.registering {
+tasks.register("findMissedTypes") {
     doLast {
         val generatedInterfaces = fileTree(file("../../kotlin-browser/src/webMain/generated"))
             .plus(fileTree(file("../../kotlin-web/src/webMain/generated")))

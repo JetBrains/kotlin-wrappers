@@ -7,7 +7,7 @@ plugins {
 
 project.version = publishVersion()
 
-val emptyJavadocJar by tasks.registering(EmptyJavadocJar::class)
+val emptyJavadocJar by tasks.register<EmptyJavadocJar>("emptyJavadocJar")
 
 publishing {
     publications {

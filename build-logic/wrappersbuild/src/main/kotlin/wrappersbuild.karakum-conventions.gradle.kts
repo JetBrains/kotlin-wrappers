@@ -10,23 +10,23 @@ val karakumProject: IncludedBuild
     get() = gradle.includedBuild("${project.name}-karakum")
 
 if (hasKarakumGenerator()) {
-    val deleteKarakumPackageLock by tasks.registering(Delete::class) {
+    val deleteKarakumPackageLock by tasks.register<Delete>("deleteKarakumPackageLock") {
         val lockFile = project.layout.projectDirectory
             .file("karakum/kotlin-js-store/package-lock.json")
 
         delete(lockFile)
     }
 
-    val cleanKarakum by tasks.registering {
+    tasks.register("cleanKarakum") {
         dependsOn(deleteKarakumPackageLock)
         dependsOn(karakumProject.task(":clean"))
     }
 
-    val buildKarakum by tasks.registering {
+    tasks.register("buildKarakum") {
         dependsOn(karakumProject.task(":build"))
     }
 
-    val generateKarakumExternals by tasks.registering {
+    tasks.register("generateKarakumExternals") {
         dependsOn(karakumProject.task(":generateKarakumExternals"))
     }
 }

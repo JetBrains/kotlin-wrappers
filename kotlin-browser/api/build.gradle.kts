@@ -1,4 +1,4 @@
-val generate by tasks.registering {
+tasks.register("generate") {
     doLast {
         generateApiReport()
     }
