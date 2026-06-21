@@ -24,7 +24,7 @@ import kotlinx.js.JsPlainObject
  */
 open external class DebugAppearance(
     options: ConstructorOptions,
-) {
+) : Appearance {
     /**
      * @property [attributeName] The name of the attribute to visualize.
      * @property [perInstanceAttribute] Boolean that determines whether this attribute is a per-instance geometry attribute.
@@ -50,19 +50,19 @@ open external class DebugAppearance(
      * used by [DebugAppearance] since a fully custom fragment shader is used.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#material">Online Documentation</a>
      */
-    var material: Material
+    override var material: Material
 
     /**
      * When `true`, the geometry is expected to appear translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#translucent">Online Documentation</a>
      */
-    var translucent: Boolean
+    override var translucent: Boolean
 
     /**
      * The GLSL source code for the vertex shader.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#vertexShaderSource">Online Documentation</a>
      */
-    val vertexShaderSource: String
+    override val vertexShaderSource: String
 
     /**
      * The GLSL source code for the fragment shader.  The full fragment shader
@@ -70,19 +70,19 @@ open external class DebugAppearance(
      * Use [DebugAppearance.getFragmentShaderSource] to get the full source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#fragmentShaderSource">Online Documentation</a>
      */
-    val fragmentShaderSource: String
+    override val fragmentShaderSource: String
 
     /**
      * The WebGL fixed-function state to use when rendering the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#renderState">Online Documentation</a>
      */
-    val renderState: JsAny
+    override val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#closed">Online Documentation</a>
      */
-    val closed: Boolean
+    override val closed: Boolean
 
     /**
      * The name of the attribute being visualized.
@@ -102,14 +102,14 @@ open external class DebugAppearance(
      * @return The full GLSL fragment shader source.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#getFragmentShaderSource">Online Documentation</a>
      */
-    fun getFragmentShaderSource(): String
+    override fun getFragmentShaderSource(): String
 
     /**
      * Determines if the geometry is translucent based on [DebugAppearance.translucent].
      * @return `true` if the appearance is translucent.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#isTranslucent">Online Documentation</a>
      */
-    fun isTranslucent(): Boolean
+    override fun isTranslucent(): Boolean
 
     /**
      * Creates a render state.  This is not the final render state instance; instead,
@@ -118,5 +118,5 @@ open external class DebugAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): JsAny
+    override fun getRenderState(): JsAny
 }

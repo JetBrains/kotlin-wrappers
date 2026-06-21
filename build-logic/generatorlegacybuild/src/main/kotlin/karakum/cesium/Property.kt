@@ -21,6 +21,7 @@ internal class Property(
     val declaration: String by lazy {
         (if (abstract) "abstract " else "") +
                 (if (overridden) "override " else "") +
+                (if (open) "open " else "") +
                 (if (readOnly) "val" else "var") +
                 " $name: $type"
     }

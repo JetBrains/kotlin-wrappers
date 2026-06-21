@@ -17,6 +17,8 @@ internal const val PROPERTY: String = "Property"
 internal const val MATERIAL_PROPERTY: String = "MaterialProperty"
 internal const val POSITION_PROPERTY: String = "PositionProperty"
 
+internal const val APPEARANCE: String = "Appearance"
+
 private val FACTORY_MAP = mapOf(
     Function.PREFIX to ::Function,
     "function " to ::Function,
@@ -72,6 +74,10 @@ internal fun parseDeclarations(
 
         addParentType(classMap, "StyleExpression") {
             it.endsWith("Expression")
+        }
+
+        addParentType(classMap, APPEARANCE) {
+            it.endsWith(APPEARANCE)
         }
     }
 
