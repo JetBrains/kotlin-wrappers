@@ -239,6 +239,9 @@ private fun convertClass(
 
         name.endsWith("Error")
             -> body = "open $body"
+
+        "constructor(" in body
+            -> body = "open $body"
     }
 
     return ConversionResult(

@@ -7,7 +7,7 @@ package actions.glob
 import js.array.ReadonlyArray
 import js.core.Void
 
-external class Pattern {
+open external class Pattern {
     /**
      * Indicates whether matches should be excluded from the result set
      */

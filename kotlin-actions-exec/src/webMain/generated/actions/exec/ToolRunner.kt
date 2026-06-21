@@ -7,7 +7,7 @@ package actions.exec
 import js.array.ReadonlyArray
 import js.promise.Promise
 
-external class ToolRunner : node.events.EventEmitter {
+open external class ToolRunner : node.events.EventEmitter {
     constructor(
         toolPath: String,
         args: ReadonlyArray<String> = definedExternally,

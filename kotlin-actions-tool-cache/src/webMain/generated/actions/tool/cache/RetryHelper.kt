@@ -7,7 +7,7 @@ package actions.tool.cache
 import js.errors.JsError
 import js.promise.Promise
 
-external class RetryHelper {
+open external class RetryHelper {
     constructor(
         maxAttempts: Number,
         minSeconds: Number,

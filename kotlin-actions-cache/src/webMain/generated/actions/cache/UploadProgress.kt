@@ -4,7 +4,7 @@
 
 package actions.cache
 
-external class UploadProgress {
+open external class UploadProgress {
     var contentLength: Number
     var sentBytes: Number
     var startTime: Number

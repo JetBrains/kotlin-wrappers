@@ -7,7 +7,7 @@ package actions.core
 import js.array.ReadonlyArray
 import js.promise.Promise
 
-external class Summary {
+open external class Summary {
     constructor()
 
     /**

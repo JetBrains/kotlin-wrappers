@@ -6,7 +6,7 @@ package actions.glob
 
 import js.array.ReadonlyArray
 
-external class Path {
+open external class Path {
     var segments: ReadonlyArray<String>
 
     /**

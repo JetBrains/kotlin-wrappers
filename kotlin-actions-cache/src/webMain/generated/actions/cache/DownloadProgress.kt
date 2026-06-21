@@ -4,7 +4,7 @@
 
 package actions.cache
 
-external class DownloadProgress {
+open external class DownloadProgress {
     var contentLength: Number
     var segmentIndex: Number
     var segmentSize: Number

@@ -10,7 +10,7 @@ package actions.http.client
 
 import js.promise.Promise
 
-external class BasicCredentialHandler : RequestHandler {
+open external class BasicCredentialHandler : RequestHandler {
     var username: String
     var password: String
 

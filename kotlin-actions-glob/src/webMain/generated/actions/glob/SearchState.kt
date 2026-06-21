@@ -4,7 +4,7 @@
 
 package actions.glob
 
-external class SearchState {
+open external class SearchState {
     val path: String
     val level: Number
 

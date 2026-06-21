@@ -8,7 +8,7 @@ import js.array.ReadonlyArray
 import js.errors.JsError
 import js.promise.Promise
 
-external class HttpClient {
+open external class HttpClient {
     var userAgent: String?
     var handlers: ReadonlyArray<RequestHandler>
     var requestOptions: RequestOptions?

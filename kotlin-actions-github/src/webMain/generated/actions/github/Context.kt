@@ -6,7 +6,7 @@ package actions.github
 
 import kotlinx.js.JsPlainObject
 
-external class Context {
+open external class Context {
     /**
      * Webhook payload object that triggered the workflow
      */
