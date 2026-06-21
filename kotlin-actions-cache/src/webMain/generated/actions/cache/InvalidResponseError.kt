@@ -6,6 +6,6 @@ package actions.cache
 
 import js.errors.JsError
 
-external class InvalidResponseError : JsError {
+open external class InvalidResponseError : JsError {
     constructor(message: String)
 }

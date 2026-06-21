@@ -6,6 +6,6 @@ package actions.artifact
 
 import js.errors.JsError
 
-external class ArtifactNotFoundError : JsError {
+open external class ArtifactNotFoundError : JsError {
     constructor(message: String = definedExternally)
 }

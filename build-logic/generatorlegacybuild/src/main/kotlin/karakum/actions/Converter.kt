@@ -228,14 +228,17 @@ private fun convertClass(
             .replace("fun toString(", "override fun toString(")
     }
 
-    when (name) {
-        "DefaultArtifactClient",
+    when {
+        name == "DefaultArtifactClient"
             -> body = "sealed " +
                 body.replace("\nfun ", "override fun ")
                     .replace(" = definedExternally", "")
 
-        "DefaultGlobber",
+        name == "DefaultGlobber"
             -> body = "sealed $body"
+
+        name.endsWith("Error")
+            -> body = "open $body"
     }
 
     return ConversionResult(

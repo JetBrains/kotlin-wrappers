@@ -6,7 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-external class UsageError : JsError {
+open external class UsageError : JsError {
     constructor()
 
     companion object {

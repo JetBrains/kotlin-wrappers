@@ -6,7 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-external class NetworkError : JsError {
+open external class NetworkError : JsError {
     var code: String
 
     constructor(code: String)
