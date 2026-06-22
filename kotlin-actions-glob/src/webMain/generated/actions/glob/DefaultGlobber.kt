@@ -8,7 +8,8 @@ import js.array.ReadonlyArray
 import js.generator.AsyncGenerator
 import js.promise.Promise
 
-sealed external class DefaultGlobber : Globber {
+sealed external class DefaultGlobber :
+    Globber {
     // private constructor()
     override fun getSearchPaths(): ReadonlyArray<String>
     override fun glob(): Promise<ReadonlyArray<String>>

@@ -6,6 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-open external class ReserveCacheError : JsError {
+open external class ReserveCacheError :
+    JsError {
     constructor(message: String)
 }

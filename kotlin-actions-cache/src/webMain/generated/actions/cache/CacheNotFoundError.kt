@@ -6,6 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-open external class CacheNotFoundError : JsError {
+open external class CacheNotFoundError :
+    JsError {
     constructor(message: String = definedExternally)
 }

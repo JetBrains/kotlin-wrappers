@@ -6,6 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-open external class RateLimitError : JsError {
+open external class RateLimitError :
+    JsError {
     constructor(message: String)
 }

@@ -4,6 +4,7 @@
 
 package actions.cache
 
-open external class CacheWriteDeniedError : ReserveCacheError {
+open external class CacheWriteDeniedError :
+    ReserveCacheError {
     constructor(message: String)
 }

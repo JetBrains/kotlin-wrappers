@@ -6,6 +6,7 @@ package actions.artifact
 
 import js.errors.JsError
 
-open external class InvalidResponseError : JsError {
+open external class InvalidResponseError :
+    JsError {
     constructor(message: String)
 }

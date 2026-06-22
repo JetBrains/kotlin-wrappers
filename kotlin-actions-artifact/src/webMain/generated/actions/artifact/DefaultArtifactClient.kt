@@ -7,7 +7,8 @@ package actions.artifact
 import js.array.ReadonlyArray
 import js.promise.Promise
 
-sealed external class DefaultArtifactClient : ArtifactClient {
+sealed external class DefaultArtifactClient :
+    ArtifactClient {
     override fun uploadArtifact(
         name: String,
         files: ReadonlyArray<String>,

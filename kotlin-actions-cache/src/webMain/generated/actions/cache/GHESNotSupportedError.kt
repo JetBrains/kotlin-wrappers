@@ -6,6 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-open external class GHESNotSupportedError : JsError {
+open external class GHESNotSupportedError :
+    JsError {
     constructor(message: String = definedExternally)
 }

@@ -10,7 +10,8 @@ package actions.http.client
 
 import js.promise.Promise
 
-open external class PersonalAccessTokenCredentialHandler : RequestHandler {
+open external class PersonalAccessTokenCredentialHandler :
+    RequestHandler {
     var token: String
 
     constructor(token: String)

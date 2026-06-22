@@ -6,7 +6,8 @@ package actions.artifact
 
 import js.errors.JsError
 
-open external class UsageError : JsError {
+open external class UsageError :
+    JsError {
     constructor()
 
     companion object {

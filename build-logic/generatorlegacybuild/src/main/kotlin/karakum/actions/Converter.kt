@@ -176,11 +176,11 @@ private fun convertClass(
         .substringBefore("<")
 
     val declaration = source.substringBefore(" {\n")
-        .replace(" extends events.EventEmitter", " : node.events.EventEmitter")
-        .replace(" extends stream.Transform", " : node.stream.Transform")
-        .replace(" extends Error", " : JsError")
-        .replace(" extends ", " : ")
-        .replace(" implements ", " : ")
+        .replace(" extends events.EventEmitter", " :\nnode.events.EventEmitter")
+        .replace(" extends stream.Transform", " :\nnode.stream.Transform")
+        .replace(" extends Error", " :\nJsError")
+        .replace(" extends ", " :\n")
+        .replace(" implements ", " :\n")
 
     val memberSource = source.substringAfter(" {\n")
         .substringBefore(";\n}")

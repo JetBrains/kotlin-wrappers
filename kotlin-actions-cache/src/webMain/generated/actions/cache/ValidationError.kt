@@ -6,6 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-open external class ValidationError : JsError {
+open external class ValidationError :
+    JsError {
     constructor(message: String)
 }

@@ -6,7 +6,8 @@ package actions.http.client
 
 import js.errors.JsError
 
-open external class HttpClientError : JsError {
+open external class HttpClientError :
+    JsError {
     constructor(
         message: String,
         statusCode: Number,

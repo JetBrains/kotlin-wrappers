@@ -6,6 +6,7 @@ package actions.cache
 
 import js.errors.JsError
 
-open external class FinalizeCacheError : JsError {
+open external class FinalizeCacheError :
+    JsError {
     constructor(message: String)
 }
