@@ -3,7 +3,7 @@ package web.abort.internal
 import js.array.jsArrayOf
 import web.abort.AbortSignal
 
-internal fun AbortSignal?.or(
+internal infix fun AbortSignal?.or(
     signal: AbortSignal,
 ): AbortSignal =
     if (this != null) {

@@ -14,8 +14,7 @@ fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T {
-    val signal = options?.signal
-        .or(controller.signal)
+    val signal = options?.signal or controller.signal
 
     return Object.assign(unsafeJso(), options, createAbortable(signal))
 }
