@@ -10,7 +10,6 @@
       <name>kotlinx.coroutines.asDeferred</name>
       <name>kotlinx.coroutines.await</name>
       <name>kotlinx.dom.*</name>
-      <name>kotlinx.js.JsPlainObject</name>
       <name>org.khronos.*</name>
       <name>org.w3c.*</name>
     </excluded-names>
