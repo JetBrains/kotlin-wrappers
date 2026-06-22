@@ -3,6 +3,7 @@ package web.http
 import js.objects.unsafeJso
 import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
+import web.abort.internal.or
 import web.abort.toAbortSignal
 import web.url.URL
 
@@ -13,7 +14,7 @@ suspend fun fetch(
         val finalRequest = Request(
             request = request,
             init = unsafeJso {
-                signal = continuation.toAbortSignal()
+                signal = request.signal or continuation.toAbortSignal()
             },
         )
 
