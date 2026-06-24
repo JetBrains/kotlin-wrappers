@@ -1,5 +1,4 @@
 plugins {
-    id("npm-versions")
     id("io.github.turansky.kfc.library")
 }
 
