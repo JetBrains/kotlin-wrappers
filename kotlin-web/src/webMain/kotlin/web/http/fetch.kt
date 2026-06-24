@@ -11,12 +11,10 @@ suspend fun fetch(
 ): Response {
     val controller = AbortController()
     return fetchAsync(
-        Request(
-            request = request,
-            init = unsafeJso {
-                signal = request.signal or controller.signal
-            },
-        ),
+        request = request,
+        init = unsafeJso {
+            signal = request.signal or controller.signal
+        },
     ).awaitCancellable(controller)
 }
 
