@@ -1,6 +1,5 @@
-plugins {
-    id("io.github.turansky.kfc.library")
-}
+// WA for Kotlin 2.4.20
+pluginManager.apply("io.github.turansky.kfc.library")
 
 val generateDeclarations = tasks.register("generateDeclarations") {
     dependsOn(":kotlinNpmInstall")
