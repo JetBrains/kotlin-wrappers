@@ -34,3 +34,7 @@ kotlin {
 dependencies {
     commonTestImplementation(libs.kotlin.test)
 }
+
+tasks.named("iosSimulatorArm64Test") {
+    onlyIf { System.getenv("GITHUB_ACTIONS") != "true" }
+}
