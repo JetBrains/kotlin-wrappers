@@ -8,10 +8,8 @@ import kotlin.contracts.contract
 /**
  * Suspend analog of [AutoCloseable]
  */
-// WA for Kotlin `2.2.20`
-// Should be internal
-// @PublishedApi
-fun interface SuspendCloseable {
+@PublishedApi
+internal fun interface SuspendCloseable {
     suspend fun close()
 }
 
