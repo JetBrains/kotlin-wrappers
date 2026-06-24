@@ -1,26 +1,24 @@
 package web.http
 
 import js.objects.unsafeJso
-import js.promise.thenTo
-import kotlinx.coroutines.suspendCancellableCoroutine
+import web.abort.AbortController
+import web.abort.internal.awaitCancellable
 import web.abort.internal.or
-import web.abort.toAbortSignal
 import web.url.URL
 
 suspend fun fetch(
     request: Request,
-): Response =
-    suspendCancellableCoroutine { continuation ->
-        val finalRequest = Request(
+): Response {
+    val controller = AbortController()
+    return fetchAsync(
+        Request(
             request = request,
             init = unsafeJso {
-                signal = request.signal or continuation.toAbortSignal()
+                signal = request.signal or controller.signal
             },
-        )
-
-        fetchAsync(finalRequest)
-            .thenTo(continuation)
-    }
+        ),
+    ).awaitCancellable(controller)
+}
 
 suspend fun fetch(
     request: Request,
