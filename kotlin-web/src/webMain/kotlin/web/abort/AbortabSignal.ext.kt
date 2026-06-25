@@ -8,33 +8,33 @@ import kotlinx.coroutines.Job
 import web.events.addHandler
 
 infix fun AbortSignal.or(
-    signal: AbortSignal,
+    other: AbortSignal,
 ): AbortSignal =
-    AbortSignal.any(jsArrayOf(this, signal))
+    AbortSignal.any(jsArrayOf(this, other))
 
 infix fun AbortSignal.or(
-    signal: AbortSignal?,
+    other: AbortSignal?,
 ): AbortSignal {
-    signal ?: return this
+    other ?: return this
 
-    return this or signal
+    return this or other
 }
 
 infix fun AbortSignal?.or(
-    signal: AbortSignal,
+    other: AbortSignal,
 ): AbortSignal {
-    this ?: return signal
+    this ?: return other
 
-    return this or signal
+    return this or other
 }
 
 infix fun AbortSignal?.or(
-    signal: AbortSignal?,
+    other: AbortSignal?,
 ): AbortSignal? {
-    this ?: return signal
-    signal ?: return this
+    this ?: return other
+    other ?: return this
 
-    return this or signal
+    return this or other
 }
 
 fun AbortSignal.asCoroutineScope(): CoroutineScope {
