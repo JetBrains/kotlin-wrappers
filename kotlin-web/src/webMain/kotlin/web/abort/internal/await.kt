@@ -8,6 +8,7 @@ import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable
+import web.abort.or
 
 @InternalApi
 fun <T : Abortable> patchAbortOptions(

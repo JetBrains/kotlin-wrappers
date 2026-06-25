@@ -1,10 +1,20 @@
 package web.abort
 
+import js.array.jsArrayOf
 import js.errors.toThrowable
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import web.events.addHandler
+
+infix fun AbortSignal?.or(
+    signal: AbortSignal,
+): AbortSignal =
+    if (this != null) {
+        AbortSignal.any(jsArrayOf(this, signal))
+    } else {
+        signal
+    }
 
 fun AbortSignal.asCoroutineScope(): CoroutineScope {
     val job = Job()

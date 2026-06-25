@@ -3,7 +3,7 @@ package web.http
 import js.objects.unsafeJso
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.or
+import web.abort.or
 import web.url.URL
 
 suspend fun fetch(
