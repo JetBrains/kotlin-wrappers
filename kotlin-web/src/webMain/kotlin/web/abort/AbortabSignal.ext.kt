@@ -14,30 +14,28 @@ infix fun AbortSignal.or(
 
 infix fun AbortSignal.or(
     signal: AbortSignal?,
-): AbortSignal =
-    if (signal != null) {
-        this or signal
-    } else {
-        this
-    }
+): AbortSignal {
+    signal ?: return this
+
+    return this or signal
+}
 
 infix fun AbortSignal?.or(
     signal: AbortSignal,
-): AbortSignal =
-    if (this != null) {
-        this or signal
-    } else {
-        signal
-    }
+): AbortSignal {
+    this ?: return signal
+
+    return this or signal
+}
 
 infix fun AbortSignal?.or(
     signal: AbortSignal?,
-): AbortSignal? =
-    if (this != null && signal != null) {
-        this or signal
-    } else {
-        this ?: signal
-    }
+): AbortSignal? {
+    this ?: return signal
+    signal ?: return this
+
+    return this or signal
+}
 
 fun AbortSignal.asCoroutineScope(): CoroutineScope {
     val job = Job()
