@@ -128,8 +128,11 @@ private fun addParentType(
     getParent: (String) -> TypeBase = { classMap.getValue(it) },
     filter: (String) -> Boolean = { it.endsWith(parentType) },
 ) {
-    val abstractMembers = getParent(parentType)
+    val parent = getParent(parentType)
+
+    val abstractMembers = parent
         .overridableMembers()
+        .onEach { it.open = parent.open }
         .map { it.name }
         .toSet()
 
