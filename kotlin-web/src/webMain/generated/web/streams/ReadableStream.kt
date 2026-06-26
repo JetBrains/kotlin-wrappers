@@ -13,8 +13,8 @@ import js.promise.await
 import js.serialization.Transferable
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import web.abort.unsafeAbortable
 import web.http.BodyInit
 
 /**
@@ -123,7 +123,7 @@ suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
     val controller = AbortController()
     pipeToAsync(
         destination = destination,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 

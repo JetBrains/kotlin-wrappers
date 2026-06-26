@@ -8,7 +8,7 @@ import js.iterable.JsIterable
 import js.promise.Promise
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.createAbortable
+import web.abort.unsafeAbortable
 import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
 
@@ -184,7 +184,7 @@ suspend fun <T : JsAny?> Observable<T>.every(
     val controller = AbortController()
     return everyAsync(
         predicate = predicate,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller).toBoolean()
 }
 
@@ -195,7 +195,7 @@ suspend fun <T : JsAny?> Observable<T>.find(
     val controller = AbortController()
     return findAsync(
         predicate = predicate,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -203,7 +203,7 @@ suspend fun <T : JsAny?> Observable<T>.find(
 suspend fun <T : JsAny?> Observable<T>.first(): T {
     val controller = AbortController()
     return firstAsync(
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -214,7 +214,7 @@ suspend fun <T : JsAny?> Observable<T>.forEach(
     val controller = AbortController()
     forEachAsync(
         action = action,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -222,7 +222,7 @@ suspend fun <T : JsAny?> Observable<T>.forEach(
 suspend fun <T : JsAny?> Observable<T>.last(): T {
     val controller = AbortController()
     return lastAsync(
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -235,7 +235,7 @@ suspend fun <T : JsAny?, U : JsAny?> Observable<T>.reduce(
     return reduceAsync(
         operation = operation,
         initialValue = initialValue,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -246,7 +246,7 @@ suspend fun <T : JsAny?> Observable<T>.some(
     val controller = AbortController()
     return someAsync(
         predicate = predicate,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller).toBoolean()
 }
 
@@ -254,6 +254,6 @@ suspend fun <T : JsAny?> Observable<T>.some(
 suspend fun <T : JsAny?> Observable<T>.toArray(): ReadonlyArray<T> {
     val controller = AbortController()
     return toArrayAsync(
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }

@@ -3,8 +3,8 @@ package web.locks
 import kotlinx.coroutines.CoroutineScope
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import web.abort.unsafeAbortable
 import web.function.async
 
 /**
@@ -19,7 +19,7 @@ suspend fun <T : JsAny?> LockManager.request(
     val controller = AbortController()
     return requestAsync(
         name = name,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
         callback = async(controller, block),
     ).awaitCancellable(controller)
 }

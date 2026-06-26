@@ -7,8 +7,8 @@ import js.promise.Promise
 import js.promise.await
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import web.abort.unsafeAbortable
 
 /**
  * The **`CredentialsContainer`** interface of the Credential Management API exposes methods to request credentials and notify the user agent when events such as successful sign in or sign out happen. This interface is accessible from Navigator.credentials.
@@ -59,7 +59,7 @@ private constructor() {
 suspend fun CredentialsContainer.create(): Credential? {
     val controller = AbortController()
     return createAsync(
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -83,7 +83,7 @@ suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Cre
 suspend fun CredentialsContainer.get(): Credential? {
     val controller = AbortController()
     return getAsync(
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 

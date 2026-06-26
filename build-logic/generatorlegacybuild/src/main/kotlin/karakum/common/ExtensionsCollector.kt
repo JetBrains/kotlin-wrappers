@@ -141,7 +141,7 @@ internal open class SuspendExtensionsCollector(
         )
 
         if (isAbortable && parametersToSkip > 0) {
-            arguments += "${parameterNames.last()} = createAbortable($CONTROLLER),\n"
+            arguments += "${parameterNames.last()} = unsafeAbortable($CONTROLLER),\n"
         }
 
         val promiseCall = "${functionName}Async($arguments)"

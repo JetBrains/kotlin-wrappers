@@ -7,8 +7,8 @@ import js.promise.Promise
 import js.promise.await
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import web.abort.unsafeAbortable
 
 /**
  * The **`Scheduler`** interface of the Prioritized Task Scheduling API provides methods for scheduling prioritized tasks.
@@ -48,7 +48,7 @@ suspend fun <T : JsAny?> Scheduler.postTask(
     val controller = AbortController()
     return postTaskAsync(
         callback = callback,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 

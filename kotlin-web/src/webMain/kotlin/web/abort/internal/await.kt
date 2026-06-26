@@ -9,6 +9,7 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable
 import web.abort.or
+import web.abort.unsafeAbortable
 
 @InternalApi
 fun <T : Abortable> patchAbortOptions(
@@ -17,7 +18,7 @@ fun <T : Abortable> patchAbortOptions(
 ): T {
     val signal = options?.signal or controller.signal
 
-    return Object.assign(unsafeJso(), options, createAbortable(signal))
+    return Object.assign(unsafeJso(), options, unsafeAbortable(signal))
 }
 
 // Used in the compiler plugin

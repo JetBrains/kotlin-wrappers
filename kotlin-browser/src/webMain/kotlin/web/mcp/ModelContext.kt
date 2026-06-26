@@ -4,8 +4,8 @@ import js.core.Void
 import js.promise.Promise
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import web.abort.unsafeAbortable
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
@@ -33,7 +33,7 @@ suspend fun ModelContext.registerTool(
     val controller = AbortController()
     registerToolAsync(
         tool = tool,
-        options = createAbortable(controller),
+        options = unsafeAbortable(controller),
     ).awaitCancellable(controller)
 }
 
