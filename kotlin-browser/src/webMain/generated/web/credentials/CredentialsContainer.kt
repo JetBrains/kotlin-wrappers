@@ -7,7 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.patchAbortOptions
 import web.abort.unsafeAbortable
 
 /**
@@ -71,7 +70,7 @@ suspend fun CredentialsContainer.create(): Credential? {
 suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
     val controller = AbortController()
     return createAsync(
-        options = patchAbortOptions(options, controller),
+        options = unsafeAbortable(options, controller.signal),
     ).awaitCancellable(controller)
 }
 
@@ -95,7 +94,7 @@ suspend fun CredentialsContainer.get(): Credential? {
 suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
     val controller = AbortController()
     return getAsync(
-        options = patchAbortOptions(options, controller),
+        options = unsafeAbortable(options, controller.signal),
     ).awaitCancellable(controller)
 }
 

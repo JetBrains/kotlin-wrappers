@@ -7,7 +7,6 @@ import js.promise.Promise
 import js.promise.await
 import web.abort.AbortController
 import web.abort.internal.awaitCancellable
-import web.abort.internal.patchAbortOptions
 import web.abort.unsafeAbortable
 
 /**
@@ -64,7 +63,7 @@ suspend fun <T : JsAny?> Scheduler.postTask(
     val controller = AbortController()
     return postTaskAsync(
         callback = callback,
-        options = patchAbortOptions(options, controller),
+        options = unsafeAbortable(options, controller.signal),
     ).awaitCancellable(controller)
 }
 

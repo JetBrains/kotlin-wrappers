@@ -132,7 +132,7 @@ internal open class SuspendExtensionsCollector(
         val argumentNames = parameterNames.subList(0, parameterNames.size - parametersToSkip)
         var arguments = argumentNames.mapIndexed { i, arg ->
             if (i == parameterNames.lastIndex && isAbortable) {
-                "$arg = patchAbortOptions($arg, $CONTROLLER),"
+                "$arg = unsafeAbortable($arg, $CONTROLLER.signal),"
             } else "$arg = $arg,"
         }.joinToString(
             separator = "\n",

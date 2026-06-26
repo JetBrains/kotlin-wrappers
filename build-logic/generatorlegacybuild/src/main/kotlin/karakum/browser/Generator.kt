@@ -95,7 +95,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.abort.Abortable",
     "web.abort.AbortableLike",
     "web.abort.internal.awaitCancellable",
-    "web.abort.internal.patchAbortOptions",
     "web.abort.unsafeAbortable",
     "web.animations.Animation",
     "web.animations.DocumentTimeline",
