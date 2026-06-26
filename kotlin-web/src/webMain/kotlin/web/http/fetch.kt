@@ -1,23 +1,21 @@
 package web.http
 
-import js.objects.unsafeJso
-import web.abort.AbortController
-import web.abort.internal.awaitCancellable
 import web.abort.or
+import web.abort.unsafeAbortable
+import web.coroutines.await
 import web.url.URL
 
 suspend fun fetch(
     request: Request,
-): Response {
-    val controller = AbortController()
-    return fetchAsync(
+): Response = await { signal ->
+    fetchAsync(
         Request(
             request = request,
-            init = unsafeJso {
-                signal = request.signal or controller.signal
-            },
+            init = unsafeAbortable(
+                signal = request.signal or signal,
+            ),
         ),
-    ).awaitCancellable(controller)
+    )
 }
 
 suspend fun fetch(
