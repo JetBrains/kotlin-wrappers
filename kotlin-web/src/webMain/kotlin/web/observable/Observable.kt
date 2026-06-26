@@ -6,9 +6,8 @@ import js.errors.JsErrorLike
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
-import web.abort.AbortController
-import web.abort.internal.awaitCancellable
 import web.abort.unsafeAbortable
+import web.coroutines.await
 import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
 
@@ -181,49 +180,54 @@ inline fun <T : JsAny?> Observable<T>.catch(
 suspend fun <T : JsAny?> Observable<T>.every(
     predicate: (T) -> Boolean,
 ): Boolean {
-    val controller = AbortController()
-    return everyAsync(
-        predicate = predicate,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller).toBoolean()
+    return await { signal ->
+        everyAsync(
+            predicate = predicate,
+            options = unsafeAbortable(signal),
+        )
+    }.toBoolean()
 }
 
 @ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.find(
     predicate: (T) -> Boolean,
 ): T {
-    val controller = AbortController()
-    return findAsync(
-        predicate = predicate,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        findAsync(
+            predicate = predicate,
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.first(): T {
-    val controller = AbortController()
-    return firstAsync(
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        firstAsync(
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.forEach(
     action: (item: T) -> Unit,
 ) {
-    val controller = AbortController()
-    forEachAsync(
-        action = action,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    await { signal ->
+        forEachAsync(
+            action = action,
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.last(): T {
-    val controller = AbortController()
-    return lastAsync(
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        lastAsync(
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
@@ -231,29 +235,32 @@ suspend fun <T : JsAny?, U : JsAny?> Observable<T>.reduce(
     operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
     initialValue: U,
 ): U {
-    val controller = AbortController()
-    return reduceAsync(
-        operation = operation,
-        initialValue = initialValue,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        reduceAsync(
+            operation = operation,
+            initialValue = initialValue,
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.some(
     predicate: (T) -> Boolean,
 ): Boolean {
-    val controller = AbortController()
-    return someAsync(
-        predicate = predicate,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller).toBoolean()
+    return await { signal ->
+        someAsync(
+            predicate = predicate,
+            options = unsafeAbortable(signal),
+        )
+    }.toBoolean()
 }
 
 @ExperimentalWebApi
 suspend fun <T : JsAny?> Observable<T>.toArray(): ReadonlyArray<T> {
-    val controller = AbortController()
-    return toArrayAsync(
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        toArrayAsync(
+            options = unsafeAbortable(signal),
+        )
+    }
 }
