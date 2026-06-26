@@ -1,25 +1,19 @@
 package web.abort.internal
 
 import js.internal.InternalApi
-import js.objects.Object
-import js.objects.unsafeJso
 import js.promise.PromiseLike
 import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable
-import web.abort.or
 import web.abort.unsafeAbortable
 
 @InternalApi
 fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
-): T {
-    val signal = options?.signal or controller.signal
-
-    return Object.assign(unsafeJso(), options, unsafeAbortable(signal))
-}
+): T =
+    unsafeAbortable(options, controller.signal)
 
 // Used in the compiler plugin
 internal suspend fun <T : JsAny?> awaitPromiseLike(
