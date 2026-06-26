@@ -2,10 +2,8 @@ package web.mcp
 
 import js.core.Void
 import js.promise.Promise
-import web.abort.AbortController
-import web.abort.internal.awaitCancellable
-import web.abort.internal.patchAbortOptions
 import web.abort.unsafeAbortable
+import web.coroutines.await
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
@@ -30,11 +28,12 @@ private constructor() :
 suspend fun ModelContext.registerTool(
     tool: ModelContextTool,
 ) {
-    val controller = AbortController()
-    registerToolAsync(
-        tool = tool,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    await { signal ->
+        registerToolAsync(
+            tool = tool,
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
@@ -42,11 +41,12 @@ suspend fun ModelContext.registerTool(
     tool: ModelContextTool,
     options: ModelContextRegisterToolOptions?,
 ) {
-    val controller = AbortController()
-    registerToolAsync(
-        tool = tool,
-        options = patchAbortOptions(options, controller),
-    ).awaitCancellable(controller)
+    await { signal ->
+        registerToolAsync(
+            tool = tool,
+            options = unsafeAbortable(options, signal),
+        )
+    }
 }
 
 @ExperimentalWebApi
