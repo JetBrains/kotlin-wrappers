@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import web.animations.Animatable
 import web.animations.AnimationEvent
 import web.aria.ARIAMixin
 import web.clipboard.ClipboardEvent

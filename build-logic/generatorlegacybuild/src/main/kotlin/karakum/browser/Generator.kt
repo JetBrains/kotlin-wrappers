@@ -95,6 +95,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.abort.Abortable",
     "web.abort.AbortableLike",
     "web.abort.unsafeAbortable",
+    "web.animations.Animatable",
     "web.animations.Animation",
     "web.animations.DocumentTimeline",
     "web.animations.Keyframe",

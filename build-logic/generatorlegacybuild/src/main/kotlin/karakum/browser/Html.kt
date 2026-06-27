@@ -16,6 +16,9 @@ private val ANIMATION_TYPES = setOf(
     "AnimationEffect",
     "AnimationTimeline",
 
+    "Animatable",
+    "GetAnimationsOptions",
+
     "ComputedEffectTiming",
     "EffectTiming",
     "OptionalEffectTiming",
@@ -57,9 +60,6 @@ private val DOM_TYPES = setOf(
     "DOMStringList",
     "DOMStringMap",
     "DOMTokenList",
-
-    "Animatable",
-    "GetAnimationsOptions",
 
     "Attr",
     "CDATASection",

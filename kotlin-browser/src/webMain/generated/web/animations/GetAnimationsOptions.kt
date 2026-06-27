@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom
+package web.animations
 
 import kotlinx.js.JsPlainObject
 

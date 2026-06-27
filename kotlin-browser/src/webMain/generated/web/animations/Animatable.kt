@@ -4,14 +4,10 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package web.dom
+package web.animations
 
 import js.array.ReadonlyArray
 import js.internal.InternalApi
-import web.animations.Animation
-import web.animations.Keyframe
-import web.animations.KeyframeAnimationOptions
-import web.animations.PropertyIndexedKeyframes
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
