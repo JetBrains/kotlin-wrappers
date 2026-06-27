@@ -1,6 +1,5 @@
 package web.abort.internal
 
-import js.internal.InternalApi
 import js.promise.PromiseLike
 import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -20,16 +19,10 @@ internal suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
     controller: AbortController,
 ): T =
-    promise.awaitCancellable(controller)
-
-@InternalApi
-suspend fun <T : JsAny?> PromiseLike<T>.awaitCancellable(
-    controller: AbortController,
-): T =
     suspendCancellableCoroutine { continuation ->
         continuation.invokeOnCancellation {
             controller.abort()
         }
 
-        thenTo(continuation)
+        promise.thenTo(continuation)
     }
