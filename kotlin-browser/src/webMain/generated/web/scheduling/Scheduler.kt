@@ -5,9 +5,8 @@ package web.scheduling
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
-import web.abort.AbortController
-import web.abort.internal.awaitCancellable
 import web.abort.unsafeAbortable
+import web.coroutines.await
 
 /**
  * The **`Scheduler`** interface of the Prioritized Task Scheduling API provides methods for scheduling prioritized tasks.
@@ -44,11 +43,12 @@ private constructor() {
 suspend fun <T : JsAny?> Scheduler.postTask(
     callback: SchedulerPostTaskCallback<T>,
 ): T {
-    val controller = AbortController()
-    return postTaskAsync(
-        callback = callback,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        postTaskAsync(
+            callback = callback,
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 /**
@@ -60,11 +60,12 @@ suspend fun <T : JsAny?> Scheduler.postTask(
     callback: SchedulerPostTaskCallback<T>,
     options: SchedulerPostTaskOptions,
 ): T {
-    val controller = AbortController()
-    return postTaskAsync(
-        callback = callback,
-        options = unsafeAbortable(options, controller.signal),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        postTaskAsync(
+            callback = callback,
+            options = unsafeAbortable(options, signal),
+        )
+    }
 }
 
 /**

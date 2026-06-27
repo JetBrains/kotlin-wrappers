@@ -5,9 +5,8 @@ package web.credentials
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
-import web.abort.AbortController
-import web.abort.internal.awaitCancellable
 import web.abort.unsafeAbortable
+import web.coroutines.await
 
 /**
  * The **`CredentialsContainer`** interface of the Credential Management API exposes methods to request credentials and notify the user agent when events such as successful sign in or sign out happen. This interface is accessible from Navigator.credentials.
@@ -56,10 +55,11 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
 suspend fun CredentialsContainer.create(): Credential? {
-    val controller = AbortController()
-    return createAsync(
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        createAsync(
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 /**
@@ -68,10 +68,11 @@ suspend fun CredentialsContainer.create(): Credential? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
 suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
-    val controller = AbortController()
-    return createAsync(
-        options = unsafeAbortable(options, controller.signal),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        createAsync(
+            options = unsafeAbortable(options, signal),
+        )
+    }
 }
 
 /**
@@ -80,10 +81,11 @@ suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Cre
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
  */
 suspend fun CredentialsContainer.get(): Credential? {
-    val controller = AbortController()
-    return getAsync(
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        getAsync(
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 /**
@@ -92,10 +94,11 @@ suspend fun CredentialsContainer.get(): Credential? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
  */
 suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
-    val controller = AbortController()
-    return getAsync(
-        options = unsafeAbortable(options, controller.signal),
-    ).awaitCancellable(controller)
+    return await { signal ->
+        getAsync(
+            options = unsafeAbortable(options, signal),
+        )
+    }
 }
 
 /**

@@ -1,7 +1,8 @@
 package karakum.common
 
-private const val CONTROLLER = "controller"
-private const val CONTROLLER_INIT = "val $CONTROLLER = AbortController()"
+private const val SIGNAL = "signal"
+private const val AWAIT_START = "await { $SIGNAL ->"
+private const val AWAIT_END = "}"
 
 private val ABORTABLE_TYPES = setOf(
     "AddEventListenerOptions",
@@ -132,7 +133,7 @@ internal open class SuspendExtensionsCollector(
         val argumentNames = parameterNames.subList(0, parameterNames.size - parametersToSkip)
         var arguments = argumentNames.mapIndexed { i, arg ->
             if (i == parameterNames.lastIndex && isAbortable) {
-                "$arg = unsafeAbortable($arg, $CONTROLLER.signal),"
+                "$arg = unsafeAbortable($arg, $SIGNAL),"
             } else "$arg = $arg,"
         }.joinToString(
             separator = "\n",
@@ -141,7 +142,7 @@ internal open class SuspendExtensionsCollector(
         )
 
         if (isAbortable && parametersToSkip > 0) {
-            arguments += "${parameterNames.last()} = unsafeAbortable($CONTROLLER),\n"
+            arguments += "${parameterNames.last()} = unsafeAbortable($SIGNAL),\n"
         }
 
         val promiseCall = "${functionName}Async($arguments)"
@@ -158,8 +159,9 @@ internal open class SuspendExtensionsCollector(
 
         return when {
             isAbortable -> """
-                $CONTROLLER_INIT
-                $returnKeyword $promiseCall.awaitCancellable($CONTROLLER)$resultCast
+                $returnKeyword $AWAIT_START
+                $promiseCall
+                $AWAIT_END$resultCast
             """.trimIndent()
 
             else -> "$returnKeyword $promiseCall.await()$resultCast"
@@ -200,7 +202,7 @@ internal open class SuspendExtensionsCollector(
                 isAbortable,
             )
 
-            val isInline = CONTROLLER_INIT !in body
+            val isInline = AWAIT_START !in body
             var newParameters = "(${parametersSlice.joinToString(",")})"
             if (isInline) {
                 newParameters = newParameters.withNoInline(parameterNames)

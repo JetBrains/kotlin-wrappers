@@ -11,9 +11,8 @@ import js.iterable.AsyncIterator
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Transferable
-import web.abort.AbortController
-import web.abort.internal.awaitCancellable
 import web.abort.unsafeAbortable
+import web.coroutines.await
 import web.http.BodyInit
 
 /**
@@ -119,11 +118,12 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
 suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
     destination: WritableStream<R>,
 ) {
-    val controller = AbortController()
-    pipeToAsync(
-        destination = destination,
-        options = unsafeAbortable(controller),
-    ).awaitCancellable(controller)
+    await { signal ->
+        pipeToAsync(
+            destination = destination,
+            options = unsafeAbortable(signal),
+        )
+    }
 }
 
 /**
@@ -135,9 +135,10 @@ suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
     destination: WritableStream<R>,
     options: StreamPipeOptions,
 ) {
-    val controller = AbortController()
-    pipeToAsync(
-        destination = destination,
-        options = unsafeAbortable(options, controller.signal),
-    ).awaitCancellable(controller)
+    await { signal ->
+        pipeToAsync(
+            destination = destination,
+            options = unsafeAbortable(options, signal),
+        )
+    }
 }
