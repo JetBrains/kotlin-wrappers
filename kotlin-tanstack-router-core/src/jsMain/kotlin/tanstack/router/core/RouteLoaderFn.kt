@@ -13,7 +13,7 @@ fun RouteLoaderFn(
 ): RouteLoaderFn =
     RouteLoaderFn(
         value = { options ->
-            createCancellablePromise(options.abortController) {
+            createCancellablePromise(options.abortController.signal) {
                 block(options)
             }
         },
