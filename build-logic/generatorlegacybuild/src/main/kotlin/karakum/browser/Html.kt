@@ -92,7 +92,6 @@ private val DOM_TYPES = setOf(
     "GetHTMLOptions",
     "ImportNodeOptions",
 
-    "DocumentAndElementEventHandlers",
     "GlobalEventHandlers",
 
     // separate package?
