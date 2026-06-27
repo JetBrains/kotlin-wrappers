@@ -21,9 +21,3 @@ fun <T : Abortable> unsafeAbortable(
         options,
         unsafeAbortable(options?.signal or signal),
     )
-
-// TODO: remove after KT-76286
-fun <T : Abortable> unsafeAbortable(
-    controller: AbortController,
-): T =
-    unsafeAbortable(signal = controller.signal)
