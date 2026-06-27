@@ -8,8 +8,8 @@ import web.abort.AbortController
 import web.abort.Abortable
 import web.abort.unsafeAbortable
 
-@InternalApi
-fun <T : Abortable> patchAbortOptions(
+// Used in the compiler plugin
+internal fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T =
