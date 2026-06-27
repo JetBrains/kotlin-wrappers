@@ -58,7 +58,6 @@ private val STANDARD_TYPE_MAP = mapOf(
     "{ [name: string]: any }" to "ReadonlyRecord<String, *>",
     "{ [name: string]: string[] }" to "ReadonlyRecord<String, ReadonlyArray<String>>",
     "{ [key: string]: boolean | undefined }" to "ReadonlyRecord<String, Boolean?>",
-    "{ [key: string]: boolean | undefined }" to "ReadonlyRecord<String, Boolean?>",
     "{ [key: string]: string | null | undefined }" to "ReadonlyRecord<String, Boolean?>",
 
     "[T, TreeItemCheckboxState]" to "Tuple2<T, TreeItemCheckboxState>",

@@ -17,7 +17,6 @@ internal val JS_CLOSABLE_INHERITORS = setOf(
     "Window",
     "DedicatedWorkerGlobalScope",
     "SharedWorkerGlobalScope",
-    "RTCDataChannel",
 
     "BroadcastChannel",
     "ImageBitmap",

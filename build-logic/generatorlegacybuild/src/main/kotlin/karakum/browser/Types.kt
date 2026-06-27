@@ -167,7 +167,6 @@ private val EXCLUDED_TYPES = setOf(
 private val INTL_KEY_TYPES = setOf(
     "NumberFormatOptionsCurrencyDisplay",
     "NumberFormatOptionsSignDisplay",
-    "NumberFormatOptionsSignDisplay",
     "NumberFormatOptionsStyle",
     "NumberFormatOptionsUseGrouping",
     "NumberFormatPartType",
