@@ -6,9 +6,6 @@ import web.dom.TagName
 import web.html.HTMLElement
 import web.html.HtmlSource
 
-// redundant, but required for Kotlin/JS :(
-@JsExport
-
 class MyPanel : HTMLElement(), CustomElement {
     init {
         console.log("MyPanel created!")
