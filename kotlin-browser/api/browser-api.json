@@ -1467,6 +1467,8 @@
     "QueuingStrategy": "web.streams.QueuingStrategy",
     "QueuingStrategyInit": "web.streams.QueuingStrategyInit",
     "QueuingStrategySize": "web.streams.QueuingStrategySize",
+    "QuotaExceededError": "web.errors.QuotaExceededError",
+    "QuotaExceededErrorOptions": "web.errors.QuotaExceededErrorOptions",
     "RTCAnswerOptions": "web.rtc.RTCAnswerOptions",
     "RTCBundlePolicy": "web.rtc.RTCBundlePolicy",
     "RTCCertificate": "web.rtc.RTCCertificate",
