@@ -36,7 +36,7 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.form.SubmitEvent"),
     EventInfo("web.html.MediaEncryptedEvent"),
     EventInfo("web.idb.IDBVersionChangeEvent"),
-    EventInfo("web.mediakey.MediaKeyMessageEvent"),
+    EventInfo("web.mediaencrypted.MediaKeyMessageEvent"),
     EventInfo("web.cssom.MediaQueryListEvent"),
     EventInfo("web.fonts.FontFaceSetLoadEvent"),
     EventInfo("web.mediarecorder.BlobEvent"),

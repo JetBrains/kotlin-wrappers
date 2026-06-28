@@ -9,7 +9,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.http.CrossOrigin
-import web.mediakey.MediaKeys
+import web.mediaencrypted.MediaKeys
 import web.mediasource.TimeRanges
 import web.mediastreams.MediaStream
 import web.remoteplayback.RemotePlayback

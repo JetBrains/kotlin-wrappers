@@ -19,8 +19,8 @@ import web.keyboard.Keyboard
 import web.locks.NavigatorLocks
 import web.mediacapabilities.MediaCapabilities
 import web.mediadevices.MediaDevices
-import web.mediakey.MediaKeySystemAccess
-import web.mediakey.MediaKeySystemConfiguration
+import web.mediaencrypted.MediaKeySystemAccess
+import web.mediaencrypted.MediaKeySystemConfiguration
 import web.mediasession.MediaSession
 import web.midi.MIDIAccess
 import web.midi.MIDIOptions

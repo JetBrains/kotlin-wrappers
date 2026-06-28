@@ -249,9 +249,9 @@ private val DEFAULT_IMPORTS = Imports(
     "web.mathml.MathMLElement",
     "web.mcp.ModelContext",
     "web.mediacapabilities.MediaCapabilities",
-    "web.mediakey.MediaKeySystemAccess",
-    "web.mediakey.MediaKeys",
-    "web.mediakey.MediaKeysRequirement",
+    "web.mediaencrypted.MediaKeySystemAccess",
+    "web.mediaencrypted.MediaKeys",
+    "web.mediaencrypted.MediaKeysRequirement",
     "web.mediasession.MediaSession",
     "web.mediasource.TimeRanges",
     "web.mediastreams.MediaStream",
@@ -475,8 +475,8 @@ fun generateKotlinDeclarations(
 
             "Navigator" -> """
             import web.mediadevices.MediaDevices
-            import web.mediakey.MediaKeySystemAccess
-            import web.mediakey.MediaKeySystemConfiguration
+            import web.mediaencrypted.MediaKeySystemAccess
+            import web.mediaencrypted.MediaKeySystemConfiguration
             import web.clipboard.Clipboard
             import web.credentials.CredentialsContainer
             import web.geolocation.Geolocation

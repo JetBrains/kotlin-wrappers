@@ -3,7 +3,7 @@
 package web.mediacapabilities
 
 import kotlinx.js.JsPlainObject
-import web.mediakey.MediaKeySystemAccess
+import web.mediaencrypted.MediaKeySystemAccess
 
 @JsPlainObject
 external interface MediaCapabilitiesDecodingInfo :

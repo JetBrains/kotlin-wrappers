@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.mediakey
+package web.mediaencrypted
 
 import js.buffer.ArrayBuffer
 import kotlinx.js.JsPlainObject

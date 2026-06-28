@@ -1606,7 +1606,7 @@ internal fun convertInterface(
         name in WEB_AUDIO_TYPES -> "web.audio"
 
         name.startsWith("RTC") -> "web.rtc"
-        name.startsWith("MediaKey") -> "web.mediakey"
+        name.startsWith("MediaKey") -> "web.mediaencrypted"
 
         name.startsWith("VTT") -> "web.vtt"
         name.startsWith("TextTrack") -> "web.vtt"

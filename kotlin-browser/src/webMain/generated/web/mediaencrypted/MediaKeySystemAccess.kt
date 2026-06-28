@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.mediakey
+package web.mediaencrypted
 
 import js.promise.Promise
 import js.promise.await

@@ -542,7 +542,7 @@ private fun getTypePkg(
         name.startsWith("Lock") -> "web.locks"
 
         name.startsWith("MediaDevice") -> "web.mediadevices"
-        name.startsWith("MediaKey") -> "web.mediakey"
+        name.startsWith("MediaKey") -> "web.mediaencrypted"
         name.startsWith("MediaSession") -> "web.mediasession"
         name.startsWith("MediaStream") -> "web.mediastreams"
 

@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.mediakey
+package web.mediaencrypted
 
 import js.buffer.BufferSource
 import js.core.Void
