@@ -9,6 +9,12 @@ external interface CustomElement {
         get() = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#connectedmovecallback)
+     */
+    val connectedMoveCallback: (() -> Unit)?
+        get() = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#disconnectedcallback)
      */
     val disconnectedCallback: (() -> Unit)?
