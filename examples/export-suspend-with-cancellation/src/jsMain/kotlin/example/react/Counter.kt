@@ -4,6 +4,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import web.abort.Abortable
 import web.abort.coroutineScope
+import kotlin.time.Duration.Companion.milliseconds
 
 @JsExport
 class Counter {
@@ -16,7 +17,7 @@ class Counter {
             var i = 0
             while (isActive) {
                 callback(i++)
-                delay(300)
+                delay(300.milliseconds)
             }
         }
 }
