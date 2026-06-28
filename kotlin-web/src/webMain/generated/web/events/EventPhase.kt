@@ -2,4 +2,5 @@
 
 package web.events
 
-sealed external interface EventPhase
+sealed /* enum */
+external interface EventPhase

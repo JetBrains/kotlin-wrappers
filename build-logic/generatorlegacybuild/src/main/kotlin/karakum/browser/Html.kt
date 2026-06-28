@@ -689,9 +689,14 @@ internal fun htmlDeclarations(
                 "web.keyboard" to KEY_LOCATION,
                 "web.mouse" to DELTA_MODE,
             ).map { (pkg, name) ->
+                val type = if (name.endsWith("Id")) "opaque" else "enum"
+
                 ConversionResult(
                     name = name,
-                    body = "sealed external interface $name",
+                    body = """
+                    sealed /* $type */
+                    external interface $name
+                    """.trimIndent(),
                     pkg = pkg,
                 )
             },

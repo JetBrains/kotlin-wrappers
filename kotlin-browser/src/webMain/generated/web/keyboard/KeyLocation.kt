@@ -2,4 +2,5 @@
 
 package web.keyboard
 
-sealed external interface KeyLocation
+sealed /* enum */
+external interface KeyLocation

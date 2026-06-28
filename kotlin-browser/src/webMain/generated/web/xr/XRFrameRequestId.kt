@@ -2,4 +2,5 @@
 
 package web.xr
 
-sealed external interface XRFrameRequestId
+sealed /* opaque */
+external interface XRFrameRequestId

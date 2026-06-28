@@ -2,4 +2,5 @@
 
 package web.html
 
-sealed external interface VideoFrameRequestId
+sealed /* opaque */
+external interface VideoFrameRequestId

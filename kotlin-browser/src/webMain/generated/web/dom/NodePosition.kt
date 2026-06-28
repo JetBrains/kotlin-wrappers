@@ -2,4 +2,5 @@
 
 package web.dom
 
-sealed external interface NodePosition
+sealed /* enum */
+external interface NodePosition

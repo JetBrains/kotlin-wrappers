@@ -2,4 +2,5 @@
 
 package web.geolocation
 
-sealed external interface GeolocationWatchId
+sealed /* opaque */
+external interface GeolocationWatchId

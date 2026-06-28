@@ -2,4 +2,5 @@
 
 package web.mouse
 
-sealed external interface DeltaMode
+sealed /* enum */
+external interface DeltaMode

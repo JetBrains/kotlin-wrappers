@@ -2,4 +2,5 @@
 
 package web.dom
 
-sealed external interface NodeType
+sealed /* enum */
+external interface NodeType
