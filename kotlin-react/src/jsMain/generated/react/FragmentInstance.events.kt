@@ -23,6 +23,7 @@ import web.html.*
 import web.input.CompositionEvent
 import web.input.InputEvent
 import web.keyboard.KeyboardEvent
+import web.mediaencrypted.MediaEncryptedEvent
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
 import web.pip.PictureInPictureEvent

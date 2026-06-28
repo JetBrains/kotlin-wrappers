@@ -134,10 +134,10 @@ import web.html.HTMLMediaElement
 import web.html.HTMLPermissionElement
 import web.html.HTMLTrackElement
 import web.html.HTMLVideoElement
-import web.html.MediaEncryptedEvent
 import web.input.CompositionEvent
 import web.input.InputEvent
 import web.keyboard.KeyboardEvent
+import web.mediaencrypted.MediaEncryptedEvent
 import web.messaging.MessageEvent
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
