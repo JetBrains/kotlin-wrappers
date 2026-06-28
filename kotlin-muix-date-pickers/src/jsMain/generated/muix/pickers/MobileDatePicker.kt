@@ -4,6 +4,8 @@
 
 package muix.pickers
 
+import react.FC
+
 /**
  * Demos:
  *
@@ -14,4 +16,4 @@ package muix.pickers
  *
  * - [MobileDatePicker API](https://mui.com/x/api/date-pickers/mobile-date-picker/)
  */
-external val MobileDatePicker: react.FC<MobileDatePickerProps<*, *>>
+external val MobileDatePicker: FC<MobileDatePickerProps<*, *>>

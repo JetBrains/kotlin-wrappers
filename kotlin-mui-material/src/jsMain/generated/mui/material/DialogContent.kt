@@ -45,11 +45,11 @@ external interface DialogContentProps :
  *
  * Demos:
  *
- * - [Dialog](https://v6.mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [DialogContent API](https://v6.mui.com/material-ui/api/dialog-content/)
+ * - [DialogContent API](https://v7.mui.com/material-ui/api/dialog-content/)
  */
 @JsName("default")
 external val DialogContent: FC<DialogContentProps>

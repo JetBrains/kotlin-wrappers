@@ -40,11 +40,11 @@ external interface ListItemAvatarProps :
  *
  * Demos:
  *
- * - [Lists](https://v6.mui.com/material-ui/react-list/)
+ * - [Lists](https://v7.mui.com/material-ui/react-list/)
  *
  * API:
  *
- * - [ListItemAvatar API](https://v6.mui.com/material-ui/api/list-item-avatar/)
+ * - [ListItemAvatar API](https://v7.mui.com/material-ui/api/list-item-avatar/)
  */
 @JsName("default")
 external val ListItemAvatar: FC<ListItemAvatarProps>

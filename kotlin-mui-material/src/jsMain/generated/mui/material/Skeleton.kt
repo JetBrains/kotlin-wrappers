@@ -67,11 +67,11 @@ external interface SkeletonOwnProps :
  *
  * Demos:
  *
- * - [Skeleton](https://v6.mui.com/material-ui/react-skeleton/)
+ * - [Skeleton](https://v7.mui.com/material-ui/react-skeleton/)
  *
  * API:
  *
- * - [Skeleton API](https://v6.mui.com/material-ui/api/skeleton/)
+ * - [Skeleton API](https://v7.mui.com/material-ui/api/skeleton/)
  */
 @JsName("default")
 external val Skeleton: FC<SkeletonProps>

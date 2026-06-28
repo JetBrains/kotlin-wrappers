@@ -2,4 +2,5 @@
 
 package muix.tree.view
 
-external interface TreeViewProps : SimpleTreeViewProps
+external interface TreeViewProps :
+    SimpleTreeViewProps

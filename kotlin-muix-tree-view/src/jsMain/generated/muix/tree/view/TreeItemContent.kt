@@ -4,11 +4,16 @@
 
 package muix.tree.view
 
+import react.FC
+import react.PropsWithClassName
+import react.ReactNode
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLElement
 
 external interface TreeItemContentProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLElement>,
-    react.PropsWithClassName {
+    HTMLAttributes<HTMLElement>,
+    PropsWithClassName {
     override var className: ClassName?
 
     /**
@@ -33,7 +38,7 @@ external interface TreeItemContentProps :
     /**
      * The Tree Item label.
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     /**
      * The id of the item.
@@ -43,17 +48,17 @@ external interface TreeItemContentProps :
     /**
      * The icon to display next to the Tree Item's label.
      */
-    var icon: react.ReactNode?
+    var icon: ReactNode?
 
     /**
      * The icon to display next to the Tree Item's label. Either an expansion or collapse icon.
      */
-    var expansionIcon: react.ReactNode?
+    var expansionIcon: ReactNode?
 
     /**
      * The icon to display next to the Tree Item's label. Either a parent or end icon.
      */
-    var displayIcon: react.ReactNode?
+    var displayIcon: ReactNode?
 
     var dragAndDropOverlayProps: TreeItem2DragAndDropOverlayProps?
 
@@ -63,4 +68,4 @@ external interface TreeItemContentProps :
 /**
  * @ignore - internal component.
  */
-external val TreeItemContent: react.FC<TreeItemContentProps>
+external val TreeItemContent: FC<TreeItemContentProps>

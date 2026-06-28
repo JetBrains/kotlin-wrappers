@@ -91,7 +91,7 @@ external interface SelectProps<Value> :
     var input: Any? /* React.ReactElement<unknown, any> */
 
     /**
-     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#attributes) applied to the `input` element.
      * When `native` is `true`, the attributes are applied on the `select` element.
      */
     var inputProps: InputBaseComponentProps?
@@ -222,12 +222,12 @@ external interface OutlinedSelectProps :
  *
  * Demos:
  *
- * - [Select](https://v6.mui.com/material-ui/react-select/)
+ * - [Select](https://v7.mui.com/material-ui/react-select/)
  *
  * API:
  *
- * - [Select API](https://v6.mui.com/material-ui/api/select/)
- * - inherits [OutlinedInput API](https://v6.mui.com/material-ui/api/outlined-input/)
+ * - [Select API](https://v7.mui.com/material-ui/api/select/)
+ * - inherits [OutlinedInput API](https://v7.mui.com/material-ui/api/outlined-input/)
  */
 @JsName("default")
 external val Select: FC<SelectProps<*>>

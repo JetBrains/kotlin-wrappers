@@ -21,9 +21,9 @@ external interface LabelDisplayedRowsArgs {
 
     var to: Number
 
-    var count: Number
+    var count: Int
 
-    var page: Number
+    var page: Int
 }
 
 external interface TablePaginationOwnProps : Props {
@@ -46,14 +46,14 @@ external interface TablePaginationOwnProps : Props {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'td', TablePaginationRootSlotPropsOverrides, TablePaginationOwnerState> */
-        var actions: Props? /* SlotComponentProps<typeof TablePaginationActions, TablePaginationActionsSlotPropsOverrides, TablePaginationOwnerState> */
-        var select: Props? /* SlotComponentProps<'select', TablePaginationSelectSlotPropsOverrides, TablePaginationOwnerState> */
-        var selectLabel: Props? /* SlotComponentProps<'p', TablePaginationSelectLabelSlotPropsOverrides, TablePaginationOwnerState> */
-        var menuItem: Props? /* SlotComponentProps<'option', TablePaginationMenuItemSlotPropsOverrides, TablePaginationOwnerState> */
-        var displayedRows: Props? /* SlotComponentProps<'p', TablePaginationDisplayedRowsSlotPropsOverrides, TablePaginationOwnerState> */
-        var toolbar: Props? /* SlotComponentProps<'div', TablePaginationToolbarSlotPropsOverrides, TablePaginationOwnerState> */
-        var spacer: Props? /* SlotComponentProps<'div', TablePaginationSpacerSlotPropsOverrides, TablePaginationOwnerState> */
+        var root: Props?
+        var actions: Props?
+        var select: Props?
+        var selectLabel: Props?
+        var menuItem: Props?
+        var displayedRows: Props?
+        var toolbar: Props?
+        var spacer: Props?
     }
 
     /**
@@ -61,7 +61,7 @@ external interface TablePaginationOwnProps : Props {
      *
      * To enable server side pagination for an unknown number of items, provide -1.
      */
-    var count: Number
+    var count: Int
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the current page.
@@ -118,14 +118,14 @@ external interface TablePaginationOwnProps : Props {
     /**
      * The zero-based index of the current page.
      */
-    var page: Number
+    var page: Int
 
     /**
      * The number of rows per page.
      *
      * Set -1 to display all the rows.
      */
-    var rowsPerPage: Number
+    var rowsPerPage: Int
 
     /**
      * Customizes the options of the rows per page select field. If less than two options are

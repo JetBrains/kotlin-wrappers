@@ -2,21 +2,28 @@
 
 package muix.tree.view
 
-external interface TreeItem2LabelInputProps : react.Props {
+import mui.system.Union
+import react.Props
+import react.dom.events.ChangeEventHandler
+import react.dom.events.FocusEventHandler
+import react.dom.events.KeyboardEventHandler
+import web.html.HTMLInputElement
+
+external interface TreeItem2LabelInputProps : Props {
     var value: String?
 
     /**
      * Used to determine if the target of keydown or blur events is the input and prevent the event from propagating to the root.
      */
-    // var `data-element`: mui.system.Union? /* 'labelInput' */
+    // var `data-element`: Union? /* 'labelInput' */
 
-    var onChange: react.dom.events.ChangeEventHandler<web.html.HTMLInputElement, *>?
+    var onChange: ChangeEventHandler<HTMLInputElement, *>?
 
-    var onKeyDown: react.dom.events.KeyboardEventHandler<web.html.HTMLInputElement>?
+    var onKeyDown: KeyboardEventHandler<HTMLInputElement>?
 
-    var onBlur: react.dom.events.FocusEventHandler<web.html.HTMLInputElement>?
+    var onBlur: FocusEventHandler<HTMLInputElement>?
 
     var autoFocus: Boolean? /* true */
 
-    var type: mui.system.Union? /* 'text' */
+    var type: Union? /* 'text' */
 }

@@ -5,12 +5,17 @@ package muix.pickers
 import js.array.ReadonlyArray
 import mui.material.SlideDirection
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.system.Union
+import react.ElementType
+import react.Props
+import react.PropsWithClassName
 import web.cssom.ClassName
 
 external interface PickersCalendarHeaderProps<TDate> :
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * Overridable component slots.
      * @default {}
@@ -35,7 +40,7 @@ external interface PickersCalendarHeaderProps<TDate> :
 
     var reduceAnimations: Boolean
 
-    var onViewChange: ((view: mui.system.Union /* 'year' | 'month' | 'day' */) -> Unit)?
+    var onViewChange: ((view: Union /* 'year' | 'month' | 'day' */) -> Unit)?
 
     /**
      * Id of the calendar text element.
@@ -61,17 +66,17 @@ external interface PickersCalendarHeaderSlots {
      * Button displayed to switch between different calendar views.
      * @default IconButton
      */
-    var switchViewButton: react.ElementType<*>?
+    var switchViewButton: ElementType<*>?
 
     /**
      * Icon displayed in the SwitchViewButton. Rotated by 180° when the open view is `year`.
      * @default ArrowDropDown
      */
-    var switchViewIcon: react.ElementType<*>?
+    var switchViewIcon: ElementType<*>?
 }
 
-external interface PickersCalendarHeaderSlotProps<TDate> : react.Props {
-    var switchViewButton: react.Props?
+external interface PickersCalendarHeaderSlotProps<TDate> : Props {
+    var switchViewButton: Props?
 
-    var switchViewIcon: react.Props?
+    var switchViewIcon: Props?
 }

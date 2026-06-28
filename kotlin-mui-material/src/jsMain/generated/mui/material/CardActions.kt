@@ -45,11 +45,11 @@ external interface CardActionsProps :
  *
  * Demos:
  *
- * - [Card](https://v6.mui.com/material-ui/react-card/)
+ * - [Card](https://v7.mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [CardActions API](https://v6.mui.com/material-ui/api/card-actions/)
+ * - [CardActions API](https://v7.mui.com/material-ui/api/card-actions/)
  */
 @JsName("default")
 external val CardActions: FC<CardActionsProps>

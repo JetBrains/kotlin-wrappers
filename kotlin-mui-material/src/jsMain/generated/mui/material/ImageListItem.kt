@@ -36,13 +36,13 @@ external interface ImageListItemOwnProps :
      * Width of the item in number of grid columns.
      * @default 1
      */
-    var cols: Number?
+    var cols: Int?
 
     /**
      * Height of the item in number of grid rows.
      * @default 1
      */
-    var rows: Number?
+    var rows: Int?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -54,11 +54,11 @@ external interface ImageListItemOwnProps :
  *
  * Demos:
  *
- * - [Image List](https://v6.mui.com/material-ui/react-image-list/)
+ * - [Image List](https://v7.mui.com/material-ui/react-image-list/)
  *
  * API:
  *
- * - [ImageListItem API](https://v6.mui.com/material-ui/api/image-list-item/)
+ * - [ImageListItem API](https://v7.mui.com/material-ui/api/image-list-item/)
  */
 @JsName("default")
 external val ImageListItem: FC<ImageListItemProps>

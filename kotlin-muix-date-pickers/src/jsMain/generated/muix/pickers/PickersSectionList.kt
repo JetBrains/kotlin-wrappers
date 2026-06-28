@@ -4,6 +4,8 @@
 
 package muix.pickers
 
+import react.FC
+
 /**
  * Demos:
  *
@@ -13,4 +15,4 @@ package muix.pickers
  *
  * - [PickersSectionList API](https://mui.com/x/api/date-pickers/pickers-section-list/)
  */
-external val PickersSectionList: react.FC<PickersSectionListProps>
+external val PickersSectionList: FC<PickersSectionListProps>

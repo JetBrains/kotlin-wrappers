@@ -26,12 +26,12 @@ sealed external interface ToggleButtonGroupClasses {
     val grouped: ClassName
 
     /** Styles applied to the children if `orientation="horizontal"`.
-     *  @deprecated Combine the [.MuiToggleButtonGroup-horizontal](/material-ui/api/toggle-button-group/#toggle-button-group-classes-horizontal) and [.MuiToggleButtonGroup-grouped](/material-ui/api/toggle-button-group/#toggle-button-group-classes-grouped) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     *  @deprecated Combine the [.MuiToggleButtonGroup-horizontal](/material-ui/api/toggle-button-group/#toggle-button-group-classes-MuiToggleButtonGroup-horizontal) and [.MuiToggleButtonGroup-grouped](/material-ui/api/toggle-button-group/#toggle-button-group-classes-MuiToggleButtonGroup-grouped) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val groupedHorizontal: ClassName
 
     /** Styles applied to the children if `orientation="vertical"`.
-     * @deprecated Combine the [.MuiToggleButtonGroup-vertical](/material-ui/api/toggle-button-group/#toggle-button-group-classes-vertical) and [.MuiToggleButtonGroup-grouped](/material-ui/api/toggle-button-group/#toggle-button-group-classes-grouped) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiToggleButtonGroup-vertical](/material-ui/api/toggle-button-group/#toggle-button-group-classes-MuiToggleButtonGroup-vertical) and [.MuiToggleButtonGroup-grouped](/material-ui/api/toggle-button-group/#toggle-button-group-classes-MuiToggleButtonGroup-grouped) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val groupedVertical: ClassName
 

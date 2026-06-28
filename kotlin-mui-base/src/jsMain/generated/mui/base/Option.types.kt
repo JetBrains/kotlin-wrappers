@@ -35,7 +35,7 @@ external interface OptionOwnProps<OptionValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'li', OptionRootSlotPropsOverrides, OptionOwnerState<OptionValue>> */
+        var root: Props?
     }
 
     /**

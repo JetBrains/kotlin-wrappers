@@ -8,6 +8,7 @@ import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.system.SystemProps
+import mui.system.Union
 import mui.types.PropsWithComponent
 import react.FC
 import react.PropsWithChildren
@@ -45,18 +46,7 @@ external interface TypographyOwnProps :
      * It supports both default and custom theme colors, which can be added as shown in the
      * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
      */
-    var color: Any? /*
-  | OverridableStringUnion<
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'error'
-      | 'info'
-      | 'warning'
-      | `text${Capitalize<keyof TypeText>}`,
-      TypographyPropsColorOverrides
-    >
-  | (string & {}) */
+    var color: Union? /* OverridableStringUnion<'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' | `text${Capitalize<keyof TypeText>}`, TypographyPropsColorOverrides> | (string) */
 
     /**
      * If `true`, the text will have a bottom margin.
@@ -76,7 +66,7 @@ external interface TypographyOwnProps :
     /**
      * If `true`, the element will be a paragraph element.
      * @default false
-     * @deprecated Use the `component` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `component` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var paragraph: Boolean?
 
@@ -110,21 +100,20 @@ external interface TypographyOwnProps :
      *   inherit: 'p',
      * }
      */
-    var variantMapping: Any? /* Partial<
-  Record<OverridableStringUnion<Variant | 'inherit', TypographyPropsVariantOverrides>, string>
-> */
+    var variantMapping: Any? /* Partial<Record<OverridableStringUnion<TypographyVariant | 'inherit', TypographyPropsVariantOverrides>, string>> */
 }
 
 /**
  *
  * Demos:
  *
- * - [Breadcrumbs](https://v6.mui.com/material-ui/react-breadcrumbs/)
- * - [Typography](https://v6.mui.com/material-ui/react-typography/)
+ * - [Breadcrumbs](https://v7.mui.com/material-ui/react-breadcrumbs/)
+ * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
+ * - [Typography](https://v7.mui.com/material-ui/react-typography/)
  *
  * API:
  *
- * - [Typography API](https://v6.mui.com/material-ui/api/typography/)
+ * - [Typography API](https://v7.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val Typography: FC<TypographyProps>

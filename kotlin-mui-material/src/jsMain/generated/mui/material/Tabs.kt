@@ -71,7 +71,7 @@ external interface TabsSlots {
 external interface TabsSlotsAndSlotProps : Props {
     var slots: TabsSlots?
 
-    var slotProps: Any?
+    var slotProps: Props?
 }
 
 external interface TabsOwnerState : TabsProps {
@@ -160,7 +160,7 @@ external interface TabsOwnProps :
 
     /**
      * The component used to render the scroll buttons.
-     * @deprecated use the `slots.scrollButtons` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slots.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default TabScrollButton
      */
     var ScrollButtonComponent: ElementType<*>?
@@ -186,14 +186,14 @@ external interface TabsOwnProps :
 
     /**
      * Props applied to the tab indicator element.
-     * @deprecated use the `slotProps.indicator` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.indicator` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default  {}
      */
-    var TabIndicatorProps: Props? /* React.HTMLAttributes<HTMLDivElement> & { sx?: SxProps<Theme>; } */
+    var TabIndicatorProps: HTMLAttributes<HTMLDivElement>?
 
     /**
      * Props applied to the [`TabScrollButton`](https://mui.com/material-ui/api/tab-scroll-button/) element.
-     * @deprecated use the `slotProps.scrollButtons` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var TabScrollButtonProps: TabScrollButtonProps?
@@ -244,11 +244,11 @@ external interface TabsActions {
  *
  * Demos:
  *
- * - [Tabs](https://v6.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tabs API](https://v6.mui.com/material-ui/api/tabs/)
+ * - [Tabs API](https://v7.mui.com/material-ui/api/tabs/)
  */
 @JsName("default")
 external val Tabs: FC<TabsProps>

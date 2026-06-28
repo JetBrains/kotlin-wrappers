@@ -55,11 +55,11 @@ external interface ToolbarOwnProps :
  *
  * Demos:
  *
- * - [App Bar](https://v6.mui.com/material-ui/react-app-bar/)
+ * - [App Bar](https://v7.mui.com/material-ui/react-app-bar/)
  *
  * API:
  *
- * - [Toolbar API](https://v6.mui.com/material-ui/api/toolbar/)
+ * - [Toolbar API](https://v7.mui.com/material-ui/api/toolbar/)
  */
 @JsName("default")
 external val Toolbar: FC<ToolbarProps>

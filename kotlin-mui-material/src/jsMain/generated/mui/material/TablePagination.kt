@@ -22,6 +22,7 @@ import web.html.HTMLElement
 
 external interface TablePaginationProps :
     TablePaginationOwnProps,
+    TablePaginationSlotsAndSlotProps,
     PropsWithComponent
 
 external interface LabelDisplayedRowsArgs {
@@ -29,9 +30,9 @@ external interface LabelDisplayedRowsArgs {
 
     var to: Number
 
-    var count: Number
+    var count: Int
 
-    var page: Number
+    var page: Int
 }
 
 external interface TablePaginationSlots {
@@ -88,25 +89,25 @@ external interface TablePaginationSlots {
 }
 
 external interface TablePaginationSlotProps : Props {
-    /** TS: SlotProps< React.ElementType<TableCellProps>, TablePaginationRootSlotPropsOverrides, TablePaginationOwnerState > */
+    /** TS: SlotProps<React.ElementType<TableCellProps>, TablePaginationRootSlotPropsOverrides, TablePaginationOwnerState> */
     var root: TableCellProps?
 
-    /** TS: SlotProps< React.ElementType<ToolbarProps>, TablePaginationToolbarSlotPropsOverrides, TablePaginationOwnerState > */
+    /** TS: SlotProps<React.ElementType<ToolbarProps>, TablePaginationToolbarSlotPropsOverrides, TablePaginationOwnerState> */
     var toolbar: ToolbarProps?
 
     /** TS: SlotProps<'div', TablePaginationSpacerSlotPropsOverrides, TablePaginationOwnerState> */
     var spacer: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotProps< 'p', TablePaginationSelectLabelSlotPropsOverrides, TablePaginationOwnerState > */
+    /** TS: SlotProps<'p', TablePaginationSelectLabelSlotPropsOverrides, TablePaginationOwnerState> */
     var selectLabel: Any?
 
     /** TS: Partial<SelectProps> & TablePaginationSelectSlotPropsOverrides */
     var select: Any?
 
-    /** TS: SlotProps< React.ElementType<MenuItemProps>, TablePaginationMenuItemSlotPropsOverrides, TablePaginationOwnerState > */
+    /** TS: SlotProps<React.ElementType<MenuItemProps>, TablePaginationMenuItemSlotPropsOverrides, TablePaginationOwnerState> */
     var menuItem: MenuItemProps?
 
-    /** TS: SlotProps< 'p', TablePaginationDisplayedRowsSlotPropsOverrides, TablePaginationOwnerState > */
+    /** TS: SlotProps<'p', TablePaginationDisplayedRowsSlotPropsOverrides, TablePaginationOwnerState> */
     var displayedRows: Any?
 
     /** TS: TablePaginationActionsProps['slotProps'] & TablePaginationActionsSlotPropsOverrides */
@@ -132,7 +133,7 @@ external interface TablePaginationOwnProps :
     /**
      * Props applied to the back arrow [`IconButton`](https://mui.com/material-ui/api/icon-button/) component.
      *
-     * This prop is an alias for `slotProps.actions.previousButton` and will be overriden by it if both are used.
+     * This prop is an alias for `slotProps.actions.previousButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.actions.previousButton` instead.
      */
     var backIconButtonProps: IconButtonProps?
@@ -147,7 +148,7 @@ external interface TablePaginationOwnProps :
      *
      * To enable server side pagination for an unknown number of items, provide -1.
      */
-    var count: Number
+    var count: Int
 
     /**
      * If `true`, the component is disabled.
@@ -190,7 +191,7 @@ external interface TablePaginationOwnProps :
     /**
      * Props applied to the next arrow [`IconButton`](https://mui.com/material-ui/api/icon-button/) element.
      *
-     * This prop is an alias for `slotProps.actions.nextButton` and will be overriden by it if both are used.
+     * This prop is an alias for `slotProps.actions.nextButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.actions.nextButton` instead.
      */
     var nextIconButtonProps: IconButtonProps?
@@ -213,14 +214,14 @@ external interface TablePaginationOwnProps :
     /**
      * The zero-based index of the current page.
      */
-    var page: Number
+    var page: Int
 
     /**
      * The number of rows per page.
      *
      * Set -1 to display all the rows.
      */
-    var rowsPerPage: Number
+    var rowsPerPage: Int
 
     /**
      * Customizes the options of the rows per page select field. If less than two options are
@@ -228,12 +229,15 @@ external interface TablePaginationOwnProps :
      * Use -1 for the value with a custom label to show all the rows.
      * @default [10, 25, 50, 100]
      */
-    var rowsPerPageOptions: Any? /* ReadonlyArray<number | { value: number; label: string }> */
+    var rowsPerPageOptions: Any? /* ReadonlyArray<number | {
+  value: number;
+  label: string;
+}> */
 
     /**
      * Props applied to the rows per page [`Select`](https://mui.com/material-ui/api/select/) element.
      *
-     * This prop is an alias for `slotProps.select` and will be overriden by it if both are used.
+     * This prop is an alias for `slotProps.select` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.select` instead.
      *
      * @default {}
@@ -265,13 +269,13 @@ external interface TablePaginationOwnerState
  *
  * Demos:
  *
- * - [Pagination](https://v6.mui.com/material-ui/react-pagination/)
- * - [Table](https://v6.mui.com/material-ui/react-table/)
+ * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
+ * - [Table](https://v7.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TablePagination API](https://v6.mui.com/material-ui/api/table-pagination/)
- * - inherits [TableCell API](https://v6.mui.com/material-ui/api/table-cell/)
+ * - [TablePagination API](https://v7.mui.com/material-ui/api/table-pagination/)
+ * - inherits [TableCell API](https://v7.mui.com/material-ui/api/table-cell/)
  */
 @JsName("default")
 external val TablePagination: FC<TablePaginationProps>

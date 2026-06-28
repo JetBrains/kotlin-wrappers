@@ -42,11 +42,11 @@ external interface TableBodyOwnProps :
  *
  * Demos:
  *
- * - [Table](https://v6.mui.com/material-ui/react-table/)
+ * - [Table](https://v7.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableBody API](https://v6.mui.com/material-ui/api/table-body/)
+ * - [TableBody API](https://v7.mui.com/material-ui/api/table-body/)
  */
 @JsName("default")
 external val TableBody: FC<TableBodyProps>

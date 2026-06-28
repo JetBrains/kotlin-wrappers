@@ -117,7 +117,7 @@ external interface PopperOwnProps : PropsWithChildren {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', PopperRootSlotPropsOverrides, PopperOwnerState> */
+        var root: Props?
     }
 
     /**

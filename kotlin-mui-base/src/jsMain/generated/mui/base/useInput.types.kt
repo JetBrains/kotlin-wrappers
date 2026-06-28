@@ -55,9 +55,9 @@ external interface UseInputRootSlotOwnProps : Props {
 external interface UseInputInputSlotOwnProps : Props {
     // var `aria-invalid`: Any /* React.AriaAttributes['aria-invalid'] */
 
-    var defaultValue: Any? /* string | number | readonly string[] | undefined */
+    var defaultValue: Any? /* string | number | readonly string[] */
 
-    var value: Any? /* string | number | readonly string[] | undefined */
+    var value: Any? /* string | number | readonly string[] */
 
     var onBlur: FocusEventHandler<HTMLElement>
 
@@ -89,7 +89,7 @@ external interface UseInputReturnValue {
     /**
      * Return value from the `useFormControlContext` hook.
      */
-    var formControlContext: Any?
+    var formControlContext: Any? /* FormControlState */
 
     /**
      * Resolver for the input slot's props.

@@ -48,7 +48,7 @@ external interface NativeSelectProps :
     var input: Any? /* React.ReactElement<unknown, any> */
 
     /**
-     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attributes) applied to the `select` element.
+     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select#attributes) applied to the `select` element.
      */
     var inputProps: Any? /* Partial<NativeSelectInputProps> */
 
@@ -81,12 +81,12 @@ external interface NativeSelectProps :
  *
  * Demos:
  *
- * - [Select](https://v6.mui.com/material-ui/react-select/)
+ * - [Select](https://v7.mui.com/material-ui/react-select/)
  *
  * API:
  *
- * - [NativeSelect API](https://v6.mui.com/material-ui/api/native-select/)
- * - inherits [Input API](https://v6.mui.com/material-ui/api/input/)
+ * - [NativeSelect API](https://v7.mui.com/material-ui/api/native-select/)
+ * - inherits [Input API](https://v7.mui.com/material-ui/api/input/)
  */
 @JsName("default")
 external val NativeSelect: FC<NativeSelectProps>

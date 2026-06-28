@@ -43,8 +43,8 @@ external interface BadgeOwnProps : PropsWithChildren {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'span', BadgeRootSlotPropsOverrides, BadgeOwnerState> */
-        var badge: Props? /* SlotComponentProps<'span', BadgeBadgeSlotPropsOverrides, BadgeOwnerState> */
+        var root: Props?
+        var badge: Props?
     }
 
     /**

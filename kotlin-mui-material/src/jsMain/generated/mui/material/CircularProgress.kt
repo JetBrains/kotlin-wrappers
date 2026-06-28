@@ -37,6 +37,13 @@ external interface CircularProgressProps :
     var disableShrink: Boolean?
 
     /**
+     * If `true`, a track circle slot is mounted to show a subtle background for the progress.
+     * The `size` and `thickness` apply to the track slot to be consistent with the progress circle.
+     * @default false
+     */
+    var enableTrackSlot: Boolean?
+
+    /**
      * The size of the component.
      * If using a number, the pixel unit is assumed.
      * If using a string, you need to provide the CSS unit, for example '3rem'.
@@ -53,7 +60,7 @@ external interface CircularProgressProps :
      * The thickness of the circle.
      * @default 3.6
      */
-    var thickness: Number?
+    var thickness: Double?
 
     /**
      * The value of the progress indicator for the determinate variant.
@@ -79,11 +86,11 @@ external interface CircularProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://v6.mui.com/material-ui/react-progress/)
+ * - [Progress](https://v7.mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [CircularProgress API](https://v6.mui.com/material-ui/api/circular-progress/)
+ * - [CircularProgress API](https://v7.mui.com/material-ui/api/circular-progress/)
  */
 @JsName("default")
 external val CircularProgress: FC<CircularProgressProps>

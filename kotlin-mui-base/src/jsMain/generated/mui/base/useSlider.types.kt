@@ -165,7 +165,7 @@ external interface UseSliderReturnValue {
     /**
      * The index of the thumb which is focused on the slider.
      */
-    var focusedThumbIndex: Number
+    var focusedThumbIndex: Int
 
     /**
      * Resolver for the hidden input slot's props.

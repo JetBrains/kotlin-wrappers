@@ -52,7 +52,7 @@ external interface ListItemTextProps :
     /**
      * These props will be forwarded to the primary typography component
      * (as long as disableTypography is not `true`).
-     * @deprecated Use `slotProps.primary` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.primary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var primaryTypographyProps: TypographyProps?
 
@@ -64,7 +64,7 @@ external interface ListItemTextProps :
     /**
      * These props will be forwarded to the secondary typography component
      * (as long as disableTypography is not `true`).
-     * @deprecated Use `slotProps.secondary` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.secondary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var secondaryTypographyProps: TypographyProps?
 
@@ -117,11 +117,12 @@ external interface ListItemTextOwnerState
  *
  * Demos:
  *
- * - [Lists](https://v6.mui.com/material-ui/react-list/)
+ * - [Lists](https://v7.mui.com/material-ui/react-list/)
+ * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
  *
  * API:
  *
- * - [ListItemText API](https://v6.mui.com/material-ui/api/list-item-text/)
+ * - [ListItemText API](https://v7.mui.com/material-ui/api/list-item-text/)
  */
 @JsName("default")
 external val ListItemText: FC<ListItemTextProps>

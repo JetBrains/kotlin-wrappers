@@ -89,12 +89,13 @@ external interface ListItemButtonOwnProps
  *
  * Demos:
  *
- * - [Lists](https://v6.mui.com/material-ui/react-list/)
+ * - [Lists](https://v7.mui.com/material-ui/react-list/)
+ * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
  *
  * API:
  *
- * - [ListItemButton API](https://v6.mui.com/material-ui/api/list-item-button/)
- * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
+ * - [ListItemButton API](https://v7.mui.com/material-ui/api/list-item-button/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val ListItemButton: FC<ListItemButtonProps>

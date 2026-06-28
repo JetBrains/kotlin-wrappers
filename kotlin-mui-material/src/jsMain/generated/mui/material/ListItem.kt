@@ -39,14 +39,14 @@ external interface ListItemBaseProps :
     /**
      * The container component used when a `ListItemSecondaryAction` is the last child.
      * @default 'li'
-     * @deprecated Use the `component` or `slots.root` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `component` or `slots.root` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ContainerComponent: ElementType<HTMLAttributes<HTMLDivElement>>?
 
     /**
      * Props applied to the container component if used.
      * @default {}
-     * @deprecated Use the `slotProps.root` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `slotProps.root` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ContainerProps: HTMLAttributes<HTMLDivElement>?
 
@@ -86,12 +86,14 @@ external interface ListItemBaseProps :
     override var sx: SxProps<Theme>?
 }
 
+external interface ListItemOwnerState
+
 external interface ListItemOwnProps :
     ListItemBaseProps {
     /**
      * The components used for each slot inside.
      *
-     * @deprecated Use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var components: Components?
@@ -104,7 +106,7 @@ external interface ListItemOwnProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * @deprecated Use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var componentsProps: ComponentsProps?
@@ -123,6 +125,7 @@ external interface ListItemOwnProps :
 
     interface SlotProps {
         var root: Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
+        var secondaryAction: Props? /* SlotProps<React.ElementType<React.HTMLAttributes<HTMLDivElement>>, ListItemSecondaryActionSlotPropsOverrides, ListItemOwnerState> */
     }
 
     /**
@@ -134,6 +137,7 @@ external interface ListItemOwnProps :
 
     interface Slots {
         var root: ElementType<*>?
+        var secondaryAction: ElementType<*>?
     }
 }
 
@@ -142,12 +146,12 @@ external interface ListItemOwnProps :
  *
  * Demos:
  *
- * - [Lists](https://v6.mui.com/material-ui/react-list/)
- * - [Transfer List](https://v6.mui.com/material-ui/react-transfer-list/)
+ * - [Lists](https://v7.mui.com/material-ui/react-list/)
+ * - [Transfer List](https://v7.mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [ListItem API](https://v6.mui.com/material-ui/api/list-item/)
+ * - [ListItem API](https://v7.mui.com/material-ui/api/list-item/)
  */
 @JsName("default")
 external val ListItem: FC<ListItemProps>

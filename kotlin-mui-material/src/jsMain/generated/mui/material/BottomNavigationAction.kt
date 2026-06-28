@@ -101,12 +101,12 @@ external interface BottomNavigationActionOwnerState
  *
  * Demos:
  *
- * - [Bottom Navigation](https://v6.mui.com/material-ui/react-bottom-navigation/)
+ * - [Bottom Navigation](https://v7.mui.com/material-ui/react-bottom-navigation/)
  *
  * API:
  *
- * - [BottomNavigationAction API](https://v6.mui.com/material-ui/api/bottom-navigation-action/)
- * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
+ * - [BottomNavigationAction API](https://v7.mui.com/material-ui/api/bottom-navigation-action/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val BottomNavigationAction: FC<BottomNavigationActionProps>

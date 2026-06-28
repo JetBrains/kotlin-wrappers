@@ -38,17 +38,17 @@ sealed external interface SelectClasses {
     val iconOpen: ClassName
 
     /** Styles applied to the icon component if `variant="filled"`.
-     * @deprecated Combine the [.MuiSelect-icon](/material-ui/api/select/#select-classes-icon) and [.MuiSelect-filled](/material-ui/api/select/#select-classes-filled) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiSelect-icon](/material-ui/api/select/#select-classes-MuiSelect-icon) and [.MuiSelect-filled](/material-ui/api/select/#select-classes-MuiSelect-filled) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val iconFilled: ClassName
 
     /** Styles applied to the icon component if `variant="outlined"`.
-     * @deprecated Combine the [.MuiSelect-icon](/material-ui/api/select/#select-classes-icon) and [.MuiSelect-outlined](/material-ui/api/select/#select-classes-outlined) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiSelect-icon](/material-ui/api/select/#select-classes-MuiSelect-icon) and [.MuiSelect-outlined](/material-ui/api/select/#select-classes-MuiSelect-outlined) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val iconOutlined: ClassName
 
     /** Styles applied to the icon component if `variant="standard"`.
-     * @deprecated Combine the [.MuiSelect-icon](/material-ui/api/select/#select-classes-icon) and [.MuiSelect-standard](/material-ui/api/select/#select-classes-standard) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiSelect-icon](/material-ui/api/select/#select-classes-MuiSelect-icon) and [.MuiSelect-standard](/material-ui/api/select/#select-classes-MuiSelect-standard) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val iconStandard: ClassName
 

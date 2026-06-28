@@ -80,11 +80,12 @@ external interface FormHelperTextOwnProps :
  *
  * Demos:
  *
- * - [Text Field](https://v6.mui.com/material-ui/react-text-field/)
+ * - [Number Field](https://v7.mui.com/material-ui/react-number-field/)
+ * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [FormHelperText API](https://v6.mui.com/material-ui/api/form-helper-text/)
+ * - [FormHelperText API](https://v7.mui.com/material-ui/api/form-helper-text/)
  */
 @JsName("default")
 external val FormHelperText: FC<FormHelperTextProps>

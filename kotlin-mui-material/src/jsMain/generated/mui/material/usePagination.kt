@@ -14,7 +14,7 @@ external interface UsePaginationProps : Props {
      * Number of always visible pages at the beginning and end.
      * @default 1
      */
-    var boundaryCount: Number?
+    var boundaryCount: Int?
 
     /**
      * The name of the component where this hook is used.
@@ -25,13 +25,13 @@ external interface UsePaginationProps : Props {
      * The total number of pages.
      * @default 1
      */
-    var count: Number?
+    var count: Int?
 
     /**
      * The page selected by default when the component is uncontrolled.
      * @default 1
      */
-    var defaultPage: Number?
+    var defaultPage: Int?
 
     /**
      * If `true`, the component is disabled.
@@ -62,7 +62,7 @@ external interface UsePaginationProps : Props {
     /**
      * The current page. Unlike `TablePagination`, which starts numbering from `0`, this pagination starts from `1`.
      */
-    var page: Number?
+    var page: Int?
 
     /**
      * If `true`, show the first-page button.
@@ -80,7 +80,7 @@ external interface UsePaginationProps : Props {
      * Number of always visible pages before and after the current page.
      * @default 1
      */
-    var siblingCount: Number?
+    var siblingCount: Int?
 }
 
 external interface UsePaginationItem : Props {

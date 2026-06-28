@@ -14,6 +14,7 @@ import web.html.HTMLSpanElement
 
 external interface TableSortLabelProps :
     TableSortLabelOwnProps,
+    TableSortLabelSlotsAndSlotProps,
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
 
@@ -32,10 +33,10 @@ external interface TableSortLabelSlots {
 }
 
 external interface TableSortLabelSlotProps : Props {
-    /** TS: SlotProps< React.ElementType<React.HTMLAttributes<HTMLSpanElement>>, TableSortLabelRootSlotPropsOverrides, TableSortLabelOwnerState > */
+    /** TS: SlotProps<React.ElementType<React.HTMLAttributes<HTMLSpanElement>>, TableSortLabelRootSlotPropsOverrides, TableSortLabelOwnerState> */
     var root: Any?
 
-    /** TS: SlotProps< React.ElementType<React.SVGAttributes<SVGSVGElement>>, TableSortLabelIconSlotPropsOverrides, TableSortLabelOwnerState > */
+    /** TS: SlotProps<React.ElementType<React.SVGAttributes<SVGSVGElement>>, TableSortLabelIconSlotPropsOverrides, TableSortLabelOwnerState> */
     var icon: Any?
 }
 
@@ -95,12 +96,12 @@ external interface TableSortLabelOwnProps :
  *
  * Demos:
  *
- * - [Table](https://v6.mui.com/material-ui/react-table/)
+ * - [Table](https://v7.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableSortLabel API](https://v6.mui.com/material-ui/api/table-sort-label/)
- * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
+ * - [TableSortLabel API](https://v7.mui.com/material-ui/api/table-sort-label/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val TableSortLabel: FC<TableSortLabelProps>

@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -42,7 +43,7 @@ external interface DrawerProps :
      * The elevation of the drawer.
      * @default 16
      */
-    var elevation: Number?
+    var elevation: Int?
 
     /**
      * Props applied to the [`Modal`](https://mui.com/material-ui/api/modal/) element.
@@ -67,14 +68,14 @@ external interface DrawerProps :
 
     /**
      * Props applied to the [`Paper`](https://mui.com/material-ui/api/paper/) element.
-     * @deprecated use the `slotProps.paper` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.paper` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var PaperProps: PaperProps?
 
     /**
      * Props applied to the [`Slide`](https://mui.com/material-ui/api/slide/) element.
-     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var SlideProps: SlideProps?
 
@@ -137,16 +138,16 @@ external interface DrawerSlotProps : Props {
     /** TS: SlotProps<React.ElementType<ModalProps>, DrawerRootSlotPropsOverrides, DrawerOwnerState> */
     var root: ModalProps?
 
-    /** TS: SlotProps< React.ElementType<BackdropProps>, DrawerBackdropSlotPropsOverrides, DrawerOwnerState > */
+    /** TS: SlotProps<React.ElementType<BackdropProps>, DrawerBackdropSlotPropsOverrides, DrawerOwnerState> */
     var backdrop: BackdropProps?
 
     /** TS: SlotProps<'div', DrawerDockedSlotPropsOverrides, DrawerOwnerState> */
     var docked: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotProps< React.ElementType<PaperProps>, DrawerPaperSlotPropsOverrides, DrawerOwnerState > */
+    /** TS: SlotProps<React.ElementType<PaperProps>, DrawerPaperSlotPropsOverrides, DrawerOwnerState> */
     var paper: PaperProps?
 
-    /** TS: SlotProps< React.ElementType, TransitionProps & DrawerTransitionSlotPropsOverrides, DrawerOwnerState > */
+    /** TS: SlotProps<React.ElementType, TransitionProps & DrawerTransitionSlotPropsOverrides, DrawerOwnerState> */
     var transition: TransitionProps?
 }
 
@@ -159,16 +160,16 @@ external interface DrawerSlotsAndSlotProps : Props {
 external interface DrawerOwnerState
 
 /**
- * The props of the [Modal](https://v6.mui.com/material-ui/api/modal/) component are available
+ * The props of the [Modal](https://v7.mui.com/material-ui/api/modal/) component are available
  * when `variant="temporary"` is set.
  *
  * Demos:
  *
- * - [Drawer](https://v6.mui.com/material-ui/react-drawer/)
+ * - [Drawer](https://v7.mui.com/material-ui/react-drawer/)
  *
  * API:
  *
- * - [Drawer API](https://v6.mui.com/material-ui/api/drawer/)
+ * - [Drawer API](https://v7.mui.com/material-ui/api/drawer/)
  */
 @JsName("default")
 external val Drawer: FC<DrawerProps>

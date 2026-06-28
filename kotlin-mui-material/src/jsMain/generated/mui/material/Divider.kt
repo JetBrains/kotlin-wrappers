@@ -80,12 +80,13 @@ external interface DividerOwnProps :
  *
  * Demos:
  *
- * - [Divider](https://v6.mui.com/material-ui/react-divider/)
- * - [Lists](https://v6.mui.com/material-ui/react-list/)
+ * - [Divider](https://v7.mui.com/material-ui/react-divider/)
+ * - [Lists](https://v7.mui.com/material-ui/react-list/)
+ * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
  *
  * API:
  *
- * - [Divider API](https://v6.mui.com/material-ui/api/divider/)
+ * - [Divider API](https://v7.mui.com/material-ui/api/divider/)
  */
 @JsName("default")
 external val Divider: FC<DividerProps>

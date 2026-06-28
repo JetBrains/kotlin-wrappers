@@ -4,7 +4,10 @@
 
 package muix.pickers
 
-external interface DateFieldProps : react.Props
+import react.FC
+import react.Props
+
+external interface DateFieldProps : Props
 
 /**
  * Demos:
@@ -16,4 +19,4 @@ external interface DateFieldProps : react.Props
  *
  * - [DateField API](https://mui.com/x/api/date-pickers/date-field/)
  */
-external val DateField: react.FC<DateFieldProps>
+external val DateField: FC<DateFieldProps>

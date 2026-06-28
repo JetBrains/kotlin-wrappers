@@ -1,22 +1,24 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/TablePagination/TablePaginationActions")
+@file:JsModule("@mui/material/TablePaginationActions")
 
 package mui.material
 
 import mui.system.Union
 import react.ElementType
 import react.FC
-import react.Props
+import react.PropsWithClassName
 import react.dom.events.MouseEvent
 import react.dom.html.HTMLAttributes
+import web.cssom.ClassName
 import web.html.HTMLButtonElement
 import web.html.HTMLDivElement
 
 external interface TablePaginationActionsProps :
-    HTMLAttributes<HTMLDivElement> {
+    HTMLAttributes<HTMLDivElement>,
+    PropsWithClassName {
     /**
-     * This prop is an alias for `slotProps.previousButton` and will be overriden by it if both are used.
+     * This prop is an alias for `slotProps.previousButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.previousButton` instead.
      */
     var backIconButtonProps: IconButtonProps?
@@ -24,9 +26,11 @@ external interface TablePaginationActionsProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: Any? /* unknown */
+    var classes: Any? /* unknown;{} */
 
-    var count: Number
+    override var className: ClassName?
+
+    var count: Int
 
     /**
      * If `true`, the component is disabled.
@@ -45,16 +49,16 @@ external interface TablePaginationActionsProps :
     var getItemAriaLabel: (type: Union /* 'first' | 'last' | 'next' | 'previous' */) -> String
 
     /**
-     * This prop is an alias for `slotProps.nextButton` and will be overriden by it if both are used.
+     * This prop is an alias for `slotProps.nextButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.nextButton` instead.
      */
     var nextIconButtonProps: IconButtonProps?
 
     var onPageChange: (event: MouseEvent<HTMLButtonElement, *>?, page: Number) -> Unit
 
-    var page: Number
+    var page: Int
 
-    var rowsPerPage: Number
+    var rowsPerPage: Int
 
     var showFirstButton: Boolean
 
@@ -63,14 +67,14 @@ external interface TablePaginationActionsProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var firstButton: Props? /* Partial<IconButtonProps> */
-        var lastButton: Props? /* Partial<IconButtonProps> */
-        var nextButton: Props? /* Partial<IconButtonProps> */
-        var previousButton: Props? /* Partial<IconButtonProps> */
-        var firstButtonIcon: Props? /* Partial<SvgIconProps> */
-        var lastButtonIcon: Props? /* Partial<SvgIconProps> */
-        var nextButtonIcon: Props? /* Partial<SvgIconProps> */
-        var previousButtonIcon: Props? /* Partial<SvgIconProps> */
+        var firstButton: IconButtonProps?
+        var lastButton: IconButtonProps?
+        var nextButton: IconButtonProps?
+        var previousButton: IconButtonProps?
+        var firstButtonIcon: SvgIconProps?
+        var lastButtonIcon: SvgIconProps?
+        var nextButtonIcon: SvgIconProps?
+        var previousButtonIcon: SvgIconProps?
     }
 
     var slots: TablePaginationActionsSlots?
@@ -126,6 +130,15 @@ external interface TablePaginationActionsSlots {
     var previousButtonIcon: ElementType<*>?
 }
 
-
+/**
+ *
+ * Demos:
+ *
+ * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
+ *
+ * API:
+ *
+ * - [TablePaginationActions API](https://v7.mui.com/material-ui/api/table-pagination-actions/)
+ */
 @JsName("default")
 external val TablePaginationActions: FC<TablePaginationActionsProps>

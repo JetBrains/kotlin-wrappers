@@ -39,11 +39,11 @@ external interface TimelineSeparatorProps :
  *
  * Demos:
  *
- * - [Timeline](https://v6.mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://v7.mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineSeparator API](https://v6.mui.com/material-ui/api/timeline-separator/)
+ * - [TimelineSeparator API](https://v7.mui.com/material-ui/api/timeline-separator/)
  */
 @JsName("default")
 external val TimelineSeparator: FC<TimelineSeparatorProps>

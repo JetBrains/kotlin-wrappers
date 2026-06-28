@@ -27,7 +27,7 @@ external interface SliderOwnerState : SliderProps {
 
     var marked: Boolean
 
-    var focusedThumbIndex: Number
+    var focusedThumbIndex: Int
 }
 
 external interface SliderOwnProps :
@@ -59,7 +59,7 @@ external interface SliderOwnProps :
     /**
      * The components used for each slot inside.
      *
-     * @deprecated use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
@@ -80,25 +80,21 @@ external interface SliderOwnProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var track: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var rail: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var thumb: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var mark: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var markLabel: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var valueLabel: Props? /* SlotComponentProps<
-  typeof SliderValueLabelComponent,
-  SliderComponentsPropsOverrides,
-  SliderOwnerState
-> */
-        var input: Props? /* SlotComponentProps<'input', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var root: Props?
+        var track: Props?
+        var rail: Props?
+        var thumb: Props?
+        var mark: Props?
+        var markLabel: Props?
+        var valueLabel: Props?
+        var input: Props?
     }
 
     /**
@@ -151,7 +147,7 @@ external interface SliderOwnProps :
      * If an array, it should contain objects with `value` and an optional `label` keys.
      * @default false
      */
-    var marks: Any? /* boolean | Mark[] */
+    var marks: Any? /* boolean | readonly Mark[] */
 
     /**
      * The maximum allowed value of the slider.
@@ -178,7 +174,7 @@ external interface SliderOwnProps :
      * @param {Event} event The event source of the callback.
      * You can pull out the new value by accessing `event.target.value` (any).
      * **Warning**: This is a generic event not a change event.
-     * @param {number | number[]} value The new value.
+     * @param {Value} value The new value.
      * @param {number} activeThumb Index of the currently moved thumb.
      */
     var onChange: ((event: Event, value: ReadonlyArray<Number>, activeThumb: Number) -> Unit)?
@@ -187,7 +183,7 @@ external interface SliderOwnProps :
      * Callback function that is fired when the `mouseup` is triggered.
      *
      * @param {React.SyntheticEvent | Event} event The event source of the callback. **Warning**: This is a generic event not a change event.
-     * @param {number | number[]} value The new value.
+     * @param {Value} value The new value.
      */
     var onChangeCommitted: ((event: SyntheticEvent<*, *>, value: ReadonlyArray<Number>) -> Unit)?
 
@@ -226,18 +222,14 @@ external interface SliderOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var track: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var rail: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var thumb: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var mark: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var markLabel: Props? /* SlotComponentProps<'span', SliderComponentsPropsOverrides, SliderOwnerState> */
-        var valueLabel: Props? /* SlotComponentProps<
-  typeof SliderValueLabelComponent,
-  SliderComponentsPropsOverrides,
-  SliderOwnerState
-> */
-        var input: Props? /* SlotComponentProps<'input', SliderComponentsPropsOverrides, SliderOwnerState> */
+        var root: Props?
+        var track: Props?
+        var rail: Props?
+        var thumb: Props?
+        var mark: Props?
+        var markLabel: Props?
+        var valueLabel: Props?
+        var input: Props?
     }
 
     /**
@@ -337,11 +329,11 @@ external interface SliderValueLabelProps :
  *
  * Demos:
  *
- * - [Slider](https://v6.mui.com/material-ui/react-slider/)
+ * - [Slider](https://v7.mui.com/material-ui/react-slider/)
  *
  * API:
  *
- * - [Slider API](https://v6.mui.com/material-ui/api/slider/)
+ * - [Slider API](https://v7.mui.com/material-ui/api/slider/)
  */
 @JsName("default")
 external val Slider: FC<SliderProps>

@@ -51,7 +51,7 @@ external interface AlertProps :
     /**
      * The components used for each slot inside.
      *
-     * @deprecated use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
@@ -66,7 +66,7 @@ external interface AlertProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
@@ -102,9 +102,7 @@ external interface AlertProps :
      * If you wish to change this mapping, you can provide your own.
      * Alternatively, you can use the `icon` prop to override the icon displayed.
      */
-    var iconMapping: Any? /* Partial<
-  Record<OverridableStringUnion<AlertColor, AlertPropsColorOverrides>, React.ReactNode>
-> */
+    var iconMapping: Any? /* Partial<Record<OverridableStringUnion<AlertColor, AlertPropsColorOverrides>, React.ReactNode>> */
 
     /**
      * Callback fired when the component requests to be closed.
@@ -167,12 +165,12 @@ external interface AlertSlots {
  *
  * Demos:
  *
- * - [Alert](https://v6.mui.com/material-ui/react-alert/)
+ * - [Alert](https://v7.mui.com/material-ui/react-alert/)
  *
  * API:
  *
- * - [Alert API](https://v6.mui.com/material-ui/api/alert/)
- * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
+ * - [Alert API](https://v7.mui.com/material-ui/api/alert/)
+ * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Alert: FC<AlertProps>

@@ -42,7 +42,7 @@ external interface MasonryOwnProps :
     /**
      * The default number of columns of the component. This is provided for server-side rendering.
      */
-    var defaultColumns: Number?
+    var defaultColumns: Int?
 
     /**
      * The default height of the component in px. This is provided for server-side rendering.
@@ -76,11 +76,11 @@ external interface MasonryOwnProps :
  *
  * Demos:
  *
- * - [Masonry](https://v6.mui.com/material-ui/react-masonry/)
+ * - [Masonry](https://v7.mui.com/material-ui/react-masonry/)
  *
  * API:
  *
- * - [Masonry API](https://v6.mui.com/material-ui/api/masonry/)
+ * - [Masonry API](https://v7.mui.com/material-ui/api/masonry/)
  */
 @JsName("default")
 external val Masonry: FC<MasonryProps>

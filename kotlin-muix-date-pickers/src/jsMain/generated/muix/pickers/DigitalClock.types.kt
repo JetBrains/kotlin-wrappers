@@ -3,8 +3,10 @@
 package muix.pickers
 
 import js.array.ReadonlyArray
+import react.ElementType
+import react.Props
 
-external interface DigitalClockProps<TDate> : react.Props {
+external interface DigitalClockProps<TDate> : Props {
     /**
      * Available views.
      * @default ['hours']
@@ -29,16 +31,16 @@ external interface DigitalClockProps<TDate> : react.Props {
     var slotProps: DigitalClockSlotProps?
 }
 
-external interface ExportedDigitalClockProps : react.Props
+external interface ExportedDigitalClockProps<TDate>
 
 external interface DigitalClockSlots {
     /**
      * Component responsible for rendering a single digital clock item.
      * @default MenuItem from '@mui/material'
      */
-    var digitalClockItem: react.ElementType<*>?
+    var digitalClockItem: ElementType<*>?
 }
 
-external interface DigitalClockSlotProps : react.Props {
-    var digitalClockItem: react.Props?
+external interface DigitalClockSlotProps : Props {
+    var digitalClockItem: Props?
 }

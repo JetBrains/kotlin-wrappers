@@ -191,7 +191,7 @@ external interface UseSelectReturnValue<Value, Multiple> {
      * @param optionValue the value of the option
      * @returns
      */
-    var getOptionMetadata: (optionValue: Value) -> SelectOption<Value>?
+    var getOptionMetadata: (optionValue: Value) -> SelectOption<Value>
 
     /**
      * A value to be passed to the `SelectProvider` component.

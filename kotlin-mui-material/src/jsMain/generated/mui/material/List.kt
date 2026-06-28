@@ -61,12 +61,13 @@ external interface ListOwnProps :
  *
  * Demos:
  *
- * - [Lists](https://v6.mui.com/material-ui/react-list/)
- * - [Transfer List](https://v6.mui.com/material-ui/react-transfer-list/)
+ * - [Lists](https://v7.mui.com/material-ui/react-list/)
+ * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
+ * - [Transfer List](https://v7.mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [List API](https://v6.mui.com/material-ui/api/list/)
+ * - [List API](https://v7.mui.com/material-ui/api/list/)
  */
 @JsName("default")
 external val List: FC<ListProps>

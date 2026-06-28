@@ -41,12 +41,12 @@ external interface TimelineContentProps :
  *
  * Demos:
  *
- * - [Timeline](https://v6.mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://v7.mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineContent API](https://v6.mui.com/material-ui/api/timeline-content/)
- * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
+ * - [TimelineContent API](https://v7.mui.com/material-ui/api/timeline-content/)
+ * - inherits [Typography API](https://v7.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val TimelineContent: FC<TimelineContentProps>

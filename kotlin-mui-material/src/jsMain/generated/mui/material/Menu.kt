@@ -57,7 +57,7 @@ external interface MenuProps :
 
     /**
      * Props applied to the [`MenuList`](https://mui.com/material-ui/api/menu-list/) element.
-     * @deprecated use the `slotProps.list` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.list` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var MenuListProps: MenuListProps?
@@ -94,7 +94,7 @@ external interface MenuProps :
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var TransitionProps: TransitionProps?
@@ -148,10 +148,10 @@ external interface MenuSlotProps : Props {
     /** TS: SlotProps<React.ElementType<MenuListProps>, MenuListSlotPropsOverrides, MenuOwnerState> */
     var list: MenuListProps?
 
-    /** TS: SlotComponentProps< // use SlotComponentProps because transition slot does not support `component` and `sx` prop React.ElementType, TransitionProps & MenuTransitionSlotPropsOverrides, MenuOwnerState > */
+    /** TS: SlotComponentProps< // use SlotComponentProps because transition slot does not support `component` and `sx` prop React.ElementType, TransitionProps & MenuTransitionSlotPropsOverrides, MenuOwnerState> */
     var transition: Any?
 
-    /** TS: SlotProps< React.ElementType<BackdropProps>, MenuBackdropSlotPropsOverrides, MenuOwnerState > */
+    /** TS: SlotProps<React.ElementType<BackdropProps>, MenuBackdropSlotPropsOverrides, MenuOwnerState> */
     var backdrop: BackdropProps?
 }
 
@@ -167,13 +167,13 @@ external interface MenuOwnerState
  *
  * Demos:
  *
- * - [App Bar](https://v6.mui.com/material-ui/react-app-bar/)
- * - [Menu](https://v6.mui.com/material-ui/react-menu/)
+ * - [App Bar](https://v7.mui.com/material-ui/react-app-bar/)
+ * - [Menu](https://v7.mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [Menu API](https://v6.mui.com/material-ui/api/menu/)
- * - inherits [Popover API](https://v6.mui.com/material-ui/api/popover/)
+ * - [Menu API](https://v7.mui.com/material-ui/api/menu/)
+ * - inherits [Popover API](https://v7.mui.com/material-ui/api/popover/)
  */
 @JsName("default")
 external val Menu: FC<MenuProps>

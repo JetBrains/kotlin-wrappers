@@ -52,11 +52,7 @@ external interface BreadcrumbsOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var collapsedIcon: Props? /* SlotComponentProps<
-  typeof SvgIcon,
-  BreadcrumbsCollapsedIconSlotPropsOverrides,
-  BreadcrumbsOwnerState
-> */
+        var collapsedIcon: Props?
     }
 
     /**
@@ -71,13 +67,13 @@ external interface BreadcrumbsOwnProps :
      * If max items is exceeded, the number of items to show after the ellipsis.
      * @default 1
      */
-    var itemsAfterCollapse: Number?
+    var itemsAfterCollapse: Int?
 
     /**
      * If max items is exceeded, the number of items to show before the ellipsis.
      * @default 1
      */
-    var itemsBeforeCollapse: Number?
+    var itemsBeforeCollapse: Int?
 
     /**
      * Specifies the maximum number of breadcrumbs to display. When there are more
@@ -85,7 +81,7 @@ external interface BreadcrumbsOwnProps :
      * will be shown, with an ellipsis in between.
      * @default 8
      */
-    var maxItems: Number?
+    var maxItems: Int?
 
     /**
      * Custom separator node.
@@ -103,12 +99,12 @@ external interface BreadcrumbsOwnProps :
  *
  * Demos:
  *
- * - [Breadcrumbs](https://v6.mui.com/material-ui/react-breadcrumbs/)
+ * - [Breadcrumbs](https://v7.mui.com/material-ui/react-breadcrumbs/)
  *
  * API:
  *
- * - [Breadcrumbs API](https://v6.mui.com/material-ui/api/breadcrumbs/)
- * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
+ * - [Breadcrumbs API](https://v7.mui.com/material-ui/api/breadcrumbs/)
+ * - inherits [Typography API](https://v7.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val Breadcrumbs: FC<BreadcrumbsProps>

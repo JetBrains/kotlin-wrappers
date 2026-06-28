@@ -4,6 +4,8 @@
 
 package muix.tree.view
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package muix.tree.view
  *
  * - [RichTreeView API](https://mui.com/x/api/tree-view/rich-tree-view/)
  */
-external val RichTreeView: react.FC<RichTreeViewProps>
+external val RichTreeView: FC<RichTreeViewProps>

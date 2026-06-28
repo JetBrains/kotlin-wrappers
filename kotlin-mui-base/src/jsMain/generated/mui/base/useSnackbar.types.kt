@@ -47,7 +47,7 @@ external interface UseSnackbarParameters {
      * If `autoHideDuration` prop is specified but `resumeHideDuration` isn't,
      * we default to `autoHideDuration / 2` ms.
      */
-    var resumeHideDuration: Number?
+    var resumeHideDuration: Int?
 }
 
 external interface UseSnackbarRootSlotOwnProps : Props {

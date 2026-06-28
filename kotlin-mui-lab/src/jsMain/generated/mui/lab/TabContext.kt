@@ -30,11 +30,11 @@ external interface TabContextValue {
  *
  * Demos:
  *
- * - [Tabs](https://v6.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [TabContext API](https://v6.mui.com/material-ui/api/tab-context/)
+ * - [TabContext API](https://v7.mui.com/material-ui/api/tab-context/)
  */
 @JsName("default")
 external val TabContext: FC<TabContextProps>

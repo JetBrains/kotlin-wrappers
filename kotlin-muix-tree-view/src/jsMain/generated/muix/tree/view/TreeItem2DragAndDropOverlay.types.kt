@@ -2,8 +2,11 @@
 
 package muix.tree.view
 
-external interface TreeItem2DragAndDropOverlayProps : react.Props {
+import react.CSSProperties
+import react.Props
+
+external interface TreeItem2DragAndDropOverlayProps : Props {
     var action: TreeItem2DragAndDropOverlayAction?
 
-    var style: react.CSSProperties?
+    var style: CSSProperties?
 }

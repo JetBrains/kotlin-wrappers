@@ -3,17 +3,19 @@
 package muix.tree.view
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import react.*
 import web.cssom.ClassName
 
 external interface SimpleTreeViewProps :
-    react.PropsWithChildren,
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    PropsWithChildren,
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     /**
      * Overridable component slots.
@@ -40,7 +42,7 @@ external interface SimpleTreeViewProps :
     /**
      * The ref object that allows Tree View manipulation. Can be instantiated with `useTreeViewApiRef()`.
      */
-    var apiRef: react.Ref<*>?
+    var apiRef: Ref<*>?
 
     /**
      * Unstable features, breaking changes might be introduced.
@@ -55,9 +57,9 @@ external interface SimpleTreeViewSlots {
      * Element rendered at the root.
      * @default SimpleTreeViewRoot
      */
-    var root: react.ElementType<*>?
+    var root: ElementType<*>?
 }
 
-external interface SimpleTreeViewSlotProps : react.Props {
-    var root: react.Props?
+external interface SimpleTreeViewSlotProps : Props {
+    var root: Props?
 }

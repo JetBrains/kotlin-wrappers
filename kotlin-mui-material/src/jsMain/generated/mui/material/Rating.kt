@@ -53,7 +53,7 @@ external interface RatingSlots {
     var icon: ElementType<*>
 
     /**
-     * The component used fo r the decimal slot.
+     * The component used for the decimal slot.
      * @default 'span'
      */
     var decimal: ElementType<*>
@@ -138,7 +138,7 @@ external interface RatingOwnProps :
 
     /**
      * The component containing the icon.
-     * @deprecated Use `slotProps.icon.component` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.icon.component` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default function IconContainer(props) {
      *   const { value, ...other } = props;
      *   return <span {...other} />;
@@ -177,7 +177,7 @@ external interface RatingOwnProps :
      * The minimum increment value change allowed.
      * @default 1
      */
-    var precision: Number?
+    var precision: Double?
 
     /**
      * Removes all hover effects and pointer events.
@@ -208,11 +208,11 @@ external interface RatingOwnerState
  *
  * Demos:
  *
- * - [Rating](https://v6.mui.com/material-ui/react-rating/)
+ * - [Rating](https://v7.mui.com/material-ui/react-rating/)
  *
  * API:
  *
- * - [Rating API](https://v6.mui.com/material-ui/api/rating/)
+ * - [Rating API](https://v7.mui.com/material-ui/api/rating/)
  */
 @JsName("default")
 external val Rating: FC<RatingProps>

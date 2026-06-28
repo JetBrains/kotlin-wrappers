@@ -65,7 +65,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      *
      * @param itemValue List item to get the id for.
      */
-    var getItemId: ((itemValue: ItemValue) -> String?)?
+    var getItemId: ((itemValue: ItemValue) -> String)?
 
     /**
      * A function that intializes the state of the list.
@@ -130,7 +130,7 @@ external interface UseListParameters<ItemValue, State, CustomAction, CustomActio
      * A function that converts an object to its string representation
      * @default (o) => o
      */
-    var getItemAsString: ((option: ItemValue) -> String?)?
+    var getItemAsString: ((option: ItemValue) -> String)?
 
     /**
      * Array of list items.

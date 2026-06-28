@@ -63,11 +63,11 @@ external interface LinearProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://v6.mui.com/material-ui/react-progress/)
+ * - [Progress](https://v7.mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [LinearProgress API](https://v6.mui.com/material-ui/api/linear-progress/)
+ * - [LinearProgress API](https://v7.mui.com/material-ui/api/linear-progress/)
  */
 @JsName("default")
 external val LinearProgress: FC<LinearProgressProps>

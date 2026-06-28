@@ -4,6 +4,8 @@
 
 package muix.pickers
 
+import react.FC
+
 /**
  * Demos:
  *
@@ -15,4 +17,4 @@ package muix.pickers
  *
  * - [PickersCalendarHeader API](https://mui.com/x/api/date-pickers/pickers-calendar-header/)
  */
-external val PickersCalendarHeader: react.FC<PickersCalendarHeaderProps<*>>
+external val PickersCalendarHeader: FC<PickersCalendarHeaderProps<*>>

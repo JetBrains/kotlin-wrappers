@@ -3,8 +3,9 @@
 package muix.pickers
 
 import js.array.ReadonlyArray
+import react.Props
 
-external interface DesktopDateTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props {
+external interface DesktopDateTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
     /**
      * Overridable component slots.
      * @default {}
@@ -31,4 +32,4 @@ external interface DesktopDateTimePickerProps<TDate, TEnableAccessibleFieldDOMSt
 
 external interface DesktopDateTimePickerSlots<TDate>
 
-external interface DesktopDateTimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props
+external interface DesktopDateTimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>

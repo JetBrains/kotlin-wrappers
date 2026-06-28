@@ -74,9 +74,9 @@ external interface InputLabelOwnProps :
 
     /**
      * The size of the component.
-     * @default 'normal'
+     * @default 'medium'
      */
-    var size: NormalSize?
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -93,12 +93,13 @@ external interface InputLabelOwnProps :
  *
  * Demos:
  *
- * - [Text Field](https://v6.mui.com/material-ui/react-text-field/)
+ * - [Number Field](https://v7.mui.com/material-ui/react-number-field/)
+ * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [InputLabel API](https://v6.mui.com/material-ui/api/input-label/)
- * - inherits [FormLabel API](https://v6.mui.com/material-ui/api/form-label/)
+ * - [InputLabel API](https://v7.mui.com/material-ui/api/input-label/)
+ * - inherits [FormLabel API](https://v7.mui.com/material-ui/api/form-label/)
  */
 @JsName("default")
 external val InputLabel: FC<InputLabelProps>

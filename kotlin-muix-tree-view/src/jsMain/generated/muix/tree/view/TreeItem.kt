@@ -4,5 +4,7 @@
 
 package muix.tree.view
 
+import react.FC
 
-external val TreeItem: react.FC<TreeItemProps>
+
+external val TreeItem: FC<TreeItemProps>

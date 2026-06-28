@@ -74,13 +74,14 @@ external interface FormLabelOwnProps :
  *
  * Demos:
  *
- * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
- * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
- * - [Switch](https://v6.mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://v7.mui.com/material-ui/react-checkbox/)
+ * - [Number Field](https://v7.mui.com/material-ui/react-number-field/)
+ * - [Radio Group](https://v7.mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://v7.mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormLabel API](https://v6.mui.com/material-ui/api/form-label/)
+ * - [FormLabel API](https://v7.mui.com/material-ui/api/form-label/)
  */
 @JsName("default")
 external val FormLabel: FC<FormLabelProps>

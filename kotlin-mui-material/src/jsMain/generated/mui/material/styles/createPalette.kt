@@ -53,23 +53,23 @@ external interface TypeAction {
 
     var hover: String
 
-    var hoverOpacity: Number
+    var hoverOpacity: Double
 
     var selected: String
 
-    var selectedOpacity: Number
+    var selectedOpacity: Double
 
     var disabled: String
 
-    var disabledOpacity: Number
+    var disabledOpacity: Double
 
     var disabledBackground: String
 
     var focus: String
 
-    var focusOpacity: Number
+    var focusOpacity: Double
 
-    var activatedOpacity: Number
+    var activatedOpacity: Double
 }
 
 external interface TypeBackground {
@@ -125,7 +125,7 @@ external interface Palette {
 
     var mode: mui.material.PaletteMode
 
-    var contrastThreshold: Number
+    var contrastThreshold: Double
 
     var tonalOffset: Any? /* PaletteTonalOffset */
 
@@ -183,7 +183,7 @@ external interface PaletteOptions {
 
     var tonalOffset: Any? /* PaletteTonalOffset */
 
-    var contrastThreshold: Number?
+    var contrastThreshold: Double?
 
     var common: CommonColors?
 

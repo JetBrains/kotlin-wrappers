@@ -60,11 +60,11 @@ external interface TableOwnProps :
  *
  * Demos:
  *
- * - [Table](https://v6.mui.com/material-ui/react-table/)
+ * - [Table](https://v7.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [Table API](https://v6.mui.com/material-ui/api/table/)
+ * - [Table API](https://v7.mui.com/material-ui/api/table/)
  */
 @JsName("default")
 external val Table: FC<TableProps>

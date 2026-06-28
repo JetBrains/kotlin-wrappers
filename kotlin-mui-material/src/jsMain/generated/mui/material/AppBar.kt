@@ -39,6 +39,13 @@ external interface AppBarOwnProps :
     var color: AppBarColor?
 
     /**
+     * Shadow depth, corresponds to `dp` in the spec.
+     * It accepts values between 0 and 24 inclusive.
+     * @default 4
+     */
+    var elevation: Int?
+
+    /**
      * If true, the `color` prop is applied in dark mode.
      * @default false
      */
@@ -46,11 +53,17 @@ external interface AppBarOwnProps :
 
     /**
      * The positioning type. The behavior of the different options is described
-     * [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
+     * [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position).
      * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
      * @default 'fixed'
      */
     var position: AppBarPosition?
+
+    /**
+     * If `false`, rounded corners are enabled.
+     * @default true
+     */
+    var square: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -62,12 +75,12 @@ external interface AppBarOwnProps :
  *
  * Demos:
  *
- * - [App Bar](https://v6.mui.com/material-ui/react-app-bar/)
+ * - [App Bar](https://v7.mui.com/material-ui/react-app-bar/)
  *
  * API:
  *
- * - [AppBar API](https://v6.mui.com/material-ui/api/app-bar/)
- * - inherits [Paper API](https://v6.mui.com/material-ui/api/paper/)
+ * - [AppBar API](https://v7.mui.com/material-ui/api/app-bar/)
+ * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
  */
 
 @JsName("default")
