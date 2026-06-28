@@ -5,7 +5,7 @@
 package mui.material.styles
 
 external interface BaseCSSProperties {
-    // var `@font-face`: Any? /* Fontface | Fontface[] */
+    var `@font-face`: Any? /* Fontface | Fontface[] */
 }
 
 external interface CSSProperties : BaseCSSProperties {

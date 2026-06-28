@@ -219,27 +219,27 @@ external interface ColorSystemOptions {
 }
 
 external interface CssVarsPalette {
-    var common: Any? /* PaletteCommonChannel */
+    var common: PaletteCommonChannel
 
-    var primary: Any? /* PaletteColorChannel */
+    var primary: PaletteColorChannel
 
-    var secondary: Any? /* PaletteColorChannel */
+    var secondary: PaletteColorChannel
 
-    var error: Any? /* PaletteColorChannel */
+    var error: PaletteColorChannel
 
-    var info: Any? /* PaletteColorChannel */
+    var info: PaletteColorChannel
 
-    var success: Any? /* PaletteColorChannel */
+    var success: PaletteColorChannel
 
-    var warning: Any? /* PaletteColorChannel */
+    var warning: PaletteColorChannel
 
-    var text: Any? /* PaletteTextChannel */
+    var text: PaletteTextChannel
 
-    var background: Any? /* PaletteBackgroundChannel */
+    var background: PaletteBackgroundChannel
 
     var dividerChannel: String
 
-    var action: Any? /* PaletteActionChannel */
+    var action: PaletteActionChannel
 
     var Alert: Any? /* PaletteAlert */
 

@@ -114,12 +114,12 @@ external interface TabsOwnProps :
     /**
      * The label for the Tabs as a string.
      */
-    // var `aria-label`: String?
+    var `aria-label`: String?
 
     /**
      * An id or list of ids separated by a space that label the Tabs.
      */
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * If `true`, the tabs are centered.

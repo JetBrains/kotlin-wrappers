@@ -53,7 +53,7 @@ external interface UseInputRootSlotOwnProps : Props {
 }
 
 external interface UseInputInputSlotOwnProps : Props {
-    // var `aria-invalid`: Any /* React.AriaAttributes['aria-invalid'] */
+    var `aria-invalid`: Any /* React.AriaAttributes['aria-invalid'] */
 
     var defaultValue: Any? /* string | number | readonly string[] */
 

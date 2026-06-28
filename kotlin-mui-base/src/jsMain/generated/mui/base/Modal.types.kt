@@ -176,7 +176,7 @@ external interface ModalRootSlotProps :
 }
 
 external interface ModalBackdropSlotProps : PropsWithChildren {
-    // var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
+    var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
 
     override var children: ReactNode?
 

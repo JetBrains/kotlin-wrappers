@@ -27,19 +27,19 @@ external interface DialogProps :
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
-    // var `aria-describedby`: String?
+    var `aria-describedby`: String?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * Informs assistive technologies that the element is modal.
      * It's added on the element with role="dialog".
      * @default true
      */
-    // var `aria-modal`: Any? /* boolean | 'true' | 'false' */
+    var `aria-modal`: Any? /* boolean | 'true' | 'false' */
 
     /**
      * Dialog children, usually the included sub-components.

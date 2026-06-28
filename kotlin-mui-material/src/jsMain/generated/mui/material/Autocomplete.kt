@@ -212,7 +212,7 @@ external interface AutocompleteProps<Value> :
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
-    var renderOption: ((props: HTMLAttributes<HTMLLIElement>, option: Value, state: AutocompleteRenderOptionState, ownerState: AutocompleteProps<Value> /* AutocompleteOwnerState<Value> */) -> ReactNode)?
+    var renderOption: ((props: HTMLAttributes<HTMLLIElement>, option: Value, state: AutocompleteRenderOptionState, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
 
     /**
      * Render the selected value when doing multiple selections.
@@ -224,7 +224,7 @@ external interface AutocompleteProps<Value> :
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
-    var renderTags: ((value: ReadonlyArray<Value>, getTagProps: Function<*> /* AutocompleteRenderGetTagProps */, ownerState: AutocompleteProps<Value> /* AutocompleteOwnerState<Value> */) -> ReactNode)?
+    var renderTags: ((value: ReadonlyArray<Value>, getTagProps: Function<*> /* AutocompleteRenderGetTagProps */, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
 
     /**
      * Renders the selected value(s) as rich content in the input for both single and multiple selections.
@@ -234,7 +234,7 @@ external interface AutocompleteProps<Value> :
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
-    var renderValue: ((value: Any, getItemProps: Any, ownerState: AutocompleteProps<Value> /* AutocompleteOwnerState<Value> */) -> ReactNode)?
+    var renderValue: ((value: Any, getItemProps: Any, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
 
     /**
      * The size of the component.
@@ -246,6 +246,20 @@ external interface AutocompleteProps<Value> :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface AutocompleteOwnerState<Value> : AutocompleteProps<Value> {
+    var expanded: Boolean
+
+    var focused: Boolean
+
+    var hasClearIcon: Boolean
+
+    var hasPopupIcon: Boolean
+
+    var inputFocused: Boolean
+
+    var popupOpen: Boolean
 }
 
 external interface AutocompleteRenderOptionState {

@@ -25,12 +25,12 @@ external interface SliderOwnProps :
     /**
      * The label of the slider.
      */
-    // var `aria-label`: String?
+    var `aria-label`: String?
 
     /**
      * A string value that provides a user-friendly name for the current value of the slider.
      */
-    // var `aria-valuetext`: String?
+    var `aria-valuetext`: String?
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the thumb labels of the slider.

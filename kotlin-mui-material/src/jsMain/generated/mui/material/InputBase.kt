@@ -26,7 +26,7 @@ external interface InputBaseProps :
     StandardProps,
     HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
-    // var `aria-describedby`: String?
+    var `aria-describedby`: String?
 
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.

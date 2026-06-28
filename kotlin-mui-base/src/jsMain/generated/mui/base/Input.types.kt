@@ -49,11 +49,11 @@ external interface InputBaseProps : Props {
 external interface InputOwnProps :
     InputBaseProps,
     PropsWithClassName {
-    // var `aria-describedby`: String?
+    var `aria-describedby`: String?
 
-    // var `aria-label`: String?
+    var `aria-label`: String?
 
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.

@@ -36,17 +36,17 @@ external interface SliderOwnProps :
     /**
      * The label of the slider.
      */
-    // var `aria-label`: String?
+    var `aria-label`: String?
 
     /**
      * The id of the element containing a label for the slider.
      */
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * A string value that provides a user-friendly name for the current value of the slider.
      */
-    // var `aria-valuetext`: String?
+    var `aria-valuetext`: String?
 
     /**
      * The color of the component.

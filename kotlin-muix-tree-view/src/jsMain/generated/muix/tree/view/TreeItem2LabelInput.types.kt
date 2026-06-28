@@ -15,7 +15,7 @@ external interface TreeItem2LabelInputProps : Props {
     /**
      * Used to determine if the target of keydown or blur events is the input and prevent the event from propagating to the root.
      */
-    // var `data-element`: Union? /* 'labelInput' */
+    var `data-element`: Union? /* 'labelInput' */
 
     var onChange: ChangeEventHandler<HTMLInputElement, *>?
 

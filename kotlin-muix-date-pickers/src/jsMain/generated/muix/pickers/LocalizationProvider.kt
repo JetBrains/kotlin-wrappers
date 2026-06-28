@@ -13,7 +13,7 @@ external interface LocalizationProviderProps<TDate, TLocale> : PropsWithChildren
 
     /**
      * Date library adapter class function.
-     * @see See the localization provider {@link https://mui.com/x/react-date-pickers/getting-started/#setup-your-date-library-adapter date adapter setup section} for more details.
+     * @see See the localization provider {@link https://mui.com/x/react-date-pickers/getting-started/#date-library-adapter-setup date adapter setup section} for more details.
      */
     var dateAdapter: DateAdapter? /* new (...args: any) => MuiPickersAdapter<TDate, TLocale> */
 
