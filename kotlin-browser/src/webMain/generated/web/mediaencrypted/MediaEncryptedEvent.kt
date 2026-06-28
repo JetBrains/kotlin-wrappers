@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.html
+package web.mediaencrypted
 
 import js.buffer.ArrayBuffer
 import web.events.Event

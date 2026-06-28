@@ -249,6 +249,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.mathml.MathMLElement",
     "web.mcp.ModelContext",
     "web.mediacapabilities.MediaCapabilities",
+    "web.mediaencrypted.MediaEncryptedEvent",
     "web.mediaencrypted.MediaKeySystemAccess",
     "web.mediaencrypted.MediaKeys",
     "web.mediaencrypted.MediaKeysRequirement",

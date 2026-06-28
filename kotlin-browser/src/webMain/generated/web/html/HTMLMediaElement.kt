@@ -9,6 +9,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.http.CrossOrigin
+import web.mediaencrypted.MediaEncryptedEvent
 import web.mediaencrypted.MediaKeys
 import web.mediasource.TimeRanges
 import web.mediastreams.MediaStream
