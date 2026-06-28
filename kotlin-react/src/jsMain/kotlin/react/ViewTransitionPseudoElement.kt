@@ -1,8 +1,8 @@
 package react
 
 import react.canary.ReactCanary
+import web.animations.Animatable
 import web.cssom.CSSStyleDeclaration
-import web.dom.Animatable
 
 @ReactCanary
 external interface ViewTransitionPseudoElement :
