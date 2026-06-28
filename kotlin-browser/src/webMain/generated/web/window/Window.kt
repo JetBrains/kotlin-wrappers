@@ -16,7 +16,6 @@ import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
 import web.dnd.DragEvent
 import web.dom.Element
-import web.dom.GlobalEventHandlers
 import web.dom.Node
 import web.dpip.DocumentPictureInPicture
 import web.events.Event
@@ -27,6 +26,7 @@ import web.focus.FocusEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.gamepad.GamepadEvent
+import web.globals.GlobalEventHandlers
 import web.history.HashChangeEvent
 import web.history.PageTransitionEvent
 import web.history.PopStateEvent

@@ -776,7 +776,7 @@
     "GetNotificationOptions": "web.serviceworker.GetNotificationOptions",
     "GetRootNodeOptions": "web.dom.GetRootNodeOptions",
     "GlobalCompositeOperation": "web.canvas.GlobalCompositeOperation",
-    "GlobalEventHandlers": "web.dom.GlobalEventHandlers",
+    "GlobalEventHandlers": "web.globals.GlobalEventHandlers",
     "GlobalScope": "js.globals.GlobalScope",
     "HTMLAnchorElement": "web.html.HTMLAnchorElement",
     "HTMLAreaElement": "web.html.HTMLAreaElement",

@@ -20,6 +20,7 @@ import web.focus.FocusEvent
 import web.fonts.FontFaceSource
 import web.form.FormDataEvent
 import web.form.SubmitEvent
+import web.globals.GlobalEventHandlers
 import web.html.*
 import web.input.CompositionEvent
 import web.input.InputEvent

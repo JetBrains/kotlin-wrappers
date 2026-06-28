@@ -4,8 +4,8 @@ package web.mathml
 
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
-import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGOrMathMLElement
+import web.globals.GlobalEventHandlers
 
 /**
  * The **`MathMLElement`** interface represents any MathML element.

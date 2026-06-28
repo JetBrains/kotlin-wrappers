@@ -6,7 +6,6 @@ import web.command.CommandEvent
 import web.components.ElementInternals
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
-import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGOrMathMLElement
 import web.dom.Node
 import web.editcontext.EditContext
@@ -14,6 +13,7 @@ import web.events.Event
 import web.events.EventInstance
 import web.experimental.ExperimentalWebApi
 import web.focus.FocusEvent
+import web.globals.GlobalEventHandlers
 import web.popover.Popover
 import web.popover.ShowPopoverOptions
 import web.popover.ToggleEvent

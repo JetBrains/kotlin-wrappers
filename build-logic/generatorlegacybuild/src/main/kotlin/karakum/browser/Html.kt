@@ -92,11 +92,13 @@ private val DOM_TYPES = setOf(
     "GetHTMLOptions",
     "ImportNodeOptions",
 
-    "GlobalEventHandlers",
-
     // separate package?
     "PointerLockOptions",
     "SetHTMLOptions",
+)
+
+private val GLOBAL_TYPES = setOf(
+    "GlobalEventHandlers",
 )
 
 private val WEB_COMPONENTS_TYPES = setOf(
@@ -1582,6 +1584,7 @@ internal fun convertInterface(
         name.startsWith("Document") -> "web.dom"
         name in RANGES_TYPES -> "web.ranges"
         name.startsWith("Trusted") -> "web.trustedtypes"
+        name in GLOBAL_TYPES -> "web.globals"
         name in DOM_TYPES -> "web.dom"
         name in WEB_COMPONENTS_TYPES -> "web.components"
         name in VALIDATION_TYPES -> "web.validation"

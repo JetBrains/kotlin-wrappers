@@ -4,8 +4,8 @@ package web.svg
 
 import web.cssom.ElementCSSInlineStyle
 import web.dom.Element
-import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGOrMathMLElement
+import web.globals.GlobalEventHandlers
 
 /**
  * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the **`SVGElement`** interface.

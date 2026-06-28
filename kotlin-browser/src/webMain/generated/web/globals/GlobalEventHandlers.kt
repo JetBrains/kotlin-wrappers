@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.dom
+package web.globals
 
 import js.function.JsFunction
 import js.internal.InternalApi
@@ -9,6 +9,7 @@ import web.clipboard.ClipboardEvent
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
+import web.dom.Node
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTargetLike
