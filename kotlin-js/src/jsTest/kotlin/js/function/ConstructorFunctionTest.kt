@@ -4,7 +4,6 @@ import js.array.Tuple
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-@JsExport
 class X {
     var value: String = "test"
 }
