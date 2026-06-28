@@ -76,7 +76,7 @@ private fun getBrowserPkg(
             -> "web.cssom"
 
         "getComputedStyle",
-            -> "web.dom"
+            -> "web.cssom"
 
         "reportError",
             -> "web.errors"

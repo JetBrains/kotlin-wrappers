@@ -1,8 +1,8 @@
 // Automatically generated - do not modify!
 
-package web.dom
+package web.cssom
 
-import web.cssom.CSSStyleDeclaration
+import web.dom.Element
 
 /**
  * The **`Window.getComputedStyle()`** method returns a live read-only CSSStyleProperties object containing the resolved values of all CSS properties of an element, after applying active stylesheets and resolving any computation those values may contain.
