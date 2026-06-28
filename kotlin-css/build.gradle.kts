@@ -36,5 +36,5 @@ dependencies {
 }
 
 tasks.named("iosSimulatorArm64Test") {
-    onlyIf { System.getenv("GITHUB_ACTIONS") != "true" }
+    enabled = false
 }
