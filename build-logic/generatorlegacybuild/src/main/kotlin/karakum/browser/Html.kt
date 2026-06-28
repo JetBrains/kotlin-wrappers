@@ -910,7 +910,7 @@ internal fun convertInterface(
     if (memberSource == "new (...params: any[]): HTMLElement")
         return ConversionResult(
             name = name,
-            body = "typealias $name<T /* : HTMLElement */> = JsClass<T>",
+            body = "typealias $name<T /* : HTMLElement */> = ConstructorFunction<Tuple, T>",
             pkg = "web.components",
         )
 

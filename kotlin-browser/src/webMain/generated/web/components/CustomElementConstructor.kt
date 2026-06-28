@@ -2,6 +2,7 @@
 
 package web.components
 
-import js.reflect.JsClass
+import js.array.Tuple
+import js.function.ConstructorFunction
 
-typealias CustomElementConstructor<T /* : HTMLElement */> = JsClass<T>
+typealias CustomElementConstructor<T /* : HTMLElement */> = ConstructorFunction<Tuple, T>

@@ -10,6 +10,7 @@ import java.io.File
 private val DEFAULT_IMPORTS = Imports(
     "js.array.ArrayLike",
     "js.array.ReadonlyArray",
+    "js.array.Tuple",
     "js.array.Tuple2",
     "js.buffer.AllowSharedBufferSource",
     "js.buffer.ArrayBuffer",
@@ -32,6 +33,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.errors.JsError",
     "js.errors.JsErrorLike",
     "js.errors.JsErrorName",
+    "js.function.ConstructorFunction",
     "js.function.JsFunction",
     "js.globals.GlobalScope",
     "js.internal.InternalApi",

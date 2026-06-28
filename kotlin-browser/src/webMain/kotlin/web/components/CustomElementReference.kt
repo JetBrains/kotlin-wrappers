@@ -7,10 +7,13 @@ import web.html.HTMLElement
 
 open class CustomElementReference<T : HTMLElement>
 protected constructor(
-    val value: JsClass<T>,
+    clazz: JsClass<T>,
     formAssociated: Boolean? = null,
     observedAttributes: ReadonlyArray<JsString>? = null,
 ) {
+    val value: CustomElementConstructor<T> =
+        CustomElementConstructor(clazz)
+
     init {
         val static = unsafeCast<CustomElementStatic>(value)
 
