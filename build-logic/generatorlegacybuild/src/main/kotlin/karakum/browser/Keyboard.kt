@@ -1,6 +1,7 @@
 package karakum.browser
 
-import karakum.common.CommonUnionConverter.unionBody
+import karakum.common.CommonUnionConverter.unionBodyByConstants
+import karakum.common.UnionConstant
 
 internal const val KEY_CODE = "KeyCode"
 
@@ -208,17 +209,52 @@ private val MODIFIER_KEY_CODES = listOf(
 
 internal fun keyboardTypes(): Sequence<ConversionResult> {
     return sequenceOf(
-        keyboardUnion(KEY_CODE, KEY_CODES),
-        keyboardUnion(MODIFIER_KEY_CODE, MODIFIER_KEY_CODES),
+        keyboardUnion(
+            name = KEY_CODE,
+            values = KEY_CODES,
+            mdnApiUrl = "UI_Events/Keyboard_event_code_values",
+        ),
+        keyboardUnion(
+            MODIFIER_KEY_CODE,
+            MODIFIER_KEY_CODES,
+            "KeyboardEvent/getModifierState",
+        ),
     )
 }
 
 private fun keyboardUnion(
     name: String,
     values: List<String>,
-): ConversionResult =
-    ConversionResult(
+    mdnApiUrl: String,
+): ConversionResult {
+    fun getKDoc(
+        value: String? = null,
+    ): String {
+        val hash = if (value != null)
+            "#:~:text=%22$value%22"
+        else ""
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$mdnApiUrl$hash)
+         */
+        """.trimIndent()
+    }
+
+    val constants = values.map { value ->
+        UnionConstant(
+            name = value,
+            value = value,
+            comment = getKDoc(value),
+        )
+    }
+
+    val body = getKDoc() + "\n" +
+            unionBodyByConstants(name, constants)
+
+    return ConversionResult(
         name = name,
-        body = unionBody(name = name, values = values),
+        body = body,
         pkg = "web.keyboard",
     )
+}
