@@ -8,7 +8,7 @@ import js.reflect.JsClass
  * Context provided to a class decorator.
  * @template Class The type of the decorated class associated with this context.
  */
-sealed external interface ClassDecoratorContext<Class : JsClass<*>> {
+external interface ClassDecoratorContext<Class : JsClass<*>> {
     /** The kind of element that was decorated. */
     val kind: DecoratorContextKind.`class`
 

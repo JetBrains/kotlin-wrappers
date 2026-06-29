@@ -10,7 +10,7 @@ import js.objects.PropertyKey
  * the type of the constructor. For a non-static class element, this will be the type of the instance.
  * @template Value The property type of the decorated class getter.
  */
-sealed external interface ClassGetterDecoratorContext<This : JsAny, Value : JsAny> {
+external interface ClassGetterDecoratorContext<This : JsAny, Value : JsAny> {
     /** The kind of class element that was decorated. */
     val kind: DecoratorContextKind.getter
 

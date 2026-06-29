@@ -94,10 +94,12 @@ private fun decoratorInterface(
         .replace(": (this: Class) => void", ": (/* this: Class */) -> Unit")
         .replace("(object: ", "(o: ")
 
-    val body = comment +
-            "\nsealed external interface $name$typeParameters {\n" +
-            members +
-            "\n}"
+    val body = """
+    $comment
+    external interface $name$typeParameters {
+    $members
+    }
+    """.trimIndent()
 
     return ConversionResult(
         name = name,
