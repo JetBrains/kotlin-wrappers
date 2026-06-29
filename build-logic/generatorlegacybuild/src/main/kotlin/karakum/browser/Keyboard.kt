@@ -208,15 +208,17 @@ private val MODIFIER_KEY_CODES = listOf(
 
 internal fun keyboardTypes(): Sequence<ConversionResult> {
     return sequenceOf(
-        ConversionResult(
-            name = KEY_CODE,
-            body = unionBody(name = KEY_CODE, values = KEY_CODES),
-            pkg = "web.keyboard",
-        ),
-        ConversionResult(
-            name = MODIFIER_KEY_CODE,
-            body = unionBody(name = MODIFIER_KEY_CODE, values = MODIFIER_KEY_CODES),
-            pkg = "web.keyboard",
-        ),
+        keyboardUnion(KEY_CODE, KEY_CODES),
+        keyboardUnion(MODIFIER_KEY_CODE, MODIFIER_KEY_CODES),
     )
 }
+
+private fun keyboardUnion(
+    name: String,
+    values: List<String>,
+): ConversionResult =
+    ConversionResult(
+        name = name,
+        body = unionBody(name = name, values = values),
+        pkg = "web.keyboard",
+    )
