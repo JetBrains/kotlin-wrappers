@@ -2,4 +2,5 @@
 
 package web.timers
 
-sealed external interface Interval
+sealed /* opaque */
+external interface Interval

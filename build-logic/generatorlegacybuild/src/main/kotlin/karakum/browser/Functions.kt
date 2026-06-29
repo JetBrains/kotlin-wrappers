@@ -38,7 +38,10 @@ internal fun browserFunctions(
                 .map { (name, pkg) ->
                     ConversionResult(
                         name = name,
-                        body = "sealed external interface $name",
+                        body = """
+                        sealed /* opaque */
+                        external interface $name
+                        """.trimIndent(),
                         pkg = pkg,
                     )
                 },

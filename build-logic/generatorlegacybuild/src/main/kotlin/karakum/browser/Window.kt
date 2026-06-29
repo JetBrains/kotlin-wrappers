@@ -11,7 +11,8 @@ private val WINDOW_TARGET_VALUES = listOf(
 
 // language=kotlin
 private val WINDOW_NAME_BODY = """
-sealed external interface WindowName :
+sealed /* opaque */
+external interface WindowName :
     WindowTarget
 
 inline fun WindowName(

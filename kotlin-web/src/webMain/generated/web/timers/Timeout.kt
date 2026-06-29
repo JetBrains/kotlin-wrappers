@@ -2,4 +2,5 @@
 
 package web.timers
 
-sealed external interface Timeout
+sealed /* opaque */
+external interface Timeout

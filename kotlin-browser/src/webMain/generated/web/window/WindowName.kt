@@ -4,7 +4,8 @@ package web.window
 
 import js.reflect.unsafeCast
 
-sealed external interface WindowName :
+sealed /* opaque */
+external interface WindowName :
     WindowTarget
 
 inline fun WindowName(

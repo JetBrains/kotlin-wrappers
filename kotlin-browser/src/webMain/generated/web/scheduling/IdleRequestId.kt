@@ -2,4 +2,5 @@
 
 package web.scheduling
 
-sealed external interface IdleRequestId
+sealed /* opaque */
+external interface IdleRequestId

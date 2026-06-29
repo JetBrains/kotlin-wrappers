@@ -2,4 +2,5 @@
 
 package web.rendering
 
-sealed external interface RenderingContextId<T : JsAny, O : JsAny>
+sealed /* opaque */
+external interface RenderingContextId<T : JsAny, O : JsAny>
