@@ -2,6 +2,6 @@ package js.math
 
 @PublishedApi
 @JsQualifier("Math")
-internal external fun fround(
-    value: Number,
+internal external fun f16round(
+    value: Double,
 ): Float
