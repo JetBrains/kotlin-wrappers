@@ -209,6 +209,7 @@ internal object IDLRegistry {
         if ("(" !in line || line.startsWith("(")) {
             val data = line
                 .replace("[EnforceRange] ", "")
+                .removePrefix("static ")
                 .removePrefix("const ")
                 .removePrefix("inherit ")
                 .removePrefix("required ")

@@ -2,6 +2,7 @@
 
 package web.notifications
 
+import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
 import web.events.Event
@@ -23,6 +24,13 @@ open external class Notification(
     val title: String,
     options: NotificationOptions = definedExternally,
 ) : EventTarget {
+    /**
+     * The **`actions`** read-only property of the Notification interface provides the actions available for users to choose from for interacting with the notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/actions)
+     */
+    val actions: ReadonlyArray<NotificationAction>
+
     /**
      * The **`body`** read-only property of the Notification interface indicates the body string of the notification, as specified in the body option of the Notification() constructor.
      *
@@ -107,6 +115,13 @@ open external class Notification(
     fun close()
 
     companion object {
+        /**
+         * The **`maxActions`** read-only static property of the Notification interface returns the maximum number of actions supported by the device and the User Agent. Effectively, this is the maximum number of elements in Notification.actions array which will be respected by the User Agent.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/maxActions_static)
+         */
+        val maxActions: Int
+
         /**
          * The **`permission`** read-only static property of the Notification interface indicates the current permission granted by the user for the current origin to display web notifications.
          *
