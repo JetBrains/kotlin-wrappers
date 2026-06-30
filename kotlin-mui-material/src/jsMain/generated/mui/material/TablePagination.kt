@@ -131,14 +131,6 @@ external interface TablePaginationOwnProps :
     var ActionsComponent: ElementType<TablePaginationActionsProps>?
 
     /**
-     * Props applied to the back arrow [`IconButton`](https://mui.com/material-ui/api/icon-button/) component.
-     *
-     * This prop is an alias for `slotProps.actions.previousButton` and will be overridden by it if both are used.
-     */
-    @Deprecated("Use `slotProps.actions.previousButton` instead.")
-    var backIconButtonProps: IconButtonProps?
-
-    /**
      * Override or extend the styles applied to the component.
      */
     var classes: TablePaginationClasses?
@@ -189,14 +181,6 @@ external interface TablePaginationOwnProps :
     var labelRowsPerPage: ReactNode?
 
     /**
-     * Props applied to the next arrow [`IconButton`](https://mui.com/material-ui/api/icon-button/) element.
-     *
-     * This prop is an alias for `slotProps.actions.nextButton` and will be overridden by it if both are used.
-     */
-    @Deprecated("Use `slotProps.actions.nextButton` instead.")
-    var nextIconButtonProps: IconButtonProps?
-
-    /**
      * Callback fired when the page is changed.
      *
      * @param {React.MouseEvent<HTMLButtonElement> | null} event The event source of the callback.
@@ -233,16 +217,6 @@ external interface TablePaginationOwnProps :
   value: number;
   label: string;
 }> */
-
-    /**
-     * Props applied to the rows per page [`Select`](https://mui.com/material-ui/api/select/) element.
-     *
-     * This prop is an alias for `slotProps.select` and will be overridden by it if both are used.
-     *
-     * @default {}
-     */
-    @Deprecated("Use `slotProps.select` instead.")
-    var SelectProps: SelectProps<*>?
 
     /**
      * If `true`, show the first-page button.

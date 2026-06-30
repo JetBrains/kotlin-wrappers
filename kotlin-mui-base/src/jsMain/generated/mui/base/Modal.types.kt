@@ -6,7 +6,6 @@ import react.*
 import react.dom.aria.AriaRole
 import react.dom.events.KeyboardEventHandler
 import react.dom.events.MouseEventHandler
-import react.dom.events.ReactEventHandler
 import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.dom.Element
@@ -100,12 +99,6 @@ external interface ModalOwnProps : PropsWithChildren {
     var keepMounted: Boolean?
 
     /**
-     * Callback fired when the backdrop is clicked.
-     */
-    @Deprecated("Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.")
-    var onBackdropClick: ReactEventHandler<*>?
-
-    /**
      * Callback fired when the component requests to be closed.
      * The `reason` parameter can optionally be used to control the response to `onClose`.
      *
@@ -177,7 +170,7 @@ external interface ModalRootSlotProps :
 
 external interface ModalBackdropSlotProps : PropsWithChildren {
     @JsName("aria-hidden")
-    var ariaHidden: Any /* React.AriaAttributes['aria-hidden'] */
+    var ariaHidden: Boolean
 
     override var children: ReactNode?
 

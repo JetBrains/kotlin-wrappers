@@ -99,30 +99,6 @@ external interface BadgeOwnProps :
     var color: BadgeColor?
 
     /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: Props?
-
-    /**
-     * The components used for each slot inside.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var components: Components?
-
-    interface Components {
-        var Root: ElementType<*>?
-        var Badge: ElementType<*>?
-    }
-
-    /**
      * If `true`, the badge is invisible.
      * @default false
      */

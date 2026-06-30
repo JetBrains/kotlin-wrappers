@@ -10,7 +10,6 @@ package mui.material
 
 import react.ElementType
 import react.FC
-import react.Props
 import react.dom.events.ReactEventHandler
 
 external interface SwipeableDrawerProps :
@@ -84,12 +83,6 @@ external interface SwipeableDrawerProps :
      * @default false
      */
     override var open: Boolean?
-
-    /**
-     * The element is used to intercept the touch events on the edge.
-     */
-    @Deprecated("use the `slotProps.swipeArea` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var SwipeAreaProps: Props?
 
     /**
      * The width of the left most (or right most) area in `px` that

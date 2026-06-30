@@ -58,33 +58,6 @@ external interface BackdropOwnProps :
     override var children: ReactNode?
 
     /**
-     * The components used for each slot inside.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var components: Components?
-
-    interface Components {
-        var Root: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: Props? /* React.HTMLAttributes<HTMLDivElement> & BackdropComponentsPropsOverrides */
-    }
-
-    /**
      * Override or extend the styles applied to the component.
      */
     var classes: BackdropClasses?
@@ -111,14 +84,6 @@ external interface BackdropOwnProps :
      * You may specify a single timeout for all transitions, or individually with an object.
      */
     var transitionDuration: Any? /* TransitionProps['timeout'] */
-
-    /**
-     * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Fade
-     */
-    @Deprecated("Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var TransitionComponent: ComponentType<TransitionProps>?
 }
 
 external interface BackdropOwnerState

@@ -57,18 +57,6 @@ external interface SnackbarProps :
     var classes: SnackbarClasses?
 
     /**
-     * Props applied to the `ClickAwayListener` element.
-     */
-    @Deprecated("Use `slotProps.clickAwayListener` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ClickAwayListenerProps: ClickAwayListenerProps?
-
-    /**
-     * Props applied to the [`SnackbarContent`](https://mui.com/material-ui/api/snackbar-content/) element.
-     */
-    @Deprecated("Use `slotProps.content` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ContentProps: SnackbarContentProps?
-
-    /**
      * If `true`, the `autoHideDuration` timer will expire even if the window is not focused.
      * @default false
      */
@@ -118,14 +106,6 @@ external interface SnackbarProps :
     override var sx: SxProps<Theme>?
 
     /**
-     * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Grow
-     */
-    @Deprecated("Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var TransitionComponent: ComponentType<TransitionProps>?
-
-    /**
      * The duration for the transition, in milliseconds.
      * You may specify a single timeout for all transitions, or individually with an object.
      * @default {
@@ -134,14 +114,6 @@ external interface SnackbarProps :
      * }
      */
     var transitionDuration: Any? /* TransitionProps['timeout'] */
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @default {}
-     */
-    @Deprecated("Use `slotProps.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var TransitionProps: TransitionProps?
 }
 
 external interface SnackbarSlots {

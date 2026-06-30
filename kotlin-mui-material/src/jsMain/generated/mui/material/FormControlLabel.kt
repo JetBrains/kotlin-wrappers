@@ -29,17 +29,6 @@ external interface FormControlLabelProps :
     var classes: FormControlLabelClasses?
 
     /**
-     * The props used for each slot inside.
-     * @default {}
-     */
-    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var typography: TypographyProps?
-    }
-
-    /**
      * A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.
      */
     var control: Any? /* React.ReactElement<unknown, any> */

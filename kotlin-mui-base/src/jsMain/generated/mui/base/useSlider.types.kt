@@ -9,6 +9,7 @@ import react.Ref
 import react.RefCallback
 import react.dom.events.SyntheticEvent
 import web.dom.Element
+import web.dom.ElementId
 import web.events.Event
 
 external interface UseSliderParameters {
@@ -16,7 +17,7 @@ external interface UseSliderParameters {
      * The id of the element containing a label for the slider.
      */
     @JsName("aria-labelledby")
-    var ariaLabelledby: String?
+    var ariaLabelledBy: ElementId?
 
     /**
      * The default value. Use when the component is not controlled.

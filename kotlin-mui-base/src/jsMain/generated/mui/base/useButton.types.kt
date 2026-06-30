@@ -52,7 +52,7 @@ external interface UseButtonParameters {
 
 external interface UseButtonRootSlotOwnProps : Props {
     @JsName("aria-disabled")
-    var ariaDisabled: Any? /* React.AriaAttributes['aria-disabled'] */
+    var ariaDisabled: Boolean?
 
     var disabled: Boolean?
 

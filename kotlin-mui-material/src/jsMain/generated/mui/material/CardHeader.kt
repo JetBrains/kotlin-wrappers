@@ -122,13 +122,6 @@ external interface CardHeaderOwnProps :
     var subheader: ReactNode?
 
     /**
-     * These props will be forwarded to the subheader
-     * (as long as disableTypography is not `true`).
-     */
-    @Deprecated("Use `slotProps.subheader` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var subheaderTypographyProps: TypographyProps?
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
@@ -137,13 +130,6 @@ external interface CardHeaderOwnProps :
      * The content of the component.
      */
     override var title: ReactNode?
-
-    /**
-     * These props will be forwarded to the title
-     * (as long as disableTypography is not `true`).
-     */
-    @Deprecated("Use `slotProps.title` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var titleTypographyProps: TypographyProps?
 }
 
 external interface CardHeaderOwnerState

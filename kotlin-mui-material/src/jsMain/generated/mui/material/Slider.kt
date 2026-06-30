@@ -14,6 +14,7 @@ import react.*
 import react.dom.events.SyntheticEvent
 import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.dom.ElementId
 import web.events.Event
 import web.html.HTMLSpanElement
 
@@ -43,13 +44,13 @@ external interface SliderOwnProps :
      * The id of the element containing a label for the slider.
      */
     @JsName("aria-labelledby")
-    var ariaLabelledby: String?
+    var ariaLabelledBy: ElementId?
 
     /**
      * A string value that provides a user-friendly name for the current value of the slider.
      */
     @JsName("aria-valuetext")
-    var ariaValuetext: String?
+    var ariaValueText: String?
 
     /**
      * The color of the component.
@@ -58,47 +59,6 @@ external interface SliderOwnProps :
      * @default 'primary'
      */
     var color: SliderColor?
-
-    /**
-     * The components used for each slot inside.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var components: Components?
-
-    interface Components {
-        var Root: ElementType<*>?
-        var Track: ElementType<*>?
-        var Rail: ElementType<*>?
-        var Thumb: ElementType<*>?
-        var Mark: ElementType<*>?
-        var MarkLabel: ElementType<*>?
-        var ValueLabel: ElementType<*>?
-        var Input: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: Props?
-        var track: Props?
-        var rail: Props?
-        var thumb: Props?
-        var mark: Props?
-        var markLabel: Props?
-        var valueLabel: Props?
-        var input: Props?
-    }
 
     /**
      * Override or extend the styles applied to the component.

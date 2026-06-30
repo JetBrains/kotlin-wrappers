@@ -9,7 +9,10 @@
 package mui.material
 
 import mui.system.StandardProps
-import react.*
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
 import react.dom.events.ChangeEvent
 import react.dom.html.InputHTMLAttributes
 import web.dom.ElementId
@@ -71,18 +74,6 @@ external interface SwitchBaseProps :
      * The id of the `input` element.
      */
     var id: ElementId?
-
-    /**
-     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#attributes) applied to the `input` element.
-     */
-    @Deprecated("Use `slotProps.input` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var inputProps: InputHTMLAttributes<HTMLInputElement>?
-
-    /**
-     * Pass a ref to the `input` element.
-     */
-    @Deprecated("Use `slotProps.input.ref` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var inputRef: Ref<*>?
 
     /**
      * Name attribute of the `input` element.

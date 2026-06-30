@@ -9,8 +9,6 @@ import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
 import react.*
-import react.dom.html.HTMLAttributes
-import web.html.HTMLDivElement
 
 external interface ListItemProps :
     ListItemOwnProps,
@@ -35,20 +33,6 @@ external interface ListItemBaseProps :
      * Override or extend the styles applied to the component.
      */
     var classes: ListItemClasses?
-
-    /**
-     * The container component used when a `ListItemSecondaryAction` is the last child.
-     * @default 'li'
-     */
-    @Deprecated("Use the `component` or `slots.root` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ContainerComponent: ElementType<HTMLAttributes<HTMLDivElement>>?
-
-    /**
-     * Props applied to the container component if used.
-     * @default {}
-     */
-    @Deprecated("Use the `slotProps.root` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ContainerProps: HTMLAttributes<HTMLDivElement>?
 
     /**
      * If `true`, compact vertical padding designed for keyboard and mouse input is used.
@@ -90,31 +74,6 @@ external interface ListItemOwnerState
 
 external interface ListItemOwnProps :
     ListItemBaseProps {
-    /**
-     * The components used for each slot inside.
-     *
-     * @default {}
-     */
-    @Deprecated("Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var components: Components?
-
-    interface Components {
-        var Root: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * @default {}
-     */
-    @Deprecated("Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
-    }
-
     /**
      * The extra props for the slot components.
      * You can override the existing props or add new ones.

@@ -32,7 +32,7 @@ external interface SliderOwnProps :
      * A string value that provides a user-friendly name for the current value of the slider.
      */
     @JsName("aria-valuetext")
-    var ariaValuetext: String?
+    var ariaValueText: String?
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the thumb labels of the slider.

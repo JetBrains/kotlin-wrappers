@@ -9,7 +9,6 @@
 package mui.material
 
 import mui.material.styles.Theme
-import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.StandardProps
 import mui.system.SxProps
@@ -56,13 +55,6 @@ external interface MenuProps :
     var disableAutoFocusItem: Boolean?
 
     /**
-     * Props applied to the [`MenuList`](https://mui.com/material-ui/api/menu-list/) element.
-     * @default {}
-     */
-    @Deprecated("use the `slotProps.list` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var MenuListProps: MenuListProps?
-
-    /**
      * Callback fired when the component requests to be closed.
      *
      * @param {object} event The event source of the callback.
@@ -90,14 +82,6 @@ external interface MenuProps :
      * @default 'auto'
      */
     var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @default {}
-     */
-    @Deprecated("use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var TransitionProps: TransitionProps?
 
     /**
      * The variant to use. Use `menu` to prevent selected items from impacting the initial focus.

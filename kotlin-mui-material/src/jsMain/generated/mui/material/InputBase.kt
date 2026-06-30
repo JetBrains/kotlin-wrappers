@@ -27,7 +27,7 @@ external interface InputBaseProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
     @JsName("aria-describedby")
-    var ariaDescribedby: String?
+    var ariaDescribedBy: ElementId?
 
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
@@ -53,35 +53,6 @@ external interface InputBaseProps :
      * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
      */
     var color: InputBaseColor?
-
-    /**
-     * The components used for each slot inside.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var components: Components?
-
-    interface Components {
-        var Root: ElementType<*>?
-        var Input: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     *
-     * @default {}
-     */
-    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: Props? /* React.HTMLAttributes<HTMLDivElement> & InputBaseComponentsPropsOverrides */
-        var input: Props? /* React.InputHTMLAttributes<HTMLInputElement> & InputBaseComponentsPropsOverrides */
-    }
 
     /**
      * The default value. Use when the component is not controlled.

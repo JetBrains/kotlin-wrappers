@@ -4,7 +4,6 @@
 
 package mui.material
 
-import js.array.ReadonlyArray
 import mui.base.UseAutocompleteProps
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
@@ -22,12 +21,6 @@ external interface AutocompleteProps<Value> :
     StandardProps,
     HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
-    /**
-     * Props applied to the [`Chip`](https://mui.com/material-ui/api/chip/) element.
-     */
-    @Deprecated("Use `slotProps.chip` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ChipProps: ChipProps?
-
     /**
      * Override or extend the styles applied to the component.
      */
@@ -54,19 +47,6 @@ external interface AutocompleteProps<Value> :
      * @default 'Close'
      */
     var closeText: String?
-
-    /**
-     * The props used for each slot inside.
-     */
-    @Deprecated("Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var clearIndicator: IconButtonProps?
-        var paper: PaperProps?
-        var popper: PopperProps?
-        var popupIndicator: IconButtonProps?
-    }
 
     /**
      * If `true`, the component is disabled.
@@ -100,19 +80,6 @@ external interface AutocompleteProps<Value> :
      * @default (more) => `+${more}`
      */
     var getLimitTagsText: ((more: Number) -> ReactNode)?
-
-    /**
-     * The component used to render the listbox.
-     * @default 'ul'
-     */
-    @Deprecated("Use `slotProps.listbox.component` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ListboxComponent: ComponentType<*>?
-
-    /**
-     * Props applied to the Listbox element.
-     */
-    @Deprecated("Use `slotProps.listbox` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var ListboxProps: Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getListboxProps']> */
 
     /**
      * If `true`, the component is in a loading state.
@@ -153,20 +120,6 @@ external interface AutocompleteProps<Value> :
      * @default 'Open'
      */
     var openText: String?
-
-    /**
-     * The component used to render the body of the popup.
-     * @default Paper
-     */
-    @Deprecated("Use `slots.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var PaperComponent: ComponentType<*>?
-
-    /**
-     * The component used to position the popup.
-     * @default Popper
-     */
-    @Deprecated("Use `slots.popper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var PopperComponent: ComponentType<PopperProps>?
 
     /**
      * The icon to display in place of the default popup icon.
@@ -213,18 +166,6 @@ external interface AutocompleteProps<Value> :
      * @returns {ReactNode}
      */
     var renderOption: ((props: HTMLAttributes<HTMLLIElement>, option: Value, state: AutocompleteRenderOptionState, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
-
-    /**
-     * Render the selected value when doing multiple selections.
-     *
-     *
-     * @param {Value[]} value The `value` provided to the component.
-     * @param {function} getTagProps A tag props getter.
-     * @param {object} ownerState The state of the Autocomplete component.
-     * @returns {ReactNode}
-     */
-    @Deprecated("Use `renderValue` prop instead")
-    var renderTags: ((value: ReadonlyArray<Value>, getTagProps: Function<*> /* AutocompleteRenderGetTagProps */, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
 
     /**
      * Renders the selected value(s) as rich content in the input for both single and multiple selections.

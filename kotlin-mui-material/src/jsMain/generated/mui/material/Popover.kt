@@ -10,7 +10,6 @@
 package mui.material
 
 import mui.material.styles.Theme
-import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.StandardProps
 import mui.system.SxProps
@@ -65,27 +64,6 @@ external interface PopoverProps :
     var anchorReference: PopoverReference?
 
     /**
-     * A backdrop component. This prop enables custom backdrop rendering.
-     * @default styled(Backdrop, {
-     *   name: 'MuiModal',
-     *   slot: 'Backdrop',
-     *   overridesResolver: (props, styles) => {
-     *     return styles.backdrop;
-     *   },
-     * })({
-     *   zIndex: -1,
-     * })
-     */
-    @Deprecated("Use `slots.backdrop` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var BackdropComponent: ElementType<BackdropProps>?
-
-    /**
-     * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
-     */
-    @Deprecated("Use `slotProps.backdrop` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var BackdropProps: BackdropProps?
-
-    /**
      * The content of the component.
      */
     override var children: ReactNode?
@@ -125,16 +103,6 @@ external interface PopoverProps :
     override var open: Boolean
 
     /**
-     * Props applied to the [`Paper`](https://mui.com/material-ui/api/paper/) element.
-     *
-     * This prop is an alias for `slotProps.paper` and will be overridden by it if both are used.
-     *
-     * @default {}
-     */
-    @Deprecated("Use `slotProps.paper` instead.")
-    var PaperProps: PaperProps?
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
@@ -154,26 +122,10 @@ external interface PopoverProps :
     var transformOrigin: PopoverOrigin?
 
     /**
-     * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Grow
-     */
-    @Deprecated("use the `slots.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var TransitionComponent: ComponentType<TransitionProps>?
-
-    /**
      * Set to 'auto' to automatically calculate transition time based on height.
      * @default 'auto'
      */
     var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @default {}
-     */
-    @Deprecated("use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var TransitionProps: TransitionProps?
 }
 
 external interface PopoverSlots {

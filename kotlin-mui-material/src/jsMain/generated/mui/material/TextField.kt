@@ -115,12 +115,6 @@ external interface BaseTextFieldProps :
     var error: Boolean?
 
     /**
-     * Props applied to the [`FormHelperText`](https://mui.com/material-ui/api/form-helper-text/) element.
-     */
-    @Deprecated("Use `slotProps.formHelperText` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var FormHelperTextProps: FormHelperTextProps?
-
-    /**
      * If `true`, the input will take up the full width of its container.
      * @default false
      */
@@ -136,19 +130,6 @@ external interface BaseTextFieldProps :
      * Use this prop to make `label` and `helperText` accessible for screen readers.
      */
     var id: ElementId?
-
-    /**
-     * Props applied to the [`InputLabel`](https://mui.com/material-ui/api/input-label/) element.
-     * Pointer events like `onClick` are enabled if and only if `shrink` is `true`.
-     */
-    @Deprecated("Use `slotProps.inputLabel` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var InputLabelProps: InputLabelProps?
-
-    /**
-     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#attributes) applied to the `input` element.
-     */
-    @Deprecated("Use `slotProps.htmlInput` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var inputProps: InputBaseComponentProps?
 
     /**
      * Pass a ref to the `input` element.
@@ -209,12 +190,6 @@ external interface BaseTextFieldProps :
     var select: Boolean?
 
     /**
-     * Props applied to the [`Select`](https://mui.com/material-ui/api/select/) element.
-     */
-    @Deprecated("Use `slotProps.select` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var SelectProps: SelectProps<*>?
-
-    /**
      * The size of the component.
      * @default 'medium'
      */
@@ -251,15 +226,6 @@ external interface StandardTextFieldProps :
      * @default 'outlined'
      */
     var variant: Union? /* 'standard' */
-
-    /**
-     * Props applied to the Input element.
-     * It will be a [`FilledInput`](https://mui.com/material-ui/api/filled-input/),
-     * [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/) or [`Input`](https://mui.com/material-ui/api/input/)
-     * component depending on the `variant` prop value.
-     */
-    @Deprecated("Use `slotProps.input` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var InputProps: InputProps?
 }
 
 external interface FilledTextFieldProps :
@@ -277,15 +243,6 @@ external interface FilledTextFieldProps :
      * @default 'outlined'
      */
     var variant: Union /* 'filled' */
-
-    /**
-     * Props applied to the Input element.
-     * It will be a [`FilledInput`](https://mui.com/material-ui/api/filled-input/),
-     * [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/) or [`Input`](https://mui.com/material-ui/api/input/)
-     * component depending on the `variant` prop value.
-     */
-    @Deprecated("Use `slotProps.input` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var InputProps: FilledInputProps?
 }
 
 external interface OutlinedTextFieldProps :
@@ -303,15 +260,6 @@ external interface OutlinedTextFieldProps :
      * @default 'outlined'
      */
     var variant: Union /* 'outlined' */
-
-    /**
-     * Props applied to the Input element.
-     * It will be a [`FilledInput`](https://mui.com/material-ui/api/filled-input/),
-     * [`OutlinedInput`](https://mui.com/material-ui/api/outlined-input/) or [`Input`](https://mui.com/material-ui/api/input/)
-     * component depending on the `variant` prop value.
-     */
-    @Deprecated("Use `slotProps.input` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
-    var InputProps: OutlinedInputProps?
 }
 
 /**
