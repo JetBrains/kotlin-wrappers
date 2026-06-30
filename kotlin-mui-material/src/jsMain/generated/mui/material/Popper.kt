@@ -27,6 +27,7 @@ external interface PopperProps :
      * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      * @default {}
      */
+    @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).")
     var components: Components?
 
     interface Components {
@@ -39,6 +40,7 @@ external interface PopperProps :
      * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      * @default {}
      */
+    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).")
     var componentsProps: Props?
 
     /**

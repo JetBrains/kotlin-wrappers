@@ -34,6 +34,7 @@ external interface StepLabelProps :
      * @default {}
      * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
@@ -60,12 +61,14 @@ external interface StepLabelProps :
      * The component to render in place of the [`StepIcon`](https://mui.com/material-ui/api/step-icon/).
      * @deprecated Use `slots.stepIcon` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slots.stepIcon` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var StepIconComponent: ElementType<StepIconProps>?
 
     /**
      * Props applied to the [`StepIcon`](https://mui.com/material-ui/api/step-icon/) element.
      * @deprecated Use `slotProps.stepIcon` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slotProps.stepIcon` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var StepIconProps: StepIconProps?
 
     /**

@@ -82,6 +82,7 @@ external interface AvatarOwnProps :
      * It can be used to listen for the loading error event.
      * @deprecated Use `slotProps.img` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slotProps.img` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var imgProps: ImgHTMLAttributes<HTMLImageElement>?
 
     /**

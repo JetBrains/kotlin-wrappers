@@ -77,12 +77,14 @@ external interface PopoverProps :
      *   zIndex: -1,
      * })
      */
+    @Deprecated("Use `slots.backdrop` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var BackdropComponent: ElementType<BackdropProps>?
 
     /**
      * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
      * @deprecated Use `slotProps.backdrop` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slotProps.backdrop` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var BackdropProps: BackdropProps?
 
     /**
@@ -132,6 +134,7 @@ external interface PopoverProps :
      *
      * @default {}
      */
+    @Deprecated("Use `slotProps.paper` instead.")
     var PaperProps: PaperProps?
 
     /**
@@ -159,6 +162,7 @@ external interface PopoverProps :
      * @deprecated use the `slots.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default Grow
      */
+    @Deprecated("use the `slots.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TransitionComponent: ComponentType<TransitionProps>?
 
     /**
@@ -173,6 +177,7 @@ external interface PopoverProps :
      * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
+    @Deprecated("use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TransitionProps: TransitionProps?
 }
 

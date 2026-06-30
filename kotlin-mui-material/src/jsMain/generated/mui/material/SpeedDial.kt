@@ -97,6 +97,7 @@ external interface SpeedDialProps :
      * @default Zoom
      * * @deprecated Use `slots.transition` instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
      */
+    @Deprecated("Use `slots.transition` instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)")
     var TransitionComponent: ComponentType<TransitionProps>?
 
     /**
@@ -114,6 +115,7 @@ external interface SpeedDialProps :
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
      * @deprecated Use `slotProps.transition` instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
      */
+    @Deprecated("Use `slotProps.transition` instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)")
     var TransitionProps: TransitionProps?
 }
 

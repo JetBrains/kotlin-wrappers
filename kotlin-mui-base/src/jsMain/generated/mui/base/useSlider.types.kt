@@ -15,7 +15,8 @@ external interface UseSliderParameters {
     /**
      * The id of the element containing a label for the slider.
      */
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledby: String?
 
     /**
      * The default value. Use when the component is not controlled.

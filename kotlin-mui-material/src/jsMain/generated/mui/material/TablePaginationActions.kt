@@ -21,6 +21,7 @@ external interface TablePaginationActionsProps :
      * This prop is an alias for `slotProps.previousButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.previousButton` instead.
      */
+    @Deprecated("Use `slotProps.previousButton` instead.")
     var backIconButtonProps: IconButtonProps?
 
     /**
@@ -52,6 +53,7 @@ external interface TablePaginationActionsProps :
      * This prop is an alias for `slotProps.nextButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.nextButton` instead.
      */
+    @Deprecated("Use `slotProps.nextButton` instead.")
     var nextIconButtonProps: IconButtonProps?
 
     var onPageChange: (event: MouseEvent<HTMLButtonElement, *>?, page: Number) -> Unit

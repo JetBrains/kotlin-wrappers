@@ -27,19 +27,22 @@ external interface DialogProps :
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
-    var `aria-describedby`: String?
+    @JsName("aria-describedby")
+    var ariaDescribedby: String?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledby: String?
 
     /**
      * Informs assistive technologies that the element is modal.
      * It's added on the element with role="dialog".
      * @default true
      */
-    var `aria-modal`: Any? /* boolean | 'true' | 'false' */
+    @JsName("aria-modal")
+    var ariaModal: Any? /* boolean | 'true' | 'false' */
 
     /**
      * Dialog children, usually the included sub-components.
@@ -111,6 +114,7 @@ external interface DialogProps :
      * @default {}
      * @deprecated Use `slotProps.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slotProps.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var PaperProps: PaperProps?
 
     /**
@@ -130,6 +134,7 @@ external interface DialogProps :
      * @default Fade
      * @deprecated Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TransitionComponent: ComponentType<TransitionProps>?
 
     /**
@@ -147,6 +152,7 @@ external interface DialogProps :
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
      * @deprecated Use `slotProps.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
+    @Deprecated("Use `slotProps.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TransitionProps: TransitionProps?
 }
 

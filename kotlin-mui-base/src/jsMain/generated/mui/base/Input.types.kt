@@ -49,11 +49,14 @@ external interface InputBaseProps : Props {
 external interface InputOwnProps :
     InputBaseProps,
     PropsWithClassName {
-    var `aria-describedby`: String?
+    @JsName("aria-describedby")
+    var ariaDescribedby: String?
 
-    var `aria-label`: String?
+    @JsName("aria-label")
+    var ariaLabel: String?
 
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledby: String?
 
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.

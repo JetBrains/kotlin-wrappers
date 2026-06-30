@@ -26,7 +26,8 @@ external interface InputBaseProps :
     StandardProps,
     HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
-    var `aria-describedby`: String?
+    @JsName("aria-describedby")
+    var ariaDescribedby: String?
 
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
@@ -60,6 +61,7 @@ external interface InputBaseProps :
      *
      * @default {}
      */
+    @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var components: Components?
 
     interface Components {
@@ -75,6 +77,7 @@ external interface InputBaseProps :
      *
      * @default {}
      */
+    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {

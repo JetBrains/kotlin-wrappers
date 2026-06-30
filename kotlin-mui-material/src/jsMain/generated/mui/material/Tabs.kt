@@ -114,12 +114,14 @@ external interface TabsOwnProps :
     /**
      * The label for the Tabs as a string.
      */
-    var `aria-label`: String?
+    @JsName("aria-label")
+    var ariaLabel: String?
 
     /**
      * An id or list of ids separated by a space that label the Tabs.
      */
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledby: String?
 
     /**
      * If `true`, the tabs are centered.
@@ -163,6 +165,7 @@ external interface TabsOwnProps :
      * @deprecated use the `slots.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default TabScrollButton
      */
+    @Deprecated("use the `slots.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var ScrollButtonComponent: ElementType<*>?
 
     /**
@@ -189,6 +192,7 @@ external interface TabsOwnProps :
      * @deprecated use the `slotProps.indicator` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default  {}
      */
+    @Deprecated("use the `slotProps.indicator` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TabIndicatorProps: HTMLAttributes<HTMLDivElement>?
 
     /**
@@ -196,6 +200,7 @@ external interface TabsOwnProps :
      * @deprecated use the `slotProps.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
+    @Deprecated("use the `slotProps.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TabScrollButtonProps: TabScrollButtonProps?
 
     /**

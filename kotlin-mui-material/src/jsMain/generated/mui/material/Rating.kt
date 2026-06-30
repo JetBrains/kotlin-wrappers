@@ -144,6 +144,7 @@ external interface RatingOwnProps :
      *   return <span {...other} />;
      * }
      */
+    @Deprecated("Use `slotProps.icon.component` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var IconContainerComponent: ElementType<IconContainerProps>?
 
     /**

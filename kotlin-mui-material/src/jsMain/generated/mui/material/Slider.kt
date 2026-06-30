@@ -36,17 +36,20 @@ external interface SliderOwnProps :
     /**
      * The label of the slider.
      */
-    var `aria-label`: String?
+    @JsName("aria-label")
+    var ariaLabel: String?
 
     /**
      * The id of the element containing a label for the slider.
      */
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledby: String?
 
     /**
      * A string value that provides a user-friendly name for the current value of the slider.
      */
-    var `aria-valuetext`: String?
+    @JsName("aria-valuetext")
+    var ariaValuetext: String?
 
     /**
      * The color of the component.
@@ -63,6 +66,7 @@ external interface SliderOwnProps :
      *
      * @default {}
      */
+    @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var components: Components?
 
     interface Components {
@@ -84,6 +88,7 @@ external interface SliderOwnProps :
      *
      * @default {}
      */
+    @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {

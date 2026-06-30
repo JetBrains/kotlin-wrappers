@@ -55,12 +55,14 @@ external interface ModalOwnProps :
      *   zIndex: -1,
      * })
      */
+    @Deprecated("Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.")
     var BackdropComponent: ElementType<BackdropProps>?
 
     /**
      * Props applied to the [`Backdrop`](https://mui.com/material-ui/api/backdrop/) element.
      * @deprecated Use `slotProps.backdrop` instead.
      */
+    @Deprecated("Use `slotProps.backdrop` instead.")
     var BackdropProps: BackdropProps?
 
     /**
@@ -91,6 +93,7 @@ external interface ModalOwnProps :
      *
      * @default {}
      */
+    @Deprecated("Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var components: Components?
 
     interface Components {
@@ -106,6 +109,7 @@ external interface ModalOwnProps :
      *
      * @default {}
      */
+    @Deprecated("Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {

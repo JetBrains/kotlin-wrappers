@@ -103,6 +103,7 @@ external interface ModalOwnProps : PropsWithChildren {
      * Callback fired when the backdrop is clicked.
      * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
      */
+    @Deprecated("Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.")
     var onBackdropClick: ReactEventHandler<*>?
 
     /**
@@ -176,7 +177,8 @@ external interface ModalRootSlotProps :
 }
 
 external interface ModalBackdropSlotProps : PropsWithChildren {
-    var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
+    @JsName("aria-hidden")
+    var ariaHidden: Any /* React.AriaAttributes['aria-hidden'] */
 
     override var children: ReactNode?
 

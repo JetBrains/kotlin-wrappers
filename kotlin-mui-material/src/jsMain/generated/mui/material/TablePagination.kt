@@ -136,6 +136,7 @@ external interface TablePaginationOwnProps :
      * This prop is an alias for `slotProps.actions.previousButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.actions.previousButton` instead.
      */
+    @Deprecated("Use `slotProps.actions.previousButton` instead.")
     var backIconButtonProps: IconButtonProps?
 
     /**
@@ -194,6 +195,7 @@ external interface TablePaginationOwnProps :
      * This prop is an alias for `slotProps.actions.nextButton` and will be overridden by it if both are used.
      * @deprecated Use `slotProps.actions.nextButton` instead.
      */
+    @Deprecated("Use `slotProps.actions.nextButton` instead.")
     var nextIconButtonProps: IconButtonProps?
 
     /**
@@ -242,6 +244,7 @@ external interface TablePaginationOwnProps :
      *
      * @default {}
      */
+    @Deprecated("Use `slotProps.select` instead.")
     var SelectProps: SelectProps<*>?
 
     /**
