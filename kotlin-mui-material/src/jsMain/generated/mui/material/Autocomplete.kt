@@ -24,7 +24,6 @@ external interface AutocompleteProps<Value> :
     PropsWithSx {
     /**
      * Props applied to the [`Chip`](https://mui.com/material-ui/api/chip/) element.
-     * @deprecated Use `slotProps.chip` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.chip` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var ChipProps: ChipProps?
@@ -58,7 +57,6 @@ external interface AutocompleteProps<Value> :
 
     /**
      * The props used for each slot inside.
-     * @deprecated Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var componentsProps: ComponentsProps?
@@ -106,14 +104,12 @@ external interface AutocompleteProps<Value> :
     /**
      * The component used to render the listbox.
      * @default 'ul'
-     * @deprecated Use `slotProps.listbox.component` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.listbox.component` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var ListboxComponent: ComponentType<*>?
 
     /**
      * Props applied to the Listbox element.
-     * @deprecated Use `slotProps.listbox` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.listbox` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var ListboxProps: Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getListboxProps']> */
@@ -161,7 +157,6 @@ external interface AutocompleteProps<Value> :
     /**
      * The component used to render the body of the popup.
      * @default Paper
-     * @deprecated Use `slots.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slots.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var PaperComponent: ComponentType<*>?
@@ -169,7 +164,6 @@ external interface AutocompleteProps<Value> :
     /**
      * The component used to position the popup.
      * @default Popper
-     * @deprecated Use `slots.popper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slots.popper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var PopperComponent: ComponentType<PopperProps>?
@@ -223,7 +217,6 @@ external interface AutocompleteProps<Value> :
     /**
      * Render the selected value when doing multiple selections.
      *
-     * @deprecated Use `renderValue` prop instead
      *
      * @param {Value[]} value The `value` provided to the component.
      * @param {function} getTagProps A tag props getter.

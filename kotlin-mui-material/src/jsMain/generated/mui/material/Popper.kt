@@ -24,7 +24,6 @@ external interface PopperProps :
      * The components used for each slot inside the Popper.
      * Either a string to use a HTML element or a component.
      *
-     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      * @default {}
      */
     @Deprecated("use the `slots` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).")
@@ -37,7 +36,6 @@ external interface PopperProps :
     /**
      * The props used for each slot inside the Popper.
      *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).
      * @default {}
      */
     @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/).")

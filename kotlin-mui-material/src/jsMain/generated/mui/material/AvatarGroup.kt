@@ -62,7 +62,6 @@ external interface AvatarGroupOwnProps :
      *
      * This prop is an alias for the `slotProps` prop.
      *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var componentsProps: ComponentsProps?

@@ -66,7 +66,6 @@ external interface TypographyOwnProps :
     /**
      * If `true`, the element will be a paragraph element.
      * @default false
-     * @deprecated Use the `component` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use the `component` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var paragraph: Boolean?

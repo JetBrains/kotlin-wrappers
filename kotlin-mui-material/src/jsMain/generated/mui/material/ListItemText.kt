@@ -52,7 +52,6 @@ external interface ListItemTextProps :
     /**
      * These props will be forwarded to the primary typography component
      * (as long as disableTypography is not `true`).
-     * @deprecated Use `slotProps.primary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.primary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var primaryTypographyProps: TypographyProps?
@@ -65,7 +64,6 @@ external interface ListItemTextProps :
     /**
      * These props will be forwarded to the secondary typography component
      * (as long as disableTypography is not `true`).
-     * @deprecated Use `slotProps.secondary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.secondary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var secondaryTypographyProps: TypographyProps?

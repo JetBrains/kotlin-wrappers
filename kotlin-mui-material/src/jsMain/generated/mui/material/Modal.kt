@@ -46,7 +46,6 @@ external interface ModalOwnProps :
     PropsWithSx {
     /**
      * A backdrop component. This prop enables custom backdrop rendering.
-     * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
      * Use the `slots.backdrop` prop to make your application ready for the next version of Material UI.
      * @default styled(Backdrop, {
      *   name: 'MuiModal',
@@ -60,7 +59,6 @@ external interface ModalOwnProps :
 
     /**
      * Props applied to the [`Backdrop`](https://mui.com/material-ui/api/backdrop/) element.
-     * @deprecated Use `slotProps.backdrop` instead.
      */
     @Deprecated("Use `slotProps.backdrop` instead.")
     var BackdropProps: BackdropProps?
@@ -89,7 +87,6 @@ external interface ModalOwnProps :
     /**
      * The components used for each slot inside.
      *
-     * @deprecated Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
@@ -105,7 +102,6 @@ external interface ModalOwnProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * @deprecated Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */

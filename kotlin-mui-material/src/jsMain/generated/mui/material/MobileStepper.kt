@@ -43,7 +43,6 @@ external interface MobileStepperProps :
 
     /**
      * Props applied to the `LinearProgress` element.
-     * @deprecated Use `slotProps.progress` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.progress` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var LinearProgressProps: LinearProgressProps?

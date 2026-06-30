@@ -101,7 +101,6 @@ external interface ModalOwnProps : PropsWithChildren {
 
     /**
      * Callback fired when the backdrop is clicked.
-     * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
      */
     @Deprecated("Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.")
     var onBackdropClick: ReactEventHandler<*>?

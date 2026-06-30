@@ -31,7 +31,6 @@ external interface SpeedDialActionProps :
     /**
      * Props applied to the [`Fab`](https://mui.com/material-ui/api/fab/) component.
      * @default {}
-     * @deprecated Use `slotProps.fab` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.fab` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var FabProps: FabProps?
@@ -54,7 +53,6 @@ external interface SpeedDialActionProps :
 
     /**
      * `classes` prop applied to the [`Tooltip`](https://mui.com/material-ui/api/tooltip/) element.
-     * @deprecated Use `slotProps.tooltip.classes` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.tooltip.classes` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var TooltipClasses: TooltipClasses?
@@ -62,14 +60,12 @@ external interface SpeedDialActionProps :
     /**
      * Placement of the tooltip.
      * @default 'left'
-     * @deprecated Use `slotProps.tooltip.placement` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.tooltip.placement` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var tooltipPlacement: TooltipPlacement?
 
     /**
      * Label to display in the tooltip.
-     * @deprecated Use `slotProps.tooltip.title` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.tooltip.title` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var tooltipTitle: ReactNode?
@@ -77,7 +73,6 @@ external interface SpeedDialActionProps :
     /**
      * Make the tooltip always visible when the SpeedDial is open.
      * @default false
-     * @deprecated Use `slotProps.tooltip.open` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     @Deprecated("Use `slotProps.tooltip.open` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.")
     var tooltipOpen: Boolean?
