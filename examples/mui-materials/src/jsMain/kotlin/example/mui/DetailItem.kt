@@ -6,42 +6,45 @@ import mui.material.styles.TypographyVariant
 import mui.system.sx
 import react.FC
 import react.Key
-import react.Props
+import react.PropsWithValue
 import web.cssom.*
 
-
 external interface DetailItemProps :
-    Props {
+    PropsWithValue<String?> {
     var label: String
-    var value: String?
-    var keyValue: String
 }
 
-internal val DetailItem = FC<DetailItemProps> { props ->
+internal val DetailItem: FC<DetailItemProps> = FC { props ->
     Box {
-        key = Key("detail-item-${props.keyValue}")
+        key = Key("detail-item-${props.label.lowercase()}")
+
         Box {
             sx {
                 display = Display.flex
                 flexDirection = FlexDirection.column
                 minWidth = 160.px
             }
+
             Typography {
-                variant = TypographyVariant.caption
                 sx {
                     fontWeight = FontWeight.bolder
                     color = Color("#BFD7EA")
                     textTransform = TextTransform.uppercase
                     letterSpacing = 0.5.px
                 }
+
+                variant = TypographyVariant.caption
+
                 +props.label
             }
             Typography {
-                variant = TypographyVariant.body1
                 sx {
                     fontWeight = FontWeight.bold
                     color = NamedColor.white
                 }
+
+                variant = TypographyVariant.body1
+
                 +props.value
             }
         }
