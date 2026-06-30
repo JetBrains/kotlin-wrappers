@@ -4,5 +4,6 @@ package web.gl
 
 import js.numbers.Bitmask
 
-sealed external interface GLbitfield :
+sealed /* opaque */
+external interface GLbitfield :
     Bitmask<GLbitfield>

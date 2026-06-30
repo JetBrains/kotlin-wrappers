@@ -4,7 +4,8 @@ package web.autofill
 
 import js.reflect.unsafeCast
 
-sealed external interface AutoFill
+sealed /* opaque */
+external interface AutoFill
 
 inline fun AutoFill(
     section: AutoFillSection,

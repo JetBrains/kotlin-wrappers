@@ -268,10 +268,17 @@ private fun convertType(
 
         val body = when (name) {
             "GLenum",
-                -> "sealed external interface GLenum"
+                -> """
+                sealed /* opaque */
+                external interface GLenum
+                """.trimIndent()
 
             "GLbitfield",
-                -> "sealed external interface GLbitfield:\nBitmask<GLbitfield>"
+                -> """
+                sealed /* opaque */
+                external interface GLbitfield :
+                    Bitmask<GLbitfield>
+                """.trimIndent()
 
             else -> sequenceOf(
                 if (name.endsWith("TimeStamp")) {
@@ -694,8 +701,12 @@ private fun autoFillInterface(
         }
     }
 
-    return sequenceOf("sealed external interface $name")
-        .plus(factories)
+    return sequenceOf(
+        """
+        sealed /* opaque */
+        external interface $name
+        """.trimIndent(),
+    ).plus(factories)
         .joinToString("\n\n")
 }
 
