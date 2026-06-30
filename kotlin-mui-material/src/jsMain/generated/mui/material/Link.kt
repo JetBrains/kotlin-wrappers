@@ -66,13 +66,13 @@ external interface LinkOwnProps :
  *
  * Demos:
  *
- * - [Breadcrumbs](https://v6.mui.com/material-ui/react-breadcrumbs/)
- * - [Links](https://v6.mui.com/material-ui/react-link/)
+ * - [Breadcrumbs](https://v7.mui.com/material-ui/react-breadcrumbs/)
+ * - [Links](https://v7.mui.com/material-ui/react-link/)
  *
  * API:
  *
- * - [Link API](https://v6.mui.com/material-ui/api/link/)
- * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
+ * - [Link API](https://v7.mui.com/material-ui/api/link/)
+ * - inherits [Typography API](https://v7.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val Link: FC<LinkProps>

@@ -4,6 +4,8 @@
 
 package muix.tree.view
 
+import react.FC
+
 /**
  *
  * Demos:
@@ -14,4 +16,4 @@ package muix.tree.view
  *
  * - [SimpleTreeView API](https://mui.com/x/api/tree-view/simple-tree-view/)
  */
-external val SimpleTreeView: react.FC<SimpleTreeViewProps>
+external val SimpleTreeView: FC<SimpleTreeViewProps>

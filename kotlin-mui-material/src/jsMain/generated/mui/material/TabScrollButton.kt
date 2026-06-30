@@ -46,16 +46,8 @@ external interface TabScrollButtonProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var startScrollButtonIcon: Props? /* SlotComponentProps<
-  typeof SvgIcon,
-  TabScrollButtonStartIconSlotPropsOverrides,
-  TabScrollButtonOwnerState
-> */
-        var endScrollButtonIcon: Props? /* SlotComponentProps<
-  typeof SvgIcon,
-  TabScrollButtonEndIconSlotPropsOverrides,
-  TabScrollButtonOwnerState
-> */
+        var startScrollButtonIcon: Props?
+        var endScrollButtonIcon: Props?
     }
 
     /**
@@ -88,11 +80,11 @@ external interface TabScrollButtonOwnerState : TabScrollButtonProps {
  *
  * Demos:
  *
- * - [Tabs](https://v6.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [TabScrollButton API](https://v6.mui.com/material-ui/api/tab-scroll-button/)
+ * - [TabScrollButton API](https://v7.mui.com/material-ui/api/tab-scroll-button/)
  */
 @JsName("default")
 external val TabScrollButton: FC<TabScrollButtonProps>

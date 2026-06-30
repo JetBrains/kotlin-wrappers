@@ -43,9 +43,9 @@ external interface OptionGroupOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'li', OptionGroupRootSlotPropsOverrides, OptionGroupOwnerState> */
-        var label: Props? /* SlotComponentProps<'span', OptionGroupLabelSlotPropsOverrides, OptionGroupOwnerState> */
-        var list: Props? /* SlotComponentProps<'ul', OptionGroupListSlotPropsOverrides, OptionGroupOwnerState> */
+        var root: Props?
+        var label: Props?
+        var list: Props?
     }
 }
 

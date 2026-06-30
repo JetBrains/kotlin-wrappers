@@ -124,9 +124,9 @@ external interface SelectOwnProps<OptionValue> :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'button', SelectRootSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
-        var listbox: Props? /* SlotComponentProps<'ul', SelectListboxSlotPropsOverrides, SelectOwnerState<OptionValue, Multiple>> */
-        var popup: Props? /* SlotComponentProps<'div', SelectPopupSlotPropsOverrides & PopupProps, SelectOwnerState<OptionValue, Multiple>> */
+        var root: Props?
+        var listbox: Props?
+        var popup: Props?
     }
 
     /**

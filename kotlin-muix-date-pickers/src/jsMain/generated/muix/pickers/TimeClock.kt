@@ -4,5 +4,7 @@
 
 package muix.pickers
 
+import react.FC
 
-external val TimeClock: react.FC<TimeClockProps<*, *>>
+
+external val TimeClock: FC<TimeClockProps<*, *>>

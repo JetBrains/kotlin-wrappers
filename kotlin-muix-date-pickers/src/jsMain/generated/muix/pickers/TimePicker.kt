@@ -4,6 +4,8 @@
 
 package muix.pickers
 
+import react.FC
+
 /**
  * Demos:
  *
@@ -14,4 +16,4 @@ package muix.pickers
  *
  * - [TimePicker API](https://mui.com/x/api/date-pickers/time-picker/)
  */
-external val TimePicker: react.FC<TimePickerProps<*, *>>
+external val TimePicker: FC<TimePickerProps<*, *>>

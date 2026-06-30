@@ -42,7 +42,7 @@ external interface TabPanelOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', TabPanelRootSlotPropsOverrides, TabPanelOwnerState> */
+        var root: Props?
     }
 }
 

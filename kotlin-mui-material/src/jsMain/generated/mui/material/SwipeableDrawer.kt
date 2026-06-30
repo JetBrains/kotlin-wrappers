@@ -10,6 +10,7 @@ package mui.material
 
 import react.ElementType
 import react.FC
+import react.Props
 import react.dom.events.ReactEventHandler
 
 external interface SwipeableDrawerProps :
@@ -26,9 +27,7 @@ external interface SwipeableDrawerProps :
      *
      * @default false
      */
-    var allowSwipeInChildren: Any? /*
-  | boolean
-  | ((event: TouchEvent, swipeArea: HTMLDivElement, paper: HTMLDivElement) => boolean) */
+    var allowSwipeInChildren: Any? /* boolean | ((event: TouchEvent, swipeArea: HTMLDivElement, paper: HTMLDivElement) => boolean) */
 
     /**
      * Disable the backdrop transition.
@@ -56,7 +55,7 @@ external interface SwipeableDrawerProps :
      * Specified as percent (0-1) of the width of the drawer
      * @default 0.52
      */
-    var hysteresis: Number?
+    var hysteresis: Double?
 
     /**
      * Defines, from which (average) velocity on, the swipe is
@@ -88,9 +87,9 @@ external interface SwipeableDrawerProps :
 
     /**
      * The element is used to intercept the touch events on the edge.
-     * @deprecated use the `slotProps.swipeArea` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps.swipeArea` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var SwipeAreaProps: Any?
+    var SwipeAreaProps: Props?
 
     /**
      * The width of the left most (or right most) area in `px` that
@@ -112,12 +111,12 @@ external interface SwipeableDrawerSlots {
  *
  * Demos:
  *
- * - [Drawer](https://v6.mui.com/material-ui/react-drawer/)
+ * - [Drawer](https://v7.mui.com/material-ui/react-drawer/)
  *
  * API:
  *
- * - [SwipeableDrawer API](https://v6.mui.com/material-ui/api/swipeable-drawer/)
- * - inherits [Drawer API](https://v6.mui.com/material-ui/api/drawer/)
+ * - [SwipeableDrawer API](https://v7.mui.com/material-ui/api/swipeable-drawer/)
+ * - inherits [Drawer API](https://v7.mui.com/material-ui/api/drawer/)
  */
 @JsName("default")
 external val SwipeableDrawer: FC<SwipeableDrawerProps>

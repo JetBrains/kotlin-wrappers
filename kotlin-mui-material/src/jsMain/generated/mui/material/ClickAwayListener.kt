@@ -46,11 +46,11 @@ external interface ClickAwayListenerProps : PropsWithChildren {
  *
  * Demos:
  *
- * - [Click-Away Listener](https://v6.mui.com/material-ui/react-click-away-listener/)
- * - [Menu](https://v6.mui.com/material-ui/react-menu/)
+ * - [Click-Away Listener](https://v7.mui.com/material-ui/react-click-away-listener/)
+ * - [Menu](https://v7.mui.com/material-ui/react-menu/)
  *
  * API:
  *
- * - [ClickAwayListener API](https://v6.mui.com/material-ui/api/click-away-listener/)
+ * - [ClickAwayListener API](https://v7.mui.com/material-ui/api/click-away-listener/)
  */
 external val ClickAwayListener: FC<ClickAwayListenerProps>

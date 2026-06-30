@@ -41,12 +41,12 @@ external interface TimelineOppositeContentProps :
  *
  * Demos:
  *
- * - [Timeline](https://v6.mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://v7.mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineOppositeContent API](https://v6.mui.com/material-ui/api/timeline-opposite-content/)
- * - inherits [Typography API](https://v6.mui.com/material-ui/api/typography/)
+ * - [TimelineOppositeContent API](https://v7.mui.com/material-ui/api/timeline-opposite-content/)
+ * - inherits [Typography API](https://v7.mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val TimelineOppositeContent: FC<TimelineOppositeContentProps>

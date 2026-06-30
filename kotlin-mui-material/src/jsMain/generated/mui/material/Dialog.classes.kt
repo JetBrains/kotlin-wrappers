@@ -10,6 +10,9 @@ sealed external interface DialogClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
+    /** Styles applied to the backdrop element. */
+    val backdrop: ClassName
+
     /** Styles applied to the container element if `scroll="paper"`. */
     val scrollPaper: ClassName
 
@@ -23,12 +26,12 @@ sealed external interface DialogClasses {
     val paper: ClassName
 
     /** Styles applied to the Paper component if `scroll="paper"`.
-     * @deprecated Combine the [.MuiDialog-paper](/material-ui/api/dialog/#dialog-classes-paper) and [.MuiDialog-scrollPaper](/material-ui/api/dialog/#dialog-classes-scrollPaper) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiDialog-paper](/material-ui/api/dialog/#Dialog-css-MuiDialog-paper) and [.MuiDialog-scrollPaper](/material-ui/api/dialog/#dialog-classes-MuiDialog-scrollPaper) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val paperScrollPaper: ClassName
 
     /** Styles applied to the Paper component if `scroll="body"`.
-     * @deprecated Combine the [.MuiDialog-paper](/material-ui/api/dialog/#dialog-classes-paper) and [.MuiDialog-scrollBody](/material-ui/api/dialog/#dialog-classes-scrollBody) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiDialog-paper](/material-ui/api/dialog/#Dialog-css-MuiDialog-paper) and [.MuiDialog-scrollBody](/material-ui/api/dialog/#dialog-classes-MuiDialog-scrollBody) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val paperScrollBody: ClassName
 

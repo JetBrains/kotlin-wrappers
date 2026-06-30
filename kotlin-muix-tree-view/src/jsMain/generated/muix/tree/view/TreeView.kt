@@ -4,6 +4,8 @@
 
 package muix.tree.view
 
+import react.FC
+
 /**
  * This component has been deprecated in favor of the new Simple Tree View component.
  * You can have a look at how to migrate to the new component in the v7 [migration guide](https://mui.com/x/migration/migration-tree-view-v6/#use-simpletreeview-instead-of-treeview)
@@ -18,4 +20,4 @@ package muix.tree.view
  *
  * @deprecated
  */
-external val TreeView: react.FC<TreeViewProps>
+external val TreeView: FC<TreeViewProps>

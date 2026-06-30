@@ -32,7 +32,7 @@ external interface TabOwnProps :
     override var slotProps: ButtonOwnProps.SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'button', TabRootSlotPropsOverrides, TabOwnerState> */
+        var root: Props?
     }
 
     /**

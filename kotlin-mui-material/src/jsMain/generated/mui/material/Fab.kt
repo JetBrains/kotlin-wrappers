@@ -92,12 +92,12 @@ external interface FabOwnProps :
  *
  * Demos:
  *
- * - [Floating Action Button](https://v6.mui.com/material-ui/react-floating-action-button/)
+ * - [Floating Action Button](https://v7.mui.com/material-ui/react-floating-action-button/)
  *
  * API:
  *
- * - [Fab API](https://v6.mui.com/material-ui/api/fab/)
- * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
+ * - [Fab API](https://v7.mui.com/material-ui/api/fab/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Fab: FC<FabProps>

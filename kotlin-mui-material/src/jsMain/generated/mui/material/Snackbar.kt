@@ -58,13 +58,13 @@ external interface SnackbarProps :
 
     /**
      * Props applied to the `ClickAwayListener` element.
-     * @deprecated Use `slotProps.clickAwayListener` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.clickAwayListener` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ClickAwayListenerProps: ClickAwayListenerProps?
 
     /**
      * Props applied to the [`SnackbarContent`](https://mui.com/material-ui/api/snackbar-content/) element.
-     * @deprecated Use `slotProps.content` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.content` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ContentProps: SnackbarContentProps?
 
@@ -110,7 +110,7 @@ external interface SnackbarProps :
      * If `autoHideDuration` prop is specified but `resumeHideDuration` isn't,
      * we default to `autoHideDuration / 2` ms.
      */
-    var resumeHideDuration: Number?
+    var resumeHideDuration: Int?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -120,10 +120,10 @@ external interface SnackbarProps :
     /**
      * The component used for the transition.
      * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @deprecated Use `slots.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default Grow
      */
-    var TransitionComponent: ComponentType<*>?
+    var TransitionComponent: ComponentType<TransitionProps>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -138,7 +138,7 @@ external interface SnackbarProps :
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      * @default {}
      */
     var TransitionProps: TransitionProps?
@@ -175,13 +175,13 @@ external interface SnackbarSlotProps : Props {
     /** TS: SlotProps<'div', SnackbarRootSlotPropsOverrides, SnackbarOwnerState> */
     var root: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotProps< React.ElementType<SnackbarContentProps>, SnackbarContentSlotPropsOverrides, SnackbarOwnerState > */
+    /** TS: SlotProps<React.ElementType<SnackbarContentProps>, SnackbarContentSlotPropsOverrides, SnackbarOwnerState> */
     var content: SnackbarContentProps?
 
-    /** TS: SlotComponentProps< typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState > */
+    /** TS: SlotComponentProps<typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState> */
     var clickAwayListener: ClickAwayListenerProps?
 
-    /** TS: SlotComponentProps< React.ElementType, TransitionProps & SnackbarTransitionSlotPropsOverrides, SnackbarOwnerState > */
+    /** TS: SlotComponentProps<React.ElementType, TransitionProps & SnackbarTransitionSlotPropsOverrides, SnackbarOwnerState> */
     var transition: TransitionProps?
 }
 
@@ -203,11 +203,11 @@ external interface SnackbarOwnerState
  *
  * Demos:
  *
- * - [Snackbar](https://v6.mui.com/material-ui/react-snackbar/)
+ * - [Snackbar](https://v7.mui.com/material-ui/react-snackbar/)
  *
  * API:
  *
- * - [Snackbar API](https://v6.mui.com/material-ui/api/snackbar/)
+ * - [Snackbar API](https://v7.mui.com/material-ui/api/snackbar/)
  */
 @JsName("default")
 external val Snackbar: FC<SnackbarProps>

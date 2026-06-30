@@ -38,13 +38,13 @@ external interface AccordionSummarySlots {
 }
 
 external interface AccordionSummarySlotProps : Props {
-    /** TS: SlotProps< React.ElementType<ButtonBaseProps>, AccordionSummaryRootSlotPropsOverrides, AccordionSummaryOwnerState > */
+    /** TS: SlotProps<React.ElementType<ButtonBaseProps>, AccordionSummaryRootSlotPropsOverrides, AccordionSummaryOwnerState> */
     var root: ButtonBaseProps?
 
-    /** TS: SlotProps< 'div', AccordionSummaryContentSlotPropsOverrides, AccordionSummaryOwnerState > */
+    /** TS: SlotProps<'div', AccordionSummaryContentSlotPropsOverrides, AccordionSummaryOwnerState> */
     var content: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotProps< 'div', AccordionSummaryExpandIconWrapperSlotPropsOverrides, AccordionSummaryOwnerState > */
+    /** TS: SlotProps<'div', AccordionSummaryExpandIconWrapperSlotPropsOverrides, AccordionSummaryOwnerState> */
     var expandIconWrapper: HTMLAttributes<HTMLDivElement>?
 }
 
@@ -82,12 +82,12 @@ external interface AccordionSummaryOwnerState
  *
  * Demos:
  *
- * - [Accordion](https://v6.mui.com/material-ui/react-accordion/)
+ * - [Accordion](https://v7.mui.com/material-ui/react-accordion/)
  *
  * API:
  *
- * - [AccordionSummary API](https://v6.mui.com/material-ui/api/accordion-summary/)
- * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
+ * - [AccordionSummary API](https://v7.mui.com/material-ui/api/accordion-summary/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val AccordionSummary: FC<AccordionSummaryProps>

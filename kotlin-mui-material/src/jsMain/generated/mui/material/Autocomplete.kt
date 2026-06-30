@@ -24,7 +24,7 @@ external interface AutocompleteProps<Value> :
     PropsWithSx {
     /**
      * Props applied to the [`Chip`](https://mui.com/material-ui/api/chip/) element.
-     * @deprecated Use `slotProps.chip` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.chip` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ChipProps: ChipProps?
 
@@ -57,15 +57,15 @@ external interface AutocompleteProps<Value> :
 
     /**
      * The props used for each slot inside.
-     * @deprecated Use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var clearIndicator: Props? /* Partial<IconButtonProps> */
+        var clearIndicator: IconButtonProps?
         var paper: PaperProps?
-        var popper: Props? /* Partial<PopperProps> */
-        var popupIndicator: Props? /* Partial<IconButtonProps> */
+        var popper: PopperProps?
+        var popupIndicator: IconButtonProps?
     }
 
     /**
@@ -104,15 +104,15 @@ external interface AutocompleteProps<Value> :
     /**
      * The component used to render the listbox.
      * @default 'ul'
-     * @deprecated Use `slotProps.listbox.component` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.listbox.component` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var ListboxComponent: ComponentType<*>?
 
     /**
      * Props applied to the Listbox element.
-     * @deprecated Use `slotProps.listbox` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.listbox` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var ListboxProps: Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getListboxProps']> & { sx?: SxProps<Theme>; ref?: React.Ref<Element>; } */
+    var ListboxProps: Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getListboxProps']> */
 
     /**
      * If `true`, the component is in a loading state.
@@ -134,7 +134,7 @@ external interface AutocompleteProps<Value> :
      * Set `-1` to disable the limit.
      * @default -1
      */
-    var limitTags: Number?
+    var limitTags: Int?
 
     /**
      * Text to display when there are no options.
@@ -143,6 +143,8 @@ external interface AutocompleteProps<Value> :
      * @default 'No options'
      */
     var noOptionsText: ReactNode?
+
+    override var onKeyDown: ((event: react.dom.events.KeyboardEvent<HTMLDivElement>) -> Unit)?
 
     /**
      * Override the default text for the *open popup* icon button.
@@ -155,14 +157,14 @@ external interface AutocompleteProps<Value> :
     /**
      * The component used to render the body of the popup.
      * @default Paper
-     * @deprecated Use `slots.paper` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slots.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var PaperComponent: ComponentType<*>?
 
     /**
      * The component used to position the popup.
      * @default Popper
-     * @deprecated Use `slots.popper` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slots.popper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var PopperComponent: ComponentType<PopperProps>?
 
@@ -189,6 +191,13 @@ external interface AutocompleteProps<Value> :
     /**
      * Render the input.
      *
+     * **Note:** The `renderInput` prop must return a `TextField` component or a compatible custom component
+     * that correctly forwards `InputProps.ref` and spreads `inputProps`. This ensures proper integration
+     * with the Autocomplete's internal logic (e.g., focus management and keyboard navigation).
+     *
+     * Avoid using components like `DatePicker` or `Select` directly, as they may not forward the required props,
+     * leading to runtime errors or unexpected behavior.
+     *
      * @param {object} params
      * @returns {ReactNode}
      */
@@ -203,37 +212,54 @@ external interface AutocompleteProps<Value> :
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
-    var renderOption: ((
-        props: HTMLAttributes<HTMLLIElement>,
-        option: Value,
-        state: AutocompleteRenderOptionState,
-        ownerState: AutocompleteProps<Value>, /* AutocompleteOwnerState<Value> */
-    ) -> ReactNode)?
+    var renderOption: ((props: HTMLAttributes<HTMLLIElement>, option: Value, state: AutocompleteRenderOptionState, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
 
     /**
-     * Render the selected value.
+     * Render the selected value when doing multiple selections.
+     *
+     * @deprecated Use `renderValue` prop instead
      *
      * @param {Value[]} value The `value` provided to the component.
      * @param {function} getTagProps A tag props getter.
      * @param {object} ownerState The state of the Autocomplete component.
      * @returns {ReactNode}
      */
-    var renderTags: ((
-        value: ReadonlyArray<Value>,
-        getTagProps: Function<*>, /* AutocompleteRenderGetTagProps */
-        ownerState: AutocompleteProps<Value>, /* AutocompleteOwnerState<Value> */
-    ) -> ReactNode)?
+    var renderTags: ((value: ReadonlyArray<Value>, getTagProps: Function<*> /* AutocompleteRenderGetTagProps */, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
+
+    /**
+     * Renders the selected value(s) as rich content in the input for both single and multiple selections.
+     *
+     * @param {any} value The `value` provided to the component.
+     * @param {function} getItemProps The value item props.
+     * @param {object} ownerState The state of the Autocomplete component.
+     * @returns {ReactNode}
+     */
+    var renderValue: ((value: Any, getItemProps: Any, ownerState: AutocompleteOwnerState<Value>) -> ReactNode)?
 
     /**
      * The size of the component.
      * @default 'medium'
      */
-    var size: Union? /* 'small' | 'medium', AutocompletePropsSizeOverrides */
+    var size: BaseSize?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+}
+
+external interface AutocompleteOwnerState<Value> : AutocompleteProps<Value> {
+    var expanded: Boolean
+
+    var focused: Boolean
+
+    var hasClearIcon: Boolean
+
+    var hasPopupIcon: Boolean
+
+    var inputFocused: Boolean
+
+    var popupOpen: Boolean
 }
 
 external interface AutocompleteRenderOptionState {
@@ -259,16 +285,34 @@ external interface AutocompleteRenderInputParams : Props {
 
     var fullWidth: Boolean
 
-    var size: Union /* 'small' | undefined */
+    var size: Union /* 'small' */
 
     var InputLabelProps: Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputLabelProps']> */
 
-    var InputProps: Props /* { ref: React.Ref<any>; className: string; startAdornment: React.ReactNode; endAdornment: React.ReactNode; onMouseDown: React.MouseEventHandler; } */
+    var InputProps: Props
 
     var inputProps: Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputProps']> */
 }
 
 external interface AutocompleteSlots {
+    /**
+     * The component that renders the root.
+     * @default 'div'
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component used to render the clear indicator element.
+     * @default IconButton
+     */
+    var clearIndicator: ComponentType<IconButtonProps>
+
+    /**
+     * The component used to render the popup indicator element.
+     * @default IconButton
+     */
+    var popupIndicator: ComponentType<IconButtonProps>
+
     /**
      * The component used to render the listbox.
      * @default 'ul'
@@ -292,11 +336,11 @@ external interface AutocompleteSlots {
  *
  * Demos:
  *
- * - [Autocomplete](https://v6.mui.com/material-ui/react-autocomplete/)
+ * - [Autocomplete](https://v7.mui.com/material-ui/react-autocomplete/)
  *
  * API:
  *
- * - [Autocomplete API](https://v6.mui.com/material-ui/api/autocomplete/)
+ * - [Autocomplete API](https://v7.mui.com/material-ui/api/autocomplete/)
  */
 @JsName("default")
 external val Autocomplete: FC<AutocompleteProps<*>>

@@ -13,7 +13,6 @@ import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
 import react.*
-import react.dom.events.ReactEventHandler
 import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.dom.Element
@@ -52,9 +51,6 @@ external interface ModalOwnProps :
      * @default styled(Backdrop, {
      *   name: 'MuiModal',
      *   slot: 'Backdrop',
-     *   overridesResolver: (props, styles) => {
-     *     return styles.backdrop;
-     *   },
      * })({
      *   zIndex: -1,
      * })
@@ -91,7 +87,7 @@ external interface ModalOwnProps :
     /**
      * The components used for each slot inside.
      *
-     * @deprecated Use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
@@ -106,15 +102,15 @@ external interface ModalOwnProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * @deprecated Use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      *
      * @default {}
      */
     var componentsProps: ComponentsProps?
 
     interface ComponentsProps {
-        var root: Props? /* SlotComponentProps<'div', ModalComponentsPropsOverrides, ModalOwnerState> */
-        var backdrop: Props? /* SlotComponentProps<typeof Backdrop, ModalComponentsPropsOverrides, ModalOwnerState> */
+        var root: Props?
+        var backdrop: Props?
     }
 
     /**
@@ -189,12 +185,6 @@ external interface ModalOwnProps :
     var keepMounted: Boolean?
 
     /**
-     * Callback fired when the backdrop is clicked.
-     * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
-     */
-    var onBackdropClick: ReactEventHandler<*>?
-
-    /**
      * Callback fired when the component requests to be closed.
      * The `reason` parameter can optionally be used to control the response to `onClose`.
      *
@@ -232,8 +222,8 @@ external interface ModalOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', ModalComponentsPropsOverrides, ModalOwnerState> */
-        var backdrop: Props? /* SlotComponentProps<typeof Backdrop, ModalComponentsPropsOverrides, ModalOwnerState> */
+        var root: Props?
+        var backdrop: Props?
     }
 
     /**
@@ -245,23 +235,23 @@ external interface ModalOwnProps :
 /**
  * Modal is a lower-level construct that is leveraged by the following components:
  *
- * * [Dialog](https://v6.mui.com/material-ui/api/dialog/)
- * * [Drawer](https://v6.mui.com/material-ui/api/drawer/)
- * * [Menu](https://v6.mui.com/material-ui/api/menu/)
- * * [Popover](https://v6.mui.com/material-ui/api/popover/)
+ * * [Dialog](https://v7.mui.com/material-ui/api/dialog/)
+ * * [Drawer](https://v7.mui.com/material-ui/api/drawer/)
+ * * [Menu](https://v7.mui.com/material-ui/api/menu/)
+ * * [Popover](https://v7.mui.com/material-ui/api/popover/)
  *
- * If you are creating a modal dialog, you probably want to use the [Dialog](https://v6.mui.com/material-ui/api/dialog/) component
+ * If you are creating a modal dialog, you probably want to use the [Dialog](https://v7.mui.com/material-ui/api/dialog/) component
  * rather than directly using Modal.
  *
  * This component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).
  *
  * Demos:
  *
- * - [Modal](https://v6.mui.com/material-ui/react-modal/)
+ * - [Modal](https://v7.mui.com/material-ui/react-modal/)
  *
  * API:
  *
- * - [Modal API](https://v6.mui.com/material-ui/api/modal/)
+ * - [Modal API](https://v7.mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Modal: FC<ModalProps>

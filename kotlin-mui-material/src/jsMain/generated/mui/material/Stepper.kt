@@ -35,7 +35,7 @@ external interface StepperOwnProps :
      * Set to -1 to disable all the steps.
      * @default 0
      */
-    var activeStep: Number?
+    var activeStep: Int?
 
     /**
      * If set to 'true' and orientation is horizontal,
@@ -82,11 +82,11 @@ external interface StepperOwnProps :
  *
  * Demos:
  *
- * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [Stepper API](https://v6.mui.com/material-ui/api/stepper/)
+ * - [Stepper API](https://v7.mui.com/material-ui/api/stepper/)
  */
 @JsName("default")
 external val Stepper: FC<StepperProps>

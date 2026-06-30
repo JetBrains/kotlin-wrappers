@@ -135,7 +135,7 @@ external interface CheckboxSlots {
 }
 
 external interface CheckboxSlotProps : Props {
-    /** TS: SlotProps< React.ElementType<SwitchBaseProps>, CheckboxRootSlotPropsOverrides, CheckboxOwnerState > */
+    /** TS: SlotProps<React.ElementType<SwitchBaseProps>, CheckboxRootSlotPropsOverrides, CheckboxOwnerState> */
     var root: SwitchBaseProps?
 
     /** TS: SlotProps<'input', CheckboxInputSlotPropsOverrides, CheckboxOwnerState> */
@@ -154,13 +154,13 @@ external interface CheckboxOwnerState
  *
  * Demos:
  *
- * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
- * - [Transfer List](https://v6.mui.com/material-ui/react-transfer-list/)
+ * - [Checkbox](https://v7.mui.com/material-ui/react-checkbox/)
+ * - [Transfer List](https://v7.mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [Checkbox API](https://v6.mui.com/material-ui/api/checkbox/)
- * - inherits [ButtonBase API](https://v6.mui.com/material-ui/api/button-base/)
+ * - [Checkbox API](https://v7.mui.com/material-ui/api/checkbox/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Checkbox: FC<CheckboxProps>

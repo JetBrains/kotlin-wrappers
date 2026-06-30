@@ -4,8 +4,22 @@
 
 package mui.material
 
+import mui.system.StandardProps
 import react.FC
 import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLElement
+
+external interface TouchRippleProps :
+    StandardProps,
+    HTMLAttributes<HTMLElement> {
+    var center: Boolean?
+
+    /**
+     * Override or extend the styles applied to the component.
+     */
+    var classes: TouchRippleClasses?
+}
 
 external interface StartActionOptions {
     var pulsate: Boolean?

@@ -68,7 +68,7 @@ external interface SvgIconOwnProps :
 
     /**
      * The shape-rendering attribute. The behavior of the different options is described on the
-     * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
+     * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/shape-rendering).
      * If you are having issues with blurry icons you should investigate this prop.
      */
     var shapeRendering: String?
@@ -99,12 +99,12 @@ external interface SvgIconOwnProps :
  *
  * Demos:
  *
- * - [Icons](https://v6.mui.com/material-ui/icons/)
- * - [Material Icons](https://v6.mui.com/material-ui/material-icons/)
+ * - [Icons](https://v7.mui.com/material-ui/icons/)
+ * - [Material Icons](https://v7.mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [SvgIcon API](https://v6.mui.com/material-ui/api/svg-icon/)
+ * - [SvgIcon API](https://v7.mui.com/material-ui/api/svg-icon/)
  */
 @JsName("default")
 external val SvgIcon: FC<SvgIconProps>

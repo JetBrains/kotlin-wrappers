@@ -12,17 +12,47 @@ import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
-import react.FC
-import react.ReactElement
-import react.ReactNode
+import react.*
 import react.dom.events.EventHandler
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
+import web.html.HTMLSpanElement
 
 external interface ChipProps :
     ChipOwnProps,
+    ChipSlotsAndSlotProps,
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
+
+external interface ChipSlots {
+    /**
+     * The component that renders the root.
+     * @default div
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the label.
+     * @default span
+     */
+    var label: ElementType<*>
+}
+
+external interface ChipSlotProps : Props {
+    /** TS: SlotProps<'div', {}, ChipOwnerState> */
+    var root: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps<'span', {}, ChipOwnerState> */
+    var label: HTMLAttributes<HTMLSpanElement>?
+}
+
+external interface ChipSlotsAndSlotProps : Props {
+    var slots: ChipSlots?
+
+    var slotProps: ChipSlotProps?
+}
+
+external interface ChipOwnerState
 
 external interface ChipOwnProps :
     PropsWithSx,
@@ -123,11 +153,11 @@ external interface ChipOwnProps :
  *
  * Demos:
  *
- * - [Chip](https://v6.mui.com/material-ui/react-chip/)
+ * - [Chip](https://v7.mui.com/material-ui/react-chip/)
  *
  * API:
  *
- * - [Chip API](https://v6.mui.com/material-ui/api/chip/)
+ * - [Chip API](https://v7.mui.com/material-ui/api/chip/)
  */
 @JsName("default")
 external val Chip: FC<ChipProps>

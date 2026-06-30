@@ -4,6 +4,8 @@
 
 package muix.pickers
 
+import react.FC
+
 /**
  * Demos:
  *
@@ -14,4 +16,4 @@ package muix.pickers
  *
  * - [DesktopDatePicker API](https://mui.com/x/api/date-pickers/desktop-date-picker/)
  */
-external val DesktopDatePicker: react.FC<DesktopDatePickerProps<*, *>>
+external val DesktopDatePicker: FC<DesktopDatePickerProps<*, *>>

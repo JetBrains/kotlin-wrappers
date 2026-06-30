@@ -47,16 +47,16 @@ external interface FadeProps :
 }
 
 /**
- * The Fade transition is used by the [Modal](https://v6.mui.com/material-ui/react-modal/) component.
+ * The Fade transition is used by the [Modal](https://v7.mui.com/material-ui/react-modal/) component.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  *
  * Demos:
  *
- * - [Transitions](https://v6.mui.com/material-ui/transitions/)
+ * - [Transitions](https://v7.mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Fade API](https://v6.mui.com/material-ui/api/fade/)
+ * - [Fade API](https://v7.mui.com/material-ui/api/fade/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")

@@ -3,12 +3,17 @@
 package muix.pickers
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import mui.system.Union
+import react.ElementType
+import react.Props
+import react.PropsWithClassName
 import web.cssom.ClassName
 
 external interface YearCalendarProps<TDate> :
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    PropsWithClassName,
+    PropsWithSx {
     var autoFocus: Boolean?
 
     override var className: ClassName?
@@ -86,20 +91,20 @@ external interface YearCalendarSlots {
      * Button displayed to render a single year in the `year` view.
      * @default YearCalendarButton
      */
-    var yearButton: react.ElementType<*>?
+    var yearButton: ElementType<*>?
 }
 
-external interface YearCalendarSlotProps : react.Props {
-    var yearButton: react.Props?
+external interface YearCalendarSlotProps : Props {
+    var yearButton: Props?
 }
 
-external interface ExportedYearCalendarProps : react.Props {
+external interface ExportedYearCalendarProps : Props {
     /**
      * Years are displayed in ascending (chronological) order by default.
      * If `desc`, years are displayed in descending order.
      * @default 'asc'
      */
-    var yearsOrder: mui.system.Union? /* 'asc' | 'desc' */
+    var yearsOrder: Union? /* 'asc' | 'desc' */
 
     /**
      * Years rendered per row.

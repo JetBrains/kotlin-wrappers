@@ -4,7 +4,9 @@
 
 package muix.tree.view
 
+import react.FC
+
 /**
  * @ignore - internal component.
  */
-external val TreeItem2LabelInput: react.FC<TreeItem2LabelInputProps>
+external val TreeItem2LabelInput: FC<TreeItem2LabelInputProps>

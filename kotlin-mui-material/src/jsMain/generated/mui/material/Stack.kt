@@ -69,11 +69,11 @@ external interface StackOwnProps :
  *
  * Demos:
  *
- * - [Stack](https://v6.mui.com/material-ui/react-stack/)
+ * - [Stack](https://v7.mui.com/material-ui/react-stack/)
  *
  * API:
  *
- * - [Stack API](https://v6.mui.com/material-ui/api/stack/)
+ * - [Stack API](https://v7.mui.com/material-ui/api/stack/)
  */
 @JsName("default")
 external val Stack: FC<StackProps>

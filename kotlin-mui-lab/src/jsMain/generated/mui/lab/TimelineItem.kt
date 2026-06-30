@@ -44,11 +44,11 @@ external interface TimelineItemProps :
  *
  * Demos:
  *
- * - [Timeline](https://v6.mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://v7.mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineItem API](https://v6.mui.com/material-ui/api/timeline-item/)
+ * - [TimelineItem API](https://v7.mui.com/material-ui/api/timeline-item/)
  */
 @JsName("default")
 external val TimelineItem: FC<TimelineItemProps>

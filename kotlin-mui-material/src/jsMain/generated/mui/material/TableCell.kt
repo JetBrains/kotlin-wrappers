@@ -83,11 +83,11 @@ external interface TableCellProps :
  *
  * Demos:
  *
- * - [Table](https://v6.mui.com/material-ui/react-table/)
+ * - [Table](https://v7.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableCell API](https://v6.mui.com/material-ui/api/table-cell/)
+ * - [TableCell API](https://v7.mui.com/material-ui/api/table-cell/)
  */
 @JsName("default")
 external val TableCell: FC<TableCellProps>

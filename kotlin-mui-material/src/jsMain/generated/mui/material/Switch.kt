@@ -114,7 +114,7 @@ external interface SwitchSlotProps : Props {
     /** TS: SlotProps<'span', SwitchThumbSlotPropsOverrides, SwitchOwnerState> */
     var thumb: HTMLAttributes<HTMLSpanElement>?
 
-    /** TS: SlotProps< React.ElementType<SwitchBaseProps>, SwitchSwitchBaseSlotPropsOverrides, SwitchOwnerState > */
+    /** TS: SlotProps<React.ElementType<SwitchBaseProps>, SwitchSwitchBaseSlotPropsOverrides, SwitchOwnerState> */
     var switchBase: SwitchBaseProps?
 
     /** TS: SlotProps<'input', SwitchInputSlotPropsOverrides, SwitchOwnerState> */
@@ -133,13 +133,13 @@ external interface SwitchOwnerState
  *
  * Demos:
  *
- * - [Switch](https://v6.mui.com/material-ui/react-switch/)
- * - [Transfer List](https://v6.mui.com/material-ui/react-transfer-list/)
+ * - [Switch](https://v7.mui.com/material-ui/react-switch/)
+ * - [Transfer List](https://v7.mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [Switch API](https://v6.mui.com/material-ui/api/switch/)
- * - inherits [IconButton API](https://v6.mui.com/material-ui/api/icon-button/)
+ * - [Switch API](https://v7.mui.com/material-ui/api/switch/)
+ * - inherits [IconButton API](https://v7.mui.com/material-ui/api/icon-button/)
  */
 @JsName("default")
 external val Switch: FC<SwitchProps>

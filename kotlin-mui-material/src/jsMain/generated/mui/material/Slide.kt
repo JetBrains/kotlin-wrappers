@@ -64,17 +64,17 @@ external interface SlideProps :
 }
 
 /**
- * The Slide transition is used by the [Drawer](https://v6.mui.com/material-ui/react-drawer/) component.
+ * The Slide transition is used by the [Drawer](https://v7.mui.com/material-ui/react-drawer/) component.
  * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
  *
  * Demos:
  *
- * - [Dialog](https://v6.mui.com/material-ui/react-dialog/)
- * - [Transitions](https://v6.mui.com/material-ui/transitions/)
+ * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
+ * - [Transitions](https://v7.mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Slide API](https://v6.mui.com/material-ui/api/slide/)
+ * - [Slide API](https://v7.mui.com/material-ui/api/slide/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")

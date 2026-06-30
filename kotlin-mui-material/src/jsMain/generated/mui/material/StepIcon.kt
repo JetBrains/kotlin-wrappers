@@ -55,12 +55,12 @@ external interface StepIconProps :
  *
  * Demos:
  *
- * - [Stepper](https://v6.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepIcon API](https://v6.mui.com/material-ui/api/step-icon/)
- * - inherits [SvgIcon API](https://v6.mui.com/material-ui/api/svg-icon/)
+ * - [StepIcon API](https://v7.mui.com/material-ui/api/step-icon/)
+ * - inherits [SvgIcon API](https://v7.mui.com/material-ui/api/svg-icon/)
  */
 @JsName("default")
 external val StepIcon: FC<StepIconProps>

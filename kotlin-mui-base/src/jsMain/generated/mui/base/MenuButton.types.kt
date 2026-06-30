@@ -46,7 +46,7 @@ external interface MenuButtonProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'button', MenuButtonRootSlotPropsOverrides, MenuButtonOwnerState> */
+        var root: Props?
     }
 }
 

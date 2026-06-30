@@ -32,8 +32,8 @@ external interface SnackbarOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var clickAwayListener: Props? /* SlotComponentProps<typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState> */
-        var root: Props? /* SlotComponentProps<'div', SnackbarRootSlotPropsOverrides, SnackbarOwnerState> */
+        var clickAwayListener: Props?
+        var root: Props?
     }
 
     /**

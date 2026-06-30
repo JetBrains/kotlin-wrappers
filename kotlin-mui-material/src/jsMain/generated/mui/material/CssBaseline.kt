@@ -16,7 +16,7 @@ external interface CssBaselineProps : PropsWithChildren {
 
     /**
      * Enable `color-scheme` CSS property to use `theme.palette.mode`.
-     * For more details, check out https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+     * For more details, check out https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
      * For browser support, check out https://caniuse.com/?search=color-scheme
      * @default false
      */
@@ -28,11 +28,11 @@ external interface CssBaselineProps : PropsWithChildren {
  *
  * Demos:
  *
- * - [CSS Baseline](https://v6.mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://v7.mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
- * - [CssBaseline API](https://v6.mui.com/material-ui/api/css-baseline/)
+ * - [CssBaseline API](https://v7.mui.com/material-ui/api/css-baseline/)
  */
 @JsName("default")
 external val CssBaseline: FC<CssBaselineProps>

@@ -51,7 +51,7 @@ external interface UseButtonParameters {
 }
 
 external interface UseButtonRootSlotOwnProps : Props {
-    // var `aria-disabled`: Any? /* React.AriaAttributes['aria-disabled'] */
+    var `aria-disabled`: Any? /* React.AriaAttributes['aria-disabled'] */
 
     var disabled: Boolean?
 

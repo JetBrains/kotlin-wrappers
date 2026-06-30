@@ -53,8 +53,8 @@ external interface MenuOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', MenuRootSlotPropsOverrides & PopupProps, MenuOwnerState> */
-        var listbox: Props? /* SlotComponentProps<'ul', MenuListboxSlotPropsOverrides, MenuOwnerState> */
+        var root: Props?
+        var listbox: Props?
     }
 
     /**

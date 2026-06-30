@@ -5,90 +5,27 @@
 package mui.material
 
 import mui.material.styles.Theme
-import mui.system.*
+import mui.system.PropsWithSx
+import mui.system.ResponsiveStyleValue
+import mui.system.SxProps
+import mui.system.Union
 import mui.types.PropsWithComponent
 import react.FC
 import react.PropsWithChildren
 import react.ReactNode
-import react.dom.html.HTMLAttributes
-import web.html.HTMLDivElement
 
 external interface GridProps :
-    GridOwnProps,
-    HTMLAttributes<HTMLDivElement>,
-    PropsWithComponent
-
-external interface RegularBreakpoints {
-    /**
-     * If a number, it sets the number of columns the grid item uses.
-     * It can't be greater than the total number of columns of the container (12 by default).
-     * If 'auto', the grid item's width matches its content.
-     * If false, the prop is ignored.
-     * If true, the grid item's width grows to use the space available in the grid container.
-     * The value is applied for the `lg` breakpoint and wider screens if not overridden.
-     * @default false
-     */
-    var lg: Any? /* boolean | 'auto' | number */
-
-    /**
-     * If a number, it sets the number of columns the grid item uses.
-     * It can't be greater than the total number of columns of the container (12 by default).
-     * If 'auto', the grid item's width matches its content.
-     * If false, the prop is ignored.
-     * If true, the grid item's width grows to use the space available in the grid container.
-     * The value is applied for the `md` breakpoint and wider screens if not overridden.
-     * @default false
-     */
-    var md: Any? /* boolean | 'auto' | number */
-
-    /**
-     * If a number, it sets the number of columns the grid item uses.
-     * It can't be greater than the total number of columns of the container (12 by default).
-     * If 'auto', the grid item's width matches its content.
-     * If false, the prop is ignored.
-     * If true, the grid item's width grows to use the space available in the grid container.
-     * The value is applied for the `sm` breakpoint and wider screens if not overridden.
-     * @default false
-     */
-    var sm: Any? /* boolean | 'auto' | number */
-
-    /**
-     * If a number, it sets the number of columns the grid item uses.
-     * It can't be greater than the total number of columns of the container (12 by default).
-     * If 'auto', the grid item's width matches its content.
-     * If false, the prop is ignored.
-     * If true, the grid item's width grows to use the space available in the grid container.
-     * The value is applied for the `xl` breakpoint and wider screens if not overridden.
-     * @default false
-     */
-    var xl: Any? /* boolean | 'auto' | number */
-
-    /**
-     * If a number, it sets the number of columns the grid item uses.
-     * It can't be greater than the total number of columns of the container (12 by default).
-     * If 'auto', the grid item's width matches its content.
-     * If false, the prop is ignored.
-     * If true, the grid item's width grows to use the space available in the grid container.
-     * The value is applied for all the screen sizes with the lowest priority.
-     * @default false
-     */
-    var xs: Any? /* boolean | 'auto' | number */
+    GridBaseProps,
+    PropsWithSx,
+    PropsWithComponent {
+    override var sx: SxProps<Theme>?
 }
 
-external interface GridOwnProps :
-    SystemProps<Theme>,
-    Breakpoints,
-    PropsWithChildren,
-    PropsWithSx {
+external interface GridBaseProps : PropsWithChildren {
     /**
      * The content of the component.
      */
     override var children: ReactNode?
-
-    /**
-     * Override or extend the styles applied to the component.
-     */
-    var classes: GridClasses?
 
     /**
      * The number of columns.
@@ -117,17 +54,49 @@ external interface GridOwnProps :
     var direction: ResponsiveStyleValue<GridDirection>?
 
     /**
-     * If `true`, the component will have the flex *item* behavior.
-     * You should be wrapping *items* with a *container*.
-     * @default false
+     * Defines the offset value for the type `item` components.
      */
-    var item: Boolean?
+    var offset: ResponsiveStyleValue<Any /* GridOffset */>?
+
+    /**
+     * @internal
+     * The level of the grid starts from `0` and increases when the grid nests
+     * inside another grid. Nesting is defined as a container Grid being a direct
+     * child of a container Grid.
+     *
+     * ```js
+     * <Grid container> // level 0
+     *   <Grid container> // level 1
+     *     <Grid container> // level 2
+     * ```
+     *
+     * Only consecutive grid is considered nesting. A grid container will start at
+     * `0` if there are non-Grid container element above it.
+     *
+     * ```js
+     * <Grid container> // level 0
+     *   <div>
+     *     <Grid container> // level 0
+     * ```
+     *
+     * ```js
+     * <Grid container> // level 0
+     *   <Grid>
+     *     <Grid container> // level 0
+     * ```
+     */
+    var unstable_level: Number?
 
     /**
      * Defines the vertical space between the type `item` components.
      * It overrides the value of the `spacing` prop.
      */
     var rowSpacing: ResponsiveStyleValue<Any /* GridSpacing */>?
+
+    /**
+     * Defines the size of the the type `item` components.
+     */
+    var size: ResponsiveStyleValue<Union /* 'auto' | 'grow' | number | false */>?
 
     /**
      * Defines the space between the type `item` components.
@@ -137,36 +106,22 @@ external interface GridOwnProps :
     var spacing: ResponsiveStyleValue<Any /* GridSpacing */>?
 
     /**
-     * The system prop that allows defining system overrides as well as additional CSS styles.
-     */
-    override var sx: SxProps<Theme>?
-
-    /**
      * Defines the `flex-wrap` style property.
      * It's applied for all screen sizes.
      * @default 'wrap'
      */
     var wrap: GridWrap?
-
-    /**
-     * If `true`, it sets `min-width: 0` on the item.
-     * Refer to the limitations section of the documentation to better understand the use case.
-     * @default false
-     */
-    var zeroMinWidth: Boolean?
 }
 
 /**
  *
  * Demos:
  *
- * - [Grid](https://v6.mui.com/material-ui/react-grid/)
+ * - [Grid](https://v7.mui.com/material-ui/react-grid/)
  *
  * API:
  *
- * - [Grid API](https://v6.mui.com/material-ui/api/grid/)
- *
- * @deprecated Use the [`Grid2`](https://mui.com/material-ui/react-grid2/) component instead.
+ * - [Grid API](https://v7.mui.com/material-ui/api/grid/)
  */
 @JsName("default")
 external val Grid: FC<GridProps>

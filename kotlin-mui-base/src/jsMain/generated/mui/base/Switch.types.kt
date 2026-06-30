@@ -34,10 +34,10 @@ external interface SwitchOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'span', SwitchRootSlotPropsOverrides, SwitchOwnerState> */
-        var thumb: Props? /* SlotComponentProps<'span', SwitchThumbSlotPropsOverrides, SwitchOwnerState> */
-        var input: Props? /* SlotComponentProps<'input', SwitchInputSlotPropsOverrides, SwitchOwnerState> */
-        var track: Props? /* SlotComponentProps<'span', SwitchTrackSlotPropsOverrides, SwitchOwnerState> */
+        var root: Props?
+        var thumb: Props?
+        var input: Props?
+        var track: Props?
     }
 }
 

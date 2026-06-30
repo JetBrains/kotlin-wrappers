@@ -112,9 +112,7 @@ external interface ModalOwnProps : PropsWithChildren {
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
      */
-    var onClose: Any? /* {
-    bivarianceHack(event: {}, reason: 'backdropClick' | 'escapeKeyDown'): void;
-}['bivarianceHack'] */
+    var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * A function called when a transition enters.
@@ -138,8 +136,8 @@ external interface ModalOwnProps : PropsWithChildren {
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', ModalRootSlotPropsOverrides, ModalOwnerState> */
-        var backdrop: Props? /* SlotComponentProps<'div', ModalBackdropSlotPropsOverrides, ModalOwnerState> */
+        var root: Props?
+        var backdrop: Props?
     }
 
     /**
@@ -178,7 +176,7 @@ external interface ModalRootSlotProps :
 }
 
 external interface ModalBackdropSlotProps : PropsWithChildren {
-    // var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
+    var `aria-hidden`: Any /* React.AriaAttributes['aria-hidden'] */
 
     override var children: ReactNode?
 

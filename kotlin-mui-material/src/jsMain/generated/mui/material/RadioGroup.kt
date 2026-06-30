@@ -44,12 +44,12 @@ external interface RadioGroupProps :
  *
  * Demos:
  *
- * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
+ * - [Radio Group](https://v7.mui.com/material-ui/react-radio-button/)
  *
  * API:
  *
- * - [RadioGroup API](https://v6.mui.com/material-ui/api/radio-group/)
- * - inherits [FormGroup API](https://v6.mui.com/material-ui/api/form-group/)
+ * - [RadioGroup API](https://v7.mui.com/material-ui/api/radio-group/)
+ * - inherits [FormGroup API](https://v7.mui.com/material-ui/api/form-group/)
  */
 @JsName("default")
 external val RadioGroup: FC<RadioGroupProps>

@@ -30,5 +30,5 @@ external interface UseMediaQueryOptions {
     /**
      * You can provide your own implementation of `matchMedia`, it's used when rendering server-side.
      */
-    var ssrMatchMedia: ((query: String) -> dynamic)?
+    var ssrMatchMedia: ((query: String) -> Any)?
 }

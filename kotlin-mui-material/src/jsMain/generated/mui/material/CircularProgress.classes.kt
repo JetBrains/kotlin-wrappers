@@ -25,16 +25,19 @@ sealed external interface CircularProgressClasses {
     /** Styles applied to the svg element. */
     val svg: ClassName
 
+    /** Styles applied to the track slot if `enableTrackSlot={true}`. */
+    val track: ClassName
+
     /** Styles applied to the `circle` svg path. */
     val circle: ClassName
 
     /** Styles applied to the `circle` svg path if `variant="determinate"`.
-     * @deprecated Combine the [.MuiCircularProgress-circle](/material-ui/api/circular-progress/#circular-progress-classes-circle) and [.MuiCircularProgress-determinate](/material-ui/api/circular-progress/#circular-progress-classes-determinate) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiCircularProgress-circle](/material-ui/api/circular-progress/#circular-progress-classes-MuiCircularProgress-circle) and [.MuiCircularProgress-determinate](/material-ui/api/circular-progress/#circular-progress-classes-MuiCircularProgress-determinate) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val circleDeterminate: ClassName
 
     /** Styles applied to the `circle` svg path if `variant="indeterminate"`.
-     * @deprecated Combine the [.MuiCircularProgress-circle](/material-ui/api/circular-progress/#circular-progress-classes-circle) and [.MuiCircularProgress-indeterminate](/material-ui/api/circular-progress/#circular-progress-classes-indeterminate) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiCircularProgress-circle](/material-ui/api/circular-progress/#circular-progress-classes-MuiCircularProgress-circle) and [.MuiCircularProgress-indeterminate](/material-ui/api/circular-progress/#circular-progress-classes-MuiCircularProgress-indeterminate) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val circleIndeterminate: ClassName
 

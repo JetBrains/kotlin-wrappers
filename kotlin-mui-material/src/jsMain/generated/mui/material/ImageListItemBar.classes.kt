@@ -29,17 +29,17 @@ sealed external interface ImageListItemBarClasses {
     val titleWrap: ClassName
 
     /** Styles applied to the title and subtitle container element if `position="below"`.
-     * @deprecated Combine the [.MuiImageListItemBar-titleWrap](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-titleWrap) and [.MuiImageListItemBar-positionBelow](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-positionBelow) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiImageListItemBar-titleWrap](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-titleWrap) and [.MuiImageListItemBar-positionBelow](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-positionBelow) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val titleWrapBelow: ClassName
 
     /** Styles applied to the container element if `actionPosition="left"`.
-     * @deprecated Combine the [.MuiImageListItemBar-titleWrap](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-titleWrap) and [.MuiImageListItemBar-actionPositionLeft](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-actionPositionLeft) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiImageListItemBar-titleWrap](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-titleWrap) and [.MuiImageListItemBar-actionPositionLeft](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-actionPositionLeft) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val titleWrapActionPosLeft: ClassName
 
     /** Styles applied to the container element if `actionPosition="right"`.
-     * @deprecated Combine the [.MuiImageListItemBar-titleWrap](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-titleWrap) and [.MuiImageListItemBar-actionPositionRight](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-actionPositionRight) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiImageListItemBar-titleWrap](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-titleWrap) and [.MuiImageListItemBar-actionPositionRight](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-actionPositionRight) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val titleWrapActionPosRight: ClassName
 
@@ -53,7 +53,7 @@ sealed external interface ImageListItemBarClasses {
     val actionIcon: ClassName
 
     /** Styles applied to the actionIcon if `actionPosition="left"`.
-     * @deprecated Combine the [.MuiImageListItemBar-actionIcon](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-actionIcon) and [.MuiImageListItemBar-actionPositionLeft](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-actionPositionLeft) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Combine the [.MuiImageListItemBar-actionIcon](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-actionIcon) and [.MuiImageListItemBar-actionPositionLeft](/material-ui/api/image-list-item-bar/#image-list-item-bar-classes-MuiImageListItemBar-actionPositionLeft) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     val actionIconActionPosLeft: ClassName
 }

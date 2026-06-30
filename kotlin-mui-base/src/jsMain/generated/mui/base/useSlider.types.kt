@@ -15,7 +15,7 @@ external interface UseSliderParameters {
     /**
      * The id of the element containing a label for the slider.
      */
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * The default value. Use when the component is not controlled.
@@ -165,7 +165,7 @@ external interface UseSliderReturnValue {
     /**
      * The index of the thumb which is focused on the slider.
      */
-    var focusedThumbIndex: Number
+    var focusedThumbIndex: Int
 
     /**
      * Resolver for the hidden input slot's props.

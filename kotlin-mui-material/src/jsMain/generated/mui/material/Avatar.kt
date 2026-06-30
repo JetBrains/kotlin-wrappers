@@ -16,21 +16,39 @@ import web.html.HTMLImageElement
 
 external interface AvatarProps :
     AvatarOwnProps,
+    AvatarSlotsAndSlotProps,
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
 external interface AvatarSlots {
     /**
-     * The component that renders the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Collapse
+     * The component that renders the root slot.
+     * @default 'div'
      */
-    var img: ComponentType<*>
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the img slot.
+     * @default 'img'
+     */
+    var img: ElementType<*>
+
+    /**
+     * The component that renders the fallback slot.
+     * @default Person icon
+     */
+    var fallback: ElementType<*>
 }
 
 external interface AvatarSlotProps : Props {
-    /** TS: SlotProps< React.ElementType<React.ImgHTMLAttributes<HTMLImageElement>>, {}, AvatarOwnProps > */
-    var img: Any?
+    /** TS: SlotProps<'div', AvatarRootSlotPropsOverrides, AvatarOwnProps> */
+    var root: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps<'img', AvatarImgSlotPropsOverrides, AvatarOwnProps> */
+    var img: ImgHTMLAttributes<HTMLImageElement>?
+
+    /** TS: SlotProps<React.ElementType<SvgIconProps>, AvatarFallbackSlotPropsOverrides, AvatarOwnProps> */
+    var fallback: SvgIconProps?
 }
 
 external interface AvatarSlotsAndSlotProps : Props {
@@ -60,9 +78,9 @@ external interface AvatarOwnProps :
     var classes: AvatarClasses?
 
     /**
-     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes) applied to the `img` element if the component is used to display an image.
+     * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#attributes) applied to the `img` element if the component is used to display an image.
      * It can be used to listen for the loading error event.
-     * @deprecated Use `slotProps.img` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.img` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var imgProps: ImgHTMLAttributes<HTMLImageElement>?
 
@@ -98,11 +116,11 @@ external interface AvatarOwnProps :
  *
  * Demos:
  *
- * - [Avatar](https://v6.mui.com/material-ui/react-avatar/)
+ * - [Avatar](https://v7.mui.com/material-ui/react-avatar/)
  *
  * API:
  *
- * - [Avatar API](https://v6.mui.com/material-ui/api/avatar/)
+ * - [Avatar API](https://v7.mui.com/material-ui/api/avatar/)
  */
 @JsName("default")
 external val Avatar: FC<AvatarProps>

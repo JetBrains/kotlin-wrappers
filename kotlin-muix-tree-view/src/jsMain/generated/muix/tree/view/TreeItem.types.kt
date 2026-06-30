@@ -3,18 +3,25 @@
 package muix.tree.view
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import react.*
+import react.dom.events.FocusEventHandler
+import react.dom.events.KeyboardEventHandler
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLElement
+import web.html.HTMLLIElement
 
 external interface TreeItemProps :
-    react.dom.html.HTMLAttributes<web.html.HTMLLIElement>,
-    react.PropsWithChildren,
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    HTMLAttributes<HTMLLIElement>,
+    PropsWithChildren,
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * The content of the component.
      */
-    override var children: react.ReactNode?
+    override var children: ReactNode?
 
     override var className: ClassName?
 
@@ -40,13 +47,13 @@ external interface TreeItemProps :
      * @deprecated Consider using the `<TreeItem2 />` component or the `useTreeItem2` hook instead. For more details, see https://mui.com/x/react-tree-view/tree-item-customization/.
      * @default TreeItemContent
      */
-    var ContentComponent: react.ComponentType<TreeItemContentProps>?
+    var ContentComponent: ComponentType<TreeItemContentProps>?
 
     /**
      * Props applied to ContentComponent.
      * @deprecated Consider using the `<TreeItem2 />` component or the `useTreeItem2` hook instead. For more details, see https://mui.com/x/react-tree-view/tree-item-customization/.
      */
-    var ContentProps: react.Props? /* React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLElement>; } */
+    var ContentProps: HTMLAttributes<HTMLElement>?
 
     /**
      * If `true`, the item is disabled.
@@ -59,12 +66,12 @@ external interface TreeItemProps :
      * Use the `onItemFocus` callback on the tree if you need to monitor a item's focus.
      */
     @Deprecated("See documentation")
-    override var onFocus: react.dom.events.FocusEventHandler<web.html.HTMLLIElement>?
+    override var onFocus: FocusEventHandler<HTMLLIElement>?
 
     /**
      * The Tree Item label.
      */
-    var label: react.ReactNode?
+    var label: ReactNode?
 
     /**
      * The id of the item.
@@ -79,57 +86,57 @@ external interface TreeItemProps :
     /**
      * Callback fired when a key of the keyboard is pressed on the item.
      */
-    override var onKeyDown: react.dom.events.KeyboardEventHandler<web.html.HTMLLIElement>?
+    override var onKeyDown: KeyboardEventHandler<HTMLLIElement>?
 }
 
 external interface TreeItemSlots {
     /**
      * The icon used to collapse the item.
      */
-    var collapseIcon: react.ElementType<*>?
+    var collapseIcon: ElementType<*>?
 
     /**
      * The icon used to expand the item.
      */
-    var expandIcon: react.ElementType<*>?
+    var expandIcon: ElementType<*>?
 
     /**
      * The icon displayed next to an end item.
      */
-    var endIcon: react.ElementType<*>?
+    var endIcon: ElementType<*>?
 
     /**
      * The icon to display next to the Tree Item's label.
      */
-    var icon: react.ElementType<*>?
+    var icon: ElementType<*>?
 
     /**
      * The component that animates the appearance / disappearance of the item's children.
      * @default TreeItem2Group
      */
-    var groupTransition: react.ElementType<*>?
+    var groupTransition: ElementType<*>?
 }
 
-external interface TreeItemSlotProps : react.Props {
-    var collapseIcon: react.Props?
+external interface TreeItemSlotProps : Props {
+    var collapseIcon: Props?
 
-    var expandIcon: react.Props?
+    var expandIcon: Props?
 
-    var endIcon: react.Props?
+    var endIcon: Props?
 
-    var icon: react.Props?
+    var icon: Props?
 
-    var groupTransition: react.Props?
+    var groupTransition: Props?
 }
 
-external interface TreeItemOwnerState {
+external interface TreeItemOwnerState : TreeItemProps {
     var expanded: Boolean
 
     var focused: Boolean
 
     var selected: Boolean
 
-    var disabled: Boolean
+    override var disabled: Boolean?
 
     var indentationAtItemLevel: Boolean
 }

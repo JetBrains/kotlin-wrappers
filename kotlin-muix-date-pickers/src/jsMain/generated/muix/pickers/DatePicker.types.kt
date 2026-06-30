@@ -2,7 +2,9 @@
 
 package muix.pickers
 
-external interface DatePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props {
+import react.Props
+
+external interface DatePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
     /**
      * CSS media query when `Mobile` mode will be changed to `Desktop`.
      * @default '@media (pointer: fine)'
@@ -31,4 +33,4 @@ external interface DatePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : 
 
 external interface DatePickerSlots<TDate>
 
-external interface DatePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props
+external interface DatePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>

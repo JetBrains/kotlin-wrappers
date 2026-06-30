@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -13,8 +14,8 @@ import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.StandardProps
 import mui.system.SxProps
+import mui.system.Union
 import react.*
-import react.dom.events.ReactEventHandler
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 
@@ -26,19 +27,19 @@ external interface DialogProps :
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
-    // var `aria-describedby`: String?
+    var `aria-describedby`: String?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * Informs assistive technologies that the element is modal.
      * It's added on the element with role="dialog".
      * @default true
      */
-    // var `aria-modal`: Any? /* boolean | 'true' | 'false' */
+    var `aria-modal`: Any? /* boolean | 'true' | 'false' */
 
     /**
      * Dialog children, usually the included sub-components.
@@ -79,12 +80,6 @@ external interface DialogProps :
     var maxWidth: Any? /* Breakpoint | false */
 
     /**
-     * Callback fired when the backdrop is clicked.
-     * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
-     */
-    override var onBackdropClick: ReactEventHandler<*>?
-
-    /**
      * Callback fired when the component requests to be closed.
      *
      * @param {object} event The event source of the callback.
@@ -98,6 +93,14 @@ external interface DialogProps :
     override var open: Boolean
 
     /**
+     * The ARIA role for the dialog element.
+     * The main dialog role is `dialog`, but `alertdialog` can be used if the content of the dialog requires immediate attention.
+     * See https://www.w3.org/TR/wai-aria-1.2/#dialog and https://www.w3.org/TR/wai-aria-1.2/#alertdialog for more details.
+     * @default 'dialog'
+     */
+    var role: Union? /* 'dialog' | 'alertdialog' */
+
+    /**
      * The component used to render the body of the dialog.
      * @default Paper
      */
@@ -106,7 +109,7 @@ external interface DialogProps :
     /**
      * Props applied to the [`Paper`](https://mui.com/material-ui/api/paper/) element.
      * @default {}
-     * @deprecated Use `slotProps.paper` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var PaperProps: PaperProps?
 
@@ -125,9 +128,9 @@ external interface DialogProps :
      * The component used for the transition.
      * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
      * @default Fade
-     * @deprecated Use `slots.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
-    var TransitionComponent: ComponentType<*>?
+    var TransitionComponent: ComponentType<TransitionProps>?
 
     /**
      * The duration for the transition, in milliseconds.
@@ -142,7 +145,7 @@ external interface DialogProps :
     /**
      * Props applied to the transition element.
      * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated Use `slotProps.transition` instead. This prop will be removed in v7. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated Use `slotProps.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var TransitionProps: TransitionProps?
 }
@@ -181,16 +184,16 @@ external interface DialogSlotProps : Props {
     /** TS: SlotProps<React.ElementType<ModalProps>, DialogRootSlotPropsOverrides, DialogOwnerState> */
     var root: ModalProps?
 
-    /** TS: SlotProps< React.ElementType<BackdropProps>, DialogBackdropSlotPropsOverrides, DialogOwnerState > */
+    /** TS: SlotProps<React.ElementType<BackdropProps>, DialogBackdropSlotPropsOverrides, DialogOwnerState> */
     var backdrop: BackdropProps?
 
     /** TS: SlotProps<'div', DialogContainerSlotPropsOverrides, DialogOwnerState> */
     var container: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotComponentProps< React.ElementType, TransitionProps & DialogTransitionSlotPropsOverrides, DialogOwnerState > */
+    /** TS: SlotComponentProps<React.ElementType, TransitionProps & DialogTransitionSlotPropsOverrides, DialogOwnerState> */
     var transition: TransitionProps?
 
-    /** TS: SlotProps< React.ElementType<PaperProps>, DialogPaperSlotPropsOverrides, DialogOwnerState > */
+    /** TS: SlotProps<React.ElementType<PaperProps>, DialogPaperSlotPropsOverrides, DialogOwnerState> */
     var paper: PaperProps?
 }
 
@@ -207,12 +210,12 @@ external interface DialogOwnerState
  *
  * Demos:
  *
- * - [Dialog](https://v6.mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [Dialog API](https://v6.mui.com/material-ui/api/dialog/)
- * - inherits [Modal API](https://v6.mui.com/material-ui/api/modal/)
+ * - [Dialog API](https://v7.mui.com/material-ui/api/dialog/)
+ * - inherits [Modal API](https://v7.mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Dialog: FC<DialogProps>

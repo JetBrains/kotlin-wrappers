@@ -57,7 +57,7 @@ external interface FormControlOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', FormControlRootSlotPropsOverrides, FormControlOwnerState> */
+        var root: Props?
     }
 
     /**

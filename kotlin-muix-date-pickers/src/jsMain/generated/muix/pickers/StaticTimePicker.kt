@@ -4,7 +4,10 @@
 
 package muix.pickers
 
-external interface StaticTimePickerProps : react.Props
+import react.FC
+import react.Props
+
+external interface StaticTimePickerProps : Props
 
 /**
  * Demos:
@@ -16,4 +19,4 @@ external interface StaticTimePickerProps : react.Props
  *
  * - [StaticTimePicker API](https://mui.com/x/api/date-pickers/static-time-picker/)
  */
-external val StaticTimePicker: react.FC<StaticTimePickerProps>
+external val StaticTimePicker: FC<StaticTimePickerProps>

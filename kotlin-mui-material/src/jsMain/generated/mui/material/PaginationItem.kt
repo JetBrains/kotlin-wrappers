@@ -22,26 +22,42 @@ external interface PaginationItemProps :
     PropsWithComponent
 
 external interface PaginationItemSlots {
+    /**
+     * The component that renders the first page slot.
+     * @default FirstPageIcon
+     */
     var first: ElementType<*>
 
+    /**
+     * The component that renders the last page slot.
+     * @default LastPageIcon
+     */
     var last: ElementType<*>
 
+    /**
+     * The component that renders the next page slot.
+     * @default NavigateNextIcon
+     */
     var next: ElementType<*>
 
+    /**
+     * The component that renders the previous page slot.
+     * @default NavigateBeforeIcon
+     */
     var previous: ElementType<*>
 }
 
 external interface PaginationItemSlotProps : Props {
-    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState> */
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, PaginationItemFirstSlotPropsOverrides, PaginationItemOwnerState> */
     var first: HTMLAttributes<HTMLElement>?
 
-    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState> */
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, PaginationItemLastSlotPropsOverrides, PaginationItemOwnerState> */
     var last: HTMLAttributes<HTMLElement>?
 
-    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState> */
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, PaginationItemNextSlotPropsOverrides, PaginationItemOwnerState> */
     var next: HTMLAttributes<HTMLElement>?
 
-    /** TS: SlotProps< React.ElementType<React.HTMLProps<HTMLElement>>, {}, PaginationItemOwnerState > */
+    /** TS: SlotProps<React.ElementType<React.HTMLProps<HTMLElement>>, PaginationItemPreviousSlotPropsOverrides, PaginationItemOwnerState> */
     var previous: HTMLAttributes<HTMLElement>?
 }
 
@@ -76,7 +92,7 @@ external interface PaginationItemOwnProps :
      * It's recommended to use the `slots` prop instead.
      *
      * @default {}
-     * @deprecated use the `slots` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var components: Components?
 
@@ -138,11 +154,12 @@ external interface PaginationItemOwnProps :
  *
  * Demos:
  *
- * - [Pagination](https://v6.mui.com/material-ui/react-pagination/)
+ * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [PaginationItem API](https://v6.mui.com/material-ui/api/pagination-item/)
+ * - [PaginationItem API](https://v7.mui.com/material-ui/api/pagination-item/)
+ * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val PaginationItem: FC<PaginationItemProps>

@@ -37,7 +37,7 @@ external interface InputBaseProps : Props {
     /**
      * Number of rows to display when multiline option is set to true.
      */
-    var rows: Number?
+    var rows: Int?
 
     /**
      * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
@@ -49,11 +49,11 @@ external interface InputBaseProps : Props {
 external interface InputOwnProps :
     InputBaseProps,
     PropsWithClassName {
-    // var `aria-describedby`: String?
+    var `aria-describedby`: String?
 
-    // var `aria-label`: String?
+    var `aria-label`: String?
 
-    // var `aria-labelledby`: String?
+    var `aria-labelledby`: String?
 
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
@@ -115,8 +115,8 @@ external interface InputOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'div', InputRootSlotPropsOverrides, InputOwnerState> */
-        var input: Props? /* SlotComponentProps<'input', InputInputSlotPropsOverrides, InputOwnerState> */
+        var root: Props?
+        var input: Props?
     }
 
     /**

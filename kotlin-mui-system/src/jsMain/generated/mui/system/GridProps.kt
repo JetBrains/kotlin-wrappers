@@ -93,7 +93,7 @@ external interface GridBaseProps : PropsWithChildren {
      * It can only be used on a type `container` component.
      * @default 0
      */
-    var spacing: Any? /* ResponsiveStyleValue<GridSpacing> | undefined */
+    var spacing: ResponsiveStyleValue<Any /* GridSpacing */>?
 
     /**
      * Defines the `flex-wrap` style property.

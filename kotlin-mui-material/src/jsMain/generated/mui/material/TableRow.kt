@@ -56,11 +56,11 @@ external interface TableRowOwnProps :
  *
  * Demos:
  *
- * - [Table](https://v6.mui.com/material-ui/react-table/)
+ * - [Table](https://v7.mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableRow API](https://v6.mui.com/material-ui/api/table-row/)
+ * - [TableRow API](https://v7.mui.com/material-ui/api/table-row/)
  */
 @JsName("default")
 external val TableRow: FC<TableRowProps>

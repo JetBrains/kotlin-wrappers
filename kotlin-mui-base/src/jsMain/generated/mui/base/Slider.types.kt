@@ -25,12 +25,12 @@ external interface SliderOwnProps :
     /**
      * The label of the slider.
      */
-    // var `aria-label`: String?
+    var `aria-label`: String?
 
     /**
      * A string value that provides a user-friendly name for the current value of the slider.
      */
-    // var `aria-valuetext`: String?
+    var `aria-valuetext`: String?
 
     /**
      * Accepts a function which returns a string value that provides a user-friendly name for the thumb labels of the slider.
@@ -56,14 +56,14 @@ external interface SliderOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'span', SliderRootSlotPropsOverrides, SliderOwnerState> */
-        var track: Props? /* SlotComponentProps<'span', SliderTrackSlotPropsOverrides, SliderOwnerState> */
-        var rail: Props? /* SlotComponentProps<'span', SliderRailSlotPropsOverrides, SliderOwnerState> */
-        var thumb: Props? /* SlotComponentPropsWithSlotState<'span', SliderThumbSlotPropsOverrides, SliderOwnerState, SliderThumbSlotState> */
-        var mark: Props? /* SlotComponentProps<'span', SliderMarkSlotPropsOverrides, SliderOwnerState> */
-        var markLabel: Props? /* SlotComponentProps<'span', SliderMarkLabelSlotPropsOverrides, SliderOwnerState> */
-        var valueLabel: Props? /* SlotComponentProps<React.ElementType, SliderValueLabelSlotPropsOverrides, SliderOwnerState> */
-        var input: Props? /* SlotComponentProps<'input', SliderInputSlotPropsOverrides, SliderOwnerState> */
+        var root: Props?
+        var track: Props?
+        var rail: Props?
+        var thumb: Props?
+        var mark: Props?
+        var markLabel: Props?
+        var valueLabel: Props?
+        var input: Props?
     }
 
     /**

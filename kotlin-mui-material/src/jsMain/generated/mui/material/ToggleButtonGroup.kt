@@ -97,11 +97,11 @@ external interface ToggleButtonGroupProps :
  *
  * Demos:
  *
- * - [Toggle Button](https://v6.mui.com/material-ui/react-toggle-button/)
+ * - [Toggle Button](https://v7.mui.com/material-ui/react-toggle-button/)
  *
  * API:
  *
- * - [ToggleButtonGroup API](https://v6.mui.com/material-ui/api/toggle-button-group/)
+ * - [ToggleButtonGroup API](https://v7.mui.com/material-ui/api/toggle-button-group/)
  */
 @JsName("default")
 external val ToggleButtonGroup: FC<ToggleButtonGroupProps>

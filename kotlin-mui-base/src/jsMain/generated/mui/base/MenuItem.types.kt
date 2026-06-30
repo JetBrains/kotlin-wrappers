@@ -42,7 +42,7 @@ external interface MenuItemOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* SlotComponentProps<'li', MenuItemRootSlotPropsOverrides, MenuItemOwnerState> */
+        var root: Props?
     }
 
     /**

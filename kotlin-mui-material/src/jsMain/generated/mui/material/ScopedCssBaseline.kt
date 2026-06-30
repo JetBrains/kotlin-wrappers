@@ -34,7 +34,7 @@ external interface ScopedCssBaselineOwnProps :
 
     /**
      * Enable `color-scheme` CSS property to use `theme.palette.mode`.
-     * For more details, check out https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+     * For more details, check out https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme
      * For browser support, check out https://caniuse.com/?search=color-scheme
      */
     var enableColorScheme: Boolean?
@@ -49,11 +49,11 @@ external interface ScopedCssBaselineOwnProps :
  *
  * Demos:
  *
- * - [CSS Baseline](https://v6.mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://v7.mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
- * - [ScopedCssBaseline API](https://v6.mui.com/material-ui/api/scoped-css-baseline/)
+ * - [ScopedCssBaseline API](https://v7.mui.com/material-ui/api/scoped-css-baseline/)
  */
 @JsName("default")
 external val ScopedCssBaseline: FC<ScopedCssBaselineProps>

@@ -31,7 +31,7 @@ external interface FormControlLabelProps :
     /**
      * The props used for each slot inside.
      * @default {}
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
      */
     var componentsProps: ComponentsProps?
 
@@ -122,13 +122,13 @@ external interface FormControlLabelSlotsAndSlotProps : Props {
  *
  * Demos:
  *
- * - [Checkbox](https://v6.mui.com/material-ui/react-checkbox/)
- * - [Radio Group](https://v6.mui.com/material-ui/react-radio-button/)
- * - [Switch](https://v6.mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://v7.mui.com/material-ui/react-checkbox/)
+ * - [Radio Group](https://v7.mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://v7.mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormControlLabel API](https://v6.mui.com/material-ui/api/form-control-label/)
+ * - [FormControlLabel API](https://v7.mui.com/material-ui/api/form-control-label/)
  */
 @JsName("default")
 external val FormControlLabel: FC<FormControlLabelProps>

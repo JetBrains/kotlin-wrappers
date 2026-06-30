@@ -2,7 +2,9 @@
 
 package muix.pickers
 
-external interface MobileDatePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props {
+import react.Props
+
+external interface MobileDatePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
     /**
      * Overridable component slots.
      * @default {}
@@ -24,4 +26,4 @@ external interface MobileDatePickerProps<TDate, TEnableAccessibleFieldDOMStructu
 
 external interface MobileDatePickerSlots<TDate>
 
-external interface MobileDatePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure> : react.Props
+external interface MobileDatePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>

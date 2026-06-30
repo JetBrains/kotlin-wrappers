@@ -30,14 +30,14 @@ external interface Breakpoints {
     /**
      * @param key - A breakpoint key (`xs`, `sm`, etc.) or a screen width number in px.
      * @returns A media query string ready to be used with most styling solutions, which matches screen widths greater than the screen size given by the breakpoint key (inclusive).
-     * @see [API documentation](https://v6.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-up-key-media-query)
+     * @see [API documentation](https://v7.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-up-key-media-query)
      */
     var up: (key: Breakpoint) -> String
 
     /**
      * @param key - A breakpoint key (`xs`, `sm`, etc.) or a screen width number in px.
      * @returns A media query string ready to be used with most styling solutions, which matches screen widths less than the screen size given by the breakpoint key (exclusive).
-     * @see [API documentation](https://v6.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-down-key-media-query)
+     * @see [API documentation](https://v7.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-down-key-media-query)
      */
     var down: (key: Breakpoint) -> String
 
@@ -46,7 +46,7 @@ external interface Breakpoints {
      * @param end - A breakpoint key (`xs`, `sm`, etc.) or a screen width number in px.
      * @returns A media query string ready to be used with most styling solutions, which matches screen widths greater than
      *          the screen size given by the breakpoint key in the first argument (inclusive) and less than the screen size given by the breakpoint key in the second argument (exclusive).
-     * @see [API documentation](https://v6.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-between-start-end-media-query)
+     * @see [API documentation](https://v7.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-between-start-end-media-query)
      */
     var between: (start: Breakpoint, end: Breakpoint) -> String
 
@@ -54,7 +54,7 @@ external interface Breakpoints {
      * @param key - A breakpoint key (`xs`, `sm`, etc.) or a screen width number in px.
      * @returns A media query string ready to be used with most styling solutions, which matches screen widths starting from
      *          the screen size given by the breakpoint key (inclusive) and stopping at the screen size given by the next breakpoint key (exclusive).
-     * @see [API documentation](https://v6.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-only-key-media-query)
+     * @see [API documentation](https://v7.mui.com/material-ui/customization/breakpoints/#theme-breakpoints-only-key-media-query)
      */
     var only: (key: Breakpoint) -> String
 
@@ -78,7 +78,7 @@ external interface BreakpointsOptions : Breakpoints {
      * For example, `step: 5` means that `down(500)` will result in `'(max-width: 499.95px)'`.
      * @default 5
      */
-    var step: Any? /* number | undefined */
+    var step: Number?
 
     /**
      * The unit used for the breakpoint's values.

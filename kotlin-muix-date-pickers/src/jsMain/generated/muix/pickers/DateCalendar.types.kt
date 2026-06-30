@@ -3,12 +3,17 @@
 package muix.pickers
 
 import mui.material.styles.Theme
+import mui.system.PropsWithSx
 import mui.system.SxProps
+import react.ElementType
+import react.Props
+import react.PropsWithClassName
+import react.ReactNode
 import web.cssom.ClassName
 
 external interface DateCalendarProps<TDate> :
-    react.PropsWithClassName,
-    mui.system.PropsWithSx {
+    PropsWithClassName,
+    PropsWithSx {
     /**
      * The selected value.
      * Used when the component is controlled.
@@ -58,14 +63,14 @@ external interface DateCalendarSlots<TDate> {
      * Check the [PickersCalendarHeader](https://mui.com/x/api/date-pickers/pickers-calendar-header/) component.
      * @default PickersCalendarHeader
      */
-    var calendarHeader: react.ElementType<PickersCalendarHeaderProps<TDate>>?
+    var calendarHeader: ElementType<PickersCalendarHeaderProps<TDate>>?
 }
 
-external interface DateCalendarSlotProps<TDate> : react.Props {
-    var calendarHeader: react.Props?
+external interface DateCalendarSlotProps<TDate> : Props {
+    var calendarHeader: Props?
 }
 
-external interface ExportedDateCalendarProps<TDate> : react.Props {
+external interface ExportedDateCalendarProps<TDate> : Props {
     /**
      * If `true`, the picker and text field are disabled.
      * @default false
@@ -89,7 +94,7 @@ external interface ExportedDateCalendarProps<TDate> : react.Props {
      * @returns {React.ReactNode} The node to render when loading.
      * @default () => <span>...</span>
      */
-    var renderLoading: (() -> react.ReactNode)?
+    var renderLoading: (() -> ReactNode)?
 
     /**
      * Callback fired on year change.

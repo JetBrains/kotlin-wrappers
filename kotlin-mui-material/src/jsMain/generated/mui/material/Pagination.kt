@@ -42,11 +42,7 @@ external interface PaginationProps :
      * @param {boolean} selected If true, the current page is selected.
      * @returns {string}
      */
-    var getItemAriaLabel: ((
-        type: Union, /* UsePaginationItem['type'] */
-        page: Number?,
-        selected: Boolean,
-    ) -> String)?
+    var getItemAriaLabel: ((type: Union /* UsePaginationItem['type'] */, page: Number?, selected: Boolean) -> String)?
 
     /**
      * Render the item.
@@ -95,11 +91,11 @@ external interface PaginationRenderItemParams :
  *
  * Demos:
  *
- * - [Pagination](https://v6.mui.com/material-ui/react-pagination/)
+ * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [Pagination API](https://v6.mui.com/material-ui/api/pagination/)
+ * - [Pagination API](https://v7.mui.com/material-ui/api/pagination/)
  */
 @JsName("default")
 external val Pagination: FC<PaginationProps>

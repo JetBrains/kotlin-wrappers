@@ -37,7 +37,7 @@ external interface PaperOwnProps :
      * It accepts values between 0 and 24 inclusive.
      * @default 1
      */
-    var elevation: Number?
+    var elevation: Int?
 
     /**
      * If `true`, rounded corners are disabled.
@@ -61,12 +61,13 @@ external interface PaperOwnProps :
  *
  * Demos:
  *
- * - [Card](https://v6.mui.com/material-ui/react-card/)
- * - [Paper](https://v6.mui.com/material-ui/react-paper/)
+ * - [Card](https://v7.mui.com/material-ui/react-card/)
+ * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
+ * - [Paper](https://v7.mui.com/material-ui/react-paper/)
  *
  * API:
  *
- * - [Paper API](https://v6.mui.com/material-ui/api/paper/)
+ * - [Paper API](https://v7.mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Paper: FC<PaperProps>
