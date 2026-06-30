@@ -50,23 +50,9 @@ external interface ListItemTextProps :
     var primary: ReactNode?
 
     /**
-     * These props will be forwarded to the primary typography component
-     * (as long as disableTypography is not `true`).
-     * @deprecated Use `slotProps.primary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var primaryTypographyProps: TypographyProps?
-
-    /**
      * The secondary content element.
      */
     var secondary: ReactNode?
-
-    /**
-     * These props will be forwarded to the secondary typography component
-     * (as long as disableTypography is not `true`).
-     * @deprecated Use `slotProps.secondary` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var secondaryTypographyProps: TypographyProps?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

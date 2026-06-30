@@ -45,25 +45,6 @@ external interface ModalOwnProps :
     PropsWithClassName,
     PropsWithSx {
     /**
-     * A backdrop component. This prop enables custom backdrop rendering.
-     * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
-     * Use the `slots.backdrop` prop to make your application ready for the next version of Material UI.
-     * @default styled(Backdrop, {
-     *   name: 'MuiModal',
-     *   slot: 'Backdrop',
-     * })({
-     *   zIndex: -1,
-     * })
-     */
-    var BackdropComponent: ElementType<BackdropProps>?
-
-    /**
-     * Props applied to the [`Backdrop`](https://mui.com/material-ui/api/backdrop/) element.
-     * @deprecated Use `slotProps.backdrop` instead.
-     */
-    var BackdropProps: BackdropProps?
-
-    /**
      * A single child content element.
      */
     override var children: ReactNode? /* ReactElement<*>? */
@@ -83,35 +64,6 @@ external interface ModalOwnProps :
      * @default false
      */
     var closeAfterTransition: Boolean?
-
-    /**
-     * The components used for each slot inside.
-     *
-     * @deprecated Use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     *
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Root: ElementType<*>?
-        var Backdrop: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * @deprecated Use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     *
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var root: Props?
-        var backdrop: Props?
-    }
 
     /**
      * An HTML element or function that returns one.

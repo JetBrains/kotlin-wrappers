@@ -17,6 +17,7 @@ import mui.system.SxProps
 import mui.system.Union
 import react.*
 import react.dom.html.HTMLAttributes
+import web.dom.ElementId
 import web.html.HTMLDivElement
 
 external interface DialogProps :
@@ -27,19 +28,22 @@ external interface DialogProps :
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
-    var `aria-describedby`: String?
+    @JsName("aria-describedby")
+    var ariaDescribedBy: ElementId?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledBy: ElementId?
 
     /**
      * Informs assistive technologies that the element is modal.
      * It's added on the element with role="dialog".
      * @default true
      */
-    var `aria-modal`: Any? /* boolean | 'true' | 'false' */
+    @JsName("aria-modal")
+    var ariaModal: Boolean?
 
     /**
      * Dialog children, usually the included sub-components.
@@ -107,13 +111,6 @@ external interface DialogProps :
     var PaperComponent: ComponentType<PaperProps>?
 
     /**
-     * Props applied to the [`Paper`](https://mui.com/material-ui/api/paper/) element.
-     * @default {}
-     * @deprecated Use `slotProps.paper` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var PaperProps: PaperProps?
-
-    /**
      * Determine the container for scrolling the dialog.
      * @default 'paper'
      */
@@ -125,14 +122,6 @@ external interface DialogProps :
     override var sx: SxProps<Theme>?
 
     /**
-     * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Fade
-     * @deprecated Use `slots.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var TransitionComponent: ComponentType<TransitionProps>?
-
-    /**
      * The duration for the transition, in milliseconds.
      * You may specify a single timeout for all transitions, or individually with an object.
      * @default {
@@ -141,13 +130,6 @@ external interface DialogProps :
      * }
      */
     var transitionDuration: Any? /* TransitionProps['timeout'] */
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated Use `slotProps.transition` instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var TransitionProps: TransitionProps?
 }
 
 external interface DialogSlots {

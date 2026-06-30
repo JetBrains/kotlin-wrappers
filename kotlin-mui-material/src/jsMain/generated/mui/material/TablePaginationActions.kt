@@ -18,12 +18,6 @@ external interface TablePaginationActionsProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithClassName {
     /**
-     * This prop is an alias for `slotProps.previousButton` and will be overridden by it if both are used.
-     * @deprecated Use `slotProps.previousButton` instead.
-     */
-    var backIconButtonProps: IconButtonProps?
-
-    /**
      * Override or extend the styles applied to the component.
      */
     var classes: Any? /* unknown;{} */
@@ -47,12 +41,6 @@ external interface TablePaginationActionsProps :
      * @returns {string}
      */
     var getItemAriaLabel: (type: Union /* 'first' | 'last' | 'next' | 'previous' */) -> String
-
-    /**
-     * This prop is an alias for `slotProps.nextButton` and will be overridden by it if both are used.
-     * @deprecated Use `slotProps.nextButton` instead.
-     */
-    var nextIconButtonProps: IconButtonProps?
 
     var onPageChange: (event: MouseEvent<HTMLButtonElement, *>?, page: Number) -> Unit
 

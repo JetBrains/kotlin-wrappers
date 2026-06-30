@@ -67,19 +67,6 @@ external interface DrawerProps :
     var open: Boolean?
 
     /**
-     * Props applied to the [`Paper`](https://mui.com/material-ui/api/paper/) element.
-     * @deprecated use the `slotProps.paper` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     * @default {}
-     */
-    var PaperProps: PaperProps?
-
-    /**
-     * Props applied to the [`Slide`](https://mui.com/material-ui/api/slide/) element.
-     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var SlideProps: SlideProps?
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?

@@ -11,6 +11,7 @@ import mui.types.PropsWithComponent
 import react.*
 import react.dom.events.SyntheticEvent
 import react.dom.html.HTMLAttributes
+import web.dom.ElementId
 import web.html.HTMLDivElement
 
 external interface TabsProps :
@@ -114,12 +115,14 @@ external interface TabsOwnProps :
     /**
      * The label for the Tabs as a string.
      */
-    var `aria-label`: String?
+    @JsName("aria-label")
+    var ariaLabel: String?
 
     /**
      * An id or list of ids separated by a space that label the Tabs.
      */
-    var `aria-labelledby`: String?
+    @JsName("aria-labelledby")
+    var ariaLabelledBy: ElementId?
 
     /**
      * If `true`, the tabs are centered.
@@ -159,13 +162,6 @@ external interface TabsOwnProps :
     var orientation: Orientation?
 
     /**
-     * The component used to render the scroll buttons.
-     * @deprecated use the `slots.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     * @default TabScrollButton
-     */
-    var ScrollButtonComponent: ElementType<*>?
-
-    /**
      * Determine behavior of scroll buttons when tabs are set to scroll:
      *
      * - `auto` will only present them when not all the items are visible.
@@ -183,20 +179,6 @@ external interface TabsOwnProps :
      * changes on activation.
      */
     var selectionFollowsFocus: Boolean?
-
-    /**
-     * Props applied to the tab indicator element.
-     * @deprecated use the `slotProps.indicator` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     * @default  {}
-     */
-    var TabIndicatorProps: HTMLAttributes<HTMLDivElement>?
-
-    /**
-     * Props applied to the [`TabScrollButton`](https://mui.com/material-ui/api/tab-scroll-button/) element.
-     * @deprecated use the `slotProps.scrollButtons` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     * @default {}
-     */
-    var TabScrollButtonProps: TabScrollButtonProps?
 
     /**
      * Determines the color of the `Tab`.

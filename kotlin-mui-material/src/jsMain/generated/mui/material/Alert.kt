@@ -49,35 +49,6 @@ external interface AlertProps :
     var color: AlertColor?
 
     /**
-     * The components used for each slot inside.
-     *
-     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     *
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var CloseButton: ElementType<*>?
-        var CloseIcon: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     *
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var closeButton: IconButtonProps?
-        var closeIcon: SvgIconProps?
-    }
-
-    /**
      * The severity of the alert. This defines the color and icon used.
      * @default 'success'
      */

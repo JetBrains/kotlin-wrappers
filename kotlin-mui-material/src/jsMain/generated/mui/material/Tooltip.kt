@@ -43,39 +43,6 @@ external interface TooltipProps :
     var classes: TooltipClasses?
 
     /**
-     * The components used for each slot inside.
-     *
-     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     *
-     * @default {}
-     */
-    var components: Components?
-
-    interface Components {
-        var Popper: ElementType<PopperProps>?
-        var Transition: ElementType<*>?
-        var Tooltip: ElementType<*>?
-        var Arrow: ElementType<*>?
-    }
-
-    /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     *
-     * @default {}
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var popper: Props? /* Partial<PopperProps> & TooltipComponentsPropsOverrides */
-        var transition: Props? /* TransitionProps & TooltipComponentsPropsOverrides */
-        var tooltip: Props? /* React.HTMLProps<HTMLDivElement> & MUIStyledCommonProps & TooltipComponentsPropsOverrides */
-        var arrow: Props? /* React.HTMLProps<HTMLSpanElement> & MUIStyledCommonProps & TooltipComponentsPropsOverrides */
-    }
-
-    /**
      * Set to `true` if the `title` acts as an accessible description.
      * By default the `title` acts as an accessible label for the child.
      * @default false
@@ -177,19 +144,6 @@ external interface TooltipProps :
     var placement: Any? /* PopperProps['placement'] */
 
     /**
-     * The component used for the popper.
-     * @deprecated use the `slots.popper` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var PopperComponent: ComponentType<PopperProps>?
-
-    /**
-     * Props applied to the [`Popper`](https://mui.com/material-ui/api/popper/) element.
-     * @deprecated use the `slotProps.popper` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     * @default {}
-     */
-    var PopperProps: PopperProps?
-
-    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
@@ -198,21 +152,6 @@ external interface TooltipProps :
      * Tooltip title. Zero-length titles string, undefined, null and false are never displayed.
      */
     var title: ReactNode
-
-    /**
-     * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @deprecated use the `slots.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var TransitionComponent: ComponentType<TransitionProps>?
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated use the `slotProps.transition` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     * @default {}
-     */
-    var TransitionProps: TransitionProps?
 }
 
 external interface TooltipSlots {

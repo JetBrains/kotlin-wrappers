@@ -86,24 +86,6 @@ external interface PaginationItemOwnProps :
     var color: PaginationItemColor?
 
     /**
-     * The components used for each slot inside.
-     *
-     * This prop is an alias for the `slots` prop.
-     * It's recommended to use the `slots` prop instead.
-     *
-     * @default {}
-     * @deprecated use the `slots` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var components: Components?
-
-    interface Components {
-        var first: ElementType<*>?
-        var last: ElementType<*>?
-        var next: ElementType<*>?
-        var previous: ElementType<*>?
-    }
-
-    /**
      * If `true`, the component is disabled.
      * @default false
      */

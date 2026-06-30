@@ -57,20 +57,6 @@ external interface AvatarGroupOwnProps :
     var component: ElementType<*>?
 
     /**
-     * The extra props for the slot components.
-     * You can override the existing props or add new ones.
-     *
-     * This prop is an alias for the `slotProps` prop.
-     *
-     * @deprecated use the `slotProps` prop instead. This prop will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    var componentsProps: ComponentsProps?
-
-    interface ComponentsProps {
-        var additionalAvatar: Props? /* React.ComponentPropsWithRef<typeof Avatar> & AvatarGroupComponentsPropsOverrides */
-    }
-
-    /**
      * Max avatars to show before +x.
      * @default 5
      */

@@ -14,19 +14,24 @@ sealed external interface GridClasses {
     val container: ClassName
 
     /** Styles applied to the root element if `direction="column"`. */
-    val `direction-xs-column`: ClassName
+    @JsName("direction-xs-column")
+    val directionXsColumn: ClassName
 
     /** Styles applied to the root element if `direction="column-reverse"`. */
-    val `direction-xs-column-reverse`: ClassName
+    @JsName("direction-xs-column-reverse")
+    val directionXsColumnReverse: ClassName
 
     /** Styles applied to the root element if `direction="row-reverse"`. */
-    val `direction-xs-row-reverse`: ClassName
+    @JsName("direction-xs-row-reverse")
+    val directionXsRowReverse: ClassName
 
     /** Styles applied to the root element if `wrap="nowrap"`. */
-    val `wrap-xs-nowrap`: ClassName
+    @JsName("wrap-xs-nowrap")
+    val wrapXsNowrap: ClassName
 
     /** Styles applied to the root element if `wrap="reverse"`. */
-    val `wrap-xs-wrap-reverse`: ClassName
+    @JsName("wrap-xs-wrap-reverse")
+    val wrapXsWrapReverse: ClassName
 }
 
 external val gridClasses: GridClasses

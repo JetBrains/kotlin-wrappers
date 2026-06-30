@@ -5,11 +5,13 @@
 package mui.material
 
 import mui.material.styles.Theme
-import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.StandardProps
 import mui.system.SxProps
-import react.*
+import react.ElementType
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
 import react.dom.events.SyntheticEvent
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
@@ -92,14 +94,6 @@ external interface SpeedDialProps :
     override var sx: SxProps<Theme>?
 
     /**
-     * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
-     * @default Zoom
-     * * @deprecated Use `slots.transition` instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
-     */
-    var TransitionComponent: ComponentType<TransitionProps>?
-
-    /**
      * The duration for the transition, in milliseconds.
      * You may specify a single timeout for all transitions, or individually with an object.
      * @default {
@@ -108,13 +102,6 @@ external interface SpeedDialProps :
      * }
      */
     var transitionDuration: Any? /* TransitionProps['timeout'] */
-
-    /**
-     * Props applied to the transition element.
-     * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
-     * @deprecated Use `slotProps.transition` instead. This prop will be removed in a future major release. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
-     */
-    var TransitionProps: TransitionProps?
 }
 
 external interface SpeedDialSlots {
