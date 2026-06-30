@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUDeviceLostReason {
+sealed /* union */
+external interface GPUDeviceLostReason {
     companion object
 }
 

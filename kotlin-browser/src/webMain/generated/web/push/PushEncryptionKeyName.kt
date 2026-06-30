@@ -8,7 +8,8 @@ package web.push
 
 import js.reflect.unsafeCast
 
-sealed external interface PushEncryptionKeyName {
+sealed /* union */
+external interface PushEncryptionKeyName {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUCompareFunction {
+sealed /* union */
+external interface GPUCompareFunction {
     companion object
 }
 

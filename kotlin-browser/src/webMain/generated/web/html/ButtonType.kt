@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface ButtonType {
+sealed /* union */
+external interface ButtonType {
     companion object
 }
 

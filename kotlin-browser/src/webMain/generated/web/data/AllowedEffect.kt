@@ -8,7 +8,8 @@ package web.data
 
 import js.reflect.unsafeCast
 
-sealed external interface AllowedEffect {
+sealed /* union */
+external interface AllowedEffect {
     companion object
 }
 

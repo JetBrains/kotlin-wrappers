@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUPrimitiveTopology {
+sealed /* union */
+external interface GPUPrimitiveTopology {
     companion object
 }
 

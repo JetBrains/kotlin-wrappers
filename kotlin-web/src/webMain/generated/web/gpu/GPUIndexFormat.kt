@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUIndexFormat {
+sealed /* union */
+external interface GPUIndexFormat {
     companion object
 }
 

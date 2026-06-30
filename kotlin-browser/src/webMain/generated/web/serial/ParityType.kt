@@ -8,7 +8,8 @@ package web.serial
 
 import js.reflect.unsafeCast
 
-sealed external interface ParityType {
+sealed /* union */
+external interface ParityType {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface Preload {
+sealed /* union */
+external interface Preload {
     companion object
 }
 

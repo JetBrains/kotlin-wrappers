@@ -8,7 +8,8 @@ package web.popover
 
 import js.reflect.unsafeCast
 
-sealed external interface Popover {
+sealed /* union */
+external interface Popover {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.components
 
 import js.reflect.unsafeCast
 
-sealed external interface ShadowRootMode {
+sealed /* union */
+external interface ShadowRootMode {
     companion object
 }
 

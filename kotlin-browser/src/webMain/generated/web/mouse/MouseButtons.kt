@@ -9,7 +9,8 @@ package web.mouse
 import js.numbers.Bitmask
 import js.reflect.unsafeCast
 
-sealed external interface MouseButtons :
+sealed /* union */
+external interface MouseButtons :
     Bitmask<MouseButtons> {
     companion object
 }

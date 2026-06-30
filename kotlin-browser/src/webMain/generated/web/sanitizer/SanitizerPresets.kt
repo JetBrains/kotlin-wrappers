@@ -8,7 +8,8 @@ package web.sanitizer
 
 import js.reflect.unsafeCast
 
-sealed external interface SanitizerPresets {
+sealed /* union */
+external interface SanitizerPresets {
     companion object
 }
 

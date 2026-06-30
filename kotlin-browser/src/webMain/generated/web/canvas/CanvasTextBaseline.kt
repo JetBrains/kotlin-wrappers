@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface CanvasTextBaseline {
+sealed /* union */
+external interface CanvasTextBaseline {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface Hidden {
+sealed /* union */
+external interface Hidden {
     companion object
 }
 

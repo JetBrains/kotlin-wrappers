@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUAutoLayoutMode {
+sealed /* union */
+external interface GPUAutoLayoutMode {
     companion object
 }
 

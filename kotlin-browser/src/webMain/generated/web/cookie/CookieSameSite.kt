@@ -8,7 +8,8 @@ package web.cookie
 
 import js.reflect.unsafeCast
 
-sealed external interface CookieSameSite {
+sealed /* union */
+external interface CookieSameSite {
     companion object
 }
 

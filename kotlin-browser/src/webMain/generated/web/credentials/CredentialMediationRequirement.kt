@@ -8,7 +8,8 @@ package web.credentials
 
 import js.reflect.unsafeCast
 
-sealed external interface CredentialMediationRequirement {
+sealed /* union */
+external interface CredentialMediationRequirement {
     companion object
 }
 

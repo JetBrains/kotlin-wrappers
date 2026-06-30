@@ -8,7 +8,8 @@ package web.rtc
 
 import js.reflect.unsafeCast
 
-sealed external interface RTCRtpTransceiverDirection {
+sealed /* union */
+external interface RTCRtpTransceiverDirection {
     companion object
 }
 

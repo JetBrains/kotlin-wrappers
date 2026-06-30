@@ -8,7 +8,8 @@ package web.images
 
 import js.reflect.unsafeCast
 
-sealed external interface ImageOrientation {
+sealed /* union */
+external interface ImageOrientation {
     companion object
 }
 

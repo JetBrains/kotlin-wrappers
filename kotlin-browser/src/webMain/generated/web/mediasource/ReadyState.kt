@@ -8,7 +8,8 @@ package web.mediasource
 
 import js.reflect.unsafeCast
 
-sealed external interface ReadyState {
+sealed /* union */
+external interface ReadyState {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.performance
 
 import js.reflect.unsafeCast
 
-sealed external interface NavigationTimingType {
+sealed /* union */
+external interface NavigationTimingType {
     companion object
 }
 

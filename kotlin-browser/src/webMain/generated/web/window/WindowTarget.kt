@@ -8,7 +8,8 @@ package web.window
 
 import js.reflect.unsafeCast
 
-sealed external interface WindowTarget {
+sealed /* union */
+external interface WindowTarget {
     companion object
 }
 

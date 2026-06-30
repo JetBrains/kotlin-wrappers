@@ -8,7 +8,8 @@ package web.gl
 
 import js.reflect.unsafeCast
 
-sealed external interface WebGLExtension {
+sealed /* union */
+external interface WebGLExtension {
     sealed interface ANGLE_instanced_arrays : WebGLExtension
     sealed interface EXT_blend_minmax : WebGLExtension
     sealed interface EXT_color_buffer_float : WebGLExtension

@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface VideoTransferCharacteristics {
+sealed /* union */
+external interface VideoTransferCharacteristics {
     companion object
 }
 

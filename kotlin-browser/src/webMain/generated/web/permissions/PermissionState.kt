@@ -8,7 +8,8 @@ package web.permissions
 
 import js.reflect.unsafeCast
 
-sealed external interface PermissionState {
+sealed /* union */
+external interface PermissionState {
     companion object
 }
 

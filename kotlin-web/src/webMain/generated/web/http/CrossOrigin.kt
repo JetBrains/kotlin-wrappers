@@ -8,7 +8,8 @@ package web.http
 
 import js.reflect.unsafeCast
 
-sealed external interface CrossOrigin {
+sealed /* union */
+external interface CrossOrigin {
     companion object
 }
 

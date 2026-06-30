@@ -8,7 +8,8 @@ package js.temporal
 
 import js.reflect.unsafeCast
 
-sealed external interface Disambiguation {
+sealed /* union */
+external interface Disambiguation {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.transport
 
 import js.reflect.unsafeCast
 
-sealed external interface WebTransportErrorSource {
+sealed /* union */
+external interface WebTransportErrorSource {
     companion object
 }
 

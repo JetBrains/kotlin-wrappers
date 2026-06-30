@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUPipelineErrorReason {
+sealed /* union */
+external interface GPUPipelineErrorReason {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.idb
 
 import js.reflect.unsafeCast
 
-sealed external interface IDBTransactionMode {
+sealed /* union */
+external interface IDBTransactionMode {
     companion object
 }
 

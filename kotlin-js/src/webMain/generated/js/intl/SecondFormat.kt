@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface SecondFormat {
+sealed /* union */
+external interface SecondFormat {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface CanvasLineCap {
+sealed /* union */
+external interface CanvasLineCap {
     companion object
 }
 

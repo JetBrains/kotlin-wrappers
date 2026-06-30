@@ -8,7 +8,8 @@ package web.csp
 
 import js.reflect.unsafeCast
 
-sealed external interface SecurityPolicyViolationEventDisposition {
+sealed /* union */
+external interface SecurityPolicyViolationEventDisposition {
     companion object
 }
 

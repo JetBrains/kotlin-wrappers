@@ -8,7 +8,8 @@ package web.buffer
 
 import js.reflect.unsafeCast
 
-sealed external interface BinaryType {
+sealed /* union */
+external interface BinaryType {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUStoreOp {
+sealed /* union */
+external interface GPUStoreOp {
     companion object
 }
 

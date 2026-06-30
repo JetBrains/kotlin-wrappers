@@ -8,7 +8,8 @@ package web.vtt
 
 import js.reflect.unsafeCast
 
-sealed external interface AutoKeyword {
+sealed /* union */
+external interface AutoKeyword {
     companion object
 }
 

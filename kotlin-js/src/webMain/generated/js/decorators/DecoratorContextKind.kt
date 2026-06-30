@@ -8,7 +8,8 @@ package js.decorators
 
 import js.reflect.unsafeCast
 
-sealed external interface DecoratorContextKind {
+sealed /* union */
+external interface DecoratorContextKind {
     sealed interface `class` : DecoratorContextKind
     sealed interface method : DecoratorContextKind
     sealed interface getter : DecoratorContextKind

@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRPlaneOrientation {
+sealed /* union */
+external interface XRPlaneOrientation {
     companion object
 }
 

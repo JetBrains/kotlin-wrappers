@@ -8,7 +8,8 @@ package web.scroll
 
 import js.reflect.unsafeCast
 
-sealed external interface ScrollBehavior {
+sealed /* union */
+external interface ScrollBehavior {
     companion object
 }
 

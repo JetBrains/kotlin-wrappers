@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface VideoMatrixCoefficients {
+sealed /* union */
+external interface VideoMatrixCoefficients {
     companion object
 }
 

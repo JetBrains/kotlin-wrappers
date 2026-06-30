@@ -8,7 +8,8 @@ package web.http
 
 import js.reflect.unsafeCast
 
-sealed external interface ResponseType {
+sealed /* union */
+external interface ResponseType {
     companion object
 }
 

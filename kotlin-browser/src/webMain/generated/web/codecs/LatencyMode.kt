@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface LatencyMode {
+sealed /* union */
+external interface LatencyMode {
     companion object
 }
 

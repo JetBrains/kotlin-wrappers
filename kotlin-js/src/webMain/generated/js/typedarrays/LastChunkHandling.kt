@@ -8,7 +8,8 @@ package js.typedarrays
 
 import js.reflect.unsafeCast
 
-sealed external interface LastChunkHandling {
+sealed /* union */
+external interface LastChunkHandling {
     companion object
 }
 

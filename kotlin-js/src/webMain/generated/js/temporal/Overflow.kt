@@ -8,7 +8,8 @@ package js.temporal
 
 import js.reflect.unsafeCast
 
-sealed external interface Overflow {
+sealed /* union */
+external interface Overflow {
     companion object
 }
 

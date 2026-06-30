@@ -8,7 +8,8 @@ package web.crypto
 
 import js.reflect.unsafeCast
 
-sealed external interface KeyFormat {
+sealed /* union */
+external interface KeyFormat {
     sealed interface jwk : KeyFormat
     sealed interface pkcs8 : KeyFormat
     sealed interface raw : KeyFormat

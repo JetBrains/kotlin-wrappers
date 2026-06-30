@@ -8,7 +8,8 @@ package web.authn
 
 import js.reflect.unsafeCast
 
-sealed external interface ResidentKeyRequirement {
+sealed /* union */
+external interface ResidentKeyRequirement {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.authn
 
 import js.reflect.unsafeCast
 
-sealed external interface PublicKeyCredentialType {
+sealed /* union */
+external interface PublicKeyCredentialType {
     companion object
 }
 

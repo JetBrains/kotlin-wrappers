@@ -11,7 +11,8 @@ import js.reflect.unsafeCast
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
  */
-sealed external interface ModifierKeyCode {
+sealed /* union */
+external interface ModifierKeyCode {
     companion object
 }
 

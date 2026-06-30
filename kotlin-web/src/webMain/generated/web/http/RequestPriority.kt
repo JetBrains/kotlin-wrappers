@@ -8,7 +8,8 @@ package web.http
 
 import js.reflect.unsafeCast
 
-sealed external interface RequestPriority {
+sealed /* union */
+external interface RequestPriority {
     companion object
 }
 

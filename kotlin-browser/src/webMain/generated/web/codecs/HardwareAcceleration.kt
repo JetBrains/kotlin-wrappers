@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface HardwareAcceleration {
+sealed /* union */
+external interface HardwareAcceleration {
     companion object
 }
 

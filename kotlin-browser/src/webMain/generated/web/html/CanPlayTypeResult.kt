@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface CanPlayTypeResult {
+sealed /* union */
+external interface CanPlayTypeResult {
     companion object
 }
 

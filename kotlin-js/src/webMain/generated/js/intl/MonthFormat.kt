@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface MonthFormat {
+sealed /* union */
+external interface MonthFormat {
     companion object
 }
 

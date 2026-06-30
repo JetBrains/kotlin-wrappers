@@ -8,7 +8,8 @@ package web.gamepad
 
 import js.reflect.unsafeCast
 
-sealed external interface GamepadHapticsResult {
+sealed /* union */
+external interface GamepadHapticsResult {
     companion object
 }
 

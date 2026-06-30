@@ -8,7 +8,8 @@ package web.animations
 
 import js.reflect.unsafeCast
 
-sealed external interface CompositeOperationOrAuto {
+sealed /* union */
+external interface CompositeOperationOrAuto {
     companion object
 }
 

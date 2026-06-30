@@ -8,7 +8,8 @@ package web.mediacapabilities
 
 import js.reflect.unsafeCast
 
-sealed external interface TransferFunction {
+sealed /* union */
+external interface TransferFunction {
     companion object
 }
 

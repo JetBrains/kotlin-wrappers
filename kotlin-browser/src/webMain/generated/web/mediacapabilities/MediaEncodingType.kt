@@ -8,7 +8,8 @@ package web.mediacapabilities
 
 import js.reflect.unsafeCast
 
-sealed external interface MediaEncodingType {
+sealed /* union */
+external interface MediaEncodingType {
     companion object
 }
 

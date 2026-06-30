@@ -8,7 +8,8 @@ package web.speech
 
 import js.reflect.unsafeCast
 
-sealed external interface SpeechSynthesisErrorCode {
+sealed /* union */
+external interface SpeechSynthesisErrorCode {
     companion object
 }
 

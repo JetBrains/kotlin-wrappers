@@ -8,7 +8,8 @@ package web.locks
 
 import js.reflect.unsafeCast
 
-sealed external interface LockMode {
+sealed /* union */
+external interface LockMode {
     companion object
 }
 

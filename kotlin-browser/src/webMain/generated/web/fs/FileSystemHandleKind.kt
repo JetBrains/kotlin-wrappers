@@ -8,7 +8,8 @@ package web.fs
 
 import js.reflect.unsafeCast
 
-sealed external interface FileSystemHandleKind {
+sealed /* union */
+external interface FileSystemHandleKind {
     sealed interface directory : FileSystemHandleKind
     sealed interface file : FileSystemHandleKind
 

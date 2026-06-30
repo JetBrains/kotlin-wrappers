@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface CanvasFontStretch {
+sealed /* union */
+external interface CanvasFontStretch {
     companion object
 }
 

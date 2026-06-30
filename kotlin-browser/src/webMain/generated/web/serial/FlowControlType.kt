@@ -8,7 +8,8 @@ package web.serial
 
 import js.reflect.unsafeCast
 
-sealed external interface FlowControlType {
+sealed /* union */
+external interface FlowControlType {
     companion object
 }
 

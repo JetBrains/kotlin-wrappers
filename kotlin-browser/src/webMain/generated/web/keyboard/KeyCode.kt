@@ -11,7 +11,8 @@ import js.reflect.unsafeCast
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UI_Events/Keyboard_event_code_values)
  */
-sealed external interface KeyCode {
+sealed /* union */
+external interface KeyCode {
     companion object
 }
 

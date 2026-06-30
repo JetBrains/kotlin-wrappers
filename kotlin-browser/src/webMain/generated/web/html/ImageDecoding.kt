@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface ImageDecoding {
+sealed /* union */
+external interface ImageDecoding {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.midi
 
 import js.reflect.unsafeCast
 
-sealed external interface MIDIPortType {
+sealed /* union */
+external interface MIDIPortType {
     companion object
 }
 

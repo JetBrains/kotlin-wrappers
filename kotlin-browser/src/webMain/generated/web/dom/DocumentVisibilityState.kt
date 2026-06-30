@@ -8,7 +8,8 @@ package web.dom
 
 import js.reflect.unsafeCast
 
-sealed external interface DocumentVisibilityState {
+sealed /* union */
+external interface DocumentVisibilityState {
     companion object
 }
 

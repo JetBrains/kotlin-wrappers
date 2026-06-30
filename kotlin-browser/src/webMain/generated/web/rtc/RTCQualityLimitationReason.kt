@@ -8,7 +8,8 @@ package web.rtc
 
 import js.reflect.unsafeCast
 
-sealed external interface RTCQualityLimitationReason {
+sealed /* union */
+external interface RTCQualityLimitationReason {
     companion object
 }
 

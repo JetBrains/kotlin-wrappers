@@ -8,7 +8,8 @@ package web.vtt
 
 import js.reflect.unsafeCast
 
-sealed external interface ScrollSetting {
+sealed /* union */
+external interface ScrollSetting {
     companion object
 }
 

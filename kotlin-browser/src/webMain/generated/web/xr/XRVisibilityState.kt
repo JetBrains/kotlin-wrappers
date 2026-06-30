@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRVisibilityState {
+sealed /* union */
+external interface XRVisibilityState {
     companion object
 }
 

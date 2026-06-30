@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface AutomationRate {
+sealed /* union */
+external interface AutomationRate {
     companion object
 }
 

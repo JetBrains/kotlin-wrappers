@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface HourCycle {
+sealed /* union */
+external interface HourCycle {
     companion object
 }
 

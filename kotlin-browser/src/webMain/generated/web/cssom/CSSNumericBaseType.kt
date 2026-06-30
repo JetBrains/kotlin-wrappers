@@ -8,7 +8,8 @@ package web.cssom
 
 import js.reflect.unsafeCast
 
-sealed external interface CSSNumericBaseType {
+sealed /* union */
+external interface CSSNumericBaseType {
     companion object
 }
 

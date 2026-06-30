@@ -8,7 +8,8 @@ package js.typedarrays
 
 import js.reflect.unsafeCast
 
-sealed external interface Alphabet {
+sealed /* union */
+external interface Alphabet {
     companion object
 }
 

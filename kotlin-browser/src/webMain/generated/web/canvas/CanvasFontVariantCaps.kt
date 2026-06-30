@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface CanvasFontVariantCaps {
+sealed /* union */
+external interface CanvasFontVariantCaps {
     companion object
 }
 

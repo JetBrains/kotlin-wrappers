@@ -8,7 +8,8 @@ package web.idb
 
 import js.reflect.unsafeCast
 
-sealed external interface IDBCursorDirection {
+sealed /* union */
+external interface IDBCursorDirection {
     companion object
 }
 

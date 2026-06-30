@@ -8,7 +8,8 @@ package web.history
 
 import js.reflect.unsafeCast
 
-sealed external interface ScrollRestoration {
+sealed /* union */
+external interface ScrollRestoration {
     companion object
 }
 

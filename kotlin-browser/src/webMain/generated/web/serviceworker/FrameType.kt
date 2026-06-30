@@ -8,7 +8,8 @@ package web.serviceworker
 
 import js.reflect.unsafeCast
 
-sealed external interface FrameType {
+sealed /* union */
+external interface FrameType {
     companion object
 }
 

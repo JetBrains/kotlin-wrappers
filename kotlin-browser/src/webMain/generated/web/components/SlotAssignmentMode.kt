@@ -8,7 +8,8 @@ package web.components
 
 import js.reflect.unsafeCast
 
-sealed external interface SlotAssignmentMode {
+sealed /* union */
+external interface SlotAssignmentMode {
     companion object
 }
 

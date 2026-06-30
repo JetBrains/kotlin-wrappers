@@ -8,7 +8,8 @@ package web.streams
 
 import js.reflect.unsafeCast
 
-sealed external interface ReadableStreamReaderMode {
+sealed /* union */
+external interface ReadableStreamReaderMode {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface AudioContextState {
+sealed /* union */
+external interface AudioContextState {
     companion object
 }
 

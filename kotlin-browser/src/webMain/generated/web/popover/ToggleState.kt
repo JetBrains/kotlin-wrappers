@@ -8,7 +8,8 @@ package web.popover
 
 import js.reflect.unsafeCast
 
-sealed external interface ToggleState {
+sealed /* union */
+external interface ToggleState {
     companion object
 }
 

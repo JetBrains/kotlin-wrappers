@@ -8,7 +8,8 @@ package web.mutation
 
 import js.reflect.unsafeCast
 
-sealed external interface MutationRecordType {
+sealed /* union */
+external interface MutationRecordType {
     companion object
 }
 

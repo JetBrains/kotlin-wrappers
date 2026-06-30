@@ -8,7 +8,8 @@ package web.vtt
 
 import js.reflect.unsafeCast
 
-sealed external interface DirectionSetting {
+sealed /* union */
+external interface DirectionSetting {
     companion object
 }
 

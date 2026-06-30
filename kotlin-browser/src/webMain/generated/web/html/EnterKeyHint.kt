@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface EnterKeyHint {
+sealed /* union */
+external interface EnterKeyHint {
     companion object
 }
 

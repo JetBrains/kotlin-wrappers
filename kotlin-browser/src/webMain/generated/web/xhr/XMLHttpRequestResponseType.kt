@@ -8,7 +8,8 @@ package web.xhr
 
 import js.reflect.unsafeCast
 
-sealed external interface XMLHttpRequestResponseType {
+sealed /* union */
+external interface XMLHttpRequestResponseType {
     companion object
 }
 

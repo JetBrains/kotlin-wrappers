@@ -8,7 +8,8 @@ package web.vtt
 
 import js.reflect.unsafeCast
 
-sealed external interface LineAlignSetting {
+sealed /* union */
+external interface LineAlignSetting {
     companion object
 }
 

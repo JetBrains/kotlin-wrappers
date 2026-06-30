@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface VideoColorPrimaries {
+sealed /* union */
+external interface VideoColorPrimaries {
     companion object
 }
 

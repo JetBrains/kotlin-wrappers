@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface GlobalCompositeOperation {
+sealed /* union */
+external interface GlobalCompositeOperation {
     companion object
 }
 

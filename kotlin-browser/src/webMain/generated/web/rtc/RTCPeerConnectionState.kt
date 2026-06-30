@@ -8,7 +8,8 @@ package web.rtc
 
 import js.reflect.unsafeCast
 
-sealed external interface RTCPeerConnectionState {
+sealed /* union */
+external interface RTCPeerConnectionState {
     companion object
 }
 

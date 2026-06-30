@@ -8,7 +8,8 @@ package web.animations
 
 import js.reflect.unsafeCast
 
-sealed external interface AnimationReplaceState {
+sealed /* union */
+external interface AnimationReplaceState {
     companion object
 }
 

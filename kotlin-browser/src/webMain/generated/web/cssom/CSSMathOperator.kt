@@ -8,7 +8,8 @@ package web.cssom
 
 import js.reflect.unsafeCast
 
-sealed external interface CSSMathOperator {
+sealed /* union */
+external interface CSSMathOperator {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.rtc
 
 import js.reflect.unsafeCast
 
-sealed external interface RTCRtcpMuxPolicy {
+sealed /* union */
+external interface RTCRtcpMuxPolicy {
     companion object
 }
 

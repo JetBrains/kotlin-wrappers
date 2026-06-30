@@ -8,7 +8,8 @@ package web.wakelock
 
 import js.reflect.unsafeCast
 
-sealed external interface WakeLockType {
+sealed /* union */
+external interface WakeLockType {
     companion object
 }
 

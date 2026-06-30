@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface WeekdayFormat {
+sealed /* union */
+external interface WeekdayFormat {
     companion object
 }
 

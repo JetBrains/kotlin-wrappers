@@ -8,7 +8,8 @@ package web.fs
 
 import js.reflect.unsafeCast
 
-sealed external interface WriteCommandType {
+sealed /* union */
+external interface WriteCommandType {
     companion object
 }
 

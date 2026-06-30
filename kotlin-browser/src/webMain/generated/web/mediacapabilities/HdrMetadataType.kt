@@ -8,7 +8,8 @@ package web.mediacapabilities
 
 import js.reflect.unsafeCast
 
-sealed external interface HdrMetadataType {
+sealed /* union */
+external interface HdrMetadataType {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRHandedness {
+sealed /* union */
+external interface XRHandedness {
     companion object
 }
 

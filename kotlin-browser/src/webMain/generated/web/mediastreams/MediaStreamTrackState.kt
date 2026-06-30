@@ -8,7 +8,8 @@ package web.mediastreams
 
 import js.reflect.unsafeCast
 
-sealed external interface MediaStreamTrackState {
+sealed /* union */
+external interface MediaStreamTrackState {
     companion object
 }
 

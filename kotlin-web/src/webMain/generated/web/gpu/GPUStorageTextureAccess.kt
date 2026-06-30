@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUStorageTextureAccess {
+sealed /* union */
+external interface GPUStorageTextureAccess {
     companion object
 }
 

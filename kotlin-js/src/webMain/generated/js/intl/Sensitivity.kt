@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface Sensitivity {
+sealed /* union */
+external interface Sensitivity {
     companion object
 }
 

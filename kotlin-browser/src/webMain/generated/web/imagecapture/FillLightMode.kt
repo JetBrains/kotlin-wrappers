@@ -8,7 +8,8 @@ package web.imagecapture
 
 import js.reflect.unsafeCast
 
-sealed external interface FillLightMode {
+sealed /* union */
+external interface FillLightMode {
     companion object
 }
 

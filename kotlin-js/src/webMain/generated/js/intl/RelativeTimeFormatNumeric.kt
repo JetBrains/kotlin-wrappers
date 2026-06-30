@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface RelativeTimeFormatNumeric {
+sealed /* union */
+external interface RelativeTimeFormatNumeric {
     companion object
 }
 

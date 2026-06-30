@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUCanvasToneMappingMode {
+sealed /* union */
+external interface GPUCanvasToneMappingMode {
     companion object
 }
 

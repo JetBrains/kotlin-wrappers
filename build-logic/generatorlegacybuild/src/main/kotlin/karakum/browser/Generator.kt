@@ -462,7 +462,7 @@ fun generateKotlinDeclarations(
             if (name == "ChildNode" || name == "ParentNode")
                 add(INTERFACE_WITH_SUPERCLASS)
 
-            if ("companion object" in body && "sealed external interface" in body)
+            if ("sealed /* union */" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
         }
 

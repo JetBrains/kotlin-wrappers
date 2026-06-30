@@ -8,7 +8,8 @@ package web.authn
 
 import js.reflect.unsafeCast
 
-sealed external interface UserVerificationRequirement {
+sealed /* union */
+external interface UserVerificationRequirement {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.html
 
 import js.reflect.unsafeCast
 
-sealed external interface SelectionMode {
+sealed /* union */
+external interface SelectionMode {
     companion object
 }
 

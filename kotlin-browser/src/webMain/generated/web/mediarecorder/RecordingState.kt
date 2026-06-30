@@ -8,7 +8,8 @@ package web.mediarecorder
 
 import js.reflect.unsafeCast
 
-sealed external interface RecordingState {
+sealed /* union */
+external interface RecordingState {
     companion object
 }
 

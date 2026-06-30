@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface DistanceModelType {
+sealed /* union */
+external interface DistanceModelType {
     companion object
 }
 

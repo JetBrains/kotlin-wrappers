@@ -8,7 +8,8 @@ package web.form
 
 import js.reflect.unsafeCast
 
-sealed external interface FormMethod {
+sealed /* union */
+external interface FormMethod {
     companion object
 }
 

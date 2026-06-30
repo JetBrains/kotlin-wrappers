@@ -8,7 +8,8 @@ package web.fonts
 
 import js.reflect.unsafeCast
 
-sealed external interface FontDisplay {
+sealed /* union */
+external interface FontDisplay {
     companion object
 }
 

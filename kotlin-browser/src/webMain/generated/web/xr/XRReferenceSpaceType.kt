@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRReferenceSpaceType {
+sealed /* union */
+external interface XRReferenceSpaceType {
     companion object
 }
 

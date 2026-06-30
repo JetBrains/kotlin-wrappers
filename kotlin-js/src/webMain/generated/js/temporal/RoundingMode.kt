@@ -8,7 +8,8 @@ package js.temporal
 
 import js.reflect.unsafeCast
 
-sealed external interface RoundingMode {
+sealed /* union */
+external interface RoundingMode {
     companion object
 }
 

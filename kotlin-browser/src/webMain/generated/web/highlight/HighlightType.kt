@@ -8,7 +8,8 @@ package web.highlight
 
 import js.reflect.unsafeCast
 
-sealed external interface HighlightType {
+sealed /* union */
+external interface HighlightType {
     companion object
 }
 

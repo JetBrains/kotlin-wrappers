@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUFilterMode {
+sealed /* union */
+external interface GPUFilterMode {
     companion object
 }
 

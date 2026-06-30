@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUTextureViewDimension {
+sealed /* union */
+external interface GPUTextureViewDimension {
     companion object
 }
 

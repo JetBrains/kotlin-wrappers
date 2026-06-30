@@ -8,7 +8,8 @@ package web.touch
 
 import js.reflect.unsafeCast
 
-sealed external interface TouchType {
+sealed /* union */
+external interface TouchType {
     companion object
 }
 

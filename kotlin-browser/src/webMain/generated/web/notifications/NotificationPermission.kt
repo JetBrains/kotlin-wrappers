@@ -8,7 +8,8 @@ package web.notifications
 
 import js.reflect.unsafeCast
 
-sealed external interface NotificationPermission {
+sealed /* union */
+external interface NotificationPermission {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUMipmapFilterMode {
+sealed /* union */
+external interface GPUMipmapFilterMode {
     companion object
 }
 

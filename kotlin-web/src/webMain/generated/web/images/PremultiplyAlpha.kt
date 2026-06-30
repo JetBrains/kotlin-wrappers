@@ -8,7 +8,8 @@ package web.images
 
 import js.reflect.unsafeCast
 
-sealed external interface PremultiplyAlpha {
+sealed /* union */
+external interface PremultiplyAlpha {
     companion object
 }
 

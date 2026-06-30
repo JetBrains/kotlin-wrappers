@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface ChannelCountMode {
+sealed /* union */
+external interface ChannelCountMode {
     companion object
 }
 

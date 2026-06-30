@@ -8,7 +8,8 @@ package web.parsing
 
 import js.reflect.unsafeCast
 
-sealed external interface DOMParserSupportedType {
+sealed /* union */
+external interface DOMParserSupportedType {
     companion object
 }
 

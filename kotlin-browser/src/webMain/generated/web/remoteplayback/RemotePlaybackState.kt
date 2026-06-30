@@ -8,7 +8,8 @@ package web.remoteplayback
 
 import js.reflect.unsafeCast
 
-sealed external interface RemotePlaybackState {
+sealed /* union */
+external interface RemotePlaybackState {
     companion object
 }
 

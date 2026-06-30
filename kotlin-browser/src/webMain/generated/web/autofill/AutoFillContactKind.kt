@@ -8,7 +8,8 @@ package web.autofill
 
 import js.reflect.unsafeCast
 
-sealed external interface AutoFillContactKind {
+sealed /* union */
+external interface AutoFillContactKind {
     companion object
 }
 

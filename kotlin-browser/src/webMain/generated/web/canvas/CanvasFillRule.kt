@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface CanvasFillRule {
+sealed /* union */
+external interface CanvasFillRule {
     companion object
 }
 

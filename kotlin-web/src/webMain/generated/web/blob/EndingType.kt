@@ -8,7 +8,8 @@ package web.blob
 
 import js.reflect.unsafeCast
 
-sealed external interface EndingType {
+sealed /* union */
+external interface EndingType {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface PanningModelType {
+sealed /* union */
+external interface PanningModelType {
     companion object
 }
 

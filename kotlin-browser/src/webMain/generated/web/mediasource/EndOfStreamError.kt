@@ -8,7 +8,8 @@ package web.mediasource
 
 import js.reflect.unsafeCast
 
-sealed external interface EndOfStreamError {
+sealed /* union */
+external interface EndOfStreamError {
     companion object
 }
 

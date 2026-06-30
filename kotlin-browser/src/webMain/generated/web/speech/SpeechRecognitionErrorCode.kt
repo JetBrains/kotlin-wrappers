@@ -8,7 +8,8 @@ package web.speech
 
 import js.reflect.unsafeCast
 
-sealed external interface SpeechRecognitionErrorCode {
+sealed /* union */
+external interface SpeechRecognitionErrorCode {
     companion object
 }
 

@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface DurationFormatDisplayOption {
+sealed /* union */
+external interface DurationFormatDisplayOption {
     companion object
 }
 

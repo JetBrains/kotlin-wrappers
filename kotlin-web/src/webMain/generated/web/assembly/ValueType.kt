@@ -14,7 +14,8 @@ import js.numbers.JsFloat
 import js.numbers.JsInt
 import js.reflect.unsafeCast
 
-sealed external interface ValueType<T : JsAny?> {
+sealed /* union */
+external interface ValueType<T : JsAny?> {
     companion object
 }
 

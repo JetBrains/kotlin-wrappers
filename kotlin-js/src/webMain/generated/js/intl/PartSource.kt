@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface PartSource {
+sealed /* union */
+external interface PartSource {
     companion object
 }
 

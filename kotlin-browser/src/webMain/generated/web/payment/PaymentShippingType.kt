@@ -8,7 +8,8 @@ package web.payment
 
 import js.reflect.unsafeCast
 
-sealed external interface PaymentShippingType {
+sealed /* union */
+external interface PaymentShippingType {
     companion object
 }
 

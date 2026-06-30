@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRDOMOverlayType {
+sealed /* union */
+external interface XRDOMOverlayType {
     companion object
 }
 

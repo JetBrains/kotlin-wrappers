@@ -8,7 +8,8 @@ package web.images
 
 import js.reflect.unsafeCast
 
-sealed external interface ImageDataPixelFormat {
+sealed /* union */
+external interface ImageDataPixelFormat {
     companion object
 }
 

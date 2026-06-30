@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface AudioContextLatencyCategory {
+sealed /* union */
+external interface AudioContextLatencyCategory {
     companion object
 }
 

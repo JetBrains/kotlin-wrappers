@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface ImageSmoothingQuality {
+sealed /* union */
+external interface ImageSmoothingQuality {
     companion object
 }
 

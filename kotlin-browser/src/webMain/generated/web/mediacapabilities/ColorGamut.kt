@@ -8,7 +8,8 @@ package web.mediacapabilities
 
 import js.reflect.unsafeCast
 
-sealed external interface ColorGamut {
+sealed /* union */
+external interface ColorGamut {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.animations
 
 import js.reflect.unsafeCast
 
-sealed external interface ScrollAxis {
+sealed /* union */
+external interface ScrollAxis {
     companion object
 }
 

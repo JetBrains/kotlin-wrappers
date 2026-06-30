@@ -8,7 +8,8 @@ package web.serviceworker
 
 import js.reflect.unsafeCast
 
-sealed external interface ServiceWorkerUpdateViaCache {
+sealed /* union */
+external interface ServiceWorkerUpdateViaCache {
     companion object
 }
 

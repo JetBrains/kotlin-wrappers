@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface DayPeriod {
+sealed /* union */
+external interface DayPeriod {
     companion object
 }
 

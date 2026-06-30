@@ -8,7 +8,8 @@ package web.clipboard
 
 import js.reflect.unsafeCast
 
-sealed external interface PresentationStyle {
+sealed /* union */
+external interface PresentationStyle {
     companion object
 }
 

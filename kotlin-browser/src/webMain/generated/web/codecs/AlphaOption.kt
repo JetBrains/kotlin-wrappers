@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface AlphaOption {
+sealed /* union */
+external interface AlphaOption {
     companion object
 }
 

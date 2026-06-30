@@ -8,7 +8,8 @@ package web.vtt
 
 import js.reflect.unsafeCast
 
-sealed external interface TextTrackKind {
+sealed /* union */
+external interface TextTrackKind {
     companion object
 }
 

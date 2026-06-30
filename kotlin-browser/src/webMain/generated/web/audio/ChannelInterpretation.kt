@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface ChannelInterpretation {
+sealed /* union */
+external interface ChannelInterpretation {
     companion object
 }
 

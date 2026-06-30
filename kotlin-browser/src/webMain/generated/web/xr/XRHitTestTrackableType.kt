@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRHitTestTrackableType {
+sealed /* union */
+external interface XRHitTestTrackableType {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.screen
 
 import js.reflect.unsafeCast
 
-sealed external interface OrientationLockType {
+sealed /* union */
+external interface OrientationLockType {
     companion object
 }
 

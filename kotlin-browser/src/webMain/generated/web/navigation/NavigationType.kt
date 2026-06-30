@@ -8,7 +8,8 @@ package web.navigation
 
 import js.reflect.unsafeCast
 
-sealed external interface NavigationType {
+sealed /* union */
+external interface NavigationType {
     companion object
 }
 

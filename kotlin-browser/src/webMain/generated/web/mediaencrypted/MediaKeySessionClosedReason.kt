@@ -8,7 +8,8 @@ package web.mediaencrypted
 
 import js.reflect.unsafeCast
 
-sealed external interface MediaKeySessionClosedReason {
+sealed /* union */
+external interface MediaKeySessionClosedReason {
     companion object
 }
 

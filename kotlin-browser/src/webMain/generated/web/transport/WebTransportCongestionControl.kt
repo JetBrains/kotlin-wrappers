@@ -8,7 +8,8 @@ package web.transport
 
 import js.reflect.unsafeCast
 
-sealed external interface WebTransportCongestionControl {
+sealed /* union */
+external interface WebTransportCongestionControl {
     companion object
 }
 

@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface DateStyle {
+sealed /* union */
+external interface DateStyle {
     companion object
 }
 

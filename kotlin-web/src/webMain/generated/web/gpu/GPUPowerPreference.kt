@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUPowerPreference {
+sealed /* union */
+external interface GPUPowerPreference {
     companion object
 }
 

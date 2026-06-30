@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRDepthDataFormat {
+sealed /* union */
+external interface XRDepthDataFormat {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.navigation
 
 import js.reflect.unsafeCast
 
-sealed external interface NavigationHistoryBehavior {
+sealed /* union */
+external interface NavigationHistoryBehavior {
     companion object
 }
 

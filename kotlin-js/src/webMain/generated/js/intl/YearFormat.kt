@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface YearFormat {
+sealed /* union */
+external interface YearFormat {
     companion object
 }
 

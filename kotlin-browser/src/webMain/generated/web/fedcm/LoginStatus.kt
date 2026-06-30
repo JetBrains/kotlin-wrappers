@@ -8,7 +8,8 @@ package web.fedcm
 
 import js.reflect.unsafeCast
 
-sealed external interface LoginStatus {
+sealed /* union */
+external interface LoginStatus {
     companion object
 }
 

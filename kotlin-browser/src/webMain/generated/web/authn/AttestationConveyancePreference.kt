@@ -8,7 +8,8 @@ package web.authn
 
 import js.reflect.unsafeCast
 
-sealed external interface AttestationConveyancePreference {
+sealed /* union */
+external interface AttestationConveyancePreference {
     companion object
 }
 

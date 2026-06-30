@@ -8,7 +8,8 @@ package web.navigation
 
 import js.reflect.unsafeCast
 
-sealed external interface NavigationFocusReset {
+sealed /* union */
+external interface NavigationFocusReset {
     companion object
 }
 

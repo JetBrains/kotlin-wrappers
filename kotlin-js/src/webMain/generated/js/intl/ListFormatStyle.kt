@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface ListFormatStyle {
+sealed /* union */
+external interface ListFormatStyle {
     companion object
 }
 

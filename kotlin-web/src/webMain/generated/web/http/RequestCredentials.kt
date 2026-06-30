@@ -8,7 +8,8 @@ package web.http
 
 import js.reflect.unsafeCast
 
-sealed external interface RequestCredentials {
+sealed /* union */
+external interface RequestCredentials {
     companion object
 }
 

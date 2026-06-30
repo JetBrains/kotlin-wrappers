@@ -8,7 +8,8 @@ package web.images
 
 import js.reflect.unsafeCast
 
-sealed external interface ResizeQuality {
+sealed /* union */
+external interface ResizeQuality {
     companion object
 }
 

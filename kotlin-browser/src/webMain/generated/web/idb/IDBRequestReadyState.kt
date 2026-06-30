@@ -8,7 +8,8 @@ package web.idb
 
 import js.reflect.unsafeCast
 
-sealed external interface IDBRequestReadyState {
+sealed /* union */
+external interface IDBRequestReadyState {
     companion object
 }
 

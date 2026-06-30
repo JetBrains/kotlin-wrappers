@@ -8,7 +8,8 @@ package web.images
 
 import js.reflect.unsafeCast
 
-sealed external interface ColorSpaceConversion {
+sealed /* union */
+external interface ColorSpaceConversion {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.compression
 
 import js.reflect.unsafeCast
 
-sealed external interface CompressionFormat {
+sealed /* union */
+external interface CompressionFormat {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.assembly
 
 import js.reflect.unsafeCast
 
-sealed external interface TableKind {
+sealed /* union */
+external interface TableKind {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.authn
 
 import js.reflect.unsafeCast
 
-sealed external interface AuthenticatorTransport {
+sealed /* union */
+external interface AuthenticatorTransport {
     companion object
 }
 

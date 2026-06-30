@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUBufferMapState {
+sealed /* union */
+external interface GPUBufferMapState {
     companion object
 }
 

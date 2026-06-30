@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface ListFormatLocaleMatcher {
+sealed /* union */
+external interface ListFormatLocaleMatcher {
     companion object
 }
 

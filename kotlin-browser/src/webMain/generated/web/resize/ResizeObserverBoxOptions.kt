@@ -8,7 +8,8 @@ package web.resize
 
 import js.reflect.unsafeCast
 
-sealed external interface ResizeObserverBoxOptions {
+sealed /* union */
+external interface ResizeObserverBoxOptions {
     companion object
 }
 

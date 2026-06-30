@@ -8,7 +8,8 @@ package web.mediasession
 
 import js.reflect.unsafeCast
 
-sealed external interface MediaSessionAction {
+sealed /* union */
+external interface MediaSessionAction {
     companion object
 }
 

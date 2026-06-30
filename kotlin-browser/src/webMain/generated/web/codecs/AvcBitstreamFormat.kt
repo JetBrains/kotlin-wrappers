@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface AvcBitstreamFormat {
+sealed /* union */
+external interface AvcBitstreamFormat {
     companion object
 }
 

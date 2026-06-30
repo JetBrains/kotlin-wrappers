@@ -8,7 +8,8 @@ package js.symbol
 
 import js.reflect.unsafeCast
 
-sealed external interface PrimitiveHint {
+sealed /* union */
+external interface PrimitiveHint {
     companion object
 }
 

@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface Collation {
+sealed /* union */
+external interface Collation {
     companion object
 }
 

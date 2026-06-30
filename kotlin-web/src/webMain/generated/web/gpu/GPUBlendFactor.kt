@@ -8,7 +8,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
-sealed external interface GPUBlendFactor {
+sealed /* union */
+external interface GPUBlendFactor {
     companion object
 }
 

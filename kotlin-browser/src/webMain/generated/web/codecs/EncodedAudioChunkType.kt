@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface EncodedAudioChunkType {
+sealed /* union */
+external interface EncodedAudioChunkType {
     companion object
 }
 

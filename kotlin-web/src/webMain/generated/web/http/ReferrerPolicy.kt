@@ -8,7 +8,8 @@ package web.http
 
 import js.reflect.unsafeCast
 
-sealed external interface ReferrerPolicy {
+sealed /* union */
+external interface ReferrerPolicy {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface VideoEncoderBitrateMode {
+sealed /* union */
+external interface VideoEncoderBitrateMode {
     companion object
 }
 

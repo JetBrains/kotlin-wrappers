@@ -8,7 +8,8 @@ package web.imagecapture
 
 import js.reflect.unsafeCast
 
-sealed external interface RedEyeReduction {
+sealed /* union */
+external interface RedEyeReduction {
     companion object
 }
 

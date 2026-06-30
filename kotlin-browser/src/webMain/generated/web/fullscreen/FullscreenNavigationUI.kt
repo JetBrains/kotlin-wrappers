@@ -8,7 +8,8 @@ package web.fullscreen
 
 import js.reflect.unsafeCast
 
-sealed external interface FullscreenNavigationUI {
+sealed /* union */
+external interface FullscreenNavigationUI {
     companion object
 }
 

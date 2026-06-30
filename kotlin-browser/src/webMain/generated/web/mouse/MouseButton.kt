@@ -8,7 +8,8 @@ package web.mouse
 
 import js.reflect.unsafeCast
 
-sealed external interface MouseButton {
+sealed /* union */
+external interface MouseButton {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.scheduling
 
 import js.reflect.unsafeCast
 
-sealed external interface TaskPriority {
+sealed /* union */
+external interface TaskPriority {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRLayerLayout {
+sealed /* union */
+external interface XRLayerLayout {
     companion object
 }
 

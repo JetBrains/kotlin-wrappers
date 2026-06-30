@@ -8,7 +8,8 @@ package web.data
 
 import js.reflect.unsafeCast
 
-sealed external interface DropEffect {
+sealed /* union */
+external interface DropEffect {
     companion object
 }
 

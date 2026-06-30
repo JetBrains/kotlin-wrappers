@@ -8,7 +8,8 @@ package web.xr
 
 import js.reflect.unsafeCast
 
-sealed external interface XRLayerQuality {
+sealed /* union */
+external interface XRLayerQuality {
     companion object
 }
 

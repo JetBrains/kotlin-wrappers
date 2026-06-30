@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface LDMLPluralRule {
+sealed /* union */
+external interface LDMLPluralRule {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.animations
 
 import js.reflect.unsafeCast
 
-sealed external interface FillMode {
+sealed /* union */
+external interface FillMode {
     companion object
 }
 

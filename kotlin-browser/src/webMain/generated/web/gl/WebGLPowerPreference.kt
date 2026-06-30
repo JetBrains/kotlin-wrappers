@@ -8,7 +8,8 @@ package web.gl
 
 import js.reflect.unsafeCast
 
-sealed external interface WebGLPowerPreference {
+sealed /* union */
+external interface WebGLPowerPreference {
     companion object
 }
 

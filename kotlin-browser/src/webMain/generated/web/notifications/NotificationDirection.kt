@@ -8,7 +8,8 @@ package web.notifications
 
 import js.reflect.unsafeCast
 
-sealed external interface NotificationDirection {
+sealed /* union */
+external interface NotificationDirection {
     companion object
 }
 

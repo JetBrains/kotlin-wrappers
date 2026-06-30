@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface NanosecondsFormat {
+sealed /* union */
+external interface NanosecondsFormat {
     companion object
 }
 

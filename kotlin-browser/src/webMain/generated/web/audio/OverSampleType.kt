@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface OverSampleType {
+sealed /* union */
+external interface OverSampleType {
     companion object
 }
 

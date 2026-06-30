@@ -8,7 +8,8 @@ package web.workers
 
 import js.reflect.unsafeCast
 
-sealed external interface WorkerType {
+sealed /* union */
+external interface WorkerType {
     companion object
 }
 

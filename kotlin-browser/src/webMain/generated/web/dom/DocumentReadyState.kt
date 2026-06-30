@@ -8,7 +8,8 @@ package web.dom
 
 import js.reflect.unsafeCast
 
-sealed external interface DocumentReadyState {
+sealed /* union */
+external interface DocumentReadyState {
     companion object
 }
 

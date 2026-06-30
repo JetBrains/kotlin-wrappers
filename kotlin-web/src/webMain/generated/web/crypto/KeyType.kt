@@ -8,7 +8,8 @@ package web.crypto
 
 import js.reflect.unsafeCast
 
-sealed external interface KeyType {
+sealed /* union */
+external interface KeyType {
     companion object
 }
 

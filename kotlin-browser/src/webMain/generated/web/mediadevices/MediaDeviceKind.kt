@@ -8,7 +8,8 @@ package web.mediadevices
 
 import js.reflect.unsafeCast
 
-sealed external interface MediaDeviceKind {
+sealed /* union */
+external interface MediaDeviceKind {
     companion object
 }
 

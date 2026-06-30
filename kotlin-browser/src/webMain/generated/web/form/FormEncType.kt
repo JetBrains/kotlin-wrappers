@@ -8,7 +8,8 @@ package web.form
 
 import js.reflect.unsafeCast
 
-sealed external interface FormEncType {
+sealed /* union */
+external interface FormEncType {
     companion object
 }
 

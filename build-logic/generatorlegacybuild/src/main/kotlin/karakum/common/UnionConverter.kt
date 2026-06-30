@@ -37,12 +37,12 @@ internal object JsUnionConverter : UnionConverter {
             }
 
         return """
-                sealed external interface $name {
+        sealed external interface $name {
             companion object {
             $constantNames
             }
         }
-    """.trimIndent()
+        """.trimIndent()
     }
 
     override fun sealedUnionBody(
@@ -59,12 +59,12 @@ internal object JsUnionConverter : UnionConverter {
         }
 
         return """
-                sealed external interface $name {
+        sealed external interface $name {
             companion object {
                 $bodyMembers
             }
         }
-    """.trimIndent()
+        """.trimIndent()
     }
 
     override fun sealedUnionBody(
@@ -82,12 +82,12 @@ internal object JsUnionConverter : UnionConverter {
         }
 
         return """
-                sealed external interface $name: $parentType {
+        sealed external interface $name: $parentType {
             companion object {
                 $bodyMembers
             }
         }
-    """.trimIndent()
+        """.trimIndent()
     }
 
     override fun objectUnionBody(
@@ -106,14 +106,14 @@ internal object JsUnionConverter : UnionConverter {
         }
 
         return """
-                sealed external interface $name {
+        sealed external interface $name {
             companion object {
                 $constantNames
             }
 
             $constantTypes
         }
-    """.trimIndent()
+        """.trimIndent()
     }
 }
 
@@ -142,12 +142,13 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
-               sealed external interface $name {
-                  companion object
-               }
+        sealed /* union */
+        external interface $name {
+            companion object
+        }
 
-               $extensions
-               """.trimIndent()
+        $extensions
+        """.trimIndent()
     }
 
     override fun sealedUnionBody(
@@ -164,7 +165,8 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
-        sealed external interface $name {
+        sealed /* union */
+        external interface $name {
             companion object
         }
 
@@ -187,7 +189,9 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
-        sealed external interface $name : $parentType {
+        sealed /* union */
+        external interface $name :
+            $parentType {
             companion object
         }
 
@@ -211,14 +215,15 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
-           sealed external interface $name {
-              $constantTypes
+        sealed /* union */
+        external interface $name {
+            $constantTypes
 
-              companion object
-           }
+            companion object
+        }
 
-           $extensions
-    """.trimIndent()
+        $extensions
+        """.trimIndent()
     }
 }
 

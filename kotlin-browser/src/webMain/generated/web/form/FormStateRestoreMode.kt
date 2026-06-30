@@ -8,7 +8,8 @@ package web.form
 
 import js.reflect.unsafeCast
 
-sealed external interface FormStateRestoreMode {
+sealed /* union */
+external interface FormStateRestoreMode {
     companion object
 }
 

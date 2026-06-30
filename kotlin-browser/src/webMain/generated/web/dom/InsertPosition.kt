@@ -8,7 +8,8 @@ package web.dom
 
 import js.reflect.unsafeCast
 
-sealed external interface InsertPosition {
+sealed /* union */
+external interface InsertPosition {
     companion object
 }
 

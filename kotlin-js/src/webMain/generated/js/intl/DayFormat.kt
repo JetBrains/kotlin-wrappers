@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface DayFormat {
+sealed /* union */
+external interface DayFormat {
     companion object
 }
 

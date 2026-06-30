@@ -8,7 +8,8 @@ package web.assembly
 
 import js.reflect.unsafeCast
 
-sealed external interface AddressType {
+sealed /* union */
+external interface AddressType {
     companion object
 }
 

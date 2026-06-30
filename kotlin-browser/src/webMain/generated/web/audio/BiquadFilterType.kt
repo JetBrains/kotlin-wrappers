@@ -8,7 +8,8 @@ package web.audio
 
 import js.reflect.unsafeCast
 
-sealed external interface BiquadFilterType {
+sealed /* union */
+external interface BiquadFilterType {
     companion object
 }
 

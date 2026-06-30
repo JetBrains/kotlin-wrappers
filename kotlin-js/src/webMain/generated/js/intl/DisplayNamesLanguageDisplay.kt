@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface DisplayNamesLanguageDisplay {
+sealed /* union */
+external interface DisplayNamesLanguageDisplay {
     companion object
 }
 

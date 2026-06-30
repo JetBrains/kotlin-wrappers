@@ -8,7 +8,8 @@ package web.codecs
 
 import js.reflect.unsafeCast
 
-sealed external interface BitrateMode {
+sealed /* union */
+external interface BitrateMode {
     companion object
 }
 

@@ -8,7 +8,8 @@ package web.animations
 
 import js.reflect.unsafeCast
 
-sealed external interface PlaybackDirection {
+sealed /* union */
+external interface PlaybackDirection {
     companion object
 }
 

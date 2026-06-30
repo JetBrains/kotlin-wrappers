@@ -8,7 +8,8 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-sealed external interface CurrencySign {
+sealed /* union */
+external interface CurrencySign {
     companion object
 }
 

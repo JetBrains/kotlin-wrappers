@@ -8,7 +8,8 @@ package web.canvas
 
 import js.reflect.unsafeCast
 
-sealed external interface CanvasFontKerning {
+sealed /* union */
+external interface CanvasFontKerning {
     companion object
 }
 
