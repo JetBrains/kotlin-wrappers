@@ -8,7 +8,10 @@ import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
-import react.*
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 
@@ -56,10 +59,7 @@ external interface AccordionSummarySlotsAndSlotProps : Props {
 
 external interface AccordionSummaryOwnProps :
     AccordionSummarySlotsAndSlotProps,
-    PropsWithChildren,
     PropsWithSx {
-    override var children: ReactNode?
-
     /**
      * Override or extend the styles applied to the component.
      */
@@ -82,12 +82,12 @@ external interface AccordionSummaryOwnerState
  *
  * Demos:
  *
- * - [Accordion](https://v7.mui.com/material-ui/react-accordion/)
+ * - [Accordion](https://mui.com/material-ui/react-accordion/)
  *
  * API:
  *
- * - [AccordionSummary API](https://v7.mui.com/material-ui/api/accordion-summary/)
- * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
+ * - [AccordionSummary API](https://mui.com/material-ui/api/accordion-summary/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val AccordionSummary: FC<AccordionSummaryProps>

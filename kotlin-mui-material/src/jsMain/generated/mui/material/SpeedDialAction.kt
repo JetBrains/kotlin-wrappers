@@ -97,12 +97,12 @@ external interface SpeedDialActionOwnerState
  *
  * Demos:
  *
- * - [Speed Dial](https://v7.mui.com/material-ui/react-speed-dial/)
+ * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
- * - [SpeedDialAction API](https://v7.mui.com/material-ui/api/speed-dial-action/)
- * - inherits [Tooltip API](https://v7.mui.com/material-ui/api/tooltip/)
+ * - [SpeedDialAction API](https://mui.com/material-ui/api/speed-dial-action/)
+ * - inherits [Tooltip API](https://mui.com/material-ui/api/tooltip/)
  */
 @JsName("default")
 external val SpeedDialAction: FC<SpeedDialActionProps>

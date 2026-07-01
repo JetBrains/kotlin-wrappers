@@ -108,7 +108,7 @@ external interface BadgeOwnProps :
      * Max count to show.
      * @default 99
      */
-    var max: Number?
+    var max: Double?
 
     /**
      * Wrapped shape the badge should overlap.
@@ -138,12 +138,12 @@ external interface BadgeOwnProps :
  *
  * Demos:
  *
- * - [Avatar](https://v7.mui.com/material-ui/react-avatar/)
- * - [Badge](https://v7.mui.com/material-ui/react-badge/)
+ * - [Avatar](https://mui.com/material-ui/react-avatar/)
+ * - [Badge](https://mui.com/material-ui/react-badge/)
  *
  * API:
  *
- * - [Badge API](https://v7.mui.com/material-ui/api/badge/)
+ * - [Badge API](https://mui.com/material-ui/api/badge/)
  */
 @JsName("default")
 external val Badge: FC<BadgeProps>

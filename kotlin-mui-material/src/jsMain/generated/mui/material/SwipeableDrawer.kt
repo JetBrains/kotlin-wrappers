@@ -104,12 +104,12 @@ external interface SwipeableDrawerSlots {
  *
  * Demos:
  *
- * - [Drawer](https://v7.mui.com/material-ui/react-drawer/)
+ * - [Drawer](https://mui.com/material-ui/react-drawer/)
  *
  * API:
  *
- * - [SwipeableDrawer API](https://v7.mui.com/material-ui/api/swipeable-drawer/)
- * - inherits [Drawer API](https://v7.mui.com/material-ui/api/drawer/)
+ * - [SwipeableDrawer API](https://mui.com/material-ui/api/swipeable-drawer/)
+ * - inherits [Drawer API](https://mui.com/material-ui/api/drawer/)
  */
 @JsName("default")
 external val SwipeableDrawer: FC<SwipeableDrawerProps>

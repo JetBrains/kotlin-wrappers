@@ -61,13 +61,13 @@ external interface PaperOwnProps :
  *
  * Demos:
  *
- * - [Card](https://v7.mui.com/material-ui/react-card/)
- * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
- * - [Paper](https://v7.mui.com/material-ui/react-paper/)
+ * - [Card](https://mui.com/material-ui/react-card/)
+ * - [Menubar](https://mui.com/material-ui/react-menubar/)
+ * - [Paper](https://mui.com/material-ui/react-paper/)
  *
  * API:
  *
- * - [Paper API](https://v7.mui.com/material-ui/api/paper/)
+ * - [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Paper: FC<PaperProps>

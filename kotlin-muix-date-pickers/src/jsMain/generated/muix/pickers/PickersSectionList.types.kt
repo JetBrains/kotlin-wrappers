@@ -3,12 +3,11 @@
 package muix.pickers
 
 import js.array.ReadonlyArray
+import mui.system.Union
 import react.ElementType
 import react.Props
 import react.Ref
 import react.dom.html.HTMLAttributes
-import web.dom.Element
-import web.html.HTMLElement
 import web.html.HTMLSpanElement
 
 external interface PickersSectionListProps :
@@ -39,6 +38,15 @@ external interface PickersSectionListSlots {
     var sectionContent: ElementType<*>
 }
 
+external interface PickerSectionSeparatorOwnerState : PickerOwnerState {
+    /**
+     * The position of the separator.
+     * `before` if the separator is rendered before the section content.
+     * `after` if the separator is rendered after the section content.
+     */
+    var separatorPosition: Union /* 'before' | 'after' */
+}
+
 external interface PickersSectionListSlotProps : Props {
     var root: Props?
 
@@ -59,15 +67,7 @@ external interface PickersSectionElement {
     var after: HTMLAttributes<HTMLSpanElement>
 }
 
-external interface PickersSectionListRef {
-    var getRoot: () -> HTMLElement
-
-    var getSectionContainer: (sectionIndex: Number) -> HTMLElement
-
-    var getSectionContent: (sectionIndex: Number) -> HTMLElement
-
-    var getSectionIndexFromDOMElement: (element: Element?) -> Number?
-}
+external interface PickersSectionListRef
 
 external interface ExportedPickersSectionListProps : Props {
     /**

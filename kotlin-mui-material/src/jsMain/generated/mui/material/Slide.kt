@@ -14,6 +14,16 @@ external interface SlideProps :
     TransitionProps,
     PropsWithChildren {
     /**
+     * Add a custom transition end trigger.
+     * Use it when you need custom logic to decide when the transition has ended.
+     * Note: Timeouts are still used as a fallback if provided.
+     *
+     * @param {HTMLElement} node The transitioning DOM node.
+     * @param {Function} done Call this when the transition has finished.
+     */
+    var addEndListener: Any? /* TransitionProps['addEndListener'] */
+
+    /**
      * Perform the enter transition when it first mounts if `in` is also `true`.
      * Set this to `false` to disable this behavior.
      * @default true
@@ -30,6 +40,12 @@ external interface SlideProps :
      * It's used to set the container the Slide is transitioning from.
      */
     var container: Element? /* null | Element | ((element: Element) => Element) */
+
+    /**
+     * If `true`, the transition ignores `theme.motion.reducedMotion` and keeps its normal timing.
+     * @default false
+     */
+    var disablePrefersReducedMotion: Boolean?
 
     /**
      * Direction the child node will enter from.
@@ -64,17 +80,16 @@ external interface SlideProps :
 }
 
 /**
- * The Slide transition is used by the [Drawer](https://v7.mui.com/material-ui/react-drawer/) component.
- * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
+ * The Slide transition is used by the [Drawer](https://mui.com/material-ui/react-drawer/) component.
  *
  * Demos:
  *
- * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
- * - [Transitions](https://v7.mui.com/material-ui/transitions/)
+ * - [Dialog](https://mui.com/material-ui/react-dialog/)
+ * - [Transitions](https://mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Slide API](https://v7.mui.com/material-ui/api/slide/)
+ * - [Slide API](https://mui.com/material-ui/api/slide/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")

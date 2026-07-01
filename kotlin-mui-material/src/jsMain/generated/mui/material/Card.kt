@@ -45,12 +45,12 @@ external interface CardOwnProps :
  *
  * Demos:
  *
- * - [Card](https://v7.mui.com/material-ui/react-card/)
+ * - [Card](https://mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [Card API](https://v7.mui.com/material-ui/api/card/)
- * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
+ * - [Card API](https://mui.com/material-ui/api/card/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 
 @JsName("default")

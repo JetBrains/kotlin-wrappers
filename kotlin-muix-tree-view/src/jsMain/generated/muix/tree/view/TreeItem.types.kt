@@ -5,25 +5,23 @@ package muix.tree.view
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
-import react.*
+import react.ElementType
+import react.Props
+import react.PropsWithClassName
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
-import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
-import web.html.HTMLElement
 import web.html.HTMLLIElement
 
 external interface TreeItemProps :
-    HTMLAttributes<HTMLLIElement>,
-    PropsWithChildren,
     PropsWithClassName,
     PropsWithSx {
-    /**
-     * The content of the component.
-     */
-    override var children: ReactNode?
-
     override var className: ClassName?
+
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    override var sx: SxProps<Theme>?
 
     /**
      * Override or extend the styles applied to the component.
@@ -43,100 +41,110 @@ external interface TreeItemProps :
     var slotProps: TreeItemSlotProps?
 
     /**
-     * The component used to render the content of the item.
-     * @default TreeItemContent
-     */
-    @Deprecated("Consider using the `<TreeItem2 />` component or the `useTreeItem2` hook instead. For more details, see https://mui.com/x/react-tree-view/tree-item-customization/.")
-    var ContentComponent: ComponentType<TreeItemContentProps>?
-
-    /**
-     * Props applied to ContentComponent.
-     */
-    @Deprecated("Consider using the `<TreeItem2 />` component or the `useTreeItem2` hook instead. For more details, see https://mui.com/x/react-tree-view/tree-item-customization/.")
-    var ContentProps: HTMLAttributes<HTMLElement>?
-
-    /**
-     * If `true`, the item is disabled.
-     * @default false
-     */
-    var disabled: Boolean?
-
-    /**
      * This prop isn't supported.
-     * Use the `onItemFocus` callback on the tree if you need to monitor a item's focus.
+     * Use the `onItemFocus` callback on the tree if you need to monitor an item's focus.
      */
     @Deprecated("See documentation")
-    override var onFocus: FocusEventHandler<HTMLLIElement>?
+    var onFocus: FocusEventHandler<HTMLLIElement>?
 
     /**
-     * The Tree Item label.
+     * Callback fired when the item root is blurred.
      */
-    var label: ReactNode?
+    var onBlur: Any? /* TreeViewCancellableEventHandler<React.FocusEvent<HTMLLIElement>> */
 
     /**
-     * The id of the item.
+     * Callback fired when a key is pressed on the keyboard and the tree is in focus.
      */
-    var itemId: String
-
-    /**
-     * The system prop that allows defining system overrides as well as additional CSS styles.
-     */
-    override var sx: SxProps<Theme>?
-
-    /**
-     * Callback fired when a key of the keyboard is pressed on the item.
-     */
-    override var onKeyDown: KeyboardEventHandler<HTMLLIElement>?
+    var onKeyDown: KeyboardEventHandler<HTMLLIElement>?
 }
 
-external interface TreeItemSlots {
+external interface TreeItemSlots : TreeItemIconSlots {
     /**
-     * The icon used to collapse the item.
+     * The component that renders the root.
+     * @default TreeItemRoot
      */
-    var collapseIcon: ElementType<*>?
+    var root: ElementType<*>?
 
     /**
-     * The icon used to expand the item.
+     * The component that renders the content of the item.
+     * (e.g.: everything related to this item, not to its children).
+     * @default TreeItemContent
      */
-    var expandIcon: ElementType<*>?
+    var content: ElementType<*>?
 
     /**
-     * The icon displayed next to an end item.
-     */
-    var endIcon: ElementType<*>?
-
-    /**
-     * The icon to display next to the Tree Item's label.
-     */
-    var icon: ElementType<*>?
-
-    /**
-     * The component that animates the appearance / disappearance of the item's children.
-     * @default TreeItem2Group
+     * The component that renders the children of the item.
+     * @default TreeItemGroupTransition
      */
     var groupTransition: ElementType<*>?
+
+    /**
+     * The component that renders the icon.
+     * @default TreeItemIconContainer
+     */
+    var iconContainer: ElementType<*>?
+
+    /**
+     * The component that renders the item checkbox for selection.
+     * @default TreeItemCheckbox
+     */
+    var checkbox: ElementType<*>?
+
+    /**
+     * The component that renders the item label.
+     * @default TreeItemLabel
+     */
+    var label: ElementType<*>?
+
+    /**
+     * The component that renders the input to edit the label when the item is editable and is currently being edited.
+     * @default TreeItemLabelInput
+     */
+    var labelInput: ElementType<*>?
+
+    /**
+     * The component that renders the overlay when an item reordering is ongoing.
+     * Warning: This slot is only useful when using the `<RichTreeViewPro />` component.
+     * @default TreeItemDragAndDropOverlay
+     */
+    var dragAndDropOverlay: ElementType<*>?
+
+    /**
+     * The component that is rendered when the item is in an error state.
+     * Warning: This slot is only useful when using the `<RichTreeViewPro />` component is lazy loading is enabled.
+     * @default TreeItemErrorContainer
+     */
+    var errorIcon: ElementType<*>?
+
+    /**
+     * The component that is rendered when the item is in a loading state.
+     * Warning: This slot is only useful when using the `<RichTreeViewPro />` component is lazy loading is enabled.
+     * @default TreeItemLoadingContainer
+     */
+    var loadingIcon: ElementType<*>?
 }
 
-external interface TreeItemSlotProps : Props {
-    var collapseIcon: Props?
+external interface TreeItemSlotProps :
+    TreeItemIconSlotProps {
+    var root: Props?
 
-    var expandIcon: Props?
-
-    var endIcon: Props?
-
-    var icon: Props?
+    var content: Props?
 
     var groupTransition: Props?
+
+    var iconContainer: Props?
+
+    var checkbox: Props?
+
+    var label: Props?
+
+    var labelInput: Props?
+
+    var dragAndDropOverlay: Props?
+
+    var errorIcon: Props?
+
+    var loadingIcon: Props?
 }
 
-external interface TreeItemOwnerState : TreeItemProps {
-    var expanded: Boolean
-
-    var focused: Boolean
-
-    var selected: Boolean
-
-    override var disabled: Boolean?
-
-    var indentationAtItemLevel: Boolean
-}
+external interface TreeItemOwnerState

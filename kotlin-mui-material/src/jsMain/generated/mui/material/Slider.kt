@@ -13,15 +13,100 @@ import mui.types.PropsWithComponent
 import react.*
 import react.dom.events.SyntheticEvent
 import react.dom.html.HTMLAttributes
+import react.dom.html.InputHTMLAttributes
 import web.cssom.ClassName
 import web.dom.ElementId
 import web.events.Event
+import web.html.HTMLInputElement
 import web.html.HTMLSpanElement
 
 external interface SliderProps :
     SliderOwnProps,
+    SliderSlotsAndSlotProps,
     HTMLAttributes<HTMLSpanElement>,
     PropsWithComponent
+
+external interface SliderSlots {
+    /**
+     * The component that renders the root.
+     * @default 'span'
+     */
+    var root: ElementType<*>
+
+    /**
+     * The component that renders the track.
+     * @default 'span'
+     */
+    var track: ElementType<*>
+
+    /**
+     * The component that renders the rail.
+     * @default 'span'
+     */
+    var rail: ElementType<*>
+
+    /**
+     * The component that renders the thumb.
+     * @default 'span'
+     */
+    var thumb: ElementType<*>
+
+    /**
+     * The component that renders the mark.
+     * @default 'span'
+     */
+    var mark: ElementType<*>
+
+    /**
+     * The component that renders the mark label.
+     * @default 'span'
+     */
+    var markLabel: ElementType<*>
+
+    /**
+     * The component that renders the value label.
+     * @default SliderValueLabel
+     */
+    var valueLabel: ElementType<*>
+
+    /**
+     * The component that renders the input.
+     * @default 'input'
+     */
+    var input: ElementType<*>
+}
+
+external interface SliderSlotProps : Props {
+    /** TS: SlotProps<'span', SliderRootSlotPropsOverrides, SliderOwnerState> */
+    var root: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SliderTrackSlotPropsOverrides, SliderOwnerState> */
+    var track: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SliderRailSlotPropsOverrides, SliderOwnerState> */
+    var rail: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SliderThumbSlotPropsOverrides, SliderOwnerState> */
+    var thumb: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SliderMarkSlotPropsOverrides, SliderOwnerState> */
+    var mark: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'span', SliderMarkLabelSlotPropsOverrides, SliderOwnerState> */
+    var markLabel: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotComponentProps<'span', SliderValueLabelSlotPropsOverrides, SliderOwnerState> */
+    var valueLabel: HTMLAttributes<HTMLSpanElement>?
+
+    /** TS: SlotProps<'input', SliderInputSlotPropsOverrides, SliderOwnerState> */
+    var input: InputHTMLAttributes<HTMLInputElement>?
+}
+
+external interface SliderSlotsAndSlotProps : Props {
+    var slots: SliderSlots?
+
+    var slotProps: SliderSlotProps?
+}
 
 external interface SliderOwnerState : SliderProps {
     var dragging: Boolean
@@ -117,14 +202,14 @@ external interface SliderOwnProps :
      * Should not be equal to min.
      * @default 100
      */
-    var max: Number?
+    var max: Double?
 
     /**
      * The minimum allowed value of the slider.
      * Should not be equal to max.
      * @default 0
      */
-    var min: Number?
+    var min: Double?
 
     /**
      * Name attribute of the hidden `input` element.
@@ -143,7 +228,7 @@ external interface SliderOwnProps :
     var onChange: ((event: Event, value: ReadonlyArray<Number>, activeThumb: Number) -> Unit)?
 
     /**
-     * Callback function that is fired when the `mouseup` is triggered.
+     * Callback function that is fired when the pointer or touch interaction ends.
      *
      * @param {React.SyntheticEvent | Event} event The event source of the callback. **Warning**: This is a generic event not a change event.
      * @param {Value} value The new value.
@@ -177,41 +262,6 @@ external interface SliderOwnProps :
      * @default 'medium'
      */
     var size: BaseSize?
-
-    /**
-     * The props used for each slot inside the Slider.
-     * @default {}
-     */
-    var slotProps: SlotProps?
-
-    interface SlotProps {
-        var root: Props?
-        var track: Props?
-        var rail: Props?
-        var thumb: Props?
-        var mark: Props?
-        var markLabel: Props?
-        var valueLabel: Props?
-        var input: Props?
-    }
-
-    /**
-     * The components used for each slot inside the Slider.
-     * Either a string to use a HTML element or a component.
-     * @default {}
-     */
-    var slots: Slots?
-
-    interface Slots {
-        var root: ElementType<*>?
-        var track: ElementType<*>?
-        var rail: ElementType<*>?
-        var thumb: ElementType<*>?
-        var mark: ElementType<*>?
-        var markLabel: ElementType<*>?
-        var valueLabel: ElementType<*>?
-        var input: ElementType<*>?
-    }
 
     /**
      * The granularity with which the slider can step through values. (A "discrete" slider.)
@@ -292,11 +342,11 @@ external interface SliderValueLabelProps :
  *
  * Demos:
  *
- * - [Slider](https://v7.mui.com/material-ui/react-slider/)
+ * - [Slider](https://mui.com/material-ui/react-slider/)
  *
  * API:
  *
- * - [Slider API](https://v7.mui.com/material-ui/api/slider/)
+ * - [Slider API](https://mui.com/material-ui/api/slider/)
  */
 @JsName("default")
 external val Slider: FC<SliderProps>

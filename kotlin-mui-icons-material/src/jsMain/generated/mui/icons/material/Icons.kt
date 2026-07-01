@@ -122,7 +122,6 @@ external val AddCardRounded: SvgIconComponent
 external val AddCardSharp: SvgIconComponent
 external val AddCardTwoTone: SvgIconComponent
 external val AddCircle: SvgIconComponent
-external val AddCircleOutline: SvgIconComponent
 external val AddCircleOutlineOutlined: SvgIconComponent
 external val AddCircleOutlineRounded: SvgIconComponent
 external val AddCircleOutlineSharp: SvgIconComponent
@@ -1672,7 +1671,6 @@ external val ChargingStationSharp: SvgIconComponent
 external val ChargingStationTwoTone: SvgIconComponent
 external val Chat: SvgIconComponent
 external val ChatBubble: SvgIconComponent
-external val ChatBubbleOutline: SvgIconComponent
 external val ChatBubbleOutlineOutlined: SvgIconComponent
 external val ChatBubbleOutlineRounded: SvgIconComponent
 external val ChatBubbleOutlineSharp: SvgIconComponent
@@ -1697,7 +1695,6 @@ external val CheckBoxRounded: SvgIconComponent
 external val CheckBoxSharp: SvgIconComponent
 external val CheckBoxTwoTone: SvgIconComponent
 external val CheckCircle: SvgIconComponent
-external val CheckCircleOutline: SvgIconComponent
 external val CheckCircleOutlineOutlined: SvgIconComponent
 external val CheckCircleOutlineRounded: SvgIconComponent
 external val CheckCircleOutlineSharp: SvgIconComponent
@@ -2363,7 +2360,6 @@ external val DeleteForeverOutlined: SvgIconComponent
 external val DeleteForeverRounded: SvgIconComponent
 external val DeleteForeverSharp: SvgIconComponent
 external val DeleteForeverTwoTone: SvgIconComponent
-external val DeleteOutline: SvgIconComponent
 external val DeleteOutlineOutlined: SvgIconComponent
 external val DeleteOutlineRounded: SvgIconComponent
 external val DeleteOutlineSharp: SvgIconComponent
@@ -2744,7 +2740,6 @@ external val DoneAllOutlined: SvgIconComponent
 external val DoneAllRounded: SvgIconComponent
 external val DoneAllSharp: SvgIconComponent
 external val DoneAllTwoTone: SvgIconComponent
-external val DoneOutline: SvgIconComponent
 external val DoneOutlineOutlined: SvgIconComponent
 external val DoneOutlineRounded: SvgIconComponent
 external val DoneOutlineSharp: SvgIconComponent
@@ -2839,7 +2834,6 @@ external val DriveEtaRounded: SvgIconComponent
 external val DriveEtaSharp: SvgIconComponent
 external val DriveEtaTwoTone: SvgIconComponent
 external val DriveFileMove: SvgIconComponent
-external val DriveFileMoveOutline: SvgIconComponent
 external val DriveFileMoveOutlined: SvgIconComponent
 external val DriveFileMoveRounded: SvgIconComponent
 external val DriveFileMoveRtl: SvgIconComponent
@@ -3157,7 +3151,6 @@ external val EqualizerRounded: SvgIconComponent
 external val EqualizerSharp: SvgIconComponent
 external val EqualizerTwoTone: SvgIconComponent
 external val Error: SvgIconComponent
-external val ErrorOutline: SvgIconComponent
 external val ErrorOutlineOutlined: SvgIconComponent
 external val ErrorOutlineRounded: SvgIconComponent
 external val ErrorOutlineSharp: SvgIconComponent
@@ -4449,7 +4442,6 @@ external val HelpCenterOutlined: SvgIconComponent
 external val HelpCenterRounded: SvgIconComponent
 external val HelpCenterSharp: SvgIconComponent
 external val HelpCenterTwoTone: SvgIconComponent
-external val HelpOutline: SvgIconComponent
 external val HelpOutlineOutlined: SvgIconComponent
 external val HelpOutlineRounded: SvgIconComponent
 external val HelpOutlineSharp: SvgIconComponent
@@ -4730,7 +4722,6 @@ external val IndeterminateCheckBoxRounded: SvgIconComponent
 external val IndeterminateCheckBoxSharp: SvgIconComponent
 external val IndeterminateCheckBoxTwoTone: SvgIconComponent
 external val Info: SvgIconComponent
-external val InfoOutline: SvgIconComponent
 external val InfoOutlineRounded: SvgIconComponent
 external val InfoOutlineSharp: SvgIconComponent
 external val InfoOutlineTwoTone: SvgIconComponent
@@ -5010,7 +5001,6 @@ external val KitesurfingSharp: SvgIconComponent
 external val KitesurfingTwoTone: SvgIconComponent
 external val Label: SvgIconComponent
 external val LabelImportant: SvgIconComponent
-external val LabelImportantOutline: SvgIconComponent
 external val LabelImportantOutlineRounded: SvgIconComponent
 external val LabelImportantOutlineSharp: SvgIconComponent
 external val LabelImportantOutlineTwoTone: SvgIconComponent
@@ -5153,7 +5143,6 @@ external val LightbulbCircleOutlined: SvgIconComponent
 external val LightbulbCircleRounded: SvgIconComponent
 external val LightbulbCircleSharp: SvgIconComponent
 external val LightbulbCircleTwoTone: SvgIconComponent
-external val LightbulbOutline: SvgIconComponent
 external val LightbulbOutlineRounded: SvgIconComponent
 external val LightbulbOutlineSharp: SvgIconComponent
 external val LightbulbOutlineTwoTone: SvgIconComponent
@@ -5419,7 +5408,6 @@ external val LockOpenOutlined: SvgIconComponent
 external val LockOpenRounded: SvgIconComponent
 external val LockOpenSharp: SvgIconComponent
 external val LockOpenTwoTone: SvgIconComponent
-external val LockOutline: SvgIconComponent
 external val LockOutlineRounded: SvgIconComponent
 external val LockOutlineSharp: SvgIconComponent
 external val LockOutlineTwoTone: SvgIconComponent
@@ -5543,7 +5531,6 @@ external val MailLockOutlined: SvgIconComponent
 external val MailLockRounded: SvgIconComponent
 external val MailLockSharp: SvgIconComponent
 external val MailLockTwoTone: SvgIconComponent
-external val MailOutline: SvgIconComponent
 external val MailOutlineOutlined: SvgIconComponent
 external val MailOutlineRounded: SvgIconComponent
 external val MailOutlineSharp: SvgIconComponent
@@ -5825,7 +5812,6 @@ external val ModeCommentRounded: SvgIconComponent
 external val ModeCommentSharp: SvgIconComponent
 external val ModeCommentTwoTone: SvgIconComponent
 external val ModeEdit: SvgIconComponent
-external val ModeEditOutline: SvgIconComponent
 external val ModeEditOutlineOutlined: SvgIconComponent
 external val ModeEditOutlineRounded: SvgIconComponent
 external val ModeEditOutlineSharp: SvgIconComponent
@@ -6634,7 +6620,6 @@ external val PauseCircleFilledOutlined: SvgIconComponent
 external val PauseCircleFilledRounded: SvgIconComponent
 external val PauseCircleFilledSharp: SvgIconComponent
 external val PauseCircleFilledTwoTone: SvgIconComponent
-external val PauseCircleOutline: SvgIconComponent
 external val PauseCircleOutlineOutlined: SvgIconComponent
 external val PauseCircleOutlineRounded: SvgIconComponent
 external val PauseCircleOutlineSharp: SvgIconComponent
@@ -6688,7 +6673,6 @@ external val PeopleAltOutlined: SvgIconComponent
 external val PeopleAltRounded: SvgIconComponent
 external val PeopleAltSharp: SvgIconComponent
 external val PeopleAltTwoTone: SvgIconComponent
-external val PeopleOutline: SvgIconComponent
 external val PeopleOutlineOutlined: SvgIconComponent
 external val PeopleOutlineRounded: SvgIconComponent
 external val PeopleOutlineSharp: SvgIconComponent
@@ -6783,7 +6767,6 @@ external val PersonOffOutlined: SvgIconComponent
 external val PersonOffRounded: SvgIconComponent
 external val PersonOffSharp: SvgIconComponent
 external val PersonOffTwoTone: SvgIconComponent
-external val PersonOutline: SvgIconComponent
 external val PersonOutlineOutlined: SvgIconComponent
 external val PersonOutlineRounded: SvgIconComponent
 external val PersonOutlineSharp: SvgIconComponent
@@ -7018,7 +7001,6 @@ external val PictureInPictureRounded: SvgIconComponent
 external val PictureInPictureSharp: SvgIconComponent
 external val PictureInPictureTwoTone: SvgIconComponent
 external val PieChart: SvgIconComponent
-external val PieChartOutline: SvgIconComponent
 external val PieChartOutlineOutlined: SvgIconComponent
 external val PieChartOutlineRounded: SvgIconComponent
 external val PieChartOutlineSharp: SvgIconComponent
@@ -7089,7 +7071,6 @@ external val PlayCircleFilledWhiteOutlined: SvgIconComponent
 external val PlayCircleFilledWhiteRounded: SvgIconComponent
 external val PlayCircleFilledWhiteSharp: SvgIconComponent
 external val PlayCircleFilledWhiteTwoTone: SvgIconComponent
-external val PlayCircleOutline: SvgIconComponent
 external val PlayCircleOutlineOutlined: SvgIconComponent
 external val PlayCircleOutlineRounded: SvgIconComponent
 external val PlayCircleOutlineSharp: SvgIconComponent
@@ -7522,7 +7503,6 @@ external val RememberMeSharp: SvgIconComponent
 external val RememberMeTwoTone: SvgIconComponent
 external val Remove: SvgIconComponent
 external val RemoveCircle: SvgIconComponent
-external val RemoveCircleOutline: SvgIconComponent
 external val RemoveCircleOutlineOutlined: SvgIconComponent
 external val RemoveCircleOutlineRounded: SvgIconComponent
 external val RemoveCircleOutlineSharp: SvgIconComponent
@@ -9000,7 +8980,6 @@ external val StarHalfOutlined: SvgIconComponent
 external val StarHalfRounded: SvgIconComponent
 external val StarHalfSharp: SvgIconComponent
 external val StarHalfTwoTone: SvgIconComponent
-external val StarOutline: SvgIconComponent
 external val StarOutlineOutlined: SvgIconComponent
 external val StarOutlineRounded: SvgIconComponent
 external val StarOutlineSharp: SvgIconComponent
@@ -10709,7 +10688,6 @@ external val WorkOffOutlined: SvgIconComponent
 external val WorkOffRounded: SvgIconComponent
 external val WorkOffSharp: SvgIconComponent
 external val WorkOffTwoTone: SvgIconComponent
-external val WorkOutline: SvgIconComponent
 external val WorkOutlineOutlined: SvgIconComponent
 external val WorkOutlineRounded: SvgIconComponent
 external val WorkOutlineSharp: SvgIconComponent
@@ -10725,7 +10703,6 @@ external val WorkspacePremiumSharp: SvgIconComponent
 external val WorkspacePremiumTwoTone: SvgIconComponent
 external val Workspaces: SvgIconComponent
 external val WorkspacesFilled: SvgIconComponent
-external val WorkspacesOutline: SvgIconComponent
 external val WorkspacesOutlined: SvgIconComponent
 external val WorkspacesRounded: SvgIconComponent
 external val WorkspacesSharp: SvgIconComponent

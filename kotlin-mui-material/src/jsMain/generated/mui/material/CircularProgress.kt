@@ -44,6 +44,18 @@ external interface CircularProgressProps :
     var enableTrackSlot: Boolean?
 
     /**
+     * The maximum value for the progress indicator for the determinate variant.
+     * @default 100
+     */
+    var max: Double?
+
+    /**
+     * The minimum value for the progress indicator for the determinate variant.
+     * @default 0
+     */
+    var min: Double?
+
+    /**
      * The size of the component.
      * If using a number, the pixel unit is assumed.
      * If using a string, you need to provide the CSS unit, for example '3rem'.
@@ -64,8 +76,8 @@ external interface CircularProgressProps :
 
     /**
      * The value of the progress indicator for the determinate variant.
-     * Value between 0 and 100.
-     * @default 0
+     * Value between `min` and `max`.
+     * @default props.min ?? 0
      */
     var value: Number?
 
@@ -86,11 +98,11 @@ external interface CircularProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://v7.mui.com/material-ui/react-progress/)
+ * - [Progress](https://mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [CircularProgress API](https://v7.mui.com/material-ui/api/circular-progress/)
+ * - [CircularProgress API](https://mui.com/material-ui/api/circular-progress/)
  */
 @JsName("default")
 external val CircularProgress: FC<CircularProgressProps>

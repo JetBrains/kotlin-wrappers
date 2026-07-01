@@ -29,13 +29,13 @@ external interface PopperProps :
  *
  * Demos:
  *
- * - [Autocomplete](https://v7.mui.com/material-ui/react-autocomplete/)
- * - [Menu](https://v7.mui.com/material-ui/react-menu/)
- * - [Popper](https://v7.mui.com/material-ui/react-popper/)
+ * - [Autocomplete](https://mui.com/material-ui/react-autocomplete/)
+ * - [Menu](https://mui.com/material-ui/react-menu/)
+ * - [Popper](https://mui.com/material-ui/react-popper/)
  *
  * API:
  *
- * - [Popper API](https://v7.mui.com/material-ui/api/popper/)
+ * - [Popper API](https://mui.com/material-ui/api/popper/)
  */
 @JsName("default")
 external val Popper: FC<PopperProps>

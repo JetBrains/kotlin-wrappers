@@ -6,6 +6,7 @@ package mui.system
 
 import mui.types.PropsWithComponent
 import react.FC
+import react.Props
 import react.PropsWithChildren
 import react.ReactNode
 import react.dom.html.HTMLAttributes
@@ -16,10 +17,9 @@ external interface BoxProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithComponent
 
-external interface CustomSystemProps
+external interface CustomSystemProps : Props
 
 external interface BoxOwnProps :
-    SystemProps<Theme>,
     PropsWithChildren,
     PropsWithSx {
     override var children: ReactNode?
@@ -34,7 +34,6 @@ external interface BoxOwnProps :
  *
  * Demos:
  *
- * - [Box (Joy UI)](https://mui.com/joy-ui/react-box/)
  * - [Box (Material UI)](https://mui.com/material-ui/react-box/)
  * - [Menubar (Material UI)](https://mui.com/material-ui/react-menubar/)
  * - [Box (MUI System)](https://mui.com/system/react-box/)

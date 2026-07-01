@@ -48,11 +48,11 @@ external interface SpeedDialIconProps :
  *
  * Demos:
  *
- * - [Speed Dial](https://v7.mui.com/material-ui/react-speed-dial/)
+ * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
- * - [SpeedDialIcon API](https://v7.mui.com/material-ui/api/speed-dial-icon/)
+ * - [SpeedDialIcon API](https://mui.com/material-ui/api/speed-dial-icon/)
  */
 @JsName("default")
 external val SpeedDialIcon: FC<SpeedDialIconProps>

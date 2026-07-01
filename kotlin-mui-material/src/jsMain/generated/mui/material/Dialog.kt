@@ -56,12 +56,6 @@ external interface DialogProps :
     var classes: DialogClasses?
 
     /**
-     * If `true`, hitting escape will not fire the `onClose` callback.
-     * @default false
-     */
-    override var disableEscapeKeyDown: Boolean?
-
-    /**
      * If `true`, the dialog is full-screen.
      * @default false
      */
@@ -135,7 +129,7 @@ external interface DialogProps :
 external interface DialogSlots {
     /**
      * The component that renders the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Collapse
      */
     var transition: ElementType<*>?
@@ -172,7 +166,7 @@ external interface DialogSlotProps : Props {
     /** TS: SlotProps<'div', DialogContainerSlotPropsOverrides, DialogOwnerState> */
     var container: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotComponentProps<React.ElementType, TransitionProps & DialogTransitionSlotPropsOverrides, DialogOwnerState> */
+    /** TS: SlotComponentProps<React.ElementType<TransitionProps>, TransitionProps & DialogTransitionSlotPropsOverrides, DialogOwnerState> */
     var transition: TransitionProps?
 
     /** TS: SlotProps<React.ElementType<PaperProps>, DialogPaperSlotPropsOverrides, DialogOwnerState> */
@@ -192,12 +186,12 @@ external interface DialogOwnerState
  *
  * Demos:
  *
- * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [Dialog API](https://v7.mui.com/material-ui/api/dialog/)
- * - inherits [Modal API](https://v7.mui.com/material-ui/api/modal/)
+ * - [Dialog API](https://mui.com/material-ui/api/dialog/)
+ * - inherits [Modal API](https://mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Dialog: FC<DialogProps>

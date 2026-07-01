@@ -42,11 +42,11 @@ external interface CardContentOwnProps :
  *
  * Demos:
  *
- * - [Card](https://v7.mui.com/material-ui/react-card/)
+ * - [Card](https://mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [CardContent API](https://v7.mui.com/material-ui/api/card-content/)
+ * - [CardContent API](https://mui.com/material-ui/api/card-content/)
  */
 @JsName("default")
 external val CardContent: FC<CardContentProps>

@@ -64,12 +64,12 @@ external interface IconOwnProps :
  *
  * Demos:
  *
- * - [Icons](https://v7.mui.com/material-ui/icons/)
- * - [Material Icons](https://v7.mui.com/material-ui/material-icons/)
+ * - [Icons](https://mui.com/material-ui/icons/)
+ * - [Material Icons](https://mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [Icon API](https://v7.mui.com/material-ui/api/icon/)
+ * - [Icon API](https://mui.com/material-ui/api/icon/)
  */
 @JsName("default")
 external val Icon: FC<IconProps>

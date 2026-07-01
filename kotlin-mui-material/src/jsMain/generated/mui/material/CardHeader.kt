@@ -63,30 +63,10 @@ external interface CardHeaderSlots {
     var subheader: ElementType<*>
 }
 
-external interface CardHeaderSlotProps : Props {
-    /** TS: SlotProps<'div', CardHeaderRootSlotPropsOverrides, CardHeaderOwnerState> */
-    var root: HTMLAttributes<HTMLDivElement>?
-
-    /** TS: SlotProps<'div', CardHeaderAvatarSlotPropsOverrides, CardHeaderOwnerState> */
-    var avatar: HTMLAttributes<HTMLDivElement>?
-
-    /** TS: SlotProps<'div', CardHeaderActionSlotPropsOverrides, CardHeaderOwnerState> */
-    var action: HTMLAttributes<HTMLDivElement>?
-
-    /** TS: SlotProps<'div', CardHeaderContentSlotPropsOverrides, CardHeaderOwnerState> */
-    var content: HTMLAttributes<HTMLDivElement>?
-
-    /** TS: SlotProps<React.ElementType<TypographyProps>, CardHeaderTitleSlotPropsOverrides, CardHeaderOwnerState> */
-    var title: TypographyProps?
-
-    /** TS: SlotProps<React.ElementType<TypographyProps>, CardHeaderSubheaderSlotPropsOverrides, CardHeaderOwnerState> */
-    var subheader: TypographyProps?
-}
-
 external interface CardHeaderSlotsAndSlotProps : Props {
     var slots: CardHeaderSlots?
 
-    var slotProps: CardHeaderSlotProps?
+    var slotProps: Props?
 }
 
 external interface CardHeaderOwnProps :
@@ -138,11 +118,11 @@ external interface CardHeaderOwnerState
  *
  * Demos:
  *
- * - [Card](https://v7.mui.com/material-ui/react-card/)
+ * - [Card](https://mui.com/material-ui/react-card/)
  *
  * API:
  *
- * - [CardHeader API](https://v7.mui.com/material-ui/api/card-header/)
+ * - [CardHeader API](https://mui.com/material-ui/api/card-header/)
  */
 @JsName("default")
 external val CardHeader: FC<CardHeaderProps>

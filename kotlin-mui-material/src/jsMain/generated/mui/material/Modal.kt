@@ -98,12 +98,6 @@ external interface ModalOwnProps :
     var disableEnforceFocus: Boolean?
 
     /**
-     * If `true`, hitting escape will not fire the `onClose` callback.
-     * @default false
-     */
-    var disableEscapeKeyDown: Boolean?
-
-    /**
      * The `children` will be under the DOM hierarchy of the parent component.
      * @default false
      */
@@ -187,23 +181,23 @@ external interface ModalOwnProps :
 /**
  * Modal is a lower-level construct that is leveraged by the following components:
  *
- * * [Dialog](https://v7.mui.com/material-ui/api/dialog/)
- * * [Drawer](https://v7.mui.com/material-ui/api/drawer/)
- * * [Menu](https://v7.mui.com/material-ui/api/menu/)
- * * [Popover](https://v7.mui.com/material-ui/api/popover/)
+ * * [Dialog](https://mui.com/material-ui/api/dialog/)
+ * * [Drawer](https://mui.com/material-ui/api/drawer/)
+ * * [Menu](https://mui.com/material-ui/api/menu/)
+ * * [Popover](https://mui.com/material-ui/api/popover/)
  *
- * If you are creating a modal dialog, you probably want to use the [Dialog](https://v7.mui.com/material-ui/api/dialog/) component
+ * If you are creating a modal dialog, you probably want to use the [Dialog](https://mui.com/material-ui/api/dialog/) component
  * rather than directly using Modal.
  *
  * This component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).
  *
  * Demos:
  *
- * - [Modal](https://v7.mui.com/material-ui/react-modal/)
+ * - [Modal](https://mui.com/material-ui/react-modal/)
  *
  * API:
  *
- * - [Modal API](https://v7.mui.com/material-ui/api/modal/)
+ * - [Modal API](https://mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Modal: FC<ModalProps>

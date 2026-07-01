@@ -140,7 +140,7 @@ external interface RatingOwnProps :
      * Maximum rating.
      * @default 5
      */
-    var max: Number?
+    var max: Double?
 
     /**
      * The name attribute of the radio `input` elements.
@@ -198,11 +198,11 @@ external interface RatingOwnerState
  *
  * Demos:
  *
- * - [Rating](https://v7.mui.com/material-ui/react-rating/)
+ * - [Rating](https://mui.com/material-ui/react-rating/)
  *
  * API:
  *
- * - [Rating API](https://v7.mui.com/material-ui/api/rating/)
+ * - [Rating API](https://mui.com/material-ui/api/rating/)
  */
 @JsName("default")
 external val Rating: FC<RatingProps>

@@ -133,13 +133,13 @@ external interface SwitchOwnerState
  *
  * Demos:
  *
- * - [Switch](https://v7.mui.com/material-ui/react-switch/)
- * - [Transfer List](https://v7.mui.com/material-ui/react-transfer-list/)
+ * - [Switch](https://mui.com/material-ui/react-switch/)
+ * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [Switch API](https://v7.mui.com/material-ui/api/switch/)
- * - inherits [IconButton API](https://v7.mui.com/material-ui/api/icon-button/)
+ * - [Switch API](https://mui.com/material-ui/api/switch/)
+ * - inherits [IconButton API](https://mui.com/material-ui/api/icon-button/)
  */
 @JsName("default")
 external val Switch: FC<SwitchProps>

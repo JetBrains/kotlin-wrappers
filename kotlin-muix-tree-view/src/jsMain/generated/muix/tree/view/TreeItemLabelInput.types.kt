@@ -9,7 +9,7 @@ import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
 import web.html.HTMLInputElement
 
-external interface TreeItem2LabelInputProps : Props {
+external interface TreeItemLabelInputProps : Props {
     var value: String?
 
     /**

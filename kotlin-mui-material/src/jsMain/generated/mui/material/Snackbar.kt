@@ -137,7 +137,7 @@ external interface SnackbarSlots {
 
     /**
      * The component that renders the transition.
-     * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Grow
      */
     var transition: ElementType<*>
@@ -153,7 +153,7 @@ external interface SnackbarSlotProps : Props {
     /** TS: SlotComponentProps<typeof ClickAwayListener, SnackbarClickAwayListenerSlotPropsOverrides, SnackbarOwnerState> */
     var clickAwayListener: ClickAwayListenerProps?
 
-    /** TS: SlotComponentProps<React.ElementType, TransitionProps & SnackbarTransitionSlotPropsOverrides, SnackbarOwnerState> */
+    /** TS: SlotComponentProps<React.ElementType<TransitionProps>, TransitionProps & SnackbarTransitionSlotPropsOverrides, SnackbarOwnerState> */
     var transition: TransitionProps?
 }
 
@@ -175,11 +175,11 @@ external interface SnackbarOwnerState
  *
  * Demos:
  *
- * - [Snackbar](https://v7.mui.com/material-ui/react-snackbar/)
+ * - [Snackbar](https://mui.com/material-ui/react-snackbar/)
  *
  * API:
  *
- * - [Snackbar API](https://v7.mui.com/material-ui/api/snackbar/)
+ * - [Snackbar API](https://mui.com/material-ui/api/snackbar/)
  */
 @JsName("default")
 external val Snackbar: FC<SnackbarProps>

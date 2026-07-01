@@ -136,12 +136,12 @@ external interface AlertSlots {
  *
  * Demos:
  *
- * - [Alert](https://v7.mui.com/material-ui/react-alert/)
+ * - [Alert](https://mui.com/material-ui/react-alert/)
  *
  * API:
  *
- * - [Alert API](https://v7.mui.com/material-ui/api/alert/)
- * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
+ * - [Alert API](https://mui.com/material-ui/api/alert/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Alert: FC<AlertProps>

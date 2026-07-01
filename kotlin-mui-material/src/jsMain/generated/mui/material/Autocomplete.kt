@@ -67,7 +67,11 @@ external interface AutocompleteProps<Value> :
     var forcePopupIcon: Any? /* true | false | 'auto' */
 
     /**
-     * If `true`, the input will take up the full width of its container.
+     * If `true`, the input takes up the full width of its container.
+     *
+     * `Autocomplete` treats `undefined` and `false` differently.
+     * If `undefined`, the inner input takes up the full width of its container.
+     * If `false`, the inner input is restricted to its intrinsic width.
      * @default false
      */
     var fullWidth: Boolean?
@@ -228,11 +232,13 @@ external interface AutocompleteRenderInputParams : Props {
 
     var size: Union /* 'small' */
 
-    var InputLabelProps: Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputLabelProps']> */
+    var slotProps: SlotProps
 
-    var InputProps: Props
-
-    var inputProps: Props /* ReturnType<ReturnType<typeof useAutocomplete>['getInputProps']> */
+    interface SlotProps {
+        var inputLabel: Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getInputLabelProps']> */
+        var input: Any?
+        var htmlInput: Props? /* ReturnType<ReturnType<typeof useAutocomplete>['getInputProps']> */
+    }
 }
 
 external interface AutocompleteSlots {
@@ -277,11 +283,11 @@ external interface AutocompleteSlots {
  *
  * Demos:
  *
- * - [Autocomplete](https://v7.mui.com/material-ui/react-autocomplete/)
+ * - [Autocomplete](https://mui.com/material-ui/react-autocomplete/)
  *
  * API:
  *
- * - [Autocomplete API](https://v7.mui.com/material-ui/api/autocomplete/)
+ * - [Autocomplete API](https://mui.com/material-ui/api/autocomplete/)
  */
 @JsName("default")
 external val Autocomplete: FC<AutocompleteProps<*>>

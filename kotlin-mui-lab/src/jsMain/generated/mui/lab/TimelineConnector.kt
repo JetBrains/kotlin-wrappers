@@ -39,11 +39,11 @@ external interface TimelineConnectorProps :
  *
  * Demos:
  *
- * - [Timeline](https://v7.mui.com/material-ui/react-timeline/)
+ * - [Timeline](https://mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [TimelineConnector API](https://v7.mui.com/material-ui/api/timeline-connector/)
+ * - [TimelineConnector API](https://mui.com/material-ui/api/timeline-connector/)
  */
 @JsName("default")
 external val TimelineConnector: FC<TimelineConnectorProps>

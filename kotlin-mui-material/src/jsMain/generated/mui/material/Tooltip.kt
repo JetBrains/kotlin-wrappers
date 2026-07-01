@@ -163,7 +163,7 @@ external interface TooltipSlots {
 
     /**
      * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Grow
      */
     var transition: ElementType<*>
@@ -183,7 +183,7 @@ external interface TooltipSlotProps : Props {
     /** TS: SlotProps<React.ElementType<PopperProps>, TooltipPopperSlotPropsOverrides, TooltipOwnerState> */
     var popper: PopperProps?
 
-    /** TS: SlotProps<React.ElementType, TransitionProps & TooltipTransitionSlotPropsOverrides, TooltipOwnerState> */
+    /** TS: SlotProps<React.ElementType<TransitionProps>, TransitionProps & TooltipTransitionSlotPropsOverrides, TooltipOwnerState> */
     var transition: TransitionProps?
 
     /** TS: SlotProps<'div', TooltipTooltipSlotPropsOverrides, TooltipOwnerState> */
@@ -205,11 +205,11 @@ external interface TooltipOwnerState
  *
  * Demos:
  *
- * - [Tooltip](https://v7.mui.com/material-ui/react-tooltip/)
+ * - [Tooltip](https://mui.com/material-ui/react-tooltip/)
  *
  * API:
  *
- * - [Tooltip API](https://v7.mui.com/material-ui/api/tooltip/)
+ * - [Tooltip API](https://mui.com/material-ui/api/tooltip/)
  */
 @JsName("default")
 external val Tooltip: FC<TooltipProps>

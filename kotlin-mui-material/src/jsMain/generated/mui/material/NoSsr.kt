@@ -18,11 +18,11 @@ import react.FC
  *
  * Demos:
  *
- * - [No SSR](https://v7.mui.com/material-ui/react-no-ssr/)
+ * - [No SSR](https://mui.com/material-ui/react-no-ssr/)
  *
  * API:
  *
- * - [NoSsr API](https://v7.mui.com/material-ui/api/no-ssr/)
+ * - [NoSsr API](https://mui.com/material-ui/api/no-ssr/)
  */
 @JsName("default")
 external val NoSsr: FC<NoSsrProps>

@@ -76,11 +76,11 @@ external interface MasonryOwnProps :
  *
  * Demos:
  *
- * - [Masonry](https://v7.mui.com/material-ui/react-masonry/)
+ * - [Masonry](https://mui.com/material-ui/react-masonry/)
  *
  * API:
  *
- * - [Masonry API](https://v7.mui.com/material-ui/api/masonry/)
+ * - [Masonry API](https://mui.com/material-ui/api/masonry/)
  */
 @JsName("default")
 external val Masonry: FC<MasonryProps>

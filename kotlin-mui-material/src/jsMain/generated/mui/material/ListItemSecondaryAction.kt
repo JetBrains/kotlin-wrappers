@@ -6,8 +6,8 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
-import mui.system.StandardProps
 import mui.system.SxProps
+import mui.types.PropsWithComponent
 import react.FC
 import react.PropsWithChildren
 import react.ReactNode
@@ -15,8 +15,11 @@ import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 
 external interface ListItemSecondaryActionProps :
-    StandardProps,
+    ListItemSecondaryActionOwnProps,
     HTMLAttributes<HTMLDivElement>,
+    PropsWithComponent
+
+external interface ListItemSecondaryActionOwnProps :
     PropsWithChildren,
     PropsWithSx {
     /**
@@ -40,13 +43,11 @@ external interface ListItemSecondaryActionProps :
  *
  * Demos:
  *
- * - [Lists](https://v7.mui.com/material-ui/react-list/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
  *
  * API:
  *
- * - [ListItemSecondaryAction API](https://v7.mui.com/material-ui/api/list-item-secondary-action/)
- *
- * @deprecated Use the `secondaryAction` prop in the `ListItem` component instead. This component will be removed in a future major release. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
+ * - [ListItemSecondaryAction API](https://mui.com/material-ui/api/list-item-secondary-action/)
  */
 @JsName("default")
 external val ListItemSecondaryAction: FC<ListItemSecondaryActionProps>

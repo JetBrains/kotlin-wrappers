@@ -113,7 +113,7 @@ external interface SpeedDialSlots {
 
     /**
      * The component that renders the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Zoom
      */
     var transition: ElementType<*>
@@ -125,11 +125,11 @@ external interface SpeedDialOwnerState
  *
  * Demos:
  *
- * - [Speed Dial](https://v7.mui.com/material-ui/react-speed-dial/)
+ * - [Speed Dial](https://mui.com/material-ui/react-speed-dial/)
  *
  * API:
  *
- * - [SpeedDial API](https://v7.mui.com/material-ui/api/speed-dial/)
+ * - [SpeedDial API](https://mui.com/material-ui/api/speed-dial/)
  */
 @JsName("default")
 external val SpeedDial: FC<SpeedDialProps>

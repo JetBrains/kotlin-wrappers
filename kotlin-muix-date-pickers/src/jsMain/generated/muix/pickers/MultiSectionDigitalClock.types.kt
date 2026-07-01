@@ -6,7 +6,8 @@ import js.array.ReadonlyArray
 import react.ElementType
 import react.Props
 
-external interface MultiSectionDigitalClockProps<TDate> : Props {
+external interface MultiSectionDigitalClockProps :
+    ExportedMultiSectionDigitalClockProps {
     /**
      * Available views.
      * @default ['hours', 'minutes']
@@ -31,23 +32,23 @@ external interface MultiSectionDigitalClockProps<TDate> : Props {
     var slotProps: MultiSectionDigitalClockSlotProps?
 }
 
-external interface MultiSectionDigitalClockOption<TValue> {
-    var isDisabled: ((value: TValue) -> Boolean)?
+external interface MultiSectionDigitalClockOption<TSectionValue> {
+    var isDisabled: ((value: TSectionValue) -> Boolean)?
 
-    var isSelected: (value: TValue) -> Boolean
+    var isSelected: (value: TSectionValue) -> Boolean
 
-    var isFocused: (value: TValue) -> Boolean
+    var isFocused: (value: TSectionValue) -> Boolean
 
     var label: String
 
-    var value: TValue
+    var value: TSectionValue
 
     var ariaLabel: String
 }
 
-external interface ExportedMultiSectionDigitalClockProps<TDate>
+external interface ExportedMultiSectionDigitalClockProps : Props
 
-external interface MultiSectionDigitalClockViewProps<TValue>
+external interface MultiSectionDigitalClockViewProps<TSectionValue> : Props
 
 external interface MultiSectionDigitalClockSlots {
     /**

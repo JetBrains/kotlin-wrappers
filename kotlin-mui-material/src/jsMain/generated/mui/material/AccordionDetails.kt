@@ -39,11 +39,11 @@ external interface AccordionDetailsProps :
  *
  * Demos:
  *
- * - [Accordion](https://v7.mui.com/material-ui/react-accordion/)
+ * - [Accordion](https://mui.com/material-ui/react-accordion/)
  *
  * API:
  *
- * - [AccordionDetails API](https://v7.mui.com/material-ui/api/accordion-details/)
+ * - [AccordionDetails API](https://mui.com/material-ui/api/accordion-details/)
  */
 @JsName("default")
 external val AccordionDetails: FC<AccordionDetailsProps>

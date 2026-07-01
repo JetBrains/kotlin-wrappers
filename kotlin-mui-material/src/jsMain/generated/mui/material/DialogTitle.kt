@@ -44,12 +44,12 @@ external interface DialogTitleOwnProps :
  *
  * Demos:
  *
- * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [DialogTitle API](https://v7.mui.com/material-ui/api/dialog-title/)
- * - inherits [Typography API](https://v7.mui.com/material-ui/api/typography/)
+ * - [DialogTitle API](https://mui.com/material-ui/api/dialog-title/)
+ * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val DialogTitle: FC<DialogTitleProps>

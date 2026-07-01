@@ -10,44 +10,32 @@ sealed external interface TreeItemClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
-    /** Styles applied to the transition component. */
-    val groupTransition: ClassName
-
     /** Styles applied to the content element. */
     val content: ClassName
 
-    /** State class applied to the content element when expanded. */
-    val expanded: ClassName
+    /** Styles applied to the transition element. */
+    val groupTransition: ClassName
 
-    /** State class applied to the content element when selected. */
-    val selected: ClassName
-
-    /** State class applied to the content element when focused. */
-    val focused: ClassName
-
-    /** State class applied to the element when disabled. */
-    val disabled: ClassName
-
-    /** Styles applied to the Tree Item icon. */
+    /** Styles applied to the icon container element. */
     val iconContainer: ClassName
 
     /** Styles applied to the label element. */
     val label: ClassName
 
+    /** Styles applied to the label input element (visible only when editing is enabled). */
+    val labelInput: ClassName
+
     /** Styles applied to the checkbox element. */
     val checkbox: ClassName
 
-    /** Styles applied to the input element that is visible when editing is enabled. */
-    val labelInput: ClassName
-
-    /** Styles applied to the content element when editing is enabled. */
-    val editing: ClassName
-
-    /** Styles applied to the content of the items that are editable. */
-    val editable: ClassName
-
-    /** Styles applied to the drag and drop overlay. */
+    /** Styles applied to the drag and drop overlay element. */
     val dragAndDropOverlay: ClassName
+
+    /** Styles applied to the error icon element */
+    val errorIcon: ClassName
+
+    /** Styles applied to the loading icon element */
+    val loadingIcon: ClassName
 }
 
 external val treeItemClasses: TreeItemClasses

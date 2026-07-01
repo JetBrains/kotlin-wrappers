@@ -86,12 +86,12 @@ external interface TabOwnProps :
  *
  * Demos:
  *
- * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tab API](https://v7.mui.com/material-ui/api/tab/)
- * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
+ * - [Tab API](https://mui.com/material-ui/api/tab/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Tab: FC<TabProps>

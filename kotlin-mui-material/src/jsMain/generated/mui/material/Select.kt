@@ -222,12 +222,12 @@ external interface OutlinedSelectProps :
  *
  * Demos:
  *
- * - [Select](https://v7.mui.com/material-ui/react-select/)
+ * - [Select](https://mui.com/material-ui/react-select/)
  *
  * API:
  *
- * - [Select API](https://v7.mui.com/material-ui/api/select/)
- * - inherits [OutlinedInput API](https://v7.mui.com/material-ui/api/outlined-input/)
+ * - [Select API](https://mui.com/material-ui/api/select/)
+ * - inherits [OutlinedInput API](https://mui.com/material-ui/api/outlined-input/)
  */
 @JsName("default")
 external val Select: FC<SelectProps<*>>

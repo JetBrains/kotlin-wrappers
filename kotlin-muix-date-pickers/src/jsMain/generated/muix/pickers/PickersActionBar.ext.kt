@@ -17,5 +17,11 @@ sealed external interface PickersActionBarAction {
 
         @JsValue("today")
         val today: PickersActionBarAction
+
+        @JsValue("next")
+        val next: PickersActionBarAction
+
+        @JsValue("nextOrAccept")
+        val nextOrAccept: PickersActionBarAction
     }
 }

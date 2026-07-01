@@ -100,12 +100,12 @@ external interface RadioOwnerState
  *
  * Demos:
  *
- * - [Radio Group](https://v7.mui.com/material-ui/react-radio-button/)
+ * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
  *
  * API:
  *
- * - [Radio API](https://v7.mui.com/material-ui/api/radio/)
- * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
+ * - [Radio API](https://mui.com/material-ui/api/radio/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Radio: FC<RadioProps>

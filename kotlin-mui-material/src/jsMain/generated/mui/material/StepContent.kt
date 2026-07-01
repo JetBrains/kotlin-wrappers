@@ -12,7 +12,6 @@ import mui.system.SxProps
 import react.*
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
-import web.html.HTMLElement
 
 external interface StepContentProps :
     StandardProps,
@@ -48,15 +47,15 @@ external interface StepContentProps :
 external interface StepContentSlots {
     /**
      * The component that renders the transition slot.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Collapse
      */
     var transition: ComponentType<TransitionProps>?
 }
 
 external interface StepContentSlotProps : Props {
-    /** TS: SlotComponentProps<React.ElementType, CollapseProps, StepContentOwnerState> */
-    var transition: HTMLAttributes<HTMLElement>?
+    /** TS: SlotComponentProps<React.ElementType<CollapseProps>, CollapseProps, StepContentOwnerState> */
+    var transition: CollapseProps?
 }
 
 external interface StepContentSlotsAndSlotProps : Props {
@@ -71,11 +70,11 @@ external interface StepContentOwnerState
  *
  * Demos:
  *
- * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepContent API](https://v7.mui.com/material-ui/api/step-content/)
+ * - [StepContent API](https://mui.com/material-ui/api/step-content/)
  */
 @JsName("default")
 external val StepContent: FC<StepContentProps>

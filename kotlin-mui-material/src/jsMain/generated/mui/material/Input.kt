@@ -30,6 +30,11 @@ external interface InputProps :
     var disableUnderline: Boolean?
 
     /**
+     * @internal
+     */
+    var notched: Boolean?
+
+    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
@@ -39,12 +44,12 @@ external interface InputProps :
  *
  * Demos:
  *
- * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [Input API](https://v7.mui.com/material-ui/api/input/)
- * - inherits [InputBase API](https://v7.mui.com/material-ui/api/input-base/)
+ * - [Input API](https://mui.com/material-ui/api/input/)
+ * - inherits [InputBase API](https://mui.com/material-ui/api/input-base/)
  */
 @JsName("default")
 external val Input: FC<InputProps>

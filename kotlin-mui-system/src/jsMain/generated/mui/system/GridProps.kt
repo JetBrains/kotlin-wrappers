@@ -37,8 +37,13 @@ external interface GridBaseProps : PropsWithChildren {
     var container: Boolean?
 
     /**
-     * Defines the `flex-direction` style property.
-     * It is applied for all screen sizes.
+     * Defines the `flex-direction` style property for the container.
+     *
+     * ⚠️ Only `row` and `row-reverse` are supported. `column` and `column-reverse` are not supported,
+     * because the Grid component is designed to subdivide layouts into **columns**, not rows.
+     *
+     * For vertical layouts, use `Stack` instead.
+     *
      * @default 'row'
      */
     var direction: ResponsiveStyleValue<GridDirection>?
@@ -49,7 +54,6 @@ external interface GridBaseProps : PropsWithChildren {
     var offset: ResponsiveStyleValue<Any /* GridOffset */>?
 
     /**
-     * @internal
      * The level of the grid starts from `0` and increases when the grid nests
      * inside another grid. Nesting is defined as a container Grid being a direct
      * child of a container Grid.

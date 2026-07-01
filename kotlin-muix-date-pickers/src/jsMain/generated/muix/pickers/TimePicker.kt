@@ -16,4 +16,4 @@ import react.FC
  *
  * - [TimePicker API](https://mui.com/x/api/date-pickers/time-picker/)
  */
-external val TimePicker: FC<TimePickerProps<*, *>>
+external val TimePicker: FC<TimePickerProps>

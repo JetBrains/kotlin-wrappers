@@ -91,11 +91,11 @@ external interface PaginationRenderItemParams :
  *
  * Demos:
  *
- * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
+ * - [Pagination](https://mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [Pagination API](https://v7.mui.com/material-ui/api/pagination/)
+ * - [Pagination API](https://mui.com/material-ui/api/pagination/)
  */
 @JsName("default")
 external val Pagination: FC<PaginationProps>

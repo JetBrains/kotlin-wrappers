@@ -13,6 +13,16 @@ external interface ZoomProps :
     TransitionProps,
     PropsWithChildren {
     /**
+     * Add a custom transition end trigger.
+     * Use it when you need custom logic to decide when the transition has ended.
+     * Note: Timeouts are still used as a fallback if provided.
+     *
+     * @param {HTMLElement} node The transitioning DOM node.
+     * @param {Function} done Call this when the transition has finished.
+     */
+    var addEndListener: Any? /* TransitionProps['addEndListener'] */
+
+    /**
      * Perform the enter transition when it first mounts if `in` is also `true`.
      * Set this to `false` to disable this behavior.
      * @default true
@@ -23,6 +33,12 @@ external interface ZoomProps :
      * A single child content element.
      */
     override var children: ReactNode? /* React.ReactElement<unknown, any> */
+
+    /**
+     * If `true`, the transition ignores `theme.motion.reducedMotion` and keeps its normal timing.
+     * @default false
+     */
+    var disablePrefersReducedMotion: Boolean?
 
     /**
      * The transition timing function.
@@ -48,16 +64,15 @@ external interface ZoomProps :
 
 /**
  * The Zoom transition can be used for the floating variant of the
- * [Button](https://v7.mui.com/material-ui/react-floating-action-button/#animation) component.
- * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
+ * [Button](https://mui.com/material-ui/react-floating-action-button/#animation) component.
  *
  * Demos:
  *
- * - [Transitions](https://v7.mui.com/material-ui/transitions/)
+ * - [Transitions](https://mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Zoom API](https://v7.mui.com/material-ui/api/zoom/)
+ * - [Zoom API](https://mui.com/material-ui/api/zoom/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 @JsName("default")

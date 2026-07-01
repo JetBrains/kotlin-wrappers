@@ -16,4 +16,4 @@ import react.FC
  *
  * - [DatePicker API](https://mui.com/x/api/date-pickers/date-picker/)
  */
-external val DatePicker: FC<DatePickerProps<*, *>>
+external val DatePicker: FC<DatePickerProps>

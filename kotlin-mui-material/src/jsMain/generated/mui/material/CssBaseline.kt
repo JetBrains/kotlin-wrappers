@@ -28,11 +28,11 @@ external interface CssBaselineProps : PropsWithChildren {
  *
  * Demos:
  *
- * - [CSS Baseline](https://v7.mui.com/material-ui/react-css-baseline/)
+ * - [CSS Baseline](https://mui.com/material-ui/react-css-baseline/)
  *
  * API:
  *
- * - [CssBaseline API](https://v7.mui.com/material-ui/api/css-baseline/)
+ * - [CssBaseline API](https://mui.com/material-ui/api/css-baseline/)
  */
 @JsName("default")
 external val CssBaseline: FC<CssBaselineProps>

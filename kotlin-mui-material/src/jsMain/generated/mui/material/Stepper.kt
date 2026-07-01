@@ -40,6 +40,8 @@ external interface StepperOwnProps :
     /**
      * If set to 'true' and orientation is horizontal,
      * then the step label will be positioned under the icon.
+     * If set to 'true' and orientation is vertical,
+     * it reverses the position of the label and content.
      * @default false
      */
     var alternativeLabel: Boolean?
@@ -82,11 +84,11 @@ external interface StepperOwnProps :
  *
  * Demos:
  *
- * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [Stepper API](https://v7.mui.com/material-ui/api/stepper/)
+ * - [Stepper API](https://mui.com/material-ui/api/stepper/)
  */
 @JsName("default")
 external val Stepper: FC<StepperProps>

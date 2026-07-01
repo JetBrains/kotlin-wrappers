@@ -80,21 +80,10 @@ external interface ListItemTextSlots {
     var secondary: ElementType<*>?
 }
 
-external interface ListItemTextSlotProps : Props {
-    /** TS: SlotProps<'div', {}, ListItemTextOwnerState> */
-    var root: HTMLAttributes<HTMLDivElement>?
-
-    /** TS: SlotProps<React.ElementType<TypographyProps>, {}, ListItemTextOwnerState> */
-    var primary: TypographyProps?
-
-    /** TS: SlotProps<React.ElementType<TypographyProps>, {}, ListItemTextOwnerState> */
-    var secondary: TypographyProps?
-}
-
 external interface ListItemTextSlotsAndSlotProps : Props {
     var slots: ListItemTextSlots?
 
-    var slotProps: ListItemTextSlotProps?
+    var slotProps: Props?
 }
 
 external interface ListItemTextOwnerState
@@ -103,12 +92,12 @@ external interface ListItemTextOwnerState
  *
  * Demos:
  *
- * - [Lists](https://v7.mui.com/material-ui/react-list/)
- * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Menubar](https://mui.com/material-ui/react-menubar/)
  *
  * API:
  *
- * - [ListItemText API](https://v7.mui.com/material-ui/api/list-item-text/)
+ * - [ListItemText API](https://mui.com/material-ui/api/list-item-text/)
  */
 @JsName("default")
 external val ListItemText: FC<ListItemTextProps>

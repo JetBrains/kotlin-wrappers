@@ -41,12 +41,12 @@ external interface ListItemIconProps :
  *
  * Demos:
  *
- * - [Lists](https://v7.mui.com/material-ui/react-list/)
- * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Menubar](https://mui.com/material-ui/react-menubar/)
  *
  * API:
  *
- * - [ListItemIcon API](https://v7.mui.com/material-ui/api/list-item-icon/)
+ * - [ListItemIcon API](https://mui.com/material-ui/api/list-item-icon/)
  */
 @JsName("default")
 external val ListItemIcon: FC<ListItemIconProps>

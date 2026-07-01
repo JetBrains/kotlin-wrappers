@@ -7,4 +7,4 @@ package muix.pickers
 import react.FC
 
 
-external val MultiSectionDigitalClock: FC<MultiSectionDigitalClockProps<*>>
+external val MultiSectionDigitalClock: FC<MultiSectionDigitalClockProps>

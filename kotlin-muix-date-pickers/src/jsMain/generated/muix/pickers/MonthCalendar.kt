@@ -7,4 +7,4 @@ package muix.pickers
 import react.FC
 
 
-external val MonthCalendar: FC<MonthCalendarProps<*>>
+external val MonthCalendar: FC<MonthCalendarProps>

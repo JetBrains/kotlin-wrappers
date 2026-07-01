@@ -10,12 +10,15 @@ import react.Props
 import react.PropsWithClassName
 import web.cssom.ClassName
 
-external interface MonthCalendarProps<TDate> :
+external interface MonthCalendarProps :
+    ExportedMonthCalendarProps,
     PropsWithClassName,
     PropsWithSx {
     var autoFocus: Boolean?
 
     override var className: ClassName?
+
+    var currentMonth: PickerValidDate?
 
     /**
      * Override or extend the styles applied to the component.
@@ -39,36 +42,29 @@ external interface MonthCalendarProps<TDate> :
      */
     override var sx: SxProps<Theme>?
 
-    /** If `true` picker is disabled */
-    var disabled: Boolean?
-
     /**
      * The selected value.
      * Used when the component is controlled.
      */
-    var value: TDate?
+    var value: PickerValidDate?
 
     /**
      * The default selected value.
      * Used when the component is not controlled.
      */
-    var defaultValue: TDate?
+    var defaultValue: PickerValidDate?
 
     /**
      * The date used to generate the new value when both `value` and `defaultValue` are empty.
      * @default The closest valid month using the validation props, except callbacks such as `shouldDisableMonth`.
      */
-    var referenceDate: TDate?
+    var referenceDate: PickerValidDate?
 
     /**
      * Callback fired when the value changes.
-     * @template TDate
-     * @param {TDate} value The new value.
+     * @param {PickerValidDate} value The new value.
      */
-    var onChange: ((value: TDate) -> Unit)?
-
-    /** If `true` picker is readonly */
-    var readOnly: Boolean?
+    var onChange: ((value: PickerValidDate) -> Unit)?
 
     /**
      * If `true`, today's date is rendering without highlighting with circle.
@@ -83,6 +79,12 @@ external interface MonthCalendarProps<TDate> :
     var onFocusedViewChange: ((hasFocus: Boolean) -> Unit)?
 
     var gridLabelId: String?
+}
+
+external interface MonthButtonOwnerState : PickerOwnerState {
+    var isMonthSelected: Boolean
+
+    var isMonthDisabled: Boolean
 }
 
 external interface MonthCalendarSlots {

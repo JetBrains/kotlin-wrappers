@@ -11,7 +11,7 @@ import react.Props
 import react.PropsWithClassName
 import web.cssom.ClassName
 
-external interface YearCalendarProps<TDate> :
+external interface YearCalendarProps :
     PropsWithClassName,
     PropsWithSx {
     var autoFocus: Boolean?
@@ -40,36 +40,29 @@ external interface YearCalendarProps<TDate> :
      */
     override var sx: SxProps<Theme>?
 
-    /** If `true` picker is disabled */
-    var disabled: Boolean?
-
     /**
      * The selected value.
      * Used when the component is controlled.
      */
-    var value: TDate?
+    var value: PickerValidDate?
 
     /**
      * The default selected value.
      * Used when the component is not controlled.
      */
-    var defaultValue: TDate?
+    var defaultValue: PickerValidDate?
 
     /**
      * The date used to generate the new value when both `value` and `defaultValue` are empty.
      * @default The closest valid year using the validation props, except callbacks such as `shouldDisableYear`.
      */
-    var referenceDate: TDate?
+    var referenceDate: PickerValidDate?
 
     /**
      * Callback fired when the value changes.
-     * @template TDate
-     * @param {TDate} value The new value.
+     * @param {PickerValidDate} value The new value.
      */
-    var onChange: ((value: TDate) -> Unit)?
-
-    /** If `true` picker is readonly */
-    var readOnly: Boolean?
+    var onChange: ((value: PickerValidDate) -> Unit)?
 
     /**
      * If `true`, today's date is rendering without highlighting with circle.
@@ -84,6 +77,12 @@ external interface YearCalendarProps<TDate> :
     var onFocusedViewChange: ((hasFocus: Boolean) -> Unit)?
 
     var gridLabelId: String?
+}
+
+external interface YearButtonOwnerState : PickerOwnerState {
+    var isYearSelected: Boolean
+
+    var isYearDisabled: Boolean
 }
 
 external interface YearCalendarSlots {

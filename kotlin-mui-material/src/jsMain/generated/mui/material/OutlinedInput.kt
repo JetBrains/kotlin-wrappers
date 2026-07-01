@@ -70,13 +70,13 @@ external interface OutlinedInputOwnerState
  *
  * Demos:
  *
- * - [Number Field](https://v7.mui.com/material-ui/react-number-field/)
- * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
+ * - [Number Field](https://mui.com/material-ui/react-number-field/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [OutlinedInput API](https://v7.mui.com/material-ui/api/outlined-input/)
- * - inherits [InputBase API](https://v7.mui.com/material-ui/api/input-base/)
+ * - [OutlinedInput API](https://mui.com/material-ui/api/outlined-input/)
+ * - inherits [InputBase API](https://mui.com/material-ui/api/input-base/)
  */
 @JsName("default")
 external val OutlinedInput: FC<OutlinedInputProps>
