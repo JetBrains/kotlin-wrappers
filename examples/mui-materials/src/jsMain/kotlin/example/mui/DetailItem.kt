@@ -14,7 +14,7 @@ external interface DetailItemProps :
     var label: String
 }
 
-internal val DetailItem: FC<DetailItemProps> = FC { props ->
+internal val DetailItem = FC<DetailItemProps> { props ->
     Box {
         key = Key("detail-item-${props.label.lowercase()}")
 
