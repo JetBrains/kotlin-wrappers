@@ -114,7 +114,7 @@ internal fun String.applyEnumPatches(): String {
     var result = this
     for (name in names) {
         result = result
-            .replace("type ${name}Flags = number;", "type $name = Bitmask<*>;")
+            .replace("\ntype ${name}Flags = number;", "")
             .replace("${name}Flags", name)
     }
 

@@ -634,6 +634,11 @@ internal fun htmlDeclarations(
         getStaticSource(name, content)
     }
 
+    val enums = Regex("""\ndeclare namespace .+? \{[\s\S]*?\n}""")
+        .findAll(content)
+        .map { it.value.removePrefix("\ndeclare namespace ") }
+        .mapNotNull { src -> convertEnum(src) }
+
     val interfaces = Regex("""\ninterface .+? \{[\s\S]*?\n}""")
         .findAll(content)
         .map { it.value.removePrefix("\n") }
@@ -648,6 +653,7 @@ internal fun htmlDeclarations(
         .filter { it.name != "FileSystemFileHandle" }
 
     return interfaces
+        .plus(enums)
         .plus(formTypes())
         .plus(popoverTypes())
         .plus(
@@ -725,6 +731,40 @@ private val COLLECTIONS_WITH_BOUNDS = setOf(
     "HTMLCollectionBase",
     "HTMLCollection",
 )
+
+private fun convertEnum(
+    source: String,
+): ConversionResult? {
+    val name = source.substringBefore(" ")
+    if (!name.startsWith("GPU"))
+        return null
+
+    val constants = source
+        .substringAfter(" {\n")
+        .substringBefore("\n}")
+        .splitToSequence("\n")
+        .map { it.trim() }
+        .map { it.substringBefore(": ") }
+        .map { it.removePrefix("const ") }
+        .map { "val $it: $name" }
+        .joinToString("\n")
+
+    val body = """
+    sealed /* enum */
+    external interface $name :
+        Bitmask<$name> {
+        companion object {
+            $constants
+        }
+    }
+    """.trimIndent()
+
+    return ConversionResult(
+        name = name,
+        body = body,
+        pkg = "web.gpu",
+    )
+}
 
 internal fun convertInterface(
     source: String,
