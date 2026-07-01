@@ -12,7 +12,14 @@ sealed /* enum */
 external interface GPUMapMode :
     Bitmask<GPUMapMode> {
     companion object {
+        /**
+         * Value - `0x0001`
+         */
         val READ: GPUMapMode
+
+        /**
+         * Value - `0x0002`
+         */
         val WRITE: GPUMapMode
     }
 }

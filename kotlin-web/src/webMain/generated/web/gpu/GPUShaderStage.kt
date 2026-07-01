@@ -12,8 +12,19 @@ sealed /* enum */
 external interface GPUShaderStage :
     Bitmask<GPUShaderStage> {
     companion object {
+        /**
+         * Value - `0x1`
+         */
         val VERTEX: GPUShaderStage
+
+        /**
+         * Value - `0x2`
+         */
         val FRAGMENT: GPUShaderStage
+
+        /**
+         * Value - `0x4`
+         */
         val COMPUTE: GPUShaderStage
     }
 }

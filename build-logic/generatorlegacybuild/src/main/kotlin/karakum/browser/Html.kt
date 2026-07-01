@@ -744,10 +744,17 @@ private fun convertEnum(
         .substringBefore("\n}")
         .splitToSequence("\n")
         .map { it.trim() }
-        .map { it.substringBefore(": ") }
         .map { it.removePrefix("const ") }
-        .map { "val $it: $name" }
-        .joinToString("\n")
+        .map { it.removeSuffix(";") }
+        .joinToString("\n") {
+            val (pname, pvalue) = it.split(": ")
+            """
+            /**
+             * Value - `$pvalue`
+             */
+            val $pname: $name
+            """.trimIndent()
+        }
 
     val body = """
     sealed /* enum */
