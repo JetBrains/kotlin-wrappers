@@ -56,7 +56,7 @@ testing-library-dom = "^10.4.1"
 testing-library-react = "^16.3.2"
 testing-library-user-event = "^14.6.1"
 typescript = "^6.0.3"
-vercel-ncc = "^0.44.0"
+vercel-ncc = "^0.44.1"
 vscode = "^1.125.0"
 yaml = "^2.8.3"
 
