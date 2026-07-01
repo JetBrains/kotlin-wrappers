@@ -16,8 +16,6 @@ external interface DetailItemProps :
 
 internal val DetailItem = FC<DetailItemProps> { props ->
     Box {
-        key = Key("detail-item-${props.label.lowercase()}")
-
         Box {
             sx {
                 display = Display.flex

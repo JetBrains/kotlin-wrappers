@@ -9,7 +9,7 @@ import react.Props
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 
-internal val View = FC<Props> {
+internal val View = FC {
     Box {
         sx {
             maxWidth = 70.vw
