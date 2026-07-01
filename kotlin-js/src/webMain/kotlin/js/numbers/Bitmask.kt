@@ -4,6 +4,9 @@ import js.numbers.internal.unsafeBitwiseAnd
 import js.numbers.internal.unsafeBitwiseOr
 import js.reflect.JsExternalInheritorsOnly
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Glossary/Bitwise_flags)
+ */
 @JsExternalInheritorsOnly
 external interface Bitmask<T : Bitmask<T>>
 
