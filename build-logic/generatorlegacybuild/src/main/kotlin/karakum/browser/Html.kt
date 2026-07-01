@@ -634,19 +634,18 @@ internal fun htmlDeclarations(
         getStaticSource(name, content)
     }
 
-    val interfaces =
-        Regex("""\ninterface .+? \{[\s\S]*?\n}""")
-            .findAll(content)
-            .map { it.value.removePrefix("\n") }
-            .mapNotNull { src ->
-                convertInterface(src, getStaticSource)
-                    ?.withComment(fullSource = content, source = src)
-            }
-            // custom
-            .filter { it.name != "EventCounts" }
-            // duplicates
-            .filter { it.name != "ClientQueryOptions" }
-            .filter { it.name != "FileSystemFileHandle" }
+    val interfaces = Regex("""\ninterface .+? \{[\s\S]*?\n}""")
+        .findAll(content)
+        .map { it.value.removePrefix("\n") }
+        .mapNotNull { src ->
+            convertInterface(src, getStaticSource)
+                ?.withComment(fullSource = content, source = src)
+        }
+        // custom
+        .filter { it.name != "EventCounts" }
+        // duplicates
+        .filter { it.name != "ClientQueryOptions" }
+        .filter { it.name != "FileSystemFileHandle" }
 
     return interfaces
         .plus(formTypes())
