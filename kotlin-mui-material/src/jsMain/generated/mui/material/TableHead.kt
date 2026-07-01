@@ -42,11 +42,11 @@ external interface TableHeadOwnProps :
  *
  * Demos:
  *
- * - [Table](https://v7.mui.com/material-ui/react-table/)
+ * - [Table](https://mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableHead API](https://v7.mui.com/material-ui/api/table-head/)
+ * - [TableHead API](https://mui.com/material-ui/api/table-head/)
  */
 @JsName("default")
 external val TableHead: FC<TableHeadProps>

@@ -34,7 +34,7 @@ external interface BadgeOwnProps : PropsWithChildren {
      * Max count to show.
      * @default 99
      */
-    var max: Number?
+    var max: Double?
 
     /**
      * The props used for each slot inside the Badge.

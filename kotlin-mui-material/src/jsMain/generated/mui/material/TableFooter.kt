@@ -42,11 +42,11 @@ external interface TableFooterOwnProps :
  *
  * Demos:
  *
- * - [Table](https://v7.mui.com/material-ui/react-table/)
+ * - [Table](https://mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TableFooter API](https://v7.mui.com/material-ui/api/table-footer/)
+ * - [TableFooter API](https://mui.com/material-ui/api/table-footer/)
  */
 @JsName("default")
 external val TableFooter: FC<TableFooterProps>

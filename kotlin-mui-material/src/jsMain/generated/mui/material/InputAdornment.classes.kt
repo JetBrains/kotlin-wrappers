@@ -28,10 +28,10 @@ sealed external interface InputAdornmentClasses {
     /** Styles applied to the root element if `disablePointerEvents={true}`. */
     val disablePointerEvents: ClassName
 
-    /** Styles applied if the adornment is used inside <FormControl hiddenLabel />. */
+    /** Styles applied if the adornment is used inside `<FormControl hiddenLabel />`. */
     val hiddenLabel: ClassName
 
-    /** Styles applied if the adornment is used inside <FormControl size="small" />. */
+    /** Styles applied if the adornment is used inside `<FormControl size="small" />`. */
     val sizeSmall: ClassName
 }
 

@@ -4,7 +4,7 @@ package muix.pickers
 
 import react.Props
 
-external interface TimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
+external interface TimePickerProps : Props {
     /**
      * CSS media query when `Mobile` mode will be changed to `Desktop`.
      * @default '@media (pointer: fine)'
@@ -16,15 +16,15 @@ external interface TimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : 
      * Overridable component slots.
      * @default {}
      */
-    var slots: TimePickerSlots<TDate>?
+    var slots: TimePickerSlots?
 
     /**
      * The props used for each component slot.
      * @default {}
      */
-    var slotProps: TimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>?
+    var slotProps: TimePickerSlotProps?
 }
 
-external interface TimePickerSlots<TDate>
+external interface TimePickerSlots
 
-external interface TimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>
+external interface TimePickerSlotProps : Props

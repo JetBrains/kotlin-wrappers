@@ -8,7 +8,6 @@ import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.ResponsiveStyleValue
 import mui.system.SxProps
-import mui.system.SystemProps
 import mui.types.PropsWithComponent
 import react.FC
 import react.PropsWithChildren
@@ -22,7 +21,6 @@ external interface StackProps :
     PropsWithComponent
 
 external interface StackOwnProps :
-    SystemProps<Theme>,
     PropsWithChildren,
     PropsWithSx {
     /**
@@ -69,11 +67,11 @@ external interface StackOwnProps :
  *
  * Demos:
  *
- * - [Stack](https://v7.mui.com/material-ui/react-stack/)
+ * - [Stack](https://mui.com/material-ui/react-stack/)
  *
  * API:
  *
- * - [Stack API](https://v7.mui.com/material-ui/api/stack/)
+ * - [Stack API](https://mui.com/material-ui/api/stack/)
  */
 @JsName("default")
 external val Stack: FC<StackProps>

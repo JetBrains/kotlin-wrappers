@@ -41,7 +41,7 @@ external interface AccordionSlots {
 
     /**
      * The component that renders the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Collapse
      */
     var transition: ElementType<*>
@@ -60,7 +60,7 @@ external interface AccordionSlotProps : Props {
     /** TS: SlotProps<'h3', AccordionHeadingSlotPropsOverrides, AccordionOwnerState> */
     var heading: Any?
 
-    /** TS: SlotComponentProps<React.ElementType, TransitionProps & AccordionTransitionSlotPropsOverrides, AccordionOwnerState> */
+    /** TS: SlotComponentProps<React.ElementType<TransitionProps>, TransitionProps & AccordionTransitionSlotPropsOverrides, AccordionOwnerState> */
     var transition: TransitionProps?
 
     /** TS: SlotProps<'div', AccordionRegionSlotPropsOverrides, AccordionOwnerState> */
@@ -129,12 +129,12 @@ external interface AccordionOwnProps :
  *
  * Demos:
  *
- * - [Accordion](https://v7.mui.com/material-ui/react-accordion/)
+ * - [Accordion](https://mui.com/material-ui/react-accordion/)
  *
  * API:
  *
- * - [Accordion API](https://v7.mui.com/material-ui/api/accordion/)
- * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
+ * - [Accordion API](https://mui.com/material-ui/api/accordion/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val Accordion: FC<AccordionProps>

@@ -20,7 +20,7 @@ external interface UseBadgeParameters {
      * Max count to show.
      * @default 99
      */
-    var max: Number?
+    var max: Double?
 
     /**
      * Controls whether the badge is hidden when `badgeContent` is zero.
@@ -43,7 +43,7 @@ external interface UseBadgeReturnValue {
     /**
      * Maximum number to be displayed in the badge.
      */
-    var max: Number
+    var max: Double
 
     /**
      * Value to be displayed in the badge. If `badgeContent` is greater than `max`, it will return `max+`.

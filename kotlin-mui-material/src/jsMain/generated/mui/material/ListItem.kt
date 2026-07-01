@@ -9,6 +9,8 @@ import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
 import react.*
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface ListItemProps :
     ListItemOwnProps,
@@ -24,8 +26,7 @@ external interface ListItemBaseProps :
     var alignItems: ListItemAlignItems?
 
     /**
-     * The content of the component if a `ListItemSecondaryAction` is used it must
-     * be the last child.
+     * The content of the component.
      */
     override var children: ReactNode?
 
@@ -83,7 +84,7 @@ external interface ListItemOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: Props? /* React.HTMLAttributes<HTMLDivElement> & ListItemComponentsPropsOverrides */
+        var root: HTMLAttributes<HTMLDivElement>?
         var secondaryAction: Props? /* SlotProps<React.ElementType<React.HTMLAttributes<HTMLDivElement>>, ListItemSecondaryActionSlotPropsOverrides, ListItemOwnerState> */
     }
 
@@ -101,16 +102,15 @@ external interface ListItemOwnProps :
 }
 
 /**
- * Uses an additional container component if `ListItemSecondaryAction` is the last child.
  *
  * Demos:
  *
- * - [Lists](https://v7.mui.com/material-ui/react-list/)
- * - [Transfer List](https://v7.mui.com/material-ui/react-transfer-list/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *
- * - [ListItem API](https://v7.mui.com/material-ui/api/list-item/)
+ * - [ListItem API](https://mui.com/material-ui/api/list-item/)
  */
 @JsName("default")
 external val ListItem: FC<ListItemProps>

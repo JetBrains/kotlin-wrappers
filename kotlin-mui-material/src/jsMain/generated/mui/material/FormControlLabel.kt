@@ -111,13 +111,13 @@ external interface FormControlLabelSlotsAndSlotProps : Props {
  *
  * Demos:
  *
- * - [Checkbox](https://v7.mui.com/material-ui/react-checkbox/)
- * - [Radio Group](https://v7.mui.com/material-ui/react-radio-button/)
- * - [Switch](https://v7.mui.com/material-ui/react-switch/)
+ * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
+ * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://mui.com/material-ui/react-switch/)
  *
  * API:
  *
- * - [FormControlLabel API](https://v7.mui.com/material-ui/api/form-control-label/)
+ * - [FormControlLabel API](https://mui.com/material-ui/api/form-control-label/)
  */
 @JsName("default")
 external val FormControlLabel: FC<FormControlLabelProps>

@@ -4,11 +4,6 @@
 
 package muix.tree.view
 
-import web.cssom.ClassName
-
-sealed external interface RichTreeViewClasses {
-    /** Styles applied to the root element. */
-    val root: ClassName
-}
+sealed external interface RichTreeViewClasses
 
 external val richTreeViewClasses: RichTreeViewClasses

@@ -19,11 +19,6 @@ sealed external interface DividerClasses {
     /** Styles applied to the root element if `variant="fullWidth"`. */
     val fullWidth: ClassName
 
-    /** Styles applied to the root element if `light={true}`.
-     * @deprecated
-     */
-    val light: ClassName
-
     /** Styles applied to the root element if `variant="middle"`. */
     val middle: ClassName
 
@@ -35,11 +30,6 @@ sealed external interface DividerClasses {
 
     /** Styles applied to the root element if divider have text. */
     val withChildren: ClassName
-
-    /** Styles applied to the root element if divider have text and `orientation="vertical"`.
-     * @deprecated Combine the [.MuiDivider-withChildren](/material-ui/api/divider/#divider-classes-MuiDivider-withChildren) and [.MuiDivider-vertical](/material-ui/api/divider/#divider-classes-MuiDivider-vertical) classes instead.
-     */
-    val withChildrenVertical: ClassName
 
     /** Styles applied to the root element if `textAlign="right" orientation="horizontal"`. */
     val textAlignRight: ClassName

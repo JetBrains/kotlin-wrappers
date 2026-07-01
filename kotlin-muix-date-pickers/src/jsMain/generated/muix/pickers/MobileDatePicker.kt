@@ -16,4 +16,4 @@ import react.FC
  *
  * - [MobileDatePicker API](https://mui.com/x/api/date-pickers/mobile-date-picker/)
  */
-external val MobileDatePicker: FC<MobileDatePickerProps<*, *>>
+external val MobileDatePicker: FC<MobileDatePickerProps>

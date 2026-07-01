@@ -4,7 +4,7 @@ package muix.pickers
 
 import react.Props
 
-external interface DateTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
+external interface DateTimePickerProps : Props {
     /**
      * CSS media query when `Mobile` mode will be changed to `Desktop`.
      * @default '@media (pointer: fine)'
@@ -16,13 +16,13 @@ external interface DateTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure
      * Overridable component slots.
      * @default {}
      */
-    var slots: DateTimePickerSlots<TDate>?
+    var slots: DateTimePickerSlots?
 
     /**
      * The props used for each component slot.
      * @default {}
      */
-    var slotProps: DateTimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>?
+    var slotProps: DateTimePickerSlotProps?
 
     /**
      * Years rendered per row.
@@ -31,6 +31,6 @@ external interface DateTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure
     var yearsPerRow: Number? /* 3 | 4 */
 }
 
-external interface DateTimePickerSlots<TDate>
+external interface DateTimePickerSlots
 
-external interface DateTimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>
+external interface DateTimePickerSlotProps : Props

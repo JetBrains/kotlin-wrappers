@@ -29,6 +29,9 @@ external interface InputBaseProps :
     @JsName("aria-describedby")
     var ariaDescribedBy: ElementId?
 
+    @JsName("aria-label")
+    var ariaLabel: String?
+
     /**
      * This prop helps users to fill forms faster, especially on mobile devices.
      * The name can be confusing, as it's more like an autofill.
@@ -199,8 +202,6 @@ external interface InputBaseProps :
      * The extra props for the slot components.
      * You can override the existing props or add new ones.
      *
-     * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
-     *
      * @default {}
      */
     var slotProps: SlotProps?
@@ -212,8 +213,6 @@ external interface InputBaseProps :
 
     /**
      * The components used for each slot inside.
-     *
-     * This prop is an alias for the `components` prop, which will be deprecated in the future.
      *
      * @default {}
      */
@@ -256,11 +255,11 @@ external interface InputBaseComponentProps :
  *
  * Demos:
  *
- * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [InputBase API](https://v7.mui.com/material-ui/api/input-base/)
+ * - [InputBase API](https://mui.com/material-ui/api/input-base/)
  */
 @JsName("default")
 external val InputBase: FC<InputBaseProps>

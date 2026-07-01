@@ -167,7 +167,7 @@ external interface TablePaginationOwnProps :
      *
      * For localization purposes, you can use the provided [translations](https://mui.com/material-ui/guides/localization/).
      * @default function defaultLabelDisplayedRows({ from, to, count }) {
-     *   return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
+     *   return `${formatNumber(from)}–${formatNumber(to)} of ${count !== -1 ? formatNumber(count) : `more than ${formatNumber(to)}`}`;
      * }
      */
     var labelDisplayedRows: ((paginationInfo: LabelDisplayedRowsArgs) -> ReactNode)?
@@ -243,13 +243,13 @@ external interface TablePaginationOwnerState
  *
  * Demos:
  *
- * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
- * - [Table](https://v7.mui.com/material-ui/react-table/)
+ * - [Pagination](https://mui.com/material-ui/react-pagination/)
+ * - [Table](https://mui.com/material-ui/react-table/)
  *
  * API:
  *
- * - [TablePagination API](https://v7.mui.com/material-ui/api/table-pagination/)
- * - inherits [TableCell API](https://v7.mui.com/material-ui/api/table-cell/)
+ * - [TablePagination API](https://mui.com/material-ui/api/table-pagination/)
+ * - inherits [TableCell API](https://mui.com/material-ui/api/table-cell/)
  */
 @JsName("default")
 external val TablePagination: FC<TablePaginationProps>

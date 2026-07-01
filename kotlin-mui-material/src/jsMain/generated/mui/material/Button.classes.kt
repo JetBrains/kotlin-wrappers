@@ -13,116 +13,11 @@ sealed external interface ButtonClasses {
     /** Styles applied to the root element if `variant="text"`. */
     val text: ClassName
 
-    /** Styles applied to the root element if `variant="text"` and `color="inherit"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorInherit](/material-ui/api/button/#button-classes-MuiButton-colorInherit) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textInherit: ClassName
-
-    /** Styles applied to the root element if `variant="text"` and `color="primary"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorPrimary](/material-ui/api/button/#button-classes-MuiButton-colorPrimary) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textPrimary: ClassName
-
-    /** Styles applied to the root element if `variant="text"` and `color="secondary"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorSecondary](/material-ui/api/button/#button-classes-MuiButton-colorSecondary) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textSecondary: ClassName
-
-    /** Styles applied to the root element if `variant="text"` and `color="success"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorSuccess](/material-ui/api/button/#button-classes-MuiButton-colorSuccess) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textSuccess: ClassName
-
-    /** Styles applied to the root element if `variant="text"` and `color="error"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorError](/material-ui/api/button/#button-classes-MuiButton-colorError) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textError: ClassName
-
-    /** Styles applied to the root element if `variant="text"` and `color="info"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorInfo](/material-ui/api/button/#button-classes-MuiButton-colorInfo) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textInfo: ClassName
-
-    /** Styles applied to the root element if `variant="text"` and `color="warning"`.
-     * @deprecated Combine the [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) and [.MuiButton-colorWarning](/material-ui/api/button/#button-classes-MuiButton-colorWarning) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textWarning: ClassName
-
     /** Styles applied to the root element if `variant="outlined"`. */
     val outlined: ClassName
 
-    /** Styles applied to the root element if `variant="outlined"` and `color="inherit"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorInherit](/material-ui/api/button/#button-classes-MuiButton-colorInherit) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedInherit: ClassName
-
-    /** Styles applied to the root element if `variant="outlined"` and `color="primary"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorPrimary](/material-ui/api/button/#button-classes-MuiButton-colorPrimary) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedPrimary: ClassName
-
-    /** Styles applied to the root element if `variant="outlined"` and `color="secondary"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorSecondary](/material-ui/api/button/#button-classes-MuiButton-colorSecondary) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedSecondary: ClassName
-
-    /** Styles applied to the root element if `variant="outlined"` and `color="success"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorSuccess](/material-ui/api/button/#button-classes-MuiButton-colorSuccess) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedSuccess: ClassName
-
-    /** Styles applied to the root element if `variant="outlined"` and `color="error"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorError](/material-ui/api/button/#button-classes-MuiButton-colorError) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedError: ClassName
-
-    /** Styles applied to the root element if `variant="outlined"` and `color="info"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorInfo](/material-ui/api/button/#button-classes-MuiButton-colorInfo) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedInfo: ClassName
-
-    /** Styles applied to the root element if `variant="outlined"` and `color="warning"`.
-     * @deprecated Combine the [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) and [.MuiButton-colorWarning](/material-ui/api/button/#button-classes-MuiButton-colorWarning) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedWarning: ClassName
-
     /** Styles applied to the root element if `variant="contained"`. */
     val contained: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="inherit"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorInherit](/material-ui/api/button/#button-classes-MuiButton-colorInherit) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedInherit: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="primary"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorPrimary](/material-ui/api/button/#button-classes-MuiButton-colorPrimary) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedPrimary: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="secondary"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorSecondary](/material-ui/api/button/#button-classes-MuiButton-colorSecondary) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedSecondary: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="success"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorSuccess](/material-ui/api/button/#button-classes-MuiButton-colorSuccess) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedSuccess: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="info"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorInfo](/material-ui/api/button/#button-classes-MuiButton-colorInfo) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedInfo: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="error"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorError](/material-ui/api/button/#button-classes-MuiButton-colorError) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedError: ClassName
-
-    /** Styles applied to the root element if `variant="contained"` and `color="warning"`.
-     * @deprecated Combine the [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) and [.MuiButton-colorWarning](/material-ui/api/button/#button-classes-MuiButton-colorWarning) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedWarning: ClassName
 
     /** Styles applied to the root element if `disableElevation={true}`. */
     val disableElevation: ClassName
@@ -135,51 +30,6 @@ sealed external interface ButtonClasses {
 
     /** Styles applied to the root element if `color="inherit"`. */
     val colorInherit: ClassName
-
-    /** Styles applied to the root element if `size="small"` and `variant="text"`.
-     * @deprecated Combine the [.MuiButton-sizeSmall](/material-ui/api/button/#button-classes-MuiButton-sizeSmall) and [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textSizeSmall: ClassName
-
-    /** Styles applied to the root element if `size="medium"` and `variant="text"`.
-     * @deprecated Combine the [.MuiButton-sizeMedium](/material-ui/api/button/#button-classes-MuiButton-sizeMedium) and [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textSizeMedium: ClassName
-
-    /** Styles applied to the root element if `size="large"` and `variant="text"`.
-     * @deprecated Combine the [.MuiButton-sizeLarge](/material-ui/api/button/#button-classes-MuiButton-sizeLarge) and [.MuiButton-text](/material-ui/api/button/#button-classes-MuiButton-text) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val textSizeLarge: ClassName
-
-    /** Styles applied to the root element if `size="small"` and `variant="outlined"`.
-     * @deprecated Combine the [.MuiButton-sizeSmall](/material-ui/api/button/#button-classes-MuiButton-sizeSmall) and [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedSizeSmall: ClassName
-
-    /** Styles applied to the root element if `size="medium"` and `variant="outlined"`.
-     * @deprecated Combine the [.MuiButton-sizeMedium](/material-ui/api/button/#button-classes-MuiButton-sizeMedium) and [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedSizeMedium: ClassName
-
-    /** Styles applied to the root element if `size="large"` and `variant="outlined"`.
-     * @deprecated Combine the [.MuiButton-sizeLarge](/material-ui/api/button/#button-classes-MuiButton-sizeLarge) and [.MuiButton-outlined](/material-ui/api/button/#button-classes-MuiButton-outlined) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val outlinedSizeLarge: ClassName
-
-    /** Styles applied to the root element if `size="small"` and `variant="contained"`.
-     * @deprecated Combine the [.MuiButton-sizeSmall](/material-ui/api/button/#button-classes-MuiButton-sizeSmall) and [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedSizeSmall: ClassName
-
-    /** Styles applied to the root element if `size="medium"` and `variant="contained"`.
-     * @deprecated Combine the [.MuiButton-sizeMedium](/material-ui/api/button/#button-classes-MuiButton-sizeMedium) and [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedSizeMedium: ClassName
-
-    /** Styles applied to the root element if `size="large"` and `variant="contained"`.
-     * @deprecated Combine the [.MuiButton-sizeLarge](/material-ui/api/button/#button-classes-MuiButton-sizeLarge) and [.MuiButton-contained](/material-ui/api/button/#button-classes-MuiButton-contained) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val containedSizeLarge: ClassName
 
     /** Styles applied to the root element if `size="small"`. */
     val sizeSmall: ClassName
@@ -201,21 +51,6 @@ sealed external interface ButtonClasses {
 
     /** Styles applied to the endIcon element if supplied. */
     val endIcon: ClassName
-
-    /** Styles applied to the icon element if supplied and `size="small"`.
-     * @deprecated Combine the [.MuiButton-icon](/material-ui/api/button/#button-classes-MuiButton-icon) and [.MuiButtonSizeSmall](/material-ui/api/button/#button-classes-MuiButton-sizeSmall) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val iconSizeSmall: ClassName
-
-    /** Styles applied to the icon element if supplied and `size="medium"`.
-     * @deprecated Combine the [.MuiButton-icon](/material-ui/api/button/#button-classes-MuiButton-icon) and [.MuiButtonSizeMedium](/material-ui/api/button/#button-classes-MuiButton-sizeMedium) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val iconSizeMedium: ClassName
-
-    /** Styles applied to the icon element if supplied and `size="large"`.
-     * @deprecated Combine the [.MuiButton-icon](/material-ui/api/button/#button-classes-MuiButton-icon) and [.MuiButtonSizeLarge](/material-ui/api/button/#button-classes-MuiButton-sizeLarge) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val iconSizeLarge: ClassName
 
     /** Styles applied to the root element if `color="primary"`. */
     val colorPrimary: ClassName

@@ -7,11 +7,8 @@ package mui.material
 import web.cssom.ClassName
 
 sealed external interface ListItemClasses {
-    /** Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */
+    /** Styles applied to the root element. */
     val root: ClassName
-
-    /** Styles applied to the container element if `children` includes `ListItemSecondaryAction`. */
-    val container: ClassName
 
     /** Styles applied to the component element if dense. */
     val dense: ClassName
@@ -28,7 +25,7 @@ sealed external interface ListItemClasses {
     /** Styles applied to the root element unless `disablePadding={true}`. */
     val padding: ClassName
 
-    /** Styles applied to the component element if `children` includes `ListItemSecondaryAction`. */
+    /** Styles applied to the secondary action element. */
     val secondaryAction: ClassName
 }
 

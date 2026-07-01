@@ -4,18 +4,18 @@ package muix.pickers
 
 import react.Props
 
-external interface MobileDatePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
+external interface MobileDatePickerProps : Props {
     /**
      * Overridable component slots.
      * @default {}
      */
-    var slots: MobileDatePickerSlots<TDate>?
+    var slots: MobileDatePickerSlots?
 
     /**
      * The props used for each component slot.
      * @default {}
      */
-    var slotProps: MobileDatePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>?
+    var slotProps: MobileDatePickerSlotProps?
 
     /**
      * Years rendered per row.
@@ -24,6 +24,6 @@ external interface MobileDatePickerProps<TDate, TEnableAccessibleFieldDOMStructu
     var yearsPerRow: Number? /* 3 | 4 */
 }
 
-external interface MobileDatePickerSlots<TDate>
+external interface MobileDatePickerSlots
 
-external interface MobileDatePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>
+external interface MobileDatePickerSlotProps : Props

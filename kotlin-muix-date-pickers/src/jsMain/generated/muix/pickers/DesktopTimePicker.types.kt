@@ -5,7 +5,7 @@ package muix.pickers
 import js.array.ReadonlyArray
 import react.Props
 
-external interface DesktopTimePickerProps<TDate, TEnableAccessibleFieldDOMStructure> : Props {
+external interface DesktopTimePickerProps : Props {
     /**
      * Available views.
      */
@@ -15,15 +15,15 @@ external interface DesktopTimePickerProps<TDate, TEnableAccessibleFieldDOMStruct
      * Overridable component slots.
      * @default {}
      */
-    var slots: DesktopTimePickerSlots<TDate>?
+    var slots: DesktopTimePickerSlots?
 
     /**
      * The props used for each component slot.
      * @default {}
      */
-    var slotProps: DesktopTimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>?
+    var slotProps: DesktopTimePickerSlotProps?
 }
 
-external interface DesktopTimePickerSlots<TDate>
+external interface DesktopTimePickerSlots
 
-external interface DesktopTimePickerSlotProps<TDate, TEnableAccessibleFieldDOMStructure>
+external interface DesktopTimePickerSlotProps : Props

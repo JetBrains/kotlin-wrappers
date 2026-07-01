@@ -11,12 +11,6 @@ sealed external interface GridDirection {
 
         @JsValue("row-reverse")
         val rowReverse: GridDirection
-
-        @JsValue("column")
-        val column: GridDirection
-
-        @JsValue("column-reverse")
-        val columnReverse: GridDirection
     }
 }
 

@@ -8,14 +8,14 @@ import react.FC
 import react.PropsWithChildren
 import react.ReactNode
 
-external interface LocalizationProviderProps<TDate, TLocale> : PropsWithChildren {
+external interface LocalizationProviderProps : PropsWithChildren {
     override var children: ReactNode?
 
     /**
      * Date library adapter class function.
-     * @see See the localization provider {@link https://mui.com/x/react-date-pickers/getting-started/#date-library-adapter-setup date adapter setup section} for more details.
+     * @see See the localization provider {@link https://mui.com/x/react-date-pickers/quickstart/#integrate-provider-and-adapter date adapter setup section} for more details.
      */
-    var dateAdapter: DateAdapter? /* new (...args: any) => MuiPickersAdapter<TDate, TLocale> */
+    var dateAdapter: DateAdapter? /* new (...args: any) => MuiPickersAdapter<TLocale> */
 
     /** Formats that are used for any child pickers */
     var dateFormats: Any? /* Partial<AdapterFormats> */
@@ -36,16 +36,16 @@ external interface LocalizationProviderProps<TDate, TLocale> : PropsWithChildren
     /**
      * Locale for components texts
      */
-    var localeText: Any? /* PickersInputLocaleText<TDate> */
+    var localeText: Any? /* PickersInputLocaleText */
 }
 
-external interface MuiPickersAdapterContextValue {
+external interface PickersAdapterContextValue {
     var defaultDates: Any
 
-    var utils: Any? /* MuiPickersAdapter<TDate> */
+    var adapter: Any? /* MuiPickersAdapter */
 
-    var localeText: Any /* PickersInputLocaleText<TDate> */
+    var localeText: Any? /* PickersInputLocaleText */
 }
 
 
-external val LocalizationProvider: FC<LocalizationProviderProps<*, *>>
+external val LocalizationProvider: FC<LocalizationProviderProps>

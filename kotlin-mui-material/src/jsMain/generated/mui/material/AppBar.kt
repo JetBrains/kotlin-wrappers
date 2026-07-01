@@ -75,12 +75,12 @@ external interface AppBarOwnProps :
  *
  * Demos:
  *
- * - [App Bar](https://v7.mui.com/material-ui/react-app-bar/)
+ * - [App Bar](https://mui.com/material-ui/react-app-bar/)
  *
  * API:
  *
- * - [AppBar API](https://v7.mui.com/material-ui/api/app-bar/)
- * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
+ * - [AppBar API](https://mui.com/material-ui/api/app-bar/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 
 @JsName("default")

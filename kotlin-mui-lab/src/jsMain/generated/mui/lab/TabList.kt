@@ -15,12 +15,12 @@ external interface TabListProps :
  *
  * Demos:
  *
- * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [TabList API](https://v7.mui.com/material-ui/api/tab-list/)
- * - inherits [Tabs API](https://v7.mui.com/material-ui/api/tabs/)
+ * - [TabList API](https://mui.com/material-ui/api/tab-list/)
+ * - inherits [Tabs API](https://mui.com/material-ui/api/tabs/)
  */
 @JsName("default")
 external val TabList: FC<TabListProps>

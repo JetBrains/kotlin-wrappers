@@ -112,7 +112,7 @@ external interface FormControlOwnProps :
  * * Input
  * * InputLabel
  *
- * You can find one composition example below and more going to [the demos](https://v7.mui.com/material-ui/react-text-field/#components).
+ * You can find one composition example below and more going to [the demos](https://mui.com/material-ui/react-text-field/#components).
  *
  * ```jsx
  * <FormControl>
@@ -127,15 +127,15 @@ external interface FormControlOwnProps :
  *
  * Demos:
  *
- * - [Checkbox](https://v7.mui.com/material-ui/react-checkbox/)
- * - [Number Field](https://v7.mui.com/material-ui/react-number-field/)
- * - [Radio Group](https://v7.mui.com/material-ui/react-radio-button/)
- * - [Switch](https://v7.mui.com/material-ui/react-switch/)
- * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
+ * - [Checkbox](https://mui.com/material-ui/react-checkbox/)
+ * - [Number Field](https://mui.com/material-ui/react-number-field/)
+ * - [Radio Group](https://mui.com/material-ui/react-radio-button/)
+ * - [Switch](https://mui.com/material-ui/react-switch/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [FormControl API](https://v7.mui.com/material-ui/api/form-control/)
+ * - [FormControl API](https://mui.com/material-ui/api/form-control/)
  */
 @JsName("default")
 external val FormControl: FC<FormControlProps>

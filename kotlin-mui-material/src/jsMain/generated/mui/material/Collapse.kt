@@ -22,6 +22,16 @@ external interface CollapseProps :
     PropsWithClassName,
     PropsWithSx {
     /**
+     * Add a custom transition end trigger.
+     * Use it when you need custom logic to decide when the transition has ended.
+     * Note: Timeouts are still used as a fallback if provided.
+     *
+     * @param {HTMLElement} node The transitioning DOM node.
+     * @param {Function} done Call this when the transition has finished.
+     */
+    var addEndListener: Any? /* TransitionProps['addEndListener'] */
+
+    /**
      * The content node to be collapsed.
      */
     override var children: ReactNode?
@@ -44,6 +54,12 @@ external interface CollapseProps :
      * Either a string to use a HTML element or a component.
      */
     var component: ElementType<TransitionProps>?
+
+    /**
+     * If `true`, the transition ignores `theme.motion.reducedMotion` and keeps its normal timing.
+     * @default false
+     */
+    var disablePrefersReducedMotion: Boolean?
 
     /**
      * The transition timing function.
@@ -120,18 +136,17 @@ external interface CollapseOwnerState : CollapseProps {
 
 /**
  * The Collapse transition is used by the
- * [Vertical Stepper](https://v7.mui.com/material-ui/react-stepper/#vertical-stepper) StepContent component.
- * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
+ * [Vertical Stepper](https://mui.com/material-ui/react-stepper/#vertical-stepper) StepContent component.
  *
  * Demos:
  *
- * - [Card](https://v7.mui.com/material-ui/react-card/)
- * - [Lists](https://v7.mui.com/material-ui/react-list/)
- * - [Transitions](https://v7.mui.com/material-ui/transitions/)
+ * - [Card](https://mui.com/material-ui/react-card/)
+ * - [Lists](https://mui.com/material-ui/react-list/)
+ * - [Transitions](https://mui.com/material-ui/transitions/)
  *
  * API:
  *
- * - [Collapse API](https://v7.mui.com/material-ui/api/collapse/)
+ * - [Collapse API](https://mui.com/material-ui/api/collapse/)
  * - inherits [Transition API](https://reactcommunity.org/react-transition-group/transition/#Transition-props)
  */
 

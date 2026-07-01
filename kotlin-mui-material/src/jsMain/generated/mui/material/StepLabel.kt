@@ -93,11 +93,11 @@ external interface StepLabelOwnerState
  *
  * Demos:
  *
- * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepLabel API](https://v7.mui.com/material-ui/api/step-label/)
+ * - [StepLabel API](https://mui.com/material-ui/api/step-label/)
  */
 @JsName("default")
 external val StepLabel: FC<StepLabelProps>

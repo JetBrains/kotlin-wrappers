@@ -17,4 +17,4 @@ import react.FC
  *
  * - [PickersCalendarHeader API](https://mui.com/x/api/date-pickers/pickers-calendar-header/)
  */
-external val PickersCalendarHeader: FC<PickersCalendarHeaderProps<*>>
+external val PickersCalendarHeader: FC<PickersCalendarHeaderProps>

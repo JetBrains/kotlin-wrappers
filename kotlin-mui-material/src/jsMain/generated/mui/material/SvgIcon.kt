@@ -99,12 +99,12 @@ external interface SvgIconOwnProps :
  *
  * Demos:
  *
- * - [Icons](https://v7.mui.com/material-ui/icons/)
- * - [Material Icons](https://v7.mui.com/material-ui/material-icons/)
+ * - [Icons](https://mui.com/material-ui/icons/)
+ * - [Material Icons](https://mui.com/material-ui/material-icons/)
  *
  * API:
  *
- * - [SvgIcon API](https://v7.mui.com/material-ui/api/svg-icon/)
+ * - [SvgIcon API](https://mui.com/material-ui/api/svg-icon/)
  */
 @JsName("default")
 external val SvgIcon: FC<SvgIconProps>

@@ -99,11 +99,11 @@ external interface ButtonGroupOwnProps :
  *
  * Demos:
  *
- * - [Button Group](https://v7.mui.com/material-ui/react-button-group/)
+ * - [Button Group](https://mui.com/material-ui/react-button-group/)
  *
  * API:
  *
- * - [ButtonGroup API](https://v7.mui.com/material-ui/api/button-group/)
+ * - [ButtonGroup API](https://mui.com/material-ui/api/button-group/)
  */
 @JsName("default")
 external val ButtonGroup: FC<ButtonGroupProps>

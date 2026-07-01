@@ -124,15 +124,15 @@ external interface ButtonOwnProps :
  *
  * Demos:
  *
- * - [Button Group](https://v7.mui.com/material-ui/react-button-group/)
- * - [Button](https://v7.mui.com/material-ui/react-button/)
- * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
- * - [Number Field](https://v7.mui.com/material-ui/react-number-field/)
+ * - [Button Group](https://mui.com/material-ui/react-button-group/)
+ * - [Button](https://mui.com/material-ui/react-button/)
+ * - [Menubar](https://mui.com/material-ui/react-menubar/)
+ * - [Number Field](https://mui.com/material-ui/react-number-field/)
  *
  * API:
  *
- * - [Button API](https://v7.mui.com/material-ui/api/button/)
- * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
+ * - [Button API](https://mui.com/material-ui/api/button/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val Button: FC<ButtonProps>

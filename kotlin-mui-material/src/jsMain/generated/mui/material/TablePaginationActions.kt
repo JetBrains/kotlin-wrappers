@@ -122,11 +122,11 @@ external interface TablePaginationActionsSlots {
  *
  * Demos:
  *
- * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
+ * - [Pagination](https://mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [TablePaginationActions API](https://v7.mui.com/material-ui/api/table-pagination-actions/)
+ * - [TablePaginationActions API](https://mui.com/material-ui/api/table-pagination-actions/)
  */
 @JsName("default")
 external val TablePaginationActions: FC<TablePaginationActionsProps>

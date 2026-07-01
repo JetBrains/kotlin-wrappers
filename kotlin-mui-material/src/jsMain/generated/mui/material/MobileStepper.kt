@@ -121,12 +121,12 @@ external interface MobileStepperOwnerState
  *
  * Demos:
  *
- * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [MobileStepper API](https://v7.mui.com/material-ui/api/mobile-stepper/)
- * - inherits [Paper API](https://v7.mui.com/material-ui/api/paper/)
+ * - [MobileStepper API](https://mui.com/material-ui/api/mobile-stepper/)
+ * - inherits [Paper API](https://mui.com/material-ui/api/paper/)
  */
 @JsName("default")
 external val MobileStepper: FC<MobileStepperProps>

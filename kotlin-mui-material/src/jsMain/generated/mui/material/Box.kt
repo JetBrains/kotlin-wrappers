@@ -11,12 +11,12 @@ import react.FC
  *
  * Demos:
  *
- * - [Box](https://v7.mui.com/material-ui/react-box/)
- * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
+ * - [Box](https://mui.com/material-ui/react-box/)
+ * - [Menubar](https://mui.com/material-ui/react-menubar/)
  *
  * API:
  *
- * - [Box API](https://v7.mui.com/material-ui/api/box/)
+ * - [Box API](https://mui.com/material-ui/api/box/)
  */
 @JsName("default")
 external val Box: FC<BoxProps>

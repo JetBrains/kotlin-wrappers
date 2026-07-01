@@ -55,14 +55,14 @@ external interface UseSliderParameters {
      * Should not be equal to min.
      * @default 100
      */
-    var max: Number?
+    var max: Double?
 
     /**
      * The minimum allowed value of the slider.
      * Should not be equal to max.
      * @default 0
      */
-    var min: Number?
+    var min: Double?
 
     /**
      * Name attribute of the hidden `input` element.

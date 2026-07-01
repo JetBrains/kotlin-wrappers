@@ -5,12 +5,13 @@ package muix.pickers
 import js.array.ReadonlyArray
 import react.Props
 
-external interface TimeClockProps<TDate, TView> : Props {
+external interface TimeClockProps :
+    ExportedTimeClockProps {
     /**
      * Available views.
      * @default ['hours', 'minutes']
      */
-    var views: ReadonlyArray<TView>?
+    var views: ReadonlyArray<String /* 'hours' | 'minutes' | 'seconds' | 'meridiem' */>?
 
     /**
      * Override or extend the styles applied to the component.
@@ -42,4 +43,4 @@ external interface ExportedTimeClockProps : Props {
 
 external interface TimeClockSlots
 
-external interface TimeClockSlotProps
+external interface TimeClockSlotProps : Props

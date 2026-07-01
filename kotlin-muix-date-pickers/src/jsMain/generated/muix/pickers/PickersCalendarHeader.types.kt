@@ -3,7 +3,6 @@
 package muix.pickers
 
 import js.array.ReadonlyArray
-import mui.material.SlideDirection
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
@@ -13,7 +12,7 @@ import react.Props
 import react.PropsWithClassName
 import web.cssom.ClassName
 
-external interface PickersCalendarHeaderProps<TDate> :
+external interface PickersCalendarHeaderProps :
     PropsWithClassName,
     PropsWithSx {
     /**
@@ -26,15 +25,15 @@ external interface PickersCalendarHeaderProps<TDate> :
      * The props used for each component slot.
      * @default {}
      */
-    var slotProps: PickersCalendarHeaderSlotProps<TDate>?
+    var slotProps: PickersCalendarHeaderSlotProps?
 
-    var currentMonth: TDate
+    var currentMonth: PickerValidDate
 
     var disabled: Boolean?
 
     var views: ReadonlyArray<String /* 'year' | 'month' | 'day' */>
 
-    var onMonthChange: (date: TDate, slideDirection: SlideDirection) -> Unit
+    var onMonthChange: (date: PickerValidDate) -> Unit
 
     var view: String /* 'year' | 'month' | 'day' */
 
@@ -75,7 +74,7 @@ external interface PickersCalendarHeaderSlots {
     var switchViewIcon: ElementType<*>?
 }
 
-external interface PickersCalendarHeaderSlotProps<TDate> : Props {
+external interface PickersCalendarHeaderSlotProps : Props {
     var switchViewButton: Props?
 
     var switchViewIcon: Props?

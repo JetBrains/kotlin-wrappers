@@ -155,13 +155,13 @@ external interface PopoverSlots {
 }
 
 external interface PopoverSlotProps : Props {
-    /** TS: SlotProps<typeof Modal, PopoverRootSlotPropsOverrides, PopoverOwnerState> */
+    /** TS: SlotProps<React.ElementType<ModalProps>, PopoverRootSlotPropsOverrides, PopoverOwnerState> */
     var root: ModalProps?
 
-    /** TS: SlotProps<typeof Paper, PopoverPaperSlotPropsOverrides, PopoverOwnerState> */
+    /** TS: SlotProps<React.ElementType<PaperProps>, PopoverPaperSlotPropsOverrides, PopoverOwnerState> */
     var paper: PaperProps?
 
-    /** TS: SlotComponentProps< // use SlotComponentProps because transition slot does not support `component` and `sx` prop React.ElementType, TransitionProps & PopoverTransitionSlotPropsOverrides, PopoverOwnerState> */
+    /** TS: SlotComponentProps< // use SlotComponentProps because transition slot does not support `component` and `sx` prop React.ElementType<TransitionProps>, TransitionProps & PopoverTransitionSlotPropsOverrides, PopoverOwnerState> */
     var transition: Any?
 
     /** TS: SlotProps<React.ElementType<BackdropProps>, PopoverBackdropSlotPropsOverrides, PopoverOwnerState> */
@@ -196,13 +196,13 @@ external interface PopoverActions {
  *
  * Demos:
  *
- * - [Menu](https://v7.mui.com/material-ui/react-menu/)
- * - [Popover](https://v7.mui.com/material-ui/react-popover/)
+ * - [Menu](https://mui.com/material-ui/react-menu/)
+ * - [Popover](https://mui.com/material-ui/react-popover/)
  *
  * API:
  *
- * - [Popover API](https://v7.mui.com/material-ui/api/popover/)
- * - inherits [Modal API](https://v7.mui.com/material-ui/api/modal/)
+ * - [Popover API](https://mui.com/material-ui/api/popover/)
+ * - inherits [Modal API](https://mui.com/material-ui/api/modal/)
  */
 @JsName("default")
 external val Popover: FC<PopoverProps>

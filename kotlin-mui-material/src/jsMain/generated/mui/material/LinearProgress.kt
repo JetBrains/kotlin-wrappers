@@ -30,19 +30,31 @@ external interface LinearProgressProps :
     var color: LinearProgressColor?
 
     /**
+     * The maximum value for the progress indicator for the determinate and buffer variants.
+     * @default 100
+     */
+    var max: Double?
+
+    /**
+     * The minimum value for the progress indicator for the determinate and buffer variants.
+     * @default 0
+     */
+    var min: Double?
+
+    /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
 
     /**
      * The value of the progress indicator for the determinate and buffer variants.
-     * Value between 0 and 100.
+     * Value between `min` and `max`.
      */
     var value: Number?
 
     /**
      * The value for the buffer variant.
-     * Value between 0 and 100.
+     * Value between `min` and `max`.
      */
     var valueBuffer: Number?
 
@@ -63,11 +75,11 @@ external interface LinearProgressProps :
  *
  * Demos:
  *
- * - [Progress](https://v7.mui.com/material-ui/react-progress/)
+ * - [Progress](https://mui.com/material-ui/react-progress/)
  *
  * API:
  *
- * - [LinearProgress API](https://v7.mui.com/material-ui/api/linear-progress/)
+ * - [LinearProgress API](https://mui.com/material-ui/api/linear-progress/)
  */
 @JsName("default")
 external val LinearProgress: FC<LinearProgressProps>

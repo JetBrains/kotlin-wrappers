@@ -45,11 +45,11 @@ external interface DialogActionsProps :
  *
  * Demos:
  *
- * - [Dialog](https://v7.mui.com/material-ui/react-dialog/)
+ * - [Dialog](https://mui.com/material-ui/react-dialog/)
  *
  * API:
  *
- * - [DialogActions API](https://v7.mui.com/material-ui/api/dialog-actions/)
+ * - [DialogActions API](https://mui.com/material-ui/api/dialog-actions/)
  */
 @JsName("default")
 external val DialogActions: FC<DialogActionsProps>

@@ -40,19 +40,12 @@ external interface SimpleTreeViewProps :
     override var sx: SxProps<Theme>?
 
     /**
-     * The ref object that allows Tree View manipulation. Can be instantiated with `useTreeViewApiRef()`.
+     * The ref object that allows Tree View manipulation. Can be instantiated with `useSimpleTreeViewApiRef()`.
      */
     var apiRef: Ref<*>?
-
-    /**
-     * Unstable features, breaking changes might be introduced.
-     * For each feature, if the flag is not explicitly set to `true`,
-     * the feature will be fully disabled and any property / method call will not have any effect.
-     */
-    var experimentalFeatures: Any? /* TreeViewExperimentalFeatures<SimpleTreeViewPluginSignatures> */
 }
 
-external interface SimpleTreeViewSlots {
+external interface SimpleTreeViewSlots : TreeViewSlots {
     /**
      * Element rendered at the root.
      * @default SimpleTreeViewRoot
@@ -60,6 +53,7 @@ external interface SimpleTreeViewSlots {
     var root: ElementType<*>?
 }
 
-external interface SimpleTreeViewSlotProps : Props {
+external interface SimpleTreeViewSlotProps :
+    TreeViewSlotProps {
     var root: Props?
 }

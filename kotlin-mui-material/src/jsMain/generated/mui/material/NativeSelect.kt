@@ -81,12 +81,12 @@ external interface NativeSelectProps :
  *
  * Demos:
  *
- * - [Select](https://v7.mui.com/material-ui/react-select/)
+ * - [Select](https://mui.com/material-ui/react-select/)
  *
  * API:
  *
- * - [NativeSelect API](https://v7.mui.com/material-ui/api/native-select/)
- * - inherits [Input API](https://v7.mui.com/material-ui/api/input/)
+ * - [NativeSelect API](https://mui.com/material-ui/api/native-select/)
+ * - inherits [Input API](https://mui.com/material-ui/api/input/)
  */
 @JsName("default")
 external val NativeSelect: FC<NativeSelectProps>

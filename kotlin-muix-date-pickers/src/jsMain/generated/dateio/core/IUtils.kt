@@ -88,6 +88,8 @@ external interface DateIOFormats<TLibFormatToken : Any> {
     var keyboardDateTime24h: TLibFormatToken
 }
 
+external interface ExtendableDateType
+
 external interface IUtils<TDate : Any> {
     val formats: DateIOFormats<*>
     val locale: Any?
@@ -96,8 +98,6 @@ external interface IUtils<TDate : Any> {
 
     /** Name of the library that is used right now */
     val lib: String
-
-// constructor (options?: { formats?: DateIOFormats, locale?: any, instance?: any })
 
     fun date(value: Any?): TDate?
     fun toJsDate(value: TDate): js.date.Date

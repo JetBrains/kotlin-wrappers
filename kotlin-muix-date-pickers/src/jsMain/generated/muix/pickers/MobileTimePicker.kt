@@ -16,4 +16,4 @@ import react.FC
  *
  * - [MobileTimePicker API](https://mui.com/x/api/date-pickers/mobile-time-picker/)
  */
-external val MobileTimePicker: FC<MobileTimePickerProps<*, *, *>>
+external val MobileTimePicker: FC<MobileTimePickerProps>

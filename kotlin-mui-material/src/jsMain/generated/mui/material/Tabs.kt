@@ -226,11 +226,11 @@ external interface TabsActions {
  *
  * Demos:
  *
- * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [Tabs API](https://v7.mui.com/material-ui/api/tabs/)
+ * - [Tabs API](https://mui.com/material-ui/api/tabs/)
  */
 @JsName("default")
 external val Tabs: FC<TabsProps>

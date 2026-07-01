@@ -115,7 +115,7 @@ external interface DrawerSlots {
 
     /**
      * The component used for the transition.
-     * [Follow this guide](https://mui.com/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+     * [Follow this guide](/material-ui/transitions/#transition-slots) to learn more about the requirements for this component.
      * @default Slide
      */
     var transition: ElementType<*>
@@ -134,7 +134,7 @@ external interface DrawerSlotProps : Props {
     /** TS: SlotProps<React.ElementType<PaperProps>, DrawerPaperSlotPropsOverrides, DrawerOwnerState> */
     var paper: PaperProps?
 
-    /** TS: SlotProps<React.ElementType, TransitionProps & DrawerTransitionSlotPropsOverrides, DrawerOwnerState> */
+    /** TS: SlotProps<React.ElementType<TransitionProps>, TransitionProps & DrawerTransitionSlotPropsOverrides, DrawerOwnerState> */
     var transition: TransitionProps?
 }
 
@@ -147,16 +147,16 @@ external interface DrawerSlotsAndSlotProps : Props {
 external interface DrawerOwnerState
 
 /**
- * The props of the [Modal](https://v7.mui.com/material-ui/api/modal/) component are available
+ * The props of the [Modal](https://mui.com/material-ui/api/modal/) component are available
  * when `variant="temporary"` is set.
  *
  * Demos:
  *
- * - [Drawer](https://v7.mui.com/material-ui/react-drawer/)
+ * - [Drawer](https://mui.com/material-ui/react-drawer/)
  *
  * API:
  *
- * - [Drawer API](https://v7.mui.com/material-ui/api/drawer/)
+ * - [Drawer API](https://mui.com/material-ui/api/drawer/)
  */
 @JsName("default")
 external val Drawer: FC<DrawerProps>

@@ -16,4 +16,4 @@ import react.FC
  *
  * - [DesktopDatePicker API](https://mui.com/x/api/date-pickers/desktop-date-picker/)
  */
-external val DesktopDatePicker: FC<DesktopDatePickerProps<*, *>>
+external val DesktopDatePicker: FC<DesktopDatePickerProps>

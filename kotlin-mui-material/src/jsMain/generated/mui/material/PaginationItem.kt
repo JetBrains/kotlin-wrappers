@@ -92,6 +92,12 @@ external interface PaginationItemOwnProps :
     var disabled: Boolean?
 
     /**
+     * Whether the custom component should render a native `<button>` element when
+     * rendering a React component with the `component` or `slots` prop.
+     */
+    var nativeButton: Boolean?
+
+    /**
      * The current page number.
      */
     var page: ReactNode?
@@ -136,12 +142,12 @@ external interface PaginationItemOwnProps :
  *
  * Demos:
  *
- * - [Pagination](https://v7.mui.com/material-ui/react-pagination/)
+ * - [Pagination](https://mui.com/material-ui/react-pagination/)
  *
  * API:
  *
- * - [PaginationItem API](https://v7.mui.com/material-ui/api/pagination-item/)
- * - inherits [ButtonBase API](https://v7.mui.com/material-ui/api/button-base/)
+ * - [PaginationItem API](https://mui.com/material-ui/api/pagination-item/)
+ * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
  */
 @JsName("default")
 external val PaginationItem: FC<PaginationItemProps>

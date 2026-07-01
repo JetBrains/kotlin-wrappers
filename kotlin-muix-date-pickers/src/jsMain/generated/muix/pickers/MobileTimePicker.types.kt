@@ -4,20 +4,20 @@ package muix.pickers
 
 import react.Props
 
-external interface MobileTimePickerProps<TDate, TView, TEnableAccessibleFieldDOMStructure> : Props {
+external interface MobileTimePickerProps : Props {
     /**
      * Overridable component slots.
      * @default {}
      */
-    var slots: MobileTimePickerSlots<TDate, TView>?
+    var slots: MobileTimePickerSlots?
 
     /**
      * The props used for each component slot.
      * @default {}
      */
-    var slotProps: MobileTimePickerSlotProps<TDate, TView, TEnableAccessibleFieldDOMStructure>?
+    var slotProps: MobileTimePickerSlotProps?
 }
 
-external interface MobileTimePickerSlots<TDate, TView>
+external interface MobileTimePickerSlots
 
-external interface MobileTimePickerSlotProps<TDate, TView, TEnableAccessibleFieldDOMStructure>
+external interface MobileTimePickerSlotProps : Props

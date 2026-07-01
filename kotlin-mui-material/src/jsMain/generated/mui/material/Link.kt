@@ -37,7 +37,7 @@ external interface LinkOwnProps :
      * The color of the link.
      * @default 'primary'
      */
-    var color: Any? /* TypographyOwnProps['color'] */
+    var color: Any? /* TypographyOwnProps['color'] | 'inherit' */
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.
@@ -66,13 +66,13 @@ external interface LinkOwnProps :
  *
  * Demos:
  *
- * - [Breadcrumbs](https://v7.mui.com/material-ui/react-breadcrumbs/)
- * - [Links](https://v7.mui.com/material-ui/react-link/)
+ * - [Breadcrumbs](https://mui.com/material-ui/react-breadcrumbs/)
+ * - [Links](https://mui.com/material-ui/react-link/)
  *
  * API:
  *
- * - [Link API](https://v7.mui.com/material-ui/api/link/)
- * - inherits [Typography API](https://v7.mui.com/material-ui/api/typography/)
+ * - [Link API](https://mui.com/material-ui/api/link/)
+ * - inherits [Typography API](https://mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val Link: FC<LinkProps>

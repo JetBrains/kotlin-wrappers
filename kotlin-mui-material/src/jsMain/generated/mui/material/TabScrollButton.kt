@@ -80,11 +80,11 @@ external interface TabScrollButtonOwnerState : TabScrollButtonProps {
  *
  * Demos:
  *
- * - [Tabs](https://v7.mui.com/material-ui/react-tabs/)
+ * - [Tabs](https://mui.com/material-ui/react-tabs/)
  *
  * API:
  *
- * - [TabScrollButton API](https://v7.mui.com/material-ui/api/tab-scroll-button/)
+ * - [TabScrollButton API](https://mui.com/material-ui/api/tab-scroll-button/)
  */
 @JsName("default")
 external val TabScrollButton: FC<TabScrollButtonProps>

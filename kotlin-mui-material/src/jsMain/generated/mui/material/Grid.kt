@@ -47,8 +47,13 @@ external interface GridBaseProps : PropsWithChildren {
     var container: Boolean?
 
     /**
-     * Defines the `flex-direction` style property.
-     * It is applied for all screen sizes.
+     * Defines the `flex-direction` style property for the container.
+     *
+     * ⚠️ Only `row` and `row-reverse` are supported. `column` and `column-reverse` are not supported,
+     * because the Grid component is designed to subdivide layouts into **columns**, not rows.
+     *
+     * For vertical layouts, use `Stack` instead.
+     *
      * @default 'row'
      */
     var direction: ResponsiveStyleValue<GridDirection>?
@@ -117,11 +122,11 @@ external interface GridBaseProps : PropsWithChildren {
  *
  * Demos:
  *
- * - [Grid](https://v7.mui.com/material-ui/react-grid/)
+ * - [Grid](https://mui.com/material-ui/react-grid/)
  *
  * API:
  *
- * - [Grid API](https://v7.mui.com/material-ui/api/grid/)
+ * - [Grid API](https://mui.com/material-ui/api/grid/)
  */
 @JsName("default")
 external val Grid: FC<GridProps>

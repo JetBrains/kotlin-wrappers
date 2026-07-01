@@ -31,11 +31,11 @@ external interface StepConnectorProps :
  *
  * Demos:
  *
- * - [Stepper](https://v7.mui.com/material-ui/react-stepper/)
+ * - [Stepper](https://mui.com/material-ui/react-stepper/)
  *
  * API:
  *
- * - [StepConnector API](https://v7.mui.com/material-ui/api/step-connector/)
+ * - [StepConnector API](https://mui.com/material-ui/api/step-connector/)
  */
 @JsName("default")
 external val StepConnector: FC<StepConnectorProps>

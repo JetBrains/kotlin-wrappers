@@ -22,12 +22,6 @@ sealed external interface AccordionSummaryClasses {
     /** Styles applied to the root element unless `disableGutters={true}`. */
     val gutters: ClassName
 
-    /**
-     * Styles applied to the children wrapper element unless `disableGutters={true}`.
-     * @deprecated Combine the [.MuiAccordionSummary-gutters](/material-ui/api/accordion-summary/#accordion-summary-classes-MuiAccordionSummary-gutters) and [.MuiAccordionSummary-content](/material-ui/api/accordion-summary/#AccordionSummary-css-MuiAccordionSummary-content) classes instead. See [Migrating from deprecated APIs](/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-     */
-    val contentGutters: ClassName
-
     /** Styles applied to the children wrapper element. */
     val content: ClassName
 

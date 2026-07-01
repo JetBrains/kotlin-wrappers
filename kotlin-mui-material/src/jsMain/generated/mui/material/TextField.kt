@@ -271,38 +271,40 @@ external interface OutlinedTextFieldProps :
  * It's important to understand that the text field is a simple abstraction
  * on top of the following components:
  *
- * * [FormControl](https://v7.mui.com/material-ui/api/form-control/)
- * * [InputLabel](https://v7.mui.com/material-ui/api/input-label/)
- * * [FilledInput](https://v7.mui.com/material-ui/api/filled-input/)
- * * [OutlinedInput](https://v7.mui.com/material-ui/api/outlined-input/)
- * * [Input](https://v7.mui.com/material-ui/api/input/)
- * * [FormHelperText](https://v7.mui.com/material-ui/api/form-helper-text/)
+ * * [FormControl](https://mui.com/material-ui/api/form-control/)
+ * * [InputLabel](https://mui.com/material-ui/api/input-label/)
+ * * [FilledInput](https://mui.com/material-ui/api/filled-input/)
+ * * [OutlinedInput](https://mui.com/material-ui/api/outlined-input/)
+ * * [Input](https://mui.com/material-ui/api/input/)
+ * * [FormHelperText](https://mui.com/material-ui/api/form-helper-text/)
  *
  * If you wish to alter the props applied to the `input` element, you can do so as follows:
  *
  * ```jsx
- * const inputProps = {
- *   step: 300,
+ * const slotProps = {
+ *   htmlInput: {
+ *      step: 300
+ *   }
  * };
  *
- * return <TextField id="time" type="time" inputProps={inputProps} />;
+ * return <TextField id="time" type="time" slotProps={slotProps} />;
  * ```
  *
  * For advanced cases, please look at the source of TextField by clicking on the
  * "Edit this page" button above. Consider either:
  *
- * * using the upper case props for passing values directly to the components
+ * * using the `slotProps` prop for passing values directly to the components
  * * using the underlying components directly as shown in the demos
  *
  * Demos:
  *
- * - [Autocomplete](https://v7.mui.com/material-ui/react-autocomplete/)
- * - [Text Field](https://v7.mui.com/material-ui/react-text-field/)
+ * - [Autocomplete](https://mui.com/material-ui/react-autocomplete/)
+ * - [Text Field](https://mui.com/material-ui/react-text-field/)
  *
  * API:
  *
- * - [TextField API](https://v7.mui.com/material-ui/api/text-field/)
- * - inherits [FormControl API](https://v7.mui.com/material-ui/api/form-control/)
+ * - [TextField API](https://mui.com/material-ui/api/text-field/)
+ * - inherits [FormControl API](https://mui.com/material-ui/api/form-control/)
  */
 @JsName("default")
 external val TextField: FC<TextFieldProps>

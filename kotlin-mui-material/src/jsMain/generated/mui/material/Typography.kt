@@ -7,7 +7,6 @@ package mui.material
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
-import mui.system.SystemProps
 import mui.system.Union
 import mui.types.PropsWithComponent
 import react.FC
@@ -22,7 +21,6 @@ external interface TypographyProps :
     PropsWithComponent
 
 external interface TypographyOwnProps :
-    SystemProps<Theme>,
     PropsWithChildren,
     PropsWithSx {
     /**
@@ -100,13 +98,13 @@ external interface TypographyOwnProps :
  *
  * Demos:
  *
- * - [Breadcrumbs](https://v7.mui.com/material-ui/react-breadcrumbs/)
- * - [Menubar](https://v7.mui.com/material-ui/react-menubar/)
- * - [Typography](https://v7.mui.com/material-ui/react-typography/)
+ * - [Breadcrumbs](https://mui.com/material-ui/react-breadcrumbs/)
+ * - [Menubar](https://mui.com/material-ui/react-menubar/)
+ * - [Typography](https://mui.com/material-ui/react-typography/)
  *
  * API:
  *
- * - [Typography API](https://v7.mui.com/material-ui/api/typography/)
+ * - [Typography API](https://mui.com/material-ui/api/typography/)
  */
 @JsName("default")
 external val Typography: FC<TypographyProps>
