@@ -8,5 +8,5 @@ import kotlinx.js.JsPlainObject
 external interface GPUColorTargetState {
     var blend: GPUBlendState?
     var format: GPUTextureFormat
-    var writeMask: GPUColorWriteFlags?
+    var writeMask: GPUColorWrite?
 }

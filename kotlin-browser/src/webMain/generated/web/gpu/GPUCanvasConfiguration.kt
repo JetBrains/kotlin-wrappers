@@ -13,6 +13,6 @@ external interface GPUCanvasConfiguration {
     var device: GPUDevice
     var format: GPUTextureFormat
     var toneMapping: GPUCanvasToneMapping?
-    var usage: GPUTextureUsageFlags?
+    var usage: GPUTextureUsage?
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
 }

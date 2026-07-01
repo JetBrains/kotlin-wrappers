@@ -9,5 +9,5 @@ external interface GPUBufferDescriptor :
     GPUObjectDescriptorBase {
     var mappedAtCreation: Boolean?
     var size: GPUSize64
-    var usage: GPUBufferUsageFlags
+    var usage: GPUBufferUsage
 }

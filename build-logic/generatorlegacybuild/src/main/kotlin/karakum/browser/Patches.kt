@@ -6,6 +6,7 @@ private const val SVG_ANIMATED_ENUMERATION_AFTER = "\ninterface SVGAnimatedEnume
 internal fun String.applyPatches(): String {
     return patchVideoFrameCallback()
         .applyReadyStatePatches()
+        .applyEnumPatches()
         // TODO: report nullability problem
         .replace("  toJSON(): any;", "  toJSON(): object;")
         .replace(" extends NodeListOf<", " extends NodeList<")

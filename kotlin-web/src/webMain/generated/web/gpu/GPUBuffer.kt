@@ -61,7 +61,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
      */
     fun mapAsync(
-        mode: GPUMapModeFlags,
+        mode: GPUMapMode,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
     ): Promise<Void>
@@ -80,7 +80,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
  */
 suspend inline fun GPUBuffer.map(
-    mode: GPUMapModeFlags,
+    mode: GPUMapMode,
 ) {
     mapAsync(
         mode = mode,
@@ -93,7 +93,7 @@ suspend inline fun GPUBuffer.map(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
  */
 suspend inline fun GPUBuffer.map(
-    mode: GPUMapModeFlags,
+    mode: GPUMapMode,
     offset: GPUSize64,
 ) {
     mapAsync(
@@ -108,7 +108,7 @@ suspend inline fun GPUBuffer.map(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
  */
 suspend inline fun GPUBuffer.map(
-    mode: GPUMapModeFlags,
+    mode: GPUMapMode,
     offset: GPUSize64,
     size: GPUSize64,
 ) {

@@ -12,5 +12,5 @@ external interface GPUBindGroupLayoutEntry {
     var sampler: GPUSamplerBindingLayout?
     var storageTexture: GPUStorageTextureBindingLayout?
     var texture: GPUTextureBindingLayout?
-    var visibility: GPUShaderStageFlags
+    var visibility: GPUShaderStage
 }

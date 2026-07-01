@@ -13,6 +13,6 @@ external interface GPUTextureDescriptor :
     var mipLevelCount: GPUIntegerCoordinate?
     var sampleCount: GPUSize32?
     var size: GPUExtent3D
-    var usage: GPUTextureUsageFlags
+    var usage: GPUTextureUsage
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
 }
