@@ -5,6 +5,7 @@ import mui.material.Divider
 import mui.material.DividerVariant
 import mui.system.sx
 import react.FC
+import react.Props
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 
@@ -25,25 +26,23 @@ internal val View = FC {
             margin = auto
         }
 
-
         DetailItem {
             label = "Name"
             value = "John Doe"
-            keyValue = "name"
         }
+
         DetailItem {
             label = "Title"
             value = "Winner"
-            keyValue = "title"
         }
     }
 
     Divider {
-        variant = DividerVariant.middle
         sx {
             marginTop = 16.px
             marginBottom = 16.px
         }
-    }
 
+        variant = DividerVariant.middle
+    }
 }
