@@ -2,6 +2,7 @@
 
 package muix.pickers
 
+import js.array.ReadonlyArray
 import mui.material.SlideDirection
 import react.ElementType
 import react.Props
@@ -16,9 +17,9 @@ external interface DayCalendarProps :
 
     var currentMonth: PickerValidDate
 
-    var selectedDays: Any? /* (PickerValidDate | null)[] */
+    var selectedDays: ReadonlyArray<PickerValidDate?>
 
-    var onSelectedDaysChange: Any? /* PickerOnChangeFn */
+    var onSelectedDaysChange: PickerOnChangeFn
 
     var focusedDay: PickerValidDate?
 
