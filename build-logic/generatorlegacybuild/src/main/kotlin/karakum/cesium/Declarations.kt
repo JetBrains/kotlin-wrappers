@@ -89,12 +89,8 @@ internal fun parseDeclarations(
     }
 
     declarations.removeAll {
-        it.name == "cancelAnimationFrame"
-                || it.name == "requestAnimationFrame"
-                || it.name == "requestAnimationFrameCallback"
-                || it.name == "defaultValue"
+        it.name == "WebGLConstants"
                 || it.name == "defined"
-                || it.name == "addAttribute"
     }
 
     declarations.removeAll {
