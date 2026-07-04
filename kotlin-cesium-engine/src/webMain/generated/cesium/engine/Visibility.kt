@@ -17,16 +17,22 @@ external interface Visibility {
 
         /**
          * Represents that no part of an object is visible.
+         *
+         * Value - `-1`
          */
         val NONE: Visibility
 
         /**
          * Represents that part, but not all, of an object is visible
+         *
+         * Value - `0`
          */
         val PARTIAL: Visibility
 
         /**
          * Represents that an object is visible in its entirety.
+         *
+         * Value - `1`
          */
         val FULL: Visibility
     }

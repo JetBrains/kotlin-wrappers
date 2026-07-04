@@ -15,16 +15,22 @@ external interface ExtrapolationType {
 
         /**
          * No extrapolation occurs.
+         *
+         * Value - `0`
          */
         val NONE: ExtrapolationType
 
         /**
          * The first or last value is used when outside the range of sample data.
+         *
+         * Value - `1`
          */
         val HOLD: ExtrapolationType
 
         /**
          * The value is extrapolated.
+         *
+         * Value - `2`
          */
         val EXTRAPOLATE: ExtrapolationType
     }

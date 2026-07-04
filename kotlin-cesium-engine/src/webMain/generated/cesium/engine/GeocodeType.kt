@@ -14,12 +14,16 @@ external interface GeocodeType {
 
         /**
          * Perform a search where the input is considered complete.
+         *
+         * Value - `0`
          */
         val SEARCH: GeocodeType
 
         /**
          * Perform an auto-complete using partial input, typically
          * reserved for providing possible results as a user is typing.
+         *
+         * Value - `1`
          */
         val AUTOCOMPLETE: GeocodeType
     }

@@ -17,16 +17,22 @@ external interface HorizontalOrigin {
 
         /**
          * The origin is at the horizontal center of the object.
+         *
+         * Value - `0`
          */
         val CENTER: HorizontalOrigin
 
         /**
          * The origin is on the left side of the object.
+         *
+         * Value - `1`
          */
         val LEFT: HorizontalOrigin
 
         /**
          * The origin is on the right side of the object.
+         *
+         * Value - `-1`
          */
         val RIGHT: HorizontalOrigin
     }

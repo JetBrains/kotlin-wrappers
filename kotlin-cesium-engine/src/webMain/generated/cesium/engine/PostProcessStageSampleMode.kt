@@ -14,11 +14,15 @@ external interface PostProcessStageSampleMode {
 
         /**
          * Samples the texture by returning the closest texel.
+         *
+         * Value - `0`
          */
         val NEAREST: PostProcessStageSampleMode
 
         /**
          * Samples the texture through bi-linear interpolation of the four nearest texels.
+         *
+         * Value - `1`
          */
         val LINEAR: PostProcessStageSampleMode
     }

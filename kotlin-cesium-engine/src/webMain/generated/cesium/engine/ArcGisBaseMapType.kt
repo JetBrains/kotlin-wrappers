@@ -12,10 +12,19 @@ sealed /* enum */
 external interface ArcGisBaseMapType {
     companion object {
 
+        /**
+         * Value - `1`
+         */
         val SATELLITE: ArcGisBaseMapType
 
+        /**
+         * Value - `2`
+         */
         val OCEANS: ArcGisBaseMapType
 
+        /**
+         * Value - `3`
+         */
         val HILLSHADE: ArcGisBaseMapType
     }
 }

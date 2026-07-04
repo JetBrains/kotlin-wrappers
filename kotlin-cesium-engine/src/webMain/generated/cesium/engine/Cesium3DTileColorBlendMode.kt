@@ -34,16 +34,22 @@ external interface Cesium3DTileColorBlendMode {
 
         /**
          * Multiplies the source color by the feature color.
+         *
+         * Value - `0`
          */
         val HIGHLIGHT: Cesium3DTileColorBlendMode
 
         /**
          * Replaces the source color with the feature color.
+         *
+         * Value - `1`
          */
         val REPLACE: Cesium3DTileColorBlendMode
 
         /**
          * Blends the source color and feature color together.
+         *
+         * Value - `2`
          */
         val MIX: Cesium3DTileColorBlendMode
     }

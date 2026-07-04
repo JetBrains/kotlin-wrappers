@@ -16,12 +16,16 @@ external interface CustomShaderMode {
         /**
          * The custom shader will be used to modify the results of the material stage
          * before lighting is applied.
+         *
+         * Value - `"MODIFY_MATERIAL"`
          */
         val MODIFY_MATERIAL: CustomShaderMode
 
         /**
          * The custom shader will be used instead of the material stage. This is a hint
          * to optimize out the material processing code.
+         *
+         * Value - `"REPLACE_MATERIAL"`
          */
         val REPLACE_MATERIAL: CustomShaderMode
     }

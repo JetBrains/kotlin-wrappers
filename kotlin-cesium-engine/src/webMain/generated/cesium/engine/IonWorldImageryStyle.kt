@@ -14,16 +14,22 @@ external interface IonWorldImageryStyle {
 
         /**
          * Aerial imagery.
+         *
+         * Value - `2`
          */
         val AERIAL: IonWorldImageryStyle
 
         /**
          * Aerial imagery with a road overlay.
+         *
+         * Value - `3`
          */
         val AERIAL_WITH_LABELS: IonWorldImageryStyle
 
         /**
          * Roads without additional imagery.
+         *
+         * Value - `4`
          */
         val ROAD: IonWorldImageryStyle
     }

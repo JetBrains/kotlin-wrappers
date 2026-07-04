@@ -17,6 +17,8 @@ external interface LightingModel {
          * diffuse color (assumed to be linear RGB, not sRGB) is used directly
          * when computing `out_FragColor`. The alpha mode is still
          * applied.
+         *
+         * Value - `0`
          */
         val UNLIT: LightingModel
 
@@ -24,6 +26,8 @@ external interface LightingModel {
          * Use physically-based rendering lighting calculations. This includes
          * both PBR metallic roughness and PBR specular glossiness. Image-based
          * lighting is also applied when possible.
+         *
+         * Value - `1`
          */
         val PBR: LightingModel
     }

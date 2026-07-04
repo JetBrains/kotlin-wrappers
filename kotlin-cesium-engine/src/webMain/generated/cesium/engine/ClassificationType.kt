@@ -14,16 +14,22 @@ external interface ClassificationType {
 
         /**
          * Only terrain will be classified.
+         *
+         * Value - `0`
          */
         val TERRAIN: ClassificationType
 
         /**
          * Only 3D Tiles will be classified.
+         *
+         * Value - `1`
          */
         val CESIUM_3D_TILE: ClassificationType
 
         /**
          * Both terrain and 3D Tiles will be classified.
+         *
+         * Value - `2`
          */
         val BOTH: ClassificationType
     }

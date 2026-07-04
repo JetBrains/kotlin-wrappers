@@ -14,17 +14,23 @@ external interface IonGeocodeProviderType {
 
         /**
          * Google geocoder, for use with Google data.
+         *
+         * Value - `"GOOGLE"`
          */
         val GOOGLE: IonGeocodeProviderType
 
         /**
          * Bing geocoder, for use with Bing data.
+         *
+         * Value - `"BING"`
          */
         val BING: IonGeocodeProviderType
 
         /**
          * Use the default geocoder as set on the server.  Used when neither Bing or
          * Google data is used.
+         *
+         * Value - `"DEFAULT"`
          */
         val DEFAULT: IonGeocodeProviderType
     }

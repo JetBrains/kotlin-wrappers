@@ -14,6 +14,8 @@ external interface CloudType {
 
         /**
          * Cumulus cloud.
+         *
+         * Value - `0`
          */
         val CUMULUS: CloudType
     }

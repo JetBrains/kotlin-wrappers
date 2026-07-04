@@ -14,22 +14,30 @@ external interface SceneMode {
 
         /**
          * Morphing between mode, e.g., 3D to 2D.
+         *
+         * Value - `0`
          */
         val MORPHING: SceneMode
 
         /**
          * Columbus View mode.  A 2.5D perspective view where the map is laid out
          * flat and objects with non-zero height are drawn above it.
+         *
+         * Value - `1`
          */
         val COLUMBUS_VIEW: SceneMode
 
         /**
          * 2D mode.  The map is viewed top-down with an orthographic projection.
+         *
+         * Value - `2`
          */
         val SCENE2D: SceneMode
 
         /**
          * 3D mode.  A traditional 3D perspective view of the globe.
+         *
+         * Value - `3`
          */
         val SCENE3D: SceneMode
     }

@@ -14,11 +14,15 @@ external interface StripeOrientation {
 
         /**
          * Horizontal orientation.
+         *
+         * Value - `0`
          */
         val HORIZONTAL: StripeOrientation
 
         /**
          * Vertical orientation.
+         *
+         * Value - `1`
          */
         val VERTICAL: StripeOrientation
     }

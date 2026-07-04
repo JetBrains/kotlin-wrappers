@@ -15,12 +15,16 @@ external interface ClockRange {
 
         /**
          * [Clock.tick] will always advances the clock in its current direction.
+         *
+         * Value - `0`
          */
         val UNBOUNDED: ClockRange
 
         /**
          * When [Clock.startTime] or [Clock.stopTime] is reached,
          * [Clock.tick] will not advance [Clock.currentTime] any further.
+         *
+         * Value - `1`
          */
         val CLAMPED: ClockRange
 
@@ -29,6 +33,8 @@ external interface ClockRange {
          * [Clock.currentTime] to the opposite end of the interval.  When
          * time is moving backwards, [Clock.tick] will not advance past
          * [Clock.startTime]
+         *
+         * Value - `2`
          */
         val LOOP_STOP: ClockRange
     }

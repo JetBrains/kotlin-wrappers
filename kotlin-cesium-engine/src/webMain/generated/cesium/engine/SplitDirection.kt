@@ -14,16 +14,22 @@ external interface SplitDirection {
 
         /**
          * Display the primitive or ImageryLayer to the left of the [Scene.splitPosition].
+         *
+         * Value - `-1`
          */
         val LEFT: SplitDirection
 
         /**
          * Always display the primitive or ImageryLayer.
+         *
+         * Value - `0`
          */
         val NONE: SplitDirection
 
         /**
          * Display the primitive or ImageryLayer to the right of the [Scene.splitPosition].
+         *
+         * Value - `1`
          */
         val RIGHT: SplitDirection
     }

@@ -15,16 +15,22 @@ external interface KeyboardEventModifier {
 
         /**
          * Represents the shift key being held down.
+         *
+         * Value - `0`
          */
         val SHIFT: KeyboardEventModifier
 
         /**
          * Represents the control key being held down.
+         *
+         * Value - `1`
          */
         val CTRL: KeyboardEventModifier
 
         /**
          * Represents the alt key being held down.
+         *
+         * Value - `2`
          */
         val ALT: KeyboardEventModifier
     }

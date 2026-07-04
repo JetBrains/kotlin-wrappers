@@ -17,21 +17,29 @@ external interface VerticalOrigin {
 
         /**
          * The origin is at the vertical center between `BASELINE` and `TOP`.
+         *
+         * Value - `0`
          */
         val CENTER: VerticalOrigin
 
         /**
          * The origin is at the bottom of the object.
+         *
+         * Value - `1`
          */
         val BOTTOM: VerticalOrigin
 
         /**
          * If the object contains text, the origin is at the baseline of the text, else the origin is at the bottom of the object.
+         *
+         * Value - `2`
          */
         val BASELINE: VerticalOrigin
 
         /**
          * The origin is at the top of the object.
+         *
+         * Value - `-1`
          */
         val TOP: VerticalOrigin
     }

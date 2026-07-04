@@ -14,26 +14,36 @@ external interface Tonemapper {
 
         /**
          * Use the Reinhard tonemapping.
+         *
+         * Value - `"REINHARD"`
          */
         val REINHARD: Tonemapper
 
         /**
          * Use the modified Reinhard tonemapping.
+         *
+         * Value - `"MODIFIED_REINHARD"`
          */
         val MODIFIED_REINHARD: Tonemapper
 
         /**
          * Use the Filmic tonemapping.
+         *
+         * Value - `"FILMIC"`
          */
         val FILMIC: Tonemapper
 
         /**
          * Use the ACES tonemapping.
+         *
+         * Value - `"ACES"`
          */
         val ACES: Tonemapper
 
         /**
          * Use the PBR Neutral tonemapping [from Khronos](https://github.com/KhronosGroup/ToneMapping/tree/main/PBR_Neutral).
+         *
+         * Value - `"PBR_NEUTRAL"`
          */
         val PBR_NEUTRAL: Tonemapper
     }

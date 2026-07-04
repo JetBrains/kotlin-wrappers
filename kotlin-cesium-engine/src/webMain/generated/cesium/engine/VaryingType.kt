@@ -15,36 +15,50 @@ external interface VaryingType {
 
         /**
          * A single floating point value.
+         *
+         * Value - `"float"`
          */
         val FLOAT: VaryingType
 
         /**
          * A vector of 2 floating point values.
+         *
+         * Value - `"vec2"`
          */
         val VEC2: VaryingType
 
         /**
          * A vector of 3 floating point values.
+         *
+         * Value - `"vec3"`
          */
         val VEC3: VaryingType
 
         /**
          * A vector of 4 floating point values.
+         *
+         * Value - `"vec4"`
          */
         val VEC4: VaryingType
 
         /**
          * A 2x2 matrix of floating point values.
+         *
+         * Value - `"mat2"`
          */
         val MAT2: VaryingType
 
         /**
          * A 3x3 matrix of floating point values.
+         *
+         * Value - `"mat3"`
          */
         val MAT3: VaryingType
 
         /**
          * A 4x4 matrix of floating point values.
+         *
+         * Value - `"mat4"`
          */
         val MAT4: VaryingType
     }

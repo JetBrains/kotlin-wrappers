@@ -14,11 +14,15 @@ external interface HeightmapEncoding {
 
         /**
          * No encoding
+         *
+         * Value - `0`
          */
         val NONE: HeightmapEncoding
 
         /**
          * LERC encoding
+         *
+         * Value - `1`
          */
         val LERC: HeightmapEncoding
     }

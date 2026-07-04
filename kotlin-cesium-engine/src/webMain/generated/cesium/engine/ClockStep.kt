@@ -16,18 +16,24 @@ external interface ClockStep {
         /**
          * [Clock.tick] advances the current time by a fixed step,
          * which is the number of seconds specified by [Clock.multiplier].
+         *
+         * Value - `0`
          */
         val TICK_DEPENDENT: ClockStep
 
         /**
          * [Clock.tick] advances the current time by the amount of system
          * time elapsed since the previous call multiplied by [Clock.multiplier].
+         *
+         * Value - `1`
          */
         val SYSTEM_CLOCK_MULTIPLIER: ClockStep
 
         /**
          * [Clock.tick] sets the clock to the current system time;
          * ignoring all other settings.
+         *
+         * Value - `2`
          */
         val SYSTEM_CLOCK: ClockStep
     }

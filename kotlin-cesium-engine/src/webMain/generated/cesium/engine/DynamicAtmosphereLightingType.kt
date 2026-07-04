@@ -17,17 +17,23 @@ external interface DynamicAtmosphereLightingType {
         /**
          * Do not use dynamic atmosphere lighting. Atmosphere lighting effects will
          * be lit from directly above rather than using the scene's light source.
+         *
+         * Value - `0`
          */
         val NONE: DynamicAtmosphereLightingType
 
         /**
          * Use the scene's current light source for dynamic atmosphere lighting.
+         *
+         * Value - `1`
          */
         val SCENE_LIGHT: DynamicAtmosphereLightingType
 
         /**
          * Force the dynamic atmosphere lighting to always use the sunlight direction,
          * even if the scene uses a different light source.
+         *
+         * Value - `2`
          */
         val SUNLIGHT: DynamicAtmosphereLightingType
     }

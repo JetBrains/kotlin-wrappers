@@ -14,11 +14,15 @@ external interface MapMode2D {
 
         /**
          * The 2D map can be rotated about the z axis.
+         *
+         * Value - `0`
          */
         val ROTATE: MapMode2D
 
         /**
          * The 2D map can be scrolled infinitely in the horizontal direction.
+         *
+         * Value - `1`
          */
         val INFINITE_SCROLL: MapMode2D
     }

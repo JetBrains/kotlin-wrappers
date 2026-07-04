@@ -17,16 +17,22 @@ external interface Intersect {
 
         /**
          * Represents that an object is not contained within the frustum.
+         *
+         * Value - `-1`
          */
         val OUTSIDE: Intersect
 
         /**
          * Represents that an object intersects one of the frustum's planes.
+         *
+         * Value - `0`
          */
         val INTERSECTING: Intersect
 
         /**
          * Represents that an object is fully within the frustum.
+         *
+         * Value - `1`
          */
         val INSIDE: Intersect
     }

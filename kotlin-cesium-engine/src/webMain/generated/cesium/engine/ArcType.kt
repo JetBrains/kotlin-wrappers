@@ -14,16 +14,22 @@ external interface ArcType {
 
         /**
          * Straight line that does not conform to the surface of the ellipsoid.
+         *
+         * Value - `0`
          */
         val NONE: ArcType
 
         /**
          * Follow geodesic path.
+         *
+         * Value - `1`
          */
         val GEODESIC: ArcType
 
         /**
          * Follow rhumb or loxodrome path.
+         *
+         * Value - `2`
          */
         val RHUMB: ArcType
     }

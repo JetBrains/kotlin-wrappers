@@ -21,6 +21,8 @@ external interface EdgeDisplayMode {
          * Render surfaces only. Edges from the
          * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
          * extension are hidden.
+         *
+         * Value - `0`
          */
         val SURFACES_ONLY: EdgeDisplayMode
 
@@ -28,12 +30,16 @@ external interface EdgeDisplayMode {
          * Render both surfaces and edges. Edges from the
          * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
          * extension are composited on top of the surface geometry.
+         *
+         * Value - `1`
          */
         val SURFACES_AND_EDGES: EdgeDisplayMode
 
         /**
          * Render edges only. Surface geometry is hidden for primitives that have edge visibility data,
          * approximating CAD-style wireframe rendering. Primitives without the extension are unaffected.
+         *
+         * Value - `2`
          */
         val EDGES_ONLY: EdgeDisplayMode
     }

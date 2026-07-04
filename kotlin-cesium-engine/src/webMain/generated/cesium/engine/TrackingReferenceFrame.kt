@@ -18,23 +18,31 @@ external interface TrackingReferenceFrame {
          * objects will be tracked in the entity's local east-north-up reference
          * frame, while faster objects like satellites will use VVLH (Vehicle Velocity,
          * Local Horizontal).
+         *
+         * Value - `0`
          */
         val AUTODETECT: TrackingReferenceFrame
 
         /**
          * The entity's local East-North-Up reference frame.
+         *
+         * Value - `1`
          */
         val ENU: TrackingReferenceFrame
 
         /**
          * The entity's inertial reference frame. If entity has no defined orientation
          * property, it falls back to auto-detect algorithm.
+         *
+         * Value - `2`
          */
         val INERTIAL: TrackingReferenceFrame
 
         /**
          * The entity's inertial reference frame with orientation fixed to its
          * [VelocityOrientationProperty], ignoring its own orientation.
+         *
+         * Value - `3`
          */
         val VELOCITY: TrackingReferenceFrame
     }

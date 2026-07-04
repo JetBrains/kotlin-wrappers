@@ -14,16 +14,22 @@ external interface CornerType {
 
         /**
          * Corner has a smooth edge.
+         *
+         * Value - `0`
          */
         val ROUNDED: CornerType
 
         /**
          * Corner point is the intersection of adjacent edges.
+         *
+         * Value - `1`
          */
         val MITERED: CornerType
 
         /**
          * Corner is clipped.
+         *
+         * Value - `2`
          */
         val BEVELED: CornerType
     }

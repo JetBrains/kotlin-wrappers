@@ -14,12 +14,16 @@ external interface PathMode {
 
         /**
          * The material is applied to the entire path as a whole.
+         *
+         * Value - `0`
          */
         val WHOLE: PathMode
 
         /**
          * The material is applied in portions based on temporal position information,
          * using interval-based material properties.
+         *
+         * Value - `1`
          */
         val PORTIONS: PathMode
     }

@@ -17,6 +17,8 @@ external interface StorageType {
 
         /**
          * Store the full error covariance of the anchor points, to include the cross-covariance terms
+         *
+         * Value - `"Direct"`
          */
         val Direct: StorageType
 
@@ -24,6 +26,8 @@ external interface StorageType {
          * A full covariance matrix is stored for each of the anchor points. However, in this case the
          * cross-covariance terms are not directly stored, but can be computed by a set of spatial
          * correlation function parameters which are stored in the metadata.
+         *
+         * Value - `"Indirect"`
          */
         val Indirect: StorageType
     }

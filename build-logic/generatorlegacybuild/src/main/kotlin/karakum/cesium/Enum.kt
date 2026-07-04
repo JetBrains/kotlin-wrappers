@@ -37,7 +37,6 @@ internal class Enum(
     }
 }
 
-// TODO: describe value in comments
 internal class EnumConstant(
     override val source: Definition,
     private val parent: Enum,
@@ -45,8 +44,30 @@ internal class EnumConstant(
     override val name: String =
         source.body.split(" = ")[0]
 
+    private val value: String =
+        source.body.split(" = ")[1]
+
     override fun toCode(): String {
-        val doc = source.doc()
+        val doc = run {
+            val originalDoc = source.doc()
+            val docValue = when {
+                value.startsWith("WebGLConstants.") -> return@run originalDoc
+                value.toIntOrNull() != null -> "`$value`"
+                value.startsWith('"') -> "`$value`"
+                else -> TODO("Unable to calculate doc value for value '$value'")
+            }
+
+            if (originalDoc.isNotBlank()) {
+                originalDoc.replace("*/", "*\n* Value - $docValue\n*/")
+            } else {
+                """
+                /**
+                 * Value - $docValue
+                 */
+                """.trimIndent()
+            }
+        }
+
         val body = "val $name: ${parent.name}"
 
         return if (doc.isNotBlank()) {

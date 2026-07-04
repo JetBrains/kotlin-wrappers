@@ -14,16 +14,22 @@ external interface Axis {
 
         /**
          * Denotes the x-axis.
+         *
+         * Value - `0`
          */
         val X: Axis
 
         /**
          * Denotes the y-axis.
+         *
+         * Value - `1`
          */
         val Y: Axis
 
         /**
          * Denotes the z-axis.
+         *
+         * Value - `2`
          */
         val Z: Axis
     }

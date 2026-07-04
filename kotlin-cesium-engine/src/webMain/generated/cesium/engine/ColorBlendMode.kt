@@ -16,10 +16,19 @@ sealed /* enum */
 external interface ColorBlendMode {
     companion object {
 
+        /**
+         * Value - `0`
+         */
         val HIGHLIGHT: ColorBlendMode
 
+        /**
+         * Value - `1`
+         */
         val REPLACE: ColorBlendMode
 
+        /**
+         * Value - `2`
+         */
         val MIX: ColorBlendMode
     }
 }

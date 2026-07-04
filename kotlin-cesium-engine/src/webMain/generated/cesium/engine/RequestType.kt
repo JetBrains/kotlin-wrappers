@@ -14,21 +14,29 @@ external interface RequestType {
 
         /**
          * Terrain request.
+         *
+         * Value - `0`
          */
         val TERRAIN: RequestType
 
         /**
          * Imagery request.
+         *
+         * Value - `1`
          */
         val IMAGERY: RequestType
 
         /**
          * 3D Tiles request.
+         *
+         * Value - `2`
          */
         val TILES3D: RequestType
 
         /**
          * Other request.
+         *
+         * Value - `3`
          */
         val OTHER: RequestType
     }

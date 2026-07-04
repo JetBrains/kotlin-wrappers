@@ -14,16 +14,22 @@ external interface BlendOption {
 
         /**
          * The billboards, points, or labels in the collection are completely opaque.
+         *
+         * Value - `0`
          */
         val OPAQUE: BlendOption
 
         /**
          * The billboards, points, or labels in the collection are completely translucent.
+         *
+         * Value - `1`
          */
         val TRANSLUCENT: BlendOption
 
         /**
          * The billboards, points, or labels in the collection are both opaque and translucent.
+         *
+         * Value - `2`
          */
         val OPAQUE_AND_TRANSLUCENT: BlendOption
     }

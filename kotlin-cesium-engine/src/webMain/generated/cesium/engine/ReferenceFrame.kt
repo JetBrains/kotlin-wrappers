@@ -14,11 +14,15 @@ external interface ReferenceFrame {
 
         /**
          * The fixed frame.
+         *
+         * Value - `0`
          */
         val FIXED: ReferenceFrame
 
         /**
          * The inertial frame.
+         *
+         * Value - `1`
          */
         val INERTIAL: ReferenceFrame
     }

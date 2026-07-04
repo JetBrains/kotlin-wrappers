@@ -14,16 +14,22 @@ external interface VoxelShapeType {
 
         /**
          * A box shape.
+         *
+         * Value - `"BOX"`
          */
         val BOX: VoxelShapeType
 
         /**
          * An ellipsoid shape.
+         *
+         * Value - `"ELLIPSOID"`
          */
         val ELLIPSOID: VoxelShapeType
 
         /**
          * A cylinder shape.
+         *
+         * Value - `"CYLINDER"`
          */
         val CYLINDER: VoxelShapeType
     }
