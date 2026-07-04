@@ -16,18 +16,24 @@ external interface IndexDatatype {
         /**
          * 8-bit unsigned byte corresponding to `UNSIGNED_BYTE` and the type
          * of an element in `Uint8Array`.
+         *
+         * Value - [WebGL2RenderingContext.UNSIGNED_BYTE]
          */
         val UNSIGNED_BYTE: IndexDatatype
 
         /**
          * 16-bit unsigned short corresponding to `UNSIGNED_SHORT` and the type
          * of an element in `Uint16Array`.
+         *
+         * Value - [WebGL2RenderingContext.UNSIGNED_SHORT]
          */
         val UNSIGNED_SHORT: IndexDatatype
 
         /**
          * 32-bit unsigned int corresponding to `UNSIGNED_INT` and the type
          * of an element in `Uint32Array`.
+         *
+         * Value - [WebGL2RenderingContext.UNSIGNED_INT]
          */
         val UNSIGNED_INT: IndexDatatype
     }

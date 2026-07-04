@@ -51,7 +51,8 @@ internal class EnumConstant(
         val doc = run {
             val originalDoc = source.doc()
             val docValue = when {
-                value.startsWith("WebGLConstants.") -> return@run originalDoc
+                value.startsWith("WebGLConstants.")
+                    -> "[${value.replace("WebGLConstants.", "WebGL2RenderingContext.")}]"
                 value.toIntOrNull() != null -> "`$value`"
                 value.startsWith('"') -> "`$value`"
                 else -> TODO("Unable to calculate doc value for value '$value'")
@@ -70,10 +71,6 @@ internal class EnumConstant(
 
         val body = "val $name: ${parent.name}"
 
-        return if (doc.isNotBlank()) {
-            "$doc\n$body"
-        } else {
-            body
-        }
+        return "$doc\n$body"
     }
 }

@@ -14,11 +14,15 @@ external interface WindingOrder {
 
         /**
          * Vertices are in clockwise order.
+         *
+         * Value - [WebGL2RenderingContext.CW]
          */
         val CLOCKWISE: WindingOrder
 
         /**
          * Vertices are in counter-clockwise order.
+         *
+         * Value - [WebGL2RenderingContext.CCW]
          */
         val COUNTER_CLOCKWISE: WindingOrder
     }

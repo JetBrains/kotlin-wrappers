@@ -14,16 +14,22 @@ external interface CullFace {
 
         /**
          * Front-facing triangles are culled.
+         *
+         * Value - [WebGL2RenderingContext.FRONT]
          */
         val FRONT: CullFace
 
         /**
          * Back-facing triangles are culled.
+         *
+         * Value - [WebGL2RenderingContext.BACK]
          */
         val BACK: CullFace
 
         /**
          * Both front-facing and back-facing triangles are culled.
+         *
+         * Value - [WebGL2RenderingContext.FRONT_AND_BACK]
          */
         val FRONT_AND_BACK: CullFace
     }

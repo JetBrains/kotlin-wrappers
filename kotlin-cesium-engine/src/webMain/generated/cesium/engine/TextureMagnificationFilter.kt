@@ -14,11 +14,15 @@ external interface TextureMagnificationFilter {
 
         /**
          * Samples the texture by returning the closest pixel.
+         *
+         * Value - [WebGL2RenderingContext.NEAREST]
          */
         val NEAREST: TextureMagnificationFilter
 
         /**
          * Samples the texture through bi-linear interpolation of the four nearest pixels. This produces smoother results than `NEAREST` filtering.
+         *
+         * Value - [WebGL2RenderingContext.LINEAR]
          */
         val LINEAR: TextureMagnificationFilter
     }

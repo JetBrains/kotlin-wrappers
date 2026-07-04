@@ -14,11 +14,15 @@ external interface TextureMinificationFilter {
 
         /**
          * Samples the texture by returning the closest pixel.
+         *
+         * Value - [WebGL2RenderingContext.NEAREST]
          */
         val NEAREST: TextureMinificationFilter
 
         /**
          * Samples the texture through bi-linear interpolation of the four nearest pixels. This produces smoother results than `NEAREST` filtering.
+         *
+         * Value - [WebGL2RenderingContext.LINEAR]
          */
         val LINEAR: TextureMinificationFilter
 
@@ -26,6 +30,8 @@ external interface TextureMinificationFilter {
          * Selects the nearest mip level and applies nearest sampling within that level.
          *
          * Requires that the texture has a mipmap. The mip level is chosen by the view angle and screen-space size of the texture.
+         *
+         * Value - [WebGL2RenderingContext.NEAREST_MIPMAP_NEAREST]
          */
         val NEAREST_MIPMAP_NEAREST: TextureMinificationFilter
 
@@ -33,6 +39,8 @@ external interface TextureMinificationFilter {
          * Selects the nearest mip level and applies linear sampling within that level.
          *
          * Requires that the texture has a mipmap. The mip level is chosen by the view angle and screen-space size of the texture.
+         *
+         * Value - [WebGL2RenderingContext.LINEAR_MIPMAP_NEAREST]
          */
         val LINEAR_MIPMAP_NEAREST: TextureMinificationFilter
 
@@ -42,6 +50,8 @@ external interface TextureMinificationFilter {
          * This option provides a good balance of visual quality and speed when sampling from a mipmapped texture.
          *
          * Requires that the texture has a mipmap. The mip level is chosen by the view angle and screen-space size of the texture.
+         *
+         * Value - [WebGL2RenderingContext.NEAREST_MIPMAP_LINEAR]
          */
         val NEAREST_MIPMAP_LINEAR: TextureMinificationFilter
 
@@ -51,6 +61,8 @@ external interface TextureMinificationFilter {
          * This option provides a good balance of visual quality and speed when sampling from a mipmapped texture.
          *
          * Requires that the texture has a mipmap. The mip level is chosen by the view angle and screen-space size of the texture.
+         *
+         * Value - [WebGL2RenderingContext.LINEAR_MIPMAP_LINEAR]
          */
         val LINEAR_MIPMAP_LINEAR: TextureMinificationFilter
     }

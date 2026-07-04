@@ -26,6 +26,7 @@ import web.blob.Blob
 import web.canvas.CanvasImageSource
 import web.dom.Document
 import web.dom.Element
+import web.gl.WebGL2RenderingContext
 import web.gl.WebGLPowerPreference
 import web.html.HTMLCanvasElement
 import web.html.HTMLElement
