@@ -103,25 +103,6 @@ internal fun String.applyReadyStatePatches(): String =
     }
         .replace("Units: SVGAnimatedEnumeration;\n", "Units: SVGAnimatedEnumeration<SVGUnitTypes.Type>;\n")
 
-internal fun String.applyEnumPatches(): String {
-    val names = splitToSequence("\n")
-        .mapNotNull { line ->
-            line.removeSurrounding("type ", "Flags = number;")
-                .takeIf { it != line }
-        }
-        .toList()
-
-    var result = this
-    for (name in names) {
-        result = result
-            .replace("\ntype ${name}Flags = number;", "")
-            .replace("${name}Flags", name)
-    }
-
-    return result
-}
-
-
 private fun constantRegex(
     prefix: String = "",
 ): Regex =

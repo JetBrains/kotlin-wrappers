@@ -663,6 +663,24 @@ private fun String.patchDecodeAudioData(): String =
         )
     }
 
+private fun String.applyEnumPatches(): String {
+    val names = splitToSequence("\n")
+        .mapNotNull { line ->
+            line.removeSurrounding("type ", "Flags = number;")
+                .takeIf { it != line }
+        }
+        .toList()
+
+    var result = this
+    for (name in names) {
+        result = result
+            .replace("\ntype ${name}Flags = number;", "")
+            .replace("${name}Flags", name)
+    }
+
+    return result
+}
+
 private fun String.applyInlineUnionPatches(): String =
     UNION_DATA_LIST.fold(this) { acc, data ->
         val values = data.values.let {
