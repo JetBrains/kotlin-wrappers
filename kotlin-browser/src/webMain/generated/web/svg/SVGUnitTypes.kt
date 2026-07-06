@@ -9,10 +9,6 @@ package web.svg
  */
 open external class SVGUnitTypes
 private constructor() {
-    val SVG_UNIT_TYPE_UNKNOWN: Type
-    val SVG_UNIT_TYPE_USERSPACEONUSE: Type
-    val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Type
-
     companion object {
         val SVG_UNIT_TYPE_UNKNOWN: Type
         val SVG_UNIT_TYPE_USERSPACEONUSE: Type

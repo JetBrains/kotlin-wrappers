@@ -40,9 +40,6 @@ open external class WheelEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
      */
     val deltaZ: Double
-    val DOM_DELTA_PIXEL: DeltaMode
-    val DOM_DELTA_LINE: DeltaMode
-    val DOM_DELTA_PAGE: DeltaMode
 
     companion object {
         val DOM_DELTA_PIXEL: DeltaMode

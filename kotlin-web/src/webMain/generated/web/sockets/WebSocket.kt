@@ -114,10 +114,6 @@ open external class WebSocket(
     fun send(data: BufferSource)
     fun send(data: Blob)
     fun send(data: String)
-    val CONNECTING: ReadyState
-    val OPEN: ReadyState
-    val CLOSING: ReadyState
-    val CLOSED: ReadyState
 
     companion object {
         val CONNECTING: ReadyState

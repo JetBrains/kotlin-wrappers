@@ -31,12 +31,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/startOffset)
      */
     val startOffset: SVGAnimatedLength
-    val TEXTPATH_METHODTYPE_UNKNOWN: Method
-    val TEXTPATH_METHODTYPE_ALIGN: Method
-    val TEXTPATH_METHODTYPE_STRETCH: Method
-    val TEXTPATH_SPACINGTYPE_UNKNOWN: Spacing
-    val TEXTPATH_SPACINGTYPE_AUTO: Spacing
-    val TEXTPATH_SPACINGTYPE_EXACT: Spacing
 
     companion object {
         val TEXTPATH_METHODTYPE_UNKNOWN: Method

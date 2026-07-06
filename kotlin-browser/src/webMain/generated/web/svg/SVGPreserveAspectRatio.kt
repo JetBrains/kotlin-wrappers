@@ -22,20 +22,6 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/meetOrSlice)
      */
     var meetOrSlice: MeetOrSlice
-    val SVG_PRESERVEASPECTRATIO_UNKNOWN: Align
-    val SVG_PRESERVEASPECTRATIO_NONE: Align
-    val SVG_PRESERVEASPECTRATIO_XMINYMIN: Align
-    val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Align
-    val SVG_PRESERVEASPECTRATIO_XMAXYMIN: Align
-    val SVG_PRESERVEASPECTRATIO_XMINYMID: Align
-    val SVG_PRESERVEASPECTRATIO_XMIDYMID: Align
-    val SVG_PRESERVEASPECTRATIO_XMAXYMID: Align
-    val SVG_PRESERVEASPECTRATIO_XMINYMAX: Align
-    val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Align
-    val SVG_PRESERVEASPECTRATIO_XMAXYMAX: Align
-    val SVG_MEETORSLICE_UNKNOWN: MeetOrSlice
-    val SVG_MEETORSLICE_MEET: MeetOrSlice
-    val SVG_MEETORSLICE_SLICE: MeetOrSlice
 
     companion object {
         val SVG_PRESERVEASPECTRATIO_UNKNOWN: Align

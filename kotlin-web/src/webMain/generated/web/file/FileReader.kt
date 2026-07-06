@@ -98,10 +98,6 @@ open external class FileReader :
         encoding: String = definedExternally,
     )
 
-    val EMPTY: ReadyState
-    val LOADING: ReadyState
-    val DONE: ReadyState
-
     companion object {
         val EMPTY: ReadyState
         val LOADING: ReadyState

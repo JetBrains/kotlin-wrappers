@@ -319,15 +319,6 @@ private constructor() :
      */
     @JsName("setSinkId")
     fun setSinkIdAsync(sinkId: String): Promise<Void>
-    val NETWORK_EMPTY: NetworkState
-    val NETWORK_IDLE: NetworkState
-    val NETWORK_LOADING: NetworkState
-    val NETWORK_NO_SOURCE: NetworkState
-    val HAVE_NOTHING: ReadyState
-    val HAVE_METADATA: ReadyState
-    val HAVE_CURRENT_DATA: ReadyState
-    val HAVE_FUTURE_DATA: ReadyState
-    val HAVE_ENOUGH_DATA: ReadyState
 
     companion object {
         val NETWORK_EMPTY: NetworkState

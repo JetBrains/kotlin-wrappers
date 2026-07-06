@@ -83,10 +83,6 @@ open external class KeyboardEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
      */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
-    val DOM_KEY_LOCATION_STANDARD: KeyLocation
-    val DOM_KEY_LOCATION_LEFT: KeyLocation
-    val DOM_KEY_LOCATION_RIGHT: KeyLocation
-    val DOM_KEY_LOCATION_NUMPAD: KeyLocation
 
     companion object {
         val DOM_KEY_LOCATION_STANDARD: KeyLocation

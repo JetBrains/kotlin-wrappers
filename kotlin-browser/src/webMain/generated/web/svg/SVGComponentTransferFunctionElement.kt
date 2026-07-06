@@ -58,12 +58,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/type)
      */
     val type: SVGAnimatedEnumeration<Type>
-    val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Type
-    val SVG_FECOMPONENTTRANSFER_TYPE_IDENTITY: Type
-    val SVG_FECOMPONENTTRANSFER_TYPE_TABLE: Type
-    val SVG_FECOMPONENTTRANSFER_TYPE_DISCRETE: Type
-    val SVG_FECOMPONENTTRANSFER_TYPE_LINEAR: Type
-    val SVG_FECOMPONENTTRANSFER_TYPE_GAMMA: Type
 
     companion object {
         val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Type

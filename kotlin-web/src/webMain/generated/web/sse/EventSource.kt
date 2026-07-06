@@ -65,9 +65,6 @@ open external class EventSource(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
      */
     override fun close()
-    val CONNECTING: ReadyState
-    val OPEN: ReadyState
-    val CLOSED: ReadyState
 
     companion object {
         val CONNECTING: ReadyState

@@ -85,14 +85,6 @@ private constructor() {
         ty: Float,
     )
 
-    val SVG_TRANSFORM_UNKNOWN: Type
-    val SVG_TRANSFORM_MATRIX: Type
-    val SVG_TRANSFORM_TRANSLATE: Type
-    val SVG_TRANSFORM_SCALE: Type
-    val SVG_TRANSFORM_ROTATE: Type
-    val SVG_TRANSFORM_SKEWX: Type
-    val SVG_TRANSFORM_SKEWY: Type
-
     companion object {
         val SVG_TRANSFORM_UNKNOWN: Type
         val SVG_TRANSFORM_MATRIX: Type

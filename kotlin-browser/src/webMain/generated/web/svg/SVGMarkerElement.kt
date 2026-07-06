@@ -73,13 +73,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto)
      */
     fun setOrientToAuto()
-    val SVG_MARKERUNITS_UNKNOWN: MarkerUnits
-    val SVG_MARKERUNITS_USERSPACEONUSE: MarkerUnits
-    val SVG_MARKERUNITS_STROKEWIDTH: MarkerUnits
-    val SVG_MARKER_ORIENT_UNKNOWN: OrientType
-    val SVG_MARKER_ORIENT_AUTO: OrientType
-    val SVG_MARKER_ORIENT_ANGLE: OrientType
-    val SVG_MARKER_ORIENT_AUTO_START_REVERSE: OrientType
 
     companion object {
         val SVG_MARKERUNITS_UNKNOWN: MarkerUnits

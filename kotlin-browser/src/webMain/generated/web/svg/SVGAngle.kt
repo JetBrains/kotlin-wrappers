@@ -54,12 +54,6 @@ private constructor() {
         valueInSpecifiedUnits: Float,
     )
 
-    val SVG_ANGLETYPE_UNKNOWN: UnitType
-    val SVG_ANGLETYPE_UNSPECIFIED: UnitType
-    val SVG_ANGLETYPE_DEG: UnitType
-    val SVG_ANGLETYPE_RAD: UnitType
-    val SVG_ANGLETYPE_GRAD: UnitType
-
     companion object {
         val SVG_ANGLETYPE_UNKNOWN: UnitType
         val SVG_ANGLETYPE_UNSPECIFIED: UnitType

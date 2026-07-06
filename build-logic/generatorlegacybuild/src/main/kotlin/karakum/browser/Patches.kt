@@ -5,6 +5,7 @@ private const val SVG_ANIMATED_ENUMERATION_AFTER = "\ninterface SVGAnimatedEnume
 
 internal fun String.applyPatches(): String {
     return patchVideoFrameCallback()
+        .removeDuplicatedInstanceConstants()
         .applyReadyStatePatches()
         .applyEnumPatches()
         // TODO: report nullability problem
@@ -662,6 +663,35 @@ private fun String.patchDecodeAudioData(): String =
             "decodeAudioData(audioData: ArrayBuffer): Promise<AudioBuffer>;",
         )
     }
+
+private val CONST_RE = Regex("""\s+readonly [A-Z_]+: [\dA-Zx]+;""")
+
+private fun String.removeDuplicatedInstanceConstants(): String =
+    splitToSequence("\ndeclare var ")
+        .drop(1)
+        .map { it.substringBefore("\n};") }
+        .flatMap { source ->
+            val name = source.substringBefore(": {")
+            if (name.startsWith("WebGL"))
+                return@flatMap emptySequence()
+
+            val lines = source.substringAfter(": {").split("\n")
+            lines.asSequence()
+                .mapIndexedNotNull { index, line ->
+                    if (CONST_RE.matches(line)) {
+                        val previousLine = lines.getOrNull(index - 1) ?: ""
+                        if (previousLine.startsWith("    /** ")) {
+                            previousLine + "\n" + line
+                        } else line
+                    } else null
+                }
+                .map { name to it }
+        }
+        .fold(this) { result, (name, constant) ->
+            result.patchInterface(name) {
+                it.replace("\n$constant", "")
+            }
+        }
 
 private fun String.applyEnumPatches(): String {
     val names = splitToSequence("\n")

@@ -109,10 +109,6 @@ open external class Event(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/stopPropagation)
      */
     fun stopPropagation()
-    val NONE: EventPhase
-    val CAPTURING_PHASE: EventPhase
-    val AT_TARGET: EventPhase
-    val BUBBLING_PHASE: EventPhase
 
     companion object {
         val NONE: EventPhase

@@ -31,11 +31,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/values)
      */
     val values: SVGAnimatedNumberList
-    val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Type
-    val SVG_FECOLORMATRIX_TYPE_MATRIX: Type
-    val SVG_FECOLORMATRIX_TYPE_SATURATE: Type
-    val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Type
-    val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Type
 
     companion object {
         val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Type

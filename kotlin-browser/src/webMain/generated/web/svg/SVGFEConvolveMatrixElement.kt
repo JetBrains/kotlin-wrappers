@@ -94,10 +94,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEConvolveMatrixElement/targetY)
      */
     val targetY: SVGAnimatedInteger
-    val SVG_EDGEMODE_UNKNOWN: EdgeMode
-    val SVG_EDGEMODE_DUPLICATE: EdgeMode
-    val SVG_EDGEMODE_WRAP: EdgeMode
-    val SVG_EDGEMODE_NONE: EdgeMode
 
     companion object {
         val SVG_EDGEMODE_UNKNOWN: EdgeMode

@@ -184,12 +184,6 @@ open external class XMLHttpRequest :
         value: String,
     )
 
-    val UNSENT: ReadyState
-    val OPENED: ReadyState
-    val HEADERS_RECEIVED: ReadyState
-    val LOADING: ReadyState
-    val DONE: ReadyState
-
     companion object {
         val UNSENT: ReadyState
         val OPENED: ReadyState

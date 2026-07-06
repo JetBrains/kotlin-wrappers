@@ -87,10 +87,6 @@ private constructor() :
         nchars: Int,
     ): Float
 
-    val LENGTHADJUST_UNKNOWN: LengthAdjust
-    val LENGTHADJUST_SPACING: LengthAdjust
-    val LENGTHADJUST_SPACINGANDGLYPHS: LengthAdjust
-
     companion object {
         val LENGTHADJUST_UNKNOWN: LengthAdjust
         val LENGTHADJUST_SPACING: LengthAdjust
