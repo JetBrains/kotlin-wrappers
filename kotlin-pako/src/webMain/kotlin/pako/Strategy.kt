@@ -1,14 +1,11 @@
 @file:JsModule("pako")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package pako
 
 @JsName("constants")
-sealed /* enum */
-external interface Strategy {
+/* enum */
+external class Strategy
+private constructor() {
     companion object {
         val Z_FILTERED: Strategy
         val Z_HUFFMAN_ONLY: Strategy

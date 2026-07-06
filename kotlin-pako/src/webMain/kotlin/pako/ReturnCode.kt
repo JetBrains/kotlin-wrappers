@@ -1,14 +1,11 @@
 @file:JsModule("pako")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package pako
 
 @JsName("constants")
-sealed /* enum */
-external interface ReturnCode {
+/* enum */
+external class ReturnCode
+private constructor() {
     companion object {
         val Z_OK: ReturnCode
         val Z_STREAM_END: ReturnCode
