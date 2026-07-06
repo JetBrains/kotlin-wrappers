@@ -757,8 +757,9 @@ private fun convertEnum(
         }
 
     val body = """
-    sealed /* enum */
-    external interface $name :
+    /* enum */
+    external class $name
+    private constructor() :
         Bitmask<$name> {
         companion object {
             $constants

@@ -462,9 +462,7 @@ fun generateKotlinDeclarations(
             if (name == "ChildNode" || name == "ParentNode")
                 add(INTERFACE_WITH_SUPERCLASS)
 
-            if ("sealed /* union */" in body
-                || ("sealed /* enum */" in body && "external interface GPU" in body)
-            )
+            if ("sealed /* union */" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
         }
 
