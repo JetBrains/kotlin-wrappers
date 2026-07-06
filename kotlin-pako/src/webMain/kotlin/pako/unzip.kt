@@ -8,7 +8,7 @@ import js.typedarrays.Uint8Array
 /**
  * Just shortcut to inflate, because it autodetects format by header.content. Done for convenience.
  */
-external fun unzip(
+external fun ungzip(
     data: Uint8Array<*>,
     options: InflateOptions = definedExternally,
 ): Uint8Array<ArrayBuffer>
@@ -16,7 +16,7 @@ external fun unzip(
 /**
  * Just shortcut to inflate, because it autodetects format by header.content. Done for convenience.
  */
-external fun unzip(
+external fun ungzip(
     data: ArrayBuffer,
     options: InflateOptions = definedExternally,
 ): Uint8Array<ArrayBuffer>
@@ -24,7 +24,7 @@ external fun unzip(
 /**
  * Just shortcut to inflate, because it autodetects format by header.content. Done for convenience.
  */
-external fun unzip(
+external fun ungzip(
     data: Uint8Array<*>,
     options: InflateToStringOptions,
 ): String
@@ -32,7 +32,7 @@ external fun unzip(
 /**
  * Just shortcut to inflate, because it autodetects format by header.content. Done for convenience.
  */
-external fun unzip(
+external fun ungzip(
     data: ArrayBuffer,
     options: InflateToStringOptions,
 ): String
