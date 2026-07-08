@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external val defaultTimeoutProvider: TimeoutProvider<ManagedTimerId>
+external val environmentManager: EnvironmentManager

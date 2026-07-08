@@ -67,7 +67,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "QueryTypeFilter | 'none'" to "QueryTypeFilter /* | 'none' */",
 
     "QueryBehavior<TQueryFnData, TError, InfiniteData<TData, TPageParam>>" to "QueryBehavior<TQueryFnData, TError, InfiniteData<TData, TPageParam>, *>",
-    "QueryPersister<NoInfer<TQueryFnData>, NoInfer<TQueryKey>, NoInfer<TPageParam>>" to "QueryPersister<TQueryFnData, TQueryKey, TPageParam>",
+    "QueryPersister<TQueryFnData, NoInfer<TQueryKey>, TPageParam>" to "QueryPersister<TQueryFnData, TQueryKey, TPageParam>",
 
     "QueryFunction<TQueryFnData, TQueryKey, TPageParam> | SkipToken" to "QueryFunctionOrSkipToken<TQueryFnData, TQueryKey, TPageParam>",
     "EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey>" to "EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, *>",
@@ -93,7 +93,7 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "boolean | ((error: TError) => boolean)" to "(error: TError) -> Boolean",
 
-    "({ children, }: QueryErrorResetBoundaryProps) => react_jsx_runtime.JSX.Element" to
+    "({ children, }: QueryErrorResetBoundaryProps) => JSX.Element" to
             "react.FC<QueryErrorResetBoundaryProps>",
     "({ client, children, }: QueryClientProviderProps) => React.JSX.Element" to
             "react.FC<QueryClientProviderProps>",
@@ -114,6 +114,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "DehydratedState | null | undefined" to "DehydratedState?",
 
     "TimeoutCallback" to "() -> Unit",
+    // bare `TimeoutProvider` in original means `TimeoutProvider<ManagedTimerId>` (default type argument)
+    "TimeoutProvider" to "TimeoutProvider<ManagedTimerId>",
 )
 
 private val SAFE_PREFIXES = setOf(
@@ -165,6 +167,8 @@ internal fun kotlinType(
             "type" -> "Type /* $type */"
             "status" -> "QueryStatus /* $type */"
             "_optimisticResults" -> "String /* $type */"
+            "_type" -> "String /* $type */"
+            "queryType" -> "String /* $type */"
             else -> TODO("Name - $name, Type - $type")
         }
     }

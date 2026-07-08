@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> resolveEnabled(
-    enabled: Enabled<TQueryFnData, TError, TData, TQueryKey>?,
+external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> resolveQueryBoolean(
+    option: QueryBooleanOption<TQueryFnData, TError, TData, TQueryKey>?,
     query: Query<TQueryFnData, TError, TData, TQueryKey>,
 ): Boolean?

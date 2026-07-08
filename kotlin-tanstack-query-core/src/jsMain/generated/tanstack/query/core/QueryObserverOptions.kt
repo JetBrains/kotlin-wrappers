@@ -7,14 +7,14 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey, TPageParam> :
     QueryOptions<TQueryFnData, TError, TQueryData, TQueryKey, TPageParam> {
-    val enabled: Enabled<TQueryFnData, TError, TQueryData, TQueryKey>?
+    val enabled: QueryBooleanOption<TQueryFnData, TError, TQueryData, TQueryKey>?
     val staleTime: StaleTimeFunction<TQueryFnData, TError, TQueryData, TQueryKey>?
     val refetchInterval: Any /* number | false | ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => number | false | undefined) */?
     val refetchIntervalInBackground: Boolean?
     val refetchOnWindowFocus: ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */)?
     val refetchOnReconnect: ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */)?
     val refetchOnMount: ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */)?
-    val retryOnMount: Boolean?
+    val retryOnMount: QueryBooleanOption<TQueryFnData, TError, TQueryData, TQueryKey>?
     val notifyOnChangeProps: NotifyOnChangeProps?
     val throwOnError: ThrowOnError<TQueryFnData, TError, TQueryData, TQueryKey>?
     val select: ((data: TQueryData) -> TData)?

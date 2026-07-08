@@ -3,9 +3,9 @@ package karakum.query
 // language=TypeScript
 internal val OPTIMISTIC_RESULT = """
 [
-        rawResult: Array<QueryObserverResult>,
-        combineResult: (r?: Array<QueryObserverResult>) => TCombinedResult,
-        trackResult: () => Array<QueryObserverResult>
+    rawResult: Array<QueryObserverResult>,
+    combineResult: (r?: Array<QueryObserverResult>) => TCombinedResult,
+    trackResult: () => Array<QueryObserverResult>
     ]
 """.trimIndent()
 
