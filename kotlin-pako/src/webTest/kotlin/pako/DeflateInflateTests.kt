@@ -1,8 +1,13 @@
 package pako
 
+import js.array.ReadonlyArray
+import js.buffer.ArrayBuffer
 import js.objects.unsafeJso
+import js.reflect.unsafeCast
+import js.typedarrays.Uint8Array
 import js.typedarrays.toUByteArray
 import js.typedarrays.toUint8Array
+import kotlin.js.JsAny
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
@@ -10,8 +15,19 @@ import kotlin.test.assertNotEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
+// for accessing intermediate chunks of inflator/deflator
+private external interface StreamChunks {
+    val chunks: ReadonlyArray<Uint8Array<ArrayBuffer>>
+}
+
+private fun chunksOf(stream: JsAny): List<Uint8Array<ArrayBuffer>> =
+    unsafeCast<StreamChunks>(stream).chunks.toList()
+
+private fun join(parts: List<Uint8Array<ArrayBuffer>>): Uint8Array<ArrayBuffer> =
+    parts.flatMap { it.toUByteArray().toList() }.toUByteArray().toUint8Array()
+
 class DeflateInflateTests {
-    // Deterministic, compressible sample payload.
+
     private val sample: ByteArray =
         ByteArray(4096) { (it % 64).toByte() }
 
@@ -50,6 +66,24 @@ class DeflateInflateTests {
 
         val restored = inflate(compressed)
         assertContentEquals(sample.toUByteArray(), restored.toUByteArray())
+    }
+
+    @Test
+    fun deflateArrayBufferRoundTrip() {
+        val compressed = deflate(sample.toUint8Array().buffer)
+        val restored = inflate(compressed.buffer)
+
+        assertContentEquals(sample.toUByteArray(), restored.toUByteArray())
+    }
+
+    @Test
+    fun deflateStringRoundTrip() {
+        val text = "Round-trip string sample. ".repeat(40)
+
+        val compressed = deflate(text)
+        val restored = inflate(compressed, unsafeJso<InflateToStringOptions> { to = To.string })
+
+        assertEquals(text, restored)
     }
 
     @Test
@@ -113,5 +147,43 @@ class DeflateInflateTests {
         assertTrue(!inflater.push(garbage, Flush.Z_FINISH), "push() should return false on bad input")
         assertNotEquals(ReturnCode.Z_OK, inflater.err, "err should be a failure code")
         assertEquals(ReturnCode.Z_DATA_ERROR, inflater.err, "err should be a Z_DATA_ERROR (${ReturnCode.Z_DATA_ERROR}) code, got ${inflater.err}")
+    }
+
+    // assesses access to the intermediate results of inflate/deflate, when
+    // Z_SYNC_FLUSH is on
+    @Test
+    fun syncFlushStreamsChunksIncrementally() {
+        // Requires pako >= 2.2.0: Inflate emits output on each flush (#259).
+        // Distinct per-chunk content so mis-ordering or double-emit would be caught.
+        val chunks = (0 until 20).map { "chunk-$it ".repeat(5).encodeToByteArray() }
+
+        val deflater = Deflate(unsafeJso<DeflateOptions> { raw = true })
+        val inflater = Inflate(unsafeJso<InflateOptions> { raw = true })
+
+        var deflatedLength = 0
+        var inflatedLength = 0
+
+        for (chunk in chunks) {
+            // Each Z_SYNC_FLUSH push must flush this chunk's compressed bytes…
+            assertTrue(deflater.push(chunk.toUint8Array(), Flush.Z_SYNC_FLUSH))
+            val newCompressed = chunksOf(deflater).drop(deflatedLength)
+            deflatedLength += newCompressed.size
+            val segment = join(newCompressed)
+            assertTrue(segment.length > 0, "Z_SYNC_FLUSH should emit output for every push")
+
+            // …and the receiver must recover exactly that chunk, in order, immediately.
+            assertTrue(inflater.push(segment, Flush.Z_SYNC_FLUSH))
+            val newDecoded = chunksOf(inflater).drop(inflatedLength)
+            inflatedLength += newDecoded.size
+            assertContentEquals(
+                chunk.toUByteArray(),
+                join(newDecoded).toUByteArray(),
+                "each sync-flushed chunk should decode to itself, once",
+            )
+        }
+
+        assertEquals(ReturnCode.Z_OK, inflater.err, "inflate error: ${inflater.err}")
+        val original = chunks.reduce(ByteArray::plus)
+        assertContentEquals(original.toUByteArray(), join(chunksOf(inflater)).toUByteArray())
     }
 }
