@@ -8,4 +8,6 @@ dependencies {
     webMainImplementation(projects.kotlinJsPlainObject)
 
     webMainApi(npm(jspkg.pako))
+
+    webTestImplementation(libs.kotlin.test)
 }
