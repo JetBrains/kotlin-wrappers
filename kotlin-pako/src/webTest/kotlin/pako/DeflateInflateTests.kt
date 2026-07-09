@@ -1,6 +1,7 @@
 package pako
 
-import js.array.ReadonlyArray
+import js.array.JsArray
+import js.array.toList
 import js.buffer.ArrayBuffer
 import js.objects.unsafeJso
 import js.reflect.unsafeCast
@@ -17,7 +18,7 @@ import kotlin.test.assertTrue
 
 // for accessing intermediate chunks of inflator/deflator
 private external interface StreamChunks {
-    val chunks: ReadonlyArray<Uint8Array<ArrayBuffer>>
+    val chunks: JsArray<Uint8Array<ArrayBuffer>>
 }
 
 private fun chunksOf(stream: JsAny): List<Uint8Array<ArrayBuffer>> =
