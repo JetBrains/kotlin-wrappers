@@ -60,6 +60,7 @@ vercel-ncc = "^0.44.1"
 vscode = "^1.125.0"
 yaml = "^2.8.3"
 
+types-ecma = "7.0.2"
 types-web = "0.0.352"
 types-webworker = "0.0.78"
 types-serviceworker = "0.0.199"
@@ -193,6 +194,8 @@ types-vscode = { group = "npm", name = "@types/vscode", version.ref = "vscode" }
 # https://npmjs.com/package/yaml
 yaml = { group = "npm", name = "yaml", version.ref = "yaml" }
 
+# https://npmjs.com/package/typescript
+types-ecma = { group = "npm", name = "typescript", version.ref = "types-ecma" }
 # https://npmjs.com/package/@types/web
 types-web = { group = "npm", name = "@types/web", version.ref = "types-web" }
 # https://npmjs.com/package/@types/webworker

@@ -3,12 +3,12 @@ plugins {
 }
 
 dependencies {
+    webMainImplementation(npm(jspkg.types.ecma))
     webMainImplementation(npm(jspkg.types.web))
     webMainImplementation(npm(jspkg.types.webworker))
     webMainImplementation(npm(jspkg.types.serviceworker))
     webMainImplementation(npm(jspkg.types.audioworklet))
     webMainImplementation(npm(jspkg.types.webxr))
-    webMainImplementation(npm(jspkg.typescript))
     webMainImplementation(npm(jspkg.webref.events))
     webMainImplementation(npm(jspkg.webref.idl))
 }

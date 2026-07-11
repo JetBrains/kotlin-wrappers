@@ -10,7 +10,10 @@ tasks.named("generateDeclarations") {
 
         val idlDir = nodeModules.resolve("@webref/idl")
         val eventsSourceFile = nodeModules.resolve("@webref/events/events.json")
-        val definitionsDir = nodeModules.resolve("typescript/lib")
+        val definitionsDir = nodeModules.resolve("@typescript")
+            .listFiles { file -> file.isDirectory && file.name.startsWith("typescript-") }
+            .single()
+            .resolve("lib")
         val webDefinitionsDir = nodeModules.resolve("@types/web")
         val webworkerDefinitionsDir = nodeModules.resolve("@types/webworker")
         val serviceworkerDefinitionsDir = nodeModules.resolve("@types/serviceworker")
