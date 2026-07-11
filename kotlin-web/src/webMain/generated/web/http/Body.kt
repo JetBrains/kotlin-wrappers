@@ -66,6 +66,11 @@ external interface Body {
      */
     @JsName("text")
     fun textAsync(): Promise<JsString> = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/textStream)
+     */
+    fun textStream(): ReadableStream<JsString> = definedExternally
 }
 
 /**

@@ -83,6 +83,11 @@ open external class Blob(
      */
     @JsName("text")
     fun textAsync(): Promise<JsString>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/textStream)
+     */
+    fun textStream(): ReadableStream<JsString>
 }
 
 /**

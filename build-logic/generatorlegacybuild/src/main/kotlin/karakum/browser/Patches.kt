@@ -463,6 +463,22 @@ internal fun String.applyPatches(): String {
         .patchInterface("LockManager") {
             it.replace(": Promise<Awaited<T>>;", ": Promise<T>;")
         }
+        .patchInterface("Body") {
+            it + "\n" + """
+            |    /**
+            |     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/textStream)
+            |     */
+            |    textStream(): ReadableStream<string>;
+            """.trimMargin()
+        }
+        .patchInterface("Blob") {
+            it + "\n" + """
+            |    /**
+            |     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/textStream)
+            |     */
+            |    textStream(): ReadableStream<string>;
+            """.trimMargin()
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
