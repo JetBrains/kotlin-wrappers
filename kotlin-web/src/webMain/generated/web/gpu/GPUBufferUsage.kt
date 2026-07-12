@@ -4,7 +4,7 @@ package web.gpu
 
 import js.numbers.Bitmask
 
-/* enum */
+/* flags */
 external class GPUBufferUsage
 private constructor() :
     Bitmask<GPUBufferUsage> {

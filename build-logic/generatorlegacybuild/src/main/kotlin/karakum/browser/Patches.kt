@@ -450,6 +450,7 @@ internal fun String.applyPatches(): String {
             "\n\ntype OriginSource = URL | Origin | ExtendableMessageEvent | HTMLHyperlinkElementUtils | Location | Window | WorkerGlobalScope | WorkerLocation | MessageEvent;\n",
         )
         .replace(", HTMLOrSVGElement, HTMLOrSVGOrMathMLElement", ", HTMLOrSVGOrMathMLElement")
+        .replace("\ndeclare var NodeFilter: {\n", "\ndeclare namespace NodeFilter {\n")
         .extractUrlSource()
         // Details - https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition#updatecallback
         .patchInterface("ViewTransitionUpdateCallback") {

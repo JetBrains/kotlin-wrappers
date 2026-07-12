@@ -637,7 +637,7 @@ internal fun htmlDeclarations(
     val enums = Regex("""\ndeclare namespace .+? \{[\s\S]*?\n}""")
         .findAll(content)
         .map { it.value.removePrefix("\ndeclare namespace ") }
-        .mapNotNull { src -> convertEnum(src) }
+        .flatMap { src -> convertEnum(src) }
 
     val interfaces = Regex("""\ninterface .+? \{[\s\S]*?\n}""")
         .findAll(content)
@@ -734,11 +734,22 @@ private val COLLECTIONS_WITH_BOUNDS = setOf(
 
 private fun convertEnum(
     source: String,
-): ConversionResult? {
+): Sequence<ConversionResult> {
     val name = source.substringBefore(" ")
-    if (!name.startsWith("GPU"))
-        return null
+    return when {
+        name == "CSS" -> emptySequence()
+        name == "WebAssembly" -> emptySequence()
+        name == "NodeFilter" -> emptySequence()
+        name.startsWith("GPU") -> sequenceOf(convertEnum(source = source, pkg = "web.gpu"))
+        else -> TODO("Unknown namespace: $name")
+    }
+}
 
+private fun convertEnum(
+    source: String,
+    pkg: String,
+): ConversionResult {
+    val name = source.substringBefore(" ")
     val constants = source
         .substringAfter(" {\n")
         .substringBefore("\n}")
@@ -757,7 +768,7 @@ private fun convertEnum(
         }
 
     val body = """
-    /* enum */
+    /* flags */
     external class $name
     private constructor() :
         Bitmask<$name> {
@@ -770,7 +781,7 @@ private fun convertEnum(
     return ConversionResult(
         name = name,
         body = body,
-        pkg = "web.gpu",
+        pkg = pkg,
     )
 }
 

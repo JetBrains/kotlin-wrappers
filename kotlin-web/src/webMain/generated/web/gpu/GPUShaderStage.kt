@@ -4,7 +4,7 @@ package web.gpu
 
 import js.numbers.Bitmask
 
-/* enum */
+/* flags */
 external class GPUShaderStage
 private constructor() :
     Bitmask<GPUShaderStage> {
