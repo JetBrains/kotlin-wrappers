@@ -682,7 +682,7 @@ internal fun htmlDeclarations(
         .plus(
             ConversionResult(
                 name = "NodeFilter",
-                body = "typealias NodeFilter = (node: Node) -> Short",
+                body = "typealias NodeFilter = (node: Node) -> NodeFilterResult",
                 pkg = "web.dom",
             ),
         )
@@ -739,17 +739,48 @@ private fun convertEnum(
     return when {
         name == "CSS" -> emptySequence()
         name == "WebAssembly" -> emptySequence()
-        name == "NodeFilter" -> emptySequence()
-        name.startsWith("GPU") -> sequenceOf(convertEnum(source = source, pkg = "web.gpu"))
+
+        name == "NodeFilter" -> {
+            val enumSource = source
+                .replace("\n    readonly ", "\n    const ")
+
+            sequenceOf(
+                convertEnum(
+                    name = "NodeFilterResult",
+                    source = enumSource,
+                    pkg = "web.dom",
+                    isBitmask = false,
+                    valueFilter = { value -> !value.startsWith("0x") },
+                ),
+                convertEnum(
+                    name = "WhatToShow",
+                    source = enumSource,
+                    pkg = "web.dom",
+                    valueFilter = { value -> value.startsWith("0x") },
+                ),
+            )
+        }
+
+        name.startsWith("GPU") -> sequenceOf(
+            convertEnum(
+                name = name,
+                source = source,
+                pkg = "web.gpu",
+            ),
+        )
+
         else -> TODO("Unknown namespace: $name")
     }
 }
 
 private fun convertEnum(
+    name: String,
     source: String,
     pkg: String,
+    isBitmask: Boolean = true,
+    valueFilter: (value: String) -> Boolean = { true },
 ): ConversionResult {
-    val name = source.substringBefore(" ")
+    val jsName = source.substringBefore(" ")
     val constants = source
         .substringAfter(" {\n")
         .substringBefore("\n}")
@@ -757,8 +788,11 @@ private fun convertEnum(
         .map { it.trim() }
         .map { it.removePrefix("const ") }
         .map { it.removeSuffix(";") }
-        .joinToString("\n") {
+        .mapNotNull {
             val (pname, pvalue) = it.split(": ")
+            if (!valueFilter(pvalue))
+                return@mapNotNull null
+
             """
             /**
              * Value - `$pvalue`
@@ -766,12 +800,16 @@ private fun convertEnum(
             val $pname: $name
             """.trimIndent()
         }
+        .joinToString("\n")
+
+    val comment = if (isBitmask) "flags" else "enum"
+    val jsNameAnnotation = if (name != jsName) "\n@JsName(\"$jsName\")" else ""
+    val parent = if (isBitmask) ":\nBitmask<$name>" else ""
 
     val body = """
-    /* flags */
+    /* $comment */$jsNameAnnotation
     external class $name
-    private constructor() :
-        Bitmask<$name> {
+    private constructor() $parent {
         companion object {
             $constants
         }

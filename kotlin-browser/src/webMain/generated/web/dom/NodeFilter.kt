@@ -2,4 +2,4 @@
 
 package web.dom
 
-typealias NodeFilter = (node: Node) -> Short
+typealias NodeFilter = (node: Node) -> NodeFilterResult

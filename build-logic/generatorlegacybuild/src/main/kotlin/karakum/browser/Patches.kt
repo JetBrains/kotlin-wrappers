@@ -451,6 +451,7 @@ internal fun String.applyPatches(): String {
         )
         .replace(", HTMLOrSVGElement, HTMLOrSVGOrMathMLElement", ", HTMLOrSVGOrMathMLElement")
         .replace("\ndeclare var NodeFilter: {\n", "\ndeclare namespace NodeFilter {\n")
+        .replace("root: Node, whatToShow?: number,", "root: Node, whatToShow?: WhatToShow,")
         .extractUrlSource()
         // Details - https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition#updatecallback
         .patchInterface("ViewTransitionUpdateCallback") {
