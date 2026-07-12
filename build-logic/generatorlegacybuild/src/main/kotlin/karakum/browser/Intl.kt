@@ -234,13 +234,11 @@ private fun extractUnions(
             else -> name
         }
 
-        val union = ConversionResult(
+        ConversionResult(
             name = name,
             body = sealedUnionBody(name, values),
             pkg = "js.intl",
         )
-
-        union
     }
 
     val newContent = unionMap.entries.fold(content) { acc, (propertyName, result) ->
