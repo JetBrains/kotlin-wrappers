@@ -8,6 +8,9 @@ import js.array.Tuple2
 import js.array.component1
 import js.array.component2
 
+/**
+ * [Online Documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)
+ */
 external interface ReadonlyRecord<K : JsAny, out V : JsAny?> {
     operator fun get(
         key: K,
