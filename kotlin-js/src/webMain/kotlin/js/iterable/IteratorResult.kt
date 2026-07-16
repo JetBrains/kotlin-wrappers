@@ -3,6 +3,9 @@ package js.iterable
 import kotlinx.js.JsPlainObject
 import kotlin.contracts.contract
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#next)
+ */
 @JsPlainObject
 external interface IteratorResult<out T : JsAny?, out TReturn : JsAny?> {
     val done: Boolean

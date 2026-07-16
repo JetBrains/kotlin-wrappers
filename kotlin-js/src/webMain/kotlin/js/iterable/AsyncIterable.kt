@@ -10,6 +10,9 @@ import js.symbol.Symbol
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols)
+ */
 external interface AsyncIterable<out T : JsAny?>
 
 operator fun <T : JsAny?> AsyncIterable<T>.get(
