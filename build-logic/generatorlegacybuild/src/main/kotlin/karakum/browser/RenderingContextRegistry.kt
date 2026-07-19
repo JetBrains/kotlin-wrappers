@@ -10,7 +10,8 @@ internal object RenderingContextRegistry {
     fun fill(
         content: String,
     ) {
-        val dataList = GET_CONTEXT_WITH_OPTIONS_REGEX.findAll(content)
+        val dataList = GET_CONTEXT_WITH_OPTIONS_REGEX
+            .findAll(content)
             .map { result ->
                 RenderingContextData(
                     id = result.groupValues[1],
