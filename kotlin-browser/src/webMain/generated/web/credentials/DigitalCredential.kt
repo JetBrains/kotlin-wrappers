@@ -9,7 +9,7 @@ open external class DigitalCredential
 private constructor() :
     Credential {
     val data: JsAny?
-    val protocol: String
+    val protocol: DigitalCredentialPresentationProtocol
     fun toJSON(): JsAny
 
     companion object {

@@ -13,6 +13,8 @@ import web.dom.Element
 @SubclassOptInRequired(InternalApi::class)
 external interface PopoverTargetAttributes {
     /**
+     * The **`popoverTargetAction`** property of the HTMLButtonElement interface gets and sets the action to be performed ("hide", "show", or "toggle") on a popover element being controlled by a button.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction)
      */
     var popoverTargetAction: PopoverTargetAction
@@ -20,6 +22,8 @@ external interface PopoverTargetAttributes {
         set(value) = definedExternally
 
     /**
+     * The **`popoverTargetElement`** property of the HTMLButtonElement interface gets and sets the popover element to control via a button.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetElement)
      */
     var popoverTargetElement: Element?

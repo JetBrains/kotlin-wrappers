@@ -661,7 +661,7 @@ internal fun htmlDeclarations(
                 RENDERING_CONTEXT_ID,
                 """
                 sealed /* opaque */
-                external interface $RENDERING_CONTEXT_ID<T: JsAny, O: JsAny>
+                external interface $RENDERING_CONTEXT_ID<T: JsAny, O: JsAny?>
                 """.trimIndent(),
                 "web.rendering",
             ),

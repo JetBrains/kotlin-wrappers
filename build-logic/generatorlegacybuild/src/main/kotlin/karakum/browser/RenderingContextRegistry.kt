@@ -1,6 +1,8 @@
 package karakum.browser
 
-internal val GET_CONTEXT_REGEX = Regex("""\n    getContext\(contextId: "(\w+)", options\?: (\w+)\): (\w+) \| null;""")
+internal val GET_CONTEXT_WITH_OPTIONS_REGEX =
+    Regex("""\n    getContext\(contextId: "(\w+)", options\?: (\w+)\): (\w+) \| null;""")
+internal val GET_CONTEXT_REGEX = Regex("""\n    getContext\(contextId: "(\w+)"\): (\w+) \| null;""")
 
 internal object RenderingContextRegistry {
     private lateinit var map: Map<String, RenderingContextData>
@@ -8,22 +10,23 @@ internal object RenderingContextRegistry {
     fun fill(
         content: String,
     ) {
-        val dataList = GET_CONTEXT_REGEX
-            .findAll(content)
+        val dataList = GET_CONTEXT_WITH_OPTIONS_REGEX.findAll(content)
             .map { result ->
                 RenderingContextData(
                     id = result.groupValues[1],
                     options = result.groupValues[2],
                     type = result.groupValues[3],
                 )
-            }
-            // TEMP
-            .plus(
-                RenderingContextData(
-                    id = "webgpu",
-                    options = "GPUCanvasConfiguration",
-                    type = "GPUCanvasContext",
-                ),
+            }.plus(
+                GET_CONTEXT_REGEX
+                    .findAll(content)
+                    .map { result ->
+                        RenderingContextData(
+                            id = result.groupValues[1],
+                            options = "Void",
+                            type = result.groupValues[2],
+                        )
+                    },
             )
 
         map = dataList.sortedBy { it.options.length }

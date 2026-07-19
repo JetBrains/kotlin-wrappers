@@ -235,6 +235,7 @@ internal fun String.applyPatches(): String {
         .splitUnion("number | KeyframeEffectOptions")
         .patchDomGeometry()
         .patchDecodeAudioData()
+        .replace(GET_CONTEXT_WITH_OPTIONS_REGEX, "")
         .replace(GET_CONTEXT_REGEX, "")
         .replace("quality?: any", "quality?: number")
         .replace("clearWatch(watchId: number)", "clearWatch(watchId: $GEOLOCATION_WATCH_ID)")

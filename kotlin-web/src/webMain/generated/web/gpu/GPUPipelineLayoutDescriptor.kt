@@ -9,4 +9,5 @@ import kotlinx.js.JsPlainObject
 external interface GPUPipelineLayoutDescriptor :
     GPUObjectDescriptorBase {
     var bindGroupLayouts: ReadonlyArray<GPUBindGroupLayout?>
+    var immediateSize: GPUSize32?
 }

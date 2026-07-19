@@ -2,6 +2,7 @@
 
 package web.gpu
 
+import js.core.Void
 import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.rendering.OffscreenRenderingContext
@@ -56,5 +57,5 @@ private constructor() :
     companion object
 }
 
-inline val GPUCanvasContext.Companion.ID: RenderingContextId<GPUCanvasContext, GPUCanvasConfiguration>
+inline val GPUCanvasContext.Companion.ID: RenderingContextId<GPUCanvasContext, Void>
     get() = unsafeCast("webgpu")

@@ -4,7 +4,6 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
-import web.window.WindowTarget
 
 /**
  * The **`HTMLAreaElement`** interface provides special properties and methods (beyond those of the regular object HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <area> elements.
@@ -71,11 +70,4 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/shape)
      */
     var shape: String
-
-    /**
-     * The **`target`** property of the HTMLAreaElement interface is a string that indicates where to display the linked resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/target)
-     */
-    var target: WindowTarget
 }

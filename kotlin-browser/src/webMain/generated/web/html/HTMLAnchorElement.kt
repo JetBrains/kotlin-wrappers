@@ -4,7 +4,6 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
-import web.window.WindowTarget
 
 /**
  * The **`HTMLAnchorElement`** interface represents hyperlink elements and provides special properties and methods (beyond those of the regular HTMLElement object interface that they inherit from) for manipulating the layout and presentation of such elements. This interface corresponds to <a> element; not to be confused with <link>, which is represented by HTMLLinkElement.
@@ -22,13 +21,6 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
      */
     var download: String
-
-    /**
-     * The **`hreflang`** property of the HTMLAnchorElement interface is a string that is the language of the linked resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hreflang)
-     */
-    var hreflang: String
 
     /**
      * The **`ping`** property of the HTMLAnchorElement interface is a space-separated list of URLs. When the link is followed, the browser will send POST requests with the body PING to the URLs.
@@ -59,23 +51,9 @@ protected constructor() :
     val relList: DOMTokenList<JsString>
 
     /**
-     * The **`target`** property of the HTMLAnchorElement interface is a string that indicates where to display the linked resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/target)
-     */
-    var target: WindowTarget
-
-    /**
      * The **`text`** property of the HTMLAnchorElement represents the text inside the element. This property represents the same information as Node.textContent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
     var text: String
-
-    /**
-     * The **`type`** property of the HTMLAnchorElement interface is a string that indicates the MIME type of the linked resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type)
-     */
-    var type: String
 }

@@ -3,4 +3,4 @@
 package web.rendering
 
 sealed /* opaque */
-external interface RenderingContextId<T : JsAny, O : JsAny>
+external interface RenderingContextId<T : JsAny, O : JsAny?>

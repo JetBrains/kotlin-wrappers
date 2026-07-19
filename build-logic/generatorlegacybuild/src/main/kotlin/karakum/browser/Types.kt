@@ -128,6 +128,8 @@ private val PKG_MAP = mapOf(
     "PublicKeyCredentialJSON" to "web.authn",
 
     "CredentialMediationRequirement" to "web.credentials",
+    // separate package?
+    "DigitalCredentialPresentationProtocol" to "web.credentials",
     "SecurityPolicyViolationEventDisposition" to "web.csp",
     "LoginStatus" to "web.fedcm",
 
