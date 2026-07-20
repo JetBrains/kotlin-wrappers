@@ -1504,9 +1504,6 @@ internal fun convertInterface(
     }
 
     val modifier = when {
-        hasPrivateConstructor && name == "NodeList"
-            -> "abstract /* open */\n"
-
         // TEMP
         hasPrivateConstructor && (
                 name == "AudioParamMap"

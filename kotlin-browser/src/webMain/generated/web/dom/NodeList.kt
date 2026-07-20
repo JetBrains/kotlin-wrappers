@@ -9,10 +9,16 @@ import js.collections.ListLike
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList)
  */
-abstract /* open */
-external class NodeList<out T : Node>
+open external class NodeList<out T : Node>
 private constructor() :
     ListLike.Mixin<T> {
+    /**
+     * The **`NodeList.length`** property returns the number of items in a NodeList.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList/length)
+     */
+    override val length: Int
+
     /**
      * Returns a node from a NodeList by index. This method doesn't throw exceptions as long as you provide arguments. A value of null is returned if the index is out of range, and a TypeError is thrown if no argument is provided.
      *

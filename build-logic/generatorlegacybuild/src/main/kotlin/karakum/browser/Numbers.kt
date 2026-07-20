@@ -46,6 +46,7 @@ internal val LENGTH_REQUIRED = setOf(
 
     "MediaList",
 
+    "NodeList",
     "NamedNodeMap",
 
     "SourceBufferList",
