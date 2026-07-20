@@ -22,6 +22,6 @@ external interface CollectionLike<K : JsAny?, out V : JsAny?> :
         override fun keys(): JsIterator<K> = definedExternally
         override fun values(): JsIterator<V> = definedExternally
 
-        override fun forEach(action: (item: V) -> Unit) = definedExternally
+        override fun forEach(action: (item: V) -> Unit): Unit = definedExternally
     }
 }

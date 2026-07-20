@@ -9,7 +9,12 @@ external interface ListLike<out T : JsAny?> :
     CollectionLike<JsInt, T> {
 
     @SubclassOptInRequired(InternalApi::class)
+    @Suppress("NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE")
     interface Mixin<out T : JsAny?> :
         ListLike<T>,
-        CollectionLike.Mixin<JsInt, T>
+        CollectionLike.Mixin<JsInt, T> {
+
+        override val length: Int
+            get() = definedExternally
+    }
 }
