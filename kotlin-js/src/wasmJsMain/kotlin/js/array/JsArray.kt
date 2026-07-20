@@ -1,8 +1,6 @@
 package js.array
 
 import js.collections.ListLike
-import js.iterable.JsIterator
-import js.numbers.JsInt
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -10,7 +8,7 @@ import js.numbers.JsInt
 @JsName("Array")
 actual external class JsArray<T : JsAny?> :
     MutableArrayLike<T>,
-    ListLike<T> {
+    ListLike.Mixin<T> {
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
@@ -27,11 +25,6 @@ actual external class JsArray<T : JsAny?> :
     override val length: Int
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-     */
-    override fun forEach(action: (item: T) -> Unit)
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
      */
     fun push(
@@ -44,21 +37,6 @@ actual external class JsArray<T : JsAny?> :
     fun push(
         vararg values: T,
     )
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
-     */
-    override fun entries(): JsIterator<Tuple2<JsInt, T>>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
-     */
-    override fun keys(): JsIterator<JsInt>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
-     */
-    override fun values(): JsIterator<T>
 
     companion object {
         /**
