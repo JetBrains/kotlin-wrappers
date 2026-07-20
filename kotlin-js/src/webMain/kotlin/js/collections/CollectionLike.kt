@@ -1,6 +1,7 @@
 package js.collections
 
 import js.array.Tuple2
+import js.internal.InternalApi
 import js.iterable.JsIterable
 import js.iterable.JsIterator
 
@@ -14,6 +15,7 @@ external interface CollectionLike<K : JsAny?, out V : JsAny?> :
     fun forEach(action: (item: V) -> Unit)
 
     @Suppress("NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE")
+    @SubclassOptInRequired(InternalApi::class)
     interface Mixin<K : JsAny?, out V : JsAny?> :
         CollectionLike<K, V> {
         override fun entries(): JsIterator<Tuple2<K, V>> = definedExternally
