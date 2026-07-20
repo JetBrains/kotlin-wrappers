@@ -51,18 +51,16 @@ internal fun webXrDeclarations(
 
                 name == "XRInputSourceArray"
                     -> """
-                    abstract /* open */
-                    external class $name
+                    open external class $name
                     private constructor() :
-                        ListLike<${name.removeSuffix("Array")}>
+                        ListLike.Mixin<${name.removeSuffix("Array")}>
                     """.trimIndent()
 
                 name == "XRHand"
                     -> """
-                    abstract /* open */
-                    external class $name
+                    open external class $name
                     private constructor() :
-                        ReadonlyMap<XRHandJoint, XRJointSpace>
+                        ReadonlyMap.Mixin<XRHandJoint, XRJointSpace>
                     """.trimIndent()
 
                 else -> null

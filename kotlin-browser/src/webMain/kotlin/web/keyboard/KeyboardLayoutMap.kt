@@ -7,7 +7,6 @@ import web.experimental.ExperimentalWebApi
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardLayoutMap)
  */
 @ExperimentalWebApi
-sealed /* final */
-external class KeyboardLayoutMap
+open external class KeyboardLayoutMap
 private constructor() :
-    ReadonlyMap<KeyCode, JsString>
+    ReadonlyMap.Mixin<KeyCode, JsString>

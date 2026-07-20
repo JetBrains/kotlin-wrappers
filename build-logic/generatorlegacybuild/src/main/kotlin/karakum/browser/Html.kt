@@ -671,10 +671,9 @@ internal fun htmlDeclarations(
                 name = "EventCounts",
                 // language=kotlin
                 body = """
-                    sealed /* final */
-                    external class EventCounts
+                    open external class EventCounts
                     private constructor():
-                    ReadonlyMap<EventType<*>, Int>
+                    ReadonlyMap.Mixin<EventType<*>, Int>
                 """.trimIndent(),
                 pkg = "web.performance",
             ),
@@ -1056,7 +1055,7 @@ internal fun convertInterface(
                 val mapLikeType = when (name) {
                     "URLSearchParams",
                     "MediaKeyStatusMap",
-                        -> "ReadonlyMap"
+                        -> "ReadonlyMap.Mixin"
 
                     else -> "MapLike"
                 }
@@ -1123,7 +1122,7 @@ internal fun convertInterface(
         listLikeMode -> true
         mapLikeParameters != null -> true
         additionalIterableParent == null -> false
-        additionalIterableParent.startsWith("ReadonlyMap<") -> true
+        additionalIterableParent.startsWith("ReadonlyMap.Mixin<") -> true
         additionalIterableParent.startsWith("MutableMapLike<") -> true
         additionalIterableParent.startsWith("MutableSetLike<") -> true
         else -> false
@@ -1506,12 +1505,7 @@ internal fun convertInterface(
     val modifier = when {
         // TEMP
         hasPrivateConstructor && (
-                name == "AudioParamMap"
-                        || name == "FileSystemDirectoryHandle"
-                        || name == "MIDIInputMap"
-                        || name == "MIDIOutputMap"
-                        || name == "RTCStatsReport"
-                        || name == "MediaKeyStatusMap"
+                name == "FileSystemDirectoryHandle"
                         || name == "CustomStateSet"
                         || name == "StylePropertyMap"
                         || name == "StylePropertyMapReadOnly"

@@ -15,7 +15,6 @@ internal val LIST_LIKE = setOf(
 internal val FINAL_MAP_LIKE = setOf(
     "FormData",
     "Headers",
-    "URLSearchParams",
 )
 
 internal val MAP_LIKE = setOf(

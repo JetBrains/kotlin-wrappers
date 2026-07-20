@@ -9,7 +9,6 @@ import js.collections.ReadonlyMap
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCStatsReport)
  */
-sealed /* final */
-external class RTCStatsReport
+open external class RTCStatsReport
 private constructor() :
-    ReadonlyMap<JsString, JsAny?>
+    ReadonlyMap.Mixin<JsString, JsAny?>

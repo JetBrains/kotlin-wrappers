@@ -9,7 +9,6 @@ import js.collections.ReadonlyMap
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParamMap)
  */
-sealed /* final */
-external class AudioParamMap
+open external class AudioParamMap
 private constructor() :
-    ReadonlyMap<AudioParamName, AudioParam>
+    ReadonlyMap.Mixin<AudioParamName, AudioParam>

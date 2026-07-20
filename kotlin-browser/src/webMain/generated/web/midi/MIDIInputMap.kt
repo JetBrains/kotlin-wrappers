@@ -10,7 +10,6 @@ import js.collections.ReadonlyMap
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInputMap)
  */
-sealed /* final */
-external class MIDIInputMap
+open external class MIDIInputMap
 private constructor() :
-    ReadonlyMap<JsString, MIDIInput>
+    ReadonlyMap.Mixin<JsString, MIDIInput>

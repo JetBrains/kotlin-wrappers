@@ -6,7 +6,6 @@ import js.collections.ReadonlyMap
 import js.numbers.JsInt
 import web.events.EventType
 
-sealed /* final */
-external class EventCounts
+open external class EventCounts
 private constructor() :
-    ReadonlyMap<EventType<*>, JsInt>
+    ReadonlyMap.Mixin<EventType<*>, JsInt>

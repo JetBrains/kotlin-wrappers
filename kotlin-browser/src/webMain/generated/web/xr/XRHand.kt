@@ -4,7 +4,6 @@ package web.xr
 
 import js.collections.ReadonlyMap
 
-abstract /* open */
-external class XRHand
+open external class XRHand
 private constructor() :
-    ReadonlyMap<XRHandJoint, XRJointSpace>
+    ReadonlyMap.Mixin<XRHandJoint, XRJointSpace>

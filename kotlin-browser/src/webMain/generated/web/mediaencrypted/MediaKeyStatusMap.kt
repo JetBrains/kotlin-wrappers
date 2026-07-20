@@ -11,10 +11,9 @@ import js.collections.ReadonlyMap
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap)
  */
-sealed /* final */
-external class MediaKeyStatusMap
+open external class MediaKeyStatusMap
 private constructor() :
-    ReadonlyMap<BufferSource, MediaKeyStatus> {
+    ReadonlyMap.Mixin<BufferSource, MediaKeyStatus> {
     /**
      * The **`size`** read-only property of the MediaKeyStatusMap interface returns the number of key/value paIrs in the status map.
      *
