@@ -8,5 +8,6 @@ external interface ListLike<out T : JsAny?> :
     CollectionLike<JsInt, T> {
 
     interface Mixin<out T : JsAny?> :
-        ListLike<T>
+        ListLike<T>,
+        CollectionLike.Mixin<JsInt, T>
 }
