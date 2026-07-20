@@ -9,8 +9,7 @@ import web.dom.NodeList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList)
  */
-sealed /* final */
-external class RadioNodeList
+open external class RadioNodeList
 private constructor() :
     NodeList<HTMLInputElement> {
     /**

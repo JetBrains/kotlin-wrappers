@@ -1517,7 +1517,6 @@ internal fun convertInterface(
                         || name == "StylePropertyMapReadOnly"
                         || name == "ViewTransitionTypeSet"
                         || name == "HighlightRegistry"
-                        || name == "RadioNodeList"
                         || name == "GPUSupportedFeatures"
                         || name == "WGSLLanguageFeatures"
                         || name == "FontFaceSet"
