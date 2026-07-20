@@ -12,7 +12,7 @@ import js.collections.ListLike
 abstract /* open */
 external class NodeList<out T : Node>
 private constructor() :
-    ListLike<T> {
+    ListLike.Mixin<T> {
     /**
      * Returns a node from a NodeList by index. This method doesn't throw exceptions as long as you provide arguments. A value of null is returned if the index is out of range, and a TypeError is thrown if no argument is provided.
      *

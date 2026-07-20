@@ -2,10 +2,7 @@
 
 package web.cssom
 
-import js.array.Tuple2
 import js.collections.ListLike
-import js.iterable.JsIterator
-import js.numbers.JsInt
 
 /**
  * The **`CSSNumericArray`** interface of the CSS Typed Object Model API contains a list of CSSNumericValue objects.
@@ -14,16 +11,11 @@ import js.numbers.JsInt
  */
 open external class CSSNumericArray
 private constructor() :
-    ListLike<CSSNumericValue> {
+    ListLike.Mixin<CSSNumericValue> {
     /**
      * The read-only **`length`** property of the CSSNumericArray interface returns the number of CSSNumericValue objects in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericArray/length)
      */
     override val length: Int
-
-    override fun entries(): JsIterator<Tuple2<JsInt, CSSNumericValue>>
-    override fun keys(): JsIterator<JsInt>
-    override fun values(): JsIterator<CSSNumericValue>
-    override fun forEach(action: (item: CSSNumericValue) -> Unit)
 }

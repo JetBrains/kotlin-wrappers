@@ -1068,7 +1068,7 @@ internal fun convertInterface(
             }
 
             listLikeMode
-                -> "ListLike<$typeParameter>"
+                -> "ListLike.Mixin<$typeParameter>"
 
             else -> "JsIterable<$typeParameter>"
         }
@@ -1473,9 +1473,6 @@ internal fun convertInterface(
     } else ""
 
     val additionalOverrides = when {
-        listLikeMode && name in FINAL_LIST_LIKE
-            -> listLikeOverrides(iterableTypeParameter!!)
-
         mapLikeParameters != null && name in FINAL_MAP_LIKE
             -> mapLikeOverrides(mapLikeParameters.key, mapLikeParameters.value)
 

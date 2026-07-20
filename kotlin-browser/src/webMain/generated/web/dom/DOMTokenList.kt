@@ -2,10 +2,7 @@
 
 package web.dom
 
-import js.array.Tuple2
 import js.collections.ListLike
-import js.iterable.JsIterator
-import js.numbers.JsInt
 
 /**
  * The **`DOMTokenList`** interface represents a set of space-separated tokens. Such a set is returned by Element.classList or HTMLLinkElement.relList, and many others.
@@ -14,7 +11,7 @@ import js.numbers.JsInt
  */
 open external class DOMTokenList<T : JsAny>
 private constructor() :
-    ListLike<T> {
+    ListLike.Mixin<T> {
     /**
      * The read-only **`length`** property of the DOMTokenList interface is an integer representing the number of objects stored in the object.
      *
@@ -83,9 +80,4 @@ private constructor() :
         token: T,
         force: Boolean = definedExternally,
     ): Boolean
-
-    override fun entries(): JsIterator<Tuple2<JsInt, T>>
-    override fun keys(): JsIterator<JsInt>
-    override fun values(): JsIterator<T>
-    override fun forEach(action: (item: T) -> Unit)
 }

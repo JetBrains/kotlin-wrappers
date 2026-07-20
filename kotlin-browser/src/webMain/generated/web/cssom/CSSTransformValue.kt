@@ -3,10 +3,7 @@
 package web.cssom
 
 import js.array.ReadonlyArray
-import js.array.Tuple2
 import js.collections.ListLike
-import js.iterable.JsIterator
-import js.numbers.JsInt
 import web.geometry.DOMMatrix
 
 /**
@@ -17,7 +14,7 @@ import web.geometry.DOMMatrix
 open external class CSSTransformValue(
     transforms: ReadonlyArray<CSSTransformComponent>,
 ) : CSSStyleValue,
-    ListLike<CSSTransformComponent> {
+    ListLike.Mixin<CSSTransformComponent> {
     /**
      * The read-only **`is2D`** property of the CSSTransformValue interface returns whether the transform is 2D or 3D.
      *
@@ -38,9 +35,4 @@ open external class CSSTransformValue(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/toMatrix)
      */
     fun toMatrix(): DOMMatrix
-
-    override fun entries(): JsIterator<Tuple2<JsInt, CSSTransformComponent>>
-    override fun keys(): JsIterator<JsInt>
-    override fun values(): JsIterator<CSSTransformComponent>
-    override fun forEach(action: (item: CSSTransformComponent) -> Unit)
 }
