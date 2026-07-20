@@ -12,16 +12,6 @@ internal val LIST_LIKE = setOf(
     "NodeList",
 ) + FINAL_LIST_LIKE
 
-internal val FINAL_MAP_LIKE = setOf(
-    "FormData",
-    "Headers",
-)
-
-internal val MAP_LIKE = setOf(
-    "MediaKeyStatusMap",
-    "StylePropertyMapReadOnly",
-) + FINAL_MAP_LIKE
-
 internal class MapLikeParameters(
     val key: String,
     val value: String,
@@ -45,13 +35,3 @@ internal fun mapLikeParameters(
         value = value,
     )
 }
-
-internal fun mapLikeOverrides(
-    keyType: String,
-    valueType: String,
-): String = """
-override fun entries(): JsIterator<Tuple2<$keyType, $valueType>>
-override fun keys(): JsIterator<$keyType>
-override fun values(): JsIterator<$valueType>
-override fun forEach(action: (value: $valueType, key: $keyType) -> Unit)
-""".trimIndent()

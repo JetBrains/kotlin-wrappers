@@ -15,7 +15,7 @@ import js.iterable.JsIterable
 sealed /* final */
 external class StylePropertyMapReadOnly
 private constructor() :
-    MapLike<JsString, JsIterable<CSSStyleValue>>,
+    MapLike.Mixin<JsString, JsIterable<CSSStyleValue>>,
     ReadonlySetLike<JsString> {
     /**
      * The **`size`** read-only property of the StylePropertyMapReadOnly interface returns an unsigned long integer containing the size of the StylePropertyMapReadOnly object.

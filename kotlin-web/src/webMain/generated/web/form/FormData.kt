@@ -3,9 +3,7 @@
 package web.form
 
 import js.array.ReadonlyArray
-import js.array.Tuple2
 import js.collections.MapLike
-import js.iterable.JsIterator
 import web.blob.Blob
 import web.events.EventTarget
 import web.http.BodyInit
@@ -18,7 +16,7 @@ import web.http.BodyInit
 open external class FormData(
     form: EventTarget /* HTMLFormElement */ = definedExternally,
     submitter: EventTarget /* HTMLElement */? = definedExternally,
-) : MapLike<JsString, FormDataEntryValue>,
+) : MapLike.Mixin<JsString, FormDataEntryValue>,
     BodyInit {
     /**
      * The **`append()`** method of the FormData interface appends a new value onto an existing key inside a FormData object, or adds the key if it does not already exist.
@@ -89,9 +87,4 @@ open external class FormData(
         blobValue: Blob,
         filename: String = definedExternally,
     )
-
-    override fun entries(): JsIterator<Tuple2<JsString, FormDataEntryValue>>
-    override fun keys(): JsIterator<JsString>
-    override fun values(): JsIterator<FormDataEntryValue>
-    override fun forEach(action: (value: FormDataEntryValue, key: JsString) -> Unit)
 }

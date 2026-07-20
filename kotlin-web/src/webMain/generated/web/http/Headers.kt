@@ -5,7 +5,6 @@ package web.http
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.collections.MapLike
-import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
 
 /**
@@ -15,7 +14,7 @@ import js.objects.ReadonlyRecord
  */
 open external class Headers(
     init: ReadonlyArray<Tuple2<JsString, JsString>> = definedExternally,
-) : MapLike<JsString, JsString>,
+) : MapLike.Mixin<JsString, JsString>,
     HeadersInit {
     constructor(init: ReadonlyRecord<JsString, JsString>)
     constructor(init: HeadersInit)
@@ -67,9 +66,4 @@ open external class Headers(
         name: String,
         value: String,
     )
-
-    override fun entries(): JsIterator<Tuple2<JsString, JsString>>
-    override fun keys(): JsIterator<JsString>
-    override fun values(): JsIterator<JsString>
-    override fun forEach(action: (value: JsString, key: JsString) -> Unit)
 }

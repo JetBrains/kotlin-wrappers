@@ -1057,7 +1057,7 @@ internal fun convertInterface(
                     "MediaKeyStatusMap",
                         -> "ReadonlyMap.Mixin"
 
-                    else -> "MapLike"
+                    else -> "MapLike.Mixin"
                 }
 
                 val result = "$mapLikeType<${mapLikeParameters.key}, ${mapLikeParameters.value}>"
@@ -1471,14 +1471,7 @@ internal fun convertInterface(
         result
     } else ""
 
-    val additionalOverrides = when {
-        mapLikeParameters != null && name in FINAL_MAP_LIKE
-            -> mapLikeOverrides(mapLikeParameters.key, mapLikeParameters.value)
-
-        else -> ""
-    }
-
-    members = sequenceOf(additionalConstructors, members, additionalOverrides)
+    members = sequenceOf(additionalConstructors, members)
         .filter { it.isNotEmpty() }
         .joinToString("\n\n")
 
