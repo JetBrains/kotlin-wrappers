@@ -6,17 +6,17 @@ import js.array.ReadonlyArray
 import js.collections.MapLike
 import js.collections.ReadonlySetLike
 import js.iterable.JsIterable
+import js.iterable.JsIterator
 
 /**
  * The **`StylePropertyMapReadOnly`** interface of the CSS Typed Object Model API provides a read-only representation of a CSS declaration block that is an alternative to CSSStyleDeclaration. Retrieve an instance of this interface using Element.computedStyleMap().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly)
  */
-sealed /* final */
-external class StylePropertyMapReadOnly
+open external class StylePropertyMapReadOnly
 private constructor() :
     MapLike.Mixin<JsString, JsIterable<CSSStyleValue>>,
-    ReadonlySetLike<JsString> {
+    ReadonlySetLike.Mixin<JsString> {
     /**
      * The **`size`** read-only property of the StylePropertyMapReadOnly interface returns an unsigned long integer containing the size of the StylePropertyMapReadOnly object.
      *
@@ -44,4 +44,5 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/has)
      */
     override fun has(key: JsString): Boolean
+    override fun keys(): JsIterator<JsString>
 }

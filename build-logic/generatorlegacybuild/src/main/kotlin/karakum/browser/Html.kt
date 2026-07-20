@@ -1062,7 +1062,7 @@ internal fun convertInterface(
 
                 val result = "$mapLikeType<${mapLikeParameters.key}, ${mapLikeParameters.value}>"
                 if (name == "StylePropertyMapReadOnly") {
-                    "$result,\nReadonlySetLike<${mapLikeParameters.key}>"
+                    "$result,\nReadonlySetLike.Mixin<${mapLikeParameters.key}>"
                 } else result
             }
 
@@ -1232,6 +1232,7 @@ internal fun convertInterface(
                 -> result
                 .replace("val size: Int", "override val size: Int")
                 .replaceFirst("fun has(", "override fun has(")
+                .plus("\noverride fun keys(): JsIterator<String>")
 
             "GPUSupportedFeatures",
             "WGSLLanguageFeatures",
@@ -1500,8 +1501,6 @@ internal fun convertInterface(
         hasPrivateConstructor && (
                 name == "FileSystemDirectoryHandle"
                         || name == "CustomStateSet"
-                        || name == "StylePropertyMap"
-                        || name == "StylePropertyMapReadOnly"
                         || name == "ViewTransitionTypeSet"
                         || name == "HighlightRegistry"
                         || name == "GPUSupportedFeatures"
