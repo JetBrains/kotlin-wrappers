@@ -17,7 +17,7 @@ import web.abort.Abortable
 @JsName("Interface")
 open external class _Interface :
     EventEmitter,
-    js.disposable.Disposable {
+    js.disposable.Disposable.Mixin {
     /**
      * NOTE: According to the documentation:
      *

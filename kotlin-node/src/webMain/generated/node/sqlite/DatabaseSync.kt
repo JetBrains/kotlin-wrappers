@@ -11,7 +11,7 @@ import node.fs.PathLike
  * exposed by this class execute synchronously.
  * @since v22.5.0
  */
-external class DatabaseSync : js.disposable.Disposable {
+external class DatabaseSync : js.disposable.Disposable.Mixin {
     /**
      * Constructs a new `DatabaseSync` instance.
      * @param path The path of the database.
