@@ -9,8 +9,8 @@ import js.disposable.Disposable
 @JsName("Iterator")
 abstract external class JsIterator<out T : JsAny?> :
     JsIteratorLike<T>,
-    JsIterable<T>,
-    Disposable {
+    JsIterable.Mixin<T>,
+    Disposable.Mixin {
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/return)

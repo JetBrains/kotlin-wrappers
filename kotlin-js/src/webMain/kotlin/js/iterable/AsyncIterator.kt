@@ -11,5 +11,5 @@ import js.reflect.JsExternalInheritorsOnly
 @SubclassOptInRequired(InternalApi::class)
 external interface /* class */ AsyncIterator<out T : JsAny?> :
     AsyncIteratorLike<T>,
-    AsyncIterable<T>,
-    AsyncDisposable
+    AsyncIterable.Mixin<T>,
+    AsyncDisposable.Mixin
