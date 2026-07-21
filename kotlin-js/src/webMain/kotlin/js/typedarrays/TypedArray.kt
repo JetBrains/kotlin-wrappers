@@ -3,13 +3,10 @@ package js.typedarrays
 import js.array.ArrayLike
 import js.array.MutableArrayLike
 import js.array.ReadonlyArray
-import js.array.Tuple2
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 import js.collections.ListLike
-import js.iterable.JsIterator
-import js.numbers.JsInt
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
@@ -24,7 +21,7 @@ sealed external class TypedArray<
         > :
     ArrayBufferView<B>,
     MutableArrayLike<T>,
-    ListLike<T> {
+    ListLike.Mixin<T> {
 
     /**
      * The size in bytes of each element in the array.
@@ -426,19 +423,4 @@ sealed external class TypedArray<
         index: Int,
         value: T,
     ): R
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries)
-     */
-    override fun entries(): JsIterator<Tuple2<JsInt, T>>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys)
-     */
-    override fun keys(): JsIterator<JsInt>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values)
-     */
-    override fun values(): JsIterator<T>
 }
