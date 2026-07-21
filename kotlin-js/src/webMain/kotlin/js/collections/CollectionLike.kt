@@ -17,7 +17,9 @@ external interface CollectionLike<K : JsAny?, out V : JsAny?> :
     @SubclassOptInRequired(InternalApi::class)
     @Suppress("NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE")
     interface Mixin<K : JsAny?, out V : JsAny?> :
-        CollectionLike<K, V> {
+        CollectionLike<K, V>,
+        JsIterable.Mixin<V> {
+
         override fun entries(): JsIterator<Tuple2<K, V>> = definedExternally
         override fun keys(): JsIterator<K> = definedExternally
         override fun values(): JsIterator<V> = definedExternally
