@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class TouchList
 private constructor() :
     ArrayLike<Touch>,
-    JsIterable<Touch> {
+    JsIterable.Mixin<Touch> {
     /**
      * The **`length`** read-only property indicates the number of items (touch points) in a given TouchList.
      *

@@ -16,7 +16,7 @@ import js.promise.Promise
 open external class ImageTrackList
 private constructor() :
     ArrayLike<ImageTrack>,
-    JsIterable<ImageTrack> {
+    JsIterable.Mixin<ImageTrack> {
     /**
      * The **`length`** property of the ImageTrackList interface returns the length of the ImageTrackList.
      *

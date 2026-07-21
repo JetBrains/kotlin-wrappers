@@ -13,7 +13,7 @@ import web.dom.Element
  */
 external interface HTMLCollectionBase<out T : Element> :
     ArrayLike<T>,
-    JsIterable<T> {
+    JsIterable.Mixin<T> {
     /**
      * The HTMLCollection method **`item()`** returns the element located at the specified offset into the collection.
      *

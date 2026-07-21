@@ -14,7 +14,7 @@ import web.geometry.DOMMatrixReadOnly
 open external class SVGTransformList
 private constructor() :
     ArrayLike<SVGTransform>,
-    JsIterable<SVGTransform> {
+    JsIterable.Mixin<SVGTransform> {
     /**
      * The **`length`** read-only property of the SVGTransformList interface represents the number of items in the list.
      *

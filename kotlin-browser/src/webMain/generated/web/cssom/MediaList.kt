@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class MediaList
 private constructor() :
     ArrayLike<MediaQuery>,
-    JsIterable<MediaQuery> {
+    JsIterable.Mixin<MediaQuery> {
     /**
      * The read-only **`length`** property of the MediaList interface returns the number of media queries in the list.
      *

@@ -1069,7 +1069,7 @@ internal fun convertInterface(
             listLikeMode
                 -> "ListLike.Mixin<$typeParameter>"
 
-            else -> "JsIterable<$typeParameter>"
+            else -> "JsIterable.Mixin<$typeParameter>"
         }
 
         declaration += if (":" in declaration && name != "NodeList" && name != "DOMTokenList") "," else ":"

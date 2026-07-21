@@ -14,7 +14,7 @@ open external class CSSKeyframesRule
 private constructor() :
     CSSRule,
     ArrayLike<CSSKeyframeRule>,
-    JsIterable<CSSKeyframeRule> {
+    JsIterable.Mixin<CSSKeyframeRule> {
     /**
      * The read-only **`cssRules`** property of the CSSKeyframeRule interface returns a CSSRuleList containing the rules in the keyframes at-rule.
      *

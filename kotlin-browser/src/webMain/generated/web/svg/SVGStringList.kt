@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class SVGStringList
 private constructor() :
     ArrayLike<JsString>,
-    JsIterable<JsString> {
+    JsIterable.Mixin<JsString> {
     /**
      * The **`length`** property of the SVGStringList interface returns the number of items in the list. It is an alias of numberOfItems to make SVG lists more array-like.
      *

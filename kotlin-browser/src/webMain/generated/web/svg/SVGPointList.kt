@@ -14,7 +14,7 @@ import web.geometry.DOMPoint
 open external class SVGPointList
 private constructor() :
     ArrayLike<DOMPoint>,
-    JsIterable<DOMPoint> {
+    JsIterable.Mixin<DOMPoint> {
     /**
      * The **`length`** read-only property of the SVGPointList interface returns the number of items in the list.
      *

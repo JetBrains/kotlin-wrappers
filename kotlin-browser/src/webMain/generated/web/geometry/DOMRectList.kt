@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class DOMRectList
 private constructor() :
     ArrayLike<DOMRect>,
-    JsIterable<DOMRect> {
+    JsIterable.Mixin<DOMRect> {
     /**
      * The read-only **`length`** property of the DOMRectList interface returns the number of DOMRect objects in the list.
      *

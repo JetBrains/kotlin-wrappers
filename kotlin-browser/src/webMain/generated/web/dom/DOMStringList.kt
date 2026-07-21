@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class DOMStringList
 private constructor() :
     ArrayLike<JsString>,
-    JsIterable<JsString> {
+    JsIterable.Mixin<JsString> {
     /**
      * The read-only **`length`** property indicates the number of strings in the DOMStringList.
      *

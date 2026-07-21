@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class StyleSheetList
 private constructor() :
     ArrayLike<CSSStyleSheet>,
-    JsIterable<CSSStyleSheet> {
+    JsIterable.Mixin<CSSStyleSheet> {
     /**
      * The **`length`** read-only property of the StyleSheetList interface returns the number of CSSStyleSheet objects in the collection.
      *

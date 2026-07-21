@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class NamedNodeMap
 private constructor() :
     ArrayLike<Attr>,
-    JsIterable<Attr> {
+    JsIterable.Mixin<Attr> {
     /**
      * The read-only **`length`** property of the NamedNodeMap interface is the number of objects stored in the map.
      *

@@ -14,7 +14,7 @@ import js.iterable.JsIterable
 open external class SpeechRecognitionResult
 private constructor() :
     ArrayLike<SpeechRecognitionAlternative>,
-    JsIterable<SpeechRecognitionAlternative> {
+    JsIterable.Mixin<SpeechRecognitionAlternative> {
     /**
      * The **`isFinal`** read-only property of the SpeechRecognitionResult interface is a boolean value that states whether this result is final (true) or not (false) — if so, then this is the final time this result will be returned; if not, then this result is an interim result, and may be updated later on.
      *

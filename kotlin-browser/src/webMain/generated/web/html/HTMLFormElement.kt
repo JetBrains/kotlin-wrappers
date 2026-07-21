@@ -25,7 +25,7 @@ open external class HTMLFormElement
 protected constructor() :
     HTMLElement,
     ArrayLike<Element>,
-    JsIterable<Element> {
+    JsIterable.Mixin<Element> {
     /**
      * The **`HTMLFormElement.acceptCharset`** property represents the character encoding for the given <form> element.
      *

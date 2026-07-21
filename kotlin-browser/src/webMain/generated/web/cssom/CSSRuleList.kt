@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class CSSRuleList
 private constructor() :
     ArrayLike<CSSRule>,
-    JsIterable<CSSRule> {
+    JsIterable.Mixin<CSSRule> {
     /**
      * The **`length`** property of the CSSRuleList interface returns the number of CSSRule objects in the list.
      *

@@ -18,7 +18,7 @@ open external class TextTrackList
 private constructor() :
     EventTarget,
     ArrayLike<TextTrack>,
-    JsIterable<TextTrack> {
+    JsIterable.Mixin<TextTrack> {
     /**
      * The read-only TextTrackList property **`length`** returns the number of entries in the TextTrackList, each of which is a TextTrack representing one track in the media element.
      *

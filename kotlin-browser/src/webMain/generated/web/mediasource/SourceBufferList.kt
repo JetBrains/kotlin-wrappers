@@ -18,7 +18,7 @@ open external class SourceBufferList
 private constructor() :
     EventTarget,
     ArrayLike<SourceBuffer>,
-    JsIterable<SourceBuffer> {
+    JsIterable.Mixin<SourceBuffer> {
     /**
      * The **`length`** read-only property of the SourceBufferList interface returns the number of SourceBuffer objects in the list.
      *

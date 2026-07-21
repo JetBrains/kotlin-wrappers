@@ -14,7 +14,7 @@ import js.serialization.Serializable
 open external class FileList
 private constructor() :
     ArrayLike<File>,
-    JsIterable<File>,
+    JsIterable.Mixin<File>,
     Serializable {
     /**
      * The **`length`** read-only property of the FileList interface returns the number of files in the FileList.

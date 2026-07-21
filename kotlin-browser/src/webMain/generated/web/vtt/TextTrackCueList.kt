@@ -13,7 +13,7 @@ import js.iterable.JsIterable
 open external class TextTrackCueList
 private constructor() :
     ArrayLike<TextTrackCue>,
-    JsIterable<TextTrackCue> {
+    JsIterable.Mixin<TextTrackCue> {
     /**
      * The **`length`** read-only property of the TextTrackCueList interface returns the number of cues in the list.
      *

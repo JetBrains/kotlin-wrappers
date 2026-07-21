@@ -19,7 +19,7 @@ import web.validation.ValidityState
 open external class HTMLSelectElement
 protected constructor() :
     HTMLElement,
-    JsIterable<HTMLOptionElement>,
+    JsIterable.Mixin<HTMLOptionElement>,
     FormControl {
     /**
      * The **`autocomplete`** property of the HTMLSelectElement interface indicates whether the value of the control can be automatically completed by the browser. It reflects the <select> element's autocomplete attribute.

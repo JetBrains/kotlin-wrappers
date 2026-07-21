@@ -14,7 +14,7 @@ import web.file.File
 open external class DataTransferItemList
 private constructor() :
     ArrayLike<DataTransferItem>,
-    JsIterable<DataTransferItem> {
+    JsIterable.Mixin<DataTransferItem> {
     /**
      * The read-only **`length`** property of the DataTransferItemList interface returns the number of items currently in the drag item list.
      *

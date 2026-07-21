@@ -7,4 +7,4 @@ import js.iterable.JsIterable
 open external class CSSStyleDeclaration
 private constructor() :
     CSSStyleProperties,
-    JsIterable<JsString>
+    JsIterable.Mixin<JsString>

@@ -14,7 +14,7 @@ import js.iterable.JsIterable
 open external class SpeechRecognitionResultList
 private constructor() :
     ArrayLike<SpeechRecognitionResult>,
-    JsIterable<SpeechRecognitionResult> {
+    JsIterable.Mixin<SpeechRecognitionResult> {
     /**
      * The **`length`** read-only property of the SpeechRecognitionResultList interface returns the length of the "array" — the number of SpeechRecognitionResult objects in the list.
      *
