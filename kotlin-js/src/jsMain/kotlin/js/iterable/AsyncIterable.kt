@@ -6,6 +6,13 @@ package js.iterable
 
 actual external interface AsyncIterable<out T> {
 
-    actual interface Mixin<out T : JsAny?> :
-        AsyncIterable<T>
+    @JsSymbol("asyncIterator")
+    fun `[@@asyncIterator]`(): AsyncIterator<T>
+
+    @Suppress("NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE")
+    actual interface Mixin<out T> :
+        AsyncIterable<T> {
+
+        override fun `[@@asyncIterator]`(): AsyncIterator<T> = definedExternally
+    }
 }
