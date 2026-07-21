@@ -1,3 +1,8 @@
+@file:Suppress(
+    "EXPECTED_EXTERNAL_DECLARATION",
+    "INTERFACE_WITH_SUPERCLASS",
+)
+
 package js.iterable
 
 import js.disposable.internal.SuspendCloseable
@@ -14,7 +19,8 @@ import kotlinx.coroutines.flow.flow
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols)
  */
-external interface AsyncIterable<out T : JsAny?> {
+expect external interface AsyncIterable<out T : JsAny?> :
+    JsAny {
 
     @SubclassOptInRequired(InternalApi::class)
     interface Mixin<out T : JsAny?> :

@@ -1,3 +1,8 @@
+@file:Suppress(
+    "EXPECTED_EXTERNAL_DECLARATION",
+    "INTERFACE_WITH_SUPERCLASS",
+)
+
 package js.iterable
 
 import js.hacks.safeCall
@@ -7,7 +12,8 @@ import js.symbol.Symbol
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol)
  */
-external interface JsIterable<out T : JsAny?> {
+expect external interface JsIterable<out T : JsAny?> :
+    JsAny {
 
     @SubclassOptInRequired(InternalApi::class)
     interface Mixin<out T : JsAny?> :
