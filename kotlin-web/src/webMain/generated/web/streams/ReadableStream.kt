@@ -25,7 +25,7 @@ open external class ReadableStream<R : JsAny?>(
     strategy: QueuingStrategy<R> = definedExternally,
 ) : BodyInit,
     Transferable,
-    AsyncIterable<R>,
+    AsyncIterable.Mixin<R>,
     AsyncCloseableDisposable {
     constructor(
         underlyingSource: UnderlyingDefaultSource<R>,

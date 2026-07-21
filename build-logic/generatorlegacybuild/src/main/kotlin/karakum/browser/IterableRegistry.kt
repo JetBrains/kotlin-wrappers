@@ -49,7 +49,7 @@ internal object IterableRegistry {
     fun additionalParent(type: String): String? {
         if (type == "ReadableStream") {
             require(additionalParentMap[type] == null)
-            return "AsyncIterable<R>"
+            return "AsyncIterable.Mixin<R>"
         }
 
         if (type == "FileSystemDirectoryHandle") {
