@@ -11,7 +11,7 @@ import js.serialization.Serializable
 @JsName("Map")
 open external class JsMap<K : JsAny?, V : JsAny?>(
     values: ReadonlyArray<Tuple2<K, V>> = definedExternally,
-) : MutableMapLike<K, V>,
+) : MutableMapLike.Mixin<K, V>,
     Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/size)

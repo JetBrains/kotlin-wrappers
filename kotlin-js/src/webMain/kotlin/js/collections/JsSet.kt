@@ -12,7 +12,7 @@ import js.serialization.Serializable
 @JsName("Set")
 open external class JsSet<T : JsAny?>(
     values: JsIterable<T> = definedExternally,
-) : MutableSetLike<T>,
+) : MutableSetLike.Mixin<T>,
     Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/Set)
