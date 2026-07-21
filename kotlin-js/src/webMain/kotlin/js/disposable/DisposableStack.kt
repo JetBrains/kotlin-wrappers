@@ -4,7 +4,7 @@ package js.disposable
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack)
  */
 open external class DisposableStack :
-    Disposable {
+    Disposable.Mixin {
     /**
      * Returns a value indicating whether this stack has been disposed.
      *

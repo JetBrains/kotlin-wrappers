@@ -9,7 +9,7 @@ import js.promise.await
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack)
  */
 open external class AsyncDisposableStack :
-    AsyncDisposable {
+    AsyncDisposable.Mixin {
     /**
      * Returns a value indicating whether this stack has been disposed.
      *
