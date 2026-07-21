@@ -1,13 +1,11 @@
 package js.disposable
 
 import js.core.Void
-import js.hacks.safeMethod
+import js.hacks.safeCall
 import js.promise.PromiseLike
 import js.symbol.Symbol
 
 external interface AsyncDisposable
 
-operator fun AsyncDisposable.get(
-    key: Symbol.asyncDispose,
-): () -> PromiseLike<Void> =
-    safeMethod(Symbol.asyncDispose)
+fun AsyncDisposable.`[@@asyncDispose]`(): PromiseLike<Void> =
+    safeCall(Symbol.asyncDispose)

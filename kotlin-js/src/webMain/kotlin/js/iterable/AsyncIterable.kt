@@ -3,7 +3,7 @@ package js.iterable
 import js.disposable.internal.SuspendCloseable
 import js.disposable.internal.awaitFirst
 import js.disposable.internal.use
-import js.hacks.safeMethod
+import js.hacks.safeCall
 import js.internal.InternalApi
 import js.objects.PropertyKey
 import js.promise.await
@@ -20,14 +20,12 @@ external interface AsyncIterable<out T : JsAny?> {
     interface Mixin<out T : JsAny?>
 }
 
-operator fun <T : JsAny?> AsyncIterable<T>.get(
-    key: Symbol.asyncIterator,
-): () -> AsyncIterator<T> =
-    safeMethod(Symbol.asyncIterator)
+fun <T : JsAny?> AsyncIterable<T>.`[@@asyncIterator]`(): AsyncIterator<T> =
+    safeCall(Symbol.asyncIterator)
 
 fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
     flow {
-        val iterator = this@asFlow[Symbol.asyncIterator]()
+        val iterator = this@asFlow.`[@@asyncIterator]`()
 
         val closeable = SuspendCloseable {
             iterator.awaitFirst(

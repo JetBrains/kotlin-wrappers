@@ -4,7 +4,6 @@ import js.array.jsArrayOf
 import js.collections.JsSet
 import js.numbers.BigInt
 import js.numbers.n
-import js.symbol.Symbol
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -14,7 +13,7 @@ class JsIteratorTest {
         val jsSet = JsSet(jsArrayOf(1.n, 2.n, 3.n))
 
         val actualSet = mutableSetOf<BigInt>()
-        for (element in jsSet[Symbol.iterator]()) {
+        for (element in jsSet.`[@@iterator]`()) {
             actualSet.add(element)
         }
 
