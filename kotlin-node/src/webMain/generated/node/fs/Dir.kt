@@ -25,7 +25,7 @@ package node.fs
  * closed after the iterator exits.
  * @since v12.12.0
  */
-external class Dir : js.iterable.AsyncIterable<Dirent<*>> {
+external class Dir : js.iterable.AsyncIterable.Mixin<Dirent<*>> {
     /**
      * The read-only path of this directory as was provided to {@link opendir},{@link opendirSync}, or `fsPromises.opendir()`.
      * @since v12.12.0
