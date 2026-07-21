@@ -1,12 +1,17 @@
 package js.iterable
 
 import js.hacks.safeMethod
+import js.internal.InternalApi
 import js.symbol.Symbol
 
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol)
  */
-external interface JsIterable<out T : JsAny?>
+external interface JsIterable<out T : JsAny?> {
+
+    @SubclassOptInRequired(InternalApi::class)
+    interface Mixin<out T : JsAny?>
+}
 
 operator fun <T : JsAny?> JsIterable<T>.get(
     key: Symbol.iterator,
