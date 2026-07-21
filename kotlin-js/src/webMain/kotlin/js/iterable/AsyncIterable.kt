@@ -4,6 +4,7 @@ import js.disposable.internal.SuspendCloseable
 import js.disposable.internal.awaitFirst
 import js.disposable.internal.use
 import js.hacks.safeMethod
+import js.internal.InternalApi
 import js.objects.PropertyKey
 import js.promise.await
 import js.symbol.Symbol
@@ -13,7 +14,11 @@ import kotlinx.coroutines.flow.flow
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols)
  */
-external interface AsyncIterable<out T : JsAny?>
+external interface AsyncIterable<out T : JsAny?> {
+
+    @SubclassOptInRequired(InternalApi::class)
+    interface Mixin<out T : JsAny?>
+}
 
 operator fun <T : JsAny?> AsyncIterable<T>.get(
     key: Symbol.asyncIterator,
