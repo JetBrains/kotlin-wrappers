@@ -11,7 +11,7 @@ import js.iterable.JsIterable
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection)
  */
 external interface EnvironmentVariableCollection :
-    JsIterable<Tuple2</* variable: */ JsString, /* mutator: */ EnvironmentVariableMutator>> {
+    JsIterable.Mixin<Tuple2</* variable: */ JsString, /* mutator: */ EnvironmentVariableMutator>> {
     /**
      * Whether the collection should be cached for the workspace and applied to the terminal
      * across window reloads. When true the collection will be active immediately such when the

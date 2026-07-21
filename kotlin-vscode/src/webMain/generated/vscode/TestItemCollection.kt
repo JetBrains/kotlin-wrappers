@@ -13,7 +13,7 @@ import js.iterable.JsIterable
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItemCollection)
  */
 external interface TestItemCollection :
-    JsIterable<Tuple2</* id: */ JsString, /* testItem: */ TestItem>> {
+    JsIterable.Mixin<Tuple2</* id: */ JsString, /* testItem: */ TestItem>> {
     /**
      * Gets the number of items in the collection.
      *

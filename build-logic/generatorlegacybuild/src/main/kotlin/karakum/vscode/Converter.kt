@@ -198,19 +198,19 @@ private fun convertInterface(
         .let { if ("<T>" in it.substringBefore(":")) it.replace("<T>", "<T : JsAny?>") else it }
         .replace(
             " implements Iterable<[mimeType: string, item: DataTransferItem]>",
-            " :\nJsIterable<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>>",
+            " :\nJsIterable.Mixin<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>>",
         )
         .replace(
             " extends Iterable<[uri: Uri, diagnostics: readonly Diagnostic[]]>",
-            " :\nJsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>",
+            " :\nJsIterable.Mixin<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>",
         )
         .replace(
             " extends Iterable<[variable: string, mutator: EnvironmentVariableMutator]>",
-            " :\nJsIterable<Tuple2</* variable: */ JsString, /* mutator: */ EnvironmentVariableMutator>>",
+            " :\nJsIterable.Mixin<Tuple2</* variable: */ JsString, /* mutator: */ EnvironmentVariableMutator>>",
         )
         .replace(
             " extends Iterable<[id: string, testItem: TestItem]>",
-            " :\nJsIterable<Tuple2</* id: */ JsString, /* testItem: */ TestItem>>",
+            " :\nJsIterable.Mixin<Tuple2</* id: */ JsString, /* testItem: */ TestItem>>",
         )
         .replace(" extends Error", " :\nJsError")
         .replace(" extends ", " :\n")

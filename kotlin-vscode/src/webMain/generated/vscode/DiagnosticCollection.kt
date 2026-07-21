@@ -17,7 +17,7 @@ import js.iterable.JsIterable
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection)
  */
 external interface DiagnosticCollection :
-    JsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>,
+    JsIterable.Mixin<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>,
     DisposableLike {
     /**
      * The name of this diagnostic collection, for instance `typescript`. Every diagnostic

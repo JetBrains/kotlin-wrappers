@@ -17,7 +17,7 @@ import js.iterable.JsIterable
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransfer)
  */
 open external class DataTransfer :
-    JsIterable<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>> {
+    JsIterable.Mixin<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>> {
     /**
      * Retrieves the data transfer item for a given mime type.
      *
