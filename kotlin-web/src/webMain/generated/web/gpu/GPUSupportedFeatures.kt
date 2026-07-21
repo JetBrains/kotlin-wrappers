@@ -10,9 +10,8 @@ import js.collections.ReadonlySet
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedFeatures)
  */
-sealed /* final */
-external class GPUSupportedFeatures
+open external class GPUSupportedFeatures
 private constructor() :
-    ReadonlySet<JsString> {
+    ReadonlySet.Mixin<JsString> {
     override fun forEach(action: (item: JsString) -> Unit)
 }

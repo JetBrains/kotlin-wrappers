@@ -1123,8 +1123,8 @@ internal fun convertInterface(
         mapLikeParameters != null -> true
         additionalIterableParent == null -> false
         additionalIterableParent.startsWith("ReadonlyMap.Mixin<") -> true
-        additionalIterableParent.startsWith("MutableMapLike<") -> true
-        additionalIterableParent.startsWith("MutableSetLike<") -> true
+        additionalIterableParent.startsWith("MutableMapLike.Mixin<") -> true
+        additionalIterableParent.startsWith("MutableSetLike.Mixin<") -> true
         else -> false
     }
 
@@ -1498,15 +1498,8 @@ internal fun convertInterface(
 
     val modifier = when {
         // TEMP
-        hasPrivateConstructor && (
+        hasPrivateConstructor &&
                 name == "FileSystemDirectoryHandle"
-                        || name == "CustomStateSet"
-                        || name == "ViewTransitionTypeSet"
-                        || name == "HighlightRegistry"
-                        || name == "GPUSupportedFeatures"
-                        || name == "WGSLLanguageFeatures"
-                        || name == "FontFaceSet"
-                )
             -> "sealed /* final */\n"
 
         isClass

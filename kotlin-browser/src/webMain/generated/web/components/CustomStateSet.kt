@@ -9,7 +9,6 @@ import js.collections.MutableSetLike
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
  */
-sealed /* final */
-external class CustomStateSet
+open external class CustomStateSet
 private constructor() :
-    MutableSetLike<JsString>
+    MutableSetLike.Mixin<JsString>

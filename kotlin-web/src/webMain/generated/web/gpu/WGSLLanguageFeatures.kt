@@ -10,9 +10,8 @@ import js.collections.ReadonlySet
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WGSLLanguageFeatures)
  */
-sealed /* final */
-external class WGSLLanguageFeatures
+open external class WGSLLanguageFeatures
 private constructor() :
-    ReadonlySet<JsString> {
+    ReadonlySet.Mixin<JsString> {
     override fun forEach(action: (item: JsString) -> Unit)
 }

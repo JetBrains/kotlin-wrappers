@@ -9,7 +9,6 @@ import js.collections.MutableSetLike
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransitionTypeSet)
  */
-sealed /* final */
-external class ViewTransitionTypeSet
+open external class ViewTransitionTypeSet
 private constructor() :
-    MutableSetLike<JsString>
+    MutableSetLike.Mixin<JsString>

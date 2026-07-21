@@ -61,9 +61,10 @@ internal object IterableRegistry {
             ?: return null
 
         result = sequenceOf(
-            "Set<" to "MutableSetLike<",
-            "Map<" to "MutableMapLike<",
+            "Set<" to "MutableSetLike.Mixin<",
+            "Map<" to "MutableMapLike.Mixin<",
             "ReadonlyMap<" to "ReadonlyMap.Mixin<",
+            "ReadonlySet<" to "ReadonlySet.Mixin<",
         ).fold(result) { acc, (from, to) ->
             if (acc.startsWith(from)) {
                 acc.replaceFirst(from, to)

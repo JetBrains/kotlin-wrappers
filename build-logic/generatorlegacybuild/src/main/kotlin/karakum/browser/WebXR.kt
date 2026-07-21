@@ -97,10 +97,9 @@ internal fun webXrDeclarations(
             ConversionResult(
                 name = name,
                 body = """
-                abstract /* open */
-                external class $name
+                open external class $name
                 private constructor() :
-                    MutableSetLike<$typeParameter>
+                    MutableSetLike.Mixin<$typeParameter>
                 """.trimIndent(),
                 pkg = "web.xr",
             )

@@ -14,7 +14,7 @@ import web.ranges.AbstractRange
  */
 open external class Highlight(
     vararg initialRanges: AbstractRange,
-) : MutableSetLike<AbstractRange> {
+) : MutableSetLike.Mixin<AbstractRange> {
     /**
      * The **`priority`** property of the Highlight interface is a number used to determine which highlight's styles should be used to resolve style conflicts in overlapping parts. Highlights with a higher priority number have preference over those with a lower priority.
      *

@@ -10,10 +10,9 @@ import js.collections.MutableMapLike
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry)
  */
-sealed /* final */
-external class HighlightRegistry
+open external class HighlightRegistry
 private constructor() :
-    MutableMapLike<JsString, Highlight> {
+    MutableMapLike.Mixin<JsString, Highlight> {
     /**
      * The **`highlightsFromPoint()`** method of the HighlightRegistry interface returns an array of objects representing the custom highlights applied at a specific point within the viewport.
      *

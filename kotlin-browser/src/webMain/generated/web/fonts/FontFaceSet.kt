@@ -15,11 +15,10 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet)
  */
-sealed /* final */
-external class FontFaceSet
+open external class FontFaceSet
 private constructor() :
     EventTarget,
-    MutableSetLike<FontFace> {
+    MutableSetLike.Mixin<FontFace> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
      */

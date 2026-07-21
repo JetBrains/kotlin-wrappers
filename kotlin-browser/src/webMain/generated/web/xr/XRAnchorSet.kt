@@ -4,7 +4,6 @@ package web.xr
 
 import js.collections.MutableSetLike
 
-abstract /* open */
-external class XRAnchorSet
+open external class XRAnchorSet
 private constructor() :
-    MutableSetLike<XRAnchor>
+    MutableSetLike.Mixin<XRAnchor>
