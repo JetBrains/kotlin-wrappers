@@ -1239,9 +1239,6 @@ internal fun convertInterface(
                 -> result
                 .replaceFirst("fun forEach(", "override fun forEach(")
 
-            "Highlight",
-                -> result + "\n\n" + mutableSetLikeOverrides("AbstractRange")
-
             "Node",
                 -> result
                 .replace("val ownerDocument:", "open val ownerDocument:")
