@@ -1497,11 +1497,6 @@ internal fun convertInterface(
     }
 
     val modifier = when {
-        // TEMP
-        hasPrivateConstructor &&
-                name == "FileSystemDirectoryHandle"
-            -> "sealed /* final */\n"
-
         isClass
             -> "open"
 

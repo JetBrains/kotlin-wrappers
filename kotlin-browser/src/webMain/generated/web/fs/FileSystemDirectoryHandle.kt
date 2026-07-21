@@ -15,11 +15,10 @@ import js.serialization.Serializable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle)
  */
-sealed /* final */
-external class FileSystemDirectoryHandle
+open external class FileSystemDirectoryHandle
 private constructor() :
     FileSystemHandle,
-    AsyncMapLike<JsString, FileSystemHandle>,
+    AsyncMapLike.Mixin<JsString, FileSystemHandle>,
     Serializable {
     override val kind: FileSystemHandleKind.directory
 

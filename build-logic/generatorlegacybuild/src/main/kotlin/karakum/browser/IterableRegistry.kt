@@ -54,7 +54,7 @@ internal object IterableRegistry {
 
         if (type == "FileSystemDirectoryHandle") {
             require(additionalParentMap[type] == null)
-            return "AsyncMapLike<String, FileSystemHandle>"
+            return "AsyncMapLike.Mixin<String, FileSystemHandle>"
         }
 
         var result = additionalParentMap[type]
