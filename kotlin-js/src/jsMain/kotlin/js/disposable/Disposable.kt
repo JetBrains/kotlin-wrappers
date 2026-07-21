@@ -6,6 +6,12 @@ package js.disposable
 
 actual external interface Disposable {
 
-    actual interface Mixin :
-        Disposable
+    @JsSymbol("dispose")
+    fun `[@@dispose]`()
+
+    @Suppress("NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE")
+    actual interface Mixin : Disposable {
+
+        override fun `[@@dispose]`(): Unit = definedExternally
+    }
 }

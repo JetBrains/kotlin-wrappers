@@ -19,5 +19,7 @@ expect external interface AsyncDisposable :
         AsyncDisposable
 }
 
+// false positive
+@Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun AsyncDisposable.`[@@asyncDispose]`(): PromiseLike<Void> =
     safeCall(Symbol.asyncDispose)

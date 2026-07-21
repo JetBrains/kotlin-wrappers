@@ -18,5 +18,7 @@ expect external interface Disposable :
         Disposable
 }
 
+// false positive
+@Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 fun Disposable.`[@@dispose]`(): Void =
     safeCall(Symbol.dispose)
