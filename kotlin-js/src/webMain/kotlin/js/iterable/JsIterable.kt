@@ -10,7 +10,8 @@ import js.symbol.Symbol
 external interface JsIterable<out T : JsAny?> {
 
     @SubclassOptInRequired(InternalApi::class)
-    interface Mixin<out T : JsAny?>
+    interface Mixin<out T : JsAny?> :
+        JsIterable<T>
 }
 
 fun <T : JsAny?> JsIterable<T>.`[@@iterator]`(): JsIterator<T> =

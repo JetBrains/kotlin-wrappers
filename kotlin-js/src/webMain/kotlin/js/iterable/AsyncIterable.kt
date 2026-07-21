@@ -17,7 +17,8 @@ import kotlinx.coroutines.flow.flow
 external interface AsyncIterable<out T : JsAny?> {
 
     @SubclassOptInRequired(InternalApi::class)
-    interface Mixin<out T : JsAny?>
+    interface Mixin<out T : JsAny?> :
+        AsyncIterable<T>
 }
 
 fun <T : JsAny?> AsyncIterable<T>.`[@@asyncIterator]`(): AsyncIterator<T> =
