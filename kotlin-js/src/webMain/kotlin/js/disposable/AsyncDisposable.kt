@@ -5,7 +5,11 @@ import js.hacks.safeCall
 import js.promise.PromiseLike
 import js.symbol.Symbol
 
-external interface AsyncDisposable
+external interface AsyncDisposable {
+
+    interface Mixin :
+        AsyncDisposable
+}
 
 fun AsyncDisposable.`[@@asyncDispose]`(): PromiseLike<Void> =
     safeCall(Symbol.asyncDispose)
