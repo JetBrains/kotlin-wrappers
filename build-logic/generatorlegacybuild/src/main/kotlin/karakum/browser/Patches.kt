@@ -466,6 +466,25 @@ internal fun String.applyPatches(): String {
         .patchInterface("LockManager") {
             it.replace(": Promise<Awaited<T>>;", ": Promise<T>;")
         }
+        .patchInterfaces("Element", "Window") {
+            it.splitToSequence("\n")
+                .joinToString("\n") { line ->
+                    val patchRequired = sequenceOf(
+                        "scroll",
+                        "scrollBy",
+                        "scrollIntoView",
+                        "scrollTo",
+                    ).any { line.startsWith("    $it(") }
+
+                    if (patchRequired) {
+                        line.removeSuffix("): void;")
+                            .also { require(it != line) }
+                            .plus("): Promise<Void> ?;")
+                    } else {
+                        line
+                    }
+                }
+        }
         .patchInterface("Body") {
             it + "\n" + """
             |    /**
