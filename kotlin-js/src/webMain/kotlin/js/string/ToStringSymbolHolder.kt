@@ -1,7 +1,8 @@
-package js.symbol
+package js.string
 
 import js.hacks.safeCall
 import js.string.JsStrings.toKotlinString
+import js.symbol.Symbol
 
 external interface ToStringSymbolHolder
 
