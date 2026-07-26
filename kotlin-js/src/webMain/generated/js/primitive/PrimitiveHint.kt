@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package js.symbol
+package js.primitive
 
 import js.reflect.unsafeCast
 

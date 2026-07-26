@@ -2,7 +2,9 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package js.symbol
+package js.primitive
+
+import js.symbol.Symbol
 
 external interface ToPrimitiveSymbolHolder {
     operator fun get(

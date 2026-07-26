@@ -62,7 +62,7 @@ private val UNION_TYPES = listOf(
             "string",
             "default",
         ),
-        pkg = "js.symbol",
+        pkg = "js.primitive",
     ),
 )
 
