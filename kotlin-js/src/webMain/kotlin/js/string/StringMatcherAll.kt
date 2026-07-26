@@ -1,7 +1,7 @@
 package js.string
 
-import js.array.ReadonlyArray
 import js.iterable.JsIterable
+import js.regexp.RegExpExecArray
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/matchAll)
@@ -14,5 +14,5 @@ external interface StringMatcherAll {
     @JsSymbol("matchAll")
     fun `[@@matchAll]`(
         input: String,
-    ): JsIterable<ReadonlyArray<JsString>>
+    ): JsIterable<RegExpExecArray>
 }

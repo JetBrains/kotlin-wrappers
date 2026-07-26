@@ -1,6 +1,6 @@
 package js.string
 
-import js.array.ReadonlyArray
+import js.regexp.RegExpMatchArray
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/match)
@@ -13,5 +13,5 @@ external interface StringMatcher {
     @JsSymbol("match")
     fun `[@@match]`(
         input: String,
-    ): ReadonlyArray<JsString>
+    ): RegExpMatchArray?
 }
