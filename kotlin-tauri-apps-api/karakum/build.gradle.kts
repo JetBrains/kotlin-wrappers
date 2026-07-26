@@ -43,7 +43,7 @@ fun addTauriFixes() {
             .replace("fun setBackgroundColor", "override fun setBackgroundColor")
             .replace("var label", "override var label")
             .replace("var listeners", "override var listeners")
-            .replace("Window {", "// TODO @seskar.js.JsMixin tauri.apps.api.Window {")
+            .replace("Window {", "// TODO @js.mixin.JsMixin tauri.apps.api.Window {")
             .replace("Webview,", "Webview {")
             .replace(
                 "open override fun setBackgroundColor(color: Color): js.promise.Promise<js.core.Void>",

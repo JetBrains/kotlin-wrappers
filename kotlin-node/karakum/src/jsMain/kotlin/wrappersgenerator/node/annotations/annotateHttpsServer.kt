@@ -37,6 +37,6 @@ suspend fun annotateHttpsServer(node: Node, context: AnnotationContext) = nullab
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "Server")
 
-        "@seskar.js.JsMixin"
+        "@js.mixin.JsMixin"
     }
 }

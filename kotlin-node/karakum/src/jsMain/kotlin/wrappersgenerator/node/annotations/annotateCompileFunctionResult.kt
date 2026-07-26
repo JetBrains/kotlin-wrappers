@@ -46,6 +46,6 @@ suspend fun annotateCompileFunctionResult(node: Node, context: AnnotationContext
         val functionName = ensureNotNull(function.name)
         ensure(functionName.text == "compileFunction")
 
-        "@seskar.js.JsMixin"
+        "@js.mixin.JsMixin"
     }
 }

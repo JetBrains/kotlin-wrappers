@@ -33,6 +33,6 @@ suspend fun annotateDuplex(node: Node, context: AnnotationContext) = nullable {
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "Duplex")
 
-        "@seskar.js.JsMixin"
+        "@js.mixin.JsMixin"
     }
 }

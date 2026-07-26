@@ -16,7 +16,7 @@ import node.stream.Duplex
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
 external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
     node.tls.Server,
-    @seskar.js.JsMixin
+    @js.mixin.JsMixin
     node.http.Server<Request, Response> {
     constructor (requestListener: node.http.RequestListener<Request, Response> = definedExternally)
     constructor (

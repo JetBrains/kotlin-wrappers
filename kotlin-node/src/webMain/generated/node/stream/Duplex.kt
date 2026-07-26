@@ -21,9 +21,9 @@ import web.blob.Blob as NodeBlob
 open external class Duplex :
     Stream,
     node.ReadWriteStream,
-    @seskar.js.JsMixin
+    @js.mixin.JsMixin
     Readable,
-    @seskar.js.JsMixin
+    @js.mixin.JsMixin
     Writable {
     constructor (opts: DuplexOptions<*> = definedExternally)
 

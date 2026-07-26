@@ -12,7 +12,7 @@ import tauri.apps.api.webview.WebviewLabel
 
 open external class WebviewWindow :
     Webview {
-    // TODO @seskar.js.JsMixin tauri.apps.api.Window {
+    // TODO @js.mixin.JsMixin tauri.apps.api.Window {
     /**
      * Creates a new {@link Window} hosting a {@link Webview}.
      * @example
