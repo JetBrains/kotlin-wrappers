@@ -1,5 +1,8 @@
 package js.primitive
 
-typealias ToPrimitive = (
-    hint: PrimitiveHint?,
-) -> JsAny?
+external interface ToPrimitive {
+    @JsSymbol("toPrimitive")
+    fun `[@@toPrimitive]`(
+        hint: PrimitiveHint? = definedExternally,
+    ): JsAny?
+}
