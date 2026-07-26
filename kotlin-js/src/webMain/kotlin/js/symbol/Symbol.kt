@@ -1,7 +1,7 @@
 package js.symbol
 
-import js.core.JsPrimitive
 import js.objects.PropertyKey
+import js.primitive.JsPrimitive
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol)

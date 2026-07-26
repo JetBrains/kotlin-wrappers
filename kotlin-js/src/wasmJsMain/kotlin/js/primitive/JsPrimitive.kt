@@ -2,6 +2,6 @@
     "INVISIBLE_REFERENCE",
 )
 
-package js.core
+package js.primitive
 
 internal actual typealias JsPrimitive = kotlin.wasm.internal.JsPrimitive

@@ -1,4 +1,4 @@
-package js.core
+package js.primitive
 
 @OptionalExpectation
 @Target(AnnotationTarget.CLASS)

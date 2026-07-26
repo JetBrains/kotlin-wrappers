@@ -1,9 +1,9 @@
 package js.numbers
 
-import js.core.JsPrimitive
 import js.function.JsFunction
 import js.function.invoke
 import js.numbers.internal.*
+import js.primitive.JsPrimitive
 
 @PublishedApi
 internal val POW = JsFunction<BigInt, BigInt, BigInt>(
