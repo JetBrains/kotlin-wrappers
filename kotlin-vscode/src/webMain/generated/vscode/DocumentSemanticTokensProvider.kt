@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Void
+import js.void.Void
 
 /**
  * The document semantic tokens provider interface defines the contract between extensions and

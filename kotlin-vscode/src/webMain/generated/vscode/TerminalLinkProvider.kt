@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 /**
  * A provider that enables detection and handling of links within terminals.

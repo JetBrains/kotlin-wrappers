@@ -1377,7 +1377,7 @@ open external class BrowserWindow : BaseWindow {
     fun loadFile(
         filePath: String,
         options: LoadFileOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -1400,7 +1400,7 @@ open external class BrowserWindow : BaseWindow {
     fun loadURL(
         url: String,
         options: LoadURLOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Maximizes the window. This will also show (but not focus) the window if it isn't

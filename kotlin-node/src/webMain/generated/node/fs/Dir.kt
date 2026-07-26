@@ -41,10 +41,10 @@ external class Dir : js.iterable.AsyncIterable.Mixin<Dirent<*>> {
      * @since v12.12.0
      */
     @JsName("close")
-    fun closeAsync(): js.promise.Promise<js.core.Void>
+    fun closeAsync(): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun close(): js.core.Void
+    suspend fun close(): js.void.Void
 
     fun close(cb: NoParamCallback)
 

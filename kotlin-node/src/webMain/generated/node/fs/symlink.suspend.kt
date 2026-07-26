@@ -7,4 +7,4 @@ external suspend fun symlink(
     target: PathLike,
     path: PathLike,
     type: String? = definedExternally,
-): js.core.Void
+): js.void.Void

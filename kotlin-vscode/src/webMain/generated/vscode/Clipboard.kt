@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * The clipboard provides read and write access to the system's clipboard.

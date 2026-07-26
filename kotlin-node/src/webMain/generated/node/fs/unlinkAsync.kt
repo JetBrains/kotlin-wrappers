@@ -12,4 +12,4 @@ package node.fs
  * @return Fulfills with `undefined` upon success.
  */
 @JsName("unlink")
-external fun unlinkAsync(path: PathLike): js.promise.Promise<js.core.Void>
+external fun unlinkAsync(path: PathLike): js.promise.Promise<js.void.Void>

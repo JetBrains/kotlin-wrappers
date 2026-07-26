@@ -3,9 +3,9 @@
 package web.codecs
 
 import js.closeable.JsCloseable
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /**
  * The **`ImageDecoder`** interface of the WebCodecs API provides a way to unpack and decode encoded image data.

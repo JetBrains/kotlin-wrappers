@@ -3,8 +3,8 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.numbers.JsInt
+import js.void.Void
 import web.dom.DOMStringList
 
 /**

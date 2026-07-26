@@ -84,5 +84,5 @@ external class NavigationHistory {
      * (see `did-fail-load`). A noop rejection handler is already attached, which
      * avoids unhandled rejection errors.
      */
-    fun restore(options: RestoreOptions): js.promise.Promise<js.core.Void>
+    fun restore(options: RestoreOptions): js.promise.Promise<js.void.Void>
 }

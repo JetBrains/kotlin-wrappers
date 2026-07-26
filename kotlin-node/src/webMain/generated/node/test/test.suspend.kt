@@ -6,23 +6,23 @@ package node.test
 external suspend fun test(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun test(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun test(
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun test(fn: TestFn = definedExternally): js.core.Void
+external suspend fun test(fn: TestFn = definedExternally): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun test(): js.core.Void
+external suspend fun test(): js.void.Void

@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Void
+import js.void.Void
 
 /**
  * A uri handler is responsible for handling system-wide [uris][Uri].

@@ -31,7 +31,7 @@ external interface ContentTracing {
      *
      * @experimental
      */
-    fun enableHeapProfiling(options: EnableHeapProfilingOptions = definedExternally): js.promise.Promise<js.core.Void>
+    fun enableHeapProfiling(options: EnableHeapProfilingOptions = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * resolves with an array of category groups once all child processes have
@@ -69,7 +69,7 @@ external interface ContentTracing {
      * If a recording is already running, the promise will be immediately resolved, as
      * only one trace operation can be in progress at a time.
      */
-    fun startRecording(options: TraceConfig): js.promise.Promise<js.core.Void>
+    fun startRecording(options: TraceConfig): js.promise.Promise<js.void.Void>
 
     /**
      * resolved once all child processes have acknowledged the `startRecording`
@@ -83,7 +83,7 @@ external interface ContentTracing {
      * If a recording is already running, the promise will be immediately resolved, as
      * only one trace operation can be in progress at a time.
      */
-    fun startRecording(options: TraceCategoriesAndOptions): js.promise.Promise<js.core.Void>
+    fun startRecording(options: TraceCategoriesAndOptions): js.promise.Promise<js.void.Void>
 
     /**
      * resolves with a path to a file that contains the traced data once all child

@@ -7,22 +7,22 @@ external suspend fun todo(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun todo(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun todo(
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun todo(fn: TestFn = definedExternally): js.core.Void
+external suspend fun todo(fn: TestFn = definedExternally): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun todo(): js.core.Void
+external suspend fun todo(): js.void.Void

@@ -1,7 +1,7 @@
 package example
 
-import js.core.Void
 import js.import.importAsync
+import js.void.Void
 import react.create
 import react.dom.client.createRoot
 import web.dom.document

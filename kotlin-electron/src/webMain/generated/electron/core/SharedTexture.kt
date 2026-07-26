@@ -30,7 +30,7 @@ external interface SharedTexture {
     fun sendSharedTexture(
         options: SendSharedTextureOptions,
         vararg args: Any?,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Set a callback to receive imported shared textures from the main process.
@@ -40,7 +40,7 @@ external interface SharedTexture {
      * @experimental
      */
     fun setSharedTextureReceiver(
-        callback: Function<js.promise.Promise<js.core.Void>>, // (receivedSharedTextureData: ReceivedSharedTextureData, ...args: any[]) => Promise<void>
+        callback: Function<js.promise.Promise<js.void.Void>>, // (receivedSharedTextureData: ReceivedSharedTextureData, ...args: any[]) => Promise<void>
     )
 
     /**

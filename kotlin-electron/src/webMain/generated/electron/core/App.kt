@@ -1327,7 +1327,7 @@ external interface App : node.events.EventEmitter {
      *
      * This method can only be called after app is ready.
      */
-    fun setProxy(config: ProxyConfig): js.promise.Promise<js.core.Void>
+    fun setProxy(config: ProxyConfig): js.promise.Promise<js.void.Void>
 
     /**
      * Set the `Secure Keyboard Entry` is enabled in your application.
@@ -1443,7 +1443,7 @@ external interface App : node.events.EventEmitter {
      * to checking `app.isReady()` and subscribing to the `ready` event if the app is
      * not ready yet.
      */
-    fun whenReady(): js.promise.Promise<js.core.Void>
+    fun whenReady(): js.promise.Promise<js.void.Void>
 
     /**
      * A `boolean` property that's `true` if Chrome's accessibility support is enabled,
@@ -1585,8 +1585,8 @@ external interface App : node.events.EventEmitter {
                                 (
                         isTrusted: Boolean,
                     ) -> Unit,
-                            Boolean
-                            >
+                            Boolean,
+                            >,
                     >
 
     @web.events.JsEvent("child-process-gone")
@@ -1619,8 +1619,8 @@ external interface App : node.events.EventEmitter {
                                 (
                         username: String?, /* use undefined for default */
                         password: String?, // use undefined for default
-                    ) -> Unit
-                            >
+                    ) -> Unit,
+                            >,
                     >
 
     @web.events.JsEvent("new-window-for-tab")
@@ -1657,8 +1657,8 @@ external interface App : node.events.EventEmitter {
                             js.array.ReadonlyArray<Certificate>,
                                 (
                         certificate: Certificate?, // use undefined for default
-                    ) -> Unit
-                            >
+                    ) -> Unit,
+                            >,
                     >
 
     @web.events.JsEvent("session-created")

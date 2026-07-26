@@ -3,9 +3,9 @@
 package web.cookie
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /**
  * The **`CookieStoreManager`** interface of the Cookie Store API allows service workers to subscribe to cookie change events. Call subscribe() on a particular service worker registration to receive change events.

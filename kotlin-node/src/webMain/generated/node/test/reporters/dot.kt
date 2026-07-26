@@ -12,4 +12,4 @@ package node.test.reporters
  */
 external fun dot(
     source: TestEventGenerator,
-): js.generator.AsyncGenerator<String /* "\n" | "." | "X" */, js.core.Void, *>
+): js.generator.AsyncGenerator<String /* "\n" | "." | "X" */, js.void.Void, *>

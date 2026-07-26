@@ -7,8 +7,8 @@
 
 package react.use
 
-import js.core.Void
 import js.reflect.unsafeCast
+import js.void.Void
 import react.useRef
 import kotlin.reflect.KProperty
 

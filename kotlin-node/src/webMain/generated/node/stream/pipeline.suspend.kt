@@ -51,18 +51,18 @@ external suspend fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>,
 external suspend fun pipeline(
     streams: js.array.ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
     options: PipelineOptions = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun pipeline(
     stream1: node.ReadableStream,
     stream2: node.ReadWriteStream,
     vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun pipeline(
     stream1: node.ReadableStream,
     stream2: node.WritableStream,
     vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
-): js.core.Void
+): js.void.Void

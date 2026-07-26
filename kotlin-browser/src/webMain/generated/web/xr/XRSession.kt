@@ -3,10 +3,10 @@
 package web.xr
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Float32Array
+import js.void.Void
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget

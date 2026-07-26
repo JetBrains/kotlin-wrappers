@@ -6,4 +6,4 @@ package node.fs
 external suspend fun rename(
     oldPath: PathLike,
     newPath: PathLike,
-): js.core.Void
+): js.void.Void

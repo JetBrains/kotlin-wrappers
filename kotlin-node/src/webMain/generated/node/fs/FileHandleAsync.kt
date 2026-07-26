@@ -23,7 +23,7 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("appendFile")
-    fun appendFileAsync(data: String): js.promise.Promise<js.core.Void>
+    fun appendFileAsync(data: String): js.promise.Promise<js.void.Void>
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -37,7 +37,7 @@ external interface FileHandle {
     fun appendFileAsync(
         data: String,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -51,7 +51,7 @@ external interface FileHandle {
     fun appendFileAsync(
         data: String,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -62,7 +62,7 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("appendFile")
-    fun appendFileAsync(data: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.core.Void>
+    fun appendFileAsync(data: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.void.Void>
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -76,7 +76,7 @@ external interface FileHandle {
     fun appendFileAsync(
         data: js.typedarrays.Uint8Array<*>,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -90,10 +90,10 @@ external interface FileHandle {
     fun appendFileAsync(
         data: js.typedarrays.Uint8Array<*>,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun appendFile(data: String): js.core.Void
+    suspend fun appendFile(data: String): js.void.Void
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -107,7 +107,7 @@ external interface FileHandle {
     suspend fun appendFile(
         data: String,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -121,7 +121,7 @@ external interface FileHandle {
     suspend fun appendFile(
         data: String,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -132,7 +132,7 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @seskar.js.JsAsync
-    suspend fun appendFile(data: js.typedarrays.Uint8Array<*>): js.core.Void
+    suspend fun appendFile(data: js.typedarrays.Uint8Array<*>): js.void.Void
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -146,7 +146,7 @@ external interface FileHandle {
     suspend fun appendFile(
         data: js.typedarrays.Uint8Array<*>,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -160,7 +160,7 @@ external interface FileHandle {
     suspend fun appendFile(
         data: js.typedarrays.Uint8Array<*>,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Changes the ownership of the file. A wrapper for [`chown(2)`](http://man7.org/linux/man-pages/man2/chown.2.html).
@@ -173,13 +173,13 @@ external interface FileHandle {
     fun chownAsync(
         uid: Number,
         gid: Number,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun chown(
         uid: Number,
         gid: Number,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Modifies the permissions on the file. See [`chmod(2)`](http://man7.org/linux/man-pages/man2/chmod.2.html).
@@ -188,10 +188,10 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("chmod")
-    fun chmodAsync(mode: Mode): js.promise.Promise<js.core.Void>
+    fun chmodAsync(mode: Mode): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun chmod(mode: Mode): js.core.Void
+    suspend fun chmod(mode: Mode): js.void.Void
 
     /**
      * Unlike the 16 KiB default `highWaterMark` for a `stream.Readable`, the stream
@@ -275,10 +275,10 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("datasync")
-    fun datasyncAsync(): js.promise.Promise<js.core.Void>
+    fun datasyncAsync(): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun datasync(): js.core.Void
+    suspend fun datasync(): js.void.Void
 
     /**
      * Request that all data for the open file descriptor is flushed to the storage
@@ -288,10 +288,10 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("sync")
-    fun syncAsync(): js.promise.Promise<js.core.Void>
+    fun syncAsync(): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun sync(): js.core.Void
+    suspend fun sync(): js.void.Void
 
     /**
      * Reads data from the file and stores that in the given buffer.
@@ -526,10 +526,10 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("truncate")
-    fun truncateAsync(len: Number = definedExternally): js.promise.Promise<js.core.Void>
+    fun truncateAsync(len: Number = definedExternally): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun truncate(len: Number = definedExternally): js.core.Void
+    suspend fun truncate(len: Number = definedExternally): js.void.Void
 
     /**
      * Change the file system timestamps of the object referenced by the `FileHandle` then fulfills the promise with no arguments upon success.
@@ -539,13 +539,13 @@ external interface FileHandle {
     fun utimesAsync(
         atime: TimeLike,
         mtime: TimeLike,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun utimes(
         atime: TimeLike,
         mtime: TimeLike,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -566,7 +566,7 @@ external interface FileHandle {
      * @since v10.0.0
      */
     @JsName("writeFile")
-    fun writeFileAsync(data: String): js.promise.Promise<js.core.Void>
+    fun writeFileAsync(data: String): js.promise.Promise<js.void.Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -590,7 +590,7 @@ external interface FileHandle {
     fun writeFileAsync(
         data: String,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -614,7 +614,7 @@ external interface FileHandle {
     fun writeFileAsync(
         data: String,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -635,7 +635,7 @@ external interface FileHandle {
      * @since v10.0.0
      */
     @JsName("writeFile")
-    fun writeFileAsync(data: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.core.Void>
+    fun writeFileAsync(data: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.void.Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -659,7 +659,7 @@ external interface FileHandle {
     fun writeFileAsync(
         data: js.typedarrays.Uint8Array<*>,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -683,10 +683,10 @@ external interface FileHandle {
     fun writeFileAsync(
         data: js.typedarrays.Uint8Array<*>,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun writeFile(data: String): js.core.Void
+    suspend fun writeFile(data: String): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -710,7 +710,7 @@ external interface FileHandle {
     suspend fun writeFile(
         data: String,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -734,7 +734,7 @@ external interface FileHandle {
     suspend fun writeFile(
         data: String,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -755,7 +755,7 @@ external interface FileHandle {
      * @since v10.0.0
      */
     @seskar.js.JsAsync
-    suspend fun writeFile(data: js.typedarrays.Uint8Array<*>): js.core.Void
+    suspend fun writeFile(data: js.typedarrays.Uint8Array<*>): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -779,7 +779,7 @@ external interface FileHandle {
     suspend fun writeFile(
         data: js.typedarrays.Uint8Array<*>,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -803,7 +803,7 @@ external interface FileHandle {
     suspend fun writeFile(
         data: js.typedarrays.Uint8Array<*>,
         options: node.buffer.BufferEncoding? = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Write `buffer` to the file.
@@ -928,8 +928,8 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("close")
-    fun closeAsync(): js.promise.Promise<js.core.Void>
+    fun closeAsync(): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun close(): js.core.Void
+    suspend fun close(): js.void.Void
 }

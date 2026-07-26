@@ -22,4 +22,4 @@ external fun symlinkAsync(
     target: PathLike,
     path: PathLike,
     type: String? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

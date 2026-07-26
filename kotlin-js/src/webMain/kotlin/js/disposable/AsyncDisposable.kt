@@ -5,11 +5,11 @@
 
 package js.disposable
 
-import js.core.Void
 import js.hacks.safeCall
 import js.internal.InternalApi
 import js.promise.PromiseLike
 import js.symbol.Symbol
+import js.void.Void
 
 expect external interface AsyncDisposable :
     JsAny {

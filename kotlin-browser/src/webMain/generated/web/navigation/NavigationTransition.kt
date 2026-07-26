@@ -2,8 +2,8 @@
 
 package web.navigation
 
-import js.core.Void
 import js.promise.Promise
+import js.void.Void
 
 /**
  * The **`NavigationTransition`** interface of the Navigation API represents an ongoing navigation — a navigation that hasn't yet reached the navigatesuccess or navigateerror stage.

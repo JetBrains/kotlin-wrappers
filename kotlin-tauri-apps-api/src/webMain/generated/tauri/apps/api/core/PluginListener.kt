@@ -11,5 +11,5 @@ external class PluginListener {
     var event: String
     var channelId: Double
 
-    fun unregister(): js.promise.Promise<js.core.Void>
+    fun unregister(): js.promise.Promise<js.void.Void>
 }

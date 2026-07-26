@@ -7,7 +7,7 @@ external suspend fun cp(
     source: String,
     destination: String,
     opts: CopyOptions = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -26,7 +26,7 @@ external suspend fun cp(
     source: String,
     destination: web.url.URL,
     opts: CopyOptions = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -45,7 +45,7 @@ external suspend fun cp(
     source: web.url.URL,
     destination: String,
     opts: CopyOptions = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -64,4 +64,4 @@ external suspend fun cp(
     source: web.url.URL,
     destination: web.url.URL,
     opts: CopyOptions = definedExternally,
-): js.core.Void
+): js.void.Void

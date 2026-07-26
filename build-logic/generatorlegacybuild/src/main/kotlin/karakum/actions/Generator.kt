@@ -18,9 +18,9 @@ import js.objects.ReadonlyRecord
 import js.objects.Record
 import js.array.Tuple2
 import js.array.ReadonlyArray
-import js.core.Void
 import js.errors.JsError
 import js.generator.AsyncGenerator
+import js.void.Void
 import node.buffer.Buffer
 import node.http.IncomingHttpHeaders
 import node.http.OutgoingHttpHeaders

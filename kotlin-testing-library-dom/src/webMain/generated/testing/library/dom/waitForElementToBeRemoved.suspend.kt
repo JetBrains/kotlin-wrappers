@@ -8,10 +8,10 @@ package testing.library.dom
 external suspend fun <T> waitForElementToBeRemoved(
     callback: T,
     options: waitForOptions = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun <T> waitForElementToBeRemoved(
     callback: () -> T,
     options: waitForOptions = definedExternally,
-): js.core.Void
+): js.void.Void

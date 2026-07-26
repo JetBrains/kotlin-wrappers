@@ -5,9 +5,9 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import js.void.Void
 
 /**
  * Namespace for dealing with the current workspace. A workspace is the collection of one

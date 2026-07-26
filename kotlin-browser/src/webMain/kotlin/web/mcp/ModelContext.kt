@@ -1,7 +1,7 @@
 package web.mcp
 
-import js.core.Void
 import js.promise.Promise
+import js.void.Void
 import web.abort.unsafeAbortable
 import web.coroutines.await
 import web.events.Event

@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Void
+import js.void.Void
 
 /**
  * A webview based view.

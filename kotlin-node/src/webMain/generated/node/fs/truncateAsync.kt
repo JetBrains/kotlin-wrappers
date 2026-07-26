@@ -14,4 +14,4 @@ package node.fs
 external fun truncateAsync(
     path: PathLike,
     len: Number = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

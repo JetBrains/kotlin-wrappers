@@ -6,4 +6,4 @@ package node.fs
 external suspend fun truncate(
     path: PathLike,
     len: Number = definedExternally,
-): js.core.Void
+): js.void.Void

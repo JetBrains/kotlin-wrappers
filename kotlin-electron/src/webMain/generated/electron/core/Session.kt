@@ -185,19 +185,19 @@ external class Session : NodeEventEmitter {
     /**
      * resolves when the session’s HTTP authentication cache has been cleared.
      */
-    fun clearAuthCache(): js.promise.Promise<js.core.Void>
+    fun clearAuthCache(): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when the cache clear operation is complete.
      *
      * Clears the session’s HTTP cache.
      */
-    fun clearCache(): js.promise.Promise<js.core.Void>
+    fun clearCache(): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when the code cache clear operation is complete.
      */
-    fun clearCodeCaches(options: ClearCodeCachesOptions): js.promise.Promise<js.core.Void>
+    fun clearCodeCaches(options: ClearCodeCachesOptions): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when all data has been cleared.
@@ -222,19 +222,19 @@ external class Session : NodeEventEmitter {
      *
      * For more information, refer to Chromium's `BrowsingDataRemover` interface.
      */
-    fun clearData(options: ClearDataOptions = definedExternally): js.promise.Promise<js.core.Void>
+    fun clearData(options: ClearDataOptions = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Resolves when the operation is complete.
      *
      * Clears the host resolver cache.
      */
-    fun clearHostResolverCache(): js.promise.Promise<js.core.Void>
+    fun clearHostResolverCache(): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when the dictionary cache has been cleared, both in memory and on disk.
      */
-    fun clearSharedDictionaryCache(): js.promise.Promise<js.core.Void>
+    fun clearSharedDictionaryCache(): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when the dictionary cache has been cleared for the specified isolation
@@ -242,19 +242,19 @@ external class Session : NodeEventEmitter {
      */
     fun clearSharedDictionaryCacheForIsolationKey(
         options: ClearSharedDictionaryCacheForIsolationKeyOptions,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when the storage data has been cleared.
      */
-    fun clearStorageData(options: ClearStorageDataOptions = definedExternally): js.promise.Promise<js.core.Void>
+    fun clearStorageData(options: ClearStorageDataOptions = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Resolves when all connections are closed.
      *
      * > [!NOTE] It will terminate / fail all requests currently in flight.
      */
-    fun closeAllConnections(): js.promise.Promise<js.core.Void>
+    fun closeAllConnections(): js.promise.Promise<js.void.Void>
 
     /**
      * Allows resuming `cancelled` or `interrupted` downloads from previous `Session`.
@@ -362,7 +362,7 @@ external class Session : NodeEventEmitter {
      * proxy configuration is reapplied if it's already available. The pac script will
      * be fetched from `pacScript` again if the proxy mode is `pac_script`.
      */
-    fun forceReloadProxyConfig(): js.promise.Promise<js.core.Void>
+    fun forceReloadProxyConfig(): js.promise.Promise<js.void.Void>
 
     /**
      * A list of all loaded extensions.
@@ -706,7 +706,7 @@ external class Session : NodeEventEmitter {
      * to prevent pooled sockets using previous proxy from being reused by future
      * requests.
      */
-    fun setProxy(config: ProxyConfig): js.promise.Promise<js.core.Void>
+    fun setProxy(config: ProxyConfig): js.promise.Promise<js.void.Void>
 
     /**
      * By default Electron will download hunspell dictionaries from the Chromium CDN.
@@ -870,8 +870,8 @@ external class Session : NodeEventEmitter {
                             FileSystemAccessRestrictedDetails,
                                 (
                         action: SessionFileSystemAccessRestrictedListenerCallbackAction,
-                    ) -> Unit
-                            >
+                    ) -> Unit,
+                            >,
                     >
 
     @web.events.JsEvent("hid-device-added")
@@ -893,8 +893,8 @@ external class Session : NodeEventEmitter {
                     SelectHidDeviceDetails,
                         (
                 deviceId: String?, // use undefined for default
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("select-serial-port")
@@ -906,8 +906,8 @@ external class Session : NodeEventEmitter {
                             WebContents,
                                 (
                         portId: String,
-                    ) -> Unit
-                            >
+                    ) -> Unit,
+                            >,
                     >
 
     @web.events.JsEvent("select-usb-device")
@@ -917,8 +917,8 @@ external class Session : NodeEventEmitter {
                     SelectUsbDeviceDetails,
                         (
                 deviceId: String?, // use undefined for default
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("select-webauthn-account")
@@ -928,8 +928,8 @@ external class Session : NodeEventEmitter {
                     SelectWebauthnAccountDetails,
                         (
                 credentialId: String?, // use undefined for default
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("serial-port-added")

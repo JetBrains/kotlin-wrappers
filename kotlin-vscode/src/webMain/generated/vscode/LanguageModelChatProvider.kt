@@ -3,9 +3,9 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.numbers.JsInt
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * A LanguageModelChatProvider implements access to language models, which users can then use through the chat view, or through extension API by acquiring a LanguageModelChat.

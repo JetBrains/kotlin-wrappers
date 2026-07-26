@@ -10,10 +10,10 @@ package testing.library.dom
 external fun <T> waitForElementToBeRemovedAsync(
     callback: T,
     options: waitForOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("waitForElementToBeRemoved")
 external fun <T> waitForElementToBeRemovedAsync(
     callback: () -> T,
     options: waitForOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

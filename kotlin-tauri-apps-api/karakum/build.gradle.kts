@@ -16,7 +16,7 @@ fun addTauriFixes() {
     listOf(
         "webviewwindow/WebviewWindow.kt",
         "webview/Webview.kt",
-        "window/Window.kt"
+        "window/Window.kt",
     ).forEach { path ->
         addFix(path) { content ->
             content
@@ -46,8 +46,8 @@ fun addTauriFixes() {
             .replace("Window {", "// TODO @js.mixin.JsMixin tauri.apps.api.Window {")
             .replace("Webview,", "Webview {")
             .replace(
-                "open override fun setBackgroundColor(color: Color): js.promise.Promise<js.core.Void>",
-                "// TODO open override fun setBackgroundColor(color: Color): js.promise.Promise<js.core.Void>"
+                "open override fun setBackgroundColor(color: Color): js.promise.Promise<js.void.Void>",
+                "// TODO open override fun setBackgroundColor(color: Color): js.promise.Promise<js.void.Void>",
             )
     }
 
@@ -55,7 +55,7 @@ fun addTauriFixes() {
         "LogicalPositionObject",
         "LogicalSizeObject",
         "PhysicalPositionObject",
-        "PhysicalSizeObject"
+        "PhysicalSizeObject",
     ).forEach { fileName ->
         addFix("dpi/$fileName.kt") { content ->
             content.replaceFirst("interface $fileName", "interface ${fileName}Temp")
@@ -66,12 +66,12 @@ fun addTauriFixes() {
         "LogicalPosition",
         "LogicalSize",
         "PhysicalPosition",
-        "PhysicalSize"
+        "PhysicalSize",
     ).forEach { fileName ->
         addFix("dpi/$fileName.kt") { content ->
             content.replaceFirst(
                 "constructor (`object`: ${fileName}Object)",
-                "constructor(`object`: ${fileName}ObjectTemp)"
+                "constructor(`object`: ${fileName}ObjectTemp)",
             )
         }
     }

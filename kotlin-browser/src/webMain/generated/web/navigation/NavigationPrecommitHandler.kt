@@ -2,8 +2,8 @@
 
 package web.navigation
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 typealias NavigationPrecommitHandler = (
     controller: NavigationPrecommitController,

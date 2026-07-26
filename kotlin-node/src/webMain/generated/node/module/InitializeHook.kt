@@ -12,4 +12,4 @@ package node.module
  * `Promise`, in which case it will be awaited before the main application thread
  * execution resumes.
  */
-typealias InitializeHook<Data /* default is Any? */> = (data: Data) -> js.promise.PromiseResult<js.core.Void>
+typealias InitializeHook<Data /* default is Any? */> = (data: Data) -> js.promise.PromiseResult<js.void.Void>

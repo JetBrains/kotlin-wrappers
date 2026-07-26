@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 /**
  * Namespace for dealing with installed extensions. Extensions are represented

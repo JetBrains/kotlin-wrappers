@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 /**
  * The folding range provider interface defines the contract between extensions and

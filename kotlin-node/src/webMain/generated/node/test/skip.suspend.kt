@@ -7,22 +7,22 @@ external suspend fun skip(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun skip(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun skip(
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun skip(fn: TestFn = definedExternally): js.core.Void
+external suspend fun skip(fn: TestFn = definedExternally): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun skip(): js.core.Void
+external suspend fun skip(): js.void.Void

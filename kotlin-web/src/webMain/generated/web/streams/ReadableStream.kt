@@ -3,7 +3,6 @@
 package web.streams
 
 import js.array.Tuple2
-import js.core.Void
 import js.disposable.internal.AsyncCloseableDisposable
 import js.errors.JsError
 import js.iterable.AsyncIterable
@@ -11,6 +10,7 @@ import js.iterable.AsyncIterator
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Transferable
+import js.void.Void
 import web.abort.unsafeAbortable
 import web.coroutines.await
 import web.http.BodyInit

@@ -4,9 +4,9 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.closeable.JsCloseable
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler

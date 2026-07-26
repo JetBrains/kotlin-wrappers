@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 /**
  * A code lens provider adds [commands][Command] to source text. The commands will be shown

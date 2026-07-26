@@ -781,7 +781,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): js.promise.Promise<js.core.Void>
+    fun insertText(text: String): js.promise.Promise<js.void.Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`).
@@ -895,7 +895,7 @@ external class WebContents : NodeEventEmitter {
     fun loadFile(
         filePath: String,
         options: LoadFileOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -911,7 +911,7 @@ external class WebContents : NodeEventEmitter {
     fun loadURL(
         url: String,
         options: LoadURLOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Opens the DevTools.
@@ -1010,7 +1010,7 @@ external class WebContents : NodeEventEmitter {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `contents.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): js.promise.Promise<js.core.Void>
+    fun removeInsertedCSS(key: String): js.promise.Promise<js.void.Void>
 
     /**
      * Removes the specified path from DevTools workspace.
@@ -1033,7 +1033,7 @@ external class WebContents : NodeEventEmitter {
     fun savePage(
         fullPath: String,
         saveType: WebContentsSavePageSaveType,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Scrolls to the bottom of the current `webContents`.
@@ -1213,7 +1213,7 @@ external class WebContents : NodeEventEmitter {
     fun setVisualZoomLevelLimits(
         minimumLevel: Double,
         maximumLevel: Double,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Setting the WebRTC IP handling policy allows you to control which IPs are
@@ -1300,7 +1300,7 @@ external class WebContents : NodeEventEmitter {
      *
      * Takes a V8 heap snapshot and saves it to `filePath`.
      */
-    fun takeHeapSnapshot(filePath: String): js.promise.Promise<js.core.Void>
+    fun takeHeapSnapshot(filePath: String): js.promise.Promise<js.void.Void>
 
     /**
      * Toggles the developer tools.
@@ -1476,8 +1476,8 @@ external class WebContents : NodeEventEmitter {
                         (
                 isTrusted: Boolean,
             ) -> Unit,
-                    Boolean
-                    >
+                    Boolean,
+                    >,
             >
 
     @web.events.JsEvent("console-message")
@@ -1599,8 +1599,8 @@ external class WebContents : NodeEventEmitter {
                         (
                 username: String?, /* use undefined for default */
                 password: String?, // use undefined for default
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("media-paused")
@@ -1639,8 +1639,8 @@ external class WebContents : NodeEventEmitter {
                             js.array.ReadonlyArray<BluetoothDevice>,
                                 (
                         deviceId: String,
-                    ) -> Unit
-                            >
+                    ) -> Unit,
+                            >,
                     >
 
     @web.events.JsEvent("select-client-certificate")
@@ -1652,8 +1652,8 @@ external class WebContents : NodeEventEmitter {
                             js.array.ReadonlyArray<Certificate>,
                                 (
                         certificate: Certificate,
-                    ) -> Unit
-                            >
+                    ) -> Unit,
+                            >,
                     >
 
     @web.events.JsEvent("unresponsive")

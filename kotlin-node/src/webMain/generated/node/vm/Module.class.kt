@@ -186,10 +186,10 @@ open external class Module {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("evaluate")
-    fun evaluateAsync(options: ModuleEvaluateOptions = definedExternally): js.promise.Promise<js.core.Void>
+    fun evaluateAsync(options: ModuleEvaluateOptions = definedExternally): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun evaluate(options: ModuleEvaluateOptions = definedExternally): js.core.Void
+    suspend fun evaluate(options: ModuleEvaluateOptions = definedExternally): js.void.Void
 
     /**
      * Link module dependencies. This method must be called before evaluation, and
@@ -228,8 +228,8 @@ open external class Module {
      * the ECMAScript specification.
      */
     @JsName("link")
-    fun linkAsync(linker: ModuleLinker): js.promise.Promise<js.core.Void>
+    fun linkAsync(linker: ModuleLinker): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun link(linker: ModuleLinker): js.core.Void
+    suspend fun link(linker: ModuleLinker): js.void.Void
 }

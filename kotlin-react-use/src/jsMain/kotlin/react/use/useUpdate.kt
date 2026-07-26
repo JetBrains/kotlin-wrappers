@@ -2,8 +2,8 @@ package react.use
 
 import js.array.component1
 import js.array.component2
-import js.core.Void
 import js.reflect.unsafeCast
+import js.void.Void
 import react.useReducer
 
 private val updateReducer: (Int, Void) -> Int = { num, _ ->

@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-import js.core.Void
 import js.promise.Promise
+import js.void.Void
 
 external fun sleep(timeout: JsDuration): Promise<Void>

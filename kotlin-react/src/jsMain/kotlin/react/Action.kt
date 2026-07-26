@@ -1,10 +1,10 @@
 package react
 
-import js.core.Void
 import js.function.unsafeAsync
 import js.promise.Promise
 import js.promise.await
 import js.reflect.unsafeCast
+import js.void.Void
 
 sealed external interface Action<in T> :
     ActionOrString<T>

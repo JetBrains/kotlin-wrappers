@@ -4,8 +4,8 @@
 
 package react.dom.server
 
-import js.core.Void
 import js.promise.Promise
+import js.void.Void
 import web.streams.ReadableStream
 
 external interface ReactDOMServerReadableStream :

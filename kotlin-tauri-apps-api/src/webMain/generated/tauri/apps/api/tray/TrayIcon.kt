@@ -41,7 +41,7 @@ external class TrayIcon : Resource {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    fun setIcon(icon: String?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: String?): js.promise.Promise<js.void.Void>
 
     /**
      *  Sets a new tray icon. If `null` is provided, it will remove the icon.
@@ -53,7 +53,7 @@ external class TrayIcon : Resource {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    fun setIcon(icon: Image?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: Image?): js.promise.Promise<js.void.Void>
 
     /**
      *  Sets a new tray icon. If `null` is provided, it will remove the icon.
@@ -65,7 +65,7 @@ external class TrayIcon : Resource {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    fun setIcon(icon: js.typedarrays.Uint8Array<*>?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.typedarrays.Uint8Array<*>?): js.promise.Promise<js.void.Void>
 
     /**
      *  Sets a new tray icon. If `null` is provided, it will remove the icon.
@@ -77,7 +77,7 @@ external class TrayIcon : Resource {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    fun setIcon(icon: js.buffer.ArrayBuffer?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.buffer.ArrayBuffer?): js.promise.Promise<js.void.Void>
 
     /**
      *  Sets a new tray icon. If `null` is provided, it will remove the icon.
@@ -89,7 +89,7 @@ external class TrayIcon : Resource {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    fun setIcon(icon: js.array.ReadonlyArray<Double>?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.array.ReadonlyArray<Double>?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray menu.
@@ -98,7 +98,7 @@ external class TrayIcon : Resource {
      *
      * - **Linux**: once a menu is set it cannot be removed so `null` has no effect
      */
-    fun setMenu(menu: Menu?): js.promise.Promise<js.core.Void>
+    fun setMenu(menu: Menu?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray menu.
@@ -107,7 +107,7 @@ external class TrayIcon : Resource {
      *
      * - **Linux**: once a menu is set it cannot be removed so `null` has no effect
      */
-    fun setMenu(menu: Submenu?): js.promise.Promise<js.core.Void>
+    fun setMenu(menu: Submenu?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the tooltip for this tray icon.
@@ -116,7 +116,7 @@ external class TrayIcon : Resource {
      *
      * - **Linux:** Unsupported
      */
-    fun setTooltip(tooltip: String?): js.promise.Promise<js.core.Void>
+    fun setTooltip(tooltip: String?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the tooltip for this tray icon.
@@ -130,10 +130,10 @@ external class TrayIcon : Resource {
      * on the user's panel.  This may not be shown in all visualizations.
      * - **Windows:** Unsupported
      */
-    fun setTitle(title: String?): js.promise.Promise<js.core.Void>
+    fun setTitle(title: String?): js.promise.Promise<js.void.Void>
 
     /** Show or hide this tray icon. */
-    fun setVisible(visible: Boolean): js.promise.Promise<js.core.Void>
+    fun setVisible(visible: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the tray icon temp dir path. **Linux only**.
@@ -141,10 +141,10 @@ external class TrayIcon : Resource {
      * On Linux, we need to write the icon to the disk and usually it will
      * be `$XDG_RUNTIME_DIR/tray-icon` or `$TEMP/tray-icon`.
      */
-    fun setTempDirPath(path: String?): js.promise.Promise<js.core.Void>
+    fun setTempDirPath(path: String?): js.promise.Promise<js.void.Void>
 
     /** Sets the current icon as a [template](https://developer.apple.com/documentation/appkit/nsimage/1520017-template?language=objc). **macOS only** */
-    fun setIconAsTemplate(asTemplate: Boolean): js.promise.Promise<js.core.Void>
+    fun setIconAsTemplate(asTemplate: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray icon and template status atomically. **macOS only**.
@@ -159,7 +159,7 @@ external class TrayIcon : Resource {
     fun setIconWithAsTemplate(
         icon: String?,
         asTemplate: Boolean,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray icon and template status atomically. **macOS only**.
@@ -174,7 +174,7 @@ external class TrayIcon : Resource {
     fun setIconWithAsTemplate(
         icon: Image?,
         asTemplate: Boolean,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray icon and template status atomically. **macOS only**.
@@ -189,7 +189,7 @@ external class TrayIcon : Resource {
     fun setIconWithAsTemplate(
         icon: js.typedarrays.Uint8Array<*>?,
         asTemplate: Boolean,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray icon and template status atomically. **macOS only**.
@@ -204,7 +204,7 @@ external class TrayIcon : Resource {
     fun setIconWithAsTemplate(
         icon: js.buffer.ArrayBuffer?,
         asTemplate: Boolean,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Sets a new tray icon and template status atomically. **macOS only**.
@@ -219,7 +219,7 @@ external class TrayIcon : Resource {
     fun setIconWithAsTemplate(
         icon: js.array.ReadonlyArray<Double>?,
         asTemplate: Boolean,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      *  Disable or enable showing the tray menu on left click.
@@ -230,7 +230,7 @@ external class TrayIcon : Resource {
      *
      * @deprecated use {@linkcode TrayIcon.setShowMenuOnLeftClick} instead.
      */
-    fun setMenuOnLeftClick(onLeft: Boolean): js.promise.Promise<js.core.Void>
+    fun setMenuOnLeftClick(onLeft: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      *  Disable or enable showing the tray menu on left click.
@@ -241,7 +241,7 @@ external class TrayIcon : Resource {
      *
      * @since 2.2.0
      */
-    fun setShowMenuOnLeftClick(onLeft: Boolean): js.promise.Promise<js.core.Void>
+    fun setShowMenuOnLeftClick(onLeft: Boolean): js.promise.Promise<js.void.Void>
 
     companion object {
         /** Gets a tray icon using the provided id. */
@@ -253,7 +253,7 @@ external class TrayIcon : Resource {
          * Note that this may cause the tray icon to disappear
          * if it wasn't cloned somewhere else or referenced by JS.
          */
-        fun removeById(id: String): js.promise.Promise<js.core.Void>
+        fun removeById(id: String): js.promise.Promise<js.void.Void>
 
         /**
          * Creates a new {@linkcode TrayIcon}

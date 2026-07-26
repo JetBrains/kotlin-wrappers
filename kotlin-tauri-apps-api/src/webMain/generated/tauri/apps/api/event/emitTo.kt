@@ -23,7 +23,7 @@ external fun <T> emitTo(
     target: EventTarget,
     event: String,
     payload: T = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Emits an event to all {@link EventTarget|targets} matching the given target.
@@ -44,4 +44,4 @@ external fun <T> emitTo(
     target: String,
     event: String,
     payload: T = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

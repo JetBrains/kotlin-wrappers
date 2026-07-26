@@ -2,10 +2,10 @@
 
 package web.streams
 
-import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /**
  * The **`WritableStreamDefaultWriter`** interface of the Streams API is the object returned by WritableStream.getWriter() and once created locks the writer to the WritableStream ensuring that no other streams can write to the underlying sink.

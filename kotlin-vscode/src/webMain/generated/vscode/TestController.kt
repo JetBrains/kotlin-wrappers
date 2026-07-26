@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * Entry point to discover and execute tests. It contains [TestController.items] which

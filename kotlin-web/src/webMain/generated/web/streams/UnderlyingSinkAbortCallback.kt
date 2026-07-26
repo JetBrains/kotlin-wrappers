@@ -2,9 +2,9 @@
 
 package web.streams
 
-import js.core.Void
 import js.errors.JsError
 import js.promise.PromiseLike
+import js.void.Void
 
 typealias UnderlyingSinkAbortCallback = (
     reason: JsError?,

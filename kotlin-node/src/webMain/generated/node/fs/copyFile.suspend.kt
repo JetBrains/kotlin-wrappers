@@ -7,4 +7,4 @@ external suspend fun copyFile(
     src: PathLike,
     dest: PathLike,
     mode: Number = definedExternally,
-): js.core.Void
+): js.void.Void

@@ -6,4 +6,4 @@ package node.fs
 external suspend fun rm(
     path: PathLike,
     options: RmOptions = definedExternally,
-): js.core.Void
+): js.void.Void

@@ -13,12 +13,12 @@ private val DEFAULT_IMPORTS = listOf(
     "js.array.Tuple2",
     "js.array.ReadonlyArray",
     "js.collections.JsMap",
-    "js.core.Void",
     "js.objects.PropertyKey",
     "js.objects.ReadonlyRecord",
     "js.reflect.unsafeCast",
     "js.reflect.unsafeSpecialCast",
     "js.symbol.Symbol",
+    "js.void.Void",
 
     "seskar.js.JsRawValue",
     "seskar.js.JsValue",

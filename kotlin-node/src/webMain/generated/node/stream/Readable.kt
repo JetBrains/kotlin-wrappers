@@ -448,18 +448,18 @@ open external class Readable :
         fn: (
             data: Any?,
             options: ArrayOptions?, // use undefined for default
-        ) -> js.promise.PromiseResult<js.core.Void>,
+        ) -> js.promise.PromiseResult<js.void.Void>,
         options: ArrayOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun forEach(
         fn: (
             data: Any?,
             options: ArrayOptions?, // use undefined for default
-        ) -> js.promise.PromiseResult<js.core.Void>,
+        ) -> js.promise.PromiseResult<js.void.Void>,
         options: ArrayOptions = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * This method allows easily obtaining the contents of a stream.

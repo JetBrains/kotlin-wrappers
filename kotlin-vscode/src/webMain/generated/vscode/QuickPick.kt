@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 /**
  * A concrete [QuickInput] to let the user pick an item from a list of items of type `T`.

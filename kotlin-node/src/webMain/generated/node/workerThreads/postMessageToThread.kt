@@ -20,7 +20,7 @@ external fun postMessageToThreadAsync(
     threadId: Number,
     value: Any?,
     timeout: Number = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("postMessageToThread")
 external fun postMessageToThreadAsync(
@@ -28,4 +28,4 @@ external fun postMessageToThreadAsync(
     value: Any?,
     transferList: js.array.ReadonlyArray<Transferable>,
     timeout: Number = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

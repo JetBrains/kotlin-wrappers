@@ -103,7 +103,7 @@ open external class WebviewWindow :
      *
      * @since 2.1.0
      */
-    // TODO open override fun setBackgroundColor(color: Color): js.promise.Promise<js.core.Void>
+    // TODO open override fun setBackgroundColor(color: Color): js.promise.Promise<js.void.Void>
 
     companion object {
         /**

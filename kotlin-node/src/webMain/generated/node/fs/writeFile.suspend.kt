@@ -8,7 +8,7 @@ import node.stream.Stream
 external suspend fun writeFile(
     file: PathLike,
     data: String,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -65,7 +65,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: String,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -122,7 +122,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -178,7 +178,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: PathLike,
     data: js.buffer.ArrayBufferView<*>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -235,7 +235,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -292,7 +292,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -348,7 +348,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -405,7 +405,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -462,7 +462,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -518,7 +518,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -575,7 +575,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -632,7 +632,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -688,7 +688,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: PathLike,
     data: Stream,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -745,7 +745,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: Stream,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -802,7 +802,7 @@ external suspend fun writeFile(
     file: PathLike,
     data: Stream,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -858,7 +858,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: FileHandle,
     data: String,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -915,7 +915,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: String,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -972,7 +972,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1028,7 +1028,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: FileHandle,
     data: js.buffer.ArrayBufferView<*>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1085,7 +1085,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.buffer.ArrayBufferView<*>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1142,7 +1142,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.buffer.ArrayBufferView<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1198,7 +1198,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1255,7 +1255,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1312,7 +1312,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1368,7 +1368,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1425,7 +1425,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1482,7 +1482,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1538,7 +1538,7 @@ external suspend fun writeFile(
 external suspend fun writeFile(
     file: FileHandle,
     data: Stream,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1595,7 +1595,7 @@ external suspend fun writeFile(
     file: FileHandle,
     data: Stream,
     options: (WriteFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1652,4 +1652,4 @@ external suspend fun writeFile(
     file: FileHandle,
     data: Stream,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void

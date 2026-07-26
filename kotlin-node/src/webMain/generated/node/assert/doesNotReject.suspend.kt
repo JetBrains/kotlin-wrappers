@@ -3,7 +3,7 @@
 package node.assert
 
 @seskar.js.JsAsync
-external suspend fun doesNotReject(block: () -> js.promise.Promise<Any?>): js.core.Void
+external suspend fun doesNotReject(block: () -> js.promise.Promise<Any?>): js.void.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -51,7 +51,7 @@ external suspend fun doesNotReject(block: () -> js.promise.Promise<Any?>): js.co
 external suspend fun doesNotReject(
     block: () -> js.promise.Promise<Any?>,
     message: String = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -99,7 +99,7 @@ external suspend fun doesNotReject(
 external suspend fun doesNotReject(
     block: () -> js.promise.Promise<Any?>,
     message: js.errors.JsError = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -144,7 +144,7 @@ external suspend fun doesNotReject(
  * @since v10.0.0
  */
 @seskar.js.JsAsync
-external suspend fun doesNotReject(block: js.promise.Promise<Any?>): js.core.Void
+external suspend fun doesNotReject(block: js.promise.Promise<Any?>): js.void.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -192,7 +192,7 @@ external suspend fun doesNotReject(block: js.promise.Promise<Any?>): js.core.Voi
 external suspend fun doesNotReject(
     block: js.promise.Promise<Any?>,
     message: String = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -240,44 +240,44 @@ external suspend fun doesNotReject(
 external suspend fun doesNotReject(
     block: js.promise.Promise<Any?>,
     message: js.errors.JsError = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: () -> js.promise.Promise<Any?>,
     error: AssertPredicate,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: () -> js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: () -> js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: js.errors.JsError = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: js.promise.Promise<Any?>,
     error: AssertPredicate,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: String = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: js.promise.Promise<Any?>,
     error: AssertPredicate,
     message: js.errors.JsError = definedExternally,
-): js.core.Void
+): js.void.Void

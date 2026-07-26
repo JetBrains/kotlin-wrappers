@@ -7,19 +7,19 @@ external suspend fun suite(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun suite(
     name: String = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun suite(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun suite(fn: SuiteFn = definedExternally): js.core.Void
+external suspend fun suite(fn: SuiteFn = definedExternally): js.void.Void

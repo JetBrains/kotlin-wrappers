@@ -27,7 +27,6 @@ private val DEFAULT_IMPORTS = Imports(
     "js.collections.ReadonlyMap",
     "js.collections.ReadonlySet",
     "js.collections.ReadonlySetLike",
-    "js.core.Void",
     "js.date.Date",
     "js.disposable.internal.AsyncCloseableDisposable",
     "js.errors.JsError",
@@ -89,6 +88,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.typedarrays.Uint32Array",
     "js.typedarrays.Uint8Array",
     "js.typedarrays.Uint8ClampedArray",
+    "js.void.Void",
 
     "kotlinx.js.JsPlainObject",
 

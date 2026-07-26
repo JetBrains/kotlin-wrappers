@@ -228,7 +228,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun promptTouchID(reason: String): js.promise.Promise<js.core.Void>
+    fun promptTouchID(reason: String): js.promise.Promise<js.void.Void>
 
     /**
      * Add the specified defaults to your application's `NSUserDefaults`.

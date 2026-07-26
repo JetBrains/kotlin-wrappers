@@ -38,10 +38,10 @@ external class Readline {
      * @since v17.0.0
      */
     @JsName("commit")
-    fun commitAsync(): js.promise.Promise<js.core.Void>
+    fun commitAsync(): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun commit(): js.core.Void
+    suspend fun commit(): js.void.Void
 
     /**
      * The `rl.cursorTo()` method adds to the internal list of pending action an action

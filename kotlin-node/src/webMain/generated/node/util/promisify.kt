@@ -81,31 +81,31 @@ external fun <TResult> promisify(
     fn: (callback: (err: Any?, result: TResult) -> Unit) -> Unit,
 ): () -> js.promise.Promise<TResult>
 
-external fun promisify(fn: (callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): () -> js.promise.Promise<js.core.Void>
+external fun promisify(fn: (callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): () -> js.promise.Promise<js.void.Void>
 
 external fun <T1, TResult> promisify(
     fn: (arg1: T1, callback: (err: Any?, result: TResult) -> Unit) -> Unit,
 ): (arg1: T1) -> js.promise.Promise<TResult>
 
-external fun <T1> promisify(fn: (arg1: T1, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1) -> js.promise.Promise<js.core.Void>
+external fun <T1> promisify(fn: (arg1: T1, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1) -> js.promise.Promise<js.void.Void>
 
 external fun <T1, T2, TResult> promisify(
     fn: (arg1: T1, arg2: T2, callback: (err: Any?, result: TResult) -> Unit) -> Unit,
 ): (arg1: T1, arg2: T2) -> js.promise.Promise<TResult>
 
-external fun <T1, T2> promisify(fn: (arg1: T1, arg2: T2, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2) -> js.promise.Promise<js.core.Void>
+external fun <T1, T2> promisify(fn: (arg1: T1, arg2: T2, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2) -> js.promise.Promise<js.void.Void>
 
 external fun <T1, T2, T3, TResult> promisify(
     fn: (arg1: T1, arg2: T2, arg3: T3, callback: (err: Any?, result: TResult) -> Unit) -> Unit,
 ): (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<TResult>
 
-external fun <T1, T2, T3> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<js.core.Void>
+external fun <T1, T2, T3> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<js.void.Void>
 
 external fun <T1, T2, T3, T4, TResult> promisify(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: Any?, result: TResult) -> Unit) -> Unit,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<TResult>
 
-external fun <T1, T2, T3, T4> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<js.core.Void>
+external fun <T1, T2, T3, T4> promisify(fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: Any? /* use undefined for default */) -> Unit) -> Unit): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<js.void.Void>
 
 external fun <T1, T2, T3, T4, T5, TResult> promisify(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: Any?, result: TResult) -> Unit) -> Unit,
@@ -120,7 +120,7 @@ external fun <T1, T2, T3, T4, T5> promisify(
         arg5: T5,
         callback: (err: Any? /* use undefined for default */) -> Unit,
     ) -> Unit,
-): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> js.promise.Promise<js.core.Void>
+): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> js.promise.Promise<js.void.Void>
 
 external fun promisify(fn: Function<*>): Function<*>
 

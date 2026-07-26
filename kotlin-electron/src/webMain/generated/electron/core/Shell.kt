@@ -16,7 +16,7 @@ external interface Shell {
     fun openExternal(
         url: String,
         options: OpenExternalOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Resolves with a string containing the error message corresponding to the failure
@@ -51,7 +51,7 @@ external interface Shell {
      * Windows). Use `path.resolve()` from the `node:path` module to ensure correct
      * handling on all filesystems.
      */
-    fun trashItem(path: String): js.promise.Promise<js.core.Void>
+    fun trashItem(path: String): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the shortcut was created successfully.

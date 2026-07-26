@@ -19,19 +19,19 @@ external class IconMenuItem : MenuItemBase {
     fun text(): js.promise.Promise<String>
 
     /** Sets the text for this icon menu item. */
-    fun setText(text: String): js.promise.Promise<js.core.Void>
+    fun setText(text: String): js.promise.Promise<js.void.Void>
 
     /** Returns whether this icon menu item is enabled or not. */
     fun isEnabled(): js.promise.Promise<Boolean>
 
     /** Sets whether this icon menu item is enabled or not. */
-    fun setEnabled(enabled: Boolean): js.promise.Promise<js.core.Void>
+    fun setEnabled(enabled: Boolean): js.promise.Promise<js.void.Void>
 
     /** Sets the accelerator for this icon menu item. */
-    fun setAccelerator(accelerator: String?): js.promise.Promise<js.core.Void>
+    fun setAccelerator(accelerator: String?): js.promise.Promise<js.void.Void>
 
     /** Sets an icon for this icon menu item */
-    fun setIcon(icon: MenuIcon?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: MenuIcon?): js.promise.Promise<js.void.Void>
 
     companion object {
         /** Create a new icon menu item. */

@@ -4,8 +4,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
-import js.core.Void
 import js.numbers.JsInt
+import js.void.Void
 
 /**
  * A concrete [QuickInput] to let the user input a text value.

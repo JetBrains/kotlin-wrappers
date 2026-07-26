@@ -6,4 +6,4 @@ package node.fs
 external suspend fun rmdir(
     path: PathLike,
     options: RmDirOptions = definedExternally,
-): js.core.Void
+): js.void.Void

@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * Restore webview panels that have been persisted when vscode shuts down.

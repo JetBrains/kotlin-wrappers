@@ -101,5 +101,5 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun show(): js.promise.Promise<js.core.Void>
+    fun show(): js.promise.Promise<js.void.Void>
 }

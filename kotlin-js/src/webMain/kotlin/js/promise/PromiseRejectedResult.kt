@@ -1,7 +1,7 @@
 package js.promise
 
-import js.core.Void
 import js.errors.JsErrorLike
+import js.void.Void
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

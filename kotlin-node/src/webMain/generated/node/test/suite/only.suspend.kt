@@ -10,22 +10,22 @@ external suspend fun only(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun only(
     name: String = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun only(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun only(fn: SuiteFn = definedExternally): js.core.Void
+external suspend fun only(fn: SuiteFn = definedExternally): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun only(): js.core.Void
+external suspend fun only(): js.void.Void

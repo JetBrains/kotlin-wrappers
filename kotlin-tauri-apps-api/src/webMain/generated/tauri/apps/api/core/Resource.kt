@@ -35,5 +35,5 @@ open external class Resource {
      * Destroys and cleans up this resource from memory.
      * **You should not call any method on this object anymore and should drop any reference to it.**
      */
-    fun close(): js.promise.Promise<js.core.Void>
+    fun close(): js.promise.Promise<js.void.Void>
 }

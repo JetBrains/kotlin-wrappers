@@ -24,7 +24,7 @@ external interface Dialog {
     fun showCertificateTrustDialog(
         window: BaseWindow,
         options: CertificateTrustDialogOptions,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * resolves when the certificate trust dialog is shown.
@@ -43,7 +43,7 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): js.promise.Promise<js.core.Void>
+    fun showCertificateTrustDialog(options: CertificateTrustDialogOptions): js.promise.Promise<js.void.Void>
 
     /**
      * Displays a modal dialog that shows an error message.

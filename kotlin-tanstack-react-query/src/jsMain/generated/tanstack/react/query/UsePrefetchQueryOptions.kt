@@ -2,7 +2,7 @@
 
 package tanstack.react.query
 
-import js.core.Void
+import js.void.Void
 import kotlinx.js.JsPlainObject
 import tanstack.query.core.FetchQueryOptions
 import tanstack.query.core.QueryKey

@@ -57,7 +57,7 @@ package node.util
  * @return a callback style function
  */
 external fun callbackify(
-    fn: () -> js.promise.Promise<js.core.Void>,
+    fn: () -> js.promise.Promise<js.void.Void>,
 ): (callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <TResult> callbackify(
@@ -65,7 +65,7 @@ external fun <TResult> callbackify(
 ): (callback: (err: node.ErrnoException, result: TResult) -> Unit) -> Unit
 
 external fun <T1> callbackify(
-    fn: (arg1: T1) -> js.promise.Promise<js.core.Void>,
+    fn: (arg1: T1) -> js.promise.Promise<js.void.Void>,
 ): (arg1: T1, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, TResult> callbackify(
@@ -73,7 +73,7 @@ external fun <T1, TResult> callbackify(
 ): (arg1: T1, callback: (err: node.ErrnoException, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2> callbackify(
-    fn: (arg1: T1, arg2: T2) -> js.promise.Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2) -> js.promise.Promise<js.void.Void>,
 ): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, TResult> callbackify(
@@ -81,7 +81,7 @@ external fun <T1, T2, TResult> callbackify(
 ): (arg1: T1, arg2: T2, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2, T3> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3) -> js.promise.Promise<js.void.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, TResult> callbackify(
@@ -89,7 +89,7 @@ external fun <T1, T2, T3, TResult> callbackify(
 ): (arg1: T1, arg2: T2, arg3: T3, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) -> js.promise.Promise<js.void.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, TResult> callbackify(
@@ -97,7 +97,7 @@ external fun <T1, T2, T3, T4, TResult> callbackify(
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: (err: node.ErrnoException?, result: TResult) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> js.promise.Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) -> js.promise.Promise<js.void.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5, TResult> callbackify(
@@ -112,7 +112,7 @@ external fun <T1, T2, T3, T4, T5, TResult> callbackify(
 ) -> Unit
 
 external fun <T1, T2, T3, T4, T5, T6> callbackify(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> js.promise.Promise<js.core.Void>,
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) -> js.promise.Promise<js.void.Void>,
 ): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, callback: (err: node.ErrnoException) -> Unit) -> Unit
 
 external fun <T1, T2, T3, T4, T5, T6, TResult> callbackify(

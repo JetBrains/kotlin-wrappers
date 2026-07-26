@@ -18,4 +18,4 @@ package node.fs
 external fun rmdirAsync(
     path: PathLike,
     options: RmDirOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

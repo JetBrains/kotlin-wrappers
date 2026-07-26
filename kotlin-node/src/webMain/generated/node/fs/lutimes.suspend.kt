@@ -7,4 +7,4 @@ external suspend fun lutimes(
     path: PathLike,
     atime: TimeLike,
     mtime: TimeLike,
-): js.core.Void
+): js.void.Void

@@ -7,7 +7,7 @@ external suspend fun postMessageToThread(
     threadId: Number,
     value: Any?,
     timeout: Number = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun postMessageToThread(
@@ -15,4 +15,4 @@ external suspend fun postMessageToThread(
     value: Any?,
     transferList: js.array.ReadonlyArray<Transferable>,
     timeout: Number = definedExternally,
-): js.core.Void
+): js.void.Void

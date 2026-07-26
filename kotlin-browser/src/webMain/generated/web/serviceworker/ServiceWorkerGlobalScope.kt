@@ -2,9 +2,9 @@
 
 package web.serviceworker
 
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.cookie.CookieStore
 import web.cookie.ExtendableCookieChangeEvent
 import web.events.EventHandler

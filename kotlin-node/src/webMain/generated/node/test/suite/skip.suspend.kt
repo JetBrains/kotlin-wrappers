@@ -10,22 +10,22 @@ external suspend fun skip(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun skip(
     name: String = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun skip(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
-): js.core.Void
+): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun skip(fn: SuiteFn = definedExternally): js.core.Void
+external suspend fun skip(fn: SuiteFn = definedExternally): js.void.Void
 
 @seskar.js.JsAsync
-external suspend fun skip(): js.core.Void
+external suspend fun skip(): js.void.Void

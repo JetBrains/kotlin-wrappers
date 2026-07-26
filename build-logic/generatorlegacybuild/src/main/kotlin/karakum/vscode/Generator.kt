@@ -78,7 +78,6 @@ private fun fileContent(
         import js.numbers.JsDouble
         import js.numbers.JsInt
         import js.numbers.JsInt53
-        import js.core.Void
         import js.date.Date
         import js.iterable.AsyncIterable
         import js.iterable.JsIterable
@@ -91,6 +90,7 @@ private fun fileContent(
         import js.regexp.RegExp
         import js.typedarrays.Uint32Array
         import js.typedarrays.Uint8Array
+        import js.void.Void
 
         import kotlinx.js.JsPlainObject
         """.trimIndent(),

@@ -22,7 +22,7 @@ package node.fs
 external fun appendFileAsync(
     path: PathLike,
     data: String,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -43,7 +43,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -64,7 +64,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -84,7 +84,7 @@ external fun appendFileAsync(
 external fun appendFileAsync(
     path: PathLike,
     data: js.typedarrays.Uint8Array<*>,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -105,7 +105,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -126,7 +126,7 @@ external fun appendFileAsync(
     path: PathLike,
     data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -146,7 +146,7 @@ external fun appendFileAsync(
 external fun appendFileAsync(
     path: FileHandle,
     data: String,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -167,7 +167,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -188,7 +188,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -208,7 +208,7 @@ external fun appendFileAsync(
 external fun appendFileAsync(
     path: FileHandle,
     data: js.typedarrays.Uint8Array<*>,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -229,7 +229,7 @@ external fun appendFileAsync(
     path: FileHandle,
     data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -250,4 +250,4 @@ external fun appendFileAsync(
     path: FileHandle,
     data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

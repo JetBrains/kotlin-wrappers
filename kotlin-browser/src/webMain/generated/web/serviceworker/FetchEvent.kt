@@ -2,9 +2,9 @@
 
 package web.serviceworker
 
-import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
+import js.void.Void
 import web.events.EventType
 import web.http.Request
 import web.http.Response

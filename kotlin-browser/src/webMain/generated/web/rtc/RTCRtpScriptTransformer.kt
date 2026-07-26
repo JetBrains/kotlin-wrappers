@@ -2,9 +2,9 @@
 
 package web.rtc
 
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream

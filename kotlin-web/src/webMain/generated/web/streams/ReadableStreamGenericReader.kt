@@ -6,11 +6,11 @@
 
 package web.streams
 
-import js.core.Void
 import js.errors.JsError
 import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)

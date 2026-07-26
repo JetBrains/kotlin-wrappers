@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Void
+import js.void.Void
 
 /**
  * Represents extension specific information about the access to language models.

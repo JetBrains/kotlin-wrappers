@@ -13,4 +13,4 @@ package node.fs
 external fun rmAsync(
     path: PathLike,
     options: RmOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

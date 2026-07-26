@@ -12,8 +12,8 @@ external interface DisposableTempDir : js.disposable.AsyncDisposable {
      * A function which removes the created directory.
      */
     @JsName("remove")
-    fun removeAsync(): js.promise.Promise<js.core.Void>
+    fun removeAsync(): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun remove(): js.core.Void
+    suspend fun remove(): js.void.Void
 }

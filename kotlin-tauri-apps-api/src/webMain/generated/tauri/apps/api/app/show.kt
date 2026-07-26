@@ -16,4 +16,4 @@ package tauri.apps.api.app
  *
  * @since 1.2.0
  */
-external fun show(): js.promise.Promise<js.core.Void>
+external fun show(): js.promise.Promise<js.void.Void>

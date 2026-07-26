@@ -6,4 +6,4 @@ package node.fs
 external suspend fun access(
     path: PathLike,
     mode: Number = definedExternally,
-): js.core.Void
+): js.void.Void

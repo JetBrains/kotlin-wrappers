@@ -23,24 +23,24 @@ external class KeyboardHost {
     fun keydownAsync(
         instance: Instance,
         keyDef: keyboardKey,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun keydown(
         instance: Instance,
         keyDef: keyboardKey,
-    ): js.core.Void
+    ): js.void.Void
 
     /** Release a key */
     @JsName("keyup")
     fun keyupAsync(
         instance: Instance,
         keyDef: keyboardKey,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun keyup(
         instance: Instance,
         keyDef: keyboardKey,
-    ): js.core.Void
+    ): js.void.Void
 }

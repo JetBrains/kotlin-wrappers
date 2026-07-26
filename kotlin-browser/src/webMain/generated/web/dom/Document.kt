@@ -2,9 +2,9 @@
 
 package web.dom
 
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent

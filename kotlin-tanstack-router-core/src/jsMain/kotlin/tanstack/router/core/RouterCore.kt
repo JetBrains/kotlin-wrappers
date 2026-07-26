@@ -2,9 +2,9 @@
 
 package tanstack.router.core
 
-import js.core.Void
 import js.objects.ReadonlyRecord
 import js.promise.Promise
+import js.void.Void
 import tanstack.history.RouterHistory
 
 open external class RouterCore

@@ -7,4 +7,4 @@ external suspend fun chown(
     path: PathLike,
     uid: Number,
     gid: Number,
-): js.core.Void
+): js.void.Void

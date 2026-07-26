@@ -2,10 +2,10 @@
 
 package web.fs
 
-import js.core.Void
 import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.streams.WritableStream
 
 /**

@@ -14,22 +14,22 @@ external fun skipAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("skip")
 external fun skipAsync(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("skip")
 external fun skipAsync(
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("skip")
-external fun skipAsync(fn: TestFn = definedExternally): js.promise.Promise<js.core.Void>
+external fun skipAsync(fn: TestFn = definedExternally): js.promise.Promise<js.void.Void>
 
 @JsName("skip")
-external fun skipAsync(): js.promise.Promise<js.core.Void>
+external fun skipAsync(): js.promise.Promise<js.void.Void>

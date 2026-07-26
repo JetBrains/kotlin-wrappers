@@ -2,10 +2,10 @@
 
 package vscode
 
-import js.core.Void
 import js.errors.JsError
 import js.objects.ReadonlyRecord
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * The telemetry sender is the contract between a telemetry logger and some telemetry service. **Note** that extensions must NOT

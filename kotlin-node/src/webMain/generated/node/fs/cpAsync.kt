@@ -21,7 +21,7 @@ external fun cpAsync(
     source: String,
     destination: String,
     opts: CopyOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -40,7 +40,7 @@ external fun cpAsync(
     source: String,
     destination: web.url.URL,
     opts: CopyOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -59,7 +59,7 @@ external fun cpAsync(
     source: web.url.URL,
     destination: String,
     opts: CopyOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -78,4 +78,4 @@ external fun cpAsync(
     source: web.url.URL,
     destination: web.url.URL,
     opts: CopyOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

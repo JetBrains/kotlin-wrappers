@@ -17,4 +17,4 @@ package tauri.apps.api.app
  *
  * @since 2.5.0
  */
-external fun setDockVisibility(visible: Boolean): js.promise.Promise<js.core.Void>
+external fun setDockVisibility(visible: Boolean): js.promise.Promise<js.void.Void>

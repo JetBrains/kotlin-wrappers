@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * A comment controller is able to provide [comments][CommentThread] support to the editor and

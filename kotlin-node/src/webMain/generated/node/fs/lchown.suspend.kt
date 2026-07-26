@@ -7,4 +7,4 @@ external suspend fun lchown(
     path: PathLike,
     uid: Number,
     gid: Number,
-): js.core.Void
+): js.void.Void

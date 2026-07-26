@@ -39,4 +39,4 @@ package node.util
 external fun abortedAsync(
     signal: web.abort.AbortSignal,
     resource: Any?,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

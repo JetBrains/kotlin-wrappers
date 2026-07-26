@@ -30,7 +30,7 @@ open external class Menu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> append(
         items: T,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the end of this menu.
@@ -41,7 +41,7 @@ open external class Menu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> append(
         items: js.array.ReadonlyArray<T>,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the beginning of this menu.
@@ -52,7 +52,7 @@ open external class Menu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> prepend(
         items: T,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the beginning of this menu.
@@ -63,7 +63,7 @@ open external class Menu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> prepend(
         items: js.array.ReadonlyArray<T>,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the specified position in this menu.
@@ -75,7 +75,7 @@ open external class Menu : MenuItemBase {
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> insert(
         items: T,
         position: Double,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the specified position in this menu.
@@ -87,22 +87,22 @@ open external class Menu : MenuItemBase {
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> insert(
         items: js.array.ReadonlyArray<T>,
         position: Double,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this menu. */
-    fun remove(item: Submenu): js.promise.Promise<js.core.Void>
+    fun remove(item: Submenu): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this menu. */
-    fun remove(item: MenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: MenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this menu. */
-    fun remove(item: PredefinedMenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: PredefinedMenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this menu. */
-    fun remove(item: CheckMenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: CheckMenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this menu. */
-    fun remove(item: IconMenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: IconMenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this menu at the specified position. */
     fun removeAt(
@@ -123,7 +123,7 @@ open external class Menu : MenuItemBase {
      * @param at If a position is provided, it is relative to the window's top-left corner.
      * If there isn't one provided, the menu will pop up at the current location of the mouse.
      */
-    fun popup(): js.promise.Promise<js.core.Void>
+    fun popup(): js.promise.Promise<js.void.Void>
 
     /**
      * Popup this menu as a context menu on the specified window.
@@ -134,7 +134,7 @@ open external class Menu : MenuItemBase {
     fun popup(
         at: PhysicalPosition = definedExternally,
         window: Window = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Popup this menu as a context menu on the specified window.
@@ -145,7 +145,7 @@ open external class Menu : MenuItemBase {
     fun popup(
         at: LogicalPosition = definedExternally,
         window: Window = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Popup this menu as a context menu on the specified window.
@@ -156,7 +156,7 @@ open external class Menu : MenuItemBase {
     fun popup(
         at: Position = definedExternally,
         window: Window = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the app-wide menu and returns the previous one.

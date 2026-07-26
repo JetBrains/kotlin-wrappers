@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 /**
  * Provider for text based custom editors.

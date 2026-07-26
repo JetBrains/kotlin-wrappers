@@ -6,13 +6,13 @@
 
 package web.assembly
 
-import js.core.Void
 import js.function.JsFunction
 import js.numbers.BigInt
 import js.numbers.JsDouble
 import js.numbers.JsFloat
 import js.numbers.JsInt
 import js.reflect.unsafeCast
+import js.void.Void
 
 sealed /* union */
 external interface ValueType<T : JsAny?> {

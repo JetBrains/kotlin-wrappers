@@ -9,7 +9,7 @@ external suspend fun mkdir(
 ): String?
 
 @seskar.js.JsAsync
-external suspend fun mkdir(path: PathLike): js.core.Void
+external suspend fun mkdir(path: PathLike): js.void.Void
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -21,7 +21,7 @@ external suspend fun mkdir(path: PathLike): js.core.Void
 external suspend fun mkdir(
     path: PathLike,
     options: Mode? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -33,7 +33,7 @@ external suspend fun mkdir(
 external suspend fun mkdir(
     path: PathLike,
     options: (MkdirAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronous mkdir(2) - create a directory.

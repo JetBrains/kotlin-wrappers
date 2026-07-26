@@ -21,42 +21,42 @@ external class PointerHost {
         instance: Instance,
         keyDef: pointerKey,
         position: PointerPosition,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun press(
         instance: Instance,
         keyDef: pointerKey,
         position: PointerPosition,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("move")
     fun moveAsync(
         instance: Instance,
         pointerName: String,
         position: PointerPosition,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun move(
         instance: Instance,
         pointerName: String,
         position: PointerPosition,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("release")
     fun releaseAsync(
         instance: Instance,
         keyDef: pointerKey,
         position: PointerPosition,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun release(
         instance: Instance,
         keyDef: pointerKey,
         position: PointerPosition,
-    ): js.core.Void
+    ): js.void.Void
 
     fun getPointerName(keyDef: pointerKey): String
 

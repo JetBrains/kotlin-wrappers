@@ -6,7 +6,7 @@ package node.fs
 external suspend fun appendFile(
     path: PathLike,
     data: String,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -27,7 +27,7 @@ external suspend fun appendFile(
     path: PathLike,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -48,7 +48,7 @@ external suspend fun appendFile(
     path: PathLike,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -68,7 +68,7 @@ external suspend fun appendFile(
 external suspend fun appendFile(
     path: PathLike,
     data: js.typedarrays.Uint8Array<*>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -89,7 +89,7 @@ external suspend fun appendFile(
     path: PathLike,
     data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -110,7 +110,7 @@ external suspend fun appendFile(
     path: PathLike,
     data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -130,7 +130,7 @@ external suspend fun appendFile(
 external suspend fun appendFile(
     path: FileHandle,
     data: String,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -151,7 +151,7 @@ external suspend fun appendFile(
     path: FileHandle,
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -172,7 +172,7 @@ external suspend fun appendFile(
     path: FileHandle,
     data: String,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -192,7 +192,7 @@ external suspend fun appendFile(
 external suspend fun appendFile(
     path: FileHandle,
     data: js.typedarrays.Uint8Array<*>,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -213,7 +213,7 @@ external suspend fun appendFile(
     path: FileHandle,
     data: js.typedarrays.Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
-): js.core.Void
+): js.void.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -234,4 +234,4 @@ external suspend fun appendFile(
     path: FileHandle,
     data: js.typedarrays.Uint8Array<*>,
     options: node.buffer.BufferEncoding? = definedExternally,
-): js.core.Void
+): js.void.Void

@@ -6,4 +6,4 @@ package node.fs
 external suspend fun chmod(
     path: PathLike,
     mode: Mode,
-): js.core.Void
+): js.void.Void

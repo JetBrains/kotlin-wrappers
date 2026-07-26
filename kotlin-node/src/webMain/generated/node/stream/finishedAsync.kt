@@ -8,16 +8,16 @@ package node.stream
 external fun finishedAsync(
     stream: node.ReadableStream,
     options: FinishedOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("finished")
 external fun finishedAsync(
     stream: node.WritableStream,
     options: FinishedOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("finished")
 external fun finishedAsync(
     stream: node.ReadWriteStream,
     options: FinishedOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

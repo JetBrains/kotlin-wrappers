@@ -6,11 +6,11 @@
 
 package web.badging
 
-import js.core.Void
 import js.internal.InternalApi
 import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /**
  * Available only in secure contexts.

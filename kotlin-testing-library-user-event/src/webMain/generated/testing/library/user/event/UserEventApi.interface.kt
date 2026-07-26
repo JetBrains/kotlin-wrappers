@@ -24,40 +24,40 @@ import web.dom.Element
 import web.html.HTMLElement
 
 external interface UserEventApi {
-    var click: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
-    var dblClick: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
-    var tripleClick: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
-    var hover: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
-    var unhover: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
-    var tab: (/* this: Instance, */ options: (TabOptions)? /* use undefined for default */) -> Promise<js.core.Void>
-    var keyboard: (/* this: Instance, */ text: String) -> Promise<js.core.Void>
+    var click: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
+    var dblClick: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
+    var tripleClick: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
+    var hover: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
+    var unhover: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
+    var tab: (/* this: Instance, */ options: (TabOptions)? /* use undefined for default */) -> Promise<js.void.Void>
+    var keyboard: (/* this: Instance, */ text: String) -> Promise<js.void.Void>
     var copy: (/* this: Instance, */) -> Promise<DataTransfer?>
     var cut: (/* this: Instance, */) -> Promise<DataTransfer?>
     var paste: (
         // this: Instance,
         clipboardData: Any?, /* string | DataTransfer | undefined */ // use undefined for default
-    ) -> Promise<js.core.Void>
-    var pointer: (/* this: Instance, */ input: PointerInput) -> Promise<js.core.Void>
-    var clear: (/* this: Instance, */ element: Element) -> Promise<js.core.Void>
+    ) -> Promise<js.void.Void>
+    var pointer: (/* this: Instance, */ input: PointerInput) -> Promise<js.void.Void>
+    var clear: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
     var deselectOptions: (
         // this: Instance,
         select: Element,
         values: Any, // string | HTMLElement | HTMLElement[] | string[]
-    ) -> Promise<js.core.Void>
+    ) -> Promise<js.void.Void>
     var selectOptions: (
         // this: Instance,
         select: Element,
         values: Any, // string | HTMLElement | HTMLElement[] | string[]
-    ) -> Promise<js.core.Void>
+    ) -> Promise<js.void.Void>
     var type: (
         // this: Instance,
         element: Element,
         text: String,
         options: typeOptions?, // use undefined for default
-    ) -> Promise<js.core.Void>
+    ) -> Promise<js.void.Void>
     var upload: (
         // this: Instance,
         element: HTMLElement,
         fileOrFiles: Any, // File | File[]
-    ) -> Promise<js.core.Void>
+    ) -> Promise<js.void.Void>
 }

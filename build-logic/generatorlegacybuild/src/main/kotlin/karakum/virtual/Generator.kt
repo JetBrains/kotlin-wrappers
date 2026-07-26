@@ -13,10 +13,10 @@ private val DEFAULT_IMPORTS = listOf(
     "js.array.Tuple5",
     "js.collections.ReadonlyMap",
     "js.numbers.BigInt",
-    "js.core.Void",
     "js.internal.InternalApi",
     "js.promise.Promise",
     "js.reflect.unsafeCast",
+    "js.void.Void",
 
     "web.dom.Element",
     "web.window.Window",

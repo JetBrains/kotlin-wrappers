@@ -2,8 +2,8 @@
 
 package web.gpu
 
-import js.core.Void
 import js.reflect.unsafeCast
+import js.void.Void
 import web.events.EventTarget
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext

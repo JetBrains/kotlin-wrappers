@@ -2,7 +2,7 @@
 
 package web.viewtransition
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 typealias ViewTransitionUpdateCallback = () -> PromiseLike<Void>?

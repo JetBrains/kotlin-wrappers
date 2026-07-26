@@ -3,9 +3,9 @@
 package web.codecs
 
 import js.array.ArrayLike
-import js.core.Void
 import js.iterable.JsIterable
 import js.promise.Promise
+import js.void.Void
 
 /**
  * The **`ImageTrackList`** interface of the WebCodecs API represents a list of image tracks.

@@ -9,4 +9,4 @@ package node.test
 typealias TestFn = (
     t: TestContext,
     done: (result: Any? /* use undefined for default */) -> Unit,
-) -> js.promise.PromiseResult<js.core.Void>
+) -> js.promise.PromiseResult<js.void.Void>

@@ -47,23 +47,23 @@ package node.test
 external fun testAsync(
     name: String = definedExternally,
     fn: TestFn = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("test")
 external fun testAsync(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("test")
 external fun testAsync(
     options: TestOptions = definedExternally,
     fn: TestFn = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("test")
-external fun testAsync(fn: TestFn = definedExternally): js.promise.Promise<js.core.Void>
+external fun testAsync(fn: TestFn = definedExternally): js.promise.Promise<js.void.Void>
 
 @JsName("test")
-external fun testAsync(): js.promise.Promise<js.core.Void>
+external fun testAsync(): js.promise.Promise<js.void.Void>

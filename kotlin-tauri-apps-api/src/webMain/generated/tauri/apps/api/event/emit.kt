@@ -21,4 +21,4 @@ package tauri.apps.api.event
 external fun <T> emit(
     event: String,
     payload: T = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

@@ -5,9 +5,9 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseResult
+import js.void.Void
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 

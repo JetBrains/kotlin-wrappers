@@ -5,8 +5,8 @@
 package tanstack.query.core
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.Promise
+import js.void.Void
 
 open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(
     config: QueryConfig<TQueryFnData, TError, TData, TQueryKey>,

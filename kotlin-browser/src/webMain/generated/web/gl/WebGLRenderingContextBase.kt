@@ -7,10 +7,10 @@
 package web.gl
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.internal.InternalApi
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.events.EventTarget
 import web.images.PredefinedColorSpace
 

@@ -42,4 +42,4 @@ external fun copyFileAsync(
     src: PathLike,
     dest: PathLike,
     mode: Number = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

@@ -1,6 +1,6 @@
 package js.iterable
 
-import js.core.Void
+import js.void.Void
 import kotlinx.js.JsPlainObject
 
 /**

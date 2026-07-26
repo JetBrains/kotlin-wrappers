@@ -2,10 +2,10 @@
 
 package web.clipboard
 
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import js.string.JsStrings.toKotlinString
+import js.void.Void
 import web.events.EventTarget
 
 /**

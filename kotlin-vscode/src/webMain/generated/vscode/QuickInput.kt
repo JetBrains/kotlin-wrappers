@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Void
+import js.void.Void
 
 /**
  * The base interface for all quick input types.

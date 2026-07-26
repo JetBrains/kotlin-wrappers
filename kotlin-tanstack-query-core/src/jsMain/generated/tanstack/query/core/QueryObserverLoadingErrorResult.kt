@@ -2,7 +2,7 @@
 
 package tanstack.query.core
 
-import js.core.Void
+import js.void.Void
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

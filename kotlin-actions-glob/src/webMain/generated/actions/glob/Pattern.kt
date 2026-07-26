@@ -5,7 +5,7 @@
 package actions.glob
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 open external class Pattern {
     /**

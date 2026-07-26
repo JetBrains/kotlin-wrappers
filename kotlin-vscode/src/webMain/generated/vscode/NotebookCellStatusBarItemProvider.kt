@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Void
+import js.void.Void
 
 /**
  * A provider that can contribute items to the status bar that appears below a cell's editor.

@@ -20,4 +20,4 @@ external fun utimesAsync(
     path: PathLike,
     atime: TimeLike,
     mtime: TimeLike,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

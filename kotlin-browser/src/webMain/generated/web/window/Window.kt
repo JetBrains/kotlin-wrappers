@@ -5,10 +5,10 @@ package web.window
 import js.array.ArrayLike
 import js.array.ReadonlyArray
 import js.closeable.JsCloseable
-import js.core.Void
 import js.globals.GlobalScope
 import js.promise.Promise
 import js.serialization.Transferable
+import js.void.Void
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.cookie.CookieStore

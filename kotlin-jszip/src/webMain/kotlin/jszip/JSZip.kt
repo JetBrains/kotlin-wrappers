@@ -2,13 +2,13 @@ package jszip
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.Void
 import js.objects.ReadonlyRecord
 import js.objects.unsafeJso
 import js.promise.Promise
 import js.promise.await
 import js.regexp.RegExp
 import js.typedarrays.Uint8Array
+import js.void.Void
 import web.blob.Blob
 
 /**

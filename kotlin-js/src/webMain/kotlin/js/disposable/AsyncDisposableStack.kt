@@ -1,9 +1,9 @@
 package js.disposable
 
-import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.await
+import js.void.Void
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack)

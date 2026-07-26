@@ -349,7 +349,7 @@ external interface WebviewTag : web.html.HTMLElement {
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): js.promise.Promise<js.core.Void>
+    fun insertText(text: String): js.promise.Promise<js.void.Void>
 
     /**
      * Starts inspecting element at position (`x`, `y`) of guest page.
@@ -421,7 +421,7 @@ external interface WebviewTag : web.html.HTMLElement {
     fun loadURL(
         url: String,
         options: LoadURLOptions = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Opens a DevTools window for guest page.
@@ -441,7 +441,7 @@ external interface WebviewTag : web.html.HTMLElement {
     /**
      * Prints `webview`'s web page. Same as `webContents.print([options])`.
      */
-    fun print(options: WebviewTagPrintOptions = definedExternally): js.promise.Promise<js.core.Void>
+    fun print(options: WebviewTagPrintOptions = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Resolves with the generated PDF data.
@@ -471,7 +471,7 @@ external interface WebviewTag : web.html.HTMLElement {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `<webview>.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): js.promise.Promise<js.core.Void>
+    fun removeInsertedCSS(key: String): js.promise.Promise<js.void.Void>
 
     /**
      * Executes editing command `replace` in page.
@@ -508,28 +508,28 @@ external interface WebviewTag : web.html.HTMLElement {
     fun send(
         channel: String,
         vararg args: Any?,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: MouseInputEvent): js.promise.Promise<js.core.Void>
+    fun sendInputEvent(event: MouseInputEvent): js.promise.Promise<js.void.Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: MouseWheelInputEvent): js.promise.Promise<js.core.Void>
+    fun sendInputEvent(event: MouseWheelInputEvent): js.promise.Promise<js.void.Void>
 
     /**
      * Sends an input `event` to the page.
      *
      * See webContents.sendInputEvent for detailed description of `event` object.
      */
-    fun sendInputEvent(event: KeyboardInputEvent): js.promise.Promise<js.core.Void>
+    fun sendInputEvent(event: KeyboardInputEvent): js.promise.Promise<js.void.Void>
 
     /**
      * Send an asynchronous message to renderer process via `channel`, you can also
@@ -542,7 +542,7 @@ external interface WebviewTag : web.html.HTMLElement {
         frameId: js.array.Tuple2<Double, Double>,
         channel: String,
         vararg args: Any?,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Set guest page muted.
@@ -560,7 +560,7 @@ external interface WebviewTag : web.html.HTMLElement {
     fun setVisualZoomLevelLimits(
         minimumLevel: Double,
         maximumLevel: Double,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent

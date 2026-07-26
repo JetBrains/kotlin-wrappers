@@ -1,11 +1,11 @@
 package web.observable
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.errors.JsErrorLike
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
+import js.void.Void
 import web.abort.unsafeAbortable
 import web.coroutines.await
 import web.experimental.ExperimentalWebApi

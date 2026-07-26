@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.Void
+import js.void.Void
 
 /**
  * The inline values provider interface defines the contract between extensions and the editor's debugger inline values feature.

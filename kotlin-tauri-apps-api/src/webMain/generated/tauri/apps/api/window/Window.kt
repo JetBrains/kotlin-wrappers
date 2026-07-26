@@ -128,7 +128,7 @@ open external class Window {
     fun <T> emit(
         event: String,
         payload: T = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Emits an event to all {@link EventTarget|targets} matching the given target.
@@ -146,7 +146,7 @@ open external class Window {
         target: String,
         event: String,
         payload: T = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Emits an event to all {@link EventTarget|targets} matching the given target.
@@ -164,7 +164,7 @@ open external class Window {
         target: EventTarget,
         event: String,
         payload: T = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /** @ignore */
     fun <T> _handleTauriEvent(
@@ -420,7 +420,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun center(): js.promise.Promise<js.core.Void>
+    fun center(): js.promise.Promise<js.void.Void>
 
     /**
      *  Requests user attention to the window, this has no effect if the application
@@ -442,7 +442,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun requestUserAttention(requestType: UserAttentionType?): js.promise.Promise<js.core.Void>
+    fun requestUserAttention(requestType: UserAttentionType?): js.promise.Promise<js.void.Void>
 
     /**
      * Updates the window resizable flag.
@@ -454,7 +454,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setResizable(resizable: Boolean): js.promise.Promise<js.core.Void>
+    fun setResizable(resizable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Enable or disable the window.
@@ -468,7 +468,7 @@ open external class Window {
      *
      * @since 2.0.0
      */
-    fun setEnabled(enabled: Boolean): js.promise.Promise<js.core.Void>
+    fun setEnabled(enabled: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window is enabled or disabled.
@@ -501,7 +501,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMaximizable(maximizable: Boolean): js.promise.Promise<js.core.Void>
+    fun setMaximizable(maximizable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets whether the window's native minimize button is enabled or not.
@@ -518,7 +518,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMinimizable(minimizable: Boolean): js.promise.Promise<js.core.Void>
+    fun setMinimizable(minimizable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets whether the window's native close button is enabled or not.
@@ -536,7 +536,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setClosable(closable: Boolean): js.promise.Promise<js.core.Void>
+    fun setClosable(closable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window title.
@@ -549,7 +549,7 @@ open external class Window {
      * @param title The new title
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setTitle(title: String): js.promise.Promise<js.core.Void>
+    fun setTitle(title: String): js.promise.Promise<js.void.Void>
 
     /**
      * Maximizes the window.
@@ -561,7 +561,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun maximize(): js.promise.Promise<js.core.Void>
+    fun maximize(): js.promise.Promise<js.void.Void>
 
     /**
      * Unmaximizes the window.
@@ -573,7 +573,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun unmaximize(): js.promise.Promise<js.core.Void>
+    fun unmaximize(): js.promise.Promise<js.void.Void>
 
     /**
      * Toggles the window maximized state.
@@ -585,7 +585,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun toggleMaximize(): js.promise.Promise<js.core.Void>
+    fun toggleMaximize(): js.promise.Promise<js.void.Void>
 
     /**
      * Minimizes the window.
@@ -597,7 +597,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun minimize(): js.promise.Promise<js.core.Void>
+    fun minimize(): js.promise.Promise<js.void.Void>
 
     /**
      * Unminimizes the window.
@@ -609,7 +609,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun unminimize(): js.promise.Promise<js.core.Void>
+    fun unminimize(): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window visibility to true.
@@ -621,7 +621,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun show(): js.promise.Promise<js.core.Void>
+    fun show(): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window visibility to false.
@@ -633,7 +633,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun hide(): js.promise.Promise<js.core.Void>
+    fun hide(): js.promise.Promise<js.void.Void>
 
     /**
      * Closes the window.
@@ -647,7 +647,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun close(): js.promise.Promise<js.core.Void>
+    fun close(): js.promise.Promise<js.void.Void>
 
     /**
      * Destroys the window. Behaves like {@link Window.close} but forces the window close instead of emitting a closeRequested event.
@@ -659,7 +659,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun destroy(): js.promise.Promise<js.core.Void>
+    fun destroy(): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window should have borders and bars.
@@ -672,7 +672,7 @@ open external class Window {
      * @param decorations Whether the window should have borders and bars.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setDecorations(decorations: Boolean): js.promise.Promise<js.core.Void>
+    fun setDecorations(decorations: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Whether or not the window should have shadow.
@@ -693,17 +693,17 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setShadow(enable: Boolean): js.promise.Promise<js.core.Void>
+    fun setShadow(enable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Set window effects.
      */
-    fun setEffects(effects: Effects): js.promise.Promise<js.core.Void>
+    fun setEffects(effects: Effects): js.promise.Promise<js.void.Void>
 
     /**
      * Clear any applied effects if possible.
      */
-    fun clearEffects(): js.promise.Promise<js.core.Void>
+    fun clearEffects(): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window should always be on top of other windows.
@@ -716,7 +716,7 @@ open external class Window {
      * @param alwaysOnTop Whether the window should always be on top of other windows or not.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setAlwaysOnTop(alwaysOnTop: Boolean): js.promise.Promise<js.core.Void>
+    fun setAlwaysOnTop(alwaysOnTop: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window should always be below other windows.
@@ -729,7 +729,7 @@ open external class Window {
      * @param alwaysOnBottom Whether the window should always be below other windows or not.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setAlwaysOnBottom(alwaysOnBottom: Boolean): js.promise.Promise<js.core.Void>
+    fun setAlwaysOnBottom(alwaysOnBottom: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Prevents the window contents from being captured by other apps.
@@ -741,7 +741,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setContentProtected(protected_: Boolean): js.promise.Promise<js.core.Void>
+    fun setContentProtected(protected_: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Resizes the window with a new inner size.
@@ -754,7 +754,7 @@ open external class Window {
      * @param size The logical or physical inner size.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSize(size: LogicalSize): js.promise.Promise<js.core.Void>
+    fun setSize(size: LogicalSize): js.promise.Promise<js.void.Void>
 
     /**
      * Resizes the window with a new inner size.
@@ -767,7 +767,7 @@ open external class Window {
      * @param size The logical or physical inner size.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSize(size: PhysicalSize): js.promise.Promise<js.core.Void>
+    fun setSize(size: PhysicalSize): js.promise.Promise<js.void.Void>
 
     /**
      * Resizes the window with a new inner size.
@@ -780,7 +780,7 @@ open external class Window {
      * @param size The logical or physical inner size.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSize(size: Size): js.promise.Promise<js.core.Void>
+    fun setSize(size: Size): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window minimum inner size. If the `size` argument is not provided, the constraint is unset.
@@ -793,7 +793,7 @@ open external class Window {
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMinSize(size: LogicalSize?): js.promise.Promise<js.core.Void>
+    fun setMinSize(size: LogicalSize?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window minimum inner size. If the `size` argument is not provided, the constraint is unset.
@@ -806,7 +806,7 @@ open external class Window {
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMinSize(size: PhysicalSize?): js.promise.Promise<js.core.Void>
+    fun setMinSize(size: PhysicalSize?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window minimum inner size. If the `size` argument is not provided, the constraint is unset.
@@ -819,7 +819,7 @@ open external class Window {
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMinSize(size: Size?): js.promise.Promise<js.core.Void>
+    fun setMinSize(size: Size?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window maximum inner size. If the `size` argument is undefined, the constraint is unset.
@@ -832,7 +832,7 @@ open external class Window {
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMaxSize(size: LogicalSize?): js.promise.Promise<js.core.Void>
+    fun setMaxSize(size: LogicalSize?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window maximum inner size. If the `size` argument is undefined, the constraint is unset.
@@ -845,7 +845,7 @@ open external class Window {
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMaxSize(size: PhysicalSize?): js.promise.Promise<js.core.Void>
+    fun setMaxSize(size: PhysicalSize?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window maximum inner size. If the `size` argument is undefined, the constraint is unset.
@@ -858,7 +858,7 @@ open external class Window {
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setMaxSize(size: Size?): js.promise.Promise<js.core.Void>
+    fun setMaxSize(size: Size?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window inner size constraints.
@@ -871,7 +871,7 @@ open external class Window {
      * @param constraints The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSizeConstraints(constraints: WindowSizeConstraints?): js.promise.Promise<js.core.Void>
+    fun setSizeConstraints(constraints: WindowSizeConstraints?): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window outer position.
@@ -884,7 +884,7 @@ open external class Window {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: LogicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: LogicalPosition): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window outer position.
@@ -897,7 +897,7 @@ open external class Window {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: PhysicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: PhysicalPosition): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window outer position.
@@ -910,7 +910,7 @@ open external class Window {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: Position): js.promise.Promise<js.core.Void>
+    fun setPosition(position: Position): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window fullscreen state.
@@ -923,7 +923,7 @@ open external class Window {
      * @param fullscreen Whether the window should go to fullscreen or not.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setFullscreen(fullscreen: Boolean): js.promise.Promise<js.core.Void>
+    fun setFullscreen(fullscreen: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * On macOS, Toggles a fullscreen mode that doesn’t require a new macOS space. Returns a boolean indicating whether the transition was successful (this won’t work if the window was already in the native fullscreen).
@@ -934,7 +934,7 @@ open external class Window {
      * @param fullscreen Whether the window should go to simple fullscreen or not.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSimpleFullscreen(fullscreen: Boolean): js.promise.Promise<js.core.Void>
+    fun setSimpleFullscreen(fullscreen: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Bring the window to front and focus.
@@ -946,7 +946,7 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setFocus(): js.promise.Promise<js.core.Void>
+    fun setFocus(): js.promise.Promise<js.void.Void>
 
     /**
      * Sets whether the window can be focused.
@@ -965,7 +965,7 @@ open external class Window {
      * @param focusable Whether the window can be focused.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setFocusable(focusable: Boolean): js.promise.Promise<js.core.Void>
+    fun setFocusable(focusable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window icon.
@@ -985,7 +985,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIcon(icon: String): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: String): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window icon.
@@ -1005,7 +1005,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIcon(icon: Image): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: Image): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window icon.
@@ -1025,7 +1025,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIcon(icon: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window icon.
@@ -1045,7 +1045,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIcon(icon: js.buffer.ArrayBuffer): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.buffer.ArrayBuffer): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window icon.
@@ -1065,7 +1065,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIcon(icon: js.array.ReadonlyArray<Double>): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: js.array.ReadonlyArray<Double>): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window icon should be hidden from the taskbar or not.
@@ -1082,7 +1082,7 @@ open external class Window {
      * @param skip true to hide window icon, false to show it.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSkipTaskbar(skip: Boolean): js.promise.Promise<js.core.Void>
+    fun setSkipTaskbar(skip: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Grabs the cursor, preventing it from leaving the window.
@@ -1103,7 +1103,7 @@ open external class Window {
      * @param grab `true` to grab the cursor icon, `false` to release it.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorGrab(grab: Boolean): js.promise.Promise<js.core.Void>
+    fun setCursorGrab(grab: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Modifies the cursor's visibility.
@@ -1122,7 +1122,7 @@ open external class Window {
      * @param visible If `false`, this will hide the cursor. If `true`, this will show the cursor.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorVisible(visible: Boolean): js.promise.Promise<js.core.Void>
+    fun setCursorVisible(visible: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Modifies the cursor icon of the window.
@@ -1135,7 +1135,7 @@ open external class Window {
      * @param icon The new cursor icon.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorIcon(icon: CursorIcon): js.promise.Promise<js.core.Void>
+    fun setCursorIcon(icon: CursorIcon): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the window background color.
@@ -1149,7 +1149,7 @@ open external class Window {
      *
      * @since 2.1.0
      */
-    open fun setBackgroundColor(color: Color): js.promise.Promise<js.core.Void>
+    open fun setBackgroundColor(color: Color): js.promise.Promise<js.void.Void>
 
     /**
      * Changes the position of the cursor in window coordinates.
@@ -1162,7 +1162,7 @@ open external class Window {
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorPosition(position: LogicalPosition): js.promise.Promise<js.core.Void>
+    fun setCursorPosition(position: LogicalPosition): js.promise.Promise<js.void.Void>
 
     /**
      * Changes the position of the cursor in window coordinates.
@@ -1175,7 +1175,7 @@ open external class Window {
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorPosition(position: PhysicalPosition): js.promise.Promise<js.core.Void>
+    fun setCursorPosition(position: PhysicalPosition): js.promise.Promise<js.void.Void>
 
     /**
      * Changes the position of the cursor in window coordinates.
@@ -1188,7 +1188,7 @@ open external class Window {
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setCursorPosition(position: Position): js.promise.Promise<js.core.Void>
+    fun setCursorPosition(position: Position): js.promise.Promise<js.void.Void>
 
     /**
      * Changes the cursor events behavior.
@@ -1202,7 +1202,7 @@ open external class Window {
      * @param ignore `true` to ignore the cursor events; `false` to process them as usual.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setIgnoreCursorEvents(ignore: Boolean): js.promise.Promise<js.core.Void>
+    fun setIgnoreCursorEvents(ignore: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Starts dragging the window.
@@ -1214,7 +1214,7 @@ open external class Window {
      *
      * @return A promise indicating the success or failure of the operation.
      */
-    fun startDragging(): js.promise.Promise<js.core.Void>
+    fun startDragging(): js.promise.Promise<js.void.Void>
 
     /**
      * Starts resize-dragging the window.
@@ -1226,7 +1226,7 @@ open external class Window {
      *
      * @return A promise indicating the success or failure of the operation.
      */
-    fun startResizeDragging(direction: ResizeDirection): js.promise.Promise<js.core.Void>
+    fun startResizeDragging(direction: ResizeDirection): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the badge count. It is app wide and not specific to this window.
@@ -1244,7 +1244,7 @@ open external class Window {
      * @param count The badge count. Use `undefined` to remove the badge.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setBadgeCount(count: Double = definedExternally): js.promise.Promise<js.core.Void>
+    fun setBadgeCount(count: Double = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the badge cont **macOS only**.
@@ -1258,7 +1258,7 @@ open external class Window {
      * @param label The badge label. Use `undefined` to remove the badge.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setBadgeLabel(label: String = definedExternally): js.promise.Promise<js.core.Void>
+    fun setBadgeLabel(label: String = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the overlay icon. **Windows only**
@@ -1282,7 +1282,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the overlay icon. **Windows only**
@@ -1306,7 +1306,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(icon: String = definedExternally): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(icon: String = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the overlay icon. **Windows only**
@@ -1330,7 +1330,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(icon: Image = definedExternally): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(icon: Image = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the overlay icon. **Windows only**
@@ -1354,7 +1354,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(icon: js.typedarrays.Uint8Array<*> = definedExternally): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(icon: js.typedarrays.Uint8Array<*> = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the overlay icon. **Windows only**
@@ -1378,7 +1378,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(icon: js.buffer.ArrayBuffer = definedExternally): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(icon: js.buffer.ArrayBuffer = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the overlay icon. **Windows only**
@@ -1402,7 +1402,7 @@ open external class Window {
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setOverlayIcon(icon: js.array.ReadonlyArray<Double> = definedExternally): js.promise.Promise<js.core.Void>
+    fun setOverlayIcon(icon: js.array.ReadonlyArray<Double> = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the taskbar progress state.
@@ -1423,7 +1423,7 @@ open external class Window {
      *
      * @return A promise indicating the success or failure of the operation.
      */
-    fun setProgressBar(state: ProgressBarState): js.promise.Promise<js.core.Void>
+    fun setProgressBar(state: ProgressBarState): js.promise.Promise<js.void.Void>
 
     /**
      * Sets whether the window should be visible on all workspaces or virtual desktops.
@@ -1434,14 +1434,14 @@ open external class Window {
      *
      * @since 2.0.0
      */
-    fun setVisibleOnAllWorkspaces(visible: Boolean): js.promise.Promise<js.core.Void>
+    fun setVisibleOnAllWorkspaces(visible: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the title bar style. **macOS only**.
      *
      * @since 2.0.0
      */
-    fun setTitleBarStyle(style: TitleBarStyle): js.promise.Promise<js.core.Void>
+    fun setTitleBarStyle(style: TitleBarStyle): js.promise.Promise<js.void.Void>
 
     /**
      * Set window theme, pass in `null` or `undefined` to follow system theme
@@ -1453,7 +1453,7 @@ open external class Window {
      *
      * @since 2.0.0
      */
-    fun setTheme(theme: Theme? = definedExternally): js.promise.Promise<js.core.Void>
+    fun setTheme(theme: Theme? = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Listen to window resize.

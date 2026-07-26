@@ -23,7 +23,7 @@ external class Cookies : NodeEventEmitter {
      *
      * Calling this method can cause the cookie to be written to disk immediately.
      */
-    fun flushStore(): js.promise.Promise<js.core.Void>
+    fun flushStore(): js.promise.Promise<js.void.Void>
 
     /**
      * A promise which resolves an array of cookie objects.
@@ -41,14 +41,14 @@ external class Cookies : NodeEventEmitter {
     fun remove(
         url: String,
         name: String,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * A promise which resolves when the cookie has been set.
      *
      * Sets a cookie with `details`.
      */
-    fun set(details: CookiesSetDetails): js.promise.Promise<js.core.Void>
+    fun set(details: CookiesSetDetails): js.promise.Promise<js.void.Void>
 
     @web.events.JsEvent("changed")
     val changedEvent:

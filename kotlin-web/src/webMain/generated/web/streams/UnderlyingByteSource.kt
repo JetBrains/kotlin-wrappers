@@ -2,9 +2,9 @@
 
 package web.streams
 
-import js.core.Void
 import js.numbers.UInt53
 import js.promise.PromiseLike
+import js.void.Void
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject

@@ -176,7 +176,7 @@ open external class Webview {
     fun <T> emit(
         event: String,
         payload: T = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Emits an event to all {@link EventTarget|targets} matching the given target.
@@ -195,7 +195,7 @@ open external class Webview {
         target: String,
         event: String,
         payload: T = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Emits an event to all {@link EventTarget|targets} matching the given target.
@@ -214,7 +214,7 @@ open external class Webview {
         target: EventTarget,
         event: String,
         payload: T = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /** @ignore */
     fun <T> _handleTauriEvent(
@@ -257,7 +257,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun close(): js.promise.Promise<js.core.Void>
+    fun close(): js.promise.Promise<js.void.Void>
 
     /**
      * Resizes the webview.
@@ -270,7 +270,7 @@ open external class Webview {
      * @param size The logical or physical size.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSize(size: LogicalSize): js.promise.Promise<js.core.Void>
+    fun setSize(size: LogicalSize): js.promise.Promise<js.void.Void>
 
     /**
      * Resizes the webview.
@@ -283,7 +283,7 @@ open external class Webview {
      * @param size The logical or physical size.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSize(size: PhysicalSize): js.promise.Promise<js.core.Void>
+    fun setSize(size: PhysicalSize): js.promise.Promise<js.void.Void>
 
     /**
      * Resizes the webview.
@@ -296,7 +296,7 @@ open external class Webview {
      * @param size The logical or physical size.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setSize(size: Size): js.promise.Promise<js.core.Void>
+    fun setSize(size: Size): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the webview position.
@@ -309,7 +309,7 @@ open external class Webview {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: LogicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: LogicalPosition): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the webview position.
@@ -322,7 +322,7 @@ open external class Webview {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: PhysicalPosition): js.promise.Promise<js.core.Void>
+    fun setPosition(position: PhysicalPosition): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the webview position.
@@ -335,7 +335,7 @@ open external class Webview {
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setPosition(position: Position): js.promise.Promise<js.core.Void>
+    fun setPosition(position: Position): js.promise.Promise<js.void.Void>
 
     /**
      * Bring the webview to front and focus.
@@ -347,7 +347,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setFocus(): js.promise.Promise<js.core.Void>
+    fun setFocus(): js.promise.Promise<js.void.Void>
 
     /**
      * Sets whether the webview should automatically grow and shrink its size and position when the parent window resizes.
@@ -359,7 +359,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setAutoResize(autoResize: Boolean): js.promise.Promise<js.core.Void>
+    fun setAutoResize(autoResize: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Hide the webview.
@@ -371,7 +371,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun hide(): js.promise.Promise<js.core.Void>
+    fun hide(): js.promise.Promise<js.void.Void>
 
     /**
      * Show the webview.
@@ -383,7 +383,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun show(): js.promise.Promise<js.core.Void>
+    fun show(): js.promise.Promise<js.void.Void>
 
     /**
      * Set webview zoom level.
@@ -395,7 +395,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun setZoom(scaleFactor: Double): js.promise.Promise<js.core.Void>
+    fun setZoom(scaleFactor: Double): js.promise.Promise<js.void.Void>
 
     /**
      * Moves this webview to the given label.
@@ -407,7 +407,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun reparent(window: Window): js.promise.Promise<js.core.Void>
+    fun reparent(window: Window): js.promise.Promise<js.void.Void>
 
     /**
      * Moves this webview to the given label.
@@ -419,7 +419,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun reparent(window: WebviewWindow): js.promise.Promise<js.core.Void>
+    fun reparent(window: WebviewWindow): js.promise.Promise<js.void.Void>
 
     /**
      * Moves this webview to the given label.
@@ -431,7 +431,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun reparent(window: String): js.promise.Promise<js.core.Void>
+    fun reparent(window: String): js.promise.Promise<js.void.Void>
 
     /**
      * Clears all browsing data for this webview.
@@ -443,7 +443,7 @@ open external class Webview {
      *
      * @returns A promise indicating the success or failure of the operation.
      */
-    fun clearAllBrowsingData(): js.promise.Promise<js.core.Void>
+    fun clearAllBrowsingData(): js.promise.Promise<js.void.Void>
 
     /**
      * Specify the webview background color.
@@ -459,7 +459,7 @@ open external class Webview {
      *
      * @since 2.1.0
      */
-    open fun setBackgroundColor(color: Color?): js.promise.Promise<js.core.Void>
+    open fun setBackgroundColor(color: Color?): js.promise.Promise<js.void.Void>
 
     /**
      * Listen to a file drop event.

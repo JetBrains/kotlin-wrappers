@@ -1,5 +1,5 @@
 package tanstack.router.core
 
-import js.core.Void
+import js.void.Void
 
 typealias NavigateFn = SuspendInvoker<NavigateOptions, Void>

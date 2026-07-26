@@ -7,7 +7,6 @@ import js.buffer.DataView
 import js.collections.ReadonlyMap
 import js.numbers.JsDouble
 import js.numbers.JsInt
-import js.core.Void
 import js.date.Date
 import js.errors.JsError
 import js.objects.ReadonlyRecord
@@ -20,6 +19,7 @@ import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint32Array
 import js.typedarrays.Uint8Array
+import js.void.Void
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.blob.Blob

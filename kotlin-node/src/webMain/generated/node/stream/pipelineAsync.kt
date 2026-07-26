@@ -53,18 +53,18 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
 external fun pipelineAsync(
     streams: js.array.ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,
     options: PipelineOptions = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("pipeline")
 external fun pipelineAsync(
     stream1: node.ReadableStream,
     stream2: node.ReadWriteStream,
     vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 @JsName("pipeline")
 external fun pipelineAsync(
     stream1: node.ReadableStream,
     stream2: node.WritableStream,
     vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

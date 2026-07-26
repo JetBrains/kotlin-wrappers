@@ -22,4 +22,4 @@ import tauri.apps.api.window.Theme
  *
  * @since 2.0.0
  */
-external fun setTheme(theme: Theme? = definedExternally): js.promise.Promise<js.core.Void>
+external fun setTheme(theme: Theme? = definedExternally): js.promise.Promise<js.void.Void>

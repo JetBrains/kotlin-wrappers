@@ -3,9 +3,9 @@
 package web.gpu
 
 import js.buffer.ArrayBuffer
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /**
  * The **`GPUBuffer`** interface of the WebGPU API represents a block of memory that can be used to store raw data to use in GPU operations.

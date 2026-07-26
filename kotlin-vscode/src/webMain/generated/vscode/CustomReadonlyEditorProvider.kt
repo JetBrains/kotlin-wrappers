@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.Void
 import js.promise.PromiseLike
 import js.promise.PromiseResult
+import js.void.Void
 
 /**
  * Provider for readonly custom editors that use a custom document model.

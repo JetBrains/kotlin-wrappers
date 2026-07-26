@@ -1,10 +1,10 @@
 package js.promise
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.errors.JsError
 import js.errors.JsErrorLike
 import js.iterable.JsIterable
+import js.void.Void
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)

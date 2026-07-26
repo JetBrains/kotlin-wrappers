@@ -40,7 +40,7 @@ external fun mkdirAsync(
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
 @JsName("mkdir")
-external fun mkdirAsync(path: PathLike): js.promise.Promise<js.core.Void>
+external fun mkdirAsync(path: PathLike): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -52,7 +52,7 @@ external fun mkdirAsync(path: PathLike): js.promise.Promise<js.core.Void>
 external fun mkdirAsync(
     path: PathLike,
     options: Mode? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -64,7 +64,7 @@ external fun mkdirAsync(
 external fun mkdirAsync(
     path: PathLike,
     options: (MkdirAsyncOptions)? = definedExternally,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>
 
 /**
  * Asynchronous mkdir(2) - create a directory.

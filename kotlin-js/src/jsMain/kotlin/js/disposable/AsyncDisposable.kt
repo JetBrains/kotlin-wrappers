@@ -4,8 +4,8 @@
 
 package js.disposable
 
-import js.core.Void
 import js.promise.PromiseLike
+import js.void.Void
 
 actual external interface AsyncDisposable {
 

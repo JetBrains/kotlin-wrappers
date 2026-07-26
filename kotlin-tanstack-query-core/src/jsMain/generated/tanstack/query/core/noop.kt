@@ -4,6 +4,6 @@
 
 package tanstack.query.core
 
-import js.core.Void
+import js.void.Void
 
 external fun noop(): Void

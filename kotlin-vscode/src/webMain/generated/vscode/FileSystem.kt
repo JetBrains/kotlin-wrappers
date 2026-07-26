@@ -4,9 +4,9 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
-import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import js.void.Void
 import kotlinx.js.JsPlainObject
 
 /**

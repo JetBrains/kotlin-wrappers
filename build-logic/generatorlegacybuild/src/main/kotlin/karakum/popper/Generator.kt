@@ -12,10 +12,10 @@ private val DEFAULT_IMPORTS = listOf(
 
     "js.array.ReadonlyArray",
     "kotlinx.js.JsPlainObject",
-    "js.core.Void",
     "js.objects.Record",
     "js.objects.ReadonlyRecord",
     "js.reflect.JsExternalInheritorsOnly",
+    "js.void.Void",
 
     "seskar.js.JsRawValue",
     "seskar.js.JsValue",

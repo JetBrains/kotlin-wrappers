@@ -15,7 +15,7 @@ external class PredefinedMenuItem : MenuItemBase {
     fun text(): js.promise.Promise<String>
 
     /** Sets the text for this predefined menu item. */
-    fun setText(text: String): js.promise.Promise<js.core.Void>
+    fun setText(text: String): js.promise.Promise<js.void.Void>
 
     companion object {
         /** Create a new predefined menu item. */

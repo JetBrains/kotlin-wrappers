@@ -71,7 +71,7 @@ external interface RunOptions {
      * A function that accepts the `TestsStream` instance and can be used to setup listeners before any tests are run.
      * @default undefined
      */
-    var setup: ((reporter: TestsStream) -> js.promise.PromiseResult<js.core.Void>)?
+    var setup: ((reporter: TestsStream) -> js.promise.PromiseResult<js.void.Void>)?
 
     /**
      * An array of CLI flags to pass to the `node` executable when

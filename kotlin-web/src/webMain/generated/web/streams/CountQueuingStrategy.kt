@@ -2,7 +2,7 @@
 
 package web.streams
 
-import js.core.Void
+import js.void.Void
 
 /**
  * The **`CountQueuingStrategy`** interface of the Streams API provides a built-in chunk counting queuing strategy that can be used when constructing streams.

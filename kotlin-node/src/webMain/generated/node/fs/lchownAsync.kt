@@ -14,4 +14,4 @@ external fun lchownAsync(
     path: PathLike,
     uid: Number,
     gid: Number,
-): js.promise.Promise<js.core.Void>
+): js.promise.Promise<js.void.Void>

@@ -65,13 +65,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: String,
         params: Any = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: String,
         params: Any = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Returns supported domains.
@@ -149,13 +149,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.RUNTIME_RELEASEOBJECT,
         params: node.inspector.runtime.ReleaseObjectParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECT,
         params: node.inspector.runtime.ReleaseObjectParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Releases all remote objects that belong to a given group.
@@ -164,49 +164,49 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.RUNTIME_RELEASEOBJECTGROUP,
         params: node.inspector.runtime.ReleaseObjectGroupParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECTGROUP,
         params: node.inspector.runtime.ReleaseObjectGroupParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Tells inspected instance to run if it was waiting for debugger to attach.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.RUNTIME_RUNIFWAITINGFORDEBUGGER): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.RUNTIME_RUNIFWAITINGFORDEBUGGER): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.RUNTIME_RUNIFWAITINGFORDEBUGGER): js.core.Void
+    suspend fun post(method: SessionMethod.RUNTIME_RUNIFWAITINGFORDEBUGGER): js.void.Void
 
     /**
      * Enables reporting of execution contexts creation by means of <code>executionContextCreated</code> event. When the reporting gets enabled the event will be sent immediately for each existing execution context.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.RUNTIME_ENABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.RUNTIME_ENABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.RUNTIME_ENABLE): js.core.Void
+    suspend fun post(method: SessionMethod.RUNTIME_ENABLE): js.void.Void
 
     /**
      * Disables reporting of execution contexts creation.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.RUNTIME_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.RUNTIME_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.RUNTIME_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.RUNTIME_DISABLE): js.void.Void
 
     /**
      * Discards collected exceptions and console API calls.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.RUNTIME_DISCARDCONSOLEENTRIES): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.RUNTIME_DISCARDCONSOLEENTRIES): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.RUNTIME_DISCARDCONSOLEENTRIES): js.core.Void
+    suspend fun post(method: SessionMethod.RUNTIME_DISCARDCONSOLEENTRIES): js.void.Void
 
     /**
      * @experimental
@@ -215,13 +215,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED,
         params: node.inspector.runtime.SetCustomObjectFormatterEnabledParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED,
         params: node.inspector.runtime.SetCustomObjectFormatterEnabledParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Compiles expression.
@@ -293,10 +293,10 @@ external class Session : EventEmitter {
      * Disables debugger for given page.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.DEBUGGER_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.DEBUGGER_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.DEBUGGER_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.DEBUGGER_DISABLE): js.void.Void
 
     /**
      * Activates / deactivates all breakpoints on the page.
@@ -305,13 +305,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTSACTIVE,
         params: node.inspector.debugger.SetBreakpointsActiveParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTSACTIVE,
         params: node.inspector.debugger.SetBreakpointsActiveParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Makes page not interrupt on any pauses (breakpoint, exception, dom exception etc).
@@ -320,13 +320,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETSKIPALLPAUSES,
         params: node.inspector.debugger.SetSkipAllPausesParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETSKIPALLPAUSES,
         params: node.inspector.debugger.SetSkipAllPausesParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Sets JavaScript breakpoint at given location specified either by URL or URL regex. Once this command is issued, all existing parsed scripts will have breakpoints resolved and returned in <code>locations</code> property. Further matching script parsing will result in subsequent <code>breakpointResolved</code> events issued. This logical breakpoint will survive page reloads.
@@ -365,13 +365,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_REMOVEBREAKPOINT,
         params: node.inspector.debugger.RemoveBreakpointParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_REMOVEBREAKPOINT,
         params: node.inspector.debugger.RemoveBreakpointParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Returns possible locations for breakpoint. scriptId in start and end range locations should be the same.
@@ -395,13 +395,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_CONTINUETOLOCATION,
         params: node.inspector.debugger.ContinueToLocationParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_CONTINUETOLOCATION,
         params: node.inspector.debugger.ContinueToLocationParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * @experimental
@@ -410,22 +410,22 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_PAUSEONASYNCCALL,
         params: node.inspector.debugger.PauseOnAsyncCallParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_PAUSEONASYNCCALL,
         params: node.inspector.debugger.PauseOnAsyncCallParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Steps over the statement.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.DEBUGGER_STEPOVER): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.DEBUGGER_STEPOVER): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.DEBUGGER_STEPOVER): js.core.Void
+    suspend fun post(method: SessionMethod.DEBUGGER_STEPOVER): js.void.Void
 
     /**
      * Steps into the function call.
@@ -434,50 +434,50 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_STEPINTO,
         params: node.inspector.debugger.StepIntoParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_STEPINTO,
         params: node.inspector.debugger.StepIntoParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Steps out of the function call.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.DEBUGGER_STEPOUT): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.DEBUGGER_STEPOUT): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.DEBUGGER_STEPOUT): js.core.Void
+    suspend fun post(method: SessionMethod.DEBUGGER_STEPOUT): js.void.Void
 
     /**
      * Stops on the next JavaScript statement.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.DEBUGGER_PAUSE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.DEBUGGER_PAUSE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.DEBUGGER_PAUSE): js.core.Void
+    suspend fun post(method: SessionMethod.DEBUGGER_PAUSE): js.void.Void
 
     /**
      * This method is deprecated - use Debugger.stepInto with breakOnAsyncCall and Debugger.pauseOnAsyncTask instead. Steps into next scheduled async task if any is scheduled before next pause. Returns success when async task is actually scheduled, returns error if no task were scheduled or another scheduleStepIntoAsync was called.
      * @experimental
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.DEBUGGER_SCHEDULESTEPINTOASYNC): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.DEBUGGER_SCHEDULESTEPINTOASYNC): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.DEBUGGER_SCHEDULESTEPINTOASYNC): js.core.Void
+    suspend fun post(method: SessionMethod.DEBUGGER_SCHEDULESTEPINTOASYNC): js.void.Void
 
     /**
      * Resumes JavaScript execution.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.DEBUGGER_RESUME): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.DEBUGGER_RESUME): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.DEBUGGER_RESUME): js.core.Void
+    suspend fun post(method: SessionMethod.DEBUGGER_RESUME): js.void.Void
 
     /**
      * Returns stack trace with given <code>stackTraceId</code>.
@@ -562,13 +562,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETPAUSEONEXCEPTIONS,
         params: node.inspector.debugger.SetPauseOnExceptionsParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETPAUSEONEXCEPTIONS,
         params: node.inspector.debugger.SetPauseOnExceptionsParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Evaluates expression on a given call frame.
@@ -592,13 +592,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETVARIABLEVALUE,
         params: node.inspector.debugger.SetVariableValueParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETVARIABLEVALUE,
         params: node.inspector.debugger.SetVariableValueParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Changes return value in top frame. Available only at return break position.
@@ -608,13 +608,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETRETURNVALUE,
         params: node.inspector.debugger.SetReturnValueParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETRETURNVALUE,
         params: node.inspector.debugger.SetReturnValueParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Enables or disables async call stacks tracking.
@@ -623,13 +623,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETASYNCCALLSTACKDEPTH,
         params: node.inspector.debugger.SetAsyncCallStackDepthParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETASYNCCALLSTACKDEPTH,
         params: node.inspector.debugger.SetAsyncCallStackDepthParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Replace previous blackbox patterns with passed ones. Forces backend to skip stepping/pausing in scripts with url matching one of the patterns. VM will try to leave blackboxed script by performing 'step in' several times, finally resorting to 'step out' if unsuccessful.
@@ -639,13 +639,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETBLACKBOXPATTERNS,
         params: node.inspector.debugger.SetBlackboxPatternsParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXPATTERNS,
         params: node.inspector.debugger.SetBlackboxPatternsParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Makes backend skip steps in the script in blackboxed ranges. VM will try leave blacklisted scripts by performing 'step in' several times, finally resorting to 'step out' if unsuccessful. Positions array contains positions where blackbox state is changed. First interval isn't blackboxed. Array should be sorted.
@@ -655,52 +655,52 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.DEBUGGER_SETBLACKBOXEDRANGES,
         params: node.inspector.debugger.SetBlackboxedRangesParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXEDRANGES,
         params: node.inspector.debugger.SetBlackboxedRangesParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Enables console domain, sends the messages collected so far to the client by means of the <code>messageAdded</code> notification.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.CONSOLE_ENABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.CONSOLE_ENABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.CONSOLE_ENABLE): js.core.Void
+    suspend fun post(method: SessionMethod.CONSOLE_ENABLE): js.void.Void
 
     /**
      * Disables console domain, prevents further console messages from being reported to the client.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.CONSOLE_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.CONSOLE_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.CONSOLE_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.CONSOLE_DISABLE): js.void.Void
 
     /**
      * Does nothing.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.CONSOLE_CLEARMESSAGES): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.CONSOLE_CLEARMESSAGES): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.CONSOLE_CLEARMESSAGES): js.core.Void
+    suspend fun post(method: SessionMethod.CONSOLE_CLEARMESSAGES): js.void.Void
 
     @JsName("post")
-    fun postAsync(method: SessionMethod.PROFILER_ENABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.PROFILER_ENABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.PROFILER_ENABLE): js.core.Void
+    suspend fun post(method: SessionMethod.PROFILER_ENABLE): js.void.Void
 
     @JsName("post")
-    fun postAsync(method: SessionMethod.PROFILER_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.PROFILER_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.PROFILER_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.PROFILER_DISABLE): js.void.Void
 
     /**
      * Changes CPU profiler sampling interval. Must be called before CPU profiles recording started.
@@ -709,19 +709,19 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.PROFILER_SETSAMPLINGINTERVAL,
         params: node.inspector.profiler.SetSamplingIntervalParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.PROFILER_SETSAMPLINGINTERVAL,
         params: node.inspector.profiler.SetSamplingIntervalParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
-    fun postAsync(method: SessionMethod.PROFILER_START): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.PROFILER_START): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.PROFILER_START): js.core.Void
+    suspend fun post(method: SessionMethod.PROFILER_START): js.void.Void
 
     @JsName("post")
     fun postAsync(method: SessionMethod.PROFILER_STOP): js.promise.Promise<node.inspector.profiler.StopReturnType>
@@ -736,22 +736,22 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.PROFILER_STARTPRECISECOVERAGE,
         params: node.inspector.profiler.StartPreciseCoverageParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.PROFILER_STARTPRECISECOVERAGE,
         params: node.inspector.profiler.StartPreciseCoverageParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Disable precise code coverage. Disabling releases unnecessary execution count records and allows executing optimized code.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.PROFILER_STOPPRECISECOVERAGE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.PROFILER_STOPPRECISECOVERAGE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.PROFILER_STOPPRECISECOVERAGE): js.core.Void
+    suspend fun post(method: SessionMethod.PROFILER_STOPPRECISECOVERAGE): js.void.Void
 
     /**
      * Collect coverage data for the current isolate, and resets execution counters. Precise code coverage needs to have started.
@@ -780,58 +780,58 @@ external class Session : EventEmitter {
     ): node.inspector.profiler.GetBestEffortCoverageReturnType
 
     @JsName("post")
-    fun postAsync(method: SessionMethod.HEAPPROFILER_ENABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.HEAPPROFILER_ENABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.HEAPPROFILER_ENABLE): js.core.Void
+    suspend fun post(method: SessionMethod.HEAPPROFILER_ENABLE): js.void.Void
 
     @JsName("post")
-    fun postAsync(method: SessionMethod.HEAPPROFILER_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.HEAPPROFILER_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.HEAPPROFILER_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.HEAPPROFILER_DISABLE): js.void.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
         params: node.inspector.heapProfiler.StartTrackingHeapObjectsParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
         params: node.inspector.heapProfiler.StartTrackingHeapObjectsParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
         params: node.inspector.heapProfiler.StopTrackingHeapObjectsParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
         params: node.inspector.heapProfiler.StopTrackingHeapObjectsParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
         params: node.inspector.heapProfiler.TakeHeapSnapshotParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
         params: node.inspector.heapProfiler.TakeHeapSnapshotParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
-    fun postAsync(method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE): js.core.Void
+    suspend fun post(method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE): js.void.Void
 
     @JsName("post")
     fun postAsync(
@@ -852,13 +852,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
         params: node.inspector.heapProfiler.AddInspectedHeapObjectParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
         params: node.inspector.heapProfiler.AddInspectedHeapObjectParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
     fun postAsync(
@@ -876,13 +876,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
         params: node.inspector.heapProfiler.StartSamplingParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
         params: node.inspector.heapProfiler.StartSamplingParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
     fun postAsync(
@@ -924,23 +924,23 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.NODETRACING_START,
         params: node.inspector.nodeTracing.StartParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODETRACING_START,
         params: node.inspector.nodeTracing.StartParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Stop trace events collection. Remaining collected events will be sent as a sequence of
      * dataCollected events followed by tracingComplete event.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.NODETRACING_STOP): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.NODETRACING_STOP): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.NODETRACING_STOP): js.core.Void
+    suspend fun post(method: SessionMethod.NODETRACING_STOP): js.void.Void
 
     /**
      * Sends protocol message over session with given id.
@@ -949,13 +949,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
         params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
         params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Instructs the inspector to attach to running workers. Will also attach to new workers
@@ -965,22 +965,22 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.NODEWORKER_ENABLE,
         params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODEWORKER_ENABLE,
         params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Detaches from all running workers and disables attaching to new workers as they are started.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.NODEWORKER_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.NODEWORKER_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.NODEWORKER_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.NODEWORKER_DISABLE): js.void.Void
 
     /**
      * Detached from the worker with given sessionId.
@@ -989,22 +989,22 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.NODEWORKER_DETACH,
         params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODEWORKER_DETACH,
         params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Disables network tracking, prevents network events from being sent to the client.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.NETWORK_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.NETWORK_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.NETWORK_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.NETWORK_DISABLE): js.void.Void
 
     /**
      * Enables network tracking, network events will now be delivered to the client.
@@ -1013,13 +1013,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.NETWORK_ENABLE,
         params: node.inspector.network.EnableParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NETWORK_ENABLE,
         params: node.inspector.network.EnableParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Returns post data sent with the request. Returns an error when no data was sent with the request.
@@ -1087,19 +1087,19 @@ external class Session : EventEmitter {
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.NODERUNTIME_ENABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.NODERUNTIME_ENABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.NODERUNTIME_ENABLE): js.core.Void
+    suspend fun post(method: SessionMethod.NODERUNTIME_ENABLE): js.void.Void
 
     /**
      * Disable NodeRuntime events
      */
     @JsName("post")
-    fun postAsync(method: SessionMethod.NODERUNTIME_DISABLE): js.promise.Promise<js.core.Void>
+    fun postAsync(method: SessionMethod.NODERUNTIME_DISABLE): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
-    suspend fun post(method: SessionMethod.NODERUNTIME_DISABLE): js.core.Void
+    suspend fun post(method: SessionMethod.NODERUNTIME_DISABLE): js.void.Void
 
     /**
      * Enable the `NodeRuntime.waitingForDisconnect`.
@@ -1108,25 +1108,25 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
         params: node.inspector.nodeRuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
         params: node.inspector.nodeRuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.TARGET_SETAUTOATTACH,
         params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.TARGET_SETAUTOATTACH,
         params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     /**
      * Read a chunk of the stream
@@ -1147,13 +1147,13 @@ external class Session : EventEmitter {
     fun postAsync(
         method: SessionMethod.IO_CLOSE,
         params: node.inspector.io.CloseParameterType = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.IO_CLOSE,
         params: node.inspector.io.CloseParameterType = definedExternally,
-    ): js.core.Void
+    ): js.void.Void
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**

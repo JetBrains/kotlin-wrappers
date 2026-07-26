@@ -4,10 +4,10 @@ package web.fs
 
 import js.array.ReadonlyArray
 import js.collections.AsyncMapLike
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
+import js.void.Void
 
 /**
  * The **`FileSystemDirectoryHandle`** interface of the File System API provides a handle to a file system directory.

@@ -19,13 +19,13 @@ open external class Submenu : MenuItemBase {
     fun text(): js.promise.Promise<String>
 
     /** Sets the text for this submenu. */
-    fun setText(text: String): js.promise.Promise<js.core.Void>
+    fun setText(text: String): js.promise.Promise<js.void.Void>
 
     /** Returns whether this submenu is enabled or not. */
     fun isEnabled(): js.promise.Promise<Boolean>
 
     /** Sets whether this submenu is enabled or not. */
-    fun setEnabled(enabled: Boolean): js.promise.Promise<js.core.Void>
+    fun setEnabled(enabled: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the end of this submenu.
@@ -36,7 +36,7 @@ open external class Submenu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> append(
         items: T,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the end of this submenu.
@@ -47,7 +47,7 @@ open external class Submenu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> append(
         items: js.array.ReadonlyArray<T>,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the beginning of this submenu.
@@ -58,7 +58,7 @@ open external class Submenu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> prepend(
         items: T,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the beginning of this submenu.
@@ -69,7 +69,7 @@ open external class Submenu : MenuItemBase {
      */
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> prepend(
         items: js.array.ReadonlyArray<T>,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the specified position in this submenu.
@@ -81,7 +81,7 @@ open external class Submenu : MenuItemBase {
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> insert(
         items: T,
         position: Double,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Add a menu item to the specified position in this submenu.
@@ -93,22 +93,22 @@ open external class Submenu : MenuItemBase {
     fun <T : Any /* Submenu | MenuItem | PredefinedMenuItem | CheckMenuItem | IconMenuItem | MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */> insert(
         items: js.array.ReadonlyArray<T>,
         position: Double,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this submenu. */
-    fun remove(item: Submenu): js.promise.Promise<js.core.Void>
+    fun remove(item: Submenu): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this submenu. */
-    fun remove(item: MenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: MenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this submenu. */
-    fun remove(item: PredefinedMenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: PredefinedMenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this submenu. */
-    fun remove(item: CheckMenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: CheckMenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this submenu. */
-    fun remove(item: IconMenuItem): js.promise.Promise<js.core.Void>
+    fun remove(item: IconMenuItem): js.promise.Promise<js.void.Void>
 
     /** Remove a menu item from this submenu at the specified position. */
     fun removeAt(
@@ -128,7 +128,7 @@ open external class Submenu : MenuItemBase {
      *
      * If the position, is provided, it is relative to the window's top-left corner.
      */
-    fun popup(): js.promise.Promise<js.core.Void>
+    fun popup(): js.promise.Promise<js.void.Void>
 
     /**
      * Popup this submenu as a context menu on the specified window.
@@ -138,7 +138,7 @@ open external class Submenu : MenuItemBase {
     fun popup(
         at: PhysicalPosition = definedExternally,
         window: Window = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Popup this submenu as a context menu on the specified window.
@@ -148,7 +148,7 @@ open external class Submenu : MenuItemBase {
     fun popup(
         at: LogicalPosition = definedExternally,
         window: Window = definedExternally,
-    ): js.promise.Promise<js.core.Void>
+    ): js.promise.Promise<js.void.Void>
 
     /**
      * Set this submenu as the Window menu for the application on macOS.
@@ -160,7 +160,7 @@ open external class Submenu : MenuItemBase {
      *
      * - **Windows / Linux**: Unsupported.
      */
-    fun setAsWindowsMenuForNSApp(): js.promise.Promise<js.core.Void>
+    fun setAsWindowsMenuForNSApp(): js.promise.Promise<js.void.Void>
 
     /**
      * Set this submenu as the Help menu for the application on macOS.
@@ -174,10 +174,10 @@ open external class Submenu : MenuItemBase {
      *
      * - **Windows / Linux**: Unsupported.
      */
-    fun setAsHelpMenuForNSApp(): js.promise.Promise<js.core.Void>
+    fun setAsHelpMenuForNSApp(): js.promise.Promise<js.void.Void>
 
     /** Sets an icon for this submenu */
-    fun setIcon(icon: MenuIcon?): js.promise.Promise<js.core.Void>
+    fun setIcon(icon: MenuIcon?): js.promise.Promise<js.void.Void>
 
     companion object {
         /** Create a new submenu. */

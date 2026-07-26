@@ -2,11 +2,11 @@
 
 package web.remoteplayback
 
-import js.core.Void
 import js.numbers.JsInt
 import js.numbers.JsNumbers.toKotlinInt
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

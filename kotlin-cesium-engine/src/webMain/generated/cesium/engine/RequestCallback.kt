@@ -2,8 +2,8 @@
 
 package cesium.engine
 
-import js.core.Void
 import js.promise.Promise
+import js.void.Void
 
 /**
  * The function that makes the actual data request.

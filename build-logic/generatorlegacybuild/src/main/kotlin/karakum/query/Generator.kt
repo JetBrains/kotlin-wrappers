@@ -15,7 +15,7 @@ private val DEFAULT_IMPORTS = listOf(
     "js.objects.Record",
     "js.reflect.unsafeCast",
     "js.symbol.Symbol",
-    "js.core.Void",
+    "js.void.Void",
 
     "js.promise.Promise",
     "js.promise.PromiseResult",

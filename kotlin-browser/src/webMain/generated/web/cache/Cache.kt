@@ -3,9 +3,9 @@
 package web.cache
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.http.Request
 import web.http.Response
 import web.url.URL

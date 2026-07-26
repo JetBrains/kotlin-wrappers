@@ -21,4 +21,4 @@ package tauri.apps.api.app
  *
  * @since 2.4.0
  */
-external fun removeDataStore(uuid: DataStoreIdentifier): js.promise.Promise<js.core.Void>
+external fun removeDataStore(uuid: DataStoreIdentifier): js.promise.Promise<js.void.Void>

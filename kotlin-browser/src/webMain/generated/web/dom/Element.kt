@@ -3,9 +3,9 @@
 package web.dom
 
 import js.array.ReadonlyArray
-import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 import web.animations.Animatable
 import web.animations.AnimationEvent
 import web.aria.ARIAMixin
