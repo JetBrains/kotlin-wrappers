@@ -72,11 +72,6 @@ private constructor() :
     object search : Symbol
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species)
-     */
-    object species : Symbol
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split)
      */
     object split : Symbol
@@ -90,11 +85,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag)
      */
     object toStringTag : Symbol
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/unscopables)
-     */
-    object unscopables : Symbol
 
     companion object {
         /**
