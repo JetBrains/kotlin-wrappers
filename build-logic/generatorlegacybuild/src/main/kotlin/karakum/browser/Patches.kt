@@ -501,6 +501,23 @@ internal fun String.applyPatches(): String {
             |    textStream(): ReadableStream<string>;
             """.trimMargin()
         }
+        .let {
+            val varBody = it.substringAfter("declare var ReadableStream: {\n")
+                .substringBefore("\n};")
+
+            val newVarBody = varBody + "\n" + """
+            |    /**
+            |     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+            |     */
+            |    from<R>(source: AsyncIterable<R> | Iterable<R> | Iterable<PromiseLike<R>>): ReadableStream<R>;
+            """.trimMargin()
+
+            it.replaceFirst(varBody, newVarBody)
+        }
+        .splitUnion(
+            "AsyncIterable<R> | Iterable<R> | Iterable<PromiseLike<R>>",
+            "AsyncIterable<R> | JsIterable<R> | JsIterable<PromiseLike<R>> | ReadonlyArray<R> | ReadonlyArray<PromiseLike<R>>",
+        )
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

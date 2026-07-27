@@ -2,12 +2,15 @@
 
 package web.streams
 
+import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.disposable.internal.AsyncCloseableDisposable
 import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.AsyncIterator
+import js.iterable.JsIterable
 import js.promise.Promise
+import js.promise.PromiseLike
 import js.promise.await
 import js.serialization.Transferable
 import js.void.Void
@@ -88,6 +91,17 @@ open external class ReadableStream<R : JsAny?>(
      */
     fun tee(): Tuple2<ReadableStream<R>, ReadableStream<R>>
     fun values(options: ReadableStreamIteratorOptions = definedExternally): AsyncIterator<R>
+
+    companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+         */
+        fun <R : JsAny?> from(source: AsyncIterable<R>): ReadableStream<R>
+        fun <R : JsAny?> from(source: JsIterable<R>): ReadableStream<R>
+        fun <R : JsAny?> from(source: JsIterable<PromiseLike<R>>): ReadableStream<R>
+        fun <R : JsAny?> from(source: ReadonlyArray<R>): ReadableStream<R>
+        fun <R : JsAny?> from(source: ReadonlyArray<PromiseLike<R>>): ReadableStream<R>
+    }
 }
 
 /**
