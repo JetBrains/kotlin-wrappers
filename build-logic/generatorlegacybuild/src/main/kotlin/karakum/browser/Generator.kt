@@ -224,6 +224,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.html.HTMLVideoElement",
     "web.html.HtmlSource",
     "web.html.MediaProvider",
+    "web.html.SetHTMLUnsafeOptions",
     "web.http.BodyInit",
     "web.http.CrossOrigin",
     "web.http.FetchPriority",

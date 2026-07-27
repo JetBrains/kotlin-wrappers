@@ -131,12 +131,12 @@ internal fun String.applyPatches(): String {
             "srcdoc: TrustedHTML | string;",
         )
         .replace(
-            "parseHTMLUnsafe(html: string)",
-            "parseHTMLUnsafe(html: TrustedHTML | string)",
+            "parseHTMLUnsafe(html: string, ",
+            "parseHTMLUnsafe(html: TrustedHTML | string, ",
         )
         .replace(
-            "setHTMLUnsafe(html: string): void;",
-            "setHTMLUnsafe(html: TrustedHTML | string): void;",
+            "setHTMLUnsafe(html: string, ",
+            "setHTMLUnsafe(html: TrustedHTML | string, ",
         )
         .replace(
             "insertAdjacentHTML(position: InsertPosition, string: string): void;",

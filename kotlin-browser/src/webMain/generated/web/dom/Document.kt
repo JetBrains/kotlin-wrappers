@@ -612,8 +612,15 @@ open external class Document :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)
          */
-        fun parseHTMLUnsafe(html: TrustedHTML): Document
-        fun parseHTMLUnsafe(html: String): Document
+        fun parseHTMLUnsafe(
+            html: TrustedHTML,
+            options: ParseHTMLUnsafeOptions = definedExternally,
+        ): Document
+
+        fun parseHTMLUnsafe(
+            html: String,
+            options: ParseHTMLUnsafeOptions = definedExternally,
+        ): Document
     }
 }
 

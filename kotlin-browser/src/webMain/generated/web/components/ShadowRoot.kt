@@ -6,6 +6,7 @@ import web.dom.*
 import web.events.Event
 import web.events.EventHandler
 import web.html.HtmlSource
+import web.html.SetHTMLUnsafeOptions
 import web.trustedtypes.TrustedHTML
 
 /**
@@ -79,6 +80,13 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTMLUnsafe)
      */
-    fun setHTMLUnsafe(html: TrustedHTML)
-    fun setHTMLUnsafe(html: String)
+    fun setHTMLUnsafe(
+        html: TrustedHTML,
+        options: SetHTMLUnsafeOptions = definedExternally,
+    )
+
+    fun setHTMLUnsafe(
+        html: String,
+        options: SetHTMLUnsafeOptions = definedExternally,
+    )
 }

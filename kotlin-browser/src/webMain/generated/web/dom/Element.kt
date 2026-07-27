@@ -28,6 +28,7 @@ import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.HTMLCollection
 import web.html.HtmlSource
+import web.html.SetHTMLUnsafeOptions
 import web.input.CompositionEvent
 import web.input.InputEvent
 import web.keyboard.KeyboardEvent
@@ -551,8 +552,15 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe)
      */
-    fun setHTMLUnsafe(html: TrustedHTML)
-    fun setHTMLUnsafe(html: String)
+    fun setHTMLUnsafe(
+        html: TrustedHTML,
+        options: SetHTMLUnsafeOptions = definedExternally,
+    )
+
+    fun setHTMLUnsafe(
+        html: String,
+        options: SetHTMLUnsafeOptions = definedExternally,
+    )
 
     /**
      * The **`setPointerCapture()`** method of the Element interface is used to designate a specific element as the capture target of future pointer events. Subsequent events for the pointer will be targeted at the capture element until capture is released (via Element.releasePointerCapture() or the pointerup event is fired).
