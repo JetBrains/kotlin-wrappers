@@ -10,7 +10,7 @@ external interface StringSearcher {
      */
     @JsSymbol("search")
     fun `[@@search]`(
-        input: String,
+        string: String,
     ): Int
 }
 

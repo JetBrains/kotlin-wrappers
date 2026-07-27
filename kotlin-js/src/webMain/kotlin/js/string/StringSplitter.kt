@@ -12,7 +12,7 @@ external interface StringSplitter {
      */
     @JsSymbol("split")
     fun `[@@split]`(
-        input: String,
+        string: String,
         limit: Int = definedExternally,
     ): ReadonlyArray<JsString>
 }

@@ -12,6 +12,6 @@ external interface StringMatcher {
      */
     @JsSymbol("match")
     fun `[@@match]`(
-        input: String,
+        string: String,
     ): RegExpMatchArray?
 }

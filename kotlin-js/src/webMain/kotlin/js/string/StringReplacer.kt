@@ -10,7 +10,7 @@ external interface StringReplacer {
      */
     @JsSymbol("replace")
     fun `[@@replace]`(
-        input: String,
+        string: String,
         replaceValue: String,
     ): String
 }

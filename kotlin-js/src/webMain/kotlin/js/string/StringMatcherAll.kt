@@ -13,6 +13,6 @@ external interface StringMatcherAll {
      */
     @JsSymbol("matchAll")
     fun `[@@matchAll]`(
-        input: String,
+        string: String,
     ): JsIterable<RegExpExecArray>
 }
