@@ -13,4 +13,13 @@ external interface StringReplacer {
         string: String,
         replaceValue: String,
     ): String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace)
+     */
+    @JsSymbol("replace")
+    fun `[@@replace]`(
+        string: String,
+        replacer: (substring: String) -> String,
+    ): String
 }
