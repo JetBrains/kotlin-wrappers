@@ -1,6 +1,9 @@
 package js.regexp
 
+import js.array.ReadonlyArray
+import js.iterable.JsIterable
 import js.serialization.Serializable
+import js.string.*
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
@@ -25,7 +28,13 @@ open external class RegExp(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags)
      */
     val flags: String = definedExternally,
-) : Serializable {
+) : StringMatcher,
+    StringMatcherAll,
+    StringReplacer,
+    StringSearcher,
+    StringSplitter,
+    Serializable {
+
     constructor(pattern: RegExp)
 
     /**
@@ -116,6 +125,90 @@ open external class RegExp(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
      */
     fun test(string: String): Boolean
+
+    /**
+     * Matches a string with this regular expression, and returns an array containing the results of
+     * that search.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match)
+     *
+     * @param string A string to search within.
+     */
+    override fun `[@@match]`(
+        string: String,
+    ): RegExpMatchArray?
+
+    /**
+     * Matches a string with this regular expression, and returns an iterable of matches
+     * containing the results of that search.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll)
+     *
+     * @param string A string to search within.
+     */
+    override fun `[@@matchAll]`(
+        string: String,
+    ): JsIterable<RegExpExecArray>
+
+    /**
+     * Replaces text in a string, using this regular expression.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace)
+     *
+     * @param string A String object or string literal whose contents matching against
+     *               this regular expression will be replaced
+     * @param replaceValue A String object or string literal containing the text to replace for every
+     *                     successful match of this regular expression.
+     */
+    override fun `[@@replace]`(
+        string: String,
+        replaceValue: String,
+    ): String
+
+    /**
+     * Replaces text in a string, using this regular expression.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace)
+     *
+     * @param string A String object or string literal whose contents matching against
+     *               this regular expression will be replaced
+     * @param replacer A function that returns the replacement text.
+     */
+    override fun `[@@replace]`(
+        string: String,
+        replacer: (substring: String) -> String,
+    ): String
+
+    /**
+     * Finds the position beginning first substring match in a regular expression search
+     * using this regular expression.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search)
+     *
+     * @param string The string to search within.
+     */
+    override fun `[@@search]`(
+        string: String,
+    ): Int
+
+    /**
+     * Returns an array of substrings that were delimited by strings in the original input that
+     * match against this regular expression.
+     *
+     * If the regular expression contains capturing parentheses, then each time this
+     * regular expression matches, the results (including any undefined results) of the
+     * capturing parentheses are spliced.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.split)
+     *
+     * @param string string value to split
+     * @param limit if not undefined, the output array is truncated so that it contains no more
+     * than 'limit' elements.
+     */
+    override fun `[@@split]`(
+        string: String,
+        limit: Int,
+    ): ReadonlyArray<JsString>
 
     companion object {
         /**
