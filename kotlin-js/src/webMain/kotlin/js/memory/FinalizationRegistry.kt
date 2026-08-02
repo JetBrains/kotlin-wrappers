@@ -38,5 +38,5 @@ open external class FinalizationRegistry<T : JsAny?>(
      */
     fun unregister(
         unregisterToken: JsAny,
-    )
+    ): Boolean
 }
