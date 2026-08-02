@@ -2,6 +2,12 @@ package js.array
 
 typealias ReadonlyArray<T> = JsArray<out T>
 
+val ReadonlyArray<*>.lastIndex: Int
+    get() = size - 1
+
+val ReadonlyArray<*>.indices: IntRange
+    get() = IntRange(0, lastIndex)
+
 expect fun <T : JsAny?> ReadonlyArray<T>.getOrNull(index: Int): T?
 
 inline operator fun <T : JsAny?> ReadonlyArray<T>.component1(): T =
