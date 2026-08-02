@@ -2,6 +2,8 @@ package js.array
 
 typealias ReadonlyArray<T> = JsArray<out T>
 
+expect fun <T : JsAny?> ReadonlyArray<T>.getOrNull(index: Int): T?
+
 inline operator fun <T : JsAny?> ReadonlyArray<T>.component1(): T =
     get(0)
 
