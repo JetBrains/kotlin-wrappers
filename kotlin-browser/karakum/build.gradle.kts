@@ -57,6 +57,7 @@ object Includes {
         "web/storage/Storage.kt",
         "web/time",
         "web/timers",
+        "web/transport",
         "web/streams",
         "web/url",
 
