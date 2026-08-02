@@ -1,7 +1,7 @@
 package js.array
 
 actual inline fun <T : JsAny?> ReadonlyArray<T>.getOrNull(index: Int): T? =
-    get(index)
+    if (index in indices) get(index) else null
 
 actual operator fun <T : JsAny?> ReadonlyArray<T>.iterator(): Iterator<T> =
     asSequence().iterator()
