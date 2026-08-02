@@ -1,3 +1,9 @@
 package js.reflect
 
-typealias HasInstance = (instance: JsAny?) -> Boolean
+external interface HasInstance {
+
+    @JsSymbol("hasInstance")
+    fun `[@@hasInstance]`(
+        instance: JsAny?,
+    ): Boolean
+}
