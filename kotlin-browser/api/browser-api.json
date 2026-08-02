@@ -858,7 +858,6 @@
     "HTMLVideoElement": "web.html.HTMLVideoElement",
     "HardwareAcceleration": "web.codecs.HardwareAcceleration",
     "HasInstance": "js.reflect.HasInstance",
-    "HasInstanceSymbolHolder": "js.reflect.HasInstanceSymbolHolder",
     "HasTargets": "web.events.HasTargets",
     "HashAlgorithmIdentifier": "web.crypto.HashAlgorithmIdentifier",
     "HashChangeEvent": "web.history.HashChangeEvent",
