@@ -75,12 +75,21 @@ external fun BigInt(
     value: String,
 ): BigInt
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+ */
 inline val Int.n: BigInt
     get() = BigInt(this)
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+ */
 inline val Long.n: BigInt
     get() = BigInt(this)
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+ */
 inline val String.n: BigInt
     get() = BigInt(this)
 
