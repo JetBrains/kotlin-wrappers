@@ -370,10 +370,12 @@ fun generateKotlinDeclarations(
     serviceworkerDefinitionsFile: File,
     audioWorkletDefinitionsFile: File,
     webXrDefinitionsFile: File,
+    mdnContentDir: File,
     sourceDir: File,
 ) {
     IDLRegistry.rootDirectory = idlDir
     EventDataRegistry.sourceFile = eventsSourceFile
+    MDN.root = mdnContentDir
 
     val webDefinitionsParts = webDefinitionsFile.parts()
     val webworkerDefinitionsParts = webworkerDefinitionsFile.parts()

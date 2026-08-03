@@ -5,6 +5,8 @@ plugins {
     id("de.undercouch.download")
 }
 
+val mdnContentDir = layout.buildDirectory.dir("mdn-content")
+
 val downloadMdnContentRepo = tasks.register<Download>("downloadMdnContentRepo") {
     src("https://github.com/mdn/content/archive/refs/heads/main.zip")
     dest(temporaryDir.resolve("mdn-content-repo.zip"))
@@ -16,7 +18,7 @@ val downloadMdnContent = tasks.register<Sync>("downloadMdnContent") {
     from(zipTree(downloadMdnContentRepo.map { it.dest })) {
         include("${apiPath}**/*.*")
     }
-    into(layout.buildDirectory.dir("mdn-content"))
+    into(mdnContentDir)
 
     eachFile {
         path = path.removePrefix(apiPath)
@@ -54,6 +56,7 @@ tasks.named("generateDeclarations") {
             serviceworkerDefinitionsFile = serviceworkerDefinitionsDir.resolve("index.d.ts"),
             audioWorkletDefinitionsFile = audioWorkletDefinitionsDir.resolve("index.d.ts"),
             webXrDefinitionsFile = webXrDefinitionsDir.resolve("index.d.ts"),
+            mdnContentDir = mdnContentDir.get().asFile,
             sourceDir = sourceDir.asFile,
         )
     }

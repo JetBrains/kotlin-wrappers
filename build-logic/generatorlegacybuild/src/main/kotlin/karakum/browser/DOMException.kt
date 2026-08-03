@@ -1,15 +1,9 @@
 package karakum.browser
 
-import karakum.common.loadContent
-import java.net.URI
-
 internal const val DOM_EXCEPTION = "DOMException"
 
-private val MDN_URI =
-    URI("https://raw.githubusercontent.com/mdn/content/main/files/en-us/web/api/domexception/index.md")
-
 internal fun domExceptionErrorNames(): String =
-    loadContent(MDN_URI)
+    mdnContent("api/domexception/index.md")
         .substringAfter("\n## Error names\n", "")
         .substringAfter("> [!NOTE]", "")
         .substringAfter("\n\n", "")

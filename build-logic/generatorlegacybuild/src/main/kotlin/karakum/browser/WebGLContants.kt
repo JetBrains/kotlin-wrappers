@@ -1,12 +1,7 @@
 package karakum.browser
 
-import karakum.common.loadContent
-import java.net.URI
 import kotlin.math.ceil
 import kotlin.math.log
-
-private val MDN_URI =
-    URI("https://raw.githubusercontent.com/mdn/content/refs/heads/main/files/en-us/web/api/webgl_api/constants/index.md")
 
 private data class ConstantGroup(
     val name: String,
@@ -30,7 +25,7 @@ private data class Constant(
 }
 
 internal fun webglConstantDeclarations(): List<ConversionResult> {
-    loadContent(MDN_URI)
+    mdnContent("api/webgl_api/constants/index.md")
         .substringAfter("\n## Standard WebGL 1 constants\n", "")
         .substringBefore("\n## ", "")
         .splitToSequence("\n### ")
