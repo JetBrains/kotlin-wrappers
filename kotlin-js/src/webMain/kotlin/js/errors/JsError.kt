@@ -26,7 +26,7 @@ expect open external class JsError :
     open val message: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/message)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/cause)
      */
     open val cause: JsError?
 }
