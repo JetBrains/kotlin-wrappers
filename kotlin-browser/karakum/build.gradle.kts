@@ -1,5 +1,8 @@
+import de.undercouch.gradle.tasks.download.Download
+
 plugins {
     id("karakum.browser-declarations")
+    id("de.undercouch.download") version "5.7.0"
 }
 
 dependencies {
@@ -11,6 +14,30 @@ dependencies {
     webMainImplementation(npm(jspkg.types.webxr))
     webMainImplementation(npm(jspkg.webref.events))
     webMainImplementation(npm(jspkg.webref.idl))
+}
+
+val downloadMdnContentRepo = tasks.register<Download>("downloadMdnContentRepo") {
+    src("https://github.com/mdn/content/archive/refs/heads/main.zip")
+    dest(temporaryDir.resolve("mdn-content-repo.zip"))
+}
+
+val downloadMdnContent = tasks.register<Sync>("downloadMdnContent") {
+    val apiPath = "content-main/files/en-us/web/"
+
+    from(zipTree(downloadMdnContentRepo.map { it.dest })) {
+        include("${apiPath}**/*.*")
+    }
+    into(layout.buildDirectory.dir("mdn-content"))
+
+    eachFile {
+        path = path.removePrefix(apiPath)
+    }
+
+    includeEmptyDirs = false
+}
+
+tasks.generateDeclarations {
+    dependsOn(downloadMdnContent)
 }
 
 object Includes {
