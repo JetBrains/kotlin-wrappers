@@ -6,6 +6,7 @@ kfc = "19.13.0"
 kotlin = "2.4.10"
 serialization = "1.11.0"
 seskar = "4.62.0"
+download = "5.7.0"
 
 [libraries]
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -18,6 +19,7 @@ gradlePlugins-karakum = { module = "io.github.sgrishchenko.karakum:io.github.sgr
 gradlePlugins-kfc-library = { module = "io.github.turansky.kfc.library:io.github.turansky.kfc.library.gradle.plugin", version.ref = "kfc" }
 gradlePlugins-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 gradlePlugins-seskar = { module = "io.github.turansky.seskar:seskar-gradle-plugin", version.ref = "seskar" }
+gradlePlugins-download = { module = "de.undercouch.download:de.undercouch.download.gradle.plugin", version.ref = "download" }
 serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 
 [plugins]
