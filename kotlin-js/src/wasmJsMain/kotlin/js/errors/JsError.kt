@@ -10,6 +10,7 @@ actual open external class JsError :
     actual constructor(message: String?)
 
     actual open val message: String?
+    actual open val cause: JsError?
 }
 
 actual fun JsError.toThrowable(): Throwable =

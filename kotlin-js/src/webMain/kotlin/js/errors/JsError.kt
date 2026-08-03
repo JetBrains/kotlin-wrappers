@@ -24,6 +24,11 @@ expect open external class JsError :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/message)
      */
     open val message: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/message)
+     */
+    open val cause: JsError?
 }
 
 expect fun JsError.toThrowable(): Throwable
