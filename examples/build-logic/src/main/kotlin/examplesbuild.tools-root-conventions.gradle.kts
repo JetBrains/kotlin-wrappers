@@ -40,5 +40,5 @@ fun NpmVersions.configureVersions() {
     webpackDevServer.version = "6.0.0"
 
     // https://www.npmjs.com/package/mocha
-    mocha.version = "12.0.0-beta-10"
+    mocha.version = "11.8.0"
 }
