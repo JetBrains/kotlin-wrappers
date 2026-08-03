@@ -31,10 +31,10 @@ plugins.withType<WasmNodeJsRootPlugin> {
 
 fun NpmVersions.configureVersions() {
     // https://www.npmjs.com/package/webpack
-    webpack.version = "5.109.0"
+    webpack.version = "5.109.2"
 
     // https://www.npmjs.com/package/webpack-cli
-    webpackCli.version = "7.2.1"
+    webpackCli.version = "7.2.2"
 
     // https://www.npmjs.com/package/webpack-dev-server
     webpackDevServer.version = "6.0.0"
