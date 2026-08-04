@@ -13,6 +13,12 @@ import js.numbers.JsDouble
  */
 external object LagrangePolynomialApproximation {
     /**
+     * Gets the name of this interpolation algorithm.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LagrangePolynomialApproximation.html#.type">Online Documentation</a>
+     */
+    var type: String
+
+    /**
      * Given the desired degree, returns the number of data points required for interpolation.
      * @param [degree] The desired degree of interpolation.
      * @return The number of required data points needed for the desired degree of interpolation.

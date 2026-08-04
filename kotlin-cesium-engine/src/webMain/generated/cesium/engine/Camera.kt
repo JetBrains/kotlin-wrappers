@@ -601,6 +601,19 @@ open external class Camera(
     )
 
     /**
+     * Sets the camera orientation to look at a target position in world coordinates. The camera's up vector will be oriented to the world up vector at the target position.
+     * If the camera is at the target position, the camera will be oriented to the world up vector at the target position.
+     * @param [target] The target position in world coordinates.
+     * @param [ellipsoid] The ellipsoid to use for determining the world up.
+     *   Default value - [Ellipsoid.default]
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#lookAtWorldPosition">Online Documentation</a>
+     */
+    fun lookAtWorldPosition(
+        target: Cartesian3,
+        ellipsoid: Ellipsoid? = definedExternally,
+    )
+
+    /**
      * Get the camera position needed to view a rectangle on an ellipsoid or map
      * @param [rectangle] The rectangle to view.
      * @param [result] The camera position needed to view the rectangle

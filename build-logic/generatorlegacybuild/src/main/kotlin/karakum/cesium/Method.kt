@@ -8,6 +8,8 @@ internal class Method(
 ) : Member() {
     override val name = source.parseFunctionName()
 
+    private val optional = source.isOptionalFunction()
+
     private val typeParameters = source.parseFunctionTypeParameters()
         .replace(" extends ", " : ")
 
@@ -24,7 +26,7 @@ internal class Method(
     }
 
     private val parameters = source.parseFunctionParameters()
-    private val returnType = source.parseFunctionReturnType(name)
+    private val returnType = source.parseFunctionReturnType(name, optional)
 
     override fun toCode(): String {
         if (name == "toString" && parameters.isEmpty())
@@ -33,10 +35,11 @@ internal class Method(
         if (name == "equals" && parameters.size == 1)
             return ""
 
-        val returnExpression = returnType
-            // Nullability fix for `SceneTransforms`
-            ?.let { if (name.startsWith("wgs84To")) "$it?" else it }
-            ?.let { ": $it" } ?: ""
+        val returnExpression = when {
+            optional -> "-> ${returnType!!}"
+            returnType == null -> ""
+            else -> ": $returnType"
+        }
 
         val modifierList = listOfNotNull(
             "external".takeIf { !hasParent },
@@ -55,11 +58,17 @@ internal class Method(
             .let { if (it.isNotEmpty()) "$it\n" else "" }
 
         var params = parameters.toCode(multilinePreferred = false)
-        if (overridden) {
-            params = params.replace(" = definedExternally", "")
+        when {
+            optional -> params = params.replace(" = definedExternally", "/* = definedExternally */")
+            overridden -> params = params.replace(" = definedExternally", "")
         }
 
-        val sourceDeclaration = "fun $typeParameters$name$params$returnExpression"
+        val sourceDeclaration = if (!optional) {
+            "fun $typeParameters$name$params$returnExpression"
+        } else {
+            "val $typeParameters$name: ($params$returnExpression)?"
+        }
+
         val replacedSyncDeclarations by lazy {
             listOf(
                 sourceDeclaration.replace(

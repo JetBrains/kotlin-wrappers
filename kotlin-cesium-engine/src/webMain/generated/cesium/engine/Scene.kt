@@ -474,6 +474,19 @@ open external class Scene(
     val camera: Camera
 
     /**
+     * Collects an array of `Controller` objects that can be registered with the scene to handle input events, camera animations, and other interactions.
+     * ```
+     * scene.screenSpaceCameraController.enableInputs = false;
+     * scene.screenSpaceCameraController.enableCollisionDetection = false;
+     *
+     * const tiltOrbitController = new ScreenSpaceTiltOrbitCameraController();
+     * scene.controllerHost.registerController(tiltOrbitController, scene.canvas.parentNode);
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#controllerHost">Online Documentation</a>
+     */
+    val controllerHost: ControllerHost
+
+    /**
      * Gets the controller for camera input handling.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#screenSpaceCameraController">Online Documentation</a>
      */
@@ -711,6 +724,37 @@ open external class Scene(
         width: Double? = definedExternally,
         height: Double? = definedExternally,
     ): JsAny?
+
+    /**
+     * Returns the best snap target in a screen-space region around `windowPosition`.
+     * Edges are preferred over surfaces; among hits of the same kind the one
+     * nearest the cursor wins. Returns `undefined` if the region contains
+     * no snappable geometry.
+     *
+     * Only primitives rendered through the Model pipeline (e.g. 3D Tiles and glTF
+     * models) are snappable. Snapping requires float color attachments
+     * (WebGL2 with `EXT_color_buffer_float`); if unsupported, this
+     * function returns `undefined`.
+     * @param [windowPosition] Window coordinates at the center of the search region.
+     * @return The best snap target in the region, or `undefined` if there is none.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#snap">Online Documentation</a>
+     */
+    fun snap(
+        windowPosition: Cartesian2,
+        options: SnapOptions? = definedExternally,
+    ): SceneSnapResult?
+
+    /**
+     * @property [width] Width of the search region in pixels.
+     *   Default value - `25`
+     * @property [height] Height of the search region in pixels.
+     *   Default value - `options.width`
+     */
+    @JsPlainObject
+    interface SnapOptions {
+        val width: Double?
+        val height: Double?
+    }
 
     /**
      * Performs the same operation as Scene.pick but asynchonosly without blocking the main render thread.

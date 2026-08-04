@@ -13,6 +13,12 @@ import js.numbers.JsDouble
  */
 external object LinearApproximation {
     /**
+     * Gets the name of this interpolation algorithm.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LinearApproximation.html#.type">Online Documentation</a>
+     */
+    var type: String
+
+    /**
      * Given the desired degree, returns the number of data points required for interpolation.
      * Since linear interpolation can only generate a first degree polynomial, this function
      * always returns 2.

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlinx.js.JsPlainObject
+
 /**
  * Math functions.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Math.html">Online Documentation</a>
@@ -251,6 +253,42 @@ external object Math {
         q: Double,
         time: Double,
     ): Double
+
+    /**
+     * @property [value] The new value after applying the smooth damp.
+     * @property [velocity] The updated current velocity.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Math.html#.SmoothDampResult">Online Documentation</a>
+     */
+    @JsPlainObject
+    interface SmoothDampResult {
+        val value: Double
+        val velocity: Double
+    }
+
+    /**
+     * Gradually changes a value towards a target value over time. The smoothing function uses a spring-damping algorithm based on Game Programming Gems 4 Chapter 1.10.
+     * @param [p] The current value.
+     * @param [q] The target value.
+     * @param [velocity] The current velocity.
+     * @param [deltaTime] The time since the last call to this function. Value must be greater than or equal to 0.0.
+     *   Default value - `0.0`
+     * @param [maximumSpeed] Optionally allows clamping to the specified maximum speed.
+     *   Default value - [Number.POSITIVE_INFINITY]
+     * @param [smoothTime] Approximately the time it will take to reach the target. A smaller value will reach the target faster. This value must be greater than or equal to 0.0001.
+     *   Default value - `0.0001`
+     * @param [result] An object to store the result. If not provided, a new object will be created and returned.
+     * @return An object containing the new value and the updated current velocity.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Math.html#.smoothDamp">Online Documentation</a>
+     */
+    fun smoothDamp(
+        p: Double,
+        q: Double,
+        velocity: Double,
+        deltaTime: Double? = definedExternally,
+        maximumSpeed: Double? = definedExternally,
+        smoothTime: Double? = definedExternally,
+        result: SmoothDampResult? = definedExternally,
+    ): SmoothDampResult
 
     /**
      * pi

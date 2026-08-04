@@ -13,6 +13,12 @@ import js.numbers.JsDouble
  */
 external object HermitePolynomialApproximation {
     /**
+     * Gets the name of this interpolation algorithm.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermitePolynomialApproximation.html#.type">Online Documentation</a>
+     */
+    var type: String
+
+    /**
      * Given the desired degree, returns the number of data points required for interpolation.
      * @param [degree] The desired degree of interpolation.
      * @param [inputOrder] The order of the inputs (0 means just the data, 1 means the data and its derivative, etc).

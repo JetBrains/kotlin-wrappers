@@ -339,6 +339,30 @@ open external class CesiumWidget(
     fun render()
 
     /**
+     * Adds a controller— an implementation of the [Controller] interface used to handle input events, camera animations, and other interactions— to the widget's scene.
+     * ```
+     * widget.scene.screenSpaceCameraController.enableInputs = false;
+     * widget.scene.screenSpaceCameraController.enableCollisionDetection = false;
+     *
+     * const tiltOrbitController = new ScreenSpaceTiltOrbitCameraController();
+     * widget.addController(tiltOrbitController);
+     * ```
+     * @param [controller] An implementation of the `Controller` interface.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#addController">Online Documentation</a>
+     */
+    fun addController(controller: Controller)
+
+    /**
+     * Removes a controller— an implementation of the [Controller]  interface used to handle input events, camera animations, and other interactions— from the widget's scene.
+     * ```
+     * widget.removeController(tiltOrbitController);
+     * ```
+     * @param [controller] An implementation of the `Controller` interface.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumWidget.html#removeController">Online Documentation</a>
+     */
+    fun removeController(controller: Controller)
+
+    /**
      * Asynchronously sets the camera to view the provided entity, entities, or data source.
      * If the data source is still in the process of loading or the visualization is otherwise still loading,
      * this method waits for the data to be ready before performing the zoom.

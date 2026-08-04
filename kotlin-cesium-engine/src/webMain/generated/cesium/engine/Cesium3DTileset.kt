@@ -1037,7 +1037,7 @@ open external class Cesium3DTileset(
      * @property [clippingPlanes] The [ClippingPlaneCollection] used to selectively disable rendering the tileset.
      * @property [clippingPolygons] The [ClippingPolygonCollection] used to selectively disable rendering the tileset.
      * @property [classificationType] Determines whether terrain, 3D Tiles or both will be classified by this tileset. See [Cesium3DTileset.classificationType] for details about restrictions and limitations.
-     * @property [heightReference] Sets the [HeightReference] for point features in vector tilesets.
+     * @property [heightReference] Sets the [HeightReference] for features in vector tilesets.
      * @property [scene] The [CesiumWidget.scene] that the tileset will be rendered in, required for tilesets that specify a [heightReference] value for clamping 3D Tiles vector data content- like points, lines, and labels- to terrain or 3D tiles.
      * @property [ellipsoid] The ellipsoid determining the size and shape of the globe.
      *   Default value - [Ellipsoid.WGS84]

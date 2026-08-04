@@ -21,7 +21,7 @@ import seskar.js.JsAsync
  * - [EXT_instance_features](https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_instance_features)
  * - [EXT_mesh_features](https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_mesh_features)
  * - [EXT_mesh_gpu_instancing](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_gpu_instancing)
- * - [EXT_mesh_primitive_restart](https://github.com/KhronosGroup/glTF/pull/2514)
+ * - [EXT_mesh_primitive_restart](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_restart)
  * - [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
  *   (edges are hidden by default; set [EdgeDisplayMode] via
  *   [Model.edgeDisplayMode] or [Cesium3DTileset.edgeDisplayMode] to display them)
@@ -33,6 +33,8 @@ import seskar.js.JsAsync
  * - [KHR_materials_common](https://github.com/KhronosGroup/glTF/blob/main/extensions/1.0/Khronos/KHR_materials_common/README.md)
  * - [KHR_materials_pbrSpecularGlossiness](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Archived/KHR_materials_pbrSpecularGlossiness)
  * - [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit/README.md)
+ * - [KHR_mesh_primitive_restart](https://github.com/KhronosGroup/glTF/pull/2569)
+ *   (requires a WebGL 2 context; behavior on WebGL 1 is undefined)
  * - [KHR_mesh_quantization](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_mesh_quantization)
  * - [KHR_meshopt_compression](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_meshopt_compression)
  * - [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Khronos/KHR_texture_basisu)

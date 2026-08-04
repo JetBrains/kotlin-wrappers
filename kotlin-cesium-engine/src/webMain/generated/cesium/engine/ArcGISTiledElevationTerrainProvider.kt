@@ -23,10 +23,6 @@ import seskar.js.JsAsync
  * viewer.terrainProvider = terrainProvider;
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html">Online Documentation</a>
- *
- * @constructor
- * @param [options] A url or an object describing initialization options
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGISTiledElevationTerrainProvider.html">Online Documentation</a>
  */
 open external class ArcGISTiledElevationTerrainProvider
 private constructor() :

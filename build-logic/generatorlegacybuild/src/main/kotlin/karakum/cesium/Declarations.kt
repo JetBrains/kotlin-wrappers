@@ -18,6 +18,7 @@ internal const val MATERIAL_PROPERTY: String = "MaterialProperty"
 internal const val POSITION_PROPERTY: String = "PositionProperty"
 
 internal const val APPEARANCE: String = "Appearance"
+internal const val CONTROLLER: String = "Controller"
 
 private val FACTORY_MAP = mapOf(
     Function.PREFIX to ::Function,
@@ -78,6 +79,10 @@ internal fun parseDeclarations(
 
         addParentType(classMap, APPEARANCE) {
             it.endsWith(APPEARANCE)
+        }
+
+        addParentType(classMap, CONTROLLER) {
+            it.endsWith(CONTROLLER) && it != "ScreenSpaceCameraController"
         }
     }
 

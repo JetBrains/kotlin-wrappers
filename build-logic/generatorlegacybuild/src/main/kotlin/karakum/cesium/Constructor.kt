@@ -47,7 +47,9 @@ internal class Constructor(
                 .filterNotNull()
                 .flatMap { it.members.asSequence() }
                 .filterIsInstance<SimpleType>()
-                .single { it.name == CONSTRUCTOR_OPTIONS }
+                .filter { it.name == CONSTRUCTOR_OPTIONS }
+                .distinct()
+                .single()
 
             val mutablePropertyNames = klass.members
                 .asSequence()

@@ -63,13 +63,13 @@ external interface InterpolationAlgorithm {
      * @return The array of interpolated values, or the result parameter if one was provided.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InterpolationAlgorithm.html#interpolate">Online Documentation</a>
      */
-    fun interpolate(
+    val interpolate: ((
         x: Double,
         xTable: ReadonlyArray<JsDouble>,
         yTable: ReadonlyArray<JsDouble>,
         yStride: Double,
         inputOrder: Int,
         outputOrder: Int,
-        result: ReadonlyArray<JsDouble>? = definedExternally,
-    ): ReadonlyArray<JsDouble>
+        result: ReadonlyArray<JsDouble>?,/* = definedExternally */
+    ) -> ReadonlyArray<JsDouble>)?
 }
