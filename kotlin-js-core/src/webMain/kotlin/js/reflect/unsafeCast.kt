@@ -16,6 +16,11 @@ expect fun <T : JsAny> unsafeCast(
     value: Int,
 ): T
 
+inline fun <T : JsAny> unsafeCast(
+    value: UInt,
+): T =
+    unsafeCast(value.toDouble())
+
 expect fun <T : JsAny> unsafeCast(
     value: Double,
 ): T
