@@ -20,3 +20,15 @@ external interface ReadonlyMap<K : JsAny?, out V : JsAny?> :
         override fun keys(): JsIterator<K> = definedExternally
     }
 }
+
+fun <K : JsAny?, V : JsAny?> ReadonlyMap<K, V>.getValue(
+    key: K,
+): V {
+    val value = get(key)
+    if (value == null && !has(key)) {
+        throw NoSuchElementException("Key $key is missing in the map.")
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    return value as V
+}
