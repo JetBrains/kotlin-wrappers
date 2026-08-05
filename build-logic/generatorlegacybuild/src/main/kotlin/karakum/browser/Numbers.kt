@@ -67,6 +67,8 @@ internal val LENGTH_REQUIRED = setOf(
     "TouchList",
 )
 
+private val WEBGL_CONST_RE = Regex("""[\dA-Zx_]+""")
+
 internal class TypeProvider(
     private val parentType: String,
     private val arrayType: String? = null,
@@ -120,6 +122,12 @@ internal class TypeProvider(
 
             // TEMP?
             "NavigatorPlugins" -> name != "mimeTypes" && name != "plugins"
+
+            "WebGLRenderingContext",
+            "WebGLRenderingContextBase",
+            "WebGL2RenderingContext",
+            "WebGL2RenderingContextBase",
+                -> !WEBGL_CONST_RE.matches(name)
 
             else -> true
         }

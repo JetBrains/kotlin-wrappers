@@ -1510,7 +1510,7 @@ internal fun convertInterface(
         when {
             name == DOM_EXCEPTION -> "companion object" // leave it empty, add extensions below
 
-            idDeclaration != null && !name.startsWith("WebGL") -> {
+            idDeclaration != null -> {
                 require(companionContent.isEmpty())
                 "companion object"
             }
