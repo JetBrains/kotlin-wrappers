@@ -8,6 +8,7 @@ package web.buffer
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface BinaryType {
     companion object

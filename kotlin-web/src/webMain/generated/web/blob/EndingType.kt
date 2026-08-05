@@ -8,6 +8,7 @@ package web.blob
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface EndingType {
     companion object

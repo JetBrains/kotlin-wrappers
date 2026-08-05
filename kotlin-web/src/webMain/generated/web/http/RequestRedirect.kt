@@ -8,6 +8,7 @@ package web.http
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface RequestRedirect {
     companion object

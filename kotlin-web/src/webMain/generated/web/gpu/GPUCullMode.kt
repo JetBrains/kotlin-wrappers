@@ -8,6 +8,7 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface GPUCullMode {
     companion object

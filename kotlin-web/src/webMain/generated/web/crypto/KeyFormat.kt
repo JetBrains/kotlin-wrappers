@@ -8,6 +8,7 @@ package web.crypto
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface KeyFormat {
     sealed interface jwk : KeyFormat

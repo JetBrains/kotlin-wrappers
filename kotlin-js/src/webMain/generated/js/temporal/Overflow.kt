@@ -8,6 +8,7 @@ package js.temporal
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface Overflow {
     companion object

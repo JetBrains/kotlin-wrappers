@@ -8,6 +8,7 @@ package js.typedarrays
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface Alphabet {
     companion object

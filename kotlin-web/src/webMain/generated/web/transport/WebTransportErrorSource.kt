@@ -8,6 +8,7 @@ package web.transport
 
 import js.reflect.unsafeCast
 
+@JsName("globalThis")
 sealed /* union */
 external interface WebTransportErrorSource {
     companion object

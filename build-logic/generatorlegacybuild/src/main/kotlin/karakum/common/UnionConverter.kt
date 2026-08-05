@@ -121,6 +121,10 @@ internal object JsUnionConverter : UnionConverter {
 // Generated interfaces support in the WASM target.
 internal object CommonUnionConverter : UnionConverter {
 
+    // Companion of external interface is resolved by interface JS name,
+    // which is absent in runtime for union types
+    private const val GLOBAL_THIS = """@JsName("globalThis")"""
+
     override fun unionBodyByConstants(
         name: String,
         constants: List<UnionConstant>,
@@ -142,6 +146,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $GLOBAL_THIS
         sealed /* union */
         external interface $name {
             companion object
@@ -165,6 +170,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $GLOBAL_THIS
         sealed /* union */
         external interface $name {
             companion object
@@ -189,6 +195,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $GLOBAL_THIS
         sealed /* union */
         external interface $name :
             $parentType {
@@ -215,6 +222,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $GLOBAL_THIS
         sealed /* union */
         external interface $name {
             $constantTypes
