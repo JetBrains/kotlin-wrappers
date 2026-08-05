@@ -6,8 +6,10 @@ package web.usb
 
 import js.reflect.unsafeCast
 import web.experimental.ExperimentalWebApi
+import kotlin.js.JsName
 
 @ExperimentalWebApi
+@JsName("globalThis")
 sealed external interface USBTransferStatus {
     companion object
 }

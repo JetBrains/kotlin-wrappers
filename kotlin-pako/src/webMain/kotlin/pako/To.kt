@@ -5,7 +5,9 @@
 package pako
 
 import js.reflect.unsafeCast
+import kotlin.js.JsName
 
+@JsName("globalThis")
 sealed external interface To {
     companion object
 }
