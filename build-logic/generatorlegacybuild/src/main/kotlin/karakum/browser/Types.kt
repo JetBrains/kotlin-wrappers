@@ -272,7 +272,10 @@ private fun convertType(
             "GLenum",
                 -> """
                 sealed /* opaque */
-                external interface GLenum
+                external interface $name
+
+                ${internalCastHelper(name, "Int")}
+                ${internalCastHelper(name, "UInt")}
                 """.trimIndent()
 
             "GLbitfield",
@@ -280,6 +283,19 @@ private fun convertType(
                 sealed /* opaque */
                 external interface GLbitfield :
                     Bitmask<GLbitfield>
+
+                ${internalCastHelper(name, "Int")}
+                """.trimIndent()
+
+            "GLint64",
+                -> """
+                typealias $name = $type
+
+                @PublishedApi
+                internal inline fun $name(
+                    value: Int,
+                ): $name =
+                    value.toDouble()
                 """.trimIndent()
 
             else -> sequenceOf(
@@ -514,6 +530,17 @@ private fun convertType(
         pkg = pkg,
     ).withAutoFillCorrection()
 }
+
+private fun internalCastHelper(
+    name: String,
+    valueType: String,
+): String = """
+@PublishedApi
+internal inline fun $name(
+    value: $valueType,
+): $name =
+    unsafeCast(value)
+""".trimIndent()
 
 private fun getTypePkg(
     name: String,
