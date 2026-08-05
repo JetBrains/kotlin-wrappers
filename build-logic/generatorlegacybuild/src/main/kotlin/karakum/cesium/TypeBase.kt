@@ -97,13 +97,18 @@ internal abstract class TypeBase(
             )
         }
 
-        val companionMembers = companion?.members
-            ?.filterNot { it.isNestedType() }
-            ?: emptyList()
+        val (nestedTypes, companionMembers) = run {
+            val source = companion?.members
+                ?: return@run (emptyList<Member>() to emptyList<Member>())
 
-        val nestedTypes = companion?.members
-            ?.filter { it.isNestedType() }
-            ?: emptyList()
+            if (source.all { it is SimpleType } && members.none { it.static })
+                return@run Pair(source, emptyList<Member>())
+
+            Pair(
+                source.filter { it.isNestedType() },
+                source.filterNot { it.isNestedType() },
+            )
+        }
 
         val bodyMembers = members
             .asSequence()

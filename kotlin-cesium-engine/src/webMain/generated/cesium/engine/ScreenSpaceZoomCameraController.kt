@@ -147,16 +147,14 @@ open external class ScreenSpaceZoomCameraController(
         time: JulianDate,
     )
 
-    companion object {
-        /**
-         * @property [dragInputs] The drag input bindings that control zooming.
-         * @property [scrollInputs] The scroll input bindings that control zooming.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceZoomCameraController.html#.ControllerOptions">Online Documentation</a>
-         */
-        @JsPlainObject
-        interface ControllerOptions {
-            val dragInputs: ReadonlyArray<ScreenSpaceInputBindings.InputBinding>?
-            val scrollInputs: ReadonlyArray<ScreenSpaceEventType>?
-        }
+    /**
+     * @property [dragInputs] The drag input bindings that control zooming.
+     * @property [scrollInputs] The scroll input bindings that control zooming.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceZoomCameraController.html#.ControllerOptions">Online Documentation</a>
+     */
+    @JsPlainObject
+    interface ControllerOptions {
+        val dragInputs: ReadonlyArray<ScreenSpaceInputBindings.InputBinding>?
+        val scrollInputs: ReadonlyArray<ScreenSpaceEventType>?
     }
 }

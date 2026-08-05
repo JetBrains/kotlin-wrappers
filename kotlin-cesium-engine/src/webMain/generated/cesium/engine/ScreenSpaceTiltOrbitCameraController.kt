@@ -211,14 +211,12 @@ open external class ScreenSpaceTiltOrbitCameraController(
         time: JulianDate,
     )
 
-    companion object {
-        /**
-         * @property [dragInputs] The drag input bindings that control tilting and orbiting.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceTiltOrbitCameraController.html#.ControllerOptions">Online Documentation</a>
-         */
-        @JsPlainObject
-        interface ControllerOptions {
-            val dragInputs: ReadonlyArray<ScreenSpaceInputBindings.InputBinding>?
-        }
+    /**
+     * @property [dragInputs] The drag input bindings that control tilting and orbiting.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceTiltOrbitCameraController.html#.ControllerOptions">Online Documentation</a>
+     */
+    @JsPlainObject
+    interface ControllerOptions {
+        val dragInputs: ReadonlyArray<ScreenSpaceInputBindings.InputBinding>?
     }
 }

@@ -120,14 +120,12 @@ open external class ScreenSpaceElevatorCameraController(
         time: JulianDate,
     )
 
-    companion object {
-        /**
-         * @property [dragInputs] The drag input bindings that control panning.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceElevatorCameraController.html#.ControllerOptions">Online Documentation</a>
-         */
-        @JsPlainObject
-        interface ControllerOptions {
-            val dragInputs: ReadonlyArray<ScreenSpaceInputBindings.InputBinding>?
-        }
+    /**
+     * @property [dragInputs] The drag input bindings that control panning.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceElevatorCameraController.html#.ControllerOptions">Online Documentation</a>
+     */
+    @JsPlainObject
+    interface ControllerOptions {
+        val dragInputs: ReadonlyArray<ScreenSpaceInputBindings.InputBinding>?
     }
 }
