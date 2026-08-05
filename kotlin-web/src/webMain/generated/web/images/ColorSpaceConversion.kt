@@ -8,7 +8,7 @@ package web.images
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface ColorSpaceConversion {
     companion object

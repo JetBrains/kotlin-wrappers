@@ -7,7 +7,7 @@ package ajv
 import seskar.js.JsValue
 import kotlin.js.JsName
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed external interface OptionsSchemaId {
     companion object {
         @JsValue("id")

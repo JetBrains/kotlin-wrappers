@@ -14,7 +14,7 @@ import js.numbers.JsInt
 import js.reflect.unsafeCast
 import js.void.Void
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface ValueType<T : JsAny?> {
     companion object

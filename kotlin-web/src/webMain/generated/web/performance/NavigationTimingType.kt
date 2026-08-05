@@ -8,7 +8,7 @@ package web.performance
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface NavigationTimingType {
     companion object

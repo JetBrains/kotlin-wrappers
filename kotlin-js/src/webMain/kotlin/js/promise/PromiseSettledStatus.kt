@@ -7,7 +7,7 @@ package js.promise
 import js.reflect.unsafeCast
 import kotlin.js.JsName
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed external interface PromiseSettledStatus {
     companion object
 }

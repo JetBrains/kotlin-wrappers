@@ -8,7 +8,7 @@ package js.decorators
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface DecoratorContextKind {
     sealed interface `class` : DecoratorContextKind

@@ -9,7 +9,7 @@ import web.experimental.ExperimentalWebApi
 import kotlin.js.JsName
 
 @ExperimentalWebApi
-@JsName("globalThis")
+@JsName("NaN")
 sealed external interface USBEndpointType {
     companion object
 }

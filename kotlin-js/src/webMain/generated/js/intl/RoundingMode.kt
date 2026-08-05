@@ -8,7 +8,7 @@ package js.intl
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface RoundingMode {
     companion object

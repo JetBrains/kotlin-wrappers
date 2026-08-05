@@ -8,7 +8,7 @@ package web.transport
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface WebTransportCongestionControl {
     companion object

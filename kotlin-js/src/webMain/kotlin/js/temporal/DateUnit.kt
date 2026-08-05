@@ -7,7 +7,7 @@ package js.temporal
 import js.reflect.unsafeCast
 import kotlin.js.JsName
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed external interface DateUnit<out T : DateUnit<T>> :
     DateTimeUnit<T> {
     sealed interface year : DateUnit<year>

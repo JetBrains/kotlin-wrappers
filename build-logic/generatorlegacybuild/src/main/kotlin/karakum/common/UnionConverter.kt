@@ -123,7 +123,7 @@ internal object CommonUnionConverter : UnionConverter {
 
     // Companion of external interface is resolved by interface JS name,
     // which is absent in runtime for union types
-    private const val GLOBAL_THIS = """@JsName("globalThis")"""
+    private const val GLOBAL_THIS = """@JsName("NaN")"""
 
     override fun unionBodyByConstants(
         name: String,

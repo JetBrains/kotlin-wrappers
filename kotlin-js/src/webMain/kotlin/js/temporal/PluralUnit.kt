@@ -12,7 +12,7 @@ import kotlin.js.JsName
  * usually singular, e.g. 'day' or 'hour'. But plural unit names like 'days'
  * or 'hours' are aso accepted too.
  */
-@JsName("globalThis")
+@JsName("NaN")
 sealed external interface PluralUnit<T : DateTimeUnit<T>> :
     LargestUnit<T>,
     SmallestUnit<T>,

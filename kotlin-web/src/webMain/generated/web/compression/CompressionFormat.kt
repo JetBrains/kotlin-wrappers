@@ -8,7 +8,7 @@ package web.compression
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface CompressionFormat {
     companion object

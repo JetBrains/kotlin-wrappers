@@ -8,7 +8,7 @@ package web.assembly
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface TableKind {
     companion object

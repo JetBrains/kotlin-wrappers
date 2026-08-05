@@ -8,7 +8,7 @@ package js.typedarrays
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface LastChunkHandling {
     companion object

@@ -8,7 +8,7 @@ package web.locks
 
 import js.reflect.unsafeCast
 
-@JsName("globalThis")
+@JsName("NaN")
 sealed /* union */
 external interface LockMode {
     companion object
