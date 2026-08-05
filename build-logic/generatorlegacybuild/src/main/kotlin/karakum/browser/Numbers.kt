@@ -114,17 +114,15 @@ internal class TypeProvider(
         if (name == "forEach" && hideForEach)
             return false
 
-        if (parentType == "Window")
-            return name !in WINDOW_EXCLUDED
+        return when (parentType) {
+            "Window" -> name !in WINDOW_EXCLUDED
+            "WorkerGlobalScope" -> name != "self"
 
-        if (parentType == "WorkerGlobalScope")
-            return name != "self"
+            // TEMP?
+            "NavigatorPlugins" -> name != "mimeTypes" && name != "plugins"
 
-        // TEMP?
-        if (parentType == "NavigatorPlugins")
-            return name != "mimeTypes" && name != "plugins"
-
-        return true
+            else -> true
+        }
     }
 
     fun optionalAsyncFunction(
