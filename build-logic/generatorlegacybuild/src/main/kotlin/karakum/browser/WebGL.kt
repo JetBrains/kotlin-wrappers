@@ -87,6 +87,9 @@ private data class WebGLConstant(
             ?: ""
 
         return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=$name)
+         */
         inline val $name: $type
             get() = $type($value$valuePrefix)
         """.trimIndent()
