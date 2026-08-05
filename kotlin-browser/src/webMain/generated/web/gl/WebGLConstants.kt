@@ -2,8 +2,6 @@
 
 package web.gl
 
-// WebGL 2
-
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=READ_BUFFER)
  */
@@ -3357,6 +3355,3 @@ inline val UNPACK_COLORSPACE_CONVERSION_WEBGL: GLenum
  */
 inline val BROWSER_DEFAULT_WEBGL: GLenum
     get() = GLenum(0x9244)
-
-// WebGL 1
-

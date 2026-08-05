@@ -33,16 +33,12 @@ private fun convertExtension(
 private fun convertConstants(
     content: String,
 ): ConversionResult {
-    val constants2 = constants(content, "WebGL2RenderingContext")
-    val constants1 = constants(content, "WebGLRenderingContext")
-        .minus(constants2)
+    val constants = constants(content, "WebGL2RenderingContext")
 
-    val body = sequenceOf(
-        "// WebGL 2",
-        constants2.joinToString("\n") { it.toCode() },
-        "// WebGL 1",
-        constants1.joinToString("\n") { it.toCode() },
-    ).joinToString("\n\n")
+    constants(content, "WebGLRenderingContext")
+        .forEach { require(it in constants) }
+
+    val body = constants.joinToString("\n\n") { it.toCode() }
 
     return ConversionResult(
         name = "WebGLConstants",
