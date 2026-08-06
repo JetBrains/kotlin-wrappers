@@ -5,43 +5,43 @@ package web.gl
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=READ_BUFFER)
  */
-inline val READ_BUFFER: GLenum
+inline val READ_BUFFER: GLenum /* Parameter */
     get() = GLenum(0x0C02)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=UNPACK_ROW_LENGTH)
  */
-inline val UNPACK_ROW_LENGTH: GLenum
+inline val UNPACK_ROW_LENGTH: GLenum /* Parameter */
     get() = GLenum(0x0CF2)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=UNPACK_SKIP_ROWS)
  */
-inline val UNPACK_SKIP_ROWS: GLenum
+inline val UNPACK_SKIP_ROWS: GLenum /* Parameter */
     get() = GLenum(0x0CF3)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=UNPACK_SKIP_PIXELS)
  */
-inline val UNPACK_SKIP_PIXELS: GLenum
+inline val UNPACK_SKIP_PIXELS: GLenum /* Parameter */
     get() = GLenum(0x0CF4)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PACK_ROW_LENGTH)
  */
-inline val PACK_ROW_LENGTH: GLenum
+inline val PACK_ROW_LENGTH: GLenum /* Parameter */
     get() = GLenum(0x0D02)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PACK_SKIP_ROWS)
  */
-inline val PACK_SKIP_ROWS: GLenum
+inline val PACK_SKIP_ROWS: GLenum /* Parameter */
     get() = GLenum(0x0D03)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PACK_SKIP_PIXELS)
  */
-inline val PACK_SKIP_PIXELS: GLenum
+inline val PACK_SKIP_PIXELS: GLenum /* Parameter */
     get() = GLenum(0x0D04)
 
 /**
@@ -83,19 +83,19 @@ inline val RGB10_A2: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE_BINDING_3D)
  */
-inline val TEXTURE_BINDING_3D: GLenum
+inline val TEXTURE_BINDING_3D: GLenum /* Parameter */
     get() = GLenum(0x806A)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=UNPACK_SKIP_IMAGES)
  */
-inline val UNPACK_SKIP_IMAGES: GLenum
+inline val UNPACK_SKIP_IMAGES: GLenum /* Parameter */
     get() = GLenum(0x806D)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=UNPACK_IMAGE_HEIGHT)
  */
-inline val UNPACK_IMAGE_HEIGHT: GLenum
+inline val UNPACK_IMAGE_HEIGHT: GLenum /* Parameter */
     get() = GLenum(0x806E)
 
 /**
@@ -113,7 +113,7 @@ inline val TEXTURE_WRAP_R: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_3D_TEXTURE_SIZE)
  */
-inline val MAX_3D_TEXTURE_SIZE: GLenum
+inline val MAX_3D_TEXTURE_SIZE: GLenum /* Parameter */
     get() = GLenum(0x8073)
 
 /**
@@ -125,13 +125,13 @@ inline val UNSIGNED_INT_2_10_10_10_REV: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_ELEMENTS_VERTICES)
  */
-inline val MAX_ELEMENTS_VERTICES: GLenum
+inline val MAX_ELEMENTS_VERTICES: GLenum /* Parameter */
     get() = GLenum(0x80E8)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_ELEMENTS_INDICES)
  */
-inline val MAX_ELEMENTS_INDICES: GLenum
+inline val MAX_ELEMENTS_INDICES: GLenum /* Parameter */
     get() = GLenum(0x80E9)
 
 /**
@@ -179,7 +179,7 @@ inline val DEPTH_COMPONENT24: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_TEXTURE_LOD_BIAS)
  */
-inline val MAX_TEXTURE_LOD_BIAS: GLenum
+inline val MAX_TEXTURE_LOD_BIAS: GLenum /* Parameter */
     get() = GLenum(0x84FD)
 
 /**
@@ -353,13 +353,13 @@ inline val DRAW_BUFFER15: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_FRAGMENT_UNIFORM_COMPONENTS)
  */
-inline val MAX_FRAGMENT_UNIFORM_COMPONENTS: GLenum
+inline val MAX_FRAGMENT_UNIFORM_COMPONENTS: GLenum /* Parameter */
     get() = GLenum(0x8B49)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VERTEX_UNIFORM_COMPONENTS)
  */
-inline val MAX_VERTEX_UNIFORM_COMPONENTS: GLenum
+inline val MAX_VERTEX_UNIFORM_COMPONENTS: GLenum /* Parameter */
     get() = GLenum(0x8B4A)
 
 /**
@@ -377,31 +377,31 @@ inline val SAMPLER_2D_SHADOW: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRAGMENT_SHADER_DERIVATIVE_HINT)
  */
-inline val FRAGMENT_SHADER_DERIVATIVE_HINT: GLenum
+inline val FRAGMENT_SHADER_DERIVATIVE_HINT: GLenum /* Parameter */
     get() = GLenum(0x8B8B)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PIXEL_PACK_BUFFER)
  */
-inline val PIXEL_PACK_BUFFER: GLenum
+inline val PIXEL_PACK_BUFFER: GLenum /* Buffer */
     get() = GLenum(0x88EB)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PIXEL_UNPACK_BUFFER)
  */
-inline val PIXEL_UNPACK_BUFFER: GLenum
+inline val PIXEL_UNPACK_BUFFER: GLenum /* Buffer */
     get() = GLenum(0x88EC)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PIXEL_PACK_BUFFER_BINDING)
  */
-inline val PIXEL_PACK_BUFFER_BINDING: GLenum
+inline val PIXEL_PACK_BUFFER_BINDING: GLenum /* Buffer */
     get() = GLenum(0x88ED)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PIXEL_UNPACK_BUFFER_BINDING)
  */
-inline val PIXEL_UNPACK_BUFFER_BINDING: GLenum
+inline val PIXEL_UNPACK_BUFFER_BINDING: GLenum /* Buffer */
     get() = GLenum(0x88EF)
 
 /**
@@ -491,31 +491,31 @@ inline val RGB16F: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_INTEGER)
  */
-inline val VERTEX_ATTRIB_ARRAY_INTEGER: GLenum
+inline val VERTEX_ATTRIB_ARRAY_INTEGER: GLenum /* VertexAttribute */
     get() = GLenum(0x88FD)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_ARRAY_TEXTURE_LAYERS)
  */
-inline val MAX_ARRAY_TEXTURE_LAYERS: GLenum
+inline val MAX_ARRAY_TEXTURE_LAYERS: GLenum /* Parameter */
     get() = GLenum(0x88FF)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MIN_PROGRAM_TEXEL_OFFSET)
  */
-inline val MIN_PROGRAM_TEXEL_OFFSET: GLenum
+inline val MIN_PROGRAM_TEXEL_OFFSET: GLenum /* Parameter */
     get() = GLenum(0x8904)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_PROGRAM_TEXEL_OFFSET)
  */
-inline val MAX_PROGRAM_TEXEL_OFFSET: GLenum
+inline val MAX_PROGRAM_TEXEL_OFFSET: GLenum /* Parameter */
     get() = GLenum(0x8905)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VARYING_COMPONENTS)
  */
-inline val MAX_VARYING_COMPONENTS: GLenum
+inline val MAX_VARYING_COMPONENTS: GLenum /* Parameter */
     get() = GLenum(0x8B4B)
 
 /**
@@ -593,7 +593,7 @@ inline val TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=RASTERIZER_DISCARD)
  */
-inline val RASTERIZER_DISCARD: GLenum
+inline val RASTERIZER_DISCARD: GLenum /* Parameter */
     get() = GLenum(0x8C89)
 
 /**
@@ -1169,7 +1169,7 @@ inline val RG32UI: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ARRAY_BINDING)
  */
-inline val VERTEX_ARRAY_BINDING: GLenum
+inline val VERTEX_ARRAY_BINDING: GLenum /* Parameter */
     get() = GLenum(0x85B5)
 
 /**
@@ -1205,25 +1205,25 @@ inline val SIGNED_NORMALIZED: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COPY_READ_BUFFER)
  */
-inline val COPY_READ_BUFFER: GLenum
+inline val COPY_READ_BUFFER: GLenum /* Buffer */
     get() = GLenum(0x8F36)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COPY_WRITE_BUFFER)
  */
-inline val COPY_WRITE_BUFFER: GLenum
+inline val COPY_WRITE_BUFFER: GLenum /* Buffer */
     get() = GLenum(0x8F37)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COPY_READ_BUFFER_BINDING)
  */
-inline val COPY_READ_BUFFER_BINDING: GLenum
+inline val COPY_READ_BUFFER_BINDING: GLenum /* Buffer */
     get() = GLenum(0x8F36)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COPY_WRITE_BUFFER_BINDING)
  */
-inline val COPY_WRITE_BUFFER_BINDING: GLenum
+inline val COPY_WRITE_BUFFER_BINDING: GLenum /* Buffer */
     get() = GLenum(0x8F37)
 
 /**
@@ -1391,19 +1391,19 @@ inline val INVALID_INDEX: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VERTEX_OUTPUT_COMPONENTS)
  */
-inline val MAX_VERTEX_OUTPUT_COMPONENTS: GLenum
+inline val MAX_VERTEX_OUTPUT_COMPONENTS: GLenum /* Parameter */
     get() = GLenum(0x9122)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_FRAGMENT_INPUT_COMPONENTS)
  */
-inline val MAX_FRAGMENT_INPUT_COMPONENTS: GLenum
+inline val MAX_FRAGMENT_INPUT_COMPONENTS: GLenum /* Parameter */
     get() = GLenum(0x9125)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_SERVER_WAIT_TIMEOUT)
  */
-inline val MAX_SERVER_WAIT_TIMEOUT: GLenum
+inline val MAX_SERVER_WAIT_TIMEOUT: GLenum /* Parameter */
     get() = GLenum(0x9111)
 
 /**
@@ -1487,7 +1487,7 @@ inline val SYNC_FLUSH_COMMANDS_BIT: GLbitfield
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_DIVISOR)
  */
-inline val VERTEX_ATTRIB_ARRAY_DIVISOR: GLenum
+inline val VERTEX_ATTRIB_ARRAY_DIVISOR: GLenum /* VertexAttribute */
     get() = GLenum(0x88FE)
 
 /**
@@ -1553,7 +1553,7 @@ inline val TEXTURE_IMMUTABLE_FORMAT: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_ELEMENT_INDEX)
  */
-inline val MAX_ELEMENT_INDEX: GLenum
+inline val MAX_ELEMENT_INDEX: GLenum /* Parameter */
     get() = GLenum(0x8D6B)
 
 /**
@@ -1579,7 +1579,7 @@ inline val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_BUFFER_BIT)
  */
-inline val DEPTH_BUFFER_BIT: GLbitfield
+inline val DEPTH_BUFFER_BIT: GLbitfield /* ClearMask */
     get() = GLbitfield(0x00000100)
 
 /**
@@ -1587,7 +1587,7 @@ inline val DEPTH_BUFFER_BIT: GLbitfield
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BUFFER_BIT)
  */
-inline val STENCIL_BUFFER_BIT: GLbitfield
+inline val STENCIL_BUFFER_BIT: GLbitfield /* ClearMask */
     get() = GLbitfield(0x00000400)
 
 /**
@@ -1595,7 +1595,7 @@ inline val STENCIL_BUFFER_BIT: GLbitfield
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COLOR_BUFFER_BIT)
  */
-inline val COLOR_BUFFER_BIT: GLbitfield
+inline val COLOR_BUFFER_BIT: GLbitfield /* ClearMask */
     get() = GLbitfield(0x00004000)
 
 /**
@@ -1603,7 +1603,7 @@ inline val COLOR_BUFFER_BIT: GLbitfield
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=POINTS)
  */
-inline val POINTS: GLenum
+inline val POINTS: GLenum /* DrawMode */
     get() = GLenum(0x0000)
 
 /**
@@ -1611,7 +1611,7 @@ inline val POINTS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINES)
  */
-inline val LINES: GLenum
+inline val LINES: GLenum /* DrawMode */
     get() = GLenum(0x0001)
 
 /**
@@ -1619,7 +1619,7 @@ inline val LINES: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINE_LOOP)
  */
-inline val LINE_LOOP: GLenum
+inline val LINE_LOOP: GLenum /* DrawMode */
     get() = GLenum(0x0002)
 
 /**
@@ -1627,7 +1627,7 @@ inline val LINE_LOOP: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINE_STRIP)
  */
-inline val LINE_STRIP: GLenum
+inline val LINE_STRIP: GLenum /* DrawMode */
     get() = GLenum(0x0003)
 
 /**
@@ -1635,7 +1635,7 @@ inline val LINE_STRIP: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TRIANGLES)
  */
-inline val TRIANGLES: GLenum
+inline val TRIANGLES: GLenum /* DrawMode */
     get() = GLenum(0x0004)
 
 /**
@@ -1643,7 +1643,7 @@ inline val TRIANGLES: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TRIANGLE_STRIP)
  */
-inline val TRIANGLE_STRIP: GLenum
+inline val TRIANGLE_STRIP: GLenum /* DrawMode */
     get() = GLenum(0x0005)
 
 /**
@@ -1651,7 +1651,7 @@ inline val TRIANGLE_STRIP: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TRIANGLE_FAN)
  */
-inline val TRIANGLE_FAN: GLenum
+inline val TRIANGLE_FAN: GLenum /* DrawMode */
     get() = GLenum(0x0006)
 
 /**
@@ -1659,7 +1659,7 @@ inline val TRIANGLE_FAN: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ZERO)
  */
-inline val ZERO: GLenum
+inline val ZERO: GLenum /* BlendMode */
     get() = GLenum(0)
 
 /**
@@ -1667,7 +1667,7 @@ inline val ZERO: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE)
  */
-inline val ONE: GLenum
+inline val ONE: GLenum /* BlendMode */
     get() = GLenum(1)
 
 /**
@@ -1675,7 +1675,7 @@ inline val ONE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SRC_COLOR)
  */
-inline val SRC_COLOR: GLenum
+inline val SRC_COLOR: GLenum /* BlendMode */
     get() = GLenum(0x0300)
 
 /**
@@ -1683,7 +1683,7 @@ inline val SRC_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_SRC_COLOR)
  */
-inline val ONE_MINUS_SRC_COLOR: GLenum
+inline val ONE_MINUS_SRC_COLOR: GLenum /* BlendMode */
     get() = GLenum(0x0301)
 
 /**
@@ -1691,7 +1691,7 @@ inline val ONE_MINUS_SRC_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SRC_ALPHA)
  */
-inline val SRC_ALPHA: GLenum
+inline val SRC_ALPHA: GLenum /* BlendMode */
     get() = GLenum(0x0302)
 
 /**
@@ -1699,7 +1699,7 @@ inline val SRC_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_SRC_ALPHA)
  */
-inline val ONE_MINUS_SRC_ALPHA: GLenum
+inline val ONE_MINUS_SRC_ALPHA: GLenum /* BlendMode */
     get() = GLenum(0x0303)
 
 /**
@@ -1707,7 +1707,7 @@ inline val ONE_MINUS_SRC_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DST_ALPHA)
  */
-inline val DST_ALPHA: GLenum
+inline val DST_ALPHA: GLenum /* BlendMode */
     get() = GLenum(0x0304)
 
 /**
@@ -1715,7 +1715,7 @@ inline val DST_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_DST_ALPHA)
  */
-inline val ONE_MINUS_DST_ALPHA: GLenum
+inline val ONE_MINUS_DST_ALPHA: GLenum /* BlendMode */
     get() = GLenum(0x0305)
 
 /**
@@ -1723,7 +1723,7 @@ inline val ONE_MINUS_DST_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DST_COLOR)
  */
-inline val DST_COLOR: GLenum
+inline val DST_COLOR: GLenum /* BlendMode */
     get() = GLenum(0x0306)
 
 /**
@@ -1731,7 +1731,7 @@ inline val DST_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_DST_COLOR)
  */
-inline val ONE_MINUS_DST_COLOR: GLenum
+inline val ONE_MINUS_DST_COLOR: GLenum /* BlendMode */
     get() = GLenum(0x0307)
 
 /**
@@ -1739,7 +1739,7 @@ inline val ONE_MINUS_DST_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SRC_ALPHA_SATURATE)
  */
-inline val SRC_ALPHA_SATURATE: GLenum
+inline val SRC_ALPHA_SATURATE: GLenum /* BlendMode */
     get() = GLenum(0x0308)
 
 /**
@@ -1747,7 +1747,7 @@ inline val SRC_ALPHA_SATURATE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FUNC_ADD)
  */
-inline val FUNC_ADD: GLenum
+inline val FUNC_ADD: GLenum /* BlendEquationMode */
     get() = GLenum(0x8006)
 
 /**
@@ -1755,7 +1755,7 @@ inline val FUNC_ADD: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_EQUATION)
  */
-inline val BLEND_EQUATION: GLenum
+inline val BLEND_EQUATION: GLenum /* Parameter */
     get() = GLenum(0x8009)
 
 /**
@@ -1763,7 +1763,7 @@ inline val BLEND_EQUATION: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_EQUATION_RGB)
  */
-inline val BLEND_EQUATION_RGB: GLenum
+inline val BLEND_EQUATION_RGB: GLenum /* Parameter */
     get() = GLenum(0x8009)
 
 /**
@@ -1771,7 +1771,7 @@ inline val BLEND_EQUATION_RGB: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_EQUATION_ALPHA)
  */
-inline val BLEND_EQUATION_ALPHA: GLenum
+inline val BLEND_EQUATION_ALPHA: GLenum /* Parameter */
     get() = GLenum(0x883D)
 
 /**
@@ -1779,7 +1779,7 @@ inline val BLEND_EQUATION_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FUNC_SUBTRACT)
  */
-inline val FUNC_SUBTRACT: GLenum
+inline val FUNC_SUBTRACT: GLenum /* BlendEquationMode */
     get() = GLenum(0x800A)
 
 /**
@@ -1787,7 +1787,7 @@ inline val FUNC_SUBTRACT: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FUNC_REVERSE_SUBTRACT)
  */
-inline val FUNC_REVERSE_SUBTRACT: GLenum
+inline val FUNC_REVERSE_SUBTRACT: GLenum /* BlendEquationMode */
     get() = GLenum(0x800B)
 
 /**
@@ -1795,7 +1795,7 @@ inline val FUNC_REVERSE_SUBTRACT: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_DST_RGB)
  */
-inline val BLEND_DST_RGB: GLenum
+inline val BLEND_DST_RGB: GLenum /* Parameter */
     get() = GLenum(0x80C8)
 
 /**
@@ -1803,7 +1803,7 @@ inline val BLEND_DST_RGB: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_SRC_RGB)
  */
-inline val BLEND_SRC_RGB: GLenum
+inline val BLEND_SRC_RGB: GLenum /* Parameter */
     get() = GLenum(0x80C9)
 
 /**
@@ -1811,7 +1811,7 @@ inline val BLEND_SRC_RGB: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_DST_ALPHA)
  */
-inline val BLEND_DST_ALPHA: GLenum
+inline val BLEND_DST_ALPHA: GLenum /* Parameter */
     get() = GLenum(0x80CA)
 
 /**
@@ -1819,7 +1819,7 @@ inline val BLEND_DST_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_SRC_ALPHA)
  */
-inline val BLEND_SRC_ALPHA: GLenum
+inline val BLEND_SRC_ALPHA: GLenum /* Parameter */
     get() = GLenum(0x80CB)
 
 /**
@@ -1827,7 +1827,7 @@ inline val BLEND_SRC_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CONSTANT_COLOR)
  */
-inline val CONSTANT_COLOR: GLenum
+inline val CONSTANT_COLOR: GLenum /* BlendMode */
     get() = GLenum(0x8001)
 
 /**
@@ -1835,7 +1835,7 @@ inline val CONSTANT_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_CONSTANT_COLOR)
  */
-inline val ONE_MINUS_CONSTANT_COLOR: GLenum
+inline val ONE_MINUS_CONSTANT_COLOR: GLenum /* BlendMode */
     get() = GLenum(0x8002)
 
 /**
@@ -1843,7 +1843,7 @@ inline val ONE_MINUS_CONSTANT_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CONSTANT_ALPHA)
  */
-inline val CONSTANT_ALPHA: GLenum
+inline val CONSTANT_ALPHA: GLenum /* BlendMode */
     get() = GLenum(0x8003)
 
 /**
@@ -1851,7 +1851,7 @@ inline val CONSTANT_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_CONSTANT_ALPHA)
  */
-inline val ONE_MINUS_CONSTANT_ALPHA: GLenum
+inline val ONE_MINUS_CONSTANT_ALPHA: GLenum /* BlendMode */
     get() = GLenum(0x8004)
 
 /**
@@ -1859,7 +1859,7 @@ inline val ONE_MINUS_CONSTANT_ALPHA: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_COLOR)
  */
-inline val BLEND_COLOR: GLenum
+inline val BLEND_COLOR: GLenum /* Parameter */
     get() = GLenum(0x8005)
 
 /**
@@ -1867,7 +1867,7 @@ inline val BLEND_COLOR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ARRAY_BUFFER)
  */
-inline val ARRAY_BUFFER: GLenum
+inline val ARRAY_BUFFER: GLenum /* Buffer */
     get() = GLenum(0x8892)
 
 /**
@@ -1875,7 +1875,7 @@ inline val ARRAY_BUFFER: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ELEMENT_ARRAY_BUFFER)
  */
-inline val ELEMENT_ARRAY_BUFFER: GLenum
+inline val ELEMENT_ARRAY_BUFFER: GLenum /* Buffer */
     get() = GLenum(0x8893)
 
 /**
@@ -1883,7 +1883,7 @@ inline val ELEMENT_ARRAY_BUFFER: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ARRAY_BUFFER_BINDING)
  */
-inline val ARRAY_BUFFER_BINDING: GLenum
+inline val ARRAY_BUFFER_BINDING: GLenum /* Parameter */
     get() = GLenum(0x8894)
 
 /**
@@ -1891,7 +1891,7 @@ inline val ARRAY_BUFFER_BINDING: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ELEMENT_ARRAY_BUFFER_BINDING)
  */
-inline val ELEMENT_ARRAY_BUFFER_BINDING: GLenum
+inline val ELEMENT_ARRAY_BUFFER_BINDING: GLenum /* Parameter */
     get() = GLenum(0x8895)
 
 /**
@@ -1899,7 +1899,7 @@ inline val ELEMENT_ARRAY_BUFFER_BINDING: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STREAM_DRAW)
  */
-inline val STREAM_DRAW: GLenum
+inline val STREAM_DRAW: GLenum /* Buffer */
     get() = GLenum(0x88E0)
 
 /**
@@ -1907,7 +1907,7 @@ inline val STREAM_DRAW: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STATIC_DRAW)
  */
-inline val STATIC_DRAW: GLenum
+inline val STATIC_DRAW: GLenum /* Buffer */
     get() = GLenum(0x88E4)
 
 /**
@@ -1915,7 +1915,7 @@ inline val STATIC_DRAW: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DYNAMIC_DRAW)
  */
-inline val DYNAMIC_DRAW: GLenum
+inline val DYNAMIC_DRAW: GLenum /* Buffer */
     get() = GLenum(0x88E8)
 
 /**
@@ -1923,7 +1923,7 @@ inline val DYNAMIC_DRAW: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BUFFER_SIZE)
  */
-inline val BUFFER_SIZE: GLenum
+inline val BUFFER_SIZE: GLenum /* Buffer */
     get() = GLenum(0x8764)
 
 /**
@@ -1931,7 +1931,7 @@ inline val BUFFER_SIZE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BUFFER_USAGE)
  */
-inline val BUFFER_USAGE: GLenum
+inline val BUFFER_USAGE: GLenum /* Buffer */
     get() = GLenum(0x8765)
 
 /**
@@ -1939,7 +1939,7 @@ inline val BUFFER_USAGE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CURRENT_VERTEX_ATTRIB)
  */
-inline val CURRENT_VERTEX_ATTRIB: GLenum
+inline val CURRENT_VERTEX_ATTRIB: GLenum /* VertexAttribute */
     get() = GLenum(0x8626)
 
 /**
@@ -1947,7 +1947,7 @@ inline val CURRENT_VERTEX_ATTRIB: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRONT)
  */
-inline val FRONT: GLenum
+inline val FRONT: GLenum /* Culling */
     get() = GLenum(0x0404)
 
 /**
@@ -1955,7 +1955,7 @@ inline val FRONT: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BACK)
  */
-inline val BACK: GLenum
+inline val BACK: GLenum /* Culling */
     get() = GLenum(0x0405)
 
 /**
@@ -1963,7 +1963,7 @@ inline val BACK: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRONT_AND_BACK)
  */
-inline val FRONT_AND_BACK: GLenum
+inline val FRONT_AND_BACK: GLenum /* Culling */
     get() = GLenum(0x0408)
 
 /**
@@ -1971,7 +1971,7 @@ inline val FRONT_AND_BACK: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CULL_FACE)
  */
-inline val CULL_FACE: GLenum
+inline val CULL_FACE: GLenum /* Culling */
     get() = GLenum(0x0B44)
 
 /**
@@ -1979,7 +1979,7 @@ inline val CULL_FACE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND)
  */
-inline val BLEND: GLenum
+inline val BLEND: GLenum /* Feature */
     get() = GLenum(0x0BE2)
 
 /**
@@ -1987,7 +1987,7 @@ inline val BLEND: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DITHER)
  */
-inline val DITHER: GLenum
+inline val DITHER: GLenum /* Feature */
     get() = GLenum(0x0BD0)
 
 /**
@@ -1995,7 +1995,7 @@ inline val DITHER: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_TEST)
  */
-inline val STENCIL_TEST: GLenum
+inline val STENCIL_TEST: GLenum /* Feature */
     get() = GLenum(0x0B90)
 
 /**
@@ -2003,7 +2003,7 @@ inline val STENCIL_TEST: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_TEST)
  */
-inline val DEPTH_TEST: GLenum
+inline val DEPTH_TEST: GLenum /* Feature */
     get() = GLenum(0x0B71)
 
 /**
@@ -2011,7 +2011,7 @@ inline val DEPTH_TEST: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SCISSOR_TEST)
  */
-inline val SCISSOR_TEST: GLenum
+inline val SCISSOR_TEST: GLenum /* Feature */
     get() = GLenum(0x0C11)
 
 /**
@@ -2019,7 +2019,7 @@ inline val SCISSOR_TEST: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=POLYGON_OFFSET_FILL)
  */
-inline val POLYGON_OFFSET_FILL: GLenum
+inline val POLYGON_OFFSET_FILL: GLenum /* Feature */
     get() = GLenum(0x8037)
 
 /**
@@ -2027,7 +2027,7 @@ inline val POLYGON_OFFSET_FILL: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_ALPHA_TO_COVERAGE)
  */
-inline val SAMPLE_ALPHA_TO_COVERAGE: GLenum
+inline val SAMPLE_ALPHA_TO_COVERAGE: GLenum /* Feature */
     get() = GLenum(0x809E)
 
 /**
@@ -2035,7 +2035,7 @@ inline val SAMPLE_ALPHA_TO_COVERAGE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_COVERAGE)
  */
-inline val SAMPLE_COVERAGE: GLenum
+inline val SAMPLE_COVERAGE: GLenum /* Feature */
     get() = GLenum(0x80A0)
 
 /**
@@ -2043,7 +2043,7 @@ inline val SAMPLE_COVERAGE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=NO_ERROR)
  */
-inline val NO_ERROR: GLenum
+inline val NO_ERROR: GLenum /* Error */
     get() = GLenum(0)
 
 /**
@@ -2051,7 +2051,7 @@ inline val NO_ERROR: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVALID_ENUM)
  */
-inline val INVALID_ENUM: GLenum
+inline val INVALID_ENUM: GLenum /* Error */
     get() = GLenum(0x0500)
 
 /**
@@ -2059,7 +2059,7 @@ inline val INVALID_ENUM: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVALID_VALUE)
  */
-inline val INVALID_VALUE: GLenum
+inline val INVALID_VALUE: GLenum /* Error */
     get() = GLenum(0x0501)
 
 /**
@@ -2067,7 +2067,7 @@ inline val INVALID_VALUE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVALID_OPERATION)
  */
-inline val INVALID_OPERATION: GLenum
+inline val INVALID_OPERATION: GLenum /* Error */
     get() = GLenum(0x0502)
 
 /**
@@ -2075,7 +2075,7 @@ inline val INVALID_OPERATION: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=OUT_OF_MEMORY)
  */
-inline val OUT_OF_MEMORY: GLenum
+inline val OUT_OF_MEMORY: GLenum /* Error */
     get() = GLenum(0x0505)
 
 /**
@@ -2083,7 +2083,7 @@ inline val OUT_OF_MEMORY: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CW)
  */
-inline val CW: GLenum
+inline val CW: GLenum /* Direction */
     get() = GLenum(0x0900)
 
 /**
@@ -2091,7 +2091,7 @@ inline val CW: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CCW)
  */
-inline val CCW: GLenum
+inline val CCW: GLenum /* Direction */
     get() = GLenum(0x0901)
 
 /**
@@ -2099,7 +2099,7 @@ inline val CCW: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINE_WIDTH)
  */
-inline val LINE_WIDTH: GLenum
+inline val LINE_WIDTH: GLenum /* Parameter */
     get() = GLenum(0x0B21)
 
 /**
@@ -2107,7 +2107,7 @@ inline val LINE_WIDTH: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ALIASED_POINT_SIZE_RANGE)
  */
-inline val ALIASED_POINT_SIZE_RANGE: GLenum
+inline val ALIASED_POINT_SIZE_RANGE: GLenum /* Parameter */
     get() = GLenum(0x846D)
 
 /**
@@ -2115,7 +2115,7 @@ inline val ALIASED_POINT_SIZE_RANGE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ALIASED_LINE_WIDTH_RANGE)
  */
-inline val ALIASED_LINE_WIDTH_RANGE: GLenum
+inline val ALIASED_LINE_WIDTH_RANGE: GLenum /* Parameter */
     get() = GLenum(0x846E)
 
 /**
@@ -2123,7 +2123,7 @@ inline val ALIASED_LINE_WIDTH_RANGE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CULL_FACE_MODE)
  */
-inline val CULL_FACE_MODE: GLenum
+inline val CULL_FACE_MODE: GLenum /* Parameter */
     get() = GLenum(0x0B45)
 
 /**
@@ -2131,7 +2131,7 @@ inline val CULL_FACE_MODE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRONT_FACE)
  */
-inline val FRONT_FACE: GLenum
+inline val FRONT_FACE: GLenum /* Parameter */
     get() = GLenum(0x0B46)
 
 /**
@@ -2139,7 +2139,7 @@ inline val FRONT_FACE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_RANGE)
  */
-inline val DEPTH_RANGE: GLenum
+inline val DEPTH_RANGE: GLenum /* Parameter */
     get() = GLenum(0x0B70)
 
 /**
@@ -2147,7 +2147,7 @@ inline val DEPTH_RANGE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_WRITEMASK)
  */
-inline val DEPTH_WRITEMASK: GLenum
+inline val DEPTH_WRITEMASK: GLenum /* Parameter */
     get() = GLenum(0x0B72)
 
 /**
@@ -2155,7 +2155,7 @@ inline val DEPTH_WRITEMASK: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_CLEAR_VALUE)
  */
-inline val DEPTH_CLEAR_VALUE: GLenum
+inline val DEPTH_CLEAR_VALUE: GLenum /* Parameter */
     get() = GLenum(0x0B73)
 
 /**
@@ -2163,7 +2163,7 @@ inline val DEPTH_CLEAR_VALUE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_FUNC)
  */
-inline val DEPTH_FUNC: GLenum
+inline val DEPTH_FUNC: GLenum /* Parameter */
     get() = GLenum(0x0B74)
 
 /**
@@ -2171,7 +2171,7 @@ inline val DEPTH_FUNC: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_CLEAR_VALUE)
  */
-inline val STENCIL_CLEAR_VALUE: GLenum
+inline val STENCIL_CLEAR_VALUE: GLenum /* Parameter */
     get() = GLenum(0x0B91)
 
 /**
@@ -2179,7 +2179,7 @@ inline val STENCIL_CLEAR_VALUE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_FUNC)
  */
-inline val STENCIL_FUNC: GLenum
+inline val STENCIL_FUNC: GLenum /* Parameter */
     get() = GLenum(0x0B92)
 
 /**
@@ -2187,7 +2187,7 @@ inline val STENCIL_FUNC: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_FAIL)
  */
-inline val STENCIL_FAIL: GLenum
+inline val STENCIL_FAIL: GLenum /* Parameter */
     get() = GLenum(0x0B94)
 
 /**
@@ -2195,7 +2195,7 @@ inline val STENCIL_FAIL: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_PASS_DEPTH_FAIL)
  */
-inline val STENCIL_PASS_DEPTH_FAIL: GLenum
+inline val STENCIL_PASS_DEPTH_FAIL: GLenum /* Parameter */
     get() = GLenum(0x0B95)
 
 /**
@@ -2203,7 +2203,7 @@ inline val STENCIL_PASS_DEPTH_FAIL: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_PASS_DEPTH_PASS)
  */
-inline val STENCIL_PASS_DEPTH_PASS: GLenum
+inline val STENCIL_PASS_DEPTH_PASS: GLenum /* Parameter */
     get() = GLenum(0x0B96)
 
 /**
@@ -2211,61 +2211,61 @@ inline val STENCIL_PASS_DEPTH_PASS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_REF)
  */
-inline val STENCIL_REF: GLenum
+inline val STENCIL_REF: GLenum /* Parameter */
     get() = GLenum(0x0B97)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_VALUE_MASK)
  */
-inline val STENCIL_VALUE_MASK: GLenum
+inline val STENCIL_VALUE_MASK: GLenum /* Parameter */
     get() = GLenum(0x0B93)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_WRITEMASK)
  */
-inline val STENCIL_WRITEMASK: GLenum
+inline val STENCIL_WRITEMASK: GLenum /* Parameter */
     get() = GLenum(0x0B98)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_FUNC)
  */
-inline val STENCIL_BACK_FUNC: GLenum
+inline val STENCIL_BACK_FUNC: GLenum /* Parameter */
     get() = GLenum(0x8800)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_FAIL)
  */
-inline val STENCIL_BACK_FAIL: GLenum
+inline val STENCIL_BACK_FAIL: GLenum /* Parameter */
     get() = GLenum(0x8801)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_PASS_DEPTH_FAIL)
  */
-inline val STENCIL_BACK_PASS_DEPTH_FAIL: GLenum
+inline val STENCIL_BACK_PASS_DEPTH_FAIL: GLenum /* Parameter */
     get() = GLenum(0x8802)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_PASS_DEPTH_PASS)
  */
-inline val STENCIL_BACK_PASS_DEPTH_PASS: GLenum
+inline val STENCIL_BACK_PASS_DEPTH_PASS: GLenum /* Parameter */
     get() = GLenum(0x8803)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_REF)
  */
-inline val STENCIL_BACK_REF: GLenum
+inline val STENCIL_BACK_REF: GLenum /* Parameter */
     get() = GLenum(0x8CA3)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_VALUE_MASK)
  */
-inline val STENCIL_BACK_VALUE_MASK: GLenum
+inline val STENCIL_BACK_VALUE_MASK: GLenum /* Parameter */
     get() = GLenum(0x8CA4)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BACK_WRITEMASK)
  */
-inline val STENCIL_BACK_WRITEMASK: GLenum
+inline val STENCIL_BACK_WRITEMASK: GLenum /* Parameter */
     get() = GLenum(0x8CA5)
 
 /**
@@ -2273,7 +2273,7 @@ inline val STENCIL_BACK_WRITEMASK: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VIEWPORT)
  */
-inline val VIEWPORT: GLenum
+inline val VIEWPORT: GLenum /* Parameter */
     get() = GLenum(0x0BA2)
 
 /**
@@ -2281,133 +2281,133 @@ inline val VIEWPORT: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SCISSOR_BOX)
  */
-inline val SCISSOR_BOX: GLenum
+inline val SCISSOR_BOX: GLenum /* Parameter */
     get() = GLenum(0x0C10)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COLOR_CLEAR_VALUE)
  */
-inline val COLOR_CLEAR_VALUE: GLenum
+inline val COLOR_CLEAR_VALUE: GLenum /* Parameter */
     get() = GLenum(0x0C22)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COLOR_WRITEMASK)
  */
-inline val COLOR_WRITEMASK: GLenum
+inline val COLOR_WRITEMASK: GLenum /* Parameter */
     get() = GLenum(0x0C23)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=UNPACK_ALIGNMENT)
  */
-inline val UNPACK_ALIGNMENT: GLenum
+inline val UNPACK_ALIGNMENT: GLenum /* Parameter */
     get() = GLenum(0x0CF5)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=PACK_ALIGNMENT)
  */
-inline val PACK_ALIGNMENT: GLenum
+inline val PACK_ALIGNMENT: GLenum /* Parameter */
     get() = GLenum(0x0D05)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_TEXTURE_SIZE)
  */
-inline val MAX_TEXTURE_SIZE: GLenum
+inline val MAX_TEXTURE_SIZE: GLenum /* Parameter */
     get() = GLenum(0x0D33)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VIEWPORT_DIMS)
  */
-inline val MAX_VIEWPORT_DIMS: GLenum
+inline val MAX_VIEWPORT_DIMS: GLenum /* Parameter */
     get() = GLenum(0x0D3A)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SUBPIXEL_BITS)
  */
-inline val SUBPIXEL_BITS: GLenum
+inline val SUBPIXEL_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D50)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=RED_BITS)
  */
-inline val RED_BITS: GLenum
+inline val RED_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D52)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=GREEN_BITS)
  */
-inline val GREEN_BITS: GLenum
+inline val GREEN_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D53)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLUE_BITS)
  */
-inline val BLUE_BITS: GLenum
+inline val BLUE_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D54)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ALPHA_BITS)
  */
-inline val ALPHA_BITS: GLenum
+inline val ALPHA_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D55)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_BITS)
  */
-inline val DEPTH_BITS: GLenum
+inline val DEPTH_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D56)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BITS)
  */
-inline val STENCIL_BITS: GLenum
+inline val STENCIL_BITS: GLenum /* Parameter */
     get() = GLenum(0x0D57)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=POLYGON_OFFSET_UNITS)
  */
-inline val POLYGON_OFFSET_UNITS: GLenum
+inline val POLYGON_OFFSET_UNITS: GLenum /* Parameter */
     get() = GLenum(0x2A00)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=POLYGON_OFFSET_FACTOR)
  */
-inline val POLYGON_OFFSET_FACTOR: GLenum
+inline val POLYGON_OFFSET_FACTOR: GLenum /* Parameter */
     get() = GLenum(0x8038)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE_BINDING_2D)
  */
-inline val TEXTURE_BINDING_2D: GLenum
+inline val TEXTURE_BINDING_2D: GLenum /* Parameter */
     get() = GLenum(0x8069)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_BUFFERS)
  */
-inline val SAMPLE_BUFFERS: GLenum
+inline val SAMPLE_BUFFERS: GLenum /* Parameter */
     get() = GLenum(0x80A8)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLES)
  */
-inline val SAMPLES: GLenum
+inline val SAMPLES: GLenum /* Parameter */
     get() = GLenum(0x80A9)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_COVERAGE_VALUE)
  */
-inline val SAMPLE_COVERAGE_VALUE: GLenum
+inline val SAMPLE_COVERAGE_VALUE: GLenum /* Parameter */
     get() = GLenum(0x80AA)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_COVERAGE_INVERT)
  */
-inline val SAMPLE_COVERAGE_INVERT: GLenum
+inline val SAMPLE_COVERAGE_INVERT: GLenum /* Parameter */
     get() = GLenum(0x80AB)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COMPRESSED_TEXTURE_FORMATS)
  */
-inline val COMPRESSED_TEXTURE_FORMATS: GLenum
+inline val COMPRESSED_TEXTURE_FORMATS: GLenum /* Parameter */
     get() = GLenum(0x86A3)
 
 /**
@@ -2415,7 +2415,7 @@ inline val COMPRESSED_TEXTURE_FORMATS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DONT_CARE)
  */
-inline val DONT_CARE: GLenum
+inline val DONT_CARE: GLenum /* Hint */
     get() = GLenum(0x1100)
 
 /**
@@ -2423,7 +2423,7 @@ inline val DONT_CARE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FASTEST)
  */
-inline val FASTEST: GLenum
+inline val FASTEST: GLenum /* Hint */
     get() = GLenum(0x1101)
 
 /**
@@ -2431,7 +2431,7 @@ inline val FASTEST: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=NICEST)
  */
-inline val NICEST: GLenum
+inline val NICEST: GLenum /* Hint */
     get() = GLenum(0x1102)
 
 /**
@@ -2439,7 +2439,7 @@ inline val NICEST: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=GENERATE_MIPMAP_HINT)
  */
-inline val GENERATE_MIPMAP_HINT: GLenum
+inline val GENERATE_MIPMAP_HINT: GLenum /* Hint */
     get() = GLenum(0x8192)
 
 /**
@@ -2543,7 +2543,7 @@ inline val UNSIGNED_SHORT_5_6_5: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRAGMENT_SHADER)
  */
-inline val FRAGMENT_SHADER: GLenum
+inline val FRAGMENT_SHADER: GLenum /* ShaderType */
     get() = GLenum(0x8B30)
 
 /**
@@ -2551,7 +2551,7 @@ inline val FRAGMENT_SHADER: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_SHADER)
  */
-inline val VERTEX_SHADER: GLenum
+inline val VERTEX_SHADER: GLenum /* ShaderType */
     get() = GLenum(0x8B31)
 
 /**
@@ -2559,31 +2559,31 @@ inline val VERTEX_SHADER: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VERTEX_ATTRIBS)
  */
-inline val MAX_VERTEX_ATTRIBS: GLenum
+inline val MAX_VERTEX_ATTRIBS: GLenum /* ShaderType */
     get() = GLenum(0x8869)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VERTEX_UNIFORM_VECTORS)
  */
-inline val MAX_VERTEX_UNIFORM_VECTORS: GLenum
+inline val MAX_VERTEX_UNIFORM_VECTORS: GLenum /* ShaderType */
     get() = GLenum(0x8DFB)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VARYING_VECTORS)
  */
-inline val MAX_VARYING_VECTORS: GLenum
+inline val MAX_VARYING_VECTORS: GLenum /* ShaderType */
     get() = GLenum(0x8DFC)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_COMBINED_TEXTURE_IMAGE_UNITS)
  */
-inline val MAX_COMBINED_TEXTURE_IMAGE_UNITS: GLenum
+inline val MAX_COMBINED_TEXTURE_IMAGE_UNITS: GLenum /* ShaderType */
     get() = GLenum(0x8B4D)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VERTEX_TEXTURE_IMAGE_UNITS)
  */
-inline val MAX_VERTEX_TEXTURE_IMAGE_UNITS: GLenum
+inline val MAX_VERTEX_TEXTURE_IMAGE_UNITS: GLenum /* ShaderType */
     get() = GLenum(0x8B4C)
 
 /**
@@ -2591,19 +2591,19 @@ inline val MAX_VERTEX_TEXTURE_IMAGE_UNITS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_TEXTURE_IMAGE_UNITS)
  */
-inline val MAX_TEXTURE_IMAGE_UNITS: GLenum
+inline val MAX_TEXTURE_IMAGE_UNITS: GLenum /* ShaderType */
     get() = GLenum(0x8872)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_FRAGMENT_UNIFORM_VECTORS)
  */
-inline val MAX_FRAGMENT_UNIFORM_VECTORS: GLenum
+inline val MAX_FRAGMENT_UNIFORM_VECTORS: GLenum /* ShaderType */
     get() = GLenum(0x8DFD)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SHADER_TYPE)
  */
-inline val SHADER_TYPE: GLenum
+inline val SHADER_TYPE: GLenum /* ShaderType */
     get() = GLenum(0x8B4F)
 
 /**
@@ -2611,7 +2611,7 @@ inline val SHADER_TYPE: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DELETE_STATUS)
  */
-inline val DELETE_STATUS: GLenum
+inline val DELETE_STATUS: GLenum /* ShaderType */
     get() = GLenum(0x8B80)
 
 /**
@@ -2619,7 +2619,7 @@ inline val DELETE_STATUS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINK_STATUS)
  */
-inline val LINK_STATUS: GLenum
+inline val LINK_STATUS: GLenum /* ShaderType */
     get() = GLenum(0x8B82)
 
 /**
@@ -2627,7 +2627,7 @@ inline val LINK_STATUS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VALIDATE_STATUS)
  */
-inline val VALIDATE_STATUS: GLenum
+inline val VALIDATE_STATUS: GLenum /* ShaderType */
     get() = GLenum(0x8B83)
 
 /**
@@ -2635,7 +2635,7 @@ inline val VALIDATE_STATUS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ATTACHED_SHADERS)
  */
-inline val ATTACHED_SHADERS: GLenum
+inline val ATTACHED_SHADERS: GLenum /* ShaderType */
     get() = GLenum(0x8B85)
 
 /**
@@ -2643,7 +2643,7 @@ inline val ATTACHED_SHADERS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ACTIVE_UNIFORMS)
  */
-inline val ACTIVE_UNIFORMS: GLenum
+inline val ACTIVE_UNIFORMS: GLenum /* ShaderType */
     get() = GLenum(0x8B86)
 
 /**
@@ -2651,19 +2651,19 @@ inline val ACTIVE_UNIFORMS: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ACTIVE_ATTRIBUTES)
  */
-inline val ACTIVE_ATTRIBUTES: GLenum
+inline val ACTIVE_ATTRIBUTES: GLenum /* ShaderType */
     get() = GLenum(0x8B89)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SHADING_LANGUAGE_VERSION)
  */
-inline val SHADING_LANGUAGE_VERSION: GLenum
+inline val SHADING_LANGUAGE_VERSION: GLenum /* ShaderType */
     get() = GLenum(0x8B8C)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CURRENT_PROGRAM)
  */
-inline val CURRENT_PROGRAM: GLenum
+inline val CURRENT_PROGRAM: GLenum /* ShaderType */
     get() = GLenum(0x8B8D)
 
 /**
@@ -2733,61 +2733,61 @@ inline val ALWAYS: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=KEEP)
  */
-inline val KEEP: GLenum
+inline val KEEP: GLenum /* StencilAction */
     get() = GLenum(0x1E00)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=REPLACE)
  */
-inline val REPLACE: GLenum
+inline val REPLACE: GLenum /* StencilAction */
     get() = GLenum(0x1E01)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INCR)
  */
-inline val INCR: GLenum
+inline val INCR: GLenum /* StencilAction */
     get() = GLenum(0x1E02)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DECR)
  */
-inline val DECR: GLenum
+inline val DECR: GLenum /* StencilAction */
     get() = GLenum(0x1E03)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVERT)
  */
-inline val INVERT: GLenum
+inline val INVERT: GLenum /* StencilAction */
     get() = GLenum(0x150A)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INCR_WRAP)
  */
-inline val INCR_WRAP: GLenum
+inline val INCR_WRAP: GLenum /* StencilAction */
     get() = GLenum(0x8507)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DECR_WRAP)
  */
-inline val DECR_WRAP: GLenum
+inline val DECR_WRAP: GLenum /* StencilAction */
     get() = GLenum(0x8508)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VENDOR)
  */
-inline val VENDOR: GLenum
+inline val VENDOR: GLenum /* Parameter */
     get() = GLenum(0x1F00)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=RENDERER)
  */
-inline val RENDERER: GLenum
+inline val RENDERER: GLenum /* Parameter */
     get() = GLenum(0x1F01)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERSION)
  */
-inline val VERSION: GLenum
+inline val VERSION: GLenum /* Parameter */
     get() = GLenum(0x1F02)
 
 /**
@@ -3291,55 +3291,55 @@ inline val SAMPLER_CUBE: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_ENABLED)
  */
-inline val VERTEX_ATTRIB_ARRAY_ENABLED: GLenum
+inline val VERTEX_ATTRIB_ARRAY_ENABLED: GLenum /* VertexAttribute */
     get() = GLenum(0x8622)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_SIZE)
  */
-inline val VERTEX_ATTRIB_ARRAY_SIZE: GLenum
+inline val VERTEX_ATTRIB_ARRAY_SIZE: GLenum /* VertexAttribute */
     get() = GLenum(0x8623)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_STRIDE)
  */
-inline val VERTEX_ATTRIB_ARRAY_STRIDE: GLenum
+inline val VERTEX_ATTRIB_ARRAY_STRIDE: GLenum /* VertexAttribute */
     get() = GLenum(0x8624)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_TYPE)
  */
-inline val VERTEX_ATTRIB_ARRAY_TYPE: GLenum
+inline val VERTEX_ATTRIB_ARRAY_TYPE: GLenum /* VertexAttribute */
     get() = GLenum(0x8625)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_NORMALIZED)
  */
-inline val VERTEX_ATTRIB_ARRAY_NORMALIZED: GLenum
+inline val VERTEX_ATTRIB_ARRAY_NORMALIZED: GLenum /* VertexAttribute */
     get() = GLenum(0x886A)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_POINTER)
  */
-inline val VERTEX_ATTRIB_ARRAY_POINTER: GLenum
+inline val VERTEX_ATTRIB_ARRAY_POINTER: GLenum /* VertexAttribute */
     get() = GLenum(0x8645)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_ATTRIB_ARRAY_BUFFER_BINDING)
  */
-inline val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: GLenum
+inline val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: GLenum /* VertexAttribute */
     get() = GLenum(0x889F)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=IMPLEMENTATION_COLOR_READ_TYPE)
  */
-inline val IMPLEMENTATION_COLOR_READ_TYPE: GLenum
+inline val IMPLEMENTATION_COLOR_READ_TYPE: GLenum /* Parameter */
     get() = GLenum(0x8B9A)
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=IMPLEMENTATION_COLOR_READ_FORMAT)
  */
-inline val IMPLEMENTATION_COLOR_READ_FORMAT: GLenum
+inline val IMPLEMENTATION_COLOR_READ_FORMAT: GLenum /* Parameter */
     get() = GLenum(0x8B9B)
 
 /**
@@ -3347,7 +3347,7 @@ inline val IMPLEMENTATION_COLOR_READ_FORMAT: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COMPILE_STATUS)
  */
-inline val COMPILE_STATUS: GLenum
+inline val COMPILE_STATUS: GLenum /* ShaderType */
     get() = GLenum(0x8B81)
 
 /**
@@ -3619,7 +3619,7 @@ inline val UNPACK_PREMULTIPLY_ALPHA_WEBGL: GLenum
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CONTEXT_LOST_WEBGL)
  */
-inline val CONTEXT_LOST_WEBGL: GLenum
+inline val CONTEXT_LOST_WEBGL: GLenum /* Error */
     get() = GLenum(0x9242)
 
 /**
@@ -3631,5 +3631,5 @@ inline val UNPACK_COLORSPACE_CONVERSION_WEBGL: GLenum
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BROWSER_DEFAULT_WEBGL)
  */
-inline val BROWSER_DEFAULT_WEBGL: GLenum
+inline val BROWSER_DEFAULT_WEBGL: GLenum /* Parameter */
     get() = GLenum(0x9244)

@@ -9,40 +9,33 @@ internal data class GLConstantGroup(
 ) {
     val type: String? by lazy {
         when (name) {
-            "Clearing buffers" -> null
-            "Rendering primitives" -> null
-            "Blending modes" -> null
-            "Blending equations" -> null
-            "Getting GL parameter information" -> null
-            "Buffers" -> null
-            "Vertex attributes" -> null
-            "Culling" -> null
-            "Enabling and disabling" -> null
-            "Errors" -> null
-            "Front face directions" -> null
-            "Hints" -> null
+            "Clearing buffers" -> "ClearMask"
+            "Rendering primitives" -> "DrawMode"
+            "Blending modes" -> "BlendMode"
+            "Blending equations" -> "BlendEquationMode"
+            "Getting GL parameter information" -> "Parameter"
+            "Buffers" -> "Buffer"
+            "Vertex attributes" -> "VertexAttribute"
+            "Culling" -> "Culling"
+            "Enabling and disabling" -> "Feature"
+            "Errors" -> "Error"
+            "Front face directions" -> "Direction"
+            "Hints" -> "Hint"
             "Data types" -> null
             "Pixel formats" -> null
             "Pixel types" -> null
-            "Shaders" -> null
-            "Depth or stencil tests" -> null
-            "Stencil actions" -> null
+            "Shaders" -> "ShaderType"
+            "Depth or stencil tests" -> null // "DepthFunction" | "StencilFunction"
+            "Stencil actions" -> "StencilAction"
             "Textures" -> null
             "Uniform types" -> null
             "Shader precision-specified types" -> null
             "Framebuffers and renderbuffers" -> null
             "Pixel storage modes" -> null
-            "Getting GL parameter information" -> null
-            "Textures" -> null
-            "Pixel types" -> null
             "Queries" -> null
             "Draw buffers" -> null
             "Samplers" -> null
-            "Buffers" -> null
-            "Data types" -> null
-            "Vertex attributes" -> null
             "Transform feedback" -> null
-            "Framebuffers and renderbuffers" -> null
             "Uniforms" -> null
             "Sync objects" -> null
             "Miscellaneous constants" -> null
