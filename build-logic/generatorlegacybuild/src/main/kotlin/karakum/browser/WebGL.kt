@@ -47,10 +47,16 @@ private fun convertConstants(
     )
 }
 
-private val CONSTANT_DATA_MAP: Map<String, GLConstant> by lazy {
-    webglConstantsData()
-        .flatMap { it.constants }
-        .associateBy { it.name }
+private object ConstantDataMap {
+    private val data = webglConstantsData()
+    private val constantMap: Map<String, GLConstant> =
+        data.flatMap { it.constants }
+            .associateBy { it.name }
+
+    fun getDescription(
+        name: String,
+    ): String =
+        constantMap.getValue(name).description
 }
 
 private fun constants(
@@ -88,7 +94,7 @@ private data class WebGLConstant(
             ?.takeIf { value.removePrefix("0x").toUInt(16) > Int.MAX_VALUE.toUInt() }
             ?: ""
 
-        val description = CONSTANT_DATA_MAP.getValue(name).description
+        val description = ConstantDataMap.getDescription(name)
         val kdoc = (if (description.isNotEmpty()) listOf(description, "") else emptyList())
             .plus("[MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=$name)")
             .joinToString("\n", "/**\n", "\n*/") { "* $it" }
