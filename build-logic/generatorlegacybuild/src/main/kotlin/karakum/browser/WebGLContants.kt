@@ -25,13 +25,19 @@ internal data class GLConstant(
 }
 
 internal fun webglConstantsData(): List<GLConstantGroup> =
+    constantGroups("Standard WebGL 1 constants")
+        .plus(constantGroups("Additional constants defined WebGL 2"))
+        .map(::parseConstantGroup)
+        .toList()
+
+private fun constantGroups(
+    label: String,
+): Sequence<String> =
     mdnContent("api/webgl_api/constants/index.md")
-        .substringAfter("\n## Standard WebGL 1 constants\n", "")
+        .substringAfter("\n## $label\n", "")
         .substringBefore("\n## ", "")
         .splitToSequence("\n### ")
         .drop(1)
-        .map(::parseConstantGroup)
-        .toList()
 
 private fun parseConstantGroup(
     source: String,
@@ -44,12 +50,22 @@ private fun parseConstantGroup(
         .takeWhile { it.startsWith("|") }
         .map { it.removeSurrounding("|") }
         .flatMap { line ->
-            val (name, value, description) = line
+            val (name, value, rawDescription) = line
                 .removeSurrounding("|")
                 .splitToSequence("|")
                 .map { it.trim() }
                 .map { it.removeSurrounding("`") }
                 .toList()
+
+            val description = rawDescription
+                .replace(
+                    """{{jsxref("Int32Array")}}""",
+                    "[Int32Array](js.typedarrays.Int32Array)`",
+                )
+                .replace(
+                    """{{domxref("WebGLRenderingContext.generateMipmap()")}}""",
+                    "[WebGLRenderingContext.generateMipmap]",
+                )
 
             if (name == "TEXTURE0 - 31") {
                 val nameBase = name.substringBefore("0")

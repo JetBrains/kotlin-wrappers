@@ -1575,480 +1575,640 @@ inline val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: GLenum
     get() = GLenum(0x9247)
 
 /**
+ * Passed to `clear` to clear the current depth buffer.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_BUFFER_BIT)
  */
 inline val DEPTH_BUFFER_BIT: GLbitfield
     get() = GLbitfield(0x00000100)
 
 /**
+ * Passed to `clear` to clear the current stencil buffer.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_BUFFER_BIT)
  */
 inline val STENCIL_BUFFER_BIT: GLbitfield
     get() = GLbitfield(0x00000400)
 
 /**
+ * Passed to `clear` to clear the current color buffer.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COLOR_BUFFER_BIT)
  */
 inline val COLOR_BUFFER_BIT: GLbitfield
     get() = GLbitfield(0x00004000)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw single points.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=POINTS)
  */
 inline val POINTS: GLenum
     get() = GLenum(0x0000)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw lines. Each vertex connects to the one after it.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINES)
  */
 inline val LINES: GLenum
     get() = GLenum(0x0001)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw lines. Each set of two vertices is treated as a separate line segment.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINE_LOOP)
  */
 inline val LINE_LOOP: GLenum
     get() = GLenum(0x0002)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw a connected group of line segments from the first vertex to the last.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINE_STRIP)
  */
 inline val LINE_STRIP: GLenum
     get() = GLenum(0x0003)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw triangles. Each set of three vertices creates a separate triangle.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TRIANGLES)
  */
 inline val TRIANGLES: GLenum
     get() = GLenum(0x0004)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw a connected group of triangles.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TRIANGLE_STRIP)
  */
 inline val TRIANGLE_STRIP: GLenum
     get() = GLenum(0x0005)
 
 /**
+ * Passed to `drawElements` or `drawArrays` to draw a connected group of triangles. Each vertex connects to the previous and the first vertex in the fan.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TRIANGLE_FAN)
  */
 inline val TRIANGLE_FAN: GLenum
     get() = GLenum(0x0006)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to turn off a component.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ZERO)
  */
 inline val ZERO: GLenum
     get() = GLenum(0)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to turn on a component.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE)
  */
 inline val ONE: GLenum
     get() = GLenum(1)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by the source element's color.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SRC_COLOR)
  */
 inline val SRC_COLOR: GLenum
     get() = GLenum(0x0300)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by one minus the source element's color.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_SRC_COLOR)
  */
 inline val ONE_MINUS_SRC_COLOR: GLenum
     get() = GLenum(0x0301)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by the source's alpha.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SRC_ALPHA)
  */
 inline val SRC_ALPHA: GLenum
     get() = GLenum(0x0302)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by one minus the source's alpha.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_SRC_ALPHA)
  */
 inline val ONE_MINUS_SRC_ALPHA: GLenum
     get() = GLenum(0x0303)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by the destination's alpha.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DST_ALPHA)
  */
 inline val DST_ALPHA: GLenum
     get() = GLenum(0x0304)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by one minus the destination's alpha.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_DST_ALPHA)
  */
 inline val ONE_MINUS_DST_ALPHA: GLenum
     get() = GLenum(0x0305)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by the destination's color.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DST_COLOR)
  */
 inline val DST_COLOR: GLenum
     get() = GLenum(0x0306)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by one minus the destination's color.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_DST_COLOR)
  */
 inline val ONE_MINUS_DST_COLOR: GLenum
     get() = GLenum(0x0307)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to multiply a component by the minimum of source's alpha or one minus the destination's alpha.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SRC_ALPHA_SATURATE)
  */
 inline val SRC_ALPHA_SATURATE: GLenum
     get() = GLenum(0x0308)
 
 /**
+ * Passed to `blendEquation` or `blendEquationSeparate` to set an addition blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FUNC_ADD)
  */
 inline val FUNC_ADD: GLenum
     get() = GLenum(0x8006)
 
 /**
+ * Passed to `getParameter` to get the current RGB blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_EQUATION)
  */
 inline val BLEND_EQUATION: GLenum
     get() = GLenum(0x8009)
 
 /**
+ * Passed to `getParameter` to get the current RGB blend function. Same as `BLEND_EQUATION`
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_EQUATION_RGB)
  */
 inline val BLEND_EQUATION_RGB: GLenum
     get() = GLenum(0x8009)
 
 /**
+ * Passed to `getParameter` to get the current alpha blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_EQUATION_ALPHA)
  */
 inline val BLEND_EQUATION_ALPHA: GLenum
     get() = GLenum(0x883D)
 
 /**
+ * Passed to `blendEquation` or `blendEquationSeparate` to specify a subtraction blend function (source - destination).
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FUNC_SUBTRACT)
  */
 inline val FUNC_SUBTRACT: GLenum
     get() = GLenum(0x800A)
 
 /**
+ * Passed to `blendEquation` or `blendEquationSeparate` to specify a reverse subtraction blend function (destination - source).
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FUNC_REVERSE_SUBTRACT)
  */
 inline val FUNC_REVERSE_SUBTRACT: GLenum
     get() = GLenum(0x800B)
 
 /**
+ * Passed to `getParameter` to get the current destination RGB blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_DST_RGB)
  */
 inline val BLEND_DST_RGB: GLenum
     get() = GLenum(0x80C8)
 
 /**
+ * Passed to `getParameter` to get the current source RGB blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_SRC_RGB)
  */
 inline val BLEND_SRC_RGB: GLenum
     get() = GLenum(0x80C9)
 
 /**
+ * Passed to `getParameter` to get the current destination alpha blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_DST_ALPHA)
  */
 inline val BLEND_DST_ALPHA: GLenum
     get() = GLenum(0x80CA)
 
 /**
+ * Passed to `getParameter` to get the current source alpha blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_SRC_ALPHA)
  */
 inline val BLEND_SRC_ALPHA: GLenum
     get() = GLenum(0x80CB)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to specify a constant color blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CONSTANT_COLOR)
  */
 inline val CONSTANT_COLOR: GLenum
     get() = GLenum(0x8001)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to specify one minus a constant color blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_CONSTANT_COLOR)
  */
 inline val ONE_MINUS_CONSTANT_COLOR: GLenum
     get() = GLenum(0x8002)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to specify a constant alpha blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CONSTANT_ALPHA)
  */
 inline val CONSTANT_ALPHA: GLenum
     get() = GLenum(0x8003)
 
 /**
+ * Passed to `blendFunc` or `blendFuncSeparate` to specify one minus a constant alpha blend function.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ONE_MINUS_CONSTANT_ALPHA)
  */
 inline val ONE_MINUS_CONSTANT_ALPHA: GLenum
     get() = GLenum(0x8004)
 
 /**
+ * Passed to `getParameter` to return the current blend color.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND_COLOR)
  */
 inline val BLEND_COLOR: GLenum
     get() = GLenum(0x8005)
 
 /**
+ * Passed to `bindBuffer` or `bufferData` to specify the type of buffer being used.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ARRAY_BUFFER)
  */
 inline val ARRAY_BUFFER: GLenum
     get() = GLenum(0x8892)
 
 /**
+ * Passed to `bindBuffer` or `bufferData` to specify the type of buffer being used.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ELEMENT_ARRAY_BUFFER)
  */
 inline val ELEMENT_ARRAY_BUFFER: GLenum
     get() = GLenum(0x8893)
 
 /**
+ * Passed to `getParameter` to get the array buffer binding.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ARRAY_BUFFER_BINDING)
  */
 inline val ARRAY_BUFFER_BINDING: GLenum
     get() = GLenum(0x8894)
 
 /**
+ * Passed to `getParameter` to get the current element array buffer.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ELEMENT_ARRAY_BUFFER_BINDING)
  */
 inline val ELEMENT_ARRAY_BUFFER_BINDING: GLenum
     get() = GLenum(0x8895)
 
 /**
+ * Passed to `bufferData` as a hint about whether the contents of the buffer are likely to not be used often.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STREAM_DRAW)
  */
 inline val STREAM_DRAW: GLenum
     get() = GLenum(0x88E0)
 
 /**
+ * Passed to `bufferData` as a hint about whether the contents of the buffer are likely to be used often and not change often.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STATIC_DRAW)
  */
 inline val STATIC_DRAW: GLenum
     get() = GLenum(0x88E4)
 
 /**
+ * Passed to `bufferData` as a hint about whether the contents of the buffer are likely to be used often and change often.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DYNAMIC_DRAW)
  */
 inline val DYNAMIC_DRAW: GLenum
     get() = GLenum(0x88E8)
 
 /**
+ * Passed to `getBufferParameter` to get a buffer's size.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BUFFER_SIZE)
  */
 inline val BUFFER_SIZE: GLenum
     get() = GLenum(0x8764)
 
 /**
+ * Passed to `getBufferParameter` to get the hint for the buffer passed in when it was created.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BUFFER_USAGE)
  */
 inline val BUFFER_USAGE: GLenum
     get() = GLenum(0x8765)
 
 /**
+ * Passed to `getVertexAttrib` to read back the current vertex attribute.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CURRENT_VERTEX_ATTRIB)
  */
 inline val CURRENT_VERTEX_ATTRIB: GLenum
     get() = GLenum(0x8626)
 
 /**
+ * Passed to `cullFace` to specify that only front faces should be culled.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRONT)
  */
 inline val FRONT: GLenum
     get() = GLenum(0x0404)
 
 /**
+ * Passed to `cullFace` to specify that only back faces should be culled.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BACK)
  */
 inline val BACK: GLenum
     get() = GLenum(0x0405)
 
 /**
+ * Passed to `cullFace` to specify that front and back faces should be culled.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRONT_AND_BACK)
  */
 inline val FRONT_AND_BACK: GLenum
     get() = GLenum(0x0408)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off culling. Can also be used with `getParameter` to find the current culling method.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CULL_FACE)
  */
 inline val CULL_FACE: GLenum
     get() = GLenum(0x0B44)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off blending. Can also be used with `getParameter` to find the current blending method.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=BLEND)
  */
 inline val BLEND: GLenum
     get() = GLenum(0x0BE2)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off dithering. Can also be used with `getParameter` to find the current dithering method.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DITHER)
  */
 inline val DITHER: GLenum
     get() = GLenum(0x0BD0)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off the stencil test. Can also be used with `getParameter` to query the stencil test.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_TEST)
  */
 inline val STENCIL_TEST: GLenum
     get() = GLenum(0x0B90)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off the depth test. Can also be used with `getParameter` to query the depth test.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_TEST)
  */
 inline val DEPTH_TEST: GLenum
     get() = GLenum(0x0B71)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off the scissor test. Can also be used with `getParameter` to query the scissor test.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SCISSOR_TEST)
  */
 inline val SCISSOR_TEST: GLenum
     get() = GLenum(0x0C11)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off the polygon offset. Useful for rendering hidden-line images, decals, and solids with highlighted edges. Can also be used with `getParameter` to query the scissor test.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=POLYGON_OFFSET_FILL)
  */
 inline val POLYGON_OFFSET_FILL: GLenum
     get() = GLenum(0x8037)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off the alpha to coverage. Used in multi-sampling alpha channels.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_ALPHA_TO_COVERAGE)
  */
 inline val SAMPLE_ALPHA_TO_COVERAGE: GLenum
     get() = GLenum(0x809E)
 
 /**
+ * Passed to `enable`/`disable` to turn on/off the sample coverage. Used in multi-sampling.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SAMPLE_COVERAGE)
  */
 inline val SAMPLE_COVERAGE: GLenum
     get() = GLenum(0x80A0)
 
 /**
+ * Returned from `getError`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=NO_ERROR)
  */
 inline val NO_ERROR: GLenum
     get() = GLenum(0)
 
 /**
+ * Returned from `getError`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVALID_ENUM)
  */
 inline val INVALID_ENUM: GLenum
     get() = GLenum(0x0500)
 
 /**
+ * Returned from `getError`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVALID_VALUE)
  */
 inline val INVALID_VALUE: GLenum
     get() = GLenum(0x0501)
 
 /**
+ * Returned from `getError`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=INVALID_OPERATION)
  */
 inline val INVALID_OPERATION: GLenum
     get() = GLenum(0x0502)
 
 /**
+ * Returned from `getError`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=OUT_OF_MEMORY)
  */
 inline val OUT_OF_MEMORY: GLenum
     get() = GLenum(0x0505)
 
 /**
+ * Passed to `frontFace` to specify the front face of a polygon is drawn in the clockwise direction
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CW)
  */
 inline val CW: GLenum
     get() = GLenum(0x0900)
 
 /**
+ * Passed to `frontFace` to specify the front face of a polygon is drawn in the counter clockwise direction
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CCW)
  */
 inline val CCW: GLenum
     get() = GLenum(0x0901)
 
 /**
+ * Passed to `getParameter` to get the current `lineWidth` (set by the `lineWidth` method).
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINE_WIDTH)
  */
 inline val LINE_WIDTH: GLenum
     get() = GLenum(0x0B21)
 
 /**
+ * Passed to `getParameter` to get the current size of a point drawn with `gl.POINTS`
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ALIASED_POINT_SIZE_RANGE)
  */
 inline val ALIASED_POINT_SIZE_RANGE: GLenum
     get() = GLenum(0x846D)
 
 /**
+ * Passed to `getParameter` to get the range of available widths for a line. The `getParameter` method then returns an array with two elements: the first element is the minimum width value and the second element is the maximum width value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ALIASED_LINE_WIDTH_RANGE)
  */
 inline val ALIASED_LINE_WIDTH_RANGE: GLenum
     get() = GLenum(0x846E)
 
 /**
+ * Passed to `getParameter` to get the current value of `cullFace`. Should return `FRONT`, `BACK`, or `FRONT_AND_BACK`
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CULL_FACE_MODE)
  */
 inline val CULL_FACE_MODE: GLenum
     get() = GLenum(0x0B45)
 
 /**
+ * Passed to `getParameter` to determine the current value of `frontFace`. Should return `CW` or `CCW`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRONT_FACE)
  */
 inline val FRONT_FACE: GLenum
     get() = GLenum(0x0B46)
 
 /**
+ * Passed to `getParameter` to return a length-2 array of floats giving the current depth range.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_RANGE)
  */
 inline val DEPTH_RANGE: GLenum
     get() = GLenum(0x0B70)
 
 /**
+ * Passed to `getParameter` to determine if the depth write mask is enabled.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_WRITEMASK)
  */
 inline val DEPTH_WRITEMASK: GLenum
     get() = GLenum(0x0B72)
 
 /**
+ * Passed to `getParameter` to determine the current depth clear value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_CLEAR_VALUE)
  */
 inline val DEPTH_CLEAR_VALUE: GLenum
     get() = GLenum(0x0B73)
 
 /**
+ * Passed to `getParameter` to get the current depth function. Returns `NEVER`, `ALWAYS`, `LESS`, `EQUAL`, `LEQUAL`, `GREATER`, `GEQUAL`, or `NOTEQUAL`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DEPTH_FUNC)
  */
 inline val DEPTH_FUNC: GLenum
     get() = GLenum(0x0B74)
 
 /**
+ * Passed to `getParameter` to get the value the stencil will be cleared to.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_CLEAR_VALUE)
  */
 inline val STENCIL_CLEAR_VALUE: GLenum
     get() = GLenum(0x0B91)
 
 /**
+ * Passed to `getParameter` to get the current stencil function. Returns `NEVER`, `ALWAYS`, `LESS`, `EQUAL`, `LEQUAL`, `GREATER`, `GEQUAL`, or `NOTEQUAL`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_FUNC)
  */
 inline val STENCIL_FUNC: GLenum
     get() = GLenum(0x0B92)
 
 /**
+ * Passed to `getParameter` to get the current stencil fail function. Should return `KEEP`, `REPLACE`, `INCR`, `DECR`, `INVERT`, `INCR_WRAP`, or `DECR_WRAP`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_FAIL)
  */
 inline val STENCIL_FAIL: GLenum
     get() = GLenum(0x0B94)
 
 /**
+ * Passed to `getParameter` to get the current stencil fail function should the depth buffer test fail. Should return `KEEP`, `REPLACE`, `INCR`, `DECR`, `INVERT`, `INCR_WRAP`, or `DECR_WRAP`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_PASS_DEPTH_FAIL)
  */
 inline val STENCIL_PASS_DEPTH_FAIL: GLenum
     get() = GLenum(0x0B95)
 
 /**
+ * Passed to `getParameter` to get the current stencil fail function should the depth buffer test pass. Should return `KEEP`, `REPLACE`, `INCR`, `DECR`, `INVERT`, `INCR_WRAP`, or `DECR_WRAP`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_PASS_DEPTH_PASS)
  */
 inline val STENCIL_PASS_DEPTH_PASS: GLenum
     get() = GLenum(0x0B96)
 
 /**
+ * Passed to `getParameter` to get the reference value used for stencil tests.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=STENCIL_REF)
  */
 inline val STENCIL_REF: GLenum
@@ -2109,12 +2269,16 @@ inline val STENCIL_BACK_WRITEMASK: GLenum
     get() = GLenum(0x8CA5)
 
 /**
+ * Returns an [Int32Array](js.typedarrays.Int32Array)` with four elements for the current viewport dimensions.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VIEWPORT)
  */
 inline val VIEWPORT: GLenum
     get() = GLenum(0x0BA2)
 
 /**
+ * Returns an [Int32Array](js.typedarrays.Int32Array)` with four elements for the current scissor box dimensions.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=SCISSOR_BOX)
  */
 inline val SCISSOR_BOX: GLenum
@@ -2247,24 +2411,32 @@ inline val COMPRESSED_TEXTURE_FORMATS: GLenum
     get() = GLenum(0x86A3)
 
 /**
+ * There is no preference for this behavior.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DONT_CARE)
  */
 inline val DONT_CARE: GLenum
     get() = GLenum(0x1100)
 
 /**
+ * The most efficient behavior should be used.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FASTEST)
  */
 inline val FASTEST: GLenum
     get() = GLenum(0x1101)
 
 /**
+ * The most correct or the highest quality option should be used.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=NICEST)
  */
 inline val NICEST: GLenum
     get() = GLenum(0x1102)
 
 /**
+ * Hint for the quality of filtering when generating mipmap images with [WebGLRenderingContext.generateMipmap].
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=GENERATE_MIPMAP_HINT)
  */
 inline val GENERATE_MIPMAP_HINT: GLenum
@@ -2367,18 +2539,24 @@ inline val UNSIGNED_SHORT_5_6_5: GLenum
     get() = GLenum(0x8363)
 
 /**
+ * Passed to `createShader` to define a fragment shader.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=FRAGMENT_SHADER)
  */
 inline val FRAGMENT_SHADER: GLenum
     get() = GLenum(0x8B30)
 
 /**
+ * Passed to `createShader` to define a vertex shader
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VERTEX_SHADER)
  */
 inline val VERTEX_SHADER: GLenum
     get() = GLenum(0x8B31)
 
 /**
+ * The maximum number of entries possible in the vertex attribute list.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_VERTEX_ATTRIBS)
  */
 inline val MAX_VERTEX_ATTRIBS: GLenum
@@ -2409,6 +2587,8 @@ inline val MAX_VERTEX_TEXTURE_IMAGE_UNITS: GLenum
     get() = GLenum(0x8B4C)
 
 /**
+ * Implementation-dependent number of maximum texture units. At least 8.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=MAX_TEXTURE_IMAGE_UNITS)
  */
 inline val MAX_TEXTURE_IMAGE_UNITS: GLenum
@@ -2427,36 +2607,48 @@ inline val SHADER_TYPE: GLenum
     get() = GLenum(0x8B4F)
 
 /**
+ * Passed to `getShaderParameter` to determine if a shader was deleted via `deleteShader`. Returns true if it was, false otherwise.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=DELETE_STATUS)
  */
 inline val DELETE_STATUS: GLenum
     get() = GLenum(0x8B80)
 
 /**
+ * Passed to `getProgramParameter` after calling `linkProgram` to determine if a program was linked correctly. Returns false if there were errors. Use `getProgramInfoLog` to find the exact error.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LINK_STATUS)
  */
 inline val LINK_STATUS: GLenum
     get() = GLenum(0x8B82)
 
 /**
+ * Passed to `getProgramParameter` after calling `validateProgram` to determine if it is valid. Returns false if errors were found.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=VALIDATE_STATUS)
  */
 inline val VALIDATE_STATUS: GLenum
     get() = GLenum(0x8B83)
 
 /**
+ * Passed to `getProgramParameter` after calling `attachShader` to determine if the shader was attached correctly. Returns false if errors occurred.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ATTACHED_SHADERS)
  */
 inline val ATTACHED_SHADERS: GLenum
     get() = GLenum(0x8B85)
 
 /**
+ * Passed to `getProgramParameter` to get the number of uniforms active in a program.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ACTIVE_UNIFORMS)
  */
 inline val ACTIVE_UNIFORMS: GLenum
     get() = GLenum(0x8B86)
 
 /**
+ * Passed to `getProgramParameter` to get the number of attributes active in a program.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ACTIVE_ATTRIBUTES)
  */
 inline val ACTIVE_ATTRIBUTES: GLenum
@@ -2475,48 +2667,64 @@ inline val CURRENT_PROGRAM: GLenum
     get() = GLenum(0x8B8D)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will never pass, i.e., nothing will be drawn.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=NEVER)
  */
 inline val NEVER: GLenum
     get() = GLenum(0x0200)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will pass if the new depth value is less than the stored value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LESS)
  */
 inline val LESS: GLenum
     get() = GLenum(0x0201)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will pass if the new depth value is equals to the stored value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=EQUAL)
  */
 inline val EQUAL: GLenum
     get() = GLenum(0x0202)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will pass if the new depth value is less than or equal to the stored value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=LEQUAL)
  */
 inline val LEQUAL: GLenum
     get() = GLenum(0x0203)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will pass if the new depth value is greater than the stored value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=GREATER)
  */
 inline val GREATER: GLenum
     get() = GLenum(0x0204)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will pass if the new depth value is not equal to the stored value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=NOTEQUAL)
  */
 inline val NOTEQUAL: GLenum
     get() = GLenum(0x0205)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will pass if the new depth value is greater than or equal to the stored value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=GEQUAL)
  */
 inline val GEQUAL: GLenum
     get() = GLenum(0x0206)
 
 /**
+ * Passed to `depthFunction` or `stencilFunction` to specify depth or stencil tests will always pass, i.e., pixels will be drawn in the order they are drawn.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ALWAYS)
  */
 inline val ALWAYS: GLenum
@@ -2709,198 +2917,264 @@ inline val MAX_CUBE_MAP_TEXTURE_SIZE: GLenum
     get() = GLenum(0x851C)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE0)
  */
 inline val TEXTURE0: GLenum
     get() = GLenum(0x84C0)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE1)
  */
 inline val TEXTURE1: GLenum
     get() = GLenum(0x84C1)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE2)
  */
 inline val TEXTURE2: GLenum
     get() = GLenum(0x84C2)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE3)
  */
 inline val TEXTURE3: GLenum
     get() = GLenum(0x84C3)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE4)
  */
 inline val TEXTURE4: GLenum
     get() = GLenum(0x84C4)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE5)
  */
 inline val TEXTURE5: GLenum
     get() = GLenum(0x84C5)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE6)
  */
 inline val TEXTURE6: GLenum
     get() = GLenum(0x84C6)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE7)
  */
 inline val TEXTURE7: GLenum
     get() = GLenum(0x84C7)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE8)
  */
 inline val TEXTURE8: GLenum
     get() = GLenum(0x84C8)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE9)
  */
 inline val TEXTURE9: GLenum
     get() = GLenum(0x84C9)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE10)
  */
 inline val TEXTURE10: GLenum
     get() = GLenum(0x84CA)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE11)
  */
 inline val TEXTURE11: GLenum
     get() = GLenum(0x84CB)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE12)
  */
 inline val TEXTURE12: GLenum
     get() = GLenum(0x84CC)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE13)
  */
 inline val TEXTURE13: GLenum
     get() = GLenum(0x84CD)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE14)
  */
 inline val TEXTURE14: GLenum
     get() = GLenum(0x84CE)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE15)
  */
 inline val TEXTURE15: GLenum
     get() = GLenum(0x84CF)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE16)
  */
 inline val TEXTURE16: GLenum
     get() = GLenum(0x84D0)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE17)
  */
 inline val TEXTURE17: GLenum
     get() = GLenum(0x84D1)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE18)
  */
 inline val TEXTURE18: GLenum
     get() = GLenum(0x84D2)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE19)
  */
 inline val TEXTURE19: GLenum
     get() = GLenum(0x84D3)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE20)
  */
 inline val TEXTURE20: GLenum
     get() = GLenum(0x84D4)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE21)
  */
 inline val TEXTURE21: GLenum
     get() = GLenum(0x84D5)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE22)
  */
 inline val TEXTURE22: GLenum
     get() = GLenum(0x84D6)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE23)
  */
 inline val TEXTURE23: GLenum
     get() = GLenum(0x84D7)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE24)
  */
 inline val TEXTURE24: GLenum
     get() = GLenum(0x84D8)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE25)
  */
 inline val TEXTURE25: GLenum
     get() = GLenum(0x84D9)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE26)
  */
 inline val TEXTURE26: GLenum
     get() = GLenum(0x84DA)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE27)
  */
 inline val TEXTURE27: GLenum
     get() = GLenum(0x84DB)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE28)
  */
 inline val TEXTURE28: GLenum
     get() = GLenum(0x84DC)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE29)
  */
 inline val TEXTURE29: GLenum
     get() = GLenum(0x84DD)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE30)
  */
 inline val TEXTURE30: GLenum
     get() = GLenum(0x84DE)
 
 /**
+ * A texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=TEXTURE31)
  */
 inline val TEXTURE31: GLenum
     get() = GLenum(0x84DF)
 
 /**
+ * The current active texture unit.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=ACTIVE_TEXTURE)
  */
 inline val ACTIVE_TEXTURE: GLenum
@@ -3069,6 +3343,8 @@ inline val IMPLEMENTATION_COLOR_READ_FORMAT: GLenum
     get() = GLenum(0x8B9B)
 
 /**
+ * Passed to `getShaderParameter` to get the status of the compilation. Returns false if the shader was not compiled. You can then query `getShaderInfoLog` to find the exact error
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=COMPILE_STATUS)
  */
 inline val COMPILE_STATUS: GLenum
@@ -3339,6 +3615,8 @@ inline val UNPACK_PREMULTIPLY_ALPHA_WEBGL: GLenum
     get() = GLenum(0x9241)
 
 /**
+ * Returned from `getError`.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=CONTEXT_LOST_WEBGL)
  */
 inline val CONTEXT_LOST_WEBGL: GLenum
