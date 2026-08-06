@@ -7,6 +7,49 @@ internal data class GLConstantGroup(
     val name: String,
     val constants: List<GLConstant>,
 ) {
+    val type: String? by lazy {
+        when (name) {
+            "Clearing buffers" -> null
+            "Rendering primitives" -> null
+            "Blending modes" -> null
+            "Blending equations" -> null
+            "Getting GL parameter information" -> null
+            "Buffers" -> null
+            "Vertex attributes" -> null
+            "Culling" -> null
+            "Enabling and disabling" -> null
+            "Errors" -> null
+            "Front face directions" -> null
+            "Hints" -> null
+            "Data types" -> null
+            "Pixel formats" -> null
+            "Pixel types" -> null
+            "Shaders" -> null
+            "Depth or stencil tests" -> null
+            "Stencil actions" -> null
+            "Textures" -> null
+            "Uniform types" -> null
+            "Shader precision-specified types" -> null
+            "Framebuffers and renderbuffers" -> null
+            "Pixel storage modes" -> null
+            "Getting GL parameter information" -> null
+            "Textures" -> null
+            "Pixel types" -> null
+            "Queries" -> null
+            "Draw buffers" -> null
+            "Samplers" -> null
+            "Buffers" -> null
+            "Data types" -> null
+            "Vertex attributes" -> null
+            "Transform feedback" -> null
+            "Framebuffers and renderbuffers" -> null
+            "Uniforms" -> null
+            "Sync objects" -> null
+            "Miscellaneous constants" -> null
+            else -> TODO("Unknown group name: '$name'")
+        }
+    }
+
     val isFlag: Boolean by lazy {
         constants.all { it.looksLikeFlag }
     }

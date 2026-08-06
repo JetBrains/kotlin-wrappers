@@ -53,10 +53,24 @@ private object ConstantDataMap {
         data.flatMap { it.constants }
             .associateBy { it.name }
 
+    private val groupMap: Map<String, GLConstantGroup> =
+        buildMap {
+            for (group in data) {
+                for (constant in group.constants) {
+                    put(constant.name, group)
+                }
+            }
+        }
+
     fun getDescription(
         name: String,
     ): String =
         constantMap.getValue(name).description
+
+    fun getGroupType(
+        name: String,
+    ): String? =
+        groupMap.getValue(name).type
 }
 
 private fun constants(
@@ -95,13 +109,15 @@ private data class WebGLConstant(
             ?: ""
 
         val description = ConstantDataMap.getDescription(name)
+        val typeComment = ConstantDataMap.getGroupType(name)
+            ?.let { "/* $it */" } ?: ""
         val kdoc = (if (description.isNotEmpty()) listOf(description, "") else emptyList())
             .plus("[MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL_API/Constants#:~:text=$name)")
             .joinToString("\n", "/**\n", "\n*/") { "* $it" }
 
         return """
         $kdoc
-        inline val $name: $type
+        inline val $name: $type $typeComment
             get() = $type($value$valuePrefix)
         """.trimIndent()
     }
