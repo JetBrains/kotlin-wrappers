@@ -10,6 +10,8 @@ val mdnContentDir = layout.buildDirectory.dir("mdn-content")
 val downloadMdnContentRepo = tasks.register<Download>("downloadMdnContentRepo") {
     src("https://github.com/mdn/content/archive/refs/heads/main.zip")
     dest(temporaryDir.resolve("mdn-content-repo.zip"))
+    onlyIfModified(true)
+    useETag(true)
 }
 
 val downloadMdnContent = tasks.register<Sync>("downloadMdnContent") {
