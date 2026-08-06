@@ -3,16 +3,16 @@ package karakum.browser
 import kotlin.math.ceil
 import kotlin.math.log
 
-private data class ConstantGroup(
+internal data class GLConstantGroup(
     val name: String,
-    val constants: List<Constant>,
+    val constants: List<GLConstant>,
 ) {
     val isFlag: Boolean by lazy {
         constants.all { it.looksLikeFlag }
     }
 }
 
-private data class Constant(
+internal data class GLConstant(
     val name: String,
     val value: String,
     val description: String,
@@ -24,27 +24,18 @@ private data class Constant(
     }
 }
 
-internal fun webglConstantDeclarations(): List<ConversionResult> {
+internal fun webglConstantsData(): List<GLConstantGroup> =
     mdnContent("api/webgl_api/constants/index.md")
         .substringAfter("\n## Standard WebGL 1 constants\n", "")
         .substringBefore("\n## ", "")
         .splitToSequence("\n### ")
         .drop(1)
         .map(::parseConstantGroup)
-        .forEach {
-            // println("-----------")
-            println(it.name)
-            println("Flag: ${it.isFlag}")
-            // println(it.constants.joinToString("\n") { (name, value, description) -> "$name[$value] - $description" })
-            // println("-----------")
-        }
-
-    return emptyList()
-}
+        .toList()
 
 private fun parseConstantGroup(
     source: String,
-): ConstantGroup {
+): GLConstantGroup {
     val groupName = source.substringBefore("\n")
     val constants = source
         .substringAfter("\n\n| Constant name", "")
@@ -70,7 +61,7 @@ private fun parseConstantGroup(
                 (0..31)
                     .asSequence()
                     .map { index ->
-                        Constant(
+                        GLConstant(
                             name = nameBase + index,
                             value = "0x" + (valueBase + index).toString(16),
                             description = description,
@@ -78,7 +69,7 @@ private fun parseConstantGroup(
                     }
             } else {
                 sequenceOf(
-                    Constant(
+                    GLConstant(
                         name = name,
                         value = value,
                         description = description,
@@ -88,7 +79,7 @@ private fun parseConstantGroup(
         }
         .toList()
 
-    return ConstantGroup(
+    return GLConstantGroup(
         name = groupName,
         constants = constants,
     )
