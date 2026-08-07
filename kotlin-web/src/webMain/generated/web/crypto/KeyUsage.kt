@@ -8,6 +8,7 @@ package web.crypto
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface KeyUsage {
     companion object

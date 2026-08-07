@@ -8,6 +8,7 @@ package js.temporal
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface Disambiguation {
     companion object

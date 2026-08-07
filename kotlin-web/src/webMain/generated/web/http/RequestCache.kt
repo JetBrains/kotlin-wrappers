@@ -8,6 +8,7 @@ package web.http
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface RequestCache {
     companion object

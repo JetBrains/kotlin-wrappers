@@ -8,6 +8,7 @@ package web.gpu
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface GPUCompilationMessageType {
     companion object

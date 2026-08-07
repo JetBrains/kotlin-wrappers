@@ -8,6 +8,7 @@ package js.intl
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface MinutesFormat {
     companion object

@@ -8,6 +8,7 @@ package web.transport
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface WebTransportReliabilityMode {
     companion object

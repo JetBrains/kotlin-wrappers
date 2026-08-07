@@ -5,7 +5,9 @@
 package ajv
 
 import seskar.js.JsValue
+import kotlin.js.JsName
 
+@JsName("NaN")
 sealed external interface OptionsTimestamp {
     companion object {
         @JsValue("string")

@@ -8,6 +8,7 @@ package js.typedarrays
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface Alphabet {
     companion object

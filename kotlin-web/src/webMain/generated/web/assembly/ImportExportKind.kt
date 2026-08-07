@@ -8,6 +8,7 @@ package web.assembly
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface ImportExportKind {
     companion object

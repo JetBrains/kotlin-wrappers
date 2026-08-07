@@ -8,6 +8,7 @@ package web.images
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface PredefinedColorSpace {
     companion object

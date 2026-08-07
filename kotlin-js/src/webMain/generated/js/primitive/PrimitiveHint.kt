@@ -8,6 +8,7 @@ package js.primitive
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface PrimitiveHint {
     companion object

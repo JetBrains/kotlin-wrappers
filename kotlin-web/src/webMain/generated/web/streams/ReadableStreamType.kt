@@ -8,6 +8,7 @@ package web.streams
 
 import js.reflect.unsafeCast
 
+@JsName("NaN")
 sealed /* union */
 external interface ReadableStreamType {
     companion object

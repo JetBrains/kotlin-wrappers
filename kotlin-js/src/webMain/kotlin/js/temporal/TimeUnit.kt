@@ -5,7 +5,9 @@
 package js.temporal
 
 import js.reflect.unsafeCast
+import kotlin.js.JsName
 
+@JsName("NaN")
 sealed external interface TimeUnit<out T : TimeUnit<T>> :
     DateTimeUnit<T> {
     sealed interface hour : TimeUnit<hour>
