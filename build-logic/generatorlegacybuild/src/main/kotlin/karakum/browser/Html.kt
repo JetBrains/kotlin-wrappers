@@ -1577,12 +1577,7 @@ internal fun convertInterface(
         name == "RemotePlayback" -> "web.remoteplayback"
 
         name.startsWith("WebGL")
-                || name.startsWith("ANGLE_")
-                || name.startsWith("EXT_")
-                || name.startsWith("KHR_")
-                || name.startsWith("OES_")
-                || name.startsWith("OVR_")
-                || name.startsWith("WEBGL_")
+                || isWebglExtensionName(name)
             -> "web.gl"
 
         name.startsWith("Touch") -> "web.touch"

@@ -3,6 +3,20 @@ package karakum.browser
 import karakum.common.CommonUnionConverter.objectUnionBody
 import karakum.common.unionConstant
 
+private val EXTENSION_PREFIXES = listOf(
+    "ANGLE_",
+    "EXT_",
+    "KHR_",
+    "OES_",
+    "OVR_",
+    "WEBGL_",
+)
+
+internal fun isWebglExtensionName(
+    name: String,
+): Boolean =
+    EXTENSION_PREFIXES.any { name.startsWith(it) }
+
 internal fun webglDeclarations(
     content: String,
 ): Sequence<ConversionResult> =
