@@ -677,7 +677,7 @@ enum class OutlineStyle {
 enum class Overflow {
     inherit, initial, revert, revertLayer, unset,
 
-    visible, hidden, scroll, auto;
+    visible, hidden, clip, scroll, auto;
 
     override fun toString() = name.hyphenize()
 }
