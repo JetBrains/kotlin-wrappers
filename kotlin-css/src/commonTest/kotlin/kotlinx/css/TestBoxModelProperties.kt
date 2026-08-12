@@ -179,28 +179,28 @@ class TestBoxModelProperties {
                 inset-inline: 10px;
 
             """
-        ) { insetInline = LinearInset(10.px) },
+        ) { insetInline = AxialInset(10.px) },
 
         PropertyTestCase(
             """
                 inset-inline: 10px 20px;
 
             """
-        ) { insetInline = LinearInset(10.px, 20.px) },
+        ) { insetInline = AxialInset(10.px, 20.px) },
 
         PropertyTestCase(
             """
                 inset-block: 10px;
 
             """
-        ) { insetBlock = LinearInset(10.px) },
+        ) { insetBlock = AxialInset(10.px) },
 
         PropertyTestCase(
             """
                 inset-block: 10px 20px;
 
             """
-        ) { insetBlock = LinearInset(10.px, 20.px) },
+        ) { insetBlock = AxialInset(10.px, 20.px) },
 
 
         PropertyTestCase(
