@@ -264,3 +264,14 @@ internal fun getShorthandValue(
     }
 }
 
+internal fun getShorthandValue(
+    start: LinearDimension,
+    end: LinearDimension,
+): String {
+    return if (start == end) {
+        "$start"
+    } else {
+        "$start $end"
+    }
+}
+
