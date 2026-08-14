@@ -7,7 +7,9 @@
 package web.images
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface PremultiplyAlpha {
     companion object

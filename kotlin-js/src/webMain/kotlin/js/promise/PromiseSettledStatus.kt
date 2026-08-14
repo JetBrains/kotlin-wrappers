@@ -5,7 +5,9 @@
 package js.promise
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed external interface PromiseSettledStatus {
     companion object
 }

@@ -7,7 +7,9 @@
 package js.intl
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface PartSource {
     companion object

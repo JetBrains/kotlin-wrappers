@@ -7,7 +7,9 @@
 package web.http
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface RequestCredentials {
     companion object

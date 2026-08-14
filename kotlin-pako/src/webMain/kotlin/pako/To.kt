@@ -5,7 +5,9 @@
 package pako
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed external interface To {
     companion object
 }

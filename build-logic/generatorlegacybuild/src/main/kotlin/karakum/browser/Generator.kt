@@ -88,6 +88,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.typedarrays.Uint32Array",
     "js.typedarrays.Uint8Array",
     "js.typedarrays.Uint8ClampedArray",
+    "js.union.JsUnion",
     "js.void.Void",
 
     "kotlinx.js.JsPlainObject",

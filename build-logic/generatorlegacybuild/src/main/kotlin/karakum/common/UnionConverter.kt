@@ -121,6 +121,11 @@ internal object JsUnionConverter : UnionConverter {
 // Generated interfaces support in the WASM target.
 internal object CommonUnionConverter : UnionConverter {
 
+    // K/Wasm requires `@JsName("Object")` on an external interface to access its companion object.
+    // Accessing the companion (which happens via any of its extension properties/methods, including inline)
+    // will fail at runtime in the future if the JS declaration doesn't exist.
+    private const val JS_UNION = """@JsUnion"""
+
     override fun unionBodyByConstants(
         name: String,
         constants: List<UnionConstant>,
@@ -142,6 +147,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $JS_UNION
         sealed /* union */
         external interface $name {
             companion object
@@ -165,6 +171,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $JS_UNION
         sealed /* union */
         external interface $name {
             companion object
@@ -189,6 +196,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $JS_UNION
         sealed /* union */
         external interface $name :
             $parentType {
@@ -215,6 +223,7 @@ internal object CommonUnionConverter : UnionConverter {
         }
 
         return """
+        $JS_UNION
         sealed /* union */
         external interface $name {
             $constantTypes

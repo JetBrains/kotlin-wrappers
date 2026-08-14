@@ -4,8 +4,10 @@
 
 package ajv
 
+import js.union.JsUnion
 import seskar.js.JsValue
 
+@JsUnion
 sealed external interface OptionsSchemaId {
     companion object {
         @JsValue("id")

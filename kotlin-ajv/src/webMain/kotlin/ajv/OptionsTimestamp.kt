@@ -4,8 +4,10 @@
 
 package ajv
 
+import js.union.JsUnion
 import seskar.js.JsValue
 
+@JsUnion
 sealed external interface OptionsTimestamp {
     companion object {
         @JsValue("string")

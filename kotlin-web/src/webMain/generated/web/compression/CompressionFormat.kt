@@ -7,7 +7,9 @@
 package web.compression
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface CompressionFormat {
     companion object

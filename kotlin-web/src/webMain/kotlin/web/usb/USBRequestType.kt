@@ -5,9 +5,11 @@
 package web.usb
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 import web.experimental.ExperimentalWebApi
 
 @ExperimentalWebApi
+@JsUnion
 sealed external interface USBRequestType {
     companion object
 }

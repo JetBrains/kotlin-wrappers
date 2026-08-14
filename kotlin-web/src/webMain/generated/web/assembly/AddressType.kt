@@ -7,7 +7,9 @@
 package web.assembly
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface AddressType {
     companion object

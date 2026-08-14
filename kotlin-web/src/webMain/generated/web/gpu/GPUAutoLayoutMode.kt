@@ -7,7 +7,9 @@
 package web.gpu
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface GPUAutoLayoutMode {
     companion object

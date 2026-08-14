@@ -7,7 +7,9 @@
 package web.transport
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface WebTransportCongestionControl {
     companion object
