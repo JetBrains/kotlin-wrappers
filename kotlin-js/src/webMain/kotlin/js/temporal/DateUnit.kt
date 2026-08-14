@@ -5,7 +5,9 @@
 package js.temporal
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed external interface DateUnit<out T : DateUnit<T>> :
     DateTimeUnit<T> {
     sealed interface year : DateUnit<year>

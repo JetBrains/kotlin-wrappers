@@ -5,12 +5,14 @@
 package js.temporal
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
 /**
  * When the name of a unit is provided to a Temporal API as a string, it is
  * usually singular, e.g. 'day' or 'hour'. But plural unit names like 'days'
  * or 'hours' are aso accepted too.
  */
+@JsUnion
 sealed external interface PluralUnit<T : DateTimeUnit<T>> :
     LargestUnit<T>,
     SmallestUnit<T>,
