@@ -7,7 +7,9 @@
 package web.locks
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface LockMode {
     companion object

@@ -7,7 +7,9 @@
 package js.decorators
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface DecoratorContextKind {
     sealed interface `class` : DecoratorContextKind

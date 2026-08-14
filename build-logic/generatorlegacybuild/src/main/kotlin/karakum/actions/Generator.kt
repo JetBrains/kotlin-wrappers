@@ -21,6 +21,7 @@ import js.array.ReadonlyArray
 import js.errors.JsError
 import js.generator.AsyncGenerator
 import js.void.Void
+import js.union.JsUnion
 import node.buffer.Buffer
 import node.http.IncomingHttpHeaders
 import node.http.OutgoingHttpHeaders

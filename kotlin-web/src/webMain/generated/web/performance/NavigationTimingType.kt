@@ -7,7 +7,9 @@
 package web.performance
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface NavigationTimingType {
     companion object

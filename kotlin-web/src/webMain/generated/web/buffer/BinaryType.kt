@@ -7,7 +7,9 @@
 package web.buffer
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface BinaryType {
     companion object

@@ -12,8 +12,10 @@ import js.numbers.JsDouble
 import js.numbers.JsFloat
 import js.numbers.JsInt
 import js.reflect.unsafeCast
+import js.union.JsUnion
 import js.void.Void
 
+@JsUnion
 sealed /* union */
 external interface ValueType<T : JsAny?> {
     companion object
