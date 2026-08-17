@@ -856,18 +856,18 @@ internal fun convertInterface(
         )
     }
 
-    if (name == "HTMLInputElement" && " type: string;" in source) {
-        val newSource = source
-            .replace(" type: string;", " type: InputType;")
-
-        return convertInterface(
-            source = newSource,
-            getStaticSource = getStaticSource,
-            predefinedPkg = predefinedPkg,
-        )
-    }
-
     when (name) {
+        "HTMLInputElement" if (" type: string;" in source) -> {
+            val newSource = source
+                .replace(" type: string;", " type: InputType;")
+
+            return convertInterface(
+                source = newSource,
+                getStaticSource = getStaticSource,
+                predefinedPkg = predefinedPkg,
+            )
+        }
+
         "Global",
         "GlobalDescriptor",
             -> {
