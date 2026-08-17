@@ -107,8 +107,8 @@ private val ROLLED_UP_NAMES = mapOf(
 private val ROLLED_UP_NAME_REGEX =
     Regex(
         ROLLED_UP_NAMES.keys
-        .sortedByDescending { it.length }
-        .joinToString("|"))
+            .sortedByDescending { it.length }
+            .joinToString("|"))
 
 private fun String.fixRolledUpNames(): String =
     replace(ROLLED_UP_NAME_REGEX) { ROLLED_UP_NAMES.getValue(it.value) }
@@ -236,10 +236,8 @@ fun toDeclarations(
             "interface ObserverFetchOptions<TData> extends FetchOptions<TData>",
         )
         // TODO: check
-        .replace("    get meta(): ", "    meta: ")
-        .replace("    get promise(): ", "    promise: ")
-        .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: 'infinite';")
-        .replace("    get resetState(): ", "    resetState: ")
+        .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: QueryType;")
+        .replace(Regex(""" {4}get (\w+)\(\): """), "    $1: ")
         .replace(
             """
             declare const environmentManager:
