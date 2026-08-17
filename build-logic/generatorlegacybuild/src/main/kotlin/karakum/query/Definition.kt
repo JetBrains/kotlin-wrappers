@@ -238,15 +238,7 @@ fun toDeclarations(
         // TODO: check
         .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: QueryType;")
         .replace(Regex(""" {4}get (\w+)\(\): """), "    $1: ")
-        .replace(
-            """
-            declare const environmentManager:
-            """.trimIndent(),
-            """
-            declare const environmentManager: EnvironmentManager;
-            declare abstract class EnvironmentManager
-            """.trimIndent(),
-        )
+        .replaceEnvironmentManager()
         .replace(
             """
             type ManagedTimerId = number | {

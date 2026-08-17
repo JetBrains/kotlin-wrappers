@@ -4,7 +4,8 @@
 
 package tanstack.query.core
 
-abstract external class EnvironmentManager {
-    open fun isServer(): Boolean
-    open fun setIsServer(isServerValue: IsServerValue)
+sealed external class EnvironmentManager
+private constructor() {
+    fun isServer(): Boolean
+    fun setIsServer(isServerValue: IsServerValue)
 }
