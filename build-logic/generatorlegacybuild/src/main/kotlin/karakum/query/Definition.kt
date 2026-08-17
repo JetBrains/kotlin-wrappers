@@ -78,21 +78,15 @@ private val SKIPPED_DECLARATIONS = setOf(
 )
 
 // tsup dts rollup gives the `_2` suffix to mutation action types
-// and keeps query action types (previously `Action$1` etc.) unsuffixed
-private val MUTATION_ACTION_TYPES = setOf(
-    "ContinueAction",
-    "ErrorAction",
-    "FailedAction",
-    "PauseAction",
-    "SuccessAction",
-)
+// and keeps query action types (previously `Action$1` etc.) unsuffixed.
+// Restore historical names: mutation `X_2` -> `X`, query `X` -> `X_1`.
+private val ACTION_NAME_REGEX =
+    Regex("(ContinueAction|ErrorAction|FailedAction|PauseAction|SuccessAction)(_2)?")
 
 private fun String.fixActionNames(): String =
-    MUTATION_ACTION_TYPES.fold(this) { content, name ->
-        // `X_2` becomes `X_1_2` in the first step and is restored to `X` in the second
-        content
-            .replace(name, "${name}_1")
-            .replace("${name}_1_2", name)
+    replace(ACTION_NAME_REGEX) { match ->
+        val (name, suffix) = match.destructured
+        if (suffix == "_2") name else "${name}_1"
     }
 
 fun toDeclarations(
