@@ -13,5 +13,6 @@ external interface DehydratedQuery {
     val state: QueryState<*, *>
     val promise: Promise<*>?
     val meta: QueryMeta?
+    val queryType: String /* 'infinite' */?
     val dehydratedAt: EpochTimeStamp?
 }

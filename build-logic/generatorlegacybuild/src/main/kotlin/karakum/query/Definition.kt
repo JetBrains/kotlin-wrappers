@@ -15,16 +15,114 @@ private val TYPE_KEYWORDS = setOf(
     JsTypeKeyword.CLASS,
 )
 
+private val SKIPPED_DECLARATIONS = setOf(
+    "Optional",
+    "WithRequired",
+
+    // internal `thenable` declarations
+    "Fulfilled",
+    "Rejected",
+    "Pending",
+    "FulfilledThenable",
+    "RejectedThenable",
+    "PendingThenable",
+    "Thenable",
+    "pendingThenable",
+    "tryResolveSync",
+
+    // `streamedQuery` internals (converted manually)
+    "BaseStreamedQueryParams",
+    "SimpleStreamedQueryParams",
+    "ReducibleStreamedQueryParams",
+
+    // react `queryOptions`, `mutationOptions`, `infiniteQueryOptions`
+    "queryOptions",
+    "mutationOptions",
+    "infiniteQueryOptions",
+    "UnusedSkipTokenOptions",
+    "UnusedSkipTokenInfiniteOptions",
+    "DefinedInitialDataOptions",
+    "UndefinedInitialDataOptions",
+    "DefinedInitialDataInfiniteOptions",
+    "UndefinedInitialDataInfiniteOptions",
+
+    // react `suspense` internals
+    "defaultThrowOnError",
+    "ensureSuspenseTimers",
+    "fetchOptimistic",
+    "shouldSuspend",
+    "willFetch",
+
+    // react `errorBoundaryUtils` internals
+    "ensurePreventErrorBoundaryRetry",
+    "getHasError",
+    "useClearResetErrorBoundary",
+
+    // react `useQueries` and `useSuspenseQueries`
+    "useQueries",
+    "useSuspenseQueries",
+    "GetDefinedOrUndefinedQueryResult",
+    "GetUseQueryOptionsForUseQueries",
+    "GetUseQueryResult",
+    "GetUseSuspenseQueryOptions",
+    "GetUseSuspenseQueryResult",
+    "MAXIMUM_DEPTH",
+    "MAXIMUM_DEPTH_2",
+    "QueriesOptions",
+    "QueriesResults",
+    "SkipTokenForUseQueries",
+    "SkipTokenForUseQueries_2",
+    "UseQueryOptionsForUseQueries",
+    "SuspenseQueriesOptions",
+    "SuspenseQueriesResults",
+)
+
+// tsup dts rollup gives the `_2` suffix to mutation action types
+// and keeps query action types (previously `Action$1` etc.) unsuffixed
+private val MUTATION_ACTION_TYPES = setOf(
+    "ContinueAction",
+    "ErrorAction",
+    "FailedAction",
+    "PauseAction",
+    "SuccessAction",
+)
+
+private fun String.fixActionNames(): String =
+    MUTATION_ACTION_TYPES.fold(this) { content, name ->
+        // `X_2` becomes `X_1_2` in the first step and is restored to `X` in the second
+        content
+            .replace(name, "${name}_1")
+            .replace("${name}_1_2", name)
+    }
+
 fun toDeclarations(
     definitionFile: File,
 ): List<Declaration> {
     val fixAction = definitionFile.name == "mutation.d.ts"
 
-    var content = definitionFile.readText()
+    val content = definitionFile.readText()
         .splitToSequence("\n")
+        .map { line ->
+            if (line.startsWith("export declare ")) line.removePrefix("export ") else line
+        }
         .filter { !it.startsWith("export ") }
-        .joinToString("\n")
-        .replace("Action$1", "Action_1")
+        .joinToString("\n") { line ->
+            when {
+                line.startsWith("declare interface ") || line.startsWith("declare type ")
+                    -> line.removePrefix("declare ")
+
+                else -> line
+            }
+        }
+        .replace("Action_alias_1", "Action_1")
+        .fixActionNames()
+        .replace("MutationObserver_2", "MutationObserver")
+        .replace("React_2.", "React.")
+        .replace("\ntype Listener = (focused: boolean) => void;\n", "\n")
+        .replace("Listener_2", "Listener")
+        // order matters: the first replace turns `SetupFn_2` into `FocusManagerSetupFn_2`
+        .replace("SetupFn", "FocusManagerSetupFn")
+        .replace("FocusManagerSetupFn_2", "OnlineManagerSetupFn")
         .replace("{ queries, context, }", "options")
         .replace("{ ...options }", "options")
         .replace("{ pageParam, ...options }", "options")
@@ -86,8 +184,11 @@ fun toDeclarations(
         .replace("\n    isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean;\n", "\n")
         .replace(OPTIMISTIC_RESULT, "QueriesObserverOptimisticResult<TCombinedResult>")
         .replace(
+            "type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam = never> = [TPageParam] extends [never] ? (queryFn: QueryFunction<T, TQueryKey, never>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T> : (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;",
+            "type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam> = (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;",
+        )
+        .replace(
             """
-            type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam = never> = [TPageParam] extends [never] ? (queryFn: QueryFunction<T, TQueryKey, never>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T> : (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;
             type QueryFunctionContext<TQueryKey extends QueryKey = QueryKey, TPageParam = never> = [TPageParam] extends [never] ? {
                 client: QueryClient;
                 queryKey: TQueryKey;
@@ -113,7 +214,6 @@ fun toDeclarations(
             };
             """.trimIndent(),
             """
-            type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam> = (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;
             interface QueryFunctionContext<TQueryKey extends QueryKey = QueryKey, TPageParam> {
                 client: QueryClient;
                 queryKey: TQueryKey;
@@ -130,6 +230,33 @@ fun toDeclarations(
         // TODO: check
         .replace("    get meta(): ", "    meta: ")
         .replace("    get promise(): ", "    promise: ")
+        .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: 'infinite';")
+        .replace("    get resetState(): ", "    resetState: ")
+        .replace(
+            """
+            declare const environmentManager:
+            """.trimIndent(),
+            """
+            declare const environmentManager: EnvironmentManager;
+            declare abstract class EnvironmentManager
+            """.trimIndent(),
+        )
+        .replace(
+            """
+            type ManagedTimerId = number | {
+                [Symbol.toPrimitive]: () => number;
+            };
+            """.trimIndent(),
+            "type ManagedTimerId = number;",
+        )
+        .replace(
+            "type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {",
+            "interface TimeoutProvider<TTimerId extends ManagedTimerId> {",
+        )
+        .replace(
+            "TimeoutManager implements Omit<TimeoutProvider, 'name'>",
+            "TimeoutManager implements TimeoutProvider",
+        )
         // TEMP
         .replace(" & {\n        manual: boolean;\n    }", "")
         .replace(
@@ -168,21 +295,7 @@ fun toDeclarations(
             "function defaultShouldRedactErrors(error: unknown): boolean;",
         )
         .replace(
-            """
-                type BaseStreamedQueryParams<TQueryFnData, TQueryKey extends QueryKey> = {
-                    streamFn: (context: QueryFunctionContext<TQueryKey>) => AsyncIterable<TQueryFnData> | Promise<AsyncIterable<TQueryFnData>>;
-                    refetchMode?: 'append' | 'reset' | 'replace';
-                };
-                type SimpleStreamedQueryParams<TQueryFnData, TQueryKey extends QueryKey> = BaseStreamedQueryParams<TQueryFnData, TQueryKey> & {
-                    reducer?: never;
-                    initialValue?: never;
-                };
-                type ReducibleStreamedQueryParams<TQueryFnData, TData, TQueryKey extends QueryKey> = BaseStreamedQueryParams<TQueryFnData, TQueryKey> & {
-                    reducer: (acc: TData, chunk: TQueryFnData) => TData;
-                    initialValue: TData;
-                };
-                type StreamedQueryParams<TQueryFnData, TData, TQueryKey extends QueryKey> = SimpleStreamedQueryParams<TQueryFnData, TQueryKey> | ReducibleStreamedQueryParams<TQueryFnData, TData, TQueryKey>;
-            """.trimIndent(),
+            "type StreamedQueryParams<TQueryFnData, TData, TQueryKey extends QueryKey> = SimpleStreamedQueryParams<TQueryFnData, TQueryKey> | ReducibleStreamedQueryParams<TQueryFnData, TData, TQueryKey>;",
             """
                 type RefetchMode = 'append' | 'reset' | 'replace';
 
@@ -231,35 +344,6 @@ fun toDeclarations(
             "queryKey?: TQueryKey",
         )
 
-    content = when (definitionFile.name) {
-        "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")
-        "onlineManager.d.ts" -> content.replace("SetupFn", "OnlineManagerSetupFn")
-        "timeoutManager.d.ts" -> content
-            .replace("TimeoutProvider<ReturnType<typeof setTimeout>>", "TimeoutProvider<Function<Any?>>")
-            .replace(
-                """
-                number | {
-                    [Symbol.toPrimitive]: () => number;
-                }
-            """.trimIndent(),
-                "number",
-            )
-            .replace(
-                "type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {",
-                "interface TimeoutProvider<TTimerId extends ManagedTimerId> {",
-            )
-            .replace(
-                "TimeoutManager implements Omit<TimeoutProvider, 'name'>",
-                "TimeoutManager implements TimeoutProvider",
-            )
-            .replace(";", "")
-
-        "useIsFetching.d.ts" -> content.replace(" Options", " UseIsFetchingOptions")
-        "useIsMutating.d.ts" -> content.replace(" Options", " UseIsMutatingOptions")
-
-        else -> content
-    }
-
     return getBlocks(content.split("\n"))
         .asSequence()
         .mapNotNull { (keyword, source) ->
@@ -272,8 +356,7 @@ fun toDeclarations(
                 else -> null
             }
         }
-        .filter { it.name != "Optional" }
-        .filter { it.name != "WithRequired" }
+        .filter { it.name !in SKIPPED_DECLARATIONS }
         .toList()
 }
 

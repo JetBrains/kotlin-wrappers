@@ -17,6 +17,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(
     open var state: QueryState<TData, TError>
     open var observers: ReadonlyArray<QueryObserver<*, *, *, *, *>>
     open var meta: QueryMeta?
+    open var queryType: String /* 'infinite' */?
     open var promise: Promise<TData>?
     open fun setOptions(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *> = definedExternally)
     override fun optionalRemove()
@@ -25,16 +26,14 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(
         options: SetDataOptions = definedExternally,
     ): TData
 
-    open fun setState(
-        state: QueryState<TData, TError>, /* Partial */
-        setStateOptions: SetStateOptions = definedExternally,
-    )
-
+    open fun setState(state: QueryState<TData, TError> /* Partial */)
     open fun cancel(options: CancelOptions = definedExternally): Promise<Void>
     override fun destroy()
+    open var resetState: QueryState<TData, TError>
     open fun reset()
     open fun isActive(): Boolean
     open fun isDisabled(): Boolean
+    open fun isFetched(): Boolean
     open fun isStatic(): Boolean
     open fun isStale(): Boolean
     open fun isStaleByTime(staleTime: StaleTime = definedExternally): Boolean
