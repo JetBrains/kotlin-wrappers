@@ -1,21 +1,16 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.temporal
 
 import js.reflect.unsafeCast
 import js.union.JsUnion
 
 @JsUnion
-sealed external interface DateUnit<out T : DateUnit<T>> :
+sealed /* union */
+external interface DateUnit<out T : DateUnit<T>> :
     DateTimeUnit<T> {
     sealed interface year : DateUnit<year>
     sealed interface month : DateUnit<month>
     sealed interface week : DateUnit<week>
     sealed interface day : DateUnit<day>
-
-    companion object
 }
 
 inline val DateUnit.Companion.year: DateUnit.year

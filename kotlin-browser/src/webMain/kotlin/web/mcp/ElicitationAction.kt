@@ -1,14 +1,11 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mcp
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface ElicitationAction {
-    companion object
-}
+@JsUnion
+sealed /* union */
+external interface ElicitationAction
 
 inline val ElicitationAction.Companion.accept: ElicitationAction
     get() = unsafeCast("accept")

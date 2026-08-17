@@ -1,16 +1,11 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.promise
 
 import js.reflect.unsafeCast
 import js.union.JsUnion
 
 @JsUnion
-sealed external interface PromiseSettledStatus {
-    companion object
-}
+sealed /* union */
+external interface PromiseSettledStatus
 
 inline val PromiseSettledStatus.Companion.fulfilled: PromiseSettledStatus
     get() = unsafeCast("fulfilled")

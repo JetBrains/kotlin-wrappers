@@ -1,14 +1,11 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.svg
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface RepeatCount {
-    companion object
-}
+@JsUnion
+sealed /* union */
+external interface RepeatCount
 
 inline val RepeatCount.Companion.indefinite: RepeatCount
     get() = unsafeCast("indefinite")

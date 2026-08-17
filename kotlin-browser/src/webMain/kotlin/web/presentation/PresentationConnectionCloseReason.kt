@@ -1,16 +1,13 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.presentation
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 import web.experimental.ExperimentalWebApi
 
+@JsUnion
 @ExperimentalWebApi
-sealed external interface PresentationConnectionCloseReason {
-    companion object
-}
+sealed /* union */
+external interface PresentationConnectionCloseReason
 
 @ExperimentalWebApi
 inline val PresentationConnectionCloseReason.Companion.error: PresentationConnectionCloseReason

@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.temporal
 
 import js.reflect.unsafeCast
@@ -13,12 +9,11 @@ import js.union.JsUnion
  * or 'hours' are aso accepted too.
  */
 @JsUnion
-sealed external interface PluralUnit<T : DateTimeUnit<T>> :
+sealed /* union */
+external interface PluralUnit<T : DateTimeUnit<T>> :
     LargestUnit<T>,
     SmallestUnit<T>,
-    TotalUnit<T> {
-    companion object
-}
+    TotalUnit<T>
 
 inline val PluralUnit.Companion.years: PluralUnit<DateUnit.year>
     get() = unsafeCast("years")

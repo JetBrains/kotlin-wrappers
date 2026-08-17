@@ -1,16 +1,13 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.fs
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 import web.experimental.ExperimentalWebApi
 
+@JsUnion
 @ExperimentalWebApi
-sealed external interface FileSystemPermissionMode {
-    companion object
-}
+sealed /* union */
+external interface FileSystemPermissionMode
 
 @ExperimentalWebApi
 inline val FileSystemPermissionMode.Companion.read: FileSystemPermissionMode

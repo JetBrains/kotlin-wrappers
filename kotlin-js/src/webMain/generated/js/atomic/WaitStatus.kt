@@ -1,19 +1,16 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.atomic
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface WaitStatus {
+@JsUnion
+sealed /* union */
+external interface WaitStatus {
     sealed interface ok : WaitAsyncStatus
     sealed interface notEqual : WaitSyncStatus
     sealed interface timedOut : WaitAsyncStatus, WaitSyncStatus
-
-    companion object
 }
 
 inline val WaitStatus.Companion.ok: WaitStatus.ok

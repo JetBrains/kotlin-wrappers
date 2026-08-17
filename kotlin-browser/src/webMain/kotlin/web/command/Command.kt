@@ -1,16 +1,12 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.command
 
 import js.reflect.unsafeCast
 import js.string.StringLike
+import js.union.JsUnion
 
+@JsUnion
 external interface Command :
-    StringLike {
-    companion object
-}
+    StringLike
 
 /**
  * The button will show a `dialog` as modal. If the dialog is already modal, no action will be taken.

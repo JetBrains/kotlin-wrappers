@@ -1,16 +1,13 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.editcontext
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 import web.experimental.ExperimentalWebApi
 
+@JsUnion
 @ExperimentalWebApi
-sealed external interface UnderlineStyle {
-    companion object
-}
+sealed /* union */
+external interface UnderlineStyle
 
 @ExperimentalWebApi
 inline val UnderlineStyle.Companion.none: UnderlineStyle

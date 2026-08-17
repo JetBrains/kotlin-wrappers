@@ -1,18 +1,13 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.usb
 
 import js.reflect.unsafeCast
 import js.union.JsUnion
 import web.experimental.ExperimentalWebApi
 
-@ExperimentalWebApi
 @JsUnion
-sealed external interface USBEndpointType {
-    companion object
-}
+@ExperimentalWebApi
+sealed /* union */
+external interface USBEndpointType
 
 @ExperimentalWebApi
 inline val USBEndpointType.Companion.bulk: USBEndpointType

@@ -1,18 +1,14 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.fs
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 import web.experimental.ExperimentalWebApi
 
+@JsUnion
 @ExperimentalWebApi
-sealed external interface WellKnownDirectory :
-    StartInDirectory {
-
-    companion object
-}
+sealed /* union */
+external interface WellKnownDirectory :
+    StartInDirectory
 
 @ExperimentalWebApi
 inline val WellKnownDirectory.Companion.desktop: WellKnownDirectory
