@@ -92,8 +92,14 @@ class Type(
                 .removeSurrounding("(", ")")
                 .replace(" => boolean", " -> Boolean")
                 .replace(" => number", " -> Number")
-                .replace(" => ", " -> ") +
-                    " /* | ${body.substringBefore(" | ")} */"
+                .replace(" => ", " -> ")
+                .let { result ->
+                    if (body.startsWith("boolean | ") && result.endsWith(" -> Boolean")) {
+                        result
+                    } else {
+                        "$result /* | ${body.substringBefore(" | ")} */"
+                    }
+                }
 
             body.startsWith("Omit<") -> body.removePrefix("Omit<").substringBefore(", '")
             body.startsWith("OmitKeyof<") -> body.removePrefix("OmitKeyof<").substringBefore(", '")

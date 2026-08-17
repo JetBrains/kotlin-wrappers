@@ -17,7 +17,7 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(
     open var state: QueryState<TData, TError>
     open var observers: ReadonlyArray<QueryObserver<*, *, *, *, *>>
     open var meta: QueryMeta?
-    open var queryType: String /* 'infinite' */?
+    open var queryType: QueryType?
     open var promise: Promise<TData>?
     open fun setOptions(options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *> = definedExternally)
     override fun optionalRemove()

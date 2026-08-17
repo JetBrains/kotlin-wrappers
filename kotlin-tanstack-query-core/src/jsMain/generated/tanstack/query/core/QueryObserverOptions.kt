@@ -20,6 +20,6 @@ external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData,
     val select: ((data: TQueryData) -> TData)?
     val suspense: Boolean?
     val placeholderData: Any /* NonFunctionGuard<TQueryData> | PlaceholderDataFunction<NonFunctionGuard<TQueryData>, TError, NonFunctionGuard<TQueryData>, TQueryKey> */?
-    val _optimisticResults: String /* 'optimistic' | 'isRestoring' */?
+    val _optimisticResults: OptimisticResults?
     val experimental_prefetchInRender: Boolean?
 }

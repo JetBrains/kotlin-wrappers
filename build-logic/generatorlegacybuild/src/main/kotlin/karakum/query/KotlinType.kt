@@ -166,9 +166,18 @@ internal fun kotlinType(
         return when (name) {
             "type" -> "Type /* $type */"
             "status" -> "QueryStatus /* $type */"
-            "_optimisticResults" -> "String /* $type */"
-            "_type" -> "String /* $type */"
-            "queryType" -> "String /* $type */"
+            "_optimisticResults" -> {
+                check(type == "'optimistic' | 'isRestoring'") { "Update `OptimisticResults` union! Actual type - $type" }
+                "OptimisticResults"
+            }
+
+            "_type",
+            "queryType",
+                -> {
+                check(type == "'infinite'") { "Update `QueryType` union! Actual type - $type" }
+                "QueryType"
+            }
+
             else -> TODO("Name - $name, Type - $type")
         }
     }

@@ -48,6 +48,12 @@ fun generateKotlinDeclarations(
     coreTargetDir.resolve("aliases.kt")
         .writeText(ALIASES_BODY)
 
+    coreTargetDir.resolve("QueryType.kt")
+        .writeCode(QUERY_TYPE_BODY)
+
+    coreTargetDir.resolve("OptimisticResults.kt")
+        .writeCode(OPTIMISTIC_RESULTS_BODY)
+
     generate(coreTypesDir, coreTargetDir, Package.CORE)
     generate(reactTypesDir, reactTargetDir, Package.REACT)
 }
