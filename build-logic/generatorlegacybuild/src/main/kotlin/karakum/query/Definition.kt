@@ -77,17 +77,41 @@ private val SKIPPED_DECLARATIONS = setOf(
     "SuspenseQueriesResults",
 )
 
-// tsup dts rollup gives the `_2` suffix to mutation action types
-// and keeps query action types (previously `Action$1` etc.) unsuffixed.
-// Restore historical names: mutation `X_2` -> `X`, query `X` -> `X_1`.
-private val ACTION_NAME_REGEX =
-    Regex("(ContinueAction|ErrorAction|FailedAction|PauseAction|SuccessAction)(_2)?")
+// tsup dts rollup gives the `_2` suffix to identifiers duplicated across rolled-up files.
+// Restore distinct names:
+private val ROLLED_UP_NAMES = mapOf(
+    // mutation action types got `_2`; query action types (previously `Action$1` etc.) stayed unsuffixed
+    "Action_alias_1" to "Action_1",
+    "ContinueAction" to "ContinueAction_1",
+    "ContinueAction_2" to "ContinueAction",
+    "ErrorAction" to "ErrorAction_1",
+    "ErrorAction_2" to "ErrorAction",
+    "FailedAction" to "FailedAction_1",
+    "FailedAction_2" to "FailedAction",
+    "PauseAction" to "PauseAction_1",
+    "PauseAction_2" to "PauseAction",
+    "SuccessAction" to "SuccessAction_1",
+    "SuccessAction_2" to "SuccessAction",
 
-private fun String.fixActionNames(): String =
-    replace(ACTION_NAME_REGEX) { match ->
-        val (name, suffix) = match.destructured
-        if (suffix == "_2") name else "${name}_1"
-    }
+    // focusManager `SetupFn` vs. onlineManager `SetupFn_2`
+    "SetupFn" to "FocusManagerSetupFn",
+    "SetupFn_2" to "OnlineManagerSetupFn",
+
+    // the `_2` copy refers to the same declaration
+    "Listener_2" to "Listener",
+    "MutationObserver_2" to "MutationObserver",
+    "React_2" to "React",
+)
+
+// longest first, so `X_2` matches before `X`
+private val ROLLED_UP_NAME_REGEX =
+    Regex(
+        ROLLED_UP_NAMES.keys
+        .sortedByDescending { it.length }
+        .joinToString("|"))
+
+private fun String.fixRolledUpNames(): String =
+    replace(ROLLED_UP_NAME_REGEX) { ROLLED_UP_NAMES.getValue(it.value) }
 
 fun toDeclarations(
     definitionFile: File,
@@ -108,20 +132,10 @@ fun toDeclarations(
                 else -> line
             }
         }
-        .replace("Action_alias_1", "Action_1")
-        .fixActionNames()
-        .replace("MutationObserver_2", "MutationObserver")
-        .replace("React_2.", "React.")
+        .fixRolledUpNames()
+        // drop focusManager `Listener`; onlineManager `Listener_2` (renamed above) takes the name
         .replace("\ntype Listener = (focused: boolean) => void;\n", "\n")
-        .replace("Listener_2", "Listener")
-        // order matters: the first replace turns `SetupFn_2` into `FocusManagerSetupFn_2`
-        .replace("SetupFn", "FocusManagerSetupFn")
-        .replace("FocusManagerSetupFn_2", "OnlineManagerSetupFn")
-        .replace("{ queries, context, }", "options")
         .replace("{ ...options }", "options")
-        .replace("{ pageParam, ...options }", "options")
-        .replace("{ refetchPage, ...options }", "options")
-        .replace("{ refetchPage, ...options }", "options")
         .replace(
             "const useQueryClient: (queryClient?: QueryClient) => QueryClient",
             "function useQueryClient(queryClient?: QueryClient): QueryClient",
