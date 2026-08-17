@@ -172,7 +172,65 @@ class TestBoxModelProperties {
                 inset: 10px 20px 30px 40px;
 
             """
-        ) { inset = Inset(10.px, 20.px, 30.px, 40.px) }
+        ) { inset = Inset(10.px, 20.px, 30.px, 40.px) },
+
+        PropertyTestCase(
+            """
+                inset-inline: 10px;
+
+            """
+        ) { insetInline = InsetInline(10.px) },
+
+        PropertyTestCase(
+            """
+                inset-inline: 10px 20px;
+
+            """
+        ) { insetInline = InsetInline(10.px, 20.px) },
+
+        PropertyTestCase(
+            """
+                inset-block: 10px;
+
+            """
+        ) { insetBlock = InsetBlock(10.px) },
+
+        PropertyTestCase(
+            """
+                inset-block: 10px 20px;
+
+            """
+        ) { insetBlock = InsetBlock(10.px, 20.px) },
+
+
+        PropertyTestCase(
+            """
+                inset-inline-start: 10px;
+
+            """
+        ) { insetInlineStart = 10.px },
+
+
+        PropertyTestCase(
+            """
+                inset-inline-end: 10px;
+
+            """
+        ) { insetInlineEnd = 10.px },
+
+        PropertyTestCase(
+            """
+                inset-block-start: 10px;
+
+            """
+        ) { insetBlockStart = 10.px },
+
+        PropertyTestCase(
+            """
+                inset-block-end: 10px;
+
+            """
+        ) { insetBlockEnd = 10.px },
     )
 
     /**
