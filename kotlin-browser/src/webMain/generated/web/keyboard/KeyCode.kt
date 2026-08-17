@@ -1,20 +1,16 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.keyboard
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UI_Events/Keyboard_event_code_values)
  */
+@JsUnion
 sealed /* union */
-external interface KeyCode {
-    companion object
-}
+external interface KeyCode
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UI_Events/Keyboard_event_code_values#:~:text=%22Backquote%22)

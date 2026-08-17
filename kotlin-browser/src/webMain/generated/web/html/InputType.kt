@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.html
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface InputType {
-    companion object
-}
+external interface InputType
 
 inline val InputType.Companion.button: InputType
     get() = unsafeCast("button")

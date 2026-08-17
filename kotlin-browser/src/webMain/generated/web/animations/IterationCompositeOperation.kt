@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.animations
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface IterationCompositeOperation {
-    companion object
-}
+external interface IterationCompositeOperation
 
 inline val IterationCompositeOperation.Companion.accumulate: IterationCompositeOperation
     get() = unsafeCast("accumulate")

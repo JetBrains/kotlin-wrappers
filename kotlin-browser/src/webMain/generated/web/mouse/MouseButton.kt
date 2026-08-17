@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mouse
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface MouseButton {
-    companion object
-}
+external interface MouseButton
 
 /**
  * Main button pressed, usually the left button or the un-initialized state

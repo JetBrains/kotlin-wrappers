@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.xr
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface XRInteractionMode {
-    companion object
-}
+external interface XRInteractionMode
 
 inline val XRInteractionMode.Companion.screenSpace: XRInteractionMode
     get() = unsafeCast("screen-space")

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gpu
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface GPUPrimitiveTopology {
-    companion object
-}
+external interface GPUPrimitiveTopology
 
 inline val GPUPrimitiveTopology.Companion.lineList: GPUPrimitiveTopology
     get() = unsafeCast("line-list")

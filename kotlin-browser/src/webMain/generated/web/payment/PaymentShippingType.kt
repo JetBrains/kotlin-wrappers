@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.payment
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface PaymentShippingType {
-    companion object
-}
+external interface PaymentShippingType
 
 inline val PaymentShippingType.Companion.delivery: PaymentShippingType
     get() = unsafeCast("delivery")

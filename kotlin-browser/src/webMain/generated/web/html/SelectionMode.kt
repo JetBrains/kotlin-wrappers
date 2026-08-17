@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.html
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface SelectionMode {
-    companion object
-}
+external interface SelectionMode
 
 inline val SelectionMode.Companion.end: SelectionMode
     get() = unsafeCast("end")

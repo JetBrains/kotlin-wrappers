@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.html
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface ImageDecoding {
-    companion object
-}
+external interface ImageDecoding
 
 inline val ImageDecoding.Companion.async: ImageDecoding
     get() = unsafeCast("async")

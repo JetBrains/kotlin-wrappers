@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mediasession
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface MediaSessionPlaybackState {
-    companion object
-}
+external interface MediaSessionPlaybackState
 
 inline val MediaSessionPlaybackState.Companion.none: MediaSessionPlaybackState
     get() = unsafeCast("none")

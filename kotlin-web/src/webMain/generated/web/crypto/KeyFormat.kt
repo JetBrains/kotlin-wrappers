@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.crypto
 
 import js.reflect.unsafeCast
@@ -16,8 +12,6 @@ external interface KeyFormat {
     sealed interface pkcs8 : KeyFormat
     sealed interface raw : KeyFormat
     sealed interface spki : KeyFormat
-
-    companion object
 }
 
 inline val KeyFormat.Companion.jwk: KeyFormat.jwk

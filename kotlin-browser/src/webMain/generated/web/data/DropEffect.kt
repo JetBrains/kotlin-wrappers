@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.data
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface DropEffect {
-    companion object
-}
+external interface DropEffect
 
 inline val DropEffect.Companion.none: DropEffect
     get() = unsafeCast("none")

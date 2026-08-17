@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.clipboard
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface PresentationStyle {
-    companion object
-}
+external interface PresentationStyle
 
 inline val PresentationStyle.Companion.attachment: PresentationStyle
     get() = unsafeCast("attachment")

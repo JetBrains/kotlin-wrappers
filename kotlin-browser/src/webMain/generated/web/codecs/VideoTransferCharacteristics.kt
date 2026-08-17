@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.codecs
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface VideoTransferCharacteristics {
-    companion object
-}
+external interface VideoTransferCharacteristics
 
 inline val VideoTransferCharacteristics.Companion.bt709: VideoTransferCharacteristics
     get() = unsafeCast("bt709")

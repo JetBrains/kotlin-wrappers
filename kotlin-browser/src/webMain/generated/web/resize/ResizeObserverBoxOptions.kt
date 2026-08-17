@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.resize
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface ResizeObserverBoxOptions {
-    companion object
-}
+external interface ResizeObserverBoxOptions
 
 inline val ResizeObserverBoxOptions.Companion.borderBox: ResizeObserverBoxOptions
     get() = unsafeCast("border-box")

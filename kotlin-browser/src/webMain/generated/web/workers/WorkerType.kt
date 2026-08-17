@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.workers
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface WorkerType {
-    companion object
-}
+external interface WorkerType
 
 inline val WorkerType.Companion.classic: WorkerType
     get() = unsafeCast("classic")

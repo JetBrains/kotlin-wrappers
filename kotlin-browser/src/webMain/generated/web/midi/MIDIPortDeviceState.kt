@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.midi
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface MIDIPortDeviceState {
-    companion object
-}
+external interface MIDIPortDeviceState
 
 inline val MIDIPortDeviceState.Companion.connected: MIDIPortDeviceState
     get() = unsafeCast("connected")

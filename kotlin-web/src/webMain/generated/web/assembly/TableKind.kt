@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.assembly
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface TableKind {
-    companion object
-}
+external interface TableKind
 
 inline val TableKind.Companion.anyfunc: TableKind
     get() = unsafeCast("anyfunc")

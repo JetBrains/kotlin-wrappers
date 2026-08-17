@@ -1,20 +1,16 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.keyboard
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState)
  */
+@JsUnion
 sealed /* union */
-external interface ModifierKeyCode {
-    companion object
-}
+external interface ModifierKeyCode
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/getModifierState#:~:text=%22Alt%22)

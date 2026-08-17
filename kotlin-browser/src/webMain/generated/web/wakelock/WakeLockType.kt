@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.wakelock
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface WakeLockType {
-    companion object
-}
+external interface WakeLockType
 
 inline val WakeLockType.Companion.screen: WakeLockType
     get() = unsafeCast("screen")

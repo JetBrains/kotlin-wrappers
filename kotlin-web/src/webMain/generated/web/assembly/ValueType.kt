@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.assembly
 
 import js.function.JsFunction
@@ -17,9 +13,7 @@ import js.void.Void
 
 @JsUnion
 sealed /* union */
-external interface ValueType<T : JsAny?> {
-    companion object
-}
+external interface ValueType<T : JsAny?>
 
 inline val ValueType.Companion.anyfunc: ValueType<JsFunction<*, *>>
     get() = unsafeCast("anyfunc")

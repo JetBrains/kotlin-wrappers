@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.temporal
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface Overflow {
-    companion object
-}
+external interface Overflow
 
 inline val Overflow.Companion.constrain: Overflow
     get() = unsafeCast("constrain")

@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.rtc
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface RTCIceComponent {
-    companion object
-}
+external interface RTCIceComponent
 
 inline val RTCIceComponent.Companion.rtcp: RTCIceComponent
     get() = unsafeCast("rtcp")

@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.cssom
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface CSSMathOperator {
-    companion object
-}
+external interface CSSMathOperator
 
 inline val CSSMathOperator.Companion.clamp: CSSMathOperator
     get() = unsafeCast("clamp")

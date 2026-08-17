@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.fonts
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface FontFaceSetLoadStatus {
-    companion object
-}
+external interface FontFaceSetLoadStatus
 
 inline val FontFaceSetLoadStatus.Companion.loaded: FontFaceSetLoadStatus
     get() = unsafeCast("loaded")

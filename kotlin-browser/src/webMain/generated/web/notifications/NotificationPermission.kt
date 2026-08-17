@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.notifications
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface NotificationPermission {
-    companion object
-}
+external interface NotificationPermission
 
 inline val NotificationPermission.Companion.default: NotificationPermission
     get() = unsafeCast("default")

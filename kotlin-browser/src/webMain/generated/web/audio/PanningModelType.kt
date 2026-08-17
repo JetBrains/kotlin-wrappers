@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.audio
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface PanningModelType {
-    companion object
-}
+external interface PanningModelType
 
 inline val PanningModelType.Companion.HRTF: PanningModelType
     get() = unsafeCast("HRTF")

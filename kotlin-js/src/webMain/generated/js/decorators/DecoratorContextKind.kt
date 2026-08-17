@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.decorators
 
 import js.reflect.unsafeCast
@@ -18,8 +14,6 @@ external interface DecoratorContextKind {
     sealed interface setter : DecoratorContextKind
     sealed interface accessor : DecoratorContextKind
     sealed interface field : DecoratorContextKind
-
-    companion object
 }
 
 inline val DecoratorContextKind.Companion.`class`: DecoratorContextKind.`class`

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.compression
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface CompressionFormat {
-    companion object
-}
+external interface CompressionFormat
 
 inline val CompressionFormat.Companion.brotli: CompressionFormat
     get() = unsafeCast("brotli")

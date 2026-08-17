@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.http
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface RequestMode {
-    companion object
-}
+external interface RequestMode
 
 inline val RequestMode.Companion.cors: RequestMode
     get() = unsafeCast("cors")

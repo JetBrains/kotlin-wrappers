@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.window
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface WindowTarget {
-    companion object
-}
+external interface WindowTarget
 
 inline val WindowTarget.Companion._self: WindowTarget
     get() = unsafeCast("_self")

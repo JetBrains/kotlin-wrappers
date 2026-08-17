@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mediastreams
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface MediaStreamTrackState {
-    companion object
-}
+external interface MediaStreamTrackState
 
 inline val MediaStreamTrackState.Companion.ended: MediaStreamTrackState
     get() = unsafeCast("ended")

@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.dom
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface InsertPosition {
-    companion object
-}
+external interface InsertPosition
 
 inline val InsertPosition.Companion.afterbegin: InsertPosition
     get() = unsafeCast("afterbegin")

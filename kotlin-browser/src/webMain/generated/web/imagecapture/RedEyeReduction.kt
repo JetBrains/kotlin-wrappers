@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.imagecapture
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface RedEyeReduction {
-    companion object
-}
+external interface RedEyeReduction
 
 inline val RedEyeReduction.Companion.always: RedEyeReduction
     get() = unsafeCast("always")

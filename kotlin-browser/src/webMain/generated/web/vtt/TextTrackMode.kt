@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.vtt
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface TextTrackMode {
-    companion object
-}
+external interface TextTrackMode
 
 inline val TextTrackMode.Companion.disabled: TextTrackMode
     get() = unsafeCast("disabled")

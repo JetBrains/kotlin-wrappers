@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gl
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface WebGLPowerPreference {
-    companion object
-}
+external interface WebGLPowerPreference
 
 inline val WebGLPowerPreference.Companion.default: WebGLPowerPreference
     get() = unsafeCast("default")

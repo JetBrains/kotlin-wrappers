@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mediacapabilities
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface TransferFunction {
-    companion object
-}
+external interface TransferFunction
 
 inline val TransferFunction.Companion.hlg: TransferFunction
     get() = unsafeCast("hlg")

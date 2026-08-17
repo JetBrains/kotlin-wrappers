@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.imagecapture
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface FillLightMode {
-    companion object
-}
+external interface FillLightMode
 
 inline val FillLightMode.Companion.auto: FillLightMode
     get() = unsafeCast("auto")

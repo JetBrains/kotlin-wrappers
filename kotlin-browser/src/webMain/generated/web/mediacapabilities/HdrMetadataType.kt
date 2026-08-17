@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mediacapabilities
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface HdrMetadataType {
-    companion object
-}
+external interface HdrMetadataType
 
 inline val HdrMetadataType.Companion.smpteSt2086: HdrMetadataType
     get() = unsafeCast("smpteSt2086")

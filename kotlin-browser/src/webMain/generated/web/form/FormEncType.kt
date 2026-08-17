@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.form
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface FormEncType {
-    companion object
-}
+external interface FormEncType
 
 inline val FormEncType.Companion.applicationXWwwFormUrlencoded: FormEncType
     get() = unsafeCast("application/x-www-form-urlencoded")

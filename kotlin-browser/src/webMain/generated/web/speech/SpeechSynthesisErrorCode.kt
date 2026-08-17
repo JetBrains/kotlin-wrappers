@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.speech
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface SpeechSynthesisErrorCode {
-    companion object
-}
+external interface SpeechSynthesisErrorCode
 
 inline val SpeechSynthesisErrorCode.Companion.audioBusy: SpeechSynthesisErrorCode
     get() = unsafeCast("audio-busy")

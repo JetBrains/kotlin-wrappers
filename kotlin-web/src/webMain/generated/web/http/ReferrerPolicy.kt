@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.http
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface ReferrerPolicy {
-    companion object
-}
+external interface ReferrerPolicy
 
 inline val ReferrerPolicy.Companion.none: ReferrerPolicy
     get() = unsafeCast("")

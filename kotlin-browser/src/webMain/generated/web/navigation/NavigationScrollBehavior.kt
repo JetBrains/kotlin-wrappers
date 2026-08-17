@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.navigation
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface NavigationScrollBehavior {
-    companion object
-}
+external interface NavigationScrollBehavior
 
 inline val NavigationScrollBehavior.Companion.afterTransition: NavigationScrollBehavior
     get() = unsafeCast("after-transition")

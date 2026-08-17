@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.form
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface FormMethod {
-    companion object
-}
+external interface FormMethod
 
 inline val FormMethod.Companion.get: FormMethod
     get() = unsafeCast("get")

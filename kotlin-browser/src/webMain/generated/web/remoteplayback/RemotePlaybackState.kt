@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.remoteplayback
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface RemotePlaybackState {
-    companion object
-}
+external interface RemotePlaybackState
 
 inline val RemotePlaybackState.Companion.connected: RemotePlaybackState
     get() = unsafeCast("connected")

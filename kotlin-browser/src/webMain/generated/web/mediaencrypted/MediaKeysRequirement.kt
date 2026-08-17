@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.mediaencrypted
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface MediaKeysRequirement {
-    companion object
-}
+external interface MediaKeysRequirement
 
 inline val MediaKeysRequirement.Companion.notAllowed: MediaKeysRequirement
     get() = unsafeCast("not-allowed")

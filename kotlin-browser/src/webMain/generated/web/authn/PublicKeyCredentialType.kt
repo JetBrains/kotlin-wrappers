@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.authn
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface PublicKeyCredentialType {
-    companion object
-}
+external interface PublicKeyCredentialType
 
 inline val PublicKeyCredentialType.Companion.publicKey: PublicKeyCredentialType
     get() = unsafeCast("public-key")

@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.popover
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface ToggleState {
-    companion object
-}
+external interface ToggleState
 
 inline val ToggleState.Companion.open: ToggleState
     get() = unsafeCast("open")

@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.popover
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface Popover {
-    companion object
-}
+external interface Popover
 
 inline val Popover.Companion.auto: Popover
     get() = unsafeCast("auto")

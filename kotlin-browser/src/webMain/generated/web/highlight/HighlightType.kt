@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.highlight
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface HighlightType {
-    companion object
-}
+external interface HighlightType
 
 inline val HighlightType.Companion.grammarError: HighlightType
     get() = unsafeCast("grammar-error")

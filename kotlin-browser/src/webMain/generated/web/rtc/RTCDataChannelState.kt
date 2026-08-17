@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.rtc
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface RTCDataChannelState {
-    companion object
-}
+external interface RTCDataChannelState
 
 inline val RTCDataChannelState.Companion.closed: RTCDataChannelState
     get() = unsafeCast("closed")

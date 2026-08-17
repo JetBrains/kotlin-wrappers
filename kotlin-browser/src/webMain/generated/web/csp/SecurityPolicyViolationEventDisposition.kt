@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.csp
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface SecurityPolicyViolationEventDisposition {
-    companion object
-}
+external interface SecurityPolicyViolationEventDisposition
 
 inline val SecurityPolicyViolationEventDisposition.Companion.enforce: SecurityPolicyViolationEventDisposition
     get() = unsafeCast("enforce")

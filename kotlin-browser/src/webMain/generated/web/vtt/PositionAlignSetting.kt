@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.vtt
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface PositionAlignSetting {
-    companion object
-}
+external interface PositionAlignSetting
 
 inline val PositionAlignSetting.Companion.auto: PositionAlignSetting
     get() = unsafeCast("auto")

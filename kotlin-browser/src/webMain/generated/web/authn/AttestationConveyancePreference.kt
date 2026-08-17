@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.authn
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface AttestationConveyancePreference {
-    companion object
-}
+external interface AttestationConveyancePreference
 
 inline val AttestationConveyancePreference.Companion.direct: AttestationConveyancePreference
     get() = unsafeCast("direct")

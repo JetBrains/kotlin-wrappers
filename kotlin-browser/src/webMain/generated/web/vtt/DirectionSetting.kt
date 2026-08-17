@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.vtt
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface DirectionSetting {
-    companion object
-}
+external interface DirectionSetting
 
 inline val DirectionSetting.Companion.none: DirectionSetting
     get() = unsafeCast("")

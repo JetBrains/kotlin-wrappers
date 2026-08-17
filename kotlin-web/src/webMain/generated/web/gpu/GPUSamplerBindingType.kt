@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gpu
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface GPUSamplerBindingType {
-    companion object
-}
+external interface GPUSamplerBindingType
 
 inline val GPUSamplerBindingType.Companion.comparison: GPUSamplerBindingType
     get() = unsafeCast("comparison")

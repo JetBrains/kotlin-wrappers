@@ -465,9 +465,6 @@ fun generateKotlinDeclarations(
 
             if (name == "ChildNode" || name == "ParentNode")
                 add(INTERFACE_WITH_SUPERCLASS)
-
-            if ("sealed /* union */" in body)
-                add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
         }
 
         val annotations = fileSuppress(suppresses)

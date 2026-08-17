@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.canvas
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface CanvasFontStretch {
-    companion object
-}
+external interface CanvasFontStretch
 
 inline val CanvasFontStretch.Companion.condensed: CanvasFontStretch
     get() = unsafeCast("condensed")

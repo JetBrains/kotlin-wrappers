@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gamepad
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface GamepadHapticsResult {
-    companion object
-}
+external interface GamepadHapticsResult
 
 inline val GamepadHapticsResult.Companion.complete: GamepadHapticsResult
     get() = unsafeCast("complete")

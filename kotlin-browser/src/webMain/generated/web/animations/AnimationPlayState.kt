@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.animations
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface AnimationPlayState {
-    companion object
-}
+external interface AnimationPlayState
 
 inline val AnimationPlayState.Companion.finished: AnimationPlayState
     get() = unsafeCast("finished")

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gpu
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface GPUTextureDimension {
-    companion object
-}
+external interface GPUTextureDimension
 
 inline val GPUTextureDimension.Companion._1d: GPUTextureDimension
     get() = unsafeCast("1d")

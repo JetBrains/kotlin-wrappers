@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.components
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface ShadowRootMode {
-    companion object
-}
+external interface ShadowRootMode
 
 inline val ShadowRootMode.Companion.closed: ShadowRootMode
     get() = unsafeCast("closed")

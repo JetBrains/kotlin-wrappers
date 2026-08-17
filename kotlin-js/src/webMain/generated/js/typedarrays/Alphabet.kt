@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.typedarrays
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface Alphabet {
-    companion object
-}
+external interface Alphabet
 
 inline val Alphabet.Companion.base64: Alphabet
     get() = unsafeCast("base64")

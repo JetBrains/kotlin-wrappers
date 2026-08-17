@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.screen
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface OrientationLockType {
-    companion object
-}
+external interface OrientationLockType
 
 inline val OrientationLockType.Companion.any: OrientationLockType
     get() = unsafeCast("any")

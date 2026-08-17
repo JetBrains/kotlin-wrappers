@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.xr
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface XRTextureType {
-    companion object
-}
+external interface XRTextureType
 
 inline val XRTextureType.Companion.texture: XRTextureType
     get() = unsafeCast("texture")

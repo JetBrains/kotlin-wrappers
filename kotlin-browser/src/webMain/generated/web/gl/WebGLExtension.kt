@@ -1,13 +1,11 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gl
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
 external interface WebGLExtension {
     sealed interface ANGLE_instanced_arrays : WebGLExtension
@@ -44,8 +42,6 @@ external interface WebGLExtension {
     sealed interface WEBGL_draw_buffers : WebGLExtension
     sealed interface WEBGL_lose_context : WebGLExtension
     sealed interface WEBGL_multi_draw : WebGLExtension
-
-    companion object
 }
 
 inline val WebGLExtension.Companion.ANGLE_instanced_arrays: WebGLExtension.ANGLE_instanced_arrays

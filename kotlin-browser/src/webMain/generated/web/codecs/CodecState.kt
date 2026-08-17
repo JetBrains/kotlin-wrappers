@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.codecs
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface CodecState {
-    companion object
-}
+external interface CodecState
 
 inline val CodecState.Companion.closed: CodecState
     get() = unsafeCast("closed")

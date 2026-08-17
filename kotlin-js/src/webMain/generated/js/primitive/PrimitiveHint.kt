@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package js.primitive
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface PrimitiveHint {
-    companion object
-}
+external interface PrimitiveHint
 
 inline val PrimitiveHint.Companion.number: PrimitiveHint
     get() = unsafeCast("number")

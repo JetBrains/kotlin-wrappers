@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.images
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface PredefinedColorSpace {
-    companion object
-}
+external interface PredefinedColorSpace
 
 inline val PredefinedColorSpace.Companion.displayP3: PredefinedColorSpace
     get() = unsafeCast("display-p3")

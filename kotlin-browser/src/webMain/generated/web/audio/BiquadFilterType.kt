@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.audio
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface BiquadFilterType {
-    companion object
-}
+external interface BiquadFilterType
 
 inline val BiquadFilterType.Companion.allpass: BiquadFilterType
     get() = unsafeCast("allpass")

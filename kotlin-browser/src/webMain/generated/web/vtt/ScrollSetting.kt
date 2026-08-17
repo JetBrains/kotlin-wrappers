@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.vtt
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface ScrollSetting {
-    companion object
-}
+external interface ScrollSetting
 
 inline val ScrollSetting.Companion.none: ScrollSetting
     get() = unsafeCast("")

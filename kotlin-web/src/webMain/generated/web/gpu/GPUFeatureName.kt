@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.gpu
 
 import js.reflect.unsafeCast
@@ -11,9 +7,7 @@ import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface GPUFeatureName {
-    companion object
-}
+external interface GPUFeatureName
 
 inline val GPUFeatureName.Companion.bgra8unormStorage: GPUFeatureName
     get() = unsafeCast("bgra8unorm-storage")

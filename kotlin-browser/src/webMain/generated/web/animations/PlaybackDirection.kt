@@ -1,17 +1,13 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.animations
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
+@JsUnion
 sealed /* union */
-external interface PlaybackDirection {
-    companion object
-}
+external interface PlaybackDirection
 
 inline val PlaybackDirection.Companion.alternate: PlaybackDirection
     get() = unsafeCast("alternate")
