@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,27 +9,26 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SyntaxTokenType)
  */
-sealed /* enum */
-external interface SyntaxTokenType {
-    companion object {
-        /**
-         * Everything except tokens that are part of comments, string literals and regular expressions.
-         */
-        val Other: SyntaxTokenType // 0
+/* enum */
+external class SyntaxTokenType
+private constructor() {
+    /**
+     * Everything except tokens that are part of comments, string literals and regular expressions.
+     */
+    val Other: SyntaxTokenType // 0
 
-        /**
-         * A comment.
-         */
-        val Comment: SyntaxTokenType // 1
+    /**
+     * A comment.
+     */
+    val Comment: SyntaxTokenType // 1
 
-        /**
-         * A string literal.
-         */
-        val String: SyntaxTokenType // 2
+    /**
+     * A string literal.
+     */
+    val String: SyntaxTokenType // 2
 
-        /**
-         * A regular expression.
-         */
-        val RegEx: SyntaxTokenType // 3
-    }
+    /**
+     * A regular expression.
+     */
+    val RegEx: SyntaxTokenType // 3
 }

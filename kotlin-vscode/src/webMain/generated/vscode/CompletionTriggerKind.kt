@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,22 +9,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionTriggerKind)
  */
-sealed /* enum */
-external interface CompletionTriggerKind {
-    companion object {
-        /**
-         * Completion was triggered normally.
-         */
-        val Invoke: CompletionTriggerKind // 0
+/* enum */
+external class CompletionTriggerKind
+private constructor() {
+    /**
+     * Completion was triggered normally.
+     */
+    val Invoke: CompletionTriggerKind // 0
 
-        /**
-         * Completion was triggered by a trigger character.
-         */
-        val TriggerCharacter: CompletionTriggerKind // 1
+    /**
+     * Completion was triggered by a trigger character.
+     */
+    val TriggerCharacter: CompletionTriggerKind // 1
 
-        /**
-         * Completion was re-triggered as current completion list is incomplete
-         */
-        val TriggerForIncompleteCompletions: CompletionTriggerKind // 2
-    }
+    /**
+     * Completion was re-triggered as current completion list is incomplete
+     */
+    val TriggerForIncompleteCompletions: CompletionTriggerKind // 2
 }

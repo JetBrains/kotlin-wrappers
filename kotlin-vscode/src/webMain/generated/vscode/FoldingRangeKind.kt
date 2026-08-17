@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -16,22 +12,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FoldingRangeKind)
  */
-sealed /* enum */
-external interface FoldingRangeKind {
-    companion object {
-        /**
-         * Kind for folding range representing a comment.
-         */
-        val Comment: FoldingRangeKind // 1
+/* enum */
+external class FoldingRangeKind
+private constructor() {
+    /**
+     * Kind for folding range representing a comment.
+     */
+    val Comment: FoldingRangeKind // 1
 
-        /**
-         * Kind for folding range representing a import.
-         */
-        val Imports: FoldingRangeKind // 2
+    /**
+     * Kind for folding range representing a import.
+     */
+    val Imports: FoldingRangeKind // 2
 
-        /**
-         * Kind for folding range representing regions originating from folding markers like `#region` and `#endregion`.
-         */
-        val Region: FoldingRangeKind // 3
-    }
+    /**
+     * Kind for folding range representing regions originating from folding markers like `#region` and `#endregion`.
+     */
+    val Region: FoldingRangeKind // 3
 }

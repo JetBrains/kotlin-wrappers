@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,28 +9,28 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticSeverity)
  */
-sealed /* enum */
-external interface DiagnosticSeverity {
-    companion object {
-        /**
-         * Something not allowed by the rules of a language or other means.
-         */
-        val Error: DiagnosticSeverity // 0
+/* enum */
+external class DiagnosticSeverity
+private constructor() {
 
-        /**
-         * Something suspicious but allowed.
-         */
-        val Warning: DiagnosticSeverity // 1
+    /**
+     * Something not allowed by the rules of a language or other means.
+     */
+    val Error: DiagnosticSeverity // 0
 
-        /**
-         * Something to inform about but not a problem.
-         */
-        val Information: DiagnosticSeverity // 2
+    /**
+     * Something suspicious but allowed.
+     */
+    val Warning: DiagnosticSeverity // 1
 
-        /**
-         * Something to hint to a better way of doing it, like proposing
-         * a refactoring.
-         */
-        val Hint: DiagnosticSeverity // 3
-    }
+    /**
+     * Something to inform about but not a problem.
+     */
+    val Information: DiagnosticSeverity // 2
+
+    /**
+     * Something to hint to a better way of doing it, like proposing
+     * a refactoring.
+     */
+    val Hint: DiagnosticSeverity // 3
 }

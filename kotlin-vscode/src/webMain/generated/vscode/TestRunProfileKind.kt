@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,22 +9,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestRunProfileKind)
  */
-sealed /* enum */
-external interface TestRunProfileKind {
-    companion object {
-        /**
-         * The `Run` test profile kind.
-         */
-        val Run: TestRunProfileKind // 1
+/* enum */
+external class TestRunProfileKind
+private constructor() {
+    /**
+     * The `Run` test profile kind.
+     */
+    val Run: TestRunProfileKind // 1
 
-        /**
-         * The `Debug` test profile kind.
-         */
-        val Debug: TestRunProfileKind // 2
+    /**
+     * The `Debug` test profile kind.
+     */
+    val Debug: TestRunProfileKind // 2
 
-        /**
-         * The `Coverage` test profile kind.
-         */
-        val Coverage: TestRunProfileKind // 3
-    }
+    /**
+     * The `Coverage` test profile kind.
+     */
+    val Coverage: TestRunProfileKind // 3
 }

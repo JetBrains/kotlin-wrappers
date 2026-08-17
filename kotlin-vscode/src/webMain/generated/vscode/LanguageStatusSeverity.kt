@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -14,22 +10,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageStatusSeverity)
  */
-sealed /* enum */
-external interface LanguageStatusSeverity {
-    companion object {
-        /**
-         * Informational severity level.
-         */
-        val Information: LanguageStatusSeverity // 0
+/* enum */
+external class LanguageStatusSeverity
+private constructor() {
+    /**
+     * Informational severity level.
+     */
+    val Information: LanguageStatusSeverity // 0
 
-        /**
-         * Warning severity level.
-         */
-        val Warning: LanguageStatusSeverity // 1
+    /**
+     * Warning severity level.
+     */
+    val Warning: LanguageStatusSeverity // 1
 
-        /**
-         * Error severity level.
-         */
-        val Error: LanguageStatusSeverity // 2
-    }
+    /**
+     * Error severity level.
+     */
+    val Error: LanguageStatusSeverity // 2
 }

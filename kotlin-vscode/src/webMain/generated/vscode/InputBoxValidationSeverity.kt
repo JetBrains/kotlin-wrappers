@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,22 +9,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBoxValidationSeverity)
  */
-sealed /* enum */
-external interface InputBoxValidationSeverity {
-    companion object {
-        /**
-         * Indicates an informational message that does not prevent input acceptance.
-         */
-        val Info: InputBoxValidationSeverity // 1
+/* enum */
+external class InputBoxValidationSeverity
+private constructor() {
+    /**
+     * Indicates an informational message that does not prevent input acceptance.
+     */
+    val Info: InputBoxValidationSeverity // 1
 
-        /**
-         * Indicates a warning message that does not prevent input acceptance.
-         */
-        val Warning: InputBoxValidationSeverity // 2
+    /**
+     * Indicates a warning message that does not prevent input acceptance.
+     */
+    val Warning: InputBoxValidationSeverity // 2
 
-        /**
-         * Indicates an error message that prevents the user from accepting the input.
-         */
-        val Error: InputBoxValidationSeverity // 3
-    }
+    /**
+     * Indicates an error message that prevents the user from accepting the input.
+     */
+    val Error: InputBoxValidationSeverity // 3
 }

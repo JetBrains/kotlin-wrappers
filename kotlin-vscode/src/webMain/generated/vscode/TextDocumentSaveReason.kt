@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,23 +9,23 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentSaveReason)
  */
-sealed /* enum */
-external interface TextDocumentSaveReason {
-    companion object {
-        /**
-         * Manually triggered, e.g. by the user pressing save, by starting debugging,
-         * or by an API call.
-         */
-        val Manual: TextDocumentSaveReason // 1
+/* enum */
+external class TextDocumentSaveReason
+private constructor() {
 
-        /**
-         * Automatic after a delay.
-         */
-        val AfterDelay: TextDocumentSaveReason // 2
+    /**
+     * Manually triggered, e.g. by the user pressing save, by starting debugging,
+     * or by an API call.
+     */
+    val Manual: TextDocumentSaveReason // 1
 
-        /**
-         * When the editor lost focus.
-         */
-        val FocusOut: TextDocumentSaveReason // 3
-    }
+    /**
+     * Automatic after a delay.
+     */
+    val AfterDelay: TextDocumentSaveReason // 2
+
+    /**
+     * When the editor lost focus.
+     */
+    val FocusOut: TextDocumentSaveReason // 3
 }

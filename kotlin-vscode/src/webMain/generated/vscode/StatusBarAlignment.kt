@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,17 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#StatusBarAlignment)
  */
-sealed /* enum */
-external interface StatusBarAlignment {
-    companion object {
-        /**
-         * Aligned to the left side.
-         */
-        val Left: StatusBarAlignment // 1
+/* enum */
+external class StatusBarAlignment
+private constructor() {
 
-        /**
-         * Aligned to the right side.
-         */
-        val Right: StatusBarAlignment // 2
-    }
+    /**
+     * Aligned to the left side.
+     */
+    val Left: StatusBarAlignment // 1
+
+    /**
+     * Aligned to the right side.
+     */
+    val Right: StatusBarAlignment // 2
 }

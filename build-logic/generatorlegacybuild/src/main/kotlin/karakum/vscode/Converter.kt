@@ -92,9 +92,8 @@ private fun convertEnum(
         Commenter.create(name),
     )
 
-    val body = "sealed /* enum */\nexternal interface " + bodySource
-        .replaceFirst("{\n", "{\ncompanion object {")
-        .replaceFirst("\n}", "\n}\n}")
+    val body = "/* enum */\nexternal class " + bodySource
+        .replaceFirst("{\n", "\nprivate constructor() {\n")
         .splitToSequence("\n")
         .joinToString("\n") {
             if (" = " in it) {

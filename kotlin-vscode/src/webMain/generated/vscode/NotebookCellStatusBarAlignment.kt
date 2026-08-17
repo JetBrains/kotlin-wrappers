@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,17 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarAlignment)
  */
-sealed /* enum */
-external interface NotebookCellStatusBarAlignment {
-    companion object {
-        /**
-         * Aligned to the left side.
-         */
-        val Left: NotebookCellStatusBarAlignment // 1
+/* enum */
+external class NotebookCellStatusBarAlignment
+private constructor() {
 
-        /**
-         * Aligned to the right side.
-         */
-        val Right: NotebookCellStatusBarAlignment // 2
-    }
+    /**
+     * Aligned to the left side.
+     */
+    val Left: NotebookCellStatusBarAlignment // 1
+
+    /**
+     * Aligned to the right side.
+     */
+    val Right: NotebookCellStatusBarAlignment // 2
 }

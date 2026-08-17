@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskScope)
  */
-sealed /* enum */
-external interface TaskScope {
-    companion object {
-        /**
-         * The task is a global task. Global tasks are currently not supported.
-         */
-        val Global: TaskScope // 1
+/* enum */
+external class TaskScope
+private constructor() {
+    /**
+     * The task is a global task. Global tasks are currently not supported.
+     */
+    val Global: TaskScope // 1
 
-        /**
-         * The task is a workspace task
-         */
-        val Workspace: TaskScope // 2
-    }
+    /**
+     * The task is a workspace task
+     */
+    val Workspace: TaskScope // 2
 }

@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,22 +9,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableMutatorType)
  */
-sealed /* enum */
-external interface EnvironmentVariableMutatorType {
-    companion object {
-        /**
-         * Replace the variable's existing value.
-         */
-        val Replace: EnvironmentVariableMutatorType // 1
+/* enum */
+external class EnvironmentVariableMutatorType
+private constructor() {
+    /**
+     * Replace the variable's existing value.
+     */
+    val Replace: EnvironmentVariableMutatorType // 1
 
-        /**
-         * Append to the end of the variable's existing value.
-         */
-        val Append: EnvironmentVariableMutatorType // 2
+    /**
+     * Append to the end of the variable's existing value.
+     */
+    val Append: EnvironmentVariableMutatorType // 2
 
-        /**
-         * Prepend to the start of the variable's existing value.
-         */
-        val Prepend: EnvironmentVariableMutatorType // 3
-    }
+    /**
+     * Prepend to the start of the variable's existing value.
+     */
+    val Prepend: EnvironmentVariableMutatorType // 3
 }

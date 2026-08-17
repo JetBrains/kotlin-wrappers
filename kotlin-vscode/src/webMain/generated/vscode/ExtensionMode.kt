@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -14,25 +10,24 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionMode)
  */
-sealed /* enum */
-external interface ExtensionMode {
-    companion object {
-        /**
-         * The extension is installed normally (for example, from the marketplace
-         * or VSIX) in the editor.
-         */
-        val Production: ExtensionMode // 1
+/* enum */
+external class ExtensionMode
+private constructor() {
+    /**
+     * The extension is installed normally (for example, from the marketplace
+     * or VSIX) in the editor.
+     */
+    val Production: ExtensionMode // 1
 
-        /**
-         * The extension is running from an `--extensionDevelopmentPath` provided
-         * when launching the editor.
-         */
-        val Development: ExtensionMode // 2
+    /**
+     * The extension is running from an `--extensionDevelopmentPath` provided
+     * when launching the editor.
+     */
+    val Development: ExtensionMode // 2
 
-        /**
-         * The extension is running from an `--extensionTestsPath` and
-         * the extension host is running unit tests.
-         */
-        val Test: ExtensionMode // 3
-    }
+    /**
+     * The extension is running from an `--extensionTestsPath` and
+     * the extension host is running unit tests.
+     */
+    val Test: ExtensionMode // 3
 }

@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EndOfLine)
  */
-sealed /* enum */
-external interface EndOfLine {
-    companion object {
-        /**
-         * The line feed `\n` character.
-         */
-        val LF: EndOfLine // 1
+/* enum */
+external class EndOfLine
+private constructor() {
+    /**
+     * The line feed `\n` character.
+     */
+    val LF: EndOfLine // 1
 
-        /**
-         * The carriage return line feed `\r\n` sequence.
-         */
-        val CRLF: EndOfLine // 2
-    }
+    /**
+     * The carriage return line feed `\r\n` sequence.
+     */
+    val CRLF: EndOfLine // 2
 }

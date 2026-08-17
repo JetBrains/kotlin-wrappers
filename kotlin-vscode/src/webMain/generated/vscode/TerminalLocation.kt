@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLocation)
  */
-sealed /* enum */
-external interface TerminalLocation {
-    companion object {
-        /**
-         * In the terminal view
-         */
-        val Panel: TerminalLocation // 1
+/* enum */
+external class TerminalLocation
+private constructor() {
+    /**
+     * In the terminal view
+     */
+    val Panel: TerminalLocation // 1
 
-        /**
-         * In the editor area
-         */
-        val Editor: TerminalLocation // 2
-    }
+    /**
+     * In the editor area
+     */
+    val Editor: TerminalLocation // 2
 }

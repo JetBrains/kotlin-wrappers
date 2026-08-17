@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,12 +9,12 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SymbolTag)
  */
-sealed /* enum */
-external interface SymbolTag {
-    companion object {
-        /**
-         * Render a symbol as obsolete, usually using a strike-out.
-         */
-        val Deprecated: SymbolTag // 1
-    }
+/* enum */
+external class SymbolTag
+private constructor() {
+
+    /**
+     * Render a symbol as obsolete, usually using a strike-out.
+     */
+    val Deprecated: SymbolTag // 1
 }

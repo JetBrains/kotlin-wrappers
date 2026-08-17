@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -16,17 +12,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfigurationProviderTriggerKind)
  */
-sealed /* enum */
-external interface DebugConfigurationProviderTriggerKind {
-    companion object {
-        /**
-         *	`DebugConfigurationProvider.provideDebugConfigurations` is called to provide the initial debug configurations for a newly created launch.json.
-         */
-        val Initial: DebugConfigurationProviderTriggerKind // 1
+/* enum */
+external class DebugConfigurationProviderTriggerKind
+private constructor() {
+    /**
+     *	`DebugConfigurationProvider.provideDebugConfigurations` is called to provide the initial debug configurations for a newly created launch.json.
+     */
+    val Initial: DebugConfigurationProviderTriggerKind // 1
 
-        /**
-         * `DebugConfigurationProvider.provideDebugConfigurations` is called to provide dynamically generated debug configurations when the user asks for them through the UI (e.g. via the "Select and Start Debugging" command).
-         */
-        val Dynamic: DebugConfigurationProviderTriggerKind // 2
-    }
+    /**
+     * `DebugConfigurationProvider.provideDebugConfigurations` is called to provide dynamically generated debug configurations when the user asks for them through the UI (e.g. via the "Select and Start Debugging" command).
+     */
+    val Dynamic: DebugConfigurationProviderTriggerKind // 2
 }

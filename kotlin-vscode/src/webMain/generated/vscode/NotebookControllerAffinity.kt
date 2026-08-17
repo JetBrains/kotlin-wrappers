@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -15,17 +11,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookControllerAffinity)
  */
-sealed /* enum */
-external interface NotebookControllerAffinity {
-    companion object {
-        /**
-         * Default affinity.
-         */
-        val Default: NotebookControllerAffinity // 1
+/* enum */
+external class NotebookControllerAffinity
+private constructor() {
+    /**
+     * Default affinity.
+     */
+    val Default: NotebookControllerAffinity // 1
 
-        /**
-         * A controller is preferred for a notebook.
-         */
-        val Preferred: NotebookControllerAffinity // 2
-    }
+    /**
+     * A controller is preferred for a notebook.
+     */
+    val Preferred: NotebookControllerAffinity // 2
 }

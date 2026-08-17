@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,32 +9,31 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalExitReason)
  */
-sealed /* enum */
-external interface TerminalExitReason {
-    companion object {
-        /**
-         * Unknown reason.
-         */
-        val Unknown: TerminalExitReason // 0
+/* enum */
+external class TerminalExitReason
+private constructor() {
+    /**
+     * Unknown reason.
+     */
+    val Unknown: TerminalExitReason // 0
 
-        /**
-         * The window closed/reloaded.
-         */
-        val Shutdown: TerminalExitReason // 1
+    /**
+     * The window closed/reloaded.
+     */
+    val Shutdown: TerminalExitReason // 1
 
-        /**
-         * The shell process exited.
-         */
-        val Process: TerminalExitReason // 2
+    /**
+     * The shell process exited.
+     */
+    val Process: TerminalExitReason // 2
 
-        /**
-         * The user closed the terminal.
-         */
-        val User: TerminalExitReason // 3
+    /**
+     * The user closed the terminal.
+     */
+    val User: TerminalExitReason // 3
 
-        /**
-         * An extension disposed the terminal.
-         */
-        val Extension: TerminalExitReason // 4
-    }
+    /**
+     * An extension disposed the terminal.
+     */
+    val Extension: TerminalExitReason // 4
 }

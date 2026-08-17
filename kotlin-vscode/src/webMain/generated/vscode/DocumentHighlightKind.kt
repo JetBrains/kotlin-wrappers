@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,22 +9,22 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightKind)
  */
-sealed /* enum */
-external interface DocumentHighlightKind {
-    companion object {
-        /**
-         * A textual occurrence.
-         */
-        val Text: DocumentHighlightKind // 0
+/* enum */
+external class DocumentHighlightKind
+private constructor() {
 
-        /**
-         * Read-access of a symbol, like reading a variable.
-         */
-        val Read: DocumentHighlightKind // 1
+    /**
+     * A textual occurrence.
+     */
+    val Text: DocumentHighlightKind // 0
 
-        /**
-         * Write-access of a symbol, like writing to a variable.
-         */
-        val Write: DocumentHighlightKind // 2
-    }
+    /**
+     * Read-access of a symbol, like reading a variable.
+     */
+    val Read: DocumentHighlightKind // 1
+
+    /**
+     * Write-access of a symbol, like writing to a variable.
+     */
+    val Write: DocumentHighlightKind // 2
 }

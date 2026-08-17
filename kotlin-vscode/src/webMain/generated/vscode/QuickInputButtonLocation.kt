@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,22 +9,21 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInputButtonLocation)
  */
-sealed /* enum */
-external interface QuickInputButtonLocation {
-    companion object {
-        /**
-         * The button is rendered in the title bar.
-         */
-        val Title: QuickInputButtonLocation // 1
+/* enum */
+external class QuickInputButtonLocation
+private constructor() {
+    /**
+     * The button is rendered in the title bar.
+     */
+    val Title: QuickInputButtonLocation // 1
 
-        /**
-         * The button is rendered inline to the right of the input box.
-         */
-        val Inline: QuickInputButtonLocation // 2
+    /**
+     * The button is rendered inline to the right of the input box.
+     */
+    val Inline: QuickInputButtonLocation // 2
 
-        /**
-         * The button is rendered at the far end inside the input box.
-         */
-        val Input: QuickInputButtonLocation // 3
-    }
+    /**
+     * The button is rendered at the far end inside the input box.
+     */
+    val Input: QuickInputButtonLocation // 3
 }

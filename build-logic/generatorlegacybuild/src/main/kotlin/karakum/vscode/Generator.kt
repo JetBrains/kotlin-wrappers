@@ -1,8 +1,6 @@
 package karakum.vscode
 
 import karakum.common.GENERATOR_COMMENT
-import karakum.common.Suppress.NESTED_CLASS_IN_EXTERNAL_INTERFACE
-import karakum.common.fileSuppress
 import karakum.common.writeCode
 import java.io.File
 
@@ -16,21 +14,12 @@ internal fun generateKotlinDeclarations(
     for ((name, body) in parseDeclarations(definitionsFile)) {
         val hasRuntime = when {
             "export interface " in body -> false
-            "external interface " in body -> "sealed /* enum */" in body
+            "external interface " in body -> false
 
             else -> "export " in body || "external " in body
         }
 
-        val annotations = when {
-            hasRuntime
-                -> listOfNotNull(
-                """@file:JsModule("vscode")""",
-                fileSuppress(listOf(NESTED_CLASS_IN_EXTERNAL_INTERFACE))
-                    .takeIf { "sealed /* enum */" in body },
-            ).joinToString("\n\n")
-
-            else -> ""
-        }
+        val annotations = if (hasRuntime) """@file:JsModule("vscode")""" else ""
 
         val finalBody = if (!hasRuntime) {
             body.replaceFirst(

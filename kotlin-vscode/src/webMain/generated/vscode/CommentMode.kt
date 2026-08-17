@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentMode)
  */
-sealed /* enum */
-external interface CommentMode {
-    companion object {
-        /**
-         * Displays the comment editor
-         */
-        val Editing: CommentMode // 0
+/* enum */
+external class CommentMode
+private constructor() {
+    /**
+     * Displays the comment editor
+     */
+    val Editing: CommentMode // 0
 
-        /**
-         * Displays the preview of the comment
-         */
-        val Preview: CommentMode // 1
-    }
+    /**
+     * Displays the preview of the comment
+     */
+    val Preview: CommentMode // 1
 }

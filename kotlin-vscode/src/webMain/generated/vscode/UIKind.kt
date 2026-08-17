@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,17 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#UIKind)
  */
-sealed /* enum */
-external interface UIKind {
-    companion object {
-        /**
-         * Extensions are accessed from a desktop application.
-         */
-        val Desktop: UIKind // 1
+/* enum */
+external class UIKind
+private constructor() {
 
-        /**
-         * Extensions are accessed from a web browser.
-         */
-        val Web: UIKind // 2
-    }
+    /**
+     * Extensions are accessed from a desktop application.
+     */
+    val Desktop: UIKind // 1
+
+    /**
+     * Extensions are accessed from a web browser.
+     */
+    val Web: UIKind // 2
 }

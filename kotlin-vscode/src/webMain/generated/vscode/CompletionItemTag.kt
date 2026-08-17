@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -14,12 +10,11 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemTag)
  */
-sealed /* enum */
-external interface CompletionItemTag {
-    companion object {
-        /**
-         * Render a completion as obsolete, usually using a strike-out.
-         */
-        val Deprecated: CompletionItemTag // 1
-    }
+/* enum */
+external class CompletionItemTag
+private constructor() {
+    /**
+     * Render a completion as obsolete, usually using a strike-out.
+     */
+    val Deprecated: CompletionItemTag // 1
 }

@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,20 +9,19 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionTriggerKind)
  */
-sealed /* enum */
-external interface CodeActionTriggerKind {
-    companion object {
-        /**
-         * Code actions were explicitly requested by the user or by an extension.
-         */
-        val Invoke: CodeActionTriggerKind // 1
+/* enum */
+external class CodeActionTriggerKind
+private constructor() {
+    /**
+     * Code actions were explicitly requested by the user or by an extension.
+     */
+    val Invoke: CodeActionTriggerKind // 1
 
-        /**
-         * Code actions were requested automatically.
-         *
-         * This typically happens when current selection in a file changes, but can
-         * also be triggered when file content changes.
-         */
-        val Automatic: CodeActionTriggerKind // 2
-    }
+    /**
+     * Code actions were requested automatically.
+     *
+     * This typically happens when current selection in a file changes, but can
+     * also be triggered when file content changes.
+     */
+    val Automatic: CodeActionTriggerKind // 2
 }

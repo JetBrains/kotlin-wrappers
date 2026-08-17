@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteTriggerKind)
  */
-sealed /* enum */
-external interface DocumentPasteTriggerKind {
-    companion object {
-        /**
-         * Pasting was requested as part of a normal paste operation.
-         */
-        val Automatic: DocumentPasteTriggerKind // 0
+/* enum */
+external class DocumentPasteTriggerKind
+private constructor() {
+    /**
+     * Pasting was requested as part of a normal paste operation.
+     */
+    val Automatic: DocumentPasteTriggerKind // 0
 
-        /**
-         * Pasting was requested by the user with the `paste as` command.
-         */
-        val PasteAs: DocumentPasteTriggerKind // 1
-    }
+    /**
+     * Pasting was requested by the user with the `paste as` command.
+     */
+    val PasteAs: DocumentPasteTriggerKind // 1
 }

@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -14,17 +10,17 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionKind)
  */
-sealed /* enum */
-external interface ExtensionKind {
-    companion object {
-        /**
-         * Extension runs where the UI runs.
-         */
-        val UI: ExtensionKind // 1
+/* enum */
+external class ExtensionKind
+private constructor() {
 
-        /**
-         * Extension runs where the remote extension host runs.
-         */
-        val Workspace: ExtensionKind // 2
-    }
+    /**
+     * Extension runs where the UI runs.
+     */
+    val UI: ExtensionKind // 1
+
+    /**
+     * Extension runs where the remote extension host runs.
+     */
+    val Workspace: ExtensionKind // 2
 }

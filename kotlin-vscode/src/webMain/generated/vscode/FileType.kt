@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -15,27 +11,26 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileType)
  */
-sealed /* enum */
-external interface FileType {
-    companion object {
-        /**
-         * The file type is unknown.
-         */
-        val Unknown: FileType // 0
+/* enum */
+external class FileType
+private constructor() {
+    /**
+     * The file type is unknown.
+     */
+    val Unknown: FileType // 0
 
-        /**
-         * A regular file.
-         */
-        val File: FileType // 1
+    /**
+     * A regular file.
+     */
+    val File: FileType // 1
 
-        /**
-         * A directory.
-         */
-        val Directory: FileType // 2
+    /**
+     * A directory.
+     */
+    val Directory: FileType // 2
 
-        /**
-         * A symbolic link to a file.
-         */
-        val SymbolicLink: FileType // 64
-    }
+    /**
+     * A symbolic link to a file.
+     */
+    val SymbolicLink: FileType // 64
 }

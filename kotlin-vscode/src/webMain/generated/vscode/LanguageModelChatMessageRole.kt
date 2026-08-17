@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,17 +9,16 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessageRole)
  */
-sealed /* enum */
-external interface LanguageModelChatMessageRole {
-    companion object {
-        /**
-         * The user role, e.g the human interacting with a language model.
-         */
-        val User: LanguageModelChatMessageRole // 1
+/* enum */
+external class LanguageModelChatMessageRole
+private constructor() {
+    /**
+     * The user role, e.g the human interacting with a language model.
+     */
+    val User: LanguageModelChatMessageRole // 1
 
-        /**
-         * The assistant role, e.g. the language model generating responses.
-         */
-        val Assistant: LanguageModelChatMessageRole // 2
-    }
+    /**
+     * The assistant role, e.g. the language model generating responses.
+     */
+    val Assistant: LanguageModelChatMessageRole // 2
 }

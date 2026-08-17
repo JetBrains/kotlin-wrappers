@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,37 +9,37 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogLevel)
  */
-sealed /* enum */
-external interface LogLevel {
-    companion object {
-        /**
-         * No messages are logged with this level.
-         */
-        val Off: LogLevel // 0
+/* enum */
+external class LogLevel
+private constructor() {
 
-        /**
-         * All messages are logged with this level.
-         */
-        val Trace: LogLevel // 1
+    /**
+     * No messages are logged with this level.
+     */
+    val Off: LogLevel // 0
 
-        /**
-         * Messages with debug and higher log level are logged with this level.
-         */
-        val Debug: LogLevel // 2
+    /**
+     * All messages are logged with this level.
+     */
+    val Trace: LogLevel // 1
 
-        /**
-         * Messages with info and higher log level are logged with this level.
-         */
-        val Info: LogLevel // 3
+    /**
+     * Messages with debug and higher log level are logged with this level.
+     */
+    val Debug: LogLevel // 2
 
-        /**
-         * Messages with warning and higher log level are logged with this level.
-         */
-        val Warning: LogLevel // 4
+    /**
+     * Messages with info and higher log level are logged with this level.
+     */
+    val Info: LogLevel // 3
 
-        /**
-         * Only error messages are logged with this level.
-         */
-        val Error: LogLevel // 5
-    }
+    /**
+     * Messages with warning and higher log level are logged with this level.
+     */
+    val Warning: LogLevel // 4
+
+    /**
+     * Only error messages are logged with this level.
+     */
+    val Error: LogLevel // 5
 }

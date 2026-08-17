@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,18 +9,17 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatToolMode)
  */
-sealed /* enum */
-external interface LanguageModelChatToolMode {
-    companion object {
-        /**
-         * The language model can choose to call a tool or generate a message. Is the default.
-         */
-        val Auto: LanguageModelChatToolMode // 1
+/* enum */
+external class LanguageModelChatToolMode
+private constructor() {
+    /**
+     * The language model can choose to call a tool or generate a message. Is the default.
+     */
+    val Auto: LanguageModelChatToolMode // 1
 
-        /**
-         * The language model must call one of the provided tools. Note- some models only support a single tool when using this
-         * mode.
-         */
-        val Required: LanguageModelChatToolMode // 2
-    }
+    /**
+     * The language model must call one of the provided tools. Note- some models only support a single tool when using this
+     * mode.
+     */
+    val Required: LanguageModelChatToolMode // 2
 }

@@ -2,10 +2,6 @@
 
 @file:JsModule("vscode")
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package vscode
 
 /**
@@ -13,13 +9,12 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentChangeReason)
  */
-sealed /* enum */
-external interface TextDocumentChangeReason {
-    companion object {
-        /** The text change is caused by an undo operation. */
-        val Undo: TextDocumentChangeReason // 1
+/* enum */
+external class TextDocumentChangeReason
+private constructor() {
+    /** The text change is caused by an undo operation. */
+    val Undo: TextDocumentChangeReason // 1
 
-        /** The text change is caused by an redo operation. */
-        val Redo: TextDocumentChangeReason // 2
-    }
+    /** The text change is caused by an redo operation. */
+    val Redo: TextDocumentChangeReason // 2
 }
