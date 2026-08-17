@@ -26,14 +26,18 @@ data class Inset(
     )
 }
 
-/**
- * Inset for a specific axis.
- * Axial insets are affected by the specified writing-mode and direction.
- *
- * @param start the inset at the start of the axis
- * @param end the inset at the end of the axis
- */
-data class AxialInset(
+data class InsetInline(
+    val start: LinearDimension,
+    val end: LinearDimension,
+) : CssValue(
+    getShorthandValue(start, end)
+) {
+    override fun toString() = value
+
+    constructor(all: LinearDimension) : this(all, all)
+}
+
+data class InsetBlock(
     val start: LinearDimension,
     val end: LinearDimension,
 ) : CssValue(
@@ -45,8 +49,8 @@ data class AxialInset(
 }
 
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.inset: Inset by CssProperty()
-@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetInline: AxialInset by CssProperty()
-@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetBlock: AxialInset by CssProperty()
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetInline: InsetInline by CssProperty()
+@get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetBlock: InsetBlock by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetInlineStart: LinearDimension by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetInlineEnd: LinearDimension by CssProperty()
 @get:Deprecated("Write-only property", level = DeprecationLevel.HIDDEN) var StyledElement.insetBlockStart: LinearDimension by CssProperty()
