@@ -1,14 +1,11 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package jszip
 
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface Platform {
-    companion object
-}
+@JsUnion
+sealed /* union */
+external interface Platform
 
 inline val Platform.Companion.DOS: Platform
     get() = unsafeCast("DOS")

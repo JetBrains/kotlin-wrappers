@@ -1,7 +1,3 @@
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package jszip
 
 import js.array.ReadonlyArray
@@ -9,11 +5,12 @@ import js.buffer.ArrayBuffer
 import js.numbers.JsUByte
 import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
+import js.union.JsUnion
 import web.blob.Blob
 
-sealed external interface OutputType<T : JsAny> {
-    companion object
-}
+@JsUnion
+sealed /* union */
+external interface OutputType<T : JsAny>
 
 inline val OutputType.Companion.base64: OutputType<JsString>
     get() = unsafeCast("base64")
