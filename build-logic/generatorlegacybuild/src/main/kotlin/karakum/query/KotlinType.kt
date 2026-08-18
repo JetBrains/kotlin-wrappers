@@ -113,9 +113,7 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "DehydratedState | null | undefined" to "DehydratedState?",
 
-    "TimeoutCallback" to "() -> Unit",
-    // bare `TimeoutProvider` in original means `TimeoutProvider<ManagedTimerId>` (default type argument)
-    "TimeoutProvider" to "TimeoutProvider<ManagedTimerId>",
+    "TimeoutCallback" to "TimerHandler",
 )
 
 private val SAFE_PREFIXES = setOf(

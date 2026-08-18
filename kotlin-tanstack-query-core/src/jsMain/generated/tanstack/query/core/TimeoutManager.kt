@@ -4,18 +4,22 @@
 
 package tanstack.query.core
 
+import web.timers.Interval
+import web.timers.Timeout
+import web.timers.TimerHandler
+
 open external class TimeoutManager {
-    open fun <TTimerId : ManagedTimerId> setTimeoutProvider(provider: TimeoutProvider<TTimerId>)
+    open fun setTimeoutProvider(provider: TimeoutProvider)
     open fun setTimeout(
-        callback: () -> Unit,
+        callback: TimerHandler,
         delay: Int,
-    ): ManagedTimerId
+    ): Timeout
 
-    open fun clearTimeout(timeoutId: ManagedTimerId?)
+    open fun clearTimeout(timeoutId: Timeout?)
     open fun setInterval(
-        callback: () -> Unit,
+        callback: TimerHandler,
         delay: Int,
-    ): ManagedTimerId
+    ): Interval
 
-    open fun clearInterval(intervalId: ManagedTimerId?)
+    open fun clearInterval(intervalId: Interval?)
 }

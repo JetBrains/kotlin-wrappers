@@ -30,6 +30,10 @@ private val DEFAULT_IMPORTS = listOf(
     "web.abort.AbortController",
     "web.abort.AbortSignal",
 
+    "web.timers.Interval",
+    "web.timers.TimerHandler",
+    "web.timers.Timeout",
+
     "seskar.js.JsRawValue",
     "seskar.js.JsValue",
 ).map { it.substringAfterLast(".") to it }

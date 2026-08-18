@@ -22,6 +22,10 @@ private val SKIPPED_DECLARATIONS = setOf(
     // `environmentManager` internals (dropped with it)
     "IsServerValue",
 
+    // replaced with `web.timers` types
+    "ManagedTimerId",
+    "TimeoutCallback",
+
     // internal `thenable` declarations
     "Fulfilled",
     "Rejected",
@@ -219,19 +223,42 @@ fun toDeclarations(
         .replace(Regex("""declare const environmentManager: \{\n.+?\n\};\n""", RegexOption.DOT_MATCHES_ALL), "")
         .replace(
             """
-            type ManagedTimerId = number | {
-                [Symbol.toPrimitive]: () => number;
+            type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {
+                readonly setTimeout: (callback: TimeoutCallback, delay: number) => TTimerId;
+                readonly clearTimeout: (timeoutId: TTimerId | undefined) => void;
+                readonly setInterval: (callback: TimeoutCallback, delay: number) => TTimerId;
+                readonly clearInterval: (intervalId: TTimerId | undefined) => void;
             };
             """.trimIndent(),
-            "type ManagedTimerId = number;",
+            """
+            interface TimeoutProvider {
+                readonly setTimeout: (callback: TimerHandler, delay: number) => Timeout;
+                readonly clearTimeout: (timeoutId: Timeout | undefined) => void;
+                readonly setInterval: (callback: TimerHandler, delay: number) => Interval;
+                readonly clearInterval: (intervalId: Interval | undefined) => void;
+            }
+            """.trimIndent(),
         )
         .replace(
-            "type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {",
-            "interface TimeoutProvider<TTimerId extends ManagedTimerId> {",
-        )
-        .replace(
-            "TimeoutManager implements Omit<TimeoutProvider, 'name'>",
-            "TimeoutManager implements TimeoutProvider",
+            """
+            class TimeoutManager implements Omit<TimeoutProvider, 'name'> {
+                #private;
+                setTimeoutProvider<TTimerId extends ManagedTimerId>(provider: TimeoutProvider<TTimerId>): void;
+                setTimeout(callback: TimeoutCallback, delay: number): ManagedTimerId;
+                clearTimeout(timeoutId: ManagedTimerId | undefined): void;
+                setInterval(callback: TimeoutCallback, delay: number): ManagedTimerId;
+                clearInterval(intervalId: ManagedTimerId | undefined): void;
+            }
+            """.trimIndent(),
+            """
+            class TimeoutManager {
+                setTimeoutProvider(provider: TimeoutProvider): void;
+                setTimeout(callback: TimerHandler, delay: number): Timeout;
+                clearTimeout(timeoutId: Timeout | undefined): void;
+                setInterval(callback: TimerHandler, delay: number): Interval;
+                clearInterval(intervalId: Interval | undefined): void;
+            }
+            """.trimIndent(),
         )
         // TEMP
         .replace(" & {\n        manual: boolean;\n    }", "")
