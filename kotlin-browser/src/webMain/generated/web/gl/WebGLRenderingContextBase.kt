@@ -438,145 +438,8 @@ external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension)
      */
-    fun getExtension(
-        name: String,
-    ): JsAny? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.ANGLE_instanced_arrays,
-    ): ANGLE_instanced_arrays? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_blend_minmax,
-    ): EXT_blend_minmax? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_color_buffer_float,
-    ): EXT_color_buffer_float? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_color_buffer_half_float,
-    ): EXT_color_buffer_half_float? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_float_blend,
-    ): EXT_float_blend? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_frag_depth,
-    ): EXT_frag_depth? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_sRGB,
-    ): EXT_sRGB? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_shader_texture_lod,
-    ): EXT_shader_texture_lod? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_texture_compression_bptc,
-    ): EXT_texture_compression_bptc? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_texture_compression_rgtc,
-    ): EXT_texture_compression_rgtc? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.EXT_texture_filter_anisotropic,
-    ): EXT_texture_filter_anisotropic? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.KHR_parallel_shader_compile,
-    ): KHR_parallel_shader_compile? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_element_index_uint,
-    ): OES_element_index_uint? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_fbo_render_mipmap,
-    ): OES_fbo_render_mipmap? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_standard_derivatives,
-    ): OES_standard_derivatives? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_texture_float,
-    ): OES_texture_float? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_texture_float_linear,
-    ): OES_texture_float_linear? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_texture_half_float,
-    ): OES_texture_half_float? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_texture_half_float_linear,
-    ): OES_texture_half_float_linear? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OES_vertex_array_object,
-    ): OES_vertex_array_object? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.OVR_multiview2,
-    ): OVR_multiview2? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_color_buffer_float,
-    ): WEBGL_color_buffer_float? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_compressed_texture_astc,
-    ): WEBGL_compressed_texture_astc? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_compressed_texture_etc,
-    ): WEBGL_compressed_texture_etc? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_compressed_texture_etc1,
-    ): WEBGL_compressed_texture_etc1? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_compressed_texture_pvrtc,
-    ): WEBGL_compressed_texture_pvrtc? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_compressed_texture_s3tc,
-    ): WEBGL_compressed_texture_s3tc? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_compressed_texture_s3tc_srgb,
-    ): WEBGL_compressed_texture_s3tc_srgb? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_debug_renderer_info,
-    ): WEBGL_debug_renderer_info? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_debug_shaders,
-    ): WEBGL_debug_shaders? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_depth_texture,
-    ): WEBGL_depth_texture? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_draw_buffers,
-    ): WEBGL_draw_buffers? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_lose_context,
-    ): WEBGL_lose_context? = definedExternally
-
-    fun getExtension(
-        extensionName: WebGLExtension.WEBGL_multi_draw,
-    ): WEBGL_multi_draw? = definedExternally
+    @InternalApi
+    fun <T : JsAny?> getExtensionOrNullUnsafe(name: String): T? = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter)
@@ -1065,3 +928,214 @@ external interface WebGLRenderingContextBase {
 suspend inline fun WebGLRenderingContextBase.makeXRCompatible() {
     makeXRCompatibleAsync().await()
 }
+
+private fun <T : Any> WebGLRenderingContextBase.getExtensionUnsafe(
+    name: String,
+): T =
+    requireNotNull(getExtensionOrNullUnsafe(name)) {
+        "WebGL extension with name '$name' not found"
+    }
+
+fun <T : ANGLE_instanced_arrays> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("ANGLE_instanced_arrays")
+
+inline fun <T : ANGLE_instanced_arrays> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("ANGLE_instanced_arrays")
+
+fun <T : EXT_blend_minmax> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_blend_minmax")
+
+inline fun <T : EXT_blend_minmax> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_blend_minmax")
+
+fun <T : EXT_color_buffer_float> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_color_buffer_float")
+
+inline fun <T : EXT_color_buffer_float> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_color_buffer_float")
+
+fun <T : EXT_color_buffer_half_float> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_color_buffer_half_float")
+
+inline fun <T : EXT_color_buffer_half_float> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_color_buffer_half_float")
+
+fun <T : EXT_float_blend> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_float_blend")
+
+inline fun <T : EXT_float_blend> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_float_blend")
+
+fun <T : EXT_frag_depth> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_frag_depth")
+
+inline fun <T : EXT_frag_depth> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_frag_depth")
+
+fun <T : EXT_sRGB> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_sRGB")
+
+inline fun <T : EXT_sRGB> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_sRGB")
+
+fun <T : EXT_shader_texture_lod> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_shader_texture_lod")
+
+inline fun <T : EXT_shader_texture_lod> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_shader_texture_lod")
+
+fun <T : EXT_texture_compression_bptc> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_texture_compression_bptc")
+
+inline fun <T : EXT_texture_compression_bptc> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_texture_compression_bptc")
+
+fun <T : EXT_texture_compression_rgtc> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_texture_compression_rgtc")
+
+inline fun <T : EXT_texture_compression_rgtc> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_texture_compression_rgtc")
+
+fun <T : EXT_texture_filter_anisotropic> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("EXT_texture_filter_anisotropic")
+
+inline fun <T : EXT_texture_filter_anisotropic> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("EXT_texture_filter_anisotropic")
+
+fun <T : KHR_parallel_shader_compile> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("KHR_parallel_shader_compile")
+
+inline fun <T : KHR_parallel_shader_compile> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("KHR_parallel_shader_compile")
+
+fun <T : OES_element_index_uint> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_element_index_uint")
+
+inline fun <T : OES_element_index_uint> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_element_index_uint")
+
+fun <T : OES_fbo_render_mipmap> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_fbo_render_mipmap")
+
+inline fun <T : OES_fbo_render_mipmap> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_fbo_render_mipmap")
+
+fun <T : OES_standard_derivatives> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_standard_derivatives")
+
+inline fun <T : OES_standard_derivatives> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_standard_derivatives")
+
+fun <T : OES_texture_float> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_texture_float")
+
+inline fun <T : OES_texture_float> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_texture_float")
+
+fun <T : OES_texture_float_linear> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_texture_float_linear")
+
+inline fun <T : OES_texture_float_linear> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_texture_float_linear")
+
+fun <T : OES_texture_half_float> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_texture_half_float")
+
+inline fun <T : OES_texture_half_float> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_texture_half_float")
+
+fun <T : OES_texture_half_float_linear> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_texture_half_float_linear")
+
+inline fun <T : OES_texture_half_float_linear> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_texture_half_float_linear")
+
+fun <T : OES_vertex_array_object> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OES_vertex_array_object")
+
+inline fun <T : OES_vertex_array_object> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OES_vertex_array_object")
+
+fun <T : OVR_multiview2> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("OVR_multiview2")
+
+inline fun <T : OVR_multiview2> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("OVR_multiview2")
+
+fun <T : WEBGL_color_buffer_float> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_color_buffer_float")
+
+inline fun <T : WEBGL_color_buffer_float> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_color_buffer_float")
+
+fun <T : WEBGL_compressed_texture_astc> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_compressed_texture_astc")
+
+inline fun <T : WEBGL_compressed_texture_astc> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_compressed_texture_astc")
+
+fun <T : WEBGL_compressed_texture_etc> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_compressed_texture_etc")
+
+inline fun <T : WEBGL_compressed_texture_etc> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_compressed_texture_etc")
+
+fun <T : WEBGL_compressed_texture_etc1> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_compressed_texture_etc1")
+
+inline fun <T : WEBGL_compressed_texture_etc1> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_compressed_texture_etc1")
+
+fun <T : WEBGL_compressed_texture_pvrtc> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_compressed_texture_pvrtc")
+
+inline fun <T : WEBGL_compressed_texture_pvrtc> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_compressed_texture_pvrtc")
+
+fun <T : WEBGL_compressed_texture_s3tc> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_compressed_texture_s3tc")
+
+inline fun <T : WEBGL_compressed_texture_s3tc> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_compressed_texture_s3tc")
+
+fun <T : WEBGL_compressed_texture_s3tc_srgb> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_compressed_texture_s3tc_srgb")
+
+inline fun <T : WEBGL_compressed_texture_s3tc_srgb> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_compressed_texture_s3tc_srgb")
+
+fun <T : WEBGL_debug_renderer_info> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_debug_renderer_info")
+
+inline fun <T : WEBGL_debug_renderer_info> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_debug_renderer_info")
+
+fun <T : WEBGL_debug_shaders> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_debug_shaders")
+
+inline fun <T : WEBGL_debug_shaders> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_debug_shaders")
+
+fun <T : WEBGL_depth_texture> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_depth_texture")
+
+inline fun <T : WEBGL_depth_texture> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_depth_texture")
+
+fun <T : WEBGL_draw_buffers> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_draw_buffers")
+
+inline fun <T : WEBGL_draw_buffers> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_draw_buffers")
+
+fun <T : WEBGL_lose_context> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_lose_context")
+
+inline fun <T : WEBGL_lose_context> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_lose_context")
+
+fun <T : WEBGL_multi_draw> WebGLRenderingContextBase.getExtension(`_`: T? = null): T =
+    getExtensionUnsafe("WEBGL_multi_draw")
+
+inline fun <T : WEBGL_multi_draw> WebGLRenderingContextBase.getExtensionOrNull(`_`: T? = null): T? =
+    getExtensionOrNullUnsafe("WEBGL_multi_draw")

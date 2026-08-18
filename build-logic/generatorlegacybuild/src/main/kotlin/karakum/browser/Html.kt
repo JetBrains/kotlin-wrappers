@@ -868,6 +868,56 @@ internal fun convertInterface(
             )
         }
 
+        "WebGLRenderingContextBase" -> {
+            val (extensionLines, lines) = source.splitToSequence("\n")
+                .partition { it.startsWith("    getExtension(extensionName: \"") }
+
+            if (extensionLines.isNotEmpty()) {
+                var extensions = extensionLines.asSequence()
+                    .map { it.removeSurrounding("    getExtension(extensionName: ", " | null;") }
+                    .map { it.split("): ") }
+                    .joinToString("\n\n") { (id, type) ->
+                        // language=kotlin
+                        """
+                        fun <T : $type> $name.getExtension(`_`: T? = null): T =
+                            getExtensionUnsafe($id)
+
+                        inline fun <T : $type> $name.getExtensionOrNull(`_`: T? = null): T? =
+                            getExtensionOrNullUnsafe($id)
+                        """.trimIndent()
+                    }
+
+                // language=kotlin
+                extensions = """
+                private fun <T: Any> $name.getExtensionUnsafe(
+                    name: String,
+                ): T =
+                    requireNotNull(getExtensionOrNullUnsafe(name)) {
+                        "WebGL extension with name '${'$'}name' not found"
+                    }
+                """.trimIndent()
+                    .plus("\n\n")
+                    .plus(extensions)
+
+                val result = convertInterface(
+                    source = lines.joinToString("\n")
+                        .replace(
+                            "getExtension(name: string): any;",
+                            "getExtensionOrNullUnsafe<T>(name: string): T | null;",
+                        ),
+                    getStaticSource = getStaticSource,
+                    predefinedPkg = predefinedPkg,
+                )!!
+
+                val newBody = result.body
+                    .replace(Regex("(fun.+getExtensionOrNullUnsafe)"), "@InternalApi\n$1")
+                    .plus("\n\n")
+                    .plus(extensions)
+
+                return result.copy(body = newBody)
+            }
+        }
+
         "Global",
         "GlobalDescriptor",
             -> {
