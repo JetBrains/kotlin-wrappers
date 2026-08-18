@@ -91,7 +91,6 @@ private val ROLLED_UP_NAMES = mapOf(
     "React_2" to "React",
 )
 
-// longest first, so `X_2` matches before `X`
 private val ROLLED_UP_NAME_REGEX =
     Regex(
         ROLLED_UP_NAMES.keys
@@ -111,7 +110,6 @@ fun toDeclarations(
         .replace(Regex("^export .*\n?", RegexOption.MULTILINE), "") // `export { X }` re-exports
         .replace(Regex("^declare (?=interface |type )", RegexOption.MULTILINE), "")
         .fixRolledUpNames()
-        // drop focusManager `Listener`; onlineManager `Listener_2` (renamed above) takes the name
         .replace("\ntype Listener = (focused: boolean) => void;\n", "\n")
         .replace("{ ...options }", "options")
         .replace(
