@@ -910,7 +910,10 @@ internal fun convertInterface(
                 )!!
 
                 val newBody = result.body
-                    .replace(Regex("(fun.+getExtensionOrNullUnsafe)"), "@InternalApi\n$1")
+                    .replace(
+                        Regex("(fun.+getExtensionOrNullUnsafe)"),
+                        "@InternalApi\n@JsName(\"getExtension\")\n$1",
+                    )
                     .plus("\n\n")
                     .plus(extensions)
 

@@ -439,6 +439,7 @@ external interface WebGLRenderingContextBase {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension)
      */
     @InternalApi
+    @JsName("getExtension")
     fun <T : JsAny?> getExtensionOrNullUnsafe(name: String): T? = definedExternally
 
     /**
