@@ -2,7 +2,8 @@ package react.select
 
 import seskar.js.JsValue
 
-sealed external interface Action {
+sealed /* union */
+external interface Action {
     companion object {
         @JsValue("select-option")
         val selectOption: Action
