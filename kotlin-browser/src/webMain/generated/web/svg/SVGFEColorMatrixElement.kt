@@ -33,10 +33,29 @@ private constructor() :
     val values: SVGAnimatedNumberList
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement#svg_fecolormatrix_type_unknown)
+         */
         val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement#svg_fecolormatrix_type_matrix)
+         */
         val SVG_FECOLORMATRIX_TYPE_MATRIX: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement#svg_fecolormatrix_type_saturate)
+         */
         val SVG_FECOLORMATRIX_TYPE_SATURATE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement#svg_fecolormatrix_type_huerotate)
+         */
         val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement#svg_fecolormatrix_type_luminancetoalpha)
+         */
         val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Type
     }
 

@@ -54,11 +54,34 @@ private constructor() :
     val type: SVGAnimatedEnumeration<Type>
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_turbulence_type_unknown)
+         */
         val SVG_TURBULENCE_TYPE_UNKNOWN: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_turbulence_type_fractalnoise)
+         */
         val SVG_TURBULENCE_TYPE_FRACTALNOISE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_turbulence_type_turbulence)
+         */
         val SVG_TURBULENCE_TYPE_TURBULENCE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_stitchtype_unknown)
+         */
         val SVG_STITCHTYPE_UNKNOWN: StitchTiles
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_stitchtype_stitch)
+         */
         val SVG_STITCHTYPE_STITCH: StitchTiles
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_stitchtype_nostitch)
+         */
         val SVG_STITCHTYPE_NOSTITCH: StitchTiles
     }
 

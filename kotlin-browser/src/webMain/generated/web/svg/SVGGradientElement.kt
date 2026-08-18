@@ -33,9 +33,24 @@ private constructor() :
     val spreadMethod: SVGAnimatedEnumeration<SpreadMethod>
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement#svg_spreadmethod_unknown)
+         */
         val SVG_SPREADMETHOD_UNKNOWN: SpreadMethod
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement#svg_spreadmethod_pad)
+         */
         val SVG_SPREADMETHOD_PAD: SpreadMethod
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement#svg_spreadmethod_reflect)
+         */
         val SVG_SPREADMETHOD_REFLECT: SpreadMethod
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement#svg_spreadmethod_repeat)
+         */
         val SVG_SPREADMETHOD_REPEAT: SpreadMethod
     }
 

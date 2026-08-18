@@ -40,8 +40,19 @@ private constructor() :
     val radiusY: SVGAnimatedNumber
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement#svg_morphology_operator_unknown)
+         */
         val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement#svg_morphology_operator_erode)
+         */
         val SVG_MORPHOLOGY_OPERATOR_ERODE: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement#svg_morphology_operator_dilate)
+         */
         val SVG_MORPHOLOGY_OPERATOR_DILATE: Operator
     }
 

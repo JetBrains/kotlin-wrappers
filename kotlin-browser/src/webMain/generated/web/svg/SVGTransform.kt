@@ -86,12 +86,39 @@ private constructor() {
     )
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_unknown)
+         */
         val SVG_TRANSFORM_UNKNOWN: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_matrix)
+         */
         val SVG_TRANSFORM_MATRIX: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_translate)
+         */
         val SVG_TRANSFORM_TRANSLATE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_scale)
+         */
         val SVG_TRANSFORM_SCALE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_rotate)
+         */
         val SVG_TRANSFORM_ROTATE: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_skewx)
+         */
         val SVG_TRANSFORM_SKEWX: Type
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform#svg_transform_skewy)
+         */
         val SVG_TRANSFORM_SKEWY: Type
     }
 
