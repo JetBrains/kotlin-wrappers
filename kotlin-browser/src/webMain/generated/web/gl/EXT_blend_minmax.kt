@@ -8,6 +8,13 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_blend_minmax)
  */
 external interface EXT_blend_minmax {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_blend_minmax#ext.min_ext)
+     */
     val MIN_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_blend_minmax#ext.max_ext)
+     */
     val MAX_EXT: GLenum
 }

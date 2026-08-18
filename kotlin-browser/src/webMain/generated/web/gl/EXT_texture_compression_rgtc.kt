@@ -8,8 +8,23 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_compression_rgtc)
  */
 external interface EXT_texture_compression_rgtc {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_compression_rgtc#ext.compressed_red_rgtc1_ext)
+     */
     val COMPRESSED_RED_RGTC1_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_compression_rgtc#ext.compressed_signed_red_rgtc1_ext)
+     */
     val COMPRESSED_SIGNED_RED_RGTC1_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_compression_rgtc#ext.compressed_red_green_rgtc2_ext)
+     */
     val COMPRESSED_RED_GREEN_RGTC2_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_compression_rgtc#ext.compressed_signed_red_green_rgtc2_ext)
+     */
     val COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT: GLenum
 }

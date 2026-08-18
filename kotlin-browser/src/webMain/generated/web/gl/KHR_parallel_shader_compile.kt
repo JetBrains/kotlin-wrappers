@@ -8,5 +8,8 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KHR_parallel_shader_compile)
  */
 external interface KHR_parallel_shader_compile {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KHR_parallel_shader_compile#ext.completion_status_khr)
+     */
     val COMPLETION_STATUS_KHR: GLenum
 }

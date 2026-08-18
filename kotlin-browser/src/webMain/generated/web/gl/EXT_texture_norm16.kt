@@ -8,12 +8,43 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16)
  */
 external interface EXT_texture_norm16 {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.r16_ext)
+     */
     val R16_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.rg16_ext)
+     */
     val RG16_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.rgb16_ext)
+     */
     val RGB16_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.rgba16_ext)
+     */
     val RGBA16_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.r16_snorm_ext)
+     */
     val R16_SNORM_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.rg16_snorm_ext)
+     */
     val RG16_SNORM_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.rgb16_snorm_ext)
+     */
     val RGB16_SNORM_EXT: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EXT_texture_norm16#ext.rgba16_snorm_ext)
+     */
     val RGBA16_SNORM_EXT: GLenum
 }

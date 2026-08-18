@@ -152,4 +152,18 @@ internal class TypeProvider(
 
     fun getReturnType(name: String): String =
         IDLRegistry.getReturnType(parentType, name)
+
+    fun getPropertyComment(name: String): String? {
+        if (!WEBGL_CONST_RE.matches(name))
+            return null
+
+        if (!isWebglExtensionName(parentType))
+            return null
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$parentType#ext.${name.lowercase()})
+         */
+        """.trimIndent()
+    }
 }

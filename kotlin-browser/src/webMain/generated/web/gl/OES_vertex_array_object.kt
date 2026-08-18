@@ -35,5 +35,9 @@ external interface OES_vertex_array_object {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_vertex_array_object/isVertexArrayOES)
      */
     fun isVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES?): GLboolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_vertex_array_object#ext.vertex_array_binding_oes)
+     */
     val VERTEX_ARRAY_BINDING_OES: GLenum
 }
