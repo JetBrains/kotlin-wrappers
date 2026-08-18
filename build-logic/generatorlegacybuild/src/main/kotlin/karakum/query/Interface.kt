@@ -69,6 +69,9 @@ class Interface(
             name.startsWith("MutationObserver")
                 -> content.replaceFirst("status: QueryStatus", "status: MutationStatus")
 
+            name.startsWith("NotifyEvent")
+                -> content.replaceFirst("type: Type /*", "type: NotifyEventType /*")
+
             name.startsWith("UseSuspense") || name.startsWith("UsePrefetch")
                 -> "/* $content */"
 
