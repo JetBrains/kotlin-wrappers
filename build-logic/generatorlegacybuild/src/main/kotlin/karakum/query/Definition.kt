@@ -80,27 +80,12 @@ private val SKIPPED_DECLARATIONS = setOf(
     "SuspenseQueriesResults",
 )
 
-// tsup dts rollup gives the `_2` suffix to identifiers duplicated across rolled-up files.
-// Restore distinct names:
 private val ROLLED_UP_NAMES = mapOf(
-    // mutation action types got `_2`; query action types (previously `Action$1` etc.) stayed unsuffixed
     "Action_alias_1" to "Action_1",
-    "ContinueAction" to "ContinueAction_1",
-    "ContinueAction_2" to "ContinueAction",
-    "ErrorAction" to "ErrorAction_1",
-    "ErrorAction_2" to "ErrorAction",
-    "FailedAction" to "FailedAction_1",
-    "FailedAction_2" to "FailedAction",
-    "PauseAction" to "PauseAction_1",
-    "PauseAction_2" to "PauseAction",
-    "SuccessAction" to "SuccessAction_1",
-    "SuccessAction_2" to "SuccessAction",
 
-    // focusManager `SetupFn` vs. onlineManager `SetupFn_2`
     "SetupFn" to "FocusManagerSetupFn",
     "SetupFn_2" to "OnlineManagerSetupFn",
 
-    // the `_2` copy refers to the same declaration
     "Listener_2" to "Listener",
     "MutationObserver_2" to "MutationObserver",
     "React_2" to "React",
@@ -232,7 +217,7 @@ fun toDeclarations(
         )
         // TODO: check
         .replace(Regex(""" {4}get (\w+)\(\): """), "    $1: ")
-        .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: QueryType;")
+        .replace("    queryType: \"infinite\" | undefined;", "    queryType?: QueryType;")
         .replace(Regex("""declare const environmentManager: \{\n.+?\n\};\n""", RegexOption.DOT_MATCHES_ALL), "")
         .replace(
             """
@@ -350,6 +335,7 @@ fun toDeclarations(
             }
         }
         .filter { it.name !in SKIPPED_DECLARATIONS }
+        .filter { !it.name.matches(Regex("""\w+Action(_2)?""")) }
         .toList()
 }
 
