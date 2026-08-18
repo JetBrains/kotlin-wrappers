@@ -117,7 +117,6 @@ private val STANDARD_TYPE_MAP = mapOf(
 )
 
 private val SAFE_PREFIXES = setOf(
-    "Action",
     "Ensured",
     "Get",
     "Fetch",

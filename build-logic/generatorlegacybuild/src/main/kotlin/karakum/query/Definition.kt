@@ -85,8 +85,6 @@ private val SKIPPED_DECLARATIONS = setOf(
 )
 
 private val ROLLED_UP_NAMES = mapOf(
-    "Action_alias_1" to "Action_1",
-
     "SetupFn" to "FocusManagerSetupFn",
     "SetupFn_2" to "OnlineManagerSetupFn",
 
@@ -172,6 +170,9 @@ fun toDeclarations(
         .replace("\n    isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean;\n", "\n")
         .replace("\n    _optimisticResults?: 'optimistic' | 'isRestoring';\n", "\n")
         .replace("\n    _type?: 'infinite';\n", "\n")
+        .replace("\n    onMutationUpdate(action: Action<TData, TError, TVariables, TOnMutateResult>): void;\n", "\n")
+        .replace("\n    action: Action<any, any, any, any>;\n", "\n")
+        .replace("\n    action: Action_alias_1<any, any>;\n", "\n")
         .replace(OPTIMISTIC_RESULT, "QueriesObserverOptimisticResult<TCombinedResult>")
         .replace(
             "type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam = never> = [TPageParam] extends [never] ? (queryFn: QueryFunction<T, TQueryKey, never>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T> : (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;",
@@ -360,7 +361,7 @@ fun toDeclarations(
             }
         }
         .filter { it.name !in SKIPPED_DECLARATIONS }
-        .filter { !it.name.matches(Regex("""\w+Action(_2)?""")) }
+        .filter { !it.name.matches(Regex("""\w*Action(_\w+)?""")) }
         .toList()
 }
 

@@ -196,12 +196,6 @@ class Type(
                 external interface $name
                 """.trimIndent()
 
-        if (name == "Action" || name == "Action_1")
-            return """
-                // ${originalBody.replace("_2", "")}
-                sealed external interface $name${formatParameters(typeParameters)}
-                """.trimIndent()
-
         if (name == "UseBaseMutationResult") {
             return """
             @JsPlainObject

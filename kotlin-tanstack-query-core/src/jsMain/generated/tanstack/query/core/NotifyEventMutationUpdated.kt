@@ -9,5 +9,4 @@ external interface NotifyEventMutationUpdated :
     NotifyEvent {
     override val type: NotifyEventType /* 'updated' */
     val mutation: Mutation<*, *, *, *>
-    val action: Action<*, *, *, *>
 }

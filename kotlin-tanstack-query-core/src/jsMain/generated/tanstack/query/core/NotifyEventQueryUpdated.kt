@@ -9,5 +9,4 @@ external interface NotifyEventQueryUpdated :
     NotifyEvent {
     override val type: NotifyEventType /* 'updated' */
     val query: Query<*, *, *, *>
-    val action: Action_1<*, *>
 }
