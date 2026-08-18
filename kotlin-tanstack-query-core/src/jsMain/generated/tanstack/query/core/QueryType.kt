@@ -4,7 +4,8 @@ package tanstack.query.core
 
 import seskar.js.JsValue
 
-sealed external interface QueryType {
+sealed /* union */
+external interface QueryType {
     companion object {
         @JsValue("infinite")
         val infinite: QueryType

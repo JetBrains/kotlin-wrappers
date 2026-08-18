@@ -19,6 +19,9 @@ private val SKIPPED_DECLARATIONS = setOf(
     "Optional",
     "WithRequired",
 
+    // `environmentManager` internals (dropped with it)
+    "IsServerValue",
+
     // internal `thenable` declarations
     "Fulfilled",
     "Rejected",
@@ -119,19 +122,9 @@ fun toDeclarations(
     val fixAction = definitionFile.name == "mutation.d.ts"
 
     val content = definitionFile.readText()
-        .splitToSequence("\n")
-        .map { line ->
-            if (line.startsWith("export declare ")) line.removePrefix("export ") else line
-        }
-        .filter { !it.startsWith("export ") }
-        .joinToString("\n") { line ->
-            when {
-                line.startsWith("declare interface ") || line.startsWith("declare type ")
-                    -> line.removePrefix("declare ")
-
-                else -> line
-            }
-        }
+        .replace(Regex("^export (?=declare )", RegexOption.MULTILINE), "")
+        .replace(Regex("^export .*\n?", RegexOption.MULTILINE), "") // `export { X }` re-exports
+        .replace(Regex("^declare (?=interface |type )", RegexOption.MULTILINE), "")
         .fixRolledUpNames()
         // drop focusManager `Listener`; onlineManager `Listener_2` (renamed above) takes the name
         .replace("\ntype Listener = (focused: boolean) => void;\n", "\n")
@@ -190,6 +183,8 @@ fun toDeclarations(
         )
         .replace(" QueryFilters<any>", " QueryFilters<*>")
         .replace("\n    isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean;\n", "\n")
+        .replace("\n    _optimisticResults?: 'optimistic' | 'isRestoring';\n", "\n")
+        .replace("\n    _type?: 'infinite';\n", "\n")
         .replace(OPTIMISTIC_RESULT, "QueriesObserverOptimisticResult<TCombinedResult>")
         .replace(
             "type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam = never> = [TPageParam] extends [never] ? (queryFn: QueryFunction<T, TQueryKey, never>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T> : (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;",
@@ -236,9 +231,9 @@ fun toDeclarations(
             "interface ObserverFetchOptions<TData> extends FetchOptions<TData>",
         )
         // TODO: check
-        .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: QueryType;")
         .replace(Regex(""" {4}get (\w+)\(\): """), "    $1: ")
-        .replaceEnvironmentManager()
+        .replace("    get queryType(): \"infinite\" | undefined;", "    queryType?: QueryType;")
+        .replace(Regex("""declare const environmentManager: \{\n.+?\n\};\n""", RegexOption.DOT_MATCHES_ALL), "")
         .replace(
             """
             type ManagedTimerId = number | {

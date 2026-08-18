@@ -20,7 +20,6 @@ external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKe
     val behavior: QueryBehavior<TQueryFnData, TError, TData, TQueryKey>?
     val structuralSharing: Any /* boolean | ((oldData: unknown | undefined, newData: unknown) => unknown) */?
     val _defaulted: Boolean?
-    val _type: QueryType?
     val meta: QueryMeta?
     val maxPages: Int?
 }

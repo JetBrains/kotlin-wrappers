@@ -51,12 +51,6 @@ fun generateKotlinDeclarations(
     coreTargetDir.resolve("QueryType.kt")
         .writeCode(QUERY_TYPE_BODY)
 
-    coreTargetDir.resolve("OptimisticResults.kt")
-        .writeCode(OPTIMISTIC_RESULTS_BODY)
-
-    coreTargetDir.resolve("EnvironmentManager.kt")
-        .writeCode(ENVIRONMENT_MANAGER_CODE)
-
     generate(coreTypesDir, coreTargetDir, Package.CORE)
     generate(reactTypesDir, reactTargetDir, Package.REACT)
 }
