@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias QueryCacheNotifyEvent = Union /* NotifyEventQueryAdded | NotifyEventQueryRemoved | NotifyEventQueryUpdated | NotifyEventQueryObserverAdded | NotifyEventQueryObserverRemoved | NotifyEventQueryObserverResultsUpdated | NotifyEventQueryObserverOptionsUpdated */
+sealed external interface QueryCacheNotifyEvent

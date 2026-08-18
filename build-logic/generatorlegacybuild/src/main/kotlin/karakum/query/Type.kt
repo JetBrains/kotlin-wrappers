@@ -190,6 +190,9 @@ class Type(
         if (body.toIntOrNull() != null)
             return "const val $name = $body"
 
+        if (name == "QueryCacheNotifyEvent" || name == "MutationCacheNotifyEvent")
+            return "sealed external interface $name"
+
         if (name == "QueryKey" || name == "MutationKey")
             return """
                 // $body

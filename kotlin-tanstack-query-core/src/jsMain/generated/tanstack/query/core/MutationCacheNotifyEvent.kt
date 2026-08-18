@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias MutationCacheNotifyEvent = Union /* NotifyEventMutationAdded | NotifyEventMutationRemoved | NotifyEventMutationObserverAdded | NotifyEventMutationObserverRemoved | NotifyEventMutationObserverOptionsUpdated | NotifyEventMutationUpdated */
+sealed external interface MutationCacheNotifyEvent

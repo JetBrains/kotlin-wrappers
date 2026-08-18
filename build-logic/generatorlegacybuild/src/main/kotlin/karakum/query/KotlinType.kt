@@ -161,7 +161,6 @@ internal fun kotlinType(
 
     if (type.startsWith("'")) {
         return when (name) {
-            "type" -> "Type /* $type */"
             "status" -> "QueryStatus /* $type */"
             "queryType" -> {
                 check(type == "'infinite'") { "Update `QueryType` union! Actual type - $type" }

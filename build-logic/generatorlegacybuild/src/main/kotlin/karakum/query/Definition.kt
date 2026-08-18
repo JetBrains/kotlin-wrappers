@@ -26,6 +26,16 @@ private val SKIPPED_DECLARATIONS = setOf(
     "ManagedTimerId",
     "TimeoutCallback",
 
+    // `notifyManager` internals
+    "createNotifyManager",
+    "defaultScheduler",
+    "notifyManager",
+    "NotifyCallback",
+    "NotifyFunction",
+    "BatchNotifyFunction",
+    "BatchCallsCallback",
+    "ScheduleFunction",
+
     // internal `thenable` declarations
     "Fulfilled",
     "Rejected",
@@ -362,6 +372,7 @@ fun toDeclarations(
         }
         .filter { it.name !in SKIPPED_DECLARATIONS }
         .filter { !it.name.matches(Regex("""\w*Action(_\w+)?""")) }
+        .filter { !it.name.matches(Regex("""NotifyEvent\w*""")) }
         .toList()
 }
 
