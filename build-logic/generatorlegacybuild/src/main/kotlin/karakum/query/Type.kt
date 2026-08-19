@@ -92,7 +92,6 @@ class Type(
                 .removeSurrounding("(", ")")
                 .replace(" => boolean", " -> Boolean")
                 .replace(" => number", " -> Number")
-                .replace(" => ", " -> ")
                 .replace(" => ", " -> ") +
                     " /* | ${body.substringBefore(" | ")} */"
 
