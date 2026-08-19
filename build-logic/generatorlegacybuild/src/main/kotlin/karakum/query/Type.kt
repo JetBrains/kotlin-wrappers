@@ -190,7 +190,7 @@ class Type(
                 external interface $name
                 """.trimIndent()
 
-        if (name == "Action")
+        if (name == "Action" || name == "Action_1")
             return """
                 // ${originalBody.replace("_2", "")}
                 sealed external interface $name${formatParameters(typeParameters)}
