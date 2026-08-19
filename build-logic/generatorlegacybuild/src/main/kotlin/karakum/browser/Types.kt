@@ -2,6 +2,7 @@ package karakum.browser
 
 import karakum.common.CommonUnionConverter.objectUnionBody
 import karakum.common.CommonUnionConverter.sealedUnionBody
+import karakum.common.UnionConverter.CommentProvider
 import karakum.common.unionConstant
 
 private val PKG_MAP = mapOf(
@@ -228,24 +229,88 @@ private val NUMBER_TYPE_MAP = mapOf(
     "GPUTextureUsageFlags" to "JsInt /* Bitmask */",
 )
 
+private class CommentProviderImpl(
+    content: String,
+) : CommentProvider {
+    private val typeMap: Map<String, String> = buildMap {
+        val types = content
+            .splitToSequence("\ntype ")
+            .drop(1)
+            .map { it.substringBefore(";\n") }
+            .filter { " = \"" in it }
+            .map { it.substringBefore(" = ") }
+            .toList()
+
+        for (type in types) {
+            val source = content.split(
+                ": $type;",
+                ": $type | null;",
+                ": $type | undefined;",
+            ).dropLast(1)
+                .map { it.substringAfterLast("\n */\ninterface ", "") }
+                .firstOrNull { it.isNotEmpty() && "\ndeclare var " !in it && "\ninterface " !in it }
+                ?: continue
+
+            val name = source
+                .substringBefore(" ")
+                .substringBefore("<")
+
+            val propertyName = source
+                .substringAfterLast(" ")
+                .removeSuffix("?")
+
+            put(type, "$name/$propertyName")
+        }
+    }
+
+    override fun getComment(
+        name: String,
+    ): String? {
+        val key = typeMap[name]
+            ?: return null
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$key)
+         */
+        """.trimIndent()
+    }
+
+    override fun getComment(
+        name: String,
+        unionValue: String,
+    ): String? {
+        val key = typeMap[name]
+            ?: return null
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$key#${unionValue.ifEmpty { "sect" }})
+         */
+        """.trimIndent()
+    }
+}
+
 internal fun browserTypes(
     content: String,
 ): Sequence<ConversionResult> =
-    convertTypes(content, ::getTypePkg)
+    convertTypes(content, ::getTypePkg, CommentProviderImpl(content))
 
 internal fun convertTypes(
     content: String,
     getPkg: (name: String) -> String?,
+    commentProvider: CommentProvider? = null,
 ): Sequence<ConversionResult> =
     content
         .splitToSequence("\ntype ")
         .drop(1)
         .map { it.substringBefore(";\n") }
-        .mapNotNull { convertType(it, getPkg) }
+        .mapNotNull { convertType(it, getPkg, commentProvider) }
 
 private fun convertType(
     source: String,
     getPkg: (name: String) -> String?,
+    commentProvider: CommentProvider?,
 ): ConversionResult? {
     if (" = " !in source)
         return null
@@ -521,7 +586,7 @@ private fun convertType(
             constants = values.map(::unionConstant),
         )
 
-        else -> sealedUnionBody(name, values)
+        else -> sealedUnionBody(name, values, commentProvider)
     }
 
     return ConversionResult(

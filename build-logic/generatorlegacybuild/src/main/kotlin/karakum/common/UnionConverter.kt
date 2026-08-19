@@ -23,7 +23,7 @@ internal interface UnionConverter {
 
     interface CommentProvider {
         fun getComment(name: String): String?
-        fun getComment(name: String, propertyName: String): String?
+        fun getComment(name: String, unionValue: String): String?
     }
 }
 
@@ -171,11 +171,14 @@ internal object CommonUnionConverter : UnionConverter {
         val constants = values.map(::unionConstant)
 
         val extensions = constants.joinToString("\n\n") {
-            """
-            ${commentProvider?.getComment(name, it.name) ?: ""}
-            inline val $name.Companion.${it.name}: $name
-                get() = unsafeCast(${it.jsValue})
-            """.trimIndent()
+            sequenceOf(
+                commentProvider?.getComment(name, it.value),
+                """
+                inline val $name.Companion.${it.name}: $name
+                    get() = unsafeCast(${it.jsValue})
+                """.trimIndent(),
+            ).filterNotNull()
+                .joinToString("\n")
         }
 
         return sequenceOf(
