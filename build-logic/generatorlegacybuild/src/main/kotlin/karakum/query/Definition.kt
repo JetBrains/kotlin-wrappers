@@ -170,8 +170,6 @@ fun toDeclarations(
         )
         .replace(" QueryFilters<any>", " QueryFilters<*>")
         .replace("\n    isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean;\n", "\n")
-        .replace("\n    _optimisticResults?: 'optimistic' | 'isRestoring';\n", "\n")
-        .replace("\n    _type?: 'infinite';\n", "\n")
         .replace(OPTIMISTIC_RESULT, "QueriesObserverOptimisticResult<TCombinedResult>")
         .replace(
             "type QueryPersister<T = unknown, TQueryKey extends QueryKey = QueryKey, TPageParam = never> = [TPageParam] extends [never] ? (queryFn: QueryFunction<T, TQueryKey, never>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T> : (queryFn: QueryFunction<T, TQueryKey, TPageParam>, context: QueryFunctionContext<TQueryKey>, query: Query) => T | Promise<T>;",
