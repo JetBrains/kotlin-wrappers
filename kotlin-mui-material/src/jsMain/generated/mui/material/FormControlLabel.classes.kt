@@ -13,6 +13,9 @@ sealed external interface FormControlLabelClasses {
     /** Styles applied to the root element if `labelPlacement="start"`. */
     val labelPlacementStart: ClassName
 
+    /** Styles applied to the root element if `labelPlacement="end"`. */
+    val labelPlacementEnd: ClassName
+
     /** Styles applied to the root element if `labelPlacement="top"`. */
     val labelPlacementTop: ClassName
 
