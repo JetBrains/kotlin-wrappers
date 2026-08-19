@@ -170,7 +170,6 @@ fun toDeclarations(
         .replace("\n    isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean;\n", "\n")
         .replace("\n    _optimisticResults?: 'optimistic' | 'isRestoring';\n", "\n")
         .replace("\n    _type?: 'infinite';\n", "\n")
-        .replace("\n    onMutationUpdate(action: Action<TData, TError, TVariables, TOnMutateResult>): void;\n", "\n")
         .replace("\n    action: Action<any, any, any, any>;\n", "\n")
         .replace("\n    action: Action_alias_1<any, any>;\n", "\n")
         .replace(OPTIMISTIC_RESULT, "QueriesObserverOptimisticResult<TCombinedResult>")
@@ -361,7 +360,8 @@ fun toDeclarations(
             }
         }
         .filter { it.name !in SKIPPED_DECLARATIONS }
-        .filter { !it.name.matches(Regex("""\w*Action(_\w+)?""")) }
+        // `Action` itself stays - `MutationObserver.onMutationUpdate` is public API
+        .filter { !it.name.matches(Regex("""\w+Action(_\w+)?|Action_\w+""")) }
         .toList()
 }
 
