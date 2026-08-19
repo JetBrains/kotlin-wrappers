@@ -221,45 +221,23 @@ fun toDeclarations(
         .replace(Regex(""" {4}get (\w+)\(\): """), "    $1: ")
         .replace("    queryType: \"infinite\" | undefined;", "    queryType?: QueryType;")
         .replace(Regex("""declare const environmentManager: \{\n.+?\n\};\n""", RegexOption.DOT_MATCHES_ALL), "")
+        .replace("callback: TimeoutCallback", "callback: TimerHandler")
+        .replace("<TTimerId extends ManagedTimerId = ManagedTimerId>", "")
+        .replace(" implements Omit<TimeoutProvider, 'name'>", "")
         .replace(
-            """
-            type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {
-                readonly setTimeout: (callback: TimeoutCallback, delay: number) => TTimerId;
-                readonly clearTimeout: (timeoutId: TTimerId | undefined) => void;
-                readonly setInterval: (callback: TimeoutCallback, delay: number) => TTimerId;
-                readonly clearInterval: (intervalId: TTimerId | undefined) => void;
-            };
-            """.trimIndent(),
-            """
-            interface TimeoutProvider {
-                readonly setTimeout: (callback: TimerHandler, delay: number) => Timeout;
-                readonly clearTimeout: (timeoutId: Timeout | undefined) => void;
-                readonly setInterval: (callback: TimerHandler, delay: number) => Interval;
-                readonly clearInterval: (intervalId: Interval | undefined) => void;
-            }
-            """.trimIndent(),
+            "setTimeoutProvider<TTimerId extends ManagedTimerId>(provider: TimeoutProvider<TTimerId>)",
+            "setTimeoutProvider(provider: TimeoutProvider)",
         )
         .replace(
-            """
-            class TimeoutManager implements Omit<TimeoutProvider, 'name'> {
-                #private;
-                setTimeoutProvider<TTimerId extends ManagedTimerId>(provider: TimeoutProvider<TTimerId>): void;
-                setTimeout(callback: TimeoutCallback, delay: number): ManagedTimerId;
-                clearTimeout(timeoutId: ManagedTimerId | undefined): void;
-                setInterval(callback: TimeoutCallback, delay: number): ManagedTimerId;
-                clearInterval(intervalId: ManagedTimerId | undefined): void;
-            }
-            """.trimIndent(),
-            """
-            class TimeoutManager {
-                setTimeoutProvider(provider: TimeoutProvider): void;
-                setTimeout(callback: TimerHandler, delay: number): Timeout;
-                clearTimeout(timeoutId: Timeout | undefined): void;
-                setInterval(callback: TimerHandler, delay: number): Interval;
-                clearInterval(intervalId: Interval | undefined): void;
-            }
-            """.trimIndent(),
+            Regex("""set(Timeout|Interval): \(callback: TimerHandler, delay: number\) => TTimerId"""),
+            "set$1: (callback: TimerHandler, delay: number) => $1",
         )
+        .replace(
+            Regex("""set(Timeout|Interval)\(callback: TimerHandler, delay: number\): ManagedTimerId"""),
+            "set$1(callback: TimerHandler, delay: number): $1",
+        )
+        .replace(Regex("""timeoutId: \w+"""), "timeoutId: Timeout")
+        .replace(Regex("""intervalId: \w+"""), "intervalId: Interval")
         // TEMP
         .replace(" & {\n        manual: boolean;\n    }", "")
         .replace(
