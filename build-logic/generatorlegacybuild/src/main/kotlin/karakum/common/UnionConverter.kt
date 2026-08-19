@@ -1,5 +1,7 @@
 package karakum.common
 
+import karakum.common.UnionConverter.CommentProvider
+
 // Interface for TS unions conversion helpers
 internal interface UnionConverter {
     fun unionBody(
@@ -13,11 +15,16 @@ internal interface UnionConverter {
 
     fun unionBodyByConstants(name: String, constants: List<UnionConstant>): String
 
-    fun sealedUnionBody(name: String, values: List<String>): String
+    fun sealedUnionBody(name: String, values: List<String>, commentProvider: CommentProvider? = null): String
 
     fun sealedUnionBody(name: String, parentType: String, values: List<String>): String
 
     fun objectUnionBody(name: String, constants: List<UnionConstant>): String
+
+    interface CommentProvider {
+        fun getComment(name: String): String?
+        fun getComment(name: String, propertyName: String): String?
+    }
 }
 
 // Helpers converting TS unions to sealed external interfaces, which include fields annotated with @JsValue.
@@ -48,6 +55,7 @@ internal object JsUnionConverter : UnionConverter {
     override fun sealedUnionBody(
         name: String,
         values: List<String>,
+        commentProvider: CommentProvider?,
     ): String {
         val constants = values.map(::unionConstant)
 
@@ -158,23 +166,29 @@ internal object CommonUnionConverter : UnionConverter {
     override fun sealedUnionBody(
         name: String,
         values: List<String>,
+        commentProvider: CommentProvider?,
     ): String {
         val constants = values.map(::unionConstant)
 
         val extensions = constants.joinToString("\n\n") {
             """
+            ${commentProvider?.getComment(name, it.name) ?: ""}
             inline val $name.Companion.${it.name}: $name
                 get() = unsafeCast(${it.jsValue})
             """.trimIndent()
         }
 
-        return """
-        $JS_UNION
-        sealed /* union */
-        external interface $name
+        return sequenceOf(
+            commentProvider?.getComment(name),
+            """
+            $JS_UNION
+            sealed /* union */
+            external interface $name
 
-        $extensions
-    """.trimIndent()
+            $extensions
+            """.trimIndent(),
+        ).filterNotNull()
+            .joinToString("\n")
     }
 
     override fun sealedUnionBody(
