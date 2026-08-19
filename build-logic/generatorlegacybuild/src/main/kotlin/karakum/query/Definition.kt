@@ -360,7 +360,6 @@ fun toDeclarations(
             }
         }
         .filter { it.name !in SKIPPED_DECLARATIONS }
-        // `Action` itself stays - `MutationObserver.onMutationUpdate` is public API
         .filter { !it.name.matches(Regex("""\w+Action(_\w+)?|Action_\w+""")) }
         .toList()
 }
