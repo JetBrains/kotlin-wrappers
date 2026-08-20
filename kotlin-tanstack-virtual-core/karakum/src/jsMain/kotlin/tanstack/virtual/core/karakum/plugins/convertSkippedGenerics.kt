@@ -7,6 +7,7 @@ import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
 
+// `Virtualizer<T, any>` / `Virtualizer<any, T>`
 val convertSkippedGenerics = createPlugin { node, _, render ->
     nullable {
         ensure(isTypeReferenceNode(node))
@@ -14,12 +15,15 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
         val typeName = node.typeName
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Virtualizer")
-        ensure(node.typeArguments?.asArray()?.size == 2)
 
-        val firstArgument = ensureNotNull(node.typeArguments?.asArray()?.first())
-        val secondArgument = ensureNotNull(node.typeArguments?.asArray()?.last())
-        ensure(secondArgument.kind == SyntaxKind.AnyKeyword)
+        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        ensure(typeArguments.size == 2)
 
-        "${render(node.typeName)}<${render(firstArgument)}, *>"
+        val arguments = typeArguments.map { argument ->
+            if (argument.kind == SyntaxKind.AnyKeyword) "*" else render(argument)
+        }
+        ensure(arguments.any { it == "*" })
+
+        "${render(typeName)}<${arguments.joinToString(", ")}>"
     }
 }

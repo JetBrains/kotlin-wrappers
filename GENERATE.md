@@ -73,7 +73,9 @@ TanStack Virtual
 ```sh
 ./gradlew :kotlin-tanstack-virtual-core-karakum:generateKarakumExternals
 ./gradlew :kotlin-tanstack-virtual-core:build
+```
 
+```sh
 ./gradlew :kotlin-tanstack-react-virtual-karakum:generateKarakumExternals
 ./gradlew :kotlin-tanstack-react-virtual:build
 ```

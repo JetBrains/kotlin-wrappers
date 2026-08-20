@@ -1,11 +1,14 @@
 package tanstack.virtual.core.karakum
 
+import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
+import io.github.sgrishchenko.karakum.configuration.replace
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
 import tanstack.virtual.core.karakum.annotations.createJsPlainObjectAnnotation
-import tanstack.virtual.core.karakum.plugins.convertSkippedGenerics
-import tanstack.virtual.core.karakum.plugins.convertUtilityTypes
+import tanstack.virtual.core.karakum.nameResolvers.resolveItemRangeName
+import tanstack.virtual.core.karakum.nameResolvers.resolveScrollOptionsName
+import tanstack.virtual.core.karakum.plugins.*
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
@@ -16,8 +19,28 @@ suspend fun main(args: ReadonlyArray<String>) {
         )
 
         plugins = listOf(
+            convertConstFunctionTypeGenerics,
+            convertElementWindowUnion,
+            convertFollowOnAppend,
+            convertInitialOffsetUnion,
+            convertKey,
+            convertOffsetForIndexReturn,
+            convertScrollToEndOptions,
             convertSkippedGenerics,
+            convertTypeParameterReferences,
             convertUtilityTypes,
+            convertVoidCleanupUnion,
+            convertWindowGlobalThisIntersection,
+        )
+
+        nameResolvers = listOf(
+            ::resolveItemRangeName,
+            ::resolveScrollOptionsName,
+        )
+
+        conflictResolutionStrategy = mapOf(
+            "ItemRange.kt" to ConflictResolutionStrategy.replace,
+            "ScrollOptions.kt" to ConflictResolutionStrategy.replace,
         )
 
         ignoreOutput = listOf(
@@ -26,6 +49,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/NoInfer.kt",
             "**/PartialKeys.kt",
             "**/ScrollBehavior.kt",
+            "**/_resetIOSDetectionForTests.kt",
         )
 
         libraryNameOutputPrefix = true
@@ -44,7 +68,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "ScrollToOptions.kt" to listOf(
                 "web.scroll.ScrollBehavior",
             ),
-            "VirtualizerOptionsScrollToFnOptions.kt" to listOf(
+            "ScrollOptions.kt" to listOf(
                 "web.scroll.ScrollBehavior",
             ),
         )

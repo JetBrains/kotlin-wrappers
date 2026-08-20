@@ -16,6 +16,10 @@ dependencyResolutionManagement {
                 version("kotlin", kotlinVersion)
             }
         }
+
+        create("jspkg") {
+            from(files("gradle/jspkg.versions.toml"))
+        }
     }
 }
 

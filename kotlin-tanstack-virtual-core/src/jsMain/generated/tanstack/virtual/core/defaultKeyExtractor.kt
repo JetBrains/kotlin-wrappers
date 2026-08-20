@@ -4,4 +4,4 @@
 
 package tanstack.virtual.core
 
-external val defaultKeyExtractor: (index: Int) -> Int
+external val defaultKeyExtractor: (index: Double) -> Double

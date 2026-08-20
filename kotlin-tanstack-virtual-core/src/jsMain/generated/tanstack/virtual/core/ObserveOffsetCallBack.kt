@@ -2,4 +2,4 @@
 
 package tanstack.virtual.core
 
-typealias ObserveOffsetCallBack = (offset: Int, isScrolling: Boolean) -> Unit
+typealias ObserveOffsetCallBack = (offset: Double, isScrolling: Boolean) -> Unit

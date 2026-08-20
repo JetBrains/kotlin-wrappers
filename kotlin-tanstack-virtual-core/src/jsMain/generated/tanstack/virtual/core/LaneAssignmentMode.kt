@@ -2,14 +2,12 @@
 
 package tanstack.virtual.core
 
-import seskar.js.JsValue
-
 sealed external interface LaneAssignmentMode {
-    companion object {
-        @JsValue("estimate")
-        val estimate: LaneAssignmentMode
-
-        @JsValue("measured")
-        val measured: LaneAssignmentMode
-    }
+    companion object
 }
+
+inline val LaneAssignmentMode.Companion.estimate: LaneAssignmentMode
+    get() = js.reflect.unsafeCast("estimate")
+
+inline val LaneAssignmentMode.Companion.measured: LaneAssignmentMode
+    get() = js.reflect.unsafeCast("measured")

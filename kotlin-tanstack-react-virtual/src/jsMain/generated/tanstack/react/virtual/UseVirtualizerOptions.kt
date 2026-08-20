@@ -2,44 +2,48 @@
 
 package tanstack.react.virtual
 
-import js.array.ReadonlyArray
-import kotlinx.js.JsPlainObject
 import tanstack.virtual.core.*
-import web.dom.Element
-import web.events.EventTarget
-import web.resize.ResizeObserverEntry
 
-@JsPlainObject
-external interface UseVirtualizerOptions<TScrollElement : EventTarget, TItemElement : Element> {
-    val count: Int
-    val getScrollElement: () -> TScrollElement?
-    val estimateSize: (index: Int) -> Int
-    val debug: Boolean?
-    val initialRect: Rect?
-    val onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
-    val measureElement: ((element: TItemElement, entry: ResizeObserverEntry?, instance: Virtualizer<TScrollElement, TItemElement>) -> Int)?
-    val overscan: Int?
-    val horizontal: Boolean?
-    val paddingStart: Int?
-    val paddingEnd: Int?
-    val scrollPaddingStart: Int?
-    val scrollPaddingEnd: Int?
-    val initialOffset: Int /* | (() -> Int) */?
-    val getItemKey: ((index: Int) -> Key)?
-    val rangeExtractor: ((range: Range) -> ReadonlyArray<Int>)?
-    val scrollMargin: Int?
-    val gap: Int?
-    val indexAttribute: String?
-    val initialMeasurementsCache: ReadonlyArray<VirtualItem>?
-    val lanes: Int?
-    val anchorTo: ScrollAnchor?
-    val followOnAppend: FollowOnAppend?
-    val scrollEndThreshold: Int?
-    val isScrollingResetDelay: Int?
-    val useScrollendEvent: Boolean?
-    val enabled: Boolean?
-    val isRtl: Boolean?
-    val useAnimationFrameWithResizeObserver: Boolean?
-    val laneAssignmentMode: LaneAssignmentMode?
-    val useCachedMeasurements: Boolean?
+@kotlinx.js.JsPlainObject
+external interface UseVirtualizerOptions<TScrollElement : web.events.EventTarget, TItemElement : web.dom.Element> {
+    var count: Double
+    var getScrollElement: () -> TScrollElement?
+    var estimateSize: (index: Double) -> Double
+    var debug: Boolean?
+    var initialRect: Rect?
+    var onChange: ((instance: Virtualizer<TScrollElement, TItemElement>, sync: Boolean) -> Unit)?
+    var measureElement: (
+        (
+        element: TItemElement,
+        entry: web.resize.ResizeObserverEntry?,
+        instance: Virtualizer<TScrollElement, TItemElement>,
+    ) -> Double
+    )?
+    var overscan: Double?
+    var horizontal: Boolean?
+    var paddingStart: Double?
+    var paddingEnd: Double?
+    var scrollPaddingStart: Double?
+    var scrollPaddingEnd: Double?
+    var initialOffset: (Double)?
+    var getItemKey: ((index: Double) -> Key)?
+    var rangeExtractor: ((range: Range) -> js.array.ReadonlyArray<Double>)?
+    var scrollMargin: Double?
+    var gap: Double?
+    var indexAttribute: String?
+    var initialMeasurementsCache: js.array.ReadonlyArray<VirtualItem>?
+    var lanes: Double?
+    var anchorTo: ScrollAnchor?
+    var followOnAppend: FollowOnAppend?
+    var scrollEndThreshold: Double?
+    var isScrollingResetDelay: Double?
+    var useScrollendEvent: Boolean?
+    var enabled: Boolean?
+    var isRtl: Boolean?
+    var useAnimationFrameWithResizeObserver: Boolean?
+    var laneAssignmentMode: LaneAssignmentMode?
+    var useCachedMeasurements: Boolean?
+    var useFlushSync: Boolean?
+    var directDomUpdates: Boolean?
+    var directDomUpdatesMode: (DirectDomUpdatesMode)?
 }
