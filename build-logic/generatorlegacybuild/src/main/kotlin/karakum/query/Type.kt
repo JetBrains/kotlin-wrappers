@@ -133,6 +133,11 @@ class Type(
         if (name in SKIPPED_TYPES || isUnusedType)
             return ""
 
+        if (name == "TimeoutProvider") {
+            check(source == TIMEOUT_PROVIDER_SOURCE)
+            return TIMEOUT_PROVIDER_CODE
+        }
+
         if (name == "QueryClientProviderProps")
             return """
                 external interface QueryClientProviderProps: react.PropsWithChildren {

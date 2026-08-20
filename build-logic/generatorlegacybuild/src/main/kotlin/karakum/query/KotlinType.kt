@@ -33,6 +33,8 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "Set<TListener>" to "JsSet<TListener>",
 
+    "TimeoutCallback" to "TimerHandler",
+
     "InfiniteData<unknown>" to "InfiniteData<*, *>",
 
     "Mutation" to "Mutation<*, *, *, *>",

@@ -219,23 +219,6 @@ fun toDeclarations(
         .replace(Regex(""" {4}get (\w+)\(\): """), "    $1: ")
         .replace("    queryType: \"infinite\" | undefined;", "    queryType?: QueryType;")
         .replace(Regex("""declare const environmentManager: \{\n.+?\n\};\n""", RegexOption.DOT_MATCHES_ALL), "")
-        .replace("callback: TimeoutCallback", "callback: TimerHandler")
-        .replace("<TTimerId extends ManagedTimerId = ManagedTimerId>", "")
-        .replace(" implements Omit<TimeoutProvider, 'name'>", "")
-        .replace(
-            "setTimeoutProvider<TTimerId extends ManagedTimerId>(provider: TimeoutProvider<TTimerId>)",
-            "setTimeoutProvider(provider: TimeoutProvider)",
-        )
-        .replace(
-            Regex("""set(Timeout|Interval): \(callback: TimerHandler, delay: number\) => TTimerId"""),
-            "set$1: (callback: TimerHandler, delay: number) => $1",
-        )
-        .replace(
-            Regex("""set(Timeout|Interval)\(callback: TimerHandler, delay: number\): ManagedTimerId"""),
-            "set$1(callback: TimerHandler, delay: number): $1",
-        )
-        .replace(Regex("""timeoutId: \w+"""), "timeoutId: Timeout")
-        .replace(Regex("""intervalId: \w+"""), "intervalId: Interval")
         // TEMP
         .replace(" & {\n        manual: boolean;\n    }", "")
         .replace(

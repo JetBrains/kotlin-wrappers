@@ -11,6 +11,11 @@ class Class(
     private val abstract: Boolean = " abstract " in source.substringBefore("{")
 
     override fun toCode(): String {
+        if (name == "TimeoutManager") {
+            check(source == TIMEOUT_MANAGER_SOURCE)
+            return TIMEOUT_MANAGER_CODE
+        }
+
         val constructor = members.asSequence()
             .filterIsInstance<Constructor>()
             .firstOrNull()
