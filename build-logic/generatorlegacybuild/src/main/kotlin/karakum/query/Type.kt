@@ -133,6 +133,11 @@ class Type(
         if (name in SKIPPED_TYPES || isUnusedType)
             return ""
 
+        if (name == "TimeoutProvider") {
+            check(source == TIMEOUT_PROVIDER_SOURCE)
+            return TIMEOUT_PROVIDER_CODE
+        }
+
         if (name == "QueryClientProviderProps")
             return """
                 external interface QueryClientProviderProps: react.PropsWithChildren {
@@ -188,6 +193,12 @@ class Type(
             return """
                 // $body
                 external interface $name
+                """.trimIndent()
+
+        if (name == "Action" || name == "Action_1")
+            return """
+                // ${originalBody.replace("_2", "")}
+                sealed external interface $name${formatParameters(typeParameters)}
                 """.trimIndent()
 
         if (name == "UseBaseMutationResult") {

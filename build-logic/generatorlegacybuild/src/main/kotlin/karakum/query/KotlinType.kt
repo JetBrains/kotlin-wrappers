@@ -33,6 +33,8 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "Set<TListener>" to "JsSet<TListener>",
 
+    "TimeoutCallback" to "TimerHandler",
+
     "InfiniteData<unknown>" to "InfiniteData<*, *>",
 
     "Mutation" to "Mutation<*, *, *, *>",
@@ -67,7 +69,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "QueryTypeFilter | 'none'" to "QueryTypeFilter /* | 'none' */",
 
     "QueryBehavior<TQueryFnData, TError, InfiniteData<TData, TPageParam>>" to "QueryBehavior<TQueryFnData, TError, InfiniteData<TData, TPageParam>, *>",
-    "QueryPersister<NoInfer<TQueryFnData>, NoInfer<TQueryKey>, NoInfer<TPageParam>>" to "QueryPersister<TQueryFnData, TQueryKey, TPageParam>",
+    "QueryPersister<TQueryFnData, NoInfer<TQueryKey>, TPageParam>" to "QueryPersister<TQueryFnData, TQueryKey, TPageParam>",
 
     "QueryFunction<TQueryFnData, TQueryKey, TPageParam> | SkipToken" to "QueryFunctionOrSkipToken<TQueryFnData, TQueryKey, TPageParam>",
     "EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey>" to "EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, *>",
@@ -93,7 +95,7 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "boolean | ((error: TError) => boolean)" to "(error: TError) -> Boolean",
 
-    "({ children, }: QueryErrorResetBoundaryProps) => react_jsx_runtime.JSX.Element" to
+    "({ children, }: QueryErrorResetBoundaryProps) => JSX.Element" to
             "react.FC<QueryErrorResetBoundaryProps>",
     "({ client, children, }: QueryClientProviderProps) => React.JSX.Element" to
             "react.FC<QueryClientProviderProps>",
@@ -112,8 +114,6 @@ private val STANDARD_TYPE_MAP = mapOf(
     "UseQueryResult<NoInfer<TData>, TError>" to "UseQueryResult<TData, TError>",
 
     "DehydratedState | null | undefined" to "DehydratedState?",
-
-    "TimeoutCallback" to "() -> Unit",
 )
 
 private val SAFE_PREFIXES = setOf(
@@ -164,7 +164,11 @@ internal fun kotlinType(
         return when (name) {
             "type" -> "Type /* $type */"
             "status" -> "QueryStatus /* $type */"
-            "_optimisticResults" -> "String /* $type */"
+            "queryType" -> {
+                check(type == "'infinite'") { "Update `QueryType` union! Actual type - $type" }
+                "QueryType"
+            }
+
             else -> TODO("Name - $name, Type - $type")
         }
     }

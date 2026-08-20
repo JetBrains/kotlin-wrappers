@@ -30,6 +30,10 @@ private val DEFAULT_IMPORTS = listOf(
     "web.abort.AbortController",
     "web.abort.AbortSignal",
 
+    "web.timers.Interval",
+    "web.timers.TimerHandler",
+    "web.timers.Timeout",
+
     "seskar.js.JsRawValue",
     "seskar.js.JsValue",
 ).map { it.substringAfterLast(".") to it }
@@ -47,6 +51,9 @@ fun generateKotlinDeclarations(
 
     coreTargetDir.resolve("aliases.kt")
         .writeText(ALIASES_BODY)
+
+    coreTargetDir.resolve("QueryType.kt")
+        .writeCode(QUERY_TYPE_BODY)
 
     generate(coreTypesDir, coreTargetDir, Package.CORE)
     generate(reactTypesDir, reactTargetDir, Package.REACT)
