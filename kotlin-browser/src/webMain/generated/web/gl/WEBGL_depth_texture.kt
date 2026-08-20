@@ -8,5 +8,8 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_depth_texture)
  */
 external interface WEBGL_depth_texture {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_depth_texture#ext.unsigned_int_24_8_webgl)
+     */
     val UNSIGNED_INT_24_8_WEBGL: GLenum
 }

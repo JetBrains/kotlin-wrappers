@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external val defaultTimeoutProvider: TimeoutProvider<Function<Any?>>
+external val defaultTimeoutProvider: TimeoutProvider

@@ -18,7 +18,6 @@ external interface MutationOptions<TData, TError, TVariables, TOnMutateResult> {
     val retryDelay: RetryDelayValue<TError>?
     val networkMode: NetworkMode?
     val gcTime: JsDuration?
-    val _defaulted: Boolean?
     val meta: MutationMeta?
     val scope: MutationScope?
 }

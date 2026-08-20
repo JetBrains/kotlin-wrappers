@@ -8,5 +8,8 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_compressed_texture_etc1)
  */
 external interface WEBGL_compressed_texture_etc1 {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_compressed_texture_etc1#ext.compressed_rgb_etc1_webgl)
+     */
     val COMPRESSED_RGB_ETC1_WEBGL: GLenum
 }

@@ -61,12 +61,39 @@ private constructor() :
     val operator: SVGAnimatedEnumeration<Operator>
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_unknown)
+         */
         val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_over)
+         */
         val SVG_FECOMPOSITE_OPERATOR_OVER: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_in)
+         */
         val SVG_FECOMPOSITE_OPERATOR_IN: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_out)
+         */
         val SVG_FECOMPOSITE_OPERATOR_OUT: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_atop)
+         */
         val SVG_FECOMPOSITE_OPERATOR_ATOP: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_xor)
+         */
         val SVG_FECOMPOSITE_OPERATOR_XOR: Operator
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement#svg_fecomposite_operator_arithmetic)
+         */
         val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Operator
     }
 

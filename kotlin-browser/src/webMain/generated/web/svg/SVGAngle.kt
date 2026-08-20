@@ -55,10 +55,29 @@ private constructor() {
     )
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle#svg_angletype_unknown)
+         */
         val SVG_ANGLETYPE_UNKNOWN: UnitType
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle#svg_angletype_unspecified)
+         */
         val SVG_ANGLETYPE_UNSPECIFIED: UnitType
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle#svg_angletype_deg)
+         */
         val SVG_ANGLETYPE_DEG: UnitType
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle#svg_angletype_rad)
+         */
         val SVG_ANGLETYPE_RAD: UnitType
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle#svg_angletype_grad)
+         */
         val SVG_ANGLETYPE_GRAD: UnitType
     }
 

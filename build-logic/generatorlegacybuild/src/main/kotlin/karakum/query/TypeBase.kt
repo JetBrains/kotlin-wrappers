@@ -113,7 +113,7 @@ private fun member(
     if (source == "#private")
         return null
 
-    if (source.startsWith("private ") || source.startsWith(" ") || source.startsWith("/"))
+    if (source.startsWith("private ") || source.startsWith("_") || source.startsWith(" ") || source.startsWith("/"))
         return null
 
     if (source.startsWith("constructor("))

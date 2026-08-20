@@ -8,5 +8,8 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_standard_derivatives)
  */
 external interface OES_standard_derivatives {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_standard_derivatives#ext.fragment_shader_derivative_hint_oes)
+     */
     val FRAGMENT_SHADER_DERIVATIVE_HINT_OES: GLenum
 }

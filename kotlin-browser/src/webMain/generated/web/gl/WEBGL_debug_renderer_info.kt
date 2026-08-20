@@ -8,6 +8,13 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_debug_renderer_info)
  */
 external interface WEBGL_debug_renderer_info {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_debug_renderer_info#ext.unmasked_vendor_webgl)
+     */
     val UNMASKED_VENDOR_WEBGL: GLenum
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_debug_renderer_info#ext.unmasked_renderer_webgl)
+     */
     val UNMASKED_RENDERER_WEBGL: GLenum
 }

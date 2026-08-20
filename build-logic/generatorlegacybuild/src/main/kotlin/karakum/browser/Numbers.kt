@@ -152,4 +152,24 @@ internal class TypeProvider(
 
     fun getReturnType(name: String): String =
         IDLRegistry.getReturnType(parentType, name)
+
+    fun getPropertyComment(name: String): String? {
+        val anchorId = when {
+            isWebglExtensionName(parentType)
+                    && WEBGL_CONST_RE.matches(name)
+                -> "$parentType#ext.${name.lowercase()}"
+
+            parentType.startsWith("SVG")
+                    && name.startsWith("SVG_")
+                -> "$parentType#${name.lowercase()}"
+
+            else -> return null
+        }
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$anchorId)
+         */
+        """.trimIndent()
+    }
 }

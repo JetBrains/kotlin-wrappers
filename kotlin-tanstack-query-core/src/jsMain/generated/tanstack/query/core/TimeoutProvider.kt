@@ -3,11 +3,14 @@
 package tanstack.query.core
 
 import kotlinx.js.JsPlainObject
+import web.timers.Interval
+import web.timers.Timeout
+import web.timers.TimerHandler
 
 @JsPlainObject
-external interface TimeoutProvider<TTimerId : ManagedTimerId> {
-    val setTimeout: (callback: TimeoutCallback, delay: Int) -> TTimerId
-    val clearTimeout: (timeoutId: TTimerId?) -> Unit
-    val setInterval: (callback: TimeoutCallback, delay: Int) -> TTimerId
-    val clearInterval: (intervalId: TTimerId?) -> Unit
+external interface TimeoutProvider {
+    val setTimeout: (callback: TimerHandler, delay: Int) -> Timeout
+    val clearTimeout: (timeoutId: Timeout?) -> Unit
+    val setInterval: (callback: TimerHandler, delay: Int) -> Interval
+    val clearInterval: (intervalId: Interval?) -> Unit
 }

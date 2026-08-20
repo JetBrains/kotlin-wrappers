@@ -43,5 +43,8 @@ external interface ANGLE_instanced_arrays {
         divisor: GLuint,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ANGLE_instanced_arrays#ext.vertex_attrib_array_divisor_angle)
+     */
     val VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE: GLenum
 }

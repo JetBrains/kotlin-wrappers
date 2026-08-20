@@ -8,5 +8,8 @@ package web.gl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_texture_half_float)
  */
 external interface OES_texture_half_float {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_texture_half_float#ext.half_float_oes)
+     */
     val HALF_FLOAT_OES: GLenum
 }

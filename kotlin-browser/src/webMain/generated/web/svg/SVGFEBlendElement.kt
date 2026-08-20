@@ -33,22 +33,89 @@ private constructor() :
     val mode: SVGAnimatedEnumeration<Mode>
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_unknown)
+         */
         val SVG_FEBLEND_MODE_UNKNOWN: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_normal)
+         */
         val SVG_FEBLEND_MODE_NORMAL: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_multiply)
+         */
         val SVG_FEBLEND_MODE_MULTIPLY: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_screen)
+         */
         val SVG_FEBLEND_MODE_SCREEN: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_darken)
+         */
         val SVG_FEBLEND_MODE_DARKEN: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_lighten)
+         */
         val SVG_FEBLEND_MODE_LIGHTEN: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_overlay)
+         */
         val SVG_FEBLEND_MODE_OVERLAY: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_color_dodge)
+         */
         val SVG_FEBLEND_MODE_COLOR_DODGE: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_color_burn)
+         */
         val SVG_FEBLEND_MODE_COLOR_BURN: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_hard_light)
+         */
         val SVG_FEBLEND_MODE_HARD_LIGHT: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_soft_light)
+         */
         val SVG_FEBLEND_MODE_SOFT_LIGHT: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_difference)
+         */
         val SVG_FEBLEND_MODE_DIFFERENCE: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_exclusion)
+         */
         val SVG_FEBLEND_MODE_EXCLUSION: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_hue)
+         */
         val SVG_FEBLEND_MODE_HUE: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_saturation)
+         */
         val SVG_FEBLEND_MODE_SATURATION: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_color)
+         */
         val SVG_FEBLEND_MODE_COLOR: Mode
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement#svg_feblend_mode_luminosity)
+         */
         val SVG_FEBLEND_MODE_LUMINOSITY: Mode
     }
 

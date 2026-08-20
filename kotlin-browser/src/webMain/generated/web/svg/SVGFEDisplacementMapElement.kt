@@ -47,10 +47,29 @@ private constructor() :
     val yChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
 
     companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement#svg_channel_unknown)
+         */
         val SVG_CHANNEL_UNKNOWN: ChannelSelector
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement#svg_channel_r)
+         */
         val SVG_CHANNEL_R: ChannelSelector
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement#svg_channel_g)
+         */
         val SVG_CHANNEL_G: ChannelSelector
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement#svg_channel_b)
+         */
         val SVG_CHANNEL_B: ChannelSelector
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement#svg_channel_a)
+         */
         val SVG_CHANNEL_A: ChannelSelector
     }
 

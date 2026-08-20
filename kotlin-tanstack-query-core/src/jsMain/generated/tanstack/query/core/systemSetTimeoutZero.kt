@@ -4,4 +4,6 @@
 
 package tanstack.query.core
 
-external fun systemSetTimeoutZero(callback: () -> Unit)
+import web.timers.TimerHandler
+
+external fun systemSetTimeoutZero(callback: TimerHandler)
