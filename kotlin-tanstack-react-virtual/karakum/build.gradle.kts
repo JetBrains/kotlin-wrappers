@@ -4,5 +4,4 @@ plugins {
 
 karakum {
     library(jspkg.tanstack.reactVirtual)
-    output = layout.projectDirectory.dir("../src/jsMain/generated")
 }
