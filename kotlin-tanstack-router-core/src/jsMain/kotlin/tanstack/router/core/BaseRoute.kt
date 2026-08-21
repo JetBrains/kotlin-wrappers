@@ -8,5 +8,5 @@ open external class BaseRoute<TChild : BaseRoute<TChild>>
 private constructor() {
     fun addChildren(
         children: ReadonlyArray<TChild>,
-    ) /* : this */
+    ) : BaseRoute<TChild> /* : this */
 }
