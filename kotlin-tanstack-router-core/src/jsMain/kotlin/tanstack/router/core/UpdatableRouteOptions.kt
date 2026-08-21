@@ -8,7 +8,8 @@ import js.promise.PromiseResult
 import kotlinx.js.JsPlainObject
 
 @JsPlainObject
-external interface UpdatableRouteOptions {
+external interface UpdatableRouteOptions :
+    UpdatableStaticRouteOption {
     val caseSensitive: Boolean?
     val wrapInSuspense: Boolean?
     val pendingMs: Int?
