@@ -4,5 +4,5 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface UpdatableStaticRouteOption {
-    val staticData: Any? /* StaticDataRouteOption? */
+    val staticData: StaticDataRouteOption?
 }

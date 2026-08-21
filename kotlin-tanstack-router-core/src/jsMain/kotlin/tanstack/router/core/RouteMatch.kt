@@ -31,7 +31,7 @@ external interface RouteMatch {
     val invalid: Boolean
     val headers: ReadonlyRecord<String, String>?
     val globalNotFound: Boolean?
-    val staticData: Any /* StaticDataRouteOption */
+    val staticData: StaticDataRouteOption
 
     /** This attribute is not reactive */
     val ssr: SSROption?
