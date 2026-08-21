@@ -2,11 +2,10 @@
 
 package tanstack.virtual.core
 
-import kotlinx.js.JsPlainObject
 import web.scroll.ScrollBehavior
 
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface ScrollOptions {
-    val adjustments: Int?
-    val behavior: ScrollBehavior?
+    var adjustments: Double?
+    var behavior: ScrollBehavior?
 }

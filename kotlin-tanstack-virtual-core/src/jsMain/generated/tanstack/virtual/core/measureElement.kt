@@ -4,7 +4,5 @@
 
 package tanstack.virtual.core
 
-import web.dom.Element
-import web.resize.ResizeObserverEntry
-
-external val measureElement: (element: Element, entry: ResizeObserverEntry?, instance: Virtualizer<*, Element>) -> Int
+external val measureElement:
+            (element: web.dom.Element, entry: web.resize.ResizeObserverEntry?, instance: Virtualizer<*, *>) -> Double

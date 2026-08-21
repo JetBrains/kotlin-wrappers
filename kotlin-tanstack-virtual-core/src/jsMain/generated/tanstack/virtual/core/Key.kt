@@ -2,24 +2,11 @@
 
 package tanstack.virtual.core
 
-import js.internal.InternalApi
-import js.numbers.BigInt
-import js.reflect.unsafeCast
-
-@SubclassOptInRequired(InternalApi::class)
+@SubclassOptInRequired(js.internal.InternalApi::class)
 external interface Key
 
-inline fun Key(
-    value: String,
-): Key =
-    unsafeCast(value)
+inline fun Key(value: String): Key = js.reflect.unsafeCast(value)
 
-inline fun Key(
-    value: Int,
-): Key =
-    unsafeCast(value)
+inline fun Key(value: Int): Key = js.reflect.unsafeCast(value)
 
-inline fun Key(
-    value: BigInt,
-): Key =
-    unsafeCast(value)
+inline fun Key(value: js.numbers.BigInt): Key = js.reflect.unsafeCast(value)

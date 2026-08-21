@@ -2,12 +2,10 @@
 
 package tanstack.virtual.core
 
-import kotlinx.js.JsPlainObject
-
-@JsPlainObject
+@kotlinx.js.JsPlainObject
 external interface Range {
-    val startIndex: Int
-    val endIndex: Int
-    val overscan: Int
-    val count: Int
+    var startIndex: Double
+    var endIndex: Double
+    var overscan: Double
+    var count: Double
 }

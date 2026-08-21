@@ -2,24 +2,21 @@
 
 package tanstack.virtual.core
 
-import seskar.js.JsRawValue
-import seskar.js.JsValue
-
 sealed external interface FollowOnAppend {
-    companion object {
-        @JsRawValue("false")
-        val `false`: FollowOnAppend
-
-        @JsRawValue("true")
-        val `true`: FollowOnAppend
-
-        @JsValue("auto")
-        val auto: FollowOnAppend
-
-        @JsValue("smooth")
-        val smooth: FollowOnAppend
-
-        @JsValue("instant")
-        val instant: FollowOnAppend
-    }
+    companion object
 }
+
+inline val FollowOnAppend.Companion.`false`: FollowOnAppend
+    get() = js.reflect.unsafeCast(false)
+
+inline val FollowOnAppend.Companion.`true`: FollowOnAppend
+    get() = js.reflect.unsafeCast(true)
+
+inline val FollowOnAppend.Companion.auto: FollowOnAppend
+    get() = js.reflect.unsafeCast("auto")
+
+inline val FollowOnAppend.Companion.smooth: FollowOnAppend
+    get() = js.reflect.unsafeCast("smooth")
+
+inline val FollowOnAppend.Companion.instant: FollowOnAppend
+    get() = js.reflect.unsafeCast("instant")
