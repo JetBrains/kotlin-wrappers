@@ -241,14 +241,32 @@ private class CommentProviderImpl(
             .map { it.substringBefore(" = ") }
             .toList()
 
+        fun getName(s: String): String =
+            s.substringBefore(" ")
+                .substringBefore("<")
+
         for (type in types) {
             val source = content.split(
                 ": $type;",
                 ": $type | null;",
                 ": $type | undefined;",
             ).dropLast(1)
-                .map { it.substringAfterLast("\n */\ninterface ", "") }
-                .firstOrNull { it.isNotEmpty() && "\ndeclare var " !in it && "\ninterface " !in it }
+                .let { items ->
+                    items.asSequence()
+                        .map { it.substringAfterLast("\n */\ninterface ", "") }
+                        .filter { it.isNotEmpty() } +
+                            items.asSequence()
+                                .map { it.substringAfterLast("\ninterface ", "") }
+                                .filter { it.isNotEmpty() }
+                                .filter { hasMdnPage(getName(it)) }
+                }
+                .filter { "\ndeclare var " !in it && "\ninterface " !in it }
+                .maxByOrNull {
+                    when (getName(it)) {
+                        "Request" -> 1
+                        else -> 0
+                    }
+                }
                 ?: continue
 
             val name = source
