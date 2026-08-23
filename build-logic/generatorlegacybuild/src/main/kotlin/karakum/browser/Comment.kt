@@ -1,5 +1,7 @@
 package karakum.browser
 
+import karakum.browser.LinkData.Mode
+
 internal fun formatComment(
     comment: String,
 ): String {
@@ -39,7 +41,11 @@ internal fun ConversionResult.withComment(
     if (body != newBody)
         return copy(body = newBody)
 
+    // TEMP
     if ("/**" in body)
+        return this
+
+    if ("[MDN Reference]" in body)
         return this
 
     val linkData = getLinkData(fullSource = fullSource, typeName = name)
@@ -63,7 +69,7 @@ internal fun ConversionResult.withComment(
                             ?.takeIf { !acc.endsWith("*/") }
 
                         if (memberName != null) {
-                            yield(linkData.copy(hash = memberName).toComment())
+                            yield(linkData.copy(sectionName = memberName).toComment())
                         }
 
                         yield(line)
@@ -82,6 +88,12 @@ private fun getLinkData(
 ): LinkData? {
     if (!IDLRegistry.isPlainObjectInterface(typeName))
         return null
+
+    if (hasMdnPage(typeName))
+        return LinkData(
+            baseUrl = "https://developer.mozilla.org/docs/Web/API/$typeName",
+            mode = if (hasMdnSubpages(typeName)) Mode.SUB_PAGE else Mode.HASH,
+        )
 
     return fullSource
         .split(": $typeName)")
@@ -108,18 +120,36 @@ private fun getLinkData(
 
             LinkData(
                 baseUrl = baseUrl,
-                hash = parameterName.lowercase(),
+                mode = Mode.HASH,
+                sectionName = parameterName.lowercase(),
             )
         }
 }
 
 private data class LinkData(
     private val baseUrl: String,
-    private val hash: String,
+    private val mode: Mode,
+    private val sectionName: String? = null,
 ) {
-    fun toComment(): String = """
+    enum class Mode {
+        SUB_PAGE,
+        HASH,
+
+        ;
+    }
+
+    fun toComment(): String {
+        val url = when {
+            sectionName == null -> baseUrl
+            mode == Mode.SUB_PAGE -> "$baseUrl/$sectionName"
+            mode == Mode.HASH -> "$baseUrl#$sectionName"
+            else -> error("")
+        }
+
+        return """
         /**
-         * [MDN Reference]($baseUrl#$hash)
+         * [MDN Reference]($url)
          */
         """.trimIndent()
+    }
 }

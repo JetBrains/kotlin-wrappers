@@ -9,8 +9,17 @@ internal object MDN {
 internal fun mdnContent(path: String): String =
     MDN.root.resolve(path).readText()
 
-internal fun hasMdnPage(typeName: String): Boolean =
+private fun getApiDirectory(typeName: String): File? =
     MDN.root
         .resolve("api")
         .resolve(typeName.lowercase())
-        .isDirectory
+        .takeIf { it.isDirectory }
+
+internal fun hasMdnPage(typeName: String): Boolean =
+    getApiDirectory(typeName) != null
+
+internal fun hasMdnSubpages(typeName: String): Boolean =
+    getApiDirectory(typeName)
+        ?.listFiles { it.isDirectory }
+        ?.isNotEmpty()
+        ?: false

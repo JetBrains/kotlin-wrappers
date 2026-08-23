@@ -6,13 +6,13 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints#constraints)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackConstraints)
  */
 @JsPlainObject
 external interface MediaTrackConstraints :
     MediaTrackConstraintSet {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints#advanced)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackConstraints/advanced)
      */
     var advanced: ReadonlyArray<MediaTrackConstraintSet>?
 }
