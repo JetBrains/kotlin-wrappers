@@ -41,10 +41,6 @@ internal fun ConversionResult.withComment(
     if (body != newBody)
         return copy(body = newBody)
 
-    // TEMP
-    if ("/**" in body)
-        return this
-
     if ("[MDN Reference]" in body)
         return this
 
@@ -57,23 +53,20 @@ internal fun ConversionResult.withComment(
             body
                 .splitToSequence("\n")
                 .reduce { acc, line ->
-                    sequence {
-                        yield(acc)
+                    val memberName = line.trim()
+                        .removePrefix("override ")
+                        .trim()
+                        .takeIf { it.startsWith("val ") || it.startsWith("var ") }
+                        ?.substringAfter(" ", "")
+                        ?.substringBefore(":")
+                        ?: return@reduce acc + "\n" + line
 
-                        val memberName = line.trim()
-                            .removePrefix("override ")
-                            .trim()
-                            .takeIf { it.startsWith("val ") || it.startsWith("var ") }
-                            ?.substringAfter(" ", "")
-                            ?.substringBefore(":")
-                            ?.takeIf { !acc.endsWith("*/") }
-
-                        if (memberName != null) {
-                            yield(linkData.copy(sectionName = memberName).toComment())
-                        }
-
-                        yield(line)
-                    }.joinToString("\n")
+                    val comment = linkData.copy(sectionName = memberName).toComment()
+                    if (!acc.endsWith("\n */")) {
+                        "$acc\n$comment\n$line"
+                    } else {
+                        acc.removeSuffix("\n */") + "\n *\n" + comment.substringAfter("\n") + "\n" + line
+                    }
                 },
         )
 

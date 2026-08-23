@@ -6,10 +6,20 @@ import kotlinx.js.JsPlainObject
 import web.abort.AbortSignal
 import web.abort.Abortable
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough#options)
+ */
 @JsPlainObject
 external interface StreamPipeOptions :
     Abortable {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough#preventabort)
+     */
     var preventAbort: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough#preventcancel)
+     */
     var preventCancel: Boolean?
 
     /**
@@ -28,7 +38,13 @@ external interface StreamPipeOptions :
      * If destination starts out closed or closing, this source readable stream will be canceled, unless preventCancel is true. The returned promise will be rejected with an error indicating piping to a closed stream failed, or with any error that occurs during canceling the source.
      *
      * The signal option can be set to an AbortSignal to allow aborting an ongoing pipe operation via the corresponding AbortController. In this case, this source readable stream will be canceled, and destination aborted, unless the respective options preventCancel or preventAbort are set.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough#preventclose)
      */
     var preventClose: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough#signal)
+     */
     override var signal: AbortSignal?
 }
