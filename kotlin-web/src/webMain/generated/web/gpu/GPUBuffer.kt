@@ -36,7 +36,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/usage)
      */
-    val usage: GPUFlagsConstant
+    val usage: GPUBufferUsage
 
     /**
      * The **`destroy()`** method of the GPUBuffer interface destroys the GPUBuffer.

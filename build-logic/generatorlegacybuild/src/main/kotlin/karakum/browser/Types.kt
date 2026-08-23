@@ -209,24 +209,19 @@ private val NUMBER_TYPE_MAP = mapOf(
     "GLuint64" to "UInt53",
 
     "GPUBufferDynamicOffset" to "JsInt",
-    "GPUBufferUsageFlags" to "JsInt /* Bitmask */",
-    "GPUColorWriteFlags" to "JsInt /* Bitmask */",
     "GPUDepthBias" to "JsInt",
     "GPUFlagsConstant" to "JsInt",
     "GPUIndex32" to "JsInt",
     "GPUIntegerCoordinate" to "JsInt",
     "GPUIntegerCoordinateOut" to "JsInt",
-    "GPUMapModeFlags" to "JsInt /* Bitmask */",
     "GPUPipelineConstantValue" to "JsInt",
     "GPUSampleMask" to "JsInt",
-    "GPUShaderStageFlags" to "JsInt /* Bitmask */",
     "GPUSignedOffset32" to "JsInt",
     "GPUSize32" to "JsInt",
     "GPUSize32Out" to "JsInt",
     "GPUSize64" to "JsUInt53",
     "GPUSize64Out" to "JsUInt53",
     "GPUStencilValue" to "JsInt",
-    "GPUTextureUsageFlags" to "JsInt /* Bitmask */",
 )
 
 private class CommentProviderImpl(
@@ -630,6 +625,8 @@ private fun getTypePkg(
 ): String? =
     when {
         name in EXCLUDED_TYPES -> null
+
+        name.startsWith("GPU") && name.startsWith("Flags") -> null
 
         PKG_MAP.containsKey(name) -> PKG_MAP.getValue(name)
 

@@ -512,6 +512,19 @@ internal fun String.applyPatches(): String {
             "AsyncIterable<R> | Iterable<R> | Iterable<PromiseLike<R>>",
             "AsyncIterable<R> | JsIterable<R> | JsIterable<PromiseLike<R>> | ReadonlyArray<R> | ReadonlyArray<PromiseLike<R>>",
         )
+        .replace("\ntype GPUFlagsConstant = number;", "")
+        .patchInterface("GPUTexture") {
+            it.replace(
+                "\n    readonly usage: GPUFlagsConstant;",
+                "\n    readonly usage: GPUTextureUsage;",
+            )
+        }
+        .patchInterface("GPUBuffer") {
+            it.replace(
+                "\n    readonly usage: GPUFlagsConstant;",
+                "\n    readonly usage: GPUBufferUsage;",
+            )
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

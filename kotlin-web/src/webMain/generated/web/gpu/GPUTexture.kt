@@ -59,7 +59,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/usage)
      */
-    val usage: GPUFlagsConstant
+    val usage: GPUTextureUsage
 
     /**
      * The **`width`** read-only property of the GPUTexture interface represents the width of the GPUTexture.
