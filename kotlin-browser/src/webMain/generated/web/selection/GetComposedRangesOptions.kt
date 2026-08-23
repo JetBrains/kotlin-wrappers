@@ -6,7 +6,13 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.components.ShadowRoot
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getComposedRanges#options)
+ */
 @JsPlainObject
 external interface GetComposedRangesOptions {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getComposedRanges#shadowRoots)
+     */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

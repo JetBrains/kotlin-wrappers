@@ -4,8 +4,18 @@ package web.gpu
 
 import kotlinx.js.JsPlainObject
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#options)
+ */
 @JsPlainObject
 external interface GPURequestAdapterOptions {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#forceFallbackAdapter)
+     */
     var forceFallbackAdapter: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#powerPreference)
+     */
     var powerPreference: GPUPowerPreference?
 }

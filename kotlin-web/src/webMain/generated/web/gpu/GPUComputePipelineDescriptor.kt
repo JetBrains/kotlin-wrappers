@@ -4,8 +4,14 @@ package web.gpu
 
 import kotlinx.js.JsPlainObject
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipeline#descriptor)
+ */
 @JsPlainObject
 external interface GPUComputePipelineDescriptor :
     GPUPipelineDescriptorBase {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipeline#compute)
+     */
     var compute: GPUProgrammableStage
 }

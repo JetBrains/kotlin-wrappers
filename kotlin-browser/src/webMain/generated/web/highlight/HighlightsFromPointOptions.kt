@@ -6,7 +6,13 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.components.ShadowRoot
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry/highlightsFromPoint#options)
+ */
 @JsPlainObject
 external interface HighlightsFromPointOptions {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry/highlightsFromPoint#shadowRoots)
+     */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

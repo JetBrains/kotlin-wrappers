@@ -36,7 +36,83 @@ internal fun ConversionResult.withComment(
     if ("@deprecated" in newBody)
         return null
 
-    return if (body != newBody) {
-        copy(body = newBody)
-    } else this
+    if (body != newBody)
+        return copy(body = newBody)
+
+    if (!IDLRegistry.isPlainObjectInterface(name))
+        return this
+
+    if ("/**" in body)
+        return this
+
+    data class LinkData(
+        private val baseUrl: String,
+        private val hash: String,
+    ) {
+        fun toComment(): String = """
+        /**
+         * [MDN Reference]($baseUrl#$hash)
+         */
+        """.trimIndent()
+    }
+
+    val linkData = fullSource
+        .split(": $name)")
+        .dropLast(1)
+        .firstNotNullOfOrNull {
+            val commentSource = it
+                .substringBeforeLast("\n", "")
+                .takeIf { it.endsWith(" */") }
+                ?.substringAfterLast("/**", "")
+                ?: return@firstNotNullOfOrNull null
+
+            val baseUrl = commentSource
+                .substringAfter(" * [MDN Reference]", "")
+                .substringBefore("\n", "")
+                .removeSurrounding("(", ")")
+                .ifEmpty { return@firstNotNullOfOrNull null }
+
+            val parameterName = it
+                .substringAfterLast("\n", "")
+                .ifEmpty { return@firstNotNullOfOrNull null }
+                .substringAfterLast(", ")
+                .substringAfterLast("(")
+                .removeSuffix("?")
+
+            LinkData(
+                baseUrl = baseUrl,
+                hash = parameterName.lowercase(),
+            )
+        }
+        ?: return this
+
+    val bodyWithComments = linkData.toComment()
+        .plus("\n")
+        .plus(
+            body
+                .splitToSequence("\n")
+                .reduce { acc, line ->
+                    sequence {
+                        yield(acc)
+
+                        val memberName = line.trim()
+                            .removePrefix("override ")
+                            .trim()
+                            .takeIf { it.startsWith("val ") || it.startsWith("var ") }
+                            ?.substringAfter(" ", "")
+                            ?.substringBefore(":")
+                            ?.takeIf { !acc.endsWith("*/") }
+
+                        if (memberName != null) {
+                            yield(linkData.copy(hash = memberName).toComment())
+                        }
+
+                        yield(line)
+                    }.joinToString("\n")
+                },
+        )
+
+    return copy(
+        body = bodyWithComments,
+    )
 }

@@ -6,8 +6,18 @@ import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.components.ShadowRoot
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#options)
+ */
 @JsPlainObject
 external interface GetHTMLOptions {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#serializableShadowRoots)
+     */
     var serializableShadowRoots: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#shadowRoots)
+     */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

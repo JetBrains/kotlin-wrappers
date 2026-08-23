@@ -4,6 +4,9 @@ package web.gpu
 
 import kotlinx.js.JsPlainObject
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/finish#descriptor)
+ */
 @JsPlainObject
 external interface GPUCommandBufferDescriptor :
     GPUObjectDescriptorBase
