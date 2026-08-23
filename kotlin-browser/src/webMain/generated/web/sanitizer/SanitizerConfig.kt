@@ -21,7 +21,7 @@ external interface SanitizerConfig {
     var comments: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#dataAttributes)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#dataattributes)
      */
     var dataAttributes: Boolean?
 
@@ -31,27 +31,27 @@ external interface SanitizerConfig {
     var elements: ReadonlyArray<SanitizerElementWithAttributes>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#processingInstructions)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#processinginstructions)
      */
     var processingInstructions: ReadonlyArray<SanitizerPI>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#removeAttributes)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#removeattributes)
      */
     var removeAttributes: ReadonlyArray<SanitizerAttribute>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#removeElements)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#removeelements)
      */
     var removeElements: ReadonlyArray<SanitizerElement>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#removeProcessingInstructions)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#removeprocessinginstructions)
      */
     var removeProcessingInstructions: ReadonlyArray<SanitizerPI>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#replaceWithChildrenElements)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SanitizerConfig#replacewithchildrenelements)
      */
     var replaceWithChildrenElements: ReadonlyArray<SanitizerElement>?
 }

@@ -15,12 +15,12 @@ external interface SerialOutputSignals {
     var `break`: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals#dataTerminalReady)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals#dataterminalready)
      */
     var dataTerminalReady: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals#requestToSend)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals#requesttosend)
      */
     var requestToSend: Boolean?
 }

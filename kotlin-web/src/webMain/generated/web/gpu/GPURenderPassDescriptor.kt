@@ -12,27 +12,27 @@ import kotlinx.js.JsPlainObject
 external interface GPURenderPassDescriptor :
     GPUObjectDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#colorAttachments)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#colorattachments)
      */
     var colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#depthStencilAttachment)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#depthstencilattachment)
      */
     var depthStencilAttachment: GPURenderPassDepthStencilAttachment?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#maxDrawCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#maxdrawcount)
      */
     var maxDrawCount: GPUSize64?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#occlusionQuerySet)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#occlusionqueryset)
      */
     var occlusionQuerySet: GPUQuerySet?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#timestampWrites)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass#timestampwrites)
      */
     var timestampWrites: GPURenderPassTimestampWrites?
 }

@@ -15,7 +15,7 @@ external interface MediaPositionState {
     var duration: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState#playbackRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState#playbackrate)
      */
     var playbackRate: Double?
 

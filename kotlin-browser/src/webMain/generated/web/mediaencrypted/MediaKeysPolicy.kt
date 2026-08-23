@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface MediaKeysPolicy {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy#minHdcpVersion)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy#minhdcpversion)
      */
     var minHdcpVersion: String?
 }

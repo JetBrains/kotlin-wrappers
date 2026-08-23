@@ -11,17 +11,17 @@ import kotlinx.js.JsPlainObject
 external interface RTCOfferOptions :
     RTCOfferAnswerOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer#iceRestart)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer#icerestart)
      */
     var iceRestart: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer#offerToReceiveAudio)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer#offertoreceiveaudio)
      */
     var offerToReceiveAudio: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer#offerToReceiveVideo)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer#offertoreceivevideo)
      */
     var offerToReceiveVideo: Boolean?
 }

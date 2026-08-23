@@ -30,7 +30,7 @@ external interface OptionalEffectTiming {
     var easing: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/updateTiming#endDelay)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/updateTiming#enddelay)
      */
     var endDelay: Double?
 
@@ -40,7 +40,7 @@ external interface OptionalEffectTiming {
     var fill: FillMode?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/updateTiming#iterationStart)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/updateTiming#iterationstart)
      */
     var iterationStart: Double?
 
@@ -50,7 +50,7 @@ external interface OptionalEffectTiming {
     var iterations: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/updateTiming#playbackRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEffect/updateTiming#playbackrate)
      */
     var playbackRate: Double?
 }

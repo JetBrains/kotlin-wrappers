@@ -21,7 +21,7 @@ external interface AudioEncoderConfig {
     var bitrate: UInt53?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/configure#bitrateMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/configure#bitratemode)
      */
     var bitrateMode: BitrateMode?
 
@@ -31,7 +31,7 @@ external interface AudioEncoderConfig {
     var codec: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/configure#numberOfChannels)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/configure#numberofchannels)
      */
     var numberOfChannels: Int
 
@@ -41,7 +41,7 @@ external interface AudioEncoderConfig {
     var opus: OpusEncoderConfig?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/configure#sampleRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/configure#samplerate)
      */
     var sampleRate: Int
 }

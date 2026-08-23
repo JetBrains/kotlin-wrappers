@@ -16,27 +16,27 @@ external interface GamepadEffectParameters {
     var duration: UInt53?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#leftTrigger)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#lefttrigger)
      */
     var leftTrigger: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#rightTrigger)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#righttrigger)
      */
     var rightTrigger: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#startDelay)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#startdelay)
      */
     var startDelay: UInt53?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#strongMagnitude)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#strongmagnitude)
      */
     var strongMagnitude: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#weakMagnitude)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect#weakmagnitude)
      */
     var weakMagnitude: Double?
 }

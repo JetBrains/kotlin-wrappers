@@ -15,12 +15,12 @@ external interface MediaStreamConstraints {
     var audio: MediaTrackConstraints /* | Boolean */?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia#peerIdentity)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia#peeridentity)
      */
     var peerIdentity: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia#preferCurrentTab)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia#prefercurrenttab)
      */
     var preferCurrentTab: Boolean?
 

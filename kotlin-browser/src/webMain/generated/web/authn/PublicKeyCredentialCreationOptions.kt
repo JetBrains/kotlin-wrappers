@@ -17,7 +17,7 @@ external interface PublicKeyCredentialCreationOptions {
     var attestation: AttestationConveyancePreference?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialCreationOptions#authenticatorSelection)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialCreationOptions#authenticatorselection)
      */
     var authenticatorSelection: AuthenticatorSelectionCriteria?
 
@@ -27,7 +27,7 @@ external interface PublicKeyCredentialCreationOptions {
     var challenge: BufferSource
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialCreationOptions#excludeCredentials)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialCreationOptions#excludecredentials)
      */
     var excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
 
@@ -37,7 +37,7 @@ external interface PublicKeyCredentialCreationOptions {
     var extensions: AuthenticationExtensionsClientInputs?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialCreationOptions#pubKeyCredParams)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialCreationOptions#pubkeycredparams)
      */
     var pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
 

@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface FileSystemCreateWritableOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable#keepExistingData)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable#keepexistingdata)
      */
     var keepExistingData: Boolean?
 }

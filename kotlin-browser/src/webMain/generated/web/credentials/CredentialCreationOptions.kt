@@ -14,7 +14,7 @@ import web.authn.PublicKeyCredentialCreationOptions
 external interface CredentialCreationOptions :
     Abortable {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create#publicKey)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create#publickey)
      */
     var publicKey: PublicKeyCredentialCreationOptions?
 

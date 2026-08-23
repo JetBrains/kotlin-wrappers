@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCConfiguration {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#bundlePolicy)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#bundlepolicy)
      */
     var bundlePolicy: RTCBundlePolicy?
 
@@ -21,22 +21,22 @@ external interface RTCConfiguration {
     var certificates: ReadonlyArray<RTCCertificate>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#iceCandidatePoolSize)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#icecandidatepoolsize)
      */
     var iceCandidatePoolSize: Short /* unsigned byte */?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#iceServers)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#iceservers)
      */
     var iceServers: ReadonlyArray<RTCIceServer>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#iceTransportPolicy)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#icetransportpolicy)
      */
     var iceTransportPolicy: RTCIceTransportPolicy?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#rtcpMuxPolicy)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration#rtcpmuxpolicy)
      */
     var rtcpMuxPolicy: RTCRtcpMuxPolicy?
 }

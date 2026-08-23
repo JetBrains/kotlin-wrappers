@@ -13,7 +13,7 @@ import web.images.PredefinedColorSpace
 external interface GPUExternalTextureDescriptor :
     GPUObjectDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/importExternalTexture#colorSpace)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/importExternalTexture#colorspace)
      */
     var colorSpace: PredefinedColorSpace?
 

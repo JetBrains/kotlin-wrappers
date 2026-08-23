@@ -16,7 +16,7 @@ external interface PerformanceObserverInit {
     var buffered: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe#entryTypes)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe#entrytypes)
      */
     var entryTypes: ReadonlyArray<JsString>?
 

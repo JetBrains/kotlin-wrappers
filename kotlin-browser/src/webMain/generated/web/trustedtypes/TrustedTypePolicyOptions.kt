@@ -10,17 +10,17 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface TrustedTypePolicyOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy#createHTML)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy#createhtml)
      */
     var createHTML: CreateHTMLCallback?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy#createScript)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy#createscript)
      */
     var createScript: CreateScriptCallback?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy#createScriptURL)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy#createscripturl)
      */
     var createScriptURL: CreateScriptURLCallback?
 }

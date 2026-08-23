@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PointerLockOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock#unadjustedMovement)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock#unadjustedmovement)
      */
     var unadjustedMovement: Boolean?
 }

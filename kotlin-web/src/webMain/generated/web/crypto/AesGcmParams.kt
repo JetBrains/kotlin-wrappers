@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
 external interface AesGcmParams :
     Algorithm {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AesGcmParams#additionalData)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AesGcmParams#additionaldata)
      */
     var additionalData: BufferSource?
 
@@ -22,7 +22,7 @@ external interface AesGcmParams :
     var iv: BufferSource
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AesGcmParams#tagLength)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AesGcmParams#taglength)
      */
     var tagLength: Short /* unsigned byte */?
 }

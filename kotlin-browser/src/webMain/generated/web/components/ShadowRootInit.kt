@@ -15,12 +15,12 @@ external interface ShadowRootInit {
     var clonable: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#customElementRegistry)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#customelementregistry)
      */
     var customElementRegistry: CustomElementRegistry?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#delegatesFocus)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#delegatesfocus)
      */
     var delegatesFocus: Boolean?
 
@@ -35,7 +35,7 @@ external interface ShadowRootInit {
     var serializable: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#slotAssignment)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow#slotassignment)
      */
     var slotAssignment: SlotAssignmentMode?
 }

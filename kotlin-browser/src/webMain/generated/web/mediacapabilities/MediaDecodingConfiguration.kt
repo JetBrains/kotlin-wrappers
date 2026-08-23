@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface MediaDecodingConfiguration :
     MediaConfiguration {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#keySystemConfiguration)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#keysystemconfiguration)
      */
     var keySystemConfiguration: MediaCapabilitiesKeySystemConfiguration?
 

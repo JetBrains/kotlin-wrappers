@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PublicKeyCredentialRequestOptionsJSON {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static#allowCredentials)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static#allowcredentials)
      */
     var allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptorJSON>?
 
@@ -31,7 +31,7 @@ external interface PublicKeyCredentialRequestOptionsJSON {
     var hints: ReadonlyArray<JsString>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static#rpId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static#rpid)
      */
     var rpId: String?
 
@@ -41,7 +41,7 @@ external interface PublicKeyCredentialRequestOptionsJSON {
     var timeout: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static#userVerification)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static#userverification)
      */
     var userVerification: String?
 }

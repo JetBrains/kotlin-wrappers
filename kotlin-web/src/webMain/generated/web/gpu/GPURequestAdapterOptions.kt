@@ -10,12 +10,12 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface GPURequestAdapterOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#forceFallbackAdapter)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#forcefallbackadapter)
      */
     var forceFallbackAdapter: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#powerPreference)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter#powerpreference)
      */
     var powerPreference: GPUPowerPreference?
 }

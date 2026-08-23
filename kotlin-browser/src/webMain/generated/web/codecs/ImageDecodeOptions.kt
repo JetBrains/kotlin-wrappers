@@ -10,12 +10,12 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface ImageDecodeOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode#completeFramesOnly)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode#completeframesonly)
      */
     var completeFramesOnly: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode#frameIndex)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode#frameindex)
      */
     var frameIndex: Int?
 }

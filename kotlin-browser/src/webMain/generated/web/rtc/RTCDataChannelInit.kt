@@ -15,12 +15,12 @@ external interface RTCDataChannelInit {
     var id: Short?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel#maxPacketLifeTime)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel#maxpacketlifetime)
      */
     var maxPacketLifeTime: Short?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel#maxRetransmits)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel#maxretransmits)
      */
     var maxRetransmits: Short?
 

@@ -19,7 +19,7 @@ external interface CredentialRequestOptions :
     var mediation: CredentialMediationRequirement?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#publicKey)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#publickey)
      */
     var publicKey: PublicKeyCredentialRequestOptions?
 

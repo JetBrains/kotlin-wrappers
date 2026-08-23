@@ -12,7 +12,7 @@ import web.components.ShadowRoot
 @JsPlainObject
 external interface GetComposedRangesOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getComposedRanges#shadowRoots)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getComposedRanges#shadowroots)
      */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

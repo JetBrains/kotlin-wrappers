@@ -10,12 +10,12 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PositionOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition#enableHighAccuracy)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition#enablehighaccuracy)
      */
     var enableHighAccuracy: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition#maximumAge)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition#maximumage)
      */
     var maximumAge: Int?
 

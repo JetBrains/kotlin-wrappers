@@ -21,12 +21,12 @@ external interface AudioDecoderConfig {
     var description: AllowSharedBufferSource?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/configure#numberOfChannels)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/configure#numberofchannels)
      */
     var numberOfChannels: Int
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/configure#sampleRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/configure#samplerate)
      */
     var sampleRate: Int
 }

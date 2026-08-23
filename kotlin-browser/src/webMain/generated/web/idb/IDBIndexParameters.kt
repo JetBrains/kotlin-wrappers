@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface IDBIndexParameters {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/createIndex#multiEntry)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/createIndex#multientry)
      */
     var multiEntry: Boolean?
 

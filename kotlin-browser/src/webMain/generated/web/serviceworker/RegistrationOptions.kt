@@ -21,7 +21,7 @@ external interface RegistrationOptions {
     var type: WorkerType?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register#updateViaCache)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register#updateviacache)
      */
     var updateViaCache: ServiceWorkerUpdateViaCache?
 }

@@ -15,17 +15,17 @@ external interface AudioDataCopyToOptions {
     var format: AudioSampleFormat?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize#frameCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize#framecount)
      */
     var frameCount: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize#frameOffset)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize#frameoffset)
      */
     var frameOffset: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize#planeIndex)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize#planeindex)
      */
     var planeIndex: Int
 }

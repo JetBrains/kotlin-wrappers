@@ -16,17 +16,17 @@ external interface VideoDecoderConfig {
     var codec: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#codedHeight)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#codedheight)
      */
     var codedHeight: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#codedWidth)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#codedwidth)
      */
     var codedWidth: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#colorSpace)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#colorspace)
      */
     var colorSpace: VideoColorSpaceInit?
 
@@ -36,22 +36,22 @@ external interface VideoDecoderConfig {
     var description: AllowSharedBufferSource?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#displayAspectHeight)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#displayaspectheight)
      */
     var displayAspectHeight: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#displayAspectWidth)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#displayaspectwidth)
      */
     var displayAspectWidth: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#hardwareAcceleration)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#hardwareacceleration)
      */
     var hardwareAcceleration: HardwareAcceleration?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#optimizeForLatency)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure#optimizeforlatency)
      */
     var optimizeForLatency: Boolean?
 }

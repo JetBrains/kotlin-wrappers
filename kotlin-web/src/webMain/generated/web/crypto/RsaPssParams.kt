@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface RsaPssParams :
     Algorithm {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RsaPssParams#saltLength)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RsaPssParams#saltlength)
      */
     var saltLength: Int
 }

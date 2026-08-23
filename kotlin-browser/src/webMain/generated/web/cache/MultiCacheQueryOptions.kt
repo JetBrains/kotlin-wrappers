@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface MultiCacheQueryOptions :
     CacheQueryOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match#cacheName)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match#cachename)
      */
     var cacheName: String?
 }

@@ -10,17 +10,17 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface CacheQueryOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete#ignoreMethod)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete#ignoremethod)
      */
     var ignoreMethod: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete#ignoreSearch)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete#ignoresearch)
      */
     var ignoreSearch: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete#ignoreVary)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete#ignorevary)
      */
     var ignoreVary: Boolean?
 }

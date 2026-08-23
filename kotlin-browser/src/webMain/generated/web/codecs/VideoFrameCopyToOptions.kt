@@ -13,7 +13,7 @@ import web.images.PredefinedColorSpace
 @JsPlainObject
 external interface VideoFrameCopyToOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/allocationSize#colorSpace)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/allocationSize#colorspace)
      */
     var colorSpace: PredefinedColorSpace?
 

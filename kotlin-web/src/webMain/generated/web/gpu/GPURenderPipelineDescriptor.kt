@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface GPURenderPipelineDescriptor :
     GPUPipelineDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipeline#depthStencil)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipeline#depthstencil)
      */
     var depthStencil: GPUDepthStencilState?
 

@@ -15,7 +15,7 @@ external interface VideoEncoderEncodeOptions {
     var avc: VideoEncoderEncodeOptionsForAvc?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encode#keyFrame)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encode#keyframe)
      */
     var keyFrame: Boolean?
 }

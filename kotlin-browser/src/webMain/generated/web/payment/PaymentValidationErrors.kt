@@ -20,7 +20,7 @@ external interface PaymentValidationErrors {
     var payer: PayerErrors?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry#shippingAddress)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry#shippingaddress)
      */
     var shippingAddress: AddressErrors?
 }

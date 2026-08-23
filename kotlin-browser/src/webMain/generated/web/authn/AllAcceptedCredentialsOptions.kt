@@ -11,17 +11,17 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface AllAcceptedCredentialsOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static#allAcceptedCredentialIds)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static#allacceptedcredentialids)
      */
     var allAcceptedCredentialIds: ReadonlyArray<Base64URLString>
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static#rpId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static#rpid)
      */
     var rpId: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static#userId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static#userid)
      */
     var userId: Base64URLString
 }

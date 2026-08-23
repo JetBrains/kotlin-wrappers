@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface GPUComputePassDescriptor :
     GPUObjectDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginComputePass#timestampWrites)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginComputePass#timestampwrites)
      */
     var timestampWrites: GPUComputePassTimestampWrites?
 }

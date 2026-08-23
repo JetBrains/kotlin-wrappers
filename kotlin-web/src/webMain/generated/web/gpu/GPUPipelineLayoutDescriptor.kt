@@ -12,12 +12,12 @@ import kotlinx.js.JsPlainObject
 external interface GPUPipelineLayoutDescriptor :
     GPUObjectDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createPipelineLayout#bindGroupLayouts)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createPipelineLayout#bindgrouplayouts)
      */
     var bindGroupLayouts: ReadonlyArray<GPUBindGroupLayout?>
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createPipelineLayout#immediateSize)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createPipelineLayout#immediatesize)
      */
     var immediateSize: GPUSize32?
 }

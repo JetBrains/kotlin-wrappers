@@ -22,12 +22,12 @@ external interface GPUTextureDescriptor :
     var format: GPUTextureFormat
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture#mipLevelCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture#miplevelcount)
      */
     var mipLevelCount: GPUIntegerCoordinate?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture#sampleCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture#samplecount)
      */
     var sampleCount: GPUSize32?
 
@@ -42,7 +42,7 @@ external interface GPUTextureDescriptor :
     var usage: GPUTextureUsage
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture#viewFormats)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createTexture#viewformats)
      */
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
 }

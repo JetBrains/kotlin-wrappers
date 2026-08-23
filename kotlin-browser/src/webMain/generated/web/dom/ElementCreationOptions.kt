@@ -11,7 +11,7 @@ import web.components.CustomElementRegistry
 @JsPlainObject
 external interface ElementCreationOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement#customElementRegistry)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement#customelementregistry)
      */
     var customElementRegistry: CustomElementRegistry?
 

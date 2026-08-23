@@ -11,12 +11,12 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PushSubscriptionOptionsInit {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState#applicationServerKey)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState#applicationserverkey)
      */
     var applicationServerKey: BufferSource /* | String */?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState#userVisibleOnly)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState#uservisibleonly)
      */
     var userVisibleOnly: Boolean?
 }

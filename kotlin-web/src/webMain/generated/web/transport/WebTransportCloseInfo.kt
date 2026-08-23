@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface WebTransportCloseInfo {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/close#closeCode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/close#closecode)
      */
     var closeCode: Int?
 

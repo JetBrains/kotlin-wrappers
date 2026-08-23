@@ -10,12 +10,12 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface FullscreenOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen#keyboardLock)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen#keyboardlock)
      */
     var keyboardLock: FullscreenKeyboardLock?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen#navigationUI)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen#navigationui)
      */
     var navigationUI: FullscreenNavigationUI?
 }

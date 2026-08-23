@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface DocumentPictureInPictureOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow#disallowReturnToOpener)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow#disallowreturntoopener)
      */
     var disallowReturnToOpener: Boolean?
 
@@ -21,7 +21,7 @@ external interface DocumentPictureInPictureOptions {
     var height: UInt53?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow#preferInitialWindowPlacement)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow#preferinitialwindowplacement)
      */
     var preferInitialWindowPlacement: Boolean?
 

@@ -10,12 +10,12 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface UnknownCredentialOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static#credentialId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static#credentialid)
      */
     var credentialId: Base64URLString
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static#rpId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static#rpid)
      */
     var rpId: String
 }

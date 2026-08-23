@@ -12,7 +12,7 @@ import web.components.ShadowRoot
 @JsPlainObject
 external interface HighlightsFromPointOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry/highlightsFromPoint#shadowRoots)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry/highlightsFromPoint#shadowroots)
      */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

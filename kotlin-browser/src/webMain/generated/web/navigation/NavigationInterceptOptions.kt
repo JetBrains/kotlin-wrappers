@@ -10,7 +10,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface NavigationInterceptOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept#focusReset)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept#focusreset)
      */
     var focusReset: NavigationFocusReset?
 
@@ -20,7 +20,7 @@ external interface NavigationInterceptOptions {
     var handler: NavigationInterceptHandler?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept#precommitHandler)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept#precommithandler)
      */
     var precommitHandler: NavigationPrecommitHandler?
 

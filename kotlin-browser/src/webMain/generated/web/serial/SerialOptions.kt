@@ -10,22 +10,22 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface SerialOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#baudRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#baudrate)
      */
     var baudRate: Int
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#bufferSize)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#buffersize)
      */
     var bufferSize: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#dataBits)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#databits)
      */
     var dataBits: Short /* unsigned byte */?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#flowControl)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#flowcontrol)
      */
     var flowControl: FlowControlType?
 
@@ -35,7 +35,7 @@ external interface SerialOptions {
     var parity: ParityType?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#stopBits)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open#stopbits)
      */
     var stopBits: Short /* unsigned byte */?
 }

@@ -16,7 +16,7 @@ external interface PerformanceMarkOptions {
     var detail: JsAny?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/mark#startTime)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/mark#starttime)
      */
     var startTime: DOMHighResTimeStamp?
 }

@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface GPUTextureViewDescriptor :
     GPUObjectDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#arrayLayerCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#arraylayercount)
      */
     var arrayLayerCount: GPUIntegerCoordinate?
 
@@ -21,12 +21,12 @@ external interface GPUTextureViewDescriptor :
     var aspect: GPUTextureAspect?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#baseArrayLayer)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#basearraylayer)
      */
     var baseArrayLayer: GPUIntegerCoordinate?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#baseMipLevel)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#basemiplevel)
      */
     var baseMipLevel: GPUIntegerCoordinate?
 
@@ -41,7 +41,7 @@ external interface GPUTextureViewDescriptor :
     var format: GPUTextureFormat?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#mipLevelCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#miplevelcount)
      */
     var mipLevelCount: GPUIntegerCoordinate?
 

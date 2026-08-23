@@ -121,7 +121,7 @@ private fun getLinkData(
             LinkData(
                 baseUrl = baseUrl,
                 mode = Mode.HASH,
-                sectionName = parameterName.lowercase(),
+                sectionName = parameterName,
             )
         }
 }
@@ -142,7 +142,7 @@ private data class LinkData(
         val url = when {
             sectionName == null -> baseUrl
             mode == Mode.SUB_PAGE -> "$baseUrl/$sectionName"
-            mode == Mode.HASH -> "$baseUrl#$sectionName"
+            mode == Mode.HASH -> "$baseUrl#${sectionName.lowercase()}"
             else -> error("")
         }
 

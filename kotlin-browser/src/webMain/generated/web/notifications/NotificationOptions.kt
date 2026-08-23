@@ -40,7 +40,7 @@ external interface NotificationOptions {
     var lang: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification#requireInteraction)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification#requireinteraction)
      */
     var requireInteraction: Boolean?
 

@@ -16,7 +16,7 @@ external interface PublicKeyCredentialCreationOptionsJSON {
     var attestation: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static#authenticatorSelection)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static#authenticatorselection)
      */
     var authenticatorSelection: AuthenticatorSelectionCriteria?
 
@@ -26,7 +26,7 @@ external interface PublicKeyCredentialCreationOptionsJSON {
     var challenge: Base64URLString
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static#excludeCredentials)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static#excludecredentials)
      */
     var excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptorJSON>?
 
@@ -41,7 +41,7 @@ external interface PublicKeyCredentialCreationOptionsJSON {
     var hints: ReadonlyArray<JsString>?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static#pubKeyCredParams)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static#pubkeycredparams)
      */
     var pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
 

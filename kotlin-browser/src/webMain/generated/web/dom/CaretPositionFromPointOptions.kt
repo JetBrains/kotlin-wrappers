@@ -12,7 +12,7 @@ import web.components.ShadowRoot
 @JsPlainObject
 external interface CaretPositionFromPointOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint#shadowRoots)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint#shadowroots)
      */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

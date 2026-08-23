@@ -26,7 +26,7 @@ external interface VideoEncoderConfig {
     var bitrate: UInt53?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#bitrateMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#bitratemode)
      */
     var bitrateMode: VideoEncoderBitrateMode?
 
@@ -36,17 +36,17 @@ external interface VideoEncoderConfig {
     var codec: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#contentHint)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#contenthint)
      */
     var contentHint: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#displayHeight)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#displayheight)
      */
     var displayHeight: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#displayWidth)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#displaywidth)
      */
     var displayWidth: Int?
 
@@ -56,7 +56,7 @@ external interface VideoEncoderConfig {
     var framerate: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#hardwareAcceleration)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#hardwareacceleration)
      */
     var hardwareAcceleration: HardwareAcceleration?
 
@@ -66,12 +66,12 @@ external interface VideoEncoderConfig {
     var height: Int
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#latencyMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#latencymode)
      */
     var latencyMode: LatencyMode?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#scalabilityMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure#scalabilitymode)
      */
     var scalabilityMode: String?
 

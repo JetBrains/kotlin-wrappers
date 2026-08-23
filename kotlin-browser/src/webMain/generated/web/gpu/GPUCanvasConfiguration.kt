@@ -12,12 +12,12 @@ import web.images.PredefinedColorSpace
 @JsPlainObject
 external interface GPUCanvasConfiguration {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#alphaMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#alphamode)
      */
     var alphaMode: GPUCanvasAlphaMode?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#colorSpace)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#colorspace)
      */
     var colorSpace: PredefinedColorSpace?
 
@@ -32,7 +32,7 @@ external interface GPUCanvasConfiguration {
     var format: GPUTextureFormat
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#toneMapping)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#tonemapping)
      */
     var toneMapping: GPUCanvasToneMapping?
 
@@ -42,7 +42,7 @@ external interface GPUCanvasConfiguration {
     var usage: GPUTextureUsage?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#viewFormats)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure#viewformats)
      */
     var viewFormats: ReadonlyArray<GPUTextureFormat>?
 }

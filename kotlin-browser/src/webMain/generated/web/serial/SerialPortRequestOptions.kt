@@ -12,7 +12,7 @@ import web.bluetooth.BluetoothServiceUUID
 @JsPlainObject
 external interface SerialPortRequestOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort#allowedBluetoothServiceClassIds)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort#allowedbluetoothserviceclassids)
      */
     var allowedBluetoothServiceClassIds: ReadonlyArray<BluetoothServiceUUID>?
 

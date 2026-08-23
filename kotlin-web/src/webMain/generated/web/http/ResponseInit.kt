@@ -20,7 +20,7 @@ external interface ResponseInit {
     var status: Short?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static#statusText)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static#statustext)
      */
     var statusText: String?
 }

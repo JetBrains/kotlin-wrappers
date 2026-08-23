@@ -17,7 +17,7 @@ external interface RTCRtpTransceiverInit {
     var direction: RTCRtpTransceiverDirection?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver#sendEncodings)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver#sendencodings)
      */
     var sendEncodings: ReadonlyArray<RTCRtpEncodingParameters>?
 

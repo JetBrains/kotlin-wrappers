@@ -15,7 +15,7 @@ external interface PropertyDefinition {
     var inherits: Boolean
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/registerProperty_static#initialValue)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/registerProperty_static#initialvalue)
      */
     var initialValue: String?
 

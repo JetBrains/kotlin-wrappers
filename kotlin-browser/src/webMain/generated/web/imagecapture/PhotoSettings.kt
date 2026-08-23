@@ -10,22 +10,22 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PhotoSettings {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#fillLightMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#filllightmode)
      */
     var fillLightMode: FillLightMode?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#imageHeight)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#imageheight)
      */
     var imageHeight: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#imageWidth)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#imagewidth)
      */
     var imageWidth: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#redEyeReduction)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto#redeyereduction)
      */
     var redEyeReduction: Boolean?
 }

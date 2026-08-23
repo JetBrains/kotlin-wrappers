@@ -12,7 +12,7 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface PublicKeyCredentialRequestOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialRequestOptions#allowCredentials)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialRequestOptions#allowcredentials)
      */
     var allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
 
@@ -27,7 +27,7 @@ external interface PublicKeyCredentialRequestOptions {
     var extensions: AuthenticationExtensionsClientInputs?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialRequestOptions#rpId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialRequestOptions#rpid)
      */
     var rpId: String?
 
@@ -37,7 +37,7 @@ external interface PublicKeyCredentialRequestOptions {
     var timeout: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialRequestOptions#userVerification)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredentialRequestOptions#userverification)
      */
     var userVerification: UserVerificationRequirement?
 }

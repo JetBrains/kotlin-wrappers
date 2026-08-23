@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface GPUBufferDescriptor :
     GPUObjectDescriptorBase {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBuffer#mappedAtCreation)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createBuffer#mappedatcreation)
      */
     var mappedAtCreation: Boolean?
 

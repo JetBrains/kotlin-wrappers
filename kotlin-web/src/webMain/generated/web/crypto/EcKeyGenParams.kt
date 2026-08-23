@@ -11,7 +11,7 @@ import kotlinx.js.JsPlainObject
 external interface EcKeyGenParams :
     Algorithm {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EcKeyGenParams#namedCurve)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EcKeyGenParams#namedcurve)
      */
     var namedCurve: NamedCurve
 }

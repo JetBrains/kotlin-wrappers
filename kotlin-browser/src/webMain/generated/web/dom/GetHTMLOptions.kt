@@ -12,12 +12,12 @@ import web.components.ShadowRoot
 @JsPlainObject
 external interface GetHTMLOptions {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#serializableShadowRoots)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#serializableshadowroots)
      */
     var serializableShadowRoots: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#shadowRoots)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML#shadowroots)
      */
     var shadowRoots: ReadonlyArray<ShadowRoot>?
 }
