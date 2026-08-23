@@ -39,51 +39,10 @@ internal fun ConversionResult.withComment(
     if (body != newBody)
         return copy(body = newBody)
 
-    if (!IDLRegistry.isPlainObjectInterface(name))
-        return this
-
     if ("/**" in body)
         return this
 
-    data class LinkData(
-        private val baseUrl: String,
-        private val hash: String,
-    ) {
-        fun toComment(): String = """
-        /**
-         * [MDN Reference]($baseUrl#$hash)
-         */
-        """.trimIndent()
-    }
-
-    val linkData = fullSource
-        .split(": $name)")
-        .dropLast(1)
-        .firstNotNullOfOrNull {
-            val commentSource = it
-                .substringBeforeLast("\n", "")
-                .takeIf { it.endsWith(" */") }
-                ?.substringAfterLast("/**", "")
-                ?: return@firstNotNullOfOrNull null
-
-            val baseUrl = commentSource
-                .substringAfter(" * [MDN Reference]", "")
-                .substringBefore("\n", "")
-                .removeSurrounding("(", ")")
-                .ifEmpty { return@firstNotNullOfOrNull null }
-
-            val parameterName = it
-                .substringAfterLast("\n", "")
-                .ifEmpty { return@firstNotNullOfOrNull null }
-                .substringAfterLast(", ")
-                .substringAfterLast("(")
-                .removeSuffix("?")
-
-            LinkData(
-                baseUrl = baseUrl,
-                hash = parameterName.lowercase(),
-            )
-        }
+    val linkData = getLinkData(fullSource = fullSource, typeName = name)
         ?: return this
 
     val bodyWithComments = linkData.toComment()
@@ -115,4 +74,52 @@ internal fun ConversionResult.withComment(
     return copy(
         body = bodyWithComments,
     )
+}
+
+private fun getLinkData(
+    fullSource: String,
+    typeName: String,
+): LinkData? {
+    if (!IDLRegistry.isPlainObjectInterface(typeName))
+        return null
+
+    return fullSource
+        .split(": $typeName)")
+        .dropLast(1)
+        .firstNotNullOfOrNull {
+            val commentSource = it
+                .substringBeforeLast("\n", "")
+                .takeIf { it.endsWith(" */") }
+                ?.substringAfterLast("/**", "")
+                ?: return@firstNotNullOfOrNull null
+
+            val baseUrl = commentSource
+                .substringAfter(" * [MDN Reference]", "")
+                .substringBefore("\n", "")
+                .removeSurrounding("(", ")")
+                .ifEmpty { return@firstNotNullOfOrNull null }
+
+            val parameterName = it
+                .substringAfterLast("\n", "")
+                .ifEmpty { return@firstNotNullOfOrNull null }
+                .substringAfterLast(", ")
+                .substringAfterLast("(")
+                .removeSuffix("?")
+
+            LinkData(
+                baseUrl = baseUrl,
+                hash = parameterName.lowercase(),
+            )
+        }
+}
+
+private data class LinkData(
+    private val baseUrl: String,
+    private val hash: String,
+) {
+    fun toComment(): String = """
+        /**
+         * [MDN Reference]($baseUrl#$hash)
+         */
+        """.trimIndent()
 }
