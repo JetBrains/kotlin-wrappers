@@ -122,7 +122,14 @@ private fun getLinkData(
     }
 
     return fullSource
-        .split(": $typeName)", ": $typeName, ")
+        .split(
+            ": $typeName)",
+            ": $typeName | null)",
+            ": $typeName | undefined)",
+            ": $typeName, ",
+            ": $typeName | null, ",
+            ": $typeName | undefined, ",
+        )
         .dropLast(1)
         .firstNotNullOfOrNull {
             val baseUrl = if (it.substringAfterLast("\n").trim().startsWith("new(")) {
