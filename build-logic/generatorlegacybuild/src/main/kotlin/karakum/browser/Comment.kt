@@ -106,7 +106,10 @@ private fun getLinkData(
 
     if (!typeName.endsWith("Init")) {
         fullSource
-            .split("): $typeName;")
+            .split(
+                "): $typeName;",
+                "): Promise<$typeName>;",
+            )
             .dropLast(1)
             .firstNotNullOfOrNull {
                 val baseUrl = getReferenceLink(it)
