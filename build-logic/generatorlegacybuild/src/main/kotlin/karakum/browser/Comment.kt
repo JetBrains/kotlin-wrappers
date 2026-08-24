@@ -104,6 +104,23 @@ private fun getLinkData(
             mode = if (hasMdnSubpages(typeName)) Mode.SUB_PAGE else Mode.HASH,
         )
 
+    if (!typeName.endsWith("Init")) {
+        fullSource
+            .split("): $typeName;")
+            .dropLast(1)
+            .firstNotNullOfOrNull {
+                val baseUrl = getReferenceLink(it)
+                    ?: return@firstNotNullOfOrNull null
+
+                LinkData(
+                    baseUrl = baseUrl,
+                    mode = Mode.HASH,
+                    sectionName = "return_value",
+                )
+            }
+            ?.also { return it }
+    }
+
     return fullSource
         .split(": $typeName)", ": $typeName, ")
         .dropLast(1)
