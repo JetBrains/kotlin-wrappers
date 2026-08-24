@@ -75,6 +75,22 @@ internal fun ConversionResult.withComment(
     )
 }
 
+private fun getReferenceLink(
+    source: String,
+): String? {
+    val commentSource = source
+        .substringBeforeLast("\n", "")
+        .takeIf { it.endsWith(" */") }
+        ?.substringAfterLast("/**", "")
+        ?: return null
+
+    return commentSource
+        .substringAfter(" * [MDN Reference]", "")
+        .substringBefore("\n", "")
+        .removeSurrounding("(", ")")
+        .ifEmpty { null }
+}
+
 private fun getLinkData(
     fullSource: String,
     typeName: String,
@@ -101,17 +117,8 @@ private fun getLinkData(
 
                 "https://developer.mozilla.org/docs/Web/API/$typeName/$typeName"
             } else {
-                val commentSource = it
-                    .substringBeforeLast("\n", "")
-                    .takeIf { it.endsWith(" */") }
-                    ?.substringAfterLast("/**", "")
+                getReferenceLink(it)
                     ?: return@firstNotNullOfOrNull null
-
-                commentSource
-                    .substringAfter(" * [MDN Reference]", "")
-                    .substringBefore("\n", "")
-                    .removeSurrounding("(", ")")
-                    .ifEmpty { return@firstNotNullOfOrNull null }
             }
 
             val parameterName = it
