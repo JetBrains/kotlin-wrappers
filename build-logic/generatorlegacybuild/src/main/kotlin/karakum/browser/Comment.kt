@@ -92,17 +92,27 @@ private fun getLinkData(
         .split(": $typeName)")
         .dropLast(1)
         .firstNotNullOfOrNull {
-            val commentSource = it
-                .substringBeforeLast("\n", "")
-                .takeIf { it.endsWith(" */") }
-                ?.substringAfterLast("/**", "")
-                ?: return@firstNotNullOfOrNull null
+            val baseUrl = if (it.substringAfterLast("\n").trim().startsWith("new(")) {
+                val typeName = it.substringAfterLast("\ndeclare var ", "")
+                    .takeIf { "\ninterface " !in it }
+                    ?.substringBefore(": {", "")
+                    ?.takeIf { it.isNotEmpty() }
+                    ?: return@firstNotNullOfOrNull null
 
-            val baseUrl = commentSource
-                .substringAfter(" * [MDN Reference]", "")
-                .substringBefore("\n", "")
-                .removeSurrounding("(", ")")
-                .ifEmpty { return@firstNotNullOfOrNull null }
+                "https://developer.mozilla.org/docs/Web/API/$typeName/$typeName"
+            } else {
+                val commentSource = it
+                    .substringBeforeLast("\n", "")
+                    .takeIf { it.endsWith(" */") }
+                    ?.substringAfterLast("/**", "")
+                    ?: return@firstNotNullOfOrNull null
+
+                commentSource
+                    .substringAfter(" * [MDN Reference]", "")
+                    .substringBefore("\n", "")
+                    .removeSurrounding("(", ")")
+                    .ifEmpty { return@firstNotNullOfOrNull null }
+            }
 
             val parameterName = it
                 .substringAfterLast("\n", "")
