@@ -18,6 +18,13 @@ abstract external class JsIterator<out T : JsAny?> :
     fun `return`(): IteratorResult<T, *>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/chunks)
+     */
+    fun chunks(
+        chunkSize: Int,
+    ): JsIterator<ReadonlyArray<T>>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/drop)
      */
     fun drop(
@@ -67,6 +74,21 @@ abstract external class JsIterator<out T : JsAny?> :
     )
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/includes)
+     */
+    fun includes(
+        searchElement: @UnsafeVariance T,
+        fromIndex: Int = definedExternally,
+    ): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/join)
+     */
+    fun join(
+        separator: String,
+    ): String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/map)
      */
     fun <R : JsAny?> map(
@@ -102,6 +124,14 @@ abstract external class JsIterator<out T : JsAny?> :
         n: Int,
     ): JsIterator<T>
     // fun toArray(): ReadonlyArray<T>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/windows)
+     */
+    fun windows(
+        windowSize: Int,
+        underSized: UnderSized = definedExternally,
+    ): JsIterator<T>
 
     companion object {
         /**
