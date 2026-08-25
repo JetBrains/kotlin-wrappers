@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ProgressBarOptionsMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ProgressBarOptionsMode
 
 inline val ProgressBarOptionsMode.Companion.none: ProgressBarOptionsMode
     get() = js.reflect.unsafeCast("none")

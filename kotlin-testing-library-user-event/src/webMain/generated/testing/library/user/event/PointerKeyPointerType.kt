@@ -5,9 +5,8 @@ package testing.library.user.event
 // unhandled import: PointerCoords from "../../event"
 // unhandled import: MouseButton from "./buttons"
 
-sealed external interface PointerKeyPointerType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PointerKeyPointerType
 
 inline val PointerKeyPointerType.Companion.mouse: PointerKeyPointerType
     get() = js.reflect.unsafeCast("mouse")

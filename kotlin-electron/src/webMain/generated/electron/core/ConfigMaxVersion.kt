@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ConfigMaxVersion {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ConfigMaxVersion
 
 inline val ConfigMaxVersion.Companion.`tls1-2`: ConfigMaxVersion
     get() = js.reflect.unsafeCast("tls1.2")

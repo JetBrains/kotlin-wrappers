@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface GetFipsResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GetFipsResult
 
 inline val GetFipsResult.Companion.`1`: GetFipsResult
     get() = js.reflect.unsafeCast(1)

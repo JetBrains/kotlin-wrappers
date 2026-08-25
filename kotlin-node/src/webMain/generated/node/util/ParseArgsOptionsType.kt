@@ -5,9 +5,8 @@ package node.util
 /**
  * Type of argument used in {@link parseArgs}.
  */
-sealed external interface ParseArgsOptionsType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ParseArgsOptionsType
 
 inline val ParseArgsOptionsType.Companion.boolean: ParseArgsOptionsType
     get() = js.reflect.unsafeCast("boolean")

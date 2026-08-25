@@ -2,9 +2,8 @@
 
 package node.fs
 
-sealed external interface WatchEventType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WatchEventType
 
 inline val WatchEventType.Companion.rename: WatchEventType
     get() = js.reflect.unsafeCast("rename")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface USBProtectedClassesHandlerHandlerDetailsProtectedClass {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface USBProtectedClassesHandlerHandlerDetailsProtectedClass
 
 inline val USBProtectedClassesHandlerHandlerDetailsProtectedClass.Companion.audio: USBProtectedClassesHandlerHandlerDetailsProtectedClass
     get() = js.reflect.unsafeCast("audio")

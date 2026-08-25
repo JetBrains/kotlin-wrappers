@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TraceConfigRecording_mode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TraceConfigRecording_mode
 
 inline val TraceConfigRecording_mode.Companion.recordUntilFull: TraceConfigRecording_mode
     get() = js.reflect.unsafeCast("record-until-full")

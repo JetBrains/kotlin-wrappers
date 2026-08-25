@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TouchBarSpacerConstructorOptionsSize {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TouchBarSpacerConstructorOptionsSize
 
 inline val TouchBarSpacerConstructorOptionsSize.Companion.small: TouchBarSpacerConstructorOptionsSize
     get() = js.reflect.unsafeCast("small")

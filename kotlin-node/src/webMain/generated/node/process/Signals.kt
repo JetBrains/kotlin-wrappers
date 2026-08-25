@@ -2,9 +2,8 @@
 
 package node.process
 
-sealed external interface Signals {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface Signals
 
 inline val Signals.Companion.SIGABRT: Signals
     get() = js.reflect.unsafeCast("SIGABRT")

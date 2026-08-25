@@ -2,9 +2,8 @@
 
 package node
 
-sealed external interface GCOptionsFlavor {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GCOptionsFlavor
 
 inline val GCOptionsFlavor.Companion.regular: GCOptionsFlavor
     get() = js.reflect.unsafeCast("regular")

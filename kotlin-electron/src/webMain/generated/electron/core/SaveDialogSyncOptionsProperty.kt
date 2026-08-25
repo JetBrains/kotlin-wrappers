@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface SaveDialogSyncOptionsProperty {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface SaveDialogSyncOptionsProperty
 
 inline val SaveDialogSyncOptionsProperty.Companion.showHiddenFiles: SaveDialogSyncOptionsProperty
     get() = js.reflect.unsafeCast("showHiddenFiles")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface BaseWindowSetVibrancyType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface BaseWindowSetVibrancyType
 
 inline val BaseWindowSetVibrancyType.Companion.titlebar: BaseWindowSetVibrancyType
     get() = js.reflect.unsafeCast("titlebar")

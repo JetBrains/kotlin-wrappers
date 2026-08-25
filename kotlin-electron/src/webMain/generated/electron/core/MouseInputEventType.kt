@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface MouseInputEventType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MouseInputEventType
 
 inline val MouseInputEventType.Companion.mouseDown: MouseInputEventType
     get() = js.reflect.unsafeCast("mouseDown")

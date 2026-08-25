@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WebContentsConsoleMessageEventParamsLevel {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WebContentsConsoleMessageEventParamsLevel
 
 inline val WebContentsConsoleMessageEventParamsLevel.Companion.info: WebContentsConsoleMessageEventParamsLevel
     get() = js.reflect.unsafeCast("info")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClientRequestConstructorOptionsProtocol {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClientRequestConstructorOptionsProtocol
 
 inline val ClientRequestConstructorOptionsProtocol.Companion.`http:`: ClientRequestConstructorOptionsProtocol
     get() = js.reflect.unsafeCast("http:")

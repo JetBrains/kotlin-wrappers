@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface NavigateToItemMatchKind {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface NavigateToItemMatchKind
 
 inline val NavigateToItemMatchKind.Companion.exact: NavigateToItemMatchKind
     get() = js.reflect.unsafeCast("exact")

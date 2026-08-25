@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface ECKeyPairKeyObjectOptionsParamEncoding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ECKeyPairKeyObjectOptionsParamEncoding
 
 inline val ECKeyPairKeyObjectOptionsParamEncoding.Companion.explicit: ECKeyPairKeyObjectOptionsParamEncoding
     get() = js.reflect.unsafeCast("explicit")

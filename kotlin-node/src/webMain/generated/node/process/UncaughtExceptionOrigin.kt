@@ -2,9 +2,8 @@
 
 package node.process
 
-sealed external interface UncaughtExceptionOrigin {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UncaughtExceptionOrigin
 
 inline val UncaughtExceptionOrigin.Companion.uncaughtException: UncaughtExceptionOrigin
     get() = js.reflect.unsafeCast("uncaughtException")

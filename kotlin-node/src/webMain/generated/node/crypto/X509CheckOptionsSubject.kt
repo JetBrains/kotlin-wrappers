@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface X509CheckOptionsSubject {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface X509CheckOptionsSubject
 
 inline val X509CheckOptionsSubject.Companion.always: X509CheckOptionsSubject
     get() = js.reflect.unsafeCast("always")

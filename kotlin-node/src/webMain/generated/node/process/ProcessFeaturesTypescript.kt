@@ -2,9 +2,8 @@
 
 package node.process
 
-sealed external interface ProcessFeaturesTypescript {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ProcessFeaturesTypescript
 
 inline val ProcessFeaturesTypescript.Companion.`false`: ProcessFeaturesTypescript
     get() = js.reflect.unsafeCast(false)

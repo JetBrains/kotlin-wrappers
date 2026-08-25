@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TouchBarSegmentedControlConstructorOptionsMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TouchBarSegmentedControlConstructorOptionsMode
 
 inline val TouchBarSegmentedControlConstructorOptionsMode.Companion.single: TouchBarSegmentedControlConstructorOptionsMode
     get() = js.reflect.unsafeCast("single")

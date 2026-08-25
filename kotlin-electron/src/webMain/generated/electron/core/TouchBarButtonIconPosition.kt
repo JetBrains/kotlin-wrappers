@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TouchBarButtonIconPosition {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TouchBarButtonIconPosition
 
 inline val TouchBarButtonIconPosition.Companion.left: TouchBarButtonIconPosition
     get() = js.reflect.unsafeCast("left")

@@ -2,9 +2,8 @@
 
 package node.perfHooks
 
-sealed external interface PerformanceMarkResourceTimingCacheMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PerformanceMarkResourceTimingCacheMode
 
 inline val PerformanceMarkResourceTimingCacheMode.Companion.`_`: PerformanceMarkResourceTimingCacheMode
     get() = js.reflect.unsafeCast("")

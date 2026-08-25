@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TouchBarScrubberOverlayStyle {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TouchBarScrubberOverlayStyle
 
 inline val TouchBarScrubberOverlayStyle.Companion.background: TouchBarScrubberOverlayStyle
     get() = js.reflect.unsafeCast("background")

@@ -2,9 +2,8 @@
 
 package node.workerThreads
 
-sealed external interface LockMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface LockMode
 
 inline val LockMode.Companion.exclusive: LockMode
     get() = js.reflect.unsafeCast("exclusive")

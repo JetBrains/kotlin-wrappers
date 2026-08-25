@@ -2,9 +2,8 @@
 
 package node.http2
 
-sealed external interface ClientSessionOptionsProtocol {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClientSessionOptionsProtocol
 
 inline val ClientSessionOptionsProtocol.Companion.`http:`: ClientSessionOptionsProtocol
     get() = js.reflect.unsafeCast("http:")

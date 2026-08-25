@@ -2,9 +2,8 @@
 
 package node.fs
 
-sealed external interface SymlinkType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface SymlinkType
 
 inline val SymlinkType.Companion.dir: SymlinkType
     get() = js.reflect.unsafeCast("dir")

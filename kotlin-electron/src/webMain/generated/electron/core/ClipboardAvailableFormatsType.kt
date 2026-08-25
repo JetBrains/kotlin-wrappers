@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClipboardAvailableFormatsType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClipboardAvailableFormatsType
 
 inline val ClipboardAvailableFormatsType.Companion.selection: ClipboardAvailableFormatsType
     get() = js.reflect.unsafeCast("selection")

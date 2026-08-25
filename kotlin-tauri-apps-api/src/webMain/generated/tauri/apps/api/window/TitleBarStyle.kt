@@ -2,9 +2,8 @@
 
 package tauri.apps.api.window
 
-sealed external interface TitleBarStyle {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TitleBarStyle
 
 inline val TitleBarStyle.Companion.visible: TitleBarStyle
     get() = js.reflect.unsafeCast("visible")

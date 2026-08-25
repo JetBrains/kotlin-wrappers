@@ -2,9 +2,8 @@
 
 package node.fs
 
-sealed external interface WatchOptionsOverflow {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WatchOptionsOverflow
 
 inline val WatchOptionsOverflow.Companion.ignore: WatchOptionsOverflow
     get() = js.reflect.unsafeCast("ignore")

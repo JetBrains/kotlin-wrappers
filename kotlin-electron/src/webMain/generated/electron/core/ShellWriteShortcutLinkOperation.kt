@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ShellWriteShortcutLinkOperation {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ShellWriteShortcutLinkOperation
 
 inline val ShellWriteShortcutLinkOperation.Companion.create: ShellWriteShortcutLinkOperation
     get() = js.reflect.unsafeCast("create")

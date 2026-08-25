@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface PerformanceEventKind {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PerformanceEventKind
 
 inline val PerformanceEventKind.Companion.UpdateGraph: PerformanceEventKind
     get() = js.reflect.unsafeCast("UpdateGraph")

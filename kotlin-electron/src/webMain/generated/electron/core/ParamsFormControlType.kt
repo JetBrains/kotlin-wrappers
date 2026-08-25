@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ParamsFormControlType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ParamsFormControlType
 
 inline val ParamsFormControlType.Companion.none: ParamsFormControlType
     get() = js.reflect.unsafeCast("none")

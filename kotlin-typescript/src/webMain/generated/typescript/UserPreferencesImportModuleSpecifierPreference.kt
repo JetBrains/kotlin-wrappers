@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferencesImportModuleSpecifierPreference {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UserPreferencesImportModuleSpecifierPreference
 
 inline val UserPreferencesImportModuleSpecifierPreference.Companion.shortest: UserPreferencesImportModuleSpecifierPreference
     get() = js.reflect.unsafeCast("shortest")

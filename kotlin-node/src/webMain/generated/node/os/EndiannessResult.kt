@@ -2,9 +2,8 @@
 
 package node.os
 
-sealed external interface EndiannessResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface EndiannessResult
 
 inline val EndiannessResult.Companion.BE: EndiannessResult
     get() = js.reflect.unsafeCast("BE")

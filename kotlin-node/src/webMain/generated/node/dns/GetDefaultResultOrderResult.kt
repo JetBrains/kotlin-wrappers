@@ -2,9 +2,8 @@
 
 package node.dns
 
-sealed external interface GetDefaultResultOrderResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GetDefaultResultOrderResult
 
 inline val GetDefaultResultOrderResult.Companion.ipv4first: GetDefaultResultOrderResult
     get() = js.reflect.unsafeCast("ipv4first")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface OpenDialogOptionsProperty {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface OpenDialogOptionsProperty
 
 inline val OpenDialogOptionsProperty.Companion.openFile: OpenDialogOptionsProperty
     get() = js.reflect.unsafeCast("openFile")

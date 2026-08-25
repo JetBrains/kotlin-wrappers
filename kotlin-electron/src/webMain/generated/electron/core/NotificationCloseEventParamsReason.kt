@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface NotificationCloseEventParamsReason {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface NotificationCloseEventParamsReason
 
 inline val NotificationCloseEventParamsReason.Companion.userCanceled: NotificationCloseEventParamsReason
     get() = js.reflect.unsafeCast("userCanceled")

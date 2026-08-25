@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface NotificationConstructorOptionsTimeoutType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface NotificationConstructorOptionsTimeoutType
 
 inline val NotificationConstructorOptionsTimeoutType.Companion.default: NotificationConstructorOptionsTimeoutType
     get() = js.reflect.unsafeCast("default")

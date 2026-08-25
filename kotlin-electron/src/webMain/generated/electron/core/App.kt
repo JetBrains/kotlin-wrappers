@@ -1585,8 +1585,8 @@ external interface App : node.events.EventEmitter {
                                 (
                         isTrusted: Boolean,
                     ) -> Unit,
-                            Boolean,
-                            >,
+                            Boolean
+                            >
                     >
 
     @web.events.JsEvent("child-process-gone")
@@ -1619,8 +1619,8 @@ external interface App : node.events.EventEmitter {
                                 (
                         username: String?, /* use undefined for default */
                         password: String?, // use undefined for default
-                    ) -> Unit,
-                            >,
+                    ) -> Unit
+                            >
                     >
 
     @web.events.JsEvent("new-window-for-tab")
@@ -1657,8 +1657,8 @@ external interface App : node.events.EventEmitter {
                             js.array.ReadonlyArray<Certificate>,
                                 (
                         certificate: Certificate?, // use undefined for default
-                    ) -> Unit,
-                            >,
+                    ) -> Unit
+                            >
                     >
 
     @web.events.JsEvent("session-created")

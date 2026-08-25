@@ -2,9 +2,8 @@
 
 package node.process
 
-sealed external interface Architecture {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface Architecture
 
 inline val Architecture.Companion.arm: Architecture
     get() = js.reflect.unsafeCast("arm")

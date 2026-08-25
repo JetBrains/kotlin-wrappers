@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface HandlerDetailsDisposition {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface HandlerDetailsDisposition
 
 inline val HandlerDetailsDisposition.Companion.default: HandlerDetailsDisposition
     get() = js.reflect.unsafeCast("default")

@@ -3,9 +3,8 @@
 package node.crypto
 
 // https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings
-sealed external interface BinaryToTextEncoding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface BinaryToTextEncoding
 
 inline val BinaryToTextEncoding.Companion.base64: BinaryToTextEncoding
     get() = js.reflect.unsafeCast("base64")

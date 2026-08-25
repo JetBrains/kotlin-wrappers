@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface RSAKeyPairOptionsPublicKeyEncodingType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface RSAKeyPairOptionsPublicKeyEncodingType
 
 inline val RSAKeyPairOptionsPublicKeyEncodingType.Companion.pkcs1: RSAKeyPairOptionsPublicKeyEncodingType
     get() = js.reflect.unsafeCast("pkcs1")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TextureInfoPixelFormat {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TextureInfoPixelFormat
 
 inline val TextureInfoPixelFormat.Companion.rgba: TextureInfoPixelFormat
     get() = js.reflect.unsafeCast("rgba")

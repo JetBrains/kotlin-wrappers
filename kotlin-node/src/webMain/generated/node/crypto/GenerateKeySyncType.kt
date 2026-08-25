@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface GenerateKeySyncType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GenerateKeySyncType
 
 inline val GenerateKeySyncType.Companion.hmac: GenerateKeySyncType
     get() = js.reflect.unsafeCast("hmac")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface PermissionCheckHandlerHandlerDetailsMediaType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PermissionCheckHandlerHandlerDetailsMediaType
 
 inline val PermissionCheckHandlerHandlerDetailsMediaType.Companion.video: PermissionCheckHandlerHandlerDetailsMediaType
     get() = js.reflect.unsafeCast("video")

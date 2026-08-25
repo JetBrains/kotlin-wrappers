@@ -2,9 +2,8 @@
 
 package node.net
 
-sealed external interface IPVersion {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface IPVersion
 
 inline val IPVersion.Companion.ipv4: IPVersion
     get() = js.reflect.unsafeCast("ipv4")

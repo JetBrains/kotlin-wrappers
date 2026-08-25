@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface MenuItemRole {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MenuItemRole
 
 inline val MenuItemRole.Companion.undo: MenuItemRole
     get() = js.reflect.unsafeCast("undo")

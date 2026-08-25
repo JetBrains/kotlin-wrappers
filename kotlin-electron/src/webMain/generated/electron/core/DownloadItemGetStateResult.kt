@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface DownloadItemGetStateResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DownloadItemGetStateResult
 
 inline val DownloadItemGetStateResult.Companion.progressing: DownloadItemGetStateResult
     get() = js.reflect.unsafeCast("progressing")

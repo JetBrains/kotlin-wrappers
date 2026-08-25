@@ -2,9 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestEnqueueType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TestEnqueueType
 
 inline val TestEnqueueType.Companion.suite: TestEnqueueType
     get() = js.reflect.unsafeCast("suite")

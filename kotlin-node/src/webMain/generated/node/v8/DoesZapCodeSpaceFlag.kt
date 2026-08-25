@@ -3,9 +3,8 @@
 package node.v8
 
 // ** Signifies if the --zap_code_space option is enabled or not.  1 == enabled, 0 == disabled. */
-sealed external interface DoesZapCodeSpaceFlag {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DoesZapCodeSpaceFlag
 
 inline val DoesZapCodeSpaceFlag.Companion.`0`: DoesZapCodeSpaceFlag
     get() = js.reflect.unsafeCast(0)

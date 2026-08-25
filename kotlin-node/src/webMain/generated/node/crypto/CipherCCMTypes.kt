@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface CipherCCMTypes {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface CipherCCMTypes
 
 inline val CipherCCMTypes.Companion.aes128Ccm: CipherCCMTypes
     get() = js.reflect.unsafeCast("aes-128-ccm")

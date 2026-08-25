@@ -2,9 +2,8 @@
 
 package tauri.apps.api.tray
 
-sealed external interface TrayIconEventType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TrayIconEventType
 
 inline val TrayIconEventType.Companion.Click: TrayIconEventType
     get() = js.reflect.unsafeCast("Click")

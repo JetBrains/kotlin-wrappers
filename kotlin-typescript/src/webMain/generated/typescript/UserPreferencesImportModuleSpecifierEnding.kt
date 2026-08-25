@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferencesImportModuleSpecifierEnding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UserPreferencesImportModuleSpecifierEnding
 
 inline val UserPreferencesImportModuleSpecifierEnding.Companion.auto: UserPreferencesImportModuleSpecifierEnding
     get() = js.reflect.unsafeCast("auto")

@@ -870,8 +870,8 @@ external class Session : NodeEventEmitter {
                             FileSystemAccessRestrictedDetails,
                                 (
                         action: SessionFileSystemAccessRestrictedListenerCallbackAction,
-                    ) -> Unit,
-                            >,
+                    ) -> Unit
+                            >
                     >
 
     @web.events.JsEvent("hid-device-added")
@@ -893,8 +893,8 @@ external class Session : NodeEventEmitter {
                     SelectHidDeviceDetails,
                         (
                 deviceId: String?, // use undefined for default
-            ) -> Unit,
-                    >,
+            ) -> Unit
+                    >
             >
 
     @web.events.JsEvent("select-serial-port")
@@ -906,8 +906,8 @@ external class Session : NodeEventEmitter {
                             WebContents,
                                 (
                         portId: String,
-                    ) -> Unit,
-                            >,
+                    ) -> Unit
+                            >
                     >
 
     @web.events.JsEvent("select-usb-device")
@@ -917,8 +917,8 @@ external class Session : NodeEventEmitter {
                     SelectUsbDeviceDetails,
                         (
                 deviceId: String?, // use undefined for default
-            ) -> Unit,
-                    >,
+            ) -> Unit
+                    >
             >
 
     @web.events.JsEvent("select-webauthn-account")
@@ -928,8 +928,8 @@ external class Session : NodeEventEmitter {
                     SelectWebauthnAccountDetails,
                         (
                 credentialId: String?, // use undefined for default
-            ) -> Unit,
-                    >,
+            ) -> Unit
+                    >
             >
 
     @web.events.JsEvent("serial-port-added")

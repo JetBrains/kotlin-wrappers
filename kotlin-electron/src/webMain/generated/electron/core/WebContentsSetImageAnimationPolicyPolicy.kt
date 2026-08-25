@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WebContentsSetImageAnimationPolicyPolicy {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WebContentsSetImageAnimationPolicyPolicy
 
 inline val WebContentsSetImageAnimationPolicyPolicy.Companion.animate: WebContentsSetImageAnimationPolicyPolicy
     get() = js.reflect.unsafeCast("animate")

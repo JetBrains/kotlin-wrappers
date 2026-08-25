@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface OpenDevToolsOptionsMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface OpenDevToolsOptionsMode
 
 inline val OpenDevToolsOptionsMode.Companion.left: OpenDevToolsOptionsMode
     get() = js.reflect.unsafeCast("left")

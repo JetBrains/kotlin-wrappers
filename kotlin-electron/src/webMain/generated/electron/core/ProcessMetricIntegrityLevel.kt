@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ProcessMetricIntegrityLevel {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ProcessMetricIntegrityLevel
 
 inline val ProcessMetricIntegrityLevel.Companion.untrusted: ProcessMetricIntegrityLevel
     get() = js.reflect.unsafeCast("untrusted")

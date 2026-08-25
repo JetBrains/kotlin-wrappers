@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface NativeThemeThemeSource {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface NativeThemeThemeSource
 
 inline val NativeThemeThemeSource.Companion.system: NativeThemeThemeSource
     get() = js.reflect.unsafeCast("system")

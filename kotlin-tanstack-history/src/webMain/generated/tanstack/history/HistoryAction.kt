@@ -2,9 +2,8 @@
 
 package tanstack.history
 
-sealed external interface HistoryAction {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface HistoryAction
 
 inline val HistoryAction.Companion.PUSH: HistoryAction
     get() = js.reflect.unsafeCast("PUSH")

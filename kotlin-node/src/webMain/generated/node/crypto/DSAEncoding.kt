@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface DSAEncoding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DSAEncoding
 
 inline val DSAEncoding.Companion.der: DSAEncoding
     get() = js.reflect.unsafeCast("der")

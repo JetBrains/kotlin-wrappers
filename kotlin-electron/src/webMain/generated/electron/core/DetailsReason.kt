@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface DetailsReason {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DetailsReason
 
 inline val DetailsReason.Companion.cleanExit: DetailsReason
     get() = js.reflect.unsafeCast("clean-exit")

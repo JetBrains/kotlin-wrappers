@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface PowerMonitorGetCurrentThermalStateResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PowerMonitorGetCurrentThermalStateResult
 
 inline val PowerMonitorGetCurrentThermalStateResult.Companion.unknown: PowerMonitorGetCurrentThermalStateResult
     get() = js.reflect.unsafeCast("unknown")

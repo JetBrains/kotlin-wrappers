@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface AnimateEasing {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface AnimateEasing
 
 inline val AnimateEasing.Companion.linear: AnimateEasing
     get() = js.reflect.unsafeCast("linear")

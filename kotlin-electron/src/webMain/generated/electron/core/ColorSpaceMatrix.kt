@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ColorSpaceMatrix {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ColorSpaceMatrix
 
 inline val ColorSpaceMatrix.Companion.rgb: ColorSpaceMatrix
     get() = js.reflect.unsafeCast("rgb")

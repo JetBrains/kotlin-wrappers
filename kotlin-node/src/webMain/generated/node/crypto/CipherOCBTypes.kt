@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface CipherOCBTypes {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface CipherOCBTypes
 
 inline val CipherOCBTypes.Companion.aes128Ocb: CipherOCBTypes
     get() = js.reflect.unsafeCast("aes-128-ocb")

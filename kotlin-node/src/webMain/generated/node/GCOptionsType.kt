@@ -2,9 +2,8 @@
 
 package node
 
-sealed external interface GCOptionsType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GCOptionsType
 
 inline val GCOptionsType.Companion.majorSnapshot: GCOptionsType
     get() = js.reflect.unsafeCast("major-snapshot")

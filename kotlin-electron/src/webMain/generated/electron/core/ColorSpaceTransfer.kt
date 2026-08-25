@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ColorSpaceTransfer {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ColorSpaceTransfer
 
 inline val ColorSpaceTransfer.Companion.bt709: ColorSpaceTransfer
     get() = js.reflect.unsafeCast("bt709")

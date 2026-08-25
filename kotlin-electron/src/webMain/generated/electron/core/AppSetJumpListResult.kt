@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface AppSetJumpListResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface AppSetJumpListResult
 
 inline val AppSetJumpListResult.Companion.ok: AppSetJumpListResult
     get() = js.reflect.unsafeCast("ok")

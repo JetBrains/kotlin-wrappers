@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface InputEventType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface InputEventType
 
 inline val InputEventType.Companion.undefined: InputEventType
     get() = js.reflect.unsafeCast("undefined")

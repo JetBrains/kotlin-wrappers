@@ -2,9 +2,8 @@
 
 package tauri.apps.api.window
 
-sealed external interface Theme {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface Theme
 
 inline val Theme.Companion.light: Theme
     get() = js.reflect.unsafeCast("light")

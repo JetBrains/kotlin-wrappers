@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ProcessMetricType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ProcessMetricType
 
 inline val ProcessMetricType.Companion.Browser: ProcessMetricType
     get() = js.reflect.unsafeCast("Browser")

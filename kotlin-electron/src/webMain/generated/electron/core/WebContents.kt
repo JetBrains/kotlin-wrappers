@@ -1476,8 +1476,8 @@ external class WebContents : NodeEventEmitter {
                         (
                 isTrusted: Boolean,
             ) -> Unit,
-                    Boolean,
-                    >,
+                    Boolean
+                    >
             >
 
     @web.events.JsEvent("console-message")
@@ -1599,8 +1599,8 @@ external class WebContents : NodeEventEmitter {
                         (
                 username: String?, /* use undefined for default */
                 password: String?, // use undefined for default
-            ) -> Unit,
-                    >,
+            ) -> Unit
+                    >
             >
 
     @web.events.JsEvent("media-paused")
@@ -1639,8 +1639,8 @@ external class WebContents : NodeEventEmitter {
                             js.array.ReadonlyArray<BluetoothDevice>,
                                 (
                         deviceId: String,
-                    ) -> Unit,
-                            >,
+                    ) -> Unit
+                            >
                     >
 
     @web.events.JsEvent("select-client-certificate")
@@ -1652,8 +1652,8 @@ external class WebContents : NodeEventEmitter {
                             js.array.ReadonlyArray<Certificate>,
                                 (
                         certificate: Certificate,
-                    ) -> Unit,
-                            >,
+                    ) -> Unit
+                            >
                     >
 
     @web.events.JsEvent("unresponsive")

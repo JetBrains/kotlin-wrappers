@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ParametersScreenPosition {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ParametersScreenPosition
 
 inline val ParametersScreenPosition.Companion.desktop: ParametersScreenPosition
     get() = js.reflect.unsafeCast("desktop")

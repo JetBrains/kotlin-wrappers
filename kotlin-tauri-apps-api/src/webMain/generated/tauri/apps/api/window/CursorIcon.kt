@@ -2,9 +2,8 @@
 
 package tauri.apps.api.window
 
-sealed external interface CursorIcon {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface CursorIcon
 
 inline val CursorIcon.Companion.default: CursorIcon
     get() = js.reflect.unsafeCast("default")

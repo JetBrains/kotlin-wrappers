@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface MarginsMarginType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MarginsMarginType
 
 inline val MarginsMarginType.Companion.default: MarginsMarginType
     get() = js.reflect.unsafeCast("default")

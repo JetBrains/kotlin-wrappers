@@ -7,9 +7,8 @@ package node.tty
  *  0 - the entire line
  *  1 - to the right from cursor
  */
-sealed external interface Direction {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface Direction
 
 inline val Direction.Companion.`-1`: Direction
     get() = js.reflect.unsafeCast(-1)

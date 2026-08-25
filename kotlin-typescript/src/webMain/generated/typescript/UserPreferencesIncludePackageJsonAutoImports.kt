@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferencesIncludePackageJsonAutoImports {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UserPreferencesIncludePackageJsonAutoImports
 
 inline val UserPreferencesIncludePackageJsonAutoImports.Companion.auto: UserPreferencesIncludePackageJsonAutoImports
     get() = js.reflect.unsafeCast("auto")

@@ -2,9 +2,8 @@
 
 package node.http
 
-sealed external interface AgentOptionsScheduling {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface AgentOptionsScheduling
 
 inline val AgentOptionsScheduling.Companion.fifo: AgentOptionsScheduling
     get() = js.reflect.unsafeCast("fifo")

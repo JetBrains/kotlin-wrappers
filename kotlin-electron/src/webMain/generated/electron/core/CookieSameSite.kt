@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface CookieSameSite {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface CookieSameSite
 
 inline val CookieSameSite.Companion.unspecified: CookieSameSite
     get() = js.reflect.unsafeCast("unspecified")

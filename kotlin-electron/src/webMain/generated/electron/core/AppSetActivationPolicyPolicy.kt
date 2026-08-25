@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface AppSetActivationPolicyPolicy {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface AppSetActivationPolicyPolicy
 
 inline val AppSetActivationPolicyPolicy.Companion.regular: AppSetActivationPolicyPolicy
     get() = js.reflect.unsafeCast("regular")

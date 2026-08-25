@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClipboardClearType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClipboardClearType
 
 inline val ClipboardClearType.Companion.selection: ClipboardClearType
     get() = js.reflect.unsafeCast("selection")

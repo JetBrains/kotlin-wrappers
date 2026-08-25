@@ -2,9 +2,8 @@
 
 package node.dns
 
-sealed external interface LookupOptionsOrder {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface LookupOptionsOrder
 
 inline val LookupOptionsOrder.Companion.ipv4first: LookupOptionsOrder
     get() = js.reflect.unsafeCast("ipv4first")

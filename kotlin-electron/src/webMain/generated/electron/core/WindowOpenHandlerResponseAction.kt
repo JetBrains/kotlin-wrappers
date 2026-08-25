@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WindowOpenHandlerResponseAction {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WindowOpenHandlerResponseAction
 
 inline val WindowOpenHandlerResponseAction.Companion.allow: WindowOpenHandlerResponseAction
     get() = js.reflect.unsafeCast("allow")

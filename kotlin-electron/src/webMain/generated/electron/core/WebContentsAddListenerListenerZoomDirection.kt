@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WebContentsAddListenerListenerZoomDirection {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WebContentsAddListenerListenerZoomDirection
 
 inline val WebContentsAddListenerListenerZoomDirection.Companion.`in`: WebContentsAddListenerListenerZoomDirection
     get() = js.reflect.unsafeCast("in")

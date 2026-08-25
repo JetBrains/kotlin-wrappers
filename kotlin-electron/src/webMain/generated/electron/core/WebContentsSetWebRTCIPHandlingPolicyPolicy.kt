@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WebContentsSetWebRTCIPHandlingPolicyPolicy {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WebContentsSetWebRTCIPHandlingPolicyPolicy
 
 inline val WebContentsSetWebRTCIPHandlingPolicyPolicy.Companion.default: WebContentsSetWebRTCIPHandlingPolicyPolicy
     get() = js.reflect.unsafeCast("default")

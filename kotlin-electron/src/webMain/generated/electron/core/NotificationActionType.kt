@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface NotificationActionType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface NotificationActionType
 
 inline val NotificationActionType.Companion.button: NotificationActionType
     get() = js.reflect.unsafeCast("button")

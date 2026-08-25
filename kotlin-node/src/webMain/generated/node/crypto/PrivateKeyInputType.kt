@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface PrivateKeyInputType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PrivateKeyInputType
 
 inline val PrivateKeyInputType.Companion.pkcs1: PrivateKeyInputType
     get() = js.reflect.unsafeCast("pkcs1")

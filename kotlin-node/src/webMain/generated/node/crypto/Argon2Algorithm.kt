@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface Argon2Algorithm {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface Argon2Algorithm
 
 inline val Argon2Algorithm.Companion.argon2d: Argon2Algorithm
     get() = js.reflect.unsafeCast("argon2d")

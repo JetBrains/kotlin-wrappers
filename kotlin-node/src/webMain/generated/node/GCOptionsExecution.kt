@@ -2,9 +2,8 @@
 
 package node
 
-sealed external interface GCOptionsExecution {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GCOptionsExecution
 
 inline val GCOptionsExecution.Companion.sync: GCOptionsExecution
     get() = js.reflect.unsafeCast("sync")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface DisplayAccelerometerSupport {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DisplayAccelerometerSupport
 
 inline val DisplayAccelerometerSupport.Companion.available: DisplayAccelerometerSupport
     get() = js.reflect.unsafeCast("available")

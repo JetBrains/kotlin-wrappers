@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferencesOrganizeImportsCaseFirst {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UserPreferencesOrganizeImportsCaseFirst
 
 inline val UserPreferencesOrganizeImportsCaseFirst.Companion.`false`: UserPreferencesOrganizeImportsCaseFirst
     get() = js.reflect.unsafeCast(false)

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClientRequestConstructorOptionsPriority {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClientRequestConstructorOptionsPriority
 
 inline val ClientRequestConstructorOptionsPriority.Companion.throttled: ClientRequestConstructorOptionsPriority
     get() = js.reflect.unsafeCast("throttled")

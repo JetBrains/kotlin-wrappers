@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface DevicePermissionHandlerHandlerDetailsDeviceType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DevicePermissionHandlerHandlerDetailsDeviceType
 
 inline val DevicePermissionHandlerHandlerDetailsDeviceType.Companion.hid: DevicePermissionHandlerHandlerDetailsDeviceType
     get() = js.reflect.unsafeCast("hid")

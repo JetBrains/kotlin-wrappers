@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface LaunchItemsScope {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface LaunchItemsScope
 
 inline val LaunchItemsScope.Companion.user: LaunchItemsScope
     get() = js.reflect.unsafeCast("user")

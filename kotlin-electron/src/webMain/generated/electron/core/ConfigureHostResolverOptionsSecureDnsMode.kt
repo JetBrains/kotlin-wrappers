@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ConfigureHostResolverOptionsSecureDnsMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ConfigureHostResolverOptionsSecureDnsMode
 
 inline val ConfigureHostResolverOptionsSecureDnsMode.Companion.off: ConfigureHostResolverOptionsSecureDnsMode
     get() = js.reflect.unsafeCast("off")

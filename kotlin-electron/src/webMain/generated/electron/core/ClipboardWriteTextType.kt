@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClipboardWriteTextType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClipboardWriteTextType
 
 inline val ClipboardWriteTextType.Companion.selection: ClipboardWriteTextType
     get() = js.reflect.unsafeCast("selection")

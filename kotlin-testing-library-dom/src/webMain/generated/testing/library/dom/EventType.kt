@@ -2,9 +2,8 @@
 
 package testing.library.dom
 
-sealed external interface EventType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface EventType
 
 inline val EventType.Companion.copy: EventType
     get() = js.reflect.unsafeCast("copy")

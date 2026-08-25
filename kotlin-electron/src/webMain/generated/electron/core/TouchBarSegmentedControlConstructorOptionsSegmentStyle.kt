@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TouchBarSegmentedControlConstructorOptionsSegmentStyle {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TouchBarSegmentedControlConstructorOptionsSegmentStyle
 
 inline val TouchBarSegmentedControlConstructorOptionsSegmentStyle.Companion.automatic: TouchBarSegmentedControlConstructorOptionsSegmentStyle
     get() = js.reflect.unsafeCast("automatic")

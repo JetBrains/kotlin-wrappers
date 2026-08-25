@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface ECDHConvertKeyOutputEncoding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ECDHConvertKeyOutputEncoding
 
 inline val ECDHConvertKeyOutputEncoding.Companion.latin1: ECDHConvertKeyOutputEncoding
     get() = js.reflect.unsafeCast("latin1")

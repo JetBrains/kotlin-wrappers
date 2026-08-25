@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface SystemPreferencesGetMediaAccessStatusResult {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface SystemPreferencesGetMediaAccessStatusResult
 
 inline val SystemPreferencesGetMediaAccessStatusResult.Companion.notDetermined: SystemPreferencesGetMediaAccessStatusResult
     get() = js.reflect.unsafeCast("not-determined")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface BaseWindowConstructorOptionsBackgroundMaterial {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface BaseWindowConstructorOptionsBackgroundMaterial
 
 inline val BaseWindowConstructorOptionsBackgroundMaterial.Companion.auto: BaseWindowConstructorOptionsBackgroundMaterial
     get() = js.reflect.unsafeCast("auto")

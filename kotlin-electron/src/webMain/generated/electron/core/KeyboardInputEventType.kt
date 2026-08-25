@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface KeyboardInputEventType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface KeyboardInputEventType
 
 inline val KeyboardInputEventType.Companion.rawKeyDown: KeyboardInputEventType
     get() = js.reflect.unsafeCast("rawKeyDown")

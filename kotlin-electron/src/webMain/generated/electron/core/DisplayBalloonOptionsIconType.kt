@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface DisplayBalloonOptionsIconType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DisplayBalloonOptionsIconType
 
 inline val DisplayBalloonOptionsIconType.Companion.none: DisplayBalloonOptionsIconType
     get() = js.reflect.unsafeCast("none")

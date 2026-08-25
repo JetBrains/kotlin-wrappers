@@ -2,9 +2,8 @@
 
 package testing.library.dom
 
-sealed external interface Variant {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface Variant
 
 inline val Variant.Companion.find: Variant
     get() = js.reflect.unsafeCast("find")

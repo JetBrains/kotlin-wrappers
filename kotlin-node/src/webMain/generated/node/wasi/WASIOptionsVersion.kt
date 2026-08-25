@@ -2,9 +2,8 @@
 
 package node.wasi
 
-sealed external interface WASIOptionsVersion {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WASIOptionsVersion
 
 inline val WASIOptionsVersion.Companion.unstable: WASIOptionsVersion
     get() = js.reflect.unsafeCast("unstable")

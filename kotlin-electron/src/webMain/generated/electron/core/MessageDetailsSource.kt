@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface MessageDetailsSource {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MessageDetailsSource
 
 inline val MessageDetailsSource.Companion.javascript: MessageDetailsSource
     get() = js.reflect.unsafeCast("javascript")

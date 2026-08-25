@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TransactionTransactionState {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TransactionTransactionState
 
 inline val TransactionTransactionState.Companion.purchasing: TransactionTransactionState
     get() = js.reflect.unsafeCast("purchasing")

@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface KeyObjectType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface KeyObjectType
 
 inline val KeyObjectType.Companion.secret: KeyObjectType
     get() = js.reflect.unsafeCast("secret")

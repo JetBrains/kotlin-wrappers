@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClientRequestConstructorOptionsCredentials {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClientRequestConstructorOptionsCredentials
 
 inline val ClientRequestConstructorOptionsCredentials.Companion.include: ClientRequestConstructorOptionsCredentials
     get() = js.reflect.unsafeCast("include")

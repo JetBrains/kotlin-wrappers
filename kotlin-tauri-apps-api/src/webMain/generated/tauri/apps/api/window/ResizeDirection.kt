@@ -2,9 +2,8 @@
 
 package tauri.apps.api.window
 
-sealed external interface ResizeDirection {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ResizeDirection
 
 inline val ResizeDirection.Companion.East: ResizeDirection
     get() = js.reflect.unsafeCast("East")

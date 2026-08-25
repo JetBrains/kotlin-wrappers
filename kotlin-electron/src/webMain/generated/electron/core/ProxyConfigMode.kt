@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ProxyConfigMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ProxyConfigMode
 
 inline val ProxyConfigMode.Companion.direct: ProxyConfigMode
     get() = js.reflect.unsafeCast("direct")

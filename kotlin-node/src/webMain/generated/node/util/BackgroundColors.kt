@@ -3,9 +3,8 @@
 package node.util
 
 // https://nodejs.org/docs/latest/api/util.html#background-colors
-sealed external interface BackgroundColors {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface BackgroundColors
 
 inline val BackgroundColors.Companion.bgBlack: BackgroundColors
     get() = js.reflect.unsafeCast("bgBlack")

@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferencesOrganizeImportsCollation {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UserPreferencesOrganizeImportsCollation
 
 inline val UserPreferencesOrganizeImportsCollation.Companion.ordinal: UserPreferencesOrganizeImportsCollation
     get() = js.reflect.unsafeCast("ordinal")

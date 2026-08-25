@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface EnableHeapProfilingOptionsStackMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface EnableHeapProfilingOptionsStackMode
 
 inline val EnableHeapProfilingOptionsStackMode.Companion.native: EnableHeapProfilingOptionsStackMode
     get() = js.reflect.unsafeCast("native")

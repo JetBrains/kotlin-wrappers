@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface StartLoggingOptionsCaptureMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface StartLoggingOptionsCaptureMode
 
 inline val StartLoggingOptionsCaptureMode.Companion.default: StartLoggingOptionsCaptureMode
     get() = js.reflect.unsafeCast("default")

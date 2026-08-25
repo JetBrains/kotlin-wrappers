@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ProductSubscriptionPeriodUnit {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ProductSubscriptionPeriodUnit
 
 inline val ProductSubscriptionPeriodUnit.Companion.day: ProductSubscriptionPeriodUnit
     get() = js.reflect.unsafeCast("day")

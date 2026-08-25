@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface OnBeforeRequestListenerDetailsResourceType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface OnBeforeRequestListenerDetailsResourceType
 
 inline val OnBeforeRequestListenerDetailsResourceType.Companion.mainFrame: OnBeforeRequestListenerDetailsResourceType
     get() = js.reflect.unsafeCast("mainFrame")

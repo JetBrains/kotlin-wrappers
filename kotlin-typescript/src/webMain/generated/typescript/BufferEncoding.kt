@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface BufferEncoding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface BufferEncoding
 
 inline val BufferEncoding.Companion.ascii: BufferEncoding
     get() = js.reflect.unsafeCast("ascii")

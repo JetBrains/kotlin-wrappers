@@ -2,9 +2,8 @@
 
 package node.tls
 
-sealed external interface SecureVersion {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface SecureVersion
 
 inline val SecureVersion.Companion.`TLSv1-3`: SecureVersion
     get() = js.reflect.unsafeCast("TLSv1.3")

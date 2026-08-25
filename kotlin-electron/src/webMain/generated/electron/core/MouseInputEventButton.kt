@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface MouseInputEventButton {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MouseInputEventButton
 
 inline val MouseInputEventButton.Companion.left: MouseInputEventButton
     get() = js.reflect.unsafeCast("left")

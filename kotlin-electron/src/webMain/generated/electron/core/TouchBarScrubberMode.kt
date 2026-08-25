@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TouchBarScrubberMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TouchBarScrubberMode
 
 inline val TouchBarScrubberMode.Companion.fixed: TouchBarScrubberMode
     get() = js.reflect.unsafeCast("fixed")

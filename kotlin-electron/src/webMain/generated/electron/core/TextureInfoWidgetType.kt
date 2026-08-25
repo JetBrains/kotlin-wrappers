@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface TextureInfoWidgetType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TextureInfoWidgetType
 
 inline val TextureInfoWidgetType.Companion.popup: TextureInfoWidgetType
     get() = js.reflect.unsafeCast("popup")

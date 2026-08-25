@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface OffscreenSharedTexturePixelFormat {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface OffscreenSharedTexturePixelFormat
 
 inline val OffscreenSharedTexturePixelFormat.Companion.argb: OffscreenSharedTexturePixelFormat
     get() = js.reflect.unsafeCast("argb")

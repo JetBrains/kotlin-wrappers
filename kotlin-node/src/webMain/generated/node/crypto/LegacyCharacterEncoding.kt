@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface LegacyCharacterEncoding {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface LegacyCharacterEncoding
 
 inline val LegacyCharacterEncoding.Companion.ascii: LegacyCharacterEncoding
     get() = js.reflect.unsafeCast("ascii")

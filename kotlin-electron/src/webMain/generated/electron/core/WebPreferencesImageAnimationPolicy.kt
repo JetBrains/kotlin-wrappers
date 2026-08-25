@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WebPreferencesImageAnimationPolicy {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WebPreferencesImageAnimationPolicy
 
 inline val WebPreferencesImageAnimationPolicy.Companion.animate: WebPreferencesImageAnimationPolicy
     get() = js.reflect.unsafeCast("animate")

@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClipboardReadRTFType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClipboardReadRTFType
 
 inline val ClipboardReadRTFType.Companion.selection: ClipboardReadRTFType
     get() = js.reflect.unsafeCast("selection")

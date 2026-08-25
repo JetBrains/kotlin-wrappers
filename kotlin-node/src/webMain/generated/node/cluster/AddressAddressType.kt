@@ -2,9 +2,8 @@
 
 package node.cluster
 
-sealed external interface AddressAddressType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface AddressAddressType
 
 inline val AddressAddressType.Companion.`4`: AddressAddressType
     get() = js.reflect.unsafeCast(4)

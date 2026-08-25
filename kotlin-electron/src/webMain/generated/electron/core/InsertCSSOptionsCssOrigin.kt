@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface InsertCSSOptionsCssOrigin {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface InsertCSSOptionsCssOrigin
 
 inline val InsertCSSOptionsCssOrigin.Companion.user: InsertCSSOptionsCssOrigin
     get() = js.reflect.unsafeCast("user")

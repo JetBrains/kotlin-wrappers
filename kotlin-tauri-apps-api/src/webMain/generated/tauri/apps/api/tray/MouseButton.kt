@@ -2,9 +2,8 @@
 
 package tauri.apps.api.tray
 
-sealed external interface MouseButton {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MouseButton
 
 inline val MouseButton.Companion.Left: MouseButton
     get() = js.reflect.unsafeCast("Left")

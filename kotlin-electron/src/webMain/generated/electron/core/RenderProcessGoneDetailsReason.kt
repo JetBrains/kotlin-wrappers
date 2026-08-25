@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface RenderProcessGoneDetailsReason {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface RenderProcessGoneDetailsReason
 
 inline val RenderProcessGoneDetailsReason.Companion.cleanExit: RenderProcessGoneDetailsReason
     get() = js.reflect.unsafeCast("clean-exit")

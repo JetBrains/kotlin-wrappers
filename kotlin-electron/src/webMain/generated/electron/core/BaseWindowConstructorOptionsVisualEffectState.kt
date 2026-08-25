@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface BaseWindowConstructorOptionsVisualEffectState {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface BaseWindowConstructorOptionsVisualEffectState
 
 inline val BaseWindowConstructorOptionsVisualEffectState.Companion.followWindow: BaseWindowConstructorOptionsVisualEffectState
     get() = js.reflect.unsafeCast("followWindow")

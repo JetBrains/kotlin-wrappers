@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface EnableHeapProfilingOptionsMode {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface EnableHeapProfilingOptionsMode
 
 inline val EnableHeapProfilingOptionsMode.Companion.all: EnableHeapProfilingOptionsMode
     get() = js.reflect.unsafeCast("all")

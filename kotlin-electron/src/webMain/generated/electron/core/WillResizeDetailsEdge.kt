@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WillResizeDetailsEdge {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WillResizeDetailsEdge
 
 inline val WillResizeDetailsEdge.Companion.bottom: WillResizeDetailsEdge
     get() = js.reflect.unsafeCast("bottom")

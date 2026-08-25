@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface MoveToApplicationsFolderOptionsConflictHandlerConflictType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface MoveToApplicationsFolderOptionsConflictHandlerConflictType
 
 inline val MoveToApplicationsFolderOptionsConflictHandlerConflictType.Companion.exists: MoveToApplicationsFolderOptionsConflictHandlerConflictType
     get() = js.reflect.unsafeCast("exists")

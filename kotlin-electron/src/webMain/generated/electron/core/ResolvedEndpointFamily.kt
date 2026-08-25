@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ResolvedEndpointFamily {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ResolvedEndpointFamily
 
 inline val ResolvedEndpointFamily.Companion.ipv4: ResolvedEndpointFamily
     get() = js.reflect.unsafeCast("ipv4")

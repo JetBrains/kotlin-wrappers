@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface DetailsType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface DetailsType
 
 inline val DetailsType.Companion.Utility: DetailsType
     get() = js.reflect.unsafeCast("Utility")

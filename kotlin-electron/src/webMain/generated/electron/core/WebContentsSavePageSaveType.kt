@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface WebContentsSavePageSaveType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface WebContentsSavePageSaveType
 
 inline val WebContentsSavePageSaveType.Companion.HTMLOnly: WebContentsSavePageSaveType
     get() = js.reflect.unsafeCast("HTMLOnly")

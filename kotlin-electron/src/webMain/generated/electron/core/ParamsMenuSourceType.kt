@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ParamsMenuSourceType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ParamsMenuSourceType
 
 inline val ParamsMenuSourceType.Companion.none: ParamsMenuSourceType
     get() = js.reflect.unsafeCast("none")

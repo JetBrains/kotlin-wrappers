@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface SystemPreferencesGetColorColor {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface SystemPreferencesGetColorColor
 
 inline val SystemPreferencesGetColorColor.Companion.`3d-dark-shadow`: SystemPreferencesGetColorColor
     get() = js.reflect.unsafeCast("3d-dark-shadow")

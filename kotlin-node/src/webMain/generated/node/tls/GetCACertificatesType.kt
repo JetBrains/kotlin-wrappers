@@ -2,9 +2,8 @@
 
 package node.tls
 
-sealed external interface GetCACertificatesType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface GetCACertificatesType
 
 inline val GetCACertificatesType.Companion.default: GetCACertificatesType
     get() = js.reflect.unsafeCast("default")

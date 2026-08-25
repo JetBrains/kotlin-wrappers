@@ -2,9 +2,8 @@
 
 package tauri.apps.api.core
 
-sealed external interface PermissionState {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface PermissionState
 
 inline val PermissionState.Companion.granted: PermissionState
     get() = js.reflect.unsafeCast("granted")

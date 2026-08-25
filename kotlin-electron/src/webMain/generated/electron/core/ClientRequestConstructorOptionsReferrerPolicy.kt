@@ -2,9 +2,8 @@
 
 package electron.core
 
-sealed external interface ClientRequestConstructorOptionsReferrerPolicy {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ClientRequestConstructorOptionsReferrerPolicy
 
 inline val ClientRequestConstructorOptionsReferrerPolicy.Companion.`_`: ClientRequestConstructorOptionsReferrerPolicy
     get() = js.reflect.unsafeCast("")

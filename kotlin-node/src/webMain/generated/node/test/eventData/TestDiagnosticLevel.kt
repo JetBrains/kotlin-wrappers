@@ -2,9 +2,8 @@
 
 package node.test.eventData
 
-sealed external interface TestDiagnosticLevel {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface TestDiagnosticLevel
 
 inline val TestDiagnosticLevel.Companion.info: TestDiagnosticLevel
     get() = js.reflect.unsafeCast("info")

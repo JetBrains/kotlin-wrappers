@@ -2,9 +2,8 @@
 
 package node.childProcess
 
-sealed external interface SerializationType {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface SerializationType
 
 inline val SerializationType.Companion.json: SerializationType
     get() = js.reflect.unsafeCast("json")

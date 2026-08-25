@@ -2,9 +2,8 @@
 
 package typescript
 
-sealed external interface UserPreferencesIncludeInlayParameterNameHints {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface UserPreferencesIncludeInlayParameterNameHints
 
 inline val UserPreferencesIncludeInlayParameterNameHints.Companion.none: UserPreferencesIncludeInlayParameterNameHints
     get() = js.reflect.unsafeCast("none")

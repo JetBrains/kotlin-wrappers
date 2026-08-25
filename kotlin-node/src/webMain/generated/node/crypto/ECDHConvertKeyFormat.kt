@@ -2,9 +2,8 @@
 
 package node.crypto
 
-sealed external interface ECDHConvertKeyFormat {
-    companion object
-}
+@js.union.JsUnion
+sealed external interface ECDHConvertKeyFormat
 
 inline val ECDHConvertKeyFormat.Companion.uncompressed: ECDHConvertKeyFormat
     get() = js.reflect.unsafeCast("uncompressed")
