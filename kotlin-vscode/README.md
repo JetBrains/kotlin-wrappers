@@ -2,7 +2,7 @@
 
 # Module kotlin-vscode
 
-[vscode](https://www.npmjs.com/package/@types/vscode) declarations
+[vscode](https://npmx.dev/package/@types/vscode) declarations
 
 ### Internals
 

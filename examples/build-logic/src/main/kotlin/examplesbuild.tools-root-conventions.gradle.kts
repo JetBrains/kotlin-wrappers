@@ -30,15 +30,15 @@ plugins.withType<WasmNodeJsRootPlugin> {
 }
 
 fun NpmVersions.configureVersions() {
-    // https://www.npmjs.com/package/webpack
+    // https://npmx.dev/package/webpack
     webpack.version = "5.109.2"
 
-    // https://www.npmjs.com/package/webpack-cli
+    // https://npmx.dev/package/webpack-cli
     webpackCli.version = "7.2.2"
 
-    // https://www.npmjs.com/package/webpack-dev-server
+    // https://npmx.dev/package/webpack-dev-server
     webpackDevServer.version = "6.0.0"
 
-    // https://www.npmjs.com/package/mocha
+    // https://npmx.dev/package/mocha
     mocha.version = "12.0.0-beta-10"
 }

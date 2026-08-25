@@ -2,7 +2,7 @@
 
 # Module kotlin-typescript
 
-Kotlin wrapper for [TypeScript](https://www.npmjs.com/package/typescript).
+Kotlin wrapper for [TypeScript](https://npmx.dev/package/typescript).
 
 ### Internals
 
