@@ -2034,7 +2034,7 @@ internal fun convertMember(
 
         "getContext(contextId: string, options?: any): RenderingContext | null",
             -> return """
-        fun <T : RenderingContext, O : JsAny> getContext(
+        fun <T : RenderingContext, O : JsAny?> getContext(
             contextId: RenderingContextId<T, O>,
             options: O? = definedExternally,
         ): T?
@@ -2042,7 +2042,7 @@ internal fun convertMember(
 
         "getContext(contextId: OffscreenRenderingContextId, options?: any): OffscreenRenderingContext | null",
             -> return """
-        fun <T : OffscreenRenderingContext, O : JsAny> getContext(
+        fun <T : OffscreenRenderingContext, O : JsAny?> getContext(
             contextId: RenderingContextId<T, O>,
             options: O? = definedExternally,
         ): T?

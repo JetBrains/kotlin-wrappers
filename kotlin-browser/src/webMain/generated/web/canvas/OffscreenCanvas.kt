@@ -64,7 +64,7 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/getContext)
      */
-    fun <T : OffscreenRenderingContext, O : JsAny> getContext(
+    fun <T : OffscreenRenderingContext, O : JsAny?> getContext(
         contextId: RenderingContextId<T, O>,
         options: O? = definedExternally,
     ): T?

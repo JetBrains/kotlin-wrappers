@@ -50,7 +50,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
      */
-    fun <T : RenderingContext, O : JsAny> getContext(
+    fun <T : RenderingContext, O : JsAny?> getContext(
         contextId: RenderingContextId<T, O>,
         options: O? = definedExternally,
     ): T?
