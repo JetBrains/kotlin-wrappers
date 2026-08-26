@@ -6,6 +6,6 @@ Kotlin wrapper for the [TanStack React Virtual](https://github.com/TanStack/virt
 
 ### Internals
 
-Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
 
 Manual changes are prohibited.

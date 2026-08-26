@@ -7,15 +7,15 @@ dependencies {
 }
 
 tasks.register<SyncWrappers>("syncCoreWrappers") {
-    from(jsGeneratedDir) {
+    from(webGeneratedDir) {
         include("tanstack/virtual/")
     }
-    into(jsMainDir("kotlin-tanstack-virtual-core"))
+    into(webMainDir("kotlin-tanstack-virtual-core"))
 }
 
 tasks.register<SyncWrappers>("syncReactWrappers") {
-    from(jsGeneratedDir) {
+    from(webGeneratedDir) {
         include("tanstack/react/")
     }
-    into(jsMainDir("kotlin-tanstack-react-virtual"))
+    into(webMainDir("kotlin-tanstack-react-virtual"))
 }

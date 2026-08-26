@@ -5,7 +5,7 @@ plugins {
 tasks.named("generateDeclarations") {
     doLast {
         val coreDefinitionsFile = nodeModules.resolve("@tanstack/virtual-core/dist/esm/index.d.ts")
-        val sourceDir = jsGeneratedDir
+        val sourceDir = webGeneratedDir
 
         delete(sourceDir)
 
