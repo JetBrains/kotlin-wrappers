@@ -2,14 +2,15 @@
 
 package tanstack.virtual.core
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface ScrollDirection {
-    companion object {
-        @JsValue("forward")
-        val forward: ScrollDirection
+@JsUnion
+sealed /* union */
+external interface ScrollDirection
 
-        @JsValue("backward")
-        val backward: ScrollDirection
-    }
-}
+inline val ScrollDirection.Companion.forward: ScrollDirection
+    get() = unsafeCast("forward")
+
+inline val ScrollDirection.Companion.backward: ScrollDirection
+    get() = unsafeCast("backward")
