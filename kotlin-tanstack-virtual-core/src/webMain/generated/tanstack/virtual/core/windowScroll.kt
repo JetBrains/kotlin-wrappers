@@ -4,4 +4,8 @@
 
 package tanstack.virtual.core
 
-external val windowScroll: (offset: Int, options: ScrollOptions, instance: Virtualizer<*, *>) -> Unit
+external fun <T : web.window.Window> windowScroll(
+    offset: Int,
+    options: ScrollOptions,
+    instance: Virtualizer<T, *>,
+)
