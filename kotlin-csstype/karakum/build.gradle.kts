@@ -2,8 +2,10 @@ plugins {
     id("karakum.csstype-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.csstype))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.csstype))
+    }
 }
 
 tasks.register<SyncWrappers>("syncCssomCore") {

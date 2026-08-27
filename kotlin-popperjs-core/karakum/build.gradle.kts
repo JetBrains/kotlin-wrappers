@@ -2,8 +2,10 @@ plugins {
     id("karakum.popper-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.popperjs.core))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.popperjs.core))
+    }
 }
 
 tasks.register<SyncWrappers>("syncPopperjsCore") {

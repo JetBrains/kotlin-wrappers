@@ -2,16 +2,18 @@ plugins {
     id("karakum.actions-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.actions.artifact))
-    webMainImplementation(npm(jspkg.actions.cache))
-    webMainImplementation(npm(jspkg.actions.core))
-    webMainImplementation(npm(jspkg.actions.exec))
-    webMainImplementation(npm(jspkg.actions.glob))
-    webMainImplementation(npm(jspkg.actions.github))
-    webMainImplementation(npm(jspkg.actions.httpClient))
-    webMainImplementation(npm(jspkg.actions.io))
-    webMainImplementation(npm(jspkg.actions.toolCache))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.actions.artifact))
+        implementation(npm(jspkg.actions.cache))
+        implementation(npm(jspkg.actions.core))
+        implementation(npm(jspkg.actions.exec))
+        implementation(npm(jspkg.actions.glob))
+        implementation(npm(jspkg.actions.github))
+        implementation(npm(jspkg.actions.httpClient))
+        implementation(npm(jspkg.actions.io))
+        implementation(npm(jspkg.actions.toolCache))
+    }
 }
 
 tasks.register<SyncWrappers>("syncActionsArtifact") {

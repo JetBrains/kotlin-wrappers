@@ -2,14 +2,18 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
-    webMainApi(projects.kotlinWeb)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
+        api(projects.kotlinWeb)
 
-    webMainImplementation(libs.coroutines.core)
+        implementation(libs.coroutines.core)
 
-    webMainApi(devNpm(jspkg.types.node))
+        api(devNpm(jspkg.types.node))
+    }
 
-    webTestImplementation(libs.kotlin.test)
-    webTestImplementation(libs.coroutines.test)
+    sourceSets.webTest.dependencies {
+        implementation(libs.kotlin.test)
+        implementation(libs.coroutines.test)
+    }
 }

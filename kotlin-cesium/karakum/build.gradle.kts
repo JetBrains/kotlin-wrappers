@@ -2,9 +2,11 @@ plugins {
     id("karakum.cesium-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.cesium.engine))
-    webMainImplementation(npm(jspkg.cesium.widgets))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.cesium.engine))
+        implementation(npm(jspkg.cesium.widgets))
+    }
 }
 
 tasks.register<SyncWrappers>("syncCesiumEngine") {

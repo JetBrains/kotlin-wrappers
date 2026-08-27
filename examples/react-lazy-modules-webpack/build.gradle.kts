@@ -2,10 +2,12 @@ plugins {
     id("examplesbuild.kotlin-conventions")
 }
 
-dependencies {
-    webMainImplementation(kotlinWrappers.emotion.react)
-    webMainImplementation(kotlinWrappers.js)
-    webMainImplementation(kotlinWrappers.react)
-    webMainImplementation(kotlinWrappers.reactUse)
-    webMainImplementation(kotlinWrappers.reactDom)
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(kotlinWrappers.emotion.react)
+        implementation(kotlinWrappers.js)
+        implementation(kotlinWrappers.react)
+        implementation(kotlinWrappers.reactUse)
+        implementation(kotlinWrappers.reactDom)
+    }
 }

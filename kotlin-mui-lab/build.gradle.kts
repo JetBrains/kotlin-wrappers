@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinMuiMaterial)
-    webMainApi(projects.kotlinMuixTreeView)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinMuiMaterial)
+        api(projects.kotlinMuixTreeView)
 
-    webMainApi(npm(jspkg.mui.lab))
+        api(npm(jspkg.mui.lab))
+    }
 }

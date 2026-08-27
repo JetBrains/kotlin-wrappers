@@ -2,15 +2,17 @@ plugins {
     id("karakum.browser-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.types.ecma))
-    webMainImplementation(npm(jspkg.types.web))
-    webMainImplementation(npm(jspkg.types.webworker))
-    webMainImplementation(npm(jspkg.types.serviceworker))
-    webMainImplementation(npm(jspkg.types.audioworklet))
-    webMainImplementation(npm(jspkg.types.webxr))
-    webMainImplementation(npm(jspkg.webref.events))
-    webMainImplementation(npm(jspkg.webref.idl))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.types.ecma))
+        implementation(npm(jspkg.types.web))
+        implementation(npm(jspkg.types.webworker))
+        implementation(npm(jspkg.types.serviceworker))
+        implementation(npm(jspkg.types.audioworklet))
+        implementation(npm(jspkg.types.webxr))
+        implementation(npm(jspkg.webref.events))
+        implementation(npm(jspkg.webref.idl))
+    }
 }
 
 object Includes {

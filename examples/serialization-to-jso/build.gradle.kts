@@ -3,7 +3,9 @@ plugins {
     alias(libs.plugins.serialization)
 }
 
-dependencies {
-    webMainImplementation(libs.serialization.json)
-    webMainImplementation(kotlinWrappers.browser)
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(libs.serialization.json)
+        implementation(kotlinWrappers.browser)
+    }
 }

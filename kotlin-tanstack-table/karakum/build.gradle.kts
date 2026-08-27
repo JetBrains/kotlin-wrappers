@@ -2,8 +2,10 @@ plugins {
     id("karakum.tanstack-table-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.tanstack.reactTable))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.tanstack.reactTable))
+    }
 }
 
 tasks.register<SyncWrappers>("syncTableCore") {

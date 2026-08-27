@@ -2,8 +2,10 @@ plugins {
     id("karakum.tanstack-query-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.tanstack.reactQuery))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.tanstack.reactQuery))
+    }
 }
 
 tasks.register<SyncWrappers>("syncCoreWrappers") {

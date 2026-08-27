@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinReact)
-    webMainApi(projects.kotlinTanstackTableCore)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinReact)
+        api(projects.kotlinTanstackTableCore)
 
-    webMainApi(npm(jspkg.tanstack.reactTable))
+        api(npm(jspkg.tanstack.reactTable))
+    }
 }

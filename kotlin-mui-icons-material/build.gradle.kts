@@ -2,8 +2,10 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinMuiMaterial)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinMuiMaterial)
 
-    webMainApi(npm(jspkg.mui.iconsMaterial))
+        api(npm(jspkg.mui.iconsMaterial))
+    }
 }

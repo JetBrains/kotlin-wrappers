@@ -2,8 +2,10 @@ plugins {
     id("karakum.vscode-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.types.vscode))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.types.vscode))
+    }
 }
 
 tasks.register<SyncWrappers>("syncVscode") {

@@ -2,10 +2,12 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
-    webMainApi(projects.kotlinBrowser)
-    webMainApi(projects.kotlinCesiumEngine)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
+        api(projects.kotlinBrowser)
+        api(projects.kotlinCesiumEngine)
 
-    webMainApi(npm(jspkg.cesium.widgets))
+        api(npm(jspkg.cesium.widgets))
+    }
 }

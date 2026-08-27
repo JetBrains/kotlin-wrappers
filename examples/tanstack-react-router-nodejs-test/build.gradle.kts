@@ -25,22 +25,27 @@ kotlin {
     }
 }
 
-dependencies {
-    webMainImplementation(kotlinWrappers.js)
-    webMainImplementation(kotlinWrappers.react)
-    webMainImplementation(kotlinWrappers.reactUse)
-    webMainImplementation(kotlinWrappers.reactDom)
-    webMainImplementation(kotlinWrappers.tanstack.reactRouter)
-    webTestImplementation(libs.kotlin.test)
-    webTestImplementation(libs.coroutines.test)
-    webTestImplementation(kotlinWrappers.testingLibraryUserEvent)
-    webTestImplementation(kotlinWrappers.testingLibraryReact)
-    webTestImplementation(kotlinWrappers.testingLibraryDom)
-    webTestImplementation(npm("global-jsdom", "28.0.0"))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(kotlinWrappers.js)
+        implementation(kotlinWrappers.react)
+        implementation(kotlinWrappers.reactUse)
+        implementation(kotlinWrappers.reactDom)
+        implementation(kotlinWrappers.tanstack.reactRouter)
 
-    // WA for https://github.com/TanStack/router/issues/7472
-    webMainImplementation(npm("@tanstack/router-core", "1.171.3"))
-    webMainImplementation(npm("@tanstack/react-router", "1.170.5"))
+        // WA for https://github.com/TanStack/router/issues/7472
+        implementation(npm("@tanstack/router-core", "1.171.3"))
+        implementation(npm("@tanstack/react-router", "1.170.5"))
+    }
+
+    sourceSets.webTest.dependencies {
+        implementation(libs.kotlin.test)
+        implementation(libs.coroutines.test)
+        implementation(kotlinWrappers.testingLibraryUserEvent)
+        implementation(kotlinWrappers.testingLibraryReact)
+        implementation(kotlinWrappers.testingLibraryDom)
+        implementation(npm("global-jsdom", "28.0.0"))
+    }
 }
 
 tasks.named<KotlinJsTest>("jsNodeTest") {

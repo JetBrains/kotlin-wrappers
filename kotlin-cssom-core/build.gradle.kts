@@ -2,8 +2,10 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
 
-    webMainApi(devNpm(jspkg.csstype))
+        api(devNpm(jspkg.csstype))
+    }
 }

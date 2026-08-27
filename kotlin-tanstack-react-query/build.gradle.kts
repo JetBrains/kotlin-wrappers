@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinReact)
-    webMainApi(projects.kotlinTanstackQueryCore)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinReact)
+        api(projects.kotlinTanstackQueryCore)
 
-    webMainApi(npm(jspkg.tanstack.reactQuery))
+        api(npm(jspkg.tanstack.reactQuery))
+    }
 }

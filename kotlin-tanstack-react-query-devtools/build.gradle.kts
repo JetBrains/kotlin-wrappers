@@ -2,8 +2,10 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinReact)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinReact)
 
-    webMainApi(npm(jspkg.tanstack.reactQueryDevtools))
+        api(npm(jspkg.tanstack.reactQueryDevtools))
+    }
 }

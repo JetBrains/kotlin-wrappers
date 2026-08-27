@@ -3,8 +3,10 @@ plugins {
 
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
 
-    webMainApi(npm(jspkg.typescript))
+        api(npm(jspkg.typescript))
+    }
 }

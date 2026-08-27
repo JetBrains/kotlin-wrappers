@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinReact)
-    webMainApi(projects.kotlinReactDom)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinReact)
+        api(projects.kotlinReactDom)
 
-    webMainApi(npm(jspkg.reactSelect))
+        api(npm(jspkg.reactSelect))
+    }
 }

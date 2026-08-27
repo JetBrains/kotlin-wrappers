@@ -2,10 +2,12 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
-    webMainApi(projects.kotlinReact)
-    webMainApi(projects.kotlinPreactSignalsCore)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
+        api(projects.kotlinReact)
+        api(projects.kotlinPreactSignalsCore)
 
-    webMainApi(npm(jspkg.preact.signalsReact))
+        api(npm(jspkg.preact.signalsReact))
+    }
 }

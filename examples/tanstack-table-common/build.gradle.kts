@@ -2,12 +2,14 @@ plugins {
     id("examplesbuild.kotlin-conventions")
 }
 
-dependencies {
-    webMainImplementation(kotlinWrappers.react)
-    webMainImplementation(kotlinWrappers.reactDom)
-    webMainImplementation(kotlinWrappers.reactUse)
-    webMainImplementation(kotlinWrappers.tanstack.tableCore)
-    webMainImplementation(kotlinWrappers.tanstack.reactTable)
-    webMainImplementation(kotlinWrappers.preact.signalsCore)
-    webMainImplementation(kotlinWrappers.preact.signalsReact)
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(kotlinWrappers.react)
+        implementation(kotlinWrappers.reactDom)
+        implementation(kotlinWrappers.reactUse)
+        implementation(kotlinWrappers.tanstack.tableCore)
+        implementation(kotlinWrappers.tanstack.reactTable)
+        implementation(kotlinWrappers.preact.signalsCore)
+        implementation(kotlinWrappers.preact.signalsReact)
+    }
 }

@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinMuiSystem)
-    webMainApi(projects.kotlinPopperjsCore)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinMuiSystem)
+        api(projects.kotlinPopperjsCore)
 
-    webMainApi(npm(jspkg.mui.base))
+        api(npm(jspkg.mui.base))
+    }
 }

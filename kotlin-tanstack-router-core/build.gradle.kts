@@ -2,11 +2,13 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinBrowser)
-    webMainApi(projects.kotlinTanstackHistory)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinBrowser)
+        api(projects.kotlinTanstackHistory)
 
-    webMainImplementation(libs.coroutines.core)
+        implementation(libs.coroutines.core)
 
-    webMainApi(npm(jspkg.tanstack.routerCore))
+        api(npm(jspkg.tanstack.routerCore))
+    }
 }

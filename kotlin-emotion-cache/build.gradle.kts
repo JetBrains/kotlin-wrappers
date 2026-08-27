@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinBrowser)
-    webMainApi(projects.kotlinEmotionUtils)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinBrowser)
+        api(projects.kotlinEmotionUtils)
 
-    webMainApi(npm(jspkg.emotion.cache))
+        api(npm(jspkg.emotion.cache))
+    }
 }

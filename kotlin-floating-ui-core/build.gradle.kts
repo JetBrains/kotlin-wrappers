@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
-    webMainApi(projects.kotlinFloatingUiUtils)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
+        api(projects.kotlinFloatingUiUtils)
 
-    webMainApi(npm(jspkg.floatingUi.core))
+        api(npm(jspkg.floatingUi.core))
+    }
 }

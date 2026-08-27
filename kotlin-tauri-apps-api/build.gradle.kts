@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinJs)
-    webMainApi(projects.kotlinWeb)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinJs)
+        api(projects.kotlinWeb)
 
-    webMainApi(npm(jspkg.tauriApps.api))
+        api(npm(jspkg.tauriApps.api))
+    }
 }

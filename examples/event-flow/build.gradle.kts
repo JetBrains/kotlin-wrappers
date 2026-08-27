@@ -2,7 +2,9 @@ plugins {
     id("examplesbuild.kotlin-conventions")
 }
 
-dependencies {
-    webMainImplementation(kotlinWrappers.browser)
-    webMainImplementation(libs.coroutines.core)
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(kotlinWrappers.browser)
+        implementation(libs.coroutines.core)
+    }
 }

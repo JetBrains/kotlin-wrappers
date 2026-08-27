@@ -2,10 +2,12 @@ plugins {
     id("examplesbuild.kotlin-conventions")
 }
 
-dependencies {
-    webMainImplementation(kotlinWrappers.js)
-    webMainImplementation(kotlinWrappers.react)
-    webMainImplementation(kotlinWrappers.reactUse)
-    webMainImplementation(kotlinWrappers.reactDom)
-    webMainImplementation(kotlinWrappers.tanstack.reactRouter)
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(kotlinWrappers.js)
+        implementation(kotlinWrappers.react)
+        implementation(kotlinWrappers.reactUse)
+        implementation(kotlinWrappers.reactDom)
+        implementation(kotlinWrappers.tanstack.reactRouter)
+    }
 }

@@ -1,26 +1,25 @@
 // COPIED
 
+import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.MinimalExternalModuleDependency
 import org.gradle.api.provider.Provider
-import org.jetbrains.kotlin.gradle.targets.js.npm.DevNpmDependencyExtension
-import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
-import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 
-operator fun NpmDependencyExtension.invoke(
+fun KotlinDependencyHandler.npm(
     dependencyNotation: Provider<MinimalExternalModuleDependency>,
-): NpmDependency {
+): Dependency {
     val dependency = dependencyNotation.get()
-    return this(
+    return npm(
         name = dependency.name,
         version = dependency.version!!,
     )
 }
 
-operator fun DevNpmDependencyExtension.invoke(
+fun KotlinDependencyHandler.devNpm(
     dependencyNotation: Provider<MinimalExternalModuleDependency>,
-): NpmDependency {
+): Dependency {
     val dependency = dependencyNotation.get()
-    return this(
+    return devNpm(
         name = dependency.name,
         version = dependency.version!!,
     )

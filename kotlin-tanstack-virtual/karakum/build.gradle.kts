@@ -2,8 +2,10 @@ plugins {
     id("karakum.tanstack-virtual-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.tanstack.reactVirtual))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.tanstack.reactVirtual))
+    }
 }
 
 tasks.register<SyncWrappers>("syncCoreWrappers") {

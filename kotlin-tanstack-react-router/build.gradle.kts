@@ -2,9 +2,11 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinReactDom)
-    webMainApi(projects.kotlinTanstackRouterCore)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinReactDom)
+        api(projects.kotlinTanstackRouterCore)
 
-    webMainApi(npm(jspkg.tanstack.reactRouter))
+        api(npm(jspkg.tanstack.reactRouter))
+    }
 }

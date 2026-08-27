@@ -2,9 +2,11 @@ plugins {
     id("karakum.react-dom-declarations")
 }
 
-dependencies {
-    webMainImplementation(npm(jspkg.types.react))
-    webMainImplementation(npm(jspkg.webref.events))
+kotlin {
+    sourceSets.webMain.dependencies {
+        implementation(npm(jspkg.types.react))
+        implementation(npm(jspkg.webref.events))
+    }
 }
 
 tasks.register<SyncWrappers>("syncReact") {

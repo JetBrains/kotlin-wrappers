@@ -2,8 +2,10 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinBrowser)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinBrowser)
 
-    webMainApi(npm(jspkg.tanstack.tableCore))
+        api(npm(jspkg.tanstack.tableCore))
+    }
 }

@@ -2,10 +2,12 @@ plugins {
     id("wrappersbuild.kotlin-library-conventions")
 }
 
-dependencies {
-    webMainApi(projects.kotlinCsstype)
-    webMainApi(projects.kotlinEmotionReact)
-    webMainApi(projects.kotlinReact)
+kotlin {
+    sourceSets.webMain.dependencies {
+        api(projects.kotlinCsstype)
+        api(projects.kotlinEmotionReact)
+        api(projects.kotlinReact)
 
-    webMainApi(npm(jspkg.emotion.styled))
+        api(npm(jspkg.emotion.styled))
+    }
 }
