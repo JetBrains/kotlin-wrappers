@@ -1,0 +1,37 @@
+package wrappersgenerator.tanstack.virtual.core.plugins
+
+import arrow.core.raise.nullable
+import io.github.sgrishchenko.karakum.extension.createPlugin
+import io.github.sgrishchenko.karakum.extension.plugins.convertLiteralUnionType
+import io.github.sgrishchenko.karakum.extension.plugins.isLiteralUnionType
+import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
+import js.reflect.invoke
+import typescript.*
+
+// `FollowOnAppend = boolean | ScrollBehavior`
+val convertFollowOnAppend = createPlugin { node, context, render ->
+    nullable {
+        val typeChecker = context.requireService(typeScriptServiceKey).program.getTypeChecker()
+
+        ensure(isTypeAliasDeclaration(node))
+
+        val union = node.type
+        ensure(isUnionTypeNode(union))
+        ensure(union.types.any { it.kind == SyntaxKind.BooleanKeyword })
+
+        val type = typeChecker.getTypeFromTypeNode(union)
+        ensure(type.isUnion())
+
+        val types = type.unsafeCast<UnionType>().types.map {
+            ensureNotNull(typeChecker.typeToTypeNode(it, null, null))
+        }
+
+        val literalUnion = factory.createUnionTypeNode(types.toTypedArray())
+        ensure(isLiteralUnionType(literalUnion, context))
+
+        val name = render(node.name)
+        val result = convertLiteralUnionType(literalUnion, name, name, false, context, render)
+
+        "${result.declaration}\n\n${result.generated}"
+    }
+}
