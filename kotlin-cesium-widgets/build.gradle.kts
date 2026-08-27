@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinBrowser)
         api(projects.kotlinCesiumEngine)
 
-        api(npm(jspkg.cesium.widgets))
+        npm(jspkg.cesium.widgets)
     }
 }

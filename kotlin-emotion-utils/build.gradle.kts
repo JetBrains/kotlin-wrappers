@@ -8,6 +8,6 @@ kotlin {
 
         implementation(projects.kotlinJsPlainObject)
 
-        api(npm(jspkg.emotion.utils))
+        npm(jspkg.emotion.utils)
     }
 }

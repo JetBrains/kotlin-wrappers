@@ -5,6 +5,6 @@ plugins {
 kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
-        api(npm(jspkg.prantlf.jsonlint))
+        npm(jspkg.prantlf.jsonlint)
     }
 }

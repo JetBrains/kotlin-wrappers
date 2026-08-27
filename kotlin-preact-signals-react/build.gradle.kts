@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinReact)
         api(projects.kotlinPreactSignalsCore)
 
-        api(npm(jspkg.preact.signalsReact))
+        npm(jspkg.preact.signalsReact)
     }
 }

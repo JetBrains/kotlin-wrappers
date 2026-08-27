@@ -9,6 +9,6 @@ kotlin {
         api(projects.kotlinFloatingUiDom)
         api(projects.kotlinFloatingUiUtils)
 
-        api(npm(jspkg.floatingUi.reactDom))
+        npm(jspkg.floatingUi.reactDom)
     }
 }

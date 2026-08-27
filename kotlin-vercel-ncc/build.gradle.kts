@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
         api(projects.kotlinNode)
-        api(npm(jspkg.vercel.ncc))
+        npm(jspkg.vercel.ncc)
     }
 }

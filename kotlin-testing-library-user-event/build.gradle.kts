@@ -7,7 +7,7 @@ kotlin {
         api(projects.kotlinJs)
         api(projects.kotlinBrowser)
 
-        api(npm(jspkg.testingLibrary.userEvent))
+        npm(jspkg.testingLibrary.userEvent)
     }
 
     sourceSets.webMain.dependencies {

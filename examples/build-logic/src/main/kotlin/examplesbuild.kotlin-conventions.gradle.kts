@@ -46,8 +46,8 @@ kotlin {
         sourceSets {
             jsMain {
                 dependencies {
-                    implementation(devNpm("css-loader", "7.1.2"))
-                    implementation(devNpm("style-loader", "4.0.0"))
+                    devNpm("css-loader", "7.1.2")
+                    devNpm("style-loader", "4.0.0")
                 }
             }
         }

@@ -9,6 +9,6 @@ kotlin {
 
         api(libs.coroutines.core)
 
-        api(npm(jspkg.testingLibrary.dom))
+        npm(jspkg.testingLibrary.dom)
     }
 }

@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinMuiMaterial)
         api(projects.kotlinMuixTreeView)
 
-        api(npm(jspkg.mui.lab))
+        npm(jspkg.mui.lab)
     }
 }

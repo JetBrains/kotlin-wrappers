@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinJs)
         api(projects.kotlinBrowser)
 
-        api(devNpm(jspkg.csstype))
+        devNpm(jspkg.csstype)
     }
 }

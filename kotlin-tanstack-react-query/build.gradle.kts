@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinReact)
         api(projects.kotlinTanstackQueryCore)
 
-        api(npm(jspkg.tanstack.reactQuery))
+        npm(jspkg.tanstack.reactQuery)
     }
 }

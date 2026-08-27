@@ -9,6 +9,6 @@ kotlin {
 
         implementation(libs.coroutines.core)
 
-        api(npm(jspkg.tanstack.routerCore))
+        npm(jspkg.tanstack.routerCore)
     }
 }

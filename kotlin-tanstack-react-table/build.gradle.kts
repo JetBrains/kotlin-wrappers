@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinReact)
         api(projects.kotlinTanstackTableCore)
 
-        api(npm(jspkg.tanstack.reactTable))
+        npm(jspkg.tanstack.reactTable)
     }
 }

@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinMuiMaterial)
 
-        api(npm(jspkg.mui.xTreeView))
+        npm(jspkg.mui.xTreeView)
     }
 }

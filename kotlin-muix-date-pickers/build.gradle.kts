@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinMuiMaterial)
 
-        api(npm(jspkg.mui.xDatePickers))
+        npm(jspkg.mui.xDatePickers)
     }
 }

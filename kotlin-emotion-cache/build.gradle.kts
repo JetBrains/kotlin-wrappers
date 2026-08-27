@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinBrowser)
         api(projects.kotlinEmotionUtils)
 
-        api(npm(jspkg.emotion.cache))
+        npm(jspkg.emotion.cache)
     }
 }

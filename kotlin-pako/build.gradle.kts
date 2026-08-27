@@ -8,6 +8,6 @@ kotlin {
 
         implementation(projects.kotlinJsPlainObject)
 
-        api(npm(jspkg.pako))
+        npm(jspkg.pako)
     }
 }

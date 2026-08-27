@@ -9,7 +9,7 @@ kotlin {
 
         implementation(libs.coroutines.core)
 
-        api(devNpm(jspkg.types.node))
+        devNpm(jspkg.types.node)
     }
 
     sourceSets.webTest.dependencies {

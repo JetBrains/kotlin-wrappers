@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinEmotionReact)
         api(projects.kotlinReact)
 
-        api(npm(jspkg.emotion.styled))
+        npm(jspkg.emotion.styled)
     }
 }

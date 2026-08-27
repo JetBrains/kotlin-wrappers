@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinReact)
         api(projects.kotlinTanstackReactRouter)
 
-        api(npm(jspkg.tanstack.reactRouterDevtools))
+        npm(jspkg.tanstack.reactRouterDevtools)
     }
 }

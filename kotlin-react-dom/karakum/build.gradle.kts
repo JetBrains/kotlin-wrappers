@@ -4,8 +4,8 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.types.react))
-        implementation(npm(jspkg.webref.events))
+        npm(jspkg.types.react)
+        npm(jspkg.webref.events)
     }
 }
 

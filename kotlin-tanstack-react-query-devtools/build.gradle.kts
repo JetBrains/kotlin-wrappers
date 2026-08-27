@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinReact)
 
-        api(npm(jspkg.tanstack.reactQueryDevtools))
+        npm(jspkg.tanstack.reactQueryDevtools)
     }
 }

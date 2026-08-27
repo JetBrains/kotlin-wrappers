@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinReact)
         api(projects.kotlinReactDom)
 
-        api(npm(jspkg.reactSelect))
+        npm(jspkg.reactSelect)
     }
 }

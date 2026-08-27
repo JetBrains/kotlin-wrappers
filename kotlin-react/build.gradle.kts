@@ -8,7 +8,7 @@ kotlin {
         api(projects.kotlinCsstype)
         api(libs.coroutines.core)
 
-        api(npm(jspkg.react))
+        npm(jspkg.react)
     }
 
     sourceSets.webMain.dependencies {

@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinNode)
         api(projects.kotlinBrowser)
 
-        api(npm(jspkg.electron))
+        npm(jspkg.electron)
     }
 }

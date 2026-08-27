@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinBrowser)
 
-        api(npm(jspkg.tanstack.tableCore))
+        npm(jspkg.tanstack.tableCore)
     }
 }

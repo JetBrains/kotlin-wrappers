@@ -4,7 +4,7 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.tanstack.reactTable))
+        npm(jspkg.tanstack.reactTable)
     }
 }
 

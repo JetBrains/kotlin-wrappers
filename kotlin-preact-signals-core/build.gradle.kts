@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
 
-        api(npm(jspkg.preact.signalsCore))
+        npm(jspkg.preact.signalsCore)
     }
 }

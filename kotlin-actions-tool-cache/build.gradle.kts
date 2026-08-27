@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinNode)
 
-        api(npm(jspkg.actions.toolCache))
+        npm(jspkg.actions.toolCache)
     }
 }

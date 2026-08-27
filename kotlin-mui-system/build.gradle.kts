@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinReactDom)
 
-        api(npm(jspkg.mui.system))
+        npm(jspkg.mui.system)
     }
 }

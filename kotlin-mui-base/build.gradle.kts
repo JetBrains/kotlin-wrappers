@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinMuiSystem)
         api(projects.kotlinPopperjsCore)
 
-        api(npm(jspkg.mui.base))
+        npm(jspkg.mui.base)
     }
 }

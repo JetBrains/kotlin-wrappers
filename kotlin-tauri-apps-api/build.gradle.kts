@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinJs)
         api(projects.kotlinWeb)
 
-        api(npm(jspkg.tauriApps.api))
+        npm(jspkg.tauriApps.api)
     }
 }

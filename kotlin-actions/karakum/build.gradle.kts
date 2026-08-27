@@ -4,15 +4,15 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.actions.artifact))
-        implementation(npm(jspkg.actions.cache))
-        implementation(npm(jspkg.actions.core))
-        implementation(npm(jspkg.actions.exec))
-        implementation(npm(jspkg.actions.glob))
-        implementation(npm(jspkg.actions.github))
-        implementation(npm(jspkg.actions.httpClient))
-        implementation(npm(jspkg.actions.io))
-        implementation(npm(jspkg.actions.toolCache))
+        npm(jspkg.actions.artifact)
+        npm(jspkg.actions.cache)
+        npm(jspkg.actions.core)
+        npm(jspkg.actions.exec)
+        npm(jspkg.actions.glob)
+        npm(jspkg.actions.github)
+        npm(jspkg.actions.httpClient)
+        npm(jspkg.actions.io)
+        npm(jspkg.actions.toolCache)
     }
 }
 

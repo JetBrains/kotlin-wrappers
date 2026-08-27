@@ -4,14 +4,14 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.types.ecma))
-        implementation(npm(jspkg.types.web))
-        implementation(npm(jspkg.types.webworker))
-        implementation(npm(jspkg.types.serviceworker))
-        implementation(npm(jspkg.types.audioworklet))
-        implementation(npm(jspkg.types.webxr))
-        implementation(npm(jspkg.webref.events))
-        implementation(npm(jspkg.webref.idl))
+        npm(jspkg.types.ecma)
+        npm(jspkg.types.web)
+        npm(jspkg.types.webworker)
+        npm(jspkg.types.serviceworker)
+        npm(jspkg.types.audioworklet)
+        npm(jspkg.types.webxr)
+        npm(jspkg.webref.events)
+        npm(jspkg.webref.idl)
     }
 }
 

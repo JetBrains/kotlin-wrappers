@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinNode)
 
-        api(npm(jspkg.actions.httpClient))
+        npm(jspkg.actions.httpClient)
     }
 }

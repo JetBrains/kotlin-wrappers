@@ -9,6 +9,6 @@ kotlin {
         api(projects.kotlinReactDom)
         api(projects.kotlinTestingLibraryDom)
 
-        api(npm(jspkg.testingLibrary.react))
+        npm(jspkg.testingLibrary.react)
     }
 }

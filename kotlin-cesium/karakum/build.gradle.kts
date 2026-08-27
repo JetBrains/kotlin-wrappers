@@ -4,8 +4,8 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.cesium.engine))
-        implementation(npm(jspkg.cesium.widgets))
+        npm(jspkg.cesium.engine)
+        npm(jspkg.cesium.widgets)
     }
 }
 

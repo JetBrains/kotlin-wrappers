@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
 
-        api(devNpm(jspkg.csstype))
+        devNpm(jspkg.csstype)
     }
 }

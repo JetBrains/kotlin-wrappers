@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinBrowser)
         api(projects.kotlinTanstackVirtualCore)
 
-        api(npm(jspkg.tanstack.reactVirtual))
+        npm(jspkg.tanstack.reactVirtual)
     }
 }

@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinBrowser)
         api(projects.kotlinEmotionUtils)
 
-        api(npm(jspkg.emotion.css))
+        npm(jspkg.emotion.css)
     }
 }

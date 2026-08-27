@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinFloatingUiCore)
         api(projects.kotlinFloatingUiUtils)
 
-        api(npm(jspkg.floatingUi.dom))
+        npm(jspkg.floatingUi.dom)
     }
 }

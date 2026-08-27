@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
 
-        api(npm(jspkg.tanstack.history))
+        npm(jspkg.tanstack.history)
     }
 }

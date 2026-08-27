@@ -10,6 +10,6 @@ kotlin {
         api(projects.kotlinEmotionUtils)
         api(projects.kotlinReact)
 
-        api(npm(jspkg.emotion.react))
+        npm(jspkg.emotion.react)
     }
 }

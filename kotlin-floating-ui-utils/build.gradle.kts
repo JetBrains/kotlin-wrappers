@@ -6,6 +6,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinBrowser)
 
-        api(npm(jspkg.floatingUi.utils))
+        npm(jspkg.floatingUi.utils)
     }
 }

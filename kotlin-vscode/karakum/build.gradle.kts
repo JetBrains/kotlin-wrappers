@@ -4,7 +4,7 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.types.vscode))
+        npm(jspkg.types.vscode)
     }
 }
 

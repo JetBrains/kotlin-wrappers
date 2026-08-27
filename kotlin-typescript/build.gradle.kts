@@ -7,6 +7,6 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
 
-        api(npm(jspkg.typescript))
+        npm(jspkg.typescript)
     }
 }

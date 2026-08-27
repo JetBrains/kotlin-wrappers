@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinReactDom)
         api(projects.kotlinTanstackRouterCore)
 
-        api(npm(jspkg.tanstack.reactRouter))
+        npm(jspkg.tanstack.reactRouter)
     }
 }

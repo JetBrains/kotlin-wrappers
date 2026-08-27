@@ -8,6 +8,6 @@ kotlin {
         api(projects.kotlinBrowser)
         api(projects.kotlinReact)
 
-        api(npm(jspkg.reactDom))
+        npm(jspkg.reactDom)
     }
 }

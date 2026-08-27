@@ -7,6 +7,6 @@ kotlin {
         api(projects.kotlinJs)
         api(projects.kotlinBrowser)
 
-        api(npm(jspkg.cesium.engine))
+        npm(jspkg.cesium.engine)
     }
 }

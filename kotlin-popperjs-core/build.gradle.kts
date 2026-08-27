@@ -9,6 +9,6 @@ kotlin {
 
         implementation(projects.kotlinJsPlainObject)
 
-        api(npm(jspkg.popperjs.core))
+        npm(jspkg.popperjs.core)
     }
 }

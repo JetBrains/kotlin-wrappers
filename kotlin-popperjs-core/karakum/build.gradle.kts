@@ -4,7 +4,7 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
-        implementation(npm(jspkg.popperjs.core))
+        npm(jspkg.popperjs.core)
     }
 }
 
