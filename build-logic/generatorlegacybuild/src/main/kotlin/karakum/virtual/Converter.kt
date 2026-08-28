@@ -1,7 +1,7 @@
 package karakum.virtual
 
+import karakum.common.CommonUnionConverter.unionBodyByConstants
 import karakum.common.ConversionResult
-import karakum.common.JsUnionConverter.unionBodyByConstants
 import karakum.common.unionConstant
 import java.io.File
 

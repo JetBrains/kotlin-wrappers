@@ -2,24 +2,24 @@
 
 package tanstack.virtual.core
 
-import seskar.js.JsRawValue
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface FollowOnAppend {
-    companion object {
-        @JsRawValue("false")
-        val `false`: FollowOnAppend
+@JsUnion
+sealed /* union */
+external interface FollowOnAppend
 
-        @JsRawValue("true")
-        val `true`: FollowOnAppend
+inline val FollowOnAppend.Companion.`false`: FollowOnAppend
+    get() = unsafeCast(false)
 
-        @JsValue("auto")
-        val auto: FollowOnAppend
+inline val FollowOnAppend.Companion.`true`: FollowOnAppend
+    get() = unsafeCast(true)
 
-        @JsValue("smooth")
-        val smooth: FollowOnAppend
+inline val FollowOnAppend.Companion.auto: FollowOnAppend
+    get() = unsafeCast("auto")
 
-        @JsValue("instant")
-        val instant: FollowOnAppend
-    }
-}
+inline val FollowOnAppend.Companion.smooth: FollowOnAppend
+    get() = unsafeCast("smooth")
+
+inline val FollowOnAppend.Companion.instant: FollowOnAppend
+    get() = unsafeCast("instant")

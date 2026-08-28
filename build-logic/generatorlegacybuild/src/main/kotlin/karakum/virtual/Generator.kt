@@ -16,6 +16,7 @@ private val DEFAULT_IMPORTS = listOf(
     "js.internal.InternalApi",
     "js.promise.Promise",
     "js.reflect.unsafeCast",
+    "js.union.JsUnion",
     "js.void.Void",
 
     "web.dom.Element",

@@ -2,20 +2,21 @@
 
 package tanstack.virtual.core
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface ScrollAlignment {
-    companion object {
-        @JsValue("start")
-        val start: ScrollAlignment
+@JsUnion
+sealed /* union */
+external interface ScrollAlignment
 
-        @JsValue("center")
-        val center: ScrollAlignment
+inline val ScrollAlignment.Companion.start: ScrollAlignment
+    get() = unsafeCast("start")
 
-        @JsValue("end")
-        val end: ScrollAlignment
+inline val ScrollAlignment.Companion.center: ScrollAlignment
+    get() = unsafeCast("center")
 
-        @JsValue("auto")
-        val auto: ScrollAlignment
-    }
-}
+inline val ScrollAlignment.Companion.end: ScrollAlignment
+    get() = unsafeCast("end")
+
+inline val ScrollAlignment.Companion.auto: ScrollAlignment
+    get() = unsafeCast("auto")

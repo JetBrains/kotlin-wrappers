@@ -2,14 +2,15 @@
 
 package tanstack.virtual.core
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface ScrollAnchor {
-    companion object {
-        @JsValue("start")
-        val start: ScrollAnchor
+@JsUnion
+sealed /* union */
+external interface ScrollAnchor
 
-        @JsValue("end")
-        val end: ScrollAnchor
-    }
-}
+inline val ScrollAnchor.Companion.start: ScrollAnchor
+    get() = unsafeCast("start")
+
+inline val ScrollAnchor.Companion.end: ScrollAnchor
+    get() = unsafeCast("end")
