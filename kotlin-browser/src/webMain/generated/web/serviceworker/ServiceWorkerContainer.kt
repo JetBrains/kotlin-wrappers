@@ -59,6 +59,11 @@ private constructor() :
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
+    /**
+     * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
+     */
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
@@ -81,12 +86,22 @@ private constructor() :
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
 
+    /**
+     * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+     */
     @JsName("register")
     fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
 
+    /**
+     * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+     */
     @JsName("register")
     fun registerAsync(
         scriptURL: URL,
@@ -127,6 +142,11 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): Se
     ).await()
 }
 
+/**
+ * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
+ */
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): ServiceWorkerRegistration? {
     return getRegistrationAsync(
         clientURL = clientURL,
@@ -170,6 +190,11 @@ suspend inline fun ServiceWorkerContainer.register(
     ).await()
 }
 
+/**
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+ */
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
 ): ServiceWorkerRegistration {
@@ -178,6 +203,11 @@ suspend inline fun ServiceWorkerContainer.register(
     ).await()
 }
 
+/**
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+ */
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
     options: RegistrationOptions,
@@ -188,6 +218,11 @@ suspend inline fun ServiceWorkerContainer.register(
     ).await()
 }
 
+/**
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+ */
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
 ): ServiceWorkerRegistration {
@@ -196,6 +231,11 @@ suspend inline fun ServiceWorkerContainer.register(
     ).await()
 }
 
+/**
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+ */
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
     options: RegistrationOptions,

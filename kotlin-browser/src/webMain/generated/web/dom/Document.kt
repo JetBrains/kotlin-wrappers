@@ -561,6 +561,11 @@ open external class Document :
         subtree: Boolean = definedExternally,
     ): T
 
+    /**
+     * The **`importNode()`** method of the Document interface creates a copy of a Node or DocumentFragment from another document, to be inserted into the current document later.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/importNode)
+     */
     fun <T : Node> importNode(
         node: T,
         options: ImportNodeOptions,
@@ -598,6 +603,12 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
     fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
+
+    /**
+     * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA) view transition and returns a ViewTransition object to represent it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
+     */
     fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
 
     /**
@@ -617,6 +628,11 @@ open external class Document :
             options: ParseHTMLUnsafeOptions = definedExternally,
         ): Document
 
+        /**
+         * The **`parseHTMLUnsafe()`** static method of the Document object is used to parse HTML input, optionally filtering unwanted HTML elements and attributes, in order to create a new Document instance.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)
+         */
         fun parseHTMLUnsafe(
             html: String,
             options: ParseHTMLUnsafeOptions = definedExternally,

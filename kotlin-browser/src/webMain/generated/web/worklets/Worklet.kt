@@ -26,6 +26,11 @@ private constructor() {
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
 
+    /**
+     * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current Worklet.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
+     */
     @JsName("addModule")
     fun addModuleAsync(
         moduleURL: URL,
@@ -67,6 +72,11 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     ).await()
 }
 
+/**
+ * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current Worklet.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
+ */
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: URL,
 ) {
@@ -75,6 +85,11 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     ).await()
 }
 
+/**
+ * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current Worklet.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
+ */
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: URL,
     options: WorkletOptions,

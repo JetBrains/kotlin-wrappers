@@ -64,6 +64,11 @@ private constructor() {
         url: String? = definedExternally,
     )
 
+    /**
+     * The **`pushState()`** method of the History interface adds an entry to the browser's session history stack.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
+     */
     fun pushState(
         data: JsAny?,
         unused: String,
@@ -81,6 +86,11 @@ private constructor() {
         url: String? = definedExternally,
     )
 
+    /**
+     * The **`replaceState()`** method of the History interface modifies the current history entry, replacing it with the state object and URL passed in the method parameters. This method is particularly useful when you want to update the state object or URL of the current history entry in response to some user action.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
+     */
     fun replaceState(
         data: JsAny?,
         unused: String,

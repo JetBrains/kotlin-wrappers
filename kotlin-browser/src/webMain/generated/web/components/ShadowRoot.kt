@@ -85,6 +85,11 @@ private constructor() :
         options: SetHTMLUnsafeOptions = definedExternally,
     )
 
+    /**
+     * The **`setHTMLUnsafe()`** method of the ShadowRoot interface can be used to parse HTML input into a DocumentFragment, optionally filtering out unwanted elements and attributes, and then use it to replace the existing tree in the Shadow DOM.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTMLUnsafe)
+     */
     fun setHTMLUnsafe(
         html: String,
         options: SetHTMLUnsafeOptions = definedExternally,

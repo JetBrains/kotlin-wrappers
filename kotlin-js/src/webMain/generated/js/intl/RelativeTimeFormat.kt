@@ -100,16 +100,70 @@ open external class RelativeTimeFormat(
             options: RelativeTimeFormatOptions = definedExternally,
         ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
 
+        /**
+         * Returns an array containing those of the provided locales
+         * that are supported in date and time formatting
+         * without having to fall back to the runtime's default locale.
+         *
+         * @param locales - A string with a [BCP 47 language tag](http://tools.ietf.org/html/rfc5646), or an array of such strings.
+         *  For the general form and interpretation of the locales argument,
+         *  see the [`Intl` page](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation).
+         *
+         * @param options - An [object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#Parameters)
+         *  with some or all of options of the formatting.
+         *
+         * @return An array containing those of the provided locales
+         *  that are supported in date and time formatting
+         *  without having to fall back to the runtime's default locale.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/supportedLocalesOf).
+         */
         fun supportedLocalesOf(
             locales: Locale,
             options: RelativeTimeFormatOptions = definedExternally,
         ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
 
+        /**
+         * Returns an array containing those of the provided locales
+         * that are supported in date and time formatting
+         * without having to fall back to the runtime's default locale.
+         *
+         * @param locales - A string with a [BCP 47 language tag](http://tools.ietf.org/html/rfc5646), or an array of such strings.
+         *  For the general form and interpretation of the locales argument,
+         *  see the [`Intl` page](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation).
+         *
+         * @param options - An [object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#Parameters)
+         *  with some or all of options of the formatting.
+         *
+         * @return An array containing those of the provided locales
+         *  that are supported in date and time formatting
+         *  without having to fall back to the runtime's default locale.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/supportedLocalesOf).
+         */
         fun supportedLocalesOf(
             locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
             options: RelativeTimeFormatOptions = definedExternally,
         ): ReadonlyArray<UnicodeBCP47LocaleIdentifier>
 
+        /**
+         * Returns an array containing those of the provided locales
+         * that are supported in date and time formatting
+         * without having to fall back to the runtime's default locale.
+         *
+         * @param locales - A string with a [BCP 47 language tag](http://tools.ietf.org/html/rfc5646), or an array of such strings.
+         *  For the general form and interpretation of the locales argument,
+         *  see the [`Intl` page](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation).
+         *
+         * @param options - An [object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/RelativeTimeFormat#Parameters)
+         *  with some or all of options of the formatting.
+         *
+         * @return An array containing those of the provided locales
+         *  that are supported in date and time formatting
+         *  without having to fall back to the runtime's default locale.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/supportedLocalesOf).
+         */
         fun supportedLocalesOf(
             locales: ReadonlyArray<Locale>,
             options: RelativeTimeFormatOptions = definedExternally,

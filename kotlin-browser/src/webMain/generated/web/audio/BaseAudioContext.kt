@@ -185,6 +185,11 @@ private constructor() :
         constraints: PeriodicWaveConstraints = definedExternally,
     ): PeriodicWave
 
+    /**
+     * The **`createPeriodicWave()`** method of the BaseAudioContext interface is used to create a PeriodicWave. This wave is used to define a periodic waveform that can be used to shape the output of an OscillatorNode.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPeriodicWave)
+     */
     fun createPeriodicWave(
         real: Float32Array<*>,
         imag: Float32Array<*>,

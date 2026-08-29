@@ -58,6 +58,11 @@ open external class PaymentRequest(
     @JsName("show")
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
+    /**
+     * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
+     */
     @JsName("show")
     fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
 }
@@ -100,6 +105,11 @@ suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): Pa
     ).await()
 }
 
+/**
+ * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
+ */
 suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {
     return showAsync(
         detailsPromise = detailsPromise,

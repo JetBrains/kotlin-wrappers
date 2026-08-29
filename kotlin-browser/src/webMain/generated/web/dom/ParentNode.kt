@@ -52,6 +52,12 @@ external interface ParentNode :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
      */
     fun append(vararg nodes: Node): Unit = definedExternally
+
+    /**
+     * The **`Document.append()`** method inserts a set of Node objects or strings after the last child of the document. Strings are inserted as equivalent Text nodes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
+     */
     fun append(vararg nodes: String): Unit = definedExternally
 
     /**
@@ -70,6 +76,12 @@ external interface ParentNode :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
      */
     fun prepend(vararg nodes: Node): Unit = definedExternally
+
+    /**
+     * The **`Document.prepend()`** method inserts a set of Node objects or strings before the first child of the document. Strings are inserted as equivalent Text nodes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
+     */
     fun prepend(vararg nodes: String): Unit = definedExternally
 
     /**
@@ -94,6 +106,12 @@ external interface ParentNode :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
      */
     fun replaceChildren(vararg nodes: Node): Unit = definedExternally
+
+    /**
+     * The **`Document.replaceChildren()`** method replaces the existing children of a Document with a specified new set of children.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
+     */
     fun replaceChildren(vararg nodes: String): Unit = definedExternally
     fun replaceChildren(): Unit = definedExternally
 }

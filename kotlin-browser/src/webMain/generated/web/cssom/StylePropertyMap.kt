@@ -20,6 +20,11 @@ private constructor() :
         vararg values: CSSStyleValue,
     )
 
+    /**
+     * The **`append()`** method of the StylePropertyMap interface adds the passed CSS value to the StylePropertyMap with the given property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)
+     */
     fun append(
         property: String,
         vararg values: String,
@@ -49,6 +54,11 @@ private constructor() :
         vararg values: CSSStyleValue,
     )
 
+    /**
+     * The **`set()`** method of the StylePropertyMap interface changes the CSS declaration with the given property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/set)
+     */
     fun set(
         property: String,
         vararg values: String,

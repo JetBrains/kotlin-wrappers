@@ -69,6 +69,12 @@ open external class Range :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
     fun createContextualFragment(string: TrustedHTML): DocumentFragment
+
+    /**
+     * The **`Range.createContextualFragment()`** method of the Range interface returns a DocumentFragment representing the parsed input HTML or XML.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
+     */
     fun createContextualFragment(string: String): DocumentFragment
 
     /**

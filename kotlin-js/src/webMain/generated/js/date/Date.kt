@@ -413,16 +413,37 @@ external class Date() :
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
+    /**
+     * Converts a date to a string by using the current or specified locale.
+     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+     */
     fun toLocaleDateString(
         locales: Locale,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
+    /**
+     * Converts a date to a string by using the current or specified locale.
+     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+     */
     fun toLocaleDateString(
         locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
+    /**
+     * Converts a date to a string by using the current or specified locale.
+     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+     */
     fun toLocaleDateString(
         locales: ReadonlyArray<Locale>,
         options: DateTimeFormatOptions = definedExternally,
@@ -440,16 +461,37 @@ external class Date() :
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
+    /**
+     * Converts a time to a string by using the current or specified locale.
+     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+     */
     fun toLocaleTimeString(
         locales: Locale,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
+    /**
+     * Converts a time to a string by using the current or specified locale.
+     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+     */
     fun toLocaleTimeString(
         locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
         options: DateTimeFormatOptions = definedExternally,
     ): String
 
+    /**
+     * Converts a time to a string by using the current or specified locale.
+     * @param locales A locale string, array of locale strings, Intl.Locale object, or array of Intl.Locale objects that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+     */
     fun toLocaleTimeString(
         locales: ReadonlyArray<Locale>,
         options: DateTimeFormatOptions = definedExternally,

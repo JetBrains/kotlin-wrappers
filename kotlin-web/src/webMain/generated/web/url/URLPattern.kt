@@ -113,16 +113,31 @@ open external class URLPattern(
         baseURL: String = definedExternally,
     ): URLPatternResult?
 
+    /**
+     * The **`exec()`** method of the URLPattern interface takes a URL or object of URL parts, and returns either an object containing the results of matching the URL to the pattern, or null if the URL does not match the pattern.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
+     */
     fun exec(
         input: URLPatternInit,
         baseURL: String = definedExternally,
     ): URLPatternResult?
 
+    /**
+     * The **`exec()`** method of the URLPattern interface takes a URL or object of URL parts, and returns either an object containing the results of matching the URL to the pattern, or null if the URL does not match the pattern.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
+     */
     fun exec(
         input: String = definedExternally,
         baseURL: URL,
     ): URLPatternResult?
 
+    /**
+     * The **`exec()`** method of the URLPattern interface takes a URL or object of URL parts, and returns either an object containing the results of matching the URL to the pattern, or null if the URL does not match the pattern.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
+     */
     fun exec(
         input: URLPatternInit,
         baseURL: URL,
@@ -138,16 +153,31 @@ open external class URLPattern(
         baseURL: String = definedExternally,
     ): Boolean
 
+    /**
+     * The **`test()`** method of the URLPattern interface takes a URL string or object of URL parts, and returns a boolean indicating if the given input matches the current pattern.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
+     */
     fun test(
         input: URLPatternInit,
         baseURL: String = definedExternally,
     ): Boolean
 
+    /**
+     * The **`test()`** method of the URLPattern interface takes a URL string or object of URL parts, and returns a boolean indicating if the given input matches the current pattern.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
+     */
     fun test(
         input: String = definedExternally,
         baseURL: URL,
     ): Boolean
 
+    /**
+     * The **`test()`** method of the URLPattern interface takes a URL string or object of URL parts, and returns a boolean indicating if the given input matches the current pattern.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
+     */
     fun test(
         input: URLPatternInit,
         baseURL: URL,

@@ -203,6 +203,11 @@ private constructor() :
         data: BodyInit? = definedExternally,
     ): Boolean
 
+    /**
+     * The **`navigator.sendBeacon()`** method asynchronously sends an HTTP POST request containing a small amount of data to a web server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
+     */
     fun sendBeacon(
         url: URL,
         data: BodyInit? = definedExternally,

@@ -104,6 +104,11 @@ private constructor() :
         options: NavigationNavigateOptions = definedExternally,
     ): NavigationResult
 
+    /**
+     * The **`navigate()`** method of the Navigation interface navigates to a specific URL, updating any provided state in the history entries list.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate)
+     */
     fun navigate(
         url: URL,
         options: NavigationNavigateOptions = definedExternally,

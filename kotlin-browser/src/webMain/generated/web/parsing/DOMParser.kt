@@ -21,6 +21,11 @@ open external class DOMParser {
         type: DOMParserSupportedType,
     ): Document
 
+    /**
+     * The **`parseFromString()`** method of the DOMParser interface parses an input containing either HTML or XML, returning a Document with the type given in the contentType property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
+     */
     fun parseFromString(
         string: String,
         type: DOMParserSupportedType,

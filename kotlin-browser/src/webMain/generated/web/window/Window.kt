@@ -340,6 +340,11 @@ private constructor() :
         features: String = definedExternally,
     ): WindowProxy?
 
+    /**
+     * The **`open()`** method of the Window interface loads a specified resource into a new or existing browsing context (that is, a tab, a window, or an iframe) under a specified name.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/open)
+     */
     fun open(
         url: URL,
         target: WindowTarget = definedExternally,

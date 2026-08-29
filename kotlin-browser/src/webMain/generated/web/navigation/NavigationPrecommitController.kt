@@ -28,6 +28,11 @@ private constructor() {
         options: NavigationNavigateOptions = definedExternally,
     )
 
+    /**
+     * The **`redirect()`** method of the NavigationPrecommitController interface redirects the browser to a specified URL and specifies history behavior and any desired state information.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/redirect)
+     */
     fun redirect(
         url: URL,
         options: NavigationNavigateOptions = definedExternally,

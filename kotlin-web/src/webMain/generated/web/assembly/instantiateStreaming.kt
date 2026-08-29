@@ -48,6 +48,9 @@ suspend inline fun instantiateStreaming(
     ).await()
 }
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static)
+ */
 @JsQualifier("WebAssembly")
 @JsName("instantiateStreaming")
 external fun instantiateStreamingAsync(

@@ -28,6 +28,11 @@ open external class FormData(
         value: String,
     )
 
+    /**
+     * The **`append()`** method of the FormData interface appends a new value onto an existing key inside a FormData object, or adds the key if it does not already exist.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append)
+     */
     fun append(
         name: String,
         value: Blob,
@@ -77,6 +82,11 @@ open external class FormData(
         value: String,
     )
 
+    /**
+     * The **`set()`** method of the FormData interface sets a new value for an existing key inside a FormData object, or adds the key/value if it does not already exist.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set)
+     */
     fun set(
         name: String,
         value: Blob,

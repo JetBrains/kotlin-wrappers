@@ -109,6 +109,11 @@ private constructor() {
         duration: Double,
     ): AudioParam
 
+    /**
+     * The **`setValueCurveAtTime()`** method of the AudioParam interface schedules the parameter's value to change following a curve defined by a list of values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueCurveAtTime)
+     */
     fun setValueCurveAtTime(
         values: Float32Array<*>,
         startTime: Double,

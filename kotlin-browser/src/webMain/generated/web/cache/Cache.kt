@@ -26,9 +26,19 @@ private constructor() {
     @JsName("add")
     fun addAsync(url: String): Promise<Void>
 
+    /**
+     * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+     */
     @JsName("add")
     fun addAsync(url: URL): Promise<Void>
 
+    /**
+     * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+     */
     @JsName("add")
     fun addAsync(request: Request): Promise<Void>
 
@@ -40,6 +50,11 @@ private constructor() {
     @JsName("addAll")
     fun addAllAsync(requests: ReadonlyArray<Request>): Promise<Void>
 
+    /**
+     * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
+     */
     @JsName("addAll")
     fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
 
@@ -54,12 +69,22 @@ private constructor() {
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
 
+    /**
+     * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+     */
     @JsName("delete")
     fun deleteAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
 
+    /**
+     * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+     */
     @JsName("delete")
     fun deleteAsync(
         request: Request,
@@ -77,12 +102,22 @@ private constructor() {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
 
+    /**
+     * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+     */
     @JsName("keys")
     fun keysAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
 
+    /**
+     * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+     */
     @JsName("keys")
     fun keysAsync(
         request: Request,
@@ -100,12 +135,22 @@ private constructor() {
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    /**
+     * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+     */
     @JsName("match")
     fun matchAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    /**
+     * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+     */
     @JsName("match")
     fun matchAsync(
         request: Request,
@@ -123,12 +168,22 @@ private constructor() {
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
 
+    /**
+     * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+     */
     @JsName("matchAll")
     fun matchAllAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
 
+    /**
+     * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+     */
     @JsName("matchAll")
     fun matchAllAsync(
         request: Request,
@@ -146,12 +201,22 @@ private constructor() {
         response: Response,
     ): Promise<Void>
 
+    /**
+     * The **`put()`** method of the Cache interface allows key/value pairs to be added to the current Cache object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+     */
     @JsName("put")
     fun putAsync(
         url: URL,
         response: Response,
     ): Promise<Void>
 
+    /**
+     * The **`put()`** method of the Cache interface allows key/value pairs to be added to the current Cache object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+     */
     @JsName("put")
     fun putAsync(
         request: Request,
@@ -170,12 +235,22 @@ suspend inline fun Cache.add(url: String) {
     ).await()
 }
 
+/**
+ * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+ */
 suspend inline fun Cache.add(url: URL) {
     addAsync(
         url = url,
     ).await()
 }
 
+/**
+ * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+ */
 suspend inline fun Cache.add(request: Request) {
     addAsync(
         request = request,
@@ -193,6 +268,11 @@ suspend inline fun Cache.addAll(requests: ReadonlyArray<Request>) {
     ).await()
 }
 
+/**
+ * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
+ */
 suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
     addAllAsync(
         urls = urls,
@@ -227,6 +307,11 @@ suspend inline fun Cache.delete(
     ).await().toBoolean()
 }
 
+/**
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+ */
 suspend inline fun Cache.delete(
     url: URL,
 ): Boolean {
@@ -235,6 +320,11 @@ suspend inline fun Cache.delete(
     ).await().toBoolean()
 }
 
+/**
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+ */
 suspend inline fun Cache.delete(
     url: URL,
     options: CacheQueryOptions,
@@ -245,6 +335,11 @@ suspend inline fun Cache.delete(
     ).await().toBoolean()
 }
 
+/**
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+ */
 suspend inline fun Cache.delete(
     request: Request,
 ): Boolean {
@@ -253,6 +348,11 @@ suspend inline fun Cache.delete(
     ).await().toBoolean()
 }
 
+/**
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+ */
 suspend inline fun Cache.delete(
     request: Request,
     options: CacheQueryOptions,
@@ -300,6 +400,11 @@ suspend inline fun Cache.keys(
     ).await()
 }
 
+/**
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
 suspend inline fun Cache.keys(
     url: URL,
 ): ReadonlyArray<Request> {
@@ -308,6 +413,11 @@ suspend inline fun Cache.keys(
     ).await()
 }
 
+/**
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
 suspend inline fun Cache.keys(
     url: URL,
     options: CacheQueryOptions,
@@ -318,6 +428,11 @@ suspend inline fun Cache.keys(
     ).await()
 }
 
+/**
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
 suspend inline fun Cache.keys(
     request: Request,
 ): ReadonlyArray<Request> {
@@ -326,6 +441,11 @@ suspend inline fun Cache.keys(
     ).await()
 }
 
+/**
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
 suspend inline fun Cache.keys(
     request: Request,
     options: CacheQueryOptions,
@@ -364,6 +484,11 @@ suspend inline fun Cache.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
 suspend inline fun Cache.match(
     url: URL,
 ): Response? {
@@ -372,6 +497,11 @@ suspend inline fun Cache.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
 suspend inline fun Cache.match(
     url: URL,
     options: CacheQueryOptions,
@@ -382,6 +512,11 @@ suspend inline fun Cache.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
 suspend inline fun Cache.match(
     request: Request,
 ): Response? {
@@ -390,6 +525,11 @@ suspend inline fun Cache.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
 suspend inline fun Cache.match(
     request: Request,
     options: CacheQueryOptions,
@@ -437,6 +577,11 @@ suspend inline fun Cache.matchAll(
     ).await()
 }
 
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
 suspend inline fun Cache.matchAll(
     url: URL,
 ): ReadonlyArray<Response> {
@@ -445,6 +590,11 @@ suspend inline fun Cache.matchAll(
     ).await()
 }
 
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
 suspend inline fun Cache.matchAll(
     url: URL,
     options: CacheQueryOptions,
@@ -455,6 +605,11 @@ suspend inline fun Cache.matchAll(
     ).await()
 }
 
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
 suspend inline fun Cache.matchAll(
     request: Request,
 ): ReadonlyArray<Response> {
@@ -463,6 +618,11 @@ suspend inline fun Cache.matchAll(
     ).await()
 }
 
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
 suspend inline fun Cache.matchAll(
     request: Request,
     options: CacheQueryOptions,
@@ -488,6 +648,11 @@ suspend inline fun Cache.put(
     ).await()
 }
 
+/**
+ * The **`put()`** method of the Cache interface allows key/value pairs to be added to the current Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+ */
 suspend inline fun Cache.put(
     url: URL,
     response: Response,
@@ -498,6 +663,11 @@ suspend inline fun Cache.put(
     ).await()
 }
 
+/**
+ * The **`put()`** method of the Cache interface allows key/value pairs to be added to the current Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+ */
 suspend inline fun Cache.put(
     request: Request,
     response: Response,

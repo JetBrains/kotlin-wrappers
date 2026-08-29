@@ -45,6 +45,11 @@ private constructor() :
     @JsName("navigate")
     fun navigateAsync(url: String): Promise<WindowClient?>
 
+    /**
+     * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a Promise that resolves to the existing WindowClient.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
+     */
     @JsName("navigate")
     fun navigateAsync(url: URL): Promise<WindowClient?>
 }
@@ -69,6 +74,11 @@ suspend inline fun WindowClient.navigate(url: String): WindowClient? {
     ).await()
 }
 
+/**
+ * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a Promise that resolves to the existing WindowClient.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
+ */
 suspend inline fun WindowClient.navigate(url: URL): WindowClient? {
     return navigateAsync(
         url = url,

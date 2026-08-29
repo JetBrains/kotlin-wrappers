@@ -47,6 +47,11 @@ private constructor() {
     @JsName("openWindow")
     fun openWindowAsync(url: String): Promise<WindowClient?>
 
+    /**
+     * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
+     */
     @JsName("openWindow")
     fun openWindowAsync(url: URL): Promise<WindowClient?>
 }
@@ -102,6 +107,11 @@ suspend inline fun Clients.openWindow(url: String): WindowClient? {
     ).await()
 }
 
+/**
+ * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
+ */
 suspend inline fun Clients.openWindow(url: URL): WindowClient? {
     return openWindowAsync(
         url = url,

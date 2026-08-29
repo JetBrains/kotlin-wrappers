@@ -97,6 +97,11 @@ open external class Response(
             status: Short = definedExternally,
         ): Response
 
+        /**
+         * The **`redirect()`** static method of the Response interface returns a Response resulting in a redirect to the specified URL.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirect_static)
+         */
         fun redirect(
             url: URL,
             status: Short = definedExternally,

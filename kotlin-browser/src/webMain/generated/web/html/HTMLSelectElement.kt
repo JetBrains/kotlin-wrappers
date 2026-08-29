@@ -150,16 +150,31 @@ protected constructor() :
         before: HTMLElement? = definedExternally,
     )
 
+    /**
+     * The **`HTMLSelectElement.add()`** method adds an element to the collection of option elements for this select element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
+     */
     fun add(
         element: HTMLOptionElement,
         before: Int?,
     )
 
+    /**
+     * The **`HTMLSelectElement.add()`** method adds an element to the collection of option elements for this select element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
+     */
     fun add(
         element: HTMLOptGroupElement,
         before: HTMLElement? = definedExternally,
     )
 
+    /**
+     * The **`HTMLSelectElement.add()`** method adds an element to the collection of option elements for this select element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
+     */
     fun add(
         element: HTMLOptGroupElement,
         before: Int?,

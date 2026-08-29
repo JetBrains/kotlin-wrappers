@@ -52,12 +52,22 @@ private constructor() {
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    /**
+     * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+     */
     @JsName("match")
     fun matchAsync(
         url: URL,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
+    /**
+     * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+     */
     @JsName("match")
     fun matchAsync(
         request: Request,
@@ -132,6 +142,11 @@ suspend inline fun CacheStorage.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+ */
 suspend inline fun CacheStorage.match(
     url: URL,
 ): Response? {
@@ -140,6 +155,11 @@ suspend inline fun CacheStorage.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+ */
 suspend inline fun CacheStorage.match(
     url: URL,
     options: MultiCacheQueryOptions,
@@ -150,6 +170,11 @@ suspend inline fun CacheStorage.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+ */
 suspend inline fun CacheStorage.match(
     request: Request,
 ): Response? {
@@ -158,6 +183,11 @@ suspend inline fun CacheStorage.match(
     ).await()
 }
 
+/**
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+ */
 suspend inline fun CacheStorage.match(
     request: Request,
     options: MultiCacheQueryOptions,

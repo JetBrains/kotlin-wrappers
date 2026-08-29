@@ -92,6 +92,11 @@ private constructor() :
         options: IDBTransactionOptions = definedExternally,
     ): IDBTransaction
 
+    /**
+     * The **`transaction`** method of the IDBDatabase interface immediately returns a transaction object (IDBTransaction) containing the IDBTransaction.objectStore method, which you can use to access your object store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/transaction)
+     */
     fun transaction(
         storeNames: ReadonlyArray<JsString>,
         mode: IDBTransactionMode = definedExternally,

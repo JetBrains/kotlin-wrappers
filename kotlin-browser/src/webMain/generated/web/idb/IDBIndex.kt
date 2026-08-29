@@ -53,6 +53,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/count)
      */
     fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
+
+    /**
+     * The **`count()`** method of the IDBIndex interface returns an IDBRequest object, and in a separate thread, returns the number of records within a key range.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/count)
+     */
     fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
@@ -61,6 +67,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/get)
      */
     fun get(query: IDBValidKey): IDBRequest<*>
+
+    /**
+     * The **`get()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if key is set to an IDBKeyRange.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/get)
+     */
     fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
@@ -73,6 +85,11 @@ private constructor() {
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
+    /**
+     * The **`getAll()`** method of the IDBIndex interface retrieves all objects that are inside the index.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAll)
+     */
     fun getAll(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -88,6 +105,11 @@ private constructor() {
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
+    /**
+     * The **`getAllKeys()`** method of the IDBIndex interface asynchronously retrieves the primary keys of all objects inside the index, setting them as the result of the request object.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllKeys)
+     */
     fun getAllKeys(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -99,6 +121,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getKey)
      */
     fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
+
+    /**
+     * The **`getKey()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the primary key that corresponds to the given key in this index or the first corresponding primary key, if key is set to an IDBKeyRange.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getKey)
+     */
     fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
     /**
@@ -111,6 +139,11 @@ private constructor() {
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursorWithValue?>
 
+    /**
+     * The **`openCursor()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, creates a cursor over the specified key range.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openCursor)
+     */
     fun openCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
@@ -126,6 +159,11 @@ private constructor() {
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursor?>
 
+    /**
+     * The **`openKeyCursor()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, creates a cursor over the specified key range, as arranged by this index.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openKeyCursor)
+     */
     fun openKeyCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,

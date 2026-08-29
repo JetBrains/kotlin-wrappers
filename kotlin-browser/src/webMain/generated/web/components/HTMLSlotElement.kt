@@ -31,6 +31,12 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */
     fun assign(vararg nodes: Element)
+
+    /**
+     * The **`assign()`** method of the HTMLSlotElement interface sets the slot's manually assigned nodes to an ordered set of slottables. The manually assigned nodes set is initially empty until nodes are assigned using assign().
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
+     */
     fun assign(vararg nodes: Text)
 
     /**

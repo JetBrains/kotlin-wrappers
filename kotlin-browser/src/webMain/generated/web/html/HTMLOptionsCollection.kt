@@ -34,16 +34,31 @@ private constructor() :
         before: HTMLElement? = definedExternally,
     )
 
+    /**
+     * The **`add()`** method of the HTMLOptionsCollection interface adds an HTMLOptionElement or HTMLOptGroupElement to this HTMLOptionsCollection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
+     */
     fun add(
         element: HTMLOptionElement,
         before: Int?,
     )
 
+    /**
+     * The **`add()`** method of the HTMLOptionsCollection interface adds an HTMLOptionElement or HTMLOptGroupElement to this HTMLOptionsCollection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
+     */
     fun add(
         element: HTMLOptGroupElement,
         before: HTMLElement? = definedExternally,
     )
 
+    /**
+     * The **`add()`** method of the HTMLOptionsCollection interface adds an HTMLOptionElement or HTMLOptGroupElement to this HTMLOptionsCollection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
+     */
     fun add(
         element: HTMLOptGroupElement,
         before: Int?,

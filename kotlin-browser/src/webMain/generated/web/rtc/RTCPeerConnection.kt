@@ -181,6 +181,11 @@ open external class RTCPeerConnection(
         init: RTCRtpTransceiverInit = definedExternally,
     ): RTCRtpTransceiver
 
+    /**
+     * The **`addTransceiver()`** method of the RTCPeerConnection interface creates a new RTCRtpTransceiver and adds it to the set of transceivers associated with the RTCPeerConnection. Each transceiver represents a bidirectional stream, with both an RTCRtpSender and an RTCRtpReceiver associated with it.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver)
+     */
     fun addTransceiver(
         trackOrKind: String,
         init: RTCRtpTransceiverInit = definedExternally,
@@ -301,6 +306,11 @@ open external class RTCPeerConnection(
         @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
 
+        /**
+         * The **`generateCertificate()`** static function of the RTCPeerConnection interface creates an X.509 certificate and corresponding private key, returning a promise that resolves with the new RTCCertificate once it's generated.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
+         */
         @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: String): Promise<RTCCertificate>
     }
@@ -428,6 +438,11 @@ suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorit
     ).await()
 }
 
+/**
+ * The **`generateCertificate()`** static function of the RTCPeerConnection interface creates an X.509 certificate and corresponding private key, returning a promise that resolves with the new RTCCertificate once it's generated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
+ */
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: String): RTCCertificate {
     return generateCertificateAsync(
         keygenAlgorithm = keygenAlgorithm,

@@ -22,6 +22,11 @@ external interface NavigatorContentUtils {
         url: String,
     ): Unit = definedExternally
 
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler)
+     */
     fun registerProtocolHandler(
         scheme: String,
         url: URL,

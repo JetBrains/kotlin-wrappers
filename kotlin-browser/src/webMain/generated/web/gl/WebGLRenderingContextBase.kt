@@ -614,6 +614,9 @@ external interface WebGLRenderingContextBase {
         param: GLint,
     ): Unit = definedExternally
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/pixelStorei)
+     */
     fun pixelStorei(
         pname: GLenum,
         param: GLboolean,

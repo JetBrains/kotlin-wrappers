@@ -130,16 +130,31 @@ open external class URL(
             base: String = definedExternally,
         ): Boolean
 
+        /**
+         * The **`URL.canParse()`** static method of the URL interface returns a boolean indicating whether or not an absolute URL, or a relative URL combined with a base URL, are parsable and valid.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
+         */
         fun canParse(
             url: URL,
             base: String = definedExternally,
         ): Boolean
 
+        /**
+         * The **`URL.canParse()`** static method of the URL interface returns a boolean indicating whether or not an absolute URL, or a relative URL combined with a base URL, are parsable and valid.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
+         */
         fun canParse(
             url: String,
             base: URL,
         ): Boolean
 
+        /**
+         * The **`URL.canParse()`** static method of the URL interface returns a boolean indicating whether or not an absolute URL, or a relative URL combined with a base URL, are parsable and valid.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
+         */
         fun canParse(
             url: URL,
             base: URL,
@@ -162,16 +177,31 @@ open external class URL(
             base: String = definedExternally,
         ): URL?
 
+        /**
+         * The **`URL.parse()`** static method of the URL interface returns a newly created URL object representing the URL defined by the parameters.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         */
         fun parse(
             url: URL,
             base: String = definedExternally,
         ): URL?
 
+        /**
+         * The **`URL.parse()`** static method of the URL interface returns a newly created URL object representing the URL defined by the parameters.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         */
         fun parse(
             url: String,
             base: URL,
         ): URL?
 
+        /**
+         * The **`URL.parse()`** static method of the URL interface returns a newly created URL object representing the URL defined by the parameters.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         */
         fun parse(
             url: URL,
             base: URL,

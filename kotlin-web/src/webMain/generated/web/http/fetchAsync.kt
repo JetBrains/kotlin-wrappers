@@ -14,12 +14,18 @@ external fun fetchAsync(
     init: RequestInit? = definedExternally,
 ): Promise<Response>
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
+ */
 @JsName("fetch")
 external fun fetchAsync(
     url: URL,
     init: RequestInit? = definedExternally,
 ): Promise<Response>
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
+ */
 @JsName("fetch")
 external fun fetchAsync(
     request: Request,

@@ -109,6 +109,11 @@ private constructor() :
         endMark: String = definedExternally,
     ): PerformanceMeasure
 
+    /**
+     * The **`measure()`** method creates a named PerformanceMeasure object representing a time measurement between two marks in the browser's performance timeline.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/measure)
+     */
     fun measure(
         measureName: String,
         startOrMeasureOptions: PerformanceMeasureOptions,

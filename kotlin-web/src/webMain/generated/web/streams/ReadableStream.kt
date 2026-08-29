@@ -97,9 +97,25 @@ open external class ReadableStream<R : JsAny?>(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
         fun <R : JsAny?> from(source: AsyncIterable<R>): ReadableStream<R>
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+         */
         fun <R : JsAny?> from(source: JsIterable<R>): ReadableStream<R>
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+         */
         fun <R : JsAny?> from(source: JsIterable<PromiseLike<R>>): ReadableStream<R>
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+         */
         fun <R : JsAny?> from(source: ReadonlyArray<R>): ReadableStream<R>
+
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
+         */
         fun <R : JsAny?> from(source: ReadonlyArray<PromiseLike<R>>): ReadableStream<R>
     }
 }

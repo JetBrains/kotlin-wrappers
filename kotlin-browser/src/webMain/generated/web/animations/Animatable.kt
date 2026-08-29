@@ -20,16 +20,25 @@ external interface Animatable {
         options: Double = definedExternally,
     ): Animation = definedExternally
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     */
     fun animate(
         keyframes: ReadonlyArray<Keyframe>?,
         options: KeyframeAnimationOptions,
     ): Animation = definedExternally
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     */
     fun animate(
         keyframes: PropertyIndexedKeyframes?,
         options: Double = definedExternally,
     ): Animation = definedExternally
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
+     */
     fun animate(
         keyframes: PropertyIndexedKeyframes?,
         options: KeyframeAnimationOptions,

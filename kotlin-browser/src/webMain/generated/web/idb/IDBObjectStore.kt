@@ -72,6 +72,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/count)
      */
     fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
+
+    /**
+     * The **`count()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the total number of records that match the provided key or IDBKeyRange. If no arguments are provided, it returns the total number of records in the store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/count)
+     */
     fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
@@ -85,6 +91,11 @@ private constructor() {
         options: IDBIndexParameters = definedExternally,
     ): IDBIndex
 
+    /**
+     * The **`createIndex()`** method of the IDBObjectStore interface creates and returns a new IDBIndex object in the connected database. It creates a new field/column defining a new data point for each database record to contain.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/createIndex)
+     */
     fun createIndex(
         name: String,
         keyPath: ReadonlyArray<JsString>,
@@ -97,6 +108,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete)
      */
     fun delete(query: IDBValidKey): IDBRequest<Void>
+
+    /**
+     * The **`delete()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, deletes the specified record or records.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete)
+     */
     fun delete(query: IDBKeyRange): IDBRequest<Void>
 
     /**
@@ -112,6 +129,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get)
      */
     fun get(query: IDBValidKey): IDBRequest<*>
+
+    /**
+     * The **`get()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the object selected by the specified key. This is for retrieving specific records from an object store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get)
+     */
     fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
@@ -124,6 +147,11 @@ private constructor() {
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
+    /**
+     * The **`getAll()`** method of the IDBObjectStore interface returns an IDBRequest object containing all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAll)
+     */
     fun getAll(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -139,6 +167,11 @@ private constructor() {
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
+    /**
+     * The **`getAllKeys()`** method of the IDBObjectStore interface returns an IDBRequest object retrieves record keys for all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAllKeys)
+     */
     fun getAllKeys(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -150,6 +183,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getKey)
      */
     fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
+
+    /**
+     * The **`getKey()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the key selected by the specified query. This is for retrieving specific records from an object store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getKey)
+     */
     fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
     /**
@@ -169,6 +208,11 @@ private constructor() {
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursorWithValue?>
 
+    /**
+     * The **`openCursor()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns a new IDBCursorWithValue object. Used for iterating through an object store with a cursor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor)
+     */
     fun openCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
@@ -184,6 +228,11 @@ private constructor() {
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursor?>
 
+    /**
+     * The **`openKeyCursor()`** method of the IDBObjectStore interface returns an IDBRequest object whose result will be set to an IDBCursor that can be used to iterate through matching results. Used for iterating through the keys of an object store with a cursor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openKeyCursor)
+     */
     fun openKeyCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,

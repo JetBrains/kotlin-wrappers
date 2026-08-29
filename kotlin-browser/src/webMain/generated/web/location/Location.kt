@@ -90,6 +90,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/assign)
      */
     fun assign(url: String)
+
+    /**
+     * The **`assign()`** method of the Location interface causes the window to load and display the document at the URL specified. After the navigation occurs, the user can navigate back to the page that called Location.assign() by pressing the "back" button.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/assign)
+     */
     fun assign(url: URL)
 
     /**
@@ -105,5 +111,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/replace)
      */
     fun replace(url: String)
+
+    /**
+     * The **`replace()`** method of the Location interface replaces the current resource with the one at the provided URL. The difference from the assign() method is that after using replace() the current page will not be saved in session History, meaning the user won't be able to use the back button to navigate to it. Not to be confused with the String method String.prototype.replace().
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/replace)
+     */
     fun replace(url: URL)
 }

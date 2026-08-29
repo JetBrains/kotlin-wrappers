@@ -28,6 +28,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+     */
     @JsName("decrypt")
     fun decryptAsync(
         algorithm: String,
@@ -35,6 +40,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+     */
     @JsName("decrypt")
     fun decryptAsync(
         algorithm: RsaOaepParams,
@@ -42,6 +52,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+     */
     @JsName("decrypt")
     fun decryptAsync(
         algorithm: AesCtrParams,
@@ -49,6 +64,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+     */
     @JsName("decrypt")
     fun decryptAsync(
         algorithm: AesCbcParams,
@@ -56,6 +76,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+     */
     @JsName("decrypt")
     fun decryptAsync(
         algorithm: AesGcmParams,
@@ -75,6 +100,11 @@ private constructor() {
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+     */
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: String,
@@ -82,6 +112,11 @@ private constructor() {
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+     */
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -89,6 +124,11 @@ private constructor() {
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+     */
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: HkdfParams,
@@ -96,6 +136,11 @@ private constructor() {
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+     */
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: Pbkdf2Params,
@@ -117,6 +162,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
@@ -126,6 +176,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -135,6 +190,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -144,6 +204,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
@@ -153,6 +218,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
@@ -162,6 +232,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
@@ -171,6 +246,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
@@ -180,6 +260,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
@@ -189,6 +274,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
@@ -198,6 +288,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -207,6 +302,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
@@ -216,6 +316,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
@@ -225,6 +330,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
@@ -234,6 +344,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
@@ -243,6 +358,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -252,6 +372,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
@@ -261,6 +386,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
@@ -270,6 +400,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
@@ -279,6 +414,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
@@ -288,6 +428,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -297,6 +442,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
@@ -306,6 +456,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
@@ -315,6 +470,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
@@ -324,6 +484,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
@@ -333,6 +498,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -342,6 +512,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
@@ -351,6 +526,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+     */
     @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
@@ -371,6 +551,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`digest()`** method of the SubtleCrypto interface generates a digest of the given data, using the specified hash function. A digest is a short fixed-length value derived from some variable-length input. Cryptographic digests should exhibit collision-resistance, meaning that it's hard to come up with two different inputs that have the same digest value.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
+     */
     @JsName("digest")
     fun digestAsync(
         algorithm: String,
@@ -389,6 +574,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+     */
     @JsName("encrypt")
     fun encryptAsync(
         algorithm: String,
@@ -396,6 +586,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+     */
     @JsName("encrypt")
     fun encryptAsync(
         algorithm: RsaOaepParams,
@@ -403,6 +598,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+     */
     @JsName("encrypt")
     fun encryptAsync(
         algorithm: AesCtrParams,
@@ -410,6 +610,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+     */
     @JsName("encrypt")
     fun encryptAsync(
         algorithm: AesCbcParams,
@@ -417,6 +622,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+     */
     @JsName("encrypt")
     fun encryptAsync(
         algorithm: AesGcmParams,
@@ -523,6 +733,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+     */
     @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
@@ -532,6 +747,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+     */
     @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
@@ -541,6 +761,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+     */
     @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
@@ -550,6 +775,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+     */
     @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
@@ -559,6 +789,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+     */
     @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
@@ -634,6 +869,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
+     */
     @JsName("sign")
     fun signAsync(
         algorithm: String,
@@ -641,6 +881,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
+     */
     @JsName("sign")
     fun signAsync(
         algorithm: RsaPssParams,
@@ -648,6 +893,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
+     */
     @JsName("sign")
     fun signAsync(
         algorithm: EcdsaParams,
@@ -671,6 +921,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -682,6 +937,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -693,6 +953,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -704,6 +969,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -715,6 +985,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -726,6 +1001,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -737,6 +1017,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -748,6 +1033,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -759,6 +1049,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -770,6 +1065,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -781,6 +1081,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -792,6 +1097,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -803,6 +1113,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -814,6 +1129,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -825,6 +1145,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -836,6 +1161,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -847,6 +1177,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -858,6 +1193,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -869,6 +1209,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -880,6 +1225,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -891,6 +1241,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -902,6 +1257,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -913,6 +1273,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -924,6 +1289,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -935,6 +1305,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -946,6 +1321,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -957,6 +1337,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -968,6 +1353,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -979,6 +1369,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -990,6 +1385,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -1001,6 +1401,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -1012,6 +1417,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -1023,6 +1433,11 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+     */
     @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
@@ -1047,6 +1462,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<JsBoolean>
 
+    /**
+     * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
+     */
     @JsName("verify")
     fun verifyAsync(
         algorithm: String,
@@ -1055,6 +1475,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<JsBoolean>
 
+    /**
+     * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
+     */
     @JsName("verify")
     fun verifyAsync(
         algorithm: RsaPssParams,
@@ -1063,6 +1488,11 @@ private constructor() {
         data: BufferSource,
     ): Promise<JsBoolean>
 
+    /**
+     * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
+     */
     @JsName("verify")
     fun verifyAsync(
         algorithm: EcdsaParams,
@@ -1084,6 +1514,11 @@ private constructor() {
         wrapAlgorithm: Algorithm,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+     */
     @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
@@ -1092,6 +1527,11 @@ private constructor() {
         wrapAlgorithm: String,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+     */
     @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
@@ -1100,6 +1540,11 @@ private constructor() {
         wrapAlgorithm: RsaOaepParams,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+     */
     @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
@@ -1108,6 +1553,11 @@ private constructor() {
         wrapAlgorithm: AesCtrParams,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+     */
     @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
@@ -1116,6 +1566,11 @@ private constructor() {
         wrapAlgorithm: AesCbcParams,
     ): Promise<ArrayBuffer>
 
+    /**
+     * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+     */
     @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
@@ -1142,6 +1597,11 @@ suspend inline fun SubtleCrypto.decrypt(
     ).await()
 }
 
+/**
+ * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+ */
 suspend inline fun SubtleCrypto.decrypt(
     algorithm: String,
     key: CryptoKey,
@@ -1154,6 +1614,11 @@ suspend inline fun SubtleCrypto.decrypt(
     ).await()
 }
 
+/**
+ * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+ */
 suspend inline fun SubtleCrypto.decrypt(
     algorithm: RsaOaepParams,
     key: CryptoKey,
@@ -1166,6 +1631,11 @@ suspend inline fun SubtleCrypto.decrypt(
     ).await()
 }
 
+/**
+ * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+ */
 suspend inline fun SubtleCrypto.decrypt(
     algorithm: AesCtrParams,
     key: CryptoKey,
@@ -1178,6 +1648,11 @@ suspend inline fun SubtleCrypto.decrypt(
     ).await()
 }
 
+/**
+ * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+ */
 suspend inline fun SubtleCrypto.decrypt(
     algorithm: AesCbcParams,
     key: CryptoKey,
@@ -1190,6 +1665,11 @@ suspend inline fun SubtleCrypto.decrypt(
     ).await()
 }
 
+/**
+ * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
+ */
 suspend inline fun SubtleCrypto.decrypt(
     algorithm: AesGcmParams,
     key: CryptoKey,
@@ -1234,6 +1714,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1244,6 +1729,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1256,6 +1746,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1266,6 +1761,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1278,6 +1778,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1288,6 +1793,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1300,6 +1810,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1310,6 +1825,11 @@ suspend inline fun SubtleCrypto.deriveBits(
     ).await()
 }
 
+/**
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1343,6 +1863,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1359,6 +1884,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1375,6 +1905,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1391,6 +1926,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1407,6 +1947,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1423,6 +1968,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1439,6 +1989,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1455,6 +2010,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Algorithm,
     baseKey: CryptoKey,
@@ -1471,6 +2031,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1487,6 +2052,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1503,6 +2073,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1519,6 +2094,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1535,6 +2115,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Algorithm,
     baseKey: CryptoKey,
@@ -1551,6 +2136,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1567,6 +2157,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1583,6 +2178,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1599,6 +2199,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1615,6 +2220,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Algorithm,
     baseKey: CryptoKey,
@@ -1631,6 +2241,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1647,6 +2262,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1663,6 +2283,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1679,6 +2304,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1695,6 +2325,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Algorithm,
     baseKey: CryptoKey,
@@ -1711,6 +2346,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: String,
     baseKey: CryptoKey,
@@ -1727,6 +2367,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -1743,6 +2388,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -1759,6 +2409,11 @@ suspend inline fun SubtleCrypto.deriveKey(
     ).await()
 }
 
+/**
+ * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
+ */
 suspend inline fun SubtleCrypto.deriveKey(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -1790,6 +2445,11 @@ suspend inline fun SubtleCrypto.digest(
     ).await()
 }
 
+/**
+ * The **`digest()`** method of the SubtleCrypto interface generates a digest of the given data, using the specified hash function. A digest is a short fixed-length value derived from some variable-length input. Cryptographic digests should exhibit collision-resistance, meaning that it's hard to come up with two different inputs that have the same digest value.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
+ */
 suspend inline fun SubtleCrypto.digest(
     algorithm: String,
     data: BufferSource,
@@ -1817,6 +2477,11 @@ suspend inline fun SubtleCrypto.encrypt(
     ).await()
 }
 
+/**
+ * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+ */
 suspend inline fun SubtleCrypto.encrypt(
     algorithm: String,
     key: CryptoKey,
@@ -1829,6 +2494,11 @@ suspend inline fun SubtleCrypto.encrypt(
     ).await()
 }
 
+/**
+ * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+ */
 suspend inline fun SubtleCrypto.encrypt(
     algorithm: RsaOaepParams,
     key: CryptoKey,
@@ -1841,6 +2511,11 @@ suspend inline fun SubtleCrypto.encrypt(
     ).await()
 }
 
+/**
+ * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+ */
 suspend inline fun SubtleCrypto.encrypt(
     algorithm: AesCtrParams,
     key: CryptoKey,
@@ -1853,6 +2528,11 @@ suspend inline fun SubtleCrypto.encrypt(
     ).await()
 }
 
+/**
+ * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+ */
 suspend inline fun SubtleCrypto.encrypt(
     algorithm: AesCbcParams,
     key: CryptoKey,
@@ -1865,6 +2545,11 @@ suspend inline fun SubtleCrypto.encrypt(
     ).await()
 }
 
+/**
+ * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
+ */
 suspend inline fun SubtleCrypto.encrypt(
     algorithm: AesGcmParams,
     key: CryptoKey,
@@ -2036,6 +2721,11 @@ suspend inline fun SubtleCrypto.importKey(
     ).await()
 }
 
+/**
+ * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+ */
 suspend inline fun SubtleCrypto.importKey(
     format: KeyFormat.jwk,
     keyData: JsonWebKey,
@@ -2052,6 +2742,11 @@ suspend inline fun SubtleCrypto.importKey(
     ).await()
 }
 
+/**
+ * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+ */
 suspend inline fun SubtleCrypto.importKey(
     format: KeyFormat.jwk,
     keyData: JsonWebKey,
@@ -2068,6 +2763,11 @@ suspend inline fun SubtleCrypto.importKey(
     ).await()
 }
 
+/**
+ * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+ */
 suspend inline fun SubtleCrypto.importKey(
     format: KeyFormat.jwk,
     keyData: JsonWebKey,
@@ -2084,6 +2784,11 @@ suspend inline fun SubtleCrypto.importKey(
     ).await()
 }
 
+/**
+ * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+ */
 suspend inline fun SubtleCrypto.importKey(
     format: KeyFormat.jwk,
     keyData: JsonWebKey,
@@ -2100,6 +2805,11 @@ suspend inline fun SubtleCrypto.importKey(
     ).await()
 }
 
+/**
+ * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
+ */
 suspend inline fun SubtleCrypto.importKey(
     format: KeyFormat.jwk,
     keyData: JsonWebKey,
@@ -2229,6 +2939,11 @@ suspend inline fun SubtleCrypto.sign(
     ).await()
 }
 
+/**
+ * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
+ */
 suspend inline fun SubtleCrypto.sign(
     algorithm: String,
     key: CryptoKey,
@@ -2241,6 +2956,11 @@ suspend inline fun SubtleCrypto.sign(
     ).await()
 }
 
+/**
+ * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
+ */
 suspend inline fun SubtleCrypto.sign(
     algorithm: RsaPssParams,
     key: CryptoKey,
@@ -2253,6 +2973,11 @@ suspend inline fun SubtleCrypto.sign(
     ).await()
 }
 
+/**
+ * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
+ */
 suspend inline fun SubtleCrypto.sign(
     algorithm: EcdsaParams,
     key: CryptoKey,
@@ -2290,6 +3015,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2310,6 +3040,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2330,6 +3065,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2350,6 +3090,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2370,6 +3115,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2390,6 +3140,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2410,6 +3165,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2430,6 +3190,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2450,6 +3215,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2470,6 +3240,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2490,6 +3265,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2510,6 +3290,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2530,6 +3315,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2550,6 +3340,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2570,6 +3365,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2590,6 +3390,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2610,6 +3415,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2630,6 +3440,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2650,6 +3465,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2670,6 +3490,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2690,6 +3515,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2710,6 +3540,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2730,6 +3565,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2750,6 +3590,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2770,6 +3615,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2790,6 +3640,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2810,6 +3665,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2830,6 +3690,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2850,6 +3715,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2870,6 +3740,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2890,6 +3765,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2910,6 +3790,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2930,6 +3815,11 @@ suspend inline fun SubtleCrypto.unwrapKey(
     ).await()
 }
 
+/**
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
+ */
 suspend inline fun SubtleCrypto.unwrapKey(
     format: KeyFormat,
     wrappedKey: BufferSource,
@@ -2969,6 +3859,11 @@ suspend inline fun SubtleCrypto.verify(
     ).await().toBoolean()
 }
 
+/**
+ * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
+ */
 suspend inline fun SubtleCrypto.verify(
     algorithm: String,
     key: CryptoKey,
@@ -2983,6 +3878,11 @@ suspend inline fun SubtleCrypto.verify(
     ).await().toBoolean()
 }
 
+/**
+ * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
+ */
 suspend inline fun SubtleCrypto.verify(
     algorithm: RsaPssParams,
     key: CryptoKey,
@@ -2997,6 +3897,11 @@ suspend inline fun SubtleCrypto.verify(
     ).await().toBoolean()
 }
 
+/**
+ * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
+ */
 suspend inline fun SubtleCrypto.verify(
     algorithm: EcdsaParams,
     key: CryptoKey,
@@ -3030,6 +3935,11 @@ suspend inline fun SubtleCrypto.wrapKey(
     ).await()
 }
 
+/**
+ * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+ */
 suspend inline fun SubtleCrypto.wrapKey(
     format: KeyFormat,
     key: CryptoKey,
@@ -3044,6 +3954,11 @@ suspend inline fun SubtleCrypto.wrapKey(
     ).await()
 }
 
+/**
+ * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+ */
 suspend inline fun SubtleCrypto.wrapKey(
     format: KeyFormat,
     key: CryptoKey,
@@ -3058,6 +3973,11 @@ suspend inline fun SubtleCrypto.wrapKey(
     ).await()
 }
 
+/**
+ * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+ */
 suspend inline fun SubtleCrypto.wrapKey(
     format: KeyFormat,
     key: CryptoKey,
@@ -3072,6 +3992,11 @@ suspend inline fun SubtleCrypto.wrapKey(
     ).await()
 }
 
+/**
+ * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+ */
 suspend inline fun SubtleCrypto.wrapKey(
     format: KeyFormat,
     key: CryptoKey,
@@ -3086,6 +4011,11 @@ suspend inline fun SubtleCrypto.wrapKey(
     ).await()
 }
 
+/**
+ * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
+ */
 suspend inline fun SubtleCrypto.wrapKey(
     format: KeyFormat,
     key: CryptoKey,

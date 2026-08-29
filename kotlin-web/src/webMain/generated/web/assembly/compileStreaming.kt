@@ -35,6 +35,9 @@ suspend inline fun compileStreaming(
     ).await()
 }
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compileStreaming_static)
+ */
 @JsQualifier("WebAssembly")
 @JsName("compileStreaming")
 external fun compileStreamingAsync(

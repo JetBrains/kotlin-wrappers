@@ -74,5 +74,11 @@ open external class KeyframeEffect(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect/setKeyframes)
      */
     fun setKeyframes(keyframes: ReadonlyArray<Keyframe>?)
+
+    /**
+     * The **`setKeyframes()`** method of the KeyframeEffect interface replaces the keyframes that make up the affected KeyframeEffect with a new set of keyframes.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect/setKeyframes)
+     */
     fun setKeyframes(keyframes: PropertyIndexedKeyframes?)
 }

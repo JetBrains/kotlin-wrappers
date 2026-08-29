@@ -212,6 +212,12 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
     fun togglePopover(options: TogglePopoverOptions = definedExternally): Boolean
+
+    /**
+     * The **`togglePopover()`** method of the HTMLElement interface toggles a popover element (i.e., one that has a valid popover attribute) between the hidden and showing states.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
+     */
     fun togglePopover(options: Boolean): Boolean
 
     /**

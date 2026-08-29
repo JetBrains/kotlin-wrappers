@@ -134,6 +134,11 @@ open external class XMLHttpRequest :
         url: String,
     )
 
+    /**
+     * The XMLHttpRequest method **`open()`** initializes a newly-created request, or re-initializes an existing one.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/open)
+     */
     fun open(
         method: RequestMethod,
         url: URL,
@@ -168,10 +173,40 @@ open external class XMLHttpRequest :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
     fun send(body: Document? = definedExternally)
+
+    /**
+     * The XMLHttpRequest method **`send()`** sends the request to the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     */
     fun send(body: Blob?)
+
+    /**
+     * The XMLHttpRequest method **`send()`** sends the request to the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     */
     fun send(body: BufferSource?)
+
+    /**
+     * The XMLHttpRequest method **`send()`** sends the request to the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     */
     fun send(body: FormData?)
+
+    /**
+     * The XMLHttpRequest method **`send()`** sends the request to the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     */
     fun send(body: URLSearchParams?)
+
+    /**
+     * The XMLHttpRequest method **`send()`** sends the request to the server.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
+     */
     fun send(body: String?)
 
     /**

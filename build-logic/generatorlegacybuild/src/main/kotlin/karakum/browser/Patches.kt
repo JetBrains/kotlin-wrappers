@@ -827,24 +827,41 @@ internal fun String.splitUnion(
 ): String {
     val parts = (unionBody ?: union).split(" | ")
 
-    return splitToSequence("\n")
-        .flatMap { line ->
-            splitUnionLine(
-                line = line,
-                union = union,
-                parts = parts,
-                optional = true,
-            )
+    return sequence {
+        var comment = ""
+
+        for (sourceLine in splitToSequence("\n")) {
+            val isComment = sourceLine.trimStart().let {
+                it.startsWith("/*") || it.startsWith("*")
+            }
+
+            if (isComment) {
+                comment += sourceLine + "\n"
+                continue
+            }
+
+            sequenceOf(sourceLine)
+                .flatMap { line ->
+                    splitUnionLine(
+                        line = line,
+                        union = union,
+                        parts = parts,
+                        optional = true,
+                    )
+                }
+                .flatMap { line ->
+                    splitUnionLine(
+                        line = line,
+                        union = union,
+                        parts = parts,
+                        optional = false,
+                    )
+                }
+                .forEach { yield(comment + it) }
+
+            comment = ""
         }
-        .flatMap { line ->
-            splitUnionLine(
-                line = line,
-                union = union,
-                parts = parts,
-                optional = false,
-            )
-        }
-        .joinToString("\n")
+    }.joinToString("\n")
 }
 
 private fun splitUnionLine(

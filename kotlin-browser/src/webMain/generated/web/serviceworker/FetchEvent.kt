@@ -59,6 +59,12 @@ open external class FetchEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
      */
     fun respondWith(r: Response)
+
+    /**
+     * The **`respondWith()`** method of FetchEvent prevents the browser's default fetch handling, and allows you to provide a promise for a Response yourself.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
+     */
     fun respondWith(r: PromiseLike<Response>)
 
     companion object
