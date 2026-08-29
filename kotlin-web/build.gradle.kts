@@ -11,7 +11,7 @@ kotlin {
         implementation(libs.coroutines.core)
     }
 
-    sourceSets.webMain.dependencies {
+    sourceSets.webTest.dependencies {
         implementation(libs.kotlin.test)
         implementation(libs.coroutines.test)
         implementation(projects.kotlinJsTest)

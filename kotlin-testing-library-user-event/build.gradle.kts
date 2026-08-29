@@ -10,7 +10,7 @@ kotlin {
         npm(jspkg.testingLibrary.userEvent)
     }
 
-    sourceSets.webMain.dependencies {
+    sourceSets.webTest.dependencies {
         implementation(libs.kotlin.test)
         implementation(libs.coroutines.test)
     }

@@ -11,7 +11,7 @@ kotlin {
         npm(jspkg.react)
     }
 
-    sourceSets.webMain.dependencies {
+    sourceSets.webTest.dependencies {
         implementation(libs.kotlin.test)
         implementation(libs.coroutines.test)
     }
