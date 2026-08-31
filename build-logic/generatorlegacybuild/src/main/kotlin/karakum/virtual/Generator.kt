@@ -31,6 +31,7 @@ private val DEFAULT_IMPORTS = listOf(
 
 fun generateKotlinDeclarations(
     coreDefinitionsFile: File,
+    reactDefinitionsFile: File,
     sourceDir: File,
 ) {
     val coreTargetDir = sourceDir.resolve("tanstack/virtual/core")
@@ -51,7 +52,7 @@ fun generateKotlinDeclarations(
             .writeCode(fileContent(Package.VIRTUAL_CORE, annotations, body))
 
         if (name == "VirtualizerOptions") {
-            for (result in reactVirtualOptions(body)) {
+            for (result in reactVirtualOptions(body, reactDefinitionsFile.readText())) {
                 reactTargetDir.resolve("${result.name}.kt")
                     .writeCode(fileContent(Package.REACT_VIRTUAL, "", result.body))
             }

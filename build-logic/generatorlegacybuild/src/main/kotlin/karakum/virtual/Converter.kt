@@ -282,7 +282,7 @@ private fun convertInterface(
     return ConversionResult(name, body)
 }
 
-private fun convertMembers(
+internal fun convertMembers(
     source: String,
 ): String =
     source
