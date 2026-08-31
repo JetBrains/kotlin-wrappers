@@ -12,6 +12,9 @@ private val EXCLUDED = setOf(
 
     // browser type used instead
     "ScrollBehavior",
+
+    // manually declared
+    "Key",
 )
 
 internal fun convertDefinitions(
@@ -48,11 +51,20 @@ internal fun convertDefinitions(
         .splitToSequence("\ndeclare ")
         .drop(1)
         .map { it.removeSuffix(";") }
+        .filter { declarationName(it) !in EXCLUDED }
         .map { convertDefinition(it) }
         .plus(convertInterface("$SCROLL_OPTIONS $SCROLL_OPTIONS_BODY"))
         .plus(convertInterface("$ITEM_RANGE $ITEM_RANGE_BODY"))
         .plus(UPDATABLE)
-        .filter { it.name !in EXCLUDED }
+
+private fun declarationName(
+    source: String,
+): String =
+    source.substringAfter(" ")
+        .substringBefore(" ")
+        .substringBefore(":")
+        .substringBefore("<")
+        .substringBefore("(")
 
 private fun convertDefinition(
     source: String,
@@ -147,31 +159,6 @@ private fun convertTypealias(
 
     if (body.startsWith("'"))
         return convertUnion(name, body)
-
-    if (body == "number | string | bigint") {
-        val declaration = """
-        @SubclassOptInRequired(InternalApi::class)
-        external interface $name
-        """.trimIndent()
-
-        val factories = sequenceOf("String", "Int", "BigInt")
-            .map {
-                """
-                inline fun $name(
-                    value: $it,
-                ): $name =
-                    unsafeCast(value)
-                """.trimIndent()
-            }
-            .toList()
-
-        return ConversionResult(
-            name = name,
-            body = sequenceOf(declaration)
-                .plus(factories)
-                .joinToString("\n\n"),
-        )
-    }
 
     if (body == "Pick<ScrollToOptions, 'behavior'>") {
         return ConversionResult(

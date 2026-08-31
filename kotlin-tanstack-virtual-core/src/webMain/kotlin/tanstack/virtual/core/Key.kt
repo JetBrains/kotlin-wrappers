@@ -1,11 +1,10 @@
-// Automatically generated - do not modify!
-
 package tanstack.virtual.core
 
 import js.internal.InternalApi
 import js.numbers.BigInt
 import js.reflect.unsafeCast
 
+// `Key = number | string | bigint`
 @SubclassOptInRequired(InternalApi::class)
 external interface Key
 
