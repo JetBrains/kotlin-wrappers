@@ -7,7 +7,10 @@ tasks.named("generateDeclarations") {
         val coreDefinitionsFile = nodeModules.resolve("@tanstack/virtual-core/dist/esm/index.d.ts")
         val sourceDir = webGeneratedDir
 
-        delete(sourceDir)
+        delete(fileTree(sourceDir) {
+            exclude("useVirtualizer.kt")
+            exclude("useWindowVirtualizer.kt")
+        })
 
         karakum.virtual.generateKotlinDeclarations(
             coreDefinitionsFile = coreDefinitionsFile,
