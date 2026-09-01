@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/x-date-pickers/DayCalendar")
+@file:JsModule("@mui/x-date-pickers/DateCalendar")
 
 package muix.pickers
 
