@@ -6,5 +6,4 @@ package mui.material.styles
 
 external fun createTheme(
     options: ThemeOptions = definedExternally,
-    vararg args: Any,
 ): Theme
