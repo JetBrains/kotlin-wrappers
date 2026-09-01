@@ -267,6 +267,12 @@ external interface AutocompleteSlots {
     var listbox: ComponentType<*>
 
     /**
+     * The component used to render the status message container.
+     * @default 'div'
+     */
+    var status: ElementType<*>
+
+    /**
      * The component used to render the body of the popup.
      * @default Paper
      */

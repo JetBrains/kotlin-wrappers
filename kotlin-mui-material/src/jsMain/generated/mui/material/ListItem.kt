@@ -9,8 +9,6 @@ import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
 import react.*
-import react.dom.html.HTMLAttributes
-import web.html.HTMLDivElement
 
 external interface ListItemProps :
     ListItemOwnProps,
@@ -84,7 +82,7 @@ external interface ListItemOwnProps :
     var slotProps: SlotProps?
 
     interface SlotProps {
-        var root: HTMLAttributes<HTMLDivElement>?
+        var root: Props? /* SlotProps<React.ElementType<React.HTMLAttributes<HTMLDivElement>>, ListItemRootSlotPropsOverrides, ListItemOwnerState> */
         var secondaryAction: Props? /* SlotProps<React.ElementType<React.HTMLAttributes<HTMLDivElement>>, ListItemSecondaryActionSlotPropsOverrides, ListItemOwnerState> */
     }
 
