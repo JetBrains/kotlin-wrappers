@@ -244,7 +244,7 @@ external interface UseTreeItemReturnValue {
     /**
      * Current status of the item.
      */
-    var status: Any? /* UseTreeItemStatus */
+    var status: UseTreeItemStatus
 
     /**
      * The object the allows Tree View manipulation.
