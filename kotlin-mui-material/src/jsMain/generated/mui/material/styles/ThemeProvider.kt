@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/styles/ThemeProvider")
+@file:JsModule("@mui/material/styles")
 
 package mui.material.styles
 
@@ -13,5 +13,4 @@ external interface ThemeProviderProps : PropsWithChildren {
     var theme: Any? /* Partial<Theme> | ((outerTheme: Theme) => Theme) */
 }
 
-@JsName("default")
 external val ThemeProvider: FC<ThemeProviderProps>
