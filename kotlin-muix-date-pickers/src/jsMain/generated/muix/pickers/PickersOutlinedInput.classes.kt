@@ -4,9 +4,11 @@
 
 package muix.pickers
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface PickersOutlinedInputClasses : PickersInputBaseClasses {
+@JsPlainObject
+external interface PickersOutlinedInputClasses : PickersInputBaseClasses {
     /** Styles applied to the NotchedOutline element. */
     override val notchedOutline: ClassName
 }

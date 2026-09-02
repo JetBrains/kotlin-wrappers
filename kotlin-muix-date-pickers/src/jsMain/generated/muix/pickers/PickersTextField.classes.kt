@@ -4,9 +4,11 @@
 
 package muix.pickers
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface PickersTextFieldClasses {
+@JsPlainObject
+external interface PickersTextFieldClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

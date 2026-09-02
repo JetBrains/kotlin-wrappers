@@ -4,9 +4,11 @@
 
 package muix.pickers
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface PickersFilledInputClasses : PickersInputBaseClasses {
+@JsPlainObject
+external interface PickersFilledInputClasses : PickersInputBaseClasses {
     /** Styles applied to the root element unless `disableUnderline={true}`. */
     val underline: ClassName
 }

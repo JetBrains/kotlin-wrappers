@@ -4,9 +4,11 @@
 
 package muix.pickers
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface DateTimePickerTabsClasses {
+@JsPlainObject
+external interface DateTimePickerTabsClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 }

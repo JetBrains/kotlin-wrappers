@@ -4,9 +4,11 @@
 
 package muix.pickers
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface MultiSectionDigitalClockSectionClasses {
+@JsPlainObject
+external interface MultiSectionDigitalClockSectionClasses {
     /** Styles applied to the root (list) element. */
     val root: ClassName
 

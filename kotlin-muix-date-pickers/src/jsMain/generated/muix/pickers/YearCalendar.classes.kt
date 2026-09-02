@@ -4,9 +4,11 @@
 
 package muix.pickers
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface YearCalendarClasses {
+@JsPlainObject
+external interface YearCalendarClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
