@@ -5,52 +5,52 @@ package web.url
 import kotlinx.js.JsPlainObject
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#input)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#input)
  */
 @JsPlainObject
 external interface URLPatternInit {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#baseurl)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#baseurl)
      */
     var baseURL: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#hash)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#hash)
      */
     var hash: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#hostname)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#hostname)
      */
     var hostname: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#password)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#password)
      */
     var password: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#pathname)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#pathname)
      */
     var pathname: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#port)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#port)
      */
     var port: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#protocol)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#protocol)
      */
     var protocol: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#search)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#search)
      */
     var search: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/URLPattern#username)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec#username)
      */
     var username: String?
 }
