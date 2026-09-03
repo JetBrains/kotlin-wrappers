@@ -8,12 +8,15 @@ import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
 @JsPlainObject
-external interface TimeClockClasses {
+external interface ClockNumberClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
-    /** Styles applied to the arrowSwitcher element. */
-    val arrowSwitcher: ClassName
+    /** Styles applied to a selected root element. */
+    val selected: ClassName
+
+    /** Styles applied to a disabled root element. */
+    val disabled: ClassName
 }
 
-external val timeClockClasses: TimeClockClasses
+external val clockNumberClasses: ClockNumberClasses
