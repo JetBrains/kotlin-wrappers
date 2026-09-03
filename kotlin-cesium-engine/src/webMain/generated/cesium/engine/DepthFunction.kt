@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import web.gl.WebGL2RenderingContext
+
 /**
  * Determines the function used to compare two depths for the depth test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#DepthFunction">Online Documentation</a>

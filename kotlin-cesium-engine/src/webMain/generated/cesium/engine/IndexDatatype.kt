@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import web.gl.WebGL2RenderingContext
+
 /**
  * Constants for WebGL index datatypes.  These corresponds to the
  * `type` parameter of [drawElements](http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawElements.xml).

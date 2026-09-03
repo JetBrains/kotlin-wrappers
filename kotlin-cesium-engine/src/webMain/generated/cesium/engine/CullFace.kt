@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import web.gl.WebGL2RenderingContext
+
 /**
  * Determines which triangles, if any, are culled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CullFace">Online Documentation</a>
