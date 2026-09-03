@@ -14,6 +14,7 @@ import web.events.EventInstance
 import web.experimental.ExperimentalWebApi
 import web.focus.FocusEvent
 import web.globals.GlobalEventHandlers
+import web.mouse.WheelEvent
 import web.popover.Popover
 import web.popover.ShowPopoverOptions
 import web.popover.ToggleEvent
@@ -268,3 +269,9 @@ inline val <C : HTMLElement> C.focusEvent: EventInstance<FocusEvent, C, C>
  */
 inline val <C : HTMLElement> C.loadEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "load")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/wheel_event)
+ */
+inline val <C : HTMLElement> C.wheelEvent: EventInstance<WheelEvent, C, C>
+    get() = EventInstance(this, "wheel")

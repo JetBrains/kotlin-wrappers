@@ -989,7 +989,7 @@ inline val <C : Element> C.selectEvent: EventInstance<Event, C, Node>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/selectionchange_event)
  */
-inline val <C : Element> C.selectionChangeEvent: EventInstance<Event, C, C>
+inline val <C : Element> C.selectionChangeEvent: EventInstance<Event, C, Node>
     get() = EventInstance(this, "selectionchange")
 
 /**

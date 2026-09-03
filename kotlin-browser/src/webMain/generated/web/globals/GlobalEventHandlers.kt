@@ -574,7 +574,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/selectionchange_event)
      */
-    var onselectionchange: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
+    var onselectionchange: EventHandler<Event, GlobalEventHandlers, Node>?
         get() = definedExternally
         set(value) = definedExternally
 
