@@ -6,7 +6,7 @@ import react.ElementType
 import react.Props
 
 external interface TreeItemIconProps : Props {
-    var status: Any? /* UseTreeItemStatus */
+    var status: UseTreeItemStatus
 
     /**
      * Overridable component slots.
