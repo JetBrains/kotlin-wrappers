@@ -29,6 +29,10 @@ open external class UrlTemplate3DTilesDataProvider(
      *   Default value - `14`
      * @property [extent] Optional geographic extent in radians to constrain the generated tile tree.
      * @property [featureIdProperty] Feature property name to use as feature ID when supported by content decoding.
+     * @property [heightReference] Drapes the vector content onto the surfaces selected by the
+     *   value. Requires `options.scene`.
+     * @property [scene] The scene the generated tileset is rendered in, required when
+     *   `options.heightReference` is a clamping value.
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -36,6 +40,8 @@ open external class UrlTemplate3DTilesDataProvider(
         val maxZoom: Double?
         val extent: Rectangle?
         val featureIdProperty: String?
+        val heightReference: HeightReference?
+        val scene: Scene?
     }
 
     constructor(

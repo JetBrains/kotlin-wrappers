@@ -18,7 +18,7 @@ open external class BufferPolylineMaterial(
     options: BufferPolylineMaterialOptions? = definedExternally,
 )  /* : BufferPrimitiveMaterial */ {
     /**
-     * Width of polyline, 0–255px.
+     * Width of polyline, in the unit selected by [BufferPolylineCollection.widthUnits].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineMaterial.html#width">Online Documentation</a>
      */
     var width: Double

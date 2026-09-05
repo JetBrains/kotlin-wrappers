@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlinx.js.JsPlainObject
-
 /**
  * Collection of polygons held in ArrayBuffer storage for performance and memory optimization.
  *
@@ -45,31 +43,8 @@ import kotlinx.js.JsPlainObject
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonCollection.html">Online Documentation</a>
  */
 open external class BufferPolygonCollection(
-    options: ConstructorOptions,
+    options: BufferPolygonCollectionOptions? = definedExternally,
 )  /* : BufferPrimitiveCollection<BufferPolygon> */ {
-    /**
-     * @property [allowPicking] When `true`, primitives are pickable with [Scene.pick]. When `false`, memory and initialization cost are lower.
-     *   Default value - `true`
-     * @property [boundingVolume] Bounding volume, in world space, for the collection. When
-     *   unspecified, a bounding volume is computed automatically and updated when primitive positions change. When
-     *   specified, users are responsible for updating bounding volume as needed. Pre-computing the bounding volume
-     *   manually, and updating it only as needed, will improve performance for larger dynamic collections.
-     */
-    @JsPlainObject
-    interface ConstructorOptions {
-        val primitiveCountMax: Double?
-        val vertexCountMax: Double?
-        val holeCountMax: Double?
-        val triangleCountMax: Double?
-        val positionDatatype: ComponentDatatype?
-        val positionNormalized: Boolean?
-        val show: Boolean?
-        val allowPicking: Boolean?
-        val boundingVolume: BoundingSphere?
-        val debugShowBoundingVolume: Boolean?
-        val blendOption: BlendOption?
-    }
-
     /**
      * Adds a new polygon to the collection, with the specified options. A
      * [BufferPolygon] instance is linked to the new polygon, using
@@ -128,11 +103,28 @@ open external class BufferPolygonCollection(
          * const result = new BufferPolygonCollection({ ... }); // allocate larger 'result' collection
          * BufferPolygonCollection.clone(collection, result);   // copy polygons from 'collection' into 'result'
          * ```
+         * @param [predicate] When provided, only polygons for which this returns `true` are copied. Surviving polygons are compacted into contiguous indices.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonCollection.html#.clone">Online Documentation</a>
          */
         fun clone(
             collection: BufferPolygonCollection,
             result: BufferPolygonCollection,
+            predicate: Function<*>? = definedExternally,
+        ): BufferPolygonCollection
+
+        /**
+         * Returns a copy of the given collection, overriding any constructor options
+         * provided. Omitted options are inherited from the source collection. Any
+         * resized buffers must be large enough to hold every polygon.
+         * @param [collection] Source collection to copy.
+         * @param [options] Constructor options to override. Omitted options are inherited from the source collection.
+         * @param [predicate] When provided, only polygons for which this returns `true` are copied. Surviving polygons are compacted into contiguous indices.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonCollection.html#.fromCollection">Online Documentation</a>
+         */
+        fun fromCollection(
+            collection: BufferPolygonCollection,
+            options: BufferPolygonCollectionOptions? = definedExternally,
+            predicate: Function<*>? = definedExternally,
         ): BufferPolygonCollection
     }
 }

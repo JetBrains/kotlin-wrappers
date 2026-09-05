@@ -11,7 +11,8 @@ import kotlinx.js.JsPlainObject
  *   Default value - [Color.WHITE]
  * @property [outlineWidth] Width of outline, 0-255px.
  *   Default value - `0.0`
- * @property [width] Width of line, 0-255px.
+ * @property [width] Width of line, in the unit selected by
+ *   [BufferPolylineCollection.widthUnits].
  *   Default value - `1.0`
  */
 @JsPlainObject

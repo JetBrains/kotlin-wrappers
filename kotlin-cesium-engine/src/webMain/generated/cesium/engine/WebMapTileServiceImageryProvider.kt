@@ -342,7 +342,10 @@ open external class WebMapTileServiceImageryProvider(
      * @property [getFeatureInfoParameters] Additional parameters to include in GetFeatureInfo requests. Keys are lowercased internally.
      * @property [getFeatureInfoUrl] The GetFeatureInfo URL of the WMTS service. If not specified, the value of `url` is used.
      * @property [getFeatureInfoFormats] The formats
-     *   in which to try WMTS GetFeatureInfo requests.
+     *   in which to try WMTS GetFeatureInfo requests. Since feature info responses vary across WMTS services,
+     *   you may need to supply a custom format and parsing callback; see the
+     *   [Sandcastle example](https://sandcastle.cesium.com/?id=web-map-tile-service-picking) for a complete
+     *   example of writing your own callback.
      *   Default value - [WebMapTileServiceImageryProvider.DefaultGetFeatureInfoFormats]
      * @property [rectangle] The rectangle covered by the layer.
      *   Default value - [Rectangle.MAX_VALUE]

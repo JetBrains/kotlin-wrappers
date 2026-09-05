@@ -46,8 +46,10 @@ open external class ClippingPolygonCollection(
      *   Default value - `true`
      * @property [inverse] If true, a region will be clipped if it is outside of every polygon in the collection. Otherwise, a region will only be clipped if it is on the inside of any polygon.
      *   Default value - `false`
-     * @property [quality] A scalar that controls the resolution of the signed distance texture used for clipping. Values greater than 1.0 increase quality, values less than 1.0 decrease it. Must be greater than 0.0.
+     * @property [quality] A scalar that controls the resolution of the signed distance texture used for clipping. Values greater than 1.0 increase quality, values less than 1.0 decrease it. Must be greater than 0.0. Deprecated in CesiumJS 1.145 and will be removed in 1.147. Signed distance field clipping was replaced with vector clipping, so this option no longer has any effect.
      *   Default value - `1.0`
+     * @property [ellipsoid] The ellipsoid to use to project the clipping polygons onto the globe.
+     *   Default value - [Ellipsoid.default]
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -55,6 +57,7 @@ open external class ClippingPolygonCollection(
         val enabled: Boolean?
         val inverse: Boolean?
         val quality: Double?
+        val ellipsoid: Ellipsoid?
     }
 
     /**
@@ -72,13 +75,6 @@ open external class ClippingPolygonCollection(
     var inverse: Boolean
 
     /**
-     * A scalar that controls the resolution of the signed distance texture used for clipping.
-     * Values greater than 1.0 increase quality, values less than 1.0 decrease it. Must be greater than 0.0.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#quality">Online Documentation</a>
-     */
-    var quality: Double
-
-    /**
      * An event triggered when a new clipping polygon is added to the collection.  Event handlers
      * are passed the new polygon and the index at which it was added.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#polygonAdded">Online Documentation</a>
@@ -93,12 +89,30 @@ open external class ClippingPolygonCollection(
     var polygonRemoved: DefaultEvent
 
     /**
+     * The ellipsoid to use to project the clipping polygons onto the globe.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#ellipsoid">Online Documentation</a>
+     */
+    var ellipsoid: Ellipsoid
+
+    /**
      * Returns the number of polygons in this collection.  This is commonly used with
      * [ClippingPolygonCollection.get] to iterate over all the polygons
      * in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#length">Online Documentation</a>
      */
     val length: Int
+
+    /**
+     * If true, a debug texture visualizing the signed distance field is shown.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#debugShowDistanceTexture">Online Documentation</a>
+     */
+    var debugShowDistanceTexture: Boolean
+
+    /**
+     * A scalar that controlled the resolution of the signed distance texture used for clipping.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#quality">Online Documentation</a>
+     */
+    var quality: Double
 
     /**
      * Adds the specified [ClippingPolygon] to the collection to be used to selectively disable rendering

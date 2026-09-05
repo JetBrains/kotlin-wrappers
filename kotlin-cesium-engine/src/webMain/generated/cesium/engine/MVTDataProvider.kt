@@ -44,6 +44,12 @@ open external class MVTDataProvider :
          *   Default value - `14`
          * @property [extent] Optional geographic extent in radians to constrain the generated tile tree.
          * @property [featureIdProperty] MVT property name to use as feature ID.
+         * @property [heightReference] Drapes the decoded points, lines and polygons onto the
+         *   surfaces selected by the value: [HeightReference.CLAMP_TO_TERRAIN] drapes onto the globe,
+         *   [HeightReference.CLAMP_TO_3D_TILE] drapes onto 3D Tiles and models, and
+         *   [HeightReference.CLAMP_TO_GROUND] drapes onto both. Requires `options.scene`.
+         * @property [scene] The scene the generated tileset is rendered in, required when
+         *   `options.heightReference` is a clamping value.
          */
         @JsPlainObject
         interface FromUrlOptions {
@@ -51,6 +57,8 @@ open external class MVTDataProvider :
             val maxZoom: Double?
             val extent: Rectangle?
             val featureIdProperty: String?
+            val heightReference: HeightReference?
+            val scene: Scene?
         }
 
         @JsAsync

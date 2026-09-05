@@ -18,14 +18,35 @@ import seskar.js.JsAsync
  * Instead, it exposes high-throughput buffer primitive collections that can be
  * added directly to [Scene.primitives].
  * ```
+ * // Load GeoJSON
  * const loader = await GeoJsonPrimitive.fromUrl("./data.geojson");
  * viewer.scene.primitives.add(loader);
- *
+ * ```
+ * ```
+ * // Access GeoJSON features and properties
  * loader.points;     // BufferPointCollection | undefined
  * loader.polylines;  // BufferPolylineCollection | undefined
  * loader.polygons;   // BufferPolygonCollection | undefined
  * loader.ids;        // source feature IDs
  * loader.properties; // source feature properties
+ * ```
+ * ```
+ * // Style GeoJSON
+ * const material = new BufferPolylineMaterial({
+ *   color: Color.RED,
+ *   width: 4,
+ * });
+ *
+ * const polyline = new BufferPolyline();
+ * const count = primitive.polylines.primitiveCount;
+ * for (let i = 0; i < count; i++) {
+ *   primitive.polylines.get(i, polyline);
+ *
+ *   const properties = primitive.getProperties(polyline.featureId);
+ *   if (properties.myCustomProperty === true) {
+ *     polyline.setMaterial(material);
+ *   }
+ * }
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonPrimitive.html">Online Documentation</a>
  */

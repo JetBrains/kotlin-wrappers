@@ -233,7 +233,10 @@ open external class WebMapServiceImageryProvider(
      *   Default value - [WebMapServiceImageryProvider.GetFeatureInfoDefaultParameters]
      * @property [getFeatureInfoUrl] The getFeatureInfo URL of the WMS service. If the property is not defined then we use the property value of url.
      * @property [getFeatureInfoFormats] The formats
-     *   in which to try WMS GetFeatureInfo requests.
+     *   in which to try WMS GetFeatureInfo requests. Since feature info responses vary across WMS services,
+     *   you may need to supply a custom format and parsing callback; see the
+     *   [Sandcastle example](https://sandcastle.cesium.com/?id=web-map-tile-service-picking) for a complete
+     *   example of writing your own callback.
      *   Default value - [WebMapServiceImageryProvider.DefaultGetFeatureInfoFormats]
      * @property [rectangle] The rectangle of the layer.
      *   Default value - [Rectangle.MAX_VALUE]

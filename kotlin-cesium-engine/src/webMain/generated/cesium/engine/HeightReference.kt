@@ -34,7 +34,7 @@ external interface HeightReference {
         val RELATIVE_TO_GROUND: HeightReference
 
         /**
-         * The position is clamped to terain.
+         * The position is clamped to terrain.
          *
          * Value - `3`
          */

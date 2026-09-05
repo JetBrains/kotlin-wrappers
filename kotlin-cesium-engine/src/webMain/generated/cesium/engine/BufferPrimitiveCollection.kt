@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.typedarrays.Uint32Array
-import kotlinx.js.JsPlainObject
 
 /**
  * Collection of primitives held in ArrayBuffer storage for performance and memory optimization.
@@ -18,36 +17,8 @@ import kotlinx.js.JsPlainObject
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html">Online Documentation</a>
  */
 open external class BufferPrimitiveCollection<T : BufferPrimitive>(
-    options: ConstructorOptions,
+    options: BufferPrimitiveCollectionOptions? = definedExternally,
 ) {
-    /**
-     * @property [modelMatrix] Transforms geometry from model to world coordinates.
-     *   Default value - [Matrix4.IDENTITY]
-     * @property [positionNormalized] When `true`, integer position values are treated as normalized,
-     *   where the full integer range maps to [-1, 1] (signed) or [0, 1] (unsigned). Only relevant for integer position datatypes
-     *   (BYTE, UNSIGNED_BYTE, SHORT, UNSIGNED_SHORT).
-     *   Default value - `false`
-     * @property [allowPicking] When `true`, primitives are pickable with [Scene.pick]. When `false`, memory and initialization cost are lower.
-     *   Default value - `false`
-     * @property [boundingVolume] Bounding volume, in world space, for the collection. When
-     *   unspecified, a bounding volume is computed automatically and updated when primitive positions change. When
-     *   specified, users are responsible for updating bounding volume as needed. Pre-computing the bounding volume
-     *   manually, and updating it only as needed, will improve performance for larger dynamic collections.
-     */
-    @JsPlainObject
-    interface ConstructorOptions {
-        val modelMatrix: Matrix4?
-        val primitiveCountMax: Double?
-        val vertexCountMax: Double?
-        val show: Boolean?
-        val positionDatatype: ComponentDatatype?
-        val positionNormalized: Boolean?
-        val allowPicking: Boolean?
-        val boundingVolume: BoundingSphere?
-        val debugShowBoundingVolume: Boolean?
-        val blendOption: BlendOption?
-    }
-
     /**
      * Determines if primitives in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#show">Online Documentation</a>
@@ -190,6 +161,14 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     val positionNormalized: Boolean
 
     /**
+     * Determines which surfaces the collection is draped onto, in addition to
+     * being drawn as standalone geometry. Draping requires that the collection
+     * has been added to [Scene.primitives].
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#heightReference">Online Documentation</a>
+     */
+    val heightReference: HeightReference
+
+    /**
      * Returns a JSON-serializable array representing the collection. This encoding
      * is not memory-efficient, and should generally be used for debugging and
      * testing.
@@ -215,12 +194,50 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
          * const result = new BufferPrimitiveCollection({ ... }); // allocate larger 'result' collection
          * BufferPrimitiveCollection.clone(collection, result);   // copy primitives from 'collection' into 'result'
          * ```
+         * @param [predicate] When provided, only primitives for which this returns `true` are copied. Surviving primitives are compacted into contiguous indices.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#.clone">Online Documentation</a>
          */
         fun <T : BufferPrimitive> clone(
             collection: BufferPrimitiveCollection<T>,
             result: BufferPrimitiveCollection<T>,
+            predicate: Function<*>? = definedExternally,
         )
+
+        /**
+         * Returns a copy of the given collection, overriding any constructor options
+         * provided. Omitted options are inherited from the source collection. Any
+         * resized buffers must be large enough to hold every primitive.
+         *
+         * Collection-level state (model matrix, blend option, picking, bounding-volume
+         * mode, etc.) is carried over, but GPU resources are not: the source collection
+         * retains ownership of its renderer resources, so the caller is responsible for
+         * calling [BufferPrimitiveCollection.destroy] on the source once it is no
+         * longer needed.
+         * ```
+         * const grown = BufferPrimitiveCollection.fromCollection(collection, {
+         *   primitiveCountMax: collection.primitiveCountMax * 2,
+         *   vertexCountMax: collection.vertexCountMax * 2,
+         * });
+         * collection.destroy(); // release the source collection's GPU resources
+         * ```
+         * ```
+         * // Grow while dropping hidden primitives.
+         * const compacted = BufferPrimitiveCollection.fromCollection(
+         *   collection,
+         *   { primitiveCountMax: collection.primitiveCountMax * 2 },
+         *   (primitive) => primitive.show,
+         * );
+         * ```
+         * @param [collection] Source collection to copy.
+         * @param [options] Constructor options to override. Omitted options are inherited from the source collection.
+         * @param [predicate] When provided, only primitives for which this returns `true` are copied. Surviving primitives are compacted into contiguous indices.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#.fromCollection">Online Documentation</a>
+         */
+        fun <T : BufferPrimitive> fromCollection(
+            collection: BufferPrimitiveCollection<T>,
+            options: BufferPrimitiveCollectionOptions? = definedExternally,
+            predicate: Function<*>? = definedExternally,
+        ): BufferPrimitiveCollection<T>
 
         /**
          * Default capacity of buffers on new collections. A quantity of elements:
