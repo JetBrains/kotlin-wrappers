@@ -151,7 +151,7 @@ inline val DOMException.Companion.InvalidNodeTypeError: JsErrorName
     get() = unsafeCast("InvalidNodeTypeError")
 
 /**
- * The object can not be cloned
+ * The object cannot be cloned
  */
 inline val DOMException.Companion.DataCloneError: JsErrorName
     get() = unsafeCast("DataCloneError")

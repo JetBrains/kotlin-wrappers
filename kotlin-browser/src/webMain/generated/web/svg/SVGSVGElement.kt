@@ -5,7 +5,7 @@ package web.svg
 import web.dom.Element
 import web.dom.ElementId
 import web.dom.NodeList
-import web.geometry.*
+import web.geometry.DOMMatrixReadOnly
 import web.window.WindowEventHandlers
 
 /**
@@ -30,7 +30,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentTranslate)
      */
-    val currentTranslate: DOMPointReadOnly
+    val currentTranslate: SVGPoint
 
     /**
      * The **`height`** read-only property of the SVGSVGElement interface describes the vertical size of element as an SVGAnimatedLength. It reflects the <svg> element's height attribute, which may not be the SVG's rendered height.
@@ -74,7 +74,7 @@ private constructor() :
      */
     fun checkEnclosure(
         element: SVGElement,
-        rect: DOMRectReadOnly,
+        rect: SVGRect,
     ): Boolean
 
     /**
@@ -84,7 +84,7 @@ private constructor() :
      */
     fun checkIntersection(
         element: SVGElement,
-        rect: DOMRectReadOnly,
+        rect: SVGRect,
     ): Boolean
 
     /**
@@ -106,7 +106,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGMatrix)
      */
-    fun createSVGMatrix(): DOMMatrix
+    fun createSVGMatrix(): SVGMatrix
 
     /**
      * The **`createSVGNumber()`** method of the SVGSVGElement interface creates an SVGNumber object outside of any document trees.
@@ -120,14 +120,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGPoint)
      */
-    fun createSVGPoint(): DOMPoint
+    fun createSVGPoint(): SVGPoint
 
     /**
      * The **`createSVGRect()`** method of the SVGSVGElement interface creates a DOMRect object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGRect)
      */
-    fun createSVGRect(): DOMRect
+    fun createSVGRect(): SVGRect
 
     /**
      * The **`createSVGTransform()`** method of the SVGSVGElement interface creates an SVGTransform object outside of any document trees.
@@ -164,12 +164,12 @@ private constructor() :
      */
     fun getElementById(elementId: ElementId): Element?
     fun getEnclosureList(
-        rect: DOMRectReadOnly,
+        rect: SVGRect,
         referenceElement: SVGElement?,
     ): NodeList<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
 
     fun getIntersectionList(
-        rect: DOMRectReadOnly,
+        rect: SVGRect,
         referenceElement: SVGElement?,
     ): NodeList<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
 

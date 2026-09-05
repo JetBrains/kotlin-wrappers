@@ -2,9 +2,6 @@
 
 package web.svg
 
-import web.geometry.DOMMatrix
-import web.geometry.DOMRect
-
 /**
  * The **`SVGGraphicsElement`** interface represents SVG elements whose primary purpose is to directly render graphics into a group.
  *
@@ -26,19 +23,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getBBox)
      */
-    fun getBBox(options: SVGBoundingBoxOptions = definedExternally): DOMRect
+    fun getBBox(options: SVGBoundingBoxOptions = definedExternally): SVGRect
 
     /**
      * The **`getCTM()`** method of the SVGGraphicsElement interface represents the matrix that transforms the current element's coordinate system to its SVG viewport's coordinate system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getCTM)
      */
-    fun getCTM(): DOMMatrix?
+    fun getCTM(): SVGMatrix?
 
     /**
      * The **`getScreenCTM()`** method of the SVGGraphicsElement interface represents the matrix that transforms the current element's coordinate system to the coordinate system of the SVG viewport for the SVG document fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getScreenCTM)
      */
-    fun getScreenCTM(): DOMMatrix?
+    fun getScreenCTM(): SVGMatrix?
 }

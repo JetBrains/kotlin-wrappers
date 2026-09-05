@@ -485,6 +485,9 @@ private fun convertType(
                 -> "js.intl"
 
             else -> when {
+                name.startsWith("SVG")
+                    -> "web.svg"
+
                 name.startsWith("GPU")
                     -> "web.gpu"
 

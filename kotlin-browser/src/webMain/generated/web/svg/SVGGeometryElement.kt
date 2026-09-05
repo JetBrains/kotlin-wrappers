@@ -2,7 +2,6 @@
 
 package web.svg
 
-import web.geometry.DOMPoint
 import web.geometry.DOMPointReadOnly
 
 /**
@@ -25,7 +24,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
      */
-    open fun getPointAtLength(distance: Float): DOMPoint
+    open fun getPointAtLength(distance: Float): SVGPoint
 
     /**
      * The **`SVGGeometryElement.getTotalLength()`** method returns the user agent's computed value for the total length of the path in user units.

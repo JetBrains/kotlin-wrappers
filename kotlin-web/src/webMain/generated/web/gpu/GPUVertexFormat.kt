@@ -60,6 +60,9 @@ inline val GPUVertexFormat.Companion.sint8x2: GPUVertexFormat
 inline val GPUVertexFormat.Companion.sint8x4: GPUVertexFormat
     get() = unsafeCast("sint8x4")
 
+inline val GPUVertexFormat.Companion.snorm1010102: GPUVertexFormat
+    get() = unsafeCast("snorm10-10-10-2")
+
 inline val GPUVertexFormat.Companion.snorm16: GPUVertexFormat
     get() = unsafeCast("snorm16")
 

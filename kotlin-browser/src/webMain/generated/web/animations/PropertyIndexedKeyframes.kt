@@ -9,5 +9,5 @@ external interface PropertyIndexedKeyframes {
     var composite: ReadonlyArray<CompositeOperationOrAuto> /* | CompositeOperationOrAuto */?
     var easing: JsAny /* string | string[] */?
     var offset: ReadonlyArray<JsDouble?> /* | Double */?
-    // [property: string]: string | string[] | number | null | (number | null)[] | undefined
+    // [property: string]: string | string[] | number | CSSStyleValue | CSSStyleValue[] | null | (number | null)[] | undefined
 }

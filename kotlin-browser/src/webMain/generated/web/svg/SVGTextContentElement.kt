@@ -2,9 +2,7 @@
 
 package web.svg
 
-import web.geometry.DOMPoint
 import web.geometry.DOMPointReadOnly
-import web.geometry.DOMRect
 
 /**
  * The **`SVGTextContentElement`** interface is implemented by elements that support rendering child text content. It is inherited by various text-related interfaces, such as SVGTextElement, SVGTSpanElement, and SVGTextPathElement.
@@ -47,14 +45,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getEndPositionOfChar)
      */
-    fun getEndPositionOfChar(charnum: Int): DOMPoint
+    fun getEndPositionOfChar(charnum: Int): SVGPoint
 
     /**
      * The **`getExtentOfChar()`** method of the SVGTextContentElement interface the represents computed tight bounding box of the glyph cell that corresponds to a given typographic character.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getExtentOfChar)
      */
-    fun getExtentOfChar(charnum: Int): DOMRect
+    fun getExtentOfChar(charnum: Int): SVGRect
 
     /**
      * The **`getNumberOfChars()`** method of the SVGTextContentElement interface represents the total number of addressable characters available for rendering within the current element, regardless of whether they will be rendered.
@@ -75,7 +73,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getStartPositionOfChar)
      */
-    fun getStartPositionOfChar(charnum: Int): DOMPoint
+    fun getStartPositionOfChar(charnum: Int): SVGPoint
 
     /**
      * The **`getSubStringLength()`** method of the SVGTextContentElement interface represents the computed length of the formatted text advance distance for a substring of text within the element.

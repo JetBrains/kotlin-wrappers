@@ -6,5 +6,5 @@ external interface Keyframe {
     var composite: CompositeOperationOrAuto?
     var easing: String?
     var offset: Double?
-    // [property: string]: string | number | null | undefined
+    // [property: string]: string | number | CSSStyleValue | null | undefined
 }

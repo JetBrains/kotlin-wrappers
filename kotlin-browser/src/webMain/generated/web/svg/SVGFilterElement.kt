@@ -9,8 +9,7 @@ package web.svg
  */
 open external class SVGFilterElement
 private constructor() :
-    SVGElement,
-    SVGURIReference {
+    SVGElement {
     /**
      * The **`filterUnits`** read-only property of the SVGFilterElement interface reflects the filterUnits attribute of the given <filter> element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
      *

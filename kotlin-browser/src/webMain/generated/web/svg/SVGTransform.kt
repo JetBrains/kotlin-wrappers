@@ -2,7 +2,6 @@
 
 package web.svg
 
-import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -24,7 +23,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/matrix)
      */
-    val matrix: DOMMatrix
+    val matrix: SVGMatrix
 
     /**
      * The **`type`** read-only property of the SVGTransform interface represents the type of transformation applied, specified by one of the SVG_TRANSFORM_* constants defined on this interface.
