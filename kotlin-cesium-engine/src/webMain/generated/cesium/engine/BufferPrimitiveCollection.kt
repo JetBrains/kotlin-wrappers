@@ -55,14 +55,6 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
     var show: Boolean
 
     /**
-     * Transforms geometry from model to world coordinates.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#_modelMatrix">Online Documentation</a>
-     */
-    val _modelMatrix: JsAny /* Matrix4;
-    protected readonly _boundingVolume: BoundingSphere;
-    protected readonly _boundingVolumeAutoUpdate: boolean */
-
-    /**
      * This property is for debugging only; it is not for production use nor is it optimized.
      *
      * Draws the bounding sphere for each draw command in the primitive.

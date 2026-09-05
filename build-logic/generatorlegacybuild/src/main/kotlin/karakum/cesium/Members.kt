@@ -51,6 +51,8 @@ private fun String.splitToMemberSources(): Sequence<String> =
                 part.startsWith("/**") -> true
                 part.startsWith("function ") -> true
                 part.startsWith("static ") -> true
+                part.startsWith("protected ") -> true
+                part.startsWith("readonly ") -> true
                 part.startsWith("setPositions(") -> true
                 part.startsWith("getMaterial(") -> true
                 part.startsWith("setMaterial(") -> true
@@ -105,6 +107,7 @@ private fun Definition.toMembers(optionsDoc: String): Sequence<Member> =
 
         body.isPropertyLike()
             -> sequenceOf(Property(this))
+            .filter { !it.protected }
 
         else -> toMethodMembers()
     }
@@ -134,11 +137,14 @@ internal fun Definition.toMethodMembers(): Sequence<Member> {
     // TEMP WA
     if (optionTypes.size == 1
         && "fromUrl(url: string," in body
-        && "featureIdProperty?: string" in body) {
+        && "featureIdProperty?: string" in body
+    ) {
         optionTypes = emptyList()
     }
 
-    return sequenceOf(Method(copy(body = methodBody))) + optionTypes
+    return sequenceOf(Method(copy(body = methodBody)))
+        .filter { !it.protected }
+        .plus(optionTypes)
 }
 
 private fun String.isPropertyLike(): Boolean {

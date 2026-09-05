@@ -11,6 +11,7 @@ internal class Property(
         get() = if (static) ".$name" else name
 
     private val modifiers = data.dropLast(1)
+    val protected = "protected" in modifiers
     override val static: Boolean by lazy {
         "static" in modifiers || (hasParent && parent is Namespace)
     }

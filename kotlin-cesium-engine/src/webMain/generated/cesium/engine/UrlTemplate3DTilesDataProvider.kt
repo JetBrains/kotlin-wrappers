@@ -71,18 +71,7 @@ open external class UrlTemplate3DTilesDataProvider(
      * Determines if the generated tileset is shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplate3DTilesDataProvider.html#show">Online Documentation</a>
      */
-    var show: JsAny /* boolean;
-    protected _createRuntimeTilesetOptions(): void;
-    protected _createTilesetLoadOptions(): any;
-    protected _configureTileset(_tileset: Cesium3DTileset): void */
-
-    /**
-     * Subclasses must return a runtime content codec describing how to turn
-     * a downloaded tile payload into a [Cesium3DTileContent]. See
-     * [Cesium3DTileset._runtimeContentCodec] for the expected shape.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplate3DTilesDataProvider.html#_createCodec">Online Documentation</a>
-     */
-    fun _createCodec(): JsAny
+    var show: Boolean
 
     companion object {
         /**

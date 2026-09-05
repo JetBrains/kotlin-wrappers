@@ -21,6 +21,9 @@ internal class Method(
         .split(" ")
         .dropLast(1)
 
+    val protected: Boolean =
+        "protected" in modifiers
+
     override val static: Boolean by lazy {
         "static" in modifiers || (hasParent && parent is Namespace)
     }
