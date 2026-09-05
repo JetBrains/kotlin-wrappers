@@ -789,6 +789,18 @@ inline val <C : Window> C.mouseDownEvent: EventInstance<MouseEvent, C, Node>
     get() = EventInstance(this, "mousedown")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseenter_event)
+ */
+inline val <C : Window> C.mouseEnterEvent: EventInstance<MouseEvent, C, C>
+    get() = EventInstance(this, "mouseenter")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseleave_event)
+ */
+inline val <C : Window> C.mouseLeaveEvent: EventInstance<MouseEvent, C, C>
+    get() = EventInstance(this, "mouseleave")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mousemove_event)
  */
 inline val <C : Window> C.mouseMoveEvent: EventInstance<MouseEvent, C, Node>
