@@ -61,7 +61,7 @@ vscode = "^1.136.0"
 yaml = "^2.8.3"
 
 types-ecma = "7.0.2"
-types-web = "0.0.355"
+types-web = "0.0.356"
 types-webworker = "0.0.80"
 types-serviceworker = "0.0.201"
 types-audioworklet = "0.0.100"

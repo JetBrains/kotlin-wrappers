@@ -2,6 +2,8 @@
 
 package web.cssom
 
+import js.array.ReadonlyArray
+
 /**
  * The **`CSSContainerRule`** interface represents a single CSS @container rule.
  *
@@ -10,6 +12,11 @@ package web.cssom
 open external class CSSContainerRule
 private constructor() :
     CSSConditionRule {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSContainerRule/conditions)
+     */
+    val conditions: ReadonlyArray<CSSContainerCondition>
+
     /**
      * The read-only **`containerName`** property of the CSSContainerRule interface represents the container name of the associated CSS @container at-rule.
      *
