@@ -1,11 +1,9 @@
+// Automatically generated - do not modify!
+
 @file:JsModule("@tanstack/react-virtual")
 
 package tanstack.react.virtual
 
-import tanstack.virtual.core.Virtualizer
-import web.dom.Element
-import web.events.EventTarget
-
-external fun <TScrollElement : EventTarget, TItemElement : Element> useVirtualizer(
+external fun <TScrollElement : web.dom.Element, TItemElement : web.dom.Element> useVirtualizer(
     options: UseVirtualizerOptions<TScrollElement, TItemElement>,
-): Virtualizer<TScrollElement, TItemElement>
+): ReactVirtualizer<TScrollElement, TItemElement>
