@@ -65,7 +65,6 @@ private fun events(): String {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/${data.docTarget}/${data.type}_event)
          */
-        @ReactCanary
         inline val FragmentInstance.${memberName}Event: $EVENT_INSTANCE<${data.eventType}, ${data.currentTarget}, ${data.target}>
             get() = $EVENT_INSTANCE(this, "${data.type}")
         """.trimIndent()

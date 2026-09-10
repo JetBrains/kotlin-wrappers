@@ -2,9 +2,6 @@
 
 package react
 
-import react.canary.ReactCanary
-
-@ReactCanary
 external interface ViewTransitionProps :
     PropsWithChildren,
     PropsWithRef<ViewTransitionInstance> {
@@ -75,5 +72,4 @@ external interface ViewTransitionProps :
  *
  * [`<ViewTransition>` reference documentation](https://react.dev/reference/react/ViewTransition)
  */
-@ReactCanary
 external val ViewTransition: ExoticComponent<ViewTransitionProps>

@@ -3,7 +3,6 @@ package react
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import kotlinx.coroutines.flow.Flow
-import react.canary.ReactCanary
 import web.coroutines.internal.observerFlow
 import web.dom.FocusOptions
 import web.dom.GetRootNodeOptions
@@ -20,7 +19,6 @@ import web.resize.ResizeObserverEntry
 /**
  * [Online Documentation](https://react.dev/reference/react/Fragment#fragmentinstance)
  */
-@ReactCanary
 external interface FragmentInstance :
     EventTargetLike {
 
@@ -49,7 +47,6 @@ external interface FragmentInstance :
     fun scrollIntoView(alignToTop: Boolean = definedExternally)
 }
 
-@ReactCanary
 fun FragmentInstance.intersectionFlow(
     options: IntersectionObserverInit = unsafeJso(),
 ): Flow<IntersectionObserverEntry> =
@@ -62,7 +59,6 @@ fun FragmentInstance.intersectionFlow(
         }
     }
 
-@ReactCanary
 fun FragmentInstance.resizeFlow(): Flow<ResizeObserverEntry> =
     observerFlow { callback ->
         val observer = ResizeObserver(callback)

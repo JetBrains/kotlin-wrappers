@@ -2,15 +2,9 @@
 
 package react
 
-import react.canary.ReactCanary
-
 external interface FragmentProps :
-    PropsWithChildren {
-    /* PropsWithRef<FragmentInstance> */
-
-    @ReactCanary
-    var ref: Ref<FragmentInstance>?
-}
+    PropsWithChildren,
+    PropsWithRef<FragmentInstance>
 
 /**
  * [Online Documentation](https://react.dev/reference/react/Fragment)
