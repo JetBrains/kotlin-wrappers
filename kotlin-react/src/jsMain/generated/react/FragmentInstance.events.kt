@@ -20,6 +20,7 @@ import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.gl.WebGLContextEvent
 import web.html.*
+import web.html.HTMLElement
 import web.input.CompositionEvent
 import web.input.InputEvent
 import web.keyboard.KeyboardEvent
@@ -31,6 +32,7 @@ import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
 import web.xr.XRSessionEvent
+import web.html.HTMLElement as HTMLUserMediaElement
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/abort_event)
@@ -694,7 +696,7 @@ inline val FragmentInstance.selectEvent: EventInstance<Event, Element, Node>
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/selectionchange_event)
  */
 @ReactCanary
-inline val FragmentInstance.selectionChangeEvent: EventInstance<Event, Element, Element>
+inline val FragmentInstance.selectionChangeEvent: EventInstance<Event, Element, Node>
     get() = EventInstance(this, "selectionchange")
 
 /**
@@ -717,6 +719,13 @@ inline val FragmentInstance.slotChangeEvent: EventInstance<Event, HTMLSlotElemen
 @ReactCanary
 inline val FragmentInstance.stalledEvent: EventInstance<Event, HTMLMediaElement, HTMLMediaElement>
     get() = EventInstance(this, "stalled")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUserMediaElement/stream_event)
+ */
+@ReactCanary
+inline val FragmentInstance.streamEvent: EventInstance<Event, HTMLUserMediaElement, HTMLUserMediaElement>
+    get() = EventInstance(this, "stream")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit_event)
@@ -773,6 +782,13 @@ inline val FragmentInstance.touchMoveEvent: EventInstance<TouchEvent, Element, N
 @ReactCanary
 inline val FragmentInstance.touchStartEvent: EventInstance<TouchEvent, Element, Node>
     get() = EventInstance(this, "touchstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCameraElement/track_event)
+ */
+@ReactCanary
+inline val FragmentInstance.trackEvent: EventInstance<Event, HTMLElement, HTMLElement>
+    get() = EventInstance(this, "track")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/transitioncancel_event)

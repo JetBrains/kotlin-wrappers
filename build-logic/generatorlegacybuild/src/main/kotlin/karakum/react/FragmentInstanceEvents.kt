@@ -93,6 +93,7 @@ private fun getDocTarget(
 }
 
 private val TARGET_MAP = mapOf(
+    setOf("Node", "HTMLElement") to "Node",
     setOf("Element", "HTMLElement") to "Element",
     setOf("Element", "HTMLMediaElement") to "Element",
     setOf("Element", "Text") to "Node",
@@ -102,6 +103,7 @@ private val TARGET_MAP = mapOf(
     setOf("Element", "HTMLElement", "HTMLMediaElement", "HTMLSourceElement", "HTMLTrackElement") to "Element",
     setOf("HTMLButtonElement", "HTMLInputElement", "HTMLSelectElement", "HTMLTextAreaElement") to "HTMLElement",
     setOf("HTMLPermissionElement", "HTMLGeolocationElement") to "HTMLElement",
+    setOf("HTMLMicrophoneElement", "HTMLCameraElement") to "HTMLElement",
     setOf("Element", "HTMLInputElement", "HTMLTextAreaElement") to "Element",
     setOf("Element", "HTMLElement", "HTMLTrackElement") to "Element",
 )
@@ -133,6 +135,7 @@ import web.html.HTMLGeolocationElement
 import web.html.HTMLMediaElement
 import web.html.HTMLPermissionElement
 import web.html.HTMLTrackElement
+import web.html.HTMLElement as HTMLUserMediaElement
 import web.html.HTMLVideoElement
 import web.input.CompositionEvent
 import web.input.InputEvent
