@@ -2,10 +2,10 @@
 coroutines = "1.11.0"
 dokka = "2.2.0"
 karakum = "1.0.0-alpha.112"
-kfc = "19.14.0"
-kotlin = "2.4.10"
+kfc = "19.16.0"
+kotlin = "2.4.20"
 serialization = "1.11.0"
-seskar = "4.64.0"
+seskar = "4.66.0"
 download = "5.7.0"
 
 [libraries]
