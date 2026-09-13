@@ -39,4 +39,5 @@ include("tanstack-react-table")
 include("tanstack-virtual-table")
 include("tanstack-table-common")
 include("tic-tac-toe")
-include("web-components")
+// Blocked by https://youtrack.jetbrains.com/issue/KT-89363
+// include("web-components")
