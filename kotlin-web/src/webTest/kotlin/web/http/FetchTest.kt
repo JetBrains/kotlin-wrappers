@@ -41,7 +41,8 @@ class FetchTest {
 
         globalThis[FETCH] = FetchFunction { Promise.resolve(response) }
 
-        val actualResult = fetch(request).text()
+        val actualResult = fetch(request)
+            .use { it.value.text() }
 
         assertEquals(expectedResult, actualResult)
     }
