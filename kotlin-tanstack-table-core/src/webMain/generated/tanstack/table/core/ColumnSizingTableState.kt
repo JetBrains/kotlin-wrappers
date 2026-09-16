@@ -2,7 +2,10 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface ColumnSizingTableState {
-    var columnSizing: ColumnSizingState
-    var columnSizingInfo: ColumnSizingInfoState
+    val columnSizing: ColumnSizingState
+    val columnSizingInfo: ColumnSizingInfoState
 }

@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface ColumnDefExtensions<TData : RowData, TValue> :
     VisibilityColumnDef,
     ColumnPinningColumnDef,

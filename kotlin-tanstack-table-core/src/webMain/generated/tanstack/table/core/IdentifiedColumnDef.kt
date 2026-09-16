@@ -2,8 +2,11 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface IdentifiedColumnDef<TData : RowData, TValue> :
     ColumnDefBase<TData, TValue> {
-    var id: String?
-    var header: StringOrTemplateHeader<TData, TValue>?
+    val id: String?
+    val header: StringOrTemplateHeader<TData, TValue>?
 }

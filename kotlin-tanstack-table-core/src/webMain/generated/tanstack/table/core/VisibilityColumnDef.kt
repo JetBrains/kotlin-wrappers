@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface VisibilityColumnDef {
-    var enableHiding: Boolean?
+    val enableHiding: Boolean?
 }

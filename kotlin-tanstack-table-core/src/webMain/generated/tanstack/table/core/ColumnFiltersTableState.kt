@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface ColumnFiltersTableState {
-    var columnFilters: ColumnFiltersState
+    val columnFilters: ColumnFiltersState
 }

@@ -6,22 +6,21 @@ import example.table.base.TableInstance
 import example.table.base.useTable
 import example.table.selection.createSelectionColumn
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.StringOrTemplateHeader
 
 private val COLUMNS: ReadonlyArray<ColumnDef<User, String>> = arrayOf(
     createSelectionColumn(),
-    unsafeJso {
-        id = "name"
-        header = StringOrTemplateHeader("Name")
-        accessorFn = { user, _ -> user.name }
-    },
-    unsafeJso {
-        id = "email"
-        header = StringOrTemplateHeader("Email")
-        accessorFn = { user, _ -> user.email }
-    },
+    ColumnDef(
+        id = "name",
+        header = StringOrTemplateHeader("Name"),
+        accessorFn = { user, _ -> user.name },
+    ),
+    ColumnDef(
+        id = "email",
+        header = StringOrTemplateHeader("Email"),
+        accessorFn = { user, _ -> user.email },
+    ),
 )
 
 internal fun useUsersTable(): TableInstance<User> {

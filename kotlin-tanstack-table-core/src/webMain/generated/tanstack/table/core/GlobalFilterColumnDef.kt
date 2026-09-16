@@ -2,11 +2,14 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface GlobalFilterColumnDef {
     /**
      * Enables/disables the **global** filter for this column.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#enableglobalfilter)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
-    var enableGlobalFilter: Boolean?
+    val enableGlobalFilter: Boolean?
 }

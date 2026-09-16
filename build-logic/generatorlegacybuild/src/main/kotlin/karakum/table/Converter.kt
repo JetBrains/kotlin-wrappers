@@ -244,7 +244,7 @@ private fun convertTypealias(
                     .joinToString(",\n", "\n")
                     .replace(",\nStringHeaderIdentifier", "\n    /* StringHeaderIdentifier */")
 
-                return ConversionResult(name, "external interface $declaration : $body")
+                return ConversionResult(name, "@JsPlainObject\nexternal interface $declaration : $body")
             }
         }
 
@@ -431,11 +431,29 @@ private fun convertInterface(
     }
 
     var members = convertMembers(source.substringAfter(" {"))
-    if (name == "AccessorKeyColumnDefBase")
-        members = members.replace("var id: String?", "    /* var id: String? */")
 
-    if (name == "CoreOptionsResolved")
-        members = members.replace("var ", "override var ")
+    fun addNullabilityToMember(
+        member: String,
+    ) {
+        members = members.replace(
+            member,
+            "// nullable for JSO compatibility\n$member?",
+        )
+    }
+
+    when (name) {
+        "IdIdentifier",
+            -> addNullabilityToMember("var id: String")
+
+        "AccessorKeyColumnDefBase",
+            -> addNullabilityToMember("var accessorKey: String")
+
+        "AccessorFnColumnDefBase",
+            -> addNullabilityToMember("var accessorFn: AccessorFn<TData, TValue>")
+
+        "CoreOptionsResolved",
+            -> members = members.replace("var ", "override var ")
+    }
 
     val body = "{\n$members\n}\n"
     return ConversionResult(name, "@JsPlainObject\nexternal interface $declaration$body")

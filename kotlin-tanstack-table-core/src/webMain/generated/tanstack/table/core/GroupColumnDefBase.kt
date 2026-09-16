@@ -3,8 +3,10 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import kotlinx.js.JsPlainObject
 
+@JsPlainObject
 external interface GroupColumnDefBase<TData : RowData, TValue> :
     ColumnDefBase<TData, TValue> {
-    var columns: ReadonlyArray<ColumnDef<TData, *>>?
+    val columns: ReadonlyArray<ColumnDef<TData, *>>?
 }

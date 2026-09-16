@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface PaginationInitialTableState {
-    var pagination: PaginationState /* Partial */?
+    val pagination: PaginationState /* Partial */?
 }
