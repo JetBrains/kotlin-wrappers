@@ -1,16 +1,19 @@
 package web.http
 
+import js.resource.Resource
 import web.abort.or
 import web.abort.unsafeAbortable
-import web.coroutines.await
+import web.coroutines.awaitResource
 import web.url.URL
+
+typealias FetchResult = Resource<Response>
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
  */
 suspend fun fetch(
     request: Request,
-): Response = await { signal ->
+): FetchResult = awaitResource { signal ->
     fetchAsync(
         Request(
             request = request,
@@ -27,7 +30,7 @@ suspend fun fetch(
 suspend fun fetch(
     request: Request,
     init: RequestInit,
-): Response =
+): FetchResult =
     fetch(Request(request, init))
 
 /**
@@ -35,7 +38,7 @@ suspend fun fetch(
  */
 suspend fun fetch(
     url: String,
-): Response =
+): FetchResult =
     fetch(Request(url))
 
 /**
@@ -44,7 +47,7 @@ suspend fun fetch(
 suspend fun fetch(
     url: String,
     init: RequestInit,
-): Response =
+): FetchResult =
     fetch(Request(url, init))
 
 /**
@@ -52,7 +55,7 @@ suspend fun fetch(
  */
 suspend fun fetch(
     url: URL,
-): Response =
+): FetchResult =
     fetch(Request(url))
 
 /**
@@ -61,5 +64,5 @@ suspend fun fetch(
 suspend fun fetch(
     url: URL,
     init: RequestInit,
-): Response =
+): FetchResult =
     fetch(Request(url, init))

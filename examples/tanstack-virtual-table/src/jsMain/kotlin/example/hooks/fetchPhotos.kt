@@ -14,7 +14,8 @@ suspend fun fetchPhotos(): PhotoList =
 private suspend fun <T> fetchData(
     request: Request,
 ): T {
-    val data = fetch(request).json()
+    val data = fetch(request)
+        .use { it.value.json() }
 
     // TODO use serialization instead
     return unsafeCast(data!!)
