@@ -11,8 +11,8 @@ val data = fetch("./data.json") // support cancellation
     .json()                     // NO cancellation support (no access to `AbortController` from `fetch`)
 
 // after
-val data = fetch("http://my.site/data.json") // support cancellation
-    .use { it.value.json() }                 // support cancellation (`close` will use `AbortController` from `fetch`)
+val data = fetch("./data.json") // support cancellation
+    .use { it.value.json() }    // support cancellation (`close` will use `AbortController` from `fetch`)
 ```
 
 ## 2026.3.10
