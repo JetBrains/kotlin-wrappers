@@ -54,6 +54,7 @@ import web.events.Event
 import web.events.EventTarget
 import web.events.EventType
 import web.form.SubmitEvent
+import web.html.HTMLElement
 import web.html.HTMLFormElement
 import web.keyboard.ModifierKeyCode
 import web.keyboard.KeyCode
