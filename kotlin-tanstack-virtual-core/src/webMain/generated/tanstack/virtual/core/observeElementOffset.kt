@@ -4,4 +4,7 @@
 
 package tanstack.virtual.core
 
-external val observeElementOffset: (instance: Virtualizer<*, *>, cb: ObserveOffsetCallBack) -> (() -> Unit)?
+external fun <T : web.dom.Element> observeElementOffset(
+    instance: Virtualizer<T, *>,
+    cb: ObserveOffsetCallBack,
+): (() -> Unit)?
