@@ -38,9 +38,6 @@ internal class SimpleTypeConverter(
             propertyName == "autoCapitalize"
                 -> return propertyName.replaceFirstChar(Char::uppercase)
 
-            propertyName == "crossOrigin" && type == """"anonymous" | "use-credentials" | """""
-                -> return propertyName.replaceFirstChar(Char::uppercase)
-
             propertyName == "enterKeyHint"
                 -> return propertyName.replaceFirstChar(Char::uppercase)
 

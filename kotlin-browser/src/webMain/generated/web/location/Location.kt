@@ -5,6 +5,7 @@ package web.location
 import web.dom.DOMStringList
 import web.origin.OriginSource
 import web.url.URL
+import web.url.URLLike
 
 /**
  * The **`Location`** interface represents the location (URL) of the object it is linked to. Changes done on it are reflected on the object it relates to. Both the Document and Window interface have such a linked Location, accessible via Document.location and Window.location respectively.
@@ -13,7 +14,8 @@ import web.url.URL
  */
 open external class Location
 private constructor() :
-    OriginSource {
+    OriginSource,
+    URLLike {
     /**
      * The **`ancestorOrigins`** read-only property of the Location interface is a static DOMStringList containing, in reverse order, the origins of all ancestor browsing contexts of the document associated with the given Location object.
      *

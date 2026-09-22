@@ -65,6 +65,14 @@ internal val UNION_DATA_LIST = listOf(
         ),
         pkg = "web.data",
     ),
+    UnionData(
+        name = "CrossOrigin",
+        values = listOf(
+            "anonymous",
+            "use-credentials",
+        ),
+        pkg = "web.http",
+    ),
 )
 
 internal fun htmlUnions(): Sequence<ConversionResult> =
@@ -105,18 +113,6 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                 ),
             ),
             pkg = "web.html",
-        ),
-        ConversionResult(
-            name = "CrossOrigin",
-            body = sealedUnionBody(
-                name = "CrossOrigin",
-                values = listOf(
-                    "anonymous",
-                    "use-credentials",
-                    "",
-                ),
-            ),
-            pkg = "web.http",
         ),
         ConversionResult(
             name = FETCH_PRIORITY,

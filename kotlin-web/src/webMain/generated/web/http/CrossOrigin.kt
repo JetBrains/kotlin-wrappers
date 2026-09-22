@@ -14,6 +14,3 @@ inline val CrossOrigin.Companion.anonymous: CrossOrigin
 
 inline val CrossOrigin.Companion.useCredentials: CrossOrigin
     get() = unsafeCast("use-credentials")
-
-inline val CrossOrigin.Companion.none: CrossOrigin
-    get() = unsafeCast("")

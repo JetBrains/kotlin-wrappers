@@ -326,6 +326,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.uievents.UIEventInit",
     "web.url.FragmentDirective",
     "web.url.URL",
+    "web.url.URLLike",
     "web.url.URLSearchParams",
     "web.url.URLSource",
     "web.usb.USB",

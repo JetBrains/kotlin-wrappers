@@ -11,7 +11,7 @@ import web.events.EventInstance
 import web.events.ProgressEvent
 import web.form.FormData
 import web.http.RequestMethod
-import web.url.URL
+import web.url.URLLike
 import web.url.URLSearchParams
 
 /**
@@ -141,7 +141,7 @@ open external class XMLHttpRequest :
      */
     fun open(
         method: RequestMethod,
-        url: URL,
+        url: URLLike,
     )
 
     fun open(
@@ -154,7 +154,7 @@ open external class XMLHttpRequest :
 
     fun open(
         method: RequestMethod,
-        url: URL,
+        url: URLLike,
         async: Boolean,
         username: String? = definedExternally,
         password: String? = definedExternally,

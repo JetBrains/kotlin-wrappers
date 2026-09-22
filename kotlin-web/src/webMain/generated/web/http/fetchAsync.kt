@@ -3,7 +3,7 @@
 package web.http
 
 import js.promise.Promise
-import web.url.URL
+import web.url.URLLike
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
@@ -19,7 +19,7 @@ external fun fetchAsync(
  */
 @JsName("fetch")
 external fun fetchAsync(
-    url: URL,
+    url: URLLike,
     init: RequestInit? = definedExternally,
 ): Promise<Response>
 

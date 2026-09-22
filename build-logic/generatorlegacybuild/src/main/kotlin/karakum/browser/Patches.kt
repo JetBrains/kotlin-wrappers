@@ -195,19 +195,23 @@ internal fun String.applyPatches(): String {
         .splitUnion("Document | XMLHttpRequestBodyInit")
         .splitTypealias("XMLHttpRequestBodyInit")
         .splitUnion("Blob | BufferSource | FormData | URLSearchParams | string")
+        .extractUrlLike()
         .splitUnion("string | URL")
+        .splitUnion("string | URLLike")
         .splitUnion("string | Blob")
         .replace("(request: RequestInfo | URL,", "(url: string | URL | Request,")
         .replace("(request?: RequestInfo | URL,", "(url?: string | URL | Request,")
         .replace("(request: RequestInfo | URL)", "(url: string | URL | Request)")
         .replace("(request?: RequestInfo | URL)", "(url?: string | URL | Request)")
-        .replace("(input: RequestInfo | URL,", "(url: string | URL | Request,")
+        .replace("(input: RequestInfo | Location | URL,", "(url: string | URLLike | Request,")
         .splitUnion("string | URL | Request")
+        .splitUnion("string | URLLike | Request")
         .replace("(url: Request,", "(request: Request,")
         .replace("(url?: Request,", "(request?: Request,")
         .replace("(url: Request)", "(request: Request)")
         .replace("(url?: Request)", "(request?: Request)")
         .splitUnion("RequestInfo | URL")
+        .splitUnion("RequestInfo | Location | URL", "RequestInfo | URLLike")
         .splitUnion("RequestInfo", "Request | string")
         .splitUnion("URLPatternInput", "string | URLPatternInit")
         .replace("(requests: string[])", "(urls: string[])")
@@ -534,6 +538,13 @@ internal val DOM_GEOMETRY_ALIASES = listOf(
     "DOMMatrixInit" to "DOMMatrixReadOnly",
     "DOMMatrix2DInit" to "DOMMatrixReadOnly",
 )
+
+private fun String.extractUrlLike(): String =
+    splitUnion("string | Location | URL", "string | URLLike")
+        .splitUnion("string | URL | Location", "string | URLLike")
+        .plus("\n")
+        .plus("type URLLike = URL | Location | WorkerLocation;")
+        .plus("\n")
 
 private fun String.extractUrlSource(): String {
     val value = substringAfter("createObjectURL(obj: ")

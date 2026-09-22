@@ -4,7 +4,7 @@ package web.http
 
 import web.abort.AbortSignal
 import web.abort.AbortableLike
-import web.url.URL
+import web.url.URLLike
 
 /**
  * The **`Request`** interface of the Fetch API represents a resource request.
@@ -22,7 +22,7 @@ open external class Request(
 ) : Body,
     AbortableLike {
     constructor(
-        url: URL,
+        url: URLLike,
         init: RequestInit = definedExternally,
     )
 

@@ -4,7 +4,7 @@ import js.resource.Resource
 import web.abort.or
 import web.abort.unsafeAbortable
 import web.coroutines.awaitResource
-import web.url.URL
+import web.url.URLLike
 
 typealias FetchResult = Resource<Response>
 
@@ -54,7 +54,7 @@ suspend fun fetch(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
  */
 suspend fun fetch(
-    url: URL,
+    url: URLLike,
 ): FetchResult =
     fetch(Request(url))
 
@@ -62,7 +62,7 @@ suspend fun fetch(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fetch)
  */
 suspend fun fetch(
-    url: URL,
+    url: URLLike,
     init: RequestInit,
 ): FetchResult =
     fetch(Request(url, init))

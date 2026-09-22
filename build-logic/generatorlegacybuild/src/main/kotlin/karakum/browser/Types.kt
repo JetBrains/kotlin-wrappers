@@ -401,6 +401,7 @@ private fun convertType(
             "Transferable" -> "js.serialization"
 
             "OriginSource" -> "web.origin"
+            "URLLike" -> "web.url"
             "URLSource" -> "web.url"
 
             "TimerHandler" -> "web.timers"

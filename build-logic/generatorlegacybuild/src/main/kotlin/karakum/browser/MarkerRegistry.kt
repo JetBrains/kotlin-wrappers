@@ -21,6 +21,7 @@ private val WEB_MARKER_DECLARATIONS = setOf(
     "GPUBindingResource",
 
     "OriginSource",
+    "URLLike",
     "URLSource",
 )
 

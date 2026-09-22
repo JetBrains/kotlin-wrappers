@@ -12,20 +12,21 @@ import web.origin.OriginSource
 open external class URL(
     url: String,
     base: String = definedExternally,
-) : OriginSource {
+) : OriginSource,
+    URLLike {
     constructor(
-        url: URL,
+        url: String,
+        base: URLLike,
+    )
+
+    constructor(
+        url: URLLike,
         base: String = definedExternally,
     )
 
     constructor(
-        url: String,
-        base: URL,
-    )
-
-    constructor(
-        url: URL,
-        base: URL,
+        url: URLLike,
+        base: URLLike,
     )
 
     /**
@@ -136,7 +137,17 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
          */
         fun canParse(
-            url: URL,
+            url: String,
+            base: URLLike,
+        ): Boolean
+
+        /**
+         * The **`URL.canParse()`** static method of the URL interface returns a boolean indicating whether or not an absolute URL, or a relative URL combined with a base URL, are parsable and valid.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
+         */
+        fun canParse(
+            url: URLLike,
             base: String = definedExternally,
         ): Boolean
 
@@ -146,18 +157,8 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
          */
         fun canParse(
-            url: String,
-            base: URL,
-        ): Boolean
-
-        /**
-         * The **`URL.canParse()`** static method of the URL interface returns a boolean indicating whether or not an absolute URL, or a relative URL combined with a base URL, are parsable and valid.
-         *
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
-         */
-        fun canParse(
-            url: URL,
-            base: URL,
+            url: URLLike,
+            base: URLLike,
         ): Boolean
 
         /**
@@ -183,7 +184,17 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
          */
         fun parse(
-            url: URL,
+            url: String,
+            base: URLLike,
+        ): URL?
+
+        /**
+         * The **`URL.parse()`** static method of the URL interface returns a newly created URL object representing the URL defined by the parameters.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
+         */
+        fun parse(
+            url: URLLike,
             base: String = definedExternally,
         ): URL?
 
@@ -193,18 +204,8 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
          */
         fun parse(
-            url: String,
-            base: URL,
-        ): URL?
-
-        /**
-         * The **`URL.parse()`** static method of the URL interface returns a newly created URL object representing the URL defined by the parameters.
-         *
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
-         */
-        fun parse(
-            url: URL,
-            base: URL,
+            url: URLLike,
+            base: URLLike,
         ): URL?
 
         /**
