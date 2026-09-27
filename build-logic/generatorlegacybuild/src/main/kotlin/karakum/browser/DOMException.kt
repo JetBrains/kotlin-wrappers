@@ -32,7 +32,7 @@ internal fun domExceptionTypes(): Sequence<ConversionResult> {
         .replace("unsafeCast(", "$DOM_EXCEPTION_NAME(")
 
     val nameBody = """
-    @SubclassOptInRequired(InternalApi::class)
+    @JsUnion
     external interface $DOM_EXCEPTION_NAME :
         JsErrorName
 

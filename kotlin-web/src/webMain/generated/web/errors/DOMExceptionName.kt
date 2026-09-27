@@ -3,10 +3,10 @@
 package web.errors
 
 import js.errors.JsErrorName
-import js.internal.InternalApi
 import js.reflect.unsafeCast
+import js.union.JsUnion
 
-@SubclassOptInRequired(InternalApi::class)
+@JsUnion
 external interface DOMExceptionName :
     JsErrorName
 

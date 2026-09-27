@@ -4,6 +4,7 @@ import js.coroutines.resumeWithError
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.blob.Blob
 import web.errors.DOMException
+import web.errors.DOMExceptionName
 import web.errors.OperationError
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
@@ -16,7 +17,7 @@ private fun BlobCallback(
     } else {
         val error = DOMException(
             message = "Unable to create blob from canvas",
-            name = DOMException.OperationError,
+            name = DOMExceptionName.OperationError,
         )
 
         continuation.resumeWithError(error)
