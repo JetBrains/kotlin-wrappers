@@ -429,6 +429,7 @@ fun generateKotlinDeclarations(
     val aliases = listOf<ConversionResult>()
         .plus(htmlFactories(content))
         .plus(htmlDeclarations(content))
+        .plus(domExceptionTypes())
         .plus(htmlUnions())
         .plus(jsUnions())
         .plus(browserConstants(content))

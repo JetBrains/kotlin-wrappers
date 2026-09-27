@@ -1215,7 +1215,7 @@ internal fun convertInterface(
     }
 
     if (name == DOM_EXCEPTION) {
-        mainConstructor = mainConstructor.replace("name: String", "name: JsErrorName")
+        mainConstructor = mainConstructor.replace("name: String", "name: $DOM_EXCEPTION_NAME")
     }
 
     val isClass = type == "class"
@@ -1269,7 +1269,7 @@ internal fun convertInterface(
             DOM_EXCEPTION,
                 -> result
                 .replace("val message: String", "override val message: String")
-                .replace("val name: String", "val name: JsErrorName")
+                .replace("val name: String", "val name: $DOM_EXCEPTION_NAME")
                 .splitToSequence("\n")
                 .filter { !it.endsWith(": Short") }
                 .joinToString("\n")
@@ -1561,7 +1561,7 @@ internal fun convertInterface(
     val companion = if (staticSource != null) {
         val companionContent = getCompanion(name, staticSource, companionExtensionsCollector)
         when {
-            name == DOM_EXCEPTION -> "companion object" // leave it empty, add extensions below
+            name == DOM_EXCEPTION -> ""
 
             idDeclaration != null -> {
                 require(companionContent.isEmpty())
@@ -1585,7 +1585,6 @@ internal fun convertInterface(
         ?: ""
 
     val extensions = when {
-        name == DOM_EXCEPTION -> domExceptionErrorNames()
         idDeclaration != null -> idDeclaration
         else -> ""
     }

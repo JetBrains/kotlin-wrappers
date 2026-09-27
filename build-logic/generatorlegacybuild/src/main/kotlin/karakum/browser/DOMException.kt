@@ -1,9 +1,13 @@
 package karakum.browser
 
-internal const val DOM_EXCEPTION = "DOMException"
+import karakum.common.CommonUnionConverter.unionBodyByConstants
+import karakum.common.UnionConstant
 
-internal fun domExceptionErrorNames(): String =
-    mdnContent("api/domexception/index.md")
+internal const val DOM_EXCEPTION = "DOMException"
+internal const val DOM_EXCEPTION_NAME = "DOMExceptionName"
+
+internal fun domExceptionTypes(): Sequence<ConversionResult> {
+    val errorData = mdnContent("api/domexception/index.md")
         .substringAfter("\n## Error names\n", "")
         .substringAfter("> [!NOTE]", "")
         .substringAfter("\n\n", "")
@@ -13,15 +17,40 @@ internal fun domExceptionErrorNames(): String =
         .drop(1)
         .map { it.split("\n  - : ") }
         .mapNotNull { (name, description) -> parseErrorName(name, description) }
-        .joinToString("\n\n") { (name, description) ->
-            """
-            /**
-              * $description
-              */
-            inline val DOMException.Companion.${name}: JsErrorName
-                get() = unsafeCast("$name")
-            """.trimIndent()
-        }
+        .toList()
+
+    val nameExtensions = unionBodyByConstants(
+        name = DOM_EXCEPTION_NAME,
+        constants = errorData.map { (name, comment) ->
+            UnionConstant(
+                name = name,
+                value = name,
+                comment = comment,
+            )
+        },
+    ).substringAfter(DOM_EXCEPTION_NAME + "\n\n")
+        .replace("unsafeCast(", "$DOM_EXCEPTION_NAME(")
+
+    val nameBody = """
+    @SubclassOptInRequired(InternalApi::class)
+    external interface $DOM_EXCEPTION_NAME :
+        JsErrorName
+
+    inline fun $DOM_EXCEPTION_NAME(
+        value: String,
+    ): $DOM_EXCEPTION_NAME =
+        unsafeCast(value)
+    $nameExtensions
+    """.trimIndent()
+
+    return sequenceOf(
+        ConversionResult(
+            name = DOM_EXCEPTION_NAME,
+            body = nameBody,
+            pkg = "web.errors",
+        ),
+    )
+}
 
 private fun parseErrorName(
     nameSource: String,
@@ -41,5 +70,11 @@ private fun parseErrorName(
         .substringBefore(". (Legacy code ")
         .substringBefore(" (No legacy code ")
 
-    return name to description
+    val comment = """
+    /**
+     * $description
+     */
+    """.trimIndent()
+
+    return name to comment
 }
