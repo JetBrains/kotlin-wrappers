@@ -6,10 +6,16 @@ import js.errors.JsErrorName
 import js.reflect.unsafeCast
 import js.union.JsUnion
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#error_names)
+ */
 @JsUnion
 external interface DOMExceptionName :
     JsErrorName
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#error_names)
+ */
 inline fun DOMExceptionName(
     value: String,
 ): DOMExceptionName =

@@ -31,11 +31,18 @@ internal fun domExceptionTypes(): Sequence<ConversionResult> {
     ).substringAfter(DOM_EXCEPTION_NAME + "\n\n")
         .replace("unsafeCast(", "$DOM_EXCEPTION_NAME(")
 
+    // language=kotlin
     val nameBody = """
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#error_names)
+     */
     @JsUnion
     external interface $DOM_EXCEPTION_NAME :
         JsErrorName
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#error_names)
+     */
     inline fun $DOM_EXCEPTION_NAME(
         value: String,
     ): $DOM_EXCEPTION_NAME =
