@@ -2,8 +2,8 @@
 
 **BREAKING CHANGE**
 
-`fetch` return type changed from `Response` to `Resource<Response>`.
-It allows to add cancellation support to `Response` body calls like `json()`, `bytes()`, `text()` and others.
+1. `fetch` return type changed from `Response` to `Resource<Response>`.
+   It allows to add cancellation support to `Response` body calls like `json()`, `bytes()`, `text()` and others.
 
 ```kotlin
 // before
@@ -13,6 +13,20 @@ val data = fetch("./data.json") // support cancellation
 // after
 val data = fetch("./data.json") // support cancellation
     .use { it.value.json() }    // support cancellation (`close` will use `AbortController` from `fetch`)
+```
+
+2. `DOMException` name constants extracted to `DOMExceptionName` namespace
+
+```kotlin
+fun check(error: DOMException) {
+    // before
+    if (error.name == DOMException.AbortError) {
+    }
+
+    // after
+    if (error.name == DOMExceptionName.AbortError) {
+    }
+}
 ```
 
 ## 2026.3.10
@@ -97,7 +111,7 @@ useEffect {
 
 * `useEffectWithCleanup` deprecated
     * Replacement – `useEffect` with `awaitCleanup` extension
-  * Scheduled for removal in `2026.2.1`
+    * Scheduled for removal in `2026.2.1`
 * `useLayoutEffectWithCleanup` removed
     * Replacement – `useLayoutEffect` with `awaitCleanup` extension
 * `useInsertionEffectWithCleanup` removed
