@@ -73,6 +73,8 @@ private fun parseErrorName(
     val comment = """
     /**
      * $description
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#${name.lowercase()})
      */
     """.trimIndent()
 
