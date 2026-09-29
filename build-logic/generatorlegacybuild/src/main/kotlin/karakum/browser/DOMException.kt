@@ -5,6 +5,7 @@ import karakum.common.UnionConstant
 
 internal const val DOM_EXCEPTION = "DOMException"
 internal const val DOM_EXCEPTION_NAME = "DOMExceptionName"
+internal const val DOM_EXCEPTION_TYPE = "DOMExceptionType"
 
 internal fun domExceptionTypes(): Sequence<ConversionResult> {
     val errorData = mdnContent("api/domexception/index.md")
@@ -50,10 +51,35 @@ internal fun domExceptionTypes(): Sequence<ConversionResult> {
     $nameExtensions
     """.trimIndent()
 
+    val types = errorData.joinToString("\n\n") { (name, comment) ->
+        """
+        $comment
+        sealed /* marker */
+        interface $name :
+            $DOM_EXCEPTION_TYPE
+        """.trimIndent()
+    }
+
+    // language=kotlin
+    val typeBody = """
+    /**
+     * [MDN Reference]([MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#error_names))
+     */
+    sealed /* marker */
+    interface $DOM_EXCEPTION_TYPE {
+        $types
+    }
+    """.trimIndent()
+
     return sequenceOf(
         ConversionResult(
             name = DOM_EXCEPTION_NAME,
             body = nameBody,
+            pkg = "web.errors",
+        ),
+        ConversionResult(
+            name = DOM_EXCEPTION_TYPE,
+            body = typeBody,
             pkg = "web.errors",
         ),
     )
