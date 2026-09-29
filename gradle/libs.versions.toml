@@ -1,6 +1,6 @@
 [versions]
 coroutines = "1.11.0"
-dokka = "2.2.0"
+dokka = "2.3.0-Beta"
 karakum = "1.0.0-alpha.112"
 kfc = "19.16.0"
 kotlin = "2.4.20"
