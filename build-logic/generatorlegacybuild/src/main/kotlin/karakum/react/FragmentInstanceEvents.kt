@@ -102,6 +102,7 @@ private val TARGET_MAP = mapOf(
     setOf("Element", "HTMLElement", "HTMLMediaElement", "HTMLSourceElement", "HTMLTrackElement") to "Element",
     setOf("HTMLButtonElement", "HTMLInputElement", "HTMLSelectElement", "HTMLTextAreaElement") to "HTMLElement",
     setOf("HTMLPermissionElement", "HTMLGeolocationElement") to "HTMLElement",
+    setOf("HTMLInstallElement", "HTMLGeolocationElement") to "HTMLElement",
     setOf("HTMLMicrophoneElement", "HTMLCameraElement") to "HTMLElement",
     setOf("Element", "HTMLInputElement", "HTMLTextAreaElement") to "Element",
     setOf("Element", "HTMLElement", "HTMLTrackElement") to "Element",
