@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
+import cesium.core.Cartesian3
+import cesium.core.Color
+
 /**
  * <div class="notice">
  * A cloud is created and its initial properties are set by calling [CloudCollection.add].

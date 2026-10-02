@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
+import cesium.core.Ellipsoid
 import kotlinx.js.JsPlainObject
 
 /**

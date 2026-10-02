@@ -5,7 +5,7 @@
 package cesium.engine
 
 /**
- * An enum for controling how [CustomShader] handles translucency compared with the original
+ * An enum for controlling how [CustomShader] handles translucency compared with the original
  * primitive.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CustomShaderTranslucencyMode">Online Documentation</a>
  */

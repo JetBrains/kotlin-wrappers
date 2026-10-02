@@ -4,8 +4,8 @@
 
 package cesium.widgets
 
-import cesium.engine.Clock
-import cesium.engine.JulianDate
+import cesium.core.Clock
+import cesium.core.JulianDate
 import web.dom.Element
 
 /**

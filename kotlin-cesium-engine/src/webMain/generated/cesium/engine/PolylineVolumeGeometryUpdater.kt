@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.GeometryInstance
+import cesium.core.JulianDate
+
 /**
  * A [GeometryUpdater] for polyline volumes.
  * Clients do not normally create this class directly, but instead rely on [DataSourceDisplay].

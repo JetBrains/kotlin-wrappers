@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Ellipsoid
+import cesium.core.Event
 import js.promise.Promise
 import js.typedarrays.TypedArray
 import js.void.Void

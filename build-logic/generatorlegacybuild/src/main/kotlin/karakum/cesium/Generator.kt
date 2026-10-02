@@ -6,15 +6,23 @@ import karakum.common.writeCode
 import java.io.File
 
 internal fun generateKotlinDeclarations(
+    coreDefinitionsFile: File,
     engineDefinitionsFile: File,
     widgetsDefinitionsFile: File,
     sourceDir: File,
 ) {
     generate(
+        declarations = parseDeclarations(coreDefinitionsFile)
+            .plus(DefaultEvent),
+        pkg = "cesium.core",
+        sourceDir = sourceDir.resolve("cesium/core"),
+    )
+
+    generate(
         declarations = parseDeclarations(engineDefinitionsFile)
-            .plus(DefaultEvent)
             .plus(CameraOrientation),
         pkg = "cesium.engine",
+        defaultImports = "import cesium.core.*",
         sourceDir = sourceDir.resolve("cesium/engine"),
     )
 
@@ -23,7 +31,7 @@ internal fun generateKotlinDeclarations(
             .filter { it.name != "ContextOptions" }
             .filter { it.name != "WebGLOptions" },
         pkg = "cesium.widgets",
-        defaultImports = "import cesium.engine.*",
+        defaultImports = "import cesium.core.*\nimport cesium.engine.*",
         sourceDir = sourceDir.resolve("cesium/widgets"),
     )
 }
@@ -70,7 +78,7 @@ private fun hasRuntimeDeclarations(code: String): Boolean {
         return false
 
     if ("\nsealed external interface " in code)
-        return "companion object" in code
+        return "companion object" in code && "@JsValue(" !in code
 
     if (code.count("\nexternal ") == code.count("\nexternal interface"))
         return "companion object" in code
@@ -101,4 +109,3 @@ private fun toCommonBody(
             "@JsAsync(optional = true)\n",
             "@JsAsync(optional = true)\n@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\n",
         )
-

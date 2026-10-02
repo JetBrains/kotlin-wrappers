@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.*
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
@@ -474,7 +475,7 @@ open external class Cesium3DTileset(
 
     /**
      * Controls how edges from the
-     * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+     * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility)
      * glTF extension are rendered relative to surface geometry. Tile content
      * primitives that do not declare the extension are unaffected.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#edgeDisplayMode">Online Documentation</a>
@@ -870,6 +871,14 @@ open external class Cesium3DTileset(
     var vectorKeepDecodedPositions: Boolean
 
     /**
+     * Determines how vector primitives in the tileset are blended with the scene.
+     * Must be [BlendOption.OPAQUE] or [BlendOption.TRANSLUCENT];
+     * [BlendOption.OPAQUE_AND_TRANSLUCENT] is not supported.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#vectorBlendOption">Online Documentation</a>
+     */
+    var vectorBlendOption: BlendOption
+
+    /**
      * Determines whether the credits of the tileset will be displayed on the screen
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#showCreditsOnScreen">Online Documentation</a>
      */
@@ -1057,6 +1066,8 @@ open external class Cesium3DTileset(
      *   Default value - `false`
      * @property [vectorKeepDecodedPositions] Whether vector tiles should keep decoded positions in memory. This is used with [Cesium3DTileFeature.getPolylinePositions].
      *   Default value - `false`
+     * @property [vectorBlendOption] Determines how vector primitives in the tileset are blended with the scene. Must be [BlendOption.OPAQUE] or [BlendOption.TRANSLUCENT]; [BlendOption.OPAQUE_AND_TRANSLUCENT] is not supported.
+     *   Default value - [BlendOption.TRANSLUCENT]
      * @property [featureIdLabel] Label of the feature ID set to use for picking and styling. For EXT_mesh_features, this is the feature ID's label property, or "featureId_N" (where N is the index in the featureIds array) when not specified. EXT_feature_metadata did not have a label field, so such feature ID sets are always labeled "featureId_N" where N is the index in the list of all feature Ids, where feature ID attributes are listed before feature ID textures. If featureIdLabel is an integer N, it is converted to the string "featureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
      *   Default value - `"featureId_0"`
      * @property [instanceFeatureIdLabel] Label of the instance feature ID set used for picking and styling. If instanceFeatureIdLabel is set to an integer N, it is converted to the string "instanceFeatureId_N" automatically. If both per-primitive and per-instance feature IDs are present, the instance feature IDs take priority.
@@ -1082,7 +1093,7 @@ open external class Cesium3DTileset(
      *   Default value - `false`
      * @property [debugWireframe] For debugging only. When true, render's each tile's content as a wireframe.
      *   Default value - `false`
-     * @property [edgeDisplayMode] Controls how edges from the [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479) glTF extension are rendered relative to surface geometry.
+     * @property [edgeDisplayMode] Controls how edges from the [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility) glTF extension are rendered relative to surface geometry.
      *   Default value - [EdgeDisplayMode.SURFACES_ONLY]
      * @property [debugShowBoundingVolume] For debugging only. When true, renders the bounding volume for each tile.
      *   Default value - `false`
@@ -1148,6 +1159,7 @@ open external class Cesium3DTileset(
         val outlineColor: Color?
         val vectorClassificationOnly: Boolean?
         val vectorKeepDecodedPositions: Boolean?
+        val vectorBlendOption: BlendOption?
         val featureIdLabel: String?
         val instanceFeatureIdLabel: String?
         val showCreditsOnScreen: Boolean?

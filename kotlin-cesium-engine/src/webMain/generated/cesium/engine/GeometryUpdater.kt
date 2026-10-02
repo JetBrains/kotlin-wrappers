@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Color
+import cesium.core.DistanceDisplayCondition
+import cesium.core.GeometryInstance
+import cesium.core.JulianDate
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 

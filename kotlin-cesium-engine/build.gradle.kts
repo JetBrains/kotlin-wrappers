@@ -6,6 +6,7 @@ kotlin {
     sourceSets.webMain.dependencies {
         api(projects.kotlinJs)
         api(projects.kotlinBrowser)
+        api(projects.kotlinCesiumCore)
 
         npm(jspkg.cesium.engine)
     }

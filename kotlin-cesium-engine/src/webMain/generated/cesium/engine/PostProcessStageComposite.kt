@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 

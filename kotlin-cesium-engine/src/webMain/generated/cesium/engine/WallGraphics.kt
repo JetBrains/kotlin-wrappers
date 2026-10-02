@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Color
+import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
+
 /**
  * Describes a two dimensional wall defined as a line strip and optional maximum and minimum heights.
  * The wall conforms to the curvature of the globe and can be placed along the surface or at altitude.

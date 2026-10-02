@@ -39,21 +39,20 @@ internal class SimpleType(
     }
 
     override fun toCode(): String {
-        val modifier = if (hasParent) "" else "external "
         val link = if (hasParent) {
             DocLink(parent, this)
         } else {
             DocLink(this)
         }
 
-        var declaration = typeDeclaration(source.body, false)
+        var declaration = typeDeclaration(source.body, top = !hasParent)
         if (longName != name) {
             declaration = declaration.replaceFirst(name, longName)
         }
 
         return source.doc(link)
             .let { if (it.isNotEmpty()) "$it\n" else "" } +
-                modifier + declaration
+                declaration
     }
 
     override fun equals(other: Any?): Boolean =

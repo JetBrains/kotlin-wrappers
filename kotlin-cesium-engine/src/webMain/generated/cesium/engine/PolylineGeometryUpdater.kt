@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.*
+
 /**
  * A [GeometryUpdater] for polylines.
  * Clients do not normally create this class directly, but instead rely on [DataSourceDisplay].

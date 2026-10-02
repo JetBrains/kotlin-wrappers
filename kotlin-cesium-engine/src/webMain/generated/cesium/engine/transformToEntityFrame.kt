@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.JulianDate
+
 /**
  * Transforms a path entity's position into the local frame of the reference entity.
  * If the reference entity has an orientation, uses that orientation to define the local frame.

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.Ellipsoid
+import cesium.core.Rectangle
 import js.array.ReadonlyArray
 import js.promise.Promise
 import kotlinx.js.JsPlainObject

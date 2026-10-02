@@ -2,6 +2,7 @@
 
 package cesium.engine
 
+import cesium.core.Color
 import kotlinx.js.JsPlainObject
 
 /**

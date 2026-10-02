@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.GeometryInstance
+import cesium.core.PolylineGeometry
+import cesium.core.VertexFormat
 import kotlinx.js.JsPlainObject
 
 /**

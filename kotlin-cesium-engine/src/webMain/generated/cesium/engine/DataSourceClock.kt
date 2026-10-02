@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.*
+
 /**
  * Represents desired clock settings for a particular [DataSource].  These settings may be applied
  * to the [Clock] when the DataSource is loaded.

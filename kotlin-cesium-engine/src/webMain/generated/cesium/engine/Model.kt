@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.*
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
@@ -22,7 +23,7 @@ import seskar.js.JsAsync
  * - [EXT_mesh_features](https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_mesh_features)
  * - [EXT_mesh_gpu_instancing](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_gpu_instancing)
  * - [EXT_mesh_primitive_restart](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_restart)
- * - [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+ * - [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility)
  *   (edges are hidden by default; set [EdgeDisplayMode] via
  *   [Model.edgeDisplayMode] or [Cesium3DTileset.edgeDisplayMode] to display them)
  * - [EXT_meshopt_compression](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_meshopt_compression)
@@ -218,7 +219,7 @@ private constructor() {
 
     /**
      * Controls how edges from the
-     * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+     * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility)
      * glTF extension are rendered relative to surface geometry. Primitives that
      * do not declare the extension are unaffected by this setting.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#edgeDisplayMode">Online Documentation</a>
@@ -608,7 +609,7 @@ private constructor() {
          *   Default value - [ColorBlendMode.HIGHLIGHT]
          * @property [colorBlendAmount] Value used to determine the color strength when the `colorBlendMode` is `MIX`. A value of 0.0 results in the model's rendered color while a value of 1.0 results in a solid color, with any value in-between resulting in a mix of the two.
          *   Default value - `0.5`
-         * @property [edgeDisplayMode] Controls how edges from the [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479) extension are rendered relative to surface geometry.
+         * @property [edgeDisplayMode] Controls how edges from the [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility) extension are rendered relative to surface geometry.
          *   Default value - [EdgeDisplayMode.SURFACES_ONLY]
          * @property [silhouetteColor] The silhouette color. If more than 256 models have silhouettes enabled, there is a small chance that overlapping models will have minor artifacts.
          *   Default value - [Color.RED]

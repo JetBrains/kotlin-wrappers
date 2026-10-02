@@ -4,7 +4,6 @@ package cesium.engine
 
 import kotlinx.js.JsPlainObject
 
-
 @JsPlainObject
 external interface EXTMeshPolygonExtension {
     val count: Double

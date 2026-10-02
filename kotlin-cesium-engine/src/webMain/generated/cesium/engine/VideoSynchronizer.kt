@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Clock
+import cesium.core.JulianDate
 import web.html.HTMLVideoElement
 
 /**

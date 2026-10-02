@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Geometry
+import cesium.core.Quaternion
+import cesium.core.VertexFormat
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import kotlinx.js.JsPlainObject

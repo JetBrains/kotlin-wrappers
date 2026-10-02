@@ -3,6 +3,8 @@ package karakum.cesium
 import java.io.File
 
 private val RECORD = Regex("""\{\n\s+\[key\:\sstring\]\:\s(\w+)\;\n\s+\}""")
+private val IMPORT = Regex("""^import \{[^}]+} from "[^"]+";\n""", RegexOption.MULTILINE)
+private val RE_EXPORT = Regex("""^export \{[^}]+};\n""", RegexOption.MULTILINE)
 
 private const val TS_FUNCTION = "(...params: any[]) => any"
 
@@ -153,10 +155,11 @@ private fun readDeclarations(
     definitionsFile: File,
 ): List<Declaration> =
     definitionsFile.readText()
-        .substringAfter("""declare module "@cesium/engine" {""")
-        .substringAfter("""declare module "@cesium/widgets" {""")
+        .substringAfter("""declare module "@cesium/${definitionsFile.parentFile.name}" {""")
         .substringBefore("\n\n\n}")
         .substringBefore("\n\n\n\n\n  /**")
+        .replace(IMPORT, "")
+        .replace(RE_EXPORT, "")
         .replace("($TS_FUNCTION)", JS_FUNCTION)
         .replace(TS_FUNCTION, JS_FUNCTION)
         .replace("* /**", "*")

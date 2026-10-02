@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.DeveloperError
+
 /**
  * A collection of primitives.  This is most often used with [Scene.primitives],
  * but `PrimitiveCollection` is also a primitive itself so collections can
@@ -83,10 +86,10 @@ open external class PrimitiveCollection {
      * @return The primitive added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#add">Online Documentation</a>
      */
-    fun add(
-        primitive: JsAny,
+    fun <T> add(
+        primitive: T,
         index: Int? = definedExternally,
-    ): JsAny
+    ): T
 
     /**
      * Removes a primitive from the collection.

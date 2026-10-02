@@ -4,7 +4,7 @@
 
 package cesium.widgets
 
-import cesium.engine.Clock
+import cesium.core.Clock
 import web.dom.Element
 
 /**

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.DeveloperError
 import js.array.ReadonlyArray
 import js.promise.Promise
 import seskar.js.JsAsync

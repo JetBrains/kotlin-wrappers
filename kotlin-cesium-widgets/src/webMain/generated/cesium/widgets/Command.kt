@@ -4,7 +4,7 @@
 
 package cesium.widgets
 
-import cesium.engine.DefaultEvent
+import cesium.core.DefaultEvent
 
 /**
  * A Command is a function with an extra `canExecute` observable property to determine

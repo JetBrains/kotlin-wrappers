@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.*
+
 /**
  * A [Property] that produces [TranslationRotationScale] data.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NodeTransformationProperty.html">Online Documentation</a>

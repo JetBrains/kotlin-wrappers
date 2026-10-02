@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.*
+
 /**
  * <div class="notice">
  * A point is created and its initial properties are set by calling [PointPrimitiveCollection.add]. Do not call the constructor directly.

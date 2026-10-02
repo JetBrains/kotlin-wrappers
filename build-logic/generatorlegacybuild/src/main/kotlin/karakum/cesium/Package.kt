@@ -22,6 +22,7 @@ import js.typedarrays.Uint8Array
 import js.void.Void
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
+import seskar.js.JsValue
 import web.blob.Blob
 import web.canvas.CanvasImageSource
 import web.dom.Document

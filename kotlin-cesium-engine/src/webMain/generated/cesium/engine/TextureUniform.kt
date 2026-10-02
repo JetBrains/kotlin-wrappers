@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.PixelDatatype
+import cesium.core.PixelFormat
 import js.typedarrays.Uint8Array
 import kotlinx.js.JsPlainObject
 

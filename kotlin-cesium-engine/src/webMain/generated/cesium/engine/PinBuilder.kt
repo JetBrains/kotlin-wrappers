@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Color
 import js.promise.PromiseResult
 import web.html.HTMLCanvasElement
 

@@ -2,5 +2,4 @@
 
 package cesium.engine
 
-
 typealias Destroyable = JsAny /* really `any` */

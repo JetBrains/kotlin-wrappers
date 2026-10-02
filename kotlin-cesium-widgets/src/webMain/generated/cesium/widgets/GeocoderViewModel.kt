@@ -4,7 +4,7 @@
 
 package cesium.widgets
 
-import cesium.engine.DefaultEvent
+import cesium.core.DefaultEvent
 import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray

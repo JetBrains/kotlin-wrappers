@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * A visualizer for polylines represented by [Primitive] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVisualizer.html">Online Documentation</a>
