@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * <div class="notice">
  * Create animations by calling [ModelAnimationCollection.add]. Do not call the constructor directly.

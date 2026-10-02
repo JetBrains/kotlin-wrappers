@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * Defines the interface for visualizers. Visualizers are plug-ins to
  * [DataSourceDisplay] that render data associated with

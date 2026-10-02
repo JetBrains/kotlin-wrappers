@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DeveloperError
+import cesium.core.Ellipsoid
+
 /**
  * An atmosphere drawn around the limb of the provided ellipsoid. Based on
  * [Display of The Earth Taking Into Account Atmospheric Scattering](http://nishitalab.org/user/nis/cdrom/sig93_nis.pdf).

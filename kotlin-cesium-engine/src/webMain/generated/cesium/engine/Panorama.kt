@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Matrix4
+
 /**
  * Displays panorama imagery in a scene. This type describes an interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Panorama.html">Online Documentation</a>

@@ -9,7 +9,8 @@ actions-http-client = "^4.0.1"
 actions-io = "^3.0.2"
 actions-tool-cache = "^4.0.0"
 ajv = "^8.20.0"
-cesium-engine = "^26.3.0"
+cesium-core = "^0.1.0"
+cesium-engine = "^26.4.0"
 cesium-widgets = "^16.2.0"
 csstype = "^3.2.3"
 electron = "^42.3.0"
@@ -93,6 +94,8 @@ actions-io = { group = "npm", name = "@actions/io", version.ref = "actions-io" }
 actions-toolCache = { group = "npm", name = "@actions/tool-cache", version.ref = "actions-tool-cache" }
 # https://npmx.dev/package/ajv
 ajv = { group = "npm", name = "ajv", version.ref = "ajv" }
+# https://npmx.dev/package/@cesium/core
+cesium-core = { group = "npm", name = "@cesium/core", version.ref = "cesium-core" }
 # https://npmx.dev/package/@cesium/engine
 cesium-engine = { group = "npm", name = "@cesium/engine", version.ref = "cesium-engine" }
 # https://npmx.dev/package/@cesium/widgets

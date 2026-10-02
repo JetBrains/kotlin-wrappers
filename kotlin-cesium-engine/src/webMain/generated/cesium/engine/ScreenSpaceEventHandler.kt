@@ -4,8 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
+import cesium.core.DeveloperError
 import kotlinx.js.JsPlainObject
-import web.html.HTMLCanvasElement
+import web.html.HTMLElement
 
 /**
  * Handles user input events. Custom functions can be added to be executed on
@@ -18,7 +20,7 @@ import web.html.HTMLCanvasElement
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html">Online Documentation</a>
  */
 open external class ScreenSpaceEventHandler(
-    element: HTMLCanvasElement? = definedExternally,
+    element: HTMLElement? = definedExternally,
 ) {
     /**
      * Set a function to be executed on an input event.

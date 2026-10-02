@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Ellipsoid
+import cesium.core.Rectangle
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync

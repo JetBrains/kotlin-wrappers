@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.JulianDate
+
 /**
  * Contains functions for finding the Cartesian coordinates of the sun and the moon in the
  * Earth-centered inertial frame.

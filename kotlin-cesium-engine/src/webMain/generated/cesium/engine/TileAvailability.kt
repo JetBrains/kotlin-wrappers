@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartographic
+import cesium.core.Rectangle
+
 /**
  * Reports the availability of tiles in a [TilingScheme].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileAvailability.html">Online Documentation</a>

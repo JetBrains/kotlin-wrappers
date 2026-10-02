@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Color
 import js.array.ReadonlyArray
 import js.typedarrays.Float64Array
 

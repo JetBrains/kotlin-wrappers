@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.*
 import kotlinx.js.JsPlainObject
 
 /**
@@ -574,11 +575,11 @@ open external class Camera(
      * determined from the offset, the heading will be north.
      * ```
      * // 1. Using a cartesian offset
-     * const transform = Transforms.eastNorthUpToFixedFrame(Cartesian3.fromDegrees(-98.0, 40.0));
+     * const transform = FixedFrameTransforms.eastNorthUpToFixedFrame(Cartesian3.fromDegrees(-98.0, 40.0));
      * viewer.camera.lookAtTransform(transform, new Cartesian3(0.0, -4790000.0, 3930000.0));
      *
      * // 2. Using a HeadingPitchRange offset
-     * const transform = Transforms.eastNorthUpToFixedFrame(Cartesian3.fromDegrees(-72.0, 40.0));
+     * const transform = FixedFrameTransforms.eastNorthUpToFixedFrame(Cartesian3.fromDegrees(-72.0, 40.0));
      * const heading = Math.toRadians(50.0);
      * const pitch = Math.toRadians(-20.0);
      * const range = 5000.0;

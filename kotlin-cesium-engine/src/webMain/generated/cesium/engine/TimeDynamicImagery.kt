@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Clock
+import cesium.core.TimeInterval
+import cesium.core.TimeIntervalCollection
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync

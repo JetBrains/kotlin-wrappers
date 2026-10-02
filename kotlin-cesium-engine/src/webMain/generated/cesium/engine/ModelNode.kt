@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Matrix4
+
 /**
  * <div class="notice">
  * Use [Model.getNode] to get a node from a loaded model. Do not call the constructor directly.

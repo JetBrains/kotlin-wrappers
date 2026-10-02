@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+import cesium.core.ReferenceFrame
+
 /**
  * The interface for all [Property] objects that define a world
  * location as a [Cartesian3] with an associated [ReferenceFrame].

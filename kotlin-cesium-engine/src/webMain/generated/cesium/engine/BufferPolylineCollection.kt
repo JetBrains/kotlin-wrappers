@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.ComponentDatatype
+import cesium.core.Matrix4
+import js.typedarrays.TypedArray
 import kotlinx.js.JsPlainObject
 
 /**
@@ -45,10 +49,13 @@ open external class BufferPolylineCollection(
      * @property [allowPicking] When `true`, primitives are pickable with [Scene.pick]. When `false`, memory and initialization cost are lower.
      *   Default value - `false`
      * @property [boundingVolume] Bounding volume, in world space, for the collection.
+     * @property [blendOption] Determines how primitives in the collection are blended with the scene. Must be [BlendOption.OPAQUE] or [BlendOption.TRANSLUCENT]; [BlendOption.OPAQUE_AND_TRANSLUCENT] is not supported.
+     *   Default value - [BlendOption.TRANSLUCENT]
      * @property [widthUnits] Unit of polyline widths in this collection:
      *   `"pixels"` on the screen, or `"meters"` in world space. A clamped
      *   [HeightReference] measures those meters on the ellipsoid surface, so elevation and terrain
-     *   slope stretch the drawn width.
+     *   slope stretch the drawn width. Widths in meters have an upper limit to reduce discontinuities
+     *   across tile seams.
      *   Default value - `"pixels"`
      */
     @JsPlainObject
@@ -86,4 +93,19 @@ open external class BufferPolylineCollection(
         options: BufferPolylineOptions,
         result: BufferPolyline,
     ): BufferPolyline
+
+    /**
+     * Updates vertex positions over the specified range of primitives. For
+     * position-only updates to many primitives, `setPositions()` is more
+     * efficient than updating each primitive individually.
+     *
+     * Argument `positions` must contain the same total number of vertices as the
+     * target primitive range; vertices cannot be added/removed by this method.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolylineCollection.html#setPositions">Online Documentation</a>
+     */
+    override fun setPositions(
+        positions: TypedArray<*, *, *, *>,
+        primitiveOffset: Double,
+        primitiveCount: Double,
+    )
 }

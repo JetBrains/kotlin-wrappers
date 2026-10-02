@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
+import cesium.core.Matrix4
+
 /**
  * Draws the axes of a reference frame defined by a matrix that transforms to world
  * coordinates, i.e., Earth's WGS84 coordinates.  The most prominent example is

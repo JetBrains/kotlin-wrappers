@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
+import cesium.core.Color
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [MaterialProperty] that maps to grid [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridMaterialProperty.html">Online Documentation</a>

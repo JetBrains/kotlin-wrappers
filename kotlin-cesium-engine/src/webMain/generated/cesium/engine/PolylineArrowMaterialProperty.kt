@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Color
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [MaterialProperty] that maps to PolylineArrow [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineArrowMaterialProperty.html">Online Documentation</a>

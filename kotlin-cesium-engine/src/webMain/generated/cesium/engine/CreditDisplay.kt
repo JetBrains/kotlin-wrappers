@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
 import web.html.HTMLElement
 
 /**

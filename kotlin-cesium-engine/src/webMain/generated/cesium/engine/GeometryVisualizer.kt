@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * A general purpose visualizer for geometry represented by [Primitive] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryVisualizer.html">Online Documentation</a>

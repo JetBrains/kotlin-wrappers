@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Color
+
 /**
  * A directional light source that originates from the Sun.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SunLight.html">Online Documentation</a>

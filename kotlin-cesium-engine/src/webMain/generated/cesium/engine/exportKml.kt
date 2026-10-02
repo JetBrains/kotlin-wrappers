@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Ellipsoid
+import cesium.core.JulianDate
+import cesium.core.TimeInterval
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
+import cesium.core.Matrix4
+
 /**
  * A renderable collection of polylines.
  *

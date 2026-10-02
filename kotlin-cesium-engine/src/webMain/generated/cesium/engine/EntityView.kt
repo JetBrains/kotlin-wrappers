@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.Cartesian3
+import cesium.core.Ellipsoid
+import cesium.core.JulianDate
+
 /**
  * A utility object for tracking an entity with the camera.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityView.html">Online Documentation</a>

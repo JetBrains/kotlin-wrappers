@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Color
+import cesium.core.DeveloperError
+import cesium.core.Event
+import cesium.core.Rectangle
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 

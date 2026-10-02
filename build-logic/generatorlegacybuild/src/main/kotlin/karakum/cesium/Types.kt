@@ -1,5 +1,7 @@
 package karakum.cesium
 
+import karakum.common.JsUnionConverter
+
 private const val IMAGERY_LAYER_CONSTRUCTOR_OPTIONS = "ImageryLayer.ConstructorOptions"
 
 internal fun isTypeAlias(
@@ -15,6 +17,9 @@ internal fun typeDeclaration(
 ): String {
     val (name, body) = source.split(" = ")
     return when {
+        body.startsWith("\"")
+            -> JsUnionConverter.unionBody(name, body.split(" | ").map { it.removeSurrounding("\"") })
+
         body.startsWith("(")
             -> "typealias ${applyCallbackFix(name)} = ${typeBody(body)}"
 

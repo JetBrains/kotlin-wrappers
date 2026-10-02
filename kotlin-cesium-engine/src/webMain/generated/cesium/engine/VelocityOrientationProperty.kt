@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.Ellipsoid
+import cesium.core.JulianDate
+import cesium.core.Quaternion
+
 /**
  * A [Property] which evaluates to a [Quaternion] rotation
  * based on the velocity of the provided [PositionProperty].

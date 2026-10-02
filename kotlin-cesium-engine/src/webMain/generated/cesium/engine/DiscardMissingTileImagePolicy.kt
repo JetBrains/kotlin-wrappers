@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.html.HTMLImageElement

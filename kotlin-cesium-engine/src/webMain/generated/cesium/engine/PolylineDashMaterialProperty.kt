@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Color
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [MaterialProperty] that maps to polyline dash [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineDashMaterialProperty.html">Online Documentation</a>

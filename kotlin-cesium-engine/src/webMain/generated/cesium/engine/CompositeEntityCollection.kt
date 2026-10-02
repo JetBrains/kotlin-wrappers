@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.TimeInterval
 import js.array.ReadonlyArray
 
 /**

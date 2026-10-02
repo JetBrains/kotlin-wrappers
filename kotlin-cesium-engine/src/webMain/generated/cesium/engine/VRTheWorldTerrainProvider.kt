@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.Ellipsoid
 import js.promise.Promise
 import js.void.Void
 import kotlinx.js.JsPlainObject

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.*
+
 /**
  * The globe rendered in the scene, including its terrain ([Globe.terrainProvider])
  * and imagery layers ([Globe.imageryLayers]).  Access the globe using [Scene.globe].

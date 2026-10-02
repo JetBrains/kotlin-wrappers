@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * The interface for all [Property] objects that represent [Material] uniforms.
  * This type defines an interface and cannot be instantiated directly.

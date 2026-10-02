@@ -4,8 +4,8 @@
 
 package cesium.widgets
 
-import cesium.engine.DefaultEvent
-import cesium.engine.Event
+import cesium.core.DefaultEvent
+import cesium.core.Event
 
 /**
  * The view model for [InfoBox].

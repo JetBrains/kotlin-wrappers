@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [Property] whose value is lazily evaluated by a callback function.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackProperty.html">Online Documentation</a>

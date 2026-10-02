@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.HeadingPitchRoll
+
 /**
  * Representation of <Camera> from KML
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlCamera.html">Online Documentation</a>

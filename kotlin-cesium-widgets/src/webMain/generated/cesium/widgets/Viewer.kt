@@ -4,6 +4,7 @@
 
 package cesium.widgets
 
+import cesium.core.*
 import cesium.engine.*
 import js.array.ReadonlyArray
 import js.promise.Promise

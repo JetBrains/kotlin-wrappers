@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [DataSource] implementation which can be used to manually manage a group of entities.
  * ```

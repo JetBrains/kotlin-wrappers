@@ -2,6 +2,7 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
 import kotlinx.js.JsPlainObject
 
 /**

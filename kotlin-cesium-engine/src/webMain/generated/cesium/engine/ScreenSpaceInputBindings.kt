@@ -7,7 +7,6 @@ package cesium.engine
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
-
 external object ScreenSpaceInputBindings {
     /**
      * @property [button] The mouse button used for drag start/stop.
