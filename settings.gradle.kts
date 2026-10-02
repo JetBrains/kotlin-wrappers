@@ -86,6 +86,9 @@ includeKarakum("kotlin-browser")
 includeKarakum("kotlin-cesium")
 
 // Kotlin/JS: CesiumJS wrappers
+include("kotlin-cesium-core")
+
+// Kotlin/JS: CesiumJS wrappers
 include("kotlin-cesium-engine")
 
 // Kotlin/JS: CesiumJS wrappers
