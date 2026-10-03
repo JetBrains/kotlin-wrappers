@@ -7,7 +7,7 @@ internal fun withSuspendExtensions(
 ): Sequence<String> {
     val source = original
         .splitToSequence("\n")
-        .dropWhile { it.startsWith("@JsThrows(") }
+        .dropWhile { it.startsWith("@JsThrows(") || it.startsWith("@JsThrows.") }
         .joinToString("\n")
 
     val match = ASYNC_FUNCTION_REGEX.find(source)

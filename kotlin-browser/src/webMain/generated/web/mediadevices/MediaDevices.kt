@@ -48,7 +48,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsThrows(NotReadableError::class)
-    @JsThrows(OverconstrainedError::class)
+    @JsThrows.Typed(OverconstrainedError::class)
     fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
     /**
@@ -69,7 +69,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsThrows(NotReadableError::class)
-    @JsThrows(OverconstrainedError::class)
+    @JsThrows.Typed(OverconstrainedError::class)
     @JsThrows(SecurityError::class)
     fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
@@ -93,7 +93,7 @@ suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInf
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
 @JsThrows(NotReadableError::class)
-@JsThrows(OverconstrainedError::class)
+@JsThrows.Typed(OverconstrainedError::class)
 suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
     return getDisplayMediaAsync().await()
 }
@@ -108,7 +108,7 @@ suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
 @JsThrows(NotReadableError::class)
-@JsThrows(OverconstrainedError::class)
+@JsThrows.Typed(OverconstrainedError::class)
 suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
     return getDisplayMediaAsync(
         options = options,
@@ -125,7 +125,7 @@ suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptio
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
 @JsThrows(NotReadableError::class)
-@JsThrows(OverconstrainedError::class)
+@JsThrows.Typed(OverconstrainedError::class)
 @JsThrows(SecurityError::class)
 suspend inline fun MediaDevices.getUserMedia(): MediaStream {
     return getUserMediaAsync().await()
@@ -141,7 +141,7 @@ suspend inline fun MediaDevices.getUserMedia(): MediaStream {
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
 @JsThrows(NotReadableError::class)
-@JsThrows(OverconstrainedError::class)
+@JsThrows.Typed(OverconstrainedError::class)
 @JsThrows(SecurityError::class)
 suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints): MediaStream {
     return getUserMediaAsync(

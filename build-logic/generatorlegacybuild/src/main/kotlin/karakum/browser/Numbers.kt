@@ -288,8 +288,17 @@ internal class TypeProvider(
             .map { if (it == "NotSupported") "NotSupportedError" else it }
             .toList()
             .ifEmpty { return null }
-            .joinToString("\n") {
-                "@JsThrows($it::class)"
+            .joinToString("\n") { name ->
+                when (name) {
+                    "GPUPipelineError",
+                    "OverconstrainedError",
+                    "QuotaExceededError",
+                    "RTCError",
+                    "WebTransportError",
+                        -> "@JsThrows.Typed($name::class)"
+
+                    else -> "@JsThrows($name::class)"
+                }
             }
     }
 

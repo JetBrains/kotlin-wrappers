@@ -306,7 +306,7 @@ open external class RTCPeerConnection(
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
-    @JsThrows(RTCError::class)
+    @JsThrows.Typed(RTCError::class)
     fun setRemoteDescriptionAsync(description: RTCSessionDescriptionInit): Promise<Void>
 
     companion object {
@@ -450,7 +450,7 @@ suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSe
 @JsThrows(InvalidAccessError::class)
 @JsThrows(InvalidStateError::class)
 @JsThrows(OperationError::class)
-@JsThrows(RTCError::class)
+@JsThrows.Typed(RTCError::class)
 suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessionDescriptionInit) {
     setRemoteDescriptionAsync(
         description = description,
