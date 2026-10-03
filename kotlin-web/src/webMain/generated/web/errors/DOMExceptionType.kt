@@ -161,15 +161,6 @@ interface DOMExceptionType {
         DOMExceptionType
 
     /**
-     * The quota has been exceeded
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#quotaexceedederror)
-     */
-    sealed /* marker */
-    interface QuotaExceededError :
-        DOMExceptionType
-
-    /**
      * The operation timed out
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException#timeouterror)

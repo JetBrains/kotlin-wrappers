@@ -5,6 +5,9 @@ package web.payment
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.AbortError
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -85,6 +88,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
      */
     @JsName("complete")
+    @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
     fun completeAsync(result: PaymentComplete = definedExternally): Promise<Void>
 
     /**
@@ -108,6 +113,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
 suspend inline fun PaymentResponse.complete() {
     completeAsync().await()
 }
@@ -117,6 +124,8 @@ suspend inline fun PaymentResponse.complete() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
 suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
     completeAsync(
         result = result,

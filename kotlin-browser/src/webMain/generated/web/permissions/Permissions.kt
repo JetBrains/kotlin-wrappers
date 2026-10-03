@@ -4,6 +4,8 @@ package web.permissions
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 
 /**
  * The **`Permissions`** interface of the Permissions API provides the core Permission API functionality, such as methods for querying and revoking permissions
@@ -18,6 +20,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
      */
     @JsName("query")
+    @JsThrows(InvalidStateError::class)
     fun queryAsync(permissionDesc: PermissionDescriptor): Promise<PermissionStatus>
 }
 
@@ -26,6 +29,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun Permissions.query(permissionDesc: PermissionDescriptor): PermissionStatus {
     return queryAsync(
         permissionDesc = permissionDesc,

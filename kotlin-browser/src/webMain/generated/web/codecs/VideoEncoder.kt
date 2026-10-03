@@ -6,6 +6,8 @@ import js.closeable.JsCloseable
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -70,6 +72,7 @@ open external class VideoEncoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
      */
     @JsName("flush")
+    @JsThrows(InvalidStateError::class)
     fun flushAsync(): Promise<Void>
 
     /**
@@ -95,6 +98,7 @@ open external class VideoEncoder(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun VideoEncoder.flush() {
     flushAsync().await()
 }

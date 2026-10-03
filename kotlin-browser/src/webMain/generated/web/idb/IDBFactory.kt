@@ -6,6 +6,9 @@ import js.array.ReadonlyArray
 import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.DOMExceptionType.UnknownError
+import web.errors.JsThrows
 
 /**
  * The **`IDBFactory`** interface of the IndexedDB API lets applications asynchronously access the indexed databases. The object that implements the interface is window.indexedDB. You open — that is, create and access — and delete a database with this object, and not directly with IDBFactory.
@@ -30,6 +33,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
      */
     @JsName("databases")
+    @JsThrows(SecurityError::class)
+    @JsThrows(UnknownError::class)
     fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
     /**
@@ -55,6 +60,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
  */
+@JsThrows(SecurityError::class)
+@JsThrows(UnknownError::class)
 suspend inline fun IDBFactory.databases(): ReadonlyArray<IDBDatabaseInfo> {
     return databasesAsync().await()
 }

@@ -8,6 +8,8 @@ import js.promise.Promise
 import js.promise.await
 import js.void.Void
 import web.crypto.Algorithm
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -159,6 +161,8 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
      */
     @JsName("addIceCandidate")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun addIceCandidateAsync(candidate: RTCIceCandidateInit? = definedExternally): Promise<Void>
 
     /**
@@ -222,6 +226,9 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
      */
     @JsName("createOffer")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotReadableError::class)
+    @JsThrows(OperationError::class)
     fun createOfferAsync(options: RTCOfferOptions = definedExternally): Promise<RTCSessionDescriptionInit>
 
     /**
@@ -251,6 +258,7 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
      */
     @JsName("getStats")
+    @JsThrows(InvalidAccessError::class)
     fun getStatsAsync(selector: MediaStreamTrack? = definedExternally): Promise<RTCStatsReport>
 
     /**
@@ -295,6 +303,10 @@ open external class RTCPeerConnection(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
      */
     @JsName("setRemoteDescription")
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
+    @JsThrows(RTCError::class)
     fun setRemoteDescriptionAsync(description: RTCSessionDescriptionInit): Promise<Void>
 
     companion object {
@@ -304,6 +316,7 @@ open external class RTCPeerConnection(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
         @JsName("generateCertificate")
+        @JsThrows(NotSupportedError::class)
         fun generateCertificateAsync(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
 
         /**
@@ -312,6 +325,7 @@ open external class RTCPeerConnection(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
         @JsName("generateCertificate")
+        @JsThrows(NotSupportedError::class)
         fun generateCertificateAsync(keygenAlgorithm: String): Promise<RTCCertificate>
     }
 }
@@ -321,6 +335,8 @@ open external class RTCPeerConnection(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCPeerConnection.addIceCandidate() {
     addIceCandidateAsync().await()
 }
@@ -330,6 +346,8 @@ suspend inline fun RTCPeerConnection.addIceCandidate() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateInit?) {
     addIceCandidateAsync(
         candidate = candidate,
@@ -361,6 +379,9 @@ suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RT
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotReadableError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
     return createOfferAsync().await()
 }
@@ -370,6 +391,9 @@ suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotReadableError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCSessionDescriptionInit {
     return createOfferAsync(
         options = options,
@@ -381,6 +405,7 @@ suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCS
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
  */
+@JsThrows(InvalidAccessError::class)
 suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
     return getStatsAsync().await()
 }
@@ -390,6 +415,7 @@ suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
  */
+@JsThrows(InvalidAccessError::class)
 suspend inline fun RTCPeerConnection.getStats(selector: MediaStreamTrack?): RTCStatsReport {
     return getStatsAsync(
         selector = selector,
@@ -421,6 +447,10 @@ suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSe
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
  */
+@JsThrows(InvalidAccessError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
+@JsThrows(RTCError::class)
 suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessionDescriptionInit) {
     setRemoteDescriptionAsync(
         description = description,
@@ -432,6 +462,7 @@ suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
  */
+@JsThrows(NotSupportedError::class)
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate {
     return generateCertificateAsync(
         keygenAlgorithm = keygenAlgorithm,
@@ -443,6 +474,7 @@ suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorit
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
  */
+@JsThrows(NotSupportedError::class)
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: String): RTCCertificate {
     return generateCertificateAsync(
         keygenAlgorithm = keygenAlgorithm,

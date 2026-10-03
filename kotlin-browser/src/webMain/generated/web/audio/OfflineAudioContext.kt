@@ -5,6 +5,8 @@ package web.audio
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 
@@ -40,6 +42,7 @@ open external class OfflineAudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
     @JsName("resume")
+    @JsThrows(InvalidStateError::class)
     fun resumeAsync(): Promise<Void>
 
     /**
@@ -56,6 +59,7 @@ open external class OfflineAudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
     @JsName("suspend")
+    @JsThrows(InvalidStateError::class)
     fun suspendAsync(suspendTime: Double): Promise<Void>
 }
 
@@ -64,6 +68,7 @@ open external class OfflineAudioContext(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun OfflineAudioContext.resume() {
     resumeAsync().await()
 }
@@ -82,6 +87,7 @@ suspend inline fun OfflineAudioContext.startRendering(): AudioBuffer {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun OfflineAudioContext.suspend(suspendTime: Double) {
     suspendAsync(
         suspendTime = suspendTime,

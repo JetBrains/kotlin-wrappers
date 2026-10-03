@@ -6,6 +6,8 @@ import js.promise.Promise
 import js.promise.await
 import web.dom.Node
 import web.dom.TagName
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 import web.html.HTMLElement
 
 /**
@@ -59,6 +61,7 @@ open external class CustomElementRegistry {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
      */
     @JsName("whenDefined")
+    @JsThrows(SyntaxError::class)
     fun <T : HTMLElement> whenDefinedAsync(name: TagName<T>): Promise<CustomElementConstructor<T>>
 }
 
@@ -67,6 +70,7 @@ open external class CustomElementRegistry {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
  */
+@JsThrows(SyntaxError::class)
 suspend inline fun <T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T> {
     return whenDefinedAsync(
         name = name,

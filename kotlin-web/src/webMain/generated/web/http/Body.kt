@@ -13,6 +13,8 @@ import js.promise.await
 import js.string.JsStrings.toKotlinString
 import js.typedarrays.Uint8Array
 import web.blob.Blob
+import web.errors.DOMExceptionType.AbortError
+import web.errors.JsThrows
 import web.form.FormData
 import web.streams.ReadableStream
 
@@ -41,6 +43,7 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
      */
     @JsName("arrayBuffer")
+    @JsThrows(AbortError::class)
     fun arrayBufferAsync(): Promise<ArrayBuffer> = definedExternally
 
     /**
@@ -49,6 +52,7 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
      */
     @JsName("blob")
+    @JsThrows(AbortError::class)
     fun blobAsync(): Promise<Blob> = definedExternally
 
     /**
@@ -57,6 +61,7 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
      */
     @JsName("bytes")
+    @JsThrows(AbortError::class)
     fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>> = definedExternally
 
     /**
@@ -65,6 +70,7 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
     @JsName("formData")
+    @JsThrows(AbortError::class)
     fun formDataAsync(): Promise<FormData> = definedExternally
 
     /**
@@ -73,6 +79,7 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
      */
     @JsName("json")
+    @JsThrows(AbortError::class)
     fun jsonAsync(): Promise<*> = definedExternally
 
     /**
@@ -81,6 +88,7 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
      */
     @JsName("text")
+    @JsThrows(AbortError::class)
     fun textAsync(): Promise<JsString> = definedExternally
 
     /**
@@ -94,6 +102,7 @@ external interface Body {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
  */
+@JsThrows(AbortError::class)
 suspend inline fun Body.arrayBuffer(): ArrayBuffer {
     return arrayBufferAsync().await()
 }
@@ -103,6 +112,7 @@ suspend inline fun Body.arrayBuffer(): ArrayBuffer {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
  */
+@JsThrows(AbortError::class)
 suspend inline fun Body.blob(): Blob {
     return blobAsync().await()
 }
@@ -112,6 +122,7 @@ suspend inline fun Body.blob(): Blob {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
  */
+@JsThrows(AbortError::class)
 suspend inline fun Body.bytes(): Uint8Array<ArrayBuffer> {
     return bytesAsync().await()
 }
@@ -121,6 +132,7 @@ suspend inline fun Body.bytes(): Uint8Array<ArrayBuffer> {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
  */
+@JsThrows(AbortError::class)
 suspend inline fun Body.formData(): FormData {
     return formDataAsync().await()
 }
@@ -130,6 +142,7 @@ suspend inline fun Body.formData(): FormData {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
  */
+@JsThrows(AbortError::class)
 suspend inline fun Body.json(): JsAny? {
     return jsonAsync().await()
 }
@@ -139,6 +152,7 @@ suspend inline fun Body.json(): JsAny? {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
  */
+@JsThrows(AbortError::class)
 suspend inline fun Body.text(): String {
     return textAsync().await().toKotlinString()
 }

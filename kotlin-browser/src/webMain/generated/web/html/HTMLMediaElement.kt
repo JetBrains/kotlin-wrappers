@@ -5,6 +5,8 @@ package web.html
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -300,6 +302,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
     @JsName("play")
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotSupportedError::class)
     fun playAsync(): Promise<Void>
 
     /**
@@ -309,6 +313,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
     @JsName("setMediaKeys")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun setMediaKeysAsync(mediaKeys: MediaKeys?): Promise<Void>
 
     /**
@@ -318,6 +324,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
     @JsName("setSinkId")
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(AbortError::class)
     fun setSinkIdAsync(sinkId: String): Promise<Void>
 
     companion object {
@@ -344,6 +353,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun HTMLMediaElement.play() {
     playAsync().await()
 }
@@ -354,6 +365,8 @@ suspend inline fun HTMLMediaElement.play() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
     setMediaKeysAsync(
         mediaKeys = mediaKeys,
@@ -366,6 +379,9 @@ suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(AbortError::class)
 suspend inline fun HTMLMediaElement.setSinkId(sinkId: String) {
     setSinkIdAsync(
         sinkId = sinkId,

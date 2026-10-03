@@ -4,6 +4,8 @@ package web.midi
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -85,6 +87,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
      */
     @JsName("open")
+    @JsThrows(NotAllowedError::class)
     fun openAsync(): Promise<MIDIPort>
 }
 
@@ -102,6 +105,7 @@ suspend inline fun MIDIPort.close(): MIDIPort {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun MIDIPort.open(): MIDIPort {
     return openAsync().await()
 }

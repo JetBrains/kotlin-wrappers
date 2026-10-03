@@ -7,6 +7,8 @@ import js.promise.Promise
 import js.promise.await
 import js.void.Void
 import web.credentials.Credential
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 
 /**
  * The **`PublicKeyCredential`** interface provides information about a public key / private key pair, which is a credential for logging in to a service using an un-phishable and data-breach resistant asymmetric key pair instead of a password. It inherits from Credential, and is part of the Web Authentication API extension to the Credential Management API.
@@ -59,6 +61,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
          */
         @JsName("getClientCapabilities")
+        @JsThrows(SecurityError::class)
         fun getClientCapabilitiesAsync(): Promise<PublicKeyCredentialClientCapabilities>
 
         /**
@@ -67,6 +70,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */
         @JsName("isConditionalMediationAvailable")
+        @JsThrows(SecurityError::class)
         fun isConditionalMediationAvailableAsync(): Promise<JsBoolean>
 
         /**
@@ -75,6 +79,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
          */
         @JsName("isUserVerifyingPlatformAuthenticatorAvailable")
+        @JsThrows(SecurityError::class)
         fun isUserVerifyingPlatformAuthenticatorAvailableAsync(): Promise<JsBoolean>
 
         /**
@@ -97,6 +102,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static)
          */
         @JsName("signalAllAcceptedCredentials")
+        @JsThrows(SecurityError::class)
         fun signalAllAcceptedCredentialsAsync(options: AllAcceptedCredentialsOptions): Promise<Void>
 
         /**
@@ -105,6 +111,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static)
          */
         @JsName("signalCurrentUserDetails")
+        @JsThrows(SecurityError::class)
         fun signalCurrentUserDetailsAsync(options: CurrentUserDetailsOptions): Promise<Void>
 
         /**
@@ -113,6 +120,7 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static)
          */
         @JsName("signalUnknownCredential")
+        @JsThrows(SecurityError::class)
         fun signalUnknownCredentialAsync(options: UnknownCredentialOptions): Promise<Void>
     }
 }
@@ -122,6 +130,7 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): PublicKeyCredentialClientCapabilities {
     return getClientCapabilitiesAsync().await()
 }
@@ -131,6 +140,7 @@ suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): Public
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable(): Boolean {
     return isConditionalMediationAvailableAsync().await().toBoolean()
 }
@@ -140,6 +150,7 @@ suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun PublicKeyCredential.Companion.isUserVerifyingPlatformAuthenticatorAvailable(): Boolean {
     return isUserVerifyingPlatformAuthenticatorAvailableAsync().await().toBoolean()
 }
@@ -149,6 +160,7 @@ suspend inline fun PublicKeyCredential.Companion.isUserVerifyingPlatformAuthenti
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun PublicKeyCredential.Companion.signalAllAcceptedCredentials(options: AllAcceptedCredentialsOptions) {
     signalAllAcceptedCredentialsAsync(
         options = options,
@@ -160,6 +172,7 @@ suspend inline fun PublicKeyCredential.Companion.signalAllAcceptedCredentials(op
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun PublicKeyCredential.Companion.signalCurrentUserDetails(options: CurrentUserDetailsOptions) {
     signalCurrentUserDetailsAsync(
         options = options,
@@ -171,6 +184,7 @@ suspend inline fun PublicKeyCredential.Companion.signalCurrentUserDetails(option
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun PublicKeyCredential.Companion.signalUnknownCredential(options: UnknownCredentialOptions) {
     signalUnknownCredentialAsync(
         options = options,

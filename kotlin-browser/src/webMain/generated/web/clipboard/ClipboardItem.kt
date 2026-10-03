@@ -7,6 +7,8 @@ import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.promise.await
 import web.blob.Blob
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 
 /**
  * The **`ClipboardItem`** interface of the Clipboard API represents a single item format, used when reading or writing clipboard data using Clipboard.read() and Clipboard.write() respectively.
@@ -38,6 +40,7 @@ open external class ClipboardItem(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
      */
     @JsName("getType")
+    @JsThrows(NotFoundError::class)
     fun getTypeAsync(type: String): Promise<Blob>
 
     companion object {
@@ -55,6 +58,7 @@ open external class ClipboardItem(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
  */
+@JsThrows(NotFoundError::class)
 suspend inline fun ClipboardItem.getType(type: String): Blob {
     return getTypeAsync(
         type = type,

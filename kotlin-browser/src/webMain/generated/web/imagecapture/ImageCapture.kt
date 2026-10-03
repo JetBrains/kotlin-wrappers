@@ -5,6 +5,8 @@ package web.imagecapture
 import js.promise.Promise
 import js.promise.await
 import web.blob.Blob
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.images.ImageBitmap
 import web.mediastreams.MediaStreamTrack
 
@@ -30,6 +32,8 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
      */
     @JsName("getPhotoCapabilities")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun getPhotoCapabilitiesAsync(): Promise<PhotoCapabilities>
 
     /**
@@ -38,6 +42,8 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
      */
     @JsName("getPhotoSettings")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
     /**
@@ -46,6 +52,8 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
      */
     @JsName("grabFrame")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(UnknownError::class)
     fun grabFrameAsync(): Promise<ImageBitmap>
 
     /**
@@ -54,6 +62,8 @@ open external class ImageCapture(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
      */
     @JsName("takePhoto")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(UnknownError::class)
     fun takePhotoAsync(photoSettings: PhotoSettings = definedExternally): Promise<Blob>
 }
 
@@ -62,6 +72,8 @@ open external class ImageCapture(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
 suspend inline fun ImageCapture.getPhotoCapabilities(): PhotoCapabilities {
     return getPhotoCapabilitiesAsync().await()
 }
@@ -71,6 +83,8 @@ suspend inline fun ImageCapture.getPhotoCapabilities(): PhotoCapabilities {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
 suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
     return getPhotoSettingsAsync().await()
 }
@@ -80,6 +94,8 @@ suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(UnknownError::class)
 suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
     return grabFrameAsync().await()
 }
@@ -89,6 +105,8 @@ suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(UnknownError::class)
 suspend inline fun ImageCapture.takePhoto(): Blob {
     return takePhotoAsync().await()
 }
@@ -98,6 +116,8 @@ suspend inline fun ImageCapture.takePhoto(): Blob {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(UnknownError::class)
 suspend inline fun ImageCapture.takePhoto(photoSettings: PhotoSettings): Blob {
     return takePhotoAsync(
         photoSettings = photoSettings,

@@ -4,6 +4,8 @@ package web.cssom
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`CSSStyleSheet`** interface represents a single CSS stylesheet, and lets you inspect and modify the list of rules contained in the stylesheet. It inherits properties and methods from its parent, StyleSheet.
@@ -50,6 +52,7 @@ open external class CSSStyleSheet(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
     @JsName("replace")
+    @JsThrows(NotAllowedError::class)
     fun replaceAsync(text: String): Promise<CSSStyleSheet>
 
     /**
@@ -65,6 +68,7 @@ open external class CSSStyleSheet(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun CSSStyleSheet.replace(text: String): CSSStyleSheet {
     return replaceAsync(
         text = text,

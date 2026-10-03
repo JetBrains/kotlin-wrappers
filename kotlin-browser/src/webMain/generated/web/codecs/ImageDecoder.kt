@@ -6,6 +6,8 @@ import js.closeable.JsCloseable
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 
 /**
  * The **`ImageDecoder`** interface of the WebCodecs API provides a way to unpack and decode encoded image data.
@@ -57,6 +59,7 @@ open external class ImageDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
      */
     @JsName("decode")
+    @JsThrows(InvalidStateError::class)
     fun decodeAsync(options: ImageDecodeOptions = definedExternally): Promise<ImageDecodeResult>
 
     /**
@@ -82,6 +85,7 @@ open external class ImageDecoder(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
     return decodeAsync().await()
 }
@@ -91,6 +95,7 @@ suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecodeResult {
     return decodeAsync(
         options = options,

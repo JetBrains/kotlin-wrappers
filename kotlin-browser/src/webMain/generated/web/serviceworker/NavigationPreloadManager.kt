@@ -5,6 +5,8 @@ package web.serviceworker
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 
 /**
  * The **`NavigationPreloadManager`** interface of the Service Worker API provides methods for managing the preloading of resources in parallel with service worker bootup.
@@ -20,6 +22,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
      */
     @JsName("disable")
+    @JsThrows(InvalidStateError::class)
     fun disableAsync(): Promise<Void>
 
     /**
@@ -28,6 +31,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
      */
     @JsName("enable")
+    @JsThrows(InvalidStateError::class)
     fun enableAsync(): Promise<Void>
 
     /**
@@ -36,6 +40,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
      */
     @JsName("getState")
+    @JsThrows(InvalidStateError::class)
     fun getStateAsync(): Promise<NavigationPreloadState>
 
     /**
@@ -44,6 +49,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
      */
     @JsName("setHeaderValue")
+    @JsThrows(InvalidStateError::class)
     fun setHeaderValueAsync(value: String): Promise<Void>
 }
 
@@ -52,6 +58,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun NavigationPreloadManager.disable() {
     disableAsync().await()
 }
@@ -61,6 +68,7 @@ suspend inline fun NavigationPreloadManager.disable() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun NavigationPreloadManager.enable() {
     enableAsync().await()
 }
@@ -70,6 +78,7 @@ suspend inline fun NavigationPreloadManager.enable() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun NavigationPreloadManager.getState(): NavigationPreloadState {
     return getStateAsync().await()
 }
@@ -79,6 +88,7 @@ suspend inline fun NavigationPreloadManager.getState(): NavigationPreloadState {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun NavigationPreloadManager.setHeaderValue(value: String) {
     setHeaderValueAsync(
         value = value,

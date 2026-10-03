@@ -19,6 +19,8 @@ import web.cssom.ClassName
 import web.cssom.StylePropertyMapReadOnly
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -457,6 +459,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
      */
     @JsName("requestFullscreen")
+    @JsThrows(NotSupportedError::class)
     fun requestFullscreenAsync(options: FullscreenOptions = definedExternally): Promise<Void>
 
     /**
@@ -603,6 +606,7 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
+@JsThrows(NotSupportedError::class)
 suspend inline fun Element.requestFullscreen() {
     requestFullscreenAsync().await()
 }
@@ -612,6 +616,7 @@ suspend inline fun Element.requestFullscreen() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
+@JsThrows(NotSupportedError::class)
 suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
     requestFullscreenAsync(
         options = options,

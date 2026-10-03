@@ -5,6 +5,8 @@ package web.rtc
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
 
@@ -64,6 +66,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
      */
     @JsName("replaceTrack")
+    @JsThrows(InvalidModificationError::class)
+    @JsThrows(InvalidStateError::class)
     fun replaceTrackAsync(withTrack: MediaStreamTrack?): Promise<Void>
 
     /**
@@ -72,6 +76,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
      */
     @JsName("setParameters")
+    @JsThrows(InvalidModificationError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun setParametersAsync(
         parameters: RTCRtpSendParameters,
         setParameterOptions: RTCSetParameterOptions = definedExternally,
@@ -108,6 +115,8 @@ suspend inline fun RTCRtpSender.getStats(): RTCStatsReport {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
  */
+@JsThrows(InvalidModificationError::class)
+@JsThrows(InvalidStateError::class)
 suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
     replaceTrackAsync(
         withTrack = withTrack,
@@ -119,6 +128,9 @@ suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
  */
+@JsThrows(InvalidModificationError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
 ) {
@@ -132,6 +144,9 @@ suspend inline fun RTCRtpSender.setParameters(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
  */
+@JsThrows(InvalidModificationError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
     setParameterOptions: RTCSetParameterOptions,

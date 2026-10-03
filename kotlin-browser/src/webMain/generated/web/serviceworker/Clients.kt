@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidAccessError
+import web.errors.JsThrows
 import web.url.URL
 
 /**
@@ -45,6 +47,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
     @JsName("openWindow")
+    @JsThrows(InvalidAccessError::class)
     fun openWindowAsync(url: String): Promise<WindowClient?>
 
     /**
@@ -53,6 +56,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
     @JsName("openWindow")
+    @JsThrows(InvalidAccessError::class)
     fun openWindowAsync(url: URL): Promise<WindowClient?>
 }
 
@@ -101,6 +105,7 @@ suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): Readon
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
  */
+@JsThrows(InvalidAccessError::class)
 suspend inline fun Clients.openWindow(url: String): WindowClient? {
     return openWindowAsync(
         url = url,
@@ -112,6 +117,7 @@ suspend inline fun Clients.openWindow(url: String): WindowClient? {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
  */
+@JsThrows(InvalidAccessError::class)
 suspend inline fun Clients.openWindow(url: URL): WindowClient? {
     return openWindowAsync(
         url = url,

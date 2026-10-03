@@ -7,6 +7,8 @@ import js.promise.Promise
 import js.promise.await
 import js.serialization.Transferable
 import web.blob.Blob
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -57,6 +59,10 @@ open external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
      */
     @JsName("convertToBlob")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(EncodingError::class)
     fun convertToBlobAsync(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
     /**
@@ -82,6 +88,10 @@ open external class OffscreenCanvas(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(IndexSizeError::class)
+@JsThrows(EncodingError::class)
 suspend inline fun OffscreenCanvas.convertToBlob(): Blob {
     return convertToBlobAsync().await()
 }
@@ -91,6 +101,10 @@ suspend inline fun OffscreenCanvas.convertToBlob(): Blob {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(IndexSizeError::class)
+@JsThrows(EncodingError::class)
 suspend inline fun OffscreenCanvas.convertToBlob(options: ImageEncodeOptions): Blob {
     return convertToBlobAsync(
         options = options,

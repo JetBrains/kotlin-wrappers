@@ -5,6 +5,8 @@ package web.fonts
 import js.buffer.BufferSource
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NetworkError
+import web.errors.JsThrows
 
 /**
  * The **`FontFace`** interface of the CSS Font Loading API represents a single usable font face.
@@ -117,6 +119,7 @@ open external class FontFace(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
      */
     @JsName("load")
+    @JsThrows(NetworkError::class)
     fun loadAsync(): Promise<FontFace>
 }
 
@@ -125,6 +128,7 @@ open external class FontFace(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
  */
+@JsThrows(NetworkError::class)
 suspend inline fun FontFace.load(): FontFace {
     return loadAsync().await()
 }

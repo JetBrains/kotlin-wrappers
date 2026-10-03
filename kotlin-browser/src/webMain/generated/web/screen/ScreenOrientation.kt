@@ -5,6 +5,8 @@ package web.screen
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -43,6 +45,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
      */
     @JsName("lock")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(AbortError::class)
     fun lockAsync(orientation: OrientationLockType): Promise<Void>
 
     /**
@@ -58,6 +64,10 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(AbortError::class)
 suspend inline fun ScreenOrientation.lock(orientation: OrientationLockType) {
     lockAsync(
         orientation = orientation,

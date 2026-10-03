@@ -5,6 +5,8 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -81,6 +83,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
     @JsName("register")
+    @JsThrows(SecurityError::class)
     fun registerAsync(
         scriptURL: TrustedScriptURL,
         options: RegistrationOptions = definedExternally,
@@ -92,6 +95,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
     @JsName("register")
+    @JsThrows(SecurityError::class)
     fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
@@ -103,6 +107,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
     @JsName("register")
+    @JsThrows(SecurityError::class)
     fun registerAsync(
         scriptURL: URL,
         options: RegistrationOptions = definedExternally,
@@ -116,6 +121,7 @@ private constructor() :
     fun startMessages()
 
     @JsName("register")
+    @JsThrows(SecurityError::class)
     fun registerAsync(
         module: ServiceWorkerModule,
         options: RegistrationOptions = definedExternally,
@@ -167,6 +173,7 @@ suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<Serv
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: TrustedScriptURL,
 ): ServiceWorkerRegistration {
@@ -180,6 +187,7 @@ suspend inline fun ServiceWorkerContainer.register(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: TrustedScriptURL,
     options: RegistrationOptions,
@@ -195,6 +203,7 @@ suspend inline fun ServiceWorkerContainer.register(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
 ): ServiceWorkerRegistration {
@@ -208,6 +217,7 @@ suspend inline fun ServiceWorkerContainer.register(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
     options: RegistrationOptions,
@@ -223,6 +233,7 @@ suspend inline fun ServiceWorkerContainer.register(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
 ): ServiceWorkerRegistration {
@@ -236,6 +247,7 @@ suspend inline fun ServiceWorkerContainer.register(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
     options: RegistrationOptions,
@@ -246,6 +258,7 @@ suspend inline fun ServiceWorkerContainer.register(
     ).await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     module: ServiceWorkerModule,
 ): ServiceWorkerRegistration {
@@ -254,6 +267,7 @@ suspend inline fun ServiceWorkerContainer.register(
     ).await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun ServiceWorkerContainer.register(
     module: ServiceWorkerModule,
     options: RegistrationOptions,

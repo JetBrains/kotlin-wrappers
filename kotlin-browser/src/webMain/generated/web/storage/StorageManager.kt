@@ -4,6 +4,9 @@ package web.storage
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.DOMExceptionType.UnknownError
+import web.errors.JsThrows
 import web.fs.FileSystemDirectoryHandle
 
 /**
@@ -28,6 +31,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory)
      */
     @JsName("getDirectory")
+    @JsThrows(SecurityError::class)
+    @JsThrows(UnknownError::class)
     fun getDirectoryAsync(): Promise<FileSystemDirectoryHandle>
 
     /**
@@ -61,6 +66,8 @@ suspend inline fun StorageManager.estimate(): StorageEstimate {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory)
  */
+@JsThrows(SecurityError::class)
+@JsThrows(UnknownError::class)
 suspend inline fun StorageManager.getDirectory(): FileSystemDirectoryHandle {
     return getDirectoryAsync().await()
 }

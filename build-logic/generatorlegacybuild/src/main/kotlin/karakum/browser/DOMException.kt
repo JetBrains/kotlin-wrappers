@@ -51,7 +51,9 @@ internal fun domExceptionTypes(): Sequence<ConversionResult> {
     $nameExtensions
     """.trimIndent()
 
-    val types = errorData.joinToString("\n\n") { (name, comment) ->
+    val types = errorData
+        .filter { (name) -> name != "QuotaExceededError" }
+        .joinToString("\n\n") { (name, comment) ->
         """
         $comment
         sealed /* marker */

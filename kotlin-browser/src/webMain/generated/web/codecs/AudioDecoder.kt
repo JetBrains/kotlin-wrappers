@@ -5,6 +5,8 @@ package web.codecs
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -65,6 +67,7 @@ open external class AudioDecoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/flush)
      */
     @JsName("flush")
+    @JsThrows(InvalidStateError::class)
     fun flushAsync(): Promise<Void>
 
     /**
@@ -90,6 +93,7 @@ open external class AudioDecoder(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/flush)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun AudioDecoder.flush() {
     flushAsync().await()
 }

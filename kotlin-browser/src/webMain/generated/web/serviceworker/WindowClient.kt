@@ -5,6 +5,8 @@ package web.serviceworker
 import js.promise.Promise
 import js.promise.await
 import web.dom.DocumentVisibilityState
+import web.errors.DOMExceptionType.InvalidAccessError
+import web.errors.JsThrows
 import web.url.URL
 
 /**
@@ -35,6 +37,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
     @JsName("focus")
+    @JsThrows(InvalidAccessError::class)
     fun focusAsync(): Promise<WindowClient>
 
     /**
@@ -59,6 +62,7 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
  */
+@JsThrows(InvalidAccessError::class)
 suspend inline fun WindowClient.focus(): WindowClient {
     return focusAsync().await()
 }

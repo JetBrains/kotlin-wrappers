@@ -5,6 +5,8 @@ package web.cookie
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -29,9 +31,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
      */
     @JsName("delete")
+    @JsThrows(SecurityError::class)
     fun deleteAsync(name: String): Promise<Void>
 
     @JsName("delete")
+    @JsThrows(SecurityError::class)
     fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
 
     /**
@@ -40,9 +44,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
      */
     @JsName("get")
+    @JsThrows(SecurityError::class)
     fun getAsync(name: String): Promise<CookieListItem?>
 
     @JsName("get")
+    @JsThrows(SecurityError::class)
     fun getAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieListItem?>
 
     /**
@@ -51,9 +57,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
      */
     @JsName("getAll")
+    @JsThrows(SecurityError::class)
     fun getAllAsync(name: String): Promise<CookieList>
 
     @JsName("getAll")
+    @JsThrows(SecurityError::class)
     fun getAllAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieList>
 
     /**
@@ -62,12 +70,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
      */
     @JsName("set")
+    @JsThrows(SecurityError::class)
     fun setAsync(
         name: String,
         value: String,
     ): Promise<Void>
 
     @JsName("set")
+    @JsThrows(SecurityError::class)
     fun setAsync(options: CookieInit): Promise<Void>
 }
 
@@ -76,12 +86,14 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.delete(name: String) {
     deleteAsync(
         name = name,
     ).await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
     deleteAsync(
         options = options,
@@ -93,16 +105,19 @@ suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.get(name: String): CookieListItem? {
     return getAsync(
         name = name,
     ).await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.get(): CookieListItem? {
     return getAsync().await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.get(options: CookieStoreGetOptions): CookieListItem? {
     return getAsync(
         options = options,
@@ -114,16 +129,19 @@ suspend inline fun CookieStore.get(options: CookieStoreGetOptions): CookieListIt
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.getAll(name: String): CookieList {
     return getAllAsync(
         name = name,
     ).await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.getAll(): CookieList {
     return getAllAsync().await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.getAll(options: CookieStoreGetOptions): CookieList {
     return getAllAsync(
         options = options,
@@ -135,6 +153,7 @@ suspend inline fun CookieStore.getAll(options: CookieStoreGetOptions): CookieLis
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.set(
     name: String,
     value: String,
@@ -145,6 +164,7 @@ suspend inline fun CookieStore.set(
     ).await()
 }
 
+@JsThrows(SecurityError::class)
 suspend inline fun CookieStore.set(options: CookieInit) {
     setAsync(
         options = options,

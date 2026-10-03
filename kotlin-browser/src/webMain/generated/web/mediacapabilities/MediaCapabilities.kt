@@ -4,6 +4,9 @@ package web.mediacapabilities
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 
 /**
  * The **`MediaCapabilities`** interface of the Media Capabilities API provides information about the decoding abilities of the device, system and browser. The API can be used to query the browser about the decoding abilities of the device based on codecs, profile, resolution, and bitrates. The information can be used to serve optimal media streams to the user and determine if playback should be smooth and power efficient.
@@ -18,6 +21,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo)
      */
     @JsName("decodingInfo")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
     fun decodingInfoAsync(configuration: MediaDecodingConfiguration): Promise<MediaCapabilitiesDecodingInfo>
 
     /**
@@ -34,6 +39,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun MediaCapabilities.decodingInfo(configuration: MediaDecodingConfiguration): MediaCapabilitiesDecodingInfo {
     return decodingInfoAsync(
         configuration = configuration,

@@ -6,6 +6,8 @@ import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 import web.streams.WritableStream
 
 /**
@@ -23,6 +25,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
      */
     @JsName("seek")
+    @JsThrows(NotAllowedError::class)
     fun seekAsync(position: UInt53): Promise<Void>
 
     /**
@@ -31,6 +34,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
     @JsName("truncate")
+    @JsThrows(NotAllowedError::class)
     fun truncateAsync(size: UInt53): Promise<Void>
 
     /**
@@ -39,6 +43,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
      */
     @JsName("write")
+    @JsThrows(NotAllowedError::class)
     fun writeAsync(data: FileSystemWriteChunkType): Promise<Void>
 }
 
@@ -47,6 +52,7 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
     seekAsync(
         position = position,
@@ -58,6 +64,7 @@ suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
     truncateAsync(
         size = size,
@@ -69,6 +76,7 @@ suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun FileSystemWritableFileStream.write(data: FileSystemWriteChunkType) {
     writeAsync(
         data = data,

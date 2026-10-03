@@ -268,7 +268,7 @@ internal class TypeProvider(
             .substringBefore("\n##")
             .ifEmpty { return null }
 
-        val domExceptions = exceptionsContent
+        return exceptionsContent
             .splitToSequence("\n- ")
             // special case?
             .drop(1)
@@ -278,13 +278,19 @@ internal class TypeProvider(
             .map { it.ifEmpty { null } }
             .requireNoNulls()
             .map { it.removeSurrounding("`") }
+            // deprecated
+            .filter { it != "TypeMismatchError" }
+            // TEMP for `GPUAdapter`
+            .filter { it != "TypeError" }
+            // TEMP for `DocumentPictureInPicture`
+            .filter { it != "RangeError" }
+            // TEMP for `SubtleCrypto`
+            .map { if (it == "NotSupported") "NotSupportedError" else it }
             .toList()
             .ifEmpty { return null }
             .joinToString("\n") {
-                "// $it"
+                "@JsThrows($it::class)"
             }
-
-        return domExceptions
     }
 
     fun getParameterType(name: String): String =

@@ -5,6 +5,8 @@ package web.transport
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.streams.ReadableStream
 import web.streams.WritableStream
 import web.url.URL
@@ -87,6 +89,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
      */
     @JsName("createBidirectionalStream")
+    @JsThrows(InvalidStateError::class)
     fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
 
     /**
@@ -95,6 +98,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
      */
     @JsName("createUnidirectionalStream")
+    @JsThrows(InvalidStateError::class)
     fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
 
     /**
@@ -111,6 +115,7 @@ open external class WebTransport(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirectionalStream {
     return createBidirectionalStreamAsync().await()
 }
@@ -120,6 +125,7 @@ suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirec
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportSendStreamOptions): WebTransportBidirectionalStream {
     return createBidirectionalStreamAsync(
         options = options,
@@ -131,6 +137,7 @@ suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportS
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun WebTransport.createUnidirectionalStream(): WritableStream<*> {
     return createUnidirectionalStreamAsync().await()
 }
@@ -140,6 +147,7 @@ suspend inline fun WebTransport.createUnidirectionalStream(): WritableStream<*> 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransportSendStreamOptions): WritableStream<*> {
     return createUnidirectionalStreamAsync(
         options = options,

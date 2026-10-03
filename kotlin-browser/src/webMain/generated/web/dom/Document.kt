@@ -12,6 +12,9 @@ import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ClassName
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -484,6 +487,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
      */
     @JsName("exitPictureInPicture")
+    @JsThrows(InvalidStateError::class)
     fun exitPictureInPictureAsync(): Promise<Void>
 
     /**
@@ -549,6 +553,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
      */
     @JsName("hasStorageAccess")
+    @JsThrows(InvalidStateError::class)
     fun hasStorageAccessAsync(): Promise<JsBoolean>
 
     /**
@@ -595,6 +600,8 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
      */
     @JsName("requestStorageAccess")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
     fun requestStorageAccessAsync(): Promise<Void>
 
     /**
@@ -654,6 +661,7 @@ suspend inline fun Document.exitFullscreen() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun Document.exitPictureInPicture() {
     exitPictureInPictureAsync().await()
 }
@@ -663,6 +671,7 @@ suspend inline fun Document.exitPictureInPicture() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun Document.hasStorageAccess(): Boolean {
     return hasStorageAccessAsync().await().toBoolean()
 }
@@ -672,6 +681,8 @@ suspend inline fun Document.hasStorageAccess(): Boolean {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun Document.requestStorageAccess() {
     requestStorageAccessAsync().await()
 }

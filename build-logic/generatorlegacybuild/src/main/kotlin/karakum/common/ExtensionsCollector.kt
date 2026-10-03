@@ -21,6 +21,7 @@ interface ExtensionsCollector {
         functionSignature: String,
         parameters: String,
         returnType: String,
+        throws: String?,
         docs: String?,
     )
 
@@ -35,6 +36,7 @@ object EmptyExtensionsCollector :
         functionSignature: String,
         parameters: String,
         returnType: String,
+        throws: String?,
         docs: String?,
     ) {
         // do nothing
@@ -173,6 +175,7 @@ internal open class SuspendExtensionsCollector(
         functionSignature: String,
         parameters: String,
         returnType: String,
+        throws: String?,
         docs: String?,
     ) {
         require(returnType.isEmpty() || returnType.startsWith(":")) {
@@ -191,7 +194,6 @@ internal open class SuspendExtensionsCollector(
 
         // Generate many extensions if there are externally defined parameters
         for (parametersToSkip in externallyDefinedParametersCount downTo 0) {
-            val comment = docs?.let { "$it\n" }.orEmpty()
             val funTypeParameters = parentTypeParameters?.let { "<$it>" }.orEmpty()
             val parametersSlice = parametersList.subList(0, parametersList.size - parametersToSkip)
             val body = generateSuspendBody(
@@ -208,13 +210,19 @@ internal open class SuspendExtensionsCollector(
                 newParameters = newParameters.withNoInline(parameterNames)
             }
 
-
             val modifiers = if (isInline) "inline" else ""
-            val extension = """
-            ${comment}suspend $modifiers $functionSignature $funTypeParameters $fullParentName$functionName$newParameters$returnType {
+            val declaration = """
+            suspend $modifiers $functionSignature $funTypeParameters $fullParentName$functionName$newParameters$returnType {
                 $body
             }
             """.trimIndent()
+
+            val extension = listOfNotNull(
+                docs,
+                throws,
+                declaration,
+            ).joinToString("\n")
+
             extensions.add(extension)
         }
     }

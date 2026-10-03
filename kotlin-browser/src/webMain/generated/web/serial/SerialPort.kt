@@ -5,6 +5,9 @@ package web.serial
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NetworkError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -81,6 +84,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals)
      */
     @JsName("getSignals")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun getSignalsAsync(): Promise<SerialInputSignals>
 
     /**
@@ -89,6 +94,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open)
      */
     @JsName("open")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun openAsync(options: SerialOptions): Promise<Void>
 
     /**
@@ -97,6 +104,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals)
      */
     @JsName("setSignals")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun setSignalsAsync(signals: SerialOutputSignals = definedExternally): Promise<Void>
 }
 
@@ -123,6 +132,8 @@ suspend inline fun SerialPort.forget() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NetworkError::class)
 suspend inline fun SerialPort.getSignals(): SerialInputSignals {
     return getSignalsAsync().await()
 }
@@ -132,6 +143,8 @@ suspend inline fun SerialPort.getSignals(): SerialInputSignals {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NetworkError::class)
 suspend inline fun SerialPort.open(options: SerialOptions) {
     openAsync(
         options = options,
@@ -143,6 +156,8 @@ suspend inline fun SerialPort.open(options: SerialOptions) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NetworkError::class)
 suspend inline fun SerialPort.setSignals() {
     setSignalsAsync().await()
 }
@@ -152,6 +167,8 @@ suspend inline fun SerialPort.setSignals() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NetworkError::class)
 suspend inline fun SerialPort.setSignals(signals: SerialOutputSignals) {
     setSignalsAsync(
         signals = signals,

@@ -7,6 +7,8 @@ import js.numbers.JsNumbers.toKotlinInt
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -48,6 +50,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
      */
     @JsName("cancelWatchAvailability")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
     fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
 
     /**
@@ -56,6 +60,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
      */
     @JsName("prompt")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotAllowedError::class)
     fun promptAsync(): Promise<Void>
 
     /**
@@ -64,6 +74,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
      */
     @JsName("watchAvailability")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
 }
 
@@ -72,6 +84,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun RemotePlayback.cancelWatchAvailability() {
     cancelWatchAvailabilityAsync().await()
 }
@@ -81,6 +95,8 @@ suspend inline fun RemotePlayback.cancelWatchAvailability() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
     cancelWatchAvailabilityAsync(
         id = id,
@@ -92,6 +108,12 @@ suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(OperationError::class)
+@JsThrows(InvalidAccessError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun RemotePlayback.prompt() {
     promptAsync().await()
 }
@@ -101,6 +123,8 @@ suspend inline fun RemotePlayback.prompt() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun RemotePlayback.watchAvailability(noinline callback: RemotePlaybackAvailabilityCallback): Int {
     return watchAvailabilityAsync(
         callback = callback,

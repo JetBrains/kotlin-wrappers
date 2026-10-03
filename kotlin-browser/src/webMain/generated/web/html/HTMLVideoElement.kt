@@ -6,6 +6,8 @@ import js.promise.Promise
 import js.promise.await
 import web.canvas.CanvasImageSource
 import web.dom.Node
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.gl.TexImageSource
@@ -97,6 +99,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
     @JsName("requestPictureInPicture")
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
     fun requestPictureInPictureAsync(): Promise<PictureInPictureWindow>
 
     /**
@@ -112,6 +118,10 @@ protected constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
  */
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun HTMLVideoElement.requestPictureInPicture(): PictureInPictureWindow {
     return requestPictureInPictureAsync().await()
 }

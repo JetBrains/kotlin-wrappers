@@ -11,6 +11,8 @@ import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * Available only in secure contexts.
@@ -22,18 +24,27 @@ external interface NavigatorBadge {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge)
      */
     @JsName("clearAppBadge")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(NotAllowedError::class)
     fun clearAppBadgeAsync(): Promise<Void> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
      */
     @JsName("setAppBadge")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(NotAllowedError::class)
     fun setAppBadgeAsync(contents: UInt53 = definedExternally): Promise<Void> = definedExternally
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun NavigatorBadge.clearAppBadge() {
     clearAppBadgeAsync().await()
 }
@@ -41,6 +52,9 @@ suspend inline fun NavigatorBadge.clearAppBadge() {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun NavigatorBadge.setAppBadge() {
     setAppBadgeAsync().await()
 }
@@ -48,6 +62,9 @@ suspend inline fun NavigatorBadge.setAppBadge() {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun NavigatorBadge.setAppBadge(contents: UInt53) {
     setAppBadgeAsync(
         contents = contents,

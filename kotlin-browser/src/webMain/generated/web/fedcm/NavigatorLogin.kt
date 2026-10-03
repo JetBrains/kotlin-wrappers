@@ -5,6 +5,8 @@ package web.fedcm
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 
 /**
  * The **`NavigatorLogin`** interface of the Federated Credential Management (FedCM) API defines login functionality for federated identity providers (IdPs). Specifically, it enables a federated identity provider (IdP) to set its login status when a user signs into or out of the IdP.
@@ -20,6 +22,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
      */
     @JsName("setStatus")
+    @JsThrows(SecurityError::class)
     fun setStatusAsync(status: LoginStatus): Promise<Void>
 }
 
@@ -28,6 +31,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun NavigatorLogin.setStatus(status: LoginStatus) {
     setStatusAsync(
         status = status,

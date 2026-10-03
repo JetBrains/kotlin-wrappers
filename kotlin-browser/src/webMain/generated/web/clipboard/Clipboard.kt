@@ -6,6 +6,9 @@ import js.promise.Promise
 import js.promise.await
 import js.string.JsStrings.toKotlinString
 import js.void.Void
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 import web.events.EventTarget
 
 /**
@@ -23,6 +26,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
      */
     @JsName("read")
+    @JsThrows(NotAllowedError::class)
     fun readAsync(): Promise<ClipboardItems>
 
     /**
@@ -31,6 +35,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
      */
     @JsName("readText")
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
     fun readTextAsync(): Promise<JsString>
 
     /**
@@ -39,6 +45,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
     @JsName("write")
+    @JsThrows(NotAllowedError::class)
     fun writeAsync(data: ClipboardItems): Promise<Void>
 
     /**
@@ -47,6 +54,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
      */
     @JsName("writeText")
+    @JsThrows(NotAllowedError::class)
     fun writeTextAsync(data: String): Promise<Void>
 }
 
@@ -55,6 +63,7 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun Clipboard.read(): ClipboardItems {
     return readAsync().await()
 }
@@ -64,6 +73,8 @@ suspend inline fun Clipboard.read(): ClipboardItems {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun Clipboard.readText(): String {
     return readTextAsync().await().toKotlinString()
 }
@@ -73,6 +84,7 @@ suspend inline fun Clipboard.readText(): String {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun Clipboard.write(data: ClipboardItems) {
     writeAsync(
         data = data,
@@ -84,6 +96,7 @@ suspend inline fun Clipboard.write(data: ClipboardItems) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun Clipboard.writeText(data: String) {
     writeTextAsync(
         data = data,

@@ -4,6 +4,8 @@ package web.gpu
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.OperationError
+import web.errors.JsThrows
 
 /**
  * The **`GPUAdapter`** interface of the WebGPU API represents a GPU adapter. From this you can request a GPUDevice, adapter info, features, and limits.
@@ -40,6 +42,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
      */
     @JsName("requestDevice")
+    @JsThrows(OperationError::class)
     fun requestDeviceAsync(descriptor: GPUDeviceDescriptor = definedExternally): Promise<GPUDevice>
 }
 
@@ -48,6 +51,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
  */
+@JsThrows(OperationError::class)
 suspend inline fun GPUAdapter.requestDevice(): GPUDevice {
     return requestDeviceAsync().await()
 }
@@ -57,6 +61,7 @@ suspend inline fun GPUAdapter.requestDevice(): GPUDevice {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
  */
+@JsThrows(OperationError::class)
 suspend inline fun GPUAdapter.requestDevice(descriptor: GPUDeviceDescriptor): GPUDevice {
     return requestDeviceAsync(
         descriptor = descriptor,

@@ -7,6 +7,8 @@ import js.promise.Promise
 import js.promise.await
 import js.void.Void
 import web.cookie.CookieStoreManager
+import web.errors.DOMExceptionType.DataCloneError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -93,6 +95,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
      */
     @JsName("showNotification")
+    @JsThrows(DataCloneError::class)
     fun showNotificationAsync(
         title: String,
         options: NotificationOptions = definedExternally,
@@ -140,6 +143,7 @@ suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotific
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
  */
+@JsThrows(DataCloneError::class)
 suspend inline fun ServiceWorkerRegistration.showNotification(
     title: String,
 ) {
@@ -153,6 +157,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
  */
+@JsThrows(DataCloneError::class)
 suspend inline fun ServiceWorkerRegistration.showNotification(
     title: String,
     options: NotificationOptions,

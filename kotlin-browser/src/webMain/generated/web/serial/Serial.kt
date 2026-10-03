@@ -5,6 +5,9 @@ package web.serial
 import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
@@ -24,6 +27,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/getPorts)
      */
     @JsName("getPorts")
+    @JsThrows(SecurityError::class)
     fun getPortsAsync(): Promise<ReadonlyArray<SerialPort>>
 
     /**
@@ -32,6 +36,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
      */
     @JsName("requestPort")
+    @JsThrows(SecurityError::class)
+    @JsThrows(NotFoundError::class)
     fun requestPortAsync(options: SerialPortRequestOptions = definedExternally): Promise<SerialPort>
 }
 
@@ -40,6 +46,7 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/getPorts)
  */
+@JsThrows(SecurityError::class)
 suspend inline fun Serial.getPorts(): ReadonlyArray<SerialPort> {
     return getPortsAsync().await()
 }
@@ -49,6 +56,8 @@ suspend inline fun Serial.getPorts(): ReadonlyArray<SerialPort> {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
  */
+@JsThrows(SecurityError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun Serial.requestPort(): SerialPort {
     return requestPortAsync().await()
 }
@@ -58,6 +67,8 @@ suspend inline fun Serial.requestPort(): SerialPort {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
  */
+@JsThrows(SecurityError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun Serial.requestPort(options: SerialPortRequestOptions): SerialPort {
     return requestPortAsync(
         options = options,

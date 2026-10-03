@@ -1,10 +1,15 @@
 package karakum.common
 
 internal fun withSuspendExtensions(
-    source: String,
+    original: String,
     comment: String?,
     collector: ExtensionsCollector,
 ): Sequence<String> {
+    val source = original
+        .splitToSequence("\n")
+        .dropWhile { it.startsWith("@JsThrows(") }
+        .joinToString("\n")
+
     val match = ASYNC_FUNCTION_REGEX.find(source)
         ?: return sequenceOf(source)
 
@@ -23,17 +28,27 @@ internal fun withSuspendExtensions(
 
     val suspendName = originalFunctionName.removeSuffix("Async")
     val asyncName = suspendName + "Async"
-    val jsName = if (asyncName != originalFunctionName) """@JsName("$originalFunctionName")""" else ""
+    val jsName = if (asyncName != originalFunctionName) """@JsName("$originalFunctionName")""" else null
+
+    val throws = original
+        .takeIf { it != source }
+        ?.removeSuffix(source)
+        ?.removeSuffix("\n")
 
     collector.add(
         functionName = suspendName,
         functionSignature = functionSignature,
         parameters = parameters,
         returnType = suspendReturnType,
+        throws = throws,
         docs = comment,
     )
 
-    return sequenceOf(
-        "$jsName\n$functionSignature$asyncName$parameters: Promise<$returnType>$optionality$definedExternally".trim(),
-    )
+    val declaration = listOfNotNull(
+        jsName,
+        throws,
+        "$functionSignature$asyncName$parameters: Promise<$returnType>$optionality$definedExternally",
+    ).joinToString("\n")
+
+    return sequenceOf(declaration)
 }

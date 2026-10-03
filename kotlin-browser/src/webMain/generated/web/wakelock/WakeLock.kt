@@ -4,6 +4,8 @@ package web.wakelock
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`WakeLock`** interface of the Screen Wake Lock API can be used to request a lock that prevents device screens from dimming or locking when an application needs to keep running.
@@ -19,6 +21,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
      */
     @JsName("request")
+    @JsThrows(NotAllowedError::class)
     fun requestAsync(type: WakeLockType = definedExternally): Promise<WakeLockSentinel>
 }
 
@@ -27,6 +30,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun WakeLock.request(): WakeLockSentinel {
     return requestAsync().await()
 }
@@ -36,6 +40,7 @@ suspend inline fun WakeLock.request(): WakeLockSentinel {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
+@JsThrows(NotAllowedError::class)
 suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
     return requestAsync(
         type = type,

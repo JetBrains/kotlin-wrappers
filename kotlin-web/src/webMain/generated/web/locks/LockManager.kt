@@ -4,6 +4,8 @@ package web.locks
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * The **`LockManager`** interface of the Web Locks API provides methods for requesting a new Lock object and querying for an existing Lock object. To get an instance of LockManager, call navigator.locks.
@@ -19,6 +21,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
      */
     @JsName("query")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
     fun queryAsync(): Promise<LockManagerSnapshot>
 
     /**
@@ -27,12 +31,20 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
      */
     @JsName("request")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(AbortError::class)
     fun <T : JsAny?> requestAsync(
         name: String,
         callback: LockGrantedCallback<T>,
     ): Promise<T>
 
     @JsName("request")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(AbortError::class)
     fun <T : JsAny?> requestAsync(
         name: String,
         options: LockOptions,
@@ -45,6 +57,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun LockManager.query(): LockManagerSnapshot {
     return queryAsync().await()
 }

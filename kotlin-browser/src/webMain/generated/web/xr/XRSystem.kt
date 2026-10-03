@@ -4,6 +4,8 @@ package web.xr
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -19,6 +21,9 @@ private constructor() :
      * @param options
      */
     @JsName("requestSession")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun requestSessionAsync(
         mode: XRSessionMode,
         options: XRSessionInit = definedExternally,
@@ -40,6 +45,9 @@ private constructor() :
  * @param mode
  * @param options
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun XRSystem.requestSession(
     mode: XRSessionMode,
 ): XRSession {
@@ -54,6 +62,9 @@ suspend inline fun XRSystem.requestSession(
  * @param mode
  * @param options
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun XRSystem.requestSession(
     mode: XRSessionMode,
     options: XRSessionInit,

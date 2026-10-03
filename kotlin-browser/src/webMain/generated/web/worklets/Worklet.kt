@@ -5,6 +5,9 @@ package web.worklets
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.AbortError
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 import web.url.URL
 
 /**
@@ -21,6 +24,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
     @JsName("addModule")
+    @JsThrows(AbortError::class)
+    @JsThrows(SyntaxError::class)
     fun addModuleAsync(
         moduleURL: String,
         options: WorkletOptions = definedExternally,
@@ -32,12 +37,16 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
     @JsName("addModule")
+    @JsThrows(AbortError::class)
+    @JsThrows(SyntaxError::class)
     fun addModuleAsync(
         moduleURL: URL,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
 
     @JsName("addModule")
+    @JsThrows(AbortError::class)
+    @JsThrows(SyntaxError::class)
     fun addModuleAsync(
         module: M,
         options: WorkletOptions = definedExternally,
@@ -49,6 +58,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
+@JsThrows(AbortError::class)
+@JsThrows(SyntaxError::class)
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: String,
 ) {
@@ -62,6 +73,8 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
+@JsThrows(AbortError::class)
+@JsThrows(SyntaxError::class)
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: String,
     options: WorkletOptions,
@@ -77,6 +90,8 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
+@JsThrows(AbortError::class)
+@JsThrows(SyntaxError::class)
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: URL,
 ) {
@@ -90,6 +105,8 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
+@JsThrows(AbortError::class)
+@JsThrows(SyntaxError::class)
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: URL,
     options: WorkletOptions,
@@ -100,6 +117,8 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     ).await()
 }
 
+@JsThrows(AbortError::class)
+@JsThrows(SyntaxError::class)
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     module: M,
 ) {
@@ -108,6 +127,8 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     ).await()
 }
 
+@JsThrows(AbortError::class)
+@JsThrows(SyntaxError::class)
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     module: M,
     options: WorkletOptions,

@@ -6,6 +6,9 @@ import js.buffer.BufferSource
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -73,6 +76,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
     @JsName("generateRequest")
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(InvalidStateError::class)
     fun generateRequestAsync(
         initDataType: String,
         initData: BufferSource,
@@ -117,6 +122,8 @@ suspend inline fun MediaKeySession.close() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
  */
+@JsThrows(NotSupportedError::class)
+@JsThrows(InvalidStateError::class)
 suspend inline fun MediaKeySession.generateRequest(
     initDataType: String,
     initData: BufferSource,

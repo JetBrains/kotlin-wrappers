@@ -9,6 +9,8 @@ import js.void.Void
 import web.badging.NavigatorBadge
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.experimental.ExperimentalWebApi
 import web.fedcm.NavigatorLogin
 import web.gamepad.Gamepad
@@ -179,6 +181,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
      */
     @JsName("requestMIDIAccess")
+    @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(NotAllowedError::class)
     fun requestMIDIAccessAsync(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
     /**
@@ -188,6 +194,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
      */
     @JsName("requestMediaKeySystemAccess")
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun requestMediaKeySystemAccessAsync(
         keySystem: String,
         supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
@@ -220,6 +228,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
      */
     @JsName("share")
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(AbortError::class)
+    @JsThrows(DataError::class)
     fun shareAsync(data: ShareData = definedExternally): Promise<Void>
 
     /**
@@ -259,6 +271,10 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
     return requestMIDIAccessAsync().await()
 }
@@ -269,6 +285,10 @@ suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
     return requestMIDIAccessAsync(
         options = options,
@@ -281,6 +301,8 @@ suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
  */
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun Navigator.requestMediaKeySystemAccess(
     keySystem: String,
     supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
@@ -297,6 +319,10 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(AbortError::class)
+@JsThrows(DataError::class)
 suspend inline fun Navigator.share() {
     shareAsync().await()
 }
@@ -307,6 +333,10 @@ suspend inline fun Navigator.share() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(AbortError::class)
+@JsThrows(DataError::class)
 suspend inline fun Navigator.share(data: ShareData) {
     shareAsync(
         data = data,

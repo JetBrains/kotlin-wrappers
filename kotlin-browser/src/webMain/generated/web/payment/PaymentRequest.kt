@@ -7,6 +7,8 @@ import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -56,6 +58,10 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
     @JsName("show")
+    @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
     /**
@@ -64,6 +70,10 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
     @JsName("show")
+    @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
 }
 
@@ -90,6 +100,10 @@ suspend inline fun PaymentRequest.canMakePayment(): Boolean {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun PaymentRequest.show(): PaymentResponse {
     return showAsync().await()
 }
@@ -99,6 +113,10 @@ suspend inline fun PaymentRequest.show(): PaymentResponse {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): PaymentResponse {
     return showAsync(
         detailsPromise = detailsPromise,
@@ -110,6 +128,10 @@ suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): Pa
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {
     return showAsync(
         detailsPromise = detailsPromise,

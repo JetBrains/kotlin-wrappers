@@ -8,6 +8,8 @@ import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * The **`FileSystemDirectoryHandle`** interface of the File System API provides a handle to a file system directory.
@@ -28,6 +30,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
     @JsName("getDirectoryHandle")
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
     fun getDirectoryHandleAsync(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
@@ -39,6 +43,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
     @JsName("getFileHandle")
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
     fun getFileHandleAsync(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
@@ -50,6 +56,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
     @JsName("removeEntry")
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(InvalidModificationError::class)
+    @JsThrows(NotFoundError::class)
     fun removeEntryAsync(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,
@@ -69,6 +78,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
 ): FileSystemDirectoryHandle {
@@ -82,6 +93,8 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
     options: FileSystemGetDirectoryOptions,
@@ -97,6 +110,8 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.getFileHandle(
     name: String,
 ): FileSystemFileHandle {
@@ -110,6 +125,8 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.getFileHandle(
     name: String,
     options: FileSystemGetFileOptions,
@@ -125,6 +142,9 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(InvalidModificationError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
 ) {
@@ -138,6 +158,9 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
+@JsThrows(NotAllowedError::class)
+@JsThrows(InvalidModificationError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
     options: FileSystemRemoveOptions,

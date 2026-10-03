@@ -4,6 +4,9 @@ package web.dpip
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -36,6 +39,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
      */
     @JsName("requestWindow")
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(NotAllowedError::class)
     fun requestWindowAsync(options: DocumentPictureInPictureOptions = definedExternally): Promise<Window>
 }
 
@@ -44,6 +49,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
  */
+@JsThrows(NotSupportedError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun DocumentPictureInPicture.requestWindow(): Window {
     return requestWindowAsync().await()
 }
@@ -53,6 +60,8 @@ suspend inline fun DocumentPictureInPicture.requestWindow(): Window {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
  */
+@JsThrows(NotSupportedError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun DocumentPictureInPicture.requestWindow(options: DocumentPictureInPictureOptions): Window {
     return requestWindowAsync(
         options = options,

@@ -5,12 +5,15 @@ package web.mediadevices
 import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamConstraints
 import web.mediastreams.MediaTrackSupportedConstraints
+import web.mediastreams.OverconstrainedError
 
 /**
  * The **`MediaDevices`** interface of the Media Capture and Streams API provides access to connected media input devices like cameras and microphones, as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.
@@ -40,6 +43,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
      */
     @JsName("getDisplayMedia")
+    @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotReadableError::class)
+    @JsThrows(OverconstrainedError::class)
     fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
     /**
@@ -55,6 +64,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
     @JsName("getUserMedia")
+    @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotReadableError::class)
+    @JsThrows(OverconstrainedError::class)
+    @JsThrows(SecurityError::class)
     fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
 
@@ -72,6 +88,12 @@ suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInf
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(NotReadableError::class)
+@JsThrows(OverconstrainedError::class)
 suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
     return getDisplayMediaAsync().await()
 }
@@ -81,6 +103,12 @@ suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(NotReadableError::class)
+@JsThrows(OverconstrainedError::class)
 suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
     return getDisplayMediaAsync(
         options = options,
@@ -92,6 +120,13 @@ suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(NotReadableError::class)
+@JsThrows(OverconstrainedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun MediaDevices.getUserMedia(): MediaStream {
     return getUserMediaAsync().await()
 }
@@ -101,6 +136,13 @@ suspend inline fun MediaDevices.getUserMedia(): MediaStream {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
  */
+@JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(NotReadableError::class)
+@JsThrows(OverconstrainedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints): MediaStream {
     return getUserMediaAsync(
         constraints = constraints,

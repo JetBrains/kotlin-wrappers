@@ -6,6 +6,8 @@ import js.promise.Promise
 import js.promise.await
 import js.void.Void
 import web.dom.HTMLOrSVGImageElement
+import web.errors.DOMExceptionType.EncodingError
+import web.errors.JsThrows
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import web.http.CrossOrigin
@@ -162,6 +164,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
     @JsName("decode")
+    @JsThrows(EncodingError::class)
     fun decodeAsync(): Promise<Void>
 }
 
@@ -170,6 +173,7 @@ protected constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
  */
+@JsThrows(EncodingError::class)
 suspend inline fun HTMLImageElement.decode() {
     decodeAsync().await()
 }
