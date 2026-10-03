@@ -9,7 +9,7 @@ internal object MDN {
 internal fun mdnContent(path: String): String =
     MDN.root.resolve(path).readText()
 
-private fun getApiDirectory(typeName: String): File? =
+internal fun getApiDirectory(typeName: String): File? =
     MDN.root
         .resolve("api")
         .resolve(typeName.lowercase())

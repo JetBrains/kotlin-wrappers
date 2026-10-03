@@ -263,16 +263,28 @@ internal class TypeProvider(
             .firstOrNull()
             ?: return null
 
-        val exceptions = pageContent
+        val exceptionsContent = pageContent
             .substringAfter("\n### Exceptions", "")
             .substringBefore("\n##")
             .ifEmpty { return null }
 
-        val pageContet = pageif(pageNames.none { hasMdnPage(it) }) {
-            println("NO PAGE: $parentType/$name")
-        }
+        val domExceptions = exceptionsContent
+            .splitToSequence("\n- ")
+            // special case?
+            .drop(1)
+            .filter { """{{domxref("DOMException")}}""" in it }
+            .map { it.substringBefore("\n") }
+            .map { it.substringBefore(""" {{domxref("DOMException")}}""", "") }
+            .map { it.ifEmpty { null } }
+            .requireNoNulls()
+            .map { it.removeSurrounding("`") }
+            .toList()
+            .ifEmpty { return null }
+            .joinToString("\n") {
+                "// $it"
+            }
 
-        return null
+        return domExceptions
     }
 
     fun getParameterType(name: String): String =

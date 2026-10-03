@@ -2556,8 +2556,11 @@ private fun convertFunction(
         else -> jsName = null
     }
 
+    val throwsAnnotation = typeProvider.getThrowsAnnotation(name)
+
     return listOfNotNull(
         jsName,
+        // throwsAnnotation,
         "fun $typeParameters$safeName($parameters)$result$mixinSugar",
     ).joinToString("\n")
 }
