@@ -147,6 +147,125 @@ internal class TypeProvider(
             else -> true
         }
 
+    fun getThrowsAnnotation(name: String): String? {
+        val mdnParentPage = when (parentType) {
+            "Animatable",
+                -> "Element"
+
+            "Body",
+                -> "Request"
+
+            "CanvasDrawImage",
+            "CanvasDrawPath",
+            "CanvasFillStrokeStyles",
+            "CanvasImageData",
+            "CanvasPath",
+            "CanvasPathDrawingStyles",
+            "CanvasRect",
+            "CanvasSettings",
+            "CanvasState",
+            "CanvasText",
+            "CanvasTransform",
+            "CanvasUserInterface",
+                -> "CanvasRenderingContext2D"
+
+            "ChildNode",
+                -> "Element"
+
+            "CSSStyleDeclarationBase",
+                -> "CSSStyleDeclaration"
+
+            // TEMP
+            "DigitalCredential",
+                -> return null
+
+            "DocumentOrShadowRoot",
+                -> "Document"
+
+            "GPUBindingCommandsMixin",
+            "GPUDebugCommandsMixin",
+            "GPUPipelineBase",
+            "GPURenderCommandsMixin",
+            "GPUSupportedFeatures",
+                -> return null
+
+            "HTMLCollectionBase",
+                -> "HTMLCollection"
+
+            "HTMLOrSVGOrMathMLElement",
+                -> "HTMLElement"
+
+            "NavigatorBadge",
+            "NavigatorContentUtils",
+            "NavigatorPlugins",
+                -> "Navigator"
+
+            "NonElementParentNode",
+                -> "Document"
+
+            "Origin",
+                -> return null
+
+            "ParentNode",
+                -> "Element"
+
+            "ReadableStreamGenericReader",
+                -> "ReadableStreamDefaultReader"
+
+            "WebGL2RenderingContextBase",
+            "WebGL2RenderingContextOverloads",
+                -> return null
+
+            "WebGLRenderingContextBase",
+            "WebGLRenderingContextOverloads",
+                -> return null
+
+            "XPathEvaluatorBase",
+                -> "XPathEvaluator"
+
+            "Collator",
+            "NumberFormat",
+            "DateTimeFormat",
+            "PluralRules",
+            "RelativeTimeFormat",
+            "Locale",
+            "DisplayNames",
+            "ListFormat",
+            "Segmenter",
+            "Segments",
+            "DurationFormat",
+                -> return null
+
+            "CompileError",
+            "Exception",
+            "Global",
+            "LinkError",
+            "Memory",
+            "Module",
+            "RuntimeError",
+            "Table",
+                -> return null
+
+            "AudioWorkletProcessorConstructor",
+                // TEMP
+            "XRSession",
+                -> return null
+
+            else -> parentType
+        }
+
+        val pageNames = setOf(
+            "$mdnParentPage/$name",
+            "$mdnParentPage/${name}_static",
+        )
+
+        if (pageNames.none { hasMdnPage(it) }) {
+            println("NO PAGE: $parentType/$name")
+        }
+
+        return null
+    }
+
     fun getParameterType(name: String): String =
         IDLRegistry.getParameterType(parentType, name)
 
