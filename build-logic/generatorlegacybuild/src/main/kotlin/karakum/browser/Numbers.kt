@@ -153,7 +153,7 @@ internal class TypeProvider(
                 -> "Element"
 
             "Body",
-                -> "Request"
+                -> "Response"
 
             "CanvasDrawImage",
             "CanvasDrawPath",
@@ -254,12 +254,21 @@ internal class TypeProvider(
             else -> parentType
         }
 
-        val pageNames = setOf(
+        val pageContent = sequenceOf(
             "$mdnParentPage/$name",
             "$mdnParentPage/${name}_static",
-        )
+        ).mapNotNull { getApiDirectory(it) }
+            .map { it.resolve("index.md") }
+            .map { it.readText() }
+            .firstOrNull()
+            ?: return null
 
-        if (pageNames.none { hasMdnPage(it) }) {
+        val exceptions = pageContent
+            .substringAfter("\n### Exceptions", "")
+            .substringBefore("\n##")
+            .ifEmpty { return null }
+
+        val pageContet = pageif(pageNames.none { hasMdnPage(it) }) {
             println("NO PAGE: $parentType/$name")
         }
 
