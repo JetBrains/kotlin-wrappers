@@ -7,6 +7,9 @@ import js.buffer.AllowSharedBufferSource
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.OperationError
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 
 /**
  * The **`GPUQueue`** interface of the WebGPU API controls execution of encoded commands on the GPU.
@@ -22,6 +25,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/copyExternalImageToTexture)
      */
+    @JsThrows(OperationError::class)
+    @JsThrows(SecurityError::class)
     fun copyExternalImageToTexture(
         source: GPUCopyExternalImageSourceInfo,
         destination: GPUCopyExternalImageDestInfo,
@@ -48,6 +53,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/writeBuffer)
      */
+    @JsThrows(OperationError::class)
     fun writeBuffer(
         buffer: GPUBuffer,
         bufferOffset: GPUSize64,

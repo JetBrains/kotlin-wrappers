@@ -4,6 +4,9 @@ package web.midi
 
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 import web.time.DOMHighResTimeStamp
 
 /**
@@ -20,6 +23,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
     fun send(
         data: ReadonlyArray<JsDouble>,
         timestamp: DOMHighResTimeStamp = definedExternally,

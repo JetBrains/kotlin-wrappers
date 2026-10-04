@@ -19,7 +19,7 @@ import web.cssom.ClassName
 import web.cssom.StylePropertyMapReadOnly
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
-import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
@@ -234,6 +234,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow)
      */
+    @JsThrows(NotSupportedError::class)
     fun attachShadow(init: ShadowRootInit): ShadowRoot
 
     /**
@@ -380,6 +381,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentElement)
      */
+    @JsThrows(SyntaxError::class)
     fun insertAdjacentElement(
         where: InsertPosition,
         element: Element,
@@ -390,6 +392,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML)
      */
+    @JsThrows(NoModificationAllowedError::class)
+    @JsThrows(SyntaxError::class)
     fun insertAdjacentHTML(
         position: InsertPosition,
         string: TrustedHTML,
@@ -400,6 +404,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML)
      */
+    @JsThrows(NoModificationAllowedError::class)
+    @JsThrows(SyntaxError::class)
     fun insertAdjacentHTML(
         position: InsertPosition,
         string: String,
@@ -410,6 +416,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentText)
      */
+    @JsThrows(SyntaxError::class)
     fun insertAdjacentText(
         where: InsertPosition,
         data: String,
@@ -420,6 +427,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/matches)
      */
+    @JsThrows(SyntaxError::class)
     fun matches(selectors: String): Boolean
 
     /**
@@ -427,6 +435,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture)
      */
+    @JsThrows(NotFoundError::class)
     fun releasePointerCapture(pointerId: Int)
 
     /**
@@ -451,6 +460,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode)
      */
+    @JsThrows(NotFoundError::class)
     fun removeAttributeNode(attr: Attr): Attr
 
     /**
@@ -515,6 +525,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttribute)
      */
+    @JsThrows(InvalidCharacterError::class)
     fun setAttribute(
         qualifiedName: String,
         value: String,
@@ -525,6 +536,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNS)
      */
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(NamespaceError::class)
     fun setAttributeNS(
         namespace: String?,
         qualifiedName: String,
@@ -580,6 +593,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture)
      */
+    @JsThrows(NotFoundError::class)
     fun setPointerCapture(pointerId: Int)
 
     /**
@@ -587,6 +601,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/toggleAttribute)
      */
+    @JsThrows(InvalidCharacterError::class)
     fun toggleAttribute(
         qualifiedName: String,
         force: Boolean = definedExternally,

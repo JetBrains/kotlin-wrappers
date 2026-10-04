@@ -3,6 +3,8 @@
 package web.rtc
 
 import js.array.ReadonlyArray
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * The WebRTC interface **`RTCRtpTransceiver`** describes a permanent pairing of an RTCRtpSender and an RTCRtpReceiver, along with some shared state.
@@ -51,6 +53,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/setCodecPreferences)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidModificationError::class)
     fun setCodecPreferences(codecs: ReadonlyArray<RTCRtpCodec>)
 
     /**
@@ -58,5 +62,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/stop)
      */
+    @JsThrows(InvalidStateError::class)
     fun stop()
 }

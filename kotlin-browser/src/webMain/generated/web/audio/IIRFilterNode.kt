@@ -4,6 +4,8 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 
 /**
  * The **`IIRFilterNode`** interface of the Web Audio API is an AudioNode processor which implements a general infinite impulse response (IIR) filter; this type of filter can be used to implement tone control devices and graphic equalizers as well. It lets the parameters of the filter response be specified, so that it can be tuned as needed.
@@ -19,6 +21,7 @@ open external class IIRFilterNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode/getFrequencyResponse)
      */
+    @JsThrows(NotSupportedError::class)
     fun getFrequencyResponse(
         frequencyHz: Float32Array<ArrayBuffer>,
         magResponse: Float32Array<ArrayBuffer>,

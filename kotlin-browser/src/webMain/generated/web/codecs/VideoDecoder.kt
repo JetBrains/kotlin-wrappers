@@ -6,7 +6,7 @@ import js.closeable.JsCloseable
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
-import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
@@ -54,6 +54,8 @@ open external class VideoDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun configure(config: VideoDecoderConfig)
 
     /**
@@ -61,6 +63,8 @@ open external class VideoDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decode)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
     fun decode(chunk: EncodedVideoChunk)
 
     /**

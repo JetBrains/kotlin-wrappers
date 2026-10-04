@@ -6,8 +6,7 @@ import js.array.ReadonlyArray
 import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
-import web.errors.DOMExceptionType.SecurityError
-import web.errors.DOMExceptionType.UnknownError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 
 /**
@@ -22,6 +21,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/cmp)
      */
+    @JsThrows(DataError::class)
     fun cmp(
         first: JsAny?,
         second: JsAny?,

@@ -2,6 +2,10 @@
 
 package web.svg
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
+
 /**
  * The **`SVGAnimationElement`** interface is the base interface for all of the animation element interfaces: SVGAnimateElement, SVGSetElement, SVGAnimateColorElement, SVGAnimateMotionElement and SVGAnimateTransformElement.
  *
@@ -58,6 +62,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getSimpleDuration)
      */
+    @JsThrows(NotSupportedError::class)
     fun getSimpleDuration(): Float
 
     /**
@@ -65,5 +70,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getStartTime)
      */
+    @JsThrows(InvalidStateError::class)
     fun getStartTime(): Float
 }

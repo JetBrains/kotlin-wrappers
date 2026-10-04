@@ -2,6 +2,9 @@
 
 package web.cssom
 
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
+
 /**
  * The **`CSSGroupingRule`** interface of the CSS Object Model represents any CSS at-rule that contains other rules nested within it.
  *
@@ -22,6 +25,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/deleteRule)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidStateError::class)
     fun deleteRule(index: Int)
 
     /**
@@ -29,6 +34,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
      */
+    @JsThrows(HierarchyRequestError::class)
+    @JsThrows(IndexSizeError::class)
     fun insertRule(
         rule: String,
         index: Int = definedExternally,

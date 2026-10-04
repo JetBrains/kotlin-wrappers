@@ -5,6 +5,8 @@ package web.fs
 import js.buffer.AllowSharedBufferSource
 import js.closeable.JsCloseable
 import js.numbers.UInt53
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 
 /**
  * The **`FileSystemSyncAccessHandle`** interface of the File System API represents a synchronous handle to a file system entry.
@@ -27,6 +29,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/flush)
      */
+    @JsThrows(InvalidStateError::class)
     fun flush()
 
     /**
@@ -34,6 +37,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/getSize)
      */
+    @JsThrows(InvalidStateError::class)
     fun getSize(): UInt53
 
     /**
@@ -41,6 +45,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/read)
      */
+    @JsThrows(InvalidStateError::class)
     fun read(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
@@ -51,6 +56,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate)
      */
+    @JsThrows(InvalidStateError::class)
     fun truncate(newSize: UInt53)
 
     /**
@@ -58,6 +64,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write)
      */
+    @JsThrows(InvalidStateError::class)
     fun write(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,

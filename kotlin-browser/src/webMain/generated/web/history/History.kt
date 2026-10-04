@@ -2,6 +2,9 @@
 
 package web.history
 
+import web.errors.DOMExceptionType.DataCloneError
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 import web.url.URL
 
 /**
@@ -37,6 +40,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
      */
+    @JsThrows(SecurityError::class)
     fun back()
 
     /**
@@ -44,6 +48,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward)
      */
+    @JsThrows(SecurityError::class)
     fun forward()
 
     /**
@@ -51,6 +56,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
      */
+    @JsThrows(SecurityError::class)
     fun go(delta: Int = definedExternally)
 
     /**
@@ -58,6 +64,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(SecurityError::class)
     fun pushState(
         data: JsAny?,
         unused: String,
@@ -69,6 +77,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(SecurityError::class)
     fun pushState(
         data: JsAny?,
         unused: String,
@@ -80,6 +90,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(SecurityError::class)
     fun replaceState(
         data: JsAny?,
         unused: String,
@@ -91,6 +103,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(SecurityError::class)
     fun replaceState(
         data: JsAny?,
         unused: String,

@@ -2,6 +2,9 @@
 
 package web.mediasource
 
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
+
 /**
  * When loading a media resource for use by an <audio> or <video> element, the **`TimeRanges`** interface is used for representing the time ranges of the media resource that have been buffered, the time ranges that have been played, and the time ranges that are seekable.
  *
@@ -21,6 +24,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
      */
+    @JsThrows(IndexSizeError::class)
     fun end(index: Int): Double
 
     /**
@@ -28,5 +32,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
      */
+    @JsThrows(IndexSizeError::class)
     fun start(index: Int): Double
 }

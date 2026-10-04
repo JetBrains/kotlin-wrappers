@@ -89,6 +89,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setStreams)
      */
+    @JsThrows(InvalidStateError::class)
     fun setStreams(vararg streams: MediaStream)
 
     companion object {

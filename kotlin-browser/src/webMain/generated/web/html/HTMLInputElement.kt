@@ -7,6 +7,8 @@ import js.date.Date
 import web.autofill.AutoFill
 import web.dom.Node
 import web.dom.NodeList
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 import web.file.FileList
@@ -404,6 +406,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */
+    @JsThrows(InvalidStateError::class)
     fun setSelectionRange(
         start: Int?,
         end: Int?,
@@ -415,6 +418,9 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(SecurityError::class)
     fun showPicker()
 
     /**

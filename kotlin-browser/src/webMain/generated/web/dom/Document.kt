@@ -12,8 +12,7 @@ import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ClassName
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
-import web.errors.DOMExceptionType.InvalidStateError
-import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
@@ -362,6 +361,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttribute)
      */
+    @JsThrows(InvalidCharacterError::class)
     fun createAttribute(localName: String): Attr
 
     /**
@@ -369,6 +369,8 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS)
      */
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(NamespaceError::class)
     fun createAttributeNS(
         namespace: String?,
         qualifiedName: String,
@@ -405,6 +407,8 @@ open external class Document :
         options: ElementCreationOptions = definedExternally,
     ): T
 
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(NotSupportedError::class)
     fun createElement(
         tagName: String,
         options: ElementCreationOptions = definedExternally,
@@ -415,12 +419,18 @@ open external class Document :
         qualifiedName: TagName<T>,
     ): T
 
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(NamespaceError::class)
+    @JsThrows(NotSupportedError::class)
     fun createElementNS(
         namespace: String?,
         qualifiedName: String,
         options: String = definedExternally,
     ): Element
 
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(NamespaceError::class)
+    @JsThrows(NotSupportedError::class)
     fun createElementNS(
         namespace: String?,
         qualifiedName: String,
@@ -443,6 +453,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createProcessingInstruction)
      */
+    @JsThrows(InvalidCharacterError::class)
     fun createProcessingInstruction(
         target: String,
         data: String,

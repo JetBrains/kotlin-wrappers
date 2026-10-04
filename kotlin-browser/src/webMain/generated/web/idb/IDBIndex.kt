@@ -4,6 +4,8 @@ package web.idb
 
 import js.array.ReadonlyArray
 import js.numbers.JsInt
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * **`IDBIndex`** interface of the IndexedDB API provides asynchronous access to an index in a database. An index is a kind of object store for looking up records in another object store, called the referenced object store. You use this interface to retrieve data.
@@ -52,6 +54,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/count)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
 
     /**
@@ -59,6 +64,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/count)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
@@ -66,6 +74,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/get)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun get(query: IDBValidKey): IDBRequest<*>
 
     /**
@@ -73,6 +84,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/get)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
@@ -80,6 +94,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAll)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAll(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
@@ -90,6 +106,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAll)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAll(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -100,6 +118,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllKeys)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAllKeys(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
@@ -110,6 +130,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllKeys)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAllKeys(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -120,6 +142,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getKey)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
 
     /**
@@ -127,6 +152,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getKey)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
     /**
@@ -134,6 +162,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
@@ -144,6 +175,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
@@ -154,6 +188,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openKeyCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openKeyCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
@@ -164,6 +201,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/openKeyCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openKeyCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,

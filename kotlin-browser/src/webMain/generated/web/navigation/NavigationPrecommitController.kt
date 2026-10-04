@@ -2,6 +2,8 @@
 
 package web.navigation
 
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.url.URL
 
 /**
@@ -16,6 +18,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/addHandler)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
     fun addHandler(handler: NavigationInterceptHandler)
 
     /**
@@ -23,6 +27,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/redirect)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(SyntaxError::class)
     fun redirect(
         url: String,
         options: NavigationNavigateOptions = definedExternally,
@@ -33,6 +40,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPrecommitController/redirect)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
+    @JsThrows(SyntaxError::class)
     fun redirect(
         url: URL,
         options: NavigationNavigateOptions = definedExternally,

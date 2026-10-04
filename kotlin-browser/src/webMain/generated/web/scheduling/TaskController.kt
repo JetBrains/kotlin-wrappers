@@ -3,6 +3,8 @@
 package web.scheduling
 
 import web.abort.AbortController
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`TaskController`** interface of the Prioritized Task Scheduling API represents a controller object that can be used to both abort and change the priority of one or more prioritized tasks. If there is no need to change task priorities, then AbortController can be used instead.
@@ -17,5 +19,6 @@ open external class TaskController(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskController/setPriority)
      */
+    @JsThrows(NotAllowedError::class)
     fun setPriority(priority: TaskPriority)
 }

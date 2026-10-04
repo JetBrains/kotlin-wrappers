@@ -2,6 +2,10 @@
 
 package web.fs
 
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
+
 /**
  * The **`FileSystemDirectoryEntry`** interface of the File and Directory Entries API represents a directory in a file system. It provides methods which make it possible to access and manipulate the files in a directory, as well as to access the entries within the directory.
  *
@@ -22,6 +26,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getDirectory)
      */
+    @JsThrows(NotFoundError::class)
+    @JsThrows(SecurityError::class)
     @JsName("getDirectory")
     fun getDirectoryWithCallbacks(
         path: String? = definedExternally,
@@ -35,6 +41,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getFile)
      */
+    @JsThrows(NotFoundError::class)
+    @JsThrows(SecurityError::class)
     @JsName("getFile")
     fun getFileWithCallbacks(
         path: String? = definedExternally,

@@ -2,6 +2,9 @@
 
 package web.cssom
 
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
+
 /**
  * The **`CSSNumericValue`** interface of the CSS Typed Object Model API represents operations that all numeric values can perform.
  *
@@ -64,6 +67,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/to)
      */
+    @JsThrows(SyntaxError::class)
     fun to(unit: String): CSSUnitValue
 
     /**
@@ -71,6 +75,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/toSum)
      */
+    @JsThrows(SyntaxError::class)
     fun toSum(vararg units: String): CSSMathSum
 
     /**
@@ -86,6 +91,7 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/parse_static)
          */
+        @JsThrows(SyntaxError::class)
         fun parse(cssText: String): CSSNumericValue
     }
 }

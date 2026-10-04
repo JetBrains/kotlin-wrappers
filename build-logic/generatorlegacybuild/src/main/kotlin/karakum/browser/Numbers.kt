@@ -285,6 +285,7 @@ internal class TypeProvider(
                     else -> "@JsThrows($name::class)"
                 }
             }
+            .distinct()
             .sorted()
             .joinToString("\n")
             .ifEmpty { null }
@@ -320,6 +321,10 @@ internal class TypeProvider(
 private fun parseExceptionType(
     source: String,
 ): String? {
+    source.replace("{DOMxRef(", "{domxref(")
+        .takeIf { it != source }
+        ?.let { return parseExceptionType(it) }
+
     if ("""{{domxref("DOMException")}}""" in source) {
         val type = source
             .substringBefore("\n")
@@ -334,9 +339,16 @@ private fun parseExceptionType(
             "TypeError" -> null
             // TEMP for `DocumentPictureInPicture`
             "RangeError" -> null
+            // TEMP for `IDBIndex`
+            """{{jsxref("TypeError")}}""" -> null
+            // TEMP for `RTCPeerConnection`
+            "ResourceInUse" -> null
 
             // TEMP for `SubtleCrypto`
             "NotSupported" -> "NotSupportedError"
+
+            // TEMP for `AudioScheduledSourceNode`
+            "InvalidStateNode" -> "InvalidStateError"
 
             else -> type
         }

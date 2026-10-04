@@ -4,6 +4,9 @@ package web.xr
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.time.DOMHighResTimeStamp
 
 open external class XRFrame
@@ -29,6 +32,7 @@ private constructor() {
      *
      * @param referenceSpace
      */
+    @JsThrows(InvalidStateError::class)
     fun getViewerPose(referenceSpace: XRReferenceSpace): XRViewerPose?
 
     /**
@@ -79,5 +83,8 @@ private constructor() {
      */
     val detectedMeshes: XRMeshSet?
     var getJointPose: ((joint: XRJointSpace, baseSpace: XRSpace) -> XRJointPose)?
+
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun getDepthInformation(view: XRView): XRCPUDepthInformation?
 }

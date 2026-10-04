@@ -2,6 +2,8 @@
 
 package web.svg
 
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -37,6 +39,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 
     /**
@@ -44,6 +47,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setRotate(
         angle: Float,
         cx: Float,
@@ -55,6 +59,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setScale)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setScale(
         sx: Float,
         sy: Float,
@@ -65,6 +70,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewX)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setSkewX(angle: Float)
 
     /**
@@ -72,6 +78,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewY)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setSkewY(angle: Float)
 
     /**
@@ -79,6 +86,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setTranslate)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setTranslate(
         tx: Float,
         ty: Float,

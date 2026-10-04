@@ -2,6 +2,9 @@
 
 package web.xr
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.gl.WebGLRenderingContext
 
 open external class XRWebGLBinding(
@@ -25,5 +28,7 @@ open external class XRWebGLBinding(
         view: XRView,
     ): XRWebGLSubImage
 
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun getDepthInformation(view: XRView): XRWebGLDepthInformation?
 }

@@ -170,6 +170,8 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTrack)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
     fun addTrack(
         track: MediaStreamTrack,
         vararg streams: MediaStream,
@@ -180,6 +182,8 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
     fun addTransceiver(
         trackOrKind: MediaStreamTrack,
         init: RTCRtpTransceiverInit = definedExternally,
@@ -190,6 +194,8 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
     fun addTransceiver(
         trackOrKind: String,
         init: RTCRtpTransceiverInit = definedExternally,
@@ -215,6 +221,9 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
+    @JsThrows(SyntaxError::class)
     fun createDataChannel(
         label: String,
         dataChannelDict: RTCDataChannelInit = definedExternally,
@@ -273,6 +282,7 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeTrack)
      */
+    @JsThrows(InvalidStateError::class)
     fun removeTrack(sender: RTCRtpSender)
 
     /**
@@ -287,6 +297,11 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidModificationError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SyntaxError::class)
     fun setConfiguration(configuration: RTCConfiguration = definedExternally)
 
     /**

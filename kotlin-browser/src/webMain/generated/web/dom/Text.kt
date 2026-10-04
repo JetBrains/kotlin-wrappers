@@ -4,6 +4,9 @@ package web.dom
 
 import web.components.Slottable
 import web.dnd.DragEvent
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 import web.events.EventInstance
 import web.pointer.PointerEvent
 
@@ -28,6 +31,8 @@ open external class Text(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/splitText)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun splitText(offset: Int): Text
 }
 

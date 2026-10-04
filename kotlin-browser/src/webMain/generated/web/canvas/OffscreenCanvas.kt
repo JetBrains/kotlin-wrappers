@@ -80,6 +80,7 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */
+    @JsThrows(InvalidStateError::class)
     fun transferToImageBitmap(): ImageBitmap
 }
 

@@ -8,6 +8,8 @@ import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
 import web.dom.Element
 import web.dom.Node
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 import web.form.FormDataEvent
@@ -136,6 +138,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit)
      */
+    @JsThrows(NotFoundError::class)
     fun requestSubmit(submitter: HTMLElement? = definedExternally)
 
     /**

@@ -2,6 +2,10 @@
 
 package web.svg
 
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
+
 /**
  * The **`SVGAngle`** interface is used to represent a value that can be an <angle> or <number> value.
  *
@@ -49,6 +53,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/newValueSpecifiedUnits)
      */
+    @JsThrows(NoModificationAllowedError::class)
+    @JsThrows(NotSupportedError::class)
     fun newValueSpecifiedUnits(
         unitType: UnitType,
         valueInSpecifiedUnits: Float,

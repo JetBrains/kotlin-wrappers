@@ -4,6 +4,9 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`SVGLengthList`** interface defines a list of SVGLength objects. It is used for the baseVal and animVal properties of SVGAnimatedLengthList.
@@ -33,6 +36,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/appendItem)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun appendItem(newItem: SVGLength): SVGLength
 
     /**
@@ -40,6 +44,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/clear)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun clear()
 
     /**
@@ -47,6 +52,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/getItem)
      */
+    @JsThrows(IndexSizeError::class)
     fun getItem(index: Int): SVGLength
 
     /**
@@ -54,6 +60,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/initialize)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun initialize(newItem: SVGLength): SVGLength
 
     /**
@@ -61,6 +68,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/insertItemBefore)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun insertItemBefore(
         newItem: SVGLength,
         index: Int,
@@ -71,6 +79,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/removeItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun removeItem(index: Int): SVGLength
 
     /**
@@ -78,6 +88,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList/replaceItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun replaceItem(
         newItem: SVGLength,
         index: Int,

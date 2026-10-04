@@ -2,6 +2,9 @@
 
 package web.dom
 
+import web.errors.DOMExceptionType.InvalidCharacterError
+import web.errors.DOMExceptionType.NamespaceError
+import web.errors.JsThrows
 import web.xml.XMLDocument
 
 /**
@@ -16,6 +19,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocument)
      */
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(NamespaceError::class)
     fun createDocument(
         namespace: String?,
         qualifiedName: String?,

@@ -3,6 +3,8 @@
 package web.idb
 
 import js.void.Void
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * The **`IDBCursor`** interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records in a database.
@@ -51,6 +53,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/advance)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun advance(count: Int)
 
     /**
@@ -58,6 +62,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/continue)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun `continue`(key: IDBValidKey = definedExternally)
 
     /**
@@ -65,6 +72,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/continuePrimaryKey)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun continuePrimaryKey(
         key: IDBValidKey,
         primaryKey: IDBValidKey,
@@ -75,6 +86,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/delete)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun delete(): IDBRequest<Void>
 
     /**
@@ -82,5 +96,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/update)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun update(value: JsAny?): IDBRequest<IDBValidKey>
 }

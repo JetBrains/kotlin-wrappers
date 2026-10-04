@@ -2,6 +2,8 @@
 
 package web.xr
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.gl.WebGL2RenderingContext
 import web.gl.WebGLFramebuffer
 import web.gl.WebGLRenderingContext
@@ -28,5 +30,7 @@ open external class XRWebGLLayer(
     val framebuffer: WebGLFramebuffer
     val framebufferWidth: Int
     val framebufferHeight: Int
+
+    @JsThrows(InvalidStateError::class)
     fun getViewport(view: XRView): XRViewport?
 }

@@ -2,6 +2,8 @@
 
 package web.audio
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -24,6 +26,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/start)
      */
+    @JsThrows(InvalidStateError::class)
     fun start(`when`: Double = definedExternally)
 
     /**
@@ -31,6 +34,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/stop)
      */
+    @JsThrows(InvalidStateError::class)
     fun stop(`when`: Double = definedExternally)
 }
 

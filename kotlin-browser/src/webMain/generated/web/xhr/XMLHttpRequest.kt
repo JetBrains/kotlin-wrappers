@@ -5,6 +5,9 @@ package web.xhr
 import js.buffer.BufferSource
 import web.blob.Blob
 import web.dom.Document
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NetworkError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -172,6 +175,8 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun send(body: Document? = definedExternally)
 
     /**
@@ -179,6 +184,8 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun send(body: Blob?)
 
     /**
@@ -186,6 +193,8 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun send(body: BufferSource?)
 
     /**
@@ -193,6 +202,8 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun send(body: FormData?)
 
     /**
@@ -200,6 +211,8 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun send(body: URLSearchParams?)
 
     /**
@@ -207,6 +220,8 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun send(body: String?)
 
     /**

@@ -7,6 +7,8 @@
 package web.canvas
 
 import js.internal.InternalApi
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
@@ -26,6 +28,7 @@ external interface CanvasPath {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo)
      */
+    @JsThrows(IndexSizeError::class)
     fun arcTo(
         x1: Double,
         y1: Double,

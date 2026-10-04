@@ -5,6 +5,9 @@ package web.serviceworker
 import js.promise.Promise
 import js.promise.PromiseLike
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NetworkError
+import web.errors.JsThrows
 import web.events.EventType
 import web.http.Request
 import web.http.Response
@@ -58,6 +61,8 @@ open external class FetchEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun respondWith(r: Response)
 
     /**
@@ -65,6 +70,8 @@ open external class FetchEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NetworkError::class)
     fun respondWith(r: PromiseLike<Response>)
 
     companion object

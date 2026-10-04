@@ -4,6 +4,8 @@ package web.html
 
 import web.canvas.CanvasImageSource
 import web.canvas.OffscreenCanvas
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 import web.gl.TexImageSource
@@ -43,6 +45,8 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream)
      */
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun captureStream(frameRequestRate: Double = definedExternally): MediaStream
 
     /**
@@ -82,6 +86,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
      */
+    @JsThrows(InvalidStateError::class)
     fun transferControlToOffscreen(): OffscreenCanvas
 }
 

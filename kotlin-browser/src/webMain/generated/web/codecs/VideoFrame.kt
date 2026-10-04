@@ -12,6 +12,8 @@ import js.promise.await
 import js.serialization.Serializable
 import js.serialization.Transferable
 import web.canvas.CanvasImageSource
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.geometry.DOMRectReadOnly
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
@@ -117,6 +119,7 @@ open external class VideoFrame(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/clone)
      */
+    @JsThrows(InvalidStateError::class)
     fun clone(): VideoFrame
 
     /**

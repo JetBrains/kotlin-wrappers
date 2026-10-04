@@ -7,6 +7,7 @@ import js.promise.Promise
 import js.promise.await
 import js.void.Void
 import web.credentials.Credential
+import web.errors.DOMExceptionType.EncodingError
 import web.errors.DOMExceptionType.SecurityError
 import web.errors.JsThrows
 
@@ -45,6 +46,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientExtensionResults)
      */
+    @JsThrows(SecurityError::class)
     fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
 
     /**
@@ -52,6 +54,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/toJSON)
      */
+    @JsThrows(SecurityError::class)
     fun toJSON(): JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */
 
     companion object {
@@ -87,6 +90,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static)
          */
+        @JsThrows(EncodingError::class)
+        @JsThrows(SecurityError::class)
         fun parseCreationOptionsFromJSON(options: PublicKeyCredentialCreationOptionsJSON): PublicKeyCredentialCreationOptions
 
         /**
@@ -94,6 +99,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static)
          */
+        @JsThrows(EncodingError::class)
+        @JsThrows(SecurityError::class)
         fun parseRequestOptionsFromJSON(options: PublicKeyCredentialRequestOptionsJSON): PublicKeyCredentialRequestOptions
 
         /**

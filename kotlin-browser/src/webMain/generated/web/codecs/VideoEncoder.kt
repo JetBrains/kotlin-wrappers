@@ -6,7 +6,7 @@ import js.closeable.JsCloseable
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
-import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
@@ -54,6 +54,8 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun configure(config: VideoEncoderConfig)
 
     /**
@@ -61,6 +63,8 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encode)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
     fun encode(
         frame: VideoFrame,
         options: VideoEncoderEncodeOptions = definedExternally,
@@ -80,6 +84,7 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/reset)
      */
+    @JsThrows(InvalidStateError::class)
     fun reset()
 
     companion object {

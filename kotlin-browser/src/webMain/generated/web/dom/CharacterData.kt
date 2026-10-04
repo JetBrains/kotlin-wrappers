@@ -2,6 +2,9 @@
 
 package web.dom
 
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
+
 /**
  * The **`CharacterData`** abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any objects of type CharacterData: it is implemented by other interfaces like Text, Comment, CDATASection, or ProcessingInstruction, which aren't abstract.
  *
@@ -39,6 +42,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/deleteData)
      */
+    @JsThrows(IndexSizeError::class)
     fun deleteData(
         offset: Int,
         count: Int,
@@ -49,6 +53,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/insertData)
      */
+    @JsThrows(IndexSizeError::class)
     fun insertData(
         offset: Int,
         data: String,
@@ -59,6 +64,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceData)
      */
+    @JsThrows(IndexSizeError::class)
     fun replaceData(
         offset: Int,
         count: Int,
@@ -70,6 +76,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/substringData)
      */
+    @JsThrows(IndexSizeError::class)
     fun substringData(
         offset: Int,
         count: Int,

@@ -2,6 +2,8 @@
 
 package web.mediasource
 
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -66,6 +68,9 @@ open external class MediaSource :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/addSourceBuffer)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun addSourceBuffer(type: String): SourceBuffer
 
     /**
@@ -80,6 +85,7 @@ open external class MediaSource :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/endOfStream)
      */
+    @JsThrows(InvalidStateError::class)
     fun endOfStream(error: EndOfStreamError = definedExternally)
 
     /**
@@ -87,6 +93,7 @@ open external class MediaSource :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/removeSourceBuffer)
      */
+    @JsThrows(NotFoundError::class)
     fun removeSourceBuffer(sourceBuffer: SourceBuffer)
 
     /**

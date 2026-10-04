@@ -3,7 +3,9 @@
 package web.navigation
 
 import js.array.ReadonlyArray
+import web.errors.DOMExceptionType.*
 import web.errors.ErrorEvent
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -78,6 +80,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/back)
      */
+    @JsThrows(InvalidStateError::class)
     fun back(options: NavigationOptions = definedExternally): NavigationResult
 
     /**
@@ -92,6 +95,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/forward)
      */
+    @JsThrows(InvalidStateError::class)
     fun forward(options: NavigationOptions = definedExternally): NavigationResult
 
     /**
@@ -99,6 +103,10 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SyntaxError::class)
     fun navigate(
         url: String,
         options: NavigationNavigateOptions = definedExternally,
@@ -109,6 +117,10 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SyntaxError::class)
     fun navigate(
         url: URL,
         options: NavigationNavigateOptions = definedExternally,
@@ -119,6 +131,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/reload)
      */
+    @JsThrows(DataCloneError::class)
     fun reload(options: NavigationReloadOptions = definedExternally): NavigationResult
 
     /**
@@ -126,6 +139,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/traverseTo)
      */
+    @JsThrows(InvalidStateError::class)
     fun traverseTo(
         key: String,
         options: NavigationOptions = definedExternally,
@@ -136,6 +150,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/updateCurrentEntry)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(InvalidStateError::class)
     fun updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions)
 }
 

@@ -8,6 +8,8 @@
 package web.dom
 
 import js.internal.InternalApi
+import web.errors.DOMExceptionType.HierarchyRequestError
+import web.errors.JsThrows
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
@@ -20,6 +22,7 @@ external interface ChildNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/after)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun after(vararg nodes: Node): Unit = definedExternally
 
     /**
@@ -29,6 +32,7 @@ external interface ChildNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/after)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun after(vararg nodes: String): Unit = definedExternally
 
     /**
@@ -38,6 +42,7 @@ external interface ChildNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/before)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun before(vararg nodes: Node): Unit = definedExternally
 
     /**
@@ -47,6 +52,7 @@ external interface ChildNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/before)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun before(vararg nodes: String): Unit = definedExternally
 
     /**
@@ -63,6 +69,7 @@ external interface ChildNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceWith)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun replaceWith(vararg nodes: Node): Unit = definedExternally
 
     /**
@@ -72,5 +79,6 @@ external interface ChildNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceWith)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun replaceWith(vararg nodes: String): Unit = definedExternally
 }

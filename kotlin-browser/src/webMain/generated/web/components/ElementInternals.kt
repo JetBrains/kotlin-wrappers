@@ -4,6 +4,9 @@ package web.components
 
 import web.aria.ARIAMixin
 import web.dom.NodeList
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.file.File
 import web.form.FormData
 import web.html.HTMLElement
@@ -76,6 +79,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/checkValidity)
      */
+    @JsThrows(NotSupportedError::class)
     override fun checkValidity(): Boolean
 
     /**
@@ -83,6 +87,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/reportValidity)
      */
+    @JsThrows(NotSupportedError::class)
     override fun reportValidity(): Boolean
 
     /**
@@ -90,16 +95,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
+    @JsThrows(NotSupportedError::class)
     fun setFormValue(
         value: File?,
         state: File? = definedExternally,
     )
 
+    @JsThrows(NotSupportedError::class)
     fun setFormValue(
         value: String?,
         state: String? = definedExternally,
     )
 
+    @JsThrows(NotSupportedError::class)
     fun setFormValue(
         value: FormData?,
         state: FormData? = definedExternally,
@@ -110,6 +118,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setValidity)
      */
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotSupportedError::class)
     fun setValidity(
         flags: ValidityStateFlags = definedExternally,
         message: String = definedExternally,

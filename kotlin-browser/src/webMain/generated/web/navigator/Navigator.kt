@@ -172,6 +172,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads)
      */
+    @JsThrows(SecurityError::class)
     fun getGamepads(): ReadonlyArray<Gamepad?>
 
     /**

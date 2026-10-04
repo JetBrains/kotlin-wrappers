@@ -2,6 +2,9 @@
 
 package web.html
 
+import web.errors.DOMExceptionType.HierarchyRequestError
+import web.errors.JsThrows
+
 /**
  * The **`HTMLOptionsCollection`** interface represents a collection of <option> HTML elements (in document order) and offers methods and properties for selecting from the list as well as optionally altering its items. This object is returned only by the options property of select.
  *
@@ -29,6 +32,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptionElement,
         before: HTMLElement? = definedExternally,
@@ -39,6 +43,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptionElement,
         before: Int?,
@@ -49,6 +54,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptGroupElement,
         before: HTMLElement? = definedExternally,
@@ -59,6 +65,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptGroupElement,
         before: Int?,

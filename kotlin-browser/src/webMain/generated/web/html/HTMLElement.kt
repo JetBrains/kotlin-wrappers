@@ -9,6 +9,9 @@ import web.dom.Element
 import web.dom.HTMLOrSVGOrMathMLElement
 import web.dom.Node
 import web.editcontext.EditContext
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 import web.experimental.ExperimentalWebApi
@@ -184,6 +187,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals)
      */
+    @JsThrows(NotSupportedError::class)
     fun attachInternals(): ElementInternals
 
     /**
@@ -198,6 +202,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover)
      */
+    @JsThrows(InvalidStateError::class)
     fun hidePopover()
 
     /**
@@ -205,6 +210,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover)
      */
+    @JsThrows(InvalidStateError::class)
     fun showPopover(options: ShowPopoverOptions = definedExternally)
 
     /**
@@ -212,6 +218,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
+    @JsThrows(InvalidStateError::class)
     fun togglePopover(options: TogglePopoverOptions = definedExternally): Boolean
 
     /**
@@ -219,6 +226,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
+    @JsThrows(InvalidStateError::class)
     fun togglePopover(options: Boolean): Boolean
 
     /**

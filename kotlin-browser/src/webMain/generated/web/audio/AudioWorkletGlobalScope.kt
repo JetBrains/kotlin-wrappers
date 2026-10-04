@@ -3,6 +3,8 @@
 package web.audio
 
 import js.numbers.UInt53
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.worklets.WorkletGlobalScope
 
 /**
@@ -39,6 +41,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
      */
+    @JsThrows(NotSupportedError::class)
     fun registerProcessor(
         name: AudioWorkletProcessorName,
         processorCtor: AudioWorkletProcessorConstructor,

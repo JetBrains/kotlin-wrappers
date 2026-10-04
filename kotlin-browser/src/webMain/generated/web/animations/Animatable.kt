@@ -8,6 +8,8 @@ package web.animations
 
 import js.array.ReadonlyArray
 import js.internal.InternalApi
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 
 /* mixin */
 @SubclassOptInRequired(InternalApi::class)
@@ -47,5 +49,6 @@ external interface Animatable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
      */
+    @JsThrows(SyntaxError::class)
     fun getAnimations(options: GetAnimationsOptions = definedExternally): ReadonlyArray<Animation> = definedExternally
 }

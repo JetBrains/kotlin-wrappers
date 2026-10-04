@@ -4,6 +4,8 @@ package web.cssom
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 
 /**
  * The **`MediaList`** interface represents the media queries of a stylesheet, e.g., those set using a <link> element's media attribute.
@@ -40,6 +42,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/deleteMedium)
      */
+    @JsThrows(NotFoundError::class)
     fun deleteMedium(medium: MediaQuery)
 
     /**

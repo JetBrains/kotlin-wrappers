@@ -4,6 +4,9 @@ package web.idb
 
 import web.dom.DOMStringList
 import web.errors.DOMException
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -72,6 +75,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort)
      */
+    @JsThrows(InvalidStateError::class)
     fun abort()
 
     /**
@@ -79,6 +83,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/commit)
      */
+    @JsThrows(InvalidStateError::class)
     fun commit()
 
     /**
@@ -86,6 +91,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStore)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
     fun objectStore(name: String): IDBObjectStore
 }
 

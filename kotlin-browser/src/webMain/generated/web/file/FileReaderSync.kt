@@ -4,6 +4,8 @@ package web.file
 
 import js.buffer.ArrayBuffer
 import web.blob.Blob
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * The **`FileReaderSync`** interface allows to read File or Blob objects synchronously. This interface is only available in workers as it enables synchronous I/O that could potentially block.
@@ -16,6 +18,10 @@ open external class FileReaderSync {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsArrayBuffer)
      */
+    @JsThrows(EncodingError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotReadableError::class)
+    @JsThrows(SecurityError::class)
     fun readAsArrayBuffer(blob: Blob): ArrayBuffer
 
     /**
@@ -23,6 +29,10 @@ open external class FileReaderSync {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsDataURL)
      */
+    @JsThrows(EncodingError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotReadableError::class)
+    @JsThrows(SecurityError::class)
     fun readAsDataURL(blob: Blob): String
 
     /**
@@ -30,6 +40,10 @@ open external class FileReaderSync {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync/readAsText)
      */
+    @JsThrows(EncodingError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotReadableError::class)
+    @JsThrows(SecurityError::class)
     fun readAsText(
         blob: Blob,
         encoding: String = definedExternally,

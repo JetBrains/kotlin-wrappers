@@ -4,6 +4,8 @@ package web.animations
 
 import js.promise.Promise
 import web.cssom.CSSNumberish
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -138,6 +140,7 @@ open external class Animation(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pause)
      */
+    @JsThrows(InvalidStateError::class)
     fun pause()
 
     /**

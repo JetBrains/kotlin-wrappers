@@ -2,6 +2,8 @@
 
 package web.html
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 
@@ -53,6 +55,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
      */
+    @JsThrows(InvalidStateError::class)
     fun show()
 
     /**
@@ -60,6 +63,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
      */
+    @JsThrows(InvalidStateError::class)
     fun showModal()
 }
 

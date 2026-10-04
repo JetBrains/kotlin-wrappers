@@ -3,6 +3,9 @@
 package web.dom
 
 import js.collections.ListLike
+import web.errors.DOMExceptionType.InvalidCharacterError
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 
 /**
  * The **`DOMTokenList`** interface represents a set of space-separated tokens. Such a set is returned by Element.classList or HTMLLinkElement.relList, and many others.
@@ -31,6 +34,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/add)
      */
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(SyntaxError::class)
     fun add(vararg tokens: T)
 
     /**

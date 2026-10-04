@@ -4,6 +4,9 @@ package web.dom
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.InUseAttributeError
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 
 /**
  * The **`NamedNodeMap`** interface represents a collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
@@ -50,6 +53,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/removeNamedItem)
      */
+    @JsThrows(NotFoundError::class)
     fun removeNamedItem(qualifiedName: String): Attr
 
     /**
@@ -57,6 +61,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/removeNamedItemNS)
      */
+    @JsThrows(NotFoundError::class)
     fun removeNamedItemNS(
         namespace: String?,
         localName: String,
@@ -67,6 +72,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/setNamedItem)
      */
+    @JsThrows(InUseAttributeError::class)
     fun setNamedItem(attr: Attr): Attr?
 
     /**
@@ -74,5 +80,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/setNamedItemNS)
      */
+    @JsThrows(InUseAttributeError::class)
     fun setNamedItemNS(attr: Attr): Attr?
 }

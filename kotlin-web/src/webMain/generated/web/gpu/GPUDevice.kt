@@ -4,6 +4,8 @@ package web.gpu
 
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -170,6 +172,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/importExternalTexture)
      */
+    @JsThrows(SecurityError::class)
     fun importExternalTexture(descriptor: GPUExternalTextureDescriptor): GPUExternalTexture
 
     /**

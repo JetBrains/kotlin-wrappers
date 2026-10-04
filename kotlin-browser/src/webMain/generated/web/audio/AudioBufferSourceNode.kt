@@ -2,6 +2,9 @@
 
 package web.audio
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
+
 /**
  * The **`AudioBufferSourceNode`** interface is an AudioScheduledSourceNode which represents an audio source consisting of in-memory audio data, stored in an AudioBuffer.
  *
@@ -58,6 +61,7 @@ open external class AudioBufferSourceNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/start)
      */
+    @JsThrows(InvalidStateError::class)
     fun start(
         `when`: Double = definedExternally,
         offset: Double = definedExternally,

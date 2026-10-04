@@ -8,6 +8,8 @@
 package web.dom
 
 import js.internal.InternalApi
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.html.HTMLCollection
 
 /* mixin */
@@ -51,6 +53,7 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun append(vararg nodes: Node): Unit = definedExternally
 
     /**
@@ -58,6 +61,7 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun append(vararg nodes: String): Unit = definedExternally
 
     /**
@@ -65,6 +69,8 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/moveBefore)
      */
+    @JsThrows(HierarchyRequestError::class)
+    @JsThrows(NotFoundError::class)
     fun moveBefore(
         node: Node,
         child: Node?,
@@ -75,6 +81,7 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun prepend(vararg nodes: Node): Unit = definedExternally
 
     /**
@@ -82,6 +89,7 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun prepend(vararg nodes: String): Unit = definedExternally
 
     /**
@@ -89,7 +97,10 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
      */
+    @JsThrows(SyntaxError::class)
     fun <T : Element> querySelector(selectors: TagName<T>): T? = definedExternally
+
+    @JsThrows(SyntaxError::class)
     fun querySelector(selectors: String): Element? = definedExternally
 
     /**
@@ -97,7 +108,10 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
      */
+    @JsThrows(SyntaxError::class)
     fun <T : Element> querySelectorAll(selectors: TagName<T>): NodeList<T> = definedExternally
+
+    @JsThrows(SyntaxError::class)
     fun querySelectorAll(selectors: String): NodeList<Element> = definedExternally
 
     /**
@@ -105,6 +119,7 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun replaceChildren(vararg nodes: Node): Unit = definedExternally
 
     /**
@@ -112,6 +127,9 @@ external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun replaceChildren(vararg nodes: String): Unit = definedExternally
+
+    @JsThrows(HierarchyRequestError::class)
     fun replaceChildren(): Unit = definedExternally
 }

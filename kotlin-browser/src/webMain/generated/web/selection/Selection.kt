@@ -4,6 +4,8 @@ package web.selection
 
 import js.array.ReadonlyArray
 import web.dom.Node
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
 import web.ranges.Range
 import web.ranges.StaticRange
 
@@ -186,6 +188,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/setBaseAndExtent)
      */
+    @JsThrows(IndexSizeError::class)
     fun setBaseAndExtent(
         anchorNode: Node,
         anchorOffset: Int,

@@ -3,6 +3,9 @@
 package web.parsing
 
 import web.dom.Node
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 
 /**
  * The **`XMLSerializer`** interface provides the serializeToString() method to construct an XML string representing a DOM tree.
@@ -15,5 +18,7 @@ open external class XMLSerializer {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SyntaxError::class)
     fun serializeToString(root: Node): String
 }

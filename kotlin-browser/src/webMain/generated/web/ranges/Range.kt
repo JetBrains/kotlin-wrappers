@@ -4,6 +4,8 @@ package web.ranges
 
 import web.dom.DocumentFragment
 import web.dom.Node
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.trustedtypes.TrustedHTML
@@ -48,6 +50,7 @@ open external class Range :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints)
      */
+    @JsThrows(NotSupportedError::class)
     fun compareBoundaryPoints(
         how: CompareMethod,
         sourceRange: Range,
@@ -148,6 +151,8 @@ open external class Range :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEnd)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidNodeTypeError::class)
     fun setEnd(
         node: Node,
         offset: Int,

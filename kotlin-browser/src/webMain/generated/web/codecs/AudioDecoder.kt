@@ -5,7 +5,7 @@ package web.codecs
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
-import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
@@ -52,6 +52,8 @@ open external class AudioDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/configure)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun configure(config: AudioDecoderConfig)
 
     /**
@@ -59,6 +61,8 @@ open external class AudioDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/decode)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
     fun decode(chunk: EncodedAudioChunk)
 
     /**

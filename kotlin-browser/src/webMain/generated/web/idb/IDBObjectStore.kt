@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 import js.numbers.JsInt
 import js.void.Void
 import web.dom.DOMStringList
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 
 /**
  * The **`IDBObjectStore`** interface of the IndexedDB API represents an object store in a database. Records within an object store are sorted according to their keys. This sorting enables fast insertion, look-up, and ordered retrieval.
@@ -54,6 +56,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/add)
      */
+    @JsThrows(ConstraintError::class)
+    @JsThrows(DataCloneError::class)
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun add(
         value: JsAny?,
         key: IDBValidKey = definedExternally,
@@ -64,6 +72,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/clear)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun clear(): IDBRequest<Void>
 
     /**
@@ -71,6 +82,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/count)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
 
     /**
@@ -78,6 +92,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/count)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
@@ -85,6 +102,11 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/createIndex)
      */
+    @JsThrows(ConstraintError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SyntaxError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun createIndex(
         name: String,
         keyPath: String,
@@ -96,6 +118,11 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/createIndex)
      */
+    @JsThrows(ConstraintError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SyntaxError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun createIndex(
         name: String,
         keyPath: ReadonlyArray<JsString>,
@@ -107,6 +134,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun delete(query: IDBValidKey): IDBRequest<Void>
 
     /**
@@ -114,6 +145,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/delete)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun delete(query: IDBKeyRange): IDBRequest<Void>
 
     /**
@@ -121,6 +156,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/deleteIndex)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun deleteIndex(name: String)
 
     /**
@@ -128,6 +166,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun get(query: IDBValidKey): IDBRequest<*>
 
     /**
@@ -135,6 +176,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
@@ -142,6 +186,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAll)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAll(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
@@ -152,6 +199,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAll)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAll(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -162,6 +212,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAllKeys)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAllKeys(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
@@ -172,6 +225,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAllKeys)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getAllKeys(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
@@ -182,6 +238,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getKey)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
 
     /**
@@ -189,6 +248,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getKey)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
     /**
@@ -196,6 +258,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/index)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
     fun index(name: String): IDBIndex
 
     /**
@@ -203,6 +267,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
@@ -213,6 +280,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
@@ -223,6 +293,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openKeyCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openKeyCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
@@ -233,6 +306,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openKeyCursor)
      */
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun openKeyCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
@@ -243,6 +319,11 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/put)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(ReadOnlyError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun put(
         value: JsAny?,
         key: IDBValidKey = definedExternally,

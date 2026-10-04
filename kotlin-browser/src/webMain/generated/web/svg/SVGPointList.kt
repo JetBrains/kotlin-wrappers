@@ -4,6 +4,9 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`SVGPointList`** interface represents a list of DOMPoint objects.
@@ -33,6 +36,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun appendItem(newItem: SVGPoint): SVGPoint
 
     /**
@@ -40,6 +44,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/clear)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun clear()
 
     /**
@@ -47,6 +52,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
      */
+    @JsThrows(IndexSizeError::class)
     fun getItem(index: Int): SVGPoint
 
     /**
@@ -54,6 +60,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun initialize(newItem: SVGPoint): SVGPoint
 
     /**
@@ -61,6 +68,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/insertItemBefore)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun insertItemBefore(
         newItem: SVGPoint,
         index: Int,
@@ -71,6 +79,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/removeItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun removeItem(index: Int): SVGPoint
 
     /**
@@ -78,6 +88,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/replaceItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun replaceItem(
         newItem: SVGPoint,
         index: Int,

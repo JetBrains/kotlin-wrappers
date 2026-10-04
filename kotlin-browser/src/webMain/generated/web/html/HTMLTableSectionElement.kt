@@ -2,6 +2,9 @@
 
 package web.html
 
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
+
 /**
  * The **`HTMLTableSectionElement`** interface provides special properties and methods (beyond the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of sections, that is headers, footers and bodies (<thead>, <tfoot>, and <tbody>, respectively) in an HTML table.
  *
@@ -22,6 +25,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/deleteRow)
      */
+    @JsThrows(IndexSizeError::class)
     fun deleteRow(index: Int)
 
     /**
@@ -29,5 +33,6 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/insertRow)
      */
+    @JsThrows(IndexSizeError::class)
     fun insertRow(index: Int = definedExternally): HTMLTableRowElement
 }

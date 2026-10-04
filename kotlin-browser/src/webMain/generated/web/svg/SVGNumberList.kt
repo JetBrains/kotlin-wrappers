@@ -4,6 +4,9 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`SVGNumberList`** interface defines a list of numbers.
@@ -33,6 +36,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/appendItem)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun appendItem(newItem: SVGNumber): SVGNumber
 
     /**
@@ -40,6 +44,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/clear)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun clear()
 
     /**
@@ -47,6 +52,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/getItem)
      */
+    @JsThrows(IndexSizeError::class)
     fun getItem(index: Int): SVGNumber
 
     /**
@@ -54,6 +60,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/initialize)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun initialize(newItem: SVGNumber): SVGNumber
 
     /**
@@ -61,6 +68,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/insertItemBefore)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun insertItemBefore(
         newItem: SVGNumber,
         index: Int,
@@ -71,6 +79,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/removeItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun removeItem(index: Int): SVGNumber
 
     /**
@@ -78,6 +88,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/replaceItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun replaceItem(
         newItem: SVGNumber,
         index: Int,

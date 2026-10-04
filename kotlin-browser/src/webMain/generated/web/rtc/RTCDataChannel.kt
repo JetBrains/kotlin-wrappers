@@ -8,6 +8,9 @@ import js.closeable.JsCloseable
 import js.serialization.Transferable
 import web.blob.Blob
 import web.buffer.BinaryType
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.OperationError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -143,9 +146,20 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/send)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun send(data: String)
+
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun send(data: Blob)
+
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun send(data: ArrayBuffer)
+
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(OperationError::class)
     fun send(data: ArrayBufferView<ArrayBuffer>)
 }
 

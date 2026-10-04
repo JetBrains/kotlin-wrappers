@@ -2,6 +2,9 @@
 
 package web.dom
 
+import web.errors.DOMExceptionType.HierarchyRequestError
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 import web.events.EventTarget
 import web.html.HTMLElement
 
@@ -116,6 +119,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/appendChild)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun <T : Node> appendChild(node: T): T
 
     /**
@@ -210,6 +214,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/removeChild)
      */
+    @JsThrows(NotFoundError::class)
     fun <T : Node> removeChild(child: T): T
 
     /**
@@ -217,6 +222,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/replaceChild)
      */
+    @JsThrows(HierarchyRequestError::class)
+    @JsThrows(NotFoundError::class)
     fun <T : Node> replaceChild(
         node: Node,
         child: T,

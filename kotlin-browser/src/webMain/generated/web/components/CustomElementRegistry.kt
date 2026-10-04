@@ -6,6 +6,7 @@ import js.promise.Promise
 import js.promise.await
 import web.dom.Node
 import web.dom.TagName
+import web.errors.DOMExceptionType.NotSupportedError
 import web.errors.DOMExceptionType.SyntaxError
 import web.errors.JsThrows
 import web.html.HTMLElement
@@ -21,6 +22,8 @@ open external class CustomElementRegistry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
      */
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SyntaxError::class)
     fun <T : P, P : HTMLElement> define(
         name: TagName<T>,
         constructor: CustomElementConstructor<T>,
@@ -46,6 +49,7 @@ open external class CustomElementRegistry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/initialize)
      */
+    @JsThrows(NotSupportedError::class)
     fun initialize(root: Node)
 
     /**

@@ -2,6 +2,9 @@
 
 package web.html
 
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
+
 /**
  * The **`HTMLTableRowElement`** interface provides special properties and methods (beyond the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of rows in an HTML table.
  *
@@ -36,6 +39,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/deleteCell)
      */
+    @JsThrows(IndexSizeError::class)
     fun deleteCell(index: Int)
 
     /**
@@ -43,5 +47,6 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/insertCell)
      */
+    @JsThrows(IndexSizeError::class)
     fun insertCell(index: Int = definedExternally): HTMLTableCellElement
 }

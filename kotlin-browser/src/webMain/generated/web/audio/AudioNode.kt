@@ -2,6 +2,8 @@
 
 package web.audio
 
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.EventTarget
 
 /**
@@ -59,12 +61,18 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/connect)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(NotSupportedError::class)
     fun connect(
         destinationNode: AudioNode,
         output: Int = definedExternally,
         input: Int = definedExternally,
     ): AudioNode
 
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(NotSupportedError::class)
     fun connect(
         destinationParam: AudioParam,
         output: Int = definedExternally,
@@ -75,21 +83,39 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/disconnect)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect()
+
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect(output: Int)
+
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect(destinationNode: AudioNode)
+
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect(
         destinationNode: AudioNode,
         output: Int,
     )
 
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect(
         destinationNode: AudioNode,
         output: Int,
         input: Int,
     )
 
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect(destinationParam: AudioParam)
+
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidAccessError::class)
     fun disconnect(
         destinationParam: AudioParam,
         output: Int,

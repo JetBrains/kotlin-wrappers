@@ -56,6 +56,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
     fun unlock()
 }
 

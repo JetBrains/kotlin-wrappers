@@ -4,6 +4,9 @@ package web.data
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.file.File
 
 /**
@@ -27,11 +30,13 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
+    @JsThrows(NotSupportedError::class)
     fun add(
         data: String,
         type: String,
     ): DataTransferItem?
 
+    @JsThrows(NotSupportedError::class)
     fun add(data: File): DataTransferItem?
 
     /**
@@ -46,5 +51,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */
+    @JsThrows(InvalidStateError::class)
     fun remove(index: Int)
 }

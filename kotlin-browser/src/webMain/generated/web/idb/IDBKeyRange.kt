@@ -2,6 +2,9 @@
 
 package web.idb
 
+import web.errors.DOMExceptionType.DataError
+import web.errors.JsThrows
+
 /**
  * The **`IDBKeyRange`** interface of the IndexedDB API represents a continuous interval over some data type that is used for keys. Records can be retrieved from IDBObjectStore and IDBIndex objects using keys or a range of keys. You can limit the range using lower and upper bounds. For example, you can iterate over all values of a key in the value range A–Z.
  *
@@ -42,6 +45,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/includes)
      */
+    @JsThrows(DataError::class)
     fun includes(key: JsAny?): Boolean
 
     companion object {
@@ -50,6 +54,7 @@ private constructor() {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/bound_static)
          */
+        @JsThrows(DataError::class)
         fun bound(
             lower: JsAny?,
             upper: JsAny?,
@@ -62,6 +67,7 @@ private constructor() {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lowerBound_static)
          */
+        @JsThrows(DataError::class)
         fun lowerBound(
             lower: JsAny?,
             open: Boolean = definedExternally,
@@ -72,6 +78,7 @@ private constructor() {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/only_static)
          */
+        @JsThrows(DataError::class)
         fun only(value: JsAny?): IDBKeyRange
 
         /**
@@ -79,6 +86,7 @@ private constructor() {
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upperBound_static)
          */
+        @JsThrows(DataError::class)
         fun upperBound(
             upper: JsAny?,
             open: Boolean = definedExternally,

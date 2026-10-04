@@ -2,7 +2,9 @@
 
 package web.mediarecorder
 
+import web.errors.DOMExceptionType.*
 import web.errors.ErrorEvent
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -86,6 +88,7 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause)
      */
+    @JsThrows(InvalidStateError::class)
     fun pause()
 
     /**
@@ -93,6 +96,7 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData)
      */
+    @JsThrows(InvalidStateError::class)
     fun requestData()
 
     /**
@@ -100,6 +104,7 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume)
      */
+    @JsThrows(InvalidStateError::class)
     fun resume()
 
     /**
@@ -107,6 +112,9 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun start(timeslice: Int = definedExternally)
 
     /**
@@ -114,6 +122,7 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop)
      */
+    @JsThrows(InvalidStateError::class)
     fun stop()
 
     companion object {

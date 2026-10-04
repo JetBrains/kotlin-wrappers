@@ -2,6 +2,9 @@
 
 package web.vtt
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -81,6 +84,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/addCue)
      */
+    @JsThrows(InvalidStateError::class)
     fun addCue(cue: TextTrackCue)
 
     /**
@@ -88,6 +92,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/removeCue)
      */
+    @JsThrows(NotFoundError::class)
     fun removeCue(cue: TextTrackCue)
 }
 

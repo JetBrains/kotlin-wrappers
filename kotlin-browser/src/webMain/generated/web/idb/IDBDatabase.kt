@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 import js.closeable.JsCloseable
 import js.numbers.UInt53
 import web.dom.DOMStringList
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -69,6 +71,10 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/createObjectStore)
      */
+    @JsThrows(ConstraintError::class)
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun createObjectStore(
         name: String,
         options: IDBObjectStoreParameters = definedExternally,
@@ -79,6 +85,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/deleteObjectStore)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(TransactionInactiveError::class)
     fun deleteObjectStore(name: String)
 
     /**
@@ -86,6 +95,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/transaction)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
     fun transaction(
         storeNames: String,
         mode: IDBTransactionMode = definedExternally,
@@ -97,6 +109,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/transaction)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
     fun transaction(
         storeNames: ReadonlyArray<JsString>,
         mode: IDBTransactionMode = definedExternally,

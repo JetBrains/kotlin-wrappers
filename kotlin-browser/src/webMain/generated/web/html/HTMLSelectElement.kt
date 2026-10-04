@@ -6,6 +6,8 @@ import js.iterable.JsIterable
 import web.autofill.AutoFill
 import web.dom.Node
 import web.dom.NodeList
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventInstance
 import web.form.FormControl
@@ -145,6 +147,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptionElement,
         before: HTMLElement? = definedExternally,
@@ -155,6 +158,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptionElement,
         before: Int?,
@@ -165,6 +169,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptGroupElement,
         before: HTMLElement? = definedExternally,
@@ -175,6 +180,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/add)
      */
+    @JsThrows(HierarchyRequestError::class)
     fun add(
         element: HTMLOptGroupElement,
         before: Int?,
@@ -228,6 +234,10 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/showPicker)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun showPicker()
     // [name: number]: HTMLOptionElement | HTMLOptGroupElement
 }

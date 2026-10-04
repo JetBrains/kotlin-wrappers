@@ -4,6 +4,9 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 import web.geometry.DOMMatrixReadOnly
 
 /**
@@ -34,6 +37,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/appendItem)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun appendItem(newItem: SVGTransform): SVGTransform
 
     /**
@@ -41,6 +45,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/clear)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun clear()
 
     /**
@@ -48,6 +53,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/consolidate)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun consolidate(): SVGTransform?
 
     /**
@@ -62,6 +68,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/getItem)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun getItem(index: Int): SVGTransform
 
     /**
@@ -69,6 +76,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/initialize)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun initialize(newItem: SVGTransform): SVGTransform
 
     /**
@@ -76,6 +84,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/insertItemBefore)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun insertItemBefore(
         newItem: SVGTransform,
         index: Int,
@@ -86,6 +95,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/removeItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun removeItem(index: Int): SVGTransform
 
     /**
@@ -93,6 +104,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/replaceItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun replaceItem(
         newItem: SVGTransform,
         index: Int,

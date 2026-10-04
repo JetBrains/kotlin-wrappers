@@ -3,6 +3,9 @@
 package web.performance
 
 import js.numbers.UInt53
+import web.errors.DOMExceptionType.DataCloneError
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -103,6 +106,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/measure)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(SyntaxError::class)
     fun measure(
         measureName: String,
         startOrMeasureOptions: String = definedExternally,
@@ -114,6 +119,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/measure)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(SyntaxError::class)
     fun measure(
         measureName: String,
         startOrMeasureOptions: PerformanceMeasureOptions,

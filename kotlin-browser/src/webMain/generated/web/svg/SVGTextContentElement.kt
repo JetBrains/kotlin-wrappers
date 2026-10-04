@@ -2,6 +2,8 @@
 
 package web.svg
 
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
 import web.geometry.DOMPointReadOnly
 
 /**
@@ -45,6 +47,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getEndPositionOfChar)
      */
+    @JsThrows(IndexSizeError::class)
     fun getEndPositionOfChar(charnum: Int): SVGPoint
 
     /**
@@ -52,6 +55,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getExtentOfChar)
      */
+    @JsThrows(IndexSizeError::class)
     fun getExtentOfChar(charnum: Int): SVGRect
 
     /**
@@ -66,6 +70,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getRotationOfChar)
      */
+    @JsThrows(IndexSizeError::class)
     fun getRotationOfChar(charnum: Int): Float
 
     /**
@@ -73,6 +78,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getStartPositionOfChar)
      */
+    @JsThrows(IndexSizeError::class)
     fun getStartPositionOfChar(charnum: Int): SVGPoint
 
     /**
@@ -80,6 +86,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement/getSubStringLength)
      */
+    @JsThrows(IndexSizeError::class)
     fun getSubStringLength(
         charnum: Int,
         nchars: Int,

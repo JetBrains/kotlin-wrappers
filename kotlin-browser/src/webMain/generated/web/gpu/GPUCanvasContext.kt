@@ -4,6 +4,8 @@ package web.gpu
 
 import js.reflect.unsafeCast
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.EventTarget
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
@@ -45,6 +47,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/getCurrentTexture)
      */
+    @JsThrows(InvalidStateError::class)
     fun getCurrentTexture(): GPUTexture
 
     /**

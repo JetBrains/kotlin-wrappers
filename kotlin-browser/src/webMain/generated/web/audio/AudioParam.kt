@@ -5,6 +5,8 @@ package web.audio
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import js.typedarrays.Float32Array
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 
 /**
  * The Web Audio API's **`AudioParam`** interface represents an audio-related parameter, usually a parameter of an AudioNode (such as GainNode.gain).
@@ -103,6 +105,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueCurveAtTime)
      */
+    @JsThrows(InvalidStateError::class)
     fun setValueCurveAtTime(
         values: ReadonlyArray<JsDouble>,
         startTime: Double,
@@ -114,6 +117,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueCurveAtTime)
      */
+    @JsThrows(InvalidStateError::class)
     fun setValueCurveAtTime(
         values: Float32Array<*>,
         startTime: Double,

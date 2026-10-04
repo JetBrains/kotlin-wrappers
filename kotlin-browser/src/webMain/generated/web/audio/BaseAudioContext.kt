@@ -8,6 +8,9 @@ import js.numbers.JsDouble
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Float32Array
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -88,6 +91,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer)
      */
+    @JsThrows(NotSupportedError::class)
     fun createBuffer(
         numberOfChannels: Int,
         length: Int,
@@ -155,6 +159,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createIIRFilter)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun createIIRFilter(
         feedforward: ReadonlyArray<JsDouble>,
         feedback: ReadonlyArray<JsDouble>,

@@ -786,7 +786,6 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey)
      */
     @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: Ed25519Algorithm,
@@ -794,7 +793,6 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
     ): Promise<CryptoKeyPair>
 
-    @JsThrows(SyntaxError::class)
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
@@ -804,7 +802,6 @@ private constructor() {
     ): Promise<CryptoKeyPair>
 
     @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: RsaHashedKeyGenParams,
@@ -812,7 +809,6 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKeyPair>
 
-    @JsThrows(SyntaxError::class)
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
@@ -822,7 +818,6 @@ private constructor() {
     ): Promise<CryptoKeyPair>
 
     @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: AesKeyGenParams,
@@ -830,7 +825,6 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsThrows(SyntaxError::class)
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
@@ -840,7 +834,6 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: Pbkdf2Params,
@@ -849,7 +842,6 @@ private constructor() {
     ): Promise<CryptoKey>
 
     @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
         algorithm: Algorithm,
@@ -857,7 +849,6 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<JsAny /* CryptoKeyPair | CryptoKey */>
 
-    @JsThrows(SyntaxError::class)
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
     fun generateKeyAsync(
@@ -3016,7 +3007,6 @@ suspend inline fun SubtleCrypto.exportKey(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey)
  */
 @JsThrows(SyntaxError::class)
-@JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: Ed25519Algorithm,
     extractable: Boolean,
@@ -3029,7 +3019,6 @@ suspend inline fun SubtleCrypto.generateKey(
     ).await()
 }
 
-@JsThrows(SyntaxError::class)
 @JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: X25519Algorithm,
@@ -3044,7 +3033,6 @@ suspend inline fun SubtleCrypto.generateKey(
 }
 
 @JsThrows(SyntaxError::class)
-@JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: RsaHashedKeyGenParams,
     extractable: Boolean,
@@ -3057,7 +3045,6 @@ suspend inline fun SubtleCrypto.generateKey(
     ).await()
 }
 
-@JsThrows(SyntaxError::class)
 @JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: EcKeyGenParams,
@@ -3072,7 +3059,6 @@ suspend inline fun SubtleCrypto.generateKey(
 }
 
 @JsThrows(SyntaxError::class)
-@JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: AesKeyGenParams,
     extractable: Boolean,
@@ -3085,7 +3071,6 @@ suspend inline fun SubtleCrypto.generateKey(
     ).await()
 }
 
-@JsThrows(SyntaxError::class)
 @JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: HmacKeyGenParams,
@@ -3100,7 +3085,6 @@ suspend inline fun SubtleCrypto.generateKey(
 }
 
 @JsThrows(SyntaxError::class)
-@JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: Pbkdf2Params,
     extractable: Boolean,
@@ -3114,7 +3098,6 @@ suspend inline fun SubtleCrypto.generateKey(
 }
 
 @JsThrows(SyntaxError::class)
-@JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: Algorithm,
     extractable: Boolean,
@@ -3127,7 +3110,6 @@ suspend inline fun SubtleCrypto.generateKey(
     ).await()
 }
 
-@JsThrows(SyntaxError::class)
 @JsThrows(SyntaxError::class)
 suspend inline fun SubtleCrypto.generateKey(
     algorithm: String,

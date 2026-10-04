@@ -3,6 +3,9 @@
 package web.location
 
 import web.dom.DOMStringList
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
 import web.origin.OriginSource
 import web.url.URL
 import web.url.URLLike
@@ -91,6 +94,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/assign)
      */
+    @JsThrows(SecurityError::class)
+    @JsThrows(SyntaxError::class)
     fun assign(url: String)
 
     /**
@@ -98,6 +103,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/assign)
      */
+    @JsThrows(SecurityError::class)
+    @JsThrows(SyntaxError::class)
     fun assign(url: URL)
 
     /**
@@ -105,6 +112,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/reload)
      */
+    @JsThrows(SecurityError::class)
     fun reload()
 
     /**
@@ -112,6 +120,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/replace)
      */
+    @JsThrows(SecurityError::class)
+    @JsThrows(SyntaxError::class)
     fun replace(url: String)
 
     /**
@@ -119,5 +129,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/replace)
      */
+    @JsThrows(SecurityError::class)
+    @JsThrows(SyntaxError::class)
     fun replace(url: URL)
 }

@@ -2,6 +2,10 @@
 
 package web.canvas
 
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.SyntaxError
+import web.errors.JsThrows
+
 /**
  * The **`CanvasGradient`** interface represents an opaque object describing a gradient. It is returned by the methods CanvasRenderingContext2D.createLinearGradient(), CanvasRenderingContext2D.createConicGradient() or CanvasRenderingContext2D.createRadialGradient().
  *
@@ -14,6 +18,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient/addColorStop)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(SyntaxError::class)
     fun addColorStop(
         offset: Double,
         color: String,

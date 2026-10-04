@@ -8,6 +8,9 @@ import js.numbers.Int53
 import js.numbers.UInt53
 import js.serialization.Serializable
 import js.serialization.Transferable
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 
 /**
  * The **`AudioData`** interface of the WebCodecs API represents an audio sample.
@@ -73,6 +76,7 @@ open external class AudioData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/clone)
      */
+    @JsThrows(InvalidStateError::class)
     fun clone(): AudioData
 
     /**
@@ -87,6 +91,8 @@ open external class AudioData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/copyTo)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
     fun copyTo(
         destination: AllowSharedBufferSource,
         options: AudioDataCopyToOptions,

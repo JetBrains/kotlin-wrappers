@@ -3,6 +3,9 @@
 package web.broadcast
 
 import js.closeable.JsCloseable
+import web.errors.DOMExceptionType.DataCloneError
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -44,7 +47,12 @@ open external class BroadcastChannel(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage)
      */
+    @JsThrows(DataCloneError::class)
+    @JsThrows(InvalidStateError::class)
     fun postMessage(message: JsAny?)
+
+    @JsThrows(DataCloneError::class)
+    @JsThrows(InvalidStateError::class)
     fun postMessage(message: String)
 }
 

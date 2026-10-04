@@ -4,6 +4,9 @@ package web.svg
 
 import js.array.ArrayLike
 import js.iterable.JsIterable
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`SVGStringList`** interface defines a list of strings.
@@ -33,6 +36,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/appendItem)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun appendItem(newItem: String): String
 
     /**
@@ -40,6 +44,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/clear)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun clear()
 
     /**
@@ -47,6 +52,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/getItem)
      */
+    @JsThrows(IndexSizeError::class)
     fun getItem(index: Int): String
 
     /**
@@ -54,6 +60,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/initialize)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun initialize(newItem: String): String
 
     /**
@@ -61,6 +68,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/insertItemBefore)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun insertItemBefore(
         newItem: String,
         index: Int,
@@ -71,6 +79,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/removeItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun removeItem(index: Int): String
 
     /**
@@ -78,6 +88,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList/replaceItem)
      */
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(NoModificationAllowedError::class)
     fun replaceItem(
         newItem: String,
         index: Int,

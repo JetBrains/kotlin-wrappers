@@ -7,6 +7,8 @@ import js.buffer.BufferSource
 import js.numbers.UInt53
 import web.blob.Blob
 import web.buffer.BinaryType
+import web.errors.DOMExceptionType.*
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -101,6 +103,8 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
      */
+    @JsThrows(InvalidAccessError::class)
+    @JsThrows(SyntaxError::class)
     fun close(
         code: Short = definedExternally,
         reason: String = definedExternally,
@@ -111,6 +115,7 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
+    @JsThrows(InvalidStateError::class)
     fun send(data: BufferSource)
 
     /**
@@ -118,6 +123,7 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
+    @JsThrows(InvalidStateError::class)
     fun send(data: Blob)
 
     /**
@@ -125,6 +131,7 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
+    @JsThrows(InvalidStateError::class)
     fun send(data: String)
 
     companion object {

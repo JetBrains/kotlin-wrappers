@@ -2,6 +2,9 @@
 
 package web.rtc
 
+import web.errors.DOMExceptionType.InvalidCharacterError
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -38,6 +41,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/insertDTMF)
      */
+    @JsThrows(InvalidCharacterError::class)
+    @JsThrows(InvalidStateError::class)
     fun insertDTMF(
         tones: String,
         duration: Int = definedExternally,

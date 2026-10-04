@@ -4,6 +4,9 @@ package web.navigation
 
 import web.abort.AbortSignal
 import web.dom.Element
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.SecurityError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventType
 import web.form.FormData
@@ -99,6 +102,8 @@ open external class NavigateEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
     fun intercept(options: NavigationInterceptOptions = definedExternally)
 
     /**
@@ -106,6 +111,8 @@ open external class NavigateEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/scroll)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SecurityError::class)
     fun scroll()
 
     companion object

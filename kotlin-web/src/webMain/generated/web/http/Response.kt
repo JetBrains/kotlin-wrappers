@@ -2,6 +2,8 @@
 
 package web.http
 
+import web.errors.DOMExceptionType.AbortError
+import web.errors.JsThrows
 import web.url.URL
 
 /**
@@ -82,6 +84,7 @@ open external class Response(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static)
          */
+        @JsThrows(AbortError::class)
         fun json(
             data: JsAny?,
             init: ResponseInit = definedExternally,

@@ -4,7 +4,7 @@ package web.cssom
 
 import js.promise.Promise
 import js.promise.await
-import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 
 /**
@@ -41,6 +41,10 @@ open external class CSSStyleSheet(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/insertRule)
      */
+    @JsThrows(HierarchyRequestError::class)
+    @JsThrows(IndexSizeError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(SyntaxError::class)
     fun insertRule(
         rule: String,
         index: Int = definedExternally,
@@ -60,6 +64,7 @@ open external class CSSStyleSheet(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync)
      */
+    @JsThrows(NotAllowedError::class)
     fun replaceSync(text: String)
 }
 
