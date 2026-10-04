@@ -325,6 +325,9 @@ private fun parseExceptionType(
         .takeIf { it != source }
         ?.let { return parseExceptionType(it) }
 
+    if (source.startsWith("""{{domxref("QuotaExceededError")}}"""))
+        return "QuotaExceededError"
+
     if ("""{{domxref("DOMException")}}""" in source) {
         val type = source
             .substringBefore("\n")

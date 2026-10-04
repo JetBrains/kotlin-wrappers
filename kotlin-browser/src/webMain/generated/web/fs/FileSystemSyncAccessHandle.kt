@@ -7,6 +7,7 @@ import js.closeable.JsCloseable
 import js.numbers.UInt53
 import web.errors.DOMExceptionType.InvalidStateError
 import web.errors.JsThrows
+import web.errors.QuotaExceededError
 
 /**
  * The **`FileSystemSyncAccessHandle`** interface of the File System API represents a synchronous handle to a file system entry.
@@ -57,6 +58,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate)
      */
     @JsThrows(InvalidStateError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     fun truncate(newSize: UInt53)
 
     /**
@@ -65,6 +67,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write)
      */
     @JsThrows(InvalidStateError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     fun write(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,

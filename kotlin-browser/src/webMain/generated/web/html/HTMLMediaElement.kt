@@ -7,6 +7,7 @@ import js.promise.await
 import js.void.Void
 import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
+import web.errors.QuotaExceededError
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -314,6 +315,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     @JsName("setMediaKeys")
     fun setMediaKeysAsync(mediaKeys: MediaKeys?): Promise<Void>
 
@@ -367,6 +369,7 @@ suspend inline fun HTMLMediaElement.play() {
  */
 @JsThrows(InvalidStateError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows.Typed(QuotaExceededError::class)
 suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
     setMediaKeysAsync(
         mediaKeys = mediaKeys,

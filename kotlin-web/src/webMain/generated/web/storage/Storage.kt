@@ -2,6 +2,9 @@
 
 package web.storage
 
+import web.errors.JsThrows
+import web.errors.QuotaExceededError
+
 /**
  * The **`Storage`** interface of the Web Storage API provides access to a particular domain's session or local storage. It allows, for example, the addition, modification, or deletion of stored data items.
  *
@@ -49,6 +52,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/setItem)
      */
+    @JsThrows.Typed(QuotaExceededError::class)
     fun setItem(
         key: String,
         value: String,

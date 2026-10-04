@@ -9,6 +9,7 @@ import js.void.Void
 import web.errors.DOMExceptionType.InvalidStateError
 import web.errors.DOMExceptionType.NotSupportedError
 import web.errors.JsThrows
+import web.errors.QuotaExceededError
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -77,6 +78,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     @JsName("generateRequest")
     fun generateRequestAsync(
         initDataType: String,
@@ -124,6 +126,7 @@ suspend inline fun MediaKeySession.close() {
  */
 @JsThrows(InvalidStateError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows.Typed(QuotaExceededError::class)
 suspend inline fun MediaKeySession.generateRequest(
     initDataType: String,
     initData: BufferSource,

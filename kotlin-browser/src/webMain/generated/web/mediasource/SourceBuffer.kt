@@ -5,6 +5,7 @@ package web.mediasource
 import js.buffer.BufferSource
 import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
+import web.errors.QuotaExceededError
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -99,6 +100,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendBuffer)
      */
     @JsThrows(InvalidStateError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     fun appendBuffer(data: BufferSource)
 
     /**

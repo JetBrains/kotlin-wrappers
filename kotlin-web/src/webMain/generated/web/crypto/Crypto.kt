@@ -4,6 +4,8 @@ package web.crypto
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
+import web.errors.JsThrows
+import web.errors.QuotaExceededError
 
 /**
  * The **`Crypto`** interface represents basic cryptography features available in the current context. It allows access to a cryptographically strong random number generator and to cryptographic primitives.
@@ -25,6 +27,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/getRandomValues)
      */
+    @JsThrows.Typed(QuotaExceededError::class)
     fun <T : ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */> getRandomValues(array: T): T
 
     /**

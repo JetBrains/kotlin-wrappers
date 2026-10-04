@@ -8,6 +8,7 @@ import js.promise.await
 import js.void.Void
 import web.errors.DOMExceptionType.NotAllowedError
 import web.errors.JsThrows
+import web.errors.QuotaExceededError
 import web.streams.WritableStream
 
 /**
@@ -34,6 +35,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
     @JsThrows(NotAllowedError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     @JsName("truncate")
     fun truncateAsync(size: UInt53): Promise<Void>
 
@@ -43,6 +45,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
      */
     @JsThrows(NotAllowedError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     @JsName("write")
     fun writeAsync(data: FileSystemWriteChunkType): Promise<Void>
 }
@@ -65,6 +68,7 @@ suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
  */
 @JsThrows(NotAllowedError::class)
+@JsThrows.Typed(QuotaExceededError::class)
 suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
     truncateAsync(
         size = size,
@@ -77,6 +81,7 @@ suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
  */
 @JsThrows(NotAllowedError::class)
+@JsThrows.Typed(QuotaExceededError::class)
 suspend inline fun FileSystemWritableFileStream.write(data: FileSystemWriteChunkType) {
     writeAsync(
         data = data,

@@ -4,6 +4,7 @@ package web.mediasource
 
 import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
+import web.errors.QuotaExceededError
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -71,6 +72,7 @@ open external class MediaSource :
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows.Typed(QuotaExceededError::class)
     fun addSourceBuffer(type: String): SourceBuffer
 
     /**
