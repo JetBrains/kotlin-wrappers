@@ -376,5 +376,8 @@ private fun parseExceptionType(
     if (isDefault)
         return null
 
+    if ("`gl." in source)
+        return null
+
     return null
 }
