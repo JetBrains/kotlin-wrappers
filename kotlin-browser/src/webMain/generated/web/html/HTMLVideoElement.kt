@@ -98,11 +98,11 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
-    @JsName("requestPictureInPicture")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("requestPictureInPicture")
     fun requestPictureInPictureAsync(): Promise<PictureInPictureWindow>
 
     /**

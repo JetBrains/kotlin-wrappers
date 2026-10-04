@@ -21,8 +21,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
      */
-    @JsName("disable")
     @JsThrows(InvalidStateError::class)
+    @JsName("disable")
     fun disableAsync(): Promise<Void>
 
     /**
@@ -30,8 +30,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
      */
-    @JsName("enable")
     @JsThrows(InvalidStateError::class)
+    @JsName("enable")
     fun enableAsync(): Promise<Void>
 
     /**
@@ -39,8 +39,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
      */
-    @JsName("getState")
     @JsThrows(InvalidStateError::class)
+    @JsName("getState")
     fun getStateAsync(): Promise<NavigationPreloadState>
 
     /**
@@ -48,8 +48,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
      */
-    @JsName("setHeaderValue")
     @JsThrows(InvalidStateError::class)
+    @JsName("setHeaderValue")
     fun setHeaderValueAsync(value: String): Promise<Void>
 }
 

@@ -23,19 +23,19 @@ external interface NavigatorBadge {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge)
      */
-    @JsName("clearAppBadge")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("clearAppBadge")
     fun clearAppBadgeAsync(): Promise<Void> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
      */
-    @JsName("setAppBadge")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("setAppBadge")
     fun setAppBadgeAsync(contents: UInt53 = definedExternally): Promise<Void> = definedExternally
 }
 

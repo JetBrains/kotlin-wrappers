@@ -83,9 +83,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals)
      */
-    @JsName("getSignals")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
+    @JsName("getSignals")
     fun getSignalsAsync(): Promise<SerialInputSignals>
 
     /**
@@ -93,9 +93,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/open)
      */
-    @JsName("open")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
+    @JsName("open")
     fun openAsync(options: SerialOptions): Promise<Void>
 
     /**
@@ -103,9 +103,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals)
      */
-    @JsName("setSignals")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
+    @JsName("setSignals")
     fun setSignalsAsync(signals: SerialOutputSignals = definedExternally): Promise<Void>
 }
 

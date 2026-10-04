@@ -23,9 +23,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
-    @JsName("addModule")
     @JsThrows(AbortError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("addModule")
     fun addModuleAsync(
         moduleURL: String,
         options: WorkletOptions = definedExternally,
@@ -36,17 +36,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
-    @JsName("addModule")
     @JsThrows(AbortError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("addModule")
     fun addModuleAsync(
         moduleURL: URL,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
 
-    @JsName("addModule")
     @JsThrows(AbortError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("addModule")
     fun addModuleAsync(
         module: M,
         options: WorkletOptions = definedExternally,

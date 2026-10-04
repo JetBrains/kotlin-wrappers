@@ -29,9 +29,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
-    @JsName("getDirectoryHandle")
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("getDirectoryHandle")
     fun getDirectoryHandleAsync(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
@@ -42,9 +42,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
-    @JsName("getFileHandle")
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("getFileHandle")
     fun getFileHandleAsync(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
@@ -55,10 +55,10 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
-    @JsName("removeEntry")
     @JsThrows(InvalidModificationError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("removeEntry")
     fun removeEntryAsync(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,

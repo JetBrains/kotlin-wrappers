@@ -57,11 +57,11 @@ open external class PaymentRequest(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
-    @JsName("show")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("show")
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
     /**
@@ -69,11 +69,11 @@ open external class PaymentRequest(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
-    @JsName("show")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("show")
     fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
 }
 

@@ -38,9 +38,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
      */
-    @JsName("requestWindow")
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("requestWindow")
     fun requestWindowAsync(options: DocumentPictureInPictureOptions = definedExternally): Promise<Window>
 }
 

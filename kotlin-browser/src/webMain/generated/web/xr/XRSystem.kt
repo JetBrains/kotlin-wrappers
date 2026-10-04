@@ -20,10 +20,10 @@ private constructor() :
      * @param mode
      * @param options
      */
-    @JsName("requestSession")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("requestSession")
     fun requestSessionAsync(
         mode: XRSessionMode,
         options: XRSessionInit = definedExternally,

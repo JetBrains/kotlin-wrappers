@@ -26,8 +26,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/getPorts)
      */
-    @JsName("getPorts")
     @JsThrows(SecurityError::class)
+    @JsName("getPorts")
     fun getPortsAsync(): Promise<ReadonlyArray<SerialPort>>
 
     /**
@@ -35,9 +35,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
      */
-    @JsName("requestPort")
     @JsThrows(NotFoundError::class)
     @JsThrows(SecurityError::class)
+    @JsName("requestPort")
     fun requestPortAsync(options: SerialPortRequestOptions = definedExternally): Promise<SerialPort>
 }
 

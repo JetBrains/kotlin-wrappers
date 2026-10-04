@@ -32,9 +32,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
      */
-    @JsName("databases")
     @JsThrows(SecurityError::class)
     @JsThrows(UnknownError::class)
+    @JsName("databases")
     fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
     /**

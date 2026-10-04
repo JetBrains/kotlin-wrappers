@@ -75,9 +75,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
-    @JsName("generateRequest")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("generateRequest")
     fun generateRequestAsync(
         initDataType: String,
         initData: BufferSource,

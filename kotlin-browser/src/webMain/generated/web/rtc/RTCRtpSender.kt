@@ -65,9 +65,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
      */
-    @JsName("replaceTrack")
     @JsThrows(InvalidModificationError::class)
     @JsThrows(InvalidStateError::class)
+    @JsName("replaceTrack")
     fun replaceTrackAsync(withTrack: MediaStreamTrack?): Promise<Void>
 
     /**
@@ -75,10 +75,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
      */
-    @JsName("setParameters")
     @JsThrows(InvalidModificationError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
+    @JsName("setParameters")
     fun setParametersAsync(
         parameters: RTCRtpSendParameters,
         setParameterOptions: RTCSetParameterOptions = definedExternally,

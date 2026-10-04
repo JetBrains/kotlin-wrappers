@@ -87,9 +87,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
      */
-    @JsName("complete")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
+    @JsName("complete")
     fun completeAsync(result: PaymentComplete = definedExternally): Promise<Void>
 
     /**

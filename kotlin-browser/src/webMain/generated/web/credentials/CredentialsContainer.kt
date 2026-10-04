@@ -23,9 +23,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
      */
-    @JsName("create")
     @JsThrows(AbortError::class)
     @JsThrows(NotAllowedError::class)
+    @JsName("create")
     fun createAsync(options: CredentialCreationOptions = definedExternally): Promise<Credential?>
 
     /**
@@ -33,12 +33,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
      */
-    @JsName("get")
     @JsThrows(AbortError::class)
     @JsThrows(NetworkError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
     @JsThrows(TimeoutError::class)
+    @JsName("get")
     fun getAsync(options: CredentialRequestOptions = definedExternally): Promise<Credential?>
 
     /**
@@ -54,8 +54,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
      */
-    @JsName("store")
     @JsThrows(NotAllowedError::class)
+    @JsName("store")
     fun storeAsync(credential: Credential): Promise<Void>
 }
 

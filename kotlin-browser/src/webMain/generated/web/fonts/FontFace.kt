@@ -118,8 +118,8 @@ open external class FontFace(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
      */
-    @JsName("load")
     @JsThrows(NetworkError::class)
+    @JsName("load")
     fun loadAsync(): Promise<FontFace>
 }
 

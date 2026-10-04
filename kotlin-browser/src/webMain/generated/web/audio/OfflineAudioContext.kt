@@ -41,8 +41,8 @@ open external class OfflineAudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
-    @JsName("resume")
     @JsThrows(InvalidStateError::class)
+    @JsName("resume")
     fun resumeAsync(): Promise<Void>
 
     /**
@@ -58,8 +58,8 @@ open external class OfflineAudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
-    @JsName("suspend")
     @JsThrows(InvalidStateError::class)
+    @JsName("suspend")
     fun suspendAsync(suspendTime: Double): Promise<Void>
 }
 

@@ -42,13 +42,13 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
      */
-    @JsName("getDisplayMedia")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsThrows(NotReadableError::class)
     @JsThrows.Typed(OverconstrainedError::class)
+    @JsName("getDisplayMedia")
     fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
     /**
@@ -63,7 +63,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
-    @JsName("getUserMedia")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
@@ -71,6 +70,7 @@ private constructor() :
     @JsThrows(NotReadableError::class)
     @JsThrows(SecurityError::class)
     @JsThrows.Typed(OverconstrainedError::class)
+    @JsName("getUserMedia")
     fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
 

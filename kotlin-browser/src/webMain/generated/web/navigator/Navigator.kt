@@ -180,11 +180,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
      */
-    @JsName("requestMIDIAccess")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("requestMIDIAccess")
     fun requestMIDIAccessAsync(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
     /**
@@ -193,9 +193,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
      */
-    @JsName("requestMediaKeySystemAccess")
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("requestMediaKeySystemAccess")
     fun requestMediaKeySystemAccessAsync(
         keySystem: String,
         supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
@@ -227,11 +227,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
      */
-    @JsName("share")
     @JsThrows(AbortError::class)
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
+    @JsName("share")
     fun shareAsync(data: ShareData = definedExternally): Promise<Void>
 
     /**

@@ -86,8 +86,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
      */
-    @JsName("open")
     @JsThrows(NotAllowedError::class)
+    @JsName("open")
     fun openAsync(): Promise<MIDIPort>
 }
 

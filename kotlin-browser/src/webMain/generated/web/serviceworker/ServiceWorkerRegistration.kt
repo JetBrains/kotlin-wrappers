@@ -94,8 +94,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
      */
-    @JsName("showNotification")
     @JsThrows(DataCloneError::class)
+    @JsName("showNotification")
     fun showNotificationAsync(
         title: String,
         options: NotificationOptions = definedExternally,

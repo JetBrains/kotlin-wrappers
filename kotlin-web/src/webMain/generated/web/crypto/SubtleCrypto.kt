@@ -23,9 +23,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
-    @JsName("decrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("decrypt")
     fun decryptAsync(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -37,9 +37,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
-    @JsName("decrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("decrypt")
     fun decryptAsync(
         algorithm: String,
         key: CryptoKey,
@@ -51,9 +51,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
-    @JsName("decrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("decrypt")
     fun decryptAsync(
         algorithm: RsaOaepParams,
         key: CryptoKey,
@@ -65,9 +65,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
-    @JsName("decrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("decrypt")
     fun decryptAsync(
         algorithm: AesCtrParams,
         key: CryptoKey,
@@ -79,9 +79,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
-    @JsName("decrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("decrypt")
     fun decryptAsync(
         algorithm: AesCbcParams,
         key: CryptoKey,
@@ -93,9 +93,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
-    @JsName("decrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("decrypt")
     fun decryptAsync(
         algorithm: AesGcmParams,
         key: CryptoKey,
@@ -107,10 +107,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
-    @JsName("deriveBits")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
+    @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -122,10 +122,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
-    @JsName("deriveBits")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
+    @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -137,10 +137,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
-    @JsName("deriveBits")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
+    @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -152,10 +152,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
-    @JsName("deriveBits")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
+    @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -167,10 +167,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
-    @JsName("deriveBits")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
+    @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -182,10 +182,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -199,10 +199,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -216,10 +216,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -233,10 +233,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -250,10 +250,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -267,10 +267,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -284,10 +284,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -301,10 +301,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -318,10 +318,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -335,10 +335,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -352,10 +352,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -369,10 +369,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -386,10 +386,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -403,10 +403,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -420,10 +420,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -437,10 +437,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -454,10 +454,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -471,10 +471,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -488,10 +488,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -505,10 +505,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -522,10 +522,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -539,10 +539,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -556,10 +556,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -573,10 +573,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -590,10 +590,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -607,10 +607,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -624,10 +624,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -641,10 +641,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
-    @JsName("deriveKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("deriveKey")
     fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -680,9 +680,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
-    @JsName("encrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("encrypt")
     fun encryptAsync(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -694,9 +694,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
-    @JsName("encrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("encrypt")
     fun encryptAsync(
         algorithm: String,
         key: CryptoKey,
@@ -708,9 +708,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
-    @JsName("encrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("encrypt")
     fun encryptAsync(
         algorithm: RsaOaepParams,
         key: CryptoKey,
@@ -722,9 +722,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
-    @JsName("encrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("encrypt")
     fun encryptAsync(
         algorithm: AesCtrParams,
         key: CryptoKey,
@@ -736,9 +736,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
-    @JsName("encrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("encrypt")
     fun encryptAsync(
         algorithm: AesCbcParams,
         key: CryptoKey,
@@ -750,9 +750,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
-    @JsName("encrypt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
+    @JsName("encrypt")
     fun encryptAsync(
         algorithm: AesGcmParams,
         key: CryptoKey,
@@ -764,17 +764,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey)
      */
-    @JsName("exportKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("exportKey")
     fun exportKeyAsync(
         format: KeyFormat.jwk,
         key: CryptoKey,
     ): Promise<JsonWebKey>
 
-    @JsName("exportKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("exportKey")
     fun exportKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
@@ -785,81 +785,81 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey)
      */
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: Ed25519Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
     ): Promise<CryptoKeyPair>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: X25519Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage /* "deriveBits" | "deriveKey" */>,
     ): Promise<CryptoKeyPair>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKeyPair>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: EcKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKeyPair>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: AesKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: HmacKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: Pbkdf2Params,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<JsAny /* CryptoKeyPair | CryptoKey */>
 
+    @JsThrows(SyntaxError::class)
+    @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    @JsThrows(SyntaxError::class)
-    @JsThrows(SyntaxError::class)
     fun generateKeyAsync(
         algorithm: String,
         extractable: Boolean,
@@ -871,8 +871,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -886,8 +886,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -901,8 +901,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -916,8 +916,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -931,8 +931,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -946,8 +946,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
@@ -956,8 +956,8 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
@@ -966,8 +966,8 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
@@ -976,8 +976,8 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
@@ -986,8 +986,8 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
@@ -996,8 +996,8 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1006,8 +1006,8 @@ private constructor() {
         keyUsages: ReadonlyArray<KeyUsage>,
     ): Promise<CryptoKey>
 
-    @JsName("importKey")
     @JsThrows(SyntaxError::class)
+    @JsName("importKey")
     fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
@@ -1021,8 +1021,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
-    @JsName("sign")
     @JsThrows(InvalidAccessError::class)
+    @JsName("sign")
     fun signAsync(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -1034,8 +1034,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
-    @JsName("sign")
     @JsThrows(InvalidAccessError::class)
+    @JsName("sign")
     fun signAsync(
         algorithm: String,
         key: CryptoKey,
@@ -1047,8 +1047,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
-    @JsName("sign")
     @JsThrows(InvalidAccessError::class)
+    @JsName("sign")
     fun signAsync(
         algorithm: RsaPssParams,
         key: CryptoKey,
@@ -1060,8 +1060,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
-    @JsName("sign")
     @JsThrows(InvalidAccessError::class)
+    @JsName("sign")
     fun signAsync(
         algorithm: EcdsaParams,
         key: CryptoKey,
@@ -1073,10 +1073,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1092,10 +1092,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1111,10 +1111,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1130,10 +1130,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1149,10 +1149,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1168,10 +1168,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1187,10 +1187,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1206,10 +1206,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1225,10 +1225,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1244,10 +1244,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1263,10 +1263,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1282,10 +1282,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1301,10 +1301,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1320,10 +1320,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1339,10 +1339,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1358,10 +1358,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1377,10 +1377,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1396,10 +1396,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1415,10 +1415,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1434,10 +1434,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1453,10 +1453,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1472,10 +1472,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1491,10 +1491,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1510,10 +1510,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1529,10 +1529,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1548,10 +1548,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1567,10 +1567,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1586,10 +1586,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1605,10 +1605,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1624,10 +1624,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1643,10 +1643,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1662,10 +1662,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1681,10 +1681,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1700,10 +1700,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
-    @JsName("unwrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
+    @JsName("unwrapKey")
     fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
@@ -1719,8 +1719,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
-    @JsName("verify")
     @JsThrows(InvalidAccessError::class)
+    @JsName("verify")
     fun verifyAsync(
         algorithm: Algorithm,
         key: CryptoKey,
@@ -1733,8 +1733,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
-    @JsName("verify")
     @JsThrows(InvalidAccessError::class)
+    @JsName("verify")
     fun verifyAsync(
         algorithm: String,
         key: CryptoKey,
@@ -1747,8 +1747,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
-    @JsName("verify")
     @JsThrows(InvalidAccessError::class)
+    @JsName("verify")
     fun verifyAsync(
         algorithm: RsaPssParams,
         key: CryptoKey,
@@ -1761,8 +1761,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
-    @JsName("verify")
     @JsThrows(InvalidAccessError::class)
+    @JsName("verify")
     fun verifyAsync(
         algorithm: EcdsaParams,
         key: CryptoKey,
@@ -1775,9 +1775,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
-    @JsName("wrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
@@ -1790,9 +1790,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
-    @JsName("wrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
@@ -1805,9 +1805,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
-    @JsName("wrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
@@ -1820,9 +1820,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
-    @JsName("wrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
@@ -1835,9 +1835,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
-    @JsName("wrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
@@ -1850,9 +1850,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
-    @JsName("wrapKey")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("wrapKey")
     fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,

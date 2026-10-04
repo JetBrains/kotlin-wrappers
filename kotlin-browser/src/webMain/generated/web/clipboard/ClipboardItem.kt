@@ -39,8 +39,8 @@ open external class ClipboardItem(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
      */
-    @JsName("getType")
     @JsThrows(NotFoundError::class)
+    @JsName("getType")
     fun getTypeAsync(type: String): Promise<Blob>
 
     companion object {

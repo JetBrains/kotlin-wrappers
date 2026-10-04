@@ -44,11 +44,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
      */
-    @JsName("lock")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("lock")
     fun lockAsync(orientation: OrientationLockType): Promise<Void>
 
     /**

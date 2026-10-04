@@ -21,8 +21,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
      */
-    @JsName("setStatus")
     @JsThrows(SecurityError::class)
+    @JsName("setStatus")
     fun setStatusAsync(status: LoginStatus): Promise<Void>
 }
 

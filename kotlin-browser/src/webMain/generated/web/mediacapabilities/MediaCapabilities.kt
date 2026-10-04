@@ -20,9 +20,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo)
      */
-    @JsName("decodingInfo")
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
+    @JsName("decodingInfo")
     fun decodingInfoAsync(configuration: MediaDecodingConfiguration): Promise<MediaCapabilitiesDecodingInfo>
 
     /**

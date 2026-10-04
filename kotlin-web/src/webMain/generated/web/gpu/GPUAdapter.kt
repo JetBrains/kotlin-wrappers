@@ -41,8 +41,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
      */
-    @JsName("requestDevice")
     @JsThrows(OperationError::class)
+    @JsName("requestDevice")
     fun requestDeviceAsync(descriptor: GPUDeviceDescriptor = definedExternally): Promise<GPUDevice>
 }
 

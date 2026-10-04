@@ -42,8 +42,8 @@ external interface Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
      */
-    @JsName("arrayBuffer")
     @JsThrows(AbortError::class)
+    @JsName("arrayBuffer")
     fun arrayBufferAsync(): Promise<ArrayBuffer> = definedExternally
 
     /**
@@ -51,8 +51,8 @@ external interface Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
      */
-    @JsName("blob")
     @JsThrows(AbortError::class)
+    @JsName("blob")
     fun blobAsync(): Promise<Blob> = definedExternally
 
     /**
@@ -60,8 +60,8 @@ external interface Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
      */
-    @JsName("bytes")
     @JsThrows(AbortError::class)
+    @JsName("bytes")
     fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>> = definedExternally
 
     /**
@@ -69,8 +69,8 @@ external interface Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
-    @JsName("formData")
     @JsThrows(AbortError::class)
+    @JsName("formData")
     fun formDataAsync(): Promise<FormData> = definedExternally
 
     /**
@@ -78,8 +78,8 @@ external interface Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
      */
-    @JsName("json")
     @JsThrows(AbortError::class)
+    @JsName("json")
     fun jsonAsync(): Promise<*> = definedExternally
 
     /**
@@ -87,8 +87,8 @@ external interface Body {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
      */
-    @JsName("text")
     @JsThrows(AbortError::class)
+    @JsName("text")
     fun textAsync(): Promise<JsString> = definedExternally
 
     /**

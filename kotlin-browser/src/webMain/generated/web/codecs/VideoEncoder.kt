@@ -71,8 +71,8 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
      */
-    @JsName("flush")
     @JsThrows(InvalidStateError::class)
+    @JsName("flush")
     fun flushAsync(): Promise<Void>
 
     /**

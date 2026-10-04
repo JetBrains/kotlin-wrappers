@@ -88,8 +88,8 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
      */
-    @JsName("createBidirectionalStream")
     @JsThrows(InvalidStateError::class)
+    @JsName("createBidirectionalStream")
     fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
 
     /**
@@ -97,8 +97,8 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
      */
-    @JsName("createUnidirectionalStream")
     @JsThrows(InvalidStateError::class)
+    @JsName("createUnidirectionalStream")
     fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
 
     /**

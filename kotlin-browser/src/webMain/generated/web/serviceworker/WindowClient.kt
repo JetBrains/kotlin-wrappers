@@ -36,8 +36,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
-    @JsName("focus")
     @JsThrows(InvalidAccessError::class)
+    @JsName("focus")
     fun focusAsync(): Promise<WindowClient>
 
     /**

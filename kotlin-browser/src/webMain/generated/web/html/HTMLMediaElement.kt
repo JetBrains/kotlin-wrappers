@@ -301,9 +301,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
-    @JsName("play")
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("play")
     fun playAsync(): Promise<Void>
 
     /**
@@ -312,9 +312,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
-    @JsName("setMediaKeys")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("setMediaKeys")
     fun setMediaKeysAsync(mediaKeys: MediaKeys?): Promise<Void>
 
     /**
@@ -323,10 +323,10 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
-    @JsName("setSinkId")
     @JsThrows(AbortError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("setSinkId")
     fun setSinkIdAsync(sinkId: String): Promise<Void>
 
     companion object {

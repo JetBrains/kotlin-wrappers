@@ -25,8 +25,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
      */
-    @JsName("read")
     @JsThrows(NotAllowedError::class)
+    @JsName("read")
     fun readAsync(): Promise<ClipboardItems>
 
     /**
@@ -34,9 +34,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
      */
-    @JsName("readText")
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("readText")
     fun readTextAsync(): Promise<JsString>
 
     /**
@@ -44,8 +44,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
-    @JsName("write")
     @JsThrows(NotAllowedError::class)
+    @JsName("write")
     fun writeAsync(data: ClipboardItems): Promise<Void>
 
     /**
@@ -53,8 +53,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
      */
-    @JsName("writeText")
     @JsThrows(NotAllowedError::class)
+    @JsName("writeText")
     fun writeTextAsync(data: String): Promise<Void>
 }
 

@@ -20,9 +20,9 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
      */
-    @JsName("query")
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
+    @JsName("query")
     fun queryAsync(): Promise<LockManagerSnapshot>
 
     /**
@@ -30,21 +30,21 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
      */
-    @JsName("request")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("request")
     fun <T : JsAny?> requestAsync(
         name: String,
         callback: LockGrantedCallback<T>,
     ): Promise<T>
 
-    @JsName("request")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
+    @JsName("request")
     fun <T : JsAny?> requestAsync(
         name: String,
         options: LockOptions,

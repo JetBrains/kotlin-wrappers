@@ -26,11 +26,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
      */
-    @JsName("createSyncAccessHandle")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NoModificationAllowedError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("createSyncAccessHandle")
     fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
 
     /**
@@ -38,11 +38,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
      */
-    @JsName("createWritable")
     @JsThrows(AbortError::class)
     @JsThrows(NoModificationAllowedError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("createWritable")
     fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
     /**
@@ -50,9 +50,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
      */
-    @JsName("getFile")
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("getFile")
     fun getFileAsync(): Promise<File>
 }
 

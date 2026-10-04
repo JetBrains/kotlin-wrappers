@@ -45,8 +45,8 @@ internal fun withSuspendExtensions(
     )
 
     val declaration = listOfNotNull(
-        jsName,
         throws,
+        jsName,
         "$functionSignature$asyncName$parameters: Promise<$returnType>$optionality$definedExternally",
     ).joinToString("\n")
 

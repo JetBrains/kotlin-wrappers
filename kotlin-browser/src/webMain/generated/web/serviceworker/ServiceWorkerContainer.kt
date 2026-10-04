@@ -82,8 +82,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
-    @JsName("register")
     @JsThrows(SecurityError::class)
+    @JsName("register")
     fun registerAsync(
         scriptURL: TrustedScriptURL,
         options: RegistrationOptions = definedExternally,
@@ -94,8 +94,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
-    @JsName("register")
     @JsThrows(SecurityError::class)
+    @JsName("register")
     fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
@@ -106,8 +106,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
-    @JsName("register")
     @JsThrows(SecurityError::class)
+    @JsName("register")
     fun registerAsync(
         scriptURL: URL,
         options: RegistrationOptions = definedExternally,
@@ -120,8 +120,8 @@ private constructor() :
      */
     fun startMessages()
 
-    @JsName("register")
     @JsThrows(SecurityError::class)
+    @JsName("register")
     fun registerAsync(
         module: ServiceWorkerModule,
         options: RegistrationOptions = definedExternally,

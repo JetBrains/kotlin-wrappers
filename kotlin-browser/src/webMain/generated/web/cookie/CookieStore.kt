@@ -30,12 +30,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
      */
-    @JsName("delete")
     @JsThrows(SecurityError::class)
+    @JsName("delete")
     fun deleteAsync(name: String): Promise<Void>
 
-    @JsName("delete")
     @JsThrows(SecurityError::class)
+    @JsName("delete")
     fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
 
     /**
@@ -43,12 +43,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
      */
-    @JsName("get")
     @JsThrows(SecurityError::class)
+    @JsName("get")
     fun getAsync(name: String): Promise<CookieListItem?>
 
-    @JsName("get")
     @JsThrows(SecurityError::class)
+    @JsName("get")
     fun getAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieListItem?>
 
     /**
@@ -56,12 +56,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
      */
-    @JsName("getAll")
     @JsThrows(SecurityError::class)
+    @JsName("getAll")
     fun getAllAsync(name: String): Promise<CookieList>
 
-    @JsName("getAll")
     @JsThrows(SecurityError::class)
+    @JsName("getAll")
     fun getAllAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieList>
 
     /**
@@ -69,15 +69,15 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
      */
-    @JsName("set")
     @JsThrows(SecurityError::class)
+    @JsName("set")
     fun setAsync(
         name: String,
         value: String,
     ): Promise<Void>
 
-    @JsName("set")
     @JsThrows(SecurityError::class)
+    @JsName("set")
     fun setAsync(options: CookieInit): Promise<Void>
 }
 

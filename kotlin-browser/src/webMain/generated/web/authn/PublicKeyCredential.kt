@@ -60,8 +60,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
          */
-        @JsName("getClientCapabilities")
         @JsThrows(SecurityError::class)
+        @JsName("getClientCapabilities")
         fun getClientCapabilitiesAsync(): Promise<PublicKeyCredentialClientCapabilities>
 
         /**
@@ -69,8 +69,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */
-        @JsName("isConditionalMediationAvailable")
         @JsThrows(SecurityError::class)
+        @JsName("isConditionalMediationAvailable")
         fun isConditionalMediationAvailableAsync(): Promise<JsBoolean>
 
         /**
@@ -78,8 +78,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
          */
-        @JsName("isUserVerifyingPlatformAuthenticatorAvailable")
         @JsThrows(SecurityError::class)
+        @JsName("isUserVerifyingPlatformAuthenticatorAvailable")
         fun isUserVerifyingPlatformAuthenticatorAvailableAsync(): Promise<JsBoolean>
 
         /**
@@ -101,8 +101,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static)
          */
-        @JsName("signalAllAcceptedCredentials")
         @JsThrows(SecurityError::class)
+        @JsName("signalAllAcceptedCredentials")
         fun signalAllAcceptedCredentialsAsync(options: AllAcceptedCredentialsOptions): Promise<Void>
 
         /**
@@ -110,8 +110,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static)
          */
-        @JsName("signalCurrentUserDetails")
         @JsThrows(SecurityError::class)
+        @JsName("signalCurrentUserDetails")
         fun signalCurrentUserDetailsAsync(options: CurrentUserDetailsOptions): Promise<Void>
 
         /**
@@ -119,8 +119,8 @@ private constructor() :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static)
          */
-        @JsName("signalUnknownCredential")
         @JsThrows(SecurityError::class)
+        @JsName("signalUnknownCredential")
         fun signalUnknownCredentialAsync(options: UnknownCredentialOptions): Promise<Void>
     }
 }

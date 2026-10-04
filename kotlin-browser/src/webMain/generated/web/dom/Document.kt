@@ -486,8 +486,8 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
      */
-    @JsName("exitPictureInPicture")
     @JsThrows(InvalidStateError::class)
+    @JsName("exitPictureInPicture")
     fun exitPictureInPictureAsync(): Promise<Void>
 
     /**
@@ -552,8 +552,8 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
      */
-    @JsName("hasStorageAccess")
     @JsThrows(InvalidStateError::class)
+    @JsName("hasStorageAccess")
     fun hasStorageAccessAsync(): Promise<JsBoolean>
 
     /**
@@ -599,9 +599,9 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
      */
-    @JsName("requestStorageAccess")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
+    @JsName("requestStorageAccess")
     fun requestStorageAccessAsync(): Promise<Void>
 
     /**

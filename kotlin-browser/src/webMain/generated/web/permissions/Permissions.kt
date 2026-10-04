@@ -19,8 +19,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
      */
-    @JsName("query")
     @JsThrows(InvalidStateError::class)
+    @JsName("query")
     fun queryAsync(permissionDesc: PermissionDescriptor): Promise<PermissionStatus>
 }
 

@@ -58,8 +58,8 @@ open external class ImageDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
      */
-    @JsName("decode")
     @JsThrows(InvalidStateError::class)
+    @JsName("decode")
     fun decodeAsync(options: ImageDecodeOptions = definedExternally): Promise<ImageDecodeResult>
 
     /**

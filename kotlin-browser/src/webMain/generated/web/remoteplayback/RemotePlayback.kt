@@ -49,9 +49,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
      */
-    @JsName("cancelWatchAvailability")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
+    @JsName("cancelWatchAvailability")
     fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
 
     /**
@@ -59,13 +59,13 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
      */
-    @JsName("prompt")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
+    @JsName("prompt")
     fun promptAsync(): Promise<Void>
 
     /**
@@ -73,9 +73,9 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
      */
-    @JsName("watchAvailability")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsName("watchAvailability")
     fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
 }
 

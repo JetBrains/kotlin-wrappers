@@ -24,8 +24,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
      */
-    @JsName("seek")
     @JsThrows(NotAllowedError::class)
+    @JsName("seek")
     fun seekAsync(position: UInt53): Promise<Void>
 
     /**
@@ -33,8 +33,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
-    @JsName("truncate")
     @JsThrows(NotAllowedError::class)
+    @JsName("truncate")
     fun truncateAsync(size: UInt53): Promise<Void>
 
     /**
@@ -42,8 +42,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
      */
-    @JsName("write")
     @JsThrows(NotAllowedError::class)
+    @JsName("write")
     fun writeAsync(data: FileSystemWriteChunkType): Promise<Void>
 }
 

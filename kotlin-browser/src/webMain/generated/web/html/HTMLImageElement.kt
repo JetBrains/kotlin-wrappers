@@ -163,8 +163,8 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
-    @JsName("decode")
     @JsThrows(EncodingError::class)
+    @JsName("decode")
     fun decodeAsync(): Promise<Void>
 }
 

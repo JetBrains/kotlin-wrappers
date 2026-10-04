@@ -46,8 +46,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
-    @JsName("openWindow")
     @JsThrows(InvalidAccessError::class)
+    @JsName("openWindow")
     fun openWindowAsync(url: String): Promise<WindowClient?>
 
     /**
@@ -55,8 +55,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
-    @JsName("openWindow")
     @JsThrows(InvalidAccessError::class)
+    @JsName("openWindow")
     fun openWindowAsync(url: URL): Promise<WindowClient?>
 }
 

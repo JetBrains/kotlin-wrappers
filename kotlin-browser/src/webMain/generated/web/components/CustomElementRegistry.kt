@@ -60,8 +60,8 @@ open external class CustomElementRegistry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
      */
-    @JsName("whenDefined")
     @JsThrows(SyntaxError::class)
+    @JsName("whenDefined")
     fun <T : HTMLElement> whenDefinedAsync(name: TagName<T>): Promise<CustomElementConstructor<T>>
 }
 

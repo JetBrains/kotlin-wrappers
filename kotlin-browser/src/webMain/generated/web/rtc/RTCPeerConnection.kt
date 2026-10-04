@@ -160,9 +160,9 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
      */
-    @JsName("addIceCandidate")
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
+    @JsName("addIceCandidate")
     fun addIceCandidateAsync(candidate: RTCIceCandidateInit? = definedExternally): Promise<Void>
 
     /**
@@ -225,10 +225,10 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
      */
-    @JsName("createOffer")
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotReadableError::class)
     @JsThrows(OperationError::class)
+    @JsName("createOffer")
     fun createOfferAsync(options: RTCOfferOptions = definedExternally): Promise<RTCSessionDescriptionInit>
 
     /**
@@ -257,8 +257,8 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
      */
-    @JsName("getStats")
     @JsThrows(InvalidAccessError::class)
+    @JsName("getStats")
     fun getStatsAsync(selector: MediaStreamTrack? = definedExternally): Promise<RTCStatsReport>
 
     /**
@@ -302,11 +302,11 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
      */
-    @JsName("setRemoteDescription")
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
     @JsThrows.Typed(RTCError::class)
+    @JsName("setRemoteDescription")
     fun setRemoteDescriptionAsync(description: RTCSessionDescriptionInit): Promise<Void>
 
     companion object {
@@ -315,8 +315,8 @@ open external class RTCPeerConnection(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
-        @JsName("generateCertificate")
         @JsThrows(NotSupportedError::class)
+        @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
 
         /**
@@ -324,8 +324,8 @@ open external class RTCPeerConnection(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
-        @JsName("generateCertificate")
         @JsThrows(NotSupportedError::class)
+        @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: String): Promise<RTCCertificate>
     }
 }

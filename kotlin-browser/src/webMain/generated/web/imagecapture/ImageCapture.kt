@@ -31,9 +31,9 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
      */
-    @JsName("getPhotoCapabilities")
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
+    @JsName("getPhotoCapabilities")
     fun getPhotoCapabilitiesAsync(): Promise<PhotoCapabilities>
 
     /**
@@ -41,9 +41,9 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
      */
-    @JsName("getPhotoSettings")
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
+    @JsName("getPhotoSettings")
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
     /**
@@ -51,9 +51,9 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
      */
-    @JsName("grabFrame")
     @JsThrows(InvalidStateError::class)
     @JsThrows(UnknownError::class)
+    @JsName("grabFrame")
     fun grabFrameAsync(): Promise<ImageBitmap>
 
     /**
@@ -61,9 +61,9 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
      */
-    @JsName("takePhoto")
     @JsThrows(InvalidStateError::class)
     @JsThrows(UnknownError::class)
+    @JsName("takePhoto")
     fun takePhotoAsync(photoSettings: PhotoSettings = definedExternally): Promise<Blob>
 }
 

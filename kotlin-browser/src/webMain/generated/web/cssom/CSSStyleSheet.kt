@@ -51,8 +51,8 @@ open external class CSSStyleSheet(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
-    @JsName("replace")
     @JsThrows(NotAllowedError::class)
+    @JsName("replace")
     fun replaceAsync(text: String): Promise<CSSStyleSheet>
 
     /**

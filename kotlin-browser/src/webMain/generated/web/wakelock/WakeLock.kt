@@ -20,8 +20,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
      */
-    @JsName("request")
     @JsThrows(NotAllowedError::class)
+    @JsName("request")
     fun requestAsync(type: WakeLockType = definedExternally): Promise<WakeLockSentinel>
 }
 
