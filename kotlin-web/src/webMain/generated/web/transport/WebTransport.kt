@@ -81,6 +81,7 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/close)
      */
+    @JsThrows.Typed(WebTransportError::class)
     fun close(closeInfo: WebTransportCloseInfo = definedExternally)
 
     /**

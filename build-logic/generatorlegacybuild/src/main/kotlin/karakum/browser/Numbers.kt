@@ -67,6 +67,14 @@ internal val LENGTH_REQUIRED = setOf(
     "TouchList",
 )
 
+private val DOM_ERROR_TYPES = setOf(
+    "GPUPipelineError",
+    "OverconstrainedError",
+    "QuotaExceededError",
+    "RTCError",
+    "WebTransportError",
+)
+
 private val WEBGL_CONST_RE = Regex("""[\dA-Zx_]+""")
 
 internal class TypeProvider(
@@ -274,15 +282,10 @@ internal class TypeProvider(
             .drop(1)
             .mapNotNull { parseExceptionType(it) }
             .map { name ->
-                when (name) {
-                    "GPUPipelineError",
-                    "OverconstrainedError",
-                    "QuotaExceededError",
-                    "RTCError",
-                    "WebTransportError",
-                        -> "@JsThrows.Typed($name::class)"
-
-                    else -> "@JsThrows($name::class)"
+                if (name in DOM_ERROR_TYPES) {
+                    "@JsThrows.Typed($name::class)"
+                } else {
+                    "@JsThrows($name::class)"
                 }
             }
             .distinct()
@@ -325,8 +328,10 @@ private fun parseExceptionType(
         .takeIf { it != source }
         ?.let { return parseExceptionType(it) }
 
-    if (source.startsWith("""{{domxref("QuotaExceededError")}}"""))
-        return "QuotaExceededError"
+    for (errorType in DOM_ERROR_TYPES) {
+        if (source.startsWith("""{{domxref("$errorType")}}"""))
+            return errorType
+    }
 
     if ("""{{domxref("DOMException")}}""" in source) {
         val type = source
