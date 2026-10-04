@@ -5,6 +5,8 @@ package web.mediaencrypted
 import js.buffer.BufferSource
 import js.promise.Promise
 import js.promise.await
+import web.errors.DOMExceptionType.NotSupportedError
+import web.errors.JsThrows
 
 /**
  * The **`MediaKeys`** interface of Encrypted Media Extensions API represents a set of keys that an associated HTMLMediaElement can use for decryption of media data during playback.
@@ -26,6 +28,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
      */
+    @JsThrows(NotSupportedError::class)
     @JsName("getStatusForPolicy")
     fun getStatusForPolicyAsync(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
@@ -43,6 +46,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
+@JsThrows(NotSupportedError::class)
 suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
     return getStatusForPolicyAsync().await()
 }
@@ -52,6 +56,7 @@ suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
+@JsThrows(NotSupportedError::class)
 suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaKeyStatus {
     return getStatusForPolicyAsync(
         policy = policy,

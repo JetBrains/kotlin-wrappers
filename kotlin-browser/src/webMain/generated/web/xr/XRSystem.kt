@@ -33,6 +33,7 @@ private constructor() :
      * Queries if a given mode may be supported by the user agent and device capabilities.
      * @param mode
      */
+    @JsThrows(SecurityError::class)
     @JsName("isSessionSupported")
     fun isSessionSupportedAsync(mode: XRSessionMode): Promise<JsBoolean>
     var ondevicechange: EventHandler<XRSystemDeviceChangeEvent, *, *>?
@@ -79,6 +80,7 @@ suspend inline fun XRSystem.requestSession(
  * Queries if a given mode may be supported by the user agent and device capabilities.
  * @param mode
  */
+@JsThrows(SecurityError::class)
 suspend inline fun XRSystem.isSessionSupported(mode: XRSessionMode): Boolean {
     return isSessionSupportedAsync(
         mode = mode,

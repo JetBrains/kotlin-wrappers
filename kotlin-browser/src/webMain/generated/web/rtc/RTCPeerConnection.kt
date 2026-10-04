@@ -213,6 +213,8 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
      */
+    @JsThrows(NotReadableError::class)
+    @JsThrows(OperationError::class)
     @JsName("createAnswer")
     fun createAnswerAsync(options: RTCAnswerOptions = definedExternally): Promise<RTCSessionDescriptionInit>
 
@@ -374,6 +376,8 @@ suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateI
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
  */
+@JsThrows(NotReadableError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
     return createAnswerAsync().await()
 }
@@ -383,6 +387,8 @@ suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
  */
+@JsThrows(NotReadableError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RTCSessionDescriptionInit {
     return createAnswerAsync(
         options = options,

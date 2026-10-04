@@ -4,6 +4,8 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
+import web.errors.DOMExceptionType.InvalidAccessError
+import web.errors.JsThrows
 
 /**
  * The **`BiquadFilterNode`** interface represents a simple low-order filter, and is created using the BaseAudioContext/createBiquadFilter method. It is an AudioNode that can represent different kinds of filters, tone control devices, and graphic equalizers. A BiquadFilterNode always has exactly one input and one output.
@@ -54,6 +56,7 @@ open external class BiquadFilterNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/getFrequencyResponse)
      */
+    @JsThrows(InvalidAccessError::class)
     fun getFrequencyResponse(
         frequencyHz: Float32Array<ArrayBuffer>,
         magResponse: Float32Array<ArrayBuffer>,

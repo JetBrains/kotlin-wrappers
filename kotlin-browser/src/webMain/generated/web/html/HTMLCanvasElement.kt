@@ -64,6 +64,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
      */
+    @JsThrows(SecurityError::class)
     @JsName("toBlob")
     fun toBlobWithCallback(
         callback: BlobCallback,
@@ -76,6 +77,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL)
      */
+    @JsThrows(SecurityError::class)
     fun toDataURL(
         type: String = definedExternally,
         quality: Double = definedExternally,

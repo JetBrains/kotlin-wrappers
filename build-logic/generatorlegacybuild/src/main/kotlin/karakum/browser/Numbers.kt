@@ -324,7 +324,9 @@ internal class TypeProvider(
 private fun parseExceptionType(
     source: String,
 ): String? {
-    source.replace("{DOMxRef(", "{domxref(")
+    source
+        .replace("{DOMxRef(", "{domxref(")
+        .replace("{{domxref('DOMException')}}", """{{domxref("DOMException")}}""")
         .takeIf { it != source }
         ?.let { return parseExceptionType(it) }
 
@@ -378,6 +380,18 @@ private fun parseExceptionType(
 
     if ("`gl." in source)
         return null
+
+    // TEMP
+    sequenceOf(
+        "InvalidAccessError",
+        "InvalidStateError",
+        "NotFoundError",
+        "NotReadableError",
+        "NotSupportedError",
+        "OperationError",
+        "SecurityError",
+    ).filter { source.startsWith("`$it`\n") }
+        .forEach { return it }
 
     return null
 }

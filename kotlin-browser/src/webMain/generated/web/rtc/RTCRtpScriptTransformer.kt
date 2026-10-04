@@ -5,6 +5,9 @@ package web.rtc
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.DOMExceptionType.NotFoundError
+import web.errors.JsThrows
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
@@ -43,6 +46,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
      */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotFoundError::class)
     @JsName("generateKeyFrame")
     fun generateKeyFrameAsync(rid: String = definedExternally): Promise<Void>
 
@@ -51,6 +56,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
      */
+    @JsThrows(InvalidStateError::class)
     @JsName("sendKeyFrameRequest")
     fun sendKeyFrameRequestAsync(): Promise<Void>
 }
@@ -60,6 +66,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun RTCRtpScriptTransformer.generateKeyFrame() {
     generateKeyFrameAsync().await()
 }
@@ -69,6 +77,8 @@ suspend inline fun RTCRtpScriptTransformer.generateKeyFrame() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String) {
     generateKeyFrameAsync(
         rid = rid,
@@ -80,6 +90,7 @@ suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun RTCRtpScriptTransformer.sendKeyFrameRequest() {
     sendKeyFrameRequestAsync().await()
 }

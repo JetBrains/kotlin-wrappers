@@ -8,6 +8,8 @@ package web.cssom
 
 import js.array.ArrayLike
 import js.internal.InternalApi
+import web.errors.DOMExceptionType.NoModificationAllowedError
+import web.errors.JsThrows
 
 /**
  * The **`CSSStyleDeclaration`** interface is the base class for objects that represent CSS declaration blocks with different supported sets of CSS style information:
@@ -69,6 +71,7 @@ external interface CSSStyleDeclarationBase :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun removeProperty(property: String): String = definedExternally
 
     /**
@@ -76,6 +79,7 @@ external interface CSSStyleDeclarationBase :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty)
      */
+    @JsThrows(NoModificationAllowedError::class)
     fun setProperty(
         property: String,
         value: String?,
