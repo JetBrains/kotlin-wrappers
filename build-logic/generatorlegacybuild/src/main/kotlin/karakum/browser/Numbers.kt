@@ -272,22 +272,7 @@ internal class TypeProvider(
             .splitToSequence("\n- ")
             // special case?
             .drop(1)
-            .filter { """{{domxref("DOMException")}}""" in it }
-            .map { it.substringBefore("\n") }
-            .map { it.substringBefore(""" {{domxref("DOMException")}}""", "") }
-            .map { it.ifEmpty { null } }
-            .requireNoNulls()
-            .map { it.removeSurrounding("`") }
-            // deprecated
-            .filter { it != "TypeMismatchError" }
-            // TEMP for `GPUAdapter`
-            .filter { it != "TypeError" }
-            // TEMP for `DocumentPictureInPicture`
-            .filter { it != "RangeError" }
-            // TEMP for `SubtleCrypto`
-            .map { if (it == "NotSupported") "NotSupportedError" else it }
-            .toList()
-            .ifEmpty { return null }
+            .mapNotNull { parseExceptionType(it) }
             .joinToString("\n") { name ->
                 when (name) {
                     "GPUPipelineError",
@@ -300,6 +285,7 @@ internal class TypeProvider(
                     else -> "@JsThrows($name::class)"
                 }
             }
+            .ifEmpty { null }
     }
 
     fun getParameterType(name: String): String =
@@ -327,4 +313,32 @@ internal class TypeProvider(
          */
         """.trimIndent()
     }
+}
+
+private fun parseExceptionType(
+    source: String,
+): String? {
+    if ("""{{domxref("DOMException")}}""" in source) {
+        val type = source
+            .substringBefore("\n")
+            .substringBefore(""" {{domxref("DOMException")}}""", "")
+            .also { require(it.isNotEmpty()) }
+            .removeSurrounding("`")
+
+        return when (type) {
+            // deprecated
+            "TypeMismatchError" -> null
+            // TEMP for `GPUAdapter`
+            "TypeError" -> null
+            // TEMP for `DocumentPictureInPicture`
+            "RangeError" -> null
+
+            // TEMP for `SubtleCrypto`
+            "NotSupported" -> "NotSupportedError"
+
+            else -> type
+        }
+    }
+
+    return null
 }
