@@ -357,5 +357,19 @@ private fun parseExceptionType(
         }
     }
 
+    val isDefault = sequenceOf(
+        "TypeError",
+        "RangeError",
+        "SyntaxError",
+    ).flatMap {
+        sequenceOf(
+            "`$it`",
+            """{jsxref("$it")}}""",
+        )
+    }.any { it in source }
+
+    if (isDefault)
+        return null
+
     return null
 }
