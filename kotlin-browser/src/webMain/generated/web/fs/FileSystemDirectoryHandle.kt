@@ -56,8 +56,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
     @JsName("removeEntry")
-    @JsThrows(NotAllowedError::class)
     @JsThrows(InvalidModificationError::class)
+    @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     fun removeEntryAsync(
         name: String,
@@ -142,8 +142,8 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
-@JsThrows(NotAllowedError::class)
 @JsThrows(InvalidModificationError::class)
+@JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
@@ -158,8 +158,8 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
-@JsThrows(NotAllowedError::class)
 @JsThrows(InvalidModificationError::class)
+@JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
 suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,

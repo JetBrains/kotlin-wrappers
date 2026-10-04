@@ -60,12 +60,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
      */
     @JsName("prompt")
-    @JsThrows(InvalidStateError::class)
-    @JsThrows(OperationError::class)
     @JsThrows(InvalidAccessError::class)
-    @JsThrows(NotSupportedError::class)
-    @JsThrows(NotFoundError::class)
+    @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     fun promptAsync(): Promise<Void>
 
     /**
@@ -108,12 +108,12 @@ suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
  */
-@JsThrows(InvalidStateError::class)
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
-@JsThrows(NotSupportedError::class)
-@JsThrows(NotFoundError::class)
+@JsThrows(InvalidStateError::class)
 @JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun RemotePlayback.prompt() {
     promptAsync().await()
 }

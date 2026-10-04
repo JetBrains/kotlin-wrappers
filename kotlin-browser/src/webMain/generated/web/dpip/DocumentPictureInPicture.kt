@@ -39,8 +39,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
      */
     @JsName("requestWindow")
-    @JsThrows(NotSupportedError::class)
     @JsThrows(NotAllowedError::class)
+    @JsThrows(NotSupportedError::class)
     fun requestWindowAsync(options: DocumentPictureInPictureOptions = definedExternally): Promise<Window>
 }
 
@@ -49,8 +49,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
  */
-@JsThrows(NotSupportedError::class)
 @JsThrows(NotAllowedError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun DocumentPictureInPicture.requestWindow(): Window {
     return requestWindowAsync().await()
 }
@@ -60,8 +60,8 @@ suspend inline fun DocumentPictureInPicture.requestWindow(): Window {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/requestWindow)
  */
-@JsThrows(NotSupportedError::class)
 @JsThrows(NotAllowedError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun DocumentPictureInPicture.requestWindow(options: DocumentPictureInPictureOptions): Window {
     return requestWindowAsync(
         options = options,

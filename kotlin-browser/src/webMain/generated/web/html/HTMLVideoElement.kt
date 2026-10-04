@@ -99,10 +99,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
     @JsName("requestPictureInPicture")
-    @JsThrows(NotSupportedError::class)
-    @JsThrows(SecurityError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun requestPictureInPictureAsync(): Promise<PictureInPictureWindow>
 
     /**
@@ -118,10 +118,10 @@ protected constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
  */
-@JsThrows(NotSupportedError::class)
-@JsThrows(SecurityError::class)
 @JsThrows(InvalidStateError::class)
 @JsThrows(NotAllowedError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun HTMLVideoElement.requestPictureInPicture(): PictureInPictureWindow {
     return requestPictureInPictureAsync().await()
 }

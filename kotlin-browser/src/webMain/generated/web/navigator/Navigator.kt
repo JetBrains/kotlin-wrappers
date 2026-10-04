@@ -183,8 +183,8 @@ private constructor() :
     @JsName("requestMIDIAccess")
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
-    @JsThrows(NotSupportedError::class)
     @JsThrows(NotAllowedError::class)
+    @JsThrows(NotSupportedError::class)
     fun requestMIDIAccessAsync(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
     /**
@@ -228,10 +228,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
      */
     @JsName("share")
-    @JsThrows(InvalidStateError::class)
-    @JsThrows(NotAllowedError::class)
     @JsThrows(AbortError::class)
     @JsThrows(DataError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotAllowedError::class)
     fun shareAsync(data: ShareData = definedExternally): Promise<Void>
 
     /**
@@ -273,8 +273,8 @@ private constructor() :
  */
 @JsThrows(AbortError::class)
 @JsThrows(InvalidStateError::class)
-@JsThrows(NotSupportedError::class)
 @JsThrows(NotAllowedError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
     return requestMIDIAccessAsync().await()
 }
@@ -287,8 +287,8 @@ suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
  */
 @JsThrows(AbortError::class)
 @JsThrows(InvalidStateError::class)
-@JsThrows(NotSupportedError::class)
 @JsThrows(NotAllowedError::class)
+@JsThrows(NotSupportedError::class)
 suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
     return requestMIDIAccessAsync(
         options = options,
@@ -319,10 +319,10 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
-@JsThrows(InvalidStateError::class)
-@JsThrows(NotAllowedError::class)
 @JsThrows(AbortError::class)
 @JsThrows(DataError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun Navigator.share() {
     shareAsync().await()
 }
@@ -333,10 +333,10 @@ suspend inline fun Navigator.share() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
-@JsThrows(InvalidStateError::class)
-@JsThrows(NotAllowedError::class)
 @JsThrows(AbortError::class)
 @JsThrows(DataError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
 suspend inline fun Navigator.share(data: ShareData) {
     shareAsync(
         data = data,

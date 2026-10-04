@@ -324,9 +324,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
     @JsName("setSinkId")
+    @JsThrows(AbortError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
-    @JsThrows(AbortError::class)
     fun setSinkIdAsync(sinkId: String): Promise<Void>
 
     companion object {
@@ -379,9 +379,9 @@ suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
  */
+@JsThrows(AbortError::class)
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
-@JsThrows(AbortError::class)
 suspend inline fun HTMLMediaElement.setSinkId(sinkId: String) {
     setSinkIdAsync(
         sinkId = sinkId,

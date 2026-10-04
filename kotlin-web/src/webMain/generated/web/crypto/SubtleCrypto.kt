@@ -108,9 +108,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsName("deriveBits")
-    @JsThrows(OperationError::class)
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     fun deriveBitsAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
@@ -123,9 +123,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsName("deriveBits")
-    @JsThrows(OperationError::class)
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     fun deriveBitsAsync(
         algorithm: String,
         baseKey: CryptoKey,
@@ -138,9 +138,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsName("deriveBits")
-    @JsThrows(OperationError::class)
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     fun deriveBitsAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
@@ -153,9 +153,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsName("deriveBits")
-    @JsThrows(OperationError::class)
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     fun deriveBitsAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
@@ -168,9 +168,9 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsName("deriveBits")
-    @JsThrows(OperationError::class)
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     fun deriveBitsAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
@@ -1980,9 +1980,9 @@ suspend inline fun SubtleCrypto.decrypt(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Algorithm,
     baseKey: CryptoKey,
@@ -1998,9 +1998,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Algorithm,
     baseKey: CryptoKey,
@@ -2018,9 +2018,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: String,
     baseKey: CryptoKey,
@@ -2036,9 +2036,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: String,
     baseKey: CryptoKey,
@@ -2056,9 +2056,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -2074,9 +2074,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
@@ -2094,9 +2094,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -2112,9 +2112,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: HkdfParams,
     baseKey: CryptoKey,
@@ -2132,9 +2132,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,
@@ -2150,9 +2150,9 @@ suspend inline fun SubtleCrypto.deriveBits(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
-@JsThrows(OperationError::class)
 @JsThrows(InvalidAccessError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Pbkdf2Params,
     baseKey: CryptoKey,

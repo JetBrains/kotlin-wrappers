@@ -273,7 +273,7 @@ internal class TypeProvider(
             // special case?
             .drop(1)
             .mapNotNull { parseExceptionType(it) }
-            .joinToString("\n") { name ->
+            .map { name ->
                 when (name) {
                     "GPUPipelineError",
                     "OverconstrainedError",
@@ -285,6 +285,8 @@ internal class TypeProvider(
                     else -> "@JsThrows($name::class)"
                 }
             }
+            .sorted()
+            .joinToString("\n")
             .ifEmpty { null }
     }
 

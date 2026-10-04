@@ -27,10 +27,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
      */
     @JsName("createSyncAccessHandle")
-    @JsThrows(NotAllowedError::class)
     @JsThrows(InvalidStateError::class)
-    @JsThrows(NotFoundError::class)
     @JsThrows(NoModificationAllowedError::class)
+    @JsThrows(NotAllowedError::class)
+    @JsThrows(NotFoundError::class)
     fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
 
     /**
@@ -39,10 +39,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
      */
     @JsName("createWritable")
+    @JsThrows(AbortError::class)
+    @JsThrows(NoModificationAllowedError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
-    @JsThrows(NoModificationAllowedError::class)
-    @JsThrows(AbortError::class)
     fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
     /**
@@ -61,10 +61,10 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
  */
-@JsThrows(NotAllowedError::class)
 @JsThrows(InvalidStateError::class)
-@JsThrows(NotFoundError::class)
 @JsThrows(NoModificationAllowedError::class)
+@JsThrows(NotAllowedError::class)
+@JsThrows(NotFoundError::class)
 suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSyncAccessHandle {
     return createSyncAccessHandleAsync().await()
 }
@@ -74,10 +74,10 @@ suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
+@JsThrows(AbortError::class)
+@JsThrows(NoModificationAllowedError::class)
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
-@JsThrows(NoModificationAllowedError::class)
-@JsThrows(AbortError::class)
 suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFileStream {
     return createWritableAsync().await()
 }
@@ -87,10 +87,10 @@ suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFile
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
+@JsThrows(AbortError::class)
+@JsThrows(NoModificationAllowedError::class)
 @JsThrows(NotAllowedError::class)
 @JsThrows(NotFoundError::class)
-@JsThrows(NoModificationAllowedError::class)
-@JsThrows(AbortError::class)
 suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreateWritableOptions): FileSystemWritableFileStream {
     return createWritableAsync(
         options = options,

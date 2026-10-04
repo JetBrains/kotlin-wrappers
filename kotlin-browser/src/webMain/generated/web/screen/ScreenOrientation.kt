@@ -45,10 +45,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
      */
     @JsName("lock")
-    @JsThrows(InvalidStateError::class)
-    @JsThrows(SecurityError::class)
-    @JsThrows(NotSupportedError::class)
     @JsThrows(AbortError::class)
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(NotSupportedError::class)
+    @JsThrows(SecurityError::class)
     fun lockAsync(orientation: OrientationLockType): Promise<Void>
 
     /**
@@ -64,10 +64,10 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
  */
-@JsThrows(InvalidStateError::class)
-@JsThrows(SecurityError::class)
-@JsThrows(NotSupportedError::class)
 @JsThrows(AbortError::class)
+@JsThrows(InvalidStateError::class)
+@JsThrows(NotSupportedError::class)
+@JsThrows(SecurityError::class)
 suspend inline fun ScreenOrientation.lock(orientation: OrientationLockType) {
     lockAsync(
         orientation = orientation,

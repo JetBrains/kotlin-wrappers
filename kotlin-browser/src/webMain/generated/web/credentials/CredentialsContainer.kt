@@ -24,8 +24,8 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
      */
     @JsName("create")
-    @JsThrows(NotAllowedError::class)
     @JsThrows(AbortError::class)
+    @JsThrows(NotAllowedError::class)
     fun createAsync(options: CredentialCreationOptions = definedExternally): Promise<Credential?>
 
     /**
@@ -35,10 +35,10 @@ private constructor() {
      */
     @JsName("get")
     @JsThrows(AbortError::class)
-    @JsThrows(TimeoutError::class)
     @JsThrows(NetworkError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
+    @JsThrows(TimeoutError::class)
     fun getAsync(options: CredentialRequestOptions = definedExternally): Promise<Credential?>
 
     /**
@@ -64,8 +64,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
-@JsThrows(NotAllowedError::class)
 @JsThrows(AbortError::class)
+@JsThrows(NotAllowedError::class)
 suspend fun CredentialsContainer.create(): Credential? {
     return await { signal ->
         createAsync(
@@ -79,8 +79,8 @@ suspend fun CredentialsContainer.create(): Credential? {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
-@JsThrows(NotAllowedError::class)
 @JsThrows(AbortError::class)
+@JsThrows(NotAllowedError::class)
 suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
     return await { signal ->
         createAsync(
@@ -95,10 +95,10 @@ suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Cre
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
  */
 @JsThrows(AbortError::class)
-@JsThrows(TimeoutError::class)
 @JsThrows(NetworkError::class)
 @JsThrows(NotAllowedError::class)
 @JsThrows(SecurityError::class)
+@JsThrows(TimeoutError::class)
 suspend fun CredentialsContainer.get(): Credential? {
     return await { signal ->
         getAsync(
@@ -113,10 +113,10 @@ suspend fun CredentialsContainer.get(): Credential? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
  */
 @JsThrows(AbortError::class)
-@JsThrows(TimeoutError::class)
 @JsThrows(NetworkError::class)
 @JsThrows(NotAllowedError::class)
 @JsThrows(SecurityError::class)
+@JsThrows(TimeoutError::class)
 suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
     return await { signal ->
         getAsync(
