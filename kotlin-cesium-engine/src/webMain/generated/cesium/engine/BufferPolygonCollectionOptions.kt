@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.ComponentDatatype
 import kotlinx.js.JsPlainObject
 
 /**

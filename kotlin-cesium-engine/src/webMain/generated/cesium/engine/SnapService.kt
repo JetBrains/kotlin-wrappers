@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync

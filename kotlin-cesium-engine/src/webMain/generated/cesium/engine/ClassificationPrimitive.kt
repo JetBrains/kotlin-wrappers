@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.GeometryInstance
 import kotlinx.js.JsPlainObject
 
 /**

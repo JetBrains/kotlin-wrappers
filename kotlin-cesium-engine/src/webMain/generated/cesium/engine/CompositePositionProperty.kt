@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.*
+
 /**
  * A [CompositeProperty] which is also a [PositionProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositePositionProperty.html">Online Documentation</a>

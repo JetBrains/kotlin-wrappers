@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
 import js.array.ReadonlyArray
 
 /**

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Event
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 

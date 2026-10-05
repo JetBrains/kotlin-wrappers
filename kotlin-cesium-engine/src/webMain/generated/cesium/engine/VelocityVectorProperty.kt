@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [Property] which evaluates to a [Cartesian3] vector
  * based on the velocity of the provided [PositionProperty].

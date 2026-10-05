@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+import cesium.core.Matrix4
+
 /**
  * Compute the vehicle velocity, local horizontal (VVLH) transform for a position property at a given time.
  * The VVLH axes is defined based on the motion of the provided position point as follows:

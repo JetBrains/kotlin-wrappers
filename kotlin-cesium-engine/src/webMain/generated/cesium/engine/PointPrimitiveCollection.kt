@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Matrix4
+
 /**
  * A renderable collection of points.
  *

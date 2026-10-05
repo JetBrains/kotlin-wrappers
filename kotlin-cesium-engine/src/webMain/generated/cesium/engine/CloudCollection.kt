@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+
 /**
  * A renderable collection of clouds in the 3D scene.
  *

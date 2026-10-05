@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Matrix4
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import js.promise.Promise

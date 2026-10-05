@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * A [Visualizer] which maps the [LabelGraphics] instance
  * in [Entity.label] to a [Label].

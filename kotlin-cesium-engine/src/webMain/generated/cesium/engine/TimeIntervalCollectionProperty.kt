@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+import cesium.core.TimeIntervalCollection
+
 /**
  * A [Property] which is defined by a [TimeIntervalCollection], where the
  * data property of each [TimeInterval] represents the value at time.

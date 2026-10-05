@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.Clock
+import cesium.core.DefaultEvent
+import cesium.core.Matrix4
+import cesium.core.TimeIntervalCollection
 import kotlinx.js.JsPlainObject
 
 /**

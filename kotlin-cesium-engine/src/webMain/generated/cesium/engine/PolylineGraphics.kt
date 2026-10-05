@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describes a polyline. The first two positions define a line segment,
  * and each additional position defines a line segment from the previous position. The segments

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.ArcType
+import cesium.core.Cartesian3
+import cesium.core.PolygonGeometry
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import kotlinx.js.JsPlainObject

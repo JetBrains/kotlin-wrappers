@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * A [Visualizer] which maps [Entity.tileset] to a [Cesium3DTileset].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesetVisualizer.html">Online Documentation</a>

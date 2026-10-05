@@ -4,6 +4,15 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Cartographic
+import cesium.core.Color
+import cesium.core.DefaultEvent
+import cesium.core.Ellipsoid
+import cesium.core.NearFarScalar
+import cesium.core.Ray
+import cesium.core.Rectangle
+
 /**
  * The globe rendered in the scene, including its terrain ([Globe.terrainProvider])
  * and imagery layers ([Globe.imageryLayers]).  Access the globe using [Scene.globe].

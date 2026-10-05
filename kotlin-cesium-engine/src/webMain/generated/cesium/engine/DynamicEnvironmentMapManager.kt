@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Color
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 

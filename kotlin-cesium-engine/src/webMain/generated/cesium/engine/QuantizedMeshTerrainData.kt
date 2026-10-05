@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.Cartesian3
+import cesium.core.OrientedBoundingBox
+import cesium.core.Rectangle
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import js.promise.Promise

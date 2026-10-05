@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * A [Property] whose value does not change with respect to simulation time.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantProperty.html">Online Documentation</a>

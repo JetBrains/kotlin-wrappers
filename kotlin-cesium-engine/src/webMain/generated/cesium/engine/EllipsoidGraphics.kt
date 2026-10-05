@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describe an ellipsoid or sphere.  The center position and orientation are determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGraphics.html">Online Documentation</a>

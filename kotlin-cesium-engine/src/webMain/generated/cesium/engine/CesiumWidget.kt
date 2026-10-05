@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.Clock
+import cesium.core.DefaultEvent
+import cesium.core.Ellipsoid
+import cesium.core.HeadingPitchRange
+import cesium.core.MapProjection
 import js.array.ReadonlyArray
 import js.promise.Promise
 import kotlinx.js.JsPlainObject

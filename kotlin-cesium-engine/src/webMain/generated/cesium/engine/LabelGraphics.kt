@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describes a two dimensional label located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelGraphics.html">Online Documentation</a>

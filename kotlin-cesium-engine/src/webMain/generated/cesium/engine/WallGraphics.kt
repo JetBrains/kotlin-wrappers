@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describes a two dimensional wall defined as a line strip and optional maximum and minimum heights.
  * The wall conforms to the curvature of the globe and can be placed along the surface or at altitude.

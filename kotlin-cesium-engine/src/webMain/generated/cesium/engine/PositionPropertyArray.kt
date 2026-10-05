@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+import cesium.core.ReferenceFrame
 import js.array.ReadonlyArray
 
 /**

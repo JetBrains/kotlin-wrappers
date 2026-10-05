@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
 import js.array.ReadonlyArray
 import js.promise.Promise
 import js.void.Void

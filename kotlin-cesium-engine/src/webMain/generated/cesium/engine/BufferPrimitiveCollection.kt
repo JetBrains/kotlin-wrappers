@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.ComponentDatatype
+import cesium.core.Matrix4
 import js.array.ReadonlyArray
 import js.typedarrays.Uint32Array
 

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Packable
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 

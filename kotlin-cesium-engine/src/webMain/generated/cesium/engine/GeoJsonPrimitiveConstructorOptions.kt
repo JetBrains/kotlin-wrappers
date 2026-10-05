@@ -2,6 +2,7 @@
 
 package cesium.engine
 
+import cesium.core.Ellipsoid
 import kotlinx.js.JsPlainObject
 
 /**

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describes an ellipse defined by a center point and semi-major and semi-minor axes.
  * The ellipse conforms to the curvature of the globe and can be placed on the surface or

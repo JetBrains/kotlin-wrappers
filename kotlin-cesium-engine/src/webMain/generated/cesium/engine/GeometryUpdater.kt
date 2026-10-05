@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.GeometryInstance
+import cesium.core.JulianDate
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 

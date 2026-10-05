@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.GeometryInstance
+import cesium.core.JulianDate
+import cesium.core.Matrix4
+
 /**
  * A [GeometryUpdater] for ellipsoids.
  * Clients do not normally create this class directly, but instead rely on [DataSourceDisplay].

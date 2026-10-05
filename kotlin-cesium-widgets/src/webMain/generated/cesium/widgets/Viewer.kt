@@ -4,6 +4,11 @@
 
 package cesium.widgets
 
+import cesium.core.Clock
+import cesium.core.DefaultEvent
+import cesium.core.Ellipsoid
+import cesium.core.HeadingPitchRange
+import cesium.core.MapProjection
 import cesium.engine.*
 import js.array.ReadonlyArray
 import js.promise.Promise

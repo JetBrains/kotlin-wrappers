@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.BoundingRectangle
+
 /**
  * A viewport aligned quad.
  * ```

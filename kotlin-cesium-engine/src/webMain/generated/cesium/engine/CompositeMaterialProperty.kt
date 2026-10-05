@@ -4,6 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+import cesium.core.TimeIntervalCollection
+
 /**
  * A [CompositeProperty] which is also a [MaterialProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeMaterialProperty.html">Online Documentation</a>

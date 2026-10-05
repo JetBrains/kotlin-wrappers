@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+
 /**
  * The interface for all properties, which represent a value that can optionally vary over time.
  * This type defines an interface and cannot be instantiated directly.

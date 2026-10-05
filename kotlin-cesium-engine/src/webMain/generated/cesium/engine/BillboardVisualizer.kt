@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * A [Visualizer] which maps [Entity.billboard] to a [Billboard].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardVisualizer.html">Online Documentation</a>
