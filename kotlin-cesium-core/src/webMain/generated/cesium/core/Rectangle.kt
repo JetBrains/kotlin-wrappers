@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@cesium/engine")
+@file:JsModule("@cesium/core")
 
 package cesium.core
 
