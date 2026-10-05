@@ -1,0 +1,30 @@
+// Automatically generated - do not modify!
+
+@file:JsModule("@cesium/core")
+
+package cesium.core
+
+import web.gl.WebGL2RenderingContext
+
+/**
+ * Winding order defines the order of vertices for a triangle to be considered front-facing.
+ * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#WindingOrder">Online Documentation</a>
+ */
+sealed external interface WindingOrder {
+    companion object {
+
+        /**
+         * Vertices are in clockwise order.
+         *
+         * Value - [WebGL2RenderingContext.CW]
+         */
+        val CLOCKWISE: WindingOrder
+
+        /**
+         * Vertices are in counter-clockwise order.
+         *
+         * Value - [WebGL2RenderingContext.CCW]
+         */
+        val COUNTER_CLOCKWISE: WindingOrder
+    }
+}
