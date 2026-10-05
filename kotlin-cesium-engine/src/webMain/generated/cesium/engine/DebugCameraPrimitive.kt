@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.Color
+import cesium.core.DeveloperError
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import kotlinx.js.JsPlainObject

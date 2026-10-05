@@ -4,12 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.BoundingSphere
-import cesium.core.Cartesian3
-import cesium.core.Color
-import cesium.core.DefaultEvent
-import cesium.core.DistanceDisplayCondition
-import cesium.core.Matrix4
+import cesium.core.*
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync

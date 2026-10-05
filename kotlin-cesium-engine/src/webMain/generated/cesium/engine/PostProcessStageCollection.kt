@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
+
 /**
  * A collection of [PostProcessStage]s and/or [PostProcessStageComposite]s.
  *

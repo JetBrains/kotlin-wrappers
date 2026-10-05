@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
+
 /**
  * Draws a sun billboard.
  * This is only supported in 3D and Columbus view.

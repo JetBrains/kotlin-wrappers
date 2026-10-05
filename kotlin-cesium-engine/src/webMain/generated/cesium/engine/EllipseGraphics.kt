@@ -4,7 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Color
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
 
 /**
  * Describes an ellipse defined by a center point and semi-major and semi-minor axes.

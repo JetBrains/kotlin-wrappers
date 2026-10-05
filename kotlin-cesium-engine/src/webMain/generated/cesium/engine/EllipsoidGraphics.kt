@@ -4,7 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Color
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
 
 /**
  * Describe an ellipsoid or sphere.  The center position and orientation are determined by the containing [Entity].

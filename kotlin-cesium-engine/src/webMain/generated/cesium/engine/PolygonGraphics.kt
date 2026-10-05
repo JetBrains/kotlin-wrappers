@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
+import cesium.core.*
 
 /**
  * Describes a polygon defined by an hierarchy of linear rings which make up the outer shape and any nested holes.

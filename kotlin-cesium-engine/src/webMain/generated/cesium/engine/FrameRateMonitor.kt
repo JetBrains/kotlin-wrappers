@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.DefaultEvent
+import cesium.core.DeveloperError
 
 /**
  * Monitors the frame rate (frames per second) in a [Scene] and raises an event if the frame rate is

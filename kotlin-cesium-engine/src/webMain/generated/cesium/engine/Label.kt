@@ -4,11 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.Cartesian2
-import cesium.core.Cartesian3
-import cesium.core.Color
-import cesium.core.DistanceDisplayCondition
-import cesium.core.NearFarScalar
+import cesium.core.*
 import kotlinx.js.JsPlainObject
 
 /**

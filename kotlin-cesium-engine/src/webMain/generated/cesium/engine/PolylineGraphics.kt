@@ -4,7 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.ArcType
+import cesium.core.Cartesian3
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
 
 /**
  * Describes a polyline. The first two positions define a line segment,

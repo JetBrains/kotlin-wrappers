@@ -4,9 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
-import cesium.core.JulianDate
-import cesium.core.TranslationRotationScale
+import cesium.core.*
 
 /**
  * A [Property] that produces [TranslationRotationScale] data.

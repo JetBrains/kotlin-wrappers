@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
+import cesium.core.Color
 import cesium.core.DefaultEvent
 import cesium.core.JulianDate
 
