@@ -1,5 +1,7 @@
 package karakum.cesium
 
+import karakum.common.JsUnionConverter
+
 private const val IMAGERY_LAYER_CONSTRUCTOR_OPTIONS = "ImageryLayer.ConstructorOptions"
 
 internal fun isTypeAlias(
@@ -17,6 +19,13 @@ internal fun typeDeclaration(
     return when {
         body.startsWith("(")
             -> "typealias ${applyCallbackFix(name)} = ${typeBody(body)}"
+
+        body.startsWith("\"")
+            -> JsUnionConverter.unionBody(
+            name = name,
+            values = body.split(" | ")
+                .map { it.removeSurrounding("\"") }
+        )
 
         body == "HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas"
             -> "typealias $name = CanvasImageSource /* $body */"

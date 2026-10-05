@@ -6,10 +6,18 @@ import karakum.common.writeCode
 import java.io.File
 
 internal fun generateKotlinDeclarations(
+    coreDefinitionsFile: File,
     engineDefinitionsFile: File,
     widgetsDefinitionsFile: File,
     sourceDir: File,
 ) {
+    generate(
+        declarations = parseDeclarations(coreDefinitionsFile)
+            .plus(DefaultEvent),
+        pkg = "cesium.core",
+        sourceDir = sourceDir.resolve("cesium/core"),
+    )
+
     generate(
         declarations = parseDeclarations(engineDefinitionsFile)
             .plus(DefaultEvent)
@@ -70,7 +78,7 @@ private fun hasRuntimeDeclarations(code: String): Boolean {
         return false
 
     if ("\nsealed external interface " in code)
-        return "companion object" in code
+        return "companion object" in code && "@JsValue(" !in code
 
     if (code.count("\nexternal ") == code.count("\nexternal interface"))
         return "companion object" in code

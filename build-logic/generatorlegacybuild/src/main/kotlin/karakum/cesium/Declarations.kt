@@ -153,8 +153,7 @@ private fun readDeclarations(
     definitionsFile: File,
 ): List<Declaration> =
     definitionsFile.readText()
-        .substringAfter("""declare module "@cesium/engine" {""")
-        .substringAfter("""declare module "@cesium/widgets" {""")
+        .substringAfter("""declare module "@cesium/${definitionsFile.parentFile.name}" {""")
         .substringBefore("\n\n\n}")
         .substringBefore("\n\n\n\n\n  /**")
         .replace("($TS_FUNCTION)", JS_FUNCTION)
