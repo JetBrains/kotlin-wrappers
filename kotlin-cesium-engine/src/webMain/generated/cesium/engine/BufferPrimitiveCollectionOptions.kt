@@ -2,6 +2,9 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.ComponentDatatype
+import cesium.core.Matrix4
 import kotlinx.js.JsPlainObject
 
 /**

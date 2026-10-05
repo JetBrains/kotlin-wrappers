@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Ellipsoid
+import cesium.core.Rectangle
 import kotlinx.js.JsPlainObject
 
 /**

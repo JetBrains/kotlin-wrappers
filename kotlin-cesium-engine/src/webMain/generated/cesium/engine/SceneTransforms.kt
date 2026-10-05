@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
+import cesium.core.Cartesian3
+
 /**
  * Functions that do scene-dependent transforms between rendering-related coordinate systems.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SceneTransforms.html">Online Documentation</a>

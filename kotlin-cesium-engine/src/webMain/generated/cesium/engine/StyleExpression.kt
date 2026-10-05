@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Color
+
 /**
  * An expression for a style applied to a [Cesium3DTileset].
  *

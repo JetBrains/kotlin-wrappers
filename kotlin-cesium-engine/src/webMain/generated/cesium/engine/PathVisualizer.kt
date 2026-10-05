@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
+
 /**
  * A [Visualizer] which maps [Entity.path] to a [Polyline].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PathVisualizer.html">Online Documentation</a>

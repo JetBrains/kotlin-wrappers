@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Plane
+
 /**
  * A Plane in Hessian Normal form to be used with [ClippingPlaneCollection].
  * Compatible with mathematics functions in [Plane]

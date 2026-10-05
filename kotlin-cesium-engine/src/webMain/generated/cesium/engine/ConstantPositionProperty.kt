@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+import cesium.core.ReferenceFrame
+
 /**
  * A [PositionProperty] whose value does not change in respect to the
  * [ReferenceFrame] in which is it defined.

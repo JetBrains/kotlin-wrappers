@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Matrix3
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describes graphics for a [Rectangle].
  * The rectangle conforms to the curvature of the globe and can be placed on the surface or

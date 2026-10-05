@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.NearFarScalar
+import cesium.core.Rectangle
+
 /**
  * Properties for controlling globe translucency.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GlobeTranslucency.html">Online Documentation</a>

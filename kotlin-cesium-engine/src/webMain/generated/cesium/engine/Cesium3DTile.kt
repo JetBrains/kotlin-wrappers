@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.BoundingSphere
+import cesium.core.JulianDate
+import cesium.core.Matrix4
 import js.array.ReadonlyArray
 
 /**

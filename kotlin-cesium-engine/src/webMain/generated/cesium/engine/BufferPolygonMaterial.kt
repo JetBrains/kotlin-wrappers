@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Color
+
 /**
  * Material description for a [BufferPolygon].
  *

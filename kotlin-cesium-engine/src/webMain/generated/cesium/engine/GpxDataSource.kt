@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync

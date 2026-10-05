@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Cartographic
 import js.array.ReadonlyArray
 import js.promise.Promise
 import seskar.js.JsAsync

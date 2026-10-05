@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+
 /**
  * View bound to the underlying buffer data of a [BufferPointCollection].
  *

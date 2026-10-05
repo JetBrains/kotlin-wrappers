@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * Describes a two dimensional icon located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardGraphics.html">Online Documentation</a>

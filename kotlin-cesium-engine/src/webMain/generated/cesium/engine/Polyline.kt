@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DistanceDisplayCondition
 import js.array.ReadonlyArray
 
 /**

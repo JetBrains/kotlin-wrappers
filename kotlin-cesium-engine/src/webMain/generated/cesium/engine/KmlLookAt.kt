@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.HeadingPitchRange
+
 /**
  * @param [position] camera position
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlLookAt.html">Online Documentation</a>

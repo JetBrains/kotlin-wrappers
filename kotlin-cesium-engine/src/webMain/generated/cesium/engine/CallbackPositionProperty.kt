@@ -4,6 +4,11 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
+import cesium.core.ReferenceFrame
+
 /**
  * A [PositionProperty] whose value is lazily evaluated by a callback function.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackPositionProperty.html">Online Documentation</a>

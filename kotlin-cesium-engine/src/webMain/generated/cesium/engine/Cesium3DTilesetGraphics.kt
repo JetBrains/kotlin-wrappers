@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import cesium.core.DefaultEvent
+
 /**
  * A 3D Tiles tileset represented by an [Entity].
  * The tileset modelMatrix is determined by the containing Entity position and orientation

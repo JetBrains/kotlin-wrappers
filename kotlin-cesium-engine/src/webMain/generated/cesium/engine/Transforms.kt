@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.*
 import js.promise.Promise
 import js.void.Void
 import seskar.js.JsAsync

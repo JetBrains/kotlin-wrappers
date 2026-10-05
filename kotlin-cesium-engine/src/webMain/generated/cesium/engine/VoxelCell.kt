@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.OrientedBoundingBox
 import js.array.ReadonlyArray
 
 /**

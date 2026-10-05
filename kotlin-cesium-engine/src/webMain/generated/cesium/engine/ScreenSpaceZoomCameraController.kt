@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.JulianDate
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 import web.html.HTMLElement
