@@ -3,6 +3,21 @@ package karakum.cesium
 import java.io.File
 
 private val RECORD = Regex("""\{\n\s+\[key\:\sstring\]\:\s(\w+)\;\n\s+\}""")
+private val IMPORT_EXPORT = Regex("""^(?:import \{[^}]+} from "[^"]+"|export \{[^}]+});\n""", RegexOption.MULTILINE)
+
+private val EXCLUDED = setOf(
+    "TimeConstants",
+    "WebGLConstants",
+    "addAllToArray",
+    "arrayRemoveDuplicates",
+    "assert",
+    "defined",
+    "deprecationWarning",
+    "getJsonFromTypedArray",
+    "getMagic",
+    "getStringFromTypedArray",
+    "oneTimeWarning",
+)
 
 private const val TS_FUNCTION = "(...params: any[]) => any"
 
@@ -93,10 +108,7 @@ internal fun parseDeclarations(
                 || it.name == "TypedArrayConstructor"
     }
 
-    declarations.removeAll {
-        it.name == "WebGLConstants"
-                || it.name == "defined"
-    }
+    declarations.removeAll { it.name in EXCLUDED }
 
     declarations.removeAll {
         it is Interface && classMap.containsKey(it.name)
@@ -153,10 +165,10 @@ private fun readDeclarations(
     definitionsFile: File,
 ): List<Declaration> =
     definitionsFile.readText()
-        .substringAfter("""declare module "@cesium/engine" {""")
-        .substringAfter("""declare module "@cesium/widgets" {""")
+        .substringAfter("""declare module "@cesium/${definitionsFile.parentFile.name}" {""")
         .substringBefore("\n\n\n}")
         .substringBefore("\n\n\n\n\n  /**")
+        .replace(IMPORT_EXPORT, "")
         .replace("($TS_FUNCTION)", JS_FUNCTION)
         .replace(TS_FUNCTION, JS_FUNCTION)
         .replace("* /**", "*")
@@ -185,6 +197,34 @@ private fun readDeclarations(
             "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number;",
         )
         .replace("credits: Credit[] | undefined;", "credits: Credit[];")
+        // For version `1.146.0`. Fixed in next release in https://github.com/CesiumGS/cesium/issues/13880
+        .replace(
+            "* Gets or sets the description.\n     */\n    description: string | undefined;",
+            "* Gets or sets the description.\n     */\n    description: Property | string | undefined;",
+        )
+        .replace(
+            "velocity.\n     */\n    viewFrom: Cartesian3 | undefined;",
+            "velocity.\n     */\n    viewFrom: Property | Cartesian3 | undefined;",
+        )
+        // For version `1.146.0`. Missing parameters and return types in JSDoc
+        // Fixed by https://github.com/CesiumGS/cesium/pull/13926
+        .replace(
+            "function computeArea2D(): void;",
+            "function computeArea2D(positions: Cartesian2[]): number;",
+        )
+        .replace(
+            "function computeWindingOrder2D(): WindingOrder;",
+            "function computeWindingOrder2D(positions: Cartesian2[]): WindingOrder;",
+        )
+        .replace(
+            "function getHeight(height: number, scale: number, relativeHeight: number): void;",
+            "function getHeight(height: number, scale: number, relativeHeight: number): number;",
+        )
+        .replace(
+            "verticalExaggerationRelativeHeight: number, result?: Cartesian3): void;",
+            "verticalExaggerationRelativeHeight: number, result?: Cartesian3): Cartesian3;",
+        )
+        .replace("export class Camera {", "export class Camera extends CameraLike {")
         .replace(
             "loadTileDataAvailability(_x: number, _y: number, _level: number): Promise<void> | undefined;",
             "loadTileDataAvailability(x: number, y: number, level: number): Promise<void> | undefined;",
