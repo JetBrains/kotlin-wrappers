@@ -4,6 +4,8 @@ package web.audio
 
 import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
+import web.errors.DOMExceptionType.IndexSizeError
+import web.errors.JsThrows
 
 /**
  * The **`AudioBuffer`** interface represents a short audio asset residing in memory, created from an audio file using the AudioContext.decodeAudioData() method, or from raw data using AudioContext.createBuffer(). Once put into an AudioBuffer, the audio can then be played by being passed into an AudioBufferSourceNode.
@@ -46,6 +48,7 @@ open external class AudioBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyFromChannel)
      */
+    @JsThrows(IndexSizeError::class)
     fun copyFromChannel(
         destination: Float32Array<ArrayBuffer>,
         channelNumber: Int,

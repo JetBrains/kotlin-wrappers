@@ -357,9 +357,6 @@ private fun parseExceptionType(
             // TEMP for `SubtleCrypto`
             "NotSupported" -> "NotSupportedError"
 
-            // TEMP for `AudioScheduledSourceNode`
-            "InvalidStateNode" -> "InvalidStateError"
-
             else -> type
         }
     }
