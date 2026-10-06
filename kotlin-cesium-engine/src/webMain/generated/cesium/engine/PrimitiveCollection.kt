@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.DefaultEvent
+import cesium.core.DeveloperError
 
 /**
  * A collection of primitives.  This is most often used with [Scene.primitives],

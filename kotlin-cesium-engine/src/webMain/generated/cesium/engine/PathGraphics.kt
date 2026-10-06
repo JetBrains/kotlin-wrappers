@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
 import kotlinx.js.JsPlainObject
 
 /**

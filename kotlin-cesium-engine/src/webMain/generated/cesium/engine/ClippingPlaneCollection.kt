@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.Color
 import cesium.core.DefaultEvent
+import cesium.core.DeveloperError
 import cesium.core.Matrix4
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject

@@ -4,7 +4,9 @@
 
 package cesium.engine
 
+import cesium.core.Color
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
 
 /**
  * Describes a cylinder, truncated cone, or cone defined by a length, top radius, and bottom radius.

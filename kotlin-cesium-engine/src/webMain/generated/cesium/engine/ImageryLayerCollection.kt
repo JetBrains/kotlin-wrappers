@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.DefaultEvent
+import cesium.core.DeveloperError
 import cesium.core.Ray
 import js.array.ReadonlyArray
 import js.promise.Promise

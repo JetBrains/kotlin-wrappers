@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
+import cesium.core.*
 
 /**
  * Describes a two dimensional label located at the position of the containing [Entity].

@@ -4,7 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian3
+import cesium.core.Color
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
 
 /**
  * Describes a two dimensional wall defined as a line strip and optional maximum and minimum heights.

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.Cartesian2
+import cesium.core.DeveloperError
 import js.date.Date
 import web.html.HTMLCanvasElement
 

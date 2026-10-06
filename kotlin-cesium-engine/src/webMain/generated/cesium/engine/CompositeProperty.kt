@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.DefaultEvent
 import cesium.core.JulianDate
+import cesium.core.TimeInterval
 import cesium.core.TimeIntervalCollection
 
 /**

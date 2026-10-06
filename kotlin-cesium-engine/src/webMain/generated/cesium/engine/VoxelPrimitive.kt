@@ -4,12 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.BoundingSphere
-import cesium.core.Cartesian3
-import cesium.core.Clock
-import cesium.core.DefaultEvent
-import cesium.core.Matrix4
-import cesium.core.OrientedBoundingBox
+import cesium.core.*
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 import kotlinx.js.JsPlainObject

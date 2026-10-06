@@ -4,7 +4,10 @@
 
 package cesium.engine
 
+import cesium.core.Color
 import cesium.core.DefaultEvent
+import cesium.core.DistanceDisplayCondition
+import cesium.core.Rectangle
 
 /**
  * Describes graphics for a [Rectangle].

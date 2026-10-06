@@ -4,14 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.Cartesian3
-import cesium.core.Cartographic
-import cesium.core.Color
-import cesium.core.DefaultEvent
-import cesium.core.Ellipsoid
-import cesium.core.NearFarScalar
-import cesium.core.Ray
-import cesium.core.Rectangle
+import cesium.core.*
 
 /**
  * The globe rendered in the scene, including its terrain ([Globe.terrainProvider])

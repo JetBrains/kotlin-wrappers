@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.Cartesian2
 import cesium.core.Cartesian3
 import cesium.core.Ellipsoid
 import cesium.core.JulianDate

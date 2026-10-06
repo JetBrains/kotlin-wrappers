@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import cesium.core.DeveloperError
 import cesium.core.Rectangle
 import js.array.ReadonlyArray
 import js.promise.Promise

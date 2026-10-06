@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
+import cesium.core.*
 
 /**
  * A 3D model based on [glTF](https://github.com/KhronosGroup/glTF), the runtime asset format for WebGL, OpenGL ES, and OpenGL.

@@ -4,7 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
+import cesium.core.*
 
 /**
  * Describes a polyline volume defined as a line strip and corresponding two dimensional shape which is extruded along it.

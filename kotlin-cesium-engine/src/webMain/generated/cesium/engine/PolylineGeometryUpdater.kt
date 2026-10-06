@@ -4,9 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.ArcType
-import cesium.core.GeometryInstance
-import cesium.core.JulianDate
+import cesium.core.*
 
 /**
  * A [GeometryUpdater] for polylines.

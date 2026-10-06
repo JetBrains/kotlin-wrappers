@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.VertexFormat
+import cesium.core.WallGeometry
 import kotlinx.js.JsPlainObject
 
 /**

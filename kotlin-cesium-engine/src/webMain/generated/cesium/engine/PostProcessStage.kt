@@ -4,10 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.BoundingRectangle
-import cesium.core.Color
-import cesium.core.PixelDatatype
-import cesium.core.PixelFormat
+import cesium.core.*
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
