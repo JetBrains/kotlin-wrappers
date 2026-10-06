@@ -7,6 +7,7 @@ package cesium.engine
 import cesium.core.BoundingSphere
 import cesium.core.ComponentDatatype
 import cesium.core.Matrix4
+import js.typedarrays.TypedArray
 import kotlinx.js.JsPlainObject
 
 /**
@@ -48,6 +49,8 @@ open external class BufferPointCollection(
      *   unspecified, a bounding volume is computed automatically and updated when primitive positions change. When
      *   specified, users are responsible for updating bounding volume as needed. Pre-computing the bounding volume
      *   manually, and updating it only as needed, will improve performance for larger dynamic collections.
+     * @property [blendOption] Determines how primitives in the collection are blended with the scene. Must be [BlendOption.OPAQUE] or [BlendOption.TRANSLUCENT]; [BlendOption.OPAQUE_AND_TRANSLUCENT] is not supported.
+     *   Default value - [BlendOption.TRANSLUCENT]
      */
     @JsPlainObject
     interface ConstructorOptions {
@@ -74,4 +77,19 @@ open external class BufferPointCollection(
         options: BufferPointOptions,
         result: BufferPoint,
     ): BufferPoint
+
+    /**
+     * Updates vertex positions over the specified range of primitives. For
+     * position-only updates to many primitives, `setPositions()` is more
+     * efficient than updating each primitive individually.
+     *
+     * Argument `positions` must contain the same total number of vertices as the
+     * target primitive range; vertices cannot be added/removed by this method.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPointCollection.html#setPositions">Online Documentation</a>
+     */
+    override fun setPositions(
+        positions: TypedArray<*, *, *, *>,
+        primitiveOffset: Double,
+        primitiveCount: Double,
+    )
 }

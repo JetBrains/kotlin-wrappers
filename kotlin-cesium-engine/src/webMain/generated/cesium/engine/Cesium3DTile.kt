@@ -45,12 +45,6 @@ private constructor() {
     val geometricError: Double
 
     /**
-     * Gets the tile's children.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#children">Online Documentation</a>
-     */
-    val children: ReadonlyArray<Cesium3DTile>
-
-    /**
      * This tile's parent or `undefined` if this tile is the root.
      *
      * When a tile's content points to an external tileset JSON file, the external tileset's
@@ -77,6 +71,13 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#tileset">Online Documentation</a>
      */
     val tileset: Cesium3DTileset
+
+    /**
+     * Gets the tile's children. Tiles of an implicit tileset are derived the first
+     * time this property is accessed.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#children">Online Documentation</a>
+     */
+    val children: ReadonlyArray<Cesium3DTile>
 
     /**
      * The tile's content.  This represents the actual tile's payload,

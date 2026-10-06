@@ -109,7 +109,7 @@ open external class Entity {
      * Gets or sets the description.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#description">Online Documentation</a>
      */
-    var description: Property?
+    var description: String?
 
     /**
      * Gets or sets the ellipse.
@@ -208,7 +208,7 @@ open external class Entity {
      * but may be another frame depending on the object's velocity.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#viewFrom">Online Documentation</a>
      */
-    var viewFrom: Property?
+    var viewFrom: Cartesian3?
 
     /**
      * Gets or sets the wall.
