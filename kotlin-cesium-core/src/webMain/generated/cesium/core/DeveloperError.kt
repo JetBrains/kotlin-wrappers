@@ -35,4 +35,8 @@ open external class DeveloperError(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DeveloperError.html#stack">Online Documentation</a>
      */
     val stack: String
+
+    companion object {
+        fun throwInstantiationError(): JsAny /* never */
+    }
 }

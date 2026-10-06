@@ -4,9 +4,17 @@ plugins {
 
 kotlin {
     sourceSets.webMain.dependencies {
+        npm(jspkg.cesium.core)
         npm(jspkg.cesium.engine)
         npm(jspkg.cesium.widgets)
     }
+}
+
+tasks.register<SyncWrappers>("syncCesiumCore") {
+    from(webGeneratedDir) {
+        include("cesium/core/")
+    }
+    into(webMainDir("kotlin-cesium-core"))
 }
 
 tasks.register<SyncWrappers>("syncCesiumEngine") {

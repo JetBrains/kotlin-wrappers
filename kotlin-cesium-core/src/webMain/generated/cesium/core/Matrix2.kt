@@ -529,6 +529,20 @@ open external class Matrix2(
         ): Boolean
 
         /**
+         * Compares provided matrix and array, starting from a given array offset.
+         * @param [matrix] The matrix to compare.
+         * @param [array] The packed array.
+         * @param [offset] The offset into the array at which the matrix starts.
+         * @return `true` if the matrix matches the packed array values at the offset; otherwise, `false`.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix2.html#.equalsArray">Online Documentation</a>
+         */
+        fun equalsArray(
+            matrix: Matrix2,
+            array: ReadonlyArray<JsDouble>,
+            offset: Double,
+        ): Boolean
+
+        /**
          * Compares the provided matrices componentwise and returns
          * `true` if they are within the provided epsilon,
          * `false` otherwise.

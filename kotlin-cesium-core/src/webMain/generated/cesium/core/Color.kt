@@ -382,6 +382,20 @@ open external class Color(
         ): Boolean
 
         /**
+         * Compares the provided Color to the values packed into an array, starting at the provided offset.
+         * @param [color] The color to compare.
+         * @param [array] The packed array.
+         * @param [offset] The offset into the array at which the color starts.
+         * @return `true` if the color matches the packed array values at the offset; otherwise, `false`.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#.equalsArray">Online Documentation</a>
+         */
+        fun equalsArray(
+            color: Color,
+            array: ReadonlyArray<JsDouble>,
+            offset: Double,
+        ): Boolean
+
+        /**
          * Converts RGBA values in bytes to a single numeric unsigned 32-bit RGBA value, using the endianness
          * of the system.
          * @return A single numeric unsigned 32-bit RGBA value.

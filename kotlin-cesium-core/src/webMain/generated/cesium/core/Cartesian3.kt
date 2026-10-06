@@ -455,6 +455,20 @@ open external class Cartesian3(
         ): Boolean
 
         /**
+         * Compares the provided Cartesian3 to the values packed into an array, starting at the provided offset.
+         * @param [cartesian] The Cartesian3 to compare.
+         * @param [array] The packed array.
+         * @param [offset] The offset into the array at which the Cartesian3 starts.
+         * @return `true` if the Cartesian3 matches the packed array values at the offset; otherwise, `false`.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.equalsArray">Online Documentation</a>
+         */
+        fun equalsArray(
+            cartesian: Cartesian3,
+            array: ReadonlyArray<JsDouble>,
+            offset: Double,
+        ): Boolean
+
+        /**
          * Compares the provided Cartesians componentwise and returns
          * `true` if they pass an absolute or relative tolerance test,
          * `false` otherwise.

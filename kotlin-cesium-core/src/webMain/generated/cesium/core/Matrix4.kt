@@ -4,7 +4,6 @@
 
 package cesium.core
 
-import cesium.engine.Camera
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 
@@ -312,7 +311,7 @@ open external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromCamera">Online Documentation</a>
          */
         fun fromCamera(
-            camera: Camera,
+            camera: CameraLike,
             result: Matrix4? = definedExternally,
         ): Matrix4
 
@@ -1155,6 +1154,20 @@ open external class Matrix4(
             matrix: Matrix4,
             result: Matrix4,
         ): Matrix4
+
+        /**
+         * Compares provided matrix and array, starting from a given array offset.
+         * @param [matrix] The matrix to compare.
+         * @param [array] The packed array.
+         * @param [offset] The offset into the array at which the matrix starts.
+         * @return `true` if the matrix matches the packed array values at the offset; otherwise, `false`.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.equalsArray">Online Documentation</a>
+         */
+        fun equalsArray(
+            matrix: Matrix4,
+            array: ReadonlyArray<JsDouble>,
+            offset: Double,
+        ): Boolean
 
         /**
          * The number of elements used to pack the object into an array.
