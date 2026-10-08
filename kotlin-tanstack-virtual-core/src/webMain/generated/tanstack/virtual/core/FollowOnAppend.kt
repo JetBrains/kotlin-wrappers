@@ -2,24 +2,20 @@
 
 package tanstack.virtual.core
 
-import js.reflect.unsafeCast
-import js.union.JsUnion
-
-@JsUnion
-sealed /* union */
-external interface FollowOnAppend
+@js.union.JsUnion
+sealed external interface FollowOnAppend
 
 inline val FollowOnAppend.Companion.`false`: FollowOnAppend
-    get() = unsafeCast(false)
+    get() = js.reflect.unsafeCast(false)
 
 inline val FollowOnAppend.Companion.`true`: FollowOnAppend
-    get() = unsafeCast(true)
+    get() = js.reflect.unsafeCast(true)
 
 inline val FollowOnAppend.Companion.auto: FollowOnAppend
-    get() = unsafeCast("auto")
+    get() = js.reflect.unsafeCast("auto")
 
 inline val FollowOnAppend.Companion.smooth: FollowOnAppend
-    get() = unsafeCast("smooth")
+    get() = js.reflect.unsafeCast("smooth")
 
 inline val FollowOnAppend.Companion.instant: FollowOnAppend
-    get() = unsafeCast("instant")
+    get() = js.reflect.unsafeCast("instant")

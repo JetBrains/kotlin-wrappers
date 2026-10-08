@@ -4,4 +4,8 @@
 
 package tanstack.virtual.core
 
-external val elementScroll: (offset: Int, options: ScrollOptions, instance: Virtualizer<*, *>) -> Unit
+external fun <T : web.dom.Element> elementScroll(
+    offset: Int,
+    options: ScrollOptions,
+    instance: Virtualizer<T, *>,
+)
