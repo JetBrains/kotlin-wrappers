@@ -1,6 +1,6 @@
 [versions]
 coroutines = "1.11.0"
-kotlin = "2.4.20"
+kotlin = "2.4.21"
 serialization = "1.11.0"
 seskar = "4.66.0"
 
