@@ -354,7 +354,7 @@ private fun parseExceptionType(
             // TEMP for `RTCPeerConnection`
             "ResourceInUse" -> null
 
-            // TEMP for `SubtleCrypto`
+            // https://github.com/mdn/content/pull/46083
             "NotSupported" -> "NotSupportedError"
 
             else -> type
@@ -378,7 +378,7 @@ private fun parseExceptionType(
     if ("`gl." in source)
         return null
 
-    // TEMP
+    // https://github.com/mdn/content/pull/46082
     sequenceOf(
         "InvalidAccessError",
         "InvalidStateError",
