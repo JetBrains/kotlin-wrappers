@@ -107,7 +107,7 @@ external interface IUtils<TDate, TLocale> {
      */
     fun date(): TDate
     fun date(value: Any?): TDate?
-    fun toJsDate(value: TDate): Date
+    fun toJsDate(value: TDate): js.date.Date
     fun parseISO(isString: String): TDate
     fun toISO(value: TDate): String
     fun parse(value: String, format: String): TDate?
