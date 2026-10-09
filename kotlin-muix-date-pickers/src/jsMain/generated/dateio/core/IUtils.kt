@@ -88,19 +88,26 @@ external interface DateIOFormats<TLibFormatToken : Any> {
     var keyboardDateTime24h: TLibFormatToken
 }
 
-external interface ExtendableDateType
-
-external interface IUtils<TDate : Any> {
+external interface IUtils<TDate, TLocale> {
     val formats: DateIOFormats<*>
-    val locale: Any?
+    val locale: TLocale?
     val moment: Any?
     val dayjs: Any?
 
     /** Name of the library that is used right now */
     val lib: String
 
+
+    /**
+     * Creates a date object. Use `utils.date()` to create a new date object of the underlying library.`
+     * Supports some of the standard input sources like ISO strings so you can pass the string directly
+     * as `utils.date("2024-01-10T14:30:00Z"), and javascript `Date` objects `utils.date(new Date())`.
+     *
+     * if `null` is passed `null` will be returned.
+     */
+    fun date(): TDate
     fun date(value: Any?): TDate?
-    fun toJsDate(value: TDate): js.date.Date
+    fun toJsDate(value: TDate): Date
     fun parseISO(isString: String): TDate
     fun toISO(value: TDate): String
     fun parse(value: String, format: String): TDate?
@@ -170,6 +177,7 @@ external interface IUtils<TDate : Any> {
     fun getDate(value: TDate): Int
     fun setDate(value: TDate, count: Int): TDate
 
+    fun getWeek(value: TDate): Int
     fun getMonth(value: TDate): Int
     fun getDaysInMonth(value: TDate): Int
     fun setMonth(value: TDate, count: Int): TDate
