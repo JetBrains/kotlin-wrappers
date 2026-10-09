@@ -4,9 +4,11 @@
 
 package mui.lab
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TimelineDotClasses {
+@JsPlainObject
+external interface TimelineDotClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

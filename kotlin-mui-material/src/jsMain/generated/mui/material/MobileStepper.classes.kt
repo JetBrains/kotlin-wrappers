@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface MobileStepperClasses {
+@JsPlainObject
+external interface MobileStepperClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

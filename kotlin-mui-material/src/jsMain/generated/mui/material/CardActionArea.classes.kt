@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface CardActionAreaClasses {
+@JsPlainObject
+external interface CardActionAreaClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

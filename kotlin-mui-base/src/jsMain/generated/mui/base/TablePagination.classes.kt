@@ -4,9 +4,11 @@
 
 package mui.base
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TablePaginationClasses {
+@JsPlainObject
+external interface TablePaginationClasses {
     /** Class name applied to the root element. */
     val root: ClassName
 

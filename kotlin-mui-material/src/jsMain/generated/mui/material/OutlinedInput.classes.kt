@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface OutlinedInputClasses {
+@JsPlainObject
+external interface OutlinedInputClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

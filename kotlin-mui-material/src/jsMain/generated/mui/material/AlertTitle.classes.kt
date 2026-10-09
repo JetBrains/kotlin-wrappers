@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface AlertTitleClasses {
+@JsPlainObject
+external interface AlertTitleClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 }

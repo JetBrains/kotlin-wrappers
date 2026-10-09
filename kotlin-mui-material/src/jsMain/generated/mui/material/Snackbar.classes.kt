@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface SnackbarClasses {
+@JsPlainObject
+external interface SnackbarClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

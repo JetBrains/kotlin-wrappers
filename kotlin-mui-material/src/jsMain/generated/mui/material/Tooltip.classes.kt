@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TooltipClasses {
+@JsPlainObject
+external interface TooltipClasses {
     /** Styles applied to the Popper component. */
     val popper: ClassName
 

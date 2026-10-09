@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface ImageListClasses {
+@JsPlainObject
+external interface ImageListClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
