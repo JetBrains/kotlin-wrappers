@@ -5,6 +5,7 @@
 package cesium.core
 
 import js.errors.JsError
+import js.void.Void
 
 /**
  * Constructs an exception object that is thrown due to a developer error, e.g., invalid argument,
@@ -35,4 +36,8 @@ open external class DeveloperError(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DeveloperError.html#stack">Online Documentation</a>
      */
     val stack: String
+
+    companion object {
+        fun throwInstantiationError(): Void
+    }
 }

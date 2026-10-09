@@ -31,6 +31,7 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "void" to "Unit",
     "undefined" to "Void",
+    "never" to "Void",
 
     "Error" to "JsError",
 
@@ -72,8 +73,10 @@ private val STANDARD_TYPE_MAP = mapOf(
     "string | HTMLCanvasElement" to "HTMLCanvasElement",
 
     "string | string[]" to "ReadonlyArray<String>",
+    "number | number[]" to "ReadonlyArray<Double>",
     "number[] | Cartesian3[]" to "ReadonlyArray<Cartesian3 /* or number */>",
     "number[] | TypedArray" to "ReadonlyArray<Double> /* | TypedArray */",
+    "number[] | Float32Array | Float64Array" to "ReadonlyArray<Double> /* | Float32Array | Float64Array */",
     "(string | number | undefined)[]" to "ReadonlyArray<JsAny? /* string | number | undefined */>",
     "Record<string, unknown>[]" to "ReadonlyArray<ReadonlyRecord<JsString, *>>",
 

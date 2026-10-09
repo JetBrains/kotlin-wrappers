@@ -4,10 +4,9 @@
 
 package cesium.engine
 
-import cesium.core.BoundingSphere
-import cesium.core.ComponentDatatype
-import cesium.core.Matrix4
+import cesium.core.*
 import js.array.ReadonlyArray
+import js.typedarrays.TypedArray
 import js.typedarrays.Uint32Array
 
 /**
@@ -170,6 +169,34 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#heightReference">Online Documentation</a>
      */
     val heightReference: HeightReference
+
+    /**
+     * Determines how primitives in the collection are blended with the scene.
+     * Must be [BlendOption.OPAQUE] or [BlendOption.TRANSLUCENT];
+     * [BlendOption.OPAQUE_AND_TRANSLUCENT] is not supported.
+     *
+     * [BlendOption.OPAQUE] disables blending and writes depth, so primitives
+     * occlude each other and the geometry behind them. [BlendOption.TRANSLUCENT]
+     * alpha blends primitives and does not write depth, so they are resolved by
+     * order-independent translucency instead.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#blendOption">Online Documentation</a>
+     */
+    var blendOption: BlendOption
+
+    /**
+     * Updates vertex positions over the specified range of primitives. For
+     * position-only updates to many primitives, `setPositions()` is more
+     * efficient than updating each primitive individually.
+     *
+     * Argument `positions` must contain the same total number of vertices as the
+     * target primitive range; vertices cannot be added/removed by this method.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#setPositions">Online Documentation</a>
+     */
+    open fun setPositions(
+        positions: TypedArray<*, *, *, *>,
+        primitiveOffset: Double,
+        primitiveCount: Double,
+    )
 
     /**
      * Returns a JSON-serializable array representing the collection. This encoding

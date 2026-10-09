@@ -9,7 +9,6 @@ package cesium.core
  * @param [ellipsoid] The ellipsoid whose fixed frame is used in the transformation.
  *   Default value - [Ellipsoid.default]
  * @param [result] The object onto which to store the result.
- * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.LocalFrameToFixedFrame">Online Documentation</a>
  */
 typealias LocalFrameToFixedFrame = (
     origin: Cartesian3,

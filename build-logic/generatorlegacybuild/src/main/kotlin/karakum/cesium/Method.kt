@@ -38,6 +38,9 @@ internal class Method(
         if (name == "equals" && parameters.size == 1)
             return ""
 
+        if (name == "equalsArray")
+            return ""
+
         val returnExpression = when {
             optional -> "-> ${returnType!!}"
             returnType == null -> ""

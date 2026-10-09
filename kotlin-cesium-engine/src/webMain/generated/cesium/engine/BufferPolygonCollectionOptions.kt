@@ -27,6 +27,8 @@ import kotlinx.js.JsPlainObject
  *   unspecified, a bounding volume is computed automatically and updated when primitive positions change. When
  *   specified, users are responsible for updating bounding volume as needed. Pre-computing the bounding volume
  *   manually, and updating it only as needed, will improve performance for larger dynamic collections.
+ * @property [blendOption] Determines how primitives in the collection are blended with the scene. Must be [BlendOption.OPAQUE] or [BlendOption.TRANSLUCENT]; [BlendOption.OPAQUE_AND_TRANSLUCENT] is not supported.
+ *   Default value - [BlendOption.TRANSLUCENT]
  * @property [heightReference] When set to a clamping value, the
  *   collection is draped onto terrain and/or 3D Tiles, rather than drawn as geometry of its own.
  *   Default value - [HeightReference.NONE]

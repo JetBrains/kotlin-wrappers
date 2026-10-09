@@ -6,7 +6,7 @@ package cesium.engine
 
 /**
  * Defines how edges contributed by the
- * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+ * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility)
  * glTF extension are rendered relative to surface geometry.
  *
  * Primitives that do not include the extension are unaffected by this setting
@@ -19,7 +19,7 @@ external interface EdgeDisplayMode {
 
         /**
          * Render surfaces only. Edges from the
-         * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+         * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility)
          * extension are hidden.
          *
          * Value - `0`
@@ -28,7 +28,7 @@ external interface EdgeDisplayMode {
 
         /**
          * Render both surfaces and edges. Edges from the
-         * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/pull/2479)
+         * [EXT_mesh_primitive_edge_visibility](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Vendor/EXT_mesh_primitive_edge_visibility)
          * extension are composited on top of the surface geometry.
          *
          * Value - `1`

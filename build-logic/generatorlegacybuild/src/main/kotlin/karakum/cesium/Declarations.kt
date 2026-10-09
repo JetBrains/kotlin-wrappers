@@ -3,8 +3,17 @@ package karakum.cesium
 import java.io.File
 
 private val RECORD = Regex("""\{\n\s+\[key\:\sstring\]\:\s(\w+)\;\n\s+\}""")
+private val IMPORT_EXPORT = Regex("""^(?:import \{[^}]+} from "[^"]+"|export \{[^}]+});\n""", RegexOption.MULTILINE)
 
 private const val TS_FUNCTION = "(...params: any[]) => any"
+
+// utilities covered by Kotlin stdlib or Web APIs
+private val KOTLIN_ANALOGUES = setOf(
+    "addAllToArray",
+    "assert",
+    "getJsonFromTypedArray",
+    "getStringFromTypedArray",
+)
 
 internal const val LIGHT: String = "Light"
 internal const val SPLINE: String = "Spline"
@@ -96,6 +105,11 @@ internal fun parseDeclarations(
     declarations.removeAll {
         it.name == "WebGLConstants"
                 || it.name == "defined"
+                || it.name == "getMagic"
+    }
+
+    declarations.removeAll {
+        it.name in KOTLIN_ANALOGUES
     }
 
     declarations.removeAll {
@@ -153,10 +167,10 @@ private fun readDeclarations(
     definitionsFile: File,
 ): List<Declaration> =
     definitionsFile.readText()
-        .substringAfter("""declare module "@cesium/engine" {""")
-        .substringAfter("""declare module "@cesium/widgets" {""")
+        .substringAfter("""declare module "@cesium/${definitionsFile.parentFile.name}" {""")
         .substringBefore("\n\n\n}")
         .substringBefore("\n\n\n\n\n  /**")
+        .replace(IMPORT_EXPORT, "")
         .replace("($TS_FUNCTION)", JS_FUNCTION)
         .replace(TS_FUNCTION, JS_FUNCTION)
         .replace("* /**", "*")

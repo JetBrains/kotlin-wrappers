@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.typedarrays.TypedArray
+
 /**
  * Collection of polygons held in ArrayBuffer storage for performance and memory optimization.
  *
@@ -89,6 +91,21 @@ open external class BufferPolygonCollection(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonCollection.html#triangleCountMax">Online Documentation</a>
      */
     val triangleCountMax: Double
+
+    /**
+     * Updates vertex positions over the specified range of primitives. For
+     * position-only updates to many primitives, `setPositions()` is more
+     * efficient than updating each primitive individually.
+     *
+     * Argument `positions` must contain the same total number of vertices as the
+     * target primitive range; vertices cannot be added/removed by this method.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPolygonCollection.html#setPositions">Online Documentation</a>
+     */
+    fun setPositions(
+        positions: TypedArray<*, *, *, *>,
+        primitiveOffset: Double,
+        primitiveCount: Double,
+    )
 
     companion object {
         /**
