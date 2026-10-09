@@ -4,6 +4,9 @@
 
 package muix.tree.view
 
-sealed external interface SimpleTreeViewClasses
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
+external interface SimpleTreeViewClasses
 
 external val simpleTreeViewClasses: SimpleTreeViewClasses

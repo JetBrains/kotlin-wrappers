@@ -37,9 +37,31 @@ external interface RichTreeViewSlots : TreeViewSlots {
      * @default RichTreeViewRoot
      */
     var root: ElementType<*>?
+
+    /**
+     * Component rendered instead of the default loading rows.
+     * It renders inside the tree root while the tree is loading, which keeps the
+     * `role="tree"` and `aria-busy` attributes, and inside a lazily loading item
+     * while its children load.
+     * Compose it with `TreeItemLoader` to keep the rows semantically correct.
+     */
+    var loading: ElementType<*>?
+
+    /**
+     * Component rendered for each loading row.
+     * It also renders for the children of an item while they load lazily.
+     * Wrap custom content in `TreeItemLoader` to keep the row semantically correct.
+     * @default TreeItemLoader
+     */
+    var itemLoader: ElementType<*>?
 }
 
-external interface RichTreeViewSlotProps : Props
+external interface RichTreeViewSlotProps :
+    TreeViewSlotProps {
+    var loading: Props?
+
+    var itemLoader: Props?
+}
 
 external interface RichTreeViewPropsBase : HTMLAttributes<HTMLUListElement> {
     override var className: ClassName?
@@ -53,4 +75,10 @@ external interface RichTreeViewPropsBase : HTMLAttributes<HTMLUListElement> {
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     var sx: SxProps<Theme>?
+
+    /**
+     * If `true`, a loading UI is displayed instead of the tree items.
+     * @default false
+     */
+    var loading: Boolean?
 }

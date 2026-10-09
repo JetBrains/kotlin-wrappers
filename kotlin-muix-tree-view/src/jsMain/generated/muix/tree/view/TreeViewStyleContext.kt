@@ -38,6 +38,9 @@ external interface TreeViewClasses {
 
     /** Styles applied to the item's loading icon element */
     var itemLoadingIcon: String
+
+    /** Styles applied to the item loader element. */
+    var itemLoader: String
 }
 
 external interface TreeViewSlots {
@@ -66,10 +69,29 @@ external interface TreeViewSlotProps : Props {
     var endIcon: Props?
 }
 
+external interface TreeViewStyleContextSlots : TreeViewSlots {
+    /**
+     * Component rendered instead of the default loading rows.
+     */
+    var loading: ElementType<*>?
+
+    /**
+     * Component rendered for each loading row. The default renders a skeleton row.
+     */
+    var itemLoader: ElementType<*>?
+}
+
+external interface TreeViewStyleContextSlotProps :
+    TreeViewSlotProps {
+    var loading: Props?
+
+    var itemLoader: Props?
+}
+
 external interface TreeViewStyleContextValue {
     var classes: TreeViewClasses
 
-    var slots: TreeViewSlots
+    var slots: TreeViewStyleContextSlots
 
-    var slotProps: TreeViewSlotProps
+    var slotProps: TreeViewStyleContextSlotProps
 }
