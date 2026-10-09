@@ -5,97 +5,97 @@ package web.mediastreams
 import kotlinx.js.JsPlainObject
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#return_value)
  */
 @JsPlainObject
 external interface MediaTrackSettings {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/aspectRatio)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#aspectratio)
      */
     var aspectRatio: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/autoGainControl)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#autogaincontrol)
      */
     var autoGainControl: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/backgroundBlur)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#backgroundblur)
      */
     var backgroundBlur: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/channelCount)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#channelcount)
      */
     var channelCount: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/deviceId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#deviceid)
      */
     var deviceId: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/displaySurface)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#displaysurface)
      */
     var displaySurface: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/echoCancellation)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#echocancellation)
      */
     var echoCancellation: JsAny /* boolean | string */?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/facingMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#facingmode)
      */
     var facingMode: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/frameRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#framerate)
      */
     var frameRate: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/groupId)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#groupid)
      */
     var groupId: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/height)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#height)
      */
     var height: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/noiseSuppression)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#noisesuppression)
      */
     var noiseSuppression: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/sampleRate)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#samplerate)
      */
     var sampleRate: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/sampleSize)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#samplesize)
      */
     var sampleSize: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/torch)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#torch)
      */
     var torch: Boolean?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/whiteBalanceMode)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#whitebalancemode)
      */
     var whiteBalanceMode: String?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/width)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#width)
      */
     var width: Int?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/zoom)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings#zoom)
      */
     var zoom: Double?
 }
