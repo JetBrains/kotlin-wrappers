@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/internal/SwitchBase")
-
 package mui.material
 
 import kotlinx.js.JsPlainObject
@@ -16,5 +14,3 @@ external interface SwitchBaseClasses {
     val edgeStart: ClassName
     val edgeEnd: ClassName
 }
-
-external val switchBaseClasses: SwitchBaseClasses
