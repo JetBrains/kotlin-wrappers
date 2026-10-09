@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/base/CssAnimation")
+@file:JsModule("@mui/base/Transitions")
 
 package mui.base
 

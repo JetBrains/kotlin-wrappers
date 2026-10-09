@@ -53,4 +53,5 @@ external interface ClickAwayListenerProps : PropsWithChildren {
  *
  * - [ClickAwayListener API](https://mui.com/material-ui/api/click-away-listener/)
  */
+@JsName("default")
 external val ClickAwayListener: FC<ClickAwayListenerProps>

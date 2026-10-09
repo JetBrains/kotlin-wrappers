@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/internal/SwitchBase")
-
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
 )
@@ -10,7 +8,6 @@ package mui.material
 
 import mui.system.StandardProps
 import react.ElementType
-import react.FC
 import react.Props
 import react.ReactNode
 import react.dom.events.ChangeEvent
@@ -136,7 +133,3 @@ external interface SwitchBaseSlotsAndSlotProps : Props {
 }
 
 external interface SwitchBaseOwnerState
-
-
-@JsName("default")
-external val SwitchBase: FC<SwitchBaseProps>

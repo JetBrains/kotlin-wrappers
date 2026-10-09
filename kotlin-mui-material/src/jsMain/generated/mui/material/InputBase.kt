@@ -246,7 +246,9 @@ external interface InputBaseProps :
 }
 
 external interface InputBaseComponentProps :
-    HTMLAttributes<HTMLElement>
+    HTMLAttributes<HTMLElement> {
+
+}
 
 /**
  * `InputBase` contains as few styles as possible.

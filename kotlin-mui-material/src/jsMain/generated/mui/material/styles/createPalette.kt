@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/styles/createPalette")
-
 package mui.material.styles
 
 external interface Color {
@@ -199,8 +197,3 @@ external interface PaletteOptions {
 
     var getContrastText: ((background: String) -> String)?
 }
-
-@JsName("default")
-external fun createPalette(
-    palette: PaletteOptions,
-): Palette

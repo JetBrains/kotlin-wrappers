@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/styles/createMixins")
+@file:JsModule("@mui/material/styles")
 
 package mui.material.styles
 
@@ -29,7 +29,7 @@ external interface MixinsOptions : Mixins {
 // ... use interface declaration merging to add custom mixin options
 }
 
-@JsName("default")
+@JsName("private_createMixins")
 external fun createMixins(
     breakpoints: mui.system.Breakpoints,
     mixins: MixinsOptions,

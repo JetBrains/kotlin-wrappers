@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/material/ButtonBase/TouchRipple")
+@file:JsModule("@mui/material/ButtonBase")
 
 package mui.material
 

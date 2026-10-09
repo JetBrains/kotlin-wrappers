@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("@mui/system/createBreakpoints/createBreakpoints")
+@file:JsModule("@mui/system/createBreakpoints")
 
 package mui.system
 
@@ -45,7 +45,7 @@ external interface BreakpointsOptions : Breakpoints {
     override var unit: String?
 }
 
-@JsName("default")
+@JsName("unstable_createBreakpoints")
 external fun createBreakpoints(
     breakpoints: BreakpointsOptions,
 ): Breakpoints
