@@ -196,22 +196,21 @@ internal fun String.applyPatches(): String {
         .splitTypealias("XMLHttpRequestBodyInit")
         .splitUnion("Blob | BufferSource | FormData | URLSearchParams | string")
         .extractUrlLike()
-        .splitUnion("string | URL")
         .splitUnion("string | URLLike")
+        .splitUnion("string | URL")
         .splitUnion("string | Blob")
         .replace("(request: RequestInfo | URL,", "(url: string | URL | Request,")
         .replace("(request?: RequestInfo | URL,", "(url?: string | URL | Request,")
         .replace("(request: RequestInfo | URL)", "(url: string | URL | Request)")
         .replace("(request?: RequestInfo | URL)", "(url?: string | URL | Request)")
-        .replace("(input: RequestInfo | Location | URL,", "(url: string | URLLike | Request,")
+        .replace("(input: RequestInfo | URL,", "(url: string | URLLike | Request,")
         .splitUnion("string | URL | Request")
         .splitUnion("string | URLLike | Request")
         .replace("(url: Request,", "(request: Request,")
         .replace("(url?: Request,", "(request?: Request,")
         .replace("(url: Request)", "(request: Request)")
         .replace("(url?: Request)", "(request?: Request)")
-        .splitUnion("RequestInfo | URL")
-        .splitUnion("RequestInfo | Location | URL", "RequestInfo | URLLike")
+        .splitUnion("RequestInfo | URL", "RequestInfo | URLLike")
         .splitUnion("RequestInfo", "Request | string")
         .splitUnion("URLPatternInput", "string | URLPatternInit")
         .replace("(requests: string[])", "(urls: string[])")
@@ -540,8 +539,23 @@ internal val DOM_GEOMETRY_ALIASES = listOf(
 )
 
 private fun String.extractUrlLike(): String =
-    splitUnion("string | Location | URL", "string | URLLike")
-        .splitUnion("string | URL | Location", "string | URLLike")
+    let { source ->
+        val urlBody = source
+            .substringAfter("\ndeclare var URL: {\n", "")
+            .substringBefore("\n};\n", "")
+            .also { require(it.isNotEmpty()) }
+
+        source.replace(
+            urlBody,
+            urlBody
+                .replace(": string | URL,", ": string | URLLike,")
+                .replace(": string | URL)", ": string | URLLike)"),
+        )
+    }
+        .patchInterface("XMLHttpRequest") {
+            it.replace(": string | URL,", ": string | URLLike,")
+                .replace(": string | URL)", ": string | URLLike)")
+        }
         .plus("\n")
         .plus("type URLLike = URL | Location | WorkerLocation;")
         .plus("\n")

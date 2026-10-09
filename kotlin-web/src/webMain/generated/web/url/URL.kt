@@ -15,13 +15,13 @@ open external class URL(
 ) : OriginSource,
     URLLike {
     constructor(
-        url: String,
-        base: URLLike,
+        url: URLLike,
+        base: String = definedExternally,
     )
 
     constructor(
-        url: URLLike,
-        base: String = definedExternally,
+        url: String,
+        base: URLLike,
     )
 
     constructor(
@@ -137,8 +137,8 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
          */
         fun canParse(
-            url: String,
-            base: URLLike,
+            url: URLLike,
+            base: String = definedExternally,
         ): Boolean
 
         /**
@@ -147,8 +147,8 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/canParse_static)
          */
         fun canParse(
-            url: URLLike,
-            base: String = definedExternally,
+            url: String,
+            base: URLLike,
         ): Boolean
 
         /**
@@ -184,8 +184,8 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
          */
         fun parse(
-            url: String,
-            base: URLLike,
+            url: URLLike,
+            base: String = definedExternally,
         ): URL?
 
         /**
@@ -194,8 +194,8 @@ open external class URL(
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL/parse_static)
          */
         fun parse(
-            url: URLLike,
-            base: String = definedExternally,
+            url: String,
+            base: URLLike,
         ): URL?
 
         /**
