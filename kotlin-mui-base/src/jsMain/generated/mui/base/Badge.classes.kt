@@ -4,9 +4,11 @@
 
 package mui.base
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface BadgeClasses {
+@JsPlainObject
+external interface BadgeClasses {
     /** Class name applied to the root element. */
     val root: ClassName
 

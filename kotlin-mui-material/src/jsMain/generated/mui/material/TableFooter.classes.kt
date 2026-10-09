@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TableFooterClasses {
+@JsPlainObject
+external interface TableFooterClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 }

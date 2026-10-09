@@ -4,9 +4,11 @@
 
 package mui.base
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TabsListClasses {
+@JsPlainObject
+external interface TabsListClasses {
     /** Class name applied to the root element. */
     val root: ClassName
 

@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface BoxClasses {
+@JsPlainObject
+external interface BoxClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 }

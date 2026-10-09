@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface FormControlClasses {
+@JsPlainObject
+external interface FormControlClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

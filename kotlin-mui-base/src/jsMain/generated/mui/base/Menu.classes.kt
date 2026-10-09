@@ -4,9 +4,11 @@
 
 package mui.base
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface MenuClasses {
+@JsPlainObject
+external interface MenuClasses {
     /** Class name applied to the root element. */
     val root: ClassName
 

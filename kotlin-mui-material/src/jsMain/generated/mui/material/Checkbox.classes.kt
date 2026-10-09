@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface CheckboxClasses {
+@JsPlainObject
+external interface CheckboxClasses {
     /** Class name applied to the root element. */
     val root: ClassName
 

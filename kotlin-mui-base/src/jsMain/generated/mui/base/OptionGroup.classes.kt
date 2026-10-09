@@ -4,9 +4,11 @@
 
 package mui.base
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface OptionGroupClasses {
+@JsPlainObject
+external interface OptionGroupClasses {
     /** Class name applied to the root element. */
     val root: ClassName
 

@@ -4,9 +4,11 @@
 
 package mui.lab
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface MasonryClasses {
+@JsPlainObject
+external interface MasonryClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 }

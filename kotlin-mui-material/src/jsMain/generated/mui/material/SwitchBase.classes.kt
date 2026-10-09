@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface SwitchBaseClasses {
+@JsPlainObject
+external interface SwitchBaseClasses {
     val root: ClassName
     val checked: ClassName
     val disabled: ClassName

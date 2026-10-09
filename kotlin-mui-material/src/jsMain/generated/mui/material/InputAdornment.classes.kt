@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface InputAdornmentClasses {
+@JsPlainObject
+external interface InputAdornmentClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

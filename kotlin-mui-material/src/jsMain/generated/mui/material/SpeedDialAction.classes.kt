@@ -4,9 +4,11 @@
 
 package mui.material
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface SpeedDialActionClasses {
+@JsPlainObject
+external interface SpeedDialActionClasses {
     /** Styles applied to the Fab component. */
     val fab: ClassName
 

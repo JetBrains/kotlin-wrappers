@@ -4,9 +4,11 @@
 
 package mui.lab
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TabPanelClasses {
+@JsPlainObject
+external interface TabPanelClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 

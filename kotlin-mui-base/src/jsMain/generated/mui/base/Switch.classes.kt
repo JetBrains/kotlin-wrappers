@@ -4,9 +4,11 @@
 
 package mui.base
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface SwitchClasses {
+@JsPlainObject
+external interface SwitchClasses {
     /** Class applied to the root element. */
     val root: ClassName
 
