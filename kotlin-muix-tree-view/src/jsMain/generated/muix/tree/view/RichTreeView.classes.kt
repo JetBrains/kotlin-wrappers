@@ -4,6 +4,13 @@
 
 package muix.tree.view
 
-sealed external interface RichTreeViewClasses
+import kotlinx.js.JsPlainObject
+import web.cssom.ClassName
+
+@JsPlainObject
+external interface RichTreeViewClasses {
+    /** Styles applied to each item loader element. */
+    val itemLoader: ClassName
+}
 
 external val richTreeViewClasses: RichTreeViewClasses

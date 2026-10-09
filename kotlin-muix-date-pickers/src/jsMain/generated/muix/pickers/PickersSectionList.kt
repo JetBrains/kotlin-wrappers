@@ -15,4 +15,5 @@ import react.FC
  *
  * - [PickersSectionList API](https://mui.com/x/api/date-pickers/pickers-section-list/)
  */
+@JsName("Unstable_PickersSectionList")
 external val PickersSectionList: FC<PickersSectionListProps>

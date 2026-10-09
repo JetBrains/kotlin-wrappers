@@ -4,9 +4,11 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import web.cssom.ClassName
 
-sealed external interface TreeItemClasses {
+@JsPlainObject
+external interface TreeItemClasses {
     /** Styles applied to the root element. */
     val root: ClassName
 
