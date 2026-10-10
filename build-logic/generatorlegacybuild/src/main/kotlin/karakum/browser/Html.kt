@@ -725,16 +725,19 @@ internal fun htmlDeclarations(
         .plus(cryptoAlgorithms())
         .plus(
             sequenceOf(
-                "HTMLGeolocationElement" to "HTMLElement",
-                "HTMLPermissionElement" to "HTMLElement",
-            ).map { (name, parentName) ->
+                "HTMLGeolocationElement",
+                "HTMLPermissionElement",
+                "HTMLUserMediaElement",
+                "HTMLMicrophoneElement",
+                "HTMLCameraElement",
+            ).map { name ->
                 val body = """
                 /**
                  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$name)
                  */
                 open external class $name
                 protected constructor() :
-                    $parentName {
+                    HTMLElement {
                     // ...
                 }
                 """.trimIndent()
