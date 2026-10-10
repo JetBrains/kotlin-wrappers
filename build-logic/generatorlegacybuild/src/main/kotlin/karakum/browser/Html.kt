@@ -723,6 +723,29 @@ internal fun htmlDeclarations(
             ),
         )
         .plus(cryptoAlgorithms())
+        .plus(
+            sequenceOf(
+                "HTMLGeolocationElement" to "HTMLElement",
+                "HTMLPermissionElement" to "HTMLElement",
+            ).map { (name, parentName) ->
+                val body = """
+                /**
+                 * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$name)
+                 */
+                open external class $name
+                protected constructor() :
+                    $parentName {
+                    // ...
+                }
+                """.trimIndent()
+
+                ConversionResult(
+                    name = name,
+                    body = body,
+                    pkg = "web.html",
+                )
+            },
+        )
 }
 
 private val COLLECTIONS_WITH_BOUNDS = setOf(
