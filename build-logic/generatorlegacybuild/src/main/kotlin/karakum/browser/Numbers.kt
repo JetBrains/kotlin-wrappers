@@ -325,7 +325,7 @@ private fun parseExceptionType(
     source: String,
 ): String? {
     source
-        .replace("{DOMxRef(", "{domxref(")
+        .replace("{domxref(", "{domxref(", ignoreCase = true)
         .replace("{{domxref('DOMException')}}", """{{domxref("DOMException")}}""")
         .takeIf { it != source }
         ?.let { return parseExceptionType(it) }
