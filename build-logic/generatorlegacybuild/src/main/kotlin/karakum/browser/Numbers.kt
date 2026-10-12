@@ -345,12 +345,6 @@ private fun parseExceptionType(
         return when (type) {
             // deprecated
             "TypeMismatchError" -> null
-            // TEMP for `GPUAdapter`
-            "TypeError" -> null
-            // TEMP for `DocumentPictureInPicture`
-            "RangeError" -> null
-            // TEMP for `IDBIndex`
-            """{{jsxref("TypeError")}}""" -> null
             // TEMP for `RTCPeerConnection`
             "ResourceInUse" -> null
 
