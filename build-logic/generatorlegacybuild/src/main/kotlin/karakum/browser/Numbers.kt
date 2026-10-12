@@ -375,17 +375,5 @@ private fun parseExceptionType(
     if ("`gl." in source)
         return null
 
-    // https://github.com/mdn/content/pull/46082
-    sequenceOf(
-        "InvalidAccessError",
-        "InvalidStateError",
-        "NotFoundError",
-        "NotReadableError",
-        "NotSupportedError",
-        "OperationError",
-        "SecurityError",
-    ).filter { source.startsWith("`$it`\n") }
-        .forEach { return it }
-
     return null
 }
