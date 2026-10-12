@@ -354,9 +354,6 @@ private fun parseExceptionType(
             // TEMP for `RTCPeerConnection`
             "ResourceInUse" -> null
 
-            // https://github.com/mdn/content/pull/46083
-            "NotSupported" -> "NotSupportedError"
-
             else -> type
         }
     }
