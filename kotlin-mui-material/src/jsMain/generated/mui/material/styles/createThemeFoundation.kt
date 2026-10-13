@@ -130,6 +130,10 @@ external interface PaletteFilledInput {
     var disabledBg: String
 }
 
+external interface PaletteInput {
+    var autofillWebkitBoxShadow: String
+}
+
 external interface PaletteLinearProgress {
     var primaryBg: String
 
@@ -252,6 +256,8 @@ external interface CssVarsPalette {
     var Chip: Any? /* PaletteChip */
 
     var FilledInput: Any? /* PaletteFilledInput */
+
+    var Input: Any? /* PaletteInput */
 
     var LinearProgress: Any? /* PaletteLinearProgress */
 

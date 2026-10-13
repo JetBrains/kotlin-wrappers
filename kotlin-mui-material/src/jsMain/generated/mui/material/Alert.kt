@@ -15,8 +15,11 @@ import mui.system.SxProps
 import mui.system.Union
 import react.ElementType
 import react.FC
+import react.Props
 import react.ReactNode
 import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface AlertProps :
     StandardProps,
@@ -130,6 +133,32 @@ external interface AlertSlots {
      * @default svg
      */
     var closeIcon: ElementType<*>
+}
+
+external interface AlertSlotProps : Props {
+    /** TS: SlotProps<React.ElementType<PaperProps>, AlertRootSlotPropsOverrides, AlertOwnerState> */
+    var root: PaperProps?
+
+    /** TS: SlotProps<'div', AlertIconSlotPropsOverrides, AlertOwnerState> */
+    var icon: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps<'div', AlertMessageSlotPropsOverrides, AlertOwnerState> */
+    var message: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps<'div', AlertActionSlotPropsOverrides, AlertOwnerState> */
+    var action: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotProps<React.ElementType<IconButtonProps>, AlertCloseButtonSlotPropsOverrides, AlertOwnerState> */
+    var closeButton: IconButtonProps?
+
+    /** TS: SlotProps<React.ElementType<SvgIconProps>, AlertCloseIconSlotPropsOverrides, AlertOwnerState> */
+    var closeIcon: SvgIconProps?
+}
+
+external interface AlertSlotsAndSlotProps : Props {
+    var slots: AlertSlots?
+
+    var slotProps: AlertSlotProps?
 }
 
 /**

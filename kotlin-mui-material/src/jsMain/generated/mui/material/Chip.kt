@@ -39,10 +39,10 @@ external interface ChipSlots {
 }
 
 external interface ChipSlotProps : Props {
-    /** TS: SlotProps<'div', {}, ChipOwnerState> */
+    /** TS: SlotProps<'div', ChipRootSlotPropsOverrides, ChipOwnerState> */
     var root: HTMLAttributes<HTMLDivElement>?
 
-    /** TS: SlotProps<'span', {}, ChipOwnerState> */
+    /** TS: SlotProps<'span', ChipLabelSlotPropsOverrides, ChipOwnerState> */
     var label: HTMLAttributes<HTMLSpanElement>?
 }
 

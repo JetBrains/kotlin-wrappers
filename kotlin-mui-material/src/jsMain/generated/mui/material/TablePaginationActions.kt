@@ -4,25 +4,26 @@
 
 package mui.material
 
+import mui.material.styles.Theme
+import mui.system.PropsWithSx
+import mui.system.StandardProps
+import mui.system.SxProps
 import mui.system.Union
 import react.ElementType
 import react.FC
-import react.PropsWithClassName
 import react.dom.events.MouseEvent
 import react.dom.html.HTMLAttributes
-import web.cssom.ClassName
 import web.html.HTMLButtonElement
 import web.html.HTMLDivElement
 
 external interface TablePaginationActionsProps :
+    StandardProps,
     HTMLAttributes<HTMLDivElement>,
-    PropsWithClassName {
+    PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: Any? /* unknown;{} */
-
-    override var className: ClassName?
+    var classes: TablePaginationActionsClasses?
 
     var count: Int
 
@@ -66,6 +67,11 @@ external interface TablePaginationActionsProps :
     }
 
     var slots: TablePaginationActionsSlots?
+
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
+    override var sx: SxProps<Theme>?
 }
 
 external interface TablePaginationActionsSlots {

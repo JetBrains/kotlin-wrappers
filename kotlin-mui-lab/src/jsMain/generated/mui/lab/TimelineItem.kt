@@ -11,12 +11,12 @@ import mui.system.SxProps
 import react.FC
 import react.PropsWithChildren
 import react.ReactNode
-import react.dom.html.HTMLAttributes
-import web.html.HTMLDivElement
+import react.dom.html.LiHTMLAttributes
+import web.html.HTMLLIElement
 
 external interface TimelineItemProps :
     StandardProps,
-    HTMLAttributes<HTMLDivElement>,
+    LiHTMLAttributes<HTMLLIElement>,
     PropsWithChildren,
     PropsWithSx {
     /**

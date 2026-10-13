@@ -23,7 +23,7 @@ external interface CardActionAreaProps :
     CardActionAreaOwnProps,
     CardActionAreaSlotsAndSlotProps,
     PropsWithComponent,
-    ButtonBaseProps
+    mui.material.ButtonBaseProps
 
 external interface CardActionAreaSlots {
     /**
@@ -40,10 +40,10 @@ external interface CardActionAreaSlots {
 }
 
 external interface CardActionAreaSlotProps : Props {
-    /** TS: SlotProps<React.ElementType<ButtonBaseProps>, {}, CardActionAreaOwnerState> */
+    /** TS: SlotProps<React.ElementType<ButtonBaseProps>, CardActionAreaRootSlotPropsOverrides, CardActionAreaOwnerState> */
     var root: ButtonBaseProps?
 
-    /** TS: SlotProps<'span', {}, CardActionAreaOwnerState> */
+    /** TS: SlotProps<'span', CardActionAreaFocusHighlightSlotPropsOverrides, CardActionAreaOwnerState> */
     var focusHighlight: HTMLAttributes<HTMLSpanElement>?
 }
 

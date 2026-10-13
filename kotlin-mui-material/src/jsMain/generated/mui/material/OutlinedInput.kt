@@ -54,7 +54,7 @@ external interface OutlinedInputSlots {
 }
 
 external interface OutlinedInputSlotProps : Props {
-    /** TS: SlotProps<'fieldset', {}, OutlinedInputOwnerState> */
+    /** TS: SlotProps<'fieldset', OutlinedInputNotchedOutlineSlotPropsOverrides, OutlinedInputOwnerState> */
     var notchedOutline: FieldsetHTMLAttributes<HTMLFieldSetElement>?
 }
 
