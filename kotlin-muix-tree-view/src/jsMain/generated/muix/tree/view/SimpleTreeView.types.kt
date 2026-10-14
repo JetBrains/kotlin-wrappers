@@ -9,6 +9,7 @@ import react.*
 import web.cssom.ClassName
 
 external interface SimpleTreeViewProps :
+    TreeViewStoreParameters,
     PropsWithChildren,
     PropsWithClassName,
     PropsWithSx {
