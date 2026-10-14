@@ -1,5 +1,8 @@
 package karakum.cesium
 
+import karakum.common.CommonUnionConverter.sealedUnionBody
+import karakum.common.removeQuoteSurrounding
+
 private const val IMAGERY_LAYER_CONSTRUCTOR_OPTIONS = "ImageryLayer.ConstructorOptions"
 
 internal fun isTypeAlias(
@@ -15,6 +18,18 @@ internal fun typeDeclaration(
 ): String {
     val (name, body) = source.split(" = ")
     return when {
+        body.startsWith("\"")
+            -> {
+            val values = body.splitToSequence(" | ")
+                .map { it.removeQuoteSurrounding() }
+                .toList()
+
+            sealedUnionBody(
+                name = name,
+                values = values,
+            )
+        }
+
         body.startsWith("(")
             -> "typealias ${applyCallbackFix(name)} = ${typeBody(body)}"
 
@@ -43,8 +58,14 @@ internal fun typeDeclaration(
         }
 
         else -> {
+            val annotation = when (name) {
+                "CameraLike",
+                    -> ""
+
+                else -> "@JsPlainObject"
+            }
             val modifier = if (top) "external" else ""
-            "@JsPlainObject\n$modifier interface $name {\n${optionsBody(body)}\n}"
+            "$annotation\n$modifier interface $name {\n${optionsBody(body)}\n}"
         }
     }
 }

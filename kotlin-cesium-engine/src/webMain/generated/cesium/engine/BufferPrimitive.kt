@@ -31,6 +31,13 @@ open external class BufferPrimitive {
     fun setMaterial(material: BufferPrimitiveMaterial)
 
     /**
+     * User-defined pick object, if any. After a primitive has been rendered, its
+     * pick object can no longer be changed.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitive.html#pickObject">Online Documentation</a>
+     */
+    var pickObject: JsAny?
+
+    /**
      * Returns a JSON-serializable object representing the primitive. This encoding
      * is not memory-efficient, and should generally be used for debugging and
      * testing.

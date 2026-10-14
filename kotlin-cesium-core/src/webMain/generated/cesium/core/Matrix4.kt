@@ -4,7 +4,6 @@
 
 package cesium.core
 
-import cesium.engine.Camera
 import js.array.ReadonlyArray
 import js.numbers.JsDouble
 
@@ -312,7 +311,7 @@ open external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromCamera">Online Documentation</a>
          */
         fun fromCamera(
-            camera: Camera,
+            camera: CameraLike,
             result: Matrix4? = definedExternally,
         ): Matrix4
 

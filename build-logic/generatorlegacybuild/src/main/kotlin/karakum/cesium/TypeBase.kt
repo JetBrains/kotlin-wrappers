@@ -186,6 +186,16 @@ internal abstract class TypeBase(
             "BufferPolygon",
             "BufferPolyline",
                 -> body = body.replace("fun toJSON(", "override fun toJSON(")
+
+            "BufferPrimitiveCollection",
+                -> body = body.replace("fun setPositions(", "open fun setPositions(")
+
+            "BufferPointCollection",
+            "BufferPolylineCollection",
+                -> body = body.replace("fun setPositions(", "override fun setPositions(")
+
+            "Camera",
+                -> body = body.replace(Regex("""\n(var (position|direction|up): Cartesian3)"""), "\noverride $1")
         }
 
         // TODO: move cleanup to separate method

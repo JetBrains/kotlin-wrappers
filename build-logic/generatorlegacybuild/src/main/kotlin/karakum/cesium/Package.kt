@@ -13,12 +13,14 @@ import js.objects.ReadonlyRecord
 import js.objects.unsafeJso
 import js.promise.Promise
 import js.promise.PromiseResult
+import js.reflect.unsafeCast
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint32Array
 import js.typedarrays.Uint8Array
+import js.union.JsUnion
 import js.void.Void
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
