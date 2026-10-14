@@ -125,6 +125,9 @@ internal class TypeProvider(
             return false
 
         return when (parentType) {
+            // TEMP (legacy)
+            "RTCOutboundRtpStreamStats" -> name != "totalEncodedBytesTarget"
+
             "Window" -> name !in WINDOW_EXCLUDED
             "WorkerGlobalScope" -> name != "self"
 

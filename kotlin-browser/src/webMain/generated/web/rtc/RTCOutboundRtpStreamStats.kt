@@ -144,11 +144,6 @@ external interface RTCOutboundRtpStreamStats :
     var totalEncodeTime: Double?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCOutboundRtpStreamStats/totalEncodedBytesTarget)
-     */
-    var totalEncodedBytesTarget: UInt53?
-
-    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCOutboundRtpStreamStats/totalPacketSendDelay)
      */
     var totalPacketSendDelay: Double?
