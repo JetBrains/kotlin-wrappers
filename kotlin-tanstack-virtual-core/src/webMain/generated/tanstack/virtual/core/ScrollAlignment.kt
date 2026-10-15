@@ -2,21 +2,17 @@
 
 package tanstack.virtual.core
 
-import js.reflect.unsafeCast
-import js.union.JsUnion
-
-@JsUnion
-sealed /* union */
-external interface ScrollAlignment
+@js.union.JsUnion
+sealed external interface ScrollAlignment
 
 inline val ScrollAlignment.Companion.start: ScrollAlignment
-    get() = unsafeCast("start")
+    get() = js.reflect.unsafeCast("start")
 
 inline val ScrollAlignment.Companion.center: ScrollAlignment
-    get() = unsafeCast("center")
+    get() = js.reflect.unsafeCast("center")
 
 inline val ScrollAlignment.Companion.end: ScrollAlignment
-    get() = unsafeCast("end")
+    get() = js.reflect.unsafeCast("end")
 
 inline val ScrollAlignment.Companion.auto: ScrollAlignment
-    get() = unsafeCast("auto")
+    get() = js.reflect.unsafeCast("auto")
