@@ -6,6 +6,7 @@ import js.function.JsFunction
 import js.internal.InternalApi
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
+import web.command.CommandEvent
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
@@ -145,7 +146,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
      */
-    var oncommand: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
+    var oncommand: EventHandler<CommandEvent, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 

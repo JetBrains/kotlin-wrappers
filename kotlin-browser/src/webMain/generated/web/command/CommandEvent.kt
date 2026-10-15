@@ -28,4 +28,9 @@ open external class CommandEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/source)
      */
     val source: Element?
+
+    companion object
 }
+
+inline val CommandEvent.Companion.COMMAND: EventType<CommandEvent>
+    get() = EventType("command")
