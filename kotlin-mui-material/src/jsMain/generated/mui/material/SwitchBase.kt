@@ -8,7 +8,6 @@ package mui.material
 
 import mui.system.StandardProps
 import react.ElementType
-import react.FC
 import react.Props
 import react.ReactNode
 import react.dom.events.ChangeEvent

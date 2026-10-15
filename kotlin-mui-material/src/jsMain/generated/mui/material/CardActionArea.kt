@@ -23,7 +23,7 @@ external interface CardActionAreaProps :
     CardActionAreaOwnProps,
     CardActionAreaSlotsAndSlotProps,
     PropsWithComponent,
-    mui.material.ButtonBaseProps
+    ButtonBaseProps
 
 external interface CardActionAreaSlots {
     /**
