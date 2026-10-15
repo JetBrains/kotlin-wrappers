@@ -68,12 +68,17 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Credit | string" to "Credit",
     "string | number" to "String",
 
+    "Property | string | undefined" to "Property?",
+    "Property | Cartesian3 | undefined" to "Property?",
+
     "Element | string" to "Element",
     "string | HTMLCanvasElement" to "HTMLCanvasElement",
 
     "string | string[]" to "ReadonlyArray<String>",
+    "number | number[]" to "ReadonlyArray<Double>",
     "number[] | Cartesian3[]" to "ReadonlyArray<Cartesian3 /* or number */>",
     "number[] | TypedArray" to "ReadonlyArray<Double> /* | TypedArray */",
+    "number[] | Float32Array | Float64Array" to "ReadonlyArray<Double> /* | Float32Array | Float64Array */",
     "(string | number | undefined)[]" to "ReadonlyArray<JsAny? /* string | number | undefined */>",
     "Record<string, unknown>[]" to "ReadonlyArray<ReadonlyRecord<JsString, *>>",
 
@@ -154,6 +159,7 @@ internal fun kotlinType(
 
     val placeholder = when (type) {
         "Uint16Array | Uint32Array",
+        "Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array",
         "Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array",
             -> "TypedArray<*, *, *, *>"
 

@@ -80,6 +80,8 @@ private val INTEGER_NAMES = setOf(
     "loadingDescendantLimit",
 
     "byteOffset",
+    "primitiveOffset",
+    "primitiveCount",
 
     "SIXTY_FOUR_KILOBYTES",
     "FOUR_GIGABYTES",

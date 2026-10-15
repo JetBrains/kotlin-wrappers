@@ -12,6 +12,7 @@ import web.cssom.ClassName
 import web.html.HTMLUListElement
 
 external interface RichTreeViewProps :
+    RichTreeViewStoreParameters,
     RichTreeViewPropsBase {
     /**
      * Overridable component slots.

@@ -12,6 +12,7 @@ internal class Method(
 
     private val typeParameters = source.parseFunctionTypeParameters()
         .replace(" extends ", " : ")
+        .replace("<T>", "<T : JsAny>")
 
     override val docName: String
         get() = if (static) ".$name" else name
@@ -36,6 +37,12 @@ internal class Method(
             return ""
 
         if (name == "equals" && parameters.size == 1)
+            return ""
+
+        if (name == "equalsArray" && parameters.size == 3)
+            return ""
+
+        if (name == "throwInstantiationError")
             return ""
 
         val returnExpression = when {
