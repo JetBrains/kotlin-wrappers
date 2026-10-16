@@ -22,6 +22,7 @@ import web.html.HTMLDivElement
 external interface SnackbarProps :
     StandardProps,
     HTMLAttributes<HTMLDivElement>,
+    SnackbarSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
     /**
@@ -82,10 +83,10 @@ external interface SnackbarProps :
      * The `reason` parameter can optionally be used to control the response to `onClose`,
      * for example ignoring `clickaway`.
      *
-     * @param {React.SyntheticEvent<any> | Event} event The event source of the callback.
+     * @param {React.SyntheticEvent<any> | Event | null} event The event source of the callback, or `null` when `autoHideDuration` expired.
      * @param {string} reason Can be: `"timeout"` (`autoHideDuration` expired), `"clickaway"`, or `"escapeKeyDown"`.
      */
-    var onClose: ((event: SyntheticEvent<*, *>, reason: SnackbarCloseReason) -> Unit)?
+    var onClose: ((event: SyntheticEvent<*, *>?, reason: SnackbarCloseReason) -> Unit)?
 
     /**
      * If `true`, the component is shown.

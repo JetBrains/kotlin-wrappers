@@ -16,12 +16,16 @@ import react.ElementType
 import react.FC
 import react.Props
 import react.ReactNode
+import react.dom.events.SyntheticEvent
 import react.dom.html.HTMLAttributes
+import web.dom.ElementId
+import web.html.HTMLDivElement
 import web.html.HTMLSpanElement
 
 external interface SpeedDialActionProps :
     StandardProps,
-    TooltipProps,
+    SpeedDialActionTooltipProps,
+    SpeedDialActionSlotsAndSlotProps,
     PropsWithSx {
     /**
      * Override or extend the styles applied to the component.
@@ -92,6 +96,46 @@ external interface SpeedDialActionSlotsAndSlotProps : Props {
 }
 
 external interface SpeedDialActionOwnerState
+
+external interface SpeedDialActionTooltipProps :
+    StandardProps,
+    HTMLAttributes<HTMLDivElement> {
+    var arrow: Boolean?
+
+    var describeChild: Boolean?
+
+    var disableFocusListener: Boolean?
+
+    var disableHoverListener: Boolean?
+
+    var disableInteractive: Boolean?
+
+    var disableTouchListener: Boolean?
+
+    var enterDelay: Int?
+
+    var enterNextDelay: Int?
+
+    var enterTouchDelay: Int?
+
+    var followCursor: Boolean?
+
+    var id: ElementId?
+
+    var leaveDelay: Int?
+
+    var leaveTouchDelay: Int?
+
+    var onClose: ((event: SyntheticEvent<*, *>) -> Unit)?
+
+    var onOpen: ((event: SyntheticEvent<*, *>) -> Unit)?
+
+    var open: Boolean?
+
+    var placement: Any? /* PopperProps['placement'] */
+
+    var title: ReactNode?
+}
 
 /**
  *

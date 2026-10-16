@@ -71,13 +71,13 @@ external interface StepLabelSlots {
 }
 
 external interface StepLabelSlotProps : Props {
-    /** TS: SlotProps<'span', {}, StepLabelOwnerState> */
+    /** TS: SlotProps<'span', StepLabelRootSlotPropsOverrides, StepLabelOwnerState> */
     var root: HTMLAttributes<HTMLSpanElement>?
 
-    /** TS: SlotProps<'span', {}, StepLabelOwnerState> */
+    /** TS: SlotProps<'span', StepLabelLabelSlotPropsOverrides, StepLabelOwnerState> */
     var label: HTMLAttributes<HTMLSpanElement>?
 
-    /** TS: SlotProps<React.ElementType<StepIconProps>, {}, StepLabelOwnerState> */
+    /** TS: SlotProps<React.ElementType<StepIconProps>, StepLabelStepIconSlotPropsOverrides, StepLabelOwnerState> */
     var stepIcon: StepIconProps?
 }
 

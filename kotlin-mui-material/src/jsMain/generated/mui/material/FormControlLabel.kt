@@ -8,7 +8,10 @@ import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.StandardProps
 import mui.system.SxProps
-import react.*
+import react.ElementType
+import react.FC
+import react.Props
+import react.ReactNode
 import react.dom.events.SyntheticEvent
 import react.dom.html.LabelHTMLAttributes
 import web.html.HTMLLabelElement
@@ -42,11 +45,6 @@ external interface FormControlLabelProps :
      * If `true`, the label is rendered as it is passed without an additional typography node.
      */
     var disableTypography: Boolean?
-
-    /**
-     * Pass a ref to the `input` element.
-     */
-    var inputRef: Ref<*>?
 
     /**
      * A text or an element to be used in an enclosing label element.
@@ -95,7 +93,7 @@ external interface FormControlLabelSlots {
 }
 
 external interface FormControlLabelSlotProps : Props {
-    /** TS: SlotProps<typeof Typography, {}, FormControlLabelProps> */
+    /** TS: SlotProps<typeof Typography, FormControlLabelTypographySlotPropsOverrides, FormControlLabelProps> */
     var typography: TypographyProps?
 }
 

@@ -130,6 +130,10 @@ external interface PaletteFilledInput {
     var disabledBg: String
 }
 
+external interface PaletteInput {
+    var autofillWebkitBoxShadow: String
+}
+
 external interface PaletteLinearProgress {
     var primaryBg: String
 
@@ -241,37 +245,39 @@ external interface CssVarsPalette {
 
     var action: PaletteActionChannel
 
-    var Alert: Any? /* PaletteAlert */
+    var Alert: PaletteAlert
 
-    var AppBar: Any? /* PaletteAppBar */
+    var AppBar: PaletteAppBar
 
-    var Avatar: Any? /* PaletteAvatar */
+    var Avatar: PaletteAvatar
 
-    var Button: Any? /* PaletteButton */
+    var Button: PaletteButton
 
-    var Chip: Any? /* PaletteChip */
+    var Chip: PaletteChip
 
-    var FilledInput: Any? /* PaletteFilledInput */
+    var FilledInput: PaletteFilledInput
 
-    var LinearProgress: Any? /* PaletteLinearProgress */
+    var Input: PaletteInput
 
-    var Skeleton: Any? /* PaletteSkeleton */
+    var LinearProgress: PaletteLinearProgress
 
-    var Slider: Any? /* PaletteSlider */
+    var Skeleton: PaletteSkeleton
 
-    var SnackbarContent: Any? /* PaletteSnackbarContent */
+    var Slider: PaletteSlider
+
+    var SnackbarContent: PaletteSnackbarContent
 
     var SpeedDialAction: PaletteSpeedDialAction
 
-    var StepConnector: Any? /* PaletteStepConnector */
+    var StepConnector: PaletteStepConnector
 
-    var StepContent: Any? /* PaletteStepContent */
+    var StepContent: PaletteStepContent
 
-    var Switch: Any? /* PaletteSwitch */
+    var Switch: PaletteSwitch
 
-    var TableCell: Any? /* PaletteTableCell */
+    var TableCell: PaletteTableCell
 
-    var Tooltip: Any? /* PaletteTooltip */
+    var Tooltip: PaletteTooltip
 }
 
 external interface ColorSystem {

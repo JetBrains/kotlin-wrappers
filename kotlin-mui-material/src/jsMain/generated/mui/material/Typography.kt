@@ -44,7 +44,7 @@ external interface TypographyOwnProps :
      * It supports both default and custom theme colors, which can be added as shown in the
      * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
      */
-    var color: Union? /* OverridableStringUnion<'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' | `text${Capitalize<keyof TypeText>}`, TypographyPropsColorOverrides> | (string) */
+    var color: Union? /* OverridableStringUnion<'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' | `text${Capitalize<keyof TypeText>}`, TypographyPropsColorOverrides> | string */
 
     /**
      * If `true`, the text will have a bottom margin.

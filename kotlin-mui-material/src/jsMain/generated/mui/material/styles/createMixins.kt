@@ -4,6 +4,8 @@
 
 package mui.material.styles
 
+import mui.system.Breakpoints
+
 external interface BaseCSSProperties {
     @JsName("@font-face")
     var fontFace: Any? /* Fontface | Fontface[] */
@@ -31,6 +33,6 @@ external interface MixinsOptions : Mixins {
 
 @JsName("private_createMixins")
 external fun createMixins(
-    breakpoints: mui.system.Breakpoints,
+    breakpoints: Breakpoints,
     mixins: MixinsOptions,
 ): Mixins

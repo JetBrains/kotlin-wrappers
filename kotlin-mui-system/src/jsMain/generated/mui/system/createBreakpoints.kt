@@ -36,7 +36,7 @@ external interface BreakpointsOptions : Breakpoints {
      * For example, `step: 5` means that `down(500)` will result in `'(max-width: 499.95px)'`.
      * @default 5
      */
-    var step: Number?
+    var step: Double?
 
     /**
      * The unit used for the breakpoint's values.

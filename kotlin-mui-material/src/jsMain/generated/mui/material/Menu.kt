@@ -60,7 +60,7 @@ external interface MenuProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`, `"tabKeyDown"`.
      */
-    var onClose: Any? /* PopoverProps['onClose'] */
+    var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.

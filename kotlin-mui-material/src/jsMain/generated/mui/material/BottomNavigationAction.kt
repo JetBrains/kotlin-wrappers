@@ -12,7 +12,11 @@ import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import mui.types.PropsWithComponent
-import react.*
+import react.ElementType
+import react.FC
+import react.Props
+import react.PropsWithChildren
+import react.ReactNode
 import react.dom.html.HTMLAttributes
 import web.html.HTMLSpanElement
 
@@ -36,10 +40,10 @@ external interface BottomNavigationActionSlots {
 }
 
 external interface BottomNavigationActionSlotProps : Props {
-    /** TS: SlotProps<React.ElementType<ButtonBaseProps>, {}, BottomNavigationActionOwnerState> */
+    /** TS: SlotProps<React.ElementType<ButtonBaseProps>, BottomNavigationActionRootSlotPropsOverrides, BottomNavigationActionOwnerState> */
     var root: ButtonBaseProps?
 
-    /** TS: SlotProps<'span', {}, BottomNavigationActionOwnerState> */
+    /** TS: SlotProps<'span', BottomNavigationActionLabelSlotPropsOverrides, BottomNavigationActionOwnerState> */
     var label: HTMLAttributes<HTMLSpanElement>?
 }
 
@@ -74,6 +78,13 @@ external interface BottomNavigationActionOwnProps :
      * The label element.
      */
     var label: ReactNode?
+
+    /**
+     * If `true`, the component appears selected.
+     *
+     * `BottomNavigation` sets this on each child from its own `value`.
+     */
+    var selected: Boolean?
 
     /**
      * If `true`, the `BottomNavigationAction` will show its label.

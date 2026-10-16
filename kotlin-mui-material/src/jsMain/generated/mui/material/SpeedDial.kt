@@ -5,13 +5,11 @@
 package mui.material
 
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.StandardProps
 import mui.system.SxProps
-import react.ElementType
-import react.FC
-import react.PropsWithChildren
-import react.ReactNode
+import react.*
 import react.dom.events.SyntheticEvent
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
@@ -20,6 +18,7 @@ import web.html.Hidden
 external interface SpeedDialProps :
     StandardProps,
     HTMLAttributes<HTMLDivElement>,
+    SpeedDialSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
     /**
@@ -117,6 +116,20 @@ external interface SpeedDialSlots {
      * @default Zoom
      */
     var transition: ElementType<*>
+}
+
+external interface SpeedDialSlotProps : Props {
+    /** TS: SlotComponentProps<'div', React.HTMLAttributes<HTMLDivElement>, SpeedDialOwnerState> */
+    var root: HTMLAttributes<HTMLDivElement>?
+
+    /** TS: SlotComponentProps<React.ElementType<TransitionProps>, TransitionProps, SpeedDialOwnerState> */
+    var transition: TransitionProps?
+}
+
+external interface SpeedDialSlotsAndSlotProps : Props {
+    var slots: SpeedDialSlots?
+
+    var slotProps: SpeedDialSlotProps?
 }
 
 external interface SpeedDialOwnerState
