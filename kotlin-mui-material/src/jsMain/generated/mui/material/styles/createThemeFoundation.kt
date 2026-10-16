@@ -245,39 +245,39 @@ external interface CssVarsPalette {
 
     var action: PaletteActionChannel
 
-    var Alert: Any? /* PaletteAlert */
+    var Alert: PaletteAlert
 
-    var AppBar: Any? /* PaletteAppBar */
+    var AppBar: PaletteAppBar
 
-    var Avatar: Any? /* PaletteAvatar */
+    var Avatar: PaletteAvatar
 
-    var Button: Any? /* PaletteButton */
+    var Button: PaletteButton
 
-    var Chip: Any? /* PaletteChip */
+    var Chip: PaletteChip
 
-    var FilledInput: Any? /* PaletteFilledInput */
+    var FilledInput: PaletteFilledInput
 
-    var Input: Any? /* PaletteInput */
+    var Input: PaletteInput
 
-    var LinearProgress: Any? /* PaletteLinearProgress */
+    var LinearProgress: PaletteLinearProgress
 
-    var Skeleton: Any? /* PaletteSkeleton */
+    var Skeleton: PaletteSkeleton
 
-    var Slider: Any? /* PaletteSlider */
+    var Slider: PaletteSlider
 
-    var SnackbarContent: Any? /* PaletteSnackbarContent */
+    var SnackbarContent: PaletteSnackbarContent
 
     var SpeedDialAction: PaletteSpeedDialAction
 
-    var StepConnector: Any? /* PaletteStepConnector */
+    var StepConnector: PaletteStepConnector
 
-    var StepContent: Any? /* PaletteStepContent */
+    var StepContent: PaletteStepContent
 
-    var Switch: Any? /* PaletteSwitch */
+    var Switch: PaletteSwitch
 
-    var TableCell: Any? /* PaletteTableCell */
+    var TableCell: PaletteTableCell
 
-    var Tooltip: Any? /* PaletteTooltip */
+    var Tooltip: PaletteTooltip
 }
 
 external interface ColorSystem {
