@@ -29,7 +29,8 @@ open external class McpHttpServerDefinition {
     var uri: Uri
 
     /**
-     * Optional additional heads included with each request to the server.
+     * Optional additional headers included with requests to the server's origin.
+     * These headers are not sent to a different origin, including across redirects.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpHttpServerDefinition.headers)
      */
@@ -46,7 +47,7 @@ open external class McpHttpServerDefinition {
     /**
      * @param label The human-readable name of the server.
      * @param uri The URI of the server.
-     * @param headers Optional additional heads included with each request to the server.
+     * @param headers Optional additional headers included with requests to the server's origin.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpHttpServerDefinition.constructor)
      */
