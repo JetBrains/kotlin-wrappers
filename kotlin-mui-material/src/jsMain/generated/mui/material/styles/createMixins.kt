@@ -33,6 +33,6 @@ external interface MixinsOptions : Mixins {
 
 @JsName("private_createMixins")
 external fun createMixins(
-    breakpoints: mui.system.Breakpoints,
+    breakpoints: Breakpoints,
     mixins: MixinsOptions,
 ): Mixins
