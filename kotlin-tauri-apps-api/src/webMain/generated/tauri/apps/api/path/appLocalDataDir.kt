@@ -6,7 +6,8 @@ package tauri.apps.api.path
 
 /**
  * Returns the path to the suggested directory for your app's local data files.
- * Resolves to `${localDataDir}/${bundleIdentifier}`, where `bundleIdentifier` is the [`identifier`](https://v2.tauri.app/reference/config/#identifier) value configured in `tauri.conf.json`.
+ * Resolves to `${localDataDir}/${bundleIdentifier}`, where `bundleIdentifier` is the [`identifier`](https://v2.tauri.app/reference/config/#identifier) value configured in `tauri.conf.json`,
+ * unless overridden with the [`app > appDirectoriesOverride`](https://v2.tauri.app/reference/config/#appdirectoriesoverride) config.
  * @example
  * ```typescript
  * import { appLocalDataDir } from '@tauri-apps/api/path';

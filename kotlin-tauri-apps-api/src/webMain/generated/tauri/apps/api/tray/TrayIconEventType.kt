@@ -2,6 +2,15 @@
 
 package tauri.apps.api.tray
 
+/**
+ * The kind of a {@linkcode TrayIconEvent}.
+ *
+ * - `Click`: a mouse button was pressed or released over the icon.
+ * - `DoubleClick`: the icon was double clicked.
+ * - `Enter`: the cursor entered the icon area.
+ * - `Move`: the cursor moved inside the icon area.
+ * - `Leave`: the cursor left the icon area.
+ */
 @js.union.JsUnion
 sealed external interface TrayIconEventType
 

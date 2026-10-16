@@ -19,6 +19,9 @@ package tauri.apps.api.app
  * }
  * ```
  *
+ * @remarks Requires the `core:app:allow-remove-data-store` permission (not included
+ * in `core:app:default`).
+ *
  * @since 2.4.0
  */
 external fun removeDataStore(uuid: DataStoreIdentifier): js.promise.Promise<js.void.Void>

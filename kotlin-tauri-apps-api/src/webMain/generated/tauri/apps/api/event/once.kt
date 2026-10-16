@@ -18,7 +18,7 @@ package tauri.apps.api.event
  *   console.log(`App is loaded, loggedIn: ${event.payload.loggedIn}, token: ${event.payload.token}`);
  * });
  *
- * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+ * // call unlisten when your handler goes out of scope e.g. the component is unmounted
  * unlisten();
  * ```
  *
@@ -26,7 +26,11 @@ package tauri.apps.api.event
  * @param handler Event handler callback.
  * @param options Event listening options.
  * @returns A promise resolving to a function to unlisten to the event.
- * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+ *
+ * @remarks The listener removes itself after the first event, and listeners bound
+ * to a window or webview are also removed automatically when that target is
+ * destroyed. Still call the returned function when the listener's own scope ends
+ * before the event arrives — for example on page navigation or component unmount.
  *
  * @since 1.0.0
  */

@@ -2,6 +2,7 @@
 
 package tauri.apps.api.window
 
+/** The edge or corner a resize drag started from, see {@link Window.startResizeDragging}. */
 @js.union.JsUnion
 sealed external interface ResizeDirection
 

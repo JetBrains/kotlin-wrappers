@@ -56,6 +56,11 @@ sealed external interface BaseDirectory {
 
         /**
          * @see {@link videoDir} for more information.
+         *
+         * #### Platform-specific
+         *
+         * - **Android:** Resolves to the app-specific Movies directory since 2.12.0,
+         *   see {@link videoDir}.
          */
         val Video: BaseDirectory
 
@@ -96,16 +101,28 @@ sealed external interface BaseDirectory {
 
         /**
          * @see {@link desktopDir} for more information.
+         *
+         * #### Platform-specific
+         *
+         * - **Android:** Unsupported, this variant does not exist on Android.
          */
         val Desktop: BaseDirectory
 
         /**
          * @see {@link executableDir} for more information.
+         *
+         * #### Platform-specific
+         *
+         * - **Android:** Unsupported, this variant does not exist on Android.
          */
         val Executable: BaseDirectory
 
         /**
          * @see {@link fontDir} for more information.
+         *
+         * #### Platform-specific
+         *
+         * - **Android:** Unsupported, this variant does not exist on Android.
          */
         val Font: BaseDirectory
 
@@ -116,11 +133,19 @@ sealed external interface BaseDirectory {
 
         /**
          * @see {@link runtimeDir} for more information.
+         *
+         * #### Platform-specific
+         *
+         * - **Android:** Unsupported, this variant does not exist on Android.
          */
         val Runtime: BaseDirectory
 
         /**
          * @see {@link templateDir} for more information.
+         *
+         * #### Platform-specific
+         *
+         * - **Android:** Unsupported, this variant does not exist on Android.
          */
         val Template: BaseDirectory
     }

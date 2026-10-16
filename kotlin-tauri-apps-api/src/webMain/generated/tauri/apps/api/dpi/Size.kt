@@ -42,8 +42,26 @@ external class Size {
 
     var size: Any // LogicalSize | PhysicalSize
 
+    /**
+     * Converts the wrapped size to a logical one.
+     *
+     * Returns the inner value untouched when it already is a {@linkcode LogicalSize}.
+     *
+     * @param scaleFactor The monitor scale factor, e.g. `await appWindow.scaleFactor()`.
+     *
+     * @since 2.1.0
+     */
     fun toLogical(scaleFactor: Double): LogicalSize
 
+    /**
+     * Converts the wrapped size to a physical one.
+     *
+     * Returns the inner value untouched when it already is a {@linkcode PhysicalSize}.
+     *
+     * @param scaleFactor The monitor scale factor, e.g. `await appWindow.scaleFactor()`.
+     *
+     * @since 2.1.0
+     */
     fun toPhysical(scaleFactor: Double): PhysicalSize
 
     fun toJSON(): js.objects.ReadonlyRecord<String, Temp2>

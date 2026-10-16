@@ -13,10 +13,16 @@ external interface WindowOptions {
     /** Show window in the center of the screen.. */
     var center: Boolean?
 
-    /** The initial vertical position in logical pixels. Only applies if `y` is also set. */
+    /**
+     * The initial horizontal position in logical pixels, measured from the left edge
+     * of the screen. Only applies if `y` is also set.
+     */
     var x: Double?
 
-    /** The initial horizontal position in logical pixels. Only applies if `x` is also set. */
+    /**
+     * The initial vertical position in logical pixels, measured from the top edge of
+     * the screen. Only applies if `x` is also set.
+     */
     var y: Double?
 
     /** The initial width in logical pixels. */
@@ -70,8 +76,8 @@ external interface WindowOptions {
 
     /**
      * Whether the window is transparent or not.
-     * Note that on `macOS` this requires the `macos-private-api` feature flag, enabled under `tauri.conf.json > app > macOSPrivateApi`.
-     * WARNING: Using private APIs on `macOS` prevents your application from being accepted to the `App Store`.
+     *
+     * On Windows, using `noRedirectionBitmap` can help avoid a white flash when creating a transparent window.
      */
     var transparent: Boolean?
 
@@ -95,6 +101,14 @@ external interface WindowOptions {
 
     /** Whether or not the window icon should be added to the taskbar. */
     var skipTaskbar: Boolean?
+
+    /**
+     * This sets `WS_EX_NOREDIRECTIONBITMAP`.
+     *
+     * This can avoid the white flash that may appear before the webview content is rendered
+     * when using a transparent window. **Windows only**.
+     */
+    var noRedirectionBitmap: Boolean?
 
     /**
      *  Whether or not the window has shadow.

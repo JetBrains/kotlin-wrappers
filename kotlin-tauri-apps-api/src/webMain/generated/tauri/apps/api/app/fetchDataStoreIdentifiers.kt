@@ -15,6 +15,9 @@ package tauri.apps.api.app
  * const ids = await fetchDataStoreIdentifiers();
  * ```
  *
+ * @remarks Requires the `core:app:allow-fetch-data-store-identifiers` permission
+ * (not included in `core:app:default`).
+ *
  * @since 2.4.0
  */
 external fun fetchDataStoreIdentifiers(): js.promise.Promise<js.array.ReadonlyArray<DataStoreIdentifier>>

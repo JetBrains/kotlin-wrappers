@@ -20,6 +20,9 @@ import tauri.apps.api.window.Theme
  *
  * - **iOS / Android:** Unsupported.
  *
+ * @remarks Requires the `core:app:allow-set-app-theme` permission (not included in
+ * `core:app:default`).
+ *
  * @since 2.0.0
  */
 external fun setTheme(theme: Theme? = definedExternally): js.promise.Promise<js.void.Void>

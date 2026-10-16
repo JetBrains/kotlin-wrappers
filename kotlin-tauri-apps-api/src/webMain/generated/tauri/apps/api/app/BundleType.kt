@@ -6,6 +6,10 @@ package tauri.apps.api.app
 
 /**
  * Bundle type of the current application.
+ *
+ * @see {@linkcode getBundleType}
+ *
+ * @since 2.7.0
  */
 sealed external interface BundleType {
     companion object {

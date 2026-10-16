@@ -15,6 +15,9 @@ import tauri.apps.api.image.Image
  * const icon = await defaultWindowIcon();
  * ```
  *
+ * @remarks Requires the `core:app:allow-default-window-icon` permission (not
+ * included in `core:app:default`).
+ *
  * @since 2.0.0
  */
 external fun defaultWindowIcon(): js.promise.Promise<Image?>

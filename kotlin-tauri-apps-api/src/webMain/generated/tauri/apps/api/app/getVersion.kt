@@ -5,12 +5,6 @@
 package tauri.apps.api.app
 
 /**
- * Application metadata and related APIs.
- *
- * @module
- */
-
-/**
  * Gets the application version.
  * @example
  * ```typescript

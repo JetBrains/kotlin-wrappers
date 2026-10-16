@@ -9,6 +9,9 @@ package tauri.apps.api.path
  *
  * #### Platform-specific
  *
+ * - **Android:** Unsupported. The {@link BaseDirectory.Template} variant does not
+ *   exist there and the call rejects.
+ *
  * - **Linux:** Resolves to [`xdg-user-dirs`](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/)' `XDG_TEMPLATES_DIR`.
  * - **macOS:** Not supported.
  * - **Windows:** Resolves to `{FOLDERID_Templates}`.

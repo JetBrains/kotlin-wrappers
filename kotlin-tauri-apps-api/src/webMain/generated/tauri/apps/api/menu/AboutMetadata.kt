@@ -2,6 +2,8 @@
 
 package tauri.apps.api.menu
 
+import tauri.apps.api.image.JsImage
+
 /** A metadata for the about predefined menu item. */
 external interface AboutMetadata {
     /** Sets the application name. */
@@ -83,5 +85,5 @@ external interface AboutMetadata {
      *
      * - **Windows:** Unsupported.
      */
-    var icon: (Any /* string | Uint8Array | ArrayBuffer | number[] | Image */)?
+    var icon: JsImage?
 }

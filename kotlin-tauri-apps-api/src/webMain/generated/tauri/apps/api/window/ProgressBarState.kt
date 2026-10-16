@@ -2,6 +2,11 @@
 
 package tauri.apps.api.window
 
+/**
+ * The taskbar/dock progress indicator state, see {@link Window.setProgressBar}.
+ *
+ * @since 2.0.0
+ */
 external interface ProgressBarState {
     /**
      * The progress bar status.

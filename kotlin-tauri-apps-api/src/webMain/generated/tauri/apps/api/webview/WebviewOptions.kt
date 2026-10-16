@@ -21,10 +21,10 @@ external interface WebviewOptions {
      */
     var url: String?
 
-    /** The initial vertical position in logical pixels. */
+    /** The initial horizontal position in logical pixels, relative to the window's top-left corner. */
     var x: Double
 
-    /** The initial horizontal position in logical pixels. */
+    /** The initial vertical position in logical pixels, relative to the window's top-left corner. */
     var y: Double
 
     /** The initial width in logical pixels. */
@@ -35,8 +35,8 @@ external interface WebviewOptions {
 
     /**
      * Whether the webview is transparent or not.
-     * Note that on `macOS` this requires the `macos-private-api` feature flag, enabled under `tauri.conf.json > app > macOSPrivateApi`.
-     * WARNING: Using private APIs on `macOS` prevents your application from being accepted to the `App Store`.
+     *
+     * On Windows, using `noRedirectionBitmap` can help avoid a white flash when creating a transparent window.
      */
     var transparent: Boolean?
 

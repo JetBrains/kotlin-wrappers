@@ -18,7 +18,15 @@ external class PredefinedMenuItem : MenuItemBase {
     fun setText(text: String): js.promise.Promise<js.void.Void>
 
     companion object {
-        /** Create a new predefined menu item. */
+        /**
+         * Create a new predefined menu item.
+         *
+         * @example
+         * ```typescript
+         * import { PredefinedMenuItem } from '@tauri-apps/api/menu';
+         * const separator = await PredefinedMenuItem.new({ item: 'Separator' });
+         * ```
+         */
         fun new(opts: PredefinedMenuItemOptions = definedExternally): js.promise.Promise<PredefinedMenuItem>
     }
 }

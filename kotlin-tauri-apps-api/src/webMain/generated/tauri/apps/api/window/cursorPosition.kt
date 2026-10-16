@@ -15,5 +15,19 @@ import tauri.apps.api.dpi.PhysicalPosition
  * or the top-left of the leftmost monitor on X11.
  *
  * The coordinates can be negative if the top-left hand corner of the window is outside of the visible screen region.
+ *
+ * @example
+ * ```typescript
+ * import { cursorPosition } from '@tauri-apps/api/window';
+ * const position = await cursorPosition();
+ * console.log(position.x, position.y);
+ * ```
+ *
+ * @returns The cursor position, in physical pixels.
+ *
+ * @remarks Uses the `core:window:allow-cursor-position` permission, which is part
+ * of `core:window:default`.
+ *
+ * @since 2.0.0
  */
 external fun cursorPosition(): js.promise.Promise<PhysicalPosition>

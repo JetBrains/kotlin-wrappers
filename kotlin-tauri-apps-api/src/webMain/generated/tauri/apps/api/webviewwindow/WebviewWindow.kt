@@ -30,7 +30,12 @@ open external class WebviewWindow :
      * ```
      *
      * @param label The unique webview label. Must be alphanumeric: `a-zA-Z-/:_`.
+     * @param options The window and webview configuration, see {@link WindowOptions}
+     * and {@link WebviewOptions}.
      * @returns The {@link WebviewWindow} instance to communicate with the window and webview.
+     *
+     * @remarks Requires the `core:webview:allow-create-webview-window` permission
+     * (not included in `core:webview:default`).
      */
     constructor (label: WebviewLabel, options: WebviewWindowOptions = definedExternally)
 
@@ -49,14 +54,18 @@ open external class WebviewWindow :
      *   console.log(`Got error: ${payload}`);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
      * @param handler Event handler.
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this webview window is
+     * destroyed, so you do not need to unlisten just because the window is closing.
+     * Do call the returned function when the listener's own scope ends, e.g. on page
+     * navigation or when a component unmounts.
      */
     override fun <T> listen(
         event: EventName,
@@ -73,14 +82,17 @@ open external class WebviewWindow :
      *   console.log(`Webview initialized!`);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
      * @param handler Event handler.
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener removes itself after the first event and is also removed
+     * automatically when this webview window is destroyed. Do call the returned
+     * function if the listener's own scope ends before the event arrives.
      */
     override fun <T> once(
         event: EventName,
@@ -99,7 +111,18 @@ open external class WebviewWindow :
      *   - On Windows 7, alpha channel is ignored for the webview layer.
      *   - On Windows 8 and newer, if alpha channel is not `0`, it will be ignored.
      *
+     * @example
+     * ```typescript
+     * import { getCurrentWebviewWindow } from '@tauri-apps/api/webviewWindow';
+     * await getCurrentWebviewWindow().setBackgroundColor('#2f2f2f');
+     * ```
+     *
+     * @param color The new background color.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires both the `core:window:allow-set-background-color` and
+     * `core:webview:allow-set-webview-background-color` permissions, neither of which
+     * is included in the respective default permission set.
      *
      * @since 2.1.0
      */

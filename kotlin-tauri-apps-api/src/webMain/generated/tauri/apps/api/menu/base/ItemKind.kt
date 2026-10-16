@@ -2,6 +2,12 @@
 
 package tauri.apps.api.menu.base
 
+/**
+ * The kind of a menu item, used internally to route IPC calls to the right
+ * Rust-side type.
+ *
+ * @ignore
+ */
 @js.union.JsUnion
 sealed external interface ItemKind
 

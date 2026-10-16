@@ -9,6 +9,9 @@ package tauri.apps.api.path
  *
  * #### Platform-specific
  *
+ * - **Android:** Unsupported. The {@link BaseDirectory.Runtime} variant does not
+ *   exist there and the call rejects.
+ *
  * - **Linux:** Resolves to `$XDG_RUNTIME_DIR`.
  * - **macOS:** Not supported.
  * - **Windows:** Not supported.

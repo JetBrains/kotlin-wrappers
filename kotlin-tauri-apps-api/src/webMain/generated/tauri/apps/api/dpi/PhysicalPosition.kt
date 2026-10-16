@@ -30,7 +30,7 @@ external class PhysicalPosition {
      * const appWindow = getCurrentWindow();
      * const factor = await appWindow.scaleFactor();
      * const position = new PhysicalPosition(400, 500);
-     * const physical = position.toLogical(factor);
+     * const logical = position.toLogical(factor);
      * ```
      *
      * @since 2.0.0

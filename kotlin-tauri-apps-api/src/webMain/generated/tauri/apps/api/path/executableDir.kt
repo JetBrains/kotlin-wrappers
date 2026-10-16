@@ -9,6 +9,9 @@ package tauri.apps.api.path
  *
  * #### Platform-specific
  *
+ * - **Android:** Unsupported. The {@link BaseDirectory.Executable} variant does not
+ *   exist there and the call rejects.
+ *
  * - **Linux:** Resolves to `$XDG_BIN_HOME/../bin` or `$XDG_DATA_HOME/../bin` or `$HOME/.local/bin`.
  * - **macOS:** Not supported.
  * - **Windows:** Not supported.

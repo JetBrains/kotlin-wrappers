@@ -117,6 +117,16 @@ sealed external interface Effect {
         val UnderPageBackground: Effect
 
         /**
+         *  **macOS 26.0+**
+         */
+        val LiquidGlassRegular: Effect
+
+        /**
+         *  **macOS 26.0+**
+         */
+        val LiquidGlassClear: Effect
+
+        /**
          *  **Windows 11 Only**
          */
         val Mica: Effect

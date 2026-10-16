@@ -23,7 +23,16 @@ external class MenuItem : MenuItemBase {
     /** Sets whether this menu item is enabled or not. */
     fun setEnabled(enabled: Boolean): js.promise.Promise<js.void.Void>
 
-    /** Sets the accelerator for this menu item. */
+    /**
+     * Sets the accelerator for this menu item, or removes it when given `null`.
+     *
+     * See {@linkcode MenuItemOptions.accelerator} for the accepted format.
+     *
+     * @example
+     * ```typescript
+     * await item.setAccelerator('CmdOrCtrl+Shift+K');
+     * ```
+     */
     fun setAccelerator(accelerator: String?): js.promise.Promise<js.void.Void>
 
     companion object {

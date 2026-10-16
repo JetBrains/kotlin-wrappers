@@ -9,9 +9,11 @@ package tauri.apps.api.path
  *
  * #### Platform-specific
  *
- * - **Linux:** Resolves to `${configDir}/${bundleIdentifier}/logs`.
+ * - **Linux:** Resolves to `${localDataDir}/${bundleIdentifier}/logs`.
  * - **macOS:** Resolves to `${homeDir}/Library/Logs/{bundleIdentifier}`
- * - **Windows:** Resolves to `${configDir}/${bundleIdentifier}/logs`.
+ * - **Windows:** Resolves to `${localDataDir}/${bundleIdentifier}/logs`.
+ *
+ * All of them can be overridden with the [`app > appDirectoriesOverride`](https://v2.tauri.app/reference/config/#appdirectoriesoverride) config (a single root override resolves to `${root}/logs`).
  * @example
  * ```typescript
  * import { appLogDir } from '@tauri-apps/api/path';

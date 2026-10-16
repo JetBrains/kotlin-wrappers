@@ -6,7 +6,8 @@ package tauri.apps.api.path
 
 /**
  * Returns the path to the suggested directory for your app's config files.
- * Resolves to `${configDir}/${bundleIdentifier}`, where `bundleIdentifier` is the [`identifier`](https://v2.tauri.app/reference/config/#identifier) value configured in `tauri.conf.json`.
+ * Resolves to `${configDir}/${bundleIdentifier}`, where `bundleIdentifier` is the [`identifier`](https://v2.tauri.app/reference/config/#identifier) value configured in `tauri.conf.json`,
+ * unless overridden with the [`app > appDirectoriesOverride`](https://v2.tauri.app/reference/config/#appdirectoriesoverride) config.
  * @example
  * ```typescript
  * import { appConfigDir } from '@tauri-apps/api/path';

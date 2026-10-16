@@ -9,6 +9,9 @@ package tauri.apps.api.path
  *
  * #### Platform-specific
  *
+ * - **Android:** Unsupported. The {@link BaseDirectory.Font} variant does not exist
+ *   there and the call rejects.
+ *
  * - **Linux:** Resolves to `$XDG_DATA_HOME/fonts` or `$HOME/.local/share/fonts`.
  * - **macOS:** Resolves to `$HOME/Library/Fonts`.
  * - **Windows:** Not supported.

@@ -9,6 +9,9 @@ package tauri.apps.api.path
  *
  * #### Platform-specific
  *
+ * - **Android:** Unsupported. Android has no desktop directory, the
+ *   {@link BaseDirectory.Desktop} variant does not exist there and the call rejects.
+ *
  * - **Linux:** Resolves to [`xdg-user-dirs`](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/)' `XDG_DESKTOP_DIR`.
  * - **macOS:** Resolves to `$HOME/Desktop`.
  * - **Windows:** Resolves to `{FOLDERID_Desktop}`.

@@ -27,7 +27,11 @@ external class IconMenuItem : MenuItemBase {
     /** Sets whether this icon menu item is enabled or not. */
     fun setEnabled(enabled: Boolean): js.promise.Promise<js.void.Void>
 
-    /** Sets the accelerator for this icon menu item. */
+    /**
+     * Sets the accelerator for this icon menu item, or removes it when given `null`.
+     *
+     * See {@linkcode MenuItemOptions.accelerator} for the accepted format.
+     */
     fun setAccelerator(accelerator: String?): js.promise.Promise<js.void.Void>
 
     /** Sets an icon for this icon menu item */

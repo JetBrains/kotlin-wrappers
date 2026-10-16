@@ -15,6 +15,9 @@ package tauri.apps.api.app
  * await setDockVisibility(false);
  * ```
  *
+ * @remarks Requires the `core:app:allow-set-dock-visibility` permission (not
+ * included in `core:app:default`).
+ *
  * @since 2.5.0
  */
 external fun setDockVisibility(visible: Boolean): js.promise.Promise<js.void.Void>

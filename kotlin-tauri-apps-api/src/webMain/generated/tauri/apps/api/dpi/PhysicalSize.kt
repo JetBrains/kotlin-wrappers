@@ -34,6 +34,8 @@ external class PhysicalSize {
      * const size = await appWindow.innerSize(); // PhysicalSize
      * const logical = size.toLogical(factor);
      * ```
+     *
+     * @since 2.0.0
      */
     fun toLogical(scaleFactor: Double): LogicalSize
 

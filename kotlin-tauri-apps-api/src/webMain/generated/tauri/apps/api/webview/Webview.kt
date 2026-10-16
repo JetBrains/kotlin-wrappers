@@ -19,6 +19,23 @@ import tauri.apps.api.window.Window
  * Webviews are identified by a *label*  a unique identifier that can be used to reference it later.
  * It may only contain alphanumeric characters `a-zA-Z` plus the following special characters `-`, `/`, `:` and `_`.
  *
+ * #### Requires the `unstable` Cargo feature
+ *
+ * Creating a webview with `new Webview(...)` adds a *child webview* to an existing
+ * window, which is an unstable API gated behind the `unstable` feature of the
+ * `tauri` crate:
+ *
+ * ```toml
+ * [dependencies]
+ * tauri = { version = "2", features = ["unstable"] }
+ * ```
+ *
+ * Without it the call rejects with an "unstable feature not supported" error.
+ * Getting a handle to an existing webview (`Webview.getByLabel`,
+ * {@link getCurrentWebview}, {@link getAllWebviews}) and every method on this class
+ * work without the feature. To create a window that hosts a single webview, use
+ * {@link WebviewWindow} instead, which is stable.
+ *
  * @example
  * ```typescript
  * import { Window } from "@tauri-apps/api/window"
@@ -100,7 +117,14 @@ open external class Webview {
      *
      * @param window the window to add this webview to.
      * @param label The unique webview label. Must be alphanumeric: `a-zA-Z-/:_`.
+     * @param options The webview configuration, see {@link WebviewOptions}.
      * @returns The {@link Webview} instance to communicate with the webview.
+     *
+     * @remarks Requires the `unstable` Cargo feature on the `tauri` crate
+     * (`tauri = { version = "2", features = ["unstable"] }`), otherwise the call
+     * rejects with an "unstable feature not supported" error. It also requires the
+     * `core:webview:allow-create-webview` permission, which is not included in
+     * `core:webview:default`.
      */
     constructor (window: Window, label: WebviewLabel, options: WebviewOptions)
 
@@ -123,14 +147,18 @@ open external class Webview {
      *   console.log(`Got error: ${payload}`);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
      * @param handler Event handler.
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this webview is destroyed,
+     * so you do not need to unlisten just because the webview is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     open fun <T> listen(
         event: EventName,
@@ -143,18 +171,21 @@ open external class Webview {
      * @example
      * ```typescript
      * import { getCurrentWebview } from '@tauri-apps/api/webview';
-     * const unlisten = await getCurrent().once<null>('initialized', (event) => {
+     * const unlisten = await getCurrentWebview().once<null>('initialized', (event) => {
      *   console.log(`Webview initialized!`);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
      * @param handler Event handler.
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener removes itself after the first event and is also removed
+     * automatically when this webview is destroyed. Do call the returned function if
+     * the listener's own scope ends before the event arrives.
      */
     open fun <T> once(
         event: EventName,
@@ -230,7 +261,10 @@ open external class Webview {
      * const position = await getCurrentWebview().position();
      * ```
      *
-     * @returns The webview's position.
+     * @returns The webview's position, in physical pixels.
+     *
+     * @remarks Uses the `core:webview:allow-webview-position` permission, which is
+     * part of `core:webview:default`.
      */
     fun position(): js.promise.Promise<PhysicalPosition>
 
@@ -243,7 +277,10 @@ open external class Webview {
      * const size = await getCurrentWebview().size();
      * ```
      *
-     * @returns The webview's size.
+     * @returns The webview's size, in physical pixels.
+     *
+     * @remarks Uses the `core:webview:allow-webview-size` permission, which is part
+     * of `core:webview:default`.
      */
     fun size(): js.promise.Promise<PhysicalSize>
 
@@ -256,6 +293,9 @@ open external class Webview {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-webview-close` permission (not
+     * included in `core:webview:default`).
      */
     fun close(): js.promise.Promise<js.void.Void>
 
@@ -263,12 +303,16 @@ open external class Webview {
      * Resizes the webview.
      * @example
      * ```typescript
-     * import { getCurrent, LogicalSize } from '@tauri-apps/api/webview';
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * import { LogicalSize } from '@tauri-apps/api/dpi';
      * await getCurrentWebview().setSize(new LogicalSize(600, 500));
      * ```
      *
      * @param size The logical or physical size.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-size` permission (not
+     * included in `core:webview:default`).
      */
     fun setSize(size: LogicalSize): js.promise.Promise<js.void.Void>
 
@@ -276,12 +320,16 @@ open external class Webview {
      * Resizes the webview.
      * @example
      * ```typescript
-     * import { getCurrent, LogicalSize } from '@tauri-apps/api/webview';
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * import { LogicalSize } from '@tauri-apps/api/dpi';
      * await getCurrentWebview().setSize(new LogicalSize(600, 500));
      * ```
      *
      * @param size The logical or physical size.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-size` permission (not
+     * included in `core:webview:default`).
      */
     fun setSize(size: PhysicalSize): js.promise.Promise<js.void.Void>
 
@@ -289,12 +337,16 @@ open external class Webview {
      * Resizes the webview.
      * @example
      * ```typescript
-     * import { getCurrent, LogicalSize } from '@tauri-apps/api/webview';
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * import { LogicalSize } from '@tauri-apps/api/dpi';
      * await getCurrentWebview().setSize(new LogicalSize(600, 500));
      * ```
      *
      * @param size The logical or physical size.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-size` permission (not
+     * included in `core:webview:default`).
      */
     fun setSize(size: Size): js.promise.Promise<js.void.Void>
 
@@ -302,12 +354,17 @@ open external class Webview {
      * Sets the webview position.
      * @example
      * ```typescript
-     * import { getCurrent, LogicalPosition } from '@tauri-apps/api/webview';
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * import { LogicalPosition } from '@tauri-apps/api/dpi';
      * await getCurrentWebview().setPosition(new LogicalPosition(600, 500));
      * ```
      *
-     * @param position The new position, in logical or physical pixels.
+     * @param position The new position, in logical or physical pixels, relative to
+     * the top-left corner of the hosting window.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-position` permission (not
+     * included in `core:webview:default`).
      */
     fun setPosition(position: LogicalPosition): js.promise.Promise<js.void.Void>
 
@@ -315,12 +372,17 @@ open external class Webview {
      * Sets the webview position.
      * @example
      * ```typescript
-     * import { getCurrent, LogicalPosition } from '@tauri-apps/api/webview';
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * import { LogicalPosition } from '@tauri-apps/api/dpi';
      * await getCurrentWebview().setPosition(new LogicalPosition(600, 500));
      * ```
      *
-     * @param position The new position, in logical or physical pixels.
+     * @param position The new position, in logical or physical pixels, relative to
+     * the top-left corner of the hosting window.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-position` permission (not
+     * included in `core:webview:default`).
      */
     fun setPosition(position: PhysicalPosition): js.promise.Promise<js.void.Void>
 
@@ -328,12 +390,17 @@ open external class Webview {
      * Sets the webview position.
      * @example
      * ```typescript
-     * import { getCurrent, LogicalPosition } from '@tauri-apps/api/webview';
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * import { LogicalPosition } from '@tauri-apps/api/dpi';
      * await getCurrentWebview().setPosition(new LogicalPosition(600, 500));
      * ```
      *
-     * @param position The new position, in logical or physical pixels.
+     * @param position The new position, in logical or physical pixels, relative to
+     * the top-left corner of the hosting window.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-position` permission (not
+     * included in `core:webview:default`).
      */
     fun setPosition(position: Position): js.promise.Promise<js.void.Void>
 
@@ -346,6 +413,9 @@ open external class Webview {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-focus` permission (not
+     * included in `core:webview:default`).
      */
     fun setFocus(): js.promise.Promise<js.void.Void>
 
@@ -358,6 +428,9 @@ open external class Webview {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-auto-resize` permission
+     * (not included in `core:webview:default`).
      */
     fun setAutoResize(autoResize: Boolean): js.promise.Promise<js.void.Void>
 
@@ -370,6 +443,9 @@ open external class Webview {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-webview-hide` permission (not
+     * included in `core:webview:default`).
      */
     fun hide(): js.promise.Promise<js.void.Void>
 
@@ -382,6 +458,9 @@ open external class Webview {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-webview-show` permission (not
+     * included in `core:webview:default`).
      */
     fun show(): js.promise.Promise<js.void.Void>
 
@@ -393,48 +472,65 @@ open external class Webview {
      * await getCurrentWebview().setZoom(1.5);
      * ```
      *
+     * @param scaleFactor The zoom level, where `1` is 100%.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-zoom` permission (not
+     * included in `core:webview:default`).
      */
     fun setZoom(scaleFactor: Double): js.promise.Promise<js.void.Void>
 
     /**
-     * Moves this webview to the given label.
+     * Moves this webview to the window with the given label.
      * @example
      * ```typescript
      * import { getCurrentWebview } from '@tauri-apps/api/webview';
      * await getCurrentWebview().reparent('other-window');
      * ```
      *
+     * @param window The target window, or its label.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-reparent` permission (not included in
+     * `core:webview:default`).
      */
     fun reparent(window: Window): js.promise.Promise<js.void.Void>
 
     /**
-     * Moves this webview to the given label.
+     * Moves this webview to the window with the given label.
      * @example
      * ```typescript
      * import { getCurrentWebview } from '@tauri-apps/api/webview';
      * await getCurrentWebview().reparent('other-window');
      * ```
      *
+     * @param window The target window, or its label.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-reparent` permission (not included in
+     * `core:webview:default`).
      */
     fun reparent(window: WebviewWindow): js.promise.Promise<js.void.Void>
 
     /**
-     * Moves this webview to the given label.
+     * Moves this webview to the window with the given label.
      * @example
      * ```typescript
      * import { getCurrentWebview } from '@tauri-apps/api/webview';
      * await getCurrentWebview().reparent('other-window');
      * ```
      *
+     * @param window The target window, or its label.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-reparent` permission (not included in
+     * `core:webview:default`).
      */
     fun reparent(window: String): js.promise.Promise<js.void.Void>
 
     /**
-     * Clears all browsing data for this webview.
+     * Clears all browsing data for this webview: cookies, localStorage, IndexedDB,
+     * caches and any other data the webview stores for the loaded origins.
      * @example
      * ```typescript
      * import { getCurrentWebview } from '@tauri-apps/api/webview';
@@ -442,20 +538,35 @@ open external class Webview {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-clear-all-browsing-data` permission
+     * (not included in `core:webview:default`).
      */
     fun clearAllBrowsingData(): js.promise.Promise<js.void.Void>
 
     /**
      * Specify the webview background color.
      *
-     * #### Platfrom-specific:
+     * #### Platform-specific:
      *
      * - **macOS / iOS**: Not implemented.
      * - **Windows**:
      *   - On Windows 7, transparency is not supported and the alpha value will be ignored.
      *   - On Windows higher than 7: translucent colors are not supported so any alpha value other than `0` will be replaced by `255`
      *
+     * @example
+     * ```typescript
+     * import { getCurrentWebview } from '@tauri-apps/api/webview';
+     * await getCurrentWebview().setBackgroundColor('#2f2f2f');
+     * // or with an RGBA tuple, or `null` to restore the default background
+     * await getCurrentWebview().setBackgroundColor([47, 47, 47, 255]);
+     * ```
+     *
+     * @param color The new background color, or `null` to reset it.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:webview:allow-set-webview-background-color`
+     * permission (not included in `core:webview:default`).
      *
      * @since 2.1.0
      */
@@ -479,7 +590,7 @@ open external class Webview {
      *  }
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
@@ -487,7 +598,10 @@ open external class Webview {
      * To retrieve the correct drop position, please detach the debugger.
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listeners are removed automatically when this webview is
+     * destroyed. Do call the returned function when the listener's own scope ends,
+     * e.g. on page navigation or when a component unmounts.
      */
     fun onDragDropEvent(handler: EventCallback<DragDropEvent>): js.promise.Promise<UnlistenFn>
 

@@ -9,7 +9,7 @@ import tauri.apps.api.event.EventCallback
 import tauri.apps.api.event.EventName
 import tauri.apps.api.event.EventTarget
 import tauri.apps.api.event.UnlistenFn
-import tauri.apps.api.image.Image
+import tauri.apps.api.image.JsImage
 import tauri.apps.api.webview.DragDropEvent
 
 /**
@@ -56,7 +56,11 @@ open external class Window {
      * ```
      *
      * @param label The unique window label. Must be alphanumeric: `a-zA-Z-/:_`.
+     * @param options The window configuration, see {@link WindowOptions}.
      * @returns The {@link Window} instance to communicate with the window.
+     *
+     * @remarks Requires the `core:window:allow-create` permission (not included in
+     * `core:window:default`).
      */
     constructor (label: WindowLabel, options: WindowOptions = definedExternally)
 
@@ -76,14 +80,18 @@ open external class Window {
      *   console.log(`Got error: ${payload}`);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
      * @param handler Event handler.
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     open fun <T> listen(
         event: EventName,
@@ -100,14 +108,17 @@ open external class Window {
      *   console.log(`Window initialized!`);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
      * @param handler Event handler.
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener removes itself after the first event and is also removed
+     * automatically when this window is destroyed. Do call the returned function if
+     * the listener's own scope ends before the event arrives.
      */
     open fun <T> once(
         event: EventName,
@@ -136,7 +147,7 @@ open external class Window {
      * @example
      * ```typescript
      * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().emit('main', 'window-loaded', { loggedIn: true, token: 'authToken' });
+     * await getCurrentWindow().emitTo('main', 'window-loaded', { loggedIn: true, token: 'authToken' });
      * ```
      * @param target Label of the target Window/Webview/WebviewWindow or raw {@link EventTarget} object.
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
@@ -154,7 +165,7 @@ open external class Window {
      * @example
      * ```typescript
      * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().emit('main', 'window-loaded', { loggedIn: true, token: 'authToken' });
+     * await getCurrentWindow().emitTo('main', 'window-loaded', { loggedIn: true, token: 'authToken' });
      * ```
      * @param target Label of the target Window/Webview/WebviewWindow or raw {@link EventTarget} object.
      * @param event Event name. Must include only alphanumeric characters, `-`, `/`, `:` and `_`.
@@ -406,8 +417,64 @@ open external class Window {
      */
     fun isAlwaysOnTop(): js.promise.Promise<Boolean>
 
+    /**
+     * The name of the Android activity hosting this window.
+     *
+     * On Android each window is backed by its own activity. Use this to tell windows
+     * apart from native code, or to match a window with the activity declared in your
+     * `AndroidManifest.xml`.
+     *
+     * #### Platform-specific
+     *
+     * - **Android:** Supported.
+     * - **Windows / Linux / macOS / iOS:** Unsupported, the call rejects because the
+     *   command is not registered.
+     *
+     * See the [mobile multiwindow guide](https://tauri.app/learn/mobile-multiwindow/).
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * const activity = await getCurrentWindow().activityName();
+     * ```
+     *
+     * @returns The activity name.
+     *
+     * @remarks Uses the `core:window:allow-activity-name` permission, which is part
+     * of `core:window:default`.
+     *
+     * @since 2.11.0
+     */
     fun activityName(): js.promise.Promise<String>
 
+    /**
+     * The identifier of the iOS scene hosting this window.
+     *
+     * On iOS each window is backed by a `UIScene`. Use this to tell windows apart
+     * from native code, or to match a window with a scene configuration declared in
+     * your `Info.plist`.
+     *
+     * #### Platform-specific
+     *
+     * - **iOS:** Supported.
+     * - **Windows / Linux / macOS / Android:** Unsupported, the call rejects because
+     *   the command is not registered.
+     *
+     * See the [mobile multiwindow guide](https://tauri.app/learn/mobile-multiwindow/).
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * const scene = await getCurrentWindow().sceneIdentifier();
+     * ```
+     *
+     * @returns The scene identifier.
+     *
+     * @remarks Uses the `core:window:allow-scene-identifier` permission, which is part
+     * of `core:window:default`.
+     *
+     * @since 2.11.0
+     */
     fun sceneIdentifier(): js.promise.Promise<String>
 
     /**
@@ -419,6 +486,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-center` permission (not included
+     * in `core:window:default`).
      */
     fun center(): js.promise.Promise<js.void.Void>
 
@@ -441,6 +511,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-request-user-attention` permission (not included
+     * in `core:window:default`).
      */
     fun requestUserAttention(requestType: UserAttentionType?): js.promise.Promise<js.void.Void>
 
@@ -453,6 +526,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-resizable` permission (not included
+     * in `core:window:default`).
      */
     fun setResizable(resizable: Boolean): js.promise.Promise<js.void.Void>
 
@@ -466,19 +542,25 @@ open external class Window {
      *
      * @returns A promise indicating the success or failure of the operation.
      *
+     * @remarks Requires the `core:window:allow-set-enabled` permission (not included
+     * in `core:window:default`).
+     *
      * @since 2.0.0
      */
     fun setEnabled(enabled: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window is enabled or disabled.
+     *
+     * A disabled window ignores all user input; see {@link Window.setEnabled}.
+     *
      * @example
      * ```typescript
      * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setEnabled(false);
+     * const enabled = await getCurrentWindow().isEnabled();
      * ```
      *
-     * @returns A promise indicating the success or failure of the operation.
+     * @returns `true` when the window accepts user input, `false` when it is disabled.
      *
      * @since 2.0.0
      */
@@ -500,6 +582,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-maximizable` permission (not included
+     * in `core:window:default`).
      */
     fun setMaximizable(maximizable: Boolean): js.promise.Promise<js.void.Void>
 
@@ -517,6 +602,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-minimizable` permission (not included
+     * in `core:window:default`).
      */
     fun setMinimizable(minimizable: Boolean): js.promise.Promise<js.void.Void>
 
@@ -535,6 +623,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-closable` permission (not included
+     * in `core:window:default`).
      */
     fun setClosable(closable: Boolean): js.promise.Promise<js.void.Void>
 
@@ -548,6 +639,9 @@ open external class Window {
      *
      * @param title The new title
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-title` permission (not included
+     * in `core:window:default`).
      */
     fun setTitle(title: String): js.promise.Promise<js.void.Void>
 
@@ -560,6 +654,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-maximize` permission (not included
+     * in `core:window:default`).
      */
     fun maximize(): js.promise.Promise<js.void.Void>
 
@@ -572,6 +669,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-unmaximize` permission (not included
+     * in `core:window:default`).
      */
     fun unmaximize(): js.promise.Promise<js.void.Void>
 
@@ -584,6 +684,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-toggle-maximize` permission (not included
+     * in `core:window:default`).
      */
     fun toggleMaximize(): js.promise.Promise<js.void.Void>
 
@@ -596,6 +699,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-minimize` permission (not included
+     * in `core:window:default`).
      */
     fun minimize(): js.promise.Promise<js.void.Void>
 
@@ -608,6 +714,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-unminimize` permission (not included
+     * in `core:window:default`).
      */
     fun unminimize(): js.promise.Promise<js.void.Void>
 
@@ -620,6 +729,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-show` permission (not included
+     * in `core:window:default`).
      */
     fun show(): js.promise.Promise<js.void.Void>
 
@@ -632,6 +744,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-hide` permission (not included
+     * in `core:window:default`).
      */
     fun hide(): js.promise.Promise<js.void.Void>
 
@@ -646,6 +761,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-close` permission (not included
+     * in `core:window:default`).
      */
     fun close(): js.promise.Promise<js.void.Void>
 
@@ -658,6 +776,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-destroy` permission (not included
+     * in `core:window:default`).
      */
     fun destroy(): js.promise.Promise<js.void.Void>
 
@@ -671,6 +792,9 @@ open external class Window {
      *
      * @param decorations Whether the window should have borders and bars.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-decorations` permission (not included
+     * in `core:window:default`).
      */
     fun setDecorations(decorations: Boolean): js.promise.Promise<js.void.Void>
 
@@ -692,16 +816,66 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-shadow` permission (not included
+     * in `core:window:default`).
      */
     fun setShadow(enable: Boolean): js.promise.Promise<js.void.Void>
 
     /**
-     * Set window effects.
+     * Applies platform-specific window effects such as Mica, Acrylic, Blur or the
+     * macOS vibrancy materials.
+     *
+     * Requires the window to be transparent, so create it with `transparent: true`
+     * (or set `transparent` in `tauri.conf.json`). Give the page a transparent or
+     * translucent background as well, otherwise the effect is hidden behind your own
+     * background color.
+     *
+     * Conflicting effects are resolved by applying the first supported one and
+     * ignoring the rest, so you can list a Windows and a macOS effect together.
+     *
+     * #### Platform-specific
+     *
+     * - **Windows:** If the window uses decorations or shadows, you may need
+     *   [this workaround](https://github.com/tauri-apps/tao/issues/72#issuecomment-975607891).
+     * - **Linux:** Unsupported.
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow, Effect, EffectState } from '@tauri-apps/api/window';
+     *
+     * await getCurrentWindow().setEffects({
+     *   effects: [Effect.Mica, Effect.Acrylic, Effect.UnderWindowBackground],
+     *   state: EffectState.Active,
+     *   radius: 8
+     * });
+     * ```
+     *
+     * @param effects The effects to apply, see {@link Effects}.
+     * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-effects` permission (not included
+     * in `core:window:default`).
+     *
+     * @since 2.0.0
      */
     fun setEffects(effects: Effects): js.promise.Promise<js.void.Void>
 
     /**
      * Clear any applied effects if possible.
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * await getCurrentWindow().clearEffects();
+     * ```
+     *
+     * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-effects` permission (not included
+     * in `core:window:default`), the same one used by {@link Window.setEffects}.
+     *
+     * @since 2.0.0
      */
     fun clearEffects(): js.promise.Promise<js.void.Void>
 
@@ -715,6 +889,9 @@ open external class Window {
      *
      * @param alwaysOnTop Whether the window should always be on top of other windows or not.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-always-on-top` permission (not included
+     * in `core:window:default`).
      */
     fun setAlwaysOnTop(alwaysOnTop: Boolean): js.promise.Promise<js.void.Void>
 
@@ -728,6 +905,9 @@ open external class Window {
      *
      * @param alwaysOnBottom Whether the window should always be below other windows or not.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-always-on-bottom` permission (not included
+     * in `core:window:default`).
      */
     fun setAlwaysOnBottom(alwaysOnBottom: Boolean): js.promise.Promise<js.void.Void>
 
@@ -740,6 +920,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-content-protected` permission (not included
+     * in `core:window:default`).
      */
     fun setContentProtected(protected_: Boolean): js.promise.Promise<js.void.Void>
 
@@ -753,6 +936,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-size` permission (not included
+     * in `core:window:default`).
      */
     fun setSize(size: LogicalSize): js.promise.Promise<js.void.Void>
 
@@ -766,6 +952,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-size` permission (not included
+     * in `core:window:default`).
      */
     fun setSize(size: PhysicalSize): js.promise.Promise<js.void.Void>
 
@@ -779,6 +968,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-size` permission (not included
+     * in `core:window:default`).
      */
     fun setSize(size: Size): js.promise.Promise<js.void.Void>
 
@@ -792,6 +984,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-min-size` permission (not included
+     * in `core:window:default`).
      */
     fun setMinSize(size: LogicalSize?): js.promise.Promise<js.void.Void>
 
@@ -805,6 +1000,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-min-size` permission (not included
+     * in `core:window:default`).
      */
     fun setMinSize(size: PhysicalSize?): js.promise.Promise<js.void.Void>
 
@@ -818,6 +1016,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-min-size` permission (not included
+     * in `core:window:default`).
      */
     fun setMinSize(size: Size?): js.promise.Promise<js.void.Void>
 
@@ -831,6 +1032,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-max-size` permission (not included
+     * in `core:window:default`).
      */
     fun setMaxSize(size: LogicalSize?): js.promise.Promise<js.void.Void>
 
@@ -844,6 +1048,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-max-size` permission (not included
+     * in `core:window:default`).
      */
     fun setMaxSize(size: PhysicalSize?): js.promise.Promise<js.void.Void>
 
@@ -857,6 +1064,9 @@ open external class Window {
      *
      * @param size The logical or physical inner size, or `null` to unset the constraint.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-max-size` permission (not included
+     * in `core:window:default`).
      */
     fun setMaxSize(size: Size?): js.promise.Promise<js.void.Void>
 
@@ -868,8 +1078,13 @@ open external class Window {
      * await getCurrentWindow().setSizeConstraints({ minWidth: 300 });
      * ```
      *
-     * @param constraints The logical or physical inner size, or `null` to unset the constraint.
+     * @param constraints The inner size constraints in **logical pixels**, or `null`
+     * to unset every constraint. Each field is optional and independent, so
+     * `{ minWidth: 300 }` constrains only the width.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-size-constraints` permission (not included
+     * in `core:window:default`).
      */
     fun setSizeConstraints(constraints: WindowSizeConstraints?): js.promise.Promise<js.void.Void>
 
@@ -883,6 +1098,9 @@ open external class Window {
      *
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-position` permission (not included
+     * in `core:window:default`).
      */
     fun setPosition(position: LogicalPosition): js.promise.Promise<js.void.Void>
 
@@ -896,6 +1114,9 @@ open external class Window {
      *
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-position` permission (not included
+     * in `core:window:default`).
      */
     fun setPosition(position: PhysicalPosition): js.promise.Promise<js.void.Void>
 
@@ -909,6 +1130,9 @@ open external class Window {
      *
      * @param position The new position, in logical or physical pixels.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-position` permission (not included
+     * in `core:window:default`).
      */
     fun setPosition(position: Position): js.promise.Promise<js.void.Void>
 
@@ -922,17 +1146,54 @@ open external class Window {
      *
      * @param fullscreen Whether the window should go to fullscreen or not.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-fullscreen` permission (not included
+     * in `core:window:default`).
      */
     fun setFullscreen(fullscreen: Boolean): js.promise.Promise<js.void.Void>
 
     /**
-     * On macOS, Toggles a fullscreen mode that doesn’t require a new macOS space. Returns a boolean indicating whether the transition was successful (this won’t work if the window was already in the native fullscreen).
+     * Sets the window as fullscreen on the monitor that contains the given physical position.
+     *
+     * Does nothing if no monitor contains the position.
+     * @example
+     * ```typescript
+     * import { getCurrentWindow, availableMonitors } from '@tauri-apps/api/window';
+     * const monitors = await availableMonitors();
+     * if (monitors.length > 1) {
+     *   await getCurrentWindow().setFullscreenOnMonitor(monitors[1].position);
+     * }
+     * ```
+     *
+     * @param position A physical position inside the target monitor, such as {@linkcode Monitor.position}.
+     * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-fullscreen-on-monitor` permission (not included
+     * in `core:window:default`).
+     *
+     * @since 2.12.0
+     */
+    fun setFullscreenOnMonitor(position: PhysicalPosition): js.promise.Promise<js.void.Void>
+
+    /**
+     * On macOS, Toggles a fullscreen mode that doesn’t require a new macOS space. Returns a boolean indicating whether the transition was successful (this won't work if the window was already in the native fullscreen).
      * This is how fullscreen used to work on macOS in versions before Lion. And allows the user to have a fullscreen window without using another space or taking control over the entire monitor.
      *
      * On other platforms, this is the same as {@link Window.setFullscreen}.
      *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * await getCurrentWindow().setSimpleFullscreen(true);
+     * ```
+     *
      * @param fullscreen Whether the window should go to simple fullscreen or not.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-simple-fullscreen` permission (not included
+     * in `core:window:default`).
+     *
+     * @since 2.8.0
      */
     fun setSimpleFullscreen(fullscreen: Boolean): js.promise.Promise<js.void.Void>
 
@@ -945,6 +1206,9 @@ open external class Window {
      * ```
      *
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-focus` permission (not included
+     * in `core:window:default`).
      */
     fun setFocus(): js.promise.Promise<js.void.Void>
 
@@ -964,6 +1228,9 @@ open external class Window {
      *
      * @param focusable Whether the window can be focused.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-focusable` permission (not included
+     * in `core:window:default`).
      */
     fun setFocusable(focusable: Boolean): js.promise.Promise<js.void.Void>
 
@@ -984,88 +1251,11 @@ open external class Window {
      *
      * @param icon Icon bytes or path to the icon file.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-icon` permission (not included
+     * in `core:window:default`).
      */
-    fun setIcon(icon: String): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the window icon.
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setIcon('/tauri/awesome.png');
-     * ```
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file.
-     * @returns A promise indicating the success or failure of the operation.
-     */
-    fun setIcon(icon: Image): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the window icon.
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setIcon('/tauri/awesome.png');
-     * ```
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file.
-     * @returns A promise indicating the success or failure of the operation.
-     */
-    fun setIcon(icon: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the window icon.
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setIcon('/tauri/awesome.png');
-     * ```
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file.
-     * @returns A promise indicating the success or failure of the operation.
-     */
-    fun setIcon(icon: js.buffer.ArrayBuffer): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the window icon.
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setIcon('/tauri/awesome.png');
-     * ```
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file.
-     * @returns A promise indicating the success or failure of the operation.
-     */
-    fun setIcon(icon: js.array.ReadonlyArray<Double>): js.promise.Promise<js.void.Void>
+    fun setIcon(icon: JsImage): js.promise.Promise<js.void.Void>
 
     /**
      * Whether the window icon should be hidden from the taskbar or not.
@@ -1081,6 +1271,9 @@ open external class Window {
      *
      * @param skip true to hide window icon, false to show it.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-skip-taskbar` permission (not included
+     * in `core:window:default`).
      */
     fun setSkipTaskbar(skip: Boolean): js.promise.Promise<js.void.Void>
 
@@ -1102,6 +1295,9 @@ open external class Window {
      *
      * @param grab `true` to grab the cursor icon, `false` to release it.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-cursor-grab` permission (not included
+     * in `core:window:default`).
      */
     fun setCursorGrab(grab: Boolean): js.promise.Promise<js.void.Void>
 
@@ -1121,6 +1317,9 @@ open external class Window {
      *
      * @param visible If `false`, this will hide the cursor. If `true`, this will show the cursor.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-cursor-visible` permission (not included
+     * in `core:window:default`).
      */
     fun setCursorVisible(visible: Boolean): js.promise.Promise<js.void.Void>
 
@@ -1134,6 +1333,9 @@ open external class Window {
      *
      * @param icon The new cursor icon.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-cursor-icon` permission (not included
+     * in `core:window:default`).
      */
     fun setCursorIcon(icon: CursorIcon): js.promise.Promise<js.void.Void>
 
@@ -1145,7 +1347,23 @@ open external class Window {
      * - **Windows:** alpha channel is ignored.
      * - **iOS / Android:** Unsupported.
      *
+     * This sets the color of the window itself, which is what you see while the
+     * webview is still loading or behind a transparent page. To also change the
+     * webview background use {@link WebviewWindow.setBackgroundColor}.
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * await getCurrentWindow().setBackgroundColor('#2f2f2f');
+     * // also accepts an RGB/RGBA tuple or an object
+     * await getCurrentWindow().setBackgroundColor([47, 47, 47, 255]);
+     * ```
+     *
+     * @param color The new background color, see {@link Color}.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-background-color` permission (not included
+     * in `core:window:default`).
      *
      * @since 2.1.0
      */
@@ -1161,6 +1379,9 @@ open external class Window {
      *
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-cursor-position` permission (not included
+     * in `core:window:default`).
      */
     fun setCursorPosition(position: LogicalPosition): js.promise.Promise<js.void.Void>
 
@@ -1174,6 +1395,9 @@ open external class Window {
      *
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-cursor-position` permission (not included
+     * in `core:window:default`).
      */
     fun setCursorPosition(position: PhysicalPosition): js.promise.Promise<js.void.Void>
 
@@ -1187,6 +1411,9 @@ open external class Window {
      *
      * @param position The new cursor position.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-cursor-position` permission (not included
+     * in `core:window:default`).
      */
     fun setCursorPosition(position: Position): js.promise.Promise<js.void.Void>
 
@@ -1201,6 +1428,9 @@ open external class Window {
      *
      * @param ignore `true` to ignore the cursor events; `false` to process them as usual.
      * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-ignore-cursor-events` permission (not included
+     * in `core:window:default`).
      */
     fun setIgnoreCursorEvents(ignore: Boolean): js.promise.Promise<js.void.Void>
 
@@ -1213,6 +1443,9 @@ open external class Window {
      * ```
      *
      * @return A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-start-dragging` permission (not included
+     * in `core:window:default`).
      */
     fun startDragging(): js.promise.Promise<js.void.Void>
 
@@ -1225,6 +1458,9 @@ open external class Window {
      * ```
      *
      * @return A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-start-resize-dragging` permission (not included
+     * in `core:window:default`).
      */
     fun startResizeDragging(direction: ResizeDirection): js.promise.Promise<js.void.Void>
 
@@ -1233,7 +1469,7 @@ open external class Window {
      *
      * #### Platform-specific
      *
-     * - **Windows**: Unsupported. Use @{linkcode Window.setOverlayIcon} instead.
+     * - **Windows**: Unsupported. Use {@linkcode Window.setOverlayIcon} instead.
      *
      * @example
      * ```typescript
@@ -1243,11 +1479,17 @@ open external class Window {
      *
      * @param count The badge count. Use `undefined` to remove the badge.
      * @return A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-badge-count` permission (not included
+     * in `core:window:default`).
      */
     fun setBadgeCount(count: Double = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
-     * Sets the badge cont **macOS only**.
+     * Sets the badge label shown on the app's dock icon. **macOS only**
+     *
+     * Unlike {@linkcode Window.setBadgeCount}, which takes a number, this shows
+     * arbitrary short text. It is app-wide and not specific to this window.
      *
      * @example
      * ```typescript
@@ -1257,6 +1499,9 @@ open external class Window {
      *
      * @param label The badge label. Use `undefined` to remove the badge.
      * @return A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-badge-label` permission (not included
+     * in `core:window:default`).
      */
     fun setBadgeLabel(label: String = definedExternally): js.promise.Promise<js.void.Void>
 
@@ -1281,128 +1526,11 @@ open external class Window {
      *
      * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
      * @return A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-overlay-icon` permission (not included
+     * in `core:window:default`).
      */
-    fun setOverlayIcon(): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the overlay icon. **Windows only**
-     * The overlay icon can be set for every window.
-     *
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     *
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setOverlayIcon("/tauri/awesome.png");
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
-     * @return A promise indicating the success or failure of the operation.
-     */
-    fun setOverlayIcon(icon: String = definedExternally): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the overlay icon. **Windows only**
-     * The overlay icon can be set for every window.
-     *
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     *
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setOverlayIcon("/tauri/awesome.png");
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
-     * @return A promise indicating the success or failure of the operation.
-     */
-    fun setOverlayIcon(icon: Image = definedExternally): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the overlay icon. **Windows only**
-     * The overlay icon can be set for every window.
-     *
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     *
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setOverlayIcon("/tauri/awesome.png");
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
-     * @return A promise indicating the success or failure of the operation.
-     */
-    fun setOverlayIcon(icon: js.typedarrays.Uint8Array<*> = definedExternally): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the overlay icon. **Windows only**
-     * The overlay icon can be set for every window.
-     *
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     *
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setOverlayIcon("/tauri/awesome.png");
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
-     * @return A promise indicating the success or failure of the operation.
-     */
-    fun setOverlayIcon(icon: js.buffer.ArrayBuffer = definedExternally): js.promise.Promise<js.void.Void>
-
-    /**
-     * Sets the overlay icon. **Windows only**
-     * The overlay icon can be set for every window.
-     *
-     *
-     * Note that you may need the `image-ico` or `image-png` Cargo features to use this API.
-     * To enable it, change your Cargo.toml file:
-     *
-     * ```toml
-     * [dependencies]
-     * tauri = { version = "...", features = ["...", "image-png"] }
-     * ```
-     *
-     * @example
-     * ```typescript
-     * import { getCurrentWindow } from '@tauri-apps/api/window';
-     * await getCurrentWindow().setOverlayIcon("/tauri/awesome.png");
-     * ```
-     *
-     * @param icon Icon bytes or path to the icon file. Use `undefined` to remove the overlay icon.
-     * @return A promise indicating the success or failure of the operation.
-     */
-    fun setOverlayIcon(icon: js.array.ReadonlyArray<Double> = definedExternally): js.promise.Promise<js.void.Void>
+    fun setOverlayIcon(icon: JsImage = definedExternally): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the taskbar progress state.
@@ -1422,6 +1550,9 @@ open external class Window {
      * ```
      *
      * @return A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-progress-bar` permission (not included
+     * in `core:window:default`).
      */
     fun setProgressBar(state: ProgressBarState): js.promise.Promise<js.void.Void>
 
@@ -1432,12 +1563,41 @@ open external class Window {
      *
      * - **Windows / iOS / Android:** Unsupported.
      *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * await getCurrentWindow().setVisibleOnAllWorkspaces(true);
+     * ```
+     *
+     * @param visible Whether the window should follow the user across workspaces.
+     * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-visible-on-all-workspaces` permission (not included
+     * in `core:window:default`).
+     *
      * @since 2.0.0
      */
     fun setVisibleOnAllWorkspaces(visible: Boolean): js.promise.Promise<js.void.Void>
 
     /**
      * Sets the title bar style. **macOS only**.
+     *
+     * Use `transparent` or `overlay` to build a custom title bar: with `overlay` the
+     * page extends under the title bar and only the traffic lights remain, so leave
+     * room for them in your layout and pair it with {@link Window.startDragging} on a
+     * draggable region.
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * await getCurrentWindow().setTitleBarStyle('overlay');
+     * ```
+     *
+     * @param style The new title bar style, see {@link TitleBarStyle}.
+     * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-title-bar-style` permission (not included
+     * in `core:window:default`).
      *
      * @since 2.0.0
      */
@@ -1450,6 +1610,23 @@ open external class Window {
      *
      * - **Linux / macOS**: Theme is app-wide and not specific to this window.
      * - **iOS / Android:** Unsupported.
+     *
+     * Use {@link Window.theme} to read the effective theme and
+     * {@link Window.onThemeChanged} to react to changes.
+     *
+     * @example
+     * ```typescript
+     * import { getCurrentWindow } from '@tauri-apps/api/window';
+     * await getCurrentWindow().setTheme('dark');
+     * // follow the system theme again
+     * await getCurrentWindow().setTheme(null);
+     * ```
+     *
+     * @param theme The theme to apply, or `null`/`undefined` to follow the system theme.
+     * @returns A promise indicating the success or failure of the operation.
+     *
+     * @remarks Requires the `core:window:allow-set-theme` permission (not included
+     * in `core:window:default`).
      *
      * @since 2.0.0
      */
@@ -1465,12 +1642,16 @@ open external class Window {
      *  console.log('Window resized', size);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onResized(handler: EventCallback<PhysicalSize>): js.promise.Promise<UnlistenFn>
 
@@ -1484,12 +1665,16 @@ open external class Window {
      *  console.log('Window moved', position);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onMoved(handler: EventCallback<PhysicalPosition>): js.promise.Promise<UnlistenFn>
 
@@ -1499,7 +1684,9 @@ open external class Window {
      * @example
      * ```typescript
      * import { getCurrentWindow } from "@tauri-apps/api/window";
-     * import { confirm } from '@tauri-apps/api/dialog';
+     * // `confirm` comes from the dialog plugin, which you have to add separately:
+     * // `pnpm tauri add dialog`
+     * import { confirm } from '@tauri-apps/plugin-dialog';
      * const unlisten = await getCurrentWindow().onCloseRequested(async (event) => {
      *   const confirmed = await confirm('Are you sure?');
      *   if (!confirmed) {
@@ -1508,12 +1695,16 @@ open external class Window {
      *   }
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onCloseRequested(
         handler: (event: CloseRequestedEvent) -> Any, // void | Promise<void>
@@ -1526,7 +1717,7 @@ open external class Window {
      *
      * @example
      * ```typescript
-     * import { getCurrentWindow } from "@tauri-apps/api/webview";
+     * import { getCurrentWindow } from "@tauri-apps/api/window";
      * const unlisten = await getCurrentWindow().onDragDropEvent((event) => {
      *  if (event.payload.type === 'over') {
      *    console.log('User hovering', event.payload.position);
@@ -1537,12 +1728,16 @@ open external class Window {
      *  }
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onDragDropEvent(handler: EventCallback<DragDropEvent>): js.promise.Promise<UnlistenFn>
 
@@ -1556,12 +1751,16 @@ open external class Window {
      *  console.log('Focus changed, window is focused? ' + focused);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onFocusChanged(handler: EventCallback<Boolean>): js.promise.Promise<UnlistenFn>
 
@@ -1579,12 +1778,16 @@ open external class Window {
      *  console.log('Scale changed', payload.scaleFactor, payload.size);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onScaleChanged(handler: EventCallback<ScaleFactorChanged>): js.promise.Promise<UnlistenFn>
 
@@ -1598,12 +1801,16 @@ open external class Window {
      *  console.log('New theme: ' + theme);
      * });
      *
-     * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+     * // call unlisten when your handler goes out of scope e.g. the component is unmounted
      * unlisten();
      * ```
      *
      * @returns A promise resolving to a function to unlisten to the event.
-     * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+     *
+     * @remarks The listener is removed automatically when this window is destroyed,
+     * so you do not need to unlisten just because the window is closing. Do call the
+     * returned function when the listener's own scope ends, e.g. on page navigation
+     * or when a component unmounts.
      */
     fun onThemeChanged(handler: EventCallback<Theme>): js.promise.Promise<UnlistenFn>
 

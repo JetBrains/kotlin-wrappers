@@ -2,6 +2,14 @@
 
 package tauri.apps.api.window
 
+/**
+ * The style of the window title bar. **macOS only**
+ *
+ * - `visible`: the standard title bar.
+ * - `transparent`: the title bar is transparent but the traffic lights stay in place.
+ * - `overlay`: the content extends under a transparent title bar, leaving only the
+ *   traffic lights visible.
+ */
 @js.union.JsUnion
 sealed external interface TitleBarStyle
 

@@ -14,7 +14,7 @@ package tauri.apps.api.event
  *   console.log(`Got error, payload: ${event.payload}`);
  * });
  *
- * // you need to call unlisten if your handler goes out of scope e.g. the component is unmounted
+ * // call unlisten when your handler goes out of scope e.g. the component is unmounted
  * unlisten();
  * ```
  *
@@ -22,7 +22,13 @@ package tauri.apps.api.event
  * @param handler Event handler callback.
  * @param options Event listening options.
  * @returns A promise resolving to a function to unlisten to the event.
- * Note that removing the listener is required if your listener goes out of scope e.g. the component is unmounted.
+ *
+ * @remarks Listeners bound to a window or webview are removed automatically when
+ * that window or webview is destroyed, so you do not need to unlisten just to
+ * avoid leaking across a window close. You should still call the returned
+ * function when the listener's own scope ends — for example on page navigation
+ * or when a component unmounts — otherwise the handler keeps running for the
+ * lifetime of the webview.
  *
  * @since 1.0.0
  */

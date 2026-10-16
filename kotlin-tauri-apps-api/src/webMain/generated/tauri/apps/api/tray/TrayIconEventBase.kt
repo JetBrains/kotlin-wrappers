@@ -4,6 +4,7 @@ package tauri.apps.api.tray
 
 import tauri.apps.api.dpi.PhysicalPosition
 
+/** The fields shared by every {@linkcode TrayIconEvent}. */
 external interface TrayIconEventBase<T : TrayIconEventType> {
     /** The tray icon event type */
     var type: T

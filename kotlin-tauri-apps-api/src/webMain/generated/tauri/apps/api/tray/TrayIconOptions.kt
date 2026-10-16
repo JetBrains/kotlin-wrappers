@@ -2,12 +2,7 @@
 
 package tauri.apps.api.tray
 
-/**
- * Tray icon types and utilities.
- *
- * This package is also accessible with `window.__TAURI__.tray` when [`app.withGlobalTauri`](https://v2.tauri.app/reference/config/#withglobaltauri) in `tauri.conf.json` is set to `true`.
- * @module
- */
+import tauri.apps.api.image.JsImage
 
 /** {@link TrayIcon.new|`TrayIcon`} creation options */
 external interface TrayIconOptions {
@@ -27,7 +22,7 @@ external interface TrayIconOptions {
      * tauri = { version = "...", features = ["...", "image-png"] }
      * ```
      */
-    var icon: (Any /* string | Uint8Array | ArrayBuffer | number[] | Image */)?
+    var icon: JsImage?
 
     /** The tray icon tooltip */
     var tooltip: String?

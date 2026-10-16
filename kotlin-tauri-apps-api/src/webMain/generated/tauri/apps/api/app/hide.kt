@@ -13,6 +13,8 @@ package tauri.apps.api.app
  * await hide();
  * ```
  *
+ * @remarks Requires the `core:app:allow-app-hide` permission (not included in `core:app:default`).
+ *
  * @since 1.2.0
  */
 external fun hide(): js.promise.Promise<js.void.Void>

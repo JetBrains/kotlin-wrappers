@@ -2,6 +2,13 @@
 
 package tauri.apps.api.window
 
+/**
+ * The cursor shape to display over a window, see {@link Window.setCursorIcon}.
+ *
+ * The names mirror the CSS `cursor` keywords in camelCase (e.g. `notAllowed` for
+ * `not-allowed`, `eResize` for `e-resize`). Support varies per platform and window
+ * manager; unsupported values fall back to the default arrow.
+ */
 @js.union.JsUnion
 sealed external interface CursorIcon
 

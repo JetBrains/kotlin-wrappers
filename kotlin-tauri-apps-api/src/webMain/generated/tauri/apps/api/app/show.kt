@@ -14,6 +14,8 @@ package tauri.apps.api.app
  * await show();
  * ```
  *
+ * @remarks Requires the `core:app:allow-app-show` permission (not included in `core:app:default`).
+ *
  * @since 1.2.0
  */
 external fun show(): js.promise.Promise<js.void.Void>

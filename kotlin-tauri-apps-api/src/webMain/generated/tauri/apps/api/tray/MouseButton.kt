@@ -2,6 +2,7 @@
 
 package tauri.apps.api.tray
 
+/** The mouse button that triggered a tray icon event. */
 @js.union.JsUnion
 sealed external interface MouseButton
 
