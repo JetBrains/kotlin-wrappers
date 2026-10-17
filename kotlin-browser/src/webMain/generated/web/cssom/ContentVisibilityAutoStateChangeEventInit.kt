@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface ContentVisibilityAutoStateChangeEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent/ContentVisibilityAutoStateChangeEvent#skipped)
+     */
     var skipped: Boolean?
 }

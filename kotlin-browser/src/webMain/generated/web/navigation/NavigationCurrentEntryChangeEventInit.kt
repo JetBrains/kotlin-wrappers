@@ -11,6 +11,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface NavigationCurrentEntryChangeEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/NavigationCurrentEntryChangeEvent#from)
+     */
     var from: NavigationHistoryEntry
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/NavigationCurrentEntryChangeEvent#navigationType)
+     */
     var navigationType: NavigationType?
 }

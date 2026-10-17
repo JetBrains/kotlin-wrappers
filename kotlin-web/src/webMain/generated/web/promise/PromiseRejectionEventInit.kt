@@ -13,6 +13,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface PromiseRejectionEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent#promise)
+     */
     var promise: Promise<*>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent#reason)
+     */
     var reason: JsError?
 }

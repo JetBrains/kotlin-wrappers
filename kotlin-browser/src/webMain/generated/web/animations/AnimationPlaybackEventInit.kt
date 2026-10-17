@@ -12,6 +12,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface AnimationPlaybackEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/AnimationPlaybackEvent#currentTime)
+     */
     var currentTime: CSSNumberish?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/AnimationPlaybackEvent#timelineTime)
+     */
     var timelineTime: CSSNumberish?
 }

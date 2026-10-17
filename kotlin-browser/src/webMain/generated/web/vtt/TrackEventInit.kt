@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface TrackEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/TrackEvent#track)
+     */
     var track: TextTrack?
 }

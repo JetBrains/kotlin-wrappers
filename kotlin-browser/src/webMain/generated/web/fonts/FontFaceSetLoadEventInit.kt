@@ -12,5 +12,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface FontFaceSetLoadEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/FontFaceSetLoadEvent#fontfaces)
+     */
     var fontfaces: ReadonlyArray<FontFace>?
 }

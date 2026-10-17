@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface PageTransitionEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/PageTransitionEvent#persisted)
+     */
     var persisted: Boolean?
 }

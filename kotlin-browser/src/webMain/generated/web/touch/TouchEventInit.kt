@@ -12,7 +12,18 @@ import web.uievents.EventModifierInit
 @JsPlainObject
 external interface TouchEventInit :
     EventModifierInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/TouchEvent#changedTouches)
+     */
     var changedTouches: ReadonlyArray<Touch>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/TouchEvent#targetTouches)
+     */
     var targetTouches: ReadonlyArray<Touch>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/TouchEvent#touches)
+     */
     var touches: ReadonlyArray<Touch>?
 }

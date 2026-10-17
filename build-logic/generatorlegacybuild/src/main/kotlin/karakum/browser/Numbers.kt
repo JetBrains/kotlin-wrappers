@@ -313,6 +313,11 @@ internal class TypeProvider(
                     && name.startsWith("SVG_")
                 -> "$parentType#${name.lowercase()}"
 
+            parentType.endsWith("EventInit") -> {
+                val evenName = parentType.removeSuffix("Init")
+                "$evenName/$evenName#$name"
+            }
+
             else -> return null
         }
 

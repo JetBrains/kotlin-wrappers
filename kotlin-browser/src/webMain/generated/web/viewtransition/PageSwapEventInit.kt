@@ -12,6 +12,13 @@ import web.navigation.NavigationActivation
 @JsPlainObject
 external interface PageSwapEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/PageSwapEvent#activation)
+     */
     var activation: NavigationActivation?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/PageSwapEvent#viewTransition)
+     */
     var viewTransition: ViewTransition?
 }

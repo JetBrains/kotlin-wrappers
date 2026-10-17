@@ -12,5 +12,8 @@ import web.window.Window
 @JsPlainObject
 external interface DocumentPictureInPictureEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPictureEvent/DocumentPictureInPictureEvent#window)
+     */
     var window: Window
 }

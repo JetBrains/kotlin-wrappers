@@ -11,5 +11,8 @@ import web.serviceworker.ExtendableEventInit
 @JsPlainObject
 external interface PushEventInit :
     ExtendableEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/PushEvent#data)
+     */
     var data: PushMessageDataInit?
 }

@@ -14,9 +14,28 @@ import web.uievents.UIEventInit
 @JsPlainObject
 external interface InputEventInit :
     UIEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent#data)
+     */
     var data: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent#dataTransfer)
+     */
     var dataTransfer: DataTransfer?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent#inputType)
+     */
     var inputType: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent#isComposing)
+     */
     var isComposing: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent#targetRanges)
+     */
     var targetRanges: ReadonlyArray<StaticRange>?
 }

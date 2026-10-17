@@ -12,6 +12,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaKeyMessageEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/MediaKeyMessageEvent#message)
+     */
     var message: ArrayBuffer
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/MediaKeyMessageEvent#messageType)
+     */
     var messageType: MediaKeyMessageType
 }

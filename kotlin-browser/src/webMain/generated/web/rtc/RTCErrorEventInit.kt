@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCErrorEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent/RTCErrorEvent#error)
+     */
     var error: RTCError
 }

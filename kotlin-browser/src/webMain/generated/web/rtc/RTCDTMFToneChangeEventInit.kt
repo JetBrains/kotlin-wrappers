@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCDTMFToneChangeEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFToneChangeEvent/RTCDTMFToneChangeEvent#tone)
+     */
     var tone: String?
 }

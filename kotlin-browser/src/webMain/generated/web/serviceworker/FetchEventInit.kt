@@ -13,9 +13,28 @@ import web.http.Request
 @JsPlainObject
 external interface FetchEventInit :
     ExtendableEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent#clientId)
+     */
     var clientId: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent#handled)
+     */
     var handled: Promise<Void>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent#preloadResponse)
+     */
     var preloadResponse: Promise<*>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent#request)
+     */
     var request: Request
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent#resultingClientId)
+     */
     var resultingClientId: String?
 }

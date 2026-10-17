@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface TaskPriorityChangeEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskPriorityChangeEvent/TaskPriorityChangeEvent#previousPriority)
+     */
     var previousPriority: TaskPriority
 }

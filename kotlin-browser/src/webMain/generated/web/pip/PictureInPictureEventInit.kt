@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface PictureInPictureEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent/PictureInPictureEvent#pictureInPictureWindow)
+     */
     var pictureInPictureWindow: PictureInPictureWindow
 }

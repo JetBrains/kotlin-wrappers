@@ -12,5 +12,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface ClipboardEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/ClipboardEvent#clipboardData)
+     */
     var clipboardData: DataTransfer?
 }

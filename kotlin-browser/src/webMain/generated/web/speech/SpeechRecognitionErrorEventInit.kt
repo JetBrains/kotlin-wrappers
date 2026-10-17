@@ -11,6 +11,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface SpeechRecognitionErrorEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionErrorEvent/SpeechRecognitionErrorEvent#error)
+     */
     var error: SpeechRecognitionErrorCode
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionErrorEvent/SpeechRecognitionErrorEvent#message)
+     */
     var message: String?
 }

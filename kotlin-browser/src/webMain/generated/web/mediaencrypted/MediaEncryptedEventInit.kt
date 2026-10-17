@@ -12,6 +12,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaEncryptedEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/MediaEncryptedEvent#initData)
+     */
     var initData: ArrayBuffer?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/MediaEncryptedEvent#initDataType)
+     */
     var initDataType: String?
 }

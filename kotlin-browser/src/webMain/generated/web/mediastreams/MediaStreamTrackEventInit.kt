@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaStreamTrackEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/MediaStreamTrackEvent#track)
+     */
     var track: MediaStreamTrack
 }

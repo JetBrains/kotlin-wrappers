@@ -11,6 +11,13 @@ import web.serviceworker.ExtendableEventInit
 @JsPlainObject
 external interface PushSubscriptionChangeEventInit :
     ExtendableEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionChangeEvent/PushSubscriptionChangeEvent#newSubscription)
+     */
     var newSubscription: PushSubscription?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionChangeEvent/PushSubscriptionChangeEvent#oldSubscription)
+     */
     var oldSubscription: PushSubscription?
 }

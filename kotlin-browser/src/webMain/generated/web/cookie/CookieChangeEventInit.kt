@@ -11,6 +11,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface CookieChangeEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent/CookieChangeEvent#changed)
+     */
     var changed: CookieList?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent/CookieChangeEvent#deleted)
+     */
     var deleted: CookieList?
 }

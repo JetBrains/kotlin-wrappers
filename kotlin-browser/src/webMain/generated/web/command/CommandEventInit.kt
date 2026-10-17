@@ -12,6 +12,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface CommandEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/CommandEvent#command)
+     */
     var command: Command?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/CommandEvent#source)
+     */
     var source: Element?
 }

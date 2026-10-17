@@ -12,5 +12,8 @@ import web.mouse.MouseEventInit
 @JsPlainObject
 external interface DragEventInit :
     MouseEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/DragEvent#dataTransfer)
+     */
     var dataTransfer: DataTransfer?
 }

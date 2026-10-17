@@ -12,5 +12,8 @@ import web.uievents.UIEventInit
 @JsPlainObject
 external interface FocusEventInit :
     UIEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/FocusEvent#relatedTarget)
+     */
     var relatedTarget: EventTarget?
 }

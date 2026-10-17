@@ -12,6 +12,13 @@ import web.window.Window
 @JsPlainObject
 external interface UIEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/UIEvent#detail)
+     */
     var detail: Int?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/UIEvent#view)
+     */
     var view: Window?
 }

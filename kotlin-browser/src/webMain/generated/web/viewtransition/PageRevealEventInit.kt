@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface PageRevealEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent/PageRevealEvent#viewTransition)
+     */
     var viewTransition: ViewTransition?
 }

@@ -12,5 +12,8 @@ import web.html.HTMLElement
 @JsPlainObject
 external interface SubmitEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/SubmitEvent#submitter)
+     */
     var submitter: HTMLElement?
 }

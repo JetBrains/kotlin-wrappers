@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface FormDataEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/FormDataEvent#formData)
+     */
     var formData: FormData
 }

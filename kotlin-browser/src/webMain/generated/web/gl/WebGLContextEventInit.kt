@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface WebGLContextEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/WebGLContextEvent#statusMessage)
+     */
     var statusMessage: String?
 }

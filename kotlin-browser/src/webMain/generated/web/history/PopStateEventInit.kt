@@ -11,6 +11,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface PopStateEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/PopStateEvent#hasUAVisualTransition)
+     */
     var hasUAVisualTransition: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/PopStateEvent#state)
+     */
     var state: JsAny?
 }

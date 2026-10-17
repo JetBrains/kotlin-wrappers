@@ -11,6 +11,13 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaQueryListEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent#matches)
+     */
     var matches: Boolean?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent#media)
+     */
     var media: MediaQuery?
 }

@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface OfflineAudioCompletionEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/OfflineAudioCompletionEvent#renderedBuffer)
+     */
     var renderedBuffer: AudioBuffer
 }

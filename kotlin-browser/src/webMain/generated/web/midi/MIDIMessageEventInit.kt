@@ -13,5 +13,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface MIDIMessageEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/MIDIMessageEvent#data)
+     */
     var data: Uint8Array<ArrayBuffer>?
 }

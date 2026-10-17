@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface GamepadEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/GamepadEvent#gamepad)
+     */
     var gamepad: Gamepad?
 }

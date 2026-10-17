@@ -14,8 +14,23 @@ import web.mediastreams.MediaStreamTrack
 @JsPlainObject
 external interface RTCTrackEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/RTCTrackEvent#receiver)
+     */
     var receiver: RTCRtpReceiver
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/RTCTrackEvent#streams)
+     */
     var streams: ReadonlyArray<MediaStream>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/RTCTrackEvent#track)
+     */
     var track: MediaStreamTrack
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/RTCTrackEvent#transceiver)
+     */
     var transceiver: RTCRtpTransceiver
 }

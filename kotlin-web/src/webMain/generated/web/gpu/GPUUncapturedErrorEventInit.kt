@@ -11,5 +11,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface GPUUncapturedErrorEventInit :
     EventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUUncapturedErrorEvent/GPUUncapturedErrorEvent#error)
+     */
     var error: GPUError
 }

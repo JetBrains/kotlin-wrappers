@@ -11,5 +11,8 @@ import web.uievents.UIEventInit
 @JsPlainObject
 external interface CompositionEventInit :
     UIEventInit {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/CompositionEvent#data)
+     */
     var data: String?
 }
