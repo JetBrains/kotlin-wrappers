@@ -5,5 +5,5 @@ package node.crypto
 @kotlinx.js.JsPlainObject
 external interface JsonWebKeyInput {
     var key: JsonWebKey
-    var format: String // "jwk"
+    var format: String /* "jwk" */
 }

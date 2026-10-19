@@ -4,5 +4,5 @@ package node.dns
 
 @kotlinx.js.JsPlainObject
 external interface AnyARecord : RecordWithTtl {
-    var type: String // "A"
+    var type: String /* "A" */
 }

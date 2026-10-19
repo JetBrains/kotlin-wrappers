@@ -18,4 +18,4 @@ package node.querystring
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/querystring.js)
  */
 
-// export * from "querystring";
+/* export * from "querystring"; */

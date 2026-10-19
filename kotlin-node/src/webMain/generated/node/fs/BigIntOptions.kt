@@ -4,5 +4,5 @@ package node.fs
 
 @kotlinx.js.JsPlainObject
 external interface BigIntOptions {
-    var bigint: Boolean // true
+    var bigint: Boolean /* true */
 }

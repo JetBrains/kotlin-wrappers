@@ -66,7 +66,7 @@ external fun readFileSync(
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFileSync(path: PathOrFileDescriptor): Any // string | NonSharedBuffer
+external fun readFileSync(path: PathOrFileDescriptor): Any /* string | NonSharedBuffer */
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -78,7 +78,7 @@ external fun readFileSync(path: PathOrFileDescriptor): Any // string | NonShared
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: (ReadFileSyncOptions)? = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -90,4 +90,4 @@ external fun readFileSync(
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */

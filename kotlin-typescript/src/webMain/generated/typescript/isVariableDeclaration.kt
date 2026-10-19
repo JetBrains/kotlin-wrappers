@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isVariableDeclaration")
-external fun isVariableDeclarationRaw(node: Node): Boolean // node is VariableDeclaration
+external fun isVariableDeclarationRaw(node: Node): Boolean /* node is VariableDeclaration */

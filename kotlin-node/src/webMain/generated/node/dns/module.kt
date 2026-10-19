@@ -51,4 +51,4 @@ package node.dns
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/dns.js)
  */
 
-// export * from "dns";
+/* export * from "dns"; */

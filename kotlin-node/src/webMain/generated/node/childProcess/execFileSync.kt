@@ -41,7 +41,7 @@ external fun execFileSync(
 external fun execFileSync(
     file: String,
     options: ExecFileSyncOptions = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */
 
 external fun execFileSync(
     file: String,
@@ -64,4 +64,4 @@ external fun execFileSync(
     file: String,
     args: js.array.ReadonlyArray<String> = definedExternally,
     options: ExecFileSyncOptions = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */

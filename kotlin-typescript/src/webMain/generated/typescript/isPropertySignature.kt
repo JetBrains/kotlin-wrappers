@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isPropertySignature")
-external fun isPropertySignatureRaw(node: Node): Boolean // node is PropertySignature
+external fun isPropertySignatureRaw(node: Node): Boolean /* node is PropertySignature */

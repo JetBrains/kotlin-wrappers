@@ -46,6 +46,6 @@ external fun globSync(
     options: GlobOptionsWithoutFileTypes,
 ): js.array.ReadonlyArray<String>
 
-external fun globSync(pattern: String, options: GlobOptions): Any // Dirent[] | string[]
+external fun globSync(pattern: String, options: GlobOptions): Any /* Dirent[] | string[] */
 
-external fun globSync(pattern: js.array.ReadonlyArray<String>, options: GlobOptions): Any // Dirent[] | string[]
+external fun globSync(pattern: js.array.ReadonlyArray<String>, options: GlobOptions): Any /* Dirent[] | string[] */

@@ -3,7 +3,7 @@
 package node.http2
 
 external interface HTTP2ServerCommon {
-    fun setTimeout(msec: Number = definedExternally, callback: () -> Unit = definedExternally) // this
+    fun setTimeout(msec: Number = definedExternally, callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Throws ERR_HTTP2_INVALID_SETTING_VALUE for invalid settings values.

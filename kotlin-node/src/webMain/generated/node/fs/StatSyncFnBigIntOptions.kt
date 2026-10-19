@@ -7,7 +7,7 @@ external interface StatSyncFnBigIntOptions : StatSyncOptions {
     @JsName("bigint")
     var requiredBigInt: Boolean
 
-    // true
+    /* true */
     @JsName("throwIfNoEntry")
-    var requiredThrowIfNoEntry: Boolean // false
+    var requiredThrowIfNoEntry: Boolean /* false */
 }

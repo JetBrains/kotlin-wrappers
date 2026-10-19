@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocOverloadTag")
-external fun isJSDocOverloadTagRaw(node: Node): Boolean // node is JSDocOverloadTag
+external fun isJSDocOverloadTagRaw(node: Node): Boolean /* node is JSDocOverloadTag */

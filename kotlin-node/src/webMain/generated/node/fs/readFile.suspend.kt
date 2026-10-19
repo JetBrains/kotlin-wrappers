@@ -118,7 +118,7 @@ external suspend fun readFile(
 ): String
 
 @seskar.js.JsAsync
-external suspend fun readFile(path: PathLike): Any // string | NonSharedBuffer
+external suspend fun readFile(path: PathLike): Any /* string | NonSharedBuffer */
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -131,7 +131,7 @@ external suspend fun readFile(path: PathLike): Any // string | NonSharedBuffer
 external suspend fun readFile(
     path: PathLike,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -144,7 +144,7 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -154,7 +154,7 @@ external suspend fun readFile(
  * If a flag is not provided, it defaults to `'r'`.
  */
 @seskar.js.JsAsync
-external suspend fun readFile(path: FileHandle): Any // string | NonSharedBuffer
+external suspend fun readFile(path: FileHandle): Any /* string | NonSharedBuffer */
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -167,7 +167,7 @@ external suspend fun readFile(path: FileHandle): Any // string | NonSharedBuffer
 external suspend fun readFile(
     path: FileHandle,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -180,4 +180,4 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: FileHandle,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any // string | NonSharedBuffer
+): Any /* string | NonSharedBuffer */

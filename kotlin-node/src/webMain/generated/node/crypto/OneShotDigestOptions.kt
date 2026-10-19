@@ -8,7 +8,7 @@ external interface OneShotDigestOptions {
      * Encoding used to encode the returned digest.
      * @default 'hex'
      */
-    var outputEncoding: Any? // BinaryToTextEncoding | "buffer" | undefined
+    var outputEncoding: Any? /* BinaryToTextEncoding | "buffer" | undefined */
 
     /**
      * For XOF hash functions such as 'shake256', the outputLength option

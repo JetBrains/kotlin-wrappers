@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxSpreadAttribute")
-external fun isJsxSpreadAttributeRaw(node: Node): Boolean // node is JsxSpreadAttribute
+external fun isJsxSpreadAttributeRaw(node: Node): Boolean /* node is JsxSpreadAttribute */

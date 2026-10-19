@@ -6,4 +6,4 @@ package testing.library.user.event
 // unhandled import: Instance from "../setup"
 // unhandled import: pointerKey from "../system/pointer"
 
-typealias PointerInput = Any // PointerActionInput | Array<PointerActionInput>
+typealias PointerInput = Any /* PointerActionInput | Array<PointerActionInput> */

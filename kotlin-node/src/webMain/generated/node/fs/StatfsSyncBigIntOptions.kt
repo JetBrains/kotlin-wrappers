@@ -5,5 +5,5 @@ package node.fs
 @kotlinx.js.JsPlainObject
 external interface StatfsSyncBigIntOptions : StatFsOptions {
     @JsName("bigint")
-    var requiredBigInt: Boolean // true
+    var requiredBigInt: Boolean /* true */
 }

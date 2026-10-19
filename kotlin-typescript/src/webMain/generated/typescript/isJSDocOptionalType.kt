@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocOptionalType")
-external fun isJSDocOptionalTypeRaw(node: Node): Boolean // node is JSDocOptionalType
+external fun isJSDocOptionalTypeRaw(node: Node): Boolean /* node is JSDocOptionalType */

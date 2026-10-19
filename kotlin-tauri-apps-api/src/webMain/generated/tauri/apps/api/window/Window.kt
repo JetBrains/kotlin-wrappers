@@ -1707,7 +1707,7 @@ open external class Window {
      * or when a component unmounts.
      */
     fun onCloseRequested(
-        handler: (event: CloseRequestedEvent) -> Any, // void | Promise<void>
+        handler: (event: CloseRequestedEvent) -> Any, /* void | Promise<void> */
     ): js.promise.Promise<UnlistenFn>
 
     /**

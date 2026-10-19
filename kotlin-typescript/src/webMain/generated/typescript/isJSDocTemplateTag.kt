@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocTemplateTag")
-external fun isJSDocTemplateTagRaw(node: Node): Boolean // node is JSDocTemplateTag
+external fun isJSDocTemplateTagRaw(node: Node): Boolean /* node is JSDocTemplateTag */

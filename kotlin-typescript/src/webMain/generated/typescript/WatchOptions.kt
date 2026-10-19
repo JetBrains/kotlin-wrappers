@@ -10,5 +10,5 @@ external interface WatchOptions {
     var synchronousWatchDirectory: Boolean?
     var excludeDirectories: js.array.ReadonlyArray<String>?
     var excludeFiles: js.array.ReadonlyArray<String>?
-// [option: string]: CompilerOptionsValue | undefined;
+    /* [option: string]: CompilerOptionsValue | undefined; */
 }

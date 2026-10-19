@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxAttributes")
-external fun isJsxAttributesRaw(node: Node): Boolean // node is JsxAttributes
+external fun isJsxAttributesRaw(node: Node): Boolean /* node is JsxAttributes */

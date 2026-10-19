@@ -37,7 +37,7 @@ open external class Http2ServerRequest : node.stream.Readable {
      * @since v8.4.0
      * @deprecated Since v13.0.0 - Use `socket`.
      */
-    val connection: Any // net.Socket | tls.TLSSocket
+    val connection: Any /* net.Socket | tls.TLSSocket */
 
     /**
      * The `request.complete` property will be `true` if the request has
@@ -152,7 +152,7 @@ open external class Http2ServerRequest : node.stream.Readable {
      * authentication details.
      * @since v8.4.0
      */
-    val socket: Any // net.Socket | tls.TLSSocket
+    val socket: Any /* net.Socket | tls.TLSSocket */
 
     /**
      * The `Http2Stream` object backing the request.
@@ -220,11 +220,14 @@ open external class Http2ServerRequest : node.stream.Readable {
         callback: () -> Unit = definedExternally,
     )
 
-    override fun readOrNull(size: Number): Any? // NonSharedBuffer | string | null
+    override fun readOrNull(size: Number): Any? /* NonSharedBuffer | string | null */
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun emit(
         event: String,
@@ -236,27 +239,33 @@ open external class Http2ServerRequest : node.stream.Readable {
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
     @web.events.JsEvent("aborted")
     val abortedEvent: node.events.EventInstance<js.array.Tuple2<Boolean, Double>>

@@ -8,7 +8,7 @@ external interface CreateObject {
     ): (
         (
         element: Any, /* Document | Element | Window | Node */
-        options: (Any)?, // use undefined for default
+        options: (Any)?, /* use undefined for default */
     ) -> web.events.Event
     )?
 
@@ -17,7 +17,7 @@ external interface CreateObject {
         value: (
             (
             element: Any, /* Document | Element | Window | Node */
-            options: (Any)?, // use undefined for default
+            options: (Any)?, /* use undefined for default */
         ) -> web.events.Event
         )?,
     )

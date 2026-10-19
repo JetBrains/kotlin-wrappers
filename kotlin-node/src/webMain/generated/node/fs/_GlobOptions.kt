@@ -9,7 +9,7 @@ external interface _GlobOptions<T : Any /* Dirent | string */> {
      * Current working directory.
      * @default process.cwd()
      */
-    var cwd: Any? // string | URL | undefined
+    var cwd: Any? /* string | URL | undefined */
 
     /**
      * `true` if the glob should return paths as `Dirent`s, `false` otherwise.
@@ -27,5 +27,5 @@ external interface _GlobOptions<T : Any /* Dirent | string */> {
      * not supported.
      * @default undefined
      */
-    var exclude: Any? // ((fileName: T) => boolean) | readonly string[] | undefined
+    var exclude: Any? /* ((fileName: T) => boolean) | readonly string[] | undefined */
 }

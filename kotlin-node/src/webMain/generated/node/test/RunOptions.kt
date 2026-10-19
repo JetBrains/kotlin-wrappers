@@ -9,7 +9,7 @@ external interface RunOptions {
      * If `true`, it would run `os.availableParallelism() - 1` test files in parallel. If `false`, it would only run one test file at a time.
      * @default false
      */
-    var concurrency: Any? // number | boolean | undefined
+    var concurrency: Any? /* number | boolean | undefined */
 
     /**
      * Specifies the current working directory to be used by the test runner.
@@ -51,7 +51,7 @@ external interface RunOptions {
      * spawned.
      * @default undefined
      */
-    var inspectPort: Any? // number | (() => number) | undefined
+    var inspectPort: Any? /* number | (() => number) | undefined */
 
     /**
      * Configures the type of test isolation. If set to
@@ -99,7 +99,7 @@ external interface RunOptions {
      * Strings are interpreted as JavaScript regular expressions.
      * @default undefined
      */
-    var testNamePatterns: Any? // string | RegExp | ReadonlyArray<string | RegExp> | undefined
+    var testNamePatterns: Any? /* string | RegExp | ReadonlyArray<string | RegExp> | undefined */
 
     /**
      * A String, RegExp or a RegExp Array, that can be used to exclude running tests whose
@@ -109,7 +109,7 @@ external interface RunOptions {
      * @default undefined
      * @since v22.1.0
      */
-    var testSkipPatterns: Any? // string | RegExp | ReadonlyArray<string | RegExp> | undefined
+    var testSkipPatterns: Any? /* string | RegExp | ReadonlyArray<string | RegExp> | undefined */
 
     /**
      * The number of milliseconds after which the test execution will fail.
@@ -154,7 +154,7 @@ external interface RunOptions {
      * @since v22.10.0
      * @default undefined
      */
-    var coverageExcludeGlobs: Any? // string | readonly string[] | undefined
+    var coverageExcludeGlobs: Any? /* string | readonly string[] | undefined */
 
     /**
      * Includes specific files in code coverage
@@ -165,7 +165,7 @@ external interface RunOptions {
      * @since v22.10.0
      * @default undefined
      */
-    var coverageIncludeGlobs: Any? // string | readonly string[] | undefined
+    var coverageIncludeGlobs: Any? /* string | readonly string[] | undefined */
 
     /**
      * Require a minimum percent of covered lines. If code

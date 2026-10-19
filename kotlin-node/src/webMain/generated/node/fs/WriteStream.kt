@@ -35,7 +35,7 @@ external class WriteStream : node.stream.Writable {
      * `Buffer`.
      * @since v0.1.93
      */
-    var path: Any // string | Buffer
+    var path: Any /* string | Buffer */
 
     /**
      * This property is `true` if the underlying file has not been opened yet,

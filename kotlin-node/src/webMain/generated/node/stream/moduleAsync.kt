@@ -4,4 +4,4 @@
 
 package node.stream
 
-// export * from "stream/promises";
+/* export * from "stream/promises"; */

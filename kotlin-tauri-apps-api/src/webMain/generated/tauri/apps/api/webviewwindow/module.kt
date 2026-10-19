@@ -36,6 +36,6 @@ package tauri.apps.api.webviewwindow
  * @module
  */
 
-// export { WebviewWindow, getCurrentWebviewWindow, getAllWebviewWindows };
+/* export { WebviewWindow, getCurrentWebviewWindow, getAllWebviewWindows }; */
 
-// export type { DragDropEvent, Color };
+/* export type { DragDropEvent, Color }; */

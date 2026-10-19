@@ -15,5 +15,5 @@ external interface TestContextPlanOptions {
      * If the timeout is reached, the test will fail.
      * @default false
      */
-    var wait: Any? // boolean | number | undefined
+    var wait: Any? /* boolean | number | undefined */
 }

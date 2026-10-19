@@ -34,4 +34,4 @@ external fun execSync(
     options: ExecSyncOptionsWithBufferEncoding,
 ): NonSharedBuffer
 
-external fun execSync(command: String, options: ExecSyncOptions = definedExternally): Any // string | NonSharedBuffer
+external fun execSync(command: String, options: ExecSyncOptions = definedExternally): Any /* string | NonSharedBuffer */

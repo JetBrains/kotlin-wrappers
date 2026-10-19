@@ -23,4 +23,4 @@ package node.crypto
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/crypto.js)
  */
 
-// export * from "crypto";
+/* export * from "crypto"; */

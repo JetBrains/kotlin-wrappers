@@ -35,7 +35,7 @@ external interface TypeChecker {
     var getIndexInfosOfIndexSymbol:
                 (
         indexSymbol: Symbol,
-        siblingSymbols: js.array.ReadonlyArray<Symbol>?, // use undefined for default
+        siblingSymbols: js.array.ReadonlyArray<Symbol>?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<IndexInfo>
 
     fun getSignaturesOfType(
@@ -248,11 +248,11 @@ external interface TypeChecker {
 
     fun getMergedSymbol(symbol: Symbol): Symbol
 
-    fun getConstantValue(node: EnumMember): Any? // string | number | undefined
+    fun getConstantValue(node: EnumMember): Any? /* string | number | undefined */
 
-    fun getConstantValue(node: PropertyAccessExpression): Any? // string | number | undefined
+    fun getConstantValue(node: PropertyAccessExpression): Any? /* string | number | undefined */
 
-    fun getConstantValue(node: ElementAccessExpression): Any? // string | number | undefined
+    fun getConstantValue(node: ElementAccessExpression): Any? /* string | number | undefined */
 
     fun isValidPropertyAccess(
         node: PropertyAccessExpression,

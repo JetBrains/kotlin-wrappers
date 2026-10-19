@@ -15,7 +15,7 @@ external interface Screen : BoundFunctions {
     var debug: (
         element: (Any /* Array<Element | HTMLDocument> | Element | HTMLDocument */)?, /* use undefined for default */
         maxLength: Double?, /* use undefined for default */
-        options: Any /* TODO: OptionsReceived */?, // use undefined for default
+        options: Any /* TODO: OptionsReceived */?, /* use undefined for default */
     ) -> Unit
 
     /**
@@ -23,6 +23,6 @@ external interface Screen : BoundFunctions {
      * can be opened in a browser
      */
     var logTestingPlaygroundURL: (
-        element: (Any /* Element | HTMLDocument */)?, // use undefined for default
+        element: (Any /* Element | HTMLDocument */)?, /* use undefined for default */
     ) -> String
 }

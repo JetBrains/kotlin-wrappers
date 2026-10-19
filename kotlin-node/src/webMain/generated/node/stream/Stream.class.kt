@@ -31,6 +31,6 @@ open external class Stream : EventEmitter {
         stream: js.iterable.AsyncIterable<T>,
         options: StreamComposeOptions = definedExternally,
     ): T
-// Stream
-// streamPromises as promises
+    /* Stream */
+    /* streamPromises as promises */
 }

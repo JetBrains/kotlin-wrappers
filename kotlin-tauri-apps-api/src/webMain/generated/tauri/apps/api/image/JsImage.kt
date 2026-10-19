@@ -24,4 +24,4 @@ package tauri.apps.api.image
  * The Rust [`JsImage::Rgba`](https://docs.rs/tauri/2/tauri/image/enum.JsImage.html#variant.Rgba) variant is intentionally not exposed here;
  * use {@linkcode Image.new} to create an image from raw RGBA data instead.
  */
-typealias JsImage = Any // string | Uint8Array | ArrayBuffer | number[] | Image
+typealias JsImage = Any /* string | Uint8Array | ArrayBuffer | number[] | Image */

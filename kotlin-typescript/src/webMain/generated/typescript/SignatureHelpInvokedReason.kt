@@ -8,6 +8,6 @@ package typescript
  */
 @kotlinx.js.JsPlainObject
 external interface SignatureHelpInvokedReason : SignatureHelpTriggerReason {
-    var kind: String // "invoked"
+    var kind: String /* "invoked" */
     var triggerCharacter: Nothing?
 }

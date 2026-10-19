@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocThisTag")
-external fun isJSDocThisTagRaw(node: Node): Boolean // node is JSDocThisTag
+external fun isJSDocThisTagRaw(node: Node): Boolean /* node is JSDocThisTag */

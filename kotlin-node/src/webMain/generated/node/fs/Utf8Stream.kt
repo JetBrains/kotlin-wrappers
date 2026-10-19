@@ -89,7 +89,7 @@ external class Utf8Stream : EventEmitter {
     /**
      * The mode of the file that is being written to.
      */
-    val mode: Any // number | string
+    val mode: Any /* number | string */
 
     /**
      * The number of milliseconds between flushes. If set to `0`, no
@@ -137,15 +137,15 @@ external class Utf8Stream : EventEmitter {
      *   3. error
      */
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple>

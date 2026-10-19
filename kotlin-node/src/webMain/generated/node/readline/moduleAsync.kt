@@ -8,4 +8,4 @@ package node.readline
  * @since v17.0.0
  */
 
-// export * from "readline/promises";
+/* export * from "readline/promises"; */

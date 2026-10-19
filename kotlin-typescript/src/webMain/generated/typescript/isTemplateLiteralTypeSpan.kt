@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isTemplateLiteralTypeSpan")
-external fun isTemplateLiteralTypeSpanRaw(node: Node): Boolean // node is TemplateLiteralTypeSpan
+external fun isTemplateLiteralTypeSpanRaw(node: Node): Boolean /* node is TemplateLiteralTypeSpan */

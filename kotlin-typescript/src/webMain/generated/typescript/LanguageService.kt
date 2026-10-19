@@ -66,7 +66,7 @@ external interface LanguageService {
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
-    ): Any // ClassifiedSpan[] | ClassifiedSpan2020[]
+    ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
 
     /** @deprecated Use getEncodedSemanticClassifications instead. */
     fun getSemanticClassifications(
@@ -78,7 +78,7 @@ external interface LanguageService {
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
-    ): Any // ClassifiedSpan[] | ClassifiedSpan2020[]
+    ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
 
     /** Encoded as triples of [start, length, ClassificationType]. */
     fun getEncodedSyntacticClassifications(
@@ -285,7 +285,7 @@ external interface LanguageService {
     fun prepareCallHierarchy(
         fileName: String,
         position: Double,
-    ): Any? // CallHierarchyItem | CallHierarchyItem[] | undefined
+    ): Any? /* CallHierarchyItem | CallHierarchyItem[] | undefined */
 
     fun provideCallHierarchyIncomingCalls(
         fileName: String,

@@ -1598,7 +1598,7 @@ external class WebContents : NodeEventEmitter {
                     AuthInfo,
                         (
                 username: String?, /* use undefined for default */
-                password: String?, // use undefined for default
+                password: String?, /* use undefined for default */
             ) -> Unit
                     >
             >

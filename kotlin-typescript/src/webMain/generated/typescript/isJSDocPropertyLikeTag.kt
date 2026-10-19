@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocPropertyLikeTag")
-external fun isJSDocPropertyLikeTagRaw(node: Node): Boolean // node is JSDocPropertyLikeTag
+external fun isJSDocPropertyLikeTagRaw(node: Node): Boolean /* node is JSDocPropertyLikeTag */

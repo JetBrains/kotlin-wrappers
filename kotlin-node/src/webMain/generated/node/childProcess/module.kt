@@ -72,4 +72,4 @@ package node.childProcess
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/child_process.js)
  */
 
-// export * from "child_process";
+/* export * from "child_process"; */

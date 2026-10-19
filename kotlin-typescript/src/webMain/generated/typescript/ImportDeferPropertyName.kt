@@ -3,5 +3,5 @@
 package typescript
 
 external interface ImportDeferPropertyName : Identifier {
-    override val escapedText: Any // __String & "defer"
+    override val escapedText: Any /* __String & "defer" */
 }

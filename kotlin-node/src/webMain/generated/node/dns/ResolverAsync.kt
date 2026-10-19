@@ -185,7 +185,7 @@ external class Resolver {
     suspend fun resolve(
         hostname: String,
         rrtype: String,
-    ): Any // string[] | SoaRecord | CaaRecord[] | MxRecord[] | NaptrRecord[] | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[]
+    ): Any /* string[] | SoaRecord | CaaRecord[] | MxRecord[] | NaptrRecord[] | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */
 
     @JsName("resolve4")
     fun resolve4Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
@@ -209,7 +209,7 @@ external class Resolver {
     fun resolve4Async(hostname: String, options: ResolveOptions): Promise<Any /* string[] | RecordWithTtl[] */>
 
     @seskar.js.JsAsync
-    suspend fun resolve4(hostname: String, options: ResolveOptions): Any // string[] | RecordWithTtl[]
+    suspend fun resolve4(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */
 
     @JsName("resolve6")
     fun resolve6Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
@@ -233,7 +233,7 @@ external class Resolver {
     fun resolve6Async(hostname: String, options: ResolveOptions): Promise<Any /* string[] | RecordWithTtl[] */>
 
     @seskar.js.JsAsync
-    suspend fun resolve6(hostname: String, options: ResolveOptions): Any // string[] | RecordWithTtl[]
+    suspend fun resolve6(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */
 
     @JsName("resolveAny")
     fun resolveAnyAsync(hostname: String): Promise<js.array.ReadonlyArray<AnyRecord>>

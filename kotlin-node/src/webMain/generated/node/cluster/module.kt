@@ -59,5 +59,5 @@ package node.cluster
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/cluster.js)
  */
 
-// export * from "cluster";
-// export { default as default } from "cluster";
+/* export * from "cluster"; */
+/* export { default as default } from "cluster"; */

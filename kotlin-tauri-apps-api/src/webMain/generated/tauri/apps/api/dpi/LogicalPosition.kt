@@ -15,7 +15,7 @@ external class LogicalPosition {
     constructor(`object`: LogicalPositionObjectTemp)
     constructor (`object`: LogicalPositionObject)
 
-    val type: Any? // type isn't declared
+    val type: Any? /* type isn't declared */
     var x: Double
     var y: Double
 

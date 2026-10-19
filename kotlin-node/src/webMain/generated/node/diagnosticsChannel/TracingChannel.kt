@@ -121,7 +121,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         fn: Function<Result>, /* (this: ThisArg, ...args: Args) => Result */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, // Args
+        vararg args: Any?, /* Args */
     ): Result
 
     /**
@@ -158,7 +158,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         fn: Function<js.promise.Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, // Args
+        vararg args: Any?, /* Args */
     ): js.promise.Promise<Result>
 
     @seskar.js.JsAsync
@@ -166,7 +166,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         fn: Function<js.promise.Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, // Args
+        vararg args: Any?, /* Args */
     ): Result
 
     /**
@@ -232,7 +232,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         position: Number = definedExternally,
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, // Args
+        vararg args: Any?, /* Args */
     ): Result
 
     /**

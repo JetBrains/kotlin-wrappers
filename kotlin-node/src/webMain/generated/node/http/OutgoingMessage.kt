@@ -52,7 +52,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @since v0.9.12
      * @param callback Optional function to be called when a timeout occurs. Same as binding to the `timeout` event.
      */
-    open fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally) // this
+    open fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Sets a single header value. If the header already exists in the to-be-sent
@@ -62,7 +62,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: Double) // this
+    fun setHeader(name: String, value: Double) /* this */
 
     /**
      * Sets a single header value. If the header already exists in the to-be-sent
@@ -72,7 +72,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: String) // this
+    fun setHeader(name: String, value: String) /* this */
 
     /**
      * Sets a single header value. If the header already exists in the to-be-sent
@@ -82,7 +82,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: js.array.ReadonlyArray<String>) // this
+    fun setHeader(name: String, value: js.array.ReadonlyArray<String>) /* this */
 
     /**
      * Sets multiple header values for implicit headers. headers must be an instance of
@@ -119,7 +119,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeaders(headers: web.http.Headers) // this
+    fun setHeaders(headers: web.http.Headers) /* this */
 
     /**
      * Sets multiple header values for implicit headers. headers must be an instance of
@@ -158,7 +158,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      */
     fun setHeaders(
         headers: js.collections.ReadonlyMap<String, Any /* number | string | readonly string[] */>,
-    ) // this
+    ) /* this */
 
     /**
      * Append a single header value to the header object.
@@ -175,7 +175,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun appendHeader(name: String, value: String) // this
+    fun appendHeader(name: String, value: String) /* this */
 
     /**
      * Append a single header value to the header object.
@@ -192,7 +192,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun appendHeader(name: String, value: js.array.ReadonlyArray<String>) // this
+    fun appendHeader(name: String, value: js.array.ReadonlyArray<String>) /* this */
 
     /**
      * Gets the value of the HTTP header with the given name. If that header is not
@@ -200,7 +200,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @since v0.4.0
      * @param name Name of header
      */
-    fun getHeader(name: String): Any? // number | string | string[] | undefined
+    fun getHeader(name: String): Any? /* number | string | string[] | undefined */
 
     /**
      * Returns a shallow copy of the current outgoing headers. Since a shallow

@@ -10,4 +10,4 @@ package node.stream.consumers
  * @since v16.7.0
  */
 
-// export * from "stream/consumers";
+/* export * from "stream/consumers"; */

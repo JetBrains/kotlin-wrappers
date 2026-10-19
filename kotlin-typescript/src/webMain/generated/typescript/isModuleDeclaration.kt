@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isModuleDeclaration")
-external fun isModuleDeclarationRaw(node: Node): Boolean // node is ModuleDeclaration
+external fun isModuleDeclarationRaw(node: Node): Boolean /* node is ModuleDeclaration */

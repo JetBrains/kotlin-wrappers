@@ -69,7 +69,7 @@ external interface Utf8StreamOptions {
     /**
      * Specify the creating file mode (see `fs.open()`).
      */
-    var mode: Any? // number | string | undefined
+    var mode: Any? /* number | string | undefined */
 
     /**
      * Calls flush every `periodicFlush` milliseconds.

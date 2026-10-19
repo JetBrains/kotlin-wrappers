@@ -10,7 +10,7 @@ external interface LookupOptions {
      * with `{ all: true } (see below)`, both IPv4 and IPv6 addresses are returned.
      * @default 0
      */
-    var family: Any? // number | "IPv4" | "IPv6" | undefined
+    var family: Any? /* number | "IPv4" | "IPv6" | undefined */
 
     /**
      * One or more [supported `getaddrinfo`](https://nodejs.org/docs/latest-v24.x/api/dns.html#supported-getaddrinfo-flags) flags. Multiple flags may be

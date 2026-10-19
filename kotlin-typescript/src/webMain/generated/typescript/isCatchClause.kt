@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isCatchClause")
-external fun isCatchClauseRaw(node: Node): Boolean // node is CatchClause
+external fun isCatchClauseRaw(node: Node): Boolean /* node is CatchClause */

@@ -59,12 +59,12 @@ external fun pipelineAsync(
 external fun pipelineAsync(
     stream1: node.ReadableStream,
     stream2: node.ReadWriteStream,
-    vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
+    vararg streams: Any, /* NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions */
 ): js.promise.Promise<js.void.Void>
 
 @JsName("pipeline")
 external fun pipelineAsync(
     stream1: node.ReadableStream,
     stream2: node.WritableStream,
-    vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
+    vararg streams: Any, /* NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions */
 ): js.promise.Promise<js.void.Void>

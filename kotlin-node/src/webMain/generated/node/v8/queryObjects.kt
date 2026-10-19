@@ -45,7 +45,7 @@ package node.v8
  * @since v20.13.0
  * @experimental
  */
-external fun queryObjects(ctor: Function<*>): Any // number | string[]
+external fun queryObjects(ctor: Function<*>): Any /* number | string[] */
 
 external fun queryObjects(
     ctor: Function<*>,

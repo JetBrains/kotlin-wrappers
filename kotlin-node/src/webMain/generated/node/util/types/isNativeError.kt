@@ -49,4 +49,4 @@ package node.util.types
  * @deprecated The `util.types.isNativeError` API is deprecated. Please use `Error.isError` instead.
  */
 @JsName("isNativeError")
-external fun isNativeErrorRaw(value: Any?): Boolean // object is Error
+external fun isNativeErrorRaw(value: Any?): Boolean /* object is Error */

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isWithStatement")
-external fun isWithStatementRaw(node: Node): Boolean // node is WithStatement
+external fun isWithStatementRaw(node: Node): Boolean /* node is WithStatement */

@@ -28,10 +28,10 @@ external interface StatSyncFn {
         options: StatSyncFnBigIntThrowIfNoEntryOptions,
     ): BigIntStats
 
-    operator fun invoke(path: PathLike, options: StatSyncFnOptions): Any // Stats | BigIntStats
+    operator fun invoke(path: PathLike, options: StatSyncFnOptions): Any /* Stats | BigIntStats */
 
     operator fun invoke(
         path: PathLike,
         options: StatSyncOptions = definedExternally,
-    ): Any? // Stats | BigIntStats | undefined
+    ): Any? /* Stats | BigIntStats | undefined */
 }

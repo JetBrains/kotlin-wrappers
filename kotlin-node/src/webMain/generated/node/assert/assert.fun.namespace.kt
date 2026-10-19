@@ -4,4 +4,4 @@
 
 package node.assert
 
-// export { strict };
+/* export { strict }; */

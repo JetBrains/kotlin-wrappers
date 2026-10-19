@@ -193,7 +193,7 @@ open external class Writable :
      * @since v0.11.15
      * @param encoding The new default encoding
      */
-    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding) // this
+    open fun setDefaultEncoding(encoding: node.buffer.BufferEncoding) /* this */
 
     /**
      * Calling the `writable.end()` method signals that no more data will be written
@@ -214,7 +214,7 @@ open external class Writable :
      * @since v0.9.4
      * @param cb Callback for when the stream is finished.
      */
-    override fun end(cb: () -> Unit) // this
+    override fun end(cb: () -> Unit) /* this */
 
     /**
      * Signals that no more data will be written, with one final chunk of data.
@@ -224,7 +224,7 @@ open external class Writable :
      * {TypedArray} or {DataView}. For object mode streams, `chunk` may be any JavaScript value other than `null`.
      * @param cb Callback for when the stream is finished.
      */
-    open fun end(chunk: Any?, cb: () -> Unit = definedExternally) // this
+    open fun end(chunk: Any?, cb: () -> Unit = definedExternally) /* this */
 
     /**
      * Signals that no more data will be written, with one final chunk of data.
@@ -235,7 +235,7 @@ open external class Writable :
      * @param encoding The encoding if `chunk` is a string
      * @param cb Callback for when the stream is finished.
      */
-    open fun end(chunk: Any?, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally) // this
+    open fun end(chunk: Any?, encoding: node.buffer.BufferEncoding, cb: () -> Unit = definedExternally) /* this */
 
     /**
      * The `writable.cork()` method forces all written data to be buffered in memory.
@@ -304,9 +304,9 @@ open external class Writable :
      * @since v8.0.0
      * @param error Optional, an error to emit with `'error'` event.
      */
-    open fun destroy() // this
+    open fun destroy() /* this */
 
-    open fun destroy(error: js.errors.JsError) // this
+    open fun destroy(error: js.errors.JsError) /* this */
 
     /**
      * Event emitter
@@ -319,9 +319,12 @@ open external class Writable :
      * 6. unpipe
      */
 
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     open fun emit(
         event: String,
@@ -333,28 +336,37 @@ open external class Writable :
         vararg args: Any?,
     ): Boolean
 
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    open fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     open fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
-    open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun removeListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun removeListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>
@@ -388,11 +400,11 @@ open external class Writable :
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit,
     ): Boolean
 
-    override fun end(data: String, cb: () -> Unit) // this
+    override fun end(data: String, cb: () -> Unit) /* this */
 
-    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) // this
+    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) /* this */
 
-    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) // this
+    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) /* this */
 
     companion object {
         /**

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isTypeOperatorNode")
-external fun isTypeOperatorNodeRaw(node: Node): Boolean // node is TypeOperatorNode
+external fun isTypeOperatorNodeRaw(node: Node): Boolean /* node is TypeOperatorNode */

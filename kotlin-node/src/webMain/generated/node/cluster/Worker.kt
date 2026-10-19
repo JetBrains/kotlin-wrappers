@@ -155,7 +155,7 @@ external class Worker : EventEmitter {
      * @since v0.7.7
      * @return A reference to `worker`.
      */
-    fun disconnect() // this
+    fun disconnect() /* this */
 
     /**
      * This function returns `true` if the worker is connected to its primary via its
@@ -237,7 +237,7 @@ external class Worker : EventEmitter {
      *   5. message
      *   6. online
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
@@ -251,19 +251,19 @@ external class Worker : EventEmitter {
         vararg args: Any?,
     ): Boolean
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 // the handle is a net.Socket or net.Server object, or undefined.
 

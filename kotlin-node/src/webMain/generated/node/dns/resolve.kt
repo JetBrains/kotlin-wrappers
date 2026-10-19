@@ -81,6 +81,6 @@ external fun resolve(
     rrtype: String,
     callback: (
         err: node.ErrnoException?,
-        addresses: Any, // string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[]
+        addresses: Any, /* string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */
     ) -> Unit,
 )

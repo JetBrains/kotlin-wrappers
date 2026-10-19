@@ -28,7 +28,7 @@ external class AssertionError : js.errors.JsError {
     /**
      * Value is always `ERR_ASSERTION` to show that the error is an assertion error.
      */
-    var code: String // "ERR_ASSERTION"
+    var code: String /* "ERR_ASSERTION" */
 
     /**
      * Set to the passed in operator value.

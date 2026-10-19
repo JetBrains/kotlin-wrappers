@@ -16,4 +16,4 @@ package node.util.types
  * @since v10.0.0
  */
 @JsName("isArrayBuffer")
-external fun isArrayBufferRaw(value: Any?): Boolean // object is ArrayBuffer
+external fun isArrayBufferRaw(value: Any?): Boolean /* object is ArrayBuffer */

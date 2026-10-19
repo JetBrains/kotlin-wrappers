@@ -14,7 +14,7 @@ external interface StreamOptions<T : Stream> : Abortable {
     )?
     var destroy: (
         (
-        // this: T,
+        /* this: T, */
         error: js.errors.JsError?,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ) -> Unit

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocParameterTag")
-external fun isJSDocParameterTagRaw(node: Node): Boolean // node is JSDocParameterTag
+external fun isJSDocParameterTagRaw(node: Node): Boolean /* node is JSDocParameterTag */

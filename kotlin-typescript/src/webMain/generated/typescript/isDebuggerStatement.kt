@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isDebuggerStatement")
-external fun isDebuggerStatementRaw(node: Node): Boolean // node is DebuggerStatement
+external fun isDebuggerStatementRaw(node: Node): Boolean /* node is DebuggerStatement */

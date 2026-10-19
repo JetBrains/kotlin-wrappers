@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocProtectedTag")
-external fun isJSDocProtectedTagRaw(node: Node): Boolean // node is JSDocProtectedTag
+external fun isJSDocProtectedTagRaw(node: Node): Boolean /* node is JSDocProtectedTag */

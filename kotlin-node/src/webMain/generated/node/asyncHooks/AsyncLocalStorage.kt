@@ -163,7 +163,7 @@ external class AsyncLocalStorage<T> {
      */
     fun <R, TArgs : js.array.ReadonlyArray<Any?>> exit(
         callback: Function<R>, /* (...args: TArgs) => R */
-        vararg args: Any?, // TArgs
+        vararg args: Any?, /* TArgs */
     ): R
 
     /**
@@ -245,6 +245,6 @@ external class AsyncLocalStorage<T> {
          * @since v19.8.0
          * @return A new function with the signature `(fn: (...args) : R, ...args) : R`.
          */
-        fun snapshot(): Function<Any?> // <R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R
+        fun snapshot(): Function<Any?> /* <R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R */
     }
 }

@@ -2,4 +2,4 @@
 
 package tauri.apps.api.menu.base
 
-typealias MenuItemOptionsAlias = Any // MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions
+typealias MenuItemOptionsAlias = Any /* MenuItemOptions | SubmenuOptions | IconMenuItemOptions | PredefinedMenuItemOptions | CheckMenuItemOptions */

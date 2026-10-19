@@ -25,6 +25,6 @@ package tauri.apps.api.window
  * @module
  */
 
-// export { Window, CloseRequestedEvent, getCurrentWindow, getAllWindows, LogicalSize, PhysicalSize, LogicalPosition, PhysicalPosition, UserAttentionType, Effect, EffectState, currentMonitor, monitorFromPoint, primaryMonitor, availableMonitors, cursorPosition };
+/* export { Window, CloseRequestedEvent, getCurrentWindow, getAllWindows, LogicalSize, PhysicalSize, LogicalPosition, PhysicalPosition, UserAttentionType, Effect, EffectState, currentMonitor, monitorFromPoint, primaryMonitor, availableMonitors, cursorPosition }; */
 
-// export type { Effects, Theme, TitleBarStyle, ScaleFactorChanged, WindowOptions, PreventOverflowMargin, Color, BackgroundThrottlingPolicy, DragDropEvent, ScrollBarStyle };
+/* export type { Effects, Theme, TitleBarStyle, ScaleFactorChanged, WindowOptions, PreventOverflowMargin, Color, BackgroundThrottlingPolicy, DragDropEvent, ScrollBarStyle }; */

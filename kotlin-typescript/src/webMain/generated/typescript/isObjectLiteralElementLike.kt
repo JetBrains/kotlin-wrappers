@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isObjectLiteralElementLike")
-external fun isObjectLiteralElementLikeRaw(node: Node): Boolean // node is ObjectLiteralElementLike
+external fun isObjectLiteralElementLikeRaw(node: Node): Boolean /* node is ObjectLiteralElementLike */

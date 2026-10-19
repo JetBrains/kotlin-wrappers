@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isTemplateLiteralTypeNode")
-external fun isTemplateLiteralTypeNodeRaw(node: Node): Boolean // node is TemplateLiteralTypeNode
+external fun isTemplateLiteralTypeNodeRaw(node: Node): Boolean /* node is TemplateLiteralTypeNode */

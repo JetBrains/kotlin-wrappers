@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isNamedImports")
-external fun isNamedImportsRaw(node: Node): Boolean // node is NamedImports
+external fun isNamedImportsRaw(node: Node): Boolean /* node is NamedImports */

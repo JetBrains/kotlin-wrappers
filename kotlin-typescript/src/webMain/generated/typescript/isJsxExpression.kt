@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxExpression")
-external fun isJsxExpressionRaw(node: Node): Boolean // node is JsxExpression
+external fun isJsxExpressionRaw(node: Node): Boolean /* node is JsxExpression */

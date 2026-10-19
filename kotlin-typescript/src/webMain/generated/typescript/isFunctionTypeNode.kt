@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isFunctionTypeNode")
-external fun isFunctionTypeNodeRaw(node: Node): Boolean // node is FunctionTypeNode
+external fun isFunctionTypeNodeRaw(node: Node): Boolean /* node is FunctionTypeNode */

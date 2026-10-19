@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isPostfixUnaryExpression")
-external fun isPostfixUnaryExpressionRaw(node: Node): Boolean // node is PostfixUnaryExpression
+external fun isPostfixUnaryExpressionRaw(node: Node): Boolean /* node is PostfixUnaryExpression */

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxOpeningLikeElement")
-external fun isJsxOpeningLikeElementRaw(node: Node): Boolean // node is JsxOpeningLikeElement
+external fun isJsxOpeningLikeElementRaw(node: Node): Boolean /* node is JsxOpeningLikeElement */

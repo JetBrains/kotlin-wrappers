@@ -442,21 +442,23 @@ external interface FileHandle {
     ): js.promise.Promise<Any /* string | NonSharedBuffer */>
 
     @seskar.js.JsAsync
-    suspend fun readFile(): Any // string | NonSharedBuffer
+    suspend fun readFile(): Any /* string | NonSharedBuffer */
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
      */
     @seskar.js.JsAsync
-    suspend fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Any // string | NonSharedBuffer
+    suspend fun readFile(
+        options: (FileHandleReadFileAsyncOptions)? = definedExternally,
+    ): Any /* string | NonSharedBuffer */
 
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
      */
     @seskar.js.JsAsync
-    suspend fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any // string | NonSharedBuffer
+    suspend fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any /* string | NonSharedBuffer */
 
     /**
      * Convenience method to create a `readline` interface and stream over the file.
@@ -495,7 +497,7 @@ external interface FileHandle {
     fun statAsync(opts: StatOptions = definedExternally): js.promise.Promise<Any /* Stats | BigIntStats */>
 
     @seskar.js.JsAsync
-    suspend fun stat(opts: StatOptions = definedExternally): Any // Stats | BigIntStats
+    suspend fun stat(opts: StatOptions = definedExternally): Any /* Stats | BigIntStats */
 
     /**
      * Truncates the file.

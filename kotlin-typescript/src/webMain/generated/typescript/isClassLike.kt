@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isClassLike")
-external fun isClassLikeRaw(node: Node): Boolean // node is ClassLikeDeclaration
+external fun isClassLikeRaw(node: Node): Boolean /* node is ClassLikeDeclaration */

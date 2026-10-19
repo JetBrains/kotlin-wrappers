@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isElementAccessExpression")
-external fun isElementAccessExpressionRaw(node: Node): Boolean // node is ElementAccessExpression
+external fun isElementAccessExpressionRaw(node: Node): Boolean /* node is ElementAccessExpression */

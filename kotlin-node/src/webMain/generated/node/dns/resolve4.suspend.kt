@@ -12,4 +12,4 @@ external suspend fun resolve4(
 ): js.array.ReadonlyArray<RecordWithTtl>
 
 @seskar.js.JsAsync
-external suspend fun resolve4(hostname: String, options: ResolveOptions): Any // string[] | RecordWithTtl[]
+external suspend fun resolve4(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */

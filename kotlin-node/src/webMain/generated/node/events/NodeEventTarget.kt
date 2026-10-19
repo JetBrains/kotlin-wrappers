@@ -16,7 +16,7 @@ external interface NodeEventTarget : web.events.EventTarget {
      * `EventTarget`.
      * @since v14.5.0
      */
-    fun addListener(type: String, listener: (arg: Any?) -> Unit) // this
+    fun addListener(type: String, listener: (arg: Any?) -> Unit) /* this */
 
     /**
      * Node.js-specific extension to the `EventTarget` class that dispatches the
@@ -66,13 +66,13 @@ external interface NodeEventTarget : web.events.EventTarget {
         type: String,
         listener: (arg: Any?) -> Unit,
         options: web.events.EventListenerOptions = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Node.js-specific alias for `eventTarget.addEventListener()`.
      * @since v14.5.0
      */
-    fun on(type: String, listener: (arg: Any?) -> Unit) // this
+    fun on(type: String, listener: (arg: Any?) -> Unit) /* this */
 
     /**
      * Node.js-specific extension to the `EventTarget` class that adds a `once`
@@ -80,7 +80,7 @@ external interface NodeEventTarget : web.events.EventTarget {
      * with the `once` option set to `true`.
      * @since v14.5.0
      */
-    fun once(type: String, listener: (arg: Any?) -> Unit) // this
+    fun once(type: String, listener: (arg: Any?) -> Unit) /* this */
 
     /**
      * Node.js-specific extension to the `EventTarget` class. If `type` is specified,
@@ -88,7 +88,7 @@ external interface NodeEventTarget : web.events.EventTarget {
      * listeners.
      * @since v14.5.0
      */
-    fun removeAllListeners(type: String = definedExternally) // this
+    fun removeAllListeners(type: String = definedExternally) /* this */
 
     /**
      * Node.js-specific extension to the `EventTarget` class that removes the
@@ -101,5 +101,5 @@ external interface NodeEventTarget : web.events.EventTarget {
         type: String,
         listener: (arg: Any?) -> Unit,
         options: web.events.EventListenerOptions = definedExternally,
-    ) // this
+    ) /* this */
 }

@@ -31,5 +31,5 @@ external interface CreateContextOptions {
      * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v24.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      * @experimental
      */
-    var importModuleDynamically: Any? // DynamicModuleLoader<Context> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
+    var importModuleDynamically: Any? /* DynamicModuleLoader<Context> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined */
 }

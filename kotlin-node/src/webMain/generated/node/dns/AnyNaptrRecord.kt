@@ -4,5 +4,5 @@ package node.dns
 
 @kotlinx.js.JsPlainObject
 external interface AnyNaptrRecord : NaptrRecord {
-    var type: String // "NAPTR"
+    var type: String /* "NAPTR" */
 }

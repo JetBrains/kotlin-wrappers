@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isInterfaceDeclaration")
-external fun isInterfaceDeclarationRaw(node: Node): Boolean // node is InterfaceDeclaration
+external fun isInterfaceDeclarationRaw(node: Node): Boolean /* node is InterfaceDeclaration */

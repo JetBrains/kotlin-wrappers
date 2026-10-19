@@ -7,4 +7,4 @@ package typescript
 @JsName("isLiteralTypeLiteral")
 external fun isLiteralTypeLiteralRaw(
     node: Node,
-): Boolean // node is NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression
+): Boolean /* node is NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression */

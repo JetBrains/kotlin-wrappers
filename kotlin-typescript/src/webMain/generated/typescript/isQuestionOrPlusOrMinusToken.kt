@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isQuestionOrPlusOrMinusToken")
-external fun isQuestionOrPlusOrMinusTokenRaw(node: Node): Boolean // node is QuestionToken | PlusToken | MinusToken
+external fun isQuestionOrPlusOrMinusTokenRaw(node: Node): Boolean /* node is QuestionToken | PlusToken | MinusToken */

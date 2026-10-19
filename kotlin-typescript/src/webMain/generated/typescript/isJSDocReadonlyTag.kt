@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocReadonlyTag")
-external fun isJSDocReadonlyTagRaw(node: Node): Boolean // node is JSDocReadonlyTag
+external fun isJSDocReadonlyTagRaw(node: Node): Boolean /* node is JSDocReadonlyTag */

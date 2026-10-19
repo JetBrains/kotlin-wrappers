@@ -10,7 +10,7 @@ package typescript
  */
 @kotlinx.js.JsPlainObject
 external interface SignatureHelpRetriggeredReason : SignatureHelpTriggerReason {
-    var kind: String // "retrigger"
+    var kind: String /* "retrigger" */
 
     /**
      * Character that was responsible for triggering signature help.

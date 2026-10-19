@@ -189,6 +189,6 @@ external class ECDH {
             inputEncoding: BinaryToTextEncoding = definedExternally,
             outputEncoding: ECDHConvertKeyOutputEncoding = definedExternally,
             format: ECDHConvertKeyFormat = definedExternally,
-        ): Any // NonSharedBuffer | string
+        ): Any /* NonSharedBuffer | string */
     }
 }

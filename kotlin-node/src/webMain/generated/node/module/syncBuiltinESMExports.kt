@@ -4,7 +4,7 @@
 
 package node.module
 
-// eslint-enable @definitelytyped/no-unnecessary-generics
+/* eslint-enable @definitelytyped/no-unnecessary-generics */
 
 /**
  * The `module.syncBuiltinESMExports()` method updates all the live bindings for

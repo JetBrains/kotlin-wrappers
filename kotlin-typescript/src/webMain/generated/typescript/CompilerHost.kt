@@ -23,7 +23,7 @@ external interface CompilerHost : ModuleResolutionHost {
         path: Path,
         languageVersionOrOptions: CompilerHostGetSourceFileByPathLanguageVersionOrOptions,
         onError: ((message: String) -> Unit)?, /* use undefined for default */
-        shouldCreateNewSourceFile: Boolean?, // use undefined for default
+        shouldCreateNewSourceFile: Boolean?, /* use undefined for default */
     ) -> SourceFile?
     )?
     val getCancellationToken: (() -> CancellationToken)?
@@ -47,7 +47,7 @@ external interface CompilerHost : ModuleResolutionHost {
         extensions: js.array.ReadonlyArray<String>,
         excludes: (js.array.ReadonlyArray<String>)?,
         includes: js.array.ReadonlyArray<String>,
-        depth: Double?, // use undefined for default
+        depth: Double?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<String>
     )?
 
@@ -59,7 +59,7 @@ external interface CompilerHost : ModuleResolutionHost {
         reusedNames: js.array.ReadonlyArray<String>?,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
-        containingSourceFile: SourceFile?, // use undefined for default
+        containingSourceFile: SourceFile?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<(ResolvedModule?)>
     )?
 
@@ -79,7 +79,7 @@ external interface CompilerHost : ModuleResolutionHost {
         containingFile: String,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
-        containingFileMode: ResolutionMode, // use undefined for default
+        containingFileMode: ResolutionMode, /* use undefined for default */
     ) -> js.array.ReadonlyArray<(ResolvedTypeReferenceDirective?)>
     )?
     val resolveModuleNameLiterals: (

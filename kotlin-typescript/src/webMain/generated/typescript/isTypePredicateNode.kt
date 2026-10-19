@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isTypePredicateNode")
-external fun isTypePredicateNodeRaw(node: Node): Boolean // node is TypePredicateNode
+external fun isTypePredicateNodeRaw(node: Node): Boolean /* node is TypePredicateNode */

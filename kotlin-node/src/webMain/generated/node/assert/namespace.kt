@@ -4,6 +4,6 @@
 
 package node.assert
 
-// import strict = require("assert/strict");
+/* import strict = require("assert/strict"); */
 
-// export = assert;
+/* export = assert; */

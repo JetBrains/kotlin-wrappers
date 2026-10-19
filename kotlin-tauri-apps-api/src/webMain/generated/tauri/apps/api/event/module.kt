@@ -4,6 +4,6 @@
 
 package tauri.apps.api.event
 
-// export type { Event, EventTarget, EventCallback, UnlistenFn, EventName, Options };
+/* export type { Event, EventTarget, EventCallback, UnlistenFn, EventName, Options }; */
 
-// export { listen, once, emit, emitTo, TauriEvent };
+/* export { listen, once, emit, emitTo, TauriEvent }; */

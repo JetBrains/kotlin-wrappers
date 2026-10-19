@@ -43,6 +43,6 @@ package tauri.apps.api.webview
  * @module
  */
 
-// export { Webview, getCurrentWebview, getAllWebviews };
+/* export { Webview, getCurrentWebview, getAllWebviews }; */
 
-// export type { DragDropEvent, WebviewOptions, Color };
+/* export type { DragDropEvent, WebviewOptions, Color }; */

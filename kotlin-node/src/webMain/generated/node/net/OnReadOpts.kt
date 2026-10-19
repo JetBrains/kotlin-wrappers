@@ -4,7 +4,7 @@ package node.net
 
 @kotlinx.js.JsPlainObject
 external interface OnReadOpts {
-    var buffer: Any // Uint8Array | (() => Uint8Array)
+    var buffer: Any /* Uint8Array | (() => Uint8Array) */
 
     /**
      * This function is called for every chunk of incoming data.

@@ -57,12 +57,12 @@ external suspend fun pipeline(
 external suspend fun pipeline(
     stream1: node.ReadableStream,
     stream2: node.ReadWriteStream,
-    vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
+    vararg streams: Any, /* NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions */
 ): js.void.Void
 
 @seskar.js.JsAsync
 external suspend fun pipeline(
     stream1: node.ReadableStream,
     stream2: node.WritableStream,
-    vararg streams: Any, // NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions
+    vararg streams: Any, /* NodeJS.ReadWriteStream | NodeJS.WritableStream | PipelineOptions */
 ): js.void.Void

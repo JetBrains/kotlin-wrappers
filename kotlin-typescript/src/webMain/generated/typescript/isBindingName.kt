@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isBindingName")
-external fun isBindingNameRaw(node: Node): Boolean // node is BindingName
+external fun isBindingNameRaw(node: Node): Boolean /* node is BindingName */

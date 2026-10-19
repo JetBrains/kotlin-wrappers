@@ -18,5 +18,5 @@ external interface DevicePermissionHandlerHandlerDetails {
     /**
      * the device that permission is being requested for.
      */
-    var device: Any // (HIDDevice) | (SerialPort) | (USBDevice)
+    var device: Any /* (HIDDevice) | (SerialPort) | (USBDevice) */
 }

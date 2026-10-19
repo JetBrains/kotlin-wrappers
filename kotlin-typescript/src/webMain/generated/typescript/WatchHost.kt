@@ -10,7 +10,7 @@ external interface WatchHost {
         diagnostic: Diagnostic,
         newLine: String,
         options: CompilerOptions,
-        errorCount: Double?, // use undefined for default
+        errorCount: Double?, /* use undefined for default */
     ) -> Unit
     )?
 

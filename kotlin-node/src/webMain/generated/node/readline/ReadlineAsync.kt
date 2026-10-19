@@ -21,7 +21,7 @@ external class Readline {
      * @since v17.0.0
      * @return this
      */
-    fun clearLine(dir: Direction) // this
+    fun clearLine(dir: Direction) /* this */
 
     /**
      * The `rl.clearScreenDown()` method adds to the internal list of pending action an
@@ -31,7 +31,7 @@ external class Readline {
      * @since v17.0.0
      * @return this
      */
-    fun clearScreenDown() // this
+    fun clearScreenDown() /* this */
 
     /**
      * The `rl.commit()` method sends all the pending actions to the associated `stream` and clears the internal list of pending actions.
@@ -50,7 +50,7 @@ external class Readline {
      * @since v17.0.0
      * @return this
      */
-    fun cursorTo(x: Number, y: Number = definedExternally) // this
+    fun cursorTo(x: Number, y: Number = definedExternally) /* this */
 
     /**
      * The `rl.moveCursor()` method adds to the internal list of pending action an
@@ -60,7 +60,7 @@ external class Readline {
      * @since v17.0.0
      * @return this
      */
-    fun moveCursor(dx: Number, dy: Number) // this
+    fun moveCursor(dx: Number, dy: Number) /* this */
 
     /**
      * The `rl.rollback` methods clears the internal list of pending actions without
@@ -68,5 +68,5 @@ external class Readline {
      * @since v17.0.0
      * @return this
      */
-    fun rollback() // this
+    fun rollback() /* this */
 }

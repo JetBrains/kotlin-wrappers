@@ -15,4 +15,4 @@ package node.util.types
  * @since v10.0.0
  */
 @JsName("isUint8ClampedArray")
-external fun isUint8ClampedArrayRaw(value: Any?): Boolean // object is Uint8ClampedArray
+external fun isUint8ClampedArrayRaw(value: Any?): Boolean /* object is Uint8ClampedArray */

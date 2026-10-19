@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isIndexedAccessTypeNode")
-external fun isIndexedAccessTypeNodeRaw(node: Node): Boolean // node is IndexedAccessTypeNode
+external fun isIndexedAccessTypeNodeRaw(node: Node): Boolean /* node is IndexedAccessTypeNode */

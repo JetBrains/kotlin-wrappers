@@ -2,4 +2,4 @@
 
 package node.sqlite
 
-typealias SQLInputValue = Any? // null | number | bigint | string | NodeJS.ArrayBufferView
+typealias SQLInputValue = Any? /* null | number | bigint | string | NodeJS.ArrayBufferView */

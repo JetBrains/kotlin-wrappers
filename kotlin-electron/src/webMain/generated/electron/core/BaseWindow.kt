@@ -496,7 +496,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun getAccentColor(): Any // (string) | (boolean)
+    open fun getAccentColor(): Any /* (string) | (boolean) */
 
     /**
      * Gets the background color of the window in Hex (`#RRGGBB`) format.

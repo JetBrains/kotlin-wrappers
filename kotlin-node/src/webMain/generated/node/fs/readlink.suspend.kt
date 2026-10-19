@@ -59,4 +59,4 @@ external suspend fun readlink(
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 @seskar.js.JsAsync
-external suspend fun readlink(path: PathLike, options: String? = definedExternally): Any // string | NonSharedBuffer
+external suspend fun readlink(path: PathLike, options: String? = definedExternally): Any /* string | NonSharedBuffer */

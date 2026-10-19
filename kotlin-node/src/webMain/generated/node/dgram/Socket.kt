@@ -105,13 +105,13 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun bind(port: Number = definedExternally, callback: () -> Unit = definedExternally) // this
+    fun bind(port: Number = definedExternally, callback: () -> Unit = definedExternally) /* this */
 
-    fun bind(callback: () -> Unit = definedExternally) // this
+    fun bind(callback: () -> Unit = definedExternally) /* this */
 
-    fun bind(options: BindOptions, callback: () -> Unit = definedExternally) // this
+    fun bind(options: BindOptions, callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Close the underlying socket and stop listening for data on it. If a callback is
@@ -119,7 +119,7 @@ external class Socket : EventEmitter {
      * @since v0.1.99
      * @param callback Called when the socket has been closed.
      */
-    fun close(callback: () -> Unit = definedExternally) // this
+    fun close(callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Associates the `dgram.Socket` to a remote address and port. Every
@@ -206,7 +206,7 @@ external class Socket : EventEmitter {
      * chained.
      * @since v0.9.1
      */
-    fun ref() // this
+    fun ref() /* this */
 
     /**
      * Returns an object containing the `address`, `family`, and `port` of the remote
@@ -734,7 +734,7 @@ external class Socket : EventEmitter {
      * chained.
      * @since v0.9.1
      */
-    fun unref() // this
+    fun unref() /* this */
 
     /**
      * Tells the kernel to join a source-specific multicast channel at the given `sourceAddress` and `groupAddress`, using the `multicastInterface` with the `IP_ADD_SOURCE_MEMBERSHIP` socket
@@ -776,7 +776,7 @@ external class Socket : EventEmitter {
      * 4. listening
      * 5. message
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun emit(
         event: String,
@@ -788,13 +788,13 @@ external class Socket : EventEmitter {
         vararg args: Any?,
     ): Boolean
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple>

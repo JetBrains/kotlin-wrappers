@@ -6,7 +6,7 @@ import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
 external interface _WatchOptions : Abortable {
-    var encoding: Any? // BufferEncoding | "buffer" | undefined
+    var encoding: Any? /* BufferEncoding | "buffer" | undefined */
     var persistent: Boolean?
     var recursive: Boolean?
 }

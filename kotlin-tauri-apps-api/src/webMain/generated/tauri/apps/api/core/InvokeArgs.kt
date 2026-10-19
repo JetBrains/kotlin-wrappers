@@ -36,4 +36,4 @@ package tauri.apps.api.core
  *
  * @since 1.0.0
  */
-typealias InvokeArgs = Any // Record<string, unknown> | number[] | ArrayBuffer | Uint8Array
+typealias InvokeArgs = Any /* Record<string, unknown> | number[] | ArrayBuffer | Uint8Array */

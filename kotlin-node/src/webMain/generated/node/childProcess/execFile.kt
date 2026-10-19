@@ -118,7 +118,7 @@ external fun execFile(
         (
         error: ExecFileException?,
         stdout: Any, /* string | NonSharedBuffer */
-        stderr: Any, // string | NonSharedBuffer
+        stderr: Any, /* string | NonSharedBuffer */
     ) -> Unit
     )?,
 ): ChildProcess
@@ -131,7 +131,7 @@ external fun execFile(
         (
         error: ExecFileException?,
         stdout: Any, /* string | NonSharedBuffer */
-        stderr: Any, // string | NonSharedBuffer
+        stderr: Any, /* string | NonSharedBuffer */
     ) -> Unit
     )?,
 ): ChildProcess

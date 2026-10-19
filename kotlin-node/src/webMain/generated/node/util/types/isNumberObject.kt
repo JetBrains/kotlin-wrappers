@@ -15,4 +15,4 @@ package node.util.types
  * @since v10.0.0
  */
 @JsName("isNumberObject")
-external fun isNumberObjectRaw(value: Any?): Boolean // object is Number
+external fun isNumberObjectRaw(value: Any?): Boolean /* object is Number */

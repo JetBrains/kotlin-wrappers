@@ -4,5 +4,5 @@ package node.dns
 
 @kotlinx.js.JsPlainObject
 external interface AnySrvRecord : SrvRecord {
-    var type: String // "SRV"
+    var type: String /* "SRV" */
 }

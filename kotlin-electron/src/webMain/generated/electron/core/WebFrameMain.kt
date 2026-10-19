@@ -22,7 +22,7 @@ external class WebFrameMain : NodeEventEmitter {
      *
      * @experimental
      */
-    fun collectJavaScriptCallStack(): Any // (Promise<string>) | (Promise<void>)
+    fun collectJavaScriptCallStack(): Any /* (Promise<string>) | (Promise<void>) */
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if

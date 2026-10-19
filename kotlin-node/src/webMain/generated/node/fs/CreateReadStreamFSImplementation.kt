@@ -4,5 +4,5 @@ package node.fs
 
 @kotlinx.js.JsPlainObject
 external interface CreateReadStreamFSImplementation : FSImplementation {
-    var read: Function<Any?> // (...args: any[]) => any
+    var read: Function<Any?> /* (...args: any[]) => any */
 }

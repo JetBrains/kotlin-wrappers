@@ -63,4 +63,4 @@ external suspend fun resolve(
 external suspend fun resolve(
     hostname: String,
     rrtype: String,
-): Any // string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[]
+): Any /* string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */
