@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isOptionalTypeNode")
-external fun isOptionalTypeNodeRaw(node: Node): Boolean // node is OptionalTypeNode
+external fun isOptionalTypeNodeRaw(node: Node): Boolean /* node is OptionalTypeNode */

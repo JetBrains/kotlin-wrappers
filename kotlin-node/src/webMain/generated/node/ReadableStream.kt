@@ -8,13 +8,13 @@ import node.events.EventEmitter
 external interface ReadableStream : EventEmitter {
     var readable: Boolean
 
-    fun read(size: Number = definedExternally): Any // string | Buffer
+    fun read(size: Number = definedExternally): Any /* string | Buffer */
 
-    fun setEncoding(encoding: node.buffer.BufferEncoding) // this
+    fun setEncoding(encoding: node.buffer.BufferEncoding) /* this */
 
-    fun pause() // this
+    fun pause() /* this */
 
-    fun resume() // this
+    fun resume() /* this */
 
     fun isPaused(): Boolean
 
@@ -23,7 +23,7 @@ external interface ReadableStream : EventEmitter {
         options: ReadableStreamPipeOptions = definedExternally,
     ): T
 
-    fun unpipe(destination: WritableStream = definedExternally) // this
+    fun unpipe(destination: WritableStream = definedExternally) /* this */
 
     fun unshift(
         chunk: String,
@@ -35,5 +35,5 @@ external interface ReadableStream : EventEmitter {
         encoding: node.buffer.BufferEncoding = definedExternally,
     )
 
-    fun wrap(stream: ReadableStream) // this
+    fun wrap(stream: ReadableStream) /* this */
 }

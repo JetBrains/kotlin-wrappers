@@ -6,4 +6,4 @@ package testing.library.dom
 
 // Get autocomplete for ARIARole union types, while still supporting another string
 // Ref: https://github.com/microsoft/TypeScript/issues/29729#issuecomment-567871939
-typealias ByRoleMatcher = Any // ARIARole | (string & {})
+typealias ByRoleMatcher = Any /* ARIARole | (string & {}) */

@@ -4,6 +4,6 @@
 
 package tauri.apps.api.core
 
-// export type { InvokeArgs, InvokeOptions };
+/* export type { InvokeArgs, InvokeOptions }; */
 
-// export { transformCallback, Channel, PluginListener, addPluginListener, PermissionState, checkPermissions, requestPermissions, invoke, convertFileSrc, isTauri };
+/* export { transformCallback, Channel, PluginListener, addPluginListener, PermissionState, checkPermissions, requestPermissions, invoke, convertFileSrc, isTauri }; */

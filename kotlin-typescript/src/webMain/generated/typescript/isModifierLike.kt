@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isModifierLike")
-external fun isModifierLikeRaw(node: Node): Boolean // node is ModifierLike
+external fun isModifierLikeRaw(node: Node): Boolean /* node is ModifierLike */

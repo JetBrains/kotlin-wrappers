@@ -985,7 +985,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun getAccentColor(): Any // (string) | (boolean)
+    override fun getAccentColor(): Any /* (string) | (boolean) */
 
     /**
      * Gets the background color of the window in Hex (`#RRGGBB`) format.

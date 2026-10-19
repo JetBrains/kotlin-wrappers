@@ -10,4 +10,4 @@ package tauri.apps.api.tray
  * - **Linux**: Unsupported. The event is not emitted even though the icon is shown,
  * the icon will still show a context menu on right click.
  */
-typealias TrayIconEvent = Any // (TrayIconEventBase<'Click'> & TrayIconClickEvent) | (TrayIconEventBase<'DoubleClick'> & Omit<TrayIconClickEvent, 'buttonState'>) | TrayIconEventBase<'Enter'> | TrayIconEventBase<'Move'> | TrayIconEventBase<'Leave'>
+typealias TrayIconEvent = Any /* (TrayIconEventBase<'Click'> & TrayIconClickEvent) | (TrayIconEventBase<'DoubleClick'> & Omit<TrayIconClickEvent, 'buttonState'>) | TrayIconEventBase<'Enter'> | TrayIconEventBase<'Move'> | TrayIconEventBase<'Leave'> */

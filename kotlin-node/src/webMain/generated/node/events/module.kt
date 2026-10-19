@@ -41,5 +41,5 @@ package node.events
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/events.js)
  */
 
-// import events = require("events");
-// export = events;
+/* import events = require("events"); */
+/* export = events; */

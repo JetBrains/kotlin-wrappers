@@ -12,5 +12,5 @@ external interface RunningCodeOptions :
      * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v24.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      * @experimental
      */
-    override var importModuleDynamically: Any? // DynamicModuleLoader<Script> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
+    override var importModuleDynamically: Any? /* DynamicModuleLoader<Script> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined */
 }

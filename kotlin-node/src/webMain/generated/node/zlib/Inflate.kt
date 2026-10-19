@@ -14,7 +14,7 @@ external class Inflate :
     constructor (options: ZlibOptions = definedExternally)
 
     override val bytesWritten: Double
-    override var shell: Any? // boolean | string | undefined
+    override var shell: Any? /* boolean | string | undefined */
 
     override fun close(callback: () -> Unit)
 

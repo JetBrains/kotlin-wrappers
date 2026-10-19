@@ -20,5 +20,5 @@ external interface NodesVisitor {
         test: (node: Node) -> Boolean = definedExternally,
         start: Double = definedExternally,
         count: Double = definedExternally,
-    ): Any // NodeArray<Node> | (TInArray & undefined)
+    ): Any /* NodeArray<Node> | (TInArray & undefined) */
 }

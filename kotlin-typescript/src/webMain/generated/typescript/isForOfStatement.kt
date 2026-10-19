@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isForOfStatement")
-external fun isForOfStatementRaw(node: Node): Boolean // node is ForOfStatement
+external fun isForOfStatementRaw(node: Node): Boolean /* node is ForOfStatement */

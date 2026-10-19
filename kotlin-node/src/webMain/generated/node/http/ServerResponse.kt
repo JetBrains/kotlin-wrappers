@@ -164,7 +164,7 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
         statusCode: Number,
         statusMessage: String = definedExternally,
         headers: OutgoingHttpHeaders = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -227,13 +227,16 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
         statusCode: Number,
         statusMessage: String = definedExternally,
         headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun writeHead(statusCode: Number) // this
+    fun writeHead(statusCode: Number) /* this */
 
-    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) // this
+    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) /* this */
 
-    fun writeHead(statusCode: Number, headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally) // this
+    fun writeHead(
+        statusCode: Number,
+        headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
+    ) /* this */
 
     /**
      * Sends a HTTP/1.1 102 Processing message to the client, indicating that

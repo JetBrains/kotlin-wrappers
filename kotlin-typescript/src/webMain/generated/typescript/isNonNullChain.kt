@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isNonNullChain")
-external fun isNonNullChainRaw(node: Node): Boolean // node is NonNullChain
+external fun isNonNullChainRaw(node: Node): Boolean /* node is NonNullChain */

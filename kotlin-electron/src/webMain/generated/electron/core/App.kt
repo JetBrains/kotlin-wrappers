@@ -1618,7 +1618,7 @@ external interface App : node.events.EventEmitter {
                             AuthInfo,
                                 (
                         username: String?, /* use undefined for default */
-                        password: String?, // use undefined for default
+                        password: String?, /* use undefined for default */
                     ) -> Unit
                             >
                     >
@@ -1656,7 +1656,7 @@ external interface App : node.events.EventEmitter {
                             String,
                             js.array.ReadonlyArray<Certificate>,
                                 (
-                        certificate: Certificate?, // use undefined for default
+                        certificate: Certificate?, /* use undefined for default */
                     ) -> Unit
                             >
                     >

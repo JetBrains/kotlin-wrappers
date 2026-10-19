@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isEnumDeclaration")
-external fun isEnumDeclarationRaw(node: Node): Boolean // node is EnumDeclaration
+external fun isEnumDeclarationRaw(node: Node): Boolean /* node is EnumDeclaration */

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isClassStaticBlockDeclaration")
-external fun isClassStaticBlockDeclarationRaw(node: Node): Boolean // node is ClassStaticBlockDeclaration
+external fun isClassStaticBlockDeclarationRaw(node: Node): Boolean /* node is ClassStaticBlockDeclaration */

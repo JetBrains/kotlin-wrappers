@@ -16,5 +16,5 @@ external interface BuildOptions {
     var sourceMap: Boolean?
     var inlineSourceMap: Boolean?
     var traceResolution: Boolean?
-// [option: string]: CompilerOptionsValue | undefined;
+    /* [option: string]: CompilerOptionsValue | undefined; */
 }

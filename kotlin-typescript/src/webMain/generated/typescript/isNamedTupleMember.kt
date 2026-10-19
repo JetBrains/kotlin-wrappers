@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isNamedTupleMember")
-external fun isNamedTupleMemberRaw(node: Node): Boolean // node is NamedTupleMember
+external fun isNamedTupleMemberRaw(node: Node): Boolean /* node is NamedTupleMember */

@@ -8,4 +8,4 @@ package typescript
 external fun isParameterPropertyDeclarationRaw(
     node: Node,
     parent: Node,
-): Boolean // node is ParameterPropertyDeclaration
+): Boolean /* node is ParameterPropertyDeclaration */

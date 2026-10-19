@@ -16,7 +16,7 @@ external interface Protocol {
      */
     fun handle(
         scheme: String,
-        handler: (request: GlobalRequest) -> Any, // (GlobalResponse) | (Promise<GlobalResponse>)
+        handler: (request: GlobalRequest) -> Any, /* (GlobalResponse) | (Promise<GlobalResponse>) */
     )
 
     /**

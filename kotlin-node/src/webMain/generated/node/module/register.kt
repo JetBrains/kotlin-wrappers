@@ -6,7 +6,7 @@ package node.module
 
 import web.url.URL
 
-// eslint-disable @definitelytyped/no-unnecessary-generics
+/* eslint-disable @definitelytyped/no-unnecessary-generics */
 
 /**
  * Register a module that exports hooks that customize Node.js module
@@ -24,7 +24,7 @@ import web.url.URL
  */
 external fun <Data /* default is Any? */> register(specifier: String)
 
-// eslint-disable @definitelytyped/no-unnecessary-generics
+/* eslint-disable @definitelytyped/no-unnecessary-generics */
 
 /**
  * Register a module that exports hooks that customize Node.js module
@@ -46,7 +46,7 @@ external fun <Data /* default is Any? */> register(
     options: RegisterOptions<Data> = definedExternally,
 )
 
-// eslint-disable @definitelytyped/no-unnecessary-generics
+/* eslint-disable @definitelytyped/no-unnecessary-generics */
 
 /**
  * Register a module that exports hooks that customize Node.js module
@@ -68,7 +68,7 @@ external fun <Data /* default is Any? */> register(
     options: RegisterOptions<Data> = definedExternally,
 )
 
-// eslint-disable @definitelytyped/no-unnecessary-generics
+/* eslint-disable @definitelytyped/no-unnecessary-generics */
 
 /**
  * Register a module that exports hooks that customize Node.js module
@@ -86,7 +86,7 @@ external fun <Data /* default is Any? */> register(
  */
 external fun <Data /* default is Any? */> register(specifier: URL)
 
-// eslint-disable @definitelytyped/no-unnecessary-generics
+/* eslint-disable @definitelytyped/no-unnecessary-generics */
 
 /**
  * Register a module that exports hooks that customize Node.js module
@@ -108,7 +108,7 @@ external fun <Data /* default is Any? */> register(
     options: RegisterOptions<Data> = definedExternally,
 )
 
-// eslint-disable @definitelytyped/no-unnecessary-generics
+/* eslint-disable @definitelytyped/no-unnecessary-generics */
 
 /**
  * Register a module that exports hooks that customize Node.js module
@@ -135,4 +135,7 @@ external fun <Data /* default is Any? */> register(
     options: RegisterOptions<Data> = definedExternally,
 )
 
-external fun <Data /* default is Any? */> register(specifier: URL, options: RegisterOptions<Data> = definedExternally)
+external fun <Data /* default is Any? */> register(
+    specifier: URL,
+    options: RegisterOptions<Data> = definedExternally,
+)

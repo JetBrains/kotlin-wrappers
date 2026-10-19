@@ -4,4 +4,4 @@
 
 package tauri.apps.api.core
 
-external val SERIALIZE_TO_IPC_FN: Any? // should be inferred
+external val SERIALIZE_TO_IPC_FN: Any? /* should be inferred */

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isIndexSignatureDeclaration")
-external fun isIndexSignatureDeclarationRaw(node: Node): Boolean // node is IndexSignatureDeclaration
+external fun isIndexSignatureDeclarationRaw(node: Node): Boolean /* node is IndexSignatureDeclaration */

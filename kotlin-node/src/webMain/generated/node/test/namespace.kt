@@ -4,8 +4,8 @@
 
 package node.test
 
-// import TestFn = test.TestFn;
+/* import TestFn = test.TestFn; */
 
-// import TestOptions = test.TestOptions;
+/* import TestOptions = test.TestOptions; */
 
-// export = test;
+/* export = test; */

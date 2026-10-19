@@ -108,27 +108,27 @@ open external class Socket : node.stream.Duplex {
      * This function should only be used for reconnecting a socket after`'close'` has been emitted or otherwise it may lead to undefined
      * behavior.
      */
-    fun connect(options: SocketConnectOpts, connectionListener: () -> Unit = definedExternally) // this
+    fun connect(options: SocketConnectOpts, connectionListener: () -> Unit = definedExternally) /* this */
 
-    fun connect(port: Number, host: String, connectionListener: () -> Unit = definedExternally) // this
+    fun connect(port: Number, host: String, connectionListener: () -> Unit = definedExternally) /* this */
 
-    fun connect(port: Number, connectionListener: () -> Unit = definedExternally) // this
+    fun connect(port: Number, connectionListener: () -> Unit = definedExternally) /* this */
 
-    fun connect(path: String, connectionListener: () -> Unit = definedExternally) // this
+    fun connect(path: String, connectionListener: () -> Unit = definedExternally) /* this */
 
     /**
      * Set the encoding for the socket as a `Readable Stream`. See `readable.setEncoding()` for more information.
      * @since v0.1.90
      * @return The socket itself.
      */
-    override fun setEncoding(encoding: node.buffer.BufferEncoding) // this
+    override fun setEncoding(encoding: node.buffer.BufferEncoding) /* this */
 
     /**
      * Pauses the reading of data. That is, `'data'` events will not be emitted.
      * Useful to throttle back an upload.
      * @return The socket itself.
      */
-    override fun pause() // this
+    override fun pause() /* this */
 
     /**
      * Close the TCP connection by sending an RST packet and destroy the stream.
@@ -137,13 +137,13 @@ open external class Socket : node.stream.Duplex {
      * If this is not a TCP socket (for example, a pipe), calling this method will immediately throw an `ERR_INVALID_HANDLE_TYPE` Error.
      * @since v18.3.0, v16.17.0
      */
-    fun resetAndDestroy() // this
+    fun resetAndDestroy() /* this */
 
     /**
      * Resumes reading after a call to `socket.pause()`.
      * @return The socket itself.
      */
-    override fun resume() // this
+    override fun resume() /* this */
 
     /**
      * Sets the socket to timeout after `timeout` milliseconds of inactivity on
@@ -166,7 +166,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.1.90
      * @return The socket itself.
      */
-    fun setTimeout(timeout: Number, callback: () -> Unit = definedExternally) // this
+    fun setTimeout(timeout: Number, callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Enable/disable the use of Nagle's algorithm.
@@ -183,7 +183,7 @@ open external class Socket : node.stream.Duplex {
      * @param [noDelay=true]
      * @return The socket itself.
      */
-    fun setNoDelay(noDelay: Boolean = definedExternally) // this
+    fun setNoDelay(noDelay: Boolean = definedExternally) /* this */
 
     /**
      * Enable/disable keep-alive functionality, and optionally set the initial
@@ -204,14 +204,14 @@ open external class Socket : node.stream.Duplex {
      * @param [initialDelay=0]
      * @return The socket itself.
      */
-    fun setKeepAlive(enable: Boolean = definedExternally, initialDelay: Number = definedExternally) // this
+    fun setKeepAlive(enable: Boolean = definedExternally, initialDelay: Number = definedExternally) /* this */
 
     /**
      * Returns the bound `address`, the address `family` name and `port` of the
      * socket as reported by the operating system:`{ port: 12346, family: 'IPv4', address: '127.0.0.1' }`
      * @since v0.1.90
      */
-    fun address(): Any // AddressInfo | {}
+    fun address(): Any /* AddressInfo | {} */
 
     /**
      * Calling `unref()` on a socket will allow the program to exit if this is the only
@@ -219,7 +219,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.9.1
      * @return The socket itself.
      */
-    fun unref() // this
+    fun unref() /* this */
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref`ed socket will _not_ let the program exit if it's the only socket left (the default behavior).
@@ -227,7 +227,7 @@ open external class Socket : node.stream.Duplex {
      * @since v0.9.1
      * @return The socket itself.
      */
-    fun ref() // this
+    fun ref() /* this */
 
     /**
      * This property is only present if the family autoselection algorithm is enabled in `socket.connect(options)`
@@ -360,7 +360,7 @@ open external class Socket : node.stream.Duplex {
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
-    override fun end(cb: () -> Unit) // this
+    override fun end(cb: () -> Unit) /* this */
 
     /**
      * Half-closes the socket, with one final chunk of data.
@@ -369,7 +369,7 @@ open external class Socket : node.stream.Duplex {
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
-    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) // this
+    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) /* this */
 
     /**
      * Half-closes the socket, with one final chunk of data.
@@ -378,7 +378,7 @@ open external class Socket : node.stream.Duplex {
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
-    override fun end(data: String, cb: () -> Unit) // this
+    override fun end(data: String, cb: () -> Unit) /* this */
 
     /**
      * Half-closes the socket, with one final chunk of data.
@@ -392,7 +392,7 @@ open external class Socket : node.stream.Duplex {
         str: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding = definedExternally,
         cb: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Half-closes the socket, with one final chunk of data.
@@ -402,7 +402,7 @@ open external class Socket : node.stream.Duplex {
      * @param callback Optional callback for when the socket is finished.
      * @return The socket itself.
      */
-    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) // this
+    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) /* this */
 
     /**
      * events.EventEmitter
@@ -419,7 +419,7 @@ open external class Socket : node.stream.Duplex {
      *   11. ready
      *   12. timeout
      */
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun emit(
         event: String,
@@ -431,13 +431,19 @@ open external class Socket : node.stream.Duplex {
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple1<Boolean>>

@@ -1155,7 +1155,7 @@ external class Session : EventEmitter {
         params: node.inspector.io.CloseParameterType = definedExternally,
     ): js.void.Void
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1292,7 +1292,7 @@ external class Session : EventEmitter {
         vararg args: Any?,
     ): Boolean
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1419,7 +1419,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1546,7 +1546,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1673,7 +1673,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isQuestionDotToken")
-external fun isQuestionDotTokenRaw(node: Node): Boolean // node is QuestionDotToken
+external fun isQuestionDotTokenRaw(node: Node): Boolean /* node is QuestionDotToken */

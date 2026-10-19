@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isTypeAssertionExpression")
-external fun isTypeAssertionExpressionRaw(node: Node): Boolean // node is TypeAssertion
+external fun isTypeAssertionExpressionRaw(node: Node): Boolean /* node is TypeAssertion */

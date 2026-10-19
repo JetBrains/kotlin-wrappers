@@ -13,5 +13,5 @@ external interface ExecFileException : js.errors.JsError {
     var errno: Double?
     var path: String?
     var syscall: String?
-    var code: Any? // string | number | null
+    var code: Any? /* string | number | null */
 }

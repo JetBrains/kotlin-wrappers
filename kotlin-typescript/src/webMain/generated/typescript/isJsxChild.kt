@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxChild")
-external fun isJsxChildRaw(node: Node): Boolean // node is JsxChild
+external fun isJsxChildRaw(node: Node): Boolean /* node is JsxChild */

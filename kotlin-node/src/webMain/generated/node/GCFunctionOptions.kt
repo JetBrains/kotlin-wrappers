@@ -5,5 +5,5 @@ package node
 @kotlinx.js.JsPlainObject
 external interface GCFunctionOptions : GCOptions {
     @JsName("execution")
-    var asyncExecution: String // "async"
+    var asyncExecution: String /* "async" */
 }

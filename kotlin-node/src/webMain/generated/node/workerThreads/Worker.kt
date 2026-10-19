@@ -305,9 +305,9 @@ external class Worker : EventEmitter {
     @seskar.js.JsAsync
     suspend fun startHeapProfile(): HeapProfileHandle
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun emit(
         event: String,
@@ -319,29 +319,38 @@ external class Worker : EventEmitter {
         vararg args: Any?,
     ): Boolean
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun removeListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun removeListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    fun off(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun off(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun off(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun off(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     @web.events.JsEvent("error")
     val errorEvent: node.events.EventInstance<js.array.Tuple1<Any?>>

@@ -9,4 +9,4 @@ package node.util.types
  * @since v16.2.0
  */
 @JsName("isCryptoKey")
-external fun isCryptoKeyRaw(value: Any?): Boolean // object is webcrypto.CryptoKey
+external fun isCryptoKeyRaw(value: Any?): Boolean /* object is webcrypto.CryptoKey */

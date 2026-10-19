@@ -40,7 +40,7 @@ external interface SharedTexture {
      * @experimental
      */
     fun setSharedTextureReceiver(
-        callback: Function<js.promise.Promise<js.void.Void>>, // (receivedSharedTextureData: ReceivedSharedTextureData, ...args: any[]) => Promise<void>
+        callback: Function<js.promise.Promise<js.void.Void>>, /* (receivedSharedTextureData: ReceivedSharedTextureData, ...args: any[]) => Promise<void> */
     )
 
     /**

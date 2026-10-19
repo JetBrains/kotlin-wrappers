@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isPropertyAccessChain")
-external fun isPropertyAccessChainRaw(node: Node): Boolean // node is PropertyAccessChain
+external fun isPropertyAccessChainRaw(node: Node): Boolean /* node is PropertyAccessChain */

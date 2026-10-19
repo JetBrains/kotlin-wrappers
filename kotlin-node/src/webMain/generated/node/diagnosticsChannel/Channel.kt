@@ -16,7 +16,7 @@ import node.asyncHooks.AsyncLocalStorage
  * @since v15.1.0, v14.17.0
  */
 external class Channel<StoreType /* default is Any? */, ContextType /* default is StoreType */> {
-    val name: Any // string | symbol
+    val name: Any /* string | symbol */
 
     /**
      * Check if there are active subscribers to this channel. This is helpful if
@@ -188,6 +188,6 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
         context: ContextType,
         fn: Function<Result>, /* (this: ThisArg, ...args: Args) => Result */
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, // Args
+        vararg args: Any?, /* Args */
     ): Result
 }

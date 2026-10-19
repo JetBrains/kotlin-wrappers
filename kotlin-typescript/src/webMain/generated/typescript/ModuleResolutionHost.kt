@@ -17,5 +17,5 @@ external interface ModuleResolutionHost {
     val realpath: ((path: String) -> String)?
     val getCurrentDirectory: (() -> String)?
     val getDirectories: ((path: String) -> js.array.ReadonlyArray<String>)?
-    var useCaseSensitiveFileNames: Any? // boolean | (() => boolean) | undefined
+    var useCaseSensitiveFileNames: Any? /* boolean | (() => boolean) | undefined */
 }

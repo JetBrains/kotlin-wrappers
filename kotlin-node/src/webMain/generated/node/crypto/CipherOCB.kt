@@ -6,7 +6,10 @@ import node.buffer.NonSharedBuffer
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface CipherOCB : Cipheriv {
-    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: CipherOCBSetAADOptions = definedExternally) // this
+    fun setAAD(
+        buffer: js.buffer.ArrayBufferView<*>,
+        options: CipherOCBSetAADOptions = definedExternally,
+    ) /* this */
 
     fun getAuthTag(): NonSharedBuffer
 }

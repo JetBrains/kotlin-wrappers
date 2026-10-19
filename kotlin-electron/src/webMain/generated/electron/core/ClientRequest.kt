@@ -71,7 +71,7 @@ external class ClientRequest : NodeEventEmitter {
      * Sends the last chunk of the request data. Subsequent write or end operations
      * will not be allowed. The `finish` event is emitted just after the end operation.
      */
-    fun end() // this
+    fun end() /* this */
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
@@ -81,7 +81,7 @@ external class ClientRequest : NodeEventEmitter {
         chunk: String = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
@@ -91,7 +91,7 @@ external class ClientRequest : NodeEventEmitter {
         chunk: Buffer<*> = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Continues any pending redirection. Can only be called during a `'redirect'`
@@ -214,7 +214,7 @@ external class ClientRequest : NodeEventEmitter {
                     AuthInfo,
                         (
                 username: String?, /* use undefined for default */
-                password: String?, // use undefined for default
+                password: String?, /* use undefined for default */
             ) -> Unit
                     >
             >

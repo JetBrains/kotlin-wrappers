@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocDeprecatedTag")
-external fun isJSDocDeprecatedTagRaw(node: Node): Boolean // node is JSDocDeprecatedTag
+external fun isJSDocDeprecatedTagRaw(node: Node): Boolean /* node is JSDocDeprecatedTag */

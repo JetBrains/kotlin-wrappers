@@ -14,6 +14,6 @@ external interface UrlObject {
     var protocol: String?
     var search: String?
     var slashes: Boolean?
-    var port: Any? // string | number | null | undefined
-    var query: Any? // string | null | ParsedUrlQueryInput | undefined
+    var port: Any? /* string | number | null | undefined */
+    var query: Any? /* string | null | ParsedUrlQueryInput | undefined */
 }

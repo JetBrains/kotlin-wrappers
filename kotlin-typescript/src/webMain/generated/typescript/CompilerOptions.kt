@@ -137,5 +137,5 @@ external interface CompilerOptions {
     var erasableSyntaxOnly: Boolean?
     var esModuleInterop: Boolean?
     var useDefineForClassFields: Boolean?
-// [option: string]: CompilerOptionsValue | TsConfigSourceFile | undefined;
+    /* [option: string]: CompilerOptionsValue | TsConfigSourceFile | undefined; */
 }

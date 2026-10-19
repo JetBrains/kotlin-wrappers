@@ -40,7 +40,7 @@ external class Position {
 
     constructor (position: PhysicalPosition)
 
-    var position: Any // LogicalPosition | PhysicalPosition
+    var position: Any /* LogicalPosition | PhysicalPosition */
 
     /**
      * Converts the wrapped position to a logical one.

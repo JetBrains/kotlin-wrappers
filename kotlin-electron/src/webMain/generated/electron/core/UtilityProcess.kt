@@ -115,7 +115,7 @@ external class UtilityProcess : NodeEventEmitter {
                     AuthInfo,
                         (
                 username: String?, /* use undefined for default */
-                password: String?, // use undefined for default
+                password: String?, /* use undefined for default */
             ) -> Unit
                     >
             >

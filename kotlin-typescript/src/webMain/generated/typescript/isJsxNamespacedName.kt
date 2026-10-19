@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxNamespacedName")
-external fun isJsxNamespacedNameRaw(node: Node): Boolean // node is JsxNamespacedName
+external fun isJsxNamespacedNameRaw(node: Node): Boolean /* node is JsxNamespacedName */

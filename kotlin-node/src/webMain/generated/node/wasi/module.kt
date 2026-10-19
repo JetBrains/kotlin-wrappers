@@ -76,4 +76,4 @@ package node.wasi
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/wasi.js)
  */
 
-// export * from "wasi";
+/* export * from "wasi"; */

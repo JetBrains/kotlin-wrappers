@@ -97,7 +97,7 @@ external class DatabaseSync : js.disposable.Disposable.Mixin {
     fun function(
         name: String,
         options: FunctionOptions,
-        func: Function<SQLInputValue>, // (...args: SQLOutputValue[]) => SQLInputValue
+        func: Function<SQLInputValue>, /* (...args: SQLOutputValue[]) => SQLInputValue */
     )
 
     fun function(name: String, func: Function<SQLInputValue> /* (...args: SQLOutputValue[]) => SQLInputValue */)

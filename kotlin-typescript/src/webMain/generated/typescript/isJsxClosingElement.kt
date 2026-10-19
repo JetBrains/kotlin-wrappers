@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJsxClosingElement")
-external fun isJsxClosingElementRaw(node: Node): Boolean // node is JsxClosingElement
+external fun isJsxClosingElementRaw(node: Node): Boolean /* node is JsxClosingElement */

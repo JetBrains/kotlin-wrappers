@@ -190,13 +190,13 @@ open external class _Interface :
      * Calling `rl.pause()` does not immediately pause other events (including `'line'`) from being emitted by the `Interface` instance.
      * @since v0.3.4
      */
-    fun pause() // this
+    fun pause() /* this */
 
     /**
      * The `rl.resume()` method resumes the `input` stream if it has been paused.
      * @since v0.3.4
      */
-    fun resume() // this
+    fun resume() /* this */
 
     /**
      * The `rl.close()` method closes the `Interface` instance and
@@ -292,7 +292,7 @@ open external class _Interface :
      * 7. SIGTSTP
      * 8. history
      */
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     open fun emit(
         event: String,
@@ -304,13 +304,16 @@ open external class _Interface :
         vararg args: Any?,
     ): Boolean
 
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>

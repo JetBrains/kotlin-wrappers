@@ -175,5 +175,5 @@ open external class Decipheriv : node.stream.Transform {
      * @param [autoPadding=true]
      * @return for method chaining.
      */
-    fun setAutoPadding(auto_padding: Boolean = definedExternally) // this
+    fun setAutoPadding(auto_padding: Boolean = definedExternally) /* this */
 }

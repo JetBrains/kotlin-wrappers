@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isEntityName")
-external fun isEntityNameRaw(node: Node): Boolean // node is EntityName
+external fun isEntityNameRaw(node: Node): Boolean /* node is EntityName */

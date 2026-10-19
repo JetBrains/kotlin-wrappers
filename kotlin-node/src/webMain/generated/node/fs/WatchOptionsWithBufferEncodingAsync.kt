@@ -5,5 +5,5 @@ package node.fs
 @kotlinx.js.JsPlainObject
 external interface WatchOptionsWithBufferEncoding : WatchOptions {
     @JsName("encoding")
-    var bufferEncoding: String // "buffer"
+    var bufferEncoding: String /* "buffer" */
 }

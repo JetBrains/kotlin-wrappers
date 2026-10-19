@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isParenthesizedTypeNode")
-external fun isParenthesizedTypeNodeRaw(node: Node): Boolean // node is ParenthesizedTypeNode
+external fun isParenthesizedTypeNodeRaw(node: Node): Boolean /* node is ParenthesizedTypeNode */

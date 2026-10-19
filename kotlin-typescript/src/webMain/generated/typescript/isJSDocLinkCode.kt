@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocLinkCode")
-external fun isJSDocLinkCodeRaw(node: Node): Boolean // node is JSDocLinkCode
+external fun isJSDocLinkCodeRaw(node: Node): Boolean /* node is JSDocLinkCode */

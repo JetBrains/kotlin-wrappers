@@ -5,5 +5,5 @@ package node.crypto
 @kotlinx.js.JsPlainObject
 external interface GeneratePrimeOptionsBigInt : GeneratePrimeOptions {
     @JsName("bigint")
-    var requiredBigInt: Boolean // true
+    var requiredBigInt: Boolean /* true */
 }

@@ -30,7 +30,7 @@ external interface ZlibOptions {
     var strategy: Double?
 
     /** deflate/inflate only, empty dictionary by default */
-    var dictionary: Any? // NodeJS.ArrayBufferView | ArrayBuffer | undefined
+    var dictionary: Any? /* NodeJS.ArrayBufferView | ArrayBuffer | undefined */
 
     /**
      * If `true`, returns an object with `buffer` and `engine`.

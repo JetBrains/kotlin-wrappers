@@ -18,7 +18,7 @@ external class LogicalSize {
     constructor(`object`: LogicalSizeObjectTemp)
     constructor (`object`: LogicalSizeObject)
 
-    val type: Any? // type isn't declared
+    val type: Any? /* type isn't declared */
     var width: Double
     var height: Double
 

@@ -121,7 +121,7 @@ open external class ChildProcess : EventEmitter {
             Readable?, // stdout
             Readable?, // stderr
             Any? /* Readable | Writable | null | undefined */, // extra
-            Any? // Readable | Writable | null | undefined
+            Any? /* Readable | Writable | null | undefined */
             >
 
     /**
@@ -606,7 +606,7 @@ open external class ChildProcess : EventEmitter {
      * 5. message
      * 6. spawn
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun emit(
         event: String,
@@ -618,13 +618,13 @@ open external class ChildProcess : EventEmitter {
         vararg args: Any?,
     ): Boolean
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple2<Double?, node.process.Signals?>>

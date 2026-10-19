@@ -682,7 +682,7 @@ external class Session : NodeEventEmitter {
             webContents: WebContents,
             permission: SessionSetPermissionRequestHandlerHandlerPermission,
             callback: (permissionGranted: Boolean) -> Unit,
-            details: Any, // (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest)
+            details: Any, /* (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest) */
         ) -> Unit
         )?,
     )
@@ -892,7 +892,7 @@ external class Session : NodeEventEmitter {
                     Event<*>,
                     SelectHidDeviceDetails,
                         (
-                deviceId: String?, // use undefined for default
+                deviceId: String?, /* use undefined for default */
             ) -> Unit
                     >
             >
@@ -916,7 +916,7 @@ external class Session : NodeEventEmitter {
                     Event<*>,
                     SelectUsbDeviceDetails,
                         (
-                deviceId: String?, // use undefined for default
+                deviceId: String?, /* use undefined for default */
             ) -> Unit
                     >
             >
@@ -927,7 +927,7 @@ external class Session : NodeEventEmitter {
                     Event<*>,
                     SelectWebauthnAccountDetails,
                         (
-                credentialId: String?, // use undefined for default
+                credentialId: String?, /* use undefined for default */
             ) -> Unit
                     >
             >

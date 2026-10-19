@@ -8,7 +8,7 @@ external interface WritableOptions<T : Writable /* default is Writable */> : Str
     var defaultEncoding: node.buffer.BufferEncoding?
     var write: (
         (
-        // this: T,
+        /* this: T, */
         chunk: Any?,
         encoding: node.buffer.BufferEncoding,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
@@ -16,7 +16,7 @@ external interface WritableOptions<T : Writable /* default is Writable */> : Str
     )?
     var writev: (
         (
-        // this: T,
+        /* this: T, */
         chunks: js.array.ReadonlyArray<WritableOptionsWritevChunksItem>,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ) -> Unit

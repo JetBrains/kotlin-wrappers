@@ -254,7 +254,7 @@ external interface TestContext {
      * If the test uses callbacks, the callback function is passed as the second argument.
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
-    var test: Any // typeof test
+    var test: Any /* typeof test */
 
     /**
      * This method polls a `condition` function until that function either returns

@@ -14,10 +14,10 @@ external class PerformanceMark : PerformanceEntry {
     val detail: Any?
     override val duration: Double
 
-    // 0
+    /* 0 */
     @Deprecated(message = "use markEntryType", level = DeprecationLevel.HIDDEN)
     override val entryType: EntryType
 
     @JsName("entryType")
-    val markEntryType: String // "mark"
+    val markEntryType: String /* "mark" */
 }

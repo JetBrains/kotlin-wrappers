@@ -7,4 +7,4 @@ package typescript
 @JsName("isReadonlyKeywordOrPlusOrMinusToken")
 external fun isReadonlyKeywordOrPlusOrMinusTokenRaw(
     node: Node,
-): Boolean // node is ReadonlyKeyword | PlusToken | MinusToken
+): Boolean /* node is ReadonlyKeyword | PlusToken | MinusToken */

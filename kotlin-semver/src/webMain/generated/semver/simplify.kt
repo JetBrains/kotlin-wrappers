@@ -16,7 +16,7 @@ external fun simplify(
     ranges: js.array.ReadonlyArray<String>,
     range: String,
     options: Options = definedExternally,
-): Any // string | Range
+): Any /* string | Range */
 
 /**
  * Return a "simplified" range that matches the same items in `versions` list as the range specified.
@@ -30,4 +30,4 @@ external fun simplify(
     ranges: js.array.ReadonlyArray<String>,
     range: Range,
     options: Options = definedExternally,
-): Any // string | Range
+): Any /* string | Range */

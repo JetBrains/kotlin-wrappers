@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isPropertyName")
-external fun isPropertyNameRaw(node: Node): Boolean // node is PropertyName
+external fun isPropertyNameRaw(node: Node): Boolean /* node is PropertyName */

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isStringLiteral")
-external fun isStringLiteralRaw(node: Node): Boolean // node is StringLiteral
+external fun isStringLiteralRaw(node: Node): Boolean /* node is StringLiteral */

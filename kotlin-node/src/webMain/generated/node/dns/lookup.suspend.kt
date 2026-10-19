@@ -21,7 +21,7 @@ external suspend fun lookup(
 ): js.array.ReadonlyArray<LookupAddress>
 
 @seskar.js.JsAsync
-external suspend fun lookup(hostname: String, options: LookupOptions): Any // LookupAddress | LookupAddress[]
+external suspend fun lookup(hostname: String, options: LookupOptions): Any /* LookupAddress | LookupAddress[] */
 
 @seskar.js.JsAsync
 external suspend fun lookup(hostname: String): LookupAddress

@@ -118,6 +118,6 @@ external fun exec(
     callback: (
         error: ExecException?,
         stdout: Any, /* string | NonSharedBuffer */
-        stderr: Any, // string | NonSharedBuffer
+        stderr: Any, /* string | NonSharedBuffer */
     ) -> Unit = definedExternally,
 ): ChildProcess

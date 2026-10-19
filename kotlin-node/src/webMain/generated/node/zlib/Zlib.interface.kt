@@ -4,7 +4,7 @@ package node.zlib
 
 external interface Zlib {
     val bytesWritten: Double
-    var shell: Any? // boolean | string | undefined
+    var shell: Any? /* boolean | string | undefined */
 
     fun close(callback: () -> Unit = definedExternally)
 

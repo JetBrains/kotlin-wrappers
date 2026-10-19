@@ -6,34 +6,34 @@ package testing.library.dom
 
 // unhandled import: * as prettyFormat from "pretty-format"
 
-// export { prettyFormat };
+/* export { prettyFormat }; */
 
 // TypeScript Version: 3.8
 
-// export { queries, queryHelpers, within };
+/* export { queries, queryHelpers, within }; */
 
-// export * from './queries';
+/* export * from './queries'; */
 
-// export * from './query-helpers';
+/* export * from './query-helpers'; */
 
-// export * from './screen';
+/* export * from './screen'; */
 
-// export * from './wait-for';
+/* export * from './wait-for'; */
 
-// export * from './wait-for-element-to-be-removed';
+/* export * from './wait-for-element-to-be-removed'; */
 
-// export * from './matches';
+/* export * from './matches'; */
 
-// export * from './get-node-text';
+/* export * from './get-node-text'; */
 
-// export * from './events';
+/* export * from './events'; */
 
-// export * from './get-queries-for-element';
+/* export * from './get-queries-for-element'; */
 
-// export * from './pretty-dom';
+/* export * from './pretty-dom'; */
 
-// export * from './role-helpers';
+/* export * from './role-helpers'; */
 
-// export * from './config';
+/* export * from './config'; */
 
-// export * from './suggestions';
+/* export * from './suggestions'; */

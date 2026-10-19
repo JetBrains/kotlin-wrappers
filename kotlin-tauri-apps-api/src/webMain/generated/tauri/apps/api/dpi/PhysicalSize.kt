@@ -20,7 +20,7 @@ external class PhysicalSize {
     constructor(`object`: PhysicalSizeObjectTemp)
     constructor (`object`: PhysicalSizeObject)
 
-    val type: Any? // type isn't declared
+    val type: Any? /* type isn't declared */
     var width: Double
     var height: Double
 

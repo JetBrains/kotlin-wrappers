@@ -12,4 +12,4 @@ package testing.library.react
 
 // @ts-ignore
 
-// export * from '@testing-library/dom';
+/* export * from '@testing-library/dom'; */

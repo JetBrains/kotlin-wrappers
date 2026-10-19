@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isMethodSignature")
-external fun isMethodSignatureRaw(node: Node): Boolean // node is MethodSignature
+external fun isMethodSignatureRaw(node: Node): Boolean /* node is MethodSignature */

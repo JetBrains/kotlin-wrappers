@@ -13,5 +13,5 @@ external interface ProtocolResponseUploadData {
     /**
      * Content to be sent.
      */
-    var data: Any // (string) | (Buffer)
+    var data: Any /* (string) | (Buffer) */
 }

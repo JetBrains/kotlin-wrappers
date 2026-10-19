@@ -4,5 +4,5 @@ package node.http2
 
 @kotlinx.js.JsPlainObject
 external interface AlternativeServiceOptions {
-    var origin: Any // number | string | url.URL
+    var origin: Any /* number | string | url.URL */
 }

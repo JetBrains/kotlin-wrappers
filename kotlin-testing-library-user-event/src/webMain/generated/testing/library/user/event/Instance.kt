@@ -14,12 +14,12 @@ import web.events.Event
 external interface Instance : UserEventApi {
     var config: Config
     var dispatchEvent: (
-        // this: Instance,
+        /* this: Instance, */
         target: Element,
         event: Event,
-        preventDefault: Boolean?, // use undefined for default
+        preventDefault: Boolean?, /* use undefined for default */
     ) -> Boolean
-    var dispatchUIEvent: Function<Any?> // <K extends EventType>(this: Instance, target: Element, type: K, init?: EventTypeInit<K> | undefined, preventDefault?: boolean | undefined) => boolean
+    var dispatchUIEvent: Function<Any?> /* <K extends EventType>(this: Instance, target: Element, type: K, init?: EventTypeInit<K> | undefined, preventDefault?: boolean | undefined) => boolean */
     var system: System
     var levelRefs: js.objects.ReadonlyRecord<Double, Any?>
 }

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isIntersectionTypeNode")
-external fun isIntersectionTypeNodeRaw(node: Node): Boolean // node is IntersectionTypeNode
+external fun isIntersectionTypeNodeRaw(node: Node): Boolean /* node is IntersectionTypeNode */

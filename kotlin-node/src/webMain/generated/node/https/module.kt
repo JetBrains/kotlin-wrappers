@@ -10,4 +10,4 @@ package node.https
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/https.js)
  */
 
-// export * from "https";
+/* export * from "https"; */

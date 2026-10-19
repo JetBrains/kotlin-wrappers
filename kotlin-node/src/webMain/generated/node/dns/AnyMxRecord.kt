@@ -4,5 +4,5 @@ package node.dns
 
 @kotlinx.js.JsPlainObject
 external interface AnyMxRecord : MxRecord {
-    var type: String // "MX"
+    var type: String /* "MX" */
 }

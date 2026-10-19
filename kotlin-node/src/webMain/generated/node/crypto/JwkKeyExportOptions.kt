@@ -4,5 +4,5 @@ package node.crypto
 
 @kotlinx.js.JsPlainObject
 external interface JwkKeyExportOptions {
-    var format: String // "jwk"
+    var format: String /* "jwk" */
 }

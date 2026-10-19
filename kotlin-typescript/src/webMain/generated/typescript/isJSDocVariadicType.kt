@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocVariadicType")
-external fun isJSDocVariadicTypeRaw(node: Node): Boolean // node is JSDocVariadicType
+external fun isJSDocVariadicTypeRaw(node: Node): Boolean /* node is JSDocVariadicType */

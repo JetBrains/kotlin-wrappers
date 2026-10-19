@@ -140,6 +140,6 @@ external class BlockList {
          * @since v22.13.0
          * @param value Any JS value
          */
-        fun isBlockList(value: Any?): Boolean // value is BlockList
+        fun isBlockList(value: Any?): Boolean /* value is BlockList */
     }
 }

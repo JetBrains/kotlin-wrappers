@@ -35,9 +35,9 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     fun setTimeout(
         msecs: Number = definedExternally,
         callback: (socket: Socket) -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun setTimeout(callback: (socket: Socket) -> Unit) // this
+    fun setTimeout(callback: (socket: Socket) -> Unit) /* this */
 
     /**
      * Limits maximum incoming headers count. If set to 0, no limit will be applied.
@@ -147,20 +147,26 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      */
     open fun closeIdleConnections()
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun emit(
         event: String,
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

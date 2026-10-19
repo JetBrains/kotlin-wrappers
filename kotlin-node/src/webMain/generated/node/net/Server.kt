@@ -63,39 +63,39 @@ open external class Server : EventEmitter {
         hostname: String = definedExternally,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     fun listen(
         port: Number = definedExternally,
         hostname: String = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     fun listen(
         port: Number = definedExternally,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun listen(port: Number = definedExternally, listeningListener: () -> Unit = definedExternally) // this
+    fun listen(port: Number = definedExternally, listeningListener: () -> Unit = definedExternally) /* this */
 
     fun listen(
         path: String,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun listen(path: String, listeningListener: () -> Unit = definedExternally) // this
+    fun listen(path: String, listeningListener: () -> Unit = definedExternally) /* this */
 
-    fun listen(options: ListenOptions, listeningListener: () -> Unit = definedExternally) // this
+    fun listen(options: ListenOptions, listeningListener: () -> Unit = definedExternally) /* this */
 
     fun listen(
         handle: Any?,
         backlog: Number = definedExternally,
         listeningListener: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun listen(handle: Any?, listeningListener: () -> Unit = definedExternally) // this
+    fun listen(handle: Any?, listeningListener: () -> Unit = definedExternally) /* this */
 
     /**
      * Stops the server from accepting new connections and keeps existing
@@ -109,7 +109,7 @@ open external class Server : EventEmitter {
      */
     fun close(
         callback: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Returns the bound `address`, the address `family` name, and `port` of the server
@@ -137,7 +137,7 @@ open external class Server : EventEmitter {
      * emitted or after calling `server.close()`.
      * @since v0.1.90
      */
-    fun address(): Any? // AddressInfo | string | null
+    fun address(): Any? /* AddressInfo | string | null */
 
     /**
      * Asynchronously get the number of concurrent connections on the server. Works
@@ -146,21 +146,21 @@ open external class Server : EventEmitter {
      * Callback should take two arguments `err` and `count`.
      * @since v0.9.7
      */
-    fun getConnections(cb: (error: js.errors.JsError?, count: Double) -> Unit) // this
+    fun getConnections(cb: (error: js.errors.JsError?, count: Double) -> Unit) /* this */
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref`ed server will _not_ let the program exit if it's the only server left (the default behavior).
      * If the server is `ref`ed calling `ref()` again will have no effect.
      * @since v0.9.1
      */
-    fun ref() // this
+    fun ref() /* this */
 
     /**
      * Calling `unref()` on a server will allow the program to exit if this is the only
      * active server in the event system. If the server is already `unref`ed calling`unref()` again will have no effect.
      * @since v0.9.1
      */
-    fun unref() // this
+    fun unref() /* this */
 
     /**
      * Set this property to reject connections when the server's connection count gets
@@ -187,7 +187,7 @@ open external class Server : EventEmitter {
      *   4. listening
      *   5. drop
      */
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     open fun emit(
         event: String,
@@ -199,13 +199,16 @@ open external class Server : EventEmitter {
         vararg args: Any?,
     ): Boolean
 
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>

@@ -12,7 +12,7 @@ package node.tty
 open external class WriteStream : node.net.Socket {
     constructor (fd: Number)
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun emit(
         event: String,
@@ -24,13 +24,19 @@ open external class WriteStream : node.net.Socket {
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     /**
      * `writeStream.clearLine()` clears the current line of this `WriteStream` in a

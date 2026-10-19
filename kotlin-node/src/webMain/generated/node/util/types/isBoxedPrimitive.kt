@@ -20,4 +20,4 @@ package node.util.types
  * @since v10.11.0
  */
 @JsName("isBoxedPrimitive")
-external fun isBoxedPrimitiveRaw(value: Any?): Boolean // object is String | Number | BigInt | Boolean | Symbol
+external fun isBoxedPrimitiveRaw(value: Any?): Boolean /* object is String | Number | BigInt | Boolean | Symbol */

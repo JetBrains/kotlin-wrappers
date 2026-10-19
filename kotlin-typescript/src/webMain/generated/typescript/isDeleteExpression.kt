@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isDeleteExpression")
-external fun isDeleteExpressionRaw(node: Node): Boolean // node is DeleteExpression
+external fun isDeleteExpressionRaw(node: Node): Boolean /* node is DeleteExpression */

@@ -5,5 +5,5 @@ package node.crypto
 @kotlinx.js.JsPlainObject
 external interface OneShotDigestOptionsWithBufferEncoding : OneShotDigestOptions {
     @JsName("outputEncoding")
-    var bufferOutputEncoding: String // "buffer"
+    var bufferOutputEncoding: String /* "buffer" */
 }

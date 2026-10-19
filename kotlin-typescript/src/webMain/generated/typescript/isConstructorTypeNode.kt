@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isConstructorTypeNode")
-external fun isConstructorTypeNodeRaw(node: Node): Boolean // node is ConstructorTypeNode
+external fun isConstructorTypeNodeRaw(node: Node): Boolean /* node is ConstructorTypeNode */

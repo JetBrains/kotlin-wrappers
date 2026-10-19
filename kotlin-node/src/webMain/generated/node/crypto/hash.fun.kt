@@ -139,4 +139,8 @@ external fun hash(
 
 external fun hash(algorithm: String, data: BinaryLike, options: String /* "buffer" */): NonSharedBuffer
 
-external fun hash(algorithm: String, data: BinaryLike, options: OneShotDigestOptions): Any // string | NonSharedBuffer
+external fun hash(
+    algorithm: String,
+    data: BinaryLike,
+    options: OneShotDigestOptions,
+): Any /* string | NonSharedBuffer */

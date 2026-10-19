@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isBinaryExpression")
-external fun isBinaryExpressionRaw(node: Node): Boolean // node is BinaryExpression
+external fun isBinaryExpressionRaw(node: Node): Boolean /* node is BinaryExpression */

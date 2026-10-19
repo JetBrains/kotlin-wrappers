@@ -7,12 +7,12 @@ external interface Argon2Parameters {
     /**
      * REQUIRED, this is the password for password hashing applications of Argon2.
      */
-    var message: Any // string | ArrayBuffer | NodeJS.ArrayBufferView
+    var message: Any /* string | ArrayBuffer | NodeJS.ArrayBufferView */
 
     /**
      * REQUIRED, must be at least 8 bytes long. This is the salt for password hashing applications of Argon2.
      */
-    var nonce: Any // string | ArrayBuffer | NodeJS.ArrayBufferView
+    var nonce: Any /* string | ArrayBuffer | NodeJS.ArrayBufferView */
 
     /**
      * REQUIRED, degree of parallelism determines how many computational chains (lanes)
@@ -44,12 +44,12 @@ external interface Argon2Parameters {
      * similar to the salt, that should **NOT** be stored with the derived key. This is known as pepper in
      * password hashing applications. If used, must have a length not greater than `2**32-1` bytes.
      */
-    var secret: Any? // string | ArrayBuffer | NodeJS.ArrayBufferView | undefined
+    var secret: Any? /* string | ArrayBuffer | NodeJS.ArrayBufferView | undefined */
 
     /**
      * OPTIONAL, Additional data to
      * be added to the hash, functionally equivalent to salt or secret, but meant for
      * non-random data. If used, must have a length not greater than `2**32-1` bytes.
      */
-    var associatedData: Any? // string | ArrayBuffer | NodeJS.ArrayBufferView | undefined
+    var associatedData: Any? /* string | ArrayBuffer | NodeJS.ArrayBufferView | undefined */
 }

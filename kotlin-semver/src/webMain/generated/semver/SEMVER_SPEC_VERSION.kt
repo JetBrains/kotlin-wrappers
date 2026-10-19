@@ -4,4 +4,4 @@
 
 package semver
 
-external val SEMVER_SPEC_VERSION: String // "2.0.0"
+external val SEMVER_SPEC_VERSION: String /* "2.0.0" */

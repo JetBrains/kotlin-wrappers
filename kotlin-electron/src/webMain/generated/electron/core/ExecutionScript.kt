@@ -8,7 +8,7 @@ external interface ExecutionScript {
      * A JavaScript function to execute. This function will be serialized which means
      * that any bound parameters and execution context will be lost.
      */
-    var func: Function<Any?> // (...args: any[]) => any
+    var func: Function<Any?> /* (...args: any[]) => any */
 
     /**
      * An array of arguments to pass to the provided function. These arguments will be

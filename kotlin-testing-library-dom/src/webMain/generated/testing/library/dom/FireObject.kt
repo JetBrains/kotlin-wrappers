@@ -8,7 +8,7 @@ external interface FireObject {
     ): (
         (
         element: Any, /* Document | Element | Window | Node */
-        options: (Any)?, // use undefined for default
+        options: (Any)?, /* use undefined for default */
     ) -> Boolean
     )?
 
@@ -17,7 +17,7 @@ external interface FireObject {
         value: (
             (
             element: Any, /* Document | Element | Window | Node */
-            options: (Any)?, // use undefined for default
+            options: (Any)?, /* use undefined for default */
         ) -> Boolean
         )?,
     )

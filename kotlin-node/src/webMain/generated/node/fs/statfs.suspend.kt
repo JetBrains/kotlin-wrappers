@@ -15,7 +15,7 @@ external suspend fun statfs(
 ): BigIntStatsFs
 
 @seskar.js.JsAsync
-external suspend fun statfs(path: PathLike, opts: StatFsOptions = definedExternally): Any // StatsFs | BigIntStatsFs
+external suspend fun statfs(path: PathLike, opts: StatFsOptions = definedExternally): Any /* StatsFs | BigIntStatsFs */
 
 @seskar.js.JsAsync
 external suspend fun statfs(path: PathLike): StatsFs

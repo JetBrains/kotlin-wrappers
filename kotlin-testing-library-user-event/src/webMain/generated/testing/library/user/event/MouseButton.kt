@@ -9,4 +9,4 @@ package testing.library.user.event
 @JsName("MouseButton")
 external val MouseButtonConstants: MouseButtonType
 
-typealias MouseButton = Any // keyof typeof MouseButton | number
+typealias MouseButton = Any /* keyof typeof MouseButton | number */

@@ -84,7 +84,7 @@ open external class Server : node.net.Server {
      * 5. secureConnection
      * 6. keylog
      */
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun emit(
         event: String,
@@ -96,13 +96,19 @@ open external class Server : node.net.Server {
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("tlsClientError")
     open val tlsClientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, TLSSocket>>

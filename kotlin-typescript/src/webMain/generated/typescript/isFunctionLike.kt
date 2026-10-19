@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isFunctionLike")
-external fun isFunctionLikeRaw(node: Node?): Boolean // node is SignatureDeclaration
+external fun isFunctionLikeRaw(node: Node?): Boolean /* node is SignatureDeclaration */

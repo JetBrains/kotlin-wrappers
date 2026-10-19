@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isConstructSignatureDeclaration")
-external fun isConstructSignatureDeclarationRaw(node: Node): Boolean // node is ConstructSignatureDeclaration
+external fun isConstructSignatureDeclarationRaw(node: Node): Boolean /* node is ConstructSignatureDeclaration */

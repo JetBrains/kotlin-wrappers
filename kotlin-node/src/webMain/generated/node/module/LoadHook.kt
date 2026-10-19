@@ -12,6 +12,6 @@ typealias LoadHook = (
     context: LoadHookContext,
     nextLoad: (
         url: String,
-        context: LoadHookContext?, // use undefined for default
+        context: LoadHookContext?, /* use undefined for default */
     ) -> js.promise.PromiseResult<LoadFnOutput>,
 ) -> js.promise.PromiseResult<LoadFnOutput>

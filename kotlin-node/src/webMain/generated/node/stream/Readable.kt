@@ -199,7 +199,7 @@ open external class Readable :
      * @since v0.9.4
      * @param encoding The encoding to use.
      */
-    override fun setEncoding(encoding: node.buffer.BufferEncoding) // this
+    override fun setEncoding(encoding: node.buffer.BufferEncoding) /* this */
 
     /**
      * The `readable.pause()` method will cause a stream in flowing mode to stop
@@ -222,7 +222,7 @@ open external class Readable :
      * The `readable.pause()` method has no effect if there is a `'readable'` event listener.
      * @since v0.9.4
      */
-    override fun pause() // this
+    override fun pause() /* this */
 
     /**
      * The `readable.resume()` method causes an explicitly paused `Readable` stream to
@@ -242,7 +242,7 @@ open external class Readable :
      * The `readable.resume()` method has no effect if there is a `'readable'` event listener.
      * @since v0.9.4
      */
-    override fun resume() // this
+    override fun resume() /* this */
 
     /**
      * The `readable.isPaused()` method returns the current operating state of the `Readable`.
@@ -288,7 +288,7 @@ open external class Readable :
      * @since v0.9.4
      * @param destination Optional specific stream to unpipe
      */
-    override fun unpipe(destination: WritableStream) // this
+    override fun unpipe(destination: WritableStream) /* this */
 
     /**
      * Passing `chunk` as `null` signals the end of the stream (EOF) and behaves the
@@ -385,7 +385,7 @@ open external class Readable :
      * @since v0.9.4
      * @param stream An "old style" readable stream
      */
-    override fun wrap(stream: node.ReadableStream) // this
+    override fun wrap(stream: node.ReadableStream) /* this */
 
     fun push(
         chunk: Any?,
@@ -447,7 +447,7 @@ open external class Readable :
     fun forEachAsync(
         fn: (
             data: Any?,
-            options: ArrayOptions?, // use undefined for default
+            options: ArrayOptions?, /* use undefined for default */
         ) -> js.promise.PromiseResult<js.void.Void>,
         options: ArrayOptions = definedExternally,
     ): js.promise.Promise<js.void.Void>
@@ -456,7 +456,7 @@ open external class Readable :
     suspend fun forEach(
         fn: (
             data: Any?,
-            options: ArrayOptions?, // use undefined for default
+            options: ArrayOptions?, /* use undefined for default */
         ) -> js.promise.PromiseResult<js.void.Void>,
         options: ArrayOptions = definedExternally,
     ): js.void.Void
@@ -654,9 +654,9 @@ open external class Readable :
      * @since v8.0.0
      * @param error Error which will be passed as payload in `'error'` event
      */
-    open fun destroy() // this
+    open fun destroy() /* this */
 
-    open fun destroy(error: js.errors.JsError) // this
+    open fun destroy(error: js.errors.JsError) /* this */
 
     /**
      * Event emitter
@@ -670,9 +670,12 @@ open external class Readable :
      * 7. resume
      */
 
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     open fun emit(
         event: String,
@@ -684,28 +687,37 @@ open external class Readable :
         vararg args: Any?,
     ): Boolean
 
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
-    open fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     open fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
-    open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    open fun removeListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    open fun removeListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>
@@ -728,7 +740,7 @@ open external class Readable :
     @web.events.JsEvent("resume")
     open val resumeEvent: node.events.EventInstance<js.array.Tuple>
 
-    override fun read(size: Number): Any // string | Buffer
+    override fun read(size: Number): Any /* string | Buffer */
 
     override fun <T : WritableStream> pipe(
         destination: T,

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isBlock")
-external fun isBlockRaw(node: Node): Boolean // node is Block
+external fun isBlockRaw(node: Node): Boolean /* node is Block */

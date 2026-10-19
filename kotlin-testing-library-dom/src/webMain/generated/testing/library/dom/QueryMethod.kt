@@ -9,4 +9,4 @@ package testing.library.dom
 /**
  * query methods have a common call signature. Only the return type differs.
  */
-typealias QueryMethod<Arguments /*  : js.array.ReadonlyArray<Any?> */, Return> = Function<Return> // (container: HTMLElement, ...args: Arguments) => Return
+typealias QueryMethod<Arguments /*  : js.array.ReadonlyArray<Any?> */, Return> = Function<Return> /* (container: HTMLElement, ...args: Arguments) => Return */

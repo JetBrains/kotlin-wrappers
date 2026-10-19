@@ -20,7 +20,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * @since v8.4.0
      * @deprecated Since v13.0.0 - Use `socket`.
      */
-    val connection: Any // net.Socket | tls.TLSSocket
+    val connection: Any /* net.Socket | tls.TLSSocket */
 
     /**
      * Append a single header value to the header object.
@@ -120,7 +120,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v8.4.0
      */
-    val socket: Any // net.Socket | tls.TLSSocket
+    val socket: Any /* net.Socket | tls.TLSSocket */
 
     /**
      * The `Http2Stream` object backing the response.
@@ -158,7 +158,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * an empty string.
      * @since v8.4.0
      */
-    var statusMessage: String // ""
+    var statusMessage: String /* "" */
 
     /**
      * This method adds HTTP trailing headers (a header but at the end of the
@@ -181,19 +181,19 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * is finished.
      * @since v8.4.0
      */
-    override fun end(cb: () -> Unit) // this
+    override fun end(cb: () -> Unit) /* this */
 
-    override fun end(data: String, cb: () -> Unit) // this
+    override fun end(data: String, cb: () -> Unit) /* this */
 
-    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) // this
+    override fun end(data: js.typedarrays.Uint8Array<*>, cb: () -> Unit) /* this */
 
-    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) // this
+    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) /* this */
 
     fun end(
         str: js.typedarrays.Uint8Array<*>,
         encoding: node.buffer.BufferEncoding,
         cb: () -> Unit = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Reads out a header that has already been queued but not sent to the client.
@@ -551,7 +551,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * will result in a `TypeError` being thrown.
      * @since v8.4.0
      */
-    fun writeHead(statusCode: Number) // this
+    fun writeHead(statusCode: Number) /* this */
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -600,7 +600,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * will result in a `TypeError` being thrown.
      * @since v8.4.0
      */
-    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) // this
+    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) /* this */
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -649,17 +649,21 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * will result in a `TypeError` being thrown.
      * @since v8.4.0
      */
-    fun writeHead(statusCode: Number, headers: js.array.ReadonlyArray<String> = definedExternally) // this
+    fun writeHead(statusCode: Number, headers: js.array.ReadonlyArray<String> = definedExternally) /* this */
 
-    fun writeHead(statusCode: Number, statusMessage: String) // this
+    fun writeHead(statusCode: Number, statusMessage: String) /* this */
 
-    fun writeHead(statusCode: Number, statusMessage: String, headers: OutgoingHttpHeaders = definedExternally) // this
+    fun writeHead(
+        statusCode: Number,
+        statusMessage: String,
+        headers: OutgoingHttpHeaders = definedExternally,
+    ) /* this */
 
     fun writeHead(
         statusCode: Number,
         statusMessage: String,
         headers: js.array.ReadonlyArray<String> = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Call `http2stream.pushStream()` with the given headers, and wrap the
@@ -676,9 +680,12 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
         callback: (err: js.errors.JsError?, res: Http2ServerResponse<*>) -> Unit,
     )
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun emit(
         event: String,
@@ -690,27 +697,33 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isModuleExportName")
-external fun isModuleExportNameRaw(node: Node): Boolean // node is ModuleExportName
+external fun isModuleExportNameRaw(node: Node): Boolean /* node is ModuleExportName */

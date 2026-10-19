@@ -5,7 +5,7 @@ package node.crypto
 import node.buffer.NonSharedBuffer
 
 external class DiffieHellmanGroup {
-    // new (name: string): DiffieHellmanGroup;
+    /* new (name: string): DiffieHellmanGroup; */
     operator fun invoke(name: String): DiffieHellmanGroup
 
     constructor ()

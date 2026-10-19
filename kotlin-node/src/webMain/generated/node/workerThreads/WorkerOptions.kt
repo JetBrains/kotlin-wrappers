@@ -11,7 +11,7 @@ external interface WorkerOptions {
      * were passed as CLI options to the script.
      */
     var argv: js.array.ReadonlyArray<Any?>?
-    var env: Any? // NodeJS.Dict<string> | typeof SHARE_ENV | undefined
+    var env: Any? /* NodeJS.Dict<string> | typeof SHARE_ENV | undefined */
     var eval: Boolean?
     var workerData: Any?
     var stdin: Boolean?

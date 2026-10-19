@@ -40,7 +40,7 @@ external class Size {
 
     constructor (size: PhysicalSize)
 
-    var size: Any // LogicalSize | PhysicalSize
+    var size: Any /* LogicalSize | PhysicalSize */
 
     /**
      * Converts the wrapped size to a logical one.

@@ -34,7 +34,7 @@ external interface System {
         path: String,
         callback: FileWatcherCallback,
         pollingInterval: Double?, /* use undefined for default */
-        options: WatchOptions?, // use undefined for default
+        options: WatchOptions?, /* use undefined for default */
     ) -> FileWatcher
     )?
     val watchDirectory: (
@@ -42,7 +42,7 @@ external interface System {
         path: String,
         callback: DirectoryWatcherCallback,
         recursive: Boolean?, /* use undefined for default */
-        options: WatchOptions?, // use undefined for default
+        options: WatchOptions?, /* use undefined for default */
     ) -> FileWatcher
     )?
 

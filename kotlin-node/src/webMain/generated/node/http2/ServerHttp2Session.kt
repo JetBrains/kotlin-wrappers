@@ -7,7 +7,7 @@ import node.http.ServerResponse
 
 external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
     Http2Session {
-    val server: Any // Http2Server<Http1Request, Http1Response, Http2Request, Http2Response> | Http2SecureServer<Http1Request, Http1Response, Http2Request, Http2Response>
+    val server: Any /* Http2Server<Http1Request, Http1Response, Http2Request, Http2Response> | Http2SecureServer<Http1Request, Http1Response, Http2Request, Http2Response> */
 
     /**
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
@@ -233,9 +233,12 @@ external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Respo
                 >,
     )
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun addListener(
+        event: js.symbol.Symbol,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun emit(
         event: String,
@@ -247,27 +250,33 @@ external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Respo
         vararg args: Any?,
     ): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
-    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    override fun prependOnceListener(
+        event: String,
+        listener: Function<Unit>, /* (...args: any[]) => void */
+    ) /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) // this
+    ) /* this */
 
     @web.events.JsEvent("connect")
     val connectEvent:

@@ -38,7 +38,7 @@ external interface LanguageServiceHost :
         extensions: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         exclude: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         include: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
-        depth: Double?, // use undefined for default
+        depth: Double?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<String>
     )?
     override val realpath: ((path: String) -> String)?
@@ -60,14 +60,14 @@ external interface LanguageServiceHost :
         reusedNames: js.array.ReadonlyArray<String>?,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
-        containingSourceFile: SourceFile?, // use undefined for default
+        containingSourceFile: SourceFile?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<(ResolvedModule?)>
     )?
     val getResolvedModuleWithFailedLookupLocationsFromCache: (
         (
         modulename: String,
         containingFile: String,
-        resolutionMode: ResolutionMode, // use undefined for default
+        resolutionMode: ResolutionMode, /* use undefined for default */
     ) -> ResolvedModuleWithFailedLookupLocations?
     )?
 
@@ -78,7 +78,7 @@ external interface LanguageServiceHost :
         containingFile: String,
         redirectedReference: ResolvedProjectReference?,
         options: CompilerOptions,
-        containingFileMode: ResolutionMode, // use undefined for default
+        containingFileMode: ResolutionMode, /* use undefined for default */
     ) -> js.array.ReadonlyArray<(ResolvedTypeReferenceDirective?)>
     )?
     val resolveModuleNameLiterals: (

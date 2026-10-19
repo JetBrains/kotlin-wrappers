@@ -314,7 +314,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
         targetEnd: Number = definedExternally,
         sourceStart: Number = definedExternally,
         sourceEnd: Number = definedExternally,
-    ): Int // -1 | 0 | 1
+    ): Int /* -1 | 0 | 1 */
 
     /**
      * Copies data from a region of `buf` to a region in `target`, even if the `target`memory region overlaps with `buf`.
@@ -1135,7 +1135,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
      * @since v5.10.0
      * @return A reference to `buf`.
      */
-    fun swap16() // this
+    fun swap16() /* this */
 
     /**
      * Interprets `buf` as an array of unsigned 32-bit integers and swaps the
@@ -1162,7 +1162,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
      * @since v5.10.0
      * @return A reference to `buf`.
      */
-    fun swap32() // this
+    fun swap32() /* this */
 
     /**
      * Interprets `buf` as an array of 64-bit numbers and swaps byte order _in-place_.
@@ -1189,7 +1189,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
      * @since v6.3.0
      * @return A reference to `buf`.
      */
-    fun swap64() // this
+    fun swap64() /* this */
 
     /**
      * Writes `value` to `buf` at the specified `offset`. `value` must be a
@@ -1664,7 +1664,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1730,7 +1730,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ) // this
+    ) /* this */
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1796,19 +1796,19 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ) // this
+    ) /* this */
 
-    fun fill(value: String, offset: Number, encoding: BufferEncoding) // this
+    fun fill(value: String, offset: Number, encoding: BufferEncoding) /* this */
 
-    fun fill(value: js.typedarrays.Uint8Array<*>, offset: Number, encoding: BufferEncoding) // this
+    fun fill(value: js.typedarrays.Uint8Array<*>, offset: Number, encoding: BufferEncoding) /* this */
 
-    fun fill(value: Double, offset: Number, encoding: BufferEncoding) // this
+    fun fill(value: Double, offset: Number, encoding: BufferEncoding) /* this */
 
-    fun fill(value: String, encoding: BufferEncoding) // this
+    fun fill(value: String, encoding: BufferEncoding) /* this */
 
-    fun fill(value: js.typedarrays.Uint8Array<*>, encoding: BufferEncoding) // this
+    fun fill(value: js.typedarrays.Uint8Array<*>, encoding: BufferEncoding) /* this */
 
-    fun fill(value: Double, encoding: BufferEncoding) // this
+    fun fill(value: Double, encoding: BufferEncoding) /* this */
 
     /**
      * If `value` is:
@@ -2914,7 +2914,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
          * ```
          * @since v0.1.101
          */
-        fun isBuffer(obj: Any?): Boolean // obj is Buffer
+        fun isBuffer(obj: Any?): Boolean /* obj is Buffer */
 
         /**
          * Returns `true` if `encoding` is the name of a supported character encoding,
@@ -2938,7 +2938,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
          * @since v0.9.1
          * @param encoding A character encoding name to check.
          */
-        fun isEncoding(encoding: String): Boolean // encoding is BufferEncoding
+        fun isEncoding(encoding: String): Boolean /* encoding is BufferEncoding */
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -3059,7 +3059,7 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
          * @since v0.11.13
          * @return Either `-1`, `0`, or `1`, depending on the result of the comparison. See `compare` for details.
          */
-        fun compare(buf1: js.typedarrays.Uint8Array<*>, buf2: js.typedarrays.Uint8Array<*>): Int // -1 | 0 | 1
+        fun compare(buf1: js.typedarrays.Uint8Array<*>, buf2: js.typedarrays.Uint8Array<*>): Int /* -1 | 0 | 1 */
 
         /**
          * This is the size (in bytes) of pre-allocated internal `Buffer` instances used

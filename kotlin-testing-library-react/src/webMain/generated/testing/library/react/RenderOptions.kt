@@ -3,7 +3,6 @@
 package testing.library.react
 
 // unhandled import: * as ReactDOMClient from "react-dom/client"
-import testing.library.dom.Queries
 
 // unhandled import: act as reactDeprecatedAct from "react-dom/test-utils"
 // unhandled import: act as reactAct from "react"
@@ -74,7 +73,7 @@ external interface RenderOptions<Container : Any? /* RendererableContainer | Hyd
      *
      *  @see https://testing-library.com/docs/react-testing-library/api/#queries
      */
-    var queries: Queries?
+    var queries: testing.library.dom.Queries?
 
     /**
      * Pass a React Component as the wrapper option to have it rendered around the inner element. This is most useful for creating

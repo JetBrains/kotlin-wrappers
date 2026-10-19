@@ -8,7 +8,7 @@ package typescript
  */
 @kotlinx.js.JsPlainObject
 external interface SignatureHelpCharacterTypedReason : SignatureHelpTriggerReason {
-    var kind: String // "characterTyped"
+    var kind: String /* "characterTyped" */
 
     /**
      * Character that was responsible for triggering signature help.

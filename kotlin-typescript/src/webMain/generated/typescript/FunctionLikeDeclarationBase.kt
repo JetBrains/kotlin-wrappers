@@ -15,5 +15,5 @@ external interface FunctionLikeDeclarationBase : SignatureDeclarationBase {
     val asteriskToken: AsteriskToken?
     val questionToken: QuestionToken?
     val exclamationToken: ExclamationToken?
-    val body: Any? // Block | Expression | undefined
+    val body: Any? /* Block | Expression | undefined */
 }

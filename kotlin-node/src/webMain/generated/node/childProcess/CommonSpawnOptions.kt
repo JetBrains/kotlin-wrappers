@@ -21,6 +21,6 @@ external interface CommonSpawnOptions :
      * @default 'pipe'
      */
     var stdio: StdioOptions?
-    var shell: Any? // boolean | string | undefined
+    var shell: Any? /* boolean | string | undefined */
     var windowsVerbatimArguments: Boolean?
 }

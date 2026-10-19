@@ -8,6 +8,6 @@ typealias LookupFunction = (
     callback: (
         err: node.ErrnoException?,
         address: Any, /* string | dns.LookupAddress[] */
-        family: Double?, // use undefined for default
+        family: Double?, /* use undefined for default */
     ) -> Unit,
 ) -> Unit

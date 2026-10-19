@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isObjectBindingPattern")
-external fun isObjectBindingPatternRaw(node: Node): Boolean // node is ObjectBindingPattern
+external fun isObjectBindingPatternRaw(node: Node): Boolean /* node is ObjectBindingPattern */

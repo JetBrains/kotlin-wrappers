@@ -6,7 +6,7 @@ package node.os
 external interface NetworkInterfaceInfoIPv6 : NetworkInterfaceBase {
     var family: String
 
-    // "IPv6"
+    /* "IPv6" */
     @JsName("scopeid")
     var requiredScopeid: Double
 }

@@ -16,7 +16,7 @@ external class PhysicalPosition {
     constructor(`object`: PhysicalPositionObjectTemp)
     constructor (`object`: PhysicalPositionObject)
 
-    val type: Any? // type isn't declared
+    val type: Any? /* type isn't declared */
     var x: Double
     var y: Double
 

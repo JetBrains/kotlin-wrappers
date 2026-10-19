@@ -8,9 +8,9 @@ external interface ModeAwareCache<T> {
         mode: ResolutionMode,
     ): T?
 
-    fun set(key: String, mode: ResolutionMode, value: T) // this
+    fun set(key: String, mode: ResolutionMode, value: T) /* this */
 
-    fun delete(key: String, mode: ResolutionMode) // this
+    fun delete(key: String, mode: ResolutionMode) /* this */
 
     fun has(
         key: String,

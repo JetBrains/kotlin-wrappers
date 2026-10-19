@@ -21,7 +21,7 @@ external interface RenderResult<Container : Any? /* RendererableContainer | Hydr
         Any?,
         /* RendererableContainer | HydrateableContainer | Array<RendererableContainer | HydrateableContainer> | undefined */ /* use undefined for default */
         maxLength: Double?, /* use undefined for default */
-        options: Any /* TODO: prettyFormat.OptionsReceived */?, // use undefined for default
+        options: Any /* TODO: prettyFormat.OptionsReceived */?, /* use undefined for default */
     ) -> Unit
     var rerender: (ui: react.ReactNode) -> Unit
     var unmount: () -> Unit

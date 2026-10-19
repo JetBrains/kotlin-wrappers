@@ -61,4 +61,4 @@ package node.workerThreads
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/worker_threads.js)
  */
 
-// export * from "worker_threads";
+/* export * from "worker_threads"; */

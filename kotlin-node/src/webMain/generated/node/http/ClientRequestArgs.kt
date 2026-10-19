@@ -8,7 +8,7 @@ import node.net.LookupFunction
 @kotlinx.js.JsPlainObject
 external interface ClientRequestArgs : LookupOptions {
     var _defaultAgent: Agent?
-    var agent: Any? // Agent | boolean | undefined
+    var agent: Any? /* Agent | boolean | undefined */
     var auth: String?
     var createConnection: (
         (
@@ -18,10 +18,10 @@ external interface ClientRequestArgs : LookupOptions {
     )?
     var defaultPort: Any?
 
-    // number | string | undefined
+    /* number | string | undefined */
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var family: Double?
-    var headers: Any? // OutgoingHttpHeaders | readonly string[] | undefined
+    var headers: Any? /* OutgoingHttpHeaders | readonly string[] | undefined */
     var host: String?
     var hostname: String?
     var insecureHTTPParser: Boolean?
@@ -35,7 +35,7 @@ external interface ClientRequestArgs : LookupOptions {
     var maxHeaderSize: Double?
     var method: String?
     var path: String?
-    var port: Any? // number | string | null | undefined
+    var port: Any? /* number | string | null | undefined */
     var protocol: String?
     var setDefaultHeaders: Boolean?
     var setHost: Boolean?

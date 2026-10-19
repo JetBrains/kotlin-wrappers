@@ -4,6 +4,6 @@ package typescript
 
 @kotlinx.js.JsPlainObject
 external interface RenameInfoFailure : RenameInfo {
-    var canRename: Boolean // false
+    var canRename: Boolean /* false */
     var localizedErrorMessage: String
 }

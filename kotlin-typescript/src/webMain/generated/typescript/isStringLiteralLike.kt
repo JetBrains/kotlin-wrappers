@@ -5,7 +5,7 @@
 package typescript
 
 @JsName("isStringLiteralLike")
-external fun isStringLiteralLikeRaw(node: Node): Boolean // node is StringLiteralLike
+external fun isStringLiteralLikeRaw(node: Node): Boolean /* node is StringLiteralLike */
 
 @JsName("isStringLiteralLike")
-external fun isStringLiteralLikeRaw(node: FileReference): Boolean // node is StringLiteralLike
+external fun isStringLiteralLikeRaw(node: FileReference): Boolean /* node is StringLiteralLike */

@@ -5,9 +5,9 @@
 
 package node.test
 
-// export { test };
+/* export { test }; */
 
-// export { suite as describe, test as it };
+/* export { suite as describe, test as it }; */
 
 /**
  * An object whose methods are used to configure available assertions on the

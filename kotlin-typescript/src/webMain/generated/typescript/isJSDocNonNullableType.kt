@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isJSDocNonNullableType")
-external fun isJSDocNonNullableTypeRaw(node: Node): Boolean // node is JSDocNonNullableType
+external fun isJSDocNonNullableTypeRaw(node: Node): Boolean /* node is JSDocNonNullableType */

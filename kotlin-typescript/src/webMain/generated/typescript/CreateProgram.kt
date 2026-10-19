@@ -9,5 +9,5 @@ typealias CreateProgram<T /*  : BuilderProgram */> = (
     host: CompilerHost?, /* use undefined for default */
     oldProgram: T?, /* use undefined for default */
     configFileParsingDiagnostics: (js.array.ReadonlyArray<Diagnostic>)?, /* use undefined for default */
-    projectReferences: (js.array.ReadonlyArray<ProjectReference>)?, // use undefined for default
+    projectReferences: (js.array.ReadonlyArray<ProjectReference>)?, /* use undefined for default */
 ) -> T

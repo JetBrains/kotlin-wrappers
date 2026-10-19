@@ -4,6 +4,6 @@ package node.fs
 
 @kotlinx.js.JsPlainObject
 external interface ReaddirWithFileTypesOptions : ObjectEncodingOptions {
-    var withFileTypes: Boolean // true
+    var withFileTypes: Boolean /* true */
     var recursive: Boolean?
 }

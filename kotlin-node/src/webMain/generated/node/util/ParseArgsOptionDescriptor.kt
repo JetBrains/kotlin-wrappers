@@ -31,5 +31,5 @@ external interface ParseArgsOptionDescriptor {
      * is falsy.
      * @since v18.11.0
      */
-    var default: Any? // string | boolean | string[] | boolean[] | undefined
+    var default: Any? /* string | boolean | string[] | boolean[] | undefined */
 }

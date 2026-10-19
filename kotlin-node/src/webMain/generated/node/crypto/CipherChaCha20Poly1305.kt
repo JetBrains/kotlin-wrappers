@@ -6,7 +6,7 @@ import node.buffer.NonSharedBuffer
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface CipherChaCha20Poly1305 : Cipheriv {
-    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: CipherChaCha20Poly1305SetAADOptions) // this
+    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: CipherChaCha20Poly1305SetAADOptions) /* this */
 
     fun getAuthTag(): NonSharedBuffer
 }

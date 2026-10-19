@@ -4,6 +4,6 @@ package node.dns
 
 @kotlinx.js.JsPlainObject
 external interface AnyPtrRecord {
-    var type: String // "PTR"
+    var type: String /* "PTR" */
     var value: String
 }

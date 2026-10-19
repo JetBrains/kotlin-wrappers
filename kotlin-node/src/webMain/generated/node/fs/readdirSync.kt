@@ -88,7 +88,7 @@ external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.arr
 external fun readdirSync(
     path: PathLike,
     options: (ReaddirSyncOptions)? = definedExternally,
-): Any // string[] | NonSharedBuffer[]
+): Any /* string[] | NonSharedBuffer[] */
 
 /**
  * Synchronous readdir(3) - read a directory.

@@ -34,30 +34,30 @@ external interface UserEventApi {
     var copy: (/* this: Instance, */) -> Promise<DataTransfer?>
     var cut: (/* this: Instance, */) -> Promise<DataTransfer?>
     var paste: (
-        // this: Instance,
-        clipboardData: Any?, /* string | DataTransfer | undefined */ // use undefined for default
+        /* this: Instance, */
+        clipboardData: Any?, /* string | DataTransfer | undefined */ /* use undefined for default */
     ) -> Promise<js.void.Void>
     var pointer: (/* this: Instance, */ input: PointerInput) -> Promise<js.void.Void>
     var clear: (/* this: Instance, */ element: Element) -> Promise<js.void.Void>
     var deselectOptions: (
-        // this: Instance,
+        /* this: Instance, */
         select: Element,
-        values: Any, // string | HTMLElement | HTMLElement[] | string[]
+        values: Any, /* string | HTMLElement | HTMLElement[] | string[] */
     ) -> Promise<js.void.Void>
     var selectOptions: (
-        // this: Instance,
+        /* this: Instance, */
         select: Element,
-        values: Any, // string | HTMLElement | HTMLElement[] | string[]
+        values: Any, /* string | HTMLElement | HTMLElement[] | string[] */
     ) -> Promise<js.void.Void>
     var type: (
-        // this: Instance,
+        /* this: Instance, */
         element: Element,
         text: String,
-        options: typeOptions?, // use undefined for default
+        options: typeOptions?, /* use undefined for default */
     ) -> Promise<js.void.Void>
     var upload: (
-        // this: Instance,
+        /* this: Instance, */
         element: HTMLElement,
-        fileOrFiles: Any, // File | File[]
+        fileOrFiles: Any, /* File | File[] */
     ) -> Promise<js.void.Void>
 }

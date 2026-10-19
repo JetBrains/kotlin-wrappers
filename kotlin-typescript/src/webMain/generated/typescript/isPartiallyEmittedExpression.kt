@@ -5,4 +5,4 @@
 package typescript
 
 @JsName("isPartiallyEmittedExpression")
-external fun isPartiallyEmittedExpressionRaw(node: Node): Boolean // node is PartiallyEmittedExpression
+external fun isPartiallyEmittedExpressionRaw(node: Node): Boolean /* node is PartiallyEmittedExpression */

@@ -16,6 +16,6 @@ typealias ResolveHook = (
     context: ResolveHookContext,
     nextResolve: (
         specifier: String,
-        context: ResolveHookContext?, // use undefined for default
+        context: ResolveHookContext?, /* use undefined for default */
     ) -> js.promise.PromiseResult<ResolveFnOutput>,
 ) -> js.promise.PromiseResult<ResolveFnOutput>

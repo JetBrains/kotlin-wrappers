@@ -25,4 +25,4 @@ package tauri.apps.api.index
  * @module
  */
 
-// export { app, core, dpi, event, image, menu, mocks, path, tray, webview, webviewWindow, window };
+/* export { app, core, dpi, event, image, menu, mocks, path, tray, webview, webviewWindow, window }; */

@@ -8,14 +8,14 @@ external interface AggregateOptions<T : SQLInputValue /* default is SQLInputValu
      * The identity value for the aggregation function. This value is used when the aggregation
      * function is initialized. When a `Function` is passed the identity will be its return value.
      */
-    var start: Any // T | (() => T)
+    var start: Any /* T | (() => T) */
 
     /**
      * The function to call for each row in the aggregation. The
      * function receives the current state and the row value. The return value of
      * this function should be the new state.
      */
-    var step: Function<T> // (accumulator: T, ...args: SQLOutputValue[]) => T
+    var step: Function<T> /* (accumulator: T, ...args: SQLOutputValue[]) => T */
 
     /**
      * The function to call to get the result of the

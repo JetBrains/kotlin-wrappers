@@ -710,7 +710,7 @@ external interface Process : EventEmitter {
      * @default undefined
      * @since v0.11.8
      */
-    var exitCode: Any? // number | string | null | undefined
+    var exitCode: Any? /* number | string | null | undefined */
     var finalization: ProcessFinalization
 
     /**
@@ -1146,7 +1146,7 @@ external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number): Boolean // true
+    fun kill(pid: Number): Boolean /* true */
 
     /**
      * The `process.kill()` method sends the `signal` to the process identified by`pid`.
@@ -1183,7 +1183,7 @@ external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number, signal: String = definedExternally): Boolean // true
+    fun kill(pid: Number, signal: String = definedExternally): Boolean /* true */
 
     /**
      * The `process.kill()` method sends the `signal` to the process identified by`pid`.
@@ -1220,7 +1220,7 @@ external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number, signal: Double = definedExternally): Boolean // true
+    fun kill(pid: Number, signal: Double = definedExternally): Boolean /* true */
 
     /**
      * Loads the environment configuration from a `.env` file into `process.env`. If
@@ -1581,7 +1581,7 @@ external interface Process : EventEmitter {
         message: Any?,
         sendHandle: SendHandle, /* use undefined for default */
         options: MessageOptions?, /* use undefined for default */
-        callback: ((error: js.errors.JsError?) -> Unit)?, // use undefined for default
+        callback: ((error: js.errors.JsError?) -> Unit)?, /* use undefined for default */
     ) -> Boolean
     )?
 
@@ -1776,33 +1776,33 @@ external interface Process : EventEmitter {
         (
         file: String,
         args: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
-        env: ProcessEnv?, // use undefined for default
+        env: ProcessEnv?, /* use undefined for default */
     ) -> Nothing
     )?
-// EventEmitter
+    /* EventEmitter */
 
-    fun addListener(event: Signals, listener: SignalsListener) // this
+    fun addListener(event: Signals, listener: SignalsListener) /* this */
 
     fun emit(
         event: Signals,
         signal: Signals = definedExternally,
     ): Boolean
 
-    fun on(event: Signals, listener: SignalsListener) // this
+    fun on(event: Signals, listener: SignalsListener) /* this */
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: Signals, listener: SignalsListener) // this
+    fun once(event: Signals, listener: SignalsListener) /* this */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun prependListener(event: Signals, listener: SignalsListener) // this
+    fun prependListener(event: Signals, listener: SignalsListener) /* this */
 
-    fun prependOnceListener(event: Signals, listener: SignalsListener) // this
+    fun prependOnceListener(event: Signals, listener: SignalsListener) /* this */
 
     fun listeners(event: Signals): js.array.ReadonlyArray<SignalsListener>
 

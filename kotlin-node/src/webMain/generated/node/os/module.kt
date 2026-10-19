@@ -14,4 +14,4 @@ package node.os
  * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/os.js)
  */
 
-// export * from "os";
+/* export * from "os"; */

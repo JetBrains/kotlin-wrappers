@@ -4,342 +4,342 @@
 
 package semver
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = inc;
+/* export = inc; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import inc = require("../functions/inc");
+/* import inc = require("../functions/inc"); */
 
-// export = SemVer;
+/* export = SemVer; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = parse;
+/* export = parse; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = valid;
+/* export = valid; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = clean;
+/* export = clean; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = diff;
+/* export = diff; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = major;
+/* export = major; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = minor;
+/* export = minor; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = patch;
+/* export = patch; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = prerelease;
+/* export = prerelease; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = compare;
+/* export = compare; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = rcompare;
+/* export = rcompare; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = compareLoose;
+/* export = compareLoose; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = compareBuild;
+/* export = compareBuild; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = sort;
+/* export = sort; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = rsort;
+/* export = rsort; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = gt;
+/* export = gt; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = lt;
+/* export = lt; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = eq;
+/* export = eq; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = neq;
+/* export = neq; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = gte;
+/* export = gte; */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = lte;
+/* export = lte; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = cmp;
+/* export = cmp; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// export = coerce;
+/* export = coerce; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import SemVer = require("./semver");
+/* import SemVer = require("./semver"); */
 
-// export = Comparator;
+/* export = Comparator; */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// import Comparator = require("./comparator");
+/* import Comparator = require("./comparator"); */
 
-// import SemVer = require("./semver");
+/* import SemVer = require("./semver"); */
 
-// export = Range;
+/* export = Range; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = satisfies;
+/* export = satisfies; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = maxSatisfying;
+/* export = maxSatisfying; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = minSatisfying;
+/* export = minSatisfying; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = toComparators;
+/* export = toComparators; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = minVersion;
+/* export = minVersion; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = validRange;
+/* export = validRange; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = outside;
+/* export = outside; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = gtr;
+/* export = gtr; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import SemVer = require("../classes/semver");
+/* import SemVer = require("../classes/semver"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = ltr;
+/* export = ltr; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = intersects;
+/* export = intersects; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = simplify;
+/* export = simplify; */
 
-// import Range = require("../classes/range");
+/* import Range = require("../classes/range"); */
 
-// import semver = require("../index");
+/* import semver = require("../index"); */
 
-// export = subset;
+/* export = subset; */
 
 // re-exports for index file
 // functions for working with versions
-// import semverParse = require("./functions/parse");
+/* import semverParse = require("./functions/parse"); */
 
-// import semverValid = require("./functions/valid");
+/* import semverValid = require("./functions/valid"); */
 
-// import semverClean = require("./functions/clean");
+/* import semverClean = require("./functions/clean"); */
 
-// import semverInc = require("./functions/inc");
+/* import semverInc = require("./functions/inc"); */
 
-// import semverDiff = require("./functions/diff");
+/* import semverDiff = require("./functions/diff"); */
 
-// import semverMajor = require("./functions/major");
+/* import semverMajor = require("./functions/major"); */
 
-// import semverMinor = require("./functions/minor");
+/* import semverMinor = require("./functions/minor"); */
 
-// import semverPatch = require("./functions/patch");
+/* import semverPatch = require("./functions/patch"); */
 
-// import semverPrerelease = require("./functions/prerelease");
+/* import semverPrerelease = require("./functions/prerelease"); */
 
-// import semverCompare = require("./functions/compare");
+/* import semverCompare = require("./functions/compare"); */
 
-// import semverRcompare = require("./functions/rcompare");
+/* import semverRcompare = require("./functions/rcompare"); */
 
-// import semverCompareLoose = require("./functions/compare-loose");
+/* import semverCompareLoose = require("./functions/compare-loose"); */
 
-// import semverCompareBuild = require("./functions/compare-build");
+/* import semverCompareBuild = require("./functions/compare-build"); */
 
-// import semverSort = require("./functions/sort");
+/* import semverSort = require("./functions/sort"); */
 
-// import semverRsort = require("./functions/rsort");
+/* import semverRsort = require("./functions/rsort"); */
 
-// export { semverClean as clean, semverCompare as compare, semverCompareBuild as compareBuild, semverCompareLoose as compareLoose, semverDiff as diff, semverInc as inc, semverMajor as major, semverMinor as minor, semverParse as parse, semverPatch as patch, semverPrerelease as prerelease, semverRcompare as rcompare, semverRsort as rsort, semverSort as sort, semverValid as valid, };
+/* export { semverClean as clean, semverCompare as compare, semverCompareBuild as compareBuild, semverCompareLoose as compareLoose, semverDiff as diff, semverInc as inc, semverMajor as major, semverMinor as minor, semverParse as parse, semverPatch as patch, semverPrerelease as prerelease, semverRcompare as rcompare, semverRsort as rsort, semverSort as sort, semverValid as valid, }; */
 
 // low-level comparators between versions
-// import semverGt = require("./functions/gt");
+/* import semverGt = require("./functions/gt"); */
 
-// import semverLt = require("./functions/lt");
+/* import semverLt = require("./functions/lt"); */
 
-// import semverEq = require("./functions/eq");
+/* import semverEq = require("./functions/eq"); */
 
-// import semverNeq = require("./functions/neq");
+/* import semverNeq = require("./functions/neq"); */
 
-// import semverGte = require("./functions/gte");
+/* import semverGte = require("./functions/gte"); */
 
-// import semverLte = require("./functions/lte");
+/* import semverLte = require("./functions/lte"); */
 
-// import semverCmp = require("./functions/cmp");
+/* import semverCmp = require("./functions/cmp"); */
 
-// import semverCoerce = require("./functions/coerce");
+/* import semverCoerce = require("./functions/coerce"); */
 
-// export { semverCmp as cmp, semverCoerce as coerce, semverEq as eq, semverGt as gt, semverGte as gte, semverLt as lt, semverLte as lte, semverNeq as neq, };
+/* export { semverCmp as cmp, semverCoerce as coerce, semverEq as eq, semverGt as gt, semverGte as gte, semverLt as lt, semverLte as lte, semverNeq as neq, }; */
 
 // working with ranges
-// import semverSatisfies = require("./functions/satisfies");
+/* import semverSatisfies = require("./functions/satisfies"); */
 
-// import semverMaxSatisfying = require("./ranges/max-satisfying");
+/* import semverMaxSatisfying = require("./ranges/max-satisfying"); */
 
-// import semverMinSatisfying = require("./ranges/min-satisfying");
+/* import semverMinSatisfying = require("./ranges/min-satisfying"); */
 
-// import semverToComparators = require("./ranges/to-comparators");
+/* import semverToComparators = require("./ranges/to-comparators"); */
 
-// import semverMinVersion = require("./ranges/min-version");
+/* import semverMinVersion = require("./ranges/min-version"); */
 
-// import semverValidRange = require("./ranges/valid");
+/* import semverValidRange = require("./ranges/valid"); */
 
-// import semverOutside = require("./ranges/outside");
+/* import semverOutside = require("./ranges/outside"); */
 
-// import semverGtr = require("./ranges/gtr");
+/* import semverGtr = require("./ranges/gtr"); */
 
-// import semverLtr = require("./ranges/ltr");
+/* import semverLtr = require("./ranges/ltr"); */
 
-// import semverIntersects = require("./ranges/intersects");
+/* import semverIntersects = require("./ranges/intersects"); */
 
-// import simplify = require("./ranges/simplify");
+/* import simplify = require("./ranges/simplify"); */
 
-// import rangeSubset = require("./ranges/subset");
+/* import rangeSubset = require("./ranges/subset"); */
 
-// export { rangeSubset as subset, semverGtr as gtr, semverIntersects as intersects, semverLtr as ltr, semverMaxSatisfying as maxSatisfying, semverMinSatisfying as minSatisfying, semverMinVersion as minVersion, semverOutside as outside, semverSatisfies as satisfies, semverToComparators as toComparators, semverValidRange as validRange, simplify as simplifyRange, };
+/* export { rangeSubset as subset, semverGtr as gtr, semverIntersects as intersects, semverLtr as ltr, semverMaxSatisfying as maxSatisfying, semverMinSatisfying as minSatisfying, semverMinVersion as minVersion, semverOutside as outside, semverSatisfies as satisfies, semverToComparators as toComparators, semverValidRange as validRange, simplify as simplifyRange, }; */
 
 // classes
-// import SemVer = require("./classes/semver");
+/* import SemVer = require("./classes/semver"); */
 
-// import Range = require("./classes/range");
+/* import Range = require("./classes/range"); */
 
-// import Comparator = require("./classes/comparator");
+/* import Comparator = require("./classes/comparator"); */
 
-// export { Comparator, Range, SemVer };
+/* export { Comparator, Range, SemVer }; */
 
 // internals
-// import identifiers = require("./internals/identifiers");
+/* import identifiers = require("./internals/identifiers"); */
 
-// export import compareIdentifiers = identifiers.compareIdentifiers;
+/* export import compareIdentifiers = identifiers.compareIdentifiers; */
 
-// export import rcompareIdentifiers = identifiers.rcompareIdentifiers;
+/* export import rcompareIdentifiers = identifiers.rcompareIdentifiers; */
 
-// import semver = require(".");
+/* import semver = require("."); */
 
-// export = semver;
+/* export = semver; */
