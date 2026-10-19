@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface HeritageClauseToken : SyntaxKind
+sealed /* union */
+external interface HeritageClauseToken : SyntaxKind

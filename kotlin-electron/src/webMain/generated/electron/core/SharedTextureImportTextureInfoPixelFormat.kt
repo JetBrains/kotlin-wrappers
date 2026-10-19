@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SharedTextureImportTextureInfoPixelFormat
+sealed /* union */
+external interface SharedTextureImportTextureInfoPixelFormat
 
 inline val SharedTextureImportTextureInfoPixelFormat.Companion.bgra: SharedTextureImportTextureInfoPixelFormat
     get() = js.reflect.unsafeCast("bgra")

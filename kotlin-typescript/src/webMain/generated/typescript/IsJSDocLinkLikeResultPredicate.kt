@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsJSDocLinkLikeResultPredicate : Node
+sealed /* union */
+external interface IsJSDocLinkLikeResultPredicate : Node

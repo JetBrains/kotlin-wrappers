@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface JumpListItemType
+sealed /* union */
+external interface JumpListItemType
 
 inline val JumpListItemType.Companion.task: JumpListItemType
     get() = js.reflect.unsafeCast("task")

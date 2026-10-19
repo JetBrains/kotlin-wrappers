@@ -3,7 +3,8 @@
 package node.test
 
 @js.union.JsUnion
-sealed external interface MockTimersOptionsApisItem
+sealed /* union */
+external interface MockTimersOptionsApisItem
 
 inline val MockTimersOptionsApisItem.Companion.setInterval: MockTimersOptionsApisItem
     get() = js.reflect.unsafeCast("setInterval")

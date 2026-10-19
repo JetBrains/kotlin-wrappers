@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface EmitHelper
+sealed /* union */
+external interface EmitHelper

@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface ClassLikeDeclaration :
+sealed /* union */
+external interface ClassLikeDeclaration :
     Node,
     HasJSDoc,
     MethodDeclarationParent,

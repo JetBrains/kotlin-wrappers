@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocTagParent : Node
+sealed /* union */
+external interface JSDocTagParent : Node

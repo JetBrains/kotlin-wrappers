@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ForInitializer : Node
+sealed /* union */
+external interface ForInitializer : Node

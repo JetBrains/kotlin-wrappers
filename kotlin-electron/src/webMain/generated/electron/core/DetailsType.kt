@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface DetailsType
+sealed /* union */
+external interface DetailsType
 
 inline val DetailsType.Companion.Utility: DetailsType
     get() = js.reflect.unsafeCast("Utility")

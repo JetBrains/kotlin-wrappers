@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ModifierSyntaxKind :
+sealed /* union */
+external interface ModifierSyntaxKind :
     SyntaxKind,
     KeywordSyntaxKind

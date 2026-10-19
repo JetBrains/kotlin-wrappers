@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebPreferencesV8CacheOptions
+sealed /* union */
+external interface WebPreferencesV8CacheOptions
 
 inline val WebPreferencesV8CacheOptions.Companion.none: WebPreferencesV8CacheOptions
     get() = js.reflect.unsafeCast("none")

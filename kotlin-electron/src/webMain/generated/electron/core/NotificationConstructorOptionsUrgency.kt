@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface NotificationConstructorOptionsUrgency
+sealed /* union */
+external interface NotificationConstructorOptionsUrgency
 
 inline val NotificationConstructorOptionsUrgency.Companion.normal: NotificationConstructorOptionsUrgency
     get() = js.reflect.unsafeCast("normal")

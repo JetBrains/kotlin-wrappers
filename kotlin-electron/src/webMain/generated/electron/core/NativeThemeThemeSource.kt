@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface NativeThemeThemeSource
+sealed /* union */
+external interface NativeThemeThemeSource
 
 inline val NativeThemeThemeSource.Companion.system: NativeThemeThemeSource
     get() = js.reflect.unsafeCast("system")

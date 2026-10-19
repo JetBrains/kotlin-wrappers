@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface CompilerHostGetSourceFileByPathLanguageVersionOrOptions
+sealed /* union */
+external interface CompilerHostGetSourceFileByPathLanguageVersionOrOptions

@@ -3,6 +3,7 @@
 package typescript
 
 /** Unlike ObjectLiteralElement, excludes JSXAttribute and JSXSpreadAttribute. */
-sealed external interface ObjectLiteralElementLike :
+sealed /* union */
+external interface ObjectLiteralElementLike :
     Node,
     ObjectLiteralElement

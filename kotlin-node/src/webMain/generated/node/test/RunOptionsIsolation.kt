@@ -3,7 +3,8 @@
 package node.test
 
 @js.union.JsUnion
-sealed external interface RunOptionsIsolation
+sealed /* union */
+external interface RunOptionsIsolation
 
 inline val RunOptionsIsolation.Companion.process: RunOptionsIsolation
     get() = js.reflect.unsafeCast("process")

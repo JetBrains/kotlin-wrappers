@@ -3,7 +3,8 @@
 package node.process
 
 @js.union.JsUnion
-sealed external interface Platform
+sealed /* union */
+external interface Platform
 
 inline val Platform.Companion.aix: Platform
     get() = js.reflect.unsafeCast("aix")

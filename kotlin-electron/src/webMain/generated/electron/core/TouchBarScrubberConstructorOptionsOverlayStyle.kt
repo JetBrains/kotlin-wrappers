@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface TouchBarScrubberConstructorOptionsOverlayStyle
+sealed /* union */
+external interface TouchBarScrubberConstructorOptionsOverlayStyle
 
 inline val TouchBarScrubberConstructorOptionsOverlayStyle.Companion.background: TouchBarScrubberConstructorOptionsOverlayStyle
     get() = js.reflect.unsafeCast("background")

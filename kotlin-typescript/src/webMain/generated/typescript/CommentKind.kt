@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface CommentKind : SyntaxKind
+sealed /* union */
+external interface CommentKind : SyntaxKind

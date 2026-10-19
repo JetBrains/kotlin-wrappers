@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface PseudoLiteralToken :
+sealed /* union */
+external interface PseudoLiteralToken :
     Node,
     TemplateLiteralToken

@@ -12,7 +12,8 @@ package tauri.apps.api.tray
  * - `Leave`: the cursor left the icon area.
  */
 @js.union.JsUnion
-sealed external interface TrayIconEventType
+sealed /* union */
+external interface TrayIconEventType
 
 inline val TrayIconEventType.Companion.Click: TrayIconEventType
     get() = js.reflect.unsafeCast("Click")

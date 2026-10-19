@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsImportOrExportSpecifierResultPredicate : Node
+sealed /* union */
+external interface IsImportOrExportSpecifierResultPredicate : Node

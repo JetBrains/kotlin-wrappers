@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface FunctionOrConstructorTypeNodeBaseKind : SyntaxKind
+sealed /* union */
+external interface FunctionOrConstructorTypeNodeBaseKind : SyntaxKind

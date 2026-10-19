@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface NamespaceBody :
+sealed /* union */
+external interface NamespaceBody :
     Node,
     ModuleBody

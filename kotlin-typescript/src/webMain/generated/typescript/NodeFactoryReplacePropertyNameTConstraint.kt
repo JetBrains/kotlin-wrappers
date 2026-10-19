@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface NodeFactoryReplacePropertyNameTConstraint : Node
+sealed /* union */
+external interface NodeFactoryReplacePropertyNameTConstraint : Node

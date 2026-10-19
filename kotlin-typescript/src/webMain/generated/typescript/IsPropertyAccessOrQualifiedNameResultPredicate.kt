@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsPropertyAccessOrQualifiedNameResultPredicate : Node
+sealed /* union */
+external interface IsPropertyAccessOrQualifiedNameResultPredicate : Node

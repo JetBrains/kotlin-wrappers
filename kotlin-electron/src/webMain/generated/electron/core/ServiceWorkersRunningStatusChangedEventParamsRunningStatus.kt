@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ServiceWorkersRunningStatusChangedEventParamsRunningStatus
+sealed /* union */
+external interface ServiceWorkersRunningStatusChangedEventParamsRunningStatus
 
 inline val ServiceWorkersRunningStatusChangedEventParamsRunningStatus.Companion.starting: ServiceWorkersRunningStatusChangedEventParamsRunningStatus
     get() = js.reflect.unsafeCast("starting")

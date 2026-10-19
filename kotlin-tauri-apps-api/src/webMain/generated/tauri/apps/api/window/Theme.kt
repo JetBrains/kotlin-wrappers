@@ -4,7 +4,8 @@ package tauri.apps.api.window
 
 /** The light or dark appearance of a window or of the system. */
 @js.union.JsUnion
-sealed external interface Theme
+sealed /* union */
+external interface Theme
 
 inline val Theme.Companion.light: Theme
     get() = js.reflect.unsafeCast("light")

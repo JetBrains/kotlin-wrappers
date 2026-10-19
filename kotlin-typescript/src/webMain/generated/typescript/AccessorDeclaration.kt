@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface AccessorDeclaration :
+sealed /* union */
+external interface AccessorDeclaration :
     Node,
     HasJSDoc,
     SignatureDeclaration,

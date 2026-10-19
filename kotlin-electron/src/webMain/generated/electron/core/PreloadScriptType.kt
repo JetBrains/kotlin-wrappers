@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface PreloadScriptType
+sealed /* union */
+external interface PreloadScriptType
 
 inline val PreloadScriptType.Companion.frame: PreloadScriptType
     get() = js.reflect.unsafeCast("frame")

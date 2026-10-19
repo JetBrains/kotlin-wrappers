@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsStringLiteralOrJsxExpressionResultPredicate : Node
+sealed /* union */
+external interface IsStringLiteralOrJsxExpressionResultPredicate : Node

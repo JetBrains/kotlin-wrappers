@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ResolveHostOptionsQueryType
+sealed /* union */
+external interface ResolveHostOptionsQueryType
 
 inline val ResolveHostOptionsQueryType.Companion.A: ResolveHostOptionsQueryType
     get() = js.reflect.unsafeCast("A")

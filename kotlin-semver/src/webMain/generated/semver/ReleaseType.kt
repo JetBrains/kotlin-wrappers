@@ -3,7 +3,8 @@
 package semver
 
 @js.union.JsUnion
-sealed external interface ReleaseType
+sealed /* union */
+external interface ReleaseType
 
 inline val ReleaseType.Companion.major: ReleaseType
     get() = js.reflect.unsafeCast("major")

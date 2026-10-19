@@ -3,7 +3,8 @@
 package node.test
 
 @js.union.JsUnion
-sealed external interface MockPropertyContextAccessesItemType
+sealed /* union */
+external interface MockPropertyContextAccessesItemType
 
 inline val MockPropertyContextAccessesItemType.Companion.get: MockPropertyContextAccessesItemType
     get() = js.reflect.unsafeCast("get")

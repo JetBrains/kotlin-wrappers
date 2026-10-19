@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocMemberNameLeft : Node
+sealed /* union */
+external interface JSDocMemberNameLeft : Node

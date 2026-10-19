@@ -3,7 +3,8 @@
 package node
 
 @js.union.JsUnion
-sealed external interface GCOptionsExecution
+sealed /* union */
+external interface GCOptionsExecution
 
 inline val GCOptionsExecution.Companion.sync: GCOptionsExecution
     get() = js.reflect.unsafeCast("sync")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocTypedefTagFullName : Node
+sealed /* union */
+external interface JSDocTypedefTagFullName : Node

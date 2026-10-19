@@ -4,7 +4,8 @@ package tauri.apps.api.tray
 
 /** The mouse button that triggered a tray icon event. */
 @js.union.JsUnion
-sealed external interface MouseButton
+sealed /* union */
+external interface MouseButton
 
 inline val MouseButton.Companion.Left: MouseButton
     get() = js.reflect.unsafeCast("Left")

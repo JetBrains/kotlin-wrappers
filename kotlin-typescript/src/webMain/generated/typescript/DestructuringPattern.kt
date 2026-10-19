@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface DestructuringPattern : Node
+sealed /* union */
+external interface DestructuringPattern : Node

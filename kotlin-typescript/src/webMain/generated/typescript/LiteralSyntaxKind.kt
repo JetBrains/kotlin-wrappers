@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface LiteralSyntaxKind :
+sealed /* union */
+external interface LiteralSyntaxKind :
     SyntaxKind,
     TokenSyntaxKind

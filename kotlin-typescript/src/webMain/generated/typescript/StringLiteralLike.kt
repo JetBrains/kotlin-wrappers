@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface StringLiteralLike :
+sealed /* union */
+external interface StringLiteralLike :
     Node,
     DeclarationName,
     PropertyNameLiteral

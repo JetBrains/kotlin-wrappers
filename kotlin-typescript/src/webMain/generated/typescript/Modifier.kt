@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface Modifier :
+sealed /* union */
+external interface Modifier :
     Node,
     ModifierLike

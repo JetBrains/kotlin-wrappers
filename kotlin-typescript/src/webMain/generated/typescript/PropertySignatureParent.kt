@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface PropertySignatureParent : Node
+sealed /* union */
+external interface PropertySignatureParent : Node

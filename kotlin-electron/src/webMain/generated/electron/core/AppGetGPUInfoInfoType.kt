@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface AppGetGPUInfoInfoType
+sealed /* union */
+external interface AppGetGPUInfoInfoType
 
 inline val AppGetGPUInfoInfoType.Companion.basic: AppGetGPUInfoInfoType
     get() = js.reflect.unsafeCast("basic")

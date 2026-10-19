@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface BaseWindowConstructorOptionsVibrancy
+sealed /* union */
+external interface BaseWindowConstructorOptionsVibrancy
 
 inline val BaseWindowConstructorOptionsVibrancy.Companion.appearanceBased: BaseWindowConstructorOptionsVibrancy
     get() = js.reflect.unsafeCast("appearance-based")

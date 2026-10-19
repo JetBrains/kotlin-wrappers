@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface DockBounceType
+sealed /* union */
+external interface DockBounceType
 
 inline val DockBounceType.Companion.critical: DockBounceType
     get() = js.reflect.unsafeCast("critical")

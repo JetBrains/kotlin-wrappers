@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebContentsStopFindInPageAction
+sealed /* union */
+external interface WebContentsStopFindInPageAction
 
 inline val WebContentsStopFindInPageAction.Companion.clearSelection: WebContentsStopFindInPageAction
     get() = js.reflect.unsafeCast("clearSelection")

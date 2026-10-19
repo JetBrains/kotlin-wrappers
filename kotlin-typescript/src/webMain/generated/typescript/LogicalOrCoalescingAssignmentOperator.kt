@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface LogicalOrCoalescingAssignmentOperator : SyntaxKind
+sealed /* union */
+external interface LogicalOrCoalescingAssignmentOperator : SyntaxKind

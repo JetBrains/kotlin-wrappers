@@ -3,7 +3,8 @@
 package node.assert
 
 @js.union.JsUnion
-sealed external interface AssertOptionsDiff
+sealed /* union */
+external interface AssertOptionsDiff
 
 inline val AssertOptionsDiff.Companion.simple: AssertOptionsDiff
     get() = js.reflect.unsafeCast("simple")

@@ -3,7 +3,8 @@
 package node.process
 
 @js.union.JsUnion
-sealed external interface Architecture
+sealed /* union */
+external interface Architecture
 
 inline val Architecture.Companion.arm: Architecture
     get() = js.reflect.unsafeCast("arm")

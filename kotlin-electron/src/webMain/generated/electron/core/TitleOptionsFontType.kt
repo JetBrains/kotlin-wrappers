@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface TitleOptionsFontType
+sealed /* union */
+external interface TitleOptionsFontType
 
 inline val TitleOptionsFontType.Companion.monospaced: TitleOptionsFontType
     get() = js.reflect.unsafeCast("monospaced")

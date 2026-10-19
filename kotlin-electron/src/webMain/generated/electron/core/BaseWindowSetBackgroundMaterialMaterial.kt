@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface BaseWindowSetBackgroundMaterialMaterial
+sealed /* union */
+external interface BaseWindowSetBackgroundMaterialMaterial
 
 inline val BaseWindowSetBackgroundMaterialMaterial.Companion.auto: BaseWindowSetBackgroundMaterialMaterial
     get() = js.reflect.unsafeCast("auto")

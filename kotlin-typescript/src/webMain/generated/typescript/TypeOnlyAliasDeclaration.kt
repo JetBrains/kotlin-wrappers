@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TypeOnlyAliasDeclaration
+sealed /* union */
+external interface TypeOnlyAliasDeclaration

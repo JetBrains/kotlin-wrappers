@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SettingsType
+sealed /* union */
+external interface SettingsType
 
 inline val SettingsType.Companion.mainAppService: SettingsType
     get() = js.reflect.unsafeCast("mainAppService")

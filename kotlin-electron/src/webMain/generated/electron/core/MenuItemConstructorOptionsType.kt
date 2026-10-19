@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface MenuItemConstructorOptionsType
+sealed /* union */
+external interface MenuItemConstructorOptionsType
 
 inline val MenuItemConstructorOptionsType.Companion.normal: MenuItemConstructorOptionsType
     get() = js.reflect.unsafeCast("normal")

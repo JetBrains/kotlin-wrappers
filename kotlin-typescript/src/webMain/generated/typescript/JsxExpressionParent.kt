@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JsxExpressionParent : Node
+sealed /* union */
+external interface JsxExpressionParent : Node

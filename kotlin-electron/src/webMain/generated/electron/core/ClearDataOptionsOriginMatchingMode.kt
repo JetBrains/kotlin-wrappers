@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClearDataOptionsOriginMatchingMode
+sealed /* union */
+external interface ClearDataOptionsOriginMatchingMode
 
 inline val ClearDataOptionsOriginMatchingMode.Companion.thirdPartiesIncluded: ClearDataOptionsOriginMatchingMode
     get() = js.reflect.unsafeCast("third-parties-included")

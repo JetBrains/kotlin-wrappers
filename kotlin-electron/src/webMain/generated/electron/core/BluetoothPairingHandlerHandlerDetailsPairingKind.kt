@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface BluetoothPairingHandlerHandlerDetailsPairingKind
+sealed /* union */
+external interface BluetoothPairingHandlerHandlerDetailsPairingKind
 
 inline val BluetoothPairingHandlerHandlerDetailsPairingKind.Companion.confirm: BluetoothPairingHandlerHandlerDetailsPairingKind
     get() = js.reflect.unsafeCast("confirm")

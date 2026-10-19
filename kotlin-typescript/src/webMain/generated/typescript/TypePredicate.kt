@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TypePredicate
+sealed /* union */
+external interface TypePredicate

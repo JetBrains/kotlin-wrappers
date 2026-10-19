@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface InputEventModifier
+sealed /* union */
+external interface InputEventModifier
 
 inline val InputEventModifier.Companion.shift: InputEventModifier
     get() = js.reflect.unsafeCast("shift")

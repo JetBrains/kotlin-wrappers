@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClipboardWriteImageType
+sealed /* union */
+external interface ClipboardWriteImageType
 
 inline val ClipboardWriteImageType.Companion.selection: ClipboardWriteImageType
     get() = js.reflect.unsafeCast("selection")

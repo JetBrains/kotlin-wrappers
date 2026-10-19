@@ -9,7 +9,8 @@ package tauri.apps.api.menu.base
  * @ignore
  */
 @js.union.JsUnion
-sealed external interface ItemKind
+sealed /* union */
+external interface ItemKind
 
 inline val ItemKind.Companion.MenuItem: ItemKind
     get() = js.reflect.unsafeCast("MenuItem")

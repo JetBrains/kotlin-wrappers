@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface UserPreferencesOrganizeImportsCollation
+sealed /* union */
+external interface UserPreferencesOrganizeImportsCollation
 
 inline val UserPreferencesOrganizeImportsCollation.Companion.ordinal: UserPreferencesOrganizeImportsCollation
     get() = js.reflect.unsafeCast("ordinal")

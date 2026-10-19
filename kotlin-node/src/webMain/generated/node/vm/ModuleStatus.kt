@@ -3,7 +3,8 @@
 package node.vm
 
 @js.union.JsUnion
-sealed external interface ModuleStatus
+sealed /* union */
+external interface ModuleStatus
 
 inline val ModuleStatus.Companion.unlinked: ModuleStatus
     get() = js.reflect.unsafeCast("unlinked")

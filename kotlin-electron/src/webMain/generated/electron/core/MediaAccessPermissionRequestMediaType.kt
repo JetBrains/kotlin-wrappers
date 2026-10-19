@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface MediaAccessPermissionRequestMediaType
+sealed /* union */
+external interface MediaAccessPermissionRequestMediaType
 
 inline val MediaAccessPermissionRequestMediaType.Companion.video: MediaAccessPermissionRequestMediaType
     get() = js.reflect.unsafeCast("video")

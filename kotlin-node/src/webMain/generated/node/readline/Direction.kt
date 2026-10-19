@@ -3,7 +3,8 @@
 package node.readline
 
 @js.union.JsUnion
-sealed external interface Direction
+sealed /* union */
+external interface Direction
 
 inline val Direction.Companion.`-1`: Direction
     get() = js.reflect.unsafeCast(-1)

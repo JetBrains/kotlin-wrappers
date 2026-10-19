@@ -3,7 +3,8 @@
 package node.perfHooks
 
 @js.union.JsUnion
-sealed external interface EntryType // available on the Web
+sealed /* union */
+external interface EntryType // available on the Web
 
 inline val EntryType.Companion.dns: EntryType
     get() = js.reflect.unsafeCast("dns")

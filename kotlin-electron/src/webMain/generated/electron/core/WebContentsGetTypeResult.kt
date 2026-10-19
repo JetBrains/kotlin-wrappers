@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebContentsGetTypeResult
+sealed /* union */
+external interface WebContentsGetTypeResult
 
 inline val WebContentsGetTypeResult.Companion.backgroundPage: WebContentsGetTypeResult
     get() = js.reflect.unsafeCast("backgroundPage")

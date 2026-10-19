@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsOptionalChainResultPredicate : Node
+sealed /* union */
+external interface IsOptionalChainResultPredicate : Node

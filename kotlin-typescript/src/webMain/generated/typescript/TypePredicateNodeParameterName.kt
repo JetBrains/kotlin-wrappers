@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TypePredicateNodeParameterName : Node
+sealed /* union */
+external interface TypePredicateNodeParameterName : Node

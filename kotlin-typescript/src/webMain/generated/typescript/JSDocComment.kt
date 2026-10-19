@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocComment : Node
+sealed /* union */
+external interface JSDocComment : Node

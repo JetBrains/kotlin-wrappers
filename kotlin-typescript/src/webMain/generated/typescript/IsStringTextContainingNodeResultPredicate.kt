@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsStringTextContainingNodeResultPredicate : Node
+sealed /* union */
+external interface IsStringTextContainingNodeResultPredicate : Node

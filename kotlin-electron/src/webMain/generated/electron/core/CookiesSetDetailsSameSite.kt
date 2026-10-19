@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface CookiesSetDetailsSameSite
+sealed /* union */
+external interface CookiesSetDetailsSameSite
 
 inline val CookiesSetDetailsSameSite.Companion.unspecified: CookiesSetDetailsSameSite
     get() = js.reflect.unsafeCast("unspecified")

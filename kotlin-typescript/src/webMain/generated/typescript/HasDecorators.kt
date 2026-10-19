@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface HasDecorators : Node
+sealed /* union */
+external interface HasDecorators : Node

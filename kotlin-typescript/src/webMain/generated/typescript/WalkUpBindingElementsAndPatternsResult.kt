@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface WalkUpBindingElementsAndPatternsResult : Node
+sealed /* union */
+external interface WalkUpBindingElementsAndPatternsResult : Node

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WindowSessionEndEventReasons
+sealed /* union */
+external interface WindowSessionEndEventReasons
 
 inline val WindowSessionEndEventReasons.Companion.shutdown: WindowSessionEndEventReasons
     get() = js.reflect.unsafeCast("shutdown")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebContentsSetImageAnimationPolicyPolicy
+sealed /* union */
+external interface WebContentsSetImageAnimationPolicyPolicy
 
 inline val WebContentsSetImageAnimationPolicyPolicy.Companion.animate: WebContentsSetImageAnimationPolicyPolicy
     get() = js.reflect.unsafeCast("animate")

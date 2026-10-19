@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface BinaryOperator : SyntaxKind
+sealed /* union */
+external interface BinaryOperator : SyntaxKind

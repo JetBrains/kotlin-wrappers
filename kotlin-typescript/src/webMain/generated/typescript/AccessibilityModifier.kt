@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface AccessibilityModifier :
+sealed /* union */
+external interface AccessibilityModifier :
     Node,
     ParameterPropertyModifier,
     ClassMemberModifier

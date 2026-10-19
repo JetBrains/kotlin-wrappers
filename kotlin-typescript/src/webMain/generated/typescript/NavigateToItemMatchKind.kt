@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface NavigateToItemMatchKind
+sealed /* union */
+external interface NavigateToItemMatchKind
 
 inline val NavigateToItemMatchKind.Companion.exact: NavigateToItemMatchKind
     get() = js.reflect.unsafeCast("exact")

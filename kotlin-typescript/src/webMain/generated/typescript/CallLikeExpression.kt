@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface CallLikeExpression : Node
+sealed /* union */
+external interface CallLikeExpression : Node

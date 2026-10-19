@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ResolveHostOptionsCacheUsage
+sealed /* union */
+external interface ResolveHostOptionsCacheUsage
 
 inline val ResolveHostOptionsCacheUsage.Companion.allowed: ResolveHostOptionsCacheUsage
     get() = js.reflect.unsafeCast("allowed")

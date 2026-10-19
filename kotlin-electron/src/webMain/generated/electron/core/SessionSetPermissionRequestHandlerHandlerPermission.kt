@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SessionSetPermissionRequestHandlerHandlerPermission
+sealed /* union */
+external interface SessionSetPermissionRequestHandlerHandlerPermission
 
 inline val SessionSetPermissionRequestHandlerHandlerPermission.Companion.clipboardRead: SessionSetPermissionRequestHandlerHandlerPermission
     get() = js.reflect.unsafeCast("clipboard-read")

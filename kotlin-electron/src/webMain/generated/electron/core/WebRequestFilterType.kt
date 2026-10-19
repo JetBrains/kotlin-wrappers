@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebRequestFilterType
+sealed /* union */
+external interface WebRequestFilterType
 
 inline val WebRequestFilterType.Companion.mainFrame: WebRequestFilterType
     get() = js.reflect.unsafeCast("mainFrame")

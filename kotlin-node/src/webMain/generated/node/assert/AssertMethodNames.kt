@@ -3,7 +3,8 @@
 package node.assert
 
 @js.union.JsUnion
-sealed external interface AssertMethodNames
+sealed /* union */
+external interface AssertMethodNames
 
 inline val AssertMethodNames.Companion.deepEqual: AssertMethodNames
     get() = js.reflect.unsafeCast("deepEqual")

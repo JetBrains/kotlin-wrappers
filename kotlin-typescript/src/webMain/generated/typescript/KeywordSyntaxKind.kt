@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface KeywordSyntaxKind :
+sealed /* union */
+external interface KeywordSyntaxKind :
     SyntaxKind,
     TokenSyntaxKind,
     JSDocSyntaxKind

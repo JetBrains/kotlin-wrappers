@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SystemPreferencesGetSystemColorColor
+sealed /* union */
+external interface SystemPreferencesGetSystemColorColor
 
 inline val SystemPreferencesGetSystemColorColor.Companion.blue: SystemPreferencesGetSystemColorColor
     get() = js.reflect.unsafeCast("blue")

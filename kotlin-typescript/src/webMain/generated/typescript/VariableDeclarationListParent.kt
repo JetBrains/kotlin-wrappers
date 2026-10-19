@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface VariableDeclarationListParent : Node
+sealed /* union */
+external interface VariableDeclarationListParent : Node

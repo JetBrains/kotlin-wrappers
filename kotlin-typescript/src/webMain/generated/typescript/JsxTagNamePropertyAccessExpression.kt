@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface JsxTagNamePropertyAccessExpression :
+sealed /* union */
+external interface JsxTagNamePropertyAccessExpression :
     Node,
     LeftHandSideExpression

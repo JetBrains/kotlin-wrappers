@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface TemplateLiteralToken :
+sealed /* union */
+external interface TemplateLiteralToken :
     Node,
     IsStringTextContainingNodeResultPredicate

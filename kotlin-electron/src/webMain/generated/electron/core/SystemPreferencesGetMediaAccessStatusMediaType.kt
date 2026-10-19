@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SystemPreferencesGetMediaAccessStatusMediaType
+sealed /* union */
+external interface SystemPreferencesGetMediaAccessStatusMediaType
 
 inline val SystemPreferencesGetMediaAccessStatusMediaType.Companion.microphone: SystemPreferencesGetMediaAccessStatusMediaType
     get() = js.reflect.unsafeCast("microphone")

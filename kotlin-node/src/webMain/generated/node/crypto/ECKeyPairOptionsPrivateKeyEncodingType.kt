@@ -3,7 +3,8 @@
 package node.crypto
 
 @js.union.JsUnion
-sealed external interface ECKeyPairOptionsPrivateKeyEncodingType
+sealed /* union */
+external interface ECKeyPairOptionsPrivateKeyEncodingType
 
 inline val ECKeyPairOptionsPrivateKeyEncodingType.Companion.sec1: ECKeyPairOptionsPrivateKeyEncodingType
     get() = js.reflect.unsafeCast("sec1")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsTemplateMiddleOrTemplateTailResultPredicate : Node
+sealed /* union */
+external interface IsTemplateMiddleOrTemplateTailResultPredicate : Node

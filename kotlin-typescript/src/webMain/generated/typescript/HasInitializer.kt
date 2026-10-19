@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface HasInitializer : Node
+sealed /* union */
+external interface HasInitializer : Node

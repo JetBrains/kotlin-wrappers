@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface BindingPattern :
+sealed /* union */
+external interface BindingPattern :
     Node,
     DeclarationName,
     BindingName,

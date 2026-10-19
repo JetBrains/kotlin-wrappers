@@ -3,7 +3,8 @@
 package node.crypto
 
 @js.union.JsUnion
-sealed external interface PrivateKeyInputType
+sealed /* union */
+external interface PrivateKeyInputType
 
 inline val PrivateKeyInputType.Companion.pkcs1: PrivateKeyInputType
     get() = js.reflect.unsafeCast("pkcs1")

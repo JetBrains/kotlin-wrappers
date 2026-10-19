@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface HasModifiers : Node
+sealed /* union */
+external interface HasModifiers : Node

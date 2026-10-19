@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface FilesystemPermissionRequestFileAccessType
+sealed /* union */
+external interface FilesystemPermissionRequestFileAccessType
 
 inline val FilesystemPermissionRequestFileAccessType.Companion.writable: FilesystemPermissionRequestFileAccessType
     get() = js.reflect.unsafeCast("writable")

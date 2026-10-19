@@ -11,7 +11,8 @@ package tauri.apps.api.window
  *   traffic lights visible.
  */
 @js.union.JsUnion
-sealed external interface TitleBarStyle
+sealed /* union */
+external interface TitleBarStyle
 
 inline val TitleBarStyle.Companion.visible: TitleBarStyle
     get() = js.reflect.unsafeCast("visible")

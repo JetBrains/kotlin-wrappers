@@ -3,7 +3,8 @@
 package node
 
 @js.union.JsUnion
-sealed external interface GCOptionsType
+sealed /* union */
+external interface GCOptionsType
 
 inline val GCOptionsType.Companion.majorSnapshot: GCOptionsType
     get() = js.reflect.unsafeCast("major-snapshot")

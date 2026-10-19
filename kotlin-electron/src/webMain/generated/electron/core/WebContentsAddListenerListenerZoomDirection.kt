@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebContentsAddListenerListenerZoomDirection
+sealed /* union */
+external interface WebContentsAddListenerListenerZoomDirection
 
 inline val WebContentsAddListenerListenerZoomDirection.Companion.`in`: WebContentsAddListenerListenerZoomDirection
     get() = js.reflect.unsafeCast("in")

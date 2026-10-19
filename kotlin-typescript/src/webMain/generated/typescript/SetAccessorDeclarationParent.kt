@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface SetAccessorDeclarationParent : Node
+sealed /* union */
+external interface SetAccessorDeclarationParent : Node

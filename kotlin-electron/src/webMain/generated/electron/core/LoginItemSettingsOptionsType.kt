@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface LoginItemSettingsOptionsType
+sealed /* union */
+external interface LoginItemSettingsOptionsType
 
 inline val LoginItemSettingsOptionsType.Companion.mainAppService: LoginItemSettingsOptionsType
     get() = js.reflect.unsafeCast("mainAppService")

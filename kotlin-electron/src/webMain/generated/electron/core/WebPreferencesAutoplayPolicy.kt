@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebPreferencesAutoplayPolicy
+sealed /* union */
+external interface WebPreferencesAutoplayPolicy
 
 inline val WebPreferencesAutoplayPolicy.Companion.noUserGestureRequired: WebPreferencesAutoplayPolicy
     get() = js.reflect.unsafeCast("no-user-gesture-required")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface BaseWindowSetAlwaysOnTopLevel
+sealed /* union */
+external interface BaseWindowSetAlwaysOnTopLevel
 
 inline val BaseWindowSetAlwaysOnTopLevel.Companion.normal: BaseWindowSetAlwaysOnTopLevel
     get() = js.reflect.unsafeCast("normal")

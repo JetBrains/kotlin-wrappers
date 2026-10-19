@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IndexTypeType
+sealed /* union */
+external interface IndexTypeType

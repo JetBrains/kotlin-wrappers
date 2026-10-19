@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ContextMenuParamsFormControlType
+sealed /* union */
+external interface ContextMenuParamsFormControlType
 
 inline val ContextMenuParamsFormControlType.Companion.none: ContextMenuParamsFormControlType
     get() = js.reflect.unsafeCast("none")

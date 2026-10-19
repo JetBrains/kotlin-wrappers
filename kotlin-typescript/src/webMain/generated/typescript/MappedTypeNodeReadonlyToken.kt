@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface MappedTypeNodeReadonlyToken : Node
+sealed /* union */
+external interface MappedTypeNodeReadonlyToken : Node

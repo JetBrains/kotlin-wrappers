@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SessionFileSystemAccessRestrictedListenerCallbackAction
+sealed /* union */
+external interface SessionFileSystemAccessRestrictedListenerCallbackAction
 
 inline val SessionFileSystemAccessRestrictedListenerCallbackAction.Companion.allow: SessionFileSystemAccessRestrictedListenerCallbackAction
     get() = js.reflect.unsafeCast("allow")

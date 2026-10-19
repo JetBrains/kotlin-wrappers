@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TypeOperatorNodeOperator : SyntaxKind
+sealed /* union */
+external interface TypeOperatorNodeOperator : SyntaxKind

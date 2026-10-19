@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface RequiredAffectedFileResultAffected
+sealed /* union */
+external interface RequiredAffectedFileResultAffected

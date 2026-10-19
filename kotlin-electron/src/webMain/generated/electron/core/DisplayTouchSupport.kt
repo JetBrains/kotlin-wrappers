@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface DisplayTouchSupport
+sealed /* union */
+external interface DisplayTouchSupport
 
 inline val DisplayTouchSupport.Companion.available: DisplayTouchSupport
     get() = js.reflect.unsafeCast("available")

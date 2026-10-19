@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface DisplayBalloonOptionsIconType
+sealed /* union */
+external interface DisplayBalloonOptionsIconType
 
 inline val DisplayBalloonOptionsIconType.Companion.none: DisplayBalloonOptionsIconType
     get() = js.reflect.unsafeCast("none")

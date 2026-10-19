@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface FunctionLikeDeclaration : Node
+sealed /* union */
+external interface FunctionLikeDeclaration : Node

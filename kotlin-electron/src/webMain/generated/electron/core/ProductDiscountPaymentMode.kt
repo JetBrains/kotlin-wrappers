@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ProductDiscountPaymentMode
+sealed /* union */
+external interface ProductDiscountPaymentMode
 
 inline val ProductDiscountPaymentMode.Companion.payAsYouGo: ProductDiscountPaymentMode
     get() = js.reflect.unsafeCast("payAsYouGo")

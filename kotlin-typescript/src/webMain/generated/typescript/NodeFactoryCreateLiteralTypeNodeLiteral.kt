@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface NodeFactoryCreateLiteralTypeNodeLiteral
+sealed /* union */
+external interface NodeFactoryCreateLiteralTypeNodeLiteral

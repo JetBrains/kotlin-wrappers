@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ClassMemberModifier : Node
+sealed /* union */
+external interface ClassMemberModifier : Node

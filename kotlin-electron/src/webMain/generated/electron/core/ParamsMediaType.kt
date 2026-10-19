@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ParamsMediaType
+sealed /* union */
+external interface ParamsMediaType
 
 inline val ParamsMediaType.Companion.none: ParamsMediaType
     get() = js.reflect.unsafeCast("none")

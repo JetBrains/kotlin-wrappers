@@ -10,7 +10,8 @@ package tauri.apps.api.window
  * manager; unsupported values fall back to the default arrow.
  */
 @js.union.JsUnion
-sealed external interface CursorIcon
+sealed /* union */
+external interface CursorIcon
 
 inline val CursorIcon.Companion.default: CursorIcon
     get() = js.reflect.unsafeCast("default")

@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface EqualityOperator :
+sealed /* union */
+external interface EqualityOperator :
     SyntaxKind,
     EqualityOperatorOrHigher

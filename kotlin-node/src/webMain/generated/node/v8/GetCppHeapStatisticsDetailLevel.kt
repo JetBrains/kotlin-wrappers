@@ -3,7 +3,8 @@
 package node.v8
 
 @js.union.JsUnion
-sealed external interface GetCppHeapStatisticsDetailLevel
+sealed /* union */
+external interface GetCppHeapStatisticsDetailLevel
 
 inline val GetCppHeapStatisticsDetailLevel.Companion.brief: GetCppHeapStatisticsDetailLevel
     get() = js.reflect.unsafeCast("brief")

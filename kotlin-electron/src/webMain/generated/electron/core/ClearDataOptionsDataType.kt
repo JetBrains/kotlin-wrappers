@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClearDataOptionsDataType
+sealed /* union */
+external interface ClearDataOptionsDataType
 
 inline val ClearDataOptionsDataType.Companion.backgroundFetch: ClearDataOptionsDataType
     get() = js.reflect.unsafeCast("backgroundFetch")

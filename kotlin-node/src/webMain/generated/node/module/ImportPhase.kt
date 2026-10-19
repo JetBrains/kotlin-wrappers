@@ -3,7 +3,8 @@
 package node.module
 
 @js.union.JsUnion
-sealed external interface ImportPhase
+sealed /* union */
+external interface ImportPhase
 
 inline val ImportPhase.Companion.source: ImportPhase
     get() = js.reflect.unsafeCast("source")

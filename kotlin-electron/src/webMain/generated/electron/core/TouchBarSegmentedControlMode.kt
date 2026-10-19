@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface TouchBarSegmentedControlMode
+sealed /* union */
+external interface TouchBarSegmentedControlMode
 
 inline val TouchBarSegmentedControlMode.Companion.single: TouchBarSegmentedControlMode
     get() = js.reflect.unsafeCast("single")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface StartLoggingOptionsCaptureMode
+sealed /* union */
+external interface StartLoggingOptionsCaptureMode
 
 inline val StartLoggingOptionsCaptureMode.Companion.default: StartLoggingOptionsCaptureMode
     get() = js.reflect.unsafeCast("default")

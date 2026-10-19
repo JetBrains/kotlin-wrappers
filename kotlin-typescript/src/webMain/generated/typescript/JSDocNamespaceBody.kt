@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface JSDocNamespaceBody :
+sealed /* union */
+external interface JSDocNamespaceBody :
     Node,
     ModuleBody

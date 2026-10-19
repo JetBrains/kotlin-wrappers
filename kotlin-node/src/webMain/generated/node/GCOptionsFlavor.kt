@@ -3,7 +3,8 @@
 package node
 
 @js.union.JsUnion
-sealed external interface GCOptionsFlavor
+sealed /* union */
+external interface GCOptionsFlavor
 
 inline val GCOptionsFlavor.Companion.regular: GCOptionsFlavor
     get() = js.reflect.unsafeCast("regular")

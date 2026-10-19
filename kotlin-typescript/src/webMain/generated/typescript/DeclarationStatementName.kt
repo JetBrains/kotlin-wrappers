@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface DeclarationStatementName :
+sealed /* union */
+external interface DeclarationStatementName :
     Node,
     DeclarationName

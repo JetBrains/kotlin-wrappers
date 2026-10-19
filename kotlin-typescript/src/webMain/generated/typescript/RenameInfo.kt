@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface RenameInfo
+sealed /* union */
+external interface RenameInfo

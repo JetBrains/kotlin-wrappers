@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface CompletionEntryData
+sealed /* union */
+external interface CompletionEntryData

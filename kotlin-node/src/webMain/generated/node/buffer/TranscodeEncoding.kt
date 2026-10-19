@@ -3,7 +3,8 @@
 package node.buffer
 
 @js.union.JsUnion
-sealed external interface TranscodeEncoding
+sealed /* union */
+external interface TranscodeEncoding
 
 inline val TranscodeEncoding.Companion.ascii: TranscodeEncoding
     get() = js.reflect.unsafeCast("ascii")

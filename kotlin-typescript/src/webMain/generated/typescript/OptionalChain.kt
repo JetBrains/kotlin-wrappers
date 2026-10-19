@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface OptionalChain : Node
+sealed /* union */
+external interface OptionalChain : Node

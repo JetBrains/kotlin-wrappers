@@ -3,7 +3,8 @@
 package node.test.eventData
 
 @js.union.JsUnion
-sealed external interface TestCompleteDetailsType
+sealed /* union */
+external interface TestCompleteDetailsType
 
 inline val TestCompleteDetailsType.Companion.suite: TestCompleteDetailsType
     get() = js.reflect.unsafeCast("suite")

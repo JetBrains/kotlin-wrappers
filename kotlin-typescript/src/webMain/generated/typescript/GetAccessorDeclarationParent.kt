@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface GetAccessorDeclarationParent : Node
+sealed /* union */
+external interface GetAccessorDeclarationParent : Node

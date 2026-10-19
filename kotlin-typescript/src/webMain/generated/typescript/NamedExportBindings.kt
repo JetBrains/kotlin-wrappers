@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface NamedExportBindings : Node
+sealed /* union */
+external interface NamedExportBindings : Node

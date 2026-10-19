@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface AssignmentPattern : Node
+sealed /* union */
+external interface AssignmentPattern : Node
