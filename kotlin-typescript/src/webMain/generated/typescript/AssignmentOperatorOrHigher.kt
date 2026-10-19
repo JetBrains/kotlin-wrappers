@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface AssignmentOperatorOrHigher :
+sealed /* union */
+external interface AssignmentOperatorOrHigher :
     SyntaxKind,
     BinaryOperator

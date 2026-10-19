@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface PopupOptionsSourceType
+sealed /* union */
+external interface PopupOptionsSourceType
 
 inline val PopupOptionsSourceType.Companion.none: PopupOptionsSourceType
     get() = js.reflect.unsafeCast("none")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ResolveHostOptionsSource
+sealed /* union */
+external interface ResolveHostOptionsSource
 
 inline val ResolveHostOptionsSource.Companion.any: ResolveHostOptionsSource
     get() = js.reflect.unsafeCast("any")

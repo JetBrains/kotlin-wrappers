@@ -3,7 +3,8 @@
 package node.process
 
 @js.union.JsUnion
-sealed external interface MultipleResolveType
+sealed /* union */
+external interface MultipleResolveType
 
 inline val MultipleResolveType.Companion.resolve: MultipleResolveType
     get() = js.reflect.unsafeCast("resolve")

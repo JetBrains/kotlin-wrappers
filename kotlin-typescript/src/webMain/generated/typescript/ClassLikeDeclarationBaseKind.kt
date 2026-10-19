@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ClassLikeDeclarationBaseKind : SyntaxKind
+sealed /* union */
+external interface ClassLikeDeclarationBaseKind : SyntaxKind

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface GetJSDocCommentsAndTagsResultItem : Node
+sealed /* union */
+external interface GetJSDocCommentsAndTagsResultItem : Node

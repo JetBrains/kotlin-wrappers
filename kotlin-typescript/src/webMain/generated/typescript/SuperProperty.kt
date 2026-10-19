@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface SuperProperty : Node
+sealed /* union */
+external interface SuperProperty : Node

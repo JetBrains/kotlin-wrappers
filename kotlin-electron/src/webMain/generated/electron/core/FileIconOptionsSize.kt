@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface FileIconOptionsSize
+sealed /* union */
+external interface FileIconOptionsSize
 
 inline val FileIconOptionsSize.Companion.small: FileIconOptionsSize
     get() = js.reflect.unsafeCast("small")

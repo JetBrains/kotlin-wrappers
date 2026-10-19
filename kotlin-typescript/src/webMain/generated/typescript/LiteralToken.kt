@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface LiteralToken : Node
+sealed /* union */
+external interface LiteralToken : Node

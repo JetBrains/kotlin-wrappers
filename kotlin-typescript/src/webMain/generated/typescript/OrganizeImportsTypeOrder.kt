@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface OrganizeImportsTypeOrder
+sealed /* union */
+external interface OrganizeImportsTypeOrder
 
 inline val OrganizeImportsTypeOrder.Companion.last: OrganizeImportsTypeOrder
     get() = js.reflect.unsafeCast("last")

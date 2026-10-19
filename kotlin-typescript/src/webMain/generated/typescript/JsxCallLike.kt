@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface JsxCallLike :
+sealed /* union */
+external interface JsxCallLike :
     Node,
     CallLikeExpression

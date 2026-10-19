@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ContextMenuParamsMediaType
+sealed /* union */
+external interface ContextMenuParamsMediaType
 
 inline val ContextMenuParamsMediaType.Companion.none: ContextMenuParamsMediaType
     get() = js.reflect.unsafeCast("none")

@@ -3,7 +3,8 @@
 package node.crypto
 
 @js.union.JsUnion
-sealed external interface CharacterEncoding
+sealed /* union */
+external interface CharacterEncoding
 
 inline val CharacterEncoding.Companion.utf8: CharacterEncoding
     get() = js.reflect.unsafeCast("utf8")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface BrowserWindowSetVibrancyType
+sealed /* union */
+external interface BrowserWindowSetVibrancyType
 
 inline val BrowserWindowSetVibrancyType.Companion.titlebar: BrowserWindowSetVibrancyType
     get() = js.reflect.unsafeCast("titlebar")

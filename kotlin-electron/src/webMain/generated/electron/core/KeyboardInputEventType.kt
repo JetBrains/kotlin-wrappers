@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface KeyboardInputEventType
+sealed /* union */
+external interface KeyboardInputEventType
 
 inline val KeyboardInputEventType.Companion.rawKeyDown: KeyboardInputEventType
     get() = js.reflect.unsafeCast("rawKeyDown")

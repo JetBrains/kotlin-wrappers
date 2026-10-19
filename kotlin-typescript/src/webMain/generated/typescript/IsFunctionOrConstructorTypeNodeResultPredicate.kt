@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsFunctionOrConstructorTypeNodeResultPredicate : Node
+sealed /* union */
+external interface IsFunctionOrConstructorTypeNodeResultPredicate : Node

@@ -3,7 +3,8 @@
 package testing.library.dom
 
 @js.union.JsUnion
-sealed external interface Variant
+sealed /* union */
+external interface Variant
 
 inline val Variant.Companion.find: Variant
     get() = js.reflect.unsafeCast("find")

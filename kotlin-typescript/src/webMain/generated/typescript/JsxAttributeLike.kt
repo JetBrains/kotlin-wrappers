@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface JsxAttributeLike :
+sealed /* union */
+external interface JsxAttributeLike :
     Node,
     JsxExpressionParent

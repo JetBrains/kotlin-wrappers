@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface AppSetJumpListResult
+sealed /* union */
+external interface AppSetJumpListResult
 
 inline val AppSetJumpListResult.Companion.ok: AppSetJumpListResult
     get() = js.reflect.unsafeCast("ok")

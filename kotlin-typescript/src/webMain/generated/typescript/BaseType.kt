@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface BaseType
+sealed /* union */
+external interface BaseType

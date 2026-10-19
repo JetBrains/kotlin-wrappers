@@ -4,7 +4,8 @@ package node.util
 
 // https://nodejs.org/docs/latest/api/util.html#foreground-colors
 @js.union.JsUnion
-sealed external interface ForegroundColors
+sealed /* union */
+external interface ForegroundColors
 
 inline val ForegroundColors.Companion.black: ForegroundColors
     get() = js.reflect.unsafeCast("black")

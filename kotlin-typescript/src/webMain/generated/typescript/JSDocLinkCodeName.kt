@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocLinkCodeName : Node
+sealed /* union */
+external interface JSDocLinkCodeName : Node

@@ -3,7 +3,8 @@
 package node.crypto
 
 @js.union.JsUnion
-sealed external interface CipherMode
+sealed /* union */
+external interface CipherMode
 
 inline val CipherMode.Companion.cbc: CipherMode
     get() = js.reflect.unsafeCast("cbc")

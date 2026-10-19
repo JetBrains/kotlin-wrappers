@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface HeritageClauseParent : Node
+sealed /* union */
+external interface HeritageClauseParent : Node

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TemplateSpanLiteral : Node
+sealed /* union */
+external interface TemplateSpanLiteral : Node

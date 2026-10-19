@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface PrefixUnaryOperator : SyntaxKind
+sealed /* union */
+external interface PrefixUnaryOperator : SyntaxKind

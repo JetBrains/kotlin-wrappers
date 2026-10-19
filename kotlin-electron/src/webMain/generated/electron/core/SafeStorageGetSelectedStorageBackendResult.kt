@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SafeStorageGetSelectedStorageBackendResult
+sealed /* union */
+external interface SafeStorageGetSelectedStorageBackendResult
 
 inline val SafeStorageGetSelectedStorageBackendResult.Companion.basic_text: SafeStorageGetSelectedStorageBackendResult
     get() = js.reflect.unsafeCast("basic_text")

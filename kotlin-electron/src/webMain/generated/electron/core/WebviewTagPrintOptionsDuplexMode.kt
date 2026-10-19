@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebviewTagPrintOptionsDuplexMode
+sealed /* union */
+external interface WebviewTagPrintOptionsDuplexMode
 
 inline val WebviewTagPrintOptionsDuplexMode.Companion.simplex: WebviewTagPrintOptionsDuplexMode
     get() = js.reflect.unsafeCast("simplex")

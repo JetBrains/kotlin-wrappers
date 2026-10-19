@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClientRequestConstructorOptionsRedirect
+sealed /* union */
+external interface ClientRequestConstructorOptionsRedirect
 
 inline val ClientRequestConstructorOptionsRedirect.Companion.follow: ClientRequestConstructorOptionsRedirect
     get() = js.reflect.unsafeCast("follow")

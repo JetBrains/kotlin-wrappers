@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SystemPreferencesEffectiveAppearance
+sealed /* union */
+external interface SystemPreferencesEffectiveAppearance
 
 inline val SystemPreferencesEffectiveAppearance.Companion.dark: SystemPreferencesEffectiveAppearance
     get() = js.reflect.unsafeCast("dark")

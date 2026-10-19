@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ImportPhaseModifierSyntaxKind : SyntaxKind
+sealed /* union */
+external interface ImportPhaseModifierSyntaxKind : SyntaxKind

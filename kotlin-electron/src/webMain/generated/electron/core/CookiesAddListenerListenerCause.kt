@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface CookiesAddListenerListenerCause
+sealed /* union */
+external interface CookiesAddListenerListenerCause
 
 inline val CookiesAddListenerListenerCause.Companion.inserted: CookiesAddListenerListenerCause
     get() = js.reflect.unsafeCast("inserted")

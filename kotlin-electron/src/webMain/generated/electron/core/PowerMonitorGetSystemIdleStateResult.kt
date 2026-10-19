@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface PowerMonitorGetSystemIdleStateResult
+sealed /* union */
+external interface PowerMonitorGetSystemIdleStateResult
 
 inline val PowerMonitorGetSystemIdleStateResult.Companion.active: PowerMonitorGetSystemIdleStateResult
     get() = js.reflect.unsafeCast("active")

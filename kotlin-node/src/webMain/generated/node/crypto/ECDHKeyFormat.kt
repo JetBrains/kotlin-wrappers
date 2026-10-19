@@ -3,7 +3,8 @@
 package node.crypto
 
 @js.union.JsUnion
-sealed external interface ECDHKeyFormat
+sealed /* union */
+external interface ECDHKeyFormat
 
 inline val ECDHKeyFormat.Companion.compressed: ECDHKeyFormat
     get() = js.reflect.unsafeCast("compressed")

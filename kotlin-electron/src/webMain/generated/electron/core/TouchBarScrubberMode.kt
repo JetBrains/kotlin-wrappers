@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface TouchBarScrubberMode
+sealed /* union */
+external interface TouchBarScrubberMode
 
 inline val TouchBarScrubberMode.Companion.fixed: TouchBarScrubberMode
     get() = js.reflect.unsafeCast("fixed")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TemplateHeadParent : Node
+sealed /* union */
+external interface TemplateHeadParent : Node

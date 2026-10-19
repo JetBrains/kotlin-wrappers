@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface PerformanceEventKind
+sealed /* union */
+external interface PerformanceEventKind
 
 inline val PerformanceEventKind.Companion.UpdateGraph: PerformanceEventKind
     get() = js.reflect.unsafeCast("UpdateGraph")

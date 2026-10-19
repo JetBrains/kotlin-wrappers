@@ -4,7 +4,8 @@ package node.util
 
 // https://nodejs.org/docs/latest/api/util.html#background-colors
 @js.union.JsUnion
-sealed external interface BackgroundColors
+sealed /* union */
+external interface BackgroundColors
 
 inline val BackgroundColors.Companion.bgBlack: BackgroundColors
     get() = js.reflect.unsafeCast("bgBlack")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface FeedURLOptionsServerType
+sealed /* union */
+external interface FeedURLOptionsServerType
 
 inline val FeedURLOptionsServerType.Companion.json: FeedURLOptionsServerType
     get() = js.reflect.unsafeCast("json")

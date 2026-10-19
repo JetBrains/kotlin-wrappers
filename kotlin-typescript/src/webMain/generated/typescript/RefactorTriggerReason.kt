@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface RefactorTriggerReason
+sealed /* union */
+external interface RefactorTriggerReason
 
 inline val RefactorTriggerReason.Companion.implicit: RefactorTriggerReason
     get() = js.reflect.unsafeCast("implicit")

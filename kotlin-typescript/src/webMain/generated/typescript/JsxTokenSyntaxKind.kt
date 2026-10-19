@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JsxTokenSyntaxKind : SyntaxKind
+sealed /* union */
+external interface JsxTokenSyntaxKind : SyntaxKind

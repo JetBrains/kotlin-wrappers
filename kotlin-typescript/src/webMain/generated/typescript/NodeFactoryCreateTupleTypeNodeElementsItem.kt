@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface NodeFactoryCreateTupleTypeNodeElementsItem : Node
+sealed /* union */
+external interface NodeFactoryCreateTupleTypeNodeElementsItem : Node

@@ -4,7 +4,8 @@ package node.util
 
 // https://nodejs.org/docs/latest/api/util.html#modifiers
 @js.union.JsUnion
-sealed external interface Modifiers
+sealed /* union */
+external interface Modifiers
 
 inline val Modifiers.Companion.blink: Modifiers
     get() = js.reflect.unsafeCast("blink")

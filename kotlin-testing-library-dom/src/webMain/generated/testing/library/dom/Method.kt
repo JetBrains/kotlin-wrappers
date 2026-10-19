@@ -3,7 +3,8 @@
 package testing.library.dom
 
 @js.union.JsUnion
-sealed external interface Method
+sealed /* union */
+external interface Method
 
 inline val Method.Companion.AltText: Method
     get() = js.reflect.unsafeCast("AltText")

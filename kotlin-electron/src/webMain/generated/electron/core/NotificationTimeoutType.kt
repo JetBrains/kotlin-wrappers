@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface NotificationTimeoutType
+sealed /* union */
+external interface NotificationTimeoutType
 
 inline val NotificationTimeoutType.Companion.default: NotificationTimeoutType
     get() = js.reflect.unsafeCast("default")

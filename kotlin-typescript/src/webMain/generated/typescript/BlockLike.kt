@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface BlockLike : Node
+sealed /* union */
+external interface BlockLike : Node

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClearStorageDataOptionsStorage
+sealed /* union */
+external interface ClearStorageDataOptionsStorage
 
 inline val ClearStorageDataOptionsStorage.Companion.cookies: ClearStorageDataOptionsStorage
     get() = js.reflect.unsafeCast("cookies")

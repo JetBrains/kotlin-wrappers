@@ -3,7 +3,8 @@
 package node.dns
 
 @js.union.JsUnion
-sealed external interface SetDefaultResultOrderOrder
+sealed /* union */
+external interface SetDefaultResultOrderOrder
 
 inline val SetDefaultResultOrderOrder.Companion.ipv4first: SetDefaultResultOrderOrder
     get() = js.reflect.unsafeCast("ipv4first")

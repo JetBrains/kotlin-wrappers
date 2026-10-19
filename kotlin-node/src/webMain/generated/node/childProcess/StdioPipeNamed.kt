@@ -3,7 +3,8 @@
 package node.childProcess
 
 @js.union.JsUnion
-sealed external interface StdioPipeNamed
+sealed /* union */
+external interface StdioPipeNamed
 
 inline val StdioPipeNamed.Companion.pipe: StdioPipeNamed
     get() = js.reflect.unsafeCast("pipe")

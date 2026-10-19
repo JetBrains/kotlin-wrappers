@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface NodeFactoryCreateMetaPropertyKeywordToken : SyntaxKind
+sealed /* union */
+external interface NodeFactoryCreateMetaPropertyKeywordToken : SyntaxKind

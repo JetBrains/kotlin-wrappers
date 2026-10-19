@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface TouchBarScrubberSelectedStyle
+sealed /* union */
+external interface TouchBarScrubberSelectedStyle
 
 inline val TouchBarScrubberSelectedStyle.Companion.background: TouchBarScrubberSelectedStyle
     get() = js.reflect.unsafeCast("background")

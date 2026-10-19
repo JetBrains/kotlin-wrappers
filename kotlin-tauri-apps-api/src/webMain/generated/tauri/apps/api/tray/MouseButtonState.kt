@@ -4,7 +4,8 @@ package tauri.apps.api.tray
 
 /** Whether the mouse button was pressed (`Down`) or released (`Up`). */
 @js.union.JsUnion
-sealed external interface MouseButtonState
+sealed /* union */
+external interface MouseButtonState
 
 inline val MouseButtonState.Companion.Up: MouseButtonState
     get() = js.reflect.unsafeCast("Up")

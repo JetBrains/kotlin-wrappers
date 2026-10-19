@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ResolveHostOptionsSecureDnsPolicy
+sealed /* union */
+external interface ResolveHostOptionsSecureDnsPolicy
 
 inline val ResolveHostOptionsSecureDnsPolicy.Companion.allow: ResolveHostOptionsSecureDnsPolicy
     get() = js.reflect.unsafeCast("allow")

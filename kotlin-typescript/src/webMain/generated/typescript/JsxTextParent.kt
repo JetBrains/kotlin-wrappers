@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JsxTextParent : Node
+sealed /* union */
+external interface JsxTextParent : Node

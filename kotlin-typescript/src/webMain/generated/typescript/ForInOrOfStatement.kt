@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ForInOrOfStatement : Node
+sealed /* union */
+external interface ForInOrOfStatement : Node

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface TypeReferenceType : Node
+sealed /* union */
+external interface TypeReferenceType : Node

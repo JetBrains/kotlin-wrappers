@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ReferrerPolicy
+sealed /* union */
+external interface ReferrerPolicy
 
 inline val ReferrerPolicy.Companion.default: ReferrerPolicy
     get() = js.reflect.unsafeCast("default")

@@ -3,7 +3,8 @@
 package node.test.eventData
 
 @js.union.JsUnion
-sealed external interface TestDequeueType
+sealed /* union */
+external interface TestDequeueType
 
 inline val TestDequeueType.Companion.suite: TestDequeueType
     get() = js.reflect.unsafeCast("suite")

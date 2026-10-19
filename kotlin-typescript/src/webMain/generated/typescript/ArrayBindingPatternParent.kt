@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ArrayBindingPatternParent : Node
+sealed /* union */
+external interface ArrayBindingPatternParent : Node

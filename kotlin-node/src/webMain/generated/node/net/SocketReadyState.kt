@@ -3,7 +3,8 @@
 package node.net
 
 @js.union.JsUnion
-sealed external interface SocketReadyState
+sealed /* union */
+external interface SocketReadyState
 
 inline val SocketReadyState.Companion.opening: SocketReadyState
     get() = js.reflect.unsafeCast("opening")

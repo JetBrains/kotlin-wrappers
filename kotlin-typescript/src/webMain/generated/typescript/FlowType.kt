@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface FlowType
+sealed /* union */
+external interface FlowType

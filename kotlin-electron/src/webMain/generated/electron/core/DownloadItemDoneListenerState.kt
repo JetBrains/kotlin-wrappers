@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface DownloadItemDoneListenerState
+sealed /* union */
+external interface DownloadItemDoneListenerState
 
 inline val DownloadItemDoneListenerState.Companion.completed: DownloadItemDoneListenerState
     get() = js.reflect.unsafeCast("completed")

@@ -3,7 +3,8 @@
 package node.dgram
 
 @js.union.JsUnion
-sealed external interface RemoteInfoFamily
+sealed /* union */
+external interface RemoteInfoFamily
 
 inline val RemoteInfoFamily.Companion.IPv4: RemoteInfoFamily
     get() = js.reflect.unsafeCast("IPv4")

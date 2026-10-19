@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface TouchBarSpacerSize
+sealed /* union */
+external interface TouchBarSpacerSize
 
 inline val TouchBarSpacerSize.Companion.small: TouchBarSpacerSize
     get() = js.reflect.unsafeCast("small")

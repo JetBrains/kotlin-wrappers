@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface UserPreferencesIncludePackageJsonAutoImports
+sealed /* union */
+external interface UserPreferencesIncludePackageJsonAutoImports
 
 inline val UserPreferencesIncludePackageJsonAutoImports.Companion.auto: UserPreferencesIncludePackageJsonAutoImports
     get() = js.reflect.unsafeCast("auto")

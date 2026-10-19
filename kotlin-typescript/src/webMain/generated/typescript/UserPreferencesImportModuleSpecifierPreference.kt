@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface UserPreferencesImportModuleSpecifierPreference
+sealed /* union */
+external interface UserPreferencesImportModuleSpecifierPreference
 
 inline val UserPreferencesImportModuleSpecifierPreference.Companion.shortest: UserPreferencesImportModuleSpecifierPreference
     get() = js.reflect.unsafeCast("shortest")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsIdentifierOrThisTypeNodeResultPredicate : Node
+sealed /* union */
+external interface IsIdentifierOrThisTypeNodeResultPredicate : Node

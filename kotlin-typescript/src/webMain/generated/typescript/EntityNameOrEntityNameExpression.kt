@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface EntityNameOrEntityNameExpression : Node
+sealed /* union */
+external interface EntityNameOrEntityNameExpression : Node

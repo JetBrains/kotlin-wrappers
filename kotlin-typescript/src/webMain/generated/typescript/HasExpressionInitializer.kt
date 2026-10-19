@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface HasExpressionInitializer :
+sealed /* union */
+external interface HasExpressionInitializer :
     Node,
     HasInitializer

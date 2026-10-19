@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface WebviewTagStopFindInPageAction
+sealed /* union */
+external interface WebviewTagStopFindInPageAction
 
 inline val WebviewTagStopFindInPageAction.Companion.clearSelection: WebviewTagStopFindInPageAction
     get() = js.reflect.unsafeCast("clearSelection")

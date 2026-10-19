@@ -3,7 +3,8 @@
 package node.module
 
 @js.union.JsUnion
-sealed external interface StripTypeScriptTypesOptionsMode
+sealed /* union */
+external interface StripTypeScriptTypesOptionsMode
 
 inline val StripTypeScriptTypesOptionsMode.Companion.strip: StripTypeScriptTypesOptionsMode
     get() = js.reflect.unsafeCast("strip")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClientRequestConstructorOptionsCache
+sealed /* union */
+external interface ClientRequestConstructorOptionsCache
 
 inline val ClientRequestConstructorOptionsCache.Companion.default: ClientRequestConstructorOptionsCache
     get() = js.reflect.unsafeCast("default")

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ResizeOptionsQuality
+sealed /* union */
+external interface ResizeOptionsQuality
 
 inline val ResizeOptionsQuality.Companion.good: ResizeOptionsQuality
     get() = js.reflect.unsafeCast("good")

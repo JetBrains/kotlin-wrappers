@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface PermissionCheckHandlerHandlerDetailsFileAccessType
+sealed /* union */
+external interface PermissionCheckHandlerHandlerDetailsFileAccessType
 
 inline val PermissionCheckHandlerHandlerDetailsFileAccessType.Companion.writable: PermissionCheckHandlerHandlerDetailsFileAccessType
     get() = js.reflect.unsafeCast("writable")

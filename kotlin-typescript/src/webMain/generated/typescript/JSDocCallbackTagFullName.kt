@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocCallbackTagFullName : Node
+sealed /* union */
+external interface JSDocCallbackTagFullName : Node

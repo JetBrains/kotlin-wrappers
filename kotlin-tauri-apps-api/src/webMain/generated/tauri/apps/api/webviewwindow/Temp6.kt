@@ -3,7 +3,8 @@
 package tauri.apps.api.webviewwindow
 
 @js.union.JsUnion
-sealed external interface Temp6
+sealed /* union */
+external interface Temp6
 
 inline val Temp6.Companion.x: Temp6
     get() = js.reflect.unsafeCast("x")

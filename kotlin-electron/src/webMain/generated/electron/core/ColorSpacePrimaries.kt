@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ColorSpacePrimaries
+sealed /* union */
+external interface ColorSpacePrimaries
 
 inline val ColorSpacePrimaries.Companion.bt709: ColorSpacePrimaries
     get() = js.reflect.unsafeCast("bt709")

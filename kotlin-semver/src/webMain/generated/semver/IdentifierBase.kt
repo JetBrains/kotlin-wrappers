@@ -4,7 +4,8 @@ package semver
 
 /** Base number to be used for the prerelease identifier */
 @js.union.JsUnion
-sealed external interface IdentifierBase
+sealed /* union */
+external interface IdentifierBase
 
 inline val IdentifierBase.Companion.`false`: IdentifierBase
     get() = js.reflect.unsafeCast(false)

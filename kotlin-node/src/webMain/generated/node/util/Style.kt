@@ -3,7 +3,8 @@
 package node.util
 
 @js.union.JsUnion
-sealed external interface Style
+sealed /* union */
+external interface Style
 
 inline val Style.Companion.special: Style
     get() = js.reflect.unsafeCast("special")

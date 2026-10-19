@@ -3,7 +3,8 @@
 package node.dgram
 
 @js.union.JsUnion
-sealed external interface SocketType
+sealed /* union */
+external interface SocketType
 
 inline val SocketType.Companion.udp4: SocketType
     get() = js.reflect.unsafeCast("udp4")

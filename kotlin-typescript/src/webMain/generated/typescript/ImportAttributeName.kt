@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ImportAttributeName : Node
+sealed /* union */
+external interface ImportAttributeName : Node

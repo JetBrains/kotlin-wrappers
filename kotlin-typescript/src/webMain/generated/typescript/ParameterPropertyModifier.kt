@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ParameterPropertyModifier : Node
+sealed /* union */
+external interface ParameterPropertyModifier : Node

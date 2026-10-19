@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface HasJSDoc : Node
+sealed /* union */
+external interface HasJSDoc : Node

@@ -3,7 +3,8 @@
 package node.childProcess
 
 @js.union.JsUnion
-sealed external interface IOType
+sealed /* union */
+external interface IOType
 
 inline val IOType.Companion.overlapped: IOType
     get() = js.reflect.unsafeCast("overlapped")

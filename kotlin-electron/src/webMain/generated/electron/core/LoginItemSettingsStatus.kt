@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface LoginItemSettingsStatus
+sealed /* union */
+external interface LoginItemSettingsStatus
 
 inline val LoginItemSettingsStatus.Companion.notRegistered: LoginItemSettingsStatus
     get() = js.reflect.unsafeCast("not-registered")

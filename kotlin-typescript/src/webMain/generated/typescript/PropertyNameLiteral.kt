@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface PropertyNameLiteral : Node
+sealed /* union */
+external interface PropertyNameLiteral : Node

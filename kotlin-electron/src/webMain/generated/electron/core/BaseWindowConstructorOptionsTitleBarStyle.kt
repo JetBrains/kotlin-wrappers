@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface BaseWindowConstructorOptionsTitleBarStyle
+sealed /* union */
+external interface BaseWindowConstructorOptionsTitleBarStyle
 
 inline val BaseWindowConstructorOptionsTitleBarStyle.Companion.default: BaseWindowConstructorOptionsTitleBarStyle
     get() = js.reflect.unsafeCast("default")

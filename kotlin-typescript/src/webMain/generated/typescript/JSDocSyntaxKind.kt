@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocSyntaxKind : SyntaxKind
+sealed /* union */
+external interface JSDocSyntaxKind : SyntaxKind

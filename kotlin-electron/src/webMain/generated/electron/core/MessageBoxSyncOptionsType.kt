@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface MessageBoxSyncOptionsType
+sealed /* union */
+external interface MessageBoxSyncOptionsType
 
 inline val MessageBoxSyncOptionsType.Companion.none: MessageBoxSyncOptionsType
     get() = js.reflect.unsafeCast("none")

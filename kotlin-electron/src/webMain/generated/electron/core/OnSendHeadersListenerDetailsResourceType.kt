@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface OnSendHeadersListenerDetailsResourceType
+sealed /* union */
+external interface OnSendHeadersListenerDetailsResourceType
 
 inline val OnSendHeadersListenerDetailsResourceType.Companion.mainFrame: OnSendHeadersListenerDetailsResourceType
     get() = js.reflect.unsafeCast("mainFrame")

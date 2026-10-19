@@ -4,7 +4,8 @@ package tauri.apps.api.window
 
 /** The edge or corner a resize drag started from, see {@link Window.startResizeDragging}. */
 @js.union.JsUnion
-sealed external interface ResizeDirection
+sealed /* union */
+external interface ResizeDirection
 
 inline val ResizeDirection.Companion.East: ResizeDirection
     get() = js.reflect.unsafeCast("East")

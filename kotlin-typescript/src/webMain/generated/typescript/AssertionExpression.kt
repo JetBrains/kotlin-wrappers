@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface AssertionExpression :
+sealed /* union */
+external interface AssertionExpression :
     Node,
     HasType

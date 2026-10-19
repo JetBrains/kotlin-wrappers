@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JSDocTypedefTagTypeExpression : Node
+sealed /* union */
+external interface JSDocTypedefTagTypeExpression : Node

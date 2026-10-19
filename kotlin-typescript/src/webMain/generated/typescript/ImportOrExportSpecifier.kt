@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ImportOrExportSpecifier :
+sealed /* union */
+external interface ImportOrExportSpecifier :
     Node,
     TypeOnlyCompatibleAliasDeclaration

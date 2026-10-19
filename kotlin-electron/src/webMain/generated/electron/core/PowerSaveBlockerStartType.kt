@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface PowerSaveBlockerStartType
+sealed /* union */
+external interface PowerSaveBlockerStartType
 
 inline val PowerSaveBlockerStartType.Companion.preventAppSuspension: PowerSaveBlockerStartType
     get() = js.reflect.unsafeCast("prevent-app-suspension")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface BreakOrContinueStatement : Node
+sealed /* union */
+external interface BreakOrContinueStatement : Node

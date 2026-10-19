@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface SignatureDeclaration :
+sealed /* union */
+external interface SignatureDeclaration :
     Node,
     HasType,
     TypePredicateNodeParent,

@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface AppGetPathName
+sealed /* union */
+external interface AppGetPathName
 
 inline val AppGetPathName.Companion.home: AppGetPathName
     get() = js.reflect.unsafeCast("home")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface SyntheticExpressionTupleNameSource : Node
+sealed /* union */
+external interface SyntheticExpressionTupleNameSource : Node

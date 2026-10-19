@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface UserPreferencesJsxAttributeCompletionStyle
+sealed /* union */
+external interface UserPreferencesJsxAttributeCompletionStyle
 
 inline val UserPreferencesJsxAttributeCompletionStyle.Companion.auto: UserPreferencesJsxAttributeCompletionStyle
     get() = js.reflect.unsafeCast("auto")

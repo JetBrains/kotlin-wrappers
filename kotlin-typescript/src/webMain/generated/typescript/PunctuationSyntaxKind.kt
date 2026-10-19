@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface PunctuationSyntaxKind :
+sealed /* union */
+external interface PunctuationSyntaxKind :
     SyntaxKind,
     TokenSyntaxKind

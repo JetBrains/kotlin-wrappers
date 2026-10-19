@@ -3,7 +3,8 @@
 package node.vm
 
 @js.union.JsUnion
-sealed external interface MeasureMemoryMode
+sealed /* union */
+external interface MeasureMemoryMode
 
 inline val MeasureMemoryMode.Companion.summary: MeasureMemoryMode
     get() = js.reflect.unsafeCast("summary")

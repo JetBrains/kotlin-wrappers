@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface NodeFactoryCreateHeritageClauseToken : SyntaxKind
+sealed /* union */
+external interface NodeFactoryCreateHeritageClauseToken : SyntaxKind

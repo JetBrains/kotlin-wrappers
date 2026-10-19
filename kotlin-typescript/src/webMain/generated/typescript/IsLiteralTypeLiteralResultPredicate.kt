@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsLiteralTypeLiteralResultPredicate : Node
+sealed /* union */
+external interface IsLiteralTypeLiteralResultPredicate : Node

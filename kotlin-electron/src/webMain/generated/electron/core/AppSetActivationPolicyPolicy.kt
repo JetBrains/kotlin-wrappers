@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface AppSetActivationPolicyPolicy
+sealed /* union */
+external interface AppSetActivationPolicyPolicy
 
 inline val AppSetActivationPolicyPolicy.Companion.regular: AppSetActivationPolicyPolicy
     get() = js.reflect.unsafeCast("regular")

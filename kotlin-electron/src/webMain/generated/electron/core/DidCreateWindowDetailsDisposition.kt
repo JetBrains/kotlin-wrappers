@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface DidCreateWindowDetailsDisposition
+sealed /* union */
+external interface DidCreateWindowDetailsDisposition
 
 inline val DidCreateWindowDetailsDisposition.Companion.default: DidCreateWindowDetailsDisposition
     get() = js.reflect.unsafeCast("default")

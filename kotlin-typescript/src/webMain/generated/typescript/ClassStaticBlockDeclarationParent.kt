@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ClassStaticBlockDeclarationParent : Node
+sealed /* union */
+external interface ClassStaticBlockDeclarationParent : Node

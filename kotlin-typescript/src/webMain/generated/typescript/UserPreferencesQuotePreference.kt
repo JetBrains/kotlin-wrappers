@@ -3,7 +3,8 @@
 package typescript
 
 @js.union.JsUnion
-sealed external interface UserPreferencesQuotePreference
+sealed /* union */
+external interface UserPreferencesQuotePreference
 
 inline val UserPreferencesQuotePreference.Companion.auto: UserPreferencesQuotePreference
     get() = js.reflect.unsafeCast("auto")

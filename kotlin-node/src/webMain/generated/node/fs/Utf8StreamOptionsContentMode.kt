@@ -3,7 +3,8 @@
 package node.fs
 
 @js.union.JsUnion
-sealed external interface Utf8StreamOptionsContentMode
+sealed /* union */
+external interface Utf8StreamOptionsContentMode
 
 inline val Utf8StreamOptionsContentMode.Companion.utf8: Utf8StreamOptionsContentMode
     get() = js.reflect.unsafeCast("utf8")

@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface SignatureDeclarationField : Node
+sealed /* union */
+external interface SignatureDeclarationField : Node

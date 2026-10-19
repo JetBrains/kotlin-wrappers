@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface MessageDetailsSource
+sealed /* union */
+external interface MessageDetailsSource
 
 inline val MessageDetailsSource.Companion.javascript: MessageDetailsSource
     get() = js.reflect.unsafeCast("javascript")

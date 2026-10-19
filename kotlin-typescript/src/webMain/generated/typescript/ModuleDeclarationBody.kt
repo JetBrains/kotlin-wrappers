@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface ModuleDeclarationBody : Node
+sealed /* union */
+external interface ModuleDeclarationBody : Node

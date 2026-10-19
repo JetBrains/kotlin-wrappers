@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ClientRequestConstructorOptionsReferrerPolicy
+sealed /* union */
+external interface ClientRequestConstructorOptionsReferrerPolicy
 
 inline val ClientRequestConstructorOptionsReferrerPolicy.Companion.`_`: ClientRequestConstructorOptionsReferrerPolicy
     get() = js.reflect.unsafeCast("")

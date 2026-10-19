@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface SpreadElementParent : Node
+sealed /* union */
+external interface SpreadElementParent : Node

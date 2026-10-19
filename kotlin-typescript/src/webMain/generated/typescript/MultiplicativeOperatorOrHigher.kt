@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface MultiplicativeOperatorOrHigher :
+sealed /* union */
+external interface MultiplicativeOperatorOrHigher :
     SyntaxKind,
     AdditiveOperatorOrHigher

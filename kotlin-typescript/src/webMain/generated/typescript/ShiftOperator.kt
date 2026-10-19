@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ShiftOperator :
+sealed /* union */
+external interface ShiftOperator :
     SyntaxKind,
     ShiftOperatorOrHigher

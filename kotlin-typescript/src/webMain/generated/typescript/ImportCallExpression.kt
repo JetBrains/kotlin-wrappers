@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface ImportCallExpression :
+sealed /* union */
+external interface ImportCallExpression :
     Node,
     LeftHandSideExpression

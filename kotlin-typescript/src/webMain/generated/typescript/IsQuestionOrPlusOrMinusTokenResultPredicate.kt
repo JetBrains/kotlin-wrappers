@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface IsQuestionOrPlusOrMinusTokenResultPredicate : Node
+sealed /* union */
+external interface IsQuestionOrPlusOrMinusTokenResultPredicate : Node

@@ -3,7 +3,8 @@
 package node.crypto
 
 @js.union.JsUnion
-sealed external interface KeyExportOptionsType
+sealed /* union */
+external interface KeyExportOptionsType
 
 inline val KeyExportOptionsType.Companion.pkcs1: KeyExportOptionsType
     get() = js.reflect.unsafeCast("pkcs1")

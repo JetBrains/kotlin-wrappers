@@ -3,7 +3,8 @@
 package node.module
 
 @js.union.JsUnion
-sealed external interface ModuleFormat
+sealed /* union */
+external interface ModuleFormat
 
 inline val ModuleFormat.Companion.addon: ModuleFormat
     get() = js.reflect.unsafeCast("addon")

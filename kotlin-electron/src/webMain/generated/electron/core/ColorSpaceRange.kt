@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface ColorSpaceRange
+sealed /* union */
+external interface ColorSpaceRange
 
 inline val ColorSpaceRange.Companion.limited: ColorSpaceRange
     get() = js.reflect.unsafeCast("limited")

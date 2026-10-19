@@ -2,6 +2,7 @@
 
 package typescript
 
-sealed external interface RelationalOperator :
+sealed /* union */
+external interface RelationalOperator :
     SyntaxKind,
     RelationalOperatorOrHigher

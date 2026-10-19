@@ -2,4 +2,5 @@
 
 package typescript
 
-sealed external interface JsxAttributeValue : Node
+sealed /* union */
+external interface JsxAttributeValue : Node

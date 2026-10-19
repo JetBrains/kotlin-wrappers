@@ -3,7 +3,8 @@
 package electron.core
 
 @js.union.JsUnion
-sealed external interface SourcesOptionsType
+sealed /* union */
+external interface SourcesOptionsType
 
 inline val SourcesOptionsType.Companion.screen: SourcesOptionsType
     get() = js.reflect.unsafeCast("screen")

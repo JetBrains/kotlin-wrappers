@@ -2,7 +2,8 @@
 
 package typescript
 
-sealed external interface DeclarationWithTypeParameterChildren :
+sealed /* union */
+external interface DeclarationWithTypeParameterChildren :
     Node,
     TypeParameterDeclarationParent,
     DeclarationWithTypeParameters
