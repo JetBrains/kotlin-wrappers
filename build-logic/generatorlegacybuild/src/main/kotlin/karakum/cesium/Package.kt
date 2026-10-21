@@ -3,6 +3,7 @@ package karakum.cesium
 internal val DEFAULT_PACKAGE: String = """
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.buffer.DataView
 import js.collections.ReadonlyMap
 import js.numbers.JsDouble

@@ -4,6 +4,8 @@
 
 package cesium.core
 
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.typedarrays.Float32Array
 
 /**
@@ -92,9 +94,11 @@ open external class DistanceDisplayConditionGeometryInstanceAttribute(
          * @return The modified result parameter or a new instance if result was undefined.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayConditionGeometryInstanceAttribute.html#.toValue">Online Documentation</a>
          */
-        fun toValue(
+        fun <B : ArrayBufferLike> toValue(
             distanceDisplayCondition: DistanceDisplayCondition,
-            result: Float32Array<*>? = definedExternally,
-        ): Float32Array<*>
+            result: Float32Array<B>,
+        ): Float32Array<B>
+
+        fun toValue(distanceDisplayCondition: DistanceDisplayCondition): Float32Array<ArrayBuffer>
     }
 }

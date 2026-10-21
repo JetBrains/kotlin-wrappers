@@ -1,5 +1,6 @@
 package karakum.cesium
 
+import karakum.common.TYPED_ARRAYS
 import karakum.common.replaceSuffix
 import karakum.common.withSuspendAdapter
 
@@ -32,6 +33,14 @@ internal class Method(
     private val parameters = source.parseFunctionParameters()
     private val returnType = source.parseFunctionReturnType(name, optional)
 
+    private val typedArray: String? = returnType
+        ?.removeSuffix("<*>")
+        ?.takeIf { !optional && it in TYPED_ARRAYS }
+
+    private val resultParameter: Parameter? = parameters
+        .singleOrNull { it.name == "result" && it.type == returnType }
+        ?.takeIf { typedArray != null }
+
     override fun toCode(): String {
         if (name == "toString" && parameters.isEmpty())
             return ""
@@ -48,6 +57,7 @@ internal class Method(
         val returnExpression = when {
             optional -> "-> ${returnType!!}"
             returnType == null -> ""
+            typedArray != null -> ": $typedArray<ArrayBuffer>"
             else -> ": $returnType"
         }
 
@@ -100,6 +110,16 @@ internal class Method(
 
             "pick" if (sourceDeclaration == "fun pick(\n windowPosition: Cartesian2,\n width: Double? = definedExternally,\n height: Double? = definedExternally\n): JsAny?")
                 -> replacedSyncDeclarations
+
+            else if resultParameter != null -> {
+                val withoutResult = (parameters - resultParameter).toCode(multilinePreferred = false)
+                val withResult = params.replace(resultParameter.toCode(), " result: $typedArray<B>")
+
+                listOfNotNull(
+                    "fun <B : ArrayBufferLike>$name$withResult: $typedArray<B>",
+                    "fun $name$withoutResult$returnExpression".takeIf { resultParameter.optional },
+                )
+            }
 
             else -> withSuspendAdapter(sourceDeclaration).toList()
         }

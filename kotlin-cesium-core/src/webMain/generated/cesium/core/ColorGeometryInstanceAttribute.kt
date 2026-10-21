@@ -4,6 +4,8 @@
 
 package cesium.core
 
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.typedarrays.Uint8Array
 
 /**
@@ -95,10 +97,12 @@ open external class ColorGeometryInstanceAttribute(
          * @return The modified result parameter or a new instance if result was undefined.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ColorGeometryInstanceAttribute.html#.toValue">Online Documentation</a>
          */
-        fun toValue(
+        fun <B : ArrayBufferLike> toValue(
             color: Color,
-            result: Uint8Array<*>? = definedExternally,
-        ): Uint8Array<*>
+            result: Uint8Array<B>,
+        ): Uint8Array<B>
+
+        fun toValue(color: Color): Uint8Array<ArrayBuffer>
 
         /**
          * Compares the provided ColorGeometryInstanceAttributes and returns
