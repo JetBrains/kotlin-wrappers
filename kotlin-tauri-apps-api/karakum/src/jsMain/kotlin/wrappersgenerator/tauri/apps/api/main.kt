@@ -7,12 +7,14 @@ import wrappersgenerator.tauri.apps.api.inheritanceModifiers.modifyClassInherita
 import wrappersgenerator.tauri.apps.api.inheritanceModifiers.modifyPropertyInheritance
 import wrappersgenerator.tauri.apps.api.plugins.convertBuiltinTauriTypeReference
 import wrappersgenerator.tauri.apps.api.plugins.convertPrivateIdentifier
+import wrappersgenerator.tauri.apps.api.plugins.convertSkippedGenerics
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
             convertBuiltinTauriTypeReference,
             convertPrivateIdentifier,
+            convertSkippedGenerics,
         )
         inheritanceModifiers = listOf(
             ::modifyClassInheritance,
