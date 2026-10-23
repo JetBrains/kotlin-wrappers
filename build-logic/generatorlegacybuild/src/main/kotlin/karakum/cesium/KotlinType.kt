@@ -86,9 +86,6 @@ private val STANDARD_TYPE_MAP = mapOf(
     PACKABLE to "$PACKABLE<*>",
     "CzmlDataSource.UpdaterFunction" to "UpdaterFunction",
 
-    "ModelAnimation.AnimationTimeCallback" to "AnimationTimeCallback",
-    "ModelExperimentalAnimation.AnimationTimeCallback" to "AnimationTimeCallback",
-
     """"default" | "low-power" | "high-performance"""" to "WebGLPowerPreference",
 
     "Map<number_object>" to "ReadonlyMap<Int, JsAny>",

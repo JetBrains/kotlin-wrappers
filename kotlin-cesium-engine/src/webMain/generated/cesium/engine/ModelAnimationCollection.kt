@@ -4,7 +4,8 @@
 
 package cesium.engine
 
-import cesium.core.*
+import cesium.core.DefaultEvent
+import cesium.core.JulianDate
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 
@@ -137,7 +138,7 @@ private constructor() {
         val multiplier: Double?
         val reverse: Boolean?
         val loop: ModelAnimationLoop?
-        val animationTime: AnimationTimeCallback?
+        val animationTime: ModelAnimation.AnimationTimeCallback?
     }
 
     /**
@@ -180,7 +181,7 @@ private constructor() {
         val multiplier: Double?
         val reverse: Boolean?
         val loop: ModelAnimationLoop?
-        val animationTime: AnimationTimeCallback?
+        val animationTime: ModelAnimation.AnimationTimeCallback?
     }
 
     /**
