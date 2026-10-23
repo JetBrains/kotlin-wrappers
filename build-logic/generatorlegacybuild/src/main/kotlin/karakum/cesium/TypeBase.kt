@@ -108,7 +108,7 @@ internal abstract class TypeBase(
             )
         }
 
-        val bodyMembers = members
+        var body = members
             .asSequence()
             .filter { it != constructor }
             .filter { staticBody || !it.static }
@@ -116,10 +116,6 @@ internal abstract class TypeBase(
             // WA for duplicated option types
             .distinct()
             .filter(constructor.toMemberFilter())
-            .toList()
-
-        var body = bodyMembers
-            .asSequence()
             .minus(propertyParameters)
             .map { it.toCode() }
             .filter { it.isNotEmpty() } // TEMP
@@ -142,6 +138,7 @@ internal abstract class TypeBase(
 
             val companionBody = staticMembers
                 .map { it.toCode() }
+                .filter { it.isNotEmpty() } // TEMP
                 .joinToString(separator = "\n\n")
 
             val companionTypes = if (packable) {
