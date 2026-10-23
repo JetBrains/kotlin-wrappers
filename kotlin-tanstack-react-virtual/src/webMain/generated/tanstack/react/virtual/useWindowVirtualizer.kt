@@ -1,11 +1,9 @@
+// Automatically generated - do not modify!
+
 @file:JsModule("@tanstack/react-virtual")
 
 package tanstack.react.virtual
 
-import tanstack.virtual.core.Virtualizer
-import web.dom.Element
-import web.window.Window
-
-external fun <TItemElement : Element> useWindowVirtualizer(
+external fun <TItemElement : web.dom.Element> useWindowVirtualizer(
     options: UseWindowVirtualizerOptions<TItemElement>,
-): Virtualizer<Window, TItemElement>
+): ReactVirtualizer<web.window.Window, TItemElement>

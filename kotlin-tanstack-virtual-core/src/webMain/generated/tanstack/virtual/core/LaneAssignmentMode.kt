@@ -2,15 +2,12 @@
 
 package tanstack.virtual.core
 
-import js.reflect.unsafeCast
-import js.union.JsUnion
-
-@JsUnion
+@js.union.JsUnion
 sealed /* union */
 external interface LaneAssignmentMode
 
 inline val LaneAssignmentMode.Companion.estimate: LaneAssignmentMode
-    get() = unsafeCast("estimate")
+    get() = js.reflect.unsafeCast("estimate")
 
 inline val LaneAssignmentMode.Companion.measured: LaneAssignmentMode
-    get() = unsafeCast("measured")
+    get() = js.reflect.unsafeCast("measured")

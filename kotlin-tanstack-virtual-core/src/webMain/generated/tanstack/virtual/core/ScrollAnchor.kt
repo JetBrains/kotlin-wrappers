@@ -2,15 +2,12 @@
 
 package tanstack.virtual.core
 
-import js.reflect.unsafeCast
-import js.union.JsUnion
-
-@JsUnion
+@js.union.JsUnion
 sealed /* union */
 external interface ScrollAnchor
 
 inline val ScrollAnchor.Companion.start: ScrollAnchor
-    get() = unsafeCast("start")
+    get() = js.reflect.unsafeCast("start")
 
 inline val ScrollAnchor.Companion.end: ScrollAnchor
-    get() = unsafeCast("end")
+    get() = js.reflect.unsafeCast("end")

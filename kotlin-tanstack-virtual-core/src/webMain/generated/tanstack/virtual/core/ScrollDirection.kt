@@ -2,15 +2,12 @@
 
 package tanstack.virtual.core
 
-import js.reflect.unsafeCast
-import js.union.JsUnion
-
-@JsUnion
+@js.union.JsUnion
 sealed /* union */
 external interface ScrollDirection
 
 inline val ScrollDirection.Companion.forward: ScrollDirection
-    get() = unsafeCast("forward")
+    get() = js.reflect.unsafeCast("forward")
 
 inline val ScrollDirection.Companion.backward: ScrollDirection
-    get() = unsafeCast("backward")
+    get() = js.reflect.unsafeCast("backward")
