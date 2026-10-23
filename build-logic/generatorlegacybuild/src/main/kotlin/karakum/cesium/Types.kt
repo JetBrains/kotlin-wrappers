@@ -54,12 +54,15 @@ internal fun typeDeclaration(
         else -> {
             val annotation = when (name) {
                 "CameraLike",
-                    -> ""
+                    -> null
 
                 else -> "@JsPlainObject"
             }
             val modifier = if (top) "external" else ""
-            "$annotation\n$modifier interface $name {\n${optionsBody(body)}\n}"
+            listOfNotNull(
+                annotation,
+                "$modifier interface $name {\n${optionsBody(body)}\n}",
+            ).joinToString("\n")
         }
     }
 }
