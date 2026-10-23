@@ -9,7 +9,7 @@ seskar = "4.66.0"
 download = "5.7.0"
 
 # https://nodejs.org
-node = "26.12.0"
+node = "26.12.1"
 # https://npmx.dev/package/webpack
 webpack = "5.111.1"
 # https://npmx.dev/package/webpack-cli
