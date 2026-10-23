@@ -11,8 +11,9 @@ package cesium.engine
  * for reference.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonSnapMode">Online Documentation</a>
  */
-sealed /* enum */
-external interface IonSnapMode {
+/* enum */
+external class IonSnapMode
+private constructor() {
     companion object {
 
         /**

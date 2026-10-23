@@ -13,8 +13,9 @@ package cesium.engine
  * and always render normally.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#EdgeDisplayMode">Online Documentation</a>
  */
-sealed /* enum */
-external interface EdgeDisplayMode {
+/* enum */
+external class EdgeDisplayMode
+private constructor() {
     companion object {
 
         /**

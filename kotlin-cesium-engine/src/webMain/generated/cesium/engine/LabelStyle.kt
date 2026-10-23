@@ -8,8 +8,9 @@ package cesium.engine
  * Describes how to draw a label.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#LabelStyle">Online Documentation</a>
  */
-sealed /* enum */
-external interface LabelStyle {
+/* enum */
+external class LabelStyle
+private constructor() {
     companion object {
 
         /**

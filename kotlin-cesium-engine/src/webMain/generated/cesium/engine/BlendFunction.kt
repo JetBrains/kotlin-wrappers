@@ -10,8 +10,9 @@ import web.gl.WebGL2RenderingContext
  * Determines how blending factors are computed.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendFunction">Online Documentation</a>
  */
-sealed /* enum */
-external interface BlendFunction {
+/* enum */
+external class BlendFunction
+private constructor() {
     companion object {
 
         /**

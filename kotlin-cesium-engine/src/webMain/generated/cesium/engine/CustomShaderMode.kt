@@ -9,8 +9,9 @@ package cesium.engine
  * fragment shader. This determines how the shader interacts with the material.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CustomShaderMode">Online Documentation</a>
  */
-sealed /* enum */
-external interface CustomShaderMode {
+/* enum */
+external class CustomShaderMode
+private constructor() {
     companion object {
 
         /**

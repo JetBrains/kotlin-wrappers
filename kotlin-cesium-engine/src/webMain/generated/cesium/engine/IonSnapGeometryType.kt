@@ -10,8 +10,9 @@ package cesium.engine
  * [HitGeomType](https://www.itwinjs.org/reference/core-frontend/locatingelements/hitgeomtype/) enum.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonSnapGeometryType">Online Documentation</a>
  */
-sealed /* enum */
-external interface IonSnapGeometryType {
+/* enum */
+external class IonSnapGeometryType
+private constructor() {
     companion object {
 
         /**

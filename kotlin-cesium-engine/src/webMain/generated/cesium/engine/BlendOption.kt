@@ -11,8 +11,9 @@ package cesium.engine
  * collection in question.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendOption">Online Documentation</a>
  */
-sealed /* enum */
-external interface BlendOption {
+/* enum */
+external class BlendOption
+private constructor() {
     companion object {
 
         /**

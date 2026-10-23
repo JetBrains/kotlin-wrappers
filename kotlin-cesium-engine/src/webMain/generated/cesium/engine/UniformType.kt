@@ -9,8 +9,9 @@ package cesium.engine
  * [CustomShader] to declare user-defined uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#UniformType">Online Documentation</a>
  */
-sealed /* enum */
-external interface UniformType {
+/* enum */
+external class UniformType
+private constructor() {
     companion object {
 
         /**

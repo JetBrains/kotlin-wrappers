@@ -8,8 +8,9 @@ package cesium.engine
  * Defines how material properties are applied along a path.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PathMode">Online Documentation</a>
  */
-sealed /* enum */
-external interface PathMode {
+/* enum */
+external class PathMode
+private constructor() {
     companion object {
 
         /**

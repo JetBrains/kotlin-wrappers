@@ -8,8 +8,9 @@ package cesium.engine
  * Enumerates the available input for interacting with the camera.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CameraEventType">Online Documentation</a>
  */
-sealed /* enum */
-external interface CameraEventType {
+/* enum */
+external class CameraEventType
+private constructor() {
     companion object {
 
         /**

@@ -10,8 +10,9 @@ import web.gl.WebGL2RenderingContext
  * Determines the action taken based on the result of the stencil test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StencilOperation">Online Documentation</a>
  */
-sealed /* enum */
-external interface StencilOperation {
+/* enum */
+external class StencilOperation
+private constructor() {
     companion object {
 
         /**

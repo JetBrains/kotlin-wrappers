@@ -10,8 +10,9 @@ package cesium.engine
  * [SnapHeat](https://www.itwinjs.org/reference/core-frontend/locatingelements/snapheat/) enum.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonSnapHeat">Online Documentation</a>
  */
-sealed /* enum */
-external interface IonSnapHeat {
+/* enum */
+external class IonSnapHeat
+private constructor() {
     companion object {
 
         /**

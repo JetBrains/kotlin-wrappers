@@ -11,8 +11,9 @@ import web.gl.WebGL2RenderingContext
  * which form attributes, which form vertices.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ComponentDatatype">Online Documentation</a>
  */
-sealed /* enum */
-external interface ComponentDatatype {
+/* enum */
+external class ComponentDatatype
+private constructor() {
     companion object {
 
         /**

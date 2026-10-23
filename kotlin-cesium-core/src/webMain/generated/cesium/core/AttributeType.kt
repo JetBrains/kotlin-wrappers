@@ -8,8 +8,9 @@ package cesium.core
  * An enum describing the attribute type for glTF and 3D Tiles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#AttributeType">Online Documentation</a>
  */
-sealed /* enum */
-external interface AttributeType {
+/* enum */
+external class AttributeType
+private constructor() {
     companion object {
 
         /**

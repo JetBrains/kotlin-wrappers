@@ -8,8 +8,9 @@ package cesium.engine
  * This enumerated type is for classifying mouse buttons: left, middle, and right.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#MouseButton">Online Documentation</a>
  */
-sealed /* enum */
-external interface MouseButton {
+/* enum */
+external class MouseButton
+private constructor() {
     companion object {
 
         /**

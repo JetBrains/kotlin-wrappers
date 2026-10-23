@@ -23,8 +23,9 @@ internal class Enum(
         return DEFAULT_PACKAGE +
                 source.doc(DocLink(this)) +
                 "\n" +
-                "sealed /* enum */\n" +
-                "external interface $name {\n" +
+                "/* enum */\n" +
+                "external class $name\n" +
+                "private constructor() {\n" +
                 "companion object {\n\n" +
                 "$body\n" +
                 "}\n" +

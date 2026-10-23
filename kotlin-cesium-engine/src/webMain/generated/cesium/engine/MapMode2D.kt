@@ -8,8 +8,9 @@ package cesium.engine
  * Describes how the map will operate in 2D.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#MapMode2D">Online Documentation</a>
  */
-sealed /* enum */
-external interface MapMode2D {
+/* enum */
+external class MapMode2D
+private constructor() {
     companion object {
 
         /**

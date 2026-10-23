@@ -10,8 +10,9 @@ import web.gl.WebGL2RenderingContext
  * Determines how two pixels' values are combined.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendEquation">Online Documentation</a>
  */
-sealed /* enum */
-external interface BlendEquation {
+/* enum */
+external class BlendEquation
+private constructor() {
     companion object {
 
         /**

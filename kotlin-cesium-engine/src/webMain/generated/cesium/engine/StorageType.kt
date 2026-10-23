@@ -11,8 +11,9 @@ package cesium.engine
  * [NGA_gpm_local](https://nsgreg.nga.mil/csmwg.jsp) glTF extension.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StorageType">Online Documentation</a>
  */
-sealed /* enum */
-external interface StorageType {
+/* enum */
+external class StorageType
+private constructor() {
     companion object {
 
         /**

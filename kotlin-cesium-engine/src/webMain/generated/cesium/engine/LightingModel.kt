@@ -8,8 +8,9 @@ package cesium.engine
  * The lighting model to use for lighting a [Model].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#LightingModel">Online Documentation</a>
  */
-sealed /* enum */
-external interface LightingModel {
+/* enum */
+external class LightingModel
+private constructor() {
     companion object {
 
         /**

@@ -8,8 +8,9 @@ package cesium.core
  * ArcType defines the path that should be taken connecting vertices.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ArcType">Online Documentation</a>
  */
-sealed /* enum */
-external interface ArcType {
+/* enum */
+external class ArcType
+private constructor() {
     companion object {
 
         /**

@@ -8,8 +8,9 @@ package cesium.core
  * Style options for corners.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CornerType">Online Documentation</a>
  */
-sealed /* enum */
-external interface CornerType {
+/* enum */
+external class CornerType
+private constructor() {
     companion object {
 
         /**

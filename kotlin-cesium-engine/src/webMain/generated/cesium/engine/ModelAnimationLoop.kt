@@ -8,8 +8,9 @@ package cesium.engine
  * Determines if and how a glTF animation is looped.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ModelAnimationLoop">Online Documentation</a>
  */
-sealed /* enum */
-external interface ModelAnimationLoop {
+/* enum */
+external class ModelAnimationLoop
+private constructor() {
     companion object {
 
         /**

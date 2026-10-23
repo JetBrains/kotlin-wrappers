@@ -8,8 +8,9 @@ package cesium.core
  * Represents which vertices should have a value of `true` for the `applyOffset` attribute
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#GeometryOffsetAttribute">Online Documentation</a>
  */
-sealed /* enum */
-external interface GeometryOffsetAttribute {
+/* enum */
+external class GeometryOffsetAttribute
+private constructor() {
     companion object {
 
         /**

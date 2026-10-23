@@ -9,8 +9,9 @@ package cesium.engine
  * in [CustomShader]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VaryingType">Online Documentation</a>
  */
-sealed /* enum */
-external interface VaryingType {
+/* enum */
+external class VaryingType
+private constructor() {
     companion object {
 
         /**

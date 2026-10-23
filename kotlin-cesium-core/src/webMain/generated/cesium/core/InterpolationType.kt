@@ -8,8 +8,9 @@ package cesium.core
  * An enum describing the type of interpolation used in a glTF animation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#InterpolationType">Online Documentation</a>
  */
-sealed /* enum */
-external interface InterpolationType {
+/* enum */
+external class InterpolationType
+private constructor() {
     companion object {
 
         /**

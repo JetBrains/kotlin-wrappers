@@ -10,8 +10,9 @@ import web.gl.WebGL2RenderingContext
  * The data type of a pixel.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PixelDatatype">Online Documentation</a>
  */
-sealed /* enum */
-external interface PixelDatatype {
+/* enum */
+external class PixelDatatype
+private constructor() {
     companion object {
 
         /**

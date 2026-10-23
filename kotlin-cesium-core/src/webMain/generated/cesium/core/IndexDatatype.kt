@@ -11,8 +11,9 @@ import web.gl.WebGL2RenderingContext
  * `type` parameter of [drawElements](http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawElements.xml).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IndexDatatype">Online Documentation</a>
  */
-sealed /* enum */
-external interface IndexDatatype {
+/* enum */
+external class IndexDatatype
+private constructor() {
     companion object {
 
         /**

@@ -10,8 +10,9 @@ import web.gl.WebGL2RenderingContext
  * Winding order defines the order of vertices for a triangle to be considered front-facing.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#WindingOrder">Online Documentation</a>
  */
-sealed /* enum */
-external interface WindingOrder {
+/* enum */
+external class WindingOrder
+private constructor() {
     companion object {
 
         /**

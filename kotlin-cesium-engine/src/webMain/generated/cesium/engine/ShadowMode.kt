@@ -9,8 +9,9 @@ package cesium.engine
  * shadows are enabled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ShadowMode">Online Documentation</a>
  */
-sealed /* enum */
-external interface ShadowMode {
+/* enum */
+external class ShadowMode
+private constructor() {
     companion object {
 
         /**

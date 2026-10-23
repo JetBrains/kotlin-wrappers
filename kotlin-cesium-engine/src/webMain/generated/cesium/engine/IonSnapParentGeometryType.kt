@@ -11,8 +11,9 @@ package cesium.engine
  * [HitParentGeomType](https://www.itwinjs.org/reference/core-frontend/locatingelements/hitparentgeomtype/) enum.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonSnapParentGeometryType">Online Documentation</a>
  */
-sealed /* enum */
-external interface IonSnapParentGeometryType {
+/* enum */
+external class IonSnapParentGeometryType
+private constructor() {
     companion object {
 
         /**

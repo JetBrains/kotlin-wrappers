@@ -8,8 +8,9 @@ package cesium.engine
  * Indicates if the scene is viewed in 3D, 2D, or 2.5D Columbus view.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#SceneMode">Online Documentation</a>
  */
-sealed /* enum */
-external interface SceneMode {
+/* enum */
+external class SceneMode
+private constructor() {
     companion object {
 
         /**

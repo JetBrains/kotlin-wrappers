@@ -8,8 +8,9 @@ package cesium.engine
  * Defined the orientation of stripes in [StripeMaterialProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StripeOrientation">Online Documentation</a>
  */
-sealed /* enum */
-external interface StripeOrientation {
+/* enum */
+external class StripeOrientation
+private constructor() {
     companion object {
 
         /**

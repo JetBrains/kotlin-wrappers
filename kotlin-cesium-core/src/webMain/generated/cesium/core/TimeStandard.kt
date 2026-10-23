@@ -8,8 +8,9 @@ package cesium.core
  * Provides the type of time standards which JulianDate can take as input.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TimeStandard">Online Documentation</a>
  */
-sealed /* enum */
-external interface TimeStandard {
+/* enum */
+external class TimeStandard
+private constructor() {
     companion object {
 
         /**

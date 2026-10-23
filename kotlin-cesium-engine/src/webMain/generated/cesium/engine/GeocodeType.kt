@@ -8,8 +8,9 @@ package cesium.engine
  * The type of geocoding to be performed by a [GeocoderService].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#GeocodeType">Online Documentation</a>
  */
-sealed /* enum */
-external interface GeocodeType {
+/* enum */
+external class GeocodeType
+private constructor() {
     companion object {
 
         /**

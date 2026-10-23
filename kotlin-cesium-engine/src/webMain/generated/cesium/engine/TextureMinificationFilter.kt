@@ -10,8 +10,9 @@ import web.gl.WebGL2RenderingContext
  * Enumerates all possible filters used when minifying WebGL textures.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TextureMinificationFilter">Online Documentation</a>
  */
-sealed /* enum */
-external interface TextureMinificationFilter {
+/* enum */
+external class TextureMinificationFilter
+private constructor() {
     companion object {
 
         /**

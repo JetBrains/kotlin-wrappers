@@ -9,8 +9,9 @@ package cesium.core
  * when querying outside the bounds of available data.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ExtrapolationType">Online Documentation</a>
  */
-sealed /* enum */
-external interface ExtrapolationType {
+/* enum */
+external class ExtrapolationType
+private constructor() {
     companion object {
 
         /**

@@ -11,8 +11,9 @@ package cesium.engine
  * of the anchor position.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#HorizontalOrigin">Online Documentation</a>
  */
-sealed /* enum */
-external interface HorizontalOrigin {
+/* enum */
+external class HorizontalOrigin
+private constructor() {
     companion object {
 
         /**

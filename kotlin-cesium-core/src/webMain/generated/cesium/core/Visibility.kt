@@ -11,8 +11,9 @@ package cesium.core
  * leading to full visibility.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Visibility">Online Documentation</a>
  */
-sealed /* enum */
-external interface Visibility {
+/* enum */
+external class Visibility
+private constructor() {
     companion object {
 
         /**
