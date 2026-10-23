@@ -175,15 +175,9 @@ private fun readDeclarations(
         .replace("[webAssemblyOptions", "[options")
         .replace("(webAssemblyOptions", "(options")
         .replace("The DOM element or ID", "The DOM element")
-        .replace("<ImageryLayer.ErrorEventCallback>", "<ImageryLayerErrorEventCallback>")
-        .replace("<ImageryLayer.ReadyEventCallback>", "<ImageryLayerReadyEventCallback>")
-        .replace("type ErrorEventCallback = (this: ImageryLayer, ", "type ImageryLayerErrorEventCallback = (")
-        .replace("type ReadyEventCallback = (this: ImageryLayer, ", "type ImageryLayerReadyEventCallback = (")
-        .replace("<Terrain.ErrorEventCallback>", "<TerrainErrorEventCallback>")
-        .replace("<Terrain.ReadyEventCallback>", "<TerrainReadyEventCallback>")
-        .replace("type ErrorEventCallback = (this: Terrain, ", "type TerrainErrorEventCallback = (")
-        .replace("type ReadyEventCallback = (this: Terrain, ", "type TerrainReadyEventCallback = (")
-        .replace("this: TerrainProvider, ", "")
+        .replace("= (this: ImageryLayer, ", "= (")
+        .replace("= (this: Terrain, ", "= (")
+        .replace("= (this: TerrainProvider, ", "= (")
         .replace(
             "export function PickId(pickObjects: Map<number, object>, key: number, color: Color): void;",
             """|/**

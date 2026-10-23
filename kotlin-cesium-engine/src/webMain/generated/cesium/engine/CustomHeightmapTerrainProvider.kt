@@ -4,8 +4,8 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
 import cesium.core.Ellipsoid
+import cesium.core.Event
 import js.promise.Promise
 import js.promise.PromiseResult
 import js.typedarrays.TypedArray
@@ -65,7 +65,7 @@ open external class CustomHeightmapTerrainProvider(
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    override val errorEvent: DefaultEvent
+    override val errorEvent: Event<ErrorEvent>
 
     /**
      * Gets the credit to display when this terrain provider is active. Typically this is used to credit
