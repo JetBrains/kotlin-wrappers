@@ -5,13 +5,13 @@ import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
 import wrappersgenerator.tauri.apps.api.inheritanceModifiers.modifyClassInheritance
 import wrappersgenerator.tauri.apps.api.inheritanceModifiers.modifyPropertyInheritance
-import wrappersgenerator.tauri.apps.api.plugins.convertBuiltinTauriTypeReference
+import wrappersgenerator.tauri.apps.api.plugins.convertMissedGenerics
 import wrappersgenerator.tauri.apps.api.plugins.convertPrivateIdentifier
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
-            convertBuiltinTauriTypeReference,
+            convertMissedGenerics,
             convertPrivateIdentifier,
         )
         inheritanceModifiers = listOf(

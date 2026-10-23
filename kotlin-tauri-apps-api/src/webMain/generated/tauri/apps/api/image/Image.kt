@@ -83,7 +83,11 @@ external class Image : Resource {
          *
          * @since 2.0.0
          */
-        fun new(rgba: js.array.ReadonlyArray<Double>, width: Double, height: Double): js.promise.Promise<Image>
+        fun new(
+            rgba: js.array.ReadonlyArray<Double>,
+            width: Double,
+            height: Double,
+        ): js.promise.Promise<Image>
 
         /**
          * Creates a new Image using RGBA data, in row-major order from top to bottom, and with specified width and height.
@@ -102,7 +106,11 @@ external class Image : Resource {
          *
          * @since 2.0.0
          */
-        fun new(rgba: js.typedarrays.Uint8Array<*>, width: Double, height: Double): js.promise.Promise<Image>
+        fun new(
+            rgba: js.typedarrays.Uint8Array<*>,
+            width: Double,
+            height: Double,
+        ): js.promise.Promise<Image>
 
         /**
          * Creates a new Image using RGBA data, in row-major order from top to bottom, and with specified width and height.
@@ -121,7 +129,11 @@ external class Image : Resource {
          *
          * @since 2.0.0
          */
-        fun new(rgba: js.buffer.ArrayBuffer, width: Double, height: Double): js.promise.Promise<Image>
+        fun new(
+            rgba: js.buffer.ArrayBuffer,
+            width: Double,
+            height: Double,
+        ): js.promise.Promise<Image>
 
         /**
          * Creates a new image using the provided bytes by inferring the file format.
