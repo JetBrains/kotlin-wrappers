@@ -11,11 +11,11 @@ download = "5.7.0"
 # https://nodejs.org
 node = "26.12.1"
 # https://npmx.dev/package/webpack
-webpack = "5.111.1"
+webpack = "5.112.2"
 # https://npmx.dev/package/webpack-cli
 webpack-cli = "7.2.3"
 # https://npmx.dev/package/webpack-dev-server
-webpack-dev-server = "6.0.0"
+webpack-dev-server = "6.1.0"
 # https://npmx.dev/package/mocha
 mocha = "12.0.0-beta-10"
 
