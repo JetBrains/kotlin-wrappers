@@ -4,6 +4,8 @@
 
 package cesium.core
 
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.typedarrays.Uint8Array
 
 /**
@@ -72,9 +74,11 @@ open external class ShowGeometryInstanceAttribute(
          * @return The modified result parameter or a new instance if result was undefined.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ShowGeometryInstanceAttribute.html#.toValue">Online Documentation</a>
          */
-        fun toValue(
+        fun <B : ArrayBufferLike> toValue(
             show: Boolean,
-            result: Uint8Array<*>? = definedExternally,
-        ): Uint8Array<*>
+            result: Uint8Array<B>,
+        ): Uint8Array<B>
+
+        fun toValue(show: Boolean): Uint8Array<ArrayBuffer>
     }
 }
