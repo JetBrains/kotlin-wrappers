@@ -27,4 +27,12 @@ open external class KmlTourWait(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourWait.html#stop">Online Documentation</a>
      */
     fun stop()
+
+    /**
+     * A function which will be called when playback ends.
+     * @param [terminated] true if [KmlTourWait.stop] was
+     *   called before entry done playback.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourWait.html#.DoneCallback">Online Documentation</a>
+     */
+    typealias DoneCallback = (terminated: Boolean) -> Unit
 }

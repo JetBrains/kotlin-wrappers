@@ -49,13 +49,7 @@ internal fun typeDeclaration(
             -> "typealias $name = JsAny /* $body */"
 
         body == IMAGERY_LAYER_CONSTRUCTOR_OPTIONS
-            -> {
-            require(!top)
-            """
-            @JsPlainObject
-            interface /* typealias */ $name : $body
-            """.trimIndent()
-        }
+            -> "typealias $name = $body"
 
         else -> {
             val annotation = when (name) {

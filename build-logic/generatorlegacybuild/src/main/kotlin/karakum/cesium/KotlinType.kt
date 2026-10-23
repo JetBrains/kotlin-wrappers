@@ -112,9 +112,6 @@ internal fun kotlinType(
             .replace("arg0: this, ", "")
             .replace(" => void", " -> Unit")
             .replace(": boolean", ": Boolean")
-            .replace("EntityCluster.", "")
-            .replace("EntityCollection.", "")
-            .replace("TerrainProvider.ErrorEvent", "* /* ErrorEvent */")
 
     if (type.startsWith("Record<") && !type.endsWith("[]"))
         return "Readonly$type"

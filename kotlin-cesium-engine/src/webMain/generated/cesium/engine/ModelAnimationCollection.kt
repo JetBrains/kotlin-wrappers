@@ -4,8 +4,7 @@
 
 package cesium.engine
 
-import cesium.core.DefaultEvent
-import cesium.core.JulianDate
+import cesium.core.*
 import js.array.ReadonlyArray
 import kotlinx.js.JsPlainObject
 

@@ -1,7 +1,5 @@
 package karakum.cesium
 
-import karakum.common.ConversionResult
-
 internal abstract class TypeBase(
     final override val source: Definition,
 ) : Declaration(), IType, HasMembers {
@@ -120,13 +118,8 @@ internal abstract class TypeBase(
             .filter(constructor.toMemberFilter())
             .toList()
 
-        val typeAliases = bodyMembers
-            .filterIsInstance<SimpleType>()
-            .filter { it.isTypeAlias }
-
         var body = bodyMembers
             .asSequence()
-            .minus(typeAliases)
             .minus(propertyParameters)
             .map { it.toCode() }
             .filter { it.isNotEmpty() } // TEMP
@@ -226,30 +219,6 @@ internal abstract class TypeBase(
                 doc +
                 "\n" +
                 "$modifiers $typeName $declaration $body"
-    }
-
-    override fun toConversionResults(): Sequence<ConversionResult> {
-        val nestedTypes = companion?.members
-            ?.filter { it.isNestedType() }
-            ?: emptyList()
-
-        val typeAliases = members
-            .asSequence()
-            .plus(nestedTypes)
-            .filterIsInstance<SimpleType>()
-            .filter { it.isTypeAlias }
-            .filter {
-                when (it.name) {
-                    "RemoveCallback" -> name == "Event"
-                    "DoneCallback" -> name == "KmlTourFlyTo"
-                    "AnimationTimeCallback" -> name == "ModelAnimation"
-                    else -> true
-                }
-            }
-            .map { ConversionResult(name = it.longName, body = DEFAULT_PACKAGE + it.toCode()) }
-
-        return super.toConversionResults()
-            .plus(typeAliases)
     }
 }
 

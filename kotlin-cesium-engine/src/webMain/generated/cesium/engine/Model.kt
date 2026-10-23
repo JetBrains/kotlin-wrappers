@@ -480,6 +480,13 @@ private constructor() {
      */
     fun destroy()
 
+    /**
+     * Interface for the function that is called with the loaded gltf object once loaded.
+     * @param [gltf] The gltf object
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.GltfCallback">Online Documentation</a>
+     */
+    typealias GltfCallback = (gltf: JsAny) -> Unit
+
     companion object {
         /**
          * Asynchronously creates a model from a glTF asset. This function returns a promise that resolves when the model is ready to render, i.e., when the external binary, image,

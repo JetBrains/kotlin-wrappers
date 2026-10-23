@@ -24,7 +24,7 @@ abstract external class TerrainProvider {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    abstract val errorEvent: Event<* /* ErrorEvent */>
+    abstract val errorEvent: Event<ErrorEvent>
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit
@@ -134,6 +134,13 @@ abstract external class TerrainProvider {
         y: Double,
         level: Int,
     ): Promise<Void>?
+
+    /**
+     * A function that is called when an error occurs.
+     * @param [err] An object holding details about the error that occurred.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#.ErrorEvent">Online Documentation</a>
+     */
+    typealias ErrorEvent = (err: TileProviderError) -> Unit
 
     companion object {
         /**

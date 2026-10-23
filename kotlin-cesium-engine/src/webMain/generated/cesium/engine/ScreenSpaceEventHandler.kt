@@ -94,6 +94,12 @@ open external class ScreenSpaceEventHandler(
     }
 
     /**
+     * @param [event] The event which triggered the listener
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.PositionedEventCallback">Online Documentation</a>
+     */
+    typealias PositionedEventCallback = (event: PositionedEvent) -> Unit
+
+    /**
      * An Event that starts at one position and ends at another.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEvent">Online Documentation</a>
      */
@@ -102,6 +108,12 @@ open external class ScreenSpaceEventHandler(
         val startPosition: Cartesian2
         val endPosition: Cartesian2
     }
+
+    /**
+     * @param [event] The event which triggered the listener
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.MotionEventCallback">Online Documentation</a>
+     */
+    typealias MotionEventCallback = (event: MotionEvent) -> Unit
 
     /**
      * An Event that occurs at a two positions on screen.
@@ -114,6 +126,12 @@ open external class ScreenSpaceEventHandler(
     }
 
     /**
+     * @param [event] The event which triggered the listener
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointEventCallback">Online Documentation</a>
+     */
+    typealias TwoPointEventCallback = (event: TwoPointEvent) -> Unit
+
+    /**
      * An Event that starts at a two positions on screen and moves to two other positions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEvent">Online Documentation</a>
      */
@@ -124,6 +142,18 @@ open external class ScreenSpaceEventHandler(
         val previousPosition1: Cartesian2
         val previousPosition2: Cartesian2
     }
+
+    /**
+     * @param [event] The event which triggered the listener
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.TwoPointMotionEventCallback">Online Documentation</a>
+     */
+    typealias TwoPointMotionEventCallback = (event: TwoPointMotionEvent) -> Unit
+
+    /**
+     * @param [delta] The amount that the mouse wheel moved
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#.WheelEventCallback">Online Documentation</a>
+     */
+    typealias WheelEventCallback = (delta: Double) -> Unit
 
     companion object {
         /**

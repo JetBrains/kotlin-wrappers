@@ -62,4 +62,10 @@ open external class Event<Listener : Function<Unit>> {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#raiseEvent">Online Documentation</a>
      */
     fun raiseEvent(vararg arguments: JsAny /* Parameters<Listener> */)
+
+    /**
+     * A function that removes a listener.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#.RemoveCallback">Online Documentation</a>
+     */
+    typealias RemoveCallback = () -> Unit
 }

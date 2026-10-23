@@ -17,7 +17,7 @@ import cesium.core.JulianDate
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackProperty.html">Online Documentation</a>
  */
 open external class CallbackProperty(
-    callback: CallbackPropertyCallback,
+    callback: Callback,
     val isConstant: Boolean,
 ) {
     /**
@@ -47,7 +47,19 @@ open external class CallbackProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackProperty.html#setCallback">Online Documentation</a>
      */
     fun setCallback(
-        callback: CallbackPropertyCallback,
+        callback: Callback,
         isConstant: Boolean,
     )
+
+    /**
+     * A function that returns the value of the property.
+     * @param [time] The time for which to retrieve the value. If omitted, the current system time is used.
+     *   Default value - `JulianDate.now()`
+     * @param [result] The object to store the value into. If omitted, the function must create and return a new instance.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackProperty.html#.Callback">Online Documentation</a>
+     */
+    typealias Callback = (
+        time: JulianDate?,
+        result: JsAny?,
+    ) -> JsAny
 }

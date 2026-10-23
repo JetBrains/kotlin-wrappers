@@ -8,6 +8,7 @@ import cesium.core.Color
 import cesium.core.DeveloperError
 import cesium.core.Event
 import cesium.core.Rectangle
+import js.errors.JsError
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 
@@ -239,6 +240,20 @@ open external class ImageryLayer(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#getImageryRectangle">Online Documentation</a>
      */
     fun getImageryRectangle(): Rectangle
+
+    /**
+     * A function that is called when an error occurs.
+     * @param [err] An object holding details about the error that occurred.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerErrorEventCallback">Online Documentation</a>
+     */
+    typealias ImageryLayerErrorEventCallback = (err: JsError) -> Unit
+
+    /**
+     * A function that is called when the provider has been created
+     * @param [provider] The created imagery provider.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ImageryLayerReadyEventCallback">Online Documentation</a>
+     */
+    typealias ImageryLayerReadyEventCallback = (provider: ImageryProvider) -> Unit
 
     /**
      * Initialization options for the ImageryLayer constructor.
@@ -507,7 +522,6 @@ open external class ImageryLayer(
          *   Default value - [IonWorldImageryStyle]
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.WorldImageryConstructorOptions">Online Documentation</a>
          */
-        @JsPlainObject
-        interface /* typealias */ WorldImageryConstructorOptions : ConstructorOptions
+        typealias WorldImageryConstructorOptions = ConstructorOptions
     }
 }

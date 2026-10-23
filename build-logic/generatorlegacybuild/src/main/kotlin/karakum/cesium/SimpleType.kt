@@ -7,17 +7,6 @@ internal class SimpleType(
     override val name: String =
         source.defaultName
 
-    val longName: String by lazy {
-        if (name == "Callback") {
-            when (parent.name) {
-                "EasingFunction" -> "EasingCallback"
-                "CallbackProperty" -> "CallbackPropertyCallback"
-                "CallbackPositionProperty" -> "CallbackPositionCallback"
-                else -> TODO()
-            }
-        } else name
-    }
-
     override val docName: String =
         ".$name"
 
@@ -46,14 +35,9 @@ internal class SimpleType(
             DocLink(this)
         }
 
-        var declaration = typeDeclaration(source.body, false)
-        if (longName != name) {
-            declaration = declaration.replaceFirst(name, longName)
-        }
-
         return source.doc(link)
             .let { if (it.isNotEmpty()) "$it\n" else "" } +
-                modifier + declaration
+                modifier + typeDeclaration(source.body, false)
     }
 
     override fun equals(other: Any?): Boolean =

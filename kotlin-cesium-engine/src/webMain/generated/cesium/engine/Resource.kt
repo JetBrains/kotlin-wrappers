@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.buffer.ArrayBuffer
 import js.promise.Promise
+import js.promise.PromiseResult
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
 import web.blob.Blob
@@ -724,6 +725,17 @@ open external class Resource(
         val request: Request?
         val parseUrl: Boolean?
     }
+
+    /**
+     * A function that returns the value of the property.
+     * @param [resource] The resource that failed to load.
+     * @param [error] The error that occurred during the loading of the resource.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.RetryCallback">Online Documentation</a>
+     */
+    typealias RetryCallback = (
+        resource: Resource?,
+        error: RequestErrorEvent?,
+    ) -> PromiseResult<JsBoolean>
 
     companion object {
         /**

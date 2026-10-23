@@ -763,7 +763,7 @@ open external class Camera(
         val flyOverLongitude: Double?
         val flyOverLongitudeWeight: Double?
         val convert: Boolean?
-        val easingFunction: EasingCallback?
+        val easingFunction: EasingFunction.Callback?
     }
 
     /**
@@ -829,7 +829,7 @@ open external class Camera(
         val pitchAdjustHeight: Double?
         val flyOverLongitude: Double?
         val flyOverLongitudeWeight: Double?
-        val easingFunction: EasingCallback?
+        val easingFunction: EasingFunction.Callback?
     }
 
     /**
@@ -860,6 +860,18 @@ open external class Camera(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#switchToOrthographicFrustum">Online Documentation</a>
      */
     fun switchToOrthographicFrustum()
+
+    /**
+     * A function that will execute when a flight completes.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#.FlightCompleteCallback">Online Documentation</a>
+     */
+    typealias FlightCompleteCallback = () -> Unit
+
+    /**
+     * A function that will execute when a flight is cancelled.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#.FlightCancelledCallback">Online Documentation</a>
+     */
+    typealias FlightCancelledCallback = () -> Unit
 
     companion object {
         /**

@@ -70,7 +70,7 @@ open external class TimeIntervalCollection(
      */
     fun equals(
         right: TimeIntervalCollection? = definedExternally,
-        dataComparer: DataComparer? = definedExternally,
+        dataComparer: TimeInterval.DataComparer? = definedExternally,
     ): Boolean
 
     /**
@@ -154,7 +154,7 @@ open external class TimeIntervalCollection(
      */
     fun addInterval(
         interval: TimeInterval,
-        dataComparer: DataComparer? = definedExternally,
+        dataComparer: TimeInterval.DataComparer? = definedExternally,
     )
 
     /**
@@ -176,8 +176,8 @@ open external class TimeIntervalCollection(
      */
     fun intersect(
         other: TimeIntervalCollection,
-        dataComparer: DataComparer? = definedExternally,
-        mergeCallback: MergeCallback? = definedExternally,
+        dataComparer: TimeInterval.DataComparer? = definedExternally,
+        mergeCallback: TimeInterval.MergeCallback? = definedExternally,
     ): TimeIntervalCollection
 
     companion object {

@@ -182,6 +182,17 @@ open external class CzmlDataSource(
      */
     fun update(time: JulianDate): Boolean
 
+    /**
+     * Function
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.UpdaterFunction">Online Documentation</a>
+     */
+    typealias UpdaterFunction = (
+        entity: Entity,
+        packet: JsAny,
+        entityCollection: EntityCollection,
+        sourceUri: String,
+    ) -> Unit
+
     companion object {
         /**
          * Creates a Promise to a new instance loaded with the provided CZML data.

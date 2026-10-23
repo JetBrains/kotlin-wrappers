@@ -5,8 +5,10 @@
 package cesium.engine
 
 import cesium.core.*
+import js.promise.PromiseResult
 import kotlinx.js.JsPlainObject
 import web.html.HTMLCanvasElement
+import web.html.HTMLElement
 import web.html.HTMLImageElement
 
 /**
@@ -440,4 +442,11 @@ private constructor() {
         val disableDepthTestDistance: Double?
         val splitDirection: SplitDirection?
     }
+
+    /**
+     * A function that creates an image.
+     * @param [id] The identifier of the image to load.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#.CreateImageCallback">Online Documentation</a>
+     */
+    typealias CreateImageCallback = (id: String) -> PromiseResult<HTMLElement /* HTMLImageElement | HTMLCanvasElement */>
 }

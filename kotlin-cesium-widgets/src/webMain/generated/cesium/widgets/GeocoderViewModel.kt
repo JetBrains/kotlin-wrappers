@@ -31,7 +31,7 @@ open external class GeocoderViewModel(
         val scene: Scene
         val geocoderServices: ReadonlyArray<GeocoderService>?
         val flightDuration: Double?
-        val destinationFound: DestinationFoundFunction?
+        val destinationFound: Geocoder.DestinationFoundFunction?
     }
 
     /**
@@ -50,7 +50,7 @@ open external class GeocoderViewModel(
      * Gets and sets the command called when a geocode destination is found
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#destinationFound">Online Documentation</a>
      */
-    var destinationFound: DestinationFoundFunction
+    var destinationFound: Geocoder.DestinationFoundFunction
 
     /**
      * Gets a value indicating whether a search is currently in progress.  This property is observable.
@@ -121,6 +121,6 @@ open external class GeocoderViewModel(
          * A function to fly to the destination found by a successful geocode.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#.flyToDestination">Online Documentation</a>
          */
-        var flyToDestination: DestinationFoundFunction
+        var flyToDestination: Geocoder.DestinationFoundFunction
     }
 }

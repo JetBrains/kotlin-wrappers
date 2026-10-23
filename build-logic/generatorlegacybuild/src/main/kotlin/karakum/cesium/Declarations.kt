@@ -233,7 +233,6 @@ private fun readDeclarations(
         .replace(" readonly targetPropertyNames: any;", " readonly targetPropertyNames: string[];")
         .replace("};\n    type UpdaterFunction ", "};\n    /**\n     * Function\n     */\n    type UpdaterFunction ")
         .replace(RECORD) { record(it.groupValues[1]) }
-        .applyTypeAliasCorrection()
         .let { "\n$it" }
         .splitToSequence("\n\n/**")
         .filter { it.isNotBlank() }
@@ -260,11 +259,3 @@ private fun readDeclarations(
 private fun record(valueType: String): String {
     return "Record<String, ${kotlinType(valueType)}>"
 }
-
-private fun String.applyTypeAliasCorrection(): String =
-    replace("Geocoder.DestinationFoundFunction", "DestinationFoundFunction")
-        .replace("TimeInterval.DataComparer", "DataComparer")
-        .replace("TimeInterval.MergeCallback", "MergeCallback")
-        .replace("EasingFunction.Callback", "EasingCallback")
-        .replace("CallbackProperty.Callback", "CallbackPropertyCallback")
-        .replace("CallbackPositionProperty.Callback", "CallbackPositionProperty")

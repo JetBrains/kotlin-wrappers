@@ -40,4 +40,10 @@ open external class EventHelper {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EventHelper.html#removeAll">Online Documentation</a>
      */
     fun removeAll()
+
+    /**
+     * A function that removes a listener.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EventHelper.html#.RemoveCallback">Online Documentation</a>
+     */
+    typealias RemoveCallback = () -> Unit
 }

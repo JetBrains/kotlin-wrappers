@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.promise.Promise
+import js.void.Void
 import kotlinx.js.JsPlainObject
 
 /**
@@ -109,4 +111,22 @@ open external class Request(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html#clone">Online Documentation</a>
      */
     fun clone(result: Request? = definedExternally): Request
+
+    /**
+     * The function that makes the actual data request.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html#.RequestCallback">Online Documentation</a>
+     */
+    typealias RequestCallback = () -> Promise<Void>
+
+    /**
+     * The function that is called when the request is cancelled.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html#.CancelCallback">Online Documentation</a>
+     */
+    typealias CancelCallback = () -> Unit
+
+    /**
+     * The function that is called to update the request's priority, which occurs once per frame.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Request.html#.PriorityCallback">Online Documentation</a>
+     */
+    typealias PriorityCallback = () -> Double
 }

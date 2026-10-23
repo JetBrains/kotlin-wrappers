@@ -58,6 +58,12 @@ open external class TileProviderError(
      */
     var retry: Boolean
 
+    /**
+     * A function that will be called to retry the operation.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileProviderError.html#.RetryFunction">Online Documentation</a>
+     */
+    typealias RetryFunction = () -> Unit
+
     companion object {
         /**
          * Reports an error in an [ImageryProvider] or [TerrainProvider] by raising an event if it has any listeners, or by

@@ -7,6 +7,8 @@ package cesium.engine
 import cesium.core.DefaultEvent
 import cesium.core.Ellipsoid
 import js.promise.Promise
+import js.promise.PromiseResult
+import js.typedarrays.TypedArray
 import js.void.Void
 import kotlinx.js.JsPlainObject
 
@@ -170,4 +172,16 @@ open external class CustomHeightmapTerrainProvider(
         y: Double,
         level: Int,
     ): Promise<Void>?
+
+    /**
+     * @param [x] The X coordinate of the tile for which to request geometry.
+     * @param [y] The Y coordinate of the tile for which to request geometry.
+     * @param [level] The level of the tile for which to request geometry.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomHeightmapTerrainProvider.html#.GeometryCallback">Online Documentation</a>
+     */
+    typealias GeometryCallback = (
+        x: Double,
+        y: Double,
+        level: Int,
+    ) -> PromiseResult<TypedArray<*, *, *, *>> /* Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array | number[] | Promise<Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array | number[]> | undefined */
 }
