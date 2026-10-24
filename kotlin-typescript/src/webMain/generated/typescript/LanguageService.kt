@@ -112,7 +112,7 @@ external interface LanguageService {
      */
     fun getCompletionsAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
         options: GetCompletionsAtPositionOptions?,
         formattingSettings: FormatCodeSettings = definedExternally,
     ): WithMetadata<CompletionInfo>?
@@ -130,7 +130,7 @@ external interface LanguageService {
      */
     fun getCompletionEntryDetails(
         fileName: String,
-        position: Double,
+        position: Int,
         entryName: String,
         formatOptions: FormatCodeOptions?,
         source: String?,
@@ -151,7 +151,7 @@ external interface LanguageService {
      */
     fun getCompletionEntryDetails(
         fileName: String,
-        position: Double,
+        position: Int,
         entryName: String,
         formatOptions: FormatCodeSettings?,
         source: String?,
@@ -161,7 +161,7 @@ external interface LanguageService {
 
     fun getCompletionEntrySymbol(
         fileName: String,
-        position: Double,
+        position: Int,
         name: String,
         source: String?,
     ): Symbol?
@@ -176,43 +176,43 @@ external interface LanguageService {
      */
     fun getQuickInfoAtPosition(
         fileName: String,
-        position: Double,
-        maximumLength: Double = definedExternally,
+        position: Int,
+        maximumLength: Int = definedExternally,
     ): QuickInfo?
 
     fun getNameOrDottedNameSpan(
         fileName: String,
-        startPos: Double,
-        endPos: Double,
+        startPos: Int,
+        endPos: Int,
     ): TextSpan?
 
     fun getBreakpointStatementAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): TextSpan?
 
     fun getSignatureHelpItems(
         fileName: String,
-        position: Double,
+        position: Int,
         options: SignatureHelpItemsOptions?,
     ): SignatureHelpItems?
 
     fun getRenameInfo(
         fileName: String,
-        position: Double,
+        position: Int,
         preferences: UserPreferences,
     ): RenameInfo
 
     /** @deprecated Use the signature with `UserPreferences` instead. */
     fun getRenameInfo(
         fileName: String,
-        position: Double,
+        position: Int,
         options: RenameInfoOptions = definedExternally,
     ): RenameInfo
 
     fun findRenameLocations(
         fileName: String,
-        position: Double,
+        position: Int,
         findInStrings: Boolean,
         findInComments: Boolean,
         preferences: UserPreferences,
@@ -221,7 +221,7 @@ external interface LanguageService {
     /** @deprecated Pass `providePrefixAndSuffixTextForRename` as part of a `UserPreferences` parameter. */
     fun findRenameLocations(
         fileName: String,
-        position: Double,
+        position: Int,
         findInStrings: Boolean,
         findInComments: Boolean,
         providePrefixAndSuffixTextForRename: Boolean = definedExternally,
@@ -229,42 +229,42 @@ external interface LanguageService {
 
     fun getSmartSelectionRange(
         fileName: String,
-        position: Double,
+        position: Int,
     ): SelectionRange
 
     fun getDefinitionAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): (js.array.ReadonlyArray<DefinitionInfo>)?
 
     fun getDefinitionAndBoundSpan(
         fileName: String,
-        position: Double,
+        position: Int,
     ): DefinitionInfoAndBoundSpan?
 
     fun getTypeDefinitionAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): (js.array.ReadonlyArray<DefinitionInfo>)?
 
     fun getImplementationAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): (js.array.ReadonlyArray<ImplementationLocation>)?
 
     fun getReferencesAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): js.array.ReadonlyArray<ReferenceEntry>?
 
     fun findReferences(
         fileName: String,
-        position: Double,
+        position: Int,
     ): js.array.ReadonlyArray<ReferencedSymbol>?
 
     fun getDocumentHighlights(
         fileName: String,
-        position: Double,
+        position: Int,
         filesToSearch: js.array.ReadonlyArray<String>,
     ): js.array.ReadonlyArray<DocumentHighlights>?
 
@@ -272,7 +272,7 @@ external interface LanguageService {
 
     fun getNavigateToItems(
         searchValue: String,
-        maxResultCount: Double = definedExternally,
+        maxResultCount: Int = definedExternally,
         fileName: String = definedExternally,
         excludeDtsFiles: Boolean = definedExternally,
         excludeLibFiles: Boolean = definedExternally,
@@ -284,17 +284,17 @@ external interface LanguageService {
 
     fun prepareCallHierarchy(
         fileName: String,
-        position: Double,
+        position: Int,
     ): Any? /* CallHierarchyItem | CallHierarchyItem[] | undefined */
 
     fun provideCallHierarchyIncomingCalls(
         fileName: String,
-        position: Double,
+        position: Int,
     ): js.array.ReadonlyArray<CallHierarchyIncomingCall>
 
     fun provideCallHierarchyOutgoingCalls(
         fileName: String,
-        position: Double,
+        position: Int,
     ): js.array.ReadonlyArray<CallHierarchyOutgoingCall>
 
     fun provideInlayHints(
@@ -312,32 +312,32 @@ external interface LanguageService {
 
     fun getBraceMatchingAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): js.array.ReadonlyArray<TextSpan>
 
     fun getIndentationAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
         options: EditorOptions,
-    ): Double
+    ): Int
 
     fun getIndentationAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
         options: EditorSettings,
-    ): Double
+    ): Int
 
     fun getFormattingEditsForRange(
         fileName: String,
-        start: Double,
-        end: Double,
+        start: Int,
+        end: Int,
         options: FormatCodeOptions,
     ): js.array.ReadonlyArray<TextChange>
 
     fun getFormattingEditsForRange(
         fileName: String,
-        start: Double,
-        end: Double,
+        start: Int,
+        end: Int,
         options: FormatCodeSettings,
     ): js.array.ReadonlyArray<TextChange>
 
@@ -353,29 +353,29 @@ external interface LanguageService {
 
     fun getFormattingEditsAfterKeystroke(
         fileName: String,
-        position: Double,
+        position: Int,
         key: String,
         options: FormatCodeOptions,
     ): js.array.ReadonlyArray<TextChange>
 
     fun getFormattingEditsAfterKeystroke(
         fileName: String,
-        position: Double,
+        position: Int,
         key: String,
         options: FormatCodeSettings,
     ): js.array.ReadonlyArray<TextChange>
 
     fun getDocCommentTemplateAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
         options: DocCommentTemplateOptions = definedExternally,
         formatOptions: FormatCodeSettings = definedExternally,
     ): TextInsertion?
 
     fun isValidBraceCompletionAtPosition(
         fileName: String,
-        position: Double,
-        openingBrace: Double,
+        position: Int,
+        openingBrace: Int,
     ): Boolean
 
     /**
@@ -384,27 +384,27 @@ external interface LanguageService {
      */
     fun getJsxClosingTagAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): JsxClosingTagInfo?
 
     fun getLinkedEditingRangeAtPosition(
         fileName: String,
-        position: Double,
+        position: Int,
     ): LinkedEditingInfo?
 
     fun getSpanOfEnclosingComment(
         fileName: String,
-        position: Double,
+        position: Int,
         onlyMultiLine: Boolean,
     ): TextSpan?
 
-    val toLineColumnOffset: ((fileName: String, position: Double) -> LineAndCharacter)?
+    val toLineColumnOffset: ((fileName: String, position: Int) -> LineAndCharacter)?
 
     fun getCodeFixesAtPosition(
         fileName: String,
-        start: Double,
-        end: Double,
-        errorCodes: js.array.ReadonlyArray<Double>,
+        start: Int,
+        end: Int,
+        errorCodes: js.array.ReadonlyArray<Int>,
         formatOptions: FormatCodeSettings,
         preferences: UserPreferences,
     ): js.array.ReadonlyArray<CodeFixAction>
@@ -447,7 +447,7 @@ external interface LanguageService {
      */
     fun getApplicableRefactors(
         fileName: String,
-        positionOrRange: Double,
+        positionOrRange: Int,
         preferences: UserPreferences?,
         triggerReason: RefactorTriggerReason = definedExternally,
         kind: String = definedExternally,
@@ -472,7 +472,7 @@ external interface LanguageService {
     fun getEditsForRefactor(
         fileName: String,
         formatOptions: FormatCodeSettings,
-        positionOrRange: Double,
+        positionOrRange: Int,
         refactorName: String,
         actionName: String,
         preferences: UserPreferences?,
@@ -491,7 +491,7 @@ external interface LanguageService {
 
     fun getMoveToRefactoringFileSuggestions(
         fileName: String,
-        positionOrRange: Double,
+        positionOrRange: Int,
         preferences: UserPreferences?,
         triggerReason: RefactorTriggerReason = definedExternally,
         kind: String = definedExternally,

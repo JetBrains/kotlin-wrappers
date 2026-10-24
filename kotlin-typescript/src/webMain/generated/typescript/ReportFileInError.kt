@@ -5,5 +5,5 @@ package typescript
 @kotlinx.js.JsPlainObject
 external interface ReportFileInError {
     var fileName: String
-    var line: Double
+    var line: Int
 }

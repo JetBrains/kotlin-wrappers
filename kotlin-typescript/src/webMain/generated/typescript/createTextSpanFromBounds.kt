@@ -5,6 +5,6 @@
 package typescript
 
 external fun createTextSpanFromBounds(
-    start: Double,
-    end: Double,
+    start: Int,
+    end: Int,
 ): TextSpan

@@ -7,8 +7,8 @@ external interface VisitEachChildNodesVisitor {
         nodes: TInArray,
         visitor: Visitor<TIn, Node?>,
         test: (node: Node) -> Boolean, /* node is TOut */
-        start: Double? = definedExternally,
-        count: Double? = definedExternally,
+        start: Int? = definedExternally,
+        count: Int? = definedExternally,
     ): Any /* NodeArray<TOut> | (TInArray & undefined) */
 
     operator fun <TIn : Node, TInArray : NodeArray<TIn>?> invoke(
@@ -17,7 +17,7 @@ external interface VisitEachChildNodesVisitor {
         test: (
             (node: Node) -> Boolean
         )? = definedExternally,
-        start: Double? = definedExternally,
-        count: Double? = definedExternally,
+        start: Int? = definedExternally,
+        count: Int? = definedExternally,
     ): Any /* NodeArray<Node> | (TInArray & undefined) */
 }

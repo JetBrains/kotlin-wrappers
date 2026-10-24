@@ -4,6 +4,6 @@ package typescript
 
 @kotlinx.js.JsPlainObject
 external interface TextSpan {
-    var start: Double
-    var length: Double
+    var start: Int
+    var length: Int
 }

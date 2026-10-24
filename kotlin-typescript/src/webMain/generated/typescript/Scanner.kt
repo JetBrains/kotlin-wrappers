@@ -4,21 +4,21 @@ package typescript
 
 external interface Scanner {
     /** @deprecated use {@link getTokenFullStart} */
-    fun getStartPos(): Double
+    fun getStartPos(): Int
 
     fun getToken(): SyntaxKind
 
-    fun getTokenFullStart(): Double
+    fun getTokenFullStart(): Int
 
-    fun getTokenStart(): Double
+    fun getTokenStart(): Int
 
-    fun getTokenEnd(): Double
+    fun getTokenEnd(): Int
 
     /** @deprecated use {@link getTokenEnd} */
-    fun getTextPos(): Double
+    fun getTextPos(): Int
 
     /** @deprecated use {@link getTokenStart} */
-    fun getTokenPos(): Double
+    fun getTokenPos(): Int
 
     fun getTokenText(): String
 
@@ -73,8 +73,8 @@ external interface Scanner {
 
     fun setText(
         text: String?,
-        start: Double = definedExternally,
-        length: Double = definedExternally,
+        start: Int = definedExternally,
+        length: Int = definedExternally,
     )
 
     fun setOnError(onError: ErrorCallback?)
@@ -88,15 +88,15 @@ external interface Scanner {
     fun setJSDocParsingMode(kind: JSDocParsingMode)
 
     /** @deprecated use {@link resetTokenState} */
-    fun setTextPos(textPos: Double)
+    fun setTextPos(textPos: Int)
 
-    fun resetTokenState(pos: Double)
+    fun resetTokenState(pos: Int)
 
     fun <T> lookAhead(callback: () -> T): T
 
     fun <T> scanRange(
-        start: Double,
-        length: Double,
+        start: Int,
+        length: Int,
         callback: () -> T,
     ): T
 

@@ -6,7 +6,7 @@ package typescript
 external interface DiagnosticMessage {
     var key: String
     var category: DiagnosticCategory
-    var code: Double
+    var code: Int
     var message: String
     var reportsUnnecessary: (Any)?
     var reportsDeprecated: (Any)?

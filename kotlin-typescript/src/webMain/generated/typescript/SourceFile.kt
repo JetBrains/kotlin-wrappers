@@ -47,16 +47,16 @@ external interface SourceFile :
      */
     var impliedNodeFormat: ResolutionMode
 
-    fun getLineAndCharacterOfPosition(pos: Double): LineAndCharacter
+    fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
 
-    fun getLineEndOfPosition(pos: Double): Double
+    fun getLineEndOfPosition(pos: Int): Int
 
-    fun getLineStarts(): js.array.ReadonlyArray<Double>
+    fun getLineStarts(): js.array.ReadonlyArray<Int>
 
     fun getPositionOfLineAndCharacter(
-        line: Double,
-        character: Double,
-    ): Double
+        line: Int,
+        character: Int,
+    ): Int
 
     fun update(
         newText: String,

@@ -66,15 +66,15 @@ external interface Program :
      */
     fun getTypeChecker(): TypeChecker
 
-    fun getNodeCount(): Double
+    fun getNodeCount(): Int
 
-    fun getIdentifierCount(): Double
+    fun getIdentifierCount(): Int
 
-    fun getSymbolCount(): Double
+    fun getSymbolCount(): Int
 
-    fun getTypeCount(): Double
+    fun getTypeCount(): Int
 
-    fun getInstantiationCount(): Double
+    fun getInstantiationCount(): Int
 
     fun getRelationCacheSizes(): ProgramGetRelationCacheSizesResult
 
@@ -151,7 +151,7 @@ external interface Program :
      */
     fun getModeForResolutionAtIndex(
         file: SourceFile,
-        index: Double,
+        index: Int,
     ): ResolutionMode
 
     fun getProjectReferences(): (js.array.ReadonlyArray<ProjectReference>)?

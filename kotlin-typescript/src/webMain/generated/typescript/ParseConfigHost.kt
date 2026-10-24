@@ -11,7 +11,7 @@ external interface ParseConfigHost : ModuleResolutionHost {
         extensions: js.array.ReadonlyArray<String>,
         excludes: (js.array.ReadonlyArray<String>)?,
         includes: js.array.ReadonlyArray<String>,
-        depth: Double = definedExternally,
+        depth: Int = definedExternally,
     ): js.array.ReadonlyArray<String>
 
     /**

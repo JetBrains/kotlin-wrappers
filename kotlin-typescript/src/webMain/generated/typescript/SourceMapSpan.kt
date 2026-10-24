@@ -5,20 +5,20 @@ package typescript
 @kotlinx.js.JsPlainObject
 external interface SourceMapSpan {
     /** Line number in the .js file. */
-    var emittedLine: Double
+    var emittedLine: Int
 
     /** Column number in the .js file. */
-    var emittedColumn: Double
+    var emittedColumn: Int
 
     /** Line number in the .ts file. */
-    var sourceLine: Double
+    var sourceLine: Int
 
     /** Column number in the .ts file. */
-    var sourceColumn: Double
+    var sourceColumn: Int
 
     /** Optional name (index into names array) associated with this span. */
-    var nameIndex: Double?
+    var nameIndex: Int?
 
     /** .ts file (index into sources array) associated with this span */
-    var sourceIndex: Double
+    var sourceIndex: Int
 }

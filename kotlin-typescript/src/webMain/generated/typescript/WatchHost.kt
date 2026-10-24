@@ -10,7 +10,7 @@ external interface WatchHost {
         diagnostic: Diagnostic,
         newLine: String,
         options: CompilerOptions,
-        errorCount: Double?, /* use undefined for default */
+        errorCount: Int?, /* use undefined for default */
     ) -> Unit
     )?
 
@@ -18,7 +18,7 @@ external interface WatchHost {
     fun watchFile(
         path: String,
         callback: FileWatcherCallback,
-        pollingInterval: Double = definedExternally,
+        pollingInterval: Int = definedExternally,
         options: WatchOptions = definedExternally,
     ): FileWatcher
 

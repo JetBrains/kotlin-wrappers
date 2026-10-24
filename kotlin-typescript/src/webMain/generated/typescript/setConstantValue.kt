@@ -17,5 +17,5 @@ external fun setConstantValue(
  */
 external fun setConstantValue(
     node: AccessExpression,
-    value: Double,
+    value: Int,
 ): AccessExpression

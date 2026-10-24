@@ -9,10 +9,10 @@ external interface Node : ReadonlyTextRange {
 
     fun getSourceFile(): SourceFile
 
-    fun getChildCount(sourceFile: SourceFile = definedExternally): Double
+    fun getChildCount(sourceFile: SourceFile = definedExternally): Int
 
     fun getChildAt(
-        index: Double,
+        index: Int,
         sourceFile: SourceFile = definedExternally,
     ): Node
 
@@ -21,17 +21,17 @@ external interface Node : ReadonlyTextRange {
     fun getStart(
         sourceFile: SourceFile = definedExternally,
         includeJsDocComment: Boolean = definedExternally,
-    ): Double
+    ): Int
 
-    fun getFullStart(): Double
+    fun getFullStart(): Int
 
-    fun getEnd(): Double
+    fun getEnd(): Int
 
-    fun getWidth(sourceFile: SourceFileLike = definedExternally): Double
+    fun getWidth(sourceFile: SourceFileLike = definedExternally): Int
 
-    fun getFullWidth(): Double
+    fun getFullWidth(): Int
 
-    fun getLeadingTriviaWidth(sourceFile: SourceFile = definedExternally): Double
+    fun getLeadingTriviaWidth(sourceFile: SourceFile = definedExternally): Int
 
     fun getFullText(sourceFile: SourceFile = definedExternally): String
 

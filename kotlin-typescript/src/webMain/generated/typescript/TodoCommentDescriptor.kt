@@ -5,5 +5,5 @@ package typescript
 @kotlinx.js.JsPlainObject
 external interface TodoCommentDescriptor {
     var text: String
-    var priority: Double
+    var priority: Int
 }

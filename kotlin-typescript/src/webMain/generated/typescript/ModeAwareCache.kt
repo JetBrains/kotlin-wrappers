@@ -19,5 +19,5 @@ external interface ModeAwareCache<T> {
 
     fun forEach(cb: (elem: T, key: String, mode: ResolutionMode) -> Unit)
 
-    fun size(): Double
+    fun size(): Int
 }

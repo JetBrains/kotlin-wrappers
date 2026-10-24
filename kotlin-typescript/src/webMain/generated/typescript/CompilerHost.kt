@@ -47,7 +47,7 @@ external interface CompilerHost : ModuleResolutionHost {
         extensions: js.array.ReadonlyArray<String>,
         excludes: (js.array.ReadonlyArray<String>)?,
         includes: js.array.ReadonlyArray<String>,
-        depth: Double?, /* use undefined for default */
+        depth: Int?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<String>
     )?
 

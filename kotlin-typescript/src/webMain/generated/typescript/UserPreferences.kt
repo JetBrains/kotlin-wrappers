@@ -163,5 +163,5 @@ external interface UserPreferences {
      *
      * Default: `500`
      */
-    val maximumHoverLength: Double?
+    val maximumHoverLength: Int?
 }

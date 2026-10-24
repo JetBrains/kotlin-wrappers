@@ -47,7 +47,7 @@ external interface ProgramHost<T : BuilderProgram> {
         extensions: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         exclude: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         include: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
-        depth: Double?, /* use undefined for default */
+        depth: Int?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<String>
     )?
 

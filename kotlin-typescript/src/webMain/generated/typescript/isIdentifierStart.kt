@@ -5,6 +5,6 @@
 package typescript
 
 external fun isIdentifierStart(
-    ch: Double,
+    ch: Int,
     languageVersion: ScriptTarget?,
 ): Boolean

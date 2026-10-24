@@ -25,6 +25,6 @@ external interface WatchCompilerHostOfConfigFile<T : BuilderProgram> :
         extensions: js.array.ReadonlyArray<String> = definedExternally,
         exclude: js.array.ReadonlyArray<String> = definedExternally,
         include: js.array.ReadonlyArray<String> = definedExternally,
-        depth: Double = definedExternally,
+        depth: Int = definedExternally,
     ): js.array.ReadonlyArray<String>
 }

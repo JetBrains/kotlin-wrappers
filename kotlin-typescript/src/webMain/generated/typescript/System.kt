@@ -10,14 +10,14 @@ external interface System {
     fun write(s: String)
 
     val writeOutputIsTTY: (() -> Boolean)?
-    val getWidthOfTerminal: (() -> Double)?
+    val getWidthOfTerminal: (() -> Int)?
 
     fun readFile(
         path: String,
         encoding: String = definedExternally,
     ): String?
 
-    val getFileSize: ((path: String) -> Double)?
+    val getFileSize: ((path: String) -> Int)?
 
     fun writeFile(
         path: String,
@@ -33,7 +33,7 @@ external interface System {
         (
         path: String,
         callback: FileWatcherCallback,
-        pollingInterval: Double?, /* use undefined for default */
+        pollingInterval: Int?, /* use undefined for default */
         options: WatchOptions?, /* use undefined for default */
     ) -> FileWatcher
     )?
@@ -65,7 +65,7 @@ external interface System {
         extensions: js.array.ReadonlyArray<String> = definedExternally,
         exclude: js.array.ReadonlyArray<String> = definedExternally,
         include: js.array.ReadonlyArray<String> = definedExternally,
-        depth: Double = definedExternally,
+        depth: Int = definedExternally,
     ): js.array.ReadonlyArray<String>
 
     val getModifiedTime: ((path: String) -> js.date.Date?)?
@@ -79,9 +79,9 @@ external interface System {
 
     /** This must be cryptographically secure. Only implement this method using `crypto.createHash("sha256")`. */
     val createSHA256Hash: ((data: String) -> String)?
-    val getMemoryUsage: (() -> Double)?
+    val getMemoryUsage: (() -> Int)?
 
-    fun exit(exitCode: Double = definedExternally)
+    fun exit(exitCode: Int = definedExternally)
 
     val realpath: ((path: String) -> String)?
     val setTimeout:

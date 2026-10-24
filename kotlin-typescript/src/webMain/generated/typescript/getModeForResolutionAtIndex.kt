@@ -18,6 +18,6 @@ package typescript
  */
 external fun getModeForResolutionAtIndex(
     file: SourceFile,
-    index: Double,
+    index: Int,
     compilerOptions: CompilerOptions,
 ): ResolutionMode

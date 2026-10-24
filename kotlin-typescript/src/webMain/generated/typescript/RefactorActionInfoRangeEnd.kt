@@ -4,6 +4,6 @@ package typescript
 
 @kotlinx.js.JsPlainObject
 external interface RefactorActionInfoRangeEnd {
-    var line: Double
-    var offset: Double
+    var line: Int
+    var offset: Int
 }

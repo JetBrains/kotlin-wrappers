@@ -4,6 +4,6 @@ package typescript
 
 @kotlinx.js.JsPlainObject
 external interface TextRange {
-    var pos: Double
-    var end: Double
+    var pos: Int
+    var end: Int
 }

@@ -38,7 +38,7 @@ external interface LanguageServiceHost :
         extensions: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         exclude: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
         include: (js.array.ReadonlyArray<String>)?, /* use undefined for default */
-        depth: Double?, /* use undefined for default */
+        depth: Int?, /* use undefined for default */
     ) -> js.array.ReadonlyArray<String>
     )?
     override val realpath: ((path: String) -> String)?
@@ -50,7 +50,7 @@ external interface LanguageServiceHost :
 
     override fun fileExists(fileName: String): Boolean
 
-    val getTypeRootsVersion: (() -> Double)?
+    val getTypeRootsVersion: (() -> Int)?
 
     /** @deprecated supply resolveModuleNameLiterals instead for resolution that can handle newer resolution modes like nodenext */
     val resolveModuleNames: (

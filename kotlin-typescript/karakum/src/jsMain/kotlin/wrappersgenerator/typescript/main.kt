@@ -3,6 +3,7 @@ package wrappersgenerator.typescript
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
 import io.github.sgrishchenko.karakum.configuration.`object`
 import io.github.sgrishchenko.karakum.configuration.`package`
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.NumberPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
@@ -22,6 +23,7 @@ import wrappersgenerator.typescript.varianceModifiers.modifyInterfaceVariance
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
+            NumberPlugin(defaultNumberType = "Int"),
             ContractFunctionApiPlugin,
 
             convertArrayInheritance,

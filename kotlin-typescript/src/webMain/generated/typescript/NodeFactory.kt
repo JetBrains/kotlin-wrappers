@@ -14,7 +14,7 @@ external interface NodeFactory {
     ): NumericLiteral
 
     fun createNumericLiteral(
-        value: Double,
+        value: Int,
         numericLiteralFlags: TokenFlags = definedExternally,
     ): NumericLiteral
 
@@ -1017,7 +1017,7 @@ external interface NodeFactory {
 
     fun createElementAccessExpression(
         expression: Expression,
-        index: Double,
+        index: Int,
     ): ElementAccessExpression
 
     fun createElementAccessExpression(
@@ -1034,7 +1034,7 @@ external interface NodeFactory {
     fun createElementAccessChain(
         expression: Expression,
         questionDotToken: QuestionDotToken?,
-        index: Double,
+        index: Int,
     ): ElementAccessChain
 
     fun createElementAccessChain(

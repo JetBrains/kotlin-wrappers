@@ -18,7 +18,7 @@ external interface NodesVisitor {
         nodes: TInArray,
         visitor: Visitor<TIn, Node?>,
         test: (node: Node) -> Boolean = definedExternally,
-        start: Double = definedExternally,
-        count: Double = definedExternally,
+        start: Int = definedExternally,
+        count: Int = definedExternally,
     ): Any /* NodeArray<Node> | (TInArray & undefined) */
 }

@@ -6,5 +6,5 @@ package typescript
 external interface TodoComment {
     var descriptor: TodoCommentDescriptor
     var message: String
-    var position: Double
+    var position: Int
 }

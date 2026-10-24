@@ -8,8 +8,8 @@ external interface DiagnosticWithLocation : Diagnostic {
     override var file: SourceFile
 
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
-    override var start: Double
+    override var start: Int
 
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
-    override var length: Double
+    override var length: Int
 }

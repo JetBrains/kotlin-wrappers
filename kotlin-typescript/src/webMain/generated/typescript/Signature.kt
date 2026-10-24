@@ -14,7 +14,7 @@ external interface Signature {
 
     fun getParameters(): js.array.ReadonlyArray<Symbol>
 
-    fun getTypeParameterAtPosition(pos: Double): Type
+    fun getTypeParameterAtPosition(pos: Int): Type
 
     fun getReturnType(): Type
 

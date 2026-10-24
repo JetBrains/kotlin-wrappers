@@ -5,5 +5,5 @@ package typescript
 @kotlinx.js.JsPlainObject
 external interface TextChangeRange {
     var span: TextSpan
-    var newLength: Double
+    var newLength: Int
 }

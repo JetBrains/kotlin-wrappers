@@ -6,5 +6,5 @@ package typescript
 
 external fun getLeadingCommentRanges(
     text: String,
-    pos: Double,
+    pos: Int,
 ): js.array.ReadonlyArray<CommentRange>?

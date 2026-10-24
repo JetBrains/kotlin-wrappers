@@ -233,7 +233,7 @@ external interface TypeChecker {
     fun getResolvedSignature(
         node: CallLikeExpression,
         candidatesOutArray: js.array.ReadonlyArray<Signature> = definedExternally,
-        argumentCount: Double = definedExternally,
+        argumentCount: Int = definedExternally,
     ): Signature?
 
     fun getSignatureFromDeclaration(declaration: SignatureDeclaration): Signature?
@@ -307,7 +307,7 @@ external interface TypeChecker {
 
     fun getNumberType(): Type
 
-    fun getNumberLiteralType(value: Double): NumberLiteralType
+    fun getNumberLiteralType(value: Int): NumberLiteralType
 
     fun getBigIntType(): Type
 

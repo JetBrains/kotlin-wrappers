@@ -4,9 +4,9 @@ package typescript
 
 @kotlinx.js.JsPlainObject
 external interface EditorSettings {
-    var baseIndentSize: Double?
-    var indentSize: Double?
-    var tabSize: Double?
+    var baseIndentSize: Int?
+    var indentSize: Int?
+    var tabSize: Int?
     var newLineCharacter: String?
     var convertTabsToSpaces: Boolean?
     var indentStyle: IndentStyle?

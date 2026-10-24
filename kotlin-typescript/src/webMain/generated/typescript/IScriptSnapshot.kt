@@ -10,12 +10,12 @@ package typescript
 external interface IScriptSnapshot {
     /** Gets a portion of the script snapshot specified by [start, end). */
     fun getText(
-        start: Double,
-        end: Double,
+        start: Int,
+        end: Int,
     ): String
 
     /** Gets the length of this script snapshot. */
-    fun getLength(): Double
+    fun getLength(): Int
 
     /**
      * Gets the TextChangeRange that describe how the text changed between this text and

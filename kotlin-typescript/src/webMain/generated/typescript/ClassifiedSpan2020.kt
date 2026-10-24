@@ -5,5 +5,5 @@ package typescript
 @kotlinx.js.JsPlainObject
 external interface ClassifiedSpan2020 {
     var textSpan: TextSpan
-    var classificationType: Double
+    var classificationType: Int
 }

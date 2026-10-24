@@ -8,5 +8,5 @@ package typescript
 external interface SourceFileLike {
     val text: String
 
-    fun getLineAndCharacterOfPosition(pos: Double): LineAndCharacter
+    fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
 }

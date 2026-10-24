@@ -6,6 +6,6 @@ package typescript
 
 external fun textSpanIntersectsWith(
     span: TextSpan,
-    start: Double,
-    length: Double,
+    start: Int,
+    length: Int,
 ): Boolean

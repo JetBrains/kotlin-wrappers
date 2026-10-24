@@ -53,7 +53,7 @@ external interface CompilerOptions {
     var libReplacement: Boolean?
     var locale: String?
     var mapRoot: String?
-    var maxNodeModuleJsDepth: Double?
+    var maxNodeModuleJsDepth: Int?
     var module: ModuleKind?
     var moduleResolution: ModuleResolutionKind?
     var moduleSuffixes: js.array.ReadonlyArray<String>?
