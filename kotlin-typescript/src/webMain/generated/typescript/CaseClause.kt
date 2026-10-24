@@ -8,7 +8,7 @@ external interface CaseClause :
     HasJSDoc,
     CaseOrDefaultClause {
     override val kind: SyntaxKind.CaseClause
-    override val parent: CaseBlock
+    override val parent: CaseBlock?
     val expression: Expression
     val statements: NodeArray<Statement>
 }

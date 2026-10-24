@@ -12,7 +12,7 @@ external interface ConstructorDeclaration :
     SignatureDeclaration,
     FunctionLikeDeclaration {
     override val kind: SyntaxKind.Constructor
-    override val parent: ClassLikeDeclaration
+    override val parent: ClassLikeDeclaration?
     val modifiers: NodeArray<ModifierLike>?
     override val body: FunctionBody?
 }

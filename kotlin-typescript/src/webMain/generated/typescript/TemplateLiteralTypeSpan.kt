@@ -7,7 +7,7 @@ external interface TemplateLiteralTypeSpan :
     TemplateMiddleParent,
     TemplateTailParent {
     override val kind: SyntaxKind.TemplateLiteralTypeSpan
-    override val parent: TemplateLiteralTypeNode
+    override val parent: TemplateLiteralTypeNode?
     val type: TypeNode
     val literal: TemplateLiteralTypeSpanLiteral
 }

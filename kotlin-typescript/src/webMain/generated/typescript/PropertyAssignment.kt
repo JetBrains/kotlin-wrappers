@@ -12,7 +12,7 @@ external interface PropertyAssignment :
     ObjectBindingOrAssignmentElement,
     NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.PropertyAssignment
-    override val parent: ObjectLiteralExpression
+    override val parent: ObjectLiteralExpression?
     override val name: PropertyName
     val initializer: Expression
 }

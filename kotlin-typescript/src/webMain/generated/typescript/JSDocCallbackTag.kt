@@ -8,7 +8,7 @@ external interface JSDocCallbackTag :
     LocalsContainer,
     DeclarationWithTypeParameters {
     override val kind: SyntaxKind.JSDocCallbackTag
-    override val parent: JSDoc
+    override val parent: JSDoc?
     val fullName: (JSDocCallbackTagFullName)?
     override val name: Identifier?
     val typeExpression: JSDocSignature

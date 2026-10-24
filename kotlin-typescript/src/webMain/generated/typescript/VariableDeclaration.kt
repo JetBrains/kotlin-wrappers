@@ -14,7 +14,7 @@ external interface VariableDeclaration :
     BindingOrAssignmentElement,
     WalkUpBindingElementsAndPatternsResult {
     override val kind: SyntaxKind.VariableDeclaration
-    override val parent: VariableDeclarationParent
+    override val parent: VariableDeclarationParent?
     override val name: BindingName
     val exclamationToken: ExclamationToken?
     val type: TypeNode?

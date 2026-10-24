@@ -14,7 +14,7 @@ external interface ImportEqualsDeclaration :
     HasModifiers,
     TypeOnlyCompatibleAliasDeclaration {
     override val kind: SyntaxKind.ImportEqualsDeclaration
-    override val parent: ImportEqualsDeclarationParent
+    override val parent: ImportEqualsDeclarationParent?
     val modifiers: NodeArray<ModifierLike>?
     override val name: Identifier
     val isTypeOnly: Boolean

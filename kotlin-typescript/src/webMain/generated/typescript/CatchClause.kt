@@ -7,7 +7,7 @@ external interface CatchClause :
     LocalsContainer,
     VariableDeclarationParent {
     override val kind: SyntaxKind.CatchClause
-    override val parent: TryStatement
+    override val parent: TryStatement?
     val variableDeclaration: VariableDeclaration?
     val block: Block
 }

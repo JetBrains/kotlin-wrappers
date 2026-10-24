@@ -7,6 +7,6 @@ external interface NamespaceImport :
     NamedImportBindings,
     TypeOnlyCompatibleAliasDeclaration {
     override val kind: SyntaxKind.NamespaceImport
-    override val parent: ImportClause
+    override val parent: ImportClause?
     override val name: Identifier
 }

@@ -6,6 +6,6 @@ external interface ExternalModuleReference :
     Node,
     ModuleReference {
     override val kind: SyntaxKind.ExternalModuleReference
-    override val parent: ImportEqualsDeclaration
+    override val parent: ImportEqualsDeclaration?
     val expression: Expression
 }

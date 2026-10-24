@@ -4,5 +4,5 @@ package typescript
 
 external interface JsxClosingFragment : Expression {
     override val kind: SyntaxKind.JsxClosingFragment
-    override val parent: JsxFragment
+    override val parent: JsxFragment?
 }

@@ -12,7 +12,7 @@ external interface ExportAssignment :
     HasJSDoc,
     HasModifiers {
     override val kind: SyntaxKind.ExportAssignment
-    override val parent: SourceFile
+    override val parent: SourceFile?
     val modifiers: NodeArray<ModifierLike>?
     val isExportEquals: Boolean?
     val expression: Expression

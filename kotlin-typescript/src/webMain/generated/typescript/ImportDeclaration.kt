@@ -9,7 +9,7 @@ external interface ImportDeclaration :
     ImportClauseParent,
     ImportAttributesParent {
     override val kind: SyntaxKind.ImportDeclaration
-    override val parent: ImportDeclarationParent
+    override val parent: ImportDeclarationParent?
     val modifiers: NodeArray<ModifierLike>?
     val importClause: ImportClause?
 

@@ -8,7 +8,7 @@ external interface JSDocTypedefTag :
     LocalsContainer,
     DeclarationWithTypeParameters {
     override val kind: SyntaxKind.JSDocTypedefTag
-    override val parent: JSDoc
+    override val parent: JSDoc?
     val fullName: (JSDocTypedefTagFullName)?
     override val name: Identifier?
     val typeExpression: (JSDocTypedefTagTypeExpression)?

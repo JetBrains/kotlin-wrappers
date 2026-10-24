@@ -12,7 +12,7 @@ external interface BindingElement :
     ArrayBindingElement,
     ObjectBindingOrAssignmentElement {
     override val kind: SyntaxKind.BindingElement
-    override val parent: BindingPattern
+    override val parent: BindingPattern?
     val propertyName: PropertyName?
     val dotDotDotToken: DotDotDotToken?
     override val name: BindingName

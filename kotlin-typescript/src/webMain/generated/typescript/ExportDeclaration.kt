@@ -10,7 +10,7 @@ external interface ExportDeclaration :
     ImportAttributesParent,
     TypeOnlyCompatibleAliasDeclaration {
     override val kind: SyntaxKind.ExportDeclaration
-    override val parent: ExportDeclarationParent
+    override val parent: ExportDeclarationParent?
     val modifiers: NodeArray<ModifierLike>?
     val isTypeOnly: Boolean
 

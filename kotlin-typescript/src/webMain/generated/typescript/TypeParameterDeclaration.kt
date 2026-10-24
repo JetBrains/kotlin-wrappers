@@ -8,7 +8,7 @@ external interface TypeParameterDeclaration :
     HasJSDoc,
     HasModifiers {
     override val kind: SyntaxKind.TypeParameter
-    override val parent: TypeParameterDeclarationParent
+    override val parent: TypeParameterDeclarationParent?
     val modifiers: NodeArray<Modifier>?
     override val name: Identifier
 

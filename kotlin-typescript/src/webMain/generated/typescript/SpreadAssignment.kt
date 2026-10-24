@@ -10,6 +10,6 @@ external interface SpreadAssignment :
     ObjectBindingOrAssignmentElement,
     BindingOrAssignmentElementRestIndicator {
     override val kind: SyntaxKind.SpreadAssignment
-    override val parent: ObjectLiteralExpression
+    override val parent: ObjectLiteralExpression?
     val expression: Expression
 }

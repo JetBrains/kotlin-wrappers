@@ -11,7 +11,7 @@ external interface PropertySignature :
     VariableLikeDeclaration,
     NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.PropertySignature
-    override val parent: PropertySignatureParent
+    override val parent: PropertySignatureParent?
     val modifiers: NodeArray<Modifier>?
     override val name: PropertyName
     override val questionToken: QuestionToken?

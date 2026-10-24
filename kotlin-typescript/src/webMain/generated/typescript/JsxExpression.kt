@@ -8,7 +8,7 @@ external interface JsxExpression :
     JsxChild,
     IsStringLiteralOrJsxExpressionResultPredicate {
     override val kind: SyntaxKind.JsxExpression
-    override val parent: JsxExpressionParent
+    override val parent: JsxExpressionParent?
     val dotDotDotToken: Token<SyntaxKind.DotDotDotToken>?
     val expression: Expression?
 }

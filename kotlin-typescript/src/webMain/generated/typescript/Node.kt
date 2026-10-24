@@ -5,7 +5,7 @@ package typescript
 external interface Node : ReadonlyTextRange {
     val kind: SyntaxKind
     val flags: NodeFlags
-    val parent: Node
+    val parent: Node?
 
     fun getSourceFile(): SourceFile
 

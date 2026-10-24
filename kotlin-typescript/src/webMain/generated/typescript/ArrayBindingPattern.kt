@@ -7,6 +7,6 @@ external interface ArrayBindingPattern :
     BindingPattern,
     ArrayBindingOrAssignmentPattern {
     override val kind: SyntaxKind.ArrayBindingPattern
-    override val parent: ArrayBindingPatternParent
+    override val parent: ArrayBindingPatternParent?
     val elements: NodeArray<ArrayBindingElement>
 }

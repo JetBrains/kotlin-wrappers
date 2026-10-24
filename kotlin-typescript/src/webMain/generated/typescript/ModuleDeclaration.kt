@@ -9,7 +9,7 @@ external interface ModuleDeclaration :
     HasJSDoc,
     HasModifiers {
     override val kind: SyntaxKind.ModuleDeclaration
-    override val parent: ModuleDeclarationParent
+    override val parent: ModuleDeclarationParent?
     val modifiers: NodeArray<ModifierLike>?
     override val name: ModuleName
     val body: (ModuleDeclarationBody)?

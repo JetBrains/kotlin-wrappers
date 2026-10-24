@@ -17,7 +17,7 @@ external interface ParameterDeclaration :
     BindingOrAssignmentElement,
     WalkUpBindingElementsAndPatternsResult {
     override val kind: SyntaxKind.Parameter
-    override val parent: SignatureDeclaration
+    override val parent: SignatureDeclaration?
     val modifiers: NodeArray<ModifierLike>?
     val dotDotDotToken: DotDotDotToken?
     override val name: BindingName

@@ -8,7 +8,7 @@ external interface JsxAttribute :
     VariableLikeDeclaration,
     JsxAttributeLike {
     override val kind: SyntaxKind.JsxAttribute
-    override val parent: JsxAttributes
+    override val parent: JsxAttributes?
     val name: JsxAttributeName
     val initializer: JsxAttributeValue?
 }

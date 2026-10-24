@@ -6,6 +6,6 @@ external interface DefaultClause :
     Node,
     CaseOrDefaultClause {
     override val kind: SyntaxKind.DefaultClause
-    override val parent: CaseBlock
+    override val parent: CaseBlock?
     val statements: NodeArray<Statement>
 }

@@ -10,7 +10,7 @@ external interface ShorthandPropertyAssignment :
     VariableLikeDeclaration,
     ObjectBindingOrAssignmentElement {
     override val kind: SyntaxKind.ShorthandPropertyAssignment
-    override val parent: ObjectLiteralExpression
+    override val parent: ObjectLiteralExpression?
     override val name: Identifier
     val equalsToken: EqualsToken?
     val objectAssignmentInitializer: Expression?

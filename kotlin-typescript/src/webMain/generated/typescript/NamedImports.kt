@@ -7,6 +7,6 @@ external interface NamedImports :
     NamedImportBindings,
     NamedImportsOrExports {
     override val kind: SyntaxKind.NamedImports
-    override val parent: ImportClause
+    override val parent: ImportClause?
     val elements: NodeArray<ImportSpecifier>
 }

@@ -13,7 +13,7 @@ external interface PropertyDeclaration :
     VariableLikeDeclaration,
     NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.PropertyDeclaration
-    override val parent: ClassLikeDeclaration
+    override val parent: ClassLikeDeclaration?
     val modifiers: NodeArray<ModifierLike>?
     override val name: PropertyName
     val questionToken: QuestionToken?

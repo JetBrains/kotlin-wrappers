@@ -7,6 +7,6 @@ external interface JsxText :
     LiteralToken,
     JsxChild {
     override val kind: SyntaxKind.JsxText
-    override val parent: JsxTextParent
+    override val parent: JsxTextParent?
     val containsOnlyTriviaWhiteSpaces: Boolean
 }

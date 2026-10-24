@@ -15,7 +15,7 @@ external interface SetAccessorDeclaration :
     FunctionLikeDeclaration,
     AccessorDeclaration {
     override val kind: SyntaxKind.SetAccessor
-    override val parent: SetAccessorDeclarationParent
+    override val parent: SetAccessorDeclarationParent?
     val modifiers: NodeArray<ModifierLike>?
     override val name: PropertyName
     override val body: FunctionBody?

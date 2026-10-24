@@ -34,6 +34,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertTypealiasParameterBounds,
             convertUtilityTypes,
             convertWithMetadata,
+            optionalParent,
         )
         injections = listOf(
             injectBitmaskParents,

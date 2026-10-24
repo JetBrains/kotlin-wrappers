@@ -7,6 +7,6 @@ external interface NamedExports :
     NamedExportBindings,
     NamedImportsOrExports {
     override val kind: SyntaxKind.NamedExports
-    override val parent: ExportDeclaration
+    override val parent: ExportDeclaration?
     val elements: NodeArray<ExportSpecifier>
 }

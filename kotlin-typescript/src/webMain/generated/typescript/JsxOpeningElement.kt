@@ -7,7 +7,7 @@ external interface JsxOpeningElement :
     HasTypeArguments,
     JsxOpeningLikeElement {
     override val kind: SyntaxKind.JsxOpeningElement
-    override val parent: JsxElement
+    override val parent: JsxElement?
     val tagName: JsxTagNameExpression
     val typeArguments: NodeArray<TypeNode>?
     val attributes: JsxAttributes

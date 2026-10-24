@@ -7,6 +7,6 @@ external interface Decorator :
     ModifierLike,
     CallLikeExpression {
     override val kind: SyntaxKind.Decorator
-    override val parent: NamedDeclaration
+    override val parent: NamedDeclaration?
     val expression: LeftHandSideExpression
 }

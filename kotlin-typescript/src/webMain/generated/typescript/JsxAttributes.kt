@@ -7,5 +7,5 @@ external interface JsxAttributes :
     Declaration {
     val properties: NodeArray<JsxAttributeLike>
     override val kind: SyntaxKind.JsxAttributes
-    override val parent: JsxOpeningLikeElement
+    override val parent: JsxOpeningLikeElement?
 }

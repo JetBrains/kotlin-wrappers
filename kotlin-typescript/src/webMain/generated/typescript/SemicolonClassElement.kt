@@ -8,5 +8,5 @@ external interface SemicolonClassElement :
     JSDocContainer,
     HasJSDoc {
     override val kind: SyntaxKind.SemicolonClassElement
-    override val parent: ClassLikeDeclaration
+    override val parent: ClassLikeDeclaration?
 }

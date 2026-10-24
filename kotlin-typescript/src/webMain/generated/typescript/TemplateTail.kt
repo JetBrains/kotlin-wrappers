@@ -9,5 +9,5 @@ external interface TemplateTail :
     TemplateSpanLiteral,
     IsTemplateMiddleOrTemplateTailResultPredicate {
     override val kind: SyntaxKind.TemplateTail
-    override val parent: TemplateTailParent
+    override val parent: TemplateTailParent?
 }

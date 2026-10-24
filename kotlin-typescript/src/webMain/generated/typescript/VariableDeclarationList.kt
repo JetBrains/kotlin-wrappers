@@ -7,6 +7,6 @@ external interface VariableDeclarationList :
     VariableDeclarationParent,
     ForInitializer {
     override val kind: SyntaxKind.VariableDeclarationList
-    override val parent: VariableDeclarationListParent
+    override val parent: VariableDeclarationListParent?
     val declarations: NodeArray<VariableDeclaration>
 }

@@ -11,6 +11,6 @@ external interface ModuleBlock :
     ImportDeclarationParent,
     ExportDeclarationParent {
     override val kind: SyntaxKind.ModuleBlock
-    override val parent: ModuleDeclaration
+    override val parent: ModuleDeclaration?
     val statements: NodeArray<Statement>
 }

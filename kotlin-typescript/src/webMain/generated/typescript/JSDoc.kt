@@ -7,7 +7,7 @@ external interface JSDoc :
     JSDocTagParent,
     GetJSDocCommentsAndTagsResultItem {
     override val kind: SyntaxKind.JSDoc
-    override val parent: HasJSDoc
+    override val parent: HasJSDoc?
     val tags: NodeArray<JSDocTag>?
     val comment: (Any /* string | NodeArray<JSDocComment> */)?
 }

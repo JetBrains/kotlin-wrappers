@@ -8,6 +8,6 @@ external interface ClassStaticBlockDeclaration :
     LocalsContainer,
     HasJSDoc {
     override val kind: SyntaxKind.ClassStaticBlockDeclaration
-    override val parent: ClassStaticBlockDeclarationParent
+    override val parent: ClassStaticBlockDeclarationParent?
     val body: Block
 }

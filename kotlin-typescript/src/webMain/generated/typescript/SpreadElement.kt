@@ -6,6 +6,6 @@ external interface SpreadElement :
     Expression,
     BindingOrAssignmentElementRestIndicator {
     override val kind: SyntaxKind.SpreadElement
-    override val parent: SpreadElementParent
+    override val parent: SpreadElementParent?
     val expression: Expression
 }

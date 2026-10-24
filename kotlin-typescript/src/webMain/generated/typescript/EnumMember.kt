@@ -9,7 +9,7 @@ external interface EnumMember :
     HasExpressionInitializer,
     VariableLikeDeclaration {
     override val kind: SyntaxKind.EnumMember
-    override val parent: EnumDeclaration
+    override val parent: EnumDeclaration?
     override val name: PropertyName
     val initializer: Expression?
 }

@@ -9,7 +9,7 @@ external interface ExportSpecifier :
     ImportOrExportSpecifier,
     IsImportOrExportSpecifierResultPredicate {
     override val kind: SyntaxKind.ExportSpecifier
-    override val parent: NamedExports
+    override val parent: NamedExports?
     val isTypeOnly: Boolean
     val propertyName: ModuleExportName?
     override val name: ModuleExportName

@@ -11,7 +11,7 @@ external interface MethodSignature :
     SignatureDeclaration,
     NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.MethodSignature
-    override val parent: MethodSignatureParent
+    override val parent: MethodSignatureParent?
     val modifiers: NodeArray<Modifier>?
     override val name: PropertyName
 }

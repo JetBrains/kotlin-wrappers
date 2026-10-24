@@ -7,6 +7,6 @@ external interface JSDocEnumTag :
     Declaration,
     LocalsContainer {
     override val kind: SyntaxKind.JSDocEnumTag
-    override val parent: JSDoc
+    override val parent: JSDoc?
     val typeExpression: JSDocTypeExpression
 }

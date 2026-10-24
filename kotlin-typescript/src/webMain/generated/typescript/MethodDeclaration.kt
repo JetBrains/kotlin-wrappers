@@ -17,7 +17,7 @@ external interface MethodDeclaration :
     FunctionLikeDeclaration,
     NodeFactoryReplacePropertyNameTConstraint {
     override val kind: SyntaxKind.MethodDeclaration
-    override val parent: MethodDeclarationParent
+    override val parent: MethodDeclarationParent?
     val modifiers: NodeArray<ModifierLike>?
     override val name: PropertyName
     override val body: FunctionBody?

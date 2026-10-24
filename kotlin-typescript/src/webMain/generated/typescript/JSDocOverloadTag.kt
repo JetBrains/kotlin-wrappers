@@ -4,6 +4,6 @@ package typescript
 
 external interface JSDocOverloadTag : JSDocTag {
     override val kind: SyntaxKind.JSDocOverloadTag
-    override val parent: JSDoc
+    override val parent: JSDoc?
     val typeExpression: JSDocSignature
 }

@@ -7,7 +7,7 @@ external interface TemplateSpan :
     TemplateMiddleParent,
     TemplateTailParent {
     override val kind: SyntaxKind.TemplateSpan
-    override val parent: TemplateExpression
+    override val parent: TemplateExpression?
     val expression: Expression
     val literal: TemplateSpanLiteral
 }
