@@ -4,7 +4,7 @@ import js.internal.InternalApi
 import kotlin.contracts.contract
 
 /**
- * [Online Documentation](https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards)
+ * [Online Documentation](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)
  */
 @SubclassOptInRequired(InternalApi::class)
 external interface TypeGuard<V : JsAny?, T : JsAny>
