@@ -7,7 +7,7 @@ external interface Node : ReadonlyTextRange {
     val flags: NodeFlags
     val parent: Node?
 
-    fun getSourceFile(): SourceFile
+    fun getSourceFile(): SourceFile?
 
     fun getChildCount(sourceFile: SourceFile = definedExternally): Int
 
