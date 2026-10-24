@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.extension.plugins.Signature
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun isNativeRealpathSync(node: FunctionDeclaration) = nullable {
@@ -25,7 +24,7 @@ private fun isNativeRealpathSync(node: FunctionDeclaration) = nullable {
 } != null
 
 private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
     nullable {
         // additional overloads with a union return type

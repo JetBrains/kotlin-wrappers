@@ -4,7 +4,6 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun extractModifiers(member: Node) = when {
@@ -50,7 +49,7 @@ class EventEmitterPlugin : Plugin {
     }
 
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("events.d.ts"))
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))

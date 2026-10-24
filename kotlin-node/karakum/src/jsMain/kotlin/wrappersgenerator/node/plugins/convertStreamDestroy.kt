@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.asArray
 import typescript.isClassDeclaration
 import typescript.isIdentifier
@@ -15,7 +14,7 @@ import typescript.isMethodDeclaration
 
 val convertStreamDestroy = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
         ensure(isMethodDeclaration(node))

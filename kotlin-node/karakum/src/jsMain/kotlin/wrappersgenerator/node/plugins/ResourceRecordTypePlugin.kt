@@ -6,7 +6,6 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import typescript.*
 
@@ -72,7 +71,7 @@ class ResourceRecordTypePlugin : Plugin {
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         // generate the same entity for promise and callback API
         ensure(!sourceFileName.endsWith("promises.d.ts"))
 

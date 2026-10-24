@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun isWaitForMethod(node: Node) = nullable {
@@ -15,7 +14,7 @@ private fun isWaitForMethod(node: Node) = nullable {
 
 val convertWaitFor = createPlugin { node, _, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("test.d.ts"))
 
         ensure(isTypeReferenceNode(node))
@@ -38,7 +37,7 @@ val convertWaitFor = createPlugin { node, _, render ->
 
         render(typeArguments.first())
     } ?: nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("test.d.ts"))
 
         ensure(isTypeReferenceNode(node))

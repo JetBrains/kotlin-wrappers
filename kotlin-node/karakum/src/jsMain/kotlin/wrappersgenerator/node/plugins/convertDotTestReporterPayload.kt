@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
@@ -11,7 +10,7 @@ import typescript.isUnionTypeNode
 
 val convertDotTestReporterPayload = createPlugin { node, context, _ ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("test.d.ts"))
 
         ensure(isUnionTypeNode(node))

@@ -3,7 +3,6 @@ package wrappersgenerator.testing.library.user.event.nameResolvers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.Node
 import typescript.isFunctionDeclaration
 import typescript.isIdentifier
@@ -25,7 +24,7 @@ suspend fun resolveDirectOptionsParameterName(node: Node, context: Context) = nu
     val functionNameNode = ensureNotNull(function.name)
     val functionName = functionNameNode.text
 
-    val sourceFileName = ensureNotNull(function.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(function.getSourceFile()).fileName
     ensure(sourceFileName.endsWith("directApi.d.ts"))
 
     "Direct${functionName.replaceFirstChar { it.titlecase() }}${parameterName.replaceFirstChar { it.titlecase() }}"

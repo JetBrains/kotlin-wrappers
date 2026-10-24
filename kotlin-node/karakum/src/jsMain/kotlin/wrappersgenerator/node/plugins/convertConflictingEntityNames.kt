@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private val conflictingEntities = mapOf(
@@ -61,7 +60,7 @@ private fun convertNameByNamespace(node: Identifier, context: Context) = nullabl
 private fun convertNameByFileName(node: Identifier, context: Context) = nullable {
     val declaration = ensureNotNull(extractDeclaration(node, context))
 
-    val sourceFileName = ensureNotNull(declaration.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(declaration.getSourceFile()).fileName
 
     val fileNameConflictingEntities = ensureNotNull(
         conflictingEntities.entries

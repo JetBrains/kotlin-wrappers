@@ -2,7 +2,6 @@ package wrappersgenerator.node.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun isEventEmitterMethodName(name: String) =
@@ -34,7 +33,7 @@ private fun isGenericEventEmitterSignature(
 } != null
 
 suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
     nullable {
         ensure(isMethodDeclaration(node))

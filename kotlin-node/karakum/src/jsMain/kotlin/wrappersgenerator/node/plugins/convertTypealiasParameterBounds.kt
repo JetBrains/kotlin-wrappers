@@ -3,13 +3,12 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeParameterDeclaration
 
 val convertTypealiasParameterBounds = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
         nullable {
             ensure(sourceFileName.endsWith("buffer.buffer.d.ts"))

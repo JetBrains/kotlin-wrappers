@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.util.camelize
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private val keyGroups = setOf(
@@ -15,7 +14,7 @@ private val keyGroups = setOf(
 
 val convertKeyUnions = createPlugin { node, _, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("crypto.d.ts"))
 
         ensure(isTypeAliasDeclaration(node))

@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.Node
 import typescript.isClassDeclaration
 import typescript.isStringLiteral
@@ -34,7 +33,7 @@ private fun checkNameByNamespace(node: Node, context: Context) = nullable {
 private fun checkNameByFileName(node: Node) = nullable {
     ensure(isClassDeclaration(node))
 
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
     val (_, fileNameConflictingEntities) = conflictingEntities.entries
         .find { (fileName) -> sourceFileName.endsWith(fileName) }
         .let { ensureNotNull(it) }

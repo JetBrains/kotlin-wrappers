@@ -2,13 +2,12 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isIdentifier
 import typescript.isMethodSignature
 
 val convertGenericBuiltinModule = createPlugin { node, context, _ ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("process.d.ts"))
 
         ensure(isMethodSignature(node))

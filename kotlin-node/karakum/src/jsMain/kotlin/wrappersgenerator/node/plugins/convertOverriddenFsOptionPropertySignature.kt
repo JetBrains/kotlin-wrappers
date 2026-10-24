@@ -4,12 +4,11 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.capitalize
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 val convertOverriddenFsOptionPropertySignature = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(
             sourceFileName.endsWith("fs.d.ts")
                     || sourceFileName.endsWith("fs/promises.d.ts")

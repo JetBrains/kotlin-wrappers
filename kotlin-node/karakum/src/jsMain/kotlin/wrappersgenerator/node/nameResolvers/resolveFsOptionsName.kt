@@ -4,13 +4,12 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
     ensure(
         sourceFileName.endsWith("fs.d.ts")
                 || sourceFileName.endsWith("fs/promises.d.ts")

@@ -2,12 +2,11 @@ package wrappersgenerator.node.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.Node
 import typescript.isClassDeclaration
 
 suspend fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nullable {
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
     ensure(isClassDeclaration(node))
 

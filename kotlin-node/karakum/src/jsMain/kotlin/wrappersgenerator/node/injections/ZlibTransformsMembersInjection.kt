@@ -5,7 +5,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private val zlibTransforms = setOf(
@@ -42,7 +41,7 @@ class ZlibTransformsMembersInjection : Injection {
     override suspend fun setup(context: Context) = Unit
 
     override suspend fun traverse(node: Node, context: Context) = impure {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("zlib.d.ts"))
 
         ensure(isMethodSignature(node) || isPropertySignature(node))
@@ -60,7 +59,7 @@ class ZlibTransformsMembersInjection : Injection {
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = null
 
     override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("zlib.d.ts"))
 
         ensure(isClassDeclaration(node))

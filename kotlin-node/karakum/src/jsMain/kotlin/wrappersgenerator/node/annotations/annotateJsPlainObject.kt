@@ -2,7 +2,6 @@ package wrappersgenerator.node.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private val jsoInterfaces = setOf(
@@ -27,7 +26,7 @@ private val jsoInterfaces = setOf(
 )
 
 suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
     nullable {
         ensure(isInterfaceDeclaration(node))

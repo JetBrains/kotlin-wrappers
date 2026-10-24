@@ -3,13 +3,12 @@ package wrappersgenerator.node.nameResolvers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 suspend fun resolveChildProcessOptionsName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
-    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
     ensure(sourceFileName.endsWith("child_process.d.ts"))
 
     val parameter = ensureNotNull(

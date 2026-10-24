@@ -2,7 +2,6 @@ package wrappersgenerator.node.injections
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 class TracingChannelSubscribersInjection : Injection {
@@ -11,7 +10,7 @@ class TracingChannelSubscribersInjection : Injection {
     override suspend fun traverse(node: Node, context: Context) = Unit
 
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("diagnostics_channel.d.ts"))
 
         ensure(isTypeReferenceNode(node))
@@ -36,7 +35,7 @@ class TracingChannelSubscribersInjection : Injection {
     override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("diagnostics_channel.d.ts"))
 
         ensure(isIntersectionTypeNode(node))

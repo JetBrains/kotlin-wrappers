@@ -6,7 +6,6 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 class WritableMembersInjection : Injection {
@@ -15,7 +14,7 @@ class WritableMembersInjection : Injection {
     override suspend fun setup(context: Context) = Unit
 
     override suspend fun traverse(node: Node, context: Context) = impure {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("globals.d.ts"))
 
         nullable {
@@ -54,7 +53,7 @@ class WritableMembersInjection : Injection {
     override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
         ensure(isClassDeclaration(node))

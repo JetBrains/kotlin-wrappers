@@ -5,12 +5,11 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import io.github.sgrishchenko.karakum.extension.renderNullable
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 val convertSignalConstantsGenerics = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("os.d.ts"))
 
         nullable {

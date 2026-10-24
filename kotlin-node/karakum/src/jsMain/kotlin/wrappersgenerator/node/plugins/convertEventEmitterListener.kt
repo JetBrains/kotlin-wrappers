@@ -2,12 +2,11 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 val convertEventEmitterListener = createPlugin { node, _, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("events.d.ts"))
 
         ensure(isTypeReferenceNode(node))

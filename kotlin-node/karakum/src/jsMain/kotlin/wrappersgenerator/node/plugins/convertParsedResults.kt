@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.asArray
 import typescript.isConditionalTypeNode
 import typescript.isTypeAliasDeclaration
@@ -15,7 +14,7 @@ import typescript.isTypeLiteralNode
 
 val convertParsedResults = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("util.d.ts"))
 
         ensure(isTypeAliasDeclaration(node))

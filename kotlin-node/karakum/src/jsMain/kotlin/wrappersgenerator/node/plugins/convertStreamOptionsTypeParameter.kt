@@ -3,14 +3,13 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isExpressionWithTypeArguments
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 
 val convertStreamOptionsTypeParameter = createPlugin { node, _, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
         ensure(isIdentifier(node))

@@ -5,7 +5,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.camelize
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import typescript.*
 
@@ -225,7 +224,7 @@ class BrowserEventInjection : Injection {
             },
         )
 
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
         val moduleOpenEvents = openEvents.entries
             .firstOrNull { (fileName) -> sourceFileName.endsWith(fileName) }

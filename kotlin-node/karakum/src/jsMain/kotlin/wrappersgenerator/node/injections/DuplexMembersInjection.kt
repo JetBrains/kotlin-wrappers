@@ -5,7 +5,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 class DuplexMembersInjection : Injection {
@@ -14,7 +13,7 @@ class DuplexMembersInjection : Injection {
     override suspend fun setup(context: Context) = Unit
 
     override suspend fun traverse(node: Node, context: Context) = impure {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
         val classNode = ensureNotNull(node.parent)
@@ -51,7 +50,7 @@ class DuplexMembersInjection : Injection {
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = null
 
     override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
         ensure(isClassDeclaration(node))

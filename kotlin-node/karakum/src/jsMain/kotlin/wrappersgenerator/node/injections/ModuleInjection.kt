@@ -3,7 +3,6 @@ package wrappersgenerator.node.injections
 import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun isModuleInterfaceNode(node: Node) = nullable {
@@ -34,7 +33,7 @@ class ModuleInjection : Injection {
     }
 
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("module.d.ts"))
 
         ensure(isHeritageClause(node))
@@ -49,7 +48,7 @@ class ModuleInjection : Injection {
     override suspend fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
         ensure(sourceFileName.endsWith("module.d.ts"))
 
         ensure(isClassDeclaration(node))

@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isInterfaceDeclaration
 import typescript.isMethodSignature
 
@@ -14,7 +13,7 @@ val convertJsPlainObjectMethods = createPlugin { node, context, render ->
         val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
 
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFile()).fileName
 
         ensure(
             (interfaceNode.name.text == "OnReadOpts" && sourceFileName.endsWith("net.d.ts"))

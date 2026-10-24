@@ -28,7 +28,7 @@ val convertBufferReference = createPlugin { node, context, render ->
 
         ensure(declarations.any { declaration ->
             nullable {
-                val sourceFileName = ensureNotNull(declaration.getSourceFileOrNull()).fileName
+                val sourceFileName = ensureNotNull(declaration.getSourceFile()).fileName
                 sourceFileName.endsWith("buffer.d.ts")
             } != null
         })
