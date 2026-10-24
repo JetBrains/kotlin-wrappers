@@ -7,10 +7,10 @@ import kotlin.contracts.contract
  * [Online Documentation](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)
  */
 @SubclassOptInRequired(InternalApi::class)
-external interface TypeGuard<V : JsAny?, T : JsAny>
+external interface TypeGuard<in V : JsAny?, out T : JsAny>
 
 @PublishedApi
-internal external interface TypeGuardInternal<V : JsAny?> {
+internal external interface TypeGuardInternal<in V : JsAny?> {
     operator fun invoke(value: V): Boolean
 }
 
