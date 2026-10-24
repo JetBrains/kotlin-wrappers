@@ -5,8 +5,8 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private val queryFunctionTypes = setOf(
@@ -107,7 +107,7 @@ class QueriesPlugin : Plugin {
 
             val returnTypePayload = next(typeArguments.asArray().first())
 
-            val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
+            val sourceFileName = node.getSourceFile()?.fileName ?: "generated.d.ts"
 
             val namespace = typeScriptService.findClosestNamespace(node)
 

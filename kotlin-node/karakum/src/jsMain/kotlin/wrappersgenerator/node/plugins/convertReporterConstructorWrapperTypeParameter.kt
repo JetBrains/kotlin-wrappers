@@ -3,7 +3,7 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
+import js.reflect.invoke
 import typescript.*
 
 private fun isInstanceType(node: Node) = nullable {
@@ -33,8 +33,8 @@ val convertReporterConstructorWrapperTypeParameter = createPlugin { node, contex
             ensure(isInstanceType(node))
 
             val interfaceNode = node
-                .getParentOrNull() // MethodSignature
-                ?.getParentOrNull() // InterfaceDeclaration
+                .parent // MethodSignature
+                ?.parent // InterfaceDeclaration
                 .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ReporterConstructorWrapper")

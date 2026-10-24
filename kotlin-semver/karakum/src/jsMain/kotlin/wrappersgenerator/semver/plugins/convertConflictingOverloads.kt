@@ -5,6 +5,7 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.extension.plugins.Signature
+import js.reflect.invoke
 import typescript.*
 
 private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {

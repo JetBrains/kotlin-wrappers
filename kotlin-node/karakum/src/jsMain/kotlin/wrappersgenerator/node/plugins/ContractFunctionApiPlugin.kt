@@ -6,8 +6,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private fun isConflictingOverload(node: FunctionDeclaration): Boolean =
@@ -22,7 +22,7 @@ class ContractFunctionApiPlugin : Plugin {
     override suspend fun traverse(node: Node, context: Context) = Unit
 
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
+        val sourceFileName = node.getSourceFile()?.fileName ?: "generated.d.ts"
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 

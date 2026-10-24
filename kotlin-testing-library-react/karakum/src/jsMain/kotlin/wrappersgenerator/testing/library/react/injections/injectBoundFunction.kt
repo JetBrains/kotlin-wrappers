@@ -4,6 +4,7 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.HERITAGE_CLAUSE
 import io.github.sgrishchenko.karakum.extension.InjectionType
 import io.github.sgrishchenko.karakum.extension.createInjection
+import js.reflect.invoke
 import typescript.isIntersectionTypeNode
 import typescript.isTypeAliasDeclaration
 

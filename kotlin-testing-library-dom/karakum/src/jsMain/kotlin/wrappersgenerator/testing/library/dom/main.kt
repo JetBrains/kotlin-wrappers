@@ -19,7 +19,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             PromiseResultPlugin(),
             PromiseFunctionPlugin(
                 ignore = match {
-                    match(::isFunctionDeclaration, withName("waitFor"))
+                    match(isFunctionDeclaration, withName("waitFor"))
                 }
             ),
 

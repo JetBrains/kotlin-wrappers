@@ -4,6 +4,7 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.camelize
+import js.reflect.invoke
 import typescript.*
 
 suspend fun resolveSessionListenerCallbackActionName(node: Node, context: Context) = nullable {

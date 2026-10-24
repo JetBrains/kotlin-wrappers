@@ -10,8 +10,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.constIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private fun isSessionPostMethod(node: Node) = nullable {
@@ -52,7 +52,7 @@ class InspectorSessionMethodPlugin : Plugin {
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
-        sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
+        sourceFileName = node.getSourceFile()?.fileName ?: "generated.d.ts"
         namespace = typeScriptService.findClosestNamespace(node)
     }
 

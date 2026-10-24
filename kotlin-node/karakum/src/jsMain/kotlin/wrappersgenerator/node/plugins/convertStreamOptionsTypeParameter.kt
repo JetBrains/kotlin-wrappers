@@ -2,7 +2,7 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
+import js.reflect.invoke
 import typescript.isExpressionWithTypeArguments
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
@@ -19,8 +19,8 @@ val convertStreamOptionsTypeParameter = createPlugin { node, _, render ->
         )
 
         val expressionWithTypeArguments = node
-            .getParentOrNull() // TypeReference
-            ?.getParentOrNull() // ExpressionWithTypeArguments
+            .parent // TypeReference
+            ?.parent // ExpressionWithTypeArguments
             .let { ensureNotNull(it) }
         ensure(isExpressionWithTypeArguments(expressionWithTypeArguments))
 
@@ -29,8 +29,8 @@ val convertStreamOptionsTypeParameter = createPlugin { node, _, render ->
         ensure(expression.text == "StreamOptions")
 
         val interfaceNode = expressionWithTypeArguments
-            .getParentOrNull() // HeritageClause
-            ?.getParentOrNull() // InterfaceDeclaration
+            .parent // HeritageClause
+            ?.parent // InterfaceDeclaration
             .let { ensureNotNull(it) }
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(

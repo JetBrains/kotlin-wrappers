@@ -8,15 +8,15 @@ import typescript.*
 fun createNumberPlugin() = NumberPlugin(
     matchers = arrayOf(
         "Int" to match {
-            match(::isClassDeclaration, withName("IncomingMessage")) {
-                match(::isPropertyDeclaration, withName("statusCode"))
-                    .match(::isUnionTypeNode)
+            match(isClassDeclaration, withName("IncomingMessage")) {
+                match(isPropertyDeclaration, withName("statusCode"))
+                    .match(isUnionTypeNode)
             }
 
-            match(::isInterfaceDeclaration, withName("Process")) {
-                match(::isMethodSignature, withName("exit"))
-                    .match(::isParameter, withName("code"))
-                    .match(::isUnionTypeNode)
+            match(isInterfaceDeclaration, withName("Process")) {
+                match(isMethodSignature, withName("exit"))
+                    .match(isParameter, withName("code"))
+                    .match(isUnionTypeNode)
             }
         }
     )

@@ -3,6 +3,7 @@ package wrappersgenerator.node.injections
 import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
+import js.reflect.invoke
 import typescript.*
 
 private fun isModuleInterfaceNode(node: Node) = nullable {

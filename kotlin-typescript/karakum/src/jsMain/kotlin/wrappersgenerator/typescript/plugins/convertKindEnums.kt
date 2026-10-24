@@ -6,6 +6,7 @@ import io.github.sgrishchenko.karakum.extension.InjectionType
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
+import js.reflect.invoke
 import typescript.asArray
 import typescript.isEnumDeclaration
 import typescript.isIdentifier

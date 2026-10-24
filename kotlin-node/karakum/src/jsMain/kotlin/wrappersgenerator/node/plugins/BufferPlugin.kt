@@ -4,6 +4,7 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
+import js.reflect.invoke
 import typescript.*
 
 private suspend fun convertConstructSignatureDeclaration(

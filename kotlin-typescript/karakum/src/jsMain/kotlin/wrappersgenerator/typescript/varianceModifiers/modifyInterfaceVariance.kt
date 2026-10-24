@@ -2,6 +2,7 @@ package wrappersgenerator.typescript.varianceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
+import js.reflect.invoke
 import typescript.Node
 import typescript.isInterfaceDeclaration
 import typescript.isTypeParameterDeclaration

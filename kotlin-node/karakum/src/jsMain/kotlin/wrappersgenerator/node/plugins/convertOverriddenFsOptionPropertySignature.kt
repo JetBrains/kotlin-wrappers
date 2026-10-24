@@ -4,6 +4,7 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.capitalize
+import js.reflect.invoke
 import typescript.*
 
 val convertOverriddenFsOptionPropertySignature = createPlugin { node, context, render ->

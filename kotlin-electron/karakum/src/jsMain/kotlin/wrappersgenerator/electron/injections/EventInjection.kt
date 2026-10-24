@@ -6,6 +6,7 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.camelize
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private val eventHandlerMethods = setOf(

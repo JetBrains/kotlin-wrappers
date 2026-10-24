@@ -5,6 +5,7 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
+import js.reflect.invoke
 import typescript.*
 
 class DuplexMembersInjection : Injection {

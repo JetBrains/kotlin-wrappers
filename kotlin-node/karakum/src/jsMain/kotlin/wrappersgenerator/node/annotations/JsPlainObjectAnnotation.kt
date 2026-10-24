@@ -10,43 +10,43 @@ fun createJsPlainObjectAnnotation() =
     JsPlainObjectAnnotation(
         ignore = match {
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/diagnostics_channel.d.ts"),
                 withName("TracingChannelCollection")
             )
 
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/http2.d.ts"),
                 withName("IncomingHttpStatusHeader")
             )
 
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/fs.d.ts"),
                 withName("StatsFsBase")
             )
 
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/fs.d.ts"),
                 withName("StatsFs")
             )
 
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/fs.d.ts"),
                 withName("BigIntStatsFs")
             )
 
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/process.d.ts"),
                 withName("BuiltInModule")
             )
 
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withFile("**/test.d.ts"),
                 withName("SuiteContext")
             )

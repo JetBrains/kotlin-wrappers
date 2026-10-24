@@ -6,6 +6,7 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
+import js.reflect.invoke
 import typescript.*
 
 class WritableMembersInjection : Injection {

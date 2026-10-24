@@ -2,6 +2,7 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
+import js.reflect.invoke
 import typescript.*
 
 val convertTestContextHeritageClause = createPlugin { node, context, render ->

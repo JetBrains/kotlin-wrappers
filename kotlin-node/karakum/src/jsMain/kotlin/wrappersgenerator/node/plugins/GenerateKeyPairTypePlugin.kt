@@ -10,8 +10,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.camelize
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private val keyGroups = setOf(
@@ -101,7 +101,7 @@ class GenerateKeyPairTypePlugin : Plugin {
 
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
-        val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
+        val sourceFileName = node.getSourceFile()?.fileName ?: "generated.d.ts"
         val namespace = typeScriptService.findClosestNamespace(node)
 
         val publicFormat = firstTypeArgumentLiteral.text

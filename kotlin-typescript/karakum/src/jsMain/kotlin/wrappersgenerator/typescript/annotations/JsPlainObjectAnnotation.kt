@@ -9,59 +9,59 @@ fun createJsPlainObjectAnnotation() =
     JsPlainObjectAnnotation(
         ignore = match {
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("ReadonlyTextRange"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("Node"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("Identifier"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("PrivateIdentifier"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("TypeReference"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("Signature"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("SourceFileLike"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("SourceMapSource"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("Type"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("FlowType"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("IncompleteType"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("Symbol"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("ConfigFileDiagnosticsReporter"),
             )
             match(
-                ::isInterfaceDeclaration,
+                isInterfaceDeclaration,
                 withName("BuilderProgramHost"),
             )
         },

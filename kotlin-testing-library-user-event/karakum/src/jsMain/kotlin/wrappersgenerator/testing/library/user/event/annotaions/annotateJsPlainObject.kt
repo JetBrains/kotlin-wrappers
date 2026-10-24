@@ -3,6 +3,7 @@ package wrappersgenerator.testing.library.user.event.annotaions
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.extension.plugins.nameResolverServiceKey
+import js.reflect.invoke
 import typescript.Node
 import typescript.isIntersectionTypeNode
 

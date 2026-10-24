@@ -4,7 +4,7 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
+import js.reflect.invoke
 import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode

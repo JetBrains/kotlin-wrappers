@@ -2,7 +2,7 @@ package wrappersgenerator.typescript.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
+import js.reflect.invoke
 import typescript.*
 
 suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
@@ -255,9 +255,9 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             ensure(name.text == "expression")
 
             val typeAlias = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // TypeAliasDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // TypeAliasDeclaration
                 .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImmediatelyInvokedArrowFunction")
@@ -267,12 +267,12 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             ensure(name.text == "expression")
 
             val typeAlias = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // PropertySignature
-                ?.getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // TypeAliasDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // PropertySignature
+                ?.parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // TypeAliasDeclaration
                 .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImmediatelyInvokedArrowFunction")
@@ -282,9 +282,9 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             ensure(name.text == "expression")
 
             val typeAlias = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // TypeAliasDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // TypeAliasDeclaration
                 .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImmediatelyInvokedFunctionExpression")
@@ -350,10 +350,10 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             ensure(name.text == "expression")
 
             val interfaceNode = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // PropertySignature
-                ?.getParentOrNull() // InterfaceDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // PropertySignature
+                ?.parent // InterfaceDeclaration
                 .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocAugmentsTag")
@@ -363,10 +363,10 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             ensure(name.text == "expression")
 
             val interfaceNode = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // PropertySignature
-                ?.getParentOrNull() // InterfaceDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // PropertySignature
+                ?.parent // InterfaceDeclaration
                 .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocImplementsTag")
@@ -543,9 +543,9 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             )
 
             val typeAlias = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // TypeAliasDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // TypeAliasDeclaration
                 .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ParameterPropertyDeclaration")
@@ -797,10 +797,10 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
             ensure(name.text == "escapedText")
 
             val typeAlias = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // PropertySignature
-                ?.getParentOrNull() // InterfaceDeclaration
+                .parent // TypeLiteral
+                ?.parent // IntersectionType
+                ?.parent // PropertySignature
+                ?.parent // InterfaceDeclaration
                 .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImportDeferProperty")

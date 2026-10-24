@@ -6,6 +6,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
+import js.reflect.invoke
 import typescript.*
 
 private fun isConflictingOverload(node: FunctionDeclaration) = nullable {

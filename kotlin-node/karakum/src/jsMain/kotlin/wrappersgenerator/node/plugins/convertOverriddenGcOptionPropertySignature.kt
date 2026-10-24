@@ -3,6 +3,7 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
+import js.reflect.invoke
 import typescript.*
 
 val convertOverriddenGcOptionPropertySignature = createPlugin { node, context, render ->

@@ -7,6 +7,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServi
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private fun filterMembers(

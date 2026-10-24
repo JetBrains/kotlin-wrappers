@@ -22,7 +22,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         annotations = listOf(
             JsPlainObjectAnnotation(
                 ignore = match {
-                    match(::isInterfaceDeclaration, withName("RouterHistory"))
+                    match(isInterfaceDeclaration, withName("RouterHistory"))
                 },
             ),
         )

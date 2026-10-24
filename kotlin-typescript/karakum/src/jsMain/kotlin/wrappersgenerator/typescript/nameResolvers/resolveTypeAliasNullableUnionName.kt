@@ -3,6 +3,7 @@ package wrappersgenerator.typescript.nameResolvers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
+import js.reflect.invoke
 import typescript.*
 
 suspend fun resolveTypeAliasNullableUnionName(node: Node, context: Context) = nullable {

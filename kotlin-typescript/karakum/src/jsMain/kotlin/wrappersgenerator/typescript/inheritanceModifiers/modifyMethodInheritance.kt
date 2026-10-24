@@ -2,6 +2,7 @@ package wrappersgenerator.typescript.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
+import js.reflect.invoke
 import typescript.Node
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration

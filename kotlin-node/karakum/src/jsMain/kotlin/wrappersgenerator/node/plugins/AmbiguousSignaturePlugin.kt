@@ -9,8 +9,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.DeepMap
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import typescript.*
 
 private fun isNull(type: Node) = isLiteralTypeNode(type) && type.literal.kind == SyntaxKind.NullKeyword
@@ -266,7 +266,7 @@ class AmbiguousSignaturePlugin : Plugin {
 
         val declarations = getAmbiguousDeclarations(context)
             .flatMap { declaration ->
-                val sourceFileName = declaration.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
+                val sourceFileName = declaration.getSourceFile()?.fileName ?: "generated.d.ts"
                 val namespace = typeScriptService.findClosestNamespace(declaration)
 
                 val name = declaration.name?.text ?: "Anonymous"
