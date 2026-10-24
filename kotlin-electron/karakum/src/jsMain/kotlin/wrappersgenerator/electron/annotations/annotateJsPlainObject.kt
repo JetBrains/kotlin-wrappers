@@ -2,7 +2,6 @@ package wrappersgenerator.electron.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
@@ -10,7 +9,7 @@ suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = null
 
     ensure(isIntersectionTypeNode(node))
 
-    val parameter = ensureNotNull(node.getParentOrNull())
+    val parameter = ensureNotNull(node.parent)
     ensure(isParameter(parameter))
 
     val parameterName = ensureNotNull(parameter.name)
@@ -18,27 +17,27 @@ suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = null
     ensure(parameterName.text == "init")
 
     nullable {
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodSignature(method))
 
         val methodName = method.name
         ensure(isIdentifier(methodName))
         ensure(methodName.text == "fetch")
 
-        val interfaceNode = ensureNotNull(method.getParentOrNull())
+        val interfaceNode = ensureNotNull(method.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "Net")
 
         "@kotlinx.js.JsPlainObject"
     } ?: nullable {
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodDeclaration(method))
 
         val methodName = method.name
         ensure(isIdentifier(methodName))
         ensure(methodName.text == "fetch")
 
-        val classNode = ensureNotNull(method.getParentOrNull())
+        val classNode = ensureNotNull(method.parent)
         ensure(isClassDeclaration(classNode))
         ensure(classNode.name?.text == "Session")
 

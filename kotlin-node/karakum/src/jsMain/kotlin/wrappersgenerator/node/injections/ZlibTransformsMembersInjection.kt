@@ -5,7 +5,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -48,7 +47,7 @@ class ZlibTransformsMembersInjection : Injection {
 
         ensure(isMethodSignature(node) || isPropertySignature(node))
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
 
         when (interfaceNode.name.text) {

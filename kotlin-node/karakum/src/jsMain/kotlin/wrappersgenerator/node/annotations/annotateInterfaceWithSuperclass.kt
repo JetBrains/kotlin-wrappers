@@ -2,7 +2,6 @@ package wrappersgenerator.node.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private val interfacesWithSuperclass = setOf(
@@ -79,7 +78,7 @@ suspend fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationConte
 
         ensure(isIntersectionTypeNode(node))
 
-        val variable = ensureNotNull(node.getParentOrNull())
+        val variable = ensureNotNull(node.parent)
         ensure(isVariableDeclaration(variable))
 
         val variableName = ensureNotNull(variable.name)

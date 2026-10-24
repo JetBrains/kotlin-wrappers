@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private fun isPromiseType(node: Node) = nullable {
@@ -19,10 +18,10 @@ val convertUserEventMethod = createPlugin { node, context, render ->
     nullable {
         ensure(isPropertySignature(node))
 
-        val typeLiteral = ensureNotNull(node.getParentOrNull())
+        val typeLiteral = ensureNotNull(node.parent)
         ensure(isTypeLiteralNode(typeLiteral))
 
-        val variable = ensureNotNull(typeLiteral.getParentOrNull())
+        val variable = ensureNotNull(typeLiteral.parent)
         ensure(isVariableDeclaration(variable))
 
         val variableNameNode = variable.name

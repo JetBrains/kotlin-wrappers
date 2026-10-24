@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 val convertUtilityTypes = createPlugin { node, context, render ->
@@ -23,7 +22,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Awaited")
 
-        val promiseType = ensureNotNull(node.getParentOrNull())
+        val promiseType = ensureNotNull(node.parent)
         ensure(isTypeReferenceNode(promiseType))
 
         val promiseTypeName = promiseType.typeName

@@ -2,7 +2,6 @@ package wrappersgenerator.node.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -30,10 +29,10 @@ suspend fun annotateHttpsServer(node: Node, context: AnnotationContext) = nullab
         ensure(isIdentifier(expressionName))
         ensure(expressionName.text == "Server")
 
-        val heritageClause = ensureNotNull(node.getParentOrNull())
+        val heritageClause = ensureNotNull(node.parent)
         ensure(isHeritageClause(heritageClause))
 
-        val interfaceNode = ensureNotNull(heritageClause.getParentOrNull())
+        val interfaceNode = ensureNotNull(heritageClause.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "Server")
 

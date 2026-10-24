@@ -2,7 +2,6 @@ package wrappersgenerator.node.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -16,7 +15,7 @@ suspend fun annotateCompileFunctionResult(node: Node, context: AnnotationContext
 
         ensure(isIntersectionTypeNode(node))
 
-        val function = ensureNotNull(node.getParentOrNull())
+        val function = ensureNotNull(node.parent)
         ensure(isFunctionDeclaration(function))
 
         val functionName = ensureNotNull(function.name)
@@ -37,10 +36,10 @@ suspend fun annotateCompileFunctionResult(node: Node, context: AnnotationContext
         ensure(isIdentifier(firstTypeArgumentName))
         ensure(firstTypeArgumentName.text == "Script")
 
-        val intersection = ensureNotNull(node.getParentOrNull())
+        val intersection = ensureNotNull(node.parent)
         ensure(isIntersectionTypeNode(intersection))
 
-        val function = ensureNotNull(intersection.getParentOrNull())
+        val function = ensureNotNull(intersection.parent)
         ensure(isFunctionDeclaration(function))
 
         val functionName = ensureNotNull(function.name)

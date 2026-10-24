@@ -2,7 +2,6 @@ package wrappersgenerator.electron.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.asArray
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
@@ -25,7 +24,7 @@ val convertWebviewGenericEventMethods = createPlugin { node, _, _ ->
         ensure(isIdentifier(firstParameterName))
         ensure(firstParameterName.text == "type")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "WebviewTag")
 

@@ -7,17 +7,16 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.extension.plugins.Signature
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun isNativeRealpathSync(node: FunctionDeclaration) = nullable {
     ensure(node.name?.text == "native")
 
-    val moduleBlock = ensureNotNull(node.getParentOrNull())
+    val moduleBlock = ensureNotNull(node.parent)
     ensure(isModuleBlock(moduleBlock))
 
-    val moduleDeclaration = ensureNotNull(moduleBlock.getParentOrNull())
+    val moduleDeclaration = ensureNotNull(moduleBlock.parent)
     ensure(isModuleDeclaration(moduleDeclaration))
 
     val moduleName = moduleDeclaration.name

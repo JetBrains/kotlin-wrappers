@@ -2,7 +2,6 @@ package wrappersgenerator.testing.library.dom.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 
@@ -11,7 +10,7 @@ val convertWaitForName = createPlugin { node, _, _ ->
         ensure(isIdentifier(node))
         ensure(node.text == "waitFor")
 
-        val function = ensureNotNull(node.getParentOrNull())
+        val function = ensureNotNull(node.parent)
         ensure(isFunctionDeclaration(function))
         ensure(function.name === node)
 

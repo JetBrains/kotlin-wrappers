@@ -3,7 +3,6 @@ package wrappersgenerator.testing.library.dom.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeParameterDeclaration
 
@@ -38,7 +37,7 @@ val convertTypealiasParameterBounds = createPlugin { node, _, render ->
     nullable {
         ensure(isTypeParameterDeclaration(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(
             typeAlias.name.text == "QueryMethod"

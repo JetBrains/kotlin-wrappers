@@ -2,7 +2,6 @@ package wrappersgenerator.semver.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.Node
 import typescript.isClassDeclaration
 import typescript.isIdentifier
@@ -19,7 +18,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
     ensure(sourceFileName.endsWith("semver.d.ts"))
     ensure(name.text == "toString")
 
-    val classNode = ensureNotNull(node.getParentOrNull())
+    val classNode = ensureNotNull(node.parent)
     ensure(isClassDeclaration(classNode))
     ensure(classNode.name?.text == "SemVer")
 

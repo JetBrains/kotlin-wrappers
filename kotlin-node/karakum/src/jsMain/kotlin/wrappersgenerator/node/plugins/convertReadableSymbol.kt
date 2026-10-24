@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.isClassDeclaration
 import typescript.isComputedPropertyName
 import typescript.isMethodDeclaration
@@ -15,7 +14,7 @@ val convertReadableSymbol = createPlugin { node, context, _ ->
         val name = node.name
         ensure(isComputedPropertyName(name))
 
-        val classNode = ensureNotNull(node.getParentOrNull())
+        val classNode = ensureNotNull(node.parent)
         ensure(isClassDeclaration(classNode))
         ensure(classNode.name?.text == "Readable")
 

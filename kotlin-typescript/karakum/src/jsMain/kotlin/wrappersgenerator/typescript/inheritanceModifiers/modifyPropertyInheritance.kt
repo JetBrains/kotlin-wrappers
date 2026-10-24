@@ -18,7 +18,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "parent",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(
                 interfaceNode.name.text != "Node"
@@ -51,7 +51,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "left")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ArrayDestructuringAssignment")
 
@@ -62,7 +62,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "name",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ArrowFunction")
 
@@ -70,7 +70,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "type")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "AssertsIdentifierTypePredicate")
 
@@ -78,7 +78,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "type")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "AssertsThisTypePredicate")
 
@@ -89,7 +89,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "operatorToken",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "AssignmentExpression")
 
@@ -97,7 +97,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "value")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "BigIntLiteralType")
 
@@ -105,7 +105,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "BindingElement")
 
@@ -113,7 +113,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ClassDeclaration")
 
@@ -121,7 +121,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ClassElement")
 
@@ -129,7 +129,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ClassLikeDeclarationBase")
 
@@ -137,7 +137,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "moduleSpecifier")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "CompletionEntryDataResolved")
 
@@ -145,7 +145,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "exportMapKey")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "CompletionEntryDataUnresolved")
 
@@ -153,7 +153,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "body")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ConstructorDeclaration")
 
@@ -161,7 +161,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "DeclarationStatement")
 
@@ -173,7 +173,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "length",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "DiagnosticWithLocation")
 
@@ -181,7 +181,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "EnumDeclaration")
 
@@ -189,7 +189,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "EnumMember")
 
@@ -197,7 +197,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ExportSpecifier")
 
@@ -208,7 +208,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "FunctionDeclaration")
 
@@ -219,7 +219,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "FunctionExpression")
 
@@ -227,7 +227,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "type")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "FunctionOrConstructorTypeNodeBase")
 
@@ -238,7 +238,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "GetAccessorDeclaration")
 
@@ -246,7 +246,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "type")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "IdentifierTypePredicate")
 
@@ -293,7 +293,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "expression")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ImportCall")
 
@@ -301,7 +301,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ImportClause")
 
@@ -309,7 +309,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ImportEqualsDeclaration")
 
@@ -317,7 +317,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ImportSpecifier")
 
@@ -325,7 +325,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "type")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "IndexSignatureDeclaration")
 
@@ -333,7 +333,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "operatorToken")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "InstanceofExpression")
 
@@ -341,7 +341,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "InterfaceDeclaration")
 
@@ -375,7 +375,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocCallbackTag")
 
@@ -386,7 +386,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocNamespaceDeclaration")
 
@@ -394,7 +394,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocTypedefTag")
 
@@ -405,7 +405,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "operand",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JsonMinusNumericLiteral")
 
@@ -413,7 +413,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "expression")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JsonObjectExpressionStatement")
 
@@ -421,7 +421,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "statements")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JsonSourceFile")
 
@@ -429,7 +429,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "expression")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JsxTagNamePropertyAccess")
 
@@ -440,7 +440,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "MethodDeclaration")
 
@@ -448,7 +448,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "MethodSignature")
 
@@ -456,7 +456,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "MissingDeclaration")
 
@@ -464,7 +464,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ModuleDeclaration")
 
@@ -475,7 +475,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "NamespaceDeclaration")
 
@@ -483,7 +483,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "NamespaceExport")
 
@@ -491,7 +491,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "NamespaceExportDeclaration")
 
@@ -499,7 +499,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "NamespaceImport")
 
@@ -507,7 +507,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "value")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "NumberLiteralType")
 
@@ -515,7 +515,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "left")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ObjectDestructuringAssignment")
 
@@ -523,7 +523,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ObjectLiteralElement")
 
@@ -531,7 +531,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ParameterDeclaration")
 
@@ -554,7 +554,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "useCaseSensitiveFileNames")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ParseConfigHost")
 
@@ -565,7 +565,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "expression",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "PropertyAccessEntityNameExpression")
 
@@ -573,7 +573,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "PropertyAccessExpression")
 
@@ -581,7 +581,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "PropertyAssignment")
 
@@ -589,7 +589,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "PropertyAccessChain")
 
@@ -597,7 +597,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "PropertyDeclaration")
 
@@ -608,7 +608,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "questionToken",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "PropertySignature")
 
@@ -616,7 +616,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "scoped")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ScopedEmitHelper")
 
@@ -627,7 +627,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "body",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "SetAccessorDeclaration")
 
@@ -635,7 +635,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ShorthandPropertyAssignment")
 
@@ -643,7 +643,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "SignatureDeclarationBase")
 
@@ -651,7 +651,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "value")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "StringLiteralType")
 
@@ -659,7 +659,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "symbol")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "StringMappingType")
 
@@ -667,7 +667,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "expression")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "SuperCall")
 
@@ -675,7 +675,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "expression")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "SuperElementAccessExpression")
 
@@ -683,7 +683,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "expression")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "SuperPropertyAccessExpression")
 
@@ -694,7 +694,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "end",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "SynthesizedComment")
 
@@ -702,7 +702,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "type")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ThisTypePredicate")
 
@@ -710,7 +710,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "target")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "TupleTypeReference")
 
@@ -718,7 +718,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "TypeAliasDeclaration")
 
@@ -726,7 +726,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "TypeElement")
 
@@ -734,7 +734,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "TypeParameterDeclaration")
 
@@ -742,7 +742,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "symbol")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "UniqueESSymbolType")
 
@@ -750,7 +750,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "data")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "UnparsedPrepend")
 
@@ -758,7 +758,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "data")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "UnparsedPrologue")
 
@@ -769,7 +769,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "text",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "UnscopedEmitHelper")
 
@@ -777,7 +777,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
         } ?: nullable {
             ensure(name.text == "name")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "VariableDeclaration")
 
@@ -788,7 +788,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "keywordToken",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ImportDeferProperty")
 

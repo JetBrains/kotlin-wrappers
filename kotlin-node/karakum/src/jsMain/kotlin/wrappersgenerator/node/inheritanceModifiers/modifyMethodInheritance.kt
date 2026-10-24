@@ -2,7 +2,6 @@ package wrappersgenerator.node.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -48,7 +47,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Server")
 
@@ -60,7 +59,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "setTimeout")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "OutgoingMessage")
 
@@ -73,7 +72,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "closeIdleConnections"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Server")
 
@@ -88,7 +87,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "read"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Readable")
 
@@ -110,7 +109,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "destroy"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Writable")
 
@@ -120,7 +119,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "Readable"
@@ -135,7 +134,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Interface")
 
@@ -147,7 +146,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "toJSON")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "PerformanceEntry")
 
@@ -157,7 +156,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "Server"
@@ -172,7 +171,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "ReadStream"
@@ -190,7 +189,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "closeIdleConnections"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Server")
 
@@ -200,7 +199,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "Server"
@@ -215,7 +214,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "setTimeout")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "ClientRequest")
 
@@ -225,7 +224,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "destroy")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "IncomingMessage")
 
@@ -261,7 +260,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                 }
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Socket")
 
@@ -271,7 +270,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Socket")
 
@@ -290,7 +289,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "wrap"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Readable")
 
@@ -304,7 +303,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
             val firstParameterType = ensureNotNull(context.signature?.firstOrNull()?.type)
             ensure(isFunctionTypeNode(firstParameterType))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Writable")
 
@@ -324,7 +323,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "uncork"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Duplex")
 
@@ -334,7 +333,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Duplex")
 
@@ -346,7 +345,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "WriteStream")
 
@@ -358,7 +357,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "toString")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "MIMEType")
 
@@ -368,7 +367,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "TestsStream")
 
@@ -380,7 +379,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "toString")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "X509Certificate")
 
@@ -403,7 +402,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                 } == null
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Http2ServerResponse")
 
@@ -413,7 +412,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "read")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Http2ServerRequest")
 
@@ -423,7 +422,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "Http2ServerRequest"
@@ -438,7 +437,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Server")
 
@@ -450,7 +449,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "REPLServer")
 
@@ -462,7 +461,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "toJSON")
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "PerformanceResourceTiming")
 
@@ -486,7 +485,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "destroy"
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(
                 interfaceNode.name.text == "DuplexOptions"
@@ -499,7 +498,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(name.text == "toString")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "CallSite")
 
@@ -509,7 +508,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(
                 interfaceNode.name.text == "ClientHttp2Session"
@@ -526,7 +525,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(
                 interfaceNode.name.text == "Http2SecureServer"
@@ -541,7 +540,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
 
             ensure(isEventEmitterMethodName(name.text))
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "TestsStream")
 

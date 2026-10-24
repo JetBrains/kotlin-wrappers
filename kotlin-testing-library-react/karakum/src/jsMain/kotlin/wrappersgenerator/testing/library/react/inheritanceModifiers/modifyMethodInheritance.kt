@@ -2,7 +2,6 @@ package wrappersgenerator.testing.library.react.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.Node
 import typescript.isIntersectionTypeNode
 import typescript.isMappedTypeNode
@@ -12,10 +11,10 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
     nullable {
         ensure(isMappedTypeNode(node))
 
-        val intersection = ensureNotNull(node.getParentOrNull())
+        val intersection = ensureNotNull(node.parent)
         ensure(isIntersectionTypeNode(intersection))
 
-        val typeAlias = ensureNotNull(intersection.getParentOrNull())
+        val typeAlias = ensureNotNull(intersection.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "RenderResult")
 

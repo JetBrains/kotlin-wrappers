@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.capitalize
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -21,7 +20,7 @@ val convertOverriddenFsOptionPropertySignature = createPlugin { node, context, r
         val propertyName = node.name
         ensure(isIdentifier(propertyName))
 
-        val typeLiteral = ensureNotNull(node.getParentOrNull())
+        val typeLiteral = ensureNotNull(node.parent)
         ensure(isTypeLiteralNode(typeLiteral))
 
         ensureNotNull(
@@ -33,7 +32,7 @@ val convertOverriddenFsOptionPropertySignature = createPlugin { node, context, r
             } ?: nullable {
                 ensure(propertyName.text == "recursive")
 
-                val intersection = ensureNotNull(typeLiteral.getParentOrNull())
+                val intersection = ensureNotNull(typeLiteral.parent)
                 ensure(isIntersectionTypeNode(intersection))
 
                 val firstType = ensureNotNull(intersection.types.asArray().firstOrNull())

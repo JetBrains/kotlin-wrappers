@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isFunctionDeclaration
 import typescript.isIdentifier
@@ -17,14 +16,14 @@ val convertDotTestReporterPayload = createPlugin { node, context, _ ->
 
         ensure(isUnionTypeNode(node))
 
-        val typeReference = ensureNotNull(node.getParentOrNull())
+        val typeReference = ensureNotNull(node.parent)
         ensure(isTypeReferenceNode(typeReference))
 
         val typeReferenceName = typeReference.typeName
         ensure(isIdentifier(typeReferenceName))
         ensure(typeReferenceName.text == "AsyncGenerator")
 
-        val function = ensureNotNull(typeReference.getParentOrNull())
+        val function = ensureNotNull(typeReference.parent)
         ensure(isFunctionDeclaration(function))
 
         val functionName = ensureNotNull(function.name)

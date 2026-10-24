@@ -5,7 +5,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.camelize
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import typescript.*
@@ -52,10 +51,10 @@ private fun extractEventContainer(node: Node): DeclarationStatement? = nullable 
     ensure(isIdentifier(node))
     ensure(node.text == "K")
 
-    val typeReference = ensureNotNull(node.getParentOrNull())
+    val typeReference = ensureNotNull(node.parent)
     ensure(isTypeReferenceNode(typeReference))
 
-    val parameter = ensureNotNull(typeReference.getParentOrNull())
+    val parameter = ensureNotNull(typeReference.parent)
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
@@ -63,26 +62,26 @@ private fun extractEventContainer(node: Node): DeclarationStatement? = nullable 
     ensure(parameterName.text == "event")
 
     nullable {
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodDeclaration(method))
 
         val methodName = ensureNotNull(method.name)
         ensure(isIdentifier(methodName))
         ensure(methodName.text in eventHandlerMethods)
 
-        val classNode = ensureNotNull(method.getParentOrNull())
+        val classNode = ensureNotNull(method.parent)
         ensure(isClassDeclaration(classNode))
 
         classNode
     } ?: nullable {
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodSignature(method))
 
         val methodName = ensureNotNull(method.name)
         ensure(isIdentifier(methodName))
         ensure(methodName.text in eventHandlerMethods)
 
-        val interfaceNode = ensureNotNull(method.getParentOrNull())
+        val interfaceNode = ensureNotNull(method.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
 
         interfaceNode
@@ -93,10 +92,10 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
     ensure(isIdentifier(node))
     ensure(node.text == "K")
 
-    val typeReference = ensureNotNull(node.getParentOrNull())
+    val typeReference = ensureNotNull(node.parent)
     ensure(isTypeReferenceNode(typeReference))
 
-    val parameter = ensureNotNull(typeReference.getParentOrNull())
+    val parameter = ensureNotNull(typeReference.parent)
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
@@ -105,26 +104,26 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
 
     val method = ensureNotNull(
         nullable {
-            val method = ensureNotNull(parameter.getParentOrNull())
+            val method = ensureNotNull(parameter.parent)
             ensure(isMethodDeclaration(method))
 
             val methodName = ensureNotNull(method.name)
             ensure(isIdentifier(methodName))
             ensure(methodName.text == "addListener")
 
-            val classNode = ensureNotNull(method.getParentOrNull())
+            val classNode = ensureNotNull(method.parent)
             ensure(isClassDeclaration(classNode))
 
             method
         } ?: nullable {
-            val method = ensureNotNull(parameter.getParentOrNull())
+            val method = ensureNotNull(parameter.parent)
             ensure(isMethodSignature(method))
 
             val methodName = ensureNotNull(method.name)
             ensure(isIdentifier(methodName))
             ensure(methodName.text == "addListener")
 
-            val interfaceNode = ensureNotNull(method.getParentOrNull())
+            val interfaceNode = ensureNotNull(method.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
 
             method

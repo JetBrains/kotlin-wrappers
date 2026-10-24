@@ -2,12 +2,11 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
 private fun isMockTrackerMethod(node: MethodSignature) = nullable {
-    val classNode = ensureNotNull(node.getParentOrNull())
+    val classNode = ensureNotNull(node.parent)
     ensure(isInterfaceDeclaration(classNode))
     ensure(classNode.name.text == "MockTracker")
 } != null
@@ -26,7 +25,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
                         || node.name.text == "Implementation"
             )
 
-            val method = ensureNotNull(node.getParentOrNull())
+            val method = ensureNotNull(node.parent)
             ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
 
@@ -37,10 +36,10 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
             val typeName = node.typeName
             ensure(isIdentifier(typeName))
 
-            val parameter = ensureNotNull(node.getParentOrNull())
+            val parameter = ensureNotNull(node.parent)
             ensure(isParameter(parameter))
 
-            val method = ensureNotNull(parameter.getParentOrNull())
+            val method = ensureNotNull(parameter.parent)
             ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
 
@@ -72,7 +71,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
             val typeArguments = ensureNotNull(node.typeArguments)
             ensure(isUnionTypeNode(typeArguments.asArray().first()))
 
-            val method = ensureNotNull(node.getParentOrNull())
+            val method = ensureNotNull(node.parent)
             ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
             ensure(method.type === node)
@@ -81,7 +80,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
         } ?: nullable {
             ensure(isConditionalTypeNode(node))
 
-            val method = ensureNotNull(node.getParentOrNull())
+            val method = ensureNotNull(node.parent)
             ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
             ensure(method.type === node)
@@ -97,7 +96,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
             ensure(isIdentifier(firstTypeName))
             ensure(firstTypeName.text == "MockedObject")
 
-            val method = ensureNotNull(node.getParentOrNull())
+            val method = ensureNotNull(node.parent)
             ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
             ensure(method.type === node)

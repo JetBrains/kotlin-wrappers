@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -17,7 +16,7 @@ private fun isInstanceType(node: Node) = nullable {
 
 private fun isTypeArgumentOfTypeWithTypeofBound(node: Node) = nullable {
     nullable {
-        val typeReference = ensureNotNull(node.getParentOrNull())
+        val typeReference = ensureNotNull(node.parent)
         ensure(isTypeReferenceNode(typeReference))
 
         nullable {
@@ -44,7 +43,7 @@ private fun isTypeArgumentOfTypeWithTypeofBound(node: Node) = nullable {
             )
         }
     } ?: nullable {
-        val expressionWithTypeArguments = ensureNotNull(node.getParentOrNull())
+        val expressionWithTypeArguments = ensureNotNull(node.parent)
         ensure(isExpressionWithTypeArguments(expressionWithTypeArguments))
 
         nullable {
@@ -80,11 +79,11 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
 
             ensureNotNull(
                 nullable {
-                    val classNode = ensureNotNull(node.getParentOrNull())
+                    val classNode = ensureNotNull(node.parent)
                     ensure(isClassDeclaration(classNode))
                     ensure(classNode.name?.text == "Server")
                 } ?: nullable {
-                    val interfaceNode = ensureNotNull(node.getParentOrNull())
+                    val interfaceNode = ensureNotNull(node.parent)
                     ensure(isInterfaceDeclaration(interfaceNode))
                     ensure(
                         interfaceNode.name.text == "Server"
@@ -97,11 +96,11 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
                                 || interfaceNode.name.text == "SecureServerSessionOptions"
                     )
                 } ?: nullable {
-                    val typeAlias = ensureNotNull(node.getParentOrNull())
+                    val typeAlias = ensureNotNull(node.parent)
                     ensure(isTypeAliasDeclaration(typeAlias))
                     ensure(typeAlias.name.text == "ServerOptions")
                 } ?: nullable {
-                    val function = ensureNotNull(node.getParentOrNull())
+                    val function = ensureNotNull(node.parent)
                     ensure(isFunctionDeclaration(function))
                     ensure(
                         function.name?.text == "createServer"
@@ -123,7 +122,7 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
         } ?: nullable {
             ensure(isTypeParameterDeclaration(node))
 
-            val typeAlias = ensureNotNull(node.getParentOrNull())
+            val typeAlias = ensureNotNull(node.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "RequestListener")
 
@@ -177,11 +176,11 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
 
             ensureNotNull(
                 nullable {
-                    val classNode = ensureNotNull(typeParameterDeclaration.getParentOrNull())
+                    val classNode = ensureNotNull(typeParameterDeclaration.parent)
                     ensure(isClassDeclaration(classNode))
                     ensure(classNode.name?.text == "Server")
                 } ?: nullable {
-                    val interfaceNode = ensureNotNull(typeParameterDeclaration.getParentOrNull())
+                    val interfaceNode = ensureNotNull(typeParameterDeclaration.parent)
                     ensure(isInterfaceDeclaration(interfaceNode))
                     ensure(
                         interfaceNode.name.text == "ServerOptions"
@@ -193,14 +192,14 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
                                 || interfaceNode.name.text == "SecureServerSessionOptions"
                     )
                 } ?: nullable {
-                    val typeAlias = ensureNotNull(typeParameterDeclaration.getParentOrNull())
+                    val typeAlias = ensureNotNull(typeParameterDeclaration.parent)
                     ensure(isTypeAliasDeclaration(typeAlias))
                     ensure(
                         typeAlias.name.text == "ServerOptions"
                                 || typeAlias.name.text == "RequestListener"
                     )
                 } ?: nullable {
-                    val function = ensureNotNull(typeParameterDeclaration.getParentOrNull())
+                    val function = ensureNotNull(typeParameterDeclaration.parent)
                     ensure(isFunctionDeclaration(function))
                     ensure(
                         function.name?.text == "createServer"
@@ -209,7 +208,7 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
                 }
             )
 
-            val parent = ensureNotNull(node.getParentOrNull())
+            val parent = ensureNotNull(node.parent)
             ensure(!isInstanceType(parent))
 
             "JsClass<${render(node)}>"

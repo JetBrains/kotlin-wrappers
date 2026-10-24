@@ -2,7 +2,6 @@ package wrappersgenerator.node.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -25,7 +24,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "stdio"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "ChildProcess")
 
@@ -39,7 +38,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "destroyed"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Readable")
 
@@ -60,7 +59,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "destroyed"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "Writable")
 
@@ -73,7 +72,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "entryType"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "PerformanceEntry")
 
@@ -89,7 +88,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "error"
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "TracingChannel")
 
@@ -106,7 +105,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
 
             ensure(name.text == "cause")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(
                 interfaceNode.name.text == "TestError"
@@ -119,7 +118,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
 
             ensure(name.text == "completer")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ReadLineOptions")
 

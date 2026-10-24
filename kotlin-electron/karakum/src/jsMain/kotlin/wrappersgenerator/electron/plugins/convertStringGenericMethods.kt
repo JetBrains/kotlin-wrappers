@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 val convertStringGenericMethods = createPlugin { node, context, render ->
@@ -19,7 +18,7 @@ val convertStringGenericMethods = createPlugin { node, context, render ->
                     || nameNode.text == "setUserDefault",
         )
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "SystemPreferences")
 
@@ -41,10 +40,10 @@ val convertStringGenericMethods = createPlugin { node, context, render ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Type")
 
-        val parameter = ensureNotNull(node.getParentOrNull())
+        val parameter = ensureNotNull(node.parent)
         ensure(isParameter(parameter))
 
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodSignature(method))
 
         val methodName = method.name

@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import io.github.sgrishchenko.karakum.extension.renderNullable
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -18,13 +17,13 @@ val convertSignalConstantsGenerics = createPlugin { node, context, render ->
             ensure(isIdentifier(node))
             ensure(node.text == "key")
 
-            val typeParameter = ensureNotNull(node.getParentOrNull())
+            val typeParameter = ensureNotNull(node.parent)
             ensure(isTypeParameterDeclaration(typeParameter))
 
-            val mappedType = ensureNotNull(typeParameter.getParentOrNull())
+            val mappedType = ensureNotNull(typeParameter.parent)
             ensure(isMappedTypeNode(mappedType))
 
-            val typeAlias = ensureNotNull(mappedType.getParentOrNull())
+            val typeAlias = ensureNotNull(mappedType.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "SignalConstants")
 

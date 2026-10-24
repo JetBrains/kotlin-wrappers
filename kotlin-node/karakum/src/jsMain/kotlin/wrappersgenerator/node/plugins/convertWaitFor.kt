@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -25,14 +24,14 @@ val convertWaitFor = createPlugin { node, _, render ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Awaited")
 
-        val promiseType = ensureNotNull(node.getParentOrNull())
+        val promiseType = ensureNotNull(node.parent)
         ensure(isTypeReferenceNode(promiseType))
 
         val promiseTypeName = promiseType.typeName
         ensure(isIdentifier(promiseTypeName))
         ensure(promiseTypeName.text == "Promise")
 
-        val method = ensureNotNull(promiseType.getParentOrNull())
+        val method = ensureNotNull(promiseType.parent)
         ensure(isWaitForMethod(method))
 
         val typeArguments = ensureNotNull(node.typeArguments?.asArray())
@@ -48,13 +47,13 @@ val convertWaitFor = createPlugin { node, _, render ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "T")
 
-        val functionType = ensureNotNull(node.getParentOrNull())
+        val functionType = ensureNotNull(node.parent)
         ensure(isFunctionTypeNode(functionType))
 
-        val parameter = ensureNotNull(functionType.getParentOrNull())
+        val parameter = ensureNotNull(functionType.parent)
         ensure(isParameter(parameter))
 
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isWaitForMethod(method))
 
         "js.promise.Promise<${render(node)}>"

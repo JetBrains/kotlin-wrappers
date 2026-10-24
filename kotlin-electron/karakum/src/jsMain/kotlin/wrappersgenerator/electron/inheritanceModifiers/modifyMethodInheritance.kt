@@ -2,7 +2,6 @@ package wrappersgenerator.electron.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.Node
 import typescript.isClassDeclaration
 import typescript.isIdentifier
@@ -143,7 +142,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "unmaximize",
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "BaseWindow")
 
@@ -276,7 +275,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "unmaximize",
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(classNode.name?.text == "BrowserWindow")
 

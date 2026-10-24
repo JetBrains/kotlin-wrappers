@@ -2,7 +2,6 @@ package wrappersgenerator.electron.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 val convertSkippedGenerics = createPlugin { node, _, render ->
@@ -15,7 +14,7 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
         ensure(node.typeArguments == null)
 
         nullable {
-            val parameter = ensureNotNull(node.getParentOrNull())
+            val parameter = ensureNotNull(node.parent)
             ensure(isParameter(parameter))
 
             val parameterName = ensureNotNull(parameter.name)
@@ -35,7 +34,7 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
         ensure(node.typeArguments == null)
 
         nullable {
-            val typeAlias = ensureNotNull(node.getParentOrNull())
+            val typeAlias = ensureNotNull(node.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
 
             render(node.typeName)

@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.isIdentifier
 import typescript.isLiteralTypeNode
 import typescript.isStringLiteral
@@ -12,10 +11,10 @@ val convertKeyUnionReferences = createPlugin { node, _, _ ->
     nullable {
         ensure(isStringLiteral(node))
 
-        val literalType = ensureNotNull(node.getParentOrNull())
+        val literalType = ensureNotNull(node.parent)
         ensure(isLiteralTypeNode(literalType))
 
-        val typeReference = ensureNotNull(literalType.getParentOrNull())
+        val typeReference = ensureNotNull(literalType.parent)
         ensure(isTypeReferenceNode(typeReference))
 
         val typeName = typeReference.typeName

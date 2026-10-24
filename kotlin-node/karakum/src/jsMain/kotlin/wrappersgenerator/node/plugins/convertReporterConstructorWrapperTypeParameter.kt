@@ -23,7 +23,7 @@ val convertReporterConstructorWrapperTypeParameter = createPlugin { node, contex
         nullable {
             ensure(isTypeParameterDeclaration(node))
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ReporterConstructorWrapper")
             ensure(node.name.text == "T")
@@ -59,11 +59,11 @@ val convertReporterConstructorWrapperTypeParameter = createPlugin { node, contex
             val typeParameterDeclaration =
                 ensureNotNull(typeParameterDeclarations.find { isTypeParameterDeclaration(it) })
 
-            val interfaceNode = ensureNotNull(typeParameterDeclaration.getParentOrNull())
+            val interfaceNode = ensureNotNull(typeParameterDeclaration.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ReporterConstructorWrapper")
 
-            val parent = ensureNotNull(node.getParentOrNull())
+            val parent = ensureNotNull(node.parent)
             ensure(!isInstanceType(parent))
 
             "JsClass<${render(node)}>"

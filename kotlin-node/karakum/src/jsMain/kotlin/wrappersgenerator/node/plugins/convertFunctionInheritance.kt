@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.isExpressionWithTypeArguments
 import typescript.isIdentifier
 import typescript.isIntersectionTypeNode
@@ -27,7 +26,7 @@ val convertFunctionInheritance = createPlugin { node, context, _ ->
         ensure(isIdentifier(name))
         ensure(name.text == "REPLWriter")
 
-        val intersectionType = ensureNotNull(node.getParentOrNull())
+        val intersectionType = ensureNotNull(node.parent)
         ensure(isIntersectionTypeNode(intersectionType))
 
         "js.function.JsFunction<js.array.Tuple1<Any?>, String> /* ${typeScriptService?.printNode(node)} */"

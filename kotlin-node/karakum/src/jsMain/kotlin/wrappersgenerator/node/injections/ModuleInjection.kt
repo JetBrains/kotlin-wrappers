@@ -3,7 +3,6 @@ package wrappersgenerator.node.injections
 import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -11,10 +10,10 @@ private fun isModuleInterfaceNode(node: Node) = nullable {
     ensure(isInterfaceDeclaration(node))
     ensure(node.name.text == "Module")
 
-    val moduleBlock = ensureNotNull(node.getParentOrNull())
+    val moduleBlock = ensureNotNull(node.parent)
     ensure(isModuleBlock(moduleBlock))
 
-    val module = ensureNotNull(moduleBlock.getParentOrNull())
+    val module = ensureNotNull(moduleBlock.parent)
     ensure(isModuleDeclaration(module))
 
     val moduleName = module.name
@@ -40,7 +39,7 @@ class ModuleInjection : Injection {
 
         ensure(isHeritageClause(node))
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "Module")
 

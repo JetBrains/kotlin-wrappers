@@ -2,7 +2,6 @@ package wrappersgenerator.typescript.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.Node
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
@@ -25,7 +24,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "useCaseSensitiveFileNames",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "LanguageServiceHost")
 
@@ -37,7 +36,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "trace",
             )
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ParseConfigHost")
 
@@ -45,7 +44,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
         } ?: nullable {
             ensure(name.text == "getCurrentDirectory")
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "Program")
 

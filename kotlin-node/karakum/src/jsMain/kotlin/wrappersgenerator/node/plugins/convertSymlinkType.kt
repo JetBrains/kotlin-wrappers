@@ -2,20 +2,19 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 val convertSymlinkType = createPlugin { node, _, _ ->
     nullable {
         ensure(isIdentifier(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
 
-        val moduleBlock = ensureNotNull(typeAlias.getParentOrNull())
+        val moduleBlock = ensureNotNull(typeAlias.parent)
         ensure(isModuleBlock(moduleBlock))
 
-        val module = ensureNotNull(moduleBlock.getParentOrNull())
+        val module = ensureNotNull(moduleBlock.parent)
         ensure(isModuleDeclaration(module))
 
         val moduleName = module.name

@@ -3,7 +3,6 @@ package wrappersgenerator.testing.library.dom.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private fun isHTMLElementTypeParameter(node: Node) = nullable {
@@ -17,7 +16,7 @@ private fun isHTMLElementTypeParameter(node: Node) = nullable {
     ensure(isIdentifier(constraintTypeName))
     ensure(constraintTypeName.text == "HTMLElement")
 
-    val parent = ensureNotNull(node.getParentOrNull())
+    val parent = ensureNotNull(node.parent)
 
     ensureNotNull(
         nullable {

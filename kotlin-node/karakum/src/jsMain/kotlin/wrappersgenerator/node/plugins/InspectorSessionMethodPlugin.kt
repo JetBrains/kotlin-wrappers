@@ -10,30 +10,29 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.constIdentifier
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import typescript.*
 
 private fun isSessionPostMethod(node: Node) = nullable {
-    val literalType = ensureNotNull(node.getParentOrNull())
+    val literalType = ensureNotNull(node.parent)
     ensure(isLiteralTypeNode(literalType))
 
-    val parameter = ensureNotNull(literalType.getParentOrNull())
+    val parameter = ensureNotNull(literalType.parent)
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
     ensure(isIdentifier(parameterName))
     ensure(parameterName.text == "method")
 
-    val method = ensureNotNull(parameter.getParentOrNull())
+    val method = ensureNotNull(parameter.parent)
     ensure(isMethodSignature(method))
 
     val methodName = ensureNotNull(method.name)
     ensure(isIdentifier(methodName))
     ensure(methodName.text == "post")
 
-    val interfaceNode = ensureNotNull(method.getParentOrNull())
+    val interfaceNode = ensureNotNull(method.parent)
     ensure(isInterfaceDeclaration(interfaceNode))
     ensure(interfaceNode.name.text == "Session")
 } != null

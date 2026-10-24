@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -21,7 +20,7 @@ val convertEventEmitterListener = createPlugin { node, _, render ->
         val firstTypeArgument = ensureNotNull(typeArguments.asArray().getOrNull(0))
         ensure(firstTypeArgument.kind == SyntaxKind.AnyKeyword)
 
-        val parameter = ensureNotNull(node.getParentOrNull())
+        val parameter = ensureNotNull(node.parent)
         ensure(isParameter(parameter))
 
         val parameterName = parameter.name

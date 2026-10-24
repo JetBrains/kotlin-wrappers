@@ -2,7 +2,6 @@ package wrappersgenerator.node.injections
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -21,10 +20,10 @@ class TracingChannelSubscribersInjection : Injection {
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "ContextType")
 
-        val intersection = ensureNotNull(node.getParentOrNull())
+        val intersection = ensureNotNull(node.parent)
         ensure(isIntersectionTypeNode(intersection))
 
-        val parameter = ensureNotNull(intersection.getParentOrNull())
+        val parameter = ensureNotNull(intersection.parent)
         ensure(isParameter(parameter))
 
         val parameterName = parameter.name
@@ -42,7 +41,7 @@ class TracingChannelSubscribersInjection : Injection {
 
         ensure(isIntersectionTypeNode(node))
 
-        val parameter = ensureNotNull(node.getParentOrNull())
+        val parameter = ensureNotNull(node.parent)
         ensure(isParameter(parameter))
 
         val parameterName = parameter.name

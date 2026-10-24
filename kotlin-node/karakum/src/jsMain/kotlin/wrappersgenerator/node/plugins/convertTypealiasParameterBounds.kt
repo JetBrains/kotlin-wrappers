@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeParameterDeclaration
@@ -16,7 +15,7 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
             ensure(sourceFileName.endsWith("buffer.buffer.d.ts"))
             ensure(isTypeParameterDeclaration(node))
 
-            val typeAlias = ensureNotNull(node.getParentOrNull())
+            val typeAlias = ensureNotNull(node.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImplicitArrayBuffer")
 
@@ -33,7 +32,7 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
 
             ensure(isTypeParameterDeclaration(node))
 
-            val typeAlias = ensureNotNull(node.getParentOrNull())
+            val typeAlias = ensureNotNull(node.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(
                 typeAlias.name.text == "PipelineCallback" ||
@@ -55,7 +54,7 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
 
             ensure(isTypeParameterDeclaration(node))
 
-            val typeAlias = ensureNotNull(node.getParentOrNull())
+            val typeAlias = ensureNotNull(node.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "CustomPromisify")
 

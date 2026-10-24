@@ -2,7 +2,6 @@ package wrappersgenerator.tauri.apps.api.inheritanceModifiers
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.Node
 import typescript.isClassDeclaration
 import typescript.isIdentifier
@@ -21,7 +20,7 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                         || name.text == "listeners",
             )
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isClassDeclaration(classNode))
             ensure(
                 classNode.name?.text == "Webview"

@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -156,12 +155,12 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(node.typeArguments == null)
 
             nullable {
-                val intersection = ensureNotNull(node.getParentOrNull())
+                val intersection = ensureNotNull(node.parent)
                 ensure(isIntersectionTypeNode(intersection))
 
                 "js.function.JsFunction<Nothing, Any?>"
             } ?: nullable {
-                val parameter = ensureNotNull(node.getParentOrNull())
+                val parameter = ensureNotNull(node.parent)
                 ensure(isParameter(parameter))
 
                 val parameterName = parameter.name

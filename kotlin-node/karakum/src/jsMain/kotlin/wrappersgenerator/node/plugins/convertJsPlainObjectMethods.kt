@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isInterfaceDeclaration
 import typescript.isMethodSignature
@@ -12,7 +11,7 @@ val convertJsPlainObjectMethods = createPlugin { node, context, render ->
     nullable {
         ensure(isMethodSignature(node))
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName

@@ -4,7 +4,6 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -22,10 +21,10 @@ private fun isEventEmitterInterfaceNode(node: Node) = nullable {
     ensure(isInterfaceDeclaration(node))
     ensure(node.name.text == "EventEmitter")
 
-    val moduleBlock = ensureNotNull(node.getParentOrNull())
+    val moduleBlock = ensureNotNull(node.parent)
     ensure(isModuleBlock(moduleBlock))
 
-    val moduleDeclaration = ensureNotNull(moduleBlock.getParentOrNull())
+    val moduleDeclaration = ensureNotNull(moduleBlock.parent)
     ensure(isModuleDeclaration(moduleDeclaration))
 
     val moduleName = moduleDeclaration.name
@@ -90,11 +89,11 @@ class EventEmitterPlugin : Plugin {
             ensure(isIdentifier(node))
             ensure(node.text == "eventName")
 
-            val parameter = ensureNotNull(node.getParentOrNull())
+            val parameter = ensureNotNull(node.parent)
             ensure(isParameter(parameter))
             ensure(parameter.name === node)
 
-            val method = ensureNotNull(parameter.getParentOrNull())
+            val method = ensureNotNull(parameter.parent)
             ensure(
                 isMethodDeclaration(method)
                         || isMethodSignature(method)
@@ -104,7 +103,7 @@ class EventEmitterPlugin : Plugin {
         } ?: nullable {
             ensure(isMethodDeclaration(node))
 
-            val classNode = ensureNotNull(node.getParentOrNull())
+            val classNode = ensureNotNull(node.parent)
             ensure(isEventEmitterClassNode(classNode))
 
             nullable {
@@ -190,7 +189,7 @@ class EventEmitterPlugin : Plugin {
         } ?: nullable {
             ensure(isMethodSignature(node))
 
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            val interfaceNode = ensureNotNull(node.parent)
             ensure(isEventEmitterInterfaceNode(interfaceNode))
 
             nullable {

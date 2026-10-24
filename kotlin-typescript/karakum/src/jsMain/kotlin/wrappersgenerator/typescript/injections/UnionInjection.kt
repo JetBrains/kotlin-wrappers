@@ -4,7 +4,6 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
@@ -119,7 +118,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(
             typeAlias.name.text == "ModuleExportName"
@@ -134,7 +133,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "ModuleName")
 
@@ -145,7 +144,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(
             typeAlias.name.text == "KeywordTypeSyntaxKind"
@@ -159,7 +158,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "JsonObjectExpression")
 
@@ -170,7 +169,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "EntityNameExpression")
 
@@ -181,7 +180,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val typeAlias = ensureNotNull(node.getParentOrNull())
+        val typeAlias = ensureNotNull(node.parent)
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "ObjectLiteralElementLike")
 
@@ -192,14 +191,14 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val property = ensureNotNull(node.getParentOrNull())
+        val property = ensureNotNull(node.parent)
         ensure(isPropertySignature(property))
 
         val propertyName = property.name
         ensure(isIdentifier(propertyName))
         ensure(propertyName.text == "name")
 
-        val interfaceNode = ensureNotNull(property.getParentOrNull())
+        val interfaceNode = ensureNotNull(property.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "DeclarationStatement")
 
@@ -210,14 +209,14 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val property = ensureNotNull(node.getParentOrNull())
+        val property = ensureNotNull(node.parent)
         ensure(isPropertySignature(property))
 
         val propertyName = property.name
         ensure(isIdentifier(propertyName))
         ensure(propertyName.text == "expression")
 
-        val interfaceNode = ensureNotNull(property.getParentOrNull())
+        val interfaceNode = ensureNotNull(property.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "JsxTagNamePropertyAccess")
 
@@ -228,14 +227,14 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val property = ensureNotNull(node.getParentOrNull())
+        val property = ensureNotNull(node.parent)
         ensure(isPropertySignature(property))
 
         val propertyName = property.name
         ensure(isIdentifier(propertyName))
         ensure(propertyName.text == "expression")
 
-        val interfaceNode = ensureNotNull(property.getParentOrNull())
+        val interfaceNode = ensureNotNull(property.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "ImportCall")
 
@@ -246,27 +245,27 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
-        val subProperty = ensureNotNull(node.getParentOrNull())
+        val subProperty = ensureNotNull(node.parent)
         ensure(isPropertySignature(subProperty))
 
         val subPropertyName = subProperty.name
         ensure(isIdentifier(subPropertyName))
         ensure(subPropertyName.text == "expression")
 
-        val typeLiteral = ensureNotNull(subProperty.getParentOrNull())
+        val typeLiteral = ensureNotNull(subProperty.parent)
         ensure(isTypeLiteralNode(typeLiteral))
 
-        val intersection = ensureNotNull(typeLiteral.getParentOrNull())
+        val intersection = ensureNotNull(typeLiteral.parent)
         ensure(isIntersectionTypeNode(intersection))
 
-        val property = ensureNotNull(intersection.getParentOrNull())
+        val property = ensureNotNull(intersection.parent)
         ensure(isPropertySignature(property))
 
         val propertyName = property.name
         ensure(isIdentifier(propertyName))
         ensure(propertyName.text == "class")
 
-        val interfaceNode = ensureNotNull(property.getParentOrNull())
+        val interfaceNode = ensureNotNull(property.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(
             interfaceNode.name.text == "JSDocAugmentsTag"

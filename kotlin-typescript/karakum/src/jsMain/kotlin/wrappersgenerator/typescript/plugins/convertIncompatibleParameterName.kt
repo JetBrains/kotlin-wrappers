@@ -2,7 +2,6 @@ package wrappersgenerator.typescript.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private val incompatibleParameterNames = mapOf(
@@ -29,17 +28,17 @@ val convertIncompatibleParameterName = createPlugin { node, _, _ ->
     nullable {
         ensure(isIdentifier(node))
 
-        val parameter = ensureNotNull(node.getParentOrNull())
+        val parameter = ensureNotNull(node.parent)
         ensure(isParameter(parameter))
         ensure(parameter.name === node)
 
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodDeclaration(method))
 
         val methodName = method.name
         ensure(isIdentifier(methodName))
 
-        val classNode = ensureNotNull(method.getParentOrNull())
+        val classNode = ensureNotNull(method.parent)
         ensure(isClassDeclaration(classNode))
 
         val classIncompatibleParameterNames = ensureNotNull(incompatibleParameterNames[classNode.name?.text])
@@ -50,17 +49,17 @@ val convertIncompatibleParameterName = createPlugin { node, _, _ ->
     } ?: nullable {
         ensure(isIdentifier(node))
 
-        val parameter = ensureNotNull(node.getParentOrNull())
+        val parameter = ensureNotNull(node.parent)
         ensure(isParameter(parameter))
         ensure(parameter.name === node)
 
-        val method = ensureNotNull(parameter.getParentOrNull())
+        val method = ensureNotNull(parameter.parent)
         ensure(isMethodSignature(method))
 
         val methodName = method.name
         ensure(isIdentifier(methodName))
 
-        val interfaceNode = ensureNotNull(method.getParentOrNull())
+        val interfaceNode = ensureNotNull(method.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
 
         val interfaceIncompatibleParameterNames = ensureNotNull(incompatibleParameterNames[interfaceNode.name.text])

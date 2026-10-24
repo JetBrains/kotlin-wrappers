@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 val convertGetPeerCertificate = createPlugin { node, context, _ ->
@@ -13,7 +12,7 @@ val convertGetPeerCertificate = createPlugin { node, context, _ ->
         ensure(isIdentifier(methodName))
         ensure(methodName.text == "getPeerCertificate")
 
-        val classNode = ensureNotNull(node.getParentOrNull())
+        val classNode = ensureNotNull(node.parent)
         ensure(isClassDeclaration(classNode))
 
         val className = ensureNotNull(classNode.name)

@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private val queryFunctionTypes = setOf(
@@ -184,7 +183,7 @@ val BoundQueriesPlugin = createPlugin { node, context, render ->
     } ?: nullable {
         ensure(isTypeParameterDeclaration(node))
 
-        val mappedType = ensureNotNull(node.getParentOrNull())
+        val mappedType = ensureNotNull(node.parent)
         ensure(isMappedTypeNode(mappedType))
 
         val constraint = ensureNotNull(node.constraint)

@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
@@ -19,7 +18,7 @@ val convertImportMetaConflictingOverloads = createPlugin { node, _, _ ->
         ensure(isIdentifier(name))
         ensure(name.text == "resolve")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "ImportMeta")
 

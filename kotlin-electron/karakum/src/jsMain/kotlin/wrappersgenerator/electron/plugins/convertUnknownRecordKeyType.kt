@@ -2,7 +2,6 @@ package wrappersgenerator.electron.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.SyntaxKind
 import typescript.asArray
 import typescript.isIdentifier
@@ -15,7 +14,7 @@ val convertUnknownRecordKeyType = createPlugin { node, _, _ ->
                     || node.kind == SyntaxKind.AnyKeyword,
         )
 
-        val typeReference = ensureNotNull(node.getParentOrNull())
+        val typeReference = ensureNotNull(node.parent)
         ensure(isTypeReferenceNode(typeReference))
 
         val typeName = typeReference.typeName

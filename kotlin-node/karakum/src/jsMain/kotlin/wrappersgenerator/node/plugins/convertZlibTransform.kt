@@ -2,7 +2,6 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.isExpressionWithTypeArguments
 import typescript.isHeritageClause
@@ -38,10 +37,10 @@ val convertZlibTransform = createPlugin { node, _, _ ->
         ensure(isIdentifier(propertyName))
         ensure(propertyName.text in "Transform")
 
-        val heritageClause = ensureNotNull(node.getParentOrNull())
+        val heritageClause = ensureNotNull(node.parent)
         ensure(isHeritageClause(heritageClause))
 
-        val interfaceNode = ensureNotNull(heritageClause.getParentOrNull())
+        val interfaceNode = ensureNotNull(heritageClause.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text in zlibTransforms)
 

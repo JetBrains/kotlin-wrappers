@@ -5,7 +5,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
 
@@ -18,7 +17,7 @@ class DuplexMembersInjection : Injection {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("stream.d.ts"))
 
-        val classNode = ensureNotNull(node.getParentOrNull())
+        val classNode = ensureNotNull(node.parent)
         ensure(isClassDeclaration(classNode))
         ensure(classNode.name?.text == "Readable")
 

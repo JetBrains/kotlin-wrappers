@@ -2,7 +2,6 @@ package wrappersgenerator.node.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.Node
 import typescript.isIdentifier
@@ -21,7 +20,7 @@ suspend fun annotateForceVarOverrides(node: Node, context: AnnotationContext) = 
         ensure(isIdentifier(name))
         ensure(name.text == "completer")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "ReadLineOptions")
 
@@ -35,7 +34,7 @@ suspend fun annotateForceVarOverrides(node: Node, context: AnnotationContext) = 
         ensure(isIdentifier(name))
         ensure(name.text == "family")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "ClientRequestArgs")
 

@@ -2,7 +2,6 @@ package wrappersgenerator.typescript.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private fun isConflictingOverload(node: MethodSignature) = nullable {
@@ -34,7 +33,7 @@ val convertConflictingOverloads = createPlugin { node, _, _ ->
     } ?: nullable {
         ensure(isCallSignatureDeclaration(node))
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "NodesVisitor")
 

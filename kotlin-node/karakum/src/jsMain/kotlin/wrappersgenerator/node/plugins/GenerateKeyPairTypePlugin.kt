@@ -10,7 +10,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.camelize
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
 import typescript.*
@@ -37,14 +36,14 @@ private fun isGenerateKeyPairType(node: Node) = nullable {
         }
     )
 
-    val parameter = ensureNotNull(node.getParentOrNull())
+    val parameter = ensureNotNull(node.parent)
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
     ensure(isIdentifier(parameterName))
     ensure(parameterName.text == "type")
 
-    val function = ensureNotNull(parameter.getParentOrNull())
+    val function = ensureNotNull(parameter.parent)
     ensure(isFunctionDeclaration(function))
 
     val functionName = ensureNotNull(function.name)
@@ -55,14 +54,14 @@ private fun isGenerateKeyPairType(node: Node) = nullable {
 } != null
 
 private fun isGenerateKeyPairOptions(node: Node) = nullable {
-    val parameter = ensureNotNull(node.getParentOrNull())
+    val parameter = ensureNotNull(node.parent)
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
     ensure(isIdentifier(parameterName))
     ensure(parameterName.text == "options")
 
-    val function = ensureNotNull(parameter.getParentOrNull())
+    val function = ensureNotNull(parameter.parent)
     ensure(isFunctionDeclaration(function))
 
     val functionName = ensureNotNull(function.name)

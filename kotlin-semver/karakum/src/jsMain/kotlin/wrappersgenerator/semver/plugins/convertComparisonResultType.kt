@@ -3,7 +3,6 @@ package wrappersgenerator.semver.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 private val comparisonResultType = listOf("1", "0", "-1")
@@ -35,7 +34,7 @@ val convertComparisonResultType = createPlugin { node, context, _ ->
         val printedTypes = node.types.asArray().map { typeScriptService.printNode(it) }
         ensure(printedTypes == comparisonResultType)
 
-        val parent = ensureNotNull(node.getParentOrNull())
+        val parent = ensureNotNull(node.parent)
 
         val name = ensureNotNull(
             nullable {

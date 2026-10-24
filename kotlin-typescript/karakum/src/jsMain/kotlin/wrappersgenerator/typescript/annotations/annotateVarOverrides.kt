@@ -2,7 +2,6 @@ package wrappersgenerator.typescript.annotations
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 
 suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
@@ -16,7 +15,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
                     || name.text == "type",
         )
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(
             interfaceNode.name.text == "AssertsIdentifierTypePredicate"
@@ -33,7 +32,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
         ensure(isIdentifier(name))
         ensure(name.text == "value")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(
             interfaceNode.name.text == "BigIntLiteralType"
@@ -49,7 +48,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
         ensure(isIdentifier(name))
         ensure(name.text == "moduleSpecifier")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "CompletionEntryDataResolved")
 
@@ -61,7 +60,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
         ensure(isIdentifier(name))
         ensure(name.text == "exportMapKey")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "CompletionEntryDataUnresolved")
 
@@ -77,7 +76,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
                     || name.text == "length",
         )
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "DiagnosticWithLocation")
 
@@ -89,7 +88,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
         ensure(isIdentifier(name))
         ensure(name.text == "useCaseSensitiveFileNames")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "ParseConfigHost")
 
@@ -101,7 +100,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
         ensure(isIdentifier(name))
         ensure(name.text == "target")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "TupleTypeReference")
 
@@ -113,7 +112,7 @@ suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nulla
         ensure(isIdentifier(name))
         ensure(name.text == "useCaseSensitiveFileNames")
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "LanguageServiceHost")
 

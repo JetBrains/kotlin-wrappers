@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.asArray
 import typescript.isClassDeclaration
@@ -21,7 +20,7 @@ val convertStreamDestroy = createPlugin { node, context, render ->
 
         ensure(isMethodDeclaration(node))
 
-        val classNode = ensureNotNull(node.getParentOrNull())
+        val classNode = ensureNotNull(node.parent)
         ensure(isClassDeclaration(classNode))
         ensure(
             classNode.name?.text == "Readable"

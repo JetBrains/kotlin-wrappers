@@ -3,7 +3,6 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.*
 import wrappersgenerator.node.plugins.SignatureOverrideConfig.Alias
 import wrappersgenerator.node.plugins.SignatureOverrideConfig.Preserve
@@ -164,7 +163,7 @@ val convertOverriddenPropertySignature = createPlugin { node, context, render ->
     nullable {
         ensure(isPropertySignature(node))
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
 
         val interfaceOverrides = ensureNotNull(overriddenProps[interfaceNode.name.text])

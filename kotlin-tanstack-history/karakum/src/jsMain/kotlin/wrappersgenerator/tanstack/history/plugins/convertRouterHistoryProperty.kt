@@ -6,7 +6,6 @@ import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.asArray
 import typescript.isFunctionTypeNode
 import typescript.isInterfaceDeclaration
@@ -16,7 +15,7 @@ val convertRouterHistoryProperty = createPlugin { node, context, render ->
     nullable {
         ensure(isPropertySignature(node))
 
-        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        val interfaceNode = ensureNotNull(node.parent)
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "RouterHistory")
 
