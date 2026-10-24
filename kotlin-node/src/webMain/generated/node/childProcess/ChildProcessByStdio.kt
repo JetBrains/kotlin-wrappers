@@ -22,7 +22,7 @@ external interface ChildProcessByStdio<I : Writable?, O : Readable?, E : Readabl
             I,
             O,
             E,
-            Any? /* Readable | Writable | null | undefined */, // extra, no modification
-            Any? /* Readable | Writable | null | undefined */
+            Any?, /* Readable | Writable | null | undefined */ // extra, no modification
+            Any?, /* Readable | Writable | null | undefined */
             >
 }

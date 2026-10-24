@@ -22,7 +22,7 @@ external interface ChildProcessWithoutNullStreams : ChildProcess {
             Writable,
             Readable,
             Readable, // stderr
-            Any? /* Readable | Writable | null | undefined */, // extra, no modification
-            Any? /* Readable | Writable | null | undefined */
+            Any?, /* Readable | Writable | null | undefined */ // extra, no modification
+            Any?, /* Readable | Writable | null | undefined */
             >
 }

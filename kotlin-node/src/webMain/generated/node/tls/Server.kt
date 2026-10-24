@@ -124,8 +124,8 @@ open external class Server : node.net.Server {
                         (
                 err: js.errors.JsError?,
                 resp: node.buffer.Buffer<*>?,
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("resumeSession")
@@ -135,8 +135,8 @@ open external class Server : node.net.Server {
                         (
                 err: js.errors.JsError?,
                 sessionData: node.buffer.Buffer<*>?,
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("secureConnection")

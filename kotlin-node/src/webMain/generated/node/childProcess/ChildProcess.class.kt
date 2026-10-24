@@ -120,8 +120,8 @@ open external class ChildProcess : EventEmitter {
             Writable?, // stdin
             Readable?, // stdout
             Readable?, // stderr
-            Any? /* Readable | Writable | null | undefined */, // extra
-            Any? /* Readable | Writable | null | undefined */
+            Any?, /* Readable | Writable | null | undefined */ // extra
+            Any?, /* Readable | Writable | null | undefined */
             >
 
     /**

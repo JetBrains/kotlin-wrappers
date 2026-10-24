@@ -68,8 +68,8 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
                         (
                 err: js.errors.JsError?,
                 resp: node.buffer.Buffer<*>?,
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("secureConnection")

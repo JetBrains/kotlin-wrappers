@@ -227,9 +227,10 @@ external interface ServerHttp2Session<Http1Request : IncomingMessage, Http1Respo
      */
     fun origin(
         vararg origins: js.array.ReadonlyArray<
-                Any /* string | url.URL | {
-    origin: string;
-} */
+                Any,
+                /* string | url.URL | {
+                   origin: string;
+               } */
                 >,
     )
 
