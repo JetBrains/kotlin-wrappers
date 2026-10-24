@@ -153,7 +153,6 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
 
     val eventMap = declarationType.types.asArray()
         .find { isTypeLiteralNode(it) }
-        .let { ensureNotNull(it) }
     ensure(isTypeLiteralNode(eventMap))
 
     eventMap.members.asArray()

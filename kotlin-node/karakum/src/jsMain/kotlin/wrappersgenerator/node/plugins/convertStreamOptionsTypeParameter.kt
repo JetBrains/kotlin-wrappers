@@ -21,7 +21,6 @@ val convertStreamOptionsTypeParameter = createPlugin { node, _, render ->
         val expressionWithTypeArguments = node
             .parent // TypeReference
             ?.parent // ExpressionWithTypeArguments
-            .let { ensureNotNull(it) }
         ensure(isExpressionWithTypeArguments(expressionWithTypeArguments))
 
         val expression = expressionWithTypeArguments.expression
@@ -31,7 +30,6 @@ val convertStreamOptionsTypeParameter = createPlugin { node, _, render ->
         val interfaceNode = expressionWithTypeArguments
             .parent // HeritageClause
             ?.parent // InterfaceDeclaration
-            .let { ensureNotNull(it) }
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(
             interfaceNode.name.text == "ReadableOptions"

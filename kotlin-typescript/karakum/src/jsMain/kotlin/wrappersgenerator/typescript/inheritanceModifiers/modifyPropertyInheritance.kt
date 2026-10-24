@@ -258,7 +258,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 .parent // TypeLiteral
                 ?.parent // IntersectionType
                 ?.parent // TypeAliasDeclaration
-                .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImmediatelyInvokedArrowFunction")
 
@@ -273,7 +272,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 ?.parent // TypeLiteral
                 ?.parent // IntersectionType
                 ?.parent // TypeAliasDeclaration
-                .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImmediatelyInvokedArrowFunction")
 
@@ -285,7 +283,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 .parent // TypeLiteral
                 ?.parent // IntersectionType
                 ?.parent // TypeAliasDeclaration
-                .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImmediatelyInvokedFunctionExpression")
 
@@ -354,7 +351,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 ?.parent // IntersectionType
                 ?.parent // PropertySignature
                 ?.parent // InterfaceDeclaration
-                .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocAugmentsTag")
 
@@ -367,7 +363,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 ?.parent // IntersectionType
                 ?.parent // PropertySignature
                 ?.parent // InterfaceDeclaration
-                .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "JSDocImplementsTag")
 
@@ -546,7 +541,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 .parent // TypeLiteral
                 ?.parent // IntersectionType
                 ?.parent // TypeAliasDeclaration
-                .let { ensureNotNull(it) }
             ensure(isTypeAliasDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ParameterPropertyDeclaration")
 
@@ -801,7 +795,6 @@ suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierCo
                 ?.parent // IntersectionType
                 ?.parent // PropertySignature
                 ?.parent // InterfaceDeclaration
-                .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(typeAlias))
             ensure(typeAlias.name.text == "ImportDeferProperty")
 

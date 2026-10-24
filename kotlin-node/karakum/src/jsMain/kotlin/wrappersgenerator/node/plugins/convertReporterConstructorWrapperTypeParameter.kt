@@ -35,7 +35,6 @@ val convertReporterConstructorWrapperTypeParameter = createPlugin { node, contex
             val interfaceNode = node
                 .parent // MethodSignature
                 ?.parent // InterfaceDeclaration
-                .let { ensureNotNull(it) }
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ReporterConstructorWrapper")
 
