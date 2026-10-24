@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isColonToken")
-external fun isColonTokenRaw(node: Node): Boolean /* node is ColonToken */
+external val isColonToken: js.reflect.TypeGuard<Node, ColonToken>

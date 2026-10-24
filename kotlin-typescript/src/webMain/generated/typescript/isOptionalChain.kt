@@ -4,7 +4,4 @@
 
 package typescript
 
-@JsName("isOptionalChain")
-external fun isOptionalChainRaw(
-    node: Node,
-): Boolean /* node is PropertyAccessChain | ElementAccessChain | CallChain | NonNullChain */
+external val isOptionalChain: js.reflect.TypeGuard<Node, IsOptionalChainResultPredicate>

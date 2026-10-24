@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocReadonlyTag")
-external fun isJSDocReadonlyTagRaw(node: Node): Boolean /* node is JSDocReadonlyTag */
+external val isJSDocReadonlyTag: js.reflect.TypeGuard<Node, JSDocReadonlyTag>

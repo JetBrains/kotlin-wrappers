@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNamedImportBindings")
-external fun isNamedImportBindingsRaw(node: Node): Boolean /* node is NamedImportBindings */
+external val isNamedImportBindings: js.reflect.TypeGuard<Node, NamedImportBindings>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPlusToken")
-external fun isPlusTokenRaw(node: Node): Boolean /* node is PlusToken */
+external val isPlusToken: js.reflect.TypeGuard<Node, PlusToken>

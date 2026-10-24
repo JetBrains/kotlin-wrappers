@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxTagNameExpression")
-external fun isJsxTagNameExpressionRaw(node: Node): Boolean /* node is JsxTagNameExpression */
+external val isJsxTagNameExpression: js.reflect.TypeGuard<Node, JsxTagNameExpression>

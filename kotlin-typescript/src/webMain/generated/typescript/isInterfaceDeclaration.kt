@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isInterfaceDeclaration")
-external fun isInterfaceDeclarationRaw(node: Node): Boolean /* node is InterfaceDeclaration */
+external val isInterfaceDeclaration: js.reflect.TypeGuard<Node, InterfaceDeclaration>

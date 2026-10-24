@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isCaseClause")
-external fun isCaseClauseRaw(node: Node): Boolean /* node is CaseClause */
+external val isCaseClause: js.reflect.TypeGuard<Node, CaseClause>

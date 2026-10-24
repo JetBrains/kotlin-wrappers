@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocAllType")
-external fun isJSDocAllTypeRaw(node: Node): Boolean /* node is JSDocAllType */
+external val isJSDocAllType: js.reflect.TypeGuard<Node, JSDocAllType>

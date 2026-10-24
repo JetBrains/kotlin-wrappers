@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isLeftHandSideExpression")
-external fun isLeftHandSideExpressionRaw(node: Node): Boolean /* node is LeftHandSideExpression */
+external val isLeftHandSideExpression: js.reflect.TypeGuard<Node, LeftHandSideExpression>

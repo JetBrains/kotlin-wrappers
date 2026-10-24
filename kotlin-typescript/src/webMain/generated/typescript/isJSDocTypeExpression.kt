@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocTypeExpression")
-external fun isJSDocTypeExpressionRaw(node: Node): Boolean /* node is JSDocTypeExpression */
+external val isJSDocTypeExpression: js.reflect.TypeGuard<Node, JSDocTypeExpression>

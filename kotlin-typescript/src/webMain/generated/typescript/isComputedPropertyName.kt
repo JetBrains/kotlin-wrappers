@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isComputedPropertyName")
-external fun isComputedPropertyNameRaw(node: Node): Boolean /* node is ComputedPropertyName */
+external val isComputedPropertyName: js.reflect.TypeGuard<Node, ComputedPropertyName>

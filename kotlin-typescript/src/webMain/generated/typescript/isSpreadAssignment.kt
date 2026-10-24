@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isSpreadAssignment")
-external fun isSpreadAssignmentRaw(node: Node): Boolean /* node is SpreadAssignment */
+external val isSpreadAssignment: js.reflect.TypeGuard<Node, SpreadAssignment>

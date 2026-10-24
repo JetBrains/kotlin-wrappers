@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocNameReference")
-external fun isJSDocNameReferenceRaw(node: Node): Boolean /* node is JSDocNameReference */
+external val isJSDocNameReference: js.reflect.TypeGuard<Node, JSDocNameReference>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isObjectBindingPattern")
-external fun isObjectBindingPatternRaw(node: Node): Boolean /* node is ObjectBindingPattern */
+external val isObjectBindingPattern: js.reflect.TypeGuard<Node, ObjectBindingPattern>

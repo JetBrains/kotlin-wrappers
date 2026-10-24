@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNamespaceImport")
-external fun isNamespaceImportRaw(node: Node): Boolean /* node is NamespaceImport */
+external val isNamespaceImport: js.reflect.TypeGuard<Node, NamespaceImport>

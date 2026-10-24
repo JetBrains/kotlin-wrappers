@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxCallLike")
-external fun isJsxCallLikeRaw(node: Node): Boolean /* node is JsxCallLike */
+external val isJsxCallLike: js.reflect.TypeGuard<Node, JsxCallLike>

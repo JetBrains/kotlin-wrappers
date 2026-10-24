@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxText")
-external fun isJsxTextRaw(node: Node): Boolean /* node is JsxText */
+external val isJsxText: js.reflect.TypeGuard<Node, JsxText>

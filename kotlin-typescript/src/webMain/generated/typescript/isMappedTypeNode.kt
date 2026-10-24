@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isMappedTypeNode")
-external fun isMappedTypeNodeRaw(node: Node): Boolean /* node is MappedTypeNode */
+external val isMappedTypeNode: js.reflect.TypeGuard<Node, MappedTypeNode>

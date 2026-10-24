@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxNamespacedName")
-external fun isJsxNamespacedNameRaw(node: Node): Boolean /* node is JsxNamespacedName */
+external val isJsxNamespacedName: js.reflect.TypeGuard<Node, JsxNamespacedName>

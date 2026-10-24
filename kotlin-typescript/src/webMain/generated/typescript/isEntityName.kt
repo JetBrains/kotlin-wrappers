@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isEntityName")
-external fun isEntityNameRaw(node: Node): Boolean /* node is EntityName */
+external val isEntityName: js.reflect.TypeGuard<Node, EntityName>

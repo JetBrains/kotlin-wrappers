@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isBreakOrContinueStatement")
-external fun isBreakOrContinueStatementRaw(node: Node): Boolean /* node is BreakOrContinueStatement */
+external val isBreakOrContinueStatement: js.reflect.TypeGuard<Node, BreakOrContinueStatement>

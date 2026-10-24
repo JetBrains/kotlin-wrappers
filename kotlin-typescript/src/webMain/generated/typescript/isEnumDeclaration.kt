@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isEnumDeclaration")
-external fun isEnumDeclarationRaw(node: Node): Boolean /* node is EnumDeclaration */
+external val isEnumDeclaration: js.reflect.TypeGuard<Node, EnumDeclaration>

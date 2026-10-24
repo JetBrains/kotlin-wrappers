@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isBinaryExpression")
-external fun isBinaryExpressionRaw(node: Node): Boolean /* node is BinaryExpression */
+external val isBinaryExpression: js.reflect.TypeGuard<Node, BinaryExpression>

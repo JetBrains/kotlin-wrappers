@@ -4,7 +4,4 @@
 
 package typescript
 
-@JsName("isFunctionOrConstructorTypeNode")
-external fun isFunctionOrConstructorTypeNodeRaw(
-    node: Node,
-): Boolean /* node is FunctionTypeNode | ConstructorTypeNode */
+external val isFunctionOrConstructorTypeNode: js.reflect.TypeGuard<Node, IsFunctionOrConstructorTypeNodeResultPredicate>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isQuestionOrPlusOrMinusToken")
-external fun isQuestionOrPlusOrMinusTokenRaw(node: Node): Boolean /* node is QuestionToken | PlusToken | MinusToken */
+external val isQuestionOrPlusOrMinusToken: js.reflect.TypeGuard<Node, IsQuestionOrPlusOrMinusTokenResultPredicate>

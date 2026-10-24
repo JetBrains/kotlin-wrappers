@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPropertyAssignment")
-external fun isPropertyAssignmentRaw(node: Node): Boolean /* node is PropertyAssignment */
+external val isPropertyAssignment: js.reflect.TypeGuard<Node, PropertyAssignment>

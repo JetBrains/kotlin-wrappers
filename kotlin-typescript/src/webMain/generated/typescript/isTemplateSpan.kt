@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTemplateSpan")
-external fun isTemplateSpanRaw(node: Node): Boolean /* node is TemplateSpan */
+external val isTemplateSpan: js.reflect.TypeGuard<Node, TemplateSpan>

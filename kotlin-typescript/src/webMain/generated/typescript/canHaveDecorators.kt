@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("canHaveDecorators")
-external fun canHaveDecoratorsRaw(node: Node): Boolean /* node is HasDecorators */
+external val canHaveDecorators: js.reflect.TypeGuard<Node, HasDecorators>

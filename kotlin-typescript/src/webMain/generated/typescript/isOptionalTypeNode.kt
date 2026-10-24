@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isOptionalTypeNode")
-external fun isOptionalTypeNodeRaw(node: Node): Boolean /* node is OptionalTypeNode */
+external val isOptionalTypeNode: js.reflect.TypeGuard<Node, OptionalTypeNode>

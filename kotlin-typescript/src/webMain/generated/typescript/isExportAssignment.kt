@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isExportAssignment")
-external fun isExportAssignmentRaw(node: Node): Boolean /* node is ExportAssignment */
+external val isExportAssignment: js.reflect.TypeGuard<Node, ExportAssignment>

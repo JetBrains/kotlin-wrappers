@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isSpreadElement")
-external fun isSpreadElementRaw(node: Node): Boolean /* node is SpreadElement */
+external val isSpreadElement: js.reflect.TypeGuard<Node, SpreadElement>

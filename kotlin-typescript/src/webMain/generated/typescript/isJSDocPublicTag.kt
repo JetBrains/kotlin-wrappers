@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocPublicTag")
-external fun isJSDocPublicTagRaw(node: Node): Boolean /* node is JSDocPublicTag */
+external val isJSDocPublicTag: js.reflect.TypeGuard<Node, JSDocPublicTag>

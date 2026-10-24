@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isVariableDeclarationList")
-external fun isVariableDeclarationListRaw(node: Node): Boolean /* node is VariableDeclarationList */
+external val isVariableDeclarationList: js.reflect.TypeGuard<Node, VariableDeclarationList>

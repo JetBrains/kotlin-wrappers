@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isBreakStatement")
-external fun isBreakStatementRaw(node: Node): Boolean /* node is BreakStatement */
+external val isBreakStatement: js.reflect.TypeGuard<Node, BreakStatement>

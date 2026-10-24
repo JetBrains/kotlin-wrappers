@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isLabeledStatement")
-external fun isLabeledStatementRaw(node: Node): Boolean /* node is LabeledStatement */
+external val isLabeledStatement: js.reflect.TypeGuard<Node, LabeledStatement>

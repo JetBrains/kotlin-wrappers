@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTemplateExpression")
-external fun isTemplateExpressionRaw(node: Node): Boolean /* node is TemplateExpression */
+external val isTemplateExpression: js.reflect.TypeGuard<Node, TemplateExpression>

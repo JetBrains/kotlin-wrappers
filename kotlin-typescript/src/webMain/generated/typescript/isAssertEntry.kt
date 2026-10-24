@@ -5,5 +5,4 @@
 package typescript
 
 /** @deprecated */
-@JsName("isAssertEntry")
-external fun isAssertEntryRaw(node: Node): Boolean /* node is AssertEntry */
+external val isAssertEntry: js.reflect.TypeGuard<Node, AssertEntry>

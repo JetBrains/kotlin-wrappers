@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocNullableType")
-external fun isJSDocNullableTypeRaw(node: Node): Boolean /* node is JSDocNullableType */
+external val isJSDocNullableType: js.reflect.TypeGuard<Node, JSDocNullableType>

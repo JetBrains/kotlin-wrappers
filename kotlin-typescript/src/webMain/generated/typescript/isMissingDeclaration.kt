@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isMissingDeclaration")
-external fun isMissingDeclarationRaw(node: Node): Boolean /* node is MissingDeclaration */
+external val isMissingDeclaration: js.reflect.TypeGuard<Node, MissingDeclaration>

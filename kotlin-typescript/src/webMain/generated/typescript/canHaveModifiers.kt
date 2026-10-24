@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("canHaveModifiers")
-external fun canHaveModifiersRaw(node: Node): Boolean /* node is HasModifiers */
+external val canHaveModifiers: js.reflect.TypeGuard<Node, HasModifiers>

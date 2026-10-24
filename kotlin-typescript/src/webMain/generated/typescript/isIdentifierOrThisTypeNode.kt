@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isIdentifierOrThisTypeNode")
-external fun isIdentifierOrThisTypeNodeRaw(node: Node): Boolean /* node is Identifier | ThisTypeNode */
+external val isIdentifierOrThisTypeNode: js.reflect.TypeGuard<Node, IsIdentifierOrThisTypeNodeResultPredicate>

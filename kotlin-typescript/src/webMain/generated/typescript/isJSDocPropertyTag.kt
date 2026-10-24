@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocPropertyTag")
-external fun isJSDocPropertyTagRaw(node: Node): Boolean /* node is JSDocPropertyTag */
+external val isJSDocPropertyTag: js.reflect.TypeGuard<Node, JSDocPropertyTag>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocUnknownType")
-external fun isJSDocUnknownTypeRaw(node: Node): Boolean /* node is JSDocUnknownType */
+external val isJSDocUnknownType: js.reflect.TypeGuard<Node, JSDocUnknownType>

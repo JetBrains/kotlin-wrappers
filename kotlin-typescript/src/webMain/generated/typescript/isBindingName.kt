@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isBindingName")
-external fun isBindingNameRaw(node: Node): Boolean /* node is BindingName */
+external val isBindingName: js.reflect.TypeGuard<Node, BindingName>

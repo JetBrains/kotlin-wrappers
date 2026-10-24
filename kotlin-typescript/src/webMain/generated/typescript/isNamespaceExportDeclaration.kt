@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNamespaceExportDeclaration")
-external fun isNamespaceExportDeclarationRaw(node: Node): Boolean /* node is NamespaceExportDeclaration */
+external val isNamespaceExportDeclaration: js.reflect.TypeGuard<Node, NamespaceExportDeclaration>

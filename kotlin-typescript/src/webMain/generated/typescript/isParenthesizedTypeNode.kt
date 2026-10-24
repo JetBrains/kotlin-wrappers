@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isParenthesizedTypeNode")
-external fun isParenthesizedTypeNodeRaw(node: Node): Boolean /* node is ParenthesizedTypeNode */
+external val isParenthesizedTypeNode: js.reflect.TypeGuard<Node, ParenthesizedTypeNode>

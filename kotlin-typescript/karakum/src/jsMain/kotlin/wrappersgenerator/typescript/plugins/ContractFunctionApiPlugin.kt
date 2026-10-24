@@ -1,13 +1,11 @@
 package wrappersgenerator.typescript.plugins
 
 import arrow.core.raise.nullable
-import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
-import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
+import io.github.sgrishchenko.karakum.extension.createPlugin
+import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
+import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
+import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
-import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import js.array.ReadonlyArray
 import typescript.*
 
 private fun isConflictingOverload(node: FunctionDeclaration) = nullable {
@@ -19,20 +17,8 @@ private fun isConflictingOverload(node: FunctionDeclaration) = nullable {
     ensure(isLiteralTypeNode(secondParameterType))
 } != null
 
-class ContractFunctionApiPlugin : Plugin {
-    private val contractApiDeclarations = mutableListOf<DerivedDeclaration>()
-
-    override suspend fun setup(context: Context) = Unit
-
-    override suspend fun traverse(node: Node, context: Context) = Unit
-
-    override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
-
-        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
-
-        val namespace = typeScriptService.findClosestNamespace(node)
-
+val ContractFunctionApiPlugin = createPlugin { node, context, next ->
+    nullable {
         ensure(isFunctionDeclaration(node))
 
         val type = ensureNotNull(node.type)
@@ -45,77 +31,21 @@ class ContractFunctionApiPlugin : Plugin {
 
         val name = escapeIdentifier(next(nameNode))
 
-        val typeParameters = node.typeParameters?.asArray()
-            ?.map { next(it) }
-            ?.joinToString(", ")
-
-        val returnType = next(type)
-
-        val contractReturns = "returns(true)"
-
-        val parameterName = escapeIdentifier(next(type.parameterName))
-
         val typeType = ensureNotNull(type.type)
 
         val contractType = next(typeType)
 
-        val body = convertParameterDeclarations(
-            node, context, next,
-            ParameterDeclarationStrategy.function,
-        ) template@{ parameters, signature ->
-            if (isConflictingOverload(node)) return@template ""
-
-            val parameterNames = signature
-                .withIndex()
-                .mapNotNull { (index, it) ->
-                    nullable {
-                        val parameterName = it.parameter.name
-
-                        if (isIdentifier(parameterName)) {
-                            escapeIdentifier(next(parameterName))
-                        } else {
-                            "param${index}"
-                        }
-                    }
-                }
-                .joinToString(", ")
-
-            """
-                @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE", "CANNOT_CHECK_FOR_ERASED", "ERROR_IN_CONTRACT_DESCRIPTION")
-                inline fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it"}} {
-                    contract {
-                        $contractReturns implies (${parameterName} is ${contractType})
-                    }
-
-                    return ${name}Raw(${parameterNames})
-                }
-            """.trimIndent()
-        }
-
-        val nodeInfo = DerivedDeclaration(
-            sourceFileName,
-            namespace,
-            fileName = "${name}.contract.kt",
-            body,
-        )
-
-        contractApiDeclarations += nodeInfo
+        // TODO: support overloads?
+        ensure(name != "isStringLiteralLike")
 
         convertParameterDeclarations(
             node, context, next,
             ParameterDeclarationStrategy.function,
-        ) template@{ parameters, _ ->
+        ) template@{ _, signature ->
             if (isConflictingOverload(node)) return@template ""
+            val valueType = signature.singleOrNull()?.parameter?.type ?: return@template ""
 
-            """
-                @JsName("$name")
-                external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}Raw(${parameters})${ifPresent(returnType) { ": $it" }}
-            """.trimIndent()
+            "external val ${name}: js.reflect.TypeGuard<${next(valueType)}, ${contractType}>"
         }
     }
-
-    override suspend fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
-        return generateDerivedDeclarations(contractApiDeclarations.toTypedArray(), context)
-    }
-
 }

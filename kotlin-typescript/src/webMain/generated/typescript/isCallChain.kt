@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isCallChain")
-external fun isCallChainRaw(node: Node): Boolean /* node is CallChain */
+external val isCallChain: js.reflect.TypeGuard<Node, CallChain>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isDeleteExpression")
-external fun isDeleteExpressionRaw(node: Node): Boolean /* node is DeleteExpression */
+external val isDeleteExpression: js.reflect.TypeGuard<Node, DeleteExpression>

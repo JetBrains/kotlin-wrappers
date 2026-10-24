@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNonNullChain")
-external fun isNonNullChainRaw(node: Node): Boolean /* node is NonNullChain */
+external val isNonNullChain: js.reflect.TypeGuard<Node, NonNullChain>

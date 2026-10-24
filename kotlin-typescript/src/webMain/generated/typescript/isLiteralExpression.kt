@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isLiteralExpression")
-external fun isLiteralExpressionRaw(node: Node): Boolean /* node is LiteralExpression */
+external val isLiteralExpression: js.reflect.TypeGuard<Node, LiteralExpression>

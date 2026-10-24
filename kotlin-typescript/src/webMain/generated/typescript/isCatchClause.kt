@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isCatchClause")
-external fun isCatchClauseRaw(node: Node): Boolean /* node is CatchClause */
+external val isCatchClause: js.reflect.TypeGuard<Node, CatchClause>

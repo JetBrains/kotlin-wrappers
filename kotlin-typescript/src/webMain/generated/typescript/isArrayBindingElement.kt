@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isArrayBindingElement")
-external fun isArrayBindingElementRaw(node: Node): Boolean /* node is ArrayBindingElement */
+external val isArrayBindingElement: js.reflect.TypeGuard<Node, ArrayBindingElement>

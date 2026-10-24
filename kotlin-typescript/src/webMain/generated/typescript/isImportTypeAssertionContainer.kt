@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isImportTypeAssertionContainer")
-external fun isImportTypeAssertionContainerRaw(node: Node): Boolean /* node is ImportTypeAssertionContainer */
+external val isImportTypeAssertionContainer: js.reflect.TypeGuard<Node, ImportTypeAssertionContainer>

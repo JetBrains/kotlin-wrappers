@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isModuleReference")
-external fun isModuleReferenceRaw(node: Node): Boolean /* node is ModuleReference */
+external val isModuleReference: js.reflect.TypeGuard<Node, ModuleReference>

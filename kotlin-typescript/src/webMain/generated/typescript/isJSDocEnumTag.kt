@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocEnumTag")
-external fun isJSDocEnumTagRaw(node: Node): Boolean /* node is JSDocEnumTag */
+external val isJSDocEnumTag: js.reflect.TypeGuard<Node, JSDocEnumTag>

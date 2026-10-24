@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isClassDeclaration")
-external fun isClassDeclarationRaw(node: Node): Boolean /* node is ClassDeclaration */
+external val isClassDeclaration: js.reflect.TypeGuard<Node, ClassDeclaration>

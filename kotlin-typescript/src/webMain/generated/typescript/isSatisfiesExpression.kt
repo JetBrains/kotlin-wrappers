@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isSatisfiesExpression")
-external fun isSatisfiesExpressionRaw(node: Node): Boolean /* node is SatisfiesExpression */
+external val isSatisfiesExpression: js.reflect.TypeGuard<Node, SatisfiesExpression>

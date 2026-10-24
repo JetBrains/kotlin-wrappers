@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isClassOrTypeElement")
-external fun isClassOrTypeElementRaw(node: Node): Boolean /* node is ClassElement | TypeElement */
+external val isClassOrTypeElement: js.reflect.TypeGuard<Node, IsClassOrTypeElementResultPredicate>

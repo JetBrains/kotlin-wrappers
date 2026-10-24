@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isEmptyStatement")
-external fun isEmptyStatementRaw(node: Node): Boolean /* node is EmptyStatement */
+external val isEmptyStatement: js.reflect.TypeGuard<Node, EmptyStatement>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isMinusToken")
-external fun isMinusTokenRaw(node: Node): Boolean /* node is MinusToken */
+external val isMinusToken: js.reflect.TypeGuard<Node, MinusToken>

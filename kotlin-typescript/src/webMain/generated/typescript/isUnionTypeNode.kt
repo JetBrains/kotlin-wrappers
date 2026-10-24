@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isUnionTypeNode")
-external fun isUnionTypeNodeRaw(node: Node): Boolean /* node is UnionTypeNode */
+external val isUnionTypeNode: js.reflect.TypeGuard<Node, UnionTypeNode>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocSatisfiesTag")
-external fun isJSDocSatisfiesTagRaw(node: Node): Boolean /* node is JSDocSatisfiesTag */
+external val isJSDocSatisfiesTag: js.reflect.TypeGuard<Node, JSDocSatisfiesTag>

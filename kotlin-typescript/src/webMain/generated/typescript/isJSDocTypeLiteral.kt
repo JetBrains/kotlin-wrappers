@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocTypeLiteral")
-external fun isJSDocTypeLiteralRaw(node: Node): Boolean /* node is JSDocTypeLiteral */
+external val isJSDocTypeLiteral: js.reflect.TypeGuard<Node, JSDocTypeLiteral>

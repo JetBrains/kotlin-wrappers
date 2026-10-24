@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isCaseOrDefaultClause")
-external fun isCaseOrDefaultClauseRaw(node: Node): Boolean /* node is CaseOrDefaultClause */
+external val isCaseOrDefaultClause: js.reflect.TypeGuard<Node, CaseOrDefaultClause>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isExpressionWithTypeArguments")
-external fun isExpressionWithTypeArgumentsRaw(node: Node): Boolean /* node is ExpressionWithTypeArguments */
+external val isExpressionWithTypeArguments: js.reflect.TypeGuard<Node, ExpressionWithTypeArguments>

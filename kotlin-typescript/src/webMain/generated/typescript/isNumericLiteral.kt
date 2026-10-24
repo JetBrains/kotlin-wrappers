@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNumericLiteral")
-external fun isNumericLiteralRaw(node: Node): Boolean /* node is NumericLiteral */
+external val isNumericLiteral: js.reflect.TypeGuard<Node, NumericLiteral>

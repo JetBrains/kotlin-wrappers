@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxAttributes")
-external fun isJsxAttributesRaw(node: Node): Boolean /* node is JsxAttributes */
+external val isJsxAttributes: js.reflect.TypeGuard<Node, JsxAttributes>

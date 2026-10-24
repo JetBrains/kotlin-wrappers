@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocNamepathType")
-external fun isJSDocNamepathTypeRaw(node: Node): Boolean /* node is JSDocNamepathType */
+external val isJSDocNamepathType: js.reflect.TypeGuard<Node, JSDocNamepathType>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isIndexSignatureDeclaration")
-external fun isIndexSignatureDeclarationRaw(node: Node): Boolean /* node is IndexSignatureDeclaration */
+external val isIndexSignatureDeclaration: js.reflect.TypeGuard<Node, IndexSignatureDeclaration>

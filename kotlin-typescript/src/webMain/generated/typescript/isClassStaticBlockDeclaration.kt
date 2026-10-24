@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isClassStaticBlockDeclaration")
-external fun isClassStaticBlockDeclarationRaw(node: Node): Boolean /* node is ClassStaticBlockDeclaration */
+external val isClassStaticBlockDeclaration: js.reflect.TypeGuard<Node, ClassStaticBlockDeclaration>

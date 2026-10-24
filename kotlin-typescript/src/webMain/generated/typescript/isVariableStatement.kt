@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isVariableStatement")
-external fun isVariableStatementRaw(node: Node): Boolean /* node is VariableStatement */
+external val isVariableStatement: js.reflect.TypeGuard<Node, VariableStatement>

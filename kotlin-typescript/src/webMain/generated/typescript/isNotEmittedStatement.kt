@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNotEmittedStatement")
-external fun isNotEmittedStatementRaw(node: Node): Boolean /* node is NotEmittedStatement */
+external val isNotEmittedStatement: js.reflect.TypeGuard<Node, NotEmittedStatement>

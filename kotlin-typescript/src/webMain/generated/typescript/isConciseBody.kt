@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isConciseBody")
-external fun isConciseBodyRaw(node: Node): Boolean /* node is ConciseBody */
+external val isConciseBody: js.reflect.TypeGuard<Node, ConciseBody>

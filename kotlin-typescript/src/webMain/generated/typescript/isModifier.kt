@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isModifier")
-external fun isModifierRaw(node: Node): Boolean /* node is Modifier */
+external val isModifier: js.reflect.TypeGuard<Node, Modifier>

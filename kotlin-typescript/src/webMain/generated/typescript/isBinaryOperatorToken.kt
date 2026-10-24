@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isBinaryOperatorToken")
-external fun isBinaryOperatorTokenRaw(node: Node): Boolean /* node is BinaryOperatorToken */
+external val isBinaryOperatorToken: js.reflect.TypeGuard<Node, BinaryOperatorToken>

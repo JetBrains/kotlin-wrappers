@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxFragment")
-external fun isJsxFragmentRaw(node: Node): Boolean /* node is JsxFragment */
+external val isJsxFragment: js.reflect.TypeGuard<Node, JsxFragment>

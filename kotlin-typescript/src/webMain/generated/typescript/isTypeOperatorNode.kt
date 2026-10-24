@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeOperatorNode")
-external fun isTypeOperatorNodeRaw(node: Node): Boolean /* node is TypeOperatorNode */
+external val isTypeOperatorNode: js.reflect.TypeGuard<Node, TypeOperatorNode>

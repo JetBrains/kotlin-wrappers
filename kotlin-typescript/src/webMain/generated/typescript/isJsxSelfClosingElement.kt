@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxSelfClosingElement")
-external fun isJsxSelfClosingElementRaw(node: Node): Boolean /* node is JsxSelfClosingElement */
+external val isJsxSelfClosingElement: js.reflect.TypeGuard<Node, JsxSelfClosingElement>

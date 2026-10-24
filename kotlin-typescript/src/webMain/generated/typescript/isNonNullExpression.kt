@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNonNullExpression")
-external fun isNonNullExpressionRaw(node: Node): Boolean /* node is NonNullExpression */
+external val isNonNullExpression: js.reflect.TypeGuard<Node, NonNullExpression>

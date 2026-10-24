@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isImportAttribute")
-external fun isImportAttributeRaw(node: Node): Boolean /* node is ImportAttribute */
+external val isImportAttribute: js.reflect.TypeGuard<Node, ImportAttribute>

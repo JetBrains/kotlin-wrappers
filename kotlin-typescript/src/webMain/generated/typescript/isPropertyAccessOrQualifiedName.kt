@@ -4,7 +4,4 @@
 
 package typescript
 
-@JsName("isPropertyAccessOrQualifiedName")
-external fun isPropertyAccessOrQualifiedNameRaw(
-    node: Node,
-): Boolean /* node is PropertyAccessExpression | QualifiedName */
+external val isPropertyAccessOrQualifiedName: js.reflect.TypeGuard<Node, IsPropertyAccessOrQualifiedNameResultPredicate>

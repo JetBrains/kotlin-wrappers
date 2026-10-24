@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isYieldExpression")
-external fun isYieldExpressionRaw(node: Node): Boolean /* node is YieldExpression */
+external val isYieldExpression: js.reflect.TypeGuard<Node, YieldExpression>

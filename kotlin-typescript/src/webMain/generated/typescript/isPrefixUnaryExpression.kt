@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPrefixUnaryExpression")
-external fun isPrefixUnaryExpressionRaw(node: Node): Boolean /* node is PrefixUnaryExpression */
+external val isPrefixUnaryExpression: js.reflect.TypeGuard<Node, PrefixUnaryExpression>

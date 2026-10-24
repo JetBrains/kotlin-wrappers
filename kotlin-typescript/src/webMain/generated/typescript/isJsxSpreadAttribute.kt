@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxSpreadAttribute")
-external fun isJsxSpreadAttributeRaw(node: Node): Boolean /* node is JsxSpreadAttribute */
+external val isJsxSpreadAttribute: js.reflect.TypeGuard<Node, JsxSpreadAttribute>

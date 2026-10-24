@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isQualifiedName")
-external fun isQualifiedNameRaw(node: Node): Boolean /* node is QualifiedName */
+external val isQualifiedName: js.reflect.TypeGuard<Node, QualifiedName>

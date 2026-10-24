@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isCallSignatureDeclaration")
-external fun isCallSignatureDeclarationRaw(node: Node): Boolean /* node is CallSignatureDeclaration */
+external val isCallSignatureDeclaration: js.reflect.TypeGuard<Node, CallSignatureDeclaration>

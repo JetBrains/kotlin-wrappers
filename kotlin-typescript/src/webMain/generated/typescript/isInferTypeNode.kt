@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isInferTypeNode")
-external fun isInferTypeNodeRaw(node: Node): Boolean /* node is InferTypeNode */
+external val isInferTypeNode: js.reflect.TypeGuard<Node, InferTypeNode>

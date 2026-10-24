@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeAliasDeclaration")
-external fun isTypeAliasDeclarationRaw(node: Node): Boolean /* node is TypeAliasDeclaration */
+external val isTypeAliasDeclaration: js.reflect.TypeGuard<Node, TypeAliasDeclaration>

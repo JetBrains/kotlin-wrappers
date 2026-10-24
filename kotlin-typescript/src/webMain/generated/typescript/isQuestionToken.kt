@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isQuestionToken")
-external fun isQuestionTokenRaw(node: Node): Boolean /* node is QuestionToken */
+external val isQuestionToken: js.reflect.TypeGuard<Node, QuestionToken>

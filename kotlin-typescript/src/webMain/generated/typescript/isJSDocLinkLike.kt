@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocLinkLike")
-external fun isJSDocLinkLikeRaw(node: Node): Boolean /* node is JSDocLink | JSDocLinkCode | JSDocLinkPlain */
+external val isJSDocLinkLike: js.reflect.TypeGuard<Node, IsJSDocLinkLikeResultPredicate>

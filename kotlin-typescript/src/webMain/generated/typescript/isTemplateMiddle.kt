@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTemplateMiddle")
-external fun isTemplateMiddleRaw(node: Node): Boolean /* node is TemplateMiddle */
+external val isTemplateMiddle: js.reflect.TypeGuard<Node, TemplateMiddle>

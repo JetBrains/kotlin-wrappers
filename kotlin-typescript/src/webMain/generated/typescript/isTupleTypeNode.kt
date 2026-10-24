@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTupleTypeNode")
-external fun isTupleTypeNodeRaw(node: Node): Boolean /* node is TupleTypeNode */
+external val isTupleTypeNode: js.reflect.TypeGuard<Node, TupleTypeNode>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isFunctionLike")
-external fun isFunctionLikeRaw(node: Node?): Boolean /* node is SignatureDeclaration */
+external val isFunctionLike: js.reflect.TypeGuard<Node?, SignatureDeclaration>

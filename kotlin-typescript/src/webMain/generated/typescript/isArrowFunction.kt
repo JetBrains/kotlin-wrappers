@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isArrowFunction")
-external fun isArrowFunctionRaw(node: Node): Boolean /* node is ArrowFunction */
+external val isArrowFunction: js.reflect.TypeGuard<Node, ArrowFunction>

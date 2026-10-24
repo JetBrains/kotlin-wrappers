@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isDecorator")
-external fun isDecoratorRaw(node: Node): Boolean /* node is Decorator */
+external val isDecorator: js.reflect.TypeGuard<Node, Decorator>

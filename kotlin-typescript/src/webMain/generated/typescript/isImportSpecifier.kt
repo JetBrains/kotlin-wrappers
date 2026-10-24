@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isImportSpecifier")
-external fun isImportSpecifierRaw(node: Node): Boolean /* node is ImportSpecifier */
+external val isImportSpecifier: js.reflect.TypeGuard<Node, ImportSpecifier>

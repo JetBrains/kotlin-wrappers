@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isBigIntLiteral")
-external fun isBigIntLiteralRaw(node: Node): Boolean /* node is BigIntLiteral */
+external val isBigIntLiteral: js.reflect.TypeGuard<Node, BigIntLiteral>

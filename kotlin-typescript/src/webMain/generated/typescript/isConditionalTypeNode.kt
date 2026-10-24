@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isConditionalTypeNode")
-external fun isConditionalTypeNodeRaw(node: Node): Boolean /* node is ConditionalTypeNode */
+external val isConditionalTypeNode: js.reflect.TypeGuard<Node, ConditionalTypeNode>

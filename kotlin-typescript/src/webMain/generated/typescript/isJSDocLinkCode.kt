@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocLinkCode")
-external fun isJSDocLinkCodeRaw(node: Node): Boolean /* node is JSDocLinkCode */
+external val isJSDocLinkCode: js.reflect.TypeGuard<Node, JSDocLinkCode>

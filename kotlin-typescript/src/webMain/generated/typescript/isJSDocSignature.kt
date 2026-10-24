@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocSignature")
-external fun isJSDocSignatureRaw(node: Node): Boolean /* node is JSDocSignature */
+external val isJSDocSignature: js.reflect.TypeGuard<Node, JSDocSignature>

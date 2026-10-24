@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxClosingElement")
-external fun isJsxClosingElementRaw(node: Node): Boolean /* node is JsxClosingElement */
+external val isJsxClosingElement: js.reflect.TypeGuard<Node, JsxClosingElement>

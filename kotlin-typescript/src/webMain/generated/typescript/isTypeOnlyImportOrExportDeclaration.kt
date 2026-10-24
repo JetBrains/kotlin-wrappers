@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeOnlyImportOrExportDeclaration")
-external fun isTypeOnlyImportOrExportDeclarationRaw(node: Node): Boolean /* node is TypeOnlyAliasDeclaration */
+external val isTypeOnlyImportOrExportDeclaration: js.reflect.TypeGuard<Node, TypeOnlyAliasDeclaration>

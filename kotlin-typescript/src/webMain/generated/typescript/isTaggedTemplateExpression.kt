@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTaggedTemplateExpression")
-external fun isTaggedTemplateExpressionRaw(node: Node): Boolean /* node is TaggedTemplateExpression */
+external val isTaggedTemplateExpression: js.reflect.TypeGuard<Node, TaggedTemplateExpression>

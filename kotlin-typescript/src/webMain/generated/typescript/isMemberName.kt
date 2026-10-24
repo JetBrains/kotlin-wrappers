@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isMemberName")
-external fun isMemberNameRaw(node: Node): Boolean /* node is MemberName */
+external val isMemberName: js.reflect.TypeGuard<Node, MemberName>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isAsteriskToken")
-external fun isAsteriskTokenRaw(node: Node): Boolean /* node is AsteriskToken */
+external val isAsteriskToken: js.reflect.TypeGuard<Node, AsteriskToken>

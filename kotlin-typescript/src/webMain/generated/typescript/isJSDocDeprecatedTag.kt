@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocDeprecatedTag")
-external fun isJSDocDeprecatedTagRaw(node: Node): Boolean /* node is JSDocDeprecatedTag */
+external val isJSDocDeprecatedTag: js.reflect.TypeGuard<Node, JSDocDeprecatedTag>

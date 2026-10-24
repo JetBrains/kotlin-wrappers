@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isStringTextContainingNode")
-external fun isStringTextContainingNodeRaw(node: Node): Boolean /* node is StringLiteral | TemplateLiteralToken */
+external val isStringTextContainingNode: js.reflect.TypeGuard<Node, IsStringTextContainingNodeResultPredicate>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isModuleName")
-external fun isModuleNameRaw(node: Node): Boolean /* node is ModuleName */
+external val isModuleName: js.reflect.TypeGuard<Node, ModuleName>

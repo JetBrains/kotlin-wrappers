@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocUnknownTag")
-external fun isJSDocUnknownTagRaw(node: Node): Boolean /* node is JSDocUnknownTag */
+external val isJSDocUnknownTag: js.reflect.TypeGuard<Node, JSDocUnknownTag>

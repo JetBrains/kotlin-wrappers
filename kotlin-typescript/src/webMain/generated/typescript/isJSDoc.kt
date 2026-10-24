@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDoc")
-external fun isJSDocRaw(node: Node): Boolean /* node is JSDoc */
+external val isJSDoc: js.reflect.TypeGuard<Node, JSDoc>

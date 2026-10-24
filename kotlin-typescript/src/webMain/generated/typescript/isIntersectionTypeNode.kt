@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isIntersectionTypeNode")
-external fun isIntersectionTypeNodeRaw(node: Node): Boolean /* node is IntersectionTypeNode */
+external val isIntersectionTypeNode: js.reflect.TypeGuard<Node, IntersectionTypeNode>

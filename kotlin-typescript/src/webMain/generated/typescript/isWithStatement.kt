@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isWithStatement")
-external fun isWithStatementRaw(node: Node): Boolean /* node is WithStatement */
+external val isWithStatement: js.reflect.TypeGuard<Node, WithStatement>

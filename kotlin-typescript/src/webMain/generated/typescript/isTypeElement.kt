@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeElement")
-external fun isTypeElementRaw(node: Node): Boolean /* node is TypeElement */
+external val isTypeElement: js.reflect.TypeGuard<Node, TypeElement>

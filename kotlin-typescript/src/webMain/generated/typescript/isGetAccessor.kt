@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isGetAccessor")
-external fun isGetAccessorRaw(node: Node): Boolean /* node is GetAccessorDeclaration */
+external val isGetAccessor: js.reflect.TypeGuard<Node, GetAccessorDeclaration>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPropertyAccessExpression")
-external fun isPropertyAccessExpressionRaw(node: Node): Boolean /* node is PropertyAccessExpression */
+external val isPropertyAccessExpression: js.reflect.TypeGuard<Node, PropertyAccessExpression>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTemplateLiteralTypeNode")
-external fun isTemplateLiteralTypeNodeRaw(node: Node): Boolean /* node is TemplateLiteralTypeNode */
+external val isTemplateLiteralTypeNode: js.reflect.TypeGuard<Node, TemplateLiteralTypeNode>

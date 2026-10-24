@@ -4,7 +4,5 @@
 
 package typescript
 
-@JsName("isReadonlyKeywordOrPlusOrMinusToken")
-external fun isReadonlyKeywordOrPlusOrMinusTokenRaw(
-    node: Node,
-): Boolean /* node is ReadonlyKeyword | PlusToken | MinusToken */
+external val isReadonlyKeywordOrPlusOrMinusToken:
+        js.reflect.TypeGuard<Node, IsReadonlyKeywordOrPlusOrMinusTokenResultPredicate>

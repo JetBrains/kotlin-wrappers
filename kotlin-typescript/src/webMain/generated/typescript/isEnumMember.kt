@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isEnumMember")
-external fun isEnumMemberRaw(node: Node): Boolean /* node is EnumMember */
+external val isEnumMember: js.reflect.TypeGuard<Node, EnumMember>

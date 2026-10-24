@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxClosingFragment")
-external fun isJsxClosingFragmentRaw(node: Node): Boolean /* node is JsxClosingFragment */
+external val isJsxClosingFragment: js.reflect.TypeGuard<Node, JsxClosingFragment>

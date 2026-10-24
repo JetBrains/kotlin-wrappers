@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxChild")
-external fun isJsxChildRaw(node: Node): Boolean /* node is JsxChild */
+external val isJsxChild: js.reflect.TypeGuard<Node, JsxChild>

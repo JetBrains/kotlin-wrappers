@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isIfStatement")
-external fun isIfStatementRaw(node: Node): Boolean /* node is IfStatement */
+external val isIfStatement: js.reflect.TypeGuard<Node, IfStatement>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isContinueStatement")
-external fun isContinueStatementRaw(node: Node): Boolean /* node is ContinueStatement */
+external val isContinueStatement: js.reflect.TypeGuard<Node, ContinueStatement>

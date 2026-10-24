@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isAssertionExpression")
-external fun isAssertionExpressionRaw(node: Node): Boolean /* node is AssertionExpression */
+external val isAssertionExpression: js.reflect.TypeGuard<Node, AssertionExpression>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isForInStatement")
-external fun isForInStatementRaw(node: Node): Boolean /* node is ForInStatement */
+external val isForInStatement: js.reflect.TypeGuard<Node, ForInStatement>

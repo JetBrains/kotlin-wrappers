@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isIndexedAccessTypeNode")
-external fun isIndexedAccessTypeNodeRaw(node: Node): Boolean /* node is IndexedAccessTypeNode */
+external val isIndexedAccessTypeNode: js.reflect.TypeGuard<Node, IndexedAccessTypeNode>

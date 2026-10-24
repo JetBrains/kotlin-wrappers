@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isConstructorDeclaration")
-external fun isConstructorDeclarationRaw(node: Node): Boolean /* node is ConstructorDeclaration */
+external val isConstructorDeclaration: js.reflect.TypeGuard<Node, ConstructorDeclaration>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPropertyDeclaration")
-external fun isPropertyDeclarationRaw(node: Node): Boolean /* node is PropertyDeclaration */
+external val isPropertyDeclaration: js.reflect.TypeGuard<Node, PropertyDeclaration>

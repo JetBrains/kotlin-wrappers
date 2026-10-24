@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocVariadicType")
-external fun isJSDocVariadicTypeRaw(node: Node): Boolean /* node is JSDocVariadicType */
+external val isJSDocVariadicType: js.reflect.TypeGuard<Node, JSDocVariadicType>

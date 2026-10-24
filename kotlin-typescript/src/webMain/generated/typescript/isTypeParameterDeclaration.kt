@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeParameterDeclaration")
-external fun isTypeParameterDeclarationRaw(node: Node): Boolean /* node is TypeParameterDeclaration */
+external val isTypeParameterDeclaration: js.reflect.TypeGuard<Node, TypeParameterDeclaration>

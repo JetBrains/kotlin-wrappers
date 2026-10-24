@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isArrayTypeNode")
-external fun isArrayTypeNodeRaw(node: Node): Boolean /* node is ArrayTypeNode */
+external val isArrayTypeNode: js.reflect.TypeGuard<Node, ArrayTypeNode>

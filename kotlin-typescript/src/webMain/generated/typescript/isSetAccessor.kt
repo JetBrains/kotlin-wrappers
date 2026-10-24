@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isSetAccessor")
-external fun isSetAccessorRaw(node: Node): Boolean /* node is SetAccessorDeclaration */
+external val isSetAccessor: js.reflect.TypeGuard<Node, SetAccessorDeclaration>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isWhileStatement")
-external fun isWhileStatementRaw(node: Node): Boolean /* node is WhileStatement */
+external val isWhileStatement: js.reflect.TypeGuard<Node, WhileStatement>

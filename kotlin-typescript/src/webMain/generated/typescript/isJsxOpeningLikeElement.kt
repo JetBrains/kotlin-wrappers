@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJsxOpeningLikeElement")
-external fun isJsxOpeningLikeElementRaw(node: Node): Boolean /* node is JsxOpeningLikeElement */
+external val isJsxOpeningLikeElement: js.reflect.TypeGuard<Node, JsxOpeningLikeElement>

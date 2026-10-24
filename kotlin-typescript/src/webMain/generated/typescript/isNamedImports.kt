@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNamedImports")
-external fun isNamedImportsRaw(node: Node): Boolean /* node is NamedImports */
+external val isNamedImports: js.reflect.TypeGuard<Node, NamedImports>

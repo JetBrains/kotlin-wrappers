@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isElementAccessChain")
-external fun isElementAccessChainRaw(node: Node): Boolean /* node is ElementAccessChain */
+external val isElementAccessChain: js.reflect.TypeGuard<Node, ElementAccessChain>

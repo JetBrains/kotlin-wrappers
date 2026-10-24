@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPrivateIdentifier")
-external fun isPrivateIdentifierRaw(node: Node): Boolean /* node is PrivateIdentifier */
+external val isPrivateIdentifier: js.reflect.TypeGuard<Node, PrivateIdentifier>

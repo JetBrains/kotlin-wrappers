@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeOfExpression")
-external fun isTypeOfExpressionRaw(node: Node): Boolean /* node is TypeOfExpression */
+external val isTypeOfExpression: js.reflect.TypeGuard<Node, TypeOfExpression>

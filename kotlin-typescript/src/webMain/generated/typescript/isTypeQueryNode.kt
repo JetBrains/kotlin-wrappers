@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypeQueryNode")
-external fun isTypeQueryNodeRaw(node: Node): Boolean /* node is TypeQueryNode */
+external val isTypeQueryNode: js.reflect.TypeGuard<Node, TypeQueryNode>

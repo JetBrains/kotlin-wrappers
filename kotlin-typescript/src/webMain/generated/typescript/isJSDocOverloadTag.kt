@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocOverloadTag")
-external fun isJSDocOverloadTagRaw(node: Node): Boolean /* node is JSDocOverloadTag */
+external val isJSDocOverloadTag: js.reflect.TypeGuard<Node, JSDocOverloadTag>

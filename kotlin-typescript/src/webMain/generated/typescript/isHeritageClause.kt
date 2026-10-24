@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isHeritageClause")
-external fun isHeritageClauseRaw(node: Node): Boolean /* node is HeritageClause */
+external val isHeritageClause: js.reflect.TypeGuard<Node, HeritageClause>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTypePredicateNode")
-external fun isTypePredicateNodeRaw(node: Node): Boolean /* node is TypePredicateNode */
+external val isTypePredicateNode: js.reflect.TypeGuard<Node, TypePredicateNode>

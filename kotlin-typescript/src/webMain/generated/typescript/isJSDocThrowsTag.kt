@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocThrowsTag")
-external fun isJSDocThrowsTagRaw(node: Node): Boolean /* node is JSDocThrowsTag */
+external val isJSDocThrowsTag: js.reflect.TypeGuard<Node, JSDocThrowsTag>

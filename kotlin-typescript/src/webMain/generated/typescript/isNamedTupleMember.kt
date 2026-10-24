@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNamedTupleMember")
-external fun isNamedTupleMemberRaw(node: Node): Boolean /* node is NamedTupleMember */
+external val isNamedTupleMember: js.reflect.TypeGuard<Node, NamedTupleMember>

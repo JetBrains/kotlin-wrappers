@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isTemplateHead")
-external fun isTemplateHeadRaw(node: Node): Boolean /* node is TemplateHead */
+external val isTemplateHead: js.reflect.TypeGuard<Node, TemplateHead>

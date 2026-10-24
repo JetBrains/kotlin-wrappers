@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isOmittedExpression")
-external fun isOmittedExpressionRaw(node: Node): Boolean /* node is OmittedExpression */
+external val isOmittedExpression: js.reflect.TypeGuard<Node, OmittedExpression>

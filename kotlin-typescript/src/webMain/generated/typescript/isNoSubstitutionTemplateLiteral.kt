@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isNoSubstitutionTemplateLiteral")
-external fun isNoSubstitutionTemplateLiteralRaw(node: Node): Boolean /* node is NoSubstitutionTemplateLiteral */
+external val isNoSubstitutionTemplateLiteral: js.reflect.TypeGuard<Node, NoSubstitutionTemplateLiteral>

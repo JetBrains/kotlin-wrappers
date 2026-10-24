@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isPartiallyEmittedExpression")
-external fun isPartiallyEmittedExpressionRaw(node: Node): Boolean /* node is PartiallyEmittedExpression */
+external val isPartiallyEmittedExpression: js.reflect.TypeGuard<Node, PartiallyEmittedExpression>

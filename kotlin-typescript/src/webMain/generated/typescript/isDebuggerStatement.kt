@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isDebuggerStatement")
-external fun isDebuggerStatementRaw(node: Node): Boolean /* node is DebuggerStatement */
+external val isDebuggerStatement: js.reflect.TypeGuard<Node, DebuggerStatement>

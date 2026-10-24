@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isAssertsKeyword")
-external fun isAssertsKeywordRaw(node: Node): Boolean /* node is AssertsKeyword */
+external val isAssertsKeyword: js.reflect.TypeGuard<Node, AssertsKeyword>

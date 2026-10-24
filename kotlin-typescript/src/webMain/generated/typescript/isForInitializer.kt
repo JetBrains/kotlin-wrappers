@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isForInitializer")
-external fun isForInitializerRaw(node: Node): Boolean /* node is ForInitializer */
+external val isForInitializer: js.reflect.TypeGuard<Node, ForInitializer>

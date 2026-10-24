@@ -22,7 +22,7 @@ import wrappersgenerator.typescript.varianceModifiers.modifyInterfaceVariance
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
-            ContractFunctionApiPlugin(),
+            ContractFunctionApiPlugin,
 
             convertArrayInheritance,
             convertConflictingOverloads,

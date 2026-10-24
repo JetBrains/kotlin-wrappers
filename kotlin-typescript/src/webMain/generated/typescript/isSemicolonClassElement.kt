@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isSemicolonClassElement")
-external fun isSemicolonClassElementRaw(node: Node): Boolean /* node is SemicolonClassElement */
+external val isSemicolonClassElement: js.reflect.TypeGuard<Node, SemicolonClassElement>

@@ -4,7 +4,4 @@
 
 package typescript
 
-@JsName("isLiteralTypeLiteral")
-external fun isLiteralTypeLiteralRaw(
-    node: Node,
-): Boolean /* node is NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression */
+external val isLiteralTypeLiteral: js.reflect.TypeGuard<Node, IsLiteralTypeLiteralResultPredicate>

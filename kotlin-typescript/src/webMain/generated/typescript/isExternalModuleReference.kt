@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isExternalModuleReference")
-external fun isExternalModuleReferenceRaw(node: Node): Boolean /* node is ExternalModuleReference */
+external val isExternalModuleReference: js.reflect.TypeGuard<Node, ExternalModuleReference>

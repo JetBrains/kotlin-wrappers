@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isAutoAccessorPropertyDeclaration")
-external fun isAutoAccessorPropertyDeclarationRaw(node: Node): Boolean /* node is AutoAccessorPropertyDeclaration */
+external val isAutoAccessorPropertyDeclaration: js.reflect.TypeGuard<Node, AutoAccessorPropertyDeclaration>

@@ -4,5 +4,4 @@
 
 package typescript
 
-@JsName("isJSDocImportTag")
-external fun isJSDocImportTagRaw(node: Node): Boolean /* node is JSDocImportTag */
+external val isJSDocImportTag: js.reflect.TypeGuard<Node, JSDocImportTag>
