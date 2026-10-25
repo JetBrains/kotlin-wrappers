@@ -186,7 +186,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/stream/web.d.ts",
             "**/string_decoder.d.ts",
             "**/timers.d.ts",
-            "**/timers/promises.d.ts"
+            "**/timers/promises.d.ts",
         )
         ignoreOutput = listOf(
             "**/_Blob.kt",
@@ -337,7 +337,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/workerThreads/global/**",
             "**/workerThreads/BroadcastChannel.kt",
             "**/workerThreads/MessageChannel.kt",
-            "**/workerThreads/MessagePort.kt"
+            "**/workerThreads/MessagePort.kt",
         )
         isolatedOutputPackage = true
         moduleNameMapper = mapOf(
@@ -518,34 +518,34 @@ suspend fun main(args: ReadonlyArray<String>) {
             ),
             "node:child_process" to ruleOf(
                 "\\*" to "",
-                ".+" to "node.childProcess."
+                ".+" to "node.childProcess.",
             ),
             "node:crypto" to ruleOf("node.crypto"),
             "node:dgram" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "node:dns$" to ruleOf(
                 "\\*" to "",
-                ".+" to "node.dns."
+                ".+" to "node.dns.",
             ),
             "node:dns/promises" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "node:events" to ruleOf(
                 "Abortable" to "web.abort.Abortable",
-                ".+" to "node.events."
+                ".+" to "node.events.",
             ),
             "node:fs" to ruleOf(
                 "WatchOptions" to "node.fs._WatchOptions",
                 "\\*" to "",
-                ".+" to "node.fs."
+                ".+" to "node.fs.",
             ),
             "node:http" to ruleOf(
                 "\\*" to "",
-                ".+" to "node.http."
+                ".+" to "node.http.",
             ),
             "node:inspector$" to ruleOf(
-                "Session" to "node.inspector._Session"
+                "Session" to "node.inspector._Session",
             ),
             "(node:)?inspector" to ruleOf(
                 "Console" to "",
@@ -560,12 +560,12 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "Runtime" to "",
                 "Schema" to "",
                 "Target" to "",
-                ".+" to "node.inspector."
+                ".+" to "node.inspector.",
             ),
             "node:module" to ruleOf("node.module"),
             "node:net" to ruleOf(
                 "\\*" to "",
-                ".+" to "node.net."
+                ".+" to "node.net.",
             ),
             "node:os" to ruleOf("node.os"),
             "(node:)?perf_hooks" to ruleOf("node.perfHooks"),
@@ -574,48 +574,48 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "Interface" to "node.readline._Interface",
                 "ReadLineOptions" to "node.readline._ReadLineOptions",
                 "Completer" to "node.readline._Completer",
-                ".+" to "node.readline."
+                ".+" to "node.readline.",
             ),
             "node:readline/promises" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "(node:)?stream$" to ruleOf(
                 "FinishedOptions" to "node.stream._FinishedOptions",
                 "\\*" to "",
-                ".+" to "node.stream."
+                ".+" to "node.stream.",
             ),
             "node:stream/promises" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "node:stream/consumers" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "node:stream/web" to ruleOf(
                 "\\*" to "",
                 "ReadableStream" to "web.streams.ReadableStream",
                 "WritableStream" to "web.streams.WritableStream",
-                "TransformStream" to "web.streams.TransformStream"
+                "TransformStream" to "web.streams.TransformStream",
             ),
             "node:test" to ruleOf("node.test"),
             "node:tls" to ruleOf(
                 "\\*" to "",
-                ".+" to "node.tls."
+                ".+" to "node.tls.",
             ),
             "node:tty" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "(node:)?url" to ruleOf(
                 "\\*" to "",
                 "URL" to "web.url.URL",
-                "URLSearchParams" to "web.url.URLSearchParams"
+                "URLSearchParams" to "web.url.URLSearchParams",
             ),
             "(node:)?util$" to ruleOf(
                 "TextDecoder" to "",
                 "TextEncoder" to "",
-                ".+" to "node.util."
+                ".+" to "node.util.",
             ),
             "node:util/types" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
             ),
             "node:v8" to ruleOf("node.v8"),
             "node:vm" to ruleOf("node.vm"),
@@ -623,22 +623,22 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "BroadcastChannel" to "web.broadcast.BroadcastChannel",
                 "MessageChannel" to "web.messaging.MessageChannel",
                 "MessagePort" to "web.messaging.MessagePort",
-                ".+" to "node.workerThreads."
+                ".+" to "node.workerThreads.",
             ),
 
             "undici-types" to ruleOf(
-                ".+" to ""
-            )
+                ".+" to "",
+            ),
         )
         importInjector = mapOf(
             ".contract.kt" to listOf(
-                "kotlin.contracts.contract"
+                "kotlin.contracts.contract",
             ),
             "ReadableStream.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "WritableStream.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "NonSharedArrayBufferView.kt" to listOf(
                 "js.buffer.ArrayBufferView",
@@ -647,208 +647,208 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "js.typedarrays.TypedArray",
             ),
             "buffer/resolveObjectURL.kt" to listOf(
-                "web.blob.Blob"
+                "web.blob.Blob",
             ),
             "cluster/Cluster.interface.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "cluster/Worker.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "crypto/Cipheriv.kt" to listOf(
-                "node.stream.TransformOptions"
+                "node.stream.TransformOptions",
             ),
             "crypto/Decipheriv.kt" to listOf(
-                "node.stream.TransformOptions"
+                "node.stream.TransformOptions",
             ),
             "crypto/Hash.kt" to listOf(
-                "node.stream.TransformOptions"
+                "node.stream.TransformOptions",
             ),
             "crypto/Hmac.kt" to listOf(
-                "node.stream.TransformOptions"
+                "node.stream.TransformOptions",
             ),
             "crypto/Sign.kt" to listOf(
-                "node.stream.WritableOptions"
+                "node.stream.WritableOptions",
             ),
             "crypto/Verify.kt" to listOf(
-                "node.stream.WritableOptions"
+                "node.stream.WritableOptions",
             ),
             "dns/ResolverAsync.kt" to listOf(
-                "js.promise.Promise"
+                "js.promise.Promise",
             ),
             "fs/ReadStream.kt" to listOf(
-                "node.stream.ReadableOptions"
+                "node.stream.ReadableOptions",
             ),
             "fs/WriteStream.kt" to listOf(
-                "node.stream.WritableOptions"
+                "node.stream.WritableOptions",
             ),
             "fs/readFile.kt" to listOf(
-                "node.buffer.NonSharedBuffer"
+                "node.buffer.NonSharedBuffer",
             ),
             "fs/readFileSync.kt" to listOf(
-                "node.buffer.NonSharedBuffer"
+                "node.buffer.NonSharedBuffer",
             ),
             "http2/Http2Session.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "https/RequestOptions.kt" to listOf(
-                "node.tls.PeerCertificate"
+                "node.tls.PeerCertificate",
             ),
             "https/Server.kt" to listOf(
                 "node.http.IncomingMessage",
-                "node.http.ServerResponse"
+                "node.http.ServerResponse",
             ),
             "https/ServerOptions.kt" to listOf(
                 "node.http.IncomingMessage",
-                "node.http.ServerResponse"
+                "node.http.ServerResponse",
             ),
             "https/createServer.kt" to listOf(
                 "node.http.IncomingMessage",
-                "node.http.ServerResponse"
+                "node.http.ServerResponse",
             ),
             "inspector/Session.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "inspector/SessionAsync.kt" to listOf(
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "module/Require.interface.kt" to listOf(
-                "node.Dict"
+                "node.Dict",
             ),
             "module/RequireExtensions.kt" to listOf(
-                "node.Dict"
+                "node.Dict",
             ),
             "os/constants/signals.kt" to listOf(
-                "node.os.SignalConstants"
+                "node.os.SignalConstants",
             ),
             "process/Process.interface.kt" to listOf(
                 "node.module.Module",
-                "node.events.EventEmitter"
+                "node.events.EventEmitter",
             ),
             "process/ProcessEnv.kt" to listOf(
-                "node.Dict"
+                "node.Dict",
             ),
             "process/ProcessVersions.kt" to listOf(
-                "node.Dict"
+                "node.Dict",
             ),
             "process/Socket.kt" to listOf(
-                "node.ReadWriteStream"
+                "node.ReadWriteStream",
             ),
             "stream/Readable.kt" to listOf(
                 "node.ReadableStreamPipeOptions",
-                "node.WritableStream"
+                "node.WritableStream",
             ),
             "test/describe/only.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/describe/only.suspend.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/describe/skip.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/describe/skip.suspend.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/describe/todo.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/describe/todo.suspend.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/it/only.kt" to listOf(
                 "node.test.TestFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/it/only.suspend.kt" to listOf(
                 "node.test.TestFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/it/skip.kt" to listOf(
                 "node.test.TestFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/it/skip.suspend.kt" to listOf(
                 "node.test.TestFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/it/todo.kt" to listOf(
                 "node.test.TestFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/it/todo.suspend.kt" to listOf(
                 "node.test.TestFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/suite/only.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/suite/only.suspend.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/suite/skip.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/suite/skip.suspend.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/suite/todo.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "test/suite/todo.suspend.kt" to listOf(
                 "node.test.SuiteFn",
-                "node.test.TestOptions"
+                "node.test.TestOptions",
             ),
             "url/fileURLToPath.kt" to listOf(
-                "web.url.URL"
+                "web.url.URL",
             ),
             "url/fileURLToPathBuffer.kt" to listOf(
-                "web.url.URL"
+                "web.url.URL",
             ),
             "url/format.kt" to listOf(
-                "web.url.URL"
+                "web.url.URL",
             ),
             "url/pathToFileURL.kt" to listOf(
-                "web.url.URL"
+                "web.url.URL",
             ),
             "url/urlToHttpOptions.kt" to listOf(
-                "web.url.URL"
+                "web.url.URL",
             ),
             "util/types/isBigIntObject.contract.kt" to listOf(
-                "js.numbers.BigInt"
+                "js.numbers.BigInt",
             ),
             "v8/startupSnapshot/addDeserializeCallback.kt" to listOf(
-                "node.v8.StartupSnapshotCallbackFn"
+                "node.v8.StartupSnapshotCallbackFn",
             ),
             "v8/startupSnapshot/addSerializeCallback.kt" to listOf(
-                "node.v8.StartupSnapshotCallbackFn"
+                "node.v8.StartupSnapshotCallbackFn",
             ),
             "v8/startupSnapshot/setDeserializeMainFunction.kt" to listOf(
-                "node.v8.StartupSnapshotCallbackFn"
+                "node.v8.StartupSnapshotCallbackFn",
             ),
             "vm/CompileFunctionResult.kt" to listOf(
-                "node.buffer.Buffer"
+                "node.buffer.Buffer",
             ),
             "workerThreads/moveMessagePortToContext.kt" to listOf(
-                "web.messaging.MessagePort"
+                "web.messaging.MessagePort",
             ),
             "workerThreads/parentPort.kt" to listOf(
-                "web.messaging.MessagePort"
+                "web.messaging.MessagePort",
             ),
             "workerThreads/receiveMessageOnPort.kt" to listOf(
-                "web.messaging.MessagePort"
-            )
+                "web.messaging.MessagePort",
+            ),
         )
         namespaceStrategy = mapOf(
             "NodeJS" to NamespaceStrategy.`package`,
