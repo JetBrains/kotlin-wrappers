@@ -18,13 +18,5 @@ suspend fun modifyInterfaceVariance(node: Node, context: Context) = nullable {
         ensure(interfaceNode.name.text == "Token")
 
         "out"
-    } ?: nullable {
-        ensure(node.name.text == "T")
-
-        val interfaceNode = ensureNotNull(node.parent)
-        ensure(isInterfaceDeclaration(interfaceNode))
-        ensure(interfaceNode.name.text == "NodeArray")
-
-        "out"
     }
 }

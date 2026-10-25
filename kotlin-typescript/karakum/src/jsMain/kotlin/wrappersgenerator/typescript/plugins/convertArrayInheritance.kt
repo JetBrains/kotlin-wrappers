@@ -25,6 +25,6 @@ val convertArrayInheritance = createPlugin { node, _, render ->
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")
 
-        "ReadonlyArrayAdapter${ifPresent(typeArguments) { "<${it}>" }}"
+        "js.array.JsArray${ifPresent(typeArguments) { "<$it>" }}"
     }
 }

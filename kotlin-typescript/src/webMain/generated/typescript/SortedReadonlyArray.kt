@@ -2,6 +2,11 @@
 
 package typescript
 
-external interface SortedReadonlyArray<T> : ReadonlyArrayAdapter<T> {
+@Suppress(
+    "EXTERNAL_TYPE_EXTENDS_NON_EXTERNAL_TYPE",
+    "INTERFACE_WITH_SUPERCLASS",
+    "FINAL_SUPERTYPE",
+)
+external interface SortedReadonlyArray<T> : js.array.JsArray<T> {
     var ` __sortedArrayBrand`: Any?
 }

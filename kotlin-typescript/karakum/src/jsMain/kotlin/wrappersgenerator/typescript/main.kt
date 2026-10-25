@@ -7,10 +7,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.configurable.NumberPlugi
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import wrappersgenerator.typescript.annotations.annotateJsPlainObject
-import wrappersgenerator.typescript.annotations.annotateUnusedTypealiasParameter
-import wrappersgenerator.typescript.annotations.annotateVarOverrides
-import wrappersgenerator.typescript.annotations.createJsPlainObjectAnnotation
+import wrappersgenerator.typescript.annotations.*
 import wrappersgenerator.typescript.inheritanceModifiers.modifyMethodInheritance
 import wrappersgenerator.typescript.inheritanceModifiers.modifyPropertyInheritance
 import wrappersgenerator.typescript.injections.decorateUnionInjection
@@ -26,6 +23,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             NumberPlugin(defaultNumberType = "Int"),
             ContractFunctionApiPlugin,
 
+            convertNodeArray,
             convertArrayInheritance,
             convertConflictingOverloads,
             convertIncompatibleParameterName,
@@ -50,6 +48,7 @@ suspend fun main(args: ReadonlyArray<String>) {
 
             ::annotateUnusedTypealiasParameter,
             ::annotateVarOverrides,
+            ::suppressJsArrayInheritors,
         )
         nameResolvers = listOf(
             ::resolveChangePropertyTypesPropertyName,
