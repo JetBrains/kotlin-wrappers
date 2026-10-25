@@ -1,8 +1,0 @@
-// Automatically generated - do not modify!
-
-package node.url
-
-@kotlinx.js.JsPlainObject
-external interface URLPatternOptions {
-    var ignoreCase: Boolean?
-}
