@@ -104,11 +104,10 @@ internal fun kotlinType(
     if (type in TYPED_ARRAYS)
         return "$type<*>"
 
-    if (type.startsWith("Event<"))
-        return type
-            .replace(" => void", " -> Unit")
-            .replace(": boolean", ": Boolean")
-            .replace(": this, ", ": JsAny /* this */, ")
+    if (type.startsWith("Event<")) {
+        val payloadType = type.removeSurrounding("Event<", ">")
+        return "Event<" + eventPayload(payloadType) + ">"
+    }
 
     if (type.startsWith("Record<") && !type.endsWith("[]"))
         return "Readonly$type"
@@ -127,10 +126,7 @@ internal fun kotlinType(
         return STANDARD_TYPE_MAP.getValue(type)
 
     if (type.isClassLike())
-        return if (CALL_DELIMITER in type) {
-            val (parent, alias) = type.split(CALL_DELIMITER)
-            parent + CALL_DELIMITER + applyCallbackFix(alias)
-        } else type
+        return fixClassName(type)
 
     if (type.endsWith(" | Function"))
         return kotlinType(type.removeSuffix(" | Function"), name) + " /* | Function */"
@@ -173,6 +169,22 @@ internal fun kotlinType(
     }
 
     return "$placeholder /* $type */"
+}
+
+private fun fixClassName(type: String): String =
+    if (CALL_DELIMITER in type) {
+        val (parent, alias) = type.split(CALL_DELIMITER)
+        parent + CALL_DELIMITER + applyCallbackFix(alias)
+    } else type
+
+private fun eventPayload(type: String): String {
+    if (type.isClassLike())
+        return fixClassName(type)
+
+    return type
+        .replace(" => void", " -> Unit")
+        .replace(": boolean", ": Boolean")
+        .replace(": this, ", ": JsAny /* this */, ")
 }
 
 private fun String.isClassLike(): Boolean =

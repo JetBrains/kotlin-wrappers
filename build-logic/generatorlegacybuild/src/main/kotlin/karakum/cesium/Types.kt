@@ -72,6 +72,7 @@ internal fun applyCallbackFix(
 ): String =
     when (source) {
         "foveatedInterpolationCallback",
+        "newClusterCallback",
         "updateCallback",
             -> source.replaceFirstChar(Char::uppercase)
 
