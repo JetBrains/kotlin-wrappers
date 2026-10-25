@@ -6,11 +6,11 @@ package testing.library.user.event
 
 @kotlinx.js.JsPlainObject
 external interface MouseButtonType {
-    val primary: Double /* 0 */
-    val secondary: Double /* 1 */
-    val auxiliary: Double /* 2 */
-    val back: Double /* 3 */
-    val X1: Double /* 3 */
-    val forward: Double /* 4 */
-    val X2: Double /* 4 */
+    val primary: Int /* 0 */
+    val secondary: Int /* 1 */
+    val auxiliary: Int /* 2 */
+    val back: Int /* 3 */
+    val X1: Int /* 3 */
+    val forward: Int /* 4 */
+    val X2: Int /* 4 */
 }

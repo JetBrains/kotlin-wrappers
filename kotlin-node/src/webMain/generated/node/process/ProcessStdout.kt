@@ -3,5 +3,5 @@
 package node.process
 
 external interface ProcessStdout : WriteStream {
-    var fd: Double /* 1 */
+    var fd: Int /* 1 */
 }
