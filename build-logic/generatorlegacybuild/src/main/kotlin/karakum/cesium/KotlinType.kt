@@ -106,9 +106,9 @@ internal fun kotlinType(
 
     if (type.startsWith("Event<"))
         return type
-            .replace("arg0: this, ", "")
             .replace(" => void", " -> Unit")
             .replace(": boolean", ": Boolean")
+            .replace(": this, ", ": JsAny /* this */, ")
 
     if (type.startsWith("Record<") && !type.endsWith("[]"))
         return "Readonly$type"
