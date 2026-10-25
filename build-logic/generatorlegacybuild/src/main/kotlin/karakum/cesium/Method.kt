@@ -101,6 +101,9 @@ internal class Method(
             "pick" if (sourceDeclaration == "fun pick(\n windowPosition: Cartesian2,\n width: Double? = definedExternally,\n height: Double? = definedExternally\n): JsAny?")
                 -> replacedSyncDeclarations
 
+            "raiseEvent" if (source.body == "raiseEvent(...arguments: Parameters<Listener>): void")
+                -> listOf("val raiseEvent: JsFunction<T, Void>")
+
             else -> withSuspendAdapter(sourceDeclaration).toList()
         }
 

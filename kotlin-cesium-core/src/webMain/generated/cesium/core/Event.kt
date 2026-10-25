@@ -65,7 +65,7 @@ open external class Event<T : Tuple> {
      * @param [arguments] This method takes any number of parameters and passes them through to the listener functions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#raiseEvent">Online Documentation</a>
      */
-    fun raiseEvent(vararg arguments: JsAny /* Parameters<Listener> */)
+    val raiseEvent: JsFunction<T, Void>
 
     /**
      * A function that removes a listener.
