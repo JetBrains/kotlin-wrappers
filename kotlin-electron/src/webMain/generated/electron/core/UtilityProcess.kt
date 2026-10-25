@@ -116,8 +116,8 @@ external class UtilityProcess : NodeEventEmitter {
                         (
                 username: String?, /* use undefined for default */
                 password: String?, /* use undefined for default */
-            ) -> Unit
-                    >
+            ) -> Unit,
+                    >,
             >
 
     @web.events.JsEvent("message")
