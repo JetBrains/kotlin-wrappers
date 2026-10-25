@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.Event
+import js.array.Tuple1
 import js.errors.JsError
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
@@ -76,14 +77,14 @@ open external class Terrain(
      * @param [err] An object holding details about the error that occurred.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#.ErrorEventCallback">Online Documentation</a>
      */
-    typealias ErrorEventPayload = (err: JsError) -> Unit
+    typealias ErrorEventPayload = Tuple1</* err: */ JsError>
 
     /**
      * A function that is called when the provider has been created
      * @param [provider] The created terrain provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#.ReadyEventCallback">Online Documentation</a>
      */
-    typealias ReadyEventPayload = (provider: TerrainProvider) -> Unit
+    typealias ReadyEventPayload = Tuple1</* provider: */ TerrainProvider>
 
     companion object {
         /**

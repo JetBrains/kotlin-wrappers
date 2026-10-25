@@ -2,6 +2,12 @@ package karakum.cesium
 
 internal val DEFAULT_PACKAGE: String = """
 import js.array.ReadonlyArray
+import js.array.Tuple
+import js.array.Tuple1
+import js.array.Tuple2
+import js.array.Tuple3
+import js.array.Tuple4
+import js.array.Tuple5
 import js.buffer.ArrayBuffer
 import js.buffer.DataView
 import js.collections.ReadonlyMap
@@ -9,6 +15,7 @@ import js.numbers.JsDouble
 import js.numbers.JsInt
 import js.date.Date
 import js.errors.JsError
+import js.function.JsFunction
 import js.objects.ReadonlyRecord
 import js.objects.unsafeJso
 import js.promise.Promise

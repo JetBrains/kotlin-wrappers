@@ -17,6 +17,8 @@ internal fun typeDeclaration(
     top: Boolean,
 ): String {
     val (name, body) = source.split(" = ")
+    val fixedName = applyCallbackFix(name)
+
     return when {
         body.startsWith("\"")
             -> {
@@ -30,8 +32,11 @@ internal fun typeDeclaration(
             )
         }
 
+        fixedName.endsWith("EventPayload")
+            -> "typealias $fixedName = ${eventPayloadBody(body)}"
+
         body.startsWith("(")
-            -> "typealias ${applyCallbackFix(name)} = ${typeBody(body)}"
+            -> "typealias $fixedName = ${typeBody(body)}"
 
         body == "HTMLImageElement | HTMLCanvasElement | ImageBitmap | OffscreenCanvas"
             -> "typealias $name = CanvasImageSource /* $body */"
@@ -103,6 +108,25 @@ private fun typeBody(body: String): String {
         .joinToString(",\n")
 
     return "($parameters) -> ${kotlinType(returnType)}"
+}
+
+private fun eventPayloadBody(body: String): String {
+    val (params, returnType) = body
+        .removePrefix("(")
+        .removeSuffix(";")
+        .split(") => ")
+
+    require(returnType == "void")
+
+    val parameters = params.splitToSequence(", ")
+        .filter { it.isNotEmpty() }
+        .map(::Parameter)
+        .onEach { it.supportDefault = false }
+        .toList()
+
+    return parameters.joinToString(",\n", "Tuple${parameters.size}<", ">") {
+        "/* ${it.name}: */ ${it.type}"
+    }
 }
 
 private fun optionsBody(

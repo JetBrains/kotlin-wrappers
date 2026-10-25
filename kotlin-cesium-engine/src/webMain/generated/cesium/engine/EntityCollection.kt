@@ -7,6 +7,7 @@ package cesium.engine
 import cesium.core.Event
 import cesium.core.TimeInterval
 import js.array.ReadonlyArray
+import js.array.Tuple4
 
 /**
  * An observable collection of [Entity] instances where each entity has a unique id.
@@ -148,10 +149,10 @@ open external class EntityCollection() {
      * @param [changed] The array of [Entity] instances that have been modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#.CollectionChangedEventCallback">Online Documentation</a>
      */
-    typealias CollectionChangedEventPayload = (
-        collection: EntityCollection,
-        added: ReadonlyArray<Entity>,
-        removed: ReadonlyArray<Entity>,
-        changed: ReadonlyArray<Entity>,
-    ) -> Unit
+    typealias CollectionChangedEventPayload = Tuple4<
+            /* collection: */ EntityCollection,
+            /* added: */ ReadonlyArray<Entity>,
+            /* removed: */ ReadonlyArray<Entity>,
+            /* changed: */ ReadonlyArray<Entity>,
+            >
 }

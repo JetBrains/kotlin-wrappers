@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.Ellipsoid
 import cesium.core.Event
+import js.array.Tuple1
 import js.promise.Promise
 import js.typedarrays.TypedArray
 import js.void.Void
@@ -140,7 +141,7 @@ abstract external class TerrainProvider {
      * @param [err] An object holding details about the error that occurred.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#.ErrorEvent">Online Documentation</a>
      */
-    typealias ErrorEventPayload = (err: TileProviderError) -> Unit
+    typealias ErrorEventPayload = Tuple1</* err: */ TileProviderError>
 
     companion object {
         /**

@@ -181,10 +181,15 @@ private fun eventPayload(type: String): String {
     if (type.isClassLike())
         return fixClassName(type)
 
-    return type
-        .replace(" => void", " -> Unit")
-        .replace(": boolean", ": Boolean")
-        .replace(": this, ", ": JsAny /* this */, ")
+    return when (type) {
+        "(arg0: this, arg1: RequestErrorEvent) => void",
+            -> "Tuple2<DataSource /* this */, RequestErrorEvent>"
+
+        "(arg0: this, arg1: boolean) => void",
+            -> "Tuple2<DataSource /* this */, JsBoolean>"
+
+        else -> TODO()
+    }
 }
 
 private fun String.isClassLike(): Boolean =

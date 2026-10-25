@@ -186,6 +186,9 @@ internal abstract class TypeBase(
 
             "Camera",
                 -> body = body.replace(Regex("""\n(var (position|direction|up): Cartesian3)"""), "\noverride $1")
+
+            "Event",
+                -> body = body.replace("listener: Listener", "listener: JsFunction<T, Void>")
         }
 
         // TODO: move cleanup to separate method
@@ -208,7 +211,7 @@ internal abstract class TypeBase(
             }
 
         val declaration = when (name) {
-            "Event" -> "$name<Listener : Function<Unit>>"
+            "Event" -> "$name<T : Tuple>"
             else -> name + typeParameters
         }
 

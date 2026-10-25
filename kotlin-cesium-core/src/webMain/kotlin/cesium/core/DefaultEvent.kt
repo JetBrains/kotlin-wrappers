@@ -1,3 +1,5 @@
 package cesium.core
 
-typealias DefaultEvent = Event<() -> Unit>
+import js.array.Tuple
+
+typealias DefaultEvent = Event<Tuple>

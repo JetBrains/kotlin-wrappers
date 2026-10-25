@@ -8,6 +8,7 @@ import cesium.core.Color
 import cesium.core.DeveloperError
 import cesium.core.Event
 import cesium.core.Rectangle
+import js.array.Tuple1
 import js.errors.JsError
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
@@ -246,14 +247,14 @@ open external class ImageryLayer(
      * @param [err] An object holding details about the error that occurred.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ErrorEventCallback">Online Documentation</a>
      */
-    typealias ErrorEventPayload = (err: JsError) -> Unit
+    typealias ErrorEventPayload = Tuple1</* err: */ JsError>
 
     /**
      * A function that is called when the provider has been created
      * @param [provider] The created imagery provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ReadyEventCallback">Online Documentation</a>
      */
-    typealias ReadyEventPayload = (provider: ImageryProvider) -> Unit
+    typealias ReadyEventPayload = Tuple1</* provider: */ ImageryProvider>
 
     /**
      * Initialization options for the ImageryLayer constructor.

@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.Event
 import js.array.ReadonlyArray
+import js.array.Tuple2
 
 /**
  * Defines how screen space objects (billboards, points, labels) are clustered.
@@ -84,13 +85,13 @@ open external class EntityCluster {
      *   primitives that represent this cluster of entities.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#.newClusterCallback">Online Documentation</a>
      */
-    typealias NewClusterEventPayload = (
-        clusteredEntities: ReadonlyArray<Entity>,
-        cluster: JsAny,
-        /* {
-        billboard: Billboard;
-        label: Label;
-        point: PointPrimitive;
-    } */
-    ) -> Unit
+    typealias NewClusterEventPayload = Tuple2<
+            /* clusteredEntities: */ ReadonlyArray<Entity>,
+            /* cluster: */ JsAny,
+            /* {
+                   billboard: Billboard;
+                   label: Label;
+                   point: PointPrimitive;
+               } */
+            >
 }

@@ -4,6 +4,10 @@
 
 package cesium.core
 
+import js.array.Tuple
+import js.function.JsFunction
+import js.void.Void
+
 /**
  * A generic utility class for managing subscribers for a particular event.
  * This class is usually instantiated inside of a container class and
@@ -22,7 +26,7 @@ package cesium.core
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html">Online Documentation</a>
  */
-open external class Event<Listener : Function<Unit>> {
+open external class Event<T : Tuple> {
     /**
      * The number of listeners currently subscribed to the event.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#numberOfListeners">Online Documentation</a>
@@ -40,7 +44,7 @@ open external class Event<Listener : Function<Unit>> {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#addEventListener">Online Documentation</a>
      */
     fun addEventListener(
-        listener: Listener,
+        listener: JsFunction<T, Void>,
         scope: JsAny? = definedExternally,
     ): RemoveCallback
 
@@ -52,7 +56,7 @@ open external class Event<Listener : Function<Unit>> {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#removeEventListener">Online Documentation</a>
      */
     fun removeEventListener(
-        listener: Listener,
+        listener: JsFunction<T, Void>,
         scope: JsAny? = definedExternally,
     ): Boolean
 
