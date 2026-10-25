@@ -47,7 +47,7 @@ open external class EntityCollection() {
      * The generated event is a [EntityCollection.CollectionChangedEventCallback].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#collectionChanged">Online Documentation</a>
      */
-    val collectionChanged: Event<CollectionChangedEventCallback>
+    val collectionChanged: Event<CollectionChangedEventPayload>
 
     /**
      * Gets a globally unique identifier for this collection.
@@ -148,7 +148,7 @@ open external class EntityCollection() {
      * @param [changed] The array of [Entity] instances that have been modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#.CollectionChangedEventCallback">Online Documentation</a>
      */
-    typealias CollectionChangedEventCallback = (
+    typealias CollectionChangedEventPayload = (
         collection: EntityCollection,
         added: ReadonlyArray<Entity>,
         removed: ReadonlyArray<Entity>,

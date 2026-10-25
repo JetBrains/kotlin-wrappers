@@ -16,11 +16,11 @@ internal class Class(
             code = code
                 .replace(
                     "override val errorEvent: DefaultEvent",
-                    "override val errorEvent: Event<ErrorEvent>",
+                    "override val errorEvent: Event<ErrorEventPayload>",
                 )
                 .replace(
                     "override var errorEvent: DefaultEvent",
-                    "override var errorEvent: Event<ErrorEvent>",
+                    "override var errorEvent: Event<ErrorEventPayload>",
                 )
 
         return code

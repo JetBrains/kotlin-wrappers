@@ -175,14 +175,14 @@ open external class ImageryLayer(
      * are passed an instance of the thrown error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: Event<ErrorEventCallback>
+    val errorEvent: Event<ErrorEventPayload>
 
     /**
      * Gets an event that is raised when the imagery provider has been successfully created. Event listeners
      * are passed the created instance of [ImageryProvider].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#readyEvent">Online Documentation</a>
      */
-    val readyEvent: Event<ReadyEventCallback>
+    val readyEvent: Event<ReadyEventPayload>
 
     /**
      * Gets the rectangle of this layer.  If this rectangle is smaller than the rectangle of the
@@ -246,14 +246,14 @@ open external class ImageryLayer(
      * @param [err] An object holding details about the error that occurred.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ErrorEventCallback">Online Documentation</a>
      */
-    typealias ErrorEventCallback = (err: JsError) -> Unit
+    typealias ErrorEventPayload = (err: JsError) -> Unit
 
     /**
      * A function that is called when the provider has been created
      * @param [provider] The created imagery provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#.ReadyEventCallback">Online Documentation</a>
      */
-    typealias ReadyEventCallback = (provider: ImageryProvider) -> Unit
+    typealias ReadyEventPayload = (provider: ImageryProvider) -> Unit
 
     /**
      * Initialization options for the ImageryLayer constructor.

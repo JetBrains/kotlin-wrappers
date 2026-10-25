@@ -71,8 +71,18 @@ internal fun applyCallbackFix(
     source: String,
 ): String =
     when (source) {
-        "foveatedInterpolationCallback",
+        "CollectionChangedEventCallback",
+        "ErrorEvent",
+        "ErrorEventCallback",
         "newClusterCallback",
+        "ReadyEventCallback",
+            -> source
+            .replaceFirstChar(Char::uppercase)
+            .removeSuffix("Callback")
+            .removeSuffix("Event")
+            .plus("EventPayload")
+
+        "foveatedInterpolationCallback",
         "updateCallback",
             -> source.replaceFirstChar(Char::uppercase)
 

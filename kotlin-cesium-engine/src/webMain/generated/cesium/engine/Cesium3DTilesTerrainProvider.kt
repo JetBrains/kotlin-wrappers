@@ -88,7 +88,7 @@ private constructor() :
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesTerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    override var errorEvent: Event<ErrorEvent>
+    override var errorEvent: Event<ErrorEventPayload>
 
     /**
      * Gets the credit to display when this terrain provider is active. Typically this is used to credit
