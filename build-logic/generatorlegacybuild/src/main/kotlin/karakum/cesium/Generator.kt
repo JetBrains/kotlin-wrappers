@@ -12,8 +12,7 @@ internal fun generateKotlinDeclarations(
     sourceDir: File,
 ) {
     generate(
-        declarations = parseDeclarations(coreDefinitionsFile)
-            .plus(DefaultEvent),
+        declarations = parseDeclarations(coreDefinitionsFile),
         pkg = "cesium.core",
         sourceDir = sourceDir.resolve("cesium/core"),
     )

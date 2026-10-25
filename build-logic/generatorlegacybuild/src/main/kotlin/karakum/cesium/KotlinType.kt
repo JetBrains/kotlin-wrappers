@@ -82,7 +82,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "(string | number | undefined)[]" to "ReadonlyArray<JsAny? /* string | number | undefined */>",
     "Record<string, unknown>[]" to "ReadonlyArray<ReadonlyRecord<JsString, *>>",
 
-    "Event" to DefaultEvent.name,
+    "Event" to "DefaultEvent",
     PACKABLE to "$PACKABLE<*>",
     "CzmlDataSource.UpdaterFunction" to "UpdaterFunction",
 
