@@ -2,6 +2,7 @@
 
 package node.workerThreads
 
-import node.perfHooks.Performance
+import web.performance.Performance
 
+@Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface WorkerPerformance : Performance

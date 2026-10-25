@@ -12,35 +12,26 @@ private sealed interface DeclarationOverrideConfig {
     object Preserve : DeclarationOverrideConfig
     class Alias(val alias: String) : DeclarationOverrideConfig
     class Overlap(val alias: String, val parentType: String) : DeclarationOverrideConfig
+    object Remove : DeclarationOverrideConfig
 }
 
 private val overriddenProps = mapOf(
     // net
     "Socket" to mapOf(
-        "destroyed" to Alias("netSocketDestroyed")
+        "destroyed" to Alias("netSocketDestroyed"),
     ),
 
     // perf_hooks
-    "PerformanceMark" to mapOf(
-        "duration" to Preserve,
-        "entryType" to Overlap("markEntryType", "EntryType")
-    ),
-    "PerformanceMeasure" to mapOf(
-        "entryType" to Overlap("measureEntryType", "EntryType")
-    ),
     "PerformanceNodeTiming" to mapOf(
-        "entryType" to Overlap("nodeTimingEntryType", "EntryType")
-    ),
-    "PerformanceResourceTiming" to mapOf(
-        "entryType" to Overlap("resourceTimingEntryType", "EntryType")
+        "entryType" to Remove,
     ),
 
     // stream
     "Readable" to mapOf(
-        "readable" to Preserve
+        "readable" to Preserve,
     ),
     "Writable" to mapOf(
-        "writable" to Alias("readonlyWritable")
+        "writable" to Alias("readonlyWritable"),
     ),
     "Duplex" to mapOf(
         "writable" to Alias("duplexWritable"),
@@ -53,7 +44,7 @@ private val overriddenProps = mapOf(
         "writableNeedDrain" to Preserve,
         "closed" to Preserve,
         "errored" to Preserve,
-    )
+    ),
 )
 
 val convertOverriddenPropertyDeclaration = createPlugin { node, context, render ->
@@ -95,6 +86,7 @@ val convertOverriddenPropertyDeclaration = createPlugin { node, context, render 
                     aliasSignature,
                 ).joinToString("\n")
             }
+
             is Alias -> {
                 val alias = propertyOverride.alias
                 val jsName = "@JsName(\"$name\")"
@@ -105,7 +97,9 @@ val convertOverriddenPropertyDeclaration = createPlugin { node, context, render 
                     aliasSignature,
                 ).joinToString("\n")
             }
+
             Preserve -> "override ${modifier}${name}: $type"
+            Remove -> ""
         }
     }
 }

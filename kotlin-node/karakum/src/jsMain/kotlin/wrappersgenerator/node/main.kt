@@ -305,6 +305,20 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/path/posix/**",
             "**/path/win32/**",
             "**/perfHooks/global/**",
+            "**/perfHooks/Performance.kt",
+            "**/perfHooks/performance.val.kt",
+            "**/perfHooks/PerformanceEntry.kt",
+            "**/perfHooks/PerformanceEntryList.kt",
+            "**/perfHooks/PerformanceMark.kt",
+            "**/perfHooks/MarkOptions.kt",
+            "**/perfHooks/PerformanceMeasure.kt",
+            "**/perfHooks/MeasureOptions.kt",
+            "**/perfHooks/PerformanceObserver.kt",
+            "**/perfHooks/PerformanceObserverCallback.kt",
+            "**/perfHooks/PerformanceObserverEntryList.kt",
+            "**/perfHooks/PerformanceObserverInit.kt",
+            "**/perfHooks/PerformanceResourceTiming.kt",
+            "**/perfHooks/PerformanceServerTiming.kt",
             "**/process/global/namespace.kt",
             "**/querystring/decode.kt",
             "**/querystring/encode.kt",
@@ -568,7 +582,10 @@ suspend fun main(args: ReadonlyArray<String>) {
                 ".+" to "node.net.",
             ),
             "node:os" to ruleOf("node.os"),
-            "(node:)?perf_hooks" to ruleOf("node.perfHooks"),
+            "(node:)?perf_hooks" to ruleOf(
+                "Performance" to "web.performance.Performance",
+                ".+" to "node.perfHooks.",
+            ),
             "node:querystring" to ruleOf("node.querystring"),
             "node:readline$" to ruleOf(
                 "Interface" to "node.readline._Interface",
@@ -733,6 +750,9 @@ suspend fun main(args: ReadonlyArray<String>) {
             ),
             "process/Socket.kt" to listOf(
                 "node.ReadWriteStream",
+            ),
+            "perfHooks/PerformanceNodeTiming.kt" to listOf(
+                "web.performance.PerformanceEntry",
             ),
             "stream/Readable.kt" to listOf(
                 "node.ReadableStreamPipeOptions",

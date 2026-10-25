@@ -45,6 +45,9 @@ private val interfacesWithSuperclass = setOf(
     "Http2Session",
     "Http2Stream",
 
+    // perf_hooks
+    "WorkerPerformance",
+
     // process
     "Process",
     "ReadStream",

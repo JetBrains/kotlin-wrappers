@@ -4,6 +4,8 @@
 
 package node.perfHooks
 
+import web.performance.PerformanceEntry
+
 // TODO: PerformanceNodeEntry is missing
 
 /**
@@ -15,12 +17,6 @@ package node.perfHooks
  */
 external class PerformanceNodeTiming : PerformanceEntry {
     constructor ()
-
-    @Deprecated(message = "use nodeTimingEntryType", level = DeprecationLevel.HIDDEN)
-    override val entryType: EntryType
-
-    @JsName("entryType")
-    val nodeTimingEntryType: String /* "node" */
 
     /**
      * The high resolution millisecond timestamp at which the Node.js process
