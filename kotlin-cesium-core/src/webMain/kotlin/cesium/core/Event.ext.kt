@@ -1,5 +1,6 @@
 package cesium.core
 
+import cesium.core.Event.RemoveCallback
 import js.array.Tuple
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -13,3 +14,13 @@ operator fun <T : Tuple> Event<T>.invoke(): Flow<T> =
 
         awaitClose(unsubscribe)
     }
+
+fun Event<*>.addHandler(
+    handler: () -> Unit,
+): RemoveCallback =
+    addEventListener(EventListener(handler))
+
+fun <T : Tuple> Event<T>.addHandler(
+    handler: (T) -> Unit,
+): RemoveCallback =
+    addEventListener(EventListener(handler))
