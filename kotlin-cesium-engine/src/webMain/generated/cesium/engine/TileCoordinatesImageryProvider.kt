@@ -12,7 +12,6 @@ import js.array.ReadonlyArray
 import js.promise.Promise
 import js.void.Void
 import kotlinx.js.JsPlainObject
-import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
 
 /**
@@ -23,48 +22,48 @@ import web.html.HTMLCanvasElement
  */
 open external class TileCoordinatesImageryProvider(
     options: ConstructorOptions? = definedExternally,
-) {
+) : ImageryProvider {
     /**
      * Gets the proxy used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#proxy">Online Documentation</a>
      */
-    val proxy: Proxy
+    override val proxy: Proxy
 
     /**
      * Gets the width of each tile, in pixels.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileWidth">Online Documentation</a>
      */
-    val tileWidth: Int
+    override val tileWidth: Int
 
     /**
      * Gets the height of each tile, in pixels.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileHeight">Online Documentation</a>
      */
-    val tileHeight: Int
+    override val tileHeight: Int
 
     /**
      * Gets the maximum level-of-detail that can be requested.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#maximumLevel">Online Documentation</a>
      */
-    val maximumLevel: Int?
+    override val maximumLevel: Int?
 
     /**
      * Gets the minimum level-of-detail that can be requested.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#minimumLevel">Online Documentation</a>
      */
-    val minimumLevel: Int
+    override val minimumLevel: Int
 
     /**
      * Gets the tiling scheme used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tilingScheme">Online Documentation</a>
      */
-    val tilingScheme: TilingScheme
+    override val tilingScheme: TilingScheme
 
     /**
      * Gets the rectangle, in radians, of the imagery provided by this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#rectangle">Online Documentation</a>
      */
-    val rectangle: Rectangle
+    override val rectangle: Rectangle
 
     /**
      * Gets the tile discard policy.  If not undefined, the discard policy is responsible
@@ -72,7 +71,7 @@ open external class TileCoordinatesImageryProvider(
      * returns undefined, no tiles are filtered.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
      */
-    val tileDiscardPolicy: TileDiscardPolicy
+    override val tileDiscardPolicy: TileDiscardPolicy
 
     /**
      * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
@@ -80,14 +79,14 @@ open external class TileCoordinatesImageryProvider(
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: DefaultEvent
+    override val errorEvent: DefaultEvent
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
      * the source of the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#credit">Online Documentation</a>
      */
-    val credit: Credit
+    override val credit: Credit
 
     /**
      * Gets a value indicating whether or not the images provided by this imagery provider
@@ -97,7 +96,7 @@ open external class TileCoordinatesImageryProvider(
      * and texture upload time.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#hasAlphaChannel">Online Documentation</a>
      */
-    val hasAlphaChannel: Boolean
+    override val hasAlphaChannel: Boolean
 
     /**
      * Gets the credits to be displayed when a given tile is displayed.
@@ -107,7 +106,7 @@ open external class TileCoordinatesImageryProvider(
      * @return The credits to be displayed when the tile is displayed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#getTileCredits">Online Documentation</a>
      */
-    fun getTileCredits(
+    override fun getTileCredits(
         x: Double,
         y: Double,
         level: Int,
@@ -122,21 +121,11 @@ open external class TileCoordinatesImageryProvider(
      * @return The resolved image as a Canvas DOM object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#requestImage">Online Documentation</a>
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestImage(
+    override fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,
-        request: Request? = definedExternally,
-    ): HTMLCanvasElement
-
-    @JsName("requestImage")
-    fun requestImageAsync(
-        x: Double,
-        y: Double,
-        level: Int,
-        request: Request? = definedExternally,
+        request: Request?,
     ): Promise<HTMLCanvasElement>
 
     /**
@@ -150,7 +139,7 @@ open external class TileCoordinatesImageryProvider(
      * @return Undefined since picking is not supported.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#pickFeatures">Online Documentation</a>
      */
-    fun pickFeatures(
+    override fun pickFeaturesAsync(
         x: Double,
         y: Double,
         level: Int,

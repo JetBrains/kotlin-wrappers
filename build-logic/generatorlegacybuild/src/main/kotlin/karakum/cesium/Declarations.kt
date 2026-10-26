@@ -34,6 +34,7 @@ internal const val POSITION_PROPERTY: String = "PositionProperty"
 
 internal const val APPEARANCE: String = "Appearance"
 internal const val CONTROLLER: String = "Controller"
+internal const val IMAGERY_PROVIDER: String = "ImageryProvider"
 
 private val FACTORY_MAP = mapOf(
     Function.PREFIX to ::Function,
@@ -98,6 +99,13 @@ internal fun parseDeclarations(
 
         addParentType(classMap, CONTROLLER) {
             it.endsWith(CONTROLLER) && it != "ScreenSpaceCameraController"
+        }
+
+        addParentType(classMap, IMAGERY_PROVIDER) {
+            it.endsWith(IMAGERY_PROVIDER)
+                    && it != "OpenStreetMapImageryProvider"
+                    && it != "TileMapServiceImageryProvider"
+                    || it == "GoogleEarthEnterpriseMapsProvider"
         }
     }
 

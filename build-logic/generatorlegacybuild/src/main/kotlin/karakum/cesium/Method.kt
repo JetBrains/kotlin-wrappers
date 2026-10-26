@@ -88,20 +88,24 @@ internal class Method(
             )
         }
 
-        val declarations = when (name) {
-            "loadTileDataAvailability" if sourceDeclaration.endsWith("): Void") -> {
+        val declarations = when {
+            (name == "loadTileDataAvailability" || name == "pickFeatures")
+                    && sourceDeclaration.endsWith("): Void") -> {
                 withSuspendAdapter(sourceDeclaration.replaceSuffix("): Void", "): Promise<Void>"))
                     .map { if ("Async" in it) it.replace("): Promise<Void>", "): Void") else it }
                     .toList()
             }
 
-            "fromType" if (sourceDeclaration == "fun fromType(\n type: String,\n uniforms: JsAny? = definedExternally\n): Material")
+            name == "fromType"
+                    && (sourceDeclaration == "fun fromType(\n type: String,\n uniforms: JsAny? = definedExternally\n): Material")
                 -> replacedSyncDeclarations
 
-            "pick" if (sourceDeclaration == "fun pick(\n windowPosition: Cartesian2,\n width: Double? = definedExternally,\n height: Double? = definedExternally\n): JsAny?")
+            name == "pick"
+                    && (sourceDeclaration == "fun pick(\n windowPosition: Cartesian2,\n width: Double? = definedExternally,\n height: Double? = definedExternally\n): JsAny?")
                 -> replacedSyncDeclarations
 
-            "raiseEvent" if (source.body == "raiseEvent(...arguments: Parameters<Listener>): void")
+            name == "raiseEvent"
+                    && (source.body == "raiseEvent(...arguments: Parameters<Listener>): void")
                 -> listOf("val raiseEvent: JsFunction<T, Void>")
 
             else -> withSuspendAdapter(sourceDeclaration).toList()

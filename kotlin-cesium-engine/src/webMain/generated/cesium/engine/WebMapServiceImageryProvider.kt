@@ -8,7 +8,6 @@ import cesium.core.*
 import js.array.ReadonlyArray
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
-import seskar.js.JsAsync
 
 /**
  * Provides tiled imagery hosted by a Web Map Service (WMS) server.
@@ -26,7 +25,7 @@ import seskar.js.JsAsync
  */
 open external class WebMapServiceImageryProvider(
     options: ConstructorOptions,
-) {
+) : ImageryProvider {
     /**
      * Gets the URL of the WMS server.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#url">Online Documentation</a>
@@ -37,7 +36,7 @@ open external class WebMapServiceImageryProvider(
      * Gets the proxy used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#proxy">Online Documentation</a>
      */
-    val proxy: Proxy
+    override val proxy: Proxy
 
     /**
      * Gets the names of the WMS layers, separated by commas.
@@ -49,37 +48,37 @@ open external class WebMapServiceImageryProvider(
      * Gets the width of each tile, in pixels.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#tileWidth">Online Documentation</a>
      */
-    val tileWidth: Int
+    override val tileWidth: Int
 
     /**
      * Gets the height of each tile, in pixels.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#tileHeight">Online Documentation</a>
      */
-    val tileHeight: Int
+    override val tileHeight: Int
 
     /**
      * Gets the maximum level-of-detail that can be requested.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#maximumLevel">Online Documentation</a>
      */
-    val maximumLevel: Int?
+    override val maximumLevel: Int?
 
     /**
      * Gets the minimum level-of-detail that can be requested.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#minimumLevel">Online Documentation</a>
      */
-    val minimumLevel: Int
+    override val minimumLevel: Int
 
     /**
      * Gets the tiling scheme used by this provider.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#tilingScheme">Online Documentation</a>
      */
-    val tilingScheme: TilingScheme
+    override val tilingScheme: TilingScheme
 
     /**
      * Gets the rectangle, in radians, of the imagery provided by this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#rectangle">Online Documentation</a>
      */
-    val rectangle: Rectangle
+    override val rectangle: Rectangle
 
     /**
      * Gets the tile discard policy.  If not undefined, the discard policy is responsible
@@ -87,7 +86,7 @@ open external class WebMapServiceImageryProvider(
      * returns undefined, no tiles are filtered.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#tileDiscardPolicy">Online Documentation</a>
      */
-    val tileDiscardPolicy: TileDiscardPolicy
+    override val tileDiscardPolicy: TileDiscardPolicy
 
     /**
      * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
@@ -95,14 +94,14 @@ open external class WebMapServiceImageryProvider(
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#errorEvent">Online Documentation</a>
      */
-    val errorEvent: DefaultEvent
+    override val errorEvent: DefaultEvent
 
     /**
      * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
      * the source of the imagery.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#credit">Online Documentation</a>
      */
-    val credit: Credit
+    override val credit: Credit
 
     /**
      * Gets a value indicating whether or not the images provided by this imagery provider
@@ -112,7 +111,7 @@ open external class WebMapServiceImageryProvider(
      * and texture upload time are reduced.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#hasAlphaChannel">Online Documentation</a>
      */
-    val hasAlphaChannel: Boolean
+    override val hasAlphaChannel: Boolean
 
     /**
      * Gets or sets a value indicating whether feature picking is enabled.  If true, [WebMapServiceImageryProvider.pickFeatures] will
@@ -152,7 +151,7 @@ open external class WebMapServiceImageryProvider(
      * @return The credits to be displayed when the tile is displayed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#getTileCredits">Online Documentation</a>
      */
-    fun getTileCredits(
+    override fun getTileCredits(
         x: Double,
         y: Double,
         level: Int,
@@ -168,21 +167,11 @@ open external class WebMapServiceImageryProvider(
      *   undefined if there are too many active requests to the server, and the request should be retried later.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#requestImage">Online Documentation</a>
      */
-    @JsAsync(optional = true)
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestImage(
+    override fun requestImageAsync(
         x: Double,
         y: Double,
         level: Int,
-        request: Request? = definedExternally,
-    ): ImageryTypes?
-
-    @JsName("requestImage")
-    fun requestImageAsync(
-        x: Double,
-        y: Double,
-        level: Int,
-        request: Request? = definedExternally,
+        request: Request?,
     ): Promise<ImageryTypes>?
 
     /**
@@ -198,18 +187,7 @@ open external class WebMapServiceImageryProvider(
      *   instances.  The array may be empty if no features are found at the given location.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#pickFeatures">Online Documentation</a>
      */
-    @JsAsync(optional = true)
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun pickFeatures(
-        x: Double,
-        y: Double,
-        level: Int,
-        longitude: Double,
-        latitude: Double,
-    ): ReadonlyArray<ImageryLayerFeatureInfo>?
-
-    @JsName("pickFeatures")
-    fun pickFeaturesAsync(
+    override fun pickFeaturesAsync(
         x: Double,
         y: Double,
         level: Int,
