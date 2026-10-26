@@ -8,6 +8,8 @@ kotlin {
         api(projects.kotlinBrowser)
         api(libs.coroutines.core)
 
+        implementation(projects.kotlinJsPlainObject)
+
         npm(jspkg.cesium.core)
     }
 }
