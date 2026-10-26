@@ -76,11 +76,8 @@ private fun hasRuntimeDeclarations(code: String): Boolean {
     if (code.startsWith("external fun "))
         return true
 
-    if ("\nexternal " !in code && "\nsealed external " !in code)
+    if ("\nexternal " !in code)
         return false
-
-    if ("\nsealed external interface " in code)
-        return "companion object" in code
 
     if (code.count("\nexternal ") == code.count("\nexternal interface"))
         return "companion object" in code
