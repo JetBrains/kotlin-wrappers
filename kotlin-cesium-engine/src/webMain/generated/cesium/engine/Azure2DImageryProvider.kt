@@ -123,7 +123,7 @@ open external class Azure2DImageryProvider(
         x: Double,
         y: Double,
         level: Int,
-    ): ReadonlyArray<Credit>?
+    ): ReadonlyArray<Credit>
 
     /**
      * Requests the image for a given tile.

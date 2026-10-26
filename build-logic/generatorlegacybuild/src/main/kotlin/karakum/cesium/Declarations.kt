@@ -231,6 +231,12 @@ private fun readDeclarations(
             "loadTileDataAvailability(_x: number, _y: number, _level: number): Promise<void> | undefined;",
             "loadTileDataAvailability(x: number, y: number, level: number): Promise<void> | undefined;",
         )
+        // Azure2DImageryProvider
+        // Google2DImageryProvider
+        .replace(
+            "getTileCredits(x: number, y: number, level: number): Credit[] | undefined;",
+            "getTileCredits(x: number, y: number, level: number): Credit[];",
+        )
         // For version `1.103.0`
         .replace(" readonly targetPropertyNames: any;", " readonly targetPropertyNames: string[];")
         .replace("};\n    type UpdaterFunction ", "};\n    /**\n     * Function\n     */\n    type UpdaterFunction ")
