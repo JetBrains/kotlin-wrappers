@@ -43,7 +43,7 @@ open external class Event<T : Tuple> {
      * @return A function that will remove this event listener when invoked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#addEventListener">Online Documentation</a>
      */
-    fun addEventListener(
+    internal fun addEventListener(
         listener: JsFunction<T, Void>,
         scope: JsAny? = definedExternally,
     ): RemoveCallback
@@ -55,7 +55,7 @@ open external class Event<T : Tuple> {
      * @return `true` if the listener was removed; `false` if the listener and scope are not registered with the event.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#removeEventListener">Online Documentation</a>
      */
-    fun removeEventListener(
+    internal fun removeEventListener(
         listener: JsFunction<T, Void>,
         scope: JsAny? = definedExternally,
     ): Boolean

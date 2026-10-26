@@ -188,7 +188,10 @@ internal abstract class TypeBase(
                 -> body = body.replace(Regex("""\n(var (position|direction|up): Cartesian3)"""), "\noverride $1")
 
             "Event",
-                -> body = body.replace("listener: Listener", "listener: JsFunction<T, Void>")
+                -> body = body
+                .replace("listener: Listener", "listener: JsFunction<T, Void>")
+                .replace("fun addEventListener(", "internal fun addEventListener(")
+                .replace("fun removeEventListener(", "internal fun removeEventListener(")
         }
 
         // TODO: move cleanup to separate method
