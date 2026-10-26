@@ -34,7 +34,7 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "Error" to "JsError",
 
-    JS_FUNCTION to "Function<*>",
+    JS_FUNCTION to "JsFunction<*, *>",
     "TypedArray" to "TypedArray<*, *, *, *>",
 
     "DataView" to "DataView<*>",
@@ -121,12 +121,6 @@ internal fun kotlinType(
 
     if (type == "any" && name == "orientation")
         return CameraOrientation.name
-
-    if (type == JS_FUNCTION) {
-        when (name) {
-            "dataCallback" -> return "() -> JsAny?"
-        }
-    }
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }

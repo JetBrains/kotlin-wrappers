@@ -8,6 +8,7 @@ import cesium.core.Cartesian2
 import cesium.core.Cartesian3
 import cesium.core.JulianDate
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 import web.html.HTMLElement
 
@@ -66,7 +67,7 @@ open external class ScreenSpaceZoomCameraController(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceZoomCameraController.html#pickWorldPosition">Online Documentation</a>
      */
-    var pickWorldPosition: Function<*>
+    var pickWorldPosition: JsFunction<*, *>
 
     /**
      * The ratio of the camera's distance to the zoom target that defines how much the camera zooms in and out per second.

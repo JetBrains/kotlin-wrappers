@@ -2,6 +2,7 @@
 
 package cesium.engine
 
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 
 /**
@@ -23,5 +24,5 @@ external interface ContextOptions {
     val requestWebgl1: Boolean?
     val allowTextureFilterAnisotropic: Boolean?
     val webgl: WebGLOptions?
-    val getWebGLStub: Function<*>?
+    val getWebGLStub: JsFunction<*, *>?
 }

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.core.*
+import js.function.JsFunction
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
@@ -545,7 +546,7 @@ open external class Cesium3DTileset(
      * Function for examining vector lines as they are being streamed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#examineVectorLinesFunction">Online Documentation</a>
      */
-    var examineVectorLinesFunction: Function<*>
+    var examineVectorLinesFunction: JsFunction<*, *>
 
     /**
      * Gets the tileset's asset object property, which contains metadata about the tileset.

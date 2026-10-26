@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.*
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint32Array
 
@@ -59,7 +60,7 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#sort">Online Documentation</a>
      */
     fun sort(
-        sortFn: Function<*>,
+        sortFn: JsFunction<*, *>,
         result: Uint32Array<*>,
     ): Uint32Array<*>
 
@@ -230,7 +231,7 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
         fun <T : BufferPrimitive> clone(
             collection: BufferPrimitiveCollection<T>,
             result: BufferPrimitiveCollection<T>,
-            predicate: Function<*>? = definedExternally,
+            predicate: JsFunction<*, *>? = definedExternally,
         )
 
         /**
@@ -266,7 +267,7 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
         fun <T : BufferPrimitive> fromCollection(
             collection: BufferPrimitiveCollection<T>,
             options: BufferPrimitiveCollectionOptions? = definedExternally,
-            predicate: Function<*>? = definedExternally,
+            predicate: JsFunction<*, *>? = definedExternally,
         ): BufferPrimitiveCollection<T>
 
         /**

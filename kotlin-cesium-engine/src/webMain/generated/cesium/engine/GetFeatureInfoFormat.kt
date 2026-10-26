@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.function.JsFunction
+
 /**
  * Describes the format in which to request GetFeatureInfo from a Web Map Service (WMS) or Web Map Tile Service (WMTS) server.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GetFeatureInfoFormat.html">Online Documentation</a>
@@ -22,5 +24,5 @@ package cesium.engine
 open external class GetFeatureInfoFormat(
     type: String,
     format: String? = definedExternally,
-    callback: Function<*>? = definedExternally,
+    callback: JsFunction<*, *>? = definedExternally,
 )

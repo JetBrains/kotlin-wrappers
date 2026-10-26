@@ -9,6 +9,7 @@ import cesium.core.Cartesian3
 import cesium.core.Ellipsoid
 import cesium.core.JulianDate
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 import web.html.HTMLElement
 
@@ -83,7 +84,7 @@ open external class ScreenSpaceTiltOrbitCameraController(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceTiltOrbitCameraController.html#pickWorldPosition">Online Documentation</a>
      */
-    var pickWorldPosition: Function<*>
+    var pickWorldPosition: JsFunction<*, *>
 
     /**
      * The amount at which the camera tilts per dragged pixel. A value of 1.0 means that dragging the mouse across the entire canvas will tilt the camera by 90 degrees.

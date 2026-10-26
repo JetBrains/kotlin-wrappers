@@ -3,6 +3,7 @@
 package cesium.engine
 
 import cesium.core.Ellipsoid
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 
 /**
@@ -18,7 +19,7 @@ external interface GeoJsonPrimitiveConstructorOptions {
     val ellipsoid: Ellipsoid?
     val allowPicking: Boolean?
     val show: Boolean?
-    val pickObjectFactory: Function<*>?
+    val pickObjectFactory: JsFunction<*, *>?
     val heightReference: HeightReference?
     val scene: Scene?
 }

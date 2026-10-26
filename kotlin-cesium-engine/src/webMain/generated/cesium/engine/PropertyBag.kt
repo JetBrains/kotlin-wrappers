@@ -7,6 +7,7 @@ package cesium.engine
 import cesium.core.DefaultEvent
 import cesium.core.JulianDate
 import js.array.ReadonlyArray
+import js.function.JsFunction
 
 /**
  * A [Property] whose value is a key-value mapping of property names to the computed value of other properties.
@@ -19,7 +20,7 @@ import js.array.ReadonlyArray
  */
 open external class PropertyBag(
     value: JsAny? = definedExternally,
-    createPropertyCallback: Function<*>? = definedExternally,
+    createPropertyCallback: JsFunction<*, *>? = definedExternally,
 ) {
     /**
      * Gets the names of all properties registered on this instance.
@@ -59,7 +60,7 @@ open external class PropertyBag(
     fun addProperty(
         propertyName: String,
         value: JsAny? = definedExternally,
-        createPropertyCallback: Function<*>? = definedExternally,
+        createPropertyCallback: JsFunction<*, *>? = definedExternally,
     )
 
     /**
@@ -93,6 +94,6 @@ open external class PropertyBag(
      */
     fun merge(
         source: JsAny,
-        createPropertyCallback: Function<*>? = definedExternally,
+        createPropertyCallback: JsFunction<*, *>? = definedExternally,
     )
 }

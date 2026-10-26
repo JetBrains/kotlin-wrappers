@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 
 
@@ -28,9 +29,9 @@ external object ScreenSpaceInputBindings {
      */
     @JsPlainObject
     interface DragInputActions {
-        val start: Function<*>?
-        val end: Function<*>?
-        val change: Function<*>?
+        val start: JsFunction<*, *>?
+        val end: JsFunction<*, *>?
+        val change: JsFunction<*, *>?
     }
 
     /**

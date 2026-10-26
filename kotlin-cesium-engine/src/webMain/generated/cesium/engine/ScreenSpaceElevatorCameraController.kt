@@ -8,6 +8,7 @@ import cesium.core.Cartesian2
 import cesium.core.Cartesian3
 import cesium.core.JulianDate
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 import web.html.HTMLElement
 
@@ -55,7 +56,7 @@ open external class ScreenSpaceElevatorCameraController(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceElevatorCameraController.html#pickWorldPosition">Online Documentation</a>
      */
-    var pickWorldPosition: Function<*>
+    var pickWorldPosition: JsFunction<*, *>
 
     /**
      * The speed in meters per pixel at which the camera pans.

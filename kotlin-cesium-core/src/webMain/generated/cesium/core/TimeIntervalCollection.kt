@@ -5,6 +5,7 @@
 package cesium.core
 
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import kotlinx.js.JsPlainObject
 
 /**
@@ -211,7 +212,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: () -> JsAny?
+            val dataCallback: JsFunction<*, *>?
         }
 
         /**
@@ -244,7 +245,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: () -> JsAny?
+            val dataCallback: JsFunction<*, *>?
         }
 
         /**
@@ -277,7 +278,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: () -> JsAny?
+            val dataCallback: JsFunction<*, *>?
         }
 
         /**
@@ -315,7 +316,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: () -> JsAny?
+            val dataCallback: JsFunction<*, *>?
         }
     }
 }

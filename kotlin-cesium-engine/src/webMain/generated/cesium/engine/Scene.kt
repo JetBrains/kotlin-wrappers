@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.*
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
@@ -208,7 +209,7 @@ open external class Scene(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#debugCommandFilter">Online Documentation</a>
      */
-    var debugCommandFilter: Function<*>?
+    var debugCommandFilter: JsFunction<*, *>?
 
     /**
      * This property is for debugging only; it is not for production use.

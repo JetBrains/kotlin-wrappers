@@ -4,6 +4,8 @@
 
 package cesium.widgets
 
+import js.function.JsFunction
+
 /**
  * Create a Command from a given function, for use with ViewModels.
  *
@@ -17,6 +19,6 @@ package cesium.widgets
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createCommand">Online Documentation</a>
  */
 external fun createCommand(
-    func: Function<*>,
+    func: JsFunction<*, *>,
     canExecute: Boolean? = definedExternally,
 )

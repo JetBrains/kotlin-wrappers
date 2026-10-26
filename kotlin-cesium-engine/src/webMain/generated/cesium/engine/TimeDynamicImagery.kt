@@ -7,6 +7,7 @@ package cesium.engine
 import cesium.core.Clock
 import cesium.core.TimeInterval
 import cesium.core.TimeIntervalCollection
+import js.function.JsFunction
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
@@ -29,8 +30,8 @@ open external class TimeDynamicImagery(
     interface ConstructorOptions {
         val clock: Clock
         val times: TimeIntervalCollection
-        val requestImageFunction: Function<*>
-        val reloadFunction: Function<*>
+        val requestImageFunction: JsFunction<*, *>
+        val reloadFunction: JsFunction<*, *>
     }
 
     /**

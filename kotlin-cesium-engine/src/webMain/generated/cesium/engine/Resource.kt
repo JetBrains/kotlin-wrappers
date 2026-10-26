@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.buffer.ArrayBuffer
+import js.function.JsFunction
 import js.promise.Promise
 import js.promise.PromiseResult
 import kotlinx.js.JsPlainObject
@@ -76,7 +77,7 @@ open external class Resource(
      * Function to call when a request for this resource fails. If it returns true or a Promise that resolves to true, the request will be retried.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#retryCallback">Online Documentation</a>
      */
-    var retryCallback: Function<*>
+    var retryCallback: JsFunction<*, *>
 
     /**
      * The number of times the retryCallback should be called before giving up.

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.function.JsFunction
 import js.typedarrays.TypedArray
 
 /**
@@ -126,7 +127,7 @@ open external class BufferPolygonCollection(
         fun clone(
             collection: BufferPolygonCollection,
             result: BufferPolygonCollection,
-            predicate: Function<*>? = definedExternally,
+            predicate: JsFunction<*, *>? = definedExternally,
         ): BufferPolygonCollection
 
         /**
@@ -141,7 +142,7 @@ open external class BufferPolygonCollection(
         fun fromCollection(
             collection: BufferPolygonCollection,
             options: BufferPolygonCollectionOptions? = definedExternally,
-            predicate: Function<*>? = definedExternally,
+            predicate: JsFunction<*, *>? = definedExternally,
         ): BufferPolygonCollection
     }
 }

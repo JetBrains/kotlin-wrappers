@@ -8,6 +8,7 @@ import cesium.core.DefaultEvent
 import cesium.core.JulianDate
 import cesium.core.TimeInterval
 import js.array.ReadonlyArray
+import js.function.JsFunction
 import js.promise.Promise
 import kotlinx.js.JsPlainObject
 import seskar.js.JsAsync
@@ -259,7 +260,7 @@ open external class CzmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.processPacketData">Online Documentation</a>
          */
         fun processPacketData(
-            type: Function<*>,
+            type: JsFunction<*, *>,
             obj: JsAny,
             propertyName: String,
             packetData: JsAny,
