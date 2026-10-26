@@ -122,8 +122,14 @@ internal fun kotlinType(
     if (type == "any" && name == "orientation")
         return CameraOrientation.name
 
-    if (STANDARD_TYPE_MAP.containsKey(type))
-        return STANDARD_TYPE_MAP.getValue(type)
+    if (type == JS_FUNCTION) {
+        when (name) {
+            "dataCallback" -> return "() -> JsAny?"
+        }
+    }
+
+    STANDARD_TYPE_MAP[type]
+        ?.also { return it }
 
     if (type.isClassLike())
         return fixClassName(type)

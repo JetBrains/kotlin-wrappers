@@ -211,7 +211,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            val dataCallback: () -> JsAny?
         }
 
         /**
@@ -244,7 +244,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            val dataCallback: () -> JsAny?
         }
 
         /**
@@ -277,7 +277,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            val dataCallback: () -> JsAny?
         }
 
         /**
@@ -315,7 +315,7 @@ open external class TimeIntervalCollection(
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?
             val trailingInterval: Boolean?
-            val dataCallback: Function<*>?
+            val dataCallback: () -> JsAny?
         }
     }
 }
