@@ -156,7 +156,7 @@ open external class GridImageryProvider(
         level: Int,
         longitude: Double,
         latitude: Double,
-    ): Void
+    ): @Suppress("WRONG_JS_INTEROP_TYPE" /* KT-90758 */) Void
 
     /**
      * Initialization options for the GridImageryProvider constructor

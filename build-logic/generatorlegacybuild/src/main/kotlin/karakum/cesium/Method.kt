@@ -128,6 +128,10 @@ internal class Method(
                 val result = it.replaceFirst(anchor, "$modifiers $anchor")
                 if (!suspend && "override" in modifierList && result.startsWith("@JsName(")) {
                     result.substringAfter("\n")
+                        .replace(
+                            "): Void",
+                            """): @Suppress("WRONG_JS_INTEROP_TYPE" /* KT-90758 */) Void""",
+                        )
                 } else result
             }
             .joinToString("\n\n")

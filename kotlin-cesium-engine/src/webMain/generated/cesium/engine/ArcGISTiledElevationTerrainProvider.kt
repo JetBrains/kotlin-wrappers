@@ -125,7 +125,7 @@ private constructor() :
         x: Double,
         y: Double,
         level: Int,
-    ): Void
+    ): @Suppress("WRONG_JS_INTEROP_TYPE" /* KT-90758 */) Void
 
     /**
      * Initialization options for the ArcGISTiledElevationTerrainProvider constructor
