@@ -44,7 +44,7 @@ open external class Event<T : Tuple> {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#addEventListener">Online Documentation</a>
      */
     internal fun addEventListener(
-        listener: JsFunction<T, Void>,
+        listener: EventListener<T>,
         scope: JsAny? = definedExternally,
     ): RemoveCallback
 
@@ -56,7 +56,7 @@ open external class Event<T : Tuple> {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#removeEventListener">Online Documentation</a>
      */
     internal fun removeEventListener(
-        listener: JsFunction<T, Void>,
+        listener: EventListener<T>,
         scope: JsAny? = definedExternally,
     ): Boolean
 

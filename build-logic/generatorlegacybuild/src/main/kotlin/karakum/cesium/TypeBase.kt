@@ -189,7 +189,7 @@ internal abstract class TypeBase(
 
             "Event",
                 -> body = body
-                .replace("listener: Listener", "listener: JsFunction<T, Void>")
+                .replace("listener: Listener", "listener: EventListener<T>")
                 .replace("fun addEventListener(", "internal fun addEventListener(")
                 .replace("fun removeEventListener(", "internal fun removeEventListener(")
         }
