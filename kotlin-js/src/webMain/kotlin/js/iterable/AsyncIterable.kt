@@ -38,6 +38,8 @@ fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
             iterator.awaitFirst(
                 PropertyKey("return"),
                 Symbol.asyncDispose,
+                // Safari < 27
+                strict = false,
             )
         }
 

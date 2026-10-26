@@ -8,10 +8,14 @@ import js.void.Void
 
 internal suspend fun JsAny.awaitFirst(
     vararg methodKeys: PropertyKey?,
+    strict: Boolean = true,
 ) {
-    methodKeys
+    val method = methodKeys
         .filterNotNull()
-        .firstNotNullOf { getMethodOrNull<_, Promise<Void>>(propertyKey = it) }
-        .invoke()
-        .await()
+        .firstNotNullOfOrNull { getMethodOrNull<_, Promise<Void>>(propertyKey = it) }
+        ?: if (strict) {
+            error("No method to await found!")
+        } else return
+
+    method().await()
 }
