@@ -2430,7 +2430,6 @@ private fun convertProperty(
 
     return sequenceOf(
         typeProvider.getPropertyComment(name),
-        if (type == "Void") """@Suppress("WRONG_JS_INTEROP_TYPE")""" else null,
         "$modifier $name: $type",
         mixinSugar,
     ).filterNotNull()
