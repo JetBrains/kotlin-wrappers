@@ -35,8 +35,8 @@ suspend fun resolveInterfacePropertyNullableUnionParameterItemName(node: Node, c
             }
     )
     ensure(isUnionTypeNode(union))
-    ensure(union.types.asArray().size == 2)
-    ensure(union.types.asArray()[1].kind == SyntaxKind.UndefinedKeyword)
+    ensure(union.types.size == 2)
+    ensure(union.types[1].kind == SyntaxKind.UndefinedKeyword)
 
     val property = ensureNotNull(typeScriptService.getParent(union))
     ensure(isPropertySignature(property))

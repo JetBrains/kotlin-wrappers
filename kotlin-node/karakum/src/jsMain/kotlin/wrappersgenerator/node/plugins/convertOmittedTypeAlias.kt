@@ -46,9 +46,9 @@ private suspend fun extractMembersAndHeritageTypes(
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Omit")
 
-        val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.getOrNull(0))
+        val firstTypeArgument = ensureNotNull(node.typeArguments?.getOrNull(0))
 
-        val secondTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.getOrNull(1))
+        val secondTypeArgument = ensureNotNull(node.typeArguments?.getOrNull(1))
 
         val nextOmitKeys = omitKeys + (
                 nullable {
@@ -60,7 +60,7 @@ private suspend fun extractMembersAndHeritageTypes(
                     setOf(literal.text)
                 } ?: nullable {
                     ensure(isUnionTypeNode(secondTypeArgument))
-                    ensure(secondTypeArgument.types.asArray().all {
+                    ensure(secondTypeArgument.types.all {
                         nullable {
                             ensure(isLiteralTypeNode(it))
 
@@ -69,7 +69,7 @@ private suspend fun extractMembersAndHeritageTypes(
                         } != null
                     })
 
-                    secondTypeArgument.types.asArray().mapNotNull {
+                    secondTypeArgument.types.mapNotNull {
                         nullable {
                             ensure(isLiteralTypeNode(it))
 
@@ -108,7 +108,7 @@ private suspend fun extractMembersAndHeritageTypes(
     } ?: nullable {
         ensure(isTypeLiteralNode(node))
 
-        val members = filterMembers(node.members.asArray(), omitKeys)
+        val members = filterMembers(node.members, omitKeys)
 
         members.map { render(it) } to emptySet()
     } ?: nullable {
@@ -118,7 +118,7 @@ private suspend fun extractMembersAndHeritageTypes(
             ensureNotNull(context.lookupService(declarationMergingServiceKey))
 
         val members = declarationMergingService.getMembers(node, context)
-            ?: node.members.asArray()
+            ?: node.members
 
         val filteredMembers = filterMembers(members, omitKeys)
 
@@ -150,11 +150,11 @@ val convertOmittedTypeAlias = createPlugin { node, context, render ->
 
         val type = node.type
         ensure(isIntersectionTypeNode(type))
-        ensure(type.types.asArray().all {
+        ensure(type.types.all {
             isTypeReferenceNode(it)
                     || isTypeLiteralNode(it)
         })
-        ensure(type.types.asArray().any {
+        ensure(type.types.any {
             nullable {
                 ensure(isTypeReferenceNode(it))
 
@@ -164,7 +164,7 @@ val convertOmittedTypeAlias = createPlugin { node, context, render ->
             } != null
         })
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { render(it) }
             ?.filter { it.isNotEmpty() }
             ?.joinToString(separator = ", ")
@@ -178,7 +178,7 @@ val convertOmittedTypeAlias = createPlugin { node, context, render ->
         val heritageInjections = injectionService?.resolveInjections(node, InjectionType.HERITAGE_CLAUSE, context, render)
         val injections = injectionService?.resolveInjections(node, InjectionType.MEMBER, context, render)
 
-        val (members, heritageTypes) = type.types.asArray()
+        val (members, heritageTypes) = type.types
             .fold(emptyList<String>() to emptySet<String>()) { acc, type ->
                 val (members, heritageTypes) = extractMembersAndHeritageTypes(type, context, render, null, emptySet())
                 (acc.first + members) to (acc.second + heritageTypes)

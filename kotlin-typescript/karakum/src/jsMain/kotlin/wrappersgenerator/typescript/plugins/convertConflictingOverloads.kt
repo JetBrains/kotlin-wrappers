@@ -12,12 +12,12 @@ private fun isConflictingOverload(node: MethodSignature) = nullable {
 
     ensureNotNull(
         nullable {
-            val firstParameter = ensureNotNull(node.parameters.asArray().firstOrNull())
+            val firstParameter = ensureNotNull(node.parameters.firstOrNull())
 
             val firstParameterType = ensureNotNull(firstParameter.type)
             ensure(isUnionTypeNode(firstParameterType))
         } ?: nullable {
-            val secondParameter = ensureNotNull(node.parameters.asArray().getOrNull(1))
+            val secondParameter = ensureNotNull(node.parameters.getOrNull(1))
 
             val secondParameterType = ensureNotNull(secondParameter.type)
             ensure(isUnionTypeNode(secondParameterType))
@@ -38,14 +38,14 @@ val convertConflictingOverloads = createPlugin { node, _, _ ->
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "NodesVisitor")
 
-        ensure(node.typeParameters?.asArray()?.size == 3)
+        ensure(node.typeParameters?.size == 3)
 
         ""
     } ?: nullable {
         ensure(isFunctionDeclaration(node))
         ensure(node.name?.text == "visitNodes")
 
-        ensure(node.typeParameters?.asArray()?.size == 3)
+        ensure(node.typeParameters?.size == 3)
 
         ""
     }

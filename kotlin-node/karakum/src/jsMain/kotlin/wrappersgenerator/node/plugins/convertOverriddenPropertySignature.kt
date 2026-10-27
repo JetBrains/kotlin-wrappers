@@ -173,7 +173,7 @@ val convertOverriddenPropertySignature = createPlugin { node, context, render ->
         ensure(isIdentifier(propertyName))
         val propertyOverride = ensureNotNull(interfaceOverrides[propertyName.text])
 
-        val readonly = node.modifiers?.asArray()?.find { it.kind == SyntaxKind.ReadonlyKeyword }
+        val readonly = node.modifiers?.find { it.kind == SyntaxKind.ReadonlyKeyword }
 
         val modifier = if (readonly != null) "val " else "var "
 

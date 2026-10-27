@@ -3,7 +3,6 @@ package wrappersgenerator.typescript.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
 
@@ -15,7 +14,7 @@ val convertUtilityTypes = createPlugin { node, _, render ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "NonNullable")
 
-        val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.firstOrNull())
+        val firstTypeArgument = ensureNotNull(node.typeArguments?.firstOrNull())
 
         "${render(firstTypeArgument)} & Any"
     }

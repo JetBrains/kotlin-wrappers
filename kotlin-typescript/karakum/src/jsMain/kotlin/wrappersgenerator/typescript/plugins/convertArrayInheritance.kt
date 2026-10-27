@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isExpressionWithTypeArguments
 import typescript.isIdentifier
 
@@ -20,7 +19,7 @@ val convertArrayInheritance = createPlugin { node, _, render ->
                     || expression.text == "ReadonlyArray",
         )
 
-        val typeArguments = node.typeArguments?.asArray()
+        val typeArguments = node.typeArguments
             ?.map { render(it) }
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")

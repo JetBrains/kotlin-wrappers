@@ -8,7 +8,6 @@ import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isConditionalTypeNode
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeLiteralNode
@@ -34,7 +33,7 @@ val convertParsedResults = createPlugin { node, context, render ->
 
         val name = render(node.name)
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { render(it) }
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")
@@ -43,7 +42,7 @@ val convertParsedResults = createPlugin { node, context, render ->
 
         val injections = injectionService.resolveInjections(trueType, InjectionType.MEMBER, context, render)
 
-        val members = trueType.members.asArray()
+        val members = trueType.members
             .map { render(it) }
             .joinToString("\n")
 

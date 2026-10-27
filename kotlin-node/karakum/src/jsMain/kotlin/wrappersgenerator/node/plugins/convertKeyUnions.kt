@@ -29,7 +29,7 @@ val convertKeyUnions = createPlugin { node, _, render ->
 
         val name = render(node.name)
 
-        val entries = union.types.asArray()
+        val entries = union.types
             .mapNotNull {
                 nullable {
                     ensure(isLiteralTypeNode(it))

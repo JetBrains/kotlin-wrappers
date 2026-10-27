@@ -45,7 +45,7 @@ private val incompatibleParameterNames = mapOf(
     "Http2ServerResponse" to mapOf(
         "end" to mapOf(
             "callback" to ParameterNameReplacement("cb"),
-            "data" to ParameterNameReplacement("str", declarationPredicate = { it.parameters.asArray().size == 3 }),
+            "data" to ParameterNameReplacement("str", declarationPredicate = { it.parameters.size == 3 }),
         )
     ),
 )

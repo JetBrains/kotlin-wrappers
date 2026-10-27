@@ -56,7 +56,6 @@ val convertUserEventMethod = createPlugin { node, context, render ->
         val name = render(node.name)
 
         val typeParameters = declaration.typeParameters
-            ?.asArray()
             ?.map { render(it) }
             ?.filter { it.isNotEmpty() }
             ?.joinToString(separator = ", ")
@@ -80,7 +79,7 @@ val convertUserEventMethod = createPlugin { node, context, render ->
 
             val typeArguments = requireNotNull(declarationType.typeArguments)
 
-            val returnTypePayload = render(typeArguments.asArray().first())
+            val returnTypePayload = render(typeArguments.first())
 
             val suspendDeclaration = convertParameterDeclarations(
                 declaration, context, render,

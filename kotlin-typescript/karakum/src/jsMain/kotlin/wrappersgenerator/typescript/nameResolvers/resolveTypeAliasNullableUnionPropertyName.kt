@@ -21,9 +21,9 @@ suspend fun resolveTypeAliasNullableUnionPropertyName(node: Node, context: Conte
 
     val union = ensureNotNull(typeScriptService.getParent(typeLiteral))
     ensure(isUnionTypeNode(union))
-    ensure(union.types.asArray().size > 1)
+    ensure(union.types.size > 1)
 
-    val unionSecondType = union.types.asArray()[1]
+    val unionSecondType = union.types[1]
     ensure(unionSecondType.kind == SyntaxKind.UndefinedKeyword)
 
     val typeAlias = ensureNotNull(typeScriptService.getParent(union))

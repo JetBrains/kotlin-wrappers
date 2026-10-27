@@ -94,9 +94,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(isIdentifier(typeName))
             ensure(typeName.text == "TypedArray")
 
-            ensure(node.typeArguments?.asArray()?.size == 1)
+            ensure(node.typeArguments?.size == 1)
 
-            val typeArguments = node.typeArguments?.asArray()
+            val typeArguments = node.typeArguments
                 ?.map { render(it) }
                 ?.joinToString(", ")
 
@@ -201,9 +201,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(isIdentifier(typeName))
             ensure(typeName.text == "AsyncGenerator")
 
-            ensure(node.typeArguments?.asArray()?.size == 2)
+            ensure(node.typeArguments?.size == 2)
 
-            val typeArguments = node.typeArguments?.asArray()
+            val typeArguments = node.typeArguments
                 ?.map { render(it) }
                 ?.joinToString(", ")
 
@@ -215,9 +215,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(isIdentifier(typeName))
             ensure(typeName.text == "MockFunctionCall")
 
-            ensure(node.typeArguments?.asArray()?.size == 1)
+            ensure(node.typeArguments?.size == 1)
 
-            val typeArguments = node.typeArguments?.asArray()
+            val typeArguments = node.typeArguments
                 ?.map { render(it) }
                 ?.joinToString(", ")
 

@@ -40,7 +40,7 @@ class ContractFunctionApiPlugin : Plugin {
 
         val name = escapeIdentifier(next(nameNode))
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { next(it) }
             ?.joinToString(", ")
 

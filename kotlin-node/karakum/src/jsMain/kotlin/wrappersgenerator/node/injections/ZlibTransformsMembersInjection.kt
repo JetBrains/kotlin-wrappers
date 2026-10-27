@@ -87,7 +87,7 @@ class ZlibTransformsMembersInjection : Injection {
 
                     val name = escapeIdentifier(render(member.name))
 
-                    val typeParameters = member.typeParameters?.asArray()
+                    val typeParameters = member.typeParameters
                         ?.map { render(it) }
                         ?.joinToString(", ")
 
@@ -107,7 +107,7 @@ class ZlibTransformsMembersInjection : Injection {
                                     "Function<Any?> /* ${typeScriptService.printNode(member)} */"
                                 }
 
-                                member.parameters.asArray().any { it.dotDotDotToken != null } -> {
+                                member.parameters.any { it.dotDotDotToken != null } -> {
                                     "Function<${returnType}> /* ${typeScriptService.printNode(member)} */"
                                 }
 

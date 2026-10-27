@@ -16,13 +16,13 @@ val convertTestContextHeritageClause = createPlugin { node, context, render ->
         ensure(isInterfaceDeclaration(interfaceNode))
         ensure(interfaceNode.name.text == "TestContextAssert")
 
-        val types = node.types.asArray()
+        val types = node.types
         ensure(types.size == 1)
 
         val first = types.first()
         ensure(isExpressionWithTypeArguments(first))
 
-        val typeArguments = ensureNotNull(first.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(first.typeArguments)
         ensure(typeArguments.size == 2)
         ensure(isImportTypeNode(typeArguments.first()))
 

@@ -45,7 +45,7 @@ class QueriesPlugin : Plugin {
     override suspend fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         ensure(isFunctionDeclaration(node))
 
-        val firstParameter = ensureNotNull(node.parameters.asArray().firstOrNull())
+        val firstParameter = ensureNotNull(node.parameters.firstOrNull())
         ensureNotNull(firstParameter.dotDotDotToken)
 
         val firstParameterType = ensureNotNull(firstParameter.type)
@@ -55,7 +55,7 @@ class QueriesPlugin : Plugin {
         ensure(isIdentifier(firstParameterTypeName))
         ensure(firstParameterTypeName.text == "Parameters")
 
-        val firstParameterTypeArgument = ensureNotNull(firstParameterType.typeArguments?.asArray()?.firstOrNull())
+        val firstParameterTypeArgument = ensureNotNull(firstParameterType.typeArguments?.firstOrNull())
         ensure(isTypeReferenceNode(firstParameterTypeArgument))
 
         val firstParameterTypeArgumentName = firstParameterTypeArgument.typeName
@@ -69,7 +69,7 @@ class QueriesPlugin : Plugin {
         ensure(isIdentifier(returnTypeName))
         ensure(returnTypeName.text == "ReturnType")
 
-        val returnTypeArgument = ensureNotNull(returnType.typeArguments?.asArray()?.firstOrNull())
+        val returnTypeArgument = ensureNotNull(returnType.typeArguments?.firstOrNull())
         ensure(isTypeReferenceNode(returnTypeArgument))
 
         val returnTypeArgumentName = returnTypeArgument.typeName
@@ -92,7 +92,6 @@ class QueriesPlugin : Plugin {
         val name = next(ensureNotNull(node.name))
 
         val typeParameters = node.typeParameters
-            ?.asArray()
             ?.map { next(it) }
             ?.filter { it.isNotEmpty() }
             ?.joinToString(separator = ", ")
@@ -105,7 +104,7 @@ class QueriesPlugin : Plugin {
 
             val typeArguments = requireNotNull(type.typeArguments)
 
-            val returnTypePayload = next(typeArguments.asArray().first())
+            val returnTypePayload = next(typeArguments.first())
 
             val sourceFileName = node.getSourceFile()?.fileName ?: "generated.d.ts"
 

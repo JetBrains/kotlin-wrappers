@@ -51,7 +51,6 @@ private suspend fun convertQueryMethod(node: MethodSignature, typeName: Identifi
     val name = escapeIdentifier(render(node.name))
 
     val typeParameters = node.typeParameters
-        ?.asArray()
         ?.map { render(it) }
         ?.filter { it.isNotEmpty() }
         ?.joinToString(separator = ", ")
@@ -88,7 +87,7 @@ private suspend fun convertQueryMethod(node: MethodSignature, typeName: Identifi
 
         val typeArguments = requireNotNull(type.typeArguments)
 
-        val returnTypePayload = render(typeArguments.asArray().first())
+        val returnTypePayload = render(typeArguments.first())
 
         val suspendDeclaration = convertParameterDeclarations(
             declarationType, context, render,
@@ -163,8 +162,8 @@ val BoundQueriesPlugin = createPlugin { node, context, render ->
 
         val name = render(node.name)
 
-        val typeLiterals = trueType.types.asArray().filter { isTypeLiteralNode(it) }
-        val mappedType = ensureNotNull(trueType.types.asArray().find { isMappedTypeNode(it) })
+        val typeLiterals = trueType.types.filter { isTypeLiteralNode(it) }
+        val mappedType = ensureNotNull(trueType.types.find { isMappedTypeNode(it) })
         ensure(isMappedTypeNode(mappedType))
 
         val members = typeLiterals
@@ -209,7 +208,7 @@ val BoundQueriesPlugin = createPlugin { node, context, render ->
     } ?: nullable {
         ensure(isMethodSignature(node))
 
-        val firstParameter = ensureNotNull(node.parameters.asArray().firstOrNull())
+        val firstParameter = ensureNotNull(node.parameters.firstOrNull())
         ensureNotNull(firstParameter.dotDotDotToken)
 
         val firstParameterType = ensureNotNull(firstParameter.type)
@@ -219,14 +218,14 @@ val BoundQueriesPlugin = createPlugin { node, context, render ->
         ensure(isIdentifier(firstParameterTypeName))
         ensure(firstParameterTypeName.text == "Parameters")
 
-        val firstParameterTypeArgument = ensureNotNull(firstParameterType.typeArguments?.asArray()?.firstOrNull())
+        val firstParameterTypeArgument = ensureNotNull(firstParameterType.typeArguments?.firstOrNull())
         ensure(isTypeReferenceNode(firstParameterTypeArgument))
 
         val firstParameterTypeArgumentName = firstParameterTypeArgument.typeName
         ensure(isIdentifier(firstParameterTypeArgumentName))
         ensure(firstParameterTypeArgumentName.text == "BoundFunction")
 
-        val firstParameterTypeArgumentTypeArgument = ensureNotNull(firstParameterTypeArgument.typeArguments?.asArray()?.firstOrNull())
+        val firstParameterTypeArgumentTypeArgument = ensureNotNull(firstParameterTypeArgument.typeArguments?.firstOrNull())
         ensure(isTypeReferenceNode(firstParameterTypeArgumentTypeArgument))
 
         val firstParameterTypeArgumentTypeArgumentName = firstParameterTypeArgumentTypeArgument.typeName
@@ -240,7 +239,7 @@ val BoundQueriesPlugin = createPlugin { node, context, render ->
         ensure(isIdentifier(returnTypeName))
         ensure(returnTypeName.text == "ReturnType")
 
-        val returnTypeArgument = ensureNotNull(returnType.typeArguments?.asArray()?.firstOrNull())
+        val returnTypeArgument = ensureNotNull(returnType.typeArguments?.firstOrNull())
         ensure(isTypeReferenceNode(returnTypeArgument))
 
         val returnTypeArgumentName = returnTypeArgument.typeName

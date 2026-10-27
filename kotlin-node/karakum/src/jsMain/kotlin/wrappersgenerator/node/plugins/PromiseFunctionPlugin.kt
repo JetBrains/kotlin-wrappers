@@ -35,7 +35,7 @@ private fun isConflictingOverload(node: Node, signatureContext: SignatureContext
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode(typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -60,7 +60,7 @@ private fun isConflictingOverload(node: Node, signatureContext: SignatureContext
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode(typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -85,7 +85,7 @@ private fun isConflictingOverload(node: Node, signatureContext: SignatureContext
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode(typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -107,7 +107,7 @@ private fun isConflictingOverload(node: Node, signatureContext: SignatureContext
         ensure(isPromiseType(type))
 
         val typeArguments = ensureNotNull(type.typeArguments)
-        ensure(isUnionTypeNode(typeArguments.asArray().first()))
+        ensure(isUnionTypeNode(typeArguments.first()))
 
         nullable {
             ensure(signature.size == 1)
@@ -126,7 +126,7 @@ private fun isConflictingOverload(node: Node, signatureContext: SignatureContext
             val secondParameterType = ensureNotNull(secondParameter.type)
             ensure(isIntersectionTypeNode(secondParameterType))
 
-            val secondParameterTypeFirstType = secondParameterType.types.asArray().first()
+            val secondParameterTypeFirstType = secondParameterType.types.first()
             ensure(isTypeReferenceNode(secondParameterTypeFirstType))
 
             val secondParameterTypeFirstTypeName = secondParameterTypeFirstType.typeName
@@ -146,7 +146,7 @@ fun createPromiseFunctionPlugin() = PromiseFunctionPlugin(
             "Any?"
         } else {
             val typeArguments = requireNotNull(node.typeArguments)
-            render(typeArguments.asArray().first())
+            render(typeArguments.first())
         }
     }
 )

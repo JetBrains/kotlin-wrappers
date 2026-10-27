@@ -9,7 +9,7 @@ val convertToPrimitiveSymbolHolder = createPlugin { node, context, render ->
     nullable {
         ensure(isTypeLiteralNode(node))
 
-        val members = node.members.asArray()
+        val members = node.members
         ensure(members.size == 1)
 
         val member = members.first()

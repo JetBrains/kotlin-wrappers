@@ -12,7 +12,7 @@ import typescript.*
 private fun isConflictingOverload(node: FunctionDeclaration) = nullable {
     ensure(node.name?.text == "isIterationStatement")
 
-    val secondParameter = ensureNotNull(node.parameters.asArray().getOrNull(1))
+    val secondParameter = ensureNotNull(node.parameters.getOrNull(1))
 
     val secondParameterType = ensureNotNull(secondParameter.type)
     ensure(isLiteralTypeNode(secondParameterType))

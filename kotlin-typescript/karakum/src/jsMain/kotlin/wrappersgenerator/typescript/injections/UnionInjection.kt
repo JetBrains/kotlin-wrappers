@@ -33,8 +33,8 @@ private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
                         ensure(isInterfaceDeclaration(declaration))
 
                         ensure(
-                            (declaration.heritageClauses?.asArray() ?: emptyArray())
-                                .flatMap { it.types.asArray().asIterable() }
+                            (declaration.heritageClauses ?: emptyArray())
+                                .flatMap { it.types.asIterable() }
                                 .any { isNodeSuccessor(it, context) },
                         )
                     } ?: nullable {
@@ -44,10 +44,10 @@ private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
 
                         nullable {
                             ensure(isIntersectionTypeNode(declarationType))
-                            ensure(declarationType.types.asArray().any { isNodeSuccessor(it, context) })
+                            ensure(declarationType.types.any { isNodeSuccessor(it, context) })
                         } ?: nullable {
                             ensure(isUnionTypeNode(declarationType))
-                            ensure(declarationType.types.asArray().all { isNodeSuccessor(it, context) })
+                            ensure(declarationType.types.all { isNodeSuccessor(it, context) })
                         } ?: nullable {
                             ensure(isNodeSuccessor(declarationType, context))
                         }
@@ -84,7 +84,7 @@ private fun isEnumMemberType(node: Node, context: Context, enumName: String): Bo
 
                     nullable {
                         ensure(isUnionTypeNode(declarationType))
-                        ensure(declarationType.types.asArray().all { isEnumMemberType(it, context, enumName) })
+                        ensure(declarationType.types.all { isEnumMemberType(it, context, enumName) })
                     } ?: nullable {
                         ensure(isEnumMemberType(declaration.type, context, enumName))
                     }
@@ -101,7 +101,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
         if (
             context.type == InjectionType.HERITAGE_CLAUSE
             && isUnionTypeNode(node)
-            && node.types.asArray().all { isEnumMemberType(it, context, enumName) }
+            && node.types.all { isEnumMemberType(it, context, enumName) }
         ) {
             result.add(enumName)
         }
@@ -110,7 +110,7 @@ val injectCommonUnionParents = createInjection { node, context, _ ->
     if (
         context.type == InjectionType.HERITAGE_CLAUSE
         && isUnionTypeNode(node)
-        && node.types.asArray().all { isNodeSuccessor(it, context) }
+        && node.types.all { isNodeSuccessor(it, context) }
     ) {
         result.add("Node")
     }

@@ -55,7 +55,7 @@ class ModuleInjection : Injection {
         ensure(isClassDeclaration(node))
         ensure(node.name?.text == "Module")
 
-        moduleInterfaceNode.members.asArray()
+        moduleInterfaceNode.members
             .map { render(it) }
             .toTypedArray()
     }

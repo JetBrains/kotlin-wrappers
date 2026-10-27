@@ -10,7 +10,7 @@ val convertCompareResultType = createPlugin { node, context, _ ->
     nullable {
         ensure(isUnionTypeNode(node))
 
-        val types = node.types.asArray()
+        val types = node.types
 
         ensure(types.size == 3)
 

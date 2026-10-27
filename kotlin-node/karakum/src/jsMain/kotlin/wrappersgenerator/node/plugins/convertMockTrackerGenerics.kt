@@ -69,7 +69,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
             ensure(typeName.text == "Mock")
 
             val typeArguments = ensureNotNull(node.typeArguments)
-            ensure(isUnionTypeNode(typeArguments.asArray().first()))
+            ensure(isUnionTypeNode(typeArguments.first()))
 
             val method = ensureNotNull(node.parent)
             ensure(isMethodSignature(method))
@@ -89,7 +89,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val fistType = node.types.asArray().first()
+            val fistType = node.types.first()
             ensure(isTypeReferenceNode(fistType))
 
             val firstTypeName = fistType.typeName
@@ -101,7 +101,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, render ->
             ensure(isMockTrackerMethod(method))
             ensure(method.type === node)
 
-            val secondType = node.types.asArray()[1]
+            val secondType = node.types[1]
 
             render(secondType)
                 // remove generics

@@ -169,10 +169,10 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
                 ensure(isQualifiedName(typeName))
                 ensure(typeName.right.text == "AsyncIterator")
                 val typeArguments = ensureNotNull(type.typeArguments)
-                val firstTypeArgument = ensureNotNull(typeArguments.asArray().first())
+                val firstTypeArgument = ensureNotNull(typeArguments.first())
                 ensure(isTypeReferenceNode(firstTypeArgument))
                 val firstTypeArgumentTypeArguments = ensureNotNull(firstTypeArgument.typeArguments)
-                val firstTypeArgumentFirstTypeArgument = ensureNotNull(firstTypeArgumentTypeArguments.asArray().first())
+                val firstTypeArgumentFirstTypeArgument = ensureNotNull(firstTypeArgumentTypeArguments.first())
                 ensure(isUnionTypeNode(firstTypeArgumentFirstTypeArgument))
             }
         )
@@ -255,7 +255,7 @@ val convertConflictingOverloads = createPlugin { node, context, render ->
 
         val name = node.name?.let { render(it) } ?: "Anonymous"
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { render(it) }
             ?.joinToString(", ")
 

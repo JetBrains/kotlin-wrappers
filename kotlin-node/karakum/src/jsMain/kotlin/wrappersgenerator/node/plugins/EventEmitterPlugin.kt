@@ -15,7 +15,7 @@ private fun extractModifiers(member: Node) = when {
     isSetAccessorDeclaration(member) -> member.modifiers
     isIndexSignatureDeclaration(member) -> member.modifiers
     else -> null
-}?.asArray() ?: emptyArray()
+} ?: emptyArray()
 
 private fun isEventEmitterInterfaceNode(node: Node) = nullable {
     ensure(isInterfaceDeclaration(node))
@@ -66,7 +66,7 @@ class EventEmitterPlugin : Plugin {
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull(1))
+            val secondType = ensureNotNull(node.types.getOrNull(1))
             ensure(isTypeReferenceNode(secondType))
 
             val typeName = secondType.typeName
@@ -213,17 +213,17 @@ class EventEmitterPlugin : Plugin {
             ensure(isClassDeclaration(node))
             ensure(node.name?.text == "EventEmitter")
 
-            val heritageClauses = node.heritageClauses?.asArray()
+            val heritageClauses = node.heritageClauses
                 ?.map { next(it) }
                 ?.joinToString(", ")
 
-            val members = node.members.asArray()
+            val members = node.members
                 .filter { member -> extractModifiers(member).all { it.kind != SyntaxKind.StaticKeyword } }
-                .plus(eventEmitterInterfaceNode.members.asArray())
+                .plus(eventEmitterInterfaceNode.members)
                 .map { next(it) }
                 .joinToString("\n")
 
-            val staticMembers = node.members.asArray()
+            val staticMembers = node.members
                 .filter { member -> extractModifiers(member).any { it.kind == SyntaxKind.StaticKeyword } }
                 .map { next(it) }
                 .joinToString("\n")

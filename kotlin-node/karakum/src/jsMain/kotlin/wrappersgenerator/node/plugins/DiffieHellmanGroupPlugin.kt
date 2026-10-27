@@ -42,7 +42,7 @@ class DiffieHellmanGroupPlugin : Plugin {
 
             val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
 
-            val ownMembers = node.members.asArray()
+            val ownMembers = node.members
                 .mapNotNull { member ->
                     nullable {
                         ensure(
@@ -61,7 +61,7 @@ class DiffieHellmanGroupPlugin : Plugin {
                 .filter { it.isNotEmpty() }
                 .joinToString("\n")
 
-            val members = sourceDiffieHellmanGroupNode.members.asArray()
+            val members = sourceDiffieHellmanGroupNode.members
                 .mapNotNull { member ->
                     nullable {
                         ensure(

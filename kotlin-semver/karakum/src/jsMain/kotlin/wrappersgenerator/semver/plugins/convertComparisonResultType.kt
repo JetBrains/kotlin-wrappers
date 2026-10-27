@@ -14,7 +14,7 @@ val convertComparisonResultType = createPlugin { node, context, _ ->
 
         ensure(isUnionTypeNode(node))
         ensure(
-            node.types.asArray().all { type ->
+            node.types.all { type ->
                 nullable {
                     ensure(isLiteralTypeNode(type))
 
@@ -32,7 +32,7 @@ val convertComparisonResultType = createPlugin { node, context, _ ->
             },
         )
 
-        val printedTypes = node.types.asArray().map { typeScriptService.printNode(it) }
+        val printedTypes = node.types.map { typeScriptService.printNode(it) }
         ensure(printedTypes == comparisonResultType)
 
         val parent = ensureNotNull(node.parent)

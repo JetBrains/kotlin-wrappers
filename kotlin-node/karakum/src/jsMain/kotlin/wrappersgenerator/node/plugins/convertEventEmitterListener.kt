@@ -17,7 +17,7 @@ val convertEventEmitterListener = createPlugin { node, _, render ->
         ensure(name.text == "Function")
 
         val typeArguments = ensureNotNull(node.typeArguments)
-        val firstTypeArgument = ensureNotNull(typeArguments.asArray().getOrNull(0))
+        val firstTypeArgument = ensureNotNull(typeArguments.getOrNull(0))
         ensure(firstTypeArgument.kind == SyntaxKind.AnyKeyword)
 
         val parameter = ensureNotNull(node.parent)

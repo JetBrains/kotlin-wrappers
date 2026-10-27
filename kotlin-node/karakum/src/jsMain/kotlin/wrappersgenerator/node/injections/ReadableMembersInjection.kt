@@ -50,7 +50,7 @@ class ReadableMembersInjection : Injection {
             .map { member ->
                 val name = render(member.name)
 
-                val typeParameters = member.typeParameters?.asArray()
+                val typeParameters = member.typeParameters
                     ?.map { render(it) }
                     ?.joinToString(", ")
 

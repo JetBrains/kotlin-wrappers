@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isIntersectionTypeNode
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeLiteralNode
@@ -18,7 +17,7 @@ val convertEvent = createPlugin { node, context, render ->
         val type = node.type
         ensure(isIntersectionTypeNode(type))
 
-        val firstType = type.types.asArray().first()
+        val firstType = type.types.first()
         ensure(isTypeLiteralNode(firstType))
 
         val inheritanceModifierService =
@@ -26,12 +25,12 @@ val convertEvent = createPlugin { node, context, render ->
 
         val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { render(it) }
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")
 
-        val members = firstType.members.asArray()
+        val members = firstType.members
             .map { render(it) }
             .joinToString("\n")
 

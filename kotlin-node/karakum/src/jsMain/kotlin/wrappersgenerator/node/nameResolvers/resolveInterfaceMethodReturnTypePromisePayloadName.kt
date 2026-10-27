@@ -33,7 +33,7 @@ suspend fun resolveInterfaceMethodReturnTypePromisePayloadName(node: Node, conte
         ensure(parentName == "FileHandle")
 
         nullable {
-            val typeParameter = ensureNotNull(method.typeParameters?.asArray()?.firstOrNull())
+            val typeParameter = ensureNotNull(method.typeParameters?.firstOrNull())
 
             val constraint = ensureNotNull(typeParameter.constraint)
             ensure(isTypeReferenceNode(constraint))
@@ -44,7 +44,7 @@ suspend fun resolveInterfaceMethodReturnTypePromisePayloadName(node: Node, conte
 
             "${parentName.replaceFirstChar { it.titlecase() }}${methodName.replaceFirstChar { it.titlecase() }}ViewResultPayload"
         } ?: nullable {
-            val firstParameter = ensureNotNull(method.parameters.asArray().firstOrNull())
+            val firstParameter = ensureNotNull(method.parameters.firstOrNull())
 
             val firstParameterType = ensureNotNull(firstParameter.type)
             ensure(firstParameterType.kind == SyntaxKind.StringKeyword)

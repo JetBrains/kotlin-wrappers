@@ -30,14 +30,14 @@ val convertOverriddenGcOptionPropertySignature = createPlugin { node, context, r
         val intersection = ensureNotNull(typeLiteral.parent)
         ensure(isIntersectionTypeNode(intersection))
 
-        val firstType = ensureNotNull(intersection.types.asArray().firstOrNull())
+        val firstType = ensureNotNull(intersection.types.firstOrNull())
         ensure(isTypeReferenceNode(firstType))
 
         val typeName = firstType.typeName
         ensure(isQualifiedName(typeName))
         ensure(typeName.right.text == "GCOptions")
 
-        val readonly = node.modifiers?.asArray()?.find { it.kind == SyntaxKind.ReadonlyKeyword }
+        val readonly = node.modifiers?.find { it.kind == SyntaxKind.ReadonlyKeyword }
 
         val modifier = if (readonly != null) "val " else "var "
 

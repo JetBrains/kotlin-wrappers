@@ -29,7 +29,7 @@ suspend fun annotateCompileFunctionResult(node: Node, context: AnnotationContext
         ensure(isIdentifier(name))
         ensure(name.text == "Pick")
 
-        val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.firstOrNull())
+        val firstTypeArgument = ensureNotNull(node.typeArguments?.firstOrNull())
         ensure(isTypeReferenceNode(firstTypeArgument))
 
         val firstTypeArgumentName = firstTypeArgument.typeName

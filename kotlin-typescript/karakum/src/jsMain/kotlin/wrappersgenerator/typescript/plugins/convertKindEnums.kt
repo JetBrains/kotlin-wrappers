@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isEnumDeclaration
 import typescript.isIdentifier
 
@@ -33,7 +32,7 @@ val convertKindEnums = createPlugin { node, context, render ->
             .filter { it.isNotEmpty() }
             .joinToString(", ")
 
-        val members = node.members.asArray()
+        val members = node.members
             .map { member ->
                 val memberName = member.name
 
@@ -43,7 +42,7 @@ val convertKindEnums = createPlugin { node, context, render ->
             }
             .joinToString("\n")
 
-        val body = node.members.asArray()
+        val body = node.members
             .map { member ->
                 val memberHeritageInjections =
                     injectionService.resolveInjections(member, InjectionType.HERITAGE_CLAUSE, context, render)

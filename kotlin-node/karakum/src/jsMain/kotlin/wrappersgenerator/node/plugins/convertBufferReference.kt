@@ -5,7 +5,6 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
 
@@ -36,7 +35,7 @@ val convertBufferReference = createPlugin { node, context, render ->
         val typeArguments = if (typeName.text == "Buffer") {
             val typeArguments = node.typeArguments
 
-            typeArguments?.asArray()
+            typeArguments
                 ?.map { typeArgument -> render(typeArgument) }
                 ?.filter { it.isNotEmpty() }
                 ?.joinToString(separator = ", ")

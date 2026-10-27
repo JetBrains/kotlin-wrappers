@@ -29,7 +29,7 @@ private fun isGenerateKeyPairType(node: Node) = nullable {
             )
         } ?: nullable {
             ensure(isUnionTypeNode(node))
-            ensure(node.types.asArray().all {
+            ensure(node.types.all {
                 isLiteralTypeNode(it)
                         && isStringLiteral(it.literal)
             })
@@ -85,13 +85,13 @@ class GenerateKeyPairTypePlugin : Plugin {
 
         val typeArguments = ensureNotNull(node.typeArguments)
 
-        val firstTypeArgument = typeArguments.asArray().first()
+        val firstTypeArgument = typeArguments.first()
         ensure(isLiteralTypeNode(firstTypeArgument))
 
         val firstTypeArgumentLiteral = firstTypeArgument.literal
         ensure(isStringLiteral(firstTypeArgumentLiteral))
 
-        val secondTypeArgument = typeArguments.asArray()[1]
+        val secondTypeArgument = typeArguments[1]
         ensure(isLiteralTypeNode(secondTypeArgument))
 
         val secondTypeArgumentLiteral = secondTypeArgument.literal
@@ -134,7 +134,7 @@ class GenerateKeyPairTypePlugin : Plugin {
             } ?: nullable {
                 ensure(isUnionTypeNode(node))
 
-                val keyTypes = node.types.asArray().mapNotNull {
+                val keyTypes = node.types.mapNotNull {
                     nullable {
                         ensure(isLiteralTypeNode(it))
 
@@ -158,13 +158,13 @@ class GenerateKeyPairTypePlugin : Plugin {
 
             val typeArguments = ensureNotNull(node.typeArguments)
 
-            val firstTypeArgument = typeArguments.asArray().first()
+            val firstTypeArgument = typeArguments.first()
             ensure(isLiteralTypeNode(firstTypeArgument))
 
             val firstTypeArgumentLiteral = firstTypeArgument.literal
             ensure(isStringLiteral(firstTypeArgumentLiteral))
 
-            val secondTypeArgument = typeArguments.asArray()[1]
+            val secondTypeArgument = typeArguments[1]
             ensure(isLiteralTypeNode(secondTypeArgument))
 
             val secondTypeArgumentLiteral = secondTypeArgument.literal

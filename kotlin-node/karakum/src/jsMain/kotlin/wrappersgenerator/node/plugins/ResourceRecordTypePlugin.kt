@@ -40,9 +40,9 @@ private fun extractRrtypes(node: Node) = nullable {
         listOf(literal.text)
     } ?: nullable {
         ensure(isUnionTypeNode(node))
-        ensure(node.types.asArray().all { isLiteralTypeNode(it) })
+        ensure(node.types.all { isLiteralTypeNode(it) })
 
-        node.types.asArray().mapNotNull {
+        node.types.mapNotNull {
             nullable {
                 ensure(isLiteralTypeNode(it))
 

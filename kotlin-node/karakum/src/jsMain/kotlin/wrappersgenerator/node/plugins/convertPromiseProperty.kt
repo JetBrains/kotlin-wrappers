@@ -24,7 +24,7 @@ private suspend fun convertAsyncSignature(
     context: Context,
     render: Render<Node>,
 ): String {
-    val typeParameters = node.typeParameters?.asArray()
+    val typeParameters = node.typeParameters
         ?.map { render(it) }
         ?.joinToString(", ")
 
@@ -45,7 +45,7 @@ private suspend fun convertAsyncSignature(
 
     val typeArguments = requireNotNull(type.typeArguments)
 
-    val returnTypePayload = render(typeArguments.asArray().first())
+    val returnTypePayload = render(typeArguments.first())
 
     val suspendDeclaration = convertParameterDeclarations(
         node, context, render,
@@ -79,7 +79,7 @@ val convertPromiseProperty = createPlugin { node, context, render ->
             convertAsyncSignature(name, propertyType, context, render)
         } ?: nullable {
             ensure(isTypeLiteralNode(propertyType))
-            ensure(propertyType.members.asArray().all { member ->
+            ensure(propertyType.members.all { member ->
                 nullable {
                     ensure(isCallSignatureDeclaration(member))
 
@@ -88,7 +88,7 @@ val convertPromiseProperty = createPlugin { node, context, render ->
                 } != null
             })
 
-            propertyType.members.asArray()
+            propertyType.members
                 .map { member ->
                     require(isCallSignatureDeclaration(member))
                     convertAsyncSignature(name, member, context, render)

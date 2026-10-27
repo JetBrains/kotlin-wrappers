@@ -64,7 +64,7 @@ class BufferPlugin : Plugin {
 
                 val typeParameters = (
                         declarationMergingService.getTypeParameters(node)
-                            ?: node.typeParameters?.asArray()
+                            ?: node.typeParameters
                         )
                     ?.map { next(it) }
                     ?.filter { it.isNotEmpty() }
@@ -72,14 +72,14 @@ class BufferPlugin : Plugin {
 
                 val heritageClauses = (
                         declarationMergingService.getHeritageClauses(node)
-                            ?: node.heritageClauses?.asArray()
+                            ?: node.heritageClauses
                         )
                     ?.map { next(it) }
                     ?.filter { it.isNotEmpty() }
                     ?.joinToString(", ")
 
                 val constructors = bufferConstructorNodes
-                    .flatMap { it.members.asArray().asIterable() }
+                    .flatMap { it.members.asIterable() }
                     .mapNotNull { member ->
                         nullable {
                             ensure(isConstructSignatureDeclaration(member))
@@ -90,7 +90,7 @@ class BufferPlugin : Plugin {
 
                 val members = (
                         declarationMergingService.getMembers(node, context)
-                            ?: node.members.asArray()
+                            ?: node.members
                         )
                     .map { member ->
                         nullable {
@@ -109,7 +109,7 @@ class BufferPlugin : Plugin {
                     .joinToString("\n")
 
                 val staticMembers = bufferConstructorNodes
-                    .flatMap { it.members.asArray().asIterable() }
+                    .flatMap { it.members.asIterable() }
                     .mapNotNull { member ->
                         nullable {
                             ensure(!isConstructSignatureDeclaration(member))

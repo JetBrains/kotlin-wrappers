@@ -25,7 +25,7 @@ class WritableMembersInjection : Injection {
             ensure(isIdentifier(name))
             ensure(
                 name.text == "write"
-                        || (name.text == "end" && node.parameters.asArray().size > 1)
+                        || (name.text == "end" && node.parameters.size > 1)
             )
 
             val interfaceNode = ensureNotNull(node.parent)
@@ -71,7 +71,7 @@ class WritableMembersInjection : Injection {
 
                     val name = render(member.name)
 
-                    val typeParameters = member.typeParameters?.asArray()
+                    val typeParameters = member.typeParameters
                         ?.map { render(it) }
                         ?.joinToString(", ")
 

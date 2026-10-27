@@ -78,7 +78,7 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
 
         nullable {
             ensure(isTypeLiteralNode(node))
-            ensure(node.members.asArray().any { member ->
+            ensure(node.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -96,7 +96,7 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
             })
 
             nullable {
-                ensure(node.members.asArray().any { member ->
+                ensure(node.members.any { member ->
                     nullable {
                         ensure(isPropertySignature(member))
 
@@ -117,9 +117,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+            val secondType = ensureNotNull(node.types.getOrNull( 1))
             ensure(isTypeLiteralNode(secondType))
-            ensure(secondType.members.asArray().any { member ->
+            ensure(secondType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -140,7 +140,7 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val firstType = ensureNotNull(node.types.asArray().first())
+            val firstType = ensureNotNull(node.types.first())
             ensure(isTypeReferenceNode(firstType))
 
             val typeName = firstType.typeName
@@ -148,9 +148,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
             ensure(typeName.text == "ObjectEncodingOptions")
 
             nullable {
-                val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+                val secondType = ensureNotNull(node.types.getOrNull( 1))
                 ensure(isTypeLiteralNode(secondType))
-                ensure(secondType.members.asArray().any { member ->
+                ensure(secondType.members.any { member ->
                     nullable {
                         ensure(isPropertySignature(member))
 
@@ -180,7 +180,7 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
 
         nullable {
             ensure(isTypeLiteralNode(node))
-            ensure(node.members.asArray().any { member ->
+            ensure(node.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -201,9 +201,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val firstType = ensureNotNull(node.types.asArray().first())
+            val firstType = ensureNotNull(node.types.first())
             ensure(isTypeLiteralNode(firstType))
-            ensure(firstType.members.asArray().any { member ->
+            ensure(firstType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -224,7 +224,7 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val firstType = ensureNotNull(node.types.asArray().first())
+            val firstType = ensureNotNull(node.types.first())
             ensure(isTypeReferenceNode(firstType))
 
             val typeName = firstType.typeName
@@ -251,9 +251,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+            val secondType = ensureNotNull(node.types.getOrNull( 1))
             ensure(isTypeLiteralNode(secondType))
-            ensure(secondType.members.asArray().any { member ->
+            ensure(secondType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -284,9 +284,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+            val secondType = ensureNotNull(node.types.getOrNull( 1))
             ensure(isTypeLiteralNode(secondType))
-            ensure(secondType.members.asArray().any { member ->
+            ensure(secondType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -313,9 +313,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         impure {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+            val secondType = ensureNotNull(node.types.getOrNull( 1))
             ensure(isTypeLiteralNode(secondType))
-            ensure(secondType.members.asArray().any { member ->
+            ensure(secondType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -335,9 +335,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         impure {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+            val secondType = ensureNotNull(node.types.getOrNull( 1))
             ensure(isTypeLiteralNode(secondType))
-            ensure(secondType.members.asArray().any { member ->
+            ensure(secondType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -357,9 +357,9 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
         impure {
             ensure(isIntersectionTypeNode(node))
 
-            val secondType = ensureNotNull(node.types.asArray().getOrNull( 1))
+            val secondType = ensureNotNull(node.types.getOrNull( 1))
             ensure(isTypeLiteralNode(secondType))
-            ensure(secondType.members.asArray().any { member ->
+            ensure(secondType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -370,7 +370,7 @@ suspend fun resolveFsOptionsName(node: Node, context: Context) = nullable {
                     val propertyType = ensureNotNull(member.type)
                     ensure(isUnionTypeNode(propertyType))
 
-                    val firstPropertyType = ensureNotNull(propertyType.types.asArray().first())
+                    val firstPropertyType = ensureNotNull(propertyType.types.first())
                     ensure(isLiteralTypeNode(firstPropertyType))
                     ensure(firstPropertyType.literal.kind == SyntaxKind.FalseKeyword)
                 } != null

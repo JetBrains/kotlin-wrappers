@@ -38,7 +38,7 @@ val convertReporterConstructorWrapperTypeParameter = createPlugin { node, contex
             ensure(isInterfaceDeclaration(interfaceNode))
             ensure(interfaceNode.name.text == "ReporterConstructorWrapper")
 
-            val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.getOrNull(0))
+            val firstTypeArgument = ensureNotNull(node.typeArguments?.getOrNull(0))
 
             render(firstTypeArgument)
         } ?: nullable {
@@ -72,7 +72,7 @@ val convertReporterConstructorWrapperTypeParameter = createPlugin { node, contex
             ensure(isIdentifier(typeName))
             ensure(typeName.text == "ReporterConstructorWrapper")
 
-            val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.getOrNull(0))
+            val firstTypeArgument = ensureNotNull(node.typeArguments?.getOrNull(0))
             ensure(isTypeQueryNode(firstTypeArgument))
 
             "ReporterConstructorWrapper<${render(firstTypeArgument.exprName)}>"

@@ -135,17 +135,17 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
             ensure(isTypeReferenceNode(node))
             ensure(isInstanceType(node))
 
-            val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.getOrNull(0))
+            val firstTypeArgument = ensureNotNull(node.typeArguments?.getOrNull(0))
 
             render(firstTypeArgument)
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val firstType = ensureNotNull(node.types.asArray().getOrNull(0))
+            val firstType = ensureNotNull(node.types.getOrNull(0))
             ensure(isTypeReferenceNode(firstType))
             ensure(isInstanceType(firstType))
 
-            val firstTypeArgument = ensureNotNull(firstType.typeArguments?.asArray()?.getOrNull(0))
+            val firstTypeArgument = ensureNotNull(firstType.typeArguments?.getOrNull(0))
 
             render(firstTypeArgument)
         } ?: nullable {

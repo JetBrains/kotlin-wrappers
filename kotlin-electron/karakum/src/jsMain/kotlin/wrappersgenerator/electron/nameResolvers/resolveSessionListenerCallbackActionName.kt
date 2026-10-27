@@ -43,7 +43,7 @@ suspend fun resolveSessionListenerCallbackActionName(node: Node, context: Contex
     val method = ensureNotNull(typeScriptService.getParent(parameter))
     ensure(isMethodDeclaration(method))
 
-    val eventType = ensureNotNull(method.parameters.asArray().firstOrNull()?.type)
+    val eventType = ensureNotNull(method.parameters.firstOrNull()?.type)
     ensure(isLiteralTypeNode(eventType))
 
     val eventTypeLiteral = eventType.literal

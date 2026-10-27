@@ -130,7 +130,7 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
         }
     )
 
-    val typeParameter = method.typeParameters?.asArray()
+    val typeParameter = method.typeParameters
         ?.find { it.name.text == "K" }
         .let { ensureNotNull(it) }
 
@@ -151,11 +151,11 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
     val declarationType = declaration.type
     ensure(isIntersectionTypeNode(declarationType))
 
-    val eventMap = declarationType.types.asArray()
+    val eventMap = declarationType.types
         .find { isTypeLiteralNode(it) }
     ensure(isTypeLiteralNode(eventMap))
 
-    eventMap.members.asArray()
+    eventMap.members
         .mapNotNull { member ->
             nullable {
                 ensure(isPropertySignature(member))
@@ -166,7 +166,7 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
                 val propertyType = ensureNotNull(member.type)
                 ensure(isFunctionTypeNode(propertyType))
 
-                propertyName.text to propertyType.parameters.asArray()
+                propertyName.text to propertyType.parameters
             }
         }
         .toMap()
@@ -208,7 +208,7 @@ class EventMapInjection : Injection {
         ensure(isIdentifier(name))
         ensure(name.text in eventHandlerMethods)
 
-        val firstParameter = ensureNotNull(method.parameters.asArray().firstOrNull())
+        val firstParameter = ensureNotNull(method.parameters.firstOrNull())
 
         val firstParameterName = firstParameter.name
         ensure(isIdentifier(firstParameterName))

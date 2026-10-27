@@ -105,14 +105,14 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
         },
     )
 
-    val listener = ensureNotNull(method.parameters.asArray().getOrNull(1))
+    val listener = ensureNotNull(method.parameters.getOrNull(1))
 
     val listenerType = ensureNotNull(listener.type)
 
     nullable {
         ensure(isFunctionTypeNode(listenerType))
 
-        listenerType.parameters.asArray()
+        listenerType.parameters
     } ?: nullable {
         ensure(isTypeReferenceNode(listenerType))
 
@@ -135,7 +135,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
             val declarationType = declaration.type
             ensure(isFunctionTypeNode(declarationType))
 
-            declarationType.parameters.asArray()
+            declarationType.parameters
         }
     } ?: run {
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))

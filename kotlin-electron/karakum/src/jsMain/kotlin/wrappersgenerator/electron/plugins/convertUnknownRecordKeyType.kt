@@ -4,7 +4,6 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
 import typescript.SyntaxKind
-import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
 
@@ -22,7 +21,7 @@ val convertUnknownRecordKeyType = createPlugin { node, _, _ ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Record")
 
-        ensure(node === typeReference.typeArguments?.asArray()?.firstOrNull())
+        ensure(node === typeReference.typeArguments?.firstOrNull())
 
         "Any"
     }

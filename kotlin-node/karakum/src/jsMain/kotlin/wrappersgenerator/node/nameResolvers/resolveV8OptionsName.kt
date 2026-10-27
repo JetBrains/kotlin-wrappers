@@ -64,7 +64,7 @@ suspend fun resolveV8OptionsName(node: Node, context: Context) = nullable {
 
         nullable {
             ensure(isTypeLiteralNode(node))
-            ensure(node.members.asArray().any { member ->
+            ensure(node.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -84,7 +84,7 @@ suspend fun resolveV8OptionsName(node: Node, context: Context) = nullable {
             "${parentName.replaceFirstChar { it.titlecase() }}Count${parameterName.replaceFirstChar { it.titlecase() }}"
         } ?: nullable {
             ensure(isTypeLiteralNode(node))
-            ensure(node.members.asArray().any { member ->
+            ensure(node.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 

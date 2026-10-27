@@ -34,7 +34,7 @@ suspend fun resolveDownloadItemListenerStateName(node: Node, context: Context) =
     val method = ensureNotNull(typeScriptService.getParent(parameter))
     ensure(isMethodDeclaration(method))
 
-    val eventType = ensureNotNull(method.parameters.asArray().firstOrNull()?.type)
+    val eventType = ensureNotNull(method.parameters.firstOrNull()?.type)
     ensure(isLiteralTypeNode(eventType))
 
     val eventTypeLiteral = eventType.literal

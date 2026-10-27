@@ -34,7 +34,7 @@ val convertWaitFor = createPlugin { node, _, render ->
         val method = ensureNotNull(promiseType.parent)
         ensure(isWaitForMethod(method))
 
-        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(node.typeArguments)
 
         render(typeArguments.first())
     } ?: nullable {

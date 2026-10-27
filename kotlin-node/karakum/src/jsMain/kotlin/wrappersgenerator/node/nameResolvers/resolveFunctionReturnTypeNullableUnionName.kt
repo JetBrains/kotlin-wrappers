@@ -11,9 +11,9 @@ suspend fun resolveFunctionReturnTypeNullableUnionName(node: Node, context: Cont
 
     val union = ensureNotNull(typeScriptService.getParent(node))
     ensure(isUnionTypeNode(union))
-    ensure(union.types.asArray().size > 1)
+    ensure(union.types.size > 1)
 
-    val unionSecondType = ensureNotNull(union.types.asArray().getOrNull(1))
+    val unionSecondType = ensureNotNull(union.types.getOrNull(1))
     ensure(unionSecondType.kind == SyntaxKind.UndefinedKeyword)
 
     val function = ensureNotNull(typeScriptService.getParent(union))

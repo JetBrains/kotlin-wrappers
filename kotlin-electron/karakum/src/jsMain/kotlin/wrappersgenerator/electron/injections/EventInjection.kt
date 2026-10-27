@@ -177,14 +177,14 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
         },
     )
 
-    val listener = ensureNotNull(method.parameters.asArray().getOrNull(1))
+    val listener = ensureNotNull(method.parameters.getOrNull(1))
 
     val listenerType = ensureNotNull(listener.type)
 
     nullable {
         ensure(isFunctionTypeNode(listenerType))
 
-        listenerType.parameters.asArray()
+        listenerType.parameters
     } ?: nullable {
         ensure(isTypeReferenceNode(listenerType))
 
@@ -207,7 +207,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
             val declarationType = declaration.type
             ensure(isFunctionTypeNode(declarationType))
 
-            declarationType.parameters.asArray()
+            declarationType.parameters
         }
     } ?: run {
         val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
@@ -258,7 +258,7 @@ class EventInjection : Injection {
         ensure(isIdentifier(name))
         ensure(name.text in eventHandlerMethods)
 
-        val firstParameter = ensureNotNull(method.parameters.asArray().firstOrNull())
+        val firstParameter = ensureNotNull(method.parameters.firstOrNull())
 
         val firstParameterName = firstParameter.name
         ensure(isIdentifier(firstParameterName))

@@ -19,10 +19,10 @@ val convertGetPeerCertificate = createPlugin { node, context, _ ->
         val className = ensureNotNull(classNode.name)
         ensure(className.text == "TLSSocket")
 
-        ensure(node.parameters.asArray().size == 1)
+        ensure(node.parameters.size == 1)
 
         val firstParameterType = ensureNotNull(
-            node.parameters.asArray().getOrNull(0)?.type
+            node.parameters.getOrNull(0)?.type
         )
         ensure(isLiteralTypeNode(firstParameterType))
         ensure(

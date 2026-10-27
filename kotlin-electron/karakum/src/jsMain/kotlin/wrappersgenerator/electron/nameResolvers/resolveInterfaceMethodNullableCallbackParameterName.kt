@@ -28,9 +28,9 @@ suspend fun resolveInterfaceMethodNullableCallbackParameterName(node: Node, cont
             },
     )
     ensure(isUnionTypeNode(union))
-    ensure(union.types.asArray().size >= 2)
+    ensure(union.types.size >= 2)
 
-    val nullKeyword = union.types.asArray()[1].let {
+    val nullKeyword = union.types[1].let {
         if (isParenthesizedTypeNode(it)) {
             it.type
         } else it

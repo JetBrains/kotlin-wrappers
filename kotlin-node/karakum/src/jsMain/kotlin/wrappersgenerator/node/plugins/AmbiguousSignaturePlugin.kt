@@ -51,7 +51,7 @@ class AmbiguousSignaturePlugin : Plugin {
                 val declarationMap = declarations.fold(DeepMap<Any, List<FunctionDeclaration>>()) { acc, declaration ->
                     require(isFunctionDeclaration(declaration))
 
-                    val parameterSymbols = declaration.parameters.asArray()
+                    val parameterSymbols = declaration.parameters
                         .filter { parameter -> parameter.questionToken == null }
                         .map { parameter ->
                             // TODO: maybe use Either<String, Symbol> here
@@ -77,7 +77,7 @@ class AmbiguousSignaturePlugin : Plugin {
 
                             val declaration = ambiguousDeclarations.first()
 
-                            val optionalIndex = declaration.parameters.asArray()
+                            val optionalIndex = declaration.parameters
                                 .indexOfFirst { parameter -> parameter.questionToken != null }
                                 .takeIf { it != -1 }
                                 .let { ensureNotNull(it) }
@@ -85,14 +85,14 @@ class AmbiguousSignaturePlugin : Plugin {
                             // exclude overloads with optional parameters that have union type,
                             // because this case is handled by `convertParameterDeclarations`
                             ambiguousDeclarations
-                                .map { it.parameters.asArray()[optionalIndex] }
+                                .map { it.parameters[optionalIndex] }
                                 .all { parameter ->
                                     val type = parameter.type
 
                                     if (type == null) return@all true
                                     if (!isUnionTypeNode(type)) return@all true
 
-                                    val types = type.types.asArray()
+                                    val types = type.types
                                         .filter { !isNullableType(it) }
 
                                     types.size < 2
@@ -122,7 +122,7 @@ class AmbiguousSignaturePlugin : Plugin {
             jsName = "@JsName(\"${originalName}\")\n"
         }
 
-        val typeParameters = declaration.typeParameters?.asArray()
+        val typeParameters = declaration.typeParameters
             ?.map { render(it) }
             ?.joinToString(", ")
 
@@ -169,7 +169,7 @@ class AmbiguousSignaturePlugin : Plugin {
 
             val typeArguments = requireNotNull(type.typeArguments)
 
-            val returnTypePayload = render(typeArguments.asArray().first())
+            val returnTypePayload = render(typeArguments.first())
 
             val coveredSuspendSignatures = DeepMap<TypeNode?, Boolean>()
 

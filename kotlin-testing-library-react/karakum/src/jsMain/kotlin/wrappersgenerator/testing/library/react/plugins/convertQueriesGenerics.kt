@@ -80,7 +80,7 @@ val convertQueriesGenerics = createPlugin { node, context, render ->
                     || typeName.text == "RenderHookOptions",
         )
 
-        val typeArguments = node.typeArguments?.asArray()
+        val typeArguments = node.typeArguments
             ?.filter { typeArgument ->
                 nullable {
                     ensure(isTypeReferenceNode(typeArgument))
@@ -103,7 +103,7 @@ val convertQueriesGenerics = createPlugin { node, context, render ->
         ensure(isIdentifier(expression))
         ensure(expression.text == "BaseRenderOptions")
 
-        val typeArguments = node.typeArguments?.asArray()
+        val typeArguments = node.typeArguments
             ?.filter { typeArgument ->
                 nullable {
                     ensure(isTypeReferenceNode(typeArgument))

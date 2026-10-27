@@ -8,7 +8,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarat
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isClassDeclaration
 import typescript.isIdentifier
 import typescript.isMethodDeclaration
@@ -33,7 +32,7 @@ val convertStreamDestroy = createPlugin { node, context, render ->
 
         val name = escapeIdentifier(render(node.name))
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { render(it) }
             ?.joinToString(", ")
 

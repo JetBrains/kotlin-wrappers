@@ -19,9 +19,9 @@ suspend fun resolveTypeAliasIntersectionBaseName(node: Node, context: Context) =
         },
     )
     ensure(isIntersectionTypeNode(intersection))
-    ensure(intersection.types.asArray().size == 2)
+    ensure(intersection.types.size == 2)
 
-    val intersectionSecondType = intersection.types.asArray()[1]
+    val intersectionSecondType = intersection.types[1]
     ensure(isTypeLiteralNode(intersectionSecondType))
 
     val typeAlias = ensureNotNull(typeScriptService.getParent(intersection))

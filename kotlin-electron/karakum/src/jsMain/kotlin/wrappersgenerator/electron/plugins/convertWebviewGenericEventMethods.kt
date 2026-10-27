@@ -3,7 +3,6 @@ package wrappersgenerator.electron.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 import typescript.isMethodSignature
@@ -19,7 +18,7 @@ val convertWebviewGenericEventMethods = createPlugin { node, _, _ ->
                     || name.text == "removeEventListener",
         )
 
-        val firstParameter = ensureNotNull(node.parameters.asArray().firstOrNull())
+        val firstParameter = ensureNotNull(node.parameters.firstOrNull())
 
         val firstParameterName = firstParameter.name
         ensure(isIdentifier(firstParameterName))

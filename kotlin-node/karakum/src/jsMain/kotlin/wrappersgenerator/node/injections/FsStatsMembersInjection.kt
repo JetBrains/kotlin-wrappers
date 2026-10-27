@@ -53,7 +53,7 @@ class FsStatsMembersInjection : Injection {
                 nullable {
                     ensure(isPropertySignature(member))
 
-                    val readonly = member.modifiers?.asArray()?.find { it.kind == SyntaxKind.ReadonlyKeyword }
+                    val readonly = member.modifiers?.find { it.kind == SyntaxKind.ReadonlyKeyword }
 
                     val modifier = if (readonly != null) "val " else "var "
 
@@ -73,7 +73,7 @@ class FsStatsMembersInjection : Injection {
 
                     val name = render(member.name)
 
-                    val typeParameters = member.typeParameters?.asArray()
+                    val typeParameters = member.typeParameters
                         ?.map { render(it) }
                         ?.joinToString(", ")
 

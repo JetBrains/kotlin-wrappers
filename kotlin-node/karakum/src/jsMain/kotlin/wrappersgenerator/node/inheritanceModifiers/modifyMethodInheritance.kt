@@ -25,7 +25,7 @@ private fun isGenericEventEmitterSignature(
     } ?: nullable {
         ensure(isUnionTypeNode(firstParameterType))
 
-        val firstParameterTypeTypesFirstType = ensureNotNull(firstParameterType.types.asArray().firstOrNull())
+        val firstParameterTypeTypesFirstType = ensureNotNull(firstParameterType.types.firstOrNull())
         ensure(firstParameterTypeTypesFirstType.kind == SyntaxKind.StringKeyword)
 
         val firstSignatureType = ensureNotNull(context.signature?.firstOrNull()?.type)
@@ -102,7 +102,7 @@ suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierCont
                         || name.text == "_final"
                         || name.text == "write"
                         || name.text == "setDefaultEncoding"
-                        || (name.text == "end" && node.parameters.asArray().size > 1)
+                        || (name.text == "end" && node.parameters.size > 1)
                         || name.text == "cork"
                         || name.text == "uncork"
                         || name.text == "_construct"

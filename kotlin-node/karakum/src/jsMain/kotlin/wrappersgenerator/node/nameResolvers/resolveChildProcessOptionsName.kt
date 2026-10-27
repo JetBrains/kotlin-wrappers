@@ -43,9 +43,9 @@ suspend fun resolveChildProcessOptionsName(node: Node, context: Context) = nulla
         nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val firstType = ensureNotNull(node.types.asArray().first())
+            val firstType = ensureNotNull(node.types.first())
             ensure(isTypeLiteralNode(firstType))
-            ensure(firstType.members.asArray().any { member ->
+            ensure(firstType.members.any { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
@@ -56,7 +56,7 @@ suspend fun resolveChildProcessOptionsName(node: Node, context: Context) = nulla
                     val propertyType = ensureNotNull(member.type)
                     ensure(isUnionTypeNode(propertyType))
 
-                    val firstPropertyType = ensureNotNull(propertyType.types.asArray().first())
+                    val firstPropertyType = ensureNotNull(propertyType.types.first())
                     ensure(isLiteralTypeNode(firstPropertyType))
 
                     val firstPropertyTypeLiteral = firstPropertyType.literal
@@ -69,7 +69,7 @@ suspend fun resolveChildProcessOptionsName(node: Node, context: Context) = nulla
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 
-            val firstType = ensureNotNull(node.types.asArray().first())
+            val firstType = ensureNotNull(node.types.first())
             ensure(isTypeReferenceNode(firstType))
 
             val typeName = firstType.typeName
@@ -85,7 +85,7 @@ suspend fun resolveChildProcessOptionsName(node: Node, context: Context) = nulla
 
         ensure(isIntersectionTypeNode(node))
 
-        val firstType = ensureNotNull(node.types.asArray().first())
+        val firstType = ensureNotNull(node.types.first())
         ensure(isTypeReferenceNode(firstType))
 
         val typeName = firstType.typeName

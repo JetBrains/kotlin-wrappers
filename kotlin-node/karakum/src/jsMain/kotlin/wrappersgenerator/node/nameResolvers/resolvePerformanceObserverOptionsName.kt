@@ -38,7 +38,7 @@ suspend fun resolvePerformanceObserverOptionsName(node: Node, context: Context) 
 
     nullable {
         ensure(isTypeLiteralNode(node))
-        ensure(node.members.asArray().any { member ->
+        ensure(node.members.any { member ->
             nullable {
                 ensure(isPropertySignature(member))
 

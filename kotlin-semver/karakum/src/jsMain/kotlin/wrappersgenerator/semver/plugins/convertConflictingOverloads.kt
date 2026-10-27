@@ -41,7 +41,7 @@ val convertConflictingOverloads = createPlugin { node, context, render ->
 
         val name = node.name?.let { render(it) } ?: "Anonymous"
 
-        val typeParameters = node.typeParameters?.asArray()
+        val typeParameters = node.typeParameters
             ?.map { render(it) }
             ?.joinToString(", ")
 

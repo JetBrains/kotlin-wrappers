@@ -13,7 +13,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         ensure(isIdentifier(typeName))
         ensure(typeName.text == "Partial" || typeName.text == "Pick" || typeName.text == "Omit")
 
-        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(node.typeArguments)
 
         render(typeArguments.first())
     } ?:nullable {
@@ -30,7 +30,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         ensure(isIdentifier(promiseTypeName))
         ensure(promiseTypeName.text == "Promise")
 
-        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(node.typeArguments)
 
         render(typeArguments.first())
     } ?: nullable {
@@ -41,7 +41,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
 
         ensure(expression.text == "Partial" || expression.text == "Pick" || expression.text == "Omit")
 
-        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(node.typeArguments)
 
         render(typeArguments.first())
     } ?: nullable {
@@ -54,7 +54,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         ensure(isIdentifier(expressionName))
         ensure(expressionName.text == "PartialOptions")
 
-        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(node.typeArguments)
 
         render(typeArguments.first())
     }

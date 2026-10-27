@@ -3,7 +3,6 @@ package wrappersgenerator.testing.library.react.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
 
@@ -18,7 +17,7 @@ val convertUtilityTypes = createPlugin { node, _, render ->
                     || typeName.text == "Omit",
         )
 
-        val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+        val typeArguments = ensureNotNull(node.typeArguments)
 
         render(typeArguments.first())
     }
