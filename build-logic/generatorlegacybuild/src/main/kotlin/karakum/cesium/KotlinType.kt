@@ -163,7 +163,7 @@ internal fun kotlinType(
             -> "ReadonlyArray<JsAny>"
 
         "string[] | number[]",
-            -> "ReadonlyArray<Comparable<*>>"
+            -> "ReadonlyArray<JsAny>"
 
         else -> if (type.endsWith(" | undefined")) "JsAny?" else "JsAny"
     }
