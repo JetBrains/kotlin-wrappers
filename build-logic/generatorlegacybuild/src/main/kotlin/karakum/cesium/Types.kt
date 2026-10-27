@@ -35,6 +35,13 @@ internal fun typeDeclaration(
         fixedName.endsWith("EventPayload")
             -> "typealias $fixedName = ${eventPayloadBody(body)}"
 
+        fixedName == "UpdaterFunction"
+            -> """
+                interface $fixedName {
+                    operator fun invoke${typeBody(body).substringBeforeLast(" -> ")}
+                }
+                """.trimIndent()
+
         body.startsWith("(")
             -> "typealias $fixedName = ${typeBody(body)}"
 
