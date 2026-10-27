@@ -10,6 +10,7 @@ internal class Interface(
         val code = super.toCode()
         return when (name) {
             PACKABLE -> applyPackableFixes(code)
+            ROTATION -> applyRotationFixes(code)
             else -> code
         }
     }

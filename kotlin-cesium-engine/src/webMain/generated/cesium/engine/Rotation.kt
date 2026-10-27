@@ -30,81 +30,77 @@ import js.numbers.JsDouble
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html">Online Documentation</a>
  */
-external interface Rotation {
+external object Rotation : Packable<JsDouble> {
+    /**
+     * The number of elements used to pack the object into an array.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.packedLength">Online Documentation</a>
+     */
+    override val packedLength: Int
 
+    /**
+     * Stores the provided instance into the provided array.
+     * @param [value] The value to pack.
+     * @param [array] The array to pack into.
+     * @param [startingIndex] The index into the array at which to start packing the elements.
+     *   Default value - `0`
+     * @return The array that was packed into
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.pack">Online Documentation</a>
+     */
+    override fun pack(
+        value: JsDouble,
+        array: ReadonlyArray<JsDouble>,
+        startingIndex: Int?,
+    ): ReadonlyArray<JsDouble>
 
-    companion object : Packable<Rotation> {
-        /**
-         * The number of elements used to pack the object into an array.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.packedLength">Online Documentation</a>
-         */
-        override val packedLength: Int
+    /**
+     * Retrieves an instance from a packed array.
+     * @param [array] The packed array.
+     * @param [startingIndex] The starting index of the element to be unpacked.
+     *   Default value - `0`
+     * @param [result] The object into which to store the result.
+     * @return The modified result parameter or a new Rotation instance if one was not provided.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpack">Online Documentation</a>
+     */
+    override fun unpack(
+        array: ReadonlyArray<JsDouble>,
+        startingIndex: Int?,
+        result: JsDouble?,
+    ): JsDouble
 
-        /**
-         * Stores the provided instance into the provided array.
-         * @param [value] The value to pack.
-         * @param [array] The array to pack into.
-         * @param [startingIndex] The index into the array at which to start packing the elements.
-         *   Default value - `0`
-         * @return The array that was packed into
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.pack">Online Documentation</a>
-         */
-        override fun pack(
-            value: Rotation,
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int?,
-        ): ReadonlyArray<JsDouble>
+    /**
+     * Converts a packed array into a form suitable for interpolation.
+     * @param [packedArray] The packed array.
+     * @param [startingIndex] The index of the first element to be converted.
+     *   Default value - `0`
+     * @param [lastIndex] The index of the last element to be converted.
+     *   Default value - [packedArray.size]
+     * @param [result] The object into which to store the result.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.convertPackedArrayForInterpolation">Online Documentation</a>
+     */
+    fun convertPackedArrayForInterpolation(
+        packedArray: ReadonlyArray<JsDouble>,
+        startingIndex: Int? = definedExternally,
+        lastIndex: Int? = definedExternally,
+        result: ReadonlyArray<JsDouble>? = definedExternally,
+    )
 
-        /**
-         * Retrieves an instance from a packed array.
-         * @param [array] The packed array.
-         * @param [startingIndex] The starting index of the element to be unpacked.
-         *   Default value - `0`
-         * @param [result] The object into which to store the result.
-         * @return The modified result parameter or a new Rotation instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpack">Online Documentation</a>
-         */
-        override fun unpack(
-            array: ReadonlyArray<JsDouble>,
-            startingIndex: Int?,
-            result: Rotation?,
-        ): Rotation
-
-        /**
-         * Converts a packed array into a form suitable for interpolation.
-         * @param [packedArray] The packed array.
-         * @param [startingIndex] The index of the first element to be converted.
-         *   Default value - `0`
-         * @param [lastIndex] The index of the last element to be converted.
-         *   Default value - [packedArray.size]
-         * @param [result] The object into which to store the result.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.convertPackedArrayForInterpolation">Online Documentation</a>
-         */
-        fun convertPackedArrayForInterpolation(
-            packedArray: ReadonlyArray<JsDouble>,
-            startingIndex: Int? = definedExternally,
-            lastIndex: Int? = definedExternally,
-            result: ReadonlyArray<JsDouble>? = definedExternally,
-        )
-
-        /**
-         * Retrieves an instance from a packed array converted with [Rotation.convertPackedArrayForInterpolation].
-         * @param [array] The array previously packed for interpolation.
-         * @param [sourceArray] The original packed array.
-         * @param [firstIndex] The firstIndex used to convert the array.
-         *   Default value - `0`
-         * @param [lastIndex] The lastIndex used to convert the array.
-         *   Default value - [packedArray.size]
-         * @param [result] The object into which to store the result.
-         * @return The modified result parameter or a new Rotation instance if one was not provided.
-         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpackInterpolationResult">Online Documentation</a>
-         */
-        fun unpackInterpolationResult(
-            array: ReadonlyArray<JsDouble>,
-            sourceArray: ReadonlyArray<JsDouble>,
-            firstIndex: Int? = definedExternally,
-            lastIndex: Int? = definedExternally,
-            result: Rotation? = definedExternally,
-        ): Rotation
-    }
+    /**
+     * Retrieves an instance from a packed array converted with [Rotation.convertPackedArrayForInterpolation].
+     * @param [array] The array previously packed for interpolation.
+     * @param [sourceArray] The original packed array.
+     * @param [firstIndex] The firstIndex used to convert the array.
+     *   Default value - `0`
+     * @param [lastIndex] The lastIndex used to convert the array.
+     *   Default value - [packedArray.size]
+     * @param [result] The object into which to store the result.
+     * @return The modified result parameter or a new Rotation instance if one was not provided.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpackInterpolationResult">Online Documentation</a>
+     */
+    fun unpackInterpolationResult(
+        array: ReadonlyArray<JsDouble>,
+        sourceArray: ReadonlyArray<JsDouble>,
+        firstIndex: Int? = definedExternally,
+        lastIndex: Int? = definedExternally,
+        result: JsDouble? = definedExternally,
+    ): JsDouble
 }
