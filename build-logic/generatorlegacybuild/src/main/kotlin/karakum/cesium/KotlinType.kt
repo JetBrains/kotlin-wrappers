@@ -61,7 +61,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Cartesian2 | Cartesian3" to "Cartesian3",
 
     "Entity | Entity.ConstructorOptions" to "Entity",
-    "HeadingPitchRollValues | DirectionUp" to CameraOrientation.name,
+    "HeadingPitchRollValues | DirectionUp" to "CameraOrientation",
 
     "Resource | string" to "Resource",
     "string | Resource" to "Resource",
@@ -120,7 +120,7 @@ internal fun kotlinType(
         return "() -> Unit"
 
     if (type == "any" && name == "orientation")
-        return CameraOrientation.name
+        return "CameraOrientation"
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }

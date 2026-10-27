@@ -18,8 +18,7 @@ internal fun generateKotlinDeclarations(
     )
 
     generate(
-        declarations = parseDeclarations(engineDefinitionsFile)
-            .plus(CameraOrientation),
+        declarations = parseDeclarations(engineDefinitionsFile),
         pkg = "cesium.engine",
         defaultImports = "import cesium.core.*",
         sourceDir = sourceDir.resolve("cesium/engine"),

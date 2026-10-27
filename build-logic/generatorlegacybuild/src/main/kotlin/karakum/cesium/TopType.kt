@@ -11,7 +11,7 @@ internal class TopType(
         val body = when (name) {
             "HeadingPitchRollValues",
             "DirectionUp",
-                -> bodySource.replaceFirst(name, "$name : ${CameraOrientation.name}")
+                -> bodySource.replaceFirst(name, "$name : CameraOrientation")
 
             else -> bodySource
         }
