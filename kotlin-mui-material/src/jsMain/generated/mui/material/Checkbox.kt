@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -24,7 +25,12 @@ import web.html.HTMLInputElement
 external interface CheckboxProps :
     StandardProps,
     SwitchBaseProps,
+    CheckboxSlotsAndSlotProps,
     PropsWithSx {
+    override var slots: CheckboxSlots?
+
+    override var slotProps: CheckboxSlotProps?
+
     /**
      * If `true`, the component is checked.
      */

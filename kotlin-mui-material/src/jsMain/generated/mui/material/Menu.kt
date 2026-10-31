@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -18,8 +19,13 @@ import web.dom.Element
 external interface MenuProps :
     StandardProps,
     PopoverProps,
+    MenuSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    override var slots: MenuSlots?
+
+    override var slotProps: MenuSlotProps?
+
     /**
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.

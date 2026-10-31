@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -22,7 +23,12 @@ import web.html.HTMLFieldSetElement
 external interface OutlinedInputProps :
     StandardProps,
     InputBaseProps,
+    OutlinedInputSlotsAndSlotProps,
     PropsWithSx {
+    override var slots: OutlinedInputSlots?
+
+    override var slotProps: OutlinedInputSlotProps?
+
     /**
      * Override or extend the styles applied to the component.
      */
@@ -45,7 +51,7 @@ external interface OutlinedInputProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface OutlinedInputSlots {
+external interface OutlinedInputSlots : InputBaseProps.Slots {
     /**
      * The component that renders the notchedOutline slot.
      * @default NotchedOutline
@@ -53,7 +59,7 @@ external interface OutlinedInputSlots {
     var notchedOutline: ElementType<*>
 }
 
-external interface OutlinedInputSlotProps : Props {
+external interface OutlinedInputSlotProps : InputBaseProps.SlotProps {
     /** TS: SlotProps<'fieldset', OutlinedInputNotchedOutlineSlotPropsOverrides, OutlinedInputOwnerState> */
     var notchedOutline: FieldsetHTMLAttributes<HTMLFieldSetElement>?
 }

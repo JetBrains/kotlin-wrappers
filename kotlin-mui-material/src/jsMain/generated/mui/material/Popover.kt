@@ -20,8 +20,13 @@ import web.dom.Element
 external interface PopoverProps :
     StandardProps,
     ModalProps,
+    PopoverSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    override var slots: PopoverSlots?
+
+    override var slotProps: PopoverSlotProps?
+
     /**
      * A ref for imperative actions.
      * It currently only supports updatePosition() action.

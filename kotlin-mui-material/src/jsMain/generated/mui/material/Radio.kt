@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -22,7 +23,12 @@ import web.html.HTMLInputElement
 external interface RadioProps :
     StandardProps,
     SwitchBaseProps,
+    RadioSlotsAndSlotProps,
     PropsWithSx {
+    override var slots: RadioSlots?
+
+    override var slotProps: RadioSlotProps?
+
     /**
      * The icon to display when the component is checked.
      * @default <RadioButtonIcon checked />

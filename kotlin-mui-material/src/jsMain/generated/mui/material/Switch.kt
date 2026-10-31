@@ -4,6 +4,7 @@
 
 @file:Suppress(
     "VIRTUAL_MEMBER_HIDDEN",
+    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
 )
 
 package mui.material
@@ -24,7 +25,12 @@ import web.html.HTMLSpanElement
 external interface SwitchProps :
     StandardProps,
     SwitchBaseProps,
+    SwitchSlotsAndSlotProps,
     PropsWithSx {
+    override var slots: SwitchSlots?
+
+    override var slotProps: SwitchSlotProps?
+
     /**
      * The icon to display when the component is checked.
      */

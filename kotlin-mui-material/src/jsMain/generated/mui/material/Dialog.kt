@@ -23,8 +23,13 @@ import web.html.HTMLDivElement
 external interface DialogProps :
     StandardProps,
     ModalProps,
+    DialogSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    override var slots: DialogSlots?
+
+    override var slotProps: DialogSlotProps?
+
     /**
      * The id(s) of the element(s) that describe the dialog.
      */

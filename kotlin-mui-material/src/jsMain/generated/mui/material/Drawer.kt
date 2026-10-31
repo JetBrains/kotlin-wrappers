@@ -21,8 +21,13 @@ import web.html.HTMLDivElement
 external interface DrawerProps :
     StandardProps,
     ModalProps,
+    DrawerSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    override var slots: DrawerSlots?
+
+    override var slotProps: DrawerSlotProps?
+
     /**
      * Side from which the drawer will appear.
      * @default 'left'
