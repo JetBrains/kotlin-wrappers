@@ -17,7 +17,7 @@ fun generateApiReport() {
         data class BrowserType(
             val jsName: String,
             val kotlinFqn: String,
-            val hasMixin: Boolean = false,
+            val kotlinMixinFqn: String? = null,
         )
     """.trimIndent()
 
@@ -34,7 +34,7 @@ fun generateApiReport() {
                 "BrowserType(",
                 """jsName = "${item.jsName}",""",
                 """kotlinFqn = "${item.kotlinFqn}",""",
-                if (item.hasMixin) """hasMixin = true,""" else null,
+                if (item.hasMixin) """kotlinMixinFqn = "${item.kotlinFqn}.Mixin",""" else null,
                 ")",
             ).joinToString(separator = "\n")
         }
