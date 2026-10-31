@@ -17,6 +17,7 @@ fun generateApiReport() {
         data class BrowserType(
             val jsName: String,
             val kotlinFqn: String,
+            val hasMixin: Boolean = false,
         )
     """.trimIndent()
 
@@ -28,13 +29,14 @@ fun generateApiReport() {
             separator = ",\n",
             prefix = "val BROWSER_TYPES: List<BrowserType> = listOf(\n",
             postfix = "\n)",
-        ) { (jsName, kotlinFqn) ->
-            """
-            BrowserType(
-                jsName = "$jsName",
-                kotlinFqn = "$kotlinFqn",
-            )
-            """.trimMargin()
+        ) { item ->
+            listOfNotNull(
+                "BrowserType(",
+                """jsName = "${item.jsName}",""",
+                """kotlinFqn = "${item.kotlinFqn}",""",
+                if (item.hasMixin) """hasMixin = true,""" else null,
+                ")",
+            ).joinToString(separator = "\n")
         }
 
     val content = browserType + "\n\n" + typeList
@@ -47,6 +49,7 @@ fun generateApiReport() {
 data class ApiItem(
     val jsName: String,
     val kotlinFqn: String,
+    val hasMixin: Boolean,
 )
 
 val EXCLUDED_NAMES = setOf(
@@ -84,6 +87,9 @@ fun getApiItems(
         return emptySequence()
     }
 
+    val hasMixin = " interface Mixin :" in content
+            || " interface Mixin<" in content
+
     return content
         .replace("private external ", "")
         .replace("internal external ", "")
@@ -116,6 +122,10 @@ fun getApiItems(
                 else -> name
             }
 
-            ApiItem(jsName, "$pkg.$name")
+            ApiItem(
+                jsName = jsName,
+                kotlinFqn = "$pkg.$name",
+                hasMixin = hasMixin,
+            )
         }
 }

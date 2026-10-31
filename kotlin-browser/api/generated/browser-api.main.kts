@@ -1,6 +1,7 @@
 data class BrowserType(
     val jsName: String,
     val kotlinFqn: String,
+    val hasMixin: Boolean = false,
 )
 
 val BROWSER_TYPES: List<BrowserType> = listOf(
@@ -191,6 +192,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "AsyncDisposable",
         kotlinFqn = "js.disposable.AsyncDisposable",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "AsyncDisposableStack",
@@ -207,6 +209,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "AsyncIterable",
         kotlinFqn = "js.iterable.AsyncIterable",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "AsyncIterator",
@@ -1235,6 +1238,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "CollectionLike",
         kotlinFqn = "js.collections.CollectionLike",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "ColorGamut",
@@ -1679,6 +1683,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "Disposable",
         kotlinFqn = "js.disposable.Disposable",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "DisposableStack",
@@ -4251,6 +4256,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "Iterable",
         kotlinFqn = "js.iterable.JsIterable",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "IterationCompositeOperation",
@@ -4431,6 +4437,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "ListLike",
         kotlinFqn = "js.collections.ListLike",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "Loading",
@@ -4539,6 +4546,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "MapLike",
         kotlinFqn = "js.collections.MapLike",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "MathMLElement",
@@ -4879,10 +4887,12 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "MutableMapLike",
         kotlinFqn = "js.collections.MutableMapLike",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "MutableSetLike",
         kotlinFqn = "js.collections.MutableSetLike",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "MutationCallback",
@@ -6411,6 +6421,7 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "ReadonlyMap",
         kotlinFqn = "js.collections.ReadonlyMap",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "ReadonlyRecord",
@@ -6419,10 +6430,12 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "ReadonlySet",
         kotlinFqn = "js.collections.ReadonlySet",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "ReadonlySetLike",
         kotlinFqn = "js.collections.ReadonlySetLike",
+        hasMixin = true,
     ),
     BrowserType(
         jsName = "ReadyState",
