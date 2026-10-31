@@ -9,6 +9,9 @@ import react.PropsWithChildren
 import react.ReactNode
 
 external interface LocalizationProviderProps : PropsWithChildren {
+    /**
+     * The components that use the localization settings.
+     */
     override var children: ReactNode?
 
     /**
