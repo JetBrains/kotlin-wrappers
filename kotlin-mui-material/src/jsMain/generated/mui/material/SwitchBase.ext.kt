@@ -2,6 +2,7 @@
 
 package mui.material
 
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface SwitchBaseEdge {
@@ -12,7 +13,7 @@ sealed external interface SwitchBaseEdge {
         @JsValue("end")
         val end: SwitchBaseEdge
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: SwitchBaseEdge
     }
 }

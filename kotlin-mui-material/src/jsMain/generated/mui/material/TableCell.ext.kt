@@ -4,6 +4,7 @@ package mui.material
 
 import react.dom.html.TdAlign
 import react.dom.html.TdHTMLAttributes
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 import web.html.HTMLTableCellElement
 
@@ -17,7 +18,7 @@ sealed external interface SortDirection {
         @JsValue("desc")
         val desc: SortDirection
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: SortDirection
     }
 }

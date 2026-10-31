@@ -2,6 +2,7 @@
 
 package mui.material
 
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface IconButtonColor {
@@ -40,7 +41,7 @@ sealed external interface IconButtonEdge {
         @JsValue("end")
         val end: IconButtonEdge
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: IconButtonEdge
     }
 }
