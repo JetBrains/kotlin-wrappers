@@ -14,8 +14,14 @@ import web.cssom.ClassName
 external interface YearCalendarProps :
     PropsWithClassName,
     PropsWithSx {
+    /**
+     * If `true`, the component is focused when it mounts.
+     */
     var autoFocus: Boolean?
 
+    /**
+     * A CSS class name applied to the root element.
+     */
     override var className: ClassName?
 
     /**
@@ -70,12 +76,24 @@ external interface YearCalendarProps :
      */
     var disableHighlightToday: Boolean?
 
+    /**
+     * @ignore
+     */
     var onYearFocus: ((year: Number) -> Unit)?
 
+    /**
+     * @ignore
+     */
     var hasFocus: Boolean?
 
+    /**
+     * @ignore
+     */
     var onFocusedViewChange: ((hasFocus: Boolean) -> Unit)?
 
+    /**
+     * @ignore
+     */
     var gridLabelId: String?
 }
 

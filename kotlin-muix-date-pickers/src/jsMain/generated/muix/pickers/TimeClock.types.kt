@@ -30,6 +30,9 @@ external interface TimeClockProps :
      */
     var slotProps: TimeClockSlotProps?
 
+    /**
+     * If `true`, displays arrow buttons to switch between the views.
+     */
     var showViewSwitcher: Boolean?
 }
 
