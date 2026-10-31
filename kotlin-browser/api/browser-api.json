@@ -2014,6 +2014,7 @@
     "TrustedTypePolicyFactory": "web.trustedtypes.TrustedTypePolicyFactory",
     "TrustedTypePolicyOptions": "web.trustedtypes.TrustedTypePolicyOptions",
     "TypeError": "js.errors.TypeError",
+    "TypeGuard": "js.reflect.TypeGuard",
     "TypedArray": "js.typedarrays.TypedArray",
     "TypedArrayCompanion": "js.typedarrays.TypedArrayCompanion",
     "TypedPropertyDescriptor": "js.objects.TypedPropertyDescriptor",
