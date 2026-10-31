@@ -2,6 +2,8 @@
 
 package mui.material
 
+import js.reflect.unsafeCast
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface GridDirection {
@@ -27,9 +29,6 @@ sealed external interface GridWrap {
     }
 }
 
-/**
- * Lost from union: number
- */
 sealed external interface GridSize {
     companion object {
         @JsValue("auto")
@@ -38,7 +37,24 @@ sealed external interface GridSize {
         @JsValue("grow")
         val grow: GridSize
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: GridSize
     }
 }
+
+inline fun GridSize(
+    value: Number,
+): GridSize =
+    unsafeCast(value)
+
+sealed external interface GridOffset {
+    companion object {
+        @JsValue("auto")
+        val auto: GridOffset
+    }
+}
+
+inline fun GridOffset(
+    value: Number,
+): GridOffset =
+    unsafeCast(value)
