@@ -14,41 +14,6 @@ external class Effect
 private constructor() {
     companion object {
         /**
-         * A default material appropriate for the view's effectiveAppearance.  **macOS 10.14-**
-         *
-         * @deprecated since macOS 10.14. You should instead choose an appropriate semantic material.
-         */
-        val AppearanceBased: Effect
-
-        /**
-         *  **macOS 10.14-**
-         *
-         * @deprecated since macOS 10.14. Use a semantic material instead.
-         */
-        val Light: Effect
-
-        /**
-         *  **macOS 10.14-**
-         *
-         * @deprecated since macOS 10.14. Use a semantic material instead.
-         */
-        val Dark: Effect
-
-        /**
-         *  **macOS 10.14-**
-         *
-         * @deprecated since macOS 10.14. Use a semantic material instead.
-         */
-        val MediumLight: Effect
-
-        /**
-         *  **macOS 10.14-**
-         *
-         * @deprecated since macOS 10.14. Use a semantic material instead.
-         */
-        val UltraDark: Effect
-
-        /**
          *  **macOS 10.10+**
          */
         val Titlebar: Effect
