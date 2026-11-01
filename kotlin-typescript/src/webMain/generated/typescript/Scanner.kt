@@ -3,9 +3,6 @@
 package typescript
 
 external interface Scanner {
-    /** @deprecated use {@link getTokenFullStart} */
-    fun getStartPos(): Int
-
     fun getToken(): SyntaxKind
 
     fun getTokenFullStart(): Int
@@ -13,12 +10,6 @@ external interface Scanner {
     fun getTokenStart(): Int
 
     fun getTokenEnd(): Int
-
-    /** @deprecated use {@link getTokenEnd} */
-    fun getTextPos(): Int
-
-    /** @deprecated use {@link getTokenStart} */
-    fun getTokenPos(): Int
 
     fun getTokenText(): String
 
@@ -43,9 +34,6 @@ external interface Scanner {
     fun reScanAsteriskEqualsToken(): SyntaxKind
 
     fun reScanTemplateToken(isTaggedTemplate: Boolean): SyntaxKind
-
-    /** @deprecated use {@link reScanTemplateToken}(false) */
-    fun reScanTemplateHeadOrNoSubstitutionTemplate(): SyntaxKind
 
     fun scanJsxIdentifier(): SyntaxKind
 
@@ -86,9 +74,6 @@ external interface Scanner {
     fun setScriptKind(scriptKind: ScriptKind)
 
     fun setJSDocParsingMode(kind: JSDocParsingMode)
-
-    /** @deprecated use {@link resetTokenState} */
-    fun setTextPos(textPos: Int)
 
     fun resetTokenState(pos: Int)
 

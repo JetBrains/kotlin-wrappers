@@ -52,17 +52,6 @@ external interface LanguageServiceHost :
 
     val getTypeRootsVersion: (() -> Int)?
 
-    /** @deprecated supply resolveModuleNameLiterals instead for resolution that can handle newer resolution modes like nodenext */
-    val resolveModuleNames: (
-        (
-        moduleNames: js.array.ReadonlyArray<String>,
-        containingFile: String,
-        reusedNames: js.array.ReadonlyArray<String>?,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingSourceFile: SourceFile?, /* use undefined for default */
-    ) -> js.array.ReadonlyArray<(ResolvedModule?)>
-    )?
     val getResolvedModuleWithFailedLookupLocationsFromCache: (
         (
         modulename: String,
@@ -71,16 +60,6 @@ external interface LanguageServiceHost :
     ) -> ResolvedModuleWithFailedLookupLocations?
     )?
 
-    /** @deprecated supply resolveTypeReferenceDirectiveReferences instead for resolution that can handle newer resolution modes like nodenext */
-    val resolveTypeReferenceDirectives: (
-        (
-        typeDirectiveNames: Any, /* string[] | FileReference[] */
-        containingFile: String,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingFileMode: ResolutionMode, /* use undefined for default */
-    ) -> js.array.ReadonlyArray<(ResolvedTypeReferenceDirective?)>
-    )?
     val resolveModuleNameLiterals: (
         (
         moduleLiterals: js.array.ReadonlyArray<StringLiteralLike>,

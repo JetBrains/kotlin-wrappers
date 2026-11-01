@@ -56,23 +56,11 @@ external interface LanguageService {
      */
     fun getCompilerOptionsDiagnostics(): js.array.ReadonlyArray<Diagnostic>
 
-    /** @deprecated Use getEncodedSyntacticClassifications instead. */
-    fun getSyntacticClassifications(
-        fileName: String,
-        span: TextSpan,
-    ): js.array.ReadonlyArray<ClassifiedSpan>
-
     fun getSyntacticClassifications(
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
     ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
-
-    /** @deprecated Use getEncodedSemanticClassifications instead. */
-    fun getSemanticClassifications(
-        fileName: String,
-        span: TextSpan,
-    ): js.array.ReadonlyArray<ClassifiedSpan>
 
     fun getSemanticClassifications(
         fileName: String,
@@ -203,28 +191,12 @@ external interface LanguageService {
         preferences: UserPreferences,
     ): RenameInfo
 
-    /** @deprecated Use the signature with `UserPreferences` instead. */
-    fun getRenameInfo(
-        fileName: String,
-        position: Int,
-        options: RenameInfoOptions = definedExternally,
-    ): RenameInfo
-
     fun findRenameLocations(
         fileName: String,
         position: Int,
         findInStrings: Boolean,
         findInComments: Boolean,
         preferences: UserPreferences,
-    ): (js.array.ReadonlyArray<RenameLocation>)?
-
-    /** @deprecated Pass `providePrefixAndSuffixTextForRename` as part of a `UserPreferences` parameter. */
-    fun findRenameLocations(
-        fileName: String,
-        position: Int,
-        findInStrings: Boolean,
-        findInComments: Boolean,
-        providePrefixAndSuffixTextForRename: Boolean = definedExternally,
     ): (js.array.ReadonlyArray<RenameLocation>)?
 
     fun getSmartSelectionRange(
@@ -424,18 +396,6 @@ external interface LanguageService {
     fun applyCodeActionCommand(
         action: js.array.ReadonlyArray<CodeActionCommand>,
         formatSettings: FormatCodeSettings = definedExternally,
-    ): js.promise.Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
-
-    /** @deprecated `fileName` will be ignored */
-    fun applyCodeActionCommand(
-        fileName: String,
-        action: CodeActionCommand,
-    ): js.promise.Promise<ApplyCodeActionCommandResult>
-
-    /** @deprecated `fileName` will be ignored */
-    fun applyCodeActionCommand(
-        fileName: String,
-        action: js.array.ReadonlyArray<CodeActionCommand>,
     ): js.promise.Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
 
     /**

@@ -1887,66 +1887,12 @@ external interface NodeFactory {
         namedBindings: NamedImportBindings?,
     ): ImportClause
 
-    /** @deprecated */
-    fun createImportClause(
-        isTypeOnly: Boolean,
-        name: Identifier?,
-        namedBindings: NamedImportBindings?,
-    ): ImportClause
-
     fun updateImportClause(
         node: ImportClause,
         phaseModifier: ImportPhaseModifierSyntaxKind?,
         name: Identifier?,
         namedBindings: NamedImportBindings?,
     ): ImportClause
-
-    /** @deprecated */
-    fun updateImportClause(
-        node: ImportClause,
-        isTypeOnly: Boolean,
-        name: Identifier?,
-        namedBindings: NamedImportBindings?,
-    ): ImportClause
-
-    /** @deprecated */
-    fun createAssertClause(
-        elements: NodeArray<AssertEntry>,
-        multiLine: Boolean = definedExternally,
-    ): AssertClause
-
-    /** @deprecated */
-    fun updateAssertClause(
-        node: AssertClause,
-        elements: NodeArray<AssertEntry>,
-        multiLine: Boolean = definedExternally,
-    ): AssertClause
-
-    /** @deprecated */
-    fun createAssertEntry(
-        name: AssertionKey,
-        value: Expression,
-    ): AssertEntry
-
-    /** @deprecated */
-    fun updateAssertEntry(
-        node: AssertEntry,
-        name: AssertionKey,
-        value: Expression,
-    ): AssertEntry
-
-    /** @deprecated */
-    fun createImportTypeAssertionContainer(
-        clause: AssertClause,
-        multiLine: Boolean = definedExternally,
-    ): ImportTypeAssertionContainer
-
-    /** @deprecated */
-    fun updateImportTypeAssertionContainer(
-        node: ImportTypeAssertionContainer,
-        clause: AssertClause,
-        multiLine: Boolean = definedExternally,
-    ): ImportTypeAssertionContainer
 
     fun createImportAttributes(
         elements: NodeArray<ImportAttribute>,

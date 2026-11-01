@@ -51,37 +51,11 @@ external interface CompilerHost : ModuleResolutionHost {
     ) -> js.array.ReadonlyArray<String>
     )?
 
-    /** @deprecated supply resolveModuleNameLiterals instead for resolution that can handle newer resolution modes like nodenext */
-    val resolveModuleNames: (
-        (
-        moduleNames: js.array.ReadonlyArray<String>,
-        containingFile: String,
-        reusedNames: js.array.ReadonlyArray<String>?,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingSourceFile: SourceFile?, /* use undefined for default */
-    ) -> js.array.ReadonlyArray<(ResolvedModule?)>
-    )?
-
     /**
      * Returns the module resolution cache used by a provided `resolveModuleNames` implementation so that any non-name module resolution operations (eg, package.json lookup) can reuse it
      */
     val getModuleResolutionCache: (() -> ModuleResolutionCache?)?
 
-    /**
-     * @deprecated supply resolveTypeReferenceDirectiveReferences instead for resolution that can handle newer resolution modes like nodenext
-     *
-     * This method is a companion for 'resolveModuleNames' and is used to resolve 'types' references to actual type declaration files
-     */
-    val resolveTypeReferenceDirectives: (
-        (
-        typeReferenceDirectiveNames: Any, /* string[] | readonly FileReference[] */
-        containingFile: String,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingFileMode: ResolutionMode, /* use undefined for default */
-    ) -> js.array.ReadonlyArray<(ResolvedTypeReferenceDirective?)>
-    )?
     val resolveModuleNameLiterals: (
         (
         moduleLiterals: js.array.ReadonlyArray<StringLiteralLike>,
