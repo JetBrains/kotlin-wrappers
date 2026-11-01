@@ -33,12 +33,14 @@ val convertKindEnums = createPlugin { node, context, render ->
             .joinToString(", ")
 
         val members = node.members
-            .map { member ->
+            .mapNotNull { member ->
                 val memberName = member.name
+                val declaration = render(member)
+                    .ifEmpty { return@mapNotNull null }
 
                 val type = if (isIdentifier(memberName)) memberName.text else name
 
-                "${render(member)}: $type"
+                "$declaration: $type"
             }
             .joinToString("\n")
 

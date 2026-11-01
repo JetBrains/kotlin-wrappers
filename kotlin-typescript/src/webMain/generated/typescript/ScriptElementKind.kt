@@ -102,12 +102,6 @@ private constructor() {
         val directory: ScriptElementKind
         val externalModuleName: ScriptElementKind
 
-        /**
-         * <JsxTagName attribute1 attribute2={0} />
-         * @deprecated
-         */
-        val jsxAttribute: ScriptElementKind
-
         /** String literal */
         val string: ScriptElementKind
 

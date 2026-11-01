@@ -1553,15 +1553,6 @@ sealed external interface SyntaxKind {
         val CatchClause: CatchClause
         val ImportAttributes: ImportAttributes
         val ImportAttribute: ImportAttribute
-
-        /** @deprecated */
-        val AssertClause: AssertClause
-
-        /** @deprecated */
-        val AssertEntry: AssertEntry
-
-        /** @deprecated */
-        val ImportTypeAssertionContainer: ImportTypeAssertionContainer
         val PropertyAssignment: PropertyAssignment
         val ShorthandPropertyAssignment: ShorthandPropertyAssignment
         val SpreadAssignment: SpreadAssignment
@@ -1580,9 +1571,6 @@ sealed external interface SyntaxKind {
         val JSDocVariadicType: JSDocVariadicType
         val JSDocNamepathType: JSDocNamepathType
         val JSDoc: JSDoc
-
-        /** @deprecated Use SyntaxKind.JSDoc */
-        val JSDocComment: JSDocComment
         val JSDocText: JSDocText
         val JSDocTypeLiteral: JSDocTypeLiteral
         val JSDocSignature: JSDocSignature
