@@ -2,6 +2,7 @@ package wrappersgenerator.electron
 
 import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
+import io.github.sgrishchenko.karakum.extension.plugins.ExcludeDeprecatedPlugin
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import wrappersgenerator.electron.annotations.annotateInterfaceWithSuperclass
@@ -17,7 +18,7 @@ import wrappersgenerator.electron.plugins.*
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
-            ExcludeDeprecatedMembers,
+            ExcludeDeprecatedPlugin,
             convertElectronQualifiedName,
             convertEvent,
             convertFileHeritageClause,
