@@ -36,13 +36,6 @@ external class ReadStream : node.stream.Readable {
      */
     var pending: Boolean
 
-    /**
-     * events.EventEmitter
-     *   1. open
-     *   2. close
-     *   3. ready
-     */
-
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>
 

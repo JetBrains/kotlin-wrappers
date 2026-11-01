@@ -11,11 +11,6 @@ open external class View : NodeEventEmitter {
      * View
      */
     constructor ()
-// Docs: https://electronjs.org/docs/api/view
-    /**
-     * Emitted when the view's bounds have changed in response to being laid out. The
-     * new bounds can be retrieved with `view.getBounds()`.
-     */
 
     /**
      * If the same View is added to a parent which already contains it, it will be

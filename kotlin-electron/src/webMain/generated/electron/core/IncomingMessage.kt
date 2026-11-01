@@ -8,27 +8,6 @@ import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
 external class IncomingMessage : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/incoming-message
-    /**
-     * Emitted when a request has been canceled during an ongoing HTTP transaction.
-     */
-
-    /**
-     * The `data` event is the usual method of transferring response data into
-     * applicative code.
-     */
-
-    /**
-     * Indicates that response body has ended. Must be placed before 'data' event.
-     */
-
-    /**
-     * Emitted when an error was encountered while streaming response data events. For
-     * instance, if the server closes the underlying connection while the response is
-     * still streaming, an `error` event will be emitted on the response object and a
-     * `close` event will subsequently follow on the request object.
-     */
-
     /**
      * A `Record<string, string | string[]>` representing the HTTP response headers.
      * The `headers` object is formatted as follows:

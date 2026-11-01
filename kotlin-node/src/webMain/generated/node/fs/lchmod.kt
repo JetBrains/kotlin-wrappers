@@ -18,5 +18,3 @@ external fun lchmod(
     mode: Mode,
     callback: NoParamCallback,
 )
-
-/** @deprecated */

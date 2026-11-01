@@ -130,13 +130,6 @@ external class Utf8Stream : EventEmitter {
      */
     val writing: Boolean
 
-    /**
-     * events.EventEmitter
-     *   1. change
-     *   2. close
-     *   3. error
-     */
-
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */

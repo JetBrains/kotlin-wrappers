@@ -4,51 +4,6 @@
 
 package node.url
 
-/**
- * The `url.parse()` method takes a URL string, parses it, and returns a URL
- * object.
- *
- * A `TypeError` is thrown if `urlString` is not a string.
- *
- * A `URIError` is thrown if the `auth` property is present but cannot be decoded.
- *
- * `url.parse()` uses a lenient, non-standard algorithm for parsing URL
- * strings. It is prone to security issues such as [host name spoofing](https://hackerone.com/reports/678487)
- * and incorrect handling of usernames and passwords. Do not use with untrusted
- * input. CVEs are not issued for `url.parse()` vulnerabilities. Use the
- * [WHATWG URL](https://nodejs.org/docs/latest-v24.x/api/url.html#the-whatwg-url-api) API instead, for example:
- *
- * ```js
- * function getURL(req) {
- *   const proto = req.headers['x-forwarded-proto'] || 'https';
- *   const host = req.headers['x-forwarded-host'] || req.headers.host || 'example.com';
- *   return new URL(`${proto}://${host}${req.url || '/'}`);
- * }
- * ```
- *
- * The example above assumes well-formed headers are forwarded from a reverse
- * proxy to your Node.js server. If you are not using a reverse proxy, you should
- * use the example below:
- *
- * ```js
- * function getURL(req) {
- *   return new URL(`https://example.com${req.url || '/'}`);
- * }
- * ```
- * @since v0.1.25
- * @deprecated Use the WHATWG URL API instead.
- * @param urlString The URL string to parse.
- * @param parseQueryString If `true`, the `query` property will always
- * be set to an object returned by the [`querystring`](https://nodejs.org/docs/latest-v24.x/api/querystring.html) module's `parse()`
- * method. If `false`, the `query` property on the returned URL object will be an
- * unparsed, undecoded string. **Default:** `false`.
- * @param slashesDenoteHost If `true`, the first token after the literal
- * string `//` and preceding the next `/` will be interpreted as the `host`.
- * For instance, given `//foo/bar`, the result would be
- * `{host: 'foo', pathname: '/bar'}` rather than `{pathname: '//foo/bar'}`.
- * **Default:** `false`.
- */
-
 external fun parse(
     urlString: String,
     parseQueryString: Boolean,

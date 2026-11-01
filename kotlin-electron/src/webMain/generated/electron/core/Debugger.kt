@@ -7,16 +7,6 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Debugger : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/debugger
-    /**
-     * Emitted when the debugging session is terminated. This happens either when
-     * `webContents` is closed or DevTools is invoked for the attached `webContents`.
-     */
-
-    /**
-     * Emitted whenever the debugging target issues an instrumentation event.
-     */
-
     /**
      * Attaches the debugger to the `webContents`.
      */

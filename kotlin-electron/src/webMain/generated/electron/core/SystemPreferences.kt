@@ -4,47 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface SystemPreferences : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/system-preferences
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
     /**
      * A promise that resolves with `true` if consent was granted and `false` if it was
      * denied. If an invalid `mediaType` is passed, the promise will be rejected. If an

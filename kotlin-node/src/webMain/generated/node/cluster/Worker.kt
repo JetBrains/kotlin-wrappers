@@ -239,8 +239,6 @@ external class Worker : EventEmitter {
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-// the handle is a net.Socket or net.Server object, or undefined.
-
     fun emit(
         event: String,
         vararg args: Any?,
@@ -253,19 +251,11 @@ external class Worker : EventEmitter {
 
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-// the handle is a net.Socket or net.Server object, or undefined.
-
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-// the handle is a net.Socket or net.Server object, or undefined.
 
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-// the handle is a net.Socket or net.Server object, or undefined.
-
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-// the handle is a net.Socket or net.Server object, or undefined.
 
     @web.events.JsEvent("disconnect")
     val disconnectEvent: node.events.EventInstance<js.array.Tuple>

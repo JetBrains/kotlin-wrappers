@@ -4,11 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface InAppPurchase : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/in-app-purchase
-    /**
-     * Emitted when one or more transactions have been updated.
-     */
-
     /**
      * whether a user can make a payment.
      */

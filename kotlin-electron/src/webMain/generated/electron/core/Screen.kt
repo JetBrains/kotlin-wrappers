@@ -4,21 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface Screen : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/screen
-    /**
-     * Emitted when `newDisplay` has been added.
-     */
-
-    /**
-     * Emitted when one or more metrics change in a `display`. The `changedMetrics` is
-     * an array of strings that describe the changes. Possible changes are `bounds`,
-     * `workArea`, `scaleFactor` and `rotation`.
-     */
-
-    /**
-     * Emitted when `oldDisplay` has been removed.
-     */
-
     /**
      * Converts a screen DIP point to a screen physical point. The DPI scale is
      * performed relative to the display containing the DIP point.

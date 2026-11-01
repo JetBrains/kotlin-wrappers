@@ -4,18 +4,4 @@
 
 package node.querystring
 
-/**
- * The `node:querystring` module provides utilities for parsing and formatting URL
- * query strings. It can be accessed using:
- *
- * ```js
- * import querystring from 'node:querystring';
- * ```
- *
- * `querystring` is more performant than `URLSearchParams` but is not a
- * standardized API. Use `URLSearchParams` when performance is not critical or
- * when compatibility with browser code is desirable.
- * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/querystring.js)
- */
-
 /* export * from "querystring"; */

@@ -11,14 +11,6 @@ open external class Menu : NodeEventEmitter {
      * Menu
      */
     constructor ()
-// Docs: https://electronjs.org/docs/api/menu
-    /**
-     * Emitted when a popup is closed either manually or with `menu.closePopup()`.
-     */
-
-    /**
-     * Emitted when `menu.popup()` is called.
-     */
 
     /**
      * Appends the `menuItem` to the menu.

@@ -38,22 +38,6 @@ open external class Duplex :
      */
     var allowHalfOpen: Boolean
 
-    /**
-     * Event emitter
-     * The defined events on documents including:
-     * 1.  close
-     * 2.  data
-     * 3.  drain
-     * 4.  end
-     * 5.  error
-     * 6.  finish
-     * 7.  pause
-     * 8.  pipe
-     * 9.  readable
-     * 10. resume
-     * 11. unpipe
-     */
-
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun addListener(

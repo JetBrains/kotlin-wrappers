@@ -4,14 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface NativeTheme : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/native-theme
-    /**
-     * Emitted when something in the underlying NativeTheme has changed. This normally
-     * means that either the value of `shouldUseDarkColors`,
-     * `shouldUseHighContrastColors` or `shouldUseInvertedColorScheme` has changed. You
-     * will have to check them to determine which one has changed.
-     */
-
     /**
      * A `boolean` indicating whether Chromium is in forced colors mode, controlled by
      * system accessibility settings. Currently, Windows high contrast is the only

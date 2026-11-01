@@ -7,15 +7,6 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class MessagePortMain : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/message-port-main
-    /**
-     * Emitted when the remote end of a MessagePortMain object becomes disconnected.
-     */
-
-    /**
-     * Emitted when a MessagePortMain object receives a message.
-     */
-
     /**
      * Disconnects the port, so it is no longer active.
      */

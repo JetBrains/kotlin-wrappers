@@ -437,7 +437,6 @@ external interface LanguageService {
         fileName: String,
         action: js.array.ReadonlyArray<CodeActionCommand>,
     ): js.promise.Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
-    /** @deprecated `fileName` will be ignored */
 
     /**
      * @param includeInteractiveActions Include refactor actions that require additional arguments to be

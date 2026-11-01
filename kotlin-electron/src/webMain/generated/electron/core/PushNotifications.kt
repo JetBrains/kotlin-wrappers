@@ -4,30 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface PushNotifications : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/push-notifications
-    /**
-     * Emitted when the app receives a remote notification while running. See:
-     * https://developer.apple.com/documentation/appkit/nsapplicationdelegate/1428430-application?language=objc
-     *
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
     /**
      * Registers the app with Apple Push Notification service (APNS) to receive Badge,
      * Sound, and Alert notifications. If registration is successful, the promise will

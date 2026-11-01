@@ -184,10 +184,6 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      */
     fun getRawHeaderNames(): js.array.ReadonlyArray<String>
 
-    /**
-     * @deprecated
-     */
-
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun addListener(
@@ -195,25 +191,13 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) /* this */
 
-    /**
-     * @deprecated
-     */
-
     override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    /**
-     * @deprecated
-     */
-
     override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    /**
-     * @deprecated
-     */
 
     override fun prependListener(
         event: String,
@@ -224,10 +208,6 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
     ) /* this */
-
-    /**
-     * @deprecated
-     */
 
     override fun prependOnceListener(
         event: String,

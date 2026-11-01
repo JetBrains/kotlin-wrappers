@@ -7,27 +7,6 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Extensions : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/extensions-api
-    /**
-     * Emitted after an extension is loaded. This occurs whenever an extension is added
-     * to the "enabled" set of extensions. This includes:
-     *
-     * * Extensions being loaded from `Extensions.loadExtension`.
-     * * Extensions being reloaded:
-     *   * from a crash.
-     *   * if the extension requested it (`chrome.runtime.reload()`).
-     */
-
-    /**
-     * Emitted after an extension is loaded and all necessary browser state is
-     * initialized to support the start of the extension's background page.
-     */
-
-    /**
-     * Emitted after an extension is unloaded. This occurs when
-     * `Session.removeExtension` is called.
-     */
-
     /**
      * A list of all loaded extensions.
      *

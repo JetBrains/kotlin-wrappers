@@ -733,11 +733,6 @@ external interface Process : EventEmitter {
      */
     fun getActiveResourcesInfo(): js.array.ReadonlyArray<String>
 
-    /**
-     * Provides a way to load built-in modules in a globally available function.
-     * @param id ID of the built-in module being requested.
-     */
-
     fun getBuiltinModule(id: String): Any?
 
     /**
@@ -1799,7 +1794,6 @@ external interface Process : EventEmitter {
         env: ProcessEnv?, /* use undefined for default */
     ) -> Nothing
     )?
-    /* EventEmitter */
 
     fun addListener(event: Signals, listener: SignalsListener) /* this */
 

@@ -9,10 +9,6 @@ import node.events.EventEmitter as NodeEventEmitter
 
 external class WebFrameMain : NodeEventEmitter {
     /**
-     * Emitted when the document is loaded.
-     */
-
-    /**
      * A promise that resolves with the currently running JavaScript call stack. If no
      * JavaScript runs in the frame, the promise will never resolve. In cases where the
      * call stack is otherwise unable to be collected, it will return `undefined`.
