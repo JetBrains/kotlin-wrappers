@@ -29,6 +29,9 @@ sealed external interface GridWrap {
     }
 }
 
+/**
+ * Lost from union: number
+ */
 sealed external interface GridSize {
     companion object {
         @JsValue("auto")
@@ -47,6 +50,9 @@ inline fun GridSize(
 ): GridSize =
     unsafeCast(value)
 
+/**
+ * Lost from union: number
+ */
 sealed external interface GridOffset {
     companion object {
         @JsValue("auto")
