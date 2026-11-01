@@ -4,9 +4,12 @@ package mui.system
 
 import react.PropsWithChildren
 import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface StackProps :
     StackBaseProps,
+    HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
     /**
      * The system prop, which allows defining system overrides as well as additional CSS styles.
