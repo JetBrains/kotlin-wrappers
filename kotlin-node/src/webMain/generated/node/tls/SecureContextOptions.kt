@@ -60,12 +60,6 @@ external interface SecureContextOptions {
     var ciphers: String?
 
     /**
-     * Name of an OpenSSL engine which can provide the client certificate.
-     * @deprecated
-     */
-    var clientCertEngine: String?
-
-    /**
      * PEM formatted CRLs (Certificate Revocation Lists).
      */
     var crl: Any? /* string | Buffer | Array<string | Buffer> | undefined */
@@ -106,21 +100,6 @@ external interface SecureContextOptions {
      * object.passphrase if provided, or options.passphrase if it is not.
      */
     var key: Any? /* string | Buffer | Array<string | Buffer | KeyObject> | undefined */
-
-    /**
-     * Name of an OpenSSL engine to get private key from. Should be used
-     * together with privateKeyIdentifier.
-     * @deprecated
-     */
-    var privateKeyEngine: String?
-
-    /**
-     * Identifier of a private key managed by an OpenSSL engine. Should be
-     * used together with privateKeyEngine. Should not be set together with
-     * key, because both options define a private key in different ways.
-     * @deprecated
-     */
-    var privateKeyIdentifier: String?
 
     /**
      * Optionally set the maximum TLS version to allow. One

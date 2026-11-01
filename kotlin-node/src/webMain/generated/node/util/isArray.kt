@@ -3,24 +3,3 @@
 @file:JsModule("node:util")
 
 package node.util
-
-/**
- * Alias for [`Array.isArray()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray).
- *
- * Returns `true` if the given `object` is an `Array`. Otherwise, returns `false`.
- *
- * ```js
- * import util from 'node:util';
- *
- * util.isArray([]);
- * // Returns: true
- * util.isArray(new Array());
- * // Returns: true
- * util.isArray({});
- * // Returns: false
- * ```
- * @since v0.6.0
- * @deprecated Since v4.0.0 - Use `isArray` instead.
- */
-@JsName("isArray")
-external fun isArrayRaw(value: Any?): Boolean /* object is unknown[] */

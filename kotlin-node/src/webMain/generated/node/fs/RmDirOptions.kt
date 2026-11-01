@@ -15,17 +15,6 @@ external interface RmDirOptions {
     var maxRetries: Double?
 
     /**
-     * @deprecated since v14.14.0 In future versions of Node.js and will trigger a warning
-     * `fs.rmdir(path, { recursive: true })` will throw if `path` does not exist or is a file.
-     * Use `fs.rm(path, { recursive: true, force: true })` instead.
-     *
-     * If `true`, perform a recursive directory removal. In
-     * recursive mode, operations are retried on failure.
-     * @default false
-     */
-    var recursive: Boolean?
-
-    /**
      * The amount of time in milliseconds to wait between retries.
      * This option is ignored if the `recursive` option is not `true`.
      * @default 100

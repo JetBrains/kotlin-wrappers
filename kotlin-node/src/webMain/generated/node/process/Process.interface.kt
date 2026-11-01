@@ -7,7 +7,6 @@ import node.childProcess.MessageOptions
 import node.childProcess.SendHandle
 import node.events.EventEmitter
 import node.fs.PathLike
-import node.module.Module
 import node.workerThreads.Worker
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -1331,18 +1330,6 @@ external interface Process : EventEmitter {
      */
     val platform: Platform
 
-    /**
-     * The `process.mainModule` property provides an alternative way of retrieving `require.main`. The difference is that if the main module changes at
-     * runtime, `require.main` may still refer to the original main module in
-     * modules that were required before the change occurred. Generally, it's
-     * safe to assume that the two refer to the same module.
-     *
-     * As with `require.main`, `process.mainModule` will be `undefined` if there
-     * is no entry script.
-     * @since v0.1.17
-     * @deprecated Since v14.0.0 - Use `main` instead.
-     */
-    var mainModule: Module?
     var memoryUsage: MemoryUsageFn
 
     /**
@@ -1541,15 +1528,6 @@ external interface Process : EventEmitter {
      * @since v6.10.0
      */
     var traceProcessWarnings: Boolean
-
-    /**
-     * `process.umask()` returns the Node.js process's file mode creation mask. Child
-     * processes inherit the mask from the parent process.
-     * @since v0.1.19
-     * @deprecated Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition between threads, and is a potential
-     * security vulnerability. There is no safe, cross-platform alternative API.
-     */
-    fun umask(): Double
 
     /**
      * Can only be set if not in worker thread.

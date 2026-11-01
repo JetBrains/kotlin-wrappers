@@ -16,6 +16,7 @@ import wrappersgenerator.node.plugins.*
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
+            ExcludeDeprecatedMembers,
             // __promisify__ functions are ignored,
             // and this plugin should be added before any other function plugin
             convertPromisifyFunctions,

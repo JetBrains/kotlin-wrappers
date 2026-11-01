@@ -1,23 +1,3 @@
 // Automatically generated - do not modify!
 
 package node.fs
-
-/** @deprecated This interface will be removed in a future version. Use `import { ReadOptionsWithBuffer } from "node:fs"` instead. */
-@kotlinx.js.JsPlainObject
-external interface FileReadOptions<T : js.buffer.ArrayBufferView<*> /* default is node.buffer.Buffer<*> */> {
-    /**
-     * @default `Buffer.alloc(0xffff)`
-     */
-    var buffer: T?
-
-    /**
-     * @default 0
-     */
-    var offset: Double?
-
-    /**
-     * @default `buffer.byteLength`
-     */
-    var length: Double?
-    var position: ReadPosition?
-}

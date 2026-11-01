@@ -33,13 +33,4 @@ external interface LookupOptions {
      * @since v22.1.0
      */
     var order: LookupOptionsOrder?
-
-    /**
-     * When `true`, the callback receives IPv4 and IPv6 addresses in the order the DNS resolver returned them. When `false`, IPv4
-     * addresses are placed before IPv6 addresses. This option will be deprecated in favor of `order`. When both are specified,
-     * `order` has higher precedence. New code should only use `order`. Default value is configurable using {@link setDefaultResultOrder}
-     * @default true (addresses are not reordered)
-     * @deprecated Please use `order` option
-     */
-    var verbatim: Boolean?
 }

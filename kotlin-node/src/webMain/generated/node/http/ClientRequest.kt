@@ -47,14 +47,6 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     constructor (url: ClientRequestArgs, cb: (res: IncomingMessage) -> Unit = definedExternally)
 
     /**
-     * The `request.aborted` property will be `true` if the request has
-     * been aborted.
-     * @since v0.11.14
-     * @deprecated Since v17.0.0, v16.12.0 - Check `destroyed` instead.
-     */
-    var aborted: Boolean
-
-    /**
      * The request host.
      * @since v14.5.0, v12.19.0
      */
@@ -135,14 +127,6 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * @since v0.4.0
      */
     var path: String
-
-    /**
-     * Marks the request as aborting. Calling this will cause remaining data
-     * in the response to be dropped and the socket to be destroyed.
-     * @since v0.3.8
-     * @deprecated Since v14.1.0,v13.14.0 - Use `destroy` instead.
-     */
-    fun abort()
 
     fun onSocket(socket: Socket)
 

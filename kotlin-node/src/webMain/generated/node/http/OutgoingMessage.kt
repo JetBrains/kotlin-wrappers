@@ -21,22 +21,10 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
     var sendDate: Boolean
 
     /**
-     * @deprecated Use `writableEnded` instead.
-     */
-    var finished: Boolean
-
-    /**
      * Read-only. `true` if the headers were sent, otherwise `false`.
      * @since v0.9.3
      */
     val headersSent: Boolean
-
-    /**
-     * Alias of `outgoingMessage.socket`.
-     * @since v0.3.0
-     * @deprecated Since v15.12.0,v14.17.1 - Use `socket` instead.
-     */
-    val connection: Socket?
 
     /**
      * Reference to the underlying socket. Usually, users will not want to access

@@ -29,16 +29,6 @@ external class REPLServer : _Interface {
     val context: Context
 
     /**
-     * @deprecated since v14.3.0 - Use `input` instead.
-     */
-    val inputStream: node.ReadableStream
-
-    /**
-     * @deprecated since v14.3.0 - Use `output` instead.
-     */
-    val outputStream: node.WritableStream
-
-    /**
      * The `Readable` stream from which REPL input will be read.
      */
     val input: node.ReadableStream

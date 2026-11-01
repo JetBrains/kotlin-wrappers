@@ -17,9 +17,6 @@ external interface Cluster : EventEmitter {
      */
     fun fork(env: Any? = definedExternally): Worker
 
-    /** @deprecated since v16.0.0 - use isPrimary. */
-    val isMaster: Boolean
-
     /**
      * True if the process is a primary. This is determined by the `process.env.NODE_UNIQUE_ID`. If `process.env.NODE_UNIQUE_ID`
      * is undefined, then `isPrimary` is `true`.
@@ -55,9 +52,6 @@ external interface Cluster : EventEmitter {
      * @since v0.7.1
      */
     val settings: ClusterSettings
-
-    /** @deprecated since v16.0.0 - use [`.setupPrimary()`](https://nodejs.org/docs/latest-v24.x/api/cluster.html#clustersetupprimarysettings) instead. */
-    fun setupMaster(settings: ClusterSettings = definedExternally)
 
     /**
      * `setupPrimary` is used to change the default 'fork' behavior. Once called, the settings will be present in `cluster.settings`.

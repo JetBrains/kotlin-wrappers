@@ -78,27 +78,3 @@ external fun fail(message: String = definedExternally): Nothing
  * @param [message='Failed']
  */
 external fun fail(message: js.errors.JsError = definedExternally): Nothing
-
-/** @deprecated since v10.0.0 - use fail([message]) or other assert functions instead. */
-external fun fail(
-    actual: Any?,
-    expected: Any?,
-): Nothing
-
-/** @deprecated since v10.0.0 - use fail([message]) or other assert functions instead. */
-external fun fail(
-    actual: Any?,
-    expected: Any?,
-    message: String = definedExternally,
-    operator: String = definedExternally, // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    stackStartFn: Function<*> = definedExternally,
-): Nothing
-
-/** @deprecated since v10.0.0 - use fail([message]) or other assert functions instead. */
-external fun fail(
-    actual: Any?,
-    expected: Any?,
-    message: js.errors.JsError = definedExternally,
-    operator: String = definedExternally,
-    stackStartFn: Function<*> = definedExternally,
-): Nothing

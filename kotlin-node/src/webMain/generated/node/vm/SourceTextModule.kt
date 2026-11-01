@@ -54,11 +54,6 @@ external class SourceTextModule : Module {
     constructor (code: String, options: SourceTextModuleOptions = definedExternally)
 
     /**
-     * @deprecated Use `sourceTextModule.moduleRequests` instead.
-     */
-    val dependencySpecifiers: js.array.ReadonlyArray<String>
-
-    /**
      * Iterates over the dependency graph and returns `true` if any module in its
      * dependencies or this module itself contains top-level `await` expressions,
      * otherwise returns `false`.

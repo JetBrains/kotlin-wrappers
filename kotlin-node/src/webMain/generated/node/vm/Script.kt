@@ -252,9 +252,6 @@ open external class Script {
      */
     fun createCachedData(): NonSharedBuffer
 
-    /** @deprecated in favor of `script.createCachedData()` */
-    var cachedDataProduced: Boolean?
-
     /**
      * When `cachedData` is supplied to create the `vm.Script`, this value will be set
      * to either `true` or `false` depending on acceptance of the data by V8.
