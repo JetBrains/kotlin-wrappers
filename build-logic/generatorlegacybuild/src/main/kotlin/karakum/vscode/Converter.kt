@@ -26,7 +26,7 @@ internal fun parseDeclarations(
         .splitToSequence("\n/**")
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
-        .map { parseDeclaration(it) }
+        .mapNotNull { parseDeclaration(it) }
         .plus(
             ConversionResult(
                 DISPOSABLE_LIKE,
@@ -38,7 +38,7 @@ internal fun parseDeclarations(
 
 private fun parseDeclaration(
     source: String,
-): ConversionResult {
+): ConversionResult? {
     check("export " in source) {
         "No `export` in sources:\n----\n$source\n----\n"
     }
@@ -59,7 +59,7 @@ private fun parseDeclaration(
     val body = when (type) {
         "enum" -> convertEnum(name, source)
 
-        "type" -> convertType(name, source)
+        "type" -> convertType(name, source) ?: return null
 
         "interface" -> convertInterface(name, source)
         "class" -> convertInterface(name, source)
@@ -107,11 +107,14 @@ private fun convertEnum(
 private fun convertType(
     name: String,
     source: String,
-): String {
+): String? {
     val comment = kdoc(
         source.substringBefore("\nexport "),
         Commenter.create(name),
     )
+
+    if ("@deprecated" in source)
+        return null
 
     val (declaration, bodySource) = source
         .substringAfter("\nexport type")
