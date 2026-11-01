@@ -17,6 +17,13 @@ external interface OnCompletedListenerDetails {
     var frame: WebFrameMain?
 
     /**
+     * The origin that issued the request (for example `https://example.com`, or `null`
+     * for an opaque origin). Kept from the original request across redirects; absent
+     * for requests the browser started itself.
+     */
+    var initiatorOrigin: String?
+
+    /**
      * Can be `mainFrame`, `subFrame`, `stylesheet`, `script`, `image`, `font`,
      * `object`, `xhr`, `ping`, `cspReport`, `media`, `webSocket` or `other`.
      */

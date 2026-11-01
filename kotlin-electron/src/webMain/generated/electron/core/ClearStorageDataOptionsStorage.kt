@@ -21,9 +21,6 @@ inline val ClearStorageDataOptionsStorage.Companion.localstorage: ClearStorageDa
 inline val ClearStorageDataOptionsStorage.Companion.shadercache: ClearStorageDataOptionsStorage
     get() = js.reflect.unsafeCast("shadercache")
 
-inline val ClearStorageDataOptionsStorage.Companion.websql: ClearStorageDataOptionsStorage
-    get() = js.reflect.unsafeCast("websql")
-
 inline val ClearStorageDataOptionsStorage.Companion.serviceworkers: ClearStorageDataOptionsStorage
     get() = js.reflect.unsafeCast("serviceworkers")
 

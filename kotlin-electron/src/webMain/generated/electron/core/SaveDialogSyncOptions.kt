@@ -10,7 +10,9 @@ external interface SaveDialogSyncOptions {
     var title: String?
 
     /**
-     * Absolute directory path, absolute file path, or file name to use by default.
+     * Absolute directory path, absolute file path, or file name to use by default. If
+     * not provided, the dialog will default to the user's Downloads folder, or their
+     * home directory if Downloads doesn't exist.
      */
     var defaultPath: String?
 

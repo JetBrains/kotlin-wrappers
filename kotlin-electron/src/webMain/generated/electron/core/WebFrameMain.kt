@@ -26,6 +26,15 @@ external class WebFrameMain : NodeEventEmitter {
     fun collectJavaScriptCallStack(): Any /* (Promise<string>) | (Promise<void>) */
 
     /**
+     * When executed on a video media element, copies the frame at (x, y) to the
+     * clipboard.
+     */
+    fun copyVideoFrameAt(
+        x: Double,
+        y: Double,
+    )
+
+    /**
      * A promise that resolves with the result of the executed code or is rejected if
      * execution throws or results in a rejected promise.
      *
@@ -83,6 +92,15 @@ external class WebFrameMain : NodeEventEmitter {
      * frame has no history.
      */
     fun reload(): Boolean
+
+    /**
+     * When executed on a video media element, shows a save dialog and saves the frame
+     * at (x, y) to disk.
+     */
+    fun saveVideoFrameAs(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * Send an asynchronous message to the renderer process via `channel`, along with

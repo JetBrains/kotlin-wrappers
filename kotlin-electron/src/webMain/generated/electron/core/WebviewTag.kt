@@ -177,6 +177,11 @@ external interface WebviewTag : web.html.HTMLElement {
      */
 
     /**
+     * Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for
+     * a link in its context menu.
+     */
+
+    /**
      * Emitted when 'Search' is selected for text in its context menu.
      */
 

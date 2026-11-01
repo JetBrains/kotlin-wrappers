@@ -161,7 +161,8 @@ external class Session : NodeEventEmitter {
      */
 
     /**
-     * Emitted when Electron is about to download `item` in `webContents`.
+     * Emitted when Electron is about to download `item` in `webContents`. See also
+     * `item.getInitiatorOrigin()`.
      *
      * Calling `event.preventDefault()` will cancel the download and `item` will not be
      * available from next tick of the process.
@@ -292,8 +293,8 @@ external class Session : NodeEventEmitter {
      * see Response.
      *
      * Sends a request, similarly to how `fetch()` works in the renderer, using
-     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
-     * HTTP stack.
+     * Chromium's network stack. This differs from Node's `fetch()`, which uses
+     * Node.js's HTTP stack.
      *
      * Example:
      *
@@ -324,8 +325,8 @@ external class Session : NodeEventEmitter {
      * see Response.
      *
      * Sends a request, similarly to how `fetch()` works in the renderer, using
-     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
-     * HTTP stack.
+     * Chromium's network stack. This differs from Node's `fetch()`, which uses
+     * Node.js's HTTP stack.
      *
      * Example:
      *
@@ -888,7 +889,7 @@ external class Session : NodeEventEmitter {
     val hidDeviceRevokedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, HidDeviceRevokedDetails>>
 
     @web.events.JsEvent("preconnect")
-    val preconnectEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
+    val preconnectEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, Boolean, WebFrameMain?>>
 
     @web.events.JsEvent("select-hid-device")
     val selectHidDeviceEvent: node.events.EventInstance<
@@ -967,7 +968,8 @@ external class Session : NodeEventEmitter {
     val usbDeviceRevokedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, UsbDeviceRevokedDetails>>
 
     @web.events.JsEvent("will-download")
-    val willDownloadEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, DownloadItem, WebContents>>
+    val willDownloadEvent:
+            node.events.EventInstance<js.array.Tuple4<Event<*>, DownloadItem, WebContents, WebFrameMain?>>
 
     companion object {
 // Docs: https://electronjs.org/docs/api/session

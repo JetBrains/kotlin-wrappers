@@ -8,8 +8,8 @@ external interface Net {
      * see Response.
      *
      * Sends a request, similarly to how `fetch()` works in the renderer, using
-     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
-     * HTTP stack.
+     * Chromium's network stack. This differs from Node's `fetch()`, which uses
+     * Node.js's HTTP stack.
      *
      * Example:
      *
@@ -44,8 +44,8 @@ external interface Net {
      * see Response.
      *
      * Sends a request, similarly to how `fetch()` works in the renderer, using
-     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
-     * HTTP stack.
+     * Chromium's network stack. This differs from Node's `fetch()`, which uses
+     * Node.js's HTTP stack.
      *
      * Example:
      *

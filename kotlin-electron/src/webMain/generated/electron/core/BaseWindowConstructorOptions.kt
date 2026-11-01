@@ -206,11 +206,10 @@ external interface BaseWindowConstructorOptions {
     var resizable: Boolean?
 
     /**
-     * Whether frameless window should have rounded corners. Default is `true`. On
+     * Whether a frameless window should have rounded corners. Default is `true`. On
      * Windows versions older than Windows 11 Build 22000 this property has no effect,
-     * and frameless windows will not have rounded corners.
-     *
-     * @platform darwin,win32
+     * and frameless windows will not have rounded corners. On Linux, rounded corners
+     * are only drawn when the desktop environment supports client-side decorations.
      */
     var roundedCorners: Boolean?
 

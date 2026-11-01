@@ -6,12 +6,6 @@ package electron.core
 sealed /* union */
 external interface ConfigMinVersion
 
-inline val ConfigMinVersion.Companion.tls1: ConfigMinVersion
-    get() = js.reflect.unsafeCast("tls1")
-
-inline val ConfigMinVersion.Companion.`tls1-1`: ConfigMinVersion
-    get() = js.reflect.unsafeCast("tls1.1")
-
 inline val ConfigMinVersion.Companion.`tls1-2`: ConfigMinVersion
     get() = js.reflect.unsafeCast("tls1.2")
 

@@ -24,9 +24,12 @@ external class UtilityProcess : NodeEventEmitter {
     /**
      * Emitted when the utility process encounters an HTTP 401 or 407 authentication
      * challenge, if the process was created with both
-     * `respondToAuthRequestsFromMainProcess: true` and a `session` option. The
-     * `callback` should be called with credentials to respond to the challenge.
-     * Calling `callback` without arguments will cancel the request.
+     * `respondToAuthRequestsFromMainProcess: true` and a `session` option.
+     *
+     * The default behavior is to cancel the authentication. To override this you
+     * should prevent the default behavior with `event.preventDefault()` and call
+     * `callback(username, password)` with the credentials. Calling `callback` without
+     * arguments will cancel the request.
      *
      * This behaves the same as the `login` event on `app` but is scoped to the
      * individual utility process instance.
@@ -110,7 +113,8 @@ external class UtilityProcess : NodeEventEmitter {
 
     @web.events.JsEvent("login")
     val loginEvent: node.events.EventInstance<
-            js.array.Tuple3<
+            js.array.Tuple4<
+                    Event<*>,
                     AuthenticationResponseDetails,
                     AuthInfo,
                         (

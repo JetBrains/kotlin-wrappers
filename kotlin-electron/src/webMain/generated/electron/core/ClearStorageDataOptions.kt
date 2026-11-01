@@ -11,8 +11,8 @@ external interface ClearStorageDataOptions {
 
     /**
      * The types of storages to clear, can be `cookies`, `filesystem`, `indexdb`,
-     * `localstorage`, `shadercache`, `websql`, `serviceworkers`, `cachestorage`. If
-     * not specified, clear all storage types.
+     * `localstorage`, `shadercache`, `serviceworkers`, `cachestorage`. If not
+     * specified, clear all storage types.
      */
     var storages: js.array.ReadonlyArray<ClearStorageDataOptionsStorage>?
 }

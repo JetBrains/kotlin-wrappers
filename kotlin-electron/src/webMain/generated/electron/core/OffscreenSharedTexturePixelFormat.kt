@@ -11,3 +11,6 @@ inline val OffscreenSharedTexturePixelFormat.Companion.argb: OffscreenSharedText
 
 inline val OffscreenSharedTexturePixelFormat.Companion.rgbaf16: OffscreenSharedTexturePixelFormat
     get() = js.reflect.unsafeCast("rgbaf16")
+
+inline val OffscreenSharedTexturePixelFormat.Companion.nv12: OffscreenSharedTexturePixelFormat
+    get() = js.reflect.unsafeCast("nv12")

@@ -513,6 +513,32 @@ external class WebContents : NodeEventEmitter {
     fun clearHistory()
 
     /**
+     * A cloned WebContents instance. This method creates a copy of the WebContents
+     * with the following attributes:
+     *
+     * * **WebPreferences** - All preferences from the original WebContents are copied
+     * * **SiteInstance** - Uses the same SiteInstance as the original. This means the
+     * cloned WebContents will reuse the same render process as the original when
+     * loading same-origin pages, and only spawn a new render process for cross-origin
+     * navigations. This process allocation behavior is consistent with window.open and
+     * tab duplication in Chromium. For more details, see Chromium's Site Isolation
+     * design document.
+     * * **Opener relationship** - Inherits the opener (window.opener) relationship
+     * * **Navigation state** - Copies the navigation history and controller state
+     *
+     * The cloned WebContents is an independent instance with its own lifecycle that
+     * can be destroyed separately and will not contain any open web pages.
+     *
+     * This API is useful for use cases where you want to create a new WebContents that
+     * shares the same render process with the original for same-origin content, while
+     * maintaining full lifecycle independence. Additionally, reusing the existing
+     * render process can help optimize memory usage and page load speed to a certain
+     * extent, as it eliminates the overhead of spawning and initializing a new render
+     * process from scratch.
+     */
+    fun clone(): WebContents
+
+    /**
      * Closes the page, as if the web content had called `window.close()`.
      *
      * If the page is successfully closed (i.e. the unload is not prevented by the
@@ -535,6 +561,15 @@ external class WebContents : NodeEventEmitter {
      * Copy the image at the given position to the clipboard.
      */
     fun copyImageAt(
+        x: Double,
+        y: Double,
+    )
+
+    /**
+     * When executed on a video media element, copies the frame at (x, y) to the
+     * clipboard.
+     */
+    fun copyVideoFrameAt(
         x: Double,
         y: Double,
     )
@@ -832,6 +867,11 @@ external class WebContents : NodeEventEmitter {
     fun isBeingCaptured(): Boolean
 
     /**
+     * Whether caret browsing is enabled for this page.
+     */
+    fun isCaretBrowsingEnabled(): Boolean
+
+    /**
      * Whether the renderer process has crashed.
      */
     fun isCrashed(): Boolean
@@ -1042,6 +1082,15 @@ external class WebContents : NodeEventEmitter {
     ): js.promise.Promise<js.void.Void>
 
     /**
+     * When executed on a video media element, shows a save dialog and saves the frame
+     * at (x, y) to disk.
+     */
+    fun saveVideoFrameAs(
+        x: Double,
+        y: Double,
+    )
+
+    /**
      * Scrolls to the bottom of the current `webContents`.
      */
     fun scrollToBottom()
@@ -1160,6 +1209,11 @@ external class WebContents : NodeEventEmitter {
     fun setBackgroundThrottling(allowed: Boolean)
 
     /**
+     * Sets whether caret browsing is enabled on the current web page.
+     */
+    fun setCaretBrowsingEnabled(enabled: Boolean)
+
+    /**
      * Changes the title of the DevTools window to `title`. This will only be visible
      * if DevTools is opened in `undocked` or `detach` mode.
      */
@@ -1212,7 +1266,8 @@ external class WebContents : NodeEventEmitter {
     fun setUserAgent(userAgent: String)
 
     /**
-     * Sets the maximum and minimum pinch-to-zoom level.
+     * Sets the maximum and minimum pinch-to-zoom level. The page keeps its normal
+     * scale until the user pinches; a `minimumLevel` below 1 only allows zooming out.
      *
      * > [!NOTE] Visual zoom is disabled by default in Electron. To re-enable it, call:
      */
@@ -1251,15 +1306,16 @@ external class WebContents : NodeEventEmitter {
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
      * divided by 100, so 300% = 3.0.
      *
-     * The factor must be greater than 0.0.
+     * The factor must be greater than 0.0. Values outside the range Chromium can
+     * display (0.25 to 5.0) are clamped to it.
      */
     fun setZoomFactor(factor: Double)
 
     /**
      * Changes the zoom level to the specified level. The original size is 0 and each
-     * increment above or below represents zooming 20% larger or smaller to default
-     * limits of 300% and 50% of original size, respectively. The formula for this is
-     * `scale := 1.2 ^ level`.
+     * increment above or below represents zooming 20% larger or smaller. The formula
+     * for this is `scale := 1.2 ^ level`, and the level is clamped to the range
+     * Chromium can display (25% to 500%, about -7.6 to 8.8).
      *
      * > [!NOTE] The zoom policy at the Chromium level is same-origin, meaning that the
      * zoom level for a specific domain propagates across all instances of windows with
@@ -1334,6 +1390,26 @@ external class WebContents : NodeEventEmitter {
      * affects the Page Visibility API.
      */
     var backgroundThrottling: Boolean
+
+    /**
+     * A `boolean` property that determines whether caret browsing is enabled for this
+     * page.
+     *
+     * When enabled, a movable cursor is placed in the page's text, allowing the user
+     * to navigate and select content with the keyboard. Changes apply to the live page
+     * without reloading it.
+     *
+     * A `<webview>` guest inherits this value from its embedder when it is created and
+     * then tracks it independently, so disabling caret browsing on the embedder leaves
+     * an existing guest enabled.
+     *
+     * While any `WebContents` in the process has caret browsing enabled, assistive
+     * technology is notified process-wide that caret browsing is active, so that
+     * screen readers report the caret's position as it moves. That notification is
+     * only withdrawn once every `WebContents` that enabled caret browsing has either
+     * disabled it or been destroyed.
+     */
+    var caretBrowsingEnabled: Boolean
 
     /**
      * A `Debugger` instance for this webContents.

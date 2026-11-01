@@ -6,7 +6,7 @@ package electron.core
 external interface App : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/app
     /**
-     * Emitted when Chrome's accessibility support changes. This event fires when
+     * Emitted when Chromium's accessibility support changes. This event fires when
      * assistive technologies, such as screen readers, are enabled or disabled. See
      * https://www.chromium.org/developers/design-documents/accessibility for more
      * details.
@@ -620,6 +620,12 @@ external interface App : node.events.EventEmitter {
     /**
      * Array of `ProcessMetric` objects that correspond to memory and CPU usage
      * statistics of all the processes associated with the app.
+     *
+     * > [!NOTE] `cpu.percentCPUUsage` and `cpu.idleWakeupsPerSecond` are averages over
+     * the time since the last call to `app.getAppMetrics()`, and each call starts a
+     * new measurement interval for every process at once. Other code in the main
+     * process, including dependencies, shares those intervals. See `CPUUsage` for more
+     * details.
      */
     fun getAppMetrics(): js.array.ReadonlyArray<ProcessMetric>
 
@@ -894,9 +900,9 @@ external interface App : node.events.EventEmitter {
     fun invalidateCurrentActivity()
 
     /**
-     * `true` if Chrome's accessibility support is enabled, `false` otherwise. This API
-     * will return `true` if the use of assistive technologies, such as screen readers,
-     * has been detected. See
+     * `true` if Chromium's accessibility support is enabled, `false` otherwise. This
+     * API will return `true` if the use of assistive technologies, such as screen
+     * readers, has been detected. See
      * https://www.chromium.org/developers/design-documents/accessibility for more
      * details.
      *
@@ -1119,7 +1125,7 @@ external interface App : node.events.EventEmitter {
     fun setAboutPanelOptions(options: AboutPanelOptionsOptions)
 
     /**
-     * Manually enables Chrome's accessibility support, allowing to expose
+     * Manually enables Chromium's accessibility support, allowing to expose
      * accessibility switch to users in application settings. See Chromium's
      * accessibility docs for more details. Disabled by default.
      *
@@ -1245,14 +1251,31 @@ external interface App : node.events.EventEmitter {
     )
 
     /**
-     * Sets the `.desktop` filename on Linux. This should match the base filename of
-     * the app's installed `.desktop` file. The `.desktop` suffix is optional.
+     * Sets the `.desktop` filename on Linux. This must match the base filename of the
+     * app's installed `.desktop` file. The `.desktop` suffix is optional.
      *
-     * This value is used to determine the default XDG application ID on Wayland and
-     * `WM_CLASS` on X11. If it is not set, Electron will attempt to infer a name, but
-     * it may not match the packaged app's actual `.desktop` file. This could result in
-     * the app showing a generic icon or failing to respond to global keyboard
-     * shortcuts.
+     * The name (without the `.desktop` suffix) is the app's identity for Linux desktop
+     * integration. It should be a reverse-DNS style ID such as `com.example.MyApp`,
+     * following the desktop entry naming conventions. This value is used as:
+     *
+     * * the XDG application ID (`app_id`) on Wayland and `WM_CLASS` on X11, used to
+     * match the app's icon and window grouping.
+     * * the app ID that `xdg-desktop-portal` reports to portal backends such as
+     * GlobalShortcuts.
+     *
+     * Portals increasingly enforce this identity. If the name is not a valid
+     * reverse-DNS ID or does not match an installed `.desktop` file:
+     *
+     * * GNOME 50.0/50.1 (Ubuntu 26.04) rejects `globalShortcut` binds with
+     * `org.freedesktop.portal.Error.NotAllowed` — with no error surfaced to the app
+     * (see #52218).
+     * * `xdg-desktop-portal` 1.21 and later refuses portal sessions for app IDs it
+     * cannot resolve to a `.desktop` file.
+     *
+     * If this value is not set and `desktopName` is not present in `package.json`,
+     * Electron falls back to a lowercased, hyphenated slug of the app's name (e.g. `My
+     * App` → `my-app.desktop`), which is unlikely to be a valid portal identity —
+     * packaged apps should always set it explicitly.
      *
      * This API must be called before the `ready` event. The value can also be set
      * using `desktopName` in `package.json`.
@@ -1440,7 +1463,7 @@ external interface App : node.events.EventEmitter {
      * resources will be leaked and your app will lose its ability to reach outside the
      * sandbox completely, until your app is restarted.
      *
-     * Start accessing a security scoped resource. With this method Electron
+     * Start accessing a security scoped resource. With this method, Electron
      * applications that are packaged for the Mac App Store may reach outside their
      * sandbox to access files chosen by the user. See Apple's documentation for a
      * description of how this system works.
@@ -1468,10 +1491,10 @@ external interface App : node.events.EventEmitter {
     fun whenReady(): js.promise.Promise<js.void.Void>
 
     /**
-     * A `boolean` property that's `true` if Chrome's accessibility support is enabled,
-     * `false` otherwise. This property will be `true` if the use of assistive
+     * A `boolean` property that's `true` if Chromium's accessibility support is
+     * enabled, `false` otherwise. This property will be `true` if the use of assistive
      * technologies, such as screen readers, has been detected. Setting this property
-     * to `true` manually enables Chrome's accessibility support, allowing developers
+     * to `true` manually enables Chromium's accessibility support, allowing developers
      * to expose accessibility switch to users in application settings.
      *
      * See Chromium's accessibility docs for more details. Disabled by default.

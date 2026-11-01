@@ -44,6 +44,12 @@ open external class View : NodeEventEmitter {
     fun removeChildView(view: View)
 
     /**
+     * > [!NOTE] You must set a background color with an alpha channel (e.g.
+     * `#80ffffff`) in order for the blur effect to be visible.
+     */
+    fun setBackgroundBlur(blurRadius: Double)
+
+    /**
      * Examples of valid `color` values:
      *
      * * Hex

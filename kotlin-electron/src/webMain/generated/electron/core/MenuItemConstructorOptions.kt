@@ -26,6 +26,7 @@ external interface MenuItemConstructorOptions {
     var role: (MenuItemConstructorOptionsRole)?
     var type: (MenuItemConstructorOptionsType)?
     var label: String?
+    var accessibilityLabel: String?
 
     /**
      * Available in macOS >= 14.4
@@ -126,4 +127,12 @@ external interface MenuItemConstructorOptions {
      * containing group after the containing group of the item with the specified id.
      */
     var afterGroupContaining: js.array.ReadonlyArray<String>?
+
+    /**
+     * A badge shown alongside the label, either a system-styled count (`alerts`,
+     * `updates`, `new-items`) or a custom string. Only available on macOS 14 and up.
+     *
+     * @platform darwin
+     */
+    var badge: MenuItemBadge?
 }

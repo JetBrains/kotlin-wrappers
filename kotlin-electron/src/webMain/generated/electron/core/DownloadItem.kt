@@ -69,6 +69,15 @@ external class DownloadItem : NodeEventEmitter {
     fun getFilename(): String
 
     /**
+     * The origin that started the download (for example `https://example.com`, or
+     * `null` for an opaque origin), or an empty string if the download was not started
+     * by web content (for example `webContents.downloadURL()`). Use this rather than
+     * `getURL()` or the `webContents` to decide whose download it is: the URL is
+     * chosen by the initiator and the `webContents` is the whole tab.
+     */
+    fun getInitiatorOrigin(): String
+
+    /**
      * Last-Modified header value.
      */
     fun getLastModifiedTime(): String

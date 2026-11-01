@@ -11,13 +11,15 @@ external interface CPUUsage {
     var cumulativeCPUUsage: Double?
 
     /**
-     * The number of average idle CPU wakeups per second since the last call to
-     * getCPUUsage. First call returns 0. Will always return 0 on Windows.
+     * The number of average idle CPU wakeups per second since the last call to the API
+     * that returned this object. First call returns 0. Will always return 0 on
+     * Windows.
      */
     var idleWakeupsPerSecond: Double
 
     /**
-     * Percentage of CPU used since the last call to getCPUUsage. First call returns 0.
+     * Percentage of CPU used since the last call to the API that returned this object.
+     * First call returns 0.
      */
     var percentCPUUsage: Double
 }

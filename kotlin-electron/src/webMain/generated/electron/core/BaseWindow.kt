@@ -1209,7 +1209,10 @@ open external class BaseWindow : NodeEventEmitter {
      * Makes the window ignore all mouse events.
      *
      * All mouse events happened in this window will be passed to the window below this
-     * window, but if this window has focus, it will still receive keyboard events.
+     * window, but if this window has focus, it will still receive keyboard events. On
+     * Linux this is supported on both X11 and Wayland. On X11 the X server has applied
+     * the window's new input shape when the call returns; on Wayland the new input
+     * region is applied with the window's next frame.
      */
     open fun setIgnoreMouseEvents(
         ignore: Boolean,
