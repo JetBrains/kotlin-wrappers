@@ -46,7 +46,7 @@ sealed external interface GridSize {
 }
 
 inline fun GridSize(
-    value: Number,
+    value: Int,
 ): GridSize =
     unsafeCast(value)
 
@@ -61,6 +61,6 @@ sealed external interface GridOffset {
 }
 
 inline fun GridOffset(
-    value: Number,
+    value: Int,
 ): GridOffset =
     unsafeCast(value)
