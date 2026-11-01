@@ -7,7 +7,9 @@ package testing.library.user.event
 // unhandled import: keyboardKey from "./system/keyboard"
 // unhandled import: pointerKey from "./system/pointer"
 
-sealed external interface PointerEventsCheckLevel {
+/* enum */
+external class PointerEventsCheckLevel
+private constructor() {
     companion object {
         /**
          * Check pointer events on every user interaction that triggers a bunch of events.

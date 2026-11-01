@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ScriptElementKindModifier {
+/* enum */
+external class ScriptElementKindModifier
+private constructor() {
     companion object {
         val none: ScriptElementKindModifier
         val publicMemberModifier: ScriptElementKindModifier

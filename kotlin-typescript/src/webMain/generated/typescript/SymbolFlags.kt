@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface SymbolFlags : js.numbers.Bitmask<SymbolFlags> {
+/* enum */
+external class SymbolFlags
+private constructor() : js.numbers.Bitmask<SymbolFlags> {
     companion object {
         val None: SymbolFlags
         val FunctionScopedVariable: SymbolFlags

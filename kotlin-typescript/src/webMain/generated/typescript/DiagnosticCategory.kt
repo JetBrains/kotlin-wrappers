@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface DiagnosticCategory {
+/* enum */
+external class DiagnosticCategory
+private constructor() {
     companion object {
         val Warning: DiagnosticCategory
         val Error: DiagnosticCategory

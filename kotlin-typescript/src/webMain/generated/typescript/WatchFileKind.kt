@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface WatchFileKind {
+/* enum */
+external class WatchFileKind
+private constructor() {
     companion object {
         val FixedPollingInterval: WatchFileKind
         val PriorityPollingInterval: WatchFileKind

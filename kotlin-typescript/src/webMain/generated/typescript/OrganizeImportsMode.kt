@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface OrganizeImportsMode {
+/* enum */
+external class OrganizeImportsMode
+private constructor() {
     companion object {
         val All: OrganizeImportsMode
         val SortAndCombine: OrganizeImportsMode

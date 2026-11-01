@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface NewLineKind {
+/* enum */
+external class NewLineKind
+private constructor() {
     companion object {
         val CarriageReturnLineFeed: NewLineKind
         val LineFeed: NewLineKind

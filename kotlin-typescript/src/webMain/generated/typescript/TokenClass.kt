@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface TokenClass {
+/* enum */
+external class TokenClass
+private constructor() {
     companion object {
         val Punctuation: TokenClass
         val Keyword: TokenClass

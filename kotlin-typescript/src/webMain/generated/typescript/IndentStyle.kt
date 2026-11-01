@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface IndentStyle {
+/* enum */
+external class IndentStyle
+private constructor() {
     companion object {
         val None: IndentStyle
         val Block: IndentStyle

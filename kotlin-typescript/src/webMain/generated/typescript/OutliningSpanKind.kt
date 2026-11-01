@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface OutliningSpanKind {
+/* enum */
+external class OutliningSpanKind
+private constructor() {
     companion object {
         /** Single or multi-line comments */
         val Comment: OutliningSpanKind

@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ScriptElementKind {
+/* enum */
+external class ScriptElementKind
+private constructor() {
     companion object {
         val unknown: ScriptElementKind
         val warning: ScriptElementKind

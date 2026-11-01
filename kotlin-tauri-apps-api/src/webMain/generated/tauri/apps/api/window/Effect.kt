@@ -9,7 +9,9 @@ package tauri.apps.api.window
  *
  * @since 2.0.0
  */
-sealed external interface Effect {
+/* enum */
+external class Effect
+private constructor() {
     companion object {
         /**
          * A default material appropriate for the view's effectiveAppearance.  **macOS 10.14-**

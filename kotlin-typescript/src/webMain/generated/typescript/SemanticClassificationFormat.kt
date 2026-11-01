@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface SemanticClassificationFormat {
+/* enum */
+external class SemanticClassificationFormat
+private constructor() {
     companion object {
         val Original: SemanticClassificationFormat
         val TwentyTwenty: SemanticClassificationFormat

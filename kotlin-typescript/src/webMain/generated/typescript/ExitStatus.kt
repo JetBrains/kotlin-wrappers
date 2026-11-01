@@ -5,7 +5,9 @@
 package typescript
 
 /** Return code used by getEmitOutput function to indicate status of the function */
-sealed external interface ExitStatus {
+/* enum */
+external class ExitStatus
+private constructor() {
     companion object {
         val Success: ExitStatus
         val DiagnosticsPresent_OutputsSkipped: ExitStatus

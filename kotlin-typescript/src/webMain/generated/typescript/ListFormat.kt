@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ListFormat : js.numbers.Bitmask<ListFormat> {
+/* enum */
+external class ListFormat
+private constructor() : js.numbers.Bitmask<ListFormat> {
     companion object {
         val None: ListFormat
         val SingleLine: ListFormat

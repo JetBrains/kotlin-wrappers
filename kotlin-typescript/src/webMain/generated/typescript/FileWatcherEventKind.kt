@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface FileWatcherEventKind {
+/* enum */
+external class FileWatcherEventKind
+private constructor() {
     companion object {
         val Created: FileWatcherEventKind
         val Changed: FileWatcherEventKind

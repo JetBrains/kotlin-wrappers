@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface LanguageVariant {
+/* enum */
+external class LanguageVariant
+private constructor() {
     companion object {
         val Standard: LanguageVariant
         val JSX: LanguageVariant

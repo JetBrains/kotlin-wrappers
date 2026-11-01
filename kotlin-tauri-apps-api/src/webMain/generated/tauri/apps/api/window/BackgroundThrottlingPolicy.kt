@@ -9,7 +9,9 @@ package tauri.apps.api.window
  *
  * @since 2.0.0
  */
-sealed external interface BackgroundThrottlingPolicy {
+/* enum */
+external class BackgroundThrottlingPolicy
+private constructor() {
     companion object {
         val Disabled: BackgroundThrottlingPolicy
         val Throttle: BackgroundThrottlingPolicy

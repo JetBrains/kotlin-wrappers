@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface TypeFormatFlags : js.numbers.Bitmask<TypeFormatFlags> {
+/* enum */
+external class TypeFormatFlags
+private constructor() : js.numbers.Bitmask<TypeFormatFlags> {
     companion object {
         val None: TypeFormatFlags
         val NoTruncation: TypeFormatFlags

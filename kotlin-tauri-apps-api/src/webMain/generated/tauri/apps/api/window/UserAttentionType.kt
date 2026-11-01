@@ -9,7 +9,9 @@ package tauri.apps.api.window
  *
  * @since 1.0.0
  */
-sealed external interface UserAttentionType {
+/* enum */
+external class UserAttentionType
+private constructor() {
     companion object {
         /**
          * #### Platform-specific

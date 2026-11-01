@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ModuleKind {
+/* enum */
+external class ModuleKind
+private constructor() {
     companion object {
         /** @deprecated */
         val None: ModuleKind

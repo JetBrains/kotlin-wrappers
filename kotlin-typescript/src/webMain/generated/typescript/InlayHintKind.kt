@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface InlayHintKind {
+/* enum */
+external class InlayHintKind
+private constructor() {
     companion object {
         val Type: InlayHintKind
         val Parameter: InlayHintKind

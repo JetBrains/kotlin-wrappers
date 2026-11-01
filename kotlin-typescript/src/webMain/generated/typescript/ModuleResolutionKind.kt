@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ModuleResolutionKind {
+/* enum */
+external class ModuleResolutionKind
+private constructor() {
     companion object {
         /** @deprecated */
         val Classic: ModuleResolutionKind

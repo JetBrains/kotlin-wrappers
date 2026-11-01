@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface SignatureKind {
+/* enum */
+external class SignatureKind
+private constructor() {
     companion object {
         val Call: SignatureKind
         val Construct: SignatureKind

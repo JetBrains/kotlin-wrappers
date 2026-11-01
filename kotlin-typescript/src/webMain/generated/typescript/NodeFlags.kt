@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface NodeFlags : js.numbers.Bitmask<NodeFlags> {
+/* enum */
+external class NodeFlags
+private constructor() : js.numbers.Bitmask<NodeFlags> {
     companion object {
         val None: NodeFlags
         val Let: NodeFlags

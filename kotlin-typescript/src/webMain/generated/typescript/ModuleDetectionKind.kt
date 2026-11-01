@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ModuleDetectionKind {
+/* enum */
+external class ModuleDetectionKind
+private constructor() {
     companion object {
         /**
          * Files with imports, exports and/or import.meta are considered modules

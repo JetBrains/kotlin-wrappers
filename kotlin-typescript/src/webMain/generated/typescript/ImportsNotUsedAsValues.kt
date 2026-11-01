@@ -5,7 +5,9 @@
 package typescript
 
 /** @deprecated */
-sealed external interface ImportsNotUsedAsValues {
+/* enum */
+external class ImportsNotUsedAsValues
+private constructor() {
     companion object {
         val Remove: ImportsNotUsedAsValues
         val Preserve: ImportsNotUsedAsValues

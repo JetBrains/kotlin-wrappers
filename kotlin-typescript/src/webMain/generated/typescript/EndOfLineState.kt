@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface EndOfLineState {
+/* enum */
+external class EndOfLineState
+private constructor() {
     companion object {
         val None: EndOfLineState
         val InMultiLineCommentTrivia: EndOfLineState

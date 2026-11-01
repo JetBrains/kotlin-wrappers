@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ScriptTarget {
+/* enum */
+external class ScriptTarget
+private constructor() {
     companion object {
         /** @deprecated */
         val ES3: ScriptTarget

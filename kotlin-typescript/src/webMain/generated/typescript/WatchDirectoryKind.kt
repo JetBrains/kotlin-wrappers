@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface WatchDirectoryKind {
+/* enum */
+external class WatchDirectoryKind
+private constructor() {
     companion object {
         val UseFsEvents: WatchDirectoryKind
         val FixedPollingInterval: WatchDirectoryKind

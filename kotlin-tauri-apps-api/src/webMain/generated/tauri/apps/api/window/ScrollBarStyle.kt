@@ -13,7 +13,9 @@ package tauri.apps.api.window
  *
  * @since 2.8.0
  */
-sealed external interface ScrollBarStyle {
+/* enum */
+external class ScrollBarStyle
+private constructor() {
     companion object {
         /**
          * The default scrollbar style for the webview.

@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface OuterExpressionKinds : js.numbers.Bitmask<OuterExpressionKinds> {
+/* enum */
+external class OuterExpressionKinds
+private constructor() : js.numbers.Bitmask<OuterExpressionKinds> {
     companion object {
         val Parentheses: OuterExpressionKinds
         val TypeAssertions: OuterExpressionKinds

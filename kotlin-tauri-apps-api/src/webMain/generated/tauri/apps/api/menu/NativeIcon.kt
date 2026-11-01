@@ -11,7 +11,9 @@ package tauri.apps.api.menu
  *
  * - **Windows / Linux**: Unsupported.
  */
-sealed external interface NativeIcon {
+/* enum */
+external class NativeIcon
+private constructor() {
     companion object {
         /** An add item template image. */
         val Add: NativeIcon

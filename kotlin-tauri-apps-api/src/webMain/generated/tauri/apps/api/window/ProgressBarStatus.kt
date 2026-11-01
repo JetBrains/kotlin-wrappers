@@ -9,7 +9,9 @@ package tauri.apps.api.window
  *
  * @since 2.0.0
  */
-sealed external interface ProgressBarStatus {
+/* enum */
+external class ProgressBarStatus
+private constructor() {
     companion object {
         /**
          * Hide progress bar.
