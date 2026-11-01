@@ -4,7 +4,8 @@
 
 package typescript
 
-sealed external interface TypePredicateKind {
+sealed /* enum */
+external interface TypePredicateKind {
     sealed interface This : TypePredicateKind
 
     sealed interface Identifier : TypePredicateKind

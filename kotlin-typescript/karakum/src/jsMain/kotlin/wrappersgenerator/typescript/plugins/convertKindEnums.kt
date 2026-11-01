@@ -65,13 +65,14 @@ val convertKindEnums = createPlugin { node, context, render ->
             .joinToString("\n")
 
         """
-             sealed external interface ${name}${ifPresent(injectedHeritageClauses) { " : $it" }} {
-             $body
+        sealed /* enum */
+        external interface ${name}${ifPresent(injectedHeritageClauses) { " : $it" }} {
+        $body
 
-             companion object {
-             $members
-             }
-             }
+        companion object {
+        $members
+        }
+        }
         """.trimIndent()
     }
 }

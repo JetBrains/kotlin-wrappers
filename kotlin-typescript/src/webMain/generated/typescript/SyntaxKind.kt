@@ -4,7 +4,8 @@
 
 package typescript
 
-sealed external interface SyntaxKind {
+sealed /* enum */
+external interface SyntaxKind {
     sealed interface Unknown :
         SyntaxKind,
         TokenSyntaxKind,

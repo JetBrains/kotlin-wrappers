@@ -4,7 +4,8 @@
 
 package typescript
 
-sealed external interface InvalidatedProjectKind {
+sealed /* enum */
+external interface InvalidatedProjectKind {
     sealed interface Build : InvalidatedProjectKind
 
     sealed interface UpdateOutputFileStamps : InvalidatedProjectKind
