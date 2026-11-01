@@ -310,18 +310,6 @@ external interface SystemPreferences : node.events.EventEmitter {
     fun unsubscribeWorkspaceNotification(id: Double)
 
     /**
-     * A `boolean` property which determines whether the app avoids using
-     * semitransparent backgrounds. This maps to
-     * NSWorkspace.accessibilityDisplayShouldReduceTransparency
-     *
-     * **Deprecated:** Use the new `nativeTheme.prefersReducedTransparency` API.
-     *
-     * @deprecated
-     * @platform darwin
-     */
-    var accessibilityDisplayShouldReduceTransparency: Boolean
-
-    /**
      * A `string` property that can be `dark`, `light` or `unknown`.
      *
      * Returns the macOS appearance setting that is currently applied to your

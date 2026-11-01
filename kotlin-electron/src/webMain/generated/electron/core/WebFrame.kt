@@ -57,15 +57,6 @@ external interface WebFrame {
     fun findFrameByName(name: String): WebFrame?
 
     /**
-     * that has the supplied `routingId`, `null` if not found.
-     *
-     * **Deprecated:** Use the new `webFrame.findFrameByToken` API.
-     *
-     * @deprecated
-     */
-    fun findFrameByRoutingId(routingId: Double): WebFrame?
-
-    /**
      * that has the supplied `frameToken`, `null` if not found.
      */
     fun findFrameByToken(frameToken: String): WebFrame?
@@ -238,17 +229,6 @@ external interface WebFrame {
      *
      */
     val parent: WebFrame?
-
-    /**
-     * An `Integer` representing the unique frame id in the current renderer process.
-     * Distinct WebFrame instances that refer to the same underlying frame will have
-     * the same `routingId`.
-     *
-     * **Deprecated:** Use the new `webFrame.frameToken` API.
-     *
-     * @deprecated
-     */
-    val routingId: Double
 
     /**
      * A `WebFrame | null` representing top frame in frame hierarchy to which

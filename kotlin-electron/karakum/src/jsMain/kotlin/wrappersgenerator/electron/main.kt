@@ -17,6 +17,7 @@ import wrappersgenerator.electron.plugins.*
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
+            ExcludeDeprecatedMembers,
             convertElectronQualifiedName,
             convertEvent,
             convertFileHeritageClause,

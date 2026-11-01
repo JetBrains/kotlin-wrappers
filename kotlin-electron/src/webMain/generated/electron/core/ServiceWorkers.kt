@@ -18,18 +18,6 @@ external class ServiceWorkers : NodeEventEmitter {
      *
      * If the service worker does not exist or is not running this method will throw an
      * exception.
-     *
-     * **Deprecated:** Use the new `serviceWorkers.getInfoFromVersionID` API.
-     *
-     * @deprecated
-     */
-    fun getFromVersionID(versionId: Double): ServiceWorkerInfo
-
-    /**
-     * Information about this service worker
-     *
-     * If the service worker does not exist or is not running this method will throw an
-     * exception.
      */
     fun getInfoFromVersionID(versionId: Double): ServiceWorkerInfo
 

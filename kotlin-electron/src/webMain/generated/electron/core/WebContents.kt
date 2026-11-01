@@ -64,35 +64,6 @@ external class WebContents : NodeEventEmitter {
     fun beginFrameSubscription(callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit)
 
     /**
-     * Whether the browser can go back to previous web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.canGoBack` API.
-     *
-     * @deprecated
-     */
-    fun canGoBack(): Boolean
-
-    /**
-     * Whether the browser can go forward to next web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.canGoForward`
-     * API.
-     *
-     * @deprecated
-     */
-    fun canGoForward(): Boolean
-
-    /**
-     * Whether the web page can go to `offset`.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.canGoToOffset`
-     * API.
-     *
-     * @deprecated
-     */
-    fun canGoToOffset(offset: Double): Boolean
-
-    /**
      * Resolves with a NativeImage
      *
      * Captures a snapshot of the page within `rect`. Omitting `rect` will capture the
@@ -109,15 +80,6 @@ external class WebContents : NodeEventEmitter {
      * Centers the current text selection in web page.
      */
     fun centerSelection()
-
-    /**
-     * Clears the navigation history.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.clear` API.
-     *
-     * @deprecated
-     */
-    fun clearHistory()
 
     /**
      * A cloned WebContents instance. This method creates a copy of the WebContents
@@ -377,42 +339,6 @@ external class WebContents : NodeEventEmitter {
      * the current zoom level.
      */
     fun getZoomLevel(): Double
-
-    /**
-     * Makes the browser go back a web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goBack` API.
-     *
-     * @deprecated
-     */
-    fun goBack()
-
-    /**
-     * Makes the browser go forward a web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goForward` API.
-     *
-     * @deprecated
-     */
-    fun goForward()
-
-    /**
-     * Navigates browser to the specified absolute web page index.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goToIndex` API.
-     *
-     * @deprecated
-     */
-    fun goToIndex(index: Double)
-
-    /**
-     * Navigates to the specified offset from the "current entry".
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goToOffset` API.
-     *
-     * @deprecated
-     */
-    fun goToOffset(offset: Double)
 
     /**
      * A promise that resolves with a key for the inserted CSS that can later be used

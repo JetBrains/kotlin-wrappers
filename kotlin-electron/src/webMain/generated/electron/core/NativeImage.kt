@@ -28,13 +28,6 @@ external class NativeImage {
     fun getAspectRatio(scaleFactor: Double = definedExternally): Double
 
     /**
-     * Legacy alias for `image.toBitmap()`.
-     *
-     * @deprecated
-     */
-    fun getBitmap(options: BitmapOptions = definedExternally)
-
-    /**
      * A Buffer that stores C pointer to underlying native handle of the image. On
      * macOS, a pointer to `NSImage` instance is returned.
      *

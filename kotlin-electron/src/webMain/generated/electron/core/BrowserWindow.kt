@@ -13,17 +13,6 @@ open external class BrowserWindow : BaseWindow {
     constructor (options: BrowserWindowConstructorOptions = definedExternally)
 
     /**
-     * Replacement API for setBrowserView supporting work with multi browser views.
-     *
-     * > [!WARNING] The `BrowserView` class is deprecated, and replaced by the new
-     * `WebContentsView` class.
-     *
-     * @experimental
-     * @deprecated
-     */
-    fun addBrowserView(browserView: BrowserView)
-
-    /**
      * Adds a window as a tab on this window, after the tab for the window instance.
      *
      * @platform darwin
@@ -133,31 +122,6 @@ open external class BrowserWindow : BaseWindow {
      * prohibited.
      */
     override fun getBounds(): Rectangle
-
-    /**
-     * The `BrowserView` attached to `win`. Returns `null` if one is not attached.
-     * Throws an error if multiple `BrowserView`s are attached.
-     *
-     * > [!WARNING] The `BrowserView` class is deprecated, and replaced by the new
-     * `WebContentsView` class.
-     *
-     * @experimental
-     * @deprecated
-     */
-    fun getBrowserView(): BrowserView?
-
-    /**
-     * a sorted by z-index array of all BrowserViews that have been attached with
-     * `addBrowserView` or `setBrowserView`. The top-most BrowserView is the last
-     * element of the array.
-     *
-     * > [!WARNING] The `BrowserView` class is deprecated, and replaced by the new
-     * `WebContentsView` class.
-     *
-     * @experimental
-     * @deprecated
-     */
-    fun getBrowserViews(): js.array.ReadonlyArray<BrowserView>
 
     /**
      * All child windows.
@@ -583,15 +547,6 @@ open external class BrowserWindow : BaseWindow {
     fun reload()
 
     /**
-     * > [!WARNING] The `BrowserView` class is deprecated, and replaced by the new
-     * `WebContentsView` class.
-     *
-     * @experimental
-     * @deprecated
-     */
-    fun removeBrowserView(browserView: BrowserView)
-
-    /**
      * Remove the window's menu bar.
      *
      * @platform linux,win32
@@ -784,15 +739,6 @@ open external class BrowserWindow : BaseWindow {
         bounds: Rectangle,
         animate: Boolean,
     )
-
-    /**
-     * > [!WARNING] The `BrowserView` class is deprecated, and replaced by the new
-     * `WebContentsView` class.
-     *
-     * @experimental
-     * @deprecated
-     */
-    fun setBrowserView(browserView: BrowserView?)
 
     /**
      * Sets whether the window can be manually closed by user. On Linux does nothing.
@@ -1172,18 +1118,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform win32,linux
      */
     override fun setTitleBarOverlay(options: TitleBarOverlayOptions)
-
-    /**
-     * Raises `browserView` above other `BrowserView`s attached to `win`. Throws an
-     * error if `browserView` is not attached to `win`.
-     *
-     * > [!WARNING] The `BrowserView` class is deprecated, and replaced by the new
-     * `WebContentsView` class.
-     *
-     * @experimental
-     * @deprecated
-     */
-    fun setTopBrowserView(browserView: BrowserView)
 
     /**
      * Sets the touchBar layout for the current window. Specifying `null` or
@@ -1576,17 +1510,6 @@ open external class BrowserWindow : BaseWindow {
     override val willResizeEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
-        /**
-         * > [!NOTE] The `BrowserView` class is deprecated, and replaced by the new
-         * `WebContentsView` class.
-         *
-         * The window that owns the given `browserView`. If the given view is not attached
-         * to any window, returns `null`.
-         *
-         * @deprecated
-         */
-        fun fromBrowserView(browserView: BrowserView): BrowserWindow?
-
         /**
          * The window with the given `id`.
          */

@@ -109,13 +109,6 @@ external interface WebPreferences {
     var enableBlinkFeatures: String?
 
     /**
-     * Whether to enable the `paste` execCommand. Default is `false`.
-     *
-     * @deprecated
-     */
-    var enableDeprecatedPaste: Boolean?
-
-    /**
      * Whether to enable preferred size mode. The preferred size is the minimum size
      * needed to contain the layout of the document—without requiring scrolling.
      * Enabling this will cause the `preferred-size-changed` event to be emitted on the

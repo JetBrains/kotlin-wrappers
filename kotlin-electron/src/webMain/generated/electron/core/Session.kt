@@ -206,18 +206,6 @@ external class Session : NodeEventEmitter {
     fun forceReloadProxyConfig(): js.promise.Promise<js.void.Void>
 
     /**
-     * A list of all loaded extensions.
-     *
-     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
-     * is emitted.
-     *
-     * **Deprecated:** Use the new `ses.extensions.getAllExtensions` API.
-     *
-     * @deprecated
-     */
-    fun getAllExtensions(): js.array.ReadonlyArray<Extension>
-
-    /**
      * resolves with blob data.
      */
     fun getBlobData(identifier: String): js.promise.Promise<Buffer<*>>
@@ -226,28 +214,6 @@ external class Session : NodeEventEmitter {
      * the session's current cache size, in bytes.
      */
     fun getCacheSize(): js.promise.Promise<Double>
-
-    /**
-     * The loaded extension with the given ID.
-     *
-     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
-     * is emitted.
-     *
-     * **Deprecated:** Use the new `ses.extensions.getExtension` API.
-     *
-     * @deprecated
-     */
-    fun getExtension(extensionId: String): Extension?
-
-    /**
-     * an array of paths to preload scripts that have been registered.
-     *
-     * **Deprecated:** Use the new `ses.getPreloadScripts` API. This will only return
-     * preload script paths for `frame` context types.
-     *
-     * @deprecated
-     */
-    fun getPreloads(): js.array.ReadonlyArray<String>
 
     /**
      * An array of paths to preload scripts that have been registered.
@@ -323,38 +289,6 @@ external class Session : NodeEventEmitter {
     fun listWordsInSpellCheckerDictionary(): js.promise.Promise<js.array.ReadonlyArray<String>>
 
     /**
-     * resolves when the extension is loaded.
-     *
-     * This method will raise an exception if the extension could not be loaded. If
-     * there are warnings when installing the extension (e.g. if the extension requests
-     * an API that Electron does not support) then they will be logged to the console.
-     *
-     * Note that Electron does not support the full range of Chrome extensions APIs.
-     * See Supported Extensions APIs for more details on what is supported.
-     *
-     * Note that in previous versions of Electron, extensions that were loaded would be
-     * remembered for future runs of the application. This is no longer the case:
-     * `loadExtension` must be called on every boot of your app if you want the
-     * extension to be loaded.
-     *
-     * This API does not support loading packed (.crx) extensions.
-     *
-     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
-     * is emitted.
-     *
-     * > [!NOTE] Loading extensions into in-memory (non-persistent) sessions is not
-     * supported and will throw an error.
-     *
-     * **Deprecated:** Use the new `ses.extensions.loadExtension` API.
-     *
-     * @deprecated
-     */
-    fun loadExtension(
-        path: String,
-        options: LoadExtensionOptions = definedExternally,
-    ): js.promise.Promise<Extension>
-
-    /**
      * Preconnects the given number of sockets to an origin.
      */
     fun preconnect(options: PreconnectOptions)
@@ -367,18 +301,6 @@ external class Session : NodeEventEmitter {
      * The ID of the registered preload script.
      */
     fun registerPreloadScript(script: PreloadScriptRegistration): String
-
-    /**
-     * Unloads an extension.
-     *
-     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
-     * is emitted.
-     *
-     * **Deprecated:** Use the new `ses.extensions.removeExtension` API.
-     *
-     * @deprecated
-     */
-    fun removeExtension(extensionId: String)
 
     /**
      * Whether the word was successfully removed from the custom dictionary. This API
@@ -531,16 +453,6 @@ external class Session : NodeEventEmitter {
         ) -> Unit
         )?,
     )
-
-    /**
-     * Adds scripts that will be executed on ALL web contents that are associated with
-     * this session just before normal `preload` scripts run.
-     *
-     * **Deprecated:** Use the new `ses.registerPreloadScript` API.
-     *
-     * @deprecated
-     */
-    fun setPreloads(preloads: js.array.ReadonlyArray<String>)
 
     /**
      * Resolves when the proxy setting process is complete.

@@ -16,13 +16,6 @@ external interface CrashReporterStartOptions {
     var productName: String?
 
     /**
-     * Deprecated alias for `{ globalExtra: { _companyName: ... } }`.
-     *
-     * @deprecated
-     */
-    var companyName: String?
-
-    /**
      * Whether crash reports should be sent to the server. If false, crash reports will
      * be collected and stored in the crashes directory, but not uploaded. Default is
      * `true`.
