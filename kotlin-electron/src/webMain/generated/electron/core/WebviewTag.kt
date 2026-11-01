@@ -141,6 +141,10 @@ external interface WebviewTag : web.html.HTMLElement {
 
     /**
      * Fired when the guest page has sent an asynchronous message to embedder page.
+     * `frameId` does not tell the embedder which document sent the message; when that
+     * matters, have the guest use `ipcRenderer.send()` and handle the guest
+     * `webContents`' `ipc-message` event in the main process, where
+     * `event.senderFrame` identifies the sender.
      *
      * With `sendToHost` method and `ipc-message` event you can communicate between
      * guest page and embedder page:
@@ -609,7 +613,9 @@ external interface WebviewTag : web.html.HTMLElement {
 
     /**
      * A `boolean`. When this attribute is present the guest page will be allowed to
-     * open new windows. Popups are disabled by default.
+     * open new windows, whether through `window.open()` or a link opened into a new
+     * window (for example a modifier-clicked or `target="_blank"` link). Popups are
+     * disabled by default.
      */
     var allowpopups: Boolean
 
@@ -716,6 +722,13 @@ external interface WebviewTag : web.html.HTMLElement {
      * another value by including an `=`, followed by the value. Special values `yes`
      * and `1` are interpreted as `true`, while `no` and `0` are interpreted as
      * `false`.
+     *
+     * Security-critical preferences cannot be used to make the guest less secure than
+     * its embedder. When the embedder has any of `contextIsolation`, `javascript`,
+     * `nodeIntegration`, `nodeIntegrationInWorker`, `sandbox`,
+     * `nodeIntegrationInSubFrames` or `enableWebSQL` set to its more secure value, the
+     * guest inherits that value and the corresponding `webpreferences` entry is
+     * ignored.
      */
     var webpreferences: String
 

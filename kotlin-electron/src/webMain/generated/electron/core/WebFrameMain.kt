@@ -4,6 +4,7 @@
 
 package electron.core
 
+import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
 external class WebFrameMain : NodeEventEmitter {
@@ -59,6 +60,23 @@ external class WebFrameMain : NodeEventEmitter {
         message: Any?,
         transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
     )
+
+    /**
+     * Resolves with the generated PDF data.
+     *
+     * Prints the frame's web page as PDF.
+     *
+     * Unlike `webContents.printToPDF`, this method prints only the contents of the
+     * frame it is called on. This can be used to print an individual `<iframe>` from
+     * the main process.
+     *
+     * The `landscape` will be ignored if `@page` CSS at-rule is used in the web page.
+     *
+     * An example of printing an iframe to PDF:
+     *
+     * See Page.printToPdf for more information.
+     */
+    fun printToPDF(options: PrintToPDFOptions): js.promise.Promise<Buffer<*>>
 
     /**
      * Whether the reload was initiated successfully. Only results in `false` when the

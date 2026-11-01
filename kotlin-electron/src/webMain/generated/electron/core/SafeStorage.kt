@@ -59,7 +59,12 @@ external interface SafeStorage {
     fun getSelectedStorageBackend(): (SafeStorageGetSelectedStorageBackendResult)
 
     /**
-     * Whether encryption is available for asynchronous safeStorage operations.
+     * Resolves with whether encryption is available for asynchronous safeStorage
+     * operations.
+     *
+     * The asynchronous encryptor is initialized lazily the first time this method,
+     * `encryptStringAsync`, or `decryptStringAsync` is called after the app is ready.
+     * The returned promise resolves once initialization completes.
      */
     fun isAsyncEncryptionAvailable(): js.promise.Promise<Boolean>
 

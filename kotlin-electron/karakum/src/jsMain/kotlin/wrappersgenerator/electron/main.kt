@@ -201,6 +201,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "node.events.EventEmitter as NodeEventEmitter",
             ),
             "WebFrameMain.kt" to listOf(
+                "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter",
             ),
         )

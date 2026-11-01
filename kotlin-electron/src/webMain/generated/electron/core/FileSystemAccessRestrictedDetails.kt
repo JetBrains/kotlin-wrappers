@@ -18,4 +18,15 @@ external interface FileSystemAccessRestrictedDetails {
      * The blocked path attempting to be accessed.
      */
     var path: String
+
+    /**
+     * The frame that initiated access. May be `null` if the frame has since been
+     * destroyed.
+     */
+    var frame: WebFrameMain?
+
+    /**
+     * The WebContents that contains `frame`.
+     */
+    var webContents: WebContents?
 }

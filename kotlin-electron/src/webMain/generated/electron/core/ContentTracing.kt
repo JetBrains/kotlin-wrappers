@@ -29,6 +29,8 @@ external interface ContentTracing {
      * * Click on one of the `M` symbols
      * * Click on a `☰` triple bar icon (e.g., in the `malloc` column)
      *
+     * [Image: Screenshot showing how to view a heapdump in Chromium's tracing view]
+     *
      * @experimental
      */
     fun enableHeapProfiling(options: EnableHeapProfilingOptions = definedExternally): js.promise.Promise<js.void.Void>

@@ -6,24 +6,27 @@ import js.reflect.invoke
 import typescript.Node
 import typescript.isClassDeclaration
 
+private val OPEN_TYPES = setOf(
+    "Tray",
+    "TouchBar",
+    "ShareMenu",
+    "Notification",
+    "MessageChannelMain",
+    "MenuItem",
+    "Menu",
+    "BrowserWindow",
+    "BrowserView",
+    "BaseWindow",
+    "View",
+    "WebContentsView",
+    "ImageView",
+    "IpcMainServiceWorker",
+    "WebSocket",
+)
+
 suspend fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     ensure(isClassDeclaration(node))
-    ensure(
-        node.name?.text == "Tray"
-                || node.name?.text == "TouchBar"
-                || node.name?.text == "ShareMenu"
-                || node.name?.text == "Notification"
-                || node.name?.text == "MessageChannelMain"
-                || node.name?.text == "MenuItem"
-                || node.name?.text == "Menu"
-                || node.name?.text == "BrowserWindow"
-                || node.name?.text == "BrowserView"
-                || node.name?.text == "BaseWindow"
-                || node.name?.text == "View"
-                || node.name?.text == "WebContentsView"
-                || node.name?.text == "ImageView"
-                || node.name?.text == "IpcMainServiceWorker",
-    )
+    ensure(node.name?.text in OPEN_TYPES)
 
     "open"
 }

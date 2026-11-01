@@ -419,7 +419,11 @@ external class WebContents : NodeEventEmitter {
      *
      * Before:
      *
+     * [Image: Image Before Text Selection Adjustment]
+     *
      * After:
+     *
+     * [Image: Image After Text Selection Adjustment]
      */
     fun adjustSelection(options: AdjustSelectionOptions)
 
@@ -653,7 +657,9 @@ external class WebContents : NodeEventEmitter {
      * The identifier of a WebContents stream. This identifier can be used with
      * `navigator.mediaDevices.getUserMedia` using a `chromeMediaSource` of `tab`. The
      * identifier is restricted to the web contents that it is registered to and is
-     * only valid for 10 seconds.
+     * only valid for 10 seconds. The `desktop` source only accepts screen and window
+     * identifiers from `desktopCapturer.getSources`; to capture a WebContents use this
+     * identifier with the `tab` source, or `ses.setDisplayMediaRequestHandler`.
      */
     fun getMediaSourceId(requestWebContents: WebContents): String
 
@@ -919,7 +925,7 @@ external class WebContents : NodeEventEmitter {
      * When `contents` is a `<webview>` tag, the `mode` would be `detach` by default,
      * explicitly passing an empty `mode` can force using last used dock state.
      *
-     * On Windows, if Windows Control Overlay is enabled, DevTools will be opened with
+     * On Windows, if Window Control Overlay is enabled, DevTools will be opened with
      * `mode: 'detach'`.
      */
     fun openDevTools(options: OpenDevToolsOptions = definedExternally)
@@ -1594,7 +1600,7 @@ external class WebContents : NodeEventEmitter {
     val loginEvent: node.events.EventInstance<
             js.array.Tuple4<
                     Event<*>,
-                    LoginAuthenticationResponseDetails,
+                    AuthenticationResponseDetails,
                     AuthInfo,
                         (
                 username: String?, /* use undefined for default */

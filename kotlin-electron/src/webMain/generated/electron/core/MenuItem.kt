@@ -84,6 +84,8 @@ open external class MenuItem {
      * or just displayed.
      *
      * This property can be dynamically changed.
+     *
+     * @platform linux,win32
      */
     var registerAccelerator: Boolean
 

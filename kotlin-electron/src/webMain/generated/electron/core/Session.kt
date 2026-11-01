@@ -630,8 +630,12 @@ external class Session : NodeEventEmitter {
      * is available and `useSystemPicker` is set to `true`, the handler will not be
      * invoked.
      *
-     * Passing a WebFrameMain object as a video or audio stream will capture the video
-     * or audio stream from that frame.
+     * Passing a WebFrameMain object as a video or audio stream captures the whole
+     * `webContents` that contains that frame (the tab), not just the frame:
+     * `request.frame` from an `<iframe>` therefore grants that iframe a capture of the
+     * page that embeds it. Check `request.frame` before using it this way, and note
+     * that the callback throws if the frame has been destroyed by the time it is
+     * called.
      *
      * Passing `null` instead of a function resets the handler to its default state.
      */

@@ -121,4 +121,13 @@ external interface Net {
      *
      */
     val online: Boolean
+
+    /**
+     * > [!NOTE] This property is only available in the main process.
+     *
+     * A `typeof WebSocket` reference to the `WebSocket` class, which can be used to
+     * create WHATWG-compatible WebSocket connections through Chromium's network stack
+     * from the main process.
+     */
+    var WebSocket: Any /* typeof WebSocket */
 }

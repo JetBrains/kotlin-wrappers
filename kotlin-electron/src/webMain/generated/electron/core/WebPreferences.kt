@@ -178,8 +178,10 @@ external interface WebPreferences {
     var nodeIntegrationInSubFrames: Boolean?
 
     /**
-     * Whether node integration is enabled in web workers. Default is `false`. More
-     * about this can be found in Multithreading.
+     * Whether node integration is enabled in web workers. Default is `false`. Only
+     * workers created by a frame that itself has access to Node.js (the main frame, or
+     * any frame when `nodeIntegrationInSubFrames` is enabled) get it. More about this
+     * can be found in Multithreading.
      */
     var nodeIntegrationInWorker: Boolean?
 

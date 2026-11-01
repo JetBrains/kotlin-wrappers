@@ -1082,6 +1082,11 @@ external interface App : node.events.EventEmitter {
      * line, the system's single instance mechanism will be bypassed, and you have to
      * use this method to ensure single instance.
      *
+     * > [!NOTE] On macOS and Linux, the second instance's command line arguments and
+     * `additionalData` are sent to the primary instance in a single message that is
+     * limited to 32 MB. Larger messages are dropped: this method still returns
+     * `false`, but the primary instance does not emit `second-instance`.
+     *
      * An example of activating the window of primary instance when a second instance
      * starts:
      */
@@ -1238,6 +1243,23 @@ external interface App : node.events.EventEmitter {
     fun setClientCertRequestPasswordHandler(
         handler: (clientCertRequestParams: ClientCertRequestParams) -> js.promise.Promise<String>,
     )
+
+    /**
+     * Sets the `.desktop` filename on Linux. This should match the base filename of
+     * the app's installed `.desktop` file. The `.desktop` suffix is optional.
+     *
+     * This value is used to determine the default XDG application ID on Wayland and
+     * `WM_CLASS` on X11. If it is not set, Electron will attempt to infer a name, but
+     * it may not match the packaged app's actual `.desktop` file. This could result in
+     * the app showing a generic icon or failing to respond to global keyboard
+     * shortcuts.
+     *
+     * This API must be called before the `ready` event. The value can also be set
+     * using `desktopName` in `package.json`.
+     *
+     * @platform linux
+     */
+    fun setDesktopName(name: String)
 
     /**
      * Sets or removes a custom Jump List for the application, and returns one of the

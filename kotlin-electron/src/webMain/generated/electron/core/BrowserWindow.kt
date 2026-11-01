@@ -156,10 +156,18 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Emitted when the window is minimized.
+     *
+     * > [!NOTE] On Wayland, “minimized” is not currently a supported state. The
+     * minimize event will only fire when triggered by client-side decoration (e.g.
+     * clicking the minimize button on a frameless window’s Window Control Overlay)
      */
 
     /**
      * Emitted when the window is minimized.
+     *
+     * > [!NOTE] On Wayland, “minimized” is not currently a supported state. The
+     * minimize event will only fire when triggered by client-side decoration (e.g.
+     * clicking the minimize button on a frameless window’s Window Control Overlay)
      */
 
     /**

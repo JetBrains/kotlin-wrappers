@@ -9,7 +9,8 @@ external interface Streams {
     /**
      * If a string is specified, can be `loopback` or `loopbackWithMute`. Specifying a
      * loopback device will capture system audio, and is currently only supported on
-     * Windows. If a WebFrameMain is specified, will capture audio from that frame.
+     * Windows. If a WebFrameMain is specified, will capture audio from the
+     * `webContents` that contains that frame.
      */
     var audio: (Any /* (('loopback' | 'loopbackWithMute')) | (WebFrameMain) */)?
 
