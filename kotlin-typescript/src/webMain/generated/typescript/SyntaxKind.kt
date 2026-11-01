@@ -1064,12 +1064,6 @@ sealed external interface SyntaxKind {
 
     sealed interface ImportAttribute : SyntaxKind
 
-    sealed interface AssertClause : SyntaxKind
-
-    sealed interface AssertEntry : SyntaxKind
-
-    sealed interface ImportTypeAssertionContainer : SyntaxKind
-
     sealed interface PropertyAssignment : SyntaxKind
 
     sealed interface ShorthandPropertyAssignment : SyntaxKind
@@ -1105,8 +1099,6 @@ sealed external interface SyntaxKind {
     sealed interface JSDocNamepathType : SyntaxKind
 
     sealed interface JSDoc : SyntaxKind
-
-    sealed interface JSDocComment : SyntaxKind
 
     sealed interface JSDocText : SyntaxKind
 
