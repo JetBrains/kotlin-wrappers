@@ -52,4 +52,11 @@ external interface CommonConnectionOptions {
      * @default true
      */
     var rejectUnauthorized: Boolean?
+
+    /**
+     * If true, specifies that the OCSP status request extension will be
+     * added to the client hello and an 'OCSPResponse' event will be
+     * emitted on the socket before establishing a secure communication.
+     */
+    var requestOCSP: Boolean?
 }

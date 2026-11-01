@@ -947,87 +947,27 @@ external class _Session : EventEmitter {
     )
 
     /**
-     * Gets supported tracing categories.
+     * Read a chunk of the stream
      */
     fun post(
-        method: SessionMethod.NODETRACING_GETCATEGORIES,
-        callback: (
-            err: js.errors.JsError?,
-            params: node.inspector.nodeTracing.GetCategoriesReturnType,
-        ) -> Unit = definedExternally,
+        method: SessionMethod.IO_READ,
+        params: node.inspector.io.ReadParameterType = definedExternally,
+        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
     )
 
-    /**
-     * Start trace events collection.
-     */
     fun post(
-        method: SessionMethod.NODETRACING_START,
-        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
+        method: SessionMethod.IO_READ,
+        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.IO_CLOSE,
+        params: node.inspector.io.CloseParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
     fun post(
-        method: SessionMethod.NODETRACING_START,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Stop trace events collection. Remaining collected events will be sent as a sequence of
-     * dataCollected events followed by tracingComplete event.
-     */
-    fun post(
-        method: SessionMethod.NODETRACING_STOP,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Sends protocol message over session with given id.
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Instructs the inspector to attach to running workers. Will also attach to new workers
-     * as they start
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_ENABLE,
-        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.NODEWORKER_ENABLE,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Detaches from all running workers and disables attaching to new workers as they are started.
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_DISABLE,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Detached from the worker with given sessionId.
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_DETACH,
-        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.NODEWORKER_DETACH,
+        method: SessionMethod.IO_CLOSE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1165,6 +1105,91 @@ external class _Session : EventEmitter {
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
+    /**
+     * Gets supported tracing categories.
+     */
+    fun post(
+        method: SessionMethod.NODETRACING_GETCATEGORIES,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.nodeTracing.GetCategoriesReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    /**
+     * Start trace events collection.
+     */
+    fun post(
+        method: SessionMethod.NODETRACING_START,
+        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODETRACING_START,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Stop trace events collection. Remaining collected events will be sent as a sequence of
+     * dataCollected events followed by tracingComplete event.
+     */
+    fun post(
+        method: SessionMethod.NODETRACING_STOP,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Sends protocol message over session with given id.
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
+        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Instructs the inspector to attach to running workers. Will also attach to new workers
+     * as they start
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_ENABLE,
+        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODEWORKER_ENABLE,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Detaches from all running workers and disables attaching to new workers as they are started.
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_DISABLE,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Detached from the worker with given sessionId.
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_DETACH,
+        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODEWORKER_DETACH,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
     fun post(
         method: SessionMethod.TARGET_SETAUTOATTACH,
         params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
@@ -1173,31 +1198,6 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.TARGET_SETAUTOATTACH,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Read a chunk of the stream
-     */
-    fun post(
-        method: SessionMethod.IO_READ,
-        params: node.inspector.io.ReadParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.IO_READ,
-        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.IO_CLOSE,
-        params: node.inspector.io.CloseParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.IO_CLOSE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1271,28 +1271,6 @@ external class _Session : EventEmitter {
      */
 
     /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
      * Fired when page is about to send HTTP request.
      */
 
@@ -1326,6 +1304,28 @@ external class _Session : EventEmitter {
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
+     */
+
+    /**
+     * Contains an bucket of collected trace events.
+     */
+
+    /**
+     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
+     * delivered via dataCollected events.
+     */
+
+    /**
+     * Issued when attached to a worker.
+     */
+
+    /**
+     * Issued when detached from the worker.
+     */
+
+    /**
+     * Notifies about a new protocol message received from the session
+     * (session ID is provided in attachedToWorker notification).
      */
 
     fun emit(
@@ -1408,28 +1408,6 @@ external class _Session : EventEmitter {
      */
 
     /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
      * Fired when page is about to send HTTP request.
      */
 
@@ -1463,6 +1441,28 @@ external class _Session : EventEmitter {
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
+     */
+
+    /**
+     * Contains an bucket of collected trace events.
+     */
+
+    /**
+     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
+     * delivered via dataCollected events.
+     */
+
+    /**
+     * Issued when attached to a worker.
+     */
+
+    /**
+     * Issued when detached from the worker.
+     */
+
+    /**
+     * Notifies about a new protocol message received from the session
+     * (session ID is provided in attachedToWorker notification).
      */
 
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
@@ -1535,28 +1535,6 @@ external class _Session : EventEmitter {
      */
 
     /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
      * Fired when page is about to send HTTP request.
      */
 
@@ -1590,6 +1568,28 @@ external class _Session : EventEmitter {
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
+     */
+
+    /**
+     * Contains an bucket of collected trace events.
+     */
+
+    /**
+     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
+     * delivered via dataCollected events.
+     */
+
+    /**
+     * Issued when attached to a worker.
+     */
+
+    /**
+     * Issued when detached from the worker.
+     */
+
+    /**
+     * Notifies about a new protocol message received from the session
+     * (session ID is provided in attachedToWorker notification).
      */
 
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
@@ -1662,28 +1662,6 @@ external class _Session : EventEmitter {
      */
 
     /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
      * Fired when page is about to send HTTP request.
      */
 
@@ -1717,6 +1695,28 @@ external class _Session : EventEmitter {
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
+     */
+
+    /**
+     * Contains an bucket of collected trace events.
+     */
+
+    /**
+     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
+     * delivered via dataCollected events.
+     */
+
+    /**
+     * Issued when attached to a worker.
+     */
+
+    /**
+     * Issued when detached from the worker.
+     */
+
+    /**
+     * Notifies about a new protocol message received from the session
+     * (session ID is provided in attachedToWorker notification).
      */
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
@@ -1789,28 +1789,6 @@ external class _Session : EventEmitter {
      */
 
     /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
      * Fired when page is about to send HTTP request.
      */
 
@@ -1844,6 +1822,28 @@ external class _Session : EventEmitter {
     /**
      * This event is fired when the runtime is waiting for the debugger. For
      * example, when inspector.waitingForDebugger is called
+     */
+
+    /**
+     * Contains an bucket of collected trace events.
+     */
+
+    /**
+     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
+     * delivered via dataCollected events.
+     */
+
+    /**
+     * Issued when attached to a worker.
+     */
+
+    /**
+     * Issued when detached from the worker.
+     */
+
+    /**
+     * Notifies about a new protocol message received from the session
+     * (session ID is provided in attachedToWorker notification).
      */
 
     @web.events.JsEvent("inspectorNotification")
@@ -1926,25 +1926,6 @@ external class _Session : EventEmitter {
     val HeapProfilerHeapStatsUpdateEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.HeapStatsUpdateEventDataType>>>
 
-    @web.events.JsEvent("NodeTracing.dataCollected")
-    val NodeTracingDataCollectedEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeTracing.DataCollectedEventDataType>>>
-
-    @web.events.JsEvent("NodeTracing.tracingComplete")
-    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
-
-    @web.events.JsEvent("NodeWorker.attachedToWorker")
-    val NodeWorkerAttachedToWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.AttachedToWorkerEventDataType>>>
-
-    @web.events.JsEvent("NodeWorker.detachedFromWorker")
-    val NodeWorkerDetachedFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.DetachedFromWorkerEventDataType>>>
-
-    @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
-    val NodeWorkerReceivedMessageFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.ReceivedMessageFromWorkerEventDataType>>>
-
     @web.events.JsEvent("Network.requestWillBeSent")
     val NetworkRequestWillBeSentEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
@@ -1982,6 +1963,25 @@ external class _Session : EventEmitter {
 
     @web.events.JsEvent("NodeRuntime.waitingForDebugger")
     val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("NodeTracing.dataCollected")
+    val NodeTracingDataCollectedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeTracing.DataCollectedEventDataType>>>
+
+    @web.events.JsEvent("NodeTracing.tracingComplete")
+    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("NodeWorker.attachedToWorker")
+    val NodeWorkerAttachedToWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.AttachedToWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeWorker.detachedFromWorker")
+    val NodeWorkerDetachedFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.DetachedFromWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
+    val NodeWorkerReceivedMessageFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Target.targetCreated")
     val TargetTargetCreatedEvent:

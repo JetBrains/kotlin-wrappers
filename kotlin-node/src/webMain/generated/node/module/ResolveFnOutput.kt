@@ -4,24 +4,8 @@ package node.module
 
 @kotlinx.js.JsPlainObject
 external interface ResolveFnOutput {
-    /**
-     * A hint to the load hook (it might be ignored); can be an intermediary value.
-     */
     var format: String?
-
-    /**
-     * The import attributes to use when caching the module (optional; if excluded the input will be used)
-     */
     var importAttributes: ImportAttributes?
-
-    /**
-     * A signal that this hook intends to terminate the chain of `resolve` hooks.
-     * @default false
-     */
     var shortCircuit: Boolean?
-
-    /**
-     * The absolute URL to which this input resolves
-     */
     var url: String
 }

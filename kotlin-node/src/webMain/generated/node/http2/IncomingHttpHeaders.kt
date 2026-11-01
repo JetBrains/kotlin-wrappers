@@ -9,4 +9,5 @@ external interface IncomingHttpHeaders : Http1IncomingHttpHeaders {
     var `:method`: String?
     var `:authority`: String?
     var `:scheme`: String?
+    var `:protocol`: String?
 }

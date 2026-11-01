@@ -8,6 +8,8 @@ import node.http.ServerResponse
 @kotlinx.js.JsPlainObject
 external interface ServerSessionOptions<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
     SessionOptions {
+    var maxSessionRejectedStreams: Double?
+    var maxSessionInvalidFrames: Double?
     var streamResetBurst: Double?
     var streamResetRate: Double?
     var Http1IncomingMessage: JsClass<Http1Request>?

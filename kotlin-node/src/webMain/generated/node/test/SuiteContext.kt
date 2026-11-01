@@ -17,6 +17,12 @@ external interface SuiteContext {
     val filePath: String?
 
     /**
+     * The name of the suite and each of its ancestors, separated by `>`.
+     * @since v22.3.0, v20.16.0
+     */
+    val fullName: String
+
+    /**
      * The name of the suite.
      * @since v18.8.0, v16.18.0
      */

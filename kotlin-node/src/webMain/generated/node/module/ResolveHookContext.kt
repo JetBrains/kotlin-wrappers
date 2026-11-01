@@ -4,18 +4,7 @@ package node.module
 
 @kotlinx.js.JsPlainObject
 external interface ResolveHookContext {
-    /**
-     * Export conditions of the relevant `package.json`
-     */
     var conditions: js.array.ReadonlyArray<String>
-
-    /**
-     *  An object whose key-value pairs represent the assertions for the module to import
-     */
     var importAttributes: ImportAttributes
-
-    /**
-     * The module importing this one, or undefined if this is the Node.js entry point
-     */
     var parentURL: String?
 }

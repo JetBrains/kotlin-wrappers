@@ -352,6 +352,9 @@ external class TLSSocket : node.net.Socket {
     @web.events.JsEvent("OCSPResponse")
     val OCSPResponseEvent: node.events.EventInstance<js.array.Tuple1<NonSharedBuffer>>
 
+    @web.events.JsEvent("secure")
+    val secureEvent: node.events.EventInstance<js.array.Tuple>
+
     @web.events.JsEvent("secureConnect")
     val secureConnectEvent: node.events.EventInstance<js.array.Tuple>
 

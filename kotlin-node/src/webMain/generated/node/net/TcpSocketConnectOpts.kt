@@ -11,9 +11,6 @@ external interface TcpSocketConnectOpts {
     var hints: Double?
     var family: Double?
     var lookup: LookupFunction?
-    var noDelay: Boolean?
-    var keepAlive: Boolean?
-    var keepAliveInitialDelay: Double?
 
     /**
      * @since v18.13.0
@@ -24,5 +21,4 @@ external interface TcpSocketConnectOpts {
      * @since v18.13.0
      */
     var autoSelectFamilyAttemptTimeout: Double?
-    var blockList: BlockList?
 }

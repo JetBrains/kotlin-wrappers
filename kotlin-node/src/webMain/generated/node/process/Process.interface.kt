@@ -56,7 +56,8 @@ external interface Process : EventEmitter {
      * arguments passed when the Node.js process was launched. The first element will
      * be {@link execPath}. See `process.argv0` if access to the original value
      * of `argv[0]` is needed. The second element will be the path to the JavaScript
-     * file being executed. The remaining elements will be any additional command-line
+     * file being executed. If a [program entry point](https://nodejs.org/docs/latest-v24.x/api/cli.html#program-entry-point) was provided, the second element
+     * will be the absolute path to it. The remaining elements are additional command-line
      * arguments.
      *
      * For example, assuming the following script for `process-args.js`:
@@ -1526,6 +1527,25 @@ external interface Process : EventEmitter {
      */
     val release: ProcessRelease
     val features: ProcessFeatures
+
+    /**
+     * The `process.traceProcessWarnings` property indicates whether the `--trace-warnings` flag
+     * is set on the current Node.js process. This property allows programmatic control over the
+     * tracing of warnings, enabling or disabling stack traces for warnings at runtime.
+     *
+     * ```js
+     * // Enable trace warnings
+     * process.traceProcessWarnings = true;
+     *
+     * // Emit a warning with a stack trace
+     * process.emitWarning('Warning with stack trace');
+     *
+     * // Disable trace warnings
+     * process.traceProcessWarnings = false;
+     * ```
+     * @since v6.10.0
+     */
+    var traceProcessWarnings: Boolean
 
     /**
      * `process.umask()` returns the Node.js process's file mode creation mask. Child
