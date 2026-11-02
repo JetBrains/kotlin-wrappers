@@ -29,12 +29,28 @@ external interface PickersSectionListProps :
 }
 
 external interface PickersSectionListSlots {
+    /**
+     * The component that renders the root.
+     * @default PickersSectionListRoot
+     */
     var root: ElementType<*>
 
+    /**
+     * The component that renders a section.
+     * @default PickersSectionListSection
+     */
     var section: ElementType<*>
 
+    /**
+     * The component that renders the separator before or after a section.
+     * @default PickersSectionListSectionSeparator
+     */
     var sectionSeparator: ElementType<*>
 
+    /**
+     * The component that renders the editable content of a section.
+     * @default PickersSectionListSectionContent
+     */
     var sectionContent: ElementType<*>
 }
 
@@ -76,6 +92,9 @@ external interface ExportedPickersSectionListProps : Props {
      */
     var elements: ReadonlyArray<PickersSectionElement>
 
+    /**
+     * The ref used to access the DOM elements of the sections.
+     */
     var sectionListRef: Ref<PickersSectionListRef>
 
     /**

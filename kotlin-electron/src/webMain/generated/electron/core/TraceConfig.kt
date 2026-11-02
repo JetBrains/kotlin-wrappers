@@ -45,6 +45,18 @@ external interface TraceConfig {
     var memory_dump_config: js.objects.ReadonlyRecord<String, Any?>?
 
     /**
+     * **Electron extension; not part of Chromium's TraceConfig schema.** Enables
+     * native (C/C++) heap allocation profiling for this recording. This is distinct
+     * from JavaScript heap profiling (see `process.takeHeapSnapshot()` or
+     * `contents.takeHeapSnapshot()`); it samples allocations made by Chromium and
+     * native modules. `included_process_ids` above also limits which processes are
+     * profiled when this is enabled.
+     *
+     * @experimental
+     */
+    var nativeHeapProfiling: NativeHeapProfilerOptions?
+
+    /**
      * Can be `record-until-full`, `record-continuously`, `record-as-much-as-possible`
      * or `trace-to-console`. Defaults to `record-until-full`.
      */

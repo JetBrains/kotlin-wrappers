@@ -12,21 +12,44 @@ fun generateApiReport() {
         include("kotlin-browser/src/webMain/**/*.kt")
     }
 
-    val content = files.files.asSequence()
+    // language=kotlin
+    val browserType = """
+        data class BrowserType(
+            val jsName: String,
+            val kotlinFqn: String,
+            val kotlinMixinFqn: String? = null,
+        )
+    """.trimIndent()
+
+    val typeList = files.files.asSequence()
         .onEach { println("Processing ${it.name}") }
         .flatMap { getApiItems(it) }
         .sortedBy { it.jsName }
-        .joinToString(",\n", "{\n", "\n}\n") { (jsName, kotlinFqn) ->
-            """    "$jsName": "$kotlinFqn""""
+        .joinToString(
+            separator = ",\n",
+            prefix = "val BROWSER_TYPES: List<BrowserType> = listOf(\n",
+            postfix = "\n)",
+        ) { item ->
+            listOfNotNull(
+                "BrowserType(",
+                """jsName = "${item.jsName}",""",
+                """kotlinFqn = "${item.kotlinFqn}",""",
+                if (item.hasMixin) """kotlinMixinFqn = "${item.kotlinFqn}.Mixin",""" else null,
+                ")",
+            ).joinToString(separator = "\n")
         }
 
-    file("browser-api.json")
+    val content = browserType + "\n\n" + typeList
+
+    file("generated/browser-api.main.kts")
+        .also { it.parentFile.mkdirs() }
         .writeText(content)
 }
 
 data class ApiItem(
     val jsName: String,
     val kotlinFqn: String,
+    val hasMixin: Boolean,
 )
 
 val EXCLUDED_NAMES = setOf(
@@ -64,6 +87,9 @@ fun getApiItems(
         return emptySequence()
     }
 
+    val hasMixin = " interface Mixin :" in content
+            || " interface Mixin<" in content
+
     return content
         .replace("private external ", "")
         .replace("internal external ", "")
@@ -96,6 +122,10 @@ fun getApiItems(
                 else -> name
             }
 
-            ApiItem(jsName, "$pkg.$name")
+            ApiItem(
+                jsName = jsName,
+                kotlinFqn = "$pkg.$name",
+                hasMixin = hasMixin,
+            )
         }
 }

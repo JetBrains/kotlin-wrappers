@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ScriptElementKind {
+/* enum */
+external class ScriptElementKind
+private constructor() {
     companion object {
         val unknown: ScriptElementKind
         val warning: ScriptElementKind
@@ -99,12 +101,6 @@ sealed external interface ScriptElementKind {
         val letElement: ScriptElementKind
         val directory: ScriptElementKind
         val externalModuleName: ScriptElementKind
-
-        /**
-         * <JsxTagName attribute1 attribute2={0} />
-         * @deprecated
-         */
-        val jsxAttribute: ScriptElementKind
 
         /** String literal */
         val string: ScriptElementKind

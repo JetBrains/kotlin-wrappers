@@ -11,12 +11,6 @@ external interface TupleType : GenericType {
     /** Number of initial required or optional elements */
     var fixedLength: Int
 
-    /**
-     * True if tuple has any rest or variadic elements
-     *
-     * @deprecated Use `.combinedFlags & ElementFlags.Variable` instead
-     */
-    var hasRestElement: Boolean
     var combinedFlags: ElementFlags
     var readonly: Boolean
     var labeledElementDeclarations:

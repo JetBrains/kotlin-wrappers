@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface JsxFlags {
+/* enum */
+external class JsxFlags
+private constructor() {
     companion object {
         val None: JsxFlags
 

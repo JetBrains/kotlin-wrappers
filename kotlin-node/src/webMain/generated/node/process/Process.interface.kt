@@ -7,7 +7,6 @@ import node.childProcess.MessageOptions
 import node.childProcess.SendHandle
 import node.events.EventEmitter
 import node.fs.PathLike
-import node.module.Module
 import node.workerThreads.Worker
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -56,7 +55,8 @@ external interface Process : EventEmitter {
      * arguments passed when the Node.js process was launched. The first element will
      * be {@link execPath}. See `process.argv0` if access to the original value
      * of `argv[0]` is needed. The second element will be the path to the JavaScript
-     * file being executed. The remaining elements will be any additional command-line
+     * file being executed. If a [program entry point](https://nodejs.org/docs/latest-v24.x/api/cli.html#program-entry-point) was provided, the second element
+     * will be the absolute path to it. The remaining elements are additional command-line
      * arguments.
      *
      * For example, assuming the following script for `process-args.js`:
@@ -732,11 +732,6 @@ external interface Process : EventEmitter {
      */
     fun getActiveResourcesInfo(): js.array.ReadonlyArray<String>
 
-    /**
-     * Provides a way to load built-in modules in a globally available function.
-     * @param id ID of the built-in module being requested.
-     */
-
     fun getBuiltinModule(id: String): Any?
 
     /**
@@ -1335,18 +1330,6 @@ external interface Process : EventEmitter {
      */
     val platform: Platform
 
-    /**
-     * The `process.mainModule` property provides an alternative way of retrieving `require.main`. The difference is that if the main module changes at
-     * runtime, `require.main` may still refer to the original main module in
-     * modules that were required before the change occurred. Generally, it's
-     * safe to assume that the two refer to the same module.
-     *
-     * As with `require.main`, `process.mainModule` will be `undefined` if there
-     * is no entry script.
-     * @since v0.1.17
-     * @deprecated Since v14.0.0 - Use `main` instead.
-     */
-    var mainModule: Module?
     var memoryUsage: MemoryUsageFn
 
     /**
@@ -1528,13 +1511,23 @@ external interface Process : EventEmitter {
     val features: ProcessFeatures
 
     /**
-     * `process.umask()` returns the Node.js process's file mode creation mask. Child
-     * processes inherit the mask from the parent process.
-     * @since v0.1.19
-     * @deprecated Calling `process.umask()` with no argument causes the process-wide umask to be written twice. This introduces a race condition between threads, and is a potential
-     * security vulnerability. There is no safe, cross-platform alternative API.
+     * The `process.traceProcessWarnings` property indicates whether the `--trace-warnings` flag
+     * is set on the current Node.js process. This property allows programmatic control over the
+     * tracing of warnings, enabling or disabling stack traces for warnings at runtime.
+     *
+     * ```js
+     * // Enable trace warnings
+     * process.traceProcessWarnings = true;
+     *
+     * // Emit a warning with a stack trace
+     * process.emitWarning('Warning with stack trace');
+     *
+     * // Disable trace warnings
+     * process.traceProcessWarnings = false;
+     * ```
+     * @since v6.10.0
      */
-    fun umask(): Double
+    var traceProcessWarnings: Boolean
 
     /**
      * Can only be set if not in worker thread.
@@ -1779,7 +1772,6 @@ external interface Process : EventEmitter {
         env: ProcessEnv?, /* use undefined for default */
     ) -> Nothing
     )?
-    /* EventEmitter */
 
     fun addListener(event: Signals, listener: SignalsListener) /* this */
 

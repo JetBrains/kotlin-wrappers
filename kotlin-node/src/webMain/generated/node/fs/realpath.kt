@@ -71,24 +71,6 @@ external fun realpath(
 
 external object realpath {
     /**
-     * Asynchronous realpath(3) - return the canonicalized absolute pathname.
-     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
-     * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
-     */
-
-    /**
-     * Asynchronous realpath(3) - return the canonicalized absolute pathname.
-     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
-     * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
-     */
-
-    /**
-     * Asynchronous realpath(3) - return the canonicalized absolute pathname.
-     * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
-     * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
-     */
-
-    /**
      * Asynchronous [`realpath(3)`](http://man7.org/linux/man-pages/man3/realpath.3.html).
      *
      * The `callback` gets two arguments `(err, resolvedPath)`.

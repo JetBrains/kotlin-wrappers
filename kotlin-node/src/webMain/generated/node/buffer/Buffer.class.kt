@@ -8,45 +8,6 @@ external class Buffer<TArrayBuffer : js.buffer.ArrayBufferLike /* default is js.
     constructor (size: Number)
     constructor (array: js.array.ArrayLike<Double>)
     constructor (arrayBuffer: TArrayBuffer)
-    // see buffer.d.ts for implementation shared with all TypeScript versions
-
-    /**
-     * Returns a new `Buffer` that references the same memory as the original, but
-     * offset and cropped by the `start` and `end` indices.
-     *
-     * This method is not compatible with the `Uint8Array.prototype.slice()`,
-     * which is a superclass of `Buffer`. To copy the slice, use`Uint8Array.prototype.slice()`.
-     *
-     * ```js
-     * import { Buffer } from 'node:buffer';
-     *
-     * const buf = Buffer.from('buffer');
-     *
-     * const copiedBuf = Uint8Array.prototype.slice.call(buf);
-     * copiedBuf[0]++;
-     * console.log(copiedBuf.toString());
-     * // Prints: cuffer
-     *
-     * console.log(buf.toString());
-     * // Prints: buffer
-     *
-     * // With buf.slice(), the original buffer is modified.
-     * const notReallyCopiedBuf = buf.slice();
-     * notReallyCopiedBuf[0]++;
-     * console.log(notReallyCopiedBuf.toString());
-     * // Prints: cuffer
-     * console.log(buf.toString());
-     * // Also prints: cuffer (!)
-     * ```
-     * @since v0.3.0
-     * @deprecated Use `subarray` instead.
-     * @param [start=0] Where the new `Buffer` will start.
-     * @param [end=buf.length] Where the new `Buffer` will end (not inclusive).
-     */
-    fun slice(
-        start: Number = definedExternally,
-        end: Number = definedExternally,
-    ): Buffer<js.buffer.ArrayBuffer>
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but

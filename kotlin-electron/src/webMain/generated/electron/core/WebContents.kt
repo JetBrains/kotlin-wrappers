@@ -9,399 +9,6 @@ import node.events.EventEmitter as NodeEventEmitter
 
 external class WebContents : NodeEventEmitter {
     /**
-     * Emitted when media becomes audible or inaudible.
-     */
-
-    /**
-     * Emitted before dispatching the `keydown` and `keyup` events in the page. Calling
-     * `event.preventDefault` will prevent the page `keydown`/`keyup` events and the
-     * menu shortcuts.
-     *
-     * To only prevent the menu shortcuts, use `setIgnoreMenuShortcuts`:
-     */
-
-    /**
-     * Emitted before dispatching mouse events in the page.
-     *
-     * Calling `event.preventDefault` will prevent the page mouse events.
-     */
-
-    /**
-     * Emitted when the `WebContents` loses focus.
-     */
-
-    /**
-     * Emitted when failed to verify the `certificate` for `url`.
-     *
-     * The usage is the same with the `certificate-error` event of `app`.
-     */
-
-    /**
-     * Emitted when the associated window logs a console message.
-     */
-
-    /**
-     * Emitted when the page calls `window.moveTo`, `window.resizeTo` or related APIs.
-     *
-     * By default, this will move the window. To prevent that behavior, call
-     * `event.preventDefault()`.
-     */
-
-    /**
-     * Emitted when there is a new context menu that needs to be handled.
-     */
-
-    /**
-     * Emitted when the cursor's type changes. The `type` parameter can be `pointer`,
-     * `crosshair`, `hand`, `text`, `wait`, `help`, `e-resize`, `n-resize`,
-     * `ne-resize`, `nw-resize`, `s-resize`, `se-resize`, `sw-resize`, `w-resize`,
-     * `ns-resize`, `ew-resize`, `nesw-resize`, `nwse-resize`, `col-resize`,
-     * `row-resize`, `m-panning`, `m-panning-vertical`, `m-panning-horizontal`,
-     * `e-panning`, `n-panning`, `ne-panning`, `nw-panning`, `s-panning`, `se-panning`,
-     * `sw-panning`, `w-panning`, `move`, `vertical-text`, `cell`, `context-menu`,
-     * `alias`, `progress`, `nodrop`, `copy`, `none`, `not-allowed`, `zoom-in`,
-     * `zoom-out`, `grab`, `grabbing`, `custom`, `null`, `drag-drop-none`,
-     * `drag-drop-move`, `drag-drop-copy`, `drag-drop-link`, `ns-no-resize`,
-     * `ew-no-resize`, `nesw-no-resize`, `nwse-no-resize`, or `default`.
-     *
-     * If the `type` parameter is `custom`, the `image` parameter will hold the custom
-     * cursor image in a `NativeImage`, and `scale`, `size` and `hotspot` will hold
-     * additional information about the custom cursor.
-     */
-
-    /**
-     * Emitted when `webContents` is destroyed.
-     */
-
-    /**
-     * Emitted when DevTools is closed.
-     */
-
-    /**
-     * Emitted when DevTools is focused / opened.
-     */
-
-    /**
-     * Emitted when a link is clicked in DevTools or 'Open in new tab' is selected for
-     * a link in its context menu.
-     */
-
-    /**
-     * Emitted when DevTools is opened.
-     */
-
-    /**
-     * Emitted when the DevTools window instructs the webContents to reload
-     */
-
-    /**
-     * Emitted when 'Search' is selected for text in its context menu.
-     */
-
-    /**
-     * Emitted when a `<webview>` has been attached to this web contents.
-     */
-
-    /**
-     * Emitted when a page's theme color changes. This is usually due to encountering a
-     * meta tag:
-     */
-
-    /**
-     * Emitted _after_ successful creation of a window via `window.open` in the
-     * renderer. Not emitted if the creation of the window is canceled from
-     * `webContents.setWindowOpenHandler`.
-     *
-     * See `window.open()` for more details and how to use this in conjunction with
-     * `webContents.setWindowOpenHandler`.
-     */
-
-    /**
-     * This event is like `did-finish-load` but emitted when the load failed. The full
-     * list of error codes and their meaning is available here.
-     */
-
-    /**
-     * This event is like `did-fail-load` but emitted when the load was cancelled (e.g.
-     * `window.stop()` was invoked).
-     */
-
-    /**
-     * Emitted when the navigation is done, i.e. the spinner of the tab has stopped
-     * spinning, and the `onload` event was dispatched.
-     */
-
-    /**
-     * Emitted when a frame has done navigation.
-     */
-
-    /**
-     * Emitted when any frame navigation is done.
-     *
-     * This event is not emitted for in-page navigations, such as clicking anchor links
-     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-     * this purpose.
-     */
-
-    /**
-     * Emitted when a main frame navigation is done.
-     *
-     * This event is not emitted for in-page navigations, such as clicking anchor links
-     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-     * this purpose.
-     */
-
-    /**
-     * Emitted when an in-page navigation happened in any frame.
-     *
-     * When in-page navigation happens, the page URL changes but does not cause
-     * navigation outside of the page. Examples of this occurring are when anchor links
-     * are clicked or when the DOM `hashchange` event is triggered.
-     */
-
-    /**
-     * Emitted after a server side redirect occurs during navigation.  For example a
-     * 302 redirect.
-     *
-     * This event cannot be prevented, if you want to prevent redirects you should
-     * check out the `will-redirect` event above.
-     */
-
-    /**
-     * Corresponds to the points in time when the spinner of the tab started spinning.
-     */
-
-    /**
-     * Emitted when any frame (including main) starts navigating.
-     */
-
-    /**
-     * Corresponds to the points in time when the spinner of the tab stopped spinning.
-     */
-
-    /**
-     * Emitted when the document in the top-level frame is loaded.
-     */
-
-    /**
-     * Emitted when the window enters a full-screen state triggered by HTML API.
-     */
-
-    /**
-     * Emitted when the `WebContents` gains focus.
-     *
-     * Note that on macOS, having focus means the `WebContents` is the first responder
-     * of window, so switching focus between windows would not trigger the `focus` and
-     * `blur` events of `WebContents`, as the first responder of each window is not
-     * changed.
-     *
-     * The `focus` and `blur` events of `WebContents` should only be used to detect
-     * focus change between different `WebContents` and `BrowserView` in the same
-     * window.
-     */
-
-    /**
-     * Emitted when a result is available for `webContents.findInPage` request.
-     */
-
-    /**
-     * Emitted when the mainFrame, an `<iframe>`, or a nested `<iframe>` is loaded
-     * within the page.
-     */
-
-    /**
-     * Emitted when an input event is sent to the WebContents. See InputEvent for
-     * details.
-     */
-
-    /**
-     * Emitted when the renderer process sends an asynchronous message via
-     * `ipcRenderer.send()`.
-     *
-     * See also `webContents.ipc`, which provides an `IpcMain`-like interface for
-     * responding to IPC messages specifically from this WebContents.
-     */
-
-    /**
-     * Emitted when the renderer process sends a synchronous message via
-     * `ipcRenderer.sendSync()`.
-     *
-     * See also `webContents.ipc`, which provides an `IpcMain`-like interface for
-     * responding to IPC messages specifically from this WebContents.
-     */
-
-    /**
-     * Emitted when the window leaves a full-screen state triggered by HTML API.
-     */
-
-    /**
-     * Emitted when `webContents` wants to do basic auth.
-     *
-     * The usage is the same with the `login` event of `app`.
-     */
-
-    /**
-     * Emitted when media is paused or done playing.
-     */
-
-    /**
-     * Emitted when media starts playing.
-     */
-
-    /**
-     * Emitted when page receives favicon urls.
-     */
-
-    /**
-     * Fired when page title is set during navigation. `explicitSet` is false when
-     * title is synthesized from file url.
-     */
-
-    /**
-     * Emitted when a new frame is generated. Only the dirty area is passed in the
-     * buffer.
-     *
-     * When using shared texture (set `webPreferences.offscreen.useSharedTexture` to
-     * `true`) feature, you can pass the texture handle to external rendering pipeline
-     * without the overhead of copying data between CPU and GPU memory, with Chromium's
-     * hardware acceleration support. This feature is helpful for high-performance
-     * rendering scenarios.
-     *
-     * Only a limited number of textures can exist at the same time, so it's important
-     * that you call `texture.release()` as soon as you're done with the texture. By
-     * managing the texture lifecycle by yourself, you can safely pass the
-     * `texture.textureInfo` to other processes through IPC.
-     *
-     * More details can be found in the offscreen rendering tutorial. To learn about
-     * how to handle the texture in native code, refer to offscreen rendering's code
-     * documentation..
-     */
-
-    /**
-     * Emitted when the `WebContents` preferred size has changed.
-     *
-     * This event will only be emitted when `enablePreferredSizeMode` is set to `true`
-     * in `webPreferences`.
-     */
-
-    /**
-     * Emitted when the preload script `preloadPath` throws an unhandled exception
-     * `error`.
-     */
-
-    /**
-     * Emitted when the renderer process unexpectedly disappears.  This is normally
-     * because it was crashed or killed.
-     */
-
-    /**
-     * Emitted when the unresponsive web page becomes responsive again.
-     */
-
-    /**
-     * Emitted when a bluetooth device needs to be selected when a call to
-     * `navigator.bluetooth.requestDevice` is made. `callback` should be called with
-     * the `deviceId` of the device to be selected.  Passing an empty string to
-     * `callback` will cancel the request.
-     *
-     * If no event listener is added for this event, all bluetooth requests will be
-     * cancelled.
-     *
-     * If `event.preventDefault` is not called when handling this event, the first
-     * available device will be automatically selected.
-     *
-     * Due to the nature of bluetooth, scanning for devices when
-     * `navigator.bluetooth.requestDevice` is called may take time and will cause
-     * `select-bluetooth-device` to fire multiple times until `callback` is called with
-     * either a device id or an empty string to cancel the request.
-     */
-
-    /**
-     * Emitted when a client certificate is requested.
-     *
-     * The usage is the same with the `select-client-certificate` event of `app`.
-     */
-
-    /**
-     * Emitted when the web page becomes unresponsive.
-     */
-
-    /**
-     * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
-     */
-
-    /**
-     * Emitted when a `<webview>`'s web contents is being attached to this web
-     * contents. Calling `event.preventDefault()` will destroy the guest page.
-     *
-     * This event can be used to configure `webPreferences` for the `webContents` of a
-     * `<webview>` before it's loaded, and provides the ability to set settings that
-     * can't be set via `<webview>` attributes.
-     */
-
-    /**
-     * Emitted when a user or the page wants to start navigation in any frame. It can
-     * happen when the `window.location` object is changed or a user clicks a link in
-     * the page.
-     *
-     * Unlike `will-navigate`, `will-frame-navigate` is fired when the main frame or
-     * any of its subframes attempts to navigate. When the navigation event comes from
-     * the main frame, `isMainFrame` will be `true`.
-     *
-     * This event will not emit when the navigation is started programmatically with
-     * APIs like `webContents.loadURL` and `webContents.back`.
-     *
-     * It is also not emitted for in-page navigations, such as clicking anchor links or
-     * updating the `window.location.hash`. Use `did-navigate-in-page` event for this
-     * purpose.
-     *
-     * Calling `event.preventDefault()` will prevent the navigation.
-     */
-
-    /**
-     * Emitted when a user or the page wants to start navigation on the main frame. It
-     * can happen when the `window.location` object is changed or a user clicks a link
-     * in the page.
-     *
-     * This event will not emit when the navigation is started programmatically with
-     * APIs like `webContents.loadURL` and `webContents.back`.
-     *
-     * It is also not emitted for in-page navigations, such as clicking anchor links or
-     * updating the `window.location.hash`. Use `did-navigate-in-page` event for this
-     * purpose.
-     *
-     * Calling `event.preventDefault()` will prevent the navigation.
-     */
-
-    /**
-     * Emitted when a `beforeunload` event handler is attempting to cancel a page
-     * unload.
-     *
-     * Calling `event.preventDefault()` will ignore the `beforeunload` event handler
-     * and allow the page to be unloaded.
-     *
-     * > [!NOTE] This will be emitted for `BrowserViews` but will _not_ be respected -
-     * this is because we have chosen not to tie the `BrowserView` lifecycle to its
-     * owning BrowserWindow should one exist per the specification.
-     */
-
-    /**
-     * Emitted when a server side redirect occurs during navigation.  For example a 302
-     * redirect.
-     *
-     * This event will be emitted after `did-start-navigation` and always before the
-     * `did-redirect-navigation` event for the same navigation.
-     *
-     * Calling `event.preventDefault()` will prevent the navigation (not just the
-     * redirect).
-     */
-
-    /**
-     * Emitted when the user is requesting to change the zoom level using the mouse
-     * wheel.
-     */
-
-    /**
      * Adds the specified path to DevTools workspace. Must be used after DevTools
      * creation:
      */
@@ -419,7 +26,11 @@ external class WebContents : NodeEventEmitter {
      *
      * Before:
      *
+     * [Image: Image Before Text Selection Adjustment]
+     *
      * After:
+     *
+     * [Image: Image After Text Selection Adjustment]
      */
     fun adjustSelection(options: AdjustSelectionOptions)
 
@@ -453,35 +64,6 @@ external class WebContents : NodeEventEmitter {
     fun beginFrameSubscription(callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit)
 
     /**
-     * Whether the browser can go back to previous web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.canGoBack` API.
-     *
-     * @deprecated
-     */
-    fun canGoBack(): Boolean
-
-    /**
-     * Whether the browser can go forward to next web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.canGoForward`
-     * API.
-     *
-     * @deprecated
-     */
-    fun canGoForward(): Boolean
-
-    /**
-     * Whether the web page can go to `offset`.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.canGoToOffset`
-     * API.
-     *
-     * @deprecated
-     */
-    fun canGoToOffset(offset: Double): Boolean
-
-    /**
      * Resolves with a NativeImage
      *
      * Captures a snapshot of the page within `rect`. Omitting `rect` will capture the
@@ -500,13 +82,30 @@ external class WebContents : NodeEventEmitter {
     fun centerSelection()
 
     /**
-     * Clears the navigation history.
+     * A cloned WebContents instance. This method creates a copy of the WebContents
+     * with the following attributes:
      *
-     * **Deprecated:** Should use the new `contents.navigationHistory.clear` API.
+     * * **WebPreferences** - All preferences from the original WebContents are copied
+     * * **SiteInstance** - Uses the same SiteInstance as the original. This means the
+     * cloned WebContents will reuse the same render process as the original when
+     * loading same-origin pages, and only spawn a new render process for cross-origin
+     * navigations. This process allocation behavior is consistent with window.open and
+     * tab duplication in Chromium. For more details, see Chromium's Site Isolation
+     * design document.
+     * * **Opener relationship** - Inherits the opener (window.opener) relationship
+     * * **Navigation state** - Copies the navigation history and controller state
      *
-     * @deprecated
+     * The cloned WebContents is an independent instance with its own lifecycle that
+     * can be destroyed separately and will not contain any open web pages.
+     *
+     * This API is useful for use cases where you want to create a new WebContents that
+     * shares the same render process with the original for same-origin content, while
+     * maintaining full lifecycle independence. Additionally, reusing the existing
+     * render process can help optimize memory usage and page load speed to a certain
+     * extent, as it eliminates the overhead of spawning and initializing a new render
+     * process from scratch.
      */
-    fun clearHistory()
+    fun clone(): WebContents
 
     /**
      * Closes the page, as if the web content had called `window.close()`.
@@ -531,6 +130,15 @@ external class WebContents : NodeEventEmitter {
      * Copy the image at the given position to the clipboard.
      */
     fun copyImageAt(
+        x: Double,
+        y: Double,
+    )
+
+    /**
+     * When executed on a video media element, copies the frame at (x, y) to the
+     * clipboard.
+     */
+    fun copyVideoFrameAt(
         x: Double,
         y: Double,
     )
@@ -653,7 +261,9 @@ external class WebContents : NodeEventEmitter {
      * The identifier of a WebContents stream. This identifier can be used with
      * `navigator.mediaDevices.getUserMedia` using a `chromeMediaSource` of `tab`. The
      * identifier is restricted to the web contents that it is registered to and is
-     * only valid for 10 seconds.
+     * only valid for 10 seconds. The `desktop` source only accepts screen and window
+     * identifiers from `desktopCapturer.getSources`; to capture a WebContents use this
+     * identifier with the `tab` source, or `ses.setDisplayMediaRequestHandler`.
      */
     fun getMediaSourceId(requestWebContents: WebContents): String
 
@@ -731,40 +341,9 @@ external class WebContents : NodeEventEmitter {
     fun getZoomLevel(): Double
 
     /**
-     * Makes the browser go back a web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goBack` API.
-     *
-     * @deprecated
+     * The current zoom mode. Can be `default`, `isolated`, `manual`, or `disabled`.
      */
-    fun goBack()
-
-    /**
-     * Makes the browser go forward a web page.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goForward` API.
-     *
-     * @deprecated
-     */
-    fun goForward()
-
-    /**
-     * Navigates browser to the specified absolute web page index.
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goToIndex` API.
-     *
-     * @deprecated
-     */
-    fun goToIndex(index: Double)
-
-    /**
-     * Navigates to the specified offset from the "current entry".
-     *
-     * **Deprecated:** Should use the new `contents.navigationHistory.goToOffset` API.
-     *
-     * @deprecated
-     */
-    fun goToOffset(offset: Double)
+    fun getZoomMode(): (WebContentsGetZoomModeResult)
 
     /**
      * A promise that resolves with a key for the inserted CSS that can later be used
@@ -824,6 +403,11 @@ external class WebContents : NodeEventEmitter {
      * greater than 0.
      */
     fun isBeingCaptured(): Boolean
+
+    /**
+     * Whether caret browsing is enabled for this page.
+     */
+    fun isCaretBrowsingEnabled(): Boolean
 
     /**
      * Whether the renderer process has crashed.
@@ -919,7 +503,7 @@ external class WebContents : NodeEventEmitter {
      * When `contents` is a `<webview>` tag, the `mode` would be `detach` by default,
      * explicitly passing an empty `mode` can force using last used dock state.
      *
-     * On Windows, if Windows Control Overlay is enabled, DevTools will be opened with
+     * On Windows, if Window Control Overlay is enabled, DevTools will be opened with
      * `mode: 'detach'`.
      */
     fun openDevTools(options: OpenDevToolsOptions = definedExternally)
@@ -1034,6 +618,15 @@ external class WebContents : NodeEventEmitter {
         fullPath: String,
         saveType: WebContentsSavePageSaveType,
     ): js.promise.Promise<js.void.Void>
+
+    /**
+     * When executed on a video media element, shows a save dialog and saves the frame
+     * at (x, y) to disk.
+     */
+    fun saveVideoFrameAs(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * Scrolls to the bottom of the current `webContents`.
@@ -1154,6 +747,11 @@ external class WebContents : NodeEventEmitter {
     fun setBackgroundThrottling(allowed: Boolean)
 
     /**
+     * Sets whether caret browsing is enabled on the current web page.
+     */
+    fun setCaretBrowsingEnabled(enabled: Boolean)
+
+    /**
      * Changes the title of the DevTools window to `title`. This will only be visible
      * if DevTools is opened in `undocked` or `detach` mode.
      */
@@ -1206,7 +804,8 @@ external class WebContents : NodeEventEmitter {
     fun setUserAgent(userAgent: String)
 
     /**
-     * Sets the maximum and minimum pinch-to-zoom level.
+     * Sets the maximum and minimum pinch-to-zoom level. The page keeps its normal
+     * scale until the user pinches; a `minimumLevel` below 1 only allows zooming out.
      *
      * > [!NOTE] Visual zoom is disabled by default in Electron. To re-enable it, call:
      */
@@ -1245,21 +844,41 @@ external class WebContents : NodeEventEmitter {
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
      * divided by 100, so 300% = 3.0.
      *
-     * The factor must be greater than 0.0.
+     * The factor must be greater than 0.0. Values outside the range Chromium can
+     * display (0.25 to 5.0) are clamped to it.
      */
     fun setZoomFactor(factor: Double)
 
     /**
      * Changes the zoom level to the specified level. The original size is 0 and each
-     * increment above or below represents zooming 20% larger or smaller to default
-     * limits of 300% and 50% of original size, respectively. The formula for this is
-     * `scale := 1.2 ^ level`.
+     * increment above or below represents zooming 20% larger or smaller. The formula
+     * for this is `scale := 1.2 ^ level`, and the level is clamped to the range
+     * Chromium can display (25% to 500%, about -7.6 to 8.8).
      *
-     * > [!NOTE] The zoom policy at the Chromium level is same-origin, meaning that the
-     * zoom level for a specific domain propagates across all instances of windows with
-     * the same domain. Differentiating the window URLs will make zoom work per-window.
+     * > [!NOTE] The zoom policy at the Chromium level is same-origin by default,
+     * meaning that the zoom level for a specific domain propagates across all
+     * instances of windows with the same domain. To use per-webContents zoom instead,
+     * set the zoom mode to `'isolated'` via `contents.setZoomMode('isolated')`.
      */
     fun setZoomLevel(level: Double)
+
+    /**
+     * Sets the zoom mode for this web contents.
+     *
+     * * `default` - Zoom changes are handled automatically on a per-origin basis.
+     * Other webContents navigated to the same origin will share the same zoom level.
+     * * `isolated` - Zoom changes are handled automatically but on a per-webContents
+     * basis. This webContents will not be affected by zoom changes in other
+     * webContents, and vice versa.
+     * * `manual` - Automatic zoom handling is disabled. The `zoom-changed` event will
+     * still be dispatched, but the page will not actually be zoomed. The zoom level
+     * can be managed manually by the application.
+     * * `disabled` - All zooming in this webContents is disabled. The webContents will
+     * revert to the default zoom level and all zoom changes will be ignored.
+     *
+     * The `isolated` and `manual` zoom modes persist across navigations.
+     */
+    fun setZoomMode(mode: WebContentsSetZoomModeMode)
 
     /**
      * Shows pop-up dictionary that searches the selected word on the page.
@@ -1328,6 +947,26 @@ external class WebContents : NodeEventEmitter {
      * affects the Page Visibility API.
      */
     var backgroundThrottling: Boolean
+
+    /**
+     * A `boolean` property that determines whether caret browsing is enabled for this
+     * page.
+     *
+     * When enabled, a movable cursor is placed in the page's text, allowing the user
+     * to navigate and select content with the keyboard. Changes apply to the live page
+     * without reloading it.
+     *
+     * A `<webview>` guest inherits this value from its embedder when it is created and
+     * then tracks it independently, so disabling caret browsing on the embedder leaves
+     * an existing guest enabled.
+     *
+     * While any `WebContents` in the process has caret browsing enabled, assistive
+     * technology is notified process-wide that caret browsing is active, so that
+     * screen readers report the caret's position as it moves. That notification is
+     * only withdrawn once every `WebContents` that enabled caret browsing has either
+     * disabled it or been destroyed.
+     */
+    var caretBrowsingEnabled: Boolean
 
     /**
      * A `Debugger` instance for this webContents.
@@ -1452,6 +1091,13 @@ external class WebContents : NodeEventEmitter {
      * respectively. The formula for this is `scale := 1.2 ^ level`.
      */
     var zoomLevel: Double
+
+    /**
+     * A `string` property that determines the zoom mode for this web contents.
+     *
+     * See `contents.setZoomMode` for a description of the available modes.
+     */
+    var zoomMode: String
 
     @web.events.JsEvent("audio-state-changed")
     val audioStateChangedEvent:
@@ -1594,7 +1240,7 @@ external class WebContents : NodeEventEmitter {
     val loginEvent: node.events.EventInstance<
             js.array.Tuple4<
                     Event<*>,
-                    LoginAuthenticationResponseDetails,
+                    AuthenticationResponseDetails,
                     AuthInfo,
                         (
                 username: String?, /* use undefined for default */

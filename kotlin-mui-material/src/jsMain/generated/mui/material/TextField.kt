@@ -61,9 +61,36 @@ external interface TextFieldSlots {
     var select: ElementType<*>
 }
 
+external interface TextFieldSlotProps : Props {
+    /** TS: SlotProps<React.ElementType<FormControlProps>, TextFieldRootSlotPropsOverrides, TextFieldOwnerState> */
+    var root: FormControlProps?
+
+    /** TS: SlotProps<React.ElementType<InputBaseProps>, TextFieldInputSlotPropsOverrides, TextFieldOwnerState> */
+    var input: InputBaseProps?
+
+    /** TS: SlotProps<React.ElementType<InputLabelProps>, TextFieldInputLabelSlotPropsOverrides, TextFieldOwnerState> */
+    var inputLabel: InputLabelProps?
+
+    /** TS: SlotProps<React.ElementType<InputBaseProps['inputProps']>, TextFieldHtmlInputSlotPropsOverrides, TextFieldOwnerState> */
+    var htmlInput: InputBaseComponentProps?
+
+    /** TS: SlotProps<React.ElementType<FormHelperTextProps>, TextFieldFormHelperTextSlotPropsOverrides, TextFieldOwnerState> */
+    var formHelperText: FormHelperTextProps?
+
+    /** TS: SlotProps<React.ElementType<SelectProps>, TextFieldSelectSlotPropsOverrides, TextFieldOwnerState> */
+    var select: SelectProps<*>?
+}
+
+external interface TextFieldSlotsAndSlotProps : Props {
+    var slots: TextFieldSlots?
+
+    var slotProps: TextFieldSlotProps?
+}
+
 external interface BaseTextFieldProps :
     StandardProps,
     FormControlProps,
+    TextFieldSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
     /**

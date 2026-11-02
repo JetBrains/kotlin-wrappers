@@ -9,10 +9,4 @@ external interface StreamState {
     var state: Double?
     var localClose: Double?
     var remoteClose: Double?
-
-    /** @deprecated */
-    var sumDependencyWeight: Double?
-
-    /** @deprecated */
-    var weight: Double?
 }

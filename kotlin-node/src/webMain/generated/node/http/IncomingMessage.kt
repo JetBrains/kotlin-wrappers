@@ -20,14 +20,6 @@ open external class IncomingMessage : node.stream.Readable {
     constructor (socket: Socket)
 
     /**
-     * The `message.aborted` property will be `true` if the request has
-     * been aborted.
-     * @since v10.1.0
-     * @deprecated Since v17.0.0,v16.12.0 - Check `message.destroyed` from <a href="stream.html#class-streamreadable" class="type">stream.Readable</a>.
-     */
-    var aborted: Boolean
-
-    /**
      * In case of server request, the HTTP version sent by the client. In the case of
      * client response, the HTTP version of the connected-to server.
      * Probably either `'1.1'` or `'1.0'`.
@@ -63,13 +55,6 @@ open external class IncomingMessage : node.stream.Readable {
      * @since v0.3.0
      */
     var complete: Boolean
-
-    /**
-     * Alias for `message.socket`.
-     * @since v0.1.90
-     * @deprecated Since v16.0.0 - Use `socket`.
-     */
-    var connection: Socket
 
     /**
      * The `net.Socket` object associated with the connection.

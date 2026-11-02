@@ -9,9 +9,6 @@ external interface ScriptOptions : BaseOptions {
      */
     var cachedData: js.buffer.ArrayBufferView<*>?
 
-    /** @deprecated in favor of `script.createCachedData()` */
-    var produceCachedData: Boolean?
-
     /**
      * Used to specify how the modules should be loaded during the evaluation of this script when `import()` is called. This option is
      * part of the experimental modules API. We do not recommend using it in a production environment. For detailed information, see

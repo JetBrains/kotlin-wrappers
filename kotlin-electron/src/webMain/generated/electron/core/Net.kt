@@ -8,8 +8,8 @@ external interface Net {
      * see Response.
      *
      * Sends a request, similarly to how `fetch()` works in the renderer, using
-     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
-     * HTTP stack.
+     * Chromium's network stack. This differs from Node's `fetch()`, which uses
+     * Node.js's HTTP stack.
      *
      * Example:
      *
@@ -44,8 +44,8 @@ external interface Net {
      * see Response.
      *
      * Sends a request, similarly to how `fetch()` works in the renderer, using
-     * Chrome's network stack. This differs from Node's `fetch()`, which uses Node.js's
-     * HTTP stack.
+     * Chromium's network stack. This differs from Node's `fetch()`, which uses
+     * Node.js's HTTP stack.
      *
      * Example:
      *
@@ -121,4 +121,13 @@ external interface Net {
      *
      */
     val online: Boolean
+
+    /**
+     * > [!NOTE] This property is only available in the main process.
+     *
+     * A `typeof WebSocket` reference to the `WebSocket` class, which can be used to
+     * create WHATWG-compatible WebSocket connections through Chromium's network stack
+     * from the main process.
+     */
+    var WebSocket: Any /* typeof WebSocket */
 }

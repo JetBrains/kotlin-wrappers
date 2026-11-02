@@ -11,7 +11,8 @@ external interface PermissionCheckHandlerHandlerDetails {
     var embeddingOrigin: String?
 
     /**
-     * The security origin of the `media` check.
+     * The origin of the requesting frame, for `media`, `hid`, `usb` and `serial`
+     * checks.
      */
     var securityOrigin: String?
 
@@ -21,8 +22,8 @@ external interface PermissionCheckHandlerHandlerDetails {
     var mediaType: (PermissionCheckHandlerHandlerDetailsMediaType)?
 
     /**
-     * The last URL the requesting frame loaded.  This is not provided for cross-origin
-     * sub frames making permission checks.
+     * The last URL the requesting frame loaded. Not provided when the check is not
+     * made on behalf of a document (for example for a service worker).
      */
     var requestingUrl: String?
 

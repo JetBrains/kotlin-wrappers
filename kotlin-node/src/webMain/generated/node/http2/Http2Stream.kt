@@ -110,11 +110,6 @@ external interface Http2Stream : node.stream.Duplex {
     )
 
     /**
-     * @deprecated Priority signaling is no longer supported in Node.js.
-     */
-    fun priority(options: Any?)
-
-    /**
      * ```js
      * import http2 from 'node:http2';
      * const client = http2.connect('http://example.org:8000');

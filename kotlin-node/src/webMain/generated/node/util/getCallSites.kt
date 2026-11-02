@@ -8,6 +8,9 @@ package node.util
  * Returns an array of call site objects containing the stack of
  * the caller function.
  *
+ * Unlike accessing an `error.stack`, the result returned from this API is not
+ * interfered with `Error.prepareStackTrace`.
+ *
  * ```js
  * import { getCallSites } from 'node:util';
  *
@@ -20,7 +23,7 @@ package node.util
  *     console.log(`Function Name: ${callSite.functionName}`);
  *     console.log(`Script Name: ${callSite.scriptName}`);
  *     console.log(`Line Number: ${callSite.lineNumber}`);
- *     console.log(`Column Number: ${callSite.column}`);
+ *     console.log(`Column Number: ${callSite.columnNumber}`);
  *   });
  *   // CallSite 1:
  *   // Function Name: exampleFunction

@@ -12,429 +12,6 @@ open external class BaseWindow : NodeEventEmitter {
      * BaseWindow
      */
     constructor (options: BaseWindowConstructorOptions = definedExternally)
-// Docs: https://electronjs.org/docs/api/base-window
-    /**
-     * Emitted when the window is set or unset to show always on top of other windows.
-     */
-
-    /**
-     * Emitted when an App Command is invoked. These are typically related to keyboard
-     * media keys or browser commands, as well as the "Back" button built into some
-     * mice on Windows.
-     *
-     * Commands are lowercased, underscores are replaced with hyphens, and the
-     * `APPCOMMAND_` prefix is stripped off. e.g. `APPCOMMAND_BROWSER_BACKWARD` is
-     * emitted as `browser-backward`.
-     *
-     * The following app commands are explicitly supported on Linux:
-     *
-     * * `browser-backward`
-     * * `browser-forward`
-     *
-     * @platform win32,linux
-     */
-
-    /**
-     * Emitted when the window loses focus.
-     */
-
-    /**
-     * Emitted when the window is going to be closed. It's emitted before the
-     * `beforeunload` and `unload` event of the DOM. Calling `event.preventDefault()`
-     * will cancel the close.
-     *
-     * Usually you would want to use the `beforeunload` handler to decide whether the
-     * window should be closed, which will also be called when the window is reloaded.
-     * In Electron, returning any value other than `undefined` would cancel the close.
-     * For example:
-     *
-     * > [!NOTE] There is a subtle difference between the behaviors of
-     * `window.onbeforeunload = handler` and `window.addEventListener('beforeunload',
-     * handler)`. It is recommended to always set the `event.returnValue` explicitly,
-     * instead of only returning a value, as the former works more consistently within
-     * Electron.
-     */
-
-    /**
-     * Emitted when the window is closed. After you have received this event you should
-     * remove the reference to the window and avoid using it any more.
-     */
-
-    /**
-     * Emitted when the window enters a full-screen state.
-     */
-
-    /**
-     * Emitted when the window gains focus.
-     */
-
-    /**
-     * Emitted when the window is hidden.
-     */
-
-    /**
-     * Emitted when the window leaves a full-screen state.
-     */
-
-    /**
-     * Emitted when window is maximized.
-     */
-
-    /**
-     * Emitted when the window is minimized.
-     */
-
-    /**
-     * Emitted when the window is being moved to a new position.
-     */
-
-    /**
-     * Emitted once when the window is moved to a new position.
-     *
-     * > [!NOTE] On macOS, this event is an alias of `move`.
-     *
-     * @platform darwin,win32
-     */
-
-    /**
-     * Emitted when the user clicks the native macOS new tab button. The new tab button
-     * is only visible if the current `BrowserWindow` has a `tabbingIdentifier`.
-     *
-     * You must create a window in this handler in order for macOS tabbing to work as
-     * expected.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when a session is about to end due to a shutdown, machine restart, or
-     * user log-off. Calling `event.preventDefault()` can delay the system shutdown,
-     * though it’s generally best to respect the user’s choice to end the session.
-     * However, you may choose to use it if ending the session puts the user at risk of
-     * losing data.
-     *
-     * @platform win32
-     */
-
-    /**
-     * Emitted after the window has been resized.
-     */
-
-    /**
-     * Emitted once when the window has finished being resized.
-     *
-     * This is usually emitted when the window has been resized manually. On macOS,
-     * resizing the window with `setBounds`/`setSize` and setting the `animate`
-     * parameter to `true` will also emit this event once resizing has finished.
-     *
-     * @platform darwin,win32
-     */
-
-    /**
-     * Emitted when the window is restored from a minimized state.
-     */
-
-    /**
-     * Emitted on trackpad rotation gesture. Continually emitted until rotation gesture
-     * is ended. The `rotation` value on each emission is the angle in degrees rotated
-     * since the last emission. The last emitted event upon a rotation gesture will
-     * always be of value `0`. Counter-clockwise rotation values are positive, while
-     * clockwise ones are negative.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when a session is about to end due to a shutdown, machine restart, or
-     * user log-off. Once this event fires, there is no way to prevent the session from
-     * ending.
-     *
-     * @platform win32
-     */
-
-    /**
-     * Emitted when the window opens a sheet.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the window has closed a sheet.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the window is shown.
-     */
-
-    /**
-     * Emitted on 3-finger swipe. Possible directions are `up`, `right`, `down`,
-     * `left`.
-     *
-     * The method underlying this event is built to handle older macOS-style trackpad
-     * swiping, where the content on the screen doesn't move with the swipe. Most macOS
-     * trackpads are not configured to allow this kind of swiping anymore, so in order
-     * for it to emit properly the 'Swipe between pages' preference in `System
-     * Preferences > Trackpad > More Gestures` must be set to 'Swipe with two or three
-     * fingers'.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the system context menu is triggered on the window, this is
-     * normally only triggered when the user right clicks on the non-client area of
-     * your window.  This is the window titlebar or any area you have declared as
-     * `-webkit-app-region: drag` in a frameless window.
-     *
-     * Calling `event.preventDefault()` will prevent the menu from being displayed.
-     *
-     * To convert `point` to DIP, use `screen.screenToDipPoint(point)`.
-     *
-     * @platform win32,linux
-     */
-
-    /**
-     * Emitted when the window exits from a maximized state.
-     */
-
-    /**
-     * Emitted before the window is moved. On Windows, calling `event.preventDefault()`
-     * will prevent the window from being moved.
-     *
-     * Note that this is only emitted when the window is being moved manually. Moving
-     * the window with `setPosition`/`setBounds`/`center` will not emit this event.
-     *
-     * @platform darwin,win32
-     */
-
-    /**
-     * Emitted before the window is resized. Calling `event.preventDefault()` will
-     * prevent the window from being resized.
-     *
-     * Note that this is only emitted when the window is being resized manually.
-     * Resizing the window with `setBounds`/`setSize` will not emit this event.
-     *
-     * The possible values and behaviors of the `edge` option are platform dependent.
-     * Possible values are:
-     *
-     * * On Windows, possible values are `bottom`, `top`, `left`, `right`, `top-left`,
-     * `top-right`, `bottom-left`, `bottom-right`.
-     * * On macOS, possible values are `bottom` and `right`.
-     *   * The value `bottom` is used to denote vertical resizing.
-     *   * The value `right` is used to denote horizontal resizing.
-     *
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
 
     /**
      * Adds a window as a tab on this window, after the tab for the window instance.
@@ -663,6 +240,8 @@ open external class BaseWindow : NodeEventEmitter {
 
     /**
      * Whether the window is always on top of other windows.
+     *
+     * Not supported on Wayland (Linux).
      */
     open fun isAlwaysOnTop(): Boolean
 
@@ -684,6 +263,10 @@ open external class BaseWindow : NodeEventEmitter {
 
     /**
      * Whether the window is destroyed.
+     *
+     * > [!NOTE] Once a window is destroyed, accessing most of its other properties and
+     * methods throws `Object has been destroyed`, so callbacks that may run after the
+     * window is gone should guard with `isDestroyed()`.
      */
     open fun isDestroyed(): Boolean
 
@@ -979,6 +562,8 @@ open external class BaseWindow : NodeEventEmitter {
      * Sets whether the window should show always on top of other windows. After
      * setting this, the window is still a normal window, not a toolbox window which
      * can not be focused on.
+     *
+     * Not supported on Wayland (Linux).
      */
     fun setAlwaysOnTop(
         flag: Boolean,
@@ -1118,6 +703,16 @@ open external class BaseWindow : NodeEventEmitter {
      * it calls SetWindowDisplayAffinity with `WDA_EXCLUDEFROMCAPTURE`. For Windows 10
      * version 2004 and up the window will be removed from capture entirely, older
      * Windows versions behave as if `WDA_MONITOR` is applied capturing a black window.
+     * The change takes effect with the next desktop composition, not when the call
+     * returns, so a capture started immediately afterwards can still contain the
+     * window.
+     *
+     * Protection also applies in a Windows remote session. A Remote Desktop client
+     * still shows the window to the remote user, but remote access software that works
+     * by capturing the desktop cannot. To leave windows unprotected in remote sessions
+     * instead, disable the `AllowWindowCaptureExclusionInRemoteSessions` Chromium
+     * feature at the start of your main script. `win.isContentProtected()` still
+     * returns `true` in that case.
      *
      * @platform darwin,win32
      */
@@ -1205,7 +800,20 @@ open external class BaseWindow : NodeEventEmitter {
      * Makes the window ignore all mouse events.
      *
      * All mouse events happened in this window will be passed to the window below this
-     * window, but if this window has focus, it will still receive keyboard events.
+     * window, but if this window has focus, it will still receive keyboard events. On
+     * Linux this is supported on both X11 and Wayland. On X11 the X server has applied
+     * the window's new input shape when the call returns; on Wayland the new input
+     * region is applied with the window's next frame.
+     *
+     * > [!NOTE] On Windows, `forward: true` stops working temporarily when the active
+     * window is running at a higher integrity level (e.g., elevated/Administrator)
+     * than your Electron app. Since Electron typically runs at standard user
+     * privilege, this occurs when an elevated window—such as Task Manager or an
+     * installer—takes focus. This is due to User Interface Privacy Isolation (UIPI).
+     *
+     * To work around it, your app must be run with Administrator privileges or
+     * configured with UIAccess privileges (see the Background section under the
+     * Reference section of this page).
      */
     open fun setIgnoreMouseEvents(
         ignore: Boolean,
@@ -1311,13 +919,14 @@ open external class BaseWindow : NodeEventEmitter {
      * Remove progress bar when progress < 0; Change to indeterminate mode when
      * progress > 1.
      *
-     * On Linux platform, only supports Unity desktop environment, you need to specify
-     * the `*.desktop` file name to `desktopName` field in `package.json`. By default,
-     * it will assume `{app.name}.desktop`.
-     *
      * On Windows, a mode can be passed. Accepted values are `none`, `normal`,
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
+     *
+     * On Linux, the progress bar shows on docks and taskbars that support the
+     * LauncherEntry D-Bus API. It is associated with the app's `.desktop` file, so
+     * `app.setDesktopName` must match the name of the app's actual `.desktop` file.
+     * Indeterminate mode is not supported.
      */
     open fun setProgressBar(
         progress: Double,
@@ -1772,6 +1381,9 @@ open external class BaseWindow : NodeEventEmitter {
     @web.events.JsEvent("new-window-for-tab")
     open val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple>
 
+    @web.events.JsEvent("persisted-state-restored")
+    open val persistedStateRestoredEvent: node.events.EventInstance<js.array.Tuple>
+
     @web.events.JsEvent("query-session-end")
     open val querySessionEndEvent: node.events.EventInstance<js.array.Tuple1<WindowSessionEndEvent>>
 
@@ -1815,6 +1427,16 @@ open external class BaseWindow : NodeEventEmitter {
     open val willResizeEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
+        /**
+         * Clears the saved state for a window with the given name. This removes all
+         * persisted window bounds, display mode, and work area information that was
+         * previously saved when `windowStatePersistence` was enabled.
+         *
+         * If the window `name` is empty or the window state doesn't exist, the method will
+         * log a warning.
+         */
+        fun clearPersistedState(name: String)
+
         /**
          * The window with the given `id`.
          */

@@ -17,47 +17,6 @@ external class ClientRequest : NodeEventEmitter {
      * ClientRequest
      */
     constructor (options: String)
-// Docs: https://electronjs.org/docs/api/client-request
-    /**
-     * Emitted when the `request` is aborted. The `abort` event will not be fired if
-     * the `request` is already closed.
-     */
-
-    /**
-     * Emitted as the last event in the HTTP request-response transaction. The `close`
-     * event indicates that no more events will be emitted on either the `request` or
-     * `response` objects.
-     */
-
-    /**
-     * Emitted when the `net` module fails to issue a network request. Typically when
-     * the `request` object emits an `error` event, a `close` event will subsequently
-     * follow and no response object will be provided.
-     */
-
-    /**
-     * Emitted just after the last chunk of the `request`'s data has been written into
-     * the `request` object.
-     */
-
-    /**
-     * Emitted when an authenticating proxy is asking for user credentials.
-     *
-     * The `callback` function is expected to be called back with user credentials:
-     *
-     * * `username` string
-     * * `password` string
-     *
-     * Providing empty credentials will cancel the request and report an authentication
-     * error on the response object:
-     */
-
-    /**
-     * Emitted when the server returns a redirect response (e.g. 301 Moved
-     * Permanently). Calling `request.followRedirect` will continue with the
-     * redirection.  If this event is handled, `request.followRedirect` must be called
-     * **synchronously**, otherwise the request will be cancelled.
-     */
 
     /**
      * Cancels an ongoing HTTP transaction. If the request has already emitted the

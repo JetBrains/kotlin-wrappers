@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface InferencePriority : js.numbers.Bitmask<InferencePriority> {
+/* enum */
+external class InferencePriority
+private constructor() : js.numbers.Bitmask<InferencePriority> {
     companion object {
         val None: InferencePriority
         val NakedTypeVariable: InferencePriority

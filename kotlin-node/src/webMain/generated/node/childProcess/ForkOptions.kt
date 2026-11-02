@@ -6,7 +6,7 @@ import web.abort.Abortable
 
 @kotlinx.js.JsPlainObject
 external interface ForkOptions :
-    ProcessEnvOptions,
+    CommonOptions,
     MessagingOptions,
     Abortable {
     var execPath: String?

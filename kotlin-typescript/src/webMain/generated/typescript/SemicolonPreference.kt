@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface SemicolonPreference {
+/* enum */
+external class SemicolonPreference
+private constructor() {
     companion object {
         val Ignore: SemicolonPreference
         val Insert: SemicolonPreference

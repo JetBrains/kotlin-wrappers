@@ -10,9 +10,6 @@ external interface ProjectReference {
     /** The path as the user originally wrote it */
     var originalPath: String?
 
-    /** @deprecated */
-    var prepend: Boolean?
-
     /** True if it is intended that this reference form a circularity */
     var circular: Boolean?
 }

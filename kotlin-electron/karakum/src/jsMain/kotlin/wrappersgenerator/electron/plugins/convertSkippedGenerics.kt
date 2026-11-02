@@ -22,9 +22,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(isIdentifier(parameterName))
             ensure(parameterName.text == "listener")
 
-            "${render(node.typeName)}<Unit>"
+            "${render(typeName)}<Unit>"
         } ?: run {
-            "${render(node.typeName)}<*>"
+            "${render(typeName)}<*>"
         }
     } ?: nullable {
         ensure(isTypeReferenceNode(node))
@@ -38,9 +38,9 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             val typeAlias = ensureNotNull(node.parent)
             ensure(isTypeAliasDeclaration(typeAlias))
 
-            render(node.typeName)
+            render(typeName)
         } ?: run {
-            "${render(node.typeName)}<*>"
+            "${render(typeName)}<*>"
         }
     } ?: nullable {
         ensure(isTypeReferenceNode(node))
@@ -50,16 +50,16 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
         ensure(typeName.text == "Uint8Array")
         ensure(node.typeArguments == null)
 
-        "${render(node.typeName)}<*>"
+        "${render(typeName)}<*>"
     } ?: nullable {
         ensure(isTypeReferenceNode(node))
 
         val typeName = node.typeName
         ensure(isIdentifier(typeName))
-        ensure(typeName.text == "Buffer")
+        ensure(typeName.text == "Buffer" || typeName.text == "ArrayBufferView")
         ensure(node.typeArguments == null)
 
-        "${render(node.typeName)}<*>"
+        "${render(typeName)}<*>"
     } ?: nullable {
         ensure(isExpressionWithTypeArguments(node))
 
@@ -68,6 +68,6 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
         ensure(expression.text == "Event")
         ensure(node.typeArguments == null)
 
-        "${render(node.expression)}<Any>"
+        "${render(expression)}<Any>"
     }
 }

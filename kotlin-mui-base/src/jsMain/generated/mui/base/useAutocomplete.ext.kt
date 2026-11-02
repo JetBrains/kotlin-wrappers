@@ -2,6 +2,7 @@
 
 package mui.base
 
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface AutocompleteHighlightChangeReason {
@@ -101,10 +102,10 @@ sealed external interface BlurOnSelect {
         @JsValue("mouse")
         val mouse: BlurOnSelect
 
-        @JsValue("true")
+        @JsRawValue("true")
         val `true`: BlurOnSelect
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: BlurOnSelect
     }
 }

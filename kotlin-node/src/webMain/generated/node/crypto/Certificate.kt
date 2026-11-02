@@ -19,34 +19,6 @@ import node.buffer.NonSharedBuffer
  * @since v0.11.8
  */
 external class Certificate {
-    /**
-     * @deprecated
-     * @param spkac
-     * @returns The challenge component of the `spkac` data structure,
-     * which includes a public key and a challenge.
-     */
-    fun exportChallenge(spkac: BinaryLike): NonSharedBuffer
-
-    /**
-     * @deprecated
-     * @param spkac
-     * @param encoding The encoding of the spkac string.
-     * @returns The public key component of the `spkac` data structure,
-     * which includes a public key and a challenge.
-     */
-    fun exportPublicKey(
-        spkac: BinaryLike,
-        encoding: String = definedExternally,
-    ): NonSharedBuffer
-
-    /**
-     * @deprecated
-     * @param spkac
-     * @returns `true` if the given `spkac` data structure is valid,
-     * `false` otherwise.
-     */
-    fun verifySpkac(spkac: js.buffer.ArrayBufferView<*>): Boolean
-
     companion object {
         /**
          * ```js

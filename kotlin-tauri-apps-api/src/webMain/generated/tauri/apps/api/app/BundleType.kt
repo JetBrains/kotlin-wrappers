@@ -11,7 +11,9 @@ package tauri.apps.api.app
  *
  * @since 2.7.0
  */
-sealed external interface BundleType {
+/* enum */
+external class BundleType
+private constructor() {
     companion object {
         /** Windows NSIS */
         val Nsis: BundleType

@@ -4,49 +4,11 @@ package electron.core
 
 @kotlinx.js.JsPlainObject
 external interface PrintToPDFOptions {
-    /**
-     * Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.
-     */
-    var landscape: Boolean?
-
+// Docs: https://electronjs.org/docs/api/structures/print-to-pdf-options
     /**
      * Whether to display header and footer. Defaults to false.
      */
     var displayHeaderFooter: Boolean?
-
-    /**
-     * Whether to print background graphics. Defaults to false.
-     */
-    var printBackground: Boolean?
-
-    /**
-     * Scale of the webpage rendering. Defaults to 1.
-     */
-    var scale: Double?
-
-    /**
-     * Specify page size of the generated PDF. Can be `A0`, `A1`, `A2`, `A3`, `A4`,
-     * `A5`, `A6`, `Legal`, `Letter`, `Tabloid`, `Ledger`, or an Object containing
-     * `height` and `width` in inches. Defaults to `Letter`.
-     */
-    var pageSize:
-            (Any /* (('A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'Legal' | 'Letter' | 'Tabloid' | 'Ledger')) | (Size) */)?
-    var margins: Margins?
-
-    /**
-     * Page ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which
-     * means print all pages.
-     */
-    var pageRanges: String?
-
-    /**
-     * HTML template for the print header. Should be valid HTML markup with following
-     * classes used to inject printing values into them: `date` (formatted print date),
-     * `title` (document title), `url` (document location), `pageNumber` (current page
-     * number) and `totalPages` (total pages in the document). For example, `<span
-     * class=title></span>` would generate span containing the title.
-     */
-    var headerTemplate: String?
 
     /**
      * HTML template for the print footer. Should use the same format as the
@@ -55,10 +17,12 @@ external interface PrintToPDFOptions {
     var footerTemplate: String?
 
     /**
-     * Whether or not to prefer page size as defined by css. Defaults to false, in
-     * which case the content will be scaled to fit the paper size.
+     * Whether or not to generate a PDF document outline from content headers. Defaults
+     * to false.
+     *
+     * @experimental
      */
-    var preferCSSPageSize: Boolean?
+    var generateDocumentOutline: Boolean?
 
     /**
      * Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this
@@ -70,10 +34,47 @@ external interface PrintToPDFOptions {
     var generateTaggedPDF: Boolean?
 
     /**
-     * Whether or not to generate a PDF document outline from content headers. Defaults
-     * to false.
-     *
-     * @experimental
+     * HTML template for the print header. Should be valid HTML markup with following
+     * classes used to inject printing values into them: `date` (formatted print date),
+     * `title` (document title), `url` (document location), `pageNumber` (current page
+     * number) and `totalPages` (total pages in the document). For example, `<span
+     * class=title></span>` would generate span containing the title.
      */
-    var generateDocumentOutline: Boolean?
+    var headerTemplate: String?
+
+    /**
+     * Paper orientation.`true` for landscape, `false` for portrait. Defaults to false.
+     */
+    var landscape: Boolean?
+    var margins: PrintToPDFMargins?
+
+    /**
+     * Page ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which
+     * means print all pages.
+     */
+    var pageRanges: String?
+
+    /**
+     * Specify page size of the generated PDF. Can be `A0`, `A1`, `A2`, `A3`, `A4`,
+     * `A5`, `A6`, `Legal`, `Letter`, `Tabloid`, `Ledger`, or an Object containing
+     * `height` and `width` in inches. Defaults to `Letter`.
+     */
+    var pageSize:
+            (Any /* (('A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5' | 'A6' | 'Legal' | 'Letter' | 'Tabloid' | 'Ledger')) | (Size) */)?
+
+    /**
+     * Whether or not to prefer page size as defined by css. Defaults to false, in
+     * which case the content will be scaled to fit the paper size.
+     */
+    var preferCSSPageSize: Boolean?
+
+    /**
+     * Whether to print background graphics. Defaults to false.
+     */
+    var printBackground: Boolean?
+
+    /**
+     * Scale of the webpage rendering. Defaults to 1.
+     */
+    var scale: Double?
 }

@@ -13,11 +13,6 @@ external interface CompilerOptions {
     var allowUnusedLabels: Boolean?
     var alwaysStrict: Boolean?
 
-    /** @deprecated */
-    var baseUrl: String?
-
-    /** @deprecated */
-    var charset: String?
     var checkJs: Boolean?
     var customConditions: js.array.ReadonlyArray<String>?
     var declaration: Boolean?
@@ -29,8 +24,6 @@ external interface CompilerOptions {
     var disableSolutionSearching: Boolean?
     var disableReferencedProjectLoad: Boolean?
 
-    /** @deprecated */
-    var downlevelIteration: Boolean?
     var emitBOM: Boolean?
     var emitDecoratorMetadata: Boolean?
     var exactOptionalPropertyTypes: Boolean?
@@ -39,16 +32,12 @@ external interface CompilerOptions {
     var ignoreDeprecations: String?
     var importHelpers: Boolean?
 
-    /** @deprecated */
-    var importsNotUsedAsValues: ImportsNotUsedAsValues?
     var inlineSourceMap: Boolean?
     var inlineSources: Boolean?
     var isolatedModules: Boolean?
     var isolatedDeclarations: Boolean?
     var jsx: JsxEmit?
 
-    /** @deprecated */
-    var keyofStringsOnly: Boolean?
     var lib: js.array.ReadonlyArray<String>?
     var libReplacement: Boolean?
     var locale: String?
@@ -69,21 +58,15 @@ external interface CompilerOptions {
     var noImplicitReturns: Boolean?
     var noImplicitThis: Boolean?
 
-    /** @deprecated */
-    var noStrictGenericChecks: Boolean?
     var noUnusedLocals: Boolean?
     var noUnusedParameters: Boolean?
 
-    /** @deprecated */
-    var noImplicitUseStrict: Boolean?
     var noPropertyAccessFromIndexSignature: Boolean?
     var assumeChangesOnlyAffectDirectDependencies: Boolean?
     var noLib: Boolean?
     var noResolve: Boolean?
     var noUncheckedIndexedAccess: Boolean?
 
-    /** @deprecated */
-    var out: String?
     var outDir: String?
     var outFile: String?
     var paths: MapLike<js.array.ReadonlyArray<String>>?
@@ -91,8 +74,6 @@ external interface CompilerOptions {
     var noImplicitOverride: Boolean?
     var preserveSymlinks: Boolean?
 
-    /** @deprecated */
-    var preserveValueImports: Boolean?
     var project: String?
     var reactNamespace: String?
     var jsxFactory: String?
@@ -119,11 +100,6 @@ external interface CompilerOptions {
     var strictBuiltinIteratorReturn: Boolean?
     var stripInternal: Boolean?
 
-    /** @deprecated */
-    var suppressExcessPropertyErrors: Boolean?
-
-    /** @deprecated */
-    var suppressImplicitAnyIndexErrors: Boolean?
     var target: ScriptTarget?
     var traceResolution: Boolean?
     var useUnknownInCatchVariables: Boolean?

@@ -61,17 +61,6 @@ external interface TrayIconOptions {
      *
      * - **Linux**: Unsupported.
      *
-     * @deprecated use {@linkcode TrayIconOptions.showMenuOnLeftClick} instead.
-     */
-    var menuOnLeftClick: Boolean?
-
-    /**
-     * Whether to show the tray menu on left click or not, default is `true`.
-     *
-     * #### Platform-specific:
-     *
-     * - **Linux**: Unsupported.
-     *
      * @since 2.2.0
      */
     var showMenuOnLeftClick: Boolean?

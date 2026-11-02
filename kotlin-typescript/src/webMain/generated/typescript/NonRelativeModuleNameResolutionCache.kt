@@ -8,11 +8,4 @@ package typescript
  */
 external interface NonRelativeModuleNameResolutionCache :
     NonRelativeNameResolutionCache<ResolvedModuleWithFailedLookupLocations>,
-    PackageJsonInfoCache {
-    /** @deprecated Use getOrCreateCacheForNonRelativeName */
-    fun getOrCreateCacheForModuleName(
-        nonRelativeModuleName: String,
-        mode: ResolutionMode,
-        redirectedReference: ResolvedProjectReference = definedExternally,
-    ): PerModuleNameCache
-}
+    PackageJsonInfoCache
