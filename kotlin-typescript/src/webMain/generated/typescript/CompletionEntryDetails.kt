@@ -12,7 +12,5 @@ external interface CompletionEntryDetails {
     var tags: js.array.ReadonlyArray<JSDocTagInfo>?
     var codeActions: js.array.ReadonlyArray<CodeAction>?
 
-    /** @deprecated Use `sourceDisplay` instead. */
-    var source: js.array.ReadonlyArray<SymbolDisplayPart>?
     var sourceDisplay: js.array.ReadonlyArray<SymbolDisplayPart>?
 }

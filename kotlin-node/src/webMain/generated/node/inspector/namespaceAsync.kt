@@ -8,4 +8,4 @@ package node.inspector
 
 /* export { close, console, NetworkResources, open, url, waitForDebugger } from "inspector"; */
 
-/* export { Schema, Runtime, Debugger, Console, Profiler, HeapProfiler, NodeTracing, NodeWorker, Network, NodeRuntime, Target, IO, } from 'inspector'; */
+/* export { Schema, Runtime, Debugger, Console, Profiler, HeapProfiler, IO, Network, NodeRuntime, NodeTracing, NodeWorker, Target, } from 'inspector'; */

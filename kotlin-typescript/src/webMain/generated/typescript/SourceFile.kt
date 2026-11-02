@@ -24,8 +24,6 @@ external interface SourceFile :
     var languageVariant: LanguageVariant
     var isDeclarationFile: Boolean
 
-    /** @deprecated Always false. Use a Program to determine if a file is a lib file. */
-    var hasNoDefaultLib: Boolean
     var languageVersion: ScriptTarget
 
     /**

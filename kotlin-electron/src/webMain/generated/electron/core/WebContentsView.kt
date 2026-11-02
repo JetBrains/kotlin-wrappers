@@ -9,11 +9,6 @@ open external class WebContentsView : View {
      * WebContentsView
      */
     constructor (options: WebContentsViewConstructorOptions = definedExternally)
-// Docs: https://electronjs.org/docs/api/web-contents-view
-    /**
-     * Emitted when the view's bounds have changed in response to being laid out. The
-     * new bounds can be retrieved with `view.getBounds()`.
-     */
 
     /**
      * A `WebContents` property containing a reference to the displayed `WebContents`.

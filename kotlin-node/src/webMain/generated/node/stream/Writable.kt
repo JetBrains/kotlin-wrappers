@@ -308,17 +308,6 @@ open external class Writable :
 
     open fun destroy(error: js.errors.JsError) /* this */
 
-    /**
-     * Event emitter
-     * The defined events on documents including:
-     * 1. close
-     * 2. drain
-     * 3. error
-     * 4. finish
-     * 5. pipe
-     * 6. unpipe
-     */
-
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     open fun addListener(

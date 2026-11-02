@@ -132,7 +132,7 @@ external interface SpeedDialActionTooltipProps :
 
     var open: Boolean?
 
-    var placement: Any? /* PopperProps['placement'] */
+    var placement: TooltipPlacement?
 
     var title: ReactNode?
 }

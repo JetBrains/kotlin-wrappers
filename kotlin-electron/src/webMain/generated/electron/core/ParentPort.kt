@@ -4,12 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface ParentPort : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/parent-port
-    /**
-     * Emitted when the process receives a message. Messages received on this port will
-     * be queued up until a handler is registered for this event.
-     */
-
     /**
      * Sends a message from the process to its parent.
      */

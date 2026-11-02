@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface SymbolDisplayPartKind {
+/* enum */
+external class SymbolDisplayPartKind
+private constructor() {
     companion object {
         val aliasName: SymbolDisplayPartKind
         val className: SymbolDisplayPartKind

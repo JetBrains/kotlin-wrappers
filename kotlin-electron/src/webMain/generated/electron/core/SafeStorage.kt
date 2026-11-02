@@ -5,13 +5,6 @@ package electron.core
 import node.buffer.Buffer
 
 external interface SafeStorage {
-// Docs: https://electronjs.org/docs/api/safe-storage
-    /**
-     * the decrypted string. Decrypts the encrypted buffer obtained  with
-     * `safeStorage.encryptString` back into a string.
-     */
-    fun decryptString(encrypted: Buffer<*>): String
-
     /**
      * Resolve with an object containing the following:
      *
@@ -22,13 +15,6 @@ external interface SafeStorage {
      * * `result` string - the decrypted string.
      */
     fun decryptStringAsync(encrypted: Buffer<*>): js.promise.Promise<DecryptStringAsyncReturnValue>
-
-    /**
-     * An array of bytes representing the encrypted string.
-     *
-     * This function will throw an error if encryption fails.
-     */
-    fun encryptString(plainText: String): Buffer<*>
 
     /**
      * An array of bytes representing the encrypted string.
@@ -59,18 +45,14 @@ external interface SafeStorage {
     fun getSelectedStorageBackend(): (SafeStorageGetSelectedStorageBackendResult)
 
     /**
-     * Whether encryption is available for asynchronous safeStorage operations.
+     * Resolves with whether encryption is available for asynchronous safeStorage
+     * operations.
+     *
+     * The asynchronous encryptor is initialized lazily the first time this method,
+     * `encryptStringAsync`, or `decryptStringAsync` is called after the app is ready.
+     * The returned promise resolves once initialization completes.
      */
     fun isAsyncEncryptionAvailable(): js.promise.Promise<Boolean>
-
-    /**
-     * Whether encryption is available.
-     *
-     * On Linux, returns true if the app has emitted the `ready` event and the secret
-     * key is available. On MacOS, returns true if Keychain is available. On Windows,
-     * returns true once the app has emitted the `ready` event.
-     */
-    fun isEncryptionAvailable(): Boolean
 
     /**
      * This function on Linux will force the module to use an in memory password for

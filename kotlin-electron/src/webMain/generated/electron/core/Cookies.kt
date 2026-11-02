@@ -7,12 +7,6 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Cookies : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/cookies
-    /**
-     * Emitted when a cookie is changed because it was added, edited, removed, or
-     * expired.
-     */
-
     /**
      * A promise which resolves when the cookie store has been flushed.
      *

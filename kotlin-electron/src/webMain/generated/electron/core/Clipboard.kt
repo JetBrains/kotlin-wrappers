@@ -2,164 +2,52 @@
 
 package electron.core
 
-import node.buffer.Buffer
-
 external interface Clipboard {
 // Docs: https://electronjs.org/docs/api/clipboard
     /**
-     * An array of supported formats for the clipboard `type`.
-     */
-    fun availableFormats(type: ClipboardAvailableFormatsType = definedExternally): js.array.ReadonlyArray<String>
-
-    /**
      * Clears the clipboard content.
      */
-    fun clear(type: ClipboardClearType = definedExternally)
+    fun clear()
 
     /**
-     * Whether the clipboard supports the specified `format`.
+     * A promise that resolves with `true` if the clipboard contains data of the
+     * specified `mimetype`, otherwise `false`. To check for a raw format, eg
+     * `public/utf8-plain-text`, use the `electron application/osclipboard` custom
+     * format (`electron application/osclipboard;format="public/utf8-plain-text"`).
+     */
+    fun has(mimetype: String): js.promise.Promise<Boolean>
+
+    /**
+     * A promise that resolves with an array of ClipboardItem objects containing the
+     * clipboard's contents.
+     */
+    fun read(): js.promise.Promise<js.array.ReadonlyArray<ClipboardItem>>
+
+    /**
+     * A promise that resolves with the content of the clipboard as plain text. Modeled
+     * after the W3C `navigator.clipboard.readText` API.
+     */
+    fun readText(): js.promise.Promise<String>
+
+    /**
+     * Resolves once the data has been written to the clipboard. All entries supplied
+     * in a single `write()` call are committed to the system clipboard atomically.
+     */
+    fun write(data: js.array.ReadonlyArray<ClipboardItem>): js.promise.Promise<js.void.Void>
+
+    /**
+     * A promise that resolves once the text has been written to the clipboard. Modeled
+     * after the W3C `navigator.clipboard.writeText` API.
+     */
+    fun writeText(text: String): js.promise.Promise<js.void.Void>
+
+    /**
+     * A `Clipboard` property — a `Clipboard` object on Linux that operates against the
+     * selection clipboard instead of the system clipboard, and `undefined` on all
+     * other platforms. It exposes the same `read`, `write`, `readText`, `writeText`,
+     * `has`, and `clear` methods as the top-level `clipboard` module.
      *
-     * @experimental
+     * @platform linux
      */
-    fun has(
-        format: String,
-        type: ClipboardHasType = definedExternally,
-    ): Boolean
-
-    /**
-     * Reads `format` type from the clipboard.
-     *
-     * `format` should contain valid ASCII characters and have `/` separator. `a/c`,
-     * `a/bc` are valid formats while `/abc`, `abc/`, `a/`, `/a`, `a` are not valid.
-     *
-     * @experimental
-     */
-    fun read(format: String): String
-
-    /**
-     * * `title` string
-     * * `url` string
-     *
-     * Returns an Object containing `title` and `url` keys representing the bookmark in
-     * the clipboard. The `title` and `url` values will be empty strings when the
-     * bookmark is unavailable.  The `title` value will always be empty on Windows.
-     *
-     * @platform darwin,win32
-     */
-    fun readBookmark(): ReadBookmark
-
-    /**
-     * Reads `format` type from the clipboard.
-     *
-     * @experimental
-     */
-    fun readBuffer(format: String): Buffer<*>
-
-    /**
-     * The text on the find pasteboard, which is the pasteboard that holds information
-     * about the current state of the active application’s find panel.
-     *
-     * This method uses synchronous IPC when called from the renderer process. The
-     * cached value is reread from the find pasteboard whenever the application is
-     * activated.
-     *
-     * @platform darwin
-     */
-    fun readFindText(): String
-
-    /**
-     * The content in the clipboard as markup.
-     */
-    fun readHTML(type: ClipboardReadHTMLType = definedExternally): String
-
-    /**
-     * The image content in the clipboard.
-     */
-    fun readImage(type: ClipboardReadImageType = definedExternally): NativeImage
-
-    /**
-     * The content in the clipboard as RTF.
-     */
-    fun readRTF(type: ClipboardReadRTFType = definedExternally): String
-
-    /**
-     * The content in the clipboard as plain text.
-     */
-    fun readText(type: ClipboardReadTextType = definedExternally): String
-
-    /**
-     * Writes `data` to the clipboard.
-     */
-    fun write(
-        data: Data,
-        type: ClipboardWriteType = definedExternally,
-    )
-
-    /**
-     * Writes the `title` (macOS only) and `url` into the clipboard as a bookmark.
-     *
-     * > [!NOTE] Most apps on Windows don't support pasting bookmarks into them so you
-     * can use `clipboard.write` to write both a bookmark and fallback text to the
-     * clipboard.
-     *
-     * @platform darwin,win32
-     */
-    fun writeBookmark(
-        title: String,
-        url: String,
-        type: ClipboardWriteBookmarkType = definedExternally,
-    )
-
-    /**
-     * Writes the `buffer` into the clipboard as `format`.
-     *
-     * @experimental
-     */
-    fun writeBuffer(
-        format: String,
-        buffer: Buffer<*>,
-        type: ClipboardWriteBufferType = definedExternally,
-    )
-
-    /**
-     * Writes the `text` into the find pasteboard (the pasteboard that holds
-     * information about the current state of the active application’s find panel) as
-     * plain text. This method uses synchronous IPC when called from the renderer
-     * process.
-     *
-     * @platform darwin
-     */
-    fun writeFindText(text: String)
-
-    /**
-     * Writes `markup` to the clipboard.
-     */
-    fun writeHTML(
-        markup: String,
-        type: ClipboardWriteHTMLType = definedExternally,
-    )
-
-    /**
-     * Writes `image` to the clipboard.
-     */
-    fun writeImage(
-        image: NativeImage,
-        type: ClipboardWriteImageType = definedExternally,
-    )
-
-    /**
-     * Writes the `text` into the clipboard in RTF.
-     */
-    fun writeRTF(
-        text: String,
-        type: ClipboardWriteRTFType = definedExternally,
-    )
-
-    /**
-     * Writes the `text` into the clipboard as plain text.
-     */
-    fun writeText(
-        text: String,
-        type: ClipboardWriteTextType = definedExternally,
-    )
+    val selection: Clipboard
 }

@@ -8,8 +8,6 @@ external interface ImportClause :
     override val kind: SyntaxKind.ImportClause
     override val parent: ImportClauseParent?
 
-    /** @deprecated Use `phaseModifier` instead */
-    val isTypeOnly: Boolean
     val phaseModifier: ImportPhaseModifierSyntaxKind?
     override val name: Identifier?
     val namedBindings: NamedImportBindings?

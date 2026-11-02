@@ -7,7 +7,9 @@ external interface CrashReporter {
     /**
      * Set an extra parameter to be sent with the crash report. The values specified
      * here will be sent in addition to any values set via the `extra` option when
-     * `start` was called.
+     * `start` was called. Calling this again with the same key replaces the value. The
+     * value is read when a crash happens, so you can update it as your app's state
+     * changes.
      *
      * Parameters added in this fashion (or via the `extra` parameter to
      * `crashReporter.start`) are specific to the calling process. Adding extra
@@ -15,11 +17,13 @@ external interface CrashReporter {
      * with crashes from renderer or other child processes. Similarly, adding extra
      * parameters in a renderer process will not result in those parameters being sent
      * with crashes that occur in other renderer processes or in the main process.
+     * Processes created with `utilityProcess` have no API for setting extra
+     * parameters, so only `globalExtra` values are sent with their crashes.
      *
      * > [!NOTE] Parameters have limits on the length of the keys and values. Key names
      * must be no longer than 39 bytes, and values must be no longer than 20320 bytes.
-     * Keys with names longer than the maximum will be silently ignored. Key values
-     * longer than the maximum length will be truncated.
+     * Keys with names longer than the maximum are ignored, and a warning is emitted.
+     * Values longer than the maximum length are truncated.
      */
     fun addExtraParameter(
         key: String,
@@ -27,23 +31,34 @@ external interface CrashReporter {
     )
 
     /**
-     * The date and ID of the last crash report. Only crash reports that have been
-     * uploaded will be returned; even if a crash report is present on disk it will not
-     * be returned until it is uploaded. In the case that there are no uploaded
-     * reports, `null` is returned.
+     * The date and ID of the crash report with the most recent upload time, from the
+     * list returned by `getUploadedReports()`. If there are no crash reports at all,
+     * `null` is returned.
+     *
+     * If no report has been uploaded yet but some are stored on disk, a report that
+     * has not been uploaded may be returned. Check that its `id` is not empty before
+     * treating it as uploaded.
      *
      * > [!NOTE] This method is only available in the main process.
      */
     fun getLastCrashReport(): CrashReport?
 
     /**
-     * The current 'extra' parameters of the crash reporter.
+     * The current 'extra' parameters of the crash reporter in the calling process, as
+     * set with the `extra` option and `addExtraParameter`. Parameters set with the
+     * `globalExtra` option are not included.
      */
     fun getParameters(): js.objects.ReadonlyRecord<String, String>
 
     /**
-     * Returns all uploaded crash reports. Each report contains the date and uploaded
-     * ID.
+     * Returns the crash reports stored on disk. Each report contains the date it was
+     * uploaded and the ID that the crash server returned for it.
+     *
+     * Despite the method's name, reports that have not been uploaded (for example
+     * because `uploadToServer` is `false`, the upload failed, or the report was rate
+     * limited) are included too. For those reports, `id` is an empty string and `date`
+     * is not meaningful. To list only uploaded reports, filter out reports with an
+     * empty `id`.
      *
      * > [!NOTE] This method is only available in the main process.
      */
@@ -90,9 +105,9 @@ external interface CrashReporter {
      *
      * > [!NOTE] Parameters passed in `extra`, `globalExtra` or set with
      * `addExtraParameter` have limits on the length of the keys and values. Key names
-     * must be at most 39 bytes long, and values must be no longer than 127 bytes. Keys
-     * with names longer than the maximum will be silently ignored. Key values longer
-     * than the maximum length will be truncated.
+     * must be at most 39 bytes long, and values must be no longer than 20320 bytes.
+     * Keys with names longer than the maximum are ignored, and a warning is emitted.
+     * Values longer than the maximum length are truncated.
      *
      * > [!NOTE] This method is only available in the main process.
      */

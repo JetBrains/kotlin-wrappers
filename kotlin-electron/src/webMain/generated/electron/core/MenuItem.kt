@@ -17,6 +17,29 @@ open external class MenuItem {
     var accelerator: Accelerator?
 
     /**
+     * A `string` indicating the item's accessibility label (used by assistive
+     * technology), if set.
+     *
+     * This property can be dynamically changed.
+     *
+     * @platform darwin
+     */
+    var accessibilityLabel: String
+
+    /**
+     * A `MenuItemBadge` (optional) indicating the badge for the menu item.
+     *
+     * This property can be dynamically changed; setting it to `undefined` removes the
+     * badge. Only available on macOS 14 and up.
+     *
+     * Badges are not displayed in Dock menus, though the same item shows its badge in
+     * an application menu.
+     *
+     * @platform darwin
+     */
+    var badge: MenuItemBadge?
+
+    /**
      * A `boolean` indicating whether the item is checked.
      *
      * This property can be dynamically changed.
@@ -84,6 +107,8 @@ open external class MenuItem {
      * or just displayed.
      *
      * This property can be dynamically changed.
+     *
+     * @platform linux,win32
      */
     var registerAccelerator: Boolean
 

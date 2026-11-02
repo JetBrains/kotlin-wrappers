@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface EmitHint {
+/* enum */
+external class EmitHint
+private constructor() {
     companion object {
         val SourceFile: EmitHint
         val Expression: EmitHint

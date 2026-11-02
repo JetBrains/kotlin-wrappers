@@ -27,18 +27,42 @@ external interface PickersCalendarHeaderProps :
      */
     var slotProps: PickersCalendarHeaderSlotProps?
 
+    /**
+     * The first visible month.
+     */
     var currentMonth: PickerValidDate
 
+    /**
+     * If `true`, the view cannot be switched.
+     * The switch button is hidden and a click on the label does nothing.
+     */
     var disabled: Boolean?
 
+    /**
+     * Available views.
+     */
     var views: ReadonlyArray<String /* 'year' | 'month' | 'day' */>
 
+    /**
+     * Callback fired when the displayed month changes.
+     * @param {PickerValidDate} date The new displayed month.
+     */
     var onMonthChange: (date: PickerValidDate) -> Unit
 
+    /**
+     * The visible view.
+     */
     var view: String /* 'year' | 'month' | 'day' */
 
+    /**
+     * If `true`, disable heavy animations.
+     */
     var reduceAnimations: Boolean
 
+    /**
+     * Callback fired when the view changes.
+     * @param {DateView} view The new view.
+     */
     var onViewChange: ((view: Union /* 'year' | 'month' | 'day' */) -> Unit)?
 
     /**
@@ -52,6 +76,9 @@ external interface PickersCalendarHeaderProps :
      */
     var classes: PickersCalendarHeaderClasses?
 
+    /**
+     * A CSS class name applied to the root element.
+     */
     override var className: ClassName?
 
     /**

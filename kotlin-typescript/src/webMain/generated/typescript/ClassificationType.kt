@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ClassificationType {
+/* enum */
+external class ClassificationType
+private constructor() {
     companion object {
         val comment: ClassificationType
         val identifier: ClassificationType

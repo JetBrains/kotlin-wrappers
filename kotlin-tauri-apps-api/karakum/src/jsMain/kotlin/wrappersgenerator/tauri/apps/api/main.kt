@@ -1,5 +1,6 @@
 package wrappersgenerator.tauri.apps.api
 
+import io.github.sgrishchenko.karakum.extension.plugins.ExcludeDeprecatedPlugin
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.array.ReadonlyArray
@@ -11,6 +12,7 @@ import wrappersgenerator.tauri.apps.api.plugins.convertPrivateIdentifier
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
+            ExcludeDeprecatedPlugin,
             convertMissedGenerics,
             convertPrivateIdentifier,
         )

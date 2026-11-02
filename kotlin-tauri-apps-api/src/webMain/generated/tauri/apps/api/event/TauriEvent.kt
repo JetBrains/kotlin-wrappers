@@ -22,7 +22,9 @@ package tauri.apps.api.event
  *
  * @since 1.1.0
  */
-sealed external interface TauriEvent {
+/* enum */
+external class TauriEvent
+private constructor() {
     companion object {
         /** A window was resized. Payload: the new inner size, in physical pixels. See `Window.onResized`. */
         val WINDOW_RESIZED: TauriEvent

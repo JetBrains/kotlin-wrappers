@@ -4,9 +4,5 @@
 
 package node.module
 
-/**
- * @since v0.3.7
- */
-
 /* import module = require("module"); */
 /* export = module; */

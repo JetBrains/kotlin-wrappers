@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface HighlightSpanKind {
+/* enum */
+external class HighlightSpanKind
+private constructor() {
     companion object {
         val none: HighlightSpanKind
         val definition: HighlightSpanKind

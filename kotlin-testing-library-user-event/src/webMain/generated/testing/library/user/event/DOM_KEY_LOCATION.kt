@@ -7,7 +7,9 @@ package testing.library.user.event
 // unhandled import: Instance from "../setup"
 // unhandled import: System from "."
 
-sealed external interface DOM_KEY_LOCATION {
+/* enum */
+external class DOM_KEY_LOCATION
+private constructor() {
     companion object {
         val STANDARD: DOM_KEY_LOCATION
         val LEFT: DOM_KEY_LOCATION

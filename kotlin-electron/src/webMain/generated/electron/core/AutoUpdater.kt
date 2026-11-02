@@ -4,42 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface AutoUpdater : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/auto-updater
-    /**
-     * This event is emitted after a user calls `quitAndInstall()`.
-     *
-     * When this API is called, the `before-quit` event is not emitted before all
-     * windows are closed. As a result you should listen to this event if you wish to
-     * perform actions before the windows are closed while a process is quitting, as
-     * well as listening to `before-quit`.
-     */
-
-    /**
-     * Emitted when checking for an available update has started.
-     */
-
-    /**
-     * Emitted when there is an error while updating.
-     */
-
-    /**
-     * Emitted when there is an available update. The update is downloaded
-     * automatically.
-     */
-
-    /**
-     * Emitted when an update has been downloaded.
-     *
-     * With Squirrel.Windows only `releaseName` is available.
-     *
-     * > [!NOTE] It is not strictly necessary to handle this event. A successfully
-     * downloaded update will still be applied the next time the application starts.
-     */
-
-    /**
-     * Emitted when there is no available update.
-     */
-
     /**
      * Asks the server whether there is an update. You must call `setFeedURL` before
      * using this API.

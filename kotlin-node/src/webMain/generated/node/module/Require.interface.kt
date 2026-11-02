@@ -22,13 +22,6 @@ external interface Require {
     var cache: Dict<Module>
 
     /**
-     * Instruct `require` on how to handle certain file extensions.
-     * @since v0.3.0
-     * @deprecated
-     */
-    var extensions: RequireExtensions
-
-    /**
      * The `Module` object representing the entry script loaded when the Node.js
      * process launched, or `undefined` if the entry point of the program is not a
      * CommonJS module.

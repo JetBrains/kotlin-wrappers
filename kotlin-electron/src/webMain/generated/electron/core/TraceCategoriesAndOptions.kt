@@ -15,6 +15,18 @@ external interface TraceCategoriesAndOptions {
     var categoryFilter: String
 
     /**
+     * **Electron extension; not part of Chromium's TraceCategoriesAndOptions schema.**
+     * Enables native (C/C++) heap allocation profiling for this recording. This is
+     * distinct from JavaScript heap profiling (see `contents.takeHeapSnapshot()`); it
+     * samples allocations made by Chromium and native modules. Unlike `TraceConfig`,
+     * this object has no `included_process_ids` field, so every traced process is
+     * profiled.
+     *
+     * @experimental
+     */
+    var nativeHeapProfiling: NativeHeapProfilerOptions?
+
+    /**
      * Controls what kind of tracing is enabled, it is a comma-delimited sequence of
      * the following strings: `record-until-full`, `record-continuously`,
      * `trace-to-console`, `enable-sampling`, `enable-systrace`, e.g.

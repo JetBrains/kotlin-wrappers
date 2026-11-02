@@ -23,6 +23,7 @@ import wrappersgenerator.typescript.varianceModifiers.modifyInterfaceVariance
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
+            ExcludeDeprecatedMembers,
             NumberPlugin(defaultNumberType = "Int"),
             ContractFunctionApiPlugin,
 

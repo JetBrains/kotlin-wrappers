@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface OutputFileType {
+/* enum */
+external class OutputFileType
+private constructor() {
     companion object {
         val JavaScript: OutputFileType
         val SourceMap: OutputFileType

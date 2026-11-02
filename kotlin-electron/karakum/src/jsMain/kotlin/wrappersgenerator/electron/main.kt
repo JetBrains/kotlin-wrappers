@@ -2,6 +2,7 @@ package wrappersgenerator.electron
 
 import io.github.sgrishchenko.karakum.configuration.*
 import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
+import io.github.sgrishchenko.karakum.extension.plugins.ExcludeDeprecatedPlugin
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
 import wrappersgenerator.electron.annotations.annotateInterfaceWithSuperclass
@@ -17,6 +18,7 @@ import wrappersgenerator.electron.plugins.*
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
+            ExcludeDeprecatedPlugin,
             convertElectronQualifiedName,
             convertEvent,
             convertFileHeritageClause,
@@ -30,6 +32,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUnknownRecordKeyType,
             convertUtilityTypes,
             convertWebviewGenericEventMethods,
+            convertTypeParameterWithStringBound,
         )
         injections = listOf(
             BrowserEventInjection(),
@@ -75,6 +78,9 @@ suspend fun main(args: ReadonlyArray<String>) {
         importInjector = mapOf(
             "AddRepresentationOptions.kt" to listOf(
                 "node.buffer.Buffer",
+            ),
+            "AppShimHost.kt" to listOf(
+                "node.events.EventEmitter as NodeEventEmitter",
             ),
             "BaseWindow.kt" to listOf(
                 "node.buffer.Buffer",
@@ -201,6 +207,7 @@ suspend fun main(args: ReadonlyArray<String>) {
                 "node.events.EventEmitter as NodeEventEmitter",
             ),
             "WebFrameMain.kt" to listOf(
+                "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter",
             ),
         )

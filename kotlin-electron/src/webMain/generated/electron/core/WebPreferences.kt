@@ -102,18 +102,16 @@ external interface WebPreferences {
     var disableHtmlFullscreenWindowResize: Boolean?
 
     /**
+     * Whether to disable the wake locks of the WebContents. Default is `false`.
+     */
+    var disableWakeLocks: Boolean?
+
+    /**
      * A list of feature strings separated by `,`, like `CSSVariables,KeyboardEventKey`
      * to enable. The full list of supported feature strings can be found in the
      * RuntimeEnabledFeatures.json5 file.
      */
     var enableBlinkFeatures: String?
-
-    /**
-     * Whether to enable the `paste` execCommand. Default is `false`.
-     *
-     * @deprecated
-     */
-    var enableDeprecatedPaste: Boolean?
 
     /**
      * Whether to enable preferred size mode. The preferred size is the minimum size
@@ -178,8 +176,10 @@ external interface WebPreferences {
     var nodeIntegrationInSubFrames: Boolean?
 
     /**
-     * Whether node integration is enabled in web workers. Default is `false`. More
-     * about this can be found in Multithreading.
+     * Whether node integration is enabled in web workers. Default is `false`. Only
+     * workers created by a frame that itself has access to Node.js (the main frame, or
+     * any frame when `nodeIntegrationInSubFrames` is enabled) get it. More about this
+     * can be found in Multithreading.
      */
     var nodeIntegrationInWorker: Boolean?
 
@@ -300,4 +300,10 @@ external interface WebPreferences {
      * The default zoom factor of the page, `3.0` represents `300%`. Default is `1.0`.
      */
     var zoomFactor: Double?
+
+    /**
+     * The initial zoom mode for the page. See `contents.setZoomMode` for available
+     * modes. Default is `'default'`.
+     */
+    var zoomMode: String?
 }

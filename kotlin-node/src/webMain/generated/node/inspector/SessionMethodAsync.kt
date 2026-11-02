@@ -139,19 +139,9 @@ sealed external interface SessionMethod {
 
     sealed interface HEAPPROFILER_GETSAMPLINGPROFILE : SessionMethod
 
-    sealed interface NODETRACING_GETCATEGORIES : SessionMethod
+    sealed interface IO_READ : SessionMethod
 
-    sealed interface NODETRACING_START : SessionMethod
-
-    sealed interface NODETRACING_STOP : SessionMethod
-
-    sealed interface NODEWORKER_SENDMESSAGETOWORKER : SessionMethod
-
-    sealed interface NODEWORKER_ENABLE : SessionMethod
-
-    sealed interface NODEWORKER_DISABLE : SessionMethod
-
-    sealed interface NODEWORKER_DETACH : SessionMethod
+    sealed interface IO_CLOSE : SessionMethod
 
     sealed interface NETWORK_DISABLE : SessionMethod
 
@@ -171,11 +161,21 @@ sealed external interface SessionMethod {
 
     sealed interface NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT : SessionMethod
 
+    sealed interface NODETRACING_GETCATEGORIES : SessionMethod
+
+    sealed interface NODETRACING_START : SessionMethod
+
+    sealed interface NODETRACING_STOP : SessionMethod
+
+    sealed interface NODEWORKER_SENDMESSAGETOWORKER : SessionMethod
+
+    sealed interface NODEWORKER_ENABLE : SessionMethod
+
+    sealed interface NODEWORKER_DISABLE : SessionMethod
+
+    sealed interface NODEWORKER_DETACH : SessionMethod
+
     sealed interface TARGET_SETAUTOATTACH : SessionMethod
-
-    sealed interface IO_READ : SessionMethod
-
-    sealed interface IO_CLOSE : SessionMethod
 
     companion object {
         @seskar.js.JsValue("Schema.getDomains")
@@ -382,26 +382,11 @@ sealed external interface SessionMethod {
         @seskar.js.JsValue("HeapProfiler.getSamplingProfile")
         val HEAPPROFILER_GETSAMPLINGPROFILE: HEAPPROFILER_GETSAMPLINGPROFILE
 
-        @seskar.js.JsValue("NodeTracing.getCategories")
-        val NODETRACING_GETCATEGORIES: NODETRACING_GETCATEGORIES
+        @seskar.js.JsValue("IO.read")
+        val IO_READ: IO_READ
 
-        @seskar.js.JsValue("NodeTracing.start")
-        val NODETRACING_START: NODETRACING_START
-
-        @seskar.js.JsValue("NodeTracing.stop")
-        val NODETRACING_STOP: NODETRACING_STOP
-
-        @seskar.js.JsValue("NodeWorker.sendMessageToWorker")
-        val NODEWORKER_SENDMESSAGETOWORKER: NODEWORKER_SENDMESSAGETOWORKER
-
-        @seskar.js.JsValue("NodeWorker.enable")
-        val NODEWORKER_ENABLE: NODEWORKER_ENABLE
-
-        @seskar.js.JsValue("NodeWorker.disable")
-        val NODEWORKER_DISABLE: NODEWORKER_DISABLE
-
-        @seskar.js.JsValue("NodeWorker.detach")
-        val NODEWORKER_DETACH: NODEWORKER_DETACH
+        @seskar.js.JsValue("IO.close")
+        val IO_CLOSE: IO_CLOSE
 
         @seskar.js.JsValue("Network.disable")
         val NETWORK_DISABLE: NETWORK_DISABLE
@@ -430,13 +415,28 @@ sealed external interface SessionMethod {
         @seskar.js.JsValue("NodeRuntime.notifyWhenWaitingForDisconnect")
         val NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT: NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT
 
+        @seskar.js.JsValue("NodeTracing.getCategories")
+        val NODETRACING_GETCATEGORIES: NODETRACING_GETCATEGORIES
+
+        @seskar.js.JsValue("NodeTracing.start")
+        val NODETRACING_START: NODETRACING_START
+
+        @seskar.js.JsValue("NodeTracing.stop")
+        val NODETRACING_STOP: NODETRACING_STOP
+
+        @seskar.js.JsValue("NodeWorker.sendMessageToWorker")
+        val NODEWORKER_SENDMESSAGETOWORKER: NODEWORKER_SENDMESSAGETOWORKER
+
+        @seskar.js.JsValue("NodeWorker.enable")
+        val NODEWORKER_ENABLE: NODEWORKER_ENABLE
+
+        @seskar.js.JsValue("NodeWorker.disable")
+        val NODEWORKER_DISABLE: NODEWORKER_DISABLE
+
+        @seskar.js.JsValue("NodeWorker.detach")
+        val NODEWORKER_DETACH: NODEWORKER_DETACH
+
         @seskar.js.JsValue("Target.setAutoAttach")
         val TARGET_SETAUTOATTACH: TARGET_SETAUTOATTACH
-
-        @seskar.js.JsValue("IO.read")
-        val IO_READ: IO_READ
-
-        @seskar.js.JsValue("IO.close")
-        val IO_CLOSE: IO_CLOSE
     }
 }

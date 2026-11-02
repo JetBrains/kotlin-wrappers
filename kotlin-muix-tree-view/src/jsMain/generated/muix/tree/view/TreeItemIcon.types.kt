@@ -6,6 +6,9 @@ import react.ElementType
 import react.Props
 
 external interface TreeItemIconProps : Props {
+    /**
+     * The status of the item, used to pick the icon (for example expanded or collapsed).
+     */
     var status: UseTreeItemStatus
 
     /**

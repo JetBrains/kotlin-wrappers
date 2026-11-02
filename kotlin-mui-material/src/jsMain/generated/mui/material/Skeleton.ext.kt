@@ -2,6 +2,7 @@
 
 package mui.material
 
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface SkeletonAnimation {
@@ -12,7 +13,7 @@ sealed external interface SkeletonAnimation {
         @JsValue("wave")
         val wave: SkeletonAnimation
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: SkeletonAnimation
     }
 }

@@ -5,8 +5,21 @@ package electron.core
 external interface Protocol {
 // Docs: https://electronjs.org/docs/api/protocol
     /**
+     * The source registered for `scheme` with `protocol.registerSource`, or `null`.
+     *
+     * @experimental
+     */
+    fun getSource(scheme: String): ProtocolSource?
+
+    /**
      * Register a protocol handler for `scheme`. Requests made to URLs with this scheme
      * will delegate to this handler to determine what response should be sent.
+     *
+     * In addition to the standard `Request` fields, `request.initiatorOrigin` is set
+     * to the origin that issued the request (for example `https://example.com`, or
+     * `null` for an opaque origin) when web content made it; it is absent for requests
+     * the browser started itself. Unlike `request.referrer` it is not controlled by
+     * the requesting page, so prefer it when deciding whether to serve a request.
      *
      * Either a `Response` or a `Promise<Response>` can be returned.
      *
@@ -20,160 +33,9 @@ external interface Protocol {
     )
 
     /**
-     * Whether the protocol was successfully intercepted
-     *
-     * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-     * which sends a `Buffer` as a response.
-     *
-     * @deprecated
-     */
-    fun interceptBufferProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether the protocol was successfully intercepted
-     *
-     * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-     * which sends a file as a response.
-     *
-     * @deprecated
-     */
-    fun interceptFileProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether the protocol was successfully intercepted
-     *
-     * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-     * which sends a new HTTP request as a response.
-     *
-     * @deprecated
-     */
-    fun interceptHttpProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: ProtocolResponse) -> Unit) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether the protocol was successfully intercepted
-     *
-     * Same as `protocol.registerStreamProtocol`, except that it replaces an existing
-     * protocol handler.
-     *
-     * @deprecated
-     */
-    fun interceptStreamProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether the protocol was successfully intercepted
-     *
-     * Intercepts `scheme` protocol and uses `handler` as the protocol's new handler
-     * which sends a `string` as a response.
-     *
-     * @deprecated
-     */
-    fun interceptStringProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether `scheme` is already handled.
+     * Whether `scheme` already has a handler or a source.
      */
     fun isProtocolHandled(scheme: String): Boolean
-
-    /**
-     * Whether `scheme` is already intercepted.
-     *
-     * @deprecated
-     */
-    fun isProtocolIntercepted(scheme: String): Boolean
-
-    /**
-     * Whether `scheme` is already registered.
-     *
-     * @deprecated
-     */
-    fun isProtocolRegistered(scheme: String): Boolean
-
-    /**
-     * Whether the protocol was successfully registered
-     *
-     * Registers a protocol of `scheme` that will send a `Buffer` as a response.
-     *
-     * The usage is the same with `registerFileProtocol`, except that the `callback`
-     * should be called with either a `Buffer` object or an object that has the `data`
-     * property.
-     *
-     * Example:
-     *
-     * @deprecated
-     */
-    fun registerBufferProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether the protocol was successfully registered
-     *
-     * Registers a protocol of `scheme` that will send a file as the response. The
-     * `handler` will be called with `request` and `callback` where `request` is an
-     * incoming request for the `scheme`.
-     *
-     * To handle the `request`, the `callback` should be called with either the file's
-     * path or an object that has a `path` property, e.g. `callback(filePath)` or
-     * `callback({ path: filePath })`. The `filePath` must be an absolute path.
-     *
-     * By default the `scheme` is treated like `http:`, which is parsed differently
-     * from protocols that follow the "generic URI syntax" like `file:`.
-     *
-     * @deprecated
-     */
-    fun registerFileProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Whether the protocol was successfully registered
-     *
-     * Registers a protocol of `scheme` that will send an HTTP request as a response.
-     *
-     * The usage is the same with `registerFileProtocol`, except that the `callback`
-     * should be called with an object that has the `url` property.
-     *
-     * @deprecated
-     */
-    fun registerHttpProtocol(
-        scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: ProtocolResponse) -> Unit) -> Unit,
-    ): Boolean
 
     /**
      * > [!NOTE] This method can only be used before the `ready` event of the `app`
@@ -215,68 +77,34 @@ external interface Protocol {
     fun registerSchemesAsPrivileged(customSchemes: js.array.ReadonlyArray<CustomScheme>)
 
     /**
-     * Whether the protocol was successfully registered
+     * Serves `scheme` from directories on disk without a JavaScript handler. Each
+     * request is matched against `routes` (a route with a `host` wins over one
+     * without, then the longest `path` prefix wins), the rest of the URL's path is
+     * resolved inside that route's `root`, and the file is streamed to the requester
+     * the way `file:` URLs are, including from `asar` archives, with `Content-Type`
+     * taken from the file extension. A path that resolves outside `root`, a missing
+     * file, a request that matches no route, or a method other than `GET`/`HEAD` fails
+     * with `net::ERR_FILE_NOT_FOUND`. A URL whose path ends in `/` serves the route's
+     * `index` file.
      *
-     * Registers a protocol of `scheme` that will send a stream as a response.
+     * Use this instead of `protocol.handle` when a scheme only serves an app's own
+     * bundled files: no request touches the main thread, so pages and their
+     * subresources load at the same speed whether or not the main process is busy.
      *
-     * The usage is the same with `registerFileProtocol`, except that the `callback`
-     * should be called with either a `ReadableStream` object or an object that has the
-     * `data` property.
+     * A scheme has either a handler or a source; `protocol.unhandle` removes either,
+     * and `protocol.isProtocolHandled` reports both. `webRequest` listeners apply to
+     * these requests as to any other.
      *
-     * Example:
-     *
-     * It is possible to pass any object that implements the readable stream API (emits
-     * `data`/`end`/`error` events). For example, here's how a file could be returned:
-     *
-     * @deprecated
+     * @experimental
      */
-    fun registerStreamProtocol(
+    fun registerSource(
         scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
+        source: ProtocolSource,
+    )
 
     /**
-     * Whether the protocol was successfully registered
-     *
-     * Registers a protocol of `scheme` that will send a `string` as a response.
-     *
-     * The usage is the same with `registerFileProtocol`, except that the `callback`
-     * should be called with either a `string` or an object that has the `data`
-     * property.
-     *
-     * @deprecated
-     */
-    fun registerStringProtocol(
-        scheme: String,
-        handler: (
-            request: ProtocolRequest,
-            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
-        ) -> Unit,
-    ): Boolean
-
-    /**
-     * Removes a protocol handler registered with `protocol.handle`.
+     * Removes a protocol handler registered with `protocol.handle` or a source
+     * registered with `protocol.registerSource`.
      */
     fun unhandle(scheme: String)
-
-    /**
-     * Whether the protocol was successfully unintercepted
-     *
-     * Remove the interceptor installed for `scheme` and restore its original handler.
-     *
-     * @deprecated
-     */
-    fun uninterceptProtocol(scheme: String): Boolean
-
-    /**
-     * Whether the protocol was successfully unregistered
-     *
-     * Unregisters the custom protocol of `scheme`.
-     *
-     * @deprecated
-     */
-    fun unregisterProtocol(scheme: String): Boolean
 }

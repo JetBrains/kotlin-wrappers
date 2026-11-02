@@ -17,9 +17,6 @@ external interface Cluster : EventEmitter {
      */
     fun fork(env: Any? = definedExternally): Worker
 
-    /** @deprecated since v16.0.0 - use isPrimary. */
-    val isMaster: Boolean
-
     /**
      * True if the process is a primary. This is determined by the `process.env.NODE_UNIQUE_ID`. If `process.env.NODE_UNIQUE_ID`
      * is undefined, then `isPrimary` is `true`.
@@ -55,9 +52,6 @@ external interface Cluster : EventEmitter {
      * @since v0.7.1
      */
     val settings: ClusterSettings
-
-    /** @deprecated since v16.0.0 - use [`.setupPrimary()`](https://nodejs.org/docs/latest-v24.x/api/cluster.html#clustersetupprimarysettings) instead. */
-    fun setupMaster(settings: ClusterSettings = definedExternally)
 
     /**
      * `setupPrimary` is used to change the default 'fork' behavior. Once called, the settings will be present in `cluster.settings`.
@@ -141,8 +135,6 @@ external interface Cluster : EventEmitter {
      */
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-// the handle is a net.Socket or net.Server object, or undefined.
-
     fun emit(
         event: String,
         vararg args: Any?,
@@ -155,17 +147,11 @@ external interface Cluster : EventEmitter {
 
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-// the handle is a net.Socket or net.Server object, or undefined.
-
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-// the handle is a net.Socket or net.Server object, or undefined.
 
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-// the handle is a net.Socket or net.Server object, or undefined.
 
     @web.events.JsEvent("disconnect")
     val disconnectEvent: node.events.EventInstance<js.array.Tuple1<Worker>>

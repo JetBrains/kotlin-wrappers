@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface WatchDirectoryFlags {
+/* enum */
+external class WatchDirectoryFlags
+private constructor() {
     companion object {
         val None: WatchDirectoryFlags
         val Recursive: WatchDirectoryFlags

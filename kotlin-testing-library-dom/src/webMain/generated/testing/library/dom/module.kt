@@ -8,8 +8,6 @@ package testing.library.dom
 
 /* export { prettyFormat }; */
 
-// TypeScript Version: 3.8
-
 /* export { queries, queryHelpers, within }; */
 
 /* export * from './queries'; */
