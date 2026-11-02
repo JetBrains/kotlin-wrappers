@@ -50,15 +50,6 @@ external class Module {
     var loaded: Boolean
 
     /**
-     * The module that first required this one, or `null` if the current module is the
-     * entry point of the current process, or `undefined` if the module was loaded by
-     * something that is not a CommonJS module (e.g. REPL or `import`).
-     * @since v0.1.16
-     * @deprecated Please use `require.main` and `module.children` instead.
-     */
-    var parent: Module?
-
-    /**
      * The directory name of the module. This is usually the same as the
      * `path.dirname()` of the `module.id`.
      * @since v11.14.0

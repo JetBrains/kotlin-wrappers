@@ -4,194 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface WebviewTag : web.html.HTMLElement {
-// Docs: https://electronjs.org/docs/api/webview-tag
-    /**
-     * Fired when a load has committed. This includes navigation within the current
-     * document as well as subframe document-level loads, but does not include
-     * asynchronous resource loads.
-     */
-
-    /**
-     * Fired when the navigation is done, i.e. the spinner of the tab will stop
-     * spinning, and the `onload` event is dispatched.
-     */
-
-    /**
-     * This event is like `did-finish-load`, but fired when the load failed or was
-     * cancelled, e.g. `window.stop()` is invoked.
-     */
-
-    /**
-     * Fired when a frame has done navigation.
-     */
-
-    /**
-     * Corresponds to the points in time when the spinner of the tab starts spinning.
-     */
-
-    /**
-     * Corresponds to the points in time when the spinner of the tab stops spinning.
-     */
-
-    /**
-     * Fired when attached to the embedder web contents.
-     */
-
-    /**
-     * Fired when document in the given frame is loaded.
-     */
-
-    /**
-     * Fired when page title is set during navigation. `explicitSet` is false when
-     * title is synthesized from file url.
-     */
-
-    /**
-     * Fired when page receives favicon urls.
-     */
-
-    /**
-     * Fired when page enters fullscreen triggered by HTML API.
-     */
-
-    /**
-     * Fired when page leaves fullscreen triggered by HTML API.
-     */
-
-    /**
-     * Fired when the guest window logs a console message.
-     *
-     * The following example code forwards all log messages to the embedder's console
-     * without regard for log level or other properties.
-     */
-
-    /**
-     * Fired when a result is available for `webview.findInPage` request.
-     */
-
-    /**
-     * Emitted when a user or the page wants to start navigation. It can happen when
-     * the `window.location` object is changed or a user clicks a link in the page.
-     *
-     * This event will not emit when the navigation is started programmatically with
-     * APIs like `<webview>.loadURL` and `<webview>.back`.
-     *
-     * It is also not emitted during in-page navigation, such as clicking anchor links
-     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-     * this purpose.
-     *
-     * Calling `event.preventDefault()` does **NOT** have any effect.
-     */
-
-    /**
-     * Emitted when a user or the page wants to start navigation anywhere in the
-     * `<webview>` or any frames embedded within. It can happen when the
-     * `window.location` object is changed or a user clicks a link in the page.
-     *
-     * This event will not emit when the navigation is started programmatically with
-     * APIs like `<webview>.loadURL` and `<webview>.back`.
-     *
-     * It is also not emitted during in-page navigation, such as clicking anchor links
-     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-     * this purpose.
-     *
-     * Calling `event.preventDefault()` does **NOT** have any effect.
-     */
-
-    /**
-     * Emitted when any frame (including main) starts navigating. `isInPlace` will be
-     * `true` for in-page navigations.
-     */
-
-    /**
-     * Emitted after a server side redirect occurs during navigation. For example a 302
-     * redirect.
-     */
-
-    /**
-     * Emitted when a navigation is done.
-     *
-     * This event is not emitted for in-page navigations, such as clicking anchor links
-     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-     * this purpose.
-     */
-
-    /**
-     * Emitted when any frame navigation is done.
-     *
-     * This event is not emitted for in-page navigations, such as clicking anchor links
-     * or updating the `window.location.hash`. Use `did-navigate-in-page` event for
-     * this purpose.
-     */
-
-    /**
-     * Emitted when an in-page navigation happened.
-     *
-     * When in-page navigation happens, the page URL changes but does not cause
-     * navigation outside of the page. Examples of this occurring are when anchor links
-     * are clicked or when the DOM `hashchange` event is triggered.
-     */
-
-    /**
-     * Fired when the guest page attempts to close itself.
-     *
-     * The following example code navigates the `webview` to `about:blank` when the
-     * guest attempts to close itself.
-     */
-
-    /**
-     * Fired when the guest page has sent an asynchronous message to embedder page.
-     *
-     * With `sendToHost` method and `ipc-message` event you can communicate between
-     * guest page and embedder page:
-     */
-
-    /**
-     * Fired when the renderer process unexpectedly disappears. This is normally
-     * because it was crashed or killed.
-     */
-
-    /**
-     * Fired when the WebContents is destroyed.
-     */
-
-    /**
-     * Emitted when media starts playing.
-     */
-
-    /**
-     * Emitted when media is paused or done playing.
-     */
-
-    /**
-     * Emitted when a page's theme color changes. This is usually due to encountering a
-     * meta tag:
-     */
-
-    /**
-     * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
-     */
-
-    /**
-     * Emitted when 'Search' is selected for text in its context menu.
-     */
-
-    /**
-     * Emitted when DevTools is opened.
-     */
-
-    /**
-     * Emitted when DevTools is closed.
-     */
-
-    /**
-     * Emitted when DevTools is focused / opened.
-     */
-
-    /**
-     * Emitted when there is a new context menu that needs to be handled.
-     */
-
     /**
      * Adjusts the current text selection starting and ending points in the focused
      * frame by the given amounts. A negative amount moves the selection towards the
@@ -609,7 +421,9 @@ external interface WebviewTag : web.html.HTMLElement {
 
     /**
      * A `boolean`. When this attribute is present the guest page will be allowed to
-     * open new windows. Popups are disabled by default.
+     * open new windows, whether through `window.open()` or a link opened into a new
+     * window (for example a modifier-clicked or `target="_blank"` link). Popups are
+     * disabled by default.
      */
     var allowpopups: Boolean
 
@@ -716,6 +530,13 @@ external interface WebviewTag : web.html.HTMLElement {
      * another value by including an `=`, followed by the value. Special values `yes`
      * and `1` are interpreted as `true`, while `no` and `0` are interpreted as
      * `false`.
+     *
+     * Security-critical preferences cannot be used to make the guest less secure than
+     * its embedder. When the embedder has any of `contextIsolation`, `javascript`,
+     * `nodeIntegration`, `nodeIntegrationInWorker`, `sandbox`,
+     * `nodeIntegrationInSubFrames` or `enableWebSQL` set to its more secure value, the
+     * guest inherits that value and the corresponding `webpreferences` entry is
+     * ignored.
      */
     var webpreferences: String
 

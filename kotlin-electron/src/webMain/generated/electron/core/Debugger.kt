@@ -7,16 +7,6 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class Debugger : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/debugger
-    /**
-     * Emitted when the debugging session is terminated. This happens either when
-     * `webContents` is closed or DevTools is invoked for the attached `webContents`.
-     */
-
-    /**
-     * Emitted whenever the debugging target issues an instrumentation event.
-     */
-
     /**
      * Attaches the debugger to the `webContents`.
      */
@@ -38,6 +28,14 @@ external class Debugger : NodeEventEmitter {
      * indicating the failure of the command.
      *
      * Send given command to the debugging target.
+     *
+     * > [!NOTE]
+     *
+     * * If `sendCommand` is called before the target has navigated (e.g. immediately
+     * after `attach()`), the returned promise may not resolve until navigation occurs.
+     * * If the command's response has no `result` data, as defined by that command's
+     * entry in the remote debugging protocol, the promise resolves with an empty
+     * object (`{}`), not `null` or `undefined`.
      */
     fun sendCommand(
         method: String,

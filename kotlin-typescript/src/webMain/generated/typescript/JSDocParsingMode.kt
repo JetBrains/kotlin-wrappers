@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface JSDocParsingMode {
+/* enum */
+external class JSDocParsingMode
+private constructor() {
     companion object {
         /**
          * Always parse JSDoc comments and include them in the AST.

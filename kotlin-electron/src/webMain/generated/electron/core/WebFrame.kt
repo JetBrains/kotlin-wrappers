@@ -3,8 +3,7 @@
 package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface WebFrame {
-// Docs: https://electronjs.org/docs/api/web-frame
+external interface WebFrame : node.events.EventEmitter {
     /**
      * Attempts to free memory that is no longer being used (like images from a
      * previous navigation).
@@ -57,15 +56,6 @@ external interface WebFrame {
     fun findFrameByName(name: String): WebFrame?
 
     /**
-     * that has the supplied `routingId`, `null` if not found.
-     *
-     * **Deprecated:** Use the new `webFrame.findFrameByToken` API.
-     *
-     * @deprecated
-     */
-    fun findFrameByRoutingId(routingId: Double): WebFrame?
-
-    /**
      * that has the supplied `frameToken`, `null` if not found.
      */
     fun findFrameByToken(frameToken: String): WebFrame?
@@ -76,6 +66,16 @@ external interface WebFrame {
      * current renderer process.
      */
     fun getFrameForSelector(selector: String): WebFrame?
+
+    /**
+     * The IDs of isolated worlds that currently exist for this frame. This does not
+     * include the main world (ID `0`) or Electron's preload world (ID `999`).
+     *
+     * This can be used to discover existing isolated worlds before calling APIs such
+     * as `webFrame.executeJavaScriptInIsolatedWorld(...)` or
+     * `contextBridge.exposeInIsolatedWorld(...)`.
+     */
+    fun getIsolatedWorlds(): js.array.ReadonlyArray<Double>
 
     /**
      * * `images` MemoryUsageDetails
@@ -240,21 +240,13 @@ external interface WebFrame {
     val parent: WebFrame?
 
     /**
-     * An `Integer` representing the unique frame id in the current renderer process.
-     * Distinct WebFrame instances that refer to the same underlying frame will have
-     * the same `routingId`.
-     *
-     * **Deprecated:** Use the new `webFrame.frameToken` API.
-     *
-     * @deprecated
-     */
-    val routingId: Double
-
-    /**
      * A `WebFrame | null` representing top frame in frame hierarchy to which
      * `webFrame` belongs, the property would be `null` if top frame is not in the
      * current renderer process.
      *
      */
     val top: WebFrame?
+
+    @web.events.JsEvent("isolated-world-created")
+    val isolatedWorldCreatedEvent: node.events.EventInstance<js.array.Tuple1<Double>>
 }

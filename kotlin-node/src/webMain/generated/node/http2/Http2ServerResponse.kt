@@ -16,13 +16,6 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
     constructor (stream: ServerHttp2Stream)
 
     /**
-     * See `response.socket`.
-     * @since v8.4.0
-     * @deprecated Since v13.0.0 - Use `socket`.
-     */
-    val connection: Any /* net.Socket | tls.TLSSocket */
-
-    /**
      * Append a single header value to the header object.
      *
      * If the value is an array, this is equivalent to calling this method multiple times.
@@ -73,14 +66,6 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
         name: String,
         value: js.array.ReadonlyArray<String>,
     )
-
-    /**
-     * Boolean value that indicates whether the response has completed. Starts
-     * as `false`. After `response.end()` executes, the value will be `true`.
-     * @since v8.4.0
-     * @deprecated Since v13.4.0,v12.16.0 - Use `writableEnded`.
-     */
-    val finished: Boolean
 
     /**
      * True if headers were sent, false otherwise (read-only).

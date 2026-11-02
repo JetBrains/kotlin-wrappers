@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface Extension {
+/* enum */
+external class Extension
+private constructor() {
     companion object {
         val Ts: Extension
         val Tsx: Extension

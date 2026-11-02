@@ -7,56 +7,11 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class ServiceWorkers : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/service-workers
-    /**
-     * Emitted when a service worker logs something to the console.
-     */
-
-    /**
-     * Emitted when a service worker has been registered. Can occur after a call to
-     * `navigator.serviceWorker.register('/sw.js')` successfully resolves or when a
-     * Chrome extension is loaded.
-     */
-
-    /**
-     * Emitted when a service worker's running status has changed.
-     *
-     * @experimental
-     */
-
-    /**
-     * @experimental
-     */
-
-    /**
-     * @experimental
-     */
-
-    /**
-     * @experimental
-     */
-
-    /**
-     * @experimental
-     */
-
     /**
      * A ServiceWorkerInfo object where the keys are the service worker version ID and
      * the values are the information about that service worker.
      */
     fun getAllRunning(): js.objects.ReadonlyRecord<Double, ServiceWorkerInfo>
-
-    /**
-     * Information about this service worker
-     *
-     * If the service worker does not exist or is not running this method will throw an
-     * exception.
-     *
-     * **Deprecated:** Use the new `serviceWorkers.getInfoFromVersionID` API.
-     *
-     * @deprecated
-     */
-    fun getFromVersionID(versionId: Double): ServiceWorkerInfo
 
     /**
      * Information about this service worker

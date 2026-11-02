@@ -116,18 +116,6 @@ external class TLSSocket : node.net.Socket {
      */
     fun getFinished(): NonSharedBuffer?
 
-    /**
-     * Returns an object representing the peer's certificate. If the peer does not
-     * provide a certificate, an empty object will be returned. If the socket has been
-     * destroyed, `null` will be returned.
-     *
-     * If the full certificate chain was requested, each certificate will include an`issuerCertificate` property containing an object representing its issuer's
-     * certificate.
-     * @since v0.11.4
-     * @param detailed Include the full certificate chain if `true`, otherwise include just the peer's certificate.
-     * @return A certificate object.
-     */
-
     fun getPeerCertificate(detailed: Boolean = definedExternally): Any /* PeerCertificate | DetailedPeerCertificate */
 
     /**
@@ -351,6 +339,9 @@ external class TLSSocket : node.net.Socket {
 
     @web.events.JsEvent("OCSPResponse")
     val OCSPResponseEvent: node.events.EventInstance<js.array.Tuple1<NonSharedBuffer>>
+
+    @web.events.JsEvent("secure")
+    val secureEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("secureConnect")
     val secureConnectEvent: node.events.EventInstance<js.array.Tuple>

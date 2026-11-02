@@ -12,4 +12,5 @@ external interface Settings {
     var maxConcurrentStreams: Double?
     var maxHeaderListSize: Double?
     var enableConnectProtocol: Boolean?
+    var customSettings: (js.objects.ReadonlyRecord<Number, Double>)?
 }

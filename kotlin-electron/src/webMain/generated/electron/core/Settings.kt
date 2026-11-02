@@ -11,28 +11,14 @@ external interface Settings {
     var openAtLogin: Boolean?
 
     /**
-     * `true` to open the app as hidden. Defaults to `false`. The user can edit this
-     * setting from the System Preferences so
-     * `app.getLoginItemSettings().wasOpenedAsHidden` should be checked when the app is
-     * opened to know the current value. This setting is not available on MAS builds or
-     * on macOS 13 and up.
-     *
-     * @deprecated
-     * @platform darwin
-     */
-    var openAsHidden: Boolean?
-
-    /**
-     * The type of service to add as a login item. Defaults to `mainAppService`. Only
-     * available on macOS 13 and up.
+     * The type of service to add as a login item. Defaults to `mainAppService`.
      *
      * @platform darwin
      */
     var type: (SettingsType)?
 
     /**
-     * The name of the service. Required if `type` is non-default. Only available on
-     * macOS 13 and up.
+     * The name of the service. Required if `type` is non-default.
      *
      * @platform darwin
      */

@@ -7,28 +7,6 @@ package electron.core
 import node.events.EventEmitter as NodeEventEmitter
 
 external class DownloadItem : NodeEventEmitter {
-// Docs: https://electronjs.org/docs/api/download-item
-    /**
-     * Emitted when the download is in a terminal state. This includes a completed
-     * download, a cancelled download (via `downloadItem.cancel()`), and interrupted
-     * download that can't be resumed.
-     *
-     * The `state` can be one of following:
-     *
-     * * `completed` - The download completed successfully.
-     * * `cancelled` - The download has been cancelled.
-     * * `interrupted` - The download has interrupted and can not resume.
-     */
-
-    /**
-     * Emitted when the download has been updated and is not done.
-     *
-     * The `state` can be one of following:
-     *
-     * * `progressing` - The download is in-progress.
-     * * `interrupted` - The download has interrupted and can be resumed.
-     */
-
     /**
      * Cancels the download operation.
      */
@@ -67,6 +45,15 @@ external class DownloadItem : NodeEventEmitter {
      * actual name of saved file will be different.
      */
     fun getFilename(): String
+
+    /**
+     * The origin that started the download (for example `https://example.com`, or
+     * `null` for an opaque origin), or an empty string if the download was not started
+     * by web content (for example `webContents.downloadURL()`). Use this rather than
+     * `getURL()` or the `webContents` to decide whose download it is: the URL is
+     * chosen by the initiator and the `webContents` is the whole tab.
+     */
+    fun getInitiatorOrigin(): String
 
     /**
      * Last-Modified header value.

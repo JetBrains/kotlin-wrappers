@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface InternalSymbolName {
+/* enum */
+external class InternalSymbolName
+private constructor() {
     companion object {
         val Call: InternalSymbolName
         val Constructor: InternalSymbolName

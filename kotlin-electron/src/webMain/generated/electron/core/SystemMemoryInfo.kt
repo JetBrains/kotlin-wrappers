@@ -15,6 +15,16 @@ external interface SystemMemoryInfo {
     var free: Double
 
     /**
+     * The kernel's estimate of the amount of memory available for allocation without
+     * swapping, from `/proc/meminfo` `MemAvailable`. Use this as the memory pressure
+     * signal on Linux; `free` there is `MemFree`, which excludes page cache and other
+     * reclaimable memory.
+     *
+     * @platform linux
+     */
+    var available: Double
+
+    /**
      * The amount of memory that currently has been paged out to storage. Includes
      * memory for file caches, network buffers, and other system services.
      *

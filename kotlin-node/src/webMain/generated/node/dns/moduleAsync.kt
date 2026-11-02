@@ -4,11 +4,4 @@
 
 package node.dns
 
-/**
- * The `dns.promises` API provides an alternative set of asynchronous DNS methods
- * that return `Promise` objects rather than using callbacks. The API is accessible
- * via `import { promises as dnsPromises } from 'node:dns'` or `import dnsPromises from 'node:dns/promises'`.
- * @since v10.6.0
- */
-
 /* export * from "dns/promises"; */

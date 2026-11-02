@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface ProgramUpdateLevel {
+/* enum */
+external class ProgramUpdateLevel
+private constructor() {
     companion object {
         /** Program is updated with same root file names and options */
         val Update: ProgramUpdateLevel

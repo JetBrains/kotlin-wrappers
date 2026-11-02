@@ -4,9 +4,12 @@ package mui.system
 
 import react.PropsWithChildren
 import react.ReactNode
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface GridProps :
     GridBaseProps,
+    HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
     override var sx: SxProps<Theme>?
 }
@@ -51,7 +54,7 @@ external interface GridBaseProps : PropsWithChildren {
     /**
      * Defines the offset value for the type `item` components.
      */
-    var offset: ResponsiveStyleValue<Any /* GridOffset */>?
+    var offset: ResponsiveStyleValue<GridOffset>?
 
     /**
      * The level of the grid starts from `0` and increases when the grid nests
@@ -90,7 +93,7 @@ external interface GridBaseProps : PropsWithChildren {
     /**
      * Defines the size of the the type `item` components.
      */
-    var size: ResponsiveStyleValue<Union /* 'auto' | 'grow' | number | false */>?
+    var size: ResponsiveStyleValue<GridSize>?
 
     /**
      * Defines the space between the type `item` components.

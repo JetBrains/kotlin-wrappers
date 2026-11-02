@@ -27,6 +27,19 @@ import web.url.URL
  * new URL('file:///hello world').pathname;   // Incorrect: /hello%20world
  * fileURLToPath('file:///hello world');      // Correct:   /hello world (POSIX)
  * ```
+ *
+ * **Security Considerations:**
+ *
+ * This function decodes percent-encoded characters, including encoded dot-segments
+ * (`%2e` as `.` and `%2e%2e` as `..`), and then normalizes the resulting path.
+ * This means that encoded directory traversal sequences (such as `%2e%2e`) are
+ * decoded and processed as actual path traversal, even though encoded slashes
+ * (`%2F`, `%5C`) are correctly rejected.
+ *
+ * **Applications must not rely on `fileURLToPath()` alone to prevent directory
+ * traversal attacks.** Always perform explicit path validation and security checks
+ * on the returned path value to ensure it remains within expected boundaries
+ * before using it for file system operations.
  * @since v10.12.0
  * @param url The file URL string or URL object to convert to a path.
  * @return The fully-resolved platform-specific Node.js file path.
@@ -57,6 +70,19 @@ external fun fileURLToPath(
  * new URL('file:///hello world').pathname;   // Incorrect: /hello%20world
  * fileURLToPath('file:///hello world');      // Correct:   /hello world (POSIX)
  * ```
+ *
+ * **Security Considerations:**
+ *
+ * This function decodes percent-encoded characters, including encoded dot-segments
+ * (`%2e` as `.` and `%2e%2e` as `..`), and then normalizes the resulting path.
+ * This means that encoded directory traversal sequences (such as `%2e%2e`) are
+ * decoded and processed as actual path traversal, even though encoded slashes
+ * (`%2F`, `%5C`) are correctly rejected.
+ *
+ * **Applications must not rely on `fileURLToPath()` alone to prevent directory
+ * traversal attacks.** Always perform explicit path validation and security checks
+ * on the returned path value to ensure it remains within expected boundaries
+ * before using it for file system operations.
  * @since v10.12.0
  * @param url The file URL string or URL object to convert to a path.
  * @return The fully-resolved platform-specific Node.js file path.

@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface CompletionTriggerKind {
+/* enum */
+external class CompletionTriggerKind
+private constructor() {
     companion object {
         /** Completion was triggered by typing an identifier, manual invocation (e.g Ctrl+Space) or via API. */
         val Invoked: CompletionTriggerKind

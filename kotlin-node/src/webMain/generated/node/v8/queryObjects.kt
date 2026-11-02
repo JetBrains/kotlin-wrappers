@@ -43,7 +43,6 @@ package node.v8
  * ```
  * @param ctor The constructor that can be used to search on the prototype chain in order to filter target objects in the heap.
  * @since v20.13.0
- * @experimental
  */
 external fun queryObjects(ctor: Function<*>): Any /* number | string[] */
 

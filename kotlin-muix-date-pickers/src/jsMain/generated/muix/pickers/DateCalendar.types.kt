@@ -33,6 +33,9 @@ external interface DateCalendarProps :
      */
     var referenceDate: PickerValidDate?
 
+    /**
+     * A CSS class name applied to the root element.
+     */
     override var className: ClassName?
 
     /**
