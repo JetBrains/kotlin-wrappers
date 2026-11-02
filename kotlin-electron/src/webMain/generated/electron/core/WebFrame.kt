@@ -3,8 +3,7 @@
 package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-external interface WebFrame {
-// Docs: https://electronjs.org/docs/api/web-frame
+external interface WebFrame : node.events.EventEmitter {
     /**
      * Attempts to free memory that is no longer being used (like images from a
      * previous navigation).
@@ -67,6 +66,16 @@ external interface WebFrame {
      * current renderer process.
      */
     fun getFrameForSelector(selector: String): WebFrame?
+
+    /**
+     * The IDs of isolated worlds that currently exist for this frame. This does not
+     * include the main world (ID `0`) or Electron's preload world (ID `999`).
+     *
+     * This can be used to discover existing isolated worlds before calling APIs such
+     * as `webFrame.executeJavaScriptInIsolatedWorld(...)` or
+     * `contextBridge.exposeInIsolatedWorld(...)`.
+     */
+    fun getIsolatedWorlds(): js.array.ReadonlyArray<Double>
 
     /**
      * * `images` MemoryUsageDetails
@@ -237,4 +246,7 @@ external interface WebFrame {
      *
      */
     val top: WebFrame?
+
+    @web.events.JsEvent("isolated-world-created")
+    val isolatedWorldCreatedEvent: node.events.EventInstance<js.array.Tuple1<Double>>
 }

@@ -112,5 +112,22 @@ open external class Menu : NodeEventEmitter {
          * one. It contains standard items such as `File`, `Edit`, `View`, and `Window`.
          */
         fun setApplicationMenu(menu: Menu?)
+
+        /**
+         * Sets the colors used to highlight the hovered or keyboard-focused item in every
+         * menu the app shows, including context menus and the menu bar's dropdowns. Light
+         * and dark colors are set separately, and any color left unset keeps the default
+         * for that mode. Each call replaces the colors set by any previous call. Passing
+         * `null` restores the defaults.
+         *
+         * Menus opened after the call use the new colors. The colors are not applied while
+         * Windows high contrast mode or forced colors are active, so the user's system
+         * colors take priority.
+         *
+         * This method has no effect on macOS and Linux.
+         *
+         * @platform win32
+         */
+        fun setHighlightColors(options: HighlightColorsOptions?)
     }
 }

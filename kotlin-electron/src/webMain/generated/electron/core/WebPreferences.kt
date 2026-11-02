@@ -102,6 +102,11 @@ external interface WebPreferences {
     var disableHtmlFullscreenWindowResize: Boolean?
 
     /**
+     * Whether to disable the wake locks of the WebContents. Default is `false`.
+     */
+    var disableWakeLocks: Boolean?
+
+    /**
      * A list of feature strings separated by `,`, like `CSSVariables,KeyboardEventKey`
      * to enable. The full list of supported feature strings can be found in the
      * RuntimeEnabledFeatures.json5 file.

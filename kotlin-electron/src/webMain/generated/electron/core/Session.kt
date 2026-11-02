@@ -294,6 +294,15 @@ external class Session : NodeEventEmitter {
     fun preconnect(options: PreconnectOptions)
 
     /**
+     * Registers a local AI handler `UtilityProcess`. To clear the handler, call
+     * `registerLocalAIHandler(null)`, which will disconnect any existing Prompt API
+     * sessions and destroy any `LanguageModelUtility` instances.
+     *
+     * @experimental
+     */
+    fun registerLocalAIHandler(handler: UtilityProcess?)
+
+    /**
      * Registers preload script that will be executed in its associated context type in
      * this session. For `frame` contexts, this will run prior to any preload defined
      * in the web preferences of a WebContents. In-page navigations do not rerun the
@@ -468,6 +477,14 @@ external class Session : NodeEventEmitter {
      * `setPermissionRequestHandler(null)`.  Please note that you must also implement
      * `setPermissionCheckHandler` to get complete permission handling. Most web APIs
      * do a permission check and then make a permission request if the check is denied.
+     *
+     * Both `media` and `display-capture` requests carry a MediaAccessPermissionRequest
+     * as `details`. A `media` request is for camera and/or microphone devices, while a
+     * `display-capture` request is for the screen, a window or a tab (whether made
+     * through `getDisplayMedia` or through `getUserMedia` with `chromeMediaSource`
+     * constraints). Applications that allow camera and microphone access but want to
+     * control screen sharing separately should handle the two permissions
+     * individually:
      */
     fun setPermissionRequestHandler(
         handler: (
@@ -714,6 +731,17 @@ external class Session : NodeEventEmitter {
             ) -> Unit,
                     >,
             >
+
+    @web.events.JsEvent("select-webauthn-authenticator")
+    val selectWebauthnAuthenticatorEvent:
+            node.events.EventInstance<
+                    js.array.Tuple2<
+                            Event<SessionSelectWebauthnAuthenticatorEventParams>,
+                                (
+                        authenticatorName: String?, /* use undefined for default */
+                    ) -> Unit,
+                            >,
+                    >
 
     @web.events.JsEvent("serial-port-added")
     val serialPortAddedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SerialPort, WebContents>>

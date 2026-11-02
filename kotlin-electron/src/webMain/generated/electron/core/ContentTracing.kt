@@ -5,37 +5,6 @@ package electron.core
 external interface ContentTracing {
 // Docs: https://electronjs.org/docs/api/content-tracing
     /**
-     * Resolves once heap profiling has been enabled.
-     *
-     * Enable heap profiling for MemoryInfra traces. Equivalent to the `--memlog`
-     * switch in Chrome.
-     *
-     * Only takes effect if the `disabled-by-default-memory-infra` category is
-     * included.
-     *
-     * Needs to be called before `contentTracing.startRecording()`.
-     *
-     * Usage:
-     *
-     * To view the recorded heap dumps:
-     *
-     * * Download the breakpad symbols for your Electron version from the Electron
-     * GitHub releases
-     * * Clone the Electron source code
-     * * In your Chromium checkout for Electron, run this command to symbolicate the
-     * heap dump:
-     * * Open the symbolicated trace in `chrome://tracing` (the Perfetto UI does not
-     * support memory dumps yet)
-     * * Click on one of the `M` symbols
-     * * Click on a `☰` triple bar icon (e.g., in the `malloc` column)
-     *
-     * [Image: Screenshot showing how to view a heapdump in Chromium's tracing view]
-     *
-     * @experimental
-     */
-    fun enableHeapProfiling(options: EnableHeapProfilingOptions = definedExternally): js.promise.Promise<js.void.Void>
-
-    /**
      * resolves with an array of category groups once all child processes have
      * acknowledged the `getCategories` request
      *
@@ -69,7 +38,10 @@ external interface ContentTracing {
      * soon as they receive the EnableRecording request.
      *
      * If a recording is already running, the promise will be immediately resolved, as
-     * only one trace operation can be in progress at a time.
+     * only one trace operation can be in progress at a time. If
+     * `options.nativeHeapProfiling` is set while a recording is already running, the
+     * promise is rejected instead, since the already-running recording's options can't
+     * be changed to turn on heap profiling.
      */
     fun startRecording(options: TraceConfig): js.promise.Promise<js.void.Void>
 
@@ -83,7 +55,10 @@ external interface ContentTracing {
      * soon as they receive the EnableRecording request.
      *
      * If a recording is already running, the promise will be immediately resolved, as
-     * only one trace operation can be in progress at a time.
+     * only one trace operation can be in progress at a time. If
+     * `options.nativeHeapProfiling` is set while a recording is already running, the
+     * promise is rejected instead, since the already-running recording's options can't
+     * be changed to turn on heap profiling.
      */
     fun startRecording(options: TraceCategoriesAndOptions): js.promise.Promise<js.void.Void>
 
@@ -102,6 +77,12 @@ external interface ContentTracing {
      * Trace data will be written into `resultFilePath`. If `resultFilePath` is empty
      * or not provided, trace data will be written to a temporary file, and the path
      * will be returned in the promise.
+     *
+     * Trace data is written in the Perfetto protobuf format.
+     *
+     * Heap profiling samples record instruction addresses and module build IDs rather
+     * than function names. To symbolize them, use the symbols published for the
+     * matching Electron release with Chromium's `symbolize_trace` tool.
      */
     fun stopRecording(resultFilePath: String = definedExternally): js.promise.Promise<String>
 }

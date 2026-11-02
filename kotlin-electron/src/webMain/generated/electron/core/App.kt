@@ -53,7 +53,71 @@ external interface App : node.events.EventEmitter {
      * generates and persists a per-`session` metadata secret so that credentials
      * created in one partition are not visible to another.
      *
-     * With the matching entitlement in your app's `entitlements.plist`:
+     * When `platformPasskeys` is `true`, passkey operations use Apple's
+     * `ASAuthorizationController` which delegates to the system's configured
+     * Credential Provider Extensions. This enables the same passkey experience as
+     * Safari — credentials are available across all devices signed into the same
+     * account. Unlike Touch ID credentials, platform passkeys are stored by the
+     * credential provider and scoped to the relying party, not to Electron: they are
+     * shared across all `session` partitions and with any other app or browser
+     * associated with the same domain. Platform passkeys cannot serve cross-origin
+     * (iframe) requests; those requests are left to the other available authenticators
+     * (Touch ID supports iframes) and a warning is logged to the DevTools console. The
+     * `prf` and `largeBlob` WebAuthn extensions are not currently supported by this
+     * authenticator — `prf` inputs are ignored, and a `create()` call with `largeBlob:
+     * { support: 'required' }` fails.
+     *
+     * With the matching entitlements in your app's `entitlements.plist`:
+     *
+     * For platform passkeys, your app needs the Associated Domains entitlement plus an
+     * application identifier, both in the same `entitlements.plist`:
+     *
+     * Listing these entitlements is **not** sufficient on its own — unlike most
+     * entitlements, `com.apple.developer.associated-domains` is _provisioning-profile
+     * backed_. For platform passkeys to work, **all** of the following must hold:
+     *
+     * * In the Apple Developer portal, your App ID (`com.example.app`) has the
+     * **Associated Domains** capability enabled, and you have created a provisioning
+     * profile for that App ID.
+     * * That provisioning profile is **embedded in the built app bundle** at
+     * `Contents/embedded.provisionprofile`. This is what authorizes the
+     * associated-domains entitlement at runtime; without an embedded profile macOS
+     * silently ignores the `webcredentials` association and the request fails. (Xcode
+     * and `@electron/osx-sign` embed the profile for you; if you sign manually, copy
+     * it into the bundle before signing.)
+     * * The app is signed (ad-hoc / unsigned builds do not qualify). Both distribution
+     * and development signing work — for development builds, use the developer-mode
+     * path described below.
+     * * `com.apple.application-identifier` matches the profile's App ID. Without it,
+     * `ASAuthorizationController` fails with "The calling process does not have an
+     * application identifier" — this is `ASAuthorizationError` code 1004.
+     * * The relying party's domain (`example.com` above) serves a valid
+     * `apple-app-site-association` file over HTTPS at
+     * `/.well-known/apple-app-site-association` containing a `webcredentials` entry
+     * whose `apps` array lists this app's `<TEAM_ID>.<BUNDLE_ID>`.
+     * * The relying party ID of each request matches that associated domain.
+     *
+     * If these aren't satisfied, `ASAuthorizationController` fails before it can
+     * present the passkey sheet. The request surfaces to the page as a bare
+     * `NotAllowedError` with no further detail (Electron logs an explanatory message
+     * to the DevTools console on this path). Because the association is domain-based,
+     * platform passkeys always require a real associated domain and its AASA file —
+     * there is no `localhost` rpId escape hatch as there is in browsers.
+     *
+     * To test against your domain with a development-signed build (before shipping a
+     * distribution profile), append `?mode=developer` to the entitlement value and
+     * enable developer mode on the machine with `swcutil developer-mode -e true`. This
+     * makes macOS fetch the AASA directly from the domain — bypassing Apple's CDN
+     * cache — and honor the association for a development-signed app. You still need
+     * the embedded development provisioning profile described above:
+     *
+     * > [!NOTE] Because the request is fulfilled by the system credential provider
+     * (not a browser), the `clientDataJSON` returned to the page reports `origin:
+     * "https://<rpId>"` — the associated domain — rather than the page's own origin.
+     * Relying-party servers that enforce a strict `expectedOrigin` allowlist must
+     * include `https://<rpId>` for verification to succeed. This also means the
+     * relying party cannot distinguish which subdomain of the associated domain
+     * initiated the ceremony.
      *
      * > [!NOTE] Touch ID WebAuthn credentials are device-bound and are not synced via
      * iCloud Keychain. They are only available on Macs with a Secure Enclave (Apple
@@ -304,6 +368,13 @@ external interface App : node.events.EventEmitter {
      * to the npm modules spec. You should usually also specify a `productName` field,
      * which is your application's full capitalized name, and which will be preferred
      * over `name` by Electron.
+     *
+     * Electron uses the application's name to construct the default `userData`
+     * directory. On Windows, neither `productName` nor `name` should contain the
+     * following special characters, which cannot be used in directory or file names:
+     * `<`, `>`, `:`, `"`, `\`, `/`, `|`, `?`, `*`. Using these characters in the
+     * application's name can prevent Electron from creating the default `userData`
+     * directory and cause the application to crash on startup.
      */
     fun getName(): String
 
@@ -864,6 +935,8 @@ external interface App : node.events.EventEmitter {
     /**
      * Overrides the current application's name.
      *
+     * On Windows, avoid the reserved filename characters in `name`.
+     *
      * > [!NOTE] This function overrides the name used internally by Electron; it does
      * not affect the name that the OS uses.
      */
@@ -1104,6 +1177,9 @@ external interface App : node.events.EventEmitter {
      * to the npm modules spec. You should usually also specify a `productName` field,
      * which is your application's full capitalized name, and which will be preferred
      * over `name` by Electron.
+     *
+     * On Windows, the application's name must not contain reserved filename
+     * characters, because it is used to construct the default `userData` directory.
      */
     var name: String
 
