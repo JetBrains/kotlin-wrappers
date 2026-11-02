@@ -131,6 +131,7 @@ external interface MenuItemConstructorOptions {
     /**
      * A badge shown alongside the label, either a system-styled count (`alerts`,
      * `updates`, `new-items`) or a custom string. Only available on macOS 14 and up.
+     * Not displayed in Dock menus.
      *
      * @platform darwin
      */

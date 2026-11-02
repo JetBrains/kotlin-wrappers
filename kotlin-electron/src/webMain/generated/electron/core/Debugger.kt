@@ -28,6 +28,14 @@ external class Debugger : NodeEventEmitter {
      * indicating the failure of the command.
      *
      * Send given command to the debugging target.
+     *
+     * > [!NOTE]
+     *
+     * * If `sendCommand` is called before the target has navigated (e.g. immediately
+     * after `attach()`), the returned promise may not resolve until navigation occurs.
+     * * If the command's response has no `result` data, as defined by that command's
+     * entry in the remote debugging protocol, the promise resolves with an empty
+     * object (`{}`), not `null` or `undefined`.
      */
     fun sendCommand(
         method: String,

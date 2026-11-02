@@ -5,6 +5,13 @@ package electron.core
 external interface Protocol {
 // Docs: https://electronjs.org/docs/api/protocol
     /**
+     * The source registered for `scheme` with `protocol.registerSource`, or `null`.
+     *
+     * @experimental
+     */
+    fun getSource(scheme: String): ProtocolSource?
+
+    /**
      * Register a protocol handler for `scheme`. Requests made to URLs with this scheme
      * will delegate to this handler to determine what response should be sent.
      *
@@ -26,7 +33,7 @@ external interface Protocol {
     )
 
     /**
-     * Whether `scheme` is already handled.
+     * Whether `scheme` already has a handler or a source.
      */
     fun isProtocolHandled(scheme: String): Boolean
 
@@ -70,7 +77,34 @@ external interface Protocol {
     fun registerSchemesAsPrivileged(customSchemes: js.array.ReadonlyArray<CustomScheme>)
 
     /**
-     * Removes a protocol handler registered with `protocol.handle`.
+     * Serves `scheme` from directories on disk without a JavaScript handler. Each
+     * request is matched against `routes` (a route with a `host` wins over one
+     * without, then the longest `path` prefix wins), the rest of the URL's path is
+     * resolved inside that route's `root`, and the file is streamed to the requester
+     * the way `file:` URLs are, including from `asar` archives, with `Content-Type`
+     * taken from the file extension. A path that resolves outside `root`, a missing
+     * file, a request that matches no route, or a method other than `GET`/`HEAD` fails
+     * with `net::ERR_FILE_NOT_FOUND`. A URL whose path ends in `/` serves the route's
+     * `index` file.
+     *
+     * Use this instead of `protocol.handle` when a scheme only serves an app's own
+     * bundled files: no request touches the main thread, so pages and their
+     * subresources load at the same speed whether or not the main process is busy.
+     *
+     * A scheme has either a handler or a source; `protocol.unhandle` removes either,
+     * and `protocol.isProtocolHandled` reports both. `webRequest` listeners apply to
+     * these requests as to any other.
+     *
+     * @experimental
+     */
+    fun registerSource(
+        scheme: String,
+        source: ProtocolSource,
+    )
+
+    /**
+     * Removes a protocol handler registered with `protocol.handle` or a source
+     * registered with `protocol.registerSource`.
      */
     fun unhandle(scheme: String)
 }

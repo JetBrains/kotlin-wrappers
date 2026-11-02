@@ -341,6 +341,11 @@ external class WebContents : NodeEventEmitter {
     fun getZoomLevel(): Double
 
     /**
+     * The current zoom mode. Can be `default`, `isolated`, `manual`, or `disabled`.
+     */
+    fun getZoomMode(): (WebContentsGetZoomModeResult)
+
+    /**
      * A promise that resolves with a key for the inserted CSS that can later be used
      * to remove the CSS via `contents.removeInsertedCSS(key)`.
      *
@@ -850,11 +855,30 @@ external class WebContents : NodeEventEmitter {
      * for this is `scale := 1.2 ^ level`, and the level is clamped to the range
      * Chromium can display (25% to 500%, about -7.6 to 8.8).
      *
-     * > [!NOTE] The zoom policy at the Chromium level is same-origin, meaning that the
-     * zoom level for a specific domain propagates across all instances of windows with
-     * the same domain. Differentiating the window URLs will make zoom work per-window.
+     * > [!NOTE] The zoom policy at the Chromium level is same-origin by default,
+     * meaning that the zoom level for a specific domain propagates across all
+     * instances of windows with the same domain. To use per-webContents zoom instead,
+     * set the zoom mode to `'isolated'` via `contents.setZoomMode('isolated')`.
      */
     fun setZoomLevel(level: Double)
+
+    /**
+     * Sets the zoom mode for this web contents.
+     *
+     * * `default` - Zoom changes are handled automatically on a per-origin basis.
+     * Other webContents navigated to the same origin will share the same zoom level.
+     * * `isolated` - Zoom changes are handled automatically but on a per-webContents
+     * basis. This webContents will not be affected by zoom changes in other
+     * webContents, and vice versa.
+     * * `manual` - Automatic zoom handling is disabled. The `zoom-changed` event will
+     * still be dispatched, but the page will not actually be zoomed. The zoom level
+     * can be managed manually by the application.
+     * * `disabled` - All zooming in this webContents is disabled. The webContents will
+     * revert to the default zoom level and all zoom changes will be ignored.
+     *
+     * The `isolated` and `manual` zoom modes persist across navigations.
+     */
+    fun setZoomMode(mode: WebContentsSetZoomModeMode)
 
     /**
      * Shows pop-up dictionary that searches the selected word on the page.
@@ -1067,6 +1091,13 @@ external class WebContents : NodeEventEmitter {
      * respectively. The formula for this is `scale := 1.2 ^ level`.
      */
     var zoomLevel: Double
+
+    /**
+     * A `string` property that determines the zoom mode for this web contents.
+     *
+     * See `contents.setZoomMode` for a description of the available modes.
+     */
+    var zoomMode: String
 
     @web.events.JsEvent("audio-state-changed")
     val audioStateChangedEvent:

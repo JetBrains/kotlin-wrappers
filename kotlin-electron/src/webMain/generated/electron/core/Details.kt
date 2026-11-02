@@ -16,9 +16,18 @@ external interface Details {
 
     /**
      * The exit code for the process (e.g. status from waitpid if on POSIX, from
-     * GetExitCodeProcess on Windows).
+     * GetExitCodeProcess on Windows), unless `reason` is `launch-failed`, in which
+     * case `exitCode` will be a platform-specific launch failure error code.
      */
     var exitCode: Double
+
+    /**
+     * The Windows system error code (`GetLastError()`) of the failed launch. Only set
+     * when `reason` is `launch-failed`.
+     *
+     * @platform win32
+     */
+    var systemErrorCode: Double?
 
     /**
      * The non-localized name of the process.

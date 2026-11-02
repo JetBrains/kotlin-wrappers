@@ -28,10 +28,11 @@ external interface WebContentsDidRedirectNavigationEventParams {
     var frame: WebFrameMain?
 
     /**
-     * The frame which initiated the navigation, which can be a parent frame (e.g. via
-     * `window.open` with a frame's name), or null if the navigation was not initiated
-     * by a frame. This can also be null if the initiating frame was deleted before the
-     * event was emitted.
+     * The frame which initiated the navigation. This can be a parent frame (e.g. via
+     * `window.open` with a frame's name), a child frame (e.g. an unsandboxed iframe
+     * navigating its parent via `<a target="_top">`), or null if the navigation was
+     * not initiated by a frame. This can also be null if the initiating frame was
+     * deleted before the event was emitted.
      */
     var initiator: WebFrameMain?
 }

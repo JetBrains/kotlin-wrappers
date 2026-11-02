@@ -24,9 +24,19 @@ external interface BaseWindowConstructorOptions {
 
     /**
      * Whether the window should always stay on top of other windows. Default is
-     * `false`.
+     * `false`. Not supported on Wayland (Linux).
      */
     var alwaysOnTop: Boolean?
+
+    /**
+     * Creates the native window in the process of this app shim, so that it belongs to
+     * the shim's Dock icon and not to your app's. See AppShimHost for what affordances
+     * are granted to the window.
+     *
+     * @experimental
+     * @platform darwin
+     */
+    var appShim: AppShimHost?
 
     /**
      * Auto hide the menu bar unless the `Alt` key is pressed. Default is `false`.
@@ -188,6 +198,15 @@ external interface BaseWindowConstructorOptions {
     var movable: Boolean?
 
     /**
+     * A unique identifier for the window, used internally by Electron to enable
+     * features such as state persistence. Each window must have a distinct name. It
+     * can only be reused after the corresponding window has been destroyed. An error
+     * is thrown if the name is already in use. This is not the visible title shown to
+     * users on the title bar.
+     */
+    var name: String?
+
+    /**
      * Set the initial opacity of the window, between 0.0 (fully transparent) and 1.0
      * (fully opaque). This is only implemented on Windows and macOS.
      *
@@ -322,6 +341,14 @@ external interface BaseWindowConstructorOptions {
      * Window's width in pixels. Default is `800`.
      */
     var width: Double?
+
+    /**
+     * Configures or enables the persistence of window state (position, size, maximized
+     * state, etc.) across application restarts. Has no effect if window `name` is not
+     * provided. Automatically disabled when there is no available display.
+     * _Experimental_
+     */
+    var windowStatePersistence: (Any /* (WindowStatePersistence) | (boolean) */)?
 
     /**
      * (**required** if y is used) Window's left offset from screen. Default is to

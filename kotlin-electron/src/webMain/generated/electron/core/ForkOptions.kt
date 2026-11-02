@@ -84,9 +84,11 @@ external interface ForkOptions {
      * With this flag, all HTTP 401 and 407 network requests created via the net module
      * will allow responding to them via the `login` event on the `UtilityProcess`
      * instance when a `session` is provided, or via the `app#login` event in the main
-     * process when using the default system network context. Without this flag, auth
-     * challenges are handled by the default `login` event on the `ClientRequest`
-     * object. Default is `false`.
+     * process when using the default system network context. This flag also routes
+     * client-certificate selection to the `app#select-client-certificate` event in the
+     * main process; without it, `net` requests from the utility process proceed
+     * without a client certificate. Without this flag, auth challenges are handled by
+     * the default `login` event on the `ClientRequest` object. Default is `false`.
      */
     var respondToAuthRequestsFromMainProcess: Boolean?
 }

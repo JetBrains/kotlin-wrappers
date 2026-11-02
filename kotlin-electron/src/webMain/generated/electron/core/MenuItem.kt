@@ -32,6 +32,9 @@ open external class MenuItem {
      * This property can be dynamically changed; setting it to `undefined` removes the
      * badge. Only available on macOS 14 and up.
      *
+     * Badges are not displayed in Dock menus, though the same item shows its badge in
+     * an application menu.
+     *
      * @platform darwin
      */
     var badge: MenuItemBadge?

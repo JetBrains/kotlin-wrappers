@@ -22,6 +22,7 @@ private val OPEN_TYPES = setOf(
     "ImageView",
     "IpcMainServiceWorker",
     "WebSocket",
+    "ClipboardItem",
 )
 
 suspend fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nullable {

@@ -32,6 +32,7 @@ suspend fun main(args: ReadonlyArray<String>) {
             convertUnknownRecordKeyType,
             convertUtilityTypes,
             convertWebviewGenericEventMethods,
+            convertTypeParameterWithStringBound,
         )
         injections = listOf(
             BrowserEventInjection(),
@@ -77,6 +78,9 @@ suspend fun main(args: ReadonlyArray<String>) {
         importInjector = mapOf(
             "AddRepresentationOptions.kt" to listOf(
                 "node.buffer.Buffer",
+            ),
+            "AppShimHost.kt" to listOf(
+                "node.events.EventEmitter as NodeEventEmitter",
             ),
             "BaseWindow.kt" to listOf(
                 "node.buffer.Buffer",

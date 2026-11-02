@@ -24,20 +24,22 @@ external interface CrashReporterStartOptions {
 
     /**
      * If true, crashes generated in the main process will not be forwarded to the
-     * system crash handler. Default is `false`.
+     * system crash handler. This option has no effect on Windows. Default is `false`.
+     *
+     * @platform darwin,linux
      */
     var ignoreSystemCrashHandler: Boolean?
 
     /**
-     * If true, limit the number of crashes uploaded to 1/hour. Default is `false`.
-     *
-     * @platform darwin,win32
+     * If true, limit the number of crashes uploaded to 1/hour. Crash reports over the
+     * limit are not uploaded, but are still stored on disk. Default is `false`.
      */
     var rateLimit: Boolean?
 
     /**
      * If true, crash reports will be compressed and uploaded with `Content-Encoding:
-     * gzip`. Default is `true`.
+     * gzip`. Setting this to `false` while `uploadToServer` is `true` is deprecated
+     * and logs a deprecation warning. Default is `true`.
      */
     var compress: Boolean?
 
@@ -56,7 +58,8 @@ external interface CrashReporterStartOptions {
      * crash reporter has been started. If a key is present in both the global extra
      * parameters and the process-specific extra parameters, then the global one will
      * take precedence. By default, `productName` and the app version are included, as
-     * well as the Electron version.
+     * well as the Electron version. Global extra parameters are not returned by
+     * `getParameters()`.
      */
     var globalExtra: js.objects.ReadonlyRecord<String, String>?
 }

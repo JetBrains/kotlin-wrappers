@@ -295,4 +295,10 @@ external interface WebPreferences {
      * The default zoom factor of the page, `3.0` represents `300%`. Default is `1.0`.
      */
     var zoomFactor: Double?
+
+    /**
+     * The initial zoom mode for the page. See `contents.setZoomMode` for available
+     * modes. Default is `'default'`.
+     */
+    var zoomMode: String?
 }

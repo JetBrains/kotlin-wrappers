@@ -240,6 +240,8 @@ open external class BaseWindow : NodeEventEmitter {
 
     /**
      * Whether the window is always on top of other windows.
+     *
+     * Not supported on Wayland (Linux).
      */
     open fun isAlwaysOnTop(): Boolean
 
@@ -261,6 +263,10 @@ open external class BaseWindow : NodeEventEmitter {
 
     /**
      * Whether the window is destroyed.
+     *
+     * > [!NOTE] Once a window is destroyed, accessing most of its other properties and
+     * methods throws `Object has been destroyed`, so callbacks that may run after the
+     * window is gone should guard with `isDestroyed()`.
      */
     open fun isDestroyed(): Boolean
 
@@ -556,6 +562,8 @@ open external class BaseWindow : NodeEventEmitter {
      * Sets whether the window should show always on top of other windows. After
      * setting this, the window is still a normal window, not a toolbox window which
      * can not be focused on.
+     *
+     * Not supported on Wayland (Linux).
      */
     fun setAlwaysOnTop(
         flag: Boolean,
@@ -695,6 +703,16 @@ open external class BaseWindow : NodeEventEmitter {
      * it calls SetWindowDisplayAffinity with `WDA_EXCLUDEFROMCAPTURE`. For Windows 10
      * version 2004 and up the window will be removed from capture entirely, older
      * Windows versions behave as if `WDA_MONITOR` is applied capturing a black window.
+     * The change takes effect with the next desktop composition, not when the call
+     * returns, so a capture started immediately afterwards can still contain the
+     * window.
+     *
+     * Protection also applies in a Windows remote session. A Remote Desktop client
+     * still shows the window to the remote user, but remote access software that works
+     * by capturing the desktop cannot. To leave windows unprotected in remote sessions
+     * instead, disable the `AllowWindowCaptureExclusionInRemoteSessions` Chromium
+     * feature at the start of your main script. `win.isContentProtected()` still
+     * returns `true` in that case.
      *
      * @platform darwin,win32
      */
@@ -786,6 +804,16 @@ open external class BaseWindow : NodeEventEmitter {
      * Linux this is supported on both X11 and Wayland. On X11 the X server has applied
      * the window's new input shape when the call returns; on Wayland the new input
      * region is applied with the window's next frame.
+     *
+     * > [!NOTE] On Windows, `forward: true` stops working temporarily when the active
+     * window is running at a higher integrity level (e.g., elevated/Administrator)
+     * than your Electron app. Since Electron typically runs at standard user
+     * privilege, this occurs when an elevated window—such as Task Manager or an
+     * installer—takes focus. This is due to User Interface Privacy Isolation (UIPI).
+     *
+     * To work around it, your app must be run with Administrator privileges or
+     * configured with UIAccess privileges (see the Background section under the
+     * Reference section of this page).
      */
     open fun setIgnoreMouseEvents(
         ignore: Boolean,
@@ -891,13 +919,14 @@ open external class BaseWindow : NodeEventEmitter {
      * Remove progress bar when progress < 0; Change to indeterminate mode when
      * progress > 1.
      *
-     * On Linux platform, only supports Unity desktop environment, you need to specify
-     * the `*.desktop` file name to `desktopName` field in `package.json`. By default,
-     * it will assume `{app.name}.desktop`.
-     *
      * On Windows, a mode can be passed. Accepted values are `none`, `normal`,
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
+     *
+     * On Linux, the progress bar shows on docks and taskbars that support the
+     * LauncherEntry D-Bus API. It is associated with the app's `.desktop` file, so
+     * `app.setDesktopName` must match the name of the app's actual `.desktop` file.
+     * Indeterminate mode is not supported.
      */
     open fun setProgressBar(
         progress: Double,
@@ -1352,6 +1381,9 @@ open external class BaseWindow : NodeEventEmitter {
     @web.events.JsEvent("new-window-for-tab")
     open val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple>
 
+    @web.events.JsEvent("persisted-state-restored")
+    open val persistedStateRestoredEvent: node.events.EventInstance<js.array.Tuple>
+
     @web.events.JsEvent("query-session-end")
     open val querySessionEndEvent: node.events.EventInstance<js.array.Tuple1<WindowSessionEndEvent>>
 
@@ -1395,6 +1427,16 @@ open external class BaseWindow : NodeEventEmitter {
     open val willResizeEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
+        /**
+         * Clears the saved state for a window with the given name. This removes all
+         * persisted window bounds, display mode, and work area information that was
+         * previously saved when `windowStatePersistence` was enabled.
+         *
+         * If the window `name` is empty or the window state doesn't exist, the method will
+         * log a warning.
+         */
+        fun clearPersistedState(name: String)
+
         /**
          * The window with the given `id`.
          */

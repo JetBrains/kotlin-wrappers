@@ -178,8 +178,7 @@ open external class BrowserWindow : BaseWindow {
     override fun getNormalBounds(): Rectangle
 
     /**
-     * between 0.0 (fully transparent) and 1.0 (fully opaque). On Linux, always returns
-     * 1.
+     * between 0.0 (fully transparent) and 1.0 (fully opaque).
      */
     override fun getOpacity(): Double
 
@@ -259,6 +258,8 @@ open external class BrowserWindow : BaseWindow {
 
     /**
      * Whether the window is always on top of other windows.
+     *
+     * Not supported on Wayland (Linux).
      */
     override fun isAlwaysOnTop(): Boolean
 
@@ -622,6 +623,8 @@ open external class BrowserWindow : BaseWindow {
      * Sets whether the window should show always on top of other windows. After
      * setting this, the window is still a normal window, not a toolbox window which
      * can not be focused on.
+     *
+     * Not supported on Wayland (Linux).
      */
     fun setAlwaysOnTop(
         flag: Boolean,
@@ -765,7 +768,16 @@ open external class BrowserWindow : BaseWindow {
      * On Windows, it calls `SetWindowDisplayAffinity` with `WDA_EXCLUDEFROMCAPTURE`.
      * For Windows 10 version 2004 and up the window will be removed from capture
      * entirely, older Windows versions behave as if `WDA_MONITOR` is applied capturing
-     * a black window.
+     * a black window. The change takes effect with the next desktop composition, not
+     * when the call returns, so a capture started immediately afterwards can still
+     * contain the window.
+     *
+     * Protection also applies in a Windows remote session. A Remote Desktop client
+     * still shows the window to the remote user, but remote access software that works
+     * by capturing the desktop cannot. To leave windows unprotected in remote sessions
+     * instead, disable the `AllowWindowCaptureExclusionInRemoteSessions` Chromium
+     * feature at the start of your main script. `win.isContentProtected()` still
+     * returns `true` in that case.
      *
      * On macOS, it sets the `NSWindow`'s `sharingType` to `NSWindowSharingNone`.
      * Unfortunately, due to an intentional change in macOS, newer Mac applications
@@ -860,6 +872,16 @@ open external class BrowserWindow : BaseWindow {
      * Linux this is supported on both X11 and Wayland. On X11 the X server has applied
      * the window's new input shape when the call returns; on Wayland the new input
      * region is applied with the window's next frame.
+     *
+     * > [!NOTE] On Windows, `forward: true` stops working temporarily when the active
+     * window is running at a higher integrity level (e.g., elevated/Administrator)
+     * than your Electron app. Since Electron typically runs at standard user
+     * privilege, this occurs when an elevated window—such as Task Manager or an
+     * installer—takes focus. This is due to User Interface Privacy Isolation (UIPI).
+     *
+     * To work around it, your app must be run with Administrator privileges or
+     * configured with UIAccess privileges (see the Background section under the
+     * Reference section of this page).
      */
     override fun setIgnoreMouseEvents(
         ignore: Boolean,
@@ -926,10 +948,8 @@ open external class BrowserWindow : BaseWindow {
     override fun setMovable(movable: Boolean)
 
     /**
-     * Sets the opacity of the window. On Linux, does nothing. Out of bound number
-     * values are clamped to the [0, 1] range.
-     *
-     * @platform win32,darwin
+     * Sets the opacity of the window. Out of bound number values are clamped to the
+     * [0, 1] range.
      */
     override fun setOpacity(opacity: Double)
 
@@ -967,13 +987,14 @@ open external class BrowserWindow : BaseWindow {
      * Remove progress bar when progress < 0; Change to indeterminate mode when
      * progress > 1.
      *
-     * On Linux platform, only supports Unity desktop environment, you need to specify
-     * the `*.desktop` file name to `desktopName` field in `package.json`. By default,
-     * it will assume `{app.name}.desktop`.
-     *
      * On Windows, a mode can be passed. Accepted values are `none`, `normal`,
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
+     *
+     * On Linux, the progress bar shows on docks and taskbars that support the
+     * LauncherEntry D-Bus API. It is associated with the app's `.desktop` file, so
+     * `app.setDesktopName` must match the name of the app's actual `.desktop` file.
+     * Indeterminate mode is not supported.
      */
     override fun setProgressBar(
         progress: Double,
@@ -1404,6 +1425,9 @@ open external class BrowserWindow : BaseWindow {
      *
      * See the `webContents` documentation for its methods and events.
      *
+     * > [!NOTE] Reading this property throws `Object has been destroyed` once the
+     * window has been destroyed; see `win.isDestroyed()`.
+     *
      */
     val webContents: WebContents
 
@@ -1457,6 +1481,9 @@ open external class BrowserWindow : BaseWindow {
 
     @web.events.JsEvent("page-title-updated")
     val pageTitleUpdatedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
+
+    @web.events.JsEvent("persisted-state-restored")
+    override val persistedStateRestoredEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("query-session-end")
     override val querySessionEndEvent: node.events.EventInstance<js.array.Tuple1<WindowSessionEndEvent>>

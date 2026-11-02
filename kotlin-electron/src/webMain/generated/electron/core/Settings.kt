@@ -11,16 +11,14 @@ external interface Settings {
     var openAtLogin: Boolean?
 
     /**
-     * The type of service to add as a login item. Defaults to `mainAppService`. Only
-     * available on macOS 13 and up.
+     * The type of service to add as a login item. Defaults to `mainAppService`.
      *
      * @platform darwin
      */
     var type: (SettingsType)?
 
     /**
-     * The name of the service. Required if `type` is non-default. Only available on
-     * macOS 13 and up.
+     * The name of the service. Required if `type` is non-default.
      *
      * @platform darwin
      */
