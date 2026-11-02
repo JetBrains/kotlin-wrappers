@@ -1,4 +1,4 @@
 package js.reflect
 
-inline fun <T> T.upcast(): T =
+inline fun <T : JsAny?> T.upcast(): T =
     this
