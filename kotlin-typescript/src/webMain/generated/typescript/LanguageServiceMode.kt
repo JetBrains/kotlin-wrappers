@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface LanguageServiceMode {
+/* enum */
+external class LanguageServiceMode
+private constructor() {
     companion object {
         val Semantic: LanguageServiceMode
         val PartialSemantic: LanguageServiceMode

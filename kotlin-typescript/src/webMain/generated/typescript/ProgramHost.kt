@@ -60,36 +60,6 @@ external interface ProgramHost<T : BuilderProgram> {
     /** If provided is used to get the environment variable */
     val getEnvironmentVariable: ((name: String) -> String?)?
 
-    /**
-     * @deprecated supply resolveModuleNameLiterals instead for resolution that can handle newer resolution modes like nodenext
-     *
-     * If provided, used to resolve the module names, otherwise typescript's default module resolution
-     */
-    val resolveModuleNames: (
-        (
-        moduleNames: js.array.ReadonlyArray<String>,
-        containingFile: String,
-        reusedNames: js.array.ReadonlyArray<String>?,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingSourceFile: SourceFile?, /* use undefined for default */
-    ) -> js.array.ReadonlyArray<(ResolvedModule?)>
-    )?
-
-    /**
-     * @deprecated supply resolveTypeReferenceDirectiveReferences instead for resolution that can handle newer resolution modes like nodenext
-     *
-     * If provided, used to resolve type reference directives, otherwise typescript's default resolution
-     */
-    val resolveTypeReferenceDirectives: (
-        (
-        typeReferenceDirectiveNames: Any, /* string[] | readonly FileReference[] */
-        containingFile: String,
-        redirectedReference: ResolvedProjectReference?,
-        options: CompilerOptions,
-        containingFileMode: ResolutionMode, /* use undefined for default */
-    ) -> js.array.ReadonlyArray<(ResolvedTypeReferenceDirective?)>
-    )?
     val resolveModuleNameLiterals: (
         (
         moduleLiterals: js.array.ReadonlyArray<StringLiteralLike>,

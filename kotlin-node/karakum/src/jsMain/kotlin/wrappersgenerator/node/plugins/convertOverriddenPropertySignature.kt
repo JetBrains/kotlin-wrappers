@@ -4,7 +4,10 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import js.reflect.invoke
-import typescript.*
+import typescript.SyntaxKind
+import typescript.isIdentifier
+import typescript.isInterfaceDeclaration
+import typescript.isPropertySignature
 import wrappersgenerator.node.plugins.SignatureOverrideConfig.Alias
 import wrappersgenerator.node.plugins.SignatureOverrideConfig.Preserve
 
@@ -107,9 +110,6 @@ private val overriddenProps = mapOf(
     ),
 
     // http
-    "AgentOptions" to mapOf(
-        "keepAlive" to Preserve
-    ),
     "ClientRequestArgs" to mapOf(
         "family" to Preserve
     ),

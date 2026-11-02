@@ -7,9 +7,18 @@ import react.ReactNode
 import web.dom.ElementId
 
 external interface TreeItemProviderProps : PropsWithChildren {
+    /**
+     * The content of the component.
+     */
     override var children: ReactNode?
 
+    /**
+     * The id of the item.
+     */
     var itemId: String
 
+    /**
+     * The id attribute of the item.
+     */
     var id: ElementId?
 }

@@ -11,7 +11,9 @@ package tauri.apps.api.window
  *
  * @since 2.0.0
  */
-sealed external interface EffectState {
+/* enum */
+external class EffectState
+private constructor() {
     companion object {
         /**
          *  Make window effect state follow the window's active state **macOS only**

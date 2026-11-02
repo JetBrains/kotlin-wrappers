@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface JsxEmit {
+/* enum */
+external class JsxEmit
+private constructor() {
     companion object {
         val None: JsxEmit
         val Preserve: JsxEmit

@@ -11,11 +11,6 @@ open external class View : NodeEventEmitter {
      * View
      */
     constructor ()
-// Docs: https://electronjs.org/docs/api/view
-    /**
-     * Emitted when the view's bounds have changed in response to being laid out. The
-     * new bounds can be retrieved with `view.getBounds()`.
-     */
 
     /**
      * If the same View is added to a parent which already contains it, it will be
@@ -42,6 +37,12 @@ open external class View : NodeEventEmitter {
      * no-op.
      */
     fun removeChildView(view: View)
+
+    /**
+     * > [!NOTE] You must set a background color with an alpha channel (e.g.
+     * `#80ffffff`) in order for the blur effect to be visible.
+     */
+    fun setBackgroundBlur(blurRadius: Double)
 
     /**
      * Examples of valid `color` values:

@@ -11,14 +11,6 @@ open external class Menu : NodeEventEmitter {
      * Menu
      */
     constructor ()
-// Docs: https://electronjs.org/docs/api/menu
-    /**
-     * Emitted when a popup is closed either manually or with `menu.closePopup()`.
-     */
-
-    /**
-     * Emitted when `menu.popup()` is called.
-     */
 
     /**
      * Appends the `menuItem` to the menu.
@@ -100,6 +92,10 @@ open external class Menu : NodeEventEmitter {
          * Sets `menu` as the application menu on macOS. On Windows and Linux, the `menu`
          * will be set as each window's top menu.
          *
+         * On Linux, the menu bar uses GTK theme colors when GTK is available. If GTK
+         * cannot initialize, it uses Chromium's built-in light or dark menu colors,
+         * following `nativeTheme.shouldUseDarkColors`.
+         *
          * Also on Windows and Linux, you can use a `&` in the top-level item name to
          * indicate which letter should get a generated accelerator. For example, using
          * `&File` for the file menu would result in a generated `Alt-F` accelerator that
@@ -116,5 +112,22 @@ open external class Menu : NodeEventEmitter {
          * one. It contains standard items such as `File`, `Edit`, `View`, and `Window`.
          */
         fun setApplicationMenu(menu: Menu?)
+
+        /**
+         * Sets the colors used to highlight the hovered or keyboard-focused item in every
+         * menu the app shows, including context menus and the menu bar's dropdowns. Light
+         * and dark colors are set separately, and any color left unset keeps the default
+         * for that mode. Each call replaces the colors set by any previous call. Passing
+         * `null` restores the defaults.
+         *
+         * Menus opened after the call use the new colors. The colors are not applied while
+         * Windows high contrast mode or forced colors are active, so the user's system
+         * colors take priority.
+         *
+         * This method has no effect on macOS and Linux.
+         *
+         * @platform win32
+         */
+        fun setHighlightColors(options: HighlightColorsOptions?)
     }
 }

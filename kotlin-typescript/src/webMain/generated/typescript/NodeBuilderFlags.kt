@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface NodeBuilderFlags : js.numbers.Bitmask<NodeBuilderFlags> {
+/* enum */
+external class NodeBuilderFlags
+private constructor() : js.numbers.Bitmask<NodeBuilderFlags> {
     companion object {
         val None: NodeBuilderFlags
         val NoTruncation: NodeBuilderFlags

@@ -2,6 +2,7 @@
 
 package mui.material
 
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface TabsVariant {
@@ -45,10 +46,10 @@ sealed external interface TabsScrollButtons {
         @JsValue("auto")
         val auto: TabsScrollButtons
 
-        @JsValue("true")
+        @JsRawValue("true")
         val `true`: TabsScrollButtons
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: TabsScrollButtons
     }
 }

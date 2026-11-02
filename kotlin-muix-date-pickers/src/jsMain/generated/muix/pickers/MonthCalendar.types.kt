@@ -14,10 +14,19 @@ external interface MonthCalendarProps :
     ExportedMonthCalendarProps,
     PropsWithClassName,
     PropsWithSx {
+    /**
+     * If `true`, the component is focused when it mounts.
+     */
     var autoFocus: Boolean?
 
+    /**
+     * A CSS class name applied to the root element.
+     */
     override var className: ClassName?
 
+    /**
+     * @ignore
+     */
     var currentMonth: PickerValidDate?
 
     /**
@@ -72,12 +81,24 @@ external interface MonthCalendarProps :
      */
     var disableHighlightToday: Boolean?
 
+    /**
+     * @ignore
+     */
     var onMonthFocus: ((month: Number) -> Unit)?
 
+    /**
+     * @ignore
+     */
     var hasFocus: Boolean?
 
+    /**
+     * @ignore
+     */
     var onFocusedViewChange: ((hasFocus: Boolean) -> Unit)?
 
+    /**
+     * @ignore
+     */
     var gridLabelId: String?
 }
 

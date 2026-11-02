@@ -4,47 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface SystemPreferences : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/system-preferences
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32
-     */
-
     /**
      * A promise that resolves with `true` if consent was granted and `false` if it was
      * denied. If an invalid `mediaType` is passed, the promise will be rejected. If an
@@ -349,18 +308,6 @@ external interface SystemPreferences : node.events.EventEmitter {
      * @platform darwin
      */
     fun unsubscribeWorkspaceNotification(id: Double)
-
-    /**
-     * A `boolean` property which determines whether the app avoids using
-     * semitransparent backgrounds. This maps to
-     * NSWorkspace.accessibilityDisplayShouldReduceTransparency
-     *
-     * **Deprecated:** Use the new `nativeTheme.prefersReducedTransparency` API.
-     *
-     * @deprecated
-     * @platform darwin
-     */
-    var accessibilityDisplayShouldReduceTransparency: Boolean
 
     /**
      * A `string` property that can be `dark`, `light` or `unknown`.

@@ -33,13 +33,6 @@ open external class Http2ServerRequest : node.stream.Readable {
     val authority: String
 
     /**
-     * See `request.socket`.
-     * @since v8.4.0
-     * @deprecated Since v13.0.0 - Use `socket`.
-     */
-    val connection: Any /* net.Socket | tls.TLSSocket */
-
-    /**
      * The `request.complete` property will be `true` if the request has
      * been completed, aborted, or destroyed.
      * @since v12.10.0

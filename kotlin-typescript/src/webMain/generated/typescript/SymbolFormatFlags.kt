@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface SymbolFormatFlags : js.numbers.Bitmask<SymbolFormatFlags> {
+/* enum */
+external class SymbolFormatFlags
+private constructor() : js.numbers.Bitmask<SymbolFormatFlags> {
     companion object {
         val None: SymbolFormatFlags
         val WriteTypeParametersOrArguments: SymbolFormatFlags

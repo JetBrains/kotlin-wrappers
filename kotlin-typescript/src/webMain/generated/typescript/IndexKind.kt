@@ -4,7 +4,9 @@
 
 package typescript
 
-sealed external interface IndexKind {
+/* enum */
+external class IndexKind
+private constructor() {
     companion object {
         val String: IndexKind
         val Number: IndexKind

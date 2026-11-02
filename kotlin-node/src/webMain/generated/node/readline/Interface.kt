@@ -318,6 +318,9 @@ open external class _Interface :
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>
 
+    @web.events.JsEvent("error")
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
+
     @web.events.JsEvent("line")
     open val lineEvent: node.events.EventInstance<js.array.Tuple1<String>>
 

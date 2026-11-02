@@ -185,22 +185,6 @@ external class TrayIcon : Resource {
      *
      * - **Linux**: Unsupported.
      *
-     * @deprecated use {@linkcode TrayIcon.setShowMenuOnLeftClick} instead.
-     *
-     * @example
-     * ```typescript
-     * await tray.setShowMenuOnLeftClick(false);
-     * ```
-     */
-    fun setMenuOnLeftClick(onLeft: Boolean): js.promise.Promise<js.void.Void>
-
-    /**
-     *  Disable or enable showing the tray menu on left click.
-     *
-     * #### Platform-specific:
-     *
-     * - **Linux**: Unsupported.
-     *
      * Disable it to handle left clicks yourself through the
      * {@linkcode TrayIconOptions.action} handler while still showing the menu on
      * right click.

@@ -7,8 +7,6 @@ external interface ImportTypeNode : NodeWithTypeArguments {
     val isTypeOf: Boolean
     val argument: TypeNode
 
-    /** @deprecated */
-    val assertions: ImportTypeAssertionContainer?
     val attributes: ImportAttributes?
     val qualifier: EntityName?
 }

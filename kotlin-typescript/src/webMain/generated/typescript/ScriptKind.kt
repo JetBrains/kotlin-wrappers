@@ -4,7 +4,8 @@
 
 package typescript
 
-sealed external interface ScriptKind {
+sealed /* enum */
+external interface ScriptKind {
     sealed interface Unknown : ScriptKind
 
     sealed interface JS : ScriptKind

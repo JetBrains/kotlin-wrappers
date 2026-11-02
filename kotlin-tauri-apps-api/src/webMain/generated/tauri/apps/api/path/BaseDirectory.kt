@@ -7,7 +7,9 @@ package tauri.apps.api.path
 /**
  * @since 2.0.0
  */
-sealed external interface BaseDirectory {
+/* enum */
+external class BaseDirectory
+private constructor() {
     companion object {
         /**
          * @see {@link audioDir} for more information.

@@ -2,6 +2,7 @@
 
 package mui.material
 
+import seskar.js.JsRawValue
 import seskar.js.JsValue
 
 sealed external interface ClickAwayListenerMouseEvent {
@@ -21,7 +22,7 @@ sealed external interface ClickAwayListenerMouseEvent {
         @JsValue("onPointerUp")
         val onPointerUp: ClickAwayListenerMouseEvent
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: ClickAwayListenerMouseEvent
     }
 }
@@ -34,7 +35,7 @@ sealed external interface ClickAwayListenerTouchEvent {
         @JsValue("onTouchEnd")
         val onTouchEnd: ClickAwayListenerTouchEvent
 
-        @JsValue("false")
+        @JsRawValue("false")
         val `false`: ClickAwayListenerTouchEvent
     }
 }

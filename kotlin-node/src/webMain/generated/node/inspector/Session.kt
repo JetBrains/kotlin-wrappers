@@ -947,87 +947,27 @@ external class _Session : EventEmitter {
     )
 
     /**
-     * Gets supported tracing categories.
+     * Read a chunk of the stream
      */
     fun post(
-        method: SessionMethod.NODETRACING_GETCATEGORIES,
-        callback: (
-            err: js.errors.JsError?,
-            params: node.inspector.nodeTracing.GetCategoriesReturnType,
-        ) -> Unit = definedExternally,
+        method: SessionMethod.IO_READ,
+        params: node.inspector.io.ReadParameterType = definedExternally,
+        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
     )
 
-    /**
-     * Start trace events collection.
-     */
     fun post(
-        method: SessionMethod.NODETRACING_START,
-        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
+        method: SessionMethod.IO_READ,
+        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.IO_CLOSE,
+        params: node.inspector.io.CloseParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
     fun post(
-        method: SessionMethod.NODETRACING_START,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Stop trace events collection. Remaining collected events will be sent as a sequence of
-     * dataCollected events followed by tracingComplete event.
-     */
-    fun post(
-        method: SessionMethod.NODETRACING_STOP,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Sends protocol message over session with given id.
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Instructs the inspector to attach to running workers. Will also attach to new workers
-     * as they start
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_ENABLE,
-        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.NODEWORKER_ENABLE,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Detaches from all running workers and disables attaching to new workers as they are started.
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_DISABLE,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    /**
-     * Detached from the worker with given sessionId.
-     */
-    fun post(
-        method: SessionMethod.NODEWORKER_DETACH,
-        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.NODEWORKER_DETACH,
+        method: SessionMethod.IO_CLOSE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1165,6 +1105,91 @@ external class _Session : EventEmitter {
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
+    /**
+     * Gets supported tracing categories.
+     */
+    fun post(
+        method: SessionMethod.NODETRACING_GETCATEGORIES,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.nodeTracing.GetCategoriesReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    /**
+     * Start trace events collection.
+     */
+    fun post(
+        method: SessionMethod.NODETRACING_START,
+        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODETRACING_START,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Stop trace events collection. Remaining collected events will be sent as a sequence of
+     * dataCollected events followed by tracingComplete event.
+     */
+    fun post(
+        method: SessionMethod.NODETRACING_STOP,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Sends protocol message over session with given id.
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
+        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Instructs the inspector to attach to running workers. Will also attach to new workers
+     * as they start
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_ENABLE,
+        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODEWORKER_ENABLE,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Detaches from all running workers and disables attaching to new workers as they are started.
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_DISABLE,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Detached from the worker with given sessionId.
+     */
+    fun post(
+        method: SessionMethod.NODEWORKER_DETACH,
+        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NODEWORKER_DETACH,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
     fun post(
         method: SessionMethod.TARGET_SETAUTOATTACH,
         params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
@@ -1176,157 +1201,7 @@ external class _Session : EventEmitter {
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
-    /**
-     * Read a chunk of the stream
-     */
-    fun post(
-        method: SessionMethod.IO_READ,
-        params: node.inspector.io.ReadParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.IO_READ,
-        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.IO_CLOSE,
-        params: node.inspector.io.CloseParameterType = definedExternally,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
-    fun post(
-        method: SessionMethod.IO_CLOSE,
-        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
-
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-    /**
-     * Emitted when any notification from the V8 Inspector is received.
-     */
-
-    /**
-     * Issued when new execution context is created.
-     */
-
-    /**
-     * Issued when execution context is destroyed.
-     */
-
-    /**
-     * Issued when all executionContexts were cleared in browser
-     */
-
-    /**
-     * Issued when exception was thrown and unhandled.
-     */
-
-    /**
-     * Issued when unhandled exception was revoked.
-     */
-
-    /**
-     * Issued when console API was called.
-     */
-
-    /**
-     * Issued when object should be inspected (for example, as a result of inspect() command line API call).
-     */
-
-    /**
-     * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
-     */
-
-    /**
-     * Fired when virtual machine fails to parse the script.
-     */
-
-    /**
-     * Fired when breakpoint is resolved to an actual script and location.
-     */
-
-    /**
-     * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
-     */
-
-    /**
-     * Fired when the virtual machine resumed execution.
-     */
-
-    /**
-     * Issued when new console message is added.
-     */
-
-    /**
-     * Sent when new profile recording is started using console.profile() call.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend may send update for one or more fragments
-     */
-
-    /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
-     * Fired when page is about to send HTTP request.
-     */
-
-    /**
-     * Fired when HTTP response is available.
-     */
-
-    /**
-     * Fired when data chunk was received over the network.
-     */
-
-    /**
-     * Fired upon WebSocket creation.
-     */
-
-    /**
-     * Fired when WebSocket is closed.
-     */
-
-    /**
-     * Fired when WebSocket handshake response becomes available.
-     */
-
-    /**
-     * This event is fired instead of `Runtime.executionContextDestroyed` when
-     * enabled.
-     * It is fired when the Node process finished all code execution and is
-     * waiting for all frontends to disconnect.
-     */
-
-    /**
-     * This event is fired when the runtime is waiting for the debugger. For
-     * example, when inspector.waitingForDebugger is called
-     */
 
     fun emit(
         event: String,
@@ -1339,512 +1214,12 @@ external class _Session : EventEmitter {
     ): Boolean
 
     fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-    /**
-     * Emitted when any notification from the V8 Inspector is received.
-     */
-
-    /**
-     * Issued when new execution context is created.
-     */
-
-    /**
-     * Issued when execution context is destroyed.
-     */
-
-    /**
-     * Issued when all executionContexts were cleared in browser
-     */
-
-    /**
-     * Issued when exception was thrown and unhandled.
-     */
-
-    /**
-     * Issued when unhandled exception was revoked.
-     */
-
-    /**
-     * Issued when console API was called.
-     */
-
-    /**
-     * Issued when object should be inspected (for example, as a result of inspect() command line API call).
-     */
-
-    /**
-     * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
-     */
-
-    /**
-     * Fired when virtual machine fails to parse the script.
-     */
-
-    /**
-     * Fired when breakpoint is resolved to an actual script and location.
-     */
-
-    /**
-     * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
-     */
-
-    /**
-     * Fired when the virtual machine resumed execution.
-     */
-
-    /**
-     * Issued when new console message is added.
-     */
-
-    /**
-     * Sent when new profile recording is started using console.profile() call.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend may send update for one or more fragments
-     */
-
-    /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
-     * Fired when page is about to send HTTP request.
-     */
-
-    /**
-     * Fired when HTTP response is available.
-     */
-
-    /**
-     * Fired when data chunk was received over the network.
-     */
-
-    /**
-     * Fired upon WebSocket creation.
-     */
-
-    /**
-     * Fired when WebSocket is closed.
-     */
-
-    /**
-     * Fired when WebSocket handshake response becomes available.
-     */
-
-    /**
-     * This event is fired instead of `Runtime.executionContextDestroyed` when
-     * enabled.
-     * It is fired when the Node process finished all code execution and is
-     * waiting for all frontends to disconnect.
-     */
-
-    /**
-     * This event is fired when the runtime is waiting for the debugger. For
-     * example, when inspector.waitingForDebugger is called
-     */
 
     fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-    /**
-     * Emitted when any notification from the V8 Inspector is received.
-     */
-
-    /**
-     * Issued when new execution context is created.
-     */
-
-    /**
-     * Issued when execution context is destroyed.
-     */
-
-    /**
-     * Issued when all executionContexts were cleared in browser
-     */
-
-    /**
-     * Issued when exception was thrown and unhandled.
-     */
-
-    /**
-     * Issued when unhandled exception was revoked.
-     */
-
-    /**
-     * Issued when console API was called.
-     */
-
-    /**
-     * Issued when object should be inspected (for example, as a result of inspect() command line API call).
-     */
-
-    /**
-     * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
-     */
-
-    /**
-     * Fired when virtual machine fails to parse the script.
-     */
-
-    /**
-     * Fired when breakpoint is resolved to an actual script and location.
-     */
-
-    /**
-     * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
-     */
-
-    /**
-     * Fired when the virtual machine resumed execution.
-     */
-
-    /**
-     * Issued when new console message is added.
-     */
-
-    /**
-     * Sent when new profile recording is started using console.profile() call.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend may send update for one or more fragments
-     */
-
-    /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
-     * Fired when page is about to send HTTP request.
-     */
-
-    /**
-     * Fired when HTTP response is available.
-     */
-
-    /**
-     * Fired when data chunk was received over the network.
-     */
-
-    /**
-     * Fired upon WebSocket creation.
-     */
-
-    /**
-     * Fired when WebSocket is closed.
-     */
-
-    /**
-     * Fired when WebSocket handshake response becomes available.
-     */
-
-    /**
-     * This event is fired instead of `Runtime.executionContextDestroyed` when
-     * enabled.
-     * It is fired when the Node process finished all code execution and is
-     * waiting for all frontends to disconnect.
-     */
-
-    /**
-     * This event is fired when the runtime is waiting for the debugger. For
-     * example, when inspector.waitingForDebugger is called
-     */
 
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-    /**
-     * Emitted when any notification from the V8 Inspector is received.
-     */
-
-    /**
-     * Issued when new execution context is created.
-     */
-
-    /**
-     * Issued when execution context is destroyed.
-     */
-
-    /**
-     * Issued when all executionContexts were cleared in browser
-     */
-
-    /**
-     * Issued when exception was thrown and unhandled.
-     */
-
-    /**
-     * Issued when unhandled exception was revoked.
-     */
-
-    /**
-     * Issued when console API was called.
-     */
-
-    /**
-     * Issued when object should be inspected (for example, as a result of inspect() command line API call).
-     */
-
-    /**
-     * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
-     */
-
-    /**
-     * Fired when virtual machine fails to parse the script.
-     */
-
-    /**
-     * Fired when breakpoint is resolved to an actual script and location.
-     */
-
-    /**
-     * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
-     */
-
-    /**
-     * Fired when the virtual machine resumed execution.
-     */
-
-    /**
-     * Issued when new console message is added.
-     */
-
-    /**
-     * Sent when new profile recording is started using console.profile() call.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend may send update for one or more fragments
-     */
-
-    /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
-     * Fired when page is about to send HTTP request.
-     */
-
-    /**
-     * Fired when HTTP response is available.
-     */
-
-    /**
-     * Fired when data chunk was received over the network.
-     */
-
-    /**
-     * Fired upon WebSocket creation.
-     */
-
-    /**
-     * Fired when WebSocket is closed.
-     */
-
-    /**
-     * Fired when WebSocket handshake response becomes available.
-     */
-
-    /**
-     * This event is fired instead of `Runtime.executionContextDestroyed` when
-     * enabled.
-     * It is fired when the Node process finished all code execution and is
-     * waiting for all frontends to disconnect.
-     */
-
-    /**
-     * This event is fired when the runtime is waiting for the debugger. For
-     * example, when inspector.waitingForDebugger is called
-     */
 
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-    /**
-     * Emitted when any notification from the V8 Inspector is received.
-     */
-
-    /**
-     * Issued when new execution context is created.
-     */
-
-    /**
-     * Issued when execution context is destroyed.
-     */
-
-    /**
-     * Issued when all executionContexts were cleared in browser
-     */
-
-    /**
-     * Issued when exception was thrown and unhandled.
-     */
-
-    /**
-     * Issued when unhandled exception was revoked.
-     */
-
-    /**
-     * Issued when console API was called.
-     */
-
-    /**
-     * Issued when object should be inspected (for example, as a result of inspect() command line API call).
-     */
-
-    /**
-     * Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
-     */
-
-    /**
-     * Fired when virtual machine fails to parse the script.
-     */
-
-    /**
-     * Fired when breakpoint is resolved to an actual script and location.
-     */
-
-    /**
-     * Fired when the virtual machine stopped on breakpoint or exception or any other stop criteria.
-     */
-
-    /**
-     * Fired when the virtual machine resumed execution.
-     */
-
-    /**
-     * Issued when new console message is added.
-     */
-
-    /**
-     * Sent when new profile recording is started using console.profile() call.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
-     */
-
-    /**
-     * If heap objects tracking has been started then backend may send update for one or more fragments
-     */
-
-    /**
-     * Contains an bucket of collected trace events.
-     */
-
-    /**
-     * Signals that tracing is stopped and there is no trace buffers pending flush, all data were
-     * delivered via dataCollected events.
-     */
-
-    /**
-     * Issued when attached to a worker.
-     */
-
-    /**
-     * Issued when detached from the worker.
-     */
-
-    /**
-     * Notifies about a new protocol message received from the session
-     * (session ID is provided in attachedToWorker notification).
-     */
-
-    /**
-     * Fired when page is about to send HTTP request.
-     */
-
-    /**
-     * Fired when HTTP response is available.
-     */
-
-    /**
-     * Fired when data chunk was received over the network.
-     */
-
-    /**
-     * Fired upon WebSocket creation.
-     */
-
-    /**
-     * Fired when WebSocket is closed.
-     */
-
-    /**
-     * Fired when WebSocket handshake response becomes available.
-     */
-
-    /**
-     * This event is fired instead of `Runtime.executionContextDestroyed` when
-     * enabled.
-     * It is fired when the Node process finished all code execution and is
-     * waiting for all frontends to disconnect.
-     */
-
-    /**
-     * This event is fired when the runtime is waiting for the debugger. For
-     * example, when inspector.waitingForDebugger is called
-     */
 
     @web.events.JsEvent("inspectorNotification")
     val inspectorNotificationEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<Any>>>
@@ -1926,25 +1301,6 @@ external class _Session : EventEmitter {
     val HeapProfilerHeapStatsUpdateEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.HeapStatsUpdateEventDataType>>>
 
-    @web.events.JsEvent("NodeTracing.dataCollected")
-    val NodeTracingDataCollectedEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeTracing.DataCollectedEventDataType>>>
-
-    @web.events.JsEvent("NodeTracing.tracingComplete")
-    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
-
-    @web.events.JsEvent("NodeWorker.attachedToWorker")
-    val NodeWorkerAttachedToWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.AttachedToWorkerEventDataType>>>
-
-    @web.events.JsEvent("NodeWorker.detachedFromWorker")
-    val NodeWorkerDetachedFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.DetachedFromWorkerEventDataType>>>
-
-    @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
-    val NodeWorkerReceivedMessageFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.ReceivedMessageFromWorkerEventDataType>>>
-
     @web.events.JsEvent("Network.requestWillBeSent")
     val NetworkRequestWillBeSentEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
@@ -1982,6 +1338,25 @@ external class _Session : EventEmitter {
 
     @web.events.JsEvent("NodeRuntime.waitingForDebugger")
     val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("NodeTracing.dataCollected")
+    val NodeTracingDataCollectedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeTracing.DataCollectedEventDataType>>>
+
+    @web.events.JsEvent("NodeTracing.tracingComplete")
+    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("NodeWorker.attachedToWorker")
+    val NodeWorkerAttachedToWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.AttachedToWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeWorker.detachedFromWorker")
+    val NodeWorkerDetachedFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.DetachedFromWorkerEventDataType>>>
+
+    @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
+    val NodeWorkerReceivedMessageFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Target.targetCreated")
     val TargetTargetCreatedEvent:

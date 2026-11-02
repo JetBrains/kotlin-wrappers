@@ -4,13 +4,10 @@
 
 package electron.core
 
+import node.buffer.Buffer
 import node.events.EventEmitter as NodeEventEmitter
 
 external class WebFrameMain : NodeEventEmitter {
-    /**
-     * Emitted when the document is loaded.
-     */
-
     /**
      * A promise that resolves with the currently running JavaScript call stack. If no
      * JavaScript runs in the frame, the promise will never resolve. In cases where the
@@ -23,6 +20,15 @@ external class WebFrameMain : NodeEventEmitter {
      * @experimental
      */
     fun collectJavaScriptCallStack(): Any /* (Promise<string>) | (Promise<void>) */
+
+    /**
+     * When executed on a video media element, copies the frame at (x, y) to the
+     * clipboard.
+     */
+    fun copyVideoFrameAt(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -61,10 +67,36 @@ external class WebFrameMain : NodeEventEmitter {
     )
 
     /**
+     * Resolves with the generated PDF data.
+     *
+     * Prints the frame's web page as PDF.
+     *
+     * Unlike `webContents.printToPDF`, this method prints only the contents of the
+     * frame it is called on. This can be used to print an individual `<iframe>` from
+     * the main process.
+     *
+     * The `landscape` will be ignored if `@page` CSS at-rule is used in the web page.
+     *
+     * An example of printing an iframe to PDF:
+     *
+     * See Page.printToPdf for more information.
+     */
+    fun printToPDF(options: PrintToPDFOptions): js.promise.Promise<Buffer<*>>
+
+    /**
      * Whether the reload was initiated successfully. Only results in `false` when the
      * frame has no history.
      */
     fun reload(): Boolean
+
+    /**
+     * When executed on a video media element, shows a save dialog and saves the frame
+     * at (x, y) to disk.
+     */
+    fun saveVideoFrameAs(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * Send an asynchronous message to the renderer process via `channel`, along with

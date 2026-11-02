@@ -4,468 +4,6 @@ package electron.core
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface App : node.events.EventEmitter {
-// Docs: https://electronjs.org/docs/api/app
-    /**
-     * Emitted when Chrome's accessibility support changes. This event fires when
-     * assistive technologies, such as screen readers, are enabled or disabled. See
-     * https://www.chromium.org/developers/design-documents/accessibility for more
-     * details.
-     *
-     * @platform darwin,win32
-     */
-
-    /**
-     * Emitted when the application is activated. Various actions can trigger this
-     * event, such as launching the application for the first time, attempting to
-     * re-launch the application when it's already running, or clicking on the
-     * application's dock or taskbar icon.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted during Handoff after an activity from this device was successfully
-     * resumed on another one.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted before the application starts closing its windows. Calling
-     * `event.preventDefault()` will prevent the default behavior, which is terminating
-     * the application.
-     *
-     * > [!NOTE] If application quit was initiated by `autoUpdater.quitAndInstall()`,
-     * then `before-quit` is emitted _after_ emitting `close` event on all windows and
-     * closing them.
-     *
-     * > [!NOTE] On Windows, this event will not be emitted if the app is closed due to
-     * a shutdown/restart of the system or a user logout.
-     */
-
-    /**
-     * Emitted when a browserWindow gets blurred.
-     */
-
-    /**
-     * Emitted when a new browserWindow is created.
-     */
-
-    /**
-     * Emitted when a browserWindow gets focused.
-     */
-
-    /**
-     * Emitted when failed to verify the `certificate` for `url`, to trust the
-     * certificate you should prevent the default behavior with
-     * `event.preventDefault()` and call `callback(true)`.
-     */
-
-    /**
-     * Emitted when the child process unexpectedly disappears. This is normally because
-     * it was crashed or killed. It does not include renderer processes.
-     */
-
-    /**
-     * Emitted during Handoff when an activity from a different device wants to be
-     * resumed. You should call `event.preventDefault()` if you want to handle this
-     * event.
-     *
-     * A user activity can be continued only in an app that has the same developer Team
-     * ID as the activity's source app and that supports the activity's type. Supported
-     * activity types are specified in the app's `Info.plist` under the
-     * `NSUserActivityTypes` key.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted during Handoff when an activity from a different device fails to be
-     * resumed.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the application becomes active. This differs from the `activate`
-     * event in that `did-become-active` is emitted every time the app becomes active,
-     * not only when Dock icon is clicked or application is re-launched. It is also
-     * emitted when a user switches to the app via the macOS App Switcher.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the app is no longer active and doesn’t have focus. This can be
-     * triggered, for example, by clicking on another application or by using the macOS
-     * App Switcher to switch to another application.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted whenever there is a GPU info update.
-     */
-
-    /**
-     * Emitted when `webContents` or Utility process wants to do basic auth.
-     *
-     * The default behavior is to cancel all authentications. To override this you
-     * should prevent the default behavior with `event.preventDefault()` and call
-     * `callback(username, password)` with the credentials.
-     *
-     * If `callback` is called without a username or password, the authentication
-     * request will be cancelled and the authentication error will be returned to the
-     * page.
-     */
-
-    /**
-     * Emitted when the user clicks the native macOS new tab button. The new tab button
-     * is only visible if the current `BrowserWindow` has a `tabbingIdentifier`.
-     *
-     * You must create a window in this handler in order for macOS tabbing to work as
-     * expected.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the user wants to open a file with the application. The `open-file`
-     * event is usually emitted when the application is already open and the OS wants
-     * to reuse the application to open the file. `open-file` is also emitted when a
-     * file is dropped onto the dock and the application is not yet running. Make sure
-     * to listen for the `open-file` event very early in your application startup to
-     * handle this case (even before the `ready` event is emitted).
-     *
-     * You should call `event.preventDefault()` if you want to handle this event.
-     *
-     * On Windows, you have to parse `process.argv` (in the main process) to get the
-     * filepath.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the user wants to open a URL with the application. Your
-     * application's `Info.plist` file must define the URL scheme within the
-     * `CFBundleURLTypes` key, and set `NSPrincipalClass` to `AtomApplication`.
-     *
-     * As with the `open-file` event, be sure to register a listener for the `open-url`
-     * event early in your application startup to detect if the application is being
-     * opened to handle a URL. If you register the listener in response to a `ready`
-     * event, you'll miss URLs that trigger the launch of your application.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the application is quitting.
-     *
-     * > [!NOTE] On Windows, this event will not be emitted if the app is closed due to
-     * a shutdown/restart of the system or a user logout.
-     */
-
-    /**
-     * Emitted once, when Electron has finished initializing. On macOS, `launchInfo`
-     * holds the `userInfo` of the `NSUserNotification` or information from
-     * `UNNotificationResponse` that was used to open the application, if it was
-     * launched from Notification Center. You can also call `app.isReady()` to check if
-     * this event has already fired and `app.whenReady()` to get a Promise that is
-     * fulfilled when Electron is initialized.
-     *
-     * > [!NOTE] The `ready` event is only fired after the main process has finished
-     * running the first tick of the event loop. If an Electron API needs to be called
-     * before the `ready` event, ensure that it is called synchronously in the
-     * top-level context of the main process.
-     */
-
-    /**
-     * Emitted when the renderer process unexpectedly disappears.  This is normally
-     * because it was crashed or killed.
-     */
-
-    /**
-     * This event will be emitted inside the primary instance of your application when
-     * a second instance has been executed and calls `app.requestSingleInstanceLock()`.
-     *
-     * `argv` is an Array of the second instance's command line arguments, and
-     * `workingDirectory` is its current working directory. Usually applications
-     * respond to this by making their primary window focused and non-minimized.
-     *
-     * > [!NOTE] `argv` will not be exactly the same list of arguments as those passed
-     * to the second instance. The order might change and additional arguments might be
-     * appended. If you need to maintain the exact same arguments, it's advised to use
-     * `additionalData` instead.
-     *
-     * > [!NOTE] If the second instance is started by a different user than the first,
-     * the `argv` array will not include the arguments.
-     *
-     * This event is guaranteed to be emitted after the `ready` event of `app` gets
-     * emitted.
-     *
-     * > [!NOTE] Extra command line arguments might be added by Chromium, such as
-     * `--original-process-start-time`.
-     */
-
-    /**
-     * Emitted when a client certificate is requested.
-     *
-     * The `url` corresponds to the navigation entry requesting the client certificate
-     * and `callback` can be called with an entry filtered from the list. Using
-     * `event.preventDefault()` prevents the application from using the first
-     * certificate from the store.
-     */
-
-    /**
-     * Emitted when Electron has created a new `session`.
-     */
-
-    /**
-     * Emitted when Handoff is about to be resumed on another device. If you need to
-     * update the state to be transferred, you should call `event.preventDefault()`
-     * immediately, construct a new `userInfo` dictionary and call
-     * `app.updateCurrentActivity()` in a timely manner. Otherwise, the operation will
-     * fail and `continue-activity-error` will be called.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when a new webContents is created.
-     */
-
-    /**
-     * Emitted during Handoff before an activity from a different device wants to be
-     * resumed. You should call `event.preventDefault()` if you want to handle this
-     * event.
-     *
-     * @platform darwin
-     */
-
-    /**
-     * Emitted when the application has finished basic startup. On Windows and Linux,
-     * the `will-finish-launching` event is the same as the `ready` event; on macOS,
-     * this event represents the `applicationWillFinishLaunching` notification of
-     * `NSApplication`.
-     *
-     * In most cases, you should do everything in the `ready` event handler.
-     */
-
-    /**
-     * Emitted when all windows have been closed and the application will quit. Calling
-     * `event.preventDefault()` will prevent the default behavior, which is terminating
-     * the application.
-     *
-     * See the description of the `window-all-closed` event for the differences between
-     * the `will-quit` and `window-all-closed` events.
-     *
-     * > [!NOTE] On Windows, this event will not be emitted if the app is closed due to
-     * a shutdown/restart of the system or a user logout.
-     */
-
-    /**
-     * Emitted when all windows have been closed.
-     *
-     * If you do not subscribe to this event and all windows are closed, the default
-     * behavior is to quit the app; however, if you subscribe, you control whether the
-     * app quits or not. If the user pressed `Cmd + Q`, or the developer called
-     * `app.quit()`, Electron will first try to close all the windows and then emit the
-     * `will-quit` event, and in this case the `window-all-closed` event would not be
-     * emitted.
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
     /**
      * Adds `path` to the recent documents list.
      *
@@ -515,7 +53,71 @@ external interface App : node.events.EventEmitter {
      * generates and persists a per-`session` metadata secret so that credentials
      * created in one partition are not visible to another.
      *
-     * With the matching entitlement in your app's `entitlements.plist`:
+     * When `platformPasskeys` is `true`, passkey operations use Apple's
+     * `ASAuthorizationController` which delegates to the system's configured
+     * Credential Provider Extensions. This enables the same passkey experience as
+     * Safari — credentials are available across all devices signed into the same
+     * account. Unlike Touch ID credentials, platform passkeys are stored by the
+     * credential provider and scoped to the relying party, not to Electron: they are
+     * shared across all `session` partitions and with any other app or browser
+     * associated with the same domain. Platform passkeys cannot serve cross-origin
+     * (iframe) requests; those requests are left to the other available authenticators
+     * (Touch ID supports iframes) and a warning is logged to the DevTools console. The
+     * `prf` and `largeBlob` WebAuthn extensions are not currently supported by this
+     * authenticator — `prf` inputs are ignored, and a `create()` call with `largeBlob:
+     * { support: 'required' }` fails.
+     *
+     * With the matching entitlements in your app's `entitlements.plist`:
+     *
+     * For platform passkeys, your app needs the Associated Domains entitlement plus an
+     * application identifier, both in the same `entitlements.plist`:
+     *
+     * Listing these entitlements is **not** sufficient on its own — unlike most
+     * entitlements, `com.apple.developer.associated-domains` is _provisioning-profile
+     * backed_. For platform passkeys to work, **all** of the following must hold:
+     *
+     * * In the Apple Developer portal, your App ID (`com.example.app`) has the
+     * **Associated Domains** capability enabled, and you have created a provisioning
+     * profile for that App ID.
+     * * That provisioning profile is **embedded in the built app bundle** at
+     * `Contents/embedded.provisionprofile`. This is what authorizes the
+     * associated-domains entitlement at runtime; without an embedded profile macOS
+     * silently ignores the `webcredentials` association and the request fails. (Xcode
+     * and `@electron/osx-sign` embed the profile for you; if you sign manually, copy
+     * it into the bundle before signing.)
+     * * The app is signed (ad-hoc / unsigned builds do not qualify). Both distribution
+     * and development signing work — for development builds, use the developer-mode
+     * path described below.
+     * * `com.apple.application-identifier` matches the profile's App ID. Without it,
+     * `ASAuthorizationController` fails with "The calling process does not have an
+     * application identifier" — this is `ASAuthorizationError` code 1004.
+     * * The relying party's domain (`example.com` above) serves a valid
+     * `apple-app-site-association` file over HTTPS at
+     * `/.well-known/apple-app-site-association` containing a `webcredentials` entry
+     * whose `apps` array lists this app's `<TEAM_ID>.<BUNDLE_ID>`.
+     * * The relying party ID of each request matches that associated domain.
+     *
+     * If these aren't satisfied, `ASAuthorizationController` fails before it can
+     * present the passkey sheet. The request surfaces to the page as a bare
+     * `NotAllowedError` with no further detail (Electron logs an explanatory message
+     * to the DevTools console on this path). Because the association is domain-based,
+     * platform passkeys always require a real associated domain and its AASA file —
+     * there is no `localhost` rpId escape hatch as there is in browsers.
+     *
+     * To test against your domain with a development-signed build (before shipping a
+     * distribution profile), append `?mode=developer` to the entitlement value and
+     * enable developer mode on the machine with `swcutil developer-mode -e true`. This
+     * makes macOS fetch the AASA directly from the domain — bypassing Apple's CDN
+     * cache — and honor the association for a development-signed app. You still need
+     * the embedded development provisioning profile described above:
+     *
+     * > [!NOTE] Because the request is fulfilled by the system credential provider
+     * (not a browser), the `clientDataJSON` returned to the page reports `origin:
+     * "https://<rpId>"` — the associated domain — rather than the page's own origin.
+     * Relying-party servers that enforce a strict `expectedOrigin` allowlist must
+     * include `https://<rpId>` for verification to succeed. This also means the
+     * relying party cannot distinguish which subdomain of the associated domain
+     * initiated the ceremony.
      *
      * > [!NOTE] Touch ID WebAuthn credentials are device-bound and are not synced via
      * iCloud Keychain. They are only available on Macs with a Secure Enclave (Apple
@@ -620,6 +222,12 @@ external interface App : node.events.EventEmitter {
     /**
      * Array of `ProcessMetric` objects that correspond to memory and CPU usage
      * statistics of all the processes associated with the app.
+     *
+     * > [!NOTE] `cpu.percentCPUUsage` and `cpu.idleWakeupsPerSecond` are averages over
+     * the time since the last call to `app.getAppMetrics()`, and each call starts a
+     * new measurement interval for every process at once. Other code in the main
+     * process, including dependencies, shares those intervals. See `CPUUsage` for more
+     * details.
      */
     fun getAppMetrics(): js.array.ReadonlyArray<ProcessMetric>
 
@@ -631,7 +239,7 @@ external interface App : node.events.EventEmitter {
     /**
      * The current value displayed in the counter badge.
      *
-     * @platform linux,darwin
+     * @platform darwin
      */
     fun getBadgeCount(): Double
 
@@ -729,19 +337,8 @@ external interface App : node.events.EventEmitter {
      *
      *
      * * `openAtLogin` boolean - `true` if the app is set to open at login.
-     * * `openAsHidden` boolean _macOS_ _Deprecated_ - `true` if the app is set to open
-     * as hidden at login. This does not work on macOS 13 and up.
      * * `wasOpenedAtLogin` boolean _macOS_ - `true` if the app was opened at login
      * automatically.
-     * * `wasOpenedAsHidden` boolean _macOS_ _Deprecated_ - `true` if the app was
-     * opened as a hidden login item. This indicates that the app should not open any
-     * windows at startup. This setting is not available on MAS builds or on macOS 13
-     * and up.
-     * * `restoreState` boolean _macOS_ _Deprecated_ - `true` if the app was opened as
-     * a login item that should restore the state from the previous session. This
-     * indicates that the app should restore the windows that were open the last time
-     * the app was closed. This setting is not available on MAS builds or on macOS 13
-     * and up.
      * * `status` string _macOS_ - can be `not-registered`, `enabled`,
      * `requires-approval`, or `not-found`.
      * * `executableWillLaunchAtLogin` boolean _Windows_ - `true` if app is set to open
@@ -771,6 +368,13 @@ external interface App : node.events.EventEmitter {
      * to the npm modules spec. You should usually also specify a `productName` field,
      * which is your application's full capitalized name, and which will be preferred
      * over `name` by Electron.
+     *
+     * Electron uses the application's name to construct the default `userData`
+     * directory. On Windows, neither `productName` nor `name` should contain the
+     * following special characters, which cannot be used in directory or file names:
+     * `<`, `>`, `:`, `"`, `\`, `/`, `|`, `?`, `*`. Using these characters in the
+     * application's name can prevent Electron from creating the default `userData`
+     * directory and cause the application to crash on startup.
      */
     fun getName(): String
 
@@ -894,9 +498,9 @@ external interface App : node.events.EventEmitter {
     fun invalidateCurrentActivity()
 
     /**
-     * `true` if Chrome's accessibility support is enabled, `false` otherwise. This API
-     * will return `true` if the use of assistive technologies, such as screen readers,
-     * has been detected. See
+     * `true` if Chromium's accessibility support is enabled, `false` otherwise. This
+     * API will return `true` if the use of assistive technologies, such as screen
+     * readers, has been detected. See
      * https://www.chromium.org/developers/design-documents/accessibility for more
      * details.
      *
@@ -972,13 +576,6 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
     fun isSecureKeyboardEntryEnabled(): Boolean
-
-    /**
-     * Whether the current desktop environment is Unity launcher.
-     *
-     * @platform linux
-     */
-    fun isUnityRunning(): Boolean
 
     /**
      * Whether the move was successful. Please note that if the move is successful,
@@ -1082,6 +679,11 @@ external interface App : node.events.EventEmitter {
      * line, the system's single instance mechanism will be bypassed, and you have to
      * use this method to ensure single instance.
      *
+     * > [!NOTE] On macOS and Linux, the second instance's command line arguments and
+     * `additionalData` are sent to the primary instance in a single message that is
+     * limited to 32 MB. Larger messages are dropped: this method still returns
+     * `false`, but the primary instance does not emit `second-instance`.
+     *
      * An example of activating the window of primary instance when a second instance
      * starts:
      */
@@ -1114,7 +716,7 @@ external interface App : node.events.EventEmitter {
     fun setAboutPanelOptions(options: AboutPanelOptionsOptions)
 
     /**
-     * Manually enables Chrome's accessibility support, allowing to expose
+     * Manually enables Chromium's accessibility support, allowing to expose
      * accessibility switch to users in application settings. See Chromium's
      * accessibility docs for more details. Disabled by default.
      *
@@ -1219,10 +821,12 @@ external interface App : node.events.EventEmitter {
      * Sets the counter badge for current app. Setting the count to `0` will hide the
      * badge.
      *
-     * On macOS, it shows on the dock icon. On Linux, it only works for Unity launcher.
+     * On macOS, it shows on the Dock icon. On Linux, it shows on docks and taskbars
+     * that support the LauncherEntry D-Bus API,
      *
-     * > [!NOTE] Unity launcher requires a `.desktop` file to work. For more
-     * information, please read the Unity integration documentation.
+     * > [!NOTE] On Linux, the badge is associated with the app's `.desktop` file, so
+     * `app.setDesktopName` (or the `desktopName` field in `package.json`) must match
+     * the name of the app's actual `.desktop` file.
      *
      * > [!NOTE] On macOS, you need to ensure that your application has the permission
      * to display notifications for this method to work.
@@ -1238,6 +842,40 @@ external interface App : node.events.EventEmitter {
     fun setClientCertRequestPasswordHandler(
         handler: (clientCertRequestParams: ClientCertRequestParams) -> js.promise.Promise<String>,
     )
+
+    /**
+     * Sets the `.desktop` filename on Linux. This must match the base filename of the
+     * app's installed `.desktop` file. The `.desktop` suffix is optional.
+     *
+     * The name (without the `.desktop` suffix) is the app's identity for Linux desktop
+     * integration. It should be a reverse-DNS style ID such as `com.example.MyApp`,
+     * following the desktop entry naming conventions. This value is used as:
+     *
+     * * the XDG application ID (`app_id`) on Wayland and `WM_CLASS` on X11, used to
+     * match the app's icon and window grouping.
+     * * the app ID that `xdg-desktop-portal` reports to portal backends such as
+     * GlobalShortcuts.
+     *
+     * Portals increasingly enforce this identity. If the name is not a valid
+     * reverse-DNS ID or does not match an installed `.desktop` file:
+     *
+     * * GNOME 50.0/50.1 (Ubuntu 26.04) rejects `globalShortcut` binds with
+     * `org.freedesktop.portal.Error.NotAllowed` — with no error surfaced to the app
+     * (see #52218).
+     * * `xdg-desktop-portal` 1.21 and later refuses portal sessions for app IDs it
+     * cannot resolve to a `.desktop` file.
+     *
+     * If this value is not set and `desktopName` is not present in `package.json`,
+     * Electron falls back to a lowercased, hyphenated slug of the app's name (e.g. `My
+     * App` → `my-app.desktop`), which is unlikely to be a valid portal identity —
+     * packaged apps should always set it explicitly.
+     *
+     * This API must be called before the `ready` event. The value can also be set
+     * using `desktopName` in `package.json`.
+     *
+     * @platform linux
+     */
+    fun setDesktopName(name: String)
 
     /**
      * Sets or removes a custom Jump List for the application, and returns one of the
@@ -1287,8 +925,8 @@ external interface App : node.events.EventEmitter {
      * is a stub application automatically generated by Squirrel which will
      * automatically launch the latest version.
      *
-     * For more information about setting different services as login items on macOS 13
-     * and up, see `SMAppService`.
+     * For more information about setting different services as login items on macOS,
+     * see `SMAppService`.
      *
      * @platform darwin,win32
      */
@@ -1296,6 +934,8 @@ external interface App : node.events.EventEmitter {
 
     /**
      * Overrides the current application's name.
+     *
+     * On Windows, avoid the reserved filename characters in `name`.
      *
      * > [!NOTE] This function overrides the name used internally by Electron; it does
      * not affect the name that the OS uses.
@@ -1418,7 +1058,7 @@ external interface App : node.events.EventEmitter {
      * resources will be leaked and your app will lose its ability to reach outside the
      * sandbox completely, until your app is restarted.
      *
-     * Start accessing a security scoped resource. With this method Electron
+     * Start accessing a security scoped resource. With this method, Electron
      * applications that are packaged for the Mac App Store may reach outside their
      * sandbox to access files chosen by the user. See Apple's documentation for a
      * description of how this system works.
@@ -1426,6 +1066,30 @@ external interface App : node.events.EventEmitter {
      * @platform mas
      */
     fun startAccessingSecurityScopedResource(bookmarkData: String): Function<*>
+
+    /**
+     * Starts accepting connections from app shims. An `app-shim-connected` event is
+     * emitted for each shim that connects.
+     *
+     * Throws if the server cannot be started, for example because another copy of your
+     * app has already started a server with the same `name`.
+     *
+     * This method can only be called after the app is ready. It is not available in
+     * Mac App Store builds.
+     *
+     * @experimental
+     * @platform darwin
+     */
+    fun startAppShimServer(options: StartAppShimServerOptions = definedExternally)
+
+    /**
+     * Stops accepting connections from app shims. Shims that have already connected
+     * stay connected.
+     *
+     * @experimental
+     * @platform darwin
+     */
+    fun stopAppShimServer()
 
     /**
      * Updates the current activity if its type matches `type`, merging the entries
@@ -1446,10 +1110,10 @@ external interface App : node.events.EventEmitter {
     fun whenReady(): js.promise.Promise<js.void.Void>
 
     /**
-     * A `boolean` property that's `true` if Chrome's accessibility support is enabled,
-     * `false` otherwise. This property will be `true` if the use of assistive
+     * A `boolean` property that's `true` if Chromium's accessibility support is
+     * enabled, `false` otherwise. This property will be `true` if the use of assistive
      * technologies, such as screen readers, has been detected. Setting this property
-     * to `true` manually enables Chrome's accessibility support, allowing developers
+     * to `true` manually enables Chromium's accessibility support, allowing developers
      * to expose accessibility switch to users in application settings.
      *
      * See Chromium's accessibility docs for more details. Disabled by default.
@@ -1471,13 +1135,8 @@ external interface App : node.events.EventEmitter {
 
     /**
      * An `Integer` property that returns the badge count for current app. Setting the
-     * count to `0` will hide the badge.
-     *
-     * On macOS, setting this with any nonzero integer shows on the dock icon. On
-     * Linux, this property only works for Unity launcher.
-     *
-     * > [!NOTE] Unity launcher requires a `.desktop` file to work. For more
-     * information, please read the Unity integration documentation.
+     * count to `0` will hide the badge. Setting this with any nonzero integer shows
+     * the count on the Dock icon on macOS, or on the launcher on Linux.
      *
      * > [!NOTE] On macOS, you need to ensure that your application has the permission
      * to display notifications for this property to take effect.
@@ -1518,6 +1177,9 @@ external interface App : node.events.EventEmitter {
      * to the npm modules spec. You should usually also specify a `productName` field,
      * which is your application's full capitalized name, and which will be preferred
      * over `name` by Electron.
+     *
+     * On Windows, the application's name must not contain reserved filename
+     * characters, because it is used to construct the default `userData` directory.
      */
     var name: String
 
@@ -1560,6 +1222,12 @@ external interface App : node.events.EventEmitter {
 
     @web.events.JsEvent("activity-was-continued")
     val activityWasContinuedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Any?>>
+
+    @web.events.JsEvent("app-shim-connected")
+    val appShimConnectedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, AppShimHost>>
+
+    @web.events.JsEvent("app-shim-version-mismatch")
+    val appShimVersionMismatchEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("before-quit")
     val beforeQuitEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
@@ -1613,7 +1281,7 @@ external interface App : node.events.EventEmitter {
             node.events.EventInstance<
                     js.array.Tuple5<
                             Event<*>,
-                            WebContents,
+                            WebContents?,
                             AuthenticationResponseDetails,
                             AuthInfo,
                                 (
@@ -1652,7 +1320,7 @@ external interface App : node.events.EventEmitter {
             node.events.EventInstance<
                     js.array.Tuple5<
                             Event<*>,
-                            WebContents,
+                            WebContents?,
                             String,
                             js.array.ReadonlyArray<Certificate>,
                                 (

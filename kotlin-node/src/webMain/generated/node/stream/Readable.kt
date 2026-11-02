@@ -658,18 +658,6 @@ open external class Readable :
 
     open fun destroy(error: js.errors.JsError) /* this */
 
-    /**
-     * Event emitter
-     * The defined events on documents including:
-     * 1. close
-     * 2. data
-     * 3. end
-     * 4. error
-     * 5. pause
-     * 6. readable
-     * 7. resume
-     */
-
     open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     open fun addListener(

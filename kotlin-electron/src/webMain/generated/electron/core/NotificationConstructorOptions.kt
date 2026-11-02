@@ -106,8 +106,6 @@ external interface NotificationConstructorOptions {
     /**
      * Actions to add to the notification. Please read the available actions and
      * limitations in the `NotificationAction` documentation.
-     *
-     * @platform darwin,win32
      */
     var actions: js.array.ReadonlyArray<NotificationAction>?
 

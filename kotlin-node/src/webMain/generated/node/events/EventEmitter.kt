@@ -716,46 +716,6 @@ open external class EventEmitter {
         ): js.iterable.AsyncIterator<js.array.Tuple1<E>>
 
         /**
-         * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
-         *
-         * ```js
-         * import { EventEmitter, listenerCount } from 'node:events';
-         *
-         * const myEmitter = new EventEmitter();
-         * myEmitter.on('event', () => {});
-         * myEmitter.on('event', () => {});
-         * console.log(listenerCount(myEmitter, 'event'));
-         * // Prints: 2
-         * ```
-         * @since v0.9.12
-         * @deprecated Since v3.2.0 - Use `listenerCount` instead.
-         * @param emitter The emitter to query
-         * @param eventName The event name
-         */
-        fun listenerCount(
-            emitter: EventEmitter,
-            type: EventType,
-        ): Double
-
-        /**
-         * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.
-         *
-         * ```js
-         * import { EventEmitter, listenerCount } from 'node:events';
-         *
-         * const myEmitter = new EventEmitter();
-         * myEmitter.on('event', () => {});
-         * myEmitter.on('event', () => {});
-         * console.log(listenerCount(myEmitter, 'event'));
-         * // Prints: 2
-         * ```
-         * @since v0.9.12
-         * @deprecated Since v3.2.0 - Use `listenerCount` instead.
-         * @param emitter The emitter to query
-         * @param eventName The event name
-         */
-
-        /**
          * Returns a copy of the array of listeners for the event named `eventName`.
          *
          * For `EventEmitter`s this behaves exactly the same as calling `.listeners` on

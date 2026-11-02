@@ -62,7 +62,7 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @JsName("appendFile")
-    fun appendFileAsync(data: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.void.Void>
+    fun appendFileAsync(data: js.buffer.ArrayBufferView<*>): js.promise.Promise<js.void.Void>
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -74,7 +74,7 @@ external interface FileHandle {
      */
     @JsName("appendFile")
     fun appendFileAsync(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
     ): js.promise.Promise<js.void.Void>
 
@@ -88,7 +88,89 @@ external interface FileHandle {
      */
     @JsName("appendFile")
     fun appendFileAsync(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @JsName("appendFile")
+    fun appendFileAsync(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
         options: node.buffer.BufferEncoding? = definedExternally,
     ): js.promise.Promise<js.void.Void>
 
@@ -132,7 +214,7 @@ external interface FileHandle {
      * @return Fulfills with `undefined` upon success.
      */
     @seskar.js.JsAsync
-    suspend fun appendFile(data: js.typedarrays.Uint8Array<*>): js.void.Void
+    suspend fun appendFile(data: js.buffer.ArrayBufferView<*>): js.void.Void
 
     /**
      * Alias of `filehandle.writeFile()`.
@@ -144,7 +226,7 @@ external interface FileHandle {
      */
     @seskar.js.JsAsync
     suspend fun appendFile(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
         options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
     ): js.void.Void
 
@@ -158,7 +240,85 @@ external interface FileHandle {
      */
     @seskar.js.JsAsync
     suspend fun appendFile(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>): js.void.Void
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @seskar.js.JsAsync
+    suspend fun appendFile(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @seskar.js.JsAsync
+    suspend fun appendFile(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @seskar.js.JsAsync
+    suspend fun appendFile(data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): js.void.Void
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @seskar.js.JsAsync
+    suspend fun appendFile(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleAppendFileAsyncOptions)? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Alias of `filehandle.writeFile()`.
+     *
+     * When operating on file handles, the mode cannot be changed from what it was set
+     * to with `fsPromises.open()`. Therefore, this is equivalent to `filehandle.writeFile()`.
+     * @since v10.0.0
+     * @return Fulfills with `undefined` upon success.
+     */
+    @seskar.js.JsAsync
+    suspend fun appendFile(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
         options: node.buffer.BufferEncoding? = definedExternally,
     ): js.void.Void
 
@@ -637,7 +797,7 @@ external interface FileHandle {
      * @since v10.0.0
      */
     @JsName("writeFile")
-    fun writeFileAsync(data: js.typedarrays.Uint8Array<*>): js.promise.Promise<js.void.Void>
+    fun writeFileAsync(data: js.buffer.ArrayBufferView<*>): js.promise.Promise<js.void.Void>
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -659,7 +819,7 @@ external interface FileHandle {
      */
     @JsName("writeFile")
     fun writeFileAsync(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
     ): js.promise.Promise<js.void.Void>
 
@@ -683,7 +843,149 @@ external interface FileHandle {
      */
     @JsName("writeFile")
     fun writeFileAsync(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): js.promise.Promise<js.void.Void>
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @JsName("writeFile")
+    fun writeFileAsync(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
         options: node.buffer.BufferEncoding? = definedExternally,
     ): js.promise.Promise<js.void.Void>
 
@@ -757,7 +1059,7 @@ external interface FileHandle {
      * @since v10.0.0
      */
     @seskar.js.JsAsync
-    suspend fun writeFile(data: js.typedarrays.Uint8Array<*>): js.void.Void
+    suspend fun writeFile(data: js.buffer.ArrayBufferView<*>): js.void.Void
 
     /**
      * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -779,7 +1081,7 @@ external interface FileHandle {
      */
     @seskar.js.JsAsync
     suspend fun writeFile(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
         options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
     ): js.void.Void
 
@@ -803,7 +1105,145 @@ external interface FileHandle {
      */
     @seskar.js.JsAsync
     suspend fun writeFile(
-        data: js.typedarrays.Uint8Array<*>,
+        data: js.buffer.ArrayBufferView<*>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>): js.void.Void
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @seskar.js.JsAsync
+    suspend fun writeFile(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @seskar.js.JsAsync
+    suspend fun writeFile(
+        data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: node.buffer.BufferEncoding? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @seskar.js.JsAsync
+    suspend fun writeFile(data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>): js.void.Void
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @seskar.js.JsAsync
+    suspend fun writeFile(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
+        options: (FileHandleWriteFileAsyncOptions)? = definedExternally,
+    ): js.void.Void
+
+    /**
+     * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
+     * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
+     * [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol) object.
+     * The promise is fulfilled with no arguments upon success.
+     *
+     * If `options` is a string, then it specifies the `encoding`.
+     *
+     * The `FileHandle` has to support writing.
+     *
+     * It is unsafe to use `filehandle.writeFile()` multiple times on the same file
+     * without waiting for the promise to be fulfilled (or rejected).
+     *
+     * If one or more `filehandle.write()` calls are made on a file handle and then a`filehandle.writeFile()` call is made, the data will be written from the
+     * current position till the end of the file. It doesn't always write from the
+     * beginning of the file.
+     * @since v10.0.0
+     */
+    @seskar.js.JsAsync
+    suspend fun writeFile(
+        data: js.iterable.AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
         options: node.buffer.BufferEncoding? = definedExternally,
     ): js.void.Void
 
