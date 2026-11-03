@@ -15,10 +15,8 @@ val convertKindEnums = createPlugin { node, context, render ->
         ensure(isEnumDeclaration(node))
         ensure(
             node.name.text == "SyntaxKind"
-                    || node.name.text == "ScriptKind"
                     || node.name.text == "TypePredicateKind"
-                    || node.name.text == "InvalidatedProjectKind"
-                    || node.name.text == "CommandTypes",
+                    || node.name.text == "InvalidatedProjectKind",
         )
 
         val name = render(node.name)

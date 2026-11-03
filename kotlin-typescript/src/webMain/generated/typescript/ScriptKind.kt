@@ -4,37 +4,22 @@
 
 package typescript
 
-sealed /* enum */
-external interface ScriptKind {
-    sealed interface Unknown : ScriptKind
-
-    sealed interface JS : ScriptKind
-
-    sealed interface JSX : ScriptKind
-
-    sealed interface TS : ScriptKind
-
-    sealed interface TSX : ScriptKind
-
-    sealed interface External : ScriptKind
-
-    sealed interface JSON : ScriptKind
-
-    sealed interface Deferred : ScriptKind
-
+/* enum */
+external class ScriptKind
+private constructor() {
     companion object {
-        val Unknown: Unknown
-        val JS: JS
-        val JSX: JSX
-        val TS: TS
-        val TSX: TSX
-        val External: External
-        val JSON: JSON
+        val Unknown: ScriptKind
+        val JS: ScriptKind
+        val JSX: ScriptKind
+        val TS: ScriptKind
+        val TSX: ScriptKind
+        val External: ScriptKind
+        val JSON: ScriptKind
 
         /**
          * Used on extensions that doesn't define the ScriptKind but the content defines it.
          * Deferred extensions are going to be included in all project contexts.
          */
-        val Deferred: Deferred
+        val Deferred: ScriptKind
     }
 }
