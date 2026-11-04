@@ -282,7 +282,7 @@ private constructor() :
     val toolbar: BarProp
 
     /**
-     * Returns a reference to the **`top`**most window in the window hierarchy.
+     * Returns a reference to the topmost window in the window hierarchy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top)
      */

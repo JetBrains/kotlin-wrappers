@@ -46,7 +46,7 @@ private constructor() :
     val x: SVGAnimatedLength
 
     /**
-     * The read-onl**`y`** y property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the y attribute of the <mask>. It represents the y-axis coordinate of the top-left corner of the masking area.
+     * The read-only **`y`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the y attribute of the <mask>. It represents the y-axis coordinate of the top-left corner of the masking area.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/y)
      */

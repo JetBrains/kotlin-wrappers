@@ -27,7 +27,7 @@ open external class MutationObserver(
      */
     fun observe(
         target: Node,
-        options: MutationObserverInit = definedExternally,
+        options: MutationObserverInit,
     )
 
     /**

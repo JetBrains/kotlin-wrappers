@@ -152,7 +152,7 @@ protected constructor() :
     val x: Int
 
     /**
-     * The read-onl**`y`** y property of the HTMLImageElement interface indicates the y-coordinate of the <img> element's top border edge relative to the root element's origin.
+     * The read-only **`y`** property of the HTMLImageElement interface indicates the y-coordinate of the <img> element's top border edge relative to the root element's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y)
      */
