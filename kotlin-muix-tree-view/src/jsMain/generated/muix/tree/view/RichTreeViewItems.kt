@@ -13,8 +13,8 @@ import web.html.HTMLUListElement
  */
 @JsPlainObject
 external interface RichTreeViewItemsOwnerState {
-    var itemId: TreeViewItemId
-    var label: String
+    val itemId: TreeViewItemId
+    val label: String
 }
 
 @JsPlainObject
@@ -23,7 +23,7 @@ external interface RichTreeViewItemsSlots {
      * Custom component to render a Tree Item.
      * @default TreeItem.
      */
-    var item: ElementType<TreeItemProps>?
+    val item: ElementType<TreeItemProps>?
 }
 
 external interface RichTreeViewItemsSlotProps : Props {

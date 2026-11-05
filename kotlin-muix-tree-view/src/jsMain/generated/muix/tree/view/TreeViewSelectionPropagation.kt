@@ -6,7 +6,7 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface TreeViewSelectionPropagation {
-    var descendants: Boolean?
+    val descendants: Boolean?
 
-    var parents: Boolean?
+    val parents: Boolean?
 }

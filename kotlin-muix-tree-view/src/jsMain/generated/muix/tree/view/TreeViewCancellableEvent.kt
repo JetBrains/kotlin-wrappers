@@ -3,7 +3,6 @@
 package muix.tree.view
 
 import js.reflect.unsafeCast
-import kotlinx.js.JsPlainObject
 import react.dom.events.SyntheticEvent
 
 /**
@@ -14,7 +13,6 @@ import react.dom.events.SyntheticEvent
  * for the checkbox `onChange`; by the label editing plugin for the label input `onKeyDown` / `onBlur`; and by the
  * focus and keyboard navigation plugins for the Tree View root's `onFocus` / `onBlur` / `onKeyDown`.
  */
-@JsPlainObject
 external interface TreeViewCancellableEvent {
     var defaultMuiPrevented: Boolean?
 }

@@ -72,65 +72,65 @@ external interface TreeItemSlots : TreeItemIconSlots {
      * The component that renders the root.
      * @default TreeItemRoot
      */
-    var root: ElementType<*>?
+    val root: ElementType<*>?
 
     /**
      * The component that renders the content of the item.
      * (e.g.: everything related to this item, not to its children).
      * @default TreeItemContent
      */
-    var content: ElementType<*>?
+    val content: ElementType<*>?
 
     /**
      * The component that renders the children of the item.
      * @default TreeItemGroupTransition
      */
-    var groupTransition: ElementType<*>?
+    val groupTransition: ElementType<*>?
 
     /**
      * The component that renders the icon.
      * @default TreeItemIconContainer
      */
-    var iconContainer: ElementType<*>?
+    val iconContainer: ElementType<*>?
 
     /**
      * The component that renders the item checkbox for selection.
      * @default TreeItemCheckbox
      */
-    var checkbox: ElementType<*>?
+    val checkbox: ElementType<*>?
 
     /**
      * The component that renders the item label.
      * @default TreeItemLabel
      */
-    var label: ElementType<*>?
+    val label: ElementType<*>?
 
     /**
      * The component that renders the input to edit the label when the item is editable and is currently being edited.
      * @default TreeItemLabelInput
      */
-    var labelInput: ElementType<*>?
+    val labelInput: ElementType<*>?
 
     /**
      * The component that renders the overlay when an item reordering is ongoing.
      * Warning: This slot is only useful when using the `<RichTreeViewPro />` component.
      * @default TreeItemDragAndDropOverlay
      */
-    var dragAndDropOverlay: ElementType<*>?
+    val dragAndDropOverlay: ElementType<*>?
 
     /**
      * The component that is rendered when the item is in an error state.
      * Warning: This slot is only useful when using the `<RichTreeViewPro />` component is lazy loading is enabled.
      * @default TreeItemErrorContainer
      */
-    var errorIcon: ElementType<*>?
+    val errorIcon: ElementType<*>?
 
     /**
      * The component that is rendered when the item is in a loading state.
      * Warning: This slot is only useful when using the `<RichTreeViewPro />` component is lazy loading is enabled.
      * @default TreeItemLoadingContainer
      */
-    var loadingIcon: ElementType<*>?
+    val loadingIcon: ElementType<*>?
 }
 
 external interface TreeItemSlotProps :

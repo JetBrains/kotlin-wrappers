@@ -11,40 +11,40 @@ import web.svg.SVGElement
 @JsPlainObject
 external interface TreeViewClasses {
     /** Styles applied to the root element. */
-    var root: String
+    val root: String
 
     /** Styles applied to the item's root element. */
-    var item: String
+    val item: String
 
     /** Styles applied to the item's content element. */
-    var itemContent: String
+    val itemContent: String
 
     /** Styles applied to the item's transition element. */
-    var itemGroupTransition: String
+    val itemGroupTransition: String
 
     /** Styles applied to the item's icon container element icon. */
-    var itemIconContainer: String
+    val itemIconContainer: String
 
     /** Styles applied to the item's label element. */
-    var itemLabel: String
+    val itemLabel: String
 
     /** Styles applied to the item's label input element (visible only when editing is enabled). */
-    var itemLabelInput: String
+    val itemLabelInput: String
 
     /** Styles applied to the item's checkbox element. */
-    var itemCheckbox: String
+    val itemCheckbox: String
 
     /** Styles applied to the item's drag and drop overlay element. */
-    var itemDragAndDropOverlay: String
+    val itemDragAndDropOverlay: String
 
     /** Styles applied to the item's error icon element */
-    var itemErrorIcon: String
+    val itemErrorIcon: String
 
     /** Styles applied to the item's loading icon element */
-    var itemLoadingIcon: String
+    val itemLoadingIcon: String
 
     /** Styles applied to the item loader element. */
-    var itemLoader: String
+    val itemLoader: String
 }
 
 @JsPlainObject
@@ -52,18 +52,18 @@ external interface TreeViewSlots {
     /**
      * The default icon used to collapse the item.
      */
-    var collapseIcon: ElementType<*>?
+    val collapseIcon: ElementType<*>?
 
     /**
      * The default icon used to expand the item.
      */
-    var expandIcon: ElementType<*>?
+    val expandIcon: ElementType<*>?
 
     /**
      * The default icon displayed next to an end item.
      * This is applied to all Tree Items and can be overridden by the TreeItem `icon` slot prop.
      */
-    var endIcon: ElementType<*>?
+    val endIcon: ElementType<*>?
 }
 
 external interface TreeViewSlotProps : Props {
@@ -79,12 +79,12 @@ external interface TreeViewStyleContextSlots : TreeViewSlots {
     /**
      * Component rendered instead of the default loading rows.
      */
-    var loading: ElementType<*>?
+    val loading: ElementType<*>?
 
     /**
      * Component rendered for each loading row. The default renders a skeleton row.
      */
-    var itemLoader: ElementType<*>?
+    val itemLoader: ElementType<*>?
 }
 
 external interface TreeViewStyleContextSlotProps :
@@ -96,9 +96,9 @@ external interface TreeViewStyleContextSlotProps :
 
 @JsPlainObject
 external interface TreeViewStyleContextValue {
-    var classes: TreeViewClasses
+    val classes: TreeViewClasses
 
-    var slots: TreeViewStyleContextSlots
+    val slots: TreeViewStyleContextSlots
 
-    var slotProps: TreeViewStyleContextSlotProps
+    val slotProps: TreeViewStyleContextSlotProps
 }

@@ -12,40 +12,40 @@ import web.html.HTMLElement
  */
 @JsPlainObject
 external interface SimpleTreeViewItem {
-    var id: TreeViewItemId
-    var label: String
-    var children: ReadonlyArray<SimpleTreeViewItem>?
+    val id: TreeViewItemId
+    val label: String
+    val children: ReadonlyArray<SimpleTreeViewItem>?
 }
 
 @JsPlainObject
 external interface SetIsItemDisabledParameters {
-    var itemId: TreeViewItemId
-    var shouldBeDisabled: Boolean?
+    val itemId: TreeViewItemId
+    val shouldBeDisabled: Boolean?
 }
 
 @JsPlainObject
 external interface SetItemExpansionParameters {
-    var itemId: TreeViewItemId
-    var event: SyntheticEvent<*, *>?
-    var shouldBeExpanded: Boolean?
+    val itemId: TreeViewItemId
+    val event: SyntheticEvent<*, *>?
+    val shouldBeExpanded: Boolean?
 }
 
 @JsPlainObject
 external interface SetItemSelectionParameters {
-    var itemId: TreeViewItemId
-    var event: SyntheticEvent<*, *>?
+    val itemId: TreeViewItemId
+    val event: SyntheticEvent<*, *>?
 
     /**
      * If `true` the item will be selected. If `false` the item will be deselected. If not defined, the item's
      * selection status will be toggled.
      */
-    var shouldBeSelected: Boolean?
+    val shouldBeSelected: Boolean?
 
     /**
      * If `true`, the other already selected items will remain selected, otherwise, they will be deselected.
      * Only relevant when `multiSelect` is `true`.
      */
-    var keepExistingSelection: Boolean?
+    val keepExistingSelection: Boolean?
 }
 
 @JsPlainObject
@@ -53,20 +53,20 @@ external interface AddItemsParameters<R : Any> {
     /**
      * The items to add to the tree.
      */
-    var items: ReadonlyArray<R>
+    val items: ReadonlyArray<R>
 
     /**
      * The id of the item to add the items to.
      * If `null` or not defined, the items are added at the root level.
      * @default null
      */
-    var parentId: TreeViewItemId?
+    val parentId: TreeViewItemId?
 
     /**
      * The position in the parent's children at which the items are inserted.
      * If not defined, the items are appended after the existing children.
      */
-    var index: Int?
+    val index: Int?
 }
 
 /**

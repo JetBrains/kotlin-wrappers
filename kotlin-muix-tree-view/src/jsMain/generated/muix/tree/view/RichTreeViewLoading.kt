@@ -36,5 +36,5 @@ external interface RichTreeViewLoadingSlotOwnerState {
      * The id of the item whose children are loading.
      * `null` while the whole tree is loading.
      */
-    var itemId: TreeViewItemId?
+    val itemId: TreeViewItemId?
 }

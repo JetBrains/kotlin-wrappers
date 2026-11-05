@@ -10,7 +10,8 @@ import js.reflect.unsafeCast
  * otherwise (`TreeViewSelectionValue<Multiple>` upstream). Built with the factories below and read back with
  * [asMultiple] or [asSingle], whichever the component is configured for.
  */
-sealed external interface TreeViewSelectionValue
+sealed /* union */
+external interface TreeViewSelectionValue
 
 /**
  * The selection of a `multiSelect` Tree View.

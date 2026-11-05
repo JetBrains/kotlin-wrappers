@@ -40,7 +40,7 @@ external interface RichTreeViewSlots :
      * Element rendered at the root.
      * @default RichTreeViewRoot
      */
-    var root: ElementType<*>?
+    val root: ElementType<*>?
 
     /**
      * Component rendered instead of the default loading rows.
@@ -49,7 +49,7 @@ external interface RichTreeViewSlots :
      * while its children load.
      * Compose it with `TreeItemLoader` to keep the rows semantically correct.
      */
-    var loading: ElementType<*>?
+    val loading: ElementType<*>?
 
     /**
      * Component rendered for each loading row.
@@ -57,7 +57,7 @@ external interface RichTreeViewSlots :
      * Wrap custom content in `TreeItemLoader` to keep the row semantically correct.
      * @default TreeItemLoader
      */
-    var itemLoader: ElementType<*>?
+    val itemLoader: ElementType<*>?
 }
 
 external interface RichTreeViewSlotProps :

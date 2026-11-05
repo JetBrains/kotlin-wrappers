@@ -4,7 +4,8 @@ package muix.tree.view
 
 import seskar.js.JsValue
 
-sealed external interface TreeViewItemsReorderingAction {
+sealed /* union */
+external interface TreeViewItemsReorderingAction {
     companion object {
         @JsValue("reorder-above")
         val reorderAbove: TreeViewItemsReorderingAction

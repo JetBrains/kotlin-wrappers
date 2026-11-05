@@ -4,7 +4,8 @@ package muix.tree.view
 
 import seskar.js.JsValue
 
-sealed external interface TreeViewExpansionTrigger {
+sealed /* union */
+external interface TreeViewExpansionTrigger {
     companion object {
         @JsValue("content")
         val content: TreeViewExpansionTrigger

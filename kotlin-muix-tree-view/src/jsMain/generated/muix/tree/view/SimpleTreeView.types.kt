@@ -55,7 +55,7 @@ external interface SimpleTreeViewSlots : TreeViewSlots {
      * Element rendered at the root.
      * @default SimpleTreeViewRoot
      */
-    var root: ElementType<*>?
+    val root: ElementType<*>?
 }
 
 external interface SimpleTreeViewSlotProps :
