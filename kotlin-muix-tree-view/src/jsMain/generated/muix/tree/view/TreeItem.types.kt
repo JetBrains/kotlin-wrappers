@@ -2,7 +2,9 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import react.ElementType
@@ -10,7 +12,12 @@ import react.Props
 import react.PropsWithClassName
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
+import react.dom.html.HTMLAttributes
+import react.dom.html.InputHTMLAttributes
+import react.dom.html.LiHTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLDivElement
+import web.html.HTMLInputElement
 import web.html.HTMLLIElement
 
 external interface TreeItemProps :
@@ -51,7 +58,7 @@ external interface TreeItemProps :
     /**
      * Callback fired when the item root is blurred.
      */
-    var onBlur: Any? /* TreeViewCancellableEventHandler<React.FocusEvent<HTMLLIElement>> */
+    var onBlur: FocusEventHandler<HTMLLIElement>?
 
     /**
      * Callback fired when a key is pressed on the keyboard and the tree is in focus.
@@ -59,6 +66,7 @@ external interface TreeItemProps :
     var onKeyDown: KeyboardEventHandler<HTMLLIElement>?
 }
 
+@JsPlainObject
 external interface TreeItemSlots : TreeItemIconSlots {
     /**
      * The component that renders the root.
@@ -127,25 +135,25 @@ external interface TreeItemSlots : TreeItemIconSlots {
 
 external interface TreeItemSlotProps :
     TreeItemIconSlotProps {
-    var root: Props?
+    var root: LiHTMLAttributes<HTMLLIElement>?
 
-    var content: Props?
+    var content: HTMLAttributes<HTMLDivElement>?
 
-    var groupTransition: Props?
+    var groupTransition: TransitionProps?
 
-    var iconContainer: Props?
+    var iconContainer: HTMLAttributes<HTMLDivElement>?
 
     var checkbox: Props?
 
-    var label: Props?
+    var label: HTMLAttributes<HTMLDivElement>?
 
-    var labelInput: Props?
+    var labelInput: InputHTMLAttributes<HTMLInputElement>?
 
-    var dragAndDropOverlay: Props?
+    var dragAndDropOverlay: HTMLAttributes<HTMLDivElement>?
 
-    var errorIcon: Props?
+    var errorIcon: HTMLAttributes<HTMLDivElement>?
 
-    var loadingIcon: Props?
+    var loadingIcon: HTMLAttributes<HTMLDivElement>?
 }
 
 external interface TreeItemOwnerState

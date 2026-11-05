@@ -16,4 +16,4 @@ import react.FC
  *
  * - [RichTreeView API](https://mui.com/x/api/tree-view/rich-tree-view/)
  */
-external val RichTreeView: FC<RichTreeViewProps>
+external val RichTreeView: FC<RichTreeViewProps<*>>

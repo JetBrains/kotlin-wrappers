@@ -4,7 +4,15 @@ package muix.tree.view
 
 import mui.system.Union
 import react.*
+import react.dom.aria.AriaChecked
+import react.dom.events.ChangeEventHandler
+import react.dom.events.FocusEventHandler
+import react.dom.events.KeyboardEventHandler
+import react.dom.events.MouseEventHandler
+import web.dom.Element
 import web.dom.ElementId
+import web.html.HTMLElement
+import web.html.HTMLInputElement
 import web.html.HTMLLIElement
 
 external interface UseTreeItemParameters : PropsWithChildren {
@@ -29,7 +37,7 @@ external interface UseTreeItemParameters : PropsWithChildren {
      * The id of the item.
      * Must be unique.
      */
-    var itemId: String
+    var itemId: TreeViewItemId
 
     /**
      * The label of the item.
@@ -50,7 +58,7 @@ external interface UseTreeItemContextProviderProps : Props {
     var id: ElementId?
 }
 
-external interface UseTreeItemRootSlotPropsFromUseTreeItem {
+external interface UseTreeItemRootSlotPropsFromUseTreeItem : Props {
     var role: Union /* 'treeitem' */
 
     var tabIndex: Int
@@ -63,21 +71,28 @@ external interface UseTreeItemRootSlotPropsFromUseTreeItem {
     @JsName("aria-disabled")
     var ariaDisabled: Boolean
 
-    var onFocus: Any? /* TreeViewCancellableEventHandler<React.FocusEvent<HTMLElement>> */
+    var onFocus: FocusEventHandler<HTMLElement>
 
-    var onBlur: Any? /* TreeViewCancellableEventHandler<React.FocusEvent<HTMLElement>> */
+    var onBlur: FocusEventHandler<HTMLElement>
 
-    var onKeyDown: Any? /* TreeViewCancellableEventHandler<React.KeyboardEvent<HTMLElement>> */
+    var onKeyDown: KeyboardEventHandler<HTMLElement>
 
     var style: CSSProperties
 }
 
-external interface UseTreeItemRootSlotOwnProps : Props
+external interface UseTreeItemRootSlotOwnProps :
+    UseTreeItemRootSlotPropsFromUseTreeItem {
+    @JsName("aria-checked")
+    var ariaChecked: AriaChecked
 
-external interface UseTreeItemContentSlotPropsFromUseTreeItem {
-    var onClick: Any? /* TreeViewCancellableEventHandler<React.MouseEvent> */
+    @JsName("aria-selected")
+    var ariaSelected: Boolean
+}
 
-    var onMouseDown: Any? /* TreeViewCancellableEventHandler<React.MouseEvent> */
+external interface UseTreeItemContentSlotPropsFromUseTreeItem : Props {
+    var onClick: MouseEventHandler<Element>
+
+    var onMouseDown: MouseEventHandler<Element>
 
     @JsName("data-expanded")
     var dataExpanded: Union? /* '' */
@@ -98,23 +113,37 @@ external interface UseTreeItemContentSlotPropsFromUseTreeItem {
     var dataEditable: Union? /* '' */
 }
 
-external interface UseTreeItemContentSlotOwnProps : Props
+external interface UseTreeItemContentSlotOwnProps : UseTreeItemContentSlotPropsFromUseTreeItem
 
 external interface UseTreeItemIconContainerSlotOwnProps : Props {
-    var onClick: Any? /* TreeViewCancellableEventHandler<React.MouseEvent> */
+    var onClick: MouseEventHandler<Element>
 }
 
 external interface UseTreeItemLabelSlotOwnProps : PropsWithChildren {
     override var children: ReactNode?
 
-    var onDoubleClick: Any? /* TreeViewCancellableEventHandler<React.MouseEvent> */
+    var onDoubleClick: MouseEventHandler<Element>
+
+    var editable: Boolean?
 }
 
-external interface UseTreeItemLabelInputSlotOwnProps : Props
+external interface UseTreeItemLabelInputSlotOwnProps : TreeItemLabelInputProps
 
 external interface UseTreeItemCheckboxSlotOwnProps : Props {
     @JsName("aria-hidden")
     var ariaHidden: Boolean
+
+    var visible: Boolean?
+
+    var checked: Boolean?
+
+    var indeterminate: Boolean?
+
+    var disabled: Boolean?
+
+    var tabIndex: Int? /* -1 */
+
+    var onChange: ChangeEventHandler<HTMLInputElement, *>?
 }
 
 external interface UseTreeItemGroupTransitionSlotOwnProps : PropsWithChildren {
@@ -249,5 +278,5 @@ external interface UseTreeItemReturnValue {
     /**
      * The object the allows Tree View manipulation.
      */
-    var publicAPI: Any? /* TreeViewPublicAPI<TStore> */
+    var publicAPI: TreeViewPublicAPI<*>
 }

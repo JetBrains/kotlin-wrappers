@@ -2,17 +2,17 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import mui.material.styles.Theme
 import mui.system.SxProps
 import react.ElementType
-import react.Props
-import react.Ref
+import react.RefObject
 import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
 import web.html.HTMLUListElement
 
-external interface RichTreeViewProps :
-    RichTreeViewStoreParameters,
+external interface RichTreeViewProps<R : Any> :
+    RichTreeViewStoreParameters<R>,
     RichTreeViewPropsBase {
     /**
      * Overridable component slots.
@@ -29,10 +29,13 @@ external interface RichTreeViewProps :
     /**
      * The ref object that allows Tree View manipulation. Can be instantiated with `useRichTreeViewApiRef()`.
      */
-    var apiRef: Ref<*>?
+    var apiRef: RefObject<RichTreeViewPublicAPI<R>>?
 }
 
-external interface RichTreeViewSlots : TreeViewSlots {
+@JsPlainObject
+external interface RichTreeViewSlots :
+    TreeViewSlots,
+    RichTreeViewItemsSlots {
     /**
      * Element rendered at the root.
      * @default RichTreeViewRoot
@@ -58,10 +61,11 @@ external interface RichTreeViewSlots : TreeViewSlots {
 }
 
 external interface RichTreeViewSlotProps :
-    TreeViewSlotProps {
-    var loading: Props?
+    TreeViewSlotProps,
+    RichTreeViewItemsSlotProps {
+    var loading: SlotComponentProps<RichTreeViewLoadingSlotOwnProps, RichTreeViewLoadingSlotOwnerState>?
 
-    var itemLoader: Props?
+    var itemLoader: SlotComponentProps<TreeItemLoaderProps, TreeItemLoaderOwnerState>?
 }
 
 external interface RichTreeViewPropsBase : HTMLAttributes<HTMLUListElement> {

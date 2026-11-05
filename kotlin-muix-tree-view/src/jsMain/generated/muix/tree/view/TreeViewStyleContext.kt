@@ -2,8 +2,11 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import react.ElementType
 import react.Props
+import react.dom.svg.SVGAttributes
+import web.svg.SVGElement
 
 external interface TreeViewClasses {
     /** Styles applied to the root element. */
@@ -43,6 +46,7 @@ external interface TreeViewClasses {
     var itemLoader: String
 }
 
+@JsPlainObject
 external interface TreeViewSlots {
     /**
      * The default icon used to collapse the item.
@@ -62,13 +66,14 @@ external interface TreeViewSlots {
 }
 
 external interface TreeViewSlotProps : Props {
-    var collapseIcon: Props?
+    var collapseIcon: SVGAttributes<SVGElement>?
 
-    var expandIcon: Props?
+    var expandIcon: SVGAttributes<SVGElement>?
 
-    var endIcon: Props?
+    var endIcon: SVGAttributes<SVGElement>?
 }
 
+@JsPlainObject
 external interface TreeViewStyleContextSlots : TreeViewSlots {
     /**
      * Component rendered instead of the default loading rows.
@@ -83,9 +88,9 @@ external interface TreeViewStyleContextSlots : TreeViewSlots {
 
 external interface TreeViewStyleContextSlotProps :
     TreeViewSlotProps {
-    var loading: Props?
+    var loading: SlotComponentProps<RichTreeViewLoadingSlotOwnProps, RichTreeViewLoadingSlotOwnerState>?
 
-    var itemLoader: Props?
+    var itemLoader: SlotComponentProps<TreeItemLoaderProps, TreeItemLoaderOwnerState>?
 }
 
 external interface TreeViewStyleContextValue {
