@@ -5,6 +5,7 @@
 package mui.system
 
 import js.objects.Record
+import kotlinx.js.JsPlainObject
 
 external interface Typography
 
@@ -16,6 +17,7 @@ external interface Transitions
 
 external interface ZIndex
 
+@JsPlainObject
 external interface ThemeOptions {
     var shape: ShapeOptions?
 
@@ -42,6 +44,7 @@ external interface ThemeOptions {
     var unstable_sxConfig: Any? /* SxConfig */
 }
 
+@JsPlainObject
 external interface Theme {
     var shape: Shape
 

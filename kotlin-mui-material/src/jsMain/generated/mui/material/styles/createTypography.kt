@@ -4,12 +4,14 @@
 
 package mui.material.styles
 
+import kotlinx.js.JsPlainObject
 import react.CSSProperties
 
+@JsPlainObject
 external interface FontStyle {
     var fontFamily: web.cssom.FontFamily
 
-    var fontSize: Number
+    var fontSize: Double
 
     var fontWeightLight: web.cssom.FontWeight
 
@@ -19,17 +21,34 @@ external interface FontStyle {
 
     var fontWeightBold: web.cssom.FontWeight
 
-    var htmlFontSize: Number
+    var htmlFontSize: Double
 }
 
-external interface FontStyleOptions : FontStyle {
+@JsPlainObject
+external interface FontStyleOptions {
+    var fontFamily: web.cssom.FontFamily?
+
+    var fontSize: Double?
+
+    var fontWeightLight: web.cssom.FontWeight?
+
+    var fontWeightRegular: web.cssom.FontWeight?
+
+    var fontWeightMedium: web.cssom.FontWeight?
+
+    var fontWeightBold: web.cssom.FontWeight?
+
+    var htmlFontSize: Double?
+
     var allVariants: CSSProperties?
 }
 
+@JsPlainObject
 external interface TypographyUtils {
     var pxToRem: (px: Number) -> String
 }
 
+@JsPlainObject
 external interface TypographyVariants :
     FontStyle,
     TypographyUtils {
@@ -60,6 +79,7 @@ external interface TypographyVariants :
     var overline: CSSProperties
 }
 
+@JsPlainObject
 external interface TypographyVariantsOptions : FontStyleOptions {
     var h1: CSSProperties?
 
@@ -91,5 +111,11 @@ external interface TypographyVariantsOptions : FontStyleOptions {
 @JsName("private_createTypography")
 external fun createTypography(
     palette: Palette,
-    typography: Any /* TypographyVariantsOptions | ((palette: Palette) => TypographyVariantsOptions) */,
+    typography: TypographyVariantsOptions,
+): TypographyVariants
+
+@JsName("private_createTypography")
+external fun createTypography(
+    palette: Palette,
+    typography: (palette: Palette) -> TypographyVariantsOptions,
 ): TypographyVariants
