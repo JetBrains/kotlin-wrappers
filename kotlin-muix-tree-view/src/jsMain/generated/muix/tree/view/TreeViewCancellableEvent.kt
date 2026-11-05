@@ -13,14 +13,14 @@ import react.dom.events.SyntheticEvent
  * for the checkbox `onChange`; by the label editing plugin for the label input `onKeyDown` / `onBlur`; and by the
  * focus and keyboard navigation plugins for the Tree View root's `onFocus` / `onBlur` / `onKeyDown`.
  */
-external interface TreeViewCancellableEvent {
+private external interface TreeViewCancellableEvent {
     var defaultMuiPrevented: Boolean?
 }
 
 /**
  * `defaultMuiPrevented` of an event received by a Tree View handler, see [TreeViewCancellableEvent].
  */
-inline var SyntheticEvent<*, *>.defaultMuiPrevented: Boolean?
+var SyntheticEvent<*, *>.defaultMuiPrevented: Boolean?
     get() = unsafeCast<TreeViewCancellableEvent>(this).defaultMuiPrevented
     set(value) {
         unsafeCast<TreeViewCancellableEvent>(this).defaultMuiPrevented = value

@@ -34,17 +34,17 @@ external interface TreeItemLoaderOwnerState {
     /**
      * Index of the loading row inside its group.
      */
-    val index: Number
+    val index: Int
 
     /**
      * Number of loading rows rendered in the group.
      */
-    val itemsCount: Number
+    val itemsCount: Int
 
     /**
      * Depth of the loading rows.
      */
-    val itemDepth: Number
+    val itemDepth: Int
 
     /**
      * Whether each row renders a checkbox placeholder.
