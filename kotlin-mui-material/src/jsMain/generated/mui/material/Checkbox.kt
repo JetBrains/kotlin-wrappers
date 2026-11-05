@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Checkbox")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -27,24 +22,29 @@ external interface CheckboxProps :
     SwitchBaseProps,
     CheckboxSlotsAndSlotProps,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: CheckboxSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: CheckboxSlotProps?
 
     /**
      * If `true`, the component is checked.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var checked: Boolean?
 
     /**
      * The icon to display when the component is checked.
      * @default <CheckBoxIcon />
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: CheckboxClasses?
 
     /**
@@ -59,23 +59,27 @@ external interface CheckboxProps :
      * If `true`, the component is disabled.
      * @default false
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
      * @default false
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var disableRipple: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      * @default <CheckBoxOutlineBlankIcon />
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var icon: ReactNode?
 
     /**
      * The id of the `input` element.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var id: ElementId?
 
     /**
@@ -98,12 +102,14 @@ external interface CheckboxProps :
      * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the `input` element is required.
      * @default false
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var required: Boolean?
 
     /**
@@ -122,6 +128,7 @@ external interface CheckboxProps :
      * The value of the component. The DOM API casts this to a string.
      * The browser uses "on" as the default value.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var value: Any? /* SwitchBaseProps['value'] */
 }
 

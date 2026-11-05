@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Menu")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -22,14 +17,17 @@ external interface MenuProps :
     MenuSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: MenuSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: MenuSlotProps?
 
     /**
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var anchorEl: ((element: Element) -> Element)?
 
     /**
@@ -39,6 +37,7 @@ external interface MenuProps :
      * and should only be considered if you manage focus otherwise.
      * @default true
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var autoFocus: Boolean?
 
     /**
@@ -49,6 +48,7 @@ external interface MenuProps :
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: MenuClasses?
 
     /**
@@ -66,11 +66,13 @@ external interface MenuProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`, `"tabKeyDown"`.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var open: Boolean
 
     /**
@@ -87,6 +89,7 @@ external interface MenuProps :
      * The length of the transition in `ms`, or 'auto'
      * @default 'auto'
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
 
     /**

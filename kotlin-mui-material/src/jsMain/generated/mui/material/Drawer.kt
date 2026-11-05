@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Drawer")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -24,8 +19,10 @@ external interface DrawerProps :
     DrawerSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: DrawerSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: DrawerSlotProps?
 
     /**
@@ -42,6 +39,7 @@ external interface DrawerProps :
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: DrawerClasses?
 
     /**
@@ -69,6 +67,7 @@ external interface DrawerProps :
      * If `true`, the component is shown.
      * @default false
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var open: Boolean?
 
     /**

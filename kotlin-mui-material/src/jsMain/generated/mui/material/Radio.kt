@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Radio")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -25,19 +20,23 @@ external interface RadioProps :
     SwitchBaseProps,
     RadioSlotsAndSlotProps,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: RadioSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: RadioSlotProps?
 
     /**
      * The icon to display when the component is checked.
      * @default <RadioButtonIcon checked />
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: RadioClasses?
 
     /**
@@ -51,12 +50,14 @@ external interface RadioProps :
     /**
      * If `true`, the component is disabled.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var disabled: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      * @default <RadioButtonIcon />
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var icon: ReactNode?
 
     /**

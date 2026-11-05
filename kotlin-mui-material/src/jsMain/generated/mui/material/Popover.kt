@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Popover")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -23,8 +18,10 @@ external interface PopoverProps :
     PopoverSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: PopoverSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: PopoverSlotProps?
 
     /**
@@ -76,6 +73,7 @@ external interface PopoverProps :
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: PopoverClasses?
 
     /**

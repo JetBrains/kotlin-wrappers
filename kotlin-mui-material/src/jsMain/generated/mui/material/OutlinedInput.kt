@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/OutlinedInput")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -25,13 +20,16 @@ external interface OutlinedInputProps :
     InputBaseProps,
     OutlinedInputSlotsAndSlotProps,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: OutlinedInputSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: OutlinedInputSlotProps?
 
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: OutlinedInputClasses?
 
     /**

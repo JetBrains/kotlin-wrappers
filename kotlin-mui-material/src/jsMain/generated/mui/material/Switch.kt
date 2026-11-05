@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Switch")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -27,18 +22,22 @@ external interface SwitchProps :
     SwitchBaseProps,
     SwitchSlotsAndSlotProps,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: SwitchSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: SwitchSlotProps?
 
     /**
      * The icon to display when the component is checked.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: SwitchClasses?
 
     /**
@@ -52,11 +51,13 @@ external interface SwitchProps :
     /**
      * If `true`, the component is disabled.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var disabled: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var icon: ReactNode?
 
     /**
@@ -75,6 +76,7 @@ external interface SwitchProps :
      * The value of the component. The DOM API casts this to a string.
      * The browser uses "on" as the default value.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var value: Any?
 }
 

@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/SwipeableDrawer")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import react.ElementType
@@ -19,8 +14,10 @@ import web.html.HTMLDivElement
 external interface SwipeableDrawerProps :
     DrawerProps,
     SwipeableDrawerSlotsAndSlotProps {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: SwipeableDrawerSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: SwipeableDrawerSlotProps?
 
     /**
@@ -78,6 +75,7 @@ external interface SwipeableDrawerProps :
      *
      * @param {React.SyntheticEvent<{}> | Event} event The event source of the callback.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var onClose: (event: SyntheticEvent<*, *>) -> Unit
 
     /**

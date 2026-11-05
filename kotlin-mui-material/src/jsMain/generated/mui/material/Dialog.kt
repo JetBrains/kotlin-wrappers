@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Dialog")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -26,20 +21,24 @@ external interface DialogProps :
     DialogSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slots: DialogSlots?
 
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var slotProps: DialogSlotProps?
 
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
     @JsName("aria-describedby")
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var ariaDescribedBy: ElementId?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
     @JsName("aria-labelledby")
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var ariaLabelledBy: ElementId?
 
     /**
@@ -48,6 +47,7 @@ external interface DialogProps :
      * @default true
      */
     @JsName("aria-modal")
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var ariaModal: Boolean?
 
     /**
@@ -58,6 +58,7 @@ external interface DialogProps :
     /**
      * Override or extend the styles applied to the component.
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var classes: DialogClasses?
 
     /**
@@ -101,6 +102,7 @@ external interface DialogProps :
      * See https://www.w3.org/TR/wai-aria-1.2/#dialog and https://www.w3.org/TR/wai-aria-1.2/#alertdialog for more details.
      * @default 'dialog'
      */
+    @Suppress("VIRTUAL_MEMBER_HIDDEN")
     var role: Union? /* 'dialog' | 'alertdialog' */
 
     /**
