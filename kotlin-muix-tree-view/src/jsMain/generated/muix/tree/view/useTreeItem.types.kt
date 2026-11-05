@@ -2,6 +2,7 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import mui.system.Union
 import react.*
 import react.dom.aria.AriaChecked
@@ -160,6 +161,7 @@ external interface UseTreeItemGroupTransitionSlotOwnProps : PropsWithChildren {
 
 external interface UseTreeItemDragAndDropOverlaySlotOwnProps : Props
 
+@JsPlainObject
 external interface UseTreeItemStatus {
     var expandable: Boolean
 
@@ -185,6 +187,7 @@ external interface UseTreeItemStatus {
     var error: Boolean
 }
 
+@JsPlainObject
 external interface UseTreeItemReturnValue {
     /**
      * Resolver for the context provider's props.

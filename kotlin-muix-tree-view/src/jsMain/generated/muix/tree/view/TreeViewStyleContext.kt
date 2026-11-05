@@ -8,6 +8,7 @@ import react.Props
 import react.dom.svg.SVGAttributes
 import web.svg.SVGElement
 
+@JsPlainObject
 external interface TreeViewClasses {
     /** Styles applied to the root element. */
     var root: String
@@ -93,6 +94,7 @@ external interface TreeViewStyleContextSlotProps :
     var itemLoader: SlotComponentProps<TreeItemLoaderProps, TreeItemLoaderOwnerState>?
 }
 
+@JsPlainObject
 external interface TreeViewStyleContextValue {
     var classes: TreeViewClasses
 

@@ -10,6 +10,7 @@ import web.html.HTMLElement
 /**
  * The item model of a `SimpleTreeView` (`SimpleTreeViewItem` of `internals/SimpleTreeViewStore`).
  */
+@JsPlainObject
 external interface SimpleTreeViewItem {
     var id: TreeViewItemId
     var label: String

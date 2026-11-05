@@ -2,6 +2,7 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import react.PropsWithChildren
 import react.ReactNode
 import react.dom.html.HTMLAttributes
@@ -28,6 +29,7 @@ external interface TreeItemLoaderProps :
     var ownerState: TreeItemLoaderOwnerState?
 }
 
+@JsPlainObject
 external interface TreeItemLoaderOwnerState {
     /**
      * Index of the loading row inside its group.

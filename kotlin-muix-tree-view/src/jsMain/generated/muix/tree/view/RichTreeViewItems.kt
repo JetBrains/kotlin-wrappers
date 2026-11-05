@@ -11,6 +11,7 @@ import web.html.HTMLUListElement
 /**
  * The owner state handed to the `item` slot's props resolver.
  */
+@JsPlainObject
 external interface RichTreeViewItemsOwnerState {
     var itemId: TreeViewItemId
     var label: String

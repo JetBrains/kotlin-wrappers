@@ -2,6 +2,7 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import react.ReactNode
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
@@ -29,6 +30,7 @@ external interface RichTreeViewLoadingSlotOwnProps : HTMLAttributes<HTMLDivEleme
 /**
  * The owner state of the `loading` slot.
  */
+@JsPlainObject
 external interface RichTreeViewLoadingSlotOwnerState {
     /**
      * The id of the item whose children are loading.

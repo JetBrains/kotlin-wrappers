@@ -156,4 +156,5 @@ external interface TreeItemSlotProps :
     var loadingIcon: HTMLAttributes<HTMLDivElement>?
 }
 
+@JsPlainObject
 external interface TreeItemOwnerState
