@@ -31,14 +31,14 @@ external interface SwitchProps :
     /**
      * The icon to display when the component is checked.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var checkedIcon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: SwitchClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: SwitchClasses?
 
     /**
      * The color of the component.
@@ -51,14 +51,13 @@ external interface SwitchProps :
     /**
      * If `true`, the component is disabled.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var disabled: Boolean?
+    override var disabled: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var icon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var icon: ReactNode?
 
     /**
      * The size of the component.
@@ -76,8 +75,7 @@ external interface SwitchProps :
      * The value of the component. The DOM API casts this to a string.
      * The browser uses "on" as the default value.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var value: Any?
+    override var value: Any?
 }
 
 external interface SwitchSlots {

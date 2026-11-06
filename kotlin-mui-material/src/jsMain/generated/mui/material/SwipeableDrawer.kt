@@ -75,8 +75,8 @@ external interface SwipeableDrawerProps :
      *
      * @param {React.SyntheticEvent<{}> | Event} event The event source of the callback.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var onClose: (event: SyntheticEvent<*, *>) -> Unit
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var onClose: (event: SyntheticEvent<*, *>) -> Unit
 
     /**
      * Callback fired when the component requests to be opened.

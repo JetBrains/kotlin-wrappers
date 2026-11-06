@@ -73,8 +73,8 @@ external interface PopoverProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: PopoverClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: PopoverClasses?
 
     /**
      * An HTML element, component instance, or function that returns either.

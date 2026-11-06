@@ -31,21 +31,20 @@ external interface CheckboxProps :
     /**
      * If `true`, the component is checked.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var checked: Boolean?
+    override var checked: Boolean?
 
     /**
      * The icon to display when the component is checked.
      * @default <CheckBoxIcon />
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var checkedIcon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: CheckboxClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: CheckboxClasses?
 
     /**
      * The color of the component.
@@ -59,28 +58,25 @@ external interface CheckboxProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var disabled: Boolean?
+    override var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
      * @default false
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var disableRipple: Boolean?
+    override var disableRipple: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      * @default <CheckBoxOutlineBlankIcon />
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var icon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var icon: ReactNode?
 
     /**
      * The id of the `input` element.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var id: ElementId?
+    override var id: ElementId?
 
     /**
      * If `true`, the component appears indeterminate.
@@ -102,15 +98,13 @@ external interface CheckboxProps :
      * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
+    override var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the `input` element is required.
      * @default false
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var required: Boolean?
+    override var required: Boolean?
 
     /**
      * The size of the component.
@@ -128,8 +122,7 @@ external interface CheckboxProps :
      * The value of the component. The DOM API casts this to a string.
      * The browser uses "on" as the default value.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var value: Any? /* SwitchBaseProps['value'] */
+    override var value: Any? /* SwitchBaseProps['value'] */
 }
 
 external interface CheckboxSlots {

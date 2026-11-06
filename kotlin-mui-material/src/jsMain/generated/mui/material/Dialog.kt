@@ -30,25 +30,19 @@ external interface DialogProps :
     /**
      * The id(s) of the element(s) that describe the dialog.
      */
-    @JsName("aria-describedby")
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var ariaDescribedBy: ElementId?
+    override var ariaDescribedBy: ElementId?
 
     /**
      * The id(s) of the element(s) that label the dialog.
      */
-    @JsName("aria-labelledby")
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var ariaLabelledBy: ElementId?
+    override var ariaLabelledBy: ElementId?
 
     /**
      * Informs assistive technologies that the element is modal.
      * It's added on the element with role="dialog".
      * @default true
      */
-    @JsName("aria-modal")
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var ariaModal: Boolean?
+    override var ariaModal: Boolean?
 
     /**
      * Dialog children, usually the included sub-components.
@@ -58,8 +52,8 @@ external interface DialogProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: DialogClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: DialogClasses?
 
     /**
      * If `true`, the dialog is full-screen.
@@ -102,8 +96,8 @@ external interface DialogProps :
      * See https://www.w3.org/TR/wai-aria-1.2/#dialog and https://www.w3.org/TR/wai-aria-1.2/#alertdialog for more details.
      * @default 'dialog'
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var role: Union? /* 'dialog' | 'alertdialog' */
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var role: Union? /* 'dialog' | 'alertdialog' */
 
     /**
      * The component used to render the body of the dialog.

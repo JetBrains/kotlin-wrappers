@@ -39,8 +39,8 @@ external interface DrawerProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: DrawerClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: DrawerClasses?
 
     /**
      * The elevation of the drawer.
@@ -67,8 +67,8 @@ external interface DrawerProps :
      * If `true`, the component is shown.
      * @default false
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var open: Boolean?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var open: Boolean?
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles.

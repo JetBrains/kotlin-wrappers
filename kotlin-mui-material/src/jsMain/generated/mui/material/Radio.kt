@@ -30,14 +30,14 @@ external interface RadioProps :
      * The icon to display when the component is checked.
      * @default <RadioButtonIcon checked />
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var checkedIcon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: RadioClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: RadioClasses?
 
     /**
      * The color of the component.
@@ -50,15 +50,14 @@ external interface RadioProps :
     /**
      * If `true`, the component is disabled.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var disabled: Boolean?
+    override var disabled: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      * @default <RadioButtonIcon />
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var icon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var icon: ReactNode?
 
     /**
      * The size of the component.

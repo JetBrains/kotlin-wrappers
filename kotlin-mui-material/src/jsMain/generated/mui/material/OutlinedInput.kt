@@ -29,8 +29,8 @@ external interface OutlinedInputProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: OutlinedInputClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: OutlinedInputClasses?
 
     /**
      * The label of the `input`. It is only used for layout. The actual labelling

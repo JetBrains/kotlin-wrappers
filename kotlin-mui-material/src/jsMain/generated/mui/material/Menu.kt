@@ -27,8 +27,8 @@ external interface MenuProps :
      * An HTML element, or a function that returns one.
      * It's used to set the position of the menu.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var anchorEl: ((element: Element) -> Element)?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var anchorEl: ((element: Element) -> Element)?
 
     /**
      * If `true` (Default) will focus the `[role="menu"]` if no focusable child is found. Disabled
@@ -37,8 +37,7 @@ external interface MenuProps :
      * and should only be considered if you manage focus otherwise.
      * @default true
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var autoFocus: Boolean?
+    override var autoFocus: Boolean?
 
     /**
      * Menu contents, normally `MenuItem`s.
@@ -48,8 +47,8 @@ external interface MenuProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var classes: MenuClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: MenuClasses?
 
     /**
      * When opening the menu will not focus the active item but the `[role="menu"]`
@@ -66,14 +65,12 @@ external interface MenuProps :
      * @param {object} event The event source of the callback.
      * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`, `"tabKeyDown"`.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var onClose: ((event: Any, reason: String) -> Unit)?
+    override var onClose: ((event: Any, reason: String) -> Unit)?
 
     /**
      * If `true`, the component is shown.
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var open: Boolean
+    override var open: Boolean
 
     /**
      * `classes` prop applied to the [`Popover`](https://mui.com/material-ui/api/popover/) element.
@@ -89,8 +86,7 @@ external interface MenuProps :
      * The length of the transition in `ms`, or 'auto'
      * @default 'auto'
      */
-    @Suppress("VIRTUAL_MEMBER_HIDDEN")
-    var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
+    override var transitionDuration: Any? /* TransitionProps['timeout'] | 'auto' */
 
     /**
      * The variant to use. Use `menu` to prevent selected items from impacting the initial focus.
