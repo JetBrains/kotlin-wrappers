@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material.styles
 
 import js.array.ReadonlyArray
@@ -15,85 +11,93 @@ external interface ThemeOptions : mui.system.ThemeOptions {
     /**
      * Generate CSS variables for the theme (`theme.vars`), optionally with their configuration.
      */
-    var cssVariables: Boolean?
+    val cssVariables: Boolean?
 
     /**
      * The color schemes the theme supports, e.g. `{ light: true, dark: true }`.
      */
-    var colorSchemes: Any? /* Partial<Record<DefaultColorScheme, boolean | ColorSystemOptions>> */
+    val colorSchemes: Any? /* Partial<Record<DefaultColorScheme, boolean | ColorSystemOptions>> */
 
     /**
      * The color scheme used when none is selected.
      */
-    var defaultColorScheme: DefaultColorScheme?
+    val defaultColorScheme: DefaultColorScheme?
 
-    override var mixins: MixinsOptions?
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val mixins: MixinsOptions?
 
-    override var components: Any? /* Components<Theme> */
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val components: Any? /* Components<Theme> */
 
-    var motion: MotionOptions?
+    val motion: MotionOptions?
 
-    override var palette: PaletteOptions?
+    override val palette: PaletteOptions?
 
-    override var shadows: ReadonlyArray<String>?
+    override val shadows: ReadonlyArray<String>?
 
-    override var shape: ShapeOptions?
+    override val shape: ShapeOptions?
 
-    override var transitions: TransitionsOptions?
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val transitions: TransitionsOptions?
 
-    override var typography: TypographyVariantsOptions?
+    override val typography: TypographyVariantsOptions?
 
-    override var zIndex: ZIndex?
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val zIndex: ZIndex?
 
-    var focusVisible: Any? /* boolean | FocusVisible */
+    val focusVisible: Any? /* boolean | FocusVisible */
 
-    var unstable_strictMode: Boolean?
+    val unstable_strictMode: Boolean?
 
-    override var unstable_sxConfig: Any? /* SxConfig */
+    override val unstable_sxConfig: Any? /* SxConfig */
 
-    var modularCssLayers: Boolean?
+    val modularCssLayers: Boolean?
 }
 
 @JsPlainObject
 external interface BaseTheme : mui.system.Theme {
-    override var mixins: Mixins
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val mixins: Mixins
 
-    var motion: Motion
+    val motion: Motion
 
-    override var palette: Palette
+    override val palette: Palette
 
-    override var shadows: ReadonlyArray<String>
+    override val shadows: ReadonlyArray<String>
 
-    override var shape: Shape
+    override val shape: Shape
 
-    override var transitions: Transitions
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val transitions: Transitions
 
-    override var typography: TypographyVariants
+    override val typography: TypographyVariants
 
-    override var zIndex: ZIndex
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val zIndex: ZIndex
 
-    var focusVisible: FocusVisible?
+    val focusVisible: FocusVisible?
 
-    var unstable_strictMode: Boolean?
+    val unstable_strictMode: Boolean?
 
-    override var applyStyles: Any? /* ApplyStyles<SupportedColorScheme> */
+    override val applyStyles: Any? /* ApplyStyles<SupportedColorScheme> */
 }
 
 @JsPlainObject
 external interface Theme : BaseTheme {
-    var vars: ThemeVars?
+    val vars: ThemeVars?
 
-    var cssVariables: Boolean? /* false */
+    val cssVariables: Boolean? /* false */
 
-    override var components: Any? /* Components<BaseTheme> */
+    @Suppress("PROPERTY_TYPE_MISMATCH_ON_OVERRIDE")
+    override val components: Any? /* Components<BaseTheme> */
 
-    override var unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
+    override val unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 
-    override var unstable_sxConfig: Any? /* SxConfig */
+    override val unstable_sxConfig: Any? /* SxConfig */
 
-    var alpha: (color: String, value: Any /* Number | String */) -> String
+    val alpha: (color: String, value: Any /* Number | String */) -> String
 
-    var lighten: (color: String, coefficient: Any /* Number | String */) -> String
+    val lighten: (color: String, coefficient: Any /* Number | String */) -> String
 
-    var darken: (color: String, coefficient: Any /* Number | String */) -> String
+    val darken: (color: String, coefficient: Any /* Number | String */) -> String
 }

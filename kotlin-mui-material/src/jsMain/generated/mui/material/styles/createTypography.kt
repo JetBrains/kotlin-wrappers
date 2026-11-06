@@ -6,106 +6,108 @@ package mui.material.styles
 
 import kotlinx.js.JsPlainObject
 import react.CSSProperties
+import web.cssom.FontFamily
+import web.cssom.FontWeight
 
 @JsPlainObject
 external interface FontStyle {
-    var fontFamily: web.cssom.FontFamily
+    val fontFamily: FontFamily
 
-    var fontSize: Double
+    val fontSize: Double
 
-    var fontWeightLight: web.cssom.FontWeight
+    val fontWeightLight: FontWeight
 
-    var fontWeightRegular: web.cssom.FontWeight
+    val fontWeightRegular: FontWeight
 
-    var fontWeightMedium: web.cssom.FontWeight
+    val fontWeightMedium: FontWeight
 
-    var fontWeightBold: web.cssom.FontWeight
+    val fontWeightBold: FontWeight
 
-    var htmlFontSize: Double
+    val htmlFontSize: Double
 }
 
 @JsPlainObject
 external interface FontStyleOptions {
-    var fontFamily: web.cssom.FontFamily?
+    val fontFamily: FontFamily?
 
-    var fontSize: Double?
+    val fontSize: Double?
 
-    var fontWeightLight: web.cssom.FontWeight?
+    val fontWeightLight: FontWeight?
 
-    var fontWeightRegular: web.cssom.FontWeight?
+    val fontWeightRegular: FontWeight?
 
-    var fontWeightMedium: web.cssom.FontWeight?
+    val fontWeightMedium: FontWeight?
 
-    var fontWeightBold: web.cssom.FontWeight?
+    val fontWeightBold: FontWeight?
 
-    var htmlFontSize: Double?
+    val htmlFontSize: Double?
 
-    var allVariants: CSSProperties?
+    val allVariants: CSSProperties?
 }
 
 @JsPlainObject
 external interface TypographyUtils {
-    var pxToRem: (px: Number) -> String
+    val pxToRem: (px: Double) -> String
 }
 
 @JsPlainObject
 external interface TypographyVariants :
     FontStyle,
     TypographyUtils {
-    var h1: CSSProperties
+    val h1: CSSProperties
 
-    var h2: CSSProperties
+    val h2: CSSProperties
 
-    var h3: CSSProperties
+    val h3: CSSProperties
 
-    var h4: CSSProperties
+    val h4: CSSProperties
 
-    var h5: CSSProperties
+    val h5: CSSProperties
 
-    var h6: CSSProperties
+    val h6: CSSProperties
 
-    var subtitle1: CSSProperties
+    val subtitle1: CSSProperties
 
-    var subtitle2: CSSProperties
+    val subtitle2: CSSProperties
 
-    var body1: CSSProperties
+    val body1: CSSProperties
 
-    var body2: CSSProperties
+    val body2: CSSProperties
 
-    var caption: CSSProperties
+    val caption: CSSProperties
 
-    var button: CSSProperties
+    val button: CSSProperties
 
-    var overline: CSSProperties
+    val overline: CSSProperties
 }
 
 @JsPlainObject
 external interface TypographyVariantsOptions : FontStyleOptions {
-    var h1: CSSProperties?
+    val h1: CSSProperties?
 
-    var h2: CSSProperties?
+    val h2: CSSProperties?
 
-    var h3: CSSProperties?
+    val h3: CSSProperties?
 
-    var h4: CSSProperties?
+    val h4: CSSProperties?
 
-    var h5: CSSProperties?
+    val h5: CSSProperties?
 
-    var h6: CSSProperties?
+    val h6: CSSProperties?
 
-    var subtitle1: CSSProperties?
+    val subtitle1: CSSProperties?
 
-    var subtitle2: CSSProperties?
+    val subtitle2: CSSProperties?
 
-    var body1: CSSProperties?
+    val body1: CSSProperties?
 
-    var body2: CSSProperties?
+    val body2: CSSProperties?
 
-    var caption: CSSProperties?
+    val caption: CSSProperties?
 
-    var button: CSSProperties?
+    val button: CSSProperties?
 
-    var overline: CSSProperties?
+    val overline: CSSProperties?
 }
 
 @JsName("private_createTypography")
