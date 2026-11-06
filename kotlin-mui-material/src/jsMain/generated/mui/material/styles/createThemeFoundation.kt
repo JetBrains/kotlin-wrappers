@@ -210,9 +210,9 @@ external interface PaletteTooltip {
     var bg: String
 }
 
-external interface Shape
+external interface Shape : mui.system.Shape
 
-external interface ShapeOptions
+external interface ShapeOptions : mui.system.ShapeOptions
 
 external interface ColorSystemOptions {
     var palette: PaletteOptions?
@@ -317,7 +317,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var defaultColorScheme: Any? /* SupportedColorScheme */
 
-    var vars: Any? /* ThemeVars */
+    var vars: ThemeVars
 
     var getCssVar: (field: String /* ThemeCssVar */) -> String
 
@@ -335,7 +335,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var shape: Shape
 
-    var typography: Any? /* TypographyVariants */
+    var typography: TypographyVariants
 
     var motion: Motion
 

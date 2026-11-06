@@ -6,7 +6,7 @@ package mui.material.styles
 
 import mui.system.Breakpoints
 
-external interface BaseCSSProperties {
+external interface BaseCSSProperties : react.CSSProperties {
     @JsName("@font-face")
     var fontFace: Any? /* Fontface | Fontface[] */
 }
