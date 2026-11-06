@@ -2,8 +2,6 @@
 
 package muix.tree.view
 
-import js.array.ReadonlyArray
-import js.reflect.unsafeCast
+import mui.types.Value
 
-sealed /* union */
-external interface TreeViewSelectionValue
+typealias TreeViewSelectionValue = Value<TreeViewItemId>
