@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface CircularProgressColor {
+sealed /* union */
+external interface CircularProgressColor {
     companion object {
         @JsValue("primary")
         val primary: CircularProgressColor
@@ -29,7 +30,8 @@ sealed external interface CircularProgressColor {
     }
 }
 
-sealed external interface CircularProgressVariant {
+sealed /* union */
+external interface CircularProgressVariant {
     companion object {
         @JsValue("determinate")
         val determinate: CircularProgressVariant

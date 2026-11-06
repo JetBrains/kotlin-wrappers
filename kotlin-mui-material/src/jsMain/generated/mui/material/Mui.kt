@@ -5,7 +5,8 @@ package mui.material
 import seskar.js.JsValue
 import web.cssom.ClassName
 
-sealed external interface Mui {
+sealed /* union */
+external interface Mui {
     companion object {
         @JsValue("Mui-active")
         val active: ClassName

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface StackDirection {
+sealed /* union */
+external interface StackDirection {
     companion object {
         @JsValue("row")
         val row: StackDirection

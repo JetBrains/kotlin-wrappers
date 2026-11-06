@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ImageListVariant {
+sealed /* union */
+external interface ImageListVariant {
     companion object {
         @JsValue("masonry")
         val masonry: ImageListVariant

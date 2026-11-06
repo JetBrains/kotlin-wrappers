@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface FormHelperTextVariant {
+sealed /* union */
+external interface FormHelperTextVariant {
     companion object {
         @JsValue("standard")
         val standard: FormHelperTextVariant
@@ -17,7 +18,8 @@ sealed external interface FormHelperTextVariant {
     }
 }
 
-sealed external interface FormHelperTextMargin {
+sealed /* union */
+external interface FormHelperTextMargin {
     companion object {
         @JsValue("dense")
         val dense: FormHelperTextMargin

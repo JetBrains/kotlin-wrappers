@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface CheckboxColor {
+sealed /* union */
+external interface CheckboxColor {
     companion object {
         @JsValue("primary")
         val primary: CheckboxColor

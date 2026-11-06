@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface FabColor {
+sealed /* union */
+external interface FabColor {
     companion object {
         @JsValue("inherit")
         val inherit: FabColor
@@ -32,7 +33,8 @@ sealed external interface FabColor {
     }
 }
 
-sealed external interface FabVariant {
+sealed /* union */
+external interface FabVariant {
     companion object {
         @JsValue("circular")
         val circular: FabVariant

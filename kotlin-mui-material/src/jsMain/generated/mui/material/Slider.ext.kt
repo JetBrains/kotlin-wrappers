@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface SliderColor {
+sealed /* union */
+external interface SliderColor {
     companion object {
         @JsValue("primary")
         val primary: SliderColor

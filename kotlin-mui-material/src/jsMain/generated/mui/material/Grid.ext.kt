@@ -6,7 +6,8 @@ import js.reflect.unsafeCast
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 
-sealed external interface GridDirection {
+sealed /* union */
+external interface GridDirection {
     companion object {
         @JsValue("row")
         val row: GridDirection
@@ -16,7 +17,8 @@ sealed external interface GridDirection {
     }
 }
 
-sealed external interface GridWrap {
+sealed /* union */
+external interface GridWrap {
     companion object {
         @JsValue("nowrap")
         val nowrap: GridWrap
@@ -32,7 +34,8 @@ sealed external interface GridWrap {
 /**
  * Lost from union: number
  */
-sealed external interface GridSize {
+sealed /* union */
+external interface GridSize {
     companion object {
         @JsValue("auto")
         val auto: GridSize
@@ -53,7 +56,8 @@ inline fun GridSize(
 /**
  * Lost from union: number
  */
-sealed external interface GridOffset {
+sealed /* union */
+external interface GridOffset {
     companion object {
         @JsValue("auto")
         val auto: GridOffset

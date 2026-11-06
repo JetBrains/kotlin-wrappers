@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface PopoverReference {
+sealed /* union */
+external interface PopoverReference {
     companion object {
         @JsValue("anchorEl")
         val anchorEl: PopoverReference

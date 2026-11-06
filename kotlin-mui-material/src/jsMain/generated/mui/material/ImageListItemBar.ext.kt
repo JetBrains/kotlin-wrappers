@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ActionPosition {
+sealed /* union */
+external interface ActionPosition {
     companion object {
         @JsValue("left")
         val left: ActionPosition
@@ -14,7 +15,8 @@ sealed external interface ActionPosition {
     }
 }
 
-sealed external interface ImageListItemBarPosition {
+sealed /* union */
+external interface ImageListItemBarPosition {
     companion object {
         @JsValue("below")
         val below: ImageListItemBarPosition

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ListItemAlignItems {
+sealed /* union */
+external interface ListItemAlignItems {
     companion object {
         @JsValue("flex-start")
         val flexStart: ListItemAlignItems

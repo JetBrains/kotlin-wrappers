@@ -5,7 +5,8 @@ package mui.material
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 
-sealed external interface SwitchBaseEdge {
+sealed /* union */
+external interface SwitchBaseEdge {
     companion object {
         @JsValue("start")
         val start: SwitchBaseEdge

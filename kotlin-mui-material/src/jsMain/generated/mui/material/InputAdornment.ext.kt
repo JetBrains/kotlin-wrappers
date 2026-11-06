@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface InputAdornmentVariant {
+sealed /* union */
+external interface InputAdornmentVariant {
     companion object {
         @JsValue("standard")
         val standard: InputAdornmentVariant
@@ -17,7 +18,8 @@ sealed external interface InputAdornmentVariant {
     }
 }
 
-sealed external interface InputAdornmentPosition {
+sealed /* union */
+external interface InputAdornmentPosition {
     companion object {
         @JsValue("start")
         val start: InputAdornmentPosition

@@ -10,7 +10,8 @@ import web.html.HTMLTableCellElement
 
 typealias TableCellBaseProps = TdHTMLAttributes<HTMLTableCellElement>
 
-sealed external interface SortDirection {
+sealed /* union */
+external interface SortDirection {
     companion object {
         @JsValue("asc")
         val asc: SortDirection
@@ -23,7 +24,8 @@ sealed external interface SortDirection {
     }
 }
 
-sealed external interface TableCellVariant {
+sealed /* union */
+external interface TableCellVariant {
     companion object {
         @JsValue("head")
         val head: TableCellVariant
@@ -38,7 +40,8 @@ sealed external interface TableCellVariant {
 
 typealias TableCellAlign = TdAlign /* 'inherit' | 'left' | 'center' | 'right' | 'justify' */
 
-sealed external interface TableCellPadding {
+sealed /* union */
+external interface TableCellPadding {
     companion object {
         @JsValue("normal")
         val normal: TableCellPadding

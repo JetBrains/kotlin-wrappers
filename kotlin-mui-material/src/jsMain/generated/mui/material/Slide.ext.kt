@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface SlideDirection {
+sealed /* union */
+external interface SlideDirection {
     companion object {
         @JsValue("left")
         val left: SlideDirection

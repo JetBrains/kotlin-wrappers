@@ -4,7 +4,8 @@ package mui.material.styles
 
 import seskar.js.JsValue
 
-sealed external interface DefaultColorScheme {
+sealed /* union */
+external interface DefaultColorScheme {
     companion object {
         @JsValue("light")
         val light: DefaultColorScheme

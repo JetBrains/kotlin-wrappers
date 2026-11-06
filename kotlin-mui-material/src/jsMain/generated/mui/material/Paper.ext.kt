@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface PaperVariant {
+sealed /* union */
+external interface PaperVariant {
     companion object {
         @JsValue("elevation")
         val elevation: PaperVariant

@@ -4,7 +4,8 @@ package mui.base
 
 import seskar.js.JsValue
 
-sealed external interface SnackbarCloseReason {
+sealed /* union */
+external interface SnackbarCloseReason {
     companion object {
         @JsValue("timeout")
         val timeout: SnackbarCloseReason
