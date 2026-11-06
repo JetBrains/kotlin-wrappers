@@ -2,7 +2,9 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import mui.material.styles.Theme
+import mui.material.transitions.TransitionProps
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import react.ElementType
@@ -10,7 +12,12 @@ import react.Props
 import react.PropsWithClassName
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
+import react.dom.html.HTMLAttributes
+import react.dom.html.InputHTMLAttributes
+import react.dom.html.LiHTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLDivElement
+import web.html.HTMLInputElement
 import web.html.HTMLLIElement
 
 external interface TreeItemProps :
@@ -51,7 +58,7 @@ external interface TreeItemProps :
     /**
      * Callback fired when the item root is blurred.
      */
-    var onBlur: Any? /* TreeViewCancellableEventHandler<React.FocusEvent<HTMLLIElement>> */
+    var onBlur: FocusEventHandler<HTMLLIElement>?
 
     /**
      * Callback fired when a key is pressed on the keyboard and the tree is in focus.
@@ -59,93 +66,95 @@ external interface TreeItemProps :
     var onKeyDown: KeyboardEventHandler<HTMLLIElement>?
 }
 
+@JsPlainObject
 external interface TreeItemSlots : TreeItemIconSlots {
     /**
      * The component that renders the root.
      * @default TreeItemRoot
      */
-    var root: ElementType<*>?
+    val root: ElementType<*>?
 
     /**
      * The component that renders the content of the item.
      * (e.g.: everything related to this item, not to its children).
      * @default TreeItemContent
      */
-    var content: ElementType<*>?
+    val content: ElementType<*>?
 
     /**
      * The component that renders the children of the item.
      * @default TreeItemGroupTransition
      */
-    var groupTransition: ElementType<*>?
+    val groupTransition: ElementType<*>?
 
     /**
      * The component that renders the icon.
      * @default TreeItemIconContainer
      */
-    var iconContainer: ElementType<*>?
+    val iconContainer: ElementType<*>?
 
     /**
      * The component that renders the item checkbox for selection.
      * @default TreeItemCheckbox
      */
-    var checkbox: ElementType<*>?
+    val checkbox: ElementType<*>?
 
     /**
      * The component that renders the item label.
      * @default TreeItemLabel
      */
-    var label: ElementType<*>?
+    val label: ElementType<*>?
 
     /**
      * The component that renders the input to edit the label when the item is editable and is currently being edited.
      * @default TreeItemLabelInput
      */
-    var labelInput: ElementType<*>?
+    val labelInput: ElementType<*>?
 
     /**
      * The component that renders the overlay when an item reordering is ongoing.
      * Warning: This slot is only useful when using the `<RichTreeViewPro />` component.
      * @default TreeItemDragAndDropOverlay
      */
-    var dragAndDropOverlay: ElementType<*>?
+    val dragAndDropOverlay: ElementType<*>?
 
     /**
      * The component that is rendered when the item is in an error state.
      * Warning: This slot is only useful when using the `<RichTreeViewPro />` component is lazy loading is enabled.
      * @default TreeItemErrorContainer
      */
-    var errorIcon: ElementType<*>?
+    val errorIcon: ElementType<*>?
 
     /**
      * The component that is rendered when the item is in a loading state.
      * Warning: This slot is only useful when using the `<RichTreeViewPro />` component is lazy loading is enabled.
      * @default TreeItemLoadingContainer
      */
-    var loadingIcon: ElementType<*>?
+    val loadingIcon: ElementType<*>?
 }
 
 external interface TreeItemSlotProps :
     TreeItemIconSlotProps {
-    var root: Props?
+    var root: LiHTMLAttributes<HTMLLIElement>?
 
-    var content: Props?
+    var content: HTMLAttributes<HTMLDivElement>?
 
-    var groupTransition: Props?
+    var groupTransition: TransitionProps?
 
-    var iconContainer: Props?
+    var iconContainer: HTMLAttributes<HTMLDivElement>?
 
     var checkbox: Props?
 
-    var label: Props?
+    var label: HTMLAttributes<HTMLDivElement>?
 
-    var labelInput: Props?
+    var labelInput: InputHTMLAttributes<HTMLInputElement>?
 
-    var dragAndDropOverlay: Props?
+    var dragAndDropOverlay: HTMLAttributes<HTMLDivElement>?
 
-    var errorIcon: Props?
+    var errorIcon: HTMLAttributes<HTMLDivElement>?
 
-    var loadingIcon: Props?
+    var loadingIcon: HTMLAttributes<HTMLDivElement>?
 }
 
+@JsPlainObject
 external interface TreeItemOwnerState
