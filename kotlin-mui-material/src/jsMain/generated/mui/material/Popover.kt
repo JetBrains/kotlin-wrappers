@@ -2,11 +2,6 @@
 
 @file:JsModule("@mui/material/Popover")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-    "VAR_TYPE_MISMATCH_ON_OVERRIDE",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -20,8 +15,15 @@ import web.dom.Element
 external interface PopoverProps :
     StandardProps,
     ModalProps,
+    PopoverSlotsAndSlotProps,
     PropsWithChildren,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slots: PopoverSlots?
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slotProps: PopoverSlotProps?
+
     /**
      * A ref for imperative actions.
      * It currently only supports updatePosition() action.
@@ -71,7 +73,8 @@ external interface PopoverProps :
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: PopoverClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: PopoverClasses?
 
     /**
      * An HTML element, component instance, or function that returns either.

@@ -2,10 +2,6 @@
 
 @file:JsModule("@mui/material/Checkbox")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -24,22 +20,31 @@ import web.html.HTMLInputElement
 external interface CheckboxProps :
     StandardProps,
     SwitchBaseProps,
+    CheckboxSlotsAndSlotProps,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slots: CheckboxSlots?
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slotProps: CheckboxSlotProps?
+
     /**
      * If `true`, the component is checked.
      */
-    var checked: Boolean?
+    override var checked: Boolean?
 
     /**
      * The icon to display when the component is checked.
      * @default <CheckBoxIcon />
      */
-    var checkedIcon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var checkedIcon: ReactNode?
 
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: CheckboxClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: CheckboxClasses?
 
     /**
      * The color of the component.
@@ -53,24 +58,25 @@ external interface CheckboxProps :
      * If `true`, the component is disabled.
      * @default false
      */
-    var disabled: Boolean?
+    override var disabled: Boolean?
 
     /**
      * If `true`, the ripple effect is disabled.
      * @default false
      */
-    var disableRipple: Boolean?
+    override var disableRipple: Boolean?
 
     /**
      * The icon to display when the component is unchecked.
      * @default <CheckBoxOutlineBlankIcon />
      */
-    var icon: ReactNode?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var icon: ReactNode?
 
     /**
      * The id of the `input` element.
      */
-    var id: ElementId?
+    override var id: ElementId?
 
     /**
      * If `true`, the component appears indeterminate.
@@ -92,13 +98,13 @@ external interface CheckboxProps :
      * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
      * You can pull out the new checked state by accessing `event.target.checked` (boolean).
      */
-    var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
+    override var onChange: ((event: ChangeEvent<HTMLInputElement, *>, checked: Boolean) -> Unit)?
 
     /**
      * If `true`, the `input` element is required.
      * @default false
      */
-    var required: Boolean?
+    override var required: Boolean?
 
     /**
      * The size of the component.
@@ -116,7 +122,7 @@ external interface CheckboxProps :
      * The value of the component. The DOM API casts this to a string.
      * The browser uses "on" as the default value.
      */
-    var value: Any? /* SwitchBaseProps['value'] */
+    override var value: Any? /* SwitchBaseProps['value'] */
 }
 
 external interface CheckboxSlots {
