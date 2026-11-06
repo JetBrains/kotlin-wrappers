@@ -5,7 +5,8 @@ package mui.material
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 
-sealed external interface SkeletonAnimation {
+sealed /* union */
+external interface SkeletonAnimation {
     companion object {
         @JsValue("pulse")
         val pulse: SkeletonAnimation
@@ -18,7 +19,8 @@ sealed external interface SkeletonAnimation {
     }
 }
 
-sealed external interface SkeletonVariant {
+sealed /* union */
+external interface SkeletonVariant {
     companion object {
         @JsValue("text")
         val text: SkeletonVariant

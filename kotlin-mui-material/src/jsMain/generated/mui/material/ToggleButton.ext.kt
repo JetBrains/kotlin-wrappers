@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ToggleButtonColor {
+sealed /* union */
+external interface ToggleButtonColor {
     companion object {
         @JsValue("standard")
         val standard: ToggleButtonColor

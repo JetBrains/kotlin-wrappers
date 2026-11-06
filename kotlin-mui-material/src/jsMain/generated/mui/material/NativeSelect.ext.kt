@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface NativeSelectVariant {
+sealed /* union */
+external interface NativeSelectVariant {
     companion object {
         @JsValue("standard")
         val standard: NativeSelectVariant

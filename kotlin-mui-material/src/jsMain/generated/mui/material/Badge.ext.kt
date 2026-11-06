@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface BadgeColor {
+sealed /* union */
+external interface BadgeColor {
     companion object {
         @JsValue("primary")
         val primary: BadgeColor
@@ -29,7 +30,8 @@ sealed external interface BadgeColor {
     }
 }
 
-sealed external interface BadgeVariant {
+sealed /* union */
+external interface BadgeVariant {
     companion object {
         @JsValue("standard")
         val standard: BadgeVariant
@@ -39,7 +41,8 @@ sealed external interface BadgeVariant {
     }
 }
 
-sealed external interface BadgeOverlap {
+sealed /* union */
+external interface BadgeOverlap {
     companion object {
         @JsValue("rectangular")
         val rectangular: BadgeOverlap
@@ -49,7 +52,8 @@ sealed external interface BadgeOverlap {
     }
 }
 
-sealed external interface BadgeOriginVertical {
+sealed /* union */
+external interface BadgeOriginVertical {
     companion object {
         @JsValue("top")
         val top: BadgeOriginVertical
@@ -59,7 +63,8 @@ sealed external interface BadgeOriginVertical {
     }
 }
 
-sealed external interface BadgeOriginHorizontal {
+sealed /* union */
+external interface BadgeOriginHorizontal {
     companion object {
         @JsValue("left")
         val left: BadgeOriginHorizontal

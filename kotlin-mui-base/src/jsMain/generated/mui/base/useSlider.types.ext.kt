@@ -4,7 +4,8 @@ package mui.base
 
 import seskar.js.JsValue
 
-sealed external interface Axis {
+sealed /* union */
+external interface Axis {
     companion object {
         @JsValue("horizontal")
         val horizontal: Axis

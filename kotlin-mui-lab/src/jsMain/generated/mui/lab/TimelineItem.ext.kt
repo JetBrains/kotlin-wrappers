@@ -4,7 +4,8 @@ package mui.lab
 
 import seskar.js.JsValue
 
-sealed external interface TimelineItemPosition {
+sealed /* union */
+external interface TimelineItemPosition {
     companion object {
         @JsValue("left")
         val left: TimelineItemPosition

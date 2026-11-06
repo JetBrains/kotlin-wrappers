@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface InputLabelVariant {
+sealed /* union */
+external interface InputLabelVariant {
     companion object {
         @JsValue("standard")
         val standard: InputLabelVariant
@@ -17,7 +18,8 @@ sealed external interface InputLabelVariant {
     }
 }
 
-sealed external interface InputLabelMargin {
+sealed /* union */
+external interface InputLabelMargin {
     companion object {
         @JsValue("dense")
         val dense: InputLabelMargin

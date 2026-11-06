@@ -5,7 +5,8 @@ package mui.base
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 
-sealed external interface ClickAwayListenerMouseEvent {
+sealed /* union */
+external interface ClickAwayListenerMouseEvent {
     companion object {
         @JsValue("onClick")
         val onClick: ClickAwayListenerMouseEvent
@@ -27,7 +28,8 @@ sealed external interface ClickAwayListenerMouseEvent {
     }
 }
 
-sealed external interface ClickAwayListenerTouchEvent {
+sealed /* union */
+external interface ClickAwayListenerTouchEvent {
     companion object {
         @JsValue("onTouchStart")
         val onTouchStart: ClickAwayListenerTouchEvent

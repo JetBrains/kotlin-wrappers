@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface LinearProgressColor {
+sealed /* union */
+external interface LinearProgressColor {
     companion object {
         @JsValue("primary")
         val primary: LinearProgressColor
@@ -29,7 +30,8 @@ sealed external interface LinearProgressColor {
     }
 }
 
-sealed external interface LinearProgressVariant {
+sealed /* union */
+external interface LinearProgressVariant {
     companion object {
         @JsValue("determinate")
         val determinate: LinearProgressVariant

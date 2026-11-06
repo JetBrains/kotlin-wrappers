@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface SnackbarCloseReason {
+sealed /* union */
+external interface SnackbarCloseReason {
     companion object {
         @JsValue("timeout")
         val timeout: SnackbarCloseReason
@@ -17,7 +18,8 @@ sealed external interface SnackbarCloseReason {
     }
 }
 
-sealed external interface SnackbarOriginVertical {
+sealed /* union */
+external interface SnackbarOriginVertical {
     companion object {
         @JsValue("top")
         val top: SnackbarOriginVertical
@@ -27,7 +29,8 @@ sealed external interface SnackbarOriginVertical {
     }
 }
 
-sealed external interface SnackbarOriginHorizontal {
+sealed /* union */
+external interface SnackbarOriginHorizontal {
     companion object {
         @JsValue("left")
         val left: SnackbarOriginHorizontal

@@ -4,7 +4,8 @@ package muix.pickers
 
 import seskar.js.JsValue
 
-sealed external interface CalendarPickerView {
+sealed /* union */
+external interface CalendarPickerView {
     companion object {
         @JsValue("year")
         val year: CalendarPickerView

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface DrawerVariant {
+sealed /* union */
+external interface DrawerVariant {
     companion object {
         @JsValue("permanent")
         val permanent: DrawerVariant
@@ -17,7 +18,8 @@ sealed external interface DrawerVariant {
     }
 }
 
-sealed external interface DrawerAnchor {
+sealed /* union */
+external interface DrawerAnchor {
     companion object {
         @JsValue("left")
         val left: DrawerAnchor

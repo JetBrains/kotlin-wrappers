@@ -5,7 +5,8 @@ package mui.base
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 
-sealed external interface AutocompleteHighlightChangeReason {
+sealed /* union */
+external interface AutocompleteHighlightChangeReason {
     companion object {
         @JsValue("keyboard")
         val keyboard: AutocompleteHighlightChangeReason
@@ -21,7 +22,8 @@ sealed external interface AutocompleteHighlightChangeReason {
     }
 }
 
-sealed external interface AutocompleteChangeReason {
+sealed /* union */
+external interface AutocompleteChangeReason {
     companion object {
         @JsValue("createOption")
         val createOption: AutocompleteChangeReason
@@ -40,7 +42,8 @@ sealed external interface AutocompleteChangeReason {
     }
 }
 
-sealed external interface AutocompleteCloseReason {
+sealed /* union */
+external interface AutocompleteCloseReason {
     companion object {
         @JsValue("createOption")
         val createOption: AutocompleteCloseReason
@@ -62,7 +65,8 @@ sealed external interface AutocompleteCloseReason {
     }
 }
 
-sealed external interface AutocompleteInputChangeReason {
+sealed /* union */
+external interface AutocompleteInputChangeReason {
     companion object {
         @JsValue("input")
         val input: AutocompleteInputChangeReason
@@ -84,7 +88,8 @@ sealed external interface AutocompleteInputChangeReason {
     }
 }
 
-sealed external interface MatchFrom {
+sealed /* union */
+external interface MatchFrom {
     companion object {
         @JsValue("any")
         val any: MatchFrom
@@ -94,7 +99,8 @@ sealed external interface MatchFrom {
     }
 }
 
-sealed external interface BlurOnSelect {
+sealed /* union */
+external interface BlurOnSelect {
     companion object {
         @JsValue("touch")
         val touch: BlurOnSelect

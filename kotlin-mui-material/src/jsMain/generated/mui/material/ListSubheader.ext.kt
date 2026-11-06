@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ListSubheaderColor {
+sealed /* union */
+external interface ListSubheaderColor {
     companion object {
         @JsValue("default")
         val default: ListSubheaderColor

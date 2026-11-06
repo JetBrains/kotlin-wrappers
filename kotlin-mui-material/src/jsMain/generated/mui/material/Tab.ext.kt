@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface IconPosition {
+sealed /* union */
+external interface IconPosition {
     companion object {
         @JsValue("top")
         val top: IconPosition

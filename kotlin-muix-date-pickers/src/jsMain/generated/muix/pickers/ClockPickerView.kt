@@ -4,7 +4,8 @@ package muix.pickers
 
 import seskar.js.JsValue
 
-sealed external interface ClockPickerView {
+sealed /* union */
+external interface ClockPickerView {
     companion object {
         @JsValue("hours")
         val hours: ClockPickerView
