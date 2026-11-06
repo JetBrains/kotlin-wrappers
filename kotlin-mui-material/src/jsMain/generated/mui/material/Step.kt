@@ -60,7 +60,7 @@ external interface StepOwnProps :
      * The position of the step.
      * The prop defaults to the value inherited from the parent Stepper component.
      */
-    var index: Number?
+    var index: Int?
 
     /**
      * If `true`, the Step is displayed as rendered last.

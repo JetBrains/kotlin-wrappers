@@ -73,7 +73,7 @@ external interface UseTabReturnValue {
     /**
      * 0-based index of the tab in the list of tabs.
      */
-    var index: Number
+    var index: Int
 
     /**
      * Ref to the root slot's DOM element.

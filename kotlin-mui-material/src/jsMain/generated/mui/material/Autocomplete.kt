@@ -211,7 +211,7 @@ external interface AutocompleteOwnerState<Value> : AutocompleteProps<Value> {
 external interface AutocompleteRenderOptionState {
     var inputValue: String
 
-    var index: Number
+    var index: Int
 
     var selected: Boolean
 }

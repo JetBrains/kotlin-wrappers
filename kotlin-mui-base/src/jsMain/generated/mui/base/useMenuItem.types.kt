@@ -62,7 +62,7 @@ external interface UseMenuItemReturnValue {
     /**
      * 0-based index of the item in the menu.
      */
-    var index: Number
+    var index: Int
 
     /**
      * The ref to the component's root DOM element.
