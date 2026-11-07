@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface LeftHandSideExpression : UpdateExpression {
-    var _leftHandSideExpressionBrand: Any?
-}
+external interface LeftHandSideExpression : UpdateExpression

@@ -8,7 +8,6 @@ external interface PropertyAccessEntityNameExpression :
     EntityNameExpression,
     JSDocAugmentsTagClassExpression,
     JSDocImplementsTagClassExpression {
-    var _propertyAccessExpressionLikeQualifiedNameBrand: Any?
     override val expression: EntityNameExpression
     override val name: Identifier
 }

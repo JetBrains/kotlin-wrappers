@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface FlowContainer : Node {
-    var _flowContainerBrand: Any?
-}
+external interface FlowContainer : Node

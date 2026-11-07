@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface AutoAccessorPropertyDeclaration : PropertyDeclaration {
-    var _autoAccessorBrand: Any?
-}
+external interface AutoAccessorPropertyDeclaration : PropertyDeclaration

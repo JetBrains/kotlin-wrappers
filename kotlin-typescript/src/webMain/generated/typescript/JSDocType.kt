@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface JSDocType : TypeNode {
-    var _jsDocTypeBrand: Any?
-}
+external interface JSDocType : TypeNode

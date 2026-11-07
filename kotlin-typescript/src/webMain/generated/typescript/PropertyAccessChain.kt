@@ -6,6 +6,5 @@ external interface PropertyAccessChain :
     PropertyAccessExpression,
     OptionalChain,
     IsOptionalChainResultPredicate {
-    var _optionalChainBrand: Any?
     override val name: MemberName
 }

@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface JSDocContainer : Node {
-    var _jsdocContainerBrand: Any?
-}
+external interface JSDocContainer : Node

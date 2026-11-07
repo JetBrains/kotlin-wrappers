@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface UnaryExpression : Expression {
-    var _unaryExpressionBrand: Any?
-}
+external interface UnaryExpression : Expression

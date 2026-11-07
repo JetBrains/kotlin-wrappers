@@ -4,6 +4,4 @@ package typescript
 
 external interface Statement :
     Node,
-    JSDocContainer {
-    var _statementBrand: Any?
-}
+    JSDocContainer

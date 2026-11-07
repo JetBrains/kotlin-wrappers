@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface Declaration : Node {
-    var _declarationBrand: Any?
-}
+external interface Declaration : Node

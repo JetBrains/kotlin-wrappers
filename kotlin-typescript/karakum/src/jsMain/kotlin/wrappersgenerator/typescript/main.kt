@@ -24,6 +24,7 @@ suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
             ExcludeDeprecatedMembers,
+            excludeBrandMarkers,
             NumberPlugin(defaultNumberType = "Int"),
             ContractFunctionApiPlugin,
 

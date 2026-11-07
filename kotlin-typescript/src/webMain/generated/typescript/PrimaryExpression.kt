@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface PrimaryExpression : MemberExpression {
-    var _primaryExpressionBrand: Any?
-}
+external interface PrimaryExpression : MemberExpression

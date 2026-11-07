@@ -2,6 +2,4 @@
 
 package typescript
 
-external interface LocalsContainer : Node {
-    var _localsContainerBrand: Any?
-}
+external interface LocalsContainer : Node
