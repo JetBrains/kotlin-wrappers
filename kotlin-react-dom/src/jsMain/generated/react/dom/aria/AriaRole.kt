@@ -2,215 +2,216 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaRole {
-    companion object {
-        @JsValue("alert")
-        val alert: AriaRole
+@JsUnion
+sealed /* union */
+external interface AriaRole
 
-        @JsValue("alertdialog")
-        val alertdialog: AriaRole
+inline val AriaRole.Companion.alert: AriaRole
+    get() = unsafeCast("alert")
 
-        @JsValue("application")
-        val application: AriaRole
+inline val AriaRole.Companion.alertdialog: AriaRole
+    get() = unsafeCast("alertdialog")
 
-        @JsValue("article")
-        val article: AriaRole
+inline val AriaRole.Companion.application: AriaRole
+    get() = unsafeCast("application")
 
-        @JsValue("banner")
-        val banner: AriaRole
+inline val AriaRole.Companion.article: AriaRole
+    get() = unsafeCast("article")
 
-        @JsValue("button")
-        val button: AriaRole
+inline val AriaRole.Companion.banner: AriaRole
+    get() = unsafeCast("banner")
 
-        @JsValue("cell")
-        val cell: AriaRole
+inline val AriaRole.Companion.button: AriaRole
+    get() = unsafeCast("button")
 
-        @JsValue("checkbox")
-        val checkbox: AriaRole
+inline val AriaRole.Companion.cell: AriaRole
+    get() = unsafeCast("cell")
 
-        @JsValue("columnheader")
-        val columnheader: AriaRole
+inline val AriaRole.Companion.checkbox: AriaRole
+    get() = unsafeCast("checkbox")
 
-        @JsValue("combobox")
-        val combobox: AriaRole
+inline val AriaRole.Companion.columnheader: AriaRole
+    get() = unsafeCast("columnheader")
 
-        @JsValue("complementary")
-        val complementary: AriaRole
+inline val AriaRole.Companion.combobox: AriaRole
+    get() = unsafeCast("combobox")
 
-        @JsValue("contentinfo")
-        val contentinfo: AriaRole
+inline val AriaRole.Companion.complementary: AriaRole
+    get() = unsafeCast("complementary")
 
-        @JsValue("definition")
-        val definition: AriaRole
+inline val AriaRole.Companion.contentinfo: AriaRole
+    get() = unsafeCast("contentinfo")
 
-        @JsValue("dialog")
-        val dialog: AriaRole
+inline val AriaRole.Companion.definition: AriaRole
+    get() = unsafeCast("definition")
 
-        @JsValue("directory")
-        val directory: AriaRole
+inline val AriaRole.Companion.dialog: AriaRole
+    get() = unsafeCast("dialog")
 
-        @JsValue("document")
-        val document: AriaRole
+inline val AriaRole.Companion.directory: AriaRole
+    get() = unsafeCast("directory")
 
-        @JsValue("feed")
-        val feed: AriaRole
+inline val AriaRole.Companion.document: AriaRole
+    get() = unsafeCast("document")
 
-        @JsValue("figure")
-        val figure: AriaRole
+inline val AriaRole.Companion.feed: AriaRole
+    get() = unsafeCast("feed")
 
-        @JsValue("form")
-        val form: AriaRole
+inline val AriaRole.Companion.figure: AriaRole
+    get() = unsafeCast("figure")
 
-        @JsValue("grid")
-        val grid: AriaRole
+inline val AriaRole.Companion.form: AriaRole
+    get() = unsafeCast("form")
 
-        @JsValue("gridcell")
-        val gridcell: AriaRole
+inline val AriaRole.Companion.grid: AriaRole
+    get() = unsafeCast("grid")
 
-        @JsValue("group")
-        val group: AriaRole
+inline val AriaRole.Companion.gridcell: AriaRole
+    get() = unsafeCast("gridcell")
 
-        @JsValue("heading")
-        val heading: AriaRole
+inline val AriaRole.Companion.group: AriaRole
+    get() = unsafeCast("group")
 
-        @JsValue("img")
-        val img: AriaRole
+inline val AriaRole.Companion.heading: AriaRole
+    get() = unsafeCast("heading")
 
-        @JsValue("link")
-        val link: AriaRole
+inline val AriaRole.Companion.img: AriaRole
+    get() = unsafeCast("img")
 
-        @JsValue("list")
-        val list: AriaRole
+inline val AriaRole.Companion.link: AriaRole
+    get() = unsafeCast("link")
 
-        @JsValue("listbox")
-        val listbox: AriaRole
+inline val AriaRole.Companion.list: AriaRole
+    get() = unsafeCast("list")
 
-        @JsValue("listitem")
-        val listitem: AriaRole
+inline val AriaRole.Companion.listbox: AriaRole
+    get() = unsafeCast("listbox")
 
-        @JsValue("log")
-        val log: AriaRole
+inline val AriaRole.Companion.listitem: AriaRole
+    get() = unsafeCast("listitem")
 
-        @JsValue("main")
-        val main: AriaRole
+inline val AriaRole.Companion.log: AriaRole
+    get() = unsafeCast("log")
 
-        @JsValue("marquee")
-        val marquee: AriaRole
+inline val AriaRole.Companion.main: AriaRole
+    get() = unsafeCast("main")
 
-        @JsValue("math")
-        val math: AriaRole
+inline val AriaRole.Companion.marquee: AriaRole
+    get() = unsafeCast("marquee")
 
-        @JsValue("menu")
-        val menu: AriaRole
+inline val AriaRole.Companion.math: AriaRole
+    get() = unsafeCast("math")
 
-        @JsValue("menubar")
-        val menubar: AriaRole
+inline val AriaRole.Companion.menu: AriaRole
+    get() = unsafeCast("menu")
 
-        @JsValue("menuitem")
-        val menuitem: AriaRole
+inline val AriaRole.Companion.menubar: AriaRole
+    get() = unsafeCast("menubar")
 
-        @JsValue("menuitemcheckbox")
-        val menuitemcheckbox: AriaRole
+inline val AriaRole.Companion.menuitem: AriaRole
+    get() = unsafeCast("menuitem")
 
-        @JsValue("menuitemradio")
-        val menuitemradio: AriaRole
+inline val AriaRole.Companion.menuitemcheckbox: AriaRole
+    get() = unsafeCast("menuitemcheckbox")
 
-        @JsValue("navigation")
-        val navigation: AriaRole
+inline val AriaRole.Companion.menuitemradio: AriaRole
+    get() = unsafeCast("menuitemradio")
 
-        @JsValue("none")
-        val none: AriaRole
+inline val AriaRole.Companion.navigation: AriaRole
+    get() = unsafeCast("navigation")
 
-        @JsValue("note")
-        val note: AriaRole
+inline val AriaRole.Companion.none: AriaRole
+    get() = unsafeCast("none")
 
-        @JsValue("option")
-        val option: AriaRole
+inline val AriaRole.Companion.note: AriaRole
+    get() = unsafeCast("note")
 
-        @JsValue("presentation")
-        val presentation: AriaRole
+inline val AriaRole.Companion.option: AriaRole
+    get() = unsafeCast("option")
 
-        @JsValue("progressbar")
-        val progressbar: AriaRole
+inline val AriaRole.Companion.presentation: AriaRole
+    get() = unsafeCast("presentation")
 
-        @JsValue("radio")
-        val radio: AriaRole
+inline val AriaRole.Companion.progressbar: AriaRole
+    get() = unsafeCast("progressbar")
 
-        @JsValue("radiogroup")
-        val radiogroup: AriaRole
+inline val AriaRole.Companion.radio: AriaRole
+    get() = unsafeCast("radio")
 
-        @JsValue("region")
-        val region: AriaRole
+inline val AriaRole.Companion.radiogroup: AriaRole
+    get() = unsafeCast("radiogroup")
 
-        @JsValue("row")
-        val row: AriaRole
+inline val AriaRole.Companion.region: AriaRole
+    get() = unsafeCast("region")
 
-        @JsValue("rowgroup")
-        val rowgroup: AriaRole
+inline val AriaRole.Companion.row: AriaRole
+    get() = unsafeCast("row")
 
-        @JsValue("rowheader")
-        val rowheader: AriaRole
+inline val AriaRole.Companion.rowgroup: AriaRole
+    get() = unsafeCast("rowgroup")
 
-        @JsValue("scrollbar")
-        val scrollbar: AriaRole
+inline val AriaRole.Companion.rowheader: AriaRole
+    get() = unsafeCast("rowheader")
 
-        @JsValue("search")
-        val search: AriaRole
+inline val AriaRole.Companion.scrollbar: AriaRole
+    get() = unsafeCast("scrollbar")
 
-        @JsValue("searchbox")
-        val searchbox: AriaRole
+inline val AriaRole.Companion.search: AriaRole
+    get() = unsafeCast("search")
 
-        @JsValue("separator")
-        val separator: AriaRole
+inline val AriaRole.Companion.searchbox: AriaRole
+    get() = unsafeCast("searchbox")
 
-        @JsValue("slider")
-        val slider: AriaRole
+inline val AriaRole.Companion.separator: AriaRole
+    get() = unsafeCast("separator")
 
-        @JsValue("spinbutton")
-        val spinbutton: AriaRole
+inline val AriaRole.Companion.slider: AriaRole
+    get() = unsafeCast("slider")
 
-        @JsValue("status")
-        val status: AriaRole
+inline val AriaRole.Companion.spinbutton: AriaRole
+    get() = unsafeCast("spinbutton")
 
-        @JsValue("switch")
-        val switch: AriaRole
+inline val AriaRole.Companion.status: AriaRole
+    get() = unsafeCast("status")
 
-        @JsValue("tab")
-        val tab: AriaRole
+inline val AriaRole.Companion.switch: AriaRole
+    get() = unsafeCast("switch")
 
-        @JsValue("table")
-        val table: AriaRole
+inline val AriaRole.Companion.tab: AriaRole
+    get() = unsafeCast("tab")
 
-        @JsValue("tablist")
-        val tablist: AriaRole
+inline val AriaRole.Companion.table: AriaRole
+    get() = unsafeCast("table")
 
-        @JsValue("tabpanel")
-        val tabpanel: AriaRole
+inline val AriaRole.Companion.tablist: AriaRole
+    get() = unsafeCast("tablist")
 
-        @JsValue("term")
-        val term: AriaRole
+inline val AriaRole.Companion.tabpanel: AriaRole
+    get() = unsafeCast("tabpanel")
 
-        @JsValue("textbox")
-        val textbox: AriaRole
+inline val AriaRole.Companion.term: AriaRole
+    get() = unsafeCast("term")
 
-        @JsValue("timer")
-        val timer: AriaRole
+inline val AriaRole.Companion.textbox: AriaRole
+    get() = unsafeCast("textbox")
 
-        @JsValue("toolbar")
-        val toolbar: AriaRole
+inline val AriaRole.Companion.timer: AriaRole
+    get() = unsafeCast("timer")
 
-        @JsValue("tooltip")
-        val tooltip: AriaRole
+inline val AriaRole.Companion.toolbar: AriaRole
+    get() = unsafeCast("toolbar")
 
-        @JsValue("tree")
-        val tree: AriaRole
+inline val AriaRole.Companion.tooltip: AriaRole
+    get() = unsafeCast("tooltip")
 
-        @JsValue("treegrid")
-        val treegrid: AriaRole
+inline val AriaRole.Companion.tree: AriaRole
+    get() = unsafeCast("tree")
 
-        @JsValue("treeitem")
-        val treeitem: AriaRole
-    }
-}
+inline val AriaRole.Companion.treegrid: AriaRole
+    get() = unsafeCast("treegrid")
+
+inline val AriaRole.Companion.treeitem: AriaRole
+    get() = unsafeCast("treeitem")
