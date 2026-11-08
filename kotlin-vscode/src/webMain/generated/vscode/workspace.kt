@@ -867,6 +867,57 @@ external object workspace {
     */
 
     /**
+     * Register a provider for the timelines of files and folders.
+     *
+     * Multiple providers can be registered. In that case, providers are asked in parallel and the results
+     * are merged. A failing provider (rejected promise or exception) will not cause a failure of the whole
+     * operation.
+     *
+     * To activate your extension when the Timeline view is shown, use the `onView:timeline` activation event.
+     *
+     * @param id A unique identifier for this provider. It is passed to commands and used to filter the Timeline view.
+     * Registering two timeline providers with the same id fails. A [WorkspaceTimelineProvider] registered by
+     * the same extension can use the same id, in which case both are shown as one source of the Timeline view.
+     * @param label A human-readable name for this provider, shown when filtering the Timeline view.
+     * @param scheme A scheme or schemes of the resources this provider provides timelines for. Use `*` to
+     * target all resources.
+     * @param provider A timeline provider.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerTimelineProvider)
+     */
+    fun registerTimelineProvider(
+        id: String,
+        label: String,
+        scheme: JsAny, /* string | readonly string[] */
+        provider: TimelineProvider,
+    ): Disposable
+
+    /**
+     * Register a provider for the workspace timeline.
+     *
+     * Multiple providers can be registered. In that case, providers are asked in parallel and the results
+     * are merged. A failing provider (rejected promise or exception) will not cause a failure of the whole
+     * operation.
+     *
+     * To activate your extension when the Timeline view is shown, use the `onView:timeline` activation event.
+     *
+     * @param id A unique identifier for this provider. It is passed to commands and used to filter the Timeline view.
+     * Registering two workspace timeline providers with the same id fails. A [TimelineProvider] registered by
+     * the same extension can use the same id, in which case both are shown as one source of the Timeline view.
+     * @param label A human-readable name for this provider, shown when filtering the Timeline view.
+     * @param provider A workspace timeline provider.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerWorkspaceTimelineProvider)
+     */
+    fun registerWorkspaceTimelineProvider(
+        id: String,
+        label: String,
+        provider: WorkspaceTimelineProvider,
+    ): Disposable
+
+    /**
      * When true, the user has explicitly trusted the contents of the workspace.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.isTrusted)
