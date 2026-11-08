@@ -6,11 +6,14 @@ import seskar.js.JsValue
 
 sealed external interface AriaCurrent {
     companion object {
+        @JsValue("date")
+        val date: AriaCurrent
+
         @JsValue("false")
         val `false`: AriaCurrent
 
-        @JsValue("true")
-        val `true`: AriaCurrent
+        @JsValue("location")
+        val location: AriaCurrent
 
         @JsValue("page")
         val page: AriaCurrent
@@ -18,13 +21,10 @@ sealed external interface AriaCurrent {
         @JsValue("step")
         val step: AriaCurrent
 
-        @JsValue("location")
-        val location: AriaCurrent
-
-        @JsValue("date")
-        val date: AriaCurrent
-
         @JsValue("time")
         val time: AriaCurrent
+
+        @JsValue("true")
+        val `true`: AriaCurrent
     }
 }

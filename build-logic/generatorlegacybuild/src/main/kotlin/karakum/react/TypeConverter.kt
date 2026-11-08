@@ -63,6 +63,8 @@ internal class SimpleTypeConverter(
             .filter { !it.startsWith("undefined; ") }
             .filter { it != "boolean" }
             .map { it.removeQuoteSurrounding() }
+            // TEMP
+            .let { if (name.startsWith("Aria")) it.sorted() else it }
             .toList()
 
         val pkg = if ("SVG" in parentName) Package.SVG else Package.HTML

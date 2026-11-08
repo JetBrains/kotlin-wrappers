@@ -6,8 +6,8 @@ import seskar.js.JsValue
 
 sealed external interface AriaAutoComplete {
     companion object {
-        @JsValue("none")
-        val none: AriaAutoComplete
+        @JsValue("both")
+        val both: AriaAutoComplete
 
         @JsValue("inline")
         val inline: AriaAutoComplete
@@ -15,7 +15,7 @@ sealed external interface AriaAutoComplete {
         @JsValue("list")
         val list: AriaAutoComplete
 
-        @JsValue("both")
-        val both: AriaAutoComplete
+        @JsValue("none")
+        val none: AriaAutoComplete
     }
 }
