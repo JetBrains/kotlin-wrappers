@@ -2046,13 +2046,16 @@ internal fun convertMember(
         "getElementsByTagName<K extends keyof MathMLElementTagNameMap>(qualifiedName: K): HTMLCollection<MathMLElementTagNameMap[K]>",
             -> return null
 
-        "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollection<SVGElement>",
+        "getElementsByTagNameNS(namespaceURI: XHTML_NAMESPACE, localName: string): HTMLCollection<HTMLElement>",
             -> return """
         fun <T : Element> getElementsByTagNameNS(
             namespaceURI: TagNamespace<T>,
             localName: TagName<T>,
         ): HTMLCollection<T>
         """.trimIndent()
+
+        "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollection<SVGElement>",
+            -> return null
 
         "getElementsByTagNameNS(namespaceURI: MATHML_NAMESPACE, localName: string): HTMLCollection<MathMLElement>",
             -> return null

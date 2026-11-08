@@ -328,6 +328,12 @@ private constructor() :
      */
     fun <T : Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
+
+    /**
+     * The **`Element.getElementsByTagNameNS()`** method returns a live HTMLCollection of elements with the given tag name belonging to the given namespace. It is similar to Document.getElementsByTagNameNS, except that its search is restricted to descendants of the specified element.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagNameNS)
+     */
     fun <T : Element> getElementsByTagNameNS(
         namespaceURI: TagNamespace<T>,
         localName: TagName<T>,

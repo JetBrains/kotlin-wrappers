@@ -687,6 +687,10 @@ private fun String.patchQuerySelectors(): String =
             "querySelectorAll(selectors: string): NodeList<Element>;",
         )
         .replace(
+            "\"$XHTML_NAMESPACE\"",
+            "XHTML_NAMESPACE",
+        )
+        .replace(
             "\"$SVG_NAMESPACE\"",
             "SVG_NAMESPACE",
         )

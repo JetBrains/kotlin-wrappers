@@ -2,9 +2,14 @@
 
 package web.html
 
+import js.reflect.unsafeCast
 import web.components.HTMLSlotElement
 import web.components.HTMLTemplateElement
 import web.dom.TagName
+import web.dom.TagNamespace
+
+inline val XHTML_NAMESPACE: TagNamespace<HTMLElement>
+    get() = unsafeCast("http://www.w3.org/1999/xhtml")
 
 object HtmlTagName {
     inline val a: TagName<HTMLAnchorElement>

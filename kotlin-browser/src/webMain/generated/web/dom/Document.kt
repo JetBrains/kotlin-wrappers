@@ -534,6 +534,12 @@ open external class Document :
      */
     fun <T : Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
+
+    /**
+     * Returns a list of elements with the given tag name belonging to the given namespace. The complete document is searched, including the root node.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagNameNS)
+     */
     fun <T : Element> getElementsByTagNameNS(
         namespaceURI: TagNamespace<T>,
         localName: TagName<T>,
