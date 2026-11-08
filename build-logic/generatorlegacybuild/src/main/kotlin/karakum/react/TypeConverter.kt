@@ -1,5 +1,6 @@
 package karakum.react
 
+import karakum.common.CommonUnionConverter
 import karakum.common.removeQuoteSurrounding
 
 interface TypeConverter {
@@ -63,13 +64,20 @@ internal class SimpleTypeConverter(
             .filter { !it.startsWith("undefined; ") }
             .filter { it != "boolean" }
             .map { it.removeQuoteSurrounding() }
-            // TEMP
-            .let { if (name.startsWith("Aria")) it.sorted() else it }
             .toList()
+
+        if (name.startsWith("Aria")) {
+            unions += ConversionResult(
+                name = name,
+                body = CommonUnionConverter.sealedUnionBody(name, values.sorted()),
+            )
+
+            return name
+        }
 
         val pkg = if ("SVG" in parentName) Package.SVG else Package.HTML
 
-        unions = unions + convertUnion(name, values).copy(pkg = pkg)
+        unions += convertUnion(name, values).copy(pkg = pkg)
 
         return name
     }

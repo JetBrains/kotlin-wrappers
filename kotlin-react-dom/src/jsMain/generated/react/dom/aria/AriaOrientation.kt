@@ -2,14 +2,15 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaOrientation {
-    companion object {
-        @JsValue("horizontal")
-        val horizontal: AriaOrientation
+@JsUnion
+sealed /* union */
+external interface AriaOrientation
 
-        @JsValue("vertical")
-        val vertical: AriaOrientation
-    }
-}
+inline val AriaOrientation.Companion.horizontal: AriaOrientation
+    get() = unsafeCast("horizontal")
+
+inline val AriaOrientation.Companion.vertical: AriaOrientation
+    get() = unsafeCast("vertical")

@@ -2,17 +2,18 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaPressed {
-    companion object {
-        @JsValue("false")
-        val `false`: AriaPressed
+@JsUnion
+sealed /* union */
+external interface AriaPressed
 
-        @JsValue("mixed")
-        val mixed: AriaPressed
+inline val AriaPressed.Companion.`false`: AriaPressed
+    get() = unsafeCast("false")
 
-        @JsValue("true")
-        val `true`: AriaPressed
-    }
-}
+inline val AriaPressed.Companion.mixed: AriaPressed
+    get() = unsafeCast("mixed")
+
+inline val AriaPressed.Companion.`true`: AriaPressed
+    get() = unsafeCast("true")

@@ -2,17 +2,18 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaLive {
-    companion object {
-        @JsValue("assertive")
-        val assertive: AriaLive
+@JsUnion
+sealed /* union */
+external interface AriaLive
 
-        @JsValue("off")
-        val off: AriaLive
+inline val AriaLive.Companion.assertive: AriaLive
+    get() = unsafeCast("assertive")
 
-        @JsValue("polite")
-        val polite: AriaLive
-    }
-}
+inline val AriaLive.Companion.off: AriaLive
+    get() = unsafeCast("off")
+
+inline val AriaLive.Companion.polite: AriaLive
+    get() = unsafeCast("polite")

@@ -2,29 +2,30 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaCurrent {
-    companion object {
-        @JsValue("date")
-        val date: AriaCurrent
+@JsUnion
+sealed /* union */
+external interface AriaCurrent
 
-        @JsValue("false")
-        val `false`: AriaCurrent
+inline val AriaCurrent.Companion.date: AriaCurrent
+    get() = unsafeCast("date")
 
-        @JsValue("location")
-        val location: AriaCurrent
+inline val AriaCurrent.Companion.`false`: AriaCurrent
+    get() = unsafeCast("false")
 
-        @JsValue("page")
-        val page: AriaCurrent
+inline val AriaCurrent.Companion.location: AriaCurrent
+    get() = unsafeCast("location")
 
-        @JsValue("step")
-        val step: AriaCurrent
+inline val AriaCurrent.Companion.page: AriaCurrent
+    get() = unsafeCast("page")
 
-        @JsValue("time")
-        val time: AriaCurrent
+inline val AriaCurrent.Companion.step: AriaCurrent
+    get() = unsafeCast("step")
 
-        @JsValue("true")
-        val `true`: AriaCurrent
-    }
-}
+inline val AriaCurrent.Companion.time: AriaCurrent
+    get() = unsafeCast("time")
+
+inline val AriaCurrent.Companion.`true`: AriaCurrent
+    get() = unsafeCast("true")

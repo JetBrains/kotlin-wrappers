@@ -2,20 +2,21 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaInvalid {
-    companion object {
-        @JsValue("false")
-        val `false`: AriaInvalid
+@JsUnion
+sealed /* union */
+external interface AriaInvalid
 
-        @JsValue("grammar")
-        val grammar: AriaInvalid
+inline val AriaInvalid.Companion.`false`: AriaInvalid
+    get() = unsafeCast("false")
 
-        @JsValue("spelling")
-        val spelling: AriaInvalid
+inline val AriaInvalid.Companion.grammar: AriaInvalid
+    get() = unsafeCast("grammar")
 
-        @JsValue("true")
-        val `true`: AriaInvalid
-    }
-}
+inline val AriaInvalid.Companion.spelling: AriaInvalid
+    get() = unsafeCast("spelling")
+
+inline val AriaInvalid.Companion.`true`: AriaInvalid
+    get() = unsafeCast("true")

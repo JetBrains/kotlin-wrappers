@@ -2,38 +2,39 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaRelevant {
-    companion object {
-        @JsValue("additions")
-        val additions: AriaRelevant
+@JsUnion
+sealed /* union */
+external interface AriaRelevant
 
-        @JsValue("additions removals")
-        val additionsRemovals: AriaRelevant
+inline val AriaRelevant.Companion.additions: AriaRelevant
+    get() = unsafeCast("additions")
 
-        @JsValue("additions text")
-        val additionsText: AriaRelevant
+inline val AriaRelevant.Companion.additionsRemovals: AriaRelevant
+    get() = unsafeCast("additions removals")
 
-        @JsValue("all")
-        val all: AriaRelevant
+inline val AriaRelevant.Companion.additionsText: AriaRelevant
+    get() = unsafeCast("additions text")
 
-        @JsValue("removals")
-        val removals: AriaRelevant
+inline val AriaRelevant.Companion.all: AriaRelevant
+    get() = unsafeCast("all")
 
-        @JsValue("removals additions")
-        val removalsAdditions: AriaRelevant
+inline val AriaRelevant.Companion.removals: AriaRelevant
+    get() = unsafeCast("removals")
 
-        @JsValue("removals text")
-        val removalsText: AriaRelevant
+inline val AriaRelevant.Companion.removalsAdditions: AriaRelevant
+    get() = unsafeCast("removals additions")
 
-        @JsValue("text")
-        val text: AriaRelevant
+inline val AriaRelevant.Companion.removalsText: AriaRelevant
+    get() = unsafeCast("removals text")
 
-        @JsValue("text additions")
-        val textAdditions: AriaRelevant
+inline val AriaRelevant.Companion.text: AriaRelevant
+    get() = unsafeCast("text")
 
-        @JsValue("text removals")
-        val textRemovals: AriaRelevant
-    }
-}
+inline val AriaRelevant.Companion.textAdditions: AriaRelevant
+    get() = unsafeCast("text additions")
+
+inline val AriaRelevant.Companion.textRemovals: AriaRelevant
+    get() = unsafeCast("text removals")

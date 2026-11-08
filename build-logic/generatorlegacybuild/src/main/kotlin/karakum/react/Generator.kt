@@ -41,6 +41,8 @@ import web.svg.RepeatCount
 """.trimIndent()
 
 private val SESKAR_IMPORTS = """
+import js.reflect.unsafeCast
+import js.union.JsUnion
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 """.trimIndent()

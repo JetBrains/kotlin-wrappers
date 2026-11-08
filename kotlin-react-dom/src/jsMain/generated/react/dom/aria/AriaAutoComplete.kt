@@ -2,20 +2,21 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaAutoComplete {
-    companion object {
-        @JsValue("both")
-        val both: AriaAutoComplete
+@JsUnion
+sealed /* union */
+external interface AriaAutoComplete
 
-        @JsValue("inline")
-        val inline: AriaAutoComplete
+inline val AriaAutoComplete.Companion.both: AriaAutoComplete
+    get() = unsafeCast("both")
 
-        @JsValue("list")
-        val list: AriaAutoComplete
+inline val AriaAutoComplete.Companion.inline: AriaAutoComplete
+    get() = unsafeCast("inline")
 
-        @JsValue("none")
-        val none: AriaAutoComplete
-    }
-}
+inline val AriaAutoComplete.Companion.list: AriaAutoComplete
+    get() = unsafeCast("list")
+
+inline val AriaAutoComplete.Companion.none: AriaAutoComplete
+    get() = unsafeCast("none")

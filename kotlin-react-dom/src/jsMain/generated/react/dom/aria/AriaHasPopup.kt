@@ -2,29 +2,30 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaHasPopup {
-    companion object {
-        @JsValue("dialog")
-        val dialog: AriaHasPopup
+@JsUnion
+sealed /* union */
+external interface AriaHasPopup
 
-        @JsValue("false")
-        val `false`: AriaHasPopup
+inline val AriaHasPopup.Companion.dialog: AriaHasPopup
+    get() = unsafeCast("dialog")
 
-        @JsValue("grid")
-        val grid: AriaHasPopup
+inline val AriaHasPopup.Companion.`false`: AriaHasPopup
+    get() = unsafeCast("false")
 
-        @JsValue("listbox")
-        val listbox: AriaHasPopup
+inline val AriaHasPopup.Companion.grid: AriaHasPopup
+    get() = unsafeCast("grid")
 
-        @JsValue("menu")
-        val menu: AriaHasPopup
+inline val AriaHasPopup.Companion.listbox: AriaHasPopup
+    get() = unsafeCast("listbox")
 
-        @JsValue("tree")
-        val tree: AriaHasPopup
+inline val AriaHasPopup.Companion.menu: AriaHasPopup
+    get() = unsafeCast("menu")
 
-        @JsValue("true")
-        val `true`: AriaHasPopup
-    }
-}
+inline val AriaHasPopup.Companion.tree: AriaHasPopup
+    get() = unsafeCast("tree")
+
+inline val AriaHasPopup.Companion.`true`: AriaHasPopup
+    get() = unsafeCast("true")

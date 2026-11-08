@@ -2,20 +2,21 @@
 
 package react.dom.aria
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
+import js.union.JsUnion
 
-sealed external interface AriaSort {
-    companion object {
-        @JsValue("ascending")
-        val ascending: AriaSort
+@JsUnion
+sealed /* union */
+external interface AriaSort
 
-        @JsValue("descending")
-        val descending: AriaSort
+inline val AriaSort.Companion.ascending: AriaSort
+    get() = unsafeCast("ascending")
 
-        @JsValue("none")
-        val none: AriaSort
+inline val AriaSort.Companion.descending: AriaSort
+    get() = unsafeCast("descending")
 
-        @JsValue("other")
-        val other: AriaSort
-    }
-}
+inline val AriaSort.Companion.none: AriaSort
+    get() = unsafeCast("none")
+
+inline val AriaSort.Companion.other: AriaSort
+    get() = unsafeCast("other")
