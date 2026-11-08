@@ -8,7 +8,7 @@ import js.buffer.ArrayBuffer
  */
 @JsQualifier("Uint8Array.__proto__")
 @JsName("constructor")
-sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny> {
+sealed external class TypedArrayCompanion<out S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/BYTES_PER_ELEMENT)
      */

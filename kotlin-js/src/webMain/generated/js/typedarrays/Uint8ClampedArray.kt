@@ -12,7 +12,7 @@ import js.serialization.Serializable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray)
  */
-open external class Uint8ClampedArray<B : ArrayBufferLike>(
+open external class Uint8ClampedArray<out B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,

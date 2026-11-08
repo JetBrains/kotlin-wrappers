@@ -12,7 +12,7 @@ import js.serialization.Serializable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Int16Array)
  */
-open external class Int16Array<B : ArrayBufferLike>(
+open external class Int16Array<out B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,

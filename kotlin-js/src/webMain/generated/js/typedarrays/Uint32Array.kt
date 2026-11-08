@@ -12,7 +12,7 @@ import js.serialization.Serializable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array)
  */
-open external class Uint32Array<B : ArrayBufferLike>(
+open external class Uint32Array<out B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,

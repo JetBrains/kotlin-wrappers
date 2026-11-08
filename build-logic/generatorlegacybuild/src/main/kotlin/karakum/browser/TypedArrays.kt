@@ -14,7 +14,7 @@ private fun mdn(
 // language=kotlin
 private val TEMPLATE = """
 ${mdn()}
-open external class __NAME__<B : ArrayBufferLike>(
+open external class __NAME__<out B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,

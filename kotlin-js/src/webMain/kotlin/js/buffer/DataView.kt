@@ -6,7 +6,7 @@ import js.serialization.Serializable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView)
  */
-open external class DataView<B : ArrayBufferLike>(
+open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/buffer)
      */

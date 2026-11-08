@@ -14,9 +14,9 @@ import js.collections.ListLike
 @JsQualifier("Uint8Array")
 @JsName("__proto__")
 sealed external class TypedArray<
-        S : TypedArray<S, R, B, T>,
-        R : TypedArray<R, R, ArrayBuffer, T>,
-        B : ArrayBufferLike,
+        out S : TypedArray<S, R, B, T>,
+        out R : TypedArray<R, R, ArrayBuffer, T>,
+        out B : ArrayBufferLike,
         T : JsAny,
         > :
     ArrayBufferView<B>,
