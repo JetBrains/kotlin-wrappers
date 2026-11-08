@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package react.dom.aria
+package web.aria
 
 import js.reflect.unsafeCast
 import js.union.JsUnion

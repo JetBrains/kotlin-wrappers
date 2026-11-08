@@ -2,6 +2,7 @@
 
 package react.dom.aria
 
+import web.aria.*
 import web.dom.ElementId
 
 external interface AriaAttributes {

@@ -1,19 +1,19 @@
 // Automatically generated - do not modify!
 
-package react.dom.aria
+package web.aria
 
 import js.reflect.unsafeCast
 import js.union.JsUnion
 
 @JsUnion
 sealed /* union */
-external interface AriaPressed
+external interface AriaChecked
 
-inline val AriaPressed.Companion.`false`: AriaPressed
+inline val AriaChecked.Companion.`false`: AriaChecked
     get() = unsafeCast("false")
 
-inline val AriaPressed.Companion.mixed: AriaPressed
+inline val AriaChecked.Companion.mixed: AriaChecked
     get() = unsafeCast("mixed")
 
-inline val AriaPressed.Companion.`true`: AriaPressed
+inline val AriaChecked.Companion.`true`: AriaChecked
     get() = unsafeCast("true")

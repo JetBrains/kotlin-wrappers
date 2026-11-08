@@ -6,9 +6,9 @@ import react.Props
 import react.Ref
 import react.RefCallback
 import react.StateSetter
-import react.dom.aria.AriaRole
 import react.dom.events.FocusEventHandler
 import react.dom.events.MouseEventHandler
+import web.aria.AriaRole
 import web.dom.Element
 import web.dom.TagName
 import web.html.ButtonType

@@ -3,10 +3,10 @@
 package mui.base
 
 import react.Props
-import react.dom.aria.AriaRole
 import react.dom.events.FocusEventHandler
 import react.dom.events.MouseEventHandler
 import react.dom.events.SyntheticEvent
+import web.aria.AriaRole
 
 external interface UseSnackbarParameters {
     /**

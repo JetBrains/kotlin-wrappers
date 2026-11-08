@@ -3,10 +3,10 @@
 package mui.base
 
 import react.*
-import react.dom.aria.AriaRole
 import react.dom.events.KeyboardEventHandler
 import react.dom.events.MouseEventHandler
 import react.dom.html.HTMLAttributes
+import web.aria.AriaRole
 import web.cssom.ClassName
 import web.dom.Element
 import web.html.HTMLDivElement

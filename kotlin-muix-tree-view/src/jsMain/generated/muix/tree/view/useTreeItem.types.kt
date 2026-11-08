@@ -5,11 +5,11 @@ package muix.tree.view
 import kotlinx.js.JsPlainObject
 import mui.system.Union
 import react.*
-import react.dom.aria.AriaChecked
 import react.dom.events.ChangeEventHandler
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
 import react.dom.events.MouseEventHandler
+import web.aria.AriaChecked
 import web.dom.Element
 import web.dom.ElementId
 import web.html.HTMLElement

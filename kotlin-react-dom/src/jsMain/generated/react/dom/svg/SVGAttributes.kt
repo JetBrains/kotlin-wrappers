@@ -4,7 +4,7 @@ package react.dom.svg
 
 import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
-import react.dom.aria.AriaRole
+import web.aria.AriaRole
 import web.dom.DataTestId
 import web.dom.Element
 import web.dom.ElementId
