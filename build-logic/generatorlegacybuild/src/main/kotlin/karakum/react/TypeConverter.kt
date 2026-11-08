@@ -1,6 +1,5 @@
 package karakum.react
 
-import karakum.common.CommonUnionConverter
 import karakum.common.removeQuoteSurrounding
 
 interface TypeConverter {
@@ -36,6 +35,9 @@ internal class SimpleTypeConverter(
         val name = unionName(propertyName)
 
         when {
+            propertyName.startsWith("aria-")
+                -> return name
+
             propertyName == "autoCapitalize"
                 -> return propertyName.replaceFirstChar(Char::uppercase)
 
@@ -65,15 +67,6 @@ internal class SimpleTypeConverter(
             .filter { it != "boolean" }
             .map { it.removeQuoteSurrounding() }
             .toList()
-
-        if (name.startsWith("Aria")) {
-            unions += ConversionResult(
-                name = name,
-                body = CommonUnionConverter.sealedUnionBody(name, values.sorted()),
-            )
-
-            return name
-        }
 
         val pkg = if ("SVG" in parentName) Package.SVG else Package.HTML
 

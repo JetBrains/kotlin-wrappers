@@ -1,6 +1,5 @@
 package karakum.react
 
-import karakum.common.CommonUnionConverter
 import karakum.common.JsUnionConverter.sealedUnionBody
 import karakum.common.removeQuoteSurrounding
 import karakum.common.startsWithAnyQuote
@@ -10,6 +9,9 @@ internal fun convertUnion(
     source: String,
 ): ConversionResult? {
     if ("<" in name)
+        return null
+
+    if (name == "AriaRole")
         return null
 
     val sourceType = source
@@ -25,13 +27,6 @@ internal fun convertUnion(
         .filter { it != "(string & {})" }
         .map { it.removeQuoteSurrounding() }
         .toList()
-
-    // TEMP
-    if (name == "AriaRole")
-        return ConversionResult(
-            name = name,
-            body = CommonUnionConverter.sealedUnionBody(name, values),
-        )
 
     return convertUnion(name, values)
 }
