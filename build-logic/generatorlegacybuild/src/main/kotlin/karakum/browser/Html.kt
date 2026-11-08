@@ -654,6 +654,7 @@ internal fun htmlDeclarations(
 
     return interfaces
         .plus(enums)
+        .plus(ariaUnions())
         .plus(formTypes())
         .plus(popoverTypes())
         .plus(

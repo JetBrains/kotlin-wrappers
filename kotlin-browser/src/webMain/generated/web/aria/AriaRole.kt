@@ -39,8 +39,17 @@ inline val AriaRole.Companion.columnheader: AriaRole
 inline val AriaRole.Companion.combobox: AriaRole
     get() = unsafeCast("combobox")
 
+inline val AriaRole.Companion.command: AriaRole
+    get() = unsafeCast("command")
+
+inline val AriaRole.Companion.comment: AriaRole
+    get() = unsafeCast("comment")
+
 inline val AriaRole.Companion.complementary: AriaRole
     get() = unsafeCast("complementary")
+
+inline val AriaRole.Companion.composite: AriaRole
+    get() = unsafeCast("composite")
 
 inline val AriaRole.Companion.contentinfo: AriaRole
     get() = unsafeCast("contentinfo")
@@ -66,6 +75,18 @@ inline val AriaRole.Companion.figure: AriaRole
 inline val AriaRole.Companion.form: AriaRole
     get() = unsafeCast("form")
 
+inline val AriaRole.Companion.generic: AriaRole
+    get() = unsafeCast("generic")
+
+inline val AriaRole.Companion.graphicsDocument: AriaRole
+    get() = unsafeCast("graphics-document")
+
+inline val AriaRole.Companion.graphicsObject: AriaRole
+    get() = unsafeCast("graphics-object")
+
+inline val AriaRole.Companion.graphicsSymbol: AriaRole
+    get() = unsafeCast("graphics-symbol")
+
 inline val AriaRole.Companion.grid: AriaRole
     get() = unsafeCast("grid")
 
@@ -80,6 +101,12 @@ inline val AriaRole.Companion.heading: AriaRole
 
 inline val AriaRole.Companion.img: AriaRole
     get() = unsafeCast("img")
+
+inline val AriaRole.Companion.input: AriaRole
+    get() = unsafeCast("input")
+
+inline val AriaRole.Companion.landmark: AriaRole
+    get() = unsafeCast("landmark")
 
 inline val AriaRole.Companion.link: AriaRole
     get() = unsafeCast("link")
@@ -98,6 +125,9 @@ inline val AriaRole.Companion.log: AriaRole
 
 inline val AriaRole.Companion.main: AriaRole
     get() = unsafeCast("main")
+
+inline val AriaRole.Companion.mark: AriaRole
+    get() = unsafeCast("mark")
 
 inline val AriaRole.Companion.marquee: AriaRole
     get() = unsafeCast("marquee")
@@ -119,6 +149,9 @@ inline val AriaRole.Companion.menuitemcheckbox: AriaRole
 
 inline val AriaRole.Companion.menuitemradio: AriaRole
     get() = unsafeCast("menuitemradio")
+
+inline val AriaRole.Companion.meter: AriaRole
+    get() = unsafeCast("meter")
 
 inline val AriaRole.Companion.navigation: AriaRole
     get() = unsafeCast("navigation")
@@ -144,8 +177,14 @@ inline val AriaRole.Companion.radio: AriaRole
 inline val AriaRole.Companion.radiogroup: AriaRole
     get() = unsafeCast("radiogroup")
 
+inline val AriaRole.Companion.range: AriaRole
+    get() = unsafeCast("range")
+
 inline val AriaRole.Companion.region: AriaRole
     get() = unsafeCast("region")
+
+inline val AriaRole.Companion.roletype: AriaRole
+    get() = unsafeCast("roletype")
 
 inline val AriaRole.Companion.row: AriaRole
     get() = unsafeCast("row")
@@ -165,6 +204,15 @@ inline val AriaRole.Companion.search: AriaRole
 inline val AriaRole.Companion.searchbox: AriaRole
     get() = unsafeCast("searchbox")
 
+inline val AriaRole.Companion.section: AriaRole
+    get() = unsafeCast("section")
+
+inline val AriaRole.Companion.sectionhead: AriaRole
+    get() = unsafeCast("sectionhead")
+
+inline val AriaRole.Companion.select: AriaRole
+    get() = unsafeCast("select")
+
 inline val AriaRole.Companion.separator: AriaRole
     get() = unsafeCast("separator")
 
@@ -176,6 +224,12 @@ inline val AriaRole.Companion.spinbutton: AriaRole
 
 inline val AriaRole.Companion.status: AriaRole
     get() = unsafeCast("status")
+
+inline val AriaRole.Companion.structure: AriaRole
+    get() = unsafeCast("structure")
+
+inline val AriaRole.Companion.suggestion: AriaRole
+    get() = unsafeCast("suggestion")
 
 inline val AriaRole.Companion.switch: AriaRole
     get() = unsafeCast("switch")
@@ -215,3 +269,9 @@ inline val AriaRole.Companion.treegrid: AriaRole
 
 inline val AriaRole.Companion.treeitem: AriaRole
     get() = unsafeCast("treeitem")
+
+inline val AriaRole.Companion.widget: AriaRole
+    get() = unsafeCast("widget")
+
+inline val AriaRole.Companion.window: AriaRole
+    get() = unsafeCast("window")
