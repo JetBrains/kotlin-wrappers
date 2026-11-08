@@ -125,7 +125,11 @@ class BufferPlugin : Plugin {
                 """.trimIndent()
 
                 """
-                    ${ifPresent(inheritanceModifier) { "$it " }}external class Buffer${ifPresent(typeParameters) { "<${it}>"}}${ifPresent(heritageClauses) { " : $it"}} {
+                    ${ifPresent(inheritanceModifier) { "$it " }}external class Buffer${ifPresent(typeParameters) { "<out ${it}>" }}${
+                    ifPresent(
+                        heritageClauses,
+                    ) { " : $it" }
+                } {
                     $constructors
                     $members
                     $companionObject
