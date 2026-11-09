@@ -30,10 +30,6 @@ private fun ariaUnion(
     if (values == listOf("<string>"))
         return null
 
-    // TEMP
-    if (values == listOf("false", "true"))
-        return null
-
     val name = source
         .substringAfter("\nslug: Web/API/Element/", "")
         .substringBefore("\n", "")
