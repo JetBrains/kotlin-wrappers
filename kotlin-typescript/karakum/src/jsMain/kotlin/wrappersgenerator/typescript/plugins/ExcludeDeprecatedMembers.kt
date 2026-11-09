@@ -2,14 +2,20 @@ package wrappersgenerator.typescript.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.extension.plugins.isDeprecated
 import js.reflect.invoke
+import typescript.getJSDocDeprecatedTag
+import typescript.isEnumMember
 import typescript.isFunctionDeclaration
 import typescript.isInterfaceDeclaration
 
 val ExcludeDeprecatedMembers = createPlugin { node, _, _ ->
     nullable {
-        ensure(isDeprecated(node))
+        // TODO: fix in core?
+        val tagOwner = node.parent
+            .takeIf { isEnumMember(it) }
+            ?: node
+
+        ensureNotNull(getJSDocDeprecatedTag(tagOwner))
 
         val save = isInterfaceDeclaration(node)
                 && node.name.text.let { it == "EditorOptions" || it == "FormatCodeOptions" }
