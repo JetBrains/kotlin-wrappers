@@ -10,7 +10,7 @@ sealed /* union */
 external interface SpacingOptions
 
 inline fun SpacingOptions(
-    value: Int,
+    value: Double,
 ): SpacingOptions =
     unsafeCast(value)
 
@@ -25,21 +25,21 @@ inline fun SpacingOptions(
     unsafeCast(value)
 
 inline fun SpacingOptions(
-    noinline value: (abs: Int) -> Length,
+    noinline value: (abs: Double) -> Length,
 ): SpacingOptions =
     unsafeCast(value)
 
 inline fun SpacingOptions(
-    noinline value: (abs: Length) -> Length,
+    value: ReadonlyArray<Double>,
 ): SpacingOptions =
     unsafeCast(value)
 
 inline fun SpacingOptions(
-    value: ReadonlyArray<Int>,
+    value: ReadonlyArray<Length>,
 ): SpacingOptions =
     unsafeCast(value)
 
-typealias SpacingArgument = Int /* web.cssom.Auto */
+typealias SpacingArgument = Double
 
 sealed external interface Spacing {
     operator fun invoke(): Length
