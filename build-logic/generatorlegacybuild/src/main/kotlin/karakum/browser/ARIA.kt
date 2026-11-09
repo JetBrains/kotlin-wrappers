@@ -69,7 +69,7 @@ private fun ariaRole(): ConversionResult {
 
     return ConversionResult(
         name = "AriaRole",
-        body = sealedUnionBody("AriaRole", values),
+        body = sealedUnionBody("AriaRole", values, AriaRoleCommentProvider),
         pkg = "web.aria",
     )
 }
@@ -101,4 +101,27 @@ private object AriaCommentProvider :
          */
         """.trimIndent()
     }
+}
+
+private object AriaRoleCommentProvider :
+    CommentProvider {
+
+    override fun getComment(
+        name: String,
+    ): String =
+        """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Reference/Roles)
+         */
+        """.trimIndent()
+
+    override fun getComment(
+        name: String,
+        unionValue: String,
+    ): String =
+        """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Reference/Roles/${unionValue}_role)
+         */
+        """.trimIndent()
 }
