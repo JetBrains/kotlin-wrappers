@@ -4,6 +4,7 @@
 
 package mui.material.styles
 
+import kotlinx.js.JsPlainObject
 import mui.system.Breakpoints
 
 external interface BaseCSSProperties : react.CSSProperties {
@@ -23,10 +24,12 @@ external interface CSSProperties : BaseCSSProperties {
 // [k: string]: unknown | CSSProperties
 }
 
-external interface Mixins {
-    var toolbar: CSSProperties
+@JsPlainObject
+external interface Mixins : mui.system.Mixins {
+    val toolbar: CSSProperties
 }
 
+@JsPlainObject
 external interface MixinsOptions : Mixins {
 // ... use interface declaration merging to add custom mixin options
 }

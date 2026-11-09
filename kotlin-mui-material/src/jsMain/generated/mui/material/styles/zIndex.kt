@@ -2,20 +2,23 @@
 
 package mui.material.styles
 
-external interface ZIndex {
-    var mobileStepper: Number
+import kotlinx.js.JsPlainObject
 
-    var speedDial: Number
+@JsPlainObject
+external interface ZIndex : mui.system.ZIndex {
+    val mobileStepper: Number
 
-    var appBar: Number
+    val speedDial: Number
 
-    var drawer: Number
+    val appBar: Number
 
-    var modal: Number
+    val drawer: Number
 
-    var snackbar: Number
+    val modal: Number
 
-    var tooltip: Number
+    val snackbar: Number
 
-    var fab: Number
+    val tooltip: Number
+
+    val fab: Number
 }

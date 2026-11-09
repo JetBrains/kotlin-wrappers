@@ -9,12 +9,15 @@ import kotlinx.js.JsPlainObject
 
 external interface Typography
 
+@JsPlainObject
 external interface Mixins
 
 external interface Shadows
 
+@JsPlainObject
 external interface Transitions
 
+@JsPlainObject
 external interface ZIndex
 
 @JsPlainObject
