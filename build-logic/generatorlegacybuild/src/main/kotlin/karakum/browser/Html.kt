@@ -653,8 +653,8 @@ internal fun htmlDeclarations(
         .filter { it.name != "FileSystemFileHandle" }
 
     return interfaces
+        .withAriaUnions()
         .plus(enums)
-        .plus(ariaUnions())
         .plus(formTypes())
         .plus(popoverTypes())
         .plus(

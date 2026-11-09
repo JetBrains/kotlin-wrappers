@@ -23,7 +23,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaAtomic)
      */
-    var ariaAtomic: String?
+    var ariaAtomic: AriaAtomic?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -32,7 +32,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaAutoComplete)
      */
-    var ariaAutoComplete: String?
+    var ariaAutoComplete: AriaAutoComplete?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -59,7 +59,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaBusy)
      */
-    var ariaBusy: String?
+    var ariaBusy: AriaBusy?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -68,7 +68,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaChecked)
      */
-    var ariaChecked: String?
+    var ariaChecked: AriaChecked?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -122,7 +122,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaCurrent)
      */
-    var ariaCurrent: String?
+    var ariaCurrent: AriaCurrent?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -158,7 +158,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaDisabled)
      */
-    var ariaDisabled: String?
+    var ariaDisabled: AriaDisabled?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -176,7 +176,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaExpanded)
      */
-    var ariaExpanded: String?
+    var ariaExpanded: AriaExpanded?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -194,7 +194,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaHasPopup)
      */
-    var ariaHasPopup: String?
+    var ariaHasPopup: AriaHasPopup?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -203,7 +203,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaHidden)
      */
-    var ariaHidden: String?
+    var ariaHidden: AriaHidden?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -212,7 +212,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaInvalid)
      */
-    var ariaInvalid: String?
+    var ariaInvalid: AriaInvalid?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -257,7 +257,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaLive)
      */
-    var ariaLive: String?
+    var ariaLive: AriaLive?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -266,7 +266,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaModal)
      */
-    var ariaModal: String?
+    var ariaModal: AriaModal?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -275,7 +275,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaMultiLine)
      */
-    var ariaMultiLine: String?
+    var ariaMultiLine: AriaMultiLine?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -284,7 +284,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaMultiSelectable)
      */
-    var ariaMultiSelectable: String?
+    var ariaMultiSelectable: AriaMultiSelectable?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -293,7 +293,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaOrientation)
      */
-    var ariaOrientation: String?
+    var ariaOrientation: AriaOrientation?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -329,7 +329,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaPressed)
      */
-    var ariaPressed: String?
+    var ariaPressed: AriaPressed?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -338,7 +338,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaReadOnly)
      */
-    var ariaReadOnly: String?
+    var ariaReadOnly: AriaReadOnly?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -347,7 +347,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRelevant)
      */
-    var ariaRelevant: String?
+    var ariaRelevant: AriaRelevant?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -356,7 +356,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRequired)
      */
-    var ariaRequired: String?
+    var ariaRequired: AriaRequired?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -410,7 +410,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaSelected)
      */
-    var ariaSelected: String?
+    var ariaSelected: AriaSelected?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -428,7 +428,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaSort)
      */
-    var ariaSort: String?
+    var ariaSort: AriaSort?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -473,7 +473,7 @@ external interface ARIAMixin {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/role)
      */
-    var role: String?
+    var role: AriaRole?
         get() = definedExternally
         set(value) = definedExternally
 }

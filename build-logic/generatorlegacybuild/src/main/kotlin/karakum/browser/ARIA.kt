@@ -3,8 +3,8 @@ package karakum.browser
 import karakum.common.CommonUnionConverter.sealedUnionBody
 import karakum.common.UnionConverter.CommentProvider
 
-internal fun ariaUnions(): Sequence<ConversionResult> =
-    MDN.root
+internal fun Sequence<ConversionResult>.withAriaUnions(): Sequence<ConversionResult> {
+    val unions = MDN.root
         .resolve("api/element")
         .listFiles { file -> file.isDirectory }
         .asSequence()
@@ -12,6 +12,36 @@ internal fun ariaUnions(): Sequence<ConversionResult> =
         .map { it.resolve("index.md").readText() }
         .mapNotNull { ariaUnion(it) }
         .plus(ariaRole())
+        .toList()
+
+    val unionNames = unions.map { it.name }
+
+    return map { patchAriaMixin(it, unionNames) }
+        .plus(unions)
+}
+
+private fun patchAriaMixin(
+    result: ConversionResult,
+    unionNames: List<String>,
+): ConversionResult {
+    if (result.name != "ARIAMixin")
+        return result
+
+    var body = result.body
+    for (unionName in unionNames) {
+        val propertyName = when (unionName) {
+            "AriaRole" -> "role"
+            else -> unionName.replaceFirstChar { it.lowercase() }
+        }
+
+        body = body.replace(
+            "var $propertyName: String",
+            "var $propertyName: $unionName",
+        )
+    }
+
+    return result.copy(body = body)
+}
 
 private fun ariaUnion(
     source: String,
