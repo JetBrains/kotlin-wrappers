@@ -1,6 +1,7 @@
 package karakum.browser
 
-import karakum.common.CommonUnionConverter
+import karakum.common.CommonUnionConverter.sealedUnionBody
+import karakum.common.UnionConverter.CommentProvider
 
 internal fun ariaUnions(): Sequence<ConversionResult> =
     MDN.root
@@ -37,7 +38,7 @@ private fun ariaUnion(
 
     return ConversionResult(
         name = name,
-        body = CommonUnionConverter.sealedUnionBody(name, values),
+        body = sealedUnionBody(name, values, AriaCommentProvider),
         pkg = "web.aria",
     )
 }
@@ -68,8 +69,36 @@ private fun ariaRole(): ConversionResult {
 
     return ConversionResult(
         name = "AriaRole",
-        body = CommonUnionConverter.sealedUnionBody("AriaRole", values),
+        body = sealedUnionBody("AriaRole", values),
         pkg = "web.aria",
     )
 }
 
+private object AriaCommentProvider :
+    CommentProvider {
+
+    override fun getComment(
+        name: String,
+    ): String {
+        val propertyName = name.replaceFirstChar { it.lowercase() }
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/$propertyName)
+         */
+        """.trimIndent()
+    }
+
+    override fun getComment(
+        name: String,
+        unionValue: String,
+    ): String {
+        val propertyName = name.replaceFirstChar { it.lowercase() }
+
+        return """
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/$propertyName#$unionValue)
+         */
+        """.trimIndent()
+    }
+}
