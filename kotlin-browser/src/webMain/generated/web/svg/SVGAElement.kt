@@ -3,6 +3,7 @@
 package web.svg
 
 import web.dom.DOMTokenList
+import web.html.HyperlinkElementUtils
 import web.http.ReferrerPolicy
 
 /**
@@ -13,6 +14,7 @@ import web.http.ReferrerPolicy
 open external class SVGAElement
 private constructor() :
     SVGGraphicsElement,
+    HyperlinkElementUtils,
     SVGURIReference {
     /**
      * The **`download`** property of the SVGAElement interface returns a string indicating that the browser should treat the linked URL as a download.
@@ -20,13 +22,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
      */
     var download: String
-
-    /**
-     * The **`hreflang`** property of the SVGAElement interface returns a string indicating the language of the linked resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/hreflang)
-     */
-    var hreflang: String
 
     /**
      * The **`ping`** property of the SVGAElement interface returns a string that reflects the ping attribute, containing a space-separated list of URLs to which, when the hyperlink is followed, POST requests with the body PING will be sent by the browser (in the background). Typically used for tracking.
@@ -56,11 +51,4 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
      */
     val target: SVGAnimatedString
-
-    /**
-     * The **`type`** property of the SVGAElement interface returns a string indicating the MIME type of the linked resource.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/type)
-     */
-    var type: String
 }

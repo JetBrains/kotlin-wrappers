@@ -39,10 +39,16 @@ private constructor() :
         val TEXTPATH_SPACINGTYPE_UNKNOWN: Spacing
         val TEXTPATH_SPACINGTYPE_AUTO: Spacing
         val TEXTPATH_SPACINGTYPE_EXACT: Spacing
+        val TEXTPATH_SIDETYPE_UNKNOWN: Side
+        val TEXTPATH_SIDETYPE_LEFT: Side
+        val TEXTPATH_SIDETYPE_RIGHT: Side
     }
 
     sealed /* enum */
     interface Method
+
+    sealed /* enum */
+    interface Side
 
     sealed /* enum */
     interface Spacing

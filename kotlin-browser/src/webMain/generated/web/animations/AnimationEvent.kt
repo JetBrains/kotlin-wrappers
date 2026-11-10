@@ -2,6 +2,7 @@
 
 package web.animations
 
+import web.cssom.CSSAnimation
 import web.events.Event
 import web.events.EventType
 
@@ -14,6 +15,11 @@ open external class AnimationEvent(
     override val type: EventType<AnimationEvent>,
     init: AnimationEventInit = definedExternally,
 ) : Event {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/animation)
+     */
+    val animation: CSSAnimation?
+
     /**
      * The **`AnimationEvent.animationName`** read-only property is a string containing the value of the animation-name CSS property associated with the transition.
      *

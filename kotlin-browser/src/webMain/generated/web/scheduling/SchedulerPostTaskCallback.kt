@@ -2,4 +2,6 @@
 
 package web.scheduling
 
-typealias SchedulerPostTaskCallback<T> = () -> T
+import js.promise.PromiseResult
+
+typealias SchedulerPostTaskCallback<T> = () -> PromiseResult<T>

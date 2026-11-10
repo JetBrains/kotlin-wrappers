@@ -234,6 +234,15 @@ private constructor() {
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     /**
+     * The **`getAllRecords()`** method of the IDBObjectStore interface retrieves all records (including primary keys and values) from the object store.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAllRecords)
+     */
+    @JsThrows(InvalidStateError::class)
+    @JsThrows(TransactionInactiveError::class)
+    fun getAllRecords(options: IDBGetAllOptions = definedExternally): IDBRequest<*>
+
+    /**
      * The **`getKey()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the key selected by the specified query. This is for retrieving specific records from an object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getKey)

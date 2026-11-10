@@ -11,7 +11,7 @@ import web.dom.Element
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTimeline)
  */
 open external class ViewTimeline(
-    options: ViewTimelineOptions = definedExternally,
+    options: ViewTimelineOptions,
 ) : ScrollTimeline {
     /**
      * The **`endOffset`** read-only property of the ViewTimeline interface returns a CSSNumericValue representing the ending (100% progress) scroll position of the timeline as an offset from the start of the overflowing section of content in the scroller.

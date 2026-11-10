@@ -40,6 +40,12 @@ private val ANIMATION_TYPES = setOf(
     "ViewTimelineOptions",
 )
 
+private val ARIA_TYPES = setOf(
+    "ARIAMixin",
+    "ARIANotifyMixin",
+    "AriaNotificationOptions",
+)
+
 private val RANGES_TYPES = setOf(
     "AbstractRange",
     "Range",
@@ -1478,13 +1484,23 @@ internal fun convertInterface(
                 -> result.replace("val kind:", "override val kind:")
 
             "HTMLElement",
-                -> result + "\n" + """
-            /**
-             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
-             */
-            @ExperimentalWebApi
-            var editContext: EditContext?
-            """.trimIndent()
+                -> result
+                .replace("var innerText:", "open var innerText:")
+                .plus("\n")
+                .plus(
+                    """
+                    /**
+                     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
+                     */
+                    @ExperimentalWebApi
+                    var editContext: EditContext?
+                    """.trimIndent(),
+                )
+
+            "HTMLScriptElement",
+                -> result
+                .replace("var innerText:", "override var innerText:")
+                .replace("var textContent: String", "override var textContent: String? // String")
 
             "Navigator",
                 -> result + "\n" + """
@@ -1717,7 +1733,7 @@ internal fun convertInterface(
         name in HTTP_TYPES -> "web.http"
         name.startsWith("XMLHttp") -> "web.xhr"
 
-        name == "ARIAMixin" -> "web.aria"
+        name in ARIA_TYPES -> "web.aria"
         name in SELECTION_TYPES -> "web.selection"
 
         name == "EventModifierInit" -> "web.uievents"
@@ -2460,6 +2476,7 @@ private fun convertFunction(
     if (typeParameters.isNotEmpty() && "/* Exclude<" !in typeParameters) {
         typeParameters = typeParameters
             .removeSurrounding("<", ">")
+            .removeSuffix(" = any")
             .splitToSequence(",")
             .map { if (":" !in it) "$it : JsAny?" else it }
             .joinToString(",", "<", ">")
@@ -2532,6 +2549,7 @@ private fun convertFunction(
         .replace(": IDBRequest<string>", ": IDBRequest<String>")
         .replace(": IDBRequest<IDBValidKey[]>", ": IDBRequest<ReadonlyArray<IDBValidKey>>")
         .replace(": IDBRequest<any[]>", ": IDBRequest<ReadonlyArray<*>>")
+        .replace(Regex(""": IDBRequest$"""), ": IDBRequest<*>")
         .let {
             if (it.startsWith(": number")) {
                 it.replace(": number", ": ${typeProvider.getReturnType(name)}")

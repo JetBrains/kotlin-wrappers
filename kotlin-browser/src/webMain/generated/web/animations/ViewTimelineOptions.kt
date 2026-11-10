@@ -23,5 +23,5 @@ external interface ViewTimelineOptions {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTimeline/ViewTimeline#subject)
      */
-    var subject: Element?
+    var subject: Element
 }

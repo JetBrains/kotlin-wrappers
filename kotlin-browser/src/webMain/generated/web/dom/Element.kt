@@ -9,6 +9,7 @@ import js.void.Void
 import web.animations.Animatable
 import web.animations.AnimationEvent
 import web.aria.ARIAMixin
+import web.aria.ARIANotifyMixin
 import web.clipboard.ClipboardEvent
 import web.components.CustomElementRegistry
 import web.components.ShadowRoot
@@ -52,6 +53,7 @@ open external class Element
 private constructor() :
     Node,
     ARIAMixin,
+    ARIANotifyMixin,
     Animatable,
     ChildNode,
     NonDocumentTypeChildNode,

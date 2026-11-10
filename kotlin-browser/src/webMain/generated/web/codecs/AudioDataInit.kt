@@ -3,8 +3,8 @@
 package web.codecs
 
 import js.array.ReadonlyArray
+import js.buffer.AllowSharedBufferSource
 import js.buffer.ArrayBuffer
-import js.buffer.BufferSource
 import js.numbers.Int53
 import kotlinx.js.JsPlainObject
 
@@ -16,7 +16,7 @@ external interface AudioDataInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/AudioData#data)
      */
-    var data: BufferSource
+    var data: AllowSharedBufferSource
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/AudioData#format)

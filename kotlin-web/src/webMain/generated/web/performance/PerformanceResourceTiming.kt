@@ -167,6 +167,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/transferSize)
      */
     val transferSize: UInt53
+    val workerCacheLookupStart: DOMHighResTimeStamp
+    val workerRouterEvaluationStart: DOMHighResTimeStamp
 
     /**
      * The **`workerStart`** read-only property of the PerformanceResourceTiming interface returns a DOMHighResTimeStamp immediately before dispatching the FetchEvent if a Service Worker thread is already running, or immediately before starting the Service Worker thread if it is not already running. If the resource is not intercepted by a Service Worker the property will always return 0.

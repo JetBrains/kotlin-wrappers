@@ -53,6 +53,13 @@ protected constructor() :
     var fetchPriority: FetchPriority
 
     /**
+     * The **`innerText`** property of the HTMLScriptElement interface represents the text content of the <script> element. It behaves in the same way as the textContent and text properties.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/innerText)
+     */
+    override var innerText: String
+
+    /**
      * The **`integrity`** property of the HTMLScriptElement interface is a string that contains inline metadata that a browser can use to verify that a fetched resource has been delivered without unexpected manipulation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/integrity)
@@ -86,6 +93,13 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text)
      */
     var text: String
+
+    /**
+     * The **`textContent`** property of the HTMLScriptElement interface represents the inline text content of the <script> element. It behaves in the same way as the text and innerText properties.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/textContent)
+     */
+    override var textContent: String? // String
 
     /**
      * The **`type`** property of the HTMLScriptElement interface is a string that reflects the type of the script.

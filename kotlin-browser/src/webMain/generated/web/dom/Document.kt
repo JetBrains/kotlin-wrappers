@@ -7,6 +7,7 @@ import js.promise.await
 import js.void.Void
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
+import web.aria.ARIANotifyMixin
 import web.clipboard.ClipboardEvent
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ClassName
@@ -54,6 +55,7 @@ import web.xr.XRSessionEvent
  */
 open external class Document :
     Node,
+    ARIANotifyMixin,
     DocumentOrShadowRoot,
     FontFaceSource,
     GlobalEventHandlers,

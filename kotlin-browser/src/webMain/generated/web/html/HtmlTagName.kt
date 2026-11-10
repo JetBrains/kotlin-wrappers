@@ -270,6 +270,9 @@ object HtmlTagName {
     inline val select: TagName<HTMLSelectElement>
         get() = TagName("select")
 
+    inline val selectedcontent: TagName<HTMLSelectedContentElement>
+        get() = TagName("selectedcontent")
+
     inline val slot: TagName<HTMLSlotElement>
         get() = TagName("slot")
 

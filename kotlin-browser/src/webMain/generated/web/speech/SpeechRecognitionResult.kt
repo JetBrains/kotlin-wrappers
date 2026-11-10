@@ -34,5 +34,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult/item)
      */
-    fun item(index: Int): SpeechRecognitionAlternative
+    fun item(index: Int): SpeechRecognitionAlternative?
 }

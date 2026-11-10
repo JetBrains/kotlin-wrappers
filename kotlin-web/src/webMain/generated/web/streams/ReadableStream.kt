@@ -94,26 +94,36 @@ open external class ReadableStream<R : JsAny?>(
 
     companion object {
         /**
+         * The **`ReadableStream.from()`** static method returns a ReadableStream from a provided iterable or async iterable object.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
         fun <R : JsAny?> from(source: AsyncIterable<R>): ReadableStream<R>
 
         /**
+         * The **`ReadableStream.from()`** static method returns a ReadableStream from a provided iterable or async iterable object.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
         fun <R : JsAny?> from(source: JsIterable<R>): ReadableStream<R>
 
         /**
+         * The **`ReadableStream.from()`** static method returns a ReadableStream from a provided iterable or async iterable object.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
         fun <R : JsAny?> from(source: JsIterable<PromiseLike<R>>): ReadableStream<R>
 
         /**
+         * The **`ReadableStream.from()`** static method returns a ReadableStream from a provided iterable or async iterable object.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
         fun <R : JsAny?> from(source: ReadonlyArray<R>): ReadableStream<R>
 
         /**
+         * The **`ReadableStream.from()`** static method returns a ReadableStream from a provided iterable or async iterable object.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
          */
         fun <R : JsAny?> from(source: ReadonlyArray<PromiseLike<R>>): ReadableStream<R>

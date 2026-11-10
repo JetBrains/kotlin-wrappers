@@ -46,6 +46,11 @@ external interface GPUTextureViewDescriptor :
     var mipLevelCount: GPUIntegerCoordinate?
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#swizzle)
+     */
+    var swizzle: String?
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView#usage)
      */
     var usage: GPUTextureUsage?

@@ -2,7 +2,6 @@
 
 package web.push
 
-import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import web.time.EpochTimeStamp
 
@@ -24,5 +23,5 @@ external interface PushSubscriptionJSON {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/toJSON#keys)
      */
-    var keys: ReadonlyRecord<JsString, JsString>?
+    var keys: PushSubscriptionKeys?
 }

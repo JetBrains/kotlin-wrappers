@@ -15,6 +15,11 @@ open external class TransitionEvent(
     init: TransitionEventInit = definedExternally,
 ) : Event {
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/animation)
+     */
+    val animation: CSSTransition?
+
+    /**
      * The **`TransitionEvent.elapsedTime`** read-only property is a float giving the amount of time the animation has been running, in seconds, when this event fired. This value is not affected by the transition-delay property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)
