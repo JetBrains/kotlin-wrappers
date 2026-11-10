@@ -16,12 +16,14 @@ private constructor() :
     var `font-stretch`: String
     var `font-style`: String
     var `font-weight`: String
+    var `font-width`: String
     var fontDisplay: String
     var fontFamily: String
     var fontFeatureSettings: String
     var fontStretch: String
     var fontStyle: String
     var fontWeight: String
+    var fontWidth: String
     var `size-adjust`: String
     var sizeAdjust: String
     var src: String

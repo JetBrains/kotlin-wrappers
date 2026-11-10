@@ -629,8 +629,6 @@ private val SERIAL_TYPES = setOf(
     "SerialPortRequestOptions",
 )
 
-private const val XSLT_PROCESSOR = "XSLTProcessor"
-
 internal fun htmlDeclarations(
     source: String,
 ): Sequence<ConversionResult> {
@@ -1855,7 +1853,6 @@ internal fun convertInterface(
         name == "Origin" -> "web.origin"
         name in REPORTING_TYPES -> "web.reporting"
         name in POPOVER_TYPES -> "web.popover"
-        name == XSLT_PROCESSOR -> "web.xslt"
 
         else -> "web.html"
     }

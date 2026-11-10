@@ -252,7 +252,7 @@ private fun event(
     val companionSource = eventClassBody
         .substringAfter("\n", "")
 
-    val companionExtensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, null)
+    val companionExtensionsCollector = BrowserSuspendExtensionsCollector.forParent("$name.Companion", null)
     val companionMembers = if (companionSource.isNotEmpty()) {
         companionSource
             .splitToSequence(";\n")

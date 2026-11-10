@@ -2,6 +2,8 @@
 
 package web.transport
 
+import web.errors.DOMExceptionType.InvalidStateError
+import web.errors.JsThrows
 import web.streams.ReadableStream
 import web.streams.WritableStream
 
@@ -61,4 +63,10 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/writable)
      */
     val writable: WritableStream<*>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/createWritable)
+     */
+    @JsThrows(InvalidStateError::class)
+    fun createWritable(options: WebTransportSendOptions = definedExternally): WebTransportDatagramsWritable
 }

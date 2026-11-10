@@ -40,6 +40,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
      */
     val state: RTCDtlsTransportState
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates)
+     */
     fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
 }
 

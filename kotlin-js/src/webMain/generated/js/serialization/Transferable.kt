@@ -17,6 +17,7 @@ import js.internal.InternalApi
  * - [AudioData]
  * - [VideoFrame]
  * - [RTCDataChannel]
+ * - [WebTransportDatagramsWritable]
  * - [ArrayBuffer]
  */
 @SubclassOptInRequired(InternalApi::class)

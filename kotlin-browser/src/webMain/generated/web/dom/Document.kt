@@ -645,6 +645,16 @@ open external class Document :
 
     companion object {
         /**
+         * The **`parseHTML()`** static method of the Document object provides an XSS-safe method to parse and sanitize a string of HTML in order to create a new Document instance.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTML_static)
+         */
+        fun parseHTML(
+            html: String,
+            options: SetHTMLOptions = definedExternally,
+        ): Document
+
+        /**
          * The **`parseHTMLUnsafe()`** static method of the Document object is used to parse HTML input, optionally filtering unwanted HTML elements and attributes, in order to create a new Document instance.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)

@@ -7,5 +7,6 @@ import kotlinx.js.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportSendOptions {
+    var sendGroup: WebTransportSendGroup?
     var sendOrder: Int53?
 }

@@ -2,8 +2,13 @@
 
 package web.device
 
+import js.promise.Promise
+import js.promise.await
+import web.errors.DOMExceptionType.NotAllowedError
+import web.errors.JsThrows
 import web.events.Event
 import web.events.EventType
+import web.permissions.PermissionState
 
 /**
  * The **`DeviceMotionEvent`** interface of the Device Orientation Events provides web developers with information about the speed of changes for the device's position and orientation.
@@ -43,7 +48,26 @@ open external class DeviceMotionEvent(
      */
     val rotationRate: DeviceMotionEventRotationRate?
 
-    companion object
+    companion object {
+        /**
+         * The **`requestPermission()`** static method of the DeviceMotionEvent interface requests the user's permission to access device motion data from the accelerometer and gyroscope sensors. This method requires transient activation, meaning that it must be triggered by a UI event such as a button click.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/requestPermission_static)
+         */
+        @JsThrows(NotAllowedError::class)
+        @JsName("requestPermission")
+        fun requestPermissionAsync(): Promise<PermissionState>
+    }
+}
+
+/**
+ * The **`requestPermission()`** static method of the DeviceMotionEvent interface requests the user's permission to access device motion data from the accelerometer and gyroscope sensors. This method requires transient activation, meaning that it must be triggered by a UI event such as a button click.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/requestPermission_static)
+ */
+@JsThrows(NotAllowedError::class)
+suspend inline fun DeviceMotionEvent.Companion.requestPermission(): PermissionState {
+    return requestPermissionAsync().await()
 }
 
 inline val DeviceMotionEvent.Companion.DEVICE_MOTION: EventType<DeviceMotionEvent>

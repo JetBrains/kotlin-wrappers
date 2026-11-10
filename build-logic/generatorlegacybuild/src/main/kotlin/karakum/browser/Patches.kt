@@ -414,11 +414,15 @@ internal fun String.applyPatches(): String {
         //  https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2439
         .replace(
             "interface WebTransportReceiveStream extends ReadableStream {",
-            "interface WebTransportReceiveStream extends ReadableStream<Uint8Array<*>> {",
+            "interface WebTransportReceiveStream extends ReadableStream<Uint8Array<ArrayBuffer>> {",
         )
         .replace(
             "interface WebTransportSendStream extends WritableStream {",
-            "interface WebTransportSendStream extends WritableStream<Uint8Array<*>> {",
+            "interface WebTransportSendStream extends WritableStream<BufferSource> {",
+        )
+        .replace(
+            "interface WebTransportDatagramsWritable extends WritableStream {",
+            "interface WebTransportDatagramsWritable extends WritableStream<BufferSource> {",
         )
         // TODO: remove after fix
         //  https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2447

@@ -76,6 +76,16 @@ private constructor() :
     fun getHTML(options: GetHTMLOptions = definedExternally): String
 
     /**
+     * The **`setHTML()`** method of the ShadowRoot interface provides an XSS-safe method to parse and sanitize a string of HTML, which then replaces the existing tree in the Shadow DOM.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTML)
+     */
+    fun setHTML(
+        html: String,
+        options: SetHTMLOptions = definedExternally,
+    )
+
+    /**
      * The **`setHTMLUnsafe()`** method of the ShadowRoot interface can be used to parse HTML input into a DocumentFragment, optionally filtering out unwanted elements and attributes, and then use it to replace the existing tree in the Shadow DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTMLUnsafe)

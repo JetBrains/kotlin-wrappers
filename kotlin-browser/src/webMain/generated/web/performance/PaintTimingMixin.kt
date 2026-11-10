@@ -13,13 +13,13 @@ import web.time.DOMHighResTimeStamp
 @SubclassOptInRequired(InternalApi::class)
 external interface PaintTimingMixin {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/paintTime)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InteractionContentfulPaint/paintTime)
      */
     val paintTime: DOMHighResTimeStamp
         get() = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/presentationTime)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InteractionContentfulPaint/presentationTime)
      */
     val presentationTime: DOMHighResTimeStamp?
         get() = definedExternally

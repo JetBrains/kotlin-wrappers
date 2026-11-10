@@ -2,10 +2,10 @@
 
 package web.transport
 
+import js.buffer.BufferSource
 import js.numbers.Int53
 import js.promise.Promise
 import js.promise.await
-import js.typedarrays.Uint8Array
 import web.streams.WritableStream
 
 /**
@@ -16,7 +16,9 @@ import web.streams.WritableStream
  */
 open external class WebTransportSendStream
 private constructor() :
-    WritableStream<Uint8Array<*>> {
+    WritableStream<BufferSource> {
+    var sendGroup: WebTransportSendGroup?
+
     /**
      * The **`sendOrder`** property of the WebTransportSendStream interface indicates the send priority of this stream relative to other streams for which the value has been set.
      *

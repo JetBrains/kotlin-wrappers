@@ -46,6 +46,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/datagrams)
      */
     val datagrams: WebTransportDatagramDuplexStream
+    val draining: Promise<Void>
 
     /**
      * The **`incomingBidirectionalStreams`** read-only property of the WebTransport interface represents one or more bidirectional streams opened by the server. Returns a ReadableStream of WebTransportBidirectionalStream objects. Each one can be used to reliably read data from the server and write data back to it.
@@ -92,6 +93,12 @@ open external class WebTransport(
     @JsThrows(InvalidStateError::class)
     @JsName("createBidirectionalStream")
     fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createSendGroup)
+     */
+    @JsThrows(InvalidStateError::class)
+    fun createSendGroup(): WebTransportSendGroup
 
     /**
      * The **`createUnidirectionalStream()`** method of the WebTransport interface asynchronously opens a unidirectional stream.

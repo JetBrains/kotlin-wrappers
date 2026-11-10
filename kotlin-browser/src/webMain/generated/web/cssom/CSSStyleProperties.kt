@@ -1353,6 +1353,13 @@ private constructor() :
     var fontWeight: String
 
     /**
+     * The font-width CSS property selects a normal, condensed, or expanded face from a font.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-width)
+     */
+    var fontWidth: String
+
+    /**
      * The forced-color-adjust CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/forced-color-adjust)
