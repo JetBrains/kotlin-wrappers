@@ -29,7 +29,7 @@ external interface ThemeOptions {
 
     var shadows: Any? /* Shadows */
 
-    var spacing: Any? /* SpacingOptions */
+    var spacing: SpacingOptions?
 
     var transitions: Transitions?
 
