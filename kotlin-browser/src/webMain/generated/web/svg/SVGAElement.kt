@@ -29,6 +29,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/ping)
      */
     var ping: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/referrerPolicy)
+     */
     var referrerPolicy: ReferrerPolicy
 
     /**

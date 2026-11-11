@@ -67,6 +67,13 @@ open external class Notification(
     val lang: String
 
     /**
+     * The **`navigate`** read-only property of the Notification interface contains the URL the user agent will navigate to when the user activates the notification.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/navigate)
+     */
+    val navigate: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
      */
     var onclick: EventHandler<Event, Notification, Notification>?

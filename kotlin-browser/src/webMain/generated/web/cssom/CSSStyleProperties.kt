@@ -1745,6 +1745,13 @@ private constructor() :
     var marginTop: String
 
     /**
+     * The margin-trim property allows the container to trim the margins of its children where they adjoin the container's edges.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-trim)
+     */
+    var marginTrim: String
+
+    /**
      * The **`marker`** CSS property points to a marker that will be drawn on the first, middle, and last vertices of the element's path; that is, at all of its vertices. The marker must have been defined using an SVG <marker> element, and can only be referenced with a <url> value. The value of the CSS property overrides any values of the marker-start, marker, and marker-end attributes in the SVG.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker)
@@ -2807,6 +2814,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-color)
      */
     var textDecorationColor: String
+
+    /**
+     * The text-decoration-inset CSS property enables adjusting the start and end points of an element's text decoration so it can be shortened, lengthened, or have its position shifted with respect to the rendered text.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-inset)
+     */
+    var textDecorationInset: String
 
     /**
      * The text-decoration-line CSS property sets the kind of decoration that is used on text in an element, such as an underline or overline.

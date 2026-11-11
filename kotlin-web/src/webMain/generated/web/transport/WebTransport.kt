@@ -46,6 +46,10 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/datagrams)
      */
     val datagrams: WebTransportDatagramDuplexStream
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/draining)
+     */
     val draining: Promise<Void>
 
     /**
@@ -61,6 +65,10 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/incomingUnidirectionalStreams)
      */
     val incomingUnidirectionalStreams: ReadableStream<*>
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/protocol)
+     */
     val protocol: String
 
     /**
@@ -116,6 +124,13 @@ open external class WebTransport(
      */
     @JsName("getStats")
     fun getStatsAsync(): Promise<WebTransportConnectionStats>
+
+    companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/supportsReliableOnly_static)
+         */
+        val supportsReliableOnly: Boolean
+    }
 }
 
 /**

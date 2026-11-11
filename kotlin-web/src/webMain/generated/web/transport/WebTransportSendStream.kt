@@ -17,6 +17,9 @@ import web.streams.WritableStream
 open external class WebTransportSendStream
 private constructor() :
     WritableStream<BufferSource> {
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/sendGroup)
+     */
     var sendGroup: WebTransportSendGroup?
 
     /**
