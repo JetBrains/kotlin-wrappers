@@ -442,9 +442,11 @@ fun generateKotlinDeclarations(
         webWorkerContent,
         serviceWorkerContent,
     )
-    val eventDeclarations = mainEventDeclarations +
-            webWorkersEventDeclarations(webWorkerContent) +
-            serviceWorkersEventDeclarations(content, serviceWorkerContent)
+    val eventDeclarations = mainEventDeclarations.asSequence()
+        .withFinalSecurityMembers()
+        .plus(webWorkersEventDeclarations(webWorkerContent))
+        .plus(serviceWorkersEventDeclarations(content, serviceWorkerContent))
+        .toList()
 
     for ((name, body, optPkg) in eventDeclarations) {
         val pkg = optPkg ?: EVENT_INFO_MAP.getValue(name.substringBefore("."))

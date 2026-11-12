@@ -657,6 +657,7 @@ internal fun htmlDeclarations(
         .filter { it.name != "FileSystemFileHandle" }
 
     return interfaces
+        .withFinalSecurityMembers()
         .withAriaUnions()
         .plus(enums)
         .plus(formTypes())

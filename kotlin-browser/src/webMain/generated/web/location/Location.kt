@@ -24,70 +24,70 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/ancestorOrigins)
      */
-    open val ancestorOrigins: DOMStringList
+    val ancestorOrigins: DOMStringList
 
     /**
      * The **`hash`** property of the Location interface is a string containing a "#" followed by the fragment identifier of the location URL. If the URL does not have a fragment identifier, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/hash)
      */
-    open var hash: String
+    var hash: String
 
     /**
      * The **`host`** property of the Location interface is a string containing the host, which is the hostname, and then, if the port of the URL is nonempty, a ":", followed by the port of the URL. If the URL does not have a hostname, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/host)
      */
-    open var host: String
+    var host: String
 
     /**
      * The **`hostname`** property of the Location interface is a string containing either the domain name or IP address of the location URL. If the URL does not have a hostname, this property contains an empty string, "". IPv4 and IPv6 addresses are normalized, such as stripping leading zeros, and domain names are converted to IDN.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/hostname)
      */
-    open var hostname: String
+    var hostname: String
 
     /**
      * The **`href`** property of the Location interface is a stringifier that returns a string containing the whole URL, and allows the href to be updated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/href)
      */
-    open var href: String
+    var href: String
 
     /**
      * The **`origin`** read-only property of the Location interface returns a string containing the Unicode serialization of the origin of the location's URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/origin)
      */
-    open val origin: String
+    val origin: String
 
     /**
      * The **`pathname`** property of the Location interface is a string containing the path of the URL for the location. If there is no path, pathname will be empty: otherwise, pathname contains an initial '/' followed by the path of the URL, not including the query string or fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/pathname)
      */
-    open var pathname: String
+    var pathname: String
 
     /**
      * The **`port`** property of the Location interface is a string containing the port number of the location's URL. If the port is the default for the protocol (80 for ws: and http:, 443 for wss: and https:, and 21 for ftp:), this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/port)
      */
-    open var port: String
+    var port: String
 
     /**
      * The **`protocol`** property of the Location interface is a string containing the protocol or scheme of the location's URL, including the final ":".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/protocol)
      */
-    open var protocol: String
+    var protocol: String
 
     /**
      * The **`search`** property of the Location interface is a search string, also called a query string, that is a string containing a "?" followed by the parameters of the location's URL. If the URL does not have a search query, this property contains an empty string, "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/search)
      */
-    open var search: String
+    var search: String
 
     /**
      * The **`assign()`** method of the Location interface causes the window to load and display the document at the URL specified. After the navigation occurs, the user can navigate back to the page that called Location.assign() by pressing the "back" button.
@@ -96,7 +96,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsThrows(SyntaxError::class)
-    open fun assign(url: String)
+    fun assign(url: String)
 
     /**
      * The **`assign()`** method of the Location interface causes the window to load and display the document at the URL specified. After the navigation occurs, the user can navigate back to the page that called Location.assign() by pressing the "back" button.
@@ -105,7 +105,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsThrows(SyntaxError::class)
-    open fun assign(url: URL)
+    fun assign(url: URL)
 
     /**
      * The **`reload()`** method of the Location interface reloads the current URL, like the Refresh button.
@@ -113,7 +113,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location/reload)
      */
     @JsThrows(SecurityError::class)
-    open fun reload()
+    fun reload()
 
     /**
      * The **`replace()`** method of the Location interface replaces the current resource with the one at the provided URL. The difference from the assign() method is that after using replace() the current page will not be saved in session History, meaning the user won't be able to use the back button to navigate to it. Not to be confused with the String method String.prototype.replace().
@@ -122,7 +122,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsThrows(SyntaxError::class)
-    open fun replace(url: String)
+    fun replace(url: String)
 
     /**
      * The **`replace()`** method of the Location interface replaces the current resource with the one at the provided URL. The difference from the assign() method is that after using replace() the current page will not be saved in session History, meaning the user won't be able to use the back button to navigate to it. Not to be confused with the String method String.prototype.replace().
@@ -131,5 +131,5 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsThrows(SyntaxError::class)
-    open fun replace(url: URL)
+    fun replace(url: URL)
 }

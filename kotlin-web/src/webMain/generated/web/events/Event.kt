@@ -61,7 +61,7 @@ open external class Event(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/isTrusted)
      */
-    open val isTrusted: Boolean
+    val isTrusted: Boolean
 
     /**
      * The read-only **`target`** property of the Event interface is a reference to the object onto which the event was dispatched. It is different from Event.currentTarget when the event handler is called during the bubbling or capturing phase of the event.

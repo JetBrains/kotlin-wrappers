@@ -286,7 +286,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top)
      */
-    open val top: WindowProxy?
+    val top: WindowProxy?
 
     /**
      * The **`Window.close()`** method closes the current window, or the window on which it was called.
