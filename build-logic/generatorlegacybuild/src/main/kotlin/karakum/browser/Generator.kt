@@ -263,6 +263,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.http.BodyInit",
     "web.http.CrossOrigin",
     "web.http.FetchPriority",
+    "web.http.Headers",
     "web.http.ReferrerPolicy",
     "web.http.Request",
     "web.http.RequestCredentials",

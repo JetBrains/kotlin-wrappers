@@ -7,6 +7,7 @@ import js.promise.await
 import js.void.Void
 import web.errors.DOMExceptionType.InvalidStateError
 import web.errors.JsThrows
+import web.http.Headers
 import web.streams.ReadableStream
 import web.streams.WritableStream
 import web.url.URL
@@ -25,6 +26,9 @@ open external class WebTransport(
         url: URL,
         options: WebTransportOptions = definedExternally,
     )
+
+    open var anticipatedConcurrentIncomingBidirectionalStreams: Short?
+    open var anticipatedConcurrentIncomingUnidirectionalStreams: Short?
 
     /**
      * The **`closed`** read-only property of the WebTransport interface returns a promise that resolves when the transport is closed.
@@ -84,6 +88,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/reliability)
      */
     open val reliability: WebTransportReliabilityMode
+    open val responseHeaders: Headers?
 
     /**
      * The **`close()`** method of the WebTransport interface closes an ongoing WebTransport session.

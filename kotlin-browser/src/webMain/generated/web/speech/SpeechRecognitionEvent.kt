@@ -28,4 +28,12 @@ open external class SpeechRecognitionEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionEvent/results)
      */
     open val results: SpeechRecognitionResultList
+
+    companion object
 }
+
+inline val SpeechRecognitionEvent.Companion.NO_MATCH: EventType<SpeechRecognitionEvent>
+    get() = EventType("nomatch")
+
+inline val SpeechRecognitionEvent.Companion.RESULT: EventType<SpeechRecognitionEvent>
+    get() = EventType("result")

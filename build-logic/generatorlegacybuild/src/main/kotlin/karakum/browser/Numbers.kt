@@ -140,6 +140,10 @@ internal class TypeProvider(
             "WebGL2RenderingContextBase",
                 -> !WEBGL_CONST_RE.matches(name)
 
+            // TEMP deprecated
+            "SpeechRecognition",
+                -> name != "grammars"
+
             else -> true
         }
     }

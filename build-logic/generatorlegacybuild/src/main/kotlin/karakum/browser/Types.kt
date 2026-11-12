@@ -122,7 +122,9 @@ private val PKG_MAP = mapOf(
 
     "PushEncryptionKeyName" to "web.push",
 
+    "SpeechRecognitionAvailabilityStatus" to "web.speech",
     "SpeechRecognitionErrorCode" to "web.speech",
+    "SpeechRecognitionQuality" to "web.speech",
     "SpeechSynthesisErrorCode" to "web.speech",
 
     "Base64URLString" to "web.authn",

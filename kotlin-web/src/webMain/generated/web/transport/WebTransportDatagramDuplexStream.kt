@@ -28,6 +28,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/incomingMaxAge)
      */
     open var incomingMaxAge: Double?
+    open var incomingMaxBufferedDatagrams: Int
 
     /**
      * The **`maxDatagramSize`** read-only property of the WebTransportDatagramDuplexStream interface returns the maximum allowable size of outgoing datagrams, in bytes, that can be written to writable.
@@ -49,6 +50,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/outgoingMaxAge)
      */
     open var outgoingMaxAge: Double?
+    open var outgoingMaxBufferedDatagrams: Int
 
     /**
      * The **`readable`** read-only property of the WebTransportDatagramDuplexStream interface returns a ReadableStream instance that can be used to unreliably read incoming datagrams from the stream.

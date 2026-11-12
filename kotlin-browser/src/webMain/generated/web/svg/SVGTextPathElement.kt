@@ -19,6 +19,11 @@ private constructor() :
     open val method: SVGAnimatedEnumeration<Method>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/side)
+     */
+    open val side: SVGAnimatedEnumeration<Side>
+
+    /**
      * The **`spacing`** read-only property of the SVGTextPathElement interface reflects the spacing attribute of the given <textPath> element. It takes one of the TEXTPATH_SPACINGTYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/spacing)

@@ -130,6 +130,12 @@ inline val Event.Companion.ADD_SOURCE_BUFFER: EventType<Event>
 inline val Event.Companion.AFTER_PRINT: EventType<Event>
     get() = EventType("afterprint")
 
+inline val Event.Companion.AUDIO_END: EventType<Event>
+    get() = EventType("audioend")
+
+inline val Event.Companion.AUDIO_START: EventType<Event>
+    get() = EventType("audiostart")
+
 inline val Event.Companion.BEFORE_MATCH: EventType<Event>
     get() = EventType("beforematch")
 
@@ -201,6 +207,9 @@ inline val Event.Companion.DURATION_CHANGE: EventType<Event>
 
 inline val Event.Companion.EMPTIED: EventType<Event>
     get() = EventType("emptied")
+
+inline val Event.Companion.END: EventType<Event>
+    get() = EventType("end")
 
 inline val Event.Companion.ENDED: EventType<Event>
     get() = EventType("ended")
@@ -343,6 +352,12 @@ inline val Event.Companion.SIGNALING_STATE_CHANGE: EventType<Event>
 inline val Event.Companion.SLOT_CHANGE: EventType<Event>
     get() = EventType("slotchange")
 
+inline val Event.Companion.SOUND_END: EventType<Event>
+    get() = EventType("soundend")
+
+inline val Event.Companion.SOUND_START: EventType<Event>
+    get() = EventType("soundstart")
+
 inline val Event.Companion.SOURCE_CLOSE: EventType<Event>
     get() = EventType("sourceclose")
 
@@ -351,6 +366,12 @@ inline val Event.Companion.SOURCE_ENDED: EventType<Event>
 
 inline val Event.Companion.SOURCE_OPEN: EventType<Event>
     get() = EventType("sourceopen")
+
+inline val Event.Companion.SPEECH_END: EventType<Event>
+    get() = EventType("speechend")
+
+inline val Event.Companion.SPEECH_START: EventType<Event>
+    get() = EventType("speechstart")
 
 inline val Event.Companion.STALLED: EventType<Event>
     get() = EventType("stalled")

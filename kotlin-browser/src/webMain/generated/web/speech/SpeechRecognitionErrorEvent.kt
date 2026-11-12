@@ -28,4 +28,9 @@ open external class SpeechRecognitionErrorEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionErrorEvent/message)
      */
     open val message: String
+
+    companion object
 }
+
+inline val SpeechRecognitionErrorEvent.Companion.ERROR: EventType<SpeechRecognitionErrorEvent>
+    get() = EventType("error")
