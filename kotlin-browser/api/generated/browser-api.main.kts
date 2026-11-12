@@ -14,6 +14,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.aria.ARIAMixin",
     ),
     BrowserType(
+        jsName = "ARIANotifyMixin",
+        kotlinFqn = "web.aria.ARIANotifyMixin",
+    ),
+    BrowserType(
         jsName = "AacBitstreamFormat",
         kotlinFqn = "web.codecs.AacBitstreamFormat",
     ),
@@ -166,6 +170,102 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.mediasource.AppendMode",
     ),
     BrowserType(
+        jsName = "AriaAtomic",
+        kotlinFqn = "web.aria.AriaAtomic",
+    ),
+    BrowserType(
+        jsName = "AriaAutoComplete",
+        kotlinFqn = "web.aria.AriaAutoComplete",
+    ),
+    BrowserType(
+        jsName = "AriaBusy",
+        kotlinFqn = "web.aria.AriaBusy",
+    ),
+    BrowserType(
+        jsName = "AriaChecked",
+        kotlinFqn = "web.aria.AriaChecked",
+    ),
+    BrowserType(
+        jsName = "AriaCurrent",
+        kotlinFqn = "web.aria.AriaCurrent",
+    ),
+    BrowserType(
+        jsName = "AriaDisabled",
+        kotlinFqn = "web.aria.AriaDisabled",
+    ),
+    BrowserType(
+        jsName = "AriaExpanded",
+        kotlinFqn = "web.aria.AriaExpanded",
+    ),
+    BrowserType(
+        jsName = "AriaHasPopup",
+        kotlinFqn = "web.aria.AriaHasPopup",
+    ),
+    BrowserType(
+        jsName = "AriaHidden",
+        kotlinFqn = "web.aria.AriaHidden",
+    ),
+    BrowserType(
+        jsName = "AriaInvalid",
+        kotlinFqn = "web.aria.AriaInvalid",
+    ),
+    BrowserType(
+        jsName = "AriaLive",
+        kotlinFqn = "web.aria.AriaLive",
+    ),
+    BrowserType(
+        jsName = "AriaModal",
+        kotlinFqn = "web.aria.AriaModal",
+    ),
+    BrowserType(
+        jsName = "AriaMultiLine",
+        kotlinFqn = "web.aria.AriaMultiLine",
+    ),
+    BrowserType(
+        jsName = "AriaMultiSelectable",
+        kotlinFqn = "web.aria.AriaMultiSelectable",
+    ),
+    BrowserType(
+        jsName = "AriaNotificationOptions",
+        kotlinFqn = "web.aria.AriaNotificationOptions",
+    ),
+    BrowserType(
+        jsName = "AriaNotifyPriority",
+        kotlinFqn = "web.aria.AriaNotifyPriority",
+    ),
+    BrowserType(
+        jsName = "AriaOrientation",
+        kotlinFqn = "web.aria.AriaOrientation",
+    ),
+    BrowserType(
+        jsName = "AriaPressed",
+        kotlinFqn = "web.aria.AriaPressed",
+    ),
+    BrowserType(
+        jsName = "AriaReadOnly",
+        kotlinFqn = "web.aria.AriaReadOnly",
+    ),
+    BrowserType(
+        jsName = "AriaRelevant",
+        kotlinFqn = "web.aria.AriaRelevant",
+    ),
+    BrowserType(
+        jsName = "AriaRequired",
+        kotlinFqn = "web.aria.AriaRequired",
+    ),
+    BrowserType(
+        jsName = "AriaRole",
+        kotlinFqn = "web.aria.AriaRole",
+    ),
+    BrowserType(
+        jsName = "AriaSelected",
+        kotlinFqn = "web.aria.AriaSelected",
+    ),
+    BrowserType(
+        jsName = "AriaSort",
+        kotlinFqn = "web.aria.AriaSort",
+    ),
+    BrowserType(
         jsName = "ArrayBuffer",
         kotlinFqn = "js.buffer.ArrayBuffer",
     ),
@@ -226,10 +326,6 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "Attr",
         kotlinFqn = "web.dom.Attr",
-    ),
-    BrowserType(
-        jsName = "AttributeChangedCallback",
-        kotlinFqn = "web.components.AttributeChangedCallback",
     ),
     BrowserType(
         jsName = "Audio",
@@ -1770,6 +1866,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.gl.EXT_blend_minmax",
     ),
     BrowserType(
+        jsName = "EXT_clip_control",
+        kotlinFqn = "web.gl.EXT_clip_control",
+    ),
+    BrowserType(
         jsName = "EXT_color_buffer_float",
         kotlinFqn = "web.gl.EXT_color_buffer_float",
     ),
@@ -1784,6 +1884,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "EXT_frag_depth",
         kotlinFqn = "web.gl.EXT_frag_depth",
+    ),
+    BrowserType(
+        jsName = "EXT_polygon_offset_clamp",
+        kotlinFqn = "web.gl.EXT_polygon_offset_clamp",
     ),
     BrowserType(
         jsName = "EXT_sRGB",
@@ -1804,6 +1908,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "EXT_texture_filter_anisotropic",
         kotlinFqn = "web.gl.EXT_texture_filter_anisotropic",
+    ),
+    BrowserType(
+        jsName = "EXT_texture_mirror_clamp_to_edge",
+        kotlinFqn = "web.gl.EXT_texture_mirror_clamp_to_edge",
     ),
     BrowserType(
         jsName = "EXT_texture_norm16",
@@ -2886,6 +2994,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.gpu.GPUShaderModule",
     ),
     BrowserType(
+        jsName = "GPUShaderModuleCompilationHint",
+        kotlinFqn = "web.gpu.GPUShaderModuleCompilationHint",
+    ),
+    BrowserType(
         jsName = "GPUShaderModuleDescriptor",
         kotlinFqn = "web.gpu.GPUShaderModuleDescriptor",
     ),
@@ -3382,6 +3494,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.html.HTMLSelectElement",
     ),
     BrowserType(
+        jsName = "HTMLSelectedContentElement",
+        kotlinFqn = "web.html.HTMLSelectedContentElement",
+    ),
+    BrowserType(
         jsName = "HTMLSlotElement",
         kotlinFqn = "web.components.HTMLSlotElement",
     ),
@@ -3570,6 +3686,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.idb.IDBFactory",
     ),
     BrowserType(
+        jsName = "IDBGetAllOptions",
+        kotlinFqn = "web.idb.IDBGetAllOptions",
+    ),
+    BrowserType(
         jsName = "IDBIndex",
         kotlinFqn = "web.idb.IDBIndex",
     ),
@@ -3592,6 +3712,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "IDBOpenDBRequest",
         kotlinFqn = "web.idb.IDBOpenDBRequest",
+    ),
+    BrowserType(
+        jsName = "IDBRecord",
+        kotlinFqn = "web.idb.IDBRecord",
     ),
     BrowserType(
         jsName = "IDBRequest",
@@ -5903,6 +6027,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.push.PushSubscriptionJSON",
     ),
     BrowserType(
+        jsName = "PushSubscriptionKeys",
+        kotlinFqn = "web.push.PushSubscriptionKeys",
+    ),
+    BrowserType(
         jsName = "PushSubscriptionOptions",
         kotlinFqn = "web.push.PushSubscriptionOptions",
     ),
@@ -7354,8 +7482,16 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.mediasource.SourceBufferList",
     ),
     BrowserType(
+        jsName = "SpeechRecognition",
+        kotlinFqn = "web.speech.SpeechRecognition",
+    ),
+    BrowserType(
         jsName = "SpeechRecognitionAlternative",
         kotlinFqn = "web.speech.SpeechRecognitionAlternative",
+    ),
+    BrowserType(
+        jsName = "SpeechRecognitionAvailabilityStatus",
+        kotlinFqn = "web.speech.SpeechRecognitionAvailabilityStatus",
     ),
     BrowserType(
         jsName = "SpeechRecognitionErrorCode",
@@ -7376,6 +7512,18 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "SpeechRecognitionEventInit",
         kotlinFqn = "web.speech.SpeechRecognitionEventInit",
+    ),
+    BrowserType(
+        jsName = "SpeechRecognitionOptions",
+        kotlinFqn = "web.speech.SpeechRecognitionOptions",
+    ),
+    BrowserType(
+        jsName = "SpeechRecognitionPhrase",
+        kotlinFqn = "web.speech.SpeechRecognitionPhrase",
+    ),
+    BrowserType(
+        jsName = "SpeechRecognitionQuality",
+        kotlinFqn = "web.speech.SpeechRecognitionQuality",
     ),
     BrowserType(
         jsName = "SpeechRecognitionResult",
@@ -8830,6 +8978,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
         kotlinFqn = "web.transport.WebTransportDatagramStats",
     ),
     BrowserType(
+        jsName = "WebTransportDatagramsWritable",
+        kotlinFqn = "web.transport.WebTransportDatagramsWritable",
+    ),
+    BrowserType(
         jsName = "WebTransportError",
         kotlinFqn = "web.transport.WebTransportError",
     ),
@@ -8860,6 +9012,10 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "WebTransportReliabilityMode",
         kotlinFqn = "web.transport.WebTransportReliabilityMode",
+    ),
+    BrowserType(
+        jsName = "WebTransportSendGroup",
+        kotlinFqn = "web.transport.WebTransportSendGroup",
     ),
     BrowserType(
         jsName = "WebTransportSendOptions",
@@ -9388,9 +9544,5 @@ val BROWSER_TYPES: List<BrowserType> = listOf(
     BrowserType(
         jsName = "XRWebGLSubImage",
         kotlinFqn = "web.xr.XRWebGLSubImage",
-    ),
-    BrowserType(
-        jsName = "XSLTProcessor",
-        kotlinFqn = "web.xslt.XSLTProcessor",
     ),
 )
