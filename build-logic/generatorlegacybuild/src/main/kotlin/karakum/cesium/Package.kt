@@ -9,6 +9,7 @@ import js.array.Tuple3
 import js.array.Tuple4
 import js.array.Tuple5
 import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.buffer.DataView
 import js.collections.ReadonlyMap
 import js.numbers.JsDouble

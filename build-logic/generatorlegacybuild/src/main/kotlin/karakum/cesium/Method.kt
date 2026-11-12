@@ -108,7 +108,9 @@ internal class Method(
                     && (source.body == "raiseEvent(...arguments: Parameters<Listener>): void")
                 -> listOf("val raiseEvent: JsFunction<T, Void>")
 
-            else -> withSuspendAdapter(sourceDeclaration).toList()
+            else -> withSuspendAdapter(sourceDeclaration)
+                .flatMap(::withResultAdapter)
+                .toList()
         }
 
         if (declarations.size == 1) {
