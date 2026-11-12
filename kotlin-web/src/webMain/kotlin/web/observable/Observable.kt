@@ -12,7 +12,7 @@ import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
 
 @ExperimentalWebApi
-external class Observable<out T : JsAny?>(
+open external class Observable<out T : JsAny?>(
     callback: SubscribeCallback<T>,
 ) {
     @PublishedApi
@@ -35,57 +35,57 @@ external class Observable<out T : JsAny?>(
     @JsName("catch")
     internal fun catchInternal(transform: (JsErrorLike?) -> Observable<@UnsafeVariance T>): Observable<T>
 
-    fun drop(n: Int): Observable<T>
+    open fun drop(n: Int): Observable<T>
 
     @JsName("every")
-    fun everyAsync(
+    open fun everyAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<JsBoolean>
 
-    fun filter(predicate: (T) -> Boolean): Observable<T>
+    open fun filter(predicate: (T) -> Boolean): Observable<T>
 
-    fun finally(callback: VoidFunction): Observable<T>
+    open fun finally(callback: VoidFunction): Observable<T>
 
     @JsName("find")
-    fun findAsync(
+    open fun findAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<T>
 
     @JsName("first")
-    fun firstAsync(options: SubscribeOptions? = definedExternally): Promise<T>
+    open fun firstAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
-    fun <R : JsAny?> flatMap(transform: (T) -> Promise<R>): Observable<R>
-    fun <R : JsAny?> flatMap(transform: (T) -> JsIterable<R>): Observable<R>
-    fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
-    fun <R : JsAny?> flatMap(transform: (T) -> AsyncIterable<R>): Observable<R>
-    fun <R : JsAny?> flatMap(transform: (T) -> Observable<R>): Observable<R>
+    open fun <R : JsAny?> flatMap(transform: (T) -> Promise<R>): Observable<R>
+    open fun <R : JsAny?> flatMap(transform: (T) -> JsIterable<R>): Observable<R>
+    open fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
+    open fun <R : JsAny?> flatMap(transform: (T) -> AsyncIterable<R>): Observable<R>
+    open fun <R : JsAny?> flatMap(transform: (T) -> Observable<R>): Observable<R>
 
     @JsName("forEach")
-    fun forEachAsync(
+    open fun forEachAsync(
         action: (item: T) -> Unit,
         options: SubscribeOptions? = definedExternally,
     ): Promise<Void>
 
-    fun inspect(inspector: ObservableInspector<T>): Observable<T>
-    fun inspect(callback: (value: T) -> Unit): Observable<T>
-    fun inspect(): Observable<T>
+    open fun inspect(inspector: ObservableInspector<T>): Observable<T>
+    open fun inspect(callback: (value: T) -> Unit): Observable<T>
+    open fun inspect(): Observable<T>
 
     @JsName("last")
-    fun lastAsync(options: SubscribeOptions? = definedExternally): Promise<T>
+    open fun lastAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
-    fun <R : JsAny?> map(transform: (T) -> R): Observable<R>
+    open fun <R : JsAny?> map(transform: (T) -> R): Observable<R>
 
     @JsName("reduce")
-    fun <U : JsAny?> reduceAsync(
+    open fun <U : JsAny?> reduceAsync(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
         options: SubscribeOptions? = definedExternally,
     ): Promise<U>
 
     @JsName("some")
-    fun someAsync(
+    open fun someAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<JsBoolean>
@@ -93,7 +93,7 @@ external class Observable<out T : JsAny?>(
     /**
      * Subscribes to the sequence with an observer
      */
-    fun subscribe(
+    open fun subscribe(
         observer: SubscriptionObserver<T>,
         options: SubscribeOptions? = definedExternally,
     )
@@ -101,27 +101,27 @@ external class Observable<out T : JsAny?>(
     /**
      * Subscribes to the sequence with callbacks
      */
-    fun subscribe(
+    open fun subscribe(
         callback: (value: T) -> Unit,
         options: SubscribeOptions? = definedExternally,
     )
 
-    fun <R : JsAny?> switchMap(transform: (T) -> Promise<R>): Observable<R>
-    fun <R : JsAny?> switchMap(transform: (T) -> JsIterable<R>): Observable<R>
-    fun <R : JsAny?> switchMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
-    fun <R : JsAny?> switchMap(transform: (T) -> AsyncIterable<R>): Observable<R>
-    fun <R : JsAny?> switchMap(transform: (T) -> Observable<R>): Observable<R>
+    open fun <R : JsAny?> switchMap(transform: (T) -> Promise<R>): Observable<R>
+    open fun <R : JsAny?> switchMap(transform: (T) -> JsIterable<R>): Observable<R>
+    open fun <R : JsAny?> switchMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
+    open fun <R : JsAny?> switchMap(transform: (T) -> AsyncIterable<R>): Observable<R>
+    open fun <R : JsAny?> switchMap(transform: (T) -> Observable<R>): Observable<R>
 
-    fun take(n: Int): Observable<T>
+    open fun take(n: Int): Observable<T>
 
-    fun takeUntil(notifier: Promise<*>): Observable<T>
-    fun takeUntil(notifier: JsIterable<*>): Observable<T>
-    fun takeUntil(notifier: ReadonlyArray<*>): Observable<T>
-    fun takeUntil(notifier: AsyncIterable<*>): Observable<T>
-    fun takeUntil(notifier: Observable<*>): Observable<T>
+    open fun takeUntil(notifier: Promise<*>): Observable<T>
+    open fun takeUntil(notifier: JsIterable<*>): Observable<T>
+    open fun takeUntil(notifier: ReadonlyArray<*>): Observable<T>
+    open fun takeUntil(notifier: AsyncIterable<*>): Observable<T>
+    open fun takeUntil(notifier: Observable<*>): Observable<T>
 
     @JsName("toArray")
-    fun toArrayAsync(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
+    open fun toArrayAsync(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
 
     companion object {
         fun <T : JsAny?> from(

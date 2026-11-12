@@ -2,7 +2,7 @@
 
 package web.html
 
-external class Image(
+open external class Image(
     width: Int = definedExternally,
     height: Int = definedExternally,
 ) : HTMLImageElement

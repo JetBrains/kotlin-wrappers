@@ -5,6 +5,6 @@ package web.assembly
 import js.errors.JsError
 
 @JsQualifier("WebAssembly")
-external class CompileError(
+open external class CompileError(
     message: String = definedExternally,
 ) : JsError
