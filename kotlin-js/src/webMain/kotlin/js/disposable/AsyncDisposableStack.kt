@@ -15,14 +15,14 @@ open external class AsyncDisposableStack :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/disposed)
      */
-    val disposed: Boolean
+    open val disposed: Boolean
 
     /**
      * Disposes each resource in the stack in the reverse order that they were added.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/disposeAsync)
      */
-    fun disposeAsync(): Promise<Void>
+    open fun disposeAsync(): Promise<Void>
 
     /**
      * Adds a disposable resource to the stack, returning the resource.
@@ -32,12 +32,12 @@ open external class AsyncDisposableStack :
      * @param value The resource to add. `null` and `undefined` will not be added, but will be returned.
      * @return The provided [value].
      */
-    fun <T : Disposable?> use(value: T): T
+    open fun <T : Disposable?> use(value: T): T
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/use)
      */
-    fun <T : AsyncDisposable?> use(value: T): T
+    open fun <T : AsyncDisposable?> use(value: T): T
 
     /**
      * Adds a value and associated disposal callback as a resource to the stack.
@@ -49,14 +49,14 @@ open external class AsyncDisposableStack :
      * as the first parameter.
      * @return The provided [value].
      */
-    fun <T : JsAny?> adopt(value: T, onDisposeAsync: (value: T) -> PromiseLike<Void>?): T
+    open fun <T : JsAny?> adopt(value: T, onDisposeAsync: (value: T) -> PromiseLike<Void>?): T
 
     /**
      * Adds a callback to be invoked when the stack is disposed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/defer)
      */
-    fun defer(onDisposeAsync: () -> PromiseLike<Void>?)
+    open fun defer(onDisposeAsync: () -> PromiseLike<Void>?)
 
     /**
      * Move all resources out of this stack and into a new `DisposableStack`, and marks this stack as disposed.
@@ -89,7 +89,7 @@ open external class AsyncDisposableStack :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncDisposableStack/move)
      */
-    fun move(): AsyncDisposableStack
+    open fun move(): AsyncDisposableStack
 }
 
 /**

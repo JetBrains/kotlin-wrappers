@@ -21,15 +21,15 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Generator/next)
      */
-    fun next(value: TNext): IteratorResult<T, TReturn>
+    open fun next(value: TNext): IteratorResult<T, TReturn>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Generator/return)
      */
-    fun `return`(value: TReturn): IteratorResult<T, TReturn>
+    open fun `return`(value: TReturn): IteratorResult<T, TReturn>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Generator/throw)
      */
-    fun `throw`(error: JsError): IteratorResult<T, TReturn>
+    open fun `throw`(error: JsError): IteratorResult<T, TReturn>
 }

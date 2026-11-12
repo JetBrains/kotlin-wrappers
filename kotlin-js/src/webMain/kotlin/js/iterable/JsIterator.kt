@@ -15,68 +15,68 @@ abstract external class JsIterator<out T : JsAny?> :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/return)
      */
-    fun `return`(): IteratorResult<T, *>
+    open fun `return`(): IteratorResult<T, *>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/chunks)
      */
-    fun chunks(
+    open fun chunks(
         chunkSize: Int,
     ): JsIterator<ReadonlyArray<T>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/drop)
      */
-    fun drop(
+    open fun drop(
         n: Int,
     ): JsIterator<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/every)
      */
-    fun every(
+    open fun every(
         predicate: (T) -> Boolean,
     ): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/filter)
      */
-    fun filter(
+    open fun filter(
         predicate: (T) -> Boolean,
     ): JsIterator<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/find)
      */
-    fun find(
+    open fun find(
         predicate: (T) -> Boolean,
     ): T?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/flatMap)
      */
-    fun <R : JsAny?> flatMap(
+    open fun <R : JsAny?> flatMap(
         transform: (T) -> JsIterable<R>,
     ): JsIterator<R>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/flatMap)
      */
-    fun <R : JsAny?> flatMap(
+    open fun <R : JsAny?> flatMap(
         transform: (T) -> ReadonlyArray<R>,
     ): JsIterator<R>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/forEach)
      */
-    fun forEach(
+    open fun forEach(
         action: (item: T) -> Unit,
     )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/includes)
      */
-    fun includes(
+    open fun includes(
         searchElement: @UnsafeVariance T,
         fromIndex: Int = definedExternally,
     ): Boolean
@@ -84,28 +84,28 @@ abstract external class JsIterator<out T : JsAny?> :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/join)
      */
-    fun join(
+    open fun join(
         separator: String,
     ): String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/map)
      */
-    fun <R : JsAny?> map(
+    open fun <R : JsAny?> map(
         transform: (T) -> R,
     ): JsIterator<R>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/reduce)
      */
-    fun reduce(
+    open fun reduce(
         operation: (previousValue: T, currentValue: T, currentIndex: Int) -> @UnsafeVariance T,
     ): T
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/reduce)
      */
-    fun <U : JsAny?> reduce(
+    open fun <U : JsAny?> reduce(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
     ): U
@@ -113,14 +113,14 @@ abstract external class JsIterator<out T : JsAny?> :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/some)
      */
-    fun some(
+    open fun some(
         predicate: (T) -> Boolean,
     ): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/take)
      */
-    fun take(
+    open fun take(
         n: Int,
     ): JsIterator<T>
     // fun toArray(): ReadonlyArray<T>
@@ -128,7 +128,7 @@ abstract external class JsIterator<out T : JsAny?> :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/windows)
      */
-    fun windows(
+    open fun windows(
         windowSize: Int,
         underSized: UnderSized = definedExternally,
     ): JsIterator<T>

@@ -8,32 +8,32 @@ package js.temporal
  */
 @JsQualifier("Temporal")
 open external class Duration(
-    val years: Int = definedExternally,
-    val months: Int = definedExternally,
-    val weeks: Int = definedExternally,
-    val days: Int = definedExternally,
-    val hours: Int = definedExternally,
-    val minutes: Int = definedExternally,
-    val seconds: Int = definedExternally,
-    val milliseconds: Int = definedExternally,
-    val microseconds: Int = definedExternally,
-    val nanoseconds: Int = definedExternally,
+    open val years: Int = definedExternally,
+    open val months: Int = definedExternally,
+    open val weeks: Int = definedExternally,
+    open val days: Int = definedExternally,
+    open val hours: Int = definedExternally,
+    open val minutes: Int = definedExternally,
+    open val seconds: Int = definedExternally,
+    open val milliseconds: Int = definedExternally,
+    open val microseconds: Int = definedExternally,
+    open val nanoseconds: Int = definedExternally,
 ) : HasDurationOperations<Duration, DurationArithmeticOptions>,
     LocalizableDateTime {
-    val sign: Int /* -1 | 0 | 1 */
-    val blank: Boolean
-    fun negated(): Duration
+    open val sign: Int /* -1 | 0 | 1 */
+    open val blank: Boolean
+    open fun negated(): Duration
 
     @JsName("negated")
     operator fun unaryMinus(): Duration
-    fun abs(): Duration
-    fun with(durationLike: DurationLike): Duration
+    open fun abs(): Duration
+    open fun with(durationLike: DurationLike): Duration
 
-    fun round(roundTo: JsAny /* DurationRoundTo */): Duration
-    fun total(totalOf: JsAny /* DurationTotalOf */): Int
+    open fun round(roundTo: JsAny /* DurationRoundTo */): Duration
+    open fun total(totalOf: JsAny /* DurationTotalOf */): Int
 
-    fun toJSON(): String
-    fun toString(options: ToStringPrecisionOptions = definedExternally): String
+    open fun toJSON(): String
+    open fun toString(options: ToStringPrecisionOptions = definedExternally): String
 
     companion object :
         Factory<Duration, DurationLike, Nothing> {

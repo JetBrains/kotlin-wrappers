@@ -41,7 +41,7 @@ open external class Uint8Array<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromBase64)
      */
-    fun setFromBase64(
+    open fun setFromBase64(
         string: String,
         options: FromBase64Options = definedExternally,
     ): SetFromResult
@@ -49,21 +49,21 @@ open external class Uint8Array<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/setFromHex)
      */
-    fun setFromHex(
+    open fun setFromHex(
         string: String,
     ): SetFromResult
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toBase64)
      */
-    fun toBase64(
+    open fun toBase64(
         options: ToBase64Options = definedExternally,
     ): String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array/toHex)
      */
-    fun toHex(): String
+    open fun toHex(): String
 
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
         /**

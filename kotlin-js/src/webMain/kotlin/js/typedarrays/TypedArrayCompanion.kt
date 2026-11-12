@@ -12,7 +12,7 @@ sealed external class TypedArrayCompanion<out S : TypedArray<S, S, ArrayBuffer, 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/BYTES_PER_ELEMENT)
      */
-    val BYTES_PER_ELEMENT: Int
+    open val BYTES_PER_ELEMENT: Int
 
     /*
     /**
@@ -26,14 +26,14 @@ sealed external class TypedArrayCompanion<out S : TypedArray<S, S, ArrayBuffer, 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/from)
      */
-    fun from(
+    open fun from(
         source: ArrayLike<T>,
     ): S
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/from)
      */
-    fun <U : JsAny> from(
+    open fun <U : JsAny> from(
         source: ArrayLike<U>,
         transform: (item: U, index: Int) -> T,
     ): S

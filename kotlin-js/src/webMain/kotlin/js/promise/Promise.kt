@@ -74,7 +74,7 @@ open external class Promise<out T : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally)
      */
-    fun finally(
+    open fun finally(
         onFinally: () -> Unit,
     ): Promise<T>
 

@@ -42,7 +42,7 @@ open external class JsSet<T : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/difference)
      */
-    fun difference(other: ReadonlySetLike<T>): JsSet<T>
+    open fun difference(other: ReadonlySetLike<T>): JsSet<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/entries)
@@ -62,22 +62,22 @@ open external class JsSet<T : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection)
      */
-    fun intersection(other: ReadonlySetLike<T>): JsSet<T>
+    open fun intersection(other: ReadonlySetLike<T>): JsSet<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom)
      */
-    fun isDisjointFrom(other: ReadonlySetLike<T>): Boolean
+    open fun isDisjointFrom(other: ReadonlySetLike<T>): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf)
      */
-    fun isSubsetOf(other: ReadonlySetLike<T>): Boolean
+    open fun isSubsetOf(other: ReadonlySetLike<T>): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf)
      */
-    fun isSupersetOf(other: ReadonlySetLike<T>): Boolean
+    open fun isSupersetOf(other: ReadonlySetLike<T>): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/keys)
@@ -87,12 +87,12 @@ open external class JsSet<T : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference)
      */
-    fun symmetricDifference(other: ReadonlySetLike<T>): JsSet<T>
+    open fun symmetricDifference(other: ReadonlySetLike<T>): JsSet<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/union)
      */
-    fun union(other: ReadonlySetLike<T>): JsSet<T>
+    open fun union(other: ReadonlySetLike<T>): JsSet<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set/values)

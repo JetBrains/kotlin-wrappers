@@ -11,15 +11,15 @@ open external class WeakSet<in T : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/add)
      */
-    fun add(value: T): WeakSet<T>
+    open fun add(value: T): WeakSet<T>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/delete)
      */
-    fun delete(value: T): Boolean
+    open fun delete(value: T): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/has)
      */
-    fun has(key: T): Boolean
+    open fun has(key: T): Boolean
 }

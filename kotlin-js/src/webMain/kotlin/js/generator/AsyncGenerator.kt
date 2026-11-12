@@ -23,25 +23,25 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator/next)
      */
-    fun next(value: TNext = definedExternally): Promise<IteratorResult<T, TReturn>>
+    open fun next(value: TNext = definedExternally): Promise<IteratorResult<T, TReturn>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator/return)
      */
-    fun `return`(): Promise<IteratorResult<T, TReturn?>>
+    open fun `return`(): Promise<IteratorResult<T, TReturn?>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator/return)
      */
-    fun `return`(value: TReturn): Promise<IteratorResult<T, TReturn>>
+    open fun `return`(value: TReturn): Promise<IteratorResult<T, TReturn>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator/return)
      */
-    fun `return`(value: PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>
+    open fun `return`(value: PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator/throw)
      */
-    fun `throw`(error: JsError): Promise<IteratorResult<T, TReturn>>
+    open fun `throw`(error: JsError): Promise<IteratorResult<T, TReturn>>
 }

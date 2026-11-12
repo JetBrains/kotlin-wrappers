@@ -40,14 +40,14 @@ open external class ArrayBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resizable)
      */
-    val resizable: Boolean
+    open val resizable: Boolean
 
     /**
      * Resizes the ArrayBuffer to the specified size (in bytes).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/resize)
      */
-    fun resize(
+    open fun resize(
         newByteLength: Int,
     )
 
@@ -56,14 +56,14 @@ open external class ArrayBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/detached)
      */
-    val detached: Boolean
+    open val detached: Boolean
 
     /**
      * Creates a new ArrayBuffer with the same byte content as this buffer, then detaches this buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transfer)
      */
-    fun transfer(
+    open fun transfer(
         newByteLength: Int,
     ): ArrayBuffer
 
@@ -72,7 +72,7 @@ open external class ArrayBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/transferToFixedLength)
      */
-    fun transferToFixedLength(
+    open fun transferToFixedLength(
         newByteLength: Int,
     ): ArrayBuffer
 

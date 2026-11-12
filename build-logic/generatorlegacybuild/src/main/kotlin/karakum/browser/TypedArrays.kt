@@ -44,23 +44,23 @@ __MEMBERS__
 // language=kotlin
 private val UINT8_MEMBERS = """
 ${mdn(path = "/setFromBase64")}
-fun setFromBase64(
+open fun setFromBase64(
     string: String,
     options: FromBase64Options = definedExternally,
 ): SetFromResult
 
 ${mdn(path = "/setFromHex")}
-fun setFromHex(
+open fun setFromHex(
     string: String,
 ): SetFromResult
 
 ${mdn(path = "/toBase64")}
-fun toBase64(
+open fun toBase64(
     options: ToBase64Options = definedExternally,
 ): String
 
 ${mdn(path = "/toHex")}
-fun toHex(): String
+open fun toHex(): String
 """.trimIndent()
 
 // language=kotlin

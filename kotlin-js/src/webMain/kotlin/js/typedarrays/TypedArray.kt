@@ -28,7 +28,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/BYTES_PER_ELEMENT)
      */
-    val BYTES_PER_ELEMENT: Int
+    open val BYTES_PER_ELEMENT: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/byteLength)
@@ -41,12 +41,12 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/at)
      */
-    fun at(index: Int): T?
+    open fun at(index: Int): T?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/set)
      */
-    fun set(
+    open fun set(
         array: ArrayLike<T>,
         offset: Int = definedExternally,
     )
@@ -54,7 +54,7 @@ sealed external class TypedArray<
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/set)
      */
-    fun set(
+    open fun set(
         array: ReadonlyArray<T>,
         offset: Int = definedExternally,
     )
@@ -70,7 +70,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/copyWithin)
      */
-    fun copyWithin(
+    open fun copyWithin(
         target: Int,
         start: Int,
         end: Int = definedExternally,
@@ -86,7 +86,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every)
      */
-    fun every(
+    open fun every(
         predicate: (value: T) -> Boolean,
     ): Boolean
 
@@ -100,7 +100,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/fill)
      */
-    fun fill(
+    open fun fill(
         value: T,
         start: Int = definedExternally,
         end: Int = definedExternally,
@@ -115,7 +115,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/filter)
      */
-    fun filter(
+    open fun filter(
         predicate: (value: T) -> Boolean,
     ): R
 
@@ -130,7 +130,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/find)
      */
-    fun find(
+    open fun find(
         predicate: (value: T) -> Boolean,
     ): T?
 
@@ -145,7 +145,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex)
      */
-    fun findIndex(
+    open fun findIndex(
         predicate: (value: T) -> Boolean,
     ): Int
 
@@ -160,7 +160,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLast)
      */
-    fun findLast(
+    open fun findLast(
         predicate: (value: T) -> Boolean,
     ): T?
 
@@ -175,7 +175,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findLastIndex)
      */
-    fun findLastIndex(
+    open fun findLastIndex(
         predicate: (value: T) -> Boolean,
     ): Int
 
@@ -199,7 +199,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes)
      */
-    fun includes(
+    open fun includes(
         searchElement: T,
         fromIndex: Int = definedExternally,
     ): Boolean
@@ -212,7 +212,7 @@ sealed external class TypedArray<
      *
      *  [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/indexOf)
      */
-    fun indexOf(
+    open fun indexOf(
         searchElement: T,
         fromIndex: Int = definedExternally,
     ): Int
@@ -224,7 +224,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/join)
      */
-    fun join(
+    open fun join(
         separator: String = definedExternally,
     ): String
 
@@ -236,7 +236,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/lastIndexOf)
      */
-    fun lastIndexOf(
+    open fun lastIndexOf(
         searchElement: T,
         fromIndex: Int = definedExternally,
     ): Int
@@ -251,7 +251,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map)
      */
-    fun map(
+    open fun map(
         transform: (value: T) -> T,
     ): R
 
@@ -267,7 +267,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduce)
      */
-    fun reduce(
+    open fun reduce(
         operation: (previousValue: T, currentValue: T, currentIndex: Int) -> T,
     ): T
 
@@ -283,7 +283,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/<)
      */
-    fun <U : JsAny?> reduce(
+    open fun <U : JsAny?> reduce(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
     ): U
@@ -300,7 +300,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduceRight)
      */
-    fun reduceRight(
+    open fun reduceRight(
         operation: (previousValue: T, currentValue: T, currentIndex: Int) -> T,
     ): T
 
@@ -316,7 +316,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/<)
      */
-    fun <U : JsAny?> reduceRight(
+    open fun <U : JsAny?> reduceRight(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
     ): U
@@ -326,7 +326,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reverse)
      */
-    fun reverse(): S
+    open fun reverse(): S
 
     /**
      * Returns a section of an array.
@@ -335,7 +335,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice)
      */
-    fun slice(
+    open fun slice(
         start: Int = definedExternally,
         end: Int = definedExternally,
     ): R
@@ -350,7 +350,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some)
      */
-    fun some(
+    open fun some(
         predicate: (value: T) -> Boolean,
     ): Boolean
 
@@ -365,14 +365,14 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort)
      */
-    fun sort(
+    open fun sort(
         comparison: (a: T, b: T) -> Int = definedExternally,
     ): S
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/subarray)
      */
-    fun subarray(
+    open fun subarray(
         start: Int,
         end: Int,
     ): S
@@ -382,14 +382,14 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toLocaleString)
      */
-    fun toLocaleString(): String
+    open fun toLocaleString(): String
 
     /**
      * Copies the array and returns the copy with the elements in reverse order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toReversed)
      */
-    fun toReversed(): R
+    open fun toReversed(): R
 
     /**
      * Copies and sorts the array.
@@ -403,12 +403,12 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toSorted)
      */
-    fun toSorted(
+    open fun toSorted(
         comparison: (a: T, b: T) -> Int = definedExternally,
     ): R
 
     /** Returns the primitive value of the specified object. */
-    fun valueOf(): S
+    open fun valueOf(): S
 
     /**
      * Copies the array and inserts the given number at the provided index.
@@ -419,7 +419,7 @@ sealed external class TypedArray<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/with)
      */
-    fun with(
+    open fun with(
         index: Int,
         value: T,
     ): R

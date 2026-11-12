@@ -10,14 +10,14 @@ open external class DisposableStack :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/disposed)
      */
-    val disposed: Boolean
+    open val disposed: Boolean
 
     /**
      * Disposes each resource in the stack in the reverse order that they were added.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/dispose)
      */
-    fun dispose()
+    open fun dispose()
 
     /**
      * Adds a disposable resource to the stack, returning the resource.
@@ -27,7 +27,7 @@ open external class DisposableStack :
      * @param value The resource to add. `null` and `undefined` will not be added, but will be returned.
      * @return The provided [value].
      */
-    fun <T : Disposable?> use(value: T): T
+    open fun <T : Disposable?> use(value: T): T
 
     /**
      * Adds a value and associated disposal callback as a resource to the stack.
@@ -39,7 +39,7 @@ open external class DisposableStack :
      * as the first parameter.
      * @return The provided [value].
      */
-    fun <T : JsAny?> adopt(
+    open fun <T : JsAny?> adopt(
         value: T,
         onDispose: (value: T) -> Unit,
     ): T
@@ -49,7 +49,7 @@ open external class DisposableStack :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/defer)
      */
-    fun defer(
+    open fun defer(
         onDispose: () -> Unit,
     )
 
@@ -84,5 +84,5 @@ open external class DisposableStack :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DisposableStack/move)
      */
-    fun move(): DisposableStack
+    open fun move(): DisposableStack
 }

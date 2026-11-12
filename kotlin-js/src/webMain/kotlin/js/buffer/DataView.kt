@@ -24,21 +24,21 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getInt8)
      */
-    fun getInt8(
+    open fun getInt8(
         byteOffset: Int,
     ): Byte
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getUint8)
      */
-    fun getUint8(
+    open fun getUint8(
         byteOffset: Int,
     ): Byte
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getInt16)
      */
-    fun getInt16(
+    open fun getInt16(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Short
@@ -46,7 +46,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getUint16)
      */
-    fun getUint16(
+    open fun getUint16(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Short
@@ -54,7 +54,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getInt32)
      */
-    fun getInt32(
+    open fun getInt32(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Int
@@ -62,7 +62,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getUint32)
      */
-    fun getUint32(
+    open fun getUint32(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Int
@@ -70,7 +70,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getFloat16)
      */
-    fun getFloat16(
+    open fun getFloat16(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Float16
@@ -78,7 +78,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getFloat32)
      */
-    fun getFloat32(
+    open fun getFloat32(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Float
@@ -86,7 +86,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/getFloat64)
      */
-    fun getFloat64(
+    open fun getFloat64(
         byteOffset: Int,
         littleEndian: Boolean = definedExternally,
     ): Double
@@ -94,7 +94,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setInt8)
      */
-    fun setInt8(
+    open fun setInt8(
         byteOffset: Int,
         value: Byte,
     )
@@ -102,7 +102,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setUint8)
      */
-    fun setUint8(
+    open fun setUint8(
         byteOffset: Int,
         value: Byte,
     )
@@ -110,7 +110,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setInt16)
      */
-    fun setInt16(
+    open fun setInt16(
         byteOffset: Int,
         value: Short,
         littleEndian: Boolean = definedExternally,
@@ -119,7 +119,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setUint16)
      */
-    fun setUint16(
+    open fun setUint16(
         byteOffset: Int,
         value: Short,
         littleEndian: Boolean = definedExternally,
@@ -128,7 +128,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setInt32)
      */
-    fun setInt32(
+    open fun setInt32(
         byteOffset: Int,
         value: Int,
         littleEndian: Boolean = definedExternally,
@@ -137,7 +137,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setUint32)
      */
-    fun setUint32(
+    open fun setUint32(
         byteOffset: Int,
         value: Int,
         littleEndian: Boolean = definedExternally,
@@ -146,7 +146,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setFloat16)
      */
-    fun setFloat16(
+    open fun setFloat16(
         byteOffset: Int,
         value: Float16,
         littleEndian: Boolean = definedExternally,
@@ -155,7 +155,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setFloat32)
      */
-    fun setFloat32(
+    open fun setFloat32(
         byteOffset: Int,
         value: Float,
         littleEndian: Boolean = definedExternally,
@@ -164,7 +164,7 @@ open external class DataView<out B : ArrayBufferLike>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView/setFloat64)
      */
-    fun setFloat64(
+    open fun setFloat64(
         byteOffset: Int,
         value: Double,
         littleEndian: Boolean = definedExternally,

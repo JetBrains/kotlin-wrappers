@@ -19,21 +19,21 @@ import js.numbers.Int53
  */
 @JsQualifier("Temporal")
 open external class Instant(
-    val epochNanoseconds: BigInt,
+    open val epochNanoseconds: BigInt,
 ) : HasArithmeticOperations<Instant, Nothing, TimeUnit<*>>,
     Roundable<Instant, TimeUnit<*>>,
     LocalizableDateTime {
-    val epochSeconds: Int53
-    val epochMilliseconds: Int53
-    val epochMicroseconds: BigInt
+    open val epochSeconds: Int53
+    open val epochMilliseconds: Int53
+    open val epochMicroseconds: BigInt
 
     // fun equals(other: Instant): Boolean
     // fun equals(other: string): Boolean
 
-    fun toZonedDateTimeISO(tzLike: TimeZone): ZonedDateTime
+    open fun toZonedDateTimeISO(tzLike: TimeZone): ZonedDateTime
 
-    fun toJSON(): String
-    fun toString(options: InstantToStringOptions = definedExternally): String
+    open fun toJSON(): String
+    open fun toString(options: InstantToStringOptions = definedExternally): String
 
     companion object :
         Factory<Instant, Nothing, Nothing>,

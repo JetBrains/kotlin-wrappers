@@ -12,5 +12,5 @@ open external class WeakRef<T : JsAny>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef/deref)
      */
-    fun deref(): T?
+    open fun deref(): T?
 }
