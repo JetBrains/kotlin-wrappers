@@ -12,5 +12,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LaunchQueue/setConsumer)
      */
-    fun setConsumer(consumer: LaunchConsumer)
+    open fun setConsumer(consumer: LaunchConsumer)
 }

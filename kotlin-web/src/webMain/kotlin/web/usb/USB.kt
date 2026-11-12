@@ -19,24 +19,24 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USB/connect_event)
      */
-    var onconnect: EventHandler<USBConnectionEvent, USB, USB>?
+    open var onconnect: EventHandler<USBConnectionEvent, USB, USB>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USB/disconnect_event)
      */
-    var ondisconnect: EventHandler<USBConnectionEvent, USB, USB>?
+    open var ondisconnect: EventHandler<USBConnectionEvent, USB, USB>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USB/getDevice)
      */
     @JsName("getDevices")
-    fun getDevicesAsync(): Promise<ReadonlyArray<USBDevice>>
+    open fun getDevicesAsync(): Promise<ReadonlyArray<USBDevice>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USB/requestDevice)
      */
     @JsName("requestDevice")
-    fun requestDeviceAsync(options: USBDeviceRequestOptions): Promise<USBDevice>
+    open fun requestDeviceAsync(options: USBDeviceRequestOptions): Promise<USBDevice>
 }
 
 /**

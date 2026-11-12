@@ -16,5 +16,5 @@ open external class TextFormatUpdateEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextFormatUpdateEvent/getTextFormats)
      */
-    fun getTextFormats(): ReadonlyArray<TextFormat>
+    open fun getTextFormats(): ReadonlyArray<TextFormat>
 }

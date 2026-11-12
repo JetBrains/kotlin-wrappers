@@ -18,7 +18,7 @@ private constructor() :
     EventTarget {
 
     @JsName("registerTool")
-    fun registerToolAsync(
+    open fun registerToolAsync(
         tool: ModelContextTool,
         options: ModelContextRegisterToolOptions? = definedExternally,
     ): Promise<Void>

@@ -22,74 +22,74 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/id)
      */
-    val id: String
+    open val id: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/url)
      */
-    val url: String
+    open val url: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/state)
      */
-    val state: PresentationConnectionState
+    open val state: PresentationConnectionState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/close)
      */
-    fun close()
+    open fun close()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/terminate)
      */
-    fun terminate()
+    open fun terminate()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/connect_event)
      */
-    var onconnect: EventHandler<Event, PresentationConnection, PresentationConnection>
+    open var onconnect: EventHandler<Event, PresentationConnection, PresentationConnection>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/close_event)
      */
-    var onclose: EventHandler<PresentationConnectionCloseEvent, PresentationConnection, PresentationConnection>
+    open var onclose: EventHandler<PresentationConnectionCloseEvent, PresentationConnection, PresentationConnection>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/terminate_event)
      */
-    var onterminate: EventHandler<Event, PresentationConnection, PresentationConnection>
+    open var onterminate: EventHandler<Event, PresentationConnection, PresentationConnection>
 
     // Communication
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/binaryType)
      */
-    var binaryType: BinaryType
+    open var binaryType: BinaryType
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<JsAny>, PresentationConnection, PresentationConnection>
+    open var onmessage: EventHandler<MessageEvent<JsAny>, PresentationConnection, PresentationConnection>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/send)
      */
-    fun send(message: String)
+    open fun send(message: String)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/send)
      */
-    fun send(data: Blob)
+    open fun send(data: Blob)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/send)
      */
-    fun send(data: ArrayBuffer)
+    open fun send(data: ArrayBuffer)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/send)
      */
-    fun send(data: ArrayBufferView<*>)
+    open fun send(data: ArrayBufferView<*>)
 }
 
 /**

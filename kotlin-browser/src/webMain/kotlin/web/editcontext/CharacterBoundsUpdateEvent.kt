@@ -15,10 +15,10 @@ open external class CharacterBoundsUpdateEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterBoundsUpdateEvent/rangeStart)
      */
-    val rangeStart: Int
+    open val rangeStart: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterBoundsUpdateEvent/rangeEnd)
      */
-    val rangeEnd: Int
+    open val rangeEnd: Int
 }

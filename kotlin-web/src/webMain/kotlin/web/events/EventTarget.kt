@@ -21,7 +21,7 @@ open external class EventTarget :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/when)
      */
     @ExperimentalWebApi
-    fun <T : Event> `when`(
+    open fun <T : Event> `when`(
         type: EventType<T>,
         options: ObservableEventListenerOptions? = definedExternally,
     ): Observable<T>

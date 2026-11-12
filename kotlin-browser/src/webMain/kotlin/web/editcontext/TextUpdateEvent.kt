@@ -15,25 +15,25 @@ open external class TextUpdateEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextUpdateEvent/updateRangeStart)
      */
-    val updateRangeStart: Int
+    open val updateRangeStart: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextUpdateEvent/updateRangeEnd)
      */
-    val updateRangeEnd: Int
+    open val updateRangeEnd: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextUpdateEvent/text)
      */
-    val text: String
+    open val text: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextUpdateEvent/selectionStart)
      */
-    val selectionStart: Int
+    open val selectionStart: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextUpdateEvent/selectionEnd)
      */
-    val selectionEnd: Int
+    open val selectionEnd: Int
 }

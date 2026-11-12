@@ -1400,7 +1400,7 @@ internal fun convertInterface(
                     // language=kotlin
                     """
                     @JsName("data-testid")
-                    var dataTestId: DataTestId?
+                    open var dataTestId: DataTestId?
                     """.trimIndent(),
                 )
 

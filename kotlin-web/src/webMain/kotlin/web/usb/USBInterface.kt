@@ -11,25 +11,25 @@ open external class USBInterface(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBInterface/configuration)
      */
-    val configuration: USBConfiguration,
+    open val configuration: USBConfiguration,
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBInterface/interfaceNumber)
      */
-    val interfaceNumber: Short,
+    open val interfaceNumber: Short,
     /* unsigned byte */
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBInterface/alternate)
      */
-    val alternate: USBAlternateInterface
+    open val alternate: USBAlternateInterface
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBInterface/alternates)
      */
-    val alternates: ReadonlyArray<USBAlternateInterface>
+    open val alternates: ReadonlyArray<USBAlternateInterface>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBInterface/claimed)
      */
-    val claimed: Boolean
+    open val claimed: Boolean
 }

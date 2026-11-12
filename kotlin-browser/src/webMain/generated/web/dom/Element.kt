@@ -621,7 +621,7 @@ private constructor() :
     override var textContent: String
 
     @JsName("data-testid")
-    var dataTestId: DataTestId?
+    open var dataTestId: DataTestId?
 }
 
 /**
