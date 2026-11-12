@@ -112,7 +112,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
      */
-    open var textContent: String?
+    open val textContent: String?
 
     /**
      * The **`appendChild()`** method of the Node interface adds a node to the end of the list of children of a specified parent node.

@@ -99,7 +99,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/textContent)
      */
-    override var textContent: String? // String
+    override var textContent: String
 
     /**
      * The **`type`** property of the HTMLScriptElement interface is a string that reflects the type of the script.

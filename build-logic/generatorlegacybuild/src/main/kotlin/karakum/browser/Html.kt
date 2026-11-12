@@ -1326,7 +1326,7 @@ internal fun convertInterface(
             "Node",
                 -> result
                 .replace("val ownerDocument:", "open val ownerDocument:")
-                .replace("var textContent:", "open var textContent:")
+                .replace("var textContent:", "open val textContent:")
 
             in WELL_KNOWN_FORM_CONTROL,
                 -> result.applyFormControlPatch().let {
@@ -1379,7 +1379,7 @@ internal fun convertInterface(
             "CharacterData",
                 -> result
                 .replace("val ownerDocument:", "override val ownerDocument:")
-                .replace("var textContent: String", "override var textContent: String? // String")
+                .replace("var textContent: String", "override var textContent: String")
                 .replace("fun getElementById(", "override fun getElementById(")
                 .let {
                     if (name == "Document") {
@@ -1396,7 +1396,7 @@ internal fun convertInterface(
             "Element",
                 -> result
                 .replace("val ownerDocument:", "override val ownerDocument:")
-                .replace("var textContent: String", "override var textContent: String? // String")
+                .replace("var textContent: String", "override var textContent: String")
                 .replace("fun getElementById(", "override fun getElementById(")
                 .plus("\n")
                 .plus(
@@ -1498,7 +1498,7 @@ internal fun convertInterface(
             "HTMLScriptElement",
                 -> result
                 .replace("var innerText:", "override var innerText:")
-                .replace("var textContent: String", "override var textContent: String? // String")
+                .replace("var textContent: String", "override var textContent: String")
 
             "Navigator",
                 -> result + "\n" + """
