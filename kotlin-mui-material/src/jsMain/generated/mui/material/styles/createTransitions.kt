@@ -3,6 +3,7 @@
 package mui.material.styles
 
 import js.array.ReadonlyArray
+import kotlinx.js.JsPlainObject
 import web.cssom.Transition
 
 external interface Easing {
@@ -31,24 +32,26 @@ external interface Duration {
     var leavingScreen: Number
 }
 
-external interface TransitionsOptions {
-    var easing: Easing?
+@JsPlainObject
+external interface TransitionsOptions : mui.system.Transitions {
+    val easing: Easing?
 
-    var duration: Duration?
+    val duration: Duration?
 
-    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition)?
+    val create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition)?
 
-    var getAutoHeightDuration: ((height: Number) -> Number)?
+    val getAutoHeightDuration: ((height: Number) -> Number)?
 }
 
-external interface Transitions {
-    var easing: Easing
+@JsPlainObject
+external interface Transitions : mui.system.Transitions {
+    val easing: Easing
 
-    var duration: Duration
+    val duration: Duration
 
-    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition
+    val create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition
 
-    var getAutoHeightDuration: (height: Number) -> Number
+    val getAutoHeightDuration: (height: Number) -> Number
 }
 
 external interface TransitionCreateOptions {
