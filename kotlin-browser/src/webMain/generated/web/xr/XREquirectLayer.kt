@@ -7,11 +7,11 @@ import web.events.EventInstance
 open external class XREquirectLayer
 private constructor() :
     XRCompositionLayer {
-    var transform: XRRigidTransform
-    var radius: Float
-    var centralHorizontalAngle: Float
-    var upperVerticalAngle: Float
-    var lowerVerticalAngle: Float
+    open var transform: XRRigidTransform
+    open var radius: Float
+    open var centralHorizontalAngle: Float
+    open var upperVerticalAngle: Float
+    open var lowerVerticalAngle: Float
 }
 
 /**

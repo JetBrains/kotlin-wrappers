@@ -27,7 +27,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event)
      */
-    var ondevicechange: EventHandler<Event, MediaDevices, MediaDevices>?
+    open var ondevicechange: EventHandler<Event, MediaDevices, MediaDevices>?
 
     /**
      * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth. The returned Promise is resolved with an array of MediaDeviceInfo objects describing the devices.
@@ -35,7 +35,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
     @JsName("enumerateDevices")
-    fun enumerateDevicesAsync(): Promise<ReadonlyArray<MediaDeviceInfo>>
+    open fun enumerateDevicesAsync(): Promise<ReadonlyArray<MediaDeviceInfo>>
 
     /**
      * The **`getDisplayMedia()`** method of the MediaDevices interface prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a MediaStream.
@@ -49,14 +49,14 @@ private constructor() :
     @JsThrows(NotReadableError::class)
     @JsThrows.Typed(OverconstrainedError::class)
     @JsName("getDisplayMedia")
-    fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
+    open fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
     /**
      * The **`getSupportedConstraints()`** method of the MediaDevices interface returns an object based on the MediaTrackSupportedConstraints dictionary, whose member fields each specify one of the constrainable properties the user agent understands.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints)
      */
-    fun getSupportedConstraints(): MediaTrackSupportedConstraints
+    open fun getSupportedConstraints(): MediaTrackSupportedConstraints
 
     /**
      * The **`getUserMedia()`** method of the MediaDevices interface prompts the user for permission to use a media input which produces a MediaStream with tracks containing the requested types of media.
@@ -71,7 +71,7 @@ private constructor() :
     @JsThrows(SecurityError::class)
     @JsThrows.Typed(OverconstrainedError::class)
     @JsName("getUserMedia")
-    fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
+    open fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
 
 /**

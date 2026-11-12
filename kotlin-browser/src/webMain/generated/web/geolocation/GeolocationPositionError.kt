@@ -17,14 +17,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code)
      */
-    val code: Code
+    open val code: Code
 
     /**
      * The **`message`** read-only property of the GeolocationPositionError interface returns a human-readable string describing the details of the error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/message)
      */
-    val message: String
+    open val message: String
 
     companion object {
         val PERMISSION_DENIED: Code

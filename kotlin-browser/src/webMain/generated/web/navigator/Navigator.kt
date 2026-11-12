@@ -64,7 +64,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clipboard)
      */
-    val clipboard: Clipboard
+    open val clipboard: Clipboard
 
     /**
      * The **`credentials`** read-only property of the Navigator interface returns the CredentialsContainer object associated with the current document, which exposes methods to request credentials. The CredentialsContainer interface also notifies the user agent when an interesting event occurs, such as a successful sign-in or sign-out. This interface can be used for feature detection.
@@ -72,19 +72,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/credentials)
      */
-    val credentials: CredentialsContainer
+    open val credentials: CredentialsContainer
 
     /**
      * The **`Navigator.doNotTrack`** property returns the user's Do Not Track setting, which indicates whether the user is requesting websites and advertisers to not track them.
      */
-    val doNotTrack: String?
+    open val doNotTrack: String?
 
     /**
      * The **`Navigator.geolocation`** read-only property returns a Geolocation object that gives Web content access to the location of the device. This allows a website or app to offer customized results based on the user's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/geolocation)
      */
-    val geolocation: Geolocation
+    open val geolocation: Geolocation
 
     /**
      * The **`login`** read-only property of the Navigator interface provides access to the browser's NavigatorLogin object, which a federated identity provider (IdP) can use to set its login status when a user signs into or out of the IdP.
@@ -92,21 +92,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/login)
      */
-    val login: NavigatorLogin
+    open val login: NavigatorLogin
 
     /**
      * The **`maxTouchPoints`** read-only property of the Navigator interface returns the maximum number of simultaneous touch contact points that are supported by the current device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints)
      */
-    val maxTouchPoints: Int
+    open val maxTouchPoints: Int
 
     /**
      * The **`mediaCapabilities`** read-only property of the Navigator interface references a MediaCapabilities object that can expose information about the decoding and encoding capabilities for a given media format and output capabilities.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaCapabilities)
      */
-    val mediaCapabilities: MediaCapabilities
+    open val mediaCapabilities: MediaCapabilities
 
     /**
      * The **`mediaDevices`** read-only property of the Navigator interface returns a MediaDevices object, which provides access to connected media input devices like cameras and microphones, as well as screen sharing.
@@ -114,28 +114,28 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaDevices)
      */
-    val mediaDevices: MediaDevices
+    open val mediaDevices: MediaDevices
 
     /**
      * The **`mediaSession`** read-only property of the Navigator interface returns a MediaSession object that can be used to share with the browser metadata and other information about the current playback state of media being handled by a document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession)
      */
-    val mediaSession: MediaSession
+    open val mediaSession: MediaSession
 
     /**
      * The **`permissions`** read-only property of the Navigator interface returns a Permissions object that can be used to query and update permission status of APIs covered by the Permissions API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/permissions)
      */
-    val permissions: Permissions
+    open val permissions: Permissions
 
     /**
      * The **`serial`** read-only property of the Navigator interface returns a Serial object which represents the entry point into the Web Serial API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serial)
      */
-    val serial: Serial
+    open val serial: Serial
 
     /**
      * The **`serviceWorker`** read-only property of the Navigator interface returns the ServiceWorkerContainer object for the associated document, which provides access to registration, removal, upgrade, and communication with the ServiceWorker.
@@ -143,21 +143,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serviceWorker)
      */
-    val serviceWorker: ServiceWorkerContainer
+    open val serviceWorker: ServiceWorkerContainer
 
     /**
      * The read-only **`userActivation`** property of the Navigator interface returns a UserActivation object which contains information about the current window's user activation state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userActivation)
      */
-    val userActivation: UserActivation
+    open val userActivation: UserActivation
 
     /**
      * The **`wakeLock`** read-only property of the Navigator interface returns a WakeLock interface that allows a document to acquire a screen wake lock. While a screen wake lock is active, the user agent will try to prevent the device from dimming the screen, turning it off completely, or showing a screensaver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock)
      */
-    val wakeLock: WakeLock
+    open val wakeLock: WakeLock
 
     /**
      * The **`canShare()`** method of the Navigator interface returns true if the equivalent call to navigator.share() would succeed.
@@ -165,7 +165,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/canShare)
      */
-    fun canShare(data: ShareData = definedExternally): Boolean
+    open fun canShare(data: ShareData = definedExternally): Boolean
 
     /**
      * The **`Navigator.getGamepads()`** method returns an array of Gamepad objects, one for each gamepad connected to the device.
@@ -173,7 +173,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads)
      */
     @JsThrows(SecurityError::class)
-    fun getGamepads(): ReadonlyArray<Gamepad?>
+    open fun getGamepads(): ReadonlyArray<Gamepad?>
 
     /**
      * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system. This method is part of the Web MIDI API, which provides a means for accessing, enumerating, and manipulating MIDI devices.
@@ -186,7 +186,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("requestMIDIAccess")
-    fun requestMIDIAccessAsync(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
+    open fun requestMIDIAccessAsync(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
     /**
      * The **`requestMediaKeySystemAccess()`** method of the Navigator interface returns a Promise which delivers a MediaKeySystemAccess object that can be used to access a particular media key system, which can in turn be used to create keys for decrypting a media stream.
@@ -197,7 +197,7 @@ private constructor() :
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("requestMediaKeySystemAccess")
-    fun requestMediaKeySystemAccessAsync(
+    open fun requestMediaKeySystemAccessAsync(
         keySystem: String,
         supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
     ): Promise<MediaKeySystemAccess>
@@ -207,7 +207,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
      */
-    fun sendBeacon(
+    open fun sendBeacon(
         url: String,
         data: BodyInit? = definedExternally,
     ): Boolean
@@ -217,7 +217,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
      */
-    fun sendBeacon(
+    open fun sendBeacon(
         url: URL,
         data: BodyInit? = definedExternally,
     ): Boolean
@@ -233,37 +233,37 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsName("share")
-    fun shareAsync(data: ShareData = definedExternally): Promise<Void>
+    open fun shareAsync(data: ShareData = definedExternally): Promise<Void>
 
     /**
      * The **`vibrate()`** method of the Navigator interface pulses the vibration hardware on the device, if such hardware exists. If the device doesn't support vibration, this method has no effect. If a vibration pattern is already in progress when this method is called, the previous pattern is halted and the new one begins instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
-    fun vibrate(pattern: VibratePattern): Boolean
+    open fun vibrate(pattern: VibratePattern): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/keyboard)
      */
     @ExperimentalWebApi
-    val keyboard: Keyboard
+    open val keyboard: Keyboard
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
      */
     @ExperimentalWebApi
-    val presentation: Presentation
+    open val presentation: Presentation
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
      */
     @ExperimentalWebApi
-    val usb: USB
+    open val usb: USB
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/xr)
      */
-    val xr: XRSystem
+    open val xr: XRSystem
 }
 
 /**

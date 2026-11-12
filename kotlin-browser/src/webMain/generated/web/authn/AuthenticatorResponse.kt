@@ -17,5 +17,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse/clientDataJSON)
      */
-    val clientDataJSON: ArrayBuffer
+    open val clientDataJSON: ArrayBuffer
 }

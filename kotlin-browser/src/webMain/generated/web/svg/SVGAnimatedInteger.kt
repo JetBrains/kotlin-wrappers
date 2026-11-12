@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/animVal)
      */
-    val animVal: Int
+    open val animVal: Int
 
     /**
      * The **`baseVal`** property of the SVGAnimatedInteger interface represents the base (non-animated) value of an animatable <integer>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/baseVal)
      */
-    var baseVal: Int
+    open var baseVal: Int
 }

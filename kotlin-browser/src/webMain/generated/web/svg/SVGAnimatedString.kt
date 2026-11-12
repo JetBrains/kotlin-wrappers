@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/animVal)
      */
-    val animVal: String
+    open val animVal: String
 
     /**
      * The **`baseVal`** property of the SVGAnimatedString interface gets or sets the base value of the given attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString/baseVal)
      */
-    var baseVal: String
+    open var baseVal: String
 }

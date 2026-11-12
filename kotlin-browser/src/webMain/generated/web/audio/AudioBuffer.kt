@@ -20,28 +20,28 @@ open external class AudioBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/duration)
      */
-    val duration: Double
+    open val duration: Double
 
     /**
      * The **`length`** property of the AudioBuffer interface returns an integer representing the length, in sample-frames, of the PCM data stored in the buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/length)
      */
-    val length: Int
+    open val length: Int
 
     /**
      * The **`numberOfChannels`** property of the AudioBuffer interface returns an integer representing the number of discrete audio channels described by the PCM data stored in the buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/numberOfChannels)
      */
-    val numberOfChannels: Int
+    open val numberOfChannels: Int
 
     /**
      * The **`sampleRate`** property of the AudioBuffer interface returns a float representing the sample rate, in samples per second, of the PCM data stored in the buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/sampleRate)
      */
-    val sampleRate: Float
+    open val sampleRate: Float
 
     /**
      * The **`copyFromChannel()`** method of the AudioBuffer interface copies the audio sample data from the specified channel of the AudioBuffer to a specified Float32Array.
@@ -49,7 +49,7 @@ open external class AudioBuffer(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyFromChannel)
      */
     @JsThrows(IndexSizeError::class)
-    fun copyFromChannel(
+    open fun copyFromChannel(
         destination: Float32Array<ArrayBuffer>,
         channelNumber: Int,
         bufferOffset: Int = definedExternally,
@@ -60,7 +60,7 @@ open external class AudioBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyToChannel)
      */
-    fun copyToChannel(
+    open fun copyToChannel(
         source: Float32Array<ArrayBuffer>,
         channelNumber: Int,
         bufferOffset: Int = definedExternally,
@@ -71,5 +71,5 @@ open external class AudioBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/getChannelData)
      */
-    fun getChannelData(channel: Int): Float32Array<ArrayBuffer>
+    open fun getChannelData(channel: Int): Float32Array<ArrayBuffer>
 }

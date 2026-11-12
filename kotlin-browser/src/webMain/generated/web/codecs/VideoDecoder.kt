@@ -28,19 +28,19 @@ open external class VideoDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize)
      */
-    val decodeQueueSize: Int
+    open val decodeQueueSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/dequeue_event)
      */
-    var ondequeue: EventHandler<Event, VideoDecoder, VideoDecoder>?
+    open var ondequeue: EventHandler<Event, VideoDecoder, VideoDecoder>?
 
     /**
      * The **`state`** property of the VideoDecoder interface returns the current state of the underlying codec.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/state)
      */
-    val state: CodecState
+    open val state: CodecState
 
     /**
      * The **`close()`** method of the VideoDecoder interface ends all pending work and releases system resources.
@@ -56,7 +56,7 @@ open external class VideoDecoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun configure(config: VideoDecoderConfig)
+    open fun configure(config: VideoDecoderConfig)
 
     /**
      * The **`decode()`** method of the VideoDecoder interface enqueues a control message to decode a given chunk of video.
@@ -65,7 +65,7 @@ open external class VideoDecoder(
      */
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
-    fun decode(chunk: EncodedVideoChunk)
+    open fun decode(chunk: EncodedVideoChunk)
 
     /**
      * The **`flush()`** method of the VideoDecoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
@@ -74,14 +74,14 @@ open external class VideoDecoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("flush")
-    fun flushAsync(): Promise<Void>
+    open fun flushAsync(): Promise<Void>
 
     /**
      * The **`reset()`** method of the VideoDecoder interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/reset)
      */
-    fun reset()
+    open fun reset()
 
     companion object {
         /**

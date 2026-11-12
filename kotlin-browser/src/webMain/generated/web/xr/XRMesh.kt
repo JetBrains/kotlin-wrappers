@@ -8,9 +8,9 @@ import web.time.DOMHighResTimeStamp
 
 open external class XRMesh
 private constructor() {
-    var meshSpace: XRSpace
-    var vertices: Float32Array<*>
-    var indices: Uint32Array<*>
-    var lastChangedTime: DOMHighResTimeStamp
-    var semanticLabel: String?
+    open var meshSpace: XRSpace
+    open var vertices: Float32Array<*>
+    open var indices: Uint32Array<*>
+    open var lastChangedTime: DOMHighResTimeStamp
+    open var semanticLabel: String?
 }

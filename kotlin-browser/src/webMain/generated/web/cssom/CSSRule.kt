@@ -14,19 +14,19 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/cssText)
      */
-    var cssText: String
+    open var cssText: String
 
     /**
      * The **`parentRule`** property of the CSSRule interface returns the containing rule of the current rule if this exists, or otherwise returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentRule)
      */
-    val parentRule: CSSRule?
+    open val parentRule: CSSRule?
 
     /**
      * The **`parentStyleSheet`** property of the CSSRule interface returns the StyleSheet object in which the current rule is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentStyleSheet)
      */
-    val parentStyleSheet: CSSStyleSheet?
+    open val parentStyleSheet: CSSStyleSheet?
 }

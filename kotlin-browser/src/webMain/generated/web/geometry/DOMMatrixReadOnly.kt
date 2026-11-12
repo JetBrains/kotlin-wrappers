@@ -148,35 +148,35 @@ open external class DOMMatrixReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
      */
-    fun flipX(): DOMMatrix
+    open fun flipX(): DOMMatrix
 
     /**
      * The **`flipY()`** method of the DOMMatrixReadOnly interface creates a new matrix being the result of the original matrix flipped about the y-axis. This is equivalent to multiplying the matrix by DOMMatrix(1, 0, 0, -1, 0, 0). The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipY)
      */
-    fun flipY(): DOMMatrix
+    open fun flipY(): DOMMatrix
 
     /**
      * The **`inverse()`** method of the DOMMatrixReadOnly interface creates a new matrix which is the inverse of the original matrix. If the matrix cannot be inverted, the new matrix's components are all set to NaN and its is2D property is set to false. The original matrix is not changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/inverse)
      */
-    fun inverse(): DOMMatrix
+    open fun inverse(): DOMMatrix
 
     /**
      * The **`multiply()`** method of the DOMMatrixReadOnly interface creates and returns a new matrix which is the dot product of the matrix and the otherMatrix parameter. If otherMatrix is omitted, the matrix is multiplied by a matrix in which every element is 0 except the bottom-right corner and the element immediately above and to its left: m33 and m34. These have the default value of 1. The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/multiply)
      */
-    fun multiply(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
+    open fun multiply(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
 
     /**
      * The **`rotate()`** method of the DOMMatrixReadOnly interface returns a new DOMMatrix created by rotating the source matrix around each of its axes by the specified number of degrees. The original matrix is not altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotate)
      */
-    fun rotate(
+    open fun rotate(
         rotX: Double = definedExternally,
         rotY: Double = definedExternally,
         rotZ: Double = definedExternally,
@@ -187,7 +187,7 @@ open external class DOMMatrixReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateAxisAngle)
      */
-    fun rotateAxisAngle(
+    open fun rotateAxisAngle(
         x: Double = definedExternally,
         y: Double = definedExternally,
         z: Double = definedExternally,
@@ -199,7 +199,7 @@ open external class DOMMatrixReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/rotateFromVector)
      */
-    fun rotateFromVector(
+    open fun rotateFromVector(
         x: Double = definedExternally,
         y: Double = definedExternally,
     ): DOMMatrix
@@ -209,7 +209,7 @@ open external class DOMMatrixReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale)
      */
-    fun scale(
+    open fun scale(
         scaleX: Double = definedExternally,
         scaleY: Double = definedExternally,
         scaleZ: Double = definedExternally,
@@ -223,7 +223,7 @@ open external class DOMMatrixReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale3d)
      */
-    fun scale3d(
+    open fun scale3d(
         scale: Double = definedExternally,
         originX: Double = definedExternally,
         originY: Double = definedExternally,
@@ -235,49 +235,49 @@ open external class DOMMatrixReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewX)
      */
-    fun skewX(sx: Double = definedExternally): DOMMatrix
+    open fun skewX(sx: Double = definedExternally): DOMMatrix
 
     /**
      * The **`skewY()`** method of the DOMMatrixReadOnly interface returns a new DOMMatrix created by applying the specified skew transformation to the source matrix along its y-axis. The original matrix is not modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/skewY)
      */
-    fun skewY(sy: Double = definedExternally): DOMMatrix
+    open fun skewY(sy: Double = definedExternally): DOMMatrix
 
     /**
      * The **`toFloat32Array()`** method of the DOMMatrixReadOnly interface returns a new Float32Array containing all 16 elements (m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44) which comprise the matrix. The elements are stored into the array as single-precision floating-point numbers in column-major (colexographical access, or "colex") order. (In other words, down the first column from top to bottom, then the second column, and so forth.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
      */
-    fun toFloat32Array(): Float32Array<ArrayBuffer>
+    open fun toFloat32Array(): Float32Array<ArrayBuffer>
 
     /**
      * The **`toFloat64Array()`** method of the DOMMatrixReadOnly interface returns a new Float64Array containing all 16 elements (m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44) which comprise the matrix. The elements are stored into the array as double-precision floating-point numbers in column-major (colexographical access, or "colex") order. (In other words, down the first column from top to bottom, then the second column, and so forth.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat64Array)
      */
-    fun toFloat64Array(): Float64Array<ArrayBuffer>
+    open fun toFloat64Array(): Float64Array<ArrayBuffer>
 
     /**
      * The **`toJSON()`** method of the DOMMatrixReadOnly interface creates and returns a JSON object. The JSON object includes the 2D matrix elements a through f, the 16 elements of the 4X4 3D matrix, m[1-4][1-4], the boolean is2D property, and the boolean isIdentity property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 
     /**
      * The **`transformPoint`** method of the DOMMatrixReadOnly interface creates a new DOMPoint object, transforming a specified point by the matrix. Neither the matrix nor the original point are altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/transformPoint)
      */
-    fun transformPoint(point: DOMPointReadOnly = definedExternally): DOMPoint
+    open fun transformPoint(point: DOMPointReadOnly = definedExternally): DOMPoint
 
     /**
      * The **`translate()`** method of the DOMMatrixReadOnly interface creates a new matrix being the result of the original matrix with a translation applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate)
      */
-    fun translate(
+    open fun translate(
         tx: Double = definedExternally,
         ty: Double = definedExternally,
         tz: Double = definedExternally,

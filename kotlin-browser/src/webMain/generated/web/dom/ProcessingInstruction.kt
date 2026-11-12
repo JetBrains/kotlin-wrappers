@@ -18,5 +18,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProcessingInstruction/target)
      */
-    val target: String
+    open val target: String
 }

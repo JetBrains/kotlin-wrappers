@@ -36,77 +36,77 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/accept)
      */
-    var accept: String
+    open var accept: String
 
     /**
      * The **`alt`** property of the HTMLInputElement interface defines the textual label for the button for users and user agents who cannot use the image. It reflects the <input> element's alt attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alt)
      */
-    var alt: String
+    open var alt: String
 
     /**
      * The **`autocomplete`** property of the HTMLInputElement interface indicates whether the value of the control can be automatically completed by the browser. It reflects the <input> element's autocomplete attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/autocomplete)
      */
-    var autocomplete: AutoFill
+    open var autocomplete: AutoFill
 
     /**
      * The **`capture`** property of the HTMLInputElement interface reflects the <input> element's capture attribute. Only relevant to the <input> of type file, the property and attribute specify whether, a new file should be captured from a user-facing (user) or outward facing (environment) camera or microphone. The type of file is defined the accept attribute. If the attribute is not explicitly set, the capture property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/capture)
      */
-    var capture: String
+    open var capture: String
 
     /**
      * The **`checked`** property of the HTMLInputElement interface specifies the current checkedness of the element; that is, whether the form control is checked or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checked)
      */
-    var checked: Boolean
+    open var checked: Boolean
 
     /**
      * The **`colorSpace`** property of the HTMLInputElement interface reflects the <input> element's colorspace attribute, which indicates whether the color space of the serialized CSS color is sRGB (the default) or display-p3. It is only relevant to color controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/colorSpace)
      */
-    var colorSpace: String
+    open var colorSpace: String
 
     /**
      * The **`defaultChecked`** property of the HTMLInputElement interface specifies the default checkedness state of the element. This property reflects the <input> element's checked attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultChecked)
      */
-    var defaultChecked: Boolean
+    open var defaultChecked: Boolean
 
     /**
      * The **`defaultValue`** property of the HTMLInputElement interface indicates the original (or default) value of the <input> element. It reflects the element's value attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue)
      */
-    var defaultValue: String
+    open var defaultValue: String
 
     /**
      * The **`dirName`** property of the HTMLInputElement interface is the directionality of the element and enables the submission of that value. It reflects the value of the <input> element's dirName attribute. This property can be retrieved or set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/dirName)
      */
-    var dirName: String
+    open var dirName: String
 
     /**
      * The **`HTMLInputElement.disabled`** property is a boolean value that reflects the disabled HTML attribute, which indicates whether the control is disabled. If it is disabled, it does not accept clicks. A disabled element is unusable and un-clickable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled)
      */
-    var disabled: Boolean
+    open var disabled: Boolean
 
     /**
      * The **`HTMLInputElement.files`** property allows you to access the FileList selected with the <input type="file"> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/files)
      */
-    var files: FileList?
+    open var files: FileList?
 
     /**
      * The **`form`** read-only property of the HTMLInputElement interface returns an HTMLFormElement object that owns this <input>, or null if this input is not owned by any form.
@@ -120,49 +120,49 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formAction)
      */
-    var formAction: String
+    open var formAction: String
 
     /**
      * The **`formEnctype`** property of the HTMLInputElement interface is the MIME type of the content sent to the server when the <input> with the formEnctype is the method of form submission. It reflects the value of the <input>'s formenctype attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formEnctype)
      */
-    var formEnctype: FormEncType
+    open var formEnctype: FormEncType
 
     /**
      * The **`formMethod`** property of the HTMLInputElement interface is the HTTP method used to submit the <form> if the <input> element is the control that submits the form. It reflects the value of the <input>'s formmethod attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formMethod)
      */
-    var formMethod: FormMethod
+    open var formMethod: FormMethod
 
     /**
      * The **`formNoValidate`** property of the HTMLInputElement interface is a boolean value indicating if the <form> will bypass constraint validation when submitted via the <input>. It reflects the <input> element's formnovalidate attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formNoValidate)
      */
-    var formNoValidate: Boolean
+    open var formNoValidate: Boolean
 
     /**
      * The **`formTarget`** property of the HTMLInputElement interface is the tab, window, or iframe where the response of the submitted <form> is to be displayed. It reflects the value of the <input> element's formtarget attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formTarget)
      */
-    var formTarget: WindowName
+    open var formTarget: WindowName
 
     /**
      * The **`height`** property of the HTMLInputElement interface specifies the height of a control. It reflects the <input> element's height attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/height)
      */
-    var height: Int
+    open var height: Int
 
     /**
      * The **`indeterminate`** property of the HTMLInputElement interface returns a boolean value that indicates whether the checkbox is in the indeterminate state. For example, a "select all/deselect all" checkbox may be in the indeterminate state when some but not all of its sub-controls are checked. The indeterminate state can only be set via JavaScript and is only relevant to checkbox controls.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/indeterminate)
      */
-    var indeterminate: Boolean
+    open var indeterminate: Boolean
 
     /**
      * The **`HTMLInputElement.labels`** read-only property returns a NodeList of the <label> elements associated with the <input> element, if the element is not hidden. If the element has the type hidden, the property returns null.
@@ -176,42 +176,42 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/list)
      */
-    val list: HTMLDataListElement?
+    open val list: HTMLDataListElement?
 
     /**
      * The **`max`** property of the HTMLInputElement interface reflects the <input> element's max attribute, which generally defines the maximum valid value for a numeric or date-time input. If the attribute is not explicitly set, the max property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max)
      */
-    var max: String
+    open var max: String
 
     /**
      * The **`maxLength`** property of the HTMLInputElement interface indicates the maximum number of characters (in UTF-16 code units) allowed to be entered for the value of the <input> element, and the maximum number of characters allowed for the value to be valid. It reflects the element's maxlength attribute. -1 means there is no limit on the length of the value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength)
      */
-    var maxLength: Int
+    open var maxLength: Int
 
     /**
      * The **`min`** property of the HTMLInputElement interface reflects the <input> element's min attribute, which generally defines the minimum valid value for a numeric or date-time input. If the attribute is not explicitly set, the min property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min)
      */
-    var min: String
+    open var min: String
 
     /**
      * The **`minLength`** property of the HTMLInputElement interface indicates the minimum number of characters (in UTF-16 code units) required for the value of the <input> element to be valid. It reflects the element's minlength attribute. -1 means there is no minimum length requirement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength)
      */
-    var minLength: Int
+    open var minLength: Int
 
     /**
      * The **`HTMLInputElement.multiple`** property indicates if an input can have more than one value. Firefox currently only supports multiple for <input type="file">.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/multiple)
      */
-    var multiple: Boolean
+    open var multiple: Boolean
 
     /**
      * The **`name`** property of the HTMLInputElement interface indicates the name of the <input> element. It reflects the element's name attribute.
@@ -225,77 +225,77 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/pattern)
      */
-    var pattern: String
+    open var pattern: String
 
     /**
      * The **`placeholder`** property of the HTMLInputElement interface represents a hint to the user of what can be entered in the control. It reflects the <input> element's placeholder attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/placeholder)
      */
-    var placeholder: String
+    open var placeholder: String
 
     /**
      * The **`readOnly`** property of the HTMLInputElement interface indicates that the user cannot modify the value of the <input>. It reflects the <input> element's readonly boolean attribute; returning true if the attribute is present and false when omitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/readOnly)
      */
-    var readOnly: Boolean
+    open var readOnly: Boolean
 
     /**
      * The **`required`** property of the HTMLInputElement interface specifies that the user must fill in a value before submitting a form. It reflects the <input> element's required attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/required)
      */
-    var required: Boolean
+    open var required: Boolean
 
     /**
      * The **`selectionDirection`** property of the HTMLInputElement interface is a string that indicates the direction in which the user is selecting the text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionDirection)
      */
-    var selectionDirection: SelectionDirection?
+    open var selectionDirection: SelectionDirection?
 
     /**
      * The **`selectionEnd`** property of the HTMLInputElement interface is a number that represents the end index of the selected text. That is, it represents the index of the character immediately following the selection. Likewise, when there is no selection, this returns the offset of the character immediately following the current text input cursor position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd)
      */
-    var selectionEnd: Int?
+    open var selectionEnd: Int?
 
     /**
      * The **`selectionStart`** property of the HTMLInputElement interface is a number that represents the beginning index of the selected text. When nothing is selected, then returns the position of the text input cursor (caret) inside of the <input> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
      */
-    var selectionStart: Int?
+    open var selectionStart: Int?
 
     /**
      * The **`size`** property of the HTMLInputElement interface defines the number of visible characters displayed. It reflects the <input> element's size attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/size)
      */
-    var size: Int
+    open var size: Int
 
     /**
      * The **`src`** property of the HTMLInputElement interface specifies the source of an image to display as the graphical submit button. It reflects the <input> element's src attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/src)
      */
-    var src: String
+    open var src: String
 
     /**
      * The **`step`** property of the HTMLInputElement interface indicates the step by which numeric or date-time <input> elements can change. It reflects the element's step attribute. Valid values include the string "any" or a string containing a positive floating point number. If the attribute is not explicitly set, the step property is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/step)
      */
-    var step: String
+    open var step: String
 
     /**
      * The **`type`** property of the HTMLInputElement interface indicates the kind of data allowed in the <input> element, for example a number, a date, or an email. Browsers will select the appropriate widget and behavior to help users to enter a valid value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/type)
      */
-    var type: InputType
+    open var type: InputType
 
     /**
      * The **`validationMessage`** read-only property of the HTMLInputElement interface returns a string representing a localized message that describes the validation constraints that the <input> control does not satisfy (if any).
@@ -316,42 +316,42 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/value)
      */
-    var value: String
+    open var value: String
 
     /**
      * The **`valueAsDate`** property of the HTMLInputElement interface represents the current value of the <input> element as a Date, or null if conversion is not possible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/valueAsDate)
      */
-    var valueAsDate: Date?
+    open var valueAsDate: Date?
 
     /**
      * The **`valueAsNumber`** property of the HTMLInputElement interface represents the current value of the <input> element as a number or NaN if converting to a numeric value is not possible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/valueAsNumber)
      */
-    var valueAsNumber: Double
+    open var valueAsNumber: Double
 
     /**
      * The read-only **`webkitEntries`** property of the HTMLInputElement interface contains an array of file system entries (as objects based on FileSystemEntry) representing files and/or directories selected by the user using an <input> element of type file, but only if that selection was made using drag-and-drop: selecting a file in the dialog will leave the property empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitEntries)
      */
-    val webkitEntries: ReadonlyArray<FileSystemEntry>
+    open val webkitEntries: ReadonlyArray<FileSystemEntry>
 
     /**
      * The **`webkitdirectory`** property of the HTMLInputElement interface reflects the webkitdirectory HTML attribute, which indicates that <input type="file"> elements can only select directories instead of files.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory)
      */
-    var webkitdirectory: Boolean
+    open var webkitdirectory: Boolean
 
     /**
      * The **`width`** property of the HTMLInputElement interface specifies the width of a control. It reflects the <input> element's width attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/width)
      */
-    var width: Int
+    open var width: Int
 
     /**
      * The **`willValidate`** read-only property of the HTMLInputElement interface indicates whether the <input> element is a candidate for constraint validation. It is false if any conditions bar it from constraint validation, including:
@@ -379,22 +379,22 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/select)
      */
-    fun select()
+    open fun select()
 
     /**
      * The **`HTMLInputElement.setCustomValidity()`** method sets a custom validity message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    open fun setCustomValidity(error: String)
 
     /**
      * The **`HTMLInputElement.setRangeText()`** method replaces a range of text in an <input> or <textarea> element with a new string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setRangeText)
      */
-    fun setRangeText(replacement: String)
-    fun setRangeText(
+    open fun setRangeText(replacement: String)
+    open fun setRangeText(
         replacement: String,
         start: Int,
         end: Int,
@@ -407,7 +407,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */
     @JsThrows(InvalidStateError::class)
-    fun setSelectionRange(
+    open fun setSelectionRange(
         start: Int?,
         end: Int?,
         direction: SelectionDirection = definedExternally,
@@ -421,21 +421,21 @@ protected constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
-    fun showPicker()
+    open fun showPicker()
 
     /**
      * The **`HTMLInputElement.stepDown()`** method decrements the value of a numeric type of <input> element by the value of the step attribute or up to n multiples of the step attribute if a number is passed as the parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepDown)
      */
-    fun stepDown(n: Int = definedExternally)
+    open fun stepDown(n: Int = definedExternally)
 
     /**
      * The **`HTMLInputElement.stepUp()`** method increments the value of a numeric type of <input> element by the value of the step attribute, or the default step value if the step attribute is not explicitly set. The method, when invoked, increments the value by (step * n), where n defaults to 1 if not specified, and step defaults to the default value for step if not specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
      */
-    fun stepUp(n: Int = definedExternally)
+    open fun stepUp(n: Int = definedExternally)
 }
 
 /**

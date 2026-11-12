@@ -8,9 +8,9 @@ package web.credentials
 open external class DigitalCredential
 private constructor() :
     Credential {
-    val data: JsAny?
-    val protocol: DigitalCredentialPresentationProtocol
-    fun toJSON(): JsAny
+    open val data: JsAny?
+    open val protocol: DigitalCredentialPresentationProtocol
+    open fun toJSON(): JsAny
 
     companion object {
         fun userAgentAllowsProtocol(protocol: String): Boolean

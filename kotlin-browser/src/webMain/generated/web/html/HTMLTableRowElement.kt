@@ -18,21 +18,21 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/cells)
      */
-    val cells: HTMLCollection<HTMLTableCellElement>
+    open val cells: HTMLCollection<HTMLTableCellElement>
 
     /**
      * The **`rowIndex`** read-only property of the HTMLTableRowElement interface represents the position of a row within the whole <table>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/rowIndex)
      */
-    val rowIndex: Int
+    open val rowIndex: Int
 
     /**
      * The **`sectionRowIndex`** read-only property of the HTMLTableRowElement interface represents the position of a row within the current section (<thead>, <tbody>, or <tfoot>).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/sectionRowIndex)
      */
-    val sectionRowIndex: Int
+    open val sectionRowIndex: Int
 
     /**
      * The **`deleteCell()`** method of the HTMLTableRowElement interface removes a specific row cell from a given <tr>.
@@ -40,7 +40,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/deleteCell)
      */
     @JsThrows(IndexSizeError::class)
-    fun deleteCell(index: Int)
+    open fun deleteCell(index: Int)
 
     /**
      * The **`insertCell()`** method of the HTMLTableRowElement interface inserts a new cell (<td>) into a table row (<tr>) and returns a reference to the cell.
@@ -48,5 +48,5 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/insertCell)
      */
     @JsThrows(IndexSizeError::class)
-    fun insertCell(index: Int = definedExternally): HTMLTableCellElement
+    open fun insertCell(index: Int = definedExternally): HTMLTableCellElement
 }

@@ -20,12 +20,12 @@ open external class SpeechRecognitionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionEvent/resultIndex)
      */
-    val resultIndex: Int
+    open val resultIndex: Int
 
     /**
      * The **`results`** read-only property of the SpeechRecognitionEvent interface returns a SpeechRecognitionResultList object representing all the speech recognition results for the current session.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionEvent/results)
      */
-    val results: SpeechRecognitionResultList
+    open val results: SpeechRecognitionResultList
 }

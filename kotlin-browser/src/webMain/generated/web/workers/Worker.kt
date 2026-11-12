@@ -39,22 +39,22 @@ open external class Worker(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
      */
-    fun postMessage(
+    open fun postMessage(
         message: JsAny?,
         transfer: ReadonlyArray<Transferable>,
     )
 
-    fun postMessage(
+    open fun postMessage(
         message: String,
         transfer: ReadonlyArray<Transferable>,
     )
 
-    fun postMessage(
+    open fun postMessage(
         message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
 
-    fun postMessage(
+    open fun postMessage(
         message: String,
         options: StructuredSerializeOptions = definedExternally,
     )
@@ -64,7 +64,7 @@ open external class Worker(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
      */
-    fun terminate()
+    open fun terminate()
 }
 
 /**

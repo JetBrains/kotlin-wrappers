@@ -25,14 +25,14 @@ open external class ClipboardItem(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle)
      */
-    val presentationStyle: PresentationStyle
+    open val presentationStyle: PresentationStyle
 
     /**
      * The read-only **`types`** property of the ClipboardItem interface returns an Array of MIME types available within the ClipboardItem.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
      */
-    val types: ReadonlyArray<JsString>
+    open val types: ReadonlyArray<JsString>
 
     /**
      * The **`getType()`** method of the ClipboardItem interface returns a Promise that resolves with a Blob of the requested MIME type or an error if the MIME type is not found.
@@ -41,7 +41,7 @@ open external class ClipboardItem(
      */
     @JsThrows(NotFoundError::class)
     @JsName("getType")
-    fun getTypeAsync(type: String): Promise<Blob>
+    open fun getTypeAsync(type: String): Promise<Blob>
 
     companion object {
         /**

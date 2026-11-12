@@ -67,205 +67,205 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/URL)
      */
-    val URL: String
+    open val URL: String
 
     /**
      * The **`activeViewTransition`** read-only property of the Document interface returns a ViewTransition instance representing the view transition currently active on the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/activeViewTransition)
      */
-    val activeViewTransition: ViewTransition?
+    open val activeViewTransition: ViewTransition?
 
     /**
      * The **`Document.body`** property represents the <body> or <frameset> node of the current document, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/body)
      */
-    var body: HTMLElement
+    open var body: HTMLElement
 
     /**
      * The **`Document.characterSet`** read-only property returns the character encoding of the document that it's currently rendered with.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/characterSet)
      */
-    val characterSet: String
+    open val characterSet: String
 
     /**
      * The **`Document.compatMode`** read-only property indicates whether the document is rendered in Quirks mode or Standards mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/compatMode)
      */
-    val compatMode: String
+    open val compatMode: String
 
     /**
      * The **`Document.contentType`** read-only property returns the MIME type that the document is being rendered as. This may come from HTTP headers or other sources of MIME information, and might be affected by automatic type conversions performed by either the browser or extensions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/contentType)
      */
-    val contentType: String
+    open val contentType: String
 
     /**
      * The Document property **`cookie`** lets you read and write cookies associated with the document. It serves as a getter and setter for the actual values of the cookies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/cookie)
      */
-    var cookie: String
+    open var cookie: String
 
     /**
      * The **`Document.currentScript`** property returns the <script> element whose script is currently being processed and isn't a JavaScript module. (For modules use import.meta instead.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/currentScript)
      */
-    val currentScript: HTMLOrSVGScriptElement?
+    open val currentScript: HTMLOrSVGScriptElement?
 
     /**
      * In browsers, **`document.defaultView`** returns the window object associated with a document, or null if none is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/defaultView)
      */
-    val defaultView: WindowProxy?
+    open val defaultView: WindowProxy?
 
     /**
      * **`document.designMode`** controls whether the entire document is editable. Valid values are "on" and "off". According to the specification, this property is meant to default to "off". Firefox follows this standard. The earlier versions of Chrome and IE default to "inherit". Starting in Chrome 43, the default is "off" and "inherit" is no longer supported. In IE6-10, the value is capitalized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/designMode)
      */
-    var designMode: String
+    open var designMode: String
 
     /**
      * The **`Document.dir`** property is a string representing the directionality of the text of the document, whether left to right (default) or right to left. Possible values are 'rtl', right to left, and 'ltr', left to right.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dir)
      */
-    var dir: String
+    open var dir: String
 
     /**
      * The **`doctype`** read-only property of the Document interface is a DocumentType object representing the Document Type Declaration (DTD) associated with the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/doctype)
      */
-    val doctype: DocumentType?
+    open val doctype: DocumentType?
 
     /**
      * The **`documentElement`** read-only property of the Document interface returns the Element that is the root element of the document (for example, the <html> element for HTML documents).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/documentElement)
      */
-    val documentElement: HTMLElement
+    open val documentElement: HTMLElement
 
     /**
      * The **`documentURI`** read-only property of the Document interface returns the document location as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/documentURI)
      */
-    val documentURI: String
+    open val documentURI: String
 
     /**
      * The **`embeds`** read-only property of the Document interface returns a list of the embedded <embed> elements within the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/embeds)
      */
-    val embeds: HTMLCollection<HTMLEmbedElement>
+    open val embeds: HTMLCollection<HTMLEmbedElement>
 
     /**
      * The **`forms`** read-only property of the Document interface returns an HTMLCollection listing all the <form> elements contained in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/forms)
      */
-    val forms: HTMLCollection<HTMLFormElement>
+    open val forms: HTMLCollection<HTMLFormElement>
 
     /**
      * The **`fragmentDirective`** read-only property of the Document interface returns the FragmentDirective for the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fragmentDirective)
      */
-    val fragmentDirective: FragmentDirective
+    open val fragmentDirective: FragmentDirective
 
     /**
      * The read-only **`fullscreenEnabled`** property on the Document interface indicates whether or not fullscreen mode is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenEnabled)
      */
-    val fullscreenEnabled: Boolean
+    open val fullscreenEnabled: Boolean
 
     /**
      * The **`head`** read-only property of the Document interface returns the <head> element of the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/head)
      */
-    val head: HTMLHeadElement
+    open val head: HTMLHeadElement
 
     /**
      * The **`Document.hidden`** read-only property returns a Boolean value indicating if the page is considered hidden or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hidden)
      */
-    val hidden: Boolean
+    open val hidden: Boolean
 
     /**
      * The **`images`** read-only property of the Document interface returns a collection of the images in the current HTML document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/images)
      */
-    val images: HTMLCollection<HTMLImageElement>
+    open val images: HTMLCollection<HTMLImageElement>
 
     /**
      * The **`Document.implementation`** property returns a DOMImplementation object associated with the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/implementation)
      */
-    val implementation: DOMImplementation
+    open val implementation: DOMImplementation
 
     /**
      * The **`lastModified`** property of the Document interface returns a string containing the date and local time on which the current document was last modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/lastModified)
      */
-    val lastModified: String
+    open val lastModified: String
 
     /**
      * The **`links`** read-only property of the Document interface returns a collection of all <area> elements and <a> elements in a document with a value for the href attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/links)
      */
-    val links: HTMLCollection<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
+    open val links: HTMLCollection<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
 
     /**
      * The read-only **`location`** property of the Document interface returns a Location object, which contains information about the URL of the document and provides methods for changing that URL and loading another URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/location)
      */
-    val location: Location
+    open val location: Location
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenchange_event)
      */
-    var onfullscreenchange: EventHandler<Event, Document, Node>?
+    open var onfullscreenchange: EventHandler<Event, Document, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fullscreenerror_event)
      */
-    var onfullscreenerror: EventHandler<Event, Document, Node>?
+    open var onfullscreenerror: EventHandler<Event, Document, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockchange_event)
      */
-    var onpointerlockchange: EventHandler<Event, Document, Document>?
+    open var onpointerlockchange: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerlockerror_event)
      */
-    var onpointerlockerror: EventHandler<Event, Document, Document>?
+    open var onpointerlockerror: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event, Document, Document>?
+    open var onreadystatechange: EventHandler<Event, Document, Document>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
-    var onvisibilitychange: EventHandler<Event, Document, Window>?
+    open var onvisibilitychange: EventHandler<Event, Document, Window>?
 
     @Suppress("WRONG_JS_INTEROP_TYPE")
     override val ownerDocument: Void
@@ -275,77 +275,77 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled)
      */
-    val pictureInPictureEnabled: Boolean
+    open val pictureInPictureEnabled: Boolean
 
     /**
      * The **`plugins`** read-only property of the Document interface returns an HTMLCollection object containing one or more HTMLEmbedElements representing the <embed> elements in the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/plugins)
      */
-    val plugins: HTMLCollection<HTMLEmbedElement>
+    open val plugins: HTMLCollection<HTMLEmbedElement>
 
     /**
      * The **`Document.readyState`** property describes the loading state of the document. When the value of this property changes, a readystatechange event fires on the document object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readyState)
      */
-    val readyState: DocumentReadyState
+    open val readyState: DocumentReadyState
 
     /**
      * The **`Document.referrer`** property returns the URI of the page that linked to this page.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/referrer)
      */
-    val referrer: String
+    open val referrer: String
 
     /**
      * The **`scripts`** property of the Document interface returns a list of the <script> elements in the document. The returned object is an HTMLCollection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scripts)
      */
-    val scripts: HTMLCollection<HTMLScriptElement>
+    open val scripts: HTMLCollection<HTMLScriptElement>
 
     /**
      * The **`scrollingElement`** read-only property of the Document interface returns a reference to the Element that scrolls the document. In standards mode, this is the root element of the document, document.documentElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement)
      */
-    val scrollingElement: Element?
+    open val scrollingElement: Element?
 
     /**
      * The **`timeline`** readonly property of the Document interface represents the default timeline of the current document. This timeline is a special instance of DocumentTimeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline)
      */
-    val timeline: DocumentTimeline
+    open val timeline: DocumentTimeline
 
     /**
      * The **`document.title`** property gets or sets the current title of the document. When present, it defaults to the value of the <title>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/title)
      */
-    var title: String
+    open var title: String
 
     /**
      * The **`Document.visibilityState`** read-only property returns the visibility of the document. It can be used to check whether the document is in the background or in a minimized window, or is otherwise not visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilityState)
      */
-    val visibilityState: DocumentVisibilityState
+    open val visibilityState: DocumentVisibilityState
 
     /**
      * **`Document.adoptNode()`** transfers a node from another document into the method's document. The adopted node and its subtree are removed from their original document (if any), and their ownerDocument is changed to the current document. The node can then be inserted into the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptNode)
      */
-    fun <T : Node> adoptNode(node: T): T
+    open fun <T : Node> adoptNode(node: T): T
 
     /**
      * The **`caretPositionFromPoint()`** method of the Document interface returns a CaretPosition object, containing the DOM node, along with the caret and caret's character offset within that node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint)
      */
-    fun caretPositionFromPoint(
+    open fun caretPositionFromPoint(
         x: Double,
         y: Double,
         options: CaretPositionFromPointOptions = definedExternally,
@@ -356,7 +356,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/close)
      */
-    fun close()
+    open fun close()
 
     /**
      * The **`createAttribute()`** method of the Document interface creates a new attribute node.
@@ -364,7 +364,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttribute)
      */
     @JsThrows(InvalidCharacterError::class)
-    fun createAttribute(localName: String): Attr
+    open fun createAttribute(localName: String): Attr
 
     /**
      * The **`createAttributeNS()`** method of the Document interface creates a new attribute node with the specified namespace URI and qualified name.
@@ -373,7 +373,7 @@ open external class Document :
      */
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(NamespaceError::class)
-    fun createAttributeNS(
+    open fun createAttributeNS(
         namespace: String?,
         qualifiedName: String,
     ): Attr
@@ -383,40 +383,40 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createCDATASection)
      */
-    fun createCDATASection(data: String): CDATASection
+    open fun createCDATASection(data: String): CDATASection
 
     /**
      * **`createComment()`** creates a new comment node, and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createComment)
      */
-    fun createComment(data: String): Comment
+    open fun createComment(data: String): Comment
 
     /**
      * Creates a new empty DocumentFragment into which DOM nodes can be added to build an offscreen DOM tree.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createDocumentFragment)
      */
-    fun createDocumentFragment(): DocumentFragment
+    open fun createDocumentFragment(): DocumentFragment
 
     /**
      * The **`createElement()`** method of the Document interface creates a new HTMLElement that has the specified localName.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement)
      */
-    fun <T : HTMLElement> createElement(
+    open fun <T : HTMLElement> createElement(
         tagName: TagName<T>,
         options: ElementCreationOptions = definedExternally,
     ): T
 
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(NotSupportedError::class)
-    fun createElement(
+    open fun createElement(
         tagName: String,
         options: ElementCreationOptions = definedExternally,
     ): HTMLElement
 
-    fun <T : Element> createElementNS(
+    open fun <T : Element> createElementNS(
         namespaceURI: TagNamespace<T>,
         qualifiedName: TagName<T>,
     ): T
@@ -424,7 +424,7 @@ open external class Document :
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(NamespaceError::class)
     @JsThrows(NotSupportedError::class)
-    fun createElementNS(
+    open fun createElementNS(
         namespace: String?,
         qualifiedName: String,
         options: String = definedExternally,
@@ -433,7 +433,7 @@ open external class Document :
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(NamespaceError::class)
     @JsThrows(NotSupportedError::class)
-    fun createElementNS(
+    open fun createElementNS(
         namespace: String?,
         qualifiedName: String,
         options: ElementCreationOptions,
@@ -444,7 +444,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createNodeIterator)
      */
-    fun createNodeIterator(
+    open fun createNodeIterator(
         root: Node,
         whatToShow: WhatToShow = definedExternally,
         filter: NodeFilter? = definedExternally,
@@ -456,7 +456,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createProcessingInstruction)
      */
     @JsThrows(InvalidCharacterError::class)
-    fun createProcessingInstruction(
+    open fun createProcessingInstruction(
         target: String,
         data: String,
     ): ProcessingInstruction
@@ -466,21 +466,21 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createRange)
      */
-    fun createRange(): Range
+    open fun createRange(): Range
 
     /**
      * Creates a new Text node. This method can be used to escape HTML characters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createTextNode)
      */
-    fun createTextNode(data: String): Text
+    open fun createTextNode(data: String): Text
 
     /**
      * The **`Document.createTreeWalker()`** creator method returns a newly created TreeWalker object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createTreeWalker)
      */
-    fun createTreeWalker(
+    open fun createTreeWalker(
         root: Node,
         whatToShow: WhatToShow = definedExternally,
         filter: NodeFilter? = definedExternally,
@@ -492,7 +492,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
      */
     @JsName("exitFullscreen")
-    fun exitFullscreenAsync(): Promise<Void>
+    open fun exitFullscreenAsync(): Promise<Void>
 
     /**
      * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to HTMLVideoElement.requestPictureInPicture().
@@ -501,14 +501,14 @@ open external class Document :
      */
     @JsThrows(InvalidStateError::class)
     @JsName("exitPictureInPicture")
-    fun exitPictureInPictureAsync(): Promise<Void>
+    open fun exitPictureInPictureAsync(): Promise<Void>
 
     /**
      * The **`exitPointerLock()`** method of the Document interface asynchronously releases a pointer lock previously requested through Element.requestPointerLock.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPointerLock)
      */
-    fun exitPointerLock()
+    open fun exitPointerLock()
 
     /**
      * The **`getElementById()`** method of the Document interface returns an Element object representing the element whose id property matches the specified string. Since element IDs are required to be unique if specified, they're a useful way to get access to a specific element quickly.
@@ -520,34 +520,34 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
      */
-    fun getElementsByClassName(classNames: ClassName): HTMLCollection<Element>
+    open fun getElementsByClassName(classNames: ClassName): HTMLCollection<Element>
 
     /**
      * The **`getElementsByName()`** method of the Document object returns a NodeList Collection of elements with a given name attribute in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByName)
      */
-    fun getElementsByName(elementName: String): NodeList<HTMLElement>
+    open fun getElementsByName(elementName: String): NodeList<HTMLElement>
 
     /**
      * The **`getElementsByTagName`** method of Document interface returns an HTMLCollection of elements with the given tag name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
      */
-    fun <T : Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>
-    fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
+    open fun <T : Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>
+    open fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
 
     /**
      * Returns a list of elements with the given tag name belonging to the given namespace. The complete document is searched, including the root node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagNameNS)
      */
-    fun <T : Element> getElementsByTagNameNS(
+    open fun <T : Element> getElementsByTagNameNS(
         namespaceURI: TagNamespace<T>,
         localName: TagName<T>,
     ): HTMLCollection<T>
 
-    fun getElementsByTagNameNS(
+    open fun getElementsByTagNameNS(
         namespace: String?,
         localName: String,
     ): HTMLCollection<Element>
@@ -557,14 +557,14 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getSelection)
      */
-    fun getSelection(): Selection?
+    open fun getSelection(): Selection?
 
     /**
      * The **`hasFocus()`** method of the Document interface returns a boolean value indicating whether the document or any element inside the document has focus. This method can be used to determine whether the active element in a document has focus.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasFocus)
      */
-    fun hasFocus(): Boolean
+    open fun hasFocus(): Boolean
 
     /**
      * The **`hasStorageAccess()`** method of the Document interface returns a Promise that resolves with a boolean value indicating whether the document has access to third-party, unpartitioned cookies.
@@ -573,14 +573,14 @@ open external class Document :
      */
     @JsThrows(InvalidStateError::class)
     @JsName("hasStorageAccess")
-    fun hasStorageAccessAsync(): Promise<JsBoolean>
+    open fun hasStorageAccessAsync(): Promise<JsBoolean>
 
     /**
      * The **`importNode()`** method of the Document interface creates a copy of a Node or DocumentFragment from another document, to be inserted into the current document later.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/importNode)
      */
-    fun <T : Node> importNode(
+    open fun <T : Node> importNode(
         node: T,
         subtree: Boolean = definedExternally,
     ): T
@@ -590,7 +590,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/importNode)
      */
-    fun <T : Node> importNode(
+    open fun <T : Node> importNode(
         node: T,
         options: ImportNodeOptions,
     ): T
@@ -600,14 +600,14 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/open)
      */
-    fun open(): Document
-    fun open(
+    open fun open(): Document
+    open fun open(
         url: String,
         name: String,
         features: String,
     ): WindowProxy?
 
-    fun open(
+    open fun open(
         url: URL,
         name: String,
         features: String,
@@ -621,27 +621,27 @@ open external class Document :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
     @JsName("requestStorageAccess")
-    fun requestStorageAccessAsync(): Promise<Void>
+    open fun requestStorageAccessAsync(): Promise<Void>
 
     /**
      * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA) view transition and returns a ViewTransition object to represent it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
-    fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
+    open fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
 
     /**
      * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA) view transition and returns a ViewTransition object to represent it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
-    fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
+    open fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
      */
     @ExperimentalWebApi
-    val modelContext: ModelContext
+    open val modelContext: ModelContext
 
     companion object {
         /**

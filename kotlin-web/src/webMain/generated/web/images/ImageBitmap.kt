@@ -27,14 +27,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/height)
      */
-    val height: Int
+    open val height: Int
 
     /**
      * The **`ImageBitmap.width`** read-only property returns the ImageBitmap object's width in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/width)
      */
-    val width: Int
+    open val width: Int
 
     /**
      * The **`ImageBitmap.close()`** method disposes of all graphical resources associated with an ImageBitmap.

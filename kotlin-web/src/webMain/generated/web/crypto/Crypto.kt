@@ -20,7 +20,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/subtle)
      */
-    val subtle: SubtleCrypto
+    open val subtle: SubtleCrypto
 
     /**
      * The **`Crypto.getRandomValues()`** method lets you get cryptographically strong random values. The array given as the parameter is filled with random numbers (random in its cryptographic meaning).
@@ -28,7 +28,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/getRandomValues)
      */
     @JsThrows.Typed(QuotaExceededError::class)
-    fun <T : ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */> getRandomValues(array: T): T
+    open fun <T : ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */> getRandomValues(array: T): T
 
     /**
      * The **`randomUUID()`** method of the Crypto interface is used to generate a v4 UUID using a cryptographically secure random number generator.
@@ -36,5 +36,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/randomUUID)
      */
-    fun randomUUID(): String
+    open fun randomUUID(): String
 }

@@ -16,5 +16,5 @@ open external class StereoPannerNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StereoPannerNode/pan)
      */
-    val pan: AudioParam
+    open val pan: AudioParam
 }

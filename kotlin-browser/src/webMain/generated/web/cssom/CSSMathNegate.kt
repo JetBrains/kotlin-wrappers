@@ -15,5 +15,5 @@ open external class CSSMathNegate(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathNegate/value)
      */
-    val value: CSSNumericValue
+    open val value: CSSNumericValue
 }

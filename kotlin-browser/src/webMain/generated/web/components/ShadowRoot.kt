@@ -23,64 +23,64 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/clonable)
      */
-    val clonable: Boolean
+    open val clonable: Boolean
 
     /**
      * The **`delegatesFocus`** read-only property of the ShadowRoot interface returns true if the shadow root delegates focus, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/delegatesFocus)
      */
-    val delegatesFocus: Boolean
+    open val delegatesFocus: Boolean
 
     /**
      * The **`host`** read-only property of the ShadowRoot returns a reference to the DOM element the ShadowRoot is attached to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/host)
      */
-    val host: Element
+    open val host: Element
 
     /**
      * The **`innerHTML`** property of the ShadowRoot interface gets or sets the HTML markup to the DOM tree inside the ShadowRoot.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/innerHTML)
      */
-    var innerHTML: HtmlSource
+    open var innerHTML: HtmlSource
 
     /**
      * The **`mode`** read-only property of the ShadowRoot specifies its mode — either open or closed. This defines whether or not the shadow root's internal features are accessible from JavaScript.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode)
      */
-    val mode: ShadowRootMode
-    var onslotchange: EventHandler<Event, ShadowRoot, Node>?
+    open val mode: ShadowRootMode
+    open var onslotchange: EventHandler<Event, ShadowRoot, Node>?
 
     /**
      * The **`serializable`** read-only property of the ShadowRoot interface returns true if the shadow root is serializable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/serializable)
      */
-    val serializable: Boolean
+    open val serializable: Boolean
 
     /**
      * The read-only **`slotAssignment`** property of the ShadowRoot interface returns the slot assignment mode for the shadow DOM tree. Nodes are either automatically assigned (named) or manually assigned (manual). The value of this property defined using the slotAssignment option when calling Element.attachShadow().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/slotAssignment)
      */
-    val slotAssignment: SlotAssignmentMode
+    open val slotAssignment: SlotAssignmentMode
 
     /**
      * The **`getHTML()`** method of the ShadowRoot interface is used to serialize a shadow root's DOM to an HTML string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/getHTML)
      */
-    fun getHTML(options: GetHTMLOptions = definedExternally): String
+    open fun getHTML(options: GetHTMLOptions = definedExternally): String
 
     /**
      * The **`setHTML()`** method of the ShadowRoot interface provides an XSS-safe method to parse and sanitize a string of HTML, which then replaces the existing tree in the Shadow DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTML)
      */
-    fun setHTML(
+    open fun setHTML(
         html: String,
         options: SetHTMLOptions = definedExternally,
     )
@@ -90,7 +90,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTMLUnsafe)
      */
-    fun setHTMLUnsafe(
+    open fun setHTMLUnsafe(
         html: TrustedHTML,
         options: SetHTMLUnsafeOptions = definedExternally,
     )
@@ -100,7 +100,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTMLUnsafe)
      */
-    fun setHTMLUnsafe(
+    open fun setHTMLUnsafe(
         html: String,
         options: SetHTMLUnsafeOptions = definedExternally,
     )

@@ -19,49 +19,49 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/height)
      */
-    var height: Int
+    open var height: Int
 
     /**
      * The **`media`** property of the HTMLSourceElement interface is a string representing the intended destination medium for the resource. The value is a media query, which is a comma separated list of media-types, media-features, and logical operators.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/media)
      */
-    var media: MediaQuery
+    open var media: MediaQuery
 
     /**
      * The **`sizes`** property of the HTMLSourceElement interface is a string representing a list of one or more sizes, representing sizes between breakpoints, to which the resource applies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes)
      */
-    var sizes: String
+    open var sizes: String
 
     /**
      * The **`src`** property of the HTMLSourceElement interface is a string indicating the URL of a media resource to use as the source for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/src)
      */
-    var src: String
+    open var src: String
 
     /**
      * The **`srcset`** property of the HTMLSourceElement interface is a string containing a comma-separated list of candidate images.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset)
      */
-    var srcset: String
+    open var srcset: String
 
     /**
      * The **`type`** property of the HTMLSourceElement interface is a string representing the MIME type of the media resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/type)
      */
-    var type: String
+    open var type: String
 
     /**
      * The **`width`** property of the HTMLSourceElement interface is a non-negative number indicating the width of the image resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
      */
-    var width: Int
+    open var width: Int
 }
 
 /**

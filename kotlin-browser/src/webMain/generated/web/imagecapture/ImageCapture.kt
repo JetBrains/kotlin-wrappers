@@ -24,7 +24,7 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/track)
      */
-    val track: MediaStreamTrack
+    open val track: MediaStreamTrack
 
     /**
      * The **`getPhotoCapabilities()`** method of the ImageCapture interface returns a Promise that resolves with an object containing the ranges of available configuration options.
@@ -34,7 +34,7 @@ open external class ImageCapture(
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
     @JsName("getPhotoCapabilities")
-    fun getPhotoCapabilitiesAsync(): Promise<PhotoCapabilities>
+    open fun getPhotoCapabilitiesAsync(): Promise<PhotoCapabilities>
 
     /**
      * The **`getPhotoSettings()`** method of the ImageCapture interface returns a Promise that resolves with an object containing the current photo configuration settings.
@@ -44,7 +44,7 @@ open external class ImageCapture(
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
     @JsName("getPhotoSettings")
-    fun getPhotoSettingsAsync(): Promise<PhotoSettings>
+    open fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
     /**
      * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with an ImageBitmap containing the snapshot.
@@ -54,7 +54,7 @@ open external class ImageCapture(
     @JsThrows(InvalidStateError::class)
     @JsThrows(UnknownError::class)
     @JsName("grabFrame")
-    fun grabFrameAsync(): Promise<ImageBitmap>
+    open fun grabFrameAsync(): Promise<ImageBitmap>
 
     /**
      * The **`takePhoto()`** method of the ImageCapture interface takes a single exposure using the video capture device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
@@ -64,7 +64,7 @@ open external class ImageCapture(
     @JsThrows(InvalidStateError::class)
     @JsThrows(UnknownError::class)
     @JsName("takePhoto")
-    fun takePhotoAsync(photoSettings: PhotoSettings = definedExternally): Promise<Blob>
+    open fun takePhotoAsync(photoSettings: PhotoSettings = definedExternally): Promise<Blob>
 }
 
 /**

@@ -198,9 +198,10 @@ private fun event(
             .trimIndent()
             .splitToSequence(";\n")
             .mapNotNull { convertMember(it, typeProvider, eventExtensionsCollector) }
+            .map { withOpenModifier(it) }
             .joinToString("\n")
             // Event
-            .replace("val type: String", "    // val type: String")
+            .replace("open val type: String", "    // open val type: String")
     }
 
     val eventClassBody = source
@@ -268,7 +269,6 @@ private fun event(
         null
     }
 
-    val modifier = if (eventConstructor.isNotEmpty()) "open" else ""
     if (eventConstructor.isEmpty()) {
         eventConstructor = "\nprivate constructor()"
         eventParentDeclaration = eventParentDeclaration.replaceFirst(":", ":\n")
@@ -288,7 +288,7 @@ private fun event(
     ).joinToString("\n\n")
 
     var eventBody = """
-    $modifier external class $name$typeParameters $eventConstructor $eventParentDeclaration {
+    open external class $name$typeParameters $eventConstructor $eventParentDeclaration {
         $body
     }
     """.trimIndent() +

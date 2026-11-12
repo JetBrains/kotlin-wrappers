@@ -16,21 +16,21 @@ open external class ProgressEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/lengthComputable)
      */
-    val lengthComputable: Boolean
+    open val lengthComputable: Boolean
 
     /**
      * The **`ProgressEvent.loaded`** read-only property is a number indicating the size of the data already transmitted or processed. The progress ratio can be calculated by dividing the value of this property by ProgressEvent.total.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
      */
-    val loaded: Double
+    open val loaded: Double
 
     /**
      * The **`ProgressEvent.total`** read-only property is a number indicating the total size of the data being transmitted or processed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total)
      */
-    val total: Double
+    open val total: Double
 
     companion object
 }

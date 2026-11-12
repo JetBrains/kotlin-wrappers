@@ -19,5 +19,5 @@ open external class ContentVisibilityAutoStateChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)
      */
-    val skipped: Boolean
+    open val skipped: Boolean
 }

@@ -13,5 +13,5 @@ open external class CSSSkewY(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewY/ay)
      */
-    var ay: CSSNumericValue,
+    open var ay: CSSNumericValue,
 ) : CSSTransformComponent

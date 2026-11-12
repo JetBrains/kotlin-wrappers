@@ -19,35 +19,35 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath)
      */
-    val keyPath: JsAny /* string | string[] */
+    open val keyPath: JsAny /* string | string[] */
 
     /**
      * The **`multiEntry`** read-only property of the IDBIndex interface returns a boolean value that affects how the index behaves when the result of evaluating the index's key path yields an array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/multiEntry)
      */
-    val multiEntry: Boolean
+    open val multiEntry: Boolean
 
     /**
      * The **`name`** property of the IDBIndex interface contains a string which names the index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/name)
      */
-    var name: String
+    open var name: String
 
     /**
      * The **`objectStore`** property of the IDBIndex interface returns the object store referenced by the current index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/objectStore)
      */
-    val objectStore: IDBObjectStore
+    open val objectStore: IDBObjectStore
 
     /**
      * The **`unique`** read-only property returns a boolean that states whether the index allows duplicate keys.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/unique)
      */
-    val unique: Boolean
+    open val unique: Boolean
 
     /**
      * The **`count()`** method of the IDBIndex interface returns an IDBRequest object, and in a separate thread, returns the number of records within a key range.
@@ -57,7 +57,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
+    open fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
 
     /**
      * The **`count()`** method of the IDBIndex interface returns an IDBRequest object, and in a separate thread, returns the number of records within a key range.
@@ -67,7 +67,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun count(query: IDBKeyRange): IDBRequest<JsInt>
+    open fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
      * The **`get()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if key is set to an IDBKeyRange.
@@ -77,7 +77,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun get(query: IDBValidKey): IDBRequest<*>
+    open fun get(query: IDBValidKey): IDBRequest<*>
 
     /**
      * The **`get()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if key is set to an IDBKeyRange.
@@ -87,7 +87,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun get(query: IDBKeyRange): IDBRequest<*>
+    open fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
      * The **`getAll()`** method of the IDBIndex interface retrieves all objects that are inside the index.
@@ -96,7 +96,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAll(
+    open fun getAll(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
@@ -108,7 +108,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAll(
+    open fun getAll(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
@@ -120,7 +120,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAllKeys(
+    open fun getAllKeys(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
@@ -132,7 +132,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAllKeys(
+    open fun getAllKeys(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
@@ -144,7 +144,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAllRecords(options: IDBGetAllOptions = definedExternally): IDBRequest<*>
+    open fun getAllRecords(options: IDBGetAllOptions = definedExternally): IDBRequest<*>
 
     /**
      * The **`getKey()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the primary key that corresponds to the given key in this index or the first corresponding primary key, if key is set to an IDBKeyRange.
@@ -154,7 +154,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
+    open fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
 
     /**
      * The **`getKey()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the primary key that corresponds to the given key in this index or the first corresponding primary key, if key is set to an IDBKeyRange.
@@ -164,7 +164,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
+    open fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
     /**
      * The **`openCursor()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, creates a cursor over the specified key range.
@@ -174,7 +174,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openCursor(
+    open fun openCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursorWithValue?>
@@ -187,7 +187,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openCursor(
+    open fun openCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursorWithValue?>
@@ -200,7 +200,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openKeyCursor(
+    open fun openKeyCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursor?>
@@ -213,7 +213,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openKeyCursor(
+    open fun openKeyCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursor?>

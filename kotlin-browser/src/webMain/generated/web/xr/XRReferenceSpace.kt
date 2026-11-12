@@ -14,8 +14,8 @@ import web.events.EventInstance
 open external class XRReferenceSpace
 private constructor() :
     XRSpace {
-    fun getOffsetReferenceSpace(originOffset: XRRigidTransform): XRReferenceSpace
-    var onreset: EventHandler<XRReferenceSpaceEvent, *, *>
+    open fun getOffsetReferenceSpace(originOffset: XRRigidTransform): XRReferenceSpace
+    open var onreset: EventHandler<XRReferenceSpaceEvent, *, *>
 }
 
 /**

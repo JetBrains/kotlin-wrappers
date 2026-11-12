@@ -23,7 +23,7 @@ private constructor() {
      */
     @JsThrows(SecurityError::class)
     @JsName("setStatus")
-    fun setStatusAsync(status: LoginStatus): Promise<Void>
+    open fun setStatusAsync(status: LoginStatus): Promise<Void>
 }
 
 /**

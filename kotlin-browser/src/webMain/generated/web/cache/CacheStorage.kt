@@ -23,7 +23,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */
     @JsName("delete")
-    fun deleteAsync(cacheName: String): Promise<JsBoolean>
+    open fun deleteAsync(cacheName: String): Promise<JsBoolean>
 
     /**
      * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to true if a Cache object matches the cacheName.
@@ -31,7 +31,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
     @JsName("has")
-    fun hasAsync(cacheName: String): Promise<JsBoolean>
+    open fun hasAsync(cacheName: String): Promise<JsBoolean>
 
     /**
      * The **`keys()`** method of the CacheStorage interface returns a Promise that will resolve with an array containing strings corresponding to all of the named Cache objects tracked by the CacheStorage object in the order they were created. Use this method to iterate over a list of all Cache objects.
@@ -39,7 +39,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
      */
     @JsName("keys")
-    fun keysAsync(): Promise<ReadonlyArray<JsString>>
+    open fun keysAsync(): Promise<ReadonlyArray<JsString>>
 
     /**
      * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
@@ -47,7 +47,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
     @JsName("match")
-    fun matchAsync(
+    open fun matchAsync(
         url: String,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
@@ -58,7 +58,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
     @JsName("match")
-    fun matchAsync(
+    open fun matchAsync(
         url: URL,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
@@ -69,7 +69,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
     @JsName("match")
-    fun matchAsync(
+    open fun matchAsync(
         request: Request,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
@@ -80,7 +80,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
     @JsName("open")
-    fun openAsync(cacheName: String): Promise<Cache>
+    open fun openAsync(cacheName: String): Promise<Cache>
 }
 
 /**

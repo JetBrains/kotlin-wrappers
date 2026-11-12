@@ -16,5 +16,5 @@ open external class CustomEvent<out D : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent/detail)
      */
-    val detail: D
+    open val detail: D
 }

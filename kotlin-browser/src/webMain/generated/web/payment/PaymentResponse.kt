@@ -26,61 +26,61 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/details)
      */
-    val details: JsAny?
+    open val details: JsAny?
 
     /**
      * The **`methodName`** read-only property of the PaymentResponse interface returns a string uniquely identifying the payment handler selected by the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/methodName)
      */
-    val methodName: String
+    open val methodName: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
      */
-    var onpayerdetailchange: EventHandler<PaymentRequestUpdateEvent, PaymentResponse, PaymentResponse>?
+    open var onpayerdetailchange: EventHandler<PaymentRequestUpdateEvent, PaymentResponse, PaymentResponse>?
 
     /**
      * The **`payerEmail`** read-only property of the PaymentResponse interface returns the email address supplied by the user. This option is only present when the requestPayerEmail option is set to true in the options object passed to the PaymentRequest constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerEmail)
      */
-    val payerEmail: String?
+    open val payerEmail: String?
 
     /**
      * The **`payerName`** read-only property of the PaymentResponse interface returns the name supplied by the user. This option is only present when the requestPayerName option is set to true in the options parameter of the PaymentRequest() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerName)
      */
-    val payerName: String?
+    open val payerName: String?
 
     /**
      * The **`payerPhone`** read-only property of the PaymentResponse interface returns the phone number supplied by the user. This option is only present when the requestPayerPhone option is set to true in the options object passed to the PaymentRequest constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerPhone)
      */
-    val payerPhone: String?
+    open val payerPhone: String?
 
     /**
      * The **`requestId`** read-only property of the PaymentResponse interface returns the free-form identifier supplied by the PaymentResponse() constructor by details.id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/requestId)
      */
-    val requestId: String
+    open val requestId: String
 
     /**
      * The **`shippingAddress`** read-only property of the PaymentRequest interface returns a PaymentAddress object containing the shipping address provided by the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingAddress)
      */
-    val shippingAddress: PaymentAddress?
+    open val shippingAddress: PaymentAddress?
 
     /**
      * The **`shippingOption`** read-only property of the PaymentRequest interface returns the ID attribute of the shipping option selected by the user. This option is only present when the requestShipping option is set to true in the options object passed to the PaymentRequest constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingOption)
      */
-    val shippingOption: String?
+    open val shippingOption: String?
 
     /**
      * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user agent that the user interaction is over, and causes any remaining user interface to be closed.
@@ -90,7 +90,7 @@ private constructor() :
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsName("complete")
-    fun completeAsync(result: PaymentComplete = definedExternally): Promise<Void>
+    open fun completeAsync(result: PaymentComplete = definedExternally): Promise<Void>
 
     /**
      * The PaymentResponse interface's **`retry()`** method makes it possible to ask the user to retry a payment after an error occurs during processing.
@@ -98,14 +98,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
      */
     @JsName("retry")
-    fun retryAsync(errorFields: PaymentValidationErrors = definedExternally): Promise<Void>
+    open fun retryAsync(errorFields: PaymentValidationErrors = definedExternally): Promise<Void>
 
     /**
      * The **`toJSON()`** method of the PaymentResponse interface is a serializer; it returns a JSON representation of the PaymentResponse object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 }
 
 /**

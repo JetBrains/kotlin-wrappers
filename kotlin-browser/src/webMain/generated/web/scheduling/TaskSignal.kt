@@ -18,14 +18,14 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskSignal/prioritychange_event)
      */
-    var onprioritychange: EventHandler<TaskPriorityChangeEvent, TaskSignal, TaskSignal>?
+    open var onprioritychange: EventHandler<TaskPriorityChangeEvent, TaskSignal, TaskSignal>?
 
     /**
      * The read-only **`priority`** property of the TaskSignal interface indicates the signal priority.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskSignal/priority)
      */
-    val priority: TaskPriority
+    open val priority: TaskPriority
 
     companion object {
         /**

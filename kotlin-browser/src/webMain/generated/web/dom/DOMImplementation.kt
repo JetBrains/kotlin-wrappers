@@ -21,7 +21,7 @@ private constructor() {
      */
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(NamespaceError::class)
-    fun createDocument(
+    open fun createDocument(
         namespace: String?,
         qualifiedName: String?,
         doctype: DocumentType? = definedExternally,
@@ -32,7 +32,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocumentType)
      */
-    fun createDocumentType(
+    open fun createDocumentType(
         name: String,
         publicId: String,
         systemId: String,
@@ -43,5 +43,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createHTMLDocument)
      */
-    fun createHTMLDocument(title: String = definedExternally): Document
+    open fun createHTMLDocument(title: String = definedExternally): Document
 }

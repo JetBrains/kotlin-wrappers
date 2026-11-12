@@ -22,14 +22,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/canvas)
      */
-    val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
+    open val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
 
     /**
      * The **`ImageBitmapRenderingContext.transferFromImageBitmap()`** method displays the given ImageBitmap in the canvas associated with this rendering context. The ownership of the ImageBitmap is transferred to the canvas as well.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/transferFromImageBitmap)
      */
-    fun transferFromImageBitmap(bitmap: ImageBitmap?)
+    open fun transferFromImageBitmap(bitmap: ImageBitmap?)
 
     companion object
 }

@@ -32,7 +32,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
      */
-    val canvas: OffscreenCanvas
+    open val canvas: OffscreenCanvas
 
     companion object
 }

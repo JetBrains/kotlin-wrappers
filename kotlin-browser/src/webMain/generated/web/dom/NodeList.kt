@@ -24,5 +24,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList/item)
      */
-    fun item(index: Int): T?
+    open fun item(index: Int): T?
 }

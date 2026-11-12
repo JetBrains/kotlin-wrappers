@@ -19,14 +19,14 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
      */
     @JsName("read")
-    fun readAsync(): Promise<ReadableStreamReadResult<R>>
+    open fun readAsync(): Promise<ReadableStreamReadResult<R>>
 
     /**
      * The **`releaseLock()`** method of the ReadableStreamDefaultReader interface releases the reader's lock on the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock)
      */
-    fun releaseLock()
+    open fun releaseLock()
 }
 
 /**

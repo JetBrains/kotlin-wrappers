@@ -19,7 +19,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event)
      */
-    var onended: EventHandler<Event, AudioScheduledSourceNode, AudioScheduledSourceNode>?
+    open var onended: EventHandler<Event, AudioScheduledSourceNode, AudioScheduledSourceNode>?
 
     /**
      * The **`start()`** method on AudioScheduledSourceNode schedules a sound to begin playback at the specified time. If no time is specified, then the sound begins playing immediately.
@@ -27,7 +27,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/start)
      */
     @JsThrows(InvalidStateError::class)
-    fun start(`when`: Double = definedExternally)
+    open fun start(`when`: Double = definedExternally)
 
     /**
      * The **`stop()`** method on AudioScheduledSourceNode schedules a sound to cease playback at the specified time. If no time is specified, then the sound stops playing immediately.
@@ -35,7 +35,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/stop)
      */
     @JsThrows(InvalidStateError::class)
-    fun stop(`when`: Double = definedExternally)
+    open fun stop(`when`: Double = definedExternally)
 }
 
 /**

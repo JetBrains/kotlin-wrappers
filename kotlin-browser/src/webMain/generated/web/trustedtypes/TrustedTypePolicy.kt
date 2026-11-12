@@ -14,14 +14,14 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicy/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The **`createHTML()`** method of the TrustedTypePolicy interface creates a TrustedHTML object using a policy created by TrustedTypePolicyFactory.createPolicy().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicy/createHTML)
      */
-    fun createHTML(
+    open fun createHTML(
         input: String,
         vararg arguments: JsAny?,
     ): TrustedHTML
@@ -31,7 +31,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicy/createScript)
      */
-    fun createScript(
+    open fun createScript(
         input: String,
         vararg arguments: JsAny?,
     ): TrustedScript
@@ -41,7 +41,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicy/createScriptURL)
      */
-    fun createScriptURL(
+    open fun createScriptURL(
         input: String,
         vararg arguments: JsAny?,
     ): TrustedScriptURL

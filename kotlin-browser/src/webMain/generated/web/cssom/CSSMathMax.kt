@@ -15,5 +15,5 @@ open external class CSSMathMax(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathMax/values)
      */
-    val values: CSSNumericArray
+    open val values: CSSNumericArray
 }

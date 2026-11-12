@@ -29,31 +29,31 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/connected)
      */
-    val connected: Boolean
+    open val connected: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/connect_event)
      */
-    var onconnect: EventHandler<Event, SerialPort, Serial>?
+    open var onconnect: EventHandler<Event, SerialPort, Serial>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/disconnect_event)
      */
-    var ondisconnect: EventHandler<Event, SerialPort, Serial>?
+    open var ondisconnect: EventHandler<Event, SerialPort, Serial>?
 
     /**
      * The **`readable`** read-only property of the SerialPort interface returns a ReadableStream for receiving data from the device connected to the port. Chunks read from this stream are instances of Uint8Array. This property is non-null as long as the port is open and has not encountered a fatal error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/readable)
      */
-    val readable: ReadableStream<*>?
+    open val readable: ReadableStream<*>?
 
     /**
      * The **`writable`** read-only property of the SerialPort interface returns a WritableStream for sending data to the device connected to the port. Chunks written to this stream must be instances of ArrayBuffer, TypedArray, or DataView. This property is non-null as long as the port is open and has not encountered a fatal error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/writable)
      */
-    val writable: WritableStream<*>?
+    open val writable: WritableStream<*>?
 
     /**
      * The **`SerialPort.close()`** method of the SerialPort interface returns a Promise that resolves when the port closes.
@@ -61,7 +61,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/close)
      */
     @JsName("close")
-    fun closeAsync(): Promise<Void>
+    open fun closeAsync(): Promise<Void>
 
     /**
      * The **`SerialPort.forget()`** method of the SerialPort interface returns a Promise that resolves when access to the serial port is revoked.
@@ -69,14 +69,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/forget)
      */
     @JsName("forget")
-    fun forgetAsync(): Promise<Void>
+    open fun forgetAsync(): Promise<Void>
 
     /**
      * The **`getInfo()`** method of the SerialPort interface returns an object containing identifying information for the device available via the port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/getInfo)
      */
-    fun getInfo(): SerialPortInfo
+    open fun getInfo(): SerialPortInfo
 
     /**
      * The **`SerialPort.getSignals()`** method of the SerialPort interface returns a Promise that resolves with an object containing the current state of the port's control signals.
@@ -86,7 +86,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
     @JsName("getSignals")
-    fun getSignalsAsync(): Promise<SerialInputSignals>
+    open fun getSignalsAsync(): Promise<SerialInputSignals>
 
     /**
      * The **`open()`** method of the SerialPort interface returns a Promise that resolves when the port is opened. By default the port is opened with 8 data bits, 1 stop bit and no parity checking. The baudRate parameter is required.
@@ -96,7 +96,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
     @JsName("open")
-    fun openAsync(options: SerialOptions): Promise<Void>
+    open fun openAsync(options: SerialOptions): Promise<Void>
 
     /**
      * The **`setSignals()`** method of the SerialPort interface sets control signals on the port and returns a Promise that resolves when they are set.
@@ -106,7 +106,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
     @JsName("setSignals")
-    fun setSignalsAsync(signals: SerialOutputSignals = definedExternally): Promise<Void>
+    open fun setSignalsAsync(signals: SerialOutputSignals = definedExternally): Promise<Void>
 }
 
 /**

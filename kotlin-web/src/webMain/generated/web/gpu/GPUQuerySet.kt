@@ -16,19 +16,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQuerySet/count)
      */
-    val count: GPUSize32Out
+    open val count: GPUSize32Out
 
     /**
      * The **`type`** read-only property of the GPUQuerySet interface is an enumerated value specifying the type of queries managed by the GPUQuerySet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQuerySet/type)
      */
-    val type: GPUQueryType
+    open val type: GPUQueryType
 
     /**
      * The **`destroy()`** method of the GPUQuerySet interface destroys the GPUQuerySet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQuerySet/destroy)
      */
-    fun destroy()
+    open fun destroy()
 }

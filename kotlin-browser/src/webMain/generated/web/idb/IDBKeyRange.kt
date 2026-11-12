@@ -17,28 +17,28 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lower)
      */
-    val lower: JsAny?
+    open val lower: JsAny?
 
     /**
      * The **`lowerOpen`** read-only property of the IDBKeyRange interface returns a boolean indicating whether the lower-bound value is included in the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lowerOpen)
      */
-    val lowerOpen: Boolean
+    open val lowerOpen: Boolean
 
     /**
      * The **`upper`** read-only property of the IDBKeyRange interface returns the upper bound of the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upper)
      */
-    val upper: JsAny?
+    open val upper: JsAny?
 
     /**
      * The **`upperOpen`** read-only property of the IDBKeyRange interface returns a boolean indicating whether the upper-bound value is included in the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upperOpen)
      */
-    val upperOpen: Boolean
+    open val upperOpen: Boolean
 
     /**
      * The **`includes()`** method of the IDBKeyRange interface returns a boolean indicating whether a specified key is inside the key range.
@@ -46,7 +46,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/includes)
      */
     @JsThrows(DataError::class)
-    fun includes(key: JsAny?): Boolean
+    open fun includes(key: JsAny?): Boolean
 
     companion object {
         /**

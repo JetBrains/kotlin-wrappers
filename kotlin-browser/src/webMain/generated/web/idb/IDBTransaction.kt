@@ -25,50 +25,50 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/db)
      */
-    val db: IDBDatabase
+    open val db: IDBDatabase
 
     /**
      * The **`durability`** read-only property of the IDBTransaction interface returns the durability hint the transaction was created with. This is a hint to the user agent of whether to prioritize performance or durability when committing the transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/durability)
      */
-    val durability: IDBTransactionDurability
+    open val durability: IDBTransactionDurability
 
     /**
      * The **`IDBTransaction.error`** property of the IDBTransaction interface returns the type of error when there is an unsuccessful transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error)
      */
-    val error: DOMException?
+    open val error: DOMException?
 
     /**
      * The **`mode`** read-only property of the IDBTransaction interface returns the current mode for accessing the data in the object stores in the scope of the transaction (i.e., is the mode to be read-only, or do you want to write to the object stores?) The default value is readonly.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/mode)
      */
-    val mode: IDBTransactionMode
+    open val mode: IDBTransactionMode
 
     /**
      * The **`objectStoreNames`** read-only property of the IDBTransaction interface returns a DOMStringList of names of IDBObjectStore objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStoreNames)
      */
-    val objectStoreNames: DOMStringList
+    open val objectStoreNames: DOMStringList
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
      */
-    var onabort: EventHandler<Event, IDBTransaction, IDBDatabase>?
+    open var onabort: EventHandler<Event, IDBTransaction, IDBDatabase>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
      */
-    var oncomplete: EventHandler<Event, IDBTransaction, IDBTransaction>?
+    open var oncomplete: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
      */
-    var onerror: EventHandler<Event, IDBTransaction, IDBTransaction>?
+    open var onerror: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
      * The **`abort()`** method of the IDBTransaction interface rolls back all the changes to objects in the database associated with this transaction.
@@ -76,7 +76,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort)
      */
     @JsThrows(InvalidStateError::class)
-    fun abort()
+    open fun abort()
 
     /**
      * The **`commit()`** method of the IDBTransaction interface commits the transaction if it is called on an active transaction.
@@ -84,7 +84,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/commit)
      */
     @JsThrows(InvalidStateError::class)
-    fun commit()
+    open fun commit()
 
     /**
      * The **`objectStore()`** method of the IDBTransaction interface returns an object store that has already been added to the scope of this transaction.
@@ -93,7 +93,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
-    fun objectStore(name: String): IDBObjectStore
+    open fun objectStore(name: String): IDBObjectStore
 }
 
 /**

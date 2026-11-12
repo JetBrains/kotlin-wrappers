@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/animVal)
      */
-    val animVal: SVGAngle
+    open val animVal: SVGAngle
 
     /**
      * The **`baseVal`** read-only property of the SVGAnimatedAngle interface represents the base (non-animated) value of the associated <angle> on an SVG element. This property is used to retrieve the static value of the <angle>, unaffected by any ongoing animations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle/baseVal)
      */
-    val baseVal: SVGAngle
+    open val baseVal: SVGAngle
 }

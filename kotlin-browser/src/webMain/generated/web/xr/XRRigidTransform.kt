@@ -15,8 +15,8 @@ open external class XRRigidTransform(
     position: DOMPointReadOnly = definedExternally,
     direction: DOMPointReadOnly = definedExternally,
 ) {
-    val position: DOMPointReadOnly
-    val orientation: DOMPointReadOnly
-    val matrix: Float32Array<*>
-    val inverse: XRRigidTransform
+    open val position: DOMPointReadOnly
+    open val orientation: DOMPointReadOnly
+    open val matrix: Float32Array<*>
+    open val inverse: XRRigidTransform
 }

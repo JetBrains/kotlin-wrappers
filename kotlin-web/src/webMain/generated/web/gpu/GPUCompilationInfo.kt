@@ -19,5 +19,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationInfo/messages)
      */
-    val messages: ReadonlyArray<GPUCompilationMessage>
+    open val messages: ReadonlyArray<GPUCompilationMessage>
 }

@@ -20,7 +20,7 @@ open external class SubmitEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/submitter)
      */
-    val submitter: HTMLElement?
+    open val submitter: HTMLElement?
 
     companion object
 }

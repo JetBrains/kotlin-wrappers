@@ -18,14 +18,14 @@ open external class Memory<out B : ArrayBufferLike>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/buffer)
      */
-    val buffer: B
+    open val buffer: B
 
     /**
      * The **`grow()`** prototype method of the WebAssembly.Memory object increases the size of the memory instance by a specified number of WebAssembly pages.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/grow)
      */
-    fun grow(delta: AddressValue): AddressValue
-    fun toFixedLengthBuffer(): B
-    fun toResizableBuffer(): B
+    open fun grow(delta: AddressValue): AddressValue
+    open fun toFixedLengthBuffer(): B
+    open fun toResizableBuffer(): B
 }

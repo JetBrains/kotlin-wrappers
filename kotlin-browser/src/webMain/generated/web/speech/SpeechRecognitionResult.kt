@@ -20,7 +20,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult/isFinal)
      */
-    val isFinal: Boolean
+    open val isFinal: Boolean
 
     /**
      * The **`length`** read-only property of the SpeechRecognitionResult interface returns the length of the "array" — the number of SpeechRecognitionAlternative objects contained in the result (also referred to as "n-best alternatives".)
@@ -34,5 +34,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult/item)
      */
-    fun item(index: Int): SpeechRecognitionAlternative?
+    open fun item(index: Int): SpeechRecognitionAlternative?
 }

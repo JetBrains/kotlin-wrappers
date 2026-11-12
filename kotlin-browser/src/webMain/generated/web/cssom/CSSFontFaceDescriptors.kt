@@ -10,23 +10,23 @@ package web.cssom
 open external class CSSFontFaceDescriptors
 private constructor() :
     CSSStyleDeclarationBase {
-    var `font-display`: String
-    var `font-family`: String
-    var `font-feature-settings`: String
-    var `font-stretch`: String
-    var `font-style`: String
-    var `font-weight`: String
-    var `font-width`: String
-    var fontDisplay: String
-    var fontFamily: String
-    var fontFeatureSettings: String
-    var fontStretch: String
-    var fontStyle: String
-    var fontWeight: String
-    var fontWidth: String
-    var `size-adjust`: String
-    var sizeAdjust: String
-    var src: String
-    var `unicode-range`: String
-    var unicodeRange: String
+    open var `font-display`: String
+    open var `font-family`: String
+    open var `font-feature-settings`: String
+    open var `font-stretch`: String
+    open var `font-style`: String
+    open var `font-weight`: String
+    open var `font-width`: String
+    open var fontDisplay: String
+    open var fontFamily: String
+    open var fontFeatureSettings: String
+    open var fontStretch: String
+    open var fontStyle: String
+    open var fontWeight: String
+    open var fontWidth: String
+    open var `size-adjust`: String
+    open var sizeAdjust: String
+    open var src: String
+    open var `unicode-range`: String
+    open var unicodeRange: String
 }

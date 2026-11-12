@@ -26,7 +26,7 @@ private constructor() {
     @JsThrows(AbortError::class)
     @JsThrows(NotAllowedError::class)
     @JsName("create")
-    fun createAsync(options: CredentialCreationOptions = definedExternally): Promise<Credential?>
+    open fun createAsync(options: CredentialCreationOptions = definedExternally): Promise<Credential?>
 
     /**
      * The **`get()`** method of the CredentialsContainer interface returns a Promise that fulfills with a single credential, which can then be used to authenticate a user to a website.
@@ -39,7 +39,7 @@ private constructor() {
     @JsThrows(SecurityError::class)
     @JsThrows(TimeoutError::class)
     @JsName("get")
-    fun getAsync(options: CredentialRequestOptions = definedExternally): Promise<Credential?>
+    open fun getAsync(options: CredentialRequestOptions = definedExternally): Promise<Credential?>
 
     /**
      * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to undefined. For example, you might call this, after a user signs out of a website to ensure that they aren't automatically signed in on the next site visit. Mediation varies by origin, and is an added check point of browser stored credentials, informing a user of an account login status. This method is typically called after a user signs out of a website, ensuring this user's login information is not automatically passed on the next site visit.
@@ -47,7 +47,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
      */
     @JsName("preventSilentAccess")
-    fun preventSilentAccessAsync(): Promise<Void>
+    open fun preventSilentAccessAsync(): Promise<Void>
 
     /**
      * The **`store()`** method of the CredentialsContainer stores a set of credentials for the user inside a Credential instance, returning this in a Promise.
@@ -56,7 +56,7 @@ private constructor() {
      */
     @JsThrows(NotAllowedError::class)
     @JsName("store")
-    fun storeAsync(credential: Credential): Promise<Void>
+    open fun storeAsync(credential: Credential): Promise<Void>
 }
 
 /**

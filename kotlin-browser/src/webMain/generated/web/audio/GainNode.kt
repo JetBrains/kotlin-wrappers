@@ -16,5 +16,5 @@ open external class GainNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GainNode/gain)
      */
-    val gain: AudioParam
+    open val gain: AudioParam
 }

@@ -25,21 +25,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/authenticatorAttachment)
      */
-    val authenticatorAttachment: String?
+    open val authenticatorAttachment: String?
 
     /**
      * The **`rawId`** read-only property of the PublicKeyCredential interface is an ArrayBuffer object containing the identifier of the credentials.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/rawId)
      */
-    val rawId: ArrayBuffer
+    open val rawId: ArrayBuffer
 
     /**
      * The **`response`** read-only property of the PublicKeyCredential interface is an AuthenticatorResponse object which is sent from the authenticator to the user agent for the creation/fetching of credentials. The information contained in this response will be used by the relying party's server to verify the demand is legitimate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/response)
      */
-    val response: AuthenticatorResponse
+    open val response: AuthenticatorResponse
 
     /**
      * The **`getClientExtensionResults()`** method of the PublicKeyCredential interface returns an object mapping the identifiers of extensions requested during credential creation or authentication, and their results after processing by the user agent.
@@ -47,7 +47,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientExtensionResults)
      */
     @JsThrows(SecurityError::class)
-    fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
+    open fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
 
     /**
      * The **`toJSON()`** method of the PublicKeyCredential interface returns a JSON type representation of a PublicKeyCredential.
@@ -55,7 +55,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/toJSON)
      */
     @JsThrows(SecurityError::class)
-    fun toJSON(): JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */
+    open fun toJSON(): JsAny /* RegistrationResponseJSON | AuthenticationResponseJSON */
 
     companion object {
         /**

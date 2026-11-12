@@ -20,14 +20,14 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/sendGroup)
      */
-    var sendGroup: WebTransportSendGroup?
+    open var sendGroup: WebTransportSendGroup?
 
     /**
      * The **`sendOrder`** property of the WebTransportSendStream interface indicates the send priority of this stream relative to other streams for which the value has been set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/sendOrder)
      */
-    var sendOrder: Int53
+    open var sendOrder: Int53
 
     /**
      * The **`getStats()`** method of the WebTransportSendStream interface asynchronously returns an object containing statistics for the current stream.
@@ -35,7 +35,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<WebTransportSendStreamStats>
+    open fun getStatsAsync(): Promise<WebTransportSendStreamStats>
 }
 
 /**

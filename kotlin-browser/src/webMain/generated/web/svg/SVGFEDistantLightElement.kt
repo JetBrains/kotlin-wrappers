@@ -15,12 +15,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDistantLightElement/azimuth)
      */
-    val azimuth: SVGAnimatedNumber
+    open val azimuth: SVGAnimatedNumber
 
     /**
      * The **`elevation`** read-only property of the SVGFEDistantLightElement interface reflects the elevation attribute of the given <feDistantLight> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDistantLightElement/elevation)
      */
-    val elevation: SVGAnimatedNumber
+    open val elevation: SVGAnimatedNumber
 }

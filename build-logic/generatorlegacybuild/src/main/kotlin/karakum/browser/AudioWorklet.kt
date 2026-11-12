@@ -50,7 +50,7 @@ internal fun audioWorkletDeclarations(
                     body = result.body
                         .replace("open external ", "abstract external ")
                         .replace("\nprivate constructor()", "")
-                        .replace("fun process(", "abstract fun process("),
+                        .replace("open fun process(", "abstract fun process("),
                 )
             }
 

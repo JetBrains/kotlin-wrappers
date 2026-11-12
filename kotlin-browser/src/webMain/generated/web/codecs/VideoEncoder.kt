@@ -28,19 +28,19 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encodeQueueSize)
      */
-    val encodeQueueSize: Int
+    open val encodeQueueSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/dequeue_event)
      */
-    var ondequeue: EventHandler<Event, VideoEncoder, VideoEncoder>?
+    open var ondequeue: EventHandler<Event, VideoEncoder, VideoEncoder>?
 
     /**
      * The **`state`** read-only property of the VideoEncoder interface returns the current state of the underlying codec.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/state)
      */
-    val state: CodecState
+    open val state: CodecState
 
     /**
      * The **`close()`** method of the VideoEncoder interface ends all pending work and releases system resources.
@@ -56,7 +56,7 @@ open external class VideoEncoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun configure(config: VideoEncoderConfig)
+    open fun configure(config: VideoEncoderConfig)
 
     /**
      * The **`encode()`** method of the VideoEncoder interface asynchronously encodes a VideoFrame. Encoded data (EncodedVideoChunk) or an error will eventually be returned via the callbacks provided to the VideoEncoder constructor.
@@ -65,7 +65,7 @@ open external class VideoEncoder(
      */
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
-    fun encode(
+    open fun encode(
         frame: VideoFrame,
         options: VideoEncoderEncodeOptions = definedExternally,
     )
@@ -77,7 +77,7 @@ open external class VideoEncoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("flush")
-    fun flushAsync(): Promise<Void>
+    open fun flushAsync(): Promise<Void>
 
     /**
      * The **`reset()`** method of the VideoEncoder interface synchronously cancels all pending encodes and callbacks, frees all underlying resources and sets the state to "unconfigured". After calling reset(), configure() must be called before resuming encode() calls.
@@ -85,7 +85,7 @@ open external class VideoEncoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/reset)
      */
     @JsThrows(InvalidStateError::class)
-    fun reset()
+    open fun reset()
 
     companion object {
         /**

@@ -17,28 +17,28 @@ open external class TransitionEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/animation)
      */
-    val animation: CSSTransition?
+    open val animation: CSSTransition?
 
     /**
      * The **`TransitionEvent.elapsedTime`** read-only property is a float giving the amount of time the animation has been running, in seconds, when this event fired. This value is not affected by the transition-delay property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)
      */
-    val elapsedTime: Double
+    open val elapsedTime: Double
 
     /**
      * The **`propertyName`** read-only property of TransitionEvent objects is a string containing the name of the CSS property associated with the transition.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/propertyName)
      */
-    val propertyName: String
+    open val propertyName: String
 
     /**
      * The **`TransitionEvent.pseudoElement`** read-only property is a string, starting with '::', containing the name of the pseudo-element the animation runs on. If the transition doesn't run on a pseudo-element but on the element, an empty string: "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement)
      */
-    val pseudoElement: String
+    open val pseudoElement: String
 
     companion object
 }

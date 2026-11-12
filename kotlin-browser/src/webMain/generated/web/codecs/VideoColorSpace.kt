@@ -15,33 +15,33 @@ open external class VideoColorSpace(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/fullRange)
      */
-    val fullRange: Boolean?
+    open val fullRange: Boolean?
 
     /**
      * The **`matrix`** read-only property of the VideoColorSpace interface returns the matrix coefficient of the video. Matrix coefficients describe the relationship between sample component values and color coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/matrix)
      */
-    val matrix: VideoMatrixCoefficients?
+    open val matrix: VideoMatrixCoefficients?
 
     /**
      * The **`primaries`** read-only property of the VideoColorSpace interface returns the color gamut of the video.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/primaries)
      */
-    val primaries: VideoColorPrimaries?
+    open val primaries: VideoColorPrimaries?
 
     /**
      * The **`transfer`** read-only property of the VideoColorSpace interface returns the opto-electronic transfer characteristics of the video.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/transfer)
      */
-    val transfer: VideoTransferCharacteristics?
+    open val transfer: VideoTransferCharacteristics?
 
     /**
      * The **`toJSON()`** method of the VideoColorSpace interface is a serializer that returns a JSON representation of the VideoColorSpace object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoColorSpace/toJSON)
      */
-    fun toJSON(): VideoColorSpaceInit
+    open fun toJSON(): VideoColorSpaceInit
 }

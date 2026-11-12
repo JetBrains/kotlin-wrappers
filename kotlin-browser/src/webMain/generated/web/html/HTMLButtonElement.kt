@@ -29,21 +29,21 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/command)
      */
-    var command: Command
+    open var command: Command
 
     /**
      * The **`commandForElement`** property of the HTMLButtonElement interface gets and sets the element to control via a button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/commandForElement)
      */
-    var commandForElement: Element?
+    open var commandForElement: Element?
 
     /**
      * The **`HTMLButtonElement.disabled`** property indicates whether the control is disabled, meaning that it does not accept any clicks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
      */
-    var disabled: Boolean
+    open var disabled: Boolean
 
     /**
      * The **`form`** read-only property of the HTMLButtonElement interface returns an HTMLFormElement object that owns this <button>, or null if this button is not owned by any form.
@@ -57,35 +57,35 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formAction)
      */
-    var formAction: String
+    open var formAction: String
 
     /**
      * The **`formEnctype`** property of the HTMLButtonElement interface is the MIME type of the content sent to the server when the form is submitted. It reflects the value of the <button>'s formenctype attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formEnctype)
      */
-    var formEnctype: FormEncType
+    open var formEnctype: FormEncType
 
     /**
      * The **`formMethod`** property of the HTMLButtonElement interface is the HTTP method used to submit the <form> if the <button> element is the control that submits the form. It reflects the value of the <button>'s formmethod attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formMethod)
      */
-    var formMethod: FormMethod
+    open var formMethod: FormMethod
 
     /**
      * The **`formNoValidate`** property of the HTMLButtonElement interface is a boolean value indicating if the <form> will bypass constraint validation when submitted via the <button>. It reflects the <button> element's formnovalidate attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formNoValidate)
      */
-    var formNoValidate: Boolean
+    open var formNoValidate: Boolean
 
     /**
      * The **`formTarget`** property of the HTMLButtonElement interface is the tab, window, or iframe where the response of the submitted <form> is to be displayed. It reflects the value of the <button> element's formtarget attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
      */
-    var formTarget: WindowName
+    open var formTarget: WindowName
 
     /**
      * The **`HTMLButtonElement.labels`** read-only property returns a NodeList of the <label> elements associated with the <button> element.
@@ -106,7 +106,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/type)
      */
-    var type: ButtonType
+    open var type: ButtonType
 
     /**
      * The **`validationMessage`** read-only property of the HTMLButtonElement interface returns a string representing a localized message that describes the validation constraints that the <button> control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (the <button>'s type is button or reset), or it satisfies its constraints.
@@ -127,7 +127,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/value)
      */
-    var value: String
+    open var value: String
 
     /**
      * The **`willValidate`** read-only property of the HTMLButtonElement interface indicates whether the <button> element is a candidate for constraint validation. It is false if any conditions bar it from constraint validation, including:
@@ -155,7 +155,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    open fun setCustomValidity(error: String)
 }
 
 /**

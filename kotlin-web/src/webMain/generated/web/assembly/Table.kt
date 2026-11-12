@@ -17,21 +17,21 @@ open external class Table(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/length)
      */
-    val length: AddressValue
+    open val length: AddressValue
 
     /**
      * The **`get()`** prototype method of the WebAssembly.Table() object retrieves the element stored at a given index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/get)
      */
-    fun get(index: AddressValue): JsAny?
+    open fun get(index: AddressValue): JsAny?
 
     /**
      * The **`grow()`** prototype method of the WebAssembly.Table object increases the size of the Table instance by a specified number of elements, filled with the provided value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/grow)
      */
-    fun grow(
+    open fun grow(
         delta: AddressValue,
         value: JsAny? = definedExternally,
     ): AddressValue
@@ -41,7 +41,7 @@ open external class Table(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/set)
      */
-    fun set(
+    open fun set(
         index: AddressValue,
         value: JsAny? = definedExternally,
     )

@@ -30,7 +30,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/numberOfItems)
      */
-    val numberOfItems: Int
+    open val numberOfItems: Int
 
     /**
      * The **`appendItem()`** method of the SVGTransformList interface inserts a new item at the end of the list.
@@ -38,7 +38,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/appendItem)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun appendItem(newItem: SVGTransform): SVGTransform
+    open fun appendItem(newItem: SVGTransform): SVGTransform
 
     /**
      * The **`clear()`** method of the SVGTransformList interface clears all existing current items from the list, with the result being an empty list.
@@ -46,7 +46,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/clear)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun clear()
+    open fun clear()
 
     /**
      * The **`consolidate()`** method of the SVGTransformList interface consolidates the list of separate SVGTransform objects by multiplying the equivalent transformation matrices together to result in a list consisting of a single SVGTransform object of type SVG_TRANSFORM_MATRIX.
@@ -54,14 +54,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/consolidate)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun consolidate(): SVGTransform?
+    open fun consolidate(): SVGTransform?
 
     /**
      * The **`createSVGTransformFromMatrix()`** method of the SVGTransformList interface creates an SVGTransform object which is initialized to a transform of type SVG_TRANSFORM_MATRIX and whose values are the given matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/createSVGTransformFromMatrix)
      */
-    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): SVGTransform
+    open fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): SVGTransform
 
     /**
      * The **`getItem()`** method of the SVGTransformList interface returns the specified item from the list.
@@ -69,7 +69,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/getItem)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun getItem(index: Int): SVGTransform
+    open fun getItem(index: Int): SVGTransform
 
     /**
      * The **`initialize()`** method of the SVGTransformList interface clears all existing current items from the list and re-initializes the list to hold the single item specified by the parameter.
@@ -77,7 +77,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/initialize)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun initialize(newItem: SVGTransform): SVGTransform
+    open fun initialize(newItem: SVGTransform): SVGTransform
 
     /**
      * The **`insertItemBefore()`** method of the SVGTransformList interface inserts a new item into the list at the specified position.
@@ -85,7 +85,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList/insertItemBefore)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun insertItemBefore(
+    open fun insertItemBefore(
         newItem: SVGTransform,
         index: Int,
     ): SVGTransform
@@ -97,7 +97,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun removeItem(index: Int): SVGTransform
+    open fun removeItem(index: Int): SVGTransform
 
     /**
      * The **`replaceItem()`** method of the SVGTransformList interface replaces an existing item in the list with a new item.
@@ -106,7 +106,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun replaceItem(
+    open fun replaceItem(
         newItem: SVGTransform,
         index: Int,
     ): SVGTransform

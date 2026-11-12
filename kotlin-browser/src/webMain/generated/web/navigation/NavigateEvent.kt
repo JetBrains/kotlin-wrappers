@@ -25,77 +25,77 @@ open external class NavigateEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/canIntercept)
      */
-    val canIntercept: Boolean
+    open val canIntercept: Boolean
 
     /**
      * The **`destination`** read-only property of the NavigateEvent interface returns a NavigationDestination object representing the destination being navigated to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/destination)
      */
-    val destination: NavigationDestination
+    open val destination: NavigationDestination
 
     /**
      * The **`downloadRequest`** read-only property of the NavigateEvent interface returns the filename of the file requested for download, in the case of a download navigation (e.g., an <a> or <area> element with a download attribute), or null otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/downloadRequest)
      */
-    val downloadRequest: String?
+    open val downloadRequest: String?
 
     /**
      * The **`formData`** read-only property of the NavigateEvent interface returns the FormData object representing the submitted data in the case of a POST form submission, or null otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/formData)
      */
-    val formData: FormData?
+    open val formData: FormData?
 
     /**
      * The **`hasUAVisualTransition`** read-only property of the NavigateEvent interface returns true if the user agent performed a visual transition for this navigation before dispatching this event, or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/hasUAVisualTransition)
      */
-    val hasUAVisualTransition: Boolean
+    open val hasUAVisualTransition: Boolean
 
     /**
      * The **`hashChange`** read-only property of the NavigateEvent interface returns true if the navigation is a fragment navigation (i.e., to a fragment identifier in the same document), or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/hashChange)
      */
-    val hashChange: Boolean
+    open val hashChange: Boolean
 
     /**
      * The **`info`** read-only property of the NavigateEvent interface returns the info data value passed by the initiating navigation operation (e.g., Navigation.back(), or Navigation.navigate()), or undefined if no info data was passed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/info)
      */
-    val info: JsAny?
+    open val info: JsAny?
 
     /**
      * The **`navigationType`** read-only property of the NavigateEvent interface returns the type of the navigation — push, reload, replace, or traverse.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/navigationType)
      */
-    val navigationType: NavigationType
+    open val navigationType: NavigationType
 
     /**
      * The **`signal`** read-only property of the NavigateEvent interface returns an AbortSignal, which will become aborted if the navigation is cancelled (e.g., by the user pressing the browser's "Stop" button, or another navigation starting and thus cancelling the ongoing one).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/signal)
      */
-    val signal: AbortSignal
+    open val signal: AbortSignal
 
     /**
      * The **`sourceElement`** read-only property of the NavigateEvent interface returns an Element object representing the initiating element, in cases where the navigation was initiated by an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/sourceElement)
      */
-    val sourceElement: Element?
+    open val sourceElement: Element?
 
     /**
      * The **`userInitiated`** read-only property of the NavigateEvent interface returns true if the navigation was initiated by the user (e.g., by clicking a link, submitting a form, or pressing the browser's "Back"/"Forward" buttons), or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/userInitiated)
      */
-    val userInitiated: Boolean
+    open val userInitiated: Boolean
 
     /**
      * The **`intercept()`** method of the NavigateEvent interface intercepts this navigation, turning it into a same-document navigation to the destination URL.
@@ -104,7 +104,7 @@ open external class NavigateEvent(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
-    fun intercept(options: NavigationInterceptOptions = definedExternally)
+    open fun intercept(options: NavigationInterceptOptions = definedExternally)
 
     /**
      * The **`scroll()`** method of the NavigateEvent interface can be called to manually trigger the browser-driven scrolling behavior that occurs in response to the navigation, if you want it to happen before the navigation handling has completed.
@@ -113,7 +113,7 @@ open external class NavigateEvent(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
-    fun scroll()
+    open fun scroll()
 
     companion object
 }

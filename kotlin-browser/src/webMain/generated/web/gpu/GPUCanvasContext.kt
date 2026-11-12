@@ -26,21 +26,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/canvas)
      */
-    val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
+    open val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
 
     /**
      * The **`configure()`** method of the GPUCanvasContext interface configures the context to use for rendering with a given GPUDevice. When called the canvas will initially be cleared to transparent black.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/configure)
      */
-    fun configure(configuration: GPUCanvasConfiguration)
+    open fun configure(configuration: GPUCanvasConfiguration)
 
     /**
      * The **`getConfiguration()`** method of the GPUCanvasContext interface returns the current configuration set for the context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/getConfiguration)
      */
-    fun getConfiguration(): GPUCanvasConfiguration?
+    open fun getConfiguration(): GPUCanvasConfiguration?
 
     /**
      * The **`getCurrentTexture()`** method of the GPUCanvasContext interface returns the next GPUTexture to be composited to the document by the canvas context.
@@ -48,14 +48,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/getCurrentTexture)
      */
     @JsThrows(InvalidStateError::class)
-    fun getCurrentTexture(): GPUTexture
+    open fun getCurrentTexture(): GPUTexture
 
     /**
      * The **`unconfigure()`** method of the GPUCanvasContext interface removes any previously-set context configuration, and destroys any textures returned via getCurrentTexture() while the canvas context was configured.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext/unconfigure)
      */
-    fun unconfigure()
+    open fun unconfigure()
 
     companion object
 }

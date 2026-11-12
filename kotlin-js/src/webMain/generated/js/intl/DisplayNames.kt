@@ -39,7 +39,7 @@ open external class DisplayNames(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/of).
      */
-    fun of(code: String): String?
+    open fun of(code: String): String?
 
     /**
      * Returns a new object with properties reflecting the locale and style formatting options computed during the construction of the current
@@ -47,7 +47,7 @@ open external class DisplayNames(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DisplayNames/resolvedOptions).
      */
-    fun resolvedOptions(): ResolvedDisplayNamesOptions
+    open fun resolvedOptions(): ResolvedDisplayNamesOptions
 
     companion object {
         /**

@@ -15,12 +15,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPositionTryRule/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The read-only **`style`** property of the CSSPositionTryRule interface contains a CSSPositionTryDescriptors object representing the descriptors available in the @position-try rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPositionTryRule/style)
      */
-    val style: CSSPositionTryDescriptors
+    open val style: CSSPositionTryDescriptors
 }

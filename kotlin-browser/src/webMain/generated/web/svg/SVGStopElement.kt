@@ -15,5 +15,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement/offset)
      */
-    val offset: SVGAnimatedNumber
+    open val offset: SVGAnimatedNumber
 }

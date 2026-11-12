@@ -31,7 +31,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("createSyncAccessHandle")
-    fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
+    open fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
 
     /**
      * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file. The method returns a Promise which resolves to this created stream.
@@ -43,7 +43,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("createWritable")
-    fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
+    open fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
     /**
      * The **`getFile()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a File object representing the state on disk of the entry represented by the handle.
@@ -53,7 +53,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("getFile")
-    fun getFileAsync(): Promise<File>
+    open fun getFileAsync(): Promise<File>
 }
 
 /**

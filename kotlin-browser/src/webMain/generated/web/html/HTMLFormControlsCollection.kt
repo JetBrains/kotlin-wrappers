@@ -20,5 +20,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection/namedItem)
      */
-    fun namedItem(name: String): JsAny? /* RadioNodeList | Element */
+    open fun namedItem(name: String): JsAny? /* RadioNodeList | Element */
 }

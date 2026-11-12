@@ -49,7 +49,7 @@ open external class SharedWorker(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
      */
-    val port: MessagePort
+    open val port: MessagePort
 }
 
 /**

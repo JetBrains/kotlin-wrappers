@@ -25,7 +25,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotAllowedError::class)
-    fun send(
+    open fun send(
         data: ReadonlyArray<JsDouble>,
         timestamp: DOMHighResTimeStamp = definedExternally,
     )

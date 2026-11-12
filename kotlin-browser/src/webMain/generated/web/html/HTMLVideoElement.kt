@@ -31,67 +31,67 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture)
      */
-    var disablePictureInPicture: Boolean
+    open var disablePictureInPicture: Boolean
 
     /**
      * The **`height`** property of the HTMLVideoElement interface returns an integer that reflects the height attribute of the <video> element, specifying the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/height)
      */
-    var height: Int
+    open var height: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
      */
-    var onenterpictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement, Node>?
+    open var onenterpictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement, Node>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event)
      */
-    var onleavepictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement, Node>?
-    var playsInline: Boolean
+    open var onleavepictureinpicture: EventHandler<PictureInPictureEvent, HTMLVideoElement, Node>?
+    open var playsInline: Boolean
 
     /**
      * The **`poster`** property of the HTMLVideoElement interface is a string that reflects the URL for an image to be shown while no video data is available. If the property does not represent a valid URL, no poster frame will be shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/poster)
      */
-    var poster: String
+    open var poster: String
 
     /**
      * The HTMLVideoElement interface's read-only **`videoHeight`** property indicates the intrinsic height of the video, expressed in CSS pixels. In simple terms, this is the height of the media in its natural size.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoHeight)
      */
-    val videoHeight: Int
+    open val videoHeight: Int
 
     /**
      * The HTMLVideoElement interface's read-only **`videoWidth`** property indicates the intrinsic width of the video, expressed in CSS pixels. In simple terms, this is the width of the media in its natural size.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/videoWidth)
      */
-    val videoWidth: Int
+    open val videoWidth: Int
 
     /**
      * The **`width`** property of the HTMLVideoElement interface returns an integer that reflects the width attribute of the <video> element, specifying the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/width)
      */
-    var width: Int
+    open var width: Int
 
     /**
      * The **`cancelVideoFrameCallback()`** method of the HTMLVideoElement interface cancels a previously-registered video frame callback.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/cancelVideoFrameCallback)
      */
-    fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
+    open fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
 
     /**
      * The HTMLVideoElement method **`getVideoPlaybackQuality()`** creates and returns a VideoPlaybackQuality object containing metrics including how many frames have been lost.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality)
      */
-    fun getVideoPlaybackQuality(): VideoPlaybackQuality
+    open fun getVideoPlaybackQuality(): VideoPlaybackQuality
 
     /**
      * The HTMLVideoElement method **`requestPictureInPicture()`** issues an asynchronous request to display the video in picture-in-picture mode.
@@ -103,14 +103,14 @@ protected constructor() :
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("requestPictureInPicture")
-    fun requestPictureInPictureAsync(): Promise<PictureInPictureWindow>
+    open fun requestPictureInPictureAsync(): Promise<PictureInPictureWindow>
 
     /**
      * The **`requestVideoFrameCallback()`** method of the HTMLVideoElement interface registers a callback function that runs when a new video frame is sent to the compositor. This enables developers to perform efficient operations on each video frame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)
      */
-    fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
+    open fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
 }
 
 /**

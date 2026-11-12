@@ -29,19 +29,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/ready)
      */
-    val ready: Promise<Void>
+    open val ready: Promise<Void>
 
     /**
      * The **`selectedIndex`** property of the ImageTrackList interface returns the index of the selected track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/selectedIndex)
      */
-    val selectedIndex: Int
+    open val selectedIndex: Int
 
     /**
      * The **`selectedTrack`** property of the ImageTrackList interface returns an ImageTrack object representing the currently selected track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/selectedTrack)
      */
-    val selectedTrack: ImageTrack?
+    open val selectedTrack: ImageTrack?
 }

@@ -19,21 +19,21 @@ open external class CloseEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/code)
      */
-    val code: Short
+    open val code: Short
 
     /**
      * The **`reason`** read-only property of the CloseEvent interface returns the WebSocket connection close reason the server gave for closing the connection; that is, a concise human-readable prose explanation for the closure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/reason)
      */
-    val reason: String
+    open val reason: String
 
     /**
      * The **`wasClean`** read-only property of the CloseEvent interface returns true if the connection closed cleanly.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/wasClean)
      */
-    val wasClean: Boolean
+    open val wasClean: Boolean
 
     companion object
 }

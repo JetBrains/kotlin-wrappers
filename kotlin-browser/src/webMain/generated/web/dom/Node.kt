@@ -21,63 +21,63 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/baseURI)
      */
-    val baseURI: String
+    open val baseURI: String
 
     /**
      * The read-only **`childNodes`** property of the Node interface returns a live NodeList of child nodes of the given element where the first child node is assigned index 0. Child nodes include elements, text and comments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
      */
-    val childNodes: NodeList<ChildNode>
+    open val childNodes: NodeList<ChildNode>
 
     /**
      * The read-only **`firstChild`** property of the Node interface returns the node's first child in the tree, or null if the node has no children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
      */
-    val firstChild: ChildNode?
+    open val firstChild: ChildNode?
 
     /**
      * The read-only **`isConnected`** property of the Node interface returns a boolean indicating whether the node is connected (directly or indirectly) to a Document object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isConnected)
      */
-    val isConnected: Boolean
+    open val isConnected: Boolean
 
     /**
      * The read-only **`lastChild`** property of the Node interface returns the last child of the node, or null if there are no child nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
      */
-    val lastChild: ChildNode?
+    open val lastChild: ChildNode?
 
     /**
      * The read-only **`nextSibling`** property of the Node interface returns the node immediately following the specified one in their parent's childNodes, or returns null if the specified node is the last child in the parent element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
      */
-    val nextSibling: ChildNode?
+    open val nextSibling: ChildNode?
 
     /**
      * The read-only **`nodeName`** property of Node returns the name of the current node as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeName)
      */
-    val nodeName: String
+    open val nodeName: String
 
     /**
      * The read-only **`nodeType`** property of a Node interface is an integer that identifies what the node is. It distinguishes different kinds of nodes from each other, such as elements, text, and comments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
      */
-    val nodeType: NodeType
+    open val nodeType: NodeType
 
     /**
      * The **`nodeValue`** property of the Node interface returns or sets the value of the current node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
      */
-    var nodeValue: String?
+    open var nodeValue: String?
 
     /**
      * The read-only **`ownerDocument`** property of the Node interface returns the top-level document object of the node.
@@ -91,21 +91,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
      */
-    val parentElement: HTMLElement?
+    open val parentElement: HTMLElement?
 
     /**
      * The read-only **`parentNode`** property of the Node interface returns the parent of the specified node in the DOM tree.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
      */
-    val parentNode: ParentNode?
+    open val parentNode: ParentNode?
 
     /**
      * The read-only **`previousSibling`** property of the Node interface returns the node immediately preceding the specified one in its parent's childNodes list, or null if the specified node is the first in that list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
      */
-    val previousSibling: ChildNode?
+    open val previousSibling: ChildNode?
 
     /**
      * The **`textContent`** property of the Node interface represents the text content of the node and its descendants.
@@ -120,49 +120,49 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/appendChild)
      */
     @JsThrows(HierarchyRequestError::class)
-    fun <T : Node> appendChild(node: T): T
+    open fun <T : Node> appendChild(node: T): T
 
     /**
      * The **`cloneNode()`** method of the Node interface returns a duplicate of the node on which this method was called. Its parameter controls if the subtree contained in the node is also cloned or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/cloneNode)
      */
-    fun cloneNode(subtree: Boolean = definedExternally): Node
+    open fun cloneNode(subtree: Boolean = definedExternally): Node
 
     /**
      * The **`compareDocumentPosition()`** method of the Node interface reports the position of its argument node relative to the node on which it is called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/compareDocumentPosition)
      */
-    fun compareDocumentPosition(other: Node): NodePosition
+    open fun compareDocumentPosition(other: Node): NodePosition
 
     /**
      * The **`contains()`** method of the Node interface returns a boolean value indicating whether a node is a descendant of a given node, that is the node itself, one of its direct children (childNodes), one of the children's direct children, and so on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/contains)
      */
-    fun contains(other: Node?): Boolean
+    open fun contains(other: Node?): Boolean
 
     /**
      * The **`getRootNode()`** method of the Node interface returns the context object's root, which optionally includes the shadow root if it is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/getRootNode)
      */
-    fun getRootNode(options: GetRootNodeOptions = definedExternally): Node
+    open fun getRootNode(options: GetRootNodeOptions = definedExternally): Node
 
     /**
      * The **`hasChildNodes()`** method of the Node interface returns a boolean value indicating whether the given Node has child nodes or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/hasChildNodes)
      */
-    fun hasChildNodes(): Boolean
+    open fun hasChildNodes(): Boolean
 
     /**
      * The **`insertBefore()`** method of the Node interface inserts a node before a reference node as a child of a specified parent node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/insertBefore)
      */
-    fun <T : Node> insertBefore(
+    open fun <T : Node> insertBefore(
         node: T,
         child: Node?,
     ): T
@@ -172,42 +172,42 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isDefaultNamespace)
      */
-    fun isDefaultNamespace(namespace: String?): Boolean
+    open fun isDefaultNamespace(namespace: String?): Boolean
 
     /**
      * The **`isEqualNode()`** method of the Node interface tests whether two nodes are equal. Two nodes are equal when they have the same type, defining characteristics (for elements, this would be their ID, number of children, and so forth), its attributes match, and so on. The specific set of data points that must match varies depending on the types of the nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isEqualNode)
      */
-    fun isEqualNode(otherNode: Node?): Boolean
+    open fun isEqualNode(otherNode: Node?): Boolean
 
     /**
      * The **`isSameNode()`** method of the Node interface is a legacy alias the for the === strict equality operator. That is, it tests whether two nodes are the same (in other words, whether they reference the same object).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isSameNode)
      */
-    fun isSameNode(otherNode: Node?): Boolean
+    open fun isSameNode(otherNode: Node?): Boolean
 
     /**
      * The **`lookupNamespaceURI()`** method of the Node interface takes a prefix as parameter and returns the namespace URI associated with it on the given node if found (and null if not). This method's existence allows Node objects to be passed as a namespace resolver to XPathEvaluator.createExpression() and XPathEvaluator.evaluate().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupNamespaceURI)
      */
-    fun lookupNamespaceURI(prefix: String?): String?
+    open fun lookupNamespaceURI(prefix: String?): String?
 
     /**
      * The **`lookupPrefix()`** method of the Node interface returns a string containing the prefix for a given namespace URI, if present, and null if not. When multiple prefixes are possible, the first prefix is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupPrefix)
      */
-    fun lookupPrefix(namespace: String?): String?
+    open fun lookupPrefix(namespace: String?): String?
 
     /**
      * The **`normalize()`** method of the Node interface puts the specified node and all of its sub-tree into a normalized form. In a normalized sub-tree, no text nodes in the sub-tree are empty and there are no adjacent text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/normalize)
      */
-    fun normalize()
+    open fun normalize()
 
     /**
      * The **`removeChild()`** method of the Node interface removes a child node from the DOM and returns the removed node.
@@ -215,7 +215,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/removeChild)
      */
     @JsThrows(NotFoundError::class)
-    fun <T : Node> removeChild(child: T): T
+    open fun <T : Node> removeChild(child: T): T
 
     /**
      * The **`replaceChild()`** method of the Node interface replaces a child node within the given (parent) node.
@@ -224,7 +224,7 @@ private constructor() :
      */
     @JsThrows(HierarchyRequestError::class)
     @JsThrows(NotFoundError::class)
-    fun <T : Node> replaceChild(
+    open fun <T : Node> replaceChild(
         node: Node,
         child: T,
     ): T

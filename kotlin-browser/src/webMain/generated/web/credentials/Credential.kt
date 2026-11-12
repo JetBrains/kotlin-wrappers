@@ -18,14 +18,14 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Credential/id)
      */
-    val id: String
+    open val id: String
 
     /**
      * The **`type`** read-only property of the Credential interface returns a string containing the credential's type. Valid values are password, federated, public-key, identity and otp.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Credential/type)
      */
-    val type: String
+    open val type: String
 
     companion object {
         /**

@@ -26,35 +26,35 @@ open external class FetchEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)
      */
-    val clientId: String
+    open val clientId: String
 
     /**
      * The **`handled`** property of the FetchEvent interface returns a promise indicating if the event has been handled by the fetch algorithm or not. This property allows executing code after the browser has consumed a response, and is usually used together with the waitUntil() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/handled)
      */
-    val handled: Promise<Void>
+    open val handled: Promise<Void>
 
     /**
      * The **`preloadResponse`** read-only property of the FetchEvent interface returns a Promise that resolves to the navigation preload Response if navigation preload was triggered, or undefined otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/preloadResponse)
      */
-    val preloadResponse: Promise<*>
+    open val preloadResponse: Promise<*>
 
     /**
      * The **`request`** read-only property of the FetchEvent interface returns the Request that triggered the event handler.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/request)
      */
-    val request: Request
+    open val request: Request
 
     /**
      * The **`resultingClientId`** read-only property of the FetchEvent interface is the id of the client that replaces the previous client during a page navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
      */
-    val resultingClientId: String
+    open val resultingClientId: String
 
     /**
      * The **`respondWith()`** method of FetchEvent prevents the browser's default fetch handling, and allows you to provide a promise for a Response yourself.
@@ -63,7 +63,7 @@ open external class FetchEvent(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun respondWith(r: Response)
+    open fun respondWith(r: Response)
 
     /**
      * The **`respondWith()`** method of FetchEvent prevents the browser's default fetch handling, and allows you to provide a promise for a Response yourself.
@@ -72,7 +72,7 @@ open external class FetchEvent(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun respondWith(r: PromiseLike<Response>)
+    open fun respondWith(r: PromiseLike<Response>)
 
     companion object
 }

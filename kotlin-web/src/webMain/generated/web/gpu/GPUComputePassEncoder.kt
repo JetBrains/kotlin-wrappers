@@ -18,7 +18,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroups)
      */
-    fun dispatchWorkgroups(
+    open fun dispatchWorkgroups(
         workgroupCountX: GPUSize32,
         workgroupCountY: GPUSize32 = definedExternally,
         workgroupCountZ: GPUSize32 = definedExternally,
@@ -29,7 +29,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroupsIndirect)
      */
-    fun dispatchWorkgroupsIndirect(
+    open fun dispatchWorkgroupsIndirect(
         indirectBuffer: GPUBuffer,
         indirectOffset: GPUSize64,
     )
@@ -39,12 +39,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/end)
      */
-    fun end()
+    open fun end()
 
     /**
      * The **`setPipeline()`** method of the GPUComputePassEncoder interface sets the GPUComputePipeline to use for this compute pass.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/setPipeline)
      */
-    fun setPipeline(pipeline: GPUComputePipeline)
+    open fun setPipeline(pipeline: GPUComputePipeline)
 }

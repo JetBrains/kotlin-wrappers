@@ -24,14 +24,14 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/enter_event)
      */
-    var onenter: EventHandler<DocumentPictureInPictureEvent, DocumentPictureInPicture, DocumentPictureInPicture>?
+    open var onenter: EventHandler<DocumentPictureInPictureEvent, DocumentPictureInPicture, DocumentPictureInPicture>?
 
     /**
      * The **`window`** read-only property of the DocumentPictureInPicture interface returns a Window instance representing the browsing context inside the Picture-in-Picture window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/window)
      */
-    val window: Window
+    open val window: Window
 
     /**
      * The **`requestWindow()`** method of the DocumentPictureInPicture interface opens the Picture-in-Picture window for the current main browsing context. It returns a Promise that fulfills with a Window instance representing the browsing context inside the Picture-in-Picture window.
@@ -41,7 +41,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("requestWindow")
-    fun requestWindowAsync(options: DocumentPictureInPictureOptions = definedExternally): Promise<Window>
+    open fun requestWindowAsync(options: DocumentPictureInPictureOptions = definedExternally): Promise<Window>
 }
 
 /**

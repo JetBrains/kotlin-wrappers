@@ -15,12 +15,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative/confidence)
      */
-    val confidence: Float
+    open val confidence: Float
 
     /**
      * The **`transcript`** read-only property of the SpeechRecognitionResult interface returns a string containing the transcript of the recognized word(s).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative/transcript)
      */
-    val transcript: String
+    open val transcript: String
 }

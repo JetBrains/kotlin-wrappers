@@ -6,6 +6,6 @@ import js.array.ReadonlyArray
 
 open external class XRTransientInputHitTestResult
 private constructor() {
-    val inputSource: XRInputSource
-    val results: ReadonlyArray<XRHitTestResult>
+    open val inputSource: XRInputSource
+    open val results: ReadonlyArray<XRHitTestResult>
 }

@@ -22,7 +22,7 @@ open external class FileReaderSync {
     @JsThrows(NotFoundError::class)
     @JsThrows(NotReadableError::class)
     @JsThrows(SecurityError::class)
-    fun readAsArrayBuffer(blob: Blob): ArrayBuffer
+    open fun readAsArrayBuffer(blob: Blob): ArrayBuffer
 
     /**
      * The **`readAsDataURL()`** method of the FileReaderSync interface allows to read File or Blob objects in a synchronous way into a string representing a data URL. This interface is only available in workers as it enables synchronous I/O that could potentially block.
@@ -33,7 +33,7 @@ open external class FileReaderSync {
     @JsThrows(NotFoundError::class)
     @JsThrows(NotReadableError::class)
     @JsThrows(SecurityError::class)
-    fun readAsDataURL(blob: Blob): String
+    open fun readAsDataURL(blob: Blob): String
 
     /**
      * The **`readAsText()`** method of the FileReaderSync interface allows to read File or Blob objects in a synchronous way into a string. This interface is only available in workers as it enables synchronous I/O that could potentially block.
@@ -44,7 +44,7 @@ open external class FileReaderSync {
     @JsThrows(NotFoundError::class)
     @JsThrows(NotReadableError::class)
     @JsThrows(SecurityError::class)
-    fun readAsText(
+    open fun readAsText(
         blob: Blob,
         encoding: String = definedExternally,
     ): String

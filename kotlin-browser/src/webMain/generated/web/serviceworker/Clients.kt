@@ -23,7 +23,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
     @JsName("claim")
-    fun claimAsync(): Promise<Void>
+    open fun claimAsync(): Promise<Void>
 
     /**
      * The **`get()`** method of the Clients interface gets a service worker client matching a given id and returns it in a Promise.
@@ -31,7 +31,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
     @JsName("get")
-    fun getAsync(id: String): Promise<Client?>
+    open fun getAsync(id: String): Promise<Client?>
 
     /**
      * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker Client objects. Include the options parameter to return all service worker clients whose origin is the same as the associated service worker's origin. If options are not included, the method returns only the service worker clients controlled by the service worker.
@@ -39,7 +39,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
      */
     @JsName("matchAll")
-    fun <T : ClientQueryOptions> matchAllAsync(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
+    open fun <T : ClientQueryOptions> matchAllAsync(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
 
     /**
      * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
@@ -48,7 +48,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("openWindow")
-    fun openWindowAsync(url: String): Promise<WindowClient?>
+    open fun openWindowAsync(url: String): Promise<WindowClient?>
 
     /**
      * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
@@ -57,7 +57,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("openWindow")
-    fun openWindowAsync(url: URL): Promise<WindowClient?>
+    open fun openWindowAsync(url: URL): Promise<WindowClient?>
 }
 
 /**

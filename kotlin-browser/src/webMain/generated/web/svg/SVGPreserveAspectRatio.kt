@@ -14,14 +14,14 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/align)
      */
-    var align: Align
+    open var align: Align
 
     /**
      * The **`meetOrSlice`** read-only property of the SVGPreserveAspectRatio interface reflects the type of the meet-or-slice value as specified by one of the SVG_MEETORSLICE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio/meetOrSlice)
      */
-    var meetOrSlice: MeetOrSlice
+    open var meetOrSlice: MeetOrSlice
 
     companion object {
         /**

@@ -29,24 +29,24 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/addtrack_event)
      */
-    var onaddtrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
+    open var onaddtrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/change_event)
      */
-    var onchange: EventHandler<Event, TextTrackList, TextTrackList>?
+    open var onchange: EventHandler<Event, TextTrackList, TextTrackList>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removetrack_event)
      */
-    var onremovetrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
+    open var onremovetrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
 
     /**
      * The TextTrackList method **`getTrackById()`** returns the first TextTrack object from the track list whose id matches the specified string. This lets you find a specified track if you know its ID string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/getTrackById)
      */
-    fun getTrackById(id: String): TextTrack?
+    open fun getTrackById(id: String): TextTrack?
 }
 
 /**

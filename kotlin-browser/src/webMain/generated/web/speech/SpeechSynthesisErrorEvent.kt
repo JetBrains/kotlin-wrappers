@@ -18,7 +18,7 @@ open external class SpeechSynthesisErrorEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error)
      */
-    val error: SpeechSynthesisErrorCode
+    open val error: SpeechSynthesisErrorCode
 
     companion object
 }

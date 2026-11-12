@@ -4,5 +4,5 @@ package web.xr
 
 open external class XRHitTestSource
 private constructor() {
-    fun cancel()
+    open fun cancel()
 }

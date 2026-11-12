@@ -16,63 +16,63 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerHeight)
      */
-    val markerHeight: SVGAnimatedLength
+    open val markerHeight: SVGAnimatedLength
 
     /**
      * The **`markerUnits`** read-only property of the SVGMarkerElement interface returns an SVGAnimatedEnumeration object. This object returns an integer which represents the keyword values that the markerUnits attribute accepts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerUnits)
      */
-    val markerUnits: SVGAnimatedEnumeration<MarkerUnits>
+    open val markerUnits: SVGAnimatedEnumeration<MarkerUnits>
 
     /**
      * The **`markerWidth`** read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the width of the <marker> viewport as defined by the markerWidth attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/markerWidth)
      */
-    val markerWidth: SVGAnimatedLength
+    open val markerWidth: SVGAnimatedLength
 
     /**
      * The **`orientAngle`** read-only property of the SVGMarkerElement interface returns an SVGAnimatedAngle object containing the angle of the orient attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientAngle)
      */
-    val orientAngle: SVGAnimatedAngle
+    open val orientAngle: SVGAnimatedAngle
 
     /**
      * The **`orientType`** read-only property of the SVGMarkerElement interface returns an SVGAnimatedEnumeration object indicating whether the orient attribute is auto, an angle value, or something else.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/orientType)
      */
-    val orientType: SVGAnimatedEnumeration<OrientType>
+    open val orientType: SVGAnimatedEnumeration<OrientType>
 
     /**
      * The **`refX`** read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the value of the refX attribute of the <marker>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refX)
      */
-    val refX: SVGAnimatedLength
+    open val refX: SVGAnimatedLength
 
     /**
      * The **`refY`** read-only property of the SVGMarkerElement interface returns an SVGAnimatedLength object containing the value of the refY attribute of the <marker>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/refY)
      */
-    val refY: SVGAnimatedLength
+    open val refY: SVGAnimatedLength
 
     /**
      * The **`setOrientToAngle()`** method of the SVGMarkerElement interface sets the value of the orient attribute to the value in the SVGAngle passed in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAngle)
      */
-    fun setOrientToAngle(angle: SVGAngle)
+    open fun setOrientToAngle(angle: SVGAngle)
 
     /**
      * The **`setOrientToAuto()`** method of the SVGMarkerElement interface sets the value of the orient attribute to auto.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/setOrientToAuto)
      */
-    fun setOrientToAuto()
+    open fun setOrientToAuto()
 
     companion object {
         /**

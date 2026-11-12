@@ -21,21 +21,21 @@ open external class AudioWorkletNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/processorerror_event)
      */
-    var onprocessorerror: EventHandler<ErrorEvent, AudioWorkletNode, AudioWorkletNode>?
+    open var onprocessorerror: EventHandler<ErrorEvent, AudioWorkletNode, AudioWorkletNode>?
 
     /**
      * The read-only **`parameters`** property of the AudioWorkletNode interface returns the associated AudioParamMap — that is, a Map-like collection of AudioParam objects. They are instantiated during creation of the underlying AudioWorkletProcessor according to its parameterDescriptors static getter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/parameters)
      */
-    val parameters: AudioParamMap
+    open val parameters: AudioParamMap
 
     /**
      * The read-only **`port`** property of the AudioWorkletNode interface returns the associated MessagePort. It can be used to communicate between the node and its associated AudioWorkletProcessor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/port)
      */
-    val port: MessagePort
+    open val port: MessagePort
 }
 
 /**

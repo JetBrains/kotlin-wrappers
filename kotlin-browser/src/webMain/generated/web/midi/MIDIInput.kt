@@ -17,7 +17,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event)
      */
-    var onmidimessage: EventHandler<MIDIMessageEvent, MIDIInput, MIDIInput>?
+    open var onmidimessage: EventHandler<MIDIMessageEvent, MIDIInput, MIDIInput>?
 }
 
 /**

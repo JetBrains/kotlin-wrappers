@@ -11,24 +11,24 @@ open external class XRWebGLBinding(
     session: XRSession,
     context: WebGLRenderingContext,
 ) {
-    val nativeProjectionScaleFactor: Double
-    fun createProjectionLayer(init: XRProjectionLayerInit = definedExternally): XRProjectionLayer
-    fun createQuadLayer(init: XRQuadLayerInit = definedExternally): XRQuadLayer
-    fun createCylinderLayer(init: XRCylinderLayerInit = definedExternally): XRCylinderLayer
-    fun createEquirectLayer(init: XREquirectLayerInit = definedExternally): XREquirectLayer
-    fun createCubeLayer(init: XRCubeLayerInit = definedExternally): XRCubeLayer
-    fun getSubImage(
+    open val nativeProjectionScaleFactor: Double
+    open fun createProjectionLayer(init: XRProjectionLayerInit = definedExternally): XRProjectionLayer
+    open fun createQuadLayer(init: XRQuadLayerInit = definedExternally): XRQuadLayer
+    open fun createCylinderLayer(init: XRCylinderLayerInit = definedExternally): XRCylinderLayer
+    open fun createEquirectLayer(init: XREquirectLayerInit = definedExternally): XREquirectLayer
+    open fun createCubeLayer(init: XRCubeLayerInit = definedExternally): XRCubeLayer
+    open fun getSubImage(
         layer: XRCompositionLayer,
         frame: XRFrame,
         eye: XREye = definedExternally,
     ): XRWebGLSubImage
 
-    fun getViewSubImage(
+    open fun getViewSubImage(
         layer: XRProjectionLayer,
         view: XRView,
     ): XRWebGLSubImage
 
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun getDepthInformation(view: XRView): XRWebGLDepthInformation?
+    open fun getDepthInformation(view: XRView): XRWebGLDepthInformation?
 }

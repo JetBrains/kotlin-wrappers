@@ -15,19 +15,19 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed)
      */
-    var reversed: Boolean
+    open var reversed: Boolean
 
     /**
      * The **`start`** property of the HTMLOListElement interface indicates starting value of the ordered list, with default value of 1.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/start)
      */
-    var start: Int
+    open var start: Int
 
     /**
      * The **`type`** property of the HTMLOListElement interface indicates the kind of marker to be used to display ordered list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/type)
      */
-    var type: String
+    open var type: String
 }

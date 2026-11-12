@@ -19,33 +19,33 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/arrayBuffer)
      */
-    fun arrayBuffer(): ArrayBuffer
+    open fun arrayBuffer(): ArrayBuffer
 
     /**
      * The **`blob()`** method of the PushMessageData interface extracts push message data as a Blob object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/blob)
      */
-    fun blob(): Blob
+    open fun blob(): Blob
 
     /**
      * The **`bytes()`** method of the PushMessageData interface extracts push message data as a Uint8Array object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/bytes)
      */
-    fun bytes(): Uint8Array<ArrayBuffer>
+    open fun bytes(): Uint8Array<ArrayBuffer>
 
     /**
      * The **`json()`** method of the PushMessageData interface extracts push message data by parsing it as a JSON string and returning the result.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/json)
      */
-    fun json(): JsAny?
+    open fun json(): JsAny?
 
     /**
      * The **`text()`** method of the PushMessageData interface extracts push message data as a plain text string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/text)
      */
-    fun text(): String
+    open fun text(): String
 }

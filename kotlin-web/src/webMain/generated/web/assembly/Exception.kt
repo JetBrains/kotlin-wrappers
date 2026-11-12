@@ -20,14 +20,14 @@ open external class Exception(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception/stack)
      */
-    val stack: String?
+    open val stack: String?
 
     /**
      * The **`getArg()`** prototype method of the Exception object can be used to get the value of a specified item in the exception's data arguments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception/getArg)
      */
-    fun getArg(
+    open fun getArg(
         exceptionTag: Tag,
         index: Int,
     ): JsAny?
@@ -37,5 +37,5 @@ open external class Exception(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception/is)
      */
-    fun `is`(exceptionTag: Tag): Boolean
+    open fun `is`(exceptionTag: Tag): Boolean
 }

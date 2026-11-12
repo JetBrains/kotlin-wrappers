@@ -21,7 +21,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Scheduler/postTask)
      */
     @JsName("postTask")
-    fun <T : JsAny?> postTaskAsync(
+    open fun <T : JsAny?> postTaskAsync(
         callback: SchedulerPostTaskCallback<T>,
         options: SchedulerPostTaskOptions = definedExternally,
     ): Promise<T>
@@ -32,7 +32,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Scheduler/yield)
      */
     @JsName("yield")
-    fun yieldAsync(): Promise<Void>
+    open fun yieldAsync(): Promise<Void>
 }
 
 /**

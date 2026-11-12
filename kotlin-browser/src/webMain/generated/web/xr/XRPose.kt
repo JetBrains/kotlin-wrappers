@@ -11,8 +11,8 @@ import web.geometry.DOMPointReadOnly
  */
 open external class XRPose
 private constructor() {
-    val transform: XRRigidTransform
-    val linearVelocity: DOMPointReadOnly?
-    val angularVelocity: DOMPointReadOnly?
-    val emulatedPosition: Boolean
+    open val transform: XRRigidTransform
+    open val linearVelocity: DOMPointReadOnly?
+    open val angularVelocity: DOMPointReadOnly?
+    open val emulatedPosition: Boolean
 }

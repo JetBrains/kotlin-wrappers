@@ -13,12 +13,12 @@ open external class MessageChannel {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/port1)
      */
-    val port1: MessagePort
+    open val port1: MessagePort
 
     /**
      * The **`port2`** read-only property of the MessageChannel interface returns the second port of the message channel — the port attached to the context at the other end of the channel, which the message is initially sent to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel/port2)
      */
-    val port2: MessagePort
+    open val port2: MessagePort
 }

@@ -68,7 +68,7 @@ open external class DOMRectReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 
     companion object {
         /**

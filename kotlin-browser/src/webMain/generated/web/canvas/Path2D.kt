@@ -19,7 +19,7 @@ open external class Path2D(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/addPath)
      */
-    fun addPath(
+    open fun addPath(
         path: Path2D,
         transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally,
     )

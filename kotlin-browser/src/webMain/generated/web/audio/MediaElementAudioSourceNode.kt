@@ -18,5 +18,5 @@ open external class MediaElementAudioSourceNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaElementAudioSourceNode/mediaElement)
      */
-    val mediaElement: HTMLMediaElement
+    open val mediaElement: HTMLMediaElement
 }

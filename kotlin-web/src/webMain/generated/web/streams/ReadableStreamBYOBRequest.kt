@@ -19,19 +19,19 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
      */
-    val view: Uint8Array<ArrayBuffer>?
+    open val view: Uint8Array<ArrayBuffer>?
 
     /**
      * The **`respond()`** method of the ReadableStreamBYOBRequest interface is used to signal to the associated readable byte stream that the specified number of bytes were written into the ReadableStreamBYOBRequest.view.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond)
      */
-    fun respond(bytesWritten: UInt53)
+    open fun respond(bytesWritten: UInt53)
 
     /**
      * The **`respondWithNewView()`** method of the ReadableStreamBYOBRequest interface specifies a new view that the consumer of the associated readable byte stream should write to instead of ReadableStreamBYOBRequest.view.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)
      */
-    fun respondWithNewView(view: ArrayBufferView<ArrayBuffer>)
+    open fun respondWithNewView(view: ArrayBufferView<ArrayBuffer>)
 }

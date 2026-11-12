@@ -20,40 +20,40 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
      */
-    var download: String
+    open var download: String
 
     /**
      * The **`ping`** property of the HTMLAnchorElement interface is a space-separated list of URLs. When the link is followed, the browser will send POST requests with the body PING to the URLs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/ping)
      */
-    var ping: String
+    open var ping: String
 
     /**
      * The **`HTMLAnchorElement.referrerPolicy`** property reflect the HTML referrerpolicy attribute of the <a> element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
      */
-    var referrerPolicy: ReferrerPolicy
+    open var referrerPolicy: ReferrerPolicy
 
     /**
      * The **`HTMLAnchorElement.rel`** property reflects the rel attribute. It is a string containing a space-separated list of link types indicating the relationship between the resource represented by the <a> element and the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/rel)
      */
-    var rel: String
+    open var rel: String
 
     /**
      * The read-only **`relList`** property of the HTMLAnchorElement returns a live DOMTokenList object containing the set of link types indicating the relationship between the resource represented by the <a> element and the current document. It reflects the <a> element's rel content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
      */
-    val relList: DOMTokenList<JsString>
+    open val relList: DOMTokenList<JsString>
 
     /**
      * The **`text`** property of the HTMLAnchorElement represents the text inside the element. This property represents the same information as Node.textContent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
-    var text: String
+    open var text: String
 }

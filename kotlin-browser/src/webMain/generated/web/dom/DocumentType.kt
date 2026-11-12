@@ -16,7 +16,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/name)
      */
-    val name: String
+    open val name: String
     override val ownerDocument: Document
 
     /**
@@ -24,12 +24,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/publicId)
      */
-    val publicId: String
+    open val publicId: String
 
     /**
      * The read-only **`systemId`** property of the DocumentType returns the URL of the associated DTD.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/systemId)
      */
-    val systemId: String
+    open val systemId: String
 }

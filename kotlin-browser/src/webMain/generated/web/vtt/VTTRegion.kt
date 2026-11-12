@@ -11,40 +11,40 @@ open external class VTTRegion {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/id)
      */
-    var id: String
+    open var id: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/lines)
      */
-    var lines: Int
+    open var lines: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/regionAnchorX)
      */
-    var regionAnchorX: Double
+    open var regionAnchorX: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/regionAnchorY)
      */
-    var regionAnchorY: Double
+    open var regionAnchorY: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/scroll)
      */
-    var scroll: ScrollSetting
+    open var scroll: ScrollSetting
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/viewportAnchorX)
      */
-    var viewportAnchorX: Double
+    open var viewportAnchorX: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/viewportAnchorY)
      */
-    var viewportAnchorY: Double
+    open var viewportAnchorY: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VTTRegion/width)
      */
-    var width: Double
+    open var width: Double
 }

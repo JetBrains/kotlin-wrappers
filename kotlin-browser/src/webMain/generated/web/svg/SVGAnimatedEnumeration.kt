@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
      */
-    val animVal: T
+    open val animVal: T
 
     /**
      * The **`baseVal`** property of the SVGAnimatedEnumeration interface contains the initial value of an SVG enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/baseVal)
      */
-    var baseVal: T
+    open var baseVal: T
 }

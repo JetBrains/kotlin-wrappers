@@ -19,7 +19,7 @@ open external class CompositionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data)
      */
-    val data: String
+    open val data: String
 
     companion object
 }

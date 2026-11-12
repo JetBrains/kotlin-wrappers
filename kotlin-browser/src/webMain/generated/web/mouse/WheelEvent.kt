@@ -18,28 +18,28 @@ open external class WheelEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode)
      */
-    val deltaMode: DeltaMode
+    open val deltaMode: DeltaMode
 
     /**
      * The **`WheelEvent.deltaX`** read-only property is a double representing the horizontal scroll amount in the WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX)
      */
-    val deltaX: Double
+    open val deltaX: Double
 
     /**
      * The **`WheelEvent.deltaY`** read-only property is a double representing the vertical scroll amount in the WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaY)
      */
-    val deltaY: Double
+    open val deltaY: Double
 
     /**
      * The **`WheelEvent.deltaZ`** read-only property is a double representing the scroll amount along the z-axis, in the WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
      */
-    val deltaZ: Double
+    open val deltaZ: Double
 
     companion object {
         val DOM_DELTA_PIXEL: DeltaMode

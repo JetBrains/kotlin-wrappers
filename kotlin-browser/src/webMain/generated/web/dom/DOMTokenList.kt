@@ -27,7 +27,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/value)
      */
-    var value: T
+    open var value: T
 
     /**
      * The **`add()`** method of the DOMTokenList interface adds the given tokens to the list, omitting any that are already present.
@@ -36,35 +36,35 @@ private constructor() :
      */
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(SyntaxError::class)
-    fun add(vararg tokens: T)
+    open fun add(vararg tokens: T)
 
     /**
      * The **`contains()`** method of the DOMTokenList interface returns a boolean value — true if the underlying list contains the given token, otherwise false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/contains)
      */
-    fun contains(token: T): Boolean
+    open fun contains(token: T): Boolean
 
     /**
      * The **`item()`** method of the DOMTokenList interface returns an item in the list, determined by its position in the list, its index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/item)
      */
-    fun item(index: Int): T?
+    open fun item(index: Int): T?
 
     /**
      * The **`remove()`** method of the DOMTokenList interface removes the specified tokens from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/remove)
      */
-    fun remove(vararg tokens: T)
+    open fun remove(vararg tokens: T)
 
     /**
      * The **`replace()`** method of the DOMTokenList interface replaces an existing token with a new token. If the first token doesn't exist, replace() returns false immediately, without adding the new token to the token list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/replace)
      */
-    fun replace(
+    open fun replace(
         token: T,
         newToken: T,
     ): Boolean
@@ -74,14 +74,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/supports)
      */
-    fun supports(token: T): Boolean
+    open fun supports(token: T): Boolean
 
     /**
      * The **`toggle()`** method of the DOMTokenList interface removes an existing token from the list and returns false. If the token doesn't exist it's added and the function returns true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/toggle)
      */
-    fun toggle(
+    open fun toggle(
         token: T,
         force: Boolean = definedExternally,
     ): Boolean

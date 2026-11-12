@@ -32,54 +32,54 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)
      */
-    val active: ServiceWorker?
+    open val active: ServiceWorker?
 
     /**
      * The **`cookies`** read-only property of the ServiceWorkerRegistration interface returns a reference to the CookieStoreManager interface, which enables a web app to subscribe to and unsubscribe from cookie change events in a service worker. This is an entry point for the Cookie Store API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/cookies)
      */
-    val cookies: CookieStoreManager
+    open val cookies: CookieStoreManager
 
     /**
      * The **`installing`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installing. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing)
      */
-    val installing: ServiceWorker?
+    open val installing: ServiceWorker?
 
     /**
      * The **`navigationPreload`** read-only property of the ServiceWorkerRegistration interface returns the NavigationPreloadManager associated with the current service worker registration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/navigationPreload)
      */
-    val navigationPreload: NavigationPreloadManager
+    open val navigationPreload: NavigationPreloadManager
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
      */
-    var onupdatefound: EventHandler<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>?
+    open var onupdatefound: EventHandler<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>?
 
     /**
      * The **`scope`** read-only property of the ServiceWorkerRegistration interface returns a string representing a URL that defines a service worker's registration scope; that is, the range of URLs a service worker can control. This is set using the scope parameter specified in the call to ServiceWorkerContainer.register() which registered the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope)
      */
-    val scope: String
+    open val scope: String
 
     /**
      * The **`updateViaCache`** read-only property of the ServiceWorkerRegistration interface returns the value of the setting used to determine the circumstances in which the browser will consult the HTTP cache when it tries to update the service worker or any scripts that are imported via importScripts().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updateViaCache)
      */
-    val updateViaCache: ServiceWorkerUpdateViaCache
+    open val updateViaCache: ServiceWorkerUpdateViaCache
 
     /**
      * The **`waiting`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installed. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting)
      */
-    val waiting: ServiceWorker?
+    open val waiting: ServiceWorker?
 
     /**
      * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration. Origins can have many active but differently-scoped service worker registrations. Notifications created by one service worker on the same origin will not be available to other active service workers on that same origin.
@@ -87,7 +87,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
      */
     @JsName("getNotifications")
-    fun getNotificationsAsync(filter: GetNotificationOptions = definedExternally): Promise<ReadonlyArray<Notification>>
+    open fun getNotificationsAsync(filter: GetNotificationOptions = definedExternally): Promise<ReadonlyArray<Notification>>
 
     /**
      * The **`showNotification()`** method of the ServiceWorkerRegistration interface creates a notification on an active service worker.
@@ -96,7 +96,7 @@ private constructor() :
      */
     @JsThrows(DataCloneError::class)
     @JsName("showNotification")
-    fun showNotificationAsync(
+    open fun showNotificationAsync(
         title: String,
         options: NotificationOptions = definedExternally,
     ): Promise<Void>
@@ -107,7 +107,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
      */
     @JsName("unregister")
-    fun unregisterAsync(): Promise<JsBoolean>
+    open fun unregisterAsync(): Promise<JsBoolean>
 
     /**
      * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker. It fetches the worker's script URL, and if the new worker is not byte-by-byte identical to the current worker, it installs the new worker. The fetch of the worker bypasses any browser caches if the previous fetch occurred over 24 hours ago.
@@ -115,7 +115,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
      */
     @JsName("update")
-    fun updateAsync(): Promise<ServiceWorkerRegistration>
+    open fun updateAsync(): Promise<ServiceWorkerRegistration>
 }
 
 /**

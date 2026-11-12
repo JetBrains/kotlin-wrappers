@@ -16,75 +16,75 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/addressLine)
      */
-    val addressLine: ReadonlyArray<JsString>
+    open val addressLine: ReadonlyArray<JsString>
 
     /**
      * The **`city`** read-only property of the ContactAddress interface returns a string containing the city or town portion of the address.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/city)
      */
-    val city: String
+    open val city: String
 
     /**
      * The **`country`** read-only property of the ContactAddress interface is a string identifying the address's country using the ISO 3166-1 alpha-2 standard. The string is always in its canonical upper-case form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/country)
      */
-    val country: String
+    open val country: String
 
     /**
      * The read-only **`dependentLocality`** property of the ContactAddress interface is a string containing a locality or sublocality designation within a city, such as a neighborhood, borough, district, or, in the United Kingdom, a dependent locality. Also known as a post town.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/dependentLocality)
      */
-    val dependentLocality: String
+    open val dependentLocality: String
 
     /**
      * The **`organization`** read-only property of the ContactAddress interface returns a string containing the name of the organization, firm, company, or institution at the address.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/organization)
      */
-    val organization: String
+    open val organization: String
 
     /**
      * The read-only **`phone`** property of the ContactAddress interface returns a string containing the telephone number of the recipient or contact person at the address.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/phone)
      */
-    val phone: String
+    open val phone: String
 
     /**
      * The **`postalCode`** read-only property of the ContactAddress interface returns a string containing a code used by a jurisdiction for mail routing, for example, the ZIP Code in the United States or the Postal Index Number (PIN code) in India.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/postalCode)
      */
-    val postalCode: String
+    open val postalCode: String
 
     /**
      * The read-only **`recipient`** property of the ContactAddress interface returns a string containing the name of the recipient, purchaser, or contact person at the address.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/recipient)
      */
-    val recipient: String
+    open val recipient: String
 
     /**
      * The read-only **`region`** property of the ContactAddress interface returns a string containing the top-level administrative subdivision of the country in which the address is located. This may be a state, province, oblast, or prefecture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/region)
      */
-    val region: String
+    open val region: String
 
     /**
      * The **`sortingCode`** read-only property of the ContactAddress interface returns a string containing a postal sorting code such as is used in France.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/sortingCode)
      */
-    val sortingCode: String
+    open val sortingCode: String
 
     /**
      * The **`toJSON()`** method of the ContactAddress interface is a standard serializer that returns a JSON representation of the ContactAddress object's properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 }

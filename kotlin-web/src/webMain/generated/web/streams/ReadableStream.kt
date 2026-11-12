@@ -45,7 +45,7 @@ open external class ReadableStream<R : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/locked)
      */
-    val locked: Boolean
+    open val locked: Boolean
 
     /**
      * The **`cancel()`** method of the ReadableStream interface returns a Promise that resolves when the stream is canceled.
@@ -53,22 +53,22 @@ open external class ReadableStream<R : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
      */
     @JsName("cancel")
-    fun cancelAsync(reason: JsError? = definedExternally): Promise<Void>
+    open fun cancelAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
      * The **`getReader()`** method of the ReadableStream interface creates a reader and locks the stream to it. While the stream is locked, no other reader can be acquired until this one is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)
      */
-    fun getReader(): ReadableStreamDefaultReader<R>
-    fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
+    open fun getReader(): ReadableStreamDefaultReader<R>
+    open fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
 
     /**
      * The **`pipeThrough()`** method of the ReadableStream interface provides a chainable way of piping the current stream through a transform stream or any other writable/readable pair.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough)
      */
-    fun <T : JsAny?> pipeThrough(
+    open fun <T : JsAny?> pipeThrough(
         transform: ReadableWritablePair<T, R>,
         options: StreamPipeOptions = definedExternally,
     ): ReadableStream<T>
@@ -79,7 +79,7 @@ open external class ReadableStream<R : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
      */
     @JsName("pipeTo")
-    fun pipeToAsync(
+    open fun pipeToAsync(
         destination: WritableStream<R>,
         options: StreamPipeOptions = definedExternally,
     ): Promise<Void>
@@ -89,8 +89,8 @@ open external class ReadableStream<R : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
      */
-    fun tee(): Tuple2<ReadableStream<R>, ReadableStream<R>>
-    fun values(options: ReadableStreamIteratorOptions = definedExternally): AsyncIterator<R>
+    open fun tee(): Tuple2<ReadableStream<R>, ReadableStream<R>>
+    open fun values(options: ReadableStreamIteratorOptions = definedExternally): AsyncIterator<R>
 
     companion object {
         /**

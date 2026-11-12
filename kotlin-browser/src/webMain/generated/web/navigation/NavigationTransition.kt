@@ -15,26 +15,26 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/committed)
      */
-    val committed: Promise<Void>
+    open val committed: Promise<Void>
 
     /**
      * The **`finished`** read-only property of the NavigationTransition interface returns a Promise that fulfills at the same time the navigatesuccess event fires, or rejects at the same time the navigateerror event fires.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/finished)
      */
-    val finished: Promise<Void>
+    open val finished: Promise<Void>
 
     /**
      * The **`from`** read-only property of the NavigationTransition interface returns the NavigationHistoryEntry that the transition is coming from.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/from)
      */
-    val from: NavigationHistoryEntry
+    open val from: NavigationHistoryEntry
 
     /**
      * The **`navigationType`** read-only property of the NavigationTransition interface returns the type of the ongoing navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/navigationType)
      */
-    val navigationType: NavigationType
+    open val navigationType: NavigationType
 }

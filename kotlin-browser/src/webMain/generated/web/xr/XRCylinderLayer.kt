@@ -7,10 +7,10 @@ import web.events.EventInstance
 open external class XRCylinderLayer
 private constructor() :
     XRCompositionLayer {
-    var transform: XRRigidTransform
-    var radius: Float
-    var centralAngle: Float
-    var aspectRatio: Float
+    open var transform: XRRigidTransform
+    open var radius: Float
+    open var centralAngle: Float
+    open var aspectRatio: Float
 }
 
 /**

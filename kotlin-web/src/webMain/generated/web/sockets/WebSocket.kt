@@ -27,13 +27,13 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/url)
      */
-    val url: String,
+    open val url: String,
     /**
      * The **`WebSocket.protocol`** read-only property returns the name of the sub-protocol the server selected; this will be one of the strings specified in the protocols parameter when creating the WebSocket object, or the empty string if no connection is established.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/protocol)
      */
-    val protocol: String = definedExternally,
+    open val protocol: String = definedExternally,
 ) : EventTarget {
     constructor(
         url: URL,
@@ -55,48 +55,48 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/binaryType)
      */
-    var binaryType: BinaryType
+    open var binaryType: BinaryType
 
     /**
      * The **`WebSocket.bufferedAmount`** read-only property returns the number of bytes of data that have been queued using calls to send() but not yet transmitted to the network. This value resets to zero once all queued data has been sent. This value does not reset to zero when the connection is closed; if you keep calling send(), this will continue to climb.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
      */
-    val bufferedAmount: UInt53
+    open val bufferedAmount: UInt53
 
     /**
      * The **`WebSocket.extensions`** read-only property returns the extensions selected by the server. This is currently only the empty string or a list of extensions as negotiated by the connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/extensions)
      */
-    val extensions: String
+    open val extensions: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
      */
-    var onclose: EventHandler<CloseEvent, WebSocket, WebSocket>?
+    open var onclose: EventHandler<CloseEvent, WebSocket, WebSocket>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
      */
-    var onerror: EventHandler<Event, WebSocket, WebSocket>?
+    open var onerror: EventHandler<Event, WebSocket, WebSocket>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, WebSocket, WebSocket>?
+    open var onmessage: EventHandler<MessageEvent<*>, WebSocket, WebSocket>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
      */
-    var onopen: EventHandler<Event, WebSocket, WebSocket>?
+    open var onopen: EventHandler<Event, WebSocket, WebSocket>?
 
     /**
      * The **`WebSocket.readyState`** read-only property returns the current state of the WebSocket connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/readyState)
      */
-    val readyState: ReadyState
+    open val readyState: ReadyState
 
     /**
      * The **`WebSocket.close()`** method closes the WebSocket connection or connection attempt, if any. If the connection is already CLOSED, this method does nothing.
@@ -105,7 +105,7 @@ open external class WebSocket(
      */
     @JsThrows(InvalidAccessError::class)
     @JsThrows(SyntaxError::class)
-    fun close(
+    open fun close(
         code: Short = definedExternally,
         reason: String = definedExternally,
     )
@@ -116,7 +116,7 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
     @JsThrows(InvalidStateError::class)
-    fun send(data: BufferSource)
+    open fun send(data: BufferSource)
 
     /**
      * The **`WebSocket.send()`** method enqueues the specified data to be transmitted to the server over the WebSocket connection, increasing the value of bufferedAmount by the number of bytes needed to contain the data. If the data can't be sent (for example, because it needs to be buffered but the buffer is full), the socket is closed automatically. The browser will throw an exception if you call send() when the connection is in the CONNECTING state. If you call send() when the connection is in the CLOSING or CLOSED states, the browser will silently discard the data.
@@ -124,7 +124,7 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
     @JsThrows(InvalidStateError::class)
-    fun send(data: Blob)
+    open fun send(data: Blob)
 
     /**
      * The **`WebSocket.send()`** method enqueues the specified data to be transmitted to the server over the WebSocket connection, increasing the value of bufferedAmount by the number of bytes needed to contain the data. If the data can't be sent (for example, because it needs to be buffered but the buffer is full), the socket is closed automatically. The browser will throw an exception if you call send() when the connection is in the CONNECTING state. If you call send() when the connection is in the CLOSING or CLOSED states, the browser will silently discard the data.
@@ -132,7 +132,7 @@ open external class WebSocket(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
     @JsThrows(InvalidStateError::class)
-    fun send(data: String)
+    open fun send(data: String)
 
     companion object {
         val CONNECTING: ReadyState

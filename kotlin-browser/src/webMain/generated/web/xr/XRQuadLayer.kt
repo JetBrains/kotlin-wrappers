@@ -7,9 +7,9 @@ import web.events.EventInstance
 open external class XRQuadLayer
 private constructor() :
     XRCompositionLayer {
-    var transform: XRRigidTransform
-    var width: Float
-    var height: Float
+    open var transform: XRRigidTransform
+    open var width: Float
+    open var height: Float
 }
 
 /**

@@ -28,7 +28,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("getPorts")
-    fun getPortsAsync(): Promise<ReadonlyArray<SerialPort>>
+    open fun getPortsAsync(): Promise<ReadonlyArray<SerialPort>>
 
     /**
      * The **`Serial.requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
@@ -38,7 +38,7 @@ private constructor() :
     @JsThrows(NotFoundError::class)
     @JsThrows(SecurityError::class)
     @JsName("requestPort")
-    fun requestPortAsync(options: SerialPortRequestOptions = definedExternally): Promise<SerialPort>
+    open fun requestPortAsync(options: SerialPortRequestOptions = definedExternally): Promise<SerialPort>
 }
 
 /**

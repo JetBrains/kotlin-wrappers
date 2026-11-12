@@ -14,12 +14,12 @@ open external class Collator(
         options: CollatorOptions = definedExternally,
     )
 
-    fun compare(
+    open fun compare(
         x: String,
         y: String,
     ): Int
 
-    fun resolvedOptions(): ResolvedCollatorOptions
+    open fun resolvedOptions(): ResolvedCollatorOptions
 
     companion object {
         fun supportedLocalesOf(

@@ -16,5 +16,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasPattern/setTransform)
      */
-    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
+    open fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 }

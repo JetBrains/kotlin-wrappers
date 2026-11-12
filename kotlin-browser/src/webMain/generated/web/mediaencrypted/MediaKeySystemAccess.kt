@@ -18,7 +18,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/keySystem)
      */
-    val keySystem: String
+    open val keySystem: String
 
     /**
      * The **`MediaKeySystemAccess.createMediaKeys()`** method returns a Promise that resolves to a new MediaKeys object.
@@ -26,14 +26,14 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
      */
     @JsName("createMediaKeys")
-    fun createMediaKeysAsync(): Promise<MediaKeys>
+    open fun createMediaKeysAsync(): Promise<MediaKeys>
 
     /**
      * The **`getConfiguration()`** method of the MediaKeySystemAccess interface returns an object with the supported combination of the following configuration options:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)
      */
-    fun getConfiguration(): MediaKeySystemConfiguration
+    open fun getConfiguration(): MediaKeySystemConfiguration
 }
 
 /**

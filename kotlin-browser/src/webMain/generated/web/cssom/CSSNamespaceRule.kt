@@ -15,12 +15,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/namespaceURI)
      */
-    val namespaceURI: String
+    open val namespaceURI: String
 
     /**
      * The read-only **`prefix`** property of the CSSNamespaceRule returns a string with the name of the prefix associated to this namespace. If there is no such prefix, it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/prefix)
      */
-    val prefix: String
+    open val prefix: String
 }

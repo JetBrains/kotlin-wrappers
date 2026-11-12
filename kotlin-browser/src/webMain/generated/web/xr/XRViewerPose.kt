@@ -18,5 +18,5 @@ import js.array.ReadonlyArray
 open external class XRViewerPose
 private constructor() :
     XRPose {
-    val views: ReadonlyArray<XRView>
+    open val views: ReadonlyArray<XRView>
 }

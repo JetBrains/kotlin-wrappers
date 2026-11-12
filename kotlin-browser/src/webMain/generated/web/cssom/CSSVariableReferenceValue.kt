@@ -13,11 +13,11 @@ open external class CSSVariableReferenceValue(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSVariableReferenceValue/variable)
      */
-    var variable: String,
+    open var variable: String,
     /**
      * The **`fallback`** read-only property of the CSSVariableReferenceValue interface returns the custom property fallback value of the CSSVariableReferenceValue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSVariableReferenceValue/fallback)
      */
-    val fallback: CSSUnparsedValue? = definedExternally,
+    open val fallback: CSSUnparsedValue? = definedExternally,
 )

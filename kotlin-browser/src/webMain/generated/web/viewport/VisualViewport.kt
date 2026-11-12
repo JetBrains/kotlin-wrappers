@@ -20,64 +20,64 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/height)
      */
-    val height: Double
+    open val height: Double
 
     /**
      * The **`offsetLeft`** read-only property of the VisualViewport interface returns the offset of the left edge of the visual viewport from the left edge of the layout viewport in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetLeft)
      */
-    val offsetLeft: Double
+    open val offsetLeft: Double
 
     /**
      * The **`offsetTop`** read-only property of the VisualViewport interface returns the offset of the top edge of the visual viewport from the top edge of the layout viewport in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/offsetTop)
      */
-    val offsetTop: Double
+    open val offsetTop: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
      */
-    var onresize: EventHandler<Event, VisualViewport, VisualViewport>?
+    open var onresize: EventHandler<Event, VisualViewport, VisualViewport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
      */
-    var onscroll: EventHandler<Event, VisualViewport, VisualViewport>?
+    open var onscroll: EventHandler<Event, VisualViewport, VisualViewport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
      */
-    var onscrollend: EventHandler<Event, VisualViewport, VisualViewport>?
+    open var onscrollend: EventHandler<Event, VisualViewport, VisualViewport>?
 
     /**
      * The **`pageLeft`** read-only property of the VisualViewport interface returns the x coordinate of the left edge of the visual viewport relative to the initial containing block origin, in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageLeft)
      */
-    val pageLeft: Double
+    open val pageLeft: Double
 
     /**
      * The **`pageTop`** read-only property of the VisualViewport interface returns the y coordinate of the top edge of the visual viewport relative to the initial containing block origin, in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/pageTop)
      */
-    val pageTop: Double
+    open val pageTop: Double
 
     /**
      * The **`scale`** read-only property of the VisualViewport interface returns the pinch-zoom scaling factor applied to the visual viewport, or 0 if current document is not fully active, or 1 if there is no output device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scale)
      */
-    val scale: Double
+    open val scale: Double
 
     /**
      * The **`width`** read-only property of the VisualViewport interface returns the width of the visual viewport, in CSS pixels, or 0 if current document is not fully active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/width)
      */
-    val width: Double
+    open val width: Double
 }
 
 /**

@@ -13,11 +13,11 @@ open external class CSSUnitValue(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/value)
      */
-    var value: Double,
+    open var value: Double,
     /**
      * The **`CSSUnitValue.unit`** read-only property of the CSSUnitValue interface returns a string indicating the unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/unit)
      */
-    val unit: String,
+    open val unit: String,
 ) : CSSNumericValue

@@ -29,12 +29,12 @@ open external class OfflineAudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length)
      */
-    val length: Int
+    open val length: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
      */
-    var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext, OfflineAudioContext>?
+    open var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext, OfflineAudioContext>?
 
     /**
      * The **`resume()`** method of the OfflineAudioContext interface resumes the progression of time in an audio context that has been suspended. The promise resolves immediately because the OfflineAudioContext does not require the audio hardware.
@@ -43,7 +43,7 @@ open external class OfflineAudioContext(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("resume")
-    fun resumeAsync(): Promise<Void>
+    open fun resumeAsync(): Promise<Void>
 
     /**
      * The **`startRendering()`** method of the OfflineAudioContext Interface starts rendering the audio graph, taking into account the current connections and the current scheduled changes.
@@ -51,7 +51,7 @@ open external class OfflineAudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
      */
     @JsName("startRendering")
-    fun startRenderingAsync(): Promise<AudioBuffer>
+    open fun startRenderingAsync(): Promise<AudioBuffer>
 
     /**
      * The **`suspend()`** method of the OfflineAudioContext interface schedules a suspension of the time progression in the audio context at the specified time and returns a promise. This is generally useful at the time of manipulating the audio graph synchronously on OfflineAudioContext.
@@ -60,7 +60,7 @@ open external class OfflineAudioContext(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("suspend")
-    fun suspendAsync(suspendTime: Double): Promise<Void>
+    open fun suspendAsync(suspendTime: Double): Promise<Void>
 }
 
 /**

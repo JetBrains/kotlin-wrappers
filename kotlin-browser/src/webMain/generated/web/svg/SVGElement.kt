@@ -23,12 +23,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
      */
-    val ownerSVGElement: SVGSVGElement?
+    open val ownerSVGElement: SVGSVGElement?
 
     /**
      * The **`viewportElement`** property of the SVGElement interface represents the SVGElement which established the current viewport. Often the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
      */
-    val viewportElement: SVGElement?
+    open val viewportElement: SVGElement?
 }

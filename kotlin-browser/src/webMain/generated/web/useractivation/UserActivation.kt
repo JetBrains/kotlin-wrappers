@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/hasBeenActive)
      */
-    val hasBeenActive: Boolean
+    open val hasBeenActive: Boolean
 
     /**
      * The read-only **`isActive`** property of the UserActivation interface indicates whether the current window has transient user activation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/isActive)
      */
-    val isActive: Boolean
+    open val isActive: Boolean
 }

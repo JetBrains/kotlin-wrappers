@@ -28,7 +28,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The **`isSameEntry()`** method of the FileSystemHandle interface compares two handles to see if the associated entries (either a file or directory) match.
@@ -36,7 +36,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
      */
     @JsName("isSameEntry")
-    fun isSameEntryAsync(other: FileSystemHandle): Promise<JsBoolean>
+    open fun isSameEntryAsync(other: FileSystemHandle): Promise<JsBoolean>
 }
 
 /**

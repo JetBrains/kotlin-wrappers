@@ -20,42 +20,42 @@ open external class DOMQuad(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
      */
-    val p1: DOMPoint
+    open val p1: DOMPoint
 
     /**
      * The DOMQuad interface's **`p2`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x + width, y).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2)
      */
-    val p2: DOMPoint
+    open val p2: DOMPoint
 
     /**
      * The DOMQuad interface's **`p3`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x + width, y + height).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3)
      */
-    val p3: DOMPoint
+    open val p3: DOMPoint
 
     /**
      * The DOMQuad interface's **`p4`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x, y + height).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4)
      */
-    val p4: DOMPoint
+    open val p4: DOMPoint
 
     /**
      * The DOMQuad method **`getBounds()`** returns a DOMRect object representing the smallest rectangle that fully contains the DOMQuad object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds)
      */
-    fun getBounds(): DOMRect
+    open fun getBounds(): DOMRect
 
     /**
      * The DOMQuad method **`toJSON()`** returns a JSON representation of the DOMQuad object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 
     companion object {
         /**

@@ -24,7 +24,7 @@ private constructor() :
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("requestSession")
-    fun requestSessionAsync(
+    open fun requestSessionAsync(
         mode: XRSessionMode,
         options: XRSessionInit = definedExternally,
     ): Promise<XRSession>
@@ -35,9 +35,9 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("isSessionSupported")
-    fun isSessionSupportedAsync(mode: XRSessionMode): Promise<JsBoolean>
-    var ondevicechange: EventHandler<XRSystemDeviceChangeEvent, *, *>?
-    var onsessiongranted: EventHandler<XRSystemSessionGrantedEvent, *, *>?
+    open fun isSessionSupportedAsync(mode: XRSessionMode): Promise<JsBoolean>
+    open var ondevicechange: EventHandler<XRSystemDeviceChangeEvent, *, *>?
+    open var onsessiongranted: EventHandler<XRSystemSessionGrantedEvent, *, *>?
 }
 
 /**

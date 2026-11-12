@@ -21,14 +21,14 @@ open external class MediaKeyMessageEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
      */
-    val message: ArrayBuffer
+    open val message: ArrayBuffer
 
     /**
      * The **`MediaKeyMessageEvent.messageType`** read-only property indicates the type of message. It may be one of license-request, license-renewal, license-release, or individualization-request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
      */
-    val messageType: MediaKeyMessageType
+    open val messageType: MediaKeyMessageType
 
     companion object
 }

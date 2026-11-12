@@ -7,7 +7,7 @@ package web.idb
  */
 open external class IDBRecord
 private constructor() {
-    val key: JsAny?
-    val primaryKey: JsAny?
-    val value: JsAny?
+    open val key: JsAny?
+    open val primaryKey: JsAny?
+    open val value: JsAny?
 }

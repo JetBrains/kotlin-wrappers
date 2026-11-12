@@ -15,5 +15,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule/conditionText)
      */
-    val conditionText: String
+    open val conditionText: String
 }

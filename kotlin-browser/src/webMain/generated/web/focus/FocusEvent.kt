@@ -20,7 +20,7 @@ open external class FocusEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FocusEvent/relatedTarget)
      */
-    val relatedTarget: EventTarget?
+    open val relatedTarget: EventTarget?
 
     companion object
 }

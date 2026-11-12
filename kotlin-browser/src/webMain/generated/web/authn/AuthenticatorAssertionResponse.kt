@@ -18,19 +18,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/authenticatorData)
      */
-    val authenticatorData: ArrayBuffer
+    open val authenticatorData: ArrayBuffer
 
     /**
      * The **`signature`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object which is the signature of the authenticator for both AuthenticatorAssertionResponse.authenticatorData and a SHA-256 hash of the client data (AuthenticatorAssertionResponse.clientDataJSON).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/signature)
      */
-    val signature: ArrayBuffer
+    open val signature: ArrayBuffer
 
     /**
      * The **`userHandle`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object providing an opaque identifier for the given user. Such an identifier can be used by the relying party's server to link the user account with its corresponding credentials and other data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/userHandle)
      */
-    val userHandle: ArrayBuffer?
+    open val userHandle: ArrayBuffer?
 }

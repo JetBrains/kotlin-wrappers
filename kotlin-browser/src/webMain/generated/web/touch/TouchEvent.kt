@@ -19,49 +19,49 @@ open external class TouchEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/altKey)
      */
-    val altKey: Boolean
+    open val altKey: Boolean
 
     /**
      * The **`changedTouches`** read-only property is a TouchList whose touch points (Touch objects) varies depending on the event type, as follows:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/changedTouches)
      */
-    val changedTouches: TouchList
+    open val changedTouches: TouchList
 
     /**
      * The read-only **`ctrlKey`** property of the TouchEvent interface returns a boolean value indicating whether the control (Control) key is enabled when the touch event is created. If this key is enabled, the attribute's value is true. Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/ctrlKey)
      */
-    val ctrlKey: Boolean
+    open val ctrlKey: Boolean
 
     /**
      * The read-only **`metaKey`** property of the TouchEvent interface returns a boolean value indicating whether or not the Meta key is enabled when the touch event is created. If this key is enabled, the attribute's value is true. Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/metaKey)
      */
-    val metaKey: Boolean
+    open val metaKey: Boolean
 
     /**
      * The read-only **`shiftKey`** property of the TouchEvent interface returns a boolean value indicating whether or not the shift key is enabled when the touch event is created. If this key is enabled, the attribute's value is true. Otherwise, it is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/shiftKey)
      */
-    val shiftKey: Boolean
+    open val shiftKey: Boolean
 
     /**
      * The **`targetTouches`** read-only property is a TouchList listing all the Touch objects for touch points that are still in contact with the touch surface and whose touchstart event occurred inside the same target element as the current target element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/targetTouches)
      */
-    val targetTouches: TouchList
+    open val targetTouches: TouchList
 
     /**
      * **`touches`** is a read-only TouchList listing all the Touch objects for touch points that are currently in contact with the touch surface, regardless of whether or not they've changed or what their target element was at touchstart time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent/touches)
      */
-    val touches: TouchList
+    open val touches: TouchList
 
     companion object
 }

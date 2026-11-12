@@ -15,26 +15,26 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/animated)
      */
-    val animated: Boolean
+    open val animated: Boolean
 
     /**
      * The **`frameCount`** property of the ImageTrack interface returns the number of frames in the track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/frameCount)
      */
-    val frameCount: Int
+    open val frameCount: Int
 
     /**
      * The **`repetitionCount`** property of the ImageTrack interface returns the number of repetitions of this track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/repetitionCount)
      */
-    val repetitionCount: Float
+    open val repetitionCount: Float
 
     /**
      * The **`selected`** property of the ImageTrack interface returns true if the track is selected for decoding.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/selected)
      */
-    var selected: Boolean
+    open var selected: Boolean
 }

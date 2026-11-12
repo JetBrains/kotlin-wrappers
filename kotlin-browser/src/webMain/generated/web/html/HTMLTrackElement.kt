@@ -19,49 +19,49 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/default)
      */
-    var default: Boolean
+    open var default: Boolean
 
     /**
      * The **`kind`** property of the HTMLTrackElement interface represents the type of track, or how the text track is meant to be used. It reflects the <track> element's enumerated kind attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/kind)
      */
-    var kind: String
+    open var kind: String
 
     /**
      * The **`label`** property of the HTMLTrackElement represents the user-readable title displayed when listing subtitle, caption, and audio descriptions for a track. It reflects the <track> element's label attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/label)
      */
-    var label: String
+    open var label: String
 
     /**
      * The **`readyState`** read-only property of the HTMLTrackElement interface returns a number representing the <track> element's text track readiness state:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState)
      */
-    val readyState: ReadyState
+    open val readyState: ReadyState
 
     /**
      * The **`src`** property of the HTMLTrackElement interface reflects the value of the <track> element's src attribute, which indicates the URL of the text track's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/src)
      */
-    var src: String
+    open var src: String
 
     /**
      * The **`srclang`** property of the HTMLTrackElement interface reflects the value of the <track> element's srclang attribute or the empty string if not defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/srclang)
      */
-    var srclang: String
+    open var srclang: String
 
     /**
      * The **`track`** read-only property of the HTMLTrackElement interface returns a TextTrack object corresponding to the text track of the <track> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/track)
      */
-    val track: TextTrack
+    open val track: TextTrack
 
     companion object {
         val NONE: ReadyState

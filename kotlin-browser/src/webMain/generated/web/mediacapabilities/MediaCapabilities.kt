@@ -23,7 +23,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
     @JsName("decodingInfo")
-    fun decodingInfoAsync(configuration: MediaDecodingConfiguration): Promise<MediaCapabilitiesDecodingInfo>
+    open fun decodingInfoAsync(configuration: MediaDecodingConfiguration): Promise<MediaCapabilitiesDecodingInfo>
 
     /**
      * The **`encodingInfo()`** method of the MediaCapabilities interface returns a promise that fulfills with the tested media configuration's capabilities for encoding media. This contains the three boolean properties supported, smooth, and powerefficient, which describe how compatible the device is with the type of media.
@@ -31,7 +31,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo)
      */
     @JsName("encodingInfo")
-    fun encodingInfoAsync(configuration: MediaEncodingConfiguration): Promise<MediaCapabilitiesEncodingInfo>
+    open fun encodingInfoAsync(configuration: MediaEncodingConfiguration): Promise<MediaCapabilitiesEncodingInfo>
 }
 
 /**

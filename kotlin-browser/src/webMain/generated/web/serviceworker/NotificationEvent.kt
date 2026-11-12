@@ -19,14 +19,14 @@ open external class NotificationEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
      */
-    val action: String
+    open val action: String
 
     /**
      * The **`notification`** read-only property of the NotificationEvent interface returns the instance of the Notification that was clicked to fire the event. The Notification provides read-only access to many properties that were set at the instantiation time of the Notification such as tag and data attributes that allow you to store information for deferred use in the notificationclick event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
      */
-    val notification: Notification
+    open val notification: Notification
 
     companion object
 }

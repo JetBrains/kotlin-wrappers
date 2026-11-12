@@ -24,73 +24,73 @@ open external class MediaStream() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/active)
      */
-    val active: Boolean
+    open val active: Boolean
 
     /**
      * The **`id`** read-only property of the MediaStream interface is a string containing 36 characters denoting a unique identifier (GUID) for the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/id)
      */
-    val id: String
+    open val id: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
      */
-    var onaddtrack: EventHandler<MediaStreamTrackEvent, MediaStream, MediaStream>?
+    open var onaddtrack: EventHandler<MediaStreamTrackEvent, MediaStream, MediaStream>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
      */
-    var onremovetrack: EventHandler<MediaStreamTrackEvent, MediaStream, MediaStream>?
+    open var onremovetrack: EventHandler<MediaStreamTrackEvent, MediaStream, MediaStream>?
 
     /**
      * The **`addTrack()`** method of the MediaStream interface adds a new track to the stream. The track is specified as a parameter of type MediaStreamTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addTrack)
      */
-    fun addTrack(track: MediaStreamTrack)
+    open fun addTrack(track: MediaStreamTrack)
 
     /**
      * The **`clone()`** method of the MediaStream interface creates a duplicate of the MediaStream. This new MediaStream object has a new unique id and contains clones of every MediaStreamTrack contained by the MediaStream on which clone() was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/clone)
      */
-    fun clone(): MediaStream
+    open fun clone(): MediaStream
 
     /**
      * The **`getAudioTracks()`** method of the MediaStream interface returns a sequence that represents all the MediaStreamTrack objects in this stream's track set where MediaStreamTrack.kind is audio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getAudioTracks)
      */
-    fun getAudioTracks(): ReadonlyArray<MediaStreamTrack>
+    open fun getAudioTracks(): ReadonlyArray<MediaStreamTrack>
 
     /**
      * The **`getTrackById()`** method of the MediaStream interface returns a MediaStreamTrack object representing the track with the specified ID string. If there is no track with the specified ID, this method returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTrackById)
      */
-    fun getTrackById(trackId: String): MediaStreamTrack?
+    open fun getTrackById(trackId: String): MediaStreamTrack?
 
     /**
      * The **`getTracks()`** method of the MediaStream interface returns a sequence that represents all the MediaStreamTrack objects in this stream's track set, regardless of MediaStreamTrack.kind.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTracks)
      */
-    fun getTracks(): ReadonlyArray<MediaStreamTrack>
+    open fun getTracks(): ReadonlyArray<MediaStreamTrack>
 
     /**
      * The **`getVideoTracks()`** method of the MediaStream interface returns a sequence of MediaStreamTrack objects representing the video tracks in this stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getVideoTracks)
      */
-    fun getVideoTracks(): ReadonlyArray<MediaStreamTrack>
+    open fun getVideoTracks(): ReadonlyArray<MediaStreamTrack>
 
     /**
      * The **`removeTrack()`** method of the MediaStream interface removes a MediaStreamTrack from a stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack)
      */
-    fun removeTrack(track: MediaStreamTrack)
+    open fun removeTrack(track: MediaStreamTrack)
 }
 
 /**

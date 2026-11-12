@@ -20,55 +20,55 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availHeight)
      */
-    val availHeight: Int
+    open val availHeight: Int
 
     /**
      * The **`Screen.availWidth`** property returns the amount of horizontal space (in CSS pixels) available to the window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availWidth)
      */
-    val availWidth: Int
+    open val availWidth: Int
 
     /**
      * The **`Screen.colorDepth`** read-only property returns the color depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/colorDepth)
      */
-    val colorDepth: Int
+    open val colorDepth: Int
 
     /**
      * The **`Screen.height`** read-only property returns the height of the screen in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/height)
      */
-    val height: Int
+    open val height: Int
 
     /**
      * The **`orientation`** read-only property of the Screen interface returns the current orientation of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/orientation)
      */
-    val orientation: ScreenOrientation
+    open val orientation: ScreenOrientation
 
     /**
      * Returns the bit depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/pixelDepth)
      */
-    val pixelDepth: Int
+    open val pixelDepth: Int
 
     /**
      * The **`Screen.width`** read-only property returns the width of the screen in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/width)
      */
-    val width: Int
+    open val width: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/isExtended)
      */
     @ExperimentalWebApi
-    val isExtended: Boolean
+    open val isExtended: Boolean
 }
 
 /**

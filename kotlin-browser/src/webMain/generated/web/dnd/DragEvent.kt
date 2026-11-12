@@ -20,7 +20,7 @@ open external class DragEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer)
      */
-    val dataTransfer: DataTransfer?
+    open val dataTransfer: DataTransfer?
 
     companion object
 }

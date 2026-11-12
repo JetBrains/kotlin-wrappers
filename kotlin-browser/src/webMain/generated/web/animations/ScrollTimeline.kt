@@ -17,12 +17,12 @@ open external class ScrollTimeline(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScrollTimeline/axis)
      */
-    val axis: ScrollAxis
+    open val axis: ScrollAxis
 
     /**
      * The **`source`** read-only property of the ScrollTimeline interface returns a reference to the scrollable element (scroller) whose scroll position is driving the progress of the timeline and therefore the animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScrollTimeline/source)
      */
-    val source: Element?
+    open val source: Element?
 }

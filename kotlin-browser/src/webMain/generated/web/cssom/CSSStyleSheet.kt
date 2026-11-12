@@ -20,21 +20,21 @@ open external class CSSStyleSheet(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/cssRules)
      */
-    val cssRules: CSSRuleList
+    open val cssRules: CSSRuleList
 
     /**
      * The read-only CSSStyleSheet property **`ownerRule`** returns the CSSImportRule corresponding to the @import at-rule which imported the stylesheet into the document. If the stylesheet wasn't imported into the document using @import, the returned value is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/ownerRule)
      */
-    val ownerRule: CSSRule?
+    open val ownerRule: CSSRule?
 
     /**
      * The CSSStyleSheet method **`deleteRule()`** removes a rule from the stylesheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/deleteRule)
      */
-    fun deleteRule(index: Int)
+    open fun deleteRule(index: Int)
 
     /**
      * The **`CSSStyleSheet.insertRule()`** method inserts a new CSS rule into the current style sheet.
@@ -45,7 +45,7 @@ open external class CSSStyleSheet(
     @JsThrows(IndexSizeError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(SyntaxError::class)
-    fun insertRule(
+    open fun insertRule(
         rule: String,
         index: Int = definedExternally,
     ): Int
@@ -57,7 +57,7 @@ open external class CSSStyleSheet(
      */
     @JsThrows(NotAllowedError::class)
     @JsName("replace")
-    fun replaceAsync(text: String): Promise<CSSStyleSheet>
+    open fun replaceAsync(text: String): Promise<CSSStyleSheet>
 
     /**
      * The **`replaceSync()`** method of the CSSStyleSheet interface synchronously replaces the content of the stylesheet with the content passed into it.
@@ -65,7 +65,7 @@ open external class CSSStyleSheet(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync)
      */
     @JsThrows(NotAllowedError::class)
-    fun replaceSync(text: String)
+    open fun replaceSync(text: String)
 }
 
 /**

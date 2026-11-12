@@ -18,21 +18,21 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/metadata)
      */
-    var metadata: MediaMetadata?
+    open var metadata: MediaMetadata?
 
     /**
      * The **`playbackState`** property of the MediaSession interface indicates whether the current media session is playing or paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState)
      */
-    var playbackState: MediaSessionPlaybackState
+    open var playbackState: MediaSessionPlaybackState
 
     /**
      * The **`setActionHandler()`** method of the MediaSession interface sets a handler for a media session action. These actions let a web app receive notifications when the user engages a device's built-in physical or onscreen media controls, such as play, stop, or seek buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler)
      */
-    fun setActionHandler(
+    open fun setActionHandler(
         action: MediaSessionAction,
         handler: MediaSessionActionHandler?,
     )
@@ -43,7 +43,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive)
      */
     @JsName("setCameraActive")
-    fun setCameraActiveAsync(active: Boolean): Promise<Void>
+    open fun setCameraActiveAsync(active: Boolean): Promise<Void>
 
     /**
      * The **`setMicrophoneActive()`** method of the MediaSession interface is used to indicate to the user agent whether the user's microphone is considered to be currently muted.
@@ -51,14 +51,14 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive)
      */
     @JsName("setMicrophoneActive")
-    fun setMicrophoneActiveAsync(active: Boolean): Promise<Void>
+    open fun setMicrophoneActiveAsync(active: Boolean): Promise<Void>
 
     /**
      * The **`setPositionState()`** method of the MediaSession interface is used to update the current document's media playback position and speed for presentation by user's device in any kind of interface that provides details about ongoing media. This can be particularly useful if your code implements a player for type of media not directly supported by the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState)
      */
-    fun setPositionState(state: MediaPositionState = definedExternally)
+    open fun setPositionState(state: MediaPositionState = definedExternally)
 }
 
 /**

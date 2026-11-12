@@ -26,5 +26,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item)
      */
-    fun item(index: Int): CSSStyleSheet?
+    open fun item(index: Int): CSSStyleSheet?
 }

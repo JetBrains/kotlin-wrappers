@@ -23,7 +23,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<WebTransportReceiveStreamStats>
+    open fun getStatsAsync(): Promise<WebTransportReceiveStreamStats>
 }
 
 /**

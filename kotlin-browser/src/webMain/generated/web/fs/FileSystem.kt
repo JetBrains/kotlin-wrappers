@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystem/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The read-only **`root`** property of the FileSystem interface specifies a FileSystemDirectoryEntry object representing the root directory of the file system, for use with the File and Directory Entries API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystem/root)
      */
-    val root: FileSystemDirectoryEntry
+    open val root: FileSystemDirectoryEntry
 }

@@ -11,9 +11,9 @@ import js.typedarrays.Float32Array
  */
 open external class XRView
 private constructor() {
-    val eye: XREye
-    val projectionMatrix: Float32Array<*>
-    val transform: XRRigidTransform
-    val recommendedViewportScale: Double?
-    fun requestViewportScale(scale: Double)
+    open val eye: XREye
+    open val projectionMatrix: Float32Array<*>
+    open val transform: XRRigidTransform
+    open val recommendedViewportScale: Double?
+    open fun requestViewportScale(scale: Double)
 }

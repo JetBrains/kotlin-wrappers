@@ -22,35 +22,35 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/async)
      */
-    var async: Boolean
+    open var async: Boolean
 
     /**
      * The read-only **`blocking`** property of the HTMLScriptElement returns a live DOMTokenList object containing the operations that should be blocked on the fetching of an external resource. It reflects the <script> element's blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking)
      */
-    val blocking: DOMTokenList<Blocking>
+    open val blocking: DOMTokenList<Blocking>
 
     /**
      * The **`crossOrigin`** property of the HTMLScriptElement interface reflects the Cross-Origin Resource Sharing settings for the script element. For classic scripts from other origins, this controls if full error information will be exposed. For module scripts, it controls the script itself and any script it imports. See CORS settings attributes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)
      */
-    var crossOrigin: CrossOrigin?
+    open var crossOrigin: CrossOrigin?
 
     /**
      * The **`defer`** property of the HTMLScriptElement interface is a boolean value that controls how the script should be executed. For classic scripts, if the defer property is set to true, the external script will be executed after the document has been parsed, but before firing DOMContentLoaded event. For module scripts, the defer property has no effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/defer)
      */
-    var defer: Boolean
+    open var defer: Boolean
 
     /**
      * The **`fetchPriority`** property of the HTMLScriptElement interface represents a hint to the browser indicating how it should prioritize fetching an external script relative to other external scripts. It reflects the <script> element's fetchpriority content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority)
      */
-    var fetchPriority: FetchPriority
+    open var fetchPriority: FetchPriority
 
     /**
      * The **`innerText`** property of the HTMLScriptElement interface represents the text content of the <script> element. It behaves in the same way as the textContent and text properties.
@@ -64,35 +64,35 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/integrity)
      */
-    var integrity: String
+    open var integrity: String
 
     /**
      * The **`noModule`** property of the HTMLScriptElement interface is a boolean value that indicates whether the script should be executed in browsers that support ES modules. Practically, this can be used to serve fallback scripts to older browsers that do not support JavaScript modules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/noModule)
      */
-    var noModule: Boolean
+    open var noModule: Boolean
 
     /**
      * The **`referrerPolicy`** property of the HTMLScriptElement interface reflects the HTML referrerpolicy of the <script> element, which defines how the referrer is set when fetching the script and any scripts it imports.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/referrerPolicy)
      */
-    var referrerPolicy: ReferrerPolicy
+    open var referrerPolicy: ReferrerPolicy
 
     /**
      * The **`src`** property of the HTMLScriptElement interface is a string representing the URL of an external script; this can be used as an alternative to embedding a script directly within a document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/src)
      */
-    var src: String
+    open var src: String
 
     /**
      * The **`text`** property of the HTMLScriptElement interface represents the inline text content of the <script> element. It behaves in the same way as the textContent and innerText property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text)
      */
-    var text: String
+    open var text: String
 
     /**
      * The **`textContent`** property of the HTMLScriptElement interface represents the inline text content of the <script> element. It behaves in the same way as the text and innerText properties.
@@ -106,7 +106,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/type)
      */
-    var type: String
+    open var type: String
 
     companion object {
         /**

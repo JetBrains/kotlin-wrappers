@@ -18,21 +18,21 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/angle)
      */
-    val angle: Float
+    open val angle: Float
 
     /**
      * The **`matrix`** read-only property of the SVGTransform interface represents the transformation matrix that corresponds to the transformation type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/matrix)
      */
-    val matrix: SVGMatrix
+    open val matrix: SVGMatrix
 
     /**
      * The **`type`** read-only property of the SVGTransform interface represents the type of transformation applied, specified by one of the SVG_TRANSFORM_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/type)
      */
-    val type: Type
+    open val type: Type
 
     /**
      * The **`setMatrix()`** method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_MATRIX, with parameter matrix defining the new transformation.
@@ -40,7 +40,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setMatrix)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
+    open fun setMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 
     /**
      * The **`setRotate()`** method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_ROTATE, with parameter angle defining the rotation angle and parameters cx and cy defining the optional center of rotation.
@@ -48,7 +48,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setRotate)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun setRotate(
+    open fun setRotate(
         angle: Float,
         cx: Float,
         cy: Float,
@@ -60,7 +60,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setScale)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun setScale(
+    open fun setScale(
         sx: Float,
         sy: Float,
     )
@@ -71,7 +71,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewX)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun setSkewX(angle: Float)
+    open fun setSkewX(angle: Float)
 
     /**
      * The **`setSkewY()`** method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_SKEWY, with parameter angle defining the amount of skew along the Y-axis.
@@ -79,7 +79,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setSkewY)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun setSkewY(angle: Float)
+    open fun setSkewY(angle: Float)
 
     /**
      * The **`setTranslate()`** method of the SVGTransform interface sets the transform type to SVG_TRANSFORM_TRANSLATE, with parameters tx and ty defining the translation amounts.
@@ -87,7 +87,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform/setTranslate)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun setTranslate(
+    open fun setTranslate(
         tx: Float,
         ty: Float,
     )

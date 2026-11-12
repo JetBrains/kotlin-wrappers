@@ -21,35 +21,35 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/autoIncrement)
      */
-    val autoIncrement: Boolean
+    open val autoIncrement: Boolean
 
     /**
      * The **`indexNames`** read-only property of the IDBObjectStore interface returns a list of the names of indexes on objects in this object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/indexNames)
      */
-    val indexNames: DOMStringList
+    open val indexNames: DOMStringList
 
     /**
      * The **`keyPath`** read-only property of the IDBObjectStore interface returns the key path of this object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/keyPath)
      */
-    val keyPath: JsAny /* string | string[] */?
+    open val keyPath: JsAny /* string | string[] */?
 
     /**
      * The **`name`** property of the IDBObjectStore interface indicates the name of this object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/name)
      */
-    var name: String
+    open var name: String
 
     /**
      * The **`transaction`** read-only property of the IDBObjectStore interface returns the transaction object to which this object store belongs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/transaction)
      */
-    val transaction: IDBTransaction
+    open val transaction: IDBTransaction
 
     /**
      * The **`add()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, creates a structured clone of the value, and stores the cloned value in the object store. This is for adding new records to an object store.
@@ -62,7 +62,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(ReadOnlyError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun add(
+    open fun add(
         value: JsAny?,
         key: IDBValidKey = definedExternally,
     ): IDBRequest<IDBValidKey>
@@ -75,7 +75,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(ReadOnlyError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun clear(): IDBRequest<Void>
+    open fun clear(): IDBRequest<Void>
 
     /**
      * The **`count()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the total number of records that match the provided key or IDBKeyRange. If no arguments are provided, it returns the total number of records in the store.
@@ -85,7 +85,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
+    open fun count(query: IDBValidKey = definedExternally): IDBRequest<JsInt>
 
     /**
      * The **`count()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the total number of records that match the provided key or IDBKeyRange. If no arguments are provided, it returns the total number of records in the store.
@@ -95,7 +95,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun count(query: IDBKeyRange): IDBRequest<JsInt>
+    open fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
      * The **`createIndex()`** method of the IDBObjectStore interface creates and returns a new IDBIndex object in the connected database. It creates a new field/column defining a new data point for each database record to contain.
@@ -107,7 +107,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(SyntaxError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun createIndex(
+    open fun createIndex(
         name: String,
         keyPath: String,
         options: IDBIndexParameters = definedExternally,
@@ -123,7 +123,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(SyntaxError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun createIndex(
+    open fun createIndex(
         name: String,
         keyPath: ReadonlyArray<JsString>,
         options: IDBIndexParameters = definedExternally,
@@ -138,7 +138,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(ReadOnlyError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun delete(query: IDBValidKey): IDBRequest<Void>
+    open fun delete(query: IDBValidKey): IDBRequest<Void>
 
     /**
      * The **`delete()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, deletes the specified record or records.
@@ -149,7 +149,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(ReadOnlyError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun delete(query: IDBKeyRange): IDBRequest<Void>
+    open fun delete(query: IDBKeyRange): IDBRequest<Void>
 
     /**
      * The **`deleteIndex()`** method of the IDBObjectStore interface destroys the index with the specified name in the connected database, used during a version upgrade.
@@ -159,7 +159,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun deleteIndex(name: String)
+    open fun deleteIndex(name: String)
 
     /**
      * The **`get()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the object selected by the specified key. This is for retrieving specific records from an object store.
@@ -169,7 +169,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun get(query: IDBValidKey): IDBRequest<*>
+    open fun get(query: IDBValidKey): IDBRequest<*>
 
     /**
      * The **`get()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the object selected by the specified key. This is for retrieving specific records from an object store.
@@ -179,7 +179,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun get(query: IDBKeyRange): IDBRequest<*>
+    open fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
      * The **`getAll()`** method of the IDBObjectStore interface returns an IDBRequest object containing all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
@@ -189,7 +189,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAll(
+    open fun getAll(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
@@ -202,7 +202,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAll(
+    open fun getAll(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
@@ -215,7 +215,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAllKeys(
+    open fun getAllKeys(
         queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
@@ -228,7 +228,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAllKeys(
+    open fun getAllKeys(
         queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
@@ -240,7 +240,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getAllRecords(options: IDBGetAllOptions = definedExternally): IDBRequest<*>
+    open fun getAllRecords(options: IDBGetAllOptions = definedExternally): IDBRequest<*>
 
     /**
      * The **`getKey()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the key selected by the specified query. This is for retrieving specific records from an object store.
@@ -250,7 +250,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
+    open fun getKey(query: IDBValidKey): IDBRequest<IDBValidKey?>
 
     /**
      * The **`getKey()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the key selected by the specified query. This is for retrieving specific records from an object store.
@@ -260,7 +260,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
+    open fun getKey(query: IDBKeyRange): IDBRequest<IDBValidKey?>
 
     /**
      * The **`index()`** method of the IDBObjectStore interface opens a named index in the current object store, after which it can be used to, for example, return a series of records sorted by that index using a cursor.
@@ -269,7 +269,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
-    fun index(name: String): IDBIndex
+    open fun index(name: String): IDBIndex
 
     /**
      * The **`openCursor()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns a new IDBCursorWithValue object. Used for iterating through an object store with a cursor.
@@ -279,7 +279,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openCursor(
+    open fun openCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursorWithValue?>
@@ -292,7 +292,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openCursor(
+    open fun openCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursorWithValue?>
@@ -305,7 +305,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openKeyCursor(
+    open fun openKeyCursor(
         query: IDBValidKey? = definedExternally,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursor?>
@@ -318,7 +318,7 @@ private constructor() {
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun openKeyCursor(
+    open fun openKeyCursor(
         query: IDBKeyRange?,
         direction: IDBCursorDirection = definedExternally,
     ): IDBRequest<IDBCursor?>
@@ -333,7 +333,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(ReadOnlyError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun put(
+    open fun put(
         value: JsAny?,
         key: IDBValidKey = definedExternally,
     ): IDBRequest<IDBValidKey>

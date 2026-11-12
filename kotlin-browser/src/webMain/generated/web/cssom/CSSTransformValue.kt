@@ -20,7 +20,7 @@ open external class CSSTransformValue(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/is2D)
      */
-    val is2D: Boolean
+    open val is2D: Boolean
 
     /**
      * The read-only **`length`** property of the CSSTransformValue interface returns the number of transform components in the list.
@@ -34,5 +34,5 @@ open external class CSSTransformValue(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/toMatrix)
      */
-    fun toMatrix(): DOMMatrix
+    open fun toMatrix(): DOMMatrix
 }

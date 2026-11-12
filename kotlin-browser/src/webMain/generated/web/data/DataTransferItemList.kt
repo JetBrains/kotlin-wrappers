@@ -31,20 +31,20 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
     @JsThrows(NotSupportedError::class)
-    fun add(
+    open fun add(
         data: String,
         type: String,
     ): DataTransferItem?
 
     @JsThrows(NotSupportedError::class)
-    fun add(data: File): DataTransferItem?
+    open fun add(data: File): DataTransferItem?
 
     /**
      * The DataTransferItemList method **`clear()`** removes all DataTransferItem objects from the drag data items list, leaving the list empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/clear)
      */
-    fun clear()
+    open fun clear()
 
     /**
      * The **`DataTransferItemList.remove()`** method removes the DataTransferItem at the specified index from the list. If the index is less than zero or greater than one less than the length of the list, the list will not be changed.
@@ -52,5 +52,5 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */
     @JsThrows(InvalidStateError::class)
-    fun remove(index: Int)
+    open fun remove(index: Int)
 }

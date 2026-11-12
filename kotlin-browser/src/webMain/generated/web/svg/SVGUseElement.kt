@@ -16,26 +16,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/height)
      */
-    val height: SVGAnimatedLength
+    open val height: SVGAnimatedLength
 
     /**
      * The **`width`** read-only property of the SVGUseElement interface describes the width of the referenced element as an SVGAnimatedLength. It reflects the computed value of the width attribute on the <use> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/width)
      */
-    val width: SVGAnimatedLength
+    open val width: SVGAnimatedLength
 
     /**
      * The **`x`** read-only property of the SVGUseElement interface describes the x-axis coordinate of the start point of the referenced element as an SVGAnimatedLength. It reflects the computed value of the x attribute on the <use> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/x)
      */
-    val x: SVGAnimatedLength
+    open val x: SVGAnimatedLength
 
     /**
      * The **`y`** read-only property of the SVGUseElement interface describes the y-axis coordinate of the start point of the referenced element as an SVGAnimatedLength. It reflects the computed value of the y attribute on the <use> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement/y)
      */
-    val y: SVGAnimatedLength
+    open val y: SVGAnimatedLength
 }

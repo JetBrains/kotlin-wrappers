@@ -21,14 +21,14 @@ open external class PromiseRejectionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
      */
-    val promise: Promise<*>
+    open val promise: Promise<*>
 
     /**
      * The PromiseRejectionEvent **`reason`** read-only property is any JavaScript value or Object which provides the reason passed into Promise.reject(). This in theory provides information about why the promise was rejected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
      */
-    val reason: JsErrorLike?
+    open val reason: JsErrorLike?
 
     companion object
 }

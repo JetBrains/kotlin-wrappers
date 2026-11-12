@@ -33,14 +33,14 @@ open external class Blob(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
      */
-    val size: UInt53
+    open val size: UInt53
 
     /**
      * The **`type`** read-only property of the Blob interface returns the MIME type of the file.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/type)
      */
-    val type: String
+    open val type: String
 
     /**
      * The **`arrayBuffer()`** method of the Blob interface returns a Promise that resolves with the contents of the blob as binary data contained in an ArrayBuffer.
@@ -48,7 +48,7 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
      */
     @JsName("arrayBuffer")
-    fun arrayBufferAsync(): Promise<ArrayBuffer>
+    open fun arrayBufferAsync(): Promise<ArrayBuffer>
 
     /**
      * The **`bytes()`** method of the Blob interface returns a Promise that resolves with a Uint8Array containing the contents of the blob as an array of bytes.
@@ -56,14 +56,14 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
      */
     @JsName("bytes")
-    fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
+    open fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
 
     /**
      * The **`slice()`** method of the Blob interface creates and returns a new Blob object which contains data from a subset of the blob on which it's called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
      */
-    fun slice(
+    open fun slice(
         start: Int53 = definedExternally,
         end: Int53 = definedExternally,
         contentType: String = definedExternally,
@@ -74,7 +74,7 @@ open external class Blob(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
      */
-    fun stream(): ReadableStream<Uint8Array<ArrayBuffer>>
+    open fun stream(): ReadableStream<Uint8Array<ArrayBuffer>>
 
     /**
      * The **`text()`** method of the Blob interface returns a Promise that resolves with a string containing the contents of the blob, interpreted as UTF-8.
@@ -82,12 +82,12 @@ open external class Blob(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
      */
     @JsName("text")
-    fun textAsync(): Promise<JsString>
+    open fun textAsync(): Promise<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/textStream)
      */
-    fun textStream(): ReadableStream<JsString>
+    open fun textStream(): ReadableStream<JsString>
 }
 
 /**

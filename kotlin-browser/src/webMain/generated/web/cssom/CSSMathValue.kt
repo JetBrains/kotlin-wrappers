@@ -15,5 +15,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathValue/operator)
      */
-    val operator: CSSMathOperator
+    open val operator: CSSMathOperator
 }

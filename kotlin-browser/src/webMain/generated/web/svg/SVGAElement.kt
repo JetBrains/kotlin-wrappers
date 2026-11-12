@@ -21,38 +21,38 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
      */
-    var download: String
+    open var download: String
 
     /**
      * The **`ping`** property of the SVGAElement interface returns a string that reflects the ping attribute, containing a space-separated list of URLs to which, when the hyperlink is followed, POST requests with the body PING will be sent by the browser (in the background). Typically used for tracking.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/ping)
      */
-    var ping: String
+    open var ping: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/referrerPolicy)
      */
-    var referrerPolicy: ReferrerPolicy
+    open var referrerPolicy: ReferrerPolicy
 
     /**
      * The **`rel`** property of the SVGAElement returns a string reflecting the value of the rel attribute of the SVG <a> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/rel)
      */
-    var rel: String
+    open var rel: String
 
     /**
      * The read-only **`relList`** property of the SVGAElement returns a live DOMTokenList reflecting the space-separated string <list-of-Link-Types> values of the rel attribute of the SVG <a> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/relList)
      */
-    val relList: DOMTokenList<JsString>
+    open val relList: DOMTokenList<JsString>
 
     /**
      * The **`SVGAElement.target`** read-only property of SVGAElement returns an SVGAnimatedString object that specifies the portion of a target window, frame, pane into which a document is to be opened when a link is activated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
      */
-    val target: SVGAnimatedString
+    open val target: SVGAnimatedString
 }

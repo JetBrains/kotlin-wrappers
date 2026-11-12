@@ -18,49 +18,49 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/add)
      */
-    fun add(vararg values: CSSNumberish): CSSNumericValue
+    open fun add(vararg values: CSSNumberish): CSSNumericValue
 
     /**
      * The **`div()`** method of the CSSNumericValue interface divides the CSSNumericValue by the supplied value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/div)
      */
-    fun div(vararg values: CSSNumberish): CSSNumericValue
+    open fun div(vararg values: CSSNumberish): CSSNumericValue
 
     /**
      * The **`equals()`** method of the CSSNumericValue interface returns a boolean indicating whether the passed value are strictly equal. To return a value of true, all passed values must be of the same type and value and must be in the same order. This allows structural equality to be tested quickly.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/equals)
      */
-    fun equals(vararg value: CSSNumberish): Boolean
+    open fun equals(vararg value: CSSNumberish): Boolean
 
     /**
      * The **`max()`** method of the CSSNumericValue interface returns the highest value from among the values passed. The passed values must be of the same type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/max)
      */
-    fun max(vararg values: CSSNumberish): CSSNumericValue
+    open fun max(vararg values: CSSNumberish): CSSNumericValue
 
     /**
      * The **`min()`** method of the CSSNumericValue interface returns the lowest value from among those values passed. The passed values must be of the same type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/min)
      */
-    fun min(vararg values: CSSNumberish): CSSNumericValue
+    open fun min(vararg values: CSSNumberish): CSSNumericValue
 
     /**
      * The **`mul()`** method of the CSSNumericValue interface multiplies the CSSNumericValue by the supplied value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/mul)
      */
-    fun mul(vararg values: CSSNumberish): CSSNumericValue
+    open fun mul(vararg values: CSSNumberish): CSSNumericValue
 
     /**
      * The **`sub()`** method of the CSSNumericValue interface subtracts a supplied number from the CSSNumericValue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/sub)
      */
-    fun sub(vararg values: CSSNumberish): CSSNumericValue
+    open fun sub(vararg values: CSSNumberish): CSSNumericValue
 
     /**
      * The **`to()`** method of the CSSNumericValue interface converts a numeric value from one unit to another.
@@ -68,7 +68,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/to)
      */
     @JsThrows(SyntaxError::class)
-    fun to(unit: String): CSSUnitValue
+    open fun to(unit: String): CSSUnitValue
 
     /**
      * The **`toSum()`** method of the CSSNumericValue interface converts the object's value to a CSSMathSum object to values of the specified unit.
@@ -76,14 +76,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/toSum)
      */
     @JsThrows(SyntaxError::class)
-    fun toSum(vararg units: String): CSSMathSum
+    open fun toSum(vararg units: String): CSSMathSum
 
     /**
      * The **`type()`** method of the CSSNumericValue interface returns the type of CSSNumericValue, one of angle, flex, frequency, length, resolution, percent, percentHint, or time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue/type)
      */
-    fun type(): CSSNumericType
+    open fun type(): CSSNumericType
 
     companion object {
         /**

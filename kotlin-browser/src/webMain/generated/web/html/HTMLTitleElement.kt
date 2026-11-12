@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement/text)
      */
-    var text: String
+    open var text: String
 }

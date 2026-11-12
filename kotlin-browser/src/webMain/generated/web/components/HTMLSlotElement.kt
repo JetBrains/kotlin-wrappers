@@ -23,35 +23,35 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name)
      */
-    var name: String
+    open var name: String
 
     /**
      * The **`assign()`** method of the HTMLSlotElement interface sets the slot's manually assigned nodes to an ordered set of slottables. The manually assigned nodes set is initially empty until nodes are assigned using assign().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */
-    fun assign(vararg nodes: Element)
+    open fun assign(vararg nodes: Element)
 
     /**
      * The **`assign()`** method of the HTMLSlotElement interface sets the slot's manually assigned nodes to an ordered set of slottables. The manually assigned nodes set is initially empty until nodes are assigned using assign().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */
-    fun assign(vararg nodes: Text)
+    open fun assign(vararg nodes: Text)
 
     /**
      * The **`assignedElements()`** method of the HTMLSlotElement interface returns a sequence of the elements assigned to this slot (and no other nodes).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements)
      */
-    fun assignedElements(options: AssignedNodesOptions = definedExternally): ReadonlyArray<Element>
+    open fun assignedElements(options: AssignedNodesOptions = definedExternally): ReadonlyArray<Element>
 
     /**
      * The **`assignedNodes()`** method of the HTMLSlotElement interface returns a sequence of the nodes assigned to this slot.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedNodes)
      */
-    fun assignedNodes(options: AssignedNodesOptions = definedExternally): ReadonlyArray<Node>
+    open fun assignedNodes(options: AssignedNodesOptions = definedExternally): ReadonlyArray<Node>
 }
 
 /**

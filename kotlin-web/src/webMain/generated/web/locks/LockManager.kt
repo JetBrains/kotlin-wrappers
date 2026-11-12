@@ -23,7 +23,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
     @JsName("query")
-    fun queryAsync(): Promise<LockManagerSnapshot>
+    open fun queryAsync(): Promise<LockManagerSnapshot>
 
     /**
      * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics. The requested Lock is passed to a callback, while the function itself returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
@@ -35,7 +35,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("request")
-    fun <T : JsAny?> requestAsync(
+    open fun <T : JsAny?> requestAsync(
         name: String,
         callback: LockGrantedCallback<T>,
     ): Promise<T>
@@ -45,7 +45,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("request")
-    fun <T : JsAny?> requestAsync(
+    open fun <T : JsAny?> requestAsync(
         name: String,
         options: LockOptions,
         callback: LockGrantedCallback<T>,

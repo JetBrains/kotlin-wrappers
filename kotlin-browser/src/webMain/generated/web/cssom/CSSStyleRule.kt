@@ -15,19 +15,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/selectorText)
      */
-    var selectorText: String
+    open var selectorText: String
 
     /**
      * The read-only **`style`** property of the CSSStyleRule interface contains a CSSStyleProperties object representing the properties list in this style rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/style)
      */
-    val style: CSSStyleDeclaration
+    open val style: CSSStyleDeclaration
 
     /**
      * The **`styleMap`** read-only property of the CSSStyleRule interface returns a StylePropertyMap object which provides access to the rule's property-value pairs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/styleMap)
      */
-    val styleMap: StylePropertyMap
+    open val styleMap: StylePropertyMap
 }

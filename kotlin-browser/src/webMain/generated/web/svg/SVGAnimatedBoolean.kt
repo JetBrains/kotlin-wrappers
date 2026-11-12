@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/animVal)
      */
-    val animVal: Boolean
+    open val animVal: Boolean
 
     /**
      * The **`baseVal`** property of the SVGAnimatedBoolean interface is the value of the associated animatable boolean SVG attribute in its base (none-animated) state. It reflects the value of the associated animatable boolean attribute when no animations are applied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean/baseVal)
      */
-    var baseVal: Boolean
+    open var baseVal: Boolean
 }

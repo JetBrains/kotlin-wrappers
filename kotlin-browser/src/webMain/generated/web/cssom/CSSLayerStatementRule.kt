@@ -17,5 +17,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule/nameList)
      */
-    val nameList: ReadonlyArray<JsString>
+    open val nameList: ReadonlyArray<JsString>
 }

@@ -13,25 +13,25 @@ open external class CSSRotate(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/x)
      */
-    var x: CSSNumberish,
+    open var x: CSSNumberish,
     /**
      * The **`y`** property of the CSSRotate interface gets and sets the ordinate or y-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/y)
      */
-    var y: CSSNumberish,
+    open var y: CSSNumberish,
     /**
      * The **`z`** property of the CSSRotate interface representing the z-component of the translating vector. A positive value moves the element towards the viewer, and a negative value farther away.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/z)
      */
-    var z: CSSNumberish,
+    open var z: CSSNumberish,
     /**
      * The **`angle`** property of the CSSRotate interface gets and sets the angle of rotation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle)
      */
-    var angle: CSSNumericValue,
+    open var angle: CSSNumericValue,
 ) : CSSTransformComponent {
     constructor(angle: CSSNumericValue)
 

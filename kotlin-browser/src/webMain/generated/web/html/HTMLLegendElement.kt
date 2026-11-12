@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement/form)
      */
-    val form: HTMLFormElement?
+    open val form: HTMLFormElement?
 }

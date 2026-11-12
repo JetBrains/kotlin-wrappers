@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement/value)
      */
-    var value: String
+    open var value: String
 }

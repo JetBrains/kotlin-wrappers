@@ -48,7 +48,7 @@ open external class RelativeTimeFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/format).
      */
-    fun format(
+    open fun format(
         value: Double,
         unit: RelativeTimeFormatUnit,
     ): String
@@ -64,7 +64,7 @@ open external class RelativeTimeFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/formatToParts).
      */
-    fun formatToParts(
+    open fun formatToParts(
         value: Double,
         unit: RelativeTimeFormatUnit,
     ): ReadonlyArray<JsAny /* RelativeTimeFormatPart */>
@@ -74,7 +74,7 @@ open external class RelativeTimeFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/resolvedOptions).
      */
-    fun resolvedOptions(): ResolvedRelativeTimeFormatOptions
+    open fun resolvedOptions(): ResolvedRelativeTimeFormatOptions
 
     companion object {
         /**

@@ -21,12 +21,12 @@ open external class WebTransportError(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError/source)
      */
-    val source: WebTransportErrorSource
+    open val source: WebTransportErrorSource
 
     /**
      * The **`streamErrorCode`** read-only property of the WebTransportError interface returns a number in the range 0-255 indicating the application protocol error code for this error, or null if one is not available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError/streamErrorCode)
      */
-    val streamErrorCode: Int?
+    open val streamErrorCode: Int?
 }

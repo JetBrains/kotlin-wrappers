@@ -19,19 +19,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/matches)
      */
-    val matches: Boolean
+    open val matches: Boolean
 
     /**
      * The **`media`** read-only property of the MediaQueryList interface is a string representing a serialized media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/media)
      */
-    val media: MediaQuery
+    open val media: MediaQuery
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
      */
-    var onchange: EventHandler<MediaQueryListEvent, MediaQueryList, MediaQueryList>?
+    open var onchange: EventHandler<MediaQueryListEvent, MediaQueryList, MediaQueryList>?
 }
 
 /**

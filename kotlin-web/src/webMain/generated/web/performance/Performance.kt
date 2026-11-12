@@ -25,61 +25,61 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/eventCounts)
      */
-    val eventCounts: EventCounts
+    open val eventCounts: EventCounts
 
     /**
      * The read-only **`performance.interactionCount`** property represents the number of real-user interactions that have occurred on the page since it was loaded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/interactionCount)
      */
-    val interactionCount: UInt53
+    open val interactionCount: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
      */
-    var onresourcetimingbufferfull: EventHandler<Event, Performance, Performance>?
+    open var onresourcetimingbufferfull: EventHandler<Event, Performance, Performance>?
 
     /**
      * The **`timeOrigin`** read-only property of the Performance interface returns the high resolution timestamp that is used as the baseline for performance-related timestamps.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/timeOrigin)
      */
-    val timeOrigin: DOMHighResTimeStamp
+    open val timeOrigin: DOMHighResTimeStamp
 
     /**
      * The **`clearMarks()`** method removes all or specific PerformanceMark objects from the browser's performance timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/clearMarks)
      */
-    fun clearMarks(markName: String = definedExternally)
+    open fun clearMarks(markName: String = definedExternally)
 
     /**
      * The **`clearMeasures()`** method removes all or specific PerformanceMeasure objects from the browser's performance timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/clearMeasures)
      */
-    fun clearMeasures(measureName: String = definedExternally)
+    open fun clearMeasures(measureName: String = definedExternally)
 
     /**
      * The **`clearResourceTimings()`** method removes all performance entries with an entryType of "resource" from the browser's performance timeline and sets the size of the performance resource data buffer to zero.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/clearResourceTimings)
      */
-    fun clearResourceTimings()
+    open fun clearResourceTimings()
 
     /**
      * The **`getEntries()`** method returns an array of all PerformanceEntry objects currently present in the performance timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntries)
      */
-    fun getEntries(): PerformanceEntryList
+    open fun getEntries(): PerformanceEntryList
 
     /**
      * The **`getEntriesByName()`** method returns an array of PerformanceEntry objects currently present in the performance timeline with the given name and type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
      */
-    fun getEntriesByName(
+    open fun getEntriesByName(
         name: String,
         type: String = definedExternally,
     ): PerformanceEntryList
@@ -89,14 +89,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
      */
-    fun getEntriesByType(type: String): PerformanceEntryList
+    open fun getEntriesByType(type: String): PerformanceEntryList
 
     /**
      * The **`mark()`** method creates a named PerformanceMark object representing a high resolution timestamp marker in the browser's performance timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/mark)
      */
-    fun mark(
+    open fun mark(
         markName: String,
         markOptions: PerformanceMarkOptions = definedExternally,
     ): PerformanceMark
@@ -108,7 +108,7 @@ private constructor() :
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(SyntaxError::class)
-    fun measure(
+    open fun measure(
         measureName: String,
         startOrMeasureOptions: String = definedExternally,
         endMark: String = definedExternally,
@@ -121,7 +121,7 @@ private constructor() :
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(SyntaxError::class)
-    fun measure(
+    open fun measure(
         measureName: String,
         startOrMeasureOptions: PerformanceMeasureOptions,
         endMark: String = definedExternally,
@@ -132,21 +132,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/now)
      */
-    fun now(): DOMHighResTimeStamp
+    open fun now(): DOMHighResTimeStamp
 
     /**
      * The **`setResourceTimingBufferSize()`** method sets the desired size of the browser's resource timing buffer which stores the "resource" performance entries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/setResourceTimingBufferSize)
      */
-    fun setResourceTimingBufferSize(maxSize: Int)
+    open fun setResourceTimingBufferSize(maxSize: Int)
 
     /**
      * The **`toJSON()`** method of the Performance interface is a serializer; it returns a JSON representation of the Performance object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 }
 
 /**

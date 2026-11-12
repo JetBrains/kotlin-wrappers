@@ -20,7 +20,7 @@ open external class MIDIConnectionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent/port)
      */
-    val port: MIDIPort?
+    open val port: MIDIPort?
 
     companion object
 }

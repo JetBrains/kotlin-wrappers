@@ -18,14 +18,14 @@ open external class MutationObserver(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/disconnect)
      */
-    fun disconnect()
+    open fun disconnect()
 
     /**
      * The MutationObserver method **`observe()`** configures the MutationObserver callback to begin receiving notifications of changes to the DOM that match the given options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/observe)
      */
-    fun observe(
+    open fun observe(
         target: Node,
         options: MutationObserverInit,
     )
@@ -35,5 +35,5 @@ open external class MutationObserver(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/takeRecords)
      */
-    fun takeRecords(): ReadonlyArray<MutationRecord>
+    open fun takeRecords(): ReadonlyArray<MutationRecord>
 }

@@ -19,12 +19,12 @@ open external class WaveShaperNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode/curve)
      */
-    var curve: Float32Array<ArrayBuffer>?
+    open var curve: Float32Array<ArrayBuffer>?
 
     /**
      * The **`oversample`** property of the WaveShaperNode interface is an enumerated value indicating if oversampling must be used. Oversampling is a technique for creating more samples (up-sampling) before applying a distortion effect to the audio signal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode/oversample)
      */
-    var oversample: OverSampleType
+    open var oversample: OverSampleType
 }

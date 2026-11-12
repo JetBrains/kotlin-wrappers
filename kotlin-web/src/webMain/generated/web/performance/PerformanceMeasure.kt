@@ -15,5 +15,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMeasure/detail)
      */
-    val detail: JsAny?
+    open val detail: JsAny?
 }

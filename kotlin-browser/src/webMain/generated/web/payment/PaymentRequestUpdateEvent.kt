@@ -21,14 +21,14 @@ open external class PaymentRequestUpdateEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith)
      */
-    fun updateWith(detailsPromise: PaymentDetailsUpdate)
+    open fun updateWith(detailsPromise: PaymentDetailsUpdate)
 
     /**
      * The **`updateWith()`** method of the PaymentRequestUpdateEvent interface updates the details of an existing PaymentRequest.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith)
      */
-    fun updateWith(detailsPromise: PromiseLike<PaymentDetailsUpdate>)
+    open fun updateWith(detailsPromise: PromiseLike<PaymentDetailsUpdate>)
 
     companion object
 }

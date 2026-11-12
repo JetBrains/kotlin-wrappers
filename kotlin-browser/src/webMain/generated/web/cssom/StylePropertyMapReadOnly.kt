@@ -29,14 +29,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/get)
      */
-    fun get(property: String): CSSStyleValue?
+    open fun get(property: String): CSSStyleValue?
 
     /**
      * The **`getAll()`** method of the StylePropertyMapReadOnly interface returns an array of CSSStyleValue objects containing the values for the provided property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/getAll)
      */
-    fun getAll(property: String): ReadonlyArray<CSSStyleValue>
+    open fun getAll(property: String): ReadonlyArray<CSSStyleValue>
 
     /**
      * The **`has()`** method of the StylePropertyMapReadOnly interface indicates whether the specified property is in the StylePropertyMapReadOnly object.

@@ -15,19 +15,19 @@ open external class RTCSessionDescription(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/sdp)
      */
-    val sdp: String
+    open val sdp: String
 
     /**
      * The property **`RTCSessionDescription.type`** is a read-only string value which describes the description's type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/type)
      */
-    val type: RTCSdpType
+    open val type: RTCSdpType
 
     /**
      * The **`RTCSessionDescription.toJSON()`** method generates a JSON description of the object. Both properties, type and sdp, are contained in the generated JSON.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON)
      */
-    fun toJSON(): RTCSessionDescriptionInit
+    open fun toJSON(): RTCSessionDescriptionInit
 }

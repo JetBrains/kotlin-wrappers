@@ -11,5 +11,5 @@ package web.xr
 open external class XRJointSpace
 private constructor() :
     XRSpace {
-    val jointName: XRHandJoint
+    open val jointName: XRHandJoint
 }

@@ -18,7 +18,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)
      */
-    val rows: HTMLCollection<HTMLTableRowElement>
+    open val rows: HTMLCollection<HTMLTableRowElement>
 
     /**
      * The **`deleteRow()`** method of the HTMLTableSectionElement interface removes a specific row (<tr>) from a given <section>.
@@ -26,7 +26,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/deleteRow)
      */
     @JsThrows(IndexSizeError::class)
-    fun deleteRow(index: Int)
+    open fun deleteRow(index: Int)
 
     /**
      * The **`insertRow()`** method of the HTMLTableSectionElement interface inserts a new row (<tr>) in the given table sectioning element (<thead>, <tfoot>, or <tbody>), then returns a reference to this new row.
@@ -34,5 +34,5 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/insertRow)
      */
     @JsThrows(IndexSizeError::class)
-    fun insertRow(index: Int = definedExternally): HTMLTableRowElement
+    open fun insertRow(index: Int = definedExternally): HTMLTableRowElement
 }

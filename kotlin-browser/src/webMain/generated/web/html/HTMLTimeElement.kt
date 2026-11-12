@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement/dateTime)
      */
-    var dateTime: String
+    open var dateTime: String
 }

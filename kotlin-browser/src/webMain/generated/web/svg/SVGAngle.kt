@@ -18,35 +18,35 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/unitType)
      */
-    val unitType: UnitType
+    open val unitType: UnitType
 
     /**
      * The **`value`** property of the SVGAngle interface represents the floating point value of the <angle> in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/value)
      */
-    var value: Float
+    open var value: Float
 
     /**
      * The **`valueAsString`** property of the SVGAngle interface represents the angle's value as a string, in the units expressed by unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueAsString)
      */
-    var valueAsString: String
+    open var valueAsString: String
 
     /**
      * The **`valueInSpecifiedUnits`** property of the SVGAngle interface represents the value of this angle as a number, in the units expressed by the angle's unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/valueInSpecifiedUnits)
      */
-    var valueInSpecifiedUnits: Float
+    open var valueInSpecifiedUnits: Float
 
     /**
      * The **`convertToSpecifiedUnits()`** method of the SVGAngle interface allows you to convert the angle's value to the specified unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle/convertToSpecifiedUnits)
      */
-    fun convertToSpecifiedUnits(unitType: UnitType)
+    open fun convertToSpecifiedUnits(unitType: UnitType)
 
     /**
      * The **`newValueSpecifiedUnits()`** method of the SVGAngle interface sets the value to a number with an associated unitType, thereby replacing the values for all of the attributes on the object.
@@ -55,7 +55,7 @@ private constructor() {
      */
     @JsThrows(NoModificationAllowedError::class)
     @JsThrows(NotSupportedError::class)
-    fun newValueSpecifiedUnits(
+    open fun newValueSpecifiedUnits(
         unitType: UnitType,
         valueInSpecifiedUnits: Float,
     )

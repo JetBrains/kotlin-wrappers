@@ -20,42 +20,42 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/targetElement)
      */
-    val targetElement: SVGElement?
+    open val targetElement: SVGElement?
 
     /**
      * The SVGAnimationElement method **`beginElement()`** creates a begin instance time for the current time. The new instance time is added to the begin instance times list. The behavior of this method is equivalent to beginElementAt(0).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/beginElement)
      */
-    fun beginElement()
+    open fun beginElement()
 
     /**
      * The SVGAnimationElement method **`beginElementAt()`** creates a begin instance time for the current time plus the specified offset. The new instance time is added to the begin instance times list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/beginElementAt)
      */
-    fun beginElementAt(offset: Float)
+    open fun beginElementAt(offset: Float)
 
     /**
      * The SVGAnimationElement method **`endElement()`** creates an end instance time for the current time. The new instance time is added to the end instance times list. The behavior of this method is equivalent to endElementAt(0).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/endElement)
      */
-    fun endElement()
+    open fun endElement()
 
     /**
      * The SVGAnimationElement method **`endElementAt()`** creates an end instance time for the current time plus the specified offset. The new instance time is added to the end instance times list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/endElementAt)
      */
-    fun endElementAt(offset: Float)
+    open fun endElementAt(offset: Float)
 
     /**
      * The SVGAnimationElement method **`getCurrentTime()`** returns a float representing the current time in seconds relative to time zero for the given time container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getCurrentTime)
      */
-    fun getCurrentTime(): Float
+    open fun getCurrentTime(): Float
 
     /**
      * The SVGAnimationElement method **`getSimpleDuration()`** returns a float representing the number of seconds for the simple duration for this animation.
@@ -63,7 +63,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getSimpleDuration)
      */
     @JsThrows(NotSupportedError::class)
-    fun getSimpleDuration(): Float
+    open fun getSimpleDuration(): Float
 
     /**
      * The SVGAnimationElement method **`getStartTime()`** returns a float representing the start time, in seconds, for this animation element's current interval, if it exists, regardless of whether the interval has begun yet.
@@ -71,5 +71,5 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getStartTime)
      */
     @JsThrows(InvalidStateError::class)
-    fun getStartTime(): Float
+    open fun getStartTime(): Float
 }

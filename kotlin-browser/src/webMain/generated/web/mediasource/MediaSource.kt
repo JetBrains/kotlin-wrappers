@@ -26,43 +26,43 @@ open external class MediaSource :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)
      */
-    val activeSourceBuffers: SourceBufferList
+    open val activeSourceBuffers: SourceBufferList
 
     /**
      * The **`duration`** property of the MediaSource interface gets and sets the duration of the current media being presented.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/duration)
      */
-    var duration: Double
+    open var duration: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
      */
-    var onsourceclose: EventHandler<Event, MediaSource, MediaSource>?
+    open var onsourceclose: EventHandler<Event, MediaSource, MediaSource>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
      */
-    var onsourceended: EventHandler<Event, MediaSource, MediaSource>?
+    open var onsourceended: EventHandler<Event, MediaSource, MediaSource>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
      */
-    var onsourceopen: EventHandler<Event, MediaSource, MediaSource>?
+    open var onsourceopen: EventHandler<Event, MediaSource, MediaSource>?
 
     /**
      * The **`readyState`** read-only property of the MediaSource interface returns an enum representing the state of the current MediaSource. The three possible values are:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/readyState)
      */
-    val readyState: ReadyState
+    open val readyState: ReadyState
 
     /**
      * The **`sourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing the list of SourceBuffer objects associated with this MediaSource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceBuffers)
      */
-    val sourceBuffers: SourceBufferList
+    open val sourceBuffers: SourceBufferList
 
     /**
      * The **`addSourceBuffer()`** method of the MediaSource interface creates a new SourceBuffer of the given MIME type and adds it to the MediaSource's sourceBuffers list. The new SourceBuffer is also returned.
@@ -73,14 +73,14 @@ open external class MediaSource :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows.Typed(QuotaExceededError::class)
-    fun addSourceBuffer(type: String): SourceBuffer
+    open fun addSourceBuffer(type: String): SourceBuffer
 
     /**
      * The **`clearLiveSeekableRange()`** method of the MediaSource interface clears a seekable range previously set with a call to setLiveSeekableRange().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/clearLiveSeekableRange)
      */
-    fun clearLiveSeekableRange()
+    open fun clearLiveSeekableRange()
 
     /**
      * The **`endOfStream()`** method of the MediaSource interface signals the end of the stream.
@@ -88,7 +88,7 @@ open external class MediaSource :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/endOfStream)
      */
     @JsThrows(InvalidStateError::class)
-    fun endOfStream(error: EndOfStreamError = definedExternally)
+    open fun endOfStream(error: EndOfStreamError = definedExternally)
 
     /**
      * The **`removeSourceBuffer()`** method of the MediaSource interface removes the given SourceBuffer from the SourceBufferList associated with this MediaSource object.
@@ -96,14 +96,14 @@ open external class MediaSource :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/removeSourceBuffer)
      */
     @JsThrows(NotFoundError::class)
-    fun removeSourceBuffer(sourceBuffer: SourceBuffer)
+    open fun removeSourceBuffer(sourceBuffer: SourceBuffer)
 
     /**
      * The **`setLiveSeekableRange()`** method of the MediaSource interface sets the range that the user can seek to in the media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/setLiveSeekableRange)
      */
-    fun setLiveSeekableRange(
+    open fun setLiveSeekableRange(
         start: Double,
         end: Double,
     )

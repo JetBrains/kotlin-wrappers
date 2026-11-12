@@ -20,33 +20,33 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxChannels)
      */
-    val maxChannels: Short?
+    open val maxChannels: Short?
 
     /**
      * The **`maxMessageSize`** read-only property of the RTCSctpTransport interface indicates the maximum size of a message that can be sent using the RTCDataChannel.send() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/maxMessageSize)
      */
-    val maxMessageSize: Double
+    open val maxMessageSize: Double
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
      */
-    var onstatechange: EventHandler<Event, RTCSctpTransport, RTCSctpTransport>?
+    open var onstatechange: EventHandler<Event, RTCSctpTransport, RTCSctpTransport>?
 
     /**
      * The **`state`** read-only property of the RTCSctpTransport interface provides information which describes a Stream Control Transmission Protocol (SCTP) transport state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/state)
      */
-    val state: RTCSctpTransportState
+    open val state: RTCSctpTransportState
 
     /**
      * The **`transport`** read-only property of the RTCSctpTransport interface returns a RTCDtlsTransport object representing the DTLS transport used for the transmission and receipt of data packets.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/transport)
      */
-    val transport: RTCDtlsTransport
+    open val transport: RTCDtlsTransport
 }
 
 /**

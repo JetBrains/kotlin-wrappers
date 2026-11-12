@@ -18,35 +18,35 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/unitType)
      */
-    val unitType: UnitType
+    open val unitType: UnitType
 
     /**
      * The **`value`** property of the SVGLength interface represents the floating point value of the <length> in user units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/value)
      */
-    var value: Float
+    open var value: Float
 
     /**
      * The **`valueAsString`** property of the SVGLength interface represents the <length>'s value as a string, in the units expressed by unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueAsString)
      */
-    var valueAsString: String
+    open var valueAsString: String
 
     /**
      * The **`valueInSpecifiedUnits`** property of the SVGLength interface represents floating point value, in the units expressed by unitType.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/valueInSpecifiedUnits)
      */
-    var valueInSpecifiedUnits: Float
+    open var valueInSpecifiedUnits: Float
 
     /**
      * The **`convertToSpecifiedUnits()`** method of the SVGLength interface allows you to convert the length's value to the specified unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/convertToSpecifiedUnits)
      */
-    fun convertToSpecifiedUnits(unitType: UnitType)
+    open fun convertToSpecifiedUnits(unitType: UnitType)
 
     /**
      * The **`newValueSpecifiedUnits()`** method of the SVGLength interface resets the value as a number with an associated unitType, thereby replacing the values for all of the attributes on the object.
@@ -55,7 +55,7 @@ private constructor() {
      */
     @JsThrows(NoModificationAllowedError::class)
     @JsThrows(NotSupportedError::class)
-    fun newValueSpecifiedUnits(
+    open fun newValueSpecifiedUnits(
         unitType: UnitType,
         valueInSpecifiedUnits: Float,
     )

@@ -15,5 +15,5 @@ open external class CSSMathInvert(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathInvert/value)
      */
-    val value: CSSNumericValue
+    open val value: CSSNumericValue
 }

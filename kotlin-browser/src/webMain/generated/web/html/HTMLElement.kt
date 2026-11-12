@@ -40,56 +40,56 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKey)
      */
-    var accessKey: String
+    open var accessKey: String
 
     /**
      * The **`HTMLElement.accessKeyLabel`** read-only property returns a string containing the element's browser-assigned access key (if any); otherwise it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKeyLabel)
      */
-    val accessKeyLabel: String
+    open val accessKeyLabel: String
 
     /**
      * The **`autocapitalize`** property of the HTMLElement interface represents the element's capitalization behavior for user input. It is available on all HTML elements, though it doesn't affect all of them, including:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocapitalize)
      */
-    var autocapitalize: AutoCapitalize
+    open var autocapitalize: AutoCapitalize
 
     /**
      * The **`autocorrect`** property of the HTMLElement interface controls whether or not autocorrection of editable text is enabled for spelling and/or punctuation errors.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocorrect)
      */
-    var autocorrect: Boolean
+    open var autocorrect: Boolean
 
     /**
      * The **`HTMLElement.dir`** property indicates the text writing directionality of the content of the current element. It reflects the element's dir attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dir)
      */
-    var dir: String
+    open var dir: String
 
     /**
      * The **`draggable`** property of the HTMLElement interface gets and sets a Boolean primitive indicating if the element is draggable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/draggable)
      */
-    var draggable: Boolean
+    open var draggable: Boolean
 
     /**
      * The HTMLElement property **`hidden`** reflects the value of the element's hidden attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidden)
      */
-    var hidden: Hidden
+    open var hidden: Hidden
 
     /**
      * The HTMLElement property **`inert`** reflects the value of the element's inert attribute. It is a boolean value that, when present, makes the browser "ignore" user input events for the element, including focus events and events from assistive technologies. The browser may also ignore page search and text selection in the element. This can be useful when building UIs such as modals where you would want to "trap" the focus inside the modal when it's visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
      */
-    var inert: Boolean
+    open var inert: Boolean
 
     /**
      * The **`innerText`** property of the HTMLElement interface represents the rendered text content of a node and its descendants.
@@ -103,84 +103,84 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lang)
      */
-    var lang: String
+    open var lang: String
 
     /**
      * The **`offsetHeight`** read-only property of the HTMLElement interface returns the height of an element, including vertical padding and borders, as an integer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetHeight)
      */
-    val offsetHeight: Int
+    open val offsetHeight: Int
 
     /**
      * The **`offsetLeft`** read-only property of the HTMLElement interface returns the number of pixels that the upper left corner of the current element is offset to the left within the HTMLElement.offsetParent node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetLeft)
      */
-    val offsetLeft: Int
+    open val offsetLeft: Int
 
     /**
      * The **`HTMLElement.offsetParent`** read-only property returns a reference to the element which is the closest (nearest in the containment hierarchy) positioned ancestor element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetParent)
      */
-    val offsetParent: Element?
+    open val offsetParent: Element?
 
     /**
      * The **`offsetTop`** read-only property of the HTMLElement interface returns the distance from the outer border of the current element (including its margin) to the top padding edge of the offsetParent, the closest positioned ancestor element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetTop)
      */
-    val offsetTop: Int
+    open val offsetTop: Int
 
     /**
      * The **`offsetWidth`** read-only property of the HTMLElement interface returns the layout width of an element as an integer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetWidth)
      */
-    val offsetWidth: Int
+    open val offsetWidth: Int
 
     /**
      * The **`outerText`** property of the HTMLElement interface returns the same value as HTMLElement.innerText. When used as a setter it replaces the whole current node with the given text (this differs from innerText, which replaces the content inside the current node).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/outerText)
      */
-    var outerText: String
+    open var outerText: String
 
     /**
      * The **`popover`** property of the HTMLElement interface gets and sets an element's popover state via JavaScript ("auto", "hint", or "manual"), and can be used for feature detection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/popover)
      */
-    var popover: Popover?
+    open var popover: Popover?
 
     /**
      * The **`spellcheck`** property of the HTMLElement interface represents a boolean value that controls the spell-checking hint. It is available on all HTML elements, though it doesn't affect all of them.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/spellcheck)
      */
-    var spellcheck: Boolean
+    open var spellcheck: Boolean
 
     /**
      * The **`HTMLElement.title`** property represents the title of the element: the text usually displayed in a 'tooltip' popup when the mouse is over the node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/title)
      */
-    var title: String
+    open var title: String
 
     /**
      * The **`translate`** property of the HTMLElement interface indicates whether an element's attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/translate)
      */
-    var translate: Boolean
+    open var translate: Boolean
 
     /**
      * The **`writingSuggestions`** property of the HTMLElement interface is a string indicating if browser-provided writing suggestions should be enabled under the scope of the element or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/writingSuggestions)
      */
-    var writingSuggestions: String
+    open var writingSuggestions: String
 
     /**
      * The **`HTMLElement.attachInternals()`** method returns an ElementInternals object. This method allows a custom element to participate in HTML forms. The ElementInternals interface provides utilities for working with these elements in the same way you would work with any standard HTML form element, and also exposes the Accessibility Object Model to the element.
@@ -188,14 +188,14 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals)
      */
     @JsThrows(NotSupportedError::class)
-    fun attachInternals(): ElementInternals
+    open fun attachInternals(): ElementInternals
 
     /**
      * The **`HTMLElement.click()`** method simulates a mouse click on an element. When called on an element, the element's click event is fired (unless its disabled attribute is set).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/click)
      */
-    fun click()
+    open fun click()
 
     /**
      * The **`hidePopover()`** method of the HTMLElement interface hides a popover element (i.e., one that has a valid popover attribute) by removing it from the top layer and styling it with display: none.
@@ -203,7 +203,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover)
      */
     @JsThrows(InvalidStateError::class)
-    fun hidePopover()
+    open fun hidePopover()
 
     /**
      * The **`showPopover()`** method of the HTMLElement interface shows a popover element (i.e., one that has a valid popover attribute) by adding it to the top layer.
@@ -211,7 +211,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover)
      */
     @JsThrows(InvalidStateError::class)
-    fun showPopover(options: ShowPopoverOptions = definedExternally)
+    open fun showPopover(options: ShowPopoverOptions = definedExternally)
 
     /**
      * The **`togglePopover()`** method of the HTMLElement interface toggles a popover element (i.e., one that has a valid popover attribute) between the hidden and showing states.
@@ -219,7 +219,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
     @JsThrows(InvalidStateError::class)
-    fun togglePopover(options: TogglePopoverOptions = definedExternally): Boolean
+    open fun togglePopover(options: TogglePopoverOptions = definedExternally): Boolean
 
     /**
      * The **`togglePopover()`** method of the HTMLElement interface toggles a popover element (i.e., one that has a valid popover attribute) between the hidden and showing states.
@@ -227,13 +227,13 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
     @JsThrows(InvalidStateError::class)
-    fun togglePopover(options: Boolean): Boolean
+    open fun togglePopover(options: Boolean): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
      */
     @ExperimentalWebApi
-    var editContext: EditContext?
+    open var editContext: EditContext?
 }
 
 /**

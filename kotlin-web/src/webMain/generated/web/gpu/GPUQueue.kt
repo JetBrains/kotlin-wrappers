@@ -27,7 +27,7 @@ private constructor() :
      */
     @JsThrows(OperationError::class)
     @JsThrows(SecurityError::class)
-    fun copyExternalImageToTexture(
+    open fun copyExternalImageToTexture(
         source: GPUCopyExternalImageSourceInfo,
         destination: GPUCopyExternalImageDestInfo,
         copySize: GPUExtent3D,
@@ -39,14 +39,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/onSubmittedWorkDone)
      */
     @JsName("onSubmittedWorkDone")
-    fun onSubmittedWorkDoneAsync(): Promise<Void>
+    open fun onSubmittedWorkDoneAsync(): Promise<Void>
 
     /**
      * The **`submit()`** method of the GPUQueue interface schedules the execution of command buffers represented by one or more GPUCommandBuffer objects by the GPU.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/submit)
      */
-    fun submit(commandBuffers: ReadonlyArray<GPUCommandBuffer>)
+    open fun submit(commandBuffers: ReadonlyArray<GPUCommandBuffer>)
 
     /**
      * The **`writeBuffer()`** method of the GPUQueue interface writes a provided data source into a given GPUBuffer.
@@ -54,7 +54,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/writeBuffer)
      */
     @JsThrows(OperationError::class)
-    fun writeBuffer(
+    open fun writeBuffer(
         buffer: GPUBuffer,
         bufferOffset: GPUSize64,
         data: AllowSharedBufferSource,
@@ -67,7 +67,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/writeTexture)
      */
-    fun writeTexture(
+    open fun writeTexture(
         destination: GPUTexelCopyTextureInfo,
         data: AllowSharedBufferSource,
         dataLayout: GPUTexelCopyBufferLayout,

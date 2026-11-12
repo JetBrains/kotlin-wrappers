@@ -17,12 +17,12 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/href)
      */
-    var href: String
+    open var href: String
 
     /**
      * The **`target`** property of the HTMLBaseElement interface is a string that represents the default target tab to show the resulting output for hyperlinks and form elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/target)
      */
-    var target: WindowTarget
+    open var target: WindowTarget
 }

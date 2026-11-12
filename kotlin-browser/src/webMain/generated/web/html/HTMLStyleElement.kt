@@ -20,19 +20,19 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/blocking)
      */
-    val blocking: DOMTokenList<Blocking>
+    open val blocking: DOMTokenList<Blocking>
 
     /**
      * The **`HTMLStyleElement.disabled`** property can be used to get and set whether the stylesheet is disabled (true) or not (false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/disabled)
      */
-    var disabled: Boolean
+    open var disabled: Boolean
 
     /**
      * The **`HTMLStyleElement.media`** property specifies the intended destination medium for style information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/media)
      */
-    var media: MediaQuery
+    open var media: MediaQuery
 }

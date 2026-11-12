@@ -13,17 +13,17 @@ open external class CSSScale(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/x)
      */
-    var x: CSSNumberish,
+    open var x: CSSNumberish,
     /**
      * The **`y`** property of the CSSScale interface gets and sets the ordinate or y-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/y)
      */
-    var y: CSSNumberish,
+    open var y: CSSNumberish,
     /**
      * The **`z`** property of the CSSScale interface representing the z-component of the translating vector. A positive value moves the element towards the viewer, and a negative value farther away.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/z)
      */
-    var z: CSSNumberish = definedExternally,
+    open var z: CSSNumberish = definedExternally,
 ) : CSSTransformComponent

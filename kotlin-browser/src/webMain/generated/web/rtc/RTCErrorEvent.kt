@@ -19,7 +19,7 @@ open external class RTCErrorEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent/error)
      */
-    val error: RTCError
+    open val error: RTCError
 
     companion object
 }

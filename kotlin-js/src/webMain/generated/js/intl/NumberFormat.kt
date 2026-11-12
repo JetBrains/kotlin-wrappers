@@ -15,39 +15,39 @@ open external class NumberFormat(
         options: NumberFormatOptions = definedExternally,
     )
 
-    fun format(value: Double): String
-    fun resolvedOptions(): ResolvedNumberFormatOptions
-    fun format(value: BigInt): String
-    fun format(value: StringNumericLiteral): String
-    fun formatToParts(value: Double): ReadonlyArray<NumberFormatPart>
-    fun formatToParts(value: BigInt): ReadonlyArray<NumberFormatPart>
-    fun formatToParts(value: StringNumericLiteral): ReadonlyArray<NumberFormatPart>
-    fun formatRange(
+    open fun format(value: Double): String
+    open fun resolvedOptions(): ResolvedNumberFormatOptions
+    open fun format(value: BigInt): String
+    open fun format(value: StringNumericLiteral): String
+    open fun formatToParts(value: Double): ReadonlyArray<NumberFormatPart>
+    open fun formatToParts(value: BigInt): ReadonlyArray<NumberFormatPart>
+    open fun formatToParts(value: StringNumericLiteral): ReadonlyArray<NumberFormatPart>
+    open fun formatRange(
         start: Double,
         end: Double,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         start: BigInt,
         end: BigInt,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         start: StringNumericLiteral,
         end: StringNumericLiteral,
     ): String
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         start: Double,
         end: Double,
     ): ReadonlyArray<NumberRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         start: BigInt,
         end: BigInt,
     ): ReadonlyArray<NumberRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         start: StringNumericLiteral,
         end: StringNumericLiteral,
     ): ReadonlyArray<NumberRangeFormatPart>

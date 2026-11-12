@@ -17,26 +17,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/desiredSize)
      */
-    val desiredSize: Double?
+    open val desiredSize: Double?
 
     /**
      * The **`close()`** method of the ReadableStreamDefaultController interface closes the associated stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/close)
      */
-    fun close()
+    open fun close()
 
     /**
      * The **`enqueue()`** method of the ReadableStreamDefaultController interface enqueues a given chunk in the associated stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/enqueue)
      */
-    fun enqueue(chunk: R)
+    open fun enqueue(chunk: R)
 
     /**
      * The **`error()`** method of the ReadableStreamDefaultController interface causes any future interactions with the associated stream to error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController/error)
      */
-    fun error(error: JsError = definedExternally)
+    open fun error(error: JsError = definedExternally)
 }

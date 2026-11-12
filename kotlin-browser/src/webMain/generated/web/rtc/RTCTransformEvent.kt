@@ -10,7 +10,7 @@ import web.events.EventType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTransformEvent)
  */
-external class RTCTransformEvent
+open external class RTCTransformEvent
 private constructor() :
     Event {
     /**
@@ -18,7 +18,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTransformEvent/transformer)
      */
-    val transformer: RTCRtpScriptTransformer
+    open val transformer: RTCRtpScriptTransformer
 
     companion object
 }

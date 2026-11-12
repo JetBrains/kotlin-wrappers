@@ -19,7 +19,7 @@ open external class RTCPeerConnectionIceEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
      */
-    val candidate: RTCIceCandidate?
+    open val candidate: RTCIceCandidate?
 
     companion object
 }

@@ -14,5 +14,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedScript/toJSON)
      */
-    fun toJSON(): String
+    open fun toJSON(): String
 }

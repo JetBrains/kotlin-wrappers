@@ -22,19 +22,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/canInsertDTMF)
      */
-    val canInsertDTMF: Boolean
+    open val canInsertDTMF: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
      */
-    var ontonechange: EventHandler<RTCDTMFToneChangeEvent, RTCDTMFSender, RTCDTMFSender>?
+    open var ontonechange: EventHandler<RTCDTMFToneChangeEvent, RTCDTMFSender, RTCDTMFSender>?
 
     /**
      * The RTCDTMFSender interface's **`toneBuffer`** property returns a string containing a list of the DTMF tones currently queued for sending to the remote peer over the RTCPeerConnection. To place tones into the buffer, call insertDTMF().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/toneBuffer)
      */
-    val toneBuffer: String
+    open val toneBuffer: String
 
     /**
      * The **`insertDTMF()`** method of the RTCDTMFSender interface sends DTMF tones to the remote peer over the RTCPeerConnection.
@@ -43,7 +43,7 @@ private constructor() :
      */
     @JsThrows(InvalidCharacterError::class)
     @JsThrows(InvalidStateError::class)
-    fun insertDTMF(
+    open fun insertDTMF(
         tones: String,
         duration: Int = definedExternally,
         interToneGap: Int = definedExternally,

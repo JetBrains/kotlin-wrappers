@@ -17,12 +17,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/applicationServerKey)
      */
-    val applicationServerKey: ArrayBuffer?
+    open val applicationServerKey: ArrayBuffer?
 
     /**
      * The **`userVisibleOnly`** read-only property of the PushSubscriptionOptions interface indicates if the returned push subscription will only be used for messages whose effect is made visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/userVisibleOnly)
      */
-    val userVisibleOnly: Boolean
+    open val userVisibleOnly: Boolean
 }

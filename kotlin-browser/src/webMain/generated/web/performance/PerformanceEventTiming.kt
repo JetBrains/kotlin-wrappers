@@ -19,35 +19,35 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/cancelable)
      */
-    val cancelable: Boolean
+    open val cancelable: Boolean
 
     /**
      * The read-only **`interactionId`** property of the PerformanceEventTiming interface returns an ID that uniquely identifies a user interaction which triggered a series of associated events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/interactionId)
      */
-    val interactionId: UInt53
+    open val interactionId: UInt53
 
     /**
      * The read-only **`processingEnd`** property returns the time the last event handler finished executing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/processingEnd)
      */
-    val processingEnd: DOMHighResTimeStamp
+    open val processingEnd: DOMHighResTimeStamp
 
     /**
      * The read-only **`processingStart`** property returns the time at which event dispatch started. This is when event handlers are about to be executed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/processingStart)
      */
-    val processingStart: DOMHighResTimeStamp
+    open val processingStart: DOMHighResTimeStamp
 
     /**
      * The read-only **`target`** property returns the associated event's last target which is the node onto which the event was last dispatched.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/target)
      */
-    val target: Node?
+    open val target: Node?
 
     /**
      * The **`toJSON()`** method of the PerformanceEventTiming interface is a serializer; it returns a JSON representation of the PerformanceEventTiming object.

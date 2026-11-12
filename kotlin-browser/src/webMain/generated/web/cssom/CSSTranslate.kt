@@ -13,17 +13,17 @@ open external class CSSTranslate(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/x)
      */
-    var x: CSSNumericValue,
+    open var x: CSSNumericValue,
     /**
      * The **`y`** property of the CSSTranslate interface gets and sets the ordinate or y-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/y)
      */
-    var y: CSSNumericValue,
+    open var y: CSSNumericValue,
     /**
      * The **`z`** property of the CSSTranslate interface representing the z-component of the translating vector. A positive value moves the element towards the viewer, and a negative value farther away.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/z)
      */
-    var z: CSSNumericValue = definedExternally,
+    open var z: CSSNumericValue = definedExternally,
 ) : CSSTransformComponent

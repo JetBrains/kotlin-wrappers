@@ -18,12 +18,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportBidirectionalStream/readable)
      */
-    val readable: ReadableStream<*>
+    open val readable: ReadableStream<*>
 
     /**
      * The **`writable`** read-only property of the WebTransportBidirectionalStream interface returns a WebTransportSendStream instance that can be used to write outgoing data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportBidirectionalStream/writable)
      */
-    val writable: WritableStream<*>
+    open val writable: WritableStream<*>
 }

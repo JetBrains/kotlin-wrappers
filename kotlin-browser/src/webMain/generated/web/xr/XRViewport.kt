@@ -9,8 +9,8 @@ package web.xr
  */
 open external class XRViewport
 private constructor() {
-    val x: Int
-    val y: Int
-    val width: Int
-    val height: Int
+    open val x: Int
+    open val y: Int
+    open val width: Int
+    open val height: Int
 }

@@ -20,14 +20,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/data)
      */
-    var data: String
+    open var data: String
 
     /**
      * The read-only **`CharacterData.length`** property returns the number of characters in the contained data, as a positive integer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/length)
      */
-    val length: Int
+    open val length: Int
     override val ownerDocument: Document
 
     /**
@@ -35,7 +35,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/appendData)
      */
-    fun appendData(data: String)
+    open fun appendData(data: String)
 
     /**
      * The **`deleteData()`** method of the CharacterData interface removes all or part of the data from this CharacterData node.
@@ -43,7 +43,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/deleteData)
      */
     @JsThrows(IndexSizeError::class)
-    fun deleteData(
+    open fun deleteData(
         offset: Int,
         count: Int,
     )
@@ -54,7 +54,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/insertData)
      */
     @JsThrows(IndexSizeError::class)
-    fun insertData(
+    open fun insertData(
         offset: Int,
         data: String,
     )
@@ -65,7 +65,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceData)
      */
     @JsThrows(IndexSizeError::class)
-    fun replaceData(
+    open fun replaceData(
         offset: Int,
         count: Int,
         data: String,
@@ -77,7 +77,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/substringData)
      */
     @JsThrows(IndexSizeError::class)
-    fun substringData(
+    open fun substringData(
         offset: Int,
         count: Int,
     ): String

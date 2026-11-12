@@ -40,14 +40,14 @@ open external class DOMPointReadOnly(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
      */
-    fun matrixTransform(matrix: DOMMatrixReadOnly = definedExternally): DOMPoint
+    open fun matrixTransform(matrix: DOMMatrixReadOnly = definedExternally): DOMPoint
 
     /**
      * The DOMPointReadOnly method **`toJSON()`** returns an object giving the JSON form of the point object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 
     companion object {
         /**

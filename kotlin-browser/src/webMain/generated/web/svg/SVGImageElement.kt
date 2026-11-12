@@ -20,40 +20,40 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossOrigin)
      */
-    var crossOrigin: CrossOrigin?
+    open var crossOrigin: CrossOrigin?
 
     /**
      * The **`height`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the height attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
      */
-    val height: SVGAnimatedLength
+    open val height: SVGAnimatedLength
 
     /**
      * The **`preserveAspectRatio`** read-only property of the SVGImageElement interface returns an SVGAnimatedPreserveAspectRatio corresponding to the preserveAspectRatio attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
      */
-    val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    open val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
     /**
      * The **`width`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the width attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
      */
-    val width: SVGAnimatedLength
+    open val width: SVGAnimatedLength
 
     /**
      * The **`x`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the x attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
      */
-    val x: SVGAnimatedLength
+    open val x: SVGAnimatedLength
 
     /**
      * The **`y`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the y attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
      */
-    val y: SVGAnimatedLength
+    open val y: SVGAnimatedLength
 }

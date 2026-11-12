@@ -19,10 +19,10 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramsWritable/sendGroup)
      */
-    var sendGroup: WebTransportSendGroup?
+    open var sendGroup: WebTransportSendGroup?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramsWritable/sendOrder)
      */
-    var sendOrder: Int53
+    open var sendOrder: Int53
 }

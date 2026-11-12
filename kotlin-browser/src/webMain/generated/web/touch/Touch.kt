@@ -17,82 +17,82 @@ open external class Touch(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/clientX)
      */
-    val clientX: Double
+    open val clientX: Double
 
     /**
      * The **`Touch.clientY`** read-only property returns the Y coordinate of the touch point relative to the browser's viewport, not including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/clientY)
      */
-    val clientY: Double
+    open val clientY: Double
 
     /**
      * The **`Touch.force`** read-only property returns the amount of pressure the user is applying to the touch surface for a Touch point.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/force)
      */
-    val force: Float
+    open val force: Float
 
     /**
      * The **`Touch.identifier`** returns a value uniquely identifying this point of contact with the touch surface. This value remains consistent for every event involving this finger's (or stylus's) movement on the surface until it is lifted off the surface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/identifier)
      */
-    val identifier: Int
+    open val identifier: Int
 
     /**
      * The **`Touch.pageX`** read-only property returns the X coordinate of the touch point relative to the viewport, including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageX)
      */
-    val pageX: Double
+    open val pageX: Double
 
     /**
      * The **`Touch.pageY`** read-only property returns the Y coordinate of the touch point relative to the viewport, including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/pageY)
      */
-    val pageY: Double
+    open val pageY: Double
 
     /**
      * The **`radiusX`** read-only property of the Touch interface returns the X radius of the ellipse that most closely circumscribes the area of contact with the touch surface. The value is in CSS pixels of the same scale as Touch.screenX.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusX)
      */
-    val radiusX: Float
+    open val radiusX: Float
 
     /**
      * The **`radiusY`** read-only property of the Touch interface returns the Y radius of the ellipse that most closely circumscribes the area of contact with the touch surface. The value is in CSS pixels of the same scale as Touch.screenX.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/radiusY)
      */
-    val radiusY: Float
+    open val radiusY: Float
 
     /**
      * The **`rotationAngle`** read-only property of the Touch interface returns the rotation angle, in degrees, of the contact area ellipse defined by Touch.radiusX and Touch.radiusY. The value may be between 0 and 90. Together, these three values describe an ellipse that approximates the size and shape of the area of contact between the user and the screen. This may be a relatively large ellipse representing the contact between a fingertip and the screen or a small area representing the tip of a stylus, for example.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/rotationAngle)
      */
-    val rotationAngle: Float
+    open val rotationAngle: Float
 
     /**
      * Returns the X coordinate of the touch point relative to the screen, not including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenX)
      */
-    val screenX: Double
+    open val screenX: Double
 
     /**
      * Returns the Y coordinate of the touch point relative to the screen, not including any scroll offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/screenY)
      */
-    val screenY: Double
+    open val screenY: Double
 
     /**
      * The read-only **`target`** property of the Touch interface returns the (EventTarget) on which the touch contact started when it was first placed on the surface, even if the touch point has since moved outside the interactive area of that element or even been removed from the document. Note that if the target element is removed from the document, events will still be targeted at it, and hence won't necessarily bubble up to the window or document anymore. If there is any risk of an element being removed while it is being touched, the best practice is to attach the touch listeners directly to the target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch/target)
      */
-    val target: EventTarget
+    open val target: EventTarget
 }

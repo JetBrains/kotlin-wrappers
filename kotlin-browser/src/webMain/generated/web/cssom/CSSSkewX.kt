@@ -13,5 +13,5 @@ open external class CSSSkewX(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewX/ax)
      */
-    var ax: CSSNumericValue,
+    open var ax: CSSNumericValue,
 ) : CSSTransformComponent

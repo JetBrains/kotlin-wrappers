@@ -19,7 +19,7 @@ open external class GamepadEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)
      */
-    val gamepad: Gamepad
+    open val gamepad: Gamepad
 
     companion object
 }

@@ -29,14 +29,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/getNamedItem)
      */
-    fun getNamedItem(qualifiedName: String): Attr?
+    open fun getNamedItem(qualifiedName: String): Attr?
 
     /**
      * The **`getNamedItemNS()`** method of the NamedNodeMap interface returns the Attr corresponding to the given local name in the given namespace, or null if there is no corresponding attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/getNamedItemNS)
      */
-    fun getNamedItemNS(
+    open fun getNamedItemNS(
         namespace: String?,
         localName: String,
     ): Attr?
@@ -46,7 +46,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/item)
      */
-    fun item(index: Int): Attr?
+    open fun item(index: Int): Attr?
 
     /**
      * The **`removeNamedItem()`** method of the NamedNodeMap interface removes the Attr corresponding to the given name from the map.
@@ -54,7 +54,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/removeNamedItem)
      */
     @JsThrows(NotFoundError::class)
-    fun removeNamedItem(qualifiedName: String): Attr
+    open fun removeNamedItem(qualifiedName: String): Attr
 
     /**
      * The **`removeNamedItemNS()`** method of the NamedNodeMap interface removes the Attr corresponding to the given namespace and local name from the map.
@@ -62,7 +62,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/removeNamedItemNS)
      */
     @JsThrows(NotFoundError::class)
-    fun removeNamedItemNS(
+    open fun removeNamedItemNS(
         namespace: String?,
         localName: String,
     ): Attr
@@ -73,7 +73,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/setNamedItem)
      */
     @JsThrows(InUseAttributeError::class)
-    fun setNamedItem(attr: Attr): Attr?
+    open fun setNamedItem(attr: Attr): Attr?
 
     /**
      * The **`setNamedItemNS()`** method of the NamedNodeMap interface puts the Attr identified by its name in the map. If there was already an Attr with the same name in the map, it is replaced.
@@ -81,5 +81,5 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/setNamedItemNS)
      */
     @JsThrows(InUseAttributeError::class)
-    fun setNamedItemNS(attr: Attr): Attr?
+    open fun setNamedItemNS(attr: Attr): Attr?
 }

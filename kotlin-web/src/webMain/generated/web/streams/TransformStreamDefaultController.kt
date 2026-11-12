@@ -16,26 +16,26 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/desiredSize)
      */
-    val desiredSize: Double?
+    open val desiredSize: Double?
 
     /**
      * The **`enqueue()`** method of the TransformStreamDefaultController interface enqueues the given chunk in the readable side of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/enqueue)
      */
-    fun enqueue(chunk: O)
+    open fun enqueue(chunk: O)
 
     /**
      * The **`error()`** method of the TransformStreamDefaultController interface errors both sides of the stream. Any further interactions with it will fail with the given error message, and any chunks in the queue will be discarded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/error)
      */
-    fun error(reason: JsError? = definedExternally)
+    open fun error(reason: JsError? = definedExternally)
 
     /**
      * The **`terminate()`** method of the TransformStreamDefaultController interface closes the readable side and errors the writable side of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/terminate)
      */
-    fun terminate()
+    open fun terminate()
 }

@@ -20,43 +20,43 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/gatheringState)
      */
-    val gatheringState: RTCIceGathererState
+    open val gatheringState: RTCIceGathererState
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/gatheringstatechange_event)
      */
-    var ongatheringstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
+    open var ongatheringstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/selectedcandidatepairchange_event)
      */
-    var onselectedcandidatepairchange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
+    open var onselectedcandidatepairchange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/statechange_event)
      */
-    var onstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
+    open var onstatechange: EventHandler<Event, RTCIceTransport, RTCIceTransport>?
 
     /**
      * The **`role`** read-only property of the RTCIceTransport interface indicates which ICE role the transport is fulfilling: that of the controlling agent, or the agent that is being controlled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/role)
      */
-    val role: RTCIceRole
+    open val role: RTCIceRole
 
     /**
      * The **`state`** read-only property of the RTCIceTransport interface returns the current state of the ICE transport, so you can determine the state of ICE gathering in which the ICE agent currently is operating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/state)
      */
-    val state: RTCIceTransportState
+    open val state: RTCIceTransportState
 
     /**
      * The **`getSelectedCandidatePair()`** method of the RTCIceTransport interface returns an RTCIceCandidatePair object containing the current best-choice pair of ICE candidates describing the configuration of the endpoints of the transport.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/getSelectedCandidatePair)
      */
-    fun getSelectedCandidatePair(): RTCIceCandidatePair?
+    open fun getSelectedCandidatePair(): RTCIceCandidatePair?
 }
 
 /**

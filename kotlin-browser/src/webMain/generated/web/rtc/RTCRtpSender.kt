@@ -22,35 +22,35 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/dtmf)
      */
-    val dtmf: RTCDTMFSender?
+    open val dtmf: RTCDTMFSender?
 
     /**
      * The **`track`** read-only property of the RTCRtpSender interface returns the MediaStreamTrack which is being handled by the RTCRtpSender.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/track)
      */
-    val track: MediaStreamTrack?
+    open val track: MediaStreamTrack?
 
     /**
      * The **`transform`** property of the RTCRtpSender object is used to insert a transform stream (TransformStream) running in a worker thread into the sender pipeline. This allows stream transforms to be applied to encoded video and audio frames after they are output by a codec, and before they are sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transform)
      */
-    var transform: RTCRtpSenderTransform?
+    open var transform: RTCRtpSenderTransform?
 
     /**
      * The read-only **`transport`** property of an RTCRtpSender object provides the RTCDtlsTransport object used to interact with the underlying transport over which the sender is exchanging Real-time Transport Control Protocol (RTCP) packets.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transport)
      */
-    val transport: RTCDtlsTransport?
+    open val transport: RTCDtlsTransport?
 
     /**
      * The **`getParameters()`** method of the RTCRtpSender interface returns an object describing the current configuration for how the sender's track will be encoded and transmitted to a remote RTCRtpReceiver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters)
      */
-    fun getParameters(): RTCRtpSendParameters
+    open fun getParameters(): RTCRtpSendParameters
 
     /**
      * The RTCRtpSender method **`getStats()`** asynchronously requests an RTCStatsReport object which provides statistics about outgoing traffic on the RTCPeerConnection which owns the sender, returning a Promise which is fulfilled when the results are available.
@@ -58,7 +58,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<RTCStatsReport>
+    open fun getStatsAsync(): Promise<RTCStatsReport>
 
     /**
      * The RTCRtpSender method **`replaceTrack()`** replaces the track currently being used as the sender's source with a new MediaStreamTrack.
@@ -68,7 +68,7 @@ private constructor() {
     @JsThrows(InvalidModificationError::class)
     @JsThrows(InvalidStateError::class)
     @JsName("replaceTrack")
-    fun replaceTrackAsync(withTrack: MediaStreamTrack?): Promise<Void>
+    open fun replaceTrackAsync(withTrack: MediaStreamTrack?): Promise<Void>
 
     /**
      * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's track, which is the MediaStreamTrack for which the RTCRtpSender is responsible.
@@ -79,7 +79,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
     @JsName("setParameters")
-    fun setParametersAsync(
+    open fun setParametersAsync(
         parameters: RTCRtpSendParameters,
         setParameterOptions: RTCSetParameterOptions = definedExternally,
     ): Promise<Void>
@@ -90,7 +90,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setStreams)
      */
     @JsThrows(InvalidStateError::class)
-    fun setStreams(vararg streams: MediaStream)
+    open fun setStreams(vararg streams: MediaStream)
 
     companion object {
         /**

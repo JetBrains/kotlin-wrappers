@@ -15,21 +15,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/localName)
      */
-    val localName: String
+    open val localName: String
 
     /**
      * The read-only **`name`** property of the Attr interface returns the qualified name of an attribute, that is the name of the attribute, with the namespace prefix, if any, in front of it. For example, if the local name is lang and the namespace prefix is xml, the returned qualified name is xml:lang.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The read-only **`namespaceURI`** property of the Attr interface returns the namespace URI of the attribute, or null if the element is not in a namespace.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/namespaceURI)
      */
-    val namespaceURI: String?
+    open val namespaceURI: String?
     override val ownerDocument: Document
 
     /**
@@ -37,21 +37,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/ownerElement)
      */
-    val ownerElement: Element?
+    open val ownerElement: Element?
 
     /**
      * The read-only **`prefix`** property of the Attr returns the namespace prefix of the attribute, or null if no prefix is specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/prefix)
      */
-    val prefix: String?
+    open val prefix: String?
 
     /**
      * The **`value`** property of the Attr interface contains the value of the attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr/value)
      */
-    var value: String
+    open var value: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)

@@ -29,12 +29,12 @@ open external class PaymentRequest(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/id)
      */
-    val id: String
+    open val id: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
      */
-    var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest, PaymentRequest>?
+    open var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest, PaymentRequest>?
 
     /**
      * The **`PaymentRequest.abort()`** method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
@@ -42,7 +42,7 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
      */
     @JsName("abort")
-    fun abortAsync(): Promise<Void>
+    open fun abortAsync(): Promise<Void>
 
     /**
      * The PaymentRequest method **`canMakePayment()`** determines whether or not the request is configured in a way that is compatible with at least one payment method supported by the user agent.
@@ -50,7 +50,7 @@ open external class PaymentRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
      */
     @JsName("canMakePayment")
-    fun canMakePaymentAsync(): Promise<JsBoolean>
+    open fun canMakePaymentAsync(): Promise<JsBoolean>
 
     /**
      * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
@@ -62,7 +62,7 @@ open external class PaymentRequest(
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("show")
-    fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
+    open fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
     /**
      * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
@@ -74,7 +74,7 @@ open external class PaymentRequest(
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("show")
-    fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
+    open fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
 }
 
 /**

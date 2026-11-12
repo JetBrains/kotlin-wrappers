@@ -27,37 +27,37 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The **`objectStoreNames`** read-only property of the IDBDatabase interface is a DOMStringList containing a list of the names of the object stores currently in the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames)
      */
-    val objectStoreNames: DOMStringList
+    open val objectStoreNames: DOMStringList
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
      */
-    var onabort: EventHandler<Event, IDBDatabase, IDBDatabase>?
+    open var onabort: EventHandler<Event, IDBDatabase, IDBDatabase>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
      */
-    var onclose: EventHandler<Event, IDBDatabase, IDBDatabase>?
-    var onerror: EventHandler<Event, IDBDatabase, IDBTransaction>?
+    open var onclose: EventHandler<Event, IDBDatabase, IDBDatabase>?
+    open var onerror: EventHandler<Event, IDBDatabase, IDBTransaction>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
      */
-    var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>?
+    open var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>?
 
     /**
      * The **`version`** property of the IDBDatabase interface is a 64-bit integer that contains the version of the connected database. When a database is first created, this attribute is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/version)
      */
-    val version: UInt53
+    open val version: UInt53
 
     /**
      * The **`close()`** method of the IDBDatabase interface returns immediately and closes the connection in a separate thread.
@@ -75,7 +75,7 @@ private constructor() :
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun createObjectStore(
+    open fun createObjectStore(
         name: String,
         options: IDBObjectStoreParameters = definedExternally,
     ): IDBObjectStore
@@ -88,7 +88,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
     @JsThrows(TransactionInactiveError::class)
-    fun deleteObjectStore(name: String)
+    open fun deleteObjectStore(name: String)
 
     /**
      * The **`transaction`** method of the IDBDatabase interface immediately returns a transaction object (IDBTransaction) containing the IDBTransaction.objectStore method, which you can use to access your object store.
@@ -98,7 +98,7 @@ private constructor() :
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
-    fun transaction(
+    open fun transaction(
         storeNames: String,
         mode: IDBTransactionMode = definedExternally,
         options: IDBTransactionOptions = definedExternally,
@@ -112,7 +112,7 @@ private constructor() :
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
-    fun transaction(
+    open fun transaction(
         storeNames: ReadonlyArray<JsString>,
         mode: IDBTransactionMode = definedExternally,
         options: IDBTransactionOptions = definedExternally,

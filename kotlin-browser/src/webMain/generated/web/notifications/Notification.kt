@@ -21,7 +21,7 @@ open external class Notification(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/title)
      */
-    val title: String,
+    open val title: String,
     options: NotificationOptions = definedExternally,
 ) : EventTarget {
     /**
@@ -29,97 +29,97 @@ open external class Notification(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/actions)
      */
-    val actions: ReadonlyArray<NotificationAction>
+    open val actions: ReadonlyArray<NotificationAction>
 
     /**
      * The **`body`** read-only property of the Notification interface indicates the body string of the notification, as specified in the body option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/body)
      */
-    val body: String
+    open val body: String
 
     /**
      * The **`data`** read-only property of the Notification interface returns a structured clone of the notification's data, as specified in the data option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/data)
      */
-    val data: JsAny?
+    open val data: JsAny?
 
     /**
      * The **`dir`** read-only property of the Notification interface indicates the text direction of the notification, as specified in the dir option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/dir)
      */
-    val dir: NotificationDirection
+    open val dir: NotificationDirection
 
     /**
      * The **`icon`** read-only property of the Notification interface contains the URL of an icon to be displayed as part of the notification, as specified in the icon option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/icon)
      */
-    val icon: String
+    open val icon: String
 
     /**
      * The **`lang`** read-only property of the Notification interface indicates the language used in the notification, as specified in the lang option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/lang)
      */
-    val lang: String
+    open val lang: String
 
     /**
      * The **`navigate`** read-only property of the Notification interface contains the URL the user agent will navigate to when the user activates the notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/navigate)
      */
-    val navigate: String
+    open val navigate: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
      */
-    var onclick: EventHandler<Event, Notification, Notification>?
+    open var onclick: EventHandler<Event, Notification, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
      */
-    var onclose: EventHandler<Event, Notification, Notification>?
+    open var onclose: EventHandler<Event, Notification, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
      */
-    var onerror: EventHandler<Event, Notification, Notification>?
+    open var onerror: EventHandler<Event, Notification, Notification>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
      */
-    var onshow: EventHandler<Event, Notification, Notification>?
+    open var onshow: EventHandler<Event, Notification, Notification>?
 
     /**
      * The **`requireInteraction`** read-only property of the Notification interface returns a boolean value indicating that a notification should remain active until the user clicks or dismisses it, rather than closing automatically.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requireInteraction)
      */
-    val requireInteraction: Boolean
+    open val requireInteraction: Boolean
 
     /**
      * The **`silent`** read-only property of the Notification interface specifies whether the notification should be silent, i.e., no sounds or vibrations should be issued regardless of the device settings. This is controlled via the silent option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/silent)
      */
-    val silent: Boolean?
+    open val silent: Boolean?
 
     /**
      * The **`tag`** read-only property of the Notification interface signifies an identifying tag for the notification, as specified in the tag option of the Notification() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/tag)
      */
-    val tag: String
+    open val tag: String
 
     /**
      * The **`close()`** method of the Notification interface is used to close/remove a previously displayed notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close)
      */
-    fun close()
+    open fun close()
 
     companion object {
         /**

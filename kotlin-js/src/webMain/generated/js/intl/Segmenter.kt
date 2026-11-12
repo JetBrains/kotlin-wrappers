@@ -33,14 +33,14 @@ open external class Segmenter(
      *
      * @return A new iterable Segments object containing the segments of the input string, using the segmenter's locale and granularity.
      */
-    fun segment(input: String): Segments
+    open fun segment(input: String): Segments
 
     /**
      * The `resolvedOptions()` method of `Intl.Segmenter` instances returns a new object with properties reflecting the options computed during initialization of this `Segmenter` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/resolvedOptions)
      */
-    fun resolvedOptions(): ResolvedSegmenterOptions
+    open fun resolvedOptions(): ResolvedSegmenterOptions
 
     companion object {
         /**

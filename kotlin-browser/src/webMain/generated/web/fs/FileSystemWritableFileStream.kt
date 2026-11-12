@@ -27,7 +27,7 @@ private constructor() :
      */
     @JsThrows(NotAllowedError::class)
     @JsName("seek")
-    fun seekAsync(position: UInt53): Promise<Void>
+    open fun seekAsync(position: UInt53): Promise<Void>
 
     /**
      * The **`truncate()`** method of the FileSystemWritableFileStream interface resizes the file associated with the stream to the specified size in bytes.
@@ -37,7 +37,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows.Typed(QuotaExceededError::class)
     @JsName("truncate")
-    fun truncateAsync(size: UInt53): Promise<Void>
+    open fun truncateAsync(size: UInt53): Promise<Void>
 
     /**
      * The **`write()`** method of the FileSystemWritableFileStream interface writes content into the file the method is called on, at the current file cursor offset.
@@ -47,7 +47,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows.Typed(QuotaExceededError::class)
     @JsName("write")
-    fun writeAsync(data: FileSystemWriteChunkType): Promise<Void>
+    open fun writeAsync(data: FileSystemWriteChunkType): Promise<Void>
 }
 
 /**

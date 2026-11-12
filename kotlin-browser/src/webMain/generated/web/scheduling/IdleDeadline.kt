@@ -16,12 +16,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IdleDeadline/didTimeout)
      */
-    val didTimeout: Boolean
+    open val didTimeout: Boolean
 
     /**
      * The **`timeRemaining()`** method on the IdleDeadline interface returns the estimated number of milliseconds remaining in the current idle period. The callback can call this method at any time to determine how much time it can continue to work before it must return. For example, if the callback finishes a task and has another one to begin, it can call timeRemaining() to see if there's enough time to complete the next task. If there isn't, the callback can just return immediately, or look for other work to do with the remaining time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IdleDeadline/timeRemaining)
      */
-    fun timeRemaining(): DOMHighResTimeStamp
+    open fun timeRemaining(): DOMHighResTimeStamp
 }

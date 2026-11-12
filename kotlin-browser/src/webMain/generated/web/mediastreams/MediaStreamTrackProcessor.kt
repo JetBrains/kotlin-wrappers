@@ -18,5 +18,5 @@ open external class MediaStreamTrackProcessor(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackProcessor/readable)
      */
-    val readable: ReadableStream<VideoFrame>
+    open val readable: ReadableStream<VideoFrame>
 }

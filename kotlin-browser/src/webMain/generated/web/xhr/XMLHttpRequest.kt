@@ -27,112 +27,112 @@ open external class XMLHttpRequest :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
      */
-    var onreadystatechange: EventHandler<Event, XMLHttpRequest, XMLHttpRequest>?
+    open var onreadystatechange: EventHandler<Event, XMLHttpRequest, XMLHttpRequest>?
 
     /**
      * The **`XMLHttpRequest.readyState`** property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readyState)
      */
-    val readyState: ReadyState
+    open val readyState: ReadyState
 
     /**
      * The XMLHttpRequest **`response`** property returns the response's body content as an ArrayBuffer, a Blob, a Document, a JavaScript Object, or a string, depending on the value of the request's responseType property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/response)
      */
-    val response: JsAny?
+    open val response: JsAny?
 
     /**
      * The read-only XMLHttpRequest property **`responseText`** returns the text received from a server following a request being sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseText)
      */
-    val responseText: String
+    open val responseText: String
 
     /**
      * The XMLHttpRequest property **`responseType`** is an enumerated string value specifying the type of data contained in the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType)
      */
-    var responseType: XMLHttpRequestResponseType
+    open var responseType: XMLHttpRequestResponseType
 
     /**
      * The read-only **`XMLHttpRequest.responseURL`** property returns the serialized URL of the response or the empty string if the URL is null. If the URL is returned, any URL fragment present in the URL will be stripped away. The value of responseURL will be the final URL obtained after any redirects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseURL)
      */
-    val responseURL: String
+    open val responseURL: String
 
     /**
      * The **`XMLHttpRequest.responseXML`** read-only property returns a Document containing the HTML or XML retrieved by the request; or null if the request was unsuccessful, has not yet been sent, or if the data can't be parsed as XML or HTML.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseXML)
      */
-    val responseXML: Document?
+    open val responseXML: Document?
 
     /**
      * The read-only **`XMLHttpRequest.status`** property returns the numerical HTTP status code of the XMLHttpRequest's response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/status)
      */
-    val status: Short
+    open val status: Short
 
     /**
      * The read-only **`XMLHttpRequest.statusText`** property returns a string containing the response's status message as returned by the HTTP server. Unlike XMLHttpRequest.status which indicates a numerical status code, this property contains the text of the response status, such as "OK" or "Not Found". If the request's readyState is in UNSENT or OPENED state, the value of statusText will be an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/statusText)
      */
-    val statusText: String
+    open val statusText: String
 
     /**
      * The **`XMLHttpRequest.timeout`** property is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. The default value is 0, which means there is no timeout. Timeout shouldn't be used for synchronous XMLHttpRequests requests used in a document environment or it will throw an InvalidAccessError exception. When a timeout happens, a timeout event is fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout)
      */
-    var timeout: Int
+    open var timeout: Int
 
     /**
      * The XMLHttpRequest **`upload`** property returns an XMLHttpRequestUpload object that can be observed to monitor an upload's progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/upload)
      */
-    val upload: XMLHttpRequestUpload
+    open val upload: XMLHttpRequestUpload
 
     /**
      * The **`XMLHttpRequest.withCredentials`** property is a boolean value that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authentication headers or TLS client certificates. Setting withCredentials has no effect on same-origin requests.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/withCredentials)
      */
-    var withCredentials: Boolean
+    open var withCredentials: Boolean
 
     /**
      * The **`XMLHttpRequest.abort()`** method aborts the request if it has already been sent. When a request is aborted, its readyState is changed to XMLHttpRequest.UNSENT (0) and the request's status code is set to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort)
      */
-    fun abort()
+    open fun abort()
 
     /**
      * The XMLHttpRequest method **`getAllResponseHeaders()`** returns all the response headers, separated by CRLF, as a string, or returns null if no response has been received.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getAllResponseHeaders)
      */
-    fun getAllResponseHeaders(): String
+    open fun getAllResponseHeaders(): String
 
     /**
      * The XMLHttpRequest method **`getResponseHeader()`** returns the string containing the text of a particular header's value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getResponseHeader)
      */
-    fun getResponseHeader(name: String): String?
+    open fun getResponseHeader(name: String): String?
 
     /**
      * The XMLHttpRequest method **`open()`** initializes a newly-created request, or re-initializes an existing one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/open)
      */
-    fun open(
+    open fun open(
         method: RequestMethod,
         url: String,
     )
@@ -142,12 +142,12 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/open)
      */
-    fun open(
+    open fun open(
         method: RequestMethod,
         url: URLLike,
     )
 
-    fun open(
+    open fun open(
         method: RequestMethod,
         url: String,
         async: Boolean,
@@ -155,7 +155,7 @@ open external class XMLHttpRequest :
         password: String? = definedExternally,
     )
 
-    fun open(
+    open fun open(
         method: RequestMethod,
         url: URLLike,
         async: Boolean,
@@ -168,7 +168,7 @@ open external class XMLHttpRequest :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/overrideMimeType)
      */
-    fun overrideMimeType(mime: String)
+    open fun overrideMimeType(mime: String)
 
     /**
      * The XMLHttpRequest method **`send()`** sends the request to the server.
@@ -177,7 +177,7 @@ open external class XMLHttpRequest :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun send(body: Document? = definedExternally)
+    open fun send(body: Document? = definedExternally)
 
     /**
      * The XMLHttpRequest method **`send()`** sends the request to the server.
@@ -186,7 +186,7 @@ open external class XMLHttpRequest :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun send(body: Blob?)
+    open fun send(body: Blob?)
 
     /**
      * The XMLHttpRequest method **`send()`** sends the request to the server.
@@ -195,7 +195,7 @@ open external class XMLHttpRequest :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun send(body: BufferSource?)
+    open fun send(body: BufferSource?)
 
     /**
      * The XMLHttpRequest method **`send()`** sends the request to the server.
@@ -204,7 +204,7 @@ open external class XMLHttpRequest :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun send(body: FormData?)
+    open fun send(body: FormData?)
 
     /**
      * The XMLHttpRequest method **`send()`** sends the request to the server.
@@ -213,7 +213,7 @@ open external class XMLHttpRequest :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun send(body: URLSearchParams?)
+    open fun send(body: URLSearchParams?)
 
     /**
      * The XMLHttpRequest method **`send()`** sends the request to the server.
@@ -222,14 +222,14 @@ open external class XMLHttpRequest :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NetworkError::class)
-    fun send(body: String?)
+    open fun send(body: String?)
 
     /**
      * The XMLHttpRequest method **`setRequestHeader()`** sets the value of an HTTP request header. When using setRequestHeader(), you must call it after calling open(), but before calling send(). If this method is called several times with the same header, the values are merged into one single request header.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/setRequestHeader)
      */
-    fun setRequestHeader(
+    open fun setRequestHeader(
         name: String,
         value: String,
     )

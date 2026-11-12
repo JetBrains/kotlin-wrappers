@@ -13,5 +13,5 @@ open external class CSSKeywordValue(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeywordValue/value)
      */
-    var value: String,
+    open var value: String,
 ) : CSSStyleValue

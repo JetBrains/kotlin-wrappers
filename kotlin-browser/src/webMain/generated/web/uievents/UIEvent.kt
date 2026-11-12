@@ -20,14 +20,14 @@ open external class UIEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/detail)
      */
-    val detail: Int
+    open val detail: Int
 
     /**
      * The **`UIEvent.view`** read-only property returns the WindowProxy object from which the event was generated. In browsers, this is the Window object the event happened in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
      */
-    val view: Window?
+    open val view: Window?
 
     companion object
 }

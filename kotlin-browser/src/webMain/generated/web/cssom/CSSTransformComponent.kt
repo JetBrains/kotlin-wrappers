@@ -16,12 +16,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent/is2D)
      */
-    var is2D: Boolean
+    open var is2D: Boolean
 
     /**
      * The **`toMatrix()`** method of the CSSTransformComponent interface returns a DOMMatrix object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent/toMatrix)
      */
-    fun toMatrix(): DOMMatrix
+    open fun toMatrix(): DOMMatrix
 }

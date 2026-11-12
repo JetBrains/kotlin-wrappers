@@ -31,7 +31,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/flush)
      */
     @JsThrows(InvalidStateError::class)
-    fun flush()
+    open fun flush()
 
     /**
      * The **`getSize()`** method of the FileSystemSyncAccessHandle interface returns the size of the file associated with the handle in bytes.
@@ -39,7 +39,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/getSize)
      */
     @JsThrows(InvalidStateError::class)
-    fun getSize(): UInt53
+    open fun getSize(): UInt53
 
     /**
      * The **`read()`** method of the FileSystemSyncAccessHandle interface reads the content of the file associated with the handle into a specified buffer, optionally at a given offset.
@@ -47,7 +47,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/read)
      */
     @JsThrows(InvalidStateError::class)
-    fun read(
+    open fun read(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
     ): UInt53
@@ -59,7 +59,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows.Typed(QuotaExceededError::class)
-    fun truncate(newSize: UInt53)
+    open fun truncate(newSize: UInt53)
 
     /**
      * The **`write()`** method of the FileSystemSyncAccessHandle interface writes the content of a specified buffer to the file associated with the handle, optionally at a given offset.
@@ -68,7 +68,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows.Typed(QuotaExceededError::class)
-    fun write(
+    open fun write(
         buffer: AllowSharedBufferSource,
         options: FileSystemReadWriteOptions = definedExternally,
     ): UInt53

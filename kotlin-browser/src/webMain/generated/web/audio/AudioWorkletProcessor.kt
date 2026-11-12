@@ -18,7 +18,7 @@ abstract external class AudioWorkletProcessor {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletProcessor/port)
      */
-    val port: MessagePort
+    open val port: MessagePort
     abstract fun process(
         inputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>,
         outputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>,

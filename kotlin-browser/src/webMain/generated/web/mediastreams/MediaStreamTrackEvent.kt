@@ -19,7 +19,7 @@ open external class MediaStreamTrackEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track)
      */
-    val track: MediaStreamTrack
+    open val track: MediaStreamTrack
 
     companion object
 }

@@ -24,13 +24,13 @@ open external class XRWebGLLayer(
         layerInit: XRWebGLLayerInit = definedExternally,
     )
 
-    val antialias: Boolean
-    val ignoreDepthValues: Boolean
-    var fixedFoveation: Float?
-    val framebuffer: WebGLFramebuffer
-    val framebufferWidth: Int
-    val framebufferHeight: Int
+    open val antialias: Boolean
+    open val ignoreDepthValues: Boolean
+    open var fixedFoveation: Float?
+    open val framebuffer: WebGLFramebuffer
+    open val framebufferWidth: Int
+    open val framebufferHeight: Int
 
     @JsThrows(InvalidStateError::class)
-    fun getViewport(view: XRView): XRViewport?
+    open fun getViewport(view: XRView): XRViewport?
 }

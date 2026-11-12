@@ -17,14 +17,14 @@ open external class ResizeObserver(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserver/disconnect)
      */
-    fun disconnect()
+    open fun disconnect()
 
     /**
      * The **`observe()`** method of the ResizeObserver interface starts observing the specified Element or SVGElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserver/observe)
      */
-    fun observe(
+    open fun observe(
         target: Element,
         options: ResizeObserverOptions = definedExternally,
     )
@@ -34,5 +34,5 @@ open external class ResizeObserver(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserver/unobserve)
      */
-    fun unobserve(target: Element)
+    open fun unobserve(target: Element)
 }

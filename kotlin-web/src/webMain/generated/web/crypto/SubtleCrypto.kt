@@ -26,7 +26,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("decrypt")
-    fun decryptAsync(
+    open fun decryptAsync(
         algorithm: Algorithm,
         key: CryptoKey,
         data: BufferSource,
@@ -40,7 +40,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("decrypt")
-    fun decryptAsync(
+    open fun decryptAsync(
         algorithm: String,
         key: CryptoKey,
         data: BufferSource,
@@ -54,7 +54,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("decrypt")
-    fun decryptAsync(
+    open fun decryptAsync(
         algorithm: RsaOaepParams,
         key: CryptoKey,
         data: BufferSource,
@@ -68,7 +68,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("decrypt")
-    fun decryptAsync(
+    open fun decryptAsync(
         algorithm: AesCtrParams,
         key: CryptoKey,
         data: BufferSource,
@@ -82,7 +82,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("decrypt")
-    fun decryptAsync(
+    open fun decryptAsync(
         algorithm: AesCbcParams,
         key: CryptoKey,
         data: BufferSource,
@@ -96,7 +96,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("decrypt")
-    fun decryptAsync(
+    open fun decryptAsync(
         algorithm: AesGcmParams,
         key: CryptoKey,
         data: BufferSource,
@@ -111,7 +111,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
     @JsName("deriveBits")
-    fun deriveBitsAsync(
+    open fun deriveBitsAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
@@ -126,7 +126,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
     @JsName("deriveBits")
-    fun deriveBitsAsync(
+    open fun deriveBitsAsync(
         algorithm: String,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
@@ -141,7 +141,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
     @JsName("deriveBits")
-    fun deriveBitsAsync(
+    open fun deriveBitsAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
@@ -156,7 +156,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
     @JsName("deriveBits")
-    fun deriveBitsAsync(
+    open fun deriveBitsAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
@@ -171,7 +171,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
     @JsName("deriveBits")
-    fun deriveBitsAsync(
+    open fun deriveBitsAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
@@ -186,7 +186,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         derivedKeyType: Algorithm,
@@ -203,7 +203,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
         derivedKeyType: String,
@@ -220,7 +220,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         derivedKeyType: Algorithm,
@@ -237,7 +237,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         derivedKeyType: String,
@@ -254,7 +254,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         derivedKeyType: Algorithm,
@@ -271,7 +271,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         derivedKeyType: String,
@@ -288,7 +288,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         derivedKeyType: Algorithm,
@@ -305,7 +305,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         derivedKeyType: String,
@@ -322,7 +322,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         derivedKeyType: AesDerivedKeyParams,
@@ -339,7 +339,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
         derivedKeyType: AesDerivedKeyParams,
@@ -356,7 +356,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         derivedKeyType: AesDerivedKeyParams,
@@ -373,7 +373,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         derivedKeyType: AesDerivedKeyParams,
@@ -390,7 +390,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         derivedKeyType: AesDerivedKeyParams,
@@ -407,7 +407,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         derivedKeyType: HmacImportParams,
@@ -424,7 +424,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
         derivedKeyType: HmacImportParams,
@@ -441,7 +441,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         derivedKeyType: HmacImportParams,
@@ -458,7 +458,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         derivedKeyType: HmacImportParams,
@@ -475,7 +475,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         derivedKeyType: HmacImportParams,
@@ -492,7 +492,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         derivedKeyType: HkdfParams,
@@ -509,7 +509,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
         derivedKeyType: HkdfParams,
@@ -526,7 +526,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         derivedKeyType: HkdfParams,
@@ -543,7 +543,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         derivedKeyType: HkdfParams,
@@ -560,7 +560,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         derivedKeyType: HkdfParams,
@@ -577,7 +577,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         derivedKeyType: Pbkdf2Params,
@@ -594,7 +594,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: String,
         baseKey: CryptoKey,
         derivedKeyType: Pbkdf2Params,
@@ -611,7 +611,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: EcdhKeyDeriveParams,
         baseKey: CryptoKey,
         derivedKeyType: Pbkdf2Params,
@@ -628,7 +628,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         derivedKeyType: Pbkdf2Params,
@@ -645,7 +645,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("deriveKey")
-    fun deriveKeyAsync(
+    open fun deriveKeyAsync(
         algorithm: Pbkdf2Params,
         baseKey: CryptoKey,
         derivedKeyType: Pbkdf2Params,
@@ -659,7 +659,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
      */
     @JsName("digest")
-    fun digestAsync(
+    open fun digestAsync(
         algorithm: Algorithm,
         data: BufferSource,
     ): Promise<ArrayBuffer>
@@ -670,7 +670,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
      */
     @JsName("digest")
-    fun digestAsync(
+    open fun digestAsync(
         algorithm: String,
         data: BufferSource,
     ): Promise<ArrayBuffer>
@@ -683,7 +683,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("encrypt")
-    fun encryptAsync(
+    open fun encryptAsync(
         algorithm: Algorithm,
         key: CryptoKey,
         data: BufferSource,
@@ -697,7 +697,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("encrypt")
-    fun encryptAsync(
+    open fun encryptAsync(
         algorithm: String,
         key: CryptoKey,
         data: BufferSource,
@@ -711,7 +711,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("encrypt")
-    fun encryptAsync(
+    open fun encryptAsync(
         algorithm: RsaOaepParams,
         key: CryptoKey,
         data: BufferSource,
@@ -725,7 +725,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("encrypt")
-    fun encryptAsync(
+    open fun encryptAsync(
         algorithm: AesCtrParams,
         key: CryptoKey,
         data: BufferSource,
@@ -739,7 +739,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("encrypt")
-    fun encryptAsync(
+    open fun encryptAsync(
         algorithm: AesCbcParams,
         key: CryptoKey,
         data: BufferSource,
@@ -753,7 +753,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(OperationError::class)
     @JsName("encrypt")
-    fun encryptAsync(
+    open fun encryptAsync(
         algorithm: AesGcmParams,
         key: CryptoKey,
         data: BufferSource,
@@ -767,7 +767,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("exportKey")
-    fun exportKeyAsync(
+    open fun exportKeyAsync(
         format: KeyFormat.jwk,
         key: CryptoKey,
     ): Promise<JsonWebKey>
@@ -775,7 +775,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("exportKey")
-    fun exportKeyAsync(
+    open fun exportKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
     ): Promise<ArrayBuffer>
@@ -787,7 +787,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: Ed25519Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
@@ -795,7 +795,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: X25519Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage /* "deriveBits" | "deriveKey" */>,
@@ -803,7 +803,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: RsaHashedKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -811,7 +811,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: EcKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -819,7 +819,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: AesKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -827,7 +827,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: HmacKeyGenParams,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -835,7 +835,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: Pbkdf2Params,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -843,7 +843,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -851,7 +851,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("generateKey")
-    fun generateKeyAsync(
+    open fun generateKeyAsync(
         algorithm: String,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage>,
@@ -864,7 +864,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
         algorithm: Algorithm,
@@ -879,7 +879,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
         algorithm: String,
@@ -894,7 +894,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
         algorithm: RsaHashedImportParams,
@@ -909,7 +909,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
         algorithm: EcKeyImportParams,
@@ -924,7 +924,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
         algorithm: HmacImportParams,
@@ -939,7 +939,7 @@ private constructor() {
      */
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat.jwk,
         keyData: JsonWebKey,
         algorithm: AesKeyAlgorithm,
@@ -949,7 +949,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
         algorithm: Algorithm,
@@ -959,7 +959,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
         algorithm: String,
@@ -969,7 +969,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
         algorithm: RsaHashedImportParams,
@@ -979,7 +979,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
         algorithm: EcKeyImportParams,
@@ -989,7 +989,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
         algorithm: HmacImportParams,
@@ -999,7 +999,7 @@ private constructor() {
 
     @JsThrows(SyntaxError::class)
     @JsName("importKey")
-    fun importKeyAsync(
+    open fun importKeyAsync(
         format: KeyFormat,
         keyData: BufferSource,
         algorithm: AesKeyAlgorithm,
@@ -1014,7 +1014,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("sign")
-    fun signAsync(
+    open fun signAsync(
         algorithm: Algorithm,
         key: CryptoKey,
         data: BufferSource,
@@ -1027,7 +1027,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("sign")
-    fun signAsync(
+    open fun signAsync(
         algorithm: String,
         key: CryptoKey,
         data: BufferSource,
@@ -1040,7 +1040,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("sign")
-    fun signAsync(
+    open fun signAsync(
         algorithm: RsaPssParams,
         key: CryptoKey,
         data: BufferSource,
@@ -1053,7 +1053,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("sign")
-    fun signAsync(
+    open fun signAsync(
         algorithm: EcdsaParams,
         key: CryptoKey,
         data: BufferSource,
@@ -1068,7 +1068,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1087,7 +1087,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1106,7 +1106,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1125,7 +1125,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1144,7 +1144,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1163,7 +1163,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1182,7 +1182,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1201,7 +1201,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1220,7 +1220,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1239,7 +1239,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1258,7 +1258,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1277,7 +1277,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1296,7 +1296,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1315,7 +1315,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1334,7 +1334,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1353,7 +1353,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1372,7 +1372,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1391,7 +1391,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1410,7 +1410,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1429,7 +1429,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1448,7 +1448,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1467,7 +1467,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1486,7 +1486,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1505,7 +1505,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1524,7 +1524,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1543,7 +1543,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1562,7 +1562,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1581,7 +1581,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1600,7 +1600,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1619,7 +1619,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1638,7 +1638,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1657,7 +1657,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1676,7 +1676,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1695,7 +1695,7 @@ private constructor() {
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
     @JsName("unwrapKey")
-    fun unwrapKeyAsync(
+    open fun unwrapKeyAsync(
         format: KeyFormat,
         wrappedKey: BufferSource,
         unwrappingKey: CryptoKey,
@@ -1712,7 +1712,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("verify")
-    fun verifyAsync(
+    open fun verifyAsync(
         algorithm: Algorithm,
         key: CryptoKey,
         signature: BufferSource,
@@ -1726,7 +1726,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("verify")
-    fun verifyAsync(
+    open fun verifyAsync(
         algorithm: String,
         key: CryptoKey,
         signature: BufferSource,
@@ -1740,7 +1740,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("verify")
-    fun verifyAsync(
+    open fun verifyAsync(
         algorithm: RsaPssParams,
         key: CryptoKey,
         signature: BufferSource,
@@ -1754,7 +1754,7 @@ private constructor() {
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("verify")
-    fun verifyAsync(
+    open fun verifyAsync(
         algorithm: EcdsaParams,
         key: CryptoKey,
         signature: BufferSource,
@@ -1769,7 +1769,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("wrapKey")
-    fun wrapKeyAsync(
+    open fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
         wrappingKey: CryptoKey,
@@ -1784,7 +1784,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("wrapKey")
-    fun wrapKeyAsync(
+    open fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
         wrappingKey: CryptoKey,
@@ -1799,7 +1799,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("wrapKey")
-    fun wrapKeyAsync(
+    open fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
         wrappingKey: CryptoKey,
@@ -1814,7 +1814,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("wrapKey")
-    fun wrapKeyAsync(
+    open fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
         wrappingKey: CryptoKey,
@@ -1829,7 +1829,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("wrapKey")
-    fun wrapKeyAsync(
+    open fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
         wrappingKey: CryptoKey,
@@ -1844,7 +1844,7 @@ private constructor() {
     @JsThrows(InvalidAccessError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("wrapKey")
-    fun wrapKeyAsync(
+    open fun wrapKeyAsync(
         format: KeyFormat,
         key: CryptoKey,
         wrappingKey: CryptoKey,

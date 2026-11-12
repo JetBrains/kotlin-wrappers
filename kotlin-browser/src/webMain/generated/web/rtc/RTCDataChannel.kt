@@ -32,107 +32,107 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/binaryType)
      */
-    var binaryType: BinaryType
+    open var binaryType: BinaryType
 
     /**
      * The read-only RTCDataChannel property **`bufferedAmount`** returns the number of bytes of data currently queued to be sent over the data channel. The queue may build up as a result of calls to the send() method. This only includes data buffered by the user agent itself; it doesn't include any framing overhead or buffering done by the operating system or network hardware.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmount)
      */
-    val bufferedAmount: Int
+    open val bufferedAmount: Int
 
     /**
      * The RTCDataChannel property **`bufferedAmountLowThreshold`** is used to specify the number of bytes of buffered outgoing data that is considered "low." The default value is 0. When the number of buffered outgoing bytes, as indicated by the bufferedAmount property, falls to or below this value, a bufferedamountlow event is fired. This event may be used, for example, to implement code which queues more messages to be sent whenever there's room to buffer them. Listeners may be added with onbufferedamountlow or addEventListener().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold)
      */
-    var bufferedAmountLowThreshold: Int
+    open var bufferedAmountLowThreshold: Int
 
     /**
      * The read-only RTCDataChannel property **`id`** returns an ID number (between 0 and 65,534) which uniquely identifies the RTCDataChannel. This ID is set at the time the data channel is created, either by the user agent (if RTCDataChannel.negotiated is false) or by the site or app script (if negotiated is true).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/id)
      */
-    val id: Short?
+    open val id: Short?
 
     /**
      * The read-only RTCDataChannel property **`label`** returns a string containing a name describing the data channel. These labels are not required to be unique.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/label)
      */
-    val label: String
+    open val label: String
 
     /**
      * The read-only RTCDataChannel property **`maxPacketLifeTime`** returns the amount of time, in milliseconds, the browser is allowed to take to attempt to transmit a message, as set when the data channel was created, or null. This limits how long the browser can continue to attempt to transmit and retransmit the message before giving up.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxPacketLifeTime)
      */
-    val maxPacketLifeTime: Short?
+    open val maxPacketLifeTime: Short?
 
     /**
      * The read-only RTCDataChannel property **`maxRetransmits`** returns the maximum number of times the browser should try to retransmit a message before giving up, as set when the data channel was created, or null, which indicates that there is no maximum. This can only be set when the RTCDataChannel is created by calling RTCPeerConnection.createDataChannel(), using the maxRetransmits field in the specified options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxRetransmits)
      */
-    val maxRetransmits: Short?
+    open val maxRetransmits: Short?
 
     /**
      * The read-only RTCDataChannel property **`negotiated`** indicates whether the RTCDataChannel's connection was negotiated by the Web app (true) or by the WebRTC layer (false). The default is false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/negotiated)
      */
-    val negotiated: Boolean
+    open val negotiated: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)
      */
-    var onbufferedamountlow: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
+    open var onbufferedamountlow: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event)
      */
-    var onclose: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
+    open var onclose: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event)
      */
-    var onclosing: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
+    open var onclosing: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
      */
-    var onerror: EventHandler<RTCErrorEvent, RTCDataChannel, RTCDataChannel>?
+    open var onerror: EventHandler<RTCErrorEvent, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, RTCDataChannel, RTCDataChannel>?
+    open var onmessage: EventHandler<MessageEvent<*>, RTCDataChannel, RTCDataChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)
      */
-    var onopen: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
+    open var onopen: EventHandler<Event, RTCDataChannel, RTCDataChannel>?
 
     /**
      * The read-only RTCDataChannel property **`ordered`** indicates whether or not the data channel guarantees in-order delivery of messages; the default is true, which indicates that the data channel is indeed ordered. This is set when the RTCDataChannel is created, by setting the ordered property on the object passed as RTCPeerConnection.createDataChannel()'s options parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/ordered)
      */
-    val ordered: Boolean
+    open val ordered: Boolean
 
     /**
      * The read-only RTCDataChannel property **`protocol`** returns a string containing the name of the subprotocol in use. If no protocol was specified when the data channel was created, then this property's value is the empty string ("").
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/protocol)
      */
-    val protocol: String
+    open val protocol: String
 
     /**
      * The read-only RTCDataChannel property **`readyState`** returns a string which indicates the state of the data channel's underlying data connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/readyState)
      */
-    val readyState: RTCDataChannelState
+    open val readyState: RTCDataChannelState
 
     /**
      * The **`RTCDataChannel.close()`** method closes the RTCDataChannel. Either peer is permitted to call this method to initiate closure of the channel.
@@ -148,19 +148,19 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
-    fun send(data: String)
+    open fun send(data: String)
 
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
-    fun send(data: Blob)
+    open fun send(data: Blob)
 
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
-    fun send(data: ArrayBuffer)
+    open fun send(data: ArrayBuffer)
 
     @JsThrows(InvalidStateError::class)
     @JsThrows(OperationError::class)
-    fun send(data: ArrayBufferView<ArrayBuffer>)
+    open fun send(data: ArrayBufferView<ArrayBuffer>)
 }
 
 /**

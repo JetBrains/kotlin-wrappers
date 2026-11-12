@@ -22,38 +22,38 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
      */
-    var onloading: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
+    open var onloading: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
      */
-    var onloadingdone: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
+    open var onloadingdone: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
      */
-    var onloadingerror: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
+    open var onloadingerror: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
 
     /**
      * The **`ready`** read-only property of the FontFaceSet interface returns a Promise that resolves to the given FontFaceSet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/ready)
      */
-    val ready: Promise<FontFaceSet>
+    open val ready: Promise<FontFaceSet>
 
     /**
      * The **`status`** read-only property of the FontFaceSet interface returns the loading state of the fonts in the set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/status)
      */
-    val status: FontFaceSetLoadStatus
+    open val status: FontFaceSetLoadStatus
 
     /**
      * The **`check()`** method of the FontFaceSet returns true if you can render some text using the given font specification without attempting to use any fonts in this FontFaceSet that are not yet fully loaded. This means you can use the font specification without causing a font swap.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/check)
      */
-    fun check(
+    open fun check(
         font: String,
         text: String = definedExternally,
     ): Boolean
@@ -64,7 +64,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
      */
     @JsName("load")
-    fun loadAsync(
+    open fun loadAsync(
         font: String,
         text: String = definedExternally,
     ): Promise<ReadonlyArray<FontFace>>

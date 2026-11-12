@@ -19,7 +19,7 @@ open external class PictureInPictureEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow)
      */
-    val pictureInPictureWindow: PictureInPictureWindow
+    open val pictureInPictureWindow: PictureInPictureWindow
 
     companion object
 }

@@ -13,5 +13,5 @@ open external class CSSPerspective(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPerspective/length)
      */
-    var length: CSSPerspectiveValue,
+    open var length: CSSPerspectiveValue,
 ) : CSSTransformComponent

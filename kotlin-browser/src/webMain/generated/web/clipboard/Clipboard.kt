@@ -27,7 +27,7 @@ private constructor() :
      */
     @JsThrows(NotAllowedError::class)
     @JsName("read")
-    fun readAsync(): Promise<ClipboardItems>
+    open fun readAsync(): Promise<ClipboardItems>
 
     /**
      * The **`readText()`** method of the Clipboard interface returns a Promise which fulfills with a copy of the textual contents of the system clipboard.
@@ -37,7 +37,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("readText")
-    fun readTextAsync(): Promise<JsString>
+    open fun readTextAsync(): Promise<JsString>
 
     /**
      * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion. This can be used to implement cut and copy functionality.
@@ -46,7 +46,7 @@ private constructor() :
      */
     @JsThrows(NotAllowedError::class)
     @JsName("write")
-    fun writeAsync(data: ClipboardItems): Promise<Void>
+    open fun writeAsync(data: ClipboardItems): Promise<Void>
 
     /**
      * The **`writeText()`** method of the Clipboard interface writes the specified text to the system clipboard, returning a Promise that is resolved once the system clipboard has been updated.
@@ -55,7 +55,7 @@ private constructor() :
      */
     @JsThrows(NotAllowedError::class)
     @JsName("writeText")
-    fun writeTextAsync(data: String): Promise<Void>
+    open fun writeTextAsync(data: String): Promise<Void>
 }
 
 /**

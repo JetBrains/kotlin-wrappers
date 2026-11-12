@@ -26,5 +26,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/error)
      */
-    fun error(error: JsError = definedExternally)
+    open fun error(error: JsError = definedExternally)
 }

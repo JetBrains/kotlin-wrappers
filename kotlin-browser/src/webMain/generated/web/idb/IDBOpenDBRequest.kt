@@ -16,12 +16,12 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/blocked_event)
      */
-    var onblocked: EventHandler<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>?
+    open var onblocked: EventHandler<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event)
      */
-    var onupgradeneeded: EventHandler<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>?
+    open var onupgradeneeded: EventHandler<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>?
 }
 
 /**

@@ -31,59 +31,59 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/closed)
      */
-    val closed: Promise<WebTransportCloseInfo>
+    open val closed: Promise<WebTransportCloseInfo>
 
     /**
      * The **`congestionControl`** read-only property of the WebTransport interface indicates the application's preference for either high throughput or low-latency when sending data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/congestionControl)
      */
-    val congestionControl: WebTransportCongestionControl
+    open val congestionControl: WebTransportCongestionControl
 
     /**
      * The **`datagrams`** read-only property of the WebTransport interface returns a WebTransportDatagramDuplexStream instance that can be used to send and receive datagrams — unreliable data transmission.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/datagrams)
      */
-    val datagrams: WebTransportDatagramDuplexStream
+    open val datagrams: WebTransportDatagramDuplexStream
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/draining)
      */
-    val draining: Promise<Void>
+    open val draining: Promise<Void>
 
     /**
      * The **`incomingBidirectionalStreams`** read-only property of the WebTransport interface represents one or more bidirectional streams opened by the server. Returns a ReadableStream of WebTransportBidirectionalStream objects. Each one can be used to reliably read data from the server and write data back to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/incomingBidirectionalStreams)
      */
-    val incomingBidirectionalStreams: ReadableStream<*>
+    open val incomingBidirectionalStreams: ReadableStream<*>
 
     /**
      * The **`incomingUnidirectionalStreams`** read-only property of the WebTransport interface represents one or more unidirectional streams opened by the server. Returns a ReadableStream of WebTransportReceiveStream objects. Each one can be used to reliably read data from the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/incomingUnidirectionalStreams)
      */
-    val incomingUnidirectionalStreams: ReadableStream<*>
+    open val incomingUnidirectionalStreams: ReadableStream<*>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/protocol)
      */
-    val protocol: String
+    open val protocol: String
 
     /**
      * The **`ready`** read-only property of the WebTransport interface returns a promise that resolves when the transport is ready to use.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/ready)
      */
-    val ready: Promise<Void>
+    open val ready: Promise<Void>
 
     /**
      * The **`reliability`** read-only property of the WebTransport interface indicates whether the connection supports reliable transports only, or whether it also supports unreliable transports (such as UDP).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/reliability)
      */
-    val reliability: WebTransportReliabilityMode
+    open val reliability: WebTransportReliabilityMode
 
     /**
      * The **`close()`** method of the WebTransport interface closes an ongoing WebTransport session.
@@ -91,7 +91,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/close)
      */
     @JsThrows.Typed(WebTransportError::class)
-    fun close(closeInfo: WebTransportCloseInfo = definedExternally)
+    open fun close(closeInfo: WebTransportCloseInfo = definedExternally)
 
     /**
      * The **`createBidirectionalStream()`** method of the WebTransport interface asynchronously opens and returns a bidirectional stream.
@@ -100,13 +100,13 @@ open external class WebTransport(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("createBidirectionalStream")
-    fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
+    open fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createSendGroup)
      */
     @JsThrows(InvalidStateError::class)
-    fun createSendGroup(): WebTransportSendGroup
+    open fun createSendGroup(): WebTransportSendGroup
 
     /**
      * The **`createUnidirectionalStream()`** method of the WebTransport interface asynchronously opens a unidirectional stream.
@@ -115,7 +115,7 @@ open external class WebTransport(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("createUnidirectionalStream")
-    fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
+    open fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
 
     /**
      * The **`getStats()`** method of the WebTransport interface asynchronously returns an object containing HTTP/3 connection statistics.
@@ -123,7 +123,7 @@ open external class WebTransport(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<WebTransportConnectionStats>
+    open fun getStatsAsync(): Promise<WebTransportConnectionStats>
 
     companion object {
         /**

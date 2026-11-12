@@ -15,40 +15,40 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/abbr)
      */
-    var abbr: String
+    open var abbr: String
 
     /**
      * The **`cellIndex`** read-only property of the HTMLTableCellElement interface represents the position of a cell within its row (<tr>). The first cell has an index of 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/cellIndex)
      */
-    val cellIndex: Int
+    open val cellIndex: Int
 
     /**
      * The **`colSpan`** property of the HTMLTableCellElement interface represents the number of columns this cell must span; this lets the cell occupy space across multiple columns of the table. It reflects the colspan attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)
      */
-    var colSpan: Int
+    open var colSpan: Int
 
     /**
      * The **`headers`** property of the HTMLTableCellElement interface contains a list of IDs of <th> elements that are headers for this specific cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/headers)
      */
-    var headers: String
+    open var headers: String
 
     /**
      * The **`rowSpan`** property of the HTMLTableCellElement interface represents the number of rows this cell must span; this lets the cell occupy space across multiple rows of the table. It reflects the rowspan attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/rowSpan)
      */
-    var rowSpan: Int
+    open var rowSpan: Int
 
     /**
      * The **`scope`** property of the HTMLTableCellElement interface indicates the scope of a <th> cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/scope)
      */
-    var scope: String
+    open var scope: String
 }

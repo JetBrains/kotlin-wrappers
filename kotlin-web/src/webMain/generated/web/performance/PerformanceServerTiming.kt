@@ -16,26 +16,26 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/description)
      */
-    val description: String
+    open val description: String
 
     /**
      * The **`duration`** read-only property returns a double that contains the server-specified metric duration (usually in milliseconds), or the value 0.0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/duration)
      */
-    val duration: DOMHighResTimeStamp
+    open val duration: DOMHighResTimeStamp
 
     /**
      * The **`name`** read-only property returns a string value of the server-specified metric name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The **`toJSON()`** method of the PerformanceServerTiming interface is a serializer; it returns a JSON representation of the PerformanceServerTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 }

@@ -29,44 +29,44 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/location)
      */
-    val location: WorkerLocation
+    open val location: WorkerLocation
 
     /**
      * The **`navigator`** read-only property of the WorkerGlobalScope interface returns the WorkerNavigator associated with the worker. It is a specific navigator object, mostly a subset of the Navigator for browsing scopes, but adapted to workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/navigator)
      */
-    val navigator: WorkerNavigator
+    open val navigator: WorkerNavigator
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event)
      */
-    var onerror: EventHandler<ErrorEvent, WorkerGlobalScope, WorkerGlobalScope>?
+    open var onerror: EventHandler<ErrorEvent, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event)
      */
-    var onlanguagechange: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
+    open var onlanguagechange: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event)
      */
-    var onoffline: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
+    open var onoffline: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event)
      */
-    var ononline: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
+    open var ononline: EventHandler<Event, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event)
      */
-    var onrejectionhandled: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
+    open var onrejectionhandled: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
      */
-    var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
+    open var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
 }
 
 /**

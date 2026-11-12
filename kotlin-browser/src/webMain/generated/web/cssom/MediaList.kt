@@ -28,14 +28,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/mediaText)
      */
-    var mediaText: String
+    open var mediaText: String
 
     /**
      * The **`appendMedium()`** method of the MediaList interface adds a media query to the list. If the media query is already in the collection, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/appendMedium)
      */
-    fun appendMedium(medium: MediaQuery)
+    open fun appendMedium(medium: MediaQuery)
 
     /**
      * The **`deleteMedium()`** method of the MediaList interface removes from this MediaList the given media query.
@@ -43,12 +43,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/deleteMedium)
      */
     @JsThrows(NotFoundError::class)
-    fun deleteMedium(medium: MediaQuery)
+    open fun deleteMedium(medium: MediaQuery)
 
     /**
      * The **`item()`** method of the MediaList interface returns the media query at the specified index, or null if the specified index doesn't exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList/item)
      */
-    fun item(index: Int): MediaQuery?
+    open fun item(index: Int): MediaQuery?
 }

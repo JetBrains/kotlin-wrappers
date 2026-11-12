@@ -22,7 +22,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/cmp)
      */
     @JsThrows(DataError::class)
-    fun cmp(
+    open fun cmp(
         first: JsAny?,
         second: JsAny?,
     ): Short
@@ -35,21 +35,21 @@ private constructor() {
     @JsThrows(SecurityError::class)
     @JsThrows(UnknownError::class)
     @JsName("databases")
-    fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
+    open fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
     /**
      * The **`deleteDatabase()`** method of the IDBFactory interface requests the deletion of a database. The method returns an IDBOpenDBRequest object immediately, and performs the deletion operation asynchronously.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/deleteDatabase)
      */
-    fun deleteDatabase(name: String): IDBOpenDBRequest
+    open fun deleteDatabase(name: String): IDBOpenDBRequest
 
     /**
      * The **`open()`** method of the IDBFactory interface requests opening a connection to a database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/open)
      */
-    fun open(
+    open fun open(
         name: String,
         version: UInt53 = definedExternally,
     ): IDBOpenDBRequest

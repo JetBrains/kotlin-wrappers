@@ -19,7 +19,7 @@ open external class RTCDataChannelEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent/channel)
      */
-    val channel: RTCDataChannel
+    open val channel: RTCDataChannel
 
     companion object
 }

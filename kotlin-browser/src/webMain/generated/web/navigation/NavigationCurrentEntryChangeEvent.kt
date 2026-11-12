@@ -19,14 +19,14 @@ open external class NavigationCurrentEntryChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/from)
      */
-    val from: NavigationHistoryEntry
+    open val from: NavigationHistoryEntry
 
     /**
      * The **`navigationType`** read-only property of the NavigationCurrentEntryChangeEvent interface returns the type of the navigation that resulted in the change. The property may be null if the change occurs due to Navigation.updateCurrentEntry().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType)
      */
-    val navigationType: NavigationType?
+    open val navigationType: NavigationType?
 
     companion object
 }

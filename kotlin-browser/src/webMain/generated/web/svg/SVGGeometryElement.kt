@@ -38,12 +38,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
      */
-    fun isPointInFill(point: DOMPointReadOnly = definedExternally): Boolean
+    open fun isPointInFill(point: DOMPointReadOnly = definedExternally): Boolean
 
     /**
      * The **`isPointInStroke()`** method of the SVGGeometryElement interface determines whether a given point is within the stroke shape of an element. The point argument is interpreted as a point in the local coordinate system of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
      */
-    fun isPointInStroke(point: DOMPointReadOnly = definedExternally): Boolean
+    open fun isPointInStroke(point: DOMPointReadOnly = definedExternally): Boolean
 }

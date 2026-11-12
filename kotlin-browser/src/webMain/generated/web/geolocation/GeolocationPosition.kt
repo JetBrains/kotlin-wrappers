@@ -17,19 +17,19 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/coords)
      */
-    val coords: GeolocationCoordinates
+    open val coords: GeolocationCoordinates
 
     /**
      * The **`timestamp`** read-only property of the GeolocationPosition interface represents the date and time that the position was acquired by the device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/timestamp)
      */
-    val timestamp: EpochTimeStamp
+    open val timestamp: EpochTimeStamp
 
     /**
      * The **`toJSON()`** method of the GeolocationPosition interface is a serializer; it returns a JSON representation of the GeolocationPosition object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 }

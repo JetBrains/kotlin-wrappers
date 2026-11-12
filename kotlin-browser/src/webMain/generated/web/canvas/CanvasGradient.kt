@@ -20,7 +20,7 @@ private constructor() {
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(SyntaxError::class)
-    fun addColorStop(
+    open fun addColorStop(
         offset: Double,
         color: String,
     )

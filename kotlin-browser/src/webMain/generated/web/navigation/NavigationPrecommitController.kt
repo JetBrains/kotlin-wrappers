@@ -20,7 +20,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
-    fun addHandler(handler: NavigationInterceptHandler)
+    open fun addHandler(handler: NavigationInterceptHandler)
 
     /**
      * The **`redirect()`** method of the NavigationPrecommitController interface redirects the browser to a specified URL and specifies history behavior and any desired state information.
@@ -30,7 +30,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
     @JsThrows(SyntaxError::class)
-    fun redirect(
+    open fun redirect(
         url: String,
         options: NavigationNavigateOptions = definedExternally,
     )
@@ -43,7 +43,7 @@ private constructor() {
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
     @JsThrows(SyntaxError::class)
-    fun redirect(
+    open fun redirect(
         url: URL,
         options: NavigationNavigateOptions = definedExternally,
     )

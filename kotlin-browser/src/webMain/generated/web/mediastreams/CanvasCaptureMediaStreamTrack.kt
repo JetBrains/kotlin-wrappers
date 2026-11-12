@@ -17,12 +17,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasCaptureMediaStreamTrack/canvas)
      */
-    val canvas: HTMLCanvasElement
+    open val canvas: HTMLCanvasElement
 
     /**
      * The **`requestFrame()`** method of the CanvasCaptureMediaStreamTrack interface requests that a frame be captured from the canvas and sent to the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasCaptureMediaStreamTrack/requestFrame)
      */
-    fun requestFrame()
+    open fun requestFrame()
 }

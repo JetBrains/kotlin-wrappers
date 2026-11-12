@@ -16,7 +16,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileEntry/file)
      */
     @JsName("file")
-    fun fileWithCallbacks(
+    open fun fileWithCallbacks(
         successCallback: FileCallback,
         errorCallback: ErrorCallback = definedExternally,
     )

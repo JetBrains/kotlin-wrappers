@@ -20,7 +20,7 @@ open external class GPUUncapturedErrorEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUUncapturedErrorEvent/error)
      */
-    val error: GPUError
+    open val error: GPUError
 
     companion object
 }

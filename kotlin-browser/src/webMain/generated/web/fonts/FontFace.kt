@@ -19,7 +19,7 @@ open external class FontFace(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/family)
      */
-    var family: String,
+    open var family: String,
     source: String,
     descriptors: FontFaceDescriptors = definedExternally,
 ) {
@@ -34,84 +34,84 @@ open external class FontFace(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/ascentOverride)
      */
-    var ascentOverride: String
+    open var ascentOverride: String
 
     /**
      * The **`descentOverride`** property of the FontFace interface returns and sets the value of the descent-override descriptor. The possible values are normal, indicating that the metric used should be obtained from the font file, or a percentage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/descentOverride)
      */
-    var descentOverride: String
+    open var descentOverride: String
 
     /**
      * The **`display`** property of the FontFace interface determines how a font face is displayed based on whether and when it is downloaded and ready to use. This property is equivalent to the CSS font-display descriptor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/display)
      */
-    var display: FontDisplay
+    open var display: FontDisplay
 
     /**
      * The **`featureSettings`** property of the FontFace interface retrieves or sets infrequently used font features that are not available from a font's variant properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/featureSettings)
      */
-    var featureSettings: String
+    open var featureSettings: String
 
     /**
      * The **`lineGapOverride`** property of the FontFace interface returns and sets the value of the line-gap-override descriptor. The possible values are normal, indicating that the metric used should be obtained from the font file, or a percentage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/lineGapOverride)
      */
-    var lineGapOverride: String
+    open var lineGapOverride: String
 
     /**
      * The **`loaded`** read-only property of the FontFace interface returns a Promise that resolves with the current FontFace object when the font specified in the object's constructor is done loading or rejects with a SyntaxError.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/loaded)
      */
-    val loaded: Promise<FontFace>
+    open val loaded: Promise<FontFace>
 
     /**
      * The **`status`** read-only property of the FontFace interface returns an enumerated value indicating the status of the font, one of "unloaded", "loading", "loaded", or "error".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/status)
      */
-    val status: FontFaceLoadStatus
+    open val status: FontFaceLoadStatus
 
     /**
      * The **`stretch`** property of the FontFace interface retrieves or sets how the font stretches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/stretch)
      */
-    var stretch: String
+    open var stretch: String
 
     /**
      * The **`style`** property of the FontFace interface retrieves or sets the font's style.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/style)
      */
-    var style: String
+    open var style: String
 
     /**
      * The **`unicodeRange`** property of the FontFace interface retrieves or sets the range of unicode code points encompassing the font.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/unicodeRange)
      */
-    var unicodeRange: String
+    open var unicodeRange: String
 
     /**
      * The **`variationSettings`** property of the FontFace interface retrieves or sets low-level OpenType or TrueType font variations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/variationSettings)
      */
-    var variationSettings: String
+    open var variationSettings: String
 
     /**
      * The **`weight`** property of the FontFace interface retrieves or sets the weight of the font.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/weight)
      */
-    var weight: String
+    open var weight: String
 
     /**
      * The **`load()`** method of the FontFace interface requests and loads a font whose source was specified as a URL. It returns a Promise that resolves with the current FontFace object.
@@ -120,7 +120,7 @@ open external class FontFace(
      */
     @JsThrows(NetworkError::class)
     @JsName("load")
-    fun loadAsync(): Promise<FontFace>
+    open fun loadAsync(): Promise<FontFace>
 }
 
 /**

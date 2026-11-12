@@ -16,28 +16,28 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement/in1)
      */
-    val in1: SVGAnimatedString
+    open val in1: SVGAnimatedString
 
     /**
      * The **`operator`** read-only property of the SVGFEMorphologyElement interface reflects the operator attribute of the given <feMorphology> element. It takes one of the SVG_MORPHOLOGY_OPERATOR_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement/operator)
      */
-    val operator: SVGAnimatedEnumeration<Operator>
+    open val operator: SVGAnimatedEnumeration<Operator>
 
     /**
      * The **`radiusX`** read-only property of the SVGFEMorphologyElement interface reflects the X component of the radius attribute of the given <feMorphology> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement/radiusX)
      */
-    val radiusX: SVGAnimatedNumber
+    open val radiusX: SVGAnimatedNumber
 
     /**
      * The **`radiusY`** read-only property of the SVGFEMorphologyElement interface reflects the Y component of the radius attribute of the given <feMorphology> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement/radiusY)
      */
-    val radiusY: SVGAnimatedNumber
+    open val radiusY: SVGAnimatedNumber
 
     companion object {
         /**

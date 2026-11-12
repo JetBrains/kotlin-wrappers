@@ -20,14 +20,14 @@ open external class CommandEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/command)
      */
-    val command: Command
+    open val command: Command
 
     /**
      * The **`source`** read-only property of the CommandEvent interface returns an EventTarget representing the control that invoked the given command.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/source)
      */
-    val source: Element?
+    open val source: Element?
 
     companion object
 }

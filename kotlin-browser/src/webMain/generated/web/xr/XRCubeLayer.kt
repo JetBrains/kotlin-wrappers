@@ -8,7 +8,7 @@ import web.geometry.DOMPointReadOnly
 open external class XRCubeLayer
 private constructor() :
     XRCompositionLayer {
-    var orientation: DOMPointReadOnly
+    open var orientation: DOMPointReadOnly
 }
 
 /**

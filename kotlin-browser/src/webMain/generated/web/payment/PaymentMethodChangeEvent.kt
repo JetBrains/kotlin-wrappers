@@ -19,14 +19,14 @@ open external class PaymentMethodChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodDetails)
      */
-    val methodDetails: JsAny?
+    open val methodDetails: JsAny?
 
     /**
      * The read-only **`methodName`** property of the PaymentMethodChangeEvent interface is a string which uniquely identifies the payment handler currently selected by the user. The payment handler may be a payment technology, such as Apple Pay or Android Pay, and each payment handler may support multiple payment methods; changes to the payment method within the payment handler are described by the PaymentMethodChangeEvent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodName)
      */
-    val methodName: String
+    open val methodName: String
 
     companion object
 }

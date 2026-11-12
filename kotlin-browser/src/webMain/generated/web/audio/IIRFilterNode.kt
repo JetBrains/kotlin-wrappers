@@ -22,7 +22,7 @@ open external class IIRFilterNode(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode/getFrequencyResponse)
      */
     @JsThrows(NotSupportedError::class)
-    fun getFrequencyResponse(
+    open fun getFrequencyResponse(
         frequencyHz: Float32Array<ArrayBuffer>,
         magResponse: Float32Array<ArrayBuffer>,
         phaseResponse: Float32Array<ArrayBuffer>,
