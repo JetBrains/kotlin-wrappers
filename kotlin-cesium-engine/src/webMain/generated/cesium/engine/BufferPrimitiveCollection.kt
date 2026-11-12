@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.core.*
 import js.array.ReadonlyArray
+import js.buffer.ArrayBufferLike
 import js.function.JsFunction
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint32Array
@@ -59,10 +60,10 @@ open external class BufferPrimitiveCollection<T : BufferPrimitive>(
      * @return Mapping from previous index to new index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BufferPrimitiveCollection.html#sort">Online Documentation</a>
      */
-    fun sort(
+    fun <B : ArrayBufferLike> sort(
         sortFn: JsFunction<*, *>,
-        result: Uint32Array<*>,
-    ): Uint32Array<*>
+        result: Uint32Array<B>,
+    ): Uint32Array<B>
 
     /**
      * Makes the given [BufferPrimitive] a view onto this collection's
