@@ -6,7 +6,12 @@ internal fun Sequence<ConversionResult>.withFinalSecurityMembers(): Sequence<Con
         val newBody = when (result.name) {
             "Window",
                 -> result.body
+                .replace("open val location:", "final val location:")
                 .replace("open val top:", "final val top:")
+
+            "Document",
+                -> result.body
+                .replace("open val location:", "final val location:")
 
             "Location",
                 -> result.body
