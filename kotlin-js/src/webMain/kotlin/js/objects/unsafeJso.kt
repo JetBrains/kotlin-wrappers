@@ -1,6 +1,10 @@
 package js.objects
 
+// TODO: use `apply` after KT-90953 is fixed
 inline fun <T : JsAny> unsafeJso(
     block: @JsoDsl T.() -> Unit,
-): T =
-    unsafeJso<T>().apply(block)
+): T {
+    val result = unsafeJso<T>()
+    result.block()
+    return result
+}
