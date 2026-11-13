@@ -28,7 +28,7 @@ private constructor() {
     open var direction: RTCRtpTransceiverDirection
 
     /**
-     * The read-only RTCRtpTransceiver interface's **`mid`** property specifies the negotiated media ID (mid) which the local and remote peers have agreed upon to uniquely identify the stream's pairing of sender and receiver.
+     * The read-only RTCRtpTransceiver interface's **`mid`** property specifies the media ID (mid) which uniquely identifies the stream's pairing of sender and receiver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/mid)
      */

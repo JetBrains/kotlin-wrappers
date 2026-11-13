@@ -219,28 +219,28 @@ private constructor() :
     open val personalbar: BarProp
 
     /**
-     * The **`Window.screenLeft`** read-only property returns the horizontal distance, in CSS pixels, from the left border of the user's browser viewport to the left side of the screen.
+     * The **`screenLeft`** read-only property of the Window interface returns the horizontal distance, in CSS pixels, from the left border of the user's browser window to the left side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenLeft)
      */
     open val screenLeft: Int
 
     /**
-     * The **`Window.screenTop`** read-only property returns the vertical distance, in CSS pixels, from the top border of the user's browser viewport to the top side of the screen.
+     * The **`screenTop`** read-only property of the Window interface returns the vertical distance, in CSS pixels, from the top border of the user's browser window to the top side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenTop)
      */
     open val screenTop: Int
 
     /**
-     * The **`Window.screenX`** read-only property returns the horizontal distance, in CSS pixels, of the left border of the user's browser viewport to the left side of the screen.
+     * The **`screenX`** read-only property of the Window interface returns the horizontal distance, in CSS pixels, from the left border of the user's browser window to the left side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenX)
      */
     open val screenX: Int
 
     /**
-     * The **`Window.screenY`** read-only property returns the vertical distance, in CSS pixels, of the top border of the user's browser viewport to the top edge of the screen.
+     * The **`screenY`** read-only property of the Window interface returns the vertical distance, in CSS pixels, from the top border of the user's browser window to the top side of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenY)
      */
@@ -303,7 +303,7 @@ private constructor() :
     open fun focus()
 
     /**
-     * The **`getSelection()`** method of the Window interface returns the Selection object associated with the window's document, representing the range of text selected by the user or the current position of the caret.
+     * The **`getSelection()`** method of the Window interface returns the Selection object associated with the window's document, representing the range of text selected by the user, or the current position of the caret.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/getSelection)
      */
@@ -406,7 +406,7 @@ private constructor() :
     )
 
     /**
-     * The **`Window.scroll()`** method scrolls the window to a particular place in the document.
+     * The **`scroll()`** method of the Window interface scrolls the window to a particular place in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
      */
@@ -417,7 +417,7 @@ private constructor() :
     ): Promise<Void>?
 
     /**
-     * The **`Window.scrollBy()`** method scrolls the document in the window by the given amount.
+     * The **`scrollBy()`** method of the Window interface scrolls the document in the window by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
      */
@@ -428,7 +428,7 @@ private constructor() :
     ): Promise<Void>?
 
     /**
-     * **`Window.scrollTo()`** scrolls to a particular set of coordinates in the document.
+     * The **`scrollTo()`** method of the Window interface scrolls to a particular set of coordinates in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
      */

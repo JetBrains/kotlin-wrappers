@@ -11,7 +11,7 @@ import web.errors.DOMExceptionType.NotFoundError
 import web.errors.JsThrows
 
 /**
- * The **`ClipboardItem`** interface of the Clipboard API represents a single item format, used when reading or writing clipboard data using Clipboard.read() and Clipboard.write() respectively.
+ * The **`ClipboardItem`** interface of the Clipboard API represents a single item of data copied to, or read from, the clipboard, used with Clipboard.write() and Clipboard.read() respectively.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem)

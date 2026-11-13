@@ -11,7 +11,7 @@ package web.geolocation
 open external class GeolocationCoordinates
 private constructor() {
     /**
-     * The **`accuracy`** read-only property of the GeolocationCoordinates interface is a strictly positive double representing the accuracy, with a 95% confidence level, of the GeolocationCoordinates.latitude and GeolocationCoordinates.longitude properties expressed in meters.
+     * The **`accuracy`** read-only property of the GeolocationCoordinates interface is a strictly positive double representing the accuracy, with a 68% confidence level, of the GeolocationCoordinates.latitude and GeolocationCoordinates.longitude properties expressed in meters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/accuracy)
      */
@@ -25,7 +25,7 @@ private constructor() {
     open val altitude: Double?
 
     /**
-     * The **`altitudeAccuracy`** read-only property of the GeolocationCoordinates interface is a strictly positive double representing the accuracy, with a 95% confidence level, of the altitude expressed in meters. This value is null if the implementation doesn't support measuring altitude.
+     * The **`altitudeAccuracy`** read-only property of the GeolocationCoordinates interface is a strictly positive double representing the accuracy, with a 68% confidence level, of the altitude expressed in meters. This value is null if the implementation doesn't support measuring altitude.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/altitudeAccuracy)
      */
@@ -60,7 +60,7 @@ private constructor() {
     open val speed: Double?
 
     /**
-     * The **`toJSON()`** method of the GeolocationCoordinates interface is a serializer; it returns a JSON representation of the GeolocationCoordinates object.
+     * The **`toJSON()`** method of the GeolocationCoordinates interface returns a JSON-serializable plain object representing the GeolocationCoordinates object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates/toJSON)
      */

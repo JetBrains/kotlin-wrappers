@@ -16,6 +16,8 @@ open external class AnimationEvent(
     init: AnimationEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`animation`** read-only property of the AnimationEvent interface represents the animation associated with the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationEvent/animation)
      */
     open val animation: CSSAnimation?

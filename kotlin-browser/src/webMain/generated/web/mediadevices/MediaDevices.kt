@@ -52,7 +52,7 @@ private constructor() :
     open fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
     /**
-     * The **`getSupportedConstraints()`** method of the MediaDevices interface returns an object based on the MediaTrackSupportedConstraints dictionary, whose member fields each specify one of the constrainable properties the user agent understands.
+     * The **`getSupportedConstraints()`** method of the MediaDevices interface returns an object whose member fields each specify one of the constrainable properties the user agent understands.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints)
      */

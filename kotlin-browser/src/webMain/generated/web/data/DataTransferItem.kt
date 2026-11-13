@@ -13,35 +13,35 @@ import web.fs.FileSystemEntry
 open external class DataTransferItem
 private constructor() {
     /**
-     * The read-only **`DataTransferItem.kind`** property returns the kind–a string or a file–of the DataTransferItem object representing the drag data item.
+     * The **`kind`** read-only property of the DataTransferItem interface returns the kind–a string or a file–of the object representing the drag data item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
      */
     open val kind: String
 
     /**
-     * The read-only **`DataTransferItem.type`** property returns the type (format) of the DataTransferItem object representing the drag data item. The type is a Unicode string generally given by a MIME type, although a MIME type is not required.
+     * The **`type`** read-only property of the DataTransferItem interface returns the type (format) of the object representing the drag data item. The type is a Unicode string generally given by a MIME type, although a MIME type is not required.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/type)
      */
     open val type: String
 
     /**
-     * If the item is a file, the **`DataTransferItem.getAsFile()`** method returns the drag data item's File object. If the item is not a file, this method returns null.
+     * The **`getAsFile()`** method of the DataTransferItem interface returns the drag data item's File object if the item is a file. If the item is not a file, this method returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsFile)
      */
     open fun getAsFile(): File?
 
     /**
-     * The **`DataTransferItem.getAsString()`** method invokes the given callback with the drag data item's string data as the argument if the item's kind is a Plain unicode string (i.e., kind is string).
+     * The **`getAsString()`** method of the DataTransferItem interface invokes the given callback with the drag data item's string data as the argument if the item's kind is a Plain unicode string (i.e., kind is string).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsString)
      */
     open fun getAsString(callback: FunctionStringCallback?)
 
     /**
-     * If the item described by the DataTransferItem is a file, **`webkitGetAsEntry()`** returns a FileSystemFileEntry or FileSystemDirectoryEntry representing it. If the item isn't a file, null is returned.
+     * The **`webkitGetAsEntry()`** method of the DataTransferItem interface returns a FileSystemFileEntry or FileSystemDirectoryEntry representing the item if it is a file. If the item isn't a file, null is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/webkitGetAsEntry)
      */

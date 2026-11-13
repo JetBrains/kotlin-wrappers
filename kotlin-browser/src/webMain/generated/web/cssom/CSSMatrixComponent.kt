@@ -6,7 +6,7 @@ import web.geometry.DOMMatrix
 import web.geometry.DOMMatrixReadOnly
 
 /**
- * The **`CSSMatrixComponent`** interface of the CSS Typed Object Model API represents the matrix() and matrix3d() values of the individual transform property in CSS. It inherits properties and methods from its parent CSSTransformValue.
+ * The **`CSSMatrixComponent`** interface of the CSS Typed Object Model API represents the matrix() and matrix3d() values of the individual transform property in CSS.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent)
  */
@@ -15,7 +15,7 @@ open external class CSSMatrixComponent(
     options: CSSMatrixComponentOptions = definedExternally,
 ) : CSSTransformComponent {
     /**
-     * The **`matrix`** property of the CSSMatrixComponent interface gets and sets a 2d or 3d matrix.
+     * The **`matrix`** property of the CSSMatrixComponent interface represents a DOMMatrix object containing a 2D or 3D matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent/matrix)
      */

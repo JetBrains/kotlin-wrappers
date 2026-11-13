@@ -31,12 +31,14 @@ private constructor() :
     open var ping: String
 
     /**
+     * The **`referrerPolicy`** property of the SVGAElement interface returns a string specifying which referrer to send when fetching the URL.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/referrerPolicy)
      */
     open var referrerPolicy: ReferrerPolicy
 
     /**
-     * The **`rel`** property of the SVGAElement returns a string reflecting the value of the rel attribute of the SVG <a> element.
+     * The **`rel`** property of the SVGAElement interface returns a string reflecting the value of the rel attribute of the SVG <a> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/rel)
      */

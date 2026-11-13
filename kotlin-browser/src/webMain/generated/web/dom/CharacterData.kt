@@ -16,7 +16,7 @@ private constructor() :
     ChildNode,
     NonDocumentTypeChildNode {
     /**
-     * The **`data`** property of the CharacterData interface represent the value of the current object's data.
+     * The **`data`** property of the CharacterData interface represents the value of the current object's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/data)
      */

@@ -103,7 +103,7 @@ protected constructor() :
     open val naturalWidth: Int
 
     /**
-     * The **`referrerPolicy`** property of the HTMLImageElement interface defining which referrer is sent when fetching the resource. It reflects the <img> element's referrerpolicy content attribute.
+     * The **`referrerPolicy`** property of the HTMLImageElement interface defines which referrer is sent when fetching the resource. It reflects the <img> element's referrerpolicy content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy)
      */
@@ -131,7 +131,7 @@ protected constructor() :
     open var srcset: String
 
     /**
-     * The **`useMap`** property of the HTMLImageElement interface providing the name of the client-side image map to apply to the image. It reflects the <img> element's usemap content attribute.
+     * The **`useMap`** property of the HTMLImageElement interface provides the name of the client-side image map to apply to the image. It reflects the <img> element's usemap content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/useMap)
      */

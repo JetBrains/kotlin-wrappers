@@ -18,7 +18,7 @@ import web.mediastreams.MediaStreamTrack
 open external class RTCRtpSender
 private constructor() {
     /**
-     * The read-only **`dtmf`** property on the RTCRtpSender interface returns a RTCDTMFSender object which can be used to send DTMF tones over the RTCPeerConnection. See Using DTMF for details on how to make use of the returned RTCDTMFSender object.
+     * The read-only **`dtmf`** property on the RTCRtpSender interface returns an RTCDTMFSender you can use to send DTMF tones on this sender's audio track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/dtmf)
      */

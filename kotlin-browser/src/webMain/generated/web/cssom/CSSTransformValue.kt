@@ -7,7 +7,7 @@ import js.collections.ListLike
 import web.geometry.DOMMatrix
 
 /**
- * The **`CSSTransformValue`** interface of the CSS Typed Object Model API represents transform-list values as used by the CSS transform property.
+ * The **`CSSTransformValue`** interface of the CSS Typed Object Model API represents transform-list values as used by the CSS transform property. It is an iterable of CSSTransformComponent objects, each representing a single <transform-function>.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue)
  */
@@ -16,14 +16,14 @@ open external class CSSTransformValue(
 ) : CSSStyleValue,
     ListLike.Mixin<CSSTransformComponent> {
     /**
-     * The read-only **`is2D`** property of the CSSTransformValue interface returns whether the transform is 2D or 3D.
+     * The **`is2D`** read-only property of the CSSTransformValue interface returns whether the transform is 2D or 3D.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/is2D)
      */
     open val is2D: Boolean
 
     /**
-     * The read-only **`length`** property of the CSSTransformValue interface returns the number of transform components in the list.
+     * The **`length`** read-only property of the CSSTransformValue interface returns the number of items in the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformValue/length)
      */

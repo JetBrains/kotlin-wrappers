@@ -14,77 +14,77 @@ open external class HTMLTableElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`HTMLTableElement.caption`** property represents the table caption. If no caption element is associated with the table, this property is null.
+     * The **`caption`** property of the HTMLTableElement interface represents the first <caption> element child of the given <table>, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/caption)
      */
     open var caption: HTMLTableCaptionElement?
 
     /**
-     * The read-only HTMLTableElement property **`rows`** returns a live HTMLCollection of all the rows in the table, including the rows contained within any <thead>, <tfoot>, and <tbody> elements.
+     * The **`rows`** read-only property of the HTMLTableElement interface returns a live HTMLCollection of all <tr> elements that are a child of the given <table> element, or a child of one of the table's <thead>, <tbody>, and <tfoot> children. The members of the <thead> appear first, followed by members of the <tbody> and the table itself, and members of the <tfoot> come last, sorted by tree order within each group.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rows)
      */
     open val rows: HTMLCollection<HTMLTableRowElement>
 
     /**
-     * The **`HTMLTableElement.tBodies`** read-only property returns a live HTMLCollection of the bodies in a <table>.
+     * The **`tBodies`** read-only property of the HTMLTableElement interface returns a live HTMLCollection of all <tbody> element children of the given <table>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tBodies)
      */
     open val tBodies: HTMLCollection<HTMLTableSectionElement>
 
     /**
-     * The **`HTMLTableElement.tFoot`** property represents the <tfoot> element of a <table>. Its value will be null if there is no such element.
+     * The **`tFoot`** property of the HTMLTableElement interface represents the first <tfoot> element child of the given <table>, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tFoot)
      */
     open var tFoot: HTMLTableSectionElement?
 
     /**
-     * The **`HTMLTableElement.tHead`** represents the <thead> element of a <table>. Its value will be null if there is no such element.
+     * The **`tHead`** property of the HTMLTableElement interface represents the first <thead> element child of the given <table>, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tHead)
      */
     open var tHead: HTMLTableSectionElement?
 
     /**
-     * The **`HTMLTableElement.createCaption()`** method returns the <caption> element associated with a given <table>. If no <caption> element exists on the table, this method creates it, and then returns it.
+     * The **`createCaption()`** method of the HTMLTableElement interface creates a <caption> element, inserts it as the first child of the given <table>, and returns it. If the table already has a <caption> element child, this method returns the first such child without creating one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createCaption)
      */
     open fun createCaption(): HTMLTableCaptionElement
 
     /**
-     * The **`createTBody()`** method of HTMLTableElement objects creates and returns a new <tbody> element associated with a given <table>.
+     * The **`createTBody()`** method of the HTMLTableElement interface creates a <tbody> element, inserts it immediately after the last <tbody> element child of the given <table>, or as the last child if there is no such element, and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTBody)
      */
     open fun createTBody(): HTMLTableSectionElement
 
     /**
-     * The **`createTFoot()`** method of HTMLTableElement objects returns the <tfoot> element associated with a given <table>. If no footer exists in the table, this method creates it, and then returns it.
+     * The **`createTFoot()`** method of the HTMLTableElement interface creates a <tfoot> element, inserts it as the last child of the given <table>, and returns it. If the table already has a <tfoot> element child, this method returns the first such child without creating one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTFoot)
      */
     open fun createTFoot(): HTMLTableSectionElement
 
     /**
-     * The **`createTHead()`** method of HTMLTableElement objects returns the <thead> element associated with a given <table>. If no header exists in the table, this method creates it, and then returns it.
+     * The **`createTHead()`** method of the HTMLTableElement interface creates a <thead> element, inserts it before the first element child of the given <table> that's neither a <caption> nor a <colgroup>, or as the last child if no such insertion location is found, and returns it. If the table already has a <thead> element child, this method returns the first such child without creating one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTHead)
      */
     open fun createTHead(): HTMLTableSectionElement
 
     /**
-     * The **`HTMLTableElement.deleteCaption()`** method removes the <caption> element from a given <table>. If there is no <caption> element associated with the table, this method does nothing.
+     * The **`deleteCaption()`** method of the HTMLTableElement interface removes the first <caption> element child from a given <table>, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteCaption)
      */
     open fun deleteCaption()
 
     /**
-     * The **`HTMLTableElement.deleteRow()`** method removes a specific row (<tr>) from a given <table>.
+     * The **`deleteRow()`** method of the HTMLTableElement interface removes a specific row (<tr>) from a given <table>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteRow)
      */
@@ -92,21 +92,21 @@ protected constructor() :
     open fun deleteRow(index: Int)
 
     /**
-     * The **`HTMLTableElement.deleteTFoot()`** method removes the <tfoot> element from a given <table>.
+     * The **`deleteTFoot()`** method of the HTMLTableElement interface removes the first <tfoot> element child from a given <table>, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTFoot)
      */
     open fun deleteTFoot()
 
     /**
-     * The **`HTMLTableElement.deleteTHead()`** removes the <thead> element from a given <table>.
+     * The **`deleteTHead()`** method of the HTMLTableElement interface removes the first <thead> element child from a given <table>, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTHead)
      */
     open fun deleteTHead()
 
     /**
-     * The **`insertRow()`** method of the HTMLTableElement interface inserts a new row (<tr>) in a given <table>, and returns a reference to the new row.
+     * The **`insertRow()`** method of the HTMLTableElement interface creates a <tr> element, inserts it at the specified position in the rows collection, and returns it. If the rows collection is empty and the table also has no <tbody> elements, a <tbody> element is first created and inserted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/insertRow)
      */

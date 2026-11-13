@@ -101,7 +101,7 @@ private constructor() :
     open fun retryAsync(errorFields: PaymentValidationErrors = definedExternally): Promise<Void>
 
     /**
-     * The **`toJSON()`** method of the PaymentResponse interface is a serializer; it returns a JSON representation of the PaymentResponse object.
+     * The **`toJSON()`** method of the PaymentResponse interface returns a JSON-serializable plain object representing the PaymentResponse object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */

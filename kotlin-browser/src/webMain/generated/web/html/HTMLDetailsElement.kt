@@ -14,7 +14,7 @@ open external class HTMLDetailsElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`name`** property of the HTMLDetailsElement interface reflects the name attribute of <details> elements. It enables multiple <details> elements to be connected together, where only one for the <details> elements can be open at once. This allows developers to easily create UI features such as accordions without scripting.
+     * The **`name`** property of the HTMLDetailsElement interface reflects the name attribute of <details> elements. It enables multiple <details> elements to be connected together, where only one of the <details> elements can be open at once. This allows developers to easily create UI features such as accordions without scripting.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/name)
      */

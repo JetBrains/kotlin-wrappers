@@ -50,7 +50,7 @@ external interface DocumentOrShadowRoot {
         get() = definedExternally
 
     /**
-     * The read-only **`pictureInPictureElement`** property of the Document interface returns the Element that is currently being presented in picture-in-picture mode in this document, or null if picture-in-picture mode is not currently in use.
+     * The **`pictureInPictureElement`** read-only property of the Document interface returns the Element that is currently being presented in picture-in-picture mode in this document, or null if picture-in-picture mode is not currently in use.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement)
      */

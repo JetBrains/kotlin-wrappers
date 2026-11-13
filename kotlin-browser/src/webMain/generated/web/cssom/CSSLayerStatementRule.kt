@@ -13,7 +13,7 @@ open external class CSSLayerStatementRule
 private constructor() :
     CSSRule {
     /**
-     * The read-only **`nameList`** property of the CSSLayerStatementRule interface return the list of associated cascade layer names. The names can't be modified.
+     * The read-only **`nameList`** property of the CSSLayerStatementRule interface returns the list of associated cascade layer names. The names can't be modified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule/nameList)
      */

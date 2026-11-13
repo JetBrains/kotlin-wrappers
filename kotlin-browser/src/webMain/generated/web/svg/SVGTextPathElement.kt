@@ -12,19 +12,21 @@ private constructor() :
     SVGTextContentElement,
     SVGURIReference {
     /**
-     * The **`method`** read-only property of the SVGTextPathElement interface reflects the method attribute of the given <textPath> element. It takes one of the TEXTPATH_METHODTYPE_* constants defined on this interface.
+     * The **`method`** read-only property of the SVGTextPathElement interface represents the method by which text should be rendered along the path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/method)
      */
     open val method: SVGAnimatedEnumeration<Method>
 
     /**
+     * The **`side`** read-only property of the SVGTextPathElement interface represents the side of the path that the text is placed on (relative to the path direction).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/side)
      */
     open val side: SVGAnimatedEnumeration<Side>
 
     /**
-     * The **`spacing`** read-only property of the SVGTextPathElement interface reflects the spacing attribute of the given <textPath> element. It takes one of the TEXTPATH_SPACINGTYPE_* constants defined on this interface.
+     * The **`spacing`** read-only property of the SVGTextPathElement interface represents the spacing between typographic characters that are to be rendered along a path.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement/spacing)
      */

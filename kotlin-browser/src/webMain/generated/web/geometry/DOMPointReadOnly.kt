@@ -43,7 +43,7 @@ open external class DOMPointReadOnly(
     open fun matrixTransform(matrix: DOMMatrixReadOnly = definedExternally): DOMPoint
 
     /**
-     * The DOMPointReadOnly method **`toJSON()`** returns an object giving the JSON form of the point object.
+     * The **`toJSON()`** method of the DOMPointReadOnly interface returns a JSON-serializable plain object representing the DOMPointReadOnly object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)
      */

@@ -52,7 +52,7 @@ private constructor() :
     open val state: RTCIceTransportState
 
     /**
-     * The **`getSelectedCandidatePair()`** method of the RTCIceTransport interface returns an RTCIceCandidatePair object containing the current best-choice pair of ICE candidates describing the configuration of the endpoints of the transport.
+     * The **`getSelectedCandidatePair()`** method of the RTCIceTransport interface returns an RTCIceCandidatePair instance containing the current best-choice pair of ICE candidates describing the configuration of the endpoints of the transport.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/getSelectedCandidatePair)
      */

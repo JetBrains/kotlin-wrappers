@@ -57,7 +57,7 @@ private constructor() :
     open val url: String
 
     /**
-     * The **`toJSON()`** method of the LargestContentfulPaint interface is a serializer; it returns a JSON representation of the LargestContentfulPaint object.
+     * The **`toJSON()`** method of the LargestContentfulPaint interface returns a JSON-serializable plain object representing the LargestContentfulPaint object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/toJSON)
      */

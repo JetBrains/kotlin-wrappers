@@ -11,7 +11,7 @@ open external class StylePropertyMap
 private constructor() :
     StylePropertyMapReadOnly {
     /**
-     * The **`append()`** method of the StylePropertyMap interface adds the passed CSS value to the StylePropertyMap with the given property.
+     * The **`append()`** method of the StylePropertyMap interface adds one or more values to the end of a list-valued CSS property's value list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)
      */
@@ -21,7 +21,7 @@ private constructor() :
     )
 
     /**
-     * The **`append()`** method of the StylePropertyMap interface adds the passed CSS value to the StylePropertyMap with the given property.
+     * The **`append()`** method of the StylePropertyMap interface adds one or more values to the end of a list-valued CSS property's value list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)
      */
@@ -38,14 +38,14 @@ private constructor() :
     open fun clear()
 
     /**
-     * The **`delete()`** method of the StylePropertyMap interface removes the CSS declaration with the given property.
+     * The **`delete()`** method of the StylePropertyMap interface removes the CSS declaration using the given property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/delete)
      */
     open fun delete(property: String)
 
     /**
-     * The **`set()`** method of the StylePropertyMap interface changes the CSS declaration with the given property.
+     * The **`set()`** method of the StylePropertyMap interface changes the CSS declaration using the given property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/set)
      */
@@ -55,7 +55,7 @@ private constructor() :
     )
 
     /**
-     * The **`set()`** method of the StylePropertyMap interface changes the CSS declaration with the given property.
+     * The **`set()`** method of the StylePropertyMap interface changes the CSS declaration using the given property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/set)
      */

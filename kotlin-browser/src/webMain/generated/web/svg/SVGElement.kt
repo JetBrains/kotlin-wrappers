@@ -19,14 +19,14 @@ private constructor() :
     GlobalEventHandlers,
     HTMLOrSVGOrMathMLElement {
     /**
-     * The **`ownerSVGElement`** property of the SVGElement interface reflects the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.
+     * The **`ownerSVGElement`** read-only property of the SVGElement interface reflects the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
      */
     open val ownerSVGElement: SVGSVGElement?
 
     /**
-     * The **`viewportElement`** property of the SVGElement interface represents the SVGElement which established the current viewport. Often the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.
+     * The **`viewportElement`** read-only property of the SVGElement interface represents the SVGElement which established the current viewport. Often the nearest ancestor <svg> element. null if the given element is the outermost <svg> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
      */

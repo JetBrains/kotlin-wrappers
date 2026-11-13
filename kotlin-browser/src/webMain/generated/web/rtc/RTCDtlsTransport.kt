@@ -42,6 +42,8 @@ private constructor() :
     open val state: RTCDtlsTransportState
 
     /**
+     * The **`getRemoteCertificates()`** method of the RTCDtlsTransport interface returns the certificate chain of the remote peer of the DTLS connection.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates)
      */
     open fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>

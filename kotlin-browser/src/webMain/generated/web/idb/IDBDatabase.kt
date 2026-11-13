@@ -53,7 +53,7 @@ private constructor() :
     open var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>?
 
     /**
-     * The **`version`** property of the IDBDatabase interface is a 64-bit integer that contains the version of the connected database. When a database is first created, this attribute is an empty string.
+     * The **`version`** read-only property of the IDBDatabase interface is non-negative integer that contains the version of the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/version)
      */

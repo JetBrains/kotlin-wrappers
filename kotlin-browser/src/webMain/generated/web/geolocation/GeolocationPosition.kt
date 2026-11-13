@@ -27,7 +27,7 @@ private constructor() {
     open val timestamp: EpochTimeStamp
 
     /**
-     * The **`toJSON()`** method of the GeolocationPosition interface is a serializer; it returns a JSON representation of the GeolocationPosition object.
+     * The **`toJSON()`** method of the GeolocationPosition interface returns a JSON-serializable plain object representing the GeolocationPosition object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition/toJSON)
      */

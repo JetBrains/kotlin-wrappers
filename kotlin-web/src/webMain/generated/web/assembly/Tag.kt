@@ -3,7 +3,7 @@
 package web.assembly
 
 /**
- * The **`WebAssembly.Tag`** object defines a type of a WebAssembly exception that can be thrown to/from WebAssembly code.
+ * The **`WebAssembly.Tag`** object represents a WebAssembly exception type that can be thrown in a Wasm module.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Tag)
  */

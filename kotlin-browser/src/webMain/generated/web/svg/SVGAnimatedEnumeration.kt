@@ -10,14 +10,14 @@ package web.svg
 open external class SVGAnimatedEnumeration<T : JsAny?>
 private constructor() {
     /**
-     * The **`animVal`** property of the SVGAnimatedEnumeration interface contains the current value of an SVG enumeration. If there is no animation, it is the same value as the baseVal.
+     * The **`animVal`** read-only property of the SVGAnimatedEnumeration interface represents the value of an SVG enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/animVal)
      */
     open val animVal: T
 
     /**
-     * The **`baseVal`** property of the SVGAnimatedEnumeration interface contains the initial value of an SVG enumeration.
+     * The **`baseVal`** property of the SVGAnimatedEnumeration interface represents the value of an SVG enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration/baseVal)
      */

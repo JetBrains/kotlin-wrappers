@@ -14,7 +14,7 @@ import web.errors.JsThrows
 open external class SVGLength
 private constructor() {
     /**
-     * The **`unitType`** property of the SVGLength interface that represents type of the value as specified by one of the SVG_LENGTHTYPE_* constants defined on this interface.
+     * The **`unitType`** property of the SVGLength interface represents the type of the value as specified by one of the SVG_LENGTHTYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength/unitType)
      */

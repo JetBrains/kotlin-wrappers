@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSMathClamp`** interface of the CSS Typed Object Model API represents the CSS clamp() function. It inherits properties and methods from its parent CSSNumericValue.
+ * The **`CSSMathClamp`** interface of the CSS Typed Object Model API represents the CSS clamp() function.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathClamp)
  */
@@ -13,21 +13,21 @@ open external class CSSMathClamp(
     upper: CSSNumberish,
 ) : CSSMathValue {
     /**
-     * The **`lower`** read-only property of the CSSMathClamp interface returns a CSSNumericValue object containing the minimum value of a CSSMathClamp object.
+     * The **`lower`** read-only property of the CSSMathClamp interface returns a CSSNumericValue object representing its minimum value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathClamp/lower)
      */
     open val lower: CSSNumericValue
 
     /**
-     * The **`upper`** read-only property of the CSSMathClamp interface returns a CSSNumericValue object containing the maximum value of a CSSMathClamp object.
+     * The **`upper`** read-only property of the CSSMathClamp interface returns a CSSNumericValue object representing its maximum value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathClamp/upper)
      */
     open val upper: CSSNumericValue
 
     /**
-     * The **`value`** read-only property of the CSSMathClamp interface returns a CSSNumericValue object containing the preferred value of a CSSMathClamp object.
+     * The **`value`** read-only property of the CSSMathClamp interface returns a CSSNumericValue instance representing its preferred value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathClamp/value)
      */

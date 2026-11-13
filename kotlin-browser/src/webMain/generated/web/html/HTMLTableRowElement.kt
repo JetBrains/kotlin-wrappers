@@ -43,7 +43,7 @@ protected constructor() :
     open fun deleteCell(index: Int)
 
     /**
-     * The **`insertCell()`** method of the HTMLTableRowElement interface inserts a new cell (<td>) into a table row (<tr>) and returns a reference to the cell.
+     * The **`insertCell()`** method of the HTMLTableRowElement interface creates a <td> element, inserts it at the specified position in the given <tr> element, and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/insertCell)
      */

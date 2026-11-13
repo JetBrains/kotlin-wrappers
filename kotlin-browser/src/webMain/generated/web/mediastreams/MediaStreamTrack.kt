@@ -112,7 +112,7 @@ private constructor() :
     open fun getConstraints(): MediaTrackConstraints
 
     /**
-     * The **`getSettings()`** method of the MediaStreamTrack interface returns a MediaTrackSettings object containing the current values of each of the constrainable properties for the current MediaStreamTrack.
+     * The **`getSettings()`** method of the MediaStreamTrack interface returns an object containing the current values of each of the constrainable properties for the current MediaStreamTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings)
      */

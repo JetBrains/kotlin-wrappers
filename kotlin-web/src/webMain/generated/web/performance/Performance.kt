@@ -142,7 +142,7 @@ private constructor() :
     open fun setResourceTimingBufferSize(maxSize: Int)
 
     /**
-     * The **`toJSON()`** method of the Performance interface is a serializer; it returns a JSON representation of the Performance object.
+     * The **`toJSON()`** method of the Performance interface returns a JSON-serializable plain object representing the Performance object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */

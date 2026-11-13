@@ -243,11 +243,17 @@ object HtmlTagName {
     inline val q: TagName<HTMLQuoteElement>
         get() = TagName("q")
 
+    inline val rb: TagName<HTMLElement>
+        get() = TagName("rb")
+
     inline val rp: TagName<HTMLElement>
         get() = TagName("rp")
 
     inline val rt: TagName<HTMLElement>
         get() = TagName("rt")
+
+    inline val rtc: TagName<HTMLElement>
+        get() = TagName("rtc")
 
     inline val ruby: TagName<HTMLElement>
         get() = TagName("ruby")

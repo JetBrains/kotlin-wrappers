@@ -110,7 +110,7 @@ open external class MediaSource :
 
     companion object {
         /**
-         * The **`canConstructInDedicatedWorker`** static property of the MediaSource interface returns true if MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
+         * The **`canConstructInDedicatedWorker`** read-only static property of the MediaSource interface returns true if MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
          */

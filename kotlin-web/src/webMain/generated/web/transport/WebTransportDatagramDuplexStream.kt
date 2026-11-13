@@ -67,6 +67,8 @@ private constructor() {
     open val writable: WritableStream<*>
 
     /**
+     * The **`createWritable()`** method of the WebTransportDatagramDuplexStream interface returns a WebTransportDatagramsWritable instance that can be used to write outgoing datagrams to the transport.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/createWritable)
      */
     @JsThrows(InvalidStateError::class)

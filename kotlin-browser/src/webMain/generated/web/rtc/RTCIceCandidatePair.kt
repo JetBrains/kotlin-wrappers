@@ -9,14 +9,14 @@ package web.rtc
  */
 external interface RTCIceCandidatePair {
     /**
-     * The **`local`** property of the RTCIceCandidatePair dictionary specifies the RTCIceCandidate which describes the configuration of the local end of a viable WebRTC connection.
+     * The **`local`** property of the RTCIceCandidatePair interface specifies the RTCIceCandidate that describes the configuration of the local end of a viable WebRTC connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidatePair/local)
      */
     var local: RTCIceCandidate
 
     /**
-     * The **`remote`** property of the RTCIceCandidatePair dictionary specifies the RTCIceCandidate describing the configuration of the remote end of a viable WebRTC connection.
+     * The **`remote`** property of the RTCIceCandidatePair interface specifies the RTCIceCandidate that describes the configuration of the remote end of a viable WebRTC connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidatePair/remote)
      */

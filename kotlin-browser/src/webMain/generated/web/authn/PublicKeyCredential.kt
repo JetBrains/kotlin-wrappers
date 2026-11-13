@@ -50,7 +50,7 @@ private constructor() :
     open fun getClientExtensionResults(): AuthenticationExtensionsClientOutputs
 
     /**
-     * The **`toJSON()`** method of the PublicKeyCredential interface returns a JSON type representation of a PublicKeyCredential.
+     * The **`toJSON()`** method of the PublicKeyCredential interface returns a JSON-serializable plain object representing the PublicKeyCredential object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/toJSON)
      */
@@ -68,7 +68,7 @@ private constructor() :
         fun getClientCapabilitiesAsync(): Promise<PublicKeyCredentialClientCapabilities>
 
         /**
-         * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if conditional mediation is available.
+         * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if the device supports conditional get.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */
@@ -143,7 +143,7 @@ suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): Public
 }
 
 /**
- * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if conditional mediation is available.
+ * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if the device supports conditional get.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
  */

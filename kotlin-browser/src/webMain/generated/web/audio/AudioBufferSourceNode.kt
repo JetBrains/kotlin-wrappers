@@ -50,7 +50,7 @@ open external class AudioBufferSourceNode(
     open var loopStart: Double
 
     /**
-     * The **`playbackRate`** property of the AudioBufferSourceNode interface Is a k-rate AudioParam that defines the speed at which the audio asset will be played.
+     * The **`playbackRate`** read-only property of the AudioBufferSourceNode interface is a k-rate AudioParam that defines the speed at which the audio asset will be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/playbackRate)
      */

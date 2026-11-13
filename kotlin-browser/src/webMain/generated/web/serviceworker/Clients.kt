@@ -42,7 +42,7 @@ private constructor() {
     open fun <T : ClientQueryOptions> matchAllAsync(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
 
     /**
-     * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
+     * The **`openWindow()`** method of the Clients interface creates a new top-level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
@@ -51,7 +51,7 @@ private constructor() {
     open fun openWindowAsync(url: String): Promise<WindowClient?>
 
     /**
-     * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
+     * The **`openWindow()`** method of the Clients interface creates a new top-level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
@@ -101,7 +101,7 @@ suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): Readon
 }
 
 /**
- * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
+ * The **`openWindow()`** method of the Clients interface creates a new top-level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
  */
@@ -113,7 +113,7 @@ suspend inline fun Clients.openWindow(url: String): WindowClient? {
 }
 
 /**
- * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
+ * The **`openWindow()`** method of the Clients interface creates a new top-level browsing context and loads a given URL. If the calling script doesn't have permission to show popups, openWindow() will throw an InvalidAccessError.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
  */

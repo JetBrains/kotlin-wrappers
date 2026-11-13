@@ -120,6 +120,8 @@ open external class SpeechRecognition :
     open var processLocally: Boolean
 
     /**
+     * The **`unspokenPunctuation`** property of the SpeechRecognition interface specifies whether the speech recognition engine will infer and insert punctuation marks based on the user's natural speech patterns.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/unspokenPunctuation)
      */
     open var unspokenPunctuation: Boolean
@@ -151,7 +153,7 @@ open external class SpeechRecognition :
 
     companion object {
         /**
-         * The **`available()`** static method of the Web Speech API checks whether the specified languages are available for speech recognition.
+         * The **`available()`** static method of the Web Speech API checks whether the specified languages are available for speech recognition at the given quality level.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/available_static)
          */
@@ -161,7 +163,7 @@ open external class SpeechRecognition :
         fun availableAsync(options: SpeechRecognitionOptions): Promise<SpeechRecognitionAvailabilityStatus>
 
         /**
-         * The **`install()`** static method of the Web Speech API installs the required language packs for on-device speech recognition in the specified languages.
+         * The **`install()`** static method of the Web Speech API installs the required language packs for on-device speech recognition in the specified languages and quality level.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/install_static)
          */
@@ -173,7 +175,7 @@ open external class SpeechRecognition :
 }
 
 /**
- * The **`available()`** static method of the Web Speech API checks whether the specified languages are available for speech recognition.
+ * The **`available()`** static method of the Web Speech API checks whether the specified languages are available for speech recognition at the given quality level.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/available_static)
  */
@@ -186,7 +188,7 @@ suspend inline fun SpeechRecognition.Companion.available(options: SpeechRecognit
 }
 
 /**
- * The **`install()`** static method of the Web Speech API installs the required language packs for on-device speech recognition in the specified languages.
+ * The **`install()`** static method of the Web Speech API installs the required language packs for on-device speech recognition in the specified languages and quality level.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/install_static)
  */

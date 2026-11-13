@@ -83,7 +83,7 @@ external interface HyperlinkElementUtils {
         set(value) = definedExternally
 
     /**
-     * The **`protocol`** property of the HTMLAnchorElement interface is a string containing the protocol or scheme of the <area> element's href, including the final ":".
+     * The **`protocol`** property of the HTMLAnchorElement interface is a string containing the protocol or scheme of the <a> element's href, including the final ":".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/protocol)
      */

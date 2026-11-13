@@ -13,6 +13,8 @@ import js.void.Void
 open external class NavigationTransition
 private constructor() {
     /**
+     * The **`committed`** read-only property of the NavigationTransition interface returns a Promise that fulfills when Navigation.currentEntry is updated and the new URL is displayed in the browser, marking the navigation as committed. This happens after all precommit handlers for the navigation are fulfilled.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationTransition/committed)
      */
     open val committed: Promise<Void>

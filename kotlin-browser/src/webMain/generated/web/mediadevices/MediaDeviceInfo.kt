@@ -39,7 +39,7 @@ private constructor() {
     open val label: String
 
     /**
-     * The **`toJSON()`** method of the MediaDeviceInfo interface is a serializer; it returns a JSON representation of the MediaDeviceInfo object.
+     * The **`toJSON()`** method of the MediaDeviceInfo interface returns a JSON-serializable plain object representing the MediaDeviceInfo object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/toJSON)
      */

@@ -165,7 +165,7 @@ protected constructor() :
     open var indeterminate: Boolean
 
     /**
-     * The **`HTMLInputElement.labels`** read-only property returns a NodeList of the <label> elements associated with the <input> element, if the element is not hidden. If the element has the type hidden, the property returns null.
+     * The **`HTMLInputElement.labels`** read-only property returns a NodeList of the <label> elements associated with the <input> element. If the element has the type hidden, the property returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
      */
@@ -256,14 +256,14 @@ protected constructor() :
     open var selectionDirection: SelectionDirection?
 
     /**
-     * The **`selectionEnd`** property of the HTMLInputElement interface is a number that represents the end index of the selected text. That is, it represents the index of the character immediately following the selection. Likewise, when there is no selection, this returns the offset of the character immediately following the current text input cursor position.
+     * The **`selectionEnd`** property of the HTMLInputElement interface specifies the end position of the current text selection in an <input> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd)
      */
     open var selectionEnd: Int?
 
     /**
-     * The **`selectionStart`** property of the HTMLInputElement interface is a number that represents the beginning index of the selected text. When nothing is selected, then returns the position of the text input cursor (caret) inside of the <input> element.
+     * The **`selectionStart`** property of the HTMLInputElement interface specifies the start position of the current text selection in an <input> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
      */
@@ -375,7 +375,7 @@ protected constructor() :
     override fun reportValidity(): Boolean
 
     /**
-     * The **`HTMLInputElement.select()`** method selects all the text in a <textarea> element or in an <input> element that includes a text field.
+     * The **`select()`** method of the HTMLInputElement interface selects all the text in an <input> element that includes a text field.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/select)
      */
@@ -402,7 +402,7 @@ protected constructor() :
     )
 
     /**
-     * The **`HTMLInputElement.setSelectionRange()`** method sets the start and end positions of the current text selection in an <input> or <textarea> element. This updates the selection state immediately, though the visual highlight only appears when the element is focused.
+     * The **`setSelectionRange()`** method of the HTMLInputElement interface sets the start and end positions of the current text selection in an <input> element. This updates the selection state immediately, though the visual highlight only appears when the element is focused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
      */

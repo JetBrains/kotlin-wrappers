@@ -27,7 +27,7 @@ protected constructor() :
     TexImageSource,
     GPUCopyExternalImageSource {
     /**
-     * The HTMLVideoElement **`disablePictureInPicture`** property reflects the HTML attribute indicating whether the picture-in-picture feature is disabled for the current element.
+     * The **`disablePictureInPicture`** property of the HTMLVideoElement interface reflects the disablepictureinpicture HTML attribute indicating whether the picture-in-picture feature is disabled for the current element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture)
      */
@@ -94,7 +94,7 @@ protected constructor() :
     open fun getVideoPlaybackQuality(): VideoPlaybackQuality
 
     /**
-     * The HTMLVideoElement method **`requestPictureInPicture()`** issues an asynchronous request to display the video in picture-in-picture mode.
+     * The **`requestPictureInPicture()`** method of the HTMLVideoElement interface issues an asynchronous request to display the video in picture-in-picture mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
@@ -114,7 +114,7 @@ protected constructor() :
 }
 
 /**
- * The HTMLVideoElement method **`requestPictureInPicture()`** issues an asynchronous request to display the video in picture-in-picture mode.
+ * The **`requestPictureInPicture()`** method of the HTMLVideoElement interface issues an asynchronous request to display the video in picture-in-picture mode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
  */

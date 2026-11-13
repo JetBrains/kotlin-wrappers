@@ -14,49 +14,49 @@ import web.time.DOMHighResTimeStamp
 open external class Gamepad
 private constructor() {
     /**
-     * The **`Gamepad.axes`** property of the Gamepad interface returns an array representing the controls with axes present on the device (e.g., analog thumb sticks).
+     * The **`axes`** read-only property of the Gamepad interface returns an array representing the controls with axes present on the device (e.g., analog thumb sticks).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/axes)
      */
     open val axes: ReadonlyArray<JsDouble>
 
     /**
-     * The **`buttons`** property of the Gamepad interface returns an array of GamepadButton objects representing the buttons present on the device.
+     * The **`buttons`** read-only property of the Gamepad interface returns an array of GamepadButton objects representing the buttons present on the device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/buttons)
      */
     open val buttons: ReadonlyArray<GamepadButton>
 
     /**
-     * The **`Gamepad.connected`** property of the Gamepad interface returns a boolean indicating whether the gamepad is still connected to the system.
+     * The **`connected`** read-only property of the Gamepad interface returns a boolean indicating whether the gamepad is still connected to the system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/connected)
      */
     open val connected: Boolean
 
     /**
-     * The **`Gamepad.id`** property of the Gamepad interface returns a string containing some information about the controller.
+     * The **`id`** read-only property of the Gamepad interface returns a string containing some information about the controller.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/id)
      */
     open val id: String
 
     /**
-     * The **`Gamepad.index`** property of the Gamepad interface returns an integer that is auto-incremented to be unique for each device currently connected to the system.
+     * The **`index`** read-only property of the Gamepad interface returns an integer that is auto-incremented to be unique for each device currently connected to the system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/index)
      */
     open val index: Int
 
     /**
-     * The **`Gamepad.mapping`** property of the Gamepad interface returns a string indicating whether the browser has remapped the controls on the device to a known layout.
+     * The **`mapping`** read-only property of the Gamepad interface returns a string indicating whether the browser has remapped the controls on the device to a known layout.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/mapping)
      */
     open val mapping: GamepadMappingType
 
     /**
-     * The **`Gamepad.timestamp`** property of the Gamepad interface returns a DOMHighResTimeStamp representing the last time the data for this gamepad was updated.
+     * The **`timestamp`** read-only property of the Gamepad interface returns a DOMHighResTimeStamp representing the last time the data for this gamepad was updated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/timestamp)
      */

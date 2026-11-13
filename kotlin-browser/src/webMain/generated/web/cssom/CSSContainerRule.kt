@@ -13,19 +13,21 @@ open external class CSSContainerRule
 private constructor() :
     CSSConditionRule {
     /**
+     * The read-only **`conditions`** property of the CSSContainerRule interface represents an associated CSS @container at-rule as an array of objects, where each object represents a single container condition.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSContainerRule/conditions)
      */
     open val conditions: ReadonlyArray<CSSContainerCondition>
 
     /**
-     * The read-only **`containerName`** property of the CSSContainerRule interface represents the container name of the associated CSS @container at-rule.
+     * The read-only **`containerName`** property of the CSSContainerRule interface represents the name of the container condition for a container rule that only defines one container condition. If there are multiple container conditions, the value is set to the empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSContainerRule/containerName)
      */
     open val containerName: String
 
     /**
-     * The read-only **`containerQuery`** property of the CSSContainerRule interface returns a string representing the container conditions that are evaluated when the container changes size in order to determine if the styles in the associated @container are applied.
+     * The read-only **`containerQuery`** property of the CSSContainerRule interface represents the query part of the container condition for a container rule that only defines one container condition. If there are multiple container conditions, the value is set to the empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSContainerRule/containerQuery)
      */

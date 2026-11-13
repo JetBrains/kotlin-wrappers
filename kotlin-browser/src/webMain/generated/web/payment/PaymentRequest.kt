@@ -60,6 +60,7 @@ open external class PaymentRequest(
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     @JsThrows(SecurityError::class)
     @JsName("show")
     open fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
@@ -72,6 +73,7 @@ open external class PaymentRequest(
     @JsThrows(AbortError::class)
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
+    @JsThrows(OperationError::class)
     @JsThrows(SecurityError::class)
     @JsName("show")
     open fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
@@ -103,6 +105,7 @@ suspend inline fun PaymentRequest.canMakePayment(): Boolean {
 @JsThrows(AbortError::class)
 @JsThrows(InvalidStateError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 @JsThrows(SecurityError::class)
 suspend inline fun PaymentRequest.show(): PaymentResponse {
     return showAsync().await()
@@ -116,6 +119,7 @@ suspend inline fun PaymentRequest.show(): PaymentResponse {
 @JsThrows(AbortError::class)
 @JsThrows(InvalidStateError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 @JsThrows(SecurityError::class)
 suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): PaymentResponse {
     return showAsync(
@@ -131,6 +135,7 @@ suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): Pa
 @JsThrows(AbortError::class)
 @JsThrows(InvalidStateError::class)
 @JsThrows(NotSupportedError::class)
+@JsThrows(OperationError::class)
 @JsThrows(SecurityError::class)
 suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {
     return showAsync(

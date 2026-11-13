@@ -196,7 +196,7 @@ open external class Document :
     open val head: HTMLHeadElement
 
     /**
-     * The **`Document.hidden`** read-only property returns a Boolean value indicating if the page is considered hidden or not.
+     * The **`Document.hidden`** read-only property returns a Boolean value indicating if the page is considered hidden or not. This can be used to check whether the document is in the background or in a minimized window, or is otherwise not visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hidden)
      */
@@ -271,7 +271,7 @@ open external class Document :
     override val ownerDocument: Void
 
     /**
-     * The read-only **`pictureInPictureEnabled`** property of the Document interface indicates whether or not picture-in-picture mode is available.
+     * The **`pictureInPictureEnabled`** read-only property of the Document interface indicates whether or not picture-in-picture mode is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled)
      */
@@ -451,7 +451,7 @@ open external class Document :
     ): NodeIterator
 
     /**
-     * **`createProcessingInstruction()`** generates a new processing instruction node and returns it.
+     * The **`createProcessingInstruction()`** method of the Document interface creates a new ProcessingInstruction object and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createProcessingInstruction)
      */
@@ -495,7 +495,7 @@ open external class Document :
     open fun exitFullscreenAsync(): Promise<Void>
 
     /**
-     * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to HTMLVideoElement.requestPictureInPicture().
+     * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
      */
@@ -624,14 +624,14 @@ open external class Document :
     open fun requestStorageAccessAsync(): Promise<Void>
 
     /**
-     * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA) view transition and returns a ViewTransition object to represent it.
+     * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA), document-scoped view transition and returns a ViewTransition object to represent it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
     open fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
 
     /**
-     * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA) view transition and returns a ViewTransition object to represent it.
+     * The **`startViewTransition()`** method of the Document interface starts a new same-document (SPA), document-scoped view transition and returns a ViewTransition object to represent it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)
      */
@@ -686,7 +686,7 @@ suspend inline fun Document.exitFullscreen() {
 }
 
 /**
- * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to HTMLVideoElement.requestPictureInPicture().
+ * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
  */

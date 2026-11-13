@@ -91,7 +91,7 @@ external interface ARIAMixin {
         set(value) = definedExternally
 
     /**
-     * The **`ariaColIndexText`** property of the Element interface reflects the value of the aria-colindextext attribute, which defines a human readable text alternative of aria-colindex.
+     * The **`ariaColIndexText`** property of the Element interface reflects the value of the aria-colindextext attribute, which defines a human-readable text alternative of aria-colindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaColIndexText)
      */
@@ -199,7 +199,7 @@ external interface ARIAMixin {
         set(value) = definedExternally
 
     /**
-     * The **`ariaHidden`** property of the Element interface reflects the value of the aria-hidden) attribute, which indicates whether the element is exposed to an accessibility API.
+     * The **`ariaHidden`** property of the Element interface reflects the value of the aria-hidden attribute, which indicates whether the element is exposed to an accessibility API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaHidden)
      */
@@ -388,7 +388,7 @@ external interface ARIAMixin {
         set(value) = definedExternally
 
     /**
-     * The **`ariaRowIndexText`** property of the Element interface reflects the value of the aria-rowindextext attribute, which defines a human readable text alternative of aria-rowindex.
+     * The **`ariaRowIndexText`** property of the Element interface reflects the value of the aria-rowindextext attribute, which defines a human-readable text alternative of aria-rowindex.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndexText)
      */

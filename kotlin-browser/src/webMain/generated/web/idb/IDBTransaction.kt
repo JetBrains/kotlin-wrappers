@@ -35,7 +35,7 @@ private constructor() :
     open val durability: IDBTransactionDurability
 
     /**
-     * The **`IDBTransaction.error`** property of the IDBTransaction interface returns the type of error when there is an unsuccessful transaction.
+     * The **`error`** read-only property of the IDBTransaction interface returns the type of error when there is an unsuccessful transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error)
      */

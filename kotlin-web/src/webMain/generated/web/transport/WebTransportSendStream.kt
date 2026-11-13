@@ -18,6 +18,8 @@ open external class WebTransportSendStream
 private constructor() :
     WritableStream<BufferSource> {
     /**
+     * The **`sendGroup`** property of the WebTransportSendStream interface represents the WebTransportSendGroup that this stream is grouped under for the purposes of sendOrder prioritization.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/sendGroup)
      */
     open var sendGroup: WebTransportSendGroup?

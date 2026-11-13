@@ -51,7 +51,7 @@ open external class DOMQuad(
     open fun getBounds(): DOMRect
 
     /**
-     * The DOMQuad method **`toJSON()`** returns a JSON representation of the DOMQuad object.
+     * The **`toJSON()`** method of the DOMQuad interface returns a JSON-serializable plain object representing the DOMQuad object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
      */

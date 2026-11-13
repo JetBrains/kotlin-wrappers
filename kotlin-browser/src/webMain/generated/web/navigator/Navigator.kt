@@ -131,7 +131,7 @@ private constructor() :
     open val permissions: Permissions
 
     /**
-     * The **`serial`** read-only property of the Navigator interface returns a Serial object which represents the entry point into the Web Serial API.
+     * The **`serial`** read-only property of the Navigator interface returns a Serial object, which represents the entry point into the Web Serial API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/serial)
      */

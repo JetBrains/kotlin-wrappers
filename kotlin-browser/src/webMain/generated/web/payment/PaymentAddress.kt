@@ -5,7 +5,7 @@ package web.payment
 import js.array.ReadonlyArray
 
 /**
- * The **`ContactAddress`** interface of the Contact Picker API represents a physical address. Instances of this interface are retrieved from the address property of the objects returned by ContactsManager.getProperties().
+ * The **`ContactAddress`** interface of the Contact Picker API represents a physical address. Instances of this interface are retrieved from the address property of the objects returned by ContactsManager.select().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress)
  */
@@ -82,7 +82,7 @@ private constructor() {
     open val sortingCode: String
 
     /**
-     * The **`toJSON()`** method of the ContactAddress interface is a standard serializer that returns a JSON representation of the ContactAddress object's properties.
+     * The **`toJSON()`** method of the ContactAddress interface returns a JSON-serializable plain object representing the ContactAddress object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/toJSON)
      */

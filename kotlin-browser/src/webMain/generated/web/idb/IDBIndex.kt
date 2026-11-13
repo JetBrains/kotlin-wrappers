@@ -15,7 +15,7 @@ import web.errors.JsThrows
 open external class IDBIndex
 private constructor() {
     /**
-     * The **`keyPath`** property of the IDBIndex interface returns the key path of the current index. If null, this index is not auto-populated.
+     * The **`keyPath`** read-only property of the IDBIndex interface returns the key path of the current index. If null, this index is not auto-populated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath)
      */
@@ -36,7 +36,7 @@ private constructor() {
     open var name: String
 
     /**
-     * The **`objectStore`** property of the IDBIndex interface returns the object store referenced by the current index.
+     * The **`objectStore`** read-only property of the IDBIndex interface returns the object store referenced by the current index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/objectStore)
      */

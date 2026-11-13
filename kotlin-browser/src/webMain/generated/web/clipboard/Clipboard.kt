@@ -21,7 +21,7 @@ open external class Clipboard
 private constructor() :
     EventTarget {
     /**
-     * The **`read()`** method of the Clipboard interface requests a copy of the clipboard's contents, fulfilling the returned Promise with the data.
+     * The **`read()`** method of the Clipboard interface returns a Promise that fulfills with a copy of the clipboard's contents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
      */
@@ -40,7 +40,7 @@ private constructor() :
     open fun readTextAsync(): Promise<JsString>
 
     /**
-     * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion. This can be used to implement cut and copy functionality.
+     * The **`write()`** method of the Clipboard interface is used to write data such as images, text, and custom types, to the system clipboard.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
@@ -59,7 +59,7 @@ private constructor() :
 }
 
 /**
- * The **`read()`** method of the Clipboard interface requests a copy of the clipboard's contents, fulfilling the returned Promise with the data.
+ * The **`read()`** method of the Clipboard interface returns a Promise that fulfills with a copy of the clipboard's contents.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
  */
@@ -80,7 +80,7 @@ suspend inline fun Clipboard.readText(): String {
 }
 
 /**
- * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion. This can be used to implement cut and copy functionality.
+ * The **`write()`** method of the Clipboard interface is used to write data such as images, text, and custom types, to the system clipboard.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
  */

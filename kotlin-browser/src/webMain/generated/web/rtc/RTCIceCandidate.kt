@@ -109,7 +109,7 @@ open external class RTCIceCandidate(
     open val usernameFragment: String?
 
     /**
-     * The RTCIceCandidate method **`toJSON()`** converts the RTCIceCandidate on which it's called into JSON.
+     * The **`toJSON()`** method of the RTCIceCandidate interface returns a JSON-serializable plain object representing the RTCIceCandidate object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/toJSON)
      */

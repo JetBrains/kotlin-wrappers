@@ -46,7 +46,7 @@ private constructor() :
     open var alignmentBaseline: String
 
     /**
-     * The **`all`** shorthand CSS property resets all of an element's properties except unicode-bidi, direction, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another cascade layer or stylesheet origin.
+     * The **`all`** CSS shorthand property resets all of an element's properties except unicode-bidi, direction, and CSS Custom Properties. It can set properties to their initial or inherited values, or to the values specified in another cascade layer or stylesheet origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/all)
      */
@@ -67,7 +67,7 @@ private constructor() :
     open var anchorScope: String
 
     /**
-     * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, animation-play-state, and animation-timeline.
+     * The **`animation`** CSS shorthand property applies an animation between styles. It is a shorthand for animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, animation-play-state, and animation-timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation)
      */
@@ -172,7 +172,7 @@ private constructor() :
     open var appearance: String
 
     /**
-     * The aspect-ratio CSS property allows you to define the desired width-to-height ratio of an element's box. This means that even if the parent container or viewport size changes, the browser will adjust the element's dimensions to maintain the specified width-to-height ratio. The specified aspect ratio is used in the calculation of auto sizes and some other layout functions.
+     * The aspect-ratio CSS property allows you to define the desired width-to-height ratio of an element's box.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/aspect-ratio)
      */
@@ -193,7 +193,7 @@ private constructor() :
     open var backfaceVisibility: String
 
     /**
-     * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin, size, and repeat method.
+     * The **`background`** CSS shorthand property sets all background style properties at once, such as color, image, origin, size, and repeat method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background)
      */
@@ -242,7 +242,7 @@ private constructor() :
     open var backgroundOrigin: String
 
     /**
-     * The background-position CSS property sets the initial position for each background image. The position is relative to the position layer set by background-origin.
+     * The background-position CSS property sets the initial position for each background image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-position)
      */
@@ -263,7 +263,7 @@ private constructor() :
     open var backgroundPositionY: String
 
     /**
-     * The background-repeat CSS property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
+     * The background-repeat CSS shorthand property sets how background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-repeat)
      */
@@ -298,14 +298,14 @@ private constructor() :
     open var blockSize: String
 
     /**
-     * The **`border`** shorthand CSS property sets an element's border. It sets the values of border-width, border-style, and border-color.
+     * The **`border`** CSS shorthand property sets an element's border. It sets the values of border-width, border-style, and border-color.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border)
      */
     open var border: String
 
     /**
-     * The border-block CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
+     * The border-block CSS shorthand property sets the individual logical block border property values in a single place in the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block)
      */
@@ -319,7 +319,7 @@ private constructor() :
     open var borderBlockColor: String
 
     /**
-     * The border-block-end CSS property is a shorthand property for setting the individual logical block-end border property values in a single place in the style sheet.
+     * The border-block-end CSS shorthand property sets the individual logical block-end border property values in a single place in the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-end)
      */
@@ -347,7 +347,7 @@ private constructor() :
     open var borderBlockEndWidth: String
 
     /**
-     * The border-block-start CSS property is a shorthand property for setting the individual logical block-start border property values in a single place in the style sheet.
+     * The border-block-start CSS shorthand property sets the individual logical block-start border property values in a single place in the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-block-start)
      */
@@ -389,7 +389,7 @@ private constructor() :
     open var borderBlockWidth: String
 
     /**
-     * The border-bottom shorthand CSS property sets an element's bottom border. It sets the values of border-bottom-width, border-bottom-style and border-bottom-color.
+     * The border-bottom CSS shorthand property sets an element's bottom border. It sets the values of border-bottom-width, border-bottom-style and border-bottom-color.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom)
      */
@@ -438,7 +438,7 @@ private constructor() :
     open var borderCollapse: String
 
     /**
-     * The border-color shorthand CSS property sets the color of an element's border.
+     * The border-color CSS shorthand property sets the color of an element's border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-color)
      */
@@ -459,7 +459,7 @@ private constructor() :
     open var borderEndStartRadius: String
 
     /**
-     * The border-image CSS property draws an image around a given element. It replaces the element's regular border.
+     * The border-image CSS shorthand property draws an image around a given element. It replaces the element's regular border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image)
      */
@@ -501,7 +501,7 @@ private constructor() :
     open var borderImageWidth: String
 
     /**
-     * The border-inline CSS property is a shorthand property for setting the individual logical inline border property values in a single place in the style sheet.
+     * The border-inline CSS shorthand property sets the individual logical inline border property values in a single place in the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline)
      */
@@ -515,7 +515,7 @@ private constructor() :
     open var borderInlineColor: String
 
     /**
-     * The border-inline-end CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
+     * The border-inline-end CSS shorthand property sets the individual logical inline-end border property values in a single place in the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-end)
      */
@@ -543,7 +543,7 @@ private constructor() :
     open var borderInlineEndWidth: String
 
     /**
-     * The border-inline-start CSS property is a shorthand property for setting the individual logical inline-start border property values in a single place in the style sheet.
+     * The border-inline-start CSS shorthand property sets the individual logical inline-start border property values in a single place in the style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-inline-start)
      */
@@ -585,7 +585,7 @@ private constructor() :
     open var borderInlineWidth: String
 
     /**
-     * The border-left shorthand CSS property sets all the properties of an element's left border.
+     * The border-left CSS shorthand property sets all the properties of an element's left border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left)
      */
@@ -613,14 +613,14 @@ private constructor() :
     open var borderLeftWidth: String
 
     /**
-     * The border-radius CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
+     * The border-radius CSS shorthand property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-radius)
      */
     open var borderRadius: String
 
     /**
-     * The border-right shorthand CSS property sets all the properties of an element's right border.
+     * The border-right CSS shorthand property sets all the properties of an element's right border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right)
      */
@@ -669,14 +669,14 @@ private constructor() :
     open var borderStartStartRadius: String
 
     /**
-     * The border-style shorthand CSS property sets the line style for all four sides of an element's border.
+     * The border-style CSS shorthand property sets the line style for all four sides of an element's border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-style)
      */
     open var borderStyle: String
 
     /**
-     * The border-top shorthand CSS property sets all the properties of an element's top border.
+     * The border-top CSS shorthand property sets all the properties of an element's top border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top)
      */
@@ -718,7 +718,7 @@ private constructor() :
     open var borderTopWidth: String
 
     /**
-     * The border-width shorthand CSS property sets the width of an element's border.
+     * The border-width CSS shorthand property sets the width of an element's border.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-width)
      */
@@ -851,35 +851,35 @@ private constructor() :
     open var columnFill: String
 
     /**
-     * The column-gap CSS property sets the size of the gap (gutter) between an element's columns.
+     * The column-gap CSS property sets the size of the gap (gutter) between an element's columns in multi-column, flexible box, and grid layouts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-gap)
      */
     open var columnGap: String
 
     /**
-     * The column-rule shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout.
+     * The column-rule CSS shorthand property sets the width, style, and color of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule)
      */
     open var columnRule: String
 
     /**
-     * The column-rule-color CSS property sets the color of the line drawn between columns in a multi-column layout.
+     * The column-rule-color CSS property defines the colors of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-color)
      */
     open var columnRuleColor: String
 
     /**
-     * The column-rule-style CSS property sets the style of the line drawn between columns in a multi-column layout.
+     * The column-rule-style CSS property defines the line style of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-style)
      */
     open var columnRuleStyle: String
 
     /**
-     * The column-rule-width CSS property sets the width of the line drawn between columns in a multi-column layout.
+     * The column-rule-width CSS property defines the widths of the lines drawn between columns in multi-column grid, flex, and multi-col layouts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-width)
      */
@@ -893,7 +893,7 @@ private constructor() :
     open var columnSpan: String
 
     /**
-     * The column-width CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the column-width value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.
+     * The column-width CSS property sets the ideal column width in a multi-column layout.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-width)
      */
@@ -956,14 +956,14 @@ private constructor() :
     open var container: String
 
     /**
-     * The container-name CSS property specifies a list of query container names used by the @container at-rule in a container query. A container query will apply styles to elements based on the size or scroll-state of the nearest ancestor with a containment context. When a containment context is given a name, it can be specifically targeted using the @container at-rule instead of the nearest ancestor with containment.
+     * The container-name CSS property specifies a list of query container names used by the @container at-rule in a container query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container-name)
      */
     open var containerName: String
 
     /**
-     * An element can be established as a query container using the container-type CSS property. container-type is used to define the type of container context used in a container query. The available container contexts are:
+     * The container-type CSS property specifies the type of container context used in a container query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container-type)
      */
@@ -991,7 +991,7 @@ private constructor() :
     open var counterIncrement: String
 
     /**
-     * The counter-reset CSS property creates named CSS counters and initializes them to a specific value. It supports creating counters that count up from one to the number of elements, as well as those that count down from the number of elements to one.
+     * The counter-reset CSS property creates named CSS counters and initializes their values. It can create both regular and reversed counters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/counter-reset)
      */
@@ -1234,7 +1234,7 @@ private constructor() :
     open var fontSize: String
 
     /**
-     * The font-size-adjust CSS property provides a way to modify the size of lowercase letters relative to the size of uppercase letters, which defines the overall font-size. This property is useful for situations where font fallback can occur.
+     * The font-size-adjust CSS property adjusts the size of a font to match a chosen font metric, such as the height of lowercase letters, to a specified proportion of the font-size. This property is intended for adjusting fallback fonts to have similar metrics as the first-choice font.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-size-adjust)
      */
@@ -1255,7 +1255,7 @@ private constructor() :
     open var fontStyle: String
 
     /**
-     * The font-synthesis shorthand CSS property lets you specify whether or not the browser may synthesize the bold, italic, small-caps, and/or subscript and superscript typefaces when they are missing in the specified font-family.
+     * The font-synthesis CSS shorthand property lets you specify whether or not the browser may synthesize the bold, italic, small-caps, and/or subscript and superscript typefaces when they are missing in the specified font-family.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-synthesis)
      */
@@ -1367,14 +1367,14 @@ private constructor() :
     open var forcedColorAdjust: String
 
     /**
-     * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns. This property applies to multi-column, flex, and grid containers.
+     * The **`gap`** CSS shorthand property sets the gaps (also called gutters) between rows and columns on multi-column, flex, and grid containers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/gap)
      */
     open var gap: String
 
     /**
-     * The **`grid`** CSS property is a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.
+     * The **`grid`** CSS shorthand property sets all of the explicit and implicit grid properties in a single declaration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid)
      */
@@ -1451,7 +1451,7 @@ private constructor() :
     open var gridRowStart: String
 
     /**
-     * The grid-template CSS property is a shorthand property for defining grid columns, grid rows, and grid areas.
+     * The grid-template CSS shorthand property specifies the grid columns, grid rows, and grid areas.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/grid-template)
      */
@@ -1500,7 +1500,7 @@ private constructor() :
     open var hyphenateLimitChars: String
 
     /**
-     * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+     * The **`hyphens`** CSS property specifies how words should be hyphenated when text wraps across multiple lines.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphens)
      */
@@ -1528,14 +1528,14 @@ private constructor() :
     open var inlineSize: String
 
     /**
-     * The **`inset`** CSS property is a shorthand that corresponds to the top, right, bottom, and/or left properties. It has the same multi-value syntax of the margin shorthand.
+     * The **`inset`** CSS shorthand property corresponds to the top, right, bottom, and/or left properties. It has the same multi-value syntax of the margin shorthand.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset)
      */
     open var inset: String
 
     /**
-     * The inset-block CSS property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the top and bottom, or right and left properties depending on the values defined for writing-mode, direction, and text-orientation.
+     * The inset-block CSS shorthand property defines the logical block start and end offsets of an element, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the top and bottom, or right and left properties depending on the values defined for writing-mode, direction, and text-orientation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-block)
      */
@@ -1556,7 +1556,7 @@ private constructor() :
     open var insetBlockStart: String
 
     /**
-     * The inset-inline CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the top and bottom, or right and left properties depending on the values defined for writing-mode, direction, and text-orientation.
+     * The inset-inline CSS shorthand property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the top and bottom, or right and left properties depending on the values defined for writing-mode, direction, and text-orientation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-inline)
      */
@@ -1927,7 +1927,7 @@ private constructor() :
     open var minWidth: String
 
     /**
-     * The mix-blend-mode CSS property sets how an element's content should blend with the content of the element's parent and the element's background.
+     * The mix-blend-mode CSS property sets how an element's content should blend with its backdrop — the content rendered behind the element within the same stacking context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mix-blend-mode)
      */
@@ -2011,7 +2011,7 @@ private constructor() :
     open var orphans: String
 
     /**
-     * The **`outline`** CSS shorthand property sets most of the outline properties in a single declaration.
+     * The **`outline`** CSS shorthand property sets the style, color, and width of an element's outline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline)
      */
@@ -2102,7 +2102,7 @@ private constructor() :
     open var overflowY: String
 
     /**
-     * The overscroll-behavior CSS property sets what a browser does when reaching the boundary of a scrolling area.
+     * The overscroll-behavior CSS property controls what happens when scrolling reaches the edge of a scroll container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overscroll-behavior)
      */
@@ -2249,7 +2249,7 @@ private constructor() :
     open var placeContent: String
 
     /**
-     * The CSS place-items shorthand property aligns items along both the block and inline directions at once. It sets the values of the align-items and justify-items properties. If the second value is not set, the first value is also used for it.
+     * The place-items CSS shorthand property aligns items along both block and inline directions at the same time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/place-items)
      */
@@ -2277,7 +2277,7 @@ private constructor() :
     open var position: String
 
     /**
-     * The position-anchor CSS property specifies the anchor name of the anchor element (i.e., an element that has an anchor name set on it via the anchor-name property) a positioned element is associated with.
+     * The position-anchor CSS property specifies the default anchor element for a positioned element. This default is used by position-area and position-try, and by anchor functions (anchor() and anchor-size()) when no <anchor-name> argument is provided to those functions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-anchor)
      */
@@ -2291,7 +2291,7 @@ private constructor() :
     open var positionArea: String
 
     /**
-     * The position-try CSS property is a shorthand that corresponds to the position-try-order and position-try-fallbacks properties.
+     * The position-try CSS shorthand property corresponds to the position-try-order and position-try-fallbacks properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try)
      */
@@ -2305,7 +2305,7 @@ private constructor() :
     open var positionTryFallbacks: String
 
     /**
-     * The position-try-order CSS property allows you to specify various fallback options that result in an available position-try fallback being used to set an anchor-positioned element's position, instead of its initial position settings.
+     * The position-try-order CSS property allows you to prioritize the position-try-fallbacks option applied to an anchor-positioned element when it first renders, based on which option creates the most space around the element in the given direction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try-order)
      */
@@ -2361,7 +2361,7 @@ private constructor() :
     open var rotate: String
 
     /**
-     * The row-gap CSS property sets the size of the gap (gutter) between an element's rows.
+     * The row-gap CSS property sets the size of the gap (gutter) between an element's rows in multi-column, flexible box, and grid layouts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-gap)
      */
@@ -2382,7 +2382,7 @@ private constructor() :
     open var rubyOverhang: String
 
     /**
-     * The ruby-position CSS property defines the position of a ruby element relative to its base element. It can be positioned over the element (over), under it (under), or between the characters on their right side (inter-character).
+     * The ruby-position CSS property defines the position of a ruby element relative to its base element. It can be positioned over the element (over), under it (under), or to the right (inter-character).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ruby-position)
      */
@@ -2417,14 +2417,14 @@ private constructor() :
     open var scrollBehavior: String
 
     /**
-     * The scroll-margin shorthand property sets all of the scroll margins of an element at once, assigning values much like the margin property does for margins of an element.
+     * The scroll-margin CSS shorthand property sets all of the scroll margins of an element at once, assigning values much like the margin property does for margins of an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin)
      */
     open var scrollMargin: String
 
     /**
-     * The scroll-margin-block shorthand property sets the scroll margins of an element in the block dimension.
+     * The scroll-margin-block CSS shorthand property sets the scroll margins of an element in the block dimension.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-block)
      */
@@ -2452,7 +2452,7 @@ private constructor() :
     open var scrollMarginBottom: String
 
     /**
-     * The scroll-margin-inline shorthand property sets the scroll margins of an element in the inline dimension.
+     * The scroll-margin-inline CSS shorthand property sets the scroll margins of an element in the inline dimension.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-inline)
      */
@@ -2494,14 +2494,14 @@ private constructor() :
     open var scrollMarginTop: String
 
     /**
-     * The scroll-padding shorthand property sets scroll padding on all sides of an element at once. It specifies offsets that define the optimal viewing region of a scrollport within a scroll container.
+     * The scroll-padding CSS shorthand property sets scroll padding on all sides of an element at once. It specifies offsets that define the optimal viewing region of a scrollport within a scroll container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding)
      */
     open var scrollPadding: String
 
     /**
-     * The scroll-padding-block shorthand property sets the scroll padding of an element in the block dimension.
+     * The scroll-padding-block CSS shorthand property sets the scroll padding of an element in the block dimension.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-block)
      */
@@ -2529,7 +2529,7 @@ private constructor() :
     open var scrollPaddingBottom: String
 
     /**
-     * The scroll-padding-inline shorthand property sets the scroll padding of an element in the inline dimension.
+     * The scroll-padding-inline CSS shorthand property sets the scroll padding of an element in the inline dimension.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-inline)
      */
@@ -2571,7 +2571,7 @@ private constructor() :
     open var scrollPaddingTop: String
 
     /**
-     * The scroll-snap-align property specifies the box's snap position as an alignment of its snap area (as the alignment subject) within its snap container's snap port (as the alignment container).
+     * The scroll-snap-align CSS property specifies the box's snap position as an alignment of its snap area.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-snap-align)
      */
@@ -2606,7 +2606,7 @@ private constructor() :
     open var scrollTimelineAxis: String
 
     /**
-     * The scroll-timeline-name CSS property is used to define the name of a named scroll progress timeline, which is progressed through by scrolling a scrollable element (scroller) between top and bottom (or left and right). scroll-timeline-name is set on the scroller that will provide the timeline.
+     * The scroll-timeline-name CSS property is used to define the name of a named scroll progress timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline-name)
      */
@@ -2774,7 +2774,7 @@ private constructor() :
     open var textAutospace: String
 
     /**
-     * The text-box CSS property is a shorthand that corresponds to the text-box-trim and text-box-edge properties, which together specify the amount of space to trim from the block-start edge and block-end edge of a text element's block container.
+     * The text-box CSS shorthand property corresponds to the text-box-trim and text-box-edge properties, which together specify the amount of space to trim from the block-start edge and block-end edge of a text element's block container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-box)
      */
@@ -2802,7 +2802,7 @@ private constructor() :
     open var textCombineUpright: String
 
     /**
-     * The text-decoration shorthand CSS property sets the appearance of decorative lines on text. It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style, and the newer text-decoration-thickness property.
+     * The text-decoration CSS shorthand property sets the appearance of decorative lines on text. It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style, and the newer text-decoration-thickness property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration)
      */
@@ -2851,7 +2851,7 @@ private constructor() :
     open var textDecorationThickness: String
 
     /**
-     * The text-emphasis CSS property applies emphasis marks to text (except spaces and control characters). It is a shorthand for text-emphasis-style and text-emphasis-color.
+     * The text-emphasis CSS shorthand property applies emphasis marks to text (except spaces and control characters).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-emphasis)
      */
@@ -2900,7 +2900,7 @@ private constructor() :
     open var textOrientation: String
 
     /**
-     * The text-overflow CSS property sets how hidden overflow content is signaled to users. It can be clipped, display an ellipsis (…), or display a custom string.
+     * The text-overflow CSS property sets how hidden overflow content is signaled to users.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-overflow)
      */
@@ -2949,14 +2949,14 @@ private constructor() :
     open var textWrap: String
 
     /**
-     * The text-wrap-mode CSS property controls whether the text inside an element is wrapped. The different values provide alternate ways of wrapping the content of a block element. It can also be set, and reset, using the text-wrap shorthand or the white-space shorthand.
+     * The text-wrap-mode CSS property controls whether the text inside an element is wrapped.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap-mode)
      */
     open var textWrapMode: String
 
     /**
-     * The text-wrap-style CSS property controls how text inside an element is wrapped. The different values provide alternate ways of wrapping the content of a block element. It can also be set, and reset, using the text-wrap shorthand.
+     * The text-wrap-style CSS property controls how text inside an element is wrapped, providing alternate ways of determining where to create line breaks in order to fit the content within a block element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap-style)
      */
@@ -3012,7 +3012,7 @@ private constructor() :
     open var transformStyle: String
 
     /**
-     * The **`transition`** CSS property is a shorthand property for transition-property, transition-duration, transition-timing-function, transition-delay, and transition-behavior.
+     * The **`transition`** CSS shorthand property for transition-property, transition-duration, transition-timing-function, transition-delay, and transition-behavior.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition)
      */
@@ -3117,7 +3117,7 @@ private constructor() :
     open var viewTimelineName: String
 
     /**
-     * The view-transition-class CSS property provides the selected elements with an identifying class (a <custom-ident>), providing an additional method of styling the view transitions for those elements.
+     * The view-transition-class CSS property provides the selected elements with one or more identifying classes (<custom-ident>s), providing an additional method of styling the view transitions for those elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-transition-class)
      */
@@ -3150,7 +3150,7 @@ private constructor() :
     open var webkitTextFillColor: String
 
     /**
-     * The -webkit-text-stroke CSS property specifies the width and color of strokes for text characters. This is a shorthand property for the longhand properties -webkit-text-stroke-width and -webkit-text-stroke-color.
+     * The -webkit-text-stroke CSS shorthand property specifies the width and color of strokes for text characters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-stroke)
      */
@@ -3171,7 +3171,7 @@ private constructor() :
     open var webkitTextStrokeWidth: String
 
     /**
-     * The white-space CSS property sets how white space inside an element is handled.
+     * The white-space CSS shorthand property sets how white space inside an element is handled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/white-space)
      */
@@ -3199,7 +3199,7 @@ private constructor() :
     open var width: String
 
     /**
-     * The will-change CSS property hints to browsers how an element is expected to change. Browsers may set up optimizations before an element is actually changed. These kinds of optimizations can increase the responsiveness of a page by doing potentially expensive work before they are actually required.
+     * The will-change CSS property enables optimizing animations by providing a rendering hint to a browser about how an element is expected to change.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/will-change)
      */
@@ -3220,7 +3220,7 @@ private constructor() :
     open var wordSpacing: String
 
     /**
-     * The writing-mode CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (html element for HTML documents).
+     * The writing-mode CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which text flows.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/writing-mode)
      */

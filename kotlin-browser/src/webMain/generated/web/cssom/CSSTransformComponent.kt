@@ -5,14 +5,14 @@ package web.cssom
 import web.geometry.DOMMatrix
 
 /**
- * The **`CSSTransformComponent`** interface of the CSS Typed Object Model API is part of the CSSTransformValue interface.
+ * The **`CSSTransformComponent`** interface of the CSS Typed Object Model API is the base interface for objects that represent individual transform functions, such as rotate() and scale().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent)
  */
 open external class CSSTransformComponent
 private constructor() {
     /**
-     * The **`is2D`** read-only property of the CSSTransformComponent interface indicates where the transform is 2D or 3D.
+     * The **`is2D`** property of the CSSTransformComponent interface represents whether the transform is 2D or 3D.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent/is2D)
      */

@@ -27,7 +27,7 @@ protected constructor() :
     open val form: HTMLFormElement?
 
     /**
-     * The **`HTMLLabelElement.htmlFor`** property reflects the value of the for content property. That means that this script-accessible property is used to set and read the value of the content property for, which is the ID of the label's associated control element.
+     * The **`htmlFor`** property of the HTMLLabelElement interface is the ID of the associated label's control element. It reflects the value of, and is used to set and get the for content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/htmlFor)
      */

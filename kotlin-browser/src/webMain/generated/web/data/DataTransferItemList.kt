@@ -19,14 +19,14 @@ private constructor() :
     ArrayLike<DataTransferItem>,
     JsIterable.Mixin<DataTransferItem> {
     /**
-     * The read-only **`length`** property of the DataTransferItemList interface returns the number of items currently in the drag item list.
+     * The **`length`** read-only property of the DataTransferItemList interface returns the number of items currently in the drag item list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/length)
      */
     override val length: Int
 
     /**
-     * The **`DataTransferItemList.add()`** method creates a new DataTransferItem using the specified data and adds it to the drag data list. The item may be a File or a string of a given type. If the item is successfully added to the list, the newly-created DataTransferItem object is returned.
+     * The **`add()`** method of the DataTransferItemList interface creates a new DataTransferItem using the specified data and adds it to the drag data list. The item may be a File or a string of a given type. If the item is successfully added to the list, the newly-created DataTransferItem object is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
@@ -40,14 +40,14 @@ private constructor() :
     open fun add(data: File): DataTransferItem?
 
     /**
-     * The DataTransferItemList method **`clear()`** removes all DataTransferItem objects from the drag data items list, leaving the list empty.
+     * The **`clear()`** method of the DataTransferItemList interface removes all DataTransferItem objects from the drag data items list, leaving the list empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/clear)
      */
     open fun clear()
 
     /**
-     * The **`DataTransferItemList.remove()`** method removes the DataTransferItem at the specified index from the list. If the index is less than zero or greater than one less than the length of the list, the list will not be changed.
+     * The **`remove()`** method of the DataTransferItemList interface removes the DataTransferItem at the specified index from the list. If the index is less than zero or greater than one less than the length of the list, the list will not be changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */

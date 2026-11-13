@@ -40,7 +40,7 @@ private constructor() {
     open val startTime: DOMHighResTimeStamp
 
     /**
-     * The **`toJSON()`** method is a serializer; it returns a JSON representation of the PerformanceEntry object.
+     * The **`toJSON()`** method of the PerformanceEntry interface returns a JSON-serializable plain object representing the PerformanceEntry object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/toJSON)
      */

@@ -52,6 +52,8 @@ open external class WebTransport(
     open val datagrams: WebTransportDatagramDuplexStream
 
     /**
+     * The **`draining`** read-only property of the WebTransport interface returns a Promise that fulfills when the server indicates that it would like the transport session to start draining, prior to closing it.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/draining)
      */
     open val draining: Promise<Void>
@@ -71,6 +73,8 @@ open external class WebTransport(
     open val incomingUnidirectionalStreams: ReadableStream<*>
 
     /**
+     * The **`protocol`** read-only property of the WebTransport interface returns the application-specific protocol selected by the server.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/protocol)
      */
     open val protocol: String
@@ -108,6 +112,8 @@ open external class WebTransport(
     open fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
 
     /**
+     * The **`createSendGroup()`** method of the WebTransport interface creates and returns a WebTransportSendGroup.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createSendGroup)
      */
     @JsThrows(InvalidStateError::class)
@@ -127,11 +133,14 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/getStats)
      */
+    @JsThrows(InvalidStateError::class)
     @JsName("getStats")
     open fun getStatsAsync(): Promise<WebTransportConnectionStats>
 
     companion object {
         /**
+         * The **`supportsReliableOnly`** static read-only property of the WebTransport interface returns a boolean value that indicates whether the browser supports WebTransport sessions over exclusively reliable transports, such as HTTP/2. Such sessions can't send unreliable datagrams, which need HTTP/3 over QUIC.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/supportsReliableOnly_static)
          */
         val supportsReliableOnly: Boolean
@@ -187,6 +196,7 @@ suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransport
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/getStats)
  */
+@JsThrows(InvalidStateError::class)
 suspend inline fun WebTransport.getStats(): WebTransportConnectionStats {
     return getStatsAsync().await()
 }

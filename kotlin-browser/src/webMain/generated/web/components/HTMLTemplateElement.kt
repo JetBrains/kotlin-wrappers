@@ -56,6 +56,8 @@ protected constructor() :
     open var shadowRootSerializable: Boolean
 
     /**
+     * The **`shadowRootSlotAssignment`** property of the HTMLTemplateElement interface indicates whether the element has been configured to use named or unnamed slot assignment.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSlotAssignment)
      */
     open var shadowRootSlotAssignment: String

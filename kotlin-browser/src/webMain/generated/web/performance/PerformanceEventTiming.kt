@@ -50,7 +50,7 @@ private constructor() :
     open val target: Node?
 
     /**
-     * The **`toJSON()`** method of the PerformanceEventTiming interface is a serializer; it returns a JSON representation of the PerformanceEventTiming object.
+     * The **`toJSON()`** method of the PerformanceEventTiming interface returns a JSON-serializable plain object representing the PerformanceEventTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/toJSON)
      */

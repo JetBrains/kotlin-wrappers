@@ -25,7 +25,7 @@ open external class Notification(
     options: NotificationOptions = definedExternally,
 ) : EventTarget {
     /**
-     * The **`actions`** read-only property of the Notification interface provides the actions available for users to choose from for interacting with the notification.
+     * The **`actions`** read-only property of the Notification interface provides the actions available for users to select when interacting with the notification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/actions)
      */
@@ -53,7 +53,7 @@ open external class Notification(
     open val dir: NotificationDirection
 
     /**
-     * The **`icon`** read-only property of the Notification interface contains the URL of an icon to be displayed as part of the notification, as specified in the icon option of the Notification() constructor.
+     * The **`icon`** read-only property of the Notification interface returns a string containing the URL of a small image that reinforces the notification — for example, an app logo or a photo of the message sender. It is displayed alongside the notification title and body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/icon)
      */
@@ -123,7 +123,7 @@ open external class Notification(
 
     companion object {
         /**
-         * The **`maxActions`** read-only static property of the Notification interface returns the maximum number of actions supported by the device and the User Agent. Effectively, this is the maximum number of elements in Notification.actions array which will be respected by the User Agent.
+         * The **`maxActions`** read-only static property of the Notification interface returns the maximum number of actions that can be displayed in a notification.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/maxActions_static)
          */

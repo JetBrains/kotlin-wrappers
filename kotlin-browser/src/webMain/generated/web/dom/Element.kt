@@ -74,7 +74,7 @@ private constructor() :
     open val classList: DOMTokenList<ClassName>
 
     /**
-     * The **`className`** property of the Element interface gets and sets the value of the class attribute of the specified element.
+     * The **`className`** property of the Element interface reflects the element's class content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/className)
      */
@@ -123,7 +123,7 @@ private constructor() :
     open val customElementRegistry: CustomElementRegistry?
 
     /**
-     * The **`id`** property of the Element interface represents the element's identifier, reflecting the id global attribute.
+     * The **`id`** property of the Element interface reflects the element's id content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)
      */
@@ -218,7 +218,7 @@ private constructor() :
     open val shadowRoot: ShadowRoot?
 
     /**
-     * The **`slot`** property of the Element interface returns the name of the shadow DOM slot the element is inserted in.
+     * The **`slot`** property of the Element interface returns the name of the shadow DOM slot the element is inserted in. It reflects the element's slot content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/slot)
      */
@@ -232,7 +232,7 @@ private constructor() :
     open val tagName: String
 
     /**
-     * The **`Element.attachShadow()`** method attaches a shadow DOM tree to the specified element and returns a reference to its ShadowRoot.
+     * The **`attachShadow()`** method of the Element interface attaches a shadow DOM tree to the specified element and returns a reference to its ShadowRoot.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attachShadow)
      */
@@ -240,7 +240,7 @@ private constructor() :
     open fun attachShadow(init: ShadowRootInit): ShadowRoot
 
     /**
-     * The **`checkVisibility()`** method of the Element interface checks whether the element is visible.
+     * The **`checkVisibility()`** method of the Element interface checks whether the element is potentially visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/checkVisibility)
      */
@@ -262,14 +262,14 @@ private constructor() :
     open fun computedStyleMap(): StylePropertyMapReadOnly
 
     /**
-     * The **`getAttribute()`** method of the Element interface returns the value of a specified attribute on the element.
+     * The **`getAttribute()`** method of the Element interface returns the string value of the specified attribute of the specified element. It returns null if the element doesn't have an attribute with the given name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttribute)
      */
     open fun getAttribute(qualifiedName: String): String?
 
     /**
-     * The **`getAttributeNS()`** method of the Element interface returns the string value of the attribute with the specified namespace and name. If the named attribute does not exist, the value returned will either be null or "" (the empty string); see Notes for details.
+     * The **`getAttributeNS()`** method of the Element interface returns the string value of the specified namespaced attribute of the specified element. It returns null if the element doesn't have an attribute with the given name in the namespace.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNS)
      */
@@ -286,14 +286,14 @@ private constructor() :
     open fun getAttributeNames(): ReadonlyArray<JsString>
 
     /**
-     * Returns the specified attribute of the specified element, as an Attr node.
+     * The **`getAttributeNode()`** method of the Element interface returns the specified attribute of the specified element, as an Attr node. It returns null if the element doesn't have an attribute with the given name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode)
      */
     open fun getAttributeNode(qualifiedName: String): Attr?
 
     /**
-     * The **`getAttributeNodeNS()`** method of the Element interface returns the namespaced Attr node of an element.
+     * The **`getAttributeNodeNS()`** method of the Element interface returns the specified namespaced attribute of the specified element, as an Attr node. It returns null if the element doesn't have an attribute with the given name in the namespace.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS)
      */
@@ -472,7 +472,7 @@ private constructor() :
     open fun removeAttributeNode(attr: Attr): Attr
 
     /**
-     * The **`Element.requestFullscreen()`** method issues an asynchronous request to make the element be displayed in fullscreen mode.
+     * The **`requestFullscreen()`** method of the Element interface issues an asynchronous request to display the element in fullscreen mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
      */
@@ -489,7 +489,7 @@ private constructor() :
     open fun requestPointerLockAsync(options: PointerLockOptions = definedExternally): Promise<Void>
 
     /**
-     * The **`scroll()`** method of the Element interface scrolls the element to a particular set of coordinates inside a given element.
+     * The **`scroll()`** method of the Element interface scrolls to a particular set of coordinates inside a given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll)
      */
@@ -511,7 +511,7 @@ private constructor() :
     ): Promise<Void>?
 
     /**
-     * The Element interface's **`scrollIntoView()`** method scrolls the element's ancestor containers such that the element on which scrollIntoView() is called is visible to the user.
+     * The **`scrollIntoView()`** method of the Element interface scrolls the element's ancestor containers such that the element on which scrollIntoView() is called is visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView)
      */
@@ -625,7 +625,7 @@ private constructor() :
 }
 
 /**
- * The **`Element.requestFullscreen()`** method issues an asynchronous request to make the element be displayed in fullscreen mode.
+ * The **`requestFullscreen()`** method of the Element interface issues an asynchronous request to display the element in fullscreen mode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
@@ -635,7 +635,7 @@ suspend inline fun Element.requestFullscreen() {
 }
 
 /**
- * The **`Element.requestFullscreen()`** method issues an asynchronous request to make the element be displayed in fullscreen mode.
+ * The **`requestFullscreen()`** method of the Element interface issues an asynchronous request to display the element in fullscreen mode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */

@@ -15,6 +15,8 @@ open external class TransitionEvent(
     init: TransitionEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`animation`** read-only property of the TransitionEvent interface represents the animation associated with the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/animation)
      */
     open val animation: CSSTransition?

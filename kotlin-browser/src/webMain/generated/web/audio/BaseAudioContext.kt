@@ -33,21 +33,21 @@ private constructor() :
     open val audioWorklet: AudioWorklet
 
     /**
-     * The **`currentTime`** read-only property of the BaseAudioContext interface returns a double representing an ever-increasing hardware timestamp in seconds that can be used for scheduling audio playback, visualizing timelines, etc. It starts at 0.
+     * The **`currentTime`** read-only property of the BaseAudioContext interface returns a double representing the elapsed time in the context's audio timeline in seconds that can be used for scheduling audio playback, visualizing timelines, etc. It starts at 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/currentTime)
      */
     open val currentTime: Double
 
     /**
-     * The **`destination`** property of the BaseAudioContext interface returns an AudioDestinationNode representing the final destination of all audio in the context. It often represents an actual audio-rendering device such as your device's speakers.
+     * The **`destination`** read-only property of the BaseAudioContext interface returns an AudioDestinationNode representing the final destination of all audio in the context. It often represents an actual audio-rendering device such as your device's speakers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/destination)
      */
     open val destination: AudioDestinationNode
 
     /**
-     * The **`listener`** property of the BaseAudioContext interface returns an AudioListener object that can then be used for implementing 3D audio spatialization.
+     * The **`listener`** read-only property of the BaseAudioContext interface returns an AudioListener object that can then be used for implementing 3D audio spatialization.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/listener)
      */
@@ -59,7 +59,7 @@ private constructor() :
     open var onstatechange: EventHandler<Event, BaseAudioContext, BaseAudioContext>?
 
     /**
-     * The **`sampleRate`** property of the BaseAudioContext interface returns a floating point number representing the sample rate, in samples per second, used by all nodes in this audio context. This limitation means that sample-rate converters are not supported.
+     * The **`sampleRate`** read-only property of the BaseAudioContext interface returns a floating point number representing the sample rate, in samples per second, used by all nodes in this audio context. This limitation means that sample-rate converters are not supported.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate)
      */

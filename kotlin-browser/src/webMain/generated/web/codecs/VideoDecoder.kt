@@ -36,7 +36,7 @@ open external class VideoDecoder(
     open var ondequeue: EventHandler<Event, VideoDecoder, VideoDecoder>?
 
     /**
-     * The **`state`** property of the VideoDecoder interface returns the current state of the underlying codec.
+     * The **`state`** read-only property of the VideoDecoder interface returns the current state of the underlying codec.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/state)
      */

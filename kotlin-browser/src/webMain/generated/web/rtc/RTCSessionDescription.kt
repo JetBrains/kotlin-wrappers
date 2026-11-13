@@ -25,7 +25,7 @@ open external class RTCSessionDescription(
     open val type: RTCSdpType
 
     /**
-     * The **`RTCSessionDescription.toJSON()`** method generates a JSON description of the object. Both properties, type and sdp, are contained in the generated JSON.
+     * The **`toJSON()`** method of the RTCSessionDescription interface returns a JSON-serializable plain object representing the RTCSessionDescription object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON)
      */

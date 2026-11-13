@@ -16,7 +16,7 @@ open external class AnimationPlaybackEvent(
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`currentTime`** read-only property of the AnimationPlaybackEvent interface represents the current time of the animation that generated the event at the moment the event is queued. This will be unresolved if the animation was idle at the time the event was generated.
+     * The **`currentTime`** read-only property of the AnimationPlaybackEvent interface represents the current time of the animation that generated the event at the moment the event is queued. For browser-generated cancel events, the value is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/currentTime)
      */

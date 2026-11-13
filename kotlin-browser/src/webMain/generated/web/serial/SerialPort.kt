@@ -56,7 +56,7 @@ private constructor() :
     open val writable: WritableStream<*>?
 
     /**
-     * The **`SerialPort.close()`** method of the SerialPort interface returns a Promise that resolves when the port closes.
+     * The **`close()`** method of the SerialPort interface returns a Promise that resolves when the port closes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/close)
      */
@@ -64,7 +64,7 @@ private constructor() :
     open fun closeAsync(): Promise<Void>
 
     /**
-     * The **`SerialPort.forget()`** method of the SerialPort interface returns a Promise that resolves when access to the serial port is revoked.
+     * The **`forget()`** method of the SerialPort interface returns a Promise that resolves when access to the serial port is revoked.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/forget)
      */
@@ -79,7 +79,7 @@ private constructor() :
     open fun getInfo(): SerialPortInfo
 
     /**
-     * The **`SerialPort.getSignals()`** method of the SerialPort interface returns a Promise that resolves with an object containing the current state of the port's control signals.
+     * The **`getSignals()`** method of the SerialPort interface returns a Promise that resolves with an object containing the current state of the port's control signals.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals)
      */
@@ -110,7 +110,7 @@ private constructor() :
 }
 
 /**
- * The **`SerialPort.close()`** method of the SerialPort interface returns a Promise that resolves when the port closes.
+ * The **`close()`** method of the SerialPort interface returns a Promise that resolves when the port closes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/close)
  */
@@ -119,7 +119,7 @@ suspend inline fun SerialPort.close() {
 }
 
 /**
- * The **`SerialPort.forget()`** method of the SerialPort interface returns a Promise that resolves when access to the serial port is revoked.
+ * The **`forget()`** method of the SerialPort interface returns a Promise that resolves when access to the serial port is revoked.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/forget)
  */
@@ -128,7 +128,7 @@ suspend inline fun SerialPort.forget() {
 }
 
 /**
- * The **`SerialPort.getSignals()`** method of the SerialPort interface returns a Promise that resolves with an object containing the current state of the port's control signals.
+ * The **`getSignals()`** method of the SerialPort interface returns a Promise that resolves with an object containing the current state of the port's control signals.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals)
  */

@@ -31,28 +31,28 @@ private constructor() {
     open val media: MediaList
 
     /**
-     * The **`ownerNode`** property of the StyleSheet interface returns the node that associates this style sheet with the document.
+     * The **`ownerNode`** read-only property of the StyleSheet interface returns the node that associates this style sheet with the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/ownerNode)
      */
     open val ownerNode: JsAny /* Element | ProcessingInstruction */?
 
     /**
-     * The **`parentStyleSheet`** property of the StyleSheet interface returns the style sheet, if any, that is including the given style sheet.
+     * The **`parentStyleSheet`** read-only property of the StyleSheet interface returns the style sheet, if any, that is including the given style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/parentStyleSheet)
      */
     open val parentStyleSheet: CSSStyleSheet?
 
     /**
-     * The **`title`** property of the StyleSheet interface returns the advisory title of the current style sheet.
+     * The **`title`** read-only property of the StyleSheet interface returns the advisory title of the current style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/title)
      */
     open val title: String?
 
     /**
-     * The **`type`** property of the StyleSheet interface specifies the style sheet language for the given style sheet.
+     * The **`type`** read-only property of the StyleSheet interface specifies the style sheet language for the given style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/type)
      */

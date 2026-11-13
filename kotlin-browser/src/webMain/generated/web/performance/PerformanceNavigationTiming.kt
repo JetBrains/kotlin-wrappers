@@ -83,7 +83,7 @@ private constructor() :
     open val unloadEventStart: DOMHighResTimeStamp
 
     /**
-     * The **`toJSON()`** method of the PerformanceNavigationTiming interface is a serializer; it returns a JSON representation of the PerformanceNavigationTiming object.
+     * The **`toJSON()`** method of the PerformanceNavigationTiming interface returns a JSON-serializable plain object representing the PerformanceNavigationTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/toJSON)
      */
