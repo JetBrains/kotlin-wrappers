@@ -17,6 +17,10 @@ import web.observable.Observable
 open external class EventTarget :
     EventTargetLike {
 
+    override fun dispatchEvent(
+        event: Event,
+    ): Boolean
+
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/when)
      */

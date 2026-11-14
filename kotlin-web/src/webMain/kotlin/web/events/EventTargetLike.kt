@@ -48,7 +48,7 @@ external interface EventTargetLike {
      */
     fun dispatchEvent(
         event: Event,
-    ): Boolean = definedExternally
+    ): Boolean
 }
 
 // event
