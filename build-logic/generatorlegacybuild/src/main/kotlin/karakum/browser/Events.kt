@@ -337,7 +337,6 @@ private class EventDataMap(
         .findAll(content)
         .flatMap { parseEvents(it.value) }
         .filter { it.name != "orientationchange" }
-        .filter { it.name != "pushsubscriptionchange" }
         .filter { !it.name.startsWith("webkit") }
         .plus(ADDITIONAL_EVENTS)
         .distinct()

@@ -14,4 +14,9 @@ open external class PushSubscriptionChangeEvent(
 ) : ExtendableEvent {
     open val newSubscription: PushSubscription?
     open val oldSubscription: PushSubscription?
+
+    companion object
 }
+
+inline val PushSubscriptionChangeEvent.Companion.PUSHSUBSCRIPTIONCHANGE: EventType<PushSubscriptionChangeEvent>
+    get() = EventType("pushsubscriptionchange")

@@ -165,3 +165,9 @@ inline val <C : ServiceWorkerGlobalScope> C.notificationCloseEvent: EventInstanc
  */
 inline val <C : ServiceWorkerGlobalScope> C.pushEvent: EventInstance<PushEvent, C, C>
     get() = EventInstance(this, "push")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/pushsubscriptionchange_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.pushsubscriptionchangeEvent: EventInstance<PushSubscriptionChangeEvent, C, C>
+    get() = EventInstance(this, "pushsubscriptionchange")
