@@ -2,6 +2,7 @@
 
 package web.dom
 
+import web.html.HTMLCollection
 import web.html.HTMLElement
 
 /**
@@ -24,4 +25,27 @@ open external class DocumentFragment :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
      */
     override var textContent: String
+
+    /* `ParentNode` overrides */
+
+    override val childElementCount: Int
+    override val children: HTMLCollection<*>
+    override val firstElementChild: Element?
+    override val lastElementChild: Element?
+    override fun append(vararg nodes: Node)
+    override fun append(vararg nodes: String)
+    override fun moveBefore(
+        node: Node,
+        child: Node?,
+    )
+
+    override fun prepend(vararg nodes: Node)
+    override fun prepend(vararg nodes: String)
+    override fun <T : Element> querySelector(selectors: TagName<T>): T?
+    override fun querySelector(selectors: String): Element?
+    override fun <T : Element> querySelectorAll(selectors: TagName<T>): NodeList<T>
+    override fun querySelectorAll(selectors: String): NodeList<Element>
+    override fun replaceChildren(vararg nodes: Node)
+    override fun replaceChildren(vararg nodes: String)
+    override fun replaceChildren()
 }

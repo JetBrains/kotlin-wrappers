@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
+import web.window.WindowTarget
 
 /**
  * The **`HTMLAnchorElement`** interface represents hyperlink elements and provides special properties and methods (beyond those of the regular HTMLElement object interface that they inherit from) for manipulating the layout and presentation of such elements. This interface corresponds to <a> element; not to be confused with <link>, which is represented by HTMLLinkElement.
@@ -56,4 +57,24 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
     open var text: String
+
+    /* `HTMLHyperlinkElementUtils` overrides */
+
+    override var href: String
+    override var target: WindowTarget
+
+    /* `HyperlinkElementUtils` overrides */
+
+    override var hash: String
+    override var host: String
+    override var hostname: String
+    override var hreflang: String
+    override val origin: String
+    override var password: String
+    override var pathname: String
+    override var port: String
+    override var protocol: String
+    override var search: String
+    override var type: String
+    override var username: String
 }

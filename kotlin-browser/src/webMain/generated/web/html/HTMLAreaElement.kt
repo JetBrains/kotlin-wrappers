@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
+import web.window.WindowTarget
 
 /**
  * The **`HTMLAreaElement`** interface provides special properties and methods (beyond those of the regular object HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <area> elements.
@@ -70,4 +71,24 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/shape)
      */
     open var shape: String
+
+    /* `HTMLHyperlinkElementUtils` overrides */
+
+    override var href: String
+    override var target: WindowTarget
+
+    /* `HyperlinkElementUtils` overrides */
+
+    override var hash: String
+    override var host: String
+    override var hostname: String
+    override var hreflang: String
+    override val origin: String
+    override var password: String
+    override var pathname: String
+    override var port: String
+    override var protocol: String
+    override var search: String
+    override var type: String
+    override var username: String
 }

@@ -2,6 +2,10 @@
 
 package web.components
 
+import js.array.ReadonlyArray
+import web.animations.Animation
+import web.cssom.CSSStyleSheet
+import web.cssom.StyleSheetList
 import web.dom.*
 import web.events.Event
 import web.events.EventHandler
@@ -104,4 +108,25 @@ private constructor() :
         html: String,
         options: SetHTMLUnsafeOptions = definedExternally,
     )
+
+    /* `DocumentOrShadowRoot` overrides */
+
+    override val activeElement: Element?
+    override var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
+    override val customElementRegistry: CustomElementRegistry?
+    override val fullscreenElement: Element?
+    override val pictureInPictureElement: Element?
+    override val pointerLockElement: Element?
+    override val styleSheets: StyleSheetList
+    override fun elementFromPoint(
+        x: Double,
+        y: Double,
+    ): Element?
+
+    override fun elementsFromPoint(
+        x: Double,
+        y: Double,
+    ): ReadonlyArray<Element>
+
+    override fun getAnimations(): ReadonlyArray<Animation>
 }

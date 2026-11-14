@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.xpath
 
 import js.internal.InternalApi
@@ -18,7 +14,7 @@ external interface XPathEvaluatorBase {
     fun createExpression(
         expression: String,
         resolver: XPathNSResolver? = definedExternally,
-    ): XPathExpression = definedExternally
+    ): XPathExpression
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/evaluate)
@@ -29,5 +25,5 @@ external interface XPathEvaluatorBase {
         resolver: XPathNSResolver? = definedExternally,
         type: Short = definedExternally,
         result: XPathResult? = definedExternally,
-    ): XPathResult = definedExternally
+    ): XPathResult
 }

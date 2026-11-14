@@ -86,4 +86,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
      */
     override var textContent: String
+
+    /* `ChildNode` overrides */
+
+    override fun after(vararg nodes: Node)
+    override fun after(vararg nodes: String)
+    override fun before(vararg nodes: Node)
+    override fun before(vararg nodes: String)
+    override fun remove()
+    override fun replaceWith(vararg nodes: Node)
+    override fun replaceWith(vararg nodes: String)
 }

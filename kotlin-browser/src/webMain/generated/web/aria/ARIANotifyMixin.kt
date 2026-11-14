@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.aria
 
 import js.internal.InternalApi
@@ -17,5 +13,5 @@ external interface ARIANotifyMixin {
     fun ariaNotify(
         announcement: String,
         options: AriaNotificationOptions = definedExternally,
-    ): Unit = definedExternally
+    )
 }

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.html
 
 import js.internal.InternalApi
@@ -20,8 +16,6 @@ external interface HTMLHyperlinkElementUtils :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href)
      */
     var href: String
-        get() = definedExternally
-        set(value) = definedExternally
 
     /**
      * The **`target`** property of the HTMLAnchorElement interface is a string that indicates where to display the linked resource.
@@ -29,6 +23,4 @@ external interface HTMLHyperlinkElementUtils :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/target)
      */
     var target: WindowTarget
-        get() = definedExternally
-        set(value) = definedExternally
 }

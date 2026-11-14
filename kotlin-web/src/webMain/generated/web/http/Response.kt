@@ -2,8 +2,14 @@
 
 package web.http
 
+import js.buffer.ArrayBuffer
+import js.promise.Promise
+import js.typedarrays.Uint8Array
+import web.blob.Blob
 import web.errors.DOMExceptionType.AbortError
 import web.errors.JsThrows
+import web.form.FormData
+import web.streams.ReadableStream
 import web.url.URL
 
 /**
@@ -70,6 +76,18 @@ open external class Response(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/clone)
      */
     open fun clone(): Response
+
+    /* `Body` overrides */
+
+    override val body: ReadableStream<Uint8Array<ArrayBuffer>>?
+    override val bodyUsed: Boolean
+    override fun arrayBufferAsync(): Promise<ArrayBuffer>
+    override fun blobAsync(): Promise<Blob>
+    override fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
+    override fun formDataAsync(): Promise<FormData>
+    override fun jsonAsync(): Promise<*>
+    override fun textAsync(): Promise<JsString>
+    override fun textStream(): ReadableStream<JsString>
 
     companion object {
         /**

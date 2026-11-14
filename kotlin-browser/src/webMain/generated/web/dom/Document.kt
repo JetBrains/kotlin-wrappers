@@ -2,15 +2,21 @@
 
 package web.dom
 
+import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
+import web.animations.Animation
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.aria.ARIANotifyMixin
+import web.aria.AriaNotificationOptions
 import web.clipboard.ClipboardEvent
+import web.components.CustomElementRegistry
 import web.csp.SecurityPolicyViolationEvent
+import web.cssom.CSSStyleSheet
 import web.cssom.ClassName
+import web.cssom.StyleSheetList
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
 import web.errors.DOMExceptionType.*
@@ -20,6 +26,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.experimental.ExperimentalWebApi
 import web.focus.FocusEvent
+import web.fonts.FontFaceSet
 import web.fonts.FontFaceSource
 import web.form.FormDataEvent
 import web.form.SubmitEvent
@@ -46,6 +53,9 @@ import web.viewtransition.ViewTransitionUpdateCallback
 import web.window.Window
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
+import web.xpath.XPathExpression
+import web.xpath.XPathNSResolver
+import web.xpath.XPathResult
 import web.xr.XRSessionEvent
 
 /**
@@ -642,6 +652,76 @@ open external class Document :
      */
     @ExperimentalWebApi
     open val modelContext: ModelContext
+
+    /* `ARIANotifyMixin` overrides */
+
+    override fun ariaNotify(
+        announcement: String,
+        options: AriaNotificationOptions,
+    )
+
+    /* `DocumentOrShadowRoot` overrides */
+
+    override val activeElement: Element?
+    override var adoptedStyleSheets: ReadonlyArray<CSSStyleSheet>
+    override val customElementRegistry: CustomElementRegistry?
+    override val fullscreenElement: Element?
+    override val pictureInPictureElement: Element?
+    override val pointerLockElement: Element?
+    override val styleSheets: StyleSheetList
+    override fun elementFromPoint(
+        x: Double,
+        y: Double,
+    ): Element?
+
+    override fun elementsFromPoint(
+        x: Double,
+        y: Double,
+    ): ReadonlyArray<Element>
+
+    override fun getAnimations(): ReadonlyArray<Animation>
+
+    /* `FontFaceSource` overrides */
+
+    override val fonts: FontFaceSet
+
+    /* `ParentNode` overrides */
+
+    override val childElementCount: Int
+    override val children: HTMLCollection<*>
+    override val firstElementChild: Element?
+    override val lastElementChild: Element?
+    override fun append(vararg nodes: Node)
+    override fun append(vararg nodes: String)
+    override fun moveBefore(
+        node: Node,
+        child: Node?,
+    )
+
+    override fun prepend(vararg nodes: Node)
+    override fun prepend(vararg nodes: String)
+    override fun <T : Element> querySelector(selectors: TagName<T>): T?
+    override fun querySelector(selectors: String): Element?
+    override fun <T : Element> querySelectorAll(selectors: TagName<T>): NodeList<T>
+    override fun querySelectorAll(selectors: String): NodeList<Element>
+    override fun replaceChildren(vararg nodes: Node)
+    override fun replaceChildren(vararg nodes: String)
+    override fun replaceChildren()
+
+    /* `XPathEvaluatorBase` overrides */
+
+    override fun createExpression(
+        expression: String,
+        resolver: XPathNSResolver?,
+    ): XPathExpression
+
+    override fun evaluate(
+        expression: String,
+        contextNode: Node,
+        resolver: XPathNSResolver?,
+        type: Short,
+        result: XPathResult?,
+    ): XPathResult
 
     companion object {
         /**

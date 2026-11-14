@@ -32,4 +32,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType/systemId)
      */
     open val systemId: String
+
+    /* `ChildNode` overrides */
+
+    override fun after(vararg nodes: Node)
+    override fun after(vararg nodes: String)
+    override fun before(vararg nodes: Node)
+    override fun before(vararg nodes: String)
+    override fun remove()
+    override fun replaceWith(vararg nodes: Node)
+    override fun replaceWith(vararg nodes: String)
 }

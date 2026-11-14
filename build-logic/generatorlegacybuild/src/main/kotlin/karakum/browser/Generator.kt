@@ -389,6 +389,15 @@ private val DEFAULT_IMPORTS = Imports(
     "web.xml.XMLDocument",
     "web.xr.XRSessionEvent",
     "web.xr.XRSystem",
+
+    // overrides
+    "web.aria.AriaNotificationOptions",
+    "web.cssom.StylePropertyMap",
+    "web.cssom.StyleSheetList",
+    "web.fonts.FontFaceSet",
+    "web.xpath.XPathExpression",
+    "web.xpath.XPathNSResolver",
+    "web.xpath.XPathResult",
 )
 
 private fun File.parts(): Pair<String, String> {
@@ -490,6 +499,7 @@ fun generateKotlinDeclarations(
         .plus(webXrDeclarations(webXrContent))
         .plus(webglDeclarations(content))
         .withEventInstances(knownEventTypes)
+        .withMixinOverrides()
 
     for ((name, body, pkg) in aliases) {
         pkg!!

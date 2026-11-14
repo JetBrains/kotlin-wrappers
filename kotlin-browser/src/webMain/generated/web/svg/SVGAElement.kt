@@ -57,4 +57,19 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
      */
     open val target: SVGAnimatedString
+
+    /* `HyperlinkElementUtils` overrides */
+
+    override var hash: String
+    override var host: String
+    override var hostname: String
+    override var hreflang: String
+    override val origin: String
+    override var password: String
+    override var pathname: String
+    override var port: String
+    override var protocol: String
+    override var search: String
+    override var type: String
+    override var username: String
 }

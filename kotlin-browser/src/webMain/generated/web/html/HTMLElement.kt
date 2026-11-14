@@ -4,10 +4,10 @@ package web.html
 
 import web.command.CommandEvent
 import web.components.ElementInternals
+import web.cssom.CSSStyleDeclaration
 import web.cssom.ElementCSSInlineStyle
-import web.dom.Element
-import web.dom.HTMLOrSVGOrMathMLElement
-import web.dom.Node
+import web.cssom.StylePropertyMap
+import web.dom.*
 import web.editcontext.EditContext
 import web.errors.DOMExceptionType.InvalidStateError
 import web.errors.DOMExceptionType.NotSupportedError
@@ -234,6 +234,27 @@ protected constructor() :
      */
     @ExperimentalWebApi
     open var editContext: EditContext?
+
+    /* `ElementCSSInlineStyle` overrides */
+
+    override val attributeStyleMap: StylePropertyMap
+    override val style: CSSStyleDeclaration
+
+    /* `ElementContentEditable` overrides */
+
+    override var contentEditable: String
+    override var enterKeyHint: EnterKeyHint
+    override var inputMode: InputMode
+    override val isContentEditable: Boolean
+
+    /* `HTMLOrSVGOrMathMLElement` overrides */
+
+    override var autofocus: Boolean
+    override val dataset: DOMStringMap
+    override var nonce: String
+    override var tabIndex: Int
+    override fun blur()
+    override fun focus(options: FocusOptions)
 }
 
 /**

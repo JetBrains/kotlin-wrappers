@@ -6,10 +6,10 @@ import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
-import web.animations.Animatable
-import web.animations.AnimationEvent
+import web.animations.*
 import web.aria.ARIAMixin
 import web.aria.ARIANotifyMixin
+import web.aria.AriaNotificationOptions
 import web.clipboard.ClipboardEvent
 import web.components.CustomElementRegistry
 import web.components.ShadowRoot
@@ -622,6 +622,70 @@ private constructor() :
 
     @JsName("data-testid")
     open var dataTestId: DataTestId?
+
+    /* `ARIANotifyMixin` overrides */
+
+    override fun ariaNotify(
+        announcement: String,
+        options: AriaNotificationOptions,
+    )
+
+    /* `Animatable` overrides */
+
+    override fun animate(
+        keyframes: ReadonlyArray<Keyframe>?,
+        options: Double,
+    ): Animation
+
+    override fun animate(
+        keyframes: ReadonlyArray<Keyframe>?,
+        options: KeyframeAnimationOptions,
+    ): Animation
+
+    override fun animate(
+        keyframes: PropertyIndexedKeyframes?,
+        options: Double,
+    ): Animation
+
+    override fun animate(
+        keyframes: PropertyIndexedKeyframes?,
+        options: KeyframeAnimationOptions,
+    ): Animation
+
+    override fun getAnimations(options: GetAnimationsOptions): ReadonlyArray<Animation>
+
+    /* `ChildNode` overrides */
+
+    override fun after(vararg nodes: Node)
+    override fun after(vararg nodes: String)
+    override fun before(vararg nodes: Node)
+    override fun before(vararg nodes: String)
+    override fun remove()
+    override fun replaceWith(vararg nodes: Node)
+    override fun replaceWith(vararg nodes: String)
+
+    /* `ParentNode` overrides */
+
+    override val childElementCount: Int
+    override val children: HTMLCollection<*>
+    override val firstElementChild: Element?
+    override val lastElementChild: Element?
+    override fun append(vararg nodes: Node)
+    override fun append(vararg nodes: String)
+    override fun moveBefore(
+        node: Node,
+        child: Node?,
+    )
+
+    override fun prepend(vararg nodes: Node)
+    override fun prepend(vararg nodes: String)
+    override fun <T : Element> querySelector(selectors: TagName<T>): T?
+    override fun querySelector(selectors: String): Element?
+    override fun <T : Element> querySelectorAll(selectors: TagName<T>): NodeList<T>
+    override fun querySelectorAll(selectors: String): NodeList<Element>
+    override fun replaceChildren(vararg nodes: Node)
+    override fun replaceChildren(vararg nodes: String)
+    override fun replaceChildren()
 }
 
 /**

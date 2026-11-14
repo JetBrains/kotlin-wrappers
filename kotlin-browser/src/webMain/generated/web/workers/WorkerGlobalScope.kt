@@ -9,6 +9,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import web.fonts.FontFaceSet
 import web.fonts.FontFaceSource
 import web.origin.OriginSource
 import web.promise.PromiseRejectionEvent
@@ -67,6 +68,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event)
      */
     open var onunhandledrejection: EventHandler<PromiseRejectionEvent, WorkerGlobalScope, WorkerGlobalScope>?
+
+    /* `FontFaceSource` overrides */
+
+    override val fonts: FontFaceSet
 }
 
 /**
