@@ -41,7 +41,6 @@ private val ADDITIONAL_EVENTS = listOf(
 private val EXCLUDED = setOf(
     // deprecated
     "AudioProcessingEvent",
-    "MediaRecorderErrorEvent",
     "TextEvent",
 )
 
