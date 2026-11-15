@@ -1,0 +1,12 @@
+// Automatically generated - do not modify!
+
+package typescript.ast
+
+external interface NamedImports :
+    Node,
+    NamedImportBindings,
+    NamedImportsOrExports {
+    override val kind: SyntaxKind.NamedImports
+    override val parent: ImportClause?
+    val elements: NodeArray<ImportSpecifier>
+}

@@ -63,7 +63,8 @@ val convertKindEnums = createPlugin { node, context, render ->
             .joinToString("\n")
 
         """
-        sealed /* enum */
+        /* enum */
+        @SubclassOptInRequired(js.internal.InternalApi::class)
         external interface ${name}${ifPresent(injectedHeritageClauses) { " : $it" }} {
         $body
 

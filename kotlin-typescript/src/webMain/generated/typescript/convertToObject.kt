@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.JsonSourceFile
+import typescript.sync.Diagnostic
+
 /**
  * Convert the json syntax tree into the json value
  */

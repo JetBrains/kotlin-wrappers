@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.TextChangeRange
+
 /**
  * Called to merge all the changes that occurred across several versions of a script snapshot
  * into a single change.  i.e. if a user keeps making successive edits to a script we will

@@ -2,6 +2,11 @@
 
 package typescript
 
+import typescript.sync.CancellationToken
+import typescript.sync.CompilerOptions
+import typescript.sync.CustomTransformers
+import typescript.sync.WriteFileCallback
+
 external interface InvalidatedProjectBase {
     val kind: InvalidatedProjectKind
     val project: ResolvedConfigFileName

@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.sync.WriteFileCallback
+
 external interface BuilderProgramHost {
     /**
      * If provided this would be used this hash instead of actual file shape text for detecting changes

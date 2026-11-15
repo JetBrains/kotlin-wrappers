@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.Printer
+
 external fun createPrinter(
     printerOptions: PrinterOptions = definedExternally,
     handlers: PrintHandlers = definedExternally,

@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.ast.FileReference
+
 @kotlinx.js.JsPlainObject
 external interface PreProcessedFileInfo {
     var referencedFiles: js.array.ReadonlyArray<FileReference>

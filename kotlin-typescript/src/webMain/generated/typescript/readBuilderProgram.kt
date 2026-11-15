@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+
 external fun readBuilderProgram(
     compilerOptions: CompilerOptions,
     host: ReadBuildProgramHost,

@@ -2,6 +2,14 @@
 
 package typescript
 
+import typescript.ast.ScriptKind
+import typescript.ast.ScriptTarget
+import typescript.ast.SourceFile
+import typescript.sync.CompilerOptions
+import typescript.sync.CreateSourceFileOptions
+import typescript.sync.Path
+import typescript.sync.ResolutionMode
+
 /**
  * The document registry represents a store of SourceFile objects that can be shared between
  * multiple LanguageService instances. A LanguageService instance holds on the SourceFile (AST)

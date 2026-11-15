@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.visitor.EmitHelper
+
 /**
  * Moves matching emit helpers from a source node to a target node.
  */

@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.SyntaxKind
+
 external fun <T : Node> addSyntheticTrailingComment(
     node: T,
     kind: SyntaxKind.SingleLineCommentTrivia,

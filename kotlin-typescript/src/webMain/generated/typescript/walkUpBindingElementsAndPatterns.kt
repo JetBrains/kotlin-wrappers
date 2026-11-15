@@ -4,4 +4,7 @@
 
 package typescript
 
+import typescript.ast.BindingElement
+import typescript.ast.WalkUpBindingElementsAndPatternsResult
+
 external fun walkUpBindingElementsAndPatterns(binding: BindingElement): WalkUpBindingElementsAndPatternsResult

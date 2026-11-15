@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.AccessExpression
+
 /**
  * Sets the constant value to emit for an expression.
  */

@@ -4,6 +4,11 @@
 
 package typescript
 
+import typescript.ast.NodeArray
+import typescript.ast.ParameterDeclaration
+import typescript.ast.visitor.TransformationContext
+import typescript.ast.visitor.Visitor
+
 /**
  * Starts a new lexical environment and visits a parameter list, suspending the lexical
  * environment upon completion.

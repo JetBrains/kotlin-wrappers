@@ -4,6 +4,10 @@
 
 package typescript
 
+import typescript.sync.ModuleResolutionCache
+import typescript.sync.ResolutionMode
+import typescript.sync.ResolvedModuleWithFailedLookupLocations
+
 external fun resolveModuleNameFromCache(
     moduleName: String,
     containingFile: String,

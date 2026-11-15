@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.DiagnosticReporter
+
 external fun <T : BuilderProgram /* default is EmitAndSemanticDiagnosticsBuilderProgram */> createSolutionBuilderWithWatchHost(
     system: System = definedExternally,
     createProgram: CreateProgram<T> = definedExternally,

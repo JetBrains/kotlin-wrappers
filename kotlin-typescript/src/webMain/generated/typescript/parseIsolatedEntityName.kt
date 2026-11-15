@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.EntityName
+import typescript.ast.ScriptTarget
+
 external fun parseIsolatedEntityName(
     text: String,
     languageVersion: ScriptTarget,

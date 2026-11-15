@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.PackageJsonInfoCache
+
 external fun createTypeReferenceDirectiveResolutionCache(
     currentDirectory: String,
     getCanonicalFileName: (s: String) -> String,

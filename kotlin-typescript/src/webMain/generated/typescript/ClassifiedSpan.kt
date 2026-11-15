@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.ast.TextSpan
+
 @kotlinx.js.JsPlainObject
 external interface ClassifiedSpan {
     var textSpan: TextSpan

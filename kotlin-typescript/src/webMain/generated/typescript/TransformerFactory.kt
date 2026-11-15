@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.ast.visitor.TransformationContext
+
 /**
  * A function that is used to initialize and return a `Transformer` callback, which in turn
  * will be used to transform one or more nodes.

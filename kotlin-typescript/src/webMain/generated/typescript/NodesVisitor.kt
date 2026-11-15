@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.NodeArray
+import typescript.ast.visitor.Visitor
+
 /**
  * A function that walks a node array using the given visitor, returning an array whose contents satisfy the test.
  *

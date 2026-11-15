@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.visitor.SourceMapSource
+
 /**
  * Create an external source map source file reference
  */

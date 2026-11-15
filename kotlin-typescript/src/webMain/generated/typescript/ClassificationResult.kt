@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.sync.EndOfLineState
+
 @kotlinx.js.JsPlainObject
 external interface ClassificationResult {
     var finalLexState: EndOfLineState

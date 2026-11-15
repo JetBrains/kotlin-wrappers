@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.Node
+
 external fun <T : Node> moveSyntheticComments(
     node: T,
     original: Node,

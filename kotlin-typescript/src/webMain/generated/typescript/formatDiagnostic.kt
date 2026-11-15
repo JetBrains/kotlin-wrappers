@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.sync.Diagnostic
+import typescript.sync.FormatDiagnosticsHost
+
 external fun formatDiagnostic(
     diagnostic: Diagnostic,
     host: FormatDiagnosticsHost,

@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.ast.SourceFile
+import typescript.sync.*
+
 external interface BuildInvalidedProject<T : BuilderProgram> : InvalidatedProjectBase {
     override val kind: InvalidatedProjectKind.Build
 

@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.sync.Path
+
 @kotlinx.js.JsPlainObject
 external interface InstallPackageOptions {
     var fileName: Path

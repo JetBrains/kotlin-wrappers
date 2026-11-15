@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.JsonSourceFile
+
 /**
  * Parse json text into SyntaxTree and return node and parse errors if any
  * @param fileName

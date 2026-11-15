@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.Node
+
 /**
  * Sets flags that control emit behavior of a node.
  */

@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.ast.Bundle
+import typescript.ast.SourceFile
+
 external interface CustomTransformer {
     fun transformSourceFile(node: SourceFile): SourceFile
 

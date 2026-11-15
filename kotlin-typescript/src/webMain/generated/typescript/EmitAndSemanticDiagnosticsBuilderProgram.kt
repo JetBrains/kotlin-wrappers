@@ -2,6 +2,11 @@
 
 package typescript
 
+import typescript.sync.CancellationToken
+import typescript.sync.CustomTransformers
+import typescript.sync.EmitResult
+import typescript.sync.WriteFileCallback
+
 /**
  * The builder that can handle the changes in program and iterate through changed file to emit the files
  * The semantic diagnostics are cached per file and managed by clearing for the changed/affected files

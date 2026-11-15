@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.ast.EmitHint
+import typescript.ast.Node
+
 @kotlinx.js.JsPlainObject
 external interface PrintHandlers {
     /**

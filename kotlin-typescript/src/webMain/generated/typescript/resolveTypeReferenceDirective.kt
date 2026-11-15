@@ -4,6 +4,11 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.ModuleResolutionHost
+import typescript.sync.ResolutionMode
+import typescript.sync.ResolvedProjectReference
+
 /**
  * @param {string | undefined} containingFile - file that contains type reference directive, can be undefined if containing file is unknown.
  * This is possible in case if resolution is performed for directives specified via 'types' parameter. In this case initial path for secondary lookups

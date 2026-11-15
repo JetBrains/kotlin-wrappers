@@ -4,4 +4,6 @@
 
 package typescript
 
+import typescript.ast.TextChangeRange
+
 external val unchangedTextChangeRange: TextChangeRange

@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.TextRange
+
 external fun <T : TextRange> setTextRange(
     range: T,
     location: TextRange?,

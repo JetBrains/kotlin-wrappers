@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.sync.ParsedCommandLine
+
 external interface WatchCompilerHost<T : BuilderProgram> :
     ProgramHost<T>,
     WatchHost {

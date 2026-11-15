@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.visitor.Visitor
+
 /**
  * A function that walks a node using the given visitor, lifting node arrays into single nodes,
  * returning an node which satisfies the test.

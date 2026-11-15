@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.TextChangeRange
+import typescript.ast.TextSpan
+
 external fun createTextChangeRange(
     span: TextSpan,
     newLength: Int,

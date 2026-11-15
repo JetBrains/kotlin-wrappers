@@ -2,6 +2,11 @@
 
 package typescript
 
+import typescript.ast.JSDocParsingMode
+import typescript.ast.SourceFile
+import typescript.ast.StringLiteralLike
+import typescript.sync.*
+
 external interface ProgramHost<T : BuilderProgram> {
     /**
      * Used to create the program when need for program creation or recreation detected

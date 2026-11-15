@@ -1,0 +1,18 @@
+// Automatically generated - do not modify!
+
+package typescript.sync
+
+/**
+ * ResolvedModule with an explicitly provided `extension` property.
+ * Prefer this over `ResolvedModule`.
+ * If changing this, remember to change `moduleResolutionIsEqualTo`.
+ */
+@kotlinx.js.JsPlainObject
+external interface ResolvedModuleFull : ResolvedModule {
+    /**
+     * Extension of resolvedFileName. This must match what's at the end of resolvedFileName.
+     * This is optional for backwards-compatibility, but will be added if not provided.
+     */
+    var extension: String
+    var packageId: PackageId?
+}

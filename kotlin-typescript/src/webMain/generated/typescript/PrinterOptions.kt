@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.proto.NewLineKind
+
 @kotlinx.js.JsPlainObject
 external interface PrinterOptions {
     var removeComments: Boolean?

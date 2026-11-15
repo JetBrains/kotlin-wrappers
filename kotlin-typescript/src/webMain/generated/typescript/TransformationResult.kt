@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.ast.EmitHint
+import typescript.ast.Node
+import typescript.sync.DiagnosticWithLocation
+
 external interface TransformationResult<T : Node> {
     /** Gets the transformed source files. */
     var transformed: js.array.ReadonlyArray<T>

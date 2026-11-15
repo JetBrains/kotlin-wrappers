@@ -1,0 +1,15 @@
+// Automatically generated - do not modify!
+
+@file:JsModule("typescript")
+
+package typescript.ast.`is`
+
+import typescript.ast.Node
+import typescript.ast.TypeNode
+
+/**
+ * Node test that determines whether a node is a valid type node.
+ * This differs from the `isPartOfTypeNode` function which determines whether a node is *part*
+ * of a TypeNode.
+ */
+external val isTypeNode: js.reflect.TypeGuard<Node, TypeNode>

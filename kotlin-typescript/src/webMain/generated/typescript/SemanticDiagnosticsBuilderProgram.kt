@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.ast.SourceFile
+import typescript.sync.CancellationToken
+import typescript.sync.Diagnostic
+
 /**
  * The builder that caches the semantic diagnostics for the program and handles the changed files and affected files
  */

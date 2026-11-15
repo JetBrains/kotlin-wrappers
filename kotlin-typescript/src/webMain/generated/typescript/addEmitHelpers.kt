@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.visitor.EmitHelper
+
 /**
  * Add EmitHelpers to a node.
  */
