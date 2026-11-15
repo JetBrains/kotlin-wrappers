@@ -9,6 +9,7 @@ data class EventData(
     val type: String,
     val targets: List<Target>,
     val cancelable: Boolean = false,
+    val composed: Boolean = false,
     val `interface`: String,
     val extendedIn: List<ExtendedIn>?,
 )
