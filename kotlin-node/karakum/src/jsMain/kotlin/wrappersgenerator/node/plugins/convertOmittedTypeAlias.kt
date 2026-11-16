@@ -8,7 +8,9 @@ import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.array.ReadonlyArray
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.NamedDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private fun filterMembers(
     members: ReadonlyArray<NamedDeclaration>,

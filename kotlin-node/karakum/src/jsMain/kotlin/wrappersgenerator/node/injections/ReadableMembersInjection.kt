@@ -7,7 +7,12 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.MethodSignature
+import typescript.ast.Node
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isMethodSignature
 
 class ReadableMembersInjection : Injection {
     private val readableStreamMemberNodes = mutableListOf<MethodSignature>()

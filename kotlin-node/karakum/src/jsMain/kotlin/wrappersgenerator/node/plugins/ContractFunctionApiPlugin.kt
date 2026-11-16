@@ -2,13 +2,20 @@ package wrappersgenerator.node.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.extension.plugins.*
+import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
+import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
+import io.github.sgrishchenko.karakum.extension.plugins.function
+import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.structure.derived.DerivedDeclaration
 import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarations
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.array.ReadonlyArray
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.FunctionDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isTypePredicateNode
 
 private fun isConflictingOverload(node: FunctionDeclaration): Boolean =
     node.name?.text == "isMap"

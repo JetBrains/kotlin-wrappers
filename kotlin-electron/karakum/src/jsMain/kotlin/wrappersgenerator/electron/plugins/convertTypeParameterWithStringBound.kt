@@ -3,8 +3,8 @@ package wrappersgenerator.electron.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.SyntaxKind
-import typescript.isTypeParameterDeclaration
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isTypeParameterDeclaration
 
 // TODO: provide common solution?
 val convertTypeParameterWithStringBound = createPlugin { node, context, render ->

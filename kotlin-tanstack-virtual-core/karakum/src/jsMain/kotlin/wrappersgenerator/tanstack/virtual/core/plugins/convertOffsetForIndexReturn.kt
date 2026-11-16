@@ -3,7 +3,11 @@ package wrappersgenerator.tanstack.virtual.core.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.TypeNode
+import typescript.ast.`is`.isTupleTypeNode
+import typescript.ast.`is`.isTypeOperatorNode
+import typescript.ast.`is`.isUnionTypeNode
 
 // `readonly [number, "auto"] | readonly [number, "start" | "center" | "end"] | undefined`
 val convertOffsetForIndexReturn = createPlugin { node, _, _ ->

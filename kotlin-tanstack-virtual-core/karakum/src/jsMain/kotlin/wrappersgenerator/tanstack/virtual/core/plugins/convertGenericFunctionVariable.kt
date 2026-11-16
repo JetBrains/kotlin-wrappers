@@ -6,8 +6,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import js.reflect.invoke
-import typescript.isFunctionTypeNode
-import typescript.isVariableDeclaration
+import typescript.ast.`is`.isFunctionTypeNode
+import typescript.ast.`is`.isVariableDeclaration
 
 // `const windowScroll: <T extends Window>(...) => void`
 val convertGenericFunctionVariable = createPlugin { node, context, render ->

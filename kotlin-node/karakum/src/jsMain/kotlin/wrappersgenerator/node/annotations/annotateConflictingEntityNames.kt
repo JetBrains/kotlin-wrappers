@@ -5,9 +5,9 @@ import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.Node
-import typescript.isClassDeclaration
-import typescript.isStringLiteral
+import typescript.ast.Node
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isStringLiteral
 
 private val conflictingEntities = mapOf(
     "inspector" to setOf(

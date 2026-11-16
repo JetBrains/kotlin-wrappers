@@ -3,7 +3,7 @@ package wrappersgenerator.electron.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 
 val convertNodeRequire = createPlugin { node, _, _ ->
     nullable {

@@ -4,10 +4,10 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import js.reflect.invoke
-import typescript.SyntaxKind
-import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
-import typescript.isPropertySignature
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isPropertySignature
 import wrappersgenerator.node.plugins.SignatureOverrideConfig.Alias
 import wrappersgenerator.node.plugins.SignatureOverrideConfig.Preserve
 

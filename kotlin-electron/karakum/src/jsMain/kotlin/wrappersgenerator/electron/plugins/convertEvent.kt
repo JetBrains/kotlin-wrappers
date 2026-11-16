@@ -5,9 +5,9 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import js.reflect.invoke
-import typescript.isIntersectionTypeNode
-import typescript.isTypeAliasDeclaration
-import typescript.isTypeLiteralNode
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isTypeAliasDeclaration
+import typescript.ast.`is`.isTypeLiteralNode
 
 val convertEvent = createPlugin { node, context, render ->
     nullable {

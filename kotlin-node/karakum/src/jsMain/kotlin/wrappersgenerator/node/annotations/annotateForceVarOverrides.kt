@@ -3,10 +3,10 @@ package wrappersgenerator.node.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import js.reflect.invoke
-import typescript.Node
-import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
-import typescript.isPropertySignature
+import typescript.ast.Node
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isPropertySignature
 
 suspend fun annotateForceVarOverrides(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFile()).fileName

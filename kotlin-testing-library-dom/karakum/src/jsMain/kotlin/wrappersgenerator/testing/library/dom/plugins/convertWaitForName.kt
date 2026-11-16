@@ -3,8 +3,8 @@ package wrappersgenerator.testing.library.dom.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isFunctionDeclaration
-import typescript.isIdentifier
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isIdentifier
 
 val convertWaitForName = createPlugin { node, _, _ ->
     nullable {

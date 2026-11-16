@@ -3,7 +3,11 @@ package wrappersgenerator.node.injections
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isParameter
+import typescript.ast.`is`.isTypeReferenceNode
 
 class TracingChannelSubscribersInjection : Injection {
     override suspend fun setup(context: Context) = Unit

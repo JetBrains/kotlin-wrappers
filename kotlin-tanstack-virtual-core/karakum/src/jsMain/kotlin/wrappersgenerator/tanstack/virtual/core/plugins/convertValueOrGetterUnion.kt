@@ -5,9 +5,9 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.resolveParenthesizedType
 import js.reflect.invoke
-import typescript.SyntaxKind
-import typescript.isFunctionTypeNode
-import typescript.isUnionTypeNode
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isFunctionTypeNode
+import typescript.ast.`is`.isUnionTypeNode
 
 // `T | (() => T)`
 val convertValueOrGetterUnion = createPlugin { node, context, render ->

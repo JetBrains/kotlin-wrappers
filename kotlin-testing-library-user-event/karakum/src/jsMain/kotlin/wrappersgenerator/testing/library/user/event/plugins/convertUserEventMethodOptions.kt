@@ -4,9 +4,9 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.isFunctionDeclaration
-import typescript.isIntersectionTypeNode
-import typescript.isParameter
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isParameter
 
 val convertUserEventMethodOptions = createPlugin { node, context, render ->
     nullable {

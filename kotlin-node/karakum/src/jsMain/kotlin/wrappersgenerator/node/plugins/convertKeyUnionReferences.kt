@@ -3,10 +3,10 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isIdentifier
-import typescript.isLiteralTypeNode
-import typescript.isStringLiteral
-import typescript.isTypeReferenceNode
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isLiteralTypeNode
+import typescript.ast.`is`.isStringLiteral
+import typescript.ast.`is`.isTypeReferenceNode
 
 val convertKeyUnionReferences = createPlugin { node, _, _ ->
     nullable {

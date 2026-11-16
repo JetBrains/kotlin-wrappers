@@ -6,7 +6,11 @@ import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isMappedTypeNode
+import typescript.ast.`is`.isTypeAliasDeclaration
+import typescript.ast.`is`.isTypeParameterDeclaration
 
 val convertSignalConstantsGenerics = createPlugin { node, context, render ->
     nullable {

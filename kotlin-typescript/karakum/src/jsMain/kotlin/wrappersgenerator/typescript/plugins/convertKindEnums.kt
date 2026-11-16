@@ -7,8 +7,8 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
 import js.reflect.invoke
-import typescript.isEnumDeclaration
-import typescript.isIdentifier
+import typescript.ast.`is`.isEnumDeclaration
+import typescript.ast.`is`.isIdentifier
 
 val convertKindEnums = createPlugin { node, context, render ->
     nullable {

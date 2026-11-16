@@ -3,7 +3,8 @@ package wrappersgenerator.node.inheritanceModifiers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFile()).fileName

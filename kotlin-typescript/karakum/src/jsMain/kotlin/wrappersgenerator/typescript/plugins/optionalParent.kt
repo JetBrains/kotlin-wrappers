@@ -3,9 +3,9 @@ package wrappersgenerator.typescript.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
-import typescript.isPropertySignature
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isPropertySignature
 
 val optionalParent = createPlugin { node, _, render ->
     nullable {

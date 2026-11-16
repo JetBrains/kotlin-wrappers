@@ -7,7 +7,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResu
 import io.github.sgrishchenko.karakum.extension.withName
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 import wrappersgenerator.tanstack.history.mutabilityModifiers.modifyRouterHistoryMutability
 import wrappersgenerator.tanstack.history.plugins.convertRouterHistoryProperty
 

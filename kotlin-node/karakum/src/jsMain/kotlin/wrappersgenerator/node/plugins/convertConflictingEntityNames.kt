@@ -5,7 +5,12 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Declaration
+import typescript.ast.Identifier
+import typescript.ast.Node
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isStringLiteral
+import typescript.sync.SymbolFlags
 
 private val conflictingEntities = mapOf(
     "inspector" to listOf(

@@ -3,7 +3,11 @@ package wrappersgenerator.node.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isTypeReferenceNode
 
 suspend fun annotateCompileFunctionResult(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFile()).fileName

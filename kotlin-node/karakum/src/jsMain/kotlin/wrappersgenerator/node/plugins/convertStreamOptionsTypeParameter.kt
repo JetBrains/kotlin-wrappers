@@ -3,9 +3,9 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isExpressionWithTypeArguments
-import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isExpressionWithTypeArguments
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
 
 val convertStreamOptionsTypeParameter = createPlugin { node, _, render ->
     nullable {

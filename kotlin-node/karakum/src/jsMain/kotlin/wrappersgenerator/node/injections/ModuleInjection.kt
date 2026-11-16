@@ -4,7 +4,9 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.InterfaceDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private fun isModuleInterfaceNode(node: Node) = nullable {
     ensure(isInterfaceDeclaration(node))

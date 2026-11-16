@@ -3,7 +3,9 @@ package wrappersgenerator.node.inheritanceModifiers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.*
 
 private fun isEventEmitterMethodName(name: String) =
     name == "on"

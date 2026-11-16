@@ -4,8 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.isConditionalTypeNode
-import typescript.isTypeAliasDeclaration
+import typescript.ast.`is`.isConditionalTypeNode
+import typescript.ast.`is`.isTypeAliasDeclaration
 
 val convertImplicitArrayBuffer = createPlugin { node, context, _ ->
     nullable {

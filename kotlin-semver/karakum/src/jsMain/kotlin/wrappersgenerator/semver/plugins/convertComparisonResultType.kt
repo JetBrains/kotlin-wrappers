@@ -4,7 +4,7 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.`is`.*
 
 private val comparisonResultType = listOf("1", "0", "-1")
 

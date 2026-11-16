@@ -6,9 +6,9 @@ import io.github.sgrishchenko.karakum.extension.plugins.annotationServiceKey
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.extension.resolve
 import js.reflect.invoke
-import typescript.Node
-import typescript.isIntersectionTypeNode
-import typescript.isPropertySignature
+import typescript.ast.Node
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isPropertySignature
 
 val modifyJsPlainObjectMutability = resolve(
     "val" to match(::isJsPlainObjectProperty),

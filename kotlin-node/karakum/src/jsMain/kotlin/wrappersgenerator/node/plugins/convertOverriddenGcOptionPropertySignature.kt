@@ -4,7 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.*
 
 val convertOverriddenGcOptionPropertySignature = createPlugin { node, context, render ->
     nullable {

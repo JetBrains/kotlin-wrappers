@@ -11,7 +11,12 @@ import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarati
 import io.github.sgrishchenko.karakum.util.DeepMap
 import js.array.ReadonlyArray
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.FunctionDeclaration
+import typescript.ast.Node
+import typescript.ast.SyntaxKind
+import typescript.ast.TypeNode
+import typescript.ast.`is`.*
+import typescript.sync.Symbol
 
 private fun isNull(type: Node) = isLiteralTypeNode(type) && type.literal.kind == SyntaxKind.NullKeyword
 private fun isUndefined(type: Node) = type.kind == SyntaxKind.UndefinedKeyword

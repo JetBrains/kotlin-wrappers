@@ -4,7 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 suspend fun resolveParsedResultsPropertyName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))

@@ -3,7 +3,11 @@ package wrappersgenerator.semver.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isPropertyDeclaration
 
 private val versionParts = setOf("major", "minor", "patch")
 

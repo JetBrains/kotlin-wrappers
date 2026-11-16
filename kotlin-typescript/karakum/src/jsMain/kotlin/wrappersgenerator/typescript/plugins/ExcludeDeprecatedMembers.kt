@@ -3,10 +3,10 @@ package wrappersgenerator.typescript.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.getJSDocDeprecatedTag
-import typescript.isEnumMember
-import typescript.isFunctionDeclaration
-import typescript.isInterfaceDeclaration
+import typescript.ast.getJSDocDeprecatedTag
+import typescript.ast.`is`.isEnumMember
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 
 val ExcludeDeprecatedMembers = createPlugin { node, _, _ ->
     nullable {

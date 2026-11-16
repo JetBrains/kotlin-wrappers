@@ -8,7 +8,10 @@ import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Identifier
+import typescript.ast.MethodSignature
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private val queryFunctionTypes = setOf(
     "QueryByBoundAttribute",

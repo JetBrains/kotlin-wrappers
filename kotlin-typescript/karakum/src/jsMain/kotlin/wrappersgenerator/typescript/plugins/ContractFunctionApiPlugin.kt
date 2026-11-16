@@ -7,7 +7,10 @@ import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarat
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.FunctionDeclaration
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isLiteralTypeNode
+import typescript.ast.`is`.isTypePredicateNode
 
 private fun isConflictingOverload(node: FunctionDeclaration) = nullable {
     ensure(node.name?.text == "isIterationStatement")

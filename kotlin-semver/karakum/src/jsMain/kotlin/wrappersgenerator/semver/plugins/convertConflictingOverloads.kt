@@ -3,10 +3,16 @@ package wrappersgenerator.semver.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.*
+import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
 import io.github.sgrishchenko.karakum.extension.plugins.Signature
+import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
+import io.github.sgrishchenko.karakum.extension.plugins.function
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.FunctionDeclaration
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isLiteralTypeNode
 
 private fun hasConflictingOverloads(node: FunctionDeclaration) = nullable {
     nullable {

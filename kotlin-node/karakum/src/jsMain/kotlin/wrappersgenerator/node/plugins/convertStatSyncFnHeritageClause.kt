@@ -3,8 +3,8 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isHeritageClause
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isHeritageClause
+import typescript.ast.`is`.isInterfaceDeclaration
 
 val convertStatSyncFnHeritageClause = createPlugin { node, _, _ ->
     nullable {

@@ -3,7 +3,7 @@ package wrappersgenerator.node.plugins
 import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.NumberPlugin
 import io.github.sgrishchenko.karakum.extension.withName
-import typescript.*
+import typescript.ast.`is`.*
 
 fun createNumberPlugin() = NumberPlugin(
     matchers = arrayOf(

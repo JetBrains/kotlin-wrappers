@@ -5,7 +5,10 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.InterfaceDeclaration
+import typescript.ast.Node
+import typescript.ast.SignatureDeclarationBase
+import typescript.ast.`is`.*
 
 private suspend fun convertConstructSignatureDeclaration(
     node: SignatureDeclarationBase,

@@ -7,7 +7,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseResu
 import io.github.sgrishchenko.karakum.extension.withName
 import io.github.sgrishchenko.karakum.generate
 import js.array.ReadonlyArray
-import typescript.isFunctionDeclaration
+import typescript.ast.`is`.isFunctionDeclaration
 import wrappersgenerator.testing.library.dom.annotations.annotateJsPlainObject
 import wrappersgenerator.testing.library.dom.annotations.annotateWaitFor
 import wrappersgenerator.testing.library.dom.inheritanceModifiers.modifyMethodInheritance

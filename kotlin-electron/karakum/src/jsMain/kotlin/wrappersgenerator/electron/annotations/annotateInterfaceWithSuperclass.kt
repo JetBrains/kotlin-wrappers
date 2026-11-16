@@ -3,8 +3,8 @@ package wrappersgenerator.electron.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import js.reflect.invoke
-import typescript.Node
-import typescript.isInterfaceDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.isInterfaceDeclaration
 
 private val interfacesWithSuperclass = setOf(
     "App",

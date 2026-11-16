@@ -4,8 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.extension.plugins.nameResolverServiceKey
 import js.reflect.invoke
-import typescript.Node
-import typescript.isIntersectionTypeNode
+import typescript.ast.Node
+import typescript.ast.`is`.isIntersectionTypeNode
 
 suspend fun annotateJsPlainObject(node: Node, context: AnnotationContext) = nullable {
     val nameResolverService = context.requireService(nameResolverServiceKey)

@@ -12,7 +12,9 @@ import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarati
 import io.github.sgrishchenko.karakum.util.constIdentifier
 import js.array.ReadonlyArray
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.ModuleDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private fun isSessionPostMethod(node: Node) = nullable {
     val literalType = ensureNotNull(node.parent)

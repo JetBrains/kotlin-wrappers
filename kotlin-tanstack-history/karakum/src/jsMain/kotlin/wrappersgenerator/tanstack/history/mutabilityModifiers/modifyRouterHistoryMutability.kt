@@ -4,9 +4,9 @@ import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.resolve
 import io.github.sgrishchenko.karakum.extension.withName
 import js.reflect.invoke
-import typescript.isFunctionTypeNode
-import typescript.isInterfaceDeclaration
-import typescript.isPropertySignature
+import typescript.ast.`is`.isFunctionTypeNode
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isPropertySignature
 
 val modifyRouterHistoryMutability = resolve(
     "val" to match {

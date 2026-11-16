@@ -5,7 +5,7 @@ import io.github.sgrishchenko.karakum.extension.InjectionType
 import io.github.sgrishchenko.karakum.extension.MEMBER
 import io.github.sgrishchenko.karakum.extension.createInjection
 import js.reflect.invoke
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 
 val injectAgentOptionsPort = createInjection { node, context, _ ->
     nullable {

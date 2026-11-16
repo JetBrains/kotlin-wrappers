@@ -6,9 +6,10 @@ import io.github.sgrishchenko.karakum.configuration.`object`
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import io.github.sgrishchenko.karakum.extension.plugins.Signature
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.FunctionDeclaration
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.*
 
 private fun isNativeRealpathSync(node: FunctionDeclaration) = nullable {
     ensure(node.name?.text == "native")

@@ -3,10 +3,10 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isClassDeclaration
-import typescript.isIdentifier
-import typescript.isMethodDeclaration
-import typescript.isUnionTypeNode
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isMethodDeclaration
+import typescript.ast.`is`.isUnionTypeNode
 
 val convertCallTrackerConflictingOverloads = createPlugin { node, _, _ ->
     nullable {
