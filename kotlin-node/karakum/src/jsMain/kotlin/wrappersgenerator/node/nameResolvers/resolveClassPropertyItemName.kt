@@ -4,7 +4,11 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isPropertyDeclaration
+import typescript.ast.`is`.isTypeReferenceNode
 
 suspend fun resolveClassPropertyItemName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))

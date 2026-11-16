@@ -20,7 +20,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUShaderModule/getCompilationInfo)
      */
     @JsName("getCompilationInfo")
-    fun getCompilationInfoAsync(): Promise<GPUCompilationInfo>
+    open fun getCompilationInfoAsync(): Promise<GPUCompilationInfo>
 }
 
 /**

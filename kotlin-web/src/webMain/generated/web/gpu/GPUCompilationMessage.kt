@@ -19,40 +19,40 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/length)
      */
-    val length: UInt53
+    open val length: UInt53
 
     /**
      * The **`lineNum`** read-only property of the GPUCompilationMessage interface is a number representing the line number in the shader code that the message corresponds to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/lineNum)
      */
-    val lineNum: UInt53
+    open val lineNum: UInt53
 
     /**
      * The **`linePos`** read-only property of the GPUCompilationMessage interface is a number representing the position in the code line that the message corresponds to. This could be an exact point, or the start of the relevant substring.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/linePos)
      */
-    val linePos: UInt53
+    open val linePos: UInt53
 
     /**
      * The **`message`** read-only property of the GPUCompilationMessage interface is a string representing human-readable message text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/message)
      */
-    val message: String
+    open val message: String
 
     /**
      * The **`offset`** read-only property of the GPUCompilationMessage interface is a number representing the offset from the start of the shader code to the exact point, or the start of the relevant substring, that the message corresponds to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/offset)
      */
-    val offset: UInt53
+    open val offset: UInt53
 
     /**
      * The **`type`** read-only property of the GPUCompilationMessage interface is an enumerated value representing the type of the message. Each type represents a different severity level.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/type)
      */
-    val type: GPUCompilationMessageType
+    open val type: GPUCompilationMessageType
 }

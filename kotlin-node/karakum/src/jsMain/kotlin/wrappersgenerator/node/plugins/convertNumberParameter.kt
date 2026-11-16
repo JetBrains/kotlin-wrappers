@@ -3,9 +3,9 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.SyntaxKind
-import typescript.isFunctionTypeNode
-import typescript.isParameter
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isFunctionTypeNode
+import typescript.ast.`is`.isParameter
 
 val convertNumberParameter = createPlugin { node, _, _ ->
     nullable {

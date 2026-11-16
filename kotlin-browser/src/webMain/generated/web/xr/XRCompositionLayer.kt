@@ -7,13 +7,13 @@ import web.events.EventHandler
 open external class XRCompositionLayer
 private constructor() :
     XRLayer {
-    val layout: XRLayerLayout
-    var blendTextureSourceAlpha: Boolean
-    var chromaticAberrationCorrection: Boolean?
-    val mipLevels: Int
-    var quality: XRLayerQuality
-    val needsRedraw: Boolean
-    fun destroy()
-    var space: XRSpace
-    var onredraw: EventHandler<XRLayerEvent, *, *>
+    open val layout: XRLayerLayout
+    open var blendTextureSourceAlpha: Boolean
+    open var chromaticAberrationCorrection: Boolean?
+    open val mipLevels: Int
+    open var quality: XRLayerQuality
+    open val needsRedraw: Boolean
+    open fun destroy()
+    open var space: XRSpace
+    open var onredraw: EventHandler<XRLayerEvent, *, *>
 }

@@ -15,12 +15,12 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
      */
-    val areas: HTMLCollection<*>
+    open val areas: HTMLCollection<*>
 
     /**
      * The **`name`** property of the HTMLMapElement represents the unique name <map> element. Its value can be used with the useMap attribute of the <img> element to reference a <map> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/name)
      */
-    var name: String
+    open var name: String
 }

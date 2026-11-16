@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface FormControlColor {
+sealed /* union */
+external interface FormControlColor {
     companion object {
         @JsValue("primary")
         val primary: FormControlColor
@@ -26,7 +27,8 @@ sealed external interface FormControlColor {
     }
 }
 
-sealed external interface FormControlVariant {
+sealed /* union */
+external interface FormControlVariant {
     companion object {
         @JsValue("standard")
         val standard: FormControlVariant
@@ -39,7 +41,8 @@ sealed external interface FormControlVariant {
     }
 }
 
-sealed external interface FormControlMargin {
+sealed /* union */
+external interface FormControlMargin {
     companion object {
         @JsValue("dense")
         val dense: FormControlMargin

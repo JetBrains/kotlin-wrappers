@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface DialogScroll {
+sealed /* union */
+external interface DialogScroll {
     companion object {
         @JsValue("body")
         val body: DialogScroll

@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.Diagnostic
+
 @kotlinx.js.JsPlainObject
 external interface ConvertCompilerOptionsFromJsonResult {
     var options: CompilerOptions

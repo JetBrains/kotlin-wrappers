@@ -377,7 +377,10 @@ data class Color(override val value: String) : CssValue(value) {
                 }
             }
 
-            if (saturation == 0) return RGBA(lightness, lightness, lightness)
+            if (saturation == 0) {
+                val gray = (lightness / 100.0 * 255).roundToInt()
+                return RGBA(gray, gray, gray, alpha)
+            }
 
             // scale H, S, V values into 0..1 fractions
             val h = (hue % 360.0) / 360.0

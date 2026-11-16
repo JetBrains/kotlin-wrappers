@@ -6,7 +6,11 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isMethodSignature
+import typescript.ast.`is`.isPropertySignature
 
 private val zlibTransforms = setOf(
     "BrotliCompress",

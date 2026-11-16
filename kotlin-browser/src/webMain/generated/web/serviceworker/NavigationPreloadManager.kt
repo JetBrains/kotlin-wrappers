@@ -23,7 +23,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsName("disable")
-    fun disableAsync(): Promise<Void>
+    open fun disableAsync(): Promise<Void>
 
     /**
      * The **`enable()`** method of the NavigationPreloadManager interface is used to enable preloading of resources managed by the service worker. It returns a promise that resolves with undefined.
@@ -32,7 +32,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsName("enable")
-    fun enableAsync(): Promise<Void>
+    open fun enableAsync(): Promise<Void>
 
     /**
      * The **`getState()`** method of the NavigationPreloadManager interface returns a Promise that resolves to an object with properties that indicate whether preload is enabled and what value will be sent in the Service-Worker-Navigation-Preload HTTP header.
@@ -41,7 +41,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsName("getState")
-    fun getStateAsync(): Promise<NavigationPreloadState>
+    open fun getStateAsync(): Promise<NavigationPreloadState>
 
     /**
      * The **`setHeaderValue()`** method of the NavigationPreloadManager interface sets the value of the Service-Worker-Navigation-Preload header that will be sent with requests resulting from a fetch() operation made during service worker navigation preloading. It returns an empty Promise that resolves with undefined.
@@ -50,7 +50,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsName("setHeaderValue")
-    fun setHeaderValueAsync(value: String): Promise<Void>
+    open fun setHeaderValueAsync(value: String): Promise<Void>
 }
 
 /**

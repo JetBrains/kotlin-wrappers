@@ -18,14 +18,14 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/wgslLanguageFeatures)
      */
-    val wgslLanguageFeatures: WGSLLanguageFeatures
+    open val wgslLanguageFeatures: WGSLLanguageFeatures
 
     /**
      * The **`getPreferredCanvasFormat()`** method of the GPU interface returns the optimal canvas texture format for displaying 8-bit depth, standard dynamic range content on the current system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/getPreferredCanvasFormat)
      */
-    fun getPreferredCanvasFormat(): GPUTextureFormat
+    open fun getPreferredCanvasFormat(): GPUTextureFormat
 
     /**
      * The **`requestAdapter()`** method of the GPU interface returns a Promise that fulfills with a GPUAdapter object instance. From this you can request a GPUDevice, adapter info, features, and limits.
@@ -33,7 +33,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter)
      */
     @JsName("requestAdapter")
-    fun requestAdapterAsync(options: GPURequestAdapterOptions = definedExternally): Promise<GPUAdapter?>
+    open fun requestAdapterAsync(options: GPURequestAdapterOptions = definedExternally): Promise<GPUAdapter?>
 }
 
 /**

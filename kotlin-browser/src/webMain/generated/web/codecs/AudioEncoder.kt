@@ -29,19 +29,19 @@ open external class AudioEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/encodeQueueSize)
      */
-    val encodeQueueSize: Int
+    open val encodeQueueSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/dequeue_event)
      */
-    var ondequeue: EventHandler<Event, AudioEncoder, AudioEncoder>?
+    open var ondequeue: EventHandler<Event, AudioEncoder, AudioEncoder>?
 
     /**
      * The **`state`** read-only property of the AudioEncoder interface returns the current state of the underlying codec.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/state)
      */
-    val state: CodecState
+    open val state: CodecState
 
     /**
      * The **`close()`** method of the AudioEncoder interface ends all pending work and releases system resources.
@@ -57,7 +57,7 @@ open external class AudioEncoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun configure(config: AudioEncoderConfig)
+    open fun configure(config: AudioEncoderConfig)
 
     /**
      * The **`encode()`** method of the AudioEncoder interface enqueues a control message to encode a given AudioData object.
@@ -65,7 +65,7 @@ open external class AudioEncoder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/encode)
      */
     @JsThrows(InvalidStateError::class)
-    fun encode(data: AudioData)
+    open fun encode(data: AudioData)
 
     /**
      * The **`flush()`** method of the AudioEncoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
@@ -74,14 +74,14 @@ open external class AudioEncoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("flush")
-    fun flushAsync(): Promise<Void>
+    open fun flushAsync(): Promise<Void>
 
     /**
      * The **`reset()`** method of the AudioEncoder interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/reset)
      */
-    fun reset()
+    open fun reset()
 
     companion object {
         /**

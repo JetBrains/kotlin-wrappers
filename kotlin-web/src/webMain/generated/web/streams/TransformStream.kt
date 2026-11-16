@@ -19,12 +19,12 @@ open external class TransformStream<I : JsAny?, O : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/readable)
      */
-    val readable: ReadableStream<O>
+    open val readable: ReadableStream<O>
 
     /**
      * The **`writable`** read-only property of the TransformStream interface returns the WritableStream instance controlled by this TransformStream. This stream accepts input data that will be transformed and emitted to the readable stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream/writable)
      */
-    val writable: WritableStream<I>
+    open val writable: WritableStream<I>
 }

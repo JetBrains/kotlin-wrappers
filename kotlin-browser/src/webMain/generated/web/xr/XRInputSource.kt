@@ -16,11 +16,11 @@ import web.gamepad.Gamepad
  */
 open external class XRInputSource
 private constructor() {
-    val handedness: XRHandedness
-    val targetRayMode: XRTargetRayMode
-    val targetRaySpace: XRSpace
-    val gripSpace: XRSpace?
-    val gamepad: Gamepad?
-    val profiles: ReadonlyArray<JsString>
-    val hand: XRHand?
+    open val handedness: XRHandedness
+    open val targetRayMode: XRTargetRayMode
+    open val targetRaySpace: XRSpace
+    open val gripSpace: XRSpace?
+    open val gamepad: Gamepad?
+    open val profiles: ReadonlyArray<JsString>
+    open val hand: XRHand?
 }

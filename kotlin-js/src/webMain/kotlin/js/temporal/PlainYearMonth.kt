@@ -17,33 +17,33 @@ open external class PlainYearMonth(
     referenceISODay: Int = definedExternally,
 ) : HasArithmeticOperations<PlainYearMonth, PlainYearMonthLike, DateUnit<* /* year..month */>>,
     LocalizableDateTime {
-    var era: String?
-    var eraYear: Int?
-    var year: Int
-    var month: Int
-    var monthCode: String
-    var calendarId: String
-    var daysInMonth: Int
-    var daysInYear: Int
-    var monthsInYear: Int
-    var inLeapYear: Boolean
+    open var era: String?
+    open var eraYear: Int?
+    open var year: Int
+    open var month: Int
+    open var monthCode: String
+    open var calendarId: String
+    open var daysInMonth: Int
+    open var daysInYear: Int
+    open var monthsInYear: Int
+    open var inLeapYear: Boolean
 
     // fun equals(other: Temporal.PlainYearMonth | PlainYearMonthLike | String): Boolean;
-    fun with(
+    open fun with(
         yearMonthLike: PlainYearMonthLike,
         options: AssignmentOptions = definedExternally,
     ): PlainYearMonth
 
-    fun toPlainDate(options: ToPlainDateOptions): PlainDate
+    open fun toPlainDate(options: ToPlainDateOptions): PlainDate
 
     @JsPlainObject
     interface ToPlainDateOptions {
         var day: Int
     }
 
-    fun getISOFields(): PlainDateISOFields
-    fun toJSON(): String
-    fun toString(options: ShowCalendarOption = definedExternally): String
+    open fun getISOFields(): PlainDateISOFields
+    open fun toJSON(): String
+    open fun toString(options: ShowCalendarOption = definedExternally): String
 
     companion object :
         PlainCompanion<PlainYearMonth, PlainYearMonthLike>

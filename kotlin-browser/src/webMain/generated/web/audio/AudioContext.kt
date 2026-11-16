@@ -23,14 +23,14 @@ open external class AudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency)
      */
-    val baseLatency: Double
+    open val baseLatency: Double
 
     /**
      * The **`outputLatency`** read-only property of the AudioContext Interface provides an estimation of the output latency of the current audio context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency)
      */
-    val outputLatency: Double
+    open val outputLatency: Double
 
     /**
      * The **`close()`** method of the AudioContext Interface closes the audio context, releasing any system audio resources that it uses.
@@ -38,35 +38,35 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
      */
     @JsName("close")
-    fun closeAsync(): Promise<Void>
+    open fun closeAsync(): Promise<Void>
 
     /**
      * The **`createMediaElementSource()`** method of the AudioContext Interface is used to create a new MediaElementAudioSourceNode object, given an existing HTML <audio> or <video> element, the audio from which can then be played and manipulated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource)
      */
-    fun createMediaElementSource(mediaElement: HTMLMediaElement): MediaElementAudioSourceNode
+    open fun createMediaElementSource(mediaElement: HTMLMediaElement): MediaElementAudioSourceNode
 
     /**
      * The **`createMediaStreamDestination()`** method of the AudioContext Interface is used to create a new MediaStreamAudioDestinationNode object associated with a WebRTC MediaStream representing an audio stream, which may be stored in a local file or sent to another computer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination)
      */
-    fun createMediaStreamDestination(): MediaStreamAudioDestinationNode
+    open fun createMediaStreamDestination(): MediaStreamAudioDestinationNode
 
     /**
      * The **`createMediaStreamSource()`** method of the AudioContext Interface is used to create a new MediaStreamAudioSourceNode object, given a media stream (say, from a MediaDevices.getUserMedia instance), the audio from which can then be played and manipulated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource)
      */
-    fun createMediaStreamSource(mediaStream: MediaStream): MediaStreamAudioSourceNode
+    open fun createMediaStreamSource(mediaStream: MediaStream): MediaStreamAudioSourceNode
 
     /**
      * The **`getOutputTimestamp()`** method of the AudioContext interface returns a new AudioTimestamp object containing two audio timestamp values relating to the current audio context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp)
      */
-    fun getOutputTimestamp(): AudioTimestamp
+    open fun getOutputTimestamp(): AudioTimestamp
 
     /**
      * The **`resume()`** method of the AudioContext interface resumes the progression of time in an audio context that has previously been suspended.
@@ -74,7 +74,7 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/resume)
      */
     @JsName("resume")
-    fun resumeAsync(): Promise<Void>
+    open fun resumeAsync(): Promise<Void>
 
     /**
      * The **`suspend()`** method of the AudioContext Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
@@ -82,7 +82,7 @@ open external class AudioContext(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
      */
     @JsName("suspend")
-    fun suspendAsync(): Promise<Void>
+    open fun suspendAsync(): Promise<Void>
 }
 
 /**

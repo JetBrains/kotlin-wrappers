@@ -18,34 +18,34 @@ private constructor() :
      * Returns a list of this session's XRInputSources, each representing an input device
      * used to control the camera and/or scene.
      */
-    val inputSources: XRInputSourceArray
+    open val inputSources: XRInputSourceArray
 
     /**
      * object which contains options affecting how the imagery is rendered.
      * This includes things such as the near and far clipping planes
      */
-    val renderState: XRRenderState
-    val environmentBlendMode: XREnvironmentBlendMode
-    val visibilityState: XRVisibilityState
-    val frameRate: Float?
-    val supportedFrameRates: Float32Array<*>?
-    val enabledFeatures: ReadonlyArray<JsString>?
-    val isSystemKeyboardSupported: Boolean
-    val interactionMode: XRInteractionMode?
+    open val renderState: XRRenderState
+    open val environmentBlendMode: XREnvironmentBlendMode
+    open val visibilityState: XRVisibilityState
+    open val frameRate: Float?
+    open val supportedFrameRates: Float32Array<*>?
+    open val enabledFeatures: ReadonlyArray<JsString>?
+    open val isSystemKeyboardSupported: Boolean
+    open val interactionMode: XRInteractionMode?
 
     /**
      * Removes a callback from the animation frame painting callback from
      * XRSession's set of animation frame rendering callbacks, given the
      * identifying handle returned by a previous call to requestAnimationFrame().
      */
-    fun cancelAnimationFrame(id: XRFrameRequestId)
+    open fun cancelAnimationFrame(id: XRFrameRequestId)
 
     /**
      * Ends the WebXR session. Returns a promise which resolves when the
      * session has been shut down.
      */
     @JsName("end")
-    fun endAsync(): Promise<Void>
+    open fun endAsync(): Promise<Void>
 
     /**
      * Schedules the specified method to be called the next time the user agent
@@ -54,7 +54,7 @@ private constructor() :
      * canceling the callback using cancelAnimationFrame(). This method is comparable
      * to the Window.requestAnimationFrame() method.
      */
-    fun requestAnimationFrame(callback: XRFrameRequestCallback): XRFrameRequestId
+    open fun requestAnimationFrame(callback: XRFrameRequestCallback): XRFrameRequestId
 
     /**
      * Requests that a new XRReferenceSpace of the specified type be created.
@@ -63,28 +63,28 @@ private constructor() :
      * the requested space type isn't supported by the device.
      */
     @JsName("requestReferenceSpace")
-    fun requestReferenceSpaceAsync(type: XRReferenceSpaceType): Promise<XRSpace /* XRReferenceSpace | XRBoundedReferenceSpace */>
+    open fun requestReferenceSpaceAsync(type: XRReferenceSpaceType): Promise<XRSpace /* XRReferenceSpace | XRBoundedReferenceSpace */>
 
     @JsName("updateRenderState")
-    fun updateRenderStateAsync(renderStateInit: XRRenderStateInit = definedExternally): Promise<Void>
+    open fun updateRenderStateAsync(renderStateInit: XRRenderStateInit = definedExternally): Promise<Void>
 
     @JsName("updateTargetFrameRate")
-    fun updateTargetFrameRateAsync(rate: Float): Promise<Void>
-    var onend: EventHandler<XRSessionEvent, *, *>
-    var oninputsourceschange: EventHandler<XRInputSourcesChangeEvent, *, *>
-    var onselect: EventHandler<XRInputSourceEvent, *, *>
-    var onselectstart: EventHandler<XRInputSourceEvent, *, *>
-    var onselectend: EventHandler<XRInputSourceEvent, *, *>
-    var onsqueeze: EventHandler<XRInputSourceEvent, *, *>
-    var onsqueezestart: EventHandler<XRInputSourceEvent, *, *>
-    var onsqueezeend: EventHandler<XRInputSourceEvent, *, *>
-    var onvisibilitychange: EventHandler<XRSessionEvent, *, *>
-    var onframeratechange: EventHandler<XRSessionEvent, *, *>
+    open fun updateTargetFrameRateAsync(rate: Float): Promise<Void>
+    open var onend: EventHandler<XRSessionEvent, *, *>
+    open var oninputsourceschange: EventHandler<XRInputSourcesChangeEvent, *, *>
+    open var onselect: EventHandler<XRInputSourceEvent, *, *>
+    open var onselectstart: EventHandler<XRInputSourceEvent, *, *>
+    open var onselectend: EventHandler<XRInputSourceEvent, *, *>
+    open var onsqueeze: EventHandler<XRInputSourceEvent, *, *>
+    open var onsqueezestart: EventHandler<XRInputSourceEvent, *, *>
+    open var onsqueezeend: EventHandler<XRInputSourceEvent, *, *>
+    open var onvisibilitychange: EventHandler<XRSessionEvent, *, *>
+    open var onframeratechange: EventHandler<XRSessionEvent, *, *>
 
     /**
      * A list of the known persistent anchors
      */
-    val persistentAnchors: ReadonlyArray<JsString>?
+    open val persistentAnchors: ReadonlyArray<JsString>?
 
     /**
      * Restores a persistent anchor with the given UUID.
@@ -94,7 +94,7 @@ private constructor() :
      *
      * @see https://immersive-web.github.io/anchors/#dom-xrsession-restorepersistentanchor
      */
-    var restorePersistentAnchor: ((uuid: String) -> Promise<XRAnchor>)?
+    open var restorePersistentAnchor: ((uuid: String) -> Promise<XRAnchor>)?
 
     /**
      * Deletes the persistent anchor with the given UUID. Also deletes the anchor.
@@ -104,14 +104,14 @@ private constructor() :
      *
      * @see https://immersive-web.github.io/anchors/#dom-xrsession-deletepersistentanchor
      */
-    var deletePersistentAnchor: ((uuid: String) -> Promise<Void>)?
-    var requestHitTestSource: ((options: XRHitTestOptionsInit) -> Promise<XRHitTestSource>)?
-    var requestHitTestSourceForTransientInput: ((options: XRTransientInputHitTestOptionsInit) -> Promise<XRTransientInputHitTestSource>)?
+    open var deletePersistentAnchor: ((uuid: String) -> Promise<Void>)?
+    open var requestHitTestSource: ((options: XRHitTestOptionsInit) -> Promise<XRHitTestSource>)?
+    open var requestHitTestSourceForTransientInput: ((options: XRTransientInputHitTestOptionsInit) -> Promise<XRTransientInputHitTestSource>)?
 
     /**
      * Legacy
      */
-    var requestHitTest: ((ray: XRRay, referenceSpace: XRReferenceSpace) -> Promise<ReadonlyArray<XRHitResult>>)?
+    open var requestHitTest: ((ray: XRRay, referenceSpace: XRReferenceSpace) -> Promise<ReadonlyArray<XRHitResult>>)?
 
     /**
      * XRSession is extended to contain the initiateRoomCapture method which,
@@ -123,14 +123,14 @@ private constructor() :
      *
      * @see https://immersive-web.github.io/real-world-geometry/plane-detection.html#plane-set
      */
-    var initiateRoomCapture: (() -> Promise<Void>)?
-    val domOverlayState: XRDOMOverlayState?
-    val depthUsage: XRDepthUsage?
-    val depthDataFormat: XRDepthDataFormat?
-    val depthType: XRDepthType?
-    val depthActive: Boolean?
-    val pauseDepthSensing: (() -> Unit)?
-    val resumeDepthSensing: (() -> Unit)?
+    open var initiateRoomCapture: (() -> Promise<Void>)?
+    open val domOverlayState: XRDOMOverlayState?
+    open val depthUsage: XRDepthUsage?
+    open val depthDataFormat: XRDepthDataFormat?
+    open val depthType: XRDepthType?
+    open val depthActive: Boolean?
+    open val pauseDepthSensing: (() -> Unit)?
+    open val resumeDepthSensing: (() -> Unit)?
 }
 
 /**

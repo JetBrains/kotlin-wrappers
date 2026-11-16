@@ -19,14 +19,14 @@ open external class MediaQueryListEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
      */
-    val matches: Boolean
+    open val matches: Boolean
 
     /**
      * The **`media`** read-only property of the MediaQueryListEvent interface is a string representing a serialized media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
      */
-    val media: MediaQuery
+    open val media: MediaQuery
 
     companion object
 }

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface TabScrollButtonDirection {
+sealed /* union */
+external interface TabScrollButtonDirection {
     companion object {
         @JsValue("left")
         val left: TabScrollButtonDirection

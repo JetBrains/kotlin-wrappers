@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.sync.Diagnostic
+import typescript.sync.TypeAcquisition
+
 @kotlinx.js.JsPlainObject
 external interface ConvertTypeAcquisitionFromJsonResult {
     var options: TypeAcquisition

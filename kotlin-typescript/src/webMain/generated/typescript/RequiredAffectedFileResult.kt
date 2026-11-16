@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.ast.RequiredAffectedFileResultAffected
+
 @kotlinx.js.JsPlainObject
 external interface RequiredAffectedFileResult<T> {
     var result: T

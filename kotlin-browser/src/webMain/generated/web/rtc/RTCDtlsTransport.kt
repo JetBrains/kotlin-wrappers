@@ -22,25 +22,31 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
      */
-    val iceTransport: RTCIceTransport
+    open val iceTransport: RTCIceTransport
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
      */
-    var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>?
+    open var onerror: EventHandler<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
      */
-    var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
+    open var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
      * The **`state`** read-only property of the RTCDtlsTransport interface provides information which describes a Datagram Transport Layer Security (DTLS) transport state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
      */
-    val state: RTCDtlsTransportState
-    fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
+    open val state: RTCDtlsTransportState
+
+    /**
+     * The **`getRemoteCertificates()`** method of the RTCDtlsTransport interface returns the certificate chain of the remote peer of the DTLS connection.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/getRemoteCertificates)
+     */
+    open fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
 }
 
 /**

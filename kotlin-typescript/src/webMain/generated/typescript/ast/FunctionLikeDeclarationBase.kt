@@ -1,0 +1,18 @@
+// Automatically generated - do not modify!
+
+package typescript.ast
+
+/**
+ * Several node kinds share function-like features such as a signature,
+ * a name, and a body. These nodes should extend FunctionLikeDeclarationBase.
+ * Examples:
+ * - FunctionDeclaration
+ * - MethodDeclaration
+ * - AccessorDeclaration
+ */
+external interface FunctionLikeDeclarationBase : SignatureDeclarationBase {
+    val asteriskToken: AsteriskToken?
+    val questionToken: QuestionToken?
+    val exclamationToken: ExclamationToken?
+    val body: Any? /* Block | Expression | undefined */
+}

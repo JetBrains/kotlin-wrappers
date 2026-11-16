@@ -24,67 +24,67 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd)
      */
-    var appendWindowEnd: Double
+    open var appendWindowEnd: Double
 
     /**
      * The **`appendWindowStart`** property of the SourceBuffer interface controls the timestamp for the start of the append window, a timestamp range that can be used to filter what media data is appended to the SourceBuffer. Coded media frames with timestamps within this range will be appended, whereas those outside the range will be filtered out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart)
      */
-    var appendWindowStart: Double
+    open var appendWindowStart: Double
 
     /**
      * The **`buffered`** read-only property of the SourceBuffer interface returns the time ranges that are currently buffered in the SourceBuffer as a normalized TimeRanges object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered)
      */
-    val buffered: TimeRanges
+    open val buffered: TimeRanges
 
     /**
      * The **`mode`** property of the SourceBuffer interface controls whether media segments can be appended to the SourceBuffer in any order, or in a strict sequence.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode)
      */
-    var mode: AppendMode
+    open var mode: AppendMode
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event)
      */
-    var onabort: EventHandler<Event, SourceBuffer, SourceBuffer>?
+    open var onabort: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event)
      */
-    var onerror: EventHandler<Event, SourceBuffer, SourceBuffer>?
+    open var onerror: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event)
      */
-    var onupdate: EventHandler<Event, SourceBuffer, SourceBuffer>?
+    open var onupdate: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event)
      */
-    var onupdateend: EventHandler<Event, SourceBuffer, SourceBuffer>?
+    open var onupdateend: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event)
      */
-    var onupdatestart: EventHandler<Event, SourceBuffer, SourceBuffer>?
+    open var onupdatestart: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
      * The **`timestampOffset`** property of the SourceBuffer interface controls the offset applied to timestamps inside media segments that are appended to the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset)
      */
-    var timestampOffset: Double
+    open var timestampOffset: Double
 
     /**
      * The **`updating`** read-only property of the SourceBuffer interface indicates whether the SourceBuffer is currently being updated — i.e., whether an appendBuffer() or remove() operation is currently in progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating)
      */
-    val updating: Boolean
+    open val updating: Boolean
 
     /**
      * The **`abort()`** method of the SourceBuffer interface aborts the current segment and resets the segment parser.
@@ -92,7 +92,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort)
      */
     @JsThrows(InvalidStateError::class)
-    fun abort()
+    open fun abort()
 
     /**
      * The **`appendBuffer()`** method of the SourceBuffer interface appends media segment data from an ArrayBuffer, a TypedArray or a DataView object to the SourceBuffer.
@@ -101,7 +101,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows.Typed(QuotaExceededError::class)
-    fun appendBuffer(data: BufferSource)
+    open fun appendBuffer(data: BufferSource)
 
     /**
      * The **`changeType()`** method of the SourceBuffer interface sets the MIME type that future calls to appendBuffer() should expect the new media data to conform to. This makes it possible to change codecs or container type mid-stream.
@@ -110,7 +110,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun changeType(type: String)
+    open fun changeType(type: String)
 
     /**
      * The **`remove()`** method of the SourceBuffer interface removes media segments within a specific time range from the SourceBuffer. This method can only be called when SourceBuffer.updating equals false. If SourceBuffer.updating is not equal to false, call SourceBuffer.abort().
@@ -119,7 +119,7 @@ private constructor() :
      */
     @JsThrows(InvalidAccessError::class)
     @JsThrows(InvalidStateError::class)
-    fun remove(
+    open fun remove(
         start: Double,
         end: Double,
     )

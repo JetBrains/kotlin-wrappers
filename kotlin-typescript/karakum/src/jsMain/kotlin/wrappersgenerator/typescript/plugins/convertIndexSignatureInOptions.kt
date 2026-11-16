@@ -4,8 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.isIndexSignatureDeclaration
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isIndexSignatureDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 
 val convertIndexSignatureInOptions = createPlugin { node, context, _ ->
     nullable {

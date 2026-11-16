@@ -21,7 +21,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/getSubscriptions)
      */
     @JsName("getSubscriptions")
-    fun getSubscriptionsAsync(): Promise<ReadonlyArray<CookieStoreGetOptions>>
+    open fun getSubscriptionsAsync(): Promise<ReadonlyArray<CookieStoreGetOptions>>
 
     /**
      * The **`subscribe()`** method of the CookieStoreManager interface subscribes a ServiceWorkerRegistration to cookie change events.
@@ -29,7 +29,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/subscribe)
      */
     @JsName("subscribe")
-    fun subscribeAsync(subscriptions: ReadonlyArray<CookieStoreGetOptions>): Promise<Void>
+    open fun subscribeAsync(subscriptions: ReadonlyArray<CookieStoreGetOptions>): Promise<Void>
 
     /**
      * The **`unsubscribe()`** method of the CookieStoreManager interface stops the ServiceWorkerRegistration from receiving previously subscribed events.
@@ -37,7 +37,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/unsubscribe)
      */
     @JsName("unsubscribe")
-    fun unsubscribeAsync(subscriptions: ReadonlyArray<CookieStoreGetOptions>): Promise<Void>
+    open fun unsubscribeAsync(subscriptions: ReadonlyArray<CookieStoreGetOptions>): Promise<Void>
 }
 
 /**

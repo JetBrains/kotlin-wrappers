@@ -17,12 +17,12 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionList/connections)
      */
-    val connections: ReadonlyArray<PresentationConnection>
+    open val connections: ReadonlyArray<PresentationConnection>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionList/connectionavailable_event)
      */
-    var onconnectionavailable: EventHandler<PresentationConnectionAvailableEvent, PresentationConnectionList, PresentationConnectionList>?
+    open var onconnectionavailable: EventHandler<PresentationConnectionAvailableEvent, PresentationConnectionList, PresentationConnectionList>?
 }
 
 /**

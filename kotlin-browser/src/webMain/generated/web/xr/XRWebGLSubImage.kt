@@ -7,9 +7,9 @@ import web.gl.WebGLTexture
 open external class XRWebGLSubImage
 private constructor() :
     XRSubImage {
-    val colorTexture: WebGLTexture
-    val depthStencilTexture: WebGLTexture
-    val imageIndex: Int
-    val colorTextureWidth: Int
-    val colorTextureHeight: Int
+    open val colorTexture: WebGLTexture
+    open val depthStencilTexture: WebGLTexture
+    open val imageIndex: Int
+    open val colorTextureWidth: Int
+    open val colorTextureHeight: Int
 }

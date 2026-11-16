@@ -5,9 +5,9 @@ package web.xr
 open external class XRProjectionLayer
 private constructor() :
     XRCompositionLayer {
-    val textureWidth: Int
-    val textureHeight: Int
-    val textureArrayLength: Int
-    val ignoreDepthValues: Boolean
-    var fixedFoveation: Float
+    open val textureWidth: Int
+    open val textureHeight: Int
+    open val textureArrayLength: Int
+    open val ignoreDepthValues: Boolean
+    open var fixedFoveation: Float
 }

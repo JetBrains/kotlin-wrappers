@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.*
+
 /**
  * Creates a builder thats just abstraction over program and can be used with watch
  */

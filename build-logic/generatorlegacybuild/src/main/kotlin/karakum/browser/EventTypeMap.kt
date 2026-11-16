@@ -284,4 +284,13 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "selectend" to "select_end",
     "squeezeend" to "squeeze_end",
     "squeezestart" to "squeeze_start",
+
+    // speech
+    "audioend" to "audio_end",
+    "audiostart" to "audio_start",
+    "nomatch" to "no_match",
+    "soundend" to "sound_end",
+    "soundstart" to "sound_start",
+    "speechend" to "speech_end",
+    "speechstart" to "speech_start",
 )

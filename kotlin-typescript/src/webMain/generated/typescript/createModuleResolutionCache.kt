@@ -4,6 +4,10 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.ModuleResolutionCache
+import typescript.sync.PackageJsonInfoCache
+
 external fun createModuleResolutionCache(
     currentDirectory: String,
     getCanonicalFileName: (s: String) -> String,

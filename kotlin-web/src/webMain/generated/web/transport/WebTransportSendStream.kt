@@ -2,10 +2,10 @@
 
 package web.transport
 
+import js.buffer.BufferSource
 import js.numbers.Int53
 import js.promise.Promise
 import js.promise.await
-import js.typedarrays.Uint8Array
 import web.streams.WritableStream
 
 /**
@@ -16,13 +16,20 @@ import web.streams.WritableStream
  */
 open external class WebTransportSendStream
 private constructor() :
-    WritableStream<Uint8Array<*>> {
+    WritableStream<BufferSource> {
+    /**
+     * The **`sendGroup`** property of the WebTransportSendStream interface represents the WebTransportSendGroup that this stream is grouped under for the purposes of sendOrder prioritization.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/sendGroup)
+     */
+    open var sendGroup: WebTransportSendGroup?
+
     /**
      * The **`sendOrder`** property of the WebTransportSendStream interface indicates the send priority of this stream relative to other streams for which the value has been set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/sendOrder)
      */
-    var sendOrder: Int53
+    open var sendOrder: Int53
 
     /**
      * The **`getStats()`** method of the WebTransportSendStream interface asynchronously returns an object containing statistics for the current stream.
@@ -30,7 +37,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportSendStream/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<WebTransportSendStreamStats>
+    open fun getStatsAsync(): Promise<WebTransportSendStreamStats>
 }
 
 /**

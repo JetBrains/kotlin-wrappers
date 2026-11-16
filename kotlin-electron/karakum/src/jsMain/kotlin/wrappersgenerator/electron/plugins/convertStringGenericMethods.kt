@@ -6,7 +6,7 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.`is`.*
 
 val convertStringGenericMethods = createPlugin { node, context, render ->
     nullable {

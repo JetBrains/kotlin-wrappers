@@ -11,8 +11,8 @@ import web.time.DOMHighResTimeStamp
 
 open external class XRFrame
 private constructor() {
-    val session: XRSession
-    val predictedDisplayTime: DOMHighResTimeStamp
+    open val session: XRSession
+    open val predictedDisplayTime: DOMHighResTimeStamp
 
     /**
      * Provides the pose of space relative to baseSpace as an XRPose, at the time represented by
@@ -21,7 +21,7 @@ private constructor() {
      * @param space
      * @param baseSpace
      */
-    fun getPose(
+    open fun getPose(
         space: XRSpace,
         baseSpace: XRSpace,
     ): XRPose?
@@ -33,7 +33,7 @@ private constructor() {
      * @param referenceSpace
      */
     @JsThrows(InvalidStateError::class)
-    fun getViewerPose(referenceSpace: XRReferenceSpace): XRViewerPose?
+    open fun getViewerPose(referenceSpace: XRReferenceSpace): XRViewerPose?
 
     /**
      * All anchors tracked in the frame.
@@ -43,7 +43,7 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/anchors/#dom-xrframe-trackedanchors
      */
-    val trackedAnchors: XRAnchorSet?
+    open val trackedAnchors: XRAnchorSet?
 
     /**
      * Creates a new anchor using the given pose in the given reference space.
@@ -55,9 +55,9 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/anchors/#dom-xrframe-createanchor
      */
-    var createAnchor: ((pose: XRRigidTransform, space: XRSpace) -> Promise<XRAnchor>)?
-    fun getHitTestResults(hitTestSource: XRHitTestSource): ReadonlyArray<XRHitTestResult>
-    fun getHitTestResultsForTransientInput(hitTestSource: XRTransientInputHitTestSource): ReadonlyArray<XRTransientInputHitTestResult>
+    open var createAnchor: ((pose: XRRigidTransform, space: XRSpace) -> Promise<XRAnchor>)?
+    open fun getHitTestResults(hitTestSource: XRHitTestSource): ReadonlyArray<XRHitTestResult>
+    open fun getHitTestResultsForTransientInput(hitTestSource: XRTransientInputHitTestSource): ReadonlyArray<XRTransientInputHitTestResult>
 
     /**
      * XRFrame is extended to contain detectedPlanes attribute which contains
@@ -69,7 +69,7 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/real-world-geometry/plane-detection.html#plane-set
      */
-    val detectedPlanes: XRPlaneSet?
+    open val detectedPlanes: XRPlaneSet?
 
     /**
      * XRFrame is extended to contain detectedMeshes attribute
@@ -81,10 +81,10 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/real-world-meshing/#mesh-set
      */
-    val detectedMeshes: XRMeshSet?
-    var getJointPose: ((joint: XRJointSpace, baseSpace: XRSpace) -> XRJointPose)?
+    open val detectedMeshes: XRMeshSet?
+    open var getJointPose: ((joint: XRJointSpace, baseSpace: XRSpace) -> XRJointPose)?
 
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun getDepthInformation(view: XRView): XRCPUDepthInformation?
+    open fun getDepthInformation(view: XRView): XRCPUDepthInformation?
 }

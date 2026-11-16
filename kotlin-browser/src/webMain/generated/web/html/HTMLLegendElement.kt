@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * The **`HTMLLegendElement`** is an interface allowing to access properties of the <legend> elements. It inherits properties and methods from the HTMLElement interface.
+ * The **`HTMLLegendElement`** is an interface allowing you to access properties of the <legend> elements. It inherits properties and methods from the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement)
  */
@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement/form)
      */
-    val form: HTMLFormElement?
+    open val form: HTMLFormElement?
 }

@@ -20,21 +20,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentFrame)
      */
-    val currentFrame: UInt53
+    open val currentFrame: UInt53
 
     /**
      * The read-only **`currentTime`** property of the AudioWorkletGlobalScope interface returns a double that represents the ever-increasing context time of the audio block being processed. It is equal to the currentTime property of the BaseAudioContext the worklet belongs to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentTime)
      */
-    val currentTime: Double
+    open val currentTime: Double
 
     /**
      * The read-only **`sampleRate`** property of the AudioWorkletGlobalScope interface returns a float that represents the sample rate of the associated BaseAudioContext the worklet belongs to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/sampleRate)
      */
-    val sampleRate: Float
+    open val sampleRate: Float
 
     /**
      * The **`registerProcessor`** method of the AudioWorkletGlobalScope interface registers a class constructor derived from AudioWorkletProcessor interface under a specified name.
@@ -42,7 +42,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
      */
     @JsThrows(NotSupportedError::class)
-    fun registerProcessor(
+    open fun registerProcessor(
         name: AudioWorkletProcessorName,
         processorCtor: AudioWorkletProcessorConstructor,
     )

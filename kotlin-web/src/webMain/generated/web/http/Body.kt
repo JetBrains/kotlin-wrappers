@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.http
 
 import js.buffer.ArrayBuffer
@@ -27,7 +23,6 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
      */
     val body: ReadableStream<Uint8Array<ArrayBuffer>>?
-        get() = definedExternally
 
     /**
      * The **`bodyUsed`** read-only property of the Request interface is a boolean value that indicates whether the request body has been read yet.
@@ -35,7 +30,6 @@ external interface Body {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bodyUsed)
      */
     val bodyUsed: Boolean
-        get() = definedExternally
 
     /**
      * The **`arrayBuffer()`** method of the Request interface reads the request body and returns it as a promise that resolves with an ArrayBuffer.
@@ -44,7 +38,7 @@ external interface Body {
      */
     @JsThrows(AbortError::class)
     @JsName("arrayBuffer")
-    fun arrayBufferAsync(): Promise<ArrayBuffer> = definedExternally
+    fun arrayBufferAsync(): Promise<ArrayBuffer>
 
     /**
      * The **`blob()`** method of the Request interface reads the request body and returns it as a promise that resolves with a Blob.
@@ -53,7 +47,7 @@ external interface Body {
      */
     @JsThrows(AbortError::class)
     @JsName("blob")
-    fun blobAsync(): Promise<Blob> = definedExternally
+    fun blobAsync(): Promise<Blob>
 
     /**
      * The **`bytes()`** method of the Request interface reads the request body and returns it as a promise that resolves with a Uint8Array.
@@ -62,7 +56,7 @@ external interface Body {
      */
     @JsThrows(AbortError::class)
     @JsName("bytes")
-    fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>> = definedExternally
+    fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
 
     /**
      * The **`formData()`** method of the Request interface reads the request body and returns it as a promise that resolves with a FormData object.
@@ -71,7 +65,7 @@ external interface Body {
      */
     @JsThrows(AbortError::class)
     @JsName("formData")
-    fun formDataAsync(): Promise<FormData> = definedExternally
+    fun formDataAsync(): Promise<FormData>
 
     /**
      * The **`json()`** method of the Request interface reads the request body and returns it as a promise that resolves with the result of parsing the body text as JSON.
@@ -80,7 +74,7 @@ external interface Body {
      */
     @JsThrows(AbortError::class)
     @JsName("json")
-    fun jsonAsync(): Promise<*> = definedExternally
+    fun jsonAsync(): Promise<*>
 
     /**
      * The **`text()`** method of the Request interface reads the request body and returns it as a promise that resolves with a String. The response is always decoded using UTF-8.
@@ -89,12 +83,12 @@ external interface Body {
      */
     @JsThrows(AbortError::class)
     @JsName("text")
-    fun textAsync(): Promise<JsString> = definedExternally
+    fun textAsync(): Promise<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/textStream)
      */
-    fun textStream(): ReadableStream<JsString> = definedExternally
+    fun textStream(): ReadableStream<JsString>
 }
 
 /**

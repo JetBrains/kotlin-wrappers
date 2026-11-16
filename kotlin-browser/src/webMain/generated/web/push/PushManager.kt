@@ -21,7 +21,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */
     @JsName("getSubscription")
-    fun getSubscriptionAsync(): Promise<PushSubscription?>
+    open fun getSubscriptionAsync(): Promise<PushSubscription?>
 
     /**
      * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager. Possible values are 'prompt', 'denied', or 'granted'.
@@ -29,7 +29,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
     @JsName("permissionState")
-    fun permissionStateAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PermissionState>
+    open fun permissionStateAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PermissionState>
 
     /**
      * The **`subscribe()`** method of the PushManager interface subscribes to a push service.
@@ -37,7 +37,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
      */
     @JsName("subscribe")
-    fun subscribeAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PushSubscription>
+    open fun subscribeAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PushSubscription>
 
     companion object {
         /**

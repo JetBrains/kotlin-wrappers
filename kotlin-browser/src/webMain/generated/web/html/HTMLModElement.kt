@@ -15,12 +15,12 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/cite)
      */
-    var cite: String
+    open var cite: String
 
     /**
      * The **`dateTime`** property of the HTMLModElement interface is a string containing a machine-readable date with an optional time value. It reflects the datetime HTML attribute of the <del> and <ins> elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/dateTime)
      */
-    var dateTime: String
+    open var dateTime: String
 }

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ChipColor {
+sealed /* union */
+external interface ChipColor {
     companion object {
         @JsValue("default")
         val default: ChipColor
@@ -29,7 +30,8 @@ sealed external interface ChipColor {
     }
 }
 
-sealed external interface ChipVariant {
+sealed /* union */
+external interface ChipVariant {
     companion object {
         @JsValue("filled")
         val filled: ChipVariant

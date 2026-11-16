@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.LanguageService
+
 external fun createLanguageService(
     host: LanguageServiceHost,
     documentRegistry: DocumentRegistry = definedExternally,

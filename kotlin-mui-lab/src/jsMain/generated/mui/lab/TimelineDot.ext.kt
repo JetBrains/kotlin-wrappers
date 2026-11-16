@@ -4,7 +4,8 @@ package mui.lab
 
 import seskar.js.JsValue
 
-sealed external interface TimelineDotColor {
+sealed /* union */
+external interface TimelineDotColor {
     companion object {
         @JsValue("inherit")
         val inherit: TimelineDotColor
@@ -32,7 +33,8 @@ sealed external interface TimelineDotColor {
     }
 }
 
-sealed external interface TimelineDotVariant {
+sealed /* union */
+external interface TimelineDotVariant {
     companion object {
         @JsValue("filled")
         val filled: TimelineDotVariant

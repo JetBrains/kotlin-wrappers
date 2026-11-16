@@ -19,19 +19,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/data)
      */
-    var data: ArrayBuffer
+    open var data: ArrayBuffer
 
     /**
      * The **`timestamp`** read-only property of the RTCEncodedAudioFrame interface indicates the time at which frame sampling started.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/timestamp)
      */
-    val timestamp: Int53
+    open val timestamp: Int53
 
     /**
      * The **`getMetadata()`** method of the RTCEncodedAudioFrame interface returns an object containing the metadata associated with the frame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/getMetadata)
      */
-    fun getMetadata(): RTCEncodedAudioFrameMetadata
+    open fun getMetadata(): RTCEncodedAudioFrameMetadata
 }

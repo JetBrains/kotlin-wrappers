@@ -3,8 +3,8 @@ package wrappersgenerator.testing.library.dom.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isIndexedAccessTypeNode
-import typescript.isOptionalTypeNode
+import typescript.ast.`is`.isIndexedAccessTypeNode
+import typescript.ast.`is`.isOptionalTypeNode
 
 val convertSecondFindArgumentType = createPlugin { node, _, _ ->
     nullable {

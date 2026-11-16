@@ -6,7 +6,11 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isMethodDeclaration
+import typescript.ast.`is`.isPropertyDeclaration
 
 class DuplexMembersInjection : Injection {
     private val readableMemberNodes = mutableListOf<Node>()

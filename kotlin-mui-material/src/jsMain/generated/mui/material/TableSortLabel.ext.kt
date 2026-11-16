@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface TableSortLabelDirection {
+sealed /* union */
+external interface TableSortLabelDirection {
     companion object {
         @JsValue("asc")
         val asc: TableSortLabelDirection

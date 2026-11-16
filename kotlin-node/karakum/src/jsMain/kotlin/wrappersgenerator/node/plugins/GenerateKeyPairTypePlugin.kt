@@ -12,7 +12,8 @@ import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarati
 import io.github.sgrishchenko.karakum.util.camelize
 import js.array.ReadonlyArray
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private val keyGroups = setOf(
     "mlDsa",

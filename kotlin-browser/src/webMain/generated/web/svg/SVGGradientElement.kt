@@ -16,21 +16,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientTransform)
      */
-    val gradientTransform: SVGAnimatedTransformList
+    open val gradientTransform: SVGAnimatedTransformList
 
     /**
      * The **`gradientUnits`** read-only property of the SVGGradientElement interface reflects the gradientUnits attribute of the given element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientUnits)
      */
-    val gradientUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
+    open val gradientUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
 
     /**
      * The **`spreadMethod`** read-only property of the SVGGradientElement interface reflects the spreadMethod attribute of the given element. It takes one of the SVG_SPREADMETHOD_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/spreadMethod)
      */
-    val spreadMethod: SVGAnimatedEnumeration<SpreadMethod>
+    open val spreadMethod: SVGAnimatedEnumeration<SpreadMethod>
 
     companion object {
         /**

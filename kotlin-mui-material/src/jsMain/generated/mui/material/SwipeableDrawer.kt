@@ -2,18 +2,24 @@
 
 @file:JsModule("@mui/material/SwipeableDrawer")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import react.ElementType
 import react.FC
+import react.Props
 import react.dom.events.SyntheticEvent
+import react.dom.html.HTMLAttributes
+import web.html.HTMLDivElement
 
 external interface SwipeableDrawerProps :
-    DrawerProps {
+    DrawerProps,
+    SwipeableDrawerSlotsAndSlotProps {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slots: SwipeableDrawerSlots?
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slotProps: SwipeableDrawerSlotProps?
+
     /**
      * If set to true, the swipe event will open the drawer even if the user begins the swipe on one of the drawer's children.
      * This can be useful in scenarios where the drawer is partially visible.
@@ -69,7 +75,8 @@ external interface SwipeableDrawerProps :
      *
      * @param {React.SyntheticEvent<{}> | Event} event The event source of the callback.
      */
-    var onClose: (event: SyntheticEvent<*, *>) -> Unit
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var onClose: (event: SyntheticEvent<*, *>) -> Unit
 
     /**
      * Callback fired when the component requests to be opened.
@@ -92,12 +99,23 @@ external interface SwipeableDrawerProps :
     var swipeAreaWidth: Number?
 }
 
-external interface SwipeableDrawerSlots {
+external interface SwipeableDrawerSlots : DrawerSlots {
     /**
      * The component used for the swipeArea slot.
      * @default div
      */
     var swipeArea: ElementType<*>?
+}
+
+external interface SwipeableDrawerSlotProps : DrawerSlotProps {
+    /** TS: SlotProps<'div', SwipeableDrawerSwipeAreaSlotPropsOverrides, DrawerOwnerState> */
+    var swipeArea: HTMLAttributes<HTMLDivElement>?
+}
+
+external interface SwipeableDrawerSlotsAndSlotProps : Props {
+    var slots: SwipeableDrawerSlots?
+
+    var slotProps: SwipeableDrawerSlotProps?
 }
 
 /**

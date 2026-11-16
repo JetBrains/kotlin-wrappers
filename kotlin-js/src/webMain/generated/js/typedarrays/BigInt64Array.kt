@@ -12,7 +12,7 @@ import js.serialization.Serializable
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/BigInt64Array)
  */
-open external class BigInt64Array<B : ArrayBufferLike>(
+open external class BigInt64Array<out B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,

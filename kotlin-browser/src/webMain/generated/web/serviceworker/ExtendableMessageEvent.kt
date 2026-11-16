@@ -20,35 +20,35 @@ open external class ExtendableMessageEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
-    val data: JsAny?
+    open val data: JsAny?
 
     /**
      * The lastEventID read-only property of the ExtendableMessageEvent interface represents, in server-sent events, the last event ID of the event source. This is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */
-    val lastEventId: String
+    open val lastEventId: String
 
     /**
      * The **`origin`** read-only property of the ExtendableMessageEvent interface returns the origin of the Client that sent the message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
      */
-    val origin: String
+    open val origin: String
 
     /**
      * The **`ports`** read-only property of the ExtendableMessageEvent interface returns the array containing the MessagePort objects representing the ports of the associated message channel (the channel the message is being sent through.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
      */
-    val ports: ReadonlyArray<MessagePort>
+    open val ports: ReadonlyArray<MessagePort>
 
     /**
      * The **`source`** read-only property of the ExtendableMessageEvent interface returns a reference to the Client object from which the message was sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */
-    val source: JsAny /* Client | ServiceWorker | MessagePort */?
+    open val source: JsAny /* Client | ServiceWorker | MessagePort */?
 
     companion object
 }

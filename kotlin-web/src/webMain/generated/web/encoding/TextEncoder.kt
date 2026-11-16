@@ -18,14 +18,14 @@ open external class TextEncoder :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoder/encode)
      */
-    fun encode(input: String = definedExternally): Uint8Array<ArrayBuffer>
+    open fun encode(input: String = definedExternally): Uint8Array<ArrayBuffer>
 
     /**
      * The **`TextEncoder.encodeInto()`** method takes a string to encode and a destination Uint8Array to put resulting UTF-8 encoded text into, and returns an object indicating the progress of the encoding. This is potentially more performant than the encode() method — especially when the target buffer is a view into a Wasm heap.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoder/encodeInto)
      */
-    fun encodeInto(
+    open fun encodeInto(
         source: String,
         destination: Uint8Array<ArrayBufferLike>,
     ): TextEncoderEncodeIntoResult

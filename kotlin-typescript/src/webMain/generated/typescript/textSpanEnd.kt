@@ -4,4 +4,6 @@
 
 package typescript
 
+import typescript.ast.TextSpan
+
 external fun textSpanEnd(span: TextSpan): Int

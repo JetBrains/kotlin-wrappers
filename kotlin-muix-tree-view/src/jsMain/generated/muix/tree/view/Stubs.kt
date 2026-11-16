@@ -15,27 +15,29 @@ external interface TreeViewStoreParameters : Props {
     var defaultExpandedItems: ReadonlyArray<TreeViewItemId>?
     var onExpandedItemsChange: ((event: SyntheticEvent<*, *>?, itemIds: ReadonlyArray<TreeViewItemId>) -> Unit)?
     var onItemExpansionToggle: ((event: SyntheticEvent<*, *>?, itemId: TreeViewItemId, isExpanded: Boolean) -> Unit)?
-    var expansionTrigger: String?
+    var expansionTrigger: TreeViewExpansionTrigger?
     var disableSelection: Boolean?
-    var selectedItems: Any?
-    var defaultSelectedItems: Any?
+    var selectedItems: TreeViewSelectionValue?
+    var defaultSelectedItems: TreeViewSelectionValue?
     var multiSelect: Boolean?
     var checkboxSelection: Boolean?
-    var onSelectedItemsChange: ((event: SyntheticEvent<*, *>?, itemIds: Any?) -> Unit)?
+    var selectionPropagation: TreeViewSelectionPropagation?
+    var onSelectedItemsChange: ((event: SyntheticEvent<*, *>?, itemIds: TreeViewSelectionValue?) -> Unit)?
     var onItemSelectionToggle: ((event: SyntheticEvent<*, *>?, itemId: TreeViewItemId, isSelected: Boolean) -> Unit)?
     var onItemClick: ((event: MouseEvent<*, *>, itemId: TreeViewItemId) -> Unit)?
     var onItemFocus: ((event: SyntheticEvent<*, *>?, itemId: TreeViewItemId) -> Unit)?
-    var itemChildrenIndentation: Any?
+    var itemChildrenIndentation: Any? /* string | number */
     var itemHeight: Double?
 }
 
-external interface RichTreeViewStoreParameters : TreeViewStoreParameters {
-    var items: ReadonlyArray<*>?
-    var isItemDisabled: ((item: Any) -> Boolean)?
-    var isItemSelectionDisabled: ((item: Any) -> Boolean)?
-    var getItemLabel: ((item: Any) -> String)?
-    var getItemId: ((item: Any) -> TreeViewItemId)?
-    var getItemChildren: ((item: Any) -> ReadonlyArray<*>?)?
-    var isItemEditable: Any?
+external interface RichTreeViewStoreParameters<R : Any> : TreeViewStoreParameters {
+    var items: ReadonlyArray<R>?
+    var isItemDisabled: ((item: R) -> Boolean)?
+    var isItemSelectionDisabled: ((item: R) -> Boolean)?
+    var getItemLabel: ((item: R) -> String)?
+    var getItemId: ((item: R) -> TreeViewItemId)?
+    var getItemChildren: ((item: R) -> ReadonlyArray<R>?)?
+    var isItemEditable: Any? /* boolean | ((item: R) => boolean) */
     var onItemLabelChange: ((itemId: TreeViewItemId, newLabel: String) -> Unit)?
+    var domStructure: TreeViewDOMStructure?
 }

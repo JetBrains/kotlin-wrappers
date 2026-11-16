@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.sync.TranspileOptions
+import typescript.sync.TranspileOutput
+
 external fun transpileModule(
     input: String,
     transpileOptions: TranspileOptions,

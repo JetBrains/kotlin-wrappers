@@ -2,6 +2,11 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.ConfigFileDiagnosticsReporter
+import typescript.sync.FileExtensionInfo
+import typescript.sync.WatchOptions
+
 /**
  * Host to create watch with config file
  */

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface SelectVariant {
+sealed /* union */
+external interface SelectVariant {
     companion object {
         @JsValue("outlined")
         val outlined: SelectVariant

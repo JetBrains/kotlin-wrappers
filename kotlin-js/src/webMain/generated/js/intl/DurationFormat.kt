@@ -31,19 +31,19 @@ open external class DurationFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/format).
      */
-    fun format(duration: ReadonlyRecord<DurationFormatUnit, JsInt>): String
+    open fun format(duration: ReadonlyRecord<DurationFormatUnit, JsInt>): String
 
     /**
      * @param duration The duration object to be formatted. It should include some or all of the following properties: months, weeks, days, hours, minutes, seconds, milliseconds, microseconds, nanoseconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/formatToParts).
      */
-    fun formatToParts(duration: ReadonlyRecord<DurationFormatUnit, JsInt>): ReadonlyArray<DurationFormatPart>
+    open fun formatToParts(duration: ReadonlyRecord<DurationFormatUnit, JsInt>): ReadonlyArray<DurationFormatPart>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/resolvedOptions).
      */
-    fun resolvedOptions(): ResolvedDurationFormatOptions
+    open fun resolvedOptions(): ResolvedDurationFormatOptions
 
     companion object {
         /**

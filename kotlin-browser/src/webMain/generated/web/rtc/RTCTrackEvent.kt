@@ -22,28 +22,28 @@ open external class RTCTrackEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/receiver)
      */
-    val receiver: RTCRtpReceiver
+    open val receiver: RTCRtpReceiver
 
     /**
      * The WebRTC API interface RTCTrackEvent's read-only **`streams`** property specifies an array of MediaStream objects, one for each of the streams that comprise the track being added to the RTCPeerConnection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/streams)
      */
-    val streams: ReadonlyArray<MediaStream>
+    open val streams: ReadonlyArray<MediaStream>
 
     /**
      * The WebRTC API interface RTCTrackEvent's read-only **`track`** property specifies the MediaStreamTrack that has been added to the RTCPeerConnection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/track)
      */
-    val track: MediaStreamTrack
+    open val track: MediaStreamTrack
 
     /**
      * The WebRTC API interface RTCTrackEvent's read-only **`transceiver`** property indicates the RTCRtpTransceiver affiliated with the event's track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/transceiver)
      */
-    val transceiver: RTCRtpTransceiver
+    open val transceiver: RTCRtpTransceiver
 
     companion object
 }

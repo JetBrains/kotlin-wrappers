@@ -3,9 +3,9 @@ package wrappersgenerator.tanstack.virtual.core.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.SyntaxKind
-import typescript.isIntersectionTypeNode
-import typescript.isTypeReferenceNode
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isTypeReferenceNode
 
 // `Window & typeof globalThis`
 val convertWindowGlobalThisIntersection = createPlugin { node, _, render ->

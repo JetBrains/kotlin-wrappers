@@ -20,14 +20,14 @@ open external class ExtendableCookieChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableCookieChangeEvent/changed)
      */
-    val changed: ReadonlyArray<CookieListItem>
+    open val changed: ReadonlyArray<CookieListItem>
 
     /**
      * The **`deleted`** read-only property of the ExtendableCookieChangeEvent interface returns any cookies that have been deleted by the given ExtendableCookieChangeEvent instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableCookieChangeEvent/deleted)
      */
-    val deleted: ReadonlyArray<CookieListItem>
+    open val deleted: ReadonlyArray<CookieListItem>
 
     companion object
 }

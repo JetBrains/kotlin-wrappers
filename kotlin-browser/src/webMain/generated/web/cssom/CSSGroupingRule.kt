@@ -18,7 +18,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules)
      */
-    val cssRules: CSSRuleList
+    open val cssRules: CSSRuleList
 
     /**
      * The **`deleteRule()`** method of the CSSGroupingRule interface removes a CSS rule from a list of child CSS rules.
@@ -27,7 +27,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(InvalidStateError::class)
-    fun deleteRule(index: Int)
+    open fun deleteRule(index: Int)
 
     /**
      * The **`insertRule()`** method of the CSSGroupingRule interface adds a new CSS rule to a list of CSS rules.
@@ -36,7 +36,7 @@ private constructor() :
      */
     @JsThrows(HierarchyRequestError::class)
     @JsThrows(IndexSizeError::class)
-    fun insertRule(
+    open fun insertRule(
         rule: String,
         index: Int = definedExternally,
     ): Int

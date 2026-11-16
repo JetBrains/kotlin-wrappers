@@ -28,5 +28,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileList/item)
      */
-    fun item(index: Int): File?
+    open fun item(index: Int): File?
 }

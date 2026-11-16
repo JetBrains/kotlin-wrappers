@@ -19,7 +19,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/createReader)
      */
-    fun createReader(): FileSystemDirectoryReader
+    open fun createReader(): FileSystemDirectoryReader
 
     /**
      * The FileSystemDirectoryEntry interface's method **`getDirectory()`** returns a FileSystemDirectoryEntry object corresponding to a directory contained somewhere within the directory subtree rooted at the directory on which it's called.
@@ -29,7 +29,7 @@ private constructor() :
     @JsThrows(NotFoundError::class)
     @JsThrows(SecurityError::class)
     @JsName("getDirectory")
-    fun getDirectoryWithCallbacks(
+    open fun getDirectoryWithCallbacks(
         path: String? = definedExternally,
         options: FileSystemFlags = definedExternally,
         successCallback: FileSystemEntryCallback = definedExternally,
@@ -44,7 +44,7 @@ private constructor() :
     @JsThrows(NotFoundError::class)
     @JsThrows(SecurityError::class)
     @JsName("getFile")
-    fun getFileWithCallbacks(
+    open fun getFileWithCallbacks(
         path: String? = definedExternally,
         options: FileSystemFlags = definedExternally,
         successCallback: FileSystemEntryCallback = definedExternally,

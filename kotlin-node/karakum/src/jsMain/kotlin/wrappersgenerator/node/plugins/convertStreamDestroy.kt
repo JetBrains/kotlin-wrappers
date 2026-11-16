@@ -8,9 +8,9 @@ import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarat
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import js.reflect.invoke
-import typescript.isClassDeclaration
-import typescript.isIdentifier
-import typescript.isMethodDeclaration
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isMethodDeclaration
 
 val convertStreamDestroy = createPlugin { node, context, render ->
     nullable {

@@ -19,5 +19,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement/type)
      */
-    var type: String
+    open var type: String
 }

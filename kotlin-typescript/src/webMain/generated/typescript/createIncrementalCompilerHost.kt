@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.sync.CompilerHost
+import typescript.sync.CompilerOptions
+
 external fun createIncrementalCompilerHost(
     options: CompilerOptions,
     system: System = definedExternally,

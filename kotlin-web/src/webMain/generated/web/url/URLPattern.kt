@@ -45,70 +45,70 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hasRegExpGroups)
      */
-    val hasRegExpGroups: Boolean
+    open val hasRegExpGroups: Boolean
 
     /**
      * The **`hash`** read-only property of the URLPattern interface is a string containing the pattern used to match the fragment part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hash)
      */
-    val hash: String
+    open val hash: String
 
     /**
      * The **`hostname`** read-only property of the URLPattern interface is a string containing the pattern used to match the hostname part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hostname)
      */
-    val hostname: String
+    open val hostname: String
 
     /**
      * The **`password`** read-only property of the URLPattern interface is a string containing the pattern used to match the password part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/password)
      */
-    val password: String
+    open val password: String
 
     /**
      * The **`pathname`** read-only property of the URLPattern interface is a string containing the pattern used to match the pathname part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/pathname)
      */
-    val pathname: String
+    open val pathname: String
 
     /**
      * The **`port`** read-only property of the URLPattern interface is a string containing the pattern used to match the port part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/port)
      */
-    val port: String
+    open val port: String
 
     /**
      * The **`protocol`** read-only property of the URLPattern interface is a string containing the pattern used to match the protocol part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/protocol)
      */
-    val protocol: String
+    open val protocol: String
 
     /**
      * The **`search`** read-only property of the URLPattern interface is a string containing the pattern used to match the search part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/search)
      */
-    val search: String
+    open val search: String
 
     /**
      * The **`username`** read-only property of the URLPattern interface is a string containing the pattern used to match the username part of a URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/username)
      */
-    val username: String
+    open val username: String
 
     /**
      * The **`exec()`** method of the URLPattern interface takes a URL or object of URL parts, and returns either an object containing the results of matching the URL to the pattern, or null if the URL does not match the pattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
      */
-    fun exec(
+    open fun exec(
         input: String = definedExternally,
         baseURL: String = definedExternally,
     ): URLPatternResult?
@@ -118,7 +118,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
      */
-    fun exec(
+    open fun exec(
         input: URLPatternInit,
         baseURL: String = definedExternally,
     ): URLPatternResult?
@@ -128,7 +128,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
      */
-    fun exec(
+    open fun exec(
         input: String = definedExternally,
         baseURL: URL,
     ): URLPatternResult?
@@ -138,7 +138,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
      */
-    fun exec(
+    open fun exec(
         input: URLPatternInit,
         baseURL: URL,
     ): URLPatternResult?
@@ -148,7 +148,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
      */
-    fun test(
+    open fun test(
         input: String = definedExternally,
         baseURL: String = definedExternally,
     ): Boolean
@@ -158,7 +158,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
      */
-    fun test(
+    open fun test(
         input: URLPatternInit,
         baseURL: String = definedExternally,
     ): Boolean
@@ -168,7 +168,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
      */
-    fun test(
+    open fun test(
         input: String = definedExternally,
         baseURL: URL,
     ): Boolean
@@ -178,7 +178,7 @@ open external class URLPattern(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
      */
-    fun test(
+    open fun test(
         input: URLPatternInit,
         baseURL: URL,
     ): Boolean

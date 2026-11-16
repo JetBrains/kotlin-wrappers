@@ -4,7 +4,8 @@ package mui.base
 
 import seskar.js.JsValue
 
-sealed external interface useTabsDirection {
+sealed /* union */
+external interface useTabsDirection {
     companion object {
         @JsValue("ltr")
         val ltr: useTabsDirection

@@ -24,7 +24,7 @@ open external class Text(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/wholeText)
      */
-    val wholeText: String
+    open val wholeText: String
 
     /**
      * The **`splitText()`** method of the Text interface breaks the Text node into two nodes at the specified offset, keeping both nodes in the tree as siblings.
@@ -33,7 +33,7 @@ open external class Text(
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun splitText(offset: Int): Text
+    open fun splitText(offset: Int): Text
 }
 
 /**

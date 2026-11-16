@@ -15,7 +15,7 @@ open external class USBConnectionEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBConnectionEvent/device)
      */
-    val device: USBDevice
+    open val device: USBDevice
 
     companion object
 }

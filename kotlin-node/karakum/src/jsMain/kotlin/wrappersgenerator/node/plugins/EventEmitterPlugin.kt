@@ -3,9 +3,15 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.extension.plugins.*
+import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
+import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
+import io.github.sgrishchenko.karakum.extension.plugins.function
+import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.InterfaceDeclaration
+import typescript.ast.Node
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.*
 
 private fun extractModifiers(member: Node) = when {
     isPropertyDeclaration(member) -> member.modifiers

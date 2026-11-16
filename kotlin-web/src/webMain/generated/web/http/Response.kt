@@ -2,8 +2,14 @@
 
 package web.http
 
+import js.buffer.ArrayBuffer
+import js.promise.Promise
+import js.typedarrays.Uint8Array
+import web.blob.Blob
 import web.errors.DOMExceptionType.AbortError
 import web.errors.JsThrows
+import web.form.FormData
+import web.streams.ReadableStream
 import web.url.URL
 
 /**
@@ -20,56 +26,68 @@ open external class Response(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/headers)
      */
-    val headers: Headers
+    open val headers: Headers
 
     /**
      * The **`ok`** read-only property of the Response interface contains a Boolean stating whether the response was successful (status in the range 200-299) or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/ok)
      */
-    val ok: Boolean
+    open val ok: Boolean
 
     /**
      * The **`redirected`** read-only property of the Response interface indicates whether or not the response is the result of a request you made which was redirected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirected)
      */
-    val redirected: Boolean
+    open val redirected: Boolean
 
     /**
-     * The **`status`** read-only property of the Response interface contains the HTTP status codes of the response.
+     * The **`status`** read-only property of the Response interface contains the HTTP status code of the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/status)
      */
-    val status: Short
+    open val status: Short
 
     /**
      * The **`statusText`** read-only property of the Response interface contains the status message corresponding to the HTTP status code in Response.status.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/statusText)
      */
-    val statusText: String
+    open val statusText: String
 
     /**
      * The **`type`** read-only property of the Response interface contains the type of the response. The type determines whether scripts are able to access the response body and headers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/type)
      */
-    val type: ResponseType
+    open val type: ResponseType
 
     /**
      * The **`url`** read-only property of the Response interface contains the URL of the response. The value of the url property will be the final URL obtained after any redirects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/url)
      */
-    val url: String
+    open val url: String
 
     /**
      * The **`clone()`** method of the Response interface creates a clone of a response object, identical in every way, but stored in a different variable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/clone)
      */
-    fun clone(): Response
+    open fun clone(): Response
+
+    /* `Body` overrides */
+
+    override val body: ReadableStream<Uint8Array<ArrayBuffer>>?
+    override val bodyUsed: Boolean
+    override fun arrayBufferAsync(): Promise<ArrayBuffer>
+    override fun blobAsync(): Promise<Blob>
+    override fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
+    override fun formDataAsync(): Promise<FormData>
+    override fun jsonAsync(): Promise<*>
+    override fun textAsync(): Promise<JsString>
+    override fun textStream(): ReadableStream<JsString>
 
     companion object {
         /**

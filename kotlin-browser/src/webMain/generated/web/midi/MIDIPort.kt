@@ -24,54 +24,54 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/connection)
      */
-    val connection: MIDIPortConnectionState
+    open val connection: MIDIPortConnectionState
 
     /**
      * The **`id`** read-only property of the MIDIPort interface returns the unique ID of the port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/id)
      */
-    val id: String
+    open val id: String
 
     /**
      * The **`manufacturer`** read-only property of the MIDIPort interface returns the manufacturer of the port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/manufacturer)
      */
-    val manufacturer: String?
+    open val manufacturer: String?
 
     /**
      * The **`name`** read-only property of the MIDIPort interface returns the system name of the port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/name)
      */
-    val name: String?
+    open val name: String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/statechange_event)
      */
-    var onstatechange: EventHandler<MIDIConnectionEvent, MIDIPort, MIDIPort>?
+    open var onstatechange: EventHandler<MIDIConnectionEvent, MIDIPort, MIDIPort>?
 
     /**
      * The **`state`** read-only property of the MIDIPort interface returns the state of the port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/state)
      */
-    val state: MIDIPortDeviceState
+    open val state: MIDIPortDeviceState
 
     /**
      * The **`type`** read-only property of the MIDIPort interface returns the type of the port, indicating whether this is an input or output MIDI port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/type)
      */
-    val type: MIDIPortType
+    open val type: MIDIPortType
 
     /**
      * The **`version`** read-only property of the MIDIPort interface returns the version of the port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/version)
      */
-    val version: String?
+    open val version: String?
 
     /**
      * The **`close()`** method of the MIDIPort interface makes the access to the MIDI device connected to this MIDIPort unavailable.
@@ -79,7 +79,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
      */
     @JsName("close")
-    fun closeAsync(): Promise<MIDIPort>
+    open fun closeAsync(): Promise<MIDIPort>
 
     /**
      * The **`open()`** method of the MIDIPort interface makes the MIDI device connected to this MIDIPort explicitly available.
@@ -88,7 +88,7 @@ private constructor() :
      */
     @JsThrows(NotAllowedError::class)
     @JsName("open")
-    fun openAsync(): Promise<MIDIPort>
+    open fun openAsync(): Promise<MIDIPort>
 }
 
 /**

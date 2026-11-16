@@ -19,7 +19,7 @@ open external class PageTransitionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)
      */
-    val persisted: Boolean
+    open val persisted: Boolean
 
     companion object
 }

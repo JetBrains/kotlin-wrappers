@@ -1,15 +1,15 @@
 [versions]
 coroutines = "1.11.0"
-dokka = "2.3.0-Beta"
-karakum = "1.0.0-alpha.132"
+dokka = "2.3.0"
+karakum = "1.0.0-alpha.133"
 kfc = "19.20.0"
 kotlin = "2.4.21"
-serialization = "1.12.0"
+serialization = "1.13.0"
 seskar = "4.66.0"
 download = "5.7.0"
 
 # https://nodejs.org
-node = "26.13.0"
+node = "26.13.1"
 # https://npmx.dev/package/webpack
 webpack = "5.112.2"
 # https://npmx.dev/package/webpack-cli

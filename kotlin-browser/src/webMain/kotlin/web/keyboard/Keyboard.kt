@@ -14,14 +14,14 @@ open external class Keyboard
 private constructor() {
 
     @JsName("getLayoutMap")
-    fun getLayoutMapAsync(): Promise<KeyboardLayoutMap>
+    open fun getLayoutMapAsync(): Promise<KeyboardLayoutMap>
 
     @JsName("lock")
-    fun lockAsync(
+    open fun lockAsync(
         keyCodes: ReadonlyArray<KeyCode> = definedExternally,
     ): Promise<Void>
 
-    fun unlock()
+    open fun unlock()
 }
 
 @ExperimentalWebApi

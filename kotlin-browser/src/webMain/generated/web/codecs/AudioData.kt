@@ -27,49 +27,49 @@ open external class AudioData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/duration)
      */
-    val duration: UInt53
+    open val duration: UInt53
 
     /**
      * The **`format`** read-only property of the AudioData interface returns the sample format of the AudioData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/format)
      */
-    val format: AudioSampleFormat?
+    open val format: AudioSampleFormat?
 
     /**
      * The **`numberOfChannels`** read-only property of the AudioData interface returns the number of channels in the AudioData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/numberOfChannels)
      */
-    val numberOfChannels: Int
+    open val numberOfChannels: Int
 
     /**
      * The **`numberOfFrames`** read-only property of the AudioData interface returns the number of frames in the AudioData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/numberOfFrames)
      */
-    val numberOfFrames: Int
+    open val numberOfFrames: Int
 
     /**
      * The **`sampleRate`** read-only property of the AudioData interface returns the sample rate in Hz.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/sampleRate)
      */
-    val sampleRate: Float
+    open val sampleRate: Float
 
     /**
      * The **`timestamp`** read-only property of the AudioData interface returns the timestamp of this AudioData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/timestamp)
      */
-    val timestamp: Int53
+    open val timestamp: Int53
 
     /**
      * The **`allocationSize()`** method of the AudioData interface returns the size in bytes required to hold the current sample as filtered by options passed into the method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/allocationSize)
      */
-    fun allocationSize(options: AudioDataCopyToOptions): Int
+    open fun allocationSize(options: AudioDataCopyToOptions): Int
 
     /**
      * The **`clone()`** method of the AudioData interface creates a new AudioData object with reference to the same media resource as the original.
@@ -77,7 +77,7 @@ open external class AudioData(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/clone)
      */
     @JsThrows(InvalidStateError::class)
-    fun clone(): AudioData
+    open fun clone(): AudioData
 
     /**
      * The **`close()`** method of the AudioData interface clears all states and releases the reference to the media resource.
@@ -93,7 +93,7 @@ open external class AudioData(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun copyTo(
+    open fun copyTo(
         destination: AllowSharedBufferSource,
         options: AudioDataCopyToOptions,
     )

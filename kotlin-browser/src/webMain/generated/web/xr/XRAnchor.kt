@@ -11,7 +11,7 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/anchors/#dom-xranchor-anchorspace
      */
-    val anchorSpace: XRSpace
+    open val anchorSpace: XRSpace
 
     /**
      * When persistent anchors are supported, this method can be used to request a persistent
@@ -21,6 +21,6 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/anchors/#dom-xranchor-requestpersistenthandle
      */
-    var requestPersistentHandle: (() -> Promise<JsString>)?
-    fun delete()
+    open var requestPersistentHandle: (() -> Promise<JsString>)?
+    open fun delete()
 }

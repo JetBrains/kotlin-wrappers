@@ -14,7 +14,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/clearWatch)
      */
-    fun clearWatch(watchId: GeolocationWatchId)
+    open fun clearWatch(watchId: GeolocationWatchId)
 
     /**
      * The **`getCurrentPosition()`** method of the Geolocation interface is used to get the current position of the device.
@@ -22,7 +22,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition)
      */
     @JsName("getCurrentPosition")
-    fun getCurrentPositionWithCallbacks(
+    open fun getCurrentPositionWithCallbacks(
         successCallback: PositionCallback,
         errorCallback: PositionErrorCallback? = definedExternally,
         options: PositionOptions = definedExternally,
@@ -34,7 +34,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/watchPosition)
      */
     @JsName("watchPosition")
-    fun watchPositionWithCallbacks(
+    open fun watchPositionWithCallbacks(
         successCallback: PositionCallback,
         errorCallback: PositionErrorCallback? = definedExternally,
         options: PositionOptions = definedExternally,

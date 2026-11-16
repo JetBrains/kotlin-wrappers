@@ -4,7 +4,8 @@ package mui.base
 
 import seskar.js.JsValue
 
-sealed external interface ItemAriaLabelType {
+sealed /* union */
+external interface ItemAriaLabelType {
     companion object {
         @JsValue("first")
         val first: ItemAriaLabelType

@@ -17,7 +17,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/length)
      */
-    val length: Int
+    open val length: Int
 
     /**
      * The **`end()`** method of the TimeRanges interface returns the time offset (in seconds) at which a specified time range ends.
@@ -25,7 +25,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
      */
     @JsThrows(IndexSizeError::class)
-    fun end(index: Int): Double
+    open fun end(index: Int): Double
 
     /**
      * The **`start()`** method of the TimeRanges interface returns the time offset (in seconds) at which a specified time range begins.
@@ -33,5 +33,5 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
      */
     @JsThrows(IndexSizeError::class)
-    fun start(index: Int): Double
+    open fun start(index: Int): Double
 }

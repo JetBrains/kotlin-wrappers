@@ -2,6 +2,12 @@
 
 package typescript
 
+import typescript.ast.JSDocParsingMode
+import typescript.ast.ScriptKind
+import typescript.ast.SourceFile
+import typescript.ast.StringLiteralLike
+import typescript.sync.*
+
 external interface LanguageServiceHost :
     GetEffectiveTypeRootsHost,
     MinimalResolutionCacheHost {

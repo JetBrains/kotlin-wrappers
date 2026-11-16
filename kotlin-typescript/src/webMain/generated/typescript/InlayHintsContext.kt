@@ -2,6 +2,12 @@
 
 package typescript
 
+import typescript.ast.SourceFile
+import typescript.ast.TextSpan
+import typescript.sync.CancellationToken
+import typescript.sync.Program
+import typescript.sync.UserPreferences
+
 @kotlinx.js.JsPlainObject
 external interface InlayHintsContext {
     var file: SourceFile

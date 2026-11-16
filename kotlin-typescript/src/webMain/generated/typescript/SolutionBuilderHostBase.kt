@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.sync.CustomTransformers
+import typescript.sync.DiagnosticReporter
+import typescript.sync.ParsedCommandLine
+
 external interface SolutionBuilderHostBase<T : BuilderProgram> : ProgramHost<T> {
     val createDirectory: ((path: String) -> Unit)?
 

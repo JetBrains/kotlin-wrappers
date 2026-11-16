@@ -4,7 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.PromiseFunctionPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.SignatureContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private fun isPromiseType(node: Node) = nullable {
     ensure(isTypeReferenceNode(node))

@@ -20,19 +20,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
      */
-    var onchange: EventHandler<Event, PermissionStatus, PermissionStatus>?
+    open var onchange: EventHandler<Event, PermissionStatus, PermissionStatus>?
 
     /**
      * The **`state`** read-only property of the PermissionStatus interface returns the state of a requested permission. This property returns one of 'granted', 'denied', or 'prompt'.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/state)
      */
-    val state: PermissionState
+    open val state: PermissionState
 }
 
 /**

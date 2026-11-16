@@ -17,68 +17,68 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/depthOrArrayLayers)
      */
-    val depthOrArrayLayers: GPUIntegerCoordinateOut
+    open val depthOrArrayLayers: GPUIntegerCoordinateOut
 
     /**
      * The **`dimension`** read-only property of the GPUTexture interface represents the dimension of the set of texels for each GPUTexture subresource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/dimension)
      */
-    val dimension: GPUTextureDimension
+    open val dimension: GPUTextureDimension
 
     /**
      * The **`format`** read-only property of the GPUTexture interface represents the format of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/format)
      */
-    val format: GPUTextureFormat
+    open val format: GPUTextureFormat
 
     /**
      * The **`height`** read-only property of the GPUTexture interface represents the height of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/height)
      */
-    val height: GPUIntegerCoordinateOut
+    open val height: GPUIntegerCoordinateOut
 
     /**
      * The **`mipLevelCount`** read-only property of the GPUTexture interface represents the number of mip levels of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/mipLevelCount)
      */
-    val mipLevelCount: GPUIntegerCoordinateOut
+    open val mipLevelCount: GPUIntegerCoordinateOut
 
     /**
      * The **`sampleCount`** read-only property of the GPUTexture interface represents the sample count of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/sampleCount)
      */
-    val sampleCount: GPUSize32Out
+    open val sampleCount: GPUSize32Out
 
     /**
      * The **`usage`** read-only property of the GPUTexture interface is the bitwise flags representing the allowed usages of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/usage)
      */
-    val usage: GPUTextureUsage
+    open val usage: GPUTextureUsage
 
     /**
      * The **`width`** read-only property of the GPUTexture interface represents the width of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/width)
      */
-    val width: GPUIntegerCoordinateOut
+    open val width: GPUIntegerCoordinateOut
 
     /**
      * The **`createView()`** method of the GPUTexture interface creates a GPUTextureView representing a specific view of the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/createView)
      */
-    fun createView(descriptor: GPUTextureViewDescriptor = definedExternally): GPUTextureView
+    open fun createView(descriptor: GPUTextureViewDescriptor = definedExternally): GPUTextureView
 
     /**
      * The **`destroy()`** method of the GPUTexture interface destroys the GPUTexture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/destroy)
      */
-    fun destroy()
+    open fun destroy()
 }

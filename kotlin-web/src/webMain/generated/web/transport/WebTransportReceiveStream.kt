@@ -2,6 +2,7 @@
 
 package web.transport
 
+import js.buffer.ArrayBuffer
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
@@ -15,14 +16,14 @@ import web.streams.ReadableStream
  */
 open external class WebTransportReceiveStream
 private constructor() :
-    ReadableStream<Uint8Array<*>> {
+    ReadableStream<Uint8Array<ArrayBuffer>> {
     /**
      * The **`getStats()`** method of the WebTransportReceiveStream interface asynchronously returns an object containing statistics for the current stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<WebTransportReceiveStreamStats>
+    open fun getStatsAsync(): Promise<WebTransportReceiveStreamStats>
 }
 
 /**

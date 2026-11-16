@@ -53,6 +53,7 @@ private val CORRECTION_MAP = listOf(
     StateCorrection("SVGTextContentElement", "lengthAdjust"),
 
     StateCorrection("SVGTextPathElement", "method", constantPrefix = "TEXTPATH_METHODTYPE_"),
+    StateCorrection("SVGTextPathElement", "side", constantPrefix = "TEXTPATH_SIDETYPE_"),
     StateCorrection("SVGTextPathElement", "spacing", constantPrefix = "TEXTPATH_SPACINGTYPE_"),
 
     StateCorrection("SVGUnitTypes", "type"),

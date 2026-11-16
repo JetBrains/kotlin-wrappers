@@ -19,7 +19,7 @@ open external class OfflineAudioCompletionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer)
      */
-    val renderedBuffer: AudioBuffer
+    open val renderedBuffer: AudioBuffer
 
     companion object
 }

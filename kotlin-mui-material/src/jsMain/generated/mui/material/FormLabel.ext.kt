@@ -8,7 +8,8 @@ import web.html.HTMLLabelElement
 
 typealias FormLabelBaseProps = LabelHTMLAttributes<HTMLLabelElement>
 
-sealed external interface FormLabelColor {
+sealed /* union */
+external interface FormLabelColor {
     companion object {
         @JsValue("primary")
         val primary: FormLabelColor

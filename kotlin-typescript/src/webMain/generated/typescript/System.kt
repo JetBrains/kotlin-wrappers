@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.sync.WatchOptions
+
 external interface System {
     var args: js.array.ReadonlyArray<String>
     var newLine: String

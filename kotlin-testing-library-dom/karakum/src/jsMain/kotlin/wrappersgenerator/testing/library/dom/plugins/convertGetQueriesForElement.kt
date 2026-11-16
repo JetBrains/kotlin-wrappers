@@ -3,9 +3,13 @@ package wrappersgenerator.testing.library.dom.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
-import io.github.sgrishchenko.karakum.extension.plugins.*
+import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
+import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
+import io.github.sgrishchenko.karakum.extension.plugins.function
+import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.`is`.*
+import typescript.sync.SymbolFlags
 
 val convertGetQueriesForElement = createPlugin { node, context, render ->
     nullable {

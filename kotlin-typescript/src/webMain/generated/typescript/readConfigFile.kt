@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.ReadConfigFileResult
+
 /**
  * Read tsconfig.json file
  * @param fileName The path to the config file

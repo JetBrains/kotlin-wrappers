@@ -3,7 +3,7 @@ package wrappersgenerator.typescript.injections
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createInjection
 import js.reflect.invoke
-import typescript.isEnumDeclaration
+import typescript.ast.`is`.isEnumDeclaration
 
 val injectBitmaskParents = createInjection { node, _, _ ->
     nullable {

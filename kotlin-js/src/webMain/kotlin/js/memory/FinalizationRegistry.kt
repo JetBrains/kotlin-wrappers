@@ -22,7 +22,7 @@ open external class FinalizationRegistry<T : JsAny?>(
      * object. If provided (and not undefined), this must be an object. If not provided, the target
      * cannot be unregistered.
      */
-    fun register(
+    open fun register(
         target: JsAny,
         heldValue: T,
         unregisterToken: JsAny = definedExternally,
@@ -36,7 +36,7 @@ open external class FinalizationRegistry<T : JsAny?>(
      * @param unregisterToken The token that was used as the unregisterToken argument when calling
      * register to register the target object.
      */
-    fun unregister(
+    open fun unregister(
         unregisterToken: JsAny,
     ): Boolean
 }

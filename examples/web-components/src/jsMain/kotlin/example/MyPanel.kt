@@ -6,7 +6,9 @@ import web.dom.TagName
 import web.html.HTMLElement
 import web.html.HtmlSource
 
-class MyPanel : HTMLElement(), CustomElement {
+class MyPanel :
+    HTMLElement(),
+    CustomElement.WithConnectedCallback {
     init {
         console.log("MyPanel created!")
 
@@ -15,7 +17,7 @@ class MyPanel : HTMLElement(), CustomElement {
         shadowRoot!!.innerHTML = HtmlSource("MyPanel test content!")
     }
 
-    override val connectedCallback = {
+    override fun connectedCallback() {
         console.log("MyPanel connected!")
     }
 

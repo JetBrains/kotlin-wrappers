@@ -3,7 +3,11 @@ package wrappersgenerator.typescript.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isMethodSignature
+import typescript.ast.`is`.isPropertySignature
 
 suspend fun annotateVarOverrides(node: Node, context: AnnotationContext) = nullable {
     nullable {

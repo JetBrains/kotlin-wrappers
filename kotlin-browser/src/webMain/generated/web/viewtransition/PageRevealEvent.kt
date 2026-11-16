@@ -19,7 +19,7 @@ open external class PageRevealEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent/viewTransition)
      */
-    val viewTransition: ViewTransition?
+    open val viewTransition: ViewTransition?
 
     companion object
 }

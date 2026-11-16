@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface TablePadding {
+sealed /* union */
+external interface TablePadding {
     companion object {
         @JsValue("normal")
         val normal: TablePadding

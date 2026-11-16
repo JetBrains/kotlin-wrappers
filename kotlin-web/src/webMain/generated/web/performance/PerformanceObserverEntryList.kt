@@ -14,14 +14,14 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntries)
      */
-    fun getEntries(): PerformanceEntryList
+    open fun getEntries(): PerformanceEntryList
 
     /**
      * The **`getEntriesByName()`** method of the PerformanceObserverEntryList interface returns a list of explicitly observed PerformanceEntry objects for a given name and entryType. The list's members are determined by the set of entry types specified in the call to the observe() method. The list is available in the observer's callback function (as the first parameter in the callback).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByName)
      */
-    fun getEntriesByName(
+    open fun getEntriesByName(
         name: String,
         type: String = definedExternally,
     ): PerformanceEntryList
@@ -31,5 +31,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByType)
      */
-    fun getEntriesByType(type: String): PerformanceEntryList
+    open fun getEntriesByType(type: String): PerformanceEntryList
 }

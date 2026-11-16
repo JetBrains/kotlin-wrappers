@@ -5,7 +5,8 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.capitalize
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.*
 
 val convertOverriddenFsOptionPropertySignature = createPlugin { node, context, render ->
     nullable {

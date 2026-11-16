@@ -15,12 +15,12 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/disabled)
      */
-    var disabled: Boolean
+    open var disabled: Boolean
 
     /**
      * The **`label`** property of the HTMLOptGroupElement interface is a string value that reflects the <optgroup> element's label attribute, which provides a textual label to the group of options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/label)
      */
-    var label: String
+    open var label: String
 }

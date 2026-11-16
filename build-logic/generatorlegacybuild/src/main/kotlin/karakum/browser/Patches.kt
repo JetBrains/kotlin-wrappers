@@ -380,17 +380,6 @@ internal fun String.applyPatches(): String {
                 .joinToString("\n")
         }
         .addStrictPostMessageSupport()
-        // https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2084
-        .replace(
-            "interface SchedulerPostTaskCallback {\n    (): any;\n}",
-            "interface SchedulerPostTaskCallback<T> {\n    (): T;\n}",
-        )
-        .patchInterface("Scheduler") {
-            it.replace(
-                "postTask(callback: SchedulerPostTaskCallback, options?: SchedulerPostTaskOptions): Promise<any>;",
-                "postTask<T>(callback: SchedulerPostTaskCallback<T>, options?: SchedulerPostTaskOptions): Promise<T>;",
-            )
-        }
         .replace(
             "new(context: BaseAudioContext, name: string, options?: AudioWorkletNodeOptions): AudioWorkletNode;",
             "new(context: BaseAudioContext, name: AudioWorkletProcessorName, options?: AudioWorkletNodeOptions): AudioWorkletNode;",
@@ -425,11 +414,15 @@ internal fun String.applyPatches(): String {
         //  https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2439
         .replace(
             "interface WebTransportReceiveStream extends ReadableStream {",
-            "interface WebTransportReceiveStream extends ReadableStream<Uint8Array<*>> {",
+            "interface WebTransportReceiveStream extends ReadableStream<Uint8Array<ArrayBuffer>> {",
         )
         .replace(
             "interface WebTransportSendStream extends WritableStream {",
-            "interface WebTransportSendStream extends WritableStream<Uint8Array<*>> {",
+            "interface WebTransportSendStream extends WritableStream<BufferSource> {",
+        )
+        .replace(
+            "interface WebTransportDatagramsWritable extends WritableStream {",
+            "interface WebTransportDatagramsWritable extends WritableStream<BufferSource> {",
         )
         // TODO: remove after fix
         //  https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2447
@@ -498,19 +491,10 @@ internal fun String.applyPatches(): String {
             |    textStream(): ReadableStream<string>;
             """.trimMargin()
         }
-        .let {
-            val varBody = it.substringAfter("declare var ReadableStream: {\n")
-                .substringBefore("\n};")
-
-            val newVarBody = varBody + "\n" + """
-            |    /**
-            |     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static)
-            |     */
-            |    from<R>(source: AsyncIterable<R> | Iterable<R> | Iterable<PromiseLike<R>>): ReadableStream<R>;
-            """.trimMargin()
-
-            it.replaceFirst(varBody, newVarBody)
-        }
+        .replace(
+            "from(asyncIterable: AsyncIterable<any> | Iterable<any>): ReadableStream;",
+            "from<R>(source: AsyncIterable<R> | Iterable<R> | Iterable<PromiseLike<R>>): ReadableStream<R>;",
+        )
         .splitUnion(
             "AsyncIterable<R> | Iterable<R> | Iterable<PromiseLike<R>>",
             "AsyncIterable<R> | JsIterable<R> | JsIterable<PromiseLike<R>> | ReadonlyArray<R> | ReadonlyArray<PromiseLike<R>>",
@@ -528,7 +512,26 @@ internal fun String.applyPatches(): String {
                 "\n    readonly usage: GPUBufferUsage;",
             )
         }
+        .applyPerformanceFixes()
 }
+
+private fun String.applyPerformanceFixes(): String =
+    replace(
+        """
+    getEntriesByName(name: string, type: "mark"): PerformanceMark[];
+    getEntriesByName(name: string, type: "measure"): PerformanceMeasure[];
+    getEntriesByName(name: string, type: "resource"): PerformanceResourceTiming[];
+""".trimEnd(),
+        "",
+    )
+        .replace(
+            """
+    getEntriesByType(type: "mark"): PerformanceMark[];
+    getEntriesByType(type: "measure"): PerformanceMeasure[];
+    getEntriesByType(type: "resource"): PerformanceResourceTiming[];
+""".trimEnd(),
+            "",
+        )
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
     "DOMQuadInit" to "DOMQuad",
@@ -685,6 +688,10 @@ private fun String.patchQuerySelectors(): String =
         .replace(
             "querySelectorAll<E extends Element = Element>(selectors: string): NodeList<E>;",
             "querySelectorAll(selectors: string): NodeList<Element>;",
+        )
+        .replace(
+            "\"$XHTML_NAMESPACE\"",
+            "XHTML_NAMESPACE",
         )
         .replace(
             "\"$SVG_NAMESPACE\"",

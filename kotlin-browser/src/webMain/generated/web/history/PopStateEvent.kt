@@ -19,14 +19,14 @@ open external class PopStateEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/hasUAVisualTransition)
      */
-    val hasUAVisualTransition: Boolean
+    open val hasUAVisualTransition: Boolean
 
     /**
      * The **`state`** read-only property of the PopStateEvent interface represents the state stored when the event was created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
      */
-    val state: JsAny?
+    open val state: JsAny?
 
     companion object
 }

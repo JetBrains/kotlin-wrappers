@@ -22,7 +22,7 @@ open external class ReadableStreamBYOBReader(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
     @JsName("read")
-    fun <T : ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */> readAsync(
+    open fun <T : ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */> readAsync(
         view: T,
         options: ReadableStreamBYOBReaderReadOptions = definedExternally,
     ): Promise<ReadableStreamReadResult<T>>
@@ -32,7 +32,7 @@ open external class ReadableStreamBYOBReader(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
      */
-    fun releaseLock()
+    open fun releaseLock()
 }
 
 /**

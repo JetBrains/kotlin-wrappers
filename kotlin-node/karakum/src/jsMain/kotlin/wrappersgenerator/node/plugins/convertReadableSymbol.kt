@@ -4,9 +4,9 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.isClassDeclaration
-import typescript.isComputedPropertyName
-import typescript.isMethodDeclaration
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isComputedPropertyName
+import typescript.ast.`is`.isMethodDeclaration
 
 val convertReadableSymbol = createPlugin { node, context, _ ->
     nullable {

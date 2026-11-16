@@ -16,7 +16,7 @@ open external class DOMParser {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
      */
-    fun parseFromString(
+    open fun parseFromString(
         string: TrustedHTML,
         type: DOMParserSupportedType,
     ): Document
@@ -26,7 +26,7 @@ open external class DOMParser {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
      */
-    fun parseFromString(
+    open fun parseFromString(
         string: String,
         type: DOMParserSupportedType,
     ): Document

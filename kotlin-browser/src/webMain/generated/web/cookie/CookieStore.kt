@@ -23,7 +23,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/change_event)
      */
-    var onchange: EventHandler<CookieChangeEvent, CookieStore, CookieStore>?
+    open var onchange: EventHandler<CookieChangeEvent, CookieStore, CookieStore>?
 
     /**
      * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given name or options object. The method expires the cookie by changing its date to one in the past.
@@ -32,11 +32,11 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("delete")
-    fun deleteAsync(name: String): Promise<Void>
+    open fun deleteAsync(name: String): Promise<Void>
 
     @JsThrows(SecurityError::class)
     @JsName("delete")
-    fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
+    open fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
 
     /**
      * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given name or options object. The method will return the first cookie that matches.
@@ -45,11 +45,11 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("get")
-    fun getAsync(name: String): Promise<CookieListItem?>
+    open fun getAsync(name: String): Promise<CookieListItem?>
 
     @JsThrows(SecurityError::class)
     @JsName("get")
-    fun getAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieListItem?>
+    open fun getAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieListItem?>
 
     /**
      * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
@@ -58,11 +58,11 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("getAll")
-    fun getAllAsync(name: String): Promise<CookieList>
+    open fun getAllAsync(name: String): Promise<CookieList>
 
     @JsThrows(SecurityError::class)
     @JsName("getAll")
-    fun getAllAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieList>
+    open fun getAllAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieList>
 
     /**
      * The **`set()`** method of the CookieStore interface sets a cookie with the given name and value or options object.
@@ -71,14 +71,14 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("set")
-    fun setAsync(
+    open fun setAsync(
         name: String,
         value: String,
     ): Promise<Void>
 
     @JsThrows(SecurityError::class)
     @JsName("set")
-    fun setAsync(options: CookieInit): Promise<Void>
+    open fun setAsync(options: CookieInit): Promise<Void>
 }
 
 /**

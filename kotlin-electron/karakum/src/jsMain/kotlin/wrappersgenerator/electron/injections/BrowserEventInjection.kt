@@ -7,7 +7,11 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.camelize
 import js.array.ReadonlyArray
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.DeclarationStatement
+import typescript.ast.Node
+import typescript.ast.ParameterDeclaration
+import typescript.ast.`is`.*
+import typescript.sync.Symbol
 
 private val eventHandlerMethods = setOf(
     "addEventListener",

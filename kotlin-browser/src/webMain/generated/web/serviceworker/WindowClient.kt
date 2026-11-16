@@ -22,14 +22,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focused)
      */
-    val focused: Boolean
+    open val focused: Boolean
 
     /**
      * The **`visibilityState`** read-only property of the WindowClient interface indicates the visibility of the current client. This value can be one of "hidden", "visible", or "prerender".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/visibilityState)
      */
-    val visibilityState: DocumentVisibilityState
+    open val visibilityState: DocumentVisibilityState
 
     /**
      * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a Promise that resolves to the existing WindowClient.
@@ -38,7 +38,7 @@ private constructor() :
      */
     @JsThrows(InvalidAccessError::class)
     @JsName("focus")
-    fun focusAsync(): Promise<WindowClient>
+    open fun focusAsync(): Promise<WindowClient>
 
     /**
      * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a Promise that resolves to the existing WindowClient.
@@ -46,7 +46,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
     @JsName("navigate")
-    fun navigateAsync(url: String): Promise<WindowClient?>
+    open fun navigateAsync(url: String): Promise<WindowClient?>
 
     /**
      * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a Promise that resolves to the existing WindowClient.
@@ -54,7 +54,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
     @JsName("navigate")
-    fun navigateAsync(url: URL): Promise<WindowClient?>
+    open fun navigateAsync(url: URL): Promise<WindowClient?>
 }
 
 /**

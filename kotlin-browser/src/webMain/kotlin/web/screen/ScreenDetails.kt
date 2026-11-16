@@ -18,22 +18,22 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenDetails/currentScreen)
      */
-    val currentScreen: ScreenDetailed
+    open val currentScreen: ScreenDetailed
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenDetails/screens)
      */
-    val screens: ReadonlyArray<ScreenDetailed>
+    open val screens: ReadonlyArray<ScreenDetailed>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenDetails/currentscreenchange_event)
      */
-    var oncurrentscreenchange: EventHandler<DeviceOrientationEvent, ScreenDetails, ScreenDetails>?
+    open var oncurrentscreenchange: EventHandler<DeviceOrientationEvent, ScreenDetails, ScreenDetails>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenDetails/screenschange_event)
      */
-    var onscreenschange: EventHandler<DeviceOrientationEvent, ScreenDetails, ScreenDetails>?
+    open var onscreenschange: EventHandler<DeviceOrientationEvent, ScreenDetails, ScreenDetails>?
 }
 
 /**

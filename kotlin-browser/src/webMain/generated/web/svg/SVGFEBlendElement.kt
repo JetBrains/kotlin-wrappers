@@ -16,21 +16,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/in1)
      */
-    val in1: SVGAnimatedString
+    open val in1: SVGAnimatedString
 
     /**
      * The **`in2`** read-only property of the SVGFEBlendElement interface reflects the in2 attribute of the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/in2)
      */
-    val in2: SVGAnimatedString
+    open val in2: SVGAnimatedString
 
     /**
      * The **`mode`** read-only property of the SVGFEBlendElement interface reflects the mode attribute of the given element. It takes one of the SVG_FEBLEND_MODE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/mode)
      */
-    val mode: SVGAnimatedEnumeration<Mode>
+    open val mode: SVGAnimatedEnumeration<Mode>
 
     companion object {
         /**

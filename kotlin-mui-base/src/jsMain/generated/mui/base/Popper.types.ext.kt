@@ -4,7 +4,8 @@ package mui.base
 
 import seskar.js.JsValue
 
-sealed external interface PopperDirection {
+sealed /* union */
+external interface PopperDirection {
     companion object {
         @JsValue("ltr")
         val ltr: PopperDirection

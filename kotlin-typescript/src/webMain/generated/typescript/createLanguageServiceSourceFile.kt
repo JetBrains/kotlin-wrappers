@@ -4,6 +4,11 @@
 
 package typescript
 
+import typescript.ast.ScriptKind
+import typescript.ast.ScriptTarget
+import typescript.ast.SourceFile
+import typescript.sync.CreateSourceFileOptions
+
 external fun createLanguageServiceSourceFile(
     fileName: String,
     scriptSnapshot: IScriptSnapshot,

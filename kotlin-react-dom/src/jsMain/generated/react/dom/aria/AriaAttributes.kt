@@ -2,6 +2,7 @@
 
 package react.dom.aria
 
+import web.aria.*
 import web.dom.ElementId
 
 external interface AriaAttributes {
@@ -112,13 +113,6 @@ external interface AriaAttributes {
     var ariaDisabled: Boolean?
 
     /**
-     * Indicates what functions can be performed when a dragged object is released on the drop target.
-     * @deprecated in ARIA 1.1
-     */
-    @JsName("aria-dropeffect")
-    var ariaDropEffect: AriaDropEffect?
-
-    /**
      * Identifies the element that provides an error message for the object.
      * @see aria-invalid @see aria-describedby.
      */
@@ -135,13 +129,6 @@ external interface AriaAttributes {
      */
     @JsName("aria-flowto")
     var ariaFlowTo: ElementId?
-
-    /**
-     * Indicates an element's "grabbed" state in a drag-and-drop operation.
-     * @deprecated in ARIA 1.1
-     */
-    @JsName("aria-grabbed")
-    var ariaGrabbed: Boolean?
 
     /** Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element. */
     @JsName("aria-haspopup")

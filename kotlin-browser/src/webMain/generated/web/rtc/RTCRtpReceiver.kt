@@ -20,42 +20,42 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/jitterBufferTarget)
      */
-    var jitterBufferTarget: DOMHighResTimeStamp?
+    open var jitterBufferTarget: DOMHighResTimeStamp?
 
     /**
      * The **`track`** read-only property of the RTCRtpReceiver interface returns the MediaStreamTrack associated with the current RTCRtpReceiver instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track)
      */
-    val track: MediaStreamTrack
+    open val track: MediaStreamTrack
 
     /**
      * The **`transform`** property of the RTCRtpReceiver object is used to insert a transform stream (TransformStream) running in a worker thread into the receiver pipeline. This allows stream transforms to be applied to encoded video and audio frames as they arrive from the packetizer (before they are played/rendered).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transform)
      */
-    var transform: RTCRtpReceiverTransform?
+    open var transform: RTCRtpReceiverTransform?
 
     /**
      * The read-only **`transport`** property of an RTCRtpReceiver object provides the RTCDtlsTransport object used to interact with the underlying transport over which the receiver is exchanging Real-time Transport Control Protocol (RTCP) packets.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transport)
      */
-    val transport: RTCDtlsTransport?
+    open val transport: RTCDtlsTransport?
 
     /**
      * The **`getContributingSources()`** method of the RTCRtpReceiver interface returns an array of objects, each corresponding to one CSRC (contributing source) identifier received by the current RTCRtpReceiver in the last ten seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getContributingSources)
      */
-    fun getContributingSources(): ReadonlyArray<RTCRtpContributingSource>
+    open fun getContributingSources(): ReadonlyArray<RTCRtpContributingSource>
 
     /**
      * The **`getParameters()`** method of the RTCRtpReceiver interface returns an object describing the current configuration for how the receiver's track is decoded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getParameters)
      */
-    fun getParameters(): RTCRtpReceiveParameters
+    open fun getParameters(): RTCRtpReceiveParameters
 
     /**
      * The RTCRtpReceiver method **`getStats()`** asynchronously requests an RTCStatsReport object which provides statistics about incoming traffic on the owning RTCPeerConnection, returning a Promise whose fulfillment handler will be called once the results are available.
@@ -63,14 +63,14 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
      */
     @JsName("getStats")
-    fun getStatsAsync(): Promise<RTCStatsReport>
+    open fun getStatsAsync(): Promise<RTCStatsReport>
 
     /**
      * The **`getSynchronizationSources()`** method of the RTCRtpReceiver interface returns an array of objects, each corresponding to one SSRC (synchronization source) identifier received by the current RTCRtpReceiver in the last ten seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getSynchronizationSources)
      */
-    fun getSynchronizationSources(): ReadonlyArray<RTCRtpSynchronizationSource>
+    open fun getSynchronizationSources(): ReadonlyArray<RTCRtpSynchronizationSource>
 
     companion object {
         /**

@@ -31,13 +31,13 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/width)
      */
-    var width: UInt53,
+    open var width: UInt53,
     /**
      * The **`height`** property returns and sets the height of an OffscreenCanvas object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/height)
      */
-    var height: UInt53,
+    open var height: UInt53,
 ) : EventTarget,
     CanvasImageSource,
     TexImageSource,
@@ -46,12 +46,12 @@ open external class OffscreenCanvas(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
      */
-    var oncontextlost: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
+    open var oncontextlost: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
      */
-    var oncontextrestored: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
+    open var oncontextrestored: EventHandler<Event, OffscreenCanvas, OffscreenCanvas>?
 
     /**
      * The **`OffscreenCanvas.convertToBlob()`** method creates a Blob object representing the image contained in the canvas.
@@ -63,14 +63,14 @@ open external class OffscreenCanvas(
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
     @JsName("convertToBlob")
-    fun convertToBlobAsync(options: ImageEncodeOptions = definedExternally): Promise<Blob>
+    open fun convertToBlobAsync(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
     /**
      * The **`OffscreenCanvas.getContext()`** method returns a drawing context for an offscreen canvas, or null if the context identifier is not supported, or the offscreen canvas has already been set to a different context mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/getContext)
      */
-    fun <T : OffscreenRenderingContext, O : JsAny?> getContext(
+    open fun <T : OffscreenRenderingContext, O : JsAny?> getContext(
         contextId: RenderingContextId<T, O>,
         options: O? = definedExternally,
     ): T?
@@ -81,7 +81,7 @@ open external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */
     @JsThrows(InvalidStateError::class)
-    fun transferToImageBitmap(): ImageBitmap
+    open fun transferToImageBitmap(): ImageBitmap
 }
 
 /**

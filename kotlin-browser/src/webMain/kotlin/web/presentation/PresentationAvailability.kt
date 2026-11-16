@@ -17,12 +17,12 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationAvailability/value)
      */
-    val value: Boolean
+    open val value: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationAvailability/change_event)
      */
-    var onchange: EventHandler<Event, PresentationAvailability, PresentationAvailability>?
+    open var onchange: EventHandler<Event, PresentationAvailability, PresentationAvailability>?
 }
 
 /**

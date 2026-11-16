@@ -25,55 +25,55 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/activation)
      */
-    val activation: NavigationActivation?
+    open val activation: NavigationActivation?
 
     /**
      * The **`canGoBack`** read-only property of the Navigation interface returns true if it is possible to navigate backwards in the navigation history (i.e., the currentEntry is not the first one in the history entry list), and false if it is not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/canGoBack)
      */
-    val canGoBack: Boolean
+    open val canGoBack: Boolean
 
     /**
      * The **`canGoForward`** read-only property of the Navigation interface returns true if it is possible to navigate forwards in the navigation history (i.e., the currentEntry is not the last one in the history entry list), and false if it is not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/canGoForward)
      */
-    val canGoForward: Boolean
+    open val canGoForward: Boolean
 
     /**
      * The **`currentEntry`** read-only property of the Navigation interface returns a NavigationHistoryEntry object representing the location the user is currently navigated to right now.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currentEntry)
      */
-    val currentEntry: NavigationHistoryEntry?
+    open val currentEntry: NavigationHistoryEntry?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/currententrychange_event)
      */
-    var oncurrententrychange: EventHandler<NavigationCurrentEntryChangeEvent, Navigation, Navigation>?
+    open var oncurrententrychange: EventHandler<NavigationCurrentEntryChangeEvent, Navigation, Navigation>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigate_event)
      */
-    var onnavigate: EventHandler<NavigateEvent, Navigation, Navigation>?
+    open var onnavigate: EventHandler<NavigateEvent, Navigation, Navigation>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigateerror_event)
      */
-    var onnavigateerror: EventHandler<ErrorEvent, Navigation, Navigation>?
+    open var onnavigateerror: EventHandler<ErrorEvent, Navigation, Navigation>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/navigatesuccess_event)
      */
-    var onnavigatesuccess: EventHandler<Event, Navigation, Navigation>?
+    open var onnavigatesuccess: EventHandler<Event, Navigation, Navigation>?
 
     /**
      * The **`transition`** read-only property of the Navigation interface returns a NavigationTransition object representing the status of an in-progress navigation, which can be used to track it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/transition)
      */
-    val transition: NavigationTransition?
+    open val transition: NavigationTransition?
 
     /**
      * The **`back()`** method of the Navigation interface navigates backwards by one entry in the navigation history.
@@ -81,14 +81,14 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/back)
      */
     @JsThrows(InvalidStateError::class)
-    fun back(options: NavigationOptions = definedExternally): NavigationResult
+    open fun back(options: NavigationOptions = definedExternally): NavigationResult
 
     /**
      * The **`entries()`** method of the Navigation interface returns an array of NavigationHistoryEntry objects representing all existing history entries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/entries)
      */
-    fun entries(): ReadonlyArray<NavigationHistoryEntry>
+    open fun entries(): ReadonlyArray<NavigationHistoryEntry>
 
     /**
      * The **`forward()`** method of the Navigation interface navigates forwards by one entry in the navigation history.
@@ -96,7 +96,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/forward)
      */
     @JsThrows(InvalidStateError::class)
-    fun forward(options: NavigationOptions = definedExternally): NavigationResult
+    open fun forward(options: NavigationOptions = definedExternally): NavigationResult
 
     /**
      * The **`navigate()`** method of the Navigation interface navigates to a specific URL, updating any provided state in the history entries list.
@@ -107,7 +107,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
-    fun navigate(
+    open fun navigate(
         url: String,
         options: NavigationNavigateOptions = definedExternally,
     ): NavigationResult
@@ -121,7 +121,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
-    fun navigate(
+    open fun navigate(
         url: URL,
         options: NavigationNavigateOptions = definedExternally,
     ): NavigationResult
@@ -132,7 +132,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/reload)
      */
     @JsThrows(DataCloneError::class)
-    fun reload(options: NavigationReloadOptions = definedExternally): NavigationResult
+    open fun reload(options: NavigationReloadOptions = definedExternally): NavigationResult
 
     /**
      * The **`traverseTo()`** method of the Navigation interface navigates to the NavigationHistoryEntry identified by the given key.
@@ -140,7 +140,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigation/traverseTo)
      */
     @JsThrows(InvalidStateError::class)
-    fun traverseTo(
+    open fun traverseTo(
         key: String,
         options: NavigationOptions = definedExternally,
     ): NavigationResult
@@ -152,7 +152,7 @@ private constructor() :
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(InvalidStateError::class)
-    fun updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions)
+    open fun updateCurrentEntry(options: NavigationUpdateCurrentEntryOptions)
 }
 
 /**

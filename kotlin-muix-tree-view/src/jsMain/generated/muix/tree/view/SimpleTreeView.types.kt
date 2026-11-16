@@ -2,11 +2,14 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import mui.material.styles.Theme
 import mui.system.PropsWithSx
 import mui.system.SxProps
 import react.*
+import react.dom.html.HTMLAttributes
 import web.cssom.ClassName
+import web.html.HTMLUListElement
 
 external interface SimpleTreeViewProps :
     TreeViewStoreParameters,
@@ -43,18 +46,19 @@ external interface SimpleTreeViewProps :
     /**
      * The ref object that allows Tree View manipulation. Can be instantiated with `useSimpleTreeViewApiRef()`.
      */
-    var apiRef: Ref<*>?
+    var apiRef: RefObject<TreeViewPublicAPI<SimpleTreeViewItem>>?
 }
 
+@JsPlainObject
 external interface SimpleTreeViewSlots : TreeViewSlots {
     /**
      * Element rendered at the root.
      * @default SimpleTreeViewRoot
      */
-    var root: ElementType<*>?
+    val root: ElementType<*>?
 }
 
 external interface SimpleTreeViewSlotProps :
     TreeViewSlotProps {
-    var root: Props?
+    var root: HTMLAttributes<HTMLUListElement>?
 }

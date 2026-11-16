@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.animations
 
 import js.array.ReadonlyArray
@@ -20,7 +16,7 @@ external interface Animatable {
     fun animate(
         keyframes: ReadonlyArray<Keyframe>?,
         options: Double = definedExternally,
-    ): Animation = definedExternally
+    ): Animation
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
@@ -28,7 +24,7 @@ external interface Animatable {
     fun animate(
         keyframes: ReadonlyArray<Keyframe>?,
         options: KeyframeAnimationOptions,
-    ): Animation = definedExternally
+    ): Animation
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
@@ -36,7 +32,7 @@ external interface Animatable {
     fun animate(
         keyframes: PropertyIndexedKeyframes?,
         options: Double = definedExternally,
-    ): Animation = definedExternally
+    ): Animation
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
@@ -44,11 +40,11 @@ external interface Animatable {
     fun animate(
         keyframes: PropertyIndexedKeyframes?,
         options: KeyframeAnimationOptions,
-    ): Animation = definedExternally
+    ): Animation
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
      */
     @JsThrows(SyntaxError::class)
-    fun getAnimations(options: GetAnimationsOptions = definedExternally): ReadonlyArray<Animation> = definedExternally
+    fun getAnimations(options: GetAnimationsOptions = definedExternally): ReadonlyArray<Animation>
 }

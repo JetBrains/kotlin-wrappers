@@ -19,7 +19,7 @@ open external class RTCDTMFToneChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFToneChangeEvent/tone)
      */
-    val tone: String
+    open val tone: String
 
     companion object
 }

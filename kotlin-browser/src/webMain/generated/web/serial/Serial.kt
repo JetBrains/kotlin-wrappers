@@ -22,27 +22,27 @@ open external class Serial
 private constructor() :
     EventTarget {
     /**
-     * The **`getPorts()`** method of the Serial interface returns a Promise that resolves with an array of SerialPort objects representing serial ports connected to the host which the origin has permission to access.
+     * The **`getPorts()`** method of the Serial interface returns a Promise that resolves with an array of SerialPort objects representing serial ports connected to the host that the origin has permission to access.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/getPorts)
      */
     @JsThrows(SecurityError::class)
     @JsName("getPorts")
-    fun getPortsAsync(): Promise<ReadonlyArray<SerialPort>>
+    open fun getPortsAsync(): Promise<ReadonlyArray<SerialPort>>
 
     /**
-     * The **`Serial.requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
+     * The **`requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
      */
     @JsThrows(NotFoundError::class)
     @JsThrows(SecurityError::class)
     @JsName("requestPort")
-    fun requestPortAsync(options: SerialPortRequestOptions = definedExternally): Promise<SerialPort>
+    open fun requestPortAsync(options: SerialPortRequestOptions = definedExternally): Promise<SerialPort>
 }
 
 /**
- * The **`getPorts()`** method of the Serial interface returns a Promise that resolves with an array of SerialPort objects representing serial ports connected to the host which the origin has permission to access.
+ * The **`getPorts()`** method of the Serial interface returns a Promise that resolves with an array of SerialPort objects representing serial ports connected to the host that the origin has permission to access.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/getPorts)
  */
@@ -52,7 +52,7 @@ suspend inline fun Serial.getPorts(): ReadonlyArray<SerialPort> {
 }
 
 /**
- * The **`Serial.requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
+ * The **`requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
  */
@@ -63,7 +63,7 @@ suspend inline fun Serial.requestPort(): SerialPort {
 }
 
 /**
- * The **`Serial.requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
+ * The **`requestPort()`** method of the Serial interface presents the user with a dialog asking them to select a serial device to connect to. It returns a Promise that resolves with an instance of SerialPort representing the device chosen by the user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Serial/requestPort)
  */

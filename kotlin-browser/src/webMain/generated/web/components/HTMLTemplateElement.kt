@@ -18,40 +18,47 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
      */
-    val content: DocumentFragment
+    open val content: DocumentFragment
 
     /**
      * The **`shadowRootClonable`** property reflects the value of the shadowrootclonable attribute of the associated <template> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootClonable)
      */
-    var shadowRootClonable: Boolean
+    open var shadowRootClonable: Boolean
 
     /**
      * The **`shadowRootCustomElementRegistry`** property of the HTMLTemplateElement interface reflects the value of the shadowrootcustomelementregistry attribute of the associated <template> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootCustomElementRegistry)
      */
-    var shadowRootCustomElementRegistry: String
+    open var shadowRootCustomElementRegistry: String
 
     /**
      * The **`shadowRootDelegatesFocus`** property of the HTMLTemplateElement interface reflects the value of the shadowrootdelegatesfocus attribute of the associated <template> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootDelegatesFocus)
      */
-    var shadowRootDelegatesFocus: Boolean
+    open var shadowRootDelegatesFocus: Boolean
 
     /**
      * The **`shadowRootMode`** property of the HTMLTemplateElement interface reflects the value of the shadowrootmode attribute of the associated <template> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
      */
-    var shadowRootMode: String
+    open var shadowRootMode: String
 
     /**
      * The **`shadowRootSerializable`** property reflects the value of the shadowrootserializable attribute of the associated <template> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSerializable)
      */
-    var shadowRootSerializable: Boolean
+    open var shadowRootSerializable: Boolean
+
+    /**
+     * The **`shadowRootSlotAssignment`** property of the HTMLTemplateElement interface indicates whether the element has been configured to use named or unnamed slot assignment.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSlotAssignment)
+     */
+    open var shadowRootSlotAssignment: String
 }

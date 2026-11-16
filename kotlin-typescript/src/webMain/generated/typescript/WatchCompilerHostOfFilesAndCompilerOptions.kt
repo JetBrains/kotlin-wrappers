@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.ProjectReference
+import typescript.sync.WatchOptions
+
 /**
  * Host to create watch with root files and options
  */

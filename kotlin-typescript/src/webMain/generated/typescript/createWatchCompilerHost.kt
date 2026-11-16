@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.*
+
 /**
  * Create the watch compiler host for either configFile or fileNames and its options
  */

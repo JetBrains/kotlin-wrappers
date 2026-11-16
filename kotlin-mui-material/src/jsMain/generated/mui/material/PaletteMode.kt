@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface PaletteMode {
+sealed /* union */
+external interface PaletteMode {
     companion object {
         @JsValue("light")
         val light: PaletteMode

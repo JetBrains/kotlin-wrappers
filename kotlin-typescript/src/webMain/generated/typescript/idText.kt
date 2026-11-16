@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.Identifier
+import typescript.ast.PrivateIdentifier
+
 external fun idText(identifierOrPrivateName: Identifier): String
 
 external fun idText(identifierOrPrivateName: PrivateIdentifier): String

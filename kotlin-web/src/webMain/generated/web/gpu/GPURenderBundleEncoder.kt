@@ -19,5 +19,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/finish)
      */
-    fun finish(descriptor: GPURenderBundleDescriptor = definedExternally): GPURenderBundle
+    open fun finish(descriptor: GPURenderBundleDescriptor = definedExternally): GPURenderBundle
 }

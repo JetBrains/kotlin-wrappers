@@ -48,6 +48,9 @@ inline val GPUFeatureName.Companion.shaderF16: GPUFeatureName
 inline val GPUFeatureName.Companion.subgroups: GPUFeatureName
     get() = unsafeCast("subgroups")
 
+inline val GPUFeatureName.Companion.textureComponentSwizzle: GPUFeatureName
+    get() = unsafeCast("texture-component-swizzle")
+
 inline val GPUFeatureName.Companion.textureCompressionAstc: GPUFeatureName
     get() = unsafeCast("texture-compression-astc")
 
@@ -65,6 +68,9 @@ inline val GPUFeatureName.Companion.textureCompressionEtc2: GPUFeatureName
 
 inline val GPUFeatureName.Companion.textureFormatsTier1: GPUFeatureName
     get() = unsafeCast("texture-formats-tier1")
+
+inline val GPUFeatureName.Companion.textureFormatsTier2: GPUFeatureName
+    get() = unsafeCast("texture-formats-tier2")
 
 inline val GPUFeatureName.Companion.timestampQuery: GPUFeatureName
     get() = unsafeCast("timestamp-query")

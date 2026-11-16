@@ -21,5 +21,5 @@ open external class GPUPipelineError(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUPipelineError/reason)
      */
-    val reason: GPUPipelineErrorReason
+    open val reason: GPUPipelineErrorReason
 }

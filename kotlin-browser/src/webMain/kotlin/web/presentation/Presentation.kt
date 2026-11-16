@@ -11,10 +11,10 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Presentation/defaultRequest)
      */
-    var defaultRequest: PresentationRequest?
+    open var defaultRequest: PresentationRequest?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Presentation/receiver)
      */
-    val receiver: PresentationReceiver?
+    open val receiver: PresentationReceiver?
 }

@@ -22,7 +22,7 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream)
      */
-    val stream: MediaStream,
+    open val stream: MediaStream,
     options: MediaRecorderOptions = definedExternally,
 ) : EventTarget {
     /**
@@ -30,58 +30,58 @@ open external class MediaRecorder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/audioBitsPerSecond)
      */
-    val audioBitsPerSecond: Int
+    open val audioBitsPerSecond: Int
 
     /**
      * The **`mimeType`** read-only property of the MediaRecorder interface returns the MIME media type that was specified when creating the MediaRecorder object, or, if none was specified, which was chosen by the browser. This is the file format of the file that would result from writing all of the recorded data to disk.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/mimeType)
      */
-    val mimeType: String
+    open val mimeType: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event)
      */
-    var ondataavailable: EventHandler<BlobEvent, MediaRecorder, MediaRecorder>?
+    open var ondataavailable: EventHandler<BlobEvent, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
      */
-    var onerror: EventHandler<ErrorEvent, MediaRecorder, MediaRecorder>?
+    open var onerror: EventHandler<ErrorEvent, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)
      */
-    var onpause: EventHandler<Event, MediaRecorder, MediaRecorder>?
+    open var onpause: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event)
      */
-    var onresume: EventHandler<Event, MediaRecorder, MediaRecorder>?
+    open var onresume: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event)
      */
-    var onstart: EventHandler<Event, MediaRecorder, MediaRecorder>?
+    open var onstart: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event)
      */
-    var onstop: EventHandler<Event, MediaRecorder, MediaRecorder>?
+    open var onstop: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
      * The **`state`** read-only property of the MediaRecorder interface returns the current state of the current MediaRecorder object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/state)
      */
-    val state: RecordingState
+    open val state: RecordingState
 
     /**
      * The **`videoBitsPerSecond`** read-only property of the MediaRecorder interface returns the video encoding bit rate in use.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/videoBitsPerSecond)
      */
-    val videoBitsPerSecond: Int
+    open val videoBitsPerSecond: Int
 
     /**
      * The **`pause()`** method of the MediaRecorder interface is used to pause recording of media streams.
@@ -89,7 +89,7 @@ open external class MediaRecorder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause)
      */
     @JsThrows(InvalidStateError::class)
-    fun pause()
+    open fun pause()
 
     /**
      * The **`requestData()`** method of the MediaRecorder interface is used to raise a dataavailable event containing a Blob object of the captured media as it was when the method was called. This can then be grabbed and manipulated as you wish.
@@ -97,7 +97,7 @@ open external class MediaRecorder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData)
      */
     @JsThrows(InvalidStateError::class)
-    fun requestData()
+    open fun requestData()
 
     /**
      * The **`resume()`** method of the MediaRecorder interface is used to resume media recording when it has been previously paused.
@@ -105,7 +105,7 @@ open external class MediaRecorder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume)
      */
     @JsThrows(InvalidStateError::class)
-    fun resume()
+    open fun resume()
 
     /**
      * The **`start()`** method of the MediaRecorder interface begins recording media into one or more Blob objects.
@@ -115,7 +115,7 @@ open external class MediaRecorder(
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
-    fun start(timeslice: Int = definedExternally)
+    open fun start(timeslice: Int = definedExternally)
 
     /**
      * The **`stop()`** method of the MediaRecorder interface is used to stop media capture.
@@ -123,7 +123,7 @@ open external class MediaRecorder(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop)
      */
     @JsThrows(InvalidStateError::class)
-    fun stop()
+    open fun stop()
 
     companion object {
         /**

@@ -21,7 +21,7 @@ private constructor() {
      */
     @JsThrows(InvalidStateError::class)
     @JsName("query")
-    fun queryAsync(permissionDesc: PermissionDescriptor): Promise<PermissionStatus>
+    open fun queryAsync(permissionDesc: PermissionDescriptor): Promise<PermissionStatus>
 }
 
 /**

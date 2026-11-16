@@ -46,7 +46,7 @@ open external class JsMap<K : JsAny?, V : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsert)
      */
-    fun getOrInsert(
+    open fun getOrInsert(
         key: K,
         defaultValue: V,
     ): V
@@ -54,7 +54,7 @@ open external class JsMap<K : JsAny?, V : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsertComputed)
      */
-    fun getOrInsertComputed(
+    open fun getOrInsertComputed(
         key: K,
         callback: (key: K) -> V,
     ): V

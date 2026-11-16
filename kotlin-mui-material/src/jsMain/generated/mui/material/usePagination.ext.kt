@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface UsePaginationItemType {
+sealed /* union */
+external interface UsePaginationItemType {
     companion object {
         @JsValue("page")
         val page: UsePaginationItemType

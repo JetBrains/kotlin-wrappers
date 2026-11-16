@@ -7,7 +7,7 @@ import java.io.File
 
 private val ARIA_IMPORTS = """
 import react.dom.aria.AriaAttributes
-import react.dom.aria.AriaRole
+import web.aria.AriaRole
 """.trimIndent()
 
 private val DOM_TYPES = setOf(
@@ -79,7 +79,7 @@ fun generateKotlinDeclarations(
         }
 
         val finalPkg = when {
-            name.startsWith("Aria") -> Package.ARIA
+            name == "AriaAttributes" -> Package.ARIA
             name in DOM_TYPES -> Package.DOM
             "SVG" in name -> Package.SVG
             name == "PointerType" -> Package.EVENTS
@@ -91,10 +91,21 @@ fun generateKotlinDeclarations(
             Package.HTML,
             Package.SVG,
             Package.DOM,
-                -> ARIA_IMPORTS + "\n" + DOM_IMPORTS + "\n" + SESKAR_IMPORTS + "\n" + body
+                -> sequenceOf(
+                ARIA_IMPORTS,
+                DOM_IMPORTS,
+                SESKAR_IMPORTS,
+                body,
+            ).joinToString("\n")
 
             Package.ARIA,
-                -> SESKAR_IMPORTS + "\n" + "import web.dom.ElementId" + "\n" + body
+                -> sequenceOf(
+                """
+                import web.aria.*
+                import web.dom.ElementId
+                """.trimIndent(),
+                body,
+            ).joinToString("\n\n")
 
             else -> SESKAR_IMPORTS + "\n" + body
         }

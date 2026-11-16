@@ -18,5 +18,5 @@ open external class MediaStreamAudioSourceNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioSourceNode/mediaStream)
      */
-    val mediaStream: MediaStream
+    open val mediaStream: MediaStream
 }

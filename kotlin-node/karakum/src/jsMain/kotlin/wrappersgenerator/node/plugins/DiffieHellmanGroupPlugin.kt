@@ -5,7 +5,9 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.ClassDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 class DiffieHellmanGroupPlugin : Plugin {
     private lateinit var sourceDiffieHellmanGroupNode: ClassDeclaration

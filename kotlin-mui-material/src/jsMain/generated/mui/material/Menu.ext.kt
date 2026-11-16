@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface MenuVariant {
+sealed /* union */
+external interface MenuVariant {
     companion object {
         @JsValue("menu")
         val menu: MenuVariant

@@ -7,18 +7,16 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.injectionServiceKey
 import js.reflect.invoke
-import typescript.isEnumDeclaration
-import typescript.isIdentifier
+import typescript.ast.`is`.isEnumDeclaration
+import typescript.ast.`is`.isIdentifier
 
 val convertKindEnums = createPlugin { node, context, render ->
     nullable {
         ensure(isEnumDeclaration(node))
         ensure(
             node.name.text == "SyntaxKind"
-                    || node.name.text == "ScriptKind"
                     || node.name.text == "TypePredicateKind"
-                    || node.name.text == "InvalidatedProjectKind"
-                    || node.name.text == "CommandTypes",
+                    || node.name.text == "InvalidatedProjectKind",
         )
 
         val name = render(node.name)
@@ -65,7 +63,8 @@ val convertKindEnums = createPlugin { node, context, render ->
             .joinToString("\n")
 
         """
-        sealed /* enum */
+        /* enum */
+        @SubclassOptInRequired(js.internal.InternalApi::class)
         external interface ${name}${ifPresent(injectedHeritageClauses) { " : $it" }} {
         $body
 

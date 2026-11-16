@@ -12,31 +12,31 @@ open external class USBAlternateInterface(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBAlternateInterface/alternateSetting)
      */
-    val alternateSetting: Short,
+    open val alternateSetting: Short,
     /* unsigned byte */
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBAlternateInterface/interfaceClass)
      */
-    val interfaceClass: Short /* unsigned byte */
+    open val interfaceClass: Short /* unsigned byte */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBAlternateInterface/interfaceSubclass)
      */
-    val interfaceSubclass: Short /* unsigned byte */
+    open val interfaceSubclass: Short /* unsigned byte */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBAlternateInterface/interfaceProtocol)
      */
-    val interfaceProtocol: Short /* unsigned byte */
+    open val interfaceProtocol: Short /* unsigned byte */
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBAlternateInterface/interfaceName)
      */
-    val interfaceName: String?
+    open val interfaceName: String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBAlternateInterface/endpoints)
      */
-    val endpoints: ReadonlyArray<USBEndpoint>
+    open val endpoints: ReadonlyArray<USBEndpoint>
 }

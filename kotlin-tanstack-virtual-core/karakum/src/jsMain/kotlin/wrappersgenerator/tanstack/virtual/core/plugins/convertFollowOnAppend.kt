@@ -6,7 +6,11 @@ import io.github.sgrishchenko.karakum.extension.plugins.convertLiteralUnionType
 import io.github.sgrishchenko.karakum.extension.plugins.isLiteralUnionType
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.factory.factory
+import typescript.ast.`is`.isTypeAliasDeclaration
+import typescript.ast.`is`.isUnionTypeNode
+import typescript.sync.UnionType
 
 // `FollowOnAppend = boolean | ScrollBehavior`
 val convertFollowOnAppend = createPlugin { node, context, render ->

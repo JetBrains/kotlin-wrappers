@@ -22,18 +22,18 @@ open external class BroadcastChannel(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
      */
-    val name: String,
+    open val name: String,
 ) : EventTarget,
     JsCloseable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
+    open var onmessage: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
+    open var onmessageerror: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
 
     /**
      * The **`close()`** method of the BroadcastChannel interface terminates the connection to the underlying channel, allowing the object to be garbage collected. This is a necessary step to perform as there is no other way for a browser to know that this channel is not needed anymore.
@@ -49,11 +49,11 @@ open external class BroadcastChannel(
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(InvalidStateError::class)
-    fun postMessage(message: JsAny?)
+    open fun postMessage(message: JsAny?)
 
     @JsThrows(DataCloneError::class)
     @JsThrows(InvalidStateError::class)
-    fun postMessage(message: String)
+    open fun postMessage(message: String)
 }
 
 /**

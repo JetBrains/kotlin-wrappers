@@ -5,5 +5,5 @@ package web.xr
 open external class XRJointPose
 private constructor() :
     XRPose {
-    val radius: Float?
+    open val radius: Float?
 }

@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.SourceFile
+import typescript.ast.TextChangeRange
+
 external fun updateLanguageServiceSourceFile(
     sourceFile: SourceFile,
     scriptSnapshot: IScriptSnapshot,

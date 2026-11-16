@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSSkew`** interface of the CSS Typed Object Model API is part of the CSSTransformValue interface. It represents the skew() value of the individual transform property in CSS.
+ * The **`CSSSkew`** interface of the CSS Typed Object Model API represents the skew() value of the individual transform property in CSS.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkew)
  */
@@ -13,11 +13,11 @@ open external class CSSSkew(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkew/ax)
      */
-    var ax: CSSNumericValue,
+    open var ax: CSSNumericValue,
     /**
      * The **`ay`** property of the CSSSkew interface gets and sets the angle used to distort the element along the y-axis (or ordinate).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkew/ay)
      */
-    var ay: CSSNumericValue,
+    open var ay: CSSNumericValue,
 ) : CSSTransformComponent

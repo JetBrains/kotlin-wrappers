@@ -4,7 +4,8 @@ package mui.system
 
 import seskar.js.JsValue
 
-sealed external interface Breakpoint {
+sealed /* union */
+external interface Breakpoint {
     companion object {
         @JsValue("xs")
         val xs: Breakpoint

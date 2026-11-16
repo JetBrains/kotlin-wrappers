@@ -5,7 +5,7 @@ package web.assembly
 import js.array.ReadonlyArray
 
 /**
- * The **`WebAssembly.Exception`** object represents a runtime exception thrown from WebAssembly to JavaScript, or thrown from JavaScript to a WebAssembly exception handler.
+ * The **`WebAssembly.Exception`** object represents a runtime exception thrown in a Wasm module.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception)
  */
@@ -16,26 +16,26 @@ open external class Exception(
     options: ExceptionOptions = definedExternally,
 ) {
     /**
-     * The read-only **`stack`** property of an object instance of type WebAssembly.Exception may contain a stack trace.
+     * The **`stack`** read-only property of the WebAssembly.Exception object may contain a stack trace.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception/stack)
      */
-    val stack: String?
+    open val stack: String?
 
     /**
-     * The **`getArg()`** prototype method of the Exception object can be used to get the value of a specified item in the exception's data arguments.
+     * The **`getArg()`** method of the Exception object can be used to get the value of a specified item in the exception's data arguments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception/getArg)
      */
-    fun getArg(
+    open fun getArg(
         exceptionTag: Tag,
         index: Int,
     ): JsAny?
 
     /**
-     * The **`is()`** prototype method of the Exception object can be used to test if the Exception matches a given tag.
+     * The **`is()`** method of the Exception object can be used to test if the Exception matches a given tag.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Exception/is)
      */
-    fun `is`(exceptionTag: Tag): Boolean
+    open fun `is`(exceptionTag: Tag): Boolean
 }

@@ -18,109 +18,109 @@ open external class DateTimeFormat(
         options: DateTimeFormatOptions = definedExternally,
     )
 
-    fun format(date: Date = definedExternally): String
-    fun format(date: Int53): String
-    fun resolvedOptions(): ResolvedDateTimeFormatOptions
-    fun formatToParts(date: Date = definedExternally): ReadonlyArray<DateTimeFormatPart>
-    fun formatToParts(date: Int53): ReadonlyArray<DateTimeFormatPart>
-    fun formatRange(
+    open fun format(date: Date = definedExternally): String
+    open fun format(date: Int53): String
+    open fun resolvedOptions(): ResolvedDateTimeFormatOptions
+    open fun formatToParts(date: Date = definedExternally): ReadonlyArray<DateTimeFormatPart>
+    open fun formatToParts(date: Int53): ReadonlyArray<DateTimeFormatPart>
+    open fun formatRange(
         startDate: Date,
         endDate: Date,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: Int53,
         endDate: Int53,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: BigInt,
         endDate: BigInt,
     ): String
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: Date,
         endDate: Date,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: Int53,
         endDate: Int53,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: BigInt,
         endDate: BigInt,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun format(date: PlainDate = definedExternally): String
-    fun format(date: PlainYearMonth): String
-    fun format(date: PlainMonthDay): String
-    fun format(date: PlainTime): String
-    fun format(date: PlainDateTime): String
-    fun format(date: Instant): String
-    fun formatToParts(date: PlainDate = definedExternally): ReadonlyArray<DateTimeFormatPart>
-    fun formatToParts(date: PlainYearMonth): ReadonlyArray<DateTimeFormatPart>
-    fun formatToParts(date: PlainMonthDay): ReadonlyArray<DateTimeFormatPart>
-    fun formatToParts(date: PlainTime): ReadonlyArray<DateTimeFormatPart>
-    fun formatToParts(date: PlainDateTime): ReadonlyArray<DateTimeFormatPart>
-    fun formatToParts(date: Instant): ReadonlyArray<DateTimeFormatPart>
-    fun formatRange(
+    open fun format(date: PlainDate = definedExternally): String
+    open fun format(date: PlainYearMonth): String
+    open fun format(date: PlainMonthDay): String
+    open fun format(date: PlainTime): String
+    open fun format(date: PlainDateTime): String
+    open fun format(date: Instant): String
+    open fun formatToParts(date: PlainDate = definedExternally): ReadonlyArray<DateTimeFormatPart>
+    open fun formatToParts(date: PlainYearMonth): ReadonlyArray<DateTimeFormatPart>
+    open fun formatToParts(date: PlainMonthDay): ReadonlyArray<DateTimeFormatPart>
+    open fun formatToParts(date: PlainTime): ReadonlyArray<DateTimeFormatPart>
+    open fun formatToParts(date: PlainDateTime): ReadonlyArray<DateTimeFormatPart>
+    open fun formatToParts(date: Instant): ReadonlyArray<DateTimeFormatPart>
+    open fun formatRange(
         startDate: PlainDate,
         endDate: PlainDate,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: PlainYearMonth,
         endDate: PlainYearMonth,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: PlainMonthDay,
         endDate: PlainMonthDay,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: PlainTime,
         endDate: PlainTime,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: PlainDateTime,
         endDate: PlainDateTime,
     ): String
 
-    fun formatRange(
+    open fun formatRange(
         startDate: Instant,
         endDate: Instant,
     ): String
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: PlainDate,
         endDate: PlainDate,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: PlainYearMonth,
         endDate: PlainYearMonth,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: PlainMonthDay,
         endDate: PlainMonthDay,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: PlainTime,
         endDate: PlainTime,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: PlainDateTime,
         endDate: PlainDateTime,
     ): ReadonlyArray<DateTimeRangeFormatPart>
 
-    fun formatRangeToParts(
+    open fun formatRangeToParts(
         startDate: Instant,
         endDate: Instant,
     ): ReadonlyArray<DateTimeRangeFormatPart>

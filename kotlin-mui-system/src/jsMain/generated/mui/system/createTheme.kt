@@ -34,7 +34,7 @@ external interface ThemeOptions {
 
     val shadows: Any? /* Shadows */
 
-    val spacing: Any? /* SpacingOptions */
+    var spacing: SpacingOptions?
 
     val transitions: Transitions?
 

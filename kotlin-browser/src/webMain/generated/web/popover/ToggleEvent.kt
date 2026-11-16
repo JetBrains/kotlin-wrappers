@@ -20,21 +20,21 @@ open external class ToggleEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
      */
-    val newState: ToggleState
+    open val newState: ToggleState
 
     /**
      * The **`oldState`** read-only property of the ToggleEvent interface is a string representing the state the element is transitioning from.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
-    val oldState: ToggleState
+    open val oldState: ToggleState
 
     /**
      * The **`source`** read-only property of the ToggleEvent interface is an Element object instance representing the HTML popover control element that initiated the toggle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/source)
      */
-    val source: Element?
+    open val source: Element?
 
     companion object
 }

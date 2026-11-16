@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.*
+
 external fun resolveModuleName(
     moduleName: String,
     containingFile: String,

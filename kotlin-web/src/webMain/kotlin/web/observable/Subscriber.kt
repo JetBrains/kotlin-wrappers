@@ -7,13 +7,13 @@ import web.experimental.ExperimentalWebApi
 import web.function.VoidFunction
 
 @ExperimentalWebApi
-external class Subscriber<T : JsAny?> :
+open external class Subscriber<T : JsAny?> :
     AbortableLike {
-    val active: Boolean
+    open val active: Boolean
     override val signal: AbortSignal
 
-    fun next(value: T)
-    fun error(error: JsError)
-    fun complete()
-    fun addTeardown(teardown: VoidFunction)
+    open fun next(value: T)
+    open fun error(error: JsError)
+    open fun complete()
+    open fun addTeardown(teardown: VoidFunction)
 }

@@ -21,7 +21,7 @@ open external class DocumentPictureInPictureEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPictureEvent/window)
      */
-    val window: Window
+    open val window: Window
 
     companion object
 }

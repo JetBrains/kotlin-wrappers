@@ -20,7 +20,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/cssRules)
      */
-    val cssRules: CSSRuleList
+    open val cssRules: CSSRuleList
 
     /**
      * The read-only **`length`** property of the CSSKeyframesRule interface returns the number of CSSKeyframeRule objects in its list. You can then access each keyframe rule by its index directly on the CSSKeyframeRule object.
@@ -34,26 +34,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/name)
      */
-    var name: String
+    open var name: String
 
     /**
      * The **`appendRule()`** method of the CSSKeyframeRule interface appends a CSSKeyFrameRule to the end of the rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/appendRule)
      */
-    fun appendRule(rule: String)
+    open fun appendRule(rule: String)
 
     /**
      * The **`deleteRule()`** method of the CSSKeyframeRule interface deletes the CSSKeyFrameRule that matches the specified keyframe selector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/deleteRule)
      */
-    fun deleteRule(select: String)
+    open fun deleteRule(select: String)
 
     /**
      * The **`findRule()`** method of the CSSKeyframeRule interface finds the CSSKeyFrameRule that matches the specified keyframe selector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/findRule)
      */
-    fun findRule(select: String): CSSKeyframeRule?
+    open fun findRule(select: String): CSSKeyframeRule?
 }

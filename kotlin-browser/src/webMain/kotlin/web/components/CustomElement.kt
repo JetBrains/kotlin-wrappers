@@ -1,43 +1,49 @@
 package web.components
 
 external interface CustomElement {
+    interface WithCallbacks :
+        WithConnectedCallback,
+        WithConnectedMoveCallback,
+        WithDisconnectedCallback,
+        WithAdoptedCallback,
+        WithAttributeChangedCallback
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#connectedcallback)
-     */
-    val connectedCallback: (() -> Unit)?
-        get() = definedExternally
+    interface WithConnectedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#connectedcallback)
+         */
+        fun connectedCallback()
+    }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#connectedmovecallback)
-     */
-    val connectedMoveCallback: (() -> Unit)?
-        get() = definedExternally
+    interface WithConnectedMoveCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#connectedmovecallback)
+         */
+        fun connectedMoveCallback()
+    }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#disconnectedcallback)
-     */
-    val disconnectedCallback: (() -> Unit)?
-        get() = definedExternally
+    interface WithDisconnectedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#disconnectedcallback)
+         */
+        fun disconnectedCallback()
+    }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#adoptedcallback)
-     */
-    val adoptedCallback: (() -> Unit)?
-        get() = definedExternally
+    interface WithAdoptedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#adoptedcallback)
+         */
+        fun adoptedCallback()
+    }
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#attributechangedcallback)
-     */
-    val attributeChangedCallback: AttributeChangedCallback?
-        get() = definedExternally
+    interface WithAttributeChangedCallback {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#attributechangedcallback)
+         */
+        fun attributeChangedCallback(
+            name: String,
+            oldValue: JsAny?,
+            newValue: JsAny?,
+        )
+    }
 }
-
-/**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#attributechangedcallback)
- */
-typealias AttributeChangedCallback = (
-    name: String,
-    oldValue: JsAny?,
-    newValue: JsAny?,
-) -> Unit

@@ -16,5 +16,5 @@ open external class PerformanceMark(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMark/detail)
      */
-    val detail: JsAny?
+    open val detail: JsAny?
 }

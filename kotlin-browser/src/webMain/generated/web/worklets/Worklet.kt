@@ -26,7 +26,7 @@ private constructor() {
     @JsThrows(AbortError::class)
     @JsThrows(SyntaxError::class)
     @JsName("addModule")
-    fun addModuleAsync(
+    open fun addModuleAsync(
         moduleURL: String,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
@@ -39,7 +39,7 @@ private constructor() {
     @JsThrows(AbortError::class)
     @JsThrows(SyntaxError::class)
     @JsName("addModule")
-    fun addModuleAsync(
+    open fun addModuleAsync(
         moduleURL: URL,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
@@ -47,7 +47,7 @@ private constructor() {
     @JsThrows(AbortError::class)
     @JsThrows(SyntaxError::class)
     @JsName("addModule")
-    fun addModuleAsync(
+    open fun addModuleAsync(
         module: M,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>

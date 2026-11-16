@@ -3,7 +3,7 @@ package wrappersgenerator.typescript.annotations
 import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
 import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.withName
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 
 fun createJsPlainObjectAnnotation() =
     JsPlainObjectAnnotation(

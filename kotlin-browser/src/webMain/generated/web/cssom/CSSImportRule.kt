@@ -15,33 +15,33 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href)
      */
-    val href: String
+    open val href: String
 
     /**
      * The read-only **`layerName`** property of the CSSImportRule interface returns the name of the cascade layer created by the @import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/layerName)
      */
-    val layerName: String?
+    open val layerName: String?
 
     /**
      * The read-only **`media`** property of the CSSImportRule interface returns a MediaList object representing the media query list of the @import rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
      */
-    val media: MediaList
+    open val media: MediaList
 
     /**
      * The read-only **`styleSheet`** property of the CSSImportRule interface returns the CSS Stylesheet specified by the @import at-rule. This will be in the form of a CSSStyleSheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
      */
-    val styleSheet: CSSStyleSheet?
+    open val styleSheet: CSSStyleSheet?
 
     /**
      * The read-only **`supportsText`** property of the CSSImportRule interface returns the supports condition specified by the @import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/supportsText)
      */
-    val supportsText: String?
+    open val supportsText: String?
 }

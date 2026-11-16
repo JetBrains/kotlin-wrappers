@@ -3,7 +3,8 @@ package wrappersgenerator.node.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isInterfaceDeclaration
 
 private val jsoInterfaces = setOf(
     // http(s)

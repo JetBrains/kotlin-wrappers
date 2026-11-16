@@ -16,7 +16,7 @@ internal fun dateDeclarations(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
      */
-    external class $DATE():
+    open external class $DATE():
         $LOCALIZABLE<DateTimeFormatOptions>,
         $SERIALIZABLE {
         ${constructors.joinToString("\n")}
@@ -56,7 +56,7 @@ private fun dateMember(
             ?: return null
         val comment = dateComment(
             comment = content.substringBeforeLast("\n"),
-            functionName = member.substringBefore("(").removePrefix("fun "),
+            functionName = member.substringBefore("(").removePrefix("open ").removePrefix("fun "),
         )
 
         return comment + "\n" + member
@@ -64,6 +64,7 @@ private fun dateMember(
 
     if (static) {
         return dateMember(content.replace("): number", "): Int53"), static = false)
+            ?.replace("open fun ", "fun ")
     }
 
     if (content.startsWith("toString()"))
@@ -83,7 +84,7 @@ private fun dateMember(
             .replace(", ", ", \n")
     }
 
-    return "fun " + content
+    return "open fun " + content
         .replace("valueOf(): number", "valueOf(): Int53")
         .replace("getTime(): number", "getTime(): Int53")
         .replace("setTime(time: number): number", "setTime(time: Int53): Int53")

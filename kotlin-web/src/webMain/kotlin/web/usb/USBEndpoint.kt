@@ -11,20 +11,20 @@ open external class USBEndpoint(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBEndpoint/endpointNumber)
      */
-    val endpointNumber: Short,
+    open val endpointNumber: Short,
     /* unsigned byte */
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBEndpoint/configuration)
      */
-    val direction: USBDirection,
+    open val direction: USBDirection,
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBEndpoint/type)
      */
-    val type: USBEndpointType
+    open val type: USBEndpointType
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBEndpoint/packetSize)
      */
-    val packetSize: Int
+    open val packetSize: Int
 }

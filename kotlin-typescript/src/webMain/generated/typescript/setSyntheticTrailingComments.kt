@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.visitor.SynthesizedComment
+
 external fun <T : Node> setSyntheticTrailingComments(
     node: T,
     comments: js.array.ReadonlyArray<SynthesizedComment>?,

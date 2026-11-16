@@ -17,21 +17,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginComputePass)
      */
-    fun beginComputePass(descriptor: GPUComputePassDescriptor = definedExternally): GPUComputePassEncoder
+    open fun beginComputePass(descriptor: GPUComputePassDescriptor = definedExternally): GPUComputePassEncoder
 
     /**
      * The **`beginRenderPass()`** method of the GPUCommandEncoder interface starts encoding a render pass, returning a GPURenderPassEncoder that can be used to control rendering.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/beginRenderPass)
      */
-    fun beginRenderPass(descriptor: GPURenderPassDescriptor): GPURenderPassEncoder
+    open fun beginRenderPass(descriptor: GPURenderPassDescriptor): GPURenderPassEncoder
 
     /**
      * The **`clearBuffer()`** method of the GPUCommandEncoder interface encodes a command that fills a region of a GPUBuffer with zeroes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/clearBuffer)
      */
-    fun clearBuffer(
+    open fun clearBuffer(
         buffer: GPUBuffer,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
@@ -42,13 +42,13 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer)
      */
-    fun copyBufferToBuffer(
+    open fun copyBufferToBuffer(
         source: GPUBuffer,
         destination: GPUBuffer,
         size: GPUSize64 = definedExternally,
     )
 
-    fun copyBufferToBuffer(
+    open fun copyBufferToBuffer(
         source: GPUBuffer,
         sourceOffset: GPUSize64,
         destination: GPUBuffer,
@@ -61,7 +61,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyBufferToTexture)
      */
-    fun copyBufferToTexture(
+    open fun copyBufferToTexture(
         source: GPUTexelCopyBufferInfo,
         destination: GPUTexelCopyTextureInfo,
         copySize: GPUExtent3D,
@@ -72,7 +72,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyTextureToBuffer)
      */
-    fun copyTextureToBuffer(
+    open fun copyTextureToBuffer(
         source: GPUTexelCopyTextureInfo,
         destination: GPUTexelCopyBufferInfo,
         copySize: GPUExtent3D,
@@ -83,7 +83,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/copyTextureToTexture)
      */
-    fun copyTextureToTexture(
+    open fun copyTextureToTexture(
         source: GPUTexelCopyTextureInfo,
         destination: GPUTexelCopyTextureInfo,
         copySize: GPUExtent3D,
@@ -94,14 +94,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/finish)
      */
-    fun finish(descriptor: GPUCommandBufferDescriptor = definedExternally): GPUCommandBuffer
+    open fun finish(descriptor: GPUCommandBufferDescriptor = definedExternally): GPUCommandBuffer
 
     /**
      * The **`resolveQuerySet()`** method of the GPUCommandEncoder interface encodes a command that resolves a GPUQuerySet, copying the results into a specified GPUBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/resolveQuerySet)
      */
-    fun resolveQuerySet(
+    open fun resolveQuerySet(
         querySet: GPUQuerySet,
         firstQuery: GPUSize32,
         queryCount: GPUSize32,

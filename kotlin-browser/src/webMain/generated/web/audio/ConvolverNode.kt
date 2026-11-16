@@ -16,12 +16,12 @@ open external class ConvolverNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConvolverNode/buffer)
      */
-    var buffer: AudioBuffer?
+    open var buffer: AudioBuffer?
 
     /**
      * The **`normalize`** property of the ConvolverNode interface is a boolean that controls whether the impulse response from the buffer will be scaled by an equal-power normalization when the buffer attribute is set, or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConvolverNode/normalize)
      */
-    var normalize: Boolean
+    open var normalize: Boolean
 }

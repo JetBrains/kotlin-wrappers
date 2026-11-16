@@ -16,33 +16,33 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement/diffuseConstant)
      */
-    val diffuseConstant: SVGAnimatedNumber
+    open val diffuseConstant: SVGAnimatedNumber
 
     /**
      * The **`in1`** read-only property of the SVGFEDiffuseLightingElement interface reflects the in attribute of the given <feDiffuseLighting> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement/in1)
      */
-    val in1: SVGAnimatedString
+    open val in1: SVGAnimatedString
 
     /**
      * The **`kernelUnitLengthX`** read-only property of the SVGFEDiffuseLightingElement interface reflects the X component of the kernelUnitLength attribute of the given <feDiffuseLighting> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement/kernelUnitLengthX)
      */
-    val kernelUnitLengthX: SVGAnimatedNumber
+    open val kernelUnitLengthX: SVGAnimatedNumber
 
     /**
      * The **`kernelUnitLengthY`** read-only property of the SVGFEDiffuseLightingElement interface reflects the Y component of the kernelUnitLength attribute of the given <feDiffuseLighting> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement/kernelUnitLengthY)
      */
-    val kernelUnitLengthY: SVGAnimatedNumber
+    open val kernelUnitLengthY: SVGAnimatedNumber
 
     /**
      * The **`surfaceScale`** read-only property of the SVGFEDiffuseLightingElement interface reflects the surfaceScale attribute of the given <feDiffuseLighting> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement/surfaceScale)
      */
-    val surfaceScale: SVGAnimatedNumber
+    open val surfaceScale: SVGAnimatedNumber
 }

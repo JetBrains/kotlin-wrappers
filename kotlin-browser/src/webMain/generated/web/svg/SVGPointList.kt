@@ -29,7 +29,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
      */
-    val numberOfItems: Int
+    open val numberOfItems: Int
 
     /**
      * The **`appendItem()`** method of the SVGPointList interface adds a DOMPoint to the end of the list.
@@ -37,7 +37,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun appendItem(newItem: SVGPoint): SVGPoint
+    open fun appendItem(newItem: SVGPoint): SVGPoint
 
     /**
      * The **`clear()`** method of the SVGPointList interface removes all items from the list.
@@ -45,7 +45,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/clear)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun clear()
+    open fun clear()
 
     /**
      * The **`getItem()`** method of the SVGPointList interface gets one item from the list at the specified index.
@@ -53,7 +53,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
      */
     @JsThrows(IndexSizeError::class)
-    fun getItem(index: Int): SVGPoint
+    open fun getItem(index: Int): SVGPoint
 
     /**
      * The **`initialize()`** method of the SVGPointList interface clears the list then adds a single new DOMPoint object to the list.
@@ -61,7 +61,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun initialize(newItem: SVGPoint): SVGPoint
+    open fun initialize(newItem: SVGPoint): SVGPoint
 
     /**
      * The **`insertItemBefore()`** method of the SVGPointList interface inserts a DOMPoint before another item in the list.
@@ -69,7 +69,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/insertItemBefore)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun insertItemBefore(
+    open fun insertItemBefore(
         newItem: SVGPoint,
         index: Int,
     ): SVGPoint
@@ -81,7 +81,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun removeItem(index: Int): SVGPoint
+    open fun removeItem(index: Int): SVGPoint
 
     /**
      * The **`replaceItem()`** method of the SVGPointList interface replaces a DOMPoint in the list.
@@ -90,7 +90,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun replaceItem(
+    open fun replaceItem(
         newItem: SVGPoint,
         index: Int,
     ): SVGPoint

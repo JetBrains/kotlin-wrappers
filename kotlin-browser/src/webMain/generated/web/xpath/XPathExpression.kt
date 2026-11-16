@@ -16,7 +16,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathExpression/evaluate)
      */
-    fun evaluate(
+    open fun evaluate(
         contextNode: Node,
         type: Short = definedExternally,
         result: XPathResult? = definedExternally,

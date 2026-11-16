@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.sync.CompletionInfo
+
 external interface IncompleteCompletionsCache {
     fun get(): CompletionInfo?
 

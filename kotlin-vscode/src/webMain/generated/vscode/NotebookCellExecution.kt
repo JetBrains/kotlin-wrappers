@@ -51,7 +51,7 @@ external interface NotebookCellExecution {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.start)
      */
-    fun start(startTime: JsInt53 = definedExternally)
+    fun start(startTime: JsInt53 /* EpochTimeStamp */ = definedExternally)
 
     /**
      * Signal that execution has ended.
@@ -65,7 +65,7 @@ external interface NotebookCellExecution {
      */
     fun end(
         success: Boolean?,
-        endTime: JsInt53 = definedExternally,
+        endTime: JsInt53 /* EpochTimeStamp */ = definedExternally,
     )
 
     /**

@@ -3,10 +3,10 @@ package wrappersgenerator.testing.library.react.inheritanceModifiers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import js.reflect.invoke
-import typescript.Node
-import typescript.isIntersectionTypeNode
-import typescript.isMappedTypeNode
-import typescript.isTypeAliasDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.isIntersectionTypeNode
+import typescript.ast.`is`.isMappedTypeNode
+import typescript.ast.`is`.isTypeAliasDeclaration
 
 suspend fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {

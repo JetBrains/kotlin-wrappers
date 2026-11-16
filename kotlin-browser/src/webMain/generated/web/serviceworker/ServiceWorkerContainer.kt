@@ -29,29 +29,29 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller)
      */
-    val controller: ServiceWorker?
+    open val controller: ServiceWorker?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
      */
-    var oncontrollerchange: EventHandler<Event, ServiceWorkerContainer, ServiceWorkerContainer>?
+    open var oncontrollerchange: EventHandler<Event, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
+    open var onmessage: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
      */
-    var onmessageerror: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
+    open var onmessageerror: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
      * The **`ready`** read-only property of the ServiceWorkerContainer interface provides a way of delaying code execution until a service worker is active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)
      */
-    val ready: Promise<ServiceWorkerRegistration>
+    open val ready: Promise<ServiceWorkerRegistration>
 
     /**
      * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
@@ -59,7 +59,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
     @JsName("getRegistration")
-    fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
+    open fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
     /**
      * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
@@ -67,7 +67,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
     @JsName("getRegistration")
-    fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
+    open fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
     /**
      * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a ServiceWorkerContainer, in an array. The method returns a Promise that resolves to an array of ServiceWorkerRegistration.
@@ -75,7 +75,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
     @JsName("getRegistrations")
-    fun getRegistrationsAsync(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
+    open fun getRegistrationsAsync(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
 
     /**
      * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
@@ -84,7 +84,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("register")
-    fun registerAsync(
+    open fun registerAsync(
         scriptURL: TrustedScriptURL,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
@@ -96,7 +96,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("register")
-    fun registerAsync(
+    open fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
@@ -108,7 +108,7 @@ private constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("register")
-    fun registerAsync(
+    open fun registerAsync(
         scriptURL: URL,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
@@ -118,11 +118,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
-    fun startMessages()
+    open fun startMessages()
 
     @JsThrows(SecurityError::class)
     @JsName("register")
-    fun registerAsync(
+    open fun registerAsync(
         module: ServiceWorkerModule,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>

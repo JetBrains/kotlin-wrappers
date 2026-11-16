@@ -2,6 +2,6 @@
 
 package web.html
 
-external class Audio(
+open external class Audio(
     src: String = definedExternally,
 ) : HTMLAudioElement

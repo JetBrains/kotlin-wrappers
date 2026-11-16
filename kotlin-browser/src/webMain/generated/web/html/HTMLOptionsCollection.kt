@@ -25,7 +25,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/selectedIndex)
      */
-    var selectedIndex: Int
+    open var selectedIndex: Int
 
     /**
      * The **`add()`** method of the HTMLOptionsCollection interface adds an HTMLOptionElement or HTMLOptGroupElement to this HTMLOptionsCollection.
@@ -33,7 +33,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
     @JsThrows(HierarchyRequestError::class)
-    fun add(
+    open fun add(
         element: HTMLOptionElement,
         before: HTMLElement? = definedExternally,
     )
@@ -44,7 +44,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
     @JsThrows(HierarchyRequestError::class)
-    fun add(
+    open fun add(
         element: HTMLOptionElement,
         before: Int?,
     )
@@ -55,7 +55,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
     @JsThrows(HierarchyRequestError::class)
-    fun add(
+    open fun add(
         element: HTMLOptGroupElement,
         before: HTMLElement? = definedExternally,
     )
@@ -66,7 +66,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/add)
      */
     @JsThrows(HierarchyRequestError::class)
-    fun add(
+    open fun add(
         element: HTMLOptGroupElement,
         before: Int?,
     )
@@ -76,5 +76,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection/remove)
      */
-    fun remove(index: Int)
+    open fun remove(index: Int)
 }

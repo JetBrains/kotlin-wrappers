@@ -4,6 +4,11 @@
 
 package typescript
 
+import typescript.ast.ConciseBody
+import typescript.ast.FunctionBody
+import typescript.ast.visitor.TransformationContext
+import typescript.ast.visitor.Visitor
+
 /**
  * Resumes a suspended lexical environment and visits a function body, ending the lexical
  * environment and merging hoisted declarations upon completion.

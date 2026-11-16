@@ -27,7 +27,7 @@ external interface FileStat {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileStat.ctime)
      */
-    var ctime: JsInt53
+    var ctime: JsInt53 /* EpochTimeStamp */
 
     /**
      * The modification timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
@@ -38,7 +38,7 @@ external interface FileStat {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileStat.mtime)
      */
-    var mtime: JsInt53
+    var mtime: JsInt53 /* EpochTimeStamp */
 
     /**
      * The size in bytes.

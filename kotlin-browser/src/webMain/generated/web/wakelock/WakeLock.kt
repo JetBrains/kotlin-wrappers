@@ -22,7 +22,7 @@ private constructor() {
      */
     @JsThrows(NotAllowedError::class)
     @JsName("request")
-    fun requestAsync(type: WakeLockType = definedExternally): Promise<WakeLockSentinel>
+    open fun requestAsync(type: WakeLockType = definedExternally): Promise<WakeLockSentinel>
 }
 
 /**

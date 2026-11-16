@@ -3,7 +3,7 @@
 package web.audio
 
 /**
- * The **`DynamicsCompressorNode`** interface provides a compression effect, which lowers the volume of the loudest parts of the signal in order to help prevent clipping and distortion that can occur when multiple sounds are played and multiplexed together at once. This is often used in musical production and game audio. DynamicsCompressorNode is an AudioNode that has exactly one input and one output.
+ * The **`DynamicsCompressorNode`** interface provides a compression effect, which lowers the volume of the loudest parts of a signal. Compression can help prevent clipping and distortion when multiple sounds are combined, and it is also used in music production and game audio for dynamic control, tone shaping, and creative effects. DynamicsCompressorNode is an AudioNode that has exactly one input and one output.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode)
  */
@@ -16,40 +16,40 @@ open external class DynamicsCompressorNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/attack)
      */
-    val attack: AudioParam
+    open val attack: AudioParam
 
     /**
      * The **`knee`** property of the DynamicsCompressorNode interface is a k-rate AudioParam containing a decibel value representing the range above the threshold where the curve smoothly transitions to the compressed portion.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/knee)
      */
-    val knee: AudioParam
+    open val knee: AudioParam
 
     /**
      * The **`ratio`** property of the DynamicsCompressorNode interface Is a k-rate AudioParam representing the amount of change, in dB, needed in the input for a 1 dB change in the output.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/ratio)
      */
-    val ratio: AudioParam
+    open val ratio: AudioParam
 
     /**
      * The **`reduction`** read-only property of the DynamicsCompressorNode interface is a float representing the amount of gain reduction currently applied by the compressor to the signal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/reduction)
      */
-    val reduction: Float
+    open val reduction: Float
 
     /**
      * The **`release`** property of the DynamicsCompressorNode interface Is a k-rate AudioParam representing the amount of time, in seconds, required to increase the gain by 10 dB. It defines how quick the signal is adapted when its volume is reduced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/release)
      */
-    val release: AudioParam
+    open val release: AudioParam
 
     /**
      * The **`threshold`** property of the DynamicsCompressorNode interface is a k-rate AudioParam representing the decibel value above which the compression will start taking effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode/threshold)
      */
-    val threshold: AudioParam
+    open val threshold: AudioParam
 }

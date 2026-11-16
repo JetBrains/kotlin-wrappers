@@ -1,0 +1,12 @@
+// Automatically generated - do not modify!
+
+package typescript.ast
+
+/**
+ * Subset of properties from SourceFile that are used in multiple utility functions
+ */
+external interface SourceFileLike {
+    val text: String
+
+    fun getLineAndCharacterOfPosition(pos: Int): LineAndCharacter
+}

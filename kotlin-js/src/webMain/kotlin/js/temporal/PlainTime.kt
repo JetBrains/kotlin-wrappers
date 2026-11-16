@@ -17,27 +17,27 @@ package js.temporal
  */
 @JsQualifier("Temporal")
 open external class PlainTime(
-    val hour: Int = definedExternally,
-    val minute: Int = definedExternally,
-    val second: Int = definedExternally,
-    val millisecond: Int = definedExternally,
-    val microsecond: Int = definedExternally,
-    val nanosecond: Int = definedExternally,
+    open val hour: Int = definedExternally,
+    open val minute: Int = definedExternally,
+    open val second: Int = definedExternally,
+    open val millisecond: Int = definedExternally,
+    open val microsecond: Int = definedExternally,
+    open val nanosecond: Int = definedExternally,
 ) : HasArithmeticOperations<PlainTime, PlainTimeLike, TimeUnit<*>>,
     Roundable<PlainTime, TimeUnit<*>>,
     LocalizableDateTime {
 
     // fun equals(other: PlainTime /* | PlainTimeLike | string */): Boolean;
-    fun with(
+    open fun with(
         timeLike: PlainTime, /* | PlainTimeLike */
         options: AssignmentOptions = definedExternally,
     ): PlainTime
 
-    fun toPlainDateTime(
+    open fun toPlainDateTime(
         temporalDate: PlainDate, /* | PlainDateLike | string */
     ): PlainDateTime
 
-    fun toZonedDateTime(
+    open fun toZonedDateTime(
         timeZoneAndDate: JsAny,
         /*
         {
@@ -47,10 +47,10 @@ open external class PlainTime(
         */
     ): ZonedDateTime
 
-    fun getISOFields(): PlainTimeISOFields
+    open fun getISOFields(): PlainTimeISOFields
 
-    fun toJSON(): String
-    fun toString(options: ToStringPrecisionOptions = definedExternally): String
+    open fun toJSON(): String
+    open fun toString(options: ToStringPrecisionOptions = definedExternally): String
 
     companion object :
         PlainCompanion<PlainTime, PlainTimeLike>

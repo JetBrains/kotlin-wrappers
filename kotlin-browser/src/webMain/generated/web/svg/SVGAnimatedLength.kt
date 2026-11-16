@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/animVal)
      */
-    val animVal: SVGLength
+    open val animVal: SVGLength
 
     /**
      * The **`baseVal`** property of the SVGAnimatedLength interface contains the initial value of an SVG enumeration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength/baseVal)
      */
-    val baseVal: SVGLength
+    open val baseVal: SVGLength
 }

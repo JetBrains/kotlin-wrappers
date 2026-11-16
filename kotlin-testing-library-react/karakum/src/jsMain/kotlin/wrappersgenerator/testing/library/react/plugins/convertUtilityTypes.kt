@@ -3,8 +3,8 @@ package wrappersgenerator.testing.library.react.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isIdentifier
-import typescript.isTypeReferenceNode
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isTypeReferenceNode
 
 val convertUtilityTypes = createPlugin { node, _, render ->
     nullable {

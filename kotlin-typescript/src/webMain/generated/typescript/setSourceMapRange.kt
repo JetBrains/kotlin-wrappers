@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.ast.Node
+import typescript.ast.visitor.SourceMapRange
+
 /**
  * Sets a custom text range to use when emitting source maps.
  */

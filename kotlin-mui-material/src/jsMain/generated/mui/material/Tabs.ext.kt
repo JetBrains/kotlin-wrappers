@@ -5,7 +5,8 @@ package mui.material
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 
-sealed external interface TabsVariant {
+sealed /* union */
+external interface TabsVariant {
     companion object {
         @JsValue("standard")
         val standard: TabsVariant
@@ -18,7 +19,8 @@ sealed external interface TabsVariant {
     }
 }
 
-sealed external interface TabsIndicatorColor {
+sealed /* union */
+external interface TabsIndicatorColor {
     companion object {
         @JsValue("secondary")
         val secondary: TabsIndicatorColor
@@ -28,7 +30,8 @@ sealed external interface TabsIndicatorColor {
     }
 }
 
-sealed external interface TabsTextColor {
+sealed /* union */
+external interface TabsTextColor {
     companion object {
         @JsValue("secondary")
         val secondary: TabsTextColor
@@ -41,7 +44,8 @@ sealed external interface TabsTextColor {
     }
 }
 
-sealed external interface TabsScrollButtons {
+sealed /* union */
+external interface TabsScrollButtons {
     companion object {
         @JsValue("auto")
         val auto: TabsScrollButtons

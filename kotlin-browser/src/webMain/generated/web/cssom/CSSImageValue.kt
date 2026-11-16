@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSImageValue`** interface of the CSS Typed Object Model API represents values for properties that take an image, for example background-image, list-style-image, or border-image-source.
+ * The **`CSSImageValue`** interface of the CSS Typed Object Model API represents values for CSS properties that take an <image> value, such as background-image, list-style-image, or border-image-source.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImageValue)
  */

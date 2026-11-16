@@ -17,7 +17,7 @@ external interface SliderThumbSlotState {
 
     var active: Boolean
 
-    var index: Number
+    var index: Int
 }
 
 external interface SliderOwnProps :

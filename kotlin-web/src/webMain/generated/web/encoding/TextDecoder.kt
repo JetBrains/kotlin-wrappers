@@ -18,7 +18,7 @@ open external class TextDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder/decode)
      */
-    fun decode(
+    open fun decode(
         input: AllowSharedBufferSource = definedExternally,
         options: TextDecodeOptions = definedExternally,
     ): String

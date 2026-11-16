@@ -29,7 +29,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/numberOfItems)
      */
-    val numberOfItems: Int
+    open val numberOfItems: Int
 
     /**
      * The **`appendItem()`** method of the SVGNumberList interface inserts a new item at the end of the list. If the given item is already in a list, it is removed from its previous list before it is inserted into this list. The inserted item is the item itself and not a copy.
@@ -37,7 +37,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/appendItem)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun appendItem(newItem: SVGNumber): SVGNumber
+    open fun appendItem(newItem: SVGNumber): SVGNumber
 
     /**
      * The **`clear()`** method of the SVGNumberList interface clears all existing items from the list, with the result being an empty list.
@@ -45,7 +45,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/clear)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun clear()
+    open fun clear()
 
     /**
      * The **`getItem()`** method of the SVGNumberList interface returns the specified item from the list. The returned item is the item itself and not a copy. Any changes made to the item are immediately reflected in the list. The first item is indexed 0.
@@ -53,7 +53,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/getItem)
      */
     @JsThrows(IndexSizeError::class)
-    fun getItem(index: Int): SVGNumber
+    open fun getItem(index: Int): SVGNumber
 
     /**
      * The **`initialize()`** method of the SVGNumberList interface clears all existing items from the list and re-initializes the list to hold the single item specified by the parameter. If the inserted item is already in a list, it is removed from its previous list before it is inserted into this list. The inserted item is the item itself and not a copy. The return value is the item inserted into the list.
@@ -61,7 +61,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/initialize)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun initialize(newItem: SVGNumber): SVGNumber
+    open fun initialize(newItem: SVGNumber): SVGNumber
 
     /**
      * The **`insertItemBefore()`** method of the SVGNumberList interface inserts a new item into the list at the specified position. The first item is indexed 0. The inserted item is the item itself and not a copy.
@@ -69,7 +69,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList/insertItemBefore)
      */
     @JsThrows(NoModificationAllowedError::class)
-    fun insertItemBefore(
+    open fun insertItemBefore(
         newItem: SVGNumber,
         index: Int,
     ): SVGNumber
@@ -81,7 +81,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun removeItem(index: Int): SVGNumber
+    open fun removeItem(index: Int): SVGNumber
 
     /**
      * The **`replaceItem()`** method of the SVGNumberList interface replaces an existing item in the list with a new item. If the new item is already in a list, it is removed from its previous list before it is inserted into this list. The inserted item is the item itself and not a copy. If the item is already in this list, note that the index of the item to replace is before the removal of the item.
@@ -90,7 +90,7 @@ private constructor() :
      */
     @JsThrows(IndexSizeError::class)
     @JsThrows(NoModificationAllowedError::class)
-    fun replaceItem(
+    open fun replaceItem(
         newItem: SVGNumber,
         index: Int,
     ): SVGNumber

@@ -35,6 +35,9 @@ internal class SimpleTypeConverter(
         val name = unionName(propertyName)
 
         when {
+            propertyName.startsWith("aria-")
+                -> return name
+
             propertyName == "autoCapitalize"
                 -> return propertyName.replaceFirstChar(Char::uppercase)
 
@@ -67,7 +70,7 @@ internal class SimpleTypeConverter(
 
         val pkg = if ("SVG" in parentName) Package.SVG else Package.HTML
 
-        unions = unions + convertUnion(name, values).copy(pkg = pkg)
+        unions += convertUnion(name, values).copy(pkg = pkg)
 
         return name
     }

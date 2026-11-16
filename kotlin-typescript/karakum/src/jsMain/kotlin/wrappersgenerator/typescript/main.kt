@@ -17,6 +17,8 @@ import wrappersgenerator.typescript.injections.decorateUnionInjection
 import wrappersgenerator.typescript.injections.injectBitmaskParents
 import wrappersgenerator.typescript.injections.injectCommonUnionParents
 import wrappersgenerator.typescript.nameResolvers.*
+import wrappersgenerator.typescript.packages.TS7_PACKAGE_IMPORTS
+import wrappersgenerator.typescript.packages.TS7_PACKAGE_NAME_MAPPER
 import wrappersgenerator.typescript.plugins.*
 import wrappersgenerator.typescript.varianceModifiers.modifyInterfaceVariance
 
@@ -24,6 +26,7 @@ suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
         plugins = listOf(
             ExcludeDeprecatedMembers,
+            excludeBrandMarkers,
             NumberPlugin(defaultNumberType = "Int"),
             ContractFunctionApiPlugin,
 
@@ -98,11 +101,12 @@ suspend fun main(args: ReadonlyArray<String>) {
             "lib/typescript" to "/",
             "^ts/(.+)" to "typescript/$1",
             "createProgram.kt" to "createProgram.fun.kt",
-        )
+        ) + TS7_PACKAGE_NAME_MAPPER
         importInjector = mapOf(
             ".contract.kt" to listOf(
                 "kotlin.contracts.contract",
             ),
+            "\\.kt$" to TS7_PACKAGE_IMPORTS,
         )
         namespaceStrategy = mapOf(
             "ScriptSnapshot" to NamespaceStrategy.`object`,

@@ -20,26 +20,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/data)
      */
-    var data: ArrayBuffer
+    open var data: ArrayBuffer
 
     /**
      * The **`timestamp`** read-only property of the RTCEncodedVideoFrame interface indicates the time at which frame sampling started.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/timestamp)
      */
-    val timestamp: Int53
+    open val timestamp: Int53
 
     /**
      * The **`type`** read-only property of the RTCEncodedVideoFrame interface indicates whether this frame is a key frame or a delta frame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type)
      */
-    val type: EncodedVideoChunkType
+    open val type: EncodedVideoChunkType
 
     /**
      * The **`getMetadata()`** method of the RTCEncodedVideoFrame interface returns an object containing the metadata associated with the frame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/getMetadata)
      */
-    fun getMetadata(): RTCEncodedVideoFrameMetadata
+    open fun getMetadata(): RTCEncodedVideoFrameMetadata
 }

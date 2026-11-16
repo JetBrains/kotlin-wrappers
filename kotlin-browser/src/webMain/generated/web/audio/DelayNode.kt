@@ -16,5 +16,5 @@ open external class DelayNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DelayNode/delayTime)
      */
-    val delayTime: AudioParam
+    open val delayTime: AudioParam
 }

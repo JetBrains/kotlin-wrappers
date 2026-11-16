@@ -714,7 +714,7 @@ inline val FragmentInstance.unloadEvent: EventInstance<Event, Element, Element>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLGeolocationElement/validationstatuschange_event)
  */
-inline val FragmentInstance.validationStatusChangeEvent: EventInstance<Event, HTMLElement, Node>
+inline val FragmentInstance.validationStatusChangeEvent: EventInstance<Event, HTMLGeolocationElement, Node>
     get() = EventInstance(this, "validationstatuschange")
 
 /**

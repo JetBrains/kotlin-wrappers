@@ -4,7 +4,8 @@ package mui.material.styles
 
 import seskar.js.JsValue
 
-sealed external interface ReducedMotionMode {
+sealed /* union */
+external interface ReducedMotionMode {
     companion object {
         @JsValue("never")
         val never: ReducedMotionMode

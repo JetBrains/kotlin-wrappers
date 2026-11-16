@@ -14,19 +14,19 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/pressed)
      */
-    val pressed: Boolean
+    open val pressed: Boolean
 
     /**
      * The **`touched`** property of the GamepadButton interface returns a boolean indicating whether a button capable of detecting touch is currently touched (true) or not touched (false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/touched)
      */
-    val touched: Boolean
+    open val touched: Boolean
 
     /**
      * The **`GamepadButton.value`** property of the GamepadButton interface returns a double value used to represent the current state of analog buttons on many modern gamepads, such as the triggers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/value)
      */
-    val value: Double
+    open val value: Double
 }

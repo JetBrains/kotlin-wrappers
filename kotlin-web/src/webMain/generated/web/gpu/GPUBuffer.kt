@@ -22,35 +22,35 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapState)
      */
-    val mapState: GPUBufferMapState
+    open val mapState: GPUBufferMapState
 
     /**
      * The **`size`** read-only property of the GPUBuffer interface represents the length of the GPUBuffer's memory allocation, in bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/size)
      */
-    val size: GPUSize64Out
+    open val size: GPUSize64Out
 
     /**
      * The **`usage`** read-only property of the GPUBuffer interface contains the bitwise flags representing the allowed usages of the GPUBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/usage)
      */
-    val usage: GPUBufferUsage
+    open val usage: GPUBufferUsage
 
     /**
      * The **`destroy()`** method of the GPUBuffer interface destroys the GPUBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/destroy)
      */
-    fun destroy()
+    open fun destroy()
 
     /**
      * The **`getMappedRange()`** method of the GPUBuffer interface returns an ArrayBuffer containing the mapped contents of the GPUBuffer in the specified range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/getMappedRange)
      */
-    fun getMappedRange(
+    open fun getMappedRange(
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
     ): ArrayBuffer
@@ -60,7 +60,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
      */
-    fun mapAsync(
+    open fun mapAsync(
         mode: GPUMapMode,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
@@ -71,7 +71,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/unmap)
      */
-    fun unmap()
+    open fun unmap()
 }
 
 /**

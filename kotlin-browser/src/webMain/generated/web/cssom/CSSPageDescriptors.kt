@@ -13,50 +13,50 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin)
      */
-    var margin: String
+    open var margin: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin-bottom)
      */
-    var `margin-bottom`: String
+    open var `margin-bottom`: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin-left)
      */
-    var `margin-left`: String
+    open var `margin-left`: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin-right)
      */
-    var `margin-right`: String
+    open var `margin-right`: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margin-top)
      */
-    var `margin-top`: String
+    open var `margin-top`: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginbottom)
      */
-    var marginBottom: String
+    open var marginBottom: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginleft)
      */
-    var marginLeft: String
+    open var marginLeft: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#marginright)
      */
-    var marginRight: String
+    open var marginRight: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#margintop)
      */
-    var marginTop: String
+    open var marginTop: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#size)
      */
-    var size: String
+    open var size: String
 }

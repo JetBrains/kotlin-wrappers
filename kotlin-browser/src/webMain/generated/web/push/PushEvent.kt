@@ -20,7 +20,7 @@ open external class PushEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/data)
      */
-    val data: PushMessageData?
+    open val data: PushMessageData?
 
     companion object
 }

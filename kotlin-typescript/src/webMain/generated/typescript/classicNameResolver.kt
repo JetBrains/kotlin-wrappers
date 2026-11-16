@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.*
+
 external fun classicNameResolver(
     moduleName: String,
     containingFile: String,

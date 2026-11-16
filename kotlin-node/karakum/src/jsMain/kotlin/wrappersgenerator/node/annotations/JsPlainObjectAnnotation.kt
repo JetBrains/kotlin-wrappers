@@ -4,7 +4,7 @@ import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlain
 import io.github.sgrishchenko.karakum.extension.match
 import io.github.sgrishchenko.karakum.extension.withFile
 import io.github.sgrishchenko.karakum.extension.withName
-import typescript.isInterfaceDeclaration
+import typescript.ast.`is`.isInterfaceDeclaration
 
 fun createJsPlainObjectAnnotation() =
     JsPlainObjectAnnotation(

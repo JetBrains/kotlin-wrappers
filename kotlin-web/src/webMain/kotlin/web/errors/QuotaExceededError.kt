@@ -17,10 +17,10 @@ open external class QuotaExceededError(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError/quota)
      */
-    val quota: Double?
+    open val quota: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/QuotaExceededError/requested)
      */
-    val requested: Double?
+    open val requested: Double?
 }

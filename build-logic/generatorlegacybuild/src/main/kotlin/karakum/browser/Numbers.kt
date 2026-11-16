@@ -109,6 +109,7 @@ internal class TypeProvider(
 
     fun isDefined(): Boolean =
         IDLRegistry.isMixin(parentType)
+                && parentType !in MIXINS_WITH_REQUIRED_OVERRIDES
                 && parentType != "GenericTransformStream"
                 || parentType == "LocaleOptions"
 
@@ -139,6 +140,10 @@ internal class TypeProvider(
             "WebGL2RenderingContext",
             "WebGL2RenderingContextBase",
                 -> !WEBGL_CONST_RE.matches(name)
+
+            // TEMP deprecated
+            "SpeechRecognition",
+                -> name != "grammars"
 
             else -> true
         }

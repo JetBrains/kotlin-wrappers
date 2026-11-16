@@ -19,12 +19,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/expires)
      */
-    val expires: EpochTimeStamp
+    open val expires: EpochTimeStamp
 
     /**
      * The **`getFingerprints()`** method of the RTCCertificate interface is used to get an array of certificate fingerprints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/getFingerprints)
      */
-    fun getFingerprints(): ReadonlyArray<RTCDtlsFingerprint>
+    open fun getFingerprints(): ReadonlyArray<RTCDtlsFingerprint>
 }

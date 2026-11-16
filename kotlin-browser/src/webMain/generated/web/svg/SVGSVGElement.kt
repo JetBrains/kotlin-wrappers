@@ -23,56 +23,56 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentScale)
      */
-    var currentScale: Float
+    open var currentScale: Float
 
     /**
      * The **`currentTranslate`** read-only property of the SVGSVGElement interface reflects the translation factor that takes into account user "magnification" corresponding to an outermost <svg> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/currentTranslate)
      */
-    val currentTranslate: SVGPoint
+    open val currentTranslate: SVGPoint
 
     /**
      * The **`height`** read-only property of the SVGSVGElement interface describes the vertical size of element as an SVGAnimatedLength. It reflects the <svg> element's height attribute, which may not be the SVG's rendered height.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/height)
      */
-    val height: SVGAnimatedLength
+    open val height: SVGAnimatedLength
 
     /**
      * The **`width`** read-only property of the SVGSVGElement interface describes the horizontal size of element as an SVGAnimatedLength. It reflects the <svg> element's width attribute, which may not be the SVG's rendered width.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/width)
      */
-    val width: SVGAnimatedLength
+    open val width: SVGAnimatedLength
 
     /**
      * The **`x`** read-only property of the SVGSVGElement interface describes the horizontal coordinate of the position of that SVG as an SVGAnimatedLength. When an <svg> is nested within another <svg>, the horizontal coordinate is a length in the user coordinate system that is the given distance from the origin of the user coordinate system along the x-axis. Its syntax is the same as that for <length>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/x)
      */
-    val x: SVGAnimatedLength
+    open val x: SVGAnimatedLength
 
     /**
      * The **`y`** read-only property of the SVGSVGElement interface describes the vertical coordinate of the position of that SVG as an SVGAnimatedLength. When an <svg> is nested within another <svg>, the vertical coordinate is a length in the user coordinate system that is the given distance from the origin of the user coordinate system along the y-axis. Its syntax is the same as that for <length>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/y)
      */
-    val y: SVGAnimatedLength
+    open val y: SVGAnimatedLength
 
     /**
      * The **`animationsPaused()`** method of the SVGSVGElement interface checks whether the animations in the SVG document fragment are currently paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/animationsPaused)
      */
-    fun animationsPaused(): Boolean
+    open fun animationsPaused(): Boolean
 
     /**
      * The **`checkEnclosure()`** method of the SVGSVGElement interface checks if the rendered content of the given element is entirely contained within the supplied rectangle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkEnclosure)
      */
-    fun checkEnclosure(
+    open fun checkEnclosure(
         element: SVGElement,
         rect: SVGRect,
     ): Boolean
@@ -82,7 +82,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/checkIntersection)
      */
-    fun checkIntersection(
+    open fun checkIntersection(
         element: SVGElement,
         rect: SVGRect,
     ): Boolean
@@ -92,83 +92,83 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGAngle)
      */
-    fun createSVGAngle(): SVGAngle
+    open fun createSVGAngle(): SVGAngle
 
     /**
      * The **`createSVGLength()`** method of the SVGSVGElement interface creates an SVGLength object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGLength)
      */
-    fun createSVGLength(): SVGLength
+    open fun createSVGLength(): SVGLength
 
     /**
      * The **`createSVGMatrix()`** method of the SVGSVGElement interface creates a DOMMatrix object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGMatrix)
      */
-    fun createSVGMatrix(): SVGMatrix
+    open fun createSVGMatrix(): SVGMatrix
 
     /**
      * The **`createSVGNumber()`** method of the SVGSVGElement interface creates an SVGNumber object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGNumber)
      */
-    fun createSVGNumber(): SVGNumber
+    open fun createSVGNumber(): SVGNumber
 
     /**
      * The **`createSVGPoint()`** method of the SVGSVGElement interface creates a DOMPoint object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGPoint)
      */
-    fun createSVGPoint(): SVGPoint
+    open fun createSVGPoint(): SVGPoint
 
     /**
      * The **`createSVGRect()`** method of the SVGSVGElement interface creates a DOMRect object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGRect)
      */
-    fun createSVGRect(): SVGRect
+    open fun createSVGRect(): SVGRect
 
     /**
      * The **`createSVGTransform()`** method of the SVGSVGElement interface creates an SVGTransform object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransform)
      */
-    fun createSVGTransform(): SVGTransform
+    open fun createSVGTransform(): SVGTransform
 
     /**
      * The **`createSVGTransformFromMatrix()`** method of the SVGSVGElement interface creates an SVGTransform object outside of any document trees, based on the given DOMMatrix object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGTransformFromMatrix)
      */
-    fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): SVGTransform
+    open fun createSVGTransformFromMatrix(matrix: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): SVGTransform
 
     /**
      * The **`deselectAll()`** method of the SVGSVGElement interface unselects any selected objects, including any selections of text strings and type-in bars.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/deselectAll)
      */
-    fun deselectAll()
+    open fun deselectAll()
 
     /**
      * The **`getCurrentTime()`** method of the SVGSVGElement interface returns the current time in seconds relative to the start time for the current SVG document fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/getCurrentTime)
      */
-    fun getCurrentTime(): Float
+    open fun getCurrentTime(): Float
 
     /**
      * The **`getElementById()`** method of the SVGSVGElement interface searches the SVG document fragment (i.e., the search is restricted to a subset of the document tree) for an Element whose id property matches the specified string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/getElementById)
      */
-    fun getElementById(elementId: ElementId): Element?
-    fun getEnclosureList(
+    open fun getElementById(elementId: ElementId): Element?
+    open fun getEnclosureList(
         rect: SVGRect,
         referenceElement: SVGElement?,
     ): NodeList<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
 
-    fun getIntersectionList(
+    open fun getIntersectionList(
         rect: SVGRect,
         referenceElement: SVGElement?,
     ): NodeList<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
@@ -178,19 +178,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/pauseAnimations)
      */
-    fun pauseAnimations()
+    open fun pauseAnimations()
 
     /**
      * The **`setCurrentTime()`** method of the SVGSVGElement interface adjusts the clock for this SVG document fragment, establishing a new current time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/setCurrentTime)
      */
-    fun setCurrentTime(seconds: Float)
+    open fun setCurrentTime(seconds: Float)
 
     /**
      * The **`unpauseAnimations()`** method of the SVGSVGElement interface resumes (i.e., unpauses) currently running animations that are defined within the SVG document fragment, causing the animation clock to continue from the time at which it was suspended.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/unpauseAnimations)
      */
-    fun unpauseAnimations()
+    open fun unpauseAnimations()
 }

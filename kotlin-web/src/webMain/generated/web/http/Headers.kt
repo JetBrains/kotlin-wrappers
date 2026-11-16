@@ -24,7 +24,7 @@ open external class Headers(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append)
      */
-    fun append(
+    open fun append(
         name: String,
         value: String,
     )
@@ -34,35 +34,35 @@ open external class Headers(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/delete)
      */
-    fun delete(name: String)
+    open fun delete(name: String)
 
     /**
      * The **`get()`** method of the Headers interface returns a byte string of all the values of a header within a Headers object with a given name. If the requested header doesn't exist in the Headers object, it returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get)
      */
-    fun get(name: String): String?
+    open fun get(name: String): String?
 
     /**
      * The **`getSetCookie()`** method of the Headers interface returns an array containing the values of all Set-Cookie headers associated with a response. This allows Headers objects to handle having multiple Set-Cookie headers, which wasn't possible prior to its implementation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
      */
-    fun getSetCookie(): ReadonlyArray<JsString>
+    open fun getSetCookie(): ReadonlyArray<JsString>
 
     /**
      * The **`has()`** method of the Headers interface returns a boolean stating whether a Headers object contains a certain header.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has)
      */
-    fun has(name: String): Boolean
+    open fun has(name: String): Boolean
 
     /**
      * The **`set()`** method of the Headers interface sets a new value for an existing header inside a Headers object, or adds the header if it does not already exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set)
      */
-    fun set(
+    open fun set(
         name: String,
         value: String,
     )

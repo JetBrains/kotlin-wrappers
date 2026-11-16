@@ -4,6 +4,7 @@
 
 package cesium.core
 
+import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
@@ -204,7 +205,7 @@ external object AttributeCompression {
         componentDatatype: ComponentDatatype,
         type: AttributeType,
         count: Double,
-    ): Float32Array<*>
+    ): Float32Array<ArrayBuffer>
 
     /**
      * Encodes RGB values at 8-bit precision into a single float, equivalent

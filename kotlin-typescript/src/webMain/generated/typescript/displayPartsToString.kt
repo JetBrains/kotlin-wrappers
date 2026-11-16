@@ -4,4 +4,6 @@
 
 package typescript
 
+import typescript.ast.SymbolDisplayPart
+
 external fun displayPartsToString(displayParts: js.array.ReadonlyArray<SymbolDisplayPart>?): String

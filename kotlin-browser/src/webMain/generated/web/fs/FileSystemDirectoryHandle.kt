@@ -32,7 +32,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("getDirectoryHandle")
-    fun getDirectoryHandleAsync(
+    open fun getDirectoryHandleAsync(
         name: String,
         options: FileSystemGetDirectoryOptions = definedExternally,
     ): Promise<FileSystemDirectoryHandle>
@@ -45,7 +45,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("getFileHandle")
-    fun getFileHandleAsync(
+    open fun getFileHandleAsync(
         name: String,
         options: FileSystemGetFileOptions = definedExternally,
     ): Promise<FileSystemFileHandle>
@@ -59,7 +59,7 @@ private constructor() :
     @JsThrows(NotAllowedError::class)
     @JsThrows(NotFoundError::class)
     @JsName("removeEntry")
-    fun removeEntryAsync(
+    open fun removeEntryAsync(
         name: String,
         options: FileSystemRemoveOptions = definedExternally,
     ): Promise<Void>
@@ -70,7 +70,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
     @JsName("resolve")
-    fun resolveAsync(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<JsString>?>
+    open fun resolveAsync(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<JsString>?>
 }
 
 /**

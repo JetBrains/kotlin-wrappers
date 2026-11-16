@@ -14,5 +14,5 @@ import web.geometry.DOMPointReadOnly
 open external class XRBoundedReferenceSpace
 private constructor() :
     XRReferenceSpace {
-    val boundsGeometry: ReadonlyArray<DOMPointReadOnly>
+    open val boundsGeometry: ReadonlyArray<DOMPointReadOnly>
 }

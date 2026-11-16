@@ -4,4 +4,6 @@
 
 package typescript
 
+import typescript.sync.Symbol
+
 external fun symbolName(symbol: Symbol): String

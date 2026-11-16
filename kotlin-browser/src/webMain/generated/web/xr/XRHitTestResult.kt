@@ -11,6 +11,6 @@ private constructor() {
      *
      * @see https://immersive-web.github.io/anchors/#dom-xrhittestresult-createanchor
      */
-    var createAnchor: (() -> Promise<XRAnchor>)?
-    fun getPose(baseSpace: XRSpace): XRPose?
+    open var createAnchor: (() -> Promise<XRAnchor>)?
+    open fun getPose(baseSpace: XRSpace): XRPose?
 }

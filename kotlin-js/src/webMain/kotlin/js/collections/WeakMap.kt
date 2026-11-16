@@ -12,17 +12,17 @@ open external class WeakMap<in K : JsAny, V : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/delete)
      */
-    fun delete(key: K): Boolean
+    open fun delete(key: K): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/get)
      */
-    fun get(key: K): V?
+    open fun get(key: K): V?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsert)
      */
-    fun getOrInsert(
+    open fun getOrInsert(
         key: K,
         defaultValue: V,
     ): V
@@ -30,7 +30,7 @@ open external class WeakMap<in K : JsAny, V : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsertComputed)
      */
-    fun getOrInsertComputed(
+    open fun getOrInsertComputed(
         key: K,
         callback: (key: @UnsafeVariance K) -> V,
     ): V
@@ -38,10 +38,10 @@ open external class WeakMap<in K : JsAny, V : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/has)
      */
-    fun has(key: K): Boolean
+    open fun has(key: K): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/set)
      */
-    fun set(key: K, value: V): WeakMap<K, V>
+    open fun set(key: K, value: V): WeakMap<K, V>
 }

@@ -2,8 +2,11 @@
 
 package muix.tree.view
 
+import kotlinx.js.JsPlainObject
 import react.ElementType
 import react.Props
+import react.dom.svg.SVGAttributes
+import web.svg.SVGElement
 
 external interface TreeItemIconProps : Props {
     /**
@@ -24,34 +27,35 @@ external interface TreeItemIconProps : Props {
     var slotProps: TreeItemIconSlotProps?
 }
 
+@JsPlainObject
 external interface TreeItemIconSlots {
     /**
      * The icon used to collapse the item.
      */
-    var collapseIcon: ElementType<*>?
+    val collapseIcon: ElementType<*>?
 
     /**
      * The icon used to expand the item.
      */
-    var expandIcon: ElementType<*>?
+    val expandIcon: ElementType<*>?
 
     /**
      * The icon displayed next to an end item.
      */
-    var endIcon: ElementType<*>?
+    val endIcon: ElementType<*>?
 
     /**
      * The icon to display next to the Tree Item's label.
      */
-    var icon: ElementType<*>?
+    val icon: ElementType<*>?
 }
 
 external interface TreeItemIconSlotProps : Props {
-    var collapseIcon: Props?
+    var collapseIcon: SVGAttributes<SVGElement>?
 
-    var expandIcon: Props?
+    var expandIcon: SVGAttributes<SVGElement>?
 
-    var endIcon: Props?
+    var endIcon: SVGAttributes<SVGElement>?
 
-    var icon: Props?
+    var icon: SVGAttributes<SVGElement>?
 }

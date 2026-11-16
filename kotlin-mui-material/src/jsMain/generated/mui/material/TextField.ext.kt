@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface TextFieldVariants {
+sealed /* union */
+external interface TextFieldVariants {
     companion object {
         @JsValue("outlined")
         val outlined: TextFieldVariants
@@ -17,7 +18,8 @@ sealed external interface TextFieldVariants {
     }
 }
 
-sealed external interface TextFieldColor {
+sealed /* union */
+external interface TextFieldColor {
     companion object {
         @JsValue("primary")
         val primary: TextFieldColor

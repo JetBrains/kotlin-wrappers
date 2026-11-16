@@ -4,8 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import js.reflect.invoke
-import typescript.isTypeAliasDeclaration
-import typescript.isTypeParameterDeclaration
+import typescript.ast.`is`.isTypeAliasDeclaration
+import typescript.ast.`is`.isTypeParameterDeclaration
 
 val convertTypealiasParameterBounds = createPlugin { node, context, render ->
     nullable {

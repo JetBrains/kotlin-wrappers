@@ -20,21 +20,21 @@ open external class WritableStreamDefaultWriter<in W : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/closed)
      */
-    val closed: Promise<Void>
+    open val closed: Promise<Void>
 
     /**
      * The **`desiredSize`** read-only property of the WritableStreamDefaultWriter interface returns the desired size required to fill the stream's internal queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
      */
-    val desiredSize: Double?
+    open val desiredSize: Double?
 
     /**
      * The **`ready`** read-only property of the WritableStreamDefaultWriter interface returns a Promise that resolves when the desired size of the stream's internal queue transitions from non-positive to positive, signaling that it is no longer applying backpressure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready)
      */
-    val ready: Promise<Void>
+    open val ready: Promise<Void>
 
     /**
      * The **`abort()`** method of the WritableStreamDefaultWriter interface aborts the stream, signaling that the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
@@ -42,7 +42,7 @@ open external class WritableStreamDefaultWriter<in W : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
     @JsName("abort")
-    fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
+    open fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
      * The **`close()`** method of the WritableStreamDefaultWriter interface closes the associated writable stream.
@@ -50,14 +50,14 @@ open external class WritableStreamDefaultWriter<in W : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
      */
     @JsName("close")
-    fun closeAsync(): Promise<Void>
+    open fun closeAsync(): Promise<Void>
 
     /**
      * The **`releaseLock()`** method of the WritableStreamDefaultWriter interface releases the writer's lock on the corresponding stream. After the lock is released, the writer is no longer active. If the associated stream is errored when the lock is released, the writer will appear errored in the same way from now on; otherwise, the writer will appear closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock)
      */
-    fun releaseLock()
+    open fun releaseLock()
 
     /**
      * The **`write()`** method of the WritableStreamDefaultWriter interface writes a passed chunk of data to a WritableStream and its underlying sink, then returns a Promise that resolves to indicate the success or failure of the write operation.
@@ -65,7 +65,7 @@ open external class WritableStreamDefaultWriter<in W : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
     @JsName("write")
-    fun writeAsync(chunk: W): Promise<Void>
+    open fun writeAsync(chunk: W): Promise<Void>
 }
 
 /**

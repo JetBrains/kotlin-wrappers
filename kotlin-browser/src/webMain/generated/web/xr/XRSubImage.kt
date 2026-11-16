@@ -4,5 +4,5 @@ package web.xr
 
 open external class XRSubImage
 private constructor() {
-    val viewport: XRViewport
+    open val viewport: XRViewport
 }

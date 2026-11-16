@@ -20,35 +20,35 @@ open external class MessageEvent<out D : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)
      */
-    val data: D
+    open val data: D
 
     /**
      * The **`lastEventId`** read-only property of the MessageEvent interface is a string representing a unique ID for the event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/lastEventId)
      */
-    val lastEventId: String
+    open val lastEventId: String
 
     /**
      * The **`origin`** read-only property of the MessageEvent interface is a string representing the origin of the message emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/origin)
      */
-    val origin: String
+    open val origin: String
 
     /**
      * The **`ports`** read-only property of the MessageEvent interface is an array of MessagePort objects containing all MessagePort objects sent with the message, in order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/ports)
      */
-    val ports: ReadonlyArray<MessagePort>
+    open val ports: ReadonlyArray<MessagePort>
 
     /**
      * The **`source`** read-only property of the MessageEvent interface is a MessageEventSource (which can be a WindowProxy, MessagePort, or ServiceWorker object) representing the message emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/source)
      */
-    val source: MessageEventSource?
+    open val source: MessageEventSource?
 
     companion object
 }

@@ -15,12 +15,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/selectorText)
      */
-    var selectorText: String
+    open var selectorText: String
 
     /**
      * The read-only **`style`** property of the CSSPageRule interface contains a CSSPageDescriptors object representing the descriptors available in the @page rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/style)
      */
-    val style: CSSPageDescriptors
+    open val style: CSSPageDescriptors
 }

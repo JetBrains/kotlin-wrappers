@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface CloseReason {
+sealed /* union */
+external interface CloseReason {
     companion object {
         @JsValue("toggle")
         val toggle: CloseReason
@@ -20,7 +21,8 @@ sealed external interface CloseReason {
     }
 }
 
-sealed external interface OpenReason {
+sealed /* union */
+external interface OpenReason {
     companion object {
         @JsValue("toggle")
         val toggle: OpenReason
@@ -33,7 +35,8 @@ sealed external interface OpenReason {
     }
 }
 
-sealed external interface SpeedDialDirection {
+sealed /* union */
+external interface SpeedDialDirection {
     companion object {
         @JsValue("up")
         val up: SpeedDialDirection

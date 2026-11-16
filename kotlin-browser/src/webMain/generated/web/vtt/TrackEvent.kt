@@ -19,7 +19,7 @@ open external class TrackEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
      */
-    val track: TextTrack?
+    open val track: TextTrack?
 
     companion object
 }

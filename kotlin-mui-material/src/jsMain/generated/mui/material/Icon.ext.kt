@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface IconColor {
+sealed /* union */
+external interface IconColor {
     companion object {
         @JsValue("inherit")
         val inherit: IconColor
@@ -35,7 +36,8 @@ sealed external interface IconColor {
     }
 }
 
-sealed external interface IconSize {
+sealed /* union */
+external interface IconSize {
     companion object {
         @JsValue("inherit")
         val inherit: IconSize

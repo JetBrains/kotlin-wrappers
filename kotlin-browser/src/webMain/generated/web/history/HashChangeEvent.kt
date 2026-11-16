@@ -19,14 +19,14 @@ open external class HashChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
      */
-    val newURL: String
+    open val newURL: String
 
     /**
      * The **`oldURL`** read-only property of the HashChangeEvent interface returns the previous URL from which the window was navigated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
      */
-    val oldURL: String
+    open val oldURL: String
 
     companion object
 }

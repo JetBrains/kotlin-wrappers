@@ -4,6 +4,7 @@ package web.html
 
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
+import web.window.WindowTarget
 
 /**
  * The **`HTMLAnchorElement`** interface represents hyperlink elements and provides special properties and methods (beyond those of the regular HTMLElement object interface that they inherit from) for manipulating the layout and presentation of such elements. This interface corresponds to <a> element; not to be confused with <link>, which is represented by HTMLLinkElement.
@@ -16,44 +17,64 @@ protected constructor() :
     HTMLHyperlinkElementUtils,
     HyperlinkElementUtils {
     /**
-     * The **`HTMLAnchorElement.download`** property is a string indicating that the linked resource is intended to be downloaded rather than displayed in the browser. The value, if any, specifies the default file name for use in labeling the resource in a local file system. If the name is not a valid file name in the underlying OS, the browser will adjust it.
+     * The **`download`** property of the HTMLAnchorElement interface is a string indicating that the linked resource is intended to be downloaded rather than displayed in the browser. The value, if any, represents the proposed name of the file. It reflects the download attribute of the <a> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
      */
-    var download: String
+    open var download: String
 
     /**
      * The **`ping`** property of the HTMLAnchorElement interface is a space-separated list of URLs. When the link is followed, the browser will send POST requests with the body PING to the URLs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/ping)
      */
-    var ping: String
+    open var ping: String
 
     /**
      * The **`HTMLAnchorElement.referrerPolicy`** property reflect the HTML referrerpolicy attribute of the <a> element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
      */
-    var referrerPolicy: ReferrerPolicy
+    open var referrerPolicy: ReferrerPolicy
 
     /**
      * The **`HTMLAnchorElement.rel`** property reflects the rel attribute. It is a string containing a space-separated list of link types indicating the relationship between the resource represented by the <a> element and the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/rel)
      */
-    var rel: String
+    open var rel: String
 
     /**
-     * The read-only **`relList`** property of the HTMLAnchorElement returns a live DOMTokenList object containing the set of link types indicating the relationship between the resource represented by the <a> element and the current document. It reflects the <a> element's rel content attribute.
+     * The read-only **`relList`** property of the HTMLAnchorElement returns a live DOMTokenList object containing the set of link types indicating the relationship between the resource represented by the <a> element and the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
      */
-    val relList: DOMTokenList<JsString>
+    open val relList: DOMTokenList<JsString>
 
     /**
      * The **`text`** property of the HTMLAnchorElement represents the text inside the element. This property represents the same information as Node.textContent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
-    var text: String
+    open var text: String
+
+    /* `HTMLHyperlinkElementUtils` overrides */
+
+    override var href: String
+    override var target: WindowTarget
+
+    /* `HyperlinkElementUtils` overrides */
+
+    override var hash: String
+    override var host: String
+    override var hostname: String
+    override var hreflang: String
+    override val origin: String
+    override var password: String
+    override var pathname: String
+    override var port: String
+    override var protocol: String
+    override var search: String
+    override var type: String
+    override var username: String
 }

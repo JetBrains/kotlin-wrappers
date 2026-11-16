@@ -5,8 +5,8 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.isIdentifier
-import typescript.isTypeReferenceNode
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isTypeReferenceNode
 
 val convertBufferReference = createPlugin { node, context, render ->
     nullable {

@@ -42,7 +42,7 @@ external interface UseOptionReturnValue {
      */
     var highlighted: Boolean
 
-    var index: Number
+    var index: Int
 
     /**
      * Resolver for the root slot's props.

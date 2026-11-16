@@ -20,21 +20,21 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/features)
      */
-    val features: GPUSupportedFeatures
+    open val features: GPUSupportedFeatures
 
     /**
      * The **`info`** read-only property of the GPUAdapter interface returns a GPUAdapterInfo object containing identifying information about the adapter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/info)
      */
-    val info: GPUAdapterInfo
+    open val info: GPUAdapterInfo
 
     /**
      * The **`limits`** read-only property of the GPUAdapter interface returns a GPUSupportedLimits object that describes the limits supported by the adapter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/limits)
      */
-    val limits: GPUSupportedLimits
+    open val limits: GPUSupportedLimits
 
     /**
      * The **`requestDevice()`** method of the GPUAdapter interface returns a Promise that fulfills with a GPUDevice object, which is the primary interface for communicating with the GPU.
@@ -43,7 +43,7 @@ private constructor() {
      */
     @JsThrows(OperationError::class)
     @JsName("requestDevice")
-    fun requestDeviceAsync(descriptor: GPUDeviceDescriptor = definedExternally): Promise<GPUDevice>
+    open fun requestDeviceAsync(descriptor: GPUDeviceDescriptor = definedExternally): Promise<GPUDevice>
 }
 
 /**

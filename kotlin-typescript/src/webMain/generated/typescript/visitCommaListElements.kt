@@ -4,6 +4,10 @@
 
 package typescript
 
+import typescript.ast.Expression
+import typescript.ast.NodeArray
+import typescript.ast.visitor.Visitor
+
 /**
  * Visits the elements of a {@link CommaListExpression}.
  * @param visitor The visitor to use when visiting expressions whose result will not be discarded at runtime.

@@ -1,0 +1,13 @@
+// Automatically generated - do not modify!
+
+package typescript.sync
+
+@kotlinx.js.JsPlainObject
+external interface ResolvedTypeReferenceDirective {
+    var primary: Boolean
+    var resolvedFileName: String?
+    var packageId: PackageId?
+
+    /** True if `resolvedFileName` comes from `node_modules`. */
+    var isExternalLibraryImport: Boolean?
+}

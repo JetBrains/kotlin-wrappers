@@ -30,28 +30,28 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/form)
      */
-    val form: HTMLFormElement?
+    open val form: HTMLFormElement?
 
     /**
      * The **`labels`** read-only property of the ElementInternals interface returns the labels associated with the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/labels)
      */
-    val labels: NodeList<HTMLLabelElement>
+    open val labels: NodeList<HTMLLabelElement>
 
     /**
      * The **`shadowRoot`** read-only property of the ElementInternals interface returns the ShadowRoot for this element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/shadowRoot)
      */
-    val shadowRoot: ShadowRoot?
+    open val shadowRoot: ShadowRoot?
 
     /**
      * The **`states`** read-only property of the ElementInternals interface returns a CustomStateSet representing the possible states of the custom element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/states)
      */
-    val states: CustomStateSet
+    open val states: CustomStateSet
 
     /**
      * The **`validationMessage`** read-only property of the ElementInternals interface returns the validation message for the element.
@@ -96,19 +96,19 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
     @JsThrows(NotSupportedError::class)
-    fun setFormValue(
+    open fun setFormValue(
         value: File?,
         state: File? = definedExternally,
     )
 
     @JsThrows(NotSupportedError::class)
-    fun setFormValue(
+    open fun setFormValue(
         value: String?,
         state: String? = definedExternally,
     )
 
     @JsThrows(NotSupportedError::class)
-    fun setFormValue(
+    open fun setFormValue(
         value: FormData?,
         state: FormData? = definedExternally,
     )
@@ -120,7 +120,7 @@ private constructor() :
      */
     @JsThrows(NotFoundError::class)
     @JsThrows(NotSupportedError::class)
-    fun setValidity(
+    open fun setValidity(
         flags: ValidityStateFlags = definedExternally,
         message: String = definedExternally,
         anchor: HTMLElement = definedExternally,

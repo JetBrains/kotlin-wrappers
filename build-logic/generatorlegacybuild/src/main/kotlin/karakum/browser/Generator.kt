@@ -105,6 +105,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.animations.KeyframeAnimationOptions",
     "web.animations.PropertyIndexedKeyframes",
     "web.aria.ARIAMixin",
+    "web.aria.ARIANotifyMixin",
     "web.autofill.AutoFill",
     "web.autofill.AutoFillBase",
     "web.badging.NavigatorBadge",
@@ -256,11 +257,13 @@ private val DEFAULT_IMPORTS = Imports(
     "web.html.HTMLScriptElement",
     "web.html.HTMLVideoElement",
     "web.html.HtmlSource",
+    "web.html.HyperlinkElementUtils",
     "web.html.MediaProvider",
     "web.html.SetHTMLUnsafeOptions",
     "web.http.BodyInit",
     "web.http.CrossOrigin",
     "web.http.FetchPriority",
+    "web.http.Headers",
     "web.http.ReferrerPolicy",
     "web.http.Request",
     "web.http.RequestCredentials",
@@ -281,7 +284,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.keyboard.ModifierKeyCode",
     "web.location.Location",
     "web.locks.NavigatorLocks",
-    "web.mathml.MATHML_NAMESPACE",
     "web.mathml.MathMLElement",
     "web.mcp.ModelContext",
     "web.mediacapabilities.MediaCapabilities",
@@ -348,7 +350,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.svg.SVGElement",
     "web.svg.SVGImageElement",
     "web.svg.SVGScriptElement",
-    "web.svg.SVG_NAMESPACE",
     "web.time.DOMHighResTimeStamp",
     "web.time.EpochTimeStamp",
     "web.touch.TouchEvent",
@@ -388,6 +389,15 @@ private val DEFAULT_IMPORTS = Imports(
     "web.xml.XMLDocument",
     "web.xr.XRSessionEvent",
     "web.xr.XRSystem",
+
+    // overrides
+    "web.aria.AriaNotificationOptions",
+    "web.cssom.StylePropertyMap",
+    "web.cssom.StyleSheetList",
+    "web.fonts.FontFaceSet",
+    "web.xpath.XPathExpression",
+    "web.xpath.XPathNSResolver",
+    "web.xpath.XPathResult",
 )
 
 private fun File.parts(): Pair<String, String> {
@@ -441,9 +451,11 @@ fun generateKotlinDeclarations(
         webWorkerContent,
         serviceWorkerContent,
     )
-    val eventDeclarations = mainEventDeclarations +
-            webWorkersEventDeclarations(webWorkerContent) +
-            serviceWorkersEventDeclarations(content, serviceWorkerContent)
+    val eventDeclarations = mainEventDeclarations.asSequence()
+        .withFinalSecurityMembers()
+        .plus(webWorkersEventDeclarations(webWorkerContent))
+        .plus(serviceWorkersEventDeclarations(content, serviceWorkerContent))
+        .toList()
 
     for ((name, body, optPkg) in eventDeclarations) {
         val pkg = optPkg ?: EVENT_INFO_MAP.getValue(name.substringBefore("."))
@@ -487,6 +499,7 @@ fun generateKotlinDeclarations(
         .plus(webXrDeclarations(webXrContent))
         .plus(webglDeclarations(content))
         .withEventInstances(knownEventTypes)
+        .withMixinOverrides()
 
     for ((name, body, pkg) in aliases) {
         pkg!!

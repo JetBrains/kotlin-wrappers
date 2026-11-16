@@ -3,9 +3,9 @@ package wrappersgenerator.node.annotations
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import js.reflect.invoke
-import typescript.Node
-import typescript.isTypeAliasDeclaration
-import typescript.isTypeParameterDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.isTypeAliasDeclaration
+import typescript.ast.`is`.isTypeParameterDeclaration
 
 suspend fun annotateUnusedTypealiasParameter(node: Node, context: AnnotationContext) = nullable {
     ensure(isTypeParameterDeclaration(node))

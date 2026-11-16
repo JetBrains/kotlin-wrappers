@@ -20,7 +20,7 @@ open external class ExtendableEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
      */
-    fun waitUntil(f: Promise<*>)
+    open fun waitUntil(f: Promise<*>)
 
     companion object
 }

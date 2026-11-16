@@ -8,9 +8,9 @@ import web.time.DOMHighResTimeStamp
 
 open external class XRPlane
 private constructor() {
-    var orientation: XRPlaneOrientation
-    var planeSpace: XRSpace
-    var polygon: ReadonlyArray<DOMPointReadOnly>
-    var lastChangedTime: DOMHighResTimeStamp
-    var semanticLabel: String?
+    open var orientation: XRPlaneOrientation
+    open var planeSpace: XRSpace
+    open var polygon: ReadonlyArray<DOMPointReadOnly>
+    open var lastChangedTime: DOMHighResTimeStamp
+    open var semanticLabel: String?
 }

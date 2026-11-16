@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface RadioColor {
+sealed /* union */
+external interface RadioColor {
     companion object {
         @JsValue("primary")
         val primary: RadioColor

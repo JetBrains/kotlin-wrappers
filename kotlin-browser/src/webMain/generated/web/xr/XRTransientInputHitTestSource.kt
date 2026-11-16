@@ -4,5 +4,5 @@ package web.xr
 
 open external class XRTransientInputHitTestSource
 private constructor() {
-    fun cancel()
+    open fun cancel()
 }

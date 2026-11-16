@@ -15,7 +15,7 @@ open external class PresentationConnectionAvailableEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionAvailableEvent/connection)
      */
-    val connection: PresentationConnection
+    open val connection: PresentationConnection
 
     companion object
 }

@@ -24,19 +24,19 @@ open external class File(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified)
      */
-    val lastModified: EpochTimeStamp
+    open val lastModified: EpochTimeStamp
 
     /**
      * The **`name`** read-only property of the File interface returns the name of the file represented by a File object. For security reasons, the path is excluded from this property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * The **`webkitRelativePath`** read-only property of the File interface contains a string which specifies the file's path relative to the directory selected by the user in an <input> element with its webkitdirectory attribute set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/webkitRelativePath)
      */
-    val webkitRelativePath: String
+    open val webkitRelativePath: String
 }

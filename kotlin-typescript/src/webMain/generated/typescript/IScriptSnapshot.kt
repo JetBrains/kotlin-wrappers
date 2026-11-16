@@ -2,6 +2,8 @@
 
 package typescript
 
+import typescript.ast.TextChangeRange
+
 /**
  * Represents an immutable snapshot of a script at a specified time.Once acquired, the
  * snapshot is observably immutable. i.e. the same calls with the same parameters will return

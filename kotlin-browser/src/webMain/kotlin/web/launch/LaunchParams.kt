@@ -14,10 +14,10 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LaunchParams/files)
      */
-    val files: ReadonlyArray<FileSystemHandle>
+    open val files: ReadonlyArray<FileSystemHandle>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LaunchParams/targetURL)
      */
-    val targetURL: String
+    open val targetURL: String
 }

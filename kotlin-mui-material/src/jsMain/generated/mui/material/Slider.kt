@@ -331,7 +331,7 @@ external interface SliderValueLabelProps :
     PropsWithChildren {
     override var children: ReactNode? /* ReactElement<*>? */
 
-    var index: Number
+    var index: Int
 
     var open: Boolean
 

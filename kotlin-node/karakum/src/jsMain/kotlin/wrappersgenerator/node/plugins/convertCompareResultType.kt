@@ -4,7 +4,11 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.SyntaxKind
+import typescript.ast.`is`.isLiteralTypeNode
+import typescript.ast.`is`.isNumericLiteral
+import typescript.ast.`is`.isPrefixUnaryExpression
+import typescript.ast.`is`.isUnionTypeNode
 
 val convertCompareResultType = createPlugin { node, context, _ ->
     nullable {

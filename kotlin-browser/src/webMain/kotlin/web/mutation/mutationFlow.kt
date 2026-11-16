@@ -1,12 +1,11 @@
 package web.mutation
 
-import js.objects.unsafeJso
 import kotlinx.coroutines.flow.Flow
 import web.coroutines.internal.observerFlow
-import web.dom.Element
+import web.dom.Node
 
-fun Element.mutationFlow(
-    options: MutationObserverInit = unsafeJso(),
+fun Node.mutationFlow(
+    options: MutationObserverInit,
 ): Flow<MutationRecord> =
     observerFlow { callback ->
         val observer = MutationObserver(callback)

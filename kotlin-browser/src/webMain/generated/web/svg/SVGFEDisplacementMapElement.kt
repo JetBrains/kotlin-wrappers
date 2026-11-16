@@ -16,35 +16,35 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/in1)
      */
-    val in1: SVGAnimatedString
+    open val in1: SVGAnimatedString
 
     /**
      * The **`in2`** read-only property of the SVGFEDisplacementMapElement interface reflects the in2 attribute of the given <feDisplacementMap> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/in2)
      */
-    val in2: SVGAnimatedString
+    open val in2: SVGAnimatedString
 
     /**
      * The **`scale`** read-only property of the SVGFEDisplacementMapElement interface reflects the scale attribute of the given <feDisplacementMap> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/scale)
      */
-    val scale: SVGAnimatedNumber
+    open val scale: SVGAnimatedNumber
 
     /**
      * The **`xChannelSelector`** read-only property of the SVGFEDisplacementMapElement interface reflects the xChannelSelector attribute of the given <feDisplacementMap> element. It takes one of the SVG_CHANNEL_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/xChannelSelector)
      */
-    val xChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
+    open val xChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
 
     /**
      * The **`yChannelSelector`** read-only property of the SVGFEDisplacementMapElement interface reflects the yChannelSelector attribute of the given <feDisplacementMap> element. It takes one of the SVG_CHANNEL_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/yChannelSelector)
      */
-    val yChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
+    open val yChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
 
     companion object {
         /**

@@ -15,40 +15,40 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cx)
      */
-    val cx: SVGAnimatedLength
+    open val cx: SVGAnimatedLength
 
     /**
      * The **`cy`** read-only property of the SVGRadialGradientElement interface describes the y-axis coordinate of the center of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the cy attribute on the <radialGradient> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cy)
      */
-    val cy: SVGAnimatedLength
+    open val cy: SVGAnimatedLength
 
     /**
      * The **`fr`** read-only property of the SVGRadialGradientElement interface describes the radius of the focal circle of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the fr attribute on the <radialGradient> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fr)
      */
-    val fr: SVGAnimatedLength
+    open val fr: SVGAnimatedLength
 
     /**
      * The **`fx`** read-only property of the SVGRadialGradientElement interface describes the x-axis coordinate of the focal point of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the fx attribute on the <radialGradient> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fx)
      */
-    val fx: SVGAnimatedLength
+    open val fx: SVGAnimatedLength
 
     /**
      * The **`fy`** read-only property of the SVGRadialGradientElement interface describes the y-axis coordinate of the focal point of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the fy attribute on the <radialGradient> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fy)
      */
-    val fy: SVGAnimatedLength
+    open val fy: SVGAnimatedLength
 
     /**
      * The **`r`** read-only property of the SVGRadialGradientElement interface describes the radius of the radial gradient as an SVGAnimatedLength. It reflects the computed value of the r attribute on the <radialGradient> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/r)
      */
-    val r: SVGAnimatedLength
+    open val r: SVGAnimatedLength
 }

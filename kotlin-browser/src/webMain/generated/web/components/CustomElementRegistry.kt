@@ -24,7 +24,7 @@ open external class CustomElementRegistry {
      */
     @JsThrows(NotSupportedError::class)
     @JsThrows(SyntaxError::class)
-    fun <T : P, P : HTMLElement> define(
+    open fun <T : P, P : HTMLElement> define(
         name: TagName<T>,
         constructor: CustomElementConstructor<T>,
         options: ElementDefinitionOptions<P> = definedExternally,
@@ -35,14 +35,14 @@ open external class CustomElementRegistry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
      */
-    fun <T : HTMLElement> get(name: TagName<T>): CustomElementConstructor<T>?
+    open fun <T : HTMLElement> get(name: TagName<T>): CustomElementConstructor<T>?
 
     /**
      * The **`getName()`** method of the CustomElementRegistry interface returns the name for a previously-defined custom element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
      */
-    fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
+    open fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
 
     /**
      * The **`initialize()`** method of the CustomElementRegistry interface associates this registry with a DOM subtree, setting the customElementRegistry of each inclusive descendant that doesn't already have one, and attempting to upgrade any custom elements found.
@@ -50,14 +50,14 @@ open external class CustomElementRegistry {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/initialize)
      */
     @JsThrows(NotSupportedError::class)
-    fun initialize(root: Node)
+    open fun initialize(root: Node)
 
     /**
      * The **`upgrade()`** method of the CustomElementRegistry interface upgrades all shadow-containing custom elements in a Node subtree, even before they are connected to the main document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
      */
-    fun upgrade(root: Node)
+    open fun upgrade(root: Node)
 
     /**
      * The **`whenDefined()`** method of the CustomElementRegistry interface returns a Promise that resolves when the named element is defined.
@@ -66,7 +66,7 @@ open external class CustomElementRegistry {
      */
     @JsThrows(SyntaxError::class)
     @JsName("whenDefined")
-    fun <T : HTMLElement> whenDefinedAsync(name: TagName<T>): Promise<CustomElementConstructor<T>>
+    open fun <T : HTMLElement> whenDefinedAsync(name: TagName<T>): Promise<CustomElementConstructor<T>>
 }
 
 /**

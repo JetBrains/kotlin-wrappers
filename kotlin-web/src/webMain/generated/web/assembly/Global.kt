@@ -17,10 +17,10 @@ open external class Global<T : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Global/value)
      */
-    var value: T
+    open var value: T
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Global/valueOf)
      */
-    fun valueOf(): T
+    open fun valueOf(): T
 }

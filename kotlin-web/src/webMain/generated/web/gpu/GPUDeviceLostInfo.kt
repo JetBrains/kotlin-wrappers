@@ -15,12 +15,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDeviceLostInfo/message)
      */
-    val message: String
+    open val message: String
 
     /**
      * The **`reason`** read-only property of the GPUDeviceLostInfo interface defines the reason the device was lost in a machine-readable way.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDeviceLostInfo/reason)
      */
-    val reason: GPUDeviceLostReason
+    open val reason: GPUDeviceLostReason
 }

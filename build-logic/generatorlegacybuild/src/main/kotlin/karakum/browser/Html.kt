@@ -40,6 +40,12 @@ private val ANIMATION_TYPES = setOf(
     "ViewTimelineOptions",
 )
 
+private val ARIA_TYPES = setOf(
+    "ARIAMixin",
+    "ARIANotifyMixin",
+    "AriaNotificationOptions",
+)
+
 private val RANGES_TYPES = setOf(
     "AbstractRange",
     "Range",
@@ -623,8 +629,6 @@ private val SERIAL_TYPES = setOf(
     "SerialPortRequestOptions",
 )
 
-private const val XSLT_PROCESSOR = "XSLTProcessor"
-
 internal fun htmlDeclarations(
     source: String,
 ): Sequence<ConversionResult> {
@@ -653,6 +657,8 @@ internal fun htmlDeclarations(
         .filter { it.name != "FileSystemFileHandle" }
 
     return interfaces
+        .withFinalSecurityMembers()
+        .withAriaUnions()
         .plus(enums)
         .plus(formTypes())
         .plus(popoverTypes())
@@ -1289,13 +1295,14 @@ internal fun convertInterface(
         var result = memberSource
             .splitToSequence(";\n")
             .mapNotNull { convertMember(it, typeProvider, extensionsCollector) }
+            .map { if (isClass) withOpenModifier(it) else it }
             .joinToString("\n")
 
         result = when (name) {
             DOM_EXCEPTION,
                 -> result
-                .replace("val message: String", "override val message: String")
-                .replace("val name: String", "val name: $DOM_EXCEPTION_NAME")
+                .replace("open val message: String", "override val message: String")
+                .replace("open val name: String", "val name: $DOM_EXCEPTION_NAME")
                 .splitToSequence("\n")
                 .filter { !it.endsWith(": Short") }
                 .joinToString("\n")
@@ -1303,35 +1310,35 @@ internal fun convertInterface(
             "URLSearchParams",
             "MediaKeyStatusMap",
                 -> result
-                .replace("val size: Int", "override val size: Int")
-                .replaceFirst("fun get(", "override fun get(")
-                .replaceFirst("fun has(", "override fun has(")
+                .replace("open val size: Int", "override val size: Int")
+                .replaceFirst("open fun get(", "override fun get(")
+                .replaceFirst("open fun has(", "override fun has(")
 
             "StylePropertyMapReadOnly",
                 -> result
-                .replace("val size: Int", "override val size: Int")
-                .replaceFirst("fun has(", "override fun has(")
+                .replace("open val size: Int", "override val size: Int")
+                .replaceFirst("open fun has(", "override fun has(")
                 .plus("\noverride fun keys(): JsIterator<String>")
 
             "GPUSupportedFeatures",
             "WGSLLanguageFeatures",
                 -> result
-                .replaceFirst("fun forEach(", "override fun forEach(")
+                .replaceFirst("open fun forEach(", "override fun forEach(")
 
+            // TODO: move to patches
             "Node",
                 -> result
-                .replace("val ownerDocument:", "open val ownerDocument:")
-                .replace("var textContent:", "open var textContent:")
+                .replace("var textContent:", "val textContent:")
 
             in WELL_KNOWN_FORM_CONTROL,
                 -> result.applyFormControlPatch().let {
                 if (name == "HTMLSelectElement") {
-                    it.replace("fun remove()", "override fun remove()")
+                    it.replace("open fun remove()", "override fun remove()")
                 } else it
             }
 
             in JS_CLOSABLE_INHERITORS,
-                -> result.replace("fun close()", "override fun close()")
+                -> result.replace("open fun close()", "override fun close()")
 
             "ElementInternals",
                 -> result.applyValidationTargetPatch()
@@ -1353,19 +1360,15 @@ internal fun convertInterface(
 
             in LENGTH_REQUIRED,
                 -> result
-                .replace("val length: Int", "override val length: Int")
-
-            "DOMMatrixReadOnly",
-            "DOMPointReadOnly",
-            "DOMRectReadOnly",
-                -> result
-                .replace("val ", "open val ")
+                .replace("open val length: Int", "override val length: Int")
+                // CSSStyleDeclarationBase
+                .replace("\nval length: Int", "override val length: Int")
 
             "DOMMatrix",
             "DOMPoint",
             "DOMRect",
                 -> result
-                .replace("var ", "override var ")
+                .replace("open var ", "override var ")
 
             "Document",
             "DocumentFragment",
@@ -1373,9 +1376,9 @@ internal fun convertInterface(
             "Attr",
             "CharacterData",
                 -> result
-                .replace("val ownerDocument:", "override val ownerDocument:")
-                .replace("var textContent: String", "override var textContent: String? // String")
-                .replace("fun getElementById(", "override fun getElementById(")
+                .replace("open val ownerDocument:", "override val ownerDocument:")
+                .replace("open var textContent: String", "override var textContent: String")
+                .replace("open fun getElementById(", "override fun getElementById(")
                 .let {
                     if (name == "Document") {
                         it + """
@@ -1383,40 +1386,34 @@ internal fun convertInterface(
                          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/modelContext)
                          */
                         @ExperimentalWebApi
-                        val modelContext: ModelContext
+                        open val modelContext: ModelContext
                         """.trimIndent()
                     } else it
                 }
 
             "Element",
                 -> result
-                .replace("val ownerDocument:", "override val ownerDocument:")
-                .replace("var textContent: String", "override var textContent: String? // String")
-                .replace("fun getElementById(", "override fun getElementById(")
+                .replace("open val ownerDocument:", "override val ownerDocument:")
+                .replace("open var textContent: String", "override var textContent: String")
+                .replace("open fun getElementById(", "override fun getElementById(")
                 .plus("\n")
                 .plus(
                     // language=kotlin
                     """
                     @JsName("data-testid")
-                    var dataTestId: DataTestId?
+                    open var dataTestId: DataTestId?
                     """.trimIndent(),
                 )
 
             "HTMLOptionsCollection",
                 -> result
-                .replace("var length: Int", "override var length: Int")
-
-            "SVGGeometryElement",
-                -> result
-                .replaceFirst("val pathLength:", "open val pathLength:")
-                .replaceFirst("fun getPointAtLength(", "open fun getPointAtLength(")
-                .replaceFirst("fun getTotalLength(", "open fun getTotalLength(")
+                .replace("open var length: Int", "override var length: Int")
 
             "SVGPathElement",
                 -> result
-                .replaceFirst("val pathLength:", "override val pathLength:")
-                .replaceFirst("fun getPointAtLength(", "override fun getPointAtLength(")
-                .replaceFirst("fun getTotalLength(", "override fun getTotalLength(")
+                .replaceFirst("open val pathLength:", "override val pathLength:")
+                .replaceFirst("open fun getPointAtLength(", "override fun getPointAtLength(")
+                .replaceFirst("open fun getTotalLength(", "override fun getTotalLength(")
 
             "CustomElementRegistry",
                 -> result
@@ -1438,20 +1435,15 @@ internal fun convertInterface(
                 .replace("<number>", "<Double>")
 
             "RTCInboundRtpStreamStats",
-                -> result.replace("var kind:", "override var kind:")
+                -> result.replace("open var kind:", "override var kind:")
 
             "CompressionStream",
             "DecompressionStream",
             "TextDecoderStream",
             "TextEncoderStream",
                 -> result
-                .replace("val readable:", "override val readable:")
-                .replace("val writable:", "override val writable:")
-
-            "PerformanceEntry",
-            "ReportBody",
-                -> result
-                .replace("fun toJSON()", "open fun toJSON()")
+                .replace("open val readable:", "override val readable:")
+                .replace("open val writable:", "override val writable:")
 
             "PerformanceEventTiming",
             "PerformanceNavigationTiming",
@@ -1460,30 +1452,36 @@ internal fun convertInterface(
             "LargestContentfulPaint",
             "CSPViolationReportBody",
                 -> result
-                .replace("fun toJSON()", "override fun toJSON()")
+                .replace("open fun toJSON()", "override fun toJSON()")
 
             "QueuingStrategy",
                 -> result.replace("var ", "val ")
 
             "ByteLengthQueuingStrategy",
             "CountQueuingStrategy",
-                -> result.replace("val ", "override val ")
-
-            "FileSystemHandle",
-                -> result.replace("val kind:", "open val kind:")
+                -> result.replace("open val ", "override val ")
 
             "FileSystemDirectoryHandle",
             "FileSystemFileHandle",
-                -> result.replace("val kind:", "override val kind:")
+                -> result.replace("open val kind:", "override val kind:")
 
             "HTMLElement",
-                -> result + "\n" + """
-            /**
-             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
-             */
-            @ExperimentalWebApi
-            var editContext: EditContext?
-            """.trimIndent()
+                -> result
+                .plus("\n")
+                .plus(
+                    """
+                    /**
+                     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
+                     */
+                    @ExperimentalWebApi
+                    open var editContext: EditContext?
+                    """.trimIndent(),
+                )
+
+            "HTMLScriptElement",
+                -> result
+                .replace("open var innerText:", "override var innerText:")
+                .replace("open var textContent: String", "override var textContent: String")
 
             "Navigator",
                 -> result + "\n" + """
@@ -1491,24 +1489,24 @@ internal fun convertInterface(
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/keyboard)
              */
             @ExperimentalWebApi
-            val keyboard: Keyboard
+            open val keyboard: Keyboard
 
             /**
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
              */
             @ExperimentalWebApi
-            val presentation: Presentation
+            open val presentation: Presentation
 
             /**
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
              */
             @ExperimentalWebApi
-            val usb: USB
+            open val usb: USB
 
             /**
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/xr)
              */
-            val xr: XRSystem
+            open val xr: XRSystem
             """.trimIndent()
 
             "WorkerNavigator",
@@ -1517,7 +1515,7 @@ internal fun convertInterface(
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
              */
             @ExperimentalWebApi
-            val usb: USB
+            open val usb: USB
             """.trimIndent()
 
             "Screen",
@@ -1526,7 +1524,7 @@ internal fun convertInterface(
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/isExtended)
              */
             @ExperimentalWebApi
-            val isExtended: Boolean
+            open val isExtended: Boolean
             """.trimIndent()
 
             "WebGLRenderingContextBase",
@@ -1535,10 +1533,16 @@ internal fun convertInterface(
             else -> {
                 when {
                     abortable
-                        -> result.replace("var signal: AbortSignal?", "override var signal: AbortSignal?")
+                        -> result.replace(
+                        "${if (isClass) "open " else ""}var signal: AbortSignal?",
+                        "override var signal: AbortSignal?",
+                    )
 
                     abortableLike
-                        -> result.replace("val signal: AbortSignal", "override val signal: AbortSignal")
+                        -> result.replace(
+                        "${if (isClass) "open " else ""}val signal: AbortSignal",
+                        "override val signal: AbortSignal",
+                    )
 
                     else -> result
                 }
@@ -1716,7 +1720,7 @@ internal fun convertInterface(
         name in HTTP_TYPES -> "web.http"
         name.startsWith("XMLHttp") -> "web.xhr"
 
-        name == "ARIAMixin" -> "web.aria"
+        name in ARIA_TYPES -> "web.aria"
         name in SELECTION_TYPES -> "web.selection"
 
         name == "EventModifierInit" -> "web.uievents"
@@ -1838,7 +1842,6 @@ internal fun convertInterface(
         name == "Origin" -> "web.origin"
         name in REPORTING_TYPES -> "web.reporting"
         name in POPOVER_TYPES -> "web.popover"
-        name == XSLT_PROCESSOR -> "web.xslt"
 
         else -> "web.html"
     }
@@ -1851,6 +1854,17 @@ internal fun convertInterface(
         pkg = pkg,
     )
 }
+
+internal fun withOpenModifier(
+    member: String,
+): String =
+    member
+        .splitToSequence("\n")
+        .joinToString("\n") { line ->
+            val shouldBeOpen = sequenceOf("val", "var", "fun")
+                .any { line.startsWith("$it ") }
+            if (shouldBeOpen) "open $line" else line
+        }
 
 private fun withPropertyParametersSupport(
     name: String,
@@ -2046,13 +2060,16 @@ internal fun convertMember(
         "getElementsByTagName<K extends keyof MathMLElementTagNameMap>(qualifiedName: K): HTMLCollection<MathMLElementTagNameMap[K]>",
             -> return null
 
-        "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollection<SVGElement>",
+        "getElementsByTagNameNS(namespaceURI: XHTML_NAMESPACE, localName: string): HTMLCollection<HTMLElement>",
             -> return """
         fun <T : Element> getElementsByTagNameNS(
             namespaceURI: TagNamespace<T>,
             localName: TagName<T>,
         ): HTMLCollection<T>
         """.trimIndent()
+
+        "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollection<SVGElement>",
+            -> return null
 
         "getElementsByTagNameNS(namespaceURI: MATHML_NAMESPACE, localName: string): HTMLCollection<MathMLElement>",
             -> return null
@@ -2456,6 +2473,7 @@ private fun convertFunction(
     if (typeParameters.isNotEmpty() && "/* Exclude<" !in typeParameters) {
         typeParameters = typeParameters
             .removeSurrounding("<", ">")
+            .removeSuffix(" = any")
             .splitToSequence(",")
             .map { if (":" !in it) "$it : JsAny?" else it }
             .joinToString(",", "<", ">")
@@ -2528,6 +2546,7 @@ private fun convertFunction(
         .replace(": IDBRequest<string>", ": IDBRequest<String>")
         .replace(": IDBRequest<IDBValidKey[]>", ": IDBRequest<ReadonlyArray<IDBValidKey>>")
         .replace(": IDBRequest<any[]>", ": IDBRequest<ReadonlyArray<*>>")
+        .replace(Regex(""": IDBRequest$"""), ": IDBRequest<*>")
         .let {
             if (it.startsWith(": number")) {
                 it.replace(": number", ": ${typeProvider.getReturnType(name)}")

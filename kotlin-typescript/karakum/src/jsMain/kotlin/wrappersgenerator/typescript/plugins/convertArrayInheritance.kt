@@ -4,8 +4,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import js.reflect.invoke
-import typescript.isExpressionWithTypeArguments
-import typescript.isIdentifier
+import typescript.ast.`is`.isExpressionWithTypeArguments
+import typescript.ast.`is`.isIdentifier
 
 val convertArrayInheritance = createPlugin { node, _, render ->
     nullable {

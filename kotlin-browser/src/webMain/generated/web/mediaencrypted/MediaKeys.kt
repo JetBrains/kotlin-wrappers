@@ -21,7 +21,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
      */
-    fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
+    open fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
     /**
      * The **`getStatusForPolicy()`** method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
@@ -30,7 +30,7 @@ private constructor() {
      */
     @JsThrows(NotSupportedError::class)
     @JsName("getStatusForPolicy")
-    fun getStatusForPolicyAsync(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
+    open fun getStatusForPolicyAsync(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
     /**
      * The **`setServerCertificate()`** method of the MediaKeys interface provides a server certificate to be used to encrypt messages to the license server.
@@ -38,7 +38,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
      */
     @JsName("setServerCertificate")
-    fun setServerCertificateAsync(serverCertificate: BufferSource): Promise<JsBoolean>
+    open fun setServerCertificateAsync(serverCertificate: BufferSource): Promise<JsBoolean>
 }
 
 /**

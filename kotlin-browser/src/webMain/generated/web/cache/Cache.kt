@@ -24,7 +24,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
     @JsName("add")
-    fun addAsync(url: String): Promise<Void>
+    open fun addAsync(url: String): Promise<Void>
 
     /**
      * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
@@ -32,7 +32,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
     @JsName("add")
-    fun addAsync(url: URL): Promise<Void>
+    open fun addAsync(url: URL): Promise<Void>
 
     /**
      * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
@@ -40,7 +40,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
     @JsName("add")
-    fun addAsync(request: Request): Promise<Void>
+    open fun addAsync(request: Request): Promise<Void>
 
     /**
      * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
@@ -48,7 +48,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
     @JsName("addAll")
-    fun addAllAsync(requests: ReadonlyArray<Request>): Promise<Void>
+    open fun addAllAsync(requests: ReadonlyArray<Request>): Promise<Void>
 
     /**
      * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
@@ -56,7 +56,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
     @JsName("addAll")
-    fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
+    open fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
 
     /**
      * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
@@ -64,7 +64,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
     @JsName("delete")
-    fun deleteAsync(
+    open fun deleteAsync(
         url: String,
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
@@ -75,7 +75,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
     @JsName("delete")
-    fun deleteAsync(
+    open fun deleteAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
@@ -86,7 +86,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
     @JsName("delete")
-    fun deleteAsync(
+    open fun deleteAsync(
         request: Request,
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
@@ -97,7 +97,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
     @JsName("keys")
-    fun keysAsync(
+    open fun keysAsync(
         url: String = definedExternally,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
@@ -108,7 +108,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
     @JsName("keys")
-    fun keysAsync(
+    open fun keysAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
@@ -119,7 +119,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
     @JsName("keys")
-    fun keysAsync(
+    open fun keysAsync(
         request: Request,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
@@ -130,7 +130,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
     @JsName("match")
-    fun matchAsync(
+    open fun matchAsync(
         url: String,
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
@@ -141,7 +141,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
     @JsName("match")
-    fun matchAsync(
+    open fun matchAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
@@ -152,7 +152,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
     @JsName("match")
-    fun matchAsync(
+    open fun matchAsync(
         request: Request,
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
@@ -163,7 +163,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
     @JsName("matchAll")
-    fun matchAllAsync(
+    open fun matchAllAsync(
         url: String = definedExternally,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
@@ -174,7 +174,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
     @JsName("matchAll")
-    fun matchAllAsync(
+    open fun matchAllAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
@@ -185,7 +185,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
     @JsName("matchAll")
-    fun matchAllAsync(
+    open fun matchAllAsync(
         request: Request,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
@@ -196,7 +196,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
     @JsName("put")
-    fun putAsync(
+    open fun putAsync(
         url: String,
         response: Response,
     ): Promise<Void>
@@ -207,7 +207,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
     @JsName("put")
-    fun putAsync(
+    open fun putAsync(
         url: URL,
         response: Response,
     ): Promise<Void>
@@ -218,7 +218,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
     @JsName("put")
-    fun putAsync(
+    open fun putAsync(
         request: Request,
         response: Response,
     ): Promise<Void>

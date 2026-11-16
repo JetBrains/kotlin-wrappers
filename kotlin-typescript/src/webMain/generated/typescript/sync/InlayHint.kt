@@ -1,0 +1,14 @@
+// Automatically generated - do not modify!
+
+package typescript.sync
+
+@kotlinx.js.JsPlainObject
+external interface InlayHint {
+    /** This property will be the empty string when displayParts is set. */
+    var text: String
+    var position: Int
+    var kind: InlayHintKind
+    var whitespaceBefore: Boolean?
+    var whitespaceAfter: Boolean?
+    var displayParts: js.array.ReadonlyArray<InlayHintDisplayPart>?
+}

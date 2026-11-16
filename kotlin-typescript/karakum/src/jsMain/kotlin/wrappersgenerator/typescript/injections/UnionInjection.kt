@@ -5,7 +5,8 @@ import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.*
 
 private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
     val name = ensureNotNull(

@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.Diagnostic
+
 /**
  * Checks to see if the locale is in the appropriate format,
  * and if it is, attempts to set the appropriate language.

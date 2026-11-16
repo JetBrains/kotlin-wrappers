@@ -3,7 +3,7 @@ package wrappersgenerator.testing.library.user.event.annotaions
 import io.github.sgrishchenko.karakum.extension.annotations.configurable.JsPlainObjectAnnotation
 import io.github.sgrishchenko.karakum.extension.plugins.nameResolverServiceKey
 import js.reflect.invoke
-import typescript.isTypeLiteralNode
+import typescript.ast.`is`.isTypeLiteralNode
 
 fun createJsPlainObjectAnnotation() =
     JsPlainObjectAnnotation(ignore = { node, context ->

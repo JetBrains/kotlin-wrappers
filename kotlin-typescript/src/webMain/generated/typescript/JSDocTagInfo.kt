@@ -1,9 +1,0 @@
-// Automatically generated - do not modify!
-
-package typescript
-
-@kotlinx.js.JsPlainObject
-external interface JSDocTagInfo {
-    var name: String
-    var text: js.array.ReadonlyArray<SymbolDisplayPart>?
-}

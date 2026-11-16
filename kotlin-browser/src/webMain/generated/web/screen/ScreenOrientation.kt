@@ -25,19 +25,19 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/angle)
      */
-    val angle: Short
+    open val angle: Short
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)
      */
-    var onchange: EventHandler<Event, ScreenOrientation, ScreenOrientation>?
+    open var onchange: EventHandler<Event, ScreenOrientation, ScreenOrientation>?
 
     /**
      * The **`type`** read-only property of the ScreenOrientation interface returns the document's current orientation type, one of portrait-primary, portrait-secondary, landscape-primary, or landscape-secondary.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/type)
      */
-    val type: OrientationType
+    open val type: OrientationType
 
     /**
      * The **`lock()`** method of the ScreenOrientation interface locks the orientation of the containing document to the specified orientation.
@@ -49,7 +49,7 @@ private constructor() :
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
     @JsName("lock")
-    fun lockAsync(orientation: OrientationLockType): Promise<Void>
+    open fun lockAsync(orientation: OrientationLockType): Promise<Void>
 
     /**
      * The **`unlock()`** method of the ScreenOrientation interface unlocks the orientation of the containing document, effectively locking it to the default screen orientation.
@@ -58,7 +58,7 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(SecurityError::class)
-    fun unlock()
+    open fun unlock()
 }
 
 /**

@@ -15,12 +15,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframeRule/keyText)
      */
-    var keyText: String
+    open var keyText: String
 
     /**
      * The read-only **`style`** property of the CSSKeyframeRule interface contains a CSSStyleDeclaration object representing the descriptors available in the @keyframes rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframeRule/style)
      */
-    val style: CSSStyleDeclaration
+    open val style: CSSStyleDeclaration
 }

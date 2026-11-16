@@ -21,34 +21,34 @@ open external class PresentationRequest(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationRequest/start)
      */
     @JsName("start")
-    fun startAsync(): Promise<PresentationConnection>
+    open fun startAsync(): Promise<PresentationConnection>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationRequest/reconnect)
      */
     @JsName("reconnect")
-    fun reconnectAsync(presentationId: String): Promise<PresentationConnection>
+    open fun reconnectAsync(presentationId: String): Promise<PresentationConnection>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationRequest/getAvailability)
      */
     @JsName("getAvailability")
-    fun getAvailabilityAsync(): Promise<PresentationAvailability>
+    open fun getAvailabilityAsync(): Promise<PresentationAvailability>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationRequest/onconnectionavailable)
      */
-    var onconnectionavailable: EventHandler<PresentationConnectionAvailableEvent, PresentationRequest, PresentationRequest>?
+    open var onconnectionavailable: EventHandler<PresentationConnectionAvailableEvent, PresentationRequest, PresentationRequest>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Presentation/defaultRequest)
      */
-    var defaultRequest: PresentationRequest?
+    open var defaultRequest: PresentationRequest?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Presentation/receiver)
      */
-    val receiver: PresentationRequest?
+    open val receiver: PresentationRequest?
 }
 
 /**

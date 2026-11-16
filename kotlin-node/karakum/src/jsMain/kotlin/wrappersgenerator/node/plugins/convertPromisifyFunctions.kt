@@ -3,9 +3,9 @@ package wrappersgenerator.node.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isFunctionDeclaration
-import typescript.isModuleBlock
-import typescript.isModuleDeclaration
+import typescript.ast.`is`.isFunctionDeclaration
+import typescript.ast.`is`.isModuleBlock
+import typescript.ast.`is`.isModuleDeclaration
 
 val convertPromisifyFunctions = createPlugin { node, _, _ ->
     nullable {

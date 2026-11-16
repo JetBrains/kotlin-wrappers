@@ -2,6 +2,9 @@
 
 package typescript
 
+import typescript.ast.SourceFile
+import typescript.sync.*
+
 /**
  * Builder to manage the program state changes
  */

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface AlertColor {
+sealed /* union */
+external interface AlertColor {
     companion object {
         @JsValue("success")
         val success: AlertColor
@@ -20,7 +21,8 @@ sealed external interface AlertColor {
     }
 }
 
-sealed external interface AlertVariant {
+sealed /* union */
+external interface AlertVariant {
     companion object {
         @JsValue("standard")
         val standard: AlertVariant

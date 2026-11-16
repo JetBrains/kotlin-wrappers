@@ -10,24 +10,24 @@ import web.time.DOMHighResTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Profiler)
  */
 @ExperimentalWebApi
-external class Profiler(
+open external class Profiler(
     options: ProfilerInitOptions,
 ) : EventTarget {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Profiler/sampleInterval)
      */
-    val sampleInterval: DOMHighResTimeStamp
+    open val sampleInterval: DOMHighResTimeStamp
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Profiler/stopped)
      */
-    val stopped: Boolean
+    open val stopped: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Profiler/stop)
      */
     @JsName("stop")
-    fun stopAsync(): Promise<ProfilerTrace>
+    open fun stopAsync(): Promise<ProfilerTrace>
 }
 
 @ExperimentalWebApi

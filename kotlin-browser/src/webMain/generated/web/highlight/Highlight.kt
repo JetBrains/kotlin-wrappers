@@ -18,12 +18,12 @@ open external class Highlight(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/priority)
      */
-    var priority: Int
+    open var priority: Int
 
     /**
      * The **`type`** property of the Highlight interface is an enumerated String used to specify the meaning of the highlight. This allows assistive technologies, such as screen readers, to include this meaning when exposing the highlight to users.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/type)
      */
-    var type: HighlightType
+    open var type: HighlightType
 }

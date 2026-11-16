@@ -14,28 +14,28 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/defaultPolicy)
      */
-    val defaultPolicy: TrustedTypePolicy?
+    open val defaultPolicy: TrustedTypePolicy?
 
     /**
      * The **`emptyHTML`** read-only property of the TrustedTypePolicyFactory interface returns a TrustedHTML object containing an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/emptyHTML)
      */
-    val emptyHTML: TrustedHTML
+    open val emptyHTML: TrustedHTML
 
     /**
      * The **`emptyScript`** read-only property of the TrustedTypePolicyFactory interface returns a TrustedScript object containing an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/emptyScript)
      */
-    val emptyScript: TrustedScript
+    open val emptyScript: TrustedScript
 
     /**
      * The **`createPolicy()`** method of the TrustedTypePolicyFactory interface creates a TrustedTypePolicy object that implements the rules passed as `policyOptions`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/createPolicy)
      */
-    fun createPolicy(
+    open fun createPolicy(
         policyName: String,
         policyOptions: TrustedTypePolicyOptions = definedExternally,
     ): TrustedTypePolicy
@@ -45,7 +45,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/getAttributeType)
      */
-    fun getAttributeType(
+    open fun getAttributeType(
         tagName: String,
         attribute: String,
         elementNs: String? = definedExternally,
@@ -57,7 +57,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/getPropertyType)
      */
-    fun getPropertyType(
+    open fun getPropertyType(
         tagName: String,
         property: String,
         elementNs: String? = definedExternally,
@@ -68,19 +68,19 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/isHTML)
      */
-    fun isHTML(value: JsAny?): Boolean
+    open fun isHTML(value: JsAny?): Boolean
 
     /**
      * The **`isScript()`** method of the TrustedTypePolicyFactory interface returns true if it is passed a valid TrustedScript object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/isScript)
      */
-    fun isScript(value: JsAny?): Boolean
+    open fun isScript(value: JsAny?): Boolean
 
     /**
      * The **`isScriptURL()`** method of the TrustedTypePolicyFactory interface returns true if it is passed a valid TrustedScriptURL object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrustedTypePolicyFactory/isScriptURL)
      */
-    fun isScriptURL(value: JsAny?): Boolean
+    open fun isScriptURL(value: JsAny?): Boolean
 }

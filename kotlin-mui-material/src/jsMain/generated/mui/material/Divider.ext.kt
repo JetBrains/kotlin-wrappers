@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface DividerVariant {
+sealed /* union */
+external interface DividerVariant {
     companion object {
         @JsValue("fullWidth")
         val fullWidth: DividerVariant
@@ -17,7 +18,8 @@ sealed external interface DividerVariant {
     }
 }
 
-sealed external interface DividerTextAlign {
+sealed /* union */
+external interface DividerTextAlign {
     companion object {
         @JsValue("center")
         val center: DividerTextAlign

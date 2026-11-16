@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface PaginationColor {
+sealed /* union */
+external interface PaginationColor {
     companion object {
         @JsValue("primary")
         val primary: PaginationColor
@@ -17,7 +18,8 @@ sealed external interface PaginationColor {
     }
 }
 
-sealed external interface PaginationVariant {
+sealed /* union */
+external interface PaginationVariant {
     companion object {
         @JsValue("text")
         val text: PaginationVariant
@@ -27,7 +29,8 @@ sealed external interface PaginationVariant {
     }
 }
 
-sealed external interface PaginationShape {
+sealed /* union */
+external interface PaginationShape {
     companion object {
         @JsValue("circular")
         val circular: PaginationShape

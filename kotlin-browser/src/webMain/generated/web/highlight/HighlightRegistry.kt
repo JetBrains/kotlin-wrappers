@@ -18,7 +18,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry/highlightsFromPoint)
      */
-    fun highlightsFromPoint(
+    open fun highlightsFromPoint(
         x: Float,
         y: Float,
         options: HighlightsFromPointOptions = definedExternally,

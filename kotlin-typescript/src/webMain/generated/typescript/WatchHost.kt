@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.Diagnostic
+import typescript.sync.WatchOptions
+
 /** Host that has watch functionality used in --watch mode */
 external interface WatchHost {
     /** If provided, called with Diagnostic message that informs about change in watch status */

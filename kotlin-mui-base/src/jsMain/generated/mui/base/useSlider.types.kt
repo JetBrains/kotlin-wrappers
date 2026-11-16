@@ -113,7 +113,7 @@ external interface UseSliderParameters {
      * The granularity with which the slider can step through values when using Page Up/Page Down or Shift + Arrow Up/Arrow Down.
      * @default 10
      */
-    var shiftStep: Number?
+    var shiftStep: Double?
 
     /**
      * The granularity with which the slider can step through values. (A "discrete" slider.)

@@ -15,7 +15,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader/readEntries)
      */
     @JsName("readEntries")
-    fun readEntriesWithCallbacks(
+    open fun readEntriesWithCallbacks(
         successCallback: FileSystemEntriesCallback,
         errorCallback: ErrorCallback = definedExternally,
     )

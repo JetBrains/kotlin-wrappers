@@ -4,7 +4,8 @@
 
 package typescript
 
-sealed /* enum */
+/* enum */
+@SubclassOptInRequired(js.internal.InternalApi::class)
 external interface InvalidatedProjectKind {
     sealed interface Build : InvalidatedProjectKind
 

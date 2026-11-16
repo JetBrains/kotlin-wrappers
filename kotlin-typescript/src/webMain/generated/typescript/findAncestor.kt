@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.Node
+
 /**
  * Iterates through the parent chain of a node and performs the callback on each parent until the callback
  * returns a truthy value, then returns that value.

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface AvatarGroupVariant {
+sealed /* union */
+external interface AvatarGroupVariant {
     companion object {
         @JsValue("circular")
         val circular: AvatarGroupVariant

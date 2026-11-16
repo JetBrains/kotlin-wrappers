@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.TextSpan
+
 external fun textSpanContainsPosition(
     span: TextSpan,
     position: Int,

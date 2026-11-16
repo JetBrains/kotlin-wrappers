@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.JSDocParsingMode
+
 external fun createDocumentRegistry(
     useCaseSensitiveFileNames: Boolean = definedExternally,
     currentDirectory: String = definedExternally,

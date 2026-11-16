@@ -15,12 +15,12 @@ open external class PresentationConnectionCloseEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionCloseEvent/reason)
      */
-    val reason: PresentationConnectionCloseReason
+    open val reason: PresentationConnectionCloseReason
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionCloseEvent/message)
      */
-    val message: String
+    open val message: String
 
     companion object
 }

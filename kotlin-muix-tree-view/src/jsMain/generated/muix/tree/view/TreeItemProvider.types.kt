@@ -15,7 +15,7 @@ external interface TreeItemProviderProps : PropsWithChildren {
     /**
      * The id of the item.
      */
-    var itemId: String
+    var itemId: TreeViewItemId
 
     /**
      * The id attribute of the item.

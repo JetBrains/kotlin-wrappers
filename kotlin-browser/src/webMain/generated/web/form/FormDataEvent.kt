@@ -19,7 +19,7 @@ open external class FormDataEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/formData)
      */
-    val formData: FormData
+    open val formData: FormData
 
     companion object
 }

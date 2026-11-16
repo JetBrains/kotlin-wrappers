@@ -18,7 +18,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect)
      */
     @JsName("playEffect")
-    fun playEffectAsync(
+    open fun playEffectAsync(
         type: GamepadHapticEffectType,
         params: GamepadEffectParameters = definedExternally,
     ): Promise<GamepadHapticsResult>
@@ -29,7 +29,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset)
      */
     @JsName("reset")
-    fun resetAsync(): Promise<GamepadHapticsResult>
+    open fun resetAsync(): Promise<GamepadHapticsResult>
 }
 
 /**

@@ -37,7 +37,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
      */
-    val canvas: HTMLCanvasElement
+    open val canvas: HTMLCanvasElement
 
     companion object
 }

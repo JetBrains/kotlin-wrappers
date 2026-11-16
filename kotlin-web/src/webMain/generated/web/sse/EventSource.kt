@@ -21,7 +21,7 @@ open external class EventSource(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/url)
      */
-    val url: String,
+    open val url: String,
     init: EventSourceInit = definedExternally,
 ) : EventTarget,
     JsCloseable {
@@ -33,31 +33,31 @@ open external class EventSource(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
      */
-    var onerror: EventHandler<Event, EventSource, EventSource>?
+    open var onerror: EventHandler<Event, EventSource, EventSource>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
      */
-    var onmessage: EventHandler<MessageEvent<*>, EventSource, EventSource>?
+    open var onmessage: EventHandler<MessageEvent<*>, EventSource, EventSource>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
      */
-    var onopen: EventHandler<Event, EventSource, EventSource>?
+    open var onopen: EventHandler<Event, EventSource, EventSource>?
 
     /**
      * The **`readyState`** read-only property of the EventSource interface returns a number representing the state of the connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/readyState)
      */
-    val readyState: ReadyState
+    open val readyState: ReadyState
 
     /**
      * The **`withCredentials`** read-only property of the EventSource interface returns a boolean value indicating whether the EventSource object was instantiated with CORS credentials set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/withCredentials)
      */
-    val withCredentials: Boolean
+    open val withCredentials: Boolean
 
     /**
      * The **`close()`** method of the EventSource interface closes the connection, if one is made, and sets the EventSource.readyState attribute to 2 (closed).

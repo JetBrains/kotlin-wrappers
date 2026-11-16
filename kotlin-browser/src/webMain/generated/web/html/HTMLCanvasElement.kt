@@ -31,14 +31,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height)
      */
-    var height: Int
+    open var height: Int
 
     /**
      * The **`HTMLCanvasElement.width`** property is a positive integer reflecting the width HTML attribute of the <canvas> element interpreted in CSS pixels. When the attribute is not specified, or if it is set to an invalid value, like a negative, the default value of 300 is used.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
      */
-    var width: Int
+    open var width: Int
 
     /**
      * The **`captureStream()`** method of the HTMLCanvasElement interface returns a MediaStream which includes a CanvasCaptureMediaStreamTrack containing a real-time video capture of the canvas's contents.
@@ -47,14 +47,14 @@ protected constructor() :
      */
     @JsThrows(NotSupportedError::class)
     @JsThrows(SecurityError::class)
-    fun captureStream(frameRequestRate: Double = definedExternally): MediaStream
+    open fun captureStream(frameRequestRate: Double = definedExternally): MediaStream
 
     /**
      * The **`HTMLCanvasElement.getContext()`** method returns a drawing context on the canvas, or null if the context identifier is not supported, or the canvas has already been set to a different context mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
      */
-    fun <T : RenderingContext, O : JsAny?> getContext(
+    open fun <T : RenderingContext, O : JsAny?> getContext(
         contextId: RenderingContextId<T, O>,
         options: O? = definedExternally,
     ): T?
@@ -66,7 +66,7 @@ protected constructor() :
      */
     @JsThrows(SecurityError::class)
     @JsName("toBlob")
-    fun toBlobWithCallback(
+    open fun toBlobWithCallback(
         callback: BlobCallback,
         type: String = definedExternally,
         quality: Double = definedExternally,
@@ -78,7 +78,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL)
      */
     @JsThrows(SecurityError::class)
-    fun toDataURL(
+    open fun toDataURL(
         type: String = definedExternally,
         quality: Double = definedExternally,
     ): String
@@ -89,7 +89,7 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
      */
     @JsThrows(InvalidStateError::class)
-    fun transferControlToOffscreen(): OffscreenCanvas
+    open fun transferControlToOffscreen(): OffscreenCanvas
 }
 
 /**

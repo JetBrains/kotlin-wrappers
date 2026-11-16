@@ -14,5 +14,5 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationReceiver/start)
      */
 
-    val connectionList: Promise<PresentationConnectionList>
+    open val connectionList: Promise<PresentationConnectionList>
 }

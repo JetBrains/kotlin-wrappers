@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.proto.BuildOptions
+import typescript.sync.Diagnostic
+import typescript.sync.WatchOptions
+
 /** Parsed command line for build */
 @kotlinx.js.JsPlainObject
 external interface ParsedBuildCommand {

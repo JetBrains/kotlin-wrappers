@@ -20,61 +20,61 @@ open external class AnalyserNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/fftSize)
      */
-    var fftSize: Int
+    open var fftSize: Int
 
     /**
      * The **`frequencyBinCount`** read-only property of the AnalyserNode interface contains the total number of data points available to AudioContext sampleRate. This is half of the value of the AnalyserNode.fftSize. The two methods' indices have a linear relationship with the frequencies they represent, between 0 and the Nyquist frequency.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/frequencyBinCount)
      */
-    val frequencyBinCount: Int
+    open val frequencyBinCount: Int
 
     /**
      * The **`maxDecibels`** property of the AnalyserNode interface is a double value representing the maximum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the maximum value for the range of results when using getByteFrequencyData().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/maxDecibels)
      */
-    var maxDecibels: Double
+    open var maxDecibels: Double
 
     /**
      * The **`minDecibels`** property of the AnalyserNode interface is a double value representing the minimum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the minimum value for the range of results when using getByteFrequencyData().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/minDecibels)
      */
-    var minDecibels: Double
+    open var minDecibels: Double
 
     /**
      * The **`smoothingTimeConstant`** property of the AnalyserNode interface is a double value representing the averaging constant with the last analysis frame. It's basically an average between the current buffer and the last buffer the AnalyserNode processed, and results in a much smoother set of value changes over time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/smoothingTimeConstant)
      */
-    var smoothingTimeConstant: Double
+    open var smoothingTimeConstant: Double
 
     /**
      * The **`getByteFrequencyData()`** method of the AnalyserNode interface copies the current frequency data into a Uint8Array (unsigned byte array) passed into it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getByteFrequencyData)
      */
-    fun getByteFrequencyData(array: Uint8Array<ArrayBuffer>)
+    open fun getByteFrequencyData(array: Uint8Array<ArrayBuffer>)
 
     /**
      * The **`getByteTimeDomainData()`** method of the AnalyserNode Interface copies the current waveform, or time-domain, data into a Uint8Array (unsigned byte array) passed into it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getByteTimeDomainData)
      */
-    fun getByteTimeDomainData(array: Uint8Array<ArrayBuffer>)
+    open fun getByteTimeDomainData(array: Uint8Array<ArrayBuffer>)
 
     /**
      * The **`getFloatFrequencyData()`** method of the AnalyserNode Interface copies the current frequency data into a Float32Array array passed into it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatFrequencyData)
      */
-    fun getFloatFrequencyData(array: Float32Array<ArrayBuffer>)
+    open fun getFloatFrequencyData(array: Float32Array<ArrayBuffer>)
 
     /**
      * The **`getFloatTimeDomainData()`** method of the AnalyserNode Interface copies the current waveform, or time-domain, data into a Float32Array array passed into it. Each array value is a sample, the magnitude of the signal at a particular time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatTimeDomainData)
      */
-    fun getFloatTimeDomainData(array: Float32Array<ArrayBuffer>)
+    open fun getFloatTimeDomainData(array: Float32Array<ArrayBuffer>)
 }

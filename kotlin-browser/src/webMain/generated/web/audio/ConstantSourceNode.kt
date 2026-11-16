@@ -16,5 +16,5 @@ open external class ConstantSourceNode(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConstantSourceNode/offset)
      */
-    val offset: AudioParam
+    open val offset: AudioParam
 }

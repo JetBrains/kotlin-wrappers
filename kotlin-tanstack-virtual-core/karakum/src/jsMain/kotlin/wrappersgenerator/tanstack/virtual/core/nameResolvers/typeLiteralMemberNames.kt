@@ -2,7 +2,10 @@ package wrappersgenerator.tanstack.virtual.core.nameResolvers
 
 import arrow.core.raise.nullable
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isPropertySignature
+import typescript.ast.`is`.isTypeLiteralNode
 
 // `{ startIndex: number, endIndex: number }`
 internal fun typeLiteralMemberNames(node: Node) = nullable {

@@ -20,26 +20,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/inputs)
      */
-    val inputs: MIDIInputMap
+    open val inputs: MIDIInputMap
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
      */
-    var onstatechange: EventHandler<MIDIConnectionEvent, MIDIAccess, MIDIAccess>?
+    open var onstatechange: EventHandler<MIDIConnectionEvent, MIDIAccess, MIDIAccess>?
 
     /**
      * The **`outputs`** read-only property of the MIDIAccess interface provides access to any available MIDI output ports.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/outputs)
      */
-    val outputs: MIDIOutputMap
+    open val outputs: MIDIOutputMap
 
     /**
      * The **`sysexEnabled`** read-only property of the MIDIAccess interface indicates whether system exclusive support is enabled on the current MIDIAccess instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/sysexEnabled)
      */
-    val sysexEnabled: Boolean
+    open val sysexEnabled: Boolean
 }
 
 /**

@@ -36,14 +36,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/mediaCapabilities)
      */
-    val mediaCapabilities: MediaCapabilities
+    open val mediaCapabilities: MediaCapabilities
 
     /**
      * The **`permissions`** read-only property of the WorkerNavigator interface returns a Permissions object that can be used to query and update permission status of APIs covered by the Permissions API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/permissions)
      */
-    val permissions: Permissions
+    open val permissions: Permissions
 
     /**
      * The **`serviceWorker`** read-only property of the WorkerNavigator interface returns the ServiceWorkerContainer object for the associated document, which provides access to registration, removal, upgrade, and communication with the ServiceWorker.
@@ -51,11 +51,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/serviceWorker)
      */
-    val serviceWorker: ServiceWorkerContainer
+    open val serviceWorker: ServiceWorkerContainer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
      */
     @ExperimentalWebApi
-    val usb: USB
+    open val usb: USB
 }

@@ -22,7 +22,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/defaultValue)
      */
-    var defaultValue: String
+    open var defaultValue: String
 
     /**
      * The **`form`** read-only property of the HTMLOutputElement interface returns an HTMLFormElement object that owns this <output>, or null if this output is not owned by any form.
@@ -36,7 +36,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
      */
-    val htmlFor: DOMTokenList<ElementId>
+    open val htmlFor: DOMTokenList<ElementId>
 
     /**
      * The **`HTMLOutputElement.labels`** read-only property returns a NodeList of the <label> elements associated with the <output> element.
@@ -57,7 +57,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/type)
      */
-    val type: String
+    open val type: String
 
     /**
      * The **`validationMessage`** read-only property of the HTMLOutputElement interface returns a string representing a localized message that describes the validation constraints that the <output> control does not satisfy (if any). This is the empty string as <output> elements are not candidates for constraint validation (HTMLOutputElement.willValidate is false).
@@ -78,7 +78,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/value)
      */
-    var value: String
+    open var value: String
 
     /**
      * The **`willValidate`** read-only property of the HTMLOutputElement interface returns false, because <output> elements are not candidates for constraint validation.
@@ -106,5 +106,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    open fun setCustomValidity(error: String)
 }

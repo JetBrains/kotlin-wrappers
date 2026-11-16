@@ -17,77 +17,77 @@ open external class SpeechSynthesisUtterance(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/text)
      */
-    var text: String = definedExternally,
+    open var text: String = definedExternally,
 ) : EventTarget {
     /**
      * The **`lang`** property of the SpeechSynthesisUtterance interface gets and sets the language of the utterance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang)
      */
-    var lang: String
+    open var lang: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/boundary_event)
      */
-    var onboundary: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onboundary: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/end_event)
      */
-    var onend: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onend: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/error_event)
      */
-    var onerror: EventHandler<SpeechSynthesisErrorEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onerror: EventHandler<SpeechSynthesisErrorEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/mark_event)
      */
-    var onmark: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onmark: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pause_event)
      */
-    var onpause: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onpause: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/resume_event)
      */
-    var onresume: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onresume: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/start_event)
      */
-    var onstart: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
+    open var onstart: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
      * The **`pitch`** property of the SpeechSynthesisUtterance interface gets and sets the pitch at which the utterance will be spoken at.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pitch)
      */
-    var pitch: Float
+    open var pitch: Float
 
     /**
      * The **`rate`** property of the SpeechSynthesisUtterance interface gets and sets the speed at which the utterance will be spoken at.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/rate)
      */
-    var rate: Float
+    open var rate: Float
 
     /**
      * The **`voice`** property of the SpeechSynthesisUtterance interface gets and sets the voice that will be used to speak the utterance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/voice)
      */
-    var voice: SpeechSynthesisVoice?
+    open var voice: SpeechSynthesisVoice?
 
     /**
      * The **`volume`** property of the SpeechSynthesisUtterance interface gets and sets the volume that the utterance will be spoken at.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume)
      */
-    var volume: Float
+    open var volume: Float
 }
 
 /**

@@ -15,6 +15,6 @@ open external class OverconstrainedError(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError/constraint)
      */
-    val constraint: String,
+    open val constraint: String,
     message: String = definedExternally,
 ) : DOMException

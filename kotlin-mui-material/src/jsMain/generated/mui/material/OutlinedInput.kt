@@ -2,10 +2,6 @@
 
 @file:JsModule("@mui/material/OutlinedInput")
 
-@file:Suppress(
-    "VIRTUAL_MEMBER_HIDDEN",
-)
-
 package mui.material
 
 import mui.material.styles.Theme
@@ -22,11 +18,19 @@ import web.html.HTMLFieldSetElement
 external interface OutlinedInputProps :
     StandardProps,
     InputBaseProps,
+    OutlinedInputSlotsAndSlotProps,
     PropsWithSx {
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slots: OutlinedInputSlots?
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var slotProps: OutlinedInputSlotProps?
+
     /**
      * Override or extend the styles applied to the component.
      */
-    var classes: OutlinedInputClasses?
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var classes: OutlinedInputClasses?
 
     /**
      * The label of the `input`. It is only used for layout. The actual labelling
@@ -45,7 +49,7 @@ external interface OutlinedInputProps :
     override var sx: SxProps<Theme>?
 }
 
-external interface OutlinedInputSlots {
+external interface OutlinedInputSlots : InputBaseProps.Slots {
     /**
      * The component that renders the notchedOutline slot.
      * @default NotchedOutline
@@ -53,7 +57,7 @@ external interface OutlinedInputSlots {
     var notchedOutline: ElementType<*>
 }
 
-external interface OutlinedInputSlotProps : Props {
+external interface OutlinedInputSlotProps : InputBaseProps.SlotProps {
     /** TS: SlotProps<'fieldset', OutlinedInputNotchedOutlineSlotPropsOverrides, OutlinedInputOwnerState> */
     var notchedOutline: FieldsetHTMLAttributes<HTMLFieldSetElement>?
 }

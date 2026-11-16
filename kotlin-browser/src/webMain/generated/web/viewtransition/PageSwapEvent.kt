@@ -20,14 +20,14 @@ open external class PageSwapEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/activation)
      */
-    val activation: NavigationActivation?
+    open val activation: NavigationActivation?
 
     /**
      * The **`viewTransition`** read-only property of the PageRevealEvent interface contains a ViewTransition object representing the active view transition for the cross-document navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/viewTransition)
      */
-    val viewTransition: ViewTransition?
+    open val viewTransition: ViewTransition?
 
     companion object
 }

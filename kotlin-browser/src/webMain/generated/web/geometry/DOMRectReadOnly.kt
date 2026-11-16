@@ -64,11 +64,11 @@ open external class DOMRectReadOnly(
     open val top: Double
 
     /**
-     * The DOMRectReadOnly method **`toJSON()`** returns a JSON representation of the DOMRectReadOnly object.
+     * The **`toJSON()`** method of the DOMRectReadOnly interface returns a JSON-serializable plain object representing the DOMRectReadOnly object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 
     companion object {
         /**

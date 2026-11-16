@@ -3,10 +3,10 @@ package wrappersgenerator.tauri.apps.api.inheritanceModifiers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import js.reflect.invoke
-import typescript.Node
-import typescript.isClassDeclaration
-import typescript.isIdentifier
-import typescript.isPropertyDeclaration
+import typescript.ast.Node
+import typescript.ast.`is`.isClassDeclaration
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isPropertyDeclaration
 
 suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {

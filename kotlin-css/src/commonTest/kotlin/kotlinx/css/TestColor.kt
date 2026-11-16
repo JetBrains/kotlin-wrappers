@@ -137,6 +137,23 @@ class TestColor {
     }
 
     @Test
+    fun testHSL2RGBZeroSaturation() {
+        val color = Color("hsla(0, 0%, 50%, 0.5)")
+        val rgba = color.fromHSLANotation().asRGBA()
+        assertEquals(128, rgba.red, "Converted RGBa red value is incorrect")
+        assertEquals(128, rgba.green, "Converted RGBa green value is incorrect")
+        assertEquals(128, rgba.blue, "Converted RGBa blue value is incorrect")
+        assertEquals(0.5, rgba.alpha, "Converted RGBa alpha/opacity value is incorrect")
+    }
+
+    @Test
+    fun testDarkenGray() {
+        val color = Color.gray.darken(10)  // #808080 = hsl(0, 0%, 50%) => darken(10) => hsl(0, 0%, 45%) = #737373
+
+        assertEquals("rgba(115, 115, 115, 1.0)", color.value, "Generated RGBa string is incorrect")
+    }
+
+    @Test
     fun testLighten() {
         val color = Color.burlyWood.lighten(10)  // #DEB887 = hsl(34, 57%, 70%) => lighten(10) => hsl(34, 57%, 77%) = #E6C9A3
         val rgba = color.toRGBA()

@@ -2,6 +2,10 @@
 
 package typescript
 
+import typescript.sync.CancellationToken
+import typescript.sync.CustomTransformers
+import typescript.sync.WriteFileCallback
+
 external interface SolutionBuilder<T : BuilderProgram> {
     fun build(
         project: String = definedExternally,

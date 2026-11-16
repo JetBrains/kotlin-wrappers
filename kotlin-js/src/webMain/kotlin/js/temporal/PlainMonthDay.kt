@@ -16,27 +16,27 @@ open external class PlainMonthDay(
     calendar: Calendar = definedExternally,
     referenceISOYear: Int = definedExternally,
 ) : LocalizableDateTime {
-    var monthCode: String
-    var day: Int
-    var calendarId: String
+    open var monthCode: String
+    open var day: Int
+    open var calendarId: String
 
     // fun equals(other: PlainMonthDay /* | PlainMonthDayLike | string */ ): Boolean
-    fun with(
+    open fun with(
         monthDayLike: PlainMonthDayLike,
         options: AssignmentOptions = definedExternally,
     ): PlainMonthDay
 
-    fun toPlainDate(options: ToPlainDateOptions): PlainDate
+    open fun toPlainDate(options: ToPlainDateOptions): PlainDate
 
     @JsPlainObject
     interface ToPlainDateOptions {
         var year: Int
     }
 
-    fun getISOFields(): PlainDateISOFields
+    open fun getISOFields(): PlainDateISOFields
 
-    fun toJSON(): String
-    fun toString(options: ShowCalendarOption = definedExternally): String
+    open fun toJSON(): String
+    open fun toString(options: ShowCalendarOption = definedExternally): String
 
     companion object :
         Factory<PlainMonthDay, PlainMonthDayLike, AssignmentOptions>

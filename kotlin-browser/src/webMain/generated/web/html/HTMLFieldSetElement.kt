@@ -19,14 +19,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
      */
-    var disabled: Boolean
+    open var disabled: Boolean
 
     /**
      * The **`elements`** read-only property of the HTMLFieldSetElement interface returns an HTMLCollection object containing all form control elements (<button>, <fieldset>, <input>, <object>, <output>, <select>, and <textarea>) that are descendants of this field set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
      */
-    val elements: HTMLCollection<*>
+    open val elements: HTMLCollection<*>
 
     /**
      * The **`form`** read-only property of the HTMLFieldSetElement interface returns an HTMLFormElement object that owns this <fieldset>, or null if this fieldset is not owned by any form.
@@ -47,7 +47,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/type)
      */
-    val type: String
+    open val type: String
 
     /**
      * The **`validationMessage`** read-only property of the HTMLFieldSetElement interface returns a string representing a localized message that describes the validation constraints that the <fieldset> control does not satisfy (if any). This is the empty string as <fieldset> elements are not candidates for constraint validation (HTMLFieldSetElement.willValidate is false).
@@ -89,5 +89,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/setCustomValidity)
      */
-    fun setCustomValidity(error: String)
+    open fun setCustomValidity(error: String)
 }

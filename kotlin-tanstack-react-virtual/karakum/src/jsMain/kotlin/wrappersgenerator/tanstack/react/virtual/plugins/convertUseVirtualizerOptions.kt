@@ -8,7 +8,10 @@ import io.github.sgrishchenko.karakum.extension.plugins.nameResolverServiceKey
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import js.numbers.contains
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.TypeReferenceNode
+import typescript.ast.`is`.*
+import typescript.sync.SymbolFlags
 import wrappersgenerator.tanstack.react.virtual.resolveDeclaration
 
 // `useVirtualizer(options: PartialKeys<ReactVirtualizerOptions<S, I>, 'scrollToFn' | ...>)`

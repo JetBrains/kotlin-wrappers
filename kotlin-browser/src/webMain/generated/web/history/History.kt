@@ -19,21 +19,21 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length)
      */
-    val length: Int
+    open val length: Int
 
     /**
      * The **`scrollRestoration`** property of the History interface allows web applications to explicitly set default scroll restoration behavior on history navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/scrollRestoration)
      */
-    var scrollRestoration: ScrollRestoration
+    open var scrollRestoration: ScrollRestoration
 
     /**
      * The **`state`** read-only property of the History interface returns a value representing the state at the top of the history stack. This is a way to look at the state without having to wait for a popstate event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state)
      */
-    val state: JsAny?
+    open val state: JsAny?
 
     /**
      * The **`back()`** method of the History interface causes the browser to move back one page in the session history.
@@ -41,7 +41,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
      */
     @JsThrows(SecurityError::class)
-    fun back()
+    open fun back()
 
     /**
      * The **`forward()`** method of the History interface causes the browser to move forward one page in the session history. It has the same effect as calling history.go(1).
@@ -49,7 +49,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward)
      */
     @JsThrows(SecurityError::class)
-    fun forward()
+    open fun forward()
 
     /**
      * The **`go()`** method of the History interface loads a specific page from the session history. You can use it to move forwards and backwards through the history depending on the value of a parameter.
@@ -57,7 +57,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
      */
     @JsThrows(SecurityError::class)
-    fun go(delta: Int = definedExternally)
+    open fun go(delta: Int = definedExternally)
 
     /**
      * The **`pushState()`** method of the History interface adds an entry to the browser's session history stack.
@@ -66,7 +66,7 @@ private constructor() {
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(SecurityError::class)
-    fun pushState(
+    open fun pushState(
         data: JsAny?,
         unused: String,
         url: String? = definedExternally,
@@ -79,7 +79,7 @@ private constructor() {
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(SecurityError::class)
-    fun pushState(
+    open fun pushState(
         data: JsAny?,
         unused: String,
         url: URL?,
@@ -92,7 +92,7 @@ private constructor() {
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(SecurityError::class)
-    fun replaceState(
+    open fun replaceState(
         data: JsAny?,
         unused: String,
         url: String? = definedExternally,
@@ -105,7 +105,7 @@ private constructor() {
      */
     @JsThrows(DataCloneError::class)
     @JsThrows(SecurityError::class)
-    fun replaceState(
+    open fun replaceState(
         data: JsAny?,
         unused: String,
         url: URL?,

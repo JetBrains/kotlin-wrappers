@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface ToolbarVariant {
+sealed /* union */
+external interface ToolbarVariant {
     companion object {
         @JsValue("regular")
         val regular: ToolbarVariant

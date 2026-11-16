@@ -19,7 +19,7 @@ open external class TaskPriorityChangeEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskPriorityChangeEvent/previousPriority)
      */
-    val previousPriority: TaskPriority
+    open val previousPriority: TaskPriority
 
     companion object
 }

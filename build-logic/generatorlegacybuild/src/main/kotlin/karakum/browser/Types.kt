@@ -122,7 +122,9 @@ private val PKG_MAP = mapOf(
 
     "PushEncryptionKeyName" to "web.push",
 
+    "SpeechRecognitionAvailabilityStatus" to "web.speech",
     "SpeechRecognitionErrorCode" to "web.speech",
+    "SpeechRecognitionQuality" to "web.speech",
     "SpeechSynthesisErrorCode" to "web.speech",
 
     "Base64URLString" to "web.authn",
@@ -636,6 +638,7 @@ private fun getTypePkg(
 
         name.endsWith("Setting") -> "web.vtt"
 
+        name.startsWith("Aria") -> "web.aria"
         name.startsWith("Document") -> "web.dom"
         name.startsWith("Sanitizer") -> "web.sanitizer"
         name.startsWith("Fullscreen") -> "web.fullscreen"

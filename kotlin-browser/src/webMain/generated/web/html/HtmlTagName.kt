@@ -2,9 +2,14 @@
 
 package web.html
 
+import js.reflect.unsafeCast
 import web.components.HTMLSlotElement
 import web.components.HTMLTemplateElement
 import web.dom.TagName
+import web.dom.TagNamespace
+
+inline val XHTML_NAMESPACE: TagNamespace<HTMLElement>
+    get() = unsafeCast("http://www.w3.org/1999/xhtml")
 
 object HtmlTagName {
     inline val a: TagName<HTMLAnchorElement>
@@ -238,11 +243,17 @@ object HtmlTagName {
     inline val q: TagName<HTMLQuoteElement>
         get() = TagName("q")
 
+    inline val rb: TagName<HTMLElement>
+        get() = TagName("rb")
+
     inline val rp: TagName<HTMLElement>
         get() = TagName("rp")
 
     inline val rt: TagName<HTMLElement>
         get() = TagName("rt")
+
+    inline val rtc: TagName<HTMLElement>
+        get() = TagName("rtc")
 
     inline val ruby: TagName<HTMLElement>
         get() = TagName("ruby")
@@ -264,6 +275,9 @@ object HtmlTagName {
 
     inline val select: TagName<HTMLSelectElement>
         get() = TagName("select")
+
+    inline val selectedcontent: TagName<HTMLSelectedContentElement>
+        get() = TagName("selectedcontent")
 
     inline val slot: TagName<HTMLSlotElement>
         get() = TagName("slot")

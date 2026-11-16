@@ -14,8 +14,8 @@ open external class PluralRules(
         options: PluralRulesOptions = definedExternally,
     )
 
-    fun resolvedOptions(): ResolvedPluralRulesOptions
-    fun select(n: Int): LDMLPluralRule
+    open fun resolvedOptions(): ResolvedPluralRulesOptions
+    open fun select(n: Int): LDMLPluralRule
 
     companion object {
         fun supportedLocalesOf(

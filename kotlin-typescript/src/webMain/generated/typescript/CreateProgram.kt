@@ -2,6 +2,11 @@
 
 package typescript
 
+import typescript.sync.CompilerHost
+import typescript.sync.CompilerOptions
+import typescript.sync.Diagnostic
+import typescript.sync.ProjectReference
+
 /** Create the program with rootNames and options, if they are undefined, oldProgram and new configFile diagnostics create new program */
 typealias CreateProgram<T /*  : BuilderProgram */> = (
     rootNames: (js.array.ReadonlyArray<String>)?,

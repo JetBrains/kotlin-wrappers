@@ -5,7 +5,10 @@ import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.util.camelize
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.`is`.isLiteralTypeNode
+import typescript.ast.`is`.isStringLiteral
+import typescript.ast.`is`.isTypeAliasDeclaration
+import typescript.ast.`is`.isUnionTypeNode
 
 private val keyGroups = setOf(
     "mlDsa",

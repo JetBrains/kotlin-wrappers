@@ -9,15 +9,15 @@ package web.cssom
  */
 open external class CSSUnitValue(
     /**
-     * The **`CSSUnitValue.value`** property of the CSSUnitValue interface returns a double indicating the number of units.
+     * The **`value`** property of the CSSUnitValue interface represents the number of units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/value)
      */
-    var value: Double,
+    open var value: Double,
     /**
-     * The **`CSSUnitValue.unit`** read-only property of the CSSUnitValue interface returns a string indicating the unit type.
+     * The **`unit`** read-only property of the CSSUnitValue interface returns a string indicating the unit type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/unit)
      */
-    val unit: String,
+    open val unit: String,
 ) : CSSNumericValue

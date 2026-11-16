@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.sync.CompilerOptions
+import typescript.sync.Diagnostic
+
 external fun transpile(
     input: String,
     compilerOptions: CompilerOptions = definedExternally,

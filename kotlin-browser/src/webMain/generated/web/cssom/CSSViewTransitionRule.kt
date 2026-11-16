@@ -17,12 +17,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSViewTransitionRule/navigation)
      */
-    val navigation: String
+    open val navigation: String
 
     /**
      * The **`types`** read-only property of the CSSViewTransitionRule interface returns an array containing the associated @view-transition at-rule's types descriptor values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSViewTransitionRule/types)
      */
-    val types: ReadonlyArray<JsString>
+    open val types: ReadonlyArray<JsString>
 }

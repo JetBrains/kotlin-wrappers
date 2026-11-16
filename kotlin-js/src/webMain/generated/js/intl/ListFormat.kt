@@ -36,7 +36,7 @@ open external class ListFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/format).
      */
-    fun format(list: JsIterable<JsString>): String
+    open fun format(list: JsIterable<JsString>): String
 
     /**
      * Returns an Array of objects representing the different components that can be used to format a list of values in a locale-aware fashion.
@@ -49,7 +49,7 @@ open external class ListFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/formatToParts).
      */
-    fun formatToParts(list: JsIterable<JsString>): ReadonlyArray<JsAny /* { type; value; } */>
+    open fun formatToParts(list: JsIterable<JsString>): ReadonlyArray<JsAny /* { type; value; } */>
 
     /**
      * Returns a new object with properties reflecting the locale and style
@@ -58,7 +58,7 @@ open external class ListFormat(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/resolvedOptions).
      */
-    fun resolvedOptions(): ResolvedListFormatOptions
+    open fun resolvedOptions(): ResolvedListFormatOptions
 
     companion object {
         /**

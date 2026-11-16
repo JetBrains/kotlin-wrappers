@@ -3,7 +3,11 @@ package wrappersgenerator.typescript.inheritanceModifiers
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import js.reflect.invoke
-import typescript.*
+import typescript.ast.Node
+import typescript.ast.`is`.isIdentifier
+import typescript.ast.`is`.isInterfaceDeclaration
+import typescript.ast.`is`.isPropertySignature
+import typescript.ast.`is`.isTypeAliasDeclaration
 
 suspend fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) = nullable {
     nullable {

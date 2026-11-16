@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface LabelPlacement {
+sealed /* union */
+external interface LabelPlacement {
     companion object {
         @JsValue("end")
         val end: LabelPlacement

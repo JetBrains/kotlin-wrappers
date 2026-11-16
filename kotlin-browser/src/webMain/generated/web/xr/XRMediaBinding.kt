@@ -7,17 +7,17 @@ import web.html.HTMLVideoElement
 open external class XRMediaBinding(
     sesion: XRSession,
 ) {
-    fun createQuadLayer(
+    open fun createQuadLayer(
         video: HTMLVideoElement,
         init: XRMediaQuadLayerInit = definedExternally,
     ): XRQuadLayer
 
-    fun createCylinderLayer(
+    open fun createCylinderLayer(
         video: HTMLVideoElement,
         init: XRMediaCylinderLayerInit = definedExternally,
     ): XRCylinderLayer
 
-    fun createEquirectLayer(
+    open fun createEquirectLayer(
         video: HTMLVideoElement,
         init: XRMediaEquirectLayerInit = definedExternally,
     ): XREquirectLayer

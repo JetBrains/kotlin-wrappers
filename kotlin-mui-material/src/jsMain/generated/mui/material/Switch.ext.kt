@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface SwitchColor {
+sealed /* union */
+external interface SwitchColor {
     companion object {
         @JsValue("primary")
         val primary: SwitchColor

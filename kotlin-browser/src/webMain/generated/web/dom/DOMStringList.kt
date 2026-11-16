@@ -26,12 +26,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/contains)
      */
-    fun contains(string: String): Boolean
+    open fun contains(string: String): Boolean
 
     /**
      * The **`item()`** method returns a string from a DOMStringList by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/item)
      */
-    fun item(index: Int): String?
+    open fun item(index: Int): String?
 }

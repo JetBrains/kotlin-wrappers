@@ -20,7 +20,7 @@ open external class EditContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateText)
      */
-    fun updateText(
+    open fun updateText(
         rangeStart: Int,
         rangeEnd: Int,
         text: String,
@@ -29,7 +29,7 @@ open external class EditContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateSelection)
      */
-    fun updateSelection(
+    open fun updateSelection(
         start: Int,
         end: Int,
     )
@@ -37,17 +37,17 @@ open external class EditContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateControlBounds)
      */
-    fun updateControlBounds(controlBounds: DOMRect)
+    open fun updateControlBounds(controlBounds: DOMRect)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateSelectionBounds)
      */
-    fun updateSelectionBounds(selectionBounds: DOMRect)
+    open fun updateSelectionBounds(selectionBounds: DOMRect)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateCharacterBounds)
      */
-    fun updateCharacterBounds(
+    open fun updateCharacterBounds(
         rangeStart: Int,
         characterBounds: ReadonlyArray<DOMRect>,
     )
@@ -55,57 +55,57 @@ open external class EditContext(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/attachedElements)
      */
-    fun attachedElements(): ReadonlyArray<HTMLElement>
+    open fun attachedElements(): ReadonlyArray<HTMLElement>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/text)
      */
-    val text: String
+    open val text: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/selectionStart)
      */
-    val selectionStart: Int
+    open val selectionStart: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/selectionEnd)
      */
-    val selectionEnd: Int
+    open val selectionEnd: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/characterBoundsRangeStart)
      */
-    val characterBoundsRangeStart: Int
+    open val characterBoundsRangeStart: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/characterBounds)
      */
-    fun characterBounds(): ReadonlyArray<DOMRect>
+    open fun characterBounds(): ReadonlyArray<DOMRect>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/textupdate_event)
      */
-    val ontextupdate: EventHandler<TextUpdateEvent, EditContext, EditContext>
+    open val ontextupdate: EventHandler<TextUpdateEvent, EditContext, EditContext>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/textformatupdate_event)
      */
-    val ontextformatupdate: EventHandler<TextFormatUpdateEvent, EditContext, EditContext>
+    open val ontextformatupdate: EventHandler<TextFormatUpdateEvent, EditContext, EditContext>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/characterboundsupdate_event)
      */
-    val oncharacterboundsupdate: EventHandler<CharacterBoundsUpdateEvent, EditContext, EditContext>
+    open val oncharacterboundsupdate: EventHandler<CharacterBoundsUpdateEvent, EditContext, EditContext>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/compositionstart_event)
      */
-    val oncompositionstart: EventHandler<CompositionEvent, EditContext, EditContext>
+    open val oncompositionstart: EventHandler<CompositionEvent, EditContext, EditContext>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/compositionend_event)
      */
-    val oncompositionend: EventHandler<CompositionEvent, EditContext, EditContext>
+    open val oncompositionend: EventHandler<CompositionEvent, EditContext, EditContext>
 }
 
 /**

@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface TypographyAlign {
+sealed /* union */
+external interface TypographyAlign {
     companion object {
         @JsValue("inherit")
         val inherit: TypographyAlign

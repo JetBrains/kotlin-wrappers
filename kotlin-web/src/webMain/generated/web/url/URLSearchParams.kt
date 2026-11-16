@@ -33,7 +33,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/append)
      */
-    fun append(
+    open fun append(
         key: String,
         value: String,
     )
@@ -43,7 +43,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/delete)
      */
-    fun delete(
+    open fun delete(
         key: String,
         value: String = definedExternally,
     )
@@ -60,7 +60,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/getAll)
      */
-    fun getAll(key: String): ReadonlyArray<JsString>
+    open fun getAll(key: String): ReadonlyArray<JsString>
 
     /**
      * The **`has()`** method of the URLSearchParams interface returns a boolean value that indicates whether the specified parameter is in the search parameters.
@@ -68,7 +68,7 @@ open external class URLSearchParams(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/has)
      */
     override fun has(key: JsString): Boolean
-    fun has(
+    open fun has(
         key: String,
         value: String,
     ): Boolean
@@ -78,7 +78,7 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/set)
      */
-    fun set(
+    open fun set(
         key: String,
         value: String,
     )
@@ -88,5 +88,5 @@ open external class URLSearchParams(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort)
      */
-    fun sort()
+    open fun sort()
 }

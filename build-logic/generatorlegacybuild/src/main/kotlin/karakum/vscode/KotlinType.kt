@@ -214,16 +214,18 @@ internal fun kotlinType(
             "maxResults",
             "maxOutputTokens",
             "provideTokenCount",
+            "limit",
 
                 // ???
             "value",
                 -> INT
 
+            "timestamp",
             "startTime",
             "endTime",
             "ctime",
             "mtime",
-                -> "JsInt53"
+                -> "JsInt53 /* EpochTimeStamp */"
 
             else -> TODO("Unknown number with name '$name'!")
         }

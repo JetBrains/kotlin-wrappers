@@ -20,7 +20,7 @@ open external class ClipboardEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
      */
-    val clipboardData: DataTransfer?
+    open val clipboardData: DataTransfer?
 
     companion object
 }

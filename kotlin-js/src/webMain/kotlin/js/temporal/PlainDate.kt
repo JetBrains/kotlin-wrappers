@@ -17,36 +17,36 @@ open external class PlainDate(
     calendar: Calendar = definedExternally,
 ) : HasArithmeticOperations<PlainDate, PlainDateLike, DateUnit<*>>,
     LocalizableDateTime {
-    val era: String?
-    val eraYear: Int?
-    val year: Int
-    val month: Int
-    val monthCode: String
-    val day: Int
-    val calendarId: Calendar
-    val dayOfWeek: Int
-    val dayOfYear: Int
-    val weekOfYear: Int
-    val yearOfWeek: Int
-    val daysInWeek: Int
-    val daysInYear: Int
-    val daysInMonth: Int
-    val monthsInYear: Int
-    val inLeapYear: Boolean
+    open val era: String?
+    open val eraYear: Int?
+    open val year: Int
+    open val month: Int
+    open val monthCode: String
+    open val day: Int
+    open val calendarId: Calendar
+    open val dayOfWeek: Int
+    open val dayOfYear: Int
+    open val weekOfYear: Int
+    open val yearOfWeek: Int
+    open val daysInWeek: Int
+    open val daysInYear: Int
+    open val daysInMonth: Int
+    open val monthsInYear: Int
+    open val inLeapYear: Boolean
 
     // fun equals(other: PlainDate /* | PlainDateLike | string */): Boolean
-    fun with(
+    open fun with(
         dateLike: PlainDateLike,
         options: AssignmentOptions = definedExternally,
     ): PlainDate
 
-    fun withCalendar(calendar: Calendar): PlainDate
+    open fun withCalendar(calendar: Calendar): PlainDate
 
-    fun toPlainDateTime(
+    open fun toPlainDateTime(
         temporalTime: PlainTime /* | PlainTimeLike | string */ = definedExternally,
     ): PlainDateTime
 
-    fun toZonedDateTime(
+    open fun toZonedDateTime(
         timeZoneAndTime: JsAny,
         /*
             | TimeZoneProtocol
@@ -58,12 +58,12 @@ open external class PlainDate(
         */
     ): ZonedDateTime
 
-    fun toPlainYearMonth(): PlainYearMonth
-    fun toPlainMonthDay(): PlainMonthDay
-    fun getISOFields(): PlainDateISOFields
+    open fun toPlainYearMonth(): PlainYearMonth
+    open fun toPlainMonthDay(): PlainMonthDay
+    open fun getISOFields(): PlainDateISOFields
 
-    fun toJSON(): String
-    fun toString(options: ShowCalendarOption = definedExternally): String
+    open fun toJSON(): String
+    open fun toString(options: ShowCalendarOption = definedExternally): String
 
     companion object :
         PlainCompanion<PlainDate, PlainDateLike>

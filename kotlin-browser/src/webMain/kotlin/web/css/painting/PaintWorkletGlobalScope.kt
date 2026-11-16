@@ -8,14 +8,14 @@ import web.worklets.WorkletGlobalScope
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope)
  */
 @ExperimentalWebApi
-external class PaintWorkletGlobalScope
+open external class PaintWorkletGlobalScope
 private constructor() :
     WorkletGlobalScope {
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
      */
-    fun registerPaint(
+    open fun registerPaint(
         name: PaintName,
         classRef: JsClass<Paint>,
     )
@@ -23,7 +23,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope/devicePixelRatio)
      */
-    val devicePixelRatio: Double
+    open val devicePixelRatio: Double
 }
 
 /**

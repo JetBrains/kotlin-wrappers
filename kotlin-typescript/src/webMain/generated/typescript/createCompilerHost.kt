@@ -4,6 +4,9 @@
 
 package typescript
 
+import typescript.sync.CompilerHost
+import typescript.sync.CompilerOptions
+
 external fun createCompilerHost(
     options: CompilerOptions,
     setParentNodes: Boolean = definedExternally,

@@ -20,5 +20,5 @@ open external class TaskController(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskController/setPriority)
      */
     @JsThrows(NotAllowedError::class)
-    fun setPriority(priority: TaskPriority)
+    open fun setPriority(priority: TaskPriority)
 }

@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.ast.SourceFile
+
 /**
  * Clears any `EmitNode` entries from parse-tree nodes.
  * @param sourceFile A source file.

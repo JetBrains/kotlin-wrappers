@@ -20,5 +20,5 @@ open external class XMLSerializer {
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(SyntaxError::class)
-    fun serializeToString(root: Node): String
+    open fun serializeToString(root: Node): String
 }

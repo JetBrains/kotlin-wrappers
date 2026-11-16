@@ -22,7 +22,7 @@ open external class MIDIMessageEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data)
      */
-    val data: Uint8Array<ArrayBuffer>?
+    open val data: Uint8Array<ArrayBuffer>?
 
     companion object
 }

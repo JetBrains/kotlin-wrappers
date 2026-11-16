@@ -3,7 +3,7 @@ package wrappersgenerator.testing.library.user.event.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import js.reflect.invoke
-import typescript.isFunctionDeclaration
+import typescript.ast.`is`.isFunctionDeclaration
 
 val convertSetupDirect = createPlugin { node, _, render ->
     nullable {

@@ -26,26 +26,26 @@ open external class AudioDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/decodeQueueSize)
      */
-    val decodeQueueSize: Int
+    open val decodeQueueSize: Int
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/dequeue_event)
      */
-    var ondequeue: EventHandler<Event, AudioDecoder, AudioDecoder>?
+    open var ondequeue: EventHandler<Event, AudioDecoder, AudioDecoder>?
 
     /**
      * The **`state`** read-only property of the AudioDecoder interface returns the current state of the underlying codec.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/state)
      */
-    val state: CodecState
+    open val state: CodecState
 
     /**
      * The **`close()`** method of the AudioDecoder interface ends all pending work and releases system resources.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/close)
      */
-    fun close()
+    open fun close()
 
     /**
      * The **`configure()`** method of the AudioDecoder interface enqueues a control message to configure the audio decoder for decoding chunks.
@@ -54,7 +54,7 @@ open external class AudioDecoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
-    fun configure(config: AudioDecoderConfig)
+    open fun configure(config: AudioDecoderConfig)
 
     /**
      * The **`decode()`** method of the AudioDecoder interface enqueues a control message to decode a given chunk of audio.
@@ -63,7 +63,7 @@ open external class AudioDecoder(
      */
     @JsThrows(DataError::class)
     @JsThrows(InvalidStateError::class)
-    fun decode(chunk: EncodedAudioChunk)
+    open fun decode(chunk: EncodedAudioChunk)
 
     /**
      * The **`flush()`** method of the AudioDecoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
@@ -72,14 +72,14 @@ open external class AudioDecoder(
      */
     @JsThrows(InvalidStateError::class)
     @JsName("flush")
-    fun flushAsync(): Promise<Void>
+    open fun flushAsync(): Promise<Void>
 
     /**
      * The **`reset()`** method of the AudioDecoder interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/reset)
      */
-    fun reset()
+    open fun reset()
 
     companion object {
         /**

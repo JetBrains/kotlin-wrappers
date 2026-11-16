@@ -25,24 +25,24 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
      */
-    var onconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
+    open var onconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
      */
-    var onconnecting: EventHandler<Event, RemotePlayback, RemotePlayback>?
+    open var onconnecting: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
      */
-    var ondisconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
+    open var ondisconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
      * The **`state`** read-only property of the RemotePlayback interface returns the current state of the RemotePlayback connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/state)
      */
-    val state: RemotePlaybackState
+    open val state: RemotePlaybackState
 
     /**
      * The **`cancelWatchAvailability()`** method of the RemotePlayback interface cancels the request to watch for one or all available devices.
@@ -52,7 +52,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotFoundError::class)
     @JsName("cancelWatchAvailability")
-    fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
+    open fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
 
     /**
      * The **`prompt()`** method of the RemotePlayback interface prompts the user to select an available remote playback device and give permission for the current media to be played using that device.
@@ -66,7 +66,7 @@ private constructor() :
     @JsThrows(NotSupportedError::class)
     @JsThrows(OperationError::class)
     @JsName("prompt")
-    fun promptAsync(): Promise<Void>
+    open fun promptAsync(): Promise<Void>
 
     /**
      * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the callbackId of a remote playback device.
@@ -76,7 +76,7 @@ private constructor() :
     @JsThrows(InvalidStateError::class)
     @JsThrows(NotSupportedError::class)
     @JsName("watchAvailability")
-    fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
+    open fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
 }
 
 /**

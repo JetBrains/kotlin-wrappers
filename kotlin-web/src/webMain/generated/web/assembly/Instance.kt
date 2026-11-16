@@ -17,5 +17,5 @@ open external class Instance(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Instance/exports)
      */
-    val exports: Exports
+    open val exports: Exports
 }

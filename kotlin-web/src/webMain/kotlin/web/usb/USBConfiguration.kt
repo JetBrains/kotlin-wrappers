@@ -12,16 +12,16 @@ open external class USBConfiguration(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBConfiguration/configurationValue)
      */
-    val configurationValue: Short,
+    open val configurationValue: Short,
     /* unsigned byte */
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBConfiguration/configurationName)
      */
-    val configurationName: String?
+    open val configurationName: String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBConfiguration/interfaces)
      */
-    val interfaces: ReadonlyArray<USBInterface>
+    open val interfaces: ReadonlyArray<USBInterface>
 }

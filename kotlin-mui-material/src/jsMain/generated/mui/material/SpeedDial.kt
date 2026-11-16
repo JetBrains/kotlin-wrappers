@@ -31,11 +31,12 @@ external interface SpeedDialProps :
      */
     var classes: SpeedDialClasses?
 
-    /*
+    /**
      * The aria-label of the button element.
      * Also used to provide the `id` for the `SpeedDial` element and its children.
      */
-    /* override var ariaLabel: String */
+    @JsName("ariaLabel")
+    var muiAriaLabel: String
 
     /**
      * The direction the actions open relative to the floating action button.

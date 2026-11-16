@@ -17,26 +17,26 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey/algorithm)
      */
-    val algorithm: KeyAlgorithm
+    open val algorithm: KeyAlgorithm
 
     /**
      * The read-only **`extractable`** property of the CryptoKey interface indicates whether or not the key may be extracted using SubtleCrypto.exportKey() or SubtleCrypto.wrapKey().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey/extractable)
      */
-    val extractable: Boolean
+    open val extractable: Boolean
 
     /**
      * The read-only **`type`** property of the CryptoKey interface indicates which kind of key is represented by the object. It can have the following values:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey/type)
      */
-    val type: KeyType
+    open val type: KeyType
 
     /**
      * The read-only **`usages`** property of the CryptoKey interface indicates what can be done with the key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey/usages)
      */
-    val usages: ReadonlyArray<KeyUsage>
+    open val usages: ReadonlyArray<KeyUsage>
 }

@@ -18,5 +18,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUError/message)
      */
-    val message: String
+    open val message: String
 }

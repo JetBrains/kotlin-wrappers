@@ -11,6 +11,9 @@ internal fun convertUnion(
     if ("<" in name)
         return null
 
+    if (name == "AriaRole")
+        return null
+
     val sourceType = source
         .removePrefix(" | ")
         .trim()

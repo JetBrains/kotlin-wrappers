@@ -4,7 +4,8 @@ package mui.material
 
 import seskar.js.JsValue
 
-sealed external interface Size {
+sealed /* union */
+external interface Size {
     companion object {
         @JsValue("small")
         val small: small
@@ -25,5 +26,8 @@ sealed external interface Size {
     sealed interface large : Size
 }
 
-sealed external interface BaseSize
-sealed external interface NormalSize
+sealed /* union */
+external interface BaseSize
+
+sealed /* union */
+external interface NormalSize

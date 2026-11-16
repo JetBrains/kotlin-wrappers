@@ -14,7 +14,7 @@ open external class XRRay(
         direction: DOMPointReadOnly = definedExternally,
     )
 
-    val origin: DOMPointReadOnly
-    val direction: DOMPointReadOnly
-    val matrix: Float32Array<*>
+    open val origin: DOMPointReadOnly
+    open val direction: DOMPointReadOnly
+    open val matrix: Float32Array<*>
 }

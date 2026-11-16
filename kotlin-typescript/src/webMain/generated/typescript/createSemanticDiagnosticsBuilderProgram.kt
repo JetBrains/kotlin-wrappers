@@ -4,6 +4,8 @@
 
 package typescript
 
+import typescript.sync.*
+
 /**
  * Create the builder to manage semantic diagnostics and cache them
  */

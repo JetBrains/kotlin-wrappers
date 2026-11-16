@@ -7,8 +7,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStra
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.extension.plugins.function
 import js.reflect.invoke
-import typescript.isFunctionTypeNode
-import typescript.isTypeAliasDeclaration
+import typescript.ast.`is`.isFunctionTypeNode
+import typescript.ast.`is`.isTypeAliasDeclaration
 
 val convertFunctionInterfaces = createPlugin { node, context, render ->
     nullable {

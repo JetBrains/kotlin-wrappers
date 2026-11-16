@@ -14,12 +14,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/animVal)
      */
-    val animVal: SVGTransformList
+    open val animVal: SVGTransformList
 
     /**
      * The **`baseVal`** read-only property of the SVGAnimatedTransformList interface represents the non-animated value of the transform attribute of an SVG element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList/baseVal)
      */
-    val baseVal: SVGTransformList
+    open val baseVal: SVGTransformList
 }

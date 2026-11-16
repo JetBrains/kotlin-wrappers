@@ -34,7 +34,7 @@ external interface FilterOptionsState<Value> {
 external interface AutocompleteGroupedOption<Value> {
     var key: Number
 
-    var index: Number
+    var index: Int
 
     var group: String
 
@@ -351,7 +351,7 @@ external interface AutocompleteChangeDetails<Value> {
 external interface UseAutocompleteRenderedOption<Value> {
     var option: Value
 
-    var index: Number
+    var index: Int
 }
 
 external interface UseAutocompleteReturnValue<Value> {

@@ -2,7 +2,7 @@
 
 package web.html
 
-external class Option(
+open external class Option(
     text: String = definedExternally,
     value: String = definedExternally,
     defaultSelected: Boolean = definedExternally,

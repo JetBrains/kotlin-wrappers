@@ -17,21 +17,21 @@ open external class PerformanceObserver(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/disconnect)
      */
-    fun disconnect()
+    open fun disconnect()
 
     /**
      * The **`observe()`** method of the PerformanceObserver interface is used to specify the set of performance entry types to observe.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe)
      */
-    fun observe(options: PerformanceObserverInit = definedExternally)
+    open fun observe(options: PerformanceObserverInit = definedExternally)
 
     /**
      * The **`takeRecords()`** method of the PerformanceObserver interface returns the current list of PerformanceEntry objects stored in the performance observer, emptying it out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/takeRecords)
      */
-    fun takeRecords(): PerformanceEntryList
+    open fun takeRecords(): PerformanceEntryList
 
     companion object {
         /**

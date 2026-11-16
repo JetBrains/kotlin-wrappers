@@ -27,12 +27,12 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/name)
      */
-    val name: String
+    open val name: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)
      */
-    var onrtctransform: EventHandler<RTCTransformEvent, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>?
+    open var onrtctransform: EventHandler<RTCTransformEvent, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>?
 
     /**
      * The **`close()`** method of the DedicatedWorkerGlobalScope interface discards any tasks queued in the DedicatedWorkerGlobalScope's event loop, effectively closing this particular scope.
@@ -46,22 +46,22 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/postMessage)
      */
-    fun postMessage(
+    open fun postMessage(
         message: JsAny?,
         transfer: ReadonlyArray<Transferable>,
     )
 
-    fun postMessage(
+    open fun postMessage(
         message: String,
         transfer: ReadonlyArray<Transferable>,
     )
 
-    fun postMessage(
+    open fun postMessage(
         message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
 
-    fun postMessage(
+    open fun postMessage(
         message: String,
         options: StructuredSerializeOptions = definedExternally,
     )

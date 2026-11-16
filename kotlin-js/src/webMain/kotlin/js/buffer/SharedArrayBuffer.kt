@@ -28,7 +28,7 @@ open external class SharedArrayBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/growable)
      */
-    val growable: Boolean
+    open val growable: Boolean
 
     /**
      * If this SharedArrayBuffer is growable, returns the maximum byte length given during construction; returns the byte length if not.
@@ -42,7 +42,7 @@ open external class SharedArrayBuffer(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/grow)
      */
-    fun grow(
+    open fun grow(
         newByteLength: Int,
     )
 }

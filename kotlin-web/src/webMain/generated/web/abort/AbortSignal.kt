@@ -24,26 +24,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/aborted)
      */
-    val aborted: Boolean
+    open val aborted: Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
      */
-    var onabort: EventHandler<Event, AbortSignal, AbortSignal>?
+    open var onabort: EventHandler<Event, AbortSignal, AbortSignal>?
 
     /**
      * The **`reason`** read-only property returns a JavaScript value that indicates the abort reason.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/reason)
      */
-    val reason: JsErrorLike?
+    open val reason: JsErrorLike?
 
     /**
      * The **`throwIfAborted()`** method throws the signal's abort reason if the signal has been aborted; otherwise it does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted)
      */
-    fun throwIfAborted()
+    open fun throwIfAborted()
 
     companion object {
         /**

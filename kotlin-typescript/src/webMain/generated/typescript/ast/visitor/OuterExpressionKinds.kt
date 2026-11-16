@@ -1,0 +1,21 @@
+// Automatically generated - do not modify!
+
+@file:JsModule("typescript")
+
+package typescript.ast.visitor
+
+/* enum */
+external class OuterExpressionKinds
+private constructor() : js.numbers.Bitmask<OuterExpressionKinds> {
+    companion object {
+        val Parentheses: OuterExpressionKinds
+        val TypeAssertions: OuterExpressionKinds
+        val NonNullAssertions: OuterExpressionKinds
+        val PartiallyEmittedExpressions: OuterExpressionKinds
+        val ExpressionsWithTypeArguments: OuterExpressionKinds
+        val Satisfies: OuterExpressionKinds
+        val Assertions: OuterExpressionKinds
+        val All: OuterExpressionKinds
+        val ExcludeJSDocTypeAssertion: OuterExpressionKinds
+    }
+}

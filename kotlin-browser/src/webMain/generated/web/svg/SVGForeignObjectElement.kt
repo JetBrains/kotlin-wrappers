@@ -15,26 +15,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/height)
      */
-    val height: SVGAnimatedLength
+    open val height: SVGAnimatedLength
 
     /**
      * The **`width`** read-only property of the SVGForeignObjectElement interface describes the width of the <foreignObject> element. It reflects the computed value of the width attribute on the <foreignObject> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/width)
      */
-    val width: SVGAnimatedLength
+    open val width: SVGAnimatedLength
 
     /**
      * The **`x`** read-only property of the SVGForeignObjectElement interface describes the x-axis coordinate of the <foreignObject> element. It reflects the computed value of the x attribute on the <foreignObject> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/x)
      */
-    val x: SVGAnimatedLength
+    open val x: SVGAnimatedLength
 
     /**
      * The **`y`** read-only property of the SVGForeignObjectElement interface describes the y-axis coordinate of the <foreignObject> element. It reflects the computed value of the y attribute on the <foreignObject> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGForeignObjectElement/y)
      */
-    val y: SVGAnimatedLength
+    open val y: SVGAnimatedLength
 }
