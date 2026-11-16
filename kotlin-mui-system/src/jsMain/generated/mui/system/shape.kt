@@ -2,10 +2,12 @@
 
 package mui.system
 
+import kotlinx.js.JsPlainObject
 import web.cssom.BorderRadius
 
+@JsPlainObject
 external interface Shape {
-    var borderRadius: BorderRadius
+    val borderRadius: BorderRadius
 }
 
 typealias ShapeOptions = Shape
