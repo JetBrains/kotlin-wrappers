@@ -1,6 +1,7 @@
 package react
 
 import js.array.ReadonlyArray
+import js.reflect.invoke
 import js.reflect.unsafeCast
 import js.reflect.upcast
 
@@ -36,9 +37,7 @@ fun ReactNode.asStringOrNull(): String? =
     upcast<Any>() as? String
 
 fun ReactNode.asElementOrNull(): ReactElement<*>? =
-    if (isValidElement(this)) {
-        unsafeCast<ReactElement<*>>(this)
-    } else null
+    if (isValidElement(this)) this else null
 
 @Suppress("UNCHECKED_CAST")
 fun ReactNode.asNodeArrayOrNull(): ReadonlyArray<ReactNode?>? =
