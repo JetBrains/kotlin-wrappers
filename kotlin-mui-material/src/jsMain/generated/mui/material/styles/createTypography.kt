@@ -53,7 +53,8 @@ external interface TypographyUtils {
 @JsPlainObject
 external interface TypographyVariants :
     FontStyle,
-    TypographyUtils {
+    TypographyUtils,
+    mui.system.Typography {
     val h1: CSSProperties
 
     val h2: CSSProperties
@@ -82,7 +83,9 @@ external interface TypographyVariants :
 }
 
 @JsPlainObject
-external interface TypographyVariantsOptions : FontStyleOptions {
+external interface TypographyVariantsOptions :
+    FontStyleOptions,
+    mui.system.Typography {
     val h1: CSSProperties?
 
     val h2: CSSProperties?

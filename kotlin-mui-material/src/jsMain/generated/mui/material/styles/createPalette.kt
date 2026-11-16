@@ -2,6 +2,8 @@
 
 package mui.material.styles
 
+import js.objects.ReadonlyRecord
+
 external interface Color {
     var `50`: String
 
@@ -118,7 +120,7 @@ external interface PaletteAugmentColorOptions {
     var name: Any? /* number | string */
 }
 
-external interface Palette {
+external interface Palette : ReadonlyRecord<String, Any?> {
     var common: CommonColors
 
     var mode: mui.material.PaletteMode
@@ -164,7 +166,7 @@ external interface Channels {
     var contrastTextChannel: String
 }
 
-external interface PaletteOptions {
+external interface PaletteOptions : ReadonlyRecord<String, Any?> {
     var primary: Any? /* PaletteColorOptions */
 
     var secondary: Any? /* PaletteColorOptions */

@@ -4,15 +4,17 @@
 
 package mui.system
 
+import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 
+@JsPlainObject
 external interface Typography
 
 @JsPlainObject
 external interface Mixins
 
-external interface Shadows
+typealias Shadows = ReadonlyArray<String>
 
 @JsPlainObject
 external interface Transitions
@@ -30,9 +32,9 @@ external interface ThemeOptions {
 
     val mixins: Mixins?
 
-    val palette: Any? /* ReadonlyRecord<String, *> */
+    val palette: ReadonlyRecord<String, *>?
 
-    val shadows: Any? /* Shadows */
+    val shadows: Shadows?
 
     val spacing: SpacingOptions?
 
@@ -40,7 +42,7 @@ external interface ThemeOptions {
 
     val components: ReadonlyRecord<String, *>?
 
-    val typography: Any? /* Typography */
+    val typography: Typography?
 
     val zIndex: ZIndex?
 
@@ -55,9 +57,9 @@ external interface Theme {
 
     val direction: Direction
 
-    val palette: Any? /* ReadonlyRecord<String, *> */
+    val palette: ReadonlyRecord<String, *>
 
-    val shadows: Any? /* Shadows */
+    val shadows: Shadows?
 
     val spacing: Spacing
 
@@ -67,7 +69,7 @@ external interface Theme {
 
     val mixins: Mixins?
 
-    val typography: Any? /* Typography */
+    val typography: Typography?
 
     val zIndex: ZIndex?
 
