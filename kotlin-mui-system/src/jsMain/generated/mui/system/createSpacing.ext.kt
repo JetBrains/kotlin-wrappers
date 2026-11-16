@@ -20,11 +20,6 @@ inline fun SpacingOptions(
     unsafeCast(value)
 
 inline fun SpacingOptions(
-    value: Spacing,
-): SpacingOptions =
-    unsafeCast(value)
-
-inline fun SpacingOptions(
     noinline value: (abs: Double) -> Length,
 ): SpacingOptions =
     unsafeCast(value)
@@ -41,7 +36,7 @@ inline fun SpacingOptions(
 
 typealias SpacingArgument = Double
 
-sealed external interface Spacing {
+sealed external interface Spacing : SpacingOptions {
     operator fun invoke(): Length
 
     operator fun invoke(value: SpacingArgument): Length
