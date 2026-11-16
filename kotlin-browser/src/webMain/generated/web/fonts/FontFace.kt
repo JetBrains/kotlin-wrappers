@@ -100,6 +100,13 @@ open external class FontFace(
     open var unicodeRange: String
 
     /**
+     * The **`variant`** property of the FontFace interface programmatically retrieves or sets font variant values.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/variant)
+     */
+    open var variant: String
+
+    /**
      * The **`variationSettings`** property of the FontFace interface retrieves or sets low-level OpenType or TrueType font variations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/variationSettings)

@@ -5,8 +5,7 @@ package web.speech
 import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.await
-import web.errors.DOMExceptionType.InvalidStateError
-import web.errors.DOMExceptionType.SyntaxError
+import web.errors.DOMExceptionType.*
 import web.errors.JsThrows
 import web.events.Event
 import web.events.EventHandler
@@ -168,6 +167,7 @@ open external class SpeechRecognition :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/install_static)
          */
         @JsThrows(InvalidStateError::class)
+        @JsThrows(NotAllowedError::class)
         @JsThrows(SyntaxError::class)
         @JsName("install")
         fun installAsync(options: SpeechRecognitionOptions): Promise<JsBoolean>
@@ -193,6 +193,7 @@ suspend inline fun SpeechRecognition.Companion.available(options: SpeechRecognit
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognition/install_static)
  */
 @JsThrows(InvalidStateError::class)
+@JsThrows(NotAllowedError::class)
 @JsThrows(SyntaxError::class)
 suspend inline fun SpeechRecognition.Companion.install(options: SpeechRecognitionOptions): Boolean {
     return installAsync(

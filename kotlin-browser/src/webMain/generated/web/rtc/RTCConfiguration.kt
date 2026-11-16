@@ -11,6 +11,11 @@ import kotlinx.js.JsPlainObject
 @JsPlainObject
 external interface RTCConfiguration {
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getConfiguration#alwaysnegotiatedatachannels)
+     */
+    var alwaysNegotiateDataChannels: Boolean?
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getConfiguration#bundlepolicy)
      */
     var bundlePolicy: RTCBundlePolicy?

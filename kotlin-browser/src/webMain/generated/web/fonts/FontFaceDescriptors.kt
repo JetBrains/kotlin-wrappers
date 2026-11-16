@@ -58,4 +58,9 @@ external interface FontFaceDescriptors {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/FontFace#weight)
      */
     var weight: String?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/FontFace#width)
+     */
+    var width: String?
 }
