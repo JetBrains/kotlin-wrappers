@@ -30,11 +30,11 @@ external interface ThemeOptions {
 
     val mixins: Mixins?
 
-    val palette: Any? /* Record<String, *> */
+    val palette: Any? /* ReadonlyRecord<String, *> */
 
     val shadows: Any? /* Shadows */
 
-    var spacing: SpacingOptions?
+    val spacing: SpacingOptions?
 
     val transitions: Transitions?
 
@@ -55,7 +55,7 @@ external interface Theme {
 
     val direction: Direction
 
-    val palette: Any? /* Record<String, *> */
+    val palette: Any? /* ReadonlyRecord<String, *> */
 
     val shadows: Any? /* Shadows */
 

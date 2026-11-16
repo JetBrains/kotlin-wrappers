@@ -3,7 +3,7 @@
 package mui.material.styles
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import mui.system.Union
 
@@ -329,7 +329,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var generateThemeVars: () -> ThemeVars
 
-    var generateStyleSheets: () -> Array<Record<String, *>>
+    var generateStyleSheets: () -> Array<ReadonlyRecord<String, *>>
 
     var generateSpacing: () -> Any /* SystemTheme['spacing'] */
 

@@ -5,12 +5,12 @@
 package mui.system
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 
 external interface Breakpoints {
     var keys: ReadonlyArray<Breakpoint>
 
-    var values: Record<Breakpoint, Number>
+    var values: ReadonlyRecord<Breakpoint, Number>
 
     var up: (key: Breakpoint) -> String
 
