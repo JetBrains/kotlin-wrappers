@@ -4,7 +4,7 @@
 
 package mui.system
 
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 
 external interface Typography
@@ -38,7 +38,7 @@ external interface ThemeOptions {
 
     val transitions: Transitions?
 
-    val components: Record<String, *>?
+    val components: ReadonlyRecord<String, *>?
 
     val typography: Any? /* Typography */
 
@@ -63,7 +63,7 @@ external interface Theme {
 
     val transitions: Transitions?
 
-    val components: Record<String, *>?
+    val components: ReadonlyRecord<String, *>?
 
     val mixins: Mixins?
 

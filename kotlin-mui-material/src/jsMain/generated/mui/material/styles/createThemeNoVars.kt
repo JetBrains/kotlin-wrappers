@@ -3,7 +3,7 @@
 package mui.material.styles
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import mui.system.SxProps
 
@@ -26,7 +26,7 @@ external interface ThemeOptions : mui.system.ThemeOptions {
 
     override val mixins: MixinsOptions?
 
-    override val components: Record<String, *>? /* Components<Theme> */
+    override val components: ReadonlyRecord<String, *>? /* Components<Theme> */
 
     val motion: MotionOptions?
 
@@ -82,7 +82,7 @@ external interface Theme : BaseTheme {
 
     val cssVariables: Boolean? /* false */
 
-    override val components: Record<String, *>? /* Components<BaseTheme> */
+    override val components: ReadonlyRecord<String, *>? /* Components<BaseTheme> */
 
     override val unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 
