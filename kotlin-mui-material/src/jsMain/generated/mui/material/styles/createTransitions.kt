@@ -3,56 +3,62 @@
 package mui.material.styles
 
 import js.array.ReadonlyArray
+import kotlinx.js.JsPlainObject
 import web.cssom.Transition
 
+@JsPlainObject
 external interface Easing {
-    var easeInOut: String
+    val easeInOut: String
 
-    var easeOut: String
+    val easeOut: String
 
-    var easeIn: String
+    val easeIn: String
 
-    var sharp: String
+    val sharp: String
 }
 
+@JsPlainObject
 external interface Duration {
-    var shortest: Number
+    val shortest: Number
 
-    var shorter: Number
+    val shorter: Number
 
-    var short: Number
+    val short: Number
 
-    var standard: Number
+    val standard: Number
 
-    var complex: Number
+    val complex: Number
 
-    var enteringScreen: Number
+    val enteringScreen: Number
 
-    var leavingScreen: Number
+    val leavingScreen: Number
 }
 
-external interface TransitionsOptions {
-    var easing: Easing?
+@JsPlainObject
+external interface TransitionsOptions : mui.system.Transitions {
+    val easing: Easing?
 
-    var duration: Duration?
+    val duration: Duration?
 
-    var create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition)?
+    val create: ((props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition)?
 
-    var getAutoHeightDuration: ((height: Number) -> Number)?
+    val getAutoHeightDuration: ((height: Number) -> Number)?
 }
 
-external interface Transitions {
-    var easing: Easing
+@JsPlainObject
+external interface Transitions : mui.system.Transitions {
+    val easing: Easing
 
-    var duration: Duration
+    val duration: Duration
 
-    var create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition
+    val create: (props: ReadonlyArray<String>, options: TransitionCreateOptions?) -> Transition
 
-    var getAutoHeightDuration: (height: Number) -> Number
+    val getAutoHeightDuration: (height: Number) -> Number
 }
 
+@JsPlainObject
 external interface TransitionCreateOptions {
-    var duration: Number?
-    var easing: String?
-    var delay: Number?
+    val duration: Number?
+    val easing: String?
+    val delay: Number?
 }

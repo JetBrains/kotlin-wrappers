@@ -4,6 +4,7 @@ package mui.material.styles
 
 import js.array.ReadonlyArray
 import js.objects.Record
+import kotlinx.js.JsPlainObject
 import mui.system.Union
 
 external interface Opacity {
@@ -210,16 +211,19 @@ external interface PaletteTooltip {
     var bg: String
 }
 
-external interface Shape
+@JsPlainObject
+external interface Shape : mui.system.Shape
 
-external interface ShapeOptions
+@JsPlainObject
+external interface ShapeOptions : mui.system.ShapeOptions
 
+@JsPlainObject
 external interface ColorSystemOptions {
-    var palette: PaletteOptions?
+    val palette: PaletteOptions?
 
-    var opacity: Any? /* Partial<Opacity> */
+    val opacity: Any? /* Partial<Opacity> */
 
-    var overlays: Any? /* Overlays */
+    val overlays: Any? /* Overlays */
 }
 
 external interface CssVarsPalette {
@@ -317,7 +321,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var defaultColorScheme: Any? /* SupportedColorScheme */
 
-    var vars: Any? /* ThemeVars */
+    var vars: ThemeVars
 
     var getCssVar: (field: String /* ThemeCssVar */) -> String
 
@@ -335,7 +339,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var shape: Shape
 
-    var typography: Any? /* TypographyVariants */
+    var typography: TypographyVariants
 
     var motion: Motion
 

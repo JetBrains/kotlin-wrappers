@@ -2,10 +2,14 @@
 
 package mui.material.styles
 
+import kotlinx.js.JsPlainObject
+
+@JsPlainObject
 external interface Motion {
-    var reducedMotion: ReducedMotionMode
+    val reducedMotion: ReducedMotionMode
 }
 
+@JsPlainObject
 external interface MotionOptions {
-    var reducedMotion: ReducedMotionMode?
+    val reducedMotion: ReducedMotionMode?
 }
