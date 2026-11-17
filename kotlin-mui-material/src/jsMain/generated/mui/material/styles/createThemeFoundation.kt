@@ -3,8 +3,9 @@
 package mui.material.styles
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
+import mui.system.Shadows
 import mui.system.Union
 
 external interface Opacity {
@@ -301,7 +302,7 @@ external interface ThemeVars {
 
     var overlays: Any? /* Overlays */
 
-    var shadows: Any? /* Shadows */
+    var shadows: Shadows
 
     var shape: Shape
 
@@ -329,7 +330,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var generateThemeVars: () -> ThemeVars
 
-    var generateStyleSheets: () -> Array<Record<String, *>>
+    var generateStyleSheets: () -> ReadonlyArray<ReadonlyRecord<String, *>>
 
     var generateSpacing: () -> Any /* SystemTheme['spacing'] */
 
@@ -345,7 +346,7 @@ external interface CssVarsTheme : ColorSystem {
 
     var transitions: Transitions
 
-    var shadows: Any? /* Shadows */
+    var shadows: Shadows
 
     var mixins: Mixins
 
