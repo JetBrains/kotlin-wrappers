@@ -2,7 +2,7 @@
 
 package mui.material.styles
 
-import js.objects.ReadonlyRecord
+import kotlinx.js.JsPlainObject
 
 external interface Color {
     var `50`: String
@@ -120,40 +120,41 @@ external interface PaletteAugmentColorOptions {
     var name: Any? /* number | string */
 }
 
-external interface Palette : ReadonlyRecord<String, Any?> {
-    var common: CommonColors
+@JsPlainObject
+external interface Palette : mui.system.Palette {
+    val common: CommonColors
 
-    var mode: mui.material.PaletteMode
+    val mode: mui.material.PaletteMode
 
-    var contrastThreshold: Double
+    val contrastThreshold: Double
 
-    var tonalOffset: Any? /* PaletteTonalOffset */
+    val tonalOffset: Any? /* PaletteTonalOffset */
 
-    var primary: PaletteColor
+    val primary: PaletteColor
 
-    var secondary: PaletteColor
+    val secondary: PaletteColor
 
-    var error: PaletteColor
+    val error: PaletteColor
 
-    var warning: PaletteColor
+    val warning: PaletteColor
 
-    var info: PaletteColor
+    val info: PaletteColor
 
-    var success: PaletteColor
+    val success: PaletteColor
 
-    var grey: Any? /* Color */
+    val grey: Any? /* Color */
 
-    var text: TypeText
+    val text: TypeText
 
-    var divider: Any? /* TypeDivider */
+    val divider: Any? /* TypeDivider */
 
-    var action: TypeAction
+    val action: TypeAction
 
-    var background: TypeBackground
+    val background: TypeBackground
 
-    var getContrastText: (background: String) -> String
+    val getContrastText: (background: String) -> String
 
-    var augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
+    val augmentColor: (options: PaletteAugmentColorOptions) -> PaletteColor
 }
 
 external interface Channels {
@@ -166,36 +167,37 @@ external interface Channels {
     var contrastTextChannel: String
 }
 
-external interface PaletteOptions : ReadonlyRecord<String, Any?> {
-    var primary: Any? /* PaletteColorOptions */
+@JsPlainObject
+external interface PaletteOptions : mui.system.PaletteOptions {
+    val primary: Any? /* PaletteColorOptions */
 
-    var secondary: Any? /* PaletteColorOptions */
+    val secondary: Any? /* PaletteColorOptions */
 
-    var error: Any? /* PaletteColorOptions */
+    val error: Any? /* PaletteColorOptions */
 
-    var warning: Any? /* PaletteColorOptions */
+    val warning: Any? /* PaletteColorOptions */
 
-    var info: Any? /* PaletteColorOptions */
+    val info: Any? /* PaletteColorOptions */
 
-    var success: Any? /* PaletteColorOptions */
+    val success: Any? /* PaletteColorOptions */
 
-    var mode: mui.material.PaletteMode?
+    val mode: mui.material.PaletteMode?
 
-    var tonalOffset: Any? /* PaletteTonalOffset */
+    val tonalOffset: Any? /* PaletteTonalOffset */
 
-    var contrastThreshold: Double?
+    val contrastThreshold: Double?
 
-    var common: CommonColors?
+    val common: CommonColors?
 
-    var grey: Any? /* ColorPartial */
+    val grey: Any? /* ColorPartial */
 
-    var text: TypeText?
+    val text: TypeText?
 
-    var divider: String?
+    val divider: String?
 
-    var action: TypeAction?
+    val action: TypeAction?
 
-    var background: TypeBackground?
+    val background: TypeBackground?
 
-    var getContrastText: ((background: String) -> String)?
+    val getContrastText: ((background: String) -> String)?
 }

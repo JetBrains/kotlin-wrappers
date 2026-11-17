@@ -23,6 +23,12 @@ external interface Transitions
 external interface ZIndex
 
 @JsPlainObject
+external interface Palette
+
+@JsPlainObject
+external interface PaletteOptions
+
+@JsPlainObject
 external interface ThemeOptions {
     val shape: ShapeOptions?
 
@@ -32,7 +38,7 @@ external interface ThemeOptions {
 
     val mixins: Mixins?
 
-    val palette: ReadonlyRecord<String, *>?
+    val palette: PaletteOptions?
 
     val shadows: Shadows?
 
@@ -57,7 +63,7 @@ external interface Theme {
 
     val direction: Direction
 
-    val palette: ReadonlyRecord<String, *>
+    val palette: Palette
 
     val shadows: Shadows?
 
