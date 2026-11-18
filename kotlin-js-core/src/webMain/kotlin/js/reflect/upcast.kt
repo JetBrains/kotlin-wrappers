@@ -1,4 +1,5 @@
 package js.reflect
 
-inline fun <T> T.upcast(): T =
+// TODO: remove after KT-91773 fix
+inline fun <T : JsAny?> T.upcast(): T =
     this

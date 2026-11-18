@@ -8,7 +8,7 @@ import js.reflect.upcast
 external interface JsErrorLike
 
 inline fun JsErrorLike?.toJsErrorOrNull(): JsError? =
-    upcast<Any?>() as? JsError
+    upcast<JsAny?>() as? JsError
 
 fun JsErrorLike?.toJsError(): JsError =
     toJsErrorOrNull() ?: wrapRawError(this)
