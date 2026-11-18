@@ -42,14 +42,14 @@ open external class MouseEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientX)
      */
-    open val clientX: Int
+    open val clientX: Double
 
     /**
      * The **`clientY`** read-only property of the MouseEvent interface provides the vertical coordinate within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/clientY)
      */
-    open val clientY: Int
+    open val clientY: Double
 
     /**
      * The **`MouseEvent.ctrlKey`** read-only property is a boolean value that indicates whether the ctrl key was pressed or not when a given mouse event occurs.
@@ -133,14 +133,14 @@ open external class MouseEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenX)
      */
-    open val screenX: Int
+    open val screenX: Double
 
     /**
      * The **`screenY`** read-only property of the MouseEvent interface provides the vertical coordinate (offset) of the mouse pointer in screen coordinates.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/screenY)
      */
-    open val screenY: Int
+    open val screenY: Double
 
     /**
      * The **`MouseEvent.shiftKey`** read-only property is a boolean value that indicates whether the shift key was pressed or not when a given mouse event occurs.

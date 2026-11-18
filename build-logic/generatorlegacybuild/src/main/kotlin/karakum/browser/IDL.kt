@@ -306,6 +306,7 @@ internal object IDLRegistry {
         memberNumberData.asSequence()
             .filterIsInstance<PropertyData>()
             .associate { (it.className to it.propertyName) to it.propertyType }
+            .plus(SCREEN_CLIENT_CORRECTIONS)
             .plus(
                 sequenceOf(
                     ("RTCEncodedAudioFrame" to "timestamp") to "Int53",

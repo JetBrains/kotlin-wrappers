@@ -25,12 +25,12 @@ external interface MouseEventInit :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent#clientX)
      */
-    var clientX: Int?
+    var clientX: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent#clientY)
      */
-    var clientY: Int?
+    var clientY: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent#movementX)
@@ -50,10 +50,10 @@ external interface MouseEventInit :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent#screenX)
      */
-    var screenX: Int?
+    var screenX: Double?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/MouseEvent#screenY)
      */
-    var screenY: Int?
+    var screenY: Double?
 }
