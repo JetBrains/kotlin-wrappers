@@ -12,7 +12,7 @@ fun <E : JsAny> observerFlow(
 ): Flow<E> =
     callbackFlow {
         val disconnect = block { entries, _ ->
-            trySend(requireNotNull(entries[0]))
+            trySend(entries[0])
         }
 
         awaitClose(disconnect)
