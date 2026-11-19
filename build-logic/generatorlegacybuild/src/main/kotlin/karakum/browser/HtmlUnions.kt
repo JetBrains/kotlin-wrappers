@@ -2,6 +2,7 @@ package karakum.browser
 
 import karakum.common.CommonUnionConverter.sealedUnionBody
 import karakum.common.CommonUnionConverter.unionBodyByConstants
+import karakum.common.UnionConverter
 import karakum.common.unionConstant
 
 internal const val AUTO_CAPITALIZE = "AutoCapitalize"
@@ -214,33 +215,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
         ),
         ConversionResult(
             name = "InputType",
-            body = sealedUnionBody(
-                name = "InputType",
-                values = listOf(
-                    "button",
-                    "checkbox",
-                    "color",
-                    "date",
-                    "datetime-local",
-                    "email",
-                    "file",
-                    "hidden",
-                    "image",
-                    "month",
-                    "number",
-                    "password",
-                    "radio",
-                    "range",
-                    "reset",
-                    "search",
-                    "submit",
-                    "tel",
-                    "text",
-                    "time",
-                    "url",
-                    "week",
-                ),
-            ),
+            body = inputTypeBody("InputType"),
             pkg = "web.html",
         ),
         ConversionResult(
@@ -278,3 +253,32 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
             )
         },
     )
+
+private fun inputTypeBody(name: String): String {
+    val commentProvider = object : UnionConverter.CommentProvider {
+        override fun getComment(name: String): String =
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input#input_types)
+             */
+            """.trimIndent()
+
+        override fun getComment(name: String, unionValue: String): String =
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/$unionValue)
+             */
+            """.trimIndent()
+    }
+
+    val values = MDN.root.resolve("html/reference/elements/input")
+        .listFiles { it.isDirectory }
+        .map { it.name }
+        .sorted()
+
+    return sealedUnionBody(
+        name = name,
+        values = values,
+        commentProvider = commentProvider,
+    )
+}
