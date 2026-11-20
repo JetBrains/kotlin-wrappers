@@ -159,17 +159,9 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
         ),
         ConversionResult(
             name = "EnterKeyHint",
-            body = sealedUnionBody(
+            body = unionBody(
                 name = "EnterKeyHint",
-                values = listOf(
-                    "enter",
-                    "done",
-                    "go",
-                    "next",
-                    "previous",
-                    "search",
-                    "send",
-                ),
+                contentPath = "HTMLElement/enterKeyHint",
             ),
             pkg = "web.html",
         ),
@@ -273,16 +265,30 @@ private fun unionValues(
 
 private fun findUnionValues(
     contentPath: String,
-): List<String> =
-    getContent(contentPath)
+): List<String> {
+    val content = getContent(contentPath)
+
+    content
         .substringAfter("## Value\n", "")
         .substringBefore("\n#")
         .substringAfter("value is one of ", "")
         .substringBefore(".", "")
-        .ifEmpty { return emptyList() }
         .splitToSequence("`")
         .filterIndexed { index, _ -> index % 2 == 1 }
         .toList()
+        .takeIf { it.isNotEmpty() }
+        ?.let { return it }
+
+    return content
+        .substringAfter("the following values\nas a string:", "")
+        .substringBefore("\n#", "")
+        .splitToSequence("\n- ")
+        .drop(1)
+        .map { it.substringBefore(" ") }
+        .map { it.removeSurrounding("`") }
+        .map { it.removeSurrounding("'") }
+        .toList()
+}
 
 private fun unionBody(
     name: String,
