@@ -118,18 +118,7 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
         ),
         ConversionResult(
             name = REQUEST_METHOD,
-            body = sealedUnionBody(
-                name = REQUEST_METHOD,
-                values = listOf(
-                    "DELETE",
-                    "GET",
-                    "HEAD",
-                    "OPTIONS",
-                    "PATCH",
-                    "POST",
-                    "PUT",
-                ),
-            ),
+            body = requestMethodBody(REQUEST_METHOD),
             pkg = "web.http",
         ),
         ConversionResult(
@@ -235,6 +224,36 @@ private fun inputTypeBody(name: String): String {
     val values = MDN.root.resolve("html/reference/elements/input")
         .listFiles { it.isDirectory }
         .map { it.name }
+        .sorted()
+
+    return sealedUnionBody(
+        name = name,
+        values = values,
+        commentProvider = commentProvider,
+    )
+}
+
+private fun requestMethodBody(name: String): String {
+    val commentProvider = object : UnionConverter.CommentProvider {
+        override fun getComment(name: String): String =
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/HTTP/Reference/Methods)
+             */
+            """.trimIndent()
+
+        override fun getComment(name: String, unionValue: String): String =
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/HTTP/Reference/Methods/$unionValue)
+             */
+            """.trimIndent()
+    }
+
+    val values = MDN.root.resolve("http/reference/methods")
+        .listFiles { it.isDirectory }
+        .map { it.name.uppercase() }
+        .minus("TRACE")
         .sorted()
 
     return sealedUnionBody(
