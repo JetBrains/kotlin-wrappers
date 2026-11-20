@@ -252,19 +252,19 @@ private fun inputTypeBody(name: String): String {
     )
 }
 
-private fun getValueSection(
+private fun getContent(
     contentPath: String,
 ): String =
     getApiDirectory(contentPath)!!
         .resolve("index.md")
         .readText()
-        .substringAfter("## Value\n", "")
-        .substringBefore("\n#")
 
 private fun unionValues(
     contentPath: String,
 ): List<String> =
-    getValueSection(contentPath)
+    getContent(contentPath)
+        .substringAfter("## Value\n", "")
+        .substringBefore("\n#")
         .splitToSequence("\n")
         .mapNotNull { line -> line.removePrefix("- ").takeIf { it != line } }
         .flatMap { it.splitToSequence(" or ") }
@@ -274,7 +274,9 @@ private fun unionValues(
 private fun findUnionValues(
     contentPath: String,
 ): List<String> =
-    getValueSection(contentPath)
+    getContent(contentPath)
+        .substringAfter("## Value\n", "")
+        .substringBefore("\n#")
         .substringAfter("value is one of ", "")
         .substringBefore(".", "")
         .ifEmpty { return emptyList() }
