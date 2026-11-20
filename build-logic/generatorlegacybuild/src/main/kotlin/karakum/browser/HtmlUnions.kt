@@ -80,16 +80,9 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
     sequenceOf(
         ConversionResult(
             name = AUTO_CAPITALIZE,
-            body = sealedUnionBody(
+            body = unionBody(
                 name = AUTO_CAPITALIZE,
-                values = listOf(
-                    "off",
-                    "none",
-                    "on",
-                    "sentences",
-                    "words",
-                    "characters",
-                ),
+                contentPath = "HTMLElement/autocapitalize",
             ),
             pkg = "web.html",
         ),
@@ -117,13 +110,9 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
         ),
         ConversionResult(
             name = FETCH_PRIORITY,
-            body = sealedUnionBody(
+            body = unionBody(
                 name = FETCH_PRIORITY,
-                values = listOf(
-                    "auto",
-                    "high",
-                    "low",
-                ),
+                contentPath = "HTMLImageElement/fetchPriority",
             ),
             pkg = "web.http",
         ),
@@ -186,30 +175,17 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
         ),
         ConversionResult(
             name = "ImageDecoding",
-            body = sealedUnionBody(
+            body = unionBody(
                 name = "ImageDecoding",
-                values = listOf(
-                    "async",
-                    "sync",
-                    "auto",
-                ),
+                contentPath = "HTMLImageElement/decoding",
             ),
             pkg = "web.html",
         ),
         ConversionResult(
             name = "InputMode",
-            body = sealedUnionBody(
+            body = unionBody(
                 name = "InputMode",
-                values = listOf(
-                    "none",
-                    "text",
-                    "tel",
-                    "url",
-                    "email",
-                    "numeric",
-                    "decimal",
-                    "search",
-                ),
+                contentPath = "HTMLElement/inputMode",
             ),
             pkg = "web.html",
         ),
@@ -220,24 +196,17 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
         ),
         ConversionResult(
             name = "Loading",
-            body = sealedUnionBody(
-                name = "Loading",
-                values = listOf(
-                    "eager",
-                    "lazy",
-                ),
+            body = unionBody(
+                "Loading",
+                "HTMLImageElement/loading",
             ),
             pkg = "web.html",
         ),
         ConversionResult(
             name = "ClosedBy",
-            body = sealedUnionBody(
-                name = "ClosedBy",
-                values = listOf(
-                    "any",
-                    "closerequest",
-                    "none",
-                ),
+            body = unionBody(
+                "ClosedBy",
+                "HTMLDialogElement/closedBy",
             ),
             pkg = "web.html",
         ),
@@ -275,6 +244,70 @@ private fun inputTypeBody(name: String): String {
         .listFiles { it.isDirectory }
         .map { it.name }
         .sorted()
+
+    return sealedUnionBody(
+        name = name,
+        values = values,
+        commentProvider = commentProvider,
+    )
+}
+
+private fun getValueSection(
+    contentPath: String,
+): String =
+    getApiDirectory(contentPath)!!
+        .resolve("index.md")
+        .readText()
+        .substringAfter("## Value\n", "")
+        .substringBefore("\n#")
+
+private fun unionValues(
+    contentPath: String,
+): List<String> =
+    getValueSection(contentPath)
+        .splitToSequence("\n")
+        .mapNotNull { line -> line.removePrefix("- ").takeIf { it != line } }
+        .flatMap { it.splitToSequence(" or ") }
+        .map { it.removeSurrounding("`") }
+        .toList()
+
+private fun findUnionValues(
+    contentPath: String,
+): List<String> =
+    getValueSection(contentPath)
+        .substringAfter("value is one of ", "")
+        .substringBefore(".", "")
+        .ifEmpty { return emptyList() }
+        .splitToSequence("`")
+        .filterIndexed { index, _ -> index % 2 == 1 }
+        .toList()
+
+private fun unionBody(
+    name: String,
+    contentPath: String,
+): String {
+    var values = unionValues(contentPath)
+    var hashPrefix = ""
+    if (values.isEmpty()) {
+        hashPrefix = ":~:text="
+        values = findUnionValues(contentPath)
+    }
+
+    val commentProvider = object : UnionConverter.CommentProvider {
+        override fun getComment(name: String): String =
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$contentPath#value)
+             */
+            """.trimIndent()
+
+        override fun getComment(name: String, unionValue: String): String =
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$contentPath#$hashPrefix$unionValue)
+             */
+            """.trimIndent()
+    }
 
     return sealedUnionBody(
         name = name,
