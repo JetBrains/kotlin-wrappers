@@ -11,6 +11,7 @@ private val UNION_TYPES = listOf(
             "stop-before-partial",
         ),
         pkg = "js.typedarrays",
+        contentPath = "Uint8Array/fromBase64#lastchunkhandling",
     ),
     UnionData(
         name = "Alphabet",
@@ -19,6 +20,7 @@ private val UNION_TYPES = listOf(
             "base64url",
         ),
         pkg = "js.typedarrays",
+        contentPath = "Uint8Array/fromBase64#alphabet",
     ),
     UnionData(
         name = "Overflow",
@@ -27,6 +29,7 @@ private val UNION_TYPES = listOf(
             "reject",
         ),
         pkg = "js.temporal",
+        contentPath = "Temporal/Instant/since",
     ),
     UnionData(
         name = "RoundingMode",
@@ -42,6 +45,7 @@ private val UNION_TYPES = listOf(
             "halfEven",
         ),
         pkg = "js.temporal",
+        contentPath = "Intl/NumberFormat/NumberFormat#roundingmode",
     ),
     UnionData(
         name = "Disambiguation",
@@ -52,6 +56,7 @@ private val UNION_TYPES = listOf(
             "reject",
         ),
         pkg = "js.temporal",
+        contentPath = "Temporal/PlainDateTime/toZonedDateTime#disambiguation",
     ),
     UnionData(
         name = "PrimitiveHint",
@@ -61,6 +66,7 @@ private val UNION_TYPES = listOf(
             "default",
         ),
         pkg = "js.primitive",
+        contentPath = "Symbol/toPrimitive#description",
     ),
 )
 
