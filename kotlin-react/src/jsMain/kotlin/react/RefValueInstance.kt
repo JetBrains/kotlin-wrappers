@@ -1,20 +1,17 @@
-@file:Suppress(
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package react
 
 import kotlin.reflect.KProperty
 
-sealed external interface RefValueInstance<T> {
+value class RefValueInstance<T>(
+    @PublishedApi
+    internal val ref: RefObject<T & Any>,
+) {
     inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,
     ): T {
-        return asDynamic().current
+        @Suppress("UNCHECKED_CAST")
+        return ref.current as T
     }
 
     inline operator fun setValue(
@@ -22,6 +19,6 @@ sealed external interface RefValueInstance<T> {
         property: KProperty<*>,
         value: T,
     ) {
-        asDynamic().current = value
+        ref.current = value
     }
 }
