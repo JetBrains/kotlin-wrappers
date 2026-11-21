@@ -22,4 +22,10 @@ open external class TextDecoder(
         input: AllowSharedBufferSource = definedExternally,
         options: TextDecodeOptions = definedExternally,
     ): String
+
+    /* `TextDecoderCommon` overrides */
+
+    override val encoding: String
+    override val fatal: Boolean
+    override val ignoreBOM: Boolean
 }

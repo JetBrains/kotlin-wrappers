@@ -29,4 +29,8 @@ open external class TextEncoder :
         source: String,
         destination: Uint8Array<ArrayBufferLike>,
     ): TextEncoderEncodeIntoResult
+
+    /* `TextEncoderCommon` overrides */
+
+    override val encoding: String
 }

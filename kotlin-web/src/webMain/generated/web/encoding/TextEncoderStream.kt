@@ -25,4 +25,8 @@ open external class TextEncoderStream :
      * The **`writable`** read-only property of the TextEncoderStream interface returns a WritableStream that accepts strings to be encoded into binary data.
      */
     override val writable: WritableStream<JsString>
+
+    /* `TextEncoderCommon` overrides */
+
+    override val encoding: String
 }

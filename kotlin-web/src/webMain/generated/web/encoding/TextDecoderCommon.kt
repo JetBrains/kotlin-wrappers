@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.encoding
 
 import js.internal.InternalApi
@@ -17,7 +13,6 @@ external interface TextDecoderCommon {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder/encoding)
      */
     val encoding: String
-        get() = definedExternally
 
     /**
      * Returns true if error mode is "fatal", otherwise false.
@@ -25,7 +20,6 @@ external interface TextDecoderCommon {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder/fatal)
      */
     val fatal: Boolean
-        get() = definedExternally
 
     /**
      * Returns the value of ignore BOM.
@@ -33,5 +27,4 @@ external interface TextDecoderCommon {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder/ignoreBOM)
      */
     val ignoreBOM: Boolean
-        get() = definedExternally
 }

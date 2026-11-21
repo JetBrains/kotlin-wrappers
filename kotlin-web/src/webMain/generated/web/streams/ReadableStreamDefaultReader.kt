@@ -2,8 +2,10 @@
 
 package web.streams
 
+import js.errors.JsError
 import js.promise.Promise
 import js.promise.await
+import js.void.Void
 
 /**
  * The **`ReadableStreamDefaultReader`** interface of the Streams API represents a default reader that can be used to read stream data supplied from a network (such as a fetch request).
@@ -27,6 +29,11 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock)
      */
     open fun releaseLock()
+
+    /* `ReadableStreamGenericReader` overrides */
+
+    override val closed: Promise<Void>
+    override fun cancelAsync(reason: JsError?): Promise<Void>
 }
 
 /**

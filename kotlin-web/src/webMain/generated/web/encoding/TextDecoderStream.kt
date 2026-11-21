@@ -26,4 +26,10 @@ open external class TextDecoderStream(
      * The **`writable`** read-only property of the TextDecoderStream interface returns a WritableStream that accepts binary data, in the form of ArrayBuffer, TypedArray, or DataView chunks (SharedArrayBuffer and its views are also allowed), to be decoded into strings.
      */
     override val writable: WritableStream<BufferSource>
+
+    /* `TextDecoderCommon` overrides */
+
+    override val encoding: String
+    override val fatal: Boolean
+    override val ignoreBOM: Boolean
 }

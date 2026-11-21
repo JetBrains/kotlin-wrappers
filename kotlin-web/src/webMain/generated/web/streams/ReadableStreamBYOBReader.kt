@@ -4,9 +4,11 @@ package web.streams
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
+import js.errors.JsError
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
+import js.void.Void
 
 /**
  * The **`ReadableStreamBYOBReader`** interface of the Streams API defines a reader for a ReadableStream that supports zero-copy reading from an underlying byte source. It is used for efficient copying from underlying sources where the data is delivered as an "anonymous" sequence of bytes, such as files.
@@ -33,6 +35,11 @@ open external class ReadableStreamBYOBReader(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
      */
     open fun releaseLock()
+
+    /* `ReadableStreamGenericReader` overrides */
+
+    override val closed: Promise<Void>
+    override fun cancelAsync(reason: JsError?): Promise<Void>
 }
 
 /**

@@ -17,6 +17,9 @@ internal val MIXINS_WITH_REQUIRED_OVERRIDES: Set<String> = setOf(
     "NonElementParentNode",
     "ParentNode",
     "PopoverTargetAttributes",
+    "ReadableStreamGenericReader",
+    "TextDecoderCommon",
+    "TextEncoderCommon",
     "XPathEvaluatorBase",
 )
 
