@@ -535,15 +535,11 @@ private fun String.applyPerformanceFixes(): String =
         .replace(
             "getEntriesByName(name: string, type?: string): PerformanceEntryList;",
             "getEntriesByName(name: string): PerformanceEntryList;\n" +
-                    "    getEntriesByName(name: string, type: PerformanceEntryType<*>): PerformanceEntryList;",
+                    "    getEntriesByName<T extends PerformanceEntry>(name: string, type: PerformanceEntryType<T>): T[];",
         )
         .replace(
             "    getEntriesByType(type: string): PerformanceEntryList;",
-            "    getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList;",
-        )
-        .replace(
-            "    getEntriesByType(type: string): PerformanceEntryList;",
-            "    getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList;",
+            "    getEntriesByType<T extends PerformanceEntry>(type: PerformanceEntryType<T>): T[];",
         )
         .replace(
             "    readonly supportedEntryTypes: ReadonlyArray<string>;",

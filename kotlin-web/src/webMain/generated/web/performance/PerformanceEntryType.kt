@@ -10,7 +10,7 @@ import js.union.JsUnion
  */
 @JsUnion
 sealed /* union */
-external interface PerformanceEntryType<T : PerformanceEntry>
+external interface PerformanceEntryType<out T : PerformanceEntry>
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType#measure)

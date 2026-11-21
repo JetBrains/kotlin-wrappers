@@ -45,7 +45,7 @@ internal fun performanceEntryTypes(): Sequence<ConversionResult> {
          */
         @JsUnion
         sealed /* union */
-        external interface PerformanceEntryType<T : PerformanceEntry>
+        external interface PerformanceEntryType<out T : PerformanceEntry>
         """.trimIndent()
 
     fun getConstantContent(name: String, type: String): String {

@@ -2,6 +2,8 @@
 
 package web.performance
 
+import js.array.ReadonlyArray
+
 /**
  * The **`PerformanceObserverEntryList`** interface is a list of performance events that were explicitly observed via the observe() method.
  *
@@ -22,15 +24,15 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByName)
      */
     open fun getEntriesByName(name: String): PerformanceEntryList
-    open fun getEntriesByName(
+    open fun <T : PerformanceEntry> getEntriesByName(
         name: String,
-        type: PerformanceEntryType<*>,
-    ): PerformanceEntryList
+        type: PerformanceEntryType<T>,
+    ): ReadonlyArray<T>
 
     /**
      * The **`getEntriesByType()`** method of the PerformanceObserverEntryList returns a list of explicitly observed performance entry objects for a given performance entry type. The list's members are determined by the set of entry types specified in the call to the observe() method. The list is available in the observer's callback function (as the first parameter in the callback).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByType)
      */
-    open fun getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList
+    open fun <T : PerformanceEntry> getEntriesByType(type: PerformanceEntryType<T>): ReadonlyArray<T>
 }

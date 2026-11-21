@@ -2,6 +2,7 @@
 
 package web.performance
 
+import js.array.ReadonlyArray
 import js.numbers.UInt53
 import web.errors.DOMExceptionType.DataCloneError
 import web.errors.DOMExceptionType.SyntaxError
@@ -80,17 +81,17 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
      */
     open fun getEntriesByName(name: String): PerformanceEntryList
-    open fun getEntriesByName(
+    open fun <T : PerformanceEntry> getEntriesByName(
         name: String,
-        type: PerformanceEntryType<*>,
-    ): PerformanceEntryList
+        type: PerformanceEntryType<T>,
+    ): ReadonlyArray<T>
 
     /**
      * The **`getEntriesByType()`** method returns an array of PerformanceEntry objects currently present in the performance timeline for a given type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
      */
-    open fun getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList
+    open fun <T : PerformanceEntry> getEntriesByType(type: PerformanceEntryType<T>): ReadonlyArray<T>
 
     /**
      * The **`mark()`** method creates a named PerformanceMark object representing a high resolution timestamp marker in the browser's performance timeline.
