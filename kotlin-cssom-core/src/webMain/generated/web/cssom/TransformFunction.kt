@@ -8,32 +8,32 @@ sealed external interface TransformFunction :
     Transform
 
 inline fun matrix(
-    a: Number,
-    b: Number,
-    c: Number,
-    d: Number,
-    tx: Number,
-    ty: Number,
+    a: Double,
+    b: Double,
+    c: Double,
+    d: Double,
+    tx: Double,
+    ty: Double,
 ): TransformFunction =
     unsafeCast("matrix($a,$b,$c,$d,$tx,$ty)")
 
 inline fun matrix3d(
-    a1: Number,
-    b1: Number,
-    c1: Number,
-    d1: Number,
-    a2: Number,
-    b2: Number,
-    c2: Number,
-    d2: Number,
-    a3: Number,
-    b3: Number,
-    c3: Number,
-    d3: Number,
-    a4: Number,
-    b4: Number,
-    c4: Number,
-    d4: Number,
+    a1: Double,
+    b1: Double,
+    c1: Double,
+    d1: Double,
+    a2: Double,
+    b2: Double,
+    c2: Double,
+    d2: Double,
+    a3: Double,
+    b3: Double,
+    c3: Double,
+    d3: Double,
+    a4: Double,
+    b4: Double,
+    c4: Double,
+    d4: Double,
 ): TransformFunction =
     unsafeCast("matrix3d($a1,$b1,$c1,$d1,$a2,$b2,$c2,$d2,$a3,$b3,$c3,$d3,$a4,$b4,$c4,$d4)")
 
@@ -48,7 +48,7 @@ inline fun rotate(
     unsafeCast("rotate($a)")
 
 inline fun rotate3d(
-    a: Number,
+    a: Double,
 ): TransformFunction =
     unsafeCast("rotate3d($a)")
 
@@ -76,35 +76,35 @@ inline fun rotatez(
     unsafeCast("rotatez($a)")
 
 inline fun scale(
-    sx: Number,
+    sx: Double,
 ): TransformFunction =
     unsafeCast("scale($sx)")
 
 inline fun scale(
-    sx: Number,
-    sy: Number,
+    sx: Double,
+    sy: Double,
 ): TransformFunction =
     unsafeCast("scale($sx,$sy)")
 
 inline fun scale3d(
-    sx: Number,
-    sy: Number,
-    sz: Number,
+    sx: Double,
+    sy: Double,
+    sz: Double,
 ): TransformFunction =
     unsafeCast("scale3d($sx,$sy,$sz)")
 
 inline fun scalex(
-    sx: Number,
+    sx: Double,
 ): TransformFunction =
     unsafeCast("scalex($sx)")
 
 inline fun scaley(
-    sy: Number,
+    sy: Double,
 ): TransformFunction =
     unsafeCast("scaley($sy)")
 
 inline fun scalez(
-    sz: Number,
+    sz: Double,
 ): TransformFunction =
     unsafeCast("scalez($sz)")
 

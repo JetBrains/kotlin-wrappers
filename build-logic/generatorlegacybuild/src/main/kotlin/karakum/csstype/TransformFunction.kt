@@ -13,7 +13,7 @@ private data class Parameter(
 private class TransformFactory(
     val name: String,
     private val parameterNames: String,
-    private val type: String = NUMBER,
+    private val type: String = "Double",
 ) {
     val parameters by lazy {
         parameterNames.splitToSequence(", ")
