@@ -18,10 +18,10 @@ external interface PerformanceObserverInit {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe#entrytypes)
      */
-    var entryTypes: ReadonlyArray<JsString>?
+    var entryTypes: ReadonlyArray<PerformanceEntryType<*>>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe#type)
      */
-    var type: String?
+    var type: PerformanceEntryType<*>?
 }

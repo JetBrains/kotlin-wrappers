@@ -39,6 +39,6 @@ open external class PerformanceObserver(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/supportedEntryTypes_static)
          */
-        val supportedEntryTypes: ReadonlyArray<JsString>
+        val supportedEntryTypes: ReadonlyArray<PerformanceEntryType<*>>
     }
 }

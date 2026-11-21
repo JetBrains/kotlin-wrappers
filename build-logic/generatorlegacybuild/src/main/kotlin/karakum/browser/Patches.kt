@@ -532,6 +532,38 @@ private fun String.applyPerformanceFixes(): String =
     """.trimEnd(),
             "",
         )
+        .replace(
+            "getEntriesByName(name: string, type?: string): PerformanceEntryList;",
+            "getEntriesByName(name: string): PerformanceEntryList;\n" +
+                    "    getEntriesByName(name: string, type: PerformanceEntryType<*>): PerformanceEntryList;",
+        )
+        .replace(
+            "    getEntriesByType(type: string): PerformanceEntryList;",
+            "    getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList;",
+        )
+        .replace(
+            "    getEntriesByType(type: string): PerformanceEntryList;",
+            "    getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList;",
+        )
+        .replace(
+            "    readonly supportedEntryTypes: ReadonlyArray<string>;",
+            "    readonly supportedEntryTypes: ReadonlyArray<PerformanceEntryType<*>>;",
+        )
+        .patchInterface("PerformanceEntry") {
+            it.replace(
+                "    readonly entryType: string;",
+                "    readonly entryType: PerformanceEntryType<*>;",
+            )
+        }
+        .patchInterface("PerformanceObserverInit") {
+            it.replace(
+                "    entryTypes?: string[];",
+                "    entryTypes?: ReadonlyArray<PerformanceEntryType<*>>;",
+            ).replace(
+                "    type?: string;",
+                "    type?: PerformanceEntryType<*>;",
+            )
+        }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
     "DOMQuadInit" to "DOMQuad",

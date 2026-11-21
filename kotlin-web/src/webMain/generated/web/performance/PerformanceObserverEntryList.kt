@@ -21,9 +21,10 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByName)
      */
+    open fun getEntriesByName(name: String): PerformanceEntryList
     open fun getEntriesByName(
         name: String,
-        type: String = definedExternally,
+        type: PerformanceEntryType<*>,
     ): PerformanceEntryList
 
     /**
@@ -31,5 +32,5 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserverEntryList/getEntriesByType)
      */
-    open fun getEntriesByType(type: String): PerformanceEntryList
+    open fun getEntriesByType(type: PerformanceEntryType<*>): PerformanceEntryList
 }
