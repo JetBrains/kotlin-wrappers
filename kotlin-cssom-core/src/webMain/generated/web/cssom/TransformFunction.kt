@@ -53,9 +53,9 @@ inline fun rotate3d(
     unsafeCast("rotate3d($a)")
 
 inline fun rotate3d(
-    x: Number,
-    y: Number,
-    z: Number,
+    x: Double,
+    y: Double,
+    z: Double,
     a: Angle,
 ): TransformFunction =
     unsafeCast("rotate3d($x,$y,$z,$a)")

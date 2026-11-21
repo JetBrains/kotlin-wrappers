@@ -28,7 +28,7 @@ private class TransformFactory(
             TransformFactory("perspective", "d", LENGTH),
             TransformFactory("rotate", "a", ANGLE),
             TransformFactory("rotate3d", "a"),
-            TransformFactory("rotate3d", "x, y, z, a", NUMBER /* a: ANGLE */),
+            TransformFactory("rotate3d", "x, y, z, a", "Double" /* a: ANGLE */),
             TransformFactory("rotatex", "a", ANGLE),
             TransformFactory("rotatey", "a", ANGLE),
             TransformFactory("rotatez", "a", ANGLE),
