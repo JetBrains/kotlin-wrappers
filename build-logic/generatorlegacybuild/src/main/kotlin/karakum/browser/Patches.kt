@@ -521,7 +521,7 @@ private fun String.applyPerformanceFixes(): String =
     getEntriesByName(name: string, type: "mark"): PerformanceMark[];
     getEntriesByName(name: string, type: "measure"): PerformanceMeasure[];
     getEntriesByName(name: string, type: "resource"): PerformanceResourceTiming[];
-""".trimEnd(),
+    """.trimEnd(),
         "",
     )
         .replace(
@@ -529,7 +529,7 @@ private fun String.applyPerformanceFixes(): String =
     getEntriesByType(type: "mark"): PerformanceMark[];
     getEntriesByType(type: "measure"): PerformanceMeasure[];
     getEntriesByType(type: "resource"): PerformanceResourceTiming[];
-""".trimEnd(),
+    """.trimEnd(),
             "",
         )
 
