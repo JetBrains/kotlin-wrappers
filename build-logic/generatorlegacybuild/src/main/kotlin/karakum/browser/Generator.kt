@@ -318,6 +318,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.pip.PictureInPictureWindow",
     "web.pointer.PointerEvent",
     "web.popover.Popover",
+    "web.popover.PopoverTargetAction",
     "web.popover.PopoverTargetAttributes",
     "web.popover.ShowPopoverOptions",
     "web.popover.ToggleEvent",

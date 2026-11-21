@@ -16,6 +16,7 @@ internal val MIXINS_WITH_REQUIRED_OVERRIDES: Set<String> = setOf(
     "HyperlinkElementUtils",
     "NonElementParentNode",
     "ParentNode",
+    "PopoverTargetAttributes",
     "XPathEvaluatorBase",
 )
 

@@ -10,6 +10,7 @@ import web.events.EventInstance
 import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
+import web.popover.PopoverTargetAction
 import web.popover.PopoverTargetAttributes
 import web.validation.ValidityState
 import web.window.WindowName
@@ -156,6 +157,11 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/setCustomValidity)
      */
     open fun setCustomValidity(error: String)
+
+    /* `PopoverTargetAttributes` overrides */
+
+    override var popoverTargetAction: PopoverTargetAction
+    override var popoverTargetElement: Element?
 }
 
 /**

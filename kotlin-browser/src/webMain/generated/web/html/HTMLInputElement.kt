@@ -5,6 +5,7 @@ package web.html
 import js.array.ReadonlyArray
 import js.date.Date
 import web.autofill.AutoFill
+import web.dom.Element
 import web.dom.Node
 import web.dom.NodeList
 import web.errors.DOMExceptionType.*
@@ -16,6 +17,7 @@ import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
 import web.fs.FileSystemEntry
+import web.popover.PopoverTargetAction
 import web.popover.PopoverTargetAttributes
 import web.selection.SelectionDirection
 import web.validation.ValidityState
@@ -436,6 +438,11 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/stepUp)
      */
     open fun stepUp(n: Int = definedExternally)
+
+    /* `PopoverTargetAttributes` overrides */
+
+    override var popoverTargetAction: PopoverTargetAction
+    override var popoverTargetElement: Element?
 }
 
 /**
