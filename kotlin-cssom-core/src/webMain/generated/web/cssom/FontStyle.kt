@@ -13,9 +13,6 @@ sealed external interface FontStyle {
         @JsValue("italic")
         val italic: FontStyle
 
-        @JsValue("normal")
-        val normal: FontStyle
-
         @JsValue("oblique")
         val oblique: FontStyle
     }

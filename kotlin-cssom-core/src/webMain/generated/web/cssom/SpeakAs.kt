@@ -19,9 +19,6 @@ sealed external interface SpeakAs {
         @JsValue("no-punctuation")
         val noPunctuation: SpeakAs
 
-        @JsValue("normal")
-        val normal: SpeakAs
-
         @JsValue("spell-out")
         val spellOut: SpeakAs
     }

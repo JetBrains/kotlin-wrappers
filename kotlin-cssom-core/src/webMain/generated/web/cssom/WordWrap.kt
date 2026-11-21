@@ -12,8 +12,5 @@ sealed external interface WordWrap {
     companion object {
         @JsValue("break-word")
         val breakWord: WordWrap
-
-        @JsValue("normal")
-        val normal: WordWrap
     }
 }

@@ -13,9 +13,6 @@ sealed external interface FontVariantEmoji {
         @JsValue("emoji")
         val emoji: FontVariantEmoji
 
-        @JsValue("normal")
-        val normal: FontVariantEmoji
-
         @JsValue("text")
         val text: FontVariantEmoji
 

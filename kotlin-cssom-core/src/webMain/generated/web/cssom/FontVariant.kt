@@ -70,9 +70,6 @@ sealed external interface FontVariant {
         @JsValue("no-historical-ligatures")
         val noHistoricalLigatures: FontVariant
 
-        @JsValue("normal")
-        val normal: FontVariant
-
         @JsValue("oldstyle-nums")
         val oldstyleNums: FontVariant
 

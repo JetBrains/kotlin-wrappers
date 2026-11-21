@@ -12,8 +12,5 @@ sealed external interface TransitionBehavior {
     companion object {
         @JsValue("allow-discrete")
         val allowDiscrete: TransitionBehavior
-
-        @JsValue("normal")
-        val normal: TransitionBehavior
     }
 }

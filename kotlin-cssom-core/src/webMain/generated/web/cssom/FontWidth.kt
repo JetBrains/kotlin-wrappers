@@ -22,9 +22,6 @@ sealed external interface FontWidth {
         @JsValue("extra-expanded")
         val extraExpanded: FontWidth
 
-        @JsValue("normal")
-        val normal: FontWidth
-
         @JsValue("semi-condensed")
         val semiCondensed: FontWidth
 

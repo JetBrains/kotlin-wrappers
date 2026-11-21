@@ -15,8 +15,5 @@ sealed external interface OverflowWrap {
 
         @JsValue("break-word")
         val breakWord: OverflowWrap
-
-        @JsValue("normal")
-        val normal: OverflowWrap
     }
 }

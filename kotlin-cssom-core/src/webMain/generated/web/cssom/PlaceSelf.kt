@@ -37,9 +37,6 @@ sealed external interface PlaceSelf {
         @JsValue("baseline")
         val baseline: PlaceSelf
 
-        @JsValue("normal")
-        val normal: PlaceSelf
-
         @JsValue("stretch")
         val stretch: PlaceSelf
     }

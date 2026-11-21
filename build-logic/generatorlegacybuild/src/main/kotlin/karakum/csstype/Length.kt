@@ -11,7 +11,6 @@ private val LENGTH_LIKE_VALUES = listOf(
     "max-content",
     "min-content",
     "min-intrinsic",
-    "normal",
 )
 
 internal fun Length(): ConversionResult {

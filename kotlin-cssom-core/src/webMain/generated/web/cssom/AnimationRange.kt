@@ -27,8 +27,5 @@ sealed external interface AnimationRange {
 
         @JsValue("exit-crossing")
         val exitCrossing: AnimationRange
-
-        @JsValue("normal")
-        val normal: AnimationRange
     }
 }

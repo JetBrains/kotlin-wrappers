@@ -10,9 +10,6 @@ import seskar.js.JsValue
 
 sealed external interface TextSpacingTrim {
     companion object {
-        @JsValue("normal")
-        val normal: TextSpacingTrim
-
         @JsValue("space-all")
         val spaceAll: TextSpacingTrim
 

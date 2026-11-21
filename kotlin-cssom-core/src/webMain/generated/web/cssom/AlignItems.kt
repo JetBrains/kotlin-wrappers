@@ -37,9 +37,6 @@ sealed external interface AlignItems {
         @JsValue("baseline")
         val baseline: AlignItems
 
-        @JsValue("normal")
-        val normal: AlignItems
-
         @JsValue("stretch")
         val stretch: AlignItems
     }

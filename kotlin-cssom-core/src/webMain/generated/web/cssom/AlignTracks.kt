@@ -39,8 +39,5 @@ sealed external interface AlignTracks {
 
         @JsValue("baseline")
         val baseline: AlignTracks
-
-        @JsValue("normal")
-        val normal: AlignTracks
     }
 }

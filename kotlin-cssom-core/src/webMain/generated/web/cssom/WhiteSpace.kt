@@ -16,9 +16,6 @@ sealed external interface WhiteSpace {
         @JsValue("collapse")
         val collapse: WhiteSpace
 
-        @JsValue("normal")
-        val normal: WhiteSpace
-
         @JsValue("nowrap")
         val nowrap: WhiteSpace
 

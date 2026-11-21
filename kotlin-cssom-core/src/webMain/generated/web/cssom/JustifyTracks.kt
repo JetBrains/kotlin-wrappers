@@ -40,9 +40,6 @@ sealed external interface JustifyTracks {
         @JsValue("left")
         val left: JustifyTracks
 
-        @JsValue("normal")
-        val normal: JustifyTracks
-
         @JsValue("right")
         val right: JustifyTracks
     }

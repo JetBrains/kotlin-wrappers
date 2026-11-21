@@ -16,9 +16,6 @@ sealed external interface LineBreak {
         @JsValue("loose")
         val loose: LineBreak
 
-        @JsValue("normal")
-        val normal: LineBreak
-
         @JsValue("strict")
         val strict: LineBreak
     }

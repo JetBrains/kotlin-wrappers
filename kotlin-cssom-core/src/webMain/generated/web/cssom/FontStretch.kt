@@ -22,9 +22,6 @@ sealed external interface FontStretch {
         @JsValue("extra-expanded")
         val extraExpanded: FontStretch
 
-        @JsValue("normal")
-        val normal: FontStretch
-
         @JsValue("semi-condensed")
         val semiCondensed: FontStretch
 

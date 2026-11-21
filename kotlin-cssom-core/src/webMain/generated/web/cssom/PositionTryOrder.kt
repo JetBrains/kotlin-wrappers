@@ -21,8 +21,5 @@ sealed external interface PositionTryOrder {
 
         @JsValue("most-width")
         val mostWidth: PositionTryOrder
-
-        @JsValue("normal")
-        val normal: PositionTryOrder
     }
 }

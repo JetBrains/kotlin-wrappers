@@ -13,9 +13,6 @@ sealed external interface ContainerType {
         @JsValue("inline-size")
         val inlineSize: ContainerType
 
-        @JsValue("normal")
-        val normal: ContainerType
-
         @JsValue("scroll-state")
         val scrollState: ContainerType
 

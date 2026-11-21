@@ -16,9 +16,6 @@ sealed external interface AnimationDirection {
         @JsValue("alternate-reverse")
         val alternateReverse: AnimationDirection
 
-        @JsValue("normal")
-        val normal: AnimationDirection
-
         @JsValue("reverse")
         val reverse: AnimationDirection
     }

@@ -33,8 +33,5 @@ sealed external interface FontVariantLigatures {
 
         @JsValue("no-historical-ligatures")
         val noHistoricalLigatures: FontVariantLigatures
-
-        @JsValue("normal")
-        val normal: FontVariantLigatures
     }
 }

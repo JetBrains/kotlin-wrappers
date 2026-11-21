@@ -39,7 +39,7 @@ internal class LengthTypeConsumer : ParentConsumer {
                     .replaceFirstChar(Char::uppercase)
 
                 """
-                    sealed interface $name: 
+                    sealed interface $name:
                         ${it.value.sorted().joinToString(",\n")}
                 """.trimIndent()
             }
@@ -58,8 +58,8 @@ internal class LengthTypeConsumer : ParentConsumer {
         val body = """
             sealed external interface $LENGTH_TYPE:
                 ${lengthTypeParents.joinToString(",\n")} {
-                
-                $childTypes    
+
+                $childTypes
             }
         """.trimIndent()
 

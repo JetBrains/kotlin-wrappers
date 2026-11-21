@@ -37,9 +37,6 @@ sealed external interface AlignSelf {
         @JsValue("baseline")
         val baseline: AlignSelf
 
-        @JsValue("normal")
-        val normal: AlignSelf
-
         @JsValue("stretch")
         val stretch: AlignSelf
     }

@@ -32,6 +32,7 @@ internal fun convertDefinitions(
             }
         }
         .plus(Auto())
+        .plus(Normal())
         .plus(None())
         .plus(ContainerQuery())
         .plus(MediaQuery())
@@ -42,6 +43,7 @@ internal fun convertDefinitions(
     val integerContext = ParentContext(INTEGER)
     val numberContext = ParentContext(NUMBER)
     val autoContext = ParentContext(AUTO)
+    val normalContext = ParentContext(NORMAL)
     val noneContext = ParentContext(NONE)
     val lengthContext = ParentContext(LENGTH_PROPERTY)
     val timeContext = ParentContext(TIME_PROPERTY)
@@ -54,6 +56,7 @@ internal fun convertDefinitions(
         integerContext,
         numberContext,
         autoContext,
+        normalContext,
         noneContext,
         lengthContext,
         timeContext,
@@ -87,6 +90,7 @@ internal fun convertDefinitions(
         StringType(),
         IdentType(),
         AutoType(autoContext),
+        NormalType(normalContext),
         NoneType(noneContext),
         GeometryPosition(geometryPositionContext),
 

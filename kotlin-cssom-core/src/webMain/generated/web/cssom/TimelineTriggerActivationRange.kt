@@ -27,8 +27,5 @@ sealed external interface TimelineTriggerActivationRange {
 
         @JsValue("exit-crossing")
         val exitCrossing: TimelineTriggerActivationRange
-
-        @JsValue("normal")
-        val normal: TimelineTriggerActivationRange
     }
 }

@@ -8,6 +8,7 @@ internal class PropertyConsumer : ParentConsumer {
     ): List<ConversionResult> {
         val typeMap = sequenceOf(
             AUTO_TYPE,
+            NORMAL_TYPE,
             NONE_TYPE,
             COLOR_TYPE,
             GRID_LINE_PROPERTY,

@@ -12,8 +12,5 @@ sealed external interface ScrollSnapStop {
     companion object {
         @JsValue("always")
         val always: ScrollSnapStop
-
-        @JsValue("normal")
-        val normal: ScrollSnapStop
     }
 }

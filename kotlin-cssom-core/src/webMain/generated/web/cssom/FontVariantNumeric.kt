@@ -16,9 +16,6 @@ sealed external interface FontVariantNumeric {
         @JsValue("lining-nums")
         val liningNums: FontVariantNumeric
 
-        @JsValue("normal")
-        val normal: FontVariantNumeric
-
         @JsValue("oldstyle-nums")
         val oldstyleNums: FontVariantNumeric
 

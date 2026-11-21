@@ -37,9 +37,6 @@ sealed external interface PlaceItems {
         @JsValue("baseline")
         val baseline: PlaceItems
 
-        @JsValue("normal")
-        val normal: PlaceItems
-
         @JsValue("stretch")
         val stretch: PlaceItems
     }

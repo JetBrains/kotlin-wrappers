@@ -12,8 +12,5 @@ sealed external interface PositionAnchor {
     companion object {
         @JsValue("match-parent")
         val matchParent: PositionAnchor
-
-        @JsValue("normal")
-        val normal: PositionAnchor
     }
 }

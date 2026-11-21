@@ -13,9 +13,6 @@ sealed external interface FontWeight {
         @JsValue("bold")
         val bold: FontWeight
 
-        @JsValue("normal")
-        val normal: FontWeight
-
         @JsValue("bolder")
         val bolder: FontWeight
 

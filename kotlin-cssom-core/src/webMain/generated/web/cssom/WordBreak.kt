@@ -21,8 +21,5 @@ sealed external interface WordBreak {
 
         @JsValue("keep-all")
         val keepAll: WordBreak
-
-        @JsValue("normal")
-        val normal: WordBreak
     }
 }

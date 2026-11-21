@@ -39,8 +39,5 @@ sealed external interface AlignContent {
 
         @JsValue("baseline")
         val baseline: AlignContent
-
-        @JsValue("normal")
-        val normal: AlignContent
     }
 }

@@ -22,9 +22,6 @@ sealed external interface UnicodeBidi {
         @JsValue("isolate-override")
         val isolateOverride: UnicodeBidi
 
-        @JsValue("normal")
-        val normal: UnicodeBidi
-
         @JsValue("plaintext")
         val plaintext: UnicodeBidi
     }

@@ -40,9 +40,6 @@ sealed external interface Offset {
         @JsValue("stroke-box")
         val strokeBox: Offset
 
-        @JsValue("normal")
-        val normal: Offset
-
         @JsValue("view-box")
         val viewBox: Offset
     }

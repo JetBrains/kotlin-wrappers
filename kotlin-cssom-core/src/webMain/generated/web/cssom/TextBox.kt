@@ -25,9 +25,6 @@ sealed external interface TextBox {
         @JsValue("text")
         val text: TextBox
 
-        @JsValue("normal")
-        val normal: TextBox
-
         @JsValue("trim-both")
         val trimBoth: TextBox
 

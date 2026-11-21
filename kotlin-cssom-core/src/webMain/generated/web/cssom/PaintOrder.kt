@@ -16,9 +16,6 @@ sealed external interface PaintOrder {
         @JsValue("markers")
         val markers: PaintOrder
 
-        @JsValue("normal")
-        val normal: PaintOrder
-
         @JsValue("stroke")
         val stroke: PaintOrder
     }

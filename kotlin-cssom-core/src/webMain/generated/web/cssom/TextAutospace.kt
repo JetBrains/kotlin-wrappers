@@ -27,8 +27,5 @@ sealed external interface TextAutospace {
 
         @JsValue("replace")
         val replace: TextAutospace
-
-        @JsValue("normal")
-        val normal: TextAutospace
     }
 }

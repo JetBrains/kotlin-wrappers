@@ -12,8 +12,5 @@ sealed external interface MathShift {
     companion object {
         @JsValue("compact")
         val compact: MathShift
-
-        @JsValue("normal")
-        val normal: MathShift
     }
 }

@@ -25,9 +25,6 @@ sealed external interface Length : LengthType {
 
         @JsValue("min-intrinsic")
         val minIntrinsic: LengthType.MinIntrinsic
-
-        @JsValue("normal")
-        val normal: LengthType.Normal
     }
 }
 

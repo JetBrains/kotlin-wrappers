@@ -16,9 +16,6 @@ sealed external interface FontVariantCaps {
         @JsValue("all-small-caps")
         val allSmallCaps: FontVariantCaps
 
-        @JsValue("normal")
-        val normal: FontVariantCaps
-
         @JsValue("petite-caps")
         val petiteCaps: FontVariantCaps
 

@@ -25,9 +25,6 @@ sealed external interface ReadingFlow {
         @JsValue("grid-rows")
         val gridRows: ReadingFlow
 
-        @JsValue("normal")
-        val normal: ReadingFlow
-
         @JsValue("source-order")
         val sourceOrder: ReadingFlow
     }

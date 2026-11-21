@@ -15,8 +15,5 @@ sealed external interface ColorScheme {
 
         @JsValue("light")
         val light: ColorScheme
-
-        @JsValue("normal")
-        val normal: ColorScheme
     }
 }

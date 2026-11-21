@@ -39,8 +39,5 @@ sealed external interface PlaceContent {
 
         @JsValue("baseline")
         val baseline: PlaceContent
-
-        @JsValue("normal")
-        val normal: PlaceContent
     }
 }

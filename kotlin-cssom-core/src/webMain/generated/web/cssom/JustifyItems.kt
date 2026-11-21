@@ -43,9 +43,6 @@ sealed external interface JustifyItems {
         @JsValue("legacy")
         val legacy: JustifyItems
 
-        @JsValue("normal")
-        val normal: JustifyItems
-
         @JsValue("right")
         val right: JustifyItems
 

@@ -40,9 +40,6 @@ sealed external interface JustifySelf {
         @JsValue("left")
         val left: JustifySelf
 
-        @JsValue("normal")
-        val normal: JustifySelf
-
         @JsValue("right")
         val right: JustifySelf
 

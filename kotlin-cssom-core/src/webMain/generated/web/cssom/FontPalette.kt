@@ -15,8 +15,5 @@ sealed external interface FontPalette {
 
         @JsValue("light")
         val light: FontPalette
-
-        @JsValue("normal")
-        val normal: FontPalette
     }
 }

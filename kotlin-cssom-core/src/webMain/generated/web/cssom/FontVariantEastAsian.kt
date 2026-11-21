@@ -31,9 +31,6 @@ sealed external interface FontVariantEastAsian {
         @JsValue("full-width")
         val fullWidth: FontVariantEastAsian
 
-        @JsValue("normal")
-        val normal: FontVariantEastAsian
-
         @JsValue("proportional-width")
         val proportionalWidth: FontVariantEastAsian
 

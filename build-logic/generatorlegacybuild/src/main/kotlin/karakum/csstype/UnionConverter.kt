@@ -6,6 +6,7 @@ import karakum.common.JsUnionConverter.unionBodyByConstants
 import karakum.common.UnionConstant
 
 private const val AUTO_VALUE = "\"auto\""
+private const val NORMAL_VALUE = "\"normal\""
 private const val NONE_VALUE = "\"none\""
 private val GEOMETRY_POSITION_ITEMS = GEOMETRY_POSITION_VALUES.map { "\"$it\"" }
 
@@ -155,6 +156,11 @@ internal fun tryToUnion(
     if (AUTO_VALUE in items) {
         comment += "// $AUTO\n"
         items = items - AUTO_VALUE
+    }
+
+    if (NORMAL_VALUE in items) {
+        comment += "// $NORMAL\n"
+        items = items - NORMAL_VALUE
     }
 
     if (NONE_VALUE in items) {

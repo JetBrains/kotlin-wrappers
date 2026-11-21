@@ -12,8 +12,5 @@ sealed external interface MathStyle {
     companion object {
         @JsValue("compact")
         val compact: MathStyle
-
-        @JsValue("normal")
-        val normal: MathStyle
     }
 }
