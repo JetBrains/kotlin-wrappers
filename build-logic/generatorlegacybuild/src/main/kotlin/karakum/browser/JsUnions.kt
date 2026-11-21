@@ -1,7 +1,5 @@
 package karakum.browser
 
-import karakum.common.CommonUnionConverter.unionBody
-
 // Remaining interfaces annotated with @JsValue
 
 private val UNION_TYPES = listOf(
@@ -67,10 +65,4 @@ private val UNION_TYPES = listOf(
 )
 
 internal fun jsUnions(): List<ConversionResult> =
-    UNION_TYPES.map {
-        ConversionResult(
-            name = it.name,
-            body = unionBody(it.name, it.values),
-            pkg = it.pkg,
-        )
-    }
+    UNION_TYPES.map { it.toConversionResult() }

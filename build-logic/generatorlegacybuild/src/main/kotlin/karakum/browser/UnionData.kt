@@ -1,7 +1,19 @@
 package karakum.browser
 
-data class UnionData(
+import karakum.common.CommonUnionConverter.sealedUnionBody
+
+internal data class UnionData(
     val name: String,
     val values: List<String>,
-    val pkg: String,
-)
+    private val pkg: String,
+) {
+    fun toConversionResult(): ConversionResult =
+        ConversionResult(
+            name = name,
+            body = sealedUnionBody(
+                name = name,
+                values = values,
+            ),
+            pkg = pkg,
+        )
+}
