@@ -15,6 +15,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
+import web.push.PushManager
 import web.push.PushManagerAttribute
 
 /**
@@ -116,6 +117,10 @@ private constructor() :
      */
     @JsName("update")
     open fun updateAsync(): Promise<ServiceWorkerRegistration>
+
+    /* `PushManagerAttribute` overrides */
+
+    override val pushManager: PushManager
 }
 
 /**

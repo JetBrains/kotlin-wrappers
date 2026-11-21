@@ -62,4 +62,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/toJSON)
      */
     override fun toJSON(): JsAny
+
+    /* `PaintTimingMixin` overrides */
+
+    override val paintTime: DOMHighResTimeStamp
+    override val presentationTime: DOMHighResTimeStamp?
 }

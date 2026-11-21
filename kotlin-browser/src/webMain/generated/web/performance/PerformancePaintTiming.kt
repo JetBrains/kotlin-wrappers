@@ -2,6 +2,8 @@
 
 package web.performance
 
+import web.time.DOMHighResTimeStamp
+
 /**
  * The **`PerformancePaintTiming`** interface provides timing information about "paint" (also called "render") operations during web page construction. "Paint" refers to conversion of the render tree to on-screen pixels.
  *
@@ -17,4 +19,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformancePaintTiming/toJSON)
      */
     override fun toJSON(): JsAny
+
+    /* `PaintTimingMixin` overrides */
+
+    override val paintTime: DOMHighResTimeStamp
+    override val presentationTime: DOMHighResTimeStamp?
 }
