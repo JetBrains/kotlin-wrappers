@@ -6,6 +6,7 @@ internal data class UnionData(
     val name: String,
     val values: List<String>,
     private val pkg: String,
+    private val contentPath: String = "",
 ) {
     fun toConversionResult(): ConversionResult =
         ConversionResult(

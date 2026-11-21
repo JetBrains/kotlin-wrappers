@@ -23,6 +23,7 @@ internal val UNION_DATA_LIST = listOf(
             "button",
         ),
         pkg = "web.html",
+        contentPath = "HTMLButtonElement/type",
     ),
     UnionData(
         name = "SelectType",
@@ -31,6 +32,7 @@ internal val UNION_DATA_LIST = listOf(
             "select-multiple",
         ),
         pkg = "web.html",
+        contentPath = "HTMLSelectElement/type",
     ),
     UnionData(
         name = PRELOAD,
@@ -40,6 +42,7 @@ internal val UNION_DATA_LIST = listOf(
             "auto",
         ),
         pkg = "web.html",
+        contentPath = "HTMLMediaElement/preload",
     ),
     UnionData(
         name = "DropEffect",
@@ -50,6 +53,7 @@ internal val UNION_DATA_LIST = listOf(
             "move",
         ),
         pkg = "web.data",
+        contentPath = "DataTransfer/dropEffect",
     ),
     UnionData(
         name = "AllowedEffect",
@@ -65,6 +69,7 @@ internal val UNION_DATA_LIST = listOf(
             "uninitialized",
         ),
         pkg = "web.data",
+        contentPath = "DataTransfer/effectAllowed",
     ),
     UnionData(
         name = "CrossOrigin",
@@ -73,6 +78,7 @@ internal val UNION_DATA_LIST = listOf(
             "use-credentials",
         ),
         pkg = "web.http",
+        contentPath = "HTMLScriptElement/crossOrigin",
     ),
 )
 
