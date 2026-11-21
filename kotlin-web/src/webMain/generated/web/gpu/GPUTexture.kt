@@ -81,4 +81,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture/destroy)
      */
     open fun destroy()
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }

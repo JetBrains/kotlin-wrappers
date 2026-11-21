@@ -21,6 +21,10 @@ private constructor() :
      */
     @JsName("getCompilationInfo")
     open fun getCompilationInfoAsync(): Promise<GPUCompilationInfo>
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }
 
 /**

@@ -10,4 +10,9 @@ package web.gpu
  */
 open external class GPUCommandBuffer
 private constructor() :
-    GPUObjectBase
+    GPUObjectBase {
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
+}

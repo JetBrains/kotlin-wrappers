@@ -2,6 +2,10 @@
 
 package web.gpu
 
+import js.array.ReadonlyArray
+import js.buffer.ArrayBufferLike
+import js.typedarrays.Uint32Array
+
 /**
  * The **`GPUComputePassEncoder`** interface of the WebGPU API encodes commands related to controlling the compute shader stage, as issued by a GPUComputePipeline. It forms part of the overall encoding activity of a GPUCommandEncoder.
  * Available only in secure contexts.
@@ -47,4 +51,30 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder/setPipeline)
      */
     open fun setPipeline(pipeline: GPUComputePipeline)
+
+    /* `GPUBindingCommandsMixin` overrides */
+
+    override fun setBindGroup(
+        index: GPUIndex32,
+        bindGroup: GPUBindGroup?,
+        dynamicOffsets: ReadonlyArray<GPUBufferDynamicOffset>,
+    )
+
+    override fun setBindGroup(
+        index: GPUIndex32,
+        bindGroup: GPUBindGroup?,
+        dynamicOffsetsData: Uint32Array<ArrayBufferLike>,
+        dynamicOffsetsDataStart: GPUSize64,
+        dynamicOffsetsDataLength: GPUSize32,
+    )
+
+    /* `GPUDebugCommandsMixin` overrides */
+
+    override fun insertDebugMarker(markerLabel: String)
+    override fun popDebugGroup()
+    override fun pushDebugGroup(groupLabel: String)
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }

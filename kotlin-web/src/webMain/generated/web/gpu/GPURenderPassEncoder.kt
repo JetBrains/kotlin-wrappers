@@ -3,6 +3,8 @@
 package web.gpu
 
 import js.array.ReadonlyArray
+import js.buffer.ArrayBufferLike
+import js.typedarrays.Uint32Array
 
 /**
  * The **`GPURenderPassEncoder`** interface of the WebGPU API encodes commands related to controlling the vertex and fragment shader stages, as issued by a GPURenderPipeline. It forms part of the overall encoding activity of a GPUCommandEncoder.
@@ -82,5 +84,73 @@ private constructor() :
         height: GPUIntegerCoordinate,
         minDepth: Float,
         maxDepth: Float,
+    )
+
+    /* `GPUBindingCommandsMixin` overrides */
+
+    override fun setBindGroup(
+        index: GPUIndex32,
+        bindGroup: GPUBindGroup?,
+        dynamicOffsets: ReadonlyArray<GPUBufferDynamicOffset>,
+    )
+
+    override fun setBindGroup(
+        index: GPUIndex32,
+        bindGroup: GPUBindGroup?,
+        dynamicOffsetsData: Uint32Array<ArrayBufferLike>,
+        dynamicOffsetsDataStart: GPUSize64,
+        dynamicOffsetsDataLength: GPUSize32,
+    )
+
+    /* `GPUDebugCommandsMixin` overrides */
+
+    override fun insertDebugMarker(markerLabel: String)
+    override fun popDebugGroup()
+    override fun pushDebugGroup(groupLabel: String)
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
+
+    /* `GPURenderCommandsMixin` overrides */
+
+    override fun draw(
+        vertexCount: GPUSize32,
+        instanceCount: GPUSize32,
+        firstVertex: GPUSize32,
+        firstInstance: GPUSize32,
+    )
+
+    override fun drawIndexed(
+        indexCount: GPUSize32,
+        instanceCount: GPUSize32,
+        firstIndex: GPUSize32,
+        baseVertex: GPUSignedOffset32,
+        firstInstance: GPUSize32,
+    )
+
+    override fun drawIndexedIndirect(
+        indirectBuffer: GPUBuffer,
+        indirectOffset: GPUSize64,
+    )
+
+    override fun drawIndirect(
+        indirectBuffer: GPUBuffer,
+        indirectOffset: GPUSize64,
+    )
+
+    override fun setIndexBuffer(
+        buffer: GPUBuffer,
+        indexFormat: GPUIndexFormat,
+        offset: GPUSize64,
+        size: GPUSize64,
+    )
+
+    override fun setPipeline(pipeline: GPURenderPipeline)
+    override fun setVertexBuffer(
+        slot: GPUIndex32,
+        buffer: GPUBuffer?,
+        offset: GPUSize64,
+        size: GPUSize64,
     )
 }

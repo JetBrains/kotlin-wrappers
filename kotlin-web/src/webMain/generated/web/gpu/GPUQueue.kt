@@ -73,6 +73,10 @@ private constructor() :
         dataLayout: GPUTexelCopyBufferLayout,
         size: GPUExtent3D,
     )
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }
 
 /**

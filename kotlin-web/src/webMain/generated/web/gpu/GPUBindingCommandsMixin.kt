@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.gpu
 
 import js.array.ReadonlyArray
@@ -21,7 +17,7 @@ external interface GPUBindingCommandsMixin {
         index: GPUIndex32,
         bindGroup: GPUBindGroup?,
         dynamicOffsets: ReadonlyArray<GPUBufferDynamicOffset> = definedExternally,
-    ): Unit = definedExternally
+    )
 
     fun setBindGroup(
         index: GPUIndex32,
@@ -29,5 +25,5 @@ external interface GPUBindingCommandsMixin {
         dynamicOffsetsData: Uint32Array<ArrayBufferLike>,
         dynamicOffsetsDataStart: GPUSize64,
         dynamicOffsetsDataLength: GPUSize32,
-    ): Unit = definedExternally
+    )
 }

@@ -189,6 +189,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/pushErrorScope)
      */
     open fun pushErrorScope(filter: GPUErrorFilter)
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }
 
 /**

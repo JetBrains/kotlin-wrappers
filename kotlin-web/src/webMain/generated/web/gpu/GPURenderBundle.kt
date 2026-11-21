@@ -10,4 +10,9 @@ package web.gpu
  */
 open external class GPURenderBundle
 private constructor() :
-    GPUObjectBase
+    GPUObjectBase {
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
+}

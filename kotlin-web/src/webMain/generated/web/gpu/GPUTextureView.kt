@@ -11,4 +11,9 @@ package web.gpu
 open external class GPUTextureView
 private constructor() :
     GPUObjectBase,
-    GPUBindingResource
+    GPUBindingResource {
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
+}

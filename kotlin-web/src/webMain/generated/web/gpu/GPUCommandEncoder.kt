@@ -108,4 +108,14 @@ private constructor() :
         destination: GPUBuffer,
         destinationOffset: GPUSize64,
     )
+
+    /* `GPUDebugCommandsMixin` overrides */
+
+    override fun insertDebugMarker(markerLabel: String)
+    override fun popDebugGroup()
+    override fun pushDebugGroup(groupLabel: String)
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }

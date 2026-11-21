@@ -31,4 +31,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQuerySet/destroy)
      */
     open fun destroy()
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }

@@ -72,6 +72,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/unmap)
      */
     open fun unmap()
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
 }
 
 /**

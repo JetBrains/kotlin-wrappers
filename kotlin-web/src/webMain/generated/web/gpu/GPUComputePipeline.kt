@@ -11,4 +11,13 @@ package web.gpu
 open external class GPUComputePipeline
 private constructor() :
     GPUObjectBase,
-    GPUPipelineBase
+    GPUPipelineBase {
+
+    /* `GPUObjectBase` overrides */
+
+    override var label: String
+
+    /* `GPUPipelineBase` overrides */
+
+    override fun getBindGroupLayout(index: Int): GPUBindGroupLayout
+}

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.gpu
 
 import js.internal.InternalApi
@@ -19,7 +15,7 @@ external interface GPURenderCommandsMixin {
         instanceCount: GPUSize32 = definedExternally,
         firstVertex: GPUSize32 = definedExternally,
         firstInstance: GPUSize32 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/drawIndexed)
@@ -30,7 +26,7 @@ external interface GPURenderCommandsMixin {
         firstIndex: GPUSize32 = definedExternally,
         baseVertex: GPUSignedOffset32 = definedExternally,
         firstInstance: GPUSize32 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/drawIndexedIndirect)
@@ -38,7 +34,7 @@ external interface GPURenderCommandsMixin {
     fun drawIndexedIndirect(
         indirectBuffer: GPUBuffer,
         indirectOffset: GPUSize64,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/drawIndirect)
@@ -46,7 +42,7 @@ external interface GPURenderCommandsMixin {
     fun drawIndirect(
         indirectBuffer: GPUBuffer,
         indirectOffset: GPUSize64,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/setIndexBuffer)
@@ -56,12 +52,12 @@ external interface GPURenderCommandsMixin {
         indexFormat: GPUIndexFormat,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/setPipeline)
      */
-    fun setPipeline(pipeline: GPURenderPipeline): Unit = definedExternally
+    fun setPipeline(pipeline: GPURenderPipeline)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/setVertexBuffer)
@@ -71,5 +67,5 @@ external interface GPURenderCommandsMixin {
         buffer: GPUBuffer?,
         offset: GPUSize64 = definedExternally,
         size: GPUSize64 = definedExternally,
-    ): Unit = definedExternally
+    )
 }
