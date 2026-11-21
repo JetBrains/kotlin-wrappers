@@ -80,6 +80,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("animation-timing-function")
         val animationTimingFunction: PropertyName<AnimationTimingFunction>
 
+        @JsValue("animation-trigger")
+        val animationTrigger: PropertyName<AnimationTrigger>
+
         @JsValue("appearance")
         val appearance: PropertyName<Appearance>
 
@@ -130,6 +133,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("baseline-shift")
         val baselineShift: PropertyName<BaselineShift>
+
+        @JsValue("baseline-source")
+        val baselineSource: PropertyName<BaselineSource>
 
         @JsValue("block-size")
         val blockSize: PropertyName<BlockSize>
@@ -284,6 +290,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("border-right-width")
         val borderRightWidth: PropertyName<BorderRightWidth>
 
+        @JsValue("border-shape")
+        val borderShape: PropertyName<BorderShape>
+
         @JsValue("border-spacing")
         val borderSpacing: PropertyName<BorderSpacing>
 
@@ -344,6 +353,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("caret")
         val caret: PropertyName<Caret>
 
+        @JsValue("caret-animation")
+        val caretAnimation: PropertyName<CaretAnimation>
+
         @JsValue("caret-color")
         val caretColor: PropertyName<CaretColor>
 
@@ -380,6 +392,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("column-gap")
         val columnGap: PropertyName<ColumnGap>
 
+        @JsValue("column-height")
+        val columnHeight: PropertyName<ColumnHeight>
+
         @JsValue("column-rule")
         val columnRule: PropertyName<ColumnRule>
 
@@ -397,6 +412,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("column-width")
         val columnWidth: PropertyName<ColumnWidth>
+
+        @JsValue("column-wrap")
+        val columnWrap: PropertyName<ColumnWrap>
 
         @JsValue("columns")
         val columns: PropertyName<Columns>
@@ -434,6 +452,57 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("content-visibility")
         val contentVisibility: PropertyName<ContentVisibility>
 
+        @JsValue("corner-block-end-shape")
+        val cornerBlockEndShape: PropertyName<CornerBlockEndShape>
+
+        @JsValue("corner-block-start-shape")
+        val cornerBlockStartShape: PropertyName<CornerBlockStartShape>
+
+        @JsValue("corner-bottom-left-shape")
+        val cornerBottomLeftShape: PropertyName<CornerBottomLeftShape>
+
+        @JsValue("corner-bottom-right-shape")
+        val cornerBottomRightShape: PropertyName<CornerBottomRightShape>
+
+        @JsValue("corner-bottom-shape")
+        val cornerBottomShape: PropertyName<CornerBottomShape>
+
+        @JsValue("corner-end-end-shape")
+        val cornerEndEndShape: PropertyName<CornerEndEndShape>
+
+        @JsValue("corner-end-start-shape")
+        val cornerEndStartShape: PropertyName<CornerEndStartShape>
+
+        @JsValue("corner-inline-end-shape")
+        val cornerInlineEndShape: PropertyName<CornerInlineEndShape>
+
+        @JsValue("corner-inline-start-shape")
+        val cornerInlineStartShape: PropertyName<CornerInlineStartShape>
+
+        @JsValue("corner-left-shape")
+        val cornerLeftShape: PropertyName<CornerLeftShape>
+
+        @JsValue("corner-right-shape")
+        val cornerRightShape: PropertyName<CornerRightShape>
+
+        @JsValue("corner-shape")
+        val cornerShape: PropertyName<CornerShape>
+
+        @JsValue("corner-start-end-shape")
+        val cornerStartEndShape: PropertyName<CornerStartEndShape>
+
+        @JsValue("corner-start-start-shape")
+        val cornerStartStartShape: PropertyName<CornerStartStartShape>
+
+        @JsValue("corner-top-left-shape")
+        val cornerTopLeftShape: PropertyName<CornerTopLeftShape>
+
+        @JsValue("corner-top-right-shape")
+        val cornerTopRightShape: PropertyName<CornerTopRightShape>
+
+        @JsValue("corner-top-shape")
+        val cornerTopShape: PropertyName<CornerTopShape>
+
         @JsValue("counter-increment")
         val counterIncrement: PropertyName<CounterIncrement>
 
@@ -463,6 +532,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("dominant-baseline")
         val dominantBaseline: PropertyName<DominantBaseline>
+
+        @JsValue("dynamic-range-limit")
+        val dynamicRangeLimit: PropertyName<DynamicRangeLimit>
 
         @JsValue("empty-cells")
         val emptyCells: PropertyName<EmptyCells>
@@ -496,6 +568,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("flex-grow")
         val flexGrow: PropertyName<FlexGrow>
+
+        @JsValue("flex-line-count")
+        val flexLineCount: PropertyName<FlexLineCount>
 
         @JsValue("flex-shrink")
         val flexShrink: PropertyName<FlexShrink>
@@ -595,6 +670,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("forced-color-adjust")
         val forcedColorAdjust: PropertyName<ForcedColorAdjust>
+
+        @JsValue("frame-sizing")
+        val frameSizing: PropertyName<FrameSizing>
 
         @JsValue("gap")
         val gap: PropertyName<Gap>
@@ -698,6 +776,18 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("inset-inline-start")
         val insetInlineStart: PropertyName<InsetInlineStart>
 
+        @JsValue("interactivity")
+        val interactivity: PropertyName<Interactivity>
+
+        @JsValue("interest-delay")
+        val interestDelay: PropertyName<InterestDelay>
+
+        @JsValue("interest-delay-end")
+        val interestDelayEnd: PropertyName<InterestDelayEnd>
+
+        @JsValue("interest-delay-start")
+        val interestDelayStart: PropertyName<InterestDelayStart>
+
         @JsValue("interpolate-size")
         val interpolateSize: PropertyName<InterpolateSize>
 
@@ -736,6 +826,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("line-height-step")
         val lineHeightStep: PropertyName<LineHeightStep>
+
+        @JsValue("link-parameters")
+        val linkParameters: PropertyName<LinkParameters>
 
         @JsValue("list-style")
         val listStyle: PropertyName<ListStyle>
@@ -1040,6 +1133,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("paint-order")
         val paintOrder: PropertyName<PaintOrder>
 
+        @JsValue("path-length")
+        val pathLength: PropertyName<PathLength>
+
         @JsValue("perspective")
         val perspective: PropertyName<Perspective>
 
@@ -1088,6 +1184,12 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("r")
         val r: PropertyName<R>
 
+        @JsValue("reading-flow")
+        val readingFlow: PropertyName<ReadingFlow>
+
+        @JsValue("reading-order")
+        val readingOrder: PropertyName<ReadingOrder>
+
         @JsValue("resize")
         val resize: PropertyName<Resize>
 
@@ -1120,6 +1222,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("scale")
         val scale: PropertyName<Scale>
+
+        @JsValue("scroll-axis-lock")
+        val scrollAxisLock: PropertyName<ScrollAxisLock>
 
         @JsValue("scroll-behavior")
         val scrollBehavior: PropertyName<ScrollBehavior>
@@ -1159,6 +1264,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("scroll-margin-top")
         val scrollMarginTop: PropertyName<ScrollMarginTop>
+
+        @JsValue("scroll-marker-group")
+        val scrollMarkerGroup: PropertyName<ScrollMarkerGroup>
 
         @JsValue("scroll-padding")
         val scrollPadding: PropertyName<ScrollPadding>
@@ -1216,6 +1324,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("scroll-snap-type")
         val scrollSnapType: PropertyName<ScrollSnapType>
+
+        @JsValue("scroll-target-group")
+        val scrollTargetGroup: PropertyName<ScrollTargetGroup>
 
         @JsValue("scroll-timeline")
         val scrollTimeline: PropertyName<ScrollTimeline>
@@ -1319,11 +1430,11 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("text-decoration-color")
         val textDecorationColor: PropertyName<TextDecorationColor>
 
+        @JsValue("text-decoration-inset")
+        val textDecorationInset: PropertyName<TextDecorationInset>
+
         @JsValue("text-decoration-line")
         val textDecorationLine: PropertyName<TextDecorationLine>
-
-        @JsValue("text-decoration-skip")
-        val textDecorationSkip: PropertyName<TextDecorationSkip>
 
         @JsValue("text-decoration-skip-ink")
         val textDecorationSkipInk: PropertyName<TextDecorationSkipInk>
@@ -1345,6 +1456,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("text-emphasis-style")
         val textEmphasisStyle: PropertyName<TextEmphasisStyle>
+
+        @JsValue("text-fit")
+        val textFit: PropertyName<TextFit>
 
         @JsValue("text-indent")
         val textIndent: PropertyName<TextIndent>
@@ -1391,6 +1505,33 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("timeline-scope")
         val timelineScope: PropertyName<TimelineScope>
 
+        @JsValue("timeline-trigger")
+        val timelineTrigger: PropertyName<TimelineTrigger>
+
+        @JsValue("timeline-trigger-activation-range")
+        val timelineTriggerActivationRange: PropertyName<TimelineTriggerActivationRange>
+
+        @JsValue("timeline-trigger-activation-range-end")
+        val timelineTriggerActivationRangeEnd: PropertyName<TimelineTriggerActivationRangeEnd>
+
+        @JsValue("timeline-trigger-activation-range-start")
+        val timelineTriggerActivationRangeStart: PropertyName<TimelineTriggerActivationRangeStart>
+
+        @JsValue("timeline-trigger-active-range")
+        val timelineTriggerActiveRange: PropertyName<TimelineTriggerActiveRange>
+
+        @JsValue("timeline-trigger-active-range-end")
+        val timelineTriggerActiveRangeEnd: PropertyName<TimelineTriggerActiveRangeEnd>
+
+        @JsValue("timeline-trigger-active-range-start")
+        val timelineTriggerActiveRangeStart: PropertyName<TimelineTriggerActiveRangeStart>
+
+        @JsValue("timeline-trigger-name")
+        val timelineTriggerName: PropertyName<TimelineTriggerName>
+
+        @JsValue("timeline-trigger-source")
+        val timelineTriggerSource: PropertyName<TimelineTriggerSource>
+
         @JsValue("top")
         val top: PropertyName<Top>
 
@@ -1430,6 +1571,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("translate")
         val translate: PropertyName<Translate>
 
+        @JsValue("trigger-scope")
+        val triggerScope: PropertyName<TriggerScope>
+
         @JsValue("unicode-bidi")
         val unicodeBidi: PropertyName<UnicodeBidi>
 
@@ -1460,6 +1604,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("view-transition-name")
         val viewTransitionName: PropertyName<ViewTransitionName>
 
+        @JsValue("view-transition-scope")
+        val viewTransitionScope: PropertyName<ViewTransitionScope>
+
         @JsValue("visibility")
         val visibility: PropertyName<Visibility>
 
@@ -1477,6 +1624,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("will-change")
         val willChange: PropertyName<WillChange>
+
+        @JsValue("window-drag")
+        val windowDrag: PropertyName<WindowDrag>
 
         @JsValue("word-break")
         val wordBreak: PropertyName<WordBreak>

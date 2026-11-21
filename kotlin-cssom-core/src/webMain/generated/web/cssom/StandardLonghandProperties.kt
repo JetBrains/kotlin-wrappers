@@ -12,7 +12,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   93   |   92    |   15.4   |   93   | No  |
+     *    |   93   |   92    |   26.2   |   93   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/accent-color">MDN</a>
      */
@@ -74,7 +74,7 @@ external interface StandardLonghandProperties {
     var alignTracks: AlignTracks?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since March 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `baseline | alphabetic | ideographic | middle | central | mathematical | text-before-edge | text-after-edge`
      *
@@ -82,22 +82,22 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox | Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :-----: | :----: | :-: |
-     *    |   1    |   No    |   5.1   |   79   | No  |
+     *    |   1    |   149   |   5.1   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/alignment-baseline">MDN</a>
      */
     var alignmentBaseline: AlignmentBaseline?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since January 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `none | <dashed-ident>#`
      *
      * **Initial value**: `none`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   125   |   preview   |   26   |   125   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   125   |   147   |   26   |   125   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/anchor-name">MDN</a>
      */
@@ -108,14 +108,16 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `none`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   131   |   preview   |   26   |   131   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   131   |   147   |   26   |   131   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/anchor-scope">MDN</a>
      */
     var anchorScope: AnchorScope?
 
     /**
-     * Since July 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2023.
      *
      * **Syntax**: `<single-animation-composition>#`
      *
@@ -242,7 +244,7 @@ external interface StandardLonghandProperties {
     var animationPlayState: AnimationPlayState?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
      *
@@ -250,14 +252,14 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-range-end">MDN</a>
      */
     var animationRangeEnd: AnimationRange?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
      *
@@ -265,14 +267,14 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-range-start">MDN</a>
      */
     var animationRangeStart: AnimationRange?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `<single-animation-timeline>#`
      *
@@ -280,7 +282,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-timeline">MDN</a>
      */
@@ -301,6 +303,21 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-timing-function">MDN</a>
      */
     var animationTimingFunction: AnimationTimingFunction?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ none | [ <dashed-ident> <animation-action>+ ]+ ]#`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-trigger">MDN</a>
+     */
+    var animationTrigger: AnimationTrigger?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
@@ -527,9 +544,26 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox | Safari |  Edge  | IE  |
      *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   1    |   No    |   4    |   79   | No  |
+     *    |   1    |   149   |   4    |   79   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-shift">MDN</a>
      */
     var baselineShift: BaselineShift?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `auto | first | last`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   111   |   115   |   No   |   111   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-source">MDN</a>
+     */
+    var baselineSource: BaselineSource?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
@@ -762,7 +796,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
-     * **Syntax**: `[ <length [0,∞]> | <number [0,∞]> ]{1,4}  `
+     * **Syntax**: `[ <length [0,∞]> | <number [0,∞]> ]{1,4}`
      *
      * **Initial value**: `0`
      *
@@ -792,7 +826,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
-     * **Syntax**: `[ <number [0,∞]> | <percentage [0,∞]> ]{1,4}  && fill?`
+     * **Syntax**: `[ <number [0,∞]> | <percentage [0,∞]> ]{1,4} && fill?`
      *
      * **Initial value**: `100%`
      *
@@ -1018,6 +1052,21 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right-width">MDN</a>
      */
     var borderRightWidth: BorderRightWidth?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `none | [ <basic-shape> <geometry-box>?]{1,2}`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   147   |   No    |   No   |   147   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-shape">MDN</a>
+     */
+    var borderShape: BorderShape?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
@@ -1265,6 +1314,21 @@ external interface StandardLonghandProperties {
     var captionSide: CaptionSide?
 
     /**
+     * The **`caret-animation`** CSS property is used to enable or disable the blinking behavior of the **insertion caret**, the visible marker that appears in editable elements to indicate where the next character will be inserted or deleted.
+     *
+     * **Syntax**: `auto | manual`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   140   |   No    |   No   |   140   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-animation">MDN</a>
+     */
+    var caretAnimation: CaretAnimation?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
      *
      * **Syntax**: `auto | <color>`
@@ -1284,9 +1348,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   No   |   No    |   No   |  No  | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   144   |   No    |   No   |   144   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-shape">MDN</a>
      */
@@ -1447,6 +1511,21 @@ external interface StandardLonghandProperties {
     var columnGap: ColumnGap?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `auto | <length [0,∞]>`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   145   |   No    |   No   |   145   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-height">MDN</a>
+     */
+    var columnHeight: ColumnHeight?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
      *
      * **Syntax**: `<color>`
@@ -1465,7 +1544,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
      *
-     * **Syntax**: `<'border-style'>`
+     * **Syntax**: `<line-style>`
      *
      * **Initial value**: `none`
      *
@@ -1481,7 +1560,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
      *
-     * **Syntax**: `<'border-width'>`
+     * **Syntax**: `<line-width>`
      *
      * **Initial value**: `medium`
      *
@@ -1513,7 +1592,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2016.
      *
-     * **Syntax**: `<length> | auto`
+     * **Syntax**: `auto | <length [0,∞]>`
      *
      * **Initial value**: `auto`
      *
@@ -1525,6 +1604,21 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-width">MDN</a>
      */
     var columnWidth: ColumnWidth?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `auto | nowrap | wrap`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   145   |   No    |   No   |   145   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-wrap">MDN</a>
+     */
+    var columnWrap: ColumnWrap?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
@@ -1542,7 +1636,7 @@ external interface StandardLonghandProperties {
     var contain: Contain?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `auto? [ none | <length> ]`
      *
@@ -1557,7 +1651,7 @@ external interface StandardLonghandProperties {
     var containIntrinsicBlockSize: ContainIntrinsicBlockSize?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `auto? [ none | <length> ]`
      *
@@ -1572,7 +1666,7 @@ external interface StandardLonghandProperties {
     var containIntrinsicHeight: ContainIntrinsicHeight?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `auto? [ none | <length> ]`
      *
@@ -1587,7 +1681,7 @@ external interface StandardLonghandProperties {
     var containIntrinsicInlineSize: ContainIntrinsicInlineSize?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `auto? [ none | <length> ]`
      *
@@ -1662,6 +1756,126 @@ external interface StandardLonghandProperties {
     var contentVisibility: ContentVisibility?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-left-shape">MDN</a>
+     */
+    var cornerBottomLeftShape: CornerBottomLeftShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-right-shape">MDN</a>
+     */
+    var cornerBottomRightShape: CornerBottomRightShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-end-shape">MDN</a>
+     */
+    var cornerEndEndShape: CornerEndEndShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-start-shape">MDN</a>
+     */
+    var cornerEndStartShape: CornerEndStartShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-end-shape">MDN</a>
+     */
+    var cornerStartEndShape: CornerStartEndShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-start-shape">MDN</a>
+     */
+    var cornerStartStartShape: CornerStartStartShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-left-shape">MDN</a>
+     */
+    var cornerTopLeftShape: CornerTopLeftShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>`
+     *
+     * **Initial value**: `round`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-right-shape">MDN</a>
+     */
+    var cornerTopRightShape: CornerTopRightShape?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
      * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
@@ -1692,7 +1906,7 @@ external interface StandardLonghandProperties {
     var counterReset: CounterReset?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `[ <counter-name> <integer>? ]+ | none`
      *
@@ -1812,6 +2026,21 @@ external interface StandardLonghandProperties {
     var dominantBaseline: DominantBaseline?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `standard | no-limit | constrained | <dynamic-range-limit-mix()>`
+     *
+     * **Initial value**: `no-limit`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   136   |   No    |   26   |   136   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dynamic-range-limit">MDN</a>
+     */
+    var dynamicRangeLimit: DynamicRangeLimit?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
      * **Syntax**: `show | hide`
@@ -1827,15 +2056,15 @@ external interface StandardLonghandProperties {
     var emptyCells: EmptyCells?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since June 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `content | fixed`
      *
      * **Initial value**: `fixed`
      *
-     *    | Chrome  | Firefox |   Safari    |  Edge   | IE  |
-     *    | :-----: | :-----: | :---------: | :-----: | :-: |
-     *    |   123   |   No    |   preview   |   123   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   123   |   152   |   26.2   |   123   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/field-sizing">MDN</a>
      */
@@ -1951,6 +2180,21 @@ external interface StandardLonghandProperties {
     var flexGrow: FlexGrow?
 
     /**
+     * The **`flex-line-count`** CSS property sets the minimum number of flex lines that flex items will be balanced over in cases where a flex container's `flex-wrap` or `flex-flow` property includes the `balance` keyword.
+     *
+     * **Syntax**: `<integer [1,∞]>`
+     *
+     * **Initial value**: `1`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   150   |   No    |   No   |   150   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-line-count">MDN</a>
+     */
+    var flexLineCount: FlexLineCount?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
      *
      * **Syntax**: `<number>`
@@ -1969,7 +2213,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
      *
-     * **Syntax**: `nowrap | wrap | wrap-reverse`
+     * **Syntax**: `nowrap | [ wrap | wrap-reverse ] || balance`
      *
      * **Initial value**: `nowrap`
      *
@@ -2043,7 +2287,7 @@ external interface StandardLonghandProperties {
     var fontFamily: FontFamily?
 
     /**
-     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2017.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2016.
      *
      * **Syntax**: `normal | <feature-tag-value>#`
      *
@@ -2051,7 +2295,7 @@ external interface StandardLonghandProperties {
      *
      *    |  Chrome  | Firefox  | Safari  |  Edge  |   IE   |
      *    | :------: | :------: | :-----: | :----: | :----: |
-     *    |    48    |    34    |   9.1   |   15   |   10   |
+     *    |    48    |    34    |   9.1   |   12   |   10   |
      *    |    16′   |    15′   |         |        |        |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-feature-settings">MDN</a>
@@ -2322,9 +2566,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `normal`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   131   |   141   |   No   |   131   | No  |
+     *    | Chrome  | Firefox |   Safari    |  Edge   | IE  |
+     *    | :-----: | :-----: | :---------: | :-----: | :-: |
+     *    |   131   |   141   |   preview   |   131   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-emoji">MDN</a>
      */
@@ -2362,15 +2606,15 @@ external interface StandardLonghandProperties {
     var fontVariantNumeric: FontVariantNumeric?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `normal | sub | super`
      *
      * **Initial value**: `normal`
      *
-     *    | Chrome | Firefox | Safari  | Edge | IE  |
-     *    | :----: | :-----: | :-----: | :--: | :-: |
-     *    |   No   |   34    |   9.1   |  No  | No  |
+     *    | Chrome  | Firefox | Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :-----: | :-----: | :-: |
+     *    |   117   |   34    |   9.1   |   117   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-position">MDN</a>
      */
@@ -2413,7 +2657,9 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome | Firefox |  Safari  | Edge | IE  |
      *    | :----: | :-----: | :------: | :--: | :-: |
-     *    |   No   |   No    |   18.4   |  No  | No  |
+     *    |   No   |   155   |   18.4   |  No  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-width">MDN</a>
      */
     var fontWidth: FontWidth?
 
@@ -2432,6 +2678,21 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/forced-color-adjust">MDN</a>
      */
     var forcedColorAdjust: ForcedColorAdjust?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `auto | content-width | content-height | content-block-size | content-inline-size`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   154   |   No    |   No   |   154   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/frame-sizing">MDN</a>
+     */
+    var frameSizing: FrameSizing?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2020.
@@ -2590,9 +2851,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `none`
      *
-     *    | Chrome | Firefox | Safari | Edge | IE  |
-     *    | :----: | :-----: | :----: | :--: | :-: |
-     *    |   No   |   No    |   10   |  No  | No  |
+     *    | Chrome | Firefox |  Safari  | Edge | IE  |
+     *    | :----: | :-----: | :------: | :--: | :-: |
+     *    |   No   |   No    |   26.5   |  No  | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hanging-punctuation">MDN</a>
      */
@@ -2614,7 +2875,7 @@ external interface StandardLonghandProperties {
     var height: Height?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `auto | <string>`
      *
@@ -2636,16 +2897,16 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   109   |   137   |   No   |   109   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   109   |   137   |   27.3   |   109   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphenate-limit-chars">MDN</a>
      */
     var hyphenateLimitChars: HyphenateLimitChars?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `none | manual | auto`
      *
@@ -2800,13 +3061,58 @@ external interface StandardLonghandProperties {
     /**
      * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
+     * **Syntax**: `auto | inert`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   135   |   No    |   No   |   135   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interactivity">MDN</a>
+     */
+    var interactivity: Interactivity?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `normal | <time>`
+     *
+     * **Initial value**: `normal`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   142   |   No    |   No   |   142   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-end">MDN</a>
+     */
+    var interestDelayEnd: InterestDelayEnd?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `normal | <time>`
+     *
+     * **Initial value**: `normal`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   142   |   No    |   No   |   142   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-start">MDN</a>
+     */
+    var interestDelayStart: InterestDelayStart?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
      * **Syntax**: `numeric-only | allow-keywords`
      *
      * **Initial value**: `numeric-only`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   129   |   No    |   No   |   129   | No  |
+     *    | Chrome  | Firefox |   Safari    |  Edge   | IE  |
+     *    | :-----: | :-----: | :---------: | :-----: | :-: |
+     *    |   129   |   No    |   preview   |   129   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interpolate-size">MDN</a>
      */
@@ -2966,6 +3272,21 @@ external interface StandardLonghandProperties {
     var lineHeightStep: LineHeightStep?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `none | <param()>#`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome |   Firefox   |   Safari    | Edge | IE  |
+     *    | :----: | :---------: | :---------: | :--: | :-: |
+     *    |   No   |   preview   |   preview   |  No  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/link-parameters">MDN</a>
+     */
+    var linkParameters: LinkParameters?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
      * **Syntax**: `<image> | none`
@@ -3017,9 +3338,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    |           Chrome           | Firefox |            Safari            |  Edge  | IE  |
+     *    | :------------------------: | :-----: | :--------------------------: | :----: | :-: |
+     *    |             69             |   41    |             12.1             |   79   | No  |
+     *    | 8 _(-webkit-margin-after)_ |         | 5.1 _(-webkit-margin-after)_ |        |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-block-end">MDN</a>
      */
@@ -3032,9 +3354,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `0`
      *
-     *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
-     *    | :----: | :-----: | :------: | :----: | :-: |
-     *    |   69   |   41    |   12.1   |   79   | No  |
+     *    |           Chrome            | Firefox |            Safari             |  Edge  | IE  |
+     *    | :-------------------------: | :-----: | :---------------------------: | :----: | :-: |
+     *    |             69              |   41    |             12.1              |   79   | No  |
+     *    | 8 _(-webkit-margin-before)_ |         | 5.1 _(-webkit-margin-before)_ |        |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-block-start">MDN</a>
      */
@@ -3139,9 +3462,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `none`
      *
-     *    | Chrome | Firefox |  Safari  | Edge | IE  |
-     *    | :----: | :-----: | :------: | :--: | :-: |
-     *    |   No   |   No    |   16.4   |  No  | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   155   |   No    |   16.4   |   155   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-trim">MDN</a>
      */
@@ -3295,7 +3618,7 @@ external interface StandardLonghandProperties {
     var maskBorderWidth: MaskBorderWidth?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `[ <coord-box> | no-clip ]#`
      *
@@ -3311,7 +3634,7 @@ external interface StandardLonghandProperties {
     var maskClip: MaskClip?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<compositing-operator>#`
      *
@@ -3326,7 +3649,7 @@ external interface StandardLonghandProperties {
     var maskComposite: MaskComposite?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<mask-reference>#`
      *
@@ -3342,7 +3665,7 @@ external interface StandardLonghandProperties {
     var maskImage: MaskImage?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `<masking-mode>#`
      *
@@ -3357,7 +3680,7 @@ external interface StandardLonghandProperties {
     var maskMode: MaskMode?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<coord-box>#`
      *
@@ -3373,7 +3696,7 @@ external interface StandardLonghandProperties {
     var maskOrigin: MaskOrigin?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<position>#`
      *
@@ -3389,7 +3712,7 @@ external interface StandardLonghandProperties {
     var maskPosition: MaskPosition?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<repeat-style>#`
      *
@@ -3405,7 +3728,7 @@ external interface StandardLonghandProperties {
     var maskRepeat: MaskRepeat?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<bg-size>#`
      *
@@ -3445,37 +3768,37 @@ external interface StandardLonghandProperties {
     var masonryAutoFlow: MasonryAutoFlow?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since March 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `auto-add | add(<integer>) | <integer>`
      *
      * **Initial value**: `0`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   109   |   117   |   No   |   109   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   109   |   117   |   26.4   |   109   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/math-depth">MDN</a>
      */
     var mathDepth: MathDepth?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since December 2025, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `normal | compact`
      *
      * **Initial value**: `normal`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   109   |   No    |   No   |   109   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   109   |   146   |   26.2   |   109   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/math-shift">MDN</a>
      */
     var mathShift: MathShift?
 
     /**
-     * Since August 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2023.
      *
      * **Syntax**: `normal | compact`
      *
@@ -3539,6 +3862,10 @@ external interface StandardLonghandProperties {
      * **Syntax**: `none | <integer>`
      *
      * **Initial value**: `none`
+     *
+     *    | Chrome | Firefox |   Safari    | Edge | IE  |
+     *    | :----: | :-----: | :---------: | :--: | :-: |
+     *    |   No   |   No    |   preview   |  No  | No  |
      */
     var maxLines: MaxLines?
 
@@ -3715,16 +4042,16 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `none`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   104   |   No    |   No   |   104   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   104   |   No    |   27.3   |   104   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/object-view-box">MDN</a>
      */
     var objectViewBox: ObjectViewBox?
 
     /**
-     * Since August 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since August 2023.
      *
      * **Syntax**: `auto | <position>`
      *
@@ -3771,7 +4098,7 @@ external interface StandardLonghandProperties {
     var offsetPath: OffsetPath?
 
     /**
-     * Since January 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2024.
      *
      * **Syntax**: `normal | auto | <position>`
      *
@@ -3924,15 +4251,15 @@ external interface StandardLonghandProperties {
     var outlineWidth: OutlineWidth?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since September 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `auto | none`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox |   Safari    |  Edge  | IE  |
-     *    | :----: | :-----: | :---------: | :----: | :-: |
-     *    |   56   |   66    |   preview   |   79   | No  |
+     *    | Chrome | Firefox | Safari |  Edge  | IE  |
+     *    | :----: | :-----: | :----: | :----: | :-: |
+     *    |   56   |   66    |   27   |   79   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-anchor">MDN</a>
      */
@@ -4052,60 +4379,60 @@ external interface StandardLonghandProperties {
     var overlay: Overlay?
 
     /**
-     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `contain | none | auto`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   77   |   73    |   16   |   79   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   144   |   150   |   16   |   144   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overscroll-behavior-block">MDN</a>
      */
     var overscrollBehaviorBlock: OverscrollBehavior?
 
     /**
-     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `contain | none | auto`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   77   |   73    |   16   |   79   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   144   |   150   |   16   |   144   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overscroll-behavior-inline">MDN</a>
      */
     var overscrollBehaviorInline: OverscrollBehavior?
 
     /**
-     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `contain | none | auto`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   63   |   59    |   16   |   18   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge  | IE  |
+     *    | :-----: | :-----: | :----: | :----: | :-: |
+     *    |   144   |   150   |   16   |   18   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overscroll-behavior-x">MDN</a>
      */
     var overscrollBehaviorX: OverscrollBehavior?
 
     /**
-     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `contain | none | auto`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   63   |   59    |   16   |   18   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge  | IE  |
+     *    | :-----: | :-----: | :----: | :----: | :-: |
+     *    |   144   |   150   |   16   |   18   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overscroll-behavior-y">MDN</a>
      */
@@ -4249,7 +4576,7 @@ external interface StandardLonghandProperties {
     var page: Page?
 
     /**
-     * Since March 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
      *
      * **Syntax**: `normal | [ fill || stroke || markers ]`
      *
@@ -4262,6 +4589,21 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/paint-order">MDN</a>
      */
     var paintOrder: PaintOrder?
+
+    /**
+     * The **`path-length`** CSS property specifies a total path length, in user units. All path computations are then scaled using the ratio `path-length` / _(computed value of path length)_ — this includes text paths, animation paths, and various stroke operations.
+     *
+     * **Syntax**: `none | <length> [0,∞]`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome | Firefox | Safari | Edge | IE  |
+     *    | :----: | :-----: | :----: | :--: | :-: |
+     *    |   No   |   No    |   No   |  No  | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/path-length">MDN</a>
+     */
+    var pathLength: PathLength?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
@@ -4326,52 +4668,52 @@ external interface StandardLonghandProperties {
     var position: Position?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since September 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
-     * **Syntax**: `auto | <anchor-name>`
+     * **Syntax**: `normal | auto | none | <anchor-name> | match-parent`
      *
-     * **Initial value**: `auto`
+     * **Initial value**: `normal`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   125   |   preview   |   26   |   125   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   151   |   151   |   27   |   151   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-anchor">MDN</a>
      */
     var positionAnchor: PositionAnchor?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since January 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `none | <position-area>`
      *
      * **Initial value**: `none`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   129   |   preview   |   26   |   129   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   129   |   147   |   26   |   129   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-area">MDN</a>
      */
     var positionArea: PositionArea?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since January 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `none | [ [<dashed-ident> || <try-tactic>] | <'position-area'> ]#`
      *
      * **Initial value**: `none`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   128   |   preview   |   26   |   128   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   128   |   147   |   26   |   128   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try-fallbacks">MDN</a>
      */
     var positionTryFallbacks: PositionTryFallbacks?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since February 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `normal | <try-size>`
      *
@@ -4379,22 +4721,22 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   125   |   No    |   26   |   125   | No  |
+     *    |   125   |   148   |   26   |   125   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try-order">MDN</a>
      */
     var positionTryOrder: PositionTryOrder?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since January 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `always | [ anchors-valid || anchors-visible || no-overflow ]`
      *
      * **Initial value**: `anchors-visible`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   125   |   preview   |   No   |   125   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   125   |   147   |   26.2   |   125   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-visibility">MDN</a>
      */
@@ -4445,6 +4787,36 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/r">MDN</a>
      */
     var r: R?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `normal | source-order | flex-visual | flex-flow | grid-rows | grid-columns | grid-order`
+     *
+     * **Initial value**: `normal`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   137   |   No    |   No   |   137   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-flow">MDN</a>
+     */
+    var readingFlow: ReadingFlow?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<integer>`
+     *
+     * **Initial value**: `0`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   137   |   No    |   No   |   137   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-order">MDN</a>
+     */
+    var readingOrder: ReadingOrder?
 
     /**
      * This feature is not Baseline because it does not work in some of the most widely-used browsers.
@@ -4533,9 +4905,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox |  Safari  | Edge | IE  |
-     *    | :----: | :-----: | :------: | :--: | :-: |
-     *    |   No   |   No    |   18.2   |  No  | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   151   |   No    |   18.2   |   151   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ruby-overhang">MDN</a>
      */
@@ -4558,11 +4930,11 @@ external interface StandardLonghandProperties {
     var rubyPosition: RubyPosition?
 
     /**
-     * Since March 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
      *
-     * **Syntax**: `<length> | <percentage>`
+     * **Syntax**: `<length-percentage> | auto`
      *
-     * **Initial value**: `0`
+     * **Initial value**: `auto`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -4573,11 +4945,11 @@ external interface StandardLonghandProperties {
     var rx: Rx?
 
     /**
-     * Since March 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
      *
-     * **Syntax**: `<length> | <percentage>`
+     * **Syntax**: `<length-percentage> | auto`
      *
-     * **Initial value**: `0`
+     * **Initial value**: `auto`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -4603,6 +4975,17 @@ external interface StandardLonghandProperties {
     var scale: Scale?
 
     /**
+     * **Syntax**: `auto | none`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari | Edge | IE  |
+     *    | :-----: | :-----: | :----: | :--: | :-: |
+     *    |   153   |   No    |   No   |  No  | No  |
+     */
+    var scrollAxisLock: ScrollAxisLock?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
      *
      * **Syntax**: `auto | smooth`
@@ -4625,6 +5008,8 @@ external interface StandardLonghandProperties {
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
      *    |   133   |   No    |   No   |   133   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-initial-target">MDN</a>
      */
     var scrollInitialTarget: ScrollInitialTarget?
 
@@ -4751,6 +5136,21 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-top">MDN</a>
      */
     var scrollMarginTop: ScrollMarginTop?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `none | before | after`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   135   |   No    |   No   |   135   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-marker-group">MDN</a>
+     */
+    var scrollMarkerGroup: ScrollMarkerGroup?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2021.
@@ -4985,20 +5385,35 @@ external interface StandardLonghandProperties {
     /**
      * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
+     * **Syntax**: `none | auto`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   140   |   No    |   No   |   140   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-target-group">MDN</a>
+     */
+    var scrollTargetGroup: ScrollTargetGroup?
+
+    /**
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     *
      * **Syntax**: `[ block | inline | x | y ]#`
      *
      * **Initial value**: `block`
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline-axis">MDN</a>
      */
     var scrollTimelineAxis: ScrollTimelineAxis?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ none | <dashed-ident> ]#`
      *
@@ -5006,22 +5421,22 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline-name">MDN</a>
      */
     var scrollTimelineName: ScrollTimelineName?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since December 2025, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `auto | <color>{2}`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
-     *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   121   |   64    |   No   |   121   | No  |
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   121   |   64    |   26.2   |   121   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scrollbar-color">MDN</a>
      */
@@ -5366,7 +5781,7 @@ external interface StandardLonghandProperties {
     var textAnchor: TextAnchor?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since November 2025, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `normal | <autospace> | auto`
      *
@@ -5387,7 +5802,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
      *    | :-----: | :-----: | :------: | :-----: | :-: |
-     *    |   133   |   No    |   18.2   |   133   | No  |
+     *    |   133   |   154   |   18.2   |   133   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-box">MDN</a>
      */
@@ -5400,7 +5815,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
      *    | :-----: | :-----: | :------: | :-----: | :-: |
-     *    |   133   |   No    |   18.2   |   133   | No  |
+     *    |   133   |   154   |   18.2   |   133   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-box-edge">MDN</a>
      */
@@ -5413,7 +5828,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
      *    | :-----: | :-----: | :------: | :-----: | :-: |
-     *    |   133   |   No    |   18.2   |   133   | No  |
+     *    |   133   |   154   |   18.2   |   133   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-box-trim">MDN</a>
      */
@@ -5452,6 +5867,21 @@ external interface StandardLonghandProperties {
     var textDecorationColor: TextDecorationColor?
 
     /**
+     * The **`text-decoration-inset`** CSS property enables adjusting the start and end points of an element's text decoration so it can be shortened, lengthened, or have its position shifted with respect to the rendered text.
+     *
+     * **Syntax**: `<length-percentage>{1,2} | auto`
+     *
+     * **Initial value**: `0`
+     *
+     *    | Chrome  | Firefox |  Safari  |  Edge   | IE  |
+     *    | :-----: | :-----: | :------: | :-----: | :-: |
+     *    |   157   |   146   |   27.3   |   157   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-inset">MDN</a>
+     */
+    var textDecorationInset: TextDecorationInset?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
      *
      * **Syntax**: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
@@ -5466,22 +5896,6 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-line">MDN</a>
      */
     var textDecorationLine: TextDecorationLine?
-
-    /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
-     *
-     * **Syntax**: `none | [ objects || [ spaces | [ leading-spaces || trailing-spaces ] ] || edges || box-decoration ]`
-     *
-     * **Initial value**: `objects`
-     *
-     *    | Chrome | Firefox |  Safari  | Edge | IE  |
-     *    | :----: | :-----: | :------: | :--: | :-: |
-     *    | 57-64  |   No    |   12.1   |  No  | No  |
-     *    |        |         |    7′    |      |     |
-     *
-     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-skip">MDN</a>
-     */
-    var textDecorationSkip: TextDecorationSkip?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2022.
@@ -5517,7 +5931,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2021.
      *
-     * **Syntax**: `auto | from-font | <length> | <percentage> `
+     * **Syntax**: `auto | from-font | <length> | <percentage>`
      *
      * **Initial value**: `auto`
      *
@@ -5578,6 +5992,21 @@ external interface StandardLonghandProperties {
     var textEmphasisStyle: TextEmphasisStyle?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ none | grow | shrink ] [consistent | per-line | per-line-all]? <percentage>?`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   150   |   No    |   No   |   150   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit">MDN</a>
+     */
+    var textFit: TextFit?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
      * **Syntax**: `<length-percentage> && hanging? && each-line?`
@@ -5599,9 +6028,9 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari | Edge  |   IE   |
-     *    | :----: | :-----: | :----: | :---: | :----: |
-     *    |   No   |   55    |   No   | 12-79 |   11   |
+     *    | Chrome  | Firefox | Safari | Edge  |   IE   |
+     *    | :-----: | :-----: | :----: | :---: | :----: |
+     *    |   145   |   55    |   No   | 12-79 |   11   |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-justify">MDN</a>
      */
@@ -5716,7 +6145,7 @@ external interface StandardLonghandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since November 2020.
      *
-     * **Syntax**: `auto | <length> | <percentage> `
+     * **Syntax**: `auto | <length> | <percentage>`
      *
      * **Initial value**: `auto`
      *
@@ -5775,6 +6204,81 @@ external interface StandardLonghandProperties {
     var textWrapStyle: TextWrapStyle?
 
     /**
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     *
+     * **Syntax**: `none | <dashed-ident>#`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   116   |   159   |   26   |   116   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-scope">MDN</a>
+     */
+    var timelineScope: TimelineScope?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+     *
+     * **Initial value**: `normal`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-end">MDN</a>
+     */
+    var timelineTriggerActivationRangeEnd: TimelineTriggerActivationRangeEnd?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+     *
+     * **Initial value**: `normal`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-start">MDN</a>
+     */
+    var timelineTriggerActivationRangeStart: TimelineTriggerActivationRangeStart?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-end">MDN</a>
+     */
+    var timelineTriggerActiveRangeEnd: TimelineTriggerActiveRangeEnd?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-start">MDN</a>
+     */
+    var timelineTriggerActiveRangeStart: TimelineTriggerActiveRangeStart?
+
+    /**
      * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `none | <dashed-ident>#`
@@ -5783,11 +6287,26 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   116   |   No    |   26   |   116   | No  |
+     *    |   146   |   No    |   No   |   146   | No  |
      *
-     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-scope">MDN</a>
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-name">MDN</a>
      */
-    var timelineScope: TimelineScope?
+    var timelineTriggerName: TimelineTriggerName?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<single-animation-timeline>#`
+     *
+     * **Initial value**: `auto`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-source">MDN</a>
+     */
+    var timelineTriggerSource: TimelineTriggerSource?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
@@ -5884,7 +6403,7 @@ external interface StandardLonghandProperties {
     var transformStyle: TransformStyle?
 
     /**
-     * Since August 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `<transition-behavior-value>#`
      *
@@ -5978,6 +6497,21 @@ external interface StandardLonghandProperties {
     var translate: Translate?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `none | all | <dashed-ident>#`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/trigger-scope">MDN</a>
+     */
+    var triggerScope: TriggerScope?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
      * **Syntax**: `normal | embed | isolate | bidi-override | isolate-override | plaintext`
@@ -5999,10 +6533,10 @@ external interface StandardLonghandProperties {
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome  | Firefox |   Safari    |   Edge   |      IE      |
-     *    | :-----: | :-----: | :---------: | :------: | :----------: |
-     *    |   54    |   69    |       3′    |    79    |       10′    |
-     *    |    1′   |    1′   |             |    12′   |              |
+     *    | Chrome  | Firefox |  Safari  |   Edge   |      IE      |
+     *    | :-----: | :-----: | :------: | :------: | :----------: |
+     *    |   54    |   69    |   27.3   |    79    |       10′    |
+     *    |    1′   |    1′   |    3′    |    12′   |              |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/user-select">MDN</a>
      */
@@ -6039,7 +6573,7 @@ external interface StandardLonghandProperties {
     var verticalAlign: VerticalAlign?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ block | inline | x | y ]#`
      *
@@ -6047,14 +6581,14 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline-axis">MDN</a>
      */
     var viewTimelineAxis: ViewTimelineAxis?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ [ auto | <length-percentage> ]{1,2} ]#`
      *
@@ -6062,14 +6596,14 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline-inset">MDN</a>
      */
     var viewTimelineInset: ViewTimelineInset?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ none | <dashed-ident> ]#`
      *
@@ -6077,7 +6611,7 @@ external interface StandardLonghandProperties {
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline-name">MDN</a>
      */
@@ -6112,6 +6646,21 @@ external interface StandardLonghandProperties {
     var viewTransitionName: ViewTransitionName?
 
     /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `none | all`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   147   |   No    |   No   |   147   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-transition-scope">MDN</a>
+     */
+    var viewTransitionScope: ViewTransitionScope?
+
+    /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.
      *
      * **Syntax**: `visible | hidden | collapse`
@@ -6142,7 +6691,7 @@ external interface StandardLonghandProperties {
     var whiteSpace: WhiteSpace?
 
     /**
-     * Since March 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
      *
      * **Syntax**: `collapse | preserve | preserve-breaks | preserve-spaces | break-spaces`
      *
@@ -6200,6 +6749,17 @@ external interface StandardLonghandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/will-change">MDN</a>
      */
     var willChange: WillChange?
+
+    /**
+     * **Syntax**: `none | move`
+     *
+     * **Initial value**: `none`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   152   |   No    |   No   |   152   | No  |
+     */
+    var windowDrag: WindowDrag?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since July 2015.

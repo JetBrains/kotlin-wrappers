@@ -10,6 +10,9 @@ import seskar.js.JsValue
 
 sealed external interface FlexWrap {
     companion object {
+        @JsValue("balance")
+        val balance: FlexWrap
+
         @JsValue("nowrap")
         val nowrap: FlexWrap
 

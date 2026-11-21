@@ -33,13 +33,13 @@ external interface StandardShorthandProperties {
     var animation: Animation?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ <'animation-range-start'> <'animation-range-end'>? ]#`
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-range">MDN</a>
      */
@@ -89,7 +89,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
      *
-     * **Syntax**: `<'border-block-start'>`
+     * **Syntax**: `<'border-top'>`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -104,8 +104,6 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-color'>{1,2}`
      *
-     * **Initial value**: `currentcolor`
-     *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
      *    |   87   |   66    |   14.1   |   87   | No  |
@@ -117,7 +115,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
      *
-     * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
+     * **Syntax**: `<'border-top'>`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -130,7 +128,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
      *
-     * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
+     * **Syntax**: `<'border-top'>`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -145,8 +143,6 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-style'>{1,2}`
      *
-     * **Initial value**: `none`
-     *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
      *    |   87   |   66    |   14.1   |   87   | No  |
@@ -159,8 +155,6 @@ external interface StandardShorthandProperties {
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
      *
      * **Syntax**: `<'border-top-width'>{1,2}`
-     *
-     * **Initial value**: `medium`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -213,7 +207,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
      *
-     * **Syntax**: `<'border-block-start'>`
+     * **Syntax**: `<'border-top'>`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -228,8 +222,6 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-color'>{1,2}`
      *
-     * **Initial value**: `currentcolor`
-     *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
      *    |   87   |   66    |   14.1   |   87   | No  |
@@ -241,7 +233,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
      *
-     * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
+     * **Syntax**: `<'border-top'>`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -254,7 +246,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since January 2020.
      *
-     * **Syntax**: `<'border-top-width'> || <'border-top-style'> || <color>`
+     * **Syntax**: `<'border-top'>`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -269,8 +261,6 @@ external interface StandardShorthandProperties {
      *
      * **Syntax**: `<'border-top-style'>{1,2}`
      *
-     * **Initial value**: `none`
-     *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
      *    |   87   |   66    |   14.1   |   87   | No  |
@@ -283,8 +273,6 @@ external interface StandardShorthandProperties {
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since April 2021.
      *
      * **Syntax**: `<'border-top-width'>{1,2}`
-     *
-     * **Initial value**: `medium`
      *
      *    | Chrome | Firefox |  Safari  |  Edge  | IE  |
      *    | :----: | :-----: | :------: | :----: | :-: |
@@ -373,7 +361,7 @@ external interface StandardShorthandProperties {
      */
     var borderWidth: BorderWidth?
 
-    /** **Syntax**: `<'caret-color'> || <'caret-shape'>` */
+    /** **Syntax**: `<'caret-color'> || <'caret-animation'> || <'caret-shape'>` */
     var caret: Caret?
 
     /**
@@ -393,7 +381,7 @@ external interface StandardShorthandProperties {
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2017.
      *
-     * **Syntax**: `<'column-width'> || <'column-count'>`
+     * **Syntax**: `[ <'column-width'> || <'column-count'> ] [ / <'column-height'> ]?`
      *
      *    | Chrome | Firefox | Safari  |  Edge  |   IE   |
      *    | :----: | :-----: | :-----: | :----: | :----: |
@@ -405,7 +393,7 @@ external interface StandardShorthandProperties {
     var columns: Columns?
 
     /**
-     * Since September 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2023.
      *
      * **Syntax**: `[ auto? [ none | <length> ] ]{1,2}`
      *
@@ -429,6 +417,123 @@ external interface StandardShorthandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container">MDN</a>
      */
     var container: Container?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape">MDN</a>
+     */
+    var cornerBlockEndShape: CornerBlockEndShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-start-shape">MDN</a>
+     */
+    var cornerBlockStartShape: CornerBlockStartShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape">MDN</a>
+     */
+    var cornerBottomShape: CornerBottomShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-end-shape">MDN</a>
+     */
+    var cornerInlineEndShape: CornerInlineEndShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-start-shape">MDN</a>
+     */
+    var cornerInlineStartShape: CornerInlineStartShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape">MDN</a>
+     */
+    var cornerLeftShape: CornerLeftShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-right-shape">MDN</a>
+     */
+    var cornerRightShape: CornerRightShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,4}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-shape">MDN</a>
+     */
+    var cornerShape: CornerShape?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `<corner-shape-value>{1,2}`
+     *
+     *    | Chrome  |   Firefox   |  Safari  |  Edge   | IE  |
+     *    | :-----: | :---------: | :------: | :-----: | :-: |
+     *    |   139   |   preview   |   27.3   |   139   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape">MDN</a>
+     */
+    var cornerTopShape: CornerTopShape?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
@@ -591,13 +696,26 @@ external interface StandardShorthandProperties {
     /**
      * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
+     * **Syntax**: `<'interest-delay-start'>{1,2}`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   142   |   No    |   No   |   142   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay">MDN</a>
+     */
+    var interestDelay: InterestDelay?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
      * **Syntax**: `none | <integer>`
      *
      * **Initial value**: `none`
      *
      *    |   Chrome    |   Firefox    |  Safari   |     Edge     | IE  |
      *    | :---------: | :----------: | :-------: | :----------: | :-: |
-     *    |       6′    |       68′    | 18.2-18.4 |       17′    | No  |
+     *    |       6′    |       68′    | 18.2-18.4 |       79′    | No  |
      *    |             |              |     5′    |              |     |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/line-clamp">MDN</a>
@@ -657,7 +775,7 @@ external interface StandardShorthandProperties {
     var marginInline: MarginInline?
 
     /**
-     * Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since December 2023.
      *
      * **Syntax**: `<mask-layer>#`
      *
@@ -741,15 +859,15 @@ external interface StandardShorthandProperties {
     var overflow: Overflow?
 
     /**
-     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2022.
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
      *
      * **Syntax**: `[ contain | none | auto ]{1,2}`
      *
      * **Initial value**: `auto`
      *
-     *    | Chrome | Firefox | Safari |  Edge  | IE  |
-     *    | :----: | :-----: | :----: | :----: | :-: |
-     *    |   63   |   59    |   16   |   18   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge  | IE  |
+     *    | :-----: | :-----: | :----: | :----: | :-: |
+     *    |   144   |   150   |   16   |   18   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overscroll-behavior">MDN</a>
      */
@@ -834,13 +952,13 @@ external interface StandardShorthandProperties {
     var placeSelf: PlaceSelf?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since January 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `<'position-try-order'>? <'position-try-fallbacks'>`
      *
-     *    | Chrome  |   Firefox   | Safari |  Edge   | IE  |
-     *    | :-----: | :---------: | :----: | :-----: | :-: |
-     *    |   125   |   preview   |   26   |   125   | No  |
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   125   |   147   |   26   |   125   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try">MDN</a>
      */
@@ -940,13 +1058,13 @@ external interface StandardShorthandProperties {
     var scrollSnapMargin: ScrollMargin?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ <'scroll-timeline-name'> <'scroll-timeline-axis'>? ]#`
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline">MDN</a>
      */
@@ -980,7 +1098,7 @@ external interface StandardShorthandProperties {
     var textEmphasis: TextEmphasis?
 
     /**
-     * Since March 2024, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
+     * This feature is well established and works across many devices and browser versions. It’s been available across browsers since March 2024.
      *
      * **Syntax**: `<'text-wrap-mode'> || <'text-wrap-style'>`
      *
@@ -993,6 +1111,45 @@ external interface StandardShorthandProperties {
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap">MDN</a>
      */
     var textWrap: TextWrap?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `none | [ <'timeline-trigger-name'> <'timeline-trigger-source'> <'timeline-trigger-activation-range'> [ '/' <'timeline-trigger-active-range'> ]? ]#`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger">MDN</a>
+     */
+    var timelineTrigger: TimelineTrigger?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ <'timeline-trigger-activation-range-start'> <'timeline-trigger-activation-range-end'>? ]#`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range">MDN</a>
+     */
+    var timelineTriggerActivationRange: TimelineTriggerActivationRange?
+
+    /**
+     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     *
+     * **Syntax**: `[ <'timeline-trigger-active-range-start'> <'timeline-trigger-active-range-end'>? ]#`
+     *
+     *    | Chrome  | Firefox | Safari |  Edge   | IE  |
+     *    | :-----: | :-----: | :----: | :-----: | :-: |
+     *    |   146   |   No    |   No   |   146   | No  |
+     *
+     * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range">MDN</a>
+     */
+    var timelineTriggerActiveRange: TimelineTriggerActiveRange?
 
     /**
      * This feature is well established and works across many devices and browser versions. It’s been available across browsers since September 2015.
@@ -1009,13 +1166,13 @@ external interface StandardShorthandProperties {
     var transition: Transition?
 
     /**
-     * This feature is not Baseline because it does not work in some of the most widely-used browsers.
+     * Since October 2026, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.
      *
      * **Syntax**: `[ <'view-timeline-name'> [ <'view-timeline-axis'> || <'view-timeline-inset'> ]? ]#`
      *
      *    | Chrome  | Firefox | Safari |  Edge   | IE  |
      *    | :-----: | :-----: | :----: | :-----: | :-: |
-     *    |   115   |   No    |   26   |   115   | No  |
+     *    |   115   |   159   |   26   |   115   | No  |
      *
      * @see <a href="https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline">MDN</a>
      */

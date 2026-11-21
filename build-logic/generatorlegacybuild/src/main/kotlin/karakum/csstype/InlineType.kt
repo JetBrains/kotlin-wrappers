@@ -11,6 +11,7 @@ internal fun String.inlineTypes(): String =
         .inlineType("DisplayLegacy")
         .inlineType("GenericComplete")
         .inlineType("GenericIncomplete")
+        .inlineType("SelfPosition2")
         .inlineType("SelfPosition")
         .inlineType("ContentDistribution")
         .inlineType("ContentPosition")
@@ -54,6 +55,7 @@ internal fun String.inlineTypes(): String =
         .inlineType("SingleAnimationComposition")
         .inlineType("SingleAnimationTimeline")
         .inlineType("TimelineRangeName")
+        .inlineType("CornerShapeValue")
 
 
 private fun String.inlineType(

@@ -10,6 +10,9 @@ import seskar.js.JsValue
 
 sealed external interface FlexFlow {
     companion object {
+        @JsValue("balance")
+        val balance: FlexFlow
+
         @JsValue("column")
         val column: FlexFlow
 

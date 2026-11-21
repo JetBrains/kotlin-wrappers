@@ -2,4 +2,4 @@
 
 package web.cssom
 
-typealias Ry = LengthProperty
+typealias Ry = AutoLengthProperty

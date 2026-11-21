@@ -320,6 +320,19 @@ private fun convertUnion(
             source = source.replaceFirst("Color", COLOR_PROPERTY),
         )
 
+    if (name.startsWith("Corner")
+        && name.endsWith("Shape")
+        && name != CORNER_SHAPE
+    ) return ConversionResult(name, "typealias $name = $CORNER_SHAPE")
+
+    sequenceOf(
+        "InterestDelay",
+        "TimelineTriggerActivationRange",
+        "TimelineTriggerActiveRange",
+    ).filter { name.startsWith(it) }
+        .filter { name != it }
+        .forEach { return ConversionResult(name, "typealias $name = $it") }
+
     if (name == BACKGROUND && "| Color " in source)
         return convertUnion(
             name = name,
@@ -439,6 +452,9 @@ private val INT_TYPES = setOf(
 
     "GlyphOrientationVertical",
     "StrokeMiterlimit",
+
+    "FlexLineCount",
+    "ReadingOrder",
 )
 
 private val DOUBLE_TYPES = setOf(

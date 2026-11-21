@@ -79,6 +79,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[autofocus]")
         val autofocus: HtmlAttributes
 
+        @JsValue("[autolocate]")
+        val autolocate: HtmlAttributes
+
         @JsValue("[autoplay]")
         val autoplay: HtmlAttributes
 
@@ -169,6 +172,12 @@ sealed external interface HtmlAttributes {
         @JsValue("[compact]")
         val compact: HtmlAttributes
 
+        @JsValue("[containertiming]")
+        val containertiming: HtmlAttributes
+
+        @JsValue("[containertimingignore]")
+        val containertimingignore: HtmlAttributes
+
         @JsValue("[content]")
         val content: HtmlAttributes
 
@@ -238,6 +247,12 @@ sealed external interface HtmlAttributes {
         @JsValue("[draggable]")
         val draggable: HtmlAttributes
 
+        @JsValue("[drawable]")
+        val drawable: HtmlAttributes
+
+        @JsValue("[elementtiming]")
+        val elementtiming: HtmlAttributes
+
         @JsValue("[enctype]")
         val enctype: HtmlAttributes
 
@@ -252,6 +267,12 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[fetchpriority]")
         val fetchpriority: HtmlAttributes
+
+        @JsValue("[focusgroup]")
+        val focusgroup: HtmlAttributes
+
+        @JsValue("[focusgroupstart]")
+        val focusgroupstart: HtmlAttributes
 
         @JsValue("[for]")
         val `for`: HtmlAttributes
@@ -282,6 +303,12 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[headers]")
         val headers: HtmlAttributes
+
+        @JsValue("[headingoffset]")
+        val headingoffset: HtmlAttributes
+
+        @JsValue("[headingreset]")
+        val headingreset: HtmlAttributes
 
         @JsValue("[height]")
         val height: HtmlAttributes
@@ -325,6 +352,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[integrity]")
         val integrity: HtmlAttributes
 
+        @JsValue("[interestfor]")
+        val interestfor: HtmlAttributes
+
         @JsValue("[is]")
         val `is`: HtmlAttributes
 
@@ -360,6 +390,12 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[low]")
         val low: HtmlAttributes
+
+        @JsValue("[manifestId]")
+        val manifestId: HtmlAttributes
+
+        @JsValue("[manifest]")
+        val manifest: HtmlAttributes
 
         @JsValue("[marginheight]")
         val marginheight: HtmlAttributes
@@ -517,14 +553,23 @@ sealed external interface HtmlAttributes {
         @JsValue("[shadowrootclonable]")
         val shadowrootclonable: HtmlAttributes
 
+        @JsValue("[shadowrootcustomelementregistry]")
+        val shadowrootcustomelementregistry: HtmlAttributes
+
         @JsValue("[shadowrootdelegatesfocus]")
         val shadowrootdelegatesfocus: HtmlAttributes
 
         @JsValue("[shadowrootmode]")
         val shadowrootmode: HtmlAttributes
 
+        @JsValue("[shadowrootreferencetarget]")
+        val shadowrootreferencetarget: HtmlAttributes
+
         @JsValue("[shadowrootserializable]")
         val shadowrootserializable: HtmlAttributes
+
+        @JsValue("[shadowrootslotassignment]")
+        val shadowrootslotassignment: HtmlAttributes
 
         @JsValue("[shape]")
         val shape: HtmlAttributes
@@ -556,6 +601,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[srcset]")
         val srcset: HtmlAttributes
 
+        @JsValue("[stagemode]")
+        val stagemode: HtmlAttributes
+
         @JsValue("[standby]")
         val standby: HtmlAttributes
 
@@ -570,6 +618,9 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[summary]")
         val summary: HtmlAttributes
+
+        @JsValue("[switch]")
+        val switch: HtmlAttributes
 
         @JsValue("[tabindex]")
         val tabindex: HtmlAttributes
@@ -618,6 +669,9 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[vspace]")
         val vspace: HtmlAttributes
+
+        @JsValue("[watch]")
+        val watch: HtmlAttributes
 
         @JsValue("[webkit-playsinline]")
         val webkitPlaysinline: HtmlAttributes

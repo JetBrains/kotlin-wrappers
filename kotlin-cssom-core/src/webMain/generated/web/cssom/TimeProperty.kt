@@ -4,4 +4,5 @@ package web.cssom
 
 sealed external interface TimeProperty :
     AnimationDuration,
+    InterestDelay,
     Transition

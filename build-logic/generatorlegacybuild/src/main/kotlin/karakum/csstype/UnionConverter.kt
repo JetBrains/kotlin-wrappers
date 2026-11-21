@@ -44,6 +44,9 @@ private val LENGTH_UNIONS = setOf(
     "Mask",
 
     "AnimationRange",
+
+    "TimelineTriggerActivationRange",
+    "TimelineTriggerActiveRange",
 )
 
 private val EXCLUDED_ENUMS = setOf(

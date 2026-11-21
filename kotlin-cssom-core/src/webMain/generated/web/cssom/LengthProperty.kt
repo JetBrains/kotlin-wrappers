@@ -53,6 +53,8 @@ sealed external interface LengthProperty :
     StrokeWidth,
     TabSize,
     TextDecorationThickness,
+    TimelineTriggerActivationRange,
+    TimelineTriggerActiveRange,
     TransformOrigin,
     Translate,
     VerticalAlign,

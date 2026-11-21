@@ -6,6 +6,7 @@ import js.reflect.unsafeCast
 
 sealed external interface IntegerType :
     ColumnCount,
+    FlexLineCount,
     FontWeight,
     GlyphOrientationVertical,
     GridLine,
@@ -15,6 +16,7 @@ sealed external interface IntegerType :
     MaxLines,
     Order,
     Orphans,
+    ReadingOrder,
     StrokeMiterlimit,
     Widows,
     ZIndex

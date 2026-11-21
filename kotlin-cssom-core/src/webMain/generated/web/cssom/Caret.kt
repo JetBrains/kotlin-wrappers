@@ -16,6 +16,9 @@ sealed external interface Caret {
         @JsValue("block")
         val block: Caret
 
+        @JsValue("manual")
+        val manual: Caret
+
         @JsValue("underscore")
         val underscore: Caret
     }
