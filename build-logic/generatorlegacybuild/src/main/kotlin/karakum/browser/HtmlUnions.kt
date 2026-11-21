@@ -211,7 +211,7 @@ private fun inputTypeBody(name: String): String {
         override fun getComment(name: String, unionValue: String): String =
             """
             /**
-             * [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/$unionValue)
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/${unionValue.lowercase()})
              */
             """.trimIndent()
     }
@@ -309,9 +309,9 @@ private fun unionBody(
     contentPath: String,
 ): String {
     var values = unionValues(contentPath)
-    var hashPrefix = ""
+    var textFragment = false
     if (values.isEmpty()) {
-        hashPrefix = ":~:text="
+        textFragment = true
         values = findUnionValues(contentPath)
     }
 
@@ -323,12 +323,18 @@ private fun unionBody(
              */
             """.trimIndent()
 
-        override fun getComment(name: String, unionValue: String): String =
-            """
+        override fun getComment(name: String, unionValue: String): String {
+            val hash = if (textFragment)
+                ":~:text=$unionValue"
+            else
+                unionValue.lowercase()
+
+            return """
             /**
-             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$contentPath#$hashPrefix$unionValue)
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$contentPath#$hash)
              */
             """.trimIndent()
+        }
     }
 
     return sealedUnionBody(
