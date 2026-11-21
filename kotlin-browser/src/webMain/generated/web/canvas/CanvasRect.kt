@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.canvas
 
 import js.internal.InternalApi
@@ -19,7 +15,7 @@ external interface CanvasRect {
         y: Double,
         w: Double,
         h: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillRect)
@@ -29,7 +25,7 @@ external interface CanvasRect {
         y: Double,
         w: Double,
         h: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeRect)
@@ -39,5 +35,5 @@ external interface CanvasRect {
         y: Double,
         w: Double,
         h: Double,
-    ): Unit = definedExternally
+    )
 }

@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.canvas
 
 import js.internal.InternalApi
@@ -23,7 +19,7 @@ external interface CanvasPath {
         startAngle: Double,
         endAngle: Double,
         counterclockwise: Boolean = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo)
@@ -35,7 +31,7 @@ external interface CanvasPath {
         x2: Double,
         y2: Double,
         radius: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo)
@@ -47,12 +43,12 @@ external interface CanvasPath {
         cp2y: Double,
         x: Double,
         y: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/closePath)
      */
-    fun closePath(): Unit = definedExternally
+    fun closePath()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/ellipse)
@@ -66,7 +62,7 @@ external interface CanvasPath {
         startAngle: Double,
         endAngle: Double,
         counterclockwise: Boolean = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineTo)
@@ -74,7 +70,7 @@ external interface CanvasPath {
     fun lineTo(
         x: Double,
         y: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/moveTo)
@@ -82,7 +78,7 @@ external interface CanvasPath {
     fun moveTo(
         x: Double,
         y: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo)
@@ -92,7 +88,7 @@ external interface CanvasPath {
         cpy: Double,
         x: Double,
         y: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect)
@@ -102,7 +98,7 @@ external interface CanvasPath {
         y: Double,
         w: Double,
         h: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)
@@ -113,5 +109,5 @@ external interface CanvasPath {
         w: Double,
         h: Double,
         radii: JsAny /* number | DOMPointInit | (number | DOMPointInit)[] */ = definedExternally,
-    ): Unit = definedExternally
+    )
 }

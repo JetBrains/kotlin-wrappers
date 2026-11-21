@@ -23,4 +23,76 @@ open external class Path2D(
         path: Path2D,
         transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally,
     )
+
+    /* `CanvasPath` overrides */
+
+    override fun arc(
+        x: Double,
+        y: Double,
+        radius: Double,
+        startAngle: Double,
+        endAngle: Double,
+        counterclockwise: Boolean,
+    )
+
+    override fun arcTo(
+        x1: Double,
+        y1: Double,
+        x2: Double,
+        y2: Double,
+        radius: Double,
+    )
+
+    override fun bezierCurveTo(
+        cp1x: Double,
+        cp1y: Double,
+        cp2x: Double,
+        cp2y: Double,
+        x: Double,
+        y: Double,
+    )
+
+    override fun closePath()
+    override fun ellipse(
+        x: Double,
+        y: Double,
+        radiusX: Double,
+        radiusY: Double,
+        rotation: Double,
+        startAngle: Double,
+        endAngle: Double,
+        counterclockwise: Boolean,
+    )
+
+    override fun lineTo(
+        x: Double,
+        y: Double,
+    )
+
+    override fun moveTo(
+        x: Double,
+        y: Double,
+    )
+
+    override fun quadraticCurveTo(
+        cpx: Double,
+        cpy: Double,
+        x: Double,
+        y: Double,
+    )
+
+    override fun rect(
+        x: Double,
+        y: Double,
+        w: Double,
+        h: Double,
+    )
+
+    override fun roundRect(
+        x: Double,
+        y: Double,
+        w: Double,
+        h: Double,
+        radii: JsAny, /* number | DOMPointInit | (number | DOMPointInit)[] */
+    )
 }

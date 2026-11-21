@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.canvas
 
 import js.internal.InternalApi
@@ -14,20 +10,20 @@ external interface CanvasState {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isContextLost)
      */
-    fun isContextLost(): Boolean = definedExternally
+    fun isContextLost(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/reset)
      */
-    fun reset(): Unit = definedExternally
+    fun reset()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/restore)
      */
-    fun restore(): Unit = definedExternally
+    fun restore()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/save)
      */
-    fun save(): Unit = definedExternally
+    fun save()
 }

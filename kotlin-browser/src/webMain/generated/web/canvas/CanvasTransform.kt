@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.canvas
 
 import js.internal.InternalApi
@@ -16,17 +12,17 @@ external interface CanvasTransform {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getTransform)
      */
-    fun getTransform(): DOMMatrix = definedExternally
+    fun getTransform(): DOMMatrix
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/resetTransform)
      */
-    fun resetTransform(): Unit = definedExternally
+    fun resetTransform()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rotate)
      */
-    fun rotate(angle: Double): Unit = definedExternally
+    fun rotate(angle: Double)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scale)
@@ -34,7 +30,7 @@ external interface CanvasTransform {
     fun scale(
         x: Double,
         y: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
@@ -46,9 +42,9 @@ external interface CanvasTransform {
         d: Double,
         e: Double,
         f: Double,
-    ): Unit = definedExternally
+    )
 
-    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally): Unit = definedExternally
+    fun setTransform(transform: DOMMatrixReadOnly /* DOMMatrix2DInit */ = definedExternally)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform)
@@ -60,7 +56,7 @@ external interface CanvasTransform {
         d: Double,
         e: Double,
         f: Double,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/translate)
@@ -68,5 +64,5 @@ external interface CanvasTransform {
     fun translate(
         x: Double,
         y: Double,
-    ): Unit = definedExternally
+    )
 }
