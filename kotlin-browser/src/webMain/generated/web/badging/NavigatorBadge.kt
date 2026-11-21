@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.badging
 
 import js.internal.InternalApi
@@ -27,7 +23,7 @@ external interface NavigatorBadge {
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
     @JsName("clearAppBadge")
-    fun clearAppBadgeAsync(): Promise<Void> = definedExternally
+    fun clearAppBadgeAsync(): Promise<Void>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
@@ -36,7 +32,7 @@ external interface NavigatorBadge {
     @JsThrows(NotAllowedError::class)
     @JsThrows(SecurityError::class)
     @JsName("setAppBadge")
-    fun setAppBadgeAsync(contents: UInt53 = definedExternally): Promise<Void> = definedExternally
+    fun setAppBadgeAsync(contents: UInt53 = definedExternally): Promise<Void>
 }
 
 /**

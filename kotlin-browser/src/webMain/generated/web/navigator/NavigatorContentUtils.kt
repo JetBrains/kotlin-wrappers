@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.navigator
 
 import js.internal.InternalApi
@@ -25,7 +21,7 @@ external interface NavigatorContentUtils {
     fun registerProtocolHandler(
         scheme: String,
         url: String,
-    ): Unit = definedExternally
+    )
 
     /**
      * Available only in secure contexts.
@@ -37,5 +33,5 @@ external interface NavigatorContentUtils {
     fun registerProtocolHandler(
         scheme: String,
         url: URL,
-    ): Unit = definedExternally
+    )
 }

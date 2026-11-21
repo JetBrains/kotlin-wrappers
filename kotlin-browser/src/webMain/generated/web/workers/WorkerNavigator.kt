@@ -2,9 +2,15 @@
 
 package web.workers
 
+import js.array.ReadonlyArray
+import js.numbers.UInt53
+import js.promise.Promise
+import js.void.Void
 import web.badging.NavigatorBadge
 import web.experimental.ExperimentalWebApi
+import web.gpu.GPU
 import web.gpu.NavigatorGPU
+import web.locks.LockManager
 import web.locks.NavigatorLocks
 import web.mediacapabilities.MediaCapabilities
 import web.navigator.NavigatorConcurrentHardware
@@ -14,6 +20,7 @@ import web.navigator.NavigatorOnLine
 import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
 import web.storage.NavigatorStorage
+import web.storage.StorageManager
 import web.usb.USB
 
 /**
@@ -58,4 +65,46 @@ private constructor() :
      */
     @ExperimentalWebApi
     open val usb: USB
+
+    /* `NavigatorBadge` overrides */
+
+    override fun clearAppBadgeAsync(): Promise<Void>
+    override fun setAppBadgeAsync(contents: UInt53): Promise<Void>
+
+    /* `NavigatorConcurrentHardware` overrides */
+
+    override val hardwareConcurrency: UInt53
+
+    /* `NavigatorGPU` overrides */
+
+    override val gpu: GPU
+
+    /* `NavigatorID` overrides */
+
+    override val appCodeName: String
+    override val appName: String
+    override val appVersion: String
+    override val platform: String
+    override val product: String
+    override val productSub: String
+    override val userAgent: String
+    override val vendor: String
+    override val vendorSub: String
+
+    /* `NavigatorLanguage` overrides */
+
+    override val language: String
+    override val languages: ReadonlyArray<JsString>
+
+    /* `NavigatorLocks` overrides */
+
+    override val locks: LockManager
+
+    /* `NavigatorOnLine` overrides */
+
+    override val onLine: Boolean
+
+    /* `NavigatorStorage` overrides */
+
+    override val storage: StorageManager
 }

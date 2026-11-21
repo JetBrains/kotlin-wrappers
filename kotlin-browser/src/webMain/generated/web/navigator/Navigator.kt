@@ -3,6 +3,7 @@
 package web.navigator
 
 import js.array.ReadonlyArray
+import js.numbers.UInt53
 import js.promise.Promise
 import js.promise.await
 import js.void.Void
@@ -15,9 +16,11 @@ import web.experimental.ExperimentalWebApi
 import web.fedcm.NavigatorLogin
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
+import web.gpu.GPU
 import web.gpu.NavigatorGPU
 import web.http.BodyInit
 import web.keyboard.Keyboard
+import web.locks.LockManager
 import web.locks.NavigatorLocks
 import web.mediacapabilities.MediaCapabilities
 import web.mediadevices.MediaDevices
@@ -32,6 +35,7 @@ import web.serial.Serial
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
 import web.storage.NavigatorStorage
+import web.storage.StorageManager
 import web.url.URL
 import web.usb.USB
 import web.useractivation.UserActivation
@@ -264,6 +268,73 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/xr)
      */
     open val xr: XRSystem
+
+    /* `NavigatorAutomationInformation` overrides */
+
+    override val webdriver: Boolean
+
+    /* `NavigatorBadge` overrides */
+
+    override fun clearAppBadgeAsync(): Promise<Void>
+    override fun setAppBadgeAsync(contents: UInt53): Promise<Void>
+
+    /* `NavigatorConcurrentHardware` overrides */
+
+    override val hardwareConcurrency: UInt53
+
+    /* `NavigatorContentUtils` overrides */
+
+    override fun registerProtocolHandler(
+        scheme: String,
+        url: String,
+    )
+
+    override fun registerProtocolHandler(
+        scheme: String,
+        url: URL,
+    )
+
+    /* `NavigatorCookies` overrides */
+
+    override val cookieEnabled: Boolean
+
+    /* `NavigatorGPU` overrides */
+
+    override val gpu: GPU
+
+    /* `NavigatorID` overrides */
+
+    override val appCodeName: String
+    override val appName: String
+    override val appVersion: String
+    override val platform: String
+    override val product: String
+    override val productSub: String
+    override val userAgent: String
+    override val vendor: String
+    override val vendorSub: String
+
+    /* `NavigatorLanguage` overrides */
+
+    override val language: String
+    override val languages: ReadonlyArray<JsString>
+
+    /* `NavigatorLocks` overrides */
+
+    override val locks: LockManager
+
+    /* `NavigatorOnLine` overrides */
+
+    override val onLine: Boolean
+
+    /* `NavigatorPlugins` overrides */
+
+    override val pdfViewerEnabled: Boolean
+    override fun javaEnabled(): Boolean
+
+    /* `NavigatorStorage` overrides */
+
+    override val storage: StorageManager
 }
 
 /**
