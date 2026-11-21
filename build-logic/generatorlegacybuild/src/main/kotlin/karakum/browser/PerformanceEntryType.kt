@@ -2,7 +2,21 @@ package karakum.browser
 
 import karakum.common.unionName
 
-internal fun PerformanceEntryType(): ConversionResult {
+private val WEB_TYPES = setOf(
+    "PerformanceMeasure",
+    "PerformanceResourceTiming",
+)
+
+private val KNOWN_TYPES = setOf(
+    "LargestContentfulPaint",
+    "PerformanceEventTiming",
+    "PerformanceMark",
+    "PerformanceNavigationTiming",
+    "PerformanceNodeTiming",
+    "PerformancePaintTiming",
+) + WEB_TYPES
+
+internal fun performanceEntryTypes(): Sequence<ConversionResult> {
     val valueMap = getApiDirectory("PerformanceEntry/entryType")!!
         .resolve("index.md")
         .readText()
@@ -34,21 +48,40 @@ internal fun PerformanceEntryType(): ConversionResult {
         external interface PerformanceEntryType<T : PerformanceEntry>
         """.trimIndent()
 
-    val constants = valueMap.map { (name, type) ->
-        """
-        /**
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType#${name.lowercase()})
-         */
-        inline val PerformanceEntryType.Companion.${unionName(name)}: PerformanceEntryType<* /* $type */>
-            get() = unsafeCast("$name")
-        """.trimIndent()
-    }.joinToString("\n\n")
+    fun getConstantContent(name: String, type: String): String {
+        val typeParameter = if (type in KNOWN_TYPES) type else """* /* $type */"""
+        return """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry/entryType#${name.lowercase()})
+             */
+            inline val PerformanceEntryType.Companion.${unionName(name)}: PerformanceEntryType<$typeParameter>
+                get() = unsafeCast("$name")
+            """.trimIndent()
+    }
+
+
+    val constants = valueMap
+        .filterValues { it in WEB_TYPES }
+        .map { (name, type) -> getConstantContent(name, type) }
+        .joinToString("\n\n")
+
+    val browserConstants = valueMap
+        .filterValues { it !in WEB_TYPES }
+        .map { (name, type) -> getConstantContent(name, type) }
+        .joinToString("\n\n")
 
     val body = declaration + "\n\n" + constants
 
-    return ConversionResult(
-        name = "PerformanceEntryType",
-        body = body,
-        pkg = "web.performance",
+    return sequenceOf(
+        ConversionResult(
+            name = "PerformanceEntryType",
+            body = body,
+            pkg = "web.performance",
+        ),
+        ConversionResult(
+            name = "PerformanceEntryType.ext",
+            body = browserConstants,
+            pkg = "web.performance",
+        ),
     )
 }

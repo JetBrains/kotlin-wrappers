@@ -476,7 +476,7 @@ fun generateKotlinDeclarations(
         .plus(htmlDeclarations(content))
         .plus(domExceptionTypes())
         .plus(htmlUnions())
-        .plus(PerformanceEntryType())
+        .plus(performanceEntryTypes())
         .plus(jsUnions())
         .plus(browserConstants(content))
         .plus(browserTypes(content))

@@ -78,6 +78,7 @@ object Includes {
         "web/performance/LargestContentfulPaint.kt",
         "web/performance/NavigationTimingType.kt",
         "web/performance/PaintTimingMixin.kt",
+        "web/performance/PerformanceEntryType.ext.kt",
         "web/performance/PerformanceEventTiming.kt",
         "web/performance/PerformanceNavigationTiming.kt",
         "web/performance/PerformancePaintTiming.kt",
