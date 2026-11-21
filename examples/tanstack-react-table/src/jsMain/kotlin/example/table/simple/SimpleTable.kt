@@ -19,6 +19,7 @@ import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.None.Companion.none
+import web.cssom.Normal.Companion.normal
 
 internal external interface SimpleTableProps<D : Any> : PropsWithValue<TableInstance<D>> {
     var onRowClick: (value: D) -> Unit
@@ -57,7 +58,7 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
                             key = Key(header.id)
 
                             css {
-                                fontWeight = FontWeight.normal
+                                fontWeight = normal
                                 padding = Padding(4.px, 12.px)
                                 borderRight = Border(1.px, solid, Theme.Stroke.Gray)
                                 borderBottom = Border(1.px, solid, Theme.Stroke.Gray)

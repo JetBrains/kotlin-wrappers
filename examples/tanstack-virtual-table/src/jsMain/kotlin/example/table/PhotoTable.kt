@@ -16,6 +16,7 @@ import react.dom.html.ReactHTML.tr
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
+import web.cssom.Normal.Companion.normal
 
 internal val PhotoTable = FC {
     val table = usePhotoTable()
@@ -43,13 +44,13 @@ private val Table = TableBase.styled {
 
         tr {
             th {
-                fontWeight = FontWeight.normal
+                fontWeight = normal
                 padding = Padding(4.px, 12.px)
                 borderRight = Border(1.px, solid, Theme.Stroke.Gray)
                 borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
 
                 lastChild {
-                    borderRight = None.Companion.none
+                    borderRight = None.none
                 }
             }
         }
