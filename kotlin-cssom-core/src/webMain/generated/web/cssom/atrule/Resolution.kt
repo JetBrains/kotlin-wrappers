@@ -6,11 +6,20 @@ import js.reflect.unsafeCast
 
 sealed interface Resolution
 
-inline val Number.dpi: Resolution
+inline val Int.dpi: Resolution
     get() = unsafeCast("${this}dpi")
 
-inline val Number.dpcm: Resolution
+inline val Double.dpi: Resolution
+    get() = unsafeCast("${this}dpi")
+
+inline val Int.dpcm: Resolution
     get() = unsafeCast("${this}dpcm")
 
-inline val Number.dppx: Resolution
+inline val Double.dpcm: Resolution
+    get() = unsafeCast("${this}dpcm")
+
+inline val Int.dppx: Resolution
+    get() = unsafeCast("${this}dppx")
+
+inline val Double.dppx: Resolution
     get() = unsafeCast("${this}dppx")

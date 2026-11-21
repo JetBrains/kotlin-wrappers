@@ -6,14 +6,26 @@ import js.reflect.unsafeCast
 
 sealed external interface Angle
 
-inline val Number.deg: Angle
+inline val Int.deg: Angle
     get() = unsafeCast("${this}deg")
 
-inline val Number.rad: Angle
+inline val Double.deg: Angle
+    get() = unsafeCast("${this}deg")
+
+inline val Int.rad: Angle
     get() = unsafeCast("${this}rad")
 
-inline val Number.grad: Angle
+inline val Double.rad: Angle
+    get() = unsafeCast("${this}rad")
+
+inline val Int.grad: Angle
     get() = unsafeCast("${this}grad")
 
-inline val Number.turn: Angle
+inline val Double.grad: Angle
+    get() = unsafeCast("${this}grad")
+
+inline val Int.turn: Angle
+    get() = unsafeCast("${this}turn")
+
+inline val Double.turn: Angle
     get() = unsafeCast("${this}turn")

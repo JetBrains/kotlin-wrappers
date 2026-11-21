@@ -6,6 +6,9 @@ fun unitsExtension(
     suffix: String,
 ): String =
     """
-    inline val Number.$name: $type
+    inline val Int.$name: $type
+        get() = unsafeCast("${'$'}{this}$suffix")
+
+    inline val Double.$name: $type
         get() = unsafeCast("${'$'}{this}$suffix")
     """.trimIndent()

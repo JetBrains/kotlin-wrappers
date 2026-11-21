@@ -28,116 +28,230 @@ sealed external interface Length : LengthType {
     }
 }
 
-inline val Number.ch: Length
+inline val Int.ch: Length
     get() = unsafeCast("${this}ch")
 
-inline val Number.em: Length
+inline val Double.ch: Length
+    get() = unsafeCast("${this}ch")
+
+inline val Int.em: Length
     get() = unsafeCast("${this}em")
 
-inline val Number.ex: Length
+inline val Double.em: Length
+    get() = unsafeCast("${this}em")
+
+inline val Int.ex: Length
     get() = unsafeCast("${this}ex")
 
-inline val Number.rem: Length
+inline val Double.ex: Length
+    get() = unsafeCast("${this}ex")
+
+inline val Int.rem: Length
     get() = unsafeCast("${this}rem")
 
-inline val Number.cqw: Length
+inline val Double.rem: Length
+    get() = unsafeCast("${this}rem")
+
+inline val Int.cqw: Length
     get() = unsafeCast("${this}cqw")
 
-inline val Number.cqh: Length
+inline val Double.cqw: Length
+    get() = unsafeCast("${this}cqw")
+
+inline val Int.cqh: Length
     get() = unsafeCast("${this}cqh")
 
-inline val Number.cqi: Length
+inline val Double.cqh: Length
+    get() = unsafeCast("${this}cqh")
+
+inline val Int.cqi: Length
     get() = unsafeCast("${this}cqi")
 
-inline val Number.cqb: Length
+inline val Double.cqi: Length
+    get() = unsafeCast("${this}cqi")
+
+inline val Int.cqb: Length
     get() = unsafeCast("${this}cqb")
 
-inline val Number.cqmin: Length
+inline val Double.cqb: Length
+    get() = unsafeCast("${this}cqb")
+
+inline val Int.cqmin: Length
     get() = unsafeCast("${this}cqmin")
 
-inline val Number.cqmax: Length
+inline val Double.cqmin: Length
+    get() = unsafeCast("${this}cqmin")
+
+inline val Int.cqmax: Length
     get() = unsafeCast("${this}cqmax")
 
-inline val Number.dvw: Length
+inline val Double.cqmax: Length
+    get() = unsafeCast("${this}cqmax")
+
+inline val Int.dvw: Length
     get() = unsafeCast("${this}dvw")
 
-inline val Number.dvh: Length
+inline val Double.dvw: Length
+    get() = unsafeCast("${this}dvw")
+
+inline val Int.dvh: Length
     get() = unsafeCast("${this}dvh")
 
-inline val Number.dvi: Length
+inline val Double.dvh: Length
+    get() = unsafeCast("${this}dvh")
+
+inline val Int.dvi: Length
     get() = unsafeCast("${this}dvi")
 
-inline val Number.dvb: Length
+inline val Double.dvi: Length
+    get() = unsafeCast("${this}dvi")
+
+inline val Int.dvb: Length
     get() = unsafeCast("${this}dvb")
 
-inline val Number.dvmin: Length
+inline val Double.dvb: Length
+    get() = unsafeCast("${this}dvb")
+
+inline val Int.dvmin: Length
     get() = unsafeCast("${this}dvmin")
 
-inline val Number.dvmax: Length
+inline val Double.dvmin: Length
+    get() = unsafeCast("${this}dvmin")
+
+inline val Int.dvmax: Length
     get() = unsafeCast("${this}dvmax")
 
-inline val Number.lvw: Length
+inline val Double.dvmax: Length
+    get() = unsafeCast("${this}dvmax")
+
+inline val Int.lvw: Length
     get() = unsafeCast("${this}lvw")
 
-inline val Number.lvh: Length
+inline val Double.lvw: Length
+    get() = unsafeCast("${this}lvw")
+
+inline val Int.lvh: Length
     get() = unsafeCast("${this}lvh")
 
-inline val Number.lvi: Length
+inline val Double.lvh: Length
+    get() = unsafeCast("${this}lvh")
+
+inline val Int.lvi: Length
     get() = unsafeCast("${this}lvi")
 
-inline val Number.lvb: Length
+inline val Double.lvi: Length
+    get() = unsafeCast("${this}lvi")
+
+inline val Int.lvb: Length
     get() = unsafeCast("${this}lvb")
 
-inline val Number.lvmin: Length
+inline val Double.lvb: Length
+    get() = unsafeCast("${this}lvb")
+
+inline val Int.lvmin: Length
     get() = unsafeCast("${this}lvmin")
 
-inline val Number.lvmax: Length
+inline val Double.lvmin: Length
+    get() = unsafeCast("${this}lvmin")
+
+inline val Int.lvmax: Length
     get() = unsafeCast("${this}lvmax")
 
-inline val Number.svw: Length
+inline val Double.lvmax: Length
+    get() = unsafeCast("${this}lvmax")
+
+inline val Int.svw: Length
     get() = unsafeCast("${this}svw")
 
-inline val Number.svh: Length
+inline val Double.svw: Length
+    get() = unsafeCast("${this}svw")
+
+inline val Int.svh: Length
     get() = unsafeCast("${this}svh")
 
-inline val Number.svi: Length
+inline val Double.svh: Length
+    get() = unsafeCast("${this}svh")
+
+inline val Int.svi: Length
     get() = unsafeCast("${this}svi")
 
-inline val Number.svb: Length
+inline val Double.svi: Length
+    get() = unsafeCast("${this}svi")
+
+inline val Int.svb: Length
     get() = unsafeCast("${this}svb")
 
-inline val Number.svmin: Length
+inline val Double.svb: Length
+    get() = unsafeCast("${this}svb")
+
+inline val Int.svmin: Length
     get() = unsafeCast("${this}svmin")
 
-inline val Number.svmax: Length
+inline val Double.svmin: Length
+    get() = unsafeCast("${this}svmin")
+
+inline val Int.svmax: Length
     get() = unsafeCast("${this}svmax")
 
-inline val Number.vw: Length
+inline val Double.svmax: Length
+    get() = unsafeCast("${this}svmax")
+
+inline val Int.vw: Length
     get() = unsafeCast("${this}vw")
 
-inline val Number.vh: Length
+inline val Double.vw: Length
+    get() = unsafeCast("${this}vw")
+
+inline val Int.vh: Length
     get() = unsafeCast("${this}vh")
 
-inline val Number.vmin: Length
+inline val Double.vh: Length
+    get() = unsafeCast("${this}vh")
+
+inline val Int.vmin: Length
     get() = unsafeCast("${this}vmin")
 
-inline val Number.vmax: Length
+inline val Double.vmin: Length
+    get() = unsafeCast("${this}vmin")
+
+inline val Int.vmax: Length
     get() = unsafeCast("${this}vmax")
 
-inline val Number.px: Length
+inline val Double.vmax: Length
+    get() = unsafeCast("${this}vmax")
+
+inline val Int.px: Length
     get() = unsafeCast("${this}px")
 
-inline val Number.cm: Length
+inline val Double.px: Length
+    get() = unsafeCast("${this}px")
+
+inline val Int.cm: Length
     get() = unsafeCast("${this}cm")
 
-inline val Number.mm: Length
+inline val Double.cm: Length
+    get() = unsafeCast("${this}cm")
+
+inline val Int.mm: Length
     get() = unsafeCast("${this}mm")
 
-inline val Number.`in`: Length
+inline val Double.mm: Length
+    get() = unsafeCast("${this}mm")
+
+inline val Int.`in`: Length
     get() = unsafeCast("${this}in")
 
-inline val Number.pc: Length
+inline val Double.`in`: Length
+    get() = unsafeCast("${this}in")
+
+inline val Int.pc: Length
     get() = unsafeCast("${this}pc")
 
-inline val Number.pt: Length
+inline val Double.pc: Length
+    get() = unsafeCast("${this}pc")
+
+inline val Int.pt: Length
+    get() = unsafeCast("${this}pt")
+
+inline val Double.pt: Length
     get() = unsafeCast("${this}pt")
