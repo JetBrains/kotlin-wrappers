@@ -9,14 +9,14 @@ import web.experimental.ExperimentalWebApi
 @ExperimentalWebApi
 open external class PaintRenderingContext2D
 private constructor() :
-    CanvasState,
-    CanvasTransform,
     CanvasCompositing,
-    CanvasImageSmoothing,
-    CanvasFillStrokeStyles,
-    CanvasShadowStyles,
-    CanvasRect,
-    CanvasDrawPath,
     CanvasDrawImage,
+    CanvasDrawPath,
+    CanvasFillStrokeStyles,
+    CanvasImageSmoothing,
+    CanvasPath,
     CanvasPathDrawingStyles,
-    CanvasPath
+    CanvasRect,
+    CanvasShadowStyles,
+    CanvasState,
+    CanvasTransform
