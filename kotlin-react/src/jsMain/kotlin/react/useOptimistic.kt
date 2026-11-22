@@ -1,21 +1,21 @@
-@file:JsModule("react")
-
 package react
 
 import js.array.Tuple2
-import react.raw.StateInstanceRaw
+import react.raw.useOptimisticRaw
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useOptimistic)
  */
-external fun <T> useOptimistic(
+inline fun <T> useOptimistic(
     passthrough: T,
-): StateInstanceRaw<T>
+): StateInstance<T> =
+    StateInstance(useOptimisticRaw(passthrough))
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useOptimistic)
  */
-external fun <T, A> useOptimistic(
+inline fun <T, A> useOptimistic(
     passthrough: T,
-    reducer: (state: T, action: A) -> T,
-): Tuple2<T, (action: A) -> Unit>
+    noinline reducer: (state: T, action: A) -> T,
+): Tuple2<T, (action: A) -> Unit> =
+    useOptimisticRaw(passthrough, reducer)
