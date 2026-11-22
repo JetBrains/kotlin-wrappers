@@ -2,7 +2,6 @@
 
 package react.raw
 
-import js.array.Tuple2
 import react.Reducer
 
 /**
@@ -24,4 +23,4 @@ internal /* raw */
 external fun <T, A> useOptimisticRaw(
     passthrough: T,
     reducer: Reducer<T, A>,
-): Tuple2<T, (action: A) -> Unit>
+): OptimisticInstanceRaw<T, A>
