@@ -16,6 +16,6 @@ inline fun <T> useOptimistic(
  */
 inline fun <T, A> useOptimistic(
     passthrough: T,
-    noinline reducer: (state: T, action: A) -> T,
+    noinline reducer: Reducer<T, A>,
 ): Tuple2<T, (action: A) -> Unit> =
     useOptimisticRaw(passthrough, reducer)
