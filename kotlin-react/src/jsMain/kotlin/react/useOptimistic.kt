@@ -3,13 +3,14 @@
 package react
 
 import js.array.Tuple2
+import react.raw.StateInstanceRaw
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useOptimistic)
  */
 external fun <T> useOptimistic(
     passthrough: T,
-): StateInstance<T>
+): StateInstanceRaw<T>
 
 /**
  * [Online Documentation](https://react.dev/reference/react/useOptimistic)
