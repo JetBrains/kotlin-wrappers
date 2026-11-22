@@ -109,8 +109,7 @@ internal class TypeProvider(
 
     fun isDefined(): Boolean =
         IDLRegistry.isMixin(parentType)
-                && parentType !in MIXINS_WITH_REQUIRED_OVERRIDES
-                && parentType != "GenericTransformStream"
+                && parentType in SAFE_MIXINS
                 || parentType == "LocaleOptions"
 
     fun isArrayLike(): Boolean =
