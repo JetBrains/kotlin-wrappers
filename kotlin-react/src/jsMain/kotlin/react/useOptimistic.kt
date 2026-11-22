@@ -1,6 +1,5 @@
 package react
 
-import react.raw.OptimisticInstanceRaw
 import react.raw.useOptimisticRaw
 
 /**
@@ -17,5 +16,5 @@ inline fun <T> useOptimistic(
 inline fun <T, A> useOptimistic(
     passthrough: T,
     noinline reducer: Reducer<T, A>,
-): OptimisticInstanceRaw<T, A> =
-    useOptimisticRaw(passthrough, reducer)
+): OptimisticInstance<T, A> =
+    OptimisticInstance(useOptimisticRaw(passthrough, reducer))
