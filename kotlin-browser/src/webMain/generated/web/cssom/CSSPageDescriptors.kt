@@ -59,4 +59,18 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors#size)
      */
     open var size: String
+
+    /* `CSSStyleDeclarationBase` overrides */
+
+    override var cssText: String
+    override val parentRule: CSSRule?
+    override fun getPropertyPriority(property: String): String
+    override fun getPropertyValue(property: String): String
+    override fun item(index: Int): String
+    override fun removeProperty(property: String): String
+    override fun setProperty(
+        property: String,
+        value: String?,
+        priority: String,
+    )
 }

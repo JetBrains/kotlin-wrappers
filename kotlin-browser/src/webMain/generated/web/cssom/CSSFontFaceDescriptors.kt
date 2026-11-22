@@ -29,4 +29,18 @@ private constructor() :
     open var src: String
     open var `unicode-range`: String
     open var unicodeRange: String
+
+    /* `CSSStyleDeclarationBase` overrides */
+
+    override var cssText: String
+    override val parentRule: CSSRule?
+    override fun getPropertyPriority(property: String): String
+    override fun getPropertyValue(property: String): String
+    override fun item(index: Int): String
+    override fun removeProperty(property: String): String
+    override fun setProperty(
+        property: String,
+        value: String?,
+        priority: String,
+    )
 }
