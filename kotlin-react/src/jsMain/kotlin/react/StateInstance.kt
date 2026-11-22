@@ -32,6 +32,6 @@ value class StateInstance<T>(
         property: KProperty<*>,
         value: T,
     ) {
-        component2()(value)
+        component2()(value = value)
     }
 }
