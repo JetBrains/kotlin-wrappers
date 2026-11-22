@@ -32,41 +32,6 @@ open external class EventTarget :
 }
 
 // event handler
-
-/**
- * The **`addEventListener()`** method of the EventTarget interface sets up a function that will be called whenever the specified event is delivered to the target.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)
- */
-fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
-    type: EventType<E>,
-    handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions = unsafeJso(),
-) {
-    addEventListener(
-        type = type,
-        callback = handler,
-        options = options,
-    )
-}
-
-/**
- * The **`removeEventListener()`** method of the EventTarget interface removes an event listener previously registered with EventTarget.addEventListener() from the target.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener)
- */
-fun <E : Event, C : EventTarget, T : EventTarget> C.removeEventListener(
-    type: EventType<E>,
-    handler: EventHandler<E, C, T>,
-    options: EventListenerOptions = unsafeJso(),
-) {
-    removeEventListener(
-        type = type,
-        callback = handler,
-        options = options,
-    )
-}
-
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
     type: EventType<E>,
     handler: EventHandler<E, C, T>,
