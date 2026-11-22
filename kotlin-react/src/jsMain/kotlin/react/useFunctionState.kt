@@ -1,18 +1,18 @@
-@file:JsModule("react")
-
 package react
+
+import react.raw.useStateRaw
 
 // [Problem details](https://medium.com/swlh/how-to-store-a-function-with-the-usestate-hook-in-react-8a88dd4eede1)
 
-@JsName("useState")
-external fun <T : Any> useFunctionState(): FunctionStateInstance<T?>
+inline fun <T : Any> useFunctionState(): FunctionStateInstance<T?> =
+    FunctionStateInstance(useStateRaw())
 
-@JsName("useState")
-external fun <T> useFunctionState(
+inline fun <T> useFunctionState(
     initialValue: T,
-): FunctionStateInstance<T>
+): FunctionStateInstance<T> =
+    FunctionStateInstance(useStateRaw(initialValue))
 
-@JsName("useState")
-external fun <T> useFunctionState(
-    initializer: () -> T,
-): FunctionStateInstance<T>
+inline fun <T> useFunctionState(
+    noinline initializer: () -> T,
+): FunctionStateInstance<T> =
+    FunctionStateInstance(useStateRaw(initializer))
