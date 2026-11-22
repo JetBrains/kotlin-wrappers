@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.gl
 
 import js.array.ReadonlyArray
@@ -21,12 +17,12 @@ external interface WebGL2RenderingContextBase {
     fun beginQuery(
         target: GLenum,
         query: WebGLQuery,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/beginTransformFeedback)
      */
-    fun beginTransformFeedback(primitiveMode: GLenum): Unit = definedExternally
+    fun beginTransformFeedback(primitiveMode: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferBase)
@@ -35,7 +31,7 @@ external interface WebGL2RenderingContextBase {
         target: GLenum,
         index: GLuint,
         buffer: WebGLBuffer?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindBufferRange)
@@ -46,7 +42,7 @@ external interface WebGL2RenderingContextBase {
         buffer: WebGLBuffer?,
         offset: GLintptr,
         size: GLsizeiptr,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindSampler)
@@ -54,7 +50,7 @@ external interface WebGL2RenderingContextBase {
     fun bindSampler(
         unit: GLuint,
         sampler: WebGLSampler?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindTransformFeedback)
@@ -62,12 +58,12 @@ external interface WebGL2RenderingContextBase {
     fun bindTransformFeedback(
         target: GLenum,
         tf: WebGLTransformFeedback?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/bindVertexArray)
      */
-    fun bindVertexArray(array: WebGLVertexArrayObject?): Unit = definedExternally
+    fun bindVertexArray(array: WebGLVertexArrayObject?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/blitFramebuffer)
@@ -83,7 +79,7 @@ external interface WebGL2RenderingContextBase {
         dstY1: GLint,
         mask: GLbitfield,
         filter: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
@@ -93,7 +89,7 @@ external interface WebGL2RenderingContextBase {
         drawbuffer: GLint,
         depth: GLfloat,
         stencil: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
@@ -103,7 +99,7 @@ external interface WebGL2RenderingContextBase {
         drawbuffer: GLint,
         values: Float32List,
         srcOffset: UInt53 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
@@ -113,7 +109,7 @@ external interface WebGL2RenderingContextBase {
         drawbuffer: GLint,
         values: Int32List,
         srcOffset: UInt53 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clearBuffer)
@@ -123,7 +119,7 @@ external interface WebGL2RenderingContextBase {
         drawbuffer: GLint,
         values: Uint32List,
         srcOffset: UInt53 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/clientWaitSync)
@@ -132,7 +128,7 @@ external interface WebGL2RenderingContextBase {
         sync: WebGLSync,
         flags: GLbitfield,
         timeout: GLuint64,
-    ): GLenum = definedExternally
+    ): GLenum
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexImage3D)
@@ -147,7 +143,7 @@ external interface WebGL2RenderingContextBase {
         border: GLint,
         imageSize: GLsizei,
         offset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     fun compressedTexImage3D(
         target: GLenum,
@@ -160,7 +156,7 @@ external interface WebGL2RenderingContextBase {
         srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: UInt53 = definedExternally,
         srcLengthOverride: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D)
@@ -177,7 +173,7 @@ external interface WebGL2RenderingContextBase {
         format: GLenum,
         imageSize: GLsizei,
         offset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     fun compressedTexSubImage3D(
         target: GLenum,
@@ -192,7 +188,7 @@ external interface WebGL2RenderingContextBase {
         srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: UInt53 = definedExternally,
         srcLengthOverride: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyBufferSubData)
@@ -203,7 +199,7 @@ external interface WebGL2RenderingContextBase {
         readOffset: GLintptr,
         writeOffset: GLintptr,
         size: GLsizeiptr,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/copyTexSubImage3D)
@@ -218,52 +214,52 @@ external interface WebGL2RenderingContextBase {
         y: GLint,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createQuery)
      */
-    fun createQuery(): WebGLQuery = definedExternally
+    fun createQuery(): WebGLQuery
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createSampler)
      */
-    fun createSampler(): WebGLSampler = definedExternally
+    fun createSampler(): WebGLSampler
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createTransformFeedback)
      */
-    fun createTransformFeedback(): WebGLTransformFeedback = definedExternally
+    fun createTransformFeedback(): WebGLTransformFeedback
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/createVertexArray)
      */
-    fun createVertexArray(): WebGLVertexArrayObject = definedExternally
+    fun createVertexArray(): WebGLVertexArrayObject
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteQuery)
      */
-    fun deleteQuery(query: WebGLQuery?): Unit = definedExternally
+    fun deleteQuery(query: WebGLQuery?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSampler)
      */
-    fun deleteSampler(sampler: WebGLSampler?): Unit = definedExternally
+    fun deleteSampler(sampler: WebGLSampler?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteSync)
      */
-    fun deleteSync(sync: WebGLSync?): Unit = definedExternally
+    fun deleteSync(sync: WebGLSync?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteTransformFeedback)
      */
-    fun deleteTransformFeedback(tf: WebGLTransformFeedback?): Unit = definedExternally
+    fun deleteTransformFeedback(tf: WebGLTransformFeedback?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/deleteVertexArray)
      */
-    fun deleteVertexArray(vertexArray: WebGLVertexArrayObject?): Unit = definedExternally
+    fun deleteVertexArray(vertexArray: WebGLVertexArrayObject?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawArraysInstanced)
@@ -273,12 +269,12 @@ external interface WebGL2RenderingContextBase {
         first: GLint,
         count: GLsizei,
         instanceCount: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawBuffers)
      */
-    fun drawBuffers(buffers: ReadonlyArray<GLenum>): Unit = definedExternally
+    fun drawBuffers(buffers: ReadonlyArray<GLenum>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawElementsInstanced)
@@ -289,7 +285,7 @@ external interface WebGL2RenderingContextBase {
         type: GLenum,
         offset: GLintptr,
         instanceCount: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawRangeElements)
@@ -301,17 +297,17 @@ external interface WebGL2RenderingContextBase {
         count: GLsizei,
         type: GLenum,
         offset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endQuery)
      */
-    fun endQuery(target: GLenum): Unit = definedExternally
+    fun endQuery(target: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/endTransformFeedback)
      */
-    fun endTransformFeedback(): Unit = definedExternally
+    fun endTransformFeedback()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/fenceSync)
@@ -319,7 +315,7 @@ external interface WebGL2RenderingContextBase {
     fun fenceSync(
         condition: GLenum,
         flags: GLbitfield,
-    ): WebGLSync? = definedExternally
+    ): WebGLSync?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/framebufferTextureLayer)
@@ -330,7 +326,7 @@ external interface WebGL2RenderingContextBase {
         texture: WebGLTexture?,
         level: GLint,
         layer: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockName)
@@ -338,7 +334,7 @@ external interface WebGL2RenderingContextBase {
     fun getActiveUniformBlockName(
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
-    ): String? = definedExternally
+    ): String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniformBlockParameter)
@@ -347,7 +343,7 @@ external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getActiveUniforms)
@@ -356,7 +352,7 @@ external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         uniformIndices: ReadonlyArray<GLuint>,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getBufferSubData)
@@ -367,7 +363,7 @@ external interface WebGL2RenderingContextBase {
         dstBuffer: ArrayBufferView<ArrayBufferLike>,
         dstOffset: UInt53 = definedExternally,
         length: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getFragDataLocation)
@@ -375,7 +371,7 @@ external interface WebGL2RenderingContextBase {
     fun getFragDataLocation(
         program: WebGLProgram,
         name: String,
-    ): GLint = definedExternally
+    ): GLint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getIndexedParameter)
@@ -383,7 +379,7 @@ external interface WebGL2RenderingContextBase {
     fun getIndexedParameter(
         target: GLenum,
         index: GLuint,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getInternalformatParameter)
@@ -392,7 +388,7 @@ external interface WebGL2RenderingContextBase {
         target: GLenum,
         internalformat: GLenum,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQuery)
@@ -400,7 +396,7 @@ external interface WebGL2RenderingContextBase {
     fun getQuery(
         target: GLenum,
         pname: GLenum,
-    ): WebGLQuery? = definedExternally
+    ): WebGLQuery?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getQueryParameter)
@@ -408,7 +404,7 @@ external interface WebGL2RenderingContextBase {
     fun getQueryParameter(
         query: WebGLQuery,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSamplerParameter)
@@ -416,7 +412,7 @@ external interface WebGL2RenderingContextBase {
     fun getSamplerParameter(
         sampler: WebGLSampler,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getSyncParameter)
@@ -424,7 +420,7 @@ external interface WebGL2RenderingContextBase {
     fun getSyncParameter(
         sync: WebGLSync,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getTransformFeedbackVarying)
@@ -432,7 +428,7 @@ external interface WebGL2RenderingContextBase {
     fun getTransformFeedbackVarying(
         program: WebGLProgram,
         index: GLuint,
-    ): WebGLActiveInfo? = definedExternally
+    ): WebGLActiveInfo?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformBlockIndex)
@@ -440,7 +436,7 @@ external interface WebGL2RenderingContextBase {
     fun getUniformBlockIndex(
         program: WebGLProgram,
         uniformBlockName: String,
-    ): GLuint = definedExternally
+    ): GLuint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/getUniformIndices)
@@ -448,7 +444,7 @@ external interface WebGL2RenderingContextBase {
     fun getUniformIndices(
         program: WebGLProgram,
         uniformNames: ReadonlyArray<JsString>,
-    ): ReadonlyArray<GLuint>? = definedExternally
+    ): ReadonlyArray<GLuint>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateFramebuffer)
@@ -456,7 +452,7 @@ external interface WebGL2RenderingContextBase {
     fun invalidateFramebuffer(
         target: GLenum,
         attachments: ReadonlyArray<GLenum>,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/invalidateSubFramebuffer)
@@ -468,42 +464,42 @@ external interface WebGL2RenderingContextBase {
         y: GLint,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isQuery)
      */
-    fun isQuery(query: WebGLQuery?): GLboolean = definedExternally
+    fun isQuery(query: WebGLQuery?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSampler)
      */
-    fun isSampler(sampler: WebGLSampler?): GLboolean = definedExternally
+    fun isSampler(sampler: WebGLSampler?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isSync)
      */
-    fun isSync(sync: WebGLSync?): GLboolean = definedExternally
+    fun isSync(sync: WebGLSync?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isTransformFeedback)
      */
-    fun isTransformFeedback(tf: WebGLTransformFeedback?): GLboolean = definedExternally
+    fun isTransformFeedback(tf: WebGLTransformFeedback?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/isVertexArray)
      */
-    fun isVertexArray(vertexArray: WebGLVertexArrayObject?): GLboolean = definedExternally
+    fun isVertexArray(vertexArray: WebGLVertexArrayObject?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/pauseTransformFeedback)
      */
-    fun pauseTransformFeedback(): Unit = definedExternally
+    fun pauseTransformFeedback()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/readBuffer)
      */
-    fun readBuffer(src: GLenum): Unit = definedExternally
+    fun readBuffer(src: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/renderbufferStorageMultisample)
@@ -514,12 +510,12 @@ external interface WebGL2RenderingContextBase {
         internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/resumeTransformFeedback)
      */
-    fun resumeTransformFeedback(): Unit = definedExternally
+    fun resumeTransformFeedback()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
@@ -528,7 +524,7 @@ external interface WebGL2RenderingContextBase {
         sampler: WebGLSampler,
         pname: GLenum,
         param: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/samplerParameter)
@@ -537,7 +533,7 @@ external interface WebGL2RenderingContextBase {
         sampler: WebGLSampler,
         pname: GLenum,
         param: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texImage3D)
@@ -553,7 +549,7 @@ external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         pboOffset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     fun texImage3D(
         target: GLenum,
@@ -566,7 +562,7 @@ external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
-    ): Unit = definedExternally
+    )
 
     fun texImage3D(
         target: GLenum,
@@ -579,7 +575,7 @@ external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>?,
-    ): Unit = definedExternally
+    )
 
     fun texImage3D(
         target: GLenum,
@@ -593,7 +589,7 @@ external interface WebGL2RenderingContextBase {
         type: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: UInt53,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage2D)
@@ -604,7 +600,7 @@ external interface WebGL2RenderingContextBase {
         internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texStorage3D)
@@ -616,7 +612,7 @@ external interface WebGL2RenderingContextBase {
         width: GLsizei,
         height: GLsizei,
         depth: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/texSubImage3D)
@@ -633,7 +629,7 @@ external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         pboOffset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     fun texSubImage3D(
         target: GLenum,
@@ -647,7 +643,7 @@ external interface WebGL2RenderingContextBase {
         format: GLenum,
         type: GLenum,
         source: TexImageSource,
-    ): Unit = definedExternally
+    )
 
     fun texSubImage3D(
         target: GLenum,
@@ -662,7 +658,7 @@ external interface WebGL2RenderingContextBase {
         type: GLenum,
         srcData: ArrayBufferView<ArrayBufferLike>?,
         srcOffset: UInt53 = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/transformFeedbackVaryings)
@@ -671,7 +667,7 @@ external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         varyings: ReadonlyArray<JsString>,
         bufferMode: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -679,7 +675,7 @@ external interface WebGL2RenderingContextBase {
     fun uniform1ui(
         location: WebGLUniformLocation?,
         v0: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -689,7 +685,7 @@ external interface WebGL2RenderingContextBase {
         data: Uint32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -698,7 +694,7 @@ external interface WebGL2RenderingContextBase {
         location: WebGLUniformLocation?,
         v0: GLuint,
         v1: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -708,7 +704,7 @@ external interface WebGL2RenderingContextBase {
         data: Uint32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -718,7 +714,7 @@ external interface WebGL2RenderingContextBase {
         v0: GLuint,
         v1: GLuint,
         v2: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -728,7 +724,7 @@ external interface WebGL2RenderingContextBase {
         data: Uint32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -739,7 +735,7 @@ external interface WebGL2RenderingContextBase {
         v1: GLuint,
         v2: GLuint,
         v3: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniform)
@@ -749,7 +745,7 @@ external interface WebGL2RenderingContextBase {
         data: Uint32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformBlockBinding)
@@ -758,7 +754,7 @@ external interface WebGL2RenderingContextBase {
         program: WebGLProgram,
         uniformBlockIndex: GLuint,
         uniformBlockBinding: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -769,7 +765,7 @@ external interface WebGL2RenderingContextBase {
         data: Float32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -780,7 +776,7 @@ external interface WebGL2RenderingContextBase {
         data: Float32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -791,7 +787,7 @@ external interface WebGL2RenderingContextBase {
         data: Float32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -802,7 +798,7 @@ external interface WebGL2RenderingContextBase {
         data: Float32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -813,7 +809,7 @@ external interface WebGL2RenderingContextBase {
         data: Float32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/uniformMatrix)
@@ -824,7 +820,7 @@ external interface WebGL2RenderingContextBase {
         data: Float32List,
         srcOffset: UInt53 = definedExternally,
         srcLength: GLuint = definedExternally,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribDivisor)
@@ -832,7 +828,7 @@ external interface WebGL2RenderingContextBase {
     fun vertexAttribDivisor(
         index: GLuint,
         divisor: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
@@ -843,7 +839,7 @@ external interface WebGL2RenderingContextBase {
         y: GLint,
         z: GLint,
         w: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
@@ -851,7 +847,7 @@ external interface WebGL2RenderingContextBase {
     fun vertexAttribI4iv(
         index: GLuint,
         values: Int32List,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
@@ -862,7 +858,7 @@ external interface WebGL2RenderingContextBase {
         y: GLuint,
         z: GLuint,
         w: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribI)
@@ -870,7 +866,7 @@ external interface WebGL2RenderingContextBase {
     fun vertexAttribI4uiv(
         index: GLuint,
         values: Uint32List,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/vertexAttribIPointer)
@@ -881,7 +877,7 @@ external interface WebGL2RenderingContextBase {
         type: GLenum,
         stride: GLsizei,
         offset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/waitSync)
@@ -890,5 +886,5 @@ external interface WebGL2RenderingContextBase {
         sync: WebGLSync,
         flags: GLbitfield,
         timeout: GLint64,
-    ): Unit = definedExternally
+    )
 }

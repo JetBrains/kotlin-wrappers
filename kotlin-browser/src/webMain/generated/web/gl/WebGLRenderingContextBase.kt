@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-)
-
 package web.gl
 
 import js.array.ReadonlyArray
@@ -21,38 +17,31 @@ external interface WebGLRenderingContextBase {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
      */
     val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
-        get() = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/drawingBufferColorSpace)
      */
     var drawingBufferColorSpace: PredefinedColorSpace
-        get() = definedExternally
-        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferHeight)
      */
     val drawingBufferHeight: GLsizei
-        get() = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferWidth)
      */
     val drawingBufferWidth: GLsizei
-        get() = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/unpackColorSpace)
      */
     var unpackColorSpace: PredefinedColorSpace
-        get() = definedExternally
-        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/activeTexture)
      */
-    fun activeTexture(texture: GLenum): Unit = definedExternally
+    fun activeTexture(texture: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/attachShader)
@@ -60,7 +49,7 @@ external interface WebGLRenderingContextBase {
     fun attachShader(
         program: WebGLProgram,
         shader: WebGLShader,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindAttribLocation)
@@ -69,7 +58,7 @@ external interface WebGLRenderingContextBase {
         program: WebGLProgram,
         index: GLuint,
         name: String,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindBuffer)
@@ -77,7 +66,7 @@ external interface WebGLRenderingContextBase {
     fun bindBuffer(
         target: GLenum,
         buffer: WebGLBuffer?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindFramebuffer)
@@ -85,7 +74,7 @@ external interface WebGLRenderingContextBase {
     fun bindFramebuffer(
         target: GLenum,
         framebuffer: WebGLFramebuffer?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindRenderbuffer)
@@ -93,7 +82,7 @@ external interface WebGLRenderingContextBase {
     fun bindRenderbuffer(
         target: GLenum,
         renderbuffer: WebGLRenderbuffer?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindTexture)
@@ -101,7 +90,7 @@ external interface WebGLRenderingContextBase {
     fun bindTexture(
         target: GLenum,
         texture: WebGLTexture?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendColor)
@@ -111,12 +100,12 @@ external interface WebGLRenderingContextBase {
         green: GLclampf,
         blue: GLclampf,
         alpha: GLclampf,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquation)
      */
-    fun blendEquation(mode: GLenum): Unit = definedExternally
+    fun blendEquation(mode: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquationSeparate)
@@ -124,7 +113,7 @@ external interface WebGLRenderingContextBase {
     fun blendEquationSeparate(
         modeRGB: GLenum,
         modeAlpha: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFunc)
@@ -132,7 +121,7 @@ external interface WebGLRenderingContextBase {
     fun blendFunc(
         sfactor: GLenum,
         dfactor: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFuncSeparate)
@@ -142,17 +131,17 @@ external interface WebGLRenderingContextBase {
         dstRGB: GLenum,
         srcAlpha: GLenum,
         dstAlpha: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus)
      */
-    fun checkFramebufferStatus(target: GLenum): GLenum = definedExternally
+    fun checkFramebufferStatus(target: GLenum): GLenum
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clear)
      */
-    fun clear(mask: GLbitfield): Unit = definedExternally
+    fun clear(mask: GLbitfield)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearColor)
@@ -162,17 +151,17 @@ external interface WebGLRenderingContextBase {
         green: GLclampf,
         blue: GLclampf,
         alpha: GLclampf,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearDepth)
      */
-    fun clearDepth(depth: GLclampf): Unit = definedExternally
+    fun clearDepth(depth: GLclampf)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearStencil)
      */
-    fun clearStencil(s: GLint): Unit = definedExternally
+    fun clearStencil(s: GLint)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/colorMask)
@@ -182,12 +171,12 @@ external interface WebGLRenderingContextBase {
         green: GLboolean,
         blue: GLboolean,
         alpha: GLboolean,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compileShader)
      */
-    fun compileShader(shader: WebGLShader): Unit = definedExternally
+    fun compileShader(shader: WebGLShader)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexImage2D)
@@ -201,7 +190,7 @@ external interface WebGLRenderingContextBase {
         width: GLsizei,
         height: GLsizei,
         border: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexSubImage2D)
@@ -215,82 +204,82 @@ external interface WebGLRenderingContextBase {
         y: GLint,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createBuffer)
      */
-    fun createBuffer(): WebGLBuffer = definedExternally
+    fun createBuffer(): WebGLBuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createFramebuffer)
      */
-    fun createFramebuffer(): WebGLFramebuffer = definedExternally
+    fun createFramebuffer(): WebGLFramebuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createProgram)
      */
-    fun createProgram(): WebGLProgram = definedExternally
+    fun createProgram(): WebGLProgram
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createRenderbuffer)
      */
-    fun createRenderbuffer(): WebGLRenderbuffer = definedExternally
+    fun createRenderbuffer(): WebGLRenderbuffer
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createShader)
      */
-    fun createShader(type: GLenum): WebGLShader? = definedExternally
+    fun createShader(type: GLenum): WebGLShader?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createTexture)
      */
-    fun createTexture(): WebGLTexture = definedExternally
+    fun createTexture(): WebGLTexture
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/cullFace)
      */
-    fun cullFace(mode: GLenum): Unit = definedExternally
+    fun cullFace(mode: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteBuffer)
      */
-    fun deleteBuffer(buffer: WebGLBuffer?): Unit = definedExternally
+    fun deleteBuffer(buffer: WebGLBuffer?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteFramebuffer)
      */
-    fun deleteFramebuffer(framebuffer: WebGLFramebuffer?): Unit = definedExternally
+    fun deleteFramebuffer(framebuffer: WebGLFramebuffer?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteProgram)
      */
-    fun deleteProgram(program: WebGLProgram?): Unit = definedExternally
+    fun deleteProgram(program: WebGLProgram?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteRenderbuffer)
      */
-    fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?): Unit = definedExternally
+    fun deleteRenderbuffer(renderbuffer: WebGLRenderbuffer?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteShader)
      */
-    fun deleteShader(shader: WebGLShader?): Unit = definedExternally
+    fun deleteShader(shader: WebGLShader?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteTexture)
      */
-    fun deleteTexture(texture: WebGLTexture?): Unit = definedExternally
+    fun deleteTexture(texture: WebGLTexture?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthFunc)
      */
-    fun depthFunc(func: GLenum): Unit = definedExternally
+    fun depthFunc(func: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthMask)
      */
-    fun depthMask(flag: GLboolean): Unit = definedExternally
+    fun depthMask(flag: GLboolean)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthRange)
@@ -298,7 +287,7 @@ external interface WebGLRenderingContextBase {
     fun depthRange(
         zNear: GLclampf,
         zFar: GLclampf,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/detachShader)
@@ -306,17 +295,17 @@ external interface WebGLRenderingContextBase {
     fun detachShader(
         program: WebGLProgram,
         shader: WebGLShader,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disable)
      */
-    fun disable(cap: GLenum): Unit = definedExternally
+    fun disable(cap: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disableVertexAttribArray)
      */
-    fun disableVertexAttribArray(index: GLuint): Unit = definedExternally
+    fun disableVertexAttribArray(index: GLuint)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawArrays)
@@ -325,7 +314,7 @@ external interface WebGLRenderingContextBase {
         mode: GLenum,
         first: GLint,
         count: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawElements)
@@ -335,27 +324,27 @@ external interface WebGLRenderingContextBase {
         count: GLsizei,
         type: GLenum,
         offset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enable)
      */
-    fun enable(cap: GLenum): Unit = definedExternally
+    fun enable(cap: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enableVertexAttribArray)
      */
-    fun enableVertexAttribArray(index: GLuint): Unit = definedExternally
+    fun enableVertexAttribArray(index: GLuint)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/finish)
      */
-    fun finish(): Unit = definedExternally
+    fun finish()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/flush)
      */
-    fun flush(): Unit = definedExternally
+    fun flush()
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferRenderbuffer)
@@ -365,7 +354,7 @@ external interface WebGLRenderingContextBase {
         attachment: GLenum,
         renderbuffertarget: GLenum,
         renderbuffer: WebGLRenderbuffer?,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferTexture2D)
@@ -376,17 +365,17 @@ external interface WebGLRenderingContextBase {
         textarget: GLenum,
         texture: WebGLTexture?,
         level: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/frontFace)
      */
-    fun frontFace(mode: GLenum): Unit = definedExternally
+    fun frontFace(mode: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/generateMipmap)
      */
-    fun generateMipmap(target: GLenum): Unit = definedExternally
+    fun generateMipmap(target: GLenum)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveAttrib)
@@ -394,7 +383,7 @@ external interface WebGLRenderingContextBase {
     fun getActiveAttrib(
         program: WebGLProgram,
         index: GLuint,
-    ): WebGLActiveInfo? = definedExternally
+    ): WebGLActiveInfo?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveUniform)
@@ -402,12 +391,12 @@ external interface WebGLRenderingContextBase {
     fun getActiveUniform(
         program: WebGLProgram,
         index: GLuint,
-    ): WebGLActiveInfo? = definedExternally
+    ): WebGLActiveInfo?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttachedShaders)
      */
-    fun getAttachedShaders(program: WebGLProgram): ReadonlyArray<WebGLShader>? = definedExternally
+    fun getAttachedShaders(program: WebGLProgram): ReadonlyArray<WebGLShader>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttribLocation)
@@ -415,7 +404,7 @@ external interface WebGLRenderingContextBase {
     fun getAttribLocation(
         program: WebGLProgram,
         name: String,
-    ): GLint = definedExternally
+    ): GLint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getBufferParameter)
@@ -423,24 +412,24 @@ external interface WebGLRenderingContextBase {
     fun getBufferParameter(
         target: GLenum,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getContextAttributes)
      */
-    fun getContextAttributes(): WebGLContextAttributes? = definedExternally
+    fun getContextAttributes(): WebGLContextAttributes?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getError)
      */
-    fun getError(): GLenum = definedExternally
+    fun getError(): GLenum
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension)
      */
     @InternalApi
     @JsName("getExtension")
-    fun <T : JsAny?> getExtensionOrNullUnsafe(name: String): T? = definedExternally
+    fun <T : JsAny?> getExtensionOrNullUnsafe(name: String): T?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter)
@@ -449,17 +438,17 @@ external interface WebGLRenderingContextBase {
         target: GLenum,
         attachment: GLenum,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getParameter)
      */
-    fun getParameter(pname: GLenum): JsAny? = definedExternally
+    fun getParameter(pname: GLenum): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramInfoLog)
      */
-    fun getProgramInfoLog(program: WebGLProgram): String? = definedExternally
+    fun getProgramInfoLog(program: WebGLProgram): String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramParameter)
@@ -467,7 +456,7 @@ external interface WebGLRenderingContextBase {
     fun getProgramParameter(
         program: WebGLProgram,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter)
@@ -475,12 +464,12 @@ external interface WebGLRenderingContextBase {
     fun getRenderbufferParameter(
         target: GLenum,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderInfoLog)
      */
-    fun getShaderInfoLog(shader: WebGLShader): String? = definedExternally
+    fun getShaderInfoLog(shader: WebGLShader): String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderParameter)
@@ -488,7 +477,7 @@ external interface WebGLRenderingContextBase {
     fun getShaderParameter(
         shader: WebGLShader,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderPrecisionFormat)
@@ -496,17 +485,17 @@ external interface WebGLRenderingContextBase {
     fun getShaderPrecisionFormat(
         shadertype: GLenum,
         precisiontype: GLenum,
-    ): WebGLShaderPrecisionFormat? = definedExternally
+    ): WebGLShaderPrecisionFormat?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderSource)
      */
-    fun getShaderSource(shader: WebGLShader): String? = definedExternally
+    fun getShaderSource(shader: WebGLShader): String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getSupportedExtensions)
      */
-    fun getSupportedExtensions(): ReadonlyArray<JsString>? = definedExternally
+    fun getSupportedExtensions(): ReadonlyArray<JsString>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getTexParameter)
@@ -514,7 +503,7 @@ external interface WebGLRenderingContextBase {
     fun getTexParameter(
         target: GLenum,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniform)
@@ -522,7 +511,7 @@ external interface WebGLRenderingContextBase {
     fun getUniform(
         program: WebGLProgram,
         location: WebGLUniformLocation,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniformLocation)
@@ -530,7 +519,7 @@ external interface WebGLRenderingContextBase {
     fun getUniformLocation(
         program: WebGLProgram,
         name: String,
-    ): WebGLUniformLocation? = definedExternally
+    ): WebGLUniformLocation?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttrib)
@@ -538,7 +527,7 @@ external interface WebGLRenderingContextBase {
     fun getVertexAttrib(
         index: GLuint,
         pname: GLenum,
-    ): JsAny? = definedExternally
+    ): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttribOffset)
@@ -546,7 +535,7 @@ external interface WebGLRenderingContextBase {
     fun getVertexAttribOffset(
         index: GLuint,
         pname: GLenum,
-    ): GLintptr = definedExternally
+    ): GLintptr
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/hint)
@@ -554,57 +543,57 @@ external interface WebGLRenderingContextBase {
     fun hint(
         target: GLenum,
         mode: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isBuffer)
      */
-    fun isBuffer(buffer: WebGLBuffer?): GLboolean = definedExternally
+    fun isBuffer(buffer: WebGLBuffer?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isContextLost)
      */
-    fun isContextLost(): Boolean = definedExternally
+    fun isContextLost(): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isEnabled)
      */
-    fun isEnabled(cap: GLenum): GLboolean = definedExternally
+    fun isEnabled(cap: GLenum): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isFramebuffer)
      */
-    fun isFramebuffer(framebuffer: WebGLFramebuffer?): GLboolean = definedExternally
+    fun isFramebuffer(framebuffer: WebGLFramebuffer?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isProgram)
      */
-    fun isProgram(program: WebGLProgram?): GLboolean = definedExternally
+    fun isProgram(program: WebGLProgram?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isRenderbuffer)
      */
-    fun isRenderbuffer(renderbuffer: WebGLRenderbuffer?): GLboolean = definedExternally
+    fun isRenderbuffer(renderbuffer: WebGLRenderbuffer?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isShader)
      */
-    fun isShader(shader: WebGLShader?): GLboolean = definedExternally
+    fun isShader(shader: WebGLShader?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isTexture)
      */
-    fun isTexture(texture: WebGLTexture?): GLboolean = definedExternally
+    fun isTexture(texture: WebGLTexture?): GLboolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/lineWidth)
      */
-    fun lineWidth(width: GLfloat): Unit = definedExternally
+    fun lineWidth(width: GLfloat)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/linkProgram)
      */
-    fun linkProgram(program: WebGLProgram): Unit = definedExternally
+    fun linkProgram(program: WebGLProgram)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/pixelStorei)
@@ -612,7 +601,7 @@ external interface WebGLRenderingContextBase {
     fun pixelStorei(
         pname: GLenum,
         param: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/pixelStorei)
@@ -620,7 +609,7 @@ external interface WebGLRenderingContextBase {
     fun pixelStorei(
         pname: GLenum,
         param: GLboolean,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/polygonOffset)
@@ -628,7 +617,7 @@ external interface WebGLRenderingContextBase {
     fun polygonOffset(
         factor: GLfloat,
         units: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/renderbufferStorage)
@@ -638,7 +627,7 @@ external interface WebGLRenderingContextBase {
         internalformat: GLenum,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/sampleCoverage)
@@ -646,7 +635,7 @@ external interface WebGLRenderingContextBase {
     fun sampleCoverage(
         value: GLclampf,
         invert: GLboolean,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/scissor)
@@ -656,7 +645,7 @@ external interface WebGLRenderingContextBase {
         y: GLint,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/shaderSource)
@@ -664,7 +653,7 @@ external interface WebGLRenderingContextBase {
     fun shaderSource(
         shader: WebGLShader,
         source: String,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFunc)
@@ -673,7 +662,7 @@ external interface WebGLRenderingContextBase {
         func: GLenum,
         ref: GLint,
         mask: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFuncSeparate)
@@ -683,12 +672,12 @@ external interface WebGLRenderingContextBase {
         func: GLenum,
         ref: GLint,
         mask: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMask)
      */
-    fun stencilMask(mask: GLuint): Unit = definedExternally
+    fun stencilMask(mask: GLuint)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMaskSeparate)
@@ -696,7 +685,7 @@ external interface WebGLRenderingContextBase {
     fun stencilMaskSeparate(
         face: GLenum,
         mask: GLuint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOp)
@@ -705,7 +694,7 @@ external interface WebGLRenderingContextBase {
         fail: GLenum,
         zfail: GLenum,
         zpass: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOpSeparate)
@@ -715,7 +704,7 @@ external interface WebGLRenderingContextBase {
         fail: GLenum,
         zfail: GLenum,
         zpass: GLenum,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
@@ -724,13 +713,13 @@ external interface WebGLRenderingContextBase {
         target: GLenum,
         pname: GLenum,
         param: GLenum,
-    ): Unit = definedExternally
+    )
 
     fun texParameterf(
         target: GLenum,
         pname: GLenum,
         param: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter)
@@ -739,13 +728,13 @@ external interface WebGLRenderingContextBase {
         target: GLenum,
         pname: GLenum,
         param: GLenum,
-    ): Unit = definedExternally
+    )
 
     fun texParameteri(
         target: GLenum,
         pname: GLenum,
         param: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -753,7 +742,7 @@ external interface WebGLRenderingContextBase {
     fun uniform1f(
         location: WebGLUniformLocation?,
         x: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -761,7 +750,7 @@ external interface WebGLRenderingContextBase {
     fun uniform1i(
         location: WebGLUniformLocation?,
         x: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -770,7 +759,7 @@ external interface WebGLRenderingContextBase {
         location: WebGLUniformLocation?,
         x: GLfloat,
         y: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -779,7 +768,7 @@ external interface WebGLRenderingContextBase {
         location: WebGLUniformLocation?,
         x: GLint,
         y: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -789,7 +778,7 @@ external interface WebGLRenderingContextBase {
         x: GLfloat,
         y: GLfloat,
         z: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -799,7 +788,7 @@ external interface WebGLRenderingContextBase {
         x: GLint,
         y: GLint,
         z: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -810,7 +799,7 @@ external interface WebGLRenderingContextBase {
         y: GLfloat,
         z: GLfloat,
         w: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform)
@@ -821,17 +810,17 @@ external interface WebGLRenderingContextBase {
         y: GLint,
         z: GLint,
         w: GLint,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/useProgram)
      */
-    fun useProgram(program: WebGLProgram?): Unit = definedExternally
+    fun useProgram(program: WebGLProgram?)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/validateProgram)
      */
-    fun validateProgram(program: WebGLProgram): Unit = definedExternally
+    fun validateProgram(program: WebGLProgram)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -839,7 +828,7 @@ external interface WebGLRenderingContextBase {
     fun vertexAttrib1f(
         index: GLuint,
         x: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -847,7 +836,7 @@ external interface WebGLRenderingContextBase {
     fun vertexAttrib1fv(
         index: GLuint,
         values: Float32List,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -856,7 +845,7 @@ external interface WebGLRenderingContextBase {
         index: GLuint,
         x: GLfloat,
         y: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -864,7 +853,7 @@ external interface WebGLRenderingContextBase {
     fun vertexAttrib2fv(
         index: GLuint,
         values: Float32List,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -874,7 +863,7 @@ external interface WebGLRenderingContextBase {
         x: GLfloat,
         y: GLfloat,
         z: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -882,7 +871,7 @@ external interface WebGLRenderingContextBase {
     fun vertexAttrib3fv(
         index: GLuint,
         values: Float32List,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -893,7 +882,7 @@ external interface WebGLRenderingContextBase {
         y: GLfloat,
         z: GLfloat,
         w: GLfloat,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib)
@@ -901,7 +890,7 @@ external interface WebGLRenderingContextBase {
     fun vertexAttrib4fv(
         index: GLuint,
         values: Float32List,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttribPointer)
@@ -913,7 +902,7 @@ external interface WebGLRenderingContextBase {
         normalized: GLboolean,
         stride: GLsizei,
         offset: GLintptr,
-    ): Unit = definedExternally
+    )
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/viewport)
@@ -923,10 +912,10 @@ external interface WebGLRenderingContextBase {
         y: GLint,
         width: GLsizei,
         height: GLsizei,
-    ): Unit = definedExternally
+    )
 
     @JsName("makeXRCompatible")
-    fun makeXRCompatibleAsync(): Promise<Void> = definedExternally
+    fun makeXRCompatibleAsync(): Promise<Void>
 }
 
 suspend inline fun WebGLRenderingContextBase.makeXRCompatible() {

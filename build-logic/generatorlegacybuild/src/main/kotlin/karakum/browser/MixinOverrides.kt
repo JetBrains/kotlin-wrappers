@@ -62,6 +62,10 @@ internal val MIXINS_WITH_REQUIRED_OVERRIDES: Set<String> = setOf(
     "SVGURIReference",
     "TextDecoderCommon",
     "TextEncoderCommon",
+    "WebGL2RenderingContextBase",
+    "WebGL2RenderingContextOverloads",
+    "WebGLRenderingContextBase",
+    "WebGLRenderingContextOverloads",
     "XPathEvaluatorBase",
 )
 
