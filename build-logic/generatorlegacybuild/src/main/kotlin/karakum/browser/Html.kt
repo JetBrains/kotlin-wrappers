@@ -1362,7 +1362,7 @@ internal fun convertInterface(
                 -> result
                 .replace("open val length: Int", "override val length: Int")
                 // CSSStyleDeclarationBase
-                .replace("\nval length: Int", "override val length: Int")
+                .replace("\nval length: Int", "\noverride val length: Int")
 
             "DOMMatrix",
             "DOMPoint",
