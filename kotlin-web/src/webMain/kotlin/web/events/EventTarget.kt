@@ -5,7 +5,8 @@
 
 package web.events
 
-import js.objects.unsafeJso
+import web.abort.AbortController
+import web.abort.unsafeAbortable
 import web.experimental.ExperimentalWebApi
 import web.observable.Observable
 
@@ -38,28 +39,22 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
 ): () -> Unit =
     addEventHandler(
         type = type,
-        options = unsafeJso(),
+        options = null,
         handler = handler,
     )
 
 fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
     type: EventType<E>,
-    options: AddEventListenerOptions,
+    options: AddEventListenerOptions?,
     handler: EventHandler<E, C, T>,
 ): () -> Unit {
+    val controller = AbortController()
     addEventListener(
         type = type,
         callback = handler,
-        options = options,
+        options = unsafeAbortable(options, controller.signal),
     )
-
-    return {
-        removeEventListener(
-            type = type,
-            callback = handler,
-            options = options,
-        )
-    }
+    return controller::abort
 }
 
 // event + targets
@@ -68,32 +63,25 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
     handler: (D) -> Unit,
 ): () -> Unit
         where D : E,
-              D : HasTargets<C, EventTarget> {
-    return addEventHandler(
+              D : HasTargets<C, EventTarget> =
+    addEventHandler(
         type = type,
-        options = unsafeJso(),
+        options = null,
         handler = handler,
     )
-}
 
 fun <E : Event, C : EventTarget, D> C.addEventHandler(
     type: EventType<E>,
-    options: AddEventListenerOptions,
+    options: AddEventListenerOptions?,
     handler: (D) -> Unit,
 ): () -> Unit
         where D : E,
               D : HasTargets<C, EventTarget> {
+    val controller = AbortController()
     addEventListener(
         type = type,
         callback = handler,
-        options = options,
+        options = unsafeAbortable(options, controller.signal),
     )
-
-    return {
-        removeEventListener(
-            type = type,
-            callback = handler,
-            options = options,
-        )
-    }
+    return controller::abort
 }

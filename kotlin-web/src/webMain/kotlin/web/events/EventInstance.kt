@@ -11,6 +11,8 @@ import js.reflect.upcast
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
+import web.abort.AbortController
+import web.abort.unsafeAbortable
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
     @InternalApi
@@ -80,21 +82,15 @@ private fun listenerOptions(
 // addHandler
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
     handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions = unsafeJso(),
+    options: AddEventListenerOptions? = null,
 ): () -> Unit {
+    val controller = AbortController()
     target.addEventListener(
         type = type,
         callback = handler,
-        options = options,
+        options = unsafeAbortable(options, controller.signal),
     )
-
-    return {
-        target.removeEventListener(
-            type = type,
-            callback = handler,
-            options = options,
-        )
-    }
+    return controller::abort
 }
 
 fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addHandler(

@@ -26,20 +26,6 @@ external interface EventTargetLike {
         options: AddEventListenerOptions? = definedExternally,
     ): Unit = definedExternally
 
-    internal /* hidden */
-    fun <E : Event> removeEventListener(
-        type: EventType<E>,
-        callback: EventHandler<E, *, *>,
-        options: EventListenerOptions? = definedExternally,
-    ): Unit = definedExternally
-
-    internal /* hidden */
-    fun <E : Event> removeEventListener(
-        type: EventType<*>,
-        callback: (E) -> Unit,
-        options: EventListenerOptions? = definedExternally,
-    ): Unit = definedExternally
-
     /**
      * The **`dispatchEvent()`** method of the EventTarget sends an Event to the object, (synchronously) invoking the affected event listeners in the appropriate order.
      *
