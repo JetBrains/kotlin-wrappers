@@ -6,7 +6,6 @@
 package web.events
 
 import js.internal.InternalApi
-import js.objects.unsafeJso
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget)
@@ -49,40 +48,4 @@ external interface EventTargetLike {
     fun dispatchEvent(
         event: Event,
     ): Boolean
-}
-
-// event
-
-/**
- * The **`addEventListener()`** method of the EventTarget interface sets up a function that will be called whenever the specified event is delivered to the target.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)
- */
-fun <E : Event> EventTargetLike.addEventListener(
-    type: EventType<E>,
-    handler: (E) -> Unit,
-    options: AddEventListenerOptions = unsafeJso(),
-) {
-    addEventListener(
-        type = type,
-        callback = handler,
-        options = options,
-    )
-}
-
-/**
- * The **`removeEventListener()`** method of the EventTarget interface removes an event listener previously registered with EventTarget.addEventListener() from the target.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener)
- */
-fun <E : Event> EventTargetLike.removeEventListener(
-    type: EventType<E>,
-    handler: (E) -> Unit,
-    options: EventListenerOptions = unsafeJso(),
-) {
-    removeEventListener(
-        type = type,
-        callback = handler,
-        options = options,
-    )
 }
