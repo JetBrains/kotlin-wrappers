@@ -32,6 +32,10 @@ private constructor() :
      */
     open val spreadMethod: SVGAnimatedEnumeration<SpreadMethod>
 
+    /* `SVGURIReference` overrides */
+
+    override val href: SVGAnimatedString
+
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement#svg_spreadmethod_unknown)

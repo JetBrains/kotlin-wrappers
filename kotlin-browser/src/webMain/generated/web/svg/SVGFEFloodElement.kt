@@ -10,4 +10,13 @@ package web.svg
 open external class SVGFEFloodElement
 private constructor() :
     SVGElement,
-    SVGFilterPrimitiveStandardAttributes
+    SVGFilterPrimitiveStandardAttributes {
+
+    /* `SVGFilterPrimitiveStandardAttributes` overrides */
+
+    override val height: SVGAnimatedLength
+    override val result: SVGAnimatedString
+    override val width: SVGAnimatedLength
+    override val x: SVGAnimatedLength
+    override val y: SVGAnimatedLength
+}

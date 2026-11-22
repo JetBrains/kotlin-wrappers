@@ -10,4 +10,9 @@ package web.svg
 open external class SVGMPathElement
 private constructor() :
     SVGElement,
-    SVGURIReference
+    SVGURIReference {
+
+    /* `SVGURIReference` overrides */
+
+    override val href: SVGAnimatedString
+}

@@ -72,4 +72,9 @@ private constructor() :
      */
     @JsThrows(InvalidStateError::class)
     open fun getStartTime(): Float
+
+    /* `SVGTests` overrides */
+
+    override val requiredExtensions: SVGStringList
+    override val systemLanguage: SVGStringList
 }

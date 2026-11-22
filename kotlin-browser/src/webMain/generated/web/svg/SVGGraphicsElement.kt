@@ -38,4 +38,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement/getScreenCTM)
      */
     open fun getScreenCTM(): SVGMatrix?
+
+    /* `SVGTests` overrides */
+
+    override val requiredExtensions: SVGStringList
+    override val systemLanguage: SVGStringList
 }

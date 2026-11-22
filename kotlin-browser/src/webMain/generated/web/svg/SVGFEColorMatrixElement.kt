@@ -32,6 +32,14 @@ private constructor() :
      */
     open val values: SVGAnimatedNumberList
 
+    /* `SVGFilterPrimitiveStandardAttributes` overrides */
+
+    override val height: SVGAnimatedLength
+    override val result: SVGAnimatedString
+    override val width: SVGAnimatedLength
+    override val x: SVGAnimatedLength
+    override val y: SVGAnimatedLength
+
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement#svg_fecolormatrix_type_unknown)

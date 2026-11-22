@@ -10,4 +10,10 @@ package web.svg
 open external class SVGViewElement
 private constructor() :
     SVGElement,
-    SVGFitToViewBox
+    SVGFitToViewBox {
+
+    /* `SVGFitToViewBox` overrides */
+
+    override val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    override val viewBox: SVGAnimatedRect
+}

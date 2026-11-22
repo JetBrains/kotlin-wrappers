@@ -56,4 +56,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
      */
     open val y: SVGAnimatedLength
+
+    /* `SVGURIReference` overrides */
+
+    override val href: SVGAnimatedString
 }

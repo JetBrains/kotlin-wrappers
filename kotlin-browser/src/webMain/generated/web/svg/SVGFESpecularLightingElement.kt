@@ -52,4 +52,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpecularLightingElement/surfaceScale)
      */
     open val surfaceScale: SVGAnimatedNumber
+
+    /* `SVGFilterPrimitiveStandardAttributes` overrides */
+
+    override val height: SVGAnimatedLength
+    override val result: SVGAnimatedString
+    override val width: SVGAnimatedLength
+    override val x: SVGAnimatedLength
+    override val y: SVGAnimatedLength
 }

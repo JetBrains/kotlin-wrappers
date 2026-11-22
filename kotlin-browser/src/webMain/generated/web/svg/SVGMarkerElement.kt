@@ -74,6 +74,11 @@ private constructor() :
      */
     open fun setOrientToAuto()
 
+    /* `SVGFitToViewBox` overrides */
+
+    override val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    override val viewBox: SVGAnimatedRect
+
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement#svg_markerunits_unknown)

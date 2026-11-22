@@ -53,6 +53,14 @@ private constructor() :
      */
     open val type: SVGAnimatedEnumeration<Type>
 
+    /* `SVGFilterPrimitiveStandardAttributes` overrides */
+
+    override val height: SVGAnimatedLength
+    override val result: SVGAnimatedString
+    override val width: SVGAnimatedLength
+    override val x: SVGAnimatedLength
+    override val y: SVGAnimatedLength
+
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement#svg_turbulence_type_unknown)

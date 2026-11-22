@@ -39,6 +39,10 @@ private constructor() :
      */
     open val startOffset: SVGAnimatedLength
 
+    /* `SVGURIReference` overrides */
+
+    override val href: SVGAnimatedString
+
     companion object {
         val TEXTPATH_METHODTYPE_UNKNOWN: Method
         val TEXTPATH_METHODTYPE_ALIGN: Method

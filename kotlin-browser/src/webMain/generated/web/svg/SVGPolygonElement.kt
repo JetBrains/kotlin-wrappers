@@ -10,4 +10,10 @@ package web.svg
 open external class SVGPolygonElement
 private constructor() :
     SVGGeometryElement,
-    SVGAnimatedPoints
+    SVGAnimatedPoints {
+
+    /* `SVGAnimatedPoints` overrides */
+
+    override val animatedPoints: SVGPointList
+    override val points: SVGPointList
+}

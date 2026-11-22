@@ -193,4 +193,9 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/unpauseAnimations)
      */
     open fun unpauseAnimations()
+
+    /* `SVGFitToViewBox` overrides */
+
+    override val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    override val viewBox: SVGAnimatedRect
 }

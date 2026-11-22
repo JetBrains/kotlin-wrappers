@@ -55,4 +55,12 @@ private constructor() :
         stdDeviationX: Float,
         stdDeviationY: Float,
     )
+
+    /* `SVGFilterPrimitiveStandardAttributes` overrides */
+
+    override val height: SVGAnimatedLength
+    override val result: SVGAnimatedString
+    override val width: SVGAnimatedLength
+    override val x: SVGAnimatedLength
+    override val y: SVGAnimatedLength
 }

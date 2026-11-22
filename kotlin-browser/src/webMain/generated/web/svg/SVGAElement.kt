@@ -72,4 +72,8 @@ private constructor() :
     override var search: String
     override var type: String
     override var username: String
+
+    /* `SVGURIReference` overrides */
+
+    override val href: SVGAnimatedString
 }

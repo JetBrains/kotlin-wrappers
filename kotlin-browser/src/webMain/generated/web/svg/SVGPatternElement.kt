@@ -60,4 +60,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement/y)
      */
     open val y: SVGAnimatedLength
+
+    /* `SVGFitToViewBox` overrides */
+
+    override val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
+    override val viewBox: SVGAnimatedRect
+
+    /* `SVGURIReference` overrides */
+
+    override val href: SVGAnimatedString
 }
