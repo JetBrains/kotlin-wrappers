@@ -1,14 +1,7 @@
-@file:Suppress(
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package react.use
 
-import js.reflect.unsafeCast
 import js.void.Void
+import react.RefObject
 import react.useRef
 import kotlin.reflect.KProperty
 
@@ -21,14 +14,18 @@ fun <T> useLatest(
     val ref = useRef<T & Any>()
     ref.current = value
 
-    return unsafeCast(ref)
+    return LatestInstance(ref)
 }
 
-sealed external interface LatestInstance<T> {
+value class LatestInstance<T>(
+    @PublishedApi
+    internal val ref: RefObject<T & Any>,
+) {
     inline operator fun getValue(
         thisRef: Void,
         property: KProperty<*>,
     ): T {
-        return asDynamic().current
+        @Suppress("UNCHECKED_CAST")
+        return ref.current as T
     }
 }
