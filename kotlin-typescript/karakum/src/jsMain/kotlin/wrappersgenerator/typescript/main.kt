@@ -24,9 +24,6 @@ import wrappersgenerator.typescript.varianceModifiers.modifyInterfaceVariance
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
-        libraryName = "typescript"
-        inputRoots = inputRoots?.map { "$it/@karakum-input" }
-
         plugins = listOf(
             ExcludeDeprecatedMembers,
             excludeBrandMarkers,
@@ -101,6 +98,9 @@ suspend fun main(args: ReadonlyArray<String>) {
             "**/isTypeOnlyImportDeclaration.kt",
         )
         isolatedOutputPackage = true
+        moduleNameMapper = mapOf(
+            "^.*$" to "typescript",
+        )
         packageNameMapper = mapOf(
             "lib/typescript" to "/",
             "^ts/(.+)" to "typescript/$1",
