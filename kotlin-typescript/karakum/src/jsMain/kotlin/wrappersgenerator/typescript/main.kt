@@ -90,6 +90,7 @@ suspend fun main(args: ReadonlyArray<String>) {
         input = listOf("lib/typescript.d.ts")
         ignoreOutput = listOf(
             "**/server/**",
+            "**/module.kt",
             "**/CompletionsTriggerCharacter.kt",
             "**/SignatureHelpRetriggerCharacter.kt",
             "**/SignatureHelpTriggerCharacter.kt",
