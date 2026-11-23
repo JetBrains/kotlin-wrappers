@@ -24,6 +24,9 @@ import wrappersgenerator.typescript.varianceModifiers.modifyInterfaceVariance
 
 suspend fun main(args: ReadonlyArray<String>) {
     generate(args) {
+        libraryName = "typescript"
+        inputRoots = inputRoots?.map { "$it/@karakum-input" }
+
         plugins = listOf(
             ExcludeDeprecatedMembers,
             excludeBrandMarkers,
