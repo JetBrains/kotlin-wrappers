@@ -22,6 +22,9 @@ external interface CustomSystemProps : Props
 external interface BoxOwnProps :
     PropsWithChildren,
     PropsWithSx {
+    /**
+     * The content of the component.
+     */
     override var children: ReactNode?
 
     /**

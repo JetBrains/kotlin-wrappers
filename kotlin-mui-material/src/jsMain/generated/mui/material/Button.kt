@@ -128,6 +128,7 @@ external interface ButtonOwnProps :
  * - [Button](https://mui.com/material-ui/react-button/)
  * - [Menubar](https://mui.com/material-ui/react-menubar/)
  * - [Number Field](https://mui.com/material-ui/react-number-field/)
+ * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *

@@ -14,7 +14,7 @@ import mui.system.StandardProps
 import mui.system.SxProps
 import react.FC
 import react.ReactNode
-import web.aria.AriaRole
+import react.dom.aria.AriaRole
 
 external interface SnackbarContentProps :
     StandardProps,

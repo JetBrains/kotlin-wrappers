@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import mui.system.SxProps
+import react.CSSProperties
 
 @JsPlainObject
 external interface ThemeOptions : mui.system.ThemeOptions {
@@ -42,7 +43,7 @@ external interface ThemeOptions : mui.system.ThemeOptions {
 
     override val zIndex: ZIndex?
 
-    val focusVisible: Any? /* boolean | FocusVisible */
+    val focusVisible: Any? /* boolean | FocusVisibleOptions */
 
     val unstable_strictMode: Boolean?
 
@@ -53,6 +54,11 @@ external interface ThemeOptions : mui.system.ThemeOptions {
 
 @JsPlainObject
 external interface BaseTheme : mui.system.Theme {
+    val focusVisible: FocusVisible?
+
+    /** The `focusVisible.insetOverrides` the theme was created with. */
+    val unstable_focusVisibleInsetOverrides: CSSProperties?
+
     override val mixins: Mixins
 
     val motion: Motion
@@ -68,8 +74,6 @@ external interface BaseTheme : mui.system.Theme {
     override val typography: TypographyVariants
 
     override val zIndex: ZIndex
-
-    val focusVisible: FocusVisible?
 
     val unstable_strictMode: Boolean?
 
@@ -87,6 +91,9 @@ external interface Theme : BaseTheme {
     override val unstable_sx: (props: SxProps<Theme>) -> Any /* CSSObject from `@mui/styled-engine` */
 
     override val unstable_sxConfig: Any? /* SxConfig */
+
+    /** The scale `enhanceDensity` resolved, in px numbers; unset until the enhancer runs. */
+    val unstable_densityScale: ResolvedDensityScale?
 
     val alpha: (color: String, value: Any /* Number | String */) -> String
 

@@ -22,6 +22,9 @@ external interface ContainerProps :
 external interface ContainerOwnProps :
     PropsWithChildren,
     PropsWithSx {
+    /**
+     * The content of the component.
+     */
     override var children: ReactNode?
 
     /**

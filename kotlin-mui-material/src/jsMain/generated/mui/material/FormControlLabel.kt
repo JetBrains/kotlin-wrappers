@@ -57,6 +57,9 @@ external interface FormControlLabelProps :
      */
     var labelPlacement: LabelPlacement?
 
+    /**
+     * The `name` of the control, used when the control does not set its own.
+     */
     var name: String?
 
     /**

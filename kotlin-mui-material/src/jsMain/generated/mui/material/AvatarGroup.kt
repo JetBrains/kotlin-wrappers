@@ -19,6 +19,10 @@ external interface AvatarGroupProps :
     PropsWithComponent
 
 external interface AvatarGroupSlots {
+    /**
+     * The component that renders the surplus avatar.
+     * @default Avatar
+     */
     var surplus: ElementType<*>
 }
 

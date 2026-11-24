@@ -68,6 +68,12 @@ external interface MenuItemOwnProps :
      * The system prop that allows defining system overrides as well as additional CSS styles.
      */
     override var sx: SxProps<Theme>?
+
+    /**
+     * The `tabIndex` of the root element.
+     * When not provided, it is managed by the parent menu's keyboard focus handling.
+     */
+    override var tabIndex: Int?
 }
 
 /**
@@ -75,6 +81,7 @@ external interface MenuItemOwnProps :
  * Demos:
  *
  * - [Menu](https://mui.com/material-ui/react-menu/)
+ * - [Transfer List](https://mui.com/material-ui/react-transfer-list/)
  *
  * API:
  *

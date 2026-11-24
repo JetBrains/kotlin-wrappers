@@ -7,6 +7,7 @@ import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import mui.system.Shadows
 import mui.system.Union
+import react.CSSProperties
 
 external interface Opacity {
     var inputPlaceholder: Number
@@ -296,7 +297,7 @@ external interface ColorSystem {
 external interface ThemeVars {
     var font: Any? /* ExtractTypographyTokens<TypographyVariants> */
 
-    var palette: Any? /* Omit<ColorSystem['palette'], 'colorScheme' | 'mode' | 'contrastThreshold' | 'tonalOffset' | 'getContrastText' | 'augmentColor'> */
+    var palette: Any? /* Omit<ColorSystem['palette'], 'colorScheme' | 'mode' | 'contrastThreshold' | 'tonalOffset' | 'getContrastText' | 'augmentColor' | 'action'> */
 
     var opacity: Any? /* Opacity */
 
@@ -311,7 +312,16 @@ external interface ThemeVars {
     var zIndex: ZIndex
 }
 
-external interface CssVarsTheme : ColorSystem {
+external interface FocusVisibleThemeMembers {
+    var focusVisible: CSSProperties?
+
+    /** The `focusVisible.insetOverrides` the theme was created with. */
+    var unstable_focusVisibleInsetOverrides: CSSProperties?
+}
+
+external interface CssVarsTheme :
+    ColorSystem,
+    FocusVisibleThemeMembers {
     var colorSchemes: Any? /* Partial<Record<SupportedColorScheme, ColorSystem>> */
 
     var rootSelector: String
@@ -364,6 +374,9 @@ external interface CssVarsTheme : ColorSystem {
     var shouldSkipGeneratingVar: (keys: ReadonlyArray<String>, value: Any /* String | Number */) -> Boolean
 
     var unstable_sxConfig: Any? /* SxConfig */
+
+    /** The scale `enhanceDensity` resolved, in px numbers; unset until the enhancer runs. */
+    var unstable_densityScale: ResolvedDensityScale?
 
     var unstable_sx: (props: Any /* SxProps<CssVarsTheme> */) -> Any /* CSSObject from `@mui/styled-engine` */
 

@@ -50,6 +50,8 @@ external interface InputBaseClasses {
 
     /** Styles applied to the input element. */
     val input: ClassName
+
+    /** Styles applied to the input element if `type="search"`. */
     val inputTypeSearch: ClassName
 }
 
