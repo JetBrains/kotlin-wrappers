@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import mui.system.SxProps
-import react.CSSProperties
 
 @JsPlainObject
 external interface ThemeOptions : mui.system.ThemeOptions {
@@ -53,12 +52,9 @@ external interface ThemeOptions : mui.system.ThemeOptions {
 }
 
 @JsPlainObject
-external interface BaseTheme : mui.system.Theme {
-    val focusVisible: FocusVisible?
-
-    /** The `focusVisible.insetOverrides` the theme was created with. */
-    val unstable_focusVisibleInsetOverrides: CSSProperties?
-
+external interface BaseTheme :
+    mui.system.Theme,
+    FocusVisibleThemeMembers {
     override val mixins: Mixins
 
     val motion: Motion

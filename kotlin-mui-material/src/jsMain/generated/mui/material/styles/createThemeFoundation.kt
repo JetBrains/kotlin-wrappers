@@ -286,12 +286,13 @@ external interface CssVarsPalette {
     var Tooltip: PaletteTooltip
 }
 
+@JsPlainObject
 external interface ColorSystem {
-    var palette: Any? /* Palette & CssVarsPalette */
+    val palette: Any? /* Palette & CssVarsPalette */
 
-    var opacity: Any? /* Opacity */
+    val opacity: Any? /* Opacity */
 
-    var overlays: Any? /* Overlays */
+    val overlays: Any? /* Overlays */
 }
 
 external interface ThemeVars {
@@ -312,57 +313,59 @@ external interface ThemeVars {
     var zIndex: ZIndex
 }
 
+@JsPlainObject
 external interface FocusVisibleThemeMembers {
-    var focusVisible: CSSProperties?
+    val focusVisible: CSSProperties?
 
     /** The `focusVisible.insetOverrides` the theme was created with. */
-    var unstable_focusVisibleInsetOverrides: CSSProperties?
+    val unstable_focusVisibleInsetOverrides: CSSProperties?
 }
 
+@JsPlainObject
 external interface CssVarsTheme :
     ColorSystem,
     FocusVisibleThemeMembers {
-    var colorSchemes: Any? /* Partial<Record<SupportedColorScheme, ColorSystem>> */
+    val colorSchemes: Any? /* Partial<Record<SupportedColorScheme, ColorSystem>> */
 
-    var rootSelector: String
+    val rootSelector: String
 
-    var colorSchemeSelector: Union /* 'media' | 'class' | 'data' | string */
+    val colorSchemeSelector: Union /* 'media' | 'class' | 'data' | string */
 
-    var cssVarPrefix: String
+    val cssVarPrefix: String
 
-    var defaultColorScheme: Any? /* SupportedColorScheme */
+    val defaultColorScheme: Any? /* SupportedColorScheme */
 
-    var vars: ThemeVars
+    val vars: ThemeVars
 
-    var getCssVar: (field: String /* ThemeCssVar */) -> String
+    val getCssVar: (field: String /* ThemeCssVar */) -> String
 
-    var getColorSchemeSelector: (colorScheme: String /* SupportedColorScheme */) -> String
+    val getColorSchemeSelector: (colorScheme: String /* SupportedColorScheme */) -> String
 
-    var generateThemeVars: () -> ThemeVars
+    val generateThemeVars: () -> ThemeVars
 
-    var generateStyleSheets: () -> ReadonlyArray<ReadonlyRecord<String, *>>
+    val generateStyleSheets: () -> ReadonlyArray<ReadonlyRecord<String, *>>
 
-    var generateSpacing: () -> Any /* SystemTheme['spacing'] */
+    val generateSpacing: () -> Any /* SystemTheme['spacing'] */
 
-    var spacing: Any /* SystemTheme['spacing'] */
+    val spacing: Any /* SystemTheme['spacing'] */
 
-    var breakpoints: Any /* SystemTheme['breakpoints'] */
+    val breakpoints: Any /* SystemTheme['breakpoints'] */
 
-    var shape: Shape
+    val shape: Shape
 
-    var typography: TypographyVariants
+    val typography: TypographyVariants
 
-    var motion: Motion
+    val motion: Motion
 
-    var transitions: Transitions
+    val transitions: Transitions
 
-    var shadows: Shadows
+    val shadows: Shadows
 
-    var mixins: Mixins
+    val mixins: Mixins
 
-    var zIndex: ZIndex
+    val zIndex: ZIndex
 
-    var direction: Any /* SystemTheme['direction'] */
+    val direction: Any /* SystemTheme['direction'] */
 
     /**
      * A function to determine if the key, value should be attached as CSS Variable
@@ -371,14 +374,14 @@ external interface CssVarsTheme :
      *  then, keys = ['foo', 'bar']
      *        value = 'var(--test)'
      */
-    var shouldSkipGeneratingVar: (keys: ReadonlyArray<String>, value: Any /* String | Number */) -> Boolean
+    val shouldSkipGeneratingVar: (keys: ReadonlyArray<String>, value: Any /* String | Number */) -> Boolean
 
-    var unstable_sxConfig: Any? /* SxConfig */
+    val unstable_sxConfig: Any? /* SxConfig */
 
     /** The scale `enhanceDensity` resolved, in px numbers; unset until the enhancer runs. */
-    var unstable_densityScale: ResolvedDensityScale?
+    val unstable_densityScale: ResolvedDensityScale?
 
-    var unstable_sx: (props: Any /* SxProps<CssVarsTheme> */) -> Any /* CSSObject from `@mui/styled-engine` */
+    val unstable_sx: (props: Any /* SxProps<CssVarsTheme> */) -> Any /* CSSObject from `@mui/styled-engine` */
 
-    var applyStyles: Any? /* ApplyStyles<SupportedColorScheme> */
+    val applyStyles: Any? /* ApplyStyles<SupportedColorScheme> */
 }
