@@ -51,17 +51,20 @@ external interface TreeViewClasses {
 external interface TreeViewSlots {
     /**
      * The default icon used to collapse the item.
+     * @default TreeViewCollapseIcon
      */
     val collapseIcon: ElementType<*>?
 
     /**
      * The default icon used to expand the item.
+     * @default TreeViewExpandIcon
      */
     val expandIcon: ElementType<*>?
 
     /**
      * The default icon displayed next to an end item.
      * This is applied to all Tree Items and can be overridden by the TreeItem `icon` slot prop.
+     * @default null
      */
     val endIcon: ElementType<*>?
 }

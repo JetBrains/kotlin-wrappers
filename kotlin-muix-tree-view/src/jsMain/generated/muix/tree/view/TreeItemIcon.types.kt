@@ -31,21 +31,25 @@ external interface TreeItemIconProps : Props {
 external interface TreeItemIconSlots {
     /**
      * The icon used to collapse the item.
+     * @default The `collapseIcon` slot of the Tree View.
      */
     val collapseIcon: ElementType<*>?
 
     /**
      * The icon used to expand the item.
+     * @default The `expandIcon` slot of the Tree View.
      */
     val expandIcon: ElementType<*>?
 
     /**
      * The icon displayed next to an end item.
+     * @default The `endIcon` slot of the Tree View.
      */
     val endIcon: ElementType<*>?
 
     /**
      * The icon to display next to the Tree Item's label.
+     * @default null
      */
     val icon: ElementType<*>?
 }
