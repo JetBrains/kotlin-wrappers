@@ -25,6 +25,11 @@ external interface TablePaginationActionsProps :
      */
     var classes: TablePaginationActionsClasses?
 
+    /**
+     * The total number of rows.
+     *
+     * `-1` means the total is unknown (server-side pagination): the next-page button stays enabled and the last-page button is disabled.
+     */
     var count: Int
 
     /**
@@ -43,16 +48,39 @@ external interface TablePaginationActionsProps :
      */
     var getItemAriaLabel: (type: Union /* 'first' | 'last' | 'next' | 'previous' */) -> String
 
+    /**
+     * Callback fired when the page is changed.
+     * @param {React.MouseEvent<HTMLButtonElement> | null} event The event source of the callback.
+     * @param {number} page The page selected.
+     */
     var onPageChange: (event: MouseEvent<HTMLButtonElement, *>?, page: Number) -> Unit
 
+    /**
+     * The zero-based index of the current page.
+     */
     var page: Int
 
+    /**
+     * The number of rows per page.
+     *
+     * `-1` means all the rows are shown on one page.
+     */
     var rowsPerPage: Int
 
+    /**
+     * If `true`, show the first-page button.
+     */
     var showFirstButton: Boolean
 
+    /**
+     * If `true`, show the last-page button.
+     */
     var showLastButton: Boolean
 
+    /**
+     * The props used for each slot inside.
+     * @default {}
+     */
     var slotProps: SlotProps?
 
     interface SlotProps {
@@ -66,6 +94,10 @@ external interface TablePaginationActionsProps :
         var previousButtonIcon: SvgIconProps?
     }
 
+    /**
+     * The components used for each slot inside.
+     * @default {}
+     */
     var slots: TablePaginationActionsSlots?
 
     /**

@@ -33,9 +33,6 @@ external interface NativeSelectClasses {
     /** Styles applied to the icon component. */
     val icon: ClassName
 
-    /** Styles applied to the icon component if the popup is open. */
-    val iconOpen: ClassName
-
     /** Styles applied to the icon component if `variant="filled"`. */
     val iconFilled: ClassName
 

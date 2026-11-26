@@ -106,6 +106,7 @@ external interface ButtonBaseOwnProps :
     override var sx: SxProps<Theme>?
 
     /**
+     * The `tabIndex` of the root element.
      * @default 0
      */
     var tabIndex: Int?

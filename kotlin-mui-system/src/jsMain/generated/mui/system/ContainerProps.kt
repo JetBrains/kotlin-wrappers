@@ -11,6 +11,9 @@ external interface ContainerProps :
     HTMLAttributes<HTMLDivElement>,
     PropsWithChildren,
     PropsWithSx {
+    /**
+     * The content of the component.
+     */
     override var children: ReactNode?
 
     /**

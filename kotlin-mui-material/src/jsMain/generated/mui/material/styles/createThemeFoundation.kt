@@ -7,6 +7,7 @@ import js.objects.ReadonlyRecord
 import kotlinx.js.JsPlainObject
 import mui.system.Shadows
 import mui.system.Union
+import react.CSSProperties
 
 external interface Opacity {
     var inputPlaceholder: Number
@@ -285,18 +286,19 @@ external interface CssVarsPalette {
     var Tooltip: PaletteTooltip
 }
 
+@JsPlainObject
 external interface ColorSystem {
-    var palette: Any? /* Palette & CssVarsPalette */
+    val palette: Any? /* Palette & CssVarsPalette */
 
-    var opacity: Any? /* Opacity */
+    val opacity: Any? /* Opacity */
 
-    var overlays: Any? /* Overlays */
+    val overlays: Any? /* Overlays */
 }
 
 external interface ThemeVars {
     var font: Any? /* ExtractTypographyTokens<TypographyVariants> */
 
-    var palette: Any? /* Omit<ColorSystem['palette'], 'colorScheme' | 'mode' | 'contrastThreshold' | 'tonalOffset' | 'getContrastText' | 'augmentColor'> */
+    var palette: Any? /* Omit<ColorSystem['palette'], 'colorScheme' | 'mode' | 'contrastThreshold' | 'tonalOffset' | 'getContrastText' | 'augmentColor' | 'action'> */
 
     var opacity: Any? /* Opacity */
 
@@ -311,48 +313,59 @@ external interface ThemeVars {
     var zIndex: ZIndex
 }
 
-external interface CssVarsTheme : ColorSystem {
-    var colorSchemes: Any? /* Partial<Record<SupportedColorScheme, ColorSystem>> */
+@JsPlainObject
+external interface FocusVisibleThemeMembers {
+    val focusVisible: CSSProperties?
 
-    var rootSelector: String
+    /** The `focusVisible.insetOverrides` the theme was created with. */
+    val unstable_focusVisibleInsetOverrides: CSSProperties?
+}
 
-    var colorSchemeSelector: Union /* 'media' | 'class' | 'data' | string */
+@JsPlainObject
+external interface CssVarsTheme :
+    ColorSystem,
+    FocusVisibleThemeMembers {
+    val colorSchemes: Any? /* Partial<Record<SupportedColorScheme, ColorSystem>> */
 
-    var cssVarPrefix: String
+    val rootSelector: String
 
-    var defaultColorScheme: Any? /* SupportedColorScheme */
+    val colorSchemeSelector: Union /* 'media' | 'class' | 'data' | string */
 
-    var vars: ThemeVars
+    val cssVarPrefix: String
 
-    var getCssVar: (field: String /* ThemeCssVar */) -> String
+    val defaultColorScheme: Any? /* SupportedColorScheme */
 
-    var getColorSchemeSelector: (colorScheme: String /* SupportedColorScheme */) -> String
+    val vars: ThemeVars
 
-    var generateThemeVars: () -> ThemeVars
+    val getCssVar: (field: String /* ThemeCssVar */) -> String
 
-    var generateStyleSheets: () -> ReadonlyArray<ReadonlyRecord<String, *>>
+    val getColorSchemeSelector: (colorScheme: String /* SupportedColorScheme */) -> String
 
-    var generateSpacing: () -> Any /* SystemTheme['spacing'] */
+    val generateThemeVars: () -> ThemeVars
 
-    var spacing: Any /* SystemTheme['spacing'] */
+    val generateStyleSheets: () -> ReadonlyArray<ReadonlyRecord<String, *>>
 
-    var breakpoints: Any /* SystemTheme['breakpoints'] */
+    val generateSpacing: () -> Any /* SystemTheme['spacing'] */
 
-    var shape: Shape
+    val spacing: Any /* SystemTheme['spacing'] */
 
-    var typography: TypographyVariants
+    val breakpoints: Any /* SystemTheme['breakpoints'] */
 
-    var motion: Motion
+    val shape: Shape
 
-    var transitions: Transitions
+    val typography: TypographyVariants
 
-    var shadows: Shadows
+    val motion: Motion
 
-    var mixins: Mixins
+    val transitions: Transitions
 
-    var zIndex: ZIndex
+    val shadows: Shadows
 
-    var direction: Any /* SystemTheme['direction'] */
+    val mixins: Mixins
+
+    val zIndex: ZIndex
+
+    val direction: Any /* SystemTheme['direction'] */
 
     /**
      * A function to determine if the key, value should be attached as CSS Variable
@@ -361,11 +374,14 @@ external interface CssVarsTheme : ColorSystem {
      *  then, keys = ['foo', 'bar']
      *        value = 'var(--test)'
      */
-    var shouldSkipGeneratingVar: (keys: ReadonlyArray<String>, value: Any /* String | Number */) -> Boolean
+    val shouldSkipGeneratingVar: (keys: ReadonlyArray<String>, value: Any /* String | Number */) -> Boolean
 
-    var unstable_sxConfig: Any? /* SxConfig */
+    val unstable_sxConfig: Any? /* SxConfig */
 
-    var unstable_sx: (props: Any /* SxProps<CssVarsTheme> */) -> Any /* CSSObject from `@mui/styled-engine` */
+    /** The scale `enhanceDensity` resolved, in px numbers; unset until the enhancer runs. */
+    val unstable_densityScale: ResolvedDensityScale?
 
-    var applyStyles: Any? /* ApplyStyles<SupportedColorScheme> */
+    val unstable_sx: (props: Any /* SxProps<CssVarsTheme> */) -> Any /* CSSObject from `@mui/styled-engine` */
+
+    val applyStyles: Any? /* ApplyStyles<SupportedColorScheme> */
 }

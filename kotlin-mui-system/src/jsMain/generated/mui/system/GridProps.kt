@@ -11,6 +11,9 @@ external interface GridProps :
     GridBaseProps,
     HTMLAttributes<HTMLDivElement>,
     PropsWithSx {
+    /**
+     * The system prop that allows defining system overrides as well as additional CSS styles.
+     */
     override var sx: SxProps<Theme>?
 }
 
