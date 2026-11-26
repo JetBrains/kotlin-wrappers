@@ -3,6 +3,10 @@ package karakum.csstype
 import karakum.common.ConversionResult
 import java.io.File
 
+internal const val SELECTOR: String = "Selector"
+internal const val CUSTOM_PROPERTY_NAME: String = "CustomPropertyName"
+internal const val CUSTOM_PROPERTIES: String = "CustomProperties"
+
 internal fun convertDefinitions(
     definitionsFile: File,
 ): Sequence<ConversionResult> {
@@ -135,12 +139,8 @@ internal fun convertDefinitions(
     )
 
     val builderTypes = listOf(
-        ClassName(),
         CssDsl(),
         Rules(),
-        Selector(),
-        CustomPropertyName(),
-        CustomProperties(),
     )
 
     return types.asSequence()
@@ -529,7 +529,7 @@ private fun convertInterface(
             .filter { "Vendor" !in it && "Obsolete" !in it && "Svg" !in it }
 
         if (name == "Properties")
-            parents += CustomProperties
+            parents += CUSTOM_PROPERTIES
 
         if (name == "PseudosRuleBuilder")
             parents += listOf(NON_STANDARD_PSEUDOS_RULE_BUILDER, EXPERIMENTAL_PSEUDOS_RULE_BUILDER)
