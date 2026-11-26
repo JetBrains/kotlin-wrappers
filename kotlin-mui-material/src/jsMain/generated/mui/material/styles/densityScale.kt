@@ -46,7 +46,7 @@ external interface DensitySizingKey {
 /**
  * The scale a theme ended up with, in px numbers, for code that needs the
  * values in JS (MUI X derives row heights from `touchTarget + small`). Written
- * to `theme.unstable_densityScale` by `enhanceDensity`.
+ * to `theme.unstable_densityScale` by `unstable_enhanceDensity`.
  */
 @JsPlainObject
 external interface ResolvedDensityScale {
@@ -56,7 +56,7 @@ external interface ResolvedDensityScale {
 }
 
 /**
- * What `enhanceDensity` accepts as its second argument.
+ * What `unstable_enhanceDensity` accepts as its second argument.
  */
 @JsPlainObject
 external interface DensityScaleOverrides {
