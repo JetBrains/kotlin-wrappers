@@ -22,7 +22,7 @@ internal fun convertDefinitions(
                 name.startsWith("Vendor") -> emptySequence()
                 name.contains("Hyphen") -> emptySequence()
                 name.contains("Fallback") -> emptySequence()
-                name == "Pseudos" -> sequenceOf(convertMetaPseudos(name, content))
+                name == "Pseudos" -> emptySequence()
                 name == "SimplePseudos" || name == "AdvancedPseudos" -> sequenceOf(convertPseudos(name, content))
                 content.startsWith("namespace AtRule ") ->
                     convertNamespace(content)

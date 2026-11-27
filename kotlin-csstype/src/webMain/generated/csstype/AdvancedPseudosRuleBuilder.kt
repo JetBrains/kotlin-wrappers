@@ -1,347 +1,389 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package csstype
 
 import web.cssom.Selector
 
-interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
-    inline fun cue(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::cue($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::cue`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::cue($selector)"(block)
+}
 
-    inline fun cue(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::cue($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::cue`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::cue($selector)"(block)
+}
 
-    inline fun cueRegion(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::cue-region($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::cue-region`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::cue-region($selector)"(block)
+}
 
-    inline fun cueRegion(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::cue-region($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::cue-region`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::cue-region($selector)"(block)
+}
 
-    inline fun highlight(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::highlight($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::highlight`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::highlight($selector)"(block)
+}
 
-    inline fun highlight(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::highlight($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::highlight`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::highlight($selector)"(block)
+}
 
-    inline fun part(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::part($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::part`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::part($selector)"(block)
+}
 
-    inline fun part(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::part($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::part`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::part($selector)"(block)
+}
 
-    inline fun picker(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::picker($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::picker`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::picker($selector)"(block)
+}
 
-    inline fun picker(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::picker($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::picker`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::picker($selector)"(block)
+}
 
-    inline fun slotted(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::slotted($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::slotted`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::slotted($selector)"(block)
+}
 
-    inline fun slotted(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::slotted($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::slotted`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::slotted($selector)"(block)
+}
 
-    inline fun viewTransitionGroup(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-group($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-group`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::view-transition-group($selector)"(block)
+}
 
-    inline fun viewTransitionGroup(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-group($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-group`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::view-transition-group($selector)"(block)
+}
 
-    inline fun viewTransitionImagePair(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-image-pair($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-image-pair`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::view-transition-image-pair($selector)"(block)
+}
 
-    inline fun viewTransitionImagePair(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-image-pair($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-image-pair`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::view-transition-image-pair($selector)"(block)
+}
 
-    inline fun viewTransitionNew(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-new($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-new`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::view-transition-new($selector)"(block)
+}
 
-    inline fun viewTransitionNew(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-new($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-new`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::view-transition-new($selector)"(block)
+}
 
-    inline fun viewTransitionOld(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-old($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-old`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    "::view-transition-old($selector)"(block)
+}
 
-    inline fun viewTransitionOld(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        "::view-transition-old($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `::view-transition-old`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    "::view-transition-old($selector)"(block)
+}
 
-    inline fun activeViewTransitionType(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":active-view-transition-type($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:active-view-transition-type`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":active-view-transition-type($selector)"(block)
+}
 
-    inline fun activeViewTransitionType(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":active-view-transition-type($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:active-view-transition-type`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":active-view-transition-type($selector)"(block)
+}
 
-    inline fun dir(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":dir($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:dir`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":dir($selector)"(block)
+}
 
-    inline fun dir(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":dir($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:dir`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":dir($selector)"(block)
+}
 
-    inline fun has(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":has($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:has`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":has($selector)"(block)
+}
 
-    inline fun has(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":has($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:has`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":has($selector)"(block)
+}
 
-    inline fun host(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":host($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:host`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":host($selector)"(block)
+}
 
-    inline fun host(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":host($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:host`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":host($selector)"(block)
+}
 
-    inline fun hostContext(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":host-context($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:host-context`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":host-context($selector)"(block)
+}
 
-    inline fun hostContext(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":host-context($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:host-context`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":host-context($selector)"(block)
+}
 
-    inline fun `is`(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":is($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:is`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":is($selector)"(block)
+}
 
-    inline fun `is`(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":is($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:is`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":is($selector)"(block)
+}
 
-    inline fun lang(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":lang($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:lang`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":lang($selector)"(block)
+}
 
-    inline fun lang(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":lang($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:lang`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":lang($selector)"(block)
+}
 
-    inline fun not(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":not($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:not`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":not($selector)"(block)
+}
 
-    inline fun not(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":not($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:not`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":not($selector)"(block)
+}
 
-    inline fun nthChild(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":nth-child($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-child`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":nth-child($selector)"(block)
+}
 
-    inline fun nthChild(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":nth-child($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-child`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":nth-child($selector)"(block)
+}
 
-    inline fun nthLastChild(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":nth-last-child($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-last-child`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":nth-last-child($selector)"(block)
+}
 
-    inline fun nthLastChild(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":nth-last-child($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-last-child`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":nth-last-child($selector)"(block)
+}
 
-    inline fun nthLastOfType(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":nth-last-of-type($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-last-of-type`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":nth-last-of-type($selector)"(block)
+}
 
-    inline fun nthLastOfType(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":nth-last-of-type($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-last-of-type`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":nth-last-of-type($selector)"(block)
+}
 
-    inline fun nthOfType(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":nth-of-type($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-of-type`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":nth-of-type($selector)"(block)
+}
 
-    inline fun nthOfType(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":nth-of-type($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:nth-of-type`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":nth-of-type($selector)"(block)
+}
 
-    inline fun state(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":state($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:state`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":state($selector)"(block)
+}
 
-    inline fun state(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":state($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:state`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":state($selector)"(block)
+}
 
-    inline fun where(
-        selector: Selector,
-        block: T.() -> Unit,
-    ) {
-        ":where($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:where`(
+    selector: Selector,
+    block: T.() -> Unit,
+) {
+    ":where($selector)"(block)
+}
 
-    inline fun where(
-        selector: String,
-        block: T.() -> Unit,
-    ) {
-        ":where($selector)"(block)
-    }
+context(_: RuleBuilder<T>)
+inline fun <T : Any> `:where`(
+    selector: String,
+    block: T.() -> Unit,
+) {
+    ":where($selector)"(block)
 }
