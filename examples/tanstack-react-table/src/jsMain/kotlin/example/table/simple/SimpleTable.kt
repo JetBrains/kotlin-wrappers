@@ -1,8 +1,5 @@
 package example.table.simple
 
-import csstype.`:hover`
-import csstype.`:last-child`
-import csstype.invoke
 import emotion.react.css
 import example.table.base.TableInstance
 import example.theme.Theme
@@ -66,7 +63,7 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
                                 borderRight = Border(1.px, solid, Theme.Stroke.Gray)
                                 borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
 
-                                `:last-child` {
+                                lastChild {
                                     borderRight = none
                                 }
                             }
@@ -94,7 +91,7 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
                         cursor = Cursor.pointer
                         borderBottom = Border(1.px, solid, Theme.Stroke.LightGray)
 
-                        `:hover` {
+                        hover {
                             backgroundColor = Theme.Background.Gray
                         }
                     }
