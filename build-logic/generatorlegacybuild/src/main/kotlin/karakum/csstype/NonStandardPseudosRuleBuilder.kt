@@ -2,6 +2,8 @@ package karakum.csstype
 
 import karakum.common.ConversionResult
 
+const val NON_STANDARD_PSEUDOS_RULE_BUILDER = "NonStandardPseudosRuleBuilder"
+
 private val NON_STANDARD_PSEUDO_SIMPLE_ELEMENTS = listOf(
     "::-moz-color-swatch",
     "::-moz-focus-inner",
@@ -44,18 +46,18 @@ private val NON_STANDARD_PSEUDO_SIMPLE_ELEMENTS = listOf(
 private val BODY = """
 import csstype.$RULE_BUILDER
 
-${
-    NON_STANDARD_PSEUDO_SIMPLE_ELEMENTS.joinToString("\n\n") { name ->
-        """
-        inline val `$name`: $SELECTOR
-            get() = Selector("$name")
-        """.trimIndent()
-    }
+interface $NON_STANDARD_PSEUDOS_RULE_BUILDER<T : Any> : $RULE_BUILDER<T> {
+    ${
+    NON_STANDARD_PSEUDO_SIMPLE_ELEMENTS.joinToString(
+        separator = "\n\n",
+        transform = ::convertSimplePseudo,
+    )
+}
 }
 """.trimIndent()
 
-internal fun NonStandardPseudoClasses(): ConversionResult =
+internal fun NonStandardPseudosRuleBuilder(): ConversionResult =
     ConversionResult(
-        name = "NonStandardPseudoClasses",
+        name = NON_STANDARD_PSEUDOS_RULE_BUILDER,
         body = BODY,
     )
