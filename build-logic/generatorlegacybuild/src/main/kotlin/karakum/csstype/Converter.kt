@@ -525,9 +525,6 @@ private fun convertInterface(
         if (name == "Properties")
             parents += CUSTOM_PROPERTIES
 
-        if (name == "PseudosRuleBuilder")
-            parents += listOf(NON_STANDARD_PSEUDOS_RULE_BUILDER, EXPERIMENTAL_PSEUDOS_RULE_BUILDER)
-
         val parentTypes = parents.joinToString(", ")
 
         return ConversionResult(name, "$annotations external interface $declaration: $parentTypes")

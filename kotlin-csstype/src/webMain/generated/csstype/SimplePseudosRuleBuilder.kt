@@ -25,6 +25,12 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         "::before"(block)
     }
 
+    inline fun checkmark(
+        block: T.() -> Unit,
+    ) {
+        "::checkmark"(block)
+    }
+
     inline fun cue(
         block: T.() -> Unit,
     ) {
@@ -35,6 +41,18 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         "::cue-region"(block)
+    }
+
+    inline fun detailsContent(
+        block: T.() -> Unit,
+    ) {
+        "::details-content"(block)
+    }
+
+    inline fun fileSelectorButton(
+        block: T.() -> Unit,
+    ) {
+        "::file-selector-button"(block)
     }
 
     inline fun firstLetter(
@@ -61,10 +79,28 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         "::marker"(block)
     }
 
+    inline fun pickerIcon(
+        block: T.() -> Unit,
+    ) {
+        "::picker-icon"(block)
+    }
+
     inline fun placeholder(
         block: T.() -> Unit,
     ) {
         "::placeholder"(block)
+    }
+
+    inline fun scrollMarker(
+        block: T.() -> Unit,
+    ) {
+        "::scroll-marker"(block)
+    }
+
+    inline fun scrollMarkerGroup(
+        block: T.() -> Unit,
+    ) {
+        "::scroll-marker-group"(block)
     }
 
     inline fun selection(
@@ -97,16 +133,34 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":active"(block)
     }
 
+    inline fun activeViewTransition(
+        block: T.() -> Unit,
+    ) {
+        ":active-view-transition"(block)
+    }
+
     inline fun anyLink(
         block: T.() -> Unit,
     ) {
         ":any-link"(block)
     }
 
+    inline fun autofill(
+        block: T.() -> Unit,
+    ) {
+        ":autofill"(block)
+    }
+
     inline fun blank(
         block: T.() -> Unit,
     ) {
         ":blank"(block)
+    }
+
+    inline fun buffering(
+        block: T.() -> Unit,
+    ) {
+        ":buffering"(block)
     }
 
     inline fun checked(
@@ -199,6 +253,18 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":future"(block)
     }
 
+    inline fun hasSlotted(
+        block: T.() -> Unit,
+    ) {
+        ":has-slotted"(block)
+    }
+
+    inline fun host(
+        block: T.() -> Unit,
+    ) {
+        ":host"(block)
+    }
+
     inline fun hover(
         block: T.() -> Unit,
     ) {
@@ -253,16 +319,16 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":local-link"(block)
     }
 
-    inline fun nthCol(
+    inline fun modal(
         block: T.() -> Unit,
     ) {
-        ":nth-col"(block)
+        ":modal"(block)
     }
 
-    inline fun nthLastCol(
+    inline fun muted(
         block: T.() -> Unit,
     ) {
-        ":nth-last-col"(block)
+        ":muted"(block)
     }
 
     inline fun onlyChild(
@@ -275,6 +341,12 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         ":only-of-type"(block)
+    }
+
+    inline fun open(
+        block: T.() -> Unit,
+    ) {
+        ":open"(block)
     }
 
     inline fun optional(
@@ -319,6 +391,12 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":playing"(block)
     }
 
+    inline fun popoverOpen(
+        block: T.() -> Unit,
+    ) {
+        ":popover-open"(block)
+    }
+
     inline fun readOnly(
         block: T.() -> Unit,
     ) {
@@ -355,10 +433,28 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         ":scope"(block)
     }
 
+    inline fun seeking(
+        block: T.() -> Unit,
+    ) {
+        ":seeking"(block)
+    }
+
+    inline fun stalled(
+        block: T.() -> Unit,
+    ) {
+        ":stalled"(block)
+    }
+
     inline fun target(
         block: T.() -> Unit,
     ) {
         ":target"(block)
+    }
+
+    inline fun targetCurrent(
+        block: T.() -> Unit,
+    ) {
+        ":target-current"(block)
     }
 
     inline fun targetWithin(
@@ -389,5 +485,17 @@ interface SimplePseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         ":visited"(block)
+    }
+
+    inline fun volumeLocked(
+        block: T.() -> Unit,
+    ) {
+        ":volume-locked"(block)
+    }
+
+    inline fun xrOverlay(
+        block: T.() -> Unit,
+    ) {
+        ":xr-overlay"(block)
     }
 }

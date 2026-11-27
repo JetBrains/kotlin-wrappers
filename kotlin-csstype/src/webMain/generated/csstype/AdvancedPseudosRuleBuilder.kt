@@ -37,6 +37,20 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         "::cue-region($selector)"(block)
     }
 
+    inline fun highlight(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        "::highlight($selector)"(block)
+    }
+
+    inline fun highlight(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        "::highlight($selector)"(block)
+    }
+
     inline fun part(
         selector: Selector,
         block: T.() -> Unit,
@@ -49,6 +63,20 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         "::part($selector)"(block)
+    }
+
+    inline fun picker(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        "::picker($selector)"(block)
+    }
+
+    inline fun picker(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        "::picker($selector)"(block)
     }
 
     inline fun slotted(
@@ -119,6 +147,20 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         "::view-transition-old($selector)"(block)
+    }
+
+    inline fun activeViewTransitionType(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        ":active-view-transition-type($selector)"(block)
+    }
+
+    inline fun activeViewTransitionType(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        ":active-view-transition-type($selector)"(block)
     }
 
     inline fun dir(
@@ -273,6 +315,20 @@ interface AdvancedPseudosRuleBuilder<T : Any> : RuleBuilder<T> {
         block: T.() -> Unit,
     ) {
         ":nth-of-type($selector)"(block)
+    }
+
+    inline fun state(
+        selector: Selector,
+        block: T.() -> Unit,
+    ) {
+        ":state($selector)"(block)
+    }
+
+    inline fun state(
+        selector: String,
+        block: T.() -> Unit,
+    ) {
+        ":state($selector)"(block)
     }
 
     inline fun where(

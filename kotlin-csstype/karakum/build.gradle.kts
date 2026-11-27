@@ -15,3 +15,11 @@ tasks.register<SyncWrappers>("syncCssomCore") {
 
     into(webMainDir("kotlin-cssom-core"))
 }
+
+tasks.register<SyncWrappers>("syncCssType") {
+    from(webGeneratedDir) {
+        include("csstype/**")
+    }
+
+    into(webMainDir("kotlin-csstype"))
+}
