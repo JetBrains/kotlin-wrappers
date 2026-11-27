@@ -12,6 +12,7 @@ internal fun convertMetaPseudos(
         .substringAfter(" = ")
         .substringBefore(";")
         .splitToSequence(" | ")
+        .minus("SimplePseudos")
         .joinToString(",\n") { "$it$RULE_BUILDER<T>" }
 
     return ConversionResult(
@@ -23,24 +24,18 @@ internal fun convertMetaPseudos(
 internal fun convertPseudos(
     name: String,
     source: String,
-): ConversionResult {
-    val method: (String) -> String = when (name) {
-        "SimplePseudos" -> ::convertSimplePseudo
-        "AdvancedPseudos" -> ::convertAdvancedPseudo
+): ConversionResult =
+    when (name) {
+        "SimplePseudos" -> convertPseudos("SimplePseudoClasses", source, ::convertSimplePseudo)
+        "AdvancedPseudos" -> convertPseudos("$name$RULE_BUILDER", source, ::convertAdvancedPseudo)
         else -> TODO("Method for `$name`")
     }
-
-    return convertPseudos(name, source, method)
-}
 
 internal fun convertSimplePseudo(
     selector: String,
 ): String = """
-    inline fun ${unionConstant(selector).name.replaceFirstChar(Char::lowercase)}(
-        block: T.() -> Unit,
-    ) {
-        "$selector"(block)
-    }
+    inline val `$selector`: $SELECTOR
+        get() = Selector("$selector")
 """.trimIndent()
 
 internal fun convertAdvancedPseudo(
@@ -61,7 +56,6 @@ private fun convertPseudos(
     source: String,
     method: (selector: String) -> String,
 ): ConversionResult {
-    val builderName = "$name$RULE_BUILDER"
     val selectors = source.substringAfter("=\n")
         .substringBefore(";")
         .trimIndent()
@@ -73,11 +67,15 @@ private fun convertPseudos(
 
     val methods = selectors.joinToString("\n\n", transform = method)
 
+    // TEMP
+    if ("inline fun" !in methods)
+        return ConversionResult(name, methods)
+
     val body = """
-        interface $builderName<T: Any>: $RULE_BUILDER<T> {
+        interface $name<T: Any>: $RULE_BUILDER<T> {
             $methods
         }
     """.trimIndent()
 
-    return ConversionResult(builderName, body)
+    return ConversionResult(name, body)
 }

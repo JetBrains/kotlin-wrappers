@@ -12,7 +12,7 @@ private val CSSTYPE_TYPES = setOf(
     "AdvancedPseudosRuleBuilder",
     "Properties",
     "PseudosRuleBuilder",
-    "SimplePseudosRuleBuilder",
+    "SimplePseudoClasses",
 )
 
 private val CSSTYPE_IMPORTS = """
