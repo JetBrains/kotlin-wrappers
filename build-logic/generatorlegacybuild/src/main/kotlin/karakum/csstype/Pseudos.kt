@@ -13,8 +13,6 @@ internal fun convertMetaPseudos(
         .substringBefore(";")
         .splitToSequence(" | ")
         .joinToString(",\n") { "$it$RULE_BUILDER<T>" }
-        .plus(",\n$NON_STANDARD_PSEUDOS_RULE_BUILDER<T>")
-        .plus(",\n$EXPERIMENTAL_PSEUDOS_RULE_BUILDER<T>")
 
     return ConversionResult(
         builderName,

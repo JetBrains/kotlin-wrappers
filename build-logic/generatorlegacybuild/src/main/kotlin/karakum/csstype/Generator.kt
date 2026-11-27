@@ -50,7 +50,7 @@ fun generateKotlinDeclarations(
     )
 
     writeDeclarations(
-        declarations = sequenceOf(NonStandardPseudosRuleBuilder(), ExperimentalPseudosRuleBuilder()),
+        declarations = sequenceOf(NonStandardPseudoClasses(), ExperimentalPseudoClasses()),
         sourceDir = sourceDir,
         getPkg = { "csstype" },
         getImports = { CSSTYPE_IMPORTS },
