@@ -70,6 +70,10 @@ private fun writeDeclarations(
                     add(DECLARATION_CANT_BE_INLINED)
                 }
 
+            if ("inline fun " in body)
+                if (RULE_BUILDER in body)
+                    add(DECLARATION_CANT_BE_INLINED)
+
             if ("companion object" in body && "sealed external interface" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
         }

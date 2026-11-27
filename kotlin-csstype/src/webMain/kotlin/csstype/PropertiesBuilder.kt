@@ -4,7 +4,8 @@ import js.objects.Object
 
 sealed class PropertiesBuilder :
     Properties,
-    RuleBuilder<PropertiesBuilder> {
+    RuleBuilder<PropertiesBuilder>,
+    PseudosRuleBuilder<PropertiesBuilder> {
 
     inline operator fun Properties?.unaryPlus() {
         Object.assign(this@PropertiesBuilder, this)
