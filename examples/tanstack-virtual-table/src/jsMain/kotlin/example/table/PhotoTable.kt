@@ -1,5 +1,8 @@
 package example.table
 
+import csstype.`:hover`
+import csstype.`:last-child`
+import csstype.invoke
 import emotion.styled.styled
 import example.entities.Photo
 import example.table.base.TableBase
@@ -49,7 +52,7 @@ private val Table = TableBase.styled {
                 borderRight = Border(1.px, solid, Theme.Stroke.Gray)
                 borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
 
-                lastChild {
+                `:last-child` {
                     borderRight = None.none
                 }
             }
@@ -66,7 +69,7 @@ private val Table = TableBase.styled {
             cursor = Cursor.pointer
             borderBottom = Border(1.px, solid, Theme.Stroke.LightGray)
 
-            hover {
+            `:hover` {
                 backgroundColor = Theme.Background.Gray
             }
 
