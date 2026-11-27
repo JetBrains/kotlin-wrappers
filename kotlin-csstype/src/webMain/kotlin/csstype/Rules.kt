@@ -1,5 +1,3 @@
-// Automatically generated - do not modify!
-
 package csstype
 
 import js.objects.Record

@@ -10,11 +10,8 @@ import java.io.File
 
 private val CSSTYPE_TYPES = setOf(
     "AdvancedPseudosRuleBuilder",
-    "CssDsl",
     "Properties",
     "PseudosRuleBuilder",
-    RULE_BUILDER,
-    "Rules",
     "SimplePseudosRuleBuilder",
 )
 

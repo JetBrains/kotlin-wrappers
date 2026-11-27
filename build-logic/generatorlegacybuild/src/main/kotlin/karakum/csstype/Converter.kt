@@ -138,15 +138,9 @@ internal fun convertDefinitions(
         PropertyName(contentMap),
     )
 
-    val builderTypes = listOf(
-        CssDsl(),
-        Rules(),
-    )
-
     return types.asSequence()
         .plus(propertyTypes)
         .plus(globalsType)
-        .plus(builderTypes)
 }
 
 private fun contentMap(
@@ -519,7 +513,7 @@ private fun convertInterface(
 
     if (extends.isNotEmpty()) {
         val annotations = when (name) {
-            "Properties" -> "@$CSS_DSL\n"
+            "Properties" -> "@CssDsl\n"
             else -> ""
         }
 
