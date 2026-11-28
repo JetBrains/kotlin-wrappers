@@ -1,7 +1,10 @@
 package csstype
 
+import js.objects.Record
 import js.objects.unsafeJso
 import web.cssom.*
+
+typealias Rules = Record<Selector, Any>
 
 external interface RuleBuilder<T : Any> :
     Rules
