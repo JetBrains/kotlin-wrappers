@@ -525,9 +525,9 @@ private fun convertInterface(
         if (name == "Properties")
             parents += CUSTOM_PROPERTIES
 
-        val parentTypes = parents.joinToString(", ")
+        val parentTypes = parents.joinToString(",\n")
 
-        return ConversionResult(name, "$annotations external interface $declaration: $parentTypes")
+        return ConversionResult(name, "$annotations external interface $declaration:\n$parentTypes")
     }
 
     val body = source.substringAfter("{\n")

@@ -6,4 +6,6 @@ import web.cssom.CustomProperties
 import web.cssom.StandardProperties
 
 @CssDsl
-external interface Properties : StandardProperties, CustomProperties
+external interface Properties :
+    StandardProperties,
+    CustomProperties

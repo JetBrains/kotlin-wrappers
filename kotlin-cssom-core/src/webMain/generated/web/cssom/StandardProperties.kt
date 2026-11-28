@@ -2,4 +2,6 @@
 
 package web.cssom
 
-external interface StandardProperties : StandardLonghandProperties, StandardShorthandProperties
+external interface StandardProperties :
+    StandardLonghandProperties,
+    StandardShorthandProperties
