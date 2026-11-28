@@ -1,8 +1,6 @@
 // Automatically generated - do not modify!
 
-package csstype
-
-import web.cssom.Selector
+package web.cssom
 
 inline val `::after`: Selector
     get() = Selector("::after")

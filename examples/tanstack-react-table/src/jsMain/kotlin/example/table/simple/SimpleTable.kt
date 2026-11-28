@@ -1,7 +1,5 @@
 package example.table.simple
 
-import csstype.`:hover`
-import csstype.`:last-child`
 import csstype.invoke
 import emotion.react.css
 import example.table.base.TableInstance

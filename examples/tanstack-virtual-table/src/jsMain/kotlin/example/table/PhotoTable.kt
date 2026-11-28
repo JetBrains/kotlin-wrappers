@@ -1,7 +1,5 @@
 package example.table
 
-import csstype.`:hover`
-import csstype.`:last-child`
 import csstype.invoke
 import emotion.styled.styled
 import example.entities.Photo
