@@ -23,11 +23,11 @@ inline fun <T : Any> `@container`(
     builder[Selector("@container $containerName $query")] = unsafeJso(block)
 }
 
-context(builder: RuleBuilder<T>)
-inline fun <T : Any> `@font-face`(
+context(rules: Rules)
+inline fun `@font-face`(
     block: FontFace.() -> Unit,
 ) {
-    builder[Selector("@font-face")] = unsafeJso(block)
+    rules[Selector("@font-face")] = unsafeJso(block)
 }
 
 context(builder: RuleBuilder<T>)
@@ -66,7 +66,7 @@ inline operator fun <T : Any> String.invoke(
     Selector(this)(block)
 }
 
-context(builder: RuleBuilder<T>)
+context(_: RuleBuilder<T>)
 inline fun <T : Any> and(
     className: ClassName,
     block: T.() -> Unit,
