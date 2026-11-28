@@ -75,6 +75,7 @@ import tauri.apps.api.core.InvokeArgs
  *  emit('test-event', { foo: 'bar' });
  *  expect(eventHandler).toHaveBeenCalledWith({
  *    event: 'test-event',
+ *    id: expect.any(Number),
  *    payload: { foo: 'bar' }
  *  });
  * })
